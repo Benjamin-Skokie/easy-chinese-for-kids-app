@@ -1661,8 +1661,13 @@ const state = {
   greetingsMeaningOrder: [],
   familyChallengeAnswerId: "",
   familyChallengeOptionIds: [],
+  familyChallengePickedId: "",
   familyChallengePromptId: "",
+  familyChallengeResult: "",
+  familyChallengeWrongIds: new Set(),
   lastFamilyFeedback: "",
+  familyListenFeedback: "",
+  familyMatchFeedback: "",
   familySelectedPhraseId: null,
   familyMatchedIds: new Set(),
   familyPhraseOrder: [],
@@ -2018,6 +2023,14 @@ function familyHeadshotForItemId(itemId) {
   }[itemId] ?? null;
 }
 
+function isFamilySentenceItemId(itemId) {
+  return ["parents-love-me", "i-love-dad", "i-love-mom"].includes(itemId);
+}
+
+function familyBookWordItems() {
+  return focusItemsForTopic(topicById("family")).filter((item) => !isFamilySentenceItemId(item.id));
+}
+
 function familyWordForPersonId(personId) {
   return {
     mom: "妈妈",
@@ -2042,9 +2055,13 @@ function resetFamilyChallenge(options = {}) {
   );
 
   state.familyChallengeAnswerId = answer.id;
+  state.familyChallengePickedId = "";
   state.familyChallengePromptId = answer.id;
   state.familyChallengeOptionIds = shuffleArray([answer.id, ...distractors.map((item) => item.id)]);
-  state.lastFamilyFeedback = options.feedback ?? "Press play, listen carefully, then choose the matching family line.";
+  state.familyChallengeResult = "";
+  state.familyChallengeWrongIds = new Set();
+  state.familyListenFeedback = options.feedback ?? "";
+  state.lastFamilyFeedback = state.familyListenFeedback;
 }
 
 function ensureFamilyChallenge() {
@@ -2063,7 +2080,8 @@ function handleFamilyChallengePlay() {
   if (state.tapAudioEnabled) {
     speak(item.audio, 0.78);
   }
-  state.lastFamilyFeedback = `Listen again and find ${item.hanzi}.`;
+  state.familyListenFeedback = `Listen again and find ${item.hanzi}.`;
+  state.lastFamilyFeedback = state.familyListenFeedback;
   renderActivityPanel(currentTopic());
 }
 
@@ -2077,21 +2095,29 @@ function handleFamilyChallengeGuess(itemId) {
 
   if (itemId === answer.id) {
     state.selectedFocusItemId = answer.id;
+    state.familyChallengePickedId = itemId;
+    state.familyChallengeResult = "correct";
     if (state.tapAudioEnabled) {
       speak(answer.audio, 0.78);
     }
-    state.lastFamilyFeedback = `Correct! ${answer.hanzi} matches the audio.`;
+    state.familyListenFeedback = "Nice listening.";
+    state.lastFamilyFeedback = state.familyListenFeedback;
     renderFocusDisplay(currentFocusItem());
     renderFocusExplorer();
     renderFocusStatus();
+    renderActivityPanel(currentTopic());
     window.setTimeout(() => {
       resetFamilyChallenge();
       renderActivityPanel(currentTopic());
-    }, 650);
+    }, 900);
     return;
   }
 
-  state.lastFamilyFeedback = `Try again. You picked ${picked.hanzi}, but the audio is ${answer.hanzi}.`;
+  state.familyChallengePickedId = itemId;
+  state.familyChallengeResult = "wrong";
+  state.familyChallengeWrongIds = new Set([...state.familyChallengeWrongIds, itemId]);
+  state.familyListenFeedback = "Not that one. Try another card.";
+  state.lastFamilyFeedback = state.familyListenFeedback;
   renderActivityPanel(currentTopic());
 }
 
@@ -2101,7 +2127,8 @@ function resetFamilyMatchGame() {
   state.familyMatchedIds = new Set();
   state.familyPhraseOrder = shuffleArray(items.map((item) => item.id));
   state.familyMeaningOrder = shuffleArray(items.map((item) => item.id));
-  state.lastFamilyFeedback = "Tap a family line on the left, then match it to the family member on the right.";
+  state.familyMatchFeedback = "";
+  state.lastFamilyFeedback = state.familyMatchFeedback;
 }
 
 function ensureFamilyMatchGame() {
@@ -2125,7 +2152,8 @@ function handleFamilyMatchPhrase(itemId) {
   if (state.tapAudioEnabled) {
     speak(item.audio, 0.78);
   }
-  state.lastFamilyFeedback = `Now find who matches ${item.hanzi}.`;
+  state.familyMatchFeedback = `Now find who matches ${item.hanzi}.`;
+  state.lastFamilyFeedback = state.familyMatchFeedback;
   renderActivityPanel(currentTopic());
 }
 
@@ -2143,20 +2171,23 @@ function handleFamilyMatchAttempt(targetId) {
   if (selectedId === targetId) {
     state.familyMatchedIds = new Set([...state.familyMatchedIds, targetId]);
     state.familySelectedPhraseId = null;
-    state.lastFamilyFeedback = `Correct! ${selectedItem.hanzi} matches that family member.`;
+    state.familyMatchFeedback = "Matched.";
+    state.lastFamilyFeedback = state.familyMatchFeedback;
     state.selectedFocusItemId = selectedItem.id;
     renderFocusDisplay(currentFocusItem());
     renderFocusExplorer();
     renderFocusStatus();
 
     if (state.familyMatchedIds.size === familyGameItems().length) {
-      state.lastFamilyFeedback = "Great job! You matched all the family members.";
+      state.familyMatchFeedback = "All family members matched.";
+      state.lastFamilyFeedback = state.familyMatchFeedback;
     }
     renderActivityPanel(currentTopic());
     return;
   }
 
-  state.lastFamilyFeedback = `Try again. ${selectedItem.hanzi} does not match that family member.`;
+  state.familyMatchFeedback = "Try a different family member.";
+  state.lastFamilyFeedback = state.familyMatchFeedback;
   renderActivityPanel(currentTopic());
 }
 
@@ -3607,8 +3638,7 @@ function renderFocusStatus() {
   }
 
   if (topic.id === "family") {
-    focusStatus.textContent =
-      "Tap a family line, listen to the home scene, then point to the same person in a real family photo.";
+    focusStatus.textContent = "";
     return;
   }
 
@@ -3660,9 +3690,23 @@ function renderFocusWordList() {
   focusWordList.classList.remove("is-hidden");
   const topic = currentTopic();
   const items = focusItemsForTopic();
+  focusWordList.classList.toggle("is-family-book-words", topic.id === "family");
   const visibleItems =
-    topic.id === "numbers" ? numberWordListItems(items, currentFocusItem(), currentNumberStage()) : items;
+    topic.id === "numbers"
+      ? numberWordListItems(items, currentFocusItem(), currentNumberStage())
+      : topic.id === "family"
+        ? familyBookWordItems()
+        : items;
   focusWordList.innerHTML = "";
+
+  if (topic.id === "family") {
+    const heading = document.createElement("div");
+    heading.className = "family-book-words-heading";
+    heading.innerHTML = `
+      <p class="body-match-kicker">Book words</p>
+    `;
+    focusWordList.appendChild(heading);
+  }
 
   visibleItems.forEach((item) => {
     const button = document.createElement("button");
@@ -3684,6 +3728,25 @@ function renderFocusWordList() {
 
     focusWordList.appendChild(button);
   });
+
+  if (topic.id === "family") {
+    const note = document.createElement("div");
+    note.className = "greetings-note-card family-book-words-note";
+    note.innerHTML = `
+      <p class="body-match-kicker">Useful note</p>
+      <p class="greetings-note-hanzi">爸爸 / 妈妈 / 哥哥 / 弟弟 / 姐姐 / 妹妹</p>
+      <p class="greetings-note-copy">
+        In sentences like <strong>我爱爸爸</strong> and <strong>我爱妈妈</strong>, the family word names who the child loves. <strong>我</strong> names the speaker, and <strong>爱</strong> names the feeling.
+      </p>
+      <p class="greetings-note-copy">
+        <strong>哥哥</strong> and <strong>弟弟</strong> are the brother pair: older brother, then younger brother. <strong>姐姐</strong> and <strong>妹妹</strong> are the sister pair: older sister, then younger sister.
+      </p>
+      <p class="greetings-note-copy">
+        In listening practice, the repeated family word is the anchor. For sisters, <strong>姐姐</strong> and <strong>妹妹</strong> both use <strong>女</strong>, so children can group the two sister words together.
+      </p>
+    `;
+    focusWordList.appendChild(note);
+  }
 }
 
 function numberWordListItems(items, currentItem, stage) {
@@ -3985,9 +4048,11 @@ function renderActivityPanel(topic) {
     activityList.className = "support-list";
     activityList.innerHTML = "";
 
-    const challenge = familyGameItems().find((item) => item.id === state.familyChallengePromptId);
+    const solvedFamilyIds = state.familyPhraseOrder.filter((id) => state.familyMatchedIds.has(id));
+    const remainingFamilyPhraseIds = state.familyPhraseOrder.filter((id) => !state.familyMatchedIds.has(id));
+    const remainingFamilyMeaningIds = state.familyMeaningOrder.filter((id) => !state.familyMatchedIds.has(id));
     const gameCard = document.createElement("section");
-    gameCard.className = "numbers-game-card";
+    gameCard.className = "family-practice-shell";
     gameCard.innerHTML = `
       <div class="practice-split-board">
         <section class="practice-split-card">
@@ -3996,15 +4061,10 @@ function renderActivityPanel(topic) {
               <p class="body-match-kicker">Listen and choose</p>
               <h4>Which family line did you hear?</h4>
             </div>
-            <button class="small-button is-action-button" type="button" data-family-game-new>Try another</button>
+            <button class="small-button is-action-button" type="button" data-family-game-play>Play audio</button>
           </div>
           <p class="numbers-game-note">Play the audio, then tap the matching Chinese family line.</p>
-          <div class="greetings-game-audio-row">
-            <button class="small-button is-action-button greetings-game-play" type="button" data-family-game-play>
-              Play audio
-            </button>
-            <p class="greetings-game-feedback">${state.lastFamilyFeedback}</p>
-          </div>
+          ${state.familyListenFeedback ? `<p class="greetings-game-feedback">${state.familyListenFeedback}</p>` : ""}
           <div class="numbers-game-options">
             ${state.familyChallengeOptionIds
               .map((id) => {
@@ -4012,8 +4072,17 @@ function renderActivityPanel(topic) {
                 if (!item) {
                   return "";
                 }
+                const isCorrectPick =
+                  state.familyChallengePickedId === item.id && state.familyChallengeResult === "correct";
+                const isWrongPick = state.familyChallengeWrongIds.has(item.id);
+                const resultClass = isCorrectPick ? " is-correct" : isWrongPick ? " is-wrong" : "";
+                const resultMark =
+                  isCorrectPick || isWrongPick
+                    ? `<span class="answer-result-mark" aria-hidden="true">${isCorrectPick ? "✓" : "×"}</span>`
+                    : "";
                 return `
-                  <button class="numbers-game-option greetings-game-option" type="button" data-family-game-guess="${item.id}">
+                  <button class="numbers-game-option greetings-game-option family-listen-option${resultClass}" type="button" data-family-game-guess="${item.id}">
+                    ${resultMark}
                     <span class="numbers-game-hanzi">${item.hanzi}</span>
                     ${state.showPinyin ? `<span class="numbers-game-pinyin">${item.pinyin}</span>` : ""}
                     ${state.showEnglish ? `<span class="numbers-game-english">${item.english}</span>` : ""}
@@ -4022,16 +4091,6 @@ function renderActivityPanel(topic) {
               })
               .join("")}
           </div>
-          ${
-            challenge
-              ? `
-                <div class="greetings-game-scene-note">
-                  <p class="body-match-kicker">Tip</p>
-                  <p>Listen for the repeating family word: <strong>爸爸</strong>, <strong>妈妈</strong>, <strong>哥哥</strong>, <strong>弟弟</strong>, <strong>姐姐</strong>, or <strong>妹妹</strong>.</p>
-                </div>
-              `
-              : ""
-          }
         </section>
         <section class="practice-split-card">
           <div class="numbers-game-top">
@@ -4042,24 +4101,61 @@ function renderActivityPanel(topic) {
             <button class="small-button is-action-button" type="button" data-family-match-new>New mix</button>
           </div>
           <p class="numbers-game-note">Tap a Chinese family line on the left, hear it, then tap the matching person on the right.</p>
-          <div class="greetings-game-feedback">${state.lastFamilyFeedback}</div>
-          <div class="polite-match-board">
-            <div class="polite-match-column">
-              <p class="body-match-kicker">Chinese</p>
-              ${state.familyPhraseOrder
+          ${state.familyMatchFeedback ? `<div class="greetings-game-feedback">${state.familyMatchFeedback}</div>` : ""}
+          <div class="family-match-board-headings">
+            <p class="body-match-kicker">Chinese</p>
+            <p class="body-match-kicker">Family member</p>
+          </div>
+          ${
+            solvedFamilyIds.length
+              ? `
+                <div class="family-match-solved-pairs">
+                  ${solvedFamilyIds
+                    .map((id) => {
+                      const item = familyGameItems().find((entry) => entry.id === id);
+                      const person = familyPersonForItemId(id);
+                      if (!item || !person) {
+                        return "";
+                      }
+                      return `
+                        <article class="family-match-solved-row">
+                          <div class="polite-match-card polite-match-card-phrase family-match-pair-card is-solved">
+                            <span class="answer-result-mark" aria-hidden="true">✓</span>
+                            <span class="numbers-game-hanzi">${item.hanzi}</span>
+                            ${state.showPinyin ? `<span class="numbers-game-pinyin">${item.pinyin}</span>` : ""}
+                          </div>
+                          <div class="polite-match-card family-match-card family-match-pair-card is-solved">
+                            <span class="answer-result-mark" aria-hidden="true">✓</span>
+                            <span class="family-match-avatar"><img class="family-match-avatar-image family-match-avatar-image-headshot" src="${familyHeadshotForItemId(id)}" alt="${person.label}" /></span>
+                            <span class="family-match-copy">
+                              <span class="numbers-game-english">${person.label}</span>
+                            </span>
+                          </div>
+                        </article>
+                      `;
+                    })
+                    .join("")}
+                </div>
+              `
+              : ""
+          }
+          ${
+            remainingFamilyPhraseIds.length
+              ? `
+                <div class="polite-match-board family-match-open-board">
+                  <div class="polite-match-column">
+                    ${remainingFamilyPhraseIds
                 .map((id) => {
                   const item = familyGameItems().find((entry) => entry.id === id);
                   if (!item) {
                     return "";
                   }
                   const selected = state.familySelectedPhraseId === id;
-                  const solved = state.familyMatchedIds.has(id);
                   return `
                     <button
-                      class="polite-match-card polite-match-card-phrase${selected ? " is-selected" : ""}${solved ? " is-solved" : ""}"
+                      class="polite-match-card polite-match-card-phrase${selected ? " is-selected" : ""}"
                       type="button"
                       data-family-match-phrase="${id}"
-                      ${solved ? "disabled" : ""}
                     >
                       <span class="numbers-game-hanzi">${item.hanzi}</span>
                       ${state.showPinyin ? `<span class="numbers-game-pinyin">${item.pinyin}</span>` : ""}
@@ -4067,22 +4163,19 @@ function renderActivityPanel(topic) {
                   `;
                 })
                 .join("")}
-            </div>
-            <div class="polite-match-column">
-              <p class="body-match-kicker">Family member</p>
-              ${state.familyMeaningOrder
+                  </div>
+                  <div class="polite-match-column">
+                    ${remainingFamilyMeaningIds
                 .map((id) => {
                   const person = familyPersonForItemId(id);
-                  const solved = state.familyMatchedIds.has(id);
                   if (!person) {
                     return "";
                   }
                   return `
                     <button
-                      class="polite-match-card family-match-card${solved ? " is-solved" : ""}"
+                      class="polite-match-card family-match-card"
                       type="button"
                       data-family-match-meaning="${id}"
-                      ${solved ? "disabled" : ""}
                     >
                       <span class="family-match-avatar"><img class="family-match-avatar-image family-match-avatar-image-headshot" src="${familyHeadshotForItemId(id)}" alt="${person.label}" /></span>
                       <span class="family-match-copy">
@@ -4092,17 +4185,16 @@ function renderActivityPanel(topic) {
                   `;
                 })
                 .join("")}
-            </div>
-          </div>
+                  </div>
+                </div>
+              `
+              : ""
+          }
           ${
             state.familyMatchedIds.size === familyGameItems().length
               ? '<button class="small-button is-action-button" type="button" data-family-match-play-again>Play again</button>'
               : ""
           }
-          <div class="greetings-game-scene-note">
-            <p class="body-match-kicker">Memory help</p>
-            <p><strong>哥哥 / 弟弟</strong> are the boy pair. <strong>姐姐 / 妹妹</strong> are the girl pair. The first word in each pair is older, and the second is younger.</p>
-          </div>
         </section>
       </div>
     `;
@@ -4110,11 +4202,6 @@ function renderActivityPanel(topic) {
 
     activityList.querySelector("[data-family-game-play]")?.addEventListener("click", () => {
       handleFamilyChallengePlay();
-    });
-
-    activityList.querySelector("[data-family-game-new]")?.addEventListener("click", () => {
-      resetFamilyChallenge();
-      renderActivityPanel(topic);
     });
 
     activityList.querySelectorAll("[data-family-game-guess]").forEach((button) => {
@@ -5087,7 +5174,6 @@ function renderGreetingsExplorer() {
                                 ${state.showPinyin ? `<p class="telephone-line-pinyin">${line.pinyin}</p>` : ""}
                                 ${state.showEnglish ? `<p class="telephone-line-english">${line.english}</p>` : ""}
                               </div>
-                              <button class="small-button is-action-button" type="button" data-greeting-play-line="${exchange.id}:${index}">Play line</button>
                             </article>
                           `
                         )
@@ -5130,21 +5216,6 @@ function renderGreetingsExplorer() {
       </div>
     </div>
   `;
-
-  focusExplorer.querySelectorAll("[data-greeting-play-line]").forEach((button) => {
-    button.addEventListener("click", () => {
-      const [exchangeId, indexText] = button.dataset.greetingPlayLine.split(":");
-      const exchange = greetingsPractice.find((entry) => entry.id === exchangeId);
-      const line = exchange?.lines[Number(indexText)];
-      if (!line) {
-        return;
-      }
-      if (state.tapAudioEnabled) {
-        speak(line.audio, 0.78);
-      }
-      focusStatus.textContent = `Practice saying ${line.hanzi}`;
-    });
-  });
 
   focusExplorer.querySelectorAll("[data-greeting-play-all]").forEach((button) => {
     button.addEventListener("click", async () => {
@@ -5258,7 +5329,6 @@ function renderPoliteWordsExplorer() {
                                 ${state.showPinyin ? `<p class="telephone-line-pinyin">${line.pinyin}</p>` : ""}
                                 ${state.showEnglish ? `<p class="telephone-line-english">${line.english}</p>` : ""}
                               </div>
-                              <button class="small-button is-action-button" type="button" data-polite-play-line="${exchange.id}:${index}">Play line</button>
                             </article>
                           `
                         )
@@ -5305,21 +5375,6 @@ function renderPoliteWordsExplorer() {
       </div>
     </div>
   `;
-
-  focusExplorer.querySelectorAll("[data-polite-play-line]").forEach((button) => {
-    button.addEventListener("click", () => {
-      const [exchangeId, indexText] = button.dataset.politePlayLine.split(":");
-      const exchange = politePractice.find((entry) => entry.id === exchangeId);
-      const line = exchange?.lines[Number(indexText)];
-      if (!line) {
-        return;
-      }
-      if (state.tapAudioEnabled) {
-        speak(line.audio, 0.78);
-      }
-      focusStatus.textContent = `Practice saying ${line.hanzi}`;
-    });
-  });
 
   focusExplorer.querySelectorAll("[data-polite-play-all]").forEach((button) => {
     button.addEventListener("click", () => {
@@ -5401,7 +5456,6 @@ function renderIntroductionsExplorer() {
                                 ${state.showPinyin ? `<p class="telephone-line-pinyin">${line.pinyin}</p>` : ""}
                                 ${state.showEnglish ? `<p class="telephone-line-english">${line.english}</p>` : ""}
                               </div>
-                              <button class="small-button is-action-button" type="button" data-intro-play-line="${exchange.id}:${index}">Play line</button>
                             </article>
                           `
                         )
@@ -5447,21 +5501,6 @@ function renderIntroductionsExplorer() {
       </div>
     </div>
   `;
-
-  focusExplorer.querySelectorAll("[data-intro-play-line]").forEach((button) => {
-    button.addEventListener("click", () => {
-      const [exchangeId, indexText] = button.dataset.introPlayLine.split(":");
-      const exchange = introductionsPractice.find((entry) => entry.id === exchangeId);
-      const line = exchange?.lines[Number(indexText)];
-      if (!line) {
-        return;
-      }
-      if (state.tapAudioEnabled) {
-        speak(line.audio, 0.78);
-      }
-      focusStatus.textContent = `Practice saying ${line.hanzi}`;
-    });
-  });
 
   focusExplorer.querySelectorAll("[data-intro-play-all]").forEach((button) => {
     button.addEventListener("click", () => {
@@ -5533,7 +5572,6 @@ function renderAgeExplorer() {
                                 ${state.showPinyin ? `<p class="telephone-line-pinyin">${line.pinyin}</p>` : ""}
                                 ${state.showEnglish ? `<p class="telephone-line-english">${line.english}</p>` : ""}
                               </div>
-                              <button class="small-button is-action-button" type="button" data-age-play-line="${exchange.id}:${index}">Play line</button>
                             </article>
                           `
                         )
@@ -5580,21 +5618,6 @@ function renderAgeExplorer() {
     </div>
   `;
 
-  focusExplorer.querySelectorAll("[data-age-play-line]").forEach((button) => {
-    button.addEventListener("click", () => {
-      const [exchangeId, indexText] = button.dataset.agePlayLine.split(":");
-      const exchange = agePractice.find((entry) => entry.id === exchangeId);
-      const line = exchange?.lines[Number(indexText)];
-      if (!line) {
-        return;
-      }
-      if (state.tapAudioEnabled) {
-        speak(line.audio, 0.78);
-      }
-      focusStatus.textContent = `Practice saying ${line.hanzi}`;
-    });
-  });
-
   focusExplorer.querySelectorAll("[data-age-play-all]").forEach((button) => {
     button.addEventListener("click", () => {
       const exchange = agePractice.find((entry) => entry.id === button.dataset.agePlayAll);
@@ -5621,9 +5644,7 @@ function renderFamilyHomeVisual(exchange) {
   if (exchange.visual === "parents-love") {
     return `
       <div class="family-lesson-visual family-lesson-visual-love">
-        <div class="family-lesson-photo-shell">
-          <img class="family-lesson-photo" src="${exchange.imagePath}" alt="${exchange.imageAlt}" />
-        </div>
+        <img class="family-lesson-photo" src="${exchange.imagePath}" alt="${exchange.imageAlt}" />
       </div>
     `;
   }
@@ -5631,9 +5652,7 @@ function renderFamilyHomeVisual(exchange) {
   if (exchange.visual === "siblings-compare") {
     return `
       <div class="family-lesson-visual family-lesson-visual-siblings">
-        <div class="family-lesson-photo-shell">
-          <img class="family-lesson-photo" src="${exchange.imagePath}" alt="${exchange.imageAlt}" />
-        </div>
+        <img class="family-lesson-photo" src="${exchange.imagePath}" alt="${exchange.imageAlt}" />
       </div>
     `;
   }
@@ -5665,8 +5684,6 @@ function renderFamilyHomeVisual(exchange) {
         <div class="family-room-floor-line"></div>
         <div class="family-room-furniture family-room-furniture-left"></div>
         <div class="family-room-furniture family-room-furniture-right"></div>
-        <div class="family-room-frame family-room-frame-left"></div>
-        <div class="family-room-frame family-room-frame-right"></div>
         <div class="family-room-decor family-room-decor-left"></div>
         <div class="family-room-decor family-room-decor-right"></div>
       </div>
@@ -5697,7 +5714,6 @@ function renderFamilyHomeVisual(exchange) {
 }
 
 function renderFamilyExplorer() {
-  const activeItem = currentFocusItem();
   focusExplorer.innerHTML = `
     <div class="numbers-board">
       <div class="numbers-stage-card">
@@ -5705,94 +5721,45 @@ function renderFamilyExplorer() {
         <h4>Book theme: family at home</h4>
         <p>Start with 爸爸妈妈爱我, then reuse the same small word set as the child moves to 我爱爸爸, 我爱妈妈, and sibling words.</p>
       </div>
-      <div class="greetings-scene-card family-scene-card">
-        <div class="greetings-practice-grid">
-          ${familyPractice
-            .map(
-              (exchange) => `
-                <section class="greetings-exchange">
-                  <div class="greetings-exchange-top">
-                    <div>
-                      <p class="body-match-kicker">Scene ${exchange.number}</p>
-                      <p class="greetings-exchange-prompt">${exchange.prompt}</p>
-                    </div>
-                    <button class="small-button is-action-button" type="button" data-family-play-all="${exchange.id}">Play scene</button>
+      <div class="greetings-practice-grid family-scenes-grid">
+        ${familyPractice
+          .map(
+            (exchange) => `
+              <section class="greetings-exchange">
+                <div class="greetings-exchange-top">
+                  <div>
+                    <p class="body-match-kicker">Scene ${exchange.number}</p>
+                    <p class="greetings-exchange-prompt">${exchange.prompt}</p>
                   </div>
-                  <div class="greetings-scene-layout family-scene-layout">
-                    <div class="family-scene-visual">
-                      ${renderFamilyHomeVisual(exchange)}
-                    </div>
-                    <div class="greetings-line-stack">
-                      ${exchange.lines
-                        .map(
-                          (line, index) => `
-                            <article class="greetings-line-card">
-                              <div class="telephone-bubble-copy">
-                                <p class="telephone-line-hanzi">${line.hanzi}</p>
-                                ${state.showPinyin ? `<p class="telephone-line-pinyin">${line.pinyin}</p>` : ""}
-                                ${state.showEnglish ? `<p class="telephone-line-english">${line.english}</p>` : ""}
-                              </div>
-                              <button class="small-button is-action-button" type="button" data-family-play-line="${exchange.id}:${index}">Play line</button>
-                            </article>
-                          `
-                        )
-                        .join("")}
-                    </div>
+                  <button class="small-button is-action-button" type="button" data-family-play-all="${exchange.id}">Play scene</button>
+                </div>
+                <div class="greetings-scene-layout family-scene-layout">
+                  <div class="family-scene-visual">
+                    ${renderFamilyHomeVisual(exchange)}
                   </div>
-                </section>
-              `
-            )
-            .join("")}
-        </div>
-        <div class="greetings-word-strip">
-          <p class="body-match-kicker">Book words</p>
-          <div class="greetings-word-row">
-            ${focusItemsForTopic()
-              .map(
-                (item) => `
-                  <button
-                    class="telephone-digit-chip${activeItem.id === item.id ? " is-selected" : ""}"
-                    type="button"
-                    data-family-word="${item.id}"
-                  >
-                    ${item.hanzi}
-                  </button>
-                `
-              )
-              .join("")}
-          </div>
-          <div class="greetings-note-card">
-            <p class="body-match-kicker">Useful note</p>
-            <p class="greetings-note-hanzi">爸爸妈妈爱我 / 我爱爸爸 / 我爱妈妈 / 哥哥 / 弟弟 / 姐姐 / 妹妹</p>
-            <p class="greetings-note-copy">
-              Start with one warm sentence picture: <strong>爸爸妈妈爱我</strong>. Then show how <strong>我爱爸爸</strong> and <strong>我爱妈妈</strong> reuse the same words in a new order.
-            </p>
-            <p class="greetings-note-copy">
-              Present siblings in pairs: <strong>哥哥</strong> and <strong>弟弟</strong> are boys, one older and one younger. <strong>姐姐</strong> and <strong>妹妹</strong> are girls, one older and one younger.
-            </p>
-            <p class="greetings-note-copy">
-              A small memory hook helps here: <strong>姐姐</strong> and <strong>妹妹</strong> both use <strong>女</strong>, so children can group the two sister words together.
-            </p>
-          </div>
-        </div>
+                  <div class="greetings-line-stack">
+                    ${exchange.lines
+                      .map(
+                        (line, index) => `
+                          <article class="greetings-line-card">
+                            <div class="telephone-bubble-copy">
+                              <p class="telephone-line-hanzi">${line.hanzi}</p>
+                              ${state.showPinyin ? `<p class="telephone-line-pinyin">${line.pinyin}</p>` : ""}
+                              ${state.showEnglish ? `<p class="telephone-line-english">${line.english}</p>` : ""}
+                            </div>
+                          </article>
+                        `
+                      )
+                      .join("")}
+                  </div>
+                </div>
+              </section>
+            `
+          )
+          .join("")}
       </div>
     </div>
   `;
-
-  focusExplorer.querySelectorAll("[data-family-play-line]").forEach((button) => {
-    button.addEventListener("click", () => {
-      const [exchangeId, indexText] = button.dataset.familyPlayLine.split(":");
-      const exchange = familyPractice.find((entry) => entry.id === exchangeId);
-      const line = exchange?.lines[Number(indexText)];
-      if (!line) {
-        return;
-      }
-      if (state.tapAudioEnabled) {
-        speak(line.audio, 0.78);
-      }
-      focusStatus.textContent = `Practice saying ${line.hanzi}`;
-    });
-  });
 
   focusExplorer.querySelectorAll("[data-family-play-all]").forEach((button) => {
     button.addEventListener("click", () => {
@@ -5960,8 +5927,12 @@ function renderTopicDetail() {
     state.numberChallengeAdvanceTimer = null;
   }
 
-  state.selectedFocusItemId =
-    items.find((item) => item.id === state.selectedFocusItemId)?.id ?? items[0].id;
+  const selectedItem = items.find((item) => item.id === state.selectedFocusItemId);
+  if (topic.id === "family" && (!selectedItem || isFamilySentenceItemId(selectedItem.id))) {
+    state.selectedFocusItemId = familyBookWordItems()[0]?.id ?? items[0].id;
+  } else {
+    state.selectedFocusItemId = selectedItem?.id ?? items[0].id;
+  }
 
   topicTitle.textContent = topic.title;
   if (topicSummary) {
@@ -5975,6 +5946,7 @@ function renderTopicDetail() {
   focusDisplay.classList.toggle(
     "is-hidden",
     topic.id === "body" ||
+      topic.id === "family" ||
       topic.id === "numbers" ||
       topic.id === "multiplication-rhyme" ||
       (topic.id === "numbers" && currentNumberStage().telephoneMode)

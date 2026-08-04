@@ -1763,6 +1763,10 @@ h4 {
   font-weight: 700;
 }
 
+.focus-status:empty {
+  display: none;
+}
+
 .focus-display {
   margin-top: 18px;
   min-height: 132px;
@@ -1902,6 +1906,24 @@ h4 {
 
 .focus-word-list.is-hidden {
   display: none;
+}
+
+.focus-word-list.is-family-book-words {
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+}
+
+.family-book-words-heading,
+.family-book-words-note {
+  grid-column: 1 / -1;
+}
+
+.family-book-words-heading {
+  padding: 2px 2px 4px;
+}
+
+.family-book-words-heading .greetings-note-copy {
+  margin-top: 8px;
+  max-width: 66ch;
 }
 
 .focus-word-button {
@@ -2115,10 +2137,53 @@ h4 {
   border-radius: 24px;
 }
 
+.family-listen-option {
+  position: relative;
+}
+
+.family-listen-option.is-correct {
+  border-color: rgba(111, 143, 97, 0.42);
+  background: linear-gradient(180deg, #f4fbf0, #dcefd2);
+  box-shadow: 0 0 0 3px rgba(111, 143, 97, 0.14);
+}
+
+.family-listen-option.is-wrong {
+  border-color: rgba(190, 91, 73, 0.34);
+  background: linear-gradient(180deg, #fff7f4, #f7ded8);
+  box-shadow: 0 0 0 3px rgba(190, 91, 73, 0.1);
+}
+
+.answer-result-mark {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  display: grid;
+  width: 28px;
+  height: 28px;
+  place-items: center;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.family-listen-option.is-correct .answer-result-mark {
+  background: #5f8f51;
+}
+
+.family-listen-option.is-wrong .answer-result-mark {
+  background: #be5b49;
+}
+
 .practice-split-board {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   gap: 16px;
+}
+
+.family-practice-shell {
+  display: block;
 }
 
 .practice-split-card {
@@ -2185,6 +2250,7 @@ h4 {
 }
 
 .polite-match-card {
+  position: relative;
   display: grid;
   gap: 6px;
   width: 100%;
@@ -2214,6 +2280,40 @@ h4 {
   border-color: rgba(111, 143, 97, 0.32);
   background: linear-gradient(180deg, #eef7ea, #dcefd2);
   box-shadow: none;
+}
+
+.family-match-board-headings {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.family-match-solved-pairs {
+  display: grid;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.family-match-solved-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 12px;
+  align-items: stretch;
+}
+
+.family-match-pair-card {
+  cursor: default;
+}
+
+.family-match-pair-card .answer-result-mark {
+  top: 10px;
+  right: 12px;
+  background: #5f8f51;
+}
+
+.family-match-open-board {
+  margin-top: 10px;
 }
 
 .greetings-game-scene-note {
@@ -2494,10 +2594,6 @@ h4 {
   border: 1px solid rgba(221, 207, 187, 0.68);
 }
 
-.family-scene-card {
-  background: linear-gradient(180deg, #fff8f1, #f2e2d6);
-}
-
 .family-scene-layout {
   grid-template-columns: minmax(0, 1.18fr) minmax(280px, 0.95fr);
 }
@@ -2508,25 +2604,16 @@ h4 {
 
 .family-lesson-visual {
   min-height: 320px;
-  border-radius: 22px;
-  border: 1px solid rgba(221, 207, 187, 0.78);
-  background: linear-gradient(180deg, #fffef9, #f4e8d8);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9);
-  padding: 24px;
-}
-
-.family-lesson-photo-shell {
   border-radius: 18px;
   overflow: hidden;
-  border: 1px solid rgba(221, 207, 187, 0.78);
-  background: rgba(255, 255, 255, 0.72);
-  box-shadow: 0 10px 20px rgba(48, 33, 24, 0.08);
 }
 
 .family-lesson-photo {
   display: block;
   width: 100%;
-  height: auto;
+  height: 100%;
+  min-height: 320px;
+  object-fit: cover;
 }
 
 .family-lesson-visual-love {
@@ -2679,8 +2766,7 @@ h4 {
   background: radial-gradient(circle at center, rgba(229, 239, 246, 0.92), rgba(191, 206, 214, 0.72));
 }
 
-.family-room-furniture,
-.family-room-frame {
+.family-room-furniture {
   position: absolute;
 }
 
@@ -2702,24 +2788,6 @@ h4 {
   border-radius: 28px 28px 18px 18px;
   background: linear-gradient(180deg, #f4d37d, #e5bc61);
   box-shadow: inset 0 -10px 0 rgba(255, 255, 255, 0.12);
-}
-
-.family-room-frame-left,
-.family-room-frame-right {
-  top: 24px;
-  width: 62px;
-  height: 48px;
-  border-radius: 8px;
-  border: 4px solid rgba(215, 177, 136, 0.9);
-  background: linear-gradient(180deg, #f7fbff, #e5f1df);
-}
-
-.family-room-frame-left {
-  left: 24px;
-}
-
-.family-room-frame-right {
-  right: 28px;
 }
 
 .family-room-decor {
@@ -3986,7 +4054,9 @@ h4 {
   }
 
   .practice-split-board,
-  .polite-match-board {
+  .polite-match-board,
+  .family-match-board-headings,
+  .family-match-solved-row {
     grid-template-columns: 1fr;
   }
 
