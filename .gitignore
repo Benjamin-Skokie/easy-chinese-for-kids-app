@@ -1,0 +1,6 @@
+.DS_Store
+tmp/
+*.png
+assets_archive/
+books_pdf/
+generated/easy_chinese_book_sheets_6page/

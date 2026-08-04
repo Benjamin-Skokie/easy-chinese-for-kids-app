@@ -1,0 +1,113 @@
+{
+  "category": "philosophy",
+  "articles": [
+    {
+      "slug": "yin-yang",
+      "titleZh": "阴和阳——太阳与月亮的舞蹈",
+      "images": [
+        {
+          "file": "images/1-1-sun-moon-together.webp",
+          "sectionZh": "太阳和月亮",
+          "concept": "用一张图把阴阳最直观的对照先讲清楚：白天与夜晚、暖与冷、明与暗同时存在。",
+          "captionZh": "太阳和月亮像一对相反又互相需要的伙伴，帮我们理解什么是“阴”和“阳”。"
+        },
+        {
+          "file": "images/1-2-taichi-symbol.webp",
+          "sectionZh": "太极图——圆圈里的智慧",
+          "concept": "对应太极图小节，说明黑白两面彼此包含，不是完全分开的。",
+          "captionZh": "太极图里的黑白两面抱在一起，表示阴里有阳，阳里有阴。"
+        },
+        {
+          "file": "images/1-3-go-board.webp",
+          "sectionZh": "围棋——黑白世界的较量",
+          "concept": "把抽象的阴阳关系放到围棋里，让孩子看到“黑白互相牵制又互相成全”。",
+          "captionZh": "围棋的黑白棋子一来一往，很适合帮助理解阴阳怎样互相配合。"
+        },
+        {
+          "file": "images/1-4-taichi-park.webp",
+          "sectionZh": "太极拳——像水一样运动的功夫",
+          "concept": "把阴阳从符号和棋盘转到身体动作，让孩子看到“进与退、收与放”的平衡。",
+          "captionZh": "太极拳的动作慢而流动，像是在身体里练习阴阳的平衡。"
+        }
+      ]
+    },
+    {
+      "slug": "confucius",
+      "titleZh": "孔子说：己所不欲，勿施于人",
+      "images": [
+        {
+          "file": "images/2-1-confucius-teaching.webp",
+          "sectionZh": "一个老师和他的三千个学生",
+          "concept": "先建立孔子作为老师的身份和古代讲学的环境。",
+          "captionZh": "孔子常被记住的样子，就是坐在学生中间，讲怎么做人、怎么待人。"
+        },
+        {
+          "file": "images/2-2-returning-toy.webp",
+          "sectionZh": "八个字，全世界都认得",
+          "concept": "把“己所不欲，勿施于人”落到具体行为上，用归还玩具表现体谅别人。",
+          "captionZh": "把自己不喜欢的事停下来，再把东西还给别人，这就是“己所不欲，勿施于人”。"
+        },
+        {
+          "file": "images/2-3-analects-bamboo-slips.webp",
+          "sectionZh": "这本《论语》有多重要",
+          "concept": "对应《论语》的整理和传播，说明孔子的话为什么能流传两千多年。",
+          "captionZh": "孔子和学生们的谈话，后来被整理成《论语》，一代一代传了下来。"
+        }
+      ]
+    },
+    {
+      "slug": "laozi",
+      "titleZh": "老子的智慧：上善若水",
+      "images": [
+        {
+          "file": "images/3-1-laozi-ox-hangu-pass.webp",
+          "sectionZh": "函谷关前的最后一段话",
+          "concept": "对应老子骑青牛出关的传说开场，先把人物和气氛建立起来。",
+          "captionZh": "人们常把老子想成一位骑着青牛、慢慢离开人群的老人。"
+        },
+        {
+          "file": "images/3-2-water-around-stones.webp",
+          "sectionZh": "水——最柔弱也最强大的东西",
+          "concept": "直观表现“水不硬碰硬，而是顺势流过”的道理。",
+          "captionZh": "水不会跟石头硬撞，却总能找到自己的路。"
+        },
+        {
+          "file": "images/3-3-water-drop-stone.webp",
+          "sectionZh": "水——最柔弱也最强大的东西",
+          "concept": "补充“柔能克刚”和“坚持会改变坚硬的东西”。",
+          "captionZh": "一滴水看起来很轻，可是很多很多年以后，它也能把石头磨出痕迹。"
+        },
+        {
+          "file": "images/3-4-writing-dao-de-jing.webp",
+          "sectionZh": "函谷关前的最后一段话",
+          "concept": "对应写下《道德经》的瞬间，重点是安静、简朴和思考，不是文字内容本身。",
+          "captionZh": "一盏灯、一支笔、一卷书，像是在告诉我们：有些深的想法，是在很安静的时候写下来的。"
+        }
+      ]
+    },
+    {
+      "slug": "seed-dao",
+      "titleZh": "一颗种子的耐心——什么是“道”？",
+      "images": [
+        {
+          "file": "images/4-1-planting-seed.webp",
+          "sectionZh": "种地里的大学问",
+          "concept": "用“种下去以后先等待”来建立整篇文章的核心比喻。",
+          "captionZh": "一颗种子刚被放进土里时，什么都还没长出来，但变化已经开始了。"
+        },
+        {
+          "file": "images/4-2-sprout-breaks-through.webp",
+          "sectionZh": "种地里的大学问",
+          "concept": "对应等待后的发芽时刻，让孩子看到“顺着规律生长”的结果。",
+          "captionZh": "小芽自己从土里钻出来，像是在告诉我们：有些事有它自己的节奏。"
+        },
+        {
+          "file": "images/4-3-looking-up-through-bamboo.webp",
+          "sectionZh": "竹子教我们的事",
+          "concept": "对应竹子多年扎根、后来长高的段落，表现耐心和准备。",
+          "captionZh": "竹子安静地等、慢慢地扎根，等到准备好了，就会一下子长得很高。"
+        }
+      ]
+    }
+  ]
+}

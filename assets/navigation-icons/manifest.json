@@ -1,0 +1,30 @@
+{
+  "collection": "navigation-icons",
+  "style": "soft colored-pencil and watercolor category icons for the learning home navigation",
+  "items": [
+    {
+      "id": "lele-wave-icon",
+      "label": "Lele waving hello",
+      "purpose": "Top-level icon for greetings and first speaking practice",
+      "file": "lele-wave-icon.webp"
+    },
+    {
+      "id": "panda-bamboo-icon",
+      "label": "Panda holding bamboo",
+      "purpose": "Top-level icon for nature, animals, weather, and colors",
+      "file": "panda-bamboo-icon.webp"
+    },
+    {
+      "id": "teddy-robot-icon",
+      "label": "Teddy bear and robot",
+      "purpose": "Top-level icon for play, toys, and hobbies",
+      "file": "teddy-robot-icon.webp"
+    },
+    {
+      "id": "burger-fries-icon",
+      "label": "Hamburger and fries",
+      "purpose": "Top-level icon for food",
+      "file": "burger-fries-icon.webp"
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+{
+  "collection": "illustrated-months-of-year",
+  "style": "gentle educational watercolor-and-colored-pencil month scene art for young Chinese learners",
+  "months": [
+    {
+      "id": "january",
+      "label": "January",
+      "hanzi": "一月",
+      "pinyin": "yi yue",
+      "theme": "New Year countdown",
+      "file": "January.webp"
+    },
+    {
+      "id": "february",
+      "label": "February",
+      "hanzi": "二月",
+      "pinyin": "er yue",
+      "theme": "Lunar New Year",
+      "file": "February.webp"
+    },
+    {
+      "id": "march",
+      "label": "March",
+      "hanzi": "三月",
+      "pinyin": "san yue",
+      "theme": "St. Patrick's Day",
+      "file": "March.webp"
+    },
+    {
+      "id": "april",
+      "label": "April",
+      "hanzi": "四月",
+      "pinyin": "si yue",
+      "theme": "Tree budding",
+      "file": "April.webp"
+    },
+    {
+      "id": "may",
+      "label": "May",
+      "hanzi": "五月",
+      "pinyin": "wu yue",
+      "theme": "Flowers blooming",
+      "file": "May.webp"
+    },
+    {
+      "id": "june",
+      "label": "June",
+      "hanzi": "六月",
+      "pinyin": "liu yue",
+      "theme": "School starts summer vacation",
+      "file": "June.webp"
+    },
+    {
+      "id": "july",
+      "label": "July",
+      "hanzi": "七月",
+      "pinyin": "qi yue",
+      "theme": "Beach",
+      "file": "July.webp"
+    },
+    {
+      "id": "august",
+      "label": "August",
+      "hanzi": "八月",
+      "pinyin": "ba yue",
+      "theme": "Vacation",
+      "file": "August.webp"
+    },
+    {
+      "id": "september",
+      "label": "September",
+      "hanzi": "九月",
+      "pinyin": "jiu yue",
+      "theme": "Back to school",
+      "file": "September.webp"
+    },
+    {
+      "id": "october",
+      "label": "October",
+      "hanzi": "十月",
+      "pinyin": "shi yue",
+      "theme": "Red leaves",
+      "file": "October.webp"
+    },
+    {
+      "id": "november",
+      "label": "November",
+      "hanzi": "十一月",
+      "pinyin": "shi yi yue",
+      "theme": "Thanksgiving",
+      "file": "November.webp"
+    },
+    {
+      "id": "december",
+      "label": "December",
+      "hanzi": "十二月",
+      "pinyin": "shi er yue",
+      "theme": "Skiing",
+      "file": "December.webp"
+    }
+  ]
+}

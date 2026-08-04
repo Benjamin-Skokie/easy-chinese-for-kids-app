@@ -1,0 +1,185 @@
+{
+  "collection": "illustrated-grammar",
+  "style": "reused educational storybook illustrations plus a small number of contrast-focused grammar scenes for young Chinese learners",
+  "groups": [
+    {
+      "id": "you-mei-you",
+      "label": "You and mei you",
+      "hanzi": "有和没有",
+      "pinyin": "yǒu hé méi yǒu",
+      "examples": [
+        {
+          "id": "you-mei-you-contrast",
+          "hanzi": "有和没有",
+          "pinyin": "yǒu hé méi yǒu",
+          "english": "there is and there is not",
+          "file": "you-mei-you-contrast.webp"
+        },
+        {
+          "hanzi": "书包里有课本。",
+          "pinyin": "shū bāo lǐ yǒu kè běn.",
+          "english": "There is a textbook in the schoolbag.",
+          "scenePath": "assets/illustrated-rooms/positions-inside-outside.webp",
+          "sourceCollection": "illustrated-rooms",
+          "sourceItemId": "positions-inside-outside"
+        },
+        {
+          "hanzi": "书包里没有课本。",
+          "pinyin": "shū bāo lǐ méi yǒu kè běn.",
+          "english": "There is no textbook in the schoolbag.",
+          "scenePath": "assets/illustrated-grammar/you-mei-you-contrast.webp",
+          "sourceCollection": "illustrated-grammar",
+          "sourceItemId": "you-mei-you-contrast"
+        }
+      ]
+    },
+    {
+      "id": "ke-yi-bu-ke-yi",
+      "label": "Can and cannot",
+      "hanzi": "可以和不可以",
+      "pinyin": "kě yǐ hé bù kě yǐ",
+      "examples": [
+        {
+          "id": "can-watch-tv-homework-first",
+          "hanzi": "可以和不可以",
+          "pinyin": "kě yǐ hé bù kě yǐ",
+          "english": "can and cannot",
+          "file": "can-watch-tv-homework-first.webp"
+        },
+        {
+          "hanzi": "我可以看电视吗？",
+          "pinyin": "wǒ kě yǐ kàn diàn shì ma?",
+          "english": "May I watch TV?",
+          "scenePath": "assets/illustrated-grammar/can-watch-tv-homework-first.webp",
+          "sourceCollection": "illustrated-grammar",
+          "sourceItemId": "can-watch-tv-homework-first"
+        },
+        {
+          "hanzi": "没做完作业，不可以看电视。",
+          "pinyin": "méi zuò wán zuò yè, bù kě yǐ kàn diàn shì.",
+          "english": "You have not finished your homework. You may not watch TV.",
+          "scenePath": "assets/illustrated-grammar/can-watch-tv-homework-first.webp",
+          "sourceCollection": "illustrated-grammar",
+          "sourceItemId": "can-watch-tv-homework-first"
+        },
+        {
+          "hanzi": "我现在可以看电视吗？",
+          "pinyin": "wǒ xiàn zài kě yǐ kàn diàn shì ma?",
+          "english": "May I watch TV now?",
+          "scenePath": "assets/illustrated-grammar/can-watch-tv-homework-first.webp",
+          "sourceCollection": "illustrated-grammar",
+          "sourceItemId": "can-watch-tv-homework-first"
+        },
+        {
+          "hanzi": "可以。",
+          "pinyin": "kě yǐ.",
+          "english": "Yes, you may.",
+          "scenePath": "assets/illustrated-grammar/can-watch-tv-homework-first.webp",
+          "sourceCollection": "illustrated-grammar",
+          "sourceItemId": "can-watch-tv-homework-first"
+        }
+      ]
+    },
+    {
+      "id": "shi-bu-shi",
+      "label": "Is and is not",
+      "hanzi": "是和不是",
+      "pinyin": "shì hé bú shì",
+      "examples": [
+        {
+          "id": "shi-bu-shi-meimei-package",
+          "hanzi": "是和不是",
+          "pinyin": "shì hé bú shì",
+          "english": "is and is not",
+          "file": "shi-bu-shi-meimei-package.webp"
+        },
+        {
+          "hanzi": "这是一个包裹。",
+          "pinyin": "zhè shì yí ge bāo guǒ.",
+          "english": "This is a package.",
+          "scenePath": "assets/illustrated-grammar/shi-bu-shi-meimei-package.webp",
+          "sourceCollection": "illustrated-grammar",
+          "sourceItemId": "shi-bu-shi-meimei-package"
+        },
+        {
+          "hanzi": "这不是包裹。这是美美。",
+          "pinyin": "zhè bú shì bāo guǒ. zhè shì měi mei.",
+          "english": "This is not a package. This is Meimei.",
+          "scenePath": "assets/illustrated-grammar/shi-bu-shi-meimei-package.webp",
+          "sourceCollection": "illustrated-grammar",
+          "sourceItemId": "shi-bu-shi-meimei-package"
+        }
+      ]
+    },
+    {
+      "id": "zai-bu-zai",
+      "label": "At or not at",
+      "hanzi": "在和不在",
+      "pinyin": "zài hé bú zài",
+      "examples": [
+        {
+          "id": "zai-bu-zai-under-table-contrast",
+          "hanzi": "在和不在",
+          "pinyin": "zài hé bú zài",
+          "english": "at and not at",
+          "file": "zai-bu-zai-under-table-contrast.webp"
+        },
+        {
+          "hanzi": "书包在桌子下面。",
+          "pinyin": "shū bāo zài zhuō zi xià miàn.",
+          "english": "The schoolbag is under the table.",
+          "scenePath": "assets/illustrated-rooms/positions-up-down.webp",
+          "sourceCollection": "illustrated-rooms",
+          "sourceItemId": "positions-up-down"
+        },
+        {
+          "hanzi": "书包不在桌子下面。",
+          "pinyin": "shū bāo bú zài zhuō zi xià miàn.",
+          "english": "The schoolbag is not under the table.",
+          "scenePath": "assets/illustrated-grammar/zai-bu-zai-under-table-contrast.webp",
+          "sourceCollection": "illustrated-grammar",
+          "sourceItemId": "zai-bu-zai-under-table-contrast"
+        },
+        {
+          "hanzi": "我在跑步。",
+          "pinyin": "wǒ zài pǎo bù.",
+          "english": "I am running.",
+          "scenePath": "assets/illustrated-actions-basic/run.webp",
+          "sourceCollection": "illustrated-actions-basic",
+          "sourceItemId": "run"
+        },
+        {
+          "hanzi": "她在跳舞。",
+          "pinyin": "tā zài tiào wǔ.",
+          "english": "She is dancing.",
+          "scenePath": "assets/illustrated-activities/luna_dancing.webp",
+          "sourceCollection": "illustrated-activities",
+          "sourceItemId": "luna-dancing"
+        },
+        {
+          "hanzi": "她在看书。",
+          "pinyin": "tā zài kàn shū.",
+          "english": "She is reading.",
+          "scenePath": "assets/illustrated-activities/grandma_reading_armchair.webp",
+          "sourceCollection": "illustrated-activities",
+          "sourceItemId": "grandma-reading"
+        }
+      ]
+    },
+    {
+      "id": "qing-ke-yi-request",
+      "label": "Please and may I request",
+      "hanzi": "请和可以吗",
+      "pinyin": "qing he ke yi ma",
+      "examples": [
+        {
+          "id": "school-request-teacher-help",
+          "hanzi": "我可以问老师吗？",
+          "pinyin": "wo ke yi wen lao shi ma?",
+          "english": "May I ask the teacher?",
+          "file": "school-request-teacher-help.webp"
+        }
+      ]
+    }
+  ]
+}

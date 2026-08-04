@@ -1,0 +1,49 @@
+{
+  "collection": "introductions",
+  "style": "gentle educational storybook introduction scenes for young Chinese learners",
+  "items": [
+    {
+      "id": "introductions-scene-1",
+      "label": "Introduction scene 1",
+      "hanzi": "介绍",
+      "pinyin": "jie shao",
+      "theme": "Existing introduction practice scene",
+      "file": "introductions-scene-1.webp"
+    },
+    {
+      "id": "introductions-scene-2",
+      "label": "Introduction scene 2",
+      "hanzi": "介绍",
+      "pinyin": "jie shao",
+      "theme": "Existing introduction practice scene",
+      "file": "introductions-scene-2.webp"
+    },
+    {
+      "id": "introductions-scene-3",
+      "label": "Introduction scene 3",
+      "hanzi": "介绍",
+      "pinyin": "jie shao",
+      "theme": "Existing introduction practice scene",
+      "file": "introductions-scene-3.webp"
+    },
+    {
+      "id": "introductions-scene-4",
+      "label": "Introduction scene 4",
+      "hanzi": "介绍",
+      "pinyin": "jie shao",
+      "theme": "Existing introduction practice scene",
+      "file": "introductions-scene-4.webp"
+    },
+    {
+      "id": "good-friends-scene",
+      "label": "Good friends scene",
+      "hanzi": "好朋友",
+      "pinyin": "hao peng you",
+      "theme": "Luna introduces Noah as a good friend to Sisi in a classroom",
+      "lessonHints": [
+        "2A Lesson 3 Good friends"
+      ],
+      "file": "good-friends-scene.webp"
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "collection": "illustrated-weather",
+  "style": "gentle educational storybook weather scenes for young Chinese learners",
+  "items": [
+    {
+      "id": "sunny-hot",
+      "label": "Sunny day",
+      "hanzi": "晴天",
+      "pinyin": "qíng tiān",
+      "reactionHanzi": "很热",
+      "reactionPinyin": "hěn rè",
+      "reactionEnglish": "very hot",
+      "file": "sunny-hot.webp"
+    },
+    {
+      "id": "rainy-umbrella",
+      "label": "It is raining",
+      "hanzi": "下雨",
+      "pinyin": "xià yǔ",
+      "reactionHanzi": "打伞",
+      "reactionPinyin": "dǎ sǎn",
+      "reactionEnglish": "use an umbrella",
+      "file": "rainy-umbrella.webp"
+    },
+    {
+      "id": "snowy-cold",
+      "label": "It is snowing",
+      "hanzi": "下雪",
+      "pinyin": "xià xuě",
+      "reactionHanzi": "很冷",
+      "reactionPinyin": "hěn lěng",
+      "reactionEnglish": "very cold",
+      "file": "snowy-cold.webp"
+    },
+    {
+      "id": "windy-leaves",
+      "label": "Windy day",
+      "hanzi": "刮大风",
+      "pinyin": "guā dà fēng",
+      "reactionHanzi": "树叶被风吹起来",
+      "reactionPinyin": "shù yè bèi fēng chuī qǐ lái",
+      "reactionEnglish": "the leaves are blowing in the wind",
+      "file": "windy-leaves.webp"
+    }
+  ]
+}

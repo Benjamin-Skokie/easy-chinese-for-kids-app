@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>No Stress Learning Chinese</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <nav class="learning-culture-nav" id="learningCultureNav" aria-label="Topic categories"></nav>
+    <details class="global-view-menu">
+      <summary class="global-view-trigger" aria-label="Open learning area menu">
+        <span class="global-view-icon" aria-hidden="true"></span>
+      </summary>
+      <nav class="global-view-panel" aria-label="Learning areas">
+        <a class="global-view-item is-active" href="#topics-panel" data-global-view="topics">
+          <span class="global-view-zh">主题</span>
+          <span class="global-view-en">Learn by Topic</span>
+        </a>
+        <a class="global-view-item" href="#books-panel" data-global-view="books">
+          <span class="global-view-zh">课本</span>
+          <span class="global-view-en">Learn by Books</span>
+        </a>
+        <a class="global-view-item" href="culture/index.html">
+          <span class="global-view-zh">文化</span>
+          <span class="global-view-en">Culture</span>
+        </a>
+      </nav>
+    </details>
+
+    <div class="site-shell">
+      <header class="library-hero">
+        <h1>今天学点什么？</h1>
+        <h2>What shall we learn today?</h2>
+        <p class="library-hero-subtitle">Use topics for everyday practice. Use books for homework review. Open culture stories when you want a picture-book reading break.</p>
+        <div class="library-hero-routes" aria-label="Learning paths">
+          <a class="library-hero-route is-active" href="#topics-panel" data-global-view="topics">
+            <span class="library-route-symbol">图</span>
+            <span class="library-route-copy">
+              <span class="library-route-zh">按主题学</span>
+              <span class="library-route-en">Learn by Topic</span>
+            </span>
+          </a>
+          <a class="library-hero-route" href="#books-panel" data-global-view="books">
+            <span class="library-route-symbol">书</span>
+            <span class="library-route-copy">
+              <span class="library-route-zh">按课本找</span>
+              <span class="library-route-en">Learn by Books</span>
+            </span>
+          </a>
+          <a class="library-hero-route" href="culture/index.html">
+            <span class="library-route-symbol">文</span>
+            <span class="library-route-copy">
+              <span class="library-route-zh">文化故事</span>
+              <span class="library-route-en">Culture</span>
+            </span>
+          </a>
+        </div>
+      </header>
+
+      <main class="main-layout">
+        <section class="switcher-panel">
+          <section
+            id="topics-panel"
+            class="view-panel"
+            aria-label="Learn by topic"
+          >
+            <div id="topic-groups" class="browser-groups"></div>
+          </section>
+
+          <section
+            id="books-panel"
+            class="view-panel is-hidden"
+            aria-label="Learn by books"
+          >
+            <div class="section-heading">
+              <p class="section-kicker">Books to Lessons</p>
+              <h2>按课本找练习</h2>
+              <p>
+                Use this path for homework and review. Pick a stage first, then
+                choose a book and the matching lesson.
+              </p>
+            </div>
+            <div class="lookup-shell is-hidden" aria-hidden="true">
+              <label class="lookup-field">
+                <span>Book</span>
+                <select id="book-select"></select>
+              </label>
+              <label class="lookup-field">
+                <span>Lesson</span>
+                <select id="lesson-select"></select>
+              </label>
+            </div>
+            <div id="book-browser" class="book-browser"></div>
+            <div id="lookup-card" class="lookup-card"></div>
+          </section>
+        </section>
+
+        <section id="topic-detail" class="detail-layout is-hidden">
+          <article class="detail-panel topic-detail">
+            <div class="detail-heading">
+              <p class="section-kicker">Current topic</p>
+              <h2 id="topic-title">Numbers</h2>
+            </div>
+
+            <div id="topic-lesson-strip" class="topic-lesson-strip"></div>
+
+            <div id="subtopic-shelf" class="subtopic-shelf"></div>
+
+            <div class="focus-card">
+              <div class="sub-panel-heading">
+                <h3>Review</h3>
+                <p>Tap a word to hear it and explore the picture.</p>
+              </div>
+              <div class="focus-controls">
+                <button id="toggle-audio-button" class="small-button is-toggle-active" type="button">
+                  Tap sound on
+                </button>
+                <button id="toggle-pinyin-button" class="small-button is-toggle-active" type="button">
+                  Pinyin on
+                </button>
+                <button id="toggle-arabic-button" class="small-button is-toggle-active" type="button">
+                  Numbers on
+                </button>
+                <button id="toggle-english-button" class="small-button is-toggle-active" type="button">
+                  English on
+                </button>
+              </div>
+              <div id="focus-explorer" class="focus-explorer"></div>
+              <div id="focus-status" class="focus-status"></div>
+              <div id="focus-display" class="focus-display">
+                <p id="focus-hanzi" class="focus-hanzi"></p>
+                <p id="focus-pinyin" class="focus-pinyin"></p>
+                <p id="focus-english" class="focus-english"></p>
+              </div>
+              <div id="focus-word-list" class="focus-word-list"></div>
+            </div>
+
+            <div class="topic-columns">
+              <section class="sub-panel">
+                <div class="sub-panel-heading">
+                  <h3 id="activity-panel-title"></h3>
+                  <p id="activity-panel-summary"></p>
+                </div>
+                <div id="activity-list" class="pill-list"></div>
+              </section>
+            </div>
+          </article>
+        </section>
+      </main>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,69 @@
+{
+  "collection": "illustrated-dates",
+  "style": "clean educational calendar boards for young Chinese learners",
+  "items": [
+    {
+      "id": "calendar-example-dates-board",
+      "label": "Calendar example dates board",
+      "hanzi": "几月几号",
+      "pinyin": "ji yue ji hao",
+      "theme": "A reusable calendar board that teaches month plus day expressions with three example dates",
+      "focus": [
+        "1月1号",
+        "5月20号",
+        "12月25号"
+      ],
+      "file": "calendar-example-dates-board.webp"
+    },
+    {
+      "id": "january-first-new-year-calendar",
+      "label": "January first New Year calendar",
+      "hanzi": "一月一号",
+      "pinyin": "yi yue yi hao",
+      "theme": "A January calendar card with January 1 marked and a New Year event icon beside it",
+      "focus": [
+        "一月",
+        "一号",
+        "新年"
+      ],
+      "file": "january-first-new-year-calendar.webp"
+    },
+    {
+      "id": "may-twentieth-field-trip-calendar",
+      "label": "May twentieth field trip calendar",
+      "hanzi": "五月二十号",
+      "pinyin": "wu yue er shi hao",
+      "theme": "A May calendar card with May 20 marked and a school field trip event icon beside it",
+      "focus": [
+        "五月",
+        "二十号",
+        "郊游"
+      ],
+      "file": "may-twentieth-field-trip-calendar.webp"
+    },
+    {
+      "id": "december-twenty-fifth-christmas-calendar",
+      "label": "December twenty-fifth Christmas calendar",
+      "hanzi": "十二月二十五号",
+      "pinyin": "shi er yue er shi wu hao",
+      "theme": "A December calendar card with December 25 marked and a Christmas event icon beside it",
+      "focus": [
+        "十二月",
+        "二十五号",
+        "圣诞节"
+      ],
+      "file": "december-twenty-fifth-christmas-calendar.webp"
+    },
+    {
+      "id": "birthday-party-scene",
+      "label": "Birthday party scene",
+      "hanzi": "生日快乐",
+      "pinyin": "sheng ri kuai le",
+      "theme": "A child celebrates a birthday with friends, cake, and a small gift",
+      "lessonHints": [
+        "3A Lesson 3 Happy birthday!"
+      ],
+      "file": "birthday-party-scene.webp"
+    }
+  ]
+}

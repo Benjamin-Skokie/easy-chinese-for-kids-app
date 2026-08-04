@@ -1,0 +1,76 @@
+{
+  "collection": "illustrated-everyday-life",
+  "style": "gentle educational watercolor-and-colored-pencil everyday life object art for young Chinese learners",
+  "items": [
+    {
+      "id": "toothbrush",
+      "label": "Toothbrush",
+      "hanzi": "牙刷",
+      "pinyin": "ya shua",
+      "file": "toothbrush.webp"
+    },
+    {
+      "id": "comb",
+      "label": "Comb",
+      "hanzi": "梳子",
+      "pinyin": "shu zi",
+      "file": "comb.webp"
+    },
+    {
+      "id": "skirt",
+      "label": "Skirt",
+      "hanzi": "裙子",
+      "pinyin": "qun zi",
+      "file": "skirt.webp"
+    },
+    {
+      "id": "shoes",
+      "label": "Shoes",
+      "hanzi": "鞋子",
+      "pinyin": "xie zi",
+      "file": "shoes.webp"
+    },
+    {
+      "id": "hat",
+      "label": "Hat",
+      "hanzi": "帽子",
+      "pinyin": "mao zi",
+      "file": "hat.webp"
+    },
+    {
+      "id": "clothes",
+      "label": "T-shirt",
+      "hanzi": "T恤",
+      "pinyin": "T xu",
+      "file": "clothes.webp"
+    },
+    {
+      "id": "jacket",
+      "label": "Jacket",
+      "hanzi": "外套",
+      "pinyin": "wai tao",
+      "file": "jacket.webp"
+    },
+    {
+      "id": "pants",
+      "label": "Pants",
+      "hanzi": "裤子",
+      "pinyin": "ku zi",
+      "file": "pants.webp"
+    },
+    {
+      "id": "gloves",
+      "label": "Gloves",
+      "hanzi": "手套",
+      "pinyin": "shou tao",
+      "file": "gloves.webp"
+    },
+    {
+      "id": "school-uniform",
+      "label": "School uniform",
+      "hanzi": "校服",
+      "pinyin": "xiao fu",
+      "file": "school-uniform.webp"
+    }
+  ]
+}

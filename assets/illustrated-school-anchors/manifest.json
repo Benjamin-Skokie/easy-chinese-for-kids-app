@@ -1,0 +1,86 @@
+{
+  "collection": "illustrated-school-anchors",
+  "style": "recurring school environment anchors for a gentle educational storybook Chinese learning app",
+  "items": [
+    {
+      "id": "school-exterior-anchor",
+      "label": "School exterior anchor",
+      "hanzi": "学校外景",
+      "pinyin": "xué xiào wài jǐng",
+      "theme": "Recurring red-brick elementary school exterior with driveway drop-off",
+      "file": "school_exterior_anchor.webp"
+    },
+    {
+      "id": "classroom-anchor",
+      "label": "Classroom anchor",
+      "hanzi": "教室",
+      "pinyin": "jiào shì",
+      "theme": "Recurring general classroom interior for the school",
+      "file": "classroom_anchor.webp"
+    },
+    {
+      "id": "hallway-anchor",
+      "label": "Hallway anchor",
+      "hanzi": "走廊",
+      "pinyin": "zǒu láng",
+      "theme": "Recurring school hallway with classroom doors and boys and girls restrooms",
+      "file": "hallway_anchor.webp"
+    },
+    {
+      "id": "music-classroom-anchor",
+      "label": "Music classroom anchor",
+      "hanzi": "音乐教室",
+      "pinyin": "yīn yuè jiào shì",
+      "theme": "Recurring music classroom interior for the school",
+      "file": "music_classroom_anchor.webp"
+    },
+    {
+      "id": "cafeteria-anchor",
+      "label": "Cafeteria anchor",
+      "hanzi": "食堂",
+      "pinyin": "shí táng",
+      "theme": "Recurring school cafeteria interior for the same campus",
+      "file": "cafeteria_anchor.webp"
+    },
+    {
+      "id": "gym-anchor",
+      "label": "Gym anchor",
+      "hanzi": "体育馆",
+      "pinyin": "tǐ yù guǎn",
+      "theme": "Recurring school gym interior for the same campus",
+      "file": "gym_anchor.webp"
+    },
+    {
+      "id": "library-anchor",
+      "label": "Library anchor",
+      "hanzi": "图书馆",
+      "pinyin": "tú shū guǎn",
+      "theme": "Recurring school library interior for the same campus",
+      "file": "library_anchor.webp"
+    },
+    {
+      "id": "playground-anchor",
+      "label": "Playground anchor",
+      "hanzi": "操场",
+      "pinyin": "cāo chǎng",
+      "theme": "Recurring school playground related to the same campus",
+      "file": "playground_anchor.webp"
+    },
+    {
+      "id": "auditorium-anchor",
+      "label": "Auditorium anchor",
+      "hanzi": "礼堂",
+      "pinyin": "lǐ táng",
+      "theme": "Recurring school auditorium or assembly hall interior for the same campus",
+      "file": "auditorium_anchor.webp"
+    },
+    {
+      "id": "piano-anchor",
+      "label": "Piano anchor",
+      "hanzi": "钢琴",
+      "pinyin": "gāng qín",
+      "theme": "School piano shown in a recurring music-room context",
+      "file": "piano_anchor.webp"
+    }
+  ]
+}

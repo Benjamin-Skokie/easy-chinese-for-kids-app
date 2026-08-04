@@ -1,0 +1,44 @@
+{
+  "articles": [
+    {
+      "id": "food-dumplings",
+      "slug": "food-dumplings",
+      "categoryZh": "饮食",
+      "categoryEn": "Food",
+      "titleZh": "饺子里藏着什么惊喜？",
+      "titleEn": "Dumplings: A Folded Little Packet of Luck",
+      "deckZh": "饺子不只是食物，它还会带来好运、团圆和冬天里热腾腾的故事。",
+      "deckEn": "Dumplings carry more than filling. They carry luck, family time, and warm winter memory.",
+      "difficulty": "简单",
+      "source": {
+        "zh": "culture/content/food/dumplings/zh.md",
+        "en": "culture/content/food/dumplings/en.md"
+      },
+      "summary": {
+        "zh": "饺子里可以藏硬币，过年和冬至时常常会上桌。更重要的是，一家人常常要围在一起擀皮、拌馅、包饺子，所以饺子也是一种团圆的动作。",
+        "en": "A dumpling can hide a lucky coin, appear at New Year or winter meals, and gather a whole family around the table to make it together."
+      },
+      "images": [
+        {
+          "slot": "hero",
+          "src": "./images/dumplings.webp",
+          "alt": "A plate of Chinese dumplings arranged in a warm storybook-style illustration.",
+          "captionZh": "一盘热腾腾的饺子，看起来像一个个小元宝。",
+          "captionEn": "A warm plate of dumplings that look a little like tiny ingots.",
+          "targetSizeKb": 120,
+          "brief": "主视觉。聚焦一盘刚出锅的饺子，暖色调、近景、让孩子一眼看懂“这是今天的主角”。"
+        },
+        {
+          "slot": "gallery",
+          "src": "./images/family-making-dumplings.webp",
+          "placementAfterSection": 2,
+          "alt": "A family making dumplings together at the table before a New Year meal.",
+          "captionZh": "包饺子的过程本身，就是全家一起做事、一起说笑的时间。",
+          "captionEn": "Making dumplings together turns dinner into family time.",
+          "targetSizeKb": 120,
+          "brief": "家庭场景。多代同堂或亲子一起包饺子，重点是协作和团圆，不是节日装饰堆砌。"
+        }
+      ]
+    }
+  ]
+}

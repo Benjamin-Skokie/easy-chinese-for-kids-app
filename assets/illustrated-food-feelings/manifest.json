@@ -1,0 +1,57 @@
+{
+  "collection": "illustrated-food-feelings",
+  "style": "gentle educational storybook food-feeling scenes for young Chinese learners",
+  "character": {
+    "description": "Black girl with curly hair in puff buns, turquoise shirt, purple skirt"
+  },
+  "items": [
+    {
+      "id": "hungry",
+      "label": "I am hungry",
+      "hanzi": "饿了",
+      "pinyin": "è le",
+      "english": "hungry",
+      "file": "hungry.webp"
+    },
+    {
+      "id": "thirsty",
+      "label": "I am thirsty",
+      "hanzi": "渴了",
+      "pinyin": "kě le",
+      "english": "thirsty",
+      "file": "thirsty.webp"
+    },
+    {
+      "id": "full",
+      "label": "I am full",
+      "hanzi": "饱了",
+      "pinyin": "bǎo le",
+      "english": "full",
+      "file": "full.webp"
+    },
+    {
+      "id": "delicious",
+      "label": "Delicious",
+      "hanzi": "好吃",
+      "pinyin": "hǎo chī",
+      "english": "delicious",
+      "file": "delicious.webp"
+    },
+    {
+      "id": "like-pizza",
+      "label": "Like to eat pizza",
+      "hanzi": "喜欢吃披萨",
+      "pinyin": "xǐ huan chī pī sà",
+      "english": "like to eat pizza",
+      "file": "like-pizza.webp"
+    },
+    {
+      "id": "dislike-broccoli",
+      "label": "Do not like to eat broccoli",
+      "hanzi": "不喜欢吃西兰花",
+      "pinyin": "bù xǐ huan chī xī lán huā",
+      "english": "do not like to eat broccoli",
+      "file": "dislike-broccoli.webp"
+    }
+  ]
+}

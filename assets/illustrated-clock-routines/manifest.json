@@ -1,0 +1,94 @@
+{
+  "collection": "illustrated-clock-routines",
+  "style": "gentle educational storybook clock-and-routine scene art for young Chinese learners",
+  "times": [
+    {
+      "id": "07am-lele-wake-up",
+      "label": "7:00 AM",
+      "hanzi": "七点",
+      "pinyin": "qi dian",
+      "theme": "Lele wakes up",
+      "file": "07am-lele-wake-up.webp"
+    },
+    {
+      "id": "0715am-lele-having-breakfast",
+      "label": "7:15 AM",
+      "hanzi": "七点一刻",
+      "pinyin": "qi dian yi ke",
+      "theme": "Lele is having breakfast",
+      "file": "0715am-lele-having-breakfast.webp"
+    },
+    {
+      "id": "08am-go-to-school",
+      "label": "8:00 AM",
+      "hanzi": "八点",
+      "pinyin": "ba dian",
+      "theme": "Go to school",
+      "file": "08am-go-to-school.webp"
+    },
+    {
+      "id": "10am-writing-class",
+      "label": "10:00 AM",
+      "hanzi": "十点",
+      "pinyin": "shi dian",
+      "theme": "Writing class",
+      "file": "10am-writing-class.webp"
+    },
+    {
+      "id": "12pm-lunch-time",
+      "label": "12:00 PM",
+      "hanzi": "十二点",
+      "pinyin": "shi er dian",
+      "theme": "Lunch time",
+      "file": "12pm-lunch-time.webp"
+    },
+    {
+      "id": "0230pm-school-dismissal",
+      "label": "2:30 PM",
+      "hanzi": "两点半",
+      "pinyin": "liang dian ban",
+      "theme": "School dismissal",
+      "file": "0230pm-school-dismissal.webp"
+    },
+    {
+      "id": "04pm-playground",
+      "label": "4:00 PM",
+      "hanzi": "四点",
+      "pinyin": "si dian",
+      "theme": "School playground",
+      "file": "04pm-playground.webp"
+    },
+    {
+      "id": "06pm-family-dinner",
+      "label": "6:00 PM",
+      "hanzi": "六点",
+      "pinyin": "liu dian",
+      "theme": "Family dinner",
+      "file": "06pm-family-dinner.webp"
+    },
+    {
+      "id": "07pm-tv-time",
+      "label": "7:00 PM",
+      "hanzi": "七点",
+      "pinyin": "qi dian",
+      "theme": "TV time",
+      "file": "07pm-tv-time.webp"
+    },
+    {
+      "id": "08pm-story-time",
+      "label": "8:00 PM",
+      "hanzi": "八点",
+      "pinyin": "ba dian",
+      "theme": "Story time",
+      "file": "08pm-story-time.webp"
+    },
+    {
+      "id": "09pm-bedtime",
+      "label": "9:00 PM",
+      "hanzi": "九点",
+      "pinyin": "jiu dian",
+      "theme": "Bedtime",
+      "file": "09pm-bedtime.webp"
+    }
+  ]
+}

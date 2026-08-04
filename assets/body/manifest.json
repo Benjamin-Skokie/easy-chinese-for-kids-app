@@ -1,0 +1,34 @@
+{
+  "collection": "body",
+  "style": "clean educational body-part visuals for young Chinese learners",
+  "items": [
+    {
+      "id": "body-topic-kid",
+      "label": "Body topic kid",
+      "hanzi": "身体",
+      "pinyin": "shen ti",
+      "theme": "Full-body child anchor for body lessons",
+      "file": "body-topic-kid.webp"
+    },
+    {
+      "id": "body-topic-kid-largehead",
+      "label": "Body topic kid large head",
+      "hanzi": "头和脸",
+      "pinyin": "tou he lian",
+      "theme": "Large-head child anchor for face and head body-part lessons",
+      "file": "body-topic-kid-largehead.webp"
+    },
+    {
+      "id": "body-parts-breakdown-board",
+      "label": "Body parts breakdown board",
+      "hanzi": "身体部位",
+      "pinyin": "shen ti bu wei",
+      "theme": "A no-text body-parts board with visual callouts for head, face, hands, arms, legs, feet, and stomach",
+      "lessonHints": [
+        "1B Lesson 3 Parts of the body (1)",
+        "1B Lesson 4 Parts of the body (2)"
+      ],
+      "file": "body-parts-breakdown-board.webp"
+    }
+  ]
+}

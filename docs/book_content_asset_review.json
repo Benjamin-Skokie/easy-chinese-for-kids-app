@@ -1,0 +1,2202 @@
+{
+  "lastUpdated": "2026-08-03",
+  "purpose": "Book-first review view of the category/topic/content/assets mapping, intended for manual textbook comparison.",
+  "sourceData": "docs/category_topic_content_asset_mapping.json",
+  "sourcePolicy": {
+    "curriculumAlignmentOnly": true,
+    "doNotCopyTextbookArt": true,
+    "doNotReuseTextbookCharactersDirectly": true,
+    "useToneMarkPinyinInProductCopy": true,
+    "pageReviewBeforeFinalCopy": true
+  },
+  "books": [
+    {
+      "book": "1A",
+      "lessons": [
+        {
+          "ref": "1A-1",
+          "book": "1A",
+          "lesson": 1,
+          "title": "Numbers (1)",
+          "progression": "1-5",
+          "coreVocabulary": [
+            "一",
+            "二",
+            "三",
+            "四",
+            "五"
+          ],
+          "corePatterns": [
+            "counting objects"
+          ],
+          "coverage": "strong",
+          "existingAssets": [
+            "assets/illustrated-counting/ten-yellow-ducks.webp",
+            "assets/illustrated-measure-words/one-pencil.webp",
+            "assets/illustrated-measure-words/three-ducks.webp"
+          ],
+          "missingAssets": [],
+          "source": {
+            "curriculumReference": "docs/curriculum_reference.json",
+            "coverageMap": "docs/ocr/book_asset_coverage_map.json",
+            "ocrText": "docs/ocr/轻松学中文少儿版1a.txt",
+            "contactSheets": "generated/easy_chinese_book_sheets_6page/轻松学中文少儿版1a"
+          },
+          "verification": "ocr-backed; page-level review recommended before final product copy",
+          "topic": "Numbers",
+          "topicId": "numbers",
+          "category": "开口说中文 / Start Speaking",
+          "categoryId": "start-speaking",
+          "pagePattern": "progression-practice"
+        },
+        {
+          "ref": "1A-2",
+          "book": "1A",
+          "lesson": 2,
+          "title": "Numbers (2)",
+          "progression": "6-10",
+          "coreVocabulary": [
+            "六",
+            "七",
+            "八",
+            "九",
+            "十"
+          ],
+          "corePatterns": [
+            "counting objects"
+          ],
+          "coverage": "strong",
+          "existingAssets": [
+            "assets/illustrated-counting/ten-yellow-ducks.webp"
+          ],
+          "missingAssets": [],
+          "source": {
+            "curriculumReference": "docs/curriculum_reference.json",
+            "coverageMap": "docs/ocr/book_asset_coverage_map.json",
+            "ocrText": "docs/ocr/轻松学中文少儿版1a.txt",
+            "contactSheets": "generated/easy_chinese_book_sheets_6page/轻松学中文少儿版1a"
+          },
+          "verification": "ocr-backed; page-level review recommended before final product copy",
+          "topic": "Numbers",
+          "topicId": "numbers",
+          "category": "开口说中文 / Start Speaking",
+          "categoryId": "start-speaking",
+          "pagePattern": "progression-practice"
+        },
+        {
+          "ref": "1A-3",
+          "book": "1A",
+          "lesson": 3,
+          "title": "Numbers (3)",
+          "progression": "11-20",
+          "coreVocabulary": [
+            "一",
+            "二",
+            "三",
+            "四",
+            "五",
+            "六",
+            "七",
+            "八",
+            "九",
+            "十"
+          ],
+          "corePatterns": [
+            "counting objects"
+          ],
+          "coverage": "strong",
+          "existingAssets": [
+            "assets/illustrated-counting/eleven-to-twenty-counting-board.webp",
+            "assets/illustrated-counting/ten-yellow-ducks.webp"
+          ],
+          "missingAssets": [],
+          "source": {
+            "curriculumReference": "docs/curriculum_reference.json",
+            "coverageMap": "docs/ocr/book_asset_coverage_map.json",
+            "ocrText": "docs/ocr/轻松学中文少儿版1a.txt",
+            "contactSheets": "generated/easy_chinese_book_sheets_6page/轻松学中文少儿版1a"
+          },
+          "verification": "ocr-backed; page-level review recommended before final product copy",
+          "topic": "Numbers",
+          "topicId": "numbers",
+          "category": "开口说中文 / Start Speaking",
+          "categoryId": "start-speaking",
+          "pagePattern": "progression-practice"
+        },
+        {
+          "ref": "1A-4",
+          "book": "1A",
+          "lesson": 4,
+          "title": "Hello!",
+          "progression": null,
+          "coreVocabulary": [
+            "你好",
+            "您好",
+            "再见"
+          ],
+          "corePatterns": [
+            "greeting at school"
+          ],
+          "coverage": "strong",
+          "existingAssets": [
+            "assets/greetings"
+          ],
+          "missingAssets": [],
+          "source": {
+            "curriculumReference": "docs/curriculum_reference.json",
+            "coverageMap": "docs/ocr/book_asset_coverage_map.json",
+            "ocrText": "docs/ocr/轻松学中文少儿版1a.txt",
+            "contactSheets": "generated/easy_chinese_book_sheets_6page/轻松学中文少儿版1a"
+          },
+          "verification": "ocr-backed; page-level review recommended before final product copy",
+          "topic": "Greetings",
+          "topicId": "greetings",
+          "category": "开口说中文 / Start Speaking",
+          "categoryId": "start-speaking",
+          "pagePattern": "audio-dialogue"
+        },
+        {
+          "ref": "1A-5",
+          "book": "1A",
+          "lesson": 5,
+          "title": "Thank you!",
+          "progression": null,
+          "coreVocabulary": [
+            "谢谢",
+            "不客气",
+            "对不起"
+          ],
+          "corePatterns": [
+            "polite classroom exchanges"
+          ],
+          "coverage": "strong",
+          "existingAssets": [
+            "assets/polite"
+          ],
+          "missingAssets": [],
+          "source": {
+            "curriculumReference": "docs/curriculum_reference.json",
+            "coverageMap": "docs/ocr/book_asset_coverage_map.json",
+            "ocrText": "docs/ocr/轻松学中文少儿版1a.txt",
+            "contactSheets": "generated/easy_chinese_book_sheets_6page/轻松学中文少儿版1a"
+          },
+          "verification": "ocr-backed; page-level review recommended before final product copy",
+          "topic": "Polite Words",
+          "topicId": "polite-words",
+          "category": "开口说中文 / Start Speaking",
+          "categoryId": "start-speaking",
+          "pagePattern": "scenario-choice"
+        },
+        {
+          "ref": "1A-6",
+          "book": "1A",
+          "lesson": 6,
+          "title": "What's your name?",
+          "progression": null,
+          "coreVocabulary": [
+            "名字"
+          ],
+          "corePatterns": [
+            "你叫什么名字",
+            "我叫..."
+          ],
+          "coverage": "strong",
+          "existingAssets": [
+            "assets/introductions"
+          ],
+          "missingAssets": [],
+          "source": {
+            "curriculumReference": "docs/curriculum_reference.json",
+            "coverageMap": "docs/ocr/book_asset_coverage_map.json",
+            "ocrText": "docs/ocr/轻松学中文少儿版1a.txt",
+            "contactSheets": "generated/easy_chinese_book_sheets_6page/轻松学中文少儿版1a"
+          },
+          "verification": "ocr-backed; page-level review recommended before final product copy",
+          "topic": "Names & Introductions",
+          "topicId": "names-introductions",
+          "category": "开口说中文 / Start Speaking",
+          "categoryId": "start-speaking",
+          "pagePattern": "dialogue-builder"
+        },
+        {
+          "ref": "1A-7",
+          "book": "1A",
+          "lesson": 7,
+          "title": "I'm 5 years old",
+          "progression": null,
+          "coreVocabulary": [
+            "岁"
+          ],
+          "corePatterns": [
+            "你几岁",
+            "我五岁"
+          ],
+          "coverage": "strong",
+          "existingAssets": [
+            "assets/age"
+          ],
+          "missingAssets": [],
+          "source": {
+            "curriculumReference": "docs/curriculum_reference.json",
+            "coverageMap": "docs/ocr/book_asset_coverage_map.json",
+            "ocrText": "docs/ocr/轻松学中文少儿版1a.txt",
+            "contactSheets": "generated/easy_chinese_book_sheets_6page/轻松学中文少儿版1a"
+          },
+          "verification": "ocr-backed; page-level review recommended before final product copy",
+          "topic": "Age",
+          "topicId": "age",
+          "category": "开口说中文 / Start Speaking",
+          "categoryId": "start-speaking",
+          "pagePattern": "question-answer-cards"
+        },
+        {
+          "ref": "1A-culture",
+          "book": "1A",
+          "lesson": "culture",
+          "title": "Mid-Autumn Festival",
+          "progression": null,
+          "coreVocabulary": [],
+          "corePatterns": [
+            "short culture reading",
+            "image-led explanation",
+            "optional parent/teacher context"
+          ],
+          "coverage": "partial",
+          "existingAssets": [
+            "culture/content/folk-customs/mid-autumn",
+            "culture/content/literature/song-ci"
+          ],
+          "missingAssets": [],
+          "source": {
+            "curriculumReference": "docs/curriculum_reference.json",
+            "seriesAudit": "docs/series_audit.md",
+            "contactSheets": "generated/easy_chinese_book_sheets_6page/轻松学中文少儿版1a"
+          },
+          "verification": "curriculum-audit backed; align final content to original culture pages without copying textbook art",
+          "topic": "Culture",
+          "topicId": "culture",
+          "category": "中国文化 / Culture Side Paths",
+          "categoryId": "culture-side-paths",
+          "pagePattern": "short-unlockable-culture-card"
+        }
+      ],
+      "summary": {
+        "regularLessonCount": 7,
+        "hasCulture": true,
+        "strong": 7,
+        "partial": 1,
+        "missing": 0
+      }
+    },
+    {
+      "book": "1B",
+      "lessons": [
+        {
+          "ref": "1B-1",
+          "book": "1B",
+          "lesson": 1,
+          "title": "Mum and dad",
+          "progression": null,
+          "coreVocabulary": [
+            "爸爸",
+            "妈妈",
+            "爱"
+          ],
+          "corePatterns": [
+            "我爱爸爸",
+            "我爱妈妈"
+          ],
+          "coverage": "strong",
+          "existingAssets": [
+            "assets/illustrated-family"
+          ],
+          "missingAssets": [],
+          "source": {
+            "curriculumReference": "docs/curriculum_reference.json",
+            "coverageMap": "docs/ocr/book_asset_coverage_map.json",
+            "ocrText": "docs/ocr/轻松学中文少儿版1b.txt",
+            "contactSheets": "generated/easy_chinese_book_sheets_6page/轻松学中文少儿版1b"
+          },
+          "verification": "ocr-backed; page-level review recommended before final product copy",
+          "topic": "Family",
+          "topicId": "family",
+          "category": "我和家人 / Me & Family",
+          "categoryId": "me-family",
+          "pagePattern": "matching-and-dialogue"
+        },
+        {
+          "ref": "1B-2",
+          "book": "1B",
+          "lesson": 2,
+          "title": "Brothers and sisters",
+          "progression": null,
+          "coreVocabulary": [
+            "哥哥",
+            "姐姐",
+            "弟弟",
+            "妹妹"
+          ],
+          "corePatterns": [
+            "family member identification"
+          ],
+          "coverage": "strong",
+          "existingAssets": [
+            "assets/illustrated-family"
+          ],
+          "missingAssets": [],
+          "source": {
+            "curriculumReference": "docs/curriculum_reference.json",
+            "coverageMap": "docs/ocr/book_asset_coverage_map.json",
+            "ocrText": "docs/ocr/轻松学中文少儿版1b.txt",
+            "contactSheets": "generated/easy_chinese_book_sheets_6page/轻松学中文少儿版1b"
+          },
+          "verification": "ocr-backed; page-level review recommended before final product copy",
+          "topic": "Family",
+          "topicId": "family",
+          "category": "我和家人 / Me & Family",
+          "categoryId": "me-family",
+          "pagePattern": "matching-and-dialogue"
+        },
+        {
+          "ref": "1B-3",
+          "book": "1B",
+          "lesson": 3,
+          "title": "Parts of the body (1)",
+          "progression": null,
+          "coreVocabulary": [
+            "body parts"
+          ],
+          "corePatterns": [
+            "identify body parts"
+          ],
+          "coverage": "strong",
+          "existingAssets": [
+            "assets/body/body-parts-breakdown-board.webp",
+            "assets/body/body-topic-kid.webp",
+            "assets/body/body-topic-kid-largehead.webp"
+          ],
+          "missingAssets": [],
+          "source": {
+            "curriculumReference": "docs/curriculum_reference.json",
+            "coverageMap": "docs/ocr/book_asset_coverage_map.json",
+            "ocrText": "docs/ocr/轻松学中文少儿版1b.txt",
+            "contactSheets": "generated/easy_chinese_book_sheets_6page/轻松学中文少儿版1b"
+          },
+          "verification": "ocr-backed; page-level review recommended before final product copy",
+          "topic": "Body",
+          "topicId": "body",
+          "category": "我和家人 / Me & Family",
+          "categoryId": "me-family",
+          "pagePattern": "tap-body-part"
+        },
+        {
+          "ref": "1B-4",
+          "book": "1B",
+          "lesson": 4,
+          "title": "Parts of the body (2)",
+          "progression": null,
+          "coreVocabulary": [
+            "body parts"
+          ],
+          "corePatterns": [
+            "identify body parts"
+          ],
+          "coverage": "strong",
+          "existingAssets": [
+            "assets/body/body-parts-breakdown-board.webp",
+            "assets/body/body-topic-kid.webp",
+            "assets/body/body-topic-kid-largehead.webp"
+          ],
+          "missingAssets": [],
+          "source": {
+            "curriculumReference": "docs/curriculum_reference.json",
+            "coverageMap": "docs/ocr/book_asset_coverage_map.json",
+            "ocrText": "docs/ocr/轻松学中文少儿版1b.txt",
+            "contactSheets": "generated/easy_chinese_book_sheets_6page/轻松学中文少儿版1b"
+          },
+          "verification": "ocr-backed; page-level review recommended before final product copy",
+          "topic": "Body",
+          "topicId": "body",
+          "category": "我和家人 / Me & Family",
+          "categoryId": "me-family",
+          "pagePattern": "tap-body-part"
+        },
+        {
+          "ref": "1B-5",
+          "book": "1B",
+          "lesson": 5,
+          "title": "Pets",
+          "progression": null,
+          "coreVocabulary": [
+            "狗",
+            "猫",
+            "金鱼",
+            "兔子"
+          ],
+          "corePatterns": [
+            "我有一只..."
+          ],
+          "coverage": "strong",
+          "existingAssets": [
+            "assets/illustrated-animals",
+            "assets/illustrated-pets/lele-with-pets-at-home.webp"
+          ],
+          "missingAssets": [],
+          "source": {
+            "curriculumReference": "docs/curriculum_reference.json",
+            "coverageMap": "docs/ocr/book_asset_coverage_map.json",
+            "ocrText": "docs/ocr/轻松学中文少儿版1b.txt",
+            "contactSheets": "generated/easy_chinese_book_sheets_6page/轻松学中文少儿版1b"
+          },
+          "verification": "ocr-backed; page-level review recommended before final product copy",
+          "topic": "Pets & Animals",
+          "topicId": "pets-animals",
+          "category": "自然和颜色 / World Around Us",
+          "categoryId": "world-around-us",
+          "pagePattern": "animal-picture-match"
+        },
+        {
+          "ref": "1B-6",
+          "book": "1B",
+          "lesson": 6,
+          "title": "Colours",
+          "progression": null,
+          "coreVocabulary": [
+            "颜色 words"
+          ],
+          "corePatterns": [
+            "X色"
+          ],
+          "coverage": "strong",
+          "existingAssets": [
+            "assets/illustrated-colors/basic-colors-board.webp"
+          ],
+          "missingAssets": [],
+          "source": {
+            "curriculumReference": "docs/curriculum_reference.json",
+            "coverageMap": "docs/ocr/book_asset_coverage_map.json",
+            "ocrText": "docs/ocr/轻松学中文少儿版1b.txt",
+            "contactSheets": "generated/easy_chinese_book_sheets_6page/轻松学中文少儿版1b"
+          },
+          "verification": "ocr-backed; page-level review recommended before final product copy",
+          "topic": "Colours",
+          "topicId": "colours",
+          "category": "自然和颜色 / World Around Us",
+          "categoryId": "world-around-us",
+          "pagePattern": "color-swatch-and-object-match"
+        },
+        {
+          "ref": "1B-7",
+          "book": "1B",
+          "lesson": 7,
+          "title": "Fruit",
+          "progression": null,
+          "coreVocabulary": [
+            "苹果",
+            "香蕉",
+            "葡萄",
+            "草莓"
+          ],
+          "corePatterns": [
+            "identify fruit"
+          ],
+          "coverage": "strong",
+          "existingAssets": [
+            "assets/illustrated-food"
+          ],
+          "missingAssets": [],
+          "source": {
+            "curriculumReference": "docs/curriculum_reference.json",
+            "coverageMap": "docs/ocr/book_asset_coverage_map.json",
+            "ocrText": "docs/ocr/轻松学中文少儿版1b.txt",
+            "contactSheets": "generated/easy_chinese_book_sheets_6page/轻松学中文少儿版1b"
+          },
+          "verification": "ocr-backed; page-level review recommended before final product copy",
+          "topic": "Food & Drinks",
+          "topicId": "food-drinks",
+          "category": "食物 / Food",
+          "categoryId": "food",
+          "pagePattern": "menu-choice-and-feelings"
+        },
+        {
+          "ref": "1B-culture",
+          "book": "1B",
+          "lesson": "culture",
+          "title": "Chinese New Year",
+          "progression": null,
+          "coreVocabulary": [],
+          "corePatterns": [
+            "short culture reading",
+            "image-led explanation",
+            "optional parent/teacher context"
+          ],
+          "coverage": "partial",
+          "existingAssets": [
+            "culture/content/folk-customs/chinese-new-year",
+            "culture/content/culture/new-year-greeting",
+            "culture/content/art/paper-cutting"
+          ],
+          "missingAssets": [],
+          "source": {
+            "curriculumReference": "docs/curriculum_reference.json",
+            "seriesAudit": "docs/series_audit.md",
+            "contactSheets": "generated/easy_chinese_book_sheets_6page/轻松学中文少儿版1b"
+          },
+          "verification": "curriculum-audit backed; align final content to original culture pages without copying textbook art",
+          "topic": "Culture",
+          "topicId": "culture",
+          "category": "中国文化 / Culture Side Paths",
+          "categoryId": "culture-side-paths",
+          "pagePattern": "short-unlockable-culture-card"
+        }
+      ],
+      "summary": {
+        "regularLessonCount": 7,
+        "hasCulture": true,
+        "strong": 7,
+        "partial": 1,
+        "missing": 0
+      }
+    },
+    {
+      "book": "2A",
+      "lessons": [
+        {
+          "ref": "2A-1",
+          "book": "2A",
+          "lesson": 1,
+          "title": "Numbers",
+          "progression": "21-40",
+          "coreVocabulary": [
+            "二十六",
+            "三十八",
+            "四十"
+          ],
+          "corePatterns": [
+            "counting larger quantities"
+          ],
+          "coverage": "strong",
+          "existingAssets": [
+            "assets/illustrated-counting/twenty-to-forty-counting-board.webp"
+          ],
+          "missingAssets": [],
+          "source": {
+            "curriculumReference": "docs/curriculum_reference.json",
+            "coverageMap": "docs/ocr/book_asset_coverage_map.json",
+            "ocrText": "docs/ocr/轻松学中文少儿版2a.txt",
+            "contactSheets": "generated/easy_chinese_book_sheets_6page/轻松学中文少儿版2a"
+          },
+          "verification": "ocr-backed; page-level review recommended before final product copy",
+          "topic": "Numbers",
+          "topicId": "numbers",
+          "category": "开口说中文 / Start Speaking",
+          "categoryId": "start-speaking",
+          "pagePattern": "progression-practice"
+        },
+        {
+          "ref": "2A-2",
+          "book": "2A",
+          "lesson": 2,
+          "title": "Two younger brothers",
+          "progression": null,
+          "coreVocabulary": [
+            "一个",
+            "两个",
+            "没有"
+          ],
+          "corePatterns": [
+            "我有...",
+            "我没有..."
+          ],
+          "coverage": "strong",
+          "existingAssets": [
+            "assets/illustrated-family",
+            "assets/illustrated-family/family-counting-two-younger-brothers.webp",
+            "docs/grammar_asset_map.md"
+          ],
+          "missingAssets": [],
+          "source": {
+            "curriculumReference": "docs/curriculum_reference.json",
+            "coverageMap": "docs/ocr/book_asset_coverage_map.json",
+            "ocrText": "docs/ocr/轻松学中文少儿版2a.txt",
+            "contactSheets": "generated/easy_chinese_book_sheets_6page/轻松学中文少儿版2a"
+          },
+          "verification": "ocr-backed; page-level review recommended before final product copy",
+          "topic": "Family",
+          "topicId": "family",
+          "category": "我和家人 / Me & Family",
+          "categoryId": "me-family",
+          "pagePattern": "matching-and-dialogue"
+        },
+        {
+          "ref": "2A-3",
+          "book": "2A",
+          "lesson": 3,
+          "title": "Good friends",
+          "progression": null,
+          "coreVocabulary": [
+            "朋友"
+          ],
+          "corePatterns": [
+            "他是我的好朋友"
+          ],
+          "coverage": "strong",
+          "existingAssets": [
+            "assets/introductions",
+            "assets/introductions/good-friends-scene.webp"
+          ],
+          "missingAssets": [],
+          "source": {
+            "curriculumReference": "docs/curriculum_reference.json",
+            "coverageMap": "docs/ocr/book_asset_coverage_map.json",
+            "ocrText": "docs/ocr/轻松学中文少儿版2a.txt",
+            "contactSheets": "generated/easy_chinese_book_sheets_6page/轻松学中文少儿版2a"
+          },
+          "verification": "ocr-backed; page-level review recommended before final product copy",
+          "topic": "Names & Introductions",
+          "topicId": "names-introductions",
+          "category": "开口说中文 / Start Speaking",
+          "categoryId": "start-speaking",
+          "pagePattern": "dialogue-builder"
+        },
+        {
+          "ref": "2A-4",
+          "book": "2A",
+          "lesson": 4,
+          "title": "My toys",
+          "progression": null,
+          "coreVocabulary": [
+            "toy words"
+          ],
+          "corePatterns": [
+            "这是我的..."
+          ],
+          "coverage": "strong",
+          "existingAssets": [
+            "assets/illustrated-toys"
+          ],
+          "missingAssets": [],
+          "source": {
+            "curriculumReference": "docs/curriculum_reference.json",
+            "coverageMap": "docs/ocr/book_asset_coverage_map.json",
+            "ocrText": "docs/ocr/轻松学中文少儿版2a.txt",
+            "contactSheets": "generated/easy_chinese_book_sheets_6page/轻松学中文少儿版2a"
+          },
+          "verification": "ocr-backed; page-level review recommended before final product copy",
+          "topic": "Toys & Play",
+          "topicId": "toys-play",
+          "category": "兴趣和玩具 / Play & Hobbies",
+          "categoryId": "play-hobbies",
+          "pagePattern": "toy-picture-match"
+        },
+        {
+          "ref": "2A-5",
+          "book": "2A",
+          "lesson": 5,
+          "title": "I love reading",
+          "progression": null,
+          "coreVocabulary": [
+            "看书",
+            "喜欢"
+          ],
+          "corePatterns": [
+            "我喜欢看书"
+          ],
+          "coverage": "strong",
+          "existingAssets": [
+            "assets/illustrated-activities/child-reading-book-facing-child.webp",
+            "assets/illustrated-activities/grandma_reading_armchair.webp"
+          ],
+          "missingAssets": [],
+          "source": {
+            "curriculumReference": "docs/curriculum_reference.json",
+            "coverageMap": "docs/ocr/book_asset_coverage_map.json",
+            "ocrText": "docs/ocr/轻松学中文少儿版2a.txt",
+            "contactSheets": "generated/easy_chinese_book_sheets_6page/轻松学中文少儿版2a"
+          },
+          "verification": "ocr-backed; page-level review recommended before final product copy",
+          "topic": "Hobbies",
+          "topicId": "hobbies",
+          "category": "兴趣和玩具 / Play & Hobbies",
+          "categoryId": "play-hobbies",
+          "pagePattern": "activity-choice-and-dialogue"
+        },
+        {
+          "ref": "2A-6",
+          "book": "2A",
+          "lesson": 6,
+          "title": "I can dress myself",
+          "progression": null,
+          "coreVocabulary": [
+            "穿",
+            "鞋",
+            "帽子"
+          ],
+          "corePatterns": [
+            "I can dress myself"
+          ],
+          "coverage": "strong",
+          "existingAssets": [
+            "assets/illustrated-self-dressing",
+            "assets/illustrated-clothes/basic-clothes-board.webp"
+          ],
+          "missingAssets": [],
+          "source": {
+            "curriculumReference": "docs/curriculum_reference.json",
+            "coverageMap": "docs/ocr/book_asset_coverage_map.json",
+            "ocrText": "docs/ocr/轻松学中文少儿版2a.txt",
+            "contactSheets": "generated/easy_chinese_book_sheets_6page/轻松学中文少儿版2a"
+          },
+          "verification": "ocr-backed; page-level review recommended before final product copy",
+          "topic": "Clothes",
+          "topicId": "clothes",
+          "category": "我和家人 / Me & Family",
+          "categoryId": "me-family",
+          "pagePattern": "dress-up-and-match"
+        },
+        {
+          "ref": "2A-7",
+          "book": "2A",
+          "lesson": 7,
+          "title": "Colours",
+          "progression": null,
+          "coreVocabulary": [
+            "颜色 words"
+          ],
+          "corePatterns": [
+            "X色"
+          ],
+          "coverage": "strong",
+          "existingAssets": [
+            "assets/illustrated-colors/basic-colors-board.webp"
+          ],
+          "missingAssets": [],
+          "source": {
+            "curriculumReference": "docs/curriculum_reference.json",
+            "coverageMap": "docs/ocr/book_asset_coverage_map.json",
+            "ocrText": "docs/ocr/轻松学中文少儿版2a.txt",
+            "contactSheets": "generated/easy_chinese_book_sheets_6page/轻松学中文少儿版2a"
+          },
+          "verification": "ocr-backed; page-level review recommended before final product copy",
+          "topic": "Colours",
+          "topicId": "colours",
+          "category": "自然和颜色 / World Around Us",
+          "categoryId": "world-around-us",
+          "pagePattern": "color-swatch-and-object-match"
+        },
+        {
+          "ref": "2A-culture",
+          "book": "2A",
+          "lesson": "culture",
+          "title": "The story of Nian",
+          "progression": null,
+          "coreVocabulary": [],
+          "corePatterns": [
+            "short culture reading",
+            "image-led explanation",
+            "optional parent/teacher context"
+          ],
+          "coverage": "partial",
+          "existingAssets": [
+            "culture/content/folk-customs/chinese-new-year"
+          ],
+          "missingAssets": [],
+          "source": {
+            "curriculumReference": "docs/curriculum_reference.json",
+            "seriesAudit": "docs/series_audit.md",
+            "contactSheets": "generated/easy_chinese_book_sheets_6page/轻松学中文少儿版2a"
+          },
+          "verification": "curriculum-audit backed; align final content to original culture pages without copying textbook art",
+          "topic": "Culture",
+          "topicId": "culture",
+          "category": "中国文化 / Culture Side Paths",
+          "categoryId": "culture-side-paths",
+          "pagePattern": "short-unlockable-culture-card"
+        }
+      ],
+      "summary": {
+        "regularLessonCount": 7,
+        "hasCulture": true,
+        "strong": 7,
+        "partial": 1,
+        "missing": 0
+      }
+    },
+    {
+      "book": "2B",
+      "lessons": [
+        {
+          "ref": "2B-1",
+          "book": "2B",
+          "lesson": 1,
+          "title": "Today is Monday",
+          "progression": null,
+          "coreVocabulary": [
+            "星期一 to 星期天",
+            "今天"
+          ],
+          "corePatterns": [
+            "今天星期..."
+          ],
+          "coverage": "strong",
+          "existingAssets": [
+            "assets/illustrated-day-of-week"
+          ],
+          "missingAssets": [],
+          "source": {
+            "curriculumReference": "docs/curriculum_reference.json",
+            "coverageMap": "docs/ocr/book_asset_coverage_map.json",
+            "ocrText": "docs/ocr/轻松学中文少儿版2b.txt",
+            "contactSheets": "generated/easy_chinese_book_sheets_6page/轻松学中文少儿版2b"
+          },
+          "verification": "ocr-backed; page-level review recommended before final product copy",
+          "topic": "Time & Date",
+          "topicId": "time-date",
+          "category": "时间和日常 / Time & Daily Life",
+          "categoryId": "time-daily-life",
+          "pagePattern": "calendar-clock-practice"
+        },
+        {
+          "ref": "2B-2",
+          "book": "2B",
+          "lesson": 2,
+          "title": "What time is it?",
+          "progression": null,
+          "coreVocabulary": [
+            "一点 to 十二点"
+          ],
+          "corePatterns": [
+            "几点了"
+          ],
+          "coverage": "strong",
+          "existingAssets": [
+            "assets/illustrated-clocks",
+            "assets/illustrated-clock-routines"
+          ],
+          "missingAssets": [],
+          "source": {
+            "curriculumReference": "docs/curriculum_reference.json",
+            "coverageMap": "docs/ocr/book_asset_coverage_map.json",
+            "ocrText": "docs/ocr/轻松学中文少儿版2b.txt",
+            "contactSheets": "generated/easy_chinese_book_sheets_6page/轻松学中文少儿版2b"
+          },
+          "verification": "ocr-backed; page-level review recommended before final product copy",
+          "topic": "Time & Date",
+          "topicId": "time-date",
+          "category": "时间和日常 / Time & Daily Life",
+          "categoryId": "time-daily-life",
+          "pagePattern": "calendar-clock-practice"
+        },
+        {
+          "ref": "2B-3",
+          "book": "2B",
+          "lesson": 3,
+          "title": "Stationery",
+          "progression": null,
+          "coreVocabulary": [
+            "铅笔",
+            "橡皮",
+            "尺子",
+            "文具盒",
+            "课本"
+          ],
+          "corePatterns": [
+            "there is in the pencil box / schoolbag"
+          ],
+          "coverage": "strong",
+          "existingAssets": [
+            "assets/illustrated-stationery"
+          ],
+          "missingAssets": [],
+          "source": {
+            "curriculumReference": "docs/curriculum_reference.json",
+            "coverageMap": "docs/ocr/book_asset_coverage_map.json",
+            "ocrText": "docs/ocr/轻松学中文少儿版2b.txt",
+            "contactSheets": "generated/easy_chinese_book_sheets_6page/轻松学中文少儿版2b"
+          },
+          "verification": "ocr-backed; page-level review recommended before final product copy",
+          "topic": "School",
+          "topicId": "school",
+          "category": "学校生活 / School Life",
+          "categoryId": "school-life",
+          "pagePattern": "classroom-explore-and-match"
+        },
+        {
+          "ref": "2B-4",
+          "book": "2B",
+          "lesson": 4,
+          "title": "My classroom",
+          "progression": null,
+          "coreVocabulary": [
+            "教室",
+            "桌子",
+            "椅子",
+            "黑板"
+          ],
+          "corePatterns": [
+            "有",
+            "在"
+          ],
+          "coverage": "strong",
+          "existingAssets": [
+            "assets/illustrated-classrooms",
+            "assets/illustrated-school-anchors",
+            "assets/illustrated-grammar"
+          ],
+          "missingAssets": [],
+          "source": {
+            "curriculumReference": "docs/curriculum_reference.json",
+            "coverageMap": "docs/ocr/book_asset_coverage_map.json",
+            "ocrText": "docs/ocr/轻松学中文少儿版2b.txt",
+            "contactSheets": "generated/easy_chinese_book_sheets_6page/轻松学中文少儿版2b"
+          },
+          "verification": "ocr-backed; page-level review recommended before final product copy",
+          "topic": "School",
+          "topicId": "school",
+          "category": "学校生活 / School Life",
+          "categoryId": "school-life",
+          "pagePattern": "classroom-explore-and-match"
+        },
+        {
+          "ref": "2B-5",
+          "book": "2B",
+          "lesson": 5,
+          "title": "Animals",
+          "progression": null,
+          "coreVocabulary": [
+            "animal words"
+          ],
+          "corePatterns": [
+            "identify animals"
+          ],
+          "coverage": "strong",
+          "existingAssets": [
+            "assets/illustrated-animals"
+          ],
+          "missingAssets": [],
+          "source": {
+            "curriculumReference": "docs/curriculum_reference.json",
+            "coverageMap": "docs/ocr/book_asset_coverage_map.json",
+            "ocrText": "docs/ocr/轻松学中文少儿版2b.txt",
+            "contactSheets": "generated/easy_chinese_book_sheets_6page/轻松学中文少儿版2b"
+          },
+          "verification": "ocr-backed; page-level review recommended before final product copy",
+          "topic": "Pets & Animals",
+          "topicId": "pets-animals",
+          "category": "自然和颜色 / World Around Us",
+          "categoryId": "world-around-us",
+          "pagePattern": "animal-picture-match"
+        },
+        {
+          "ref": "2B-6",
+          "book": "2B",
+          "lesson": 6,
+          "title": "Big or small",
+          "progression": null,
+          "coreVocabulary": [
+            "大",
+            "小"
+          ],
+          "corePatterns": [
+            "A big / small"
+          ],
+          "coverage": "strong",
+          "existingAssets": [
+            "assets/illustrated-comparisons"
+          ],
+          "missingAssets": [],
+          "source": {
+            "curriculumReference": "docs/curriculum_reference.json",
+            "coverageMap": "docs/ocr/book_asset_coverage_map.json",
+            "ocrText": "docs/ocr/轻松学中文少儿版2b.txt",
+            "contactSheets": "generated/easy_chinese_book_sheets_6page/轻松学中文少儿版2b"
+          },
+          "verification": "ocr-backed; page-level review recommended before final product copy",
+          "topic": "Describing Things",
+          "topicId": "describing-things",
+          "category": "学校生活 / School Life",
+          "categoryId": "school-life",
+          "pagePattern": "visual-contrast-and-positioning"
+        },
+        {
+          "ref": "2B-7",
+          "book": "2B",
+          "lesson": 7,
+          "title": "Snacks",
+          "progression": null,
+          "coreVocabulary": [
+            "snack foods",
+            "drinks"
+          ],
+          "corePatterns": [
+            "like / eat / drink"
+          ],
+          "coverage": "strong",
+          "existingAssets": [
+            "assets/illustrated-food",
+            "assets/illustrated-food-feelings"
+          ],
+          "missingAssets": [],
+          "source": {
+            "curriculumReference": "docs/curriculum_reference.json",
+            "coverageMap": "docs/ocr/book_asset_coverage_map.json",
+            "ocrText": "docs/ocr/轻松学中文少儿版2b.txt",
+            "contactSheets": "generated/easy_chinese_book_sheets_6page/轻松学中文少儿版2b"
+          },
+          "verification": "ocr-backed; page-level review recommended before final product copy",
+          "topic": "Food & Drinks",
+          "topicId": "food-drinks",
+          "category": "食物 / Food",
+          "categoryId": "food",
+          "pagePattern": "menu-choice-and-feelings"
+        },
+        {
+          "ref": "2B-culture",
+          "book": "2B",
+          "lesson": "culture",
+          "title": "Dragon Boat Festival",
+          "progression": null,
+          "coreVocabulary": [],
+          "corePatterns": [
+            "short culture reading",
+            "image-led explanation",
+            "optional parent/teacher context"
+          ],
+          "coverage": "partial",
+          "existingAssets": [
+            "culture/content/folk-customs/dragon-boat"
+          ],
+          "missingAssets": [],
+          "source": {
+            "curriculumReference": "docs/curriculum_reference.json",
+            "seriesAudit": "docs/series_audit.md",
+            "contactSheets": "generated/easy_chinese_book_sheets_6page/轻松学中文少儿版2b"
+          },
+          "verification": "curriculum-audit backed; align final content to original culture pages without copying textbook art",
+          "topic": "Culture",
+          "topicId": "culture",
+          "category": "中国文化 / Culture Side Paths",
+          "categoryId": "culture-side-paths",
+          "pagePattern": "short-unlockable-culture-card"
+        }
+      ],
+      "summary": {
+        "regularLessonCount": 7,
+        "hasCulture": true,
+        "strong": 7,
+        "partial": 1,
+        "missing": 0
+      }
+    },
+    {
+      "book": "3A",
+      "lessons": [
+        {
+          "ref": "3A-1",
+          "book": "3A",
+          "lesson": 1,
+          "title": "Numbers",
+          "progression": "41-100",
+          "coreVocabulary": [
+            "四十一",
+            "五十三",
+            "一百"
+          ],
+          "corePatterns": [
+            "counting higher numbers"
+          ],
+          "coverage": "strong",
+          "existingAssets": [
+            "assets/illustrated-counting/forty-one-to-one-hundred-counting-board.webp"
+          ],
+          "missingAssets": [],
+          "source": {
+            "curriculumReference": "docs/curriculum_reference.json",
+            "coverageMap": "docs/ocr/book_asset_coverage_map.json",
+            "ocrText": "docs/ocr/轻松学中文少儿版3a.txt",
+            "contactSheets": "generated/easy_chinese_book_sheets_6page/轻松学中文少儿版3a"
+          },
+          "verification": "ocr-backed; page-level review recommended before final product copy",
+          "topic": "Numbers",
+          "topicId": "numbers",
+          "category": "开口说中文 / Start Speaking",
+          "categoryId": "start-speaking",
+          "pagePattern": "progression-practice"
+        },
+        {
+          "ref": "3A-2",
+          "book": "3A",
+          "lesson": 2,
+          "title": "Date",
+          "progression": null,
+          "coreVocabulary": [
+            "month names",
+            "day numbers"
+          ],
+          "corePatterns": [
+            "X月X日"
+          ],
+          "coverage": "strong",
+          "existingAssets": [
+            "assets/illustrated-dates",
+            "assets/illustrated-months-of-year"
+          ],
+          "missingAssets": [],
+          "source": {
+            "curriculumReference": "docs/curriculum_reference.json",
+            "coverageMap": "docs/ocr/book_asset_coverage_map.json",
+            "ocrText": "docs/ocr/轻松学中文少儿版3a.txt",
+            "contactSheets": "generated/easy_chinese_book_sheets_6page/轻松学中文少儿版3a"
+          },
+          "verification": "ocr-backed; page-level review recommended before final product copy",
+          "topic": "Time & Date",
+          "topicId": "time-date",
+          "category": "时间和日常 / Time & Daily Life",
+          "categoryId": "time-daily-life",
+          "pagePattern": "calendar-clock-practice"
+        },
+        {
+          "ref": "3A-3",
+          "book": "3A",
+          "lesson": 3,
+          "title": "Happy birthday!",
+          "progression": null,
+          "coreVocabulary": [
+            "生日",
+            "蛋糕"
+          ],
+          "corePatterns": [
+            "生日快乐"
+          ],
+          "coverage": "strong",
+          "existingAssets": [
+            "assets/illustrated-dates/birthday-party-scene.webp",
+            "assets/illustrated-food/cake.webp",
+            "assets/illustrated-dates"
+          ],
+          "missingAssets": [],
+          "source": {
+            "curriculumReference": "docs/curriculum_reference.json",
+            "coverageMap": "docs/ocr/book_asset_coverage_map.json",
+            "ocrText": "docs/ocr/轻松学中文少儿版3a.txt",
+            "contactSheets": "generated/easy_chinese_book_sheets_6page/轻松学中文少儿版3a"
+          },
+          "verification": "ocr-backed; page-level review recommended before final product copy",
+          "topic": "Time & Date",
+          "topicId": "time-date",
+          "category": "时间和日常 / Time & Daily Life",
+          "categoryId": "time-daily-life",
+          "pagePattern": "calendar-clock-practice"
+        },
+        {
+          "ref": "3A-4",
+          "book": "3A",
+          "lesson": 4,
+          "title": "Family",
+          "progression": null,
+          "coreVocabulary": [
+            "family members"
+          ],
+          "corePatterns": [
+            "introduce family"
+          ],
+          "coverage": "strong",
+          "existingAssets": [
+            "assets/illustrated-family"
+          ],
+          "missingAssets": [],
+          "source": {
+            "curriculumReference": "docs/curriculum_reference.json",
+            "coverageMap": "docs/ocr/book_asset_coverage_map.json",
+            "ocrText": "docs/ocr/轻松学中文少儿版3a.txt",
+            "contactSheets": "generated/easy_chinese_book_sheets_6page/轻松学中文少儿版3a"
+          },
+          "verification": "ocr-backed; page-level review recommended before final product copy",
+          "topic": "Family",
+          "topicId": "family",
+          "category": "我和家人 / Me & Family",
+          "categoryId": "me-family",
+          "pagePattern": "matching-and-dialogue"
+        },
+        {
+          "ref": "3A-5",
+          "book": "3A",
+          "lesson": 5,
+          "title": "Nationality",
+          "progression": null,
+          "coreVocabulary": [
+            "中国",
+            "美国",
+            "英国",
+            "法国"
+          ],
+          "corePatterns": [
+            "你是哪国人",
+            "我是...人"
+          ],
+          "coverage": "strong",
+          "existingAssets": [
+            "assets/illustrated-flags",
+            "assets/illustrated-country-symbols"
+          ],
+          "missingAssets": [],
+          "source": {
+            "curriculumReference": "docs/curriculum_reference.json",
+            "coverageMap": "docs/ocr/book_asset_coverage_map.json",
+            "ocrText": "docs/ocr/轻松学中文少儿版3a.txt",
+            "contactSheets": "generated/easy_chinese_book_sheets_6page/轻松学中文少儿版3a"
+          },
+          "verification": "ocr-backed; page-level review recommended before final product copy",
+          "topic": "Identity",
+          "topicId": "identity",
+          "category": "开口说中文 / Start Speaking",
+          "categoryId": "start-speaking",
+          "pagePattern": "flag-and-speaking-scenes"
+        },
+        {
+          "ref": "3A-6",
+          "book": "3A",
+          "lesson": 6,
+          "title": "Request",
+          "progression": null,
+          "coreVocabulary": [
+            "request phrases"
+          ],
+          "corePatterns": [
+            "请...",
+            "我可以...吗"
+          ],
+          "coverage": "strong",
+          "existingAssets": [
+            "assets/illustrated-grammar/school-request-teacher-help.webp",
+            "assets/polite",
+            "assets/illustrated-grammar/can-watch-tv-homework-first.webp"
+          ],
+          "missingAssets": [],
+          "source": {
+            "curriculumReference": "docs/curriculum_reference.json",
+            "coverageMap": "docs/ocr/book_asset_coverage_map.json",
+            "ocrText": "docs/ocr/轻松学中文少儿版3a.txt",
+            "contactSheets": "generated/easy_chinese_book_sheets_6page/轻松学中文少儿版3a"
+          },
+          "verification": "ocr-backed; page-level review recommended before final product copy",
+          "topic": "Polite Words",
+          "topicId": "polite-words",
+          "category": "开口说中文 / Start Speaking",
+          "categoryId": "start-speaking",
+          "pagePattern": "scenario-choice"
+        },
+        {
+          "ref": "3A-7",
+          "book": "3A",
+          "lesson": 7,
+          "title": "Clothes",
+          "progression": null,
+          "coreVocabulary": [
+            "衬衫",
+            "裤子",
+            "裙子",
+            "鞋",
+            "帽子",
+            "手套",
+            "外套"
+          ],
+          "corePatterns": [
+            "wearing clothes"
+          ],
+          "coverage": "strong",
+          "existingAssets": [
+            "assets/illustrated-clothes/basic-clothes-board.webp",
+            "assets/illustrated-clothes/wearing-clothes-scene.webp"
+          ],
+          "missingAssets": [],
+          "source": {
+            "curriculumReference": "docs/curriculum_reference.json",
+            "coverageMap": "docs/ocr/book_asset_coverage_map.json",
+            "ocrText": "docs/ocr/轻松学中文少儿版3a.txt",
+            "contactSheets": "generated/easy_chinese_book_sheets_6page/轻松学中文少儿版3a"
+          },
+          "verification": "ocr-backed; page-level review recommended before final product copy",
+          "topic": "Clothes",
+          "topicId": "clothes",
+          "category": "我和家人 / Me & Family",
+          "categoryId": "me-family",
+          "pagePattern": "dress-up-and-match"
+        },
+        {
+          "ref": "3A-culture",
+          "book": "3A",
+          "lesson": "culture",
+          "title": "Beijing Opera",
+          "progression": null,
+          "coreVocabulary": [],
+          "corePatterns": [
+            "short culture reading",
+            "image-led explanation",
+            "optional parent/teacher context"
+          ],
+          "coverage": "partial",
+          "existingAssets": [
+            "culture/content/art/peking-opera"
+          ],
+          "missingAssets": [],
+          "source": {
+            "curriculumReference": "docs/curriculum_reference.json",
+            "seriesAudit": "docs/series_audit.md",
+            "contactSheets": "generated/easy_chinese_book_sheets_6page/轻松学中文少儿版3a"
+          },
+          "verification": "curriculum-audit backed; align final content to original culture pages without copying textbook art",
+          "topic": "Culture",
+          "topicId": "culture",
+          "category": "中国文化 / Culture Side Paths",
+          "categoryId": "culture-side-paths",
+          "pagePattern": "short-unlockable-culture-card"
+        }
+      ],
+      "summary": {
+        "regularLessonCount": 7,
+        "hasCulture": true,
+        "strong": 7,
+        "partial": 1,
+        "missing": 0
+      }
+    },
+    {
+      "book": "3B",
+      "lessons": [
+        {
+          "ref": "3B-1",
+          "book": "3B",
+          "lesson": 1,
+          "title": "My schoolbag",
+          "progression": null,
+          "coreVocabulary": [
+            "书包",
+            "课本",
+            "练习本",
+            "文具盒"
+          ],
+          "corePatterns": [
+            "有",
+            "没有"
+          ],
+          "coverage": "strong",
+          "existingAssets": [
+            "assets/illustrated-stationery",
+            "assets/illustrated-grammar",
+            "assets/illustrated-rooms"
+          ],
+          "missingAssets": [],
+          "source": {
+            "curriculumReference": "docs/curriculum_reference.json",
+            "coverageMap": "docs/ocr/book_asset_coverage_map.json",
+            "ocrText": "docs/ocr/轻松学中文少儿版3b.txt",
+            "contactSheets": "generated/easy_chinese_book_sheets_6page/轻松学中文少儿版3b"
+          },
+          "verification": "ocr-backed; page-level review recommended before final product copy",
+          "topic": "School",
+          "topicId": "school",
+          "category": "学校生活 / School Life",
+          "categoryId": "school-life",
+          "pagePattern": "classroom-explore-and-match"
+        },
+        {
+          "ref": "3B-2",
+          "book": "3B",
+          "lesson": 2,
+          "title": "Our classroom",
+          "progression": null,
+          "coreVocabulary": [
+            "教室",
+            "桌子",
+            "椅子"
+          ],
+          "corePatterns": [
+            "有",
+            "在"
+          ],
+          "coverage": "strong",
+          "existingAssets": [
+            "assets/illustrated-classrooms",
+            "assets/illustrated-school-anchors"
+          ],
+          "missingAssets": [],
+          "source": {
+            "curriculumReference": "docs/curriculum_reference.json",
+            "coverageMap": "docs/ocr/book_asset_coverage_map.json",
+            "ocrText": "docs/ocr/轻松学中文少儿版3b.txt",
+            "contactSheets": "generated/easy_chinese_book_sheets_6page/轻松学中文少儿版3b"
+          },
+          "verification": "ocr-backed; page-level review recommended before final product copy",
+          "topic": "School",
+          "topicId": "school",
+          "category": "学校生活 / School Life",
+          "categoryId": "school-life",
+          "pagePattern": "classroom-explore-and-match"
+        },
+        {
+          "ref": "3B-3",
+          "book": "3B",
+          "lesson": 3,
+          "title": "Positions",
+          "progression": null,
+          "coreVocabulary": [
+            "上",
+            "下",
+            "里",
+            "外",
+            "前",
+            "后",
+            "左",
+            "右"
+          ],
+          "corePatterns": [
+            "A在B上面/下面/里面/外面",
+            "front/back/left/right position words"
+          ],
+          "coverage": "strong",
+          "existingAssets": [
+            "assets/illustrated-rooms/positions-up-down.webp",
+            "assets/illustrated-rooms/positions-inside-outside.webp",
+            "assets/illustrated-rooms/positions-all-directions.webp"
+          ],
+          "missingAssets": [],
+          "source": {
+            "curriculumReference": "docs/curriculum_reference.json",
+            "coverageMap": "docs/ocr/book_asset_coverage_map.json",
+            "ocrText": "docs/ocr/轻松学中文少儿版3b.txt",
+            "contactSheets": "generated/easy_chinese_book_sheets_6page/轻松学中文少儿版3b"
+          },
+          "verification": "ocr-backed; page-level review recommended before final product copy",
+          "topic": "Describing Things",
+          "topicId": "describing-things",
+          "category": "学校生活 / School Life",
+          "categoryId": "school-life",
+          "pagePattern": "visual-contrast-and-positioning"
+        },
+        {
+          "ref": "3B-4",
+          "book": "3B",
+          "lesson": 4,
+          "title": "Hobbies",
+          "progression": null,
+          "coreVocabulary": [
+            "hobby verbs"
+          ],
+          "corePatterns": [
+            "我喜欢...",
+            "我会..."
+          ],
+          "coverage": "strong",
+          "existingAssets": [
+            "assets/illustrated-activities"
+          ],
+          "missingAssets": [],
+          "source": {
+            "curriculumReference": "docs/curriculum_reference.json",
+            "coverageMap": "docs/ocr/book_asset_coverage_map.json",
+            "ocrText": "docs/ocr/轻松学中文少儿版3b.txt",
+            "contactSheets": "generated/easy_chinese_book_sheets_6page/轻松学中文少儿版3b"
+          },
+          "verification": "ocr-backed; page-level review recommended before final product copy",
+          "topic": "Hobbies",
+          "topicId": "hobbies",
+          "category": "兴趣和玩具 / Play & Hobbies",
+          "categoryId": "play-hobbies",
+          "pagePattern": "activity-choice-and-dialogue"
+        },
+        {
+          "ref": "3B-5",
+          "book": "3B",
+          "lesson": 5,
+          "title": "Food and drink",
+          "progression": null,
+          "coreVocabulary": [
+            "food and drink words"
+          ],
+          "corePatterns": [
+            "喜欢吃/喝"
+          ],
+          "coverage": "strong",
+          "existingAssets": [
+            "assets/illustrated-food",
+            "assets/illustrated-food-feelings"
+          ],
+          "missingAssets": [],
+          "source": {
+            "curriculumReference": "docs/curriculum_reference.json",
+            "coverageMap": "docs/ocr/book_asset_coverage_map.json",
+            "ocrText": "docs/ocr/轻松学中文少儿版3b.txt",
+            "contactSheets": "generated/easy_chinese_book_sheets_6page/轻松学中文少儿版3b"
+          },
+          "verification": "ocr-backed; page-level review recommended before final product copy",
+          "topic": "Food & Drinks",
+          "topicId": "food-drinks",
+          "category": "食物 / Food",
+          "categoryId": "food",
+          "pagePattern": "menu-choice-and-feelings"
+        },
+        {
+          "ref": "3B-6",
+          "book": "3B",
+          "lesson": 6,
+          "title": "Vegetables",
+          "progression": null,
+          "coreVocabulary": [
+            "胡萝卜",
+            "黄瓜",
+            "西红柿",
+            "西兰花",
+            "土豆"
+          ],
+          "corePatterns": [
+            "identify vegetables"
+          ],
+          "coverage": "strong",
+          "existingAssets": [
+            "assets/illustrated-food/carrot.webp",
+            "assets/illustrated-food/tomato.webp",
+            "assets/illustrated-food/cucumber.webp",
+            "assets/illustrated-food/broccoli.webp",
+            "assets/illustrated-food/potatoes.webp"
+          ],
+          "missingAssets": [],
+          "source": {
+            "curriculumReference": "docs/curriculum_reference.json",
+            "coverageMap": "docs/ocr/book_asset_coverage_map.json",
+            "ocrText": "docs/ocr/轻松学中文少儿版3b.txt",
+            "contactSheets": "generated/easy_chinese_book_sheets_6page/轻松学中文少儿版3b"
+          },
+          "verification": "ocr-backed; page-level review recommended before final product copy",
+          "topic": "Food & Drinks",
+          "topicId": "food-drinks",
+          "category": "食物 / Food",
+          "categoryId": "food",
+          "pagePattern": "menu-choice-and-feelings"
+        },
+        {
+          "ref": "3B-7",
+          "book": "3B",
+          "lesson": 7,
+          "title": "Nature",
+          "progression": null,
+          "coreVocabulary": [
+            "sky and weather words"
+          ],
+          "corePatterns": [
+            "describe nature scene"
+          ],
+          "coverage": "strong",
+          "existingAssets": [
+            "assets/illustrated-sky-day-night",
+            "assets/illustrated-weather",
+            "assets/illustrated-food/bamboo.webp"
+          ],
+          "missingAssets": [],
+          "source": {
+            "curriculumReference": "docs/curriculum_reference.json",
+            "coverageMap": "docs/ocr/book_asset_coverage_map.json",
+            "ocrText": "docs/ocr/轻松学中文少儿版3b.txt",
+            "contactSheets": "generated/easy_chinese_book_sheets_6page/轻松学中文少儿版3b"
+          },
+          "verification": "ocr-backed; page-level review recommended before final product copy",
+          "topic": "Nature",
+          "topicId": "nature",
+          "category": "自然和颜色 / World Around Us",
+          "categoryId": "world-around-us",
+          "pagePattern": "scene-explore"
+        },
+        {
+          "ref": "3B-culture",
+          "book": "3B",
+          "lesson": "culture",
+          "title": "The Twelve Zodiac Animals",
+          "progression": null,
+          "coreVocabulary": [],
+          "corePatterns": [
+            "short culture reading",
+            "image-led explanation",
+            "optional parent/teacher context"
+          ],
+          "coverage": "partial",
+          "existingAssets": [
+            "culture/content/folk-customs/chinese-zodiac"
+          ],
+          "missingAssets": [],
+          "source": {
+            "curriculumReference": "docs/curriculum_reference.json",
+            "seriesAudit": "docs/series_audit.md",
+            "contactSheets": "generated/easy_chinese_book_sheets_6page/轻松学中文少儿版3b"
+          },
+          "verification": "curriculum-audit backed; align final content to original culture pages without copying textbook art",
+          "topic": "Culture",
+          "topicId": "culture",
+          "category": "中国文化 / Culture Side Paths",
+          "categoryId": "culture-side-paths",
+          "pagePattern": "short-unlockable-culture-card"
+        }
+      ],
+      "summary": {
+        "regularLessonCount": 7,
+        "hasCulture": true,
+        "strong": 7,
+        "partial": 1,
+        "missing": 0
+      }
+    },
+    {
+      "book": "4A",
+      "lessons": [
+        {
+          "ref": "4A-1",
+          "book": "4A",
+          "lesson": 1,
+          "title": "Telephone numbers",
+          "progression": null,
+          "coreVocabulary": [
+            "电话号码",
+            "多少",
+            "哪里",
+            "他们"
+          ],
+          "corePatterns": [
+            "电话号码是多少"
+          ],
+          "coverage": "strong",
+          "existingAssets": [
+            "assets/illustrated-identity/classmates-exchange-phone-number.webp"
+          ],
+          "missingAssets": [],
+          "source": {
+            "curriculumReference": "docs/curriculum_reference.json",
+            "coverageMap": "docs/ocr/book_asset_coverage_map.json",
+            "ocrText": "docs/ocr/轻松学中文少儿版4a.txt",
+            "contactSheets": "generated/easy_chinese_book_sheets_6page/轻松学中文少儿版4a"
+          },
+          "verification": "ocr-backed; page-level review recommended before final product copy",
+          "topic": "Numbers",
+          "topicId": "numbers",
+          "category": "开口说中文 / Start Speaking",
+          "categoryId": "start-speaking",
+          "pagePattern": "progression-practice"
+        },
+        {
+          "ref": "4A-2",
+          "book": "4A",
+          "lesson": 2,
+          "title": "Languages",
+          "progression": null,
+          "coreVocabulary": [
+            "汉语",
+            "英语 and language words"
+          ],
+          "corePatterns": [
+            "你会说...吗",
+            "我会说..."
+          ],
+          "coverage": "strong",
+          "existingAssets": [
+            "assets/illustrated-identity/classmates-speak-different-languages.webp",
+            "assets/illustrated-identity/classmates-speak-multiple-languages.webp",
+            "assets/illustrated-flags",
+            "assets/illustrated-country-symbols"
+          ],
+          "missingAssets": [],
+          "source": {
+            "curriculumReference": "docs/curriculum_reference.json",
+            "coverageMap": "docs/ocr/book_asset_coverage_map.json",
+            "ocrText": "docs/ocr/轻松学中文少儿版4a.txt",
+            "contactSheets": "generated/easy_chinese_book_sheets_6page/轻松学中文少儿版4a"
+          },
+          "verification": "ocr-backed; page-level review recommended before final product copy",
+          "topic": "Identity",
+          "topicId": "identity",
+          "category": "开口说中文 / Start Speaking",
+          "categoryId": "start-speaking",
+          "pagePattern": "flag-and-speaking-scenes"
+        },
+        {
+          "ref": "4A-3",
+          "book": "4A",
+          "lesson": 3,
+          "title": "Tell the time",
+          "progression": null,
+          "coreVocabulary": [
+            "clock times"
+          ],
+          "corePatterns": [
+            "几点了"
+          ],
+          "coverage": "strong",
+          "existingAssets": [
+            "assets/illustrated-clocks",
+            "assets/illustrated-clock-routines"
+          ],
+          "missingAssets": [],
+          "source": {
+            "curriculumReference": "docs/curriculum_reference.json",
+            "coverageMap": "docs/ocr/book_asset_coverage_map.json",
+            "ocrText": "docs/ocr/轻松学中文少儿版4a.txt",
+            "contactSheets": "generated/easy_chinese_book_sheets_6page/轻松学中文少儿版4a"
+          },
+          "verification": "ocr-backed; page-level review recommended before final product copy",
+          "topic": "Time & Date",
+          "topicId": "time-date",
+          "category": "时间和日常 / Time & Daily Life",
+          "categoryId": "time-daily-life",
+          "pagePattern": "calendar-clock-practice"
+        },
+        {
+          "ref": "4A-4",
+          "book": "4A",
+          "lesson": 4,
+          "title": "Daily routine",
+          "progression": null,
+          "coreVocabulary": [
+            "wake up / breakfast / school / dinner"
+          ],
+          "corePatterns": [
+            "X点做什么"
+          ],
+          "coverage": "strong",
+          "existingAssets": [
+            "assets/illustrated-clock-routines",
+            "assets/illustrated-activities/0710am-brush-teeth.webp"
+          ],
+          "missingAssets": [],
+          "source": {
+            "curriculumReference": "docs/curriculum_reference.json",
+            "coverageMap": "docs/ocr/book_asset_coverage_map.json",
+            "ocrText": "docs/ocr/轻松学中文少儿版4a.txt",
+            "contactSheets": "generated/easy_chinese_book_sheets_6page/轻松学中文少儿版4a"
+          },
+          "verification": "ocr-backed; page-level review recommended before final product copy",
+          "topic": "Daily Life",
+          "topicId": "daily-life",
+          "category": "时间和日常 / Time & Daily Life",
+          "categoryId": "time-daily-life",
+          "pagePattern": "routine-sequencing"
+        },
+        {
+          "ref": "4A-5",
+          "book": "4A",
+          "lesson": 5,
+          "title": "My lunch",
+          "progression": null,
+          "coreVocabulary": [
+            "lunch foods"
+          ],
+          "corePatterns": [
+            "我中午吃..."
+          ],
+          "coverage": "strong",
+          "existingAssets": [
+            "assets/illustrated-meals/anan-eating-school-lunch.webp",
+            "assets/illustrated-food",
+            "assets/illustrated-food-feelings"
+          ],
+          "missingAssets": [],
+          "source": {
+            "curriculumReference": "docs/curriculum_reference.json",
+            "coverageMap": "docs/ocr/book_asset_coverage_map.json",
+            "ocrText": "docs/ocr/轻松学中文少儿版4a.txt",
+            "contactSheets": "generated/easy_chinese_book_sheets_6page/轻松学中文少儿版4a"
+          },
+          "verification": "ocr-backed; page-level review recommended before final product copy",
+          "topic": "Food & Drinks",
+          "topicId": "food-drinks",
+          "category": "食物 / Food",
+          "categoryId": "food",
+          "pagePattern": "menu-choice-and-feelings"
+        },
+        {
+          "ref": "4A-6",
+          "book": "4A",
+          "lesson": 6,
+          "title": "Means of transport",
+          "progression": null,
+          "coreVocabulary": [
+            "走路",
+            "自行车",
+            "汽车",
+            "出租车",
+            "火车",
+            "飞机",
+            "校车"
+          ],
+          "corePatterns": [
+            "坐...去...",
+            "骑...去..."
+          ],
+          "coverage": "strong",
+          "existingAssets": [
+            "assets/illustrated-transportation"
+          ],
+          "missingAssets": [],
+          "source": {
+            "curriculumReference": "docs/curriculum_reference.json",
+            "coverageMap": "docs/ocr/book_asset_coverage_map.json",
+            "ocrText": "docs/ocr/轻松学中文少儿版4a.txt",
+            "contactSheets": "generated/easy_chinese_book_sheets_6page/轻松学中文少儿版4a"
+          },
+          "verification": "ocr-backed; page-level review recommended before final product copy",
+          "topic": "Daily Life",
+          "topicId": "daily-life",
+          "category": "时间和日常 / Time & Daily Life",
+          "categoryId": "time-daily-life",
+          "pagePattern": "routine-sequencing"
+        },
+        {
+          "ref": "4A-7",
+          "book": "4A",
+          "lesson": 7,
+          "title": "I'm hungry",
+          "progression": null,
+          "coreVocabulary": [
+            "饿",
+            "渴",
+            "好吃"
+          ],
+          "corePatterns": [
+            "我饿了",
+            "我渴了"
+          ],
+          "coverage": "strong",
+          "existingAssets": [
+            "assets/illustrated-food-feelings"
+          ],
+          "missingAssets": [],
+          "source": {
+            "curriculumReference": "docs/curriculum_reference.json",
+            "coverageMap": "docs/ocr/book_asset_coverage_map.json",
+            "ocrText": "docs/ocr/轻松学中文少儿版4a.txt",
+            "contactSheets": "generated/easy_chinese_book_sheets_6page/轻松学中文少儿版4a"
+          },
+          "verification": "ocr-backed; page-level review recommended before final product copy",
+          "topic": "Food & Drinks",
+          "topicId": "food-drinks",
+          "category": "食物 / Food",
+          "categoryId": "food",
+          "pagePattern": "menu-choice-and-feelings"
+        },
+        {
+          "ref": "4A-culture",
+          "book": "4A",
+          "lesson": "culture",
+          "title": "Four Treasures of the Study",
+          "progression": null,
+          "coreVocabulary": [],
+          "corePatterns": [
+            "short culture reading",
+            "image-led explanation",
+            "optional parent/teacher context"
+          ],
+          "coverage": "partial",
+          "existingAssets": [
+            "culture/content/art/calligraphy",
+            "culture/content/science/paper-making",
+            "culture/content/inventions/paper-making"
+          ],
+          "missingAssets": [],
+          "source": {
+            "curriculumReference": "docs/curriculum_reference.json",
+            "seriesAudit": "docs/series_audit.md",
+            "contactSheets": "generated/easy_chinese_book_sheets_6page/轻松学中文少儿版4a"
+          },
+          "verification": "curriculum-audit backed; align final content to original culture pages without copying textbook art",
+          "topic": "Culture",
+          "topicId": "culture",
+          "category": "中国文化 / Culture Side Paths",
+          "categoryId": "culture-side-paths",
+          "pagePattern": "short-unlockable-culture-card"
+        }
+      ],
+      "summary": {
+        "regularLessonCount": 7,
+        "hasCulture": true,
+        "strong": 7,
+        "partial": 1,
+        "missing": 0
+      }
+    },
+    {
+      "book": "4B",
+      "lessons": [
+        {
+          "ref": "4B-1",
+          "book": "4B",
+          "lesson": 1,
+          "title": "It's raining",
+          "progression": null,
+          "coreVocabulary": [
+            "下雨",
+            "下雪",
+            "晴天",
+            "冷",
+            "热",
+            "刮大风"
+          ],
+          "corePatterns": [
+            "今天..."
+          ],
+          "coverage": "strong",
+          "existingAssets": [
+            "assets/illustrated-weather"
+          ],
+          "missingAssets": [],
+          "source": {
+            "curriculumReference": "docs/curriculum_reference.json",
+            "coverageMap": "docs/ocr/book_asset_coverage_map.json",
+            "ocrText": "docs/ocr/轻松学中文少儿版4b.txt",
+            "contactSheets": "generated/easy_chinese_book_sheets_6page/轻松学中文少儿版4b"
+          },
+          "verification": "ocr-backed; page-level review recommended before final product copy",
+          "topic": "Weather",
+          "topicId": "weather",
+          "category": "自然和颜色 / World Around Us",
+          "categoryId": "world-around-us",
+          "pagePattern": "weather-scene-choice"
+        },
+        {
+          "ref": "4B-2",
+          "book": "4B",
+          "lesson": 2,
+          "title": "Clothes",
+          "progression": null,
+          "coreVocabulary": [
+            "衬衫",
+            "裤子",
+            "裙子",
+            "校服"
+          ],
+          "corePatterns": [
+            "穿..."
+          ],
+          "coverage": "strong",
+          "existingAssets": [
+            "assets/illustrated-clothes/basic-clothes-board.webp",
+            "assets/illustrated-clothes/weather-linked-clothing-scene.webp",
+            "assets/illustrated-weather"
+          ],
+          "missingAssets": [],
+          "source": {
+            "curriculumReference": "docs/curriculum_reference.json",
+            "coverageMap": "docs/ocr/book_asset_coverage_map.json",
+            "ocrText": "docs/ocr/轻松学中文少儿版4b.txt",
+            "contactSheets": "generated/easy_chinese_book_sheets_6page/轻松学中文少儿版4b"
+          },
+          "verification": "ocr-backed; page-level review recommended before final product copy",
+          "topic": "Clothes",
+          "topicId": "clothes",
+          "category": "我和家人 / Me & Family",
+          "categoryId": "me-family",
+          "pagePattern": "dress-up-and-match"
+        },
+        {
+          "ref": "4B-3",
+          "book": "4B",
+          "lesson": 3,
+          "title": "My room",
+          "progression": null,
+          "coreVocabulary": [
+            "房间",
+            "床",
+            "书桌",
+            "衣柜"
+          ],
+          "corePatterns": [
+            "房间里有..."
+          ],
+          "coverage": "strong",
+          "existingAssets": [
+            "assets/illustrated-rooms",
+            "assets/illustrated-furniture"
+          ],
+          "missingAssets": [],
+          "source": {
+            "curriculumReference": "docs/curriculum_reference.json",
+            "coverageMap": "docs/ocr/book_asset_coverage_map.json",
+            "ocrText": "docs/ocr/轻松学中文少儿版4b.txt",
+            "contactSheets": "generated/easy_chinese_book_sheets_6page/轻松学中文少儿版4b"
+          },
+          "verification": "ocr-backed; page-level review recommended before final product copy",
+          "topic": "Daily Life",
+          "topicId": "daily-life",
+          "category": "时间和日常 / Time & Daily Life",
+          "categoryId": "time-daily-life",
+          "pagePattern": "routine-sequencing"
+        },
+        {
+          "ref": "4B-4",
+          "book": "4B",
+          "lesson": 4,
+          "title": "Hobbies",
+          "progression": null,
+          "coreVocabulary": [
+            "activity words"
+          ],
+          "corePatterns": [
+            "喜欢...",
+            "会..."
+          ],
+          "coverage": "strong",
+          "existingAssets": [
+            "assets/illustrated-activities"
+          ],
+          "missingAssets": [],
+          "source": {
+            "curriculumReference": "docs/curriculum_reference.json",
+            "coverageMap": "docs/ocr/book_asset_coverage_map.json",
+            "ocrText": "docs/ocr/轻松学中文少儿版4b.txt",
+            "contactSheets": "generated/easy_chinese_book_sheets_6page/轻松学中文少儿版4b"
+          },
+          "verification": "ocr-backed; page-level review recommended before final product copy",
+          "topic": "Hobbies",
+          "topicId": "hobbies",
+          "category": "兴趣和玩具 / Play & Hobbies",
+          "categoryId": "play-hobbies",
+          "pagePattern": "activity-choice-and-dialogue"
+        },
+        {
+          "ref": "4B-5",
+          "book": "4B",
+          "lesson": 5,
+          "title": "Our school",
+          "progression": null,
+          "coreVocabulary": [
+            "学校",
+            "教室",
+            "图书馆",
+            "操场",
+            "礼堂",
+            "食堂",
+            "钢琴"
+          ],
+          "corePatterns": [
+            "学校有..."
+          ],
+          "coverage": "strong",
+          "existingAssets": [
+            "assets/illustrated-school-anchors",
+            "assets/illustrated-school-layouts"
+          ],
+          "missingAssets": [],
+          "source": {
+            "curriculumReference": "docs/curriculum_reference.json",
+            "coverageMap": "docs/ocr/book_asset_coverage_map.json",
+            "ocrText": "docs/ocr/轻松学中文少儿版4b.txt",
+            "contactSheets": "generated/easy_chinese_book_sheets_6page/轻松学中文少儿版4b"
+          },
+          "verification": "ocr-backed; page-level review recommended before final product copy",
+          "topic": "School",
+          "topicId": "school",
+          "category": "学校生活 / School Life",
+          "categoryId": "school-life",
+          "pagePattern": "classroom-explore-and-match"
+        },
+        {
+          "ref": "4B-6",
+          "book": "4B",
+          "lesson": 6,
+          "title": "School subjects",
+          "progression": null,
+          "coreVocabulary": [
+            "subject names"
+          ],
+          "corePatterns": [
+            "我喜欢...课"
+          ],
+          "coverage": "strong",
+          "existingAssets": [
+            "assets/illustrated-school-subjects/basic-subjects-board.webp",
+            "assets/illustrated-activities/anan_go_to_music_class.webp",
+            "assets/illustrated-activities/anan_in_music_class.webp",
+            "assets/illustrated-activities/anan_likes_music_class.webp",
+            "assets/illustrated-activities/yangyang_likes_pe_class.webp",
+            "assets/illustrated-activities/lele_dislikes_math_class.webp"
+          ],
+          "missingAssets": [],
+          "source": {
+            "curriculumReference": "docs/curriculum_reference.json",
+            "coverageMap": "docs/ocr/book_asset_coverage_map.json",
+            "ocrText": "docs/ocr/轻松学中文少儿版4b.txt",
+            "contactSheets": "generated/easy_chinese_book_sheets_6page/轻松学中文少儿版4b"
+          },
+          "verification": "ocr-backed; page-level review recommended before final product copy",
+          "topic": "School",
+          "topicId": "school",
+          "category": "学校生活 / School Life",
+          "categoryId": "school-life",
+          "pagePattern": "classroom-explore-and-match"
+        },
+        {
+          "ref": "4B-7",
+          "book": "4B",
+          "lesson": 7,
+          "title": "Leisure time",
+          "progression": null,
+          "coreVocabulary": [
+            "leisure activity words"
+          ],
+          "corePatterns": [
+            "放学后 / 周末做什么"
+          ],
+          "coverage": "strong",
+          "existingAssets": [
+            "assets/illustrated-activities"
+          ],
+          "missingAssets": [],
+          "source": {
+            "curriculumReference": "docs/curriculum_reference.json",
+            "coverageMap": "docs/ocr/book_asset_coverage_map.json",
+            "ocrText": "docs/ocr/轻松学中文少儿版4b.txt",
+            "contactSheets": "generated/easy_chinese_book_sheets_6page/轻松学中文少儿版4b"
+          },
+          "verification": "ocr-backed; page-level review recommended before final product copy",
+          "topic": "Hobbies",
+          "topicId": "hobbies",
+          "category": "兴趣和玩具 / Play & Hobbies",
+          "categoryId": "play-hobbies",
+          "pagePattern": "activity-choice-and-dialogue"
+        },
+        {
+          "ref": "4B-culture",
+          "book": "4B",
+          "lesson": "culture",
+          "title": "The Chinese Painting",
+          "progression": null,
+          "coreVocabulary": [],
+          "corePatterns": [
+            "short culture reading",
+            "image-led explanation",
+            "optional parent/teacher context"
+          ],
+          "coverage": "partial",
+          "existingAssets": [
+            "culture/content/art/ink-wash",
+            "culture/content/art/gongbi"
+          ],
+          "missingAssets": [],
+          "source": {
+            "curriculumReference": "docs/curriculum_reference.json",
+            "seriesAudit": "docs/series_audit.md",
+            "contactSheets": "generated/easy_chinese_book_sheets_6page/轻松学中文少儿版4b"
+          },
+          "verification": "curriculum-audit backed; align final content to original culture pages without copying textbook art",
+          "topic": "Culture",
+          "topicId": "culture",
+          "category": "中国文化 / Culture Side Paths",
+          "categoryId": "culture-side-paths",
+          "pagePattern": "short-unlockable-culture-card"
+        }
+      ],
+      "summary": {
+        "regularLessonCount": 7,
+        "hasCulture": true,
+        "strong": 7,
+        "partial": 1,
+        "missing": 0
+      }
+    }
+  ]
+}

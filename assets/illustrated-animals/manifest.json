@@ -1,0 +1,69 @@
+{
+  "collection": "illustrated-animals",
+  "style": "cute educational storybook animal portraits for young Chinese learners",
+  "items": [
+    {
+      "id": "dog",
+      "label": "Dog",
+      "hanzi": "狗",
+      "pinyin": "gou",
+      "file": "dog.webp"
+    },
+    {
+      "id": "cat",
+      "label": "Cat",
+      "hanzi": "猫",
+      "pinyin": "mao",
+      "file": "cat.webp"
+    },
+    {
+      "id": "elephant",
+      "label": "Elephant",
+      "hanzi": "大象",
+      "pinyin": "da xiang",
+      "file": "elephant.webp"
+    },
+    {
+      "id": "panda",
+      "label": "Panda",
+      "hanzi": "熊猫",
+      "pinyin": "xiong mao",
+      "file": "panda.webp"
+    },
+    {
+      "id": "turtle",
+      "label": "Turtle",
+      "hanzi": "乌龟",
+      "pinyin": "wu gui",
+      "file": "turtle.webp"
+    },
+    {
+      "id": "monkey",
+      "label": "Monkey",
+      "hanzi": "猴子",
+      "pinyin": "hou zi",
+      "file": "monkey.webp"
+    },
+    {
+      "id": "tiger",
+      "label": "Tiger",
+      "hanzi": "老虎",
+      "pinyin": "lao hu",
+      "file": "tiger.webp"
+    },
+    {
+      "id": "bunny",
+      "label": "Bunny",
+      "hanzi": "兔子",
+      "pinyin": "tu zi",
+      "file": "bunny.webp"
+    },
+    {
+      "id": "goldfish",
+      "label": "Goldfish",
+      "hanzi": "金鱼",
+      "pinyin": "jin yu",
+      "file": "goldfish.webp"
+    }
+  ]
+}

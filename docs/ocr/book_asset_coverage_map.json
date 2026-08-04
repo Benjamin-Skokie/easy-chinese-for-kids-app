@@ -1,0 +1,1061 @@
+{
+  "generatedOn": "2026-07-12",
+  "purpose": "Lesson-level asset coverage map derived from OCR textbook topics and current asset inventory.",
+  "books": [
+    {
+      "book": "1A",
+      "lessons": [
+        {
+          "lesson": 1,
+          "title": "Numbers (1)",
+          "coreVocabulary": [
+            "一",
+            "二",
+            "三",
+            "四",
+            "五"
+          ],
+          "corePatterns": [
+            "counting objects"
+          ],
+          "coverage": "strong",
+          "existingAssets": [
+            "assets/illustrated-counting/ten-yellow-ducks.webp",
+            "assets/illustrated-measure-words/one-pencil.webp",
+            "assets/illustrated-measure-words/three-ducks.webp"
+          ],
+          "missingAssets": []
+        },
+        {
+          "lesson": 2,
+          "title": "Numbers (2)",
+          "coreVocabulary": [
+            "六",
+            "七",
+            "八",
+            "九",
+            "十"
+          ],
+          "corePatterns": [
+            "counting objects"
+          ],
+          "coverage": "strong",
+          "existingAssets": [
+            "assets/illustrated-counting/ten-yellow-ducks.webp"
+          ],
+          "missingAssets": []
+        },
+        {
+          "lesson": 3,
+          "title": "Numbers (3)",
+          "coreVocabulary": [
+            "一",
+            "二",
+            "三",
+            "四",
+            "五",
+            "六",
+            "七",
+            "八",
+            "九",
+            "十"
+          ],
+          "corePatterns": [
+            "counting objects"
+          ],
+          "coverage": "strong",
+          "existingAssets": [
+            "assets/illustrated-counting/eleven-to-twenty-counting-board.webp",
+            "assets/illustrated-counting/ten-yellow-ducks.webp"
+          ],
+          "missingAssets": []
+        },
+        {
+          "lesson": 4,
+          "title": "Hello!",
+          "coreVocabulary": [
+            "你好",
+            "您好",
+            "再见"
+          ],
+          "corePatterns": [
+            "greeting at school"
+          ],
+          "coverage": "strong",
+          "existingAssets": [
+            "assets/greetings"
+          ],
+          "missingAssets": []
+        },
+        {
+          "lesson": 5,
+          "title": "Thank you!",
+          "coreVocabulary": [
+            "谢谢",
+            "不客气",
+            "对不起"
+          ],
+          "corePatterns": [
+            "polite classroom exchanges"
+          ],
+          "coverage": "strong",
+          "existingAssets": [
+            "assets/polite"
+          ],
+          "missingAssets": []
+        },
+        {
+          "lesson": 6,
+          "title": "What's your name?",
+          "coreVocabulary": [
+            "名字"
+          ],
+          "corePatterns": [
+            "你叫什么名字",
+            "我叫..."
+          ],
+          "coverage": "strong",
+          "existingAssets": [
+            "assets/introductions"
+          ],
+          "missingAssets": []
+        },
+        {
+          "lesson": 7,
+          "title": "I'm 5 years old",
+          "coreVocabulary": [
+            "岁"
+          ],
+          "corePatterns": [
+            "你几岁",
+            "我五岁"
+          ],
+          "coverage": "strong",
+          "existingAssets": [
+            "assets/age"
+          ],
+          "missingAssets": []
+        }
+      ]
+    },
+    {
+      "book": "1B",
+      "lessons": [
+        {
+          "lesson": 1,
+          "title": "Mum and dad",
+          "coreVocabulary": [
+            "爸爸",
+            "妈妈",
+            "爱"
+          ],
+          "corePatterns": [
+            "我爱爸爸",
+            "我爱妈妈"
+          ],
+          "coverage": "strong",
+          "existingAssets": [
+            "assets/illustrated-family"
+          ],
+          "missingAssets": []
+        },
+        {
+          "lesson": 2,
+          "title": "Brothers and sisters",
+          "coreVocabulary": [
+            "哥哥",
+            "姐姐",
+            "弟弟",
+            "妹妹"
+          ],
+          "corePatterns": [
+            "family member identification"
+          ],
+          "coverage": "strong",
+          "existingAssets": [
+            "assets/illustrated-family"
+          ],
+          "missingAssets": []
+        },
+        {
+          "lesson": 3,
+          "title": "Parts of the body (1)",
+          "coreVocabulary": [
+            "body parts"
+          ],
+          "corePatterns": [
+            "identify body parts"
+          ],
+          "coverage": "strong",
+          "existingAssets": [
+            "assets/body/body-parts-breakdown-board.webp",
+            "assets/body/body-topic-kid.webp",
+            "assets/body/body-topic-kid-largehead.webp"
+          ],
+          "missingAssets": []
+        },
+        {
+          "lesson": 4,
+          "title": "Parts of the body (2)",
+          "coreVocabulary": [
+            "body parts"
+          ],
+          "corePatterns": [
+            "identify body parts"
+          ],
+          "coverage": "strong",
+          "existingAssets": [
+            "assets/body/body-parts-breakdown-board.webp",
+            "assets/body/body-topic-kid.webp",
+            "assets/body/body-topic-kid-largehead.webp"
+          ],
+          "missingAssets": []
+        },
+        {
+          "lesson": 5,
+          "title": "Pets",
+          "coreVocabulary": [
+            "狗",
+            "猫",
+            "金鱼",
+            "兔子"
+          ],
+          "corePatterns": [
+            "我有一只..."
+          ],
+          "coverage": "strong",
+          "existingAssets": [
+            "assets/illustrated-animals",
+            "assets/illustrated-pets/lele-with-pets-at-home.webp"
+          ],
+          "missingAssets": []
+        },
+        {
+          "lesson": 6,
+          "title": "Colours",
+          "coreVocabulary": [
+            "颜色 words"
+          ],
+          "corePatterns": [
+            "X色"
+          ],
+          "coverage": "strong",
+          "existingAssets": [
+            "assets/illustrated-colors/basic-colors-board.webp"
+          ],
+          "missingAssets": []
+        },
+        {
+          "lesson": 7,
+          "title": "Fruit",
+          "coreVocabulary": [
+            "苹果",
+            "香蕉",
+            "葡萄",
+            "草莓"
+          ],
+          "corePatterns": [
+            "identify fruit"
+          ],
+          "coverage": "strong",
+          "existingAssets": [
+            "assets/illustrated-food"
+          ],
+          "missingAssets": []
+        }
+      ]
+    },
+    {
+      "book": "2A",
+      "lessons": [
+        {
+          "lesson": 1,
+          "title": "Numbers",
+          "coreVocabulary": [
+            "二十六",
+            "三十八",
+            "四十"
+          ],
+          "corePatterns": [
+            "counting larger quantities"
+          ],
+          "coverage": "strong",
+          "existingAssets": [
+            "assets/illustrated-counting/twenty-to-forty-counting-board.webp"
+          ],
+          "missingAssets": []
+        },
+        {
+          "lesson": 2,
+          "title": "Two younger brothers",
+          "coreVocabulary": [
+            "一个",
+            "两个",
+            "没有"
+          ],
+          "corePatterns": [
+            "我有...",
+            "我没有..."
+          ],
+          "coverage": "strong",
+          "existingAssets": [
+            "assets/illustrated-family",
+            "assets/illustrated-family/family-counting-two-younger-brothers.webp",
+            "docs/grammar_asset_map.md"
+          ],
+          "missingAssets": []
+        },
+        {
+          "lesson": 3,
+          "title": "Good friends",
+          "coreVocabulary": [
+            "朋友"
+          ],
+          "corePatterns": [
+            "他是我的好朋友"
+          ],
+          "coverage": "strong",
+          "existingAssets": [
+            "assets/introductions",
+            "assets/introductions/good-friends-scene.webp"
+          ],
+          "missingAssets": []
+        },
+        {
+          "lesson": 4,
+          "title": "My toys",
+          "coreVocabulary": [
+            "toy words"
+          ],
+          "corePatterns": [
+            "这是我的..."
+          ],
+          "coverage": "strong",
+          "existingAssets": [
+            "assets/illustrated-toys"
+          ],
+          "missingAssets": []
+        },
+        {
+          "lesson": 5,
+          "title": "I love reading",
+          "coreVocabulary": [
+            "看书",
+            "喜欢"
+          ],
+          "corePatterns": [
+            "我喜欢看书"
+          ],
+          "coverage": "strong",
+          "existingAssets": [
+            "assets/illustrated-activities/child-reading-book-facing-child.webp",
+            "assets/illustrated-activities/grandma_reading_armchair.webp"
+          ],
+          "missingAssets": []
+        },
+        {
+          "lesson": 6,
+          "title": "I can dress myself",
+          "coreVocabulary": [
+            "穿",
+            "鞋",
+            "帽子"
+          ],
+          "corePatterns": [
+            "I can dress myself"
+          ],
+          "coverage": "strong",
+          "existingAssets": [
+            "assets/illustrated-self-dressing",
+            "assets/illustrated-clothes/basic-clothes-board.webp"
+          ],
+          "missingAssets": []
+        },
+        {
+          "lesson": 7,
+          "title": "Colours",
+          "coreVocabulary": [
+            "颜色 words"
+          ],
+          "corePatterns": [
+            "X色"
+          ],
+          "coverage": "strong",
+          "existingAssets": [
+            "assets/illustrated-colors/basic-colors-board.webp"
+          ],
+          "missingAssets": []
+        }
+      ]
+    },
+    {
+      "book": "2B",
+      "lessons": [
+        {
+          "lesson": 1,
+          "title": "Today is Monday",
+          "coreVocabulary": [
+            "星期一 to 星期天",
+            "今天"
+          ],
+          "corePatterns": [
+            "今天星期..."
+          ],
+          "coverage": "strong",
+          "existingAssets": [
+            "assets/illustrated-day-of-week"
+          ],
+          "missingAssets": []
+        },
+        {
+          "lesson": 2,
+          "title": "What time is it?",
+          "coreVocabulary": [
+            "一点 to 十二点"
+          ],
+          "corePatterns": [
+            "几点了"
+          ],
+          "coverage": "strong",
+          "existingAssets": [
+            "assets/illustrated-clocks",
+            "assets/illustrated-clock-routines"
+          ],
+          "missingAssets": []
+        },
+        {
+          "lesson": 3,
+          "title": "Stationery",
+          "coreVocabulary": [
+            "铅笔",
+            "橡皮",
+            "尺子",
+            "文具盒",
+            "课本"
+          ],
+          "corePatterns": [
+            "there is in the pencil box / schoolbag"
+          ],
+          "coverage": "strong",
+          "existingAssets": [
+            "assets/illustrated-stationery"
+          ],
+          "missingAssets": []
+        },
+        {
+          "lesson": 4,
+          "title": "My classroom",
+          "coreVocabulary": [
+            "教室",
+            "桌子",
+            "椅子",
+            "黑板"
+          ],
+          "corePatterns": [
+            "有",
+            "在"
+          ],
+          "coverage": "strong",
+          "existingAssets": [
+            "assets/illustrated-classrooms",
+            "assets/illustrated-school-anchors",
+            "assets/illustrated-grammar"
+          ],
+          "missingAssets": []
+        },
+        {
+          "lesson": 5,
+          "title": "Animals",
+          "coreVocabulary": [
+            "animal words"
+          ],
+          "corePatterns": [
+            "identify animals"
+          ],
+          "coverage": "strong",
+          "existingAssets": [
+            "assets/illustrated-animals"
+          ],
+          "missingAssets": []
+        },
+        {
+          "lesson": 6,
+          "title": "Big or small",
+          "coreVocabulary": [
+            "大",
+            "小"
+          ],
+          "corePatterns": [
+            "A big / small"
+          ],
+          "coverage": "strong",
+          "existingAssets": [
+            "assets/illustrated-comparisons"
+          ],
+          "missingAssets": []
+        },
+        {
+          "lesson": 7,
+          "title": "Snacks",
+          "coreVocabulary": [
+            "snack foods",
+            "drinks"
+          ],
+          "corePatterns": [
+            "like / eat / drink"
+          ],
+          "coverage": "strong",
+          "existingAssets": [
+            "assets/illustrated-food",
+            "assets/illustrated-food-feelings"
+          ],
+          "missingAssets": []
+        }
+      ]
+    },
+    {
+      "book": "3A",
+      "lessons": [
+        {
+          "lesson": 1,
+          "title": "Numbers",
+          "coreVocabulary": [
+            "四十一",
+            "五十三",
+            "一百"
+          ],
+          "corePatterns": [
+            "counting higher numbers"
+          ],
+          "coverage": "strong",
+          "existingAssets": [
+            "assets/illustrated-counting/forty-one-to-one-hundred-counting-board.webp"
+          ],
+          "missingAssets": []
+        },
+        {
+          "lesson": 2,
+          "title": "Date",
+          "coreVocabulary": [
+            "month names",
+            "day numbers"
+          ],
+          "corePatterns": [
+            "X月X日"
+          ],
+          "coverage": "strong",
+          "existingAssets": [
+            "assets/illustrated-dates",
+            "assets/illustrated-months-of-year"
+          ],
+          "missingAssets": []
+        },
+        {
+          "lesson": 3,
+          "title": "Happy birthday!",
+          "coreVocabulary": [
+            "生日",
+            "蛋糕"
+          ],
+          "corePatterns": [
+            "生日快乐"
+          ],
+          "coverage": "strong",
+          "existingAssets": [
+            "assets/illustrated-dates/birthday-party-scene.webp",
+            "assets/illustrated-food/cake.webp",
+            "assets/illustrated-dates"
+          ],
+          "missingAssets": []
+        },
+        {
+          "lesson": 4,
+          "title": "Family",
+          "coreVocabulary": [
+            "family members"
+          ],
+          "corePatterns": [
+            "introduce family"
+          ],
+          "coverage": "strong",
+          "existingAssets": [
+            "assets/illustrated-family"
+          ],
+          "missingAssets": []
+        },
+        {
+          "lesson": 5,
+          "title": "Nationality",
+          "coreVocabulary": [
+            "中国",
+            "美国",
+            "英国",
+            "法国"
+          ],
+          "corePatterns": [
+            "你是哪国人",
+            "我是...人"
+          ],
+          "coverage": "strong",
+          "existingAssets": [
+            "assets/illustrated-flags",
+            "assets/illustrated-country-symbols"
+          ],
+          "missingAssets": []
+        },
+        {
+          "lesson": 6,
+          "title": "Request",
+          "coreVocabulary": [
+            "request phrases"
+          ],
+          "corePatterns": [
+            "请...",
+            "我可以...吗"
+          ],
+          "coverage": "strong",
+          "existingAssets": [
+            "assets/illustrated-grammar/school-request-teacher-help.webp",
+            "assets/polite",
+            "assets/illustrated-grammar/can-watch-tv-homework-first.webp"
+          ],
+          "missingAssets": []
+        },
+        {
+          "lesson": 7,
+          "title": "Clothes",
+          "coreVocabulary": [
+            "衬衫",
+            "裤子",
+            "裙子",
+            "鞋",
+            "帽子",
+            "手套",
+            "外套"
+          ],
+          "corePatterns": [
+            "wearing clothes"
+          ],
+          "coverage": "strong",
+          "existingAssets": [
+            "assets/illustrated-clothes/basic-clothes-board.webp",
+            "assets/illustrated-clothes/wearing-clothes-scene.webp"
+          ],
+          "missingAssets": []
+        }
+      ]
+    },
+    {
+      "book": "3B",
+      "lessons": [
+        {
+          "lesson": 1,
+          "title": "My schoolbag",
+          "coreVocabulary": [
+            "书包",
+            "课本",
+            "练习本",
+            "文具盒"
+          ],
+          "corePatterns": [
+            "有",
+            "没有"
+          ],
+          "coverage": "strong",
+          "existingAssets": [
+            "assets/illustrated-stationery",
+            "assets/illustrated-grammar",
+            "assets/illustrated-rooms"
+          ],
+          "missingAssets": []
+        },
+        {
+          "lesson": 2,
+          "title": "Our classroom",
+          "coreVocabulary": [
+            "教室",
+            "桌子",
+            "椅子"
+          ],
+          "corePatterns": [
+            "有",
+            "在"
+          ],
+          "coverage": "strong",
+          "existingAssets": [
+            "assets/illustrated-classrooms",
+            "assets/illustrated-school-anchors"
+          ],
+          "missingAssets": []
+        },
+        {
+          "lesson": 3,
+          "title": "Positions",
+          "coreVocabulary": [
+            "上",
+            "下",
+            "里",
+            "外",
+            "前",
+            "后",
+            "左",
+            "右"
+          ],
+          "corePatterns": [
+            "A在B上面/下面/里面/外面",
+            "front/back/left/right position words"
+          ],
+          "coverage": "strong",
+          "existingAssets": [
+            "assets/illustrated-rooms/positions-up-down.webp",
+            "assets/illustrated-rooms/positions-inside-outside.webp",
+            "assets/illustrated-rooms/positions-all-directions.webp"
+          ],
+          "missingAssets": []
+        },
+        {
+          "lesson": 4,
+          "title": "Hobbies",
+          "coreVocabulary": [
+            "hobby verbs"
+          ],
+          "corePatterns": [
+            "我喜欢...",
+            "我会..."
+          ],
+          "coverage": "strong",
+          "existingAssets": [
+            "assets/illustrated-activities"
+          ],
+          "missingAssets": []
+        },
+        {
+          "lesson": 5,
+          "title": "Food and drink",
+          "coreVocabulary": [
+            "food and drink words"
+          ],
+          "corePatterns": [
+            "喜欢吃/喝"
+          ],
+          "coverage": "strong",
+          "existingAssets": [
+            "assets/illustrated-food",
+            "assets/illustrated-food-feelings"
+          ],
+          "missingAssets": []
+        },
+        {
+          "lesson": 6,
+          "title": "Vegetables",
+          "coreVocabulary": [
+            "胡萝卜",
+            "黄瓜",
+            "西红柿",
+            "西兰花",
+            "土豆"
+          ],
+          "corePatterns": [
+            "identify vegetables"
+          ],
+          "coverage": "strong",
+          "existingAssets": [
+            "assets/illustrated-food/carrot.webp",
+            "assets/illustrated-food/tomato.webp",
+            "assets/illustrated-food/cucumber.webp",
+            "assets/illustrated-food/broccoli.webp",
+            "assets/illustrated-food/potatoes.webp"
+          ],
+          "missingAssets": []
+        },
+        {
+          "lesson": 7,
+          "title": "Nature",
+          "coreVocabulary": [
+            "sky and weather words"
+          ],
+          "corePatterns": [
+            "describe nature scene"
+          ],
+          "coverage": "strong",
+          "existingAssets": [
+            "assets/illustrated-sky-day-night",
+            "assets/illustrated-weather",
+            "assets/illustrated-food/bamboo.webp"
+          ],
+          "missingAssets": []
+        }
+      ]
+    },
+    {
+      "book": "4A",
+      "lessons": [
+        {
+          "lesson": 1,
+          "title": "Telephone numbers",
+          "coreVocabulary": [
+            "电话号码",
+            "多少",
+            "哪里",
+            "他们"
+          ],
+          "corePatterns": [
+            "电话号码是多少"
+          ],
+          "coverage": "strong",
+          "existingAssets": [
+            "assets/illustrated-identity/classmates-exchange-phone-number.webp"
+          ],
+          "missingAssets": []
+        },
+        {
+          "lesson": 2,
+          "title": "Languages",
+          "coreVocabulary": [
+            "汉语",
+            "英语 and language words"
+          ],
+          "corePatterns": [
+            "你会说...吗",
+            "我会说..."
+          ],
+          "coverage": "strong",
+          "existingAssets": [
+            "assets/illustrated-identity/classmates-speak-different-languages.webp",
+            "assets/illustrated-identity/classmates-speak-multiple-languages.webp",
+            "assets/illustrated-flags",
+            "assets/illustrated-country-symbols"
+          ],
+          "missingAssets": []
+        },
+        {
+          "lesson": 3,
+          "title": "Tell the time",
+          "coreVocabulary": [
+            "clock times"
+          ],
+          "corePatterns": [
+            "几点了"
+          ],
+          "coverage": "strong",
+          "existingAssets": [
+            "assets/illustrated-clocks",
+            "assets/illustrated-clock-routines"
+          ],
+          "missingAssets": []
+        },
+        {
+          "lesson": 4,
+          "title": "Daily routine",
+          "coreVocabulary": [
+            "wake up / breakfast / school / dinner"
+          ],
+          "corePatterns": [
+            "X点做什么"
+          ],
+          "coverage": "strong",
+          "existingAssets": [
+            "assets/illustrated-clock-routines",
+            "assets/illustrated-activities/0710am-brush-teeth.webp"
+          ],
+          "missingAssets": []
+        },
+        {
+          "lesson": 5,
+          "title": "My lunch",
+          "coreVocabulary": [
+            "lunch foods"
+          ],
+          "corePatterns": [
+            "我中午吃..."
+          ],
+          "coverage": "strong",
+          "existingAssets": [
+            "assets/illustrated-meals/anan-eating-school-lunch.webp",
+            "assets/illustrated-food",
+            "assets/illustrated-food-feelings"
+          ],
+          "missingAssets": []
+        },
+        {
+          "lesson": 6,
+          "title": "Means of transport",
+          "coreVocabulary": [
+            "走路",
+            "自行车",
+            "汽车",
+            "出租车",
+            "火车",
+            "飞机",
+            "校车"
+          ],
+          "corePatterns": [
+            "坐...去...",
+            "骑...去..."
+          ],
+          "coverage": "strong",
+          "existingAssets": [
+            "assets/illustrated-transportation"
+          ],
+          "missingAssets": []
+        },
+        {
+          "lesson": 7,
+          "title": "I'm hungry.",
+          "coreVocabulary": [
+            "饿",
+            "渴",
+            "好吃"
+          ],
+          "corePatterns": [
+            "我饿了",
+            "我渴了"
+          ],
+          "coverage": "strong",
+          "existingAssets": [
+            "assets/illustrated-food-feelings"
+          ],
+          "missingAssets": []
+        }
+      ]
+    },
+    {
+      "book": "4B",
+      "lessons": [
+        {
+          "lesson": 1,
+          "title": "It's raining.",
+          "coreVocabulary": [
+            "下雨",
+            "下雪",
+            "晴天",
+            "冷",
+            "热",
+            "刮大风"
+          ],
+          "corePatterns": [
+            "今天..."
+          ],
+          "coverage": "strong",
+          "existingAssets": [
+            "assets/illustrated-weather"
+          ],
+          "missingAssets": []
+        },
+        {
+          "lesson": 2,
+          "title": "Clothes",
+          "coreVocabulary": [
+            "衬衫",
+            "裤子",
+            "裙子",
+            "校服"
+          ],
+          "corePatterns": [
+            "穿..."
+          ],
+          "coverage": "strong",
+          "existingAssets": [
+            "assets/illustrated-clothes/basic-clothes-board.webp",
+            "assets/illustrated-clothes/weather-linked-clothing-scene.webp",
+            "assets/illustrated-weather"
+          ],
+          "missingAssets": []
+        },
+        {
+          "lesson": 3,
+          "title": "My room",
+          "coreVocabulary": [
+            "房间",
+            "床",
+            "书桌",
+            "衣柜"
+          ],
+          "corePatterns": [
+            "房间里有..."
+          ],
+          "coverage": "strong",
+          "existingAssets": [
+            "assets/illustrated-rooms",
+            "assets/illustrated-furniture"
+          ],
+          "missingAssets": []
+        },
+        {
+          "lesson": 4,
+          "title": "Hobbies",
+          "coreVocabulary": [
+            "activity words"
+          ],
+          "corePatterns": [
+            "喜欢...",
+            "会..."
+          ],
+          "coverage": "strong",
+          "existingAssets": [
+            "assets/illustrated-activities"
+          ],
+          "missingAssets": []
+        },
+        {
+          "lesson": 5,
+          "title": "Our school",
+          "coreVocabulary": [
+            "学校",
+            "教室",
+            "图书馆",
+            "操场",
+            "礼堂",
+            "食堂",
+            "钢琴"
+          ],
+          "corePatterns": [
+            "学校有..."
+          ],
+          "coverage": "strong",
+          "existingAssets": [
+            "assets/illustrated-school-anchors",
+            "assets/illustrated-school-layouts"
+          ],
+          "missingAssets": []
+        },
+        {
+          "lesson": 6,
+          "title": "School subjects",
+          "coreVocabulary": [
+            "subject names"
+          ],
+          "corePatterns": [
+            "我喜欢...课"
+          ],
+          "coverage": "strong",
+          "existingAssets": [
+            "assets/illustrated-school-subjects/basic-subjects-board.webp",
+            "assets/illustrated-activities/anan_go_to_music_class.webp",
+            "assets/illustrated-activities/anan_in_music_class.webp",
+            "assets/illustrated-activities/anan_likes_music_class.webp",
+            "assets/illustrated-activities/yangyang_likes_pe_class.webp",
+            "assets/illustrated-activities/lele_dislikes_math_class.webp"
+          ],
+          "missingAssets": []
+        },
+        {
+          "lesson": 7,
+          "title": "Leisure time",
+          "coreVocabulary": [
+            "leisure activity words"
+          ],
+          "corePatterns": [
+            "放学后 / 周末做什么"
+          ],
+          "coverage": "strong",
+          "existingAssets": [
+            "assets/illustrated-activities"
+          ],
+          "missingAssets": []
+        }
+      ]
+    }
+  ],
+  "status": "legacy seed map; prefer docs/learn_by_topics_asset_mapping.md and docs/learn_by_books_asset_mapping.md for current manual coverage review"
+}

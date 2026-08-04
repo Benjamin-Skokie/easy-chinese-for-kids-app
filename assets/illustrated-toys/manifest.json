@@ -1,0 +1,64 @@
+{
+  "collection": "illustrated-toys",
+  "style": "gentle educational watercolor-and-colored-pencil toy and transport art for young Chinese learners",
+  "groups": [
+    {
+      "id": "toy-store-2a-core",
+      "label": "Book 2A toy store core set",
+      "book": "2A",
+      "lesson": 4,
+      "items": ["toy-car", "train", "airplane", "school-bus", "toy-doll", "bicycle", "teddy-bear"]
+    }
+  ],
+  "items": [
+    {
+      "id": "toy-car",
+      "label": "Toy car",
+      "hanzi": "玩具汽车",
+      "pinyin": "wan ju qi che",
+      "file": "toy-car.webp"
+    },
+    {
+      "id": "train",
+      "label": "Train",
+      "hanzi": "火车",
+      "pinyin": "huo che",
+      "file": "train.webp"
+    },
+    {
+      "id": "airplane",
+      "label": "Airplane",
+      "hanzi": "飞机",
+      "pinyin": "fei ji",
+      "file": "airplane.webp"
+    },
+    {
+      "id": "school-bus",
+      "label": "School bus",
+      "hanzi": "校车",
+      "pinyin": "xiao che",
+      "file": "school-bus.webp"
+    },
+    {
+      "id": "toy-doll",
+      "label": "Toy doll",
+      "hanzi": "玩具娃娃",
+      "pinyin": "wan ju wa wa",
+      "file": "toy-doll.webp"
+    },
+    {
+      "id": "bicycle",
+      "label": "Bicycle",
+      "hanzi": "自行车",
+      "pinyin": "zi xing che",
+      "file": "bicycle.webp"
+    },
+    {
+      "id": "teddy-bear",
+      "label": "Teddy bear",
+      "hanzi": "泰迪熊",
+      "pinyin": "tai di xiong",
+      "file": "teddy-bear.webp"
+    }
+  ]
+}

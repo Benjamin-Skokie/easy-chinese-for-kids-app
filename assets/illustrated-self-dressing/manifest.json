@@ -1,0 +1,42 @@
+{
+  "collection": "illustrated-self-dressing",
+  "style": "clean educational self-dressing action cards for young Chinese learners",
+  "items": [
+    {
+      "id": "putting-on-shoes",
+      "label": "Putting on shoes",
+      "hanzi": "穿鞋",
+      "pinyin": "chuan xie",
+      "theme": "Anan puts on one shoe while the other shoe waits nearby",
+      "lessonHints": ["2A Lesson 6 I can dress myself"],
+      "file": "putting-on-shoes.webp"
+    },
+    {
+      "id": "putting-on-socks",
+      "label": "Putting on socks",
+      "hanzi": "穿袜子",
+      "pinyin": "chuan wa zi",
+      "theme": "Anan pulls a sock onto one foot",
+      "lessonHints": ["2A Lesson 6 I can dress myself"],
+      "file": "putting-on-socks.webp"
+    },
+    {
+      "id": "putting-on-jacket",
+      "label": "Putting on a jacket",
+      "hanzi": "穿外套",
+      "pinyin": "chuan wai tao",
+      "theme": "Anan puts one arm into a jacket sleeve",
+      "lessonHints": ["2A Lesson 6 I can dress myself"],
+      "file": "putting-on-jacket.webp"
+    },
+    {
+      "id": "putting-on-hat",
+      "label": "Putting on a hat",
+      "hanzi": "戴帽子",
+      "pinyin": "dai mao zi",
+      "theme": "Anan places a hat onto her head",
+      "lessonHints": ["2A Lesson 6 I can dress myself"],
+      "file": "putting-on-hat.webp"
+    }
+  ]
+}

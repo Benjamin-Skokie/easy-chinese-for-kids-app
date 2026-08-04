@@ -1,0 +1,20 @@
+{
+  "collection": "illustrated-pets",
+  "style": "gentle educational storybook pet scenes for young Chinese learners",
+  "items": [
+    {
+      "id": "lele-with-pets-at-home",
+      "label": "Lele with pets at home",
+      "hanzi": "喜欢小宠物",
+      "pinyin": "xi huan xiao chong wu",
+      "personId": "lele",
+      "personLabel": "Lele",
+      "sentenceHanzi": "乐乐喜欢小狗和金鱼。",
+      "sentencePinyin": "Le le xi huan xiao gou he jin yu.",
+      "sentenceEnglish": "Lele likes the little dog and the goldfish.",
+      "theme": "Lele plays with a puppy while a goldfish tank sits safely in the background",
+      "lessonHint": "1B Lesson 5 Pets",
+      "file": "lele-with-pets-at-home.webp"
+    }
+  ]
+}

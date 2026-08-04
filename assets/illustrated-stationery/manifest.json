@@ -1,0 +1,107 @@
+{
+  "collection": "illustrated-stationery",
+  "style": "gentle educational watercolor-and-colored-pencil stationery art for young Chinese learners",
+  "groups": [
+    {
+      "id": "stationery-group",
+      "label": "Core stationery group",
+      "book": "2B",
+      "lesson": 3,
+      "items": ["pencil", "ruler", "scissors", "eraser", "colored-pencils"],
+      "file": "stationery-group.webp"
+    }
+  ],
+  "items": [
+    {
+      "id": "pencil",
+      "label": "Pencil",
+      "hanzi": "铅笔",
+      "pinyin": "qian bi",
+      "file": "pencil.webp"
+    },
+    {
+      "id": "ruler",
+      "label": "Ruler",
+      "hanzi": "尺子",
+      "pinyin": "chi zi",
+      "file": "ruler.webp"
+    },
+    {
+      "id": "scissors",
+      "label": "Scissors",
+      "hanzi": "剪刀",
+      "pinyin": "jian dao",
+      "file": "scissors.webp"
+    },
+    {
+      "id": "eraser",
+      "label": "Eraser",
+      "hanzi": "橡皮",
+      "pinyin": "xiang pi",
+      "file": "eraser.webp"
+    },
+    {
+      "id": "colored-pencils",
+      "label": "Colored pencils",
+      "hanzi": "彩色笔",
+      "pinyin": "cai se bi",
+      "file": "colored-pencils.webp"
+    },
+    {
+      "id": "glue-stick",
+      "label": "Glue stick",
+      "hanzi": "固体胶",
+      "pinyin": "gu ti jiao",
+      "file": "glue-stick.webp"
+    },
+    {
+      "id": "crayon",
+      "label": "Crayon",
+      "hanzi": "蜡笔",
+      "pinyin": "la bi",
+      "file": "crayon.webp"
+    },
+    {
+      "id": "table",
+      "label": "Table",
+      "hanzi": "桌子",
+      "pinyin": "zhuo zi",
+      "file": "table.webp"
+    },
+    {
+      "id": "chair",
+      "label": "Chair",
+      "hanzi": "椅子",
+      "pinyin": "yi zi",
+      "file": "chair.webp"
+    },
+    {
+      "id": "textbook",
+      "label": "Textbook",
+      "hanzi": "课本",
+      "pinyin": "ke ben",
+      "file": "textbook.webp"
+    },
+    {
+      "id": "workbook",
+      "label": "Workbook",
+      "hanzi": "练习本",
+      "pinyin": "lian xi ben",
+      "file": "workbook.webp"
+    },
+    {
+      "id": "backpack",
+      "label": "Backpack",
+      "hanzi": "书包",
+      "pinyin": "shu bao",
+      "file": "backpack.webp"
+    },
+    {
+      "id": "pencil-box",
+      "label": "Pencil box",
+      "hanzi": "铅笔盒",
+      "pinyin": "qian bi he",
+      "file": "pencil-box.webp"
+    }
+  ]
+}

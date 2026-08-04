@@ -1,0 +1,31 @@
+{
+  "collection": "illustrated-sky-day-night",
+  "style": "gentle educational storybook sky and landscape scenes for young Chinese learners",
+  "items": [
+    {
+      "id": "daytime-scene",
+      "label": "Daytime scene",
+      "hanzi": "白天",
+      "pinyin": "bái tiān",
+      "focus": ["太阳", "云", "树", "房子", "草", "花"],
+      "file": "daytime-scene.webp"
+    },
+    {
+      "id": "nighttime-scene",
+      "label": "Nighttime scene",
+      "hanzi": "晚上",
+      "pinyin": "wǎn shang",
+      "focus": ["月亮", "星星", "树", "房子", "草"],
+      "file": "nighttime-scene.webp"
+    },
+    {
+      "id": "sky-ground-scene",
+      "label": "Sky and ground classification scene",
+      "hanzi": "天上和地下",
+      "pinyin": "tiān shàng hé dì xià",
+      "skyItems": ["太阳", "月亮", "星星", "云"],
+      "groundItems": ["树", "房子", "草", "花"],
+      "file": "sky-ground-scene.webp"
+    }
+  ]
+}

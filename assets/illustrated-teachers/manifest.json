@@ -1,0 +1,22 @@
+{
+  "collection": "illustrated-teachers",
+  "style": "clean educational storybook teacher avatars for young Chinese learners",
+  "people": [
+    {
+      "id": "wang-laoshi",
+      "label": "Teacher Wang",
+      "hanziName": "王老师",
+      "role": "teacher",
+      "ageGroup": "adult",
+      "file": "wang-laoshi.webp"
+    },
+    {
+      "id": "li-laoshi",
+      "label": "Teacher Li",
+      "hanziName": "李老师",
+      "role": "principal",
+      "ageGroup": "middle-aged adult",
+      "file": "li-laoshi.webp"
+    }
+  ]
+}

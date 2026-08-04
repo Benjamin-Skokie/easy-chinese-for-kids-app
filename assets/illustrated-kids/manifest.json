@@ -1,0 +1,97 @@
+{
+  "collection": "illustrated-kids",
+  "style": "friendly educational cartoon kid cast for kids Chinese learning app",
+  "sheet": "kid-cast-sheet.webp",
+  "people": [
+    {
+      "id": "lele",
+      "label": "Lele",
+      "hanziName": "乐乐",
+      "gender": "boy",
+      "ageGroup": "6-7",
+      "skinTone": "light",
+      "file": "lele.webp"
+    },
+    {
+      "id": "meimei",
+      "label": "Meimei",
+      "hanziName": "美美",
+      "gender": "girl",
+      "ageGroup": "6-7",
+      "skinTone": "light-medium",
+      "file": "meimei.webp"
+    },
+    {
+      "id": "yangyang",
+      "label": "Yangyang",
+      "hanziName": "阳阳",
+      "gender": "boy",
+      "ageGroup": "8-9",
+      "skinTone": "tan",
+      "file": "yangyang.webp"
+    },
+    {
+      "id": "anan",
+      "label": "Anan",
+      "hanziName": "安安",
+      "gender": "girl",
+      "ageGroup": "8-9",
+      "skinTone": "light",
+      "file": "anan.webp"
+    },
+    {
+      "id": "tiantian",
+      "label": "Tiantian",
+      "hanziName": "天天",
+      "gender": "boy",
+      "ageGroup": "9-10",
+      "skinTone": "light-medium",
+      "file": "tiantian.webp"
+    },
+    {
+      "id": "sisi",
+      "label": "Sisi",
+      "hanziName": "思思",
+      "gender": "girl",
+      "ageGroup": "8-10",
+      "skinTone": "medium brown",
+      "file": "sisi.webp"
+    },
+    {
+      "id": "luna",
+      "label": "Luna",
+      "hanziName": "露娜",
+      "gender": "girl",
+      "ageGroup": "8-10",
+      "skinTone": "medium",
+      "file": "luna.webp"
+    },
+    {
+      "id": "jaden",
+      "label": "Jaden",
+      "hanziName": "杰登",
+      "gender": "boy",
+      "ageGroup": "7-8",
+      "skinTone": "deep brown",
+      "file": "jaden.webp"
+    },
+    {
+      "id": "noah",
+      "label": "Noah",
+      "hanziName": "诺亚",
+      "gender": "boy",
+      "ageGroup": "7-8",
+      "skinTone": "fair",
+      "file": "noah.webp"
+    },
+    {
+      "id": "sophie",
+      "label": "Sophie",
+      "hanziName": "苏菲",
+      "gender": "girl",
+      "ageGroup": "7-8",
+      "skinTone": "fair",
+      "file": "sophie.webp"
+    }
+  ]
+}

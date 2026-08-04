@@ -1,0 +1,72 @@
+{
+  "collection": "illustrated-possession",
+  "style": "gentle educational classroom grammar scenes for young Chinese learners",
+  "items": [
+    {
+      "id": "this-is-my-scissors",
+      "label": "This is my scissors",
+      "hanzi": "这是我的剪刀",
+      "pinyin": "zhe shi wo de jian dao",
+      "theme": "Anan presents her own scissors in the classroom",
+      "sentenceHanzi": "这是我的剪刀。",
+      "location": "classroom",
+      "file": "this-is-my-scissors.webp"
+    },
+    {
+      "id": "this-is-his-schoolbag",
+      "label": "This is his schoolbag",
+      "hanzi": "这是他的书包",
+      "pinyin": "zhe shi ta de shu bao",
+      "theme": "Anan points to Noah's schoolbag in the classroom",
+      "sentenceHanzi": "这是他的书包。",
+      "location": "classroom",
+      "file": "this-is-his-schoolbag.webp"
+    },
+    {
+      "id": "i-have-stationery",
+      "label": "I have stationery",
+      "hanzi": "我有铅笔、橡皮和剪刀",
+      "pinyin": "wo you qian bi, xiang pi he jian dao",
+      "theme": "Anan shows the school supplies she has on her desk",
+      "sentenceHanzi": "我有铅笔、橡皮和剪刀。",
+      "location": "classroom",
+      "file": "i-have-stationery.webp"
+    },
+    {
+      "id": "my-book-tiantian",
+      "label": "My book",
+      "hanzi": "我的书",
+      "pinyin": "wo de shu",
+      "theme": "Tiantian points to his own red book in a self-ownership gesture",
+      "sentenceHanzi": "这是我的书。",
+      "file": "my-book-tiantian.webp"
+    },
+    {
+      "id": "your-book-luna",
+      "label": "Your book",
+      "hanzi": "你的书",
+      "pinyin": "ni de shu",
+      "theme": "Another child's hand points to Luna's red book",
+      "sentenceHanzi": "这是你的书。",
+      "file": "your-book-luna.webp"
+    },
+    {
+      "id": "his-book-yangyang",
+      "label": "His book",
+      "hanzi": "他的书",
+      "pinyin": "ta de shu",
+      "theme": "Another child's hand points to Yangyang's red book",
+      "sentenceHanzi": "这是他的书。",
+      "file": "his-book-yangyang.webp"
+    },
+    {
+      "id": "her-book-sophie",
+      "label": "Her book",
+      "hanzi": "她的书",
+      "pinyin": "ta de shu",
+      "theme": "Another child's hand points to Sophie's red book",
+      "sentenceHanzi": "这是她的书。",
+      "file": "her-book-sophie.webp"
+    }
+  ]
+}

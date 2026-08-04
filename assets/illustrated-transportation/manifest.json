@@ -1,0 +1,99 @@
+{
+  "collection": "illustrated-transportation",
+  "style": "gentle educational storybook transportation scenes with recurring illustrated kid characters for young Chinese learners",
+  "character": {
+    "personId": "lele",
+    "personLabel": "Lele",
+    "hanziName": "乐乐"
+  },
+  "items": [
+    {
+      "id": "walk-to-school",
+      "label": "Walk to school",
+      "hanzi": "走路去上学",
+      "pinyin": "zou lu qu shang xue",
+      "sentenceHanzi": "乐乐走路去上学。",
+      "sentencePinyin": "Le le zou lu qu shang xue.",
+      "sentenceEnglish": "Lele walks to school.",
+      "destination": "school",
+      "file": "walk-to-school.webp"
+    },
+    {
+      "id": "bike-to-school",
+      "label": "Ride a bike to school",
+      "hanzi": "骑自行车去上学",
+      "pinyin": "qi zi xing che qu shang xue",
+      "sentenceHanzi": "乐乐骑自行车去上学。",
+      "sentencePinyin": "Le le qi zi xing che qu shang xue.",
+      "sentenceEnglish": "Lele rides a bike to school.",
+      "destination": "school",
+      "file": "bike-to-school.webp"
+    },
+    {
+      "id": "school-bus-to-zoo",
+      "label": "School bus to the zoo",
+      "hanzi": "坐校车去动物园",
+      "pinyin": "zuo xiao che qu dong wu yuan",
+      "sentenceHanzi": "乐乐坐校车去动物园。",
+      "sentencePinyin": "Le le zuo xiao che qu dong wu yuan.",
+      "sentenceEnglish": "Lele takes the school bus to the zoo.",
+      "destination": "zoo field trip",
+      "file": "school-bus-to-zoo.webp"
+    },
+    {
+      "id": "taxi-to-airport",
+      "label": "Taxi to the airport",
+      "hanzi": "坐出租车去机场",
+      "pinyin": "zuo chu zu che qu ji chang",
+      "sentenceHanzi": "乐乐坐出租车去机场。",
+      "sentencePinyin": "Le le zuo chu zu che qu ji chang.",
+      "sentenceEnglish": "Lele takes a taxi to the airport.",
+      "destination": "airport",
+      "file": "taxi-to-airport.webp"
+    },
+    {
+      "id": "airplane-to-grandparents",
+      "label": "Airplane to visit grandparents",
+      "hanzi": "坐飞机去看爷爷奶奶",
+      "pinyin": "zuo fei ji qu kan ye ye nai nai",
+      "sentenceHanzi": "乐乐坐飞机去看爷爷奶奶。",
+      "sentencePinyin": "Le le zuo fei ji qu kan ye ye nai nai.",
+      "sentenceEnglish": "Lele takes an airplane to visit his grandparents.",
+      "destination": "grandparents",
+      "file": "airplane-to-grandparents.webp"
+    },
+    {
+      "id": "train-to-beijing",
+      "label": "Train to Beijing",
+      "hanzi": "坐火车去北京",
+      "pinyin": "zuo huo che qu Bei jing",
+      "sentenceHanzi": "乐乐坐火车去北京。",
+      "sentencePinyin": "Le le zuo huo che qu Bei jing.",
+      "sentenceEnglish": "Lele takes a train to Beijing.",
+      "destination": "Beijing",
+      "file": "train-to-beijing.webp"
+    },
+    {
+      "id": "mom-car-to-school",
+      "label": "Mom's car to school",
+      "hanzi": "坐妈妈的车去上学",
+      "pinyin": "zuo ma ma de che qu shang xue",
+      "sentenceHanzi": "乐乐坐妈妈的车去上学。",
+      "sentencePinyin": "Le le zuo ma ma de che qu shang xue.",
+      "sentenceEnglish": "Lele rides in Mom's car to school.",
+      "destination": "school",
+      "file": "mom-car-to-school.webp"
+    },
+    {
+      "id": "dad-car-to-grocery-store",
+      "label": "Dad's car to the grocery store",
+      "hanzi": "坐爸爸的车去商店",
+      "pinyin": "zuo ba ba de che qu shang dian",
+      "sentenceHanzi": "乐乐坐爸爸的车去商店。",
+      "sentencePinyin": "Le le zuo ba ba de che qu shang dian.",
+      "sentenceEnglish": "Lele rides in Dad's car to the grocery store.",
+      "destination": "grocery store",
+      "file": "dad-car-to-grocery-store.webp"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "collection": "illustrated-meals",
+  "style": "gentle educational storybook meal scenes for young Chinese learners",
+  "items": [
+    {
+      "id": "anan-eating-school-lunch",
+      "label": "Eat school lunch",
+      "hanzi": "吃午饭",
+      "pinyin": "chi wu fan",
+      "personId": "anan",
+      "personLabel": "Anan",
+      "sentenceHanzi": "安安在学校食堂吃午饭。",
+      "sentencePinyin": "An an zai xue xiao shi tang chi wu fan.",
+      "sentenceEnglish": "Anan is eating lunch in the school cafeteria.",
+      "theme": "Anan has pizza and sips milk at a straight cafeteria table",
+      "lessonHint": "4A Lesson 5 My lunch",
+      "file": "anan-eating-school-lunch.webp"
+    }
+  ]
+}

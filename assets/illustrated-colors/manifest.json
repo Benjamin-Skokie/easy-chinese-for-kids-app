@@ -1,0 +1,62 @@
+{
+  "collection": "illustrated-colors",
+  "style": "clean educational color teaching boards for young Chinese learners",
+  "items": [
+    {
+      "id": "red-apple",
+      "label": "Red apple",
+      "hanzi": "红色的苹果",
+      "pinyin": "hong se de ping guo",
+      "lessonHints": ["1B Lesson 6 Colours", "2A Lesson 7 Colours"],
+      "file": "red-apple.webp"
+    },
+    {
+      "id": "yellow-banana",
+      "label": "Yellow banana",
+      "hanzi": "黄色的香蕉",
+      "pinyin": "huang se de xiang jiao",
+      "lessonHints": ["1B Lesson 6 Colours", "2A Lesson 7 Colours"],
+      "file": "yellow-banana.webp"
+    },
+    {
+      "id": "blue-backpack",
+      "label": "Blue backpack",
+      "hanzi": "蓝色的书包",
+      "pinyin": "lan se de shu bao",
+      "lessonHints": ["1B Lesson 6 Colours", "2A Lesson 7 Colours"],
+      "file": "blue-backpack.webp"
+    },
+    {
+      "id": "green-cucumber",
+      "label": "Green cucumber",
+      "hanzi": "绿色的黄瓜",
+      "pinyin": "lu se de huang gua",
+      "lessonHints": ["1B Lesson 6 Colours", "2A Lesson 7 Colours"],
+      "file": "green-cucumber.webp"
+    },
+    {
+      "id": "purple-grapes",
+      "label": "Purple grapes",
+      "hanzi": "紫色的葡萄",
+      "pinyin": "zi se de pu tao",
+      "lessonHints": ["2A Lesson 7 Colours"],
+      "file": "purple-grapes.webp"
+    },
+    {
+      "id": "orange-fruit",
+      "label": "Orange orange",
+      "hanzi": "橙色的橘子",
+      "pinyin": "cheng se de ju zi",
+      "lessonHints": ["2A Lesson 7 Colours"],
+      "file": "orange-fruit.webp"
+    },
+    {
+      "id": "black-sneakers",
+      "label": "Black sneakers",
+      "hanzi": "黑色的运动鞋",
+      "pinyin": "hei se de yun dong xie",
+      "lessonHints": ["2A Lesson 7 Colours"],
+      "file": "black-sneakers.webp"
+    }
+  ]
+}

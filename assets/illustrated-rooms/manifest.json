@@ -1,0 +1,68 @@
+{
+  "collection": "illustrated-rooms",
+  "style": "gentle educational storybook room scenes with slight watercolor softness for young Chinese learners",
+  "items": [
+    {
+      "id": "living-room",
+      "label": "Living Room",
+      "hanzi": "客厅",
+      "pinyin": "ke ting",
+      "theme": "Spacious three-sided living room with the TV facing the sofa",
+      "file": "living-room.webp"
+    },
+    {
+      "id": "bedroom",
+      "label": "Bedroom",
+      "hanzi": "卧室",
+      "pinyin": "wo shi",
+      "file": "bedroom.webp"
+    },
+    {
+      "id": "garage",
+      "label": "Garage",
+      "hanzi": "车库",
+      "pinyin": "che ku",
+      "theme": "Open garage with a visible interior door into the house",
+      "file": "garage.webp"
+    },
+    {
+      "id": "positions-up-down",
+      "label": "Up and down positions",
+      "hanzi": "上和下",
+      "pinyin": "shang he xia",
+      "file": "positions-up-down.webp",
+      "focus": [
+        "桌子",
+        "课本",
+        "书包"
+      ]
+    },
+    {
+      "id": "positions-inside-outside",
+      "label": "Inside and outside positions",
+      "hanzi": "里和外",
+      "pinyin": "li he wai",
+      "file": "positions-inside-outside.webp",
+      "focus": [
+        "书包",
+        "课本",
+        "铅笔盒"
+      ]
+    },
+    {
+      "id": "positions-all-directions",
+      "label": "All directions board",
+      "hanzi": "上、下、前、后、左、右",
+      "pinyin": "shang, xia, qian, hou, zuo, you",
+      "file": "positions-all-directions.webp",
+      "focus": [
+        "上",
+        "下",
+        "前",
+        "后",
+        "左",
+        "右"
+      ]
+    }
+  ]
+}

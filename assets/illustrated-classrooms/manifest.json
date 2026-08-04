@@ -1,0 +1,43 @@
+{
+  "collection": "illustrated-classrooms",
+  "style": "gentle educational storybook school-place scenes for young Chinese learners",
+  "groups": [
+    {
+      "id": "school-places-core",
+      "label": "Core school places",
+      "book": "2B-4B",
+      "items": ["school", "playground", "classroom", "us-classroom-clusters"]
+    }
+  ],
+  "items": [
+    {
+      "id": "school",
+      "label": "School",
+      "hanzi": "学校",
+      "pinyin": "xue xiao",
+      "file": "school.webp"
+    },
+    {
+      "id": "playground",
+      "label": "Playground",
+      "hanzi": "操场",
+      "pinyin": "cao chang",
+      "file": "playground.webp"
+    },
+    {
+      "id": "classroom",
+      "label": "Classroom",
+      "hanzi": "教室",
+      "pinyin": "jiao shi",
+      "file": "classroom.webp"
+    },
+    {
+      "id": "us-classroom-clusters",
+      "label": "US classroom clusters",
+      "hanzi": "教室",
+      "pinyin": "jiao shi",
+      "theme": "Empty U.S. classroom with grouped student tables and clean chair geometry",
+      "file": "us-classroom-clusters.webp"
+    }
+  ]
+}

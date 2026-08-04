@@ -1,0 +1,62 @@
+{
+  "collection": "illustrated-day-of-week",
+  "style": "gentle educational storybook day-of-week scene art for young Chinese learners",
+  "days": [
+    {
+      "id": "monday",
+      "label": "Monday",
+      "hanzi": "星期一",
+      "pinyin": "xing qi yi",
+      "theme": "School bus",
+      "file": "Monday.webp"
+    },
+    {
+      "id": "tuesday",
+      "label": "Tuesday",
+      "hanzi": "星期二",
+      "pinyin": "xing qi er",
+      "theme": "Gym class",
+      "file": "Tuesday.webp"
+    },
+    {
+      "id": "wednesday",
+      "label": "Wednesday",
+      "hanzi": "星期三",
+      "pinyin": "xing qi san",
+      "theme": "Art class",
+      "file": "Wednesday.webp"
+    },
+    {
+      "id": "thursday",
+      "label": "Thursday",
+      "hanzi": "星期四",
+      "pinyin": "xing qi si",
+      "theme": "Music class",
+      "file": "Thursday.webp"
+    },
+    {
+      "id": "friday",
+      "label": "Friday",
+      "hanzi": "星期五",
+      "pinyin": "xing qi wu",
+      "theme": "School library",
+      "file": "Friday.webp"
+    },
+    {
+      "id": "saturday",
+      "label": "Saturday",
+      "hanzi": "星期六",
+      "pinyin": "xing qi liu",
+      "theme": "Biking in the park",
+      "file": "Saturday.webp"
+    },
+    {
+      "id": "sunday",
+      "label": "Sunday",
+      "hanzi": "星期天",
+      "pinyin": "xing qi tian",
+      "theme": "Family movie night",
+      "file": "Sunday.webp"
+    }
+  ]
+}

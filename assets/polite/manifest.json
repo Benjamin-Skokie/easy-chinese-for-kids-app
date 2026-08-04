@@ -1,0 +1,30 @@
+{
+  "collection": "polite",
+  "style": "gentle educational storybook classroom politeness scenes for young Chinese learners",
+  "items": [
+    {
+      "id": "polite-scene-1",
+      "label": "Sharing politely",
+      "hanzi": "谢谢",
+      "pinyin": "xiè xie",
+      "theme": "Two children in a classroom sharing a crayon politely",
+      "file": "polite-scene-1.webp"
+    },
+    {
+      "id": "polite-scene-2",
+      "label": "Saying sorry",
+      "hanzi": "对不起",
+      "pinyin": "duì bu qǐ",
+      "theme": "A child drops a pencil case and another child responds during a polite apology moment",
+      "file": "polite-scene-2.webp"
+    },
+    {
+      "id": "polite-scene-3",
+      "label": "Please be quiet",
+      "hanzi": "请安静",
+      "pinyin": "qǐng ān jìng",
+      "theme": "Teacher asks a busy classroom to quiet down gently but with authority",
+      "file": "polite-scene-3.webp"
+    }
+  ]
+}

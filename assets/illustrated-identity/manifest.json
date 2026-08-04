@@ -1,0 +1,53 @@
+{
+  "collection": "illustrated-identity",
+  "style": "gentle educational storybook identity and communication scenes for young Chinese learners",
+  "items": [
+    {
+      "id": "classmates-exchange-phone-number",
+      "label": "Exchange phone number",
+      "hanzi": "电话号码",
+      "pinyin": "dian hua hao ma",
+      "personIds": [
+        "anan",
+        "sisi"
+      ],
+      "personLabel": "Anan and Sisi",
+      "sentenceHanzi": "安安告诉思思家里的电话号码。",
+      "sentencePinyin": "An an gao su Si si jia li de dian hua hao ma.",
+      "sentenceEnglish": "Anan tells Sisi her family's telephone number.",
+      "theme": "Two classmates share family contact information in the classroom",
+      "lessonHint": "4A Lesson 1 Telephone numbers",
+      "file": "classmates-exchange-phone-number.webp"
+    },
+    {
+      "id": "classmates-speak-different-languages",
+      "label": "Speak different languages",
+      "hanzi": "汉语和英语",
+      "pinyin": "han yu he Ying yu",
+      "personIds": [
+        "anan",
+        "noah"
+      ],
+      "personLabel": "Anan and Noah",
+      "sentenceHanzi": "安安说汉语，诺亚说英语。",
+      "sentencePinyin": "An an shuo Han yu, Nuo ya shuo Ying yu.",
+      "sentenceEnglish": "Anan speaks Chinese, and Noah speaks English.",
+      "theme": "Two classmates introduce the languages they speak in the classroom",
+      "lessonHint": "4A Lesson 2 Languages",
+      "file": "classmates-speak-different-languages.webp"
+    },
+    {
+      "id": "classmates-speak-multiple-languages",
+      "label": "Speak multiple languages",
+      "hanzi": "汉语、英语、德语和法语",
+      "pinyin": "han yu, ying yu, de yu he fa yu",
+      "personLabel": "Four classmates",
+      "sentenceHanzi": "同学们会说不同的语言。",
+      "sentencePinyin": "Tong xue men hui shuo bu tong de yu yan.",
+      "sentenceEnglish": "The classmates can speak different languages.",
+      "theme": "Four classmates share Chinese, English, German, and French language cue cards",
+      "lessonHint": "4A Lesson 2 Languages",
+      "file": "classmates-speak-multiple-languages.webp"
+    }
+  ]
+}

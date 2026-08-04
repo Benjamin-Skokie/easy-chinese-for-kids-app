@@ -1,0 +1,62 @@
+{
+  "collection": "illustrated-furniture",
+  "style": "gentle educational storybook furniture art with slight watercolor softness for young Chinese learners",
+  "items": [
+    {
+      "id": "bed",
+      "label": "Bed",
+      "hanzi": "床",
+      "pinyin": "chuang",
+      "file": "bed.webp"
+    },
+    {
+      "id": "desk",
+      "label": "Desk",
+      "hanzi": "书桌",
+      "pinyin": "shu zhuo",
+      "file": "desk.webp"
+    },
+    {
+      "id": "chest",
+      "label": "Chest of Drawers",
+      "hanzi": "抽屉柜",
+      "pinyin": "chou ti gui",
+      "file": "chest.webp"
+    },
+    {
+      "id": "sofa",
+      "label": "Sofa",
+      "hanzi": "沙发",
+      "pinyin": "sha fa",
+      "file": "sofa.webp"
+    },
+    {
+      "id": "tv-stand",
+      "label": "TV Stand",
+      "hanzi": "电视柜",
+      "pinyin": "dian shi gui",
+      "file": "tv-stand.webp"
+    },
+    {
+      "id": "bookshelf",
+      "label": "Bookshelf",
+      "hanzi": "书架",
+      "pinyin": "shu jia",
+      "file": "bookshelf.webp"
+    },
+    {
+      "id": "toy-storage",
+      "label": "Toy Storage",
+      "hanzi": "玩具柜",
+      "pinyin": "wan ju gui",
+      "file": "toy-storage.webp"
+    },
+    {
+      "id": "wardrobe",
+      "label": "Wardrobe",
+      "hanzi": "衣柜",
+      "pinyin": "yi gui",
+      "file": "wardrobe.webp"
+    }
+  ]
+}

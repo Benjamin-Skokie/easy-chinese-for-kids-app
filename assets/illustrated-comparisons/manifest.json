@@ -1,0 +1,106 @@
+{
+  "collection": "illustrated-comparisons",
+  "style": "gentle educational storybook comparison scenes for young Chinese learners",
+  "items": [
+    {
+      "id": "big-small-animals",
+      "label": "Big and small",
+      "hanzi": "大和小",
+      "pinyin": "dà hé xiǎo",
+      "file": "big-small-animals.webp",
+      "focus": [
+        "大象",
+        "兔子"
+      ]
+    },
+    {
+      "id": "many-few-carrots",
+      "label": "Many and few",
+      "hanzi": "多和少",
+      "pinyin": "duō hé shǎo",
+      "file": "many-few-carrots.webp",
+      "focus": [
+        "胡萝卜"
+      ]
+    },
+    {
+      "id": "fast-slow-running",
+      "label": "Fast and slow",
+      "hanzi": "快和慢",
+      "pinyin": "kuài hé màn",
+      "file": "fast-slow-running.webp",
+      "focus": [
+        "跑步"
+      ]
+    },
+    {
+      "id": "long-short-pencils",
+      "label": "Long and short",
+      "hanzi": "长和短",
+      "pinyin": "cháng hé duǎn",
+      "file": "long-short-pencils.webp",
+      "focus": [
+        "铅笔"
+      ]
+    },
+    {
+      "id": "tall-short-animals",
+      "label": "Tall and short",
+      "hanzi": "高和矮",
+      "pinyin": "gāo hé ǎi",
+      "file": "tall-short-animals.webp",
+      "focus": [
+        "长颈鹿",
+        "兔子"
+      ]
+    },
+    {
+      "id": "cold-hot-foods",
+      "label": "Cold and hot",
+      "hanzi": "冷和热",
+      "pinyin": "lěng hé rè",
+      "file": "cold-hot-foods.webp",
+      "focus": [
+        "冰棒",
+        "热面包",
+        "烤架"
+      ]
+    },
+    {
+      "id": "new-old-teddy-bears",
+      "label": "New and old",
+      "hanzi": "新和旧",
+      "pinyin": "xīn hé jiù",
+      "file": "new-old-teddy-bears.webp",
+      "focus": [
+        "泰迪熊"
+      ]
+    },
+    {
+      "id": "first-then-socks-shoes",
+      "label": "First put on socks, then put on shoes",
+      "hanzi": "先穿袜子，再穿鞋",
+      "pinyin": "xiān chuān wà zi, zài chuān xié",
+      "file": "first-then-socks-shoes.webp",
+      "focus": [
+        "先",
+        "再",
+        "穿袜子",
+        "穿鞋"
+      ]
+    },
+    {
+      "id": "first-then-wash-hands-eat",
+      "label": "First wash hands, then eat",
+      "hanzi": "先洗手，再吃饭",
+      "pinyin": "xiān xǐ shǒu, zài chī fàn",
+      "file": "first-then-wash-hands-eat.webp",
+      "focus": [
+        "先",
+        "再",
+        "洗手",
+        "吃饭"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,494 @@
+{
+  "series": "Easy Steps to Chinese for Kids",
+  "lastUpdated": "2026-06-13",
+  "source": {
+    "type": "ocr",
+    "notesFile": "docs/series_audit.md",
+    "ocrDir": "docs/ocr"
+  },
+  "productNotes": {
+    "useAsCurriculumAlignment": true,
+    "copyIllustrations": false,
+    "copyCharacterNamesDirectly": false,
+    "useToneMarkPinyin": true,
+    "preferredChildFacingOrganization": "topic",
+    "preferredTeacherFacingOrganization": "book_lesson"
+  },
+  "recurringPracticeStages": {
+    "earlyBooks": [
+      "Let's learn new words",
+      "Let's practise",
+      "Let's use new words",
+      "Let's sing",
+      "Let's say it",
+      "Let's write",
+      "Let's play",
+      "Let's try it",
+      "It's time to work"
+    ],
+    "middleBooks": [
+      "Let's learn new words",
+      "Let's practise",
+      "Let's use new words",
+      "Let's sing",
+      "Let's say it",
+      "Let's learn pinyin",
+      "Let's learn simple characters",
+      "Let's write",
+      "Let's play",
+      "Let's try it",
+      "It's time to work"
+    ],
+    "laterBooks": [
+      "Let's learn new words",
+      "Let's practise",
+      "Let's use new words",
+      "Let's sing",
+      "Let's say it",
+      "Let's review pinyin",
+      "Let's learn radicals",
+      "Let's write",
+      "Let's play",
+      "Let's try it",
+      "It's time to listen",
+      "It's time to work"
+    ]
+  },
+  "activityFormats": [
+    "picture_supported_vocabulary",
+    "chinese_english_pairing",
+    "chinese_english_pinyin_pairing",
+    "count_and_say",
+    "dialogue_practice",
+    "sentence_substitution",
+    "match_picture_to_word",
+    "match_chinese_to_english",
+    "trace_strokes",
+    "trace_characters",
+    "copy_characters",
+    "trace_radicals",
+    "listen_and_choose",
+    "song_based_repetition",
+    "game_based_reinforcement"
+  ],
+  "illustrationStyle": {
+    "keywords": [
+      "colorful",
+      "playful",
+      "hand-drawn",
+      "soft outlines",
+      "watercolor feel",
+      "colored-pencil feel",
+      "cartoon children",
+      "object-centered vocabulary panels",
+      "workbook-like layouts"
+    ],
+    "productDirection": [
+      "keep warm and friendly tone",
+      "use original illustrations",
+      "prioritize semantic clarity",
+      "optimize for touch interaction"
+    ]
+  },
+  "recurringTextbookNames": [
+    {
+      "hanzi": "京京",
+      "pinyin": "jīng jing"
+    },
+    {
+      "hanzi": "丁一",
+      "pinyin": "dīng yī"
+    },
+    {
+      "hanzi": "田力",
+      "pinyin": "tián lì"
+    },
+    {
+      "hanzi": "乐乐",
+      "pinyin": "lè le"
+    },
+    {
+      "hanzi": "兰兰",
+      "pinyin": "lán lan"
+    },
+    {
+      "hanzi": "豆豆",
+      "pinyin": "dòu dou"
+    }
+  ],
+  "books": [
+    {
+      "book": "1a",
+      "lessons": [
+        {
+          "lesson": 1,
+          "title": "Numbers (1)",
+          "topicBucket": "Numbers",
+          "progression": "1-5"
+        },
+        {
+          "lesson": 2,
+          "title": "Numbers (2)",
+          "topicBucket": "Numbers",
+          "progression": "6-10"
+        },
+        {
+          "lesson": 3,
+          "title": "Numbers (3)",
+          "topicBucket": "Numbers",
+          "progression": "11-20"
+        },
+        {
+          "lesson": 4,
+          "title": "Hello!",
+          "topicBucket": "Greetings"
+        },
+        {
+          "lesson": 5,
+          "title": "Thank you!",
+          "topicBucket": "Polite Words"
+        },
+        {
+          "lesson": 6,
+          "title": "What's your name?",
+          "topicBucket": "Names & Introductions"
+        },
+        {
+          "lesson": 7,
+          "title": "I'm 5 years old",
+          "topicBucket": "Age"
+        }
+      ],
+      "culture": "Mid-Autumn Festival"
+    },
+    {
+      "book": "1b",
+      "lessons": [
+        {
+          "lesson": 1,
+          "title": "Mum and dad",
+          "topicBucket": "Family"
+        },
+        {
+          "lesson": 2,
+          "title": "Brothers and sisters",
+          "topicBucket": "Family"
+        },
+        {
+          "lesson": 3,
+          "title": "Parts of the body (1)",
+          "topicBucket": "Body"
+        },
+        {
+          "lesson": 4,
+          "title": "Parts of the body (2)",
+          "topicBucket": "Body"
+        },
+        {
+          "lesson": 5,
+          "title": "Pets",
+          "topicBucket": "Pets & Animals"
+        },
+        {
+          "lesson": 6,
+          "title": "Colours",
+          "topicBucket": "Colours"
+        },
+        {
+          "lesson": 7,
+          "title": "Fruit",
+          "topicBucket": "Food & Drinks"
+        }
+      ],
+      "culture": "Chinese New Year"
+    },
+    {
+      "book": "2a",
+      "lessons": [
+        {
+          "lesson": 1,
+          "title": "Numbers",
+          "topicBucket": "Numbers",
+          "progression": "21-40"
+        },
+        {
+          "lesson": 2,
+          "title": "Two younger brothers",
+          "topicBucket": "Family"
+        },
+        {
+          "lesson": 3,
+          "title": "Good friends",
+          "topicBucket": "Names & Introductions"
+        },
+        {
+          "lesson": 4,
+          "title": "My toys",
+          "topicBucket": "Toys & Play"
+        },
+        {
+          "lesson": 5,
+          "title": "I love reading",
+          "topicBucket": "Hobbies"
+        },
+        {
+          "lesson": 6,
+          "title": "I can dress myself",
+          "topicBucket": "Clothes"
+        },
+        {
+          "lesson": 7,
+          "title": "Colours",
+          "topicBucket": "Colours"
+        }
+      ],
+      "culture": "The story of Nian"
+    },
+    {
+      "book": "2b",
+      "lessons": [
+        {
+          "lesson": 1,
+          "title": "Today is Monday",
+          "topicBucket": "Time & Date"
+        },
+        {
+          "lesson": 2,
+          "title": "What time is it?",
+          "topicBucket": "Time & Date"
+        },
+        {
+          "lesson": 3,
+          "title": "Stationery",
+          "topicBucket": "School"
+        },
+        {
+          "lesson": 4,
+          "title": "My classroom",
+          "topicBucket": "School"
+        },
+        {
+          "lesson": 5,
+          "title": "Animals",
+          "topicBucket": "Pets & Animals"
+        },
+        {
+          "lesson": 6,
+          "title": "Big or small",
+          "topicBucket": "Describing Things"
+        },
+        {
+          "lesson": 7,
+          "title": "Snacks",
+          "topicBucket": "Food & Drinks"
+        }
+      ],
+      "culture": "Dragon Boat Festival"
+    },
+    {
+      "book": "3a",
+      "lessons": [
+        {
+          "lesson": 1,
+          "title": "Numbers",
+          "topicBucket": "Numbers",
+          "progression": "41-100"
+        },
+        {
+          "lesson": 2,
+          "title": "Date",
+          "topicBucket": "Time & Date"
+        },
+        {
+          "lesson": 3,
+          "title": "Happy birthday!",
+          "topicBucket": "Time & Date"
+        },
+        {
+          "lesson": 4,
+          "title": "Family",
+          "topicBucket": "Family"
+        },
+        {
+          "lesson": 5,
+          "title": "Nationality",
+          "topicBucket": "Identity"
+        },
+        {
+          "lesson": 6,
+          "title": "Request",
+          "topicBucket": "Polite Words"
+        },
+        {
+          "lesson": 7,
+          "title": "Clothes",
+          "topicBucket": "Clothes"
+        }
+      ],
+      "culture": "Beijing Opera"
+    },
+    {
+      "book": "3b",
+      "lessons": [
+        {
+          "lesson": 1,
+          "title": "My schoolbag",
+          "topicBucket": "School"
+        },
+        {
+          "lesson": 2,
+          "title": "Our classroom",
+          "topicBucket": "School"
+        },
+        {
+          "lesson": 3,
+          "title": "Positions",
+          "topicBucket": "Describing Things"
+        },
+        {
+          "lesson": 4,
+          "title": "Hobbies",
+          "topicBucket": "Hobbies"
+        },
+        {
+          "lesson": 5,
+          "title": "Food and drink",
+          "topicBucket": "Food & Drinks"
+        },
+        {
+          "lesson": 6,
+          "title": "Vegetables",
+          "topicBucket": "Food & Drinks"
+        },
+        {
+          "lesson": 7,
+          "title": "Nature",
+          "topicBucket": "Nature"
+        }
+      ],
+      "culture": "The Twelve Zodiac Animals"
+    },
+    {
+      "book": "4a",
+      "lessons": [
+        {
+          "lesson": 1,
+          "title": "Telephone numbers",
+          "topicBucket": "Numbers"
+        },
+        {
+          "lesson": 2,
+          "title": "Languages",
+          "topicBucket": "Identity"
+        },
+        {
+          "lesson": 3,
+          "title": "Tell the time",
+          "topicBucket": "Time & Date"
+        },
+        {
+          "lesson": 4,
+          "title": "Daily routine",
+          "topicBucket": "Daily Life"
+        },
+        {
+          "lesson": 5,
+          "title": "My lunch",
+          "topicBucket": "Food & Drinks"
+        },
+        {
+          "lesson": 6,
+          "title": "Means of transport",
+          "topicBucket": "Daily Life"
+        },
+        {
+          "lesson": 7,
+          "title": "I'm hungry",
+          "topicBucket": "Food & Drinks"
+        }
+      ],
+      "culture": "Four Treasures of the Study"
+    },
+    {
+      "book": "4b",
+      "lessons": [
+        {
+          "lesson": 1,
+          "title": "It's raining",
+          "topicBucket": "Weather"
+        },
+        {
+          "lesson": 2,
+          "title": "Clothes",
+          "topicBucket": "Clothes"
+        },
+        {
+          "lesson": 3,
+          "title": "My room",
+          "topicBucket": "Daily Life"
+        },
+        {
+          "lesson": 4,
+          "title": "Hobbies",
+          "topicBucket": "Hobbies"
+        },
+        {
+          "lesson": 5,
+          "title": "Our school",
+          "topicBucket": "School"
+        },
+        {
+          "lesson": 6,
+          "title": "School subjects",
+          "topicBucket": "School"
+        },
+        {
+          "lesson": 7,
+          "title": "Leisure time",
+          "topicBucket": "Hobbies"
+        }
+      ],
+      "culture": "The Chinese Painting"
+    }
+  ],
+  "topicProgressions": {
+    "Numbers": [
+      "1a lesson 1: 1-5",
+      "1a lesson 2: 6-10",
+      "1a lesson 3: 11-20",
+      "2a lesson 1: 21-40",
+      "3a lesson 1: 41-100",
+      "4a lesson 1: telephone numbers"
+    ],
+    "Family": [
+      "1b lesson 1: mum and dad",
+      "1b lesson 2: brothers and sisters",
+      "2a lesson 2: younger brothers and sibling language",
+      "3a lesson 4: family"
+    ],
+    "School": [
+      "2b lesson 3: stationery",
+      "2b lesson 4: my classroom",
+      "3b lesson 1: my schoolbag",
+      "3b lesson 2: our classroom",
+      "4b lesson 5: our school",
+      "4b lesson 6: school subjects"
+    ],
+    "Food & Drinks": [
+      "1b lesson 7: fruit",
+      "2b lesson 7: snacks",
+      "3b lesson 5: food and drink",
+      "3b lesson 6: vegetables",
+      "4a lesson 5: my lunch",
+      "4a lesson 7: I'm hungry"
+    ],
+    "Time & Date": [
+      "2b lesson 1: days of the week",
+      "2b lesson 2: telling time",
+      "3a lesson 2: date",
+      "3a lesson 3: birthday",
+      "4a lesson 3: tell the time",
+      "4a lesson 4: daily routine"
+    ]
+  }
+}

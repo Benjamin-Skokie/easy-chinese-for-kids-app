@@ -1,0 +1,54 @@
+{
+  "collection": "illustrated-actions-basic",
+  "style": "minimal educational storybook action cards for young Chinese learners",
+  "items": [
+    {
+      "id": "walk",
+      "label": "Walk",
+      "hanzi": "走",
+      "pinyin": "zǒu",
+      "english": "walk",
+      "file": "walk.webp"
+    },
+    {
+      "id": "run",
+      "label": "Run",
+      "hanzi": "跑",
+      "pinyin": "pǎo",
+      "english": "run",
+      "file": "run.webp"
+    },
+    {
+      "id": "sit-chair",
+      "label": "Sit",
+      "hanzi": "坐",
+      "pinyin": "zuò",
+      "english": "sit",
+      "file": "sit-chair.webp"
+    },
+    {
+      "id": "stand",
+      "label": "Stand",
+      "hanzi": "站",
+      "pinyin": "zhàn",
+      "english": "stand",
+      "file": "stand.webp"
+    },
+    {
+      "id": "climb-ladder",
+      "label": "Climb",
+      "hanzi": "爬",
+      "pinyin": "pá",
+      "english": "climb",
+      "file": "climb-ladder.webp"
+    },
+    {
+      "id": "lie-bed",
+      "label": "Lie down",
+      "hanzi": "躺",
+      "pinyin": "tǎng",
+      "english": "lie down",
+      "file": "lie-bed.webp"
+    }
+  ]
+}

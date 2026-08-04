@@ -1,0 +1,46 @@
+{
+  "collection": "illustrated-measure-words",
+  "style": "clean educational measure-word object sets for young Chinese learners",
+  "items": [
+    {
+      "id": "three-ducks",
+      "label": "Three ducks",
+      "hanzi": "三只鸭子",
+      "pinyin": "san zhi ya zi",
+      "lessonHints": ["2B Lesson 5 Animals"],
+      "file": "three-ducks.webp"
+    },
+    {
+      "id": "two-books",
+      "label": "Two books",
+      "hanzi": "两本书",
+      "pinyin": "liang ben shu",
+      "lessonHints": ["2B Lesson 4 My classroom"],
+      "file": "two-books.webp"
+    },
+    {
+      "id": "one-pencil",
+      "label": "One pencil",
+      "hanzi": "一支笔",
+      "pinyin": "yi zhi bi",
+      "lessonHints": ["2B Lesson 3 Stationery"],
+      "file": "one-pencil.webp"
+    },
+    {
+      "id": "one-scissors",
+      "label": "One scissors",
+      "hanzi": "一把剪刀",
+      "pinyin": "yi ba jian dao",
+      "lessonHints": ["2B Lesson 3 Stationery"],
+      "file": "one-scissors.webp"
+    },
+    {
+      "id": "one-eraser",
+      "label": "One eraser",
+      "hanzi": "一块橡皮",
+      "pinyin": "yi kuai xiang pi",
+      "lessonHints": ["2B Lesson 3 Stationery"],
+      "file": "one-eraser.webp"
+    }
+  ]
+}

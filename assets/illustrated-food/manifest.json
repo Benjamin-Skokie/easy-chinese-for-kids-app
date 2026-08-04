@@ -1,0 +1,296 @@
+{
+  "collection": "illustrated-food",
+  "style": "gentle educational watercolor-and-colored-pencil food art for young Chinese learners",
+  "groups": [
+    {
+      "id": "fruit-group-1b-core",
+      "label": "Book 1B core fruit group",
+      "book": "1B",
+      "lesson": 7,
+      "items": ["apple", "banana", "grapes", "strawberry"],
+      "file": "fruit-group-1b-core.webp"
+    }
+  ],
+  "items": [
+    {
+      "id": "apple",
+      "label": "Apple",
+      "hanzi": "苹果",
+      "pinyin": "ping guo",
+      "file": "apple.webp"
+    },
+    {
+      "id": "banana",
+      "label": "Banana",
+      "hanzi": "香蕉",
+      "pinyin": "xiang jiao",
+      "file": "banana.webp"
+    },
+    {
+      "id": "grapes",
+      "label": "Grapes",
+      "hanzi": "葡萄",
+      "pinyin": "pu tao",
+      "file": "grapes.webp"
+    },
+    {
+      "id": "strawberry",
+      "label": "Strawberry",
+      "hanzi": "草莓",
+      "pinyin": "cao mei",
+      "file": "strawberry.webp"
+    },
+    {
+      "id": "orange",
+      "label": "Orange",
+      "hanzi": "橘子",
+      "pinyin": "ju zi",
+      "file": "orange.webp"
+    },
+    {
+      "id": "pear",
+      "label": "Pear",
+      "hanzi": "梨",
+      "pinyin": "li",
+      "file": "pear.webp"
+    },
+    {
+      "id": "watermelon",
+      "label": "Watermelon",
+      "hanzi": "西瓜",
+      "pinyin": "xi gua",
+      "file": "watermelon.webp"
+    },
+    {
+      "id": "peach",
+      "label": "Peach",
+      "hanzi": "桃子",
+      "pinyin": "tao zi",
+      "file": "peach.webp"
+    },
+    {
+      "id": "peach-sliced",
+      "label": "Peach (sliced)",
+      "hanzi": "桃子",
+      "pinyin": "tao zi",
+      "file": "peach.webp"
+    },
+    {
+      "id": "cherries",
+      "label": "Cherries",
+      "hanzi": "樱桃",
+      "pinyin": "ying tao",
+      "file": "cherries.webp"
+    },
+    {
+      "id": "carrot",
+      "label": "Carrot",
+      "hanzi": "胡萝卜",
+      "pinyin": "hu luo bo",
+      "file": "carrot.webp"
+    },
+    {
+      "id": "steak",
+      "label": "Steak",
+      "hanzi": "牛排",
+      "pinyin": "niu pai",
+      "file": "steak.webp"
+    },
+    {
+      "id": "bamboo",
+      "label": "Bamboo",
+      "hanzi": "竹子",
+      "pinyin": "zhu zi",
+      "file": "bamboo.webp"
+    },
+    {
+      "id": "bones",
+      "label": "Bones",
+      "hanzi": "骨头",
+      "pinyin": "gu tou",
+      "file": "bones.webp"
+    },
+    {
+      "id": "small-fish",
+      "label": "Small fish",
+      "hanzi": "小鱼",
+      "pinyin": "xiao yu",
+      "file": "small-fish.webp"
+    },
+    {
+      "id": "candies",
+      "label": "Candies",
+      "hanzi": "糖果",
+      "pinyin": "tang guo",
+      "file": "candies.webp"
+    },
+    {
+      "id": "chocolate",
+      "label": "Chocolate",
+      "hanzi": "巧克力",
+      "pinyin": "qiao ke li",
+      "file": "chocolate.webp"
+    },
+    {
+      "id": "ice-cream",
+      "label": "Ice cream",
+      "hanzi": "冰淇淋",
+      "pinyin": "bing qi lin",
+      "file": "ice-cream.webp"
+    },
+    {
+      "id": "strawberry-ice-cream-bowl",
+      "label": "Strawberry ice cream",
+      "hanzi": "草莓冰淇淋",
+      "pinyin": "cao mei bing qi lin",
+      "file": "strawberry-ice-cream-bowl.webp"
+    },
+    {
+      "id": "chocolate-ice-cream-bowl",
+      "label": "Chocolate ice cream",
+      "hanzi": "巧克力冰淇淋",
+      "pinyin": "qiao ke li bing qi lin",
+      "file": "chocolate-ice-cream-bowl.webp"
+    },
+    {
+      "id": "cake",
+      "label": "Cake",
+      "hanzi": "蛋糕",
+      "pinyin": "dan gao",
+      "file": "cake.webp"
+    },
+    {
+      "id": "tomato",
+      "label": "Tomato",
+      "hanzi": "西红柿",
+      "pinyin": "xi hong shi",
+      "file": "tomato.webp"
+    },
+    {
+      "id": "cucumber",
+      "label": "Cucumber",
+      "hanzi": "黄瓜",
+      "pinyin": "huang gua",
+      "file": "cucumber.webp"
+    },
+    {
+      "id": "broccoli",
+      "label": "Broccoli",
+      "hanzi": "西兰花",
+      "pinyin": "xi lan hua",
+      "file": "broccoli.webp"
+    },
+    {
+      "id": "eggs",
+      "label": "Eggs",
+      "hanzi": "鸡蛋",
+      "pinyin": "ji dan",
+      "file": "eggs.webp"
+    },
+    {
+      "id": "fried-egg",
+      "label": "Fried egg",
+      "hanzi": "煎蛋",
+      "pinyin": "jian dan",
+      "file": "fried-egg.webp"
+    },
+    {
+      "id": "potatoes",
+      "label": "Potatoes",
+      "hanzi": "土豆",
+      "pinyin": "tu dou",
+      "file": "potatoes.webp"
+    },
+    {
+      "id": "bread",
+      "label": "Bread",
+      "hanzi": "面包",
+      "pinyin": "mian bao",
+      "file": "bread.webp"
+    },
+    {
+      "id": "milk",
+      "label": "Milk",
+      "hanzi": "牛奶",
+      "pinyin": "niu nai",
+      "file": "milk.webp"
+    },
+    {
+      "id": "juice",
+      "label": "Juice",
+      "hanzi": "果汁",
+      "pinyin": "guo zhi",
+      "file": "juice.webp"
+    },
+    {
+      "id": "dumplings",
+      "label": "Dumplings",
+      "hanzi": "饺子",
+      "pinyin": "jiao zi",
+      "file": "dumplings.webp"
+    },
+    {
+      "id": "xiaolongbao",
+      "label": "Xiaolongbao",
+      "hanzi": "小笼包",
+      "pinyin": "xiao long bao",
+      "file": "xiaolongbao.webp"
+    },
+    {
+      "id": "chow-mein",
+      "label": "Chow mein",
+      "hanzi": "炒面",
+      "pinyin": "chao mian",
+      "file": "chow-mein.webp"
+    },
+    {
+      "id": "fried-rice",
+      "label": "Fried rice",
+      "hanzi": "炒饭",
+      "pinyin": "chao fan",
+      "file": "fried-rice.webp"
+    },
+    {
+      "id": "french-fries",
+      "label": "French fries",
+      "hanzi": "薯条",
+      "pinyin": "shu tiao",
+      "file": "french-fries.webp"
+    },
+    {
+      "id": "sandwich",
+      "label": "Sandwich",
+      "hanzi": "三明治",
+      "pinyin": "san ming zhi",
+      "file": "sandwich.webp"
+    },
+    {
+      "id": "pizza",
+      "label": "Pizza",
+      "hanzi": "披萨",
+      "pinyin": "pi sa",
+      "file": "pizza.webp"
+    },
+    {
+      "id": "hamburger",
+      "label": "Hamburger",
+      "hanzi": "汉堡",
+      "pinyin": "han bao",
+      "file": "hamburger.webp"
+    },
+    {
+      "id": "cola",
+      "label": "Cola",
+      "hanzi": "可乐",
+      "pinyin": "ke le",
+      "file": "cola.webp"
+    },
+    {
+      "id": "hot-dog",
+      "label": "Hot dog",
+      "hanzi": "热狗",
+      "pinyin": "re gou",
+      "file": "hot-dog.webp"
+    }
+  ]
+}

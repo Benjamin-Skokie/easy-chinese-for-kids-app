@@ -1,0 +1,111 @@
+.glossary-entry {
+  position: relative;
+  display: inline-block;
+}
+
+.glossary-term {
+  appearance: none;
+  border: 0;
+  border-bottom: 1px dotted rgba(44, 62, 107, 0.55);
+  border-radius: 0.2em;
+  padding: 0 0.08em;
+  background: rgba(200, 164, 92, 0.16);
+  color: inherit;
+  font: inherit;
+  line-height: inherit;
+  cursor: help;
+}
+
+.glossary-term:focus-visible {
+  outline: 2px solid rgba(44, 62, 107, 0.45);
+  outline-offset: 2px;
+}
+
+.glossary-popover {
+  position: absolute;
+  z-index: 30;
+  left: 50%;
+  bottom: calc(100% + 10px);
+  width: max-content;
+  max-width: min(280px, calc(100vw - 32px));
+  padding: 10px 12px;
+  border: 1px solid rgba(44, 62, 107, 0.18);
+  border-radius: 12px;
+  background: #fffaf1;
+  box-shadow: 0 14px 32px rgba(30, 24, 12, 0.16);
+  color: var(--ink, #2d2218);
+  font-size: 0.92rem;
+  font-weight: 500;
+  line-height: 1.45;
+  text-align: left;
+  transform: translateX(-50%);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.glossary-popover::after {
+  content: "";
+  position: absolute;
+  left: var(--glossary-arrow-left, 50%);
+  bottom: -6px;
+  width: 10px;
+  height: 10px;
+  border-right: 1px solid rgba(44, 62, 107, 0.18);
+  border-bottom: 1px solid rgba(44, 62, 107, 0.18);
+  background: #fffaf1;
+  transform: translateX(-50%) rotate(45deg);
+}
+
+@media (hover: hover) {
+  .glossary-entry:hover .glossary-popover {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.glossary-entry:focus-within .glossary-popover,
+.glossary-entry[data-open="true"] .glossary-popover {
+  opacity: 1;
+  visibility: visible;
+}
+
+.glossary-entry[data-open="true"] .glossary-popover {
+  position: fixed;
+  left: var(--glossary-left, 50vw);
+  top: var(--glossary-top, 16px);
+  bottom: auto;
+  transform: translateX(-50%);
+}
+
+.glossary-entry[data-side="below"] .glossary-popover {
+  top: calc(100% + 10px);
+  bottom: auto;
+}
+
+.glossary-entry[data-side="below"] .glossary-popover::after {
+  top: -6px;
+  bottom: auto;
+  border: 0;
+  border-left: 1px solid rgba(44, 62, 107, 0.18);
+  border-top: 1px solid rgba(44, 62, 107, 0.18);
+}
+
+@media (max-width: 900px) {
+  .glossary-entry[data-open="true"] .glossary-popover,
+  .glossary-entry:focus-within .glossary-popover {
+    position: fixed;
+    right: 16px;
+    bottom: 16px;
+    left: 16px;
+    top: auto;
+    width: auto;
+    max-width: none;
+    transform: none;
+    font-size: 0.98rem;
+  }
+
+  .glossary-popover::after {
+    display: none;
+  }
+}

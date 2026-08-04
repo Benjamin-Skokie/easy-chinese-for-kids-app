@@ -1,0 +1,15 @@
+{
+  "collection": "illustrated-school-subjects",
+  "style": "clean educational school subject boards for young Chinese learners",
+  "items": [
+    {
+      "id": "basic-subjects-board",
+      "label": "Basic subjects board",
+      "hanzi": "学校科目",
+      "pinyin": "xue xiao ke mu",
+      "theme": "A reusable no-text board showing Chinese, English, math, music, art, and P.E. through subject objects",
+      "lessonHints": ["4B Lesson 6 School subjects"],
+      "file": "basic-subjects-board.webp"
+    }
+  ]
+}

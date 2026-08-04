@@ -1,0 +1,54 @@
+{
+  "collection": "illustrated-country-symbols",
+  "style": "gentle educational watercolor-and-colored-pencil country symbols on white background",
+  "items": [
+    {
+      "id": "united-states",
+      "label": "United States symbol",
+      "symbol": "Statue of Liberty",
+      "file": "united-states.webp"
+    },
+    {
+      "id": "china",
+      "label": "China symbol",
+      "symbol": "Great Wall",
+      "file": "china.webp"
+    },
+    {
+      "id": "germany",
+      "label": "Germany symbol",
+      "symbol": "Brandenburg Gate",
+      "file": "germany.webp"
+    },
+    {
+      "id": "united-kingdom",
+      "label": "United Kingdom symbol",
+      "symbol": "Big Ben",
+      "file": "united-kingdom.webp"
+    },
+    {
+      "id": "canada",
+      "label": "Canada symbol",
+      "symbol": "Hockey sticks and puck",
+      "file": "canada.webp"
+    },
+    {
+      "id": "mexico",
+      "label": "Mexico symbol",
+      "symbol": "Chichen Itza pyramid",
+      "file": "mexico.webp"
+    },
+    {
+      "id": "australia",
+      "label": "Australia symbol",
+      "symbol": "Kangaroo",
+      "file": "australia.webp"
+    },
+    {
+      "id": "france",
+      "label": "France symbol",
+      "symbol": "Eiffel Tower",
+      "file": "france.webp"
+    }
+  ]
+}

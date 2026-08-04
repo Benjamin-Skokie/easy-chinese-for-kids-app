@@ -1,0 +1,78 @@
+{
+  "collection": "illustrated-flags",
+  "style": "clean flat flag icons on white background for country and nationality lessons",
+  "items": [
+    {
+      "id": "united-states",
+      "label": "United States",
+      "hanzi": "美国",
+      "pinyin": "mei guo",
+      "nationalityHanzi": "美国人",
+      "nationalityPinyin": "mei guo ren",
+      "file": "united-states.webp"
+    },
+    {
+      "id": "china",
+      "label": "China",
+      "hanzi": "中国",
+      "pinyin": "zhong guo",
+      "nationalityHanzi": "中国人",
+      "nationalityPinyin": "zhong guo ren",
+      "file": "china.webp"
+    },
+    {
+      "id": "germany",
+      "label": "Germany",
+      "hanzi": "德国",
+      "pinyin": "de guo",
+      "nationalityHanzi": "德国人",
+      "nationalityPinyin": "de guo ren",
+      "file": "germany.webp"
+    },
+    {
+      "id": "united-kingdom",
+      "label": "United Kingdom",
+      "hanzi": "英国",
+      "pinyin": "ying guo",
+      "nationalityHanzi": "英国人",
+      "nationalityPinyin": "ying guo ren",
+      "file": "united-kingdom.webp"
+    },
+    {
+      "id": "canada",
+      "label": "Canada",
+      "hanzi": "加拿大",
+      "pinyin": "jia na da",
+      "nationalityHanzi": "加拿大人",
+      "nationalityPinyin": "jia na da ren",
+      "file": "canada.webp"
+    },
+    {
+      "id": "mexico",
+      "label": "Mexico",
+      "hanzi": "墨西哥",
+      "pinyin": "mo xi ge",
+      "nationalityHanzi": "墨西哥人",
+      "nationalityPinyin": "mo xi ge ren",
+      "file": "mexico.webp"
+    },
+    {
+      "id": "australia",
+      "label": "Australia",
+      "hanzi": "澳大利亚",
+      "pinyin": "ao da li ya",
+      "nationalityHanzi": "澳大利亚人",
+      "nationalityPinyin": "ao da li ya ren",
+      "file": "australia.webp"
+    },
+    {
+      "id": "france",
+      "label": "France",
+      "hanzi": "法国",
+      "pinyin": "fa guo",
+      "nationalityHanzi": "法国人",
+      "nationalityPinyin": "fa guo ren",
+      "file": "france.webp"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "collection": "illustrated-school-layouts",
+  "style": "gentle educational storybook school layout and cutaway map scenes for young Chinese learners",
+  "items": [
+    {
+      "id": "school-cutaway-layout",
+      "label": "School cutaway layout",
+      "hanzi": "学校平面图",
+      "pinyin": "xué xiào píng miàn tú",
+      "theme": "Roofless top-down school campus layout showing connected rooms and facilities",
+      "file": "school-cutaway-layout.webp"
+    }
+  ]
+}

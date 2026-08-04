@@ -1,0 +1,52 @@
+{
+  "collection": "illustrated-counting",
+  "style": "clean educational counting boards for young Chinese learners",
+  "items": [
+    {
+      "id": "ten-yellow-ducks",
+      "label": "Ten yellow ducks",
+      "hanzi": "十只小鸭子",
+      "pinyin": "shi zhi xiao ya zi",
+      "theme": "A simple row of ten identical objects for beginner counting practice",
+      "lessonHints": [
+        "1A Lessons 1-3 Numbers",
+        "2A Lesson 1 Numbers",
+        "3A Lesson 1 Numbers"
+      ],
+      "file": "ten-yellow-ducks.webp"
+    },
+    {
+      "id": "twenty-to-forty-counting-board",
+      "label": "Twenty to forty counting board",
+      "hanzi": "二十到四十",
+      "pinyin": "er shi dao si shi",
+      "theme": "A grouped counting concept board that shows tens plus ones structure for numbers in the 20 to 40 range",
+      "lessonHints": [
+        "2A Lesson 1 Numbers"
+      ],
+      "file": "twenty-to-forty-counting-board.webp"
+    },
+    {
+      "id": "forty-one-to-one-hundred-counting-board",
+      "label": "Forty-one to one hundred counting board",
+      "hanzi": "四十一到一百",
+      "pinyin": "si shi yi dao yi bai",
+      "theme": "A grouped counting concept board that shows higher-number structure from forty-one to one hundred",
+      "lessonHints": [
+        "3A Lesson 1 Numbers"
+      ],
+      "file": "forty-one-to-one-hundred-counting-board.webp"
+    },
+    {
+      "id": "eleven-to-twenty-counting-board",
+      "label": "Eleven to twenty counting board",
+      "hanzi": "十一到二十",
+      "pinyin": "shi yi dao er shi",
+      "theme": "A deterministic ten-frame style counting board showing quantities eleven through twenty with exact repeated objects",
+      "lessonHints": [
+        "1A Lesson 3 Numbers (3)"
+      ],
+      "file": "eleven-to-twenty-counting-board.webp"
+    }
+  ]
+}

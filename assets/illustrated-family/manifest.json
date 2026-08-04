@@ -1,0 +1,102 @@
+{
+  "collection": "illustrated-family",
+  "style": "friendly educational cartoon family cast for kids Chinese learning app",
+  "sheet": "family-cast-sheet.webp",
+  "skinToneGroup": "shared warm brown family tone",
+  "people": [
+    {
+      "id": "grandpa",
+      "label": "Grandpa",
+      "ageGroup": "senior",
+      "role": "family",
+      "file": "grandpa.webp"
+    },
+    {
+      "id": "grandma",
+      "label": "Grandma",
+      "ageGroup": "senior",
+      "role": "family",
+      "file": "grandma.webp"
+    },
+    {
+      "id": "dad",
+      "label": "Dad",
+      "ageGroup": "adult",
+      "role": "family",
+      "file": "family-avatar-dad.webp"
+    },
+    {
+      "id": "mom",
+      "label": "Mom",
+      "ageGroup": "adult",
+      "role": "family",
+      "file": "family-avatar-mom.webp"
+    },
+    {
+      "id": "older-sister",
+      "label": "Older sister",
+      "ageGroup": "8",
+      "role": "family",
+      "baseKidIdentity": "anan",
+      "file": "family-avatar-older-sister.webp"
+    },
+    {
+      "id": "older-brother",
+      "label": "Older brother",
+      "ageGroup": "7-8",
+      "role": "family",
+      "baseKidIdentity": "lele",
+      "file": "family-avatar-older-brother.webp"
+    },
+    {
+      "id": "younger-sister",
+      "label": "Younger sister",
+      "ageGroup": "6-7",
+      "role": "family",
+      "baseKidIdentity": "meimei",
+      "file": "family-avatar-younger-sister.webp"
+    },
+    {
+      "id": "younger-brother",
+      "label": "Younger brother",
+      "ageGroup": "6",
+      "role": "family",
+      "file": "family-avatar-younger-brother.webp"
+    }
+  ],
+  "scenes": [
+    {
+      "id": "family-scene-parents-love",
+      "label": "Parents love scene",
+      "hanzi": "爸爸妈妈",
+      "pinyin": "ba ba ma ma",
+      "theme": "Family scene for mum and dad lesson",
+      "lessonHints": [
+        "1B Lesson 1 Mum and dad"
+      ],
+      "file": "family-scene-parents-love.webp"
+    },
+    {
+      "id": "family-scene-siblings",
+      "label": "Siblings scene",
+      "hanzi": "兄弟姐妹",
+      "pinyin": "xiong di jie mei",
+      "theme": "Four siblings sit on the sofa watching TV and sharing popcorn",
+      "lessonHints": [
+        "1B Lesson 2 Brothers and sisters"
+      ],
+      "file": "family-scene-siblings.webp"
+    },
+    {
+      "id": "family-counting-two-younger-brothers",
+      "label": "Two younger brothers scene",
+      "hanzi": "两个弟弟",
+      "pinyin": "liang ge di di",
+      "theme": "Standalone dinner-table sibling scene with an older sister and exactly two younger brothers",
+      "lessonHints": [
+        "2A Lesson 2 Two younger brothers"
+      ],
+      "file": "family-counting-two-younger-brothers.webp"
+    }
+  ]
+}

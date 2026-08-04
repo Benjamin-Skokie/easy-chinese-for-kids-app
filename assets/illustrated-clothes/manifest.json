@@ -1,0 +1,46 @@
+{
+  "collection": "illustrated-clothes",
+  "style": "clean educational grouped clothing boards for young Chinese learners",
+  "items": [
+    {
+      "id": "basic-clothes-board",
+      "label": "Basic clothes board",
+      "hanzi": "衣服",
+      "pinyin": "yi fu",
+      "theme": "A reusable no-text board showing common clothing items for beginner clothes lessons",
+      "focus": [
+        "T恤",
+        "裤子",
+        "裙子",
+        "鞋子",
+        "帽子",
+        "外套",
+        "手套"
+      ],
+      "file": "basic-clothes-board.webp"
+    },
+    {
+      "id": "wearing-clothes-scene",
+      "label": "Wearing clothes scene",
+      "hanzi": "穿衣服",
+      "pinyin": "chuan yi fu",
+      "theme": "A child wears and chooses common clothing items in a bedroom",
+      "lessonHints": [
+        "3A Lesson 7 Clothes"
+      ],
+      "file": "wearing-clothes-scene.webp"
+    },
+    {
+      "id": "weather-linked-clothing-scene",
+      "label": "Weather linked clothing scene",
+      "hanzi": "下雨穿雨衣",
+      "pinyin": "xia yu chuan yu yi",
+      "theme": "A child chooses rain and cold-weather clothes by a rainy window",
+      "lessonHints": [
+        "4B Lesson 2 Clothes",
+        "4B Lesson 1 It is raining"
+      ],
+      "file": "weather-linked-clothing-scene.webp"
+    }
+  ]
+}

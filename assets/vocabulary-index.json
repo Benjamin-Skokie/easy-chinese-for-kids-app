@@ -1,0 +1,2234 @@
+{
+  "generatedFrom": "asset manifests",
+  "itemCount": 286,
+  "items": [
+    {
+      "hanzi": "走",
+      "pinyin": "zǒu",
+      "english": "Walk",
+      "collection": "illustrated-actions-basic",
+      "id": "walk",
+      "file": "assets/illustrated-actions-basic/walk.webp"
+    },
+    {
+      "hanzi": "跑",
+      "pinyin": "pǎo",
+      "english": "Run",
+      "collection": "illustrated-actions-basic",
+      "id": "run",
+      "file": "assets/illustrated-actions-basic/run.webp"
+    },
+    {
+      "hanzi": "坐",
+      "pinyin": "zuò",
+      "english": "Sit",
+      "collection": "illustrated-actions-basic",
+      "id": "sit-chair",
+      "file": "assets/illustrated-actions-basic/sit-chair.webp"
+    },
+    {
+      "hanzi": "站",
+      "pinyin": "zhàn",
+      "english": "Stand",
+      "collection": "illustrated-actions-basic",
+      "id": "stand",
+      "file": "assets/illustrated-actions-basic/stand.webp"
+    },
+    {
+      "hanzi": "爬",
+      "pinyin": "pá",
+      "english": "Climb",
+      "collection": "illustrated-actions-basic",
+      "id": "climb-ladder",
+      "file": "assets/illustrated-actions-basic/climb-ladder.webp"
+    },
+    {
+      "hanzi": "躺",
+      "pinyin": "tǎng",
+      "english": "Lie down",
+      "collection": "illustrated-actions-basic",
+      "id": "lie-bed",
+      "file": "assets/illustrated-actions-basic/lie-bed.webp"
+    },
+    {
+      "hanzi": "刷牙",
+      "pinyin": "shuā yá",
+      "english": "Brush teeth",
+      "collection": "illustrated-activities",
+      "id": "brush-teeth",
+      "file": "assets/illustrated-activities/0710am-brush-teeth.webp"
+    },
+    {
+      "hanzi": "奶奶看书",
+      "pinyin": "nǎi nai kàn shū",
+      "english": "Grandma reading",
+      "collection": "illustrated-activities",
+      "id": "grandma-reading",
+      "file": "assets/illustrated-activities/grandma_reading_armchair.webp"
+    },
+    {
+      "hanzi": "滑雪",
+      "pinyin": "huá xuě",
+      "english": "Ski",
+      "collection": "illustrated-activities",
+      "id": "noah-skiing",
+      "file": "assets/illustrated-activities/noah_skiing.webp"
+    },
+    {
+      "hanzi": "爷爷写字",
+      "pinyin": "yé ye xiě zì",
+      "english": "Grandpa writing",
+      "collection": "illustrated-activities",
+      "id": "grandpa-writing",
+      "file": "assets/illustrated-activities/grandpa_writing.webp"
+    },
+    {
+      "hanzi": "跳舞",
+      "pinyin": "tiào wǔ",
+      "english": "Dance",
+      "collection": "illustrated-activities",
+      "id": "luna-dancing",
+      "file": "assets/illustrated-activities/luna_dancing.webp"
+    },
+    {
+      "hanzi": "游泳",
+      "pinyin": "yóu yǒng",
+      "english": "Swim",
+      "collection": "illustrated-activities",
+      "id": "jaden-swimming",
+      "file": "assets/illustrated-activities/jaden_swimming.webp"
+    },
+    {
+      "hanzi": "打篮球",
+      "pinyin": "dǎ lán qiú",
+      "english": "Basketball",
+      "collection": "illustrated-activities",
+      "id": "kids-playing-basketball",
+      "file": "assets/illustrated-activities/kids_playing_basketball.webp"
+    },
+    {
+      "hanzi": "跑步",
+      "pinyin": "pǎo bù",
+      "english": "Run",
+      "collection": "illustrated-activities",
+      "id": "kids-running-playground",
+      "file": "assets/illustrated-activities/kids_running_playground.webp"
+    },
+    {
+      "hanzi": "看动画片",
+      "pinyin": "kàn dòng huà piàn",
+      "english": "Watch cartoons",
+      "collection": "illustrated-activities",
+      "id": "meimei-watching-cartoons",
+      "file": "assets/illustrated-activities/meimei_watching_cartoons.webp"
+    },
+    {
+      "hanzi": "玩平板游戏",
+      "pinyin": "wán píng bǎn yóu xì",
+      "english": "Play iPad games",
+      "collection": "illustrated-activities",
+      "id": "tiantian-playing-ipad-games",
+      "file": "assets/illustrated-activities/tiantian_playing_ipad_games.webp"
+    },
+    {
+      "hanzi": "玩乐高",
+      "pinyin": "wán lè gāo",
+      "english": "Play Lego",
+      "collection": "illustrated-activities",
+      "id": "lele-playing-lego",
+      "file": "assets/illustrated-activities/lele_playing_lego.webp"
+    },
+    {
+      "hanzi": "踢足球",
+      "pinyin": "tī zú qiú",
+      "english": "Soccer",
+      "collection": "illustrated-activities",
+      "id": "kids-playing-soccer",
+      "file": "assets/illustrated-activities/kids_playing_soccer.webp"
+    },
+    {
+      "hanzi": "踢足球",
+      "pinyin": "tī zú qiú",
+      "english": "Soccer",
+      "collection": "illustrated-activities",
+      "id": "yangyang-playing-soccer",
+      "file": "assets/illustrated-activities/yangyang_playing_soccer.webp"
+    },
+    {
+      "hanzi": "骑自行车",
+      "pinyin": "qí zì xíng chē",
+      "english": "Ride a bike",
+      "collection": "illustrated-activities",
+      "id": "yangyang-riding-bike",
+      "file": "assets/illustrated-activities/yangyang_riding_bike.webp"
+    },
+    {
+      "hanzi": "骑自行车",
+      "pinyin": "qí zì xíng chē",
+      "english": "Ride a bike",
+      "collection": "illustrated-activities",
+      "id": "sisi-riding-bike",
+      "file": "assets/illustrated-activities/sisi_riding_bike.webp"
+    },
+    {
+      "hanzi": "唱歌",
+      "pinyin": "chàng gē",
+      "english": "Sing",
+      "collection": "illustrated-activities",
+      "id": "kids-singing-chorus",
+      "file": "assets/illustrated-activities/kids_singing_chorus.webp"
+    },
+    {
+      "hanzi": "上音乐课",
+      "pinyin": "shàng yīn yuè kè",
+      "english": "Go to music class",
+      "collection": "illustrated-activities",
+      "id": "anan-go-to-music-class",
+      "file": "assets/illustrated-activities/anan_go_to_music_class.webp"
+    },
+    {
+      "hanzi": "上音乐课",
+      "pinyin": "shàng yīn yuè kè",
+      "english": "Be in music class",
+      "collection": "illustrated-activities",
+      "id": "anan-in-music-class",
+      "file": "assets/illustrated-activities/anan_in_music_class.webp"
+    },
+    {
+      "hanzi": "喜欢上音乐课",
+      "pinyin": "xǐ huan shàng yīn yuè kè",
+      "english": "Like music class",
+      "collection": "illustrated-activities",
+      "id": "anan-likes-music-class",
+      "file": "assets/illustrated-activities/anan_likes_music_class.webp"
+    },
+    {
+      "hanzi": "打网球",
+      "pinyin": "dǎ wǎng qiú",
+      "english": "Tennis",
+      "collection": "illustrated-activities",
+      "id": "kids-playing-tennis",
+      "file": "assets/illustrated-activities/kids_playing_tennis.webp"
+    },
+    {
+      "hanzi": "平衡木",
+      "pinyin": "píng héng mù",
+      "english": "Balance bar",
+      "collection": "illustrated-activities",
+      "id": "sophie-balance-bar",
+      "file": "assets/illustrated-activities/sophie_balance_bar.webp"
+    },
+    {
+      "hanzi": "下棋",
+      "pinyin": "xià qí",
+      "english": "Play chess",
+      "collection": "illustrated-activities",
+      "id": "tiantian-playing-chess-with-anan",
+      "file": "assets/illustrated-activities/tiantian_anan_playing_chess.webp"
+    },
+    {
+      "hanzi": "喜欢上体育课",
+      "pinyin": "xǐ huan shàng tǐ yù kè",
+      "english": "Like P.E. class",
+      "collection": "illustrated-activities",
+      "id": "yangyang-likes-pe-class",
+      "file": "assets/illustrated-activities/yangyang_likes_pe_class.webp"
+    },
+    {
+      "hanzi": "不喜欢上数学课",
+      "pinyin": "bù xǐ huan shàng shù xué kè",
+      "english": "Do not like math class",
+      "collection": "illustrated-activities",
+      "id": "lele-dislikes-math-class",
+      "file": "assets/illustrated-activities/lele_dislikes_math_class.webp"
+    },
+    {
+      "hanzi": "狗",
+      "pinyin": "gou",
+      "english": "Dog",
+      "collection": "illustrated-animals",
+      "id": "dog",
+      "file": "assets/illustrated-animals/dog.webp"
+    },
+    {
+      "hanzi": "猫",
+      "pinyin": "mao",
+      "english": "Cat",
+      "collection": "illustrated-animals",
+      "id": "cat",
+      "file": "assets/illustrated-animals/cat.webp"
+    },
+    {
+      "hanzi": "大象",
+      "pinyin": "da xiang",
+      "english": "Elephant",
+      "collection": "illustrated-animals",
+      "id": "elephant",
+      "file": "assets/illustrated-animals/elephant.webp"
+    },
+    {
+      "hanzi": "熊猫",
+      "pinyin": "xiong mao",
+      "english": "Panda",
+      "collection": "illustrated-animals",
+      "id": "panda",
+      "file": "assets/illustrated-animals/panda.webp"
+    },
+    {
+      "hanzi": "乌龟",
+      "pinyin": "wu gui",
+      "english": "Turtle",
+      "collection": "illustrated-animals",
+      "id": "turtle",
+      "file": "assets/illustrated-animals/turtle.webp"
+    },
+    {
+      "hanzi": "猴子",
+      "pinyin": "hou zi",
+      "english": "Monkey",
+      "collection": "illustrated-animals",
+      "id": "monkey",
+      "file": "assets/illustrated-animals/monkey.webp"
+    },
+    {
+      "hanzi": "老虎",
+      "pinyin": "lao hu",
+      "english": "Tiger",
+      "collection": "illustrated-animals",
+      "id": "tiger",
+      "file": "assets/illustrated-animals/tiger.webp"
+    },
+    {
+      "hanzi": "兔子",
+      "pinyin": "tu zi",
+      "english": "Bunny",
+      "collection": "illustrated-animals",
+      "id": "bunny",
+      "file": "assets/illustrated-animals/bunny.webp"
+    },
+    {
+      "hanzi": "金鱼",
+      "pinyin": "jin yu",
+      "english": "Goldfish",
+      "collection": "illustrated-animals",
+      "id": "goldfish",
+      "file": "assets/illustrated-animals/goldfish.webp"
+    },
+    {
+      "hanzi": "学校",
+      "pinyin": "xue xiao",
+      "english": "School",
+      "collection": "illustrated-classrooms",
+      "id": "school",
+      "file": "assets/illustrated-classrooms/school.webp"
+    },
+    {
+      "hanzi": "操场",
+      "pinyin": "cao chang",
+      "english": "Playground",
+      "collection": "illustrated-classrooms",
+      "id": "playground",
+      "file": "assets/illustrated-classrooms/playground.webp"
+    },
+    {
+      "hanzi": "教室",
+      "pinyin": "jiao shi",
+      "english": "Classroom",
+      "collection": "illustrated-classrooms",
+      "id": "classroom",
+      "file": "assets/illustrated-classrooms/classroom.webp"
+    },
+    {
+      "hanzi": "七点",
+      "pinyin": "qi dian",
+      "english": "7:00 AM",
+      "collection": "illustrated-clock-routines",
+      "id": "07am-lele-wake-up",
+      "file": "assets/illustrated-clock-routines/07am-lele-wake-up.webp"
+    },
+    {
+      "hanzi": "七点一刻",
+      "pinyin": "qi dian yi ke",
+      "english": "7:15 AM",
+      "collection": "illustrated-clock-routines",
+      "id": "0715am-lele-having-breakfast",
+      "file": "assets/illustrated-clock-routines/0715am-lele-having-breakfast.webp"
+    },
+    {
+      "hanzi": "八点",
+      "pinyin": "ba dian",
+      "english": "8:00 AM",
+      "collection": "illustrated-clock-routines",
+      "id": "08am-go-to-school",
+      "file": "assets/illustrated-clock-routines/08am-go-to-school.webp"
+    },
+    {
+      "hanzi": "十点",
+      "pinyin": "shi dian",
+      "english": "10:00 AM",
+      "collection": "illustrated-clock-routines",
+      "id": "10am-writing-class",
+      "file": "assets/illustrated-clock-routines/10am-writing-class.webp"
+    },
+    {
+      "hanzi": "十二点",
+      "pinyin": "shi er dian",
+      "english": "12:00 PM",
+      "collection": "illustrated-clock-routines",
+      "id": "12pm-lunch-time",
+      "file": "assets/illustrated-clock-routines/12pm-lunch-time.webp"
+    },
+    {
+      "hanzi": "两点半",
+      "pinyin": "liang dian ban",
+      "english": "2:30 PM",
+      "collection": "illustrated-clock-routines",
+      "id": "0230pm-school-dismissal",
+      "file": "assets/illustrated-clock-routines/0230pm-school-dismissal.webp"
+    },
+    {
+      "hanzi": "四点",
+      "pinyin": "si dian",
+      "english": "4:00 PM",
+      "collection": "illustrated-clock-routines",
+      "id": "04pm-playground",
+      "file": "assets/illustrated-clock-routines/04pm-playground.webp"
+    },
+    {
+      "hanzi": "六点",
+      "pinyin": "liu dian",
+      "english": "6:00 PM",
+      "collection": "illustrated-clock-routines",
+      "id": "06pm-family-dinner",
+      "file": "assets/illustrated-clock-routines/06pm-family-dinner.webp"
+    },
+    {
+      "hanzi": "七点",
+      "pinyin": "qi dian",
+      "english": "7:00 PM",
+      "collection": "illustrated-clock-routines",
+      "id": "07pm-tv-time",
+      "file": "assets/illustrated-clock-routines/07pm-tv-time.webp"
+    },
+    {
+      "hanzi": "八点",
+      "pinyin": "ba dian",
+      "english": "8:00 PM",
+      "collection": "illustrated-clock-routines",
+      "id": "08pm-story-time",
+      "file": "assets/illustrated-clock-routines/08pm-story-time.webp"
+    },
+    {
+      "hanzi": "九点",
+      "pinyin": "jiu dian",
+      "english": "9:00 PM",
+      "collection": "illustrated-clock-routines",
+      "id": "09pm-bedtime",
+      "file": "assets/illustrated-clock-routines/09pm-bedtime.webp"
+    },
+    {
+      "hanzi": "一点",
+      "pinyin": "yi dian",
+      "english": "1 o'clock",
+      "collection": "illustrated-clocks",
+      "id": "1oclock",
+      "file": "assets/illustrated-clocks/1oclock.webp"
+    },
+    {
+      "hanzi": "两点",
+      "pinyin": "liang dian",
+      "english": "2 o'clock",
+      "collection": "illustrated-clocks",
+      "id": "2oclock",
+      "file": "assets/illustrated-clocks/2oclock.webp"
+    },
+    {
+      "hanzi": "三点",
+      "pinyin": "san dian",
+      "english": "3 o'clock",
+      "collection": "illustrated-clocks",
+      "id": "3oclock",
+      "file": "assets/illustrated-clocks/3oclock.webp"
+    },
+    {
+      "hanzi": "四点",
+      "pinyin": "si dian",
+      "english": "4 o'clock",
+      "collection": "illustrated-clocks",
+      "id": "4oclock",
+      "file": "assets/illustrated-clocks/4oclock.webp"
+    },
+    {
+      "hanzi": "五点",
+      "pinyin": "wu dian",
+      "english": "5 o'clock",
+      "collection": "illustrated-clocks",
+      "id": "5oclock",
+      "file": "assets/illustrated-clocks/5oclock.webp"
+    },
+    {
+      "hanzi": "六点",
+      "pinyin": "liu dian",
+      "english": "6 o'clock",
+      "collection": "illustrated-clocks",
+      "id": "6oclock",
+      "file": "assets/illustrated-clocks/6oclock.webp"
+    },
+    {
+      "hanzi": "七点",
+      "pinyin": "qi dian",
+      "english": "7 o'clock",
+      "collection": "illustrated-clocks",
+      "id": "7oclock",
+      "file": "assets/illustrated-clocks/7oclock.webp"
+    },
+    {
+      "hanzi": "八点",
+      "pinyin": "ba dian",
+      "english": "8 o'clock",
+      "collection": "illustrated-clocks",
+      "id": "8oclock",
+      "file": "assets/illustrated-clocks/8oclock.webp"
+    },
+    {
+      "hanzi": "九点",
+      "pinyin": "jiu dian",
+      "english": "9 o'clock",
+      "collection": "illustrated-clocks",
+      "id": "9oclock",
+      "file": "assets/illustrated-clocks/9oclock.webp"
+    },
+    {
+      "hanzi": "十点",
+      "pinyin": "shi dian",
+      "english": "10 o'clock",
+      "collection": "illustrated-clocks",
+      "id": "10oclock",
+      "file": "assets/illustrated-clocks/10oclock.webp"
+    },
+    {
+      "hanzi": "十一点",
+      "pinyin": "shi yi dian",
+      "english": "11 o'clock",
+      "collection": "illustrated-clocks",
+      "id": "11oclock",
+      "file": "assets/illustrated-clocks/11oclock.webp"
+    },
+    {
+      "hanzi": "十二点",
+      "pinyin": "shi er dian",
+      "english": "12 o'clock",
+      "collection": "illustrated-clocks",
+      "id": "12oclock",
+      "file": "assets/illustrated-clocks/12oclock.webp"
+    },
+    {
+      "hanzi": "衣服",
+      "pinyin": "yi fu",
+      "english": "Basic clothes board",
+      "collection": "illustrated-clothes",
+      "id": "basic-clothes-board",
+      "file": "assets/illustrated-clothes/basic-clothes-board.webp"
+    },
+    {
+      "hanzi": "红色的苹果",
+      "pinyin": "hong se de ping guo",
+      "english": "Red apple",
+      "collection": "illustrated-colors",
+      "id": "red-apple",
+      "file": "assets/illustrated-colors/red-apple.webp"
+    },
+    {
+      "hanzi": "黄色的香蕉",
+      "pinyin": "huang se de xiang jiao",
+      "english": "Yellow banana",
+      "collection": "illustrated-colors",
+      "id": "yellow-banana",
+      "file": "assets/illustrated-colors/yellow-banana.webp"
+    },
+    {
+      "hanzi": "蓝色的书包",
+      "pinyin": "lan se de shu bao",
+      "english": "Blue backpack",
+      "collection": "illustrated-colors",
+      "id": "blue-backpack",
+      "file": "assets/illustrated-colors/blue-backpack.webp"
+    },
+    {
+      "hanzi": "绿色的黄瓜",
+      "pinyin": "lu se de huang gua",
+      "english": "Green cucumber",
+      "collection": "illustrated-colors",
+      "id": "green-cucumber",
+      "file": "assets/illustrated-colors/green-cucumber.webp"
+    },
+    {
+      "hanzi": "紫色的葡萄",
+      "pinyin": "zi se de pu tao",
+      "english": "Purple grapes",
+      "collection": "illustrated-colors",
+      "id": "purple-grapes",
+      "file": "assets/illustrated-colors/purple-grapes.webp"
+    },
+    {
+      "hanzi": "橙色的橘子",
+      "pinyin": "cheng se de ju zi",
+      "english": "Orange orange",
+      "collection": "illustrated-colors",
+      "id": "orange-fruit",
+      "file": "assets/illustrated-colors/orange-fruit.webp"
+    },
+    {
+      "hanzi": "黑色的运动鞋",
+      "pinyin": "hei se de yun dong xie",
+      "english": "Black sneakers",
+      "collection": "illustrated-colors",
+      "id": "black-sneakers",
+      "file": "assets/illustrated-colors/black-sneakers.webp"
+    },
+    {
+      "hanzi": "大和小",
+      "pinyin": "dà hé xiǎo",
+      "english": "Big and small",
+      "collection": "illustrated-comparisons",
+      "id": "big-small-animals",
+      "file": "assets/illustrated-comparisons/big-small-animals.webp"
+    },
+    {
+      "hanzi": "多和少",
+      "pinyin": "duō hé shǎo",
+      "english": "Many and few",
+      "collection": "illustrated-comparisons",
+      "id": "many-few-carrots",
+      "file": "assets/illustrated-comparisons/many-few-carrots.webp"
+    },
+    {
+      "hanzi": "快和慢",
+      "pinyin": "kuài hé màn",
+      "english": "Fast and slow",
+      "collection": "illustrated-comparisons",
+      "id": "fast-slow-running",
+      "file": "assets/illustrated-comparisons/fast-slow-running.webp"
+    },
+    {
+      "hanzi": "长和短",
+      "pinyin": "cháng hé duǎn",
+      "english": "Long and short",
+      "collection": "illustrated-comparisons",
+      "id": "long-short-pencils",
+      "file": "assets/illustrated-comparisons/long-short-pencils.webp"
+    },
+    {
+      "hanzi": "高和矮",
+      "pinyin": "gāo hé ǎi",
+      "english": "Tall and short",
+      "collection": "illustrated-comparisons",
+      "id": "tall-short-animals",
+      "file": "assets/illustrated-comparisons/tall-short-animals.webp"
+    },
+    {
+      "hanzi": "冷和热",
+      "pinyin": "lěng hé rè",
+      "english": "Cold and hot",
+      "collection": "illustrated-comparisons",
+      "id": "cold-hot-foods",
+      "file": "assets/illustrated-comparisons/cold-hot-foods.webp"
+    },
+    {
+      "hanzi": "新和旧",
+      "pinyin": "xīn hé jiù",
+      "english": "New and old",
+      "collection": "illustrated-comparisons",
+      "id": "new-old-teddy-bears",
+      "file": "assets/illustrated-comparisons/new-old-teddy-bears.webp"
+    },
+    {
+      "hanzi": "先穿袜子，再穿鞋",
+      "pinyin": "xiān chuān wà zi, zài chuān xié",
+      "english": "First put on socks, then put on shoes",
+      "collection": "illustrated-comparisons",
+      "id": "first-then-socks-shoes",
+      "file": "assets/illustrated-comparisons/first-then-socks-shoes.webp"
+    },
+    {
+      "hanzi": "先洗手，再吃饭",
+      "pinyin": "xiān xǐ shǒu, zài chī fàn",
+      "english": "First wash hands, then eat",
+      "collection": "illustrated-comparisons",
+      "id": "first-then-wash-hands-eat",
+      "file": "assets/illustrated-comparisons/first-then-wash-hands-eat.webp"
+    },
+    {
+      "hanzi": "十只小鸭子",
+      "pinyin": "shi zhi xiao ya zi",
+      "english": "Ten yellow ducks",
+      "collection": "illustrated-counting",
+      "id": "ten-yellow-ducks",
+      "file": "assets/illustrated-counting/ten-yellow-ducks.webp"
+    },
+    {
+      "hanzi": "二十到四十",
+      "pinyin": "er shi dao si shi",
+      "english": "Twenty to forty counting board",
+      "collection": "illustrated-counting",
+      "id": "twenty-to-forty-counting-board",
+      "file": "assets/illustrated-counting/twenty-to-forty-counting-board.webp"
+    },
+    {
+      "hanzi": "四十一到一百",
+      "pinyin": "si shi yi dao yi bai",
+      "english": "Forty-one to one hundred counting board",
+      "collection": "illustrated-counting",
+      "id": "forty-one-to-one-hundred-counting-board",
+      "file": "assets/illustrated-counting/forty-one-to-one-hundred-counting-board.webp"
+    },
+    {
+      "english": "United States symbol",
+      "collection": "illustrated-country-symbols",
+      "id": "united-states",
+      "file": "assets/illustrated-country-symbols/united-states.webp"
+    },
+    {
+      "english": "China symbol",
+      "collection": "illustrated-country-symbols",
+      "id": "china",
+      "file": "assets/illustrated-country-symbols/china.webp"
+    },
+    {
+      "english": "Germany symbol",
+      "collection": "illustrated-country-symbols",
+      "id": "germany",
+      "file": "assets/illustrated-country-symbols/germany.webp"
+    },
+    {
+      "english": "United Kingdom symbol",
+      "collection": "illustrated-country-symbols",
+      "id": "united-kingdom",
+      "file": "assets/illustrated-country-symbols/united-kingdom.webp"
+    },
+    {
+      "english": "Canada symbol",
+      "collection": "illustrated-country-symbols",
+      "id": "canada",
+      "file": "assets/illustrated-country-symbols/canada.webp"
+    },
+    {
+      "english": "Mexico symbol",
+      "collection": "illustrated-country-symbols",
+      "id": "mexico",
+      "file": "assets/illustrated-country-symbols/mexico.webp"
+    },
+    {
+      "english": "Australia symbol",
+      "collection": "illustrated-country-symbols",
+      "id": "australia",
+      "file": "assets/illustrated-country-symbols/australia.webp"
+    },
+    {
+      "english": "France symbol",
+      "collection": "illustrated-country-symbols",
+      "id": "france",
+      "file": "assets/illustrated-country-symbols/france.webp"
+    },
+    {
+      "hanzi": "几月几号",
+      "pinyin": "ji yue ji hao",
+      "english": "Calendar example dates board",
+      "collection": "illustrated-dates",
+      "id": "calendar-example-dates-board",
+      "file": "assets/illustrated-dates/calendar-example-dates-board.webp"
+    },
+    {
+      "hanzi": "一月一号",
+      "pinyin": "yi yue yi hao",
+      "english": "January first New Year calendar",
+      "collection": "illustrated-dates",
+      "id": "january-first-new-year-calendar",
+      "file": "assets/illustrated-dates/january-first-new-year-calendar.webp"
+    },
+    {
+      "hanzi": "五月二十号",
+      "pinyin": "wu yue er shi hao",
+      "english": "May twentieth field trip calendar",
+      "collection": "illustrated-dates",
+      "id": "may-twentieth-field-trip-calendar",
+      "file": "assets/illustrated-dates/may-twentieth-field-trip-calendar.webp"
+    },
+    {
+      "hanzi": "十二月二十五号",
+      "pinyin": "shi er yue er shi wu hao",
+      "english": "December twenty-fifth Christmas calendar",
+      "collection": "illustrated-dates",
+      "id": "december-twenty-fifth-christmas-calendar",
+      "file": "assets/illustrated-dates/december-twenty-fifth-christmas-calendar.webp"
+    },
+    {
+      "hanzi": "星期一",
+      "pinyin": "xing qi yi",
+      "english": "Monday",
+      "collection": "illustrated-day-of-week",
+      "id": "monday",
+      "file": "assets/illustrated-day-of-week/Monday.webp"
+    },
+    {
+      "hanzi": "星期二",
+      "pinyin": "xing qi er",
+      "english": "Tuesday",
+      "collection": "illustrated-day-of-week",
+      "id": "tuesday",
+      "file": "assets/illustrated-day-of-week/Tuesday.webp"
+    },
+    {
+      "hanzi": "星期三",
+      "pinyin": "xing qi san",
+      "english": "Wednesday",
+      "collection": "illustrated-day-of-week",
+      "id": "wednesday",
+      "file": "assets/illustrated-day-of-week/Wednesday.webp"
+    },
+    {
+      "hanzi": "星期四",
+      "pinyin": "xing qi si",
+      "english": "Thursday",
+      "collection": "illustrated-day-of-week",
+      "id": "thursday",
+      "file": "assets/illustrated-day-of-week/Thursday.webp"
+    },
+    {
+      "hanzi": "星期五",
+      "pinyin": "xing qi wu",
+      "english": "Friday",
+      "collection": "illustrated-day-of-week",
+      "id": "friday",
+      "file": "assets/illustrated-day-of-week/Friday.webp"
+    },
+    {
+      "hanzi": "星期六",
+      "pinyin": "xing qi liu",
+      "english": "Saturday",
+      "collection": "illustrated-day-of-week",
+      "id": "saturday",
+      "file": "assets/illustrated-day-of-week/Saturday.webp"
+    },
+    {
+      "hanzi": "星期天",
+      "pinyin": "xing qi tian",
+      "english": "Sunday",
+      "collection": "illustrated-day-of-week",
+      "id": "sunday",
+      "file": "assets/illustrated-day-of-week/Sunday.webp"
+    },
+    {
+      "hanzi": "牙刷",
+      "pinyin": "ya shua",
+      "english": "Toothbrush",
+      "collection": "illustrated-everyday-life",
+      "id": "toothbrush",
+      "file": "assets/illustrated-everyday-life/toothbrush.webp"
+    },
+    {
+      "hanzi": "梳子",
+      "pinyin": "shu zi",
+      "english": "Comb",
+      "collection": "illustrated-everyday-life",
+      "id": "comb",
+      "file": "assets/illustrated-everyday-life/comb.webp"
+    },
+    {
+      "hanzi": "裙子",
+      "pinyin": "qun zi",
+      "english": "Skirt",
+      "collection": "illustrated-everyday-life",
+      "id": "skirt",
+      "file": "assets/illustrated-everyday-life/skirt.webp"
+    },
+    {
+      "hanzi": "鞋子",
+      "pinyin": "xie zi",
+      "english": "Shoes",
+      "collection": "illustrated-everyday-life",
+      "id": "shoes",
+      "file": "assets/illustrated-everyday-life/shoes.webp"
+    },
+    {
+      "hanzi": "帽子",
+      "pinyin": "mao zi",
+      "english": "Hat",
+      "collection": "illustrated-everyday-life",
+      "id": "hat",
+      "file": "assets/illustrated-everyday-life/hat.webp"
+    },
+    {
+      "hanzi": "T恤",
+      "pinyin": "T xu",
+      "english": "T-shirt",
+      "collection": "illustrated-everyday-life",
+      "id": "clothes",
+      "file": "assets/illustrated-everyday-life/clothes.webp"
+    },
+    {
+      "hanzi": "外套",
+      "pinyin": "wai tao",
+      "english": "Jacket",
+      "collection": "illustrated-everyday-life",
+      "id": "jacket",
+      "file": "assets/illustrated-everyday-life/jacket.webp"
+    },
+    {
+      "hanzi": "裤子",
+      "pinyin": "ku zi",
+      "english": "Pants",
+      "collection": "illustrated-everyday-life",
+      "id": "pants",
+      "file": "assets/illustrated-everyday-life/pants.webp"
+    },
+    {
+      "hanzi": "手套",
+      "pinyin": "shou tao",
+      "english": "Gloves",
+      "collection": "illustrated-everyday-life",
+      "id": "gloves",
+      "file": "assets/illustrated-everyday-life/gloves.webp"
+    },
+    {
+      "hanzi": "校服",
+      "pinyin": "xiao fu",
+      "english": "School uniform",
+      "collection": "illustrated-everyday-life",
+      "id": "school-uniform",
+      "file": "assets/illustrated-everyday-life/school-uniform.webp"
+    },
+    {
+      "english": "Grandpa",
+      "collection": "illustrated-family",
+      "id": "grandpa",
+      "file": "assets/illustrated-family/grandpa.webp"
+    },
+    {
+      "english": "Grandma",
+      "collection": "illustrated-family",
+      "id": "grandma",
+      "file": "assets/illustrated-family/grandma.webp"
+    },
+    {
+      "english": "Dad",
+      "collection": "illustrated-family",
+      "id": "dad",
+      "file": "assets/illustrated-family/family-avatar-dad.webp"
+    },
+    {
+      "english": "Mom",
+      "collection": "illustrated-family",
+      "id": "mom",
+      "file": "assets/illustrated-family/family-avatar-mom.webp"
+    },
+    {
+      "english": "Older sister",
+      "collection": "illustrated-family",
+      "id": "older-sister",
+      "file": "assets/illustrated-family/family-avatar-older-sister.webp"
+    },
+    {
+      "english": "Older brother",
+      "collection": "illustrated-family",
+      "id": "older-brother",
+      "file": "assets/illustrated-family/family-avatar-older-brother.webp"
+    },
+    {
+      "english": "Younger sister",
+      "collection": "illustrated-family",
+      "id": "younger-sister",
+      "file": "assets/illustrated-family/family-avatar-younger-sister.webp"
+    },
+    {
+      "english": "Younger brother",
+      "collection": "illustrated-family",
+      "id": "younger-brother",
+      "file": "assets/illustrated-family/family-avatar-younger-brother.webp"
+    },
+    {
+      "hanzi": "美国",
+      "pinyin": "mei guo",
+      "english": "United States",
+      "collection": "illustrated-flags",
+      "id": "united-states",
+      "file": "assets/illustrated-flags/united-states.webp"
+    },
+    {
+      "hanzi": "中国",
+      "pinyin": "zhong guo",
+      "english": "China",
+      "collection": "illustrated-flags",
+      "id": "china",
+      "file": "assets/illustrated-flags/china.webp"
+    },
+    {
+      "hanzi": "德国",
+      "pinyin": "de guo",
+      "english": "Germany",
+      "collection": "illustrated-flags",
+      "id": "germany",
+      "file": "assets/illustrated-flags/germany.webp"
+    },
+    {
+      "hanzi": "英国",
+      "pinyin": "ying guo",
+      "english": "United Kingdom",
+      "collection": "illustrated-flags",
+      "id": "united-kingdom",
+      "file": "assets/illustrated-flags/united-kingdom.webp"
+    },
+    {
+      "hanzi": "加拿大",
+      "pinyin": "jia na da",
+      "english": "Canada",
+      "collection": "illustrated-flags",
+      "id": "canada",
+      "file": "assets/illustrated-flags/canada.webp"
+    },
+    {
+      "hanzi": "墨西哥",
+      "pinyin": "mo xi ge",
+      "english": "Mexico",
+      "collection": "illustrated-flags",
+      "id": "mexico",
+      "file": "assets/illustrated-flags/mexico.webp"
+    },
+    {
+      "hanzi": "澳大利亚",
+      "pinyin": "ao da li ya",
+      "english": "Australia",
+      "collection": "illustrated-flags",
+      "id": "australia",
+      "file": "assets/illustrated-flags/australia.webp"
+    },
+    {
+      "hanzi": "法国",
+      "pinyin": "fa guo",
+      "english": "France",
+      "collection": "illustrated-flags",
+      "id": "france",
+      "file": "assets/illustrated-flags/france.webp"
+    },
+    {
+      "english": "Book 1B core fruit group",
+      "collection": "illustrated-food",
+      "id": "fruit-group-1b-core",
+      "file": "assets/illustrated-food/fruit-group-1b-core.webp"
+    },
+    {
+      "hanzi": "苹果",
+      "pinyin": "ping guo",
+      "english": "Apple",
+      "collection": "illustrated-food",
+      "id": "apple",
+      "file": "assets/illustrated-food/apple.webp"
+    },
+    {
+      "hanzi": "香蕉",
+      "pinyin": "xiang jiao",
+      "english": "Banana",
+      "collection": "illustrated-food",
+      "id": "banana",
+      "file": "assets/illustrated-food/banana.webp"
+    },
+    {
+      "hanzi": "葡萄",
+      "pinyin": "pu tao",
+      "english": "Grapes",
+      "collection": "illustrated-food",
+      "id": "grapes",
+      "file": "assets/illustrated-food/grapes.webp"
+    },
+    {
+      "hanzi": "草莓",
+      "pinyin": "cao mei",
+      "english": "Strawberry",
+      "collection": "illustrated-food",
+      "id": "strawberry",
+      "file": "assets/illustrated-food/strawberry.webp"
+    },
+    {
+      "hanzi": "橘子",
+      "pinyin": "ju zi",
+      "english": "Orange",
+      "collection": "illustrated-food",
+      "id": "orange",
+      "file": "assets/illustrated-food/orange.webp"
+    },
+    {
+      "hanzi": "梨",
+      "pinyin": "li",
+      "english": "Pear",
+      "collection": "illustrated-food",
+      "id": "pear",
+      "file": "assets/illustrated-food/pear.webp"
+    },
+    {
+      "hanzi": "西瓜",
+      "pinyin": "xi gua",
+      "english": "Watermelon",
+      "collection": "illustrated-food",
+      "id": "watermelon",
+      "file": "assets/illustrated-food/watermelon.webp"
+    },
+    {
+      "hanzi": "桃子",
+      "pinyin": "tao zi",
+      "english": "Peach",
+      "collection": "illustrated-food",
+      "id": "peach",
+      "file": "assets/illustrated-food/peach.webp"
+    },
+    {
+      "hanzi": "桃子",
+      "pinyin": "tao zi",
+      "english": "Peach (sliced)",
+      "collection": "illustrated-food",
+      "id": "peach-sliced",
+      "file": "assets/illustrated-food/peach.webp"
+    },
+    {
+      "hanzi": "樱桃",
+      "pinyin": "ying tao",
+      "english": "Cherries",
+      "collection": "illustrated-food",
+      "id": "cherries",
+      "file": "assets/illustrated-food/cherries.webp"
+    },
+    {
+      "hanzi": "胡萝卜",
+      "pinyin": "hu luo bo",
+      "english": "Carrot",
+      "collection": "illustrated-food",
+      "id": "carrot",
+      "file": "assets/illustrated-food/carrot.webp"
+    },
+    {
+      "hanzi": "牛排",
+      "pinyin": "niu pai",
+      "english": "Steak",
+      "collection": "illustrated-food",
+      "id": "steak",
+      "file": "assets/illustrated-food/steak.webp"
+    },
+    {
+      "hanzi": "竹子",
+      "pinyin": "zhu zi",
+      "english": "Bamboo",
+      "collection": "illustrated-food",
+      "id": "bamboo",
+      "file": "assets/illustrated-food/bamboo.webp"
+    },
+    {
+      "hanzi": "骨头",
+      "pinyin": "gu tou",
+      "english": "Bones",
+      "collection": "illustrated-food",
+      "id": "bones",
+      "file": "assets/illustrated-food/bones.webp"
+    },
+    {
+      "hanzi": "小鱼",
+      "pinyin": "xiao yu",
+      "english": "Small fish",
+      "collection": "illustrated-food",
+      "id": "small-fish",
+      "file": "assets/illustrated-food/small-fish.webp"
+    },
+    {
+      "hanzi": "糖果",
+      "pinyin": "tang guo",
+      "english": "Candies",
+      "collection": "illustrated-food",
+      "id": "candies",
+      "file": "assets/illustrated-food/candies.webp"
+    },
+    {
+      "hanzi": "巧克力",
+      "pinyin": "qiao ke li",
+      "english": "Chocolate",
+      "collection": "illustrated-food",
+      "id": "chocolate",
+      "file": "assets/illustrated-food/chocolate.webp"
+    },
+    {
+      "hanzi": "冰淇淋",
+      "pinyin": "bing qi lin",
+      "english": "Ice cream",
+      "collection": "illustrated-food",
+      "id": "ice-cream",
+      "file": "assets/illustrated-food/ice-cream.webp"
+    },
+    {
+      "hanzi": "草莓冰淇淋",
+      "pinyin": "cao mei bing qi lin",
+      "english": "Strawberry ice cream",
+      "collection": "illustrated-food",
+      "id": "strawberry-ice-cream-bowl",
+      "file": "assets/illustrated-food/strawberry-ice-cream-bowl.webp"
+    },
+    {
+      "hanzi": "巧克力冰淇淋",
+      "pinyin": "qiao ke li bing qi lin",
+      "english": "Chocolate ice cream",
+      "collection": "illustrated-food",
+      "id": "chocolate-ice-cream-bowl",
+      "file": "assets/illustrated-food/chocolate-ice-cream-bowl.webp"
+    },
+    {
+      "hanzi": "蛋糕",
+      "pinyin": "dan gao",
+      "english": "Cake",
+      "collection": "illustrated-food",
+      "id": "cake",
+      "file": "assets/illustrated-food/cake.webp"
+    },
+    {
+      "hanzi": "西红柿",
+      "pinyin": "xi hong shi",
+      "english": "Tomato",
+      "collection": "illustrated-food",
+      "id": "tomato",
+      "file": "assets/illustrated-food/tomato.webp"
+    },
+    {
+      "hanzi": "黄瓜",
+      "pinyin": "huang gua",
+      "english": "Cucumber",
+      "collection": "illustrated-food",
+      "id": "cucumber",
+      "file": "assets/illustrated-food/cucumber.webp"
+    },
+    {
+      "hanzi": "西兰花",
+      "pinyin": "xi lan hua",
+      "english": "Broccoli",
+      "collection": "illustrated-food",
+      "id": "broccoli",
+      "file": "assets/illustrated-food/broccoli.webp"
+    },
+    {
+      "hanzi": "鸡蛋",
+      "pinyin": "ji dan",
+      "english": "Eggs",
+      "collection": "illustrated-food",
+      "id": "eggs",
+      "file": "assets/illustrated-food/eggs.webp"
+    },
+    {
+      "hanzi": "煎蛋",
+      "pinyin": "jian dan",
+      "english": "Fried egg",
+      "collection": "illustrated-food",
+      "id": "fried-egg",
+      "file": "assets/illustrated-food/fried-egg.webp"
+    },
+    {
+      "hanzi": "土豆",
+      "pinyin": "tu dou",
+      "english": "Potatoes",
+      "collection": "illustrated-food",
+      "id": "potatoes",
+      "file": "assets/illustrated-food/potatoes.webp"
+    },
+    {
+      "hanzi": "面包",
+      "pinyin": "mian bao",
+      "english": "Bread",
+      "collection": "illustrated-food",
+      "id": "bread",
+      "file": "assets/illustrated-food/bread.webp"
+    },
+    {
+      "hanzi": "牛奶",
+      "pinyin": "niu nai",
+      "english": "Milk",
+      "collection": "illustrated-food",
+      "id": "milk",
+      "file": "assets/illustrated-food/milk.webp"
+    },
+    {
+      "hanzi": "果汁",
+      "pinyin": "guo zhi",
+      "english": "Juice",
+      "collection": "illustrated-food",
+      "id": "juice",
+      "file": "assets/illustrated-food/juice.webp"
+    },
+    {
+      "hanzi": "饺子",
+      "pinyin": "jiao zi",
+      "english": "Dumplings",
+      "collection": "illustrated-food",
+      "id": "dumplings",
+      "file": "assets/illustrated-food/dumplings.webp"
+    },
+    {
+      "hanzi": "小笼包",
+      "pinyin": "xiao long bao",
+      "english": "Xiaolongbao",
+      "collection": "illustrated-food",
+      "id": "xiaolongbao",
+      "file": "assets/illustrated-food/xiaolongbao.webp"
+    },
+    {
+      "hanzi": "炒面",
+      "pinyin": "chao mian",
+      "english": "Chow mein",
+      "collection": "illustrated-food",
+      "id": "chow-mein",
+      "file": "assets/illustrated-food/chow-mein.webp"
+    },
+    {
+      "hanzi": "炒饭",
+      "pinyin": "chao fan",
+      "english": "Fried rice",
+      "collection": "illustrated-food",
+      "id": "fried-rice",
+      "file": "assets/illustrated-food/fried-rice.webp"
+    },
+    {
+      "hanzi": "薯条",
+      "pinyin": "shu tiao",
+      "english": "French fries",
+      "collection": "illustrated-food",
+      "id": "french-fries",
+      "file": "assets/illustrated-food/french-fries.webp"
+    },
+    {
+      "hanzi": "三明治",
+      "pinyin": "san ming zhi",
+      "english": "Sandwich",
+      "collection": "illustrated-food",
+      "id": "sandwich",
+      "file": "assets/illustrated-food/sandwich.webp"
+    },
+    {
+      "hanzi": "披萨",
+      "pinyin": "pi sa",
+      "english": "Pizza",
+      "collection": "illustrated-food",
+      "id": "pizza",
+      "file": "assets/illustrated-food/pizza.webp"
+    },
+    {
+      "hanzi": "汉堡",
+      "pinyin": "han bao",
+      "english": "Hamburger",
+      "collection": "illustrated-food",
+      "id": "hamburger",
+      "file": "assets/illustrated-food/hamburger.webp"
+    },
+    {
+      "hanzi": "可乐",
+      "pinyin": "ke le",
+      "english": "Cola",
+      "collection": "illustrated-food",
+      "id": "cola",
+      "file": "assets/illustrated-food/cola.webp"
+    },
+    {
+      "hanzi": "热狗",
+      "pinyin": "re gou",
+      "english": "Hot dog",
+      "collection": "illustrated-food",
+      "id": "hot-dog",
+      "file": "assets/illustrated-food/hot-dog.webp"
+    },
+    {
+      "hanzi": "饿了",
+      "pinyin": "è le",
+      "english": "I am hungry",
+      "collection": "illustrated-food-feelings",
+      "id": "hungry",
+      "file": "assets/illustrated-food-feelings/hungry.webp"
+    },
+    {
+      "hanzi": "渴了",
+      "pinyin": "kě le",
+      "english": "I am thirsty",
+      "collection": "illustrated-food-feelings",
+      "id": "thirsty",
+      "file": "assets/illustrated-food-feelings/thirsty.webp"
+    },
+    {
+      "hanzi": "饱了",
+      "pinyin": "bǎo le",
+      "english": "I am full",
+      "collection": "illustrated-food-feelings",
+      "id": "full",
+      "file": "assets/illustrated-food-feelings/full.webp"
+    },
+    {
+      "hanzi": "好吃",
+      "pinyin": "hǎo chī",
+      "english": "Delicious",
+      "collection": "illustrated-food-feelings",
+      "id": "delicious",
+      "file": "assets/illustrated-food-feelings/delicious.webp"
+    },
+    {
+      "hanzi": "喜欢吃披萨",
+      "pinyin": "xǐ huan chī pī sà",
+      "english": "Like to eat pizza",
+      "collection": "illustrated-food-feelings",
+      "id": "like-pizza",
+      "file": "assets/illustrated-food-feelings/like-pizza.webp"
+    },
+    {
+      "hanzi": "不喜欢吃西兰花",
+      "pinyin": "bù xǐ huan chī xī lán huā",
+      "english": "Do not like to eat broccoli",
+      "collection": "illustrated-food-feelings",
+      "id": "dislike-broccoli",
+      "file": "assets/illustrated-food-feelings/dislike-broccoli.webp"
+    },
+    {
+      "hanzi": "床",
+      "pinyin": "chuang",
+      "english": "Bed",
+      "collection": "illustrated-furniture",
+      "id": "bed",
+      "file": "assets/illustrated-furniture/bed.webp"
+    },
+    {
+      "hanzi": "书桌",
+      "pinyin": "shu zhuo",
+      "english": "Desk",
+      "collection": "illustrated-furniture",
+      "id": "desk",
+      "file": "assets/illustrated-furniture/desk.webp"
+    },
+    {
+      "hanzi": "抽屉柜",
+      "pinyin": "chou ti gui",
+      "english": "Chest of Drawers",
+      "collection": "illustrated-furniture",
+      "id": "chest",
+      "file": "assets/illustrated-furniture/chest.webp"
+    },
+    {
+      "hanzi": "沙发",
+      "pinyin": "sha fa",
+      "english": "Sofa",
+      "collection": "illustrated-furniture",
+      "id": "sofa",
+      "file": "assets/illustrated-furniture/sofa.webp"
+    },
+    {
+      "hanzi": "电视柜",
+      "pinyin": "dian shi gui",
+      "english": "TV Stand",
+      "collection": "illustrated-furniture",
+      "id": "tv-stand",
+      "file": "assets/illustrated-furniture/tv-stand.webp"
+    },
+    {
+      "hanzi": "书架",
+      "pinyin": "shu jia",
+      "english": "Bookshelf",
+      "collection": "illustrated-furniture",
+      "id": "bookshelf",
+      "file": "assets/illustrated-furniture/bookshelf.webp"
+    },
+    {
+      "hanzi": "玩具柜",
+      "pinyin": "wan ju gui",
+      "english": "Toy Storage",
+      "collection": "illustrated-furniture",
+      "id": "toy-storage",
+      "file": "assets/illustrated-furniture/toy-storage.webp"
+    },
+    {
+      "hanzi": "衣柜",
+      "pinyin": "yi gui",
+      "english": "Wardrobe",
+      "collection": "illustrated-furniture",
+      "id": "wardrobe",
+      "file": "assets/illustrated-furniture/wardrobe.webp"
+    },
+    {
+      "hanzi": "电话号码",
+      "pinyin": "dian hua hao ma",
+      "english": "Exchange phone number",
+      "collection": "illustrated-identity",
+      "id": "classmates-exchange-phone-number",
+      "file": "assets/illustrated-identity/classmates-exchange-phone-number.webp"
+    },
+    {
+      "hanzi": "汉语和英语",
+      "pinyin": "han yu he Ying yu",
+      "english": "Speak different languages",
+      "collection": "illustrated-identity",
+      "id": "classmates-speak-different-languages",
+      "file": "assets/illustrated-identity/classmates-speak-different-languages.webp"
+    },
+    {
+      "english": "Lele",
+      "collection": "illustrated-kids",
+      "id": "lele",
+      "file": "assets/illustrated-kids/lele.webp"
+    },
+    {
+      "english": "Meimei",
+      "collection": "illustrated-kids",
+      "id": "meimei",
+      "file": "assets/illustrated-kids/meimei.webp"
+    },
+    {
+      "english": "Yangyang",
+      "collection": "illustrated-kids",
+      "id": "yangyang",
+      "file": "assets/illustrated-kids/yangyang.webp"
+    },
+    {
+      "english": "Anan",
+      "collection": "illustrated-kids",
+      "id": "anan",
+      "file": "assets/illustrated-kids/anan.webp"
+    },
+    {
+      "english": "Tiantian",
+      "collection": "illustrated-kids",
+      "id": "tiantian",
+      "file": "assets/illustrated-kids/tiantian.webp"
+    },
+    {
+      "english": "Sisi",
+      "collection": "illustrated-kids",
+      "id": "sisi",
+      "file": "assets/illustrated-kids/sisi.webp"
+    },
+    {
+      "english": "Luna",
+      "collection": "illustrated-kids",
+      "id": "luna",
+      "file": "assets/illustrated-kids/luna.webp"
+    },
+    {
+      "english": "Jaden",
+      "collection": "illustrated-kids",
+      "id": "jaden",
+      "file": "assets/illustrated-kids/jaden.webp"
+    },
+    {
+      "english": "Noah",
+      "collection": "illustrated-kids",
+      "id": "noah",
+      "file": "assets/illustrated-kids/noah.webp"
+    },
+    {
+      "english": "Sophie",
+      "collection": "illustrated-kids",
+      "id": "sophie",
+      "file": "assets/illustrated-kids/sophie.webp"
+    },
+    {
+      "hanzi": "吃午饭",
+      "pinyin": "chi wu fan",
+      "english": "Eat school lunch",
+      "collection": "illustrated-meals",
+      "id": "anan-eating-school-lunch",
+      "file": "assets/illustrated-meals/anan-eating-school-lunch.webp"
+    },
+    {
+      "hanzi": "三只鸭子",
+      "pinyin": "san zhi ya zi",
+      "english": "Three ducks",
+      "collection": "illustrated-measure-words",
+      "id": "three-ducks",
+      "file": "assets/illustrated-measure-words/three-ducks.webp"
+    },
+    {
+      "hanzi": "两本书",
+      "pinyin": "liang ben shu",
+      "english": "Two books",
+      "collection": "illustrated-measure-words",
+      "id": "two-books",
+      "file": "assets/illustrated-measure-words/two-books.webp"
+    },
+    {
+      "hanzi": "一支笔",
+      "pinyin": "yi zhi bi",
+      "english": "One pencil",
+      "collection": "illustrated-measure-words",
+      "id": "one-pencil",
+      "file": "assets/illustrated-measure-words/one-pencil.webp"
+    },
+    {
+      "hanzi": "一把剪刀",
+      "pinyin": "yi ba jian dao",
+      "english": "One scissors",
+      "collection": "illustrated-measure-words",
+      "id": "one-scissors",
+      "file": "assets/illustrated-measure-words/one-scissors.webp"
+    },
+    {
+      "hanzi": "一块橡皮",
+      "pinyin": "yi kuai xiang pi",
+      "english": "One eraser",
+      "collection": "illustrated-measure-words",
+      "id": "one-eraser",
+      "file": "assets/illustrated-measure-words/one-eraser.webp"
+    },
+    {
+      "hanzi": "一月",
+      "pinyin": "yi yue",
+      "english": "January",
+      "collection": "illustrated-months-of-year",
+      "id": "january",
+      "file": "assets/illustrated-months-of-year/January.webp"
+    },
+    {
+      "hanzi": "二月",
+      "pinyin": "er yue",
+      "english": "February",
+      "collection": "illustrated-months-of-year",
+      "id": "february",
+      "file": "assets/illustrated-months-of-year/February.webp"
+    },
+    {
+      "hanzi": "三月",
+      "pinyin": "san yue",
+      "english": "March",
+      "collection": "illustrated-months-of-year",
+      "id": "march",
+      "file": "assets/illustrated-months-of-year/March.webp"
+    },
+    {
+      "hanzi": "四月",
+      "pinyin": "si yue",
+      "english": "April",
+      "collection": "illustrated-months-of-year",
+      "id": "april",
+      "file": "assets/illustrated-months-of-year/April.webp"
+    },
+    {
+      "hanzi": "五月",
+      "pinyin": "wu yue",
+      "english": "May",
+      "collection": "illustrated-months-of-year",
+      "id": "may",
+      "file": "assets/illustrated-months-of-year/May.webp"
+    },
+    {
+      "hanzi": "六月",
+      "pinyin": "liu yue",
+      "english": "June",
+      "collection": "illustrated-months-of-year",
+      "id": "june",
+      "file": "assets/illustrated-months-of-year/June.webp"
+    },
+    {
+      "hanzi": "七月",
+      "pinyin": "qi yue",
+      "english": "July",
+      "collection": "illustrated-months-of-year",
+      "id": "july",
+      "file": "assets/illustrated-months-of-year/July.webp"
+    },
+    {
+      "hanzi": "八月",
+      "pinyin": "ba yue",
+      "english": "August",
+      "collection": "illustrated-months-of-year",
+      "id": "august",
+      "file": "assets/illustrated-months-of-year/August.webp"
+    },
+    {
+      "hanzi": "九月",
+      "pinyin": "jiu yue",
+      "english": "September",
+      "collection": "illustrated-months-of-year",
+      "id": "september",
+      "file": "assets/illustrated-months-of-year/September.webp"
+    },
+    {
+      "hanzi": "十月",
+      "pinyin": "shi yue",
+      "english": "October",
+      "collection": "illustrated-months-of-year",
+      "id": "october",
+      "file": "assets/illustrated-months-of-year/October.webp"
+    },
+    {
+      "hanzi": "十一月",
+      "pinyin": "shi yi yue",
+      "english": "November",
+      "collection": "illustrated-months-of-year",
+      "id": "november",
+      "file": "assets/illustrated-months-of-year/November.webp"
+    },
+    {
+      "hanzi": "十二月",
+      "pinyin": "shi er yue",
+      "english": "December",
+      "collection": "illustrated-months-of-year",
+      "id": "december",
+      "file": "assets/illustrated-months-of-year/December.webp"
+    },
+    {
+      "hanzi": "喜欢小宠物",
+      "pinyin": "xi huan xiao chong wu",
+      "english": "Lele with pets at home",
+      "collection": "illustrated-pets",
+      "id": "lele-with-pets-at-home",
+      "file": "assets/illustrated-pets/lele-with-pets-at-home.webp"
+    },
+    {
+      "hanzi": "这是我的剪刀",
+      "pinyin": "zhe shi wo de jian dao",
+      "english": "This is my scissors",
+      "collection": "illustrated-possession",
+      "id": "this-is-my-scissors",
+      "file": "assets/illustrated-possession/this-is-my-scissors.webp"
+    },
+    {
+      "hanzi": "这是他的书包",
+      "pinyin": "zhe shi ta de shu bao",
+      "english": "This is his schoolbag",
+      "collection": "illustrated-possession",
+      "id": "this-is-his-schoolbag",
+      "file": "assets/illustrated-possession/this-is-his-schoolbag.webp"
+    },
+    {
+      "hanzi": "我有铅笔、橡皮和剪刀",
+      "pinyin": "wo you qian bi, xiang pi he jian dao",
+      "english": "I have stationery",
+      "collection": "illustrated-possession",
+      "id": "i-have-stationery",
+      "file": "assets/illustrated-possession/i-have-stationery.webp"
+    },
+    {
+      "hanzi": "我的书",
+      "pinyin": "wo de shu",
+      "english": "My book",
+      "collection": "illustrated-possession",
+      "id": "my-book-tiantian",
+      "file": "assets/illustrated-possession/my-book-tiantian.webp"
+    },
+    {
+      "hanzi": "你的书",
+      "pinyin": "ni de shu",
+      "english": "Your book",
+      "collection": "illustrated-possession",
+      "id": "your-book-luna",
+      "file": "assets/illustrated-possession/your-book-luna.webp"
+    },
+    {
+      "hanzi": "他的书",
+      "pinyin": "ta de shu",
+      "english": "His book",
+      "collection": "illustrated-possession",
+      "id": "his-book-yangyang",
+      "file": "assets/illustrated-possession/his-book-yangyang.webp"
+    },
+    {
+      "hanzi": "她的书",
+      "pinyin": "ta de shu",
+      "english": "Her book",
+      "collection": "illustrated-possession",
+      "id": "her-book-sophie",
+      "file": "assets/illustrated-possession/her-book-sophie.webp"
+    },
+    {
+      "hanzi": "客厅",
+      "pinyin": "ke ting",
+      "english": "Living Room",
+      "collection": "illustrated-rooms",
+      "id": "living-room",
+      "file": "assets/illustrated-rooms/living-room.webp"
+    },
+    {
+      "hanzi": "卧室",
+      "pinyin": "wo shi",
+      "english": "Bedroom",
+      "collection": "illustrated-rooms",
+      "id": "bedroom",
+      "file": "assets/illustrated-rooms/bedroom.webp"
+    },
+    {
+      "hanzi": "车库",
+      "pinyin": "che ku",
+      "english": "Garage",
+      "collection": "illustrated-rooms",
+      "id": "garage",
+      "file": "assets/illustrated-rooms/garage.webp"
+    },
+    {
+      "hanzi": "上和下",
+      "pinyin": "shang he xia",
+      "english": "Up and down positions",
+      "collection": "illustrated-rooms",
+      "id": "positions-up-down",
+      "file": "assets/illustrated-rooms/positions-up-down.webp"
+    },
+    {
+      "hanzi": "里和外",
+      "pinyin": "li he wai",
+      "english": "Inside and outside positions",
+      "collection": "illustrated-rooms",
+      "id": "positions-inside-outside",
+      "file": "assets/illustrated-rooms/positions-inside-outside.webp"
+    },
+    {
+      "hanzi": "上、下、前、后、左、右",
+      "pinyin": "shang, xia, qian, hou, zuo, you",
+      "english": "All directions board",
+      "collection": "illustrated-rooms",
+      "id": "positions-all-directions",
+      "file": "assets/illustrated-rooms/positions-all-directions.webp"
+    },
+    {
+      "hanzi": "学校外景",
+      "pinyin": "xué xiào wài jǐng",
+      "english": "School exterior anchor",
+      "collection": "illustrated-school-anchors",
+      "id": "school-exterior-anchor",
+      "file": "assets/illustrated-school-anchors/school_exterior_anchor.webp"
+    },
+    {
+      "hanzi": "教室",
+      "pinyin": "jiào shì",
+      "english": "Classroom anchor",
+      "collection": "illustrated-school-anchors",
+      "id": "classroom-anchor",
+      "file": "assets/illustrated-school-anchors/classroom_anchor.webp"
+    },
+    {
+      "hanzi": "走廊",
+      "pinyin": "zǒu láng",
+      "english": "Hallway anchor",
+      "collection": "illustrated-school-anchors",
+      "id": "hallway-anchor",
+      "file": "assets/illustrated-school-anchors/hallway_anchor.webp"
+    },
+    {
+      "hanzi": "音乐教室",
+      "pinyin": "yīn yuè jiào shì",
+      "english": "Music classroom anchor",
+      "collection": "illustrated-school-anchors",
+      "id": "music-classroom-anchor",
+      "file": "assets/illustrated-school-anchors/music_classroom_anchor.webp"
+    },
+    {
+      "hanzi": "食堂",
+      "pinyin": "shí táng",
+      "english": "Cafeteria anchor",
+      "collection": "illustrated-school-anchors",
+      "id": "cafeteria-anchor",
+      "file": "assets/illustrated-school-anchors/cafeteria_anchor.webp"
+    },
+    {
+      "hanzi": "体育馆",
+      "pinyin": "tǐ yù guǎn",
+      "english": "Gym anchor",
+      "collection": "illustrated-school-anchors",
+      "id": "gym-anchor",
+      "file": "assets/illustrated-school-anchors/gym_anchor.webp"
+    },
+    {
+      "hanzi": "图书馆",
+      "pinyin": "tú shū guǎn",
+      "english": "Library anchor",
+      "collection": "illustrated-school-anchors",
+      "id": "library-anchor",
+      "file": "assets/illustrated-school-anchors/library_anchor.webp"
+    },
+    {
+      "hanzi": "操场",
+      "pinyin": "cāo chǎng",
+      "english": "Playground anchor",
+      "collection": "illustrated-school-anchors",
+      "id": "playground-anchor",
+      "file": "assets/illustrated-school-anchors/playground_anchor.webp"
+    },
+    {
+      "hanzi": "礼堂",
+      "pinyin": "lǐ táng",
+      "english": "Auditorium anchor",
+      "collection": "illustrated-school-anchors",
+      "id": "auditorium-anchor",
+      "file": "assets/illustrated-school-anchors/auditorium_anchor.webp"
+    },
+    {
+      "hanzi": "钢琴",
+      "pinyin": "gāng qín",
+      "english": "Piano anchor",
+      "collection": "illustrated-school-anchors",
+      "id": "piano-anchor",
+      "file": "assets/illustrated-school-anchors/piano_anchor.webp"
+    },
+    {
+      "hanzi": "学校平面图",
+      "pinyin": "xué xiào píng miàn tú",
+      "english": "School cutaway layout",
+      "collection": "illustrated-school-layouts",
+      "id": "school-cutaway-layout",
+      "file": "assets/illustrated-school-layouts/school-cutaway-layout.webp"
+    },
+    {
+      "hanzi": "学校科目",
+      "pinyin": "xue xiao ke mu",
+      "english": "Basic subjects board",
+      "collection": "illustrated-school-subjects",
+      "id": "basic-subjects-board",
+      "file": "assets/illustrated-school-subjects/basic-subjects-board.webp"
+    },
+    {
+      "hanzi": "穿鞋",
+      "pinyin": "chuan xie",
+      "english": "Putting on shoes",
+      "collection": "illustrated-self-dressing",
+      "id": "putting-on-shoes",
+      "file": "assets/illustrated-self-dressing/putting-on-shoes.webp"
+    },
+    {
+      "hanzi": "穿袜子",
+      "pinyin": "chuan wa zi",
+      "english": "Putting on socks",
+      "collection": "illustrated-self-dressing",
+      "id": "putting-on-socks",
+      "file": "assets/illustrated-self-dressing/putting-on-socks.webp"
+    },
+    {
+      "hanzi": "穿外套",
+      "pinyin": "chuan wai tao",
+      "english": "Putting on a jacket",
+      "collection": "illustrated-self-dressing",
+      "id": "putting-on-jacket",
+      "file": "assets/illustrated-self-dressing/putting-on-jacket.webp"
+    },
+    {
+      "hanzi": "戴帽子",
+      "pinyin": "dai mao zi",
+      "english": "Putting on a hat",
+      "collection": "illustrated-self-dressing",
+      "id": "putting-on-hat",
+      "file": "assets/illustrated-self-dressing/putting-on-hat.webp"
+    },
+    {
+      "hanzi": "白天",
+      "pinyin": "bái tiān",
+      "english": "Daytime scene",
+      "collection": "illustrated-sky-day-night",
+      "id": "daytime-scene",
+      "file": "assets/illustrated-sky-day-night/daytime-scene.webp"
+    },
+    {
+      "hanzi": "晚上",
+      "pinyin": "wǎn shang",
+      "english": "Nighttime scene",
+      "collection": "illustrated-sky-day-night",
+      "id": "nighttime-scene",
+      "file": "assets/illustrated-sky-day-night/nighttime-scene.webp"
+    },
+    {
+      "hanzi": "天上和地下",
+      "pinyin": "tiān shàng hé dì xià",
+      "english": "Sky and ground classification scene",
+      "collection": "illustrated-sky-day-night",
+      "id": "sky-ground-scene",
+      "file": "assets/illustrated-sky-day-night/sky-ground-scene.webp"
+    },
+    {
+      "english": "Core stationery group",
+      "collection": "illustrated-stationery",
+      "id": "stationery-group",
+      "file": "assets/illustrated-stationery/stationery-group.webp"
+    },
+    {
+      "hanzi": "铅笔",
+      "pinyin": "qian bi",
+      "english": "Pencil",
+      "collection": "illustrated-stationery",
+      "id": "pencil",
+      "file": "assets/illustrated-stationery/pencil.webp"
+    },
+    {
+      "hanzi": "尺子",
+      "pinyin": "chi zi",
+      "english": "Ruler",
+      "collection": "illustrated-stationery",
+      "id": "ruler",
+      "file": "assets/illustrated-stationery/ruler.webp"
+    },
+    {
+      "hanzi": "剪刀",
+      "pinyin": "jian dao",
+      "english": "Scissors",
+      "collection": "illustrated-stationery",
+      "id": "scissors",
+      "file": "assets/illustrated-stationery/scissors.webp"
+    },
+    {
+      "hanzi": "橡皮",
+      "pinyin": "xiang pi",
+      "english": "Eraser",
+      "collection": "illustrated-stationery",
+      "id": "eraser",
+      "file": "assets/illustrated-stationery/eraser.webp"
+    },
+    {
+      "hanzi": "彩色笔",
+      "pinyin": "cai se bi",
+      "english": "Colored pencils",
+      "collection": "illustrated-stationery",
+      "id": "colored-pencils",
+      "file": "assets/illustrated-stationery/colored-pencils.webp"
+    },
+    {
+      "hanzi": "固体胶",
+      "pinyin": "gu ti jiao",
+      "english": "Glue stick",
+      "collection": "illustrated-stationery",
+      "id": "glue-stick",
+      "file": "assets/illustrated-stationery/glue-stick.webp"
+    },
+    {
+      "hanzi": "蜡笔",
+      "pinyin": "la bi",
+      "english": "Crayon",
+      "collection": "illustrated-stationery",
+      "id": "crayon",
+      "file": "assets/illustrated-stationery/crayon.webp"
+    },
+    {
+      "hanzi": "桌子",
+      "pinyin": "zhuo zi",
+      "english": "Table",
+      "collection": "illustrated-stationery",
+      "id": "table",
+      "file": "assets/illustrated-stationery/table.webp"
+    },
+    {
+      "hanzi": "椅子",
+      "pinyin": "yi zi",
+      "english": "Chair",
+      "collection": "illustrated-stationery",
+      "id": "chair",
+      "file": "assets/illustrated-stationery/chair.webp"
+    },
+    {
+      "hanzi": "课本",
+      "pinyin": "ke ben",
+      "english": "Textbook",
+      "collection": "illustrated-stationery",
+      "id": "textbook",
+      "file": "assets/illustrated-stationery/textbook.webp"
+    },
+    {
+      "hanzi": "练习本",
+      "pinyin": "lian xi ben",
+      "english": "Workbook",
+      "collection": "illustrated-stationery",
+      "id": "workbook",
+      "file": "assets/illustrated-stationery/workbook.webp"
+    },
+    {
+      "hanzi": "书包",
+      "pinyin": "shu bao",
+      "english": "Backpack",
+      "collection": "illustrated-stationery",
+      "id": "backpack",
+      "file": "assets/illustrated-stationery/backpack.webp"
+    },
+    {
+      "hanzi": "铅笔盒",
+      "pinyin": "qian bi he",
+      "english": "Pencil box",
+      "collection": "illustrated-stationery",
+      "id": "pencil-box",
+      "file": "assets/illustrated-stationery/pencil-box.webp"
+    },
+    {
+      "english": "Teacher Wang",
+      "collection": "illustrated-teachers",
+      "id": "wang-laoshi",
+      "file": "assets/illustrated-teachers/wang-laoshi.webp"
+    },
+    {
+      "english": "Teacher Li",
+      "collection": "illustrated-teachers",
+      "id": "li-laoshi",
+      "file": "assets/illustrated-teachers/li-laoshi.webp"
+    },
+    {
+      "hanzi": "玩具汽车",
+      "pinyin": "wan ju qi che",
+      "english": "Toy car",
+      "collection": "illustrated-toys",
+      "id": "toy-car",
+      "file": "assets/illustrated-toys/toy-car.webp"
+    },
+    {
+      "hanzi": "火车",
+      "pinyin": "huo che",
+      "english": "Train",
+      "collection": "illustrated-toys",
+      "id": "train",
+      "file": "assets/illustrated-toys/train.webp"
+    },
+    {
+      "hanzi": "飞机",
+      "pinyin": "fei ji",
+      "english": "Airplane",
+      "collection": "illustrated-toys",
+      "id": "airplane",
+      "file": "assets/illustrated-toys/airplane.webp"
+    },
+    {
+      "hanzi": "校车",
+      "pinyin": "xiao che",
+      "english": "School bus",
+      "collection": "illustrated-toys",
+      "id": "school-bus",
+      "file": "assets/illustrated-toys/school-bus.webp"
+    },
+    {
+      "hanzi": "玩具娃娃",
+      "pinyin": "wan ju wa wa",
+      "english": "Toy doll",
+      "collection": "illustrated-toys",
+      "id": "toy-doll",
+      "file": "assets/illustrated-toys/toy-doll.webp"
+    },
+    {
+      "hanzi": "自行车",
+      "pinyin": "zi xing che",
+      "english": "Bicycle",
+      "collection": "illustrated-toys",
+      "id": "bicycle",
+      "file": "assets/illustrated-toys/bicycle.webp"
+    },
+    {
+      "hanzi": "泰迪熊",
+      "pinyin": "tai di xiong",
+      "english": "Teddy bear",
+      "collection": "illustrated-toys",
+      "id": "teddy-bear",
+      "file": "assets/illustrated-toys/teddy-bear.webp"
+    },
+    {
+      "hanzi": "走路去上学",
+      "pinyin": "zou lu qu shang xue",
+      "english": "Walk to school",
+      "collection": "illustrated-transportation",
+      "id": "walk-to-school",
+      "file": "assets/illustrated-transportation/walk-to-school.webp"
+    },
+    {
+      "hanzi": "骑自行车去上学",
+      "pinyin": "qi zi xing che qu shang xue",
+      "english": "Ride a bike to school",
+      "collection": "illustrated-transportation",
+      "id": "bike-to-school",
+      "file": "assets/illustrated-transportation/bike-to-school.webp"
+    },
+    {
+      "hanzi": "坐校车去动物园",
+      "pinyin": "zuo xiao che qu dong wu yuan",
+      "english": "School bus to the zoo",
+      "collection": "illustrated-transportation",
+      "id": "school-bus-to-zoo",
+      "file": "assets/illustrated-transportation/school-bus-to-zoo.webp"
+    },
+    {
+      "hanzi": "坐出租车去机场",
+      "pinyin": "zuo chu zu che qu ji chang",
+      "english": "Taxi to the airport",
+      "collection": "illustrated-transportation",
+      "id": "taxi-to-airport",
+      "file": "assets/illustrated-transportation/taxi-to-airport.webp"
+    },
+    {
+      "hanzi": "坐飞机去看爷爷奶奶",
+      "pinyin": "zuo fei ji qu kan ye ye nai nai",
+      "english": "Airplane to visit grandparents",
+      "collection": "illustrated-transportation",
+      "id": "airplane-to-grandparents",
+      "file": "assets/illustrated-transportation/airplane-to-grandparents.webp"
+    },
+    {
+      "hanzi": "坐火车去北京",
+      "pinyin": "zuo huo che qu Bei jing",
+      "english": "Train to Beijing",
+      "collection": "illustrated-transportation",
+      "id": "train-to-beijing",
+      "file": "assets/illustrated-transportation/train-to-beijing.webp"
+    },
+    {
+      "hanzi": "坐妈妈的车去上学",
+      "pinyin": "zuo ma ma de che qu shang xue",
+      "english": "Mom's car to school",
+      "collection": "illustrated-transportation",
+      "id": "mom-car-to-school",
+      "file": "assets/illustrated-transportation/mom-car-to-school.webp"
+    },
+    {
+      "hanzi": "坐爸爸的车去商店",
+      "pinyin": "zuo ba ba de che qu shang dian",
+      "english": "Dad's car to the grocery store",
+      "collection": "illustrated-transportation",
+      "id": "dad-car-to-grocery-store",
+      "file": "assets/illustrated-transportation/dad-car-to-grocery-store.webp"
+    },
+    {
+      "hanzi": "晴天",
+      "pinyin": "qíng tiān",
+      "english": "Sunny day",
+      "collection": "illustrated-weather",
+      "id": "sunny-hot",
+      "file": "assets/illustrated-weather/sunny-hot.webp"
+    },
+    {
+      "hanzi": "下雨",
+      "pinyin": "xià yǔ",
+      "english": "It is raining",
+      "collection": "illustrated-weather",
+      "id": "rainy-umbrella",
+      "file": "assets/illustrated-weather/rainy-umbrella.webp"
+    },
+    {
+      "hanzi": "下雪",
+      "pinyin": "xià xuě",
+      "english": "It is snowing",
+      "collection": "illustrated-weather",
+      "id": "snowy-cold",
+      "file": "assets/illustrated-weather/snowy-cold.webp"
+    },
+    {
+      "hanzi": "刮大风",
+      "pinyin": "guā dà fēng",
+      "english": "Windy day",
+      "collection": "illustrated-weather",
+      "id": "windy-leaves",
+      "file": "assets/illustrated-weather/windy-leaves.webp"
+    },
+    {
+      "hanzi": "谢谢",
+      "pinyin": "xiè xie",
+      "english": "Sharing politely",
+      "collection": "polite",
+      "id": "polite-scene-1",
+      "file": "assets/polite/polite-scene-1.webp"
+    },
+    {
+      "hanzi": "对不起",
+      "pinyin": "duì bu qǐ",
+      "english": "Saying sorry",
+      "collection": "polite",
+      "id": "polite-scene-2",
+      "file": "assets/polite/polite-scene-2.webp"
+    },
+    {
+      "hanzi": "请安静",
+      "pinyin": "qǐng ān jìng",
+      "english": "Please be quiet",
+      "collection": "polite",
+      "id": "polite-scene-3",
+      "file": "assets/polite/polite-scene-3.webp"
+    }
+  ]
+}
