@@ -820,6 +820,9 @@ const familyGameItemIds = [
   "younger-sister-word"
 ];
 
+const sceneSpeechRate = 0.64;
+const sceneLinePauseMs = 280;
+
 const introductionsPractice = [
   {
     id: "intro-scene-1",
@@ -5224,10 +5227,7 @@ function renderGreetingsExplorer() {
         return;
       }
 
-      speak(exchange.lines[0].audio, 0.78);
-      window.setTimeout(() => {
-        speak(exchange.lines[1].audio, 0.78);
-      }, 1200);
+      speakSceneLines(exchange.lines);
       focusStatus.textContent = `Listen to the whole scene: ${exchange.lines.map((line) => line.hanzi).join(" ")}`;
     });
   });
@@ -5383,10 +5383,7 @@ function renderPoliteWordsExplorer() {
         return;
       }
 
-      speak(exchange.lines[0].audio, 0.78);
-      window.setTimeout(() => {
-        speak(exchange.lines[1].audio, 0.78);
-      }, 1200);
+      speakSceneLines(exchange.lines);
       focusStatus.textContent = `Listen to the whole scene: ${exchange.lines.map((line) => line.hanzi).join(" ")}`;
     });
   });
@@ -5509,11 +5506,7 @@ function renderIntroductionsExplorer() {
         return;
       }
 
-      exchange.lines.forEach((line, index) => {
-        window.setTimeout(() => {
-          speak(line.audio, 0.78);
-        }, index * 1200);
-      });
+      speakSceneLines(exchange.lines);
       focusStatus.textContent = `Listen to the whole scene: ${exchange.lines.map((line) => line.hanzi).join(" ")}`;
     });
   });
@@ -5625,10 +5618,7 @@ function renderAgeExplorer() {
         return;
       }
 
-      speak(exchange.lines[0].audio, 0.78);
-      window.setTimeout(() => {
-        speak(exchange.lines[1].audio, 0.78);
-      }, 1200);
+      speakSceneLines(exchange.lines);
       focusStatus.textContent = `Listen to the whole scene: ${exchange.lines.map((line) => line.hanzi).join(" ")}`;
     });
   });
@@ -5768,11 +5758,7 @@ function renderFamilyExplorer() {
         return;
       }
 
-      exchange.lines.forEach((line, index) => {
-        window.setTimeout(() => {
-          speak(line.audio, 0.78);
-        }, index * 1200);
-      });
+      speakSceneLines(exchange.lines);
       focusStatus.textContent = `Listen to the whole scene: ${exchange.lines.map((line) => line.hanzi).join(" ")}`;
     });
   });
@@ -5971,17 +5957,47 @@ lessonSelect.addEventListener("change", () => {
   selectBookLesson(book.id, lesson.lesson);
 });
 
+function chineseUtterance(text, rate) {
+  const utterance = new SpeechSynthesisUtterance(text);
+  utterance.lang = "zh-CN";
+  utterance.rate = rate;
+  utterance.pitch = 1;
+  return utterance;
+}
+
 function speak(text, rate = 0.8) {
   if (!("speechSynthesis" in window)) {
     return;
   }
 
   window.speechSynthesis.cancel();
-  const utterance = new SpeechSynthesisUtterance(text);
-  utterance.lang = "zh-CN";
-  utterance.rate = rate;
-  utterance.pitch = 1;
-  window.speechSynthesis.speak(utterance);
+  window.speechSynthesis.speak(chineseUtterance(text, rate));
+}
+
+function speakSceneLines(lines) {
+  if (!("speechSynthesis" in window)) {
+    return;
+  }
+
+  const audioLines = lines.map((line) => line.audio).filter(Boolean);
+  let index = 0;
+
+  window.speechSynthesis.cancel();
+
+  const playNextLine = () => {
+    if (index >= audioLines.length) {
+      return;
+    }
+
+    const utterance = chineseUtterance(audioLines[index], sceneSpeechRate);
+    index += 1;
+    utterance.onend = () => {
+      window.setTimeout(playNextLine, sceneLinePauseMs);
+    };
+    window.speechSynthesis.speak(utterance);
+  };
+
+  playNextLine();
 }
 
 function viewFromLocation() {

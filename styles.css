@@ -4210,6 +4210,11 @@ h4 {
     border-radius: 24px;
   }
 
+  .topic-detail {
+    padding: 0;
+    border-radius: 0;
+  }
+
   .site-nav {
     margin: 0 4px 12px;
   }
@@ -4299,6 +4304,13 @@ h4 {
 .focus-card {
   border: 1px solid rgba(45, 34, 24, 0.06);
   background: #fffaf4;
+}
+
+.topic-detail {
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
 }
 
 /* Final cascade for the learning-home refactor. Keep this after legacy landing rules. */
