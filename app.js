@@ -1696,8 +1696,13 @@ const state = {
   ageBuildSelectedTokens: [],
   politeChallengeAnswerId: "",
   politeChallengeOptionIds: [],
+  politeChallengePickedId: "",
   politeChallengePromptId: "",
+  politeChallengeResult: "",
+  politeChallengeWrongIds: new Set(),
   lastPoliteFeedback: "",
+  politeListenFeedback: "",
+  politeMatchFeedback: "",
   politeSelectedPhraseId: null,
   politeMatchedIds: new Set(),
   politePhraseOrder: [],
@@ -2165,6 +2170,12 @@ function ensureFamilyChallenge() {
   }
 }
 
+function resetListenChallengeResult(challengeKey) {
+  state[`${challengeKey}ChallengePickedId`] = "";
+  state[`${challengeKey}ChallengeResult`] = "";
+  state[`${challengeKey}ChallengeWrongIds`] = new Set();
+}
+
 function handleFamilyChallengePlay() {
   ensureFamilyChallenge();
   const item = familyGameItems().find((entry) => entry.id === state.familyChallengePromptId);
@@ -2172,6 +2183,7 @@ function handleFamilyChallengePlay() {
     return;
   }
 
+  resetListenChallengeResult("family");
   if (state.tapAudioEnabled) {
     speak(item.audio, 0.78);
   }
@@ -2201,10 +2213,6 @@ function handleFamilyChallengeGuess(itemId) {
     renderFocusExplorer();
     renderFocusStatus();
     renderActivityPanel(currentTopic());
-    window.setTimeout(() => {
-      resetFamilyChallenge();
-      renderActivityPanel(currentTopic());
-    }, 900);
     return;
   }
 
@@ -2488,8 +2496,6 @@ function handleAgeChallengeGuess(itemId) {
 
   if (itemId === answer.id) {
     state.selectedFocusItemId = answer.id;
-    state.greetingsChallengePickedId = itemId;
-    state.greetingsChallengeResult = "correct";
     if (state.tapAudioEnabled) {
       speak(answer.audio, 0.78);
     }
@@ -2597,7 +2603,8 @@ function resetPoliteMatchGame(options = {}) {
   state.politeMatchedIds = new Set();
   state.politePhraseOrder = shuffleArray(items.map((item) => item.id));
   state.politeMeaningOrder = shuffleArray(items.map((item) => item.id));
-  state.lastPoliteFeedback = options.feedback ?? "";
+  state.politeMatchFeedback = options.feedback ?? "";
+  state.lastPoliteFeedback = state.politeMatchFeedback;
 }
 
 function ensurePoliteMatchGame() {
@@ -2621,7 +2628,8 @@ function handlePoliteMatchPhrase(itemId) {
   if (state.tapAudioEnabled) {
     speak(item.audio, 0.78);
   }
-  state.lastPoliteFeedback = `Now find the meaning for ${item.hanzi}.`;
+  state.politeMatchFeedback = `Now find the meaning for ${item.hanzi}.`;
+  state.lastPoliteFeedback = state.politeMatchFeedback;
   renderActivityPanel(currentTopic());
 }
 
@@ -2639,20 +2647,23 @@ function handlePoliteMatchAttempt(targetId) {
   if (selectedId === targetId) {
     state.politeMatchedIds = new Set([...state.politeMatchedIds, targetId]);
     state.politeSelectedPhraseId = null;
-    state.lastPoliteFeedback = `Correct! ${selectedItem.hanzi} matches that meaning.`;
+    state.politeMatchFeedback = `Correct! ${selectedItem.hanzi} matches that meaning.`;
+    state.lastPoliteFeedback = state.politeMatchFeedback;
     state.selectedFocusItemId = selectedItem.id;
     renderFocusDisplay(currentFocusItem());
     renderFocusExplorer();
     renderFocusStatus();
 
     if (state.politeMatchedIds.size === politeGameItems().length) {
-      state.lastPoliteFeedback = "Great job! You matched all the polite phrases.";
+      state.politeMatchFeedback = "Great job! You matched all the polite phrases.";
+      state.lastPoliteFeedback = state.politeMatchFeedback;
     }
     renderActivityPanel(currentTopic());
     return;
   }
 
-  state.lastPoliteFeedback = `Try again. ${selectedItem.hanzi} does not match that meaning.`;
+  state.politeMatchFeedback = `Try again. ${selectedItem.hanzi} does not match that meaning.`;
+  state.lastPoliteFeedback = state.politeMatchFeedback;
   renderActivityPanel(currentTopic());
 }
 
@@ -2669,9 +2680,13 @@ function resetPoliteChallenge(options = {}) {
   );
 
   state.politeChallengeAnswerId = answer.id;
+  state.politeChallengePickedId = "";
   state.politeChallengePromptId = answer.id;
   state.politeChallengeOptionIds = shuffleArray([answer.id, ...distractors.map((item) => item.id)]);
-  state.lastPoliteFeedback = options.feedback ?? "";
+  state.politeChallengeResult = "";
+  state.politeChallengeWrongIds = new Set();
+  state.politeListenFeedback = options.feedback ?? "";
+  state.lastPoliteFeedback = state.politeListenFeedback;
 }
 
 function ensurePoliteChallenge() {
@@ -2687,10 +2702,12 @@ function handlePoliteChallengePlay() {
     return;
   }
 
+  resetListenChallengeResult("polite");
   if (state.tapAudioEnabled) {
     speak(item.audio, 0.78);
   }
-  state.lastPoliteFeedback = `Listen again and find ${item.hanzi}.`;
+  state.politeListenFeedback = `Listen again and find ${item.hanzi}.`;
+  state.lastPoliteFeedback = state.politeListenFeedback;
   renderActivityPanel(currentTopic());
 }
 
@@ -2704,21 +2721,25 @@ function handlePoliteChallengeGuess(itemId) {
 
   if (itemId === answer.id) {
     state.selectedFocusItemId = answer.id;
+    state.politeChallengePickedId = itemId;
+    state.politeChallengeResult = "correct";
     if (state.tapAudioEnabled) {
       speak(answer.audio, 0.78);
     }
-    state.lastPoliteFeedback = `Correct! ${answer.hanzi} matches the audio.`;
+    state.politeListenFeedback = `Correct! ${answer.hanzi} matches the audio.`;
+    state.lastPoliteFeedback = state.politeListenFeedback;
     renderFocusDisplay(currentFocusItem());
     renderFocusExplorer();
     renderFocusStatus();
-    window.setTimeout(() => {
-      resetPoliteChallenge();
-      renderActivityPanel(currentTopic());
-    }, 650);
+    renderActivityPanel(currentTopic());
     return;
   }
 
-  state.lastPoliteFeedback = `Try again. You picked ${picked.hanzi}, but the audio is ${answer.hanzi}.`;
+  state.politeChallengePickedId = itemId;
+  state.politeChallengeResult = "wrong";
+  state.politeChallengeWrongIds = new Set([...state.politeChallengeWrongIds, itemId]);
+  state.politeListenFeedback = `Try again. You picked ${picked.hanzi}, but the audio is ${answer.hanzi}.`;
+  state.lastPoliteFeedback = state.politeListenFeedback;
   renderActivityPanel(currentTopic());
 }
 
@@ -2729,6 +2750,7 @@ function handleGreetingsChallengePlay() {
     return;
   }
 
+  resetListenChallengeResult("greetings");
   if (state.tapAudioEnabled) {
     speak(item.audio, 0.78);
   }
@@ -4096,6 +4118,339 @@ function renderBodyExplorer() {
   });
 }
 
+function renderListenPractice(config) {
+  return `
+    <section class="practice-split-card">
+      <div class="numbers-game-top">
+        <div>
+          <p class="body-match-kicker">${config.kicker ?? "Listen and choose"}</p>
+          ${config.title ? `<h4>${config.title}</h4>` : ""}
+        </div>
+        <button class="small-button is-action-button" type="button" data-template-listen-play>Play audio</button>
+      </div>
+      ${config.note ? `<p class="numbers-game-note">${config.note}</p>` : ""}
+      ${config.feedback() ? `<p class="greetings-game-feedback">${config.feedback()}</p>` : ""}
+      <div class="numbers-game-options">
+        ${config.optionIds()
+          .map((id) => {
+            const item = config.items().find((entry) => entry.id === id);
+            if (!item) {
+              return "";
+            }
+            const isCorrectPick = config.pickedId() === item.id && config.result() === "correct";
+            const isWrongPick = config.wrongIds().has(item.id);
+            const resultClass = isCorrectPick ? " is-correct" : isWrongPick ? " is-wrong" : "";
+            const resultMark =
+              isCorrectPick || isWrongPick
+                ? `<span class="answer-result-mark" aria-hidden="true">${isCorrectPick ? "✓" : "×"}</span>`
+                : "";
+            return `
+              <button class="numbers-game-option greetings-game-option family-listen-option${resultClass}" type="button" data-template-listen-guess="${item.id}">
+                ${resultMark}
+                <span class="numbers-game-hanzi">${item.hanzi}</span>
+                ${state.showPinyin ? `<span class="numbers-game-pinyin">${item.pinyin}</span>` : ""}
+                ${state.showEnglish ? `<span class="numbers-game-english">${item.english}</span>` : ""}
+              </button>
+            `;
+          })
+          .join("")}
+      </div>
+    </section>
+  `;
+}
+
+function renderMatchMeaningContent(config, id) {
+  return config.meaningContent
+    ? config.meaningContent(id)
+    : `<span class="match-answer-label">${config.meaningLabel(id)}</span>`;
+}
+
+function renderMatchPractice(config) {
+  const phraseIds = config.phraseIds();
+  const meaningIds = config.meaningIds();
+  const matchedIds = config.matchedIds();
+  const solvedIds = phraseIds.filter((id) => matchedIds.has(id));
+  const remainingPhraseIds = phraseIds.filter((id) => !matchedIds.has(id));
+  const remainingMeaningIds = meaningIds.filter((id) => !matchedIds.has(id));
+
+  return `
+    <section class="practice-split-card">
+      <div class="numbers-game-top">
+        <div>
+          <p class="body-match-kicker">${config.kicker ?? "Matching game"}</p>
+          ${config.title ? `<h4>${config.title}</h4>` : ""}
+        </div>
+        <button class="small-button is-action-button" type="button" data-template-match-new>New mix</button>
+      </div>
+      ${config.note ? `<p class="numbers-game-note">${config.note}</p>` : ""}
+      ${config.feedback() ? `<div class="greetings-game-feedback">${config.feedback()}</div>` : ""}
+      <div class="family-match-board-headings">
+        <p class="body-match-kicker">${config.phraseHeading ?? "Chinese"}</p>
+        <p class="body-match-kicker">${config.meaningHeading ?? "Meaning"}</p>
+      </div>
+      ${
+        solvedIds.length
+          ? `
+            <div class="family-match-solved-pairs">
+              ${solvedIds
+                .map((id) => {
+                  const item = config.items().find((entry) => entry.id === id);
+                  if (!item) {
+                    return "";
+                  }
+                  return `
+                    <article class="family-match-solved-row">
+                      <div class="polite-match-card polite-match-card-phrase family-match-pair-card is-solved">
+                        <span class="answer-result-mark" aria-hidden="true">✓</span>
+                        <span class="numbers-game-hanzi">${item.hanzi}</span>
+                        ${state.showPinyin ? `<span class="numbers-game-pinyin">${item.pinyin}</span>` : ""}
+                      </div>
+                      <div class="polite-match-card ${config.meaningCardClass ?? "polite-match-card-meaning"} family-match-pair-card is-solved">
+                        <span class="answer-result-mark" aria-hidden="true">✓</span>
+                        ${renderMatchMeaningContent(config, id)}
+                      </div>
+                    </article>
+                  `;
+                })
+                .join("")}
+            </div>
+          `
+          : ""
+      }
+      ${
+        remainingPhraseIds.length
+          ? `
+            <div class="polite-match-board family-match-open-board">
+              <div class="polite-match-column">
+                ${remainingPhraseIds
+                  .map((id) => {
+                    const item = config.items().find((entry) => entry.id === id);
+                    if (!item) {
+                      return "";
+                    }
+                    const selected = config.selectedId() === id;
+                    return `
+                      <button
+                        class="polite-match-card polite-match-card-phrase${selected ? " is-selected" : ""}"
+                        type="button"
+                        data-template-match-phrase="${id}"
+                      >
+                        <span class="numbers-game-hanzi">${item.hanzi}</span>
+                        ${state.showPinyin ? `<span class="numbers-game-pinyin">${item.pinyin}</span>` : ""}
+                      </button>
+                    `;
+                  })
+                  .join("")}
+              </div>
+              <div class="polite-match-column">
+                ${remainingMeaningIds
+                  .map(
+                    (id) => `
+                      <button
+                        class="polite-match-card ${config.meaningCardClass ?? "polite-match-card-meaning"}"
+                        type="button"
+                        data-template-match-meaning="${id}"
+                      >
+                        ${renderMatchMeaningContent(config, id)}
+                      </button>
+                    `
+                  )
+                  .join("")}
+              </div>
+            </div>
+          `
+          : ""
+      }
+      ${
+        matchedIds.size === config.items().length
+          ? '<button class="small-button is-action-button" type="button" data-template-match-play-again>Play again</button>'
+          : ""
+      }
+    </section>
+  `;
+}
+
+function renderSharedLessonPractice(topic, config) {
+  config.ensure();
+  activityPanelTitle.textContent = "Let's practice";
+  activityPanelSummary.textContent = config.summary;
+  activityList.className = "support-list";
+  activityList.innerHTML = "";
+
+  const gameCard = document.createElement("section");
+  gameCard.className = `family-practice-shell${config.shellClass ? ` ${config.shellClass}` : ""}`;
+  gameCard.innerHTML = `
+    <div class="practice-split-board">
+      ${renderListenPractice(config.listen)}
+      ${renderMatchPractice(config.match)}
+    </div>
+  `;
+  activityList.appendChild(gameCard);
+
+  activityList.querySelector("[data-template-listen-play]")?.addEventListener("click", () => {
+    config.listen.onPlay();
+  });
+  activityList.querySelectorAll("[data-template-listen-guess]").forEach((button) => {
+    button.addEventListener("click", () => {
+      config.listen.onGuess(button.dataset.templateListenGuess);
+    });
+  });
+  activityList.querySelector("[data-template-match-new]")?.addEventListener("click", () => {
+    config.match.onNew();
+  });
+  activityList.querySelector("[data-template-match-play-again]")?.addEventListener("click", () => {
+    config.match.onNew();
+  });
+  activityList.querySelectorAll("[data-template-match-phrase]").forEach((button) => {
+    button.addEventListener("click", () => {
+      config.match.onPhrase(button.dataset.templateMatchPhrase);
+    });
+  });
+  activityList.querySelectorAll("[data-template-match-meaning]").forEach((button) => {
+    button.addEventListener("click", () => {
+      config.match.onMeaning(button.dataset.templateMatchMeaning);
+    });
+  });
+}
+
+function sharedLessonPracticeConfig(topic) {
+  if (topic.id === "family") {
+    return {
+      summary: "Practice the three core family sentences, then sort sibling and parent words by who they name.",
+      ensure: () => {
+        ensureFamilyChallenge();
+        ensureFamilyMatchGame();
+      },
+      listen: {
+        title: "Which family line did you hear?",
+        note: "Play the audio, then tap the matching Chinese family line.",
+        items: familyGameItems,
+        optionIds: () => state.familyChallengeOptionIds,
+        pickedId: () => state.familyChallengePickedId,
+        result: () => state.familyChallengeResult,
+        wrongIds: () => state.familyChallengeWrongIds,
+        feedback: () => state.familyListenFeedback,
+        onPlay: handleFamilyChallengePlay,
+        onGuess: handleFamilyChallengeGuess
+      },
+      match: {
+        title: "Match the family member",
+        note: "Tap a Chinese family line on the left, hear it, then tap the matching person on the right.",
+        phraseHeading: "Chinese",
+        meaningHeading: "Family member",
+        meaningCardClass: "family-match-card",
+        items: familyGameItems,
+        phraseIds: () => state.familyPhraseOrder,
+        meaningIds: () => state.familyMeaningOrder,
+        matchedIds: () => state.familyMatchedIds,
+        selectedId: () => state.familySelectedPhraseId,
+        feedback: () => state.familyMatchFeedback,
+        meaningLabel: (id) => familyPersonForItemId(id)?.label ?? "",
+        meaningContent: (id) => {
+          const person = familyPersonForItemId(id);
+          if (!person) {
+            return "";
+          }
+          return `
+            <span class="family-match-avatar"><img class="family-match-avatar-image family-match-avatar-image-headshot" src="${familyHeadshotForItemId(id)}" alt="${person.label}" /></span>
+            <span class="family-match-copy">
+              <span class="match-answer-label">${person.label}</span>
+            </span>
+          `;
+        },
+        onNew: () => {
+          resetFamilyMatchGame();
+          renderActivityPanel(topic);
+        },
+        onPhrase: handleFamilyMatchPhrase,
+        onMeaning: handleFamilyMatchAttempt
+      }
+    };
+  }
+
+  if (topic.id === "greetings") {
+    return {
+      summary: "Listen, choose the matching greeting, then match each line to its situation.",
+      shellClass: "lesson-practice-shell",
+      ensure: () => {
+        ensureGreetingsChallenge();
+        ensureGreetingsMatchGame();
+      },
+      listen: {
+        note: "Play the audio, then tap the matching Chinese line.",
+        items: greetingsGameItems,
+        optionIds: () => state.greetingsChallengeOptionIds,
+        pickedId: () => state.greetingsChallengePickedId,
+        result: () => state.greetingsChallengeResult,
+        wrongIds: () => state.greetingsChallengeWrongIds,
+        feedback: () => state.greetingsListenFeedback,
+        onPlay: handleGreetingsChallengePlay,
+        onGuess: handleGreetingsChallengeGuess
+      },
+      match: {
+        phraseHeading: "Chinese",
+        meaningHeading: "Situation",
+        items: greetingsGameItems,
+        phraseIds: () => state.greetingsPhraseOrder,
+        meaningIds: () => state.greetingsMeaningOrder,
+        matchedIds: () => state.greetingsMatchedIds,
+        selectedId: () => state.greetingsSelectedPhraseId,
+        feedback: () => state.greetingsMatchFeedback,
+        meaningLabel: greetingsMeaningLabel,
+        onNew: () => {
+          resetGreetingsMatchGame();
+          renderActivityPanel(topic);
+        },
+        onPhrase: handleGreetingsMatchPhrase,
+        onMeaning: handleGreetingsMatchAttempt
+      }
+    };
+  }
+
+  if (topic.id === "polite-words") {
+    return {
+      summary: "Listen, choose the matching polite phrase, then match each phrase to its meaning.",
+      shellClass: "lesson-practice-shell",
+      ensure: () => {
+        ensurePoliteChallenge();
+        ensurePoliteMatchGame();
+      },
+      listen: {
+        title: "Which polite phrase did you hear?",
+        note: "Play the audio, then tap the matching polite phrase.",
+        items: politeGameItems,
+        optionIds: () => state.politeChallengeOptionIds,
+        pickedId: () => state.politeChallengePickedId,
+        result: () => state.politeChallengeResult,
+        wrongIds: () => state.politeChallengeWrongIds,
+        feedback: () => state.politeListenFeedback,
+        onPlay: handlePoliteChallengePlay,
+        onGuess: handlePoliteChallengeGuess
+      },
+      match: {
+        title: "Match the polite phrase",
+        phraseHeading: "Chinese",
+        meaningHeading: "Meaning",
+        items: politeGameItems,
+        phraseIds: () => state.politePhraseOrder,
+        meaningIds: () => state.politeMeaningOrder,
+        matchedIds: () => state.politeMatchedIds,
+        selectedId: () => state.politeSelectedPhraseId,
+        feedback: () => state.politeMatchFeedback,
+        meaningLabel: politeMeaningLabel,
+        onNew: () => {
+          resetPoliteMatchGame();
+          renderActivityPanel(topic);
+        },
+        onPhrase: handlePoliteMatchPhrase,
+        onMeaning: handlePoliteMatchAttempt
+      }
+    };
+  }
+
+  return null;
+}
+
 function renderActivityPanel(topic) {
   topicColumns?.classList.remove("is-hidden");
 
@@ -4107,199 +4462,9 @@ function renderActivityPanel(topic) {
     return;
   }
 
-  if (topic.id === "family") {
-    ensureFamilyChallenge();
-    ensureFamilyMatchGame();
-    activityPanelTitle.textContent = "Let's practice";
-    activityPanelSummary.textContent =
-      "Practice the three core family sentences, then sort sibling and parent words by who they name.";
-    activityList.className = "support-list";
-    activityList.innerHTML = "";
-
-    const solvedFamilyIds = state.familyPhraseOrder.filter((id) => state.familyMatchedIds.has(id));
-    const remainingFamilyPhraseIds = state.familyPhraseOrder.filter((id) => !state.familyMatchedIds.has(id));
-    const remainingFamilyMeaningIds = state.familyMeaningOrder.filter((id) => !state.familyMatchedIds.has(id));
-    const gameCard = document.createElement("section");
-    gameCard.className = "family-practice-shell";
-    gameCard.innerHTML = `
-      <div class="practice-split-board">
-        <section class="practice-split-card">
-          <div class="numbers-game-top">
-            <div>
-              <p class="body-match-kicker">Listen and choose</p>
-              <h4>Which family line did you hear?</h4>
-            </div>
-            <button class="small-button is-action-button" type="button" data-family-game-play>Play audio</button>
-          </div>
-          <p class="numbers-game-note">Play the audio, then tap the matching Chinese family line.</p>
-          ${state.familyListenFeedback ? `<p class="greetings-game-feedback">${state.familyListenFeedback}</p>` : ""}
-          <div class="numbers-game-options">
-            ${state.familyChallengeOptionIds
-              .map((id) => {
-                const item = familyGameItems().find((entry) => entry.id === id);
-                if (!item) {
-                  return "";
-                }
-                const isCorrectPick =
-                  state.familyChallengePickedId === item.id && state.familyChallengeResult === "correct";
-                const isWrongPick = state.familyChallengeWrongIds.has(item.id);
-                const resultClass = isCorrectPick ? " is-correct" : isWrongPick ? " is-wrong" : "";
-                const resultMark =
-                  isCorrectPick || isWrongPick
-                    ? `<span class="answer-result-mark" aria-hidden="true">${isCorrectPick ? "✓" : "×"}</span>`
-                    : "";
-                return `
-                  <button class="numbers-game-option greetings-game-option family-listen-option${resultClass}" type="button" data-family-game-guess="${item.id}">
-                    ${resultMark}
-                    <span class="numbers-game-hanzi">${item.hanzi}</span>
-                    ${state.showPinyin ? `<span class="numbers-game-pinyin">${item.pinyin}</span>` : ""}
-                    ${state.showEnglish ? `<span class="numbers-game-english">${item.english}</span>` : ""}
-                  </button>
-                `;
-              })
-              .join("")}
-          </div>
-        </section>
-        <section class="practice-split-card">
-          <div class="numbers-game-top">
-            <div>
-              <p class="body-match-kicker">Matching game</p>
-              <h4>Match the family member</h4>
-            </div>
-            <button class="small-button is-action-button" type="button" data-family-match-new>New mix</button>
-          </div>
-          <p class="numbers-game-note">Tap a Chinese family line on the left, hear it, then tap the matching person on the right.</p>
-          ${state.familyMatchFeedback ? `<div class="greetings-game-feedback">${state.familyMatchFeedback}</div>` : ""}
-          <div class="family-match-board-headings">
-            <p class="body-match-kicker">Chinese</p>
-            <p class="body-match-kicker">Family member</p>
-          </div>
-          ${
-            solvedFamilyIds.length
-              ? `
-                <div class="family-match-solved-pairs">
-                  ${solvedFamilyIds
-                    .map((id) => {
-                      const item = familyGameItems().find((entry) => entry.id === id);
-                      const person = familyPersonForItemId(id);
-                      if (!item || !person) {
-                        return "";
-                      }
-                      return `
-                        <article class="family-match-solved-row">
-                          <div class="polite-match-card polite-match-card-phrase family-match-pair-card is-solved">
-                            <span class="answer-result-mark" aria-hidden="true">✓</span>
-                            <span class="numbers-game-hanzi">${item.hanzi}</span>
-                            ${state.showPinyin ? `<span class="numbers-game-pinyin">${item.pinyin}</span>` : ""}
-                          </div>
-                          <div class="polite-match-card family-match-card family-match-pair-card is-solved">
-                            <span class="answer-result-mark" aria-hidden="true">✓</span>
-                            <span class="family-match-avatar"><img class="family-match-avatar-image family-match-avatar-image-headshot" src="${familyHeadshotForItemId(id)}" alt="${person.label}" /></span>
-                            <span class="family-match-copy">
-                              <span class="numbers-game-english">${person.label}</span>
-                            </span>
-                          </div>
-                        </article>
-                      `;
-                    })
-                    .join("")}
-                </div>
-              `
-              : ""
-          }
-          ${
-            remainingFamilyPhraseIds.length
-              ? `
-                <div class="polite-match-board family-match-open-board">
-                  <div class="polite-match-column">
-                    ${remainingFamilyPhraseIds
-                .map((id) => {
-                  const item = familyGameItems().find((entry) => entry.id === id);
-                  if (!item) {
-                    return "";
-                  }
-                  const selected = state.familySelectedPhraseId === id;
-                  return `
-                    <button
-                      class="polite-match-card polite-match-card-phrase${selected ? " is-selected" : ""}"
-                      type="button"
-                      data-family-match-phrase="${id}"
-                    >
-                      <span class="numbers-game-hanzi">${item.hanzi}</span>
-                      ${state.showPinyin ? `<span class="numbers-game-pinyin">${item.pinyin}</span>` : ""}
-                    </button>
-                  `;
-                })
-                .join("")}
-                  </div>
-                  <div class="polite-match-column">
-                    ${remainingFamilyMeaningIds
-                .map((id) => {
-                  const person = familyPersonForItemId(id);
-                  if (!person) {
-                    return "";
-                  }
-                  return `
-                    <button
-                      class="polite-match-card family-match-card"
-                      type="button"
-                      data-family-match-meaning="${id}"
-                    >
-                      <span class="family-match-avatar"><img class="family-match-avatar-image family-match-avatar-image-headshot" src="${familyHeadshotForItemId(id)}" alt="${person.label}" /></span>
-                      <span class="family-match-copy">
-                        <span class="numbers-game-english">${person.label}</span>
-                      </span>
-                    </button>
-                  `;
-                })
-                .join("")}
-                  </div>
-                </div>
-              `
-              : ""
-          }
-          ${
-            state.familyMatchedIds.size === familyGameItems().length
-              ? '<button class="small-button is-action-button" type="button" data-family-match-play-again>Play again</button>'
-              : ""
-          }
-        </section>
-      </div>
-    `;
-    activityList.appendChild(gameCard);
-
-    activityList.querySelector("[data-family-game-play]")?.addEventListener("click", () => {
-      handleFamilyChallengePlay();
-    });
-
-    activityList.querySelectorAll("[data-family-game-guess]").forEach((button) => {
-      button.addEventListener("click", () => {
-        handleFamilyChallengeGuess(button.dataset.familyGameGuess);
-      });
-    });
-
-    activityList.querySelector("[data-family-match-new]")?.addEventListener("click", () => {
-      resetFamilyMatchGame();
-      renderActivityPanel(topic);
-    });
-
-    activityList.querySelector("[data-family-match-play-again]")?.addEventListener("click", () => {
-      resetFamilyMatchGame();
-      renderActivityPanel(topic);
-    });
-
-    activityList.querySelectorAll("[data-family-match-phrase]").forEach((button) => {
-      button.addEventListener("click", () => {
-        handleFamilyMatchPhrase(button.dataset.familyMatchPhrase);
-      });
-    });
-
-    activityList.querySelectorAll("[data-family-match-meaning]").forEach((button) => {
-      button.addEventListener("click", () => {
-        handleFamilyMatchAttempt(button.dataset.familyMatchMeaning);
-      });
-    });
-
+  const sharedPracticeConfig = sharedLessonPracticeConfig(topic);
+  if (sharedPracticeConfig) {
+    renderSharedLessonPractice(topic, sharedPracticeConfig);
     return;
   }
 
@@ -4425,185 +4590,6 @@ function renderActivityPanel(topic) {
       const input = activityList.querySelector("#math-game-input");
       handleMathChallengeSubmit(input?.value ?? "");
     });
-    return;
-  }
-
-  if (topic.id === "greetings") {
-    ensureGreetingsChallenge();
-    ensureGreetingsMatchGame();
-    activityPanelTitle.textContent = "Let's practice";
-    activityPanelSummary.textContent = "Listen, choose the matching greeting, then match each line to its situation.";
-    activityList.className = "support-list";
-    activityList.innerHTML = "";
-
-    const solvedGreetingIds = state.greetingsPhraseOrder.filter((id) => state.greetingsMatchedIds.has(id));
-    const remainingGreetingPhraseIds = state.greetingsPhraseOrder.filter((id) => !state.greetingsMatchedIds.has(id));
-    const remainingGreetingMeaningIds = state.greetingsMeaningOrder.filter((id) => !state.greetingsMatchedIds.has(id));
-    const gameCard = document.createElement("section");
-    gameCard.className = "family-practice-shell lesson-practice-shell";
-    gameCard.innerHTML = `
-      <div class="practice-split-board">
-        <section class="practice-split-card">
-          <div class="numbers-game-top">
-            <div>
-              <p class="body-match-kicker">Listen and choose</p>
-            </div>
-            <button class="small-button is-action-button" type="button" data-greetings-game-play>Play audio</button>
-          </div>
-          <p class="numbers-game-note">Play the audio, then tap the matching Chinese line.</p>
-          ${state.greetingsListenFeedback ? `<p class="greetings-game-feedback">${state.greetingsListenFeedback}</p>` : ""}
-          <div class="numbers-game-options">
-            ${state.greetingsChallengeOptionIds
-              .map((id) => {
-                const item = greetingsGameItems().find((entry) => entry.id === id);
-                if (!item) {
-                  return "";
-                }
-                const isCorrectPick =
-                  state.greetingsChallengePickedId === item.id && state.greetingsChallengeResult === "correct";
-                const isWrongPick = state.greetingsChallengeWrongIds.has(item.id);
-                const resultClass = isCorrectPick ? " is-correct" : isWrongPick ? " is-wrong" : "";
-                const resultMark =
-                  isCorrectPick || isWrongPick
-                    ? `<span class="answer-result-mark" aria-hidden="true">${isCorrectPick ? "✓" : "×"}</span>`
-                    : "";
-                return `
-                  <button class="numbers-game-option greetings-game-option family-listen-option${resultClass}" type="button" data-greetings-game-guess="${item.id}">
-                    ${resultMark}
-                    <span class="numbers-game-hanzi">${item.hanzi}</span>
-                    ${state.showPinyin ? `<span class="numbers-game-pinyin">${item.pinyin}</span>` : ""}
-                    ${state.showEnglish ? `<span class="numbers-game-english">${item.english}</span>` : ""}
-                  </button>
-                `;
-              })
-              .join("")}
-          </div>
-        </section>
-        <section class="practice-split-card">
-          <div class="numbers-game-top">
-            <div>
-              <p class="body-match-kicker">Matching game</p>
-            </div>
-            <button class="small-button is-action-button" type="button" data-greetings-match-new>New mix</button>
-          </div>
-          ${state.greetingsMatchFeedback ? `<div class="greetings-game-feedback">${state.greetingsMatchFeedback}</div>` : ""}
-          <div class="family-match-board-headings">
-            <p class="body-match-kicker">Chinese</p>
-            <p class="body-match-kicker">Situation</p>
-          </div>
-          ${
-            solvedGreetingIds.length
-              ? `
-                <div class="family-match-solved-pairs">
-                  ${solvedGreetingIds
-                    .map((id) => {
-                      const item = greetingsGameItems().find((entry) => entry.id === id);
-                      if (!item) {
-                        return "";
-                      }
-                      return `
-                        <article class="family-match-solved-row">
-                          <div class="polite-match-card polite-match-card-phrase family-match-pair-card is-solved">
-                            <span class="answer-result-mark" aria-hidden="true">✓</span>
-                            <span class="numbers-game-hanzi">${item.hanzi}</span>
-                            ${state.showPinyin ? `<span class="numbers-game-pinyin">${item.pinyin}</span>` : ""}
-                          </div>
-                          <div class="polite-match-card family-match-pair-card is-solved">
-                            <span class="answer-result-mark" aria-hidden="true">✓</span>
-                            <span class="numbers-game-english">${greetingsMeaningLabel(id)}</span>
-                          </div>
-                        </article>
-                      `;
-                    })
-                    .join("")}
-                </div>
-              `
-              : ""
-          }
-          ${
-            remainingGreetingPhraseIds.length
-              ? `
-                <div class="polite-match-board family-match-open-board">
-                  <div class="polite-match-column">
-                    ${remainingGreetingPhraseIds
-                      .map((id) => {
-                        const item = greetingsGameItems().find((entry) => entry.id === id);
-                        if (!item) {
-                          return "";
-                        }
-                        const selected = state.greetingsSelectedPhraseId === id;
-                        return `
-                          <button
-                            class="polite-match-card polite-match-card-phrase${selected ? " is-selected" : ""}"
-                            type="button"
-                            data-greetings-match-phrase="${id}"
-                          >
-                            <span class="numbers-game-hanzi">${item.hanzi}</span>
-                            ${state.showPinyin ? `<span class="numbers-game-pinyin">${item.pinyin}</span>` : ""}
-                          </button>
-                        `;
-                      })
-                      .join("")}
-                  </div>
-                  <div class="polite-match-column">
-                    ${remainingGreetingMeaningIds
-                      .map((id) => `
-                        <button
-                          class="polite-match-card polite-match-card-meaning"
-                          type="button"
-                          data-greetings-match-meaning="${id}"
-                        >
-                          <span class="numbers-game-english">${greetingsMeaningLabel(id)}</span>
-                        </button>
-                      `)
-                      .join("")}
-                  </div>
-                </div>
-              `
-              : ""
-          }
-          ${
-            state.greetingsMatchedIds.size === greetingsGameItems().length
-              ? '<button class="small-button is-action-button" type="button" data-greetings-match-play-again>Play again</button>'
-              : ""
-          }
-        </section>
-      </div>
-    `;
-    activityList.appendChild(gameCard);
-
-    activityList.querySelector("[data-greetings-game-play]")?.addEventListener("click", () => {
-      handleGreetingsChallengePlay();
-    });
-
-    activityList.querySelectorAll("[data-greetings-game-guess]").forEach((button) => {
-      button.addEventListener("click", () => {
-        handleGreetingsChallengeGuess(button.dataset.greetingsGameGuess);
-      });
-    });
-
-    activityList.querySelector("[data-greetings-match-new]")?.addEventListener("click", () => {
-      resetGreetingsMatchGame();
-      renderActivityPanel(topic);
-    });
-
-    activityList.querySelector("[data-greetings-match-play-again]")?.addEventListener("click", () => {
-      resetGreetingsMatchGame();
-      renderActivityPanel(topic);
-    });
-
-    activityList.querySelectorAll("[data-greetings-match-phrase]").forEach((button) => {
-      button.addEventListener("click", () => {
-        handleGreetingsMatchPhrase(button.dataset.greetingsMatchPhrase);
-      });
-    });
-
-    activityList.querySelectorAll("[data-greetings-match-meaning]").forEach((button) => {
-      button.addEventListener("click", () => {
-        handleGreetingsMatchAttempt(button.dataset.greetingsMatchMeaning);
-      });
-    });
-
     return;
   }
 
@@ -4769,145 +4755,6 @@ function renderActivityPanel(topic) {
     activityList.querySelectorAll("[data-age-build-token]").forEach((button) => {
       button.addEventListener("click", () => {
         handleAgeBuildToken(Number(button.dataset.ageBuildToken));
-      });
-    });
-
-    return;
-  }
-
-  if (topic.id === "polite-words") {
-    ensurePoliteChallenge();
-    ensurePoliteMatchGame();
-    activityPanelTitle.textContent = "Let's practice";
-    activityPanelSummary.textContent =
-      "Listen, choose the matching polite phrase, then match each phrase to its meaning.";
-    activityList.className = "support-list";
-    activityList.innerHTML = "";
-
-    const gameCard = document.createElement("section");
-    gameCard.className = "family-practice-shell";
-    gameCard.innerHTML = `
-      <div class="practice-split-board">
-        <section class="practice-split-card">
-          <div class="numbers-game-top">
-            <div>
-              <p class="body-match-kicker">Listen and choose</p>
-              <h4>Which polite phrase did you hear?</h4>
-            </div>
-            <button class="small-button is-action-button" type="button" data-polite-game-play>Play audio</button>
-          </div>
-          <p class="numbers-game-note">Play the audio, then tap the matching polite phrase.</p>
-          ${state.lastPoliteFeedback ? `<p class="greetings-game-feedback">${state.lastPoliteFeedback}</p>` : ""}
-          <div class="numbers-game-options">
-            ${state.politeChallengeOptionIds
-              .map((id) => {
-                const item = politeGameItems().find((entry) => entry.id === id);
-                if (!item) {
-                  return "";
-                }
-                return `
-                  <button class="numbers-game-option greetings-game-option" type="button" data-polite-game-guess="${item.id}">
-                    <span class="numbers-game-hanzi">${item.hanzi}</span>
-                    ${state.showPinyin ? `<span class="numbers-game-pinyin">${item.pinyin}</span>` : ""}
-                    ${state.showEnglish ? `<span class="numbers-game-english">${item.english}</span>` : ""}
-                  </button>
-                `;
-              })
-              .join("")}
-          </div>
-        </section>
-        <section class="practice-split-card">
-          <div class="numbers-game-top">
-            <div>
-              <p class="body-match-kicker">Matching game</p>
-              <h4>Match the polite phrase</h4>
-            </div>
-            <button class="small-button is-action-button" type="button" data-polite-game-new>New mix</button>
-          </div>
-          ${state.lastPoliteFeedback ? `<div class="greetings-game-feedback">${state.lastPoliteFeedback}</div>` : ""}
-          <div class="polite-match-board">
-            <div class="polite-match-column">
-              <p class="body-match-kicker">Chinese</p>
-              ${state.politePhraseOrder
-                .map((id) => {
-                  const item = politeGameItems().find((entry) => entry.id === id);
-                  if (!item) {
-                    return "";
-                  }
-                  const selected = state.politeSelectedPhraseId === id;
-                  const solved = state.politeMatchedIds.has(id);
-                  return `
-                    <button
-                      class="polite-match-card polite-match-card-phrase${selected ? " is-selected" : ""}${solved ? " is-solved" : ""}"
-                      type="button"
-                      data-polite-match-phrase="${id}"
-                      ${solved ? "disabled" : ""}
-                    >
-                      <span class="numbers-game-hanzi">${item.hanzi}</span>
-                      ${state.showPinyin ? `<span class="numbers-game-pinyin">${item.pinyin}</span>` : ""}
-                    </button>
-                  `;
-                })
-                .join("")}
-            </div>
-            <div class="polite-match-column">
-              <p class="body-match-kicker">Meaning</p>
-              ${state.politeMeaningOrder
-                .map((id) => {
-                  const solved = state.politeMatchedIds.has(id);
-                  return `
-                    <button
-                      class="polite-match-card polite-match-card-meaning${solved ? " is-solved" : ""}"
-                      type="button"
-                      data-polite-match-meaning="${id}"
-                      ${solved ? "disabled" : ""}
-                    >
-                      <span class="numbers-game-english">${politeMeaningLabel(id)}</span>
-                    </button>
-                  `;
-                })
-                .join("")}
-            </div>
-          </div>
-          ${
-            state.politeMatchedIds.size === politeGameItems().length
-              ? '<button class="small-button is-action-button" type="button" data-polite-game-play-again>Play again</button>'
-              : ""
-          }
-        </section>
-      </div>
-    `;
-    activityList.appendChild(gameCard);
-
-    activityList.querySelector("[data-polite-game-play]")?.addEventListener("click", () => {
-      handlePoliteChallengePlay();
-    });
-
-    activityList.querySelectorAll("[data-polite-game-guess]").forEach((button) => {
-      button.addEventListener("click", () => {
-        handlePoliteChallengeGuess(button.dataset.politeGameGuess);
-      });
-    });
-
-    activityList.querySelector("[data-polite-game-new]")?.addEventListener("click", () => {
-      resetPoliteMatchGame();
-      renderActivityPanel(topic);
-    });
-
-    activityList.querySelector("[data-polite-game-play-again]")?.addEventListener("click", () => {
-      resetPoliteMatchGame();
-      renderActivityPanel(topic);
-    });
-
-    activityList.querySelectorAll("[data-polite-match-phrase]").forEach((button) => {
-      button.addEventListener("click", () => {
-        handlePoliteMatchPhrase(button.dataset.politeMatchPhrase);
-      });
-    });
-
-    activityList.querySelectorAll("[data-polite-match-meaning]").forEach((button) => {
-      button.addEventListener("click", () => {
-        handlePoliteMatchAttempt(button.dataset.politeMatchMeaning);
       });
     });
 

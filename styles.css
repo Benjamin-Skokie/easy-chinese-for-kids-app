@@ -2199,8 +2199,8 @@ h4 {
   align-content: center;
 }
 
-.lesson-practice-shell .polite-match-card-meaning .numbers-game-english,
-.lesson-practice-shell .family-match-pair-card .numbers-game-english {
+.lesson-practice-shell .polite-match-card-meaning .match-answer-label,
+.lesson-practice-shell .family-match-pair-card .match-answer-label {
   color: var(--ink);
   font-size: 0.95rem;
   font-weight: 600;
@@ -3336,6 +3336,11 @@ h4 {
 }
 
 .numbers-game-english {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.match-answer-label {
   color: var(--muted);
   font-size: 0.95rem;
 }
