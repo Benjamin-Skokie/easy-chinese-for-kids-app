@@ -2673,7 +2673,9 @@ function resetPoliteChallenge(options = {}) {
     return;
   }
 
-  const answer = items[Math.floor(Math.random() * items.length)];
+  const answerChoices = items.filter((item) => item.id !== options.excludeId);
+  const answerPool = answerChoices.length ? answerChoices : items;
+  const answer = answerPool[Math.floor(Math.random() * answerPool.length)];
   const distractors = shuffleArray(items.filter((item) => item.id !== answer.id)).slice(
     0,
     Math.min(3, Math.max(0, items.length - 1))
@@ -2696,17 +2698,17 @@ function ensurePoliteChallenge() {
 }
 
 function handlePoliteChallengePlay() {
-  ensurePoliteChallenge();
+  const previousPromptId = state.politeChallengePromptId;
+  resetPoliteChallenge({ excludeId: previousPromptId });
   const item = politeGameItems().find((entry) => entry.id === state.politeChallengePromptId);
   if (!item) {
     return;
   }
 
-  resetListenChallengeResult("polite");
   if (state.tapAudioEnabled) {
     speak(item.audio, 0.78);
   }
-  state.politeListenFeedback = `Listen again and find ${item.hanzi}.`;
+  state.politeListenFeedback = "Listen carefully, then tap the matching card.";
   state.lastPoliteFeedback = state.politeListenFeedback;
   renderActivityPanel(currentTopic());
 }
@@ -4125,10 +4127,10 @@ function renderListenPractice(config) {
         <div>
           <p class="body-match-kicker">${config.kicker ?? "Listen and choose"}</p>
           ${config.title ? `<h4>${config.title}</h4>` : ""}
+          <p class="numbers-game-note">Play the audio, then tap the matching Chinese card.</p>
         </div>
         <button class="small-button is-action-button" type="button" data-template-listen-play>Play audio</button>
       </div>
-      ${config.note ? `<p class="numbers-game-note">${config.note}</p>` : ""}
       ${config.feedback() ? `<p class="greetings-game-feedback">${config.feedback()}</p>` : ""}
       <div class="numbers-game-options">
         ${config.optionIds()
@@ -4179,10 +4181,10 @@ function renderMatchPractice(config) {
         <div>
           <p class="body-match-kicker">${config.kicker ?? "Matching game"}</p>
           ${config.title ? `<h4>${config.title}</h4>` : ""}
+          <p class="numbers-game-note">Tap a card on the left, then tap its matching card on the right.</p>
         </div>
         <button class="small-button is-action-button" type="button" data-template-match-new>New mix</button>
       </div>
-      ${config.note ? `<p class="numbers-game-note">${config.note}</p>` : ""}
       ${config.feedback() ? `<div class="greetings-game-feedback">${config.feedback()}</div>` : ""}
       <div class="family-match-board-headings">
         <p class="body-match-kicker">${config.phraseHeading ?? "Chinese"}</p>
@@ -4322,8 +4324,6 @@ function sharedLessonPracticeConfig(topic) {
         ensureFamilyMatchGame();
       },
       listen: {
-        title: "Which family line did you hear?",
-        note: "Play the audio, then tap the matching Chinese family line.",
         items: familyGameItems,
         optionIds: () => state.familyChallengeOptionIds,
         pickedId: () => state.familyChallengePickedId,
@@ -4334,8 +4334,6 @@ function sharedLessonPracticeConfig(topic) {
         onGuess: handleFamilyChallengeGuess
       },
       match: {
-        title: "Match the family member",
-        note: "Tap a Chinese family line on the left, hear it, then tap the matching person on the right.",
         phraseHeading: "Chinese",
         meaningHeading: "Family member",
         meaningCardClass: "family-match-card",
@@ -4377,7 +4375,6 @@ function sharedLessonPracticeConfig(topic) {
         ensureGreetingsMatchGame();
       },
       listen: {
-        note: "Play the audio, then tap the matching Chinese line.",
         items: greetingsGameItems,
         optionIds: () => state.greetingsChallengeOptionIds,
         pickedId: () => state.greetingsChallengePickedId,
@@ -4416,8 +4413,6 @@ function sharedLessonPracticeConfig(topic) {
         ensurePoliteMatchGame();
       },
       listen: {
-        title: "Which polite phrase did you hear?",
-        note: "Play the audio, then tap the matching polite phrase.",
         items: politeGameItems,
         optionIds: () => state.politeChallengeOptionIds,
         pickedId: () => state.politeChallengePickedId,
@@ -4428,7 +4423,6 @@ function sharedLessonPracticeConfig(topic) {
         onGuess: handlePoliteChallengeGuess
       },
       match: {
-        title: "Match the polite phrase",
         phraseHeading: "Chinese",
         meaningHeading: "Meaning",
         items: politeGameItems,
