@@ -2186,6 +2186,27 @@ h4 {
   display: block;
 }
 
+.lesson-practice-shell .practice-split-board {
+  align-items: start;
+}
+
+.lesson-practice-shell .numbers-game-options {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.lesson-practice-shell .polite-match-card {
+  height: 92px;
+  align-content: center;
+}
+
+.lesson-practice-shell .polite-match-card-meaning .numbers-game-english,
+.lesson-practice-shell .family-match-pair-card .numbers-game-english {
+  color: var(--ink);
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
 .practice-split-card {
   display: grid;
   gap: 14px;

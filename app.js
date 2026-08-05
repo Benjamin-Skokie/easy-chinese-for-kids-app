@@ -1656,8 +1656,13 @@ const state = {
   mathChallengeInput: "",
   greetingsChallengeAnswerId: "",
   greetingsChallengeOptionIds: [],
+  greetingsChallengePickedId: "",
   greetingsChallengePromptId: "",
+  greetingsChallengeResult: "",
+  greetingsChallengeWrongIds: new Set(),
   lastGreetingsFeedback: "",
+  greetingsListenFeedback: "",
+  greetingsMatchFeedback: "",
   greetingsSelectedPhraseId: null,
   greetingsMatchedIds: new Set(),
   greetingsPhraseOrder: [],
@@ -1898,10 +1903,13 @@ function resetGreetingsChallenge(options = {}) {
   );
 
   state.greetingsChallengeAnswerId = answer.id;
+  state.greetingsChallengePickedId = "";
   state.greetingsChallengePromptId = answer.id;
   state.greetingsChallengeOptionIds = shuffleArray([answer.id, ...distractors.map((item) => item.id)]);
-  state.lastGreetingsFeedback =
-    options.feedback ?? "Press play, listen carefully, then choose the matching greeting.";
+  state.greetingsChallengeResult = "";
+  state.greetingsChallengeWrongIds = new Set();
+  state.greetingsListenFeedback = options.feedback ?? "";
+  state.lastGreetingsFeedback = state.greetingsListenFeedback;
 }
 
 function ensureGreetingsChallenge() {
@@ -1927,7 +1935,8 @@ function resetGreetingsMatchGame(options = {}) {
   state.greetingsMatchedIds = new Set();
   state.greetingsPhraseOrder = shuffleArray(items.map((item) => item.id));
   state.greetingsMeaningOrder = shuffleArray(items.map((item) => item.id));
-  state.lastGreetingsFeedback = options.feedback ?? "Tap a Chinese greeting, then tap the matching situation.";
+  state.greetingsMatchFeedback = options.feedback ?? "";
+  state.lastGreetingsFeedback = state.greetingsMatchFeedback;
 }
 
 function ensureGreetingsMatchGame() {
@@ -1951,7 +1960,8 @@ function handleGreetingsMatchPhrase(itemId) {
   if (state.tapAudioEnabled) {
     speak(item.audio, 0.78);
   }
-  state.lastGreetingsFeedback = `Now find the situation for ${item.hanzi}.`;
+  state.greetingsMatchFeedback = `Now find the situation for ${item.hanzi}.`;
+  state.lastGreetingsFeedback = state.greetingsMatchFeedback;
   renderActivityPanel(currentTopic());
 }
 
@@ -1969,20 +1979,23 @@ function handleGreetingsMatchAttempt(targetId) {
   if (selectedId === targetId) {
     state.greetingsMatchedIds = new Set([...state.greetingsMatchedIds, targetId]);
     state.greetingsSelectedPhraseId = null;
-    state.lastGreetingsFeedback = `Correct! ${selectedItem.hanzi} matches that situation.`;
+    state.greetingsMatchFeedback = `Correct! ${selectedItem.hanzi} matches that situation.`;
+    state.lastGreetingsFeedback = state.greetingsMatchFeedback;
     state.selectedFocusItemId = selectedItem.id;
     renderFocusDisplay(currentFocusItem());
     renderFocusExplorer();
     renderFocusStatus();
 
     if (state.greetingsMatchedIds.size === greetingsGameItems().length) {
-      state.lastGreetingsFeedback = "Great job! You matched all the greetings.";
+      state.greetingsMatchFeedback = "Great job! You matched all the greetings.";
+      state.lastGreetingsFeedback = state.greetingsMatchFeedback;
     }
     renderActivityPanel(currentTopic());
     return;
   }
 
-  state.lastGreetingsFeedback = `Try again. ${selectedItem.hanzi} does not match that situation.`;
+  state.greetingsMatchFeedback = `Try again. ${selectedItem.hanzi} does not match that situation.`;
+  state.lastGreetingsFeedback = state.greetingsMatchFeedback;
   renderActivityPanel(currentTopic());
 }
 
@@ -2032,6 +2045,85 @@ function isFamilySentenceItemId(itemId) {
 
 function familyBookWordItems() {
   return focusItemsForTopic(topicById("family")).filter((item) => !isFamilySentenceItemId(item.id));
+}
+
+const lessonTemplateTopicIds = new Set(["greetings", "polite-words", "introductions", "age", "family"]);
+
+function usesLessonTemplate(topic) {
+  return lessonTemplateTopicIds.has(topic.id);
+}
+
+function bookWordItemsForTopic(topic) {
+  if (topic.id === "family") {
+    return familyBookWordItems();
+  }
+
+  return focusItemsForTopic(topic);
+}
+
+function usefulNoteForTopic(topic) {
+  const notes = {
+    greetings: `
+      <p class="greetings-note-hanzi">你 and 您</p>
+      <p class="greetings-note-copy">
+        <strong>你</strong> is the everyday word for “you.” <strong>您</strong> is the polite form, often used for teachers and other adults to show respect.
+      </p>
+      <p class="greetings-note-copy">
+        <strong>老师</strong> means “teacher,” so <strong>李老师，您好！</strong> sounds warm and respectful.
+      </p>
+    `,
+    "polite-words": `
+      <p class="greetings-note-hanzi">谢谢 / 不客气 / 对不起 / 没关系</p>
+      <p class="greetings-note-copy">
+        <strong>谢谢你</strong> means “thank you,” and <strong>不客气</strong> is the kind reply: “you’re welcome.”
+      </p>
+      <p class="greetings-note-copy">
+        <strong>对不起</strong> means “I’m sorry,” and <strong>没关系</strong> is the calm reply: “never mind” or “that’s okay.”
+      </p>
+      <p class="greetings-note-copy">
+        <strong>请</strong> helps children sound polite in requests and classroom directions, for example:
+        <strong>请安静。</strong>
+      </p>
+    `,
+    introductions: `
+      <p class="greetings-note-hanzi">我 / 叫 / 什么 / 名字</p>
+      <p class="greetings-note-copy">
+        <strong>我</strong> means “I” or “me,” and <strong>叫</strong> is used in beginner Chinese to say what someone is called.
+      </p>
+      <p class="greetings-note-copy">
+        <strong>你叫什么名字？</strong> means “What is your name?” and <strong>我叫安安。</strong> means “My name is Anan.”
+      </p>
+      <p class="greetings-note-copy">
+        Let children pause after <strong>我叫</strong> and say their own name out loud.
+      </p>
+    `,
+    age: `
+      <p class="greetings-note-hanzi">你几岁？ / 我...岁。 / 你上几年级？ / 我上一年级。</p>
+      <p class="greetings-note-copy">
+        <strong>你几岁？</strong> literally means “you how-many years old?” Here, <strong>几</strong> asks for a small number, and <strong>岁</strong> is the common word for a child's age.
+      </p>
+      <p class="greetings-note-copy">
+        The answer pattern stays simple: <strong>我 + number + 岁</strong>. So <strong>我五岁</strong> is “I am five years old,” <strong>我六岁</strong> is “I am six years old,” and <strong>我七岁</strong> is “I am seven years old.”
+      </p>
+      <p class="greetings-note-copy">
+        <strong>你上几年级？</strong> asks what school year someone is in, and <strong>我上一年级。</strong> means “I am in first grade.” This topic links naturally with earlier self-introduction language: <strong>你好！你叫什么名字？我叫安安。你几岁？我五岁。你上几年级？我上一年级。</strong>
+      </p>
+    `,
+    family: `
+      <p class="greetings-note-hanzi">爸爸 / 妈妈 / 哥哥 / 弟弟 / 姐姐 / 妹妹</p>
+      <p class="greetings-note-copy">
+        In sentences like <strong>我爱爸爸</strong> and <strong>我爱妈妈</strong>, the family word names who the child loves. <strong>我</strong> names the speaker, and <strong>爱</strong> names the feeling.
+      </p>
+      <p class="greetings-note-copy">
+        <strong>哥哥</strong> and <strong>弟弟</strong> are the brother pair: older brother, then younger brother. <strong>姐姐</strong> and <strong>妹妹</strong> are the sister pair: older sister, then younger sister.
+      </p>
+      <p class="greetings-note-copy">
+        In listening practice, the repeated family word is the anchor. For sisters, <strong>姐姐</strong> and <strong>妹妹</strong> both use <strong>女</strong>, so children can group the two sister words together.
+      </p>
+    `
+  };
+
+  return notes[topic.id] ?? "";
 }
 
 function familyWordForPersonId(personId) {
@@ -2224,8 +2316,7 @@ function resetIntroductionsChallenge(options = {}) {
   state.introductionsChallengeAnswerId = prompt.speakerId;
   state.introductionsChallengePromptId = prompt.id;
   state.introductionsChallengeOptionIds = shuffleArray([...introductionsGameSpeakerIds]);
-  state.lastIntroductionsFeedback =
-    options.feedback ?? "Press play, listen carefully, then tap the child who said the name.";
+  state.lastIntroductionsFeedback = options.feedback ?? "";
 }
 
 function ensureIntroductionsChallenge() {
@@ -2364,8 +2455,7 @@ function resetAgeChallenge(options = {}) {
   state.ageChallengeAnswerId = answer.id;
   state.ageChallengePromptId = answer.id;
   state.ageChallengeOptionIds = shuffleArray([answer.id, ...distractors.map((item) => item.id)]);
-  state.lastAgeFeedback =
-    options.feedback ?? "Press play, listen carefully, then choose the matching age or grade line.";
+  state.lastAgeFeedback = options.feedback ?? "";
 }
 
 function ensureAgeChallenge() {
@@ -2398,6 +2488,8 @@ function handleAgeChallengeGuess(itemId) {
 
   if (itemId === answer.id) {
     state.selectedFocusItemId = answer.id;
+    state.greetingsChallengePickedId = itemId;
+    state.greetingsChallengeResult = "correct";
     if (state.tapAudioEnabled) {
       speak(answer.audio, 0.78);
     }
@@ -2505,7 +2597,7 @@ function resetPoliteMatchGame(options = {}) {
   state.politeMatchedIds = new Set();
   state.politePhraseOrder = shuffleArray(items.map((item) => item.id));
   state.politeMeaningOrder = shuffleArray(items.map((item) => item.id));
-  state.lastPoliteFeedback = options.feedback ?? "Tap a Chinese phrase, then tap the matching meaning.";
+  state.lastPoliteFeedback = options.feedback ?? "";
 }
 
 function ensurePoliteMatchGame() {
@@ -2579,8 +2671,7 @@ function resetPoliteChallenge(options = {}) {
   state.politeChallengeAnswerId = answer.id;
   state.politeChallengePromptId = answer.id;
   state.politeChallengeOptionIds = shuffleArray([answer.id, ...distractors.map((item) => item.id)]);
-  state.lastPoliteFeedback =
-    options.feedback ?? "Press play, listen carefully, then choose the matching polite phrase.";
+  state.lastPoliteFeedback = options.feedback ?? "";
 }
 
 function ensurePoliteChallenge() {
@@ -2641,7 +2732,8 @@ function handleGreetingsChallengePlay() {
   if (state.tapAudioEnabled) {
     speak(item.audio, 0.78);
   }
-  state.lastGreetingsFeedback = `Listen again and find ${item.hanzi}.`;
+  state.greetingsListenFeedback = `Listen again and find ${item.hanzi}.`;
+  state.lastGreetingsFeedback = state.greetingsListenFeedback;
   renderActivityPanel(currentTopic());
 }
 
@@ -2655,21 +2747,25 @@ function handleGreetingsChallengeGuess(itemId) {
 
   if (itemId === answer.id) {
     state.selectedFocusItemId = answer.id;
+    state.greetingsChallengePickedId = itemId;
+    state.greetingsChallengeResult = "correct";
     if (state.tapAudioEnabled) {
       speak(answer.audio, 0.78);
     }
-    state.lastGreetingsFeedback = `Correct! ${answer.hanzi} matches the audio.`;
+    state.greetingsListenFeedback = `Correct! ${answer.hanzi} matches the audio.`;
+    state.lastGreetingsFeedback = state.greetingsListenFeedback;
     renderFocusDisplay(currentFocusItem());
     renderFocusExplorer();
     renderFocusStatus();
-    window.setTimeout(() => {
-      resetGreetingsChallenge();
-      renderActivityPanel(currentTopic());
-    }, 650);
+    renderActivityPanel(currentTopic());
     return;
   }
 
-  state.lastGreetingsFeedback = `Try again. You picked ${picked.hanzi}, but the audio is ${answer.hanzi}.`;
+  state.greetingsChallengePickedId = itemId;
+  state.greetingsChallengeResult = "wrong";
+  state.greetingsChallengeWrongIds = new Set([...state.greetingsChallengeWrongIds, itemId]);
+  state.greetingsListenFeedback = `Try again. You picked ${picked.hanzi}, but the audio is ${answer.hanzi}.`;
+  state.lastGreetingsFeedback = state.greetingsListenFeedback;
   renderActivityPanel(currentTopic());
 }
 
@@ -3622,32 +3718,8 @@ function renderFocusStatus() {
     return;
   }
 
-  if (topic.id === "greetings") {
-    focusStatus.textContent =
-      "Tap a greeting, play a short exchange, then say it back with a wave or smile.";
-    return;
-  }
-
-  if (topic.id === "polite-words") {
-    focusStatus.textContent =
-      "Tap a polite phrase, listen to the exchange, then use it in a real helping or sharing moment.";
-    return;
-  }
-
-  if (topic.id === "introductions") {
-    focusStatus.textContent =
-      "Tap a name phrase, listen to the exchange, then practice saying your own name clearly.";
-    return;
-  }
-
-  if (topic.id === "family") {
+  if (usesLessonTemplate(topic)) {
     focusStatus.textContent = "";
-    return;
-  }
-
-  if (topic.id === "age") {
-    focusStatus.textContent =
-      "Tap an age or grade line, listen to the exchange, then swap in the child's real age or school year.";
     return;
   }
 
@@ -3682,7 +3754,7 @@ function selectFocusItem(itemId, options = {}) {
 
 function renderFocusWordList() {
   if (
-    ["body", "greetings", "polite-words", "introductions", "age", "time-date", "multiplication-rhyme"].includes(currentTopic().id) ||
+    ["body", "time-date", "multiplication-rhyme"].includes(currentTopic().id) ||
     (currentTopic().id === "numbers" && currentNumberStage().telephoneMode)
   ) {
     focusWordList.innerHTML = "";
@@ -3693,16 +3765,17 @@ function renderFocusWordList() {
   focusWordList.classList.remove("is-hidden");
   const topic = currentTopic();
   const items = focusItemsForTopic();
-  focusWordList.classList.toggle("is-family-book-words", topic.id === "family");
+  const isLessonTemplate = usesLessonTemplate(topic);
+  focusWordList.classList.toggle("is-family-book-words", isLessonTemplate);
   const visibleItems =
     topic.id === "numbers"
       ? numberWordListItems(items, currentFocusItem(), currentNumberStage())
-      : topic.id === "family"
-        ? familyBookWordItems()
+      : isLessonTemplate
+        ? bookWordItemsForTopic(topic)
         : items;
   focusWordList.innerHTML = "";
 
-  if (topic.id === "family") {
+  if (isLessonTemplate) {
     const heading = document.createElement("div");
     heading.className = "family-book-words-heading";
     heading.innerHTML = `
@@ -3732,21 +3805,13 @@ function renderFocusWordList() {
     focusWordList.appendChild(button);
   });
 
-  if (topic.id === "family") {
+  const noteMarkup = usefulNoteForTopic(topic);
+  if (noteMarkup) {
     const note = document.createElement("div");
     note.className = "greetings-note-card family-book-words-note";
     note.innerHTML = `
       <p class="body-match-kicker">Useful note</p>
-      <p class="greetings-note-hanzi">爸爸 / 妈妈 / 哥哥 / 弟弟 / 姐姐 / 妹妹</p>
-      <p class="greetings-note-copy">
-        In sentences like <strong>我爱爸爸</strong> and <strong>我爱妈妈</strong>, the family word names who the child loves. <strong>我</strong> names the speaker, and <strong>爱</strong> names the feeling.
-      </p>
-      <p class="greetings-note-copy">
-        <strong>哥哥</strong> and <strong>弟弟</strong> are the brother pair: older brother, then younger brother. <strong>姐姐</strong> and <strong>妹妹</strong> are the sister pair: older sister, then younger sister.
-      </p>
-      <p class="greetings-note-copy">
-        In listening practice, the repeated family word is the anchor. For sisters, <strong>姐姐</strong> and <strong>妹妹</strong> both use <strong>女</strong>, so children can group the two sister words together.
-      </p>
+      ${noteMarkup}
     `;
     focusWordList.appendChild(note);
   }
@@ -4371,26 +4436,22 @@ function renderActivityPanel(topic) {
     activityList.className = "support-list";
     activityList.innerHTML = "";
 
-    const challenge = greetingsGameItems().find((item) => item.id === state.greetingsChallengePromptId);
+    const solvedGreetingIds = state.greetingsPhraseOrder.filter((id) => state.greetingsMatchedIds.has(id));
+    const remainingGreetingPhraseIds = state.greetingsPhraseOrder.filter((id) => !state.greetingsMatchedIds.has(id));
+    const remainingGreetingMeaningIds = state.greetingsMeaningOrder.filter((id) => !state.greetingsMatchedIds.has(id));
     const gameCard = document.createElement("section");
-    gameCard.className = "numbers-game-card";
+    gameCard.className = "family-practice-shell lesson-practice-shell";
     gameCard.innerHTML = `
       <div class="practice-split-board">
         <section class="practice-split-card">
           <div class="numbers-game-top">
             <div>
               <p class="body-match-kicker">Listen and choose</p>
-              <h4>Which greeting did you hear?</h4>
             </div>
-            <button class="small-button is-action-button" type="button" data-greetings-game-new>Try another</button>
+            <button class="small-button is-action-button" type="button" data-greetings-game-play>Play audio</button>
           </div>
           <p class="numbers-game-note">Play the audio, then tap the matching Chinese line.</p>
-          <div class="greetings-game-audio-row">
-            <button class="small-button is-action-button greetings-game-play" type="button" data-greetings-game-play>
-              Play audio
-            </button>
-            <p class="greetings-game-feedback">${state.lastGreetingsFeedback}</p>
-          </div>
+          ${state.greetingsListenFeedback ? `<p class="greetings-game-feedback">${state.greetingsListenFeedback}</p>` : ""}
           <div class="numbers-game-options">
             ${state.greetingsChallengeOptionIds
               .map((id) => {
@@ -4398,8 +4459,17 @@ function renderActivityPanel(topic) {
                 if (!item) {
                   return "";
                 }
+                const isCorrectPick =
+                  state.greetingsChallengePickedId === item.id && state.greetingsChallengeResult === "correct";
+                const isWrongPick = state.greetingsChallengeWrongIds.has(item.id);
+                const resultClass = isCorrectPick ? " is-correct" : isWrongPick ? " is-wrong" : "";
+                const resultMark =
+                  isCorrectPick || isWrongPick
+                    ? `<span class="answer-result-mark" aria-hidden="true">${isCorrectPick ? "✓" : "×"}</span>`
+                    : "";
                 return `
-                  <button class="numbers-game-option greetings-game-option" type="button" data-greetings-game-guess="${item.id}">
+                  <button class="numbers-game-option greetings-game-option family-listen-option${resultClass}" type="button" data-greetings-game-guess="${item.id}">
+                    ${resultMark}
                     <span class="numbers-game-hanzi">${item.hanzi}</span>
                     ${state.showPinyin ? `<span class="numbers-game-pinyin">${item.pinyin}</span>` : ""}
                     ${state.showEnglish ? `<span class="numbers-game-english">${item.english}</span>` : ""}
@@ -4408,71 +4478,90 @@ function renderActivityPanel(topic) {
               })
               .join("")}
           </div>
-          ${
-            challenge
-              ? `
-                <div class="greetings-game-scene-note">
-                  <p class="body-match-kicker">Tip</p>
-                  <p>Think about the scene too: teacher greeting, morning greeting, or goodbye.</p>
-                </div>
-              `
-              : ""
-          }
         </section>
         <section class="practice-split-card">
           <div class="numbers-game-top">
             <div>
               <p class="body-match-kicker">Matching game</p>
-              <h4>Match the greeting</h4>
             </div>
             <button class="small-button is-action-button" type="button" data-greetings-match-new>New mix</button>
           </div>
-          <p class="numbers-game-note">Tap a Chinese greeting on the left, hear it, then tap the matching situation on the right.</p>
-          <div class="greetings-game-feedback">${state.lastGreetingsFeedback}</div>
-          <div class="polite-match-board">
-            <div class="polite-match-column">
-              <p class="body-match-kicker">Chinese</p>
-              ${state.greetingsPhraseOrder
-                .map((id) => {
-                  const item = greetingsGameItems().find((entry) => entry.id === id);
-                  if (!item) {
-                    return "";
-                  }
-                  const selected = state.greetingsSelectedPhraseId === id;
-                  const solved = state.greetingsMatchedIds.has(id);
-                  return `
-                    <button
-                      class="polite-match-card polite-match-card-phrase${selected ? " is-selected" : ""}${solved ? " is-solved" : ""}"
-                      type="button"
-                      data-greetings-match-phrase="${id}"
-                      ${solved ? "disabled" : ""}
-                    >
-                      <span class="numbers-game-hanzi">${item.hanzi}</span>
-                      ${state.showPinyin ? `<span class="numbers-game-pinyin">${item.pinyin}</span>` : ""}
-                    </button>
-                  `;
-                })
-                .join("")}
-            </div>
-            <div class="polite-match-column">
-              <p class="body-match-kicker">Situation</p>
-              ${state.greetingsMeaningOrder
-                .map((id) => {
-                  const solved = state.greetingsMatchedIds.has(id);
-                  return `
-                    <button
-                      class="polite-match-card polite-match-card-meaning${solved ? " is-solved" : ""}"
-                      type="button"
-                      data-greetings-match-meaning="${id}"
-                      ${solved ? "disabled" : ""}
-                    >
-                      <span class="numbers-game-english">${greetingsMeaningLabel(id)}</span>
-                    </button>
-                  `;
-                })
-                .join("")}
-            </div>
+          ${state.greetingsMatchFeedback ? `<div class="greetings-game-feedback">${state.greetingsMatchFeedback}</div>` : ""}
+          <div class="family-match-board-headings">
+            <p class="body-match-kicker">Chinese</p>
+            <p class="body-match-kicker">Situation</p>
           </div>
+          ${
+            solvedGreetingIds.length
+              ? `
+                <div class="family-match-solved-pairs">
+                  ${solvedGreetingIds
+                    .map((id) => {
+                      const item = greetingsGameItems().find((entry) => entry.id === id);
+                      if (!item) {
+                        return "";
+                      }
+                      return `
+                        <article class="family-match-solved-row">
+                          <div class="polite-match-card polite-match-card-phrase family-match-pair-card is-solved">
+                            <span class="answer-result-mark" aria-hidden="true">✓</span>
+                            <span class="numbers-game-hanzi">${item.hanzi}</span>
+                            ${state.showPinyin ? `<span class="numbers-game-pinyin">${item.pinyin}</span>` : ""}
+                          </div>
+                          <div class="polite-match-card family-match-pair-card is-solved">
+                            <span class="answer-result-mark" aria-hidden="true">✓</span>
+                            <span class="numbers-game-english">${greetingsMeaningLabel(id)}</span>
+                          </div>
+                        </article>
+                      `;
+                    })
+                    .join("")}
+                </div>
+              `
+              : ""
+          }
+          ${
+            remainingGreetingPhraseIds.length
+              ? `
+                <div class="polite-match-board family-match-open-board">
+                  <div class="polite-match-column">
+                    ${remainingGreetingPhraseIds
+                      .map((id) => {
+                        const item = greetingsGameItems().find((entry) => entry.id === id);
+                        if (!item) {
+                          return "";
+                        }
+                        const selected = state.greetingsSelectedPhraseId === id;
+                        return `
+                          <button
+                            class="polite-match-card polite-match-card-phrase${selected ? " is-selected" : ""}"
+                            type="button"
+                            data-greetings-match-phrase="${id}"
+                          >
+                            <span class="numbers-game-hanzi">${item.hanzi}</span>
+                            ${state.showPinyin ? `<span class="numbers-game-pinyin">${item.pinyin}</span>` : ""}
+                          </button>
+                        `;
+                      })
+                      .join("")}
+                  </div>
+                  <div class="polite-match-column">
+                    ${remainingGreetingMeaningIds
+                      .map((id) => `
+                        <button
+                          class="polite-match-card polite-match-card-meaning"
+                          type="button"
+                          data-greetings-match-meaning="${id}"
+                        >
+                          <span class="numbers-game-english">${greetingsMeaningLabel(id)}</span>
+                        </button>
+                      `)
+                      .join("")}
+                  </div>
+                </div>
+              `
+              : ""
+          }
           ${
             state.greetingsMatchedIds.size === greetingsGameItems().length
               ? '<button class="small-button is-action-button" type="button" data-greetings-match-play-again>Play again</button>'
@@ -4485,11 +4574,6 @@ function renderActivityPanel(topic) {
 
     activityList.querySelector("[data-greetings-game-play]")?.addEventListener("click", () => {
       handleGreetingsChallengePlay();
-    });
-
-    activityList.querySelector("[data-greetings-game-new]")?.addEventListener("click", () => {
-      resetGreetingsChallenge();
-      renderActivityPanel(topic);
     });
 
     activityList.querySelectorAll("[data-greetings-game-guess]").forEach((button) => {
@@ -4531,9 +4615,8 @@ function renderActivityPanel(topic) {
     activityList.className = "support-list";
     activityList.innerHTML = "";
 
-    const challenge = introductionsPromptById(state.introductionsChallengePromptId);
     const gameCard = document.createElement("section");
-    gameCard.className = "numbers-game-card";
+    gameCard.className = "family-practice-shell";
     gameCard.innerHTML = `
       <div class="practice-split-card">
         <div class="numbers-game-top">
@@ -4541,15 +4624,10 @@ function renderActivityPanel(topic) {
             <p class="body-match-kicker">Simple game</p>
             <h4>Who said their name?</h4>
           </div>
-          <button class="small-button is-action-button" type="button" data-intro-game-new>Try another</button>
+          <button class="small-button is-action-button" type="button" data-intro-game-play>Play audio</button>
         </div>
         <p class="numbers-game-note">Play the audio, then tap the child who introduced themself.</p>
-        <div class="greetings-game-audio-row">
-          <button class="small-button is-action-button greetings-game-play" type="button" data-intro-game-play>
-            Play audio
-          </button>
-          <p class="greetings-game-feedback">${state.lastIntroductionsFeedback}</p>
-        </div>
+        ${state.lastIntroductionsFeedback ? `<p class="greetings-game-feedback">${state.lastIntroductionsFeedback}</p>` : ""}
         <div class="intro-character-grid">
           ${state.introductionsChallengeOptionIds
             .map((id) => {
@@ -4569,27 +4647,12 @@ function renderActivityPanel(topic) {
             })
             .join("")}
         </div>
-        ${
-          challenge
-            ? `
-              <div class="greetings-game-scene-note">
-                <p class="body-match-kicker">Tip</p>
-                <p>All four choices say 我叫 plus their own name. Listen for the last two characters.</p>
-              </div>
-            `
-            : ""
-        }
       </div>
     `;
     activityList.appendChild(gameCard);
 
     activityList.querySelector("[data-intro-game-play]")?.addEventListener("click", () => {
       handleIntroductionsChallengePlay();
-    });
-
-    activityList.querySelector("[data-intro-game-new]")?.addEventListener("click", () => {
-      resetIntroductionsChallenge();
-      renderActivityPanel(topic);
     });
 
     activityList.querySelectorAll("[data-intro-game-guess]").forEach((button) => {
@@ -4610,10 +4673,9 @@ function renderActivityPanel(topic) {
     activityList.className = "support-list";
     activityList.innerHTML = "";
 
-    const challenge = ageGameItems().find((item) => item.id === state.ageChallengePromptId);
     const buildTarget = ageBuildTarget();
     const gameCard = document.createElement("section");
-    gameCard.className = "numbers-game-card";
+    gameCard.className = "family-practice-shell";
     gameCard.innerHTML = `
       <div class="practice-split-board">
         <section class="practice-split-card">
@@ -4622,15 +4684,10 @@ function renderActivityPanel(topic) {
               <p class="body-match-kicker">Listen and choose</p>
               <h4>Which line did you hear?</h4>
             </div>
-            <button class="small-button is-action-button" type="button" data-age-game-new>Try another</button>
+            <button class="small-button is-action-button" type="button" data-age-game-play>Play audio</button>
           </div>
           <p class="numbers-game-note">Play the audio, then tap the matching age or grade question or answer.</p>
-          <div class="greetings-game-audio-row">
-            <button class="small-button is-action-button greetings-game-play" type="button" data-age-game-play>
-              Play audio
-            </button>
-            <p class="greetings-game-feedback">${state.lastAgeFeedback}</p>
-          </div>
+          ${state.lastAgeFeedback ? `<p class="greetings-game-feedback">${state.lastAgeFeedback}</p>` : ""}
           <div class="numbers-game-options">
             ${state.ageChallengeOptionIds
               .map((id) => {
@@ -4648,16 +4705,6 @@ function renderActivityPanel(topic) {
               })
               .join("")}
           </div>
-          ${
-            challenge
-              ? `
-                <div class="greetings-game-scene-note">
-                  <p class="body-match-kicker">Tip</p>
-                  <p>Listen for the question word <strong>几</strong>, the age word <strong>岁</strong>, or the school word <strong>年级</strong>.</p>
-                </div>
-              `
-              : ""
-          }
         </section>
         <section class="practice-split-card">
           <div class="numbers-game-top">
@@ -4704,11 +4751,6 @@ function renderActivityPanel(topic) {
       handleAgeChallengePlay();
     });
 
-    activityList.querySelector("[data-age-game-new]")?.addEventListener("click", () => {
-      resetAgeChallenge();
-      renderActivityPanel(topic);
-    });
-
     activityList.querySelectorAll("[data-age-game-guess]").forEach((button) => {
       button.addEventListener("click", () => {
         handleAgeChallengeGuess(button.dataset.ageGameGuess);
@@ -4742,9 +4784,8 @@ function renderActivityPanel(topic) {
     activityList.className = "support-list";
     activityList.innerHTML = "";
 
-    const challenge = politeGameItems().find((item) => item.id === state.politeChallengePromptId);
     const gameCard = document.createElement("section");
-    gameCard.className = "numbers-game-card";
+    gameCard.className = "family-practice-shell";
     gameCard.innerHTML = `
       <div class="practice-split-board">
         <section class="practice-split-card">
@@ -4753,15 +4794,10 @@ function renderActivityPanel(topic) {
               <p class="body-match-kicker">Listen and choose</p>
               <h4>Which polite phrase did you hear?</h4>
             </div>
-            <button class="small-button is-action-button" type="button" data-polite-quiz-new>Try another</button>
+            <button class="small-button is-action-button" type="button" data-polite-game-play>Play audio</button>
           </div>
           <p class="numbers-game-note">Play the audio, then tap the matching polite phrase.</p>
-          <div class="greetings-game-audio-row">
-            <button class="small-button is-action-button greetings-game-play" type="button" data-polite-game-play>
-              Play audio
-            </button>
-            <p class="greetings-game-feedback">${state.lastPoliteFeedback}</p>
-          </div>
+          ${state.lastPoliteFeedback ? `<p class="greetings-game-feedback">${state.lastPoliteFeedback}</p>` : ""}
           <div class="numbers-game-options">
             ${state.politeChallengeOptionIds
               .map((id) => {
@@ -4779,16 +4815,6 @@ function renderActivityPanel(topic) {
               })
               .join("")}
           </div>
-          ${
-            challenge
-              ? `
-                <div class="greetings-game-scene-note">
-                  <p class="body-match-kicker">Tip</p>
-                  <p>Think about the situation too: thanking, apologizing, or replying kindly.</p>
-                </div>
-              `
-              : ""
-          }
         </section>
         <section class="practice-split-card">
           <div class="numbers-game-top">
@@ -4798,8 +4824,7 @@ function renderActivityPanel(topic) {
             </div>
             <button class="small-button is-action-button" type="button" data-polite-game-new>New mix</button>
           </div>
-          <p class="numbers-game-note">Tap a Chinese phrase on the left, hear it, then tap the matching meaning on the right.</p>
-          <div class="greetings-game-feedback">${state.lastPoliteFeedback}</div>
+          ${state.lastPoliteFeedback ? `<div class="greetings-game-feedback">${state.lastPoliteFeedback}</div>` : ""}
           <div class="polite-match-board">
             <div class="polite-match-column">
               <p class="body-match-kicker">Chinese</p>
@@ -4856,11 +4881,6 @@ function renderActivityPanel(topic) {
 
     activityList.querySelector("[data-polite-game-play]")?.addEventListener("click", () => {
       handlePoliteChallengePlay();
-    });
-
-    activityList.querySelector("[data-polite-quiz-new]")?.addEventListener("click", () => {
-      resetPoliteChallenge();
-      renderActivityPanel(topic);
     });
 
     activityList.querySelectorAll("[data-polite-game-guess]").forEach((button) => {
@@ -5142,7 +5162,6 @@ function renderTelephoneExplorer(stage) {
 }
 
 function renderGreetingsExplorer() {
-  const activeItem = currentFocusItem();
   focusExplorer.innerHTML = `
     <div class="numbers-board">
       <div class="numbers-stage-card">
@@ -5150,72 +5169,42 @@ function renderGreetingsExplorer() {
         <h4>Book theme: school greetings</h4>
         <p>This lesson follows the book page: greet a teacher politely, greet a friend in the morning, and say goodbye.</p>
       </div>
-      <div class="greetings-scene-card">
-        <div class="greetings-practice-grid">
-          ${greetingsPractice
-            .map(
-              (exchange) => `
-                <section class="greetings-exchange">
-                  <div class="greetings-exchange-top">
-                    <div>
-                      <p class="body-match-kicker">Scene ${exchange.number}</p>
-                      <p class="greetings-exchange-prompt">${exchange.prompt}</p>
-                    </div>
-                    <button class="small-button is-action-button" type="button" data-greeting-play-all="${exchange.id}">Play scene</button>
+      <div class="greetings-practice-grid">
+        ${greetingsPractice
+          .map(
+            (exchange) => `
+              <section class="greetings-exchange">
+                <div class="greetings-exchange-top">
+                  <div>
+                    <p class="body-match-kicker">Scene ${exchange.number}</p>
+                    <p class="greetings-exchange-prompt">${exchange.prompt}</p>
                   </div>
-                  <div class="greetings-scene-layout">
-                    <div class="greetings-scene-visual">
-                      <img class="greetings-scene-image" src="${exchange.imagePath}" alt="${exchange.imageAlt}" />
-                    </div>
-                    <div class="greetings-line-stack">
-                      ${exchange.lines
-                        .map(
-                          (line, index) => `
-                            <article class="greetings-line-card">
-                              <div class="telephone-bubble-copy">
-                                <p class="telephone-line-hanzi">${line.hanzi}</p>
-                                ${state.showPinyin ? `<p class="telephone-line-pinyin">${line.pinyin}</p>` : ""}
-                                ${state.showEnglish ? `<p class="telephone-line-english">${line.english}</p>` : ""}
-                              </div>
-                            </article>
-                          `
-                        )
-                        .join("")}
-                    </div>
+                  <button class="small-button is-action-button" type="button" data-greeting-play-all="${exchange.id}">Play scene</button>
+                </div>
+                <div class="greetings-scene-layout">
+                  <div class="greetings-scene-visual">
+                    <img class="greetings-scene-image" src="${exchange.imagePath}" alt="${exchange.imageAlt}" />
                   </div>
-                </section>
-              `
-            )
-            .join("")}
-        </div>
-        <div class="greetings-word-strip">
-          <p class="body-match-kicker">Book words</p>
-          <div class="greetings-word-row">
-            ${focusItemsForTopic()
-              .map(
-                (item) => `
-                  <button
-                    class="telephone-digit-chip${activeItem.id === item.id ? " is-selected" : ""}"
-                    type="button"
-                    data-greeting-word="${item.id}"
-                  >
-                    ${item.hanzi}
-                  </button>
-                `
-              )
-              .join("")}
-          </div>
-          <div class="greetings-note-card">
-            <p class="body-match-kicker">Useful note</p>
-            <p class="greetings-note-hanzi">你 and 您</p>
-            <p class="greetings-note-copy">
-              <strong>你</strong> is the everyday word for “you.” <strong>您</strong> is the polite form, often used for teachers and other adults to show respect.
-            </p>
-            <p class="greetings-note-copy">
-              <strong>老师</strong> means “teacher,” so <strong>李老师，您好！</strong> sounds warm and respectful.
-            </p>
-          </div>
-        </div>
+                  <div class="greetings-line-stack">
+                    ${exchange.lines
+                      .map(
+                        (line, index) => `
+                          <article class="greetings-line-card">
+                            <div class="telephone-bubble-copy">
+                              <p class="telephone-line-hanzi">${line.hanzi}</p>
+                              ${state.showPinyin ? `<p class="telephone-line-pinyin">${line.pinyin}</p>` : ""}
+                              ${state.showEnglish ? `<p class="telephone-line-english">${line.english}</p>` : ""}
+                            </div>
+                          </article>
+                        `
+                      )
+                      .join("")}
+                  </div>
+                </div>
+              </section>
+            `
+          )
+          .join("")}
       </div>
     </div>
   `;
@@ -5229,12 +5218,6 @@ function renderGreetingsExplorer() {
 
       speakSceneLines(exchange.lines);
       focusStatus.textContent = `Listen to the whole scene: ${exchange.lines.map((line) => line.hanzi).join(" ")}`;
-    });
-  });
-
-  focusExplorer.querySelectorAll("[data-greeting-word]").forEach((button) => {
-    button.addEventListener("click", () => {
-      selectFocusItem(button.dataset.greetingWord, { playAudio: true });
     });
   });
 }
@@ -5294,7 +5277,6 @@ function renderTimeDateExplorer() {
 }
 
 function renderPoliteWordsExplorer() {
-  const activeItem = currentFocusItem();
   focusExplorer.innerHTML = `
     <div class="numbers-board">
       <div class="numbers-stage-card">
@@ -5302,76 +5284,42 @@ function renderPoliteWordsExplorer() {
         <h4>Book theme: kind classroom language</h4>
         <p>This topic starts with thank you and sorry, then grows into kind replies and polite requests.</p>
       </div>
-      <div class="greetings-scene-card">
-        <div class="greetings-practice-grid">
-          ${politePractice
-            .map(
-              (exchange) => `
-                <section class="greetings-exchange">
-                  <div class="greetings-exchange-top">
-                    <div>
-                      <p class="body-match-kicker">Scene ${exchange.number}</p>
-                      <p class="greetings-exchange-prompt">${exchange.prompt}</p>
-                    </div>
-                    <button class="small-button is-action-button" type="button" data-polite-play-all="${exchange.id}">Play scene</button>
+      <div class="greetings-practice-grid">
+        ${politePractice
+          .map(
+            (exchange) => `
+              <section class="greetings-exchange">
+                <div class="greetings-exchange-top">
+                  <div>
+                    <p class="body-match-kicker">Scene ${exchange.number}</p>
+                    <p class="greetings-exchange-prompt">${exchange.prompt}</p>
                   </div>
-                  <div class="greetings-scene-layout">
-                    <div class="greetings-scene-visual">
-                      <img class="greetings-scene-image" src="${exchange.imagePath}" alt="${exchange.imageAlt}" />
-                    </div>
-                    <div class="greetings-line-stack">
-                      ${exchange.lines
-                        .map(
-                          (line, index) => `
-                            <article class="greetings-line-card">
-                              <div class="telephone-bubble-copy">
-                                <p class="telephone-line-hanzi">${line.hanzi}</p>
-                                ${state.showPinyin ? `<p class="telephone-line-pinyin">${line.pinyin}</p>` : ""}
-                                ${state.showEnglish ? `<p class="telephone-line-english">${line.english}</p>` : ""}
-                              </div>
-                            </article>
-                          `
-                        )
-                        .join("")}
-                    </div>
+                  <button class="small-button is-action-button" type="button" data-polite-play-all="${exchange.id}">Play scene</button>
+                </div>
+                <div class="greetings-scene-layout">
+                  <div class="greetings-scene-visual">
+                    <img class="greetings-scene-image" src="${exchange.imagePath}" alt="${exchange.imageAlt}" />
                   </div>
-                </section>
-              `
-            )
-            .join("")}
-        </div>
-        <div class="greetings-word-strip">
-          <p class="body-match-kicker">Book words</p>
-          <div class="greetings-word-row">
-            ${focusItemsForTopic()
-              .map(
-                (item) => `
-                  <button
-                    class="telephone-digit-chip${activeItem.id === item.id ? " is-selected" : ""}"
-                    type="button"
-                    data-polite-word="${item.id}"
-                  >
-                    ${item.hanzi}
-                  </button>
-                `
-              )
-              .join("")}
-          </div>
-          <div class="greetings-note-card">
-            <p class="body-match-kicker">Useful note</p>
-            <p class="greetings-note-hanzi">谢谢 / 不客气 / 对不起 / 没关系</p>
-            <p class="greetings-note-copy">
-              <strong>谢谢你</strong> means “thank you,” and <strong>不客气</strong> is the kind reply: “you’re welcome.”
-            </p>
-            <p class="greetings-note-copy">
-              <strong>对不起</strong> means “I’m sorry,” and <strong>没关系</strong> is the calm reply: “never mind” or “that’s okay.”
-            </p>
-            <p class="greetings-note-copy">
-              <strong>请</strong> helps children sound polite in requests and classroom directions, for example:
-              <strong>请安静。</strong>
-            </p>
-          </div>
-        </div>
+                  <div class="greetings-line-stack">
+                    ${exchange.lines
+                      .map(
+                        (line, index) => `
+                          <article class="greetings-line-card">
+                            <div class="telephone-bubble-copy">
+                              <p class="telephone-line-hanzi">${line.hanzi}</p>
+                              ${state.showPinyin ? `<p class="telephone-line-pinyin">${line.pinyin}</p>` : ""}
+                              ${state.showEnglish ? `<p class="telephone-line-english">${line.english}</p>` : ""}
+                            </div>
+                          </article>
+                        `
+                      )
+                      .join("")}
+                  </div>
+                </div>
+              </section>
+            `
+          )
+          .join("")}
       </div>
     </div>
   `;
@@ -5387,16 +5335,9 @@ function renderPoliteWordsExplorer() {
       focusStatus.textContent = `Listen to the whole scene: ${exchange.lines.map((line) => line.hanzi).join(" ")}`;
     });
   });
-
-  focusExplorer.querySelectorAll("[data-polite-word]").forEach((button) => {
-    button.addEventListener("click", () => {
-      selectFocusItem(button.dataset.politeWord, { playAudio: true });
-    });
-  });
 }
 
 function renderIntroductionsExplorer() {
-  const activeItem = currentFocusItem();
   focusExplorer.innerHTML = `
     <div class="numbers-board">
       <div class="numbers-stage-card">
@@ -5404,97 +5345,64 @@ function renderIntroductionsExplorer() {
         <h4>Book theme: asking and saying names</h4>
         <p>This lesson mirrors Book 1A Lesson 6: say hello, ask a name, answer with 我叫..., and repeat the new friend's name.</p>
       </div>
-      <div class="greetings-scene-card">
-        <div class="greetings-practice-grid">
-          ${introductionsPractice
-            .map(
-              (exchange) => `
-                <section class="greetings-exchange">
-                  <div class="greetings-exchange-top">
-                    <div>
-                      <p class="body-match-kicker">Scene ${exchange.number}</p>
-                      <p class="greetings-exchange-prompt">${exchange.prompt}</p>
-                    </div>
-                    <button class="small-button is-action-button" type="button" data-intro-play-all="${exchange.id}">Play scene</button>
+      <div class="greetings-practice-grid">
+        ${introductionsPractice
+          .map(
+            (exchange) => `
+              <section class="greetings-exchange">
+                <div class="greetings-exchange-top">
+                  <div>
+                    <p class="body-match-kicker">Scene ${exchange.number}</p>
+                    <p class="greetings-exchange-prompt">${exchange.prompt}</p>
                   </div>
-                  <div class="greetings-scene-layout introductions-scene-layout">
-                    <div class="intro-scene-cast">
-                      ${exchange.cast
-                        .map((kidId) => {
-                          const kid = illustratedKids[kidId];
-                          if (!kid) {
-                            return "";
-                          }
-                          return `
-                            <button class="intro-cast-card" type="button" data-intro-cast="${kid.id}">
-                              <div class="intro-cast-portrait">
-                                <img class="intro-cast-image" src="${kid.path}" alt="${kid.label}" />
-                              </div>
-                              <span class="intro-cast-hanzi">${kid.hanziName}</span>
-                              <span class="intro-cast-label">${kid.label}</span>
-                            </button>
-                          `;
-                        })
-                        .join("")}
-                    </div>
-                    <div class="greetings-line-stack">
-                      ${exchange.lines
-                        .map(
-                          (line, index) => `
-                            <article class="greetings-line-card intro-line-card">
-                              <div class="intro-line-copy">
-                                <div class="intro-line-speaker">
-                                  <div class="intro-line-portrait" aria-hidden="true">
-                                    <img class="intro-line-image" src="${illustratedKids[line.speakerId].path}" alt="" />
-                                  </div>
-                                  <p class="body-match-kicker">${illustratedKids[line.speakerId].hanziName}</p>
+                  <button class="small-button is-action-button" type="button" data-intro-play-all="${exchange.id}">Play scene</button>
+                </div>
+                <div class="greetings-scene-layout introductions-scene-layout">
+                  <div class="intro-scene-cast">
+                    ${exchange.cast
+                      .map((kidId) => {
+                        const kid = illustratedKids[kidId];
+                        if (!kid) {
+                          return "";
+                        }
+                        return `
+                          <button class="intro-cast-card" type="button" data-intro-cast="${kid.id}">
+                            <div class="intro-cast-portrait">
+                              <img class="intro-cast-image" src="${kid.path}" alt="${kid.label}" />
+                            </div>
+                            <span class="intro-cast-hanzi">${kid.hanziName}</span>
+                            <span class="intro-cast-label">${kid.label}</span>
+                          </button>
+                        `;
+                      })
+                      .join("")}
+                  </div>
+                  <div class="greetings-line-stack">
+                    ${exchange.lines
+                      .map(
+                        (line, index) => `
+                          <article class="greetings-line-card intro-line-card">
+                            <div class="intro-line-copy">
+                              <div class="intro-line-speaker">
+                                <div class="intro-line-portrait" aria-hidden="true">
+                                  <img class="intro-line-image" src="${illustratedKids[line.speakerId].path}" alt="" />
                                 </div>
-                                <p class="telephone-line-hanzi">${line.hanzi}</p>
-                                ${state.showPinyin ? `<p class="telephone-line-pinyin">${line.pinyin}</p>` : ""}
-                                ${state.showEnglish ? `<p class="telephone-line-english">${line.english}</p>` : ""}
+                                <p class="body-match-kicker">${illustratedKids[line.speakerId].hanziName}</p>
                               </div>
-                            </article>
-                          `
-                        )
-                        .join("")}
-                    </div>
+                              <p class="telephone-line-hanzi">${line.hanzi}</p>
+                              ${state.showPinyin ? `<p class="telephone-line-pinyin">${line.pinyin}</p>` : ""}
+                              ${state.showEnglish ? `<p class="telephone-line-english">${line.english}</p>` : ""}
+                            </div>
+                          </article>
+                        `
+                      )
+                      .join("")}
                   </div>
-                </section>
-              `
-            )
-            .join("")}
-        </div>
-        <div class="greetings-word-strip">
-          <p class="body-match-kicker">Book words</p>
-          <div class="greetings-word-row">
-            ${focusItemsForTopic()
-              .map(
-                (item) => `
-                  <button
-                    class="telephone-digit-chip${activeItem.id === item.id ? " is-selected" : ""}"
-                    type="button"
-                    data-intro-word="${item.id}"
-                  >
-                    ${item.hanzi}
-                  </button>
-                `
-              )
-              .join("")}
-          </div>
-          <div class="greetings-note-card">
-            <p class="body-match-kicker">Useful note</p>
-            <p class="greetings-note-hanzi">我 / 叫 / 什么 / 名字</p>
-            <p class="greetings-note-copy">
-              <strong>我</strong> means “I” or “me,” and <strong>叫</strong> is used in beginner Chinese to say what someone is called.
-            </p>
-            <p class="greetings-note-copy">
-              <strong>你叫什么名字？</strong> means “What is your name?” and <strong>我叫安安。</strong> means “My name is Anan.”
-            </p>
-            <p class="greetings-note-copy">
-              Let children pause after <strong>我叫</strong> and say their own name out loud.
-            </p>
-          </div>
-        </div>
+                </div>
+              </section>
+            `
+          )
+          .join("")}
       </div>
     </div>
   `;
@@ -5521,16 +5429,9 @@ function renderIntroductionsExplorer() {
       focusStatus.textContent = `Practice saying ${item.hanzi}`;
     });
   });
-
-  focusExplorer.querySelectorAll("[data-intro-word]").forEach((button) => {
-    button.addEventListener("click", () => {
-      selectFocusItem(button.dataset.introWord, { playAudio: true });
-    });
-  });
 }
 
 function renderAgeExplorer() {
-  const activeItem = currentFocusItem();
   focusExplorer.innerHTML = `
     <div class="numbers-board">
       <div class="numbers-stage-card">
@@ -5538,75 +5439,42 @@ function renderAgeExplorer() {
         <h4>Book theme: age and school year</h4>
         <p>This lesson starts with <strong>你几岁？</strong> / <strong>我...岁。</strong> and then adds <strong>你上几年级？</strong> / <strong>我上一年级。</strong></p>
       </div>
-      <div class="greetings-scene-card">
-        <div class="greetings-practice-grid">
-          ${agePractice
-            .map(
-              (exchange) => `
-                <section class="greetings-exchange">
-                  <div class="greetings-exchange-top">
-                    <div>
-                      <p class="body-match-kicker">Scene ${exchange.number}</p>
-                      <p class="greetings-exchange-prompt">${exchange.prompt}</p>
-                    </div>
-                    <button class="small-button is-action-button" type="button" data-age-play-all="${exchange.id}">Play scene</button>
+      <div class="greetings-practice-grid">
+        ${agePractice
+          .map(
+            (exchange) => `
+              <section class="greetings-exchange">
+                <div class="greetings-exchange-top">
+                  <div>
+                    <p class="body-match-kicker">Scene ${exchange.number}</p>
+                    <p class="greetings-exchange-prompt">${exchange.prompt}</p>
                   </div>
-                  <div class="greetings-scene-layout">
-                    <div class="greetings-scene-visual">
-                      <img class="greetings-scene-image" src="${exchange.imagePath}" alt="${exchange.imageAlt}" />
-                    </div>
-                    <div class="greetings-line-stack">
-                      ${exchange.lines
-                        .map(
-                          (line, index) => `
-                            <article class="greetings-line-card">
-                              <div class="telephone-bubble-copy">
-                                <p class="telephone-line-hanzi">${line.hanzi}</p>
-                                ${state.showPinyin ? `<p class="telephone-line-pinyin">${line.pinyin}</p>` : ""}
-                                ${state.showEnglish ? `<p class="telephone-line-english">${line.english}</p>` : ""}
-                              </div>
-                            </article>
-                          `
-                        )
-                        .join("")}
-                    </div>
+                  <button class="small-button is-action-button" type="button" data-age-play-all="${exchange.id}">Play scene</button>
+                </div>
+                <div class="greetings-scene-layout">
+                  <div class="greetings-scene-visual">
+                    <img class="greetings-scene-image" src="${exchange.imagePath}" alt="${exchange.imageAlt}" />
                   </div>
-                </section>
-              `
-            )
-            .join("")}
-        </div>
-        <div class="greetings-word-strip">
-          <p class="body-match-kicker">Book words</p>
-          <div class="greetings-word-row">
-            ${focusItemsForTopic()
-              .map(
-                (item) => `
-                  <button
-                    class="telephone-digit-chip${activeItem.id === item.id ? " is-selected" : ""}"
-                    type="button"
-                    data-age-word="${item.id}"
-                  >
-                    ${item.hanzi}
-                  </button>
-                `
-              )
-              .join("")}
-          </div>
-          <div class="greetings-note-card">
-            <p class="body-match-kicker">Useful note</p>
-            <p class="greetings-note-hanzi">你几岁？ / 我...岁。 / 你上几年级？ / 我上一年级。</p>
-            <p class="greetings-note-copy">
-              <strong>你几岁？</strong> literally means “you how-many years old?” Here, <strong>几</strong> asks for a small number, and <strong>岁</strong> is the common word for a child's age.
-            </p>
-            <p class="greetings-note-copy">
-              The answer pattern stays simple: <strong>我 + number + 岁</strong>. So <strong>我五岁</strong> is “I am five years old,” <strong>我六岁</strong> is “I am six years old,” and <strong>我七岁</strong> is “I am seven years old.”
-            </p>
-            <p class="greetings-note-copy">
-              <strong>你上几年级？</strong> asks what school year someone is in, and <strong>我上一年级。</strong> means “I am in first grade.” This topic links naturally with earlier self-introduction language: <strong>你好！你叫什么名字？我叫安安。你几岁？我五岁。你上几年级？我上一年级。</strong>
-            </p>
-          </div>
-        </div>
+                  <div class="greetings-line-stack">
+                    ${exchange.lines
+                      .map(
+                        (line, index) => `
+                          <article class="greetings-line-card">
+                            <div class="telephone-bubble-copy">
+                              <p class="telephone-line-hanzi">${line.hanzi}</p>
+                              ${state.showPinyin ? `<p class="telephone-line-pinyin">${line.pinyin}</p>` : ""}
+                              ${state.showEnglish ? `<p class="telephone-line-english">${line.english}</p>` : ""}
+                            </div>
+                          </article>
+                        `
+                      )
+                      .join("")}
+                  </div>
+                </div>
+              </section>
+            `
+          )
+          .join("")}
       </div>
     </div>
   `;
@@ -5620,12 +5488,6 @@ function renderAgeExplorer() {
 
       speakSceneLines(exchange.lines);
       focusStatus.textContent = `Listen to the whole scene: ${exchange.lines.map((line) => line.hanzi).join(" ")}`;
-    });
-  });
-
-  focusExplorer.querySelectorAll("[data-age-word]").forEach((button) => {
-    button.addEventListener("click", () => {
-      selectFocusItem(button.dataset.ageWord, { playAudio: true });
     });
   });
 }
@@ -5932,7 +5794,7 @@ function renderTopicDetail() {
   focusDisplay.classList.toggle(
     "is-hidden",
     topic.id === "body" ||
-      topic.id === "family" ||
+      usesLessonTemplate(topic) ||
       topic.id === "numbers" ||
       topic.id === "multiplication-rhyme" ||
       (topic.id === "numbers" && currentNumberStage().telephoneMode)
