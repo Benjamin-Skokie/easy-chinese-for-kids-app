@@ -141,17 +141,14 @@ const topicData = [
     iconAccent: "#d9e49a",
     iconTheme: "introductions",
     focus: {
-      hanzi: "我叫安安。",
-      pinyin: "wǒ jiào Ān'ān.",
-      english: "My name is Anan.",
-      audio: "我叫安安"
+      hanzi: "我叫……",
+      pinyin: "wǒ jiào...",
+      english: "My name is...",
+      audio: "我叫"
     },
     focusItems: [
       { id: "ask-name", hanzi: "你叫什么名字？", pinyin: "nǐ jiào shén me míng zi?", english: "What is your name?", audio: "你叫什么名字" },
-      { id: "my-name-anan", hanzi: "我叫安安。", pinyin: "wǒ jiào Ān'ān.", english: "My name is Anan.", audio: "我叫安安" },
-      { id: "my-name-tiantian", hanzi: "我叫天天。", pinyin: "wǒ jiào Tiān tiān.", english: "My name is Tiantian.", audio: "我叫天天" },
-      { id: "my-name-sisi", hanzi: "我叫思思。", pinyin: "wǒ jiào Sī si.", english: "My name is Sisi.", audio: "我叫思思" },
-      { id: "my-name-lele", hanzi: "我叫乐乐。", pinyin: "wǒ jiào Lè le.", english: "My name is Lele.", audio: "我叫乐乐" },
+      { id: "my-name", hanzi: "我叫……", pinyin: "wǒ jiào...", english: "My name is...", audio: "我叫" },
       { id: "me-word", hanzi: "我", pinyin: "wǒ", english: "I; me", audio: "我" },
       { id: "call-word", hanzi: "叫", pinyin: "jiào", english: "to be called", audio: "叫" },
       { id: "what-word", hanzi: "什么", pinyin: "shén me", english: "what", audio: "什么" },
@@ -162,11 +159,43 @@ const topicData = [
       "Practice the whole mini-conversation first: 你好, 你叫什么名字? 我叫... Then pause after 我叫 and let the child fill in their own name.",
     cultureGuide:
       "Children connect strongly to names and faces, so recurring kid characters help this lesson feel social instead of abstract.",
-    activities: ["Tap to hear", "Play the conversation", "Say your own name", "Who said their name?"],
+    activities: ["Tap to hear", "Play the conversation", "Say your own name", "Build the sentence"],
     steps: [
       { book: "1A", lesson: 6, title: "What's your name?", note: "Learn a first self-introduction pattern." },
-      { book: "2A", lesson: 3, title: "Good friends", note: "Use names and social language in a wider context." },
-      { book: "3A", lesson: 5, title: "Nationality", note: "Add more identity language." }
+      { book: "2A", lesson: 3, title: "Good friends", note: "Use names and social language in a wider context." }
+    ]
+  },
+  {
+    id: "identity",
+    title: "Countries & Languages",
+    summary: "Say where someone is from and the languages they can speak.",
+    progressLabel: "3A to 4A",
+    iconText: "中国",
+    iconColor: "#587d9c",
+    iconAccent: "#e5bf70",
+    iconTheme: "identity",
+    focus: {
+      hanzi: "我是中国人。",
+      pinyin: "wǒ shì Zhōng guó rén.",
+      english: "I am Chinese.",
+      audio: "我是中国人"
+    },
+    focusItems: [
+      { id: "ask-country", hanzi: "你是哪国人？", pinyin: "nǐ shì nǎ guó rén?", english: "What country are you from?", audio: "你是哪国人" },
+      { id: "china", hanzi: "我是中国人。", pinyin: "wǒ shì Zhōng guó rén.", english: "I am Chinese.", audio: "我是中国人" },
+      { id: "usa", hanzi: "我是美国人。", pinyin: "wǒ shì Měi guó rén.", english: "I am American.", audio: "我是美国人" },
+      { id: "uk", hanzi: "我是英国人。", pinyin: "wǒ shì Yīng guó rén.", english: "I am British.", audio: "我是英国人" },
+      { id: "ask-language", hanzi: "你会说汉语吗？", pinyin: "nǐ huì shuō Hànyǔ ma?", english: "Can you speak Chinese?", audio: "你会说汉语吗" },
+      { id: "speak-chinese", hanzi: "我会说汉语。", pinyin: "wǒ huì shuō Hànyǔ.", english: "I can speak Chinese.", audio: "我会说汉语" },
+      { id: "speak-english", hanzi: "我会说英语。", pinyin: "wǒ huì shuō Yīngyǔ.", english: "I can speak English.", audio: "我会说英语" }
+    ],
+    interactiveScene: "identity-scenes",
+    parentGuide: "Use the child's real country and languages. Start with one short answer, then switch the country or language together.",
+    cultureGuide: "Country and language words work best as respectful descriptions of people, not as labels for how anyone should look or act.",
+    activities: ["Tap to hear", "Meet classmates", "Match country and flag", "Say what I speak"],
+    steps: [
+      { book: "3A", lesson: 5, title: "Nationality", note: "Ask and say where someone is from." },
+      { book: "4A", lesson: 2, title: "Languages", note: "Say which languages someone can speak." }
     ]
   },
   {
@@ -365,8 +394,8 @@ const topicData = [
   },
   {
     id: "time-date",
-    title: "Time & Date",
-    summary: "A progressive branch that grows from week and clock concepts into dates and daily time.",
+    title: "Time & Routines",
+    summary: "Read the clock, then use time in everyday routines.",
     progressLabel: "2B to 4A",
     iconText: "时间",
     iconColor: "#517b8d",
@@ -473,14 +502,68 @@ const topicData = [
       "This topic works best with routines. Tie it to breakfast time, school time, bedtime, and birthdays.",
     cultureGuide:
       "Time and date language pairs naturally with birthday and holiday content later.",
-    activities: ["Tap to hear", "Clock matching", "Listen and choose", "Routine ordering"],
+    activities: ["Tap to hear", "Read the clock", "Daily routines"],
     steps: [
-      { book: "2B", lesson: 1, title: "Today is Monday", note: "Begin with days of the week." },
       { book: "2B", lesson: 2, title: "What time is it?", note: "Add telling time." },
-      { book: "3A", lesson: 2, title: "Date", note: "Expand into date language." },
-      { book: "3A", lesson: 3, title: "Happy birthday!", note: "Connect date language to birthdays." },
       { book: "4A", lesson: 3, title: "Tell the time", note: "Revisit time in a more functional way." },
       { book: "4A", lesson: 4, title: "Daily routine", note: "Use time language in everyday life." }
+    ]
+  },
+  {
+    id: "weekdays",
+    title: "Days of the Week",
+    summary: "Learn the seven days through familiar school and home moments.",
+    progressLabel: "2B Lesson 1",
+    iconText: "星期",
+    iconColor: "#6f7fa4",
+    focus: {
+      hanzi: "今天星期几？",
+      pinyin: "jīn tiān xīng qī jǐ?",
+      english: "What day is it today?",
+      audio: "今天星期几"
+    },
+    focusItems: [
+      { id: "monday", hanzi: "星期一", pinyin: "xīng qī yī", english: "Monday", audio: "星期一" },
+      { id: "tuesday", hanzi: "星期二", pinyin: "xīng qī èr", english: "Tuesday", audio: "星期二" },
+      { id: "wednesday", hanzi: "星期三", pinyin: "xīng qī sān", english: "Wednesday", audio: "星期三" },
+      { id: "thursday", hanzi: "星期四", pinyin: "xīng qī sì", english: "Thursday", audio: "星期四" },
+      { id: "friday", hanzi: "星期五", pinyin: "xīng qī wǔ", english: "Friday", audio: "星期五" },
+      { id: "saturday", hanzi: "星期六", pinyin: "xīng qī liù", english: "Saturday", audio: "星期六" },
+      { id: "sunday", hanzi: "星期天", pinyin: "xīng qī tiān", english: "Sunday", audio: "星期天" }
+    ],
+    interactiveScene: "weekdays",
+    parentGuide: "Use the real day of the week at breakfast or on the way to school, then repeat it together.",
+    cultureGuide: "A weekly rhythm gives children an easy, useful way to connect school, family routines, and calendar language.",
+    activities: ["Tap to hear", "Say today's day", "Put the week in order"],
+    steps: [{ book: "2B", lesson: 1, title: "Today is Monday", note: "Learn the days of the week." }]
+  },
+  {
+    id: "dates",
+    title: "Dates & Months",
+    summary: "Say a month and day, then connect dates to birthdays and events.",
+    progressLabel: "3A Lessons 2-3",
+    iconText: "日期",
+    iconColor: "#c48d46",
+    focus: {
+      hanzi: "几月几号？",
+      pinyin: "jǐ yuè jǐ hào?",
+      english: "What month and day?",
+      audio: "几月几号"
+    },
+    focusItems: [
+      { id: "date-question", hanzi: "几月几号？", pinyin: "jǐ yuè jǐ hào?", english: "What month and day?", audio: "几月几号" },
+      { id: "new-year", hanzi: "一月一号", pinyin: "yī yuè yī hào", english: "January first", audio: "一月一号" },
+      { id: "field-trip", hanzi: "五月二十号", pinyin: "wǔ yuè èr shí hào", english: "May twentieth", audio: "五月二十号" },
+      { id: "christmas", hanzi: "十二月二十五号", pinyin: "shí èr yuè èr shí wǔ hào", english: "December twenty-fifth", audio: "十二月二十五号" },
+      { id: "birthday", hanzi: "生日快乐！", pinyin: "shēng rì kuài lè!", english: "Happy birthday!", audio: "生日快乐" }
+    ],
+    interactiveScene: "dates",
+    parentGuide: "Start with family birthdays or a coming event. Point to a calendar while saying the month and day together.",
+    cultureGuide: "Dates are most memorable when connected to a child's own celebrations, school events, and seasonal activities.",
+    activities: ["Tap to hear", "Read a calendar", "Say a birthday date"],
+    steps: [
+      { book: "3A", lesson: 2, title: "Date", note: "Say month and day." },
+      { book: "3A", lesson: 3, title: "Happy birthday!", note: "Use dates for birthdays and celebrations." }
     ]
   },
   {
@@ -579,6 +662,16 @@ const topicData = [
       english: "I can get dressed.",
       audio: "我会穿衣服"
     },
+    focusItems: [
+      { id: "shirt", hanzi: "T恤", pinyin: "T xù", english: "T-shirt", audio: "T恤" },
+      { id: "pants", hanzi: "裤子", pinyin: "kù zi", english: "trousers; pants", audio: "裤子" },
+      { id: "dress", hanzi: "裙子", pinyin: "qún zi", english: "dress; skirt", audio: "裙子" },
+      { id: "shoes", hanzi: "鞋子", pinyin: "xié zi", english: "shoes", audio: "鞋子" },
+      { id: "hat", hanzi: "帽子", pinyin: "mào zi", english: "hat", audio: "帽子" },
+      { id: "jacket", hanzi: "外套", pinyin: "wài tào", english: "jacket; coat", audio: "外套" },
+      { id: "gloves", hanzi: "手套", pinyin: "shǒu tào", english: "gloves", audio: "手套" }
+    ],
+    interactiveScene: "clothes-scenes",
     parentGuide:
       "Use getting dressed as the practice moment. Repeating the words during a real routine makes them stick.",
     cultureGuide:
@@ -820,83 +913,139 @@ const familyGameItemIds = [
   "younger-sister-word"
 ];
 
+const identityCountries = [
+  { id: "china", label: "China", hanzi: "中国", nationality: "中国人", pinyin: "Zhōng guó rén", asset: "assets/illustrated-flags/china.webp", focusItemId: "china", response: { hanzi: "我是中国人，我会说汉语。", pinyin: "wǒ shì Zhōng guó rén, wǒ huì shuō Hànyǔ.", english: "I am Chinese. I can speak Chinese.", audio: "我是中国人，我会说汉语" } },
+  { id: "usa", label: "United States", hanzi: "美国", nationality: "美国人", pinyin: "Měi guó rén", asset: "assets/illustrated-flags/united-states.webp", focusItemId: "usa", response: { hanzi: "我是美国人，我会说英语。", pinyin: "wǒ shì Měi guó rén, wǒ huì shuō Yīngyǔ.", english: "I am American. I can speak English.", audio: "我是美国人，我会说英语" } },
+  { id: "uk", label: "United Kingdom", hanzi: "英国", nationality: "英国人", pinyin: "Yīng guó rén", asset: "assets/illustrated-flags/united-kingdom.webp", focusItemId: "uk", response: { hanzi: "我是英国人，我会说英语。", pinyin: "wǒ shì Yīng guó rén, wǒ huì shuō Yīngyǔ.", english: "I am British. I can speak English.", audio: "我是英国人，我会说英语" } }
+];
+
+const identityQuestion = { hanzi: "你是哪国人？", pinyin: "nǐ shì nǎ guó rén?", english: "What country are you from?", audio: "你是哪国人" };
+
+const identityConversation = {
+  imagePath: "assets/illustrated-identity/classmates-speak-different-languages.webp",
+  imageAlt: "Two classmates talking about where they are from and the languages they speak",
+  lines: [
+    { hanzi: "我是中国人，我会说汉语。", pinyin: "wǒ shì Zhōng guó rén, wǒ huì shuō Hànyǔ.", english: "I am Chinese. I can speak Chinese.", audio: "我是中国人，我会说汉语" },
+    { hanzi: "我是美国人，我会说英语。", pinyin: "wǒ shì Měi guó rén, wǒ huì shuō Yīngyǔ.", english: "I am American. I can speak English.", audio: "我是美国人，我会说英语" }
+  ]
+};
+
 const sceneSpeechRate = 0.64;
 const sceneLinePauseMs = 280;
+
+const timeDateWeekItems = [
+  ["monday", "星期一", "xīng qī yī", "Monday", "Monday.webp"],
+  ["tuesday", "星期二", "xīng qī èr", "Tuesday", "Tuesday.webp"],
+  ["wednesday", "星期三", "xīng qī sān", "Wednesday", "Wednesday.webp"],
+  ["thursday", "星期四", "xīng qī sì", "Thursday", "Thursday.webp"],
+  ["friday", "星期五", "xīng qī wǔ", "Friday", "Friday.webp"],
+  ["saturday", "星期六", "xīng qī liù", "Saturday", "Saturday.webp"],
+  ["sunday", "星期天", "xīng qī tiān", "Sunday", "Sunday.webp"]
+].map(([id, hanzi, pinyin, english, file]) => ({ id, hanzi, pinyin, english, audio: hanzi, imagePath: `assets/illustrated-day-of-week/${file}` }));
+
+const timeDateClockItems = [
+  [1, "一点", "yī diǎn"], [2, "两点", "liǎng diǎn"], [3, "三点", "sān diǎn"], [4, "四点", "sì diǎn"],
+  [5, "五点", "wǔ diǎn"], [6, "六点", "liù diǎn"], [7, "七点", "qī diǎn"], [8, "八点", "bā diǎn"],
+  [9, "九点", "jiǔ diǎn"], [10, "十点", "shí diǎn"], [11, "十一点", "shí yī diǎn"], [12, "十二点", "shí èr diǎn"]
+].map(([hour, hanzi, pinyin]) => ({ id: `clock-${hour}`, hanzi, pinyin, english: `${hour} o'clock`, audio: hanzi, imagePath: `assets/illustrated-clocks/${hour}oclock.webp` }));
+
+const timeDateDateItems = [
+  { id: "date-board", hanzi: "几月几号？", pinyin: "jǐ yuè jǐ hào?", english: "What month and day?", context: "看日历，可以知道几月几号。", audio: "几月几号", imagePath: "assets/illustrated-dates/calendar-example-dates-board.webp" },
+  { id: "new-year", hanzi: "一月一号", pinyin: "yī yuè yī hào", english: "January first", context: "一月一号是新年。", audio: "一月一号是新年", imagePath: "assets/illustrated-dates/january-first-new-year-calendar.webp" },
+  { id: "field-trip", hanzi: "五月二十号", pinyin: "wǔ yuè èr shí hào", english: "May twentieth", context: "五月二十号，我们去春游。", audio: "五月二十号我们去春游", imagePath: "assets/illustrated-dates/may-twentieth-field-trip-calendar.webp" },
+  { id: "christmas", hanzi: "十二月二十五号", pinyin: "shí èr yuè èr shí wǔ hào", english: "December twenty-fifth", context: "十二月二十五号是圣诞节。", audio: "十二月二十五号是圣诞节", imagePath: "assets/illustrated-dates/december-twenty-fifth-christmas-calendar.webp" },
+  { id: "birthday", hanzi: "生日快乐！", pinyin: "shēng rì kuài lè!", english: "Happy birthday!", context: "今天是我的生日。生日快乐！", audio: "今天是我的生日生日快乐", imagePath: "assets/illustrated-dates/birthday-party-scene.webp" }
+];
+
+const timeDateMonthItems = [
+  ["January", "一月", "yī yuè", "一月是一年的第一个月。", "yī yuè shì yī nián de dì yī ge yuè.", "January is the first month of the year."],
+  ["February", "二月", "èr yuè", "二月，中国新年。", "èr yuè, Zhōng guó xīn nián.", "February: Chinese New Year."],
+  ["March", "三月", "sān yuè", "三月，圣帕特里克节。", "sān yuè, Shèng pà tè lǐ kè Jié.", "March: St. Patrick's Day."],
+  ["April", "四月", "sì yuè", "四月，树开始发芽。", "sì yuè, shù kāi shǐ fā yá.", "In April, trees start to bud."],
+  ["May", "五月", "wǔ yuè", "五月有母亲节。", "wǔ yuè yǒu Mǔ qīn Jié.", "Mother's Day is in May."],
+  ["June", "六月", "liù yuè", "六月，暑假快到了。", "liù yuè, shǔ jià kuài dào le.", "In June, summer vacation is coming soon."],
+  ["July", "七月", "qī yuè", "七月，去海边玩。", "qī yuè, qù hǎi biān wán.", "In July, go to the beach."],
+  ["August", "八月", "bā yuè", "八月，去度假。", "bā yuè, qù dù jià.", "In August, go on vacation."],
+  ["September", "九月", "jiǔ yuè", "九月，开学了。", "jiǔ yuè, kāi xué le.", "In September, school starts."],
+  ["October", "十月", "shí yuè", "十月，树叶变红了。", "shí yuè, shù yè biàn hóng le.", "In October, leaves turn red."],
+  ["November", "十一月", "shí yī yuè", "十一月，感恩节。", "shí yī yuè, Gǎn ēn Jié.", "Thanksgiving is in November."],
+  ["December", "十二月", "shí èr yuè", "十二月，去滑雪。", "shí èr yuè, qù huá xuě.", "In December, go skiing."]
+].map(([english, hanzi, pinyin, context, contextPinyin, contextEnglish]) => ({ id: english.toLowerCase(), hanzi, pinyin, english, context, contextPinyin, contextEnglish, audio: context, imagePath: `assets/illustrated-months-of-year/${english}.webp` }));
+
+const timeDateRoutineItems = [
+  ["wake-up", "七点起床。", "qī diǎn qǐ chuáng.", "Wake up at 7:00.", "七点起床", "07am-lele-wake-up.webp"],
+  ["breakfast", "七点一刻吃早饭。", "qī diǎn yī kè chī zǎo fàn.", "Have breakfast at 7:15.", "七点一刻吃早饭", "0715am-lele-having-breakfast.webp"],
+  ["school", "八点去学校。", "bā diǎn qù xué xiào.", "Go to school at 8:00.", "八点去学校", "08am-go-to-school.webp"],
+  ["writing", "十点上写字课。", "shí diǎn shàng xiě zì kè.", "Writing class at 10:00.", "十点上写字课", "10am-writing-class.webp"],
+  ["lunch", "十二点吃午饭。", "shí èr diǎn chī wǔ fàn.", "Have lunch at 12:00.", "十二点吃午饭", "12pm-lunch-time.webp"],
+  ["home", "两点半放学。", "liǎng diǎn bàn fàng xué.", "School ends at 2:30.", "两点半放学", "0230pm-school-dismissal.webp"],
+  ["playground", "四点去操场玩。", "sì diǎn qù cāo chǎng wán.", "Play outside at 4:00.", "四点去操场玩", "04pm-playground.webp"],
+  ["dinner", "六点吃晚饭。", "liù diǎn chī wǎn fàn.", "Have dinner at 6:00.", "六点吃晚饭", "06pm-family-dinner.webp"],
+  ["tv", "七点看电视。", "qī diǎn kàn diàn shì.", "Watch TV at 7:00.", "七点看电视", "07pm-tv-time.webp"],
+  ["story", "八点讲故事。", "bā diǎn jiǎng gù shì.", "Story time at 8:00.", "八点讲故事", "08pm-story-time.webp"],
+  ["bedtime", "九点睡觉。", "jiǔ diǎn shuì jiào.", "Go to bed at 9:00.", "九点睡觉", "09pm-bedtime.webp"]
+].map(([id, hanzi, pinyin, english, audio, file]) => ({ id, hanzi, pinyin, english, audio, imagePath: `assets/illustrated-clock-routines/${file}` }));
+
+const datePracticeItems = [
+  { id: "date-new-year", hanzi: "一月一号", pinyin: "yī yuè yī hào", english: "January first", audio: "一月一号是新年", eventHanzi: "新年", eventPinyin: "xīn nián", eventEnglish: "New Year" },
+  { id: "date-chinese-new-year", hanzi: "二月", pinyin: "èr yuè", english: "February", audio: "二月中国新年", eventHanzi: "中国新年", eventPinyin: "Zhōng guó xīn nián", eventEnglish: "Chinese New Year" },
+  { id: "date-field-trip", hanzi: "五月二十号", pinyin: "wǔ yuè èr shí hào", english: "May twentieth", audio: "五月二十号我们去春游", eventHanzi: "春游", eventPinyin: "chūn yóu", eventEnglish: "Field trip" },
+  { id: "date-christmas", hanzi: "十二月二十五号", pinyin: "shí èr yuè èr shí wǔ hào", english: "December twenty-fifth", audio: "十二月二十五号是圣诞节", eventHanzi: "圣诞节", eventPinyin: "Shèng dàn Jié", eventEnglish: "Christmas" }
+];
 
 const introductionsPractice = [
   {
     id: "intro-scene-1",
     number: "1",
     prompt: "Meet a new friend and ask their name",
+    imagePath: "assets/introductions/introductions-scene-1.webp",
+    imageAlt: "Two children meeting and introducing themselves",
     cast: ["lele", "anan"],
     lines: [
-      { speakerId: "lele", hanzi: "你好！", pinyin: "nǐ hǎo!", english: "Hello!", audio: "你好" },
-      { speakerId: "anan", hanzi: "你好！", pinyin: "nǐ hǎo!", english: "Hello!", audio: "你好" },
-      { speakerId: "lele", hanzi: "你叫什么名字？", pinyin: "nǐ jiào shén me míng zi?", english: "What is your name?", audio: "你叫什么名字" },
-      { speakerId: "anan", hanzi: "我叫安安。", pinyin: "wǒ jiào Ān'ān.", english: "My name is Anan.", audio: "我叫安安" }
+      { speakerId: "luna", hanzi: "你好！", pinyin: "nǐ hǎo!", english: "Hello!", audio: "你好" },
+      { speakerId: "sophie", hanzi: "你好！", pinyin: "nǐ hǎo!", english: "Hello!", audio: "你好" },
+      { speakerId: "luna", hanzi: "你叫什么名字？", pinyin: "nǐ jiào shén me míng zi?", english: "What is your name?", audio: "你叫什么名字" },
+      { speakerId: "sophie", hanzi: "我叫苏菲。", pinyin: "wǒ jiào Sū fēi.", english: "My name is Sophie.", audio: "我叫苏菲" }
     ]
   },
   {
     id: "intro-scene-2",
     number: "2",
     prompt: "Say your own name clearly, then greet back",
+    imagePath: "assets/introductions/introductions-scene-2.webp",
+    imageAlt: "Two children talking in a classroom",
     cast: ["tiantian", "sisi"],
     lines: [
       { speakerId: "sisi", hanzi: "你叫什么名字？", pinyin: "nǐ jiào shén me míng zi?", english: "What is your name?", audio: "你叫什么名字" },
-      { speakerId: "tiantian", hanzi: "我叫天天。", pinyin: "wǒ jiào Tiān tiān.", english: "My name is Tiantian.", audio: "我叫天天" },
-      { speakerId: "sisi", hanzi: "你好，天天！", pinyin: "nǐ hǎo, Tiān tiān!", english: "Hello, Tiantian!", audio: "你好天天" }
+      { speakerId: "lele", hanzi: "我叫乐乐。", pinyin: "wǒ jiào Lè le.", english: "My name is Lele.", audio: "我叫乐乐" },
+      { speakerId: "sisi", hanzi: "你好，乐乐！", pinyin: "nǐ hǎo, Lè le!", english: "Hello, Lele!", audio: "你好乐乐" }
     ]
   },
   {
     id: "intro-scene-3",
     number: "3",
     prompt: "Two children trade names after saying hello",
+    imagePath: "assets/introductions/introductions-scene-3.webp",
+    imageAlt: "Two friends greeting each other",
     cast: ["sisi", "lele"],
     lines: [
-      { speakerId: "sisi", hanzi: "你好！", pinyin: "nǐ hǎo!", english: "Hello!", audio: "你好" },
-      { speakerId: "lele", hanzi: "你好！", pinyin: "nǐ hǎo!", english: "Hello!", audio: "你好" },
-      { speakerId: "sisi", hanzi: "我叫思思。", pinyin: "wǒ jiào Sī si.", english: "My name is Sisi.", audio: "我叫思思" },
-      { speakerId: "lele", hanzi: "我叫乐乐。", pinyin: "wǒ jiào Lè le.", english: "My name is Lele.", audio: "我叫乐乐" }
+      { speakerId: "yangyang", hanzi: "你好！", pinyin: "nǐ hǎo!", english: "Hello!", audio: "你好" },
+      { speakerId: "jaden", hanzi: "你好！", pinyin: "nǐ hǎo!", english: "Hello!", audio: "你好" },
+      { speakerId: "yangyang", hanzi: "我叫阳阳。", pinyin: "wǒ jiào Yáng yáng.", english: "My name is Yangyang.", audio: "我叫阳阳" },
+      { speakerId: "jaden", hanzi: "我叫杰登。", pinyin: "wǒ jiào Jié dēng.", english: "My name is Jaden.", audio: "我叫杰登" }
     ]
   }
 ];
 
 const introductionsGamePrompts = [
   {
-    id: "intro-game-anan",
-    speakerId: "anan",
-    sourceItemId: "my-name-anan",
-    hanzi: "我叫安安。",
-    pinyin: "wǒ jiào Ān'ān.",
-    english: "My name is Anan.",
-    audio: "我叫安安"
-  },
-  {
-    id: "intro-game-tiantian",
-    speakerId: "tiantian",
-    sourceItemId: "my-name-tiantian",
-    hanzi: "我叫天天。",
-    pinyin: "wǒ jiào Tiān tiān.",
-    english: "My name is Tiantian.",
-    audio: "我叫天天"
-  },
-  {
-    id: "intro-game-sisi",
-    speakerId: "sisi",
-    sourceItemId: "my-name-sisi",
-    hanzi: "我叫思思。",
-    pinyin: "wǒ jiào Sī si.",
-    english: "My name is Sisi.",
-    audio: "我叫思思"
-  },
-  {
-    id: "intro-game-lele",
-    speakerId: "lele",
-    sourceItemId: "my-name-lele",
-    hanzi: "我叫乐乐。",
-    pinyin: "wǒ jiào Lè le.",
-    english: "My name is Lele.",
-    audio: "我叫乐乐"
+    id: "intro-game-pattern",
+    speakerId: "",
+    sourceItemId: "my-name",
+    hanzi: "我叫……",
+    pinyin: "wǒ jiào...",
+    english: "My name is...",
+    audio: "我叫"
   }
 ];
 
@@ -912,30 +1061,19 @@ const introductionsBuildPhrases = [
   },
   {
     id: "build-my-name",
-    sourceItemId: "my-name-anan",
-    targetHanzi: "我叫安安。",
-    prompt: "Build: My name is Anan.",
-    english: "My name is Anan.",
-    audio: "我叫安安",
-    tokens: ["我", "叫", "安安"]
+    sourceItemId: "my-name",
+    targetHanzi: "我叫……",
+    prompt: "Build: My name is...",
+    english: "My name is...",
+    audio: "我叫",
+    tokens: ["我", "叫"]
   }
 ];
 
 const agePractice = [
   {
-    id: "age-scene-1",
-    number: "1",
-    prompt: "Ask a new friend how old they are",
-    imagePath: "assets/age/age-scene-1.webp",
-    imageAlt: "Anan and Sisi talking outside a classroom and asking about age",
-    lines: [
-      { hanzi: "你几岁？", pinyin: "nǐ jǐ suì?", english: "How old are you?", audio: "你几岁" },
-      { hanzi: "我五岁。", pinyin: "wǒ wǔ suì.", english: "I am five years old.", audio: "我五岁" }
-    ]
-  },
-  {
     id: "age-scene-2",
-    number: "2",
+    number: "1",
     prompt: "Ask age first, then ask what grade a classmate is in",
     imagePath: "assets/age/age-scene-2.webp",
     imageAlt: "Lele and Noah inside a classroom asking age first and then what grade someone is in",
@@ -948,7 +1086,7 @@ const agePractice = [
   },
   {
     id: "age-scene-3",
-    number: "3",
+    number: "2",
     prompt: "Connect age language to a birthday moment",
     imagePath: "assets/age/age-scene-3.webp",
     imageAlt: "Sisi at a birthday party with seven candles on a cake and friends around the table",
@@ -1014,6 +1152,39 @@ const ageBuildPhrases = [
     audio: "我上一年级",
     tokens: ["我", "上", "一", "年级"]
   }
+];
+
+const clothesPractice = [
+  {
+    id: "clothes-scene-1",
+    number: "1",
+    prompt: "Getting dressed for the day",
+    imagePath: "assets/illustrated-clothes/wearing-clothes-scene.webp",
+    imageAlt: "A child getting dressed beside a clothes rack and mirror",
+    lines: [
+      { hanzi: "我会穿衣服。", pinyin: "wǒ huì chuān yī fu.", english: "I can get dressed.", audio: "我会穿衣服" },
+      { hanzi: "我穿T恤和裤子。", pinyin: "wǒ chuān T xù hé kù zi.", english: "I wear a T-shirt and trousers.", audio: "我穿T恤和裤子" }
+    ]
+  },
+  {
+    id: "clothes-scene-2",
+    number: "2",
+    prompt: "Choosing clothes for rainy weather",
+    imagePath: "assets/illustrated-clothes/weather-linked-clothing-scene.webp",
+    imageAlt: "A child choosing a raincoat by a rainy window",
+    lines: [
+      { hanzi: "下雨了。", pinyin: "xià yǔ le.", english: "It is raining.", audio: "下雨了" },
+      { hanzi: "我穿雨衣和雨鞋。", pinyin: "wǒ chuān yǔ yī hé yǔ xié.", english: "I wear a raincoat and rain boots.", audio: "我穿雨衣和雨鞋" }
+    ]
+  }
+];
+
+const clothesMatchItems = [
+  { id: "shoes", hanzi: "鞋子", pinyin: "xié zi", english: "shoes", audio: "鞋子", imagePath: "assets/illustrated-self-dressing/putting-on-shoes.webp", imageAlt: "A child putting on shoes" },
+  { id: "socks", hanzi: "袜子", pinyin: "wà zi", english: "socks", audio: "袜子", imagePath: "assets/illustrated-self-dressing/putting-on-socks.webp", imageAlt: "A child putting on socks" },
+  { id: "jacket", hanzi: "外套", pinyin: "wài tào", english: "jacket", audio: "外套", imagePath: "assets/illustrated-self-dressing/putting-on-jacket.webp", imageAlt: "A child putting on a jacket" },
+  { id: "hat", hanzi: "帽子", pinyin: "mào zi", english: "hat", audio: "帽子", imagePath: "assets/illustrated-self-dressing/putting-on-hat.webp", imageAlt: "A child putting on a hat" },
+  { id: "school-uniform", hanzi: "校服", pinyin: "xiào fú", english: "school uniform", audio: "校服", imagePath: "assets/illustrated-self-dressing/putting-on-school-uniform.webp", imageAlt: "A child putting on a school uniform" }
 ];
 
 const politePractice = [
@@ -1190,6 +1361,15 @@ const illustratedKids = {
     ageGroup: "8-10",
     skinTone: "medium",
     path: "assets/illustrated-kids/luna.webp"
+  },
+  sophie: {
+    id: "sophie",
+    label: "Sophie",
+    hanziName: "苏菲",
+    gender: "girl",
+    ageGroup: "8-10",
+    skinTone: "light",
+    path: "assets/illustrated-kids/sophie.webp"
   },
   jaden: {
     id: "jaden",
@@ -1402,7 +1582,7 @@ const books = [
     id: "2b",
     label: "Book 2B",
     lessons: [
-      { lesson: 1, title: "Today is Monday", topicId: "time-date" },
+      { lesson: 1, title: "Today is Monday", topicId: "weekdays" },
       { lesson: 2, title: "What time is it?", topicId: "time-date" },
       { lesson: 3, title: "Stationery", topicId: "school" },
       { lesson: 4, title: "My classroom", topicId: "school" },
@@ -1416,10 +1596,10 @@ const books = [
     label: "Book 3A",
     lessons: [
       { lesson: 1, title: "Numbers", topicId: "numbers" },
-      { lesson: 2, title: "Date", topicId: "time-date" },
-      { lesson: 3, title: "Happy birthday!", topicId: "age" },
+      { lesson: 2, title: "Date", topicId: "dates" },
+      { lesson: 3, title: "Happy birthday!", topicId: "dates" },
       { lesson: 4, title: "Family", topicId: "family" },
-      { lesson: 5, title: "Nationality", topicId: "introductions" },
+      { lesson: 5, title: "Nationality", topicId: "identity" },
       { lesson: 6, title: "Request", topicId: "polite-words" },
       { lesson: 7, title: "Clothes", topicId: "clothes" }
     ]
@@ -1442,9 +1622,9 @@ const books = [
     label: "Book 4A",
     lessons: [
       { lesson: 1, title: "Telephone numbers", topicId: "numbers" },
-      { lesson: 2, title: "Languages", topicId: "introductions" },
+      { lesson: 2, title: "Languages", topicId: "identity" },
       { lesson: 3, title: "Tell the time", topicId: "time-date" },
-      { lesson: 4, title: "Daily routine", topicId: "daily-life" },
+      { lesson: 4, title: "Daily routine", topicId: "time-date" },
       { lesson: 5, title: "My lunch", topicId: "food" },
       { lesson: 6, title: "Means of transport", topicId: "daily-life" },
       { lesson: 7, title: "I'm hungry", topicId: "food" }
@@ -1509,7 +1689,7 @@ const topicGroups = [
     id: "foundations",
     label: "Foundations",
     description: "The first speaking patterns young learners need most.",
-    topicIds: ["numbers", "multiplication-rhyme", "greetings", "polite-words", "introductions", "age"]
+    topicIds: ["numbers", "multiplication-rhyme", "greetings", "polite-words", "introductions", "age", "identity"]
   },
   {
     id: "me-and-family",
@@ -1527,7 +1707,7 @@ const topicGroups = [
     id: "school-and-time",
     label: "School & Time",
     description: "Practical classroom, calendar, and time-based language.",
-    topicIds: ["time-date", "school"]
+    topicIds: ["weekdays", "time-date", "dates", "school"]
   }
 ];
 
@@ -1538,12 +1718,15 @@ const topicCardMeta = {
   "polite-words": { zhTitle: "礼貌用语", enTitle: "Polite Words", hint: "Thank you, sorry, please" },
   introductions: { zhTitle: "介绍自己", enTitle: "Introductions", hint: "Say your name and meet friends" },
   age: { zhTitle: "年龄", enTitle: "Age", hint: "Ask and say how old you are" },
+  identity: { zhTitle: "国家和语言", enTitle: "Countries & Languages", hint: "Say where you are from and what you speak" },
   family: { zhTitle: "家人", enTitle: "Family", hint: "Mom, dad, siblings, grandparents" },
   body: { zhTitle: "身体", enTitle: "Body", hint: "Tap body parts and listen" },
   animals: { zhTitle: "动物", enTitle: "Animals", hint: "Pets and favorite animals" },
   colours: { zhTitle: "颜色", enTitle: "Colours", hint: "Red, yellow, blue, green" },
   food: { zhTitle: "食物", enTitle: "Food & Drinks", hint: "Fruit, snacks, meals" },
-  "time-date": { zhTitle: "时间", enTitle: "Time & Date", hint: "Clock, days, dates, routines" },
+  weekdays: { zhTitle: "星期", enTitle: "Days of the Week", hint: "Monday to Sunday" },
+  "time-date": { zhTitle: "时间", enTitle: "Time & Routines", hint: "Clock and daily routines" },
+  dates: { zhTitle: "日期", enTitle: "Dates & Months", hint: "Months, dates, birthdays" },
   school: { zhTitle: "学校", enTitle: "School", hint: "Classroom, schoolbag, subjects" },
   hobbies: { zhTitle: "爱好", enTitle: "Hobbies", hint: "Reading, music, sports, games" },
   toys: { zhTitle: "玩具", enTitle: "Toys", hint: "Toy car, train, airplane" },
@@ -1557,10 +1740,10 @@ const learningHomeCategories = [
     id: "foundations",
     zhTitle: "开口说中文",
     enTitle: "Start Speaking",
-    hint: "Numbers, greetings, names, age",
+    hint: "Numbers, greetings, names, age, identity",
     accent: "#be5b49",
     iconSrc: "assets/navigation-icons/lele-wave-icon.webp",
-    topicIds: ["numbers", "greetings", "polite-words", "introductions", "age", "multiplication-rhyme"]
+    topicIds: ["numbers", "greetings", "polite-words", "introductions", "age", "identity", "multiplication-rhyme"]
   },
   {
     id: "me-family",
@@ -1575,10 +1758,10 @@ const learningHomeCategories = [
     id: "time-daily",
     zhTitle: "时间和日常",
     enTitle: "Time & Daily Life",
-    hint: "Time, dates, routines, rooms",
+    hint: "Week, time, dates, routines",
     accent: "#517b8d",
     iconSrc: "assets/illustrated-clocks/10oclock.webp",
-    topicIds: ["time-date", "daily-life"]
+    topicIds: ["weekdays", "time-date", "dates", "daily-life"]
   },
   {
     id: "school-life",
@@ -1706,8 +1889,42 @@ const state = {
   politeSelectedPhraseId: null,
   politeMatchedIds: new Set(),
   politePhraseOrder: [],
-  politeMeaningOrder: []
+  politeMeaningOrder: [],
+  clothesQuizOrder: [],
+  clothesQuizIndex: 0,
+  clothesQuizOptionIds: [],
+  clothesQuizSelectedId: "",
+  clothesQuizResult: "",
+  timeRoutineQuizOrder: [],
+  timeRoutineQuizIndex: 0,
+  timeRoutineQuizOptionIds: [],
+  timeRoutineQuizSelectedId: "",
+  timeRoutineQuizResult: "",
+  clockQuizOrder: [],
+  clockQuizIndex: 0,
+  clockQuizOptionIds: [],
+  clockQuizSelectedId: "",
+  clockQuizResult: "",
+  dateChallengeAnswerId: "",
+  dateChallengeOptionIds: [],
+  dateChallengePickedId: "",
+  dateChallengePromptId: "",
+  dateChallengeResult: "",
+  dateChallengeWrongIds: new Set(),
+  dateListenFeedback: "",
+  dateMatchFeedback: "",
+  dateSelectedPhraseId: null,
+  dateMatchedIds: new Set(),
+  datePhraseOrder: [],
+  dateEventOrder: [],
+  timeDateSectionId: "",
+  timeDateSectionSource: "",
+  identitySelectedCountryId: ""
 };
+
+let multiplicationPlaybackToken = 0;
+let multiplicationPlaybackPaused = false;
+let multiplicationPlaybackContainer = null;
 
 const topicGroupsRoot = document.getElementById("topic-groups");
 const bookSelect = document.getElementById("book-select");
@@ -2096,7 +2313,7 @@ function usefulNoteForTopic(topic) {
         <strong>我</strong> means “I” or “me,” and <strong>叫</strong> is used in beginner Chinese to say what someone is called.
       </p>
       <p class="greetings-note-copy">
-        <strong>你叫什么名字？</strong> means “What is your name?” and <strong>我叫安安。</strong> means “My name is Anan.”
+        <strong>你叫什么名字？</strong> means “What is your name?” and <strong>我叫……</strong> gives the answer pattern: “My name is…”
       </p>
       <p class="greetings-note-copy">
         Let children pause after <strong>我叫</strong> and say their own name out loud.
@@ -2111,7 +2328,7 @@ function usefulNoteForTopic(topic) {
         The answer pattern stays simple: <strong>我 + number + 岁</strong>. So <strong>我五岁</strong> is “I am five years old,” <strong>我六岁</strong> is “I am six years old,” and <strong>我七岁</strong> is “I am seven years old.”
       </p>
       <p class="greetings-note-copy">
-        <strong>你上几年级？</strong> asks what school year someone is in, and <strong>我上一年级。</strong> means “I am in first grade.” This topic links naturally with earlier self-introduction language: <strong>你好！你叫什么名字？我叫安安。你几岁？我五岁。你上几年级？我上一年级。</strong>
+        <strong>你上几年级？</strong> asks what school year someone is in, and <strong>我上一年级。</strong> means “I am in first grade.” This topic links naturally with earlier self-introduction language: <strong>你好！你叫什么名字？我叫…… 你几岁？我五岁。你上几年级？我上一年级。</strong>
       </p>
     `,
     family: `
@@ -2745,6 +2962,215 @@ function handlePoliteChallengeGuess(itemId) {
   renderActivityPanel(currentTopic());
 }
 
+function resetClothesQuiz() {
+  const ids = clothesMatchItems.map((item) => item.id);
+  state.clothesQuizOrder = shuffleArray(ids);
+  state.clothesQuizIndex = 0;
+  prepareClothesQuizQuestion();
+}
+
+function prepareClothesQuizQuestion() {
+  const answerId = state.clothesQuizOrder[state.clothesQuizIndex];
+  const distractorIds = shuffleArray(clothesMatchItems.filter((item) => item.id !== answerId).map((item) => item.id)).slice(0, 3);
+  state.clothesQuizOptionIds = shuffleArray([answerId, ...distractorIds]);
+  state.clothesQuizSelectedId = "";
+  state.clothesQuizResult = "";
+}
+
+function ensureClothesQuiz() {
+  if (!state.clothesQuizOrder.length) {
+    resetClothesQuiz();
+  }
+}
+
+function handleClothesQuizPick(itemId) {
+  if (state.clothesQuizResult === "correct") {
+    return;
+  }
+
+  const answerId = state.clothesQuizOrder[state.clothesQuizIndex];
+  state.clothesQuizSelectedId = itemId;
+  state.clothesQuizResult = itemId === answerId ? "correct" : "wrong";
+  if (state.clothesQuizResult === "correct" && state.tapAudioEnabled) {
+    const answer = clothesMatchItems.find((item) => item.id === answerId);
+    speak(answer?.audio, 0.78);
+  }
+  renderActivityPanel(currentTopic());
+}
+
+function nextClothesQuizQuestion() {
+  state.clothesQuizIndex = (state.clothesQuizIndex + 1) % state.clothesQuizOrder.length;
+  prepareClothesQuizQuestion();
+  renderActivityPanel(currentTopic());
+}
+
+function resetTimeRoutineQuiz() {
+  state.timeRoutineQuizOrder = shuffleArray(timeDateRoutineItems.map((item) => item.id));
+  state.timeRoutineQuizIndex = 0;
+  prepareTimeRoutineQuizQuestion();
+}
+
+function prepareTimeRoutineQuizQuestion() {
+  const answerId = state.timeRoutineQuizOrder[state.timeRoutineQuizIndex];
+  const distractorIds = shuffleArray(timeDateRoutineItems.filter((item) => item.id !== answerId).map((item) => item.id)).slice(0, 3);
+  state.timeRoutineQuizOptionIds = shuffleArray([answerId, ...distractorIds]);
+  state.timeRoutineQuizSelectedId = "";
+  state.timeRoutineQuizResult = "";
+}
+
+function ensureTimeRoutineQuiz() {
+  if (!state.timeRoutineQuizOrder.length) {
+    resetTimeRoutineQuiz();
+  }
+}
+
+function handleTimeRoutineQuizPick(itemId) {
+  if (state.timeRoutineQuizResult === "correct") {
+    return;
+  }
+
+  const answerId = state.timeRoutineQuizOrder[state.timeRoutineQuizIndex];
+  state.timeRoutineQuizSelectedId = itemId;
+  state.timeRoutineQuizResult = itemId === answerId ? "correct" : "wrong";
+  if (state.timeRoutineQuizResult === "correct" && state.tapAudioEnabled) {
+    const item = timeDateRoutineItems.find((entry) => entry.id === answerId);
+    speak(item?.audio, 0.78);
+  }
+  renderActivityPanel(currentTopic());
+}
+
+function nextTimeRoutineQuizQuestion() {
+  state.timeRoutineQuizIndex = (state.timeRoutineQuizIndex + 1) % state.timeRoutineQuizOrder.length;
+  prepareTimeRoutineQuizQuestion();
+  renderActivityPanel(currentTopic());
+}
+
+function resetClockQuiz() {
+  state.clockQuizOrder = shuffleArray(timeDateClockItems.map((item) => item.id));
+  state.clockQuizIndex = 0;
+  prepareClockQuizQuestion();
+}
+
+function prepareClockQuizQuestion() {
+  const answerId = state.clockQuizOrder[state.clockQuizIndex];
+  const distractorIds = shuffleArray(timeDateClockItems.filter((item) => item.id !== answerId).map((item) => item.id)).slice(0, 3);
+  state.clockQuizOptionIds = shuffleArray([answerId, ...distractorIds]);
+  state.clockQuizSelectedId = "";
+  state.clockQuizResult = "";
+}
+
+function ensureClockQuiz() {
+  if (!state.clockQuizOrder.length) {
+    resetClockQuiz();
+  }
+}
+
+function handleClockQuizPick(itemId) {
+  if (state.clockQuizResult === "correct") {
+    return;
+  }
+
+  const answerId = state.clockQuizOrder[state.clockQuizIndex];
+  state.clockQuizSelectedId = itemId;
+  state.clockQuizResult = itemId === answerId ? "correct" : "wrong";
+  if (state.clockQuizResult === "correct" && state.tapAudioEnabled) {
+    const item = timeDateClockItems.find((entry) => entry.id === answerId);
+    speak(item?.audio, 0.78);
+  }
+  renderActivityPanel(currentTopic());
+}
+
+function nextClockQuizQuestion() {
+  state.clockQuizIndex = (state.clockQuizIndex + 1) % state.clockQuizOrder.length;
+  prepareClockQuizQuestion();
+  renderActivityPanel(currentTopic());
+}
+
+function resetDateMatchGame() {
+  const roundIds = shuffleArray(timeDateMonthItems.map((item) => item.id)).slice(0, 6);
+  state.dateSelectedPhraseId = null;
+  state.dateMatchedIds = new Set();
+  state.datePhraseOrder = shuffleArray(roundIds);
+  state.dateEventOrder = shuffleArray(roundIds);
+  state.dateMatchFeedback = "";
+}
+
+function ensureDateMatchGame() {
+  const monthIds = new Set(timeDateMonthItems.map((item) => item.id));
+  if (
+    !state.datePhraseOrder.length ||
+    !state.dateEventOrder.length ||
+    state.datePhraseOrder.length !== 6 ||
+    state.dateEventOrder.length !== 6 ||
+    state.datePhraseOrder.some((id) => !monthIds.has(id)) ||
+    state.dateEventOrder.some((id) => !monthIds.has(id))
+  ) {
+    resetDateMatchGame();
+  }
+}
+
+function handleDateMatchPhrase(itemId) {
+  if (state.dateMatchedIds.has(itemId)) return;
+  state.dateSelectedPhraseId = itemId;
+  const item = timeDateMonthItems.find((entry) => entry.id === itemId);
+  if (item && state.tapAudioEnabled) speak(item.hanzi, 0.78);
+  state.dateMatchFeedback = "";
+  renderActivityPanel(currentTopic());
+}
+
+function handleDateMatchEvent(itemId) {
+  const selectedId = state.dateSelectedPhraseId;
+  if (!selectedId || state.dateMatchedIds.has(itemId)) return;
+  if (selectedId === itemId) {
+    state.dateMatchedIds = new Set([...state.dateMatchedIds, itemId]);
+    state.dateSelectedPhraseId = null;
+    state.dateMatchFeedback = "";
+  } else {
+    state.dateMatchFeedback = "Try again.";
+  }
+  renderActivityPanel(currentTopic());
+}
+
+function resetDateChallenge(options = {}) {
+  const available = options.excludeId ? datePracticeItems.filter((item) => item.id !== options.excludeId) : datePracticeItems;
+  const answer = available[Math.floor(Math.random() * available.length)] ?? datePracticeItems[0];
+  const distractors = shuffleArray(datePracticeItems.filter((item) => item.id !== answer.id)).slice(0, 3);
+  state.dateChallengeAnswerId = answer.id;
+  state.dateChallengePromptId = answer.id;
+  state.dateChallengeOptionIds = shuffleArray([answer.id, ...distractors.map((item) => item.id)]);
+  state.dateChallengePickedId = "";
+  state.dateChallengeResult = "";
+  state.dateChallengeWrongIds = new Set();
+  state.dateListenFeedback = "";
+}
+
+function ensureDateChallenge() {
+  if (!state.dateChallengeAnswerId || !state.dateChallengeOptionIds.length) resetDateChallenge();
+}
+
+function handleDateChallengePlay() {
+  const previousId = state.dateChallengePromptId;
+  resetDateChallenge({ excludeId: previousId });
+  const item = datePracticeItems.find((entry) => entry.id === state.dateChallengePromptId);
+  if (item && state.tapAudioEnabled) speak(item.audio, 0.78);
+  renderActivityPanel(currentTopic());
+}
+
+function handleDateChallengeGuess(itemId) {
+  const isCorrect = itemId === state.dateChallengeAnswerId;
+  state.dateChallengePickedId = itemId;
+  state.dateChallengeResult = isCorrect ? "correct" : "wrong";
+  if (isCorrect) {
+    if (state.tapAudioEnabled) {
+      const item = datePracticeItems.find((entry) => entry.id === itemId);
+      speak(item?.audio, 0.78);
+    }
+  } else {
+    state.dateChallengeWrongIds = new Set([...state.dateChallengeWrongIds, itemId]);
+  }
+  renderActivityPanel(currentTopic());
+}
+
 function handleGreetingsChallengePlay() {
   ensureGreetingsChallenge();
   const item = greetingsGameItems().find((entry) => entry.id === state.greetingsChallengePromptId);
@@ -2938,7 +3364,7 @@ function handleBodyMatchChinese(itemId) {
   state.bodySelectedEnglishId = null;
   selectFocusItem(itemId, {
     playAudio: true,
-    bodyFeedback: "Now drag it to the matching English word, or tap the English word."
+    bodyFeedback: "Now tap the matching English word."
   });
 }
 
@@ -2947,7 +3373,7 @@ function handleBodyMatchAttempt(englishId, chineseId = state.bodySelectedChinese
 
   if (!chineseId) {
     state.bodySelectedEnglishId = englishId;
-    state.lastBodyFeedback = "Tap a Chinese word first, or drag one into a row.";
+    state.lastBodyFeedback = "Tap a Chinese word first.";
     renderFocusExplorer();
     renderFocusStatus();
     return;
@@ -3411,8 +3837,13 @@ function renderTopics() {
           return;
         }
 
-        event.preventDefault();
-        openTopicPage(link.dataset.topicId);
+        // Leave the normal link available if an in-page render ever fails.
+        try {
+          openTopicPage(link.dataset.topicId);
+          event.preventDefault();
+        } catch (error) {
+          console.error("Could not open topic in place.", error);
+        }
       });
     });
 
@@ -3753,7 +4184,12 @@ function renderFocusStatus() {
     return;
   }
 
-  focusStatus.textContent = "Tap a card to hear it and see it more clearly.";
+  if (topic.id === "weekdays" || topic.id === "dates") {
+    focusStatus.textContent = "";
+    return;
+  }
+
+  focusStatus.textContent = "";
 }
 
 function selectFocusItem(itemId, options = {}) {
@@ -3778,7 +4214,7 @@ function selectFocusItem(itemId, options = {}) {
 
 function renderFocusWordList() {
   if (
-    ["body", "time-date", "multiplication-rhyme"].includes(currentTopic().id) ||
+    ["body", "weekdays", "dates", "multiplication-rhyme", "identity"].includes(currentTopic().id) ||
     (currentTopic().id === "numbers" && currentNumberStage().telephoneMode)
   ) {
     focusWordList.innerHTML = "";
@@ -3790,7 +4226,8 @@ function renderFocusWordList() {
   const topic = currentTopic();
   const items = focusItemsForTopic();
   const isLessonTemplate = usesLessonTemplate(topic);
-  focusWordList.classList.toggle("is-family-book-words", isLessonTemplate);
+  const showBookWordsHeading = isLessonTemplate || topic.id === "clothes" || topic.id === "time-date";
+  focusWordList.classList.toggle("is-family-book-words", showBookWordsHeading);
   const visibleItems =
     topic.id === "numbers"
       ? numberWordListItems(items, currentFocusItem(), currentNumberStage())
@@ -3799,7 +4236,7 @@ function renderFocusWordList() {
         : items;
   focusWordList.innerHTML = "";
 
-  if (isLessonTemplate) {
+  if (showBookWordsHeading) {
     const heading = document.createElement("div");
     heading.className = "family-book-words-heading";
     heading.innerHTML = `
@@ -3899,6 +4336,9 @@ function renderBodyExplorer() {
     state.bodyRoundIds.length > 0 && state.bodyRoundIds.every((id) => state.bodyMatchedIds.has(id));
   const allDone =
     bodyMatchItems().length > 0 && state.bodyMatchedIds.size === bodyMatchItems().length;
+  const solvedMatchIds = state.bodyChineseOrder.filter((id) => state.bodyMatchedIds.has(id));
+  const remainingChineseIds = state.bodyChineseOrder.filter((id) => !state.bodyMatchedIds.has(id));
+  const remainingEnglishIds = state.bodyEnglishOrder.filter((id) => !state.bodyMatchedIds.has(id));
   focusExplorer.innerHTML = `
     <div class="body-game">
       <div class="body-practice-visual">
@@ -3927,21 +4367,54 @@ function renderBodyExplorer() {
               <h4>Chinese to English</h4>
             </div>
             <div class="body-match-actions">
-              <button class="small-button" type="button" data-body-toggle-bonus>
+              <button class="small-button is-action-button" type="button" data-body-toggle-bonus aria-pressed="${state.bodyMatchIncludeBonus}">
                 Bonus words ${state.bodyMatchIncludeBonus ? "on" : "off"}
               </button>
-              <button class="small-button" type="button" data-body-reset-match>
+              <button class="small-button is-action-button" type="button" data-body-reset-match>
                 New mix
               </button>
             </div>
           </div>
-          <p class="body-match-helper">Drag a Chinese card into the matching row, or tap Chinese then English.</p>
+          <p class="body-match-helper">Tap a Chinese card, then tap the matching English card.</p>
           <div class="body-match-progress">
             Matched ${state.bodyMatchedIds.size} of ${bodyMatchItems().length}
           </div>
-          <div class="body-match-pool">
-            ${state.bodyChineseOrder
-              .filter((id) => !state.bodyMatchedIds.has(id))
+          <div class="body-match-board-headings">
+            <p class="body-match-kicker">Chinese</p>
+            <p class="body-match-kicker">English</p>
+          </div>
+          ${
+            solvedMatchIds.length
+              ? `
+                <div class="body-match-solved-pairs">
+                  ${solvedMatchIds
+                    .map((id) => {
+                      const matchItem = matchItems[id];
+                      return `
+                        <article class="body-match-solved-row">
+                          <div class="body-match-card body-match-card-chinese is-solved">
+                            <span class="answer-result-mark" aria-hidden="true">✓</span>
+                            <span class="body-match-hanzi">${matchItem.hanzi}</span>
+                            ${state.showPinyin ? `<span class="body-match-pinyin">${matchItem.pinyin}</span>` : ""}
+                          </div>
+                          <div class="body-match-card body-match-card-english is-solved">
+                            <span class="answer-result-mark" aria-hidden="true">✓</span>
+                            <span class="body-match-english">${matchItem.english}</span>
+                          </div>
+                        </article>
+                      `;
+                    })
+                    .join("")}
+                </div>
+              `
+              : ""
+          }
+          ${
+            remainingChineseIds.length
+              ? `
+                <div class="body-match-open-board">
+                  <div class="body-match-column">
+                    ${remainingChineseIds
               .map((id) => {
                 const matchItem = matchItems[id];
                 const selected = state.bodySelectedChineseId === id;
@@ -3949,7 +4422,6 @@ function renderBodyExplorer() {
                   <button
                     class="body-match-card body-match-card-chinese${selected ? " is-selected" : ""}"
                     type="button"
-                    draggable="true"
                     data-body-match-chinese="${id}"
                   >
                     <span class="body-match-hanzi">${matchItem.hanzi}</span>
@@ -3958,9 +4430,9 @@ function renderBodyExplorer() {
                 `;
               })
               .join("")}
-          </div>
-          <div class="body-match-rows">
-            ${state.bodyEnglishOrder
+                  </div>
+                  <div class="body-match-column">
+                    ${remainingEnglishIds
               .map((id) => {
                 const matchItem = matchItems[id];
                 if (!matchItem) {
@@ -3969,33 +4441,21 @@ function renderBodyExplorer() {
                 const solved = state.bodyMatchedIds.has(id);
                 const selected = state.bodySelectedEnglishId === id;
                 return `
-                  <div class="body-match-row${solved ? " is-solved" : ""}">
-                    <button
-                      class="body-match-drop${solved ? " is-solved" : ""}${selected ? " is-selected" : ""}"
-                      type="button"
-                      data-body-match-drop="${id}"
-                    >
-                      ${
-                        solved
-                          ? `
-                            <span class="body-match-hanzi">${matchItem.hanzi}</span>
-                            ${state.showPinyin ? `<span class="body-match-pinyin">${matchItem.pinyin}</span>` : ""}
-                          `
-                          : `<span class="body-match-drop-label">Drop here</span>`
-                      }
-                    </button>
-                    <button
-                      class="body-match-card body-match-card-english${solved ? " is-solved" : ""}${selected ? " is-selected" : ""}"
-                      type="button"
-                      data-body-match-english="${id}"
-                    >
-                      <span class="body-match-english">${matchItem.english}</span>
-                    </button>
-                  </div>
+                  <button
+                    class="body-match-card body-match-card-english${solved ? " is-solved" : ""}${selected ? " is-selected" : ""}"
+                    type="button"
+                    data-body-match-english="${id}"
+                  >
+                    <span class="body-match-english">${matchItem.english}</span>
+                  </button>
                 `;
               })
               .join("")}
-          </div>
+                  </div>
+                </div>
+              `
+              : ""
+          }
           ${
             roundComplete && !allDone
               ? '<button class="small-button body-next-round" type="button" data-body-next-round>Next set</button>'
@@ -4089,11 +4549,6 @@ function renderBodyExplorer() {
     button.addEventListener("click", () => {
       handleBodyMatchChinese(button.dataset.bodyMatchChinese);
     });
-    button.addEventListener("dragstart", (event) => {
-      event.dataTransfer?.setData("text/plain", button.dataset.bodyMatchChinese);
-      event.dataTransfer.effectAllowed = "move";
-      handleBodyMatchChinese(button.dataset.bodyMatchChinese);
-    });
   });
 
   focusExplorer.querySelectorAll("[data-body-match-english]").forEach((button) => {
@@ -4102,22 +4557,6 @@ function renderBodyExplorer() {
     });
   });
 
-  focusExplorer.querySelectorAll("[data-body-match-drop]").forEach((button) => {
-    button.addEventListener("click", () => {
-      handleBodyMatchAttempt(button.dataset.bodyMatchDrop);
-    });
-    button.addEventListener("dragover", (event) => {
-      event.preventDefault();
-      event.dataTransfer.dropEffect = "move";
-    });
-    button.addEventListener("drop", (event) => {
-      event.preventDefault();
-      const draggedId = event.dataTransfer?.getData("text/plain");
-      if (draggedId) {
-        handleBodyMatchAttempt(button.dataset.bodyMatchDrop, draggedId);
-      }
-    });
-  });
 }
 
 function renderListenPractice(config) {
@@ -4442,6 +4881,44 @@ function sharedLessonPracticeConfig(topic) {
     };
   }
 
+  if (topic.id === "dates") {
+    return {
+      summary: "Listen for the date or month, then match it to the event.",
+      shellClass: "lesson-practice-shell",
+      ensure: () => {
+        ensureDateChallenge();
+        ensureDateMatchGame();
+      },
+      listen: {
+        items: () => datePracticeItems,
+        optionIds: () => state.dateChallengeOptionIds,
+        pickedId: () => state.dateChallengePickedId,
+        result: () => state.dateChallengeResult,
+        wrongIds: () => state.dateChallengeWrongIds,
+        feedback: () => state.dateListenFeedback,
+        onPlay: handleDateChallengePlay,
+        onGuess: handleDateChallengeGuess
+      },
+      match: {
+        phraseHeading: "Chinese",
+        meaningHeading: "English",
+        items: () => timeDateMonthItems.filter((item) => state.datePhraseOrder.includes(item.id)),
+        phraseIds: () => state.datePhraseOrder,
+        meaningIds: () => state.dateEventOrder,
+        matchedIds: () => state.dateMatchedIds,
+        selectedId: () => state.dateSelectedPhraseId,
+        feedback: () => state.dateMatchFeedback,
+        meaningLabel: (id) => timeDateMonthItems.find((item) => item.id === id)?.english ?? "",
+        onNew: () => {
+          resetDateMatchGame();
+          renderActivityPanel(topic);
+        },
+        onPhrase: handleDateMatchPhrase,
+        onMeaning: handleDateMatchEvent
+      }
+    };
+  }
+
   return null;
 }
 
@@ -4459,6 +4936,127 @@ function renderActivityPanel(topic) {
   const sharedPracticeConfig = sharedLessonPracticeConfig(topic);
   if (sharedPracticeConfig) {
     renderSharedLessonPractice(topic, sharedPracticeConfig);
+    return;
+  }
+
+  if (topic.id === "time-date" && activeTimeDateSection() === "clock") {
+    ensureClockQuiz();
+    const answerId = state.clockQuizOrder[state.clockQuizIndex];
+    const prompt = timeDateClockItems.find((item) => item.id === answerId);
+    activityPanelTitle.textContent = "Let's practice";
+    activityPanelSummary.textContent = "Look at the clock, then choose the matching Chinese time.";
+    activityList.className = "support-list";
+    activityList.innerHTML = `
+      <section class="clothes-quiz-shell time-routine-quiz-shell">
+        <div class="numbers-game-top"><div><p class="body-match-kicker">Picture choice</p><p class="numbers-game-note">Tap the Chinese time that matches the clock.</p></div></div>
+        <figure class="clothes-quiz-visual time-routine-quiz-visual"><img class="clothes-quiz-image" src="${prompt.imagePath}" alt="${prompt.english}" /></figure>
+        <div class="clothes-quiz-options">
+          ${state.clockQuizOptionIds
+            .map((itemId) => {
+              const item = timeDateClockItems.find((entry) => entry.id === itemId);
+              const isSelected = state.clockQuizSelectedId === itemId;
+              const resultClass = isSelected ? ` is-${state.clockQuizResult}` : "";
+              const mark = isSelected ? `<span class="answer-result-mark" aria-hidden="true">${state.clockQuizResult === "correct" ? "✓" : "×"}</span>` : "";
+              return `<button class="clothes-quiz-option${resultClass}" type="button" data-clock-quiz-pick="${item.id}">${mark}<span class="numbers-game-hanzi">${item.hanzi}</span>${state.showPinyin ? `<span class="numbers-game-pinyin">${item.pinyin}</span>` : ""}${state.showEnglish ? `<span class="numbers-game-english">${item.english}</span>` : ""}</button>`;
+            })
+            .join("")}
+        </div>
+        ${state.clockQuizResult === "correct" ? '<div class="clothes-quiz-next"><button class="small-button is-action-button" type="button" data-clock-quiz-next>Next clock</button></div>' : ""}
+      </section>
+    `;
+    activityList.querySelectorAll("[data-clock-quiz-pick]").forEach((button) => {
+      button.addEventListener("click", () => handleClockQuizPick(button.dataset.clockQuizPick));
+    });
+    activityList.querySelector("[data-clock-quiz-next]")?.addEventListener("click", nextClockQuizQuestion);
+    return;
+  }
+
+  if (topic.id === "time-date") {
+    ensureTimeRoutineQuiz();
+    const answerId = state.timeRoutineQuizOrder[state.timeRoutineQuizIndex];
+    const prompt = timeDateRoutineItems.find((item) => item.id === answerId);
+    activityPanelTitle.textContent = "Let's practice";
+    activityPanelSummary.textContent = "Look at the routine picture, then choose the matching Chinese sentence.";
+    activityList.className = "support-list";
+    activityList.innerHTML = `
+      <section class="clothes-quiz-shell time-routine-quiz-shell">
+        <div class="numbers-game-top">
+          <div>
+            <p class="body-match-kicker">Picture choice</p>
+            <p class="numbers-game-note">Tap the Chinese sentence that matches the picture.</p>
+          </div>
+        </div>
+        <figure class="clothes-quiz-visual time-routine-quiz-visual">
+          <img class="clothes-quiz-image" src="${prompt.imagePath}" alt="${prompt.english}" />
+        </figure>
+        <div class="clothes-quiz-options">
+          ${state.timeRoutineQuizOptionIds
+            .map((itemId) => {
+              const item = timeDateRoutineItems.find((entry) => entry.id === itemId);
+              const isSelected = state.timeRoutineQuizSelectedId === itemId;
+              const resultClass = isSelected ? ` is-${state.timeRoutineQuizResult}` : "";
+              const mark = isSelected ? `<span class="answer-result-mark" aria-hidden="true">${state.timeRoutineQuizResult === "correct" ? "✓" : "×"}</span>` : "";
+              return `<button class="clothes-quiz-option${resultClass}" type="button" data-time-routine-quiz-pick="${item.id}">${mark}<span class="numbers-game-hanzi">${item.hanzi}</span>${state.showPinyin ? `<span class="numbers-game-pinyin">${item.pinyin}</span>` : ""}${state.showEnglish ? `<span class="numbers-game-english">${item.english}</span>` : ""}</button>`;
+            })
+            .join("")}
+        </div>
+        ${state.timeRoutineQuizResult === "correct" ? '<div class="clothes-quiz-next"><button class="small-button is-action-button" type="button" data-time-routine-quiz-next>Next picture</button></div>' : ""}
+      </section>
+    `;
+
+    activityList.querySelectorAll("[data-time-routine-quiz-pick]").forEach((button) => {
+      button.addEventListener("click", () => {
+        handleTimeRoutineQuizPick(button.dataset.timeRoutineQuizPick);
+      });
+    });
+    activityList.querySelector("[data-time-routine-quiz-next]")?.addEventListener("click", nextTimeRoutineQuizQuestion);
+    return;
+  }
+
+  if (topic.id === "clothes") {
+    ensureClothesQuiz();
+    const answerId = state.clothesQuizOrder[state.clothesQuizIndex];
+    const prompt = clothesMatchItems.find((item) => item.id === answerId);
+
+    activityPanelTitle.textContent = "Let's practice";
+    activityPanelSummary.textContent = "Look at the picture, then choose the matching Chinese word.";
+    activityList.className = "support-list";
+    activityList.innerHTML = `
+      <section class="clothes-quiz-shell">
+        <div class="numbers-game-top">
+          <div>
+            <p class="body-match-kicker">Picture choice</p>
+            <p class="numbers-game-note">Tap the Chinese word that matches the picture.</p>
+          </div>
+        </div>
+        <figure class="clothes-quiz-visual">
+          <img class="clothes-quiz-image" src="${prompt.imagePath}" alt="${prompt.imageAlt}" />
+        </figure>
+        <div class="clothes-quiz-options">
+          ${state.clothesQuizOptionIds
+            .map((itemId) => {
+              const item = clothesMatchItems.find((entry) => entry.id === itemId);
+              const isSelected = state.clothesQuizSelectedId === itemId;
+              const resultClass = isSelected ? ` is-${state.clothesQuizResult}` : "";
+              const mark = isSelected ? `<span class="answer-result-mark" aria-hidden="true">${state.clothesQuizResult === "correct" ? "✓" : "×"}</span>` : "";
+              return `<button class="clothes-quiz-option${resultClass}" type="button" data-clothes-quiz-pick="${item.id}">${mark}<span class="numbers-game-hanzi">${item.hanzi}</span>${state.showPinyin ? `<span class="numbers-game-pinyin">${item.pinyin}</span>` : ""}${state.showEnglish ? `<span class="numbers-game-english">${item.english}</span>` : ""}</button>`;
+            })
+            .join("")}
+        </div>
+        ${
+          state.clothesQuizResult === "correct"
+            ? `<div class="clothes-quiz-next"><button class="small-button is-action-button" type="button" data-clothes-quiz-next>Next picture</button></div>`
+            : ""
+        }
+      </section>
+    `;
+
+    activityList.querySelectorAll("[data-clothes-quiz-pick]").forEach((button) => {
+      button.addEventListener("click", () => {
+        handleClothesQuizPick(button.dataset.clothesQuizPick);
+      });
+    });
+    activityList.querySelector("[data-clothes-quiz-next]")?.addEventListener("click", nextClothesQuizQuestion);
     return;
   }
 
@@ -4588,56 +5186,75 @@ function renderActivityPanel(topic) {
   }
 
   if (topic.id === "introductions") {
-    ensureIntroductionsChallenge();
+    ensureIntroductionsBuilder();
     activityPanelTitle.textContent = "Let's practice";
-    activityPanelSummary.textContent =
-      "Listen for a child's self-introduction, then choose the matching friend from the lesson cast.";
+    activityPanelSummary.textContent = "Build the two core introduction patterns, then say your own name.";
     activityList.className = "support-list";
     activityList.innerHTML = "";
 
+    const buildTarget = introductionsBuildTarget();
     const gameCard = document.createElement("section");
     gameCard.className = "family-practice-shell";
     gameCard.innerHTML = `
       <div class="practice-split-card">
         <div class="numbers-game-top">
           <div>
-            <p class="body-match-kicker">Simple game</p>
-            <h4>Who said their name?</h4>
+            <p class="body-match-kicker">Build the sentence</p>
+            <p class="numbers-game-note">Tap the word pieces in order.</p>
           </div>
-          <button class="small-button is-action-button" type="button" data-intro-game-play>Play audio</button>
+          <button class="small-button is-action-button" type="button" data-intro-build-new>New phrase</button>
         </div>
-        <p class="numbers-game-note">Play the audio, then tap the child who introduced themself.</p>
         ${state.lastIntroductionsFeedback ? `<p class="greetings-game-feedback">${state.lastIntroductionsFeedback}</p>` : ""}
-        <div class="intro-character-grid">
-          ${state.introductionsChallengeOptionIds
-            .map((id) => {
-              const kid = illustratedKids[id];
-              if (!kid) {
-                return "";
-              }
-              return `
-                <button class="intro-character-card" type="button" data-intro-game-guess="${kid.id}">
+        <div class="intro-build-target">
+          <p class="body-match-kicker">Sentence</p>
+          <div class="intro-build-selected">
+            ${state.introductionsBuildSelectedTokens.length ? state.introductionsBuildSelectedTokens.map((token) => `<span class="intro-build-chip is-selected">${token}</span>`).join("") : '<span class="intro-build-placeholder">Your sentence will appear here.</span>'}
+          </div>
+          <p class="numbers-game-english">${buildTarget.english}</p>
+        </div>
+        <div class="intro-build-choices">
+          ${state.introductionsBuildAvailableTokens.map((token, index) => `<button class="intro-build-chip" type="button" data-intro-build-token="${index}">${token}</button>`).join("")}
+        </div>
+        <div class="intro-build-actions">
+          <button class="small-button" type="button" data-intro-build-clear>Clear</button>
+        </div>
+        <div class="intro-character-grid" aria-label="Friends">
+          ${Object.values(illustratedKids)
+            .map(
+              (kid) => `
+                <button class="intro-character-card" type="button" data-intro-character="${kid.id}">
                   <div class="intro-character-portrait">
-                    <img class="intro-character-image" src="${kid.path}" alt="${kid.label}" />
+                    <img class="intro-character-image intro-character-image-${kid.id}" src="${kid.path}" alt="${kid.label}" />
                   </div>
                   <span class="intro-character-hanzi">${kid.hanziName}</span>
                   <span class="intro-character-label">${kid.label}</span>
                 </button>
-              `;
-            })
+              `
+            )
             .join("")}
         </div>
       </div>
     `;
     activityList.appendChild(gameCard);
 
-    activityList.querySelector("[data-intro-game-play]")?.addEventListener("click", () => {
-      handleIntroductionsChallengePlay();
+    activityList.querySelector("[data-intro-build-new]")?.addEventListener("click", () => {
+      resetIntroductionsBuilder();
+      renderActivityPanel(topic);
     });
-
-    activityList.querySelectorAll("[data-intro-game-guess]").forEach((button) => {
+    activityList.querySelector("[data-intro-build-clear]")?.addEventListener("click", () => {
+      handleIntroductionsBuildClear();
+    });
+    activityList.querySelectorAll("[data-intro-build-token]").forEach((button) => {
       button.addEventListener("click", () => {
-        handleIntroductionsChallengeGuess(button.dataset.introGameGuess);
+        handleIntroductionsBuildToken(Number(button.dataset.introBuildToken));
+      });
+    });
+    activityList.querySelectorAll("[data-intro-character]").forEach((button) => {
+      button.addEventListener("click", () => {
+        const kid = illustratedKids[button.dataset.introCharacter];
+        if (kid && state.tapAudioEnabled) {
+          speak(`我叫${kid.hanziName}`, 0.78);
+        }
       });
     });
 
@@ -4762,9 +5379,7 @@ function renderActivityPanel(topic) {
 }
 
 function renderDefaultExplorer() {
-  focusExplorer.innerHTML = `
-    <p class="focus-helper">Tap a word card below to hear it and see it more clearly.</p>
-  `;
+  focusExplorer.innerHTML = "";
 }
 
 function renderMultiplicationExplorer() {
@@ -4775,9 +5390,18 @@ function renderMultiplicationExplorer() {
   focusExplorer.innerHTML = `
     <div class="multiplication-board">
       <div class="numbers-stage-card">
-        <p class="body-match-kicker">Chinese math rhythm</p>
-        <h4>九九乘法口诀</h4>
-        <p>Tap a cell in the matrix. First see the multiplication fact, then hear and read the Chinese rhyme line.</p>
+        <div class="numbers-game-top">
+          <div>
+            <p class="body-match-kicker">Chinese math rhythm</p>
+            <h4>九九乘法口诀</h4>
+            <p>Tap a cell in the matrix. First see the multiplication fact, then hear and read the Chinese rhyme line.</p>
+          </div>
+          <div class="multiplication-playback-controls">
+            <button class="small-button is-action-button" type="button" data-multiplication-play-all>Play</button>
+            <button class="small-button" type="button" data-multiplication-pause disabled>Pause</button>
+            <button class="small-button" type="button" data-multiplication-stop disabled>Stop</button>
+          </div>
+        </div>
       </div>
       <div class="multiplication-matrix-card">
         <div class="multiplication-matrix">
@@ -4824,9 +5448,107 @@ function renderMultiplicationExplorer() {
 
   focusExplorer.querySelectorAll("[data-multiplication-item]").forEach((button) => {
     button.addEventListener("click", () => {
+      stopMultiplicationRhyme();
       selectFocusItem(button.dataset.multiplicationItem, { playAudio: true });
     });
   });
+
+  focusExplorer.querySelector("[data-multiplication-play-all]")?.addEventListener("click", () => {
+    playMultiplicationRhyme(items, focusExplorer);
+  });
+  focusExplorer.querySelector("[data-multiplication-pause]")?.addEventListener("click", () => {
+    toggleMultiplicationPause();
+  });
+  focusExplorer.querySelector("[data-multiplication-stop]")?.addEventListener("click", () => {
+    stopMultiplicationRhyme();
+  });
+}
+
+function playMultiplicationRhyme(items, container) {
+  if (!state.tapAudioEnabled || !("speechSynthesis" in window)) {
+    return;
+  }
+
+  stopMultiplicationRhyme();
+  multiplicationPlaybackToken += 1;
+  const playbackToken = multiplicationPlaybackToken;
+  let index = 0;
+  multiplicationPlaybackPaused = false;
+  multiplicationPlaybackContainer = container;
+  updateMultiplicationPlaybackControls(container);
+
+  const playNext = () => {
+    if (playbackToken !== multiplicationPlaybackToken || index >= items.length) {
+      finishMultiplicationRhyme(container, playbackToken);
+      return;
+    }
+
+    const item = items[index];
+    index += 1;
+    container.querySelectorAll(".multiplication-cell").forEach((cell) => {
+      cell.classList.toggle("is-playing", cell.dataset.multiplicationItem === item.id);
+    });
+
+    const utterance = chineseUtterance(item.audio, 0.72);
+    utterance.onend = () => window.setTimeout(playNext, 140);
+    window.speechSynthesis.speak(utterance);
+  };
+
+  playNext();
+}
+
+function toggleMultiplicationPause() {
+  if (!multiplicationPlaybackContainer || !("speechSynthesis" in window)) {
+    return;
+  }
+
+  multiplicationPlaybackPaused = !multiplicationPlaybackPaused;
+  if (multiplicationPlaybackPaused) {
+    window.speechSynthesis.pause();
+  } else {
+    window.speechSynthesis.resume();
+  }
+  updateMultiplicationPlaybackControls(multiplicationPlaybackContainer);
+}
+
+function stopMultiplicationRhyme() {
+  multiplicationPlaybackToken += 1;
+  multiplicationPlaybackPaused = false;
+  window.speechSynthesis?.cancel();
+
+  const container = multiplicationPlaybackContainer;
+  multiplicationPlaybackContainer = null;
+  if (container) {
+    container.querySelectorAll(".multiplication-cell.is-playing").forEach((cell) => {
+      cell.classList.remove("is-playing");
+    });
+    updateMultiplicationPlaybackControls(container);
+  }
+}
+
+function finishMultiplicationRhyme(container, playbackToken) {
+  if (playbackToken !== multiplicationPlaybackToken) {
+    return;
+  }
+  container.querySelectorAll(".multiplication-cell.is-playing").forEach((cell) => {
+    cell.classList.remove("is-playing");
+  });
+  multiplicationPlaybackPaused = false;
+  multiplicationPlaybackContainer = null;
+  updateMultiplicationPlaybackControls(container);
+}
+
+function updateMultiplicationPlaybackControls(container) {
+  const isPlaying = multiplicationPlaybackContainer === container;
+  const pauseButton = container.querySelector("[data-multiplication-pause]");
+  const stopButton = container.querySelector("[data-multiplication-stop]");
+  if (pauseButton) {
+    pauseButton.disabled = !isPlaying;
+    pauseButton.textContent = multiplicationPlaybackPaused ? "Resume" : "Pause";
+  }
+  if (stopButton) {
+    stopButton.disabled = !isPlaying;
+  }
 }
 
 function renderNumberVisual(value, stage) {
@@ -5063,57 +5785,229 @@ function renderGreetingsExplorer() {
   });
 }
 
+function timeDateSectionForCurrentLesson() {
+  const lessonKey = `${currentBook().id}:${currentLesson().lesson}`;
+  if (lessonKey === "2b:2" || lessonKey === "4a:3") return "clock";
+  return "routine";
+}
+
+function activeTimeDateSection() {
+  const source = `${currentBook().id}:${currentLesson().lesson}`;
+  if (state.timeDateSectionSource !== source) {
+    state.timeDateSectionSource = source;
+    state.timeDateSectionId = timeDateSectionForCurrentLesson();
+  }
+  return state.timeDateSectionId || "week";
+}
+
+function renderTimeAssetGrid(items, modifier) {
+  return `<div class="time-asset-grid time-asset-grid-${modifier}">
+    ${items
+      .map(
+        (item) => `
+          <button class="time-asset-card" type="button" data-time-asset="${modifier}:${item.id}">
+            <img class="time-asset-image" src="${item.imagePath}" alt="${item.english}" />
+            <span class="time-asset-hanzi">${item.hanzi}</span>
+            ${state.showPinyin ? `<span class="time-asset-pinyin">${item.pinyin}</span>` : ""}
+            ${state.showEnglish ? `<span class="time-asset-english">${item.english}</span>` : ""}
+            ${item.context ? `<span class="time-asset-context">${item.context}</span>` : ""}
+            ${item.contextPinyin && state.showPinyin ? `<span class="time-asset-context-pinyin">${item.contextPinyin}</span>` : ""}
+            ${item.contextEnglish && state.showEnglish ? `<span class="time-asset-context-english">${item.contextEnglish}</span>` : ""}
+          </button>
+        `
+      )
+      .join("")}
+  </div>`;
+}
+
+function bindTimeAssetAudio(container) {
+  container.querySelectorAll("[data-time-asset]").forEach((button) => {
+    button.addEventListener("click", () => {
+      const [collection, id] = button.dataset.timeAsset.split(":");
+      const items = { week: timeDateWeekItems, clock: timeDateClockItems, date: timeDateDateItems, month: timeDateMonthItems }[collection] ?? [];
+      const item = items.find((entry) => entry.id === id);
+      if (item && state.tapAudioEnabled) {
+        speak(item.audio, 0.78);
+      }
+    });
+  });
+}
+
+function renderWeekdaysExplorer() {
+  focusExplorer.innerHTML = `
+    <div class="time-date-board">
+      <div class="numbers-stage-card">
+        <p class="body-match-kicker">${currentBook().label} Lesson ${currentLesson().lesson}</p>
+        <h4>Days of the Week</h4>
+      </div>
+      ${renderTimeAssetGrid(timeDateWeekItems, "week")}
+    </div>
+  `;
+  bindTimeAssetAudio(focusExplorer);
+}
+
+function renderDatesExplorer() {
+  focusExplorer.innerHTML = `
+    <div class="time-date-board">
+      <div class="numbers-stage-card">
+        <p class="body-match-kicker">${currentBook().label} Lesson ${currentLesson().lesson}</p>
+        <h4>Dates & Months</h4>
+      </div>
+      ${renderTimeAssetGrid(timeDateDateItems, "date")}
+      <section class="time-months-intro">
+        <div>
+          <p class="body-match-kicker">Months of the year</p>
+          <p class="time-months-hanzi">一年有十二个月。</p>
+          ${state.showPinyin ? '<p class="time-months-pinyin">yī nián yǒu shí èr ge yuè.</p>' : ""}
+          ${state.showEnglish ? '<p class="time-months-english">There are twelve months in a year.</p>' : ""}
+        </div>
+        <button class="small-button is-action-button" type="button" data-months-play>Play audio</button>
+      </section>
+      ${renderTimeAssetGrid(timeDateMonthItems, "month")}
+    </div>
+  `;
+  bindTimeAssetAudio(focusExplorer);
+  focusExplorer.querySelector("[data-months-play]")?.addEventListener("click", () => {
+    if (state.tapAudioEnabled) {
+      speak("一年有十二个月", 0.78);
+    }
+  });
+}
+
 function renderTimeDateExplorer() {
-  const item = currentFocusItem();
+  const activeSection = activeTimeDateSection();
+  const sections = [
+    { id: "clock", hanzi: "整点", english: "Clock" },
+    { id: "routine", hanzi: "作息", english: "Routine" }
+  ];
+  let content = "";
+
+  if (activeSection === "clock") {
+    content = renderTimeAssetGrid(timeDateClockItems, "clock");
+  } else {
+    content = `
+      <div class="greetings-practice-grid">
+        ${timeDateRoutineItems
+          .map(
+            (item, index) => `
+              <section class="greetings-exchange">
+                <div class="greetings-exchange-top">
+                  <div>
+                    <p class="body-match-kicker">Scene ${index + 1}</p>
+                    <p class="greetings-exchange-prompt">${item.english}</p>
+                  </div>
+                  <button class="small-button is-action-button" type="button" data-time-routine-play="${item.id}">Play scene</button>
+                </div>
+                <div class="greetings-scene-layout">
+                  <div class="greetings-scene-visual"><img class="greetings-scene-image time-routine-scene-image" src="${item.imagePath}" alt="${item.english}" /></div>
+                  <div class="greetings-line-stack">
+                    <article class="greetings-line-card">
+                      <div class="telephone-bubble-copy">
+                        <p class="telephone-line-hanzi">${item.hanzi}</p>
+                        ${state.showPinyin ? `<p class="telephone-line-pinyin">${item.pinyin}</p>` : ""}
+                        ${state.showEnglish ? `<p class="telephone-line-english">${item.english}</p>` : ""}
+                      </div>
+                    </article>
+                  </div>
+                </div>
+              </section>
+            `
+          )
+          .join("")}
+      </div>
+    `;
+  }
+
+  focusExplorer.innerHTML = `
+    <div class="time-date-board">
+      <div class="numbers-stage-card">
+        <p class="body-match-kicker">${currentBook().label} Lesson ${currentLesson().lesson}</p>
+        <h4>Time & Routines</h4>
+      </div>
+      <div class="time-date-section-tabs" role="tablist" aria-label="Time and date sections">
+        ${sections
+          .map(
+            (section) => `<button class="time-date-section-tab${section.id === activeSection ? " is-active" : ""}" type="button" role="tab" aria-selected="${String(section.id === activeSection)}" data-time-date-section="${section.id}"><span>${section.hanzi}</span><small>${section.english}</small></button>`
+          )
+          .join("")}
+      </div>
+      ${content}
+    </div>
+  `;
+
+  focusExplorer.querySelectorAll("[data-time-date-section]").forEach((button) => {
+    button.addEventListener("click", () => {
+      state.timeDateSectionId = button.dataset.timeDateSection;
+      renderTimeDateExplorer();
+      renderActivityPanel(currentTopic());
+    });
+  });
+  bindTimeAssetAudio(focusExplorer);
+  focusExplorer.querySelectorAll("[data-time-routine-play]").forEach((button) => {
+    button.addEventListener("click", () => {
+      const item = timeDateRoutineItems.find((entry) => entry.id === button.dataset.timeRoutinePlay);
+      if (item && state.tapAudioEnabled) {
+        speak(item.audio, 0.78);
+      }
+    });
+  });
+}
+
+function renderClothesExplorer() {
   focusExplorer.innerHTML = `
     <div class="numbers-board">
       <div class="numbers-stage-card">
         <p class="body-match-kicker">${currentBook().label} Lesson ${currentLesson().lesson}</p>
-        <h4>Hour of day</h4>
-        <p>Start with 7:00 AM and connect each clock to a real daily routine children already know.</p>
+        <h4>Book theme: getting dressed</h4>
+        <p>Learn everyday clothes first, then choose what to wear for the weather.</p>
       </div>
-      <div class="greetings-scene-card time-routine-card">
-        <div class="time-routine-layout">
-          ${timeDateRoutineVisual(item)}
-          <div class="time-routine-copy">
-            <p class="body-match-kicker">${item.routineAction ?? "Daily routine"}</p>
-            <p class="time-routine-hanzi">${item.routineHanzi ?? item.hanzi}</p>
-            ${state.showPinyin ? `<p class="time-routine-pinyin">${item.routinePinyin ?? item.pinyin}</p>` : ""}
-            ${state.showEnglish ? `<p class="time-routine-english">${item.routineEnglish ?? item.english}</p>` : ""}
-            <button class="small-button is-action-button" type="button" data-time-routine-play="${item.id}">Play audio</button>
-          </div>
-        </div>
-        <div class="time-routine-chip-row">
-          ${focusItemsForTopic()
-            .map(
-              (entry) => `
-                <button
-                  class="time-routine-chip${entry.id === item.id ? " is-active" : ""}"
-                  type="button"
-                  data-time-routine-item="${entry.id}"
-                >
-                  <span class="time-routine-chip-hanzi">${entry.hanzi}</span>
-                  <span class="time-routine-chip-label">${entry.routineAction ?? entry.english}</span>
-                </button>
-              `
-            )
-            .join("")}
-        </div>
+      <div class="greetings-practice-grid">
+        ${clothesPractice
+          .map(
+            (scene) => `
+              <section class="greetings-exchange">
+                <div class="greetings-exchange-top">
+                  <div>
+                    <p class="body-match-kicker">Scene ${scene.number}</p>
+                    <p class="greetings-exchange-prompt">${scene.prompt}</p>
+                  </div>
+                  <button class="small-button is-action-button" type="button" data-clothes-play-scene="${scene.id}">Play scene</button>
+                </div>
+                <div class="greetings-scene-layout">
+                  <div class="greetings-scene-visual">
+                    <img class="greetings-scene-image" src="${scene.imagePath}" alt="${scene.imageAlt}" />
+                  </div>
+                  <div class="greetings-line-stack">
+                    ${scene.lines
+                      .map(
+                        (line) => `
+                          <article class="greetings-line-card">
+                            <div class="telephone-bubble-copy">
+                              <p class="telephone-line-hanzi">${line.hanzi}</p>
+                              ${state.showPinyin ? `<p class="telephone-line-pinyin">${line.pinyin}</p>` : ""}
+                              ${state.showEnglish ? `<p class="telephone-line-english">${line.english}</p>` : ""}
+                            </div>
+                          </article>
+                        `
+                      )
+                      .join("")}
+                  </div>
+                </div>
+              </section>
+            `
+          )
+          .join("")}
       </div>
     </div>
   `;
 
-  focusExplorer.querySelectorAll("[data-time-routine-item]").forEach((button) => {
+  focusExplorer.querySelectorAll("[data-clothes-play-scene]").forEach((button) => {
     button.addEventListener("click", () => {
-      selectFocusItem(button.dataset.timeRoutineItem, { playAudio: true });
+      const scene = clothesPractice.find((entry) => entry.id === button.dataset.clothesPlayScene);
+      if (scene && state.tapAudioEnabled) {
+        speakSceneLines(scene.lines);
+      }
     });
-  });
-
-  focusExplorer.querySelector("[data-time-routine-play]")?.addEventListener("click", () => {
-    if (state.tapAudioEnabled) {
-      speak(item.routineHanzi ?? item.hanzi, 0.78);
-    }
-    focusStatus.textContent = `Practice saying ${item.routineHanzi ?? item.hanzi}`;
   });
 }
 
@@ -5199,37 +6093,15 @@ function renderIntroductionsExplorer() {
                   <button class="small-button is-action-button" type="button" data-intro-play-all="${exchange.id}">Play scene</button>
                 </div>
                 <div class="greetings-scene-layout introductions-scene-layout">
-                  <div class="intro-scene-cast">
-                    ${exchange.cast
-                      .map((kidId) => {
-                        const kid = illustratedKids[kidId];
-                        if (!kid) {
-                          return "";
-                        }
-                        return `
-                          <button class="intro-cast-card" type="button" data-intro-cast="${kid.id}">
-                            <div class="intro-cast-portrait">
-                              <img class="intro-cast-image" src="${kid.path}" alt="${kid.label}" />
-                            </div>
-                            <span class="intro-cast-hanzi">${kid.hanziName}</span>
-                            <span class="intro-cast-label">${kid.label}</span>
-                          </button>
-                        `;
-                      })
-                      .join("")}
+                  <div class="greetings-scene-visual">
+                    <img class="greetings-scene-image" src="${exchange.imagePath}" alt="${exchange.imageAlt}" />
                   </div>
                   <div class="greetings-line-stack">
                     ${exchange.lines
                       .map(
                         (line, index) => `
                           <article class="greetings-line-card intro-line-card">
-                            <div class="intro-line-copy">
-                              <div class="intro-line-speaker">
-                                <div class="intro-line-portrait" aria-hidden="true">
-                                  <img class="intro-line-image" src="${illustratedKids[line.speakerId].path}" alt="" />
-                                </div>
-                                <p class="body-match-kicker">${illustratedKids[line.speakerId].hanziName}</p>
-                              </div>
+                            <div class="telephone-bubble-copy">
                               <p class="telephone-line-hanzi">${line.hanzi}</p>
                               ${state.showPinyin ? `<p class="telephone-line-pinyin">${line.pinyin}</p>` : ""}
                               ${state.showEnglish ? `<p class="telephone-line-english">${line.english}</p>` : ""}
@@ -5260,16 +6132,6 @@ function renderIntroductionsExplorer() {
     });
   });
 
-  focusExplorer.querySelectorAll("[data-intro-cast]").forEach((button) => {
-    button.addEventListener("click", () => {
-      const item = introductionsSelfIntroItemForKid(button.dataset.introCast);
-      if (!item) {
-        return;
-      }
-      selectFocusItem(item.id, { playAudio: true });
-      focusStatus.textContent = `Practice saying ${item.hanzi}`;
-    });
-  });
 }
 
 function renderAgeExplorer() {
@@ -5473,6 +6335,105 @@ function renderFamilyExplorer() {
   });
 }
 
+function renderIdentityExplorer() {
+  const selectedCountry = identityCountries.find((country) => country.id === state.identitySelectedCountryId);
+  focusExplorer.innerHTML = `
+    <div class="numbers-board identity-board">
+      <section class="greetings-exchange">
+        <div class="greetings-exchange-top">
+          <div>
+            <p class="body-match-kicker">${currentBook().label} Lesson ${currentLesson().lesson}</p>
+            <p class="greetings-exchange-prompt">Countries and languages</p>
+          </div>
+          <button class="small-button is-action-button" type="button" data-identity-play-scene>Play scene</button>
+        </div>
+        <div class="greetings-scene-layout">
+          <div class="greetings-scene-visual">
+            <img class="greetings-scene-image" src="${identityConversation.imagePath}" alt="${identityConversation.imageAlt}" />
+          </div>
+          <div class="greetings-line-stack">
+            ${identityConversation.lines
+              .map(
+                (line) => `
+                  <article class="greetings-line-card">
+                    <div class="telephone-bubble-copy">
+                      <p class="telephone-line-hanzi">${line.hanzi}</p>
+                      ${state.showPinyin ? `<p class="telephone-line-pinyin">${line.pinyin}</p>` : ""}
+                      ${state.showEnglish ? `<p class="telephone-line-english">${line.english}</p>` : ""}
+                    </div>
+                  </article>
+                `
+              )
+              .join("")}
+          </div>
+        </div>
+      </section>
+      <section class="identity-question-section">
+        <div class="identity-question-top">
+          <div>
+            <p class="body-match-kicker">Question</p>
+            <p class="telephone-line-hanzi">${identityQuestion.hanzi}</p>
+            ${state.showPinyin ? `<p class="telephone-line-pinyin">${identityQuestion.pinyin}</p>` : ""}
+            ${state.showEnglish ? `<p class="telephone-line-english">${identityQuestion.english}</p>` : ""}
+          </div>
+          <button class="small-button is-action-button" type="button" data-identity-play-question>Play audio</button>
+        </div>
+        <div class="identity-country-grid">
+          ${identityCountries
+            .map(
+              (country) => `
+                <button class="identity-country-card${selectedCountry?.id === country.id ? " is-selected" : ""}" type="button" data-identity-country="${country.id}">
+                  <img class="identity-flag" src="${country.asset}" alt="${country.label} flag" />
+                  <span class="numbers-game-hanzi">${country.nationality}</span>
+                  ${state.showPinyin ? `<span class="numbers-game-pinyin">${country.pinyin}</span>` : ""}
+                  ${state.showEnglish ? `<span class="numbers-game-english">${country.label}</span>` : ""}
+                </button>
+              `
+            )
+            .join("")}
+        </div>
+        ${
+          selectedCountry
+            ? `
+              <article class="greetings-line-card identity-answer-card">
+                <div class="telephone-bubble-copy">
+                  <p class="telephone-line-hanzi">${selectedCountry.response.hanzi}</p>
+                  ${state.showPinyin ? `<p class="telephone-line-pinyin">${selectedCountry.response.pinyin}</p>` : ""}
+                  ${state.showEnglish ? `<p class="telephone-line-english">${selectedCountry.response.english}</p>` : ""}
+                </div>
+              </article>
+            `
+            : ""
+        }
+      </section>
+    </div>
+  `;
+
+  focusExplorer.querySelector("[data-identity-play-scene]")?.addEventListener("click", () => {
+    if (state.tapAudioEnabled) {
+      speakSceneLines(identityConversation.lines);
+    }
+  });
+  focusExplorer.querySelector("[data-identity-play-question]")?.addEventListener("click", () => {
+    if (state.tapAudioEnabled) {
+      speak(identityQuestion.audio, 0.78);
+    }
+  });
+  focusExplorer.querySelectorAll("[data-identity-country]").forEach((button) => {
+    button.addEventListener("click", () => {
+      const country = identityCountries.find((entry) => entry.id === button.dataset.identityCountry);
+      if (!country) {
+        return;
+      }
+      state.identitySelectedCountryId = country.id;
+      if (state.tapAudioEnabled) {
+        speak(country.response.audio, 0.78);
+      }
+      renderIdentityExplorer();
+    });
+  });
+}
+
 function renderFocusExplorer() {
   const topic = currentTopic();
   if (topic.interactiveScene === "body-face") {
@@ -5495,6 +6456,11 @@ function renderFocusExplorer() {
     return;
   }
 
+  if (topic.interactiveScene === "identity-scenes") {
+    renderIdentityExplorer();
+    return;
+  }
+
   if (topic.interactiveScene === "age-conversation") {
     renderAgeExplorer();
     return;
@@ -5510,8 +6476,23 @@ function renderFocusExplorer() {
     return;
   }
 
+  if (topic.interactiveScene === "clothes-scenes") {
+    renderClothesExplorer();
+    return;
+  }
+
   if (topic.interactiveScene === "time-date-routine") {
     renderTimeDateExplorer();
+    return;
+  }
+
+  if (topic.interactiveScene === "weekdays") {
+    renderWeekdaysExplorer();
+    return;
+  }
+
+  if (topic.interactiveScene === "dates") {
+    renderDatesExplorer();
     return;
   }
 
@@ -5638,6 +6619,10 @@ function renderTopicDetail() {
       usesLessonTemplate(topic) ||
       topic.id === "numbers" ||
       topic.id === "multiplication-rhyme" ||
+      topic.id === "weekdays" ||
+      topic.id === "dates" ||
+      topic.id === "identity" ||
+      topic.id === "clothes" ||
       (topic.id === "numbers" && currentNumberStage().telephoneMode)
   );
   renderFocusControls();
