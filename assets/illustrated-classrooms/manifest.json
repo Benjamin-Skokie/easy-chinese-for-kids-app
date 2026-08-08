@@ -6,7 +6,7 @@
       "id": "school-places-core",
       "label": "Core school places",
       "book": "2B-4B",
-      "items": ["school", "playground", "classroom", "us-classroom-clusters"]
+      "items": ["school", "playground", "classroom", "us-classroom-clusters", "classroom-computer-tv-bookshelf", "computer", "whiteboard", "television", "bookshelf"]
     }
   ],
   "items": [
@@ -38,6 +38,54 @@
       "pinyin": "jiao shi",
       "theme": "Empty U.S. classroom with grouped student tables and clean chair geometry",
       "file": "us-classroom-clusters.webp"
+    },
+    {
+      "id": "classroom-computer-tv-bookshelf",
+      "label": "Classroom computer, television, and bookshelf",
+      "hanzi": "电脑、电视、书架",
+      "pinyin": "diàn nǎo, diàn shì, shū jià",
+      "theme": "A recurring U.S. classroom with a laptop on a table, a wall television, and a bookshelf",
+      "file": "classroom-computer-tv-bookshelf.webp"
+    },
+    {
+      "id": "computer",
+      "label": "Computer",
+      "hanzi": "电脑",
+      "pinyin": "diàn nǎo",
+      "theme": "Standalone laptop on a classroom table for the Book Words card",
+      "file": "computer.webp"
+    },
+    {
+      "id": "whiteboard",
+      "label": "Whiteboard",
+      "hanzi": "白板",
+      "pinyin": "bái bǎn",
+      "theme": "Standalone classroom whiteboard for the Book Words card",
+      "file": "whiteboard.webp"
+    },
+    {
+      "id": "television",
+      "label": "Television",
+      "hanzi": "电视",
+      "pinyin": "diàn shì",
+      "theme": "Standalone wall-mounted classroom television for the Book Words card",
+      "file": "television.webp"
+    },
+    {
+      "id": "bookshelf",
+      "label": "Bookshelf",
+      "hanzi": "书架",
+      "pinyin": "shū jià",
+      "theme": "Standalone classroom bookshelf for the Book Words card",
+      "file": "bookshelf.webp"
+    },
+    {
+      "id": "blackboard",
+      "label": "Blackboard",
+      "hanzi": "黑板",
+      "pinyin": "hei ban",
+      "theme": "Standalone dark green classroom chalkboard for the Book Words card",
+      "file": "blackboard.png"
     }
   ]
 }

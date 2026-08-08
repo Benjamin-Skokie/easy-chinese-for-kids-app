@@ -15,6 +15,18 @@
       "theme": "Anan has pizza and sips milk at a straight cafeteria table",
       "lessonHint": "4A Lesson 5 My lunch",
       "file": "anan-eating-school-lunch.webp"
+    },
+    {
+      "id": "anan-mom-fridge-cola-water",
+      "label": "No Coke",
+      "hanzi": "我要喝可乐。没有可乐，你可以喝水。",
+      "pinyin": "Wǒ yào hē kě lè. Méi yǒu kě lè, nǐ kě yǐ hē shuǐ.",
+      "personIds": ["anan", "mom"],
+      "personLabel": "Anan and Mom",
+      "sentenceEnglish": "Anan wants Coke; Mom offers water instead.",
+      "theme": "Anan looks for Coke in the open refrigerator while Mom offers water",
+      "lessonHint": "4A Lesson 7 I'm hungry",
+      "file": "anan-mom-fridge-cola-water.webp"
     }
   ]
 }

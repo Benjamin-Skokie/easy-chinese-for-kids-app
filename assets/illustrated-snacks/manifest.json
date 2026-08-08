@@ -1,0 +1,24 @@
+{
+  "collection": "illustrated-snacks",
+  "style": "soft polished storybook snack scenes for young Chinese learners",
+  "items": [
+    {
+      "id": "food-preferences-dialogue",
+      "label": "Ice cream preference dialogue",
+      "hanzi": "我喜欢吃冰淇淋。你喜欢吃什么？",
+      "pinyin": "wǒ xǐ huan chī bīng qí lín. nǐ xǐ huan chī shén me?",
+      "theme": "Anan is ready to eat ice cream while talking naturally with a friend at a simple kitchen table",
+      "lessonHints": ["3B Lesson 5 Food and drink"],
+      "file": "food-preferences-dialogue.webp"
+    },
+    {
+      "id": "parents-food-preferences",
+      "label": "Family food preferences",
+      "hanzi": "妈妈喜欢吃饺子。爸爸不喜欢吃饺子。",
+      "pinyin": "mā ma xǐ huan chī jiǎo zi. bà ba bù xǐ huan chī jiǎo zi.",
+      "theme": "Mom enjoys dumplings while Dad politely chooses another food at the family dining table",
+      "lessonHints": ["3B Lesson 5 Food and drink", "3B Lesson 6 Vegetables"],
+      "file": "parents-food-preferences.webp"
+    }
+  ]
+}

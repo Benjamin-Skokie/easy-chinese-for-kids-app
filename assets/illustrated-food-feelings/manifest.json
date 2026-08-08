@@ -22,6 +22,14 @@
       "file": "thirsty.webp"
     },
     {
+      "id": "want",
+      "label": "I want to eat rice",
+      "hanzi": "要",
+      "pinyin": "yào",
+      "english": "want",
+      "file": "want-eat-fried-rice-landscape.webp"
+    },
+    {
       "id": "full",
       "label": "I am full",
       "hanzi": "饱了",

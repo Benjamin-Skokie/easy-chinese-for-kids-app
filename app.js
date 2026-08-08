@@ -368,28 +368,67 @@ const topicData = [
   {
     id: "food",
     title: "Food & Drinks",
-    summary: "An especially strong branch for child motivation, home practice, and culture tie-ins.",
-    progressLabel: "1B to 4A",
+    summary: "Name food and drinks, from fruit and vegetables to snacks and everyday meals.",
+    progressLabel: "1B to 3B",
     iconText: "水果",
     iconColor: "#c48d46",
     focus: {
-      hanzi: "我饿了。",
-      pinyin: "wǒ è le.",
-      english: "I am hungry.",
-      audio: "我饿了"
+      hanzi: "我吃苹果，喝牛奶。",
+      pinyin: "wǒ chī píng guǒ, hē niú nǎi.",
+      english: "I eat apples and drink milk.",
+      audio: "我吃苹果喝牛奶"
     },
+    interactiveScene: "food-scenes",
     parentGuide:
       "This is one of the easiest topics to make real. Use snack time, lunch, and shopping to repeat words naturally.",
     cultureGuide:
       "Food is a great place to add extra content later: dumplings, mooncakes, zòngzi, fruit names, and meal routines.",
-    activities: ["Tap to hear", "Choose the food", "Listen and choose", "Meal-time phrase practice"],
+    activities: ["Tap to hear", "Name the food", "Match the words", "Build a sentence"],
     steps: [
       { book: "1B", lesson: 7, title: "Fruit", note: "Begin with highly visual food words." },
       { book: "2B", lesson: 7, title: "Snacks", note: "Add everyday treat vocabulary." },
-      { book: "3B", lesson: 5, title: "Food and drink", note: "Broaden core food language." },
-      { book: "3B", lesson: 6, title: "Vegetables", note: "Extend the category." },
-      { book: "4A", lesson: 5, title: "My lunch", note: "Add meals and choice language." },
-      { book: "4A", lesson: 7, title: "I'm hungry", note: "Use food in a daily-life sentence." }
+      { book: "3B", lesson: 6, title: "Vegetables", note: "Extend the category." }
+    ]
+  },
+  {
+    id: "food-preferences",
+    title: "Food Preferences",
+    summary: "Ask what someone likes to eat and say what you like or do not like.",
+    progressLabel: "3B Lesson 5",
+    iconText: "喜欢",
+    iconColor: "#c48d46",
+    focus: {
+      hanzi: "你喜欢吃什么？",
+      pinyin: "nǐ xǐ huan chī shén me?",
+      english: "What do you like to eat?",
+      audio: "你喜欢吃什么"
+    },
+    interactiveScene: "food-preferences",
+    parentGuide: "Ask 你喜欢吃什么？, then let your child answer with one food they like or do not like.",
+    cultureGuide: "喜欢吃 and 不喜欢吃 make it easy to share a real preference at a meal or snack time.",
+    activities: ["Play scenes", "Say a preference", "Listen and choose", "Build a sentence"],
+    steps: [{ book: "3B", lesson: 5, title: "Food and drink", note: "Talk about foods and drinks you like." }]
+  },
+  {
+    id: "meals-feelings",
+    title: "Meals & Feelings",
+    summary: "Talk about lunch and say when you are hungry or thirsty.",
+    progressLabel: "4A Lessons 5 and 7",
+    iconText: "午饭",
+    iconColor: "#c48d46",
+    focus: {
+      hanzi: "我午饭喝了牛奶，吃了披萨。",
+      pinyin: "wǒ wǔ fàn hē le niú nǎi, chī le pī sà.",
+      english: "For lunch, I drank milk and ate pizza.",
+      audio: "我午饭喝了牛奶吃了披萨"
+    },
+    interactiveScene: "meals-feelings",
+    parentGuide: "Use lunch or snack time to ask whether your child is hungry or thirsty, then say what they eat or drink.",
+    cultureGuide: "Meals and feelings connect simple food words to a useful everyday situation.",
+    activities: ["Play scenes", "Talk about lunch", "Listen and choose", "Build a sentence"],
+    steps: [
+      { book: "4A", lesson: 5, title: "My lunch", note: "Say what you eat and drink for lunch." },
+      { book: "4A", lesson: 7, title: "I'm hungry", note: "Say when you are hungry or thirsty." }
     ]
   },
   {
@@ -567,31 +606,66 @@ const topicData = [
     ]
   },
   {
+    id: "school-supplies",
+    title: "Stationery & Backpack",
+    summary: "Name the things you use at school and say what is in your backpack.",
+    progressLabel: "2B Lesson 3 and 3B Lesson 1",
+    iconText: "文具",
+    iconColor: "#6d8a4f",
+    focus: { hanzi: "我的书包。", pinyin: "wǒ de shū bāo.", english: "My backpack.", audio: "我的书包" },
+    interactiveScene: "school-supplies",
+    parentGuide: "Use a real pencil case or backpack to point to each object while saying its Chinese name.",
+    cultureGuide: "These everyday classroom words give children quick, useful ways to speak Chinese during school routines.",
+    activities: ["Tap to hear", "Name school things", "Listen and choose", "Match the words"],
+    steps: [
+      { book: "2B", lesson: 3, title: "Stationery", note: "Name common school objects." },
+      { book: "3B", lesson: 1, title: "My schoolbag", note: "Say what is in a backpack." }
+    ]
+  },
+  {
+    id: "classroom",
+    title: "Classroom",
+    summary: "Look around the classroom and name the furniture and learning space.",
+    progressLabel: "2B Lesson 4 and 3B Lesson 2",
+    iconText: "教室",
+    iconColor: "#6d8a4f",
+    focus: { hanzi: "这是教室。", pinyin: "zhè shì jiào shì.", english: "This is the classroom.", audio: "这是教室" },
+    interactiveScene: "classroom",
+    parentGuide: "Point to the table, chair, and board in a real classroom, then say the complete sentence together.",
+    cultureGuide: "Classroom language supports simple descriptions with 有 (there is / are) and 在 (at / in).",
+    activities: ["Tap to hear", "Look around", "Listen and choose", "Match the words"],
+    steps: [
+      { book: "2B", lesson: 4, title: "My classroom", note: "Name the classroom and its furniture." },
+      { book: "3B", lesson: 2, title: "Our classroom", note: "Describe things in the classroom." }
+    ]
+  },
+  {
     id: "school",
-    title: "School",
-    summary: "A strong long-running topic that can become one of the main content branches.",
-    progressLabel: "2B to 4B",
+    title: "Our School",
+    summary: "Explore the places in a school and say what the school has.",
+    progressLabel: "4B Lesson 5",
     iconText: "学校",
     iconColor: "#6d8a4f",
-    focus: {
-      hanzi: "我的书包。",
-      pinyin: "wǒ de shū bāo.",
-      english: "My schoolbag.",
-      audio: "我的书包"
-    },
-    parentGuide:
-      "This topic works well with real objects. Use the child’s backpack, pencils, books, and classroom routine as practice anchors.",
-    cultureGuide:
-      "School topics are practical and support classroom promotion, since teachers can quickly point students to the matching content.",
-    activities: ["Tap to hear", "Find the object", "Listen and choose", "Classroom matching"],
-    steps: [
-      { book: "2B", lesson: 3, title: "Stationery", note: "Start with school objects." },
-      { book: "2B", lesson: 4, title: "My classroom", note: "Move into the room and classroom items." },
-      { book: "3B", lesson: 1, title: "My schoolbag", note: "Add schoolbag vocabulary." },
-      { book: "3B", lesson: 2, title: "Our classroom", note: "Expand school setting language." },
-      { book: "4B", lesson: 5, title: "Our school", note: "Broaden to the whole school." },
-      { book: "4B", lesson: 6, title: "School subjects", note: "Add subject names." }
-    ]
+    focus: { hanzi: "学校有图书馆。", pinyin: "xué xiào yǒu tú shū guǎn.", english: "The school has a library.", audio: "学校有图书馆" },
+    interactiveScene: "school-places",
+    parentGuide: "Use the school map or a walk around school to connect each place name to a real place.",
+    cultureGuide: "The pattern 学校有... is a natural way for children to describe places and things around them.",
+    activities: ["Play scenes", "Explore school places", "Listen and choose", "Match the words"],
+    steps: [{ book: "4B", lesson: 5, title: "Our school", note: "Name school places with 学校有..." }]
+  },
+  {
+    id: "school-subjects",
+    title: "School Subjects",
+    summary: "Name school subjects and say which class you like.",
+    progressLabel: "4B Lesson 6",
+    iconText: "学科",
+    iconColor: "#6d8a4f",
+    focus: { hanzi: "我喜欢音乐课。", pinyin: "wǒ xǐ huan yīn yuè kè.", english: "I like music class.", audio: "我喜欢音月课" },
+    interactiveScene: "school-subjects",
+    parentGuide: "Ask which class your child likes best, then replace the final subject word in 我喜欢...课.",
+    cultureGuide: "School subjects make a useful bridge from naming words to sharing a personal preference.",
+    activities: ["Tap to hear", "Say a favorite", "Listen and choose", "Match the words"],
+    steps: [{ book: "4B", lesson: 6, title: "School subjects", note: "Talk about favorite classes." }]
   },
   {
     id: "hobbies",
@@ -1079,6 +1153,473 @@ const visualTopicItems = {
     ["电视柜", "diàn shì guì", "TV stand", "tv-stand.webp", "assets/illustrated-furniture"],
     ["自行车", "zì xíng chē", "bicycle", "bicycle.png", "assets/illustrated-rooms"]
   ].map(([hanzi, pinyin, english, file, folder]) => ({ id: hanzi, hanzi, pinyin, english, audio: hanzi, imagePath: `${folder}/${file}` }))
+};
+
+const schoolTopicData = {
+  "school-supplies": {
+    scenes: [
+      {
+        id: "stationery",
+        label: "Stationery",
+        lines: [
+          { hanzi: "文具盒里有铅笔。", pinyin: "wén jù hé lǐ yǒu qiān bǐ.", english: "There is a pencil in the pencil case." },
+          { hanzi: "文具盒里有橡皮。", pinyin: "wén jù hé lǐ yǒu xiàng pí.", english: "There is an eraser in the pencil case." },
+          { hanzi: "文具盒里有彩色铅笔。", pinyin: "wén jù hé lǐ yǒu cǎi sè qiān bǐ.", english: "There are colored pencils in the pencil case." }
+        ],
+        audio: "文具盒里有铅笔文具盒里有橡皮文具盒里有彩色铅笔",
+        imagePath: "assets/illustrated-stationery/pencil-box.webp"
+      },
+      {
+        id: "schoolbag",
+        label: "My backpack",
+        lines: [
+          { hanzi: "书在书包里。", pinyin: "shū zài shū bāo lǐ.", english: "The book is in the backpack." },
+          { hanzi: "书包里有书。", pinyin: "shū bāo lǐ yǒu shū.", english: "There is a book in the backpack." },
+          { hanzi: "文具盒在书包外面。", pinyin: "wén jù hé zài shū bāo wài miàn.", english: "The pencil case is outside the backpack." }
+        ],
+        audio: "书在书包里书包里有书文具盒在书包外面",
+        imagePath: "assets/illustrated-rooms/positions-inside-outside.webp"
+      }
+    ],
+    words: [
+      ["pencil", "铅笔", "qiān bǐ", "pencil", "pencil.webp"],
+      ["ruler", "尺子", "chǐ zi", "ruler", "ruler.webp"],
+      ["eraser", "橡皮", "xiàng pí", "eraser", "eraser.webp"],
+      ["colored-pencils", "彩色铅笔", "cǎi sè qiān bǐ", "colored pencils", "colored-pencils.webp"],
+      ["scissors", "剪刀", "jiǎn dāo", "scissors", "scissors.webp"],
+      ["glue", "胶水", "jiāo shuǐ", "glue", "glue-stick.webp"],
+      ["pencil-box", "文具盒", "wén jù hé", "pencil case", "pencil-box.webp"],
+      ["textbook", "课本", "kè běn", "textbook", "textbook.webp"],
+      ["workbook", "练习本", "liàn xí běn", "workbook", "workbook.webp"],
+      ["schoolbag", "书包", "shū bāo", "backpack", "backpack.webp"]
+    ].map(([id, hanzi, pinyin, english, file]) => ({ id, hanzi, pinyin, english, audio: hanzi, imagePath: `assets/illustrated-stationery/${file}` })),
+    review: [
+      { pattern: "……里有……", pinyin: "... lǐ yǒu...", english: "There is / are ... in ...", example: "文具盒里有铅笔。书包里有书。" },
+      { pattern: "里 / 外面", pinyin: "lǐ / wài miàn", english: "inside / outside", example: "书在书包里。文具盒在书包外面。" }
+    ]
+  },
+  classroom: {
+    practiceSummary: "Choose a classroom sentence start and an object to make your own sentence.",
+    scenes: [
+      {
+        id: "classroom",
+        label: "Our classroom",
+        hanzi: "这是我们的教室。",
+        pinyin: "zhè shì wǒ men de jiào shì.",
+        english: "This is our classroom.",
+        audio: "这是我们的教室",
+        imagePath: "assets/illustrated-school-anchors/classroom_anchor.webp"
+      },
+      {
+        id: "classroom-things",
+        label: "In the classroom",
+        hanzi: "教室里有桌子、椅子和白板。",
+        pinyin: "jiào shì lǐ yǒu zhuō zi, yǐ zi hé bái bǎn.",
+        english: "There are tables, chairs, and a whiteboard in the classroom.",
+        audio: "教室里有桌子椅子和白板",
+        imagePath: "assets/illustrated-classrooms/us-classroom-clusters.webp"
+      },
+      {
+        id: "classroom-computer-tv-bookshelf",
+        label: "More classroom things",
+        hanzi: "桌子上有电脑。教室里有电视和书架。",
+        pinyin: "zhuō zi shàng yǒu diàn nǎo. jiào shì lǐ yǒu diàn shì hé shū jià.",
+        english: "There is a laptop on the table. There is a television and a bookshelf in the classroom.",
+        audio: "桌子上有电脑教室里有电视和书架",
+        imagePath: "assets/illustrated-classrooms/classroom-computer-tv-bookshelf.webp"
+      },
+      {
+        id: "music-classroom-piano",
+        label: "Music classroom",
+        hanzi: "音乐教室有钢琴。",
+        pinyin: "yīn yuè jiào shì yǒu gāng qín.",
+        english: "The music classroom has a piano.",
+        audio: "音乐教室有钢琴",
+        imagePath: "assets/illustrated-school-anchors/piano_anchor.webp"
+      }
+    ],
+    words: [
+      ["classroom", "教室", "jiào shì", "classroom", "assets/illustrated-school-anchors/classroom_anchor.webp"],
+      ["table", "桌子", "zhuō zi", "table", "assets/illustrated-stationery/table.webp"],
+      ["chair", "椅子", "yǐ zi", "chair", "assets/illustrated-stationery/chair.webp"],
+      ["whiteboard", "白板", "bái bǎn", "whiteboard", "assets/illustrated-classrooms/whiteboard.webp"],
+      ["blackboard", "黑板", "hēi bǎn", "blackboard", "assets/illustrated-classrooms/blackboard.png"],
+      ["computer", "电脑", "diàn nǎo", "computer (laptop)", "assets/illustrated-classrooms/computer.webp"],
+      ["television", "电视", "diàn shì", "television", "assets/illustrated-classrooms/television.webp"],
+      ["bookshelf", "书架", "shū jià", "bookshelf", "assets/illustrated-classrooms/bookshelf.webp"]
+    ].map(([id, hanzi, pinyin, english, imagePath]) => ({ id, hanzi, pinyin, english, audio: hanzi, imagePath })),
+    sentenceFrames: [
+      { id: "in-classroom", hanzi: "教室里有", pinyin: "jiào shì lǐ yǒu", english: "There is / are ... in the classroom", wordIds: ["table", "chair", "whiteboard", "blackboard", "computer", "television", "bookshelf"] },
+      { id: "many-in-classroom", hanzi: "教室里有很多", pinyin: "jiào shì lǐ yǒu hěn duō", english: "There are many ... in the classroom", wordIds: ["table", "chair", "textbook"] },
+      { id: "on-table", hanzi: "桌子上有", pinyin: "zhuō zi shàng yǒu", english: "There is / are ... on the table", wordIds: ["computer", "textbook", "workbook", "pencil", "ruler", "eraser", "colored-pencils"] }
+    ],
+    review: [
+      { pattern: "教室里有……", pinyin: "jiào shì lǐ yǒu...", english: "There is / are ... in the classroom.", example: "教室里有桌子和椅子。" },
+      { pattern: "桌子上有……", pinyin: "zhuō zi shàng yǒu...", english: "There is / are ... on the table.", example: "桌子上有电脑。" },
+      { pattern: "很多", pinyin: "hěn duō", english: "many; much", example: "教室里有很多桌子和椅子。" }
+    ]
+  },
+  school: {
+    scenes: [
+      ["school", "School", "这是学校。", "zhè shì xué xiào.", "This is a school.", "school_exterior_anchor.webp"],
+      ["classroom", "Classroom", "学校有教室。", "xué xiào yǒu jiào shì.", "The school has classrooms.", "classroom_anchor.webp"],
+      ["library", "Library", "学校有图书馆。", "xué xiào yǒu tú shū guǎn.", "The school has a library.", "library_anchor.webp"],
+      ["playground", "Playground", "学校有操场。", "xué xiào yǒu cāo chǎng.", "The school has a playground.", "playground_anchor.webp"],
+      ["cafeteria", "Cafeteria", "学校有食堂。", "xué xiào yǒu shí táng.", "The school has a cafeteria.", "cafeteria_anchor.webp"],
+      ["auditorium", "Auditorium", "学校有礼堂。", "xué xiào yǒu lǐ táng.", "The school has an auditorium.", "auditorium_anchor.webp"],
+      ["music-room", "Music room", "学校有音乐教室。音乐教室有钢琴。", "xué xiào yǒu yīn yuè jiào shì. yīn yuè jiào shì yǒu gāng qín.", "The school has a music room. The music room has a piano.", "music_classroom_anchor.webp"]
+    ].map(([id, label, hanzi, pinyin, english, file, folder = "assets/illustrated-school-anchors"]) => ({ id, label, hanzi, pinyin, english, audio: id === "music-room" ? "学校有音乐教室音乐教室有钢琴" : hanzi, imagePath: `${folder}/${file}` })),
+    words: [
+      ["classroom", "教室", "jiào shì", "classroom", "classroom_anchor.webp"],
+      ["library", "图书馆", "tú shū guǎn", "library", "library_anchor.webp"],
+      ["playground", "操场", "cāo chǎng", "playground", "playground_anchor.webp"],
+      ["cafeteria", "食堂", "shí táng", "cafeteria", "cafeteria_anchor.webp"],
+      ["auditorium", "礼堂", "lǐ táng", "auditorium", "auditorium_anchor.webp"],
+      ["music-room", "音乐教室", "yīn yuè jiào shì", "music room", "music_classroom_anchor.webp"],
+      ["piano", "钢琴", "gāng qín", "piano", "piano_anchor.webp"]
+    ].map(([id, hanzi, pinyin, english, file]) => ({ id, hanzi, pinyin, english, audio: id === "music-room" ? "音月教室" : hanzi, imagePath: `assets/illustrated-school-anchors/${file}` }))
+  },
+  "school-subjects": {
+    scenes: [
+      {
+        id: "subjects",
+        label: "School subjects",
+        hanzi: "我喜欢音乐课。你喜欢什么课？",
+        pinyin: "wǒ xǐ huan yīn yuè kè. nǐ xǐ huan shén me kè?",
+        english: "I like music class. What class do you like?",
+        audio: "我喜欢音月课你喜欢什么课",
+        imagePath: "assets/illustrated-school-subjects/subjects-dialogue.webp"
+      },
+      {
+        id: "go-to-music",
+        label: "Music class",
+        hanzi: "我去上音乐课。",
+        pinyin: "wǒ qù shàng yīn yuè kè.",
+        english: "I am going to music class.",
+        audio: "我去上音月课",
+        imagePath: "assets/illustrated-activities/anan_go_to_music_class.webp"
+      },
+      {
+        id: "in-music",
+        label: "Music class",
+        hanzi: "我在上音乐课。",
+        pinyin: "wǒ zài shàng yīn yuè kè.",
+        english: "I am in music class.",
+        audio: "我在上音月课",
+        imagePath: "assets/illustrated-activities/anan_in_music_class.webp"
+      },
+      {
+        id: "likes-music",
+        label: "Music class",
+        hanzi: "我喜欢音乐课。",
+        pinyin: "wǒ xǐ huan yīn yuè kè.",
+        english: "I like music class.",
+        audio: "我喜欢音月课",
+        imagePath: "assets/illustrated-activities/anan_likes_music_class.webp"
+      },
+      {
+        id: "likes-pe",
+        label: "PE class",
+        hanzi: "我喜欢体育课。",
+        pinyin: "wǒ xǐ huan tǐ yù kè.",
+        english: "I like PE class.",
+        audio: "我喜欢体育课",
+        imagePath: "assets/illustrated-activities/yangyang_likes_pe_class.webp"
+      },
+      {
+        id: "dislikes-math",
+        label: "Math class",
+        hanzi: "我不喜欢数学课。",
+        pinyin: "wǒ bù xǐ huan shù xué kè.",
+        english: "I do not like math class.",
+        audio: "我不喜欢数学课",
+        imagePath: "assets/illustrated-activities/lele_dislikes_math_class.webp"
+      }
+    ],
+    words: [
+      ["chinese", "语文课", "yǔ wén kè", "Chinese class"],
+      ["english", "英语课", "yīng yǔ kè", "English class"],
+      ["math", "数学课", "shù xué kè", "math class"],
+      ["music", "音乐课", "yīn yuè kè", "music class"],
+      ["art", "美术课", "měi shù kè", "art class"],
+      ["pe", "体育课", "tǐ yù kè", "PE class"]
+    ].map(([id, hanzi, pinyin, english]) => ({ id, hanzi, pinyin, english, audio: id === "music" ? "音月课" : hanzi }))
+  },
+  food: {
+    practiceSummary: "Listen for a food word, then build a sentence from the picture.",
+    scenes: [
+      {
+        id: "fruit",
+        label: "Fruit",
+        hanzi: "我喜欢苹果、香蕉、葡萄和草莓。",
+        pinyin: "wǒ xǐ huan píng guǒ, xiāng jiāo, pú tao hé cǎo méi.",
+        english: "I like apples, bananas, grapes, and strawberries.",
+        audio: "我喜欢苹果香蕉葡萄和草莓",
+        imagePath: "assets/illustrated-food/fruit-group-1b-core.webp"
+      }
+    ],
+    words: [
+      ["apple", "苹果", "píng guǒ", "apple", "apple.webp"],
+      ["banana", "香蕉", "xiāng jiāo", "banana", "banana.webp"],
+      ["grapes", "葡萄", "pú tao", "grapes", "grapes.webp"],
+      ["strawberry", "草莓", "cǎo méi", "strawberry", "strawberry.webp"],
+      ["orange", "橙子", "chéng zi", "orange", "orange.webp"],
+      ["pear", "梨", "lí", "pear", "pear.webp"],
+      ["watermelon", "西瓜", "xī guā", "watermelon", "watermelon.webp"],
+      ["peach", "桃子", "táo zi", "peach", "peach.webp"],
+      ["cherries", "樱桃", "yīng táo", "cherries", "cherries.webp"],
+      ["candies", "糖果", "táng guǒ", "candies", "candies.webp"],
+      ["chocolate", "巧克力", "qiǎo kè lì", "chocolate", "chocolate.webp"],
+      ["ice-cream", "冰淇淋", "bīng qí lín", "ice cream", "ice-cream.webp"],
+      ["cake", "蛋糕", "dàn gāo", "cake", "cake.webp"],
+      ["pizza", "披萨", "pī sà", "pizza", "pizza.webp"],
+      ["milk", "牛奶", "niú nǎi", "milk", "milk.webp"],
+      ["juice", "果汁", "guǒ zhī", "juice", "juice.webp"],
+      ["cola", "可乐", "kě lè", "Coke", "cola.webp"],
+      ["chow-mein", "炒面", "chǎo miàn", "chow mein", "chow-mein.webp"],
+      ["fried-rice", "炒饭", "chǎo fàn", "fried rice", "fried-rice.webp"],
+      ["french-fries", "薯条", "shǔ tiáo", "French fries", "french-fries.webp"],
+      ["hamburger", "汉堡", "hàn bǎo", "hamburger", "hamburger.webp"],
+      ["hot-dog", "热狗", "rè gǒu", "hot dog", "hot-dog.webp"],
+      ["carrot", "胡萝卜", "hú luó bo", "carrot", "carrot.webp"],
+      ["cucumber", "黄瓜", "huáng guā", "cucumber", "cucumber.webp"],
+      ["tomato", "西红柿", "xī hóng shì", "tomato", "tomato.webp"],
+      ["broccoli", "西兰花", "xī lán huā", "broccoli", "broccoli.webp"],
+      ["potatoes", "土豆", "tǔ dòu", "potatoes", "potatoes.webp"]
+    ].map(([id, hanzi, pinyin, english, file]) => ({ id, hanzi, pinyin, english, audio: hanzi, imagePath: `assets/illustrated-food/${file}` })),
+    review: [
+      { pattern: "吃 / 喝", pinyin: "chī / hē", english: "eat / drink", example: "吃苹果、披萨；喝牛奶、果汁。" }
+    ]
+  },
+  "food-preferences": {
+    practiceSummary: "Make your own sentences about foods you like and do not like.",
+    scenes: [
+      {
+        id: "food-preferences-dialogue",
+        label: "Food talk",
+        hanzi: "我喜欢吃冰淇淋。你喜欢吃什么？",
+        pinyin: "wǒ xǐ huan chī bīng qí lín. nǐ xǐ huan chī shén me?",
+        english: "I like to eat ice cream. What do you like to eat?",
+        audio: "我喜欢吃冰淇淋你喜欢吃什么",
+        imagePath: "assets/illustrated-snacks/food-preferences-dialogue.webp"
+      },
+      {
+        id: "like-pizza",
+        label: "I like",
+        hanzi: "我喜欢吃披萨。",
+        pinyin: "wǒ xǐ huan chī pī sà.",
+        english: "I like to eat pizza.",
+        audio: "我喜欢吃披萨",
+        imagePath: "assets/illustrated-food-feelings/like-pizza.webp"
+      },
+      {
+        id: "dislike-broccoli",
+        label: "I do not like",
+        hanzi: "我不喜欢吃西兰花。",
+        pinyin: "wǒ bù xǐ huan chī xī lán huā.",
+        english: "I do not like to eat broccoli.",
+        audio: "我不喜欢吃西兰花",
+        imagePath: "assets/illustrated-food-feelings/dislike-broccoli.webp"
+      },
+      {
+        id: "parents-food-preferences",
+        label: "Family preferences",
+        hanzi: "妈妈喜欢吃饺子。爸爸不喜欢吃饺子。",
+        pinyin: "mā ma xǐ huan chī jiǎo zi. bà ba bù xǐ huan chī jiǎo zi.",
+        english: "Mom likes to eat dumplings. Dad does not like to eat dumplings.",
+        audio: "妈妈喜欢吃饺子爸爸不喜欢吃饺子",
+        imagePath: "assets/illustrated-snacks/parents-food-preferences.webp"
+      }
+    ],
+    words: [
+      ["ice-cream", "冰淇淋", "bīng qí lín", "ice cream", "ice-cream.webp"],
+      ["pizza", "披萨", "pī sà", "pizza", "pizza.webp"],
+      ["broccoli", "西兰花", "xī lán huā", "broccoli", "broccoli.webp"],
+      ["dumplings", "饺子", "jiǎo zi", "dumplings", "dumplings.webp"],
+    ].map(([id, hanzi, pinyin, english, file]) => ({ id, hanzi, pinyin, english, audio: hanzi, imagePath: `assets/illustrated-food/${file}` })),
+    review: [
+      { pattern: "你喜欢吃什么？", pinyin: "nǐ xǐ huan chī shén me?", english: "What do you like to eat?", example: "Use this question to ask about a favorite food." },
+      { pattern: "喜欢吃 / 不喜欢吃", pinyin: "xǐ huan chī / bù xǐ huan chī", english: "like to eat / do not like to eat", example: "我喜欢吃披萨。我不喜欢吃西兰花。" }
+    ]
+  },
+  "meals-feelings": {
+    practiceSummary: "Match the first line of each food conversation to its reply.",
+    sceneGroups: [
+      {
+        id: "lunch",
+        label: "",
+        items: [
+          {
+            id: "lunch",
+            label: "Lunch",
+            hanzi: "我午饭喝了牛奶，吃了披萨。",
+            pinyin: "wǒ wǔ fàn hē le niú nǎi, chī le pī sà.",
+            english: "For lunch, I drank milk and ate pizza.",
+            audio: "我午饭喝了牛奶吃了披萨",
+            imagePath: "assets/illustrated-meals/anan-eating-school-lunch.webp"
+          },
+          {
+            id: "cola-water",
+            label: "No Coke",
+            hanzi: "我要喝可乐。没有可乐，你可以喝水。",
+            pinyin: "wǒ yào hē kě lè. méi yǒu kě lè, nǐ kě yǐ hē shuǐ.",
+            english: "I want to drink Coke. There is no Coke. You can drink water.",
+            audio: "我要喝可乐没有可乐你可以喝水",
+            imagePath: "assets/illustrated-meals/anan-mom-fridge-cola-water.webp"
+          }
+        ]
+      },
+      {
+        id: "feelings",
+        label: "Food Feelings",
+        items: [
+          { id: "hungry", label: "Hungry", hanzi: "我饿了，我要吃炒饭。", pinyin: "wǒ è le, wǒ yào chī chǎo fàn.", english: "I am hungry. I want to eat fried rice.", audio: "我饿了我要吃炒饭", imagePath: "assets/illustrated-food-feelings/hungry.webp" },
+          { id: "thirsty", label: "Thirsty", hanzi: "我渴了，我要喝水。", pinyin: "wǒ kě le, wǒ yào hē shuǐ.", english: "I am thirsty. I want to drink water.", audio: "我渴了我要喝水", imagePath: "assets/illustrated-food-feelings/thirsty.webp" },
+          { id: "delicious", label: "Delicious", hanzi: "饺子好吃。", pinyin: "jiǎo zi hǎo chī.", english: "Dumplings are delicious.", audio: "饺子好吃", imagePath: "assets/illustrated-food-feelings/delicious.webp" },
+          { id: "full", label: "Full", hanzi: "妈妈，我饱了，不吃了。", pinyin: "mā ma, wǒ bǎo le, bù chī le.", english: "Mom, I am full. I do not want to eat any more.", audio: "妈妈我饱了不吃了", imagePath: "assets/illustrated-food-feelings/full.webp" }
+        ]
+      }
+    ],
+    wordGroups: [
+      { id: "feelings", hanzi: "食物感觉", english: "Food Feelings", items: [["hungry", "饿", "è", "hungry", "assets/illustrated-food-feelings/hungry.webp"], ["thirsty", "渴", "kě", "thirsty", "assets/illustrated-food-feelings/thirsty.webp"], ["want", "要", "yào", "want", "assets/illustrated-food-feelings/want-eat-fried-rice-landscape.webp"], ["delicious", "好吃", "hǎo chī", "delicious", "assets/illustrated-food-feelings/delicious.webp"], ["full", "饱", "bǎo", "full", "assets/illustrated-food-feelings/full.webp"]] }
+    ],
+    practiceItems: [
+      { id: "ask-lunch", hanzi: "你午饭吃什么？", pinyin: "nǐ wǔ fàn chī shén me?", english: "What do you have for lunch?", audio: "你午饭吃什么" },
+      { id: "lunch-answer", hanzi: "三明治和果汁。", pinyin: "sān míng zhì hé guǒ zhī.", english: "Sandwiches and juice.", audio: "三明治和果汁" },
+      { id: "can-eat-chocolate", hanzi: "我可以吃巧克力吗？", pinyin: "wǒ kě yǐ chī qiǎo kè lì ma?", english: "May I eat chocolate?", audio: "我可以吃巧克力吗" },
+      { id: "not-now", hanzi: "不行，现在吃饭。", pinyin: "bù xíng, xiàn zài chī fàn.", english: "No, it is time to eat now.", audio: "不行现在吃饭" },
+      { id: "no-hotdog", hanzi: "对不起，没有热狗。", pinyin: "duì bu qǐ, méi yǒu rè gǒu.", english: "Sorry, there are no hot dogs.", audio: "对不起没有热狗" },
+      { id: "no-cola-water", hanzi: "没有可乐，你可以喝水。", pinyin: "méi yǒu kě lè, nǐ kě yǐ hē shuǐ.", english: "There is no Coke. You can drink water.", audio: "没有可乐你可以喝水" }
+    ],
+    conversationPairs: [
+      { id: "thirsty-coke", hanzi: "我渴了。", pinyin: "wǒ kě le.", reply: "我要喝可乐。", replyPinyin: "wǒ yào hē kě lè.", audio: "我渴了" },
+      { id: "hungry-hotdog", hanzi: "我饿了。", pinyin: "wǒ è le.", reply: "我要吃热狗。", replyPinyin: "wǒ yào chī rè gǒu.", audio: "我饿了" },
+      { id: "full-stop", hanzi: "妈妈，我饱了。", pinyin: "mā ma, wǒ bǎo le.", reply: "好，不吃了。", replyPinyin: "hǎo, bù chī le.", audio: "妈妈我饱了" },
+      { id: "lunch-sandwich", hanzi: "你午饭吃什么？", pinyin: "nǐ wǔ fàn chī shén me?", reply: "三明治和果汁。", replyPinyin: "sān míng zhì hé guǒ zhī.", audio: "你午饭吃什么" },
+      { id: "chocolate-mealtime", hanzi: "我可以吃巧克力吗？", pinyin: "wǒ kě yǐ chī qiǎo kè lì ma?", reply: "不行，现在吃饭。", replyPinyin: "bù xíng, xiàn zài chī fàn.", audio: "我可以吃巧克力吗" },
+      { id: "no-coke-water", hanzi: "没有可乐。", pinyin: "méi yǒu kě lè.", reply: "你可以喝水。", replyPinyin: "nǐ kě yǐ hē shuǐ.", audio: "没有可乐" }
+    ],
+    pictureChoices: [
+      {
+        id: "lunch-picture",
+        imagePath: "assets/illustrated-meals/anan-eating-school-lunch.webp",
+        imageAlt: "Anan eating lunch.",
+        correctId: "lunch-sentence",
+        options: [
+          { id: "lunch-sentence", hanzi: "我午饭喝了牛奶，吃了披萨。", pinyin: "wǒ wǔ fàn hē le niú nǎi, chī le pī sà.", english: "For lunch, I drank milk and ate pizza." },
+          { id: "lunch-coke", hanzi: "我要喝可乐。", pinyin: "wǒ yào hē kě lè.", english: "I want to drink Coke." },
+          { id: "lunch-hungry", hanzi: "我饿了，我要吃炒饭。", pinyin: "wǒ è le, wǒ yào chī chǎo fàn.", english: "I am hungry. I want to eat fried rice." },
+          { id: "lunch-full", hanzi: "妈妈，我饱了，不吃了。", pinyin: "mā ma, wǒ bǎo le, bù chī le.", english: "Mom, I am full. I do not want to eat any more." }
+        ]
+      },
+      {
+        id: "no-coke-picture",
+        imagePath: "assets/illustrated-meals/anan-mom-fridge-cola-water.webp",
+        imageAlt: "Anan looking for Coke while Mom offers water.",
+        correctId: "no-coke-sentence",
+        options: [
+          { id: "no-coke-sentence", hanzi: "我要喝可乐。没有可乐，你可以喝水。", pinyin: "wǒ yào hē kě lè. méi yǒu kě lè, nǐ kě yǐ hē shuǐ.", english: "I want to drink Coke. There is no Coke. You can drink water." },
+          { id: "no-coke-lunch", hanzi: "我午饭喝了牛奶，吃了披萨。", pinyin: "wǒ wǔ fàn hē le niú nǎi, chī le pī sà.", english: "For lunch, I drank milk and ate pizza." },
+          { id: "no-coke-water", hanzi: "我渴了，我要喝水。", pinyin: "wǒ kě le, wǒ yào hē shuǐ.", english: "I am thirsty. I want to drink water." },
+          { id: "no-coke-sandwich", hanzi: "我喜欢吃三明治。", pinyin: "wǒ xǐ huan chī sān míng zhì.", english: "I like to eat sandwiches." }
+        ]
+      },
+      {
+        id: "hungry-picture",
+        imagePath: "assets/illustrated-food-feelings/hungry.webp",
+        imageAlt: "A child who is hungry and wants fried rice.",
+        correctId: "hungry-sentence",
+        options: [
+          { id: "hungry-sentence", hanzi: "我饿了，我要吃炒饭。", pinyin: "wǒ è le, wǒ yào chī chǎo fàn.", english: "I am hungry. I want to eat fried rice." },
+          { id: "hungry-thirsty", hanzi: "我渴了，我要喝水。", pinyin: "wǒ kě le, wǒ yào hē shuǐ.", english: "I am thirsty. I want to drink water." },
+          { id: "hungry-coke", hanzi: "我要喝可乐。", pinyin: "wǒ yào hē kě lè.", english: "I want to drink Coke." },
+          { id: "hungry-full", hanzi: "妈妈，我饱了，不吃了。", pinyin: "mā ma, wǒ bǎo le, bù chī le.", english: "Mom, I am full. I do not want to eat any more." }
+        ]
+      },
+      {
+        id: "thirsty-picture",
+        imagePath: "assets/illustrated-food-feelings/thirsty.webp",
+        imageAlt: "A child who is thirsty and wants water.",
+        correctId: "thirsty-sentence",
+        options: [
+          { id: "thirsty-sentence", hanzi: "我渴了，我要喝水。", pinyin: "wǒ kě le, wǒ yào hē shuǐ.", english: "I am thirsty. I want to drink water." },
+          { id: "thirsty-hungry", hanzi: "我饿了，我要吃炒饭。", pinyin: "wǒ è le, wǒ yào chī chǎo fàn.", english: "I am hungry. I want to eat fried rice." },
+          { id: "thirsty-lunch", hanzi: "我午饭喝了牛奶，吃了披萨。", pinyin: "wǒ wǔ fàn hē le niú nǎi, chī le pī sà.", english: "For lunch, I drank milk and ate pizza." },
+          { id: "thirsty-full", hanzi: "妈妈，我饱了，不吃了。", pinyin: "mā ma, wǒ bǎo le, bù chī le.", english: "Mom, I am full. I do not want to eat any more." }
+        ]
+      },
+      {
+        id: "delicious-picture",
+        imagePath: "assets/illustrated-food-feelings/delicious.webp",
+        imageAlt: "Dumplings that taste delicious.",
+        correctId: "delicious-sentence",
+        options: [
+          { id: "delicious-sentence", hanzi: "饺子好吃。", pinyin: "jiǎo zi hǎo chī.", english: "Dumplings are delicious." },
+          { id: "delicious-thirsty", hanzi: "我渴了，我要喝水。", pinyin: "wǒ kě le, wǒ yào hē shuǐ.", english: "I am thirsty. I want to drink water." },
+          { id: "delicious-coke", hanzi: "我要喝可乐。", pinyin: "wǒ yào hē kě lè.", english: "I want to drink Coke." },
+          { id: "delicious-full", hanzi: "妈妈，我饱了，不吃了。", pinyin: "mā ma, wǒ bǎo le, bù chī le.", english: "Mom, I am full. I do not want to eat any more." }
+        ]
+      },
+      {
+        id: "full-picture",
+        imagePath: "assets/illustrated-food-feelings/full.webp",
+        imageAlt: "A child who is full after eating.",
+        correctId: "full-sentence",
+        options: [
+          { id: "full-sentence", hanzi: "妈妈，我饱了，不吃了。", pinyin: "mā ma, wǒ bǎo le, bù chī le.", english: "Mom, I am full. I do not want to eat any more." },
+          { id: "full-hungry", hanzi: "我饿了，我要吃炒饭。", pinyin: "wǒ è le, wǒ yào chī chǎo fàn.", english: "I am hungry. I want to eat fried rice." },
+          { id: "full-thirsty", hanzi: "我渴了，我要喝水。", pinyin: "wǒ kě le, wǒ yào hē shuǐ.", english: "I am thirsty. I want to drink water." },
+          { id: "full-lunch", hanzi: "我午饭喝了牛奶，吃了披萨。", pinyin: "wǒ wǔ fàn hē le niú nǎi, chī le pī sà.", english: "For lunch, I drank milk and ate pizza." }
+        ]
+      }
+    ],
+    review: [
+      { pattern: "饿了 / 渴了", pinyin: "è le / kě le", english: "hungry / thirsty", example: "我饿了，我要吃炒饭。 我渴了，我要喝水。", examplePinyin: "wǒ è le, wǒ yào chī chǎo fàn. wǒ kě le, wǒ yào hē shuǐ.", exampleEnglish: "When you are hungry, eat. When you are thirsty, drink." },
+      { pattern: "你午饭吃什么？", pinyin: "nǐ wǔ fàn chī shén me?", english: "What do you have for lunch?", example: "我午饭吃……，喝……", examplePinyin: "wǒ wǔ fàn chī..., hē...", exampleEnglish: "For lunch, I eat ... and drink ..." },
+      { pattern: "要 + 吃 / 喝 + 食物", pinyin: "yào + chī / hē + shí wù", english: "want to eat / drink + food", example: "我要吃炒饭。我要喝可乐。", examplePinyin: "wǒ yào chī chǎo fàn. wǒ yào hē kě lè.", exampleEnglish: "I want to eat fried rice. I want to drink Coke." },
+      { pattern: "好吃 / 饱了", pinyin: "hǎo chī / bǎo le", english: "delicious / full", example: "饺子好吃。妈妈，我饱了，不吃了。", examplePinyin: "jiǎo zi hǎo chī. mā ma, wǒ bǎo le, bù chī le.", exampleEnglish: "Dumplings are delicious. Mom, I am full. I do not want to eat any more." },
+      { pattern: "没有……，你可以……", pinyin: "méi yǒu..., nǐ kě yǐ...", english: "There is no ...; you can ...", example: "没有可乐。你可以喝水。", examplePinyin: "méi yǒu kě lè. nǐ kě yǐ hē shuǐ.", exampleEnglish: "There is no Coke. You can drink water." }
+    ]
+  }
+};
+
+const schoolSentenceBuilds = {
+  "school-supplies": [
+    { id: "stationery", imagePath: "assets/illustrated-stationery/pencil-box.webp", target: ["文具盒", "里", "有", "铅笔"], distractors: ["学校", "喜欢", "图书馆"], pinyin: "wén jù hé lǐ yǒu qiān bǐ.", english: "There is a pencil in the pencil case." },
+    { id: "eraser", imagePath: "assets/illustrated-stationery/pencil-box.webp", target: ["文具盒", "里", "有", "橡皮"], distractors: ["学校", "喜欢", "图书馆"], pinyin: "wén jù hé lǐ yǒu xiàng pí.", english: "There is an eraser in the pencil case." },
+    { id: "colored-pencils", imagePath: "assets/illustrated-stationery/pencil-box.webp", target: ["文具盒", "里", "有", "彩色铅笔"], distractors: ["学校", "喜欢", "图书馆"], pinyin: "wén jù hé lǐ yǒu cǎi sè qiān bǐ.", english: "There are colored pencils in the pencil case." },
+    { id: "book-in-backpack", imagePath: "assets/illustrated-rooms/positions-inside-outside.webp", target: ["书", "在", "书包", "里"], distractors: ["教室", "喜欢", "椅子"], pinyin: "shū zài shū bāo lǐ.", english: "The book is in the backpack." },
+    { id: "backpack-has-book", imagePath: "assets/illustrated-rooms/positions-inside-outside.webp", target: ["书包", "里", "有", "书"], distractors: ["教室", "喜欢", "椅子"], pinyin: "shū bāo lǐ yǒu shū.", english: "There is a book in the backpack." },
+    { id: "pencil-case-outside", imagePath: "assets/illustrated-rooms/positions-inside-outside.webp", target: ["文具盒", "在", "书包", "外面"], distractors: ["教室", "喜欢", "椅子"], pinyin: "wén jù hé zài shū bāo wài miàn.", english: "The pencil case is outside the backpack." }
+  ],
+  school: [
+    { id: "classroom", imagePath: "assets/illustrated-school-anchors/classroom_anchor.webp", target: ["学校", "有", "教室"], distractors: ["书包", "里", "喜欢"], pinyin: "xué xiào yǒu jiào shì.", english: "The school has classrooms." },
+    { id: "library", imagePath: "assets/illustrated-school-anchors/library_anchor.webp", target: ["学校", "有", "图书馆"], distractors: ["书包", "里", "喜欢"], pinyin: "xué xiào yǒu tú shū guǎn.", english: "The school has a library." },
+    { id: "playground", imagePath: "assets/illustrated-school-anchors/playground_anchor.webp", target: ["学校", "有", "操场"], distractors: ["文具盒", "里", "喜欢"], pinyin: "xué xiào yǒu cāo chǎng.", english: "The school has a playground." },
+    { id: "cafeteria", imagePath: "assets/illustrated-school-anchors/cafeteria_anchor.webp", target: ["学校", "有", "食堂"], distractors: ["教室", "里", "喜欢"], pinyin: "xué xiào yǒu shí táng.", english: "The school has a cafeteria." },
+    { id: "auditorium", imagePath: "assets/illustrated-school-anchors/auditorium_anchor.webp", target: ["学校", "有", "礼堂"], distractors: ["书包", "里", "喜欢"], pinyin: "xué xiào yǒu lǐ táng.", english: "The school has an auditorium." },
+    { id: "music-room", imagePath: "assets/illustrated-school-anchors/music_classroom_anchor.webp", target: ["学校", "有", "音乐教室"], distractors: ["文具盒", "里", "喜欢"], pinyin: "xué xiào yǒu yīn yuè jiào shì.", english: "The school has a music room.", audio: "学校有音乐教室" },
+    { id: "music-room-piano", imagePath: "assets/illustrated-school-anchors/piano_anchor.webp", target: ["音乐教室", "有", "钢琴"], distractors: ["文具盒", "里", "喜欢"], pinyin: "yīn yuè jiào shì yǒu gāng qín.", english: "The music room has a piano.", audio: "音乐教室有钢琴" }
+  ],
+  "school-subjects": [
+    { id: "ask-favorite", imagePath: "assets/illustrated-school-subjects/subjects-dialogue.webp", target: ["你", "喜欢", "什么", "课"], distractors: ["学校", "有", "图书馆"], pinyin: "nǐ xǐ huan shén me kè?", english: "What class do you like?" },
+    { id: "go-music", imagePath: "assets/illustrated-activities/anan_go_to_music_class.webp", target: ["我", "去", "上", "音乐课"], distractors: ["学校", "有", "图书馆"], pinyin: "wǒ qù shàng yīn yuè kè.", english: "I go to music class.", audio: "我去上音月课" },
+    { id: "in-music", imagePath: "assets/illustrated-activities/anan_in_music_class.webp", target: ["我", "在", "上", "音乐课"], distractors: ["学校", "有", "图书馆"], pinyin: "wǒ zài shàng yīn yuè kè.", english: "I am in music class.", audio: "我在上音月课" },
+    { id: "music", imagePath: "assets/illustrated-activities/anan_likes_music_class.webp", target: ["我", "喜欢", "音乐课"], distractors: ["学校", "有", "图书馆"], pinyin: "wǒ xǐ huan yīn yuè kè.", english: "I like music class.", audio: "我喜欢音月课" },
+    { id: "pe", imagePath: "assets/illustrated-activities/yangyang_likes_pe_class.webp", target: ["我", "喜欢", "体育课"], distractors: ["学校", "有", "文具盒"], pinyin: "wǒ xǐ huan tǐ yù kè.", english: "I like PE class." },
+    { id: "dislikes-math", imagePath: "assets/illustrated-activities/lele_dislikes_math_class.webp", target: ["我", "不喜欢", "数学课"], distractors: ["学校", "有", "文具盒"], pinyin: "wǒ bù xǐ huan shù xué kè.", english: "I do not like math class." }
+  ],
+  food: [
+    { id: "fruit", imagePath: "assets/illustrated-food/fruit-group-1b-core.webp", target: ["我", "吃", "苹果"], distractors: ["喝", "学校", "教室"], pinyin: "wǒ chī píng guǒ.", english: "I eat an apple." },
+    { id: "milk", imagePath: "assets/illustrated-food/milk.webp", target: ["我", "喝", "牛奶"], distractors: ["吃", "学校", "教室"], pinyin: "wǒ hē niú nǎi.", english: "I drink milk." }
+  ],
+  "meals-feelings": [
+    { id: "lunch", imagePath: "assets/illustrated-meals/anan-eating-school-lunch.webp", target: ["我", "午饭", "喝了", "牛奶", "吃了", "披萨"], distractors: ["要", "水", "学校"], pinyin: "wǒ wǔ fàn hē le niú nǎi, chī le pī sà.", english: "For lunch, I drank milk and ate pizza." },
+    { id: "hungry", imagePath: "assets/illustrated-food-feelings/hungry.webp", target: ["我", "饿", "了", "我", "要", "吃", "炒饭"], distractors: ["喝", "水", "学校"], pinyin: "wǒ è le, wǒ yào chī chǎo fàn.", english: "I am hungry. I want to eat fried rice." },
+    { id: "thirsty", imagePath: "assets/illustrated-food-feelings/thirsty.webp", target: ["我", "渴", "了", "我", "要", "喝", "水"], distractors: ["吃", "炒饭", "学校"], pinyin: "wǒ kě le, wǒ yào hē shuǐ.", english: "I am thirsty. I want to drink water." },
+    { id: "delicious", imagePath: "assets/illustrated-food-feelings/delicious.webp", target: ["饺子", "好吃"], distractors: ["可乐", "学校", "教室"], pinyin: "jiǎo zi hǎo chī.", english: "Dumplings are delicious." },
+    { id: "full", imagePath: "assets/illustrated-food-feelings/full.webp", target: ["妈妈", "我", "饱", "了", "不吃", "了"], distractors: ["渴", "要", "学校"], pinyin: "mā ma, wǒ bǎo le, bù chī le.", english: "Mom, I am full. I do not want to eat any more." }
+  ]
 };
 
 const roomScenes = [
@@ -1791,8 +2332,8 @@ const books = [
     lessons: [
       { lesson: 1, title: "Today is Monday", topicId: "weekdays" },
       { lesson: 2, title: "What time is it?", topicId: "time-date" },
-      { lesson: 3, title: "Stationery", topicId: "school" },
-      { lesson: 4, title: "My classroom", topicId: "school" },
+      { lesson: 3, title: "Stationery", topicId: "school-supplies" },
+      { lesson: 4, title: "My classroom", topicId: "classroom" },
       { lesson: 5, title: "Animals", topicId: "animals" },
       { lesson: 6, title: "Big or small", topicId: "comparisons" },
       { lesson: 7, title: "Snacks", topicId: "food" }
@@ -1815,11 +2356,11 @@ const books = [
     id: "3b",
     label: "Book 3B",
     lessons: [
-      { lesson: 1, title: "My schoolbag", topicId: "school" },
-      { lesson: 2, title: "Our classroom", topicId: "school" },
+      { lesson: 1, title: "My schoolbag", topicId: "school-supplies" },
+      { lesson: 2, title: "Our classroom", topicId: "classroom" },
       { lesson: 3, title: "Positions", topicId: "positions" },
       { lesson: 4, title: "Hobbies", topicId: "hobbies" },
-      { lesson: 5, title: "Food and drink", topicId: "food" },
+      { lesson: 5, title: "Food and drink", topicId: "food-preferences" },
       { lesson: 6, title: "Vegetables", topicId: "food" },
       { lesson: 7, title: "Nature", topicId: "weather" }
     ]
@@ -1832,9 +2373,9 @@ const books = [
       { lesson: 2, title: "Languages", topicId: "identity" },
       { lesson: 3, title: "Tell the time", topicId: "time-date" },
       { lesson: 4, title: "Daily routine", topicId: "time-date" },
-      { lesson: 5, title: "My lunch", topicId: "food" },
+      { lesson: 5, title: "My lunch", topicId: "meals-feelings" },
       { lesson: 6, title: "Means of transport", topicId: "transport" },
-      { lesson: 7, title: "I'm hungry", topicId: "food" }
+      { lesson: 7, title: "I'm hungry", topicId: "meals-feelings" }
     ]
   },
   {
@@ -1846,7 +2387,7 @@ const books = [
       { lesson: 3, title: "My room", topicId: "daily-life" },
       { lesson: 4, title: "Hobbies", topicId: "hobbies" },
       { lesson: 5, title: "Our school", topicId: "school" },
-      { lesson: 6, title: "School subjects", topicId: "school" },
+      { lesson: 6, title: "School subjects", topicId: "school-subjects" },
       { lesson: 7, title: "Leisure time", topicId: "hobbies" }
     ]
   }
@@ -1875,7 +2416,7 @@ const bookHomeCategories = [
     id: "expand-language",
     zhTitle: "第三阶段",
     enTitle: "Expand the Language",
-    hint: "Book 3A and 3B: birthdays, requests, schoolbag, hobbies",
+    hint: "Book 3A and 3B: birthdays, requests, backpack, hobbies",
     accent: "#517b8d",
     iconEmoji: "📘",
     bookIds: ["3a", "3b"]
@@ -1908,13 +2449,13 @@ const topicGroups = [
     id: "daily-world",
     label: "Daily World",
     description: "Food, hobbies, routines, weather, and the world around the child.",
-    topicIds: ["food", "toys", "hobbies", "comparisons", "positions", "transport", "daily-life", "weather"]
+    topicIds: ["food", "food-preferences", "meals-feelings", "toys", "hobbies", "comparisons", "positions", "transport", "daily-life", "weather"]
   },
   {
     id: "school-and-time",
     label: "School & Time",
     description: "Practical classroom, calendar, and time-based language.",
-    topicIds: ["weekdays", "time-date", "dates", "school"]
+    topicIds: ["weekdays", "time-date", "dates", "school-supplies", "classroom", "school", "school-subjects"]
   }
 ];
 
@@ -1930,11 +2471,16 @@ const topicCardMeta = {
   body: { zhTitle: "身体", enTitle: "Body", hint: "Tap body parts and listen" },
   animals: { zhTitle: "动物", enTitle: "Animals", hint: "Pets and favorite animals" },
   colours: { zhTitle: "颜色", enTitle: "Colours", hint: "Red, yellow, blue, green" },
-  food: { zhTitle: "食物", enTitle: "Food & Drinks", hint: "Fruit, snacks, meals" },
+  food: { zhTitle: "食物和饮料", enTitle: "Food & Drinks", hint: "Fruit, vegetables, snacks, drinks" },
+  "food-preferences": { zhTitle: "喜欢和不喜欢", enTitle: "Food Preferences", hint: "Ask and say what you like to eat" },
+  "meals-feelings": { zhTitle: "午饭和感觉", enTitle: "Meals & Feelings", hint: "Lunch, hungry, thirsty" },
   weekdays: { zhTitle: "星期", enTitle: "Days of the Week", hint: "Monday to Sunday" },
   "time-date": { zhTitle: "时间", enTitle: "Time & Routines", hint: "Clock and daily routines" },
   dates: { zhTitle: "日期", enTitle: "Dates & Months", hint: "Months, dates, birthdays" },
-  school: { zhTitle: "学校", enTitle: "School", hint: "Classroom, schoolbag, subjects" },
+  "school-supplies": { zhTitle: "文具和书包", enTitle: "Stationery & Backpack", hint: "Pencil, ruler, books, backpack" },
+  classroom: { zhTitle: "教室", enTitle: "Classroom", hint: "Classroom, table, chair, board" },
+  school: { zhTitle: "我们的学校", enTitle: "Our School", hint: "Library, playground, cafeteria" },
+  "school-subjects": { zhTitle: "学校学科", enTitle: "School Subjects", hint: "Chinese, English, music, art, PE" },
   hobbies: { zhTitle: "爱好", enTitle: "Hobbies", hint: "Reading, music, sports, games" },
   toys: { zhTitle: "玩具", enTitle: "Toys", hint: "Toy car, train, airplane" },
   clothes: { zhTitle: "衣服", enTitle: "Clothes", hint: "Dress for the day" },
@@ -1977,19 +2523,19 @@ const learningHomeCategories = [
     id: "school-life",
     zhTitle: "学校生活",
     enTitle: "School Life",
-    hint: "Classroom, schoolbag, subjects",
+    hint: "Classroom, backpack, subjects",
     accent: "#6d8a4f",
     iconEmoji: "🏫",
-    topicIds: ["school"]
+    topicIds: ["school-supplies", "classroom", "school", "school-subjects"]
   },
   {
     id: "food",
     zhTitle: "食物",
     enTitle: "Food",
-    hint: "Fruit, snacks, meals",
+    hint: "Food words, preferences, and meals",
     accent: "#c48d46",
     iconSrc: "assets/navigation-icons/burger-fries-icon.webp",
-    topicIds: ["food"]
+    topicIds: ["food", "food-preferences", "meals-feelings"]
   },
   {
     id: "world",
@@ -2159,6 +2705,46 @@ const state = {
   comparisonBuildAvailableTokens: [],
   comparisonBuildSelectedTokens: [],
   comparisonBuildResult: "",
+  schoolPracticeTopicId: "",
+  schoolChallengeAnswerId: "",
+  schoolChallengeOptionIds: [],
+  schoolChallengePickedId: "",
+  schoolChallengePromptId: "",
+  schoolChallengeResult: "",
+  schoolChallengeWrongIds: new Set(),
+  schoolListenFeedback: "",
+  schoolMatchFeedback: "",
+  schoolSelectedPhraseId: null,
+  schoolMatchedIds: new Set(),
+  schoolPhraseOrder: [],
+  schoolMeaningOrder: [],
+  mealsConversationMatchReady: false,
+  mealsConversationWrongPhraseIds: new Set(),
+  mealsConversationWrongReplyIds: new Set(),
+  mealsPictureQuizOrder: [],
+  mealsPictureQuizIndex: 0,
+  mealsPictureQuizOptionIds: [],
+  mealsPictureQuizSelectedId: "",
+  mealsPictureQuizResult: "",
+  foodPreferenceSubjectId: "我",
+  foodPreferencePatternId: "like",
+  foodPreferenceFoodId: "",
+  classroomSentenceFrameId: "in-classroom",
+  classroomSentenceWordId: "",
+  schoolBuildTopicId: "",
+  schoolBuildOrder: [],
+  schoolBuildIndex: 0,
+  schoolBuildAvailableTokens: [],
+  schoolBuildSelectedTokens: [],
+  schoolBuildResult: "",
+  foodCategoryId: "fruit",
+  foodBookCategoryId: "fruit",
+  mealsWordGroupId: "lunch",
+  foodCategorySelectedId: null,
+  foodCategoryMatchedIds: new Set(),
+  foodCategoryOrder: [],
+  foodCategoryMeaningOrder: [],
+  foodCategoryFeedback: "",
   timeDateSectionId: "",
   timeDateSectionSource: "",
   identitySelectedCountryId: ""
@@ -4219,7 +4805,7 @@ function bindDisplayControls() {
 }
 
 function renderTopicStickyNav() {
-  learningCultureNav.innerHTML = learningHomeCategories
+  const categoriesMarkup = learningHomeCategories
     .map(
       (category) => `
         <button
@@ -4234,7 +4820,12 @@ function renderTopicStickyNav() {
         </button>
       `
     )
-    .join("") + displayControlsMarkup();
+    .join("");
+
+  learningCultureNav.innerHTML = `
+    <span class="learning-culture-nav-items">${categoriesMarkup}</span>
+    ${displayControlsMarkup()}
+  `;
 
   bindDisplayControls();
   learningCultureNav.querySelectorAll("[data-target]").forEach((button) => {
@@ -4255,7 +4846,7 @@ function bookAccent(index) {
 }
 
 function renderBookStickyNav() {
-  learningCultureNav.innerHTML = bookHomeCategories
+  const categoriesMarkup = bookHomeCategories
     .map((category) => {
       const isActive = category.id === state.selectedBookCategoryId;
       return `
@@ -4271,7 +4862,12 @@ function renderBookStickyNav() {
         </button>
       `;
     })
-    .join("") + displayControlsMarkup();
+    .join("");
+
+  learningCultureNav.innerHTML = `
+    <span class="learning-culture-nav-items">${categoriesMarkup}</span>
+    ${displayControlsMarkup()}
+  `;
 
   bindDisplayControls();
   learningCultureNav.querySelectorAll("[data-book-category-target]").forEach((button) => {
@@ -4779,7 +5375,7 @@ function selectFocusItem(itemId, options = {}) {
 
 function renderFocusWordList() {
   if (
-    ["body", "dates", "comparisons", "positions", "transport", "daily-life", "multiplication-rhyme", "identity"].includes(currentTopic().id) ||
+    ["body", "dates", "comparisons", "positions", "transport", "daily-life", "multiplication-rhyme", "identity", "school-supplies", "classroom", "school", "school-subjects", "food", "food-preferences", "meals-feelings"].includes(currentTopic().id) ||
     (currentTopic().id === "numbers" && currentNumberStage().telephoneMode)
   ) {
     focusWordList.innerHTML = "";
@@ -5245,12 +5841,14 @@ function renderMatchPractice(config) {
                       return "";
                     }
                     const selected = config.selectedId() === id;
+                    const wrong = config.wrongPhraseIds?.().has(id);
                     return `
                       <button
-                        class="polite-match-card polite-match-card-phrase${selected ? " is-selected" : ""}"
+                        class="polite-match-card polite-match-card-phrase${selected ? " is-selected" : ""}${wrong ? " is-wrong" : ""}"
                         type="button"
                         data-template-match-phrase="${id}"
                       >
+                        ${wrong ? '<span class="answer-result-mark" aria-hidden="true">×</span>' : ""}
                         <span class="numbers-game-hanzi">${item.hanzi}</span>
                         ${state.showPinyin ? `<span class="numbers-game-pinyin">${item.pinyin}</span>` : ""}
                       </button>
@@ -5260,17 +5858,19 @@ function renderMatchPractice(config) {
               </div>
               <div class="polite-match-column">
                 ${remainingMeaningIds
-                  .map(
-                    (id) => `
+                  .map((id) => {
+                    const wrong = config.wrongMeaningIds?.().has(id);
+                    return `
                       <button
-                        class="polite-match-card ${config.meaningCardClass ?? "polite-match-card-meaning"}"
+                        class="polite-match-card ${config.meaningCardClass ?? "polite-match-card-meaning"}${wrong ? " is-wrong" : ""}"
                         type="button"
                         data-template-match-meaning="${id}"
                       >
+                        ${wrong ? '<span class="answer-result-mark" aria-hidden="true">×</span>' : ""}
                         ${renderMatchMeaningContent(config, id)}
                       </button>
-                    `
-                  )
+                    `;
+                  })
                   .join("")}
               </div>
             </div>
@@ -5278,7 +5878,7 @@ function renderMatchPractice(config) {
           : ""
       }
       ${
-        matchedIds.size === config.items().length
+        config.showPlayAgain !== false && matchedIds.size === config.items().length
           ? '<button class="small-button is-action-button" type="button" data-template-match-play-again>Play again</button>'
           : ""
       }
@@ -5329,7 +5929,772 @@ function renderSharedLessonPractice(topic, config) {
   });
 }
 
+function schoolWordGroups(topicId = currentTopic().id) {
+  const data = schoolTopicData[topicId];
+  if (!data?.wordGroups) return [];
+  return data.wordGroups.map((group) => ({
+    ...group,
+    items: group.items.map(([id, hanzi, pinyin, english, file]) => ({
+      id,
+      hanzi,
+      pinyin,
+      english,
+      audio: hanzi,
+      imagePath: file ? (file.startsWith("assets/") ? file : `assets/illustrated-food/${file}`) : ""
+    }))
+  }));
+}
+
+function schoolPracticeItems(topicId = currentTopic().id) {
+  const data = schoolTopicData[topicId];
+  return data?.practiceItems ?? data?.words ?? schoolWordGroups(topicId).flatMap((group) => group.items);
+}
+
+function resetSchoolChallenge(options = {}) {
+  const items = schoolPracticeItems();
+  const candidates = items.filter((item) => item.id !== options.excludeId);
+  const answers = candidates.length ? candidates : items;
+  const answer = answers[Math.floor(Math.random() * answers.length)];
+  if (!answer) return;
+  const optionIds = currentTopic().id === "school-subjects"
+    ? shuffleArray(items.map((item) => item.id))
+    : shuffleArray([answer.id, ...shuffleArray(items.filter((item) => item.id !== answer.id)).slice(0, 3).map((item) => item.id)]);
+  state.schoolChallengeAnswerId = answer.id;
+  state.schoolChallengePromptId = answer.id;
+  state.schoolChallengeOptionIds = optionIds;
+  state.schoolChallengePickedId = "";
+  state.schoolChallengeResult = "";
+  state.schoolChallengeWrongIds = new Set();
+  state.schoolListenFeedback = "";
+}
+
+function resetSchoolMatchGame() {
+  const ids = schoolPracticeItems().slice(0, 6).map((item) => item.id);
+  state.schoolSelectedPhraseId = null;
+  state.schoolMatchedIds = new Set();
+  state.schoolPhraseOrder = shuffleArray(ids);
+  state.schoolMeaningOrder = shuffleArray(ids);
+  state.schoolMatchFeedback = "";
+}
+
+function mealsConversationItems() {
+  return schoolTopicData["meals-feelings"]?.conversationPairs ?? [];
+}
+
+function resetMealsConversationMatch() {
+  const ids = mealsConversationItems().map((item) => item.id);
+  state.schoolSelectedPhraseId = null;
+  state.schoolMatchedIds = new Set();
+  state.schoolPhraseOrder = shuffleArray(ids);
+  state.schoolMeaningOrder = shuffleArray(ids);
+  state.schoolMatchFeedback = "";
+  state.mealsConversationMatchReady = true;
+  state.mealsConversationWrongPhraseIds = new Set();
+  state.mealsConversationWrongReplyIds = new Set();
+}
+
+function ensureMealsConversationMatch() {
+  const ids = mealsConversationItems().map((item) => item.id);
+  const currentIds = [...state.schoolPhraseOrder].sort();
+  if (!state.mealsConversationMatchReady || currentIds.length !== ids.length || currentIds.some((id, index) => id !== [...ids].sort()[index])) {
+    resetMealsConversationMatch();
+  }
+}
+
+function handleMealsConversationPhrase(itemId) {
+  if (state.schoolMatchedIds.has(itemId)) return;
+  state.schoolSelectedPhraseId = itemId;
+  state.mealsConversationWrongPhraseIds = new Set();
+  state.mealsConversationWrongReplyIds = new Set();
+  const item = mealsConversationItems().find((entry) => entry.id === itemId);
+  if (item && state.tapAudioEnabled) speak(item.audio, 0.78);
+  renderActivityPanel(currentTopic());
+}
+
+function handleMealsConversationAttempt(itemId) {
+  const selectedId = state.schoolSelectedPhraseId;
+  if (!selectedId || state.schoolMatchedIds.has(itemId)) return;
+  if (selectedId === itemId) {
+    state.schoolMatchedIds = new Set([...state.schoolMatchedIds, itemId]);
+    state.schoolMatchFeedback = "Correct!";
+    state.mealsConversationWrongPhraseIds = new Set();
+    state.mealsConversationWrongReplyIds = new Set();
+  } else {
+    state.schoolMatchFeedback = "Try again.";
+    state.mealsConversationWrongPhraseIds = new Set([selectedId]);
+    state.mealsConversationWrongReplyIds = new Set([itemId]);
+  }
+  state.schoolSelectedPhraseId = null;
+  renderActivityPanel(currentTopic());
+}
+
+function mealsPictureChoiceItems() {
+  return schoolTopicData["meals-feelings"]?.pictureChoices ?? [];
+}
+
+function resetMealsPictureQuestion() {
+  const prompt = mealsPictureChoiceItems().find((item) => item.id === state.mealsPictureQuizOrder[state.mealsPictureQuizIndex]);
+  if (!prompt) return;
+  state.mealsPictureQuizOptionIds = shuffleArray(prompt.options.map((option) => option.id));
+  state.mealsPictureQuizSelectedId = "";
+  state.mealsPictureQuizResult = "";
+}
+
+function ensureMealsPictureChoice() {
+  const ids = mealsPictureChoiceItems().map((item) => item.id);
+  const currentIds = [...state.mealsPictureQuizOrder].sort();
+  if (currentIds.length !== ids.length || currentIds.some((id, index) => id !== [...ids].sort()[index])) {
+    state.mealsPictureQuizOrder = shuffleArray(ids);
+    state.mealsPictureQuizIndex = 0;
+    resetMealsPictureQuestion();
+  }
+}
+
+function handleMealsPictureChoice(optionId) {
+  const prompt = mealsPictureChoiceItems().find((item) => item.id === state.mealsPictureQuizOrder[state.mealsPictureQuizIndex]);
+  if (!prompt || state.mealsPictureQuizResult === "correct") return;
+  state.mealsPictureQuizSelectedId = optionId;
+  state.mealsPictureQuizResult = optionId === prompt.correctId ? "correct" : "wrong";
+  renderActivityPanel(currentTopic());
+}
+
+function nextMealsPictureChoice() {
+  const items = mealsPictureChoiceItems();
+  if (!items.length) return;
+  state.mealsPictureQuizIndex = (state.mealsPictureQuizIndex + 1) % items.length;
+  resetMealsPictureQuestion();
+  renderActivityPanel(currentTopic());
+}
+
+function renderMealsPictureChoice() {
+  const prompt = mealsPictureChoiceItems().find((item) => item.id === state.mealsPictureQuizOrder[state.mealsPictureQuizIndex]);
+  if (!prompt) return "";
+  return `
+    <section class="clothes-quiz-shell meals-picture-choice">
+      <div class="numbers-game-top"><div><p class="body-match-kicker">Look and Choose</p><p class="numbers-game-note">Look at the picture, then tap the Chinese sentence that matches it.</p></div></div>
+      <figure class="clothes-quiz-visual time-routine-quiz-visual"><img class="clothes-quiz-image" src="${prompt.imagePath}" alt="${prompt.imageAlt}" /></figure>
+      <div class="clothes-quiz-options sentence-choice-options">
+        ${state.mealsPictureQuizOptionIds.map((optionId) => {
+          const option = prompt.options.find((item) => item.id === optionId);
+          if (!option) return "";
+          const selected = state.mealsPictureQuizSelectedId === optionId;
+          const resultClass = selected ? ` is-${state.mealsPictureQuizResult}` : "";
+          const mark = selected ? `<span class="answer-result-mark" aria-hidden="true">${state.mealsPictureQuizResult === "correct" ? "✓" : "×"}</span>` : "";
+          return `<button class="clothes-quiz-option${resultClass}" type="button" data-meals-picture-pick="${option.id}">${mark}<span class="numbers-game-hanzi">${option.hanzi}</span>${state.showPinyin ? `<span class="numbers-game-pinyin">${option.pinyin}</span>` : ""}${state.showEnglish ? `<span class="numbers-game-english">${option.english}</span>` : ""}</button>`;
+        }).join("")}
+      </div>
+      ${state.mealsPictureQuizResult === "correct" ? '<div class="clothes-quiz-next"><button class="small-button is-action-button" type="button" data-meals-picture-next>Next picture</button></div>' : ""}
+    </section>
+  `;
+}
+
+function foodPreferenceFillItems() {
+  return [
+    { id: "apple", hanzi: "苹果", pinyin: "píng guǒ", english: "apple" },
+    { id: "ice-cream", hanzi: "冰淇淋", pinyin: "bīng qí lín", english: "ice cream" },
+    { id: "pizza", hanzi: "披萨", pinyin: "pī sà", english: "pizza" },
+    { id: "broccoli", hanzi: "西兰花", pinyin: "xī lán huā", english: "broccoli" },
+    { id: "dumplings", hanzi: "饺子", pinyin: "jiǎo zi", english: "dumplings" },
+    { id: "fried-rice", hanzi: "炒饭", pinyin: "chǎo fàn", english: "fried rice" },
+    { id: "chow-mein", hanzi: "炒面", pinyin: "chǎo miàn", english: "chow mein" },
+    { id: "hamburger", hanzi: "汉堡", pinyin: "hàn bǎo", english: "hamburger" },
+    { id: "hot-dog", hanzi: "热狗", pinyin: "rè gǒu", english: "hot dog" },
+    { id: "sandwich", hanzi: "三明治", pinyin: "sān míng zhì", english: "sandwich" }
+  ];
+}
+
+function foodPreferenceSubjects() {
+  return [
+    { id: "我", hanzi: "我", pinyin: "wǒ", english: "I" },
+    { id: "爸爸", hanzi: "爸爸", pinyin: "bà ba", english: "Dad" },
+    { id: "妈妈", hanzi: "妈妈", pinyin: "mā ma", english: "Mom" },
+    { id: "爷爷", hanzi: "爷爷", pinyin: "yé ye", english: "Grandpa" },
+    { id: "奶奶", hanzi: "奶奶", pinyin: "nǎi nai", english: "Grandma" },
+    { id: "姐姐", hanzi: "姐姐", pinyin: "jiě jie", english: "Older sister" },
+    { id: "妹妹", hanzi: "妹妹", pinyin: "mèi mei", english: "Younger sister" },
+    { id: "弟弟", hanzi: "弟弟", pinyin: "dì di", english: "Younger brother" },
+    { id: "哥哥", hanzi: "哥哥", pinyin: "gē ge", english: "Older brother" }
+  ];
+}
+
+function foodPreferencePatterns() {
+  return [
+    { id: "like", hanzi: "喜欢", pinyin: "xǐ huan", english: "likes to eat", firstPersonEnglish: "like to eat" },
+    { id: "dislike", hanzi: "不喜欢", pinyin: "bù xǐ huan", english: "does not like to eat", firstPersonEnglish: "do not like to eat" },
+    { id: "want", hanzi: "想", pinyin: "xiǎng", english: "wants to eat", firstPersonEnglish: "want to eat" },
+    { id: "not-want", hanzi: "不想", pinyin: "bù xiǎng", english: "does not want to eat", firstPersonEnglish: "do not want to eat" },
+    { id: "need", hanzi: "要", pinyin: "yào", english: "wants to eat", firstPersonEnglish: "want to eat" },
+    { id: "not-need", hanzi: "不要", pinyin: "bú yào", english: "does not want to eat", firstPersonEnglish: "do not want to eat" }
+  ];
+}
+
+function selectedFoodPreferencePattern() {
+  return foodPreferencePatterns().find((item) => item.id === state.foodPreferencePatternId) ?? foodPreferencePatterns()[0];
+}
+
+function handleFoodPreferenceSubject(subjectId) {
+  state.foodPreferenceSubjectId = subjectId;
+  renderActivityPanel(currentTopic());
+}
+
+function handleFoodPreferencePattern(patternId) {
+  state.foodPreferencePatternId = patternId;
+  state.foodPreferenceFoodId = "";
+  renderActivityPanel(currentTopic());
+}
+
+function handleFoodPreferenceFill(foodId) {
+  const item = foodPreferenceFillItems().find((entry) => entry.id === foodId);
+  if (!item) return;
+  const pattern = selectedFoodPreferencePattern();
+  const subject = foodPreferenceSubjects().find((entry) => entry.id === state.foodPreferenceSubjectId) ?? foodPreferenceSubjects()[0];
+  const sentence = `${subject.hanzi}${pattern.hanzi}吃${item.hanzi}`;
+  state.foodPreferenceFoodId = foodId;
+  if (state.tapAudioEnabled) speak(sentence, 0.78);
+  renderActivityPanel(currentTopic());
+}
+
+function renderFoodPreferenceFillPractice() {
+  const items = foodPreferenceFillItems();
+  const pattern = selectedFoodPreferencePattern();
+  const subjects = foodPreferenceSubjects();
+  const subject = subjects.find((item) => item.id === state.foodPreferenceSubjectId) ?? subjects[0];
+  const selectedFood = items.find((item) => item.id === state.foodPreferenceFoodId);
+  const sentenceHanzi = `${subject.hanzi}${pattern.hanzi}吃${selectedFood?.hanzi ?? "____"}。`;
+  const sentencePinyin = `${subject.pinyin} ${pattern.pinyin} chī${selectedFood?.pinyin ? ` ${selectedFood.pinyin}` : ""}.`;
+  const sentenceEnglish = `${subject.english} ${subject.id === "我" ? pattern.firstPersonEnglish : pattern.english}${selectedFood?.english ? ` ${selectedFood.english}` : ""}.`;
+  return `
+    <section class="clothes-quiz-shell food-preference-fill-practice">
+      <div class="numbers-game-top"><div><p class="body-match-kicker">Make your sentence</p><p class="numbers-game-note">Choose one card in each column. There is no right or wrong answer.</p></div></div>
+      <div class="food-preference-builder-columns">
+        <div class="food-preference-builder-column"><p class="food-preference-choice-label">Subject</p><div class="food-preference-builder-list">${subjects.map((item) => `<button class="food-preference-subject-choice${subject.id === item.id ? " is-active" : ""}" type="button" data-food-preference-subject="${item.id}"><span class="numbers-game-hanzi">${item.hanzi}</span><span class="food-preference-card-meta">${state.showPinyin ? `<span class="numbers-game-pinyin">${item.pinyin}</span>` : ""}${state.showEnglish ? `<span class="numbers-game-english">${item.english}</span>` : ""}</span></button>`).join("")}</div></div>
+        <div class="food-preference-builder-column"><p class="food-preference-choice-label">Word</p><div class="food-preference-builder-list">${foodPreferencePatterns().map((item) => `<button class="food-preference-pattern-choice${pattern.id === item.id ? " is-active" : ""}" type="button" data-food-preference-pattern="${item.id}"><span class="numbers-game-hanzi">${item.hanzi}</span><span class="food-preference-card-meta">${state.showPinyin ? `<span class="numbers-game-pinyin">${item.pinyin}</span>` : ""}${state.showEnglish ? `<span class="numbers-game-english">${item.english}</span>` : ""}</span></button>`).join("")}</div></div>
+        <div class="food-preference-builder-column"><p class="food-preference-choice-label">Food</p><div class="food-preference-builder-list">${items.map((item) => `<button class="food-preference-fill-choice${selectedFood?.id === item.id ? " is-active" : ""}" type="button" data-food-preference-food="${item.id}"><span class="numbers-game-hanzi">${item.hanzi}</span><span class="food-preference-card-meta">${state.showPinyin ? `<span class="numbers-game-pinyin">${item.pinyin}</span>` : ""}${state.showEnglish ? `<span class="numbers-game-english">${item.english}</span>` : ""}</span></button>`).join("")}</div></div>
+      </div>
+      <div class="food-preference-built-sentence"><span class="numbers-game-hanzi">${sentenceHanzi}</span>${state.showPinyin ? `<span class="numbers-game-pinyin">${sentencePinyin}</span>` : ""}${state.showEnglish ? `<span class="numbers-game-english">${sentenceEnglish}</span>` : ""}</div>
+    </section>
+  `;
+}
+
+function classroomSentenceFrames() {
+  return schoolTopicData.classroom?.sentenceFrames ?? [];
+}
+
+function classroomSentenceWords() {
+  return [
+    ...(schoolTopicData.classroom?.words ?? []).map((item) => item.id === "computer" ? { ...item, sentenceEnglish: "laptop" } : item),
+    { id: "textbook", hanzi: "课本", pinyin: "kè běn", english: "textbook", imagePath: "assets/illustrated-stationery/textbook.webp" },
+    { id: "workbook", hanzi: "练习本", pinyin: "liàn xí běn", english: "workbook", imagePath: "assets/illustrated-stationery/workbook.webp" },
+    { id: "pencil", hanzi: "铅笔", pinyin: "qiān bǐ", english: "pencil", imagePath: "assets/illustrated-stationery/pencil.webp" },
+    { id: "ruler", hanzi: "尺子", pinyin: "chǐ zi", english: "ruler", imagePath: "assets/illustrated-stationery/ruler.webp" },
+    { id: "eraser", hanzi: "橡皮", pinyin: "xiàng pí", english: "eraser", imagePath: "assets/illustrated-stationery/eraser.webp" },
+    { id: "colored-pencils", hanzi: "彩色铅笔", pinyin: "cǎi sè qiān bǐ", english: "colored pencils", imagePath: "assets/illustrated-stationery/colored-pencils.webp" }
+  ];
+}
+
+function selectedClassroomSentenceFrame() {
+  return classroomSentenceFrames().find((frame) => frame.id === state.classroomSentenceFrameId) ?? classroomSentenceFrames()[0];
+}
+
+function classroomSentenceEnglish(frame, word) {
+  if (!word) return "";
+  const noun = word.sentenceEnglish ?? word.english;
+  if (frame.id === "many-in-classroom") {
+    return `There are many ${noun.endsWith("s") ? noun : `${noun}s`} in the classroom.`;
+  }
+  if (word.id === "colored-pencils") {
+    return `There are colored pencils${frame.id === "on-table" ? " on the table" : " in the classroom"}.`;
+  }
+  const article = /^[aeiou]/i.test(noun) ? "an" : "a";
+  return `There is ${article} ${noun}${frame.id === "on-table" ? " on the table" : " in the classroom"}.`;
+}
+
+function handleClassroomSentenceFrame(frameId) {
+  const frame = classroomSentenceFrames().find((item) => item.id === frameId);
+  if (!frame) return;
+  state.classroomSentenceFrameId = frameId;
+  if (!frame.wordIds.includes(state.classroomSentenceWordId)) {
+    state.classroomSentenceWordId = "";
+  }
+  renderActivityPanel(currentTopic());
+}
+
+function handleClassroomSentenceWord(wordId) {
+  const frame = selectedClassroomSentenceFrame();
+  const word = classroomSentenceWords().find((item) => item.id === wordId);
+  if (!frame || !word || !frame.wordIds.includes(wordId)) return;
+  state.classroomSentenceWordId = wordId;
+  if (state.tapAudioEnabled) speak(`${frame.hanzi}${word.hanzi}`, 0.78);
+  renderActivityPanel(currentTopic());
+}
+
+function renderClassroomPractice(topic) {
+  const frames = classroomSentenceFrames();
+  const frame = selectedClassroomSentenceFrame();
+  const words = classroomSentenceWords().filter((item) => frame.wordIds.includes(item.id));
+  const selectedWord = words.find((item) => item.id === state.classroomSentenceWordId);
+  const hanzi = `${frame.hanzi}${selectedWord?.hanzi ?? "____"}。`;
+  const pinyin = `${frame.pinyin}${selectedWord?.pinyin ? ` ${selectedWord.pinyin}` : ""}.`;
+  const english = classroomSentenceEnglish(frame, selectedWord);
+  activityPanelTitle.textContent = "Let's practice";
+  activityPanelSummary.textContent = schoolTopicData.classroom.practiceSummary;
+  activityList.className = "support-list";
+  activityList.innerHTML = `
+    <section class="family-practice-shell lesson-practice-shell">
+      <section class="clothes-quiz-shell">
+        <div class="numbers-game-top"><div><p class="body-match-kicker">Make a sentence</p><p class="numbers-game-note">Choose a sentence start and an object. Every choice can make a good sentence.</p></div></div>
+        <div class="intro-build-choices">${frames.map((item) => `<button class="intro-build-chip${frame.id === item.id ? " is-selected" : ""}" type="button" data-classroom-sentence-frame="${item.id}">${item.hanzi}</button>`).join("")}</div>
+        <div class="transport-build-target classroom-sentence-output"><span class="numbers-game-hanzi">${hanzi}</span>${state.showPinyin ? `<span class="numbers-game-pinyin">${pinyin}</span>` : ""}${state.showEnglish && english ? `<span class="numbers-game-english">${english}</span>` : ""}</div>
+        <div class="intro-build-choices classroom-sentence-object-choices">${words.map((item) => `<button class="intro-build-chip classroom-sentence-object-chip${selectedWord?.id === item.id ? " is-selected" : ""}" type="button" data-classroom-sentence-word="${item.id}"><img class="classroom-sentence-object-icon" src="${item.imagePath}" alt="" aria-hidden="true"><span>${item.hanzi}</span></button>`).join("")}</div>
+      </section>
+    </section>
+  `;
+  activityList.querySelectorAll("[data-classroom-sentence-frame]").forEach((button) => button.addEventListener("click", () => handleClassroomSentenceFrame(button.dataset.classroomSentenceFrame)));
+  activityList.querySelectorAll("[data-classroom-sentence-word]").forEach((button) => button.addEventListener("click", () => handleClassroomSentenceWord(button.dataset.classroomSentenceWord)));
+}
+
+function ensureSchoolPractice(topicId = currentTopic().id) {
+  const items = schoolPracticeItems(topicId);
+  const expectedOptionCount = topicId === "school-subjects" ? items.length : Math.min(4, items.length);
+  if (state.schoolPracticeTopicId !== topicId || state.schoolChallengeOptionIds.length !== expectedOptionCount) {
+    state.schoolPracticeTopicId = topicId;
+    resetSchoolChallenge();
+    resetSchoolMatchGame();
+  }
+}
+
+function handleSchoolChallengePlay() {
+  ensureSchoolPractice();
+  resetSchoolChallenge({ excludeId: state.schoolChallengePromptId });
+  const item = schoolPracticeItems().find((entry) => entry.id === state.schoolChallengePromptId);
+  if (item && state.tapAudioEnabled) speak(item.audio, 0.78);
+  renderActivityPanel(currentTopic());
+}
+
+function handleSchoolChallengeGuess(itemId) {
+  ensureSchoolPractice();
+  const correct = itemId === state.schoolChallengeAnswerId;
+  state.schoolChallengePickedId = itemId;
+  state.schoolChallengeResult = correct ? "correct" : "wrong";
+  if (correct) {
+    state.schoolListenFeedback = "Correct!";
+    const item = schoolPracticeItems().find((entry) => entry.id === itemId);
+    if (item && state.tapAudioEnabled) speak(item.audio, 0.78);
+  } else {
+    state.schoolChallengeWrongIds = new Set([...state.schoolChallengeWrongIds, itemId]);
+    state.schoolListenFeedback = "Try again.";
+  }
+  renderActivityPanel(currentTopic());
+}
+
+function handleSchoolMatchPhrase(itemId) {
+  if (state.schoolMatchedIds.has(itemId)) return;
+  state.schoolSelectedPhraseId = itemId;
+  const item = schoolPracticeItems().find((entry) => entry.id === itemId);
+  if (item && state.tapAudioEnabled) speak(item.audio, 0.78);
+  renderActivityPanel(currentTopic());
+}
+
+function handleSchoolMatchAttempt(itemId) {
+  const selectedId = state.schoolSelectedPhraseId;
+  if (!selectedId || state.schoolMatchedIds.has(itemId)) return;
+  if (selectedId === itemId) {
+    state.schoolMatchedIds = new Set([...state.schoolMatchedIds, itemId]);
+    state.schoolMatchFeedback = "Correct!";
+  } else {
+    state.schoolMatchFeedback = "Try again.";
+  }
+  state.schoolSelectedPhraseId = null;
+  renderActivityPanel(currentTopic());
+}
+
+function currentSchoolBuildItem() {
+  const items = schoolSentenceBuilds[currentTopic().id] ?? [];
+  return items.find((item) => item.id === state.schoolBuildOrder[state.schoolBuildIndex]) ?? items[0];
+}
+
+function prepareSchoolBuilder() {
+  const item = currentSchoolBuildItem();
+  state.schoolBuildSelectedTokens = [];
+  state.schoolBuildResult = "";
+  state.schoolBuildAvailableTokens = shuffleArray([...(item?.target ?? []), ...(item?.distractors ?? [])]);
+}
+
+function ensureSchoolBuilder(topicId = currentTopic().id) {
+  const items = schoolSentenceBuilds[topicId] ?? [];
+  const hasCurrentItems =
+    state.schoolBuildOrder.length === items.length &&
+    state.schoolBuildOrder.every((id) => items.some((item) => item.id === id));
+  if (state.schoolBuildTopicId !== topicId || !hasCurrentItems) {
+    state.schoolBuildTopicId = topicId;
+    state.schoolBuildOrder = shuffleArray(items.map((item) => item.id));
+    state.schoolBuildIndex = 0;
+    prepareSchoolBuilder();
+  }
+}
+
+function handleSchoolBuildToken(index) {
+  if (state.schoolBuildResult === "correct") return;
+  const item = currentSchoolBuildItem();
+  const token = state.schoolBuildAvailableTokens[index];
+  if (!item || !token) return;
+  const selected = [...state.schoolBuildSelectedTokens, token];
+  const isPrefix = selected.every((entry, tokenIndex) => entry === item.target[tokenIndex]);
+  if (!isPrefix) {
+    state.schoolBuildResult = "wrong";
+    prepareSchoolBuilder();
+    state.schoolBuildResult = "wrong";
+    renderActivityPanel(currentTopic());
+    return;
+  }
+  state.schoolBuildSelectedTokens = selected;
+  state.schoolBuildAvailableTokens = state.schoolBuildAvailableTokens.filter((_, tokenIndex) => tokenIndex !== index);
+  if (selected.length === item.target.length) {
+    state.schoolBuildResult = "correct";
+    if (state.tapAudioEnabled) speak(item.audio ?? selected.join(""), 0.78);
+  }
+  renderActivityPanel(currentTopic());
+}
+
+function clearSchoolBuilder() {
+  prepareSchoolBuilder();
+  renderActivityPanel(currentTopic());
+}
+
+function nextSchoolBuilder() {
+  state.schoolBuildIndex = (state.schoolBuildIndex + 1) % state.schoolBuildOrder.length;
+  prepareSchoolBuilder();
+  renderActivityPanel(currentTopic());
+}
+
+const foodCategoryGroups = {
+  fruit: {
+    hanzi: "水果",
+    english: "Fruit",
+    items: [
+      { id: "apple", hanzi: "苹果", pinyin: "píng guǒ", english: "apple" },
+      { id: "banana", hanzi: "香蕉", pinyin: "xiāng jiāo", english: "banana" },
+      { id: "grapes", hanzi: "葡萄", pinyin: "pú tao", english: "grapes" },
+      { id: "strawberry", hanzi: "草莓", pinyin: "cǎo méi", english: "strawberry" },
+      { id: "orange", hanzi: "橙子", pinyin: "chéng zi", english: "orange" },
+      { id: "pear", hanzi: "梨", pinyin: "lí", english: "pear" },
+      { id: "watermelon", hanzi: "西瓜", pinyin: "xī guā", english: "watermelon" },
+      { id: "peach", hanzi: "桃子", pinyin: "táo zi", english: "peach" },
+      { id: "cherries", hanzi: "樱桃", pinyin: "yīng táo", english: "cherries" }
+    ]
+  },
+  vegetable: {
+    hanzi: "蔬菜",
+    english: "Vegetables",
+    items: [
+      { id: "carrot", hanzi: "胡萝卜", pinyin: "hú luó bo", english: "carrot" },
+      { id: "cucumber", hanzi: "黄瓜", pinyin: "huáng guā", english: "cucumber" },
+      { id: "tomato", hanzi: "西红柿", pinyin: "xī hóng shì", english: "tomato" },
+      { id: "broccoli", hanzi: "西兰花", pinyin: "xī lán huā", english: "broccoli" },
+      { id: "potatoes", hanzi: "土豆", pinyin: "tǔ dòu", english: "potatoes" }
+    ]
+  },
+  snack: {
+    hanzi: "零食",
+    english: "Snacks",
+    items: [
+      { id: "candies", hanzi: "糖果", pinyin: "táng guǒ", english: "candies" },
+      { id: "chocolate", hanzi: "巧克力", pinyin: "qiǎo kè lì", english: "chocolate" },
+      { id: "ice-cream", hanzi: "冰淇淋", pinyin: "bīng qí lín", english: "ice cream" },
+      { id: "cake", hanzi: "蛋糕", pinyin: "dàn gāo", english: "cake" }
+    ]
+  },
+  meal: {
+    hanzi: "主食",
+    english: "Meal",
+    items: [
+      { id: "pizza", hanzi: "披萨", pinyin: "pī sà", english: "pizza" },
+      { id: "chow-mein", hanzi: "炒面", pinyin: "chǎo miàn", english: "chow mein" },
+      { id: "fried-rice", hanzi: "炒饭", pinyin: "chǎo fàn", english: "fried rice" },
+      { id: "french-fries", hanzi: "薯条", pinyin: "shǔ tiáo", english: "French fries" },
+      { id: "hamburger", hanzi: "汉堡", pinyin: "hàn bǎo", english: "hamburger" },
+      { id: "hot-dog", hanzi: "热狗", pinyin: "rè gǒu", english: "hot dog" }
+    ]
+  },
+  drink: {
+    hanzi: "饮料",
+    english: "Drinks",
+    items: [
+      { id: "milk", hanzi: "牛奶", pinyin: "niú nǎi", english: "milk" },
+      { id: "juice", hanzi: "果汁", pinyin: "guǒ zhī", english: "juice" },
+      { id: "cola", hanzi: "可乐", pinyin: "kě lè", english: "Coke" }
+    ]
+  }
+};
+
+function foodCategoryItems() {
+  return foodCategoryGroups[state.foodCategoryId]?.items ?? [];
+}
+
+function foodBookWordItems(data) {
+  const itemIds = new Set(foodCategoryGroups[state.foodBookCategoryId]?.items.map((item) => item.id) ?? []);
+  return data.words.filter((item) => itemIds.has(item.id));
+}
+
+function foodCategoryRoundItems() {
+  const roundIds = new Set(state.foodCategoryOrder);
+  return foodCategoryItems().filter((item) => roundIds.has(item.id));
+}
+
+function foodCategoryIconPath(itemId) {
+  return `assets/illustrated-food/${itemId}.webp`;
+}
+
+function resetFoodCategoryGame(categoryId = state.foodCategoryId) {
+  state.foodCategoryId = categoryId;
+  const ids = shuffleArray(foodCategoryItems().map((item) => item.id)).slice(0, 6);
+  state.foodCategorySelectedId = null;
+  state.foodCategoryMatchedIds = new Set();
+  state.foodCategoryOrder = shuffleArray(ids);
+  state.foodCategoryMeaningOrder = shuffleArray(ids);
+  state.foodCategoryFeedback = "";
+}
+
+function ensureFoodCategoryGame() {
+  const items = foodCategoryItems();
+  const expectedCount = Math.min(6, items.length);
+  const hasCurrentItems = state.foodCategoryOrder.length === expectedCount && state.foodCategoryMeaningOrder.length === expectedCount && state.foodCategoryOrder.every((id) => items.some((item) => item.id === id));
+  if (!hasCurrentItems) resetFoodCategoryGame();
+}
+
+function handleFoodCategoryCard(itemId) {
+  if (state.foodCategoryMatchedIds.has(itemId)) return;
+  state.foodCategorySelectedId = itemId;
+  const item = foodCategoryItems().find((entry) => entry.id === itemId);
+  if (item && state.tapAudioEnabled) speak(item.hanzi, 0.78);
+  renderActivityPanel(currentTopic());
+}
+
+function handleFoodCategoryMatch(itemId) {
+  const selectedId = state.foodCategorySelectedId;
+  if (!selectedId || state.foodCategoryMatchedIds.has(itemId)) return;
+  if (selectedId === itemId) {
+    state.foodCategoryMatchedIds = new Set([...state.foodCategoryMatchedIds, itemId]);
+    state.foodCategorySelectedId = null;
+    state.foodCategoryFeedback = "Correct!";
+  } else {
+    state.foodCategoryFeedback = "Try again.";
+  }
+  renderActivityPanel(currentTopic());
+}
+
+function renderFoodCategoryPractice() {
+  ensureFoodCategoryGame();
+  const items = foodCategoryRoundItems();
+  return `
+    <div class="food-category-practice">
+      <div class="food-category-tabs">${Object.entries(foodCategoryGroups).map(([id, group]) => `<button class="food-category-tab${state.foodCategoryId === id ? " is-active" : ""}" type="button" data-food-category-tab="${id}">${group.hanzi}${state.showEnglish ? `<small>${group.english}</small>` : ""}</button>`).join("")}</div>
+      ${state.foodCategoryFeedback ? `<p class="greetings-game-feedback">${state.foodCategoryFeedback}</p>` : ""}
+      ${renderMatchPractice({
+        phraseHeading: "Chinese",
+        meaningHeading: "English",
+        items: () => items,
+        phraseIds: () => state.foodCategoryOrder,
+        meaningIds: () => state.foodCategoryMeaningOrder,
+        matchedIds: () => state.foodCategoryMatchedIds,
+        selectedId: () => state.foodCategorySelectedId,
+        feedback: () => "",
+        showPlayAgain: false,
+        meaningCardClass: "food-match-meaning-card",
+        meaningLabel: (id) => items.find((item) => item.id === id)?.english ?? "",
+        meaningContent: (id) => {
+          const item = items.find((entry) => entry.id === id);
+          if (!item) return "";
+          return `<span class="food-match-meaning"><img src="${foodCategoryIconPath(item.id)}" alt="${item.english}" /><span class="match-answer-label">${item.english}</span></span>`;
+        }
+      })}
+    </div>
+  `;
+}
+
+function renderFoodPractice(topic) {
+  ensureSchoolBuilder(topic.id);
+  const item = currentSchoolBuildItem();
+  activityPanelTitle.textContent = "Let's practice";
+  activityPanelSummary.textContent = "Choose a food group, then match the Chinese and English cards.";
+  activityList.className = "support-list";
+  activityList.innerHTML = `
+    <section class="family-practice-shell lesson-practice-shell">
+      <div class="practice-split-board">
+        ${renderFoodCategoryPractice()}
+        <section class="practice-split-card">
+          <div class="numbers-game-top"><div><p class="body-match-kicker">Build the sentence</p><p class="numbers-game-note">Tap the word cards in the right order. Some cards do not belong.</p></div></div>
+          <figure class="clothes-quiz-visual school-build-visual"><img class="clothes-quiz-image" src="${item.imagePath}" alt="${item.english}" /></figure>
+          <div class="transport-build-hint">${state.showPinyin ? `<p class="transport-build-hint-pinyin">${item.pinyin}</p>` : ""}${state.showEnglish ? `<p class="transport-build-hint-english">${item.english}</p>` : ""}</div>
+          <div class="transport-build-target is-${state.schoolBuildResult}">${state.schoolBuildResult ? `<span class="answer-result-mark" aria-hidden="true">${state.schoolBuildResult === "correct" ? "✓" : "×"}</span>` : ""}${state.schoolBuildSelectedTokens.length ? state.schoolBuildSelectedTokens.map((token) => `<span class="intro-build-chip is-selected">${token}</span>`).join("") : '<span class="intro-build-placeholder">Your sentence will appear here.</span>'}</div>
+          <div class="intro-build-choices">${state.schoolBuildAvailableTokens.map((token, index) => `<button class="intro-build-chip" type="button" data-school-build-token="${index}">${token}</button>`).join("")}</div>
+          <div class="intro-build-actions"><button class="small-button" type="button" data-school-build-clear>Clear</button>${state.schoolBuildResult === "correct" ? '<button class="small-button is-action-button" type="button" data-school-build-next>Next picture</button>' : ""}</div>
+        </section>
+      </div>
+    </section>
+  `;
+  activityList.querySelector("[data-template-match-new]")?.addEventListener("click", () => {
+    resetFoodCategoryGame();
+    renderActivityPanel(topic);
+  });
+  activityList.querySelectorAll("[data-food-category-tab]").forEach((button) => button.addEventListener("click", () => {
+    resetFoodCategoryGame(button.dataset.foodCategoryTab);
+    renderActivityPanel(topic);
+  }));
+  activityList.querySelectorAll("[data-template-match-phrase]").forEach((button) => button.addEventListener("click", () => handleFoodCategoryCard(button.dataset.templateMatchPhrase)));
+  activityList.querySelectorAll("[data-template-match-meaning]").forEach((button) => button.addEventListener("click", () => handleFoodCategoryMatch(button.dataset.templateMatchMeaning)));
+  activityList.querySelectorAll("[data-school-build-token]").forEach((button) => button.addEventListener("click", () => handleSchoolBuildToken(Number(button.dataset.schoolBuildToken))));
+  activityList.querySelector("[data-school-build-clear]")?.addEventListener("click", clearSchoolBuilder);
+  activityList.querySelector("[data-school-build-next]")?.addEventListener("click", nextSchoolBuilder);
+}
+
+function renderSchoolPractice(topic) {
+  if (topic.id === "food") {
+    renderFoodPractice(topic);
+    return;
+  }
+  if (topic.id === "food-preferences") {
+    renderFoodPreferencesPractice(topic);
+    return;
+  }
+  if (topic.id === "meals-feelings") {
+    renderMealsConversationPractice(topic);
+    return;
+  }
+  if (topic.id === "classroom") {
+    renderClassroomPractice(topic);
+    return;
+  }
+  ensureSchoolPractice(topic.id);
+  ensureSchoolBuilder(topic.id);
+  const topicData = schoolTopicData[topic.id];
+  const item = currentSchoolBuildItem();
+  const listen = {
+    items: () => schoolPracticeItems(topic.id),
+    optionIds: () => state.schoolChallengeOptionIds,
+    pickedId: () => state.schoolChallengePickedId,
+    result: () => state.schoolChallengeResult,
+    wrongIds: () => state.schoolChallengeWrongIds,
+    feedback: () => state.schoolListenFeedback
+  };
+  activityPanelTitle.textContent = "Let's practice";
+  activityPanelSummary.textContent = topicData?.practiceSummary ?? "Listen for a school word, then build a sentence from the picture.";
+  activityList.className = "support-list";
+  activityList.innerHTML = `
+    <section class="family-practice-shell lesson-practice-shell">
+      <div class="practice-split-board">
+        ${renderListenPractice(listen)}
+        <section class="practice-split-card">
+          <div class="numbers-game-top"><div><p class="body-match-kicker">Build the sentence</p><p class="numbers-game-note">Tap the word cards in the right order. Some cards do not belong.</p></div></div>
+          <figure class="clothes-quiz-visual school-build-visual"><img class="clothes-quiz-image" src="${item.imagePath}" alt="${item.english}" /></figure>
+          <div class="transport-build-hint">${state.showPinyin ? `<p class="transport-build-hint-pinyin">${item.pinyin}</p>` : ""}${state.showEnglish ? `<p class="transport-build-hint-english">${item.english}</p>` : ""}</div>
+          <div class="transport-build-target is-${state.schoolBuildResult}">${state.schoolBuildResult ? `<span class="answer-result-mark" aria-hidden="true">${state.schoolBuildResult === "correct" ? "✓" : "×"}</span>` : ""}${state.schoolBuildSelectedTokens.length ? state.schoolBuildSelectedTokens.map((token) => `<span class="intro-build-chip is-selected">${token}</span>`).join("") : '<span class="intro-build-placeholder">Your sentence will appear here.</span>'}</div>
+          <div class="intro-build-choices">${state.schoolBuildAvailableTokens.map((token, index) => `<button class="intro-build-chip" type="button" data-school-build-token="${index}">${token}</button>`).join("")}</div>
+          <div class="intro-build-actions"><button class="small-button" type="button" data-school-build-clear>Clear</button>${state.schoolBuildResult === "correct" ? '<button class="small-button is-action-button" type="button" data-school-build-next>Next picture</button>' : ""}</div>
+        </section>
+      </div>
+    </section>
+  `;
+  activityList.querySelector("[data-template-listen-play]")?.addEventListener("click", handleSchoolChallengePlay);
+  activityList.querySelectorAll("[data-template-listen-guess]").forEach((button) => button.addEventListener("click", () => handleSchoolChallengeGuess(button.dataset.templateListenGuess)));
+  activityList.querySelectorAll("[data-school-build-token]").forEach((button) => button.addEventListener("click", () => handleSchoolBuildToken(Number(button.dataset.schoolBuildToken))));
+  activityList.querySelector("[data-school-build-clear]")?.addEventListener("click", clearSchoolBuilder);
+  activityList.querySelector("[data-school-build-next]")?.addEventListener("click", nextSchoolBuilder);
+}
+
+function renderMealsConversationPractice(topic) {
+  ensureMealsConversationMatch();
+  ensureMealsPictureChoice();
+  const items = mealsConversationItems();
+  activityPanelTitle.textContent = "Let's practice";
+  activityPanelSummary.textContent = schoolTopicData[topic.id].practiceSummary;
+  activityList.className = "support-list";
+  activityList.innerHTML = `
+    <section class="family-practice-shell lesson-practice-shell">
+      ${renderMatchPractice({
+        phraseHeading: "First line",
+        meaningHeading: "Reply",
+        items: () => items,
+        phraseIds: () => state.schoolPhraseOrder,
+        meaningIds: () => state.schoolMeaningOrder,
+        matchedIds: () => state.schoolMatchedIds,
+        selectedId: () => state.schoolSelectedPhraseId,
+        feedback: () => state.schoolMatchFeedback,
+        wrongPhraseIds: () => state.mealsConversationWrongPhraseIds,
+        wrongMeaningIds: () => state.mealsConversationWrongReplyIds,
+        meaningContent: (id) => {
+          const item = items.find((entry) => entry.id === id);
+          if (!item) return "";
+          return `<span class="numbers-game-hanzi">${item.reply}</span>${state.showPinyin ? `<span class="numbers-game-pinyin">${item.replyPinyin}</span>` : ""}`;
+        }
+      })}
+      ${renderMealsPictureChoice()}
+    </section>
+  `;
+  activityList.querySelector("[data-template-match-new]")?.addEventListener("click", () => {
+    resetMealsConversationMatch();
+    renderActivityPanel(topic);
+  });
+  activityList.querySelector("[data-template-match-play-again]")?.addEventListener("click", () => {
+    resetMealsConversationMatch();
+    renderActivityPanel(topic);
+  });
+  activityList.querySelectorAll("[data-template-match-phrase]").forEach((button) => button.addEventListener("click", () => handleMealsConversationPhrase(button.dataset.templateMatchPhrase)));
+  activityList.querySelectorAll("[data-template-match-meaning]").forEach((button) => button.addEventListener("click", () => handleMealsConversationAttempt(button.dataset.templateMatchMeaning)));
+  activityList.querySelectorAll("[data-meals-picture-pick]").forEach((button) => button.addEventListener("click", () => handleMealsPictureChoice(button.dataset.mealsPicturePick)));
+  activityList.querySelector("[data-meals-picture-next]")?.addEventListener("click", nextMealsPictureChoice);
+}
+
+function renderFoodPreferencesPractice(topic) {
+  activityPanelTitle.textContent = "Let's practice";
+  activityPanelSummary.textContent = schoolTopicData[topic.id].practiceSummary;
+  activityList.className = "support-list";
+  activityList.innerHTML = `
+    <section class="family-practice-shell lesson-practice-shell">
+      ${renderFoodPreferenceFillPractice()}
+    </section>
+  `;
+  activityList.querySelectorAll("[data-food-preference-subject]").forEach((button) => button.addEventListener("click", () => handleFoodPreferenceSubject(button.dataset.foodPreferenceSubject)));
+  activityList.querySelectorAll("[data-food-preference-pattern]").forEach((button) => button.addEventListener("click", () => handleFoodPreferencePattern(button.dataset.foodPreferencePattern)));
+  activityList.querySelectorAll("[data-food-preference-food]").forEach((button) => button.addEventListener("click", () => handleFoodPreferenceFill(button.dataset.foodPreferenceFood)));
+}
+
 function sharedLessonPracticeConfig(topic) {
+  if (schoolTopicData[topic.id]) {
+    return {
+      summary: "Listen for a school word, then match each Chinese card to its English meaning.",
+      shellClass: "lesson-practice-shell",
+      ensure: () => ensureSchoolPractice(topic.id),
+      listen: {
+        items: () => schoolPracticeItems(topic.id),
+        optionIds: () => state.schoolChallengeOptionIds,
+        pickedId: () => state.schoolChallengePickedId,
+        result: () => state.schoolChallengeResult,
+        wrongIds: () => state.schoolChallengeWrongIds,
+        feedback: () => state.schoolListenFeedback,
+        onPlay: handleSchoolChallengePlay,
+        onGuess: handleSchoolChallengeGuess
+      },
+      match: {
+        phraseHeading: "Chinese",
+        meaningHeading: "English",
+        items: () => schoolPracticeItems(topic.id).slice(0, 6),
+        phraseIds: () => state.schoolPhraseOrder,
+        meaningIds: () => state.schoolMeaningOrder,
+        matchedIds: () => state.schoolMatchedIds,
+        selectedId: () => state.schoolSelectedPhraseId,
+        feedback: () => state.schoolMatchFeedback,
+        meaningLabel: (id) => schoolPracticeItems(topic.id).find((item) => item.id === id)?.english ?? "",
+        onNew: () => {
+          resetSchoolMatchGame();
+          renderActivityPanel(topic);
+        },
+        onPhrase: handleSchoolMatchPhrase,
+        onMeaning: handleSchoolMatchAttempt
+      }
+    };
+  }
+
   if (topic.id === "weekdays") {
     return {
       summary: "Listen for the weekday, then match each Chinese day to its English name.",
@@ -5543,6 +6908,11 @@ function renderActivityPanel(topic) {
     activityPanelTitle.textContent = "";
     activityPanelSummary.textContent = "";
     activityList.innerHTML = "";
+    return;
+  }
+
+  if (schoolTopicData[topic.id]) {
+    renderSchoolPractice(topic);
     return;
   }
 
@@ -6729,6 +8099,97 @@ function renderRoomsExplorer() {
   });
 }
 
+function renderSchoolExplorer(topicId) {
+  const topic = currentTopic();
+  const data = schoolTopicData[topicId];
+  if (!data) {
+    renderDefaultExplorer();
+    return;
+  }
+  const sceneGroups = data.sceneGroups ?? [{ id: "all", items: data.scenes ?? [] }];
+  const wordGroups = schoolWordGroups(topicId);
+  if (topicId === "meals-feelings" && !wordGroups.some((group) => group.id === state.mealsWordGroupId)) {
+    state.mealsWordGroupId = wordGroups[0]?.id ?? "";
+  }
+  const visibleWords = topicId === "food"
+    ? foodBookWordItems(data)
+    : topicId === "meals-feelings"
+      ? wordGroups.find((group) => group.id === state.mealsWordGroupId)?.items ?? []
+      : data.words;
+
+  focusExplorer.innerHTML = `
+    <div class="time-date-board school-topic-board">
+      <div class="numbers-stage-card">
+        <p class="body-match-kicker">${currentBook().label} Lesson ${currentLesson().lesson}</p>
+        <h4>${topic.title}</h4>
+      </div>
+      ${sceneGroups.map((group) => `
+        <section class="school-lesson-section is-${group.id}">
+          ${group.label ? `<p class="body-match-kicker school-lesson-heading">${group.label}</p>` : ""}
+          <div class="school-scene-grid${group.items.length === 1 ? " is-single" : ""}">
+            ${group.items.map((scene) => `
+              <section class="greetings-exchange school-scene-card">
+                <div class="greetings-exchange-top">${scene.label ? `<div><p class="body-match-kicker">${scene.label}</p></div>` : "<span></span>"}<button class="small-button is-action-button" type="button" data-school-play-scene="${scene.id}">Play scene</button></div>
+                <div class="school-scene-layout">
+                  <img class="school-scene-image" src="${scene.imagePath}" alt="${scene.english ?? scene.lines?.[0]?.english ?? ""}" />
+                  <div class="greetings-line-stack">
+                    ${(scene.lines ?? [scene]).map((line) => `<article class="greetings-line-card"><div class="telephone-bubble-copy"><p class="telephone-line-hanzi">${line.hanzi}</p>${state.showPinyin ? `<p class="telephone-line-pinyin">${line.pinyin}</p>` : ""}${state.showEnglish ? `<p class="telephone-line-english">${line.english}</p>` : ""}</div></article>`).join("")}
+                  </div>
+                </div>
+              </section>
+            `).join("")}
+          </div>
+        </section>
+      `).join("")}
+      <div class="time-months-heading"><p class="body-match-kicker">Book words</p></div>
+      ${topicId === "food" ? `<div class="food-book-tabs" role="tablist" aria-label="Food word categories">${Object.entries(foodCategoryGroups).map(([id, group]) => `<button class="food-book-tab${state.foodBookCategoryId === id ? " is-active" : ""}" type="button" role="tab" aria-selected="${state.foodBookCategoryId === id}" data-food-book-category="${id}">${group.hanzi}${state.showEnglish ? `<small>${group.english}</small>` : ""}</button>`).join("")}</div>` : ""}
+      ${topicId === "meals-feelings" && wordGroups.length > 1 ? `<div class="food-book-tabs lesson-word-tabs" role="tablist" aria-label="Meals and feelings word categories">${wordGroups.map((group) => `<button class="food-book-tab${state.mealsWordGroupId === group.id ? " is-active" : ""}" type="button" role="tab" aria-selected="${state.mealsWordGroupId === group.id}" data-meals-word-group="${group.id}">${group.hanzi}${state.showEnglish ? `<small>${group.english}</small>` : ""}</button>`).join("")}</div>` : ""}
+      <div class="school-word-grid${topicId === "school-subjects" ? " is-text-only" : ""}${topicId === "meals-feelings" ? " is-uniform-images" : ""}">
+        ${visibleWords.map((item) => `
+          <button class="school-word-card" type="button" data-school-word="${item.id}">
+            ${item.imagePath ? `<img class="school-word-image" src="${item.imagePath}" alt="${item.english}" />` : ""}
+            <span class="time-asset-hanzi">${item.hanzi}</span>
+            ${state.showPinyin ? `<span class="time-asset-pinyin">${item.pinyin}</span>` : ""}
+            ${state.showEnglish ? `<span class="time-asset-english">${item.english}</span>` : ""}
+          </button>
+        `).join("")}
+      </div>
+      ${data.review ? `<section class="visual-topic-notes school-review-notes"><p class="body-match-kicker">Useful notes</p><div class="visual-topic-note-grid school-review-grid">${data.review.map((item) => `<article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">${item.pattern}</p>${state.showPinyin ? `<p class="visual-topic-note-pinyin">${item.pinyin}</p>` : ""}${state.showEnglish ? `<p class="visual-topic-note-english">${item.english}</p>` : ""}<p class="visual-topic-note-example">${item.example}</p>${state.showPinyin && item.examplePinyin ? `<p class="visual-topic-note-pinyin">${item.examplePinyin}</p>` : ""}${state.showEnglish && item.exampleEnglish ? `<p class="visual-topic-note-english">${item.exampleEnglish}</p>` : ""}</article>`).join("")}</div></section>` : ""}
+      ${topicId === "school-subjects" ? `<section class="visual-topic-notes"><p class="body-match-kicker">Useful note</p><div class="visual-topic-note-grid school-subject-note"><article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">去</p>${state.showPinyin ? '<p class="visual-topic-note-pinyin">qù</p>' : ""}${state.showEnglish ? '<p class="visual-topic-note-english">to go</p>' : ""}<p class="visual-topic-note-example">我去上音乐课。</p></article><article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">在</p>${state.showPinyin ? '<p class="visual-topic-note-pinyin">zài</p>' : ""}${state.showEnglish ? '<p class="visual-topic-note-english">at / in; marks an action happening now</p>' : ""}<p class="visual-topic-note-example">我在上音乐课。</p></article><article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">喜欢</p>${state.showPinyin ? '<p class="visual-topic-note-pinyin">xǐ huan</p>' : ""}${state.showEnglish ? '<p class="visual-topic-note-english">to like</p>' : ""}<p class="visual-topic-note-example">我喜欢音乐课。</p></article><article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">不喜欢</p>${state.showPinyin ? '<p class="visual-topic-note-pinyin">bù xǐ huan</p>' : ""}${state.showEnglish ? '<p class="visual-topic-note-english">to not like</p>' : ""}<p class="visual-topic-note-example">我不喜欢数学课。</p></article></div></section>` : ""}
+    </div>
+  `;
+
+  focusExplorer.querySelectorAll("[data-school-play-scene]").forEach((button) => {
+    button.addEventListener("click", () => {
+      const scene = sceneGroups.flatMap((group) => group.items).find((entry) => entry.id === button.dataset.schoolPlayScene);
+      if (!scene || !state.tapAudioEnabled) return;
+      if (scene.lines?.length) {
+        speakSceneLines(scene.lines.map((line) => ({ ...line, audio: line.audio ?? line.hanzi })));
+        return;
+      }
+      speak(scene.audio, 0.78);
+    });
+  });
+  focusExplorer.querySelectorAll("[data-school-word]").forEach((button) => {
+    button.addEventListener("click", () => {
+      const item = visibleWords.find((entry) => entry.id === button.dataset.schoolWord);
+      if (item && state.tapAudioEnabled) speak(item.audio, 0.78);
+    });
+  });
+  focusExplorer.querySelectorAll("[data-food-book-category]").forEach((button) => {
+    button.addEventListener("click", () => {
+      state.foodBookCategoryId = button.dataset.foodBookCategory;
+      renderSchoolExplorer(topicId);
+    });
+  });
+  focusExplorer.querySelectorAll("[data-meals-word-group]").forEach((button) => {
+    button.addEventListener("click", () => {
+      state.mealsWordGroupId = button.dataset.mealsWordGroup;
+      renderSchoolExplorer(topicId);
+    });
+  });
+}
+
 function renderPositionsExplorer() {
   focusExplorer.innerHTML = `
     <div class="time-date-board">
@@ -7412,6 +8873,11 @@ function renderFocusExplorer() {
     return;
   }
 
+  if (schoolTopicData[topic.id]) {
+    renderSchoolExplorer(topic.id);
+    return;
+  }
+
   if (["comparisons", "transport", "rooms"].includes(topic.interactiveScene)) {
     renderVisualTopicExplorer(topic.interactiveScene);
     return;
@@ -7549,6 +9015,7 @@ function renderTopicDetail() {
       topic.id === "daily-life" ||
       topic.id === "identity" ||
       topic.id === "clothes" ||
+      schoolTopicData[topic.id] ||
       (topic.id === "numbers" && currentNumberStage().telephoneMode)
   );
   renderFocusControls();

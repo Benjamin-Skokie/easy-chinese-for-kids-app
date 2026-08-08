@@ -10,6 +10,15 @@
       "theme": "A reusable no-text board showing Chinese, English, math, music, art, and P.E. through subject objects",
       "lessonHints": ["4B Lesson 6 School subjects"],
       "file": "basic-subjects-board.webp"
+    },
+    {
+      "id": "subjects-dialogue",
+      "label": "Music class dialogue",
+      "hanzi": "我喜欢音乐课。你喜欢什么课？",
+      "pinyin": "wǒ xǐ huan yīn yuè kè. nǐ xǐ huan shén me kè?",
+      "theme": "Two children having a friendly conversation about their favorite school subjects",
+      "lessonHints": ["4B Lesson 6 School subjects"],
+      "file": "subjects-dialogue.webp"
     }
   ]
 }

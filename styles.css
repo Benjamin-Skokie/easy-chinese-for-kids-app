@@ -2279,6 +2279,126 @@ h4 {
   border: 1px solid rgba(221, 207, 187, 0.72);
 }
 
+.food-category-tabs {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.food-book-tabs {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 8px;
+  margin: -2px 0 12px;
+}
+
+.lesson-word-tabs {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.school-lesson-section {
+  display: grid;
+  gap: 10px;
+}
+
+.school-lesson-section + .school-lesson-section {
+  margin-top: 8px;
+}
+
+.school-lesson-heading {
+  margin: 0;
+  color: var(--muted);
+}
+
+.school-lesson-section.is-lunch .school-scene-grid.is-single {
+  width: calc(50% - 8px);
+}
+
+.food-book-tab {
+  display: grid;
+  min-height: 48px;
+  place-items: center;
+  gap: 1px;
+  padding: 6px 8px;
+  border: 1px solid #b9c7ad;
+  border-radius: 8px;
+  background: #ffffff;
+  color: var(--ink);
+  cursor: pointer;
+  font: inherit;
+  font-weight: 700;
+}
+
+.food-book-tab small {
+  color: #65715d;
+  font-size: 0.72rem;
+  font-weight: 600;
+}
+
+.food-book-tab.is-active {
+  border-color: #5f8f51;
+  background: #5f8f51;
+  color: #ffffff;
+}
+
+.food-book-tab.is-active small {
+  color: #ffffff;
+}
+
+.food-category-tab {
+  display: grid;
+  min-height: 64px;
+  place-items: center;
+  gap: 2px;
+  padding: 8px;
+  border: 2px solid #b9c7ad;
+  border-radius: 8px;
+  background: #ffffff;
+  color: var(--ink);
+  cursor: pointer;
+  font: inherit;
+  font-weight: 700;
+}
+
+.food-category-tab small {
+  color: #65715d;
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+.food-category-tab.is-active {
+  border-color: #5f8f51;
+  background: #5f8f51;
+  box-shadow: 0 0 0 3px rgba(95, 143, 81, 0.16);
+  color: #ffffff;
+}
+
+.food-category-tab.is-active small {
+  color: #ffffff;
+}
+
+.food-match-meaning {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.food-match-meaning img {
+  width: 40px;
+  height: 40px;
+  flex: 0 0 40px;
+  object-fit: contain;
+}
+
+.food-match-meaning-card {
+  min-height: 92px;
+}
+
+.food-match-meaning-card .match-answer-label {
+  font-size: 1.08rem;
+}
+
 .intro-build-target {
   display: grid;
   gap: 10px;
@@ -2363,6 +2483,10 @@ h4 {
   border-color: rgba(111, 143, 97, 0.32);
   background: linear-gradient(180deg, #eef7ea, #dcefd2);
   box-shadow: none;
+}
+
+.polite-match-card .numbers-game-hanzi {
+  font-size: 1.45rem;
 }
 
 .family-match-board-headings {
@@ -2641,6 +2765,89 @@ h4 {
 }
 
 .room-scene-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.school-scene-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.school-scene-grid.is-single {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.school-scene-layout {
+  display: grid;
+  gap: 12px;
+}
+
+.school-scene-image {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border: 1px solid rgba(221, 207, 187, 0.72);
+  border-radius: 8px;
+  background: #fffdf8;
+}
+
+.school-word-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.school-word-grid.is-text-only {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.school-word-card {
+  display: grid;
+  align-content: start;
+  justify-items: center;
+  gap: 5px;
+  min-width: 0;
+  padding: 10px;
+  border: 1px solid rgba(221, 207, 187, 0.84);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.78);
+  color: var(--ink);
+  cursor: pointer;
+}
+
+.school-word-card:hover,
+.school-word-card:focus-visible {
+  border-color: rgba(81, 123, 141, 0.46);
+  box-shadow: 0 0 0 3px rgba(81, 123, 141, 0.12);
+}
+
+.school-word-image {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: contain;
+}
+
+.school-word-grid.is-uniform-images .school-word-image {
+  object-fit: cover;
+}
+
+.school-word-grid.is-text-only .school-word-card {
+  min-height: 100px;
+  align-content: center;
+}
+
+.school-build-visual {
+  aspect-ratio: 4 / 3;
+}
+
+.school-subject-note {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.school-review-grid {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
@@ -3799,6 +4006,117 @@ h4 {
   gap: 12px;
 }
 
+.meals-picture-choice {
+  margin-top: 16px;
+}
+
+.sentence-choice-options {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.sentence-choice-options .clothes-quiz-option {
+  min-height: 104px;
+}
+
+.sentence-choice-options .numbers-game-hanzi {
+  font-size: 1.45rem;
+  line-height: 1.35;
+}
+
+.sentence-choice-options .numbers-game-pinyin {
+  font-size: 0.92rem;
+}
+
+.sentence-choice-options .numbers-game-english {
+  font-size: 0.95rem;
+}
+
+.food-preference-choice-label {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
+.food-preference-builder-columns {
+  display: grid;
+  grid-template-columns: minmax(74px, 0.72fr) minmax(0, 1fr) minmax(0, 1.28fr);
+  gap: 12px;
+}
+
+.food-preference-builder-column,
+.food-preference-builder-list {
+  display: grid;
+  gap: 8px;
+}
+
+.food-preference-subject-choice,
+.food-preference-pattern-choice,
+.food-preference-fill-choice {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  min-height: 52px;
+  padding: 8px 6px;
+  border: 1px solid rgba(221, 207, 187, 0.84);
+  border-radius: 8px;
+  background: #fffdf8;
+  color: var(--ink);
+  text-align: center;
+}
+
+.food-preference-subject-choice.is-active,
+.food-preference-pattern-choice.is-active,
+.food-preference-fill-choice.is-active {
+  border-color: var(--accent);
+  box-shadow: inset 0 0 0 1px var(--accent);
+}
+
+.food-preference-subject-choice.is-active .numbers-game-hanzi,
+.food-preference-pattern-choice.is-active .numbers-game-hanzi,
+.food-preference-fill-choice.is-active .numbers-game-hanzi {
+  color: var(--accent-deep);
+}
+
+.food-preference-builder-list .numbers-game-hanzi {
+  font-size: 1.18rem;
+  flex: 0 0 auto;
+}
+
+.food-preference-card-meta {
+  display: flex;
+  flex: 0 1 auto;
+  justify-content: flex-start;
+  gap: 4px;
+  min-width: 0;
+  white-space: nowrap;
+}
+
+.food-preference-builder-list .numbers-game-pinyin,
+.food-preference-builder-list .numbers-game-english {
+  font-size: 0.76rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.food-preference-built-sentence {
+  display: grid;
+  gap: 4px;
+  min-height: 88px;
+  padding: 14px;
+  border: 1px solid rgba(221, 207, 187, 0.84);
+  border-radius: 8px;
+  background: #fffdf8;
+  text-align: center;
+}
+
+.food-preference-fill-choice:hover,
+.food-preference-subject-choice:hover,
+.food-preference-pattern-choice:hover {
+  border-color: var(--accent);
+}
+
 .clothes-quiz-visual {
   width: min(100%, 420px);
   margin: 0 auto;
@@ -3853,6 +4171,40 @@ h4 {
   border: 1px solid rgba(221, 207, 187, 0.84);
   border-radius: 8px;
   background: #fffdf8;
+}
+
+.classroom-sentence-output {
+  display: grid;
+  gap: 5px;
+  padding-right: 14px;
+  text-align: center;
+}
+
+.classroom-sentence-output .numbers-game-english {
+  font-size: 1.05rem;
+}
+
+.classroom-sentence-object-choices {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(94px, 1fr));
+  gap: 10px;
+}
+
+.intro-build-chip.classroom-sentence-object-chip {
+  min-height: 96px;
+  padding: 9px 8px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  gap: 4px;
+  font-size: 1rem;
+  line-height: 1.2;
+}
+
+.classroom-sentence-object-icon {
+  width: 58px;
+  height: 52px;
+  object-fit: contain;
 }
 
 .transport-build-hint {
@@ -5001,7 +5353,7 @@ h4 {
   align-items: center;
   gap: 2px;
   padding: 0 16px;
-  overflow-x: auto;
+  overflow: hidden;
   border-bottom: 1px solid rgba(45, 34, 24, 0.06);
   background: rgba(255, 255, 255, 0.92);
   box-shadow: 0 2px 16px rgba(45, 34, 24, 0.04);
@@ -5016,7 +5368,18 @@ h4 {
   transform: translateY(0);
 }
 
-.learning-culture-nav::-webkit-scrollbar {
+.learning-culture-nav-items {
+  display: flex;
+  min-width: 0;
+  flex: 1 1 auto;
+  height: 100%;
+  align-items: center;
+  gap: 2px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.learning-culture-nav-items::-webkit-scrollbar {
   display: none;
 }
 
@@ -5772,8 +6135,33 @@ h4 {
     grid-template-columns: 1fr;
   }
 
+  .school-scene-grid,
+  .school-word-grid,
+  .school-word-grid.is-text-only {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .school-lesson-section.is-lunch .school-scene-grid.is-single {
+    width: 100%;
+  }
+
   .clothes-quiz-options {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .food-preference-builder-columns {
+    gap: 6px;
+  }
+
+  .food-preference-subject-choice,
+  .food-preference-pattern-choice,
+  .food-preference-fill-choice {
+    min-height: 48px;
+    padding: 6px 4px;
+  }
+
+  .food-preference-builder-list .numbers-game-hanzi {
+    font-size: 1.06rem;
   }
 
   .topic-board {
@@ -5849,9 +6237,24 @@ h4 {
     grid-template-columns: 1fr;
   }
 
+  .food-book-tabs {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .learning-culture-nav {
     height: 54px;
     padding: 0 8px;
+  }
+
+  .learning-display-controls {
+    gap: 4px;
+    padding-left: 6px;
+  }
+
+  .learning-display-toggle {
+    min-width: 72px;
+    padding: 0 8px;
+    font-size: 0.7rem;
   }
 
   .learning-culture-nav-item {

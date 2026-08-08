@@ -40,6 +40,7 @@ Purpose: explain which docs are active source-of-truth files, generated review v
 - [learning_home_refactor.md](./learning_home_refactor.md): learning home information architecture.
 - [structured_learning_content_refactor.md](./structured_learning_content_refactor.md): plan to move learning content out of `app.js`.
 - [learning_topic_coverage_plan.md](./learning_topic_coverage_plan.md): topic build and implementation coverage plan.
+- [lesson_page_workflow.md](./lesson_page_workflow.md): required workflow and completion checklist for topic pages.
 - [game_templates.md](./game_templates.md): reusable practice interaction patterns.
 - [grammar_asset_map.md](./grammar_asset_map.md): grammar-pattern-to-asset planning notes.
 - [security_publish.md](./security_publish.md): static-site security and publish reminders.

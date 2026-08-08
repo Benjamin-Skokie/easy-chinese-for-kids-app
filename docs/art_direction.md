@@ -162,6 +162,8 @@ When generating reusable avatar or dictionary assets, prompts should usually als
 
 ## Process Reminder
 
+For the full page-production and asset-handoff process, follow [lesson_page_workflow.md](./lesson_page_workflow.md).
+
 - Read the book first.
 - Extract the lesson goal.
 - Build an original visual in this house style.
