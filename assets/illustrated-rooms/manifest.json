@@ -26,6 +26,14 @@
       "file": "garage.webp"
     },
     {
+      "id": "bicycle",
+      "label": "Bicycle",
+      "hanzi": "自行车",
+      "pinyin": "zi xing che",
+      "theme": "A complete blue bicycle based on the bicycle in the garage scene",
+      "file": "bicycle.png"
+    },
+    {
       "id": "positions-up-down",
       "label": "Up and down positions",
       "hanzi": "上和下",
