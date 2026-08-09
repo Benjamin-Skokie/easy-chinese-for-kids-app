@@ -11,6 +11,7 @@ import { positionPracticeItems, positionScenes, positionVisualItems } from "../s
 import { transportSentenceTokens, transportVisualItems } from "../src/features/time-daily-life/transport.js";
 import { roomScenes, roomVisualItems } from "../src/features/time-daily-life/rooms.js";
 import { stationeryPictureMatchRounds, stationerySentenceBuilds, stationeryTopicData } from "../src/features/school-life/stationery.js";
+import { schoolSuppliesSentenceBuilds, schoolSuppliesTopicData } from "../src/features/school-life/school-supplies.js";
 
 test("the local page loads a single bundled application script", () => {
   const html = readFileSync("index.html", "utf8");
@@ -96,4 +97,10 @@ test("stationery owns its scenes, words, and practice rounds", () => {
   assert.equal(stationeryTopicData.words.length, 10);
   assert.equal(stationerySentenceBuilds.length, 8);
   assert.equal(stationeryPictureMatchRounds.length, 3);
+});
+
+test("school supplies owns its scenes, words, and practice rounds", () => {
+  assert.equal(schoolSuppliesTopicData.scenes.length, 2);
+  assert.equal(schoolSuppliesTopicData.words.length, 10);
+  assert.equal(schoolSuppliesSentenceBuilds.length, 6);
 });

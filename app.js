@@ -424,6 +424,58 @@
     "\u6A61\u76AE": "eraser"
   };
 
+  // src/features/school-life/school-supplies.js
+  var schoolSuppliesTopicData = {
+    scenes: [
+      {
+        id: "stationery",
+        label: "In the pencil case",
+        lines: [
+          { hanzi: "\u6587\u5177\u76D2\u91CC\u6709\u94C5\u7B14\u3002", pinyin: "w\xE9n j\xF9 h\xE9 l\u01D0 y\u01D2u qi\u0101n b\u01D0.", english: "There is a pencil in the pencil case." },
+          { hanzi: "\u6587\u5177\u76D2\u91CC\u6709\u6A61\u76AE\u3002", pinyin: "w\xE9n j\xF9 h\xE9 l\u01D0 y\u01D2u xi\xE0ng p\xED.", english: "There is an eraser in the pencil case." },
+          { hanzi: "\u6587\u5177\u76D2\u91CC\u6709\u5F69\u8272\u94C5\u7B14\u3002", pinyin: "w\xE9n j\xF9 h\xE9 l\u01D0 y\u01D2u c\u01CEi s\xE8 qi\u0101n b\u01D0.", english: "There are colored pencils in the pencil case." }
+        ],
+        audio: "\u6587\u5177\u76D2\u91CC\u6709\u94C5\u7B14\u6587\u5177\u76D2\u91CC\u6709\u6A61\u76AE\u6587\u5177\u76D2\u91CC\u6709\u5F69\u8272\u94C5\u7B14",
+        imagePath: "assets/illustrated-stationery/pencil-box.webp"
+      },
+      {
+        id: "schoolbag",
+        label: "In the backpack",
+        lines: [
+          { hanzi: "\u4E66\u5728\u4E66\u5305\u91CC\u3002", pinyin: "sh\u016B z\xE0i sh\u016B b\u0101o l\u01D0.", english: "The book is in the backpack." },
+          { hanzi: "\u4E66\u5305\u91CC\u6709\u4E66\u3002", pinyin: "sh\u016B b\u0101o l\u01D0 y\u01D2u sh\u016B.", english: "There is a book in the backpack." },
+          { hanzi: "\u6587\u5177\u76D2\u5728\u4E66\u5305\u5916\u9762\u3002", pinyin: "w\xE9n j\xF9 h\xE9 z\xE0i sh\u016B b\u0101o w\xE0i mi\xE0n.", english: "The pencil case is outside the backpack." }
+        ],
+        audio: "\u4E66\u5728\u4E66\u5305\u91CC\u4E66\u5305\u91CC\u6709\u4E66\u6587\u5177\u76D2\u5728\u4E66\u5305\u5916\u9762",
+        imagePath: "assets/illustrated-rooms/positions-inside-outside.webp"
+      }
+    ],
+    words: [
+      ["pencil", "\u94C5\u7B14", "qi\u0101n b\u01D0", "pencil", "pencil.webp"],
+      ["ruler", "\u5C3A\u5B50", "ch\u01D0 zi", "ruler", "ruler.webp"],
+      ["eraser", "\u6A61\u76AE", "xi\xE0ng p\xED", "eraser", "eraser.webp"],
+      ["colored-pencils", "\u5F69\u8272\u94C5\u7B14", "c\u01CEi s\xE8 qi\u0101n b\u01D0", "colored pencils", "colored-pencils.webp"],
+      ["scissors", "\u526A\u5200", "ji\u01CEn d\u0101o", "scissors", "scissors.webp"],
+      ["glue", "\u80F6\u6C34", "ji\u0101o shu\u01D0", "glue", "glue-stick.webp"],
+      ["pencil-box", "\u6587\u5177\u76D2", "w\xE9n j\xF9 h\xE9", "pencil case", "pencil-box.webp"],
+      ["textbook", "\u8BFE\u672C", "k\xE8 b\u011Bn", "textbook", "textbook.webp"],
+      ["workbook", "\u7EC3\u4E60\u672C", "li\xE0n x\xED b\u011Bn", "workbook", "workbook.webp"],
+      ["schoolbag", "\u4E66\u5305", "sh\u016B b\u0101o", "backpack", "backpack.webp"]
+    ].map(([id, hanzi, pinyin, english, file]) => ({ id, hanzi, pinyin, english, audio: hanzi, imagePath: `assets/illustrated-stationery/${file}` })),
+    review: [
+      { pattern: "\u2026\u2026\u91CC\u6709\u2026\u2026", pinyin: "... l\u01D0 y\u01D2u...", english: "There is / are ... in ...", example: "\u6587\u5177\u76D2\u91CC\u6709\u94C5\u7B14\u3002\u4E66\u5305\u91CC\u6709\u4E66\u3002" },
+      { pattern: "\u91CC / \u5916\u9762", pinyin: "l\u01D0 / w\xE0i mi\xE0n", english: "inside / outside", example: "\u4E66\u5728\u4E66\u5305\u91CC\u3002\u6587\u5177\u76D2\u5728\u4E66\u5305\u5916\u9762\u3002" }
+    ]
+  };
+  var schoolSuppliesSentenceBuilds = [
+    { id: "stationery", imagePath: "assets/illustrated-stationery/pencil-box.webp", target: ["\u6587\u5177\u76D2", "\u91CC", "\u6709", "\u94C5\u7B14"], distractors: ["\u5B66\u6821", "\u559C\u6B22", "\u56FE\u4E66\u9986"], pinyin: "w\xE9n j\xF9 h\xE9 l\u01D0 y\u01D2u qi\u0101n b\u01D0.", english: "There is a pencil in the pencil case." },
+    { id: "eraser", imagePath: "assets/illustrated-stationery/pencil-box.webp", target: ["\u6587\u5177\u76D2", "\u91CC", "\u6709", "\u6A61\u76AE"], distractors: ["\u5B66\u6821", "\u559C\u6B22", "\u56FE\u4E66\u9986"], pinyin: "w\xE9n j\xF9 h\xE9 l\u01D0 y\u01D2u xi\xE0ng p\xED.", english: "There is an eraser in the pencil case." },
+    { id: "colored-pencils", imagePath: "assets/illustrated-stationery/pencil-box.webp", target: ["\u6587\u5177\u76D2", "\u91CC", "\u6709", "\u5F69\u8272\u94C5\u7B14"], distractors: ["\u5B66\u6821", "\u559C\u6B22", "\u56FE\u4E66\u9986"], pinyin: "w\xE9n j\xF9 h\xE9 l\u01D0 y\u01D2u c\u01CEi s\xE8 qi\u0101n b\u01D0.", english: "There are colored pencils in the pencil case." },
+    { id: "book-in-backpack", imagePath: "assets/illustrated-rooms/positions-inside-outside.webp", target: ["\u4E66", "\u5728", "\u4E66\u5305", "\u91CC"], distractors: ["\u6559\u5BA4", "\u559C\u6B22", "\u6905\u5B50"], pinyin: "sh\u016B z\xE0i sh\u016B b\u0101o l\u01D0.", english: "The book is in the backpack." },
+    { id: "backpack-has-book", imagePath: "assets/illustrated-rooms/positions-inside-outside.webp", target: ["\u4E66\u5305", "\u91CC", "\u6709", "\u4E66"], distractors: ["\u6559\u5BA4", "\u559C\u6B22", "\u6905\u5B50"], pinyin: "sh\u016B b\u0101o l\u01D0 y\u01D2u sh\u016B.", english: "There is a book in the backpack." },
+    { id: "pencil-case-outside", imagePath: "assets/illustrated-rooms/positions-inside-outside.webp", target: ["\u6587\u5177\u76D2", "\u5728", "\u4E66\u5305", "\u5916\u9762"], distractors: ["\u6559\u5BA4", "\u559C\u6B22", "\u6905\u5B50"], pinyin: "w\xE9n j\xF9 h\xE9 z\xE0i sh\u016B b\u0101o w\xE0i mi\xE0n.", english: "The pencil case is outside the backpack." }
+  ];
+
   // src/games/shared-lesson-practice.js
   function createSharedLessonPractice({ state: state2, speak: speak2, elements, documentRef = document }) {
     const { activityPanelTitle: activityPanelTitle2, activityPanelSummary: activityPanelSummary2, activityList: activityList2 } = elements;
@@ -1604,48 +1656,7 @@
   };
   var schoolTopicData = {
     stationery: stationeryTopicData,
-    "school-supplies": {
-      scenes: [
-        {
-          id: "stationery",
-          label: "In the pencil case",
-          lines: [
-            { hanzi: "\u6587\u5177\u76D2\u91CC\u6709\u94C5\u7B14\u3002", pinyin: "w\xE9n j\xF9 h\xE9 l\u01D0 y\u01D2u qi\u0101n b\u01D0.", english: "There is a pencil in the pencil case." },
-            { hanzi: "\u6587\u5177\u76D2\u91CC\u6709\u6A61\u76AE\u3002", pinyin: "w\xE9n j\xF9 h\xE9 l\u01D0 y\u01D2u xi\xE0ng p\xED.", english: "There is an eraser in the pencil case." },
-            { hanzi: "\u6587\u5177\u76D2\u91CC\u6709\u5F69\u8272\u94C5\u7B14\u3002", pinyin: "w\xE9n j\xF9 h\xE9 l\u01D0 y\u01D2u c\u01CEi s\xE8 qi\u0101n b\u01D0.", english: "There are colored pencils in the pencil case." }
-          ],
-          audio: "\u6587\u5177\u76D2\u91CC\u6709\u94C5\u7B14\u6587\u5177\u76D2\u91CC\u6709\u6A61\u76AE\u6587\u5177\u76D2\u91CC\u6709\u5F69\u8272\u94C5\u7B14",
-          imagePath: "assets/illustrated-stationery/pencil-box.webp"
-        },
-        {
-          id: "schoolbag",
-          label: "In the backpack",
-          lines: [
-            { hanzi: "\u4E66\u5728\u4E66\u5305\u91CC\u3002", pinyin: "sh\u016B z\xE0i sh\u016B b\u0101o l\u01D0.", english: "The book is in the backpack." },
-            { hanzi: "\u4E66\u5305\u91CC\u6709\u4E66\u3002", pinyin: "sh\u016B b\u0101o l\u01D0 y\u01D2u sh\u016B.", english: "There is a book in the backpack." },
-            { hanzi: "\u6587\u5177\u76D2\u5728\u4E66\u5305\u5916\u9762\u3002", pinyin: "w\xE9n j\xF9 h\xE9 z\xE0i sh\u016B b\u0101o w\xE0i mi\xE0n.", english: "The pencil case is outside the backpack." }
-          ],
-          audio: "\u4E66\u5728\u4E66\u5305\u91CC\u4E66\u5305\u91CC\u6709\u4E66\u6587\u5177\u76D2\u5728\u4E66\u5305\u5916\u9762",
-          imagePath: "assets/illustrated-rooms/positions-inside-outside.webp"
-        }
-      ],
-      words: [
-        ["pencil", "\u94C5\u7B14", "qi\u0101n b\u01D0", "pencil", "pencil.webp"],
-        ["ruler", "\u5C3A\u5B50", "ch\u01D0 zi", "ruler", "ruler.webp"],
-        ["eraser", "\u6A61\u76AE", "xi\xE0ng p\xED", "eraser", "eraser.webp"],
-        ["colored-pencils", "\u5F69\u8272\u94C5\u7B14", "c\u01CEi s\xE8 qi\u0101n b\u01D0", "colored pencils", "colored-pencils.webp"],
-        ["scissors", "\u526A\u5200", "ji\u01CEn d\u0101o", "scissors", "scissors.webp"],
-        ["glue", "\u80F6\u6C34", "ji\u0101o shu\u01D0", "glue", "glue-stick.webp"],
-        ["pencil-box", "\u6587\u5177\u76D2", "w\xE9n j\xF9 h\xE9", "pencil case", "pencil-box.webp"],
-        ["textbook", "\u8BFE\u672C", "k\xE8 b\u011Bn", "textbook", "textbook.webp"],
-        ["workbook", "\u7EC3\u4E60\u672C", "li\xE0n x\xED b\u011Bn", "workbook", "workbook.webp"],
-        ["schoolbag", "\u4E66\u5305", "sh\u016B b\u0101o", "backpack", "backpack.webp"]
-      ].map(([id, hanzi, pinyin, english, file]) => ({ id, hanzi, pinyin, english, audio: hanzi, imagePath: `assets/illustrated-stationery/${file}` })),
-      review: [
-        { pattern: "\u2026\u2026\u91CC\u6709\u2026\u2026", pinyin: "... l\u01D0 y\u01D2u...", english: "There is / are ... in ...", example: "\u6587\u5177\u76D2\u91CC\u6709\u94C5\u7B14\u3002\u4E66\u5305\u91CC\u6709\u4E66\u3002" },
-        { pattern: "\u91CC / \u5916\u9762", pinyin: "l\u01D0 / w\xE0i mi\xE0n", english: "inside / outside", example: "\u4E66\u5728\u4E66\u5305\u91CC\u3002\u6587\u5177\u76D2\u5728\u4E66\u5305\u5916\u9762\u3002" }
-      ]
-    },
+    "school-supplies": schoolSuppliesTopicData,
     classroom: {
       practiceSummary: "Choose a classroom sentence start and an object to make your own sentence.",
       scenes: [
@@ -2024,14 +2035,7 @@
   };
   var schoolSentenceBuilds = {
     stationery: stationerySentenceBuilds,
-    "school-supplies": [
-      { id: "stationery", imagePath: "assets/illustrated-stationery/pencil-box.webp", target: ["\u6587\u5177\u76D2", "\u91CC", "\u6709", "\u94C5\u7B14"], distractors: ["\u5B66\u6821", "\u559C\u6B22", "\u56FE\u4E66\u9986"], pinyin: "w\xE9n j\xF9 h\xE9 l\u01D0 y\u01D2u qi\u0101n b\u01D0.", english: "There is a pencil in the pencil case." },
-      { id: "eraser", imagePath: "assets/illustrated-stationery/pencil-box.webp", target: ["\u6587\u5177\u76D2", "\u91CC", "\u6709", "\u6A61\u76AE"], distractors: ["\u5B66\u6821", "\u559C\u6B22", "\u56FE\u4E66\u9986"], pinyin: "w\xE9n j\xF9 h\xE9 l\u01D0 y\u01D2u xi\xE0ng p\xED.", english: "There is an eraser in the pencil case." },
-      { id: "colored-pencils", imagePath: "assets/illustrated-stationery/pencil-box.webp", target: ["\u6587\u5177\u76D2", "\u91CC", "\u6709", "\u5F69\u8272\u94C5\u7B14"], distractors: ["\u5B66\u6821", "\u559C\u6B22", "\u56FE\u4E66\u9986"], pinyin: "w\xE9n j\xF9 h\xE9 l\u01D0 y\u01D2u c\u01CEi s\xE8 qi\u0101n b\u01D0.", english: "There are colored pencils in the pencil case." },
-      { id: "book-in-backpack", imagePath: "assets/illustrated-rooms/positions-inside-outside.webp", target: ["\u4E66", "\u5728", "\u4E66\u5305", "\u91CC"], distractors: ["\u6559\u5BA4", "\u559C\u6B22", "\u6905\u5B50"], pinyin: "sh\u016B z\xE0i sh\u016B b\u0101o l\u01D0.", english: "The book is in the backpack." },
-      { id: "backpack-has-book", imagePath: "assets/illustrated-rooms/positions-inside-outside.webp", target: ["\u4E66\u5305", "\u91CC", "\u6709", "\u4E66"], distractors: ["\u6559\u5BA4", "\u559C\u6B22", "\u6905\u5B50"], pinyin: "sh\u016B b\u0101o l\u01D0 y\u01D2u sh\u016B.", english: "There is a book in the backpack." },
-      { id: "pencil-case-outside", imagePath: "assets/illustrated-rooms/positions-inside-outside.webp", target: ["\u6587\u5177\u76D2", "\u5728", "\u4E66\u5305", "\u5916\u9762"], distractors: ["\u6559\u5BA4", "\u559C\u6B22", "\u6905\u5B50"], pinyin: "w\xE9n j\xF9 h\xE9 z\xE0i sh\u016B b\u0101o w\xE0i mi\xE0n.", english: "The pencil case is outside the backpack." }
-    ],
+    "school-supplies": schoolSuppliesSentenceBuilds,
     school: [
       { id: "classroom", imagePath: "assets/illustrated-school-anchors/classroom_anchor.webp", target: ["\u5B66\u6821", "\u6709", "\u6559\u5BA4"], distractors: ["\u4E66\u5305", "\u91CC", "\u559C\u6B22"], pinyin: "xu\xE9 xi\xE0o y\u01D2u ji\xE0o sh\xEC.", english: "The school has classrooms." },
       { id: "library", imagePath: "assets/illustrated-school-anchors/library_anchor.webp", target: ["\u5B66\u6821", "\u6709", "\u56FE\u4E66\u9986"], distractors: ["\u4E66\u5305", "\u91CC", "\u559C\u6B22"], pinyin: "xu\xE9 xi\xE0o y\u01D2u t\xFA sh\u016B gu\u01CEn.", english: "The school has a library." },
