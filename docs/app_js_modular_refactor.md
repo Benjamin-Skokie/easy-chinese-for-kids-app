@@ -49,6 +49,7 @@ A feature registers its owned topic IDs, creates its scoped state, renders its e
 - [ ] Migrate Time & Daily Life in topic-sized commits.
 - [x] Move calendar, clock, date, and routine teaching data to `src/features/time-daily-life/calendar-data.js`.
 - [x] Move Time & Daily Life visual word data to `src/features/time-daily-life/visual-data.js`.
+- [x] Move Time & Daily Life scenes and practice configuration to `src/features/time-daily-life/practice-data.js`.
 - [ ] Extract a shared game only after two migrated topics prove the same contract.
 - [ ] Migrate School, Food, Foundations, and Family/Home.
 - [ ] Delete the matching legacy code after each replacement passes checks.

@@ -169,6 +169,127 @@
     ].map(([hanzi, pinyin, english, file, folder]) => ({ id: hanzi, hanzi, pinyin, english, audio: hanzi, imagePath: `${folder}/${file}` }))
   };
 
+  // src/features/time-daily-life/practice-data.js
+  var roomScenes = [
+    {
+      id: "my-room",
+      label: "My room",
+      hanzi: "\u6211\u7684\u623F\u95F4\u91CC\u6709\u5E8A\u3001\u4E66\u684C\u548C\u8863\u67DC\u3002",
+      pinyin: "w\u01D2 de f\xE1ng ji\u0101n l\u01D0 y\u01D2u chu\xE1ng, sh\u016B zhu\u014D h\xE9 y\u012B gu\xEC.",
+      english: "There is a bed, desk, and wardrobe in my room.",
+      audio: "\u6211\u7684\u623F\u95F4\u91CC\u6709\u5E8A\u4E66\u684C\u548C\u8863\u67DC",
+      imagePath: "assets/illustrated-rooms/bedroom.webp"
+    },
+    {
+      id: "living-room",
+      label: "Living room",
+      hanzi: "\u5BA2\u5385\u91CC\u6709\u6C99\u53D1\u548C\u7535\u89C6\u3002",
+      pinyin: "k\xE8 t\u012Bng l\u01D0 y\u01D2u sh\u0101 fa h\xE9 di\xE0n sh\xEC.",
+      english: "There is a sofa and TV in the living room.",
+      audio: "\u5BA2\u5385\u91CC\u6709\u6C99\u53D1\u548C\u7535\u89C6",
+      imagePath: "assets/illustrated-rooms/living-room.webp"
+    },
+    {
+      id: "garage",
+      label: "Garage",
+      hanzi: "\u8F66\u5E93\u91CC\u6709\u81EA\u884C\u8F66\u3002",
+      pinyin: "ch\u0113 k\xF9 l\u01D0 y\u01D2u z\xEC x\xEDng ch\u0113.",
+      english: "There is a bicycle in the garage.",
+      audio: "\u8F66\u5E93\u91CC\u6709\u81EA\u884C\u8F66",
+      imagePath: "assets/illustrated-rooms/garage.webp"
+    }
+  ];
+  var roomSentenceTokens = {
+    "my-room": { prefix: ["\u6211\u7684", "\u623F\u95F4", "\u91CC", "\u6709"], target: ["\u6211\u7684", "\u623F\u95F4", "\u91CC", "\u6709", "\u5E8A", "\u4E66\u684C", "\u548C", "\u8863\u67DC"], unorderedObjects: ["\u5E8A", "\u4E66\u684C", "\u8863\u67DC"], distractors: ["\u5BA2\u5385", "\u6C99\u53D1", "\u81EA\u884C\u8F66"] },
+    "living-room": { prefix: ["\u5BA2\u5385", "\u91CC", "\u6709"], target: ["\u5BA2\u5385", "\u91CC", "\u6709", "\u6C99\u53D1", "\u548C", "\u7535\u89C6"], unorderedObjects: ["\u6C99\u53D1", "\u7535\u89C6"], distractors: ["\u5E8A", "\u8F66\u5E93", "\u81EA\u884C\u8F66"] },
+    garage: { prefix: ["\u8F66\u5E93", "\u91CC", "\u6709"], target: ["\u8F66\u5E93", "\u91CC", "\u6709", "\u81EA\u884C\u8F66"], unorderedObjects: ["\u81EA\u884C\u8F66"], distractors: ["\u4E66\u684C", "\u6C99\u53D1", "\u7535\u89C6"] }
+  };
+  var transportSentenceTokens = {
+    "walk-to-school.webp": { target: ["\u6211", "\u8D70\u8DEF", "\u53BB", "\u4E0A\u5B66"], distractors: ["\u5750", "\u6821\u8F66", "\u52A8\u7269\u56ED"] },
+    "bike-to-school.webp": { target: ["\u6211", "\u9A91\u81EA\u884C\u8F66", "\u53BB", "\u4E0A\u5B66"], distractors: ["\u5750", "\u706B\u8F66", "\u5317\u4EAC"] },
+    "school-bus-to-zoo.webp": { target: ["\u6211", "\u5750", "\u6821\u8F66", "\u53BB", "\u52A8\u7269\u56ED"], distractors: ["\u9A91\u81EA\u884C\u8F66", "\u4E0A\u5B66"] },
+    "taxi-to-airport.webp": { target: ["\u6211", "\u5750", "\u51FA\u79DF\u8F66", "\u53BB", "\u673A\u573A"], distractors: ["\u6821\u8F66", "\u52A8\u7269\u56ED"] },
+    "airplane-to-grandparents.webp": { target: ["\u6211", "\u5750", "\u98DE\u673A", "\u53BB\u770B", "\u7237\u7237\u5976\u5976"], distractors: ["\u706B\u8F66", "\u5317\u4EAC"] },
+    "train-to-beijing.webp": { target: ["\u6211", "\u5750", "\u706B\u8F66", "\u53BB", "\u5317\u4EAC"], distractors: ["\u98DE\u673A", "\u673A\u573A"] },
+    "mom-car-to-school.webp": { target: ["\u6211", "\u5750", "\u5988\u5988\u7684\u8F66", "\u53BB", "\u4E0A\u5B66"], distractors: ["\u7238\u7238\u7684\u8F66", "\u52A8\u7269\u56ED"] },
+    "dad-car-to-grocery-store.webp": { target: ["\u6211", "\u5750", "\u7238\u7238\u7684\u8F66", "\u53BB", "\u5546\u5E97"], distractors: ["\u5988\u5988\u7684\u8F66", "\u4E0A\u5B66"] }
+  };
+  var comparisonPracticeItems = [
+    { id: "big-small-animals.webp", before: "\u5927\u8C61\u5F88", between: "\uFF0C\u5154\u5B50\u5F88", after: "\u3002", target: ["\u5927", "\u5C0F"], options: ["\u5927", "\u5C0F", "\u957F", "\u77ED"], pinyin: "D\xE0 xi\xE0ng h\u011Bn d\xE0, t\xF9 zi h\u011Bn xi\u01CEo.", english: "The elephant is big and the rabbit is small." },
+    { id: "many-few-carrots.webp", before: "\u8FD9\u8FB9\u7684\u80E1\u841D\u535C\u5F88", between: "\uFF0C\u90A3\u8FB9\u7684\u80E1\u841D\u535C\u5F88", after: "\u3002", target: ["\u591A", "\u5C11"], options: ["\u591A", "\u5C11", "\u5FEB", "\u6162"], pinyin: "Zh\xE8 bi\u0101n de h\xFA lu\xF3 bo h\u011Bn du\u014D, n\xE0 bi\u0101n de h\xFA lu\xF3 bo h\u011Bn sh\u01CEo.", english: "These carrots are many, and those carrots are few." },
+    { id: "fast-slow-running.webp", before: "\u5154\u5B50\u8DD1\u5F97\u5F88", between: "\uFF0C\u4E4C\u9F9F\u8DD1\u5F97\u5F88", after: "\u3002", target: ["\u5FEB", "\u6162"], options: ["\u5FEB", "\u6162", "\u5927", "\u5C0F"], pinyin: "T\xF9 zi p\u01CEo de h\u011Bn ku\xE0i, w\u016B gu\u012B p\u01CEo de h\u011Bn m\xE0n.", english: "The rabbit runs fast and the turtle runs slowly." },
+    { id: "long-short-pencils.webp", before: "\u8FD9\u652F\u94C5\u7B14\u5F88", between: "\uFF0C\u90A3\u652F\u94C5\u7B14\u5F88", after: "\u3002", target: ["\u957F", "\u77ED"], options: ["\u957F", "\u77ED", "\u51B7", "\u70ED"], pinyin: "Zh\xE8 zh\u012B qi\u0101n b\u01D0 h\u011Bn ch\xE1ng, n\xE0 zh\u012B qi\u0101n b\u01D0 h\u011Bn du\u01CEn.", english: "This pencil is long and that pencil is short." },
+    { id: "tall-short-animals.webp", before: "\u957F\u9888\u9E7F\u5F88", between: "\uFF0C\u5154\u5B50\u5F88", after: "\u3002", target: ["\u9AD8", "\u77EE"], options: ["\u9AD8", "\u77EE", "\u65B0", "\u65E7"], pinyin: "Ch\xE1ng j\u01D0ng l\xF9 h\u011Bn g\u0101o, t\xF9 zi h\u011Bn \u01CEi.", english: "The giraffe is tall and the rabbit is short." },
+    { id: "cold-hot-foods.webp", before: "\u51B0\u68D2\u5F88", between: "\uFF0C\u9762\u5305\u5F88", after: "\u3002", target: ["\u51B7", "\u70ED"], options: ["\u51B7", "\u70ED", "\u591A", "\u5C11"], pinyin: "B\u012Bng b\xE0ng h\u011Bn l\u011Bng, mi\xE0n b\u0101o h\u011Bn r\xE8.", english: "The ice pop is cold and the bread is hot." },
+    { id: "new-old-teddy-bears.webp", before: "\u8FD9\u4E2A\u6CF0\u8FEA\u718A\u5F88", between: "\uFF0C\u90A3\u4E2A\u6CF0\u8FEA\u718A\u5F88", after: "\u3002", target: ["\u65B0", "\u65E7"], options: ["\u65B0", "\u65E7", "\u5FEB", "\u6162"], pinyin: "Zh\xE8 ge t\xE0i d\xED xi\xF3ng h\u011Bn x\u012Bn, n\xE0 ge t\xE0i d\xED xi\xF3ng h\u011Bn ji\xF9.", english: "This teddy bear is new and that teddy bear is old." }
+  ];
+  var comparisonWordItems = [
+    ["\u5927", "d\xE0", "big"],
+    ["\u5C0F", "xi\u01CEo", "small"],
+    ["\u591A", "du\u014D", "many"],
+    ["\u5C11", "sh\u01CEo", "few"],
+    ["\u5FEB", "ku\xE0i", "fast"],
+    ["\u6162", "m\xE0n", "slow"],
+    ["\u957F", "ch\xE1ng", "long"],
+    ["\u77ED", "du\u01CEn", "short"],
+    ["\u9AD8", "g\u0101o", "tall"],
+    ["\u77EE", "\u01CEi", "short"],
+    ["\u51B7", "l\u011Bng", "cold"],
+    ["\u70ED", "r\xE8", "hot"],
+    ["\u65B0", "x\u012Bn", "new"],
+    ["\u65E7", "ji\xF9", "old"]
+  ].map(([hanzi, pinyin, english]) => ({ hanzi, pinyin, english }));
+  var positionScenes = [
+    {
+      id: "up-down",
+      number: "1",
+      prompt: "Up and down",
+      imagePath: "assets/illustrated-rooms/positions-up-down.webp",
+      imageAlt: "A book and backpack showing up and down positions around a desk",
+      lines: [
+        { hanzi: "\u4E66\u5728\u684C\u5B50\u4E0A\u3002", pinyin: "sh\u016B z\xE0i zhu\u014D zi sh\xE0ng.", english: "The book is on the desk.", audio: "\u4E66\u5728\u684C\u5B50\u4E0A" },
+        { hanzi: "\u684C\u5B50\u4E0A\u6709\u4E66\u3002", pinyin: "zhu\u014D zi sh\xE0ng y\u01D2u sh\u016B.", english: "There is a book on the desk.", audio: "\u684C\u5B50\u4E0A\u6709\u4E66" },
+        { hanzi: "\u4E66\u5305\u5728\u684C\u5B50\u4E0B\u3002", pinyin: "sh\u016B b\u0101o z\xE0i zhu\u014D zi xi\xE0.", english: "The backpack is under the desk.", audio: "\u4E66\u5305\u5728\u684C\u5B50\u4E0B" }
+      ]
+    },
+    {
+      id: "inside-outside",
+      number: "2",
+      prompt: "Inside and outside",
+      imagePath: "assets/illustrated-rooms/positions-inside-outside.webp",
+      imageAlt: "A backpack, book, and pencil case showing inside and outside positions",
+      lines: [
+        { hanzi: "\u4E66\u5305\u91CC\u6709\u4E66\u3002", pinyin: "sh\u016B b\u0101o l\u01D0 y\u01D2u sh\u016B.", english: "There is a book in the backpack.", audio: "\u4E66\u5305\u91CC\u6709\u4E66" },
+        { hanzi: "\u4E66\u5728\u4E66\u5305\u91CC\u3002", pinyin: "sh\u016B z\xE0i sh\u016B b\u0101o l\u01D0.", english: "The book is in the backpack.", audio: "\u4E66\u5728\u4E66\u5305\u91CC" },
+        { hanzi: "\u6587\u5177\u76D2\u5728\u4E66\u5305\u5916\u9762\u3002", pinyin: "w\xE9n j\xF9 h\xE9 z\xE0i sh\u016B b\u0101o w\xE0i mi\xE0n.", english: "The pencil case is outside the backpack.", audio: "\u6587\u5177\u76D2\u5728\u4E66\u5305\u5916\u9762" }
+      ]
+    },
+    {
+      id: "directions",
+      number: "3",
+      prompt: "Front, back, left, and right",
+      imagePath: "assets/illustrated-rooms/positions-all-directions.webp",
+      imageAlt: "A room board showing front, back, left, and right directions",
+      lines: [
+        { hanzi: "\u4E0A\u3001\u4E0B\u3001\u524D\u3001\u540E\u3001\u5DE6\u3001\u53F3\u3002", pinyin: "sh\xE0ng, xi\xE0, qi\xE1n, h\xF2u, zu\u01D2, y\xF2u.", english: "Up, down, front, back, left, right.", audio: "\u4E0A\u4E0B\u524D\u540E\u5DE6\u53F3" }
+      ]
+    },
+    {
+      id: "room-directions",
+      number: "4",
+      prompt: "Directions in a room",
+      imagePath: "assets/illustrated-rooms/positions-room.webp",
+      imageAlt: "A girl, chair, bookshelf, and dog in a room for practicing directions",
+      lines: [
+        { hanzi: "\u5973\u5B69\u5728\u684C\u5B50\u524D\u9762\u3002", pinyin: "n\u01DA h\xE1i z\xE0i zhu\u014D zi qi\xE1n mi\xE0n.", english: "The girl is in front of the desk.", audio: "\u5973\u5B69\u5728\u684C\u5B50\u524D\u9762" },
+        { hanzi: "\u6905\u5B50\u5728\u5973\u5B69\u540E\u9762\u3002", pinyin: "y\u01D0 zi z\xE0i n\u01DA h\xE1i h\xF2u mi\xE0n.", english: "The chair is behind the girl.", audio: "\u6905\u5B50\u5728\u5973\u5B69\u540E\u9762" },
+        { hanzi: "\u4E66\u67B6\u5728\u5973\u5B69\u5DE6\u8FB9\u3002", pinyin: "sh\u016B ji\xE0 z\xE0i n\u01DA h\xE1i zu\u01D2 bi\u0101n.", english: "The bookshelf is to the girl's left.", audio: "\u4E66\u67B6\u5728\u5973\u5B69\u5DE6\u8FB9" },
+        { hanzi: "\u5C0F\u72D7\u5728\u5973\u5B69\u53F3\u8FB9\u3002", pinyin: "xi\u01CEo g\u01D2u z\xE0i n\u01DA h\xE1i y\xF2u bi\u0101n.", english: "The dog is to the girl's right.", audio: "\u5C0F\u72D7\u5728\u5973\u5B69\u53F3\u8FB9" }
+      ]
+    }
+  ];
+  var positionPracticeItems = positionScenes.flatMap((scene) => scene.lines.map((line, index) => ({ id: `${scene.id}-${index}`, ...line, imagePath: scene.imagePath, imageAlt: scene.imageAlt })));
+
   // src/legacy-app.js
   var topicData = [
     {
@@ -1722,125 +1843,6 @@
       { id: "full", imagePath: "assets/illustrated-food-feelings/full.webp", target: ["\u5988\u5988", "\u6211", "\u9971", "\u4E86", "\u4E0D\u5403", "\u4E86"], distractors: ["\u6E34", "\u8981", "\u5B66\u6821"], pinyin: "m\u0101 ma, w\u01D2 b\u01CEo le, b\xF9 ch\u012B le.", english: "Mom, I am full. I do not want to eat any more." }
     ]
   };
-  var roomScenes = [
-    {
-      id: "my-room",
-      label: "My room",
-      hanzi: "\u6211\u7684\u623F\u95F4\u91CC\u6709\u5E8A\u3001\u4E66\u684C\u548C\u8863\u67DC\u3002",
-      pinyin: "w\u01D2 de f\xE1ng ji\u0101n l\u01D0 y\u01D2u chu\xE1ng, sh\u016B zhu\u014D h\xE9 y\u012B gu\xEC.",
-      english: "There is a bed, desk, and wardrobe in my room.",
-      audio: "\u6211\u7684\u623F\u95F4\u91CC\u6709\u5E8A\u4E66\u684C\u548C\u8863\u67DC",
-      imagePath: "assets/illustrated-rooms/bedroom.webp"
-    },
-    {
-      id: "living-room",
-      label: "Living room",
-      hanzi: "\u5BA2\u5385\u91CC\u6709\u6C99\u53D1\u548C\u7535\u89C6\u3002",
-      pinyin: "k\xE8 t\u012Bng l\u01D0 y\u01D2u sh\u0101 fa h\xE9 di\xE0n sh\xEC.",
-      english: "There is a sofa and TV in the living room.",
-      audio: "\u5BA2\u5385\u91CC\u6709\u6C99\u53D1\u548C\u7535\u89C6",
-      imagePath: "assets/illustrated-rooms/living-room.webp"
-    },
-    {
-      id: "garage",
-      label: "Garage",
-      hanzi: "\u8F66\u5E93\u91CC\u6709\u81EA\u884C\u8F66\u3002",
-      pinyin: "ch\u0113 k\xF9 l\u01D0 y\u01D2u z\xEC x\xEDng ch\u0113.",
-      english: "There is a bicycle in the garage.",
-      audio: "\u8F66\u5E93\u91CC\u6709\u81EA\u884C\u8F66",
-      imagePath: "assets/illustrated-rooms/garage.webp"
-    }
-  ];
-  var roomSentenceTokens = {
-    "my-room": { prefix: ["\u6211\u7684", "\u623F\u95F4", "\u91CC", "\u6709"], target: ["\u6211\u7684", "\u623F\u95F4", "\u91CC", "\u6709", "\u5E8A", "\u4E66\u684C", "\u548C", "\u8863\u67DC"], unorderedObjects: ["\u5E8A", "\u4E66\u684C", "\u8863\u67DC"], distractors: ["\u5BA2\u5385", "\u6C99\u53D1", "\u81EA\u884C\u8F66"] },
-    "living-room": { prefix: ["\u5BA2\u5385", "\u91CC", "\u6709"], target: ["\u5BA2\u5385", "\u91CC", "\u6709", "\u6C99\u53D1", "\u548C", "\u7535\u89C6"], unorderedObjects: ["\u6C99\u53D1", "\u7535\u89C6"], distractors: ["\u5E8A", "\u8F66\u5E93", "\u81EA\u884C\u8F66"] },
-    garage: { prefix: ["\u8F66\u5E93", "\u91CC", "\u6709"], target: ["\u8F66\u5E93", "\u91CC", "\u6709", "\u81EA\u884C\u8F66"], unorderedObjects: ["\u81EA\u884C\u8F66"], distractors: ["\u4E66\u684C", "\u6C99\u53D1", "\u7535\u89C6"] }
-  };
-  var transportSentenceTokens = {
-    "walk-to-school.webp": { target: ["\u6211", "\u8D70\u8DEF", "\u53BB", "\u4E0A\u5B66"], distractors: ["\u5750", "\u6821\u8F66", "\u52A8\u7269\u56ED"] },
-    "bike-to-school.webp": { target: ["\u6211", "\u9A91\u81EA\u884C\u8F66", "\u53BB", "\u4E0A\u5B66"], distractors: ["\u5750", "\u706B\u8F66", "\u5317\u4EAC"] },
-    "school-bus-to-zoo.webp": { target: ["\u6211", "\u5750", "\u6821\u8F66", "\u53BB", "\u52A8\u7269\u56ED"], distractors: ["\u9A91\u81EA\u884C\u8F66", "\u4E0A\u5B66"] },
-    "taxi-to-airport.webp": { target: ["\u6211", "\u5750", "\u51FA\u79DF\u8F66", "\u53BB", "\u673A\u573A"], distractors: ["\u6821\u8F66", "\u52A8\u7269\u56ED"] },
-    "airplane-to-grandparents.webp": { target: ["\u6211", "\u5750", "\u98DE\u673A", "\u53BB\u770B", "\u7237\u7237\u5976\u5976"], distractors: ["\u706B\u8F66", "\u5317\u4EAC"] },
-    "train-to-beijing.webp": { target: ["\u6211", "\u5750", "\u706B\u8F66", "\u53BB", "\u5317\u4EAC"], distractors: ["\u98DE\u673A", "\u673A\u573A"] },
-    "mom-car-to-school.webp": { target: ["\u6211", "\u5750", "\u5988\u5988\u7684\u8F66", "\u53BB", "\u4E0A\u5B66"], distractors: ["\u7238\u7238\u7684\u8F66", "\u52A8\u7269\u56ED"] },
-    "dad-car-to-grocery-store.webp": { target: ["\u6211", "\u5750", "\u7238\u7238\u7684\u8F66", "\u53BB", "\u5546\u5E97"], distractors: ["\u5988\u5988\u7684\u8F66", "\u4E0A\u5B66"] }
-  };
-  var comparisonPracticeItems = [
-    { id: "big-small-animals.webp", before: "\u5927\u8C61\u5F88", between: "\uFF0C\u5154\u5B50\u5F88", after: "\u3002", target: ["\u5927", "\u5C0F"], options: ["\u5927", "\u5C0F", "\u957F", "\u77ED"], pinyin: "D\xE0 xi\xE0ng h\u011Bn d\xE0, t\xF9 zi h\u011Bn xi\u01CEo.", english: "The elephant is big and the rabbit is small." },
-    { id: "many-few-carrots.webp", before: "\u8FD9\u8FB9\u7684\u80E1\u841D\u535C\u5F88", between: "\uFF0C\u90A3\u8FB9\u7684\u80E1\u841D\u535C\u5F88", after: "\u3002", target: ["\u591A", "\u5C11"], options: ["\u591A", "\u5C11", "\u5FEB", "\u6162"], pinyin: "Zh\xE8 bi\u0101n de h\xFA lu\xF3 bo h\u011Bn du\u014D, n\xE0 bi\u0101n de h\xFA lu\xF3 bo h\u011Bn sh\u01CEo.", english: "These carrots are many, and those carrots are few." },
-    { id: "fast-slow-running.webp", before: "\u5154\u5B50\u8DD1\u5F97\u5F88", between: "\uFF0C\u4E4C\u9F9F\u8DD1\u5F97\u5F88", after: "\u3002", target: ["\u5FEB", "\u6162"], options: ["\u5FEB", "\u6162", "\u5927", "\u5C0F"], pinyin: "T\xF9 zi p\u01CEo de h\u011Bn ku\xE0i, w\u016B gu\u012B p\u01CEo de h\u011Bn m\xE0n.", english: "The rabbit runs fast and the turtle runs slowly." },
-    { id: "long-short-pencils.webp", before: "\u8FD9\u652F\u94C5\u7B14\u5F88", between: "\uFF0C\u90A3\u652F\u94C5\u7B14\u5F88", after: "\u3002", target: ["\u957F", "\u77ED"], options: ["\u957F", "\u77ED", "\u51B7", "\u70ED"], pinyin: "Zh\xE8 zh\u012B qi\u0101n b\u01D0 h\u011Bn ch\xE1ng, n\xE0 zh\u012B qi\u0101n b\u01D0 h\u011Bn du\u01CEn.", english: "This pencil is long and that pencil is short." },
-    { id: "tall-short-animals.webp", before: "\u957F\u9888\u9E7F\u5F88", between: "\uFF0C\u5154\u5B50\u5F88", after: "\u3002", target: ["\u9AD8", "\u77EE"], options: ["\u9AD8", "\u77EE", "\u65B0", "\u65E7"], pinyin: "Ch\xE1ng j\u01D0ng l\xF9 h\u011Bn g\u0101o, t\xF9 zi h\u011Bn \u01CEi.", english: "The giraffe is tall and the rabbit is short." },
-    { id: "cold-hot-foods.webp", before: "\u51B0\u68D2\u5F88", between: "\uFF0C\u9762\u5305\u5F88", after: "\u3002", target: ["\u51B7", "\u70ED"], options: ["\u51B7", "\u70ED", "\u591A", "\u5C11"], pinyin: "B\u012Bng b\xE0ng h\u011Bn l\u011Bng, mi\xE0n b\u0101o h\u011Bn r\xE8.", english: "The ice pop is cold and the bread is hot." },
-    { id: "new-old-teddy-bears.webp", before: "\u8FD9\u4E2A\u6CF0\u8FEA\u718A\u5F88", between: "\uFF0C\u90A3\u4E2A\u6CF0\u8FEA\u718A\u5F88", after: "\u3002", target: ["\u65B0", "\u65E7"], options: ["\u65B0", "\u65E7", "\u5FEB", "\u6162"], pinyin: "Zh\xE8 ge t\xE0i d\xED xi\xF3ng h\u011Bn x\u012Bn, n\xE0 ge t\xE0i d\xED xi\xF3ng h\u011Bn ji\xF9.", english: "This teddy bear is new and that teddy bear is old." }
-  ];
-  var comparisonWordItems = [
-    ["\u5927", "d\xE0", "big"],
-    ["\u5C0F", "xi\u01CEo", "small"],
-    ["\u591A", "du\u014D", "many"],
-    ["\u5C11", "sh\u01CEo", "few"],
-    ["\u5FEB", "ku\xE0i", "fast"],
-    ["\u6162", "m\xE0n", "slow"],
-    ["\u957F", "ch\xE1ng", "long"],
-    ["\u77ED", "du\u01CEn", "short"],
-    ["\u9AD8", "g\u0101o", "tall"],
-    ["\u77EE", "\u01CEi", "short"],
-    ["\u51B7", "l\u011Bng", "cold"],
-    ["\u70ED", "r\xE8", "hot"],
-    ["\u65B0", "x\u012Bn", "new"],
-    ["\u65E7", "ji\xF9", "old"]
-  ].map(([hanzi, pinyin, english]) => ({ hanzi, pinyin, english }));
-  var positionScenes = [
-    {
-      id: "up-down",
-      number: "1",
-      prompt: "Up and down",
-      imagePath: "assets/illustrated-rooms/positions-up-down.webp",
-      imageAlt: "A book and backpack showing up and down positions around a desk",
-      lines: [
-        { hanzi: "\u4E66\u5728\u684C\u5B50\u4E0A\u3002", pinyin: "sh\u016B z\xE0i zhu\u014D zi sh\xE0ng.", english: "The book is on the desk.", audio: "\u4E66\u5728\u684C\u5B50\u4E0A" },
-        { hanzi: "\u684C\u5B50\u4E0A\u6709\u4E66\u3002", pinyin: "zhu\u014D zi sh\xE0ng y\u01D2u sh\u016B.", english: "There is a book on the desk.", audio: "\u684C\u5B50\u4E0A\u6709\u4E66" },
-        { hanzi: "\u4E66\u5305\u5728\u684C\u5B50\u4E0B\u3002", pinyin: "sh\u016B b\u0101o z\xE0i zhu\u014D zi xi\xE0.", english: "The backpack is under the desk.", audio: "\u4E66\u5305\u5728\u684C\u5B50\u4E0B" }
-      ]
-    },
-    {
-      id: "inside-outside",
-      number: "2",
-      prompt: "Inside and outside",
-      imagePath: "assets/illustrated-rooms/positions-inside-outside.webp",
-      imageAlt: "A backpack, book, and pencil case showing inside and outside positions",
-      lines: [
-        { hanzi: "\u4E66\u5305\u91CC\u6709\u4E66\u3002", pinyin: "sh\u016B b\u0101o l\u01D0 y\u01D2u sh\u016B.", english: "There is a book in the backpack.", audio: "\u4E66\u5305\u91CC\u6709\u4E66" },
-        { hanzi: "\u4E66\u5728\u4E66\u5305\u91CC\u3002", pinyin: "sh\u016B z\xE0i sh\u016B b\u0101o l\u01D0.", english: "The book is in the backpack.", audio: "\u4E66\u5728\u4E66\u5305\u91CC" },
-        { hanzi: "\u6587\u5177\u76D2\u5728\u4E66\u5305\u5916\u9762\u3002", pinyin: "w\xE9n j\xF9 h\xE9 z\xE0i sh\u016B b\u0101o w\xE0i mi\xE0n.", english: "The pencil case is outside the backpack.", audio: "\u6587\u5177\u76D2\u5728\u4E66\u5305\u5916\u9762" }
-      ]
-    },
-    {
-      id: "directions",
-      number: "3",
-      prompt: "Front, back, left, and right",
-      imagePath: "assets/illustrated-rooms/positions-all-directions.webp",
-      imageAlt: "A room board showing front, back, left, and right directions",
-      lines: [
-        { hanzi: "\u4E0A\u3001\u4E0B\u3001\u524D\u3001\u540E\u3001\u5DE6\u3001\u53F3\u3002", pinyin: "sh\xE0ng, xi\xE0, qi\xE1n, h\xF2u, zu\u01D2, y\xF2u.", english: "Up, down, front, back, left, right.", audio: "\u4E0A\u4E0B\u524D\u540E\u5DE6\u53F3" }
-      ]
-    },
-    {
-      id: "room-directions",
-      number: "4",
-      prompt: "Directions in a room",
-      imagePath: "assets/illustrated-rooms/positions-room.webp",
-      imageAlt: "A girl, chair, bookshelf, and dog in a room for practicing directions",
-      lines: [
-        { hanzi: "\u5973\u5B69\u5728\u684C\u5B50\u524D\u9762\u3002", pinyin: "n\u01DA h\xE1i z\xE0i zhu\u014D zi qi\xE1n mi\xE0n.", english: "The girl is in front of the desk.", audio: "\u5973\u5B69\u5728\u684C\u5B50\u524D\u9762" },
-        { hanzi: "\u6905\u5B50\u5728\u5973\u5B69\u540E\u9762\u3002", pinyin: "y\u01D0 zi z\xE0i n\u01DA h\xE1i h\xF2u mi\xE0n.", english: "The chair is behind the girl.", audio: "\u6905\u5B50\u5728\u5973\u5B69\u540E\u9762" },
-        { hanzi: "\u4E66\u67B6\u5728\u5973\u5B69\u5DE6\u8FB9\u3002", pinyin: "sh\u016B ji\xE0 z\xE0i n\u01DA h\xE1i zu\u01D2 bi\u0101n.", english: "The bookshelf is to the girl's left.", audio: "\u4E66\u67B6\u5728\u5973\u5B69\u5DE6\u8FB9" },
-        { hanzi: "\u5C0F\u72D7\u5728\u5973\u5B69\u53F3\u8FB9\u3002", pinyin: "xi\u01CEo g\u01D2u z\xE0i n\u01DA h\xE1i y\xF2u bi\u0101n.", english: "The dog is to the girl's right.", audio: "\u5C0F\u72D7\u5728\u5973\u5B69\u53F3\u8FB9" }
-      ]
-    }
-  ];
-  var positionPracticeItems = positionScenes.flatMap((scene) => scene.lines.map((line, index) => ({ id: `${scene.id}-${index}`, ...line, imagePath: scene.imagePath, imageAlt: scene.imageAlt })));
   var introductionsPractice = [
     {
       id: "intro-scene-1",

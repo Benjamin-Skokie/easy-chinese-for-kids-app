@@ -5,6 +5,7 @@ import { createAudioService } from "../src/core/audio.js";
 import { topicIdFromLocation, topicPageUrl, viewFromLocation } from "../src/core/router.js";
 import { datePracticeItems, timeDateClockItems, timeDateMonthItems, timeDateRoutineItems, timeDateWeekItems } from "../src/features/time-daily-life/calendar-data.js";
 import { timeDailyVisualTopicItems } from "../src/features/time-daily-life/visual-data.js";
+import { comparisonPracticeItems, positionPracticeItems, positionScenes, roomScenes, transportSentenceTokens } from "../src/features/time-daily-life/practice-data.js";
 
 test("the local page loads a single bundled application script", () => {
   const html = readFileSync("index.html", "utf8");
@@ -49,4 +50,12 @@ test("time and calendar content retains its expected teaching sets", () => {
 
 test("time and daily life visual data stays owned by its feature", () => {
   assert.deepEqual(Object.keys(timeDailyVisualTopicItems), ["comparisons", "positions", "transport", "rooms"]);
+});
+
+test("time and daily life practice data retains every interaction set", () => {
+  assert.equal(roomScenes.length, 3);
+  assert.equal(positionScenes.length, 4);
+  assert.equal(positionPracticeItems.length, 11);
+  assert.equal(comparisonPracticeItems.length, 7);
+  assert.equal(Object.keys(transportSentenceTokens).length, 8);
 });
