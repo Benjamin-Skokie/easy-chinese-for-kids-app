@@ -17,6 +17,7 @@ import { schoolSentenceBuilds, schoolTopicData } from "../src/features/school-li
 import { schoolSubjectsSentenceBuilds, schoolSubjectsTopicData } from "../src/features/school-life/school-subjects.js";
 import { foodSentenceBuilds, foodTopicData } from "../src/features/food/food.js";
 import { foodPreferencesTopicData } from "../src/features/food/food-preferences.js";
+import { mealsFeelingsSentenceBuilds, mealsFeelingsTopicData } from "../src/features/food/meals-feelings.js";
 
 test("the local page loads a single bundled application script", () => {
   const html = readFileSync("index.html", "utf8");
@@ -140,4 +141,11 @@ test("food owns its scenes, words, and sentence practice", () => {
 test("food preferences owns its scenes and vocabulary", () => {
   assert.equal(foodPreferencesTopicData.scenes.length, 4);
   assert.equal(foodPreferencesTopicData.words.length, 4);
+});
+
+test("meals and feelings owns its scenes and practice activities", () => {
+  assert.equal(mealsFeelingsTopicData.sceneGroups.length, 2);
+  assert.equal(mealsFeelingsTopicData.conversationPairs.length, 6);
+  assert.equal(mealsFeelingsTopicData.pictureChoices.length, 6);
+  assert.equal(mealsFeelingsSentenceBuilds.length, 5);
 });

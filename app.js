@@ -743,6 +743,154 @@
     ]
   };
 
+  // src/features/food/meals-feelings.js
+  var mealsFeelingsTopicData = {
+    practiceSummary: "Match the first line of each food conversation to its reply.",
+    sceneGroups: [
+      {
+        id: "lunch",
+        label: "",
+        items: [
+          {
+            id: "lunch",
+            label: "Lunch",
+            hanzi: "\u6211\u5348\u996D\u559D\u4E86\u725B\u5976\uFF0C\u5403\u4E86\u62AB\u8428\u3002",
+            pinyin: "w\u01D2 w\u01D4 f\xE0n h\u0113 le ni\xFA n\u01CEi, ch\u012B le p\u012B s\xE0.",
+            english: "For lunch, I drank milk and ate pizza.",
+            audio: "\u6211\u5348\u996D\u559D\u4E86\u725B\u5976\u5403\u4E86\u62AB\u8428",
+            imagePath: "assets/illustrated-meals/anan-eating-school-lunch.webp"
+          },
+          {
+            id: "cola-water",
+            label: "No Coke",
+            hanzi: "\u6211\u8981\u559D\u53EF\u4E50\u3002\u6CA1\u6709\u53EF\u4E50\uFF0C\u4F60\u53EF\u4EE5\u559D\u6C34\u3002",
+            pinyin: "w\u01D2 y\xE0o h\u0113 k\u011B l\xE8. m\xE9i y\u01D2u k\u011B l\xE8, n\u01D0 k\u011B y\u01D0 h\u0113 shu\u01D0.",
+            english: "I want to drink Coke. There is no Coke. You can drink water.",
+            audio: "\u6211\u8981\u559D\u53EF\u4E50\u6CA1\u6709\u53EF\u4E50\u4F60\u53EF\u4EE5\u559D\u6C34",
+            imagePath: "assets/illustrated-meals/anan-mom-fridge-cola-water.webp"
+          }
+        ]
+      },
+      {
+        id: "feelings",
+        label: "Food Feelings",
+        items: [
+          { id: "hungry", label: "Hungry", hanzi: "\u6211\u997F\u4E86\uFF0C\u6211\u8981\u5403\u7092\u996D\u3002", pinyin: "w\u01D2 \xE8 le, w\u01D2 y\xE0o ch\u012B ch\u01CEo f\xE0n.", english: "I am hungry. I want to eat fried rice.", audio: "\u6211\u997F\u4E86\u6211\u8981\u5403\u7092\u996D", imagePath: "assets/illustrated-food-feelings/hungry.webp" },
+          { id: "thirsty", label: "Thirsty", hanzi: "\u6211\u6E34\u4E86\uFF0C\u6211\u8981\u559D\u6C34\u3002", pinyin: "w\u01D2 k\u011B le, w\u01D2 y\xE0o h\u0113 shu\u01D0.", english: "I am thirsty. I want to drink water.", audio: "\u6211\u6E34\u4E86\u6211\u8981\u559D\u6C34", imagePath: "assets/illustrated-food-feelings/thirsty.webp" },
+          { id: "delicious", label: "Delicious", hanzi: "\u997A\u5B50\u597D\u5403\u3002", pinyin: "ji\u01CEo zi h\u01CEo ch\u012B.", english: "Dumplings are delicious.", audio: "\u997A\u5B50\u597D\u5403", imagePath: "assets/illustrated-food-feelings/delicious.webp" },
+          { id: "full", label: "Full", hanzi: "\u5988\u5988\uFF0C\u6211\u9971\u4E86\uFF0C\u4E0D\u5403\u4E86\u3002", pinyin: "m\u0101 ma, w\u01D2 b\u01CEo le, b\xF9 ch\u012B le.", english: "Mom, I am full. I do not want to eat any more.", audio: "\u5988\u5988\u6211\u9971\u4E86\u4E0D\u5403\u4E86", imagePath: "assets/illustrated-food-feelings/full.webp" }
+        ]
+      }
+    ],
+    wordGroups: [
+      { id: "feelings", hanzi: "\u98DF\u7269\u611F\u89C9", english: "Food Feelings", items: [["hungry", "\u997F", "\xE8", "hungry", "assets/illustrated-food-feelings/hungry.webp"], ["thirsty", "\u6E34", "k\u011B", "thirsty", "assets/illustrated-food-feelings/thirsty.webp"], ["want", "\u8981", "y\xE0o", "want", "assets/illustrated-food-feelings/want-eat-fried-rice-landscape.webp"], ["delicious", "\u597D\u5403", "h\u01CEo ch\u012B", "delicious", "assets/illustrated-food-feelings/delicious.webp"], ["full", "\u9971", "b\u01CEo", "full", "assets/illustrated-food-feelings/full.webp"]] }
+    ],
+    practiceItems: [
+      { id: "ask-lunch", hanzi: "\u4F60\u5348\u996D\u5403\u4EC0\u4E48\uFF1F", pinyin: "n\u01D0 w\u01D4 f\xE0n ch\u012B sh\xE9n me?", english: "What do you have for lunch?", audio: "\u4F60\u5348\u996D\u5403\u4EC0\u4E48" },
+      { id: "lunch-answer", hanzi: "\u4E09\u660E\u6CBB\u548C\u679C\u6C41\u3002", pinyin: "s\u0101n m\xEDng zh\xEC h\xE9 gu\u01D2 zh\u012B.", english: "Sandwiches and juice.", audio: "\u4E09\u660E\u6CBB\u548C\u679C\u6C41" },
+      { id: "can-eat-chocolate", hanzi: "\u6211\u53EF\u4EE5\u5403\u5DE7\u514B\u529B\u5417\uFF1F", pinyin: "w\u01D2 k\u011B y\u01D0 ch\u012B qi\u01CEo k\xE8 l\xEC ma?", english: "May I eat chocolate?", audio: "\u6211\u53EF\u4EE5\u5403\u5DE7\u514B\u529B\u5417" },
+      { id: "not-now", hanzi: "\u4E0D\u884C\uFF0C\u73B0\u5728\u5403\u996D\u3002", pinyin: "b\xF9 x\xEDng, xi\xE0n z\xE0i ch\u012B f\xE0n.", english: "No, it is time to eat now.", audio: "\u4E0D\u884C\u73B0\u5728\u5403\u996D" },
+      { id: "no-hotdog", hanzi: "\u5BF9\u4E0D\u8D77\uFF0C\u6CA1\u6709\u70ED\u72D7\u3002", pinyin: "du\xEC bu q\u01D0, m\xE9i y\u01D2u r\xE8 g\u01D2u.", english: "Sorry, there are no hot dogs.", audio: "\u5BF9\u4E0D\u8D77\u6CA1\u6709\u70ED\u72D7" },
+      { id: "no-cola-water", hanzi: "\u6CA1\u6709\u53EF\u4E50\uFF0C\u4F60\u53EF\u4EE5\u559D\u6C34\u3002", pinyin: "m\xE9i y\u01D2u k\u011B l\xE8, n\u01D0 k\u011B y\u01D0 h\u0113 shu\u01D0.", english: "There is no Coke. You can drink water.", audio: "\u6CA1\u6709\u53EF\u4E50\u4F60\u53EF\u4EE5\u559D\u6C34" }
+    ],
+    conversationPairs: [
+      { id: "thirsty-coke", hanzi: "\u6211\u6E34\u4E86\u3002", pinyin: "w\u01D2 k\u011B le.", reply: "\u6211\u8981\u559D\u53EF\u4E50\u3002", replyPinyin: "w\u01D2 y\xE0o h\u0113 k\u011B l\xE8.", audio: "\u6211\u6E34\u4E86" },
+      { id: "hungry-hotdog", hanzi: "\u6211\u997F\u4E86\u3002", pinyin: "w\u01D2 \xE8 le.", reply: "\u6211\u8981\u5403\u70ED\u72D7\u3002", replyPinyin: "w\u01D2 y\xE0o ch\u012B r\xE8 g\u01D2u.", audio: "\u6211\u997F\u4E86" },
+      { id: "full-stop", hanzi: "\u5988\u5988\uFF0C\u6211\u9971\u4E86\u3002", pinyin: "m\u0101 ma, w\u01D2 b\u01CEo le.", reply: "\u597D\uFF0C\u4E0D\u5403\u4E86\u3002", replyPinyin: "h\u01CEo, b\xF9 ch\u012B le.", audio: "\u5988\u5988\u6211\u9971\u4E86" },
+      { id: "lunch-sandwich", hanzi: "\u4F60\u5348\u996D\u5403\u4EC0\u4E48\uFF1F", pinyin: "n\u01D0 w\u01D4 f\xE0n ch\u012B sh\xE9n me?", reply: "\u4E09\u660E\u6CBB\u548C\u679C\u6C41\u3002", replyPinyin: "s\u0101n m\xEDng zh\xEC h\xE9 gu\u01D2 zh\u012B.", audio: "\u4F60\u5348\u996D\u5403\u4EC0\u4E48" },
+      { id: "chocolate-mealtime", hanzi: "\u6211\u53EF\u4EE5\u5403\u5DE7\u514B\u529B\u5417\uFF1F", pinyin: "w\u01D2 k\u011B y\u01D0 ch\u012B qi\u01CEo k\xE8 l\xEC ma?", reply: "\u4E0D\u884C\uFF0C\u73B0\u5728\u5403\u996D\u3002", replyPinyin: "b\xF9 x\xEDng, xi\xE0n z\xE0i ch\u012B f\xE0n.", audio: "\u6211\u53EF\u4EE5\u5403\u5DE7\u514B\u529B\u5417" },
+      { id: "no-coke-water", hanzi: "\u6CA1\u6709\u53EF\u4E50\u3002", pinyin: "m\xE9i y\u01D2u k\u011B l\xE8.", reply: "\u4F60\u53EF\u4EE5\u559D\u6C34\u3002", replyPinyin: "n\u01D0 k\u011B y\u01D0 h\u0113 shu\u01D0.", audio: "\u6CA1\u6709\u53EF\u4E50" }
+    ],
+    pictureChoices: [
+      {
+        id: "lunch-picture",
+        imagePath: "assets/illustrated-meals/anan-eating-school-lunch.webp",
+        imageAlt: "Anan eating lunch.",
+        correctId: "lunch-sentence",
+        options: [
+          { id: "lunch-sentence", hanzi: "\u6211\u5348\u996D\u559D\u4E86\u725B\u5976\uFF0C\u5403\u4E86\u62AB\u8428\u3002", pinyin: "w\u01D2 w\u01D4 f\xE0n h\u0113 le ni\xFA n\u01CEi, ch\u012B le p\u012B s\xE0.", english: "For lunch, I drank milk and ate pizza." },
+          { id: "lunch-coke", hanzi: "\u6211\u8981\u559D\u53EF\u4E50\u3002", pinyin: "w\u01D2 y\xE0o h\u0113 k\u011B l\xE8.", english: "I want to drink Coke." },
+          { id: "lunch-hungry", hanzi: "\u6211\u997F\u4E86\uFF0C\u6211\u8981\u5403\u7092\u996D\u3002", pinyin: "w\u01D2 \xE8 le, w\u01D2 y\xE0o ch\u012B ch\u01CEo f\xE0n.", english: "I am hungry. I want to eat fried rice." },
+          { id: "lunch-full", hanzi: "\u5988\u5988\uFF0C\u6211\u9971\u4E86\uFF0C\u4E0D\u5403\u4E86\u3002", pinyin: "m\u0101 ma, w\u01D2 b\u01CEo le, b\xF9 ch\u012B le.", english: "Mom, I am full. I do not want to eat any more." }
+        ]
+      },
+      {
+        id: "no-coke-picture",
+        imagePath: "assets/illustrated-meals/anan-mom-fridge-cola-water.webp",
+        imageAlt: "Anan looking for Coke while Mom offers water.",
+        correctId: "no-coke-sentence",
+        options: [
+          { id: "no-coke-sentence", hanzi: "\u6211\u8981\u559D\u53EF\u4E50\u3002\u6CA1\u6709\u53EF\u4E50\uFF0C\u4F60\u53EF\u4EE5\u559D\u6C34\u3002", pinyin: "w\u01D2 y\xE0o h\u0113 k\u011B l\xE8. m\xE9i y\u01D2u k\u011B l\xE8, n\u01D0 k\u011B y\u01D0 h\u0113 shu\u01D0.", english: "I want to drink Coke. There is no Coke. You can drink water." },
+          { id: "no-coke-lunch", hanzi: "\u6211\u5348\u996D\u559D\u4E86\u725B\u5976\uFF0C\u5403\u4E86\u62AB\u8428\u3002", pinyin: "w\u01D2 w\u01D4 f\xE0n h\u0113 le ni\xFA n\u01CEi, ch\u012B le p\u012B s\xE0.", english: "For lunch, I drank milk and ate pizza." },
+          { id: "no-coke-water", hanzi: "\u6211\u6E34\u4E86\uFF0C\u6211\u8981\u559D\u6C34\u3002", pinyin: "w\u01D2 k\u011B le, w\u01D2 y\xE0o h\u0113 shu\u01D0.", english: "I am thirsty. I want to drink water." },
+          { id: "no-coke-sandwich", hanzi: "\u6211\u559C\u6B22\u5403\u4E09\u660E\u6CBB\u3002", pinyin: "w\u01D2 x\u01D0 huan ch\u012B s\u0101n m\xEDng zh\xEC.", english: "I like to eat sandwiches." }
+        ]
+      },
+      {
+        id: "hungry-picture",
+        imagePath: "assets/illustrated-food-feelings/hungry.webp",
+        imageAlt: "A child who is hungry and wants fried rice.",
+        correctId: "hungry-sentence",
+        options: [
+          { id: "hungry-sentence", hanzi: "\u6211\u997F\u4E86\uFF0C\u6211\u8981\u5403\u7092\u996D\u3002", pinyin: "w\u01D2 \xE8 le, w\u01D2 y\xE0o ch\u012B ch\u01CEo f\xE0n.", english: "I am hungry. I want to eat fried rice." },
+          { id: "hungry-thirsty", hanzi: "\u6211\u6E34\u4E86\uFF0C\u6211\u8981\u559D\u6C34\u3002", pinyin: "w\u01D2 k\u011B le, w\u01D2 y\xE0o h\u0113 shu\u01D0.", english: "I am thirsty. I want to drink water." },
+          { id: "hungry-coke", hanzi: "\u6211\u8981\u559D\u53EF\u4E50\u3002", pinyin: "w\u01D2 y\xE0o h\u0113 k\u011B l\xE8.", english: "I want to drink Coke." },
+          { id: "hungry-full", hanzi: "\u5988\u5988\uFF0C\u6211\u9971\u4E86\uFF0C\u4E0D\u5403\u4E86\u3002", pinyin: "m\u0101 ma, w\u01D2 b\u01CEo le, b\xF9 ch\u012B le.", english: "Mom, I am full. I do not want to eat any more." }
+        ]
+      },
+      {
+        id: "thirsty-picture",
+        imagePath: "assets/illustrated-food-feelings/thirsty.webp",
+        imageAlt: "A child who is thirsty and wants water.",
+        correctId: "thirsty-sentence",
+        options: [
+          { id: "thirsty-sentence", hanzi: "\u6211\u6E34\u4E86\uFF0C\u6211\u8981\u559D\u6C34\u3002", pinyin: "w\u01D2 k\u011B le, w\u01D2 y\xE0o h\u0113 shu\u01D0.", english: "I am thirsty. I want to drink water." },
+          { id: "thirsty-hungry", hanzi: "\u6211\u997F\u4E86\uFF0C\u6211\u8981\u5403\u7092\u996D\u3002", pinyin: "w\u01D2 \xE8 le, w\u01D2 y\xE0o ch\u012B ch\u01CEo f\xE0n.", english: "I am hungry. I want to eat fried rice." },
+          { id: "thirsty-lunch", hanzi: "\u6211\u5348\u996D\u559D\u4E86\u725B\u5976\uFF0C\u5403\u4E86\u62AB\u8428\u3002", pinyin: "w\u01D2 w\u01D4 f\xE0n h\u0113 le ni\xFA n\u01CEi, ch\u012B le p\u012B s\xE0.", english: "For lunch, I drank milk and ate pizza." },
+          { id: "thirsty-full", hanzi: "\u5988\u5988\uFF0C\u6211\u9971\u4E86\uFF0C\u4E0D\u5403\u4E86\u3002", pinyin: "m\u0101 ma, w\u01D2 b\u01CEo le, b\xF9 ch\u012B le.", english: "Mom, I am full. I do not want to eat any more." }
+        ]
+      },
+      {
+        id: "delicious-picture",
+        imagePath: "assets/illustrated-food-feelings/delicious.webp",
+        imageAlt: "Dumplings that taste delicious.",
+        correctId: "delicious-sentence",
+        options: [
+          { id: "delicious-sentence", hanzi: "\u997A\u5B50\u597D\u5403\u3002", pinyin: "ji\u01CEo zi h\u01CEo ch\u012B.", english: "Dumplings are delicious." },
+          { id: "delicious-thirsty", hanzi: "\u6211\u6E34\u4E86\uFF0C\u6211\u8981\u559D\u6C34\u3002", pinyin: "w\u01D2 k\u011B le, w\u01D2 y\xE0o h\u0113 shu\u01D0.", english: "I am thirsty. I want to drink water." },
+          { id: "delicious-coke", hanzi: "\u6211\u8981\u559D\u53EF\u4E50\u3002", pinyin: "w\u01D2 y\xE0o h\u0113 k\u011B l\xE8.", english: "I want to drink Coke." },
+          { id: "delicious-full", hanzi: "\u5988\u5988\uFF0C\u6211\u9971\u4E86\uFF0C\u4E0D\u5403\u4E86\u3002", pinyin: "m\u0101 ma, w\u01D2 b\u01CEo le, b\xF9 ch\u012B le.", english: "Mom, I am full. I do not want to eat any more." }
+        ]
+      },
+      {
+        id: "full-picture",
+        imagePath: "assets/illustrated-food-feelings/full.webp",
+        imageAlt: "A child who is full after eating.",
+        correctId: "full-sentence",
+        options: [
+          { id: "full-sentence", hanzi: "\u5988\u5988\uFF0C\u6211\u9971\u4E86\uFF0C\u4E0D\u5403\u4E86\u3002", pinyin: "m\u0101 ma, w\u01D2 b\u01CEo le, b\xF9 ch\u012B le.", english: "Mom, I am full. I do not want to eat any more." },
+          { id: "full-hungry", hanzi: "\u6211\u997F\u4E86\uFF0C\u6211\u8981\u5403\u7092\u996D\u3002", pinyin: "w\u01D2 \xE8 le, w\u01D2 y\xE0o ch\u012B ch\u01CEo f\xE0n.", english: "I am hungry. I want to eat fried rice." },
+          { id: "full-thirsty", hanzi: "\u6211\u6E34\u4E86\uFF0C\u6211\u8981\u559D\u6C34\u3002", pinyin: "w\u01D2 k\u011B le, w\u01D2 y\xE0o h\u0113 shu\u01D0.", english: "I am thirsty. I want to drink water." },
+          { id: "full-lunch", hanzi: "\u6211\u5348\u996D\u559D\u4E86\u725B\u5976\uFF0C\u5403\u4E86\u62AB\u8428\u3002", pinyin: "w\u01D2 w\u01D4 f\xE0n h\u0113 le ni\xFA n\u01CEi, ch\u012B le p\u012B s\xE0.", english: "For lunch, I drank milk and ate pizza." }
+        ]
+      }
+    ],
+    review: [
+      { pattern: "\u997F\u4E86 / \u6E34\u4E86", pinyin: "\xE8 le / k\u011B le", english: "hungry / thirsty", example: "\u6211\u997F\u4E86\uFF0C\u6211\u8981\u5403\u7092\u996D\u3002 \u6211\u6E34\u4E86\uFF0C\u6211\u8981\u559D\u6C34\u3002", examplePinyin: "w\u01D2 \xE8 le, w\u01D2 y\xE0o ch\u012B ch\u01CEo f\xE0n. w\u01D2 k\u011B le, w\u01D2 y\xE0o h\u0113 shu\u01D0.", exampleEnglish: "When you are hungry, eat. When you are thirsty, drink." },
+      { pattern: "\u4F60\u5348\u996D\u5403\u4EC0\u4E48\uFF1F", pinyin: "n\u01D0 w\u01D4 f\xE0n ch\u012B sh\xE9n me?", english: "What do you have for lunch?", example: "\u6211\u5348\u996D\u5403\u2026\u2026\uFF0C\u559D\u2026\u2026", examplePinyin: "w\u01D2 w\u01D4 f\xE0n ch\u012B..., h\u0113...", exampleEnglish: "For lunch, I eat ... and drink ..." },
+      { pattern: "\u8981 + \u5403 / \u559D + \u98DF\u7269", pinyin: "y\xE0o + ch\u012B / h\u0113 + sh\xED w\xF9", english: "want to eat / drink + food", example: "\u6211\u8981\u5403\u7092\u996D\u3002\u6211\u8981\u559D\u53EF\u4E50\u3002", examplePinyin: "w\u01D2 y\xE0o ch\u012B ch\u01CEo f\xE0n. w\u01D2 y\xE0o h\u0113 k\u011B l\xE8.", exampleEnglish: "I want to eat fried rice. I want to drink Coke." },
+      { pattern: "\u597D\u5403 / \u9971\u4E86", pinyin: "h\u01CEo ch\u012B / b\u01CEo le", english: "delicious / full", example: "\u997A\u5B50\u597D\u5403\u3002\u5988\u5988\uFF0C\u6211\u9971\u4E86\uFF0C\u4E0D\u5403\u4E86\u3002", examplePinyin: "ji\u01CEo zi h\u01CEo ch\u012B. m\u0101 ma, w\u01D2 b\u01CEo le, b\xF9 ch\u012B le.", exampleEnglish: "Dumplings are delicious. Mom, I am full. I do not want to eat any more." },
+      { pattern: "\u6CA1\u6709\u2026\u2026\uFF0C\u4F60\u53EF\u4EE5\u2026\u2026", pinyin: "m\xE9i y\u01D2u..., n\u01D0 k\u011B y\u01D0...", english: "There is no ...; you can ...", example: "\u6CA1\u6709\u53EF\u4E50\u3002\u4F60\u53EF\u4EE5\u559D\u6C34\u3002", examplePinyin: "m\xE9i y\u01D2u k\u011B l\xE8. n\u01D0 k\u011B y\u01D0 h\u0113 shu\u01D0.", exampleEnglish: "There is no Coke. You can drink water." }
+    ]
+  };
+  var mealsFeelingsSentenceBuilds = [
+    { id: "lunch", imagePath: "assets/illustrated-meals/anan-eating-school-lunch.webp", target: ["\u6211", "\u5348\u996D", "\u559D\u4E86", "\u725B\u5976", "\u5403\u4E86", "\u62AB\u8428"], distractors: ["\u8981", "\u6C34", "\u5B66\u6821"], pinyin: "w\u01D2 w\u01D4 f\xE0n h\u0113 le ni\xFA n\u01CEi, ch\u012B le p\u012B s\xE0.", english: "For lunch, I drank milk and ate pizza." },
+    { id: "hungry", imagePath: "assets/illustrated-food-feelings/hungry.webp", target: ["\u6211", "\u997F", "\u4E86", "\u6211", "\u8981", "\u5403", "\u7092\u996D"], distractors: ["\u559D", "\u6C34", "\u5B66\u6821"], pinyin: "w\u01D2 \xE8 le, w\u01D2 y\xE0o ch\u012B ch\u01CEo f\xE0n.", english: "I am hungry. I want to eat fried rice." },
+    { id: "thirsty", imagePath: "assets/illustrated-food-feelings/thirsty.webp", target: ["\u6211", "\u6E34", "\u4E86", "\u6211", "\u8981", "\u559D", "\u6C34"], distractors: ["\u5403", "\u7092\u996D", "\u5B66\u6821"], pinyin: "w\u01D2 k\u011B le, w\u01D2 y\xE0o h\u0113 shu\u01D0.", english: "I am thirsty. I want to drink water." },
+    { id: "delicious", imagePath: "assets/illustrated-food-feelings/delicious.webp", target: ["\u997A\u5B50", "\u597D\u5403"], distractors: ["\u53EF\u4E50", "\u5B66\u6821", "\u6559\u5BA4"], pinyin: "ji\u01CEo zi h\u01CEo ch\u012B.", english: "Dumplings are delicious." },
+    { id: "full", imagePath: "assets/illustrated-food-feelings/full.webp", target: ["\u5988\u5988", "\u6211", "\u9971", "\u4E86", "\u4E0D\u5403", "\u4E86"], distractors: ["\u6E34", "\u8981", "\u5B66\u6821"], pinyin: "m\u0101 ma, w\u01D2 b\u01CEo le, b\xF9 ch\u012B le.", english: "Mom, I am full. I do not want to eat any more." }
+  ];
+
   // src/games/shared-lesson-practice.js
   function createSharedLessonPractice({ state: state2, speak: speak2, elements, documentRef = document }) {
     const { activityPanelTitle: activityPanelTitle2, activityPanelSummary: activityPanelSummary2, activityList: activityList2 } = elements;
@@ -1934,145 +2082,7 @@
     "school-subjects": schoolSubjectsTopicData,
     food: foodTopicData,
     "food-preferences": foodPreferencesTopicData,
-    "meals-feelings": {
-      practiceSummary: "Match the first line of each food conversation to its reply.",
-      sceneGroups: [
-        {
-          id: "lunch",
-          label: "",
-          items: [
-            {
-              id: "lunch",
-              label: "Lunch",
-              hanzi: "\u6211\u5348\u996D\u559D\u4E86\u725B\u5976\uFF0C\u5403\u4E86\u62AB\u8428\u3002",
-              pinyin: "w\u01D2 w\u01D4 f\xE0n h\u0113 le ni\xFA n\u01CEi, ch\u012B le p\u012B s\xE0.",
-              english: "For lunch, I drank milk and ate pizza.",
-              audio: "\u6211\u5348\u996D\u559D\u4E86\u725B\u5976\u5403\u4E86\u62AB\u8428",
-              imagePath: "assets/illustrated-meals/anan-eating-school-lunch.webp"
-            },
-            {
-              id: "cola-water",
-              label: "No Coke",
-              hanzi: "\u6211\u8981\u559D\u53EF\u4E50\u3002\u6CA1\u6709\u53EF\u4E50\uFF0C\u4F60\u53EF\u4EE5\u559D\u6C34\u3002",
-              pinyin: "w\u01D2 y\xE0o h\u0113 k\u011B l\xE8. m\xE9i y\u01D2u k\u011B l\xE8, n\u01D0 k\u011B y\u01D0 h\u0113 shu\u01D0.",
-              english: "I want to drink Coke. There is no Coke. You can drink water.",
-              audio: "\u6211\u8981\u559D\u53EF\u4E50\u6CA1\u6709\u53EF\u4E50\u4F60\u53EF\u4EE5\u559D\u6C34",
-              imagePath: "assets/illustrated-meals/anan-mom-fridge-cola-water.webp"
-            }
-          ]
-        },
-        {
-          id: "feelings",
-          label: "Food Feelings",
-          items: [
-            { id: "hungry", label: "Hungry", hanzi: "\u6211\u997F\u4E86\uFF0C\u6211\u8981\u5403\u7092\u996D\u3002", pinyin: "w\u01D2 \xE8 le, w\u01D2 y\xE0o ch\u012B ch\u01CEo f\xE0n.", english: "I am hungry. I want to eat fried rice.", audio: "\u6211\u997F\u4E86\u6211\u8981\u5403\u7092\u996D", imagePath: "assets/illustrated-food-feelings/hungry.webp" },
-            { id: "thirsty", label: "Thirsty", hanzi: "\u6211\u6E34\u4E86\uFF0C\u6211\u8981\u559D\u6C34\u3002", pinyin: "w\u01D2 k\u011B le, w\u01D2 y\xE0o h\u0113 shu\u01D0.", english: "I am thirsty. I want to drink water.", audio: "\u6211\u6E34\u4E86\u6211\u8981\u559D\u6C34", imagePath: "assets/illustrated-food-feelings/thirsty.webp" },
-            { id: "delicious", label: "Delicious", hanzi: "\u997A\u5B50\u597D\u5403\u3002", pinyin: "ji\u01CEo zi h\u01CEo ch\u012B.", english: "Dumplings are delicious.", audio: "\u997A\u5B50\u597D\u5403", imagePath: "assets/illustrated-food-feelings/delicious.webp" },
-            { id: "full", label: "Full", hanzi: "\u5988\u5988\uFF0C\u6211\u9971\u4E86\uFF0C\u4E0D\u5403\u4E86\u3002", pinyin: "m\u0101 ma, w\u01D2 b\u01CEo le, b\xF9 ch\u012B le.", english: "Mom, I am full. I do not want to eat any more.", audio: "\u5988\u5988\u6211\u9971\u4E86\u4E0D\u5403\u4E86", imagePath: "assets/illustrated-food-feelings/full.webp" }
-          ]
-        }
-      ],
-      wordGroups: [
-        { id: "feelings", hanzi: "\u98DF\u7269\u611F\u89C9", english: "Food Feelings", items: [["hungry", "\u997F", "\xE8", "hungry", "assets/illustrated-food-feelings/hungry.webp"], ["thirsty", "\u6E34", "k\u011B", "thirsty", "assets/illustrated-food-feelings/thirsty.webp"], ["want", "\u8981", "y\xE0o", "want", "assets/illustrated-food-feelings/want-eat-fried-rice-landscape.webp"], ["delicious", "\u597D\u5403", "h\u01CEo ch\u012B", "delicious", "assets/illustrated-food-feelings/delicious.webp"], ["full", "\u9971", "b\u01CEo", "full", "assets/illustrated-food-feelings/full.webp"]] }
-      ],
-      practiceItems: [
-        { id: "ask-lunch", hanzi: "\u4F60\u5348\u996D\u5403\u4EC0\u4E48\uFF1F", pinyin: "n\u01D0 w\u01D4 f\xE0n ch\u012B sh\xE9n me?", english: "What do you have for lunch?", audio: "\u4F60\u5348\u996D\u5403\u4EC0\u4E48" },
-        { id: "lunch-answer", hanzi: "\u4E09\u660E\u6CBB\u548C\u679C\u6C41\u3002", pinyin: "s\u0101n m\xEDng zh\xEC h\xE9 gu\u01D2 zh\u012B.", english: "Sandwiches and juice.", audio: "\u4E09\u660E\u6CBB\u548C\u679C\u6C41" },
-        { id: "can-eat-chocolate", hanzi: "\u6211\u53EF\u4EE5\u5403\u5DE7\u514B\u529B\u5417\uFF1F", pinyin: "w\u01D2 k\u011B y\u01D0 ch\u012B qi\u01CEo k\xE8 l\xEC ma?", english: "May I eat chocolate?", audio: "\u6211\u53EF\u4EE5\u5403\u5DE7\u514B\u529B\u5417" },
-        { id: "not-now", hanzi: "\u4E0D\u884C\uFF0C\u73B0\u5728\u5403\u996D\u3002", pinyin: "b\xF9 x\xEDng, xi\xE0n z\xE0i ch\u012B f\xE0n.", english: "No, it is time to eat now.", audio: "\u4E0D\u884C\u73B0\u5728\u5403\u996D" },
-        { id: "no-hotdog", hanzi: "\u5BF9\u4E0D\u8D77\uFF0C\u6CA1\u6709\u70ED\u72D7\u3002", pinyin: "du\xEC bu q\u01D0, m\xE9i y\u01D2u r\xE8 g\u01D2u.", english: "Sorry, there are no hot dogs.", audio: "\u5BF9\u4E0D\u8D77\u6CA1\u6709\u70ED\u72D7" },
-        { id: "no-cola-water", hanzi: "\u6CA1\u6709\u53EF\u4E50\uFF0C\u4F60\u53EF\u4EE5\u559D\u6C34\u3002", pinyin: "m\xE9i y\u01D2u k\u011B l\xE8, n\u01D0 k\u011B y\u01D0 h\u0113 shu\u01D0.", english: "There is no Coke. You can drink water.", audio: "\u6CA1\u6709\u53EF\u4E50\u4F60\u53EF\u4EE5\u559D\u6C34" }
-      ],
-      conversationPairs: [
-        { id: "thirsty-coke", hanzi: "\u6211\u6E34\u4E86\u3002", pinyin: "w\u01D2 k\u011B le.", reply: "\u6211\u8981\u559D\u53EF\u4E50\u3002", replyPinyin: "w\u01D2 y\xE0o h\u0113 k\u011B l\xE8.", audio: "\u6211\u6E34\u4E86" },
-        { id: "hungry-hotdog", hanzi: "\u6211\u997F\u4E86\u3002", pinyin: "w\u01D2 \xE8 le.", reply: "\u6211\u8981\u5403\u70ED\u72D7\u3002", replyPinyin: "w\u01D2 y\xE0o ch\u012B r\xE8 g\u01D2u.", audio: "\u6211\u997F\u4E86" },
-        { id: "full-stop", hanzi: "\u5988\u5988\uFF0C\u6211\u9971\u4E86\u3002", pinyin: "m\u0101 ma, w\u01D2 b\u01CEo le.", reply: "\u597D\uFF0C\u4E0D\u5403\u4E86\u3002", replyPinyin: "h\u01CEo, b\xF9 ch\u012B le.", audio: "\u5988\u5988\u6211\u9971\u4E86" },
-        { id: "lunch-sandwich", hanzi: "\u4F60\u5348\u996D\u5403\u4EC0\u4E48\uFF1F", pinyin: "n\u01D0 w\u01D4 f\xE0n ch\u012B sh\xE9n me?", reply: "\u4E09\u660E\u6CBB\u548C\u679C\u6C41\u3002", replyPinyin: "s\u0101n m\xEDng zh\xEC h\xE9 gu\u01D2 zh\u012B.", audio: "\u4F60\u5348\u996D\u5403\u4EC0\u4E48" },
-        { id: "chocolate-mealtime", hanzi: "\u6211\u53EF\u4EE5\u5403\u5DE7\u514B\u529B\u5417\uFF1F", pinyin: "w\u01D2 k\u011B y\u01D0 ch\u012B qi\u01CEo k\xE8 l\xEC ma?", reply: "\u4E0D\u884C\uFF0C\u73B0\u5728\u5403\u996D\u3002", replyPinyin: "b\xF9 x\xEDng, xi\xE0n z\xE0i ch\u012B f\xE0n.", audio: "\u6211\u53EF\u4EE5\u5403\u5DE7\u514B\u529B\u5417" },
-        { id: "no-coke-water", hanzi: "\u6CA1\u6709\u53EF\u4E50\u3002", pinyin: "m\xE9i y\u01D2u k\u011B l\xE8.", reply: "\u4F60\u53EF\u4EE5\u559D\u6C34\u3002", replyPinyin: "n\u01D0 k\u011B y\u01D0 h\u0113 shu\u01D0.", audio: "\u6CA1\u6709\u53EF\u4E50" }
-      ],
-      pictureChoices: [
-        {
-          id: "lunch-picture",
-          imagePath: "assets/illustrated-meals/anan-eating-school-lunch.webp",
-          imageAlt: "Anan eating lunch.",
-          correctId: "lunch-sentence",
-          options: [
-            { id: "lunch-sentence", hanzi: "\u6211\u5348\u996D\u559D\u4E86\u725B\u5976\uFF0C\u5403\u4E86\u62AB\u8428\u3002", pinyin: "w\u01D2 w\u01D4 f\xE0n h\u0113 le ni\xFA n\u01CEi, ch\u012B le p\u012B s\xE0.", english: "For lunch, I drank milk and ate pizza." },
-            { id: "lunch-coke", hanzi: "\u6211\u8981\u559D\u53EF\u4E50\u3002", pinyin: "w\u01D2 y\xE0o h\u0113 k\u011B l\xE8.", english: "I want to drink Coke." },
-            { id: "lunch-hungry", hanzi: "\u6211\u997F\u4E86\uFF0C\u6211\u8981\u5403\u7092\u996D\u3002", pinyin: "w\u01D2 \xE8 le, w\u01D2 y\xE0o ch\u012B ch\u01CEo f\xE0n.", english: "I am hungry. I want to eat fried rice." },
-            { id: "lunch-full", hanzi: "\u5988\u5988\uFF0C\u6211\u9971\u4E86\uFF0C\u4E0D\u5403\u4E86\u3002", pinyin: "m\u0101 ma, w\u01D2 b\u01CEo le, b\xF9 ch\u012B le.", english: "Mom, I am full. I do not want to eat any more." }
-          ]
-        },
-        {
-          id: "no-coke-picture",
-          imagePath: "assets/illustrated-meals/anan-mom-fridge-cola-water.webp",
-          imageAlt: "Anan looking for Coke while Mom offers water.",
-          correctId: "no-coke-sentence",
-          options: [
-            { id: "no-coke-sentence", hanzi: "\u6211\u8981\u559D\u53EF\u4E50\u3002\u6CA1\u6709\u53EF\u4E50\uFF0C\u4F60\u53EF\u4EE5\u559D\u6C34\u3002", pinyin: "w\u01D2 y\xE0o h\u0113 k\u011B l\xE8. m\xE9i y\u01D2u k\u011B l\xE8, n\u01D0 k\u011B y\u01D0 h\u0113 shu\u01D0.", english: "I want to drink Coke. There is no Coke. You can drink water." },
-            { id: "no-coke-lunch", hanzi: "\u6211\u5348\u996D\u559D\u4E86\u725B\u5976\uFF0C\u5403\u4E86\u62AB\u8428\u3002", pinyin: "w\u01D2 w\u01D4 f\xE0n h\u0113 le ni\xFA n\u01CEi, ch\u012B le p\u012B s\xE0.", english: "For lunch, I drank milk and ate pizza." },
-            { id: "no-coke-water", hanzi: "\u6211\u6E34\u4E86\uFF0C\u6211\u8981\u559D\u6C34\u3002", pinyin: "w\u01D2 k\u011B le, w\u01D2 y\xE0o h\u0113 shu\u01D0.", english: "I am thirsty. I want to drink water." },
-            { id: "no-coke-sandwich", hanzi: "\u6211\u559C\u6B22\u5403\u4E09\u660E\u6CBB\u3002", pinyin: "w\u01D2 x\u01D0 huan ch\u012B s\u0101n m\xEDng zh\xEC.", english: "I like to eat sandwiches." }
-          ]
-        },
-        {
-          id: "hungry-picture",
-          imagePath: "assets/illustrated-food-feelings/hungry.webp",
-          imageAlt: "A child who is hungry and wants fried rice.",
-          correctId: "hungry-sentence",
-          options: [
-            { id: "hungry-sentence", hanzi: "\u6211\u997F\u4E86\uFF0C\u6211\u8981\u5403\u7092\u996D\u3002", pinyin: "w\u01D2 \xE8 le, w\u01D2 y\xE0o ch\u012B ch\u01CEo f\xE0n.", english: "I am hungry. I want to eat fried rice." },
-            { id: "hungry-thirsty", hanzi: "\u6211\u6E34\u4E86\uFF0C\u6211\u8981\u559D\u6C34\u3002", pinyin: "w\u01D2 k\u011B le, w\u01D2 y\xE0o h\u0113 shu\u01D0.", english: "I am thirsty. I want to drink water." },
-            { id: "hungry-coke", hanzi: "\u6211\u8981\u559D\u53EF\u4E50\u3002", pinyin: "w\u01D2 y\xE0o h\u0113 k\u011B l\xE8.", english: "I want to drink Coke." },
-            { id: "hungry-full", hanzi: "\u5988\u5988\uFF0C\u6211\u9971\u4E86\uFF0C\u4E0D\u5403\u4E86\u3002", pinyin: "m\u0101 ma, w\u01D2 b\u01CEo le, b\xF9 ch\u012B le.", english: "Mom, I am full. I do not want to eat any more." }
-          ]
-        },
-        {
-          id: "thirsty-picture",
-          imagePath: "assets/illustrated-food-feelings/thirsty.webp",
-          imageAlt: "A child who is thirsty and wants water.",
-          correctId: "thirsty-sentence",
-          options: [
-            { id: "thirsty-sentence", hanzi: "\u6211\u6E34\u4E86\uFF0C\u6211\u8981\u559D\u6C34\u3002", pinyin: "w\u01D2 k\u011B le, w\u01D2 y\xE0o h\u0113 shu\u01D0.", english: "I am thirsty. I want to drink water." },
-            { id: "thirsty-hungry", hanzi: "\u6211\u997F\u4E86\uFF0C\u6211\u8981\u5403\u7092\u996D\u3002", pinyin: "w\u01D2 \xE8 le, w\u01D2 y\xE0o ch\u012B ch\u01CEo f\xE0n.", english: "I am hungry. I want to eat fried rice." },
-            { id: "thirsty-lunch", hanzi: "\u6211\u5348\u996D\u559D\u4E86\u725B\u5976\uFF0C\u5403\u4E86\u62AB\u8428\u3002", pinyin: "w\u01D2 w\u01D4 f\xE0n h\u0113 le ni\xFA n\u01CEi, ch\u012B le p\u012B s\xE0.", english: "For lunch, I drank milk and ate pizza." },
-            { id: "thirsty-full", hanzi: "\u5988\u5988\uFF0C\u6211\u9971\u4E86\uFF0C\u4E0D\u5403\u4E86\u3002", pinyin: "m\u0101 ma, w\u01D2 b\u01CEo le, b\xF9 ch\u012B le.", english: "Mom, I am full. I do not want to eat any more." }
-          ]
-        },
-        {
-          id: "delicious-picture",
-          imagePath: "assets/illustrated-food-feelings/delicious.webp",
-          imageAlt: "Dumplings that taste delicious.",
-          correctId: "delicious-sentence",
-          options: [
-            { id: "delicious-sentence", hanzi: "\u997A\u5B50\u597D\u5403\u3002", pinyin: "ji\u01CEo zi h\u01CEo ch\u012B.", english: "Dumplings are delicious." },
-            { id: "delicious-thirsty", hanzi: "\u6211\u6E34\u4E86\uFF0C\u6211\u8981\u559D\u6C34\u3002", pinyin: "w\u01D2 k\u011B le, w\u01D2 y\xE0o h\u0113 shu\u01D0.", english: "I am thirsty. I want to drink water." },
-            { id: "delicious-coke", hanzi: "\u6211\u8981\u559D\u53EF\u4E50\u3002", pinyin: "w\u01D2 y\xE0o h\u0113 k\u011B l\xE8.", english: "I want to drink Coke." },
-            { id: "delicious-full", hanzi: "\u5988\u5988\uFF0C\u6211\u9971\u4E86\uFF0C\u4E0D\u5403\u4E86\u3002", pinyin: "m\u0101 ma, w\u01D2 b\u01CEo le, b\xF9 ch\u012B le.", english: "Mom, I am full. I do not want to eat any more." }
-          ]
-        },
-        {
-          id: "full-picture",
-          imagePath: "assets/illustrated-food-feelings/full.webp",
-          imageAlt: "A child who is full after eating.",
-          correctId: "full-sentence",
-          options: [
-            { id: "full-sentence", hanzi: "\u5988\u5988\uFF0C\u6211\u9971\u4E86\uFF0C\u4E0D\u5403\u4E86\u3002", pinyin: "m\u0101 ma, w\u01D2 b\u01CEo le, b\xF9 ch\u012B le.", english: "Mom, I am full. I do not want to eat any more." },
-            { id: "full-hungry", hanzi: "\u6211\u997F\u4E86\uFF0C\u6211\u8981\u5403\u7092\u996D\u3002", pinyin: "w\u01D2 \xE8 le, w\u01D2 y\xE0o ch\u012B ch\u01CEo f\xE0n.", english: "I am hungry. I want to eat fried rice." },
-            { id: "full-thirsty", hanzi: "\u6211\u6E34\u4E86\uFF0C\u6211\u8981\u559D\u6C34\u3002", pinyin: "w\u01D2 k\u011B le, w\u01D2 y\xE0o h\u0113 shu\u01D0.", english: "I am thirsty. I want to drink water." },
-            { id: "full-lunch", hanzi: "\u6211\u5348\u996D\u559D\u4E86\u725B\u5976\uFF0C\u5403\u4E86\u62AB\u8428\u3002", pinyin: "w\u01D2 w\u01D4 f\xE0n h\u0113 le ni\xFA n\u01CEi, ch\u012B le p\u012B s\xE0.", english: "For lunch, I drank milk and ate pizza." }
-          ]
-        }
-      ],
-      review: [
-        { pattern: "\u997F\u4E86 / \u6E34\u4E86", pinyin: "\xE8 le / k\u011B le", english: "hungry / thirsty", example: "\u6211\u997F\u4E86\uFF0C\u6211\u8981\u5403\u7092\u996D\u3002 \u6211\u6E34\u4E86\uFF0C\u6211\u8981\u559D\u6C34\u3002", examplePinyin: "w\u01D2 \xE8 le, w\u01D2 y\xE0o ch\u012B ch\u01CEo f\xE0n. w\u01D2 k\u011B le, w\u01D2 y\xE0o h\u0113 shu\u01D0.", exampleEnglish: "When you are hungry, eat. When you are thirsty, drink." },
-        { pattern: "\u4F60\u5348\u996D\u5403\u4EC0\u4E48\uFF1F", pinyin: "n\u01D0 w\u01D4 f\xE0n ch\u012B sh\xE9n me?", english: "What do you have for lunch?", example: "\u6211\u5348\u996D\u5403\u2026\u2026\uFF0C\u559D\u2026\u2026", examplePinyin: "w\u01D2 w\u01D4 f\xE0n ch\u012B..., h\u0113...", exampleEnglish: "For lunch, I eat ... and drink ..." },
-        { pattern: "\u8981 + \u5403 / \u559D + \u98DF\u7269", pinyin: "y\xE0o + ch\u012B / h\u0113 + sh\xED w\xF9", english: "want to eat / drink + food", example: "\u6211\u8981\u5403\u7092\u996D\u3002\u6211\u8981\u559D\u53EF\u4E50\u3002", examplePinyin: "w\u01D2 y\xE0o ch\u012B ch\u01CEo f\xE0n. w\u01D2 y\xE0o h\u0113 k\u011B l\xE8.", exampleEnglish: "I want to eat fried rice. I want to drink Coke." },
-        { pattern: "\u597D\u5403 / \u9971\u4E86", pinyin: "h\u01CEo ch\u012B / b\u01CEo le", english: "delicious / full", example: "\u997A\u5B50\u597D\u5403\u3002\u5988\u5988\uFF0C\u6211\u9971\u4E86\uFF0C\u4E0D\u5403\u4E86\u3002", examplePinyin: "ji\u01CEo zi h\u01CEo ch\u012B. m\u0101 ma, w\u01D2 b\u01CEo le, b\xF9 ch\u012B le.", exampleEnglish: "Dumplings are delicious. Mom, I am full. I do not want to eat any more." },
-        { pattern: "\u6CA1\u6709\u2026\u2026\uFF0C\u4F60\u53EF\u4EE5\u2026\u2026", pinyin: "m\xE9i y\u01D2u..., n\u01D0 k\u011B y\u01D0...", english: "There is no ...; you can ...", example: "\u6CA1\u6709\u53EF\u4E50\u3002\u4F60\u53EF\u4EE5\u559D\u6C34\u3002", examplePinyin: "m\xE9i y\u01D2u k\u011B l\xE8. n\u01D0 k\u011B y\u01D0 h\u0113 shu\u01D0.", exampleEnglish: "There is no Coke. You can drink water." }
-      ]
-    }
+    "meals-feelings": mealsFeelingsTopicData
   };
   var schoolSentenceBuilds2 = {
     stationery: stationerySentenceBuilds,
@@ -2080,13 +2090,7 @@
     school: schoolSentenceBuilds,
     "school-subjects": schoolSubjectsSentenceBuilds,
     food: foodSentenceBuilds,
-    "meals-feelings": [
-      { id: "lunch", imagePath: "assets/illustrated-meals/anan-eating-school-lunch.webp", target: ["\u6211", "\u5348\u996D", "\u559D\u4E86", "\u725B\u5976", "\u5403\u4E86", "\u62AB\u8428"], distractors: ["\u8981", "\u6C34", "\u5B66\u6821"], pinyin: "w\u01D2 w\u01D4 f\xE0n h\u0113 le ni\xFA n\u01CEi, ch\u012B le p\u012B s\xE0.", english: "For lunch, I drank milk and ate pizza." },
-      { id: "hungry", imagePath: "assets/illustrated-food-feelings/hungry.webp", target: ["\u6211", "\u997F", "\u4E86", "\u6211", "\u8981", "\u5403", "\u7092\u996D"], distractors: ["\u559D", "\u6C34", "\u5B66\u6821"], pinyin: "w\u01D2 \xE8 le, w\u01D2 y\xE0o ch\u012B ch\u01CEo f\xE0n.", english: "I am hungry. I want to eat fried rice." },
-      { id: "thirsty", imagePath: "assets/illustrated-food-feelings/thirsty.webp", target: ["\u6211", "\u6E34", "\u4E86", "\u6211", "\u8981", "\u559D", "\u6C34"], distractors: ["\u5403", "\u7092\u996D", "\u5B66\u6821"], pinyin: "w\u01D2 k\u011B le, w\u01D2 y\xE0o h\u0113 shu\u01D0.", english: "I am thirsty. I want to drink water." },
-      { id: "delicious", imagePath: "assets/illustrated-food-feelings/delicious.webp", target: ["\u997A\u5B50", "\u597D\u5403"], distractors: ["\u53EF\u4E50", "\u5B66\u6821", "\u6559\u5BA4"], pinyin: "ji\u01CEo zi h\u01CEo ch\u012B.", english: "Dumplings are delicious." },
-      { id: "full", imagePath: "assets/illustrated-food-feelings/full.webp", target: ["\u5988\u5988", "\u6211", "\u9971", "\u4E86", "\u4E0D\u5403", "\u4E86"], distractors: ["\u6E34", "\u8981", "\u5B66\u6821"], pinyin: "m\u0101 ma, w\u01D2 b\u01CEo le, b\xF9 ch\u012B le.", english: "Mom, I am full. I do not want to eat any more." }
-    ]
+    "meals-feelings": mealsFeelingsSentenceBuilds
   };
   var introductionsPractice = [
     {

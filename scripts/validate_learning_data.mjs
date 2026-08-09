@@ -14,6 +14,7 @@ import { schoolSentenceBuilds, schoolTopicData } from "../src/features/school-li
 import { schoolSubjectsSentenceBuilds, schoolSubjectsTopicData } from "../src/features/school-life/school-subjects.js";
 import { foodSentenceBuilds, foodTopicData } from "../src/features/food/food.js";
 import { foodPreferencesTopicData } from "../src/features/food/food-preferences.js";
+import { mealsFeelingsSentenceBuilds, mealsFeelingsTopicData } from "../src/features/food/meals-feelings.js";
 
 const errors = [];
 
@@ -94,6 +95,15 @@ for (const [label, items] of [
   items.forEach((item) => assertAsset(item, `${label}:${item.id}`));
 }
 
+for (const group of mealsFeelingsTopicData.sceneGroups) {
+  group.items.forEach((item) => assertAsset(item, `meals scene:${item.id}`));
+}
+for (const group of mealsFeelingsTopicData.wordGroups) {
+  group.items.forEach(([, , , , imagePath]) => assertAsset({ id: group.id, imagePath }, `meals word:${group.id}`));
+}
+mealsFeelingsTopicData.pictureChoices.forEach((item) => assertAsset(item, `meals picture choice:${item.id}`));
+mealsFeelingsSentenceBuilds.forEach((item) => assertAsset(item, `meals sentence:${item.id}`));
+
 const transportIds = new Set(transportVisualItems.map((item) => item.id));
 Object.keys(transportSentenceTokens).forEach((id) => assert(transportIds.has(id), `transport token entry has no visual: ${id}`));
 transportIds.forEach((id) => assert(transportSentenceTokens[id], `transport visual has no sentence tokens: ${id}`));
@@ -111,6 +121,9 @@ assert(schoolSubjectsSentenceBuilds.length === 6, "school subjects sentence prac
 assert(foodTopicData.words.length === 27, "food word set is incomplete");
 assert(foodSentenceBuilds.length === 2, "food sentence practice is incomplete");
 assert(foodPreferencesTopicData.scenes.length === 4, "food preferences scenes are incomplete");
+assert(mealsFeelingsTopicData.conversationPairs.length === 6, "meals conversation practice is incomplete");
+assert(mealsFeelingsTopicData.pictureChoices.length === 6, "meals picture choices are incomplete");
+assert(mealsFeelingsSentenceBuilds.length === 5, "meals sentence practice is incomplete");
 
 if (errors.length) {
   console.error(errors.join("\n"));
