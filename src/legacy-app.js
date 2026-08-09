@@ -4246,10 +4246,18 @@ function focusLearningPanel() {
     return;
   }
 
+  scrollToSectionTop(detailLayout);
+}
+
+function scrollToSectionTop(element) {
+  if (!element) {
+    return;
+  }
+
   const root = document.documentElement;
   const previousScrollBehavior = root.style.scrollBehavior;
   const stickyNavHeight = learningCultureNav?.getBoundingClientRect().height ?? 0;
-  const targetTop = Math.max(0, window.scrollY + detailLayout.getBoundingClientRect().top - stickyNavHeight);
+  const targetTop = Math.max(0, window.scrollY + element.getBoundingClientRect().top - stickyNavHeight);
   root.style.scrollBehavior = "auto";
   window.scrollTo(0, targetTop);
   root.style.scrollBehavior = previousScrollBehavior;
@@ -4270,10 +4278,7 @@ function updateTopicPageVisibility() {
 
 function scrollCategorySectionIntoView(categoryId) {
   requestAnimationFrame(() => {
-    document.getElementById(categoryId)?.scrollIntoView({
-      behavior: "smooth",
-      block: "start"
-    });
+    scrollToSectionTop(document.getElementById(categoryId));
   });
 }
 
