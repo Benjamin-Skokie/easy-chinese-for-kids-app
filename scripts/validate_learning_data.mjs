@@ -15,6 +15,7 @@ import { schoolSubjectsSentenceBuilds, schoolSubjectsTopicData } from "../src/fe
 import { foodSentenceBuilds, foodTopicData } from "../src/features/food/food.js";
 import { foodPreferencesTopicData } from "../src/features/food/food-preferences.js";
 import { mealsFeelingsSentenceBuilds, mealsFeelingsTopicData } from "../src/features/food/meals-feelings.js";
+import { introductionsBuildPhrases, introductionsGamePrompts, introductionsPractice } from "../src/features/foundations/introductions.js";
 
 const errors = [];
 
@@ -103,6 +104,7 @@ for (const group of mealsFeelingsTopicData.wordGroups) {
 }
 mealsFeelingsTopicData.pictureChoices.forEach((item) => assertAsset(item, `meals picture choice:${item.id}`));
 mealsFeelingsSentenceBuilds.forEach((item) => assertAsset(item, `meals sentence:${item.id}`));
+introductionsPractice.forEach((item) => assertAsset(item, `introductions scene:${item.id}`));
 
 const transportIds = new Set(transportVisualItems.map((item) => item.id));
 Object.keys(transportSentenceTokens).forEach((id) => assert(transportIds.has(id), `transport token entry has no visual: ${id}`));
@@ -124,6 +126,8 @@ assert(foodPreferencesTopicData.scenes.length === 4, "food preferences scenes ar
 assert(mealsFeelingsTopicData.conversationPairs.length === 6, "meals conversation practice is incomplete");
 assert(mealsFeelingsTopicData.pictureChoices.length === 6, "meals picture choices are incomplete");
 assert(mealsFeelingsSentenceBuilds.length === 5, "meals sentence practice is incomplete");
+assert(introductionsGamePrompts.length === 1, "introductions listening prompt is incomplete");
+assert(introductionsBuildPhrases.length === 2, "introductions sentence practice is incomplete");
 
 if (errors.length) {
   console.error(errors.join("\n"));

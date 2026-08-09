@@ -891,6 +891,71 @@
     { id: "full", imagePath: "assets/illustrated-food-feelings/full.webp", target: ["\u5988\u5988", "\u6211", "\u9971", "\u4E86", "\u4E0D\u5403", "\u4E86"], distractors: ["\u6E34", "\u8981", "\u5B66\u6821"], pinyin: "m\u0101 ma, w\u01D2 b\u01CEo le, b\xF9 ch\u012B le.", english: "Mom, I am full. I do not want to eat any more." }
   ];
 
+  // src/features/foundations/introductions.js
+  var introductionsPractice = [
+    {
+      id: "intro-scene-1",
+      number: "1",
+      prompt: "Meet a new friend and ask their name",
+      imagePath: "assets/introductions/introductions-scene-1.webp",
+      imageAlt: "Two children meeting and introducing themselves",
+      cast: ["lele", "anan"],
+      lines: [
+        { speakerId: "luna", hanzi: "\u4F60\u597D\uFF01", pinyin: "n\u01D0 h\u01CEo!", english: "Hello!", audio: "\u4F60\u597D" },
+        { speakerId: "sophie", hanzi: "\u4F60\u597D\uFF01", pinyin: "n\u01D0 h\u01CEo!", english: "Hello!", audio: "\u4F60\u597D" },
+        { speakerId: "luna", hanzi: "\u4F60\u53EB\u4EC0\u4E48\u540D\u5B57\uFF1F", pinyin: "n\u01D0 ji\xE0o sh\xE9n me m\xEDng zi?", english: "What is your name?", audio: "\u4F60\u53EB\u4EC0\u4E48\u540D\u5B57" },
+        { speakerId: "sophie", hanzi: "\u6211\u53EB\u82CF\u83F2\u3002", pinyin: "w\u01D2 ji\xE0o S\u016B f\u0113i.", english: "My name is Sophie.", audio: "\u6211\u53EB\u82CF\u83F2" }
+      ]
+    },
+    {
+      id: "intro-scene-2",
+      number: "2",
+      prompt: "Say your own name clearly, then greet back",
+      imagePath: "assets/introductions/introductions-scene-2.webp",
+      imageAlt: "Two children talking in a classroom",
+      cast: ["tiantian", "sisi"],
+      lines: [
+        { speakerId: "sisi", hanzi: "\u4F60\u53EB\u4EC0\u4E48\u540D\u5B57\uFF1F", pinyin: "n\u01D0 ji\xE0o sh\xE9n me m\xEDng zi?", english: "What is your name?", audio: "\u4F60\u53EB\u4EC0\u4E48\u540D\u5B57" },
+        { speakerId: "lele", hanzi: "\u6211\u53EB\u4E50\u4E50\u3002", pinyin: "w\u01D2 ji\xE0o L\xE8 le.", english: "My name is Lele.", audio: "\u6211\u53EB\u4E50\u4E50" },
+        { speakerId: "sisi", hanzi: "\u4F60\u597D\uFF0C\u4E50\u4E50\uFF01", pinyin: "n\u01D0 h\u01CEo, L\xE8 le!", english: "Hello, Lele!", audio: "\u4F60\u597D\u4E50\u4E50" }
+      ]
+    },
+    {
+      id: "intro-scene-3",
+      number: "3",
+      prompt: "Two children trade names after saying hello",
+      imagePath: "assets/introductions/introductions-scene-3.webp",
+      imageAlt: "Two friends greeting each other",
+      cast: ["sisi", "lele"],
+      lines: [
+        { speakerId: "yangyang", hanzi: "\u4F60\u597D\uFF01", pinyin: "n\u01D0 h\u01CEo!", english: "Hello!", audio: "\u4F60\u597D" },
+        { speakerId: "jaden", hanzi: "\u4F60\u597D\uFF01", pinyin: "n\u01D0 h\u01CEo!", english: "Hello!", audio: "\u4F60\u597D" },
+        { speakerId: "yangyang", hanzi: "\u6211\u53EB\u9633\u9633\u3002", pinyin: "w\u01D2 ji\xE0o Y\xE1ng y\xE1ng.", english: "My name is Yangyang.", audio: "\u6211\u53EB\u9633\u9633" },
+        { speakerId: "jaden", hanzi: "\u6211\u53EB\u6770\u767B\u3002", pinyin: "w\u01D2 ji\xE0o Ji\xE9 d\u0113ng.", english: "My name is Jaden.", audio: "\u6211\u53EB\u6770\u767B" }
+      ]
+    }
+  ];
+  var introductionsBuildPhrases = [
+    {
+      id: "build-ask-name",
+      sourceItemId: "ask-name",
+      targetHanzi: "\u4F60\u53EB\u4EC0\u4E48\u540D\u5B57\uFF1F",
+      prompt: "Build: What is your name?",
+      english: "What is your name?",
+      audio: "\u4F60\u53EB\u4EC0\u4E48\u540D\u5B57",
+      tokens: ["\u4F60", "\u53EB", "\u4EC0\u4E48", "\u540D\u5B57"]
+    },
+    {
+      id: "build-my-name",
+      sourceItemId: "my-name",
+      targetHanzi: "\u6211\u53EB\u2026\u2026",
+      prompt: "Build: My name is...",
+      english: "My name is...",
+      audio: "\u6211\u53EB",
+      tokens: ["\u6211", "\u53EB"]
+    }
+  ];
+
   // src/games/shared-lesson-practice.js
   function createSharedLessonPractice({ state: state2, speak: speak2, elements, documentRef = document }) {
     const { activityPanelTitle: activityPanelTitle2, activityPanelSummary: activityPanelSummary2, activityList: activityList2 } = elements;
@@ -2092,69 +2157,6 @@
     food: foodSentenceBuilds,
     "meals-feelings": mealsFeelingsSentenceBuilds
   };
-  var introductionsPractice = [
-    {
-      id: "intro-scene-1",
-      number: "1",
-      prompt: "Meet a new friend and ask their name",
-      imagePath: "assets/introductions/introductions-scene-1.webp",
-      imageAlt: "Two children meeting and introducing themselves",
-      cast: ["lele", "anan"],
-      lines: [
-        { speakerId: "luna", hanzi: "\u4F60\u597D\uFF01", pinyin: "n\u01D0 h\u01CEo!", english: "Hello!", audio: "\u4F60\u597D" },
-        { speakerId: "sophie", hanzi: "\u4F60\u597D\uFF01", pinyin: "n\u01D0 h\u01CEo!", english: "Hello!", audio: "\u4F60\u597D" },
-        { speakerId: "luna", hanzi: "\u4F60\u53EB\u4EC0\u4E48\u540D\u5B57\uFF1F", pinyin: "n\u01D0 ji\xE0o sh\xE9n me m\xEDng zi?", english: "What is your name?", audio: "\u4F60\u53EB\u4EC0\u4E48\u540D\u5B57" },
-        { speakerId: "sophie", hanzi: "\u6211\u53EB\u82CF\u83F2\u3002", pinyin: "w\u01D2 ji\xE0o S\u016B f\u0113i.", english: "My name is Sophie.", audio: "\u6211\u53EB\u82CF\u83F2" }
-      ]
-    },
-    {
-      id: "intro-scene-2",
-      number: "2",
-      prompt: "Say your own name clearly, then greet back",
-      imagePath: "assets/introductions/introductions-scene-2.webp",
-      imageAlt: "Two children talking in a classroom",
-      cast: ["tiantian", "sisi"],
-      lines: [
-        { speakerId: "sisi", hanzi: "\u4F60\u53EB\u4EC0\u4E48\u540D\u5B57\uFF1F", pinyin: "n\u01D0 ji\xE0o sh\xE9n me m\xEDng zi?", english: "What is your name?", audio: "\u4F60\u53EB\u4EC0\u4E48\u540D\u5B57" },
-        { speakerId: "lele", hanzi: "\u6211\u53EB\u4E50\u4E50\u3002", pinyin: "w\u01D2 ji\xE0o L\xE8 le.", english: "My name is Lele.", audio: "\u6211\u53EB\u4E50\u4E50" },
-        { speakerId: "sisi", hanzi: "\u4F60\u597D\uFF0C\u4E50\u4E50\uFF01", pinyin: "n\u01D0 h\u01CEo, L\xE8 le!", english: "Hello, Lele!", audio: "\u4F60\u597D\u4E50\u4E50" }
-      ]
-    },
-    {
-      id: "intro-scene-3",
-      number: "3",
-      prompt: "Two children trade names after saying hello",
-      imagePath: "assets/introductions/introductions-scene-3.webp",
-      imageAlt: "Two friends greeting each other",
-      cast: ["sisi", "lele"],
-      lines: [
-        { speakerId: "yangyang", hanzi: "\u4F60\u597D\uFF01", pinyin: "n\u01D0 h\u01CEo!", english: "Hello!", audio: "\u4F60\u597D" },
-        { speakerId: "jaden", hanzi: "\u4F60\u597D\uFF01", pinyin: "n\u01D0 h\u01CEo!", english: "Hello!", audio: "\u4F60\u597D" },
-        { speakerId: "yangyang", hanzi: "\u6211\u53EB\u9633\u9633\u3002", pinyin: "w\u01D2 ji\xE0o Y\xE1ng y\xE1ng.", english: "My name is Yangyang.", audio: "\u6211\u53EB\u9633\u9633" },
-        { speakerId: "jaden", hanzi: "\u6211\u53EB\u6770\u767B\u3002", pinyin: "w\u01D2 ji\xE0o Ji\xE9 d\u0113ng.", english: "My name is Jaden.", audio: "\u6211\u53EB\u6770\u767B" }
-      ]
-    }
-  ];
-  var introductionsBuildPhrases = [
-    {
-      id: "build-ask-name",
-      sourceItemId: "ask-name",
-      targetHanzi: "\u4F60\u53EB\u4EC0\u4E48\u540D\u5B57\uFF1F",
-      prompt: "Build: What is your name?",
-      english: "What is your name?",
-      audio: "\u4F60\u53EB\u4EC0\u4E48\u540D\u5B57",
-      tokens: ["\u4F60", "\u53EB", "\u4EC0\u4E48", "\u540D\u5B57"]
-    },
-    {
-      id: "build-my-name",
-      sourceItemId: "my-name",
-      targetHanzi: "\u6211\u53EB\u2026\u2026",
-      prompt: "Build: My name is...",
-      english: "My name is...",
-      audio: "\u6211\u53EB",
-      tokens: ["\u6211", "\u53EB"]
-    }
-  ];
   var agePractice = [
     {
       id: "age-scene-2",
