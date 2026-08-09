@@ -1332,6 +1332,29 @@
     ]
   };
 
+  // src/features/world/colours.js
+  var coloursTopic = {
+    id: "colours",
+    title: "Colours",
+    summary: "A repeated visual topic that can be practiced easily on phones and tablets.",
+    progressLabel: "1B to 2A",
+    iconText: "\u7EA2\u84DD",
+    iconColor: "#c36f62",
+    focus: { hanzi: "\u7EA2\u8272\uFF0C\u84DD\u8272\uFF0C\u9EC4\u8272", pinyin: "h\xF3ng s\xE8, l\xE1n s\xE8, hu\xE1ng s\xE8", english: "red, blue, yellow", audio: "\u7EA2\u8272\uFF0C\u84DD\u8272\uFF0C\u9EC4\u8272" },
+    focusItems: [
+      { id: "red", hanzi: "\u7EA2\u8272", pinyin: "h\xF3ng s\xE8", english: "red", audio: "\u7EA2\u8272" },
+      { id: "blue", hanzi: "\u84DD\u8272", pinyin: "l\xE1n s\xE8", english: "blue", audio: "\u84DD\u8272" },
+      { id: "yellow", hanzi: "\u9EC4\u8272", pinyin: "hu\xE1ng s\xE8", english: "yellow", audio: "\u9EC4\u8272" }
+    ],
+    parentGuide: "Practice with crayons, clothes, fruit, or toys. The more real and visible the better.",
+    cultureGuide: "Colour topics are a natural place to add small festival and clothing connections later.",
+    activities: ["Tap to hear", "Choose the colour", "Colour hunt", "Listen and point"],
+    steps: [
+      { book: "1B", lesson: 6, title: "Colours", note: "Start with common colour words." },
+      { book: "2A", lesson: 7, title: "Colours", note: "Review and strengthen the same topic later." }
+    ]
+  };
+
   // src/features/play-hobbies/play-hobbies.js
   var hobbiesTopic = {
     id: "hobbies",
@@ -2127,32 +2150,7 @@
     familyTopic,
     bodyTopic,
     animalsTopic,
-    {
-      id: "colours",
-      title: "Colours",
-      summary: "A repeated visual topic that can be practiced easily on phones and tablets.",
-      progressLabel: "1B to 2A",
-      iconText: "\u7EA2\u84DD",
-      iconColor: "#c36f62",
-      focus: {
-        hanzi: "\u7EA2\u8272\uFF0C\u84DD\u8272\uFF0C\u9EC4\u8272",
-        pinyin: "h\xF3ng s\xE8, l\xE1n s\xE8, hu\xE1ng s\xE8",
-        english: "red, blue, yellow",
-        audio: "\u7EA2\u8272\uFF0C\u84DD\u8272\uFF0C\u9EC4\u8272"
-      },
-      focusItems: [
-        { id: "red", hanzi: "\u7EA2\u8272", pinyin: "h\xF3ng s\xE8", english: "red", audio: "\u7EA2\u8272" },
-        { id: "blue", hanzi: "\u84DD\u8272", pinyin: "l\xE1n s\xE8", english: "blue", audio: "\u84DD\u8272" },
-        { id: "yellow", hanzi: "\u9EC4\u8272", pinyin: "hu\xE1ng s\xE8", english: "yellow", audio: "\u9EC4\u8272" }
-      ],
-      parentGuide: "Practice with crayons, clothes, fruit, or toys. The more real and visible the better.",
-      cultureGuide: "Colour topics are a natural place to add small festival and clothing connections later.",
-      activities: ["Tap to hear", "Choose the colour", "Colour hunt", "Listen and point"],
-      steps: [
-        { book: "1B", lesson: 6, title: "Colours", note: "Start with common colour words." },
-        { book: "2A", lesson: 7, title: "Colours", note: "Review and strengthen the same topic later." }
-      ]
-    },
+    coloursTopic,
     {
       id: "food",
       title: "Food & Drinks",
