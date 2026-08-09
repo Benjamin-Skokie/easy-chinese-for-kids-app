@@ -30,6 +30,7 @@ import { hobbiesTopic, toysTopic } from "../src/features/play-hobbies/play-hobbi
 import { bodyBonusItemIds, bodyCoreItemIds, bodyDiagramLayout, bodyTopic } from "../src/features/foundations/body.js";
 import { illustratedKids } from "../src/data/characters.js";
 import { bookHomeCategories, books, learningHomeCategories, topicCardMeta, topicGroups } from "../src/data/curriculum.js";
+import { buildMultiplicationRhymeItems, buildNumberItem, multiplicationRhymeTopic, numberStages, numbersTopic, telephonePractice } from "../src/features/foundations/numbers.js";
 import { familyGameItemIds, familyPractice, familyTopic, illustratedFamily } from "../src/features/family/family.js";
 
 test("the local page loads a single bundled application script", () => {
@@ -252,6 +253,15 @@ test("the shared curriculum retains its books and learning navigation", () => {
   assert.equal(topicGroups.length, 4);
   assert.equal(learningHomeCategories.length, 7);
   assert.equal(topicCardMeta["school-subjects"].zhTitle, "学校学科");
+});
+
+test("numbers owns its stages, telephone script, and rhyme generator", () => {
+  assert.equal(numbersTopic.id, "numbers");
+  assert.equal(numberStages.length, 6);
+  assert.equal(buildNumberItem(42).hanzi, "四十二");
+  assert.equal(telephonePractice.digits.length, 10);
+  assert.equal(multiplicationRhymeTopic.focusItems.length, 45);
+  assert.equal(buildMultiplicationRhymeItems().at(-1).hanzi, "九九八十一");
 });
 
 test("family owns its lesson metadata, scenes, and matching set", () => {
