@@ -46,6 +46,7 @@ A feature registers its owned topic IDs, creates its scoped state, renders its e
 - [x] Extract the application state factory into `src/core/app-state.js`.
 - [x] Extract global sound, pinyin, number, and English display controls into `src/core/display-controls-runtime.js`.
 - [x] Extract focus selection, Book Words, status, and explorer dispatch into `src/core/focus-runtime.js` and `src/core/focus-explorer-runtime.js`.
+- [x] Extract the shared lesson-practice configuration and activity dispatcher into `src/core/lesson-practice-runtime.js`.
 - [ ] Add data validation for duplicate topic IDs, lesson references, practice references, and asset paths.
 - [x] Validate Time & Daily Life asset paths and scene/practice relationships in `scripts/validate_learning_data.mjs`.
 - [x] Move the shared illustrated character catalog into `src/data/characters.js` and validate every character asset.

@@ -186,6 +186,17 @@ test("focus explorer dispatch is separated from the legacy bootstrap", () => {
   assert.match(runtimeSource, /if \(topic\.interactiveScene === "body-face"\)/);
 });
 
+test("shared lesson practice dispatch is separated from the legacy bootstrap", () => {
+  const legacySource = readFileSync("src/legacy-app.js", "utf8");
+  const runtimeSource = readFileSync("src/core/lesson-practice-runtime.js", "utf8");
+  assert.match(legacySource, /createLessonPracticeRuntime\(\{/);
+  assert.doesNotMatch(legacySource, /function sharedLessonPracticeConfig\(/);
+  assert.match(legacySource, /return lessonPracticeRuntime\?\.renderActivityPanel\(topic\)/);
+  assert.match(runtimeSource, /export function createLessonPracticeRuntime/);
+  assert.match(runtimeSource, /function sharedLessonPracticeConfig\(/);
+  assert.match(runtimeSource, /function renderActivityPanel\(/);
+});
+
 test("representative topic links boot after runtime composition", () => {
   const bootstrap = `
 class Element {
