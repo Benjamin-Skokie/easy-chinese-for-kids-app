@@ -4569,7 +4569,7 @@
     } else {
       window.history.pushState(null, "", nextUrl);
     }
-    if (options.scroll !== false) {
+    if (options.scroll === true) {
       focusLearningPanel();
     }
   }
@@ -4779,9 +4779,9 @@
           if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) {
             return;
           }
+          event.preventDefault();
           try {
             openTopicPage(link.dataset.topicId);
-            event.preventDefault();
           } catch (error) {
             console.error("Could not open topic in place.", error);
           }

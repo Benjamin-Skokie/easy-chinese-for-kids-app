@@ -4296,7 +4296,7 @@ function openTopicPage(topicId, options = {}) {
     window.history.pushState(null, "", nextUrl);
   }
 
-  if (options.scroll !== false) {
+  if (options.scroll === true) {
     focusLearningPanel();
   }
 }
@@ -4623,10 +4623,9 @@ function renderTopics() {
           return;
         }
 
-        // Leave the normal link available if an in-page render ever fails.
+        event.preventDefault();
         try {
           openTopicPage(link.dataset.topicId);
-          event.preventDefault();
         } catch (error) {
           console.error("Could not open topic in place.", error);
         }
