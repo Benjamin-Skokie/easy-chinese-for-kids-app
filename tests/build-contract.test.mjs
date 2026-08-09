@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import test from "node:test";
 import { createAudioService } from "../src/core/audio.js";
+import { topicIdFromLocation, topicPageUrl, viewFromLocation } from "../src/core/router.js";
 
 test("the local page loads a single bundled application script", () => {
   const html = readFileSync("index.html", "utf8");
@@ -27,4 +28,11 @@ test("audio cancels the prior utterance before speaking a new phrase", () => {
   audio.speak("你好", 0.78);
   assert.equal(cancelCount, 1);
   assert.deepEqual(spoken[0], { text: "你好", lang: "zh-CN", rate: 0.78, pitch: 1 });
+});
+
+test("router preserves the existing topic query and detail hash contract", () => {
+  const location = { pathname: "/index.html", search: "?topic=weekdays", hash: "#topic-detail" };
+  assert.equal(topicIdFromLocation(location, (id) => id === "weekdays"), "weekdays");
+  assert.equal(viewFromLocation(location), "topics");
+  assert.equal(topicPageUrl(location, "time-date"), "/index.html?topic=time-date#topic-detail");
 });

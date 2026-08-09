@@ -37,6 +37,21 @@
     return { speak: speak2, speakSceneLines: speakSceneLines2 };
   }
 
+  // src/core/router.js
+  function viewFromLocation(location) {
+    const params = new URLSearchParams(location.search);
+    const requestedView = params.get("view");
+    const hash = location.hash.replace("#", "");
+    return requestedView === "books" || hash === "books" || hash === "books-panel" ? "books" : "topics";
+  }
+  function topicIdFromLocation(location, hasTopic) {
+    const topicId = new URLSearchParams(location.search).get("topic");
+    return hasTopic(topicId) ? topicId : null;
+  }
+  function topicPageUrl(location, topicId) {
+    return `${location.pathname}?topic=${encodeURIComponent(topicId)}#topic-detail`;
+  }
+
   // src/legacy-app.js
   var topicData = [
     {
@@ -4269,9 +4284,6 @@
   function categoryIdForTopic(topicId) {
     return learningHomeCategories.find((category) => category.topicIds.includes(topicId))?.id ?? "foundations";
   }
-  function topicPageUrl(topicId) {
-    return `${window.location.pathname}?topic=${encodeURIComponent(topicId)}#topic-detail`;
-  }
   function updateTopicPageVisibility() {
     detailLayout?.classList.toggle("is-hidden", !state.topicPageOpen);
     document.body.classList.toggle("is-topic-page", state.topicPageOpen);
@@ -4297,7 +4309,7 @@
     renderBooks();
     renderTopicDetail();
     updateTopicPageVisibility();
-    const nextUrl = topicPageUrl(topic.id);
+    const nextUrl = topicPageUrl(window.location, topic.id);
     if (options.replace) {
       window.history.replaceState(null, "", nextUrl);
     } else {
@@ -8389,36 +8401,25 @@
     const lesson = book.lessons.find((entry) => String(entry.lesson) === lessonSelect.value) ?? book.lessons[0];
     selectBookLesson(book.id, lesson.lesson);
   });
-  function viewFromLocation() {
-    const params = new URLSearchParams(window.location.search);
-    const requestedView = params.get("view");
-    const hash = window.location.hash.replace("#", "");
-    return requestedView === "books" || hash === "books" || hash === "books-panel" ? "books" : "topics";
-  }
-  function topicIdFromLocation() {
-    const params = new URLSearchParams(window.location.search);
-    const topicId = params.get("topic");
-    return topicById(topicId) ? topicId : null;
-  }
   window.addEventListener("scroll", () => {
     updateLearningCultureNav();
   });
   window.addEventListener("popstate", () => {
-    const topicId = topicIdFromLocation();
+    const topicId = topicIdFromLocation(window.location, topicById);
     state.topicPageOpen = Boolean(topicId);
     if (topicId) {
       state.selectedTopicId = topicId;
       state.expandedCategoryId = categoryIdForTopic(topicId);
       syncBookSelectionFromTopic();
     }
-    switchView(viewFromLocation());
+    switchView(viewFromLocation(window.location));
     renderTopics();
     renderBooks();
     renderTopicDetail();
     updateTopicPageVisibility();
   });
   syncBookSelectionFromTopic();
-  var initialTopicId = topicIdFromLocation();
+  var initialTopicId = topicIdFromLocation(window.location, topicById);
   if (initialTopicId) {
     state.selectedTopicId = initialTopicId;
     state.expandedCategoryId = categoryIdForTopic(initialTopicId);
@@ -8428,6 +8429,6 @@
   renderTopics();
   renderBooks();
   renderTopicDetail();
-  switchView(viewFromLocation());
+  switchView(viewFromLocation(window.location));
   updateTopicPageVisibility();
 })();

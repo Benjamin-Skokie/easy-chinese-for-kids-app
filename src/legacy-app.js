@@ -1,4 +1,5 @@
 import { createAudioService } from "./core/audio.js";
+import { topicIdFromLocation, topicPageUrl, viewFromLocation } from "./core/router.js";
 
 const topicData = [
   {
@@ -4734,10 +4735,6 @@ function categoryIdForTopic(topicId) {
   return learningHomeCategories.find((category) => category.topicIds.includes(topicId))?.id ?? "foundations";
 }
 
-function topicPageUrl(topicId) {
-  return `${window.location.pathname}?topic=${encodeURIComponent(topicId)}#topic-detail`;
-}
-
 function updateTopicPageVisibility() {
   detailLayout?.classList.toggle("is-hidden", !state.topicPageOpen);
   document.body.classList.toggle("is-topic-page", state.topicPageOpen);
@@ -4767,7 +4764,7 @@ function openTopicPage(topicId, options = {}) {
   renderTopicDetail();
   updateTopicPageVisibility();
 
-  const nextUrl = topicPageUrl(topic.id);
+  const nextUrl = topicPageUrl(window.location, topic.id);
   if (options.replace) {
     window.history.replaceState(null, "", nextUrl);
   } else {
@@ -9485,32 +9482,19 @@ lessonSelect.addEventListener("change", () => {
   selectBookLesson(book.id, lesson.lesson);
 });
 
-function viewFromLocation() {
-  const params = new URLSearchParams(window.location.search);
-  const requestedView = params.get("view");
-  const hash = window.location.hash.replace("#", "");
-  return requestedView === "books" || hash === "books" || hash === "books-panel" ? "books" : "topics";
-}
-
-function topicIdFromLocation() {
-  const params = new URLSearchParams(window.location.search);
-  const topicId = params.get("topic");
-  return topicById(topicId) ? topicId : null;
-}
-
 window.addEventListener("scroll", () => {
   updateLearningCultureNav();
 });
 
 window.addEventListener("popstate", () => {
-  const topicId = topicIdFromLocation();
+  const topicId = topicIdFromLocation(window.location, topicById);
   state.topicPageOpen = Boolean(topicId);
   if (topicId) {
     state.selectedTopicId = topicId;
     state.expandedCategoryId = categoryIdForTopic(topicId);
     syncBookSelectionFromTopic();
   }
-  switchView(viewFromLocation());
+  switchView(viewFromLocation(window.location));
   renderTopics();
   renderBooks();
   renderTopicDetail();
@@ -9519,7 +9503,7 @@ window.addEventListener("popstate", () => {
 
 syncBookSelectionFromTopic();
 
-const initialTopicId = topicIdFromLocation();
+const initialTopicId = topicIdFromLocation(window.location, topicById);
 if (initialTopicId) {
   state.selectedTopicId = initialTopicId;
   state.expandedCategoryId = categoryIdForTopic(initialTopicId);
@@ -9530,5 +9514,5 @@ if (initialTopicId) {
 renderTopics();
 renderBooks();
 renderTopicDetail();
-switchView(viewFromLocation());
+switchView(viewFromLocation(window.location));
 updateTopicPageVisibility();

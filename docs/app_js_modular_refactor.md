@@ -39,7 +39,8 @@ A feature registers its owned topic IDs, creates its scoped state, renders its e
 
 ### 2. Core and validation
 
-- [ ] Extract route parsing/navigation, DOM lookup, and shared utilities.
+- [ ] Extract navigation actions, DOM lookup, and shared utilities.
+- [x] Extract URL parsing and topic URL generation into `src/core/router.js` with unit coverage.
 - [x] Extract audio into `src/core/audio.js` with unit coverage.
 - [ ] Add data validation for duplicate topic IDs, lesson references, practice references, and asset paths.
 
