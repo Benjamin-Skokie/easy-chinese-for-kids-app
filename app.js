@@ -1362,6 +1362,109 @@
     }
   ];
 
+  // src/features/foundations/age-controller.js
+  function createAgeController({ state: state2, ageGameItemIds: ageGameItemIds2, ageBuildPhrases: ageBuildPhrases2, agePractice: agePractice2, topicById: topicById2, shuffleArray: shuffleArray2, speak: speak2, speakSceneLines: speakSceneLines2, currentTopic: currentTopic2, currentFocusItem: currentFocusItem2, currentBook: currentBook2, currentLesson: currentLesson2, renderActivityPanel: renderActivityPanel2, renderFocusDisplay: renderFocusDisplay2, renderFocusExplorer: renderFocusExplorer2, renderFocusStatus: renderFocusStatus2, elements }) {
+    const { focusExplorer: focusExplorer2, focusStatus: focusStatus2 } = elements;
+    function ageGameItems2() {
+      return ageGameItemIds2.map((id) => topicById2("age")?.focusItems.find((item) => item.id === id)).filter(Boolean);
+    }
+    function resetAgeChallenge2(options = {}) {
+      const items = ageGameItems2();
+      if (!items.length) return;
+      const answer = items[Math.floor(Math.random() * items.length)];
+      const distractors = shuffleArray2(items.filter((item) => item.id !== answer.id)).slice(0, Math.min(3, Math.max(0, items.length - 1)));
+      state2.ageChallengeAnswerId = answer.id;
+      state2.ageChallengePromptId = answer.id;
+      state2.ageChallengeOptionIds = shuffleArray2([answer.id, ...distractors.map((item) => item.id)]);
+      state2.lastAgeFeedback = options.feedback ?? "";
+    }
+    function ensureAgeChallenge2() {
+      if (!state2.ageChallengeAnswerId || !state2.ageChallengeOptionIds.length) resetAgeChallenge2();
+    }
+    function handleAgeChallengePlay2() {
+      ensureAgeChallenge2();
+      const item = ageGameItems2().find((entry) => entry.id === state2.ageChallengePromptId);
+      if (!item) return;
+      if (state2.tapAudioEnabled) speak2(item.audio, 0.78);
+      state2.lastAgeFeedback = `Listen again and find ${item.hanzi}.`;
+      renderActivityPanel2(currentTopic2());
+    }
+    function handleAgeChallengeGuess2(itemId) {
+      ensureAgeChallenge2();
+      const answer = ageGameItems2().find((entry) => entry.id === state2.ageChallengeAnswerId);
+      const picked = ageGameItems2().find((entry) => entry.id === itemId);
+      if (!answer || !picked) return;
+      if (itemId === answer.id) {
+        state2.selectedFocusItemId = answer.id;
+        if (state2.tapAudioEnabled) speak2(answer.audio, 0.78);
+        state2.lastAgeFeedback = `Correct! ${answer.hanzi} matches the audio.`;
+        renderFocusDisplay2(currentFocusItem2());
+        renderFocusExplorer2();
+        renderFocusStatus2();
+        window.setTimeout(() => {
+          resetAgeChallenge2();
+          renderActivityPanel2(currentTopic2());
+        }, 650);
+        return;
+      }
+      state2.lastAgeFeedback = `Try again. You picked ${picked.hanzi}, but the audio is ${answer.hanzi}.`;
+      renderActivityPanel2(currentTopic2());
+    }
+    function ageBuildTarget2() {
+      return ageBuildPhrases2.find((entry) => entry.id === state2.ageBuildTargetId) ?? ageBuildPhrases2[0];
+    }
+    function resetAgeBuilder2(options = {}) {
+      const target = ageBuildPhrases2[Math.floor(Math.random() * ageBuildPhrases2.length)];
+      state2.ageBuildTargetId = target.id;
+      state2.ageBuildAvailableTokens = shuffleArray2(target.tokens);
+      state2.ageBuildSelectedTokens = [];
+      state2.lastAgeFeedback = options.feedback ?? "Build the sentence by tapping the word pieces in order.";
+    }
+    function ensureAgeBuilder2() {
+      const target = ageBuildTarget2();
+      if (!state2.ageBuildTargetId || !state2.ageBuildAvailableTokens.length && !state2.ageBuildSelectedTokens.length || !target) resetAgeBuilder2();
+    }
+    function handleAgeBuildToken2(tokenIndex) {
+      const target = ageBuildTarget2();
+      const token = state2.ageBuildAvailableTokens[tokenIndex];
+      if (!target || !token) return;
+      state2.ageBuildSelectedTokens = [...state2.ageBuildSelectedTokens, token];
+      state2.ageBuildAvailableTokens = state2.ageBuildAvailableTokens.filter((_, index) => index !== tokenIndex);
+      if (state2.ageBuildSelectedTokens.length === target.tokens.length) {
+        const correct = target.tokens.every((entry, index) => state2.ageBuildSelectedTokens[index] === entry);
+        if (correct) {
+          if (state2.tapAudioEnabled) speak2(target.audio, 0.78);
+          state2.lastAgeFeedback = `Correct! ${target.targetHanzi}`;
+          if (target.sourceItemId) {
+            state2.selectedFocusItemId = target.sourceItemId;
+            renderFocusDisplay2(currentFocusItem2());
+            renderFocusExplorer2();
+            renderFocusStatus2();
+          }
+        } else state2.lastAgeFeedback = "Not quite. Try building the sentence again.";
+      }
+      renderActivityPanel2(currentTopic2());
+    }
+    function handleAgeBuildClear2() {
+      const target = ageBuildTarget2();
+      if (!target) return;
+      state2.ageBuildAvailableTokens = shuffleArray2([...state2.ageBuildAvailableTokens, ...state2.ageBuildSelectedTokens]);
+      state2.ageBuildSelectedTokens = [];
+      state2.lastAgeFeedback = "Try building the sentence again.";
+      renderActivityPanel2(currentTopic2());
+    }
+    function renderAgeExplorer2() {
+      focusExplorer2.innerHTML = `<div class="numbers-board"><div class="numbers-stage-card"><p class="body-match-kicker">${currentBook2().label} Lesson ${currentLesson2().lesson}</p><h4>Book theme: age and school year</h4><p>This lesson starts with <strong>\u4F60\u51E0\u5C81\uFF1F</strong> / <strong>\u6211...\u5C81\u3002</strong> and then adds <strong>\u4F60\u4E0A\u51E0\u5E74\u7EA7\uFF1F</strong> / <strong>\u6211\u4E0A\u4E00\u5E74\u7EA7\u3002</strong></p></div><div class="greetings-practice-grid">${agePractice2.map((exchange) => `<section class="greetings-exchange"><div class="greetings-exchange-top"><div><p class="body-match-kicker">Scene ${exchange.number}</p><p class="greetings-exchange-prompt">${exchange.prompt}</p></div><button class="small-button is-action-button" type="button" data-age-play-all="${exchange.id}">Play scene</button></div><div class="greetings-scene-layout"><div class="greetings-scene-visual"><img class="greetings-scene-image" src="${exchange.imagePath}" alt="${exchange.imageAlt}" /></div><div class="greetings-line-stack">${exchange.lines.map((line) => `<article class="greetings-line-card"><div class="telephone-bubble-copy"><p class="telephone-line-hanzi">${line.hanzi}</p>${state2.showPinyin ? `<p class="telephone-line-pinyin">${line.pinyin}</p>` : ""}${state2.showEnglish ? `<p class="telephone-line-english">${line.english}</p>` : ""}</div></article>`).join("")}</div></div></section>`).join("")}</div></div>`;
+      focusExplorer2.querySelectorAll("[data-age-play-all]").forEach((button) => button.addEventListener("click", () => {
+        const exchange = agePractice2.find((entry) => entry.id === button.dataset.agePlayAll);
+        if (!exchange || !state2.tapAudioEnabled) return;
+        speakSceneLines2(exchange.lines);
+        focusStatus2.textContent = `Listen to the whole scene: ${exchange.lines.map((line) => line.hanzi).join(" ")}`;
+      }));
+    }
+    return { ageGameItems: ageGameItems2, resetAgeChallenge: resetAgeChallenge2, ensureAgeChallenge: ensureAgeChallenge2, handleAgeChallengePlay: handleAgeChallengePlay2, handleAgeChallengeGuess: handleAgeChallengeGuess2, ageBuildTarget: ageBuildTarget2, resetAgeBuilder: resetAgeBuilder2, ensureAgeBuilder: ensureAgeBuilder2, handleAgeBuildToken: handleAgeBuildToken2, handleAgeBuildClear: handleAgeBuildClear2, renderAgeExplorer: renderAgeExplorer2 };
+  }
+
   // src/features/foundations/polite-words.js
   var politeWordsTopic = {
     id: "polite-words",
@@ -3613,6 +3716,17 @@
   var handleIntroductionsBuildToken;
   var handleIntroductionsBuildClear;
   var renderIntroductionsExplorer;
+  var ageGameItems;
+  var resetAgeChallenge;
+  var ensureAgeChallenge;
+  var handleAgeChallengePlay;
+  var handleAgeChallengeGuess;
+  var ageBuildTarget;
+  var resetAgeBuilder;
+  var ensureAgeBuilder;
+  var handleAgeBuildToken;
+  var handleAgeBuildClear;
+  var renderAgeExplorer;
   document.querySelectorAll("[data-view]").forEach((button) => {
     button.addEventListener("click", () => {
       switchView(button.dataset.view);
@@ -4037,124 +4151,6 @@
     } else {
       state.weekdayMatchFeedback = "Try a different card.";
     }
-    renderActivityPanel(currentTopic());
-  }
-  function ageGameItems() {
-    const ageTopic2 = topicById("age");
-    return ageGameItemIds.map((id) => ageTopic2?.focusItems.find((item) => item.id === id)).filter(Boolean);
-  }
-  function resetAgeChallenge(options = {}) {
-    const items = ageGameItems();
-    if (!items.length) {
-      return;
-    }
-    const answer = items[Math.floor(Math.random() * items.length)];
-    const distractors = shuffleArray(items.filter((item) => item.id !== answer.id)).slice(
-      0,
-      Math.min(3, Math.max(0, items.length - 1))
-    );
-    state.ageChallengeAnswerId = answer.id;
-    state.ageChallengePromptId = answer.id;
-    state.ageChallengeOptionIds = shuffleArray([answer.id, ...distractors.map((item) => item.id)]);
-    state.lastAgeFeedback = options.feedback ?? "";
-  }
-  function ensureAgeChallenge() {
-    if (!state.ageChallengeAnswerId || !state.ageChallengeOptionIds.length) {
-      resetAgeChallenge();
-    }
-  }
-  function handleAgeChallengePlay() {
-    ensureAgeChallenge();
-    const item = ageGameItems().find((entry) => entry.id === state.ageChallengePromptId);
-    if (!item) {
-      return;
-    }
-    if (state.tapAudioEnabled) {
-      speak(item.audio, 0.78);
-    }
-    state.lastAgeFeedback = `Listen again and find ${item.hanzi}.`;
-    renderActivityPanel(currentTopic());
-  }
-  function handleAgeChallengeGuess(itemId) {
-    ensureAgeChallenge();
-    const answer = ageGameItems().find((entry) => entry.id === state.ageChallengeAnswerId);
-    const picked = ageGameItems().find((entry) => entry.id === itemId);
-    if (!answer || !picked) {
-      return;
-    }
-    if (itemId === answer.id) {
-      state.selectedFocusItemId = answer.id;
-      if (state.tapAudioEnabled) {
-        speak(answer.audio, 0.78);
-      }
-      state.lastAgeFeedback = `Correct! ${answer.hanzi} matches the audio.`;
-      renderFocusDisplay(currentFocusItem());
-      renderFocusExplorer();
-      renderFocusStatus();
-      window.setTimeout(() => {
-        resetAgeChallenge();
-        renderActivityPanel(currentTopic());
-      }, 650);
-      return;
-    }
-    state.lastAgeFeedback = `Try again. You picked ${picked.hanzi}, but the audio is ${answer.hanzi}.`;
-    renderActivityPanel(currentTopic());
-  }
-  function ageBuildTarget() {
-    return ageBuildPhrases.find((entry) => entry.id === state.ageBuildTargetId) ?? ageBuildPhrases[0];
-  }
-  function resetAgeBuilder(options = {}) {
-    const target = ageBuildPhrases[Math.floor(Math.random() * ageBuildPhrases.length)];
-    state.ageBuildTargetId = target.id;
-    state.ageBuildAvailableTokens = shuffleArray(target.tokens);
-    state.ageBuildSelectedTokens = [];
-    state.lastAgeFeedback = options.feedback ?? "Build the sentence by tapping the word pieces in order.";
-  }
-  function ensureAgeBuilder() {
-    const target = ageBuildTarget();
-    if (!state.ageBuildTargetId || !state.ageBuildAvailableTokens.length && !state.ageBuildSelectedTokens.length) {
-      resetAgeBuilder();
-      return;
-    }
-    if (!target) {
-      resetAgeBuilder();
-    }
-  }
-  function handleAgeBuildToken(tokenIndex) {
-    const target = ageBuildTarget();
-    const token = state.ageBuildAvailableTokens[tokenIndex];
-    if (!target || !token) {
-      return;
-    }
-    state.ageBuildSelectedTokens = [...state.ageBuildSelectedTokens, token];
-    state.ageBuildAvailableTokens = state.ageBuildAvailableTokens.filter((_, index) => index !== tokenIndex);
-    if (state.ageBuildSelectedTokens.length === target.tokens.length) {
-      const correct = target.tokens.every((entry, index) => state.ageBuildSelectedTokens[index] === entry);
-      if (correct) {
-        if (state.tapAudioEnabled) {
-          speak(target.audio, 0.78);
-        }
-        state.lastAgeFeedback = `Correct! ${target.targetHanzi}`;
-        if (target.sourceItemId) {
-          state.selectedFocusItemId = target.sourceItemId;
-          renderFocusDisplay(currentFocusItem());
-          renderFocusExplorer();
-          renderFocusStatus();
-        }
-      } else {
-        state.lastAgeFeedback = "Not quite. Try building the sentence again.";
-      }
-    }
-    renderActivityPanel(currentTopic());
-  }
-  function handleAgeBuildClear() {
-    const target = ageBuildTarget();
-    if (!target) {
-      return;
-    }
-    state.ageBuildAvailableTokens = shuffleArray([...state.ageBuildAvailableTokens, ...state.ageBuildSelectedTokens]);
-    state.ageBuildSelectedTokens = [];
-    state.lastAgeFeedback = "Try building the sentence again.";
     renderActivityPanel(currentTopic());
   }
   function resetClothesQuiz() {
@@ -8019,60 +8015,6 @@
       });
     });
   }
-  function renderAgeExplorer() {
-    focusExplorer.innerHTML = `
-    <div class="numbers-board">
-      <div class="numbers-stage-card">
-        <p class="body-match-kicker">${currentBook().label} Lesson ${currentLesson().lesson}</p>
-        <h4>Book theme: age and school year</h4>
-        <p>This lesson starts with <strong>\u4F60\u51E0\u5C81\uFF1F</strong> / <strong>\u6211...\u5C81\u3002</strong> and then adds <strong>\u4F60\u4E0A\u51E0\u5E74\u7EA7\uFF1F</strong> / <strong>\u6211\u4E0A\u4E00\u5E74\u7EA7\u3002</strong></p>
-      </div>
-      <div class="greetings-practice-grid">
-        ${agePractice.map(
-      (exchange) => `
-              <section class="greetings-exchange">
-                <div class="greetings-exchange-top">
-                  <div>
-                    <p class="body-match-kicker">Scene ${exchange.number}</p>
-                    <p class="greetings-exchange-prompt">${exchange.prompt}</p>
-                  </div>
-                  <button class="small-button is-action-button" type="button" data-age-play-all="${exchange.id}">Play scene</button>
-                </div>
-                <div class="greetings-scene-layout">
-                  <div class="greetings-scene-visual">
-                    <img class="greetings-scene-image" src="${exchange.imagePath}" alt="${exchange.imageAlt}" />
-                  </div>
-                  <div class="greetings-line-stack">
-                    ${exchange.lines.map(
-        (line, index) => `
-                          <article class="greetings-line-card">
-                            <div class="telephone-bubble-copy">
-                              <p class="telephone-line-hanzi">${line.hanzi}</p>
-                              ${state.showPinyin ? `<p class="telephone-line-pinyin">${line.pinyin}</p>` : ""}
-                              ${state.showEnglish ? `<p class="telephone-line-english">${line.english}</p>` : ""}
-                            </div>
-                          </article>
-                        `
-      ).join("")}
-                  </div>
-                </div>
-              </section>
-            `
-    ).join("")}
-      </div>
-    </div>
-  `;
-    focusExplorer.querySelectorAll("[data-age-play-all]").forEach((button) => {
-      button.addEventListener("click", () => {
-        const exchange = agePractice.find((entry) => entry.id === button.dataset.agePlayAll);
-        if (!exchange || !state.tapAudioEnabled) {
-          return;
-        }
-        speakSceneLines(exchange.lines);
-        focusStatus.textContent = `Listen to the whole scene: ${exchange.lines.map((line) => line.hanzi).join(" ")}`;
-      });
-    });
-  }
   function renderFamilyHomeVisual(exchange) {
     if (exchange.visual === "parents-love") {
       return `
@@ -8572,6 +8514,37 @@
     introductionsBuildPhrases,
     introductionsPractice,
     illustratedKids,
+    topicById,
+    shuffleArray,
+    speak,
+    speakSceneLines,
+    currentTopic,
+    currentFocusItem,
+    currentBook,
+    currentLesson,
+    renderActivityPanel,
+    renderFocusDisplay,
+    renderFocusExplorer,
+    renderFocusStatus,
+    elements: { focusExplorer, focusStatus }
+  }));
+  ({
+    ageGameItems,
+    resetAgeChallenge,
+    ensureAgeChallenge,
+    handleAgeChallengePlay,
+    handleAgeChallengeGuess,
+    ageBuildTarget,
+    resetAgeBuilder,
+    ensureAgeBuilder,
+    handleAgeBuildToken,
+    handleAgeBuildClear,
+    renderAgeExplorer
+  } = createAgeController({
+    state,
+    ageGameItemIds,
+    ageBuildPhrases,
+    agePractice,
     topicById,
     shuffleArray,
     speak,
