@@ -2407,6 +2407,10 @@ const renderSharedLessonPractice = createSharedLessonPractice({
   speak,
   elements: { activityPanelTitle, activityPanelSummary, activityList }
 });
+const renderListenPractice = renderSharedLessonPractice.renderListenPractice;
+const renderMatchPractice = renderSharedLessonPractice.renderMatchPractice;
+const renderPracticeSayCards = renderSharedLessonPractice.renderPracticeSayCards;
+const bindPracticeSayCards = renderSharedLessonPractice.bindPracticeSayCards;
 
 document.querySelectorAll("[data-view]").forEach((button) => {
   button.addEventListener("click", () => {

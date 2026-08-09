@@ -142,7 +142,7 @@ export function createSharedLessonPractice({ state, speak, elements, documentRef
     });
   }
 
-  return function renderSharedLessonPractice(topic, config) {
+  function renderSharedLessonPractice(topic, config) {
     config.ensure();
     activityPanelTitle.textContent = "Let's practice";
     activityPanelSummary.textContent = config.summary;
@@ -161,5 +161,11 @@ export function createSharedLessonPractice({ state, speak, elements, documentRef
     activityList.querySelectorAll("[data-template-match-phrase]").forEach((button) => button.addEventListener("click", () => config.match.onPhrase(button.dataset.templateMatchPhrase)));
     activityList.querySelectorAll("[data-template-match-meaning]").forEach((button) => button.addEventListener("click", () => config.match.onMeaning(button.dataset.templateMatchMeaning)));
     bindPracticeSayCards(activityList);
-  };
+  }
+
+  renderSharedLessonPractice.renderListenPractice = renderListenPractice;
+  renderSharedLessonPractice.renderMatchPractice = renderMatchPractice;
+  renderSharedLessonPractice.renderPracticeSayCards = renderPracticeSayCards;
+  renderSharedLessonPractice.bindPracticeSayCards = bindPracticeSayCards;
+  return renderSharedLessonPractice;
 }

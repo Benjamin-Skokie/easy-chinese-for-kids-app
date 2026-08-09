@@ -68,8 +68,11 @@ test("shared lesson practice is provided by an explicit game factory", () => {
   const legacySource = readFileSync("src/legacy-app.js", "utf8");
   const gameSource = readFileSync("src/games/shared-lesson-practice.js", "utf8");
   assert.match(legacySource, /createSharedLessonPractice\(\{[\s\S]*elements:/);
+  assert.match(legacySource, /const renderPracticeSayCards = renderSharedLessonPractice\.renderPracticeSayCards/);
+  assert.match(legacySource, /const renderMatchPractice = renderSharedLessonPractice\.renderMatchPractice/);
   assert.doesNotMatch(legacySource, /function renderSharedLessonPractice\(/);
   assert.match(gameSource, /export function createSharedLessonPractice/);
+  assert.match(gameSource, /renderSharedLessonPractice\.renderPracticeSayCards = renderPracticeSayCards/);
 });
 
 test("time and calendar content retains its expected teaching sets", () => {

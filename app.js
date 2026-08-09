@@ -771,7 +771,7 @@
         });
       });
     }
-    return function renderSharedLessonPractice2(topic, config) {
+    function renderSharedLessonPractice2(topic, config) {
       config.ensure();
       activityPanelTitle2.textContent = "Let's practice";
       activityPanelSummary2.textContent = config.summary;
@@ -788,7 +788,12 @@
       activityList2.querySelectorAll("[data-template-match-phrase]").forEach((button) => button.addEventListener("click", () => config.match.onPhrase(button.dataset.templateMatchPhrase)));
       activityList2.querySelectorAll("[data-template-match-meaning]").forEach((button) => button.addEventListener("click", () => config.match.onMeaning(button.dataset.templateMatchMeaning)));
       bindPracticeSayCards2(activityList2);
-    };
+    }
+    renderSharedLessonPractice2.renderListenPractice = renderListenPractice2;
+    renderSharedLessonPractice2.renderMatchPractice = renderMatchPractice2;
+    renderSharedLessonPractice2.renderPracticeSayCards = renderPracticeSayCards2;
+    renderSharedLessonPractice2.bindPracticeSayCards = bindPracticeSayCards2;
+    return renderSharedLessonPractice2;
   }
 
   // src/legacy-app.js
@@ -3042,6 +3047,10 @@
     speak,
     elements: { activityPanelTitle, activityPanelSummary, activityList }
   });
+  var renderListenPractice = renderSharedLessonPractice.renderListenPractice;
+  var renderMatchPractice = renderSharedLessonPractice.renderMatchPractice;
+  var renderPracticeSayCards = renderSharedLessonPractice.renderPracticeSayCards;
+  var bindPracticeSayCards = renderSharedLessonPractice.bindPracticeSayCards;
   document.querySelectorAll("[data-view]").forEach((button) => {
     button.addEventListener("click", () => {
       switchView(button.dataset.view);
