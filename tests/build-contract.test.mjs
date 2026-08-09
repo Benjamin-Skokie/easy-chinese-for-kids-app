@@ -27,6 +27,7 @@ import { clothesMatchItems, clothesPractice, clothesTopic } from "../src/feature
 import { weatherTopic } from "../src/features/world/weather.js";
 import { bodyBonusItemIds, bodyCoreItemIds, bodyDiagramLayout, bodyTopic } from "../src/features/foundations/body.js";
 import { illustratedKids } from "../src/data/characters.js";
+import { bookHomeCategories, books, learningHomeCategories, topicCardMeta, topicGroups } from "../src/data/curriculum.js";
 import { familyGameItemIds, familyPractice, familyTopic, illustratedFamily } from "../src/features/family/family.js";
 
 test("the local page loads a single bundled application script", () => {
@@ -229,6 +230,14 @@ test("the shared character catalog retains every illustrated child", () => {
   assert.equal(Object.keys(illustratedKids).length, 9);
   assert.equal(illustratedKids.anan.hanziName, "安安");
   assert.equal(illustratedKids.tiantian.label, "Tiantian");
+});
+
+test("the shared curriculum retains its books and learning navigation", () => {
+  assert.equal(books.length, 8);
+  assert.equal(bookHomeCategories.length, 4);
+  assert.equal(topicGroups.length, 4);
+  assert.equal(learningHomeCategories.length, 7);
+  assert.equal(topicCardMeta["school-subjects"].zhTitle, "学校学科");
 });
 
 test("family owns its lesson metadata, scenes, and matching set", () => {

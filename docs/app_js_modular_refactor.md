@@ -46,6 +46,7 @@ A feature registers its owned topic IDs, creates its scoped state, renders its e
 - [ ] Add data validation for duplicate topic IDs, lesson references, practice references, and asset paths.
 - [x] Validate Time & Daily Life asset paths and scene/practice relationships in `scripts/validate_learning_data.mjs`.
 - [x] Move the shared illustrated character catalog into `src/data/characters.js` and validate every character asset.
+- [x] Move books, course categories, topic groups, and landing-page topic metadata into `src/data/curriculum.js`.
 
 ### 3. Feature migration
 

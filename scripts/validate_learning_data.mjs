@@ -23,6 +23,7 @@ import { politePractice } from "../src/features/foundations/polite-words.js";
 import { clothesMatchItems, clothesPractice } from "../src/features/daily-life/clothes.js";
 import { familyPractice, illustratedFamily } from "../src/features/family/family.js";
 import { illustratedKids } from "../src/data/characters.js";
+import { books, learningHomeCategories, topicGroups } from "../src/data/curriculum.js";
 
 const errors = [];
 
@@ -151,6 +152,16 @@ assert(greetingsPractice.length === 3, "greetings lesson scenes are incomplete")
 assert(politePractice.length === 3, "polite words lesson scenes are incomplete");
 assert(clothesMatchItems.length === 5, "clothes matching set is incomplete");
 assert(familyPractice.length === 2, "family lesson scenes are incomplete");
+
+const curriculumTopicIds = new Set([
+  "numbers", "multiplication-rhyme", "greetings", "polite-words", "introductions", "age", "identity", "family", "body", "animals", "colours", "food", "food-preferences", "meals-feelings", "weekdays", "time-date", "dates", "stationery", "school-supplies", "classroom", "school", "school-subjects", "hobbies", "toys", "clothes", "comparisons", "positions", "transport", "daily-life", "weather"
+]);
+for (const book of books) {
+  book.lessons.forEach((lesson) => assert(curriculumTopicIds.has(lesson.topicId), `book lesson references an unknown topic: ${lesson.topicId}`));
+}
+for (const category of [...topicGroups, ...learningHomeCategories]) {
+  category.topicIds.forEach((topicId) => assert(curriculumTopicIds.has(topicId), `category references an unknown topic: ${topicId}`));
+}
 
 if (errors.length) {
   console.error(errors.join("\n"));

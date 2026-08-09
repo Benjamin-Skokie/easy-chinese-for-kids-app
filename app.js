@@ -1591,6 +1591,275 @@
     jaden: { id: "jaden", label: "Jaden", hanziName: "\u6770\u767B", gender: "boy", ageGroup: "7-8", skinTone: "deep brown", path: "assets/illustrated-kids/jaden.webp" }
   };
 
+  // src/data/curriculum.js
+  var books = [
+    {
+      id: "1a",
+      label: "Book 1A",
+      lessons: [
+        { lesson: 1, title: "Numbers (1)", topicId: "numbers" },
+        { lesson: 2, title: "Numbers (2)", topicId: "numbers" },
+        { lesson: 3, title: "Numbers (3)", topicId: "numbers" },
+        { lesson: 4, title: "Hello!", topicId: "greetings" },
+        { lesson: 5, title: "Thank you!", topicId: "polite-words" },
+        { lesson: 6, title: "What's your name?", topicId: "introductions" },
+        { lesson: 7, title: "I'm 5 years old", topicId: "age" }
+      ]
+    },
+    {
+      id: "1b",
+      label: "Book 1B",
+      lessons: [
+        { lesson: 1, title: "Mum and dad", topicId: "family" },
+        { lesson: 2, title: "Brothers and sisters", topicId: "family" },
+        { lesson: 3, title: "Parts of the body (1)", topicId: "body" },
+        { lesson: 4, title: "Parts of the body (2)", topicId: "body" },
+        { lesson: 5, title: "Pets", topicId: "animals" },
+        { lesson: 6, title: "Colours", topicId: "colours" },
+        { lesson: 7, title: "Fruit", topicId: "food" }
+      ]
+    },
+    {
+      id: "2a",
+      label: "Book 2A",
+      lessons: [
+        { lesson: 1, title: "Numbers", topicId: "numbers" },
+        { lesson: 2, title: "Two younger brothers", topicId: "family" },
+        { lesson: 3, title: "Good friends", topicId: "introductions" },
+        { lesson: 4, title: "My toys", topicId: "toys" },
+        { lesson: 5, title: "I love reading", topicId: "hobbies" },
+        { lesson: 6, title: "I can dress myself", topicId: "clothes" },
+        { lesson: 7, title: "Colours", topicId: "colours" }
+      ]
+    },
+    {
+      id: "2b",
+      label: "Book 2B",
+      lessons: [
+        { lesson: 1, title: "Today is Monday", topicId: "weekdays" },
+        { lesson: 2, title: "What time is it?", topicId: "time-date" },
+        { lesson: 3, title: "Stationery", topicId: "stationery" },
+        { lesson: 4, title: "My classroom", topicId: "classroom" },
+        { lesson: 5, title: "Animals", topicId: "animals" },
+        { lesson: 6, title: "Big or small", topicId: "comparisons" },
+        { lesson: 7, title: "Snacks", topicId: "food" }
+      ]
+    },
+    {
+      id: "3a",
+      label: "Book 3A",
+      lessons: [
+        { lesson: 1, title: "Numbers", topicId: "numbers" },
+        { lesson: 2, title: "Date", topicId: "dates" },
+        { lesson: 3, title: "Happy birthday!", topicId: "dates" },
+        { lesson: 4, title: "Family", topicId: "family" },
+        { lesson: 5, title: "Nationality", topicId: "identity" },
+        { lesson: 6, title: "Request", topicId: "polite-words" },
+        { lesson: 7, title: "Clothes", topicId: "clothes" }
+      ]
+    },
+    {
+      id: "3b",
+      label: "Book 3B",
+      lessons: [
+        { lesson: 1, title: "My schoolbag", topicId: "school-supplies" },
+        { lesson: 2, title: "Our classroom", topicId: "classroom" },
+        { lesson: 3, title: "Positions", topicId: "positions" },
+        { lesson: 4, title: "Hobbies", topicId: "hobbies" },
+        { lesson: 5, title: "Food and drink", topicId: "food-preferences" },
+        { lesson: 6, title: "Vegetables", topicId: "food" },
+        { lesson: 7, title: "Nature", topicId: "weather" }
+      ]
+    },
+    {
+      id: "4a",
+      label: "Book 4A",
+      lessons: [
+        { lesson: 1, title: "Telephone numbers", topicId: "numbers" },
+        { lesson: 2, title: "Languages", topicId: "identity" },
+        { lesson: 3, title: "Tell the time", topicId: "time-date" },
+        { lesson: 4, title: "Daily routine", topicId: "time-date" },
+        { lesson: 5, title: "My lunch", topicId: "meals-feelings" },
+        { lesson: 6, title: "Means of transport", topicId: "transport" },
+        { lesson: 7, title: "I'm hungry", topicId: "meals-feelings" }
+      ]
+    },
+    {
+      id: "4b",
+      label: "Book 4B",
+      lessons: [
+        { lesson: 1, title: "It's raining", topicId: "weather" },
+        { lesson: 2, title: "Clothes", topicId: "clothes" },
+        { lesson: 3, title: "My room", topicId: "daily-life" },
+        { lesson: 4, title: "Hobbies", topicId: "hobbies" },
+        { lesson: 5, title: "Our school", topicId: "school" },
+        { lesson: 6, title: "School subjects", topicId: "school-subjects" },
+        { lesson: 7, title: "Leisure time", topicId: "hobbies" }
+      ]
+    }
+  ];
+  var bookHomeCategories = [
+    {
+      id: "first-steps",
+      zhTitle: "\u7B2C\u4E00\u9636\u6BB5",
+      enTitle: "First Steps",
+      hint: "Book 1A and 1B: first speaking, family, colours, food",
+      accent: "#be5b49",
+      iconEmoji: "\u{1F331}",
+      bookIds: ["1a", "1b"]
+    },
+    {
+      id: "build-core",
+      zhTitle: "\u7B2C\u4E8C\u9636\u6BB5",
+      enTitle: "Build the Core",
+      hint: "Book 2A and 2B: toys, school, time, daily language",
+      accent: "#6d8a4f",
+      iconEmoji: "\u{1F9E9}",
+      bookIds: ["2a", "2b"]
+    },
+    {
+      id: "expand-language",
+      zhTitle: "\u7B2C\u4E09\u9636\u6BB5",
+      enTitle: "Expand the Language",
+      hint: "Book 3A and 3B: birthdays, requests, backpack, hobbies",
+      accent: "#517b8d",
+      iconEmoji: "\u{1F4D8}",
+      bookIds: ["3a", "3b"]
+    },
+    {
+      id: "real-life-use",
+      zhTitle: "\u7B2C\u56DB\u9636\u6BB5",
+      enTitle: "Real-Life Use",
+      hint: "Book 4A and 4B: routines, weather, transport, school life",
+      accent: "#8f6988",
+      iconEmoji: "\u{1F5E3}\uFE0F",
+      bookIds: ["4a", "4b"]
+    }
+  ];
+  var topicGroups = [
+    {
+      id: "foundations",
+      label: "Foundations",
+      description: "The first speaking patterns young learners need most.",
+      topicIds: ["numbers", "multiplication-rhyme", "greetings", "polite-words", "introductions", "age", "identity"]
+    },
+    {
+      id: "me-and-family",
+      label: "Me & Family",
+      description: "Personal, family, body, clothes, and everyday child language.",
+      topicIds: ["family", "body", "animals", "colours", "clothes"]
+    },
+    {
+      id: "daily-world",
+      label: "Daily World",
+      description: "Food, hobbies, routines, weather, and the world around the child.",
+      topicIds: ["food", "food-preferences", "meals-feelings", "toys", "hobbies", "comparisons", "positions", "transport", "daily-life", "weather"]
+    },
+    {
+      id: "school-and-time",
+      label: "School & Time",
+      description: "Practical classroom, calendar, and time-based language.",
+      topicIds: ["weekdays", "time-date", "dates", "stationery", "school-supplies", "classroom", "school", "school-subjects"]
+    }
+  ];
+  var topicCardMeta = {
+    numbers: { zhTitle: "\u6570\u5B57", enTitle: "Numbers", hint: "Count, hear, and use numbers" },
+    "multiplication-rhyme": { zhTitle: "\u4E5D\u4E5D\u4E58\u6CD5", enTitle: "Multiplication Rhyme", hint: "Classic rhythm practice" },
+    greetings: { zhTitle: "\u6253\u62DB\u547C", enTitle: "Greetings", hint: "Hello, good morning, goodbye" },
+    "polite-words": { zhTitle: "\u793C\u8C8C\u7528\u8BED", enTitle: "Polite Words", hint: "Thank you, sorry, please" },
+    introductions: { zhTitle: "\u4ECB\u7ECD\u81EA\u5DF1", enTitle: "Introductions", hint: "Say your name and meet friends" },
+    age: { zhTitle: "\u5E74\u9F84", enTitle: "Age", hint: "Ask and say how old you are" },
+    identity: { zhTitle: "\u56FD\u5BB6\u548C\u8BED\u8A00", enTitle: "Countries & Languages", hint: "Say where you are from and what you speak" },
+    family: { zhTitle: "\u5BB6\u4EBA", enTitle: "Family", hint: "Mom, dad, siblings, grandparents" },
+    body: { zhTitle: "\u8EAB\u4F53", enTitle: "Body", hint: "Tap body parts and listen" },
+    animals: { zhTitle: "\u52A8\u7269", enTitle: "Animals", hint: "Pets and favorite animals" },
+    colours: { zhTitle: "\u989C\u8272", enTitle: "Colours", hint: "Red, yellow, blue, green" },
+    food: { zhTitle: "\u98DF\u7269\u548C\u996E\u6599", enTitle: "Food & Drinks", hint: "Fruit, vegetables, snacks, drinks" },
+    "food-preferences": { zhTitle: "\u559C\u6B22\u548C\u4E0D\u559C\u6B22", enTitle: "Food Preferences", hint: "Ask and say what you like to eat" },
+    "meals-feelings": { zhTitle: "\u5348\u996D\u548C\u611F\u89C9", enTitle: "Meals & Feelings", hint: "Lunch, hungry, thirsty" },
+    weekdays: { zhTitle: "\u661F\u671F", enTitle: "Days of the Week", hint: "Monday to Sunday" },
+    "time-date": { zhTitle: "\u65F6\u95F4", enTitle: "Time & Routines", hint: "Clock and daily routines" },
+    dates: { zhTitle: "\u65E5\u671F", enTitle: "Dates & Months", hint: "Months, dates, birthdays" },
+    stationery: { zhTitle: "\u6211\u7684\u6587\u5177", enTitle: "My Stationery", hint: "My things, colors, and measure words" },
+    "school-supplies": { zhTitle: "\u6587\u5177\u548C\u4E66\u5305", enTitle: "Stationery & Backpack", hint: "Pencil, ruler, books, backpack" },
+    classroom: { zhTitle: "\u6559\u5BA4", enTitle: "Classroom", hint: "Classroom, table, chair, board" },
+    school: { zhTitle: "\u6211\u4EEC\u7684\u5B66\u6821", enTitle: "Our School", hint: "Library, playground, cafeteria" },
+    "school-subjects": { zhTitle: "\u5B66\u6821\u5B66\u79D1", enTitle: "School Subjects", hint: "Chinese, English, music, art, PE" },
+    hobbies: { zhTitle: "\u7231\u597D", enTitle: "Hobbies", hint: "Reading, music, sports, games" },
+    toys: { zhTitle: "\u73A9\u5177", enTitle: "Toys", hint: "Toy car, train, airplane" },
+    clothes: { zhTitle: "\u8863\u670D", enTitle: "Clothes", hint: "Dress for the day" },
+    comparisons: { zhTitle: "\u63CF\u8FF0\u548C\u6BD4\u8F83", enTitle: "Descriptions & Comparisons", hint: "Big, small, long, short" },
+    positions: { zhTitle: "\u4F4D\u7F6E\u548C\u65B9\u5411", enTitle: "Positions & Directions", hint: "Up, down, inside, outside" },
+    transport: { zhTitle: "\u4EA4\u901A", enTitle: "Transportation", hint: "Walk, bike, bus, train" },
+    "daily-life": { zhTitle: "\u6211\u7684\u623F\u95F4", enTitle: "My Room", hint: "Rooms and furniture" },
+    weather: { zhTitle: "\u5929\u6C14", enTitle: "Weather", hint: "Sun, rain, snow, wind" }
+  };
+  var learningHomeCategories = [
+    {
+      id: "foundations",
+      zhTitle: "\u5F00\u53E3\u8BF4\u4E2D\u6587",
+      enTitle: "Start Speaking",
+      hint: "Numbers, greetings, names, age, identity",
+      accent: "#be5b49",
+      iconSrc: "assets/navigation-icons/lele-wave-icon.webp",
+      topicIds: ["numbers", "greetings", "polite-words", "introductions", "age", "identity", "multiplication-rhyme"]
+    },
+    {
+      id: "me-family",
+      zhTitle: "\u6211\u548C\u5BB6\u4EBA",
+      enTitle: "Me & Family",
+      hint: "Family, body, clothes",
+      accent: "#aa7051",
+      iconEmoji: "\u{1F3E0}",
+      topicIds: ["family", "body", "clothes"]
+    },
+    {
+      id: "time-daily",
+      zhTitle: "\u65F6\u95F4\u548C\u65E5\u5E38",
+      enTitle: "Time & Daily Life",
+      hint: "Week, time, dates, routines, home",
+      accent: "#517b8d",
+      iconSrc: "assets/illustrated-clocks/10oclock.webp",
+      topicIds: ["weekdays", "time-date", "dates", "comparisons", "positions", "transport", "daily-life"]
+    },
+    {
+      id: "school-life",
+      zhTitle: "\u5B66\u6821\u751F\u6D3B",
+      enTitle: "School Life",
+      hint: "Classroom, backpack, subjects",
+      accent: "#6d8a4f",
+      iconEmoji: "\u{1F3EB}",
+      topicIds: ["stationery", "school-supplies", "classroom", "school", "school-subjects"]
+    },
+    {
+      id: "food",
+      zhTitle: "\u98DF\u7269",
+      enTitle: "Food",
+      hint: "Food words, preferences, and meals",
+      accent: "#c48d46",
+      iconSrc: "assets/navigation-icons/burger-fries-icon.webp",
+      topicIds: ["food", "food-preferences", "meals-feelings"]
+    },
+    {
+      id: "world",
+      zhTitle: "\u81EA\u7136\u548C\u989C\u8272",
+      enTitle: "World Around Us",
+      hint: "Weather, animals, colours",
+      accent: "#6f7fa4",
+      iconSrc: "assets/navigation-icons/panda-bamboo-icon.webp",
+      topicIds: ["weather", "animals", "colours"]
+    },
+    {
+      id: "play",
+      zhTitle: "\u5174\u8DA3\u548C\u73A9\u5177",
+      enTitle: "Play & Hobbies",
+      hint: "Toys, sports, music, games",
+      accent: "#8f6988",
+      iconSrc: "assets/navigation-icons/teddy-robot-icon.webp",
+      topicIds: ["toys", "hobbies"]
+    }
+  ];
+
   // src/games/shared-lesson-practice.js
   function createSharedLessonPractice({ state: state2, speak: speak2, elements, documentRef = document }) {
     const { activityPanelTitle: activityPanelTitle2, activityPanelSummary: activityPanelSummary2, activityList: activityList2 } = elements;
@@ -2478,273 +2747,6 @@
     return items;
   }
   topicData.find((topic) => topic.id === "multiplication-rhyme").focusItems = buildMultiplicationRhymeItems();
-  var books = [
-    {
-      id: "1a",
-      label: "Book 1A",
-      lessons: [
-        { lesson: 1, title: "Numbers (1)", topicId: "numbers" },
-        { lesson: 2, title: "Numbers (2)", topicId: "numbers" },
-        { lesson: 3, title: "Numbers (3)", topicId: "numbers" },
-        { lesson: 4, title: "Hello!", topicId: "greetings" },
-        { lesson: 5, title: "Thank you!", topicId: "polite-words" },
-        { lesson: 6, title: "What's your name?", topicId: "introductions" },
-        { lesson: 7, title: "I'm 5 years old", topicId: "age" }
-      ]
-    },
-    {
-      id: "1b",
-      label: "Book 1B",
-      lessons: [
-        { lesson: 1, title: "Mum and dad", topicId: "family" },
-        { lesson: 2, title: "Brothers and sisters", topicId: "family" },
-        { lesson: 3, title: "Parts of the body (1)", topicId: "body" },
-        { lesson: 4, title: "Parts of the body (2)", topicId: "body" },
-        { lesson: 5, title: "Pets", topicId: "animals" },
-        { lesson: 6, title: "Colours", topicId: "colours" },
-        { lesson: 7, title: "Fruit", topicId: "food" }
-      ]
-    },
-    {
-      id: "2a",
-      label: "Book 2A",
-      lessons: [
-        { lesson: 1, title: "Numbers", topicId: "numbers" },
-        { lesson: 2, title: "Two younger brothers", topicId: "family" },
-        { lesson: 3, title: "Good friends", topicId: "introductions" },
-        { lesson: 4, title: "My toys", topicId: "toys" },
-        { lesson: 5, title: "I love reading", topicId: "hobbies" },
-        { lesson: 6, title: "I can dress myself", topicId: "clothes" },
-        { lesson: 7, title: "Colours", topicId: "colours" }
-      ]
-    },
-    {
-      id: "2b",
-      label: "Book 2B",
-      lessons: [
-        { lesson: 1, title: "Today is Monday", topicId: "weekdays" },
-        { lesson: 2, title: "What time is it?", topicId: "time-date" },
-        { lesson: 3, title: "Stationery", topicId: "stationery" },
-        { lesson: 4, title: "My classroom", topicId: "classroom" },
-        { lesson: 5, title: "Animals", topicId: "animals" },
-        { lesson: 6, title: "Big or small", topicId: "comparisons" },
-        { lesson: 7, title: "Snacks", topicId: "food" }
-      ]
-    },
-    {
-      id: "3a",
-      label: "Book 3A",
-      lessons: [
-        { lesson: 1, title: "Numbers", topicId: "numbers" },
-        { lesson: 2, title: "Date", topicId: "dates" },
-        { lesson: 3, title: "Happy birthday!", topicId: "dates" },
-        { lesson: 4, title: "Family", topicId: "family" },
-        { lesson: 5, title: "Nationality", topicId: "identity" },
-        { lesson: 6, title: "Request", topicId: "polite-words" },
-        { lesson: 7, title: "Clothes", topicId: "clothes" }
-      ]
-    },
-    {
-      id: "3b",
-      label: "Book 3B",
-      lessons: [
-        { lesson: 1, title: "My schoolbag", topicId: "school-supplies" },
-        { lesson: 2, title: "Our classroom", topicId: "classroom" },
-        { lesson: 3, title: "Positions", topicId: "positions" },
-        { lesson: 4, title: "Hobbies", topicId: "hobbies" },
-        { lesson: 5, title: "Food and drink", topicId: "food-preferences" },
-        { lesson: 6, title: "Vegetables", topicId: "food" },
-        { lesson: 7, title: "Nature", topicId: "weather" }
-      ]
-    },
-    {
-      id: "4a",
-      label: "Book 4A",
-      lessons: [
-        { lesson: 1, title: "Telephone numbers", topicId: "numbers" },
-        { lesson: 2, title: "Languages", topicId: "identity" },
-        { lesson: 3, title: "Tell the time", topicId: "time-date" },
-        { lesson: 4, title: "Daily routine", topicId: "time-date" },
-        { lesson: 5, title: "My lunch", topicId: "meals-feelings" },
-        { lesson: 6, title: "Means of transport", topicId: "transport" },
-        { lesson: 7, title: "I'm hungry", topicId: "meals-feelings" }
-      ]
-    },
-    {
-      id: "4b",
-      label: "Book 4B",
-      lessons: [
-        { lesson: 1, title: "It's raining", topicId: "weather" },
-        { lesson: 2, title: "Clothes", topicId: "clothes" },
-        { lesson: 3, title: "My room", topicId: "daily-life" },
-        { lesson: 4, title: "Hobbies", topicId: "hobbies" },
-        { lesson: 5, title: "Our school", topicId: "school" },
-        { lesson: 6, title: "School subjects", topicId: "school-subjects" },
-        { lesson: 7, title: "Leisure time", topicId: "hobbies" }
-      ]
-    }
-  ];
-  var bookHomeCategories = [
-    {
-      id: "first-steps",
-      zhTitle: "\u7B2C\u4E00\u9636\u6BB5",
-      enTitle: "First Steps",
-      hint: "Book 1A and 1B: first speaking, family, colours, food",
-      accent: "#be5b49",
-      iconEmoji: "\u{1F331}",
-      bookIds: ["1a", "1b"]
-    },
-    {
-      id: "build-core",
-      zhTitle: "\u7B2C\u4E8C\u9636\u6BB5",
-      enTitle: "Build the Core",
-      hint: "Book 2A and 2B: toys, school, time, daily language",
-      accent: "#6d8a4f",
-      iconEmoji: "\u{1F9E9}",
-      bookIds: ["2a", "2b"]
-    },
-    {
-      id: "expand-language",
-      zhTitle: "\u7B2C\u4E09\u9636\u6BB5",
-      enTitle: "Expand the Language",
-      hint: "Book 3A and 3B: birthdays, requests, backpack, hobbies",
-      accent: "#517b8d",
-      iconEmoji: "\u{1F4D8}",
-      bookIds: ["3a", "3b"]
-    },
-    {
-      id: "real-life-use",
-      zhTitle: "\u7B2C\u56DB\u9636\u6BB5",
-      enTitle: "Real-Life Use",
-      hint: "Book 4A and 4B: routines, weather, transport, school life",
-      accent: "#8f6988",
-      iconEmoji: "\u{1F5E3}\uFE0F",
-      bookIds: ["4a", "4b"]
-    }
-  ];
-  var topicGroups = [
-    {
-      id: "foundations",
-      label: "Foundations",
-      description: "The first speaking patterns young learners need most.",
-      topicIds: ["numbers", "multiplication-rhyme", "greetings", "polite-words", "introductions", "age", "identity"]
-    },
-    {
-      id: "me-and-family",
-      label: "Me & Family",
-      description: "Personal, family, body, clothes, and everyday child language.",
-      topicIds: ["family", "body", "animals", "colours", "clothes"]
-    },
-    {
-      id: "daily-world",
-      label: "Daily World",
-      description: "Food, hobbies, routines, weather, and the world around the child.",
-      topicIds: ["food", "food-preferences", "meals-feelings", "toys", "hobbies", "comparisons", "positions", "transport", "daily-life", "weather"]
-    },
-    {
-      id: "school-and-time",
-      label: "School & Time",
-      description: "Practical classroom, calendar, and time-based language.",
-      topicIds: ["weekdays", "time-date", "dates", "stationery", "school-supplies", "classroom", "school", "school-subjects"]
-    }
-  ];
-  var topicCardMeta = {
-    numbers: { zhTitle: "\u6570\u5B57", enTitle: "Numbers", hint: "Count, hear, and use numbers" },
-    "multiplication-rhyme": { zhTitle: "\u4E5D\u4E5D\u4E58\u6CD5", enTitle: "Multiplication Rhyme", hint: "Classic rhythm practice" },
-    greetings: { zhTitle: "\u6253\u62DB\u547C", enTitle: "Greetings", hint: "Hello, good morning, goodbye" },
-    "polite-words": { zhTitle: "\u793C\u8C8C\u7528\u8BED", enTitle: "Polite Words", hint: "Thank you, sorry, please" },
-    introductions: { zhTitle: "\u4ECB\u7ECD\u81EA\u5DF1", enTitle: "Introductions", hint: "Say your name and meet friends" },
-    age: { zhTitle: "\u5E74\u9F84", enTitle: "Age", hint: "Ask and say how old you are" },
-    identity: { zhTitle: "\u56FD\u5BB6\u548C\u8BED\u8A00", enTitle: "Countries & Languages", hint: "Say where you are from and what you speak" },
-    family: { zhTitle: "\u5BB6\u4EBA", enTitle: "Family", hint: "Mom, dad, siblings, grandparents" },
-    body: { zhTitle: "\u8EAB\u4F53", enTitle: "Body", hint: "Tap body parts and listen" },
-    animals: { zhTitle: "\u52A8\u7269", enTitle: "Animals", hint: "Pets and favorite animals" },
-    colours: { zhTitle: "\u989C\u8272", enTitle: "Colours", hint: "Red, yellow, blue, green" },
-    food: { zhTitle: "\u98DF\u7269\u548C\u996E\u6599", enTitle: "Food & Drinks", hint: "Fruit, vegetables, snacks, drinks" },
-    "food-preferences": { zhTitle: "\u559C\u6B22\u548C\u4E0D\u559C\u6B22", enTitle: "Food Preferences", hint: "Ask and say what you like to eat" },
-    "meals-feelings": { zhTitle: "\u5348\u996D\u548C\u611F\u89C9", enTitle: "Meals & Feelings", hint: "Lunch, hungry, thirsty" },
-    weekdays: { zhTitle: "\u661F\u671F", enTitle: "Days of the Week", hint: "Monday to Sunday" },
-    "time-date": { zhTitle: "\u65F6\u95F4", enTitle: "Time & Routines", hint: "Clock and daily routines" },
-    dates: { zhTitle: "\u65E5\u671F", enTitle: "Dates & Months", hint: "Months, dates, birthdays" },
-    stationery: { zhTitle: "\u6211\u7684\u6587\u5177", enTitle: "My Stationery", hint: "My things, colors, and measure words" },
-    "school-supplies": { zhTitle: "\u6587\u5177\u548C\u4E66\u5305", enTitle: "Stationery & Backpack", hint: "Pencil, ruler, books, backpack" },
-    classroom: { zhTitle: "\u6559\u5BA4", enTitle: "Classroom", hint: "Classroom, table, chair, board" },
-    school: { zhTitle: "\u6211\u4EEC\u7684\u5B66\u6821", enTitle: "Our School", hint: "Library, playground, cafeteria" },
-    "school-subjects": { zhTitle: "\u5B66\u6821\u5B66\u79D1", enTitle: "School Subjects", hint: "Chinese, English, music, art, PE" },
-    hobbies: { zhTitle: "\u7231\u597D", enTitle: "Hobbies", hint: "Reading, music, sports, games" },
-    toys: { zhTitle: "\u73A9\u5177", enTitle: "Toys", hint: "Toy car, train, airplane" },
-    clothes: { zhTitle: "\u8863\u670D", enTitle: "Clothes", hint: "Dress for the day" },
-    comparisons: { zhTitle: "\u63CF\u8FF0\u548C\u6BD4\u8F83", enTitle: "Descriptions & Comparisons", hint: "Big, small, long, short" },
-    positions: { zhTitle: "\u4F4D\u7F6E\u548C\u65B9\u5411", enTitle: "Positions & Directions", hint: "Up, down, inside, outside" },
-    transport: { zhTitle: "\u4EA4\u901A", enTitle: "Transportation", hint: "Walk, bike, bus, train" },
-    "daily-life": { zhTitle: "\u6211\u7684\u623F\u95F4", enTitle: "My Room", hint: "Rooms and furniture" },
-    weather: { zhTitle: "\u5929\u6C14", enTitle: "Weather", hint: "Sun, rain, snow, wind" }
-  };
-  var learningHomeCategories = [
-    {
-      id: "foundations",
-      zhTitle: "\u5F00\u53E3\u8BF4\u4E2D\u6587",
-      enTitle: "Start Speaking",
-      hint: "Numbers, greetings, names, age, identity",
-      accent: "#be5b49",
-      iconSrc: "assets/navigation-icons/lele-wave-icon.webp",
-      topicIds: ["numbers", "greetings", "polite-words", "introductions", "age", "identity", "multiplication-rhyme"]
-    },
-    {
-      id: "me-family",
-      zhTitle: "\u6211\u548C\u5BB6\u4EBA",
-      enTitle: "Me & Family",
-      hint: "Family, body, clothes",
-      accent: "#aa7051",
-      iconEmoji: "\u{1F3E0}",
-      topicIds: ["family", "body", "clothes"]
-    },
-    {
-      id: "time-daily",
-      zhTitle: "\u65F6\u95F4\u548C\u65E5\u5E38",
-      enTitle: "Time & Daily Life",
-      hint: "Week, time, dates, routines, home",
-      accent: "#517b8d",
-      iconSrc: "assets/illustrated-clocks/10oclock.webp",
-      topicIds: ["weekdays", "time-date", "dates", "comparisons", "positions", "transport", "daily-life"]
-    },
-    {
-      id: "school-life",
-      zhTitle: "\u5B66\u6821\u751F\u6D3B",
-      enTitle: "School Life",
-      hint: "Classroom, backpack, subjects",
-      accent: "#6d8a4f",
-      iconEmoji: "\u{1F3EB}",
-      topicIds: ["stationery", "school-supplies", "classroom", "school", "school-subjects"]
-    },
-    {
-      id: "food",
-      zhTitle: "\u98DF\u7269",
-      enTitle: "Food",
-      hint: "Food words, preferences, and meals",
-      accent: "#c48d46",
-      iconSrc: "assets/navigation-icons/burger-fries-icon.webp",
-      topicIds: ["food", "food-preferences", "meals-feelings"]
-    },
-    {
-      id: "world",
-      zhTitle: "\u81EA\u7136\u548C\u989C\u8272",
-      enTitle: "World Around Us",
-      hint: "Weather, animals, colours",
-      accent: "#6f7fa4",
-      iconSrc: "assets/navigation-icons/panda-bamboo-icon.webp",
-      topicIds: ["weather", "animals", "colours"]
-    },
-    {
-      id: "play",
-      zhTitle: "\u5174\u8DA3\u548C\u73A9\u5177",
-      enTitle: "Play & Hobbies",
-      hint: "Toys, sports, music, games",
-      accent: "#8f6988",
-      iconSrc: "assets/navigation-icons/teddy-robot-icon.webp",
-      topicIds: ["toys", "hobbies"]
-    }
-  ];
   var state = {
     currentView: "topics",
     selectedTopicId: "numbers",
