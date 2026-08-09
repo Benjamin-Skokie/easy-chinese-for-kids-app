@@ -8,11 +8,18 @@
     getSceneLinePauseMs,
     schedule = globalThis.setTimeout
   } = {}) {
+    const preferredVoiceNames = ["tingting", "ting-ting", "meijia", "mei-jia", "sinji", "sin-ji"];
+    function preferredChineseVoice() {
+      const voices = synthesis?.getVoices?.() ?? [];
+      return preferredVoiceNames.map((name) => voices.find((voice) => voice.name.toLowerCase() === name)).find(Boolean);
+    }
     function chineseUtterance2(text, rate) {
       const utterance = createUtterance(text);
       utterance.lang = "zh-CN";
       utterance.rate = rate;
       utterance.pitch = 1;
+      const voice = preferredChineseVoice();
+      if (voice) utterance.voice = voice;
       return utterance;
     }
     function speak2(text, rate = 0.8) {

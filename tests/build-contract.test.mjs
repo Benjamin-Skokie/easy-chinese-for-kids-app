@@ -33,6 +33,20 @@ test("audio cancels the prior utterance before speaking a new phrase", () => {
   assert.deepEqual(spoken[0], { text: "你好", lang: "zh-CN", rate: 0.78, pitch: 1 });
 });
 
+test("audio prefers the clear Mandarin female voice when it is installed", () => {
+  const spoken = [];
+  const tingting = { name: "Tingting", lang: "zh-CN" };
+  const audio = createAudioService({
+    synthesis: { cancel: () => {}, speak: (utterance) => spoken.push(utterance), getVoices: () => [{ name: "Eddy", lang: "zh-CN" }, tingting] },
+    createUtterance: (text) => ({ text }),
+    getSceneRate: () => 0.64,
+    getSceneLinePauseMs: () => 280
+  });
+
+  audio.speak("你好");
+  assert.equal(spoken[0].voice, tingting);
+});
+
 test("router preserves the existing topic query and detail hash contract", () => {
   const location = { pathname: "/index.html", search: "?topic=weekdays", hash: "#topic-detail" };
   assert.equal(topicIdFromLocation(location, (id) => id === "weekdays"), "weekdays");
