@@ -12,6 +12,7 @@ import { schoolSuppliesSentenceBuilds, schoolSuppliesTopicData } from "./feature
 import { classroomTopicData } from "./features/school-life/classroom.js";
 import { schoolSentenceBuilds as schoolLessonSentenceBuilds, schoolTopicData as schoolLessonTopicData } from "./features/school-life/school.js";
 import { schoolSubjectsSentenceBuilds as schoolLessonSubjectsSentenceBuilds, schoolSubjectsTopicData } from "./features/school-life/school-subjects.js";
+import { foodSentenceBuilds, foodTopicData } from "./features/food/food.js";
 import { createSharedLessonPractice } from "./games/shared-lesson-practice.js";
 
 const topicData = [
@@ -1090,53 +1091,7 @@ const schoolTopicData = {
   classroom: classroomTopicData,
   school: schoolLessonTopicData,
   "school-subjects": schoolSubjectsTopicData,
-  food: {
-    practiceSummary: "Listen for a food word, then build a sentence from the picture.",
-    scenes: [
-      {
-        id: "fruit",
-        label: "Fruit",
-        hanzi: "我喜欢苹果、香蕉、葡萄和草莓。",
-        pinyin: "wǒ xǐ huan píng guǒ, xiāng jiāo, pú tao hé cǎo méi.",
-        english: "I like apples, bananas, grapes, and strawberries.",
-        audio: "我喜欢苹果香蕉葡萄和草莓",
-        imagePath: "assets/illustrated-food/fruit-group-1b-core.webp"
-      }
-    ],
-    words: [
-      ["apple", "苹果", "píng guǒ", "apple", "apple.webp"],
-      ["banana", "香蕉", "xiāng jiāo", "banana", "banana.webp"],
-      ["grapes", "葡萄", "pú tao", "grapes", "grapes.webp"],
-      ["strawberry", "草莓", "cǎo méi", "strawberry", "strawberry.webp"],
-      ["orange", "橙子", "chéng zi", "orange", "orange.webp"],
-      ["pear", "梨", "lí", "pear", "pear.webp"],
-      ["watermelon", "西瓜", "xī guā", "watermelon", "watermelon.webp"],
-      ["peach", "桃子", "táo zi", "peach", "peach.webp"],
-      ["cherries", "樱桃", "yīng táo", "cherries", "cherries.webp"],
-      ["candies", "糖果", "táng guǒ", "candies", "candies.webp"],
-      ["chocolate", "巧克力", "qiǎo kè lì", "chocolate", "chocolate.webp"],
-      ["ice-cream", "冰淇淋", "bīng qí lín", "ice cream", "ice-cream.webp"],
-      ["cake", "蛋糕", "dàn gāo", "cake", "cake.webp"],
-      ["pizza", "披萨", "pī sà", "pizza", "pizza.webp"],
-      ["milk", "牛奶", "niú nǎi", "milk", "milk.webp"],
-      ["juice", "果汁", "guǒ zhī", "juice", "juice.webp"],
-      ["cola", "可乐", "kě lè", "Coke", "cola.webp"],
-      ["chow-mein", "炒面", "chǎo miàn", "chow mein", "chow-mein.webp"],
-      ["fried-rice", "炒饭", "chǎo fàn", "fried rice", "fried-rice.webp"],
-      ["french-fries", "薯条", "shǔ tiáo", "French fries", "french-fries.webp"],
-      ["hamburger", "汉堡", "hàn bǎo", "hamburger", "hamburger.webp"],
-      ["hot-dog", "热狗", "rè gǒu", "hot dog", "hot-dog.webp"],
-      ["carrot", "胡萝卜", "hú luó bo", "carrot", "carrot.webp"],
-      ["cucumber", "黄瓜", "huáng guā", "cucumber", "cucumber.webp"],
-      ["tomato", "西红柿", "xī hóng shì", "tomato", "tomato.webp"],
-      ["broccoli", "西兰花", "xī lán huā", "broccoli", "broccoli.webp"],
-      ["potatoes", "土豆", "tǔ dòu", "potatoes", "potatoes.webp"]
-    ].map(([id, hanzi, pinyin, english, file]) => ({ id, hanzi, pinyin, english, audio: hanzi, imagePath: `assets/illustrated-food/${file}` })),
-    review: [
-      { pattern: "吃", pinyin: "chī", english: "eat solid food", example: "Use 吃 for food you chew: 吃苹果、披萨、炒饭。" },
-      { pattern: "喝", pinyin: "hē", english: "drink liquids", example: "Use 喝 for drinks: 喝水、牛奶、果汁。" }
-    ]
-  },
+  food: foodTopicData,
   "food-preferences": {
     practiceSummary: "Make your own sentences about foods you like and do not like.",
     scenes: [
@@ -1334,10 +1289,7 @@ const schoolSentenceBuilds = {
   "school-supplies": schoolSuppliesSentenceBuilds,
   school: schoolLessonSentenceBuilds,
   "school-subjects": schoolLessonSubjectsSentenceBuilds,
-  food: [
-    { id: "fruit", imagePath: "assets/illustrated-food/fruit-group-1b-core.webp", target: ["我", "吃", "苹果"], distractors: ["喝", "学校", "教室"], pinyin: "wǒ chī píng guǒ.", english: "I eat an apple." },
-    { id: "milk", imagePath: "assets/illustrated-food/milk.webp", target: ["我", "喝", "牛奶"], distractors: ["吃", "学校", "教室"], pinyin: "wǒ hē niú nǎi.", english: "I drink milk." }
-  ],
+  food: foodSentenceBuilds,
   "meals-feelings": [
     { id: "lunch", imagePath: "assets/illustrated-meals/anan-eating-school-lunch.webp", target: ["我", "午饭", "喝了", "牛奶", "吃了", "披萨"], distractors: ["要", "水", "学校"], pinyin: "wǒ wǔ fàn hē le niú nǎi, chī le pī sà.", english: "For lunch, I drank milk and ate pizza." },
     { id: "hungry", imagePath: "assets/illustrated-food-feelings/hungry.webp", target: ["我", "饿", "了", "我", "要", "吃", "炒饭"], distractors: ["喝", "水", "学校"], pinyin: "wǒ è le, wǒ yào chī chǎo fàn.", english: "I am hungry. I want to eat fried rice." },

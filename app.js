@@ -637,6 +637,59 @@
     { id: "dislikes-math", imagePath: "assets/illustrated-activities/lele_dislikes_math_class.webp", target: ["\u6211", "\u4E0D\u559C\u6B22", "\u6570\u5B66\u8BFE"], distractors: ["\u5B66\u6821", "\u6709", "\u6587\u5177\u76D2"], pinyin: "w\u01D2 b\xF9 x\u01D0 huan sh\xF9 xu\xE9 k\xE8.", english: "I do not like math class." }
   ];
 
+  // src/features/food/food.js
+  var foodTopicData = {
+    practiceSummary: "Listen for a food word, then build a sentence from the picture.",
+    scenes: [
+      {
+        id: "fruit",
+        label: "Fruit",
+        hanzi: "\u6211\u559C\u6B22\u82F9\u679C\u3001\u9999\u8549\u3001\u8461\u8404\u548C\u8349\u8393\u3002",
+        pinyin: "w\u01D2 x\u01D0 huan p\xEDng gu\u01D2, xi\u0101ng ji\u0101o, p\xFA tao h\xE9 c\u01CEo m\xE9i.",
+        english: "I like apples, bananas, grapes, and strawberries.",
+        audio: "\u6211\u559C\u6B22\u82F9\u679C\u9999\u8549\u8461\u8404\u548C\u8349\u8393",
+        imagePath: "assets/illustrated-food/fruit-group-1b-core.webp"
+      }
+    ],
+    words: [
+      ["apple", "\u82F9\u679C", "p\xEDng gu\u01D2", "apple", "apple.webp"],
+      ["banana", "\u9999\u8549", "xi\u0101ng ji\u0101o", "banana", "banana.webp"],
+      ["grapes", "\u8461\u8404", "p\xFA tao", "grapes", "grapes.webp"],
+      ["strawberry", "\u8349\u8393", "c\u01CEo m\xE9i", "strawberry", "strawberry.webp"],
+      ["orange", "\u6A59\u5B50", "ch\xE9ng zi", "orange", "orange.webp"],
+      ["pear", "\u68A8", "l\xED", "pear", "pear.webp"],
+      ["watermelon", "\u897F\u74DC", "x\u012B gu\u0101", "watermelon", "watermelon.webp"],
+      ["peach", "\u6843\u5B50", "t\xE1o zi", "peach", "peach.webp"],
+      ["cherries", "\u6A31\u6843", "y\u012Bng t\xE1o", "cherries", "cherries.webp"],
+      ["candies", "\u7CD6\u679C", "t\xE1ng gu\u01D2", "candies", "candies.webp"],
+      ["chocolate", "\u5DE7\u514B\u529B", "qi\u01CEo k\xE8 l\xEC", "chocolate", "chocolate.webp"],
+      ["ice-cream", "\u51B0\u6DC7\u6DCB", "b\u012Bng q\xED l\xEDn", "ice cream", "ice-cream.webp"],
+      ["cake", "\u86CB\u7CD5", "d\xE0n g\u0101o", "cake", "cake.webp"],
+      ["pizza", "\u62AB\u8428", "p\u012B s\xE0", "pizza", "pizza.webp"],
+      ["milk", "\u725B\u5976", "ni\xFA n\u01CEi", "milk", "milk.webp"],
+      ["juice", "\u679C\u6C41", "gu\u01D2 zh\u012B", "juice", "juice.webp"],
+      ["cola", "\u53EF\u4E50", "k\u011B l\xE8", "Coke", "cola.webp"],
+      ["chow-mein", "\u7092\u9762", "ch\u01CEo mi\xE0n", "chow mein", "chow-mein.webp"],
+      ["fried-rice", "\u7092\u996D", "ch\u01CEo f\xE0n", "fried rice", "fried-rice.webp"],
+      ["french-fries", "\u85AF\u6761", "sh\u01D4 ti\xE1o", "French fries", "french-fries.webp"],
+      ["hamburger", "\u6C49\u5821", "h\xE0n b\u01CEo", "hamburger", "hamburger.webp"],
+      ["hot-dog", "\u70ED\u72D7", "r\xE8 g\u01D2u", "hot dog", "hot-dog.webp"],
+      ["carrot", "\u80E1\u841D\u535C", "h\xFA lu\xF3 bo", "carrot", "carrot.webp"],
+      ["cucumber", "\u9EC4\u74DC", "hu\xE1ng gu\u0101", "cucumber", "cucumber.webp"],
+      ["tomato", "\u897F\u7EA2\u67FF", "x\u012B h\xF3ng sh\xEC", "tomato", "tomato.webp"],
+      ["broccoli", "\u897F\u5170\u82B1", "x\u012B l\xE1n hu\u0101", "broccoli", "broccoli.webp"],
+      ["potatoes", "\u571F\u8C46", "t\u01D4 d\xF2u", "potatoes", "potatoes.webp"]
+    ].map(([id, hanzi, pinyin, english, file]) => ({ id, hanzi, pinyin, english, audio: hanzi, imagePath: `assets/illustrated-food/${file}` })),
+    review: [
+      { pattern: "\u5403", pinyin: "ch\u012B", english: "eat solid food", example: "Use \u5403 for food you chew: \u5403\u82F9\u679C\u3001\u62AB\u8428\u3001\u7092\u996D\u3002" },
+      { pattern: "\u559D", pinyin: "h\u0113", english: "drink liquids", example: "Use \u559D for drinks: \u559D\u6C34\u3001\u725B\u5976\u3001\u679C\u6C41\u3002" }
+    ]
+  };
+  var foodSentenceBuilds = [
+    { id: "fruit", imagePath: "assets/illustrated-food/fruit-group-1b-core.webp", target: ["\u6211", "\u5403", "\u82F9\u679C"], distractors: ["\u559D", "\u5B66\u6821", "\u6559\u5BA4"], pinyin: "w\u01D2 ch\u012B p\xEDng gu\u01D2.", english: "I eat an apple." },
+    { id: "milk", imagePath: "assets/illustrated-food/milk.webp", target: ["\u6211", "\u559D", "\u725B\u5976"], distractors: ["\u5403", "\u5B66\u6821", "\u6559\u5BA4"], pinyin: "w\u01D2 h\u0113 ni\xFA n\u01CEi.", english: "I drink milk." }
+  ];
+
   // src/games/shared-lesson-practice.js
   function createSharedLessonPractice({ state: state2, speak: speak2, elements, documentRef = document }) {
     const { activityPanelTitle: activityPanelTitle2, activityPanelSummary: activityPanelSummary2, activityList: activityList2 } = elements;
@@ -1826,53 +1879,7 @@
     classroom: classroomTopicData,
     school: schoolTopicData,
     "school-subjects": schoolSubjectsTopicData,
-    food: {
-      practiceSummary: "Listen for a food word, then build a sentence from the picture.",
-      scenes: [
-        {
-          id: "fruit",
-          label: "Fruit",
-          hanzi: "\u6211\u559C\u6B22\u82F9\u679C\u3001\u9999\u8549\u3001\u8461\u8404\u548C\u8349\u8393\u3002",
-          pinyin: "w\u01D2 x\u01D0 huan p\xEDng gu\u01D2, xi\u0101ng ji\u0101o, p\xFA tao h\xE9 c\u01CEo m\xE9i.",
-          english: "I like apples, bananas, grapes, and strawberries.",
-          audio: "\u6211\u559C\u6B22\u82F9\u679C\u9999\u8549\u8461\u8404\u548C\u8349\u8393",
-          imagePath: "assets/illustrated-food/fruit-group-1b-core.webp"
-        }
-      ],
-      words: [
-        ["apple", "\u82F9\u679C", "p\xEDng gu\u01D2", "apple", "apple.webp"],
-        ["banana", "\u9999\u8549", "xi\u0101ng ji\u0101o", "banana", "banana.webp"],
-        ["grapes", "\u8461\u8404", "p\xFA tao", "grapes", "grapes.webp"],
-        ["strawberry", "\u8349\u8393", "c\u01CEo m\xE9i", "strawberry", "strawberry.webp"],
-        ["orange", "\u6A59\u5B50", "ch\xE9ng zi", "orange", "orange.webp"],
-        ["pear", "\u68A8", "l\xED", "pear", "pear.webp"],
-        ["watermelon", "\u897F\u74DC", "x\u012B gu\u0101", "watermelon", "watermelon.webp"],
-        ["peach", "\u6843\u5B50", "t\xE1o zi", "peach", "peach.webp"],
-        ["cherries", "\u6A31\u6843", "y\u012Bng t\xE1o", "cherries", "cherries.webp"],
-        ["candies", "\u7CD6\u679C", "t\xE1ng gu\u01D2", "candies", "candies.webp"],
-        ["chocolate", "\u5DE7\u514B\u529B", "qi\u01CEo k\xE8 l\xEC", "chocolate", "chocolate.webp"],
-        ["ice-cream", "\u51B0\u6DC7\u6DCB", "b\u012Bng q\xED l\xEDn", "ice cream", "ice-cream.webp"],
-        ["cake", "\u86CB\u7CD5", "d\xE0n g\u0101o", "cake", "cake.webp"],
-        ["pizza", "\u62AB\u8428", "p\u012B s\xE0", "pizza", "pizza.webp"],
-        ["milk", "\u725B\u5976", "ni\xFA n\u01CEi", "milk", "milk.webp"],
-        ["juice", "\u679C\u6C41", "gu\u01D2 zh\u012B", "juice", "juice.webp"],
-        ["cola", "\u53EF\u4E50", "k\u011B l\xE8", "Coke", "cola.webp"],
-        ["chow-mein", "\u7092\u9762", "ch\u01CEo mi\xE0n", "chow mein", "chow-mein.webp"],
-        ["fried-rice", "\u7092\u996D", "ch\u01CEo f\xE0n", "fried rice", "fried-rice.webp"],
-        ["french-fries", "\u85AF\u6761", "sh\u01D4 ti\xE1o", "French fries", "french-fries.webp"],
-        ["hamburger", "\u6C49\u5821", "h\xE0n b\u01CEo", "hamburger", "hamburger.webp"],
-        ["hot-dog", "\u70ED\u72D7", "r\xE8 g\u01D2u", "hot dog", "hot-dog.webp"],
-        ["carrot", "\u80E1\u841D\u535C", "h\xFA lu\xF3 bo", "carrot", "carrot.webp"],
-        ["cucumber", "\u9EC4\u74DC", "hu\xE1ng gu\u0101", "cucumber", "cucumber.webp"],
-        ["tomato", "\u897F\u7EA2\u67FF", "x\u012B h\xF3ng sh\xEC", "tomato", "tomato.webp"],
-        ["broccoli", "\u897F\u5170\u82B1", "x\u012B l\xE1n hu\u0101", "broccoli", "broccoli.webp"],
-        ["potatoes", "\u571F\u8C46", "t\u01D4 d\xF2u", "potatoes", "potatoes.webp"]
-      ].map(([id, hanzi, pinyin, english, file]) => ({ id, hanzi, pinyin, english, audio: hanzi, imagePath: `assets/illustrated-food/${file}` })),
-      review: [
-        { pattern: "\u5403", pinyin: "ch\u012B", english: "eat solid food", example: "Use \u5403 for food you chew: \u5403\u82F9\u679C\u3001\u62AB\u8428\u3001\u7092\u996D\u3002" },
-        { pattern: "\u559D", pinyin: "h\u0113", english: "drink liquids", example: "Use \u559D for drinks: \u559D\u6C34\u3001\u725B\u5976\u3001\u679C\u6C41\u3002" }
-      ]
-    },
+    food: foodTopicData,
     "food-preferences": {
       practiceSummary: "Make your own sentences about foods you like and do not like.",
       scenes: [
@@ -2069,10 +2076,7 @@
     "school-supplies": schoolSuppliesSentenceBuilds,
     school: schoolSentenceBuilds,
     "school-subjects": schoolSubjectsSentenceBuilds,
-    food: [
-      { id: "fruit", imagePath: "assets/illustrated-food/fruit-group-1b-core.webp", target: ["\u6211", "\u5403", "\u82F9\u679C"], distractors: ["\u559D", "\u5B66\u6821", "\u6559\u5BA4"], pinyin: "w\u01D2 ch\u012B p\xEDng gu\u01D2.", english: "I eat an apple." },
-      { id: "milk", imagePath: "assets/illustrated-food/milk.webp", target: ["\u6211", "\u559D", "\u725B\u5976"], distractors: ["\u5403", "\u5B66\u6821", "\u6559\u5BA4"], pinyin: "w\u01D2 h\u0113 ni\xFA n\u01CEi.", english: "I drink milk." }
-    ],
+    food: foodSentenceBuilds,
     "meals-feelings": [
       { id: "lunch", imagePath: "assets/illustrated-meals/anan-eating-school-lunch.webp", target: ["\u6211", "\u5348\u996D", "\u559D\u4E86", "\u725B\u5976", "\u5403\u4E86", "\u62AB\u8428"], distractors: ["\u8981", "\u6C34", "\u5B66\u6821"], pinyin: "w\u01D2 w\u01D4 f\xE0n h\u0113 le ni\xFA n\u01CEi, ch\u012B le p\u012B s\xE0.", english: "For lunch, I drank milk and ate pizza." },
       { id: "hungry", imagePath: "assets/illustrated-food-feelings/hungry.webp", target: ["\u6211", "\u997F", "\u4E86", "\u6211", "\u8981", "\u5403", "\u7092\u996D"], distractors: ["\u559D", "\u6C34", "\u5B66\u6821"], pinyin: "w\u01D2 \xE8 le, w\u01D2 y\xE0o ch\u012B ch\u01CEo f\xE0n.", english: "I am hungry. I want to eat fried rice." },

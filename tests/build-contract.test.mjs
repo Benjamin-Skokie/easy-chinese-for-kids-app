@@ -15,6 +15,7 @@ import { schoolSuppliesSentenceBuilds, schoolSuppliesTopicData } from "../src/fe
 import { classroomTopicData } from "../src/features/school-life/classroom.js";
 import { schoolSentenceBuilds, schoolTopicData } from "../src/features/school-life/school.js";
 import { schoolSubjectsSentenceBuilds, schoolSubjectsTopicData } from "../src/features/school-life/school-subjects.js";
+import { foodSentenceBuilds, foodTopicData } from "../src/features/food/food.js";
 
 test("the local page loads a single bundled application script", () => {
   const html = readFileSync("index.html", "utf8");
@@ -127,4 +128,10 @@ test("school subjects owns its scenes, words, and sentence practice", () => {
   assert.equal(schoolSubjectsTopicData.scenes.length, 6);
   assert.equal(schoolSubjectsTopicData.words.length, 6);
   assert.equal(schoolSubjectsSentenceBuilds.length, 6);
+});
+
+test("food owns its scenes, words, and sentence practice", () => {
+  assert.equal(foodTopicData.scenes.length, 1);
+  assert.equal(foodTopicData.words.length, 27);
+  assert.equal(foodSentenceBuilds.length, 2);
 });
