@@ -7,6 +7,7 @@ import { comparisonPracticeItems, comparisonVisualItems } from "../src/features/
 import { positionPracticeItems, positionScenes, positionVisualItems } from "../src/features/time-daily-life/positions.js";
 import { transportSentenceTokens, transportVisualItems } from "../src/features/time-daily-life/transport.js";
 import { roomScenes, roomVisualItems } from "../src/features/time-daily-life/rooms.js";
+import { stationeryPictureMatchRounds, stationerySentenceBuilds, stationeryTopicData } from "../src/features/school-life/stationery.js";
 
 const errors = [];
 
@@ -35,6 +36,14 @@ for (const [label, items] of [
   items.forEach((item) => assertAsset(item, `${label}:${item.id}`));
 }
 
+for (const [label, items] of [
+  ["stationery word", stationeryTopicData.words],
+  ["stationery picture-match", stationeryPictureMatchRounds],
+  ["stationery sentence", stationerySentenceBuilds]
+]) {
+  items.forEach((item) => assertAsset(item, `${label}:${item.id}`));
+}
+
 const transportIds = new Set(transportVisualItems.map((item) => item.id));
 Object.keys(transportSentenceTokens).forEach((id) => assert(transportIds.has(id), `transport token entry has no visual: ${id}`));
 transportIds.forEach((id) => assert(transportSentenceTokens[id], `transport visual has no sentence tokens: ${id}`));
@@ -43,6 +52,7 @@ const positionLineCount = positionScenes.reduce((count, scene) => count + scene.
 assert(positionPracticeItems.length === positionLineCount, "position practice items do not match scene lines");
 assert(datePracticeItems.every((item) => item.id && item.hanzi && item.audio), "date practice has an incomplete item");
 assert(comparisonPracticeItems.every((item) => comparisonVisualItems.some((visual) => visual.id === item.id)), "comparison practice references an unknown visual");
+assert(stationerySentenceBuilds.length >= 8, "stationery sentence practice is incomplete");
 
 if (errors.length) {
   console.error(errors.join("\n"));

@@ -10,6 +10,7 @@ import { comparisonPracticeItems, comparisonVisualItems } from "../src/features/
 import { positionPracticeItems, positionScenes, positionVisualItems } from "../src/features/time-daily-life/positions.js";
 import { transportSentenceTokens, transportVisualItems } from "../src/features/time-daily-life/transport.js";
 import { roomScenes, roomVisualItems } from "../src/features/time-daily-life/rooms.js";
+import { stationeryPictureMatchRounds, stationerySentenceBuilds, stationeryTopicData } from "../src/features/school-life/stationery.js";
 
 test("the local page loads a single bundled application script", () => {
   const html = readFileSync("index.html", "utf8");
@@ -88,4 +89,11 @@ test("time and daily life practice data retains every interaction set", () => {
   assert.equal(positionPracticeItems.length, 11);
   assert.equal(comparisonPracticeItems.length, 7);
   assert.equal(Object.keys(transportSentenceTokens).length, 8);
+});
+
+test("stationery owns its scenes, words, and practice rounds", () => {
+  assert.equal(stationeryTopicData.sceneGroups[0].items.length, 4);
+  assert.equal(stationeryTopicData.words.length, 10);
+  assert.equal(stationerySentenceBuilds.length, 8);
+  assert.equal(stationeryPictureMatchRounds.length, 3);
 });

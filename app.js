@@ -303,6 +303,127 @@
     garage: { prefix: ["\u8F66\u5E93", "\u91CC", "\u6709"], target: ["\u8F66\u5E93", "\u91CC", "\u6709", "\u81EA\u884C\u8F66"], unorderedObjects: ["\u81EA\u884C\u8F66"], distractors: ["\u4E66\u684C", "\u6C99\u53D1", "\u7535\u89C6"] }
   };
 
+  // src/features/school-life/stationery.js
+  var stationeryTopicData = {
+    showWords: false,
+    sceneGroups: [
+      {
+        id: "my-things",
+        items: [
+          {
+            id: "my-stationery",
+            label: "My stationery",
+            compactLines: true,
+            lines: [
+              { hanzi: "\u8FD9\u662F\u6211\u7684\u94C5\u7B14\u3002", pinyin: "zh\xE8 sh\xEC w\u01D2 de qi\u0101n b\u01D0.", english: "This is my pencil." },
+              { hanzi: "\u8FD9\u662F\u6211\u7684\u526A\u5200\u3002", pinyin: "zh\xE8 sh\xEC w\u01D2 de ji\u01CEn d\u0101o.", english: "This is my scissors." },
+              { hanzi: "\u8FD9\u662F\u6211\u7684\u6A61\u76AE\u3002", pinyin: "zh\xE8 sh\xEC w\u01D2 de xi\xE0ng p\xED.", english: "This is my eraser." }
+            ],
+            audio: "\u8FD9\u662F\u6211\u7684\u94C5\u7B14\u8FD9\u662F\u6211\u7684\u526A\u5200\u8FD9\u662F\u6211\u7684\u6A61\u76AE",
+            imagePath: "assets/illustrated-possession/i-have-stationery.webp"
+          },
+          {
+            id: "my-classroom-things",
+            label: "My classroom things",
+            lines: [
+              { hanzi: "\u8FD9\u662F\u6211\u7684\u6905\u5B50\u3002", pinyin: "zh\xE8 sh\xEC w\u01D2 de y\u01D0 zi.", english: "This is my chair." },
+              { hanzi: "\u8FD9\u662F\u6211\u7684\u684C\u5B50\u3002", pinyin: "zh\xE8 sh\xEC w\u01D2 de zhu\u014D zi.", english: "This is my table." }
+            ],
+            audio: "\u8FD9\u662F\u6211\u7684\u6905\u5B50\u8FD9\u662F\u6211\u7684\u684C\u5B50",
+            imagePath: "assets/illustrated-stationery/my-chair-and-table.webp"
+          },
+          {
+            id: "my-book",
+            label: "My book",
+            lines: [
+              { hanzi: "\u8FD9\u662F\u6211\u7684\u4E66\u3002", pinyin: "zh\xE8 sh\xEC w\u01D2 de sh\u016B.", english: "This is my book." }
+            ],
+            audio: "\u8FD9\u662F\u6211\u7684\u4E66",
+            imagePath: "assets/illustrated-stationery/my-book-tiantian-landscape.webp"
+          },
+          {
+            id: "three-red-pencils",
+            label: "Three red pencils",
+            lines: [
+              { hanzi: "\u5B89\u5B89\u6709\u4E09\u652F\u7EA2\u8272\u7684\u94C5\u7B14\u3002", pinyin: "\u0101n \u0101n y\u01D2u s\u0101n zh\u012B h\xF3ng s\xE8 de qi\u0101n b\u01D0.", english: "Anan has three red pencils." }
+            ],
+            audio: "\u5B89\u5B89\u6709\u4E09\u652F\u7EA2\u8272\u7684\u94C5\u7B14",
+            imagePath: "assets/illustrated-stationery/anan-three-red-pencils.webp"
+          }
+        ]
+      }
+    ],
+    words: [
+      ["pencil", "\u94C5\u7B14", "qi\u0101n b\u01D0", "pencil", "pencil.webp"],
+      ["ruler", "\u5C3A\u5B50", "ch\u01D0 zi", "ruler", "ruler.webp"],
+      ["eraser", "\u6A61\u76AE", "xi\xE0ng p\xED", "eraser", "eraser.webp"],
+      ["colored-pencils", "\u5F69\u8272\u94C5\u7B14", "c\u01CEi s\xE8 qi\u0101n b\u01D0", "colored pencils", "colored-pencils.webp"],
+      ["scissors", "\u526A\u5200", "ji\u01CEn d\u0101o", "scissors", "scissors.webp"],
+      ["glue", "\u80F6\u6C34", "ji\u0101o shu\u01D0", "glue", "glue-stick.webp"],
+      ["textbook", "\u8BFE\u672C", "k\xE8 b\u011Bn", "textbook", "textbook.webp"],
+      ["workbook", "\u7EC3\u4E60\u672C", "li\xE0n x\xED b\u011Bn", "workbook", "workbook.webp"],
+      ["chair", "\u6905\u5B50", "y\u01D0 zi", "chair", "chair.webp"],
+      ["table", "\u684C\u5B50", "zhu\u014D zi", "table", "table.webp"]
+    ].map(([id, hanzi, pinyin, english, file]) => ({ id, hanzi, pinyin, english, audio: hanzi, imagePath: `assets/illustrated-stationery/${file}` })),
+    review: [
+      { pattern: "\u8FD9\u662F\u6211\u7684\u2026\u2026", pinyin: "zh\xE8 sh\xEC w\u01D2 de...", english: "This is my ...", example: "\u8FD9\u662F\u6211\u7684\u94C5\u7B14\u3002", examplePinyin: "zh\xE8 sh\xEC w\u01D2 de qi\u0101n b\u01D0.", exampleEnglish: "This is my pencil." },
+      { pattern: "\u6709 + \u6570\u91CF + \u989C\u8272 + \u6587\u5177", pinyin: "y\u01D2u + sh\xF9 li\xE0ng + y\xE1n s\xE8 + w\xE9n j\xF9", english: "has + number + color + school thing", example: "\u5B89\u5B89\u6709\u4E09\u652F\u7EA2\u8272\u7684\u94C5\u7B14\u3002", examplePinyin: "\u0101n \u0101n y\u01D2u s\u0101n zh\u012B h\xF3ng s\xE8 de qi\u0101n b\u01D0.", exampleEnglish: "Anan has three red pencils." },
+      { pattern: "\u4E00\u652F / \u4E00\u628A / \u4E00\u5757", pinyin: "y\xEC zh\u012B / y\xEC b\u01CE / y\xED ku\xE0i", english: "measure words for pens, scissors, and erasers", example: "\u4E00\u652F\u94C5\u7B14\u3002\u4E00\u628A\u526A\u5200\u3002\u4E00\u5757\u6A61\u76AE\u3002", examplePinyin: "y\xEC zh\u012B qi\u0101n b\u01D0. y\xEC b\u01CE ji\u01CEn d\u0101o. y\xED ku\xE0i xi\xE0ng p\xED.", exampleEnglish: "one pencil, one pair of scissors, one eraser" }
+    ]
+  };
+  var stationerySentenceBuilds = [
+    { id: "my-pencil", imagePath: "assets/illustrated-stationery/pencil.webp", target: ["\u8FD9", "\u662F", "\u6211\u7684", "\u94C5\u7B14"], distractors: ["\u6709", "\u4E66\u5305", "\u91CC"], pinyin: "zh\xE8 sh\xEC w\u01D2 de qi\u0101n b\u01D0.", english: "This is my pencil." },
+    { id: "my-chair", imagePath: "assets/illustrated-stationery/chair.webp", target: ["\u8FD9", "\u662F", "\u6211\u7684", "\u6905\u5B50"], distractors: ["\u6709", "\u4E66\u5305", "\u91CC"], pinyin: "zh\xE8 sh\xEC w\u01D2 de y\u01D0 zi.", english: "This is my chair." },
+    { id: "my-book", imagePath: "assets/illustrated-stationery/my-book-tiantian-landscape.webp", target: ["\u8FD9", "\u662F", "\u6211\u7684", "\u4E66"], distractors: ["\u6709", "\u4E66\u5305", "\u91CC"], pinyin: "zh\xE8 sh\xEC w\u01D2 de sh\u016B.", english: "This is my book." },
+    { id: "anan-scissors", imagePath: "assets/illustrated-possession/this-is-my-scissors.webp", target: ["\u5B89\u5B89", "\u6709", "\u526A\u5200"], distractors: ["\u8FD9\u662F", "\u6211\u7684", "\u4E66\u5305"], pinyin: "\u0101n \u0101n y\u01D2u ji\u01CEn d\u0101o.", english: "Anan has scissors." },
+    { id: "red-pencil", imagePath: "assets/illustrated-stationery/anan-three-red-pencils.webp", target: ["\u5B89\u5B89", "\u6709", "\u4E09\u652F", "\u7EA2\u8272\u7684", "\u94C5\u7B14"], distractors: ["\u4E00\u628A", "\u4E66\u5305", "\u91CC"], pinyin: "\u0101n \u0101n y\u01D2u s\u0101n zh\u012B h\xF3ng s\xE8 de qi\u0101n b\u01D0.", english: "Anan has three red pencils." },
+    { id: "one-pencil", imagePath: "assets/illustrated-measure-words/one-pencil.webp", target: ["\u6211", "\u6709", "\u4E00\u652F", "\u94C5\u7B14"], distractors: ["\u4E00\u628A", "\u4E66\u5305", "\u91CC"], pinyin: "w\u01D2 y\u01D2u y\xEC zh\u012B qi\u0101n b\u01D0.", english: "I have one pencil." },
+    { id: "one-scissors", imagePath: "assets/illustrated-measure-words/one-scissors.webp", target: ["\u6211", "\u6709", "\u4E00\u628A", "\u526A\u5200"], distractors: ["\u4E00\u652F", "\u4E66\u5305", "\u91CC"], pinyin: "w\u01D2 y\u01D2u y\xEC b\u01CE ji\u01CEn d\u0101o.", english: "I have one pair of scissors." },
+    { id: "one-eraser", imagePath: "assets/illustrated-measure-words/one-eraser.webp", target: ["\u6211", "\u6709", "\u4E00\u5757", "\u6A61\u76AE"], distractors: ["\u4E00\u652F", "\u4E66\u5305", "\u91CC"], pinyin: "w\u01D2 y\u01D2u y\xED ku\xE0i xi\xE0ng p\xED.", english: "I have one eraser." }
+  ];
+  var stationeryPictureMatchRounds = [
+    {
+      id: "three-red-pencils",
+      imagePath: "assets/illustrated-stationery/three-red-pencils.webp",
+      alt: "three red pencils",
+      target: { measure: "\u4E09\u652F", color: "\u7EA2\u8272\u7684", item: "\u94C5\u7B14" },
+      pinyin: "s\u0101n zh\u012B h\xF3ng s\xE8 de qi\u0101n b\u01D0.",
+      english: "three red pencils"
+    },
+    {
+      id: "orange-scissors",
+      imagePath: "assets/illustrated-stationery/scissors.webp",
+      alt: "orange scissors",
+      target: { measure: "\u4E00\u628A", color: "\u6A59\u8272\u7684", item: "\u526A\u5200" },
+      pinyin: "y\xEC b\u01CE ch\xE9ng s\xE8 de ji\u01CEn d\u0101o.",
+      english: "one pair of orange scissors"
+    },
+    {
+      id: "blue-eraser",
+      imagePath: "assets/illustrated-stationery/blue-eraser.webp",
+      alt: "blue eraser",
+      target: { measure: "\u4E00\u5757", color: "\u84DD\u8272\u7684", item: "\u6A61\u76AE" },
+      pinyin: "y\xED ku\xE0i l\xE1n s\xE8 de xi\xE0ng p\xED.",
+      english: "one blue eraser"
+    }
+  ];
+  var stationeryPictureMatchChoices = {
+    measure: ["\u4E09\u652F", "\u4E00\u628A", "\u4E00\u5757"],
+    color: ["\u7EA2\u8272\u7684", "\u6A59\u8272\u7684", "\u84DD\u8272\u7684"],
+    item: ["\u94C5\u7B14", "\u526A\u5200", "\u6A61\u76AE"]
+  };
+  var stationeryPictureMatchEnglish = {
+    "\u4E09\u652F": "three",
+    "\u4E00\u628A": "one pair",
+    "\u4E00\u5757": "one",
+    "\u7EA2\u8272\u7684": "red",
+    "\u6A59\u8272\u7684": "orange",
+    "\u84DD\u8272\u7684": "blue",
+    "\u94C5\u7B14": "pencil",
+    "\u526A\u5200": "scissors",
+    "\u6A61\u76AE": "eraser"
+  };
+
   // src/games/shared-lesson-practice.js
   function createSharedLessonPractice({ state: state2, speak: speak2, elements, documentRef = document }) {
     const { activityPanelTitle: activityPanelTitle2, activityPanelSummary: activityPanelSummary2, activityList: activityList2 } = elements;
@@ -1482,73 +1603,7 @@
     rooms: roomVisualItems
   };
   var schoolTopicData = {
-    stationery: {
-      showWords: false,
-      sceneGroups: [
-        {
-          id: "my-things",
-          items: [
-            {
-              id: "my-stationery",
-              label: "My stationery",
-              compactLines: true,
-              lines: [
-                { hanzi: "\u8FD9\u662F\u6211\u7684\u94C5\u7B14\u3002", pinyin: "zh\xE8 sh\xEC w\u01D2 de qi\u0101n b\u01D0.", english: "This is my pencil." },
-                { hanzi: "\u8FD9\u662F\u6211\u7684\u526A\u5200\u3002", pinyin: "zh\xE8 sh\xEC w\u01D2 de ji\u01CEn d\u0101o.", english: "This is my scissors." },
-                { hanzi: "\u8FD9\u662F\u6211\u7684\u6A61\u76AE\u3002", pinyin: "zh\xE8 sh\xEC w\u01D2 de xi\xE0ng p\xED.", english: "This is my eraser." }
-              ],
-              audio: "\u8FD9\u662F\u6211\u7684\u94C5\u7B14\u8FD9\u662F\u6211\u7684\u526A\u5200\u8FD9\u662F\u6211\u7684\u6A61\u76AE",
-              imagePath: "assets/illustrated-possession/i-have-stationery.webp"
-            },
-            {
-              id: "my-classroom-things",
-              label: "My classroom things",
-              lines: [
-                { hanzi: "\u8FD9\u662F\u6211\u7684\u6905\u5B50\u3002", pinyin: "zh\xE8 sh\xEC w\u01D2 de y\u01D0 zi.", english: "This is my chair." },
-                { hanzi: "\u8FD9\u662F\u6211\u7684\u684C\u5B50\u3002", pinyin: "zh\xE8 sh\xEC w\u01D2 de zhu\u014D zi.", english: "This is my table." }
-              ],
-              audio: "\u8FD9\u662F\u6211\u7684\u6905\u5B50\u8FD9\u662F\u6211\u7684\u684C\u5B50",
-              imagePath: "assets/illustrated-stationery/my-chair-and-table.webp"
-            },
-            {
-              id: "my-book",
-              label: "My book",
-              lines: [
-                { hanzi: "\u8FD9\u662F\u6211\u7684\u4E66\u3002", pinyin: "zh\xE8 sh\xEC w\u01D2 de sh\u016B.", english: "This is my book." }
-              ],
-              audio: "\u8FD9\u662F\u6211\u7684\u4E66",
-              imagePath: "assets/illustrated-stationery/my-book-tiantian-landscape.webp"
-            },
-            {
-              id: "three-red-pencils",
-              label: "Three red pencils",
-              lines: [
-                { hanzi: "\u5B89\u5B89\u6709\u4E09\u652F\u7EA2\u8272\u7684\u94C5\u7B14\u3002", pinyin: "\u0101n \u0101n y\u01D2u s\u0101n zh\u012B h\xF3ng s\xE8 de qi\u0101n b\u01D0.", english: "Anan has three red pencils." }
-              ],
-              audio: "\u5B89\u5B89\u6709\u4E09\u652F\u7EA2\u8272\u7684\u94C5\u7B14",
-              imagePath: "assets/illustrated-stationery/anan-three-red-pencils.webp"
-            }
-          ]
-        }
-      ],
-      words: [
-        ["pencil", "\u94C5\u7B14", "qi\u0101n b\u01D0", "pencil", "pencil.webp"],
-        ["ruler", "\u5C3A\u5B50", "ch\u01D0 zi", "ruler", "ruler.webp"],
-        ["eraser", "\u6A61\u76AE", "xi\xE0ng p\xED", "eraser", "eraser.webp"],
-        ["colored-pencils", "\u5F69\u8272\u94C5\u7B14", "c\u01CEi s\xE8 qi\u0101n b\u01D0", "colored pencils", "colored-pencils.webp"],
-        ["scissors", "\u526A\u5200", "ji\u01CEn d\u0101o", "scissors", "scissors.webp"],
-        ["glue", "\u80F6\u6C34", "ji\u0101o shu\u01D0", "glue", "glue-stick.webp"],
-        ["textbook", "\u8BFE\u672C", "k\xE8 b\u011Bn", "textbook", "textbook.webp"],
-        ["workbook", "\u7EC3\u4E60\u672C", "li\xE0n x\xED b\u011Bn", "workbook", "workbook.webp"],
-        ["chair", "\u6905\u5B50", "y\u01D0 zi", "chair", "chair.webp"],
-        ["table", "\u684C\u5B50", "zhu\u014D zi", "table", "table.webp"]
-      ].map(([id, hanzi, pinyin, english, file]) => ({ id, hanzi, pinyin, english, audio: hanzi, imagePath: `assets/illustrated-stationery/${file}` })),
-      review: [
-        { pattern: "\u8FD9\u662F\u6211\u7684\u2026\u2026", pinyin: "zh\xE8 sh\xEC w\u01D2 de...", english: "This is my ...", example: "\u8FD9\u662F\u6211\u7684\u94C5\u7B14\u3002", examplePinyin: "zh\xE8 sh\xEC w\u01D2 de qi\u0101n b\u01D0.", exampleEnglish: "This is my pencil." },
-        { pattern: "\u6709 + \u6570\u91CF + \u989C\u8272 + \u6587\u5177", pinyin: "y\u01D2u + sh\xF9 li\xE0ng + y\xE1n s\xE8 + w\xE9n j\xF9", english: "has + number + color + school thing", example: "\u5B89\u5B89\u6709\u4E09\u652F\u7EA2\u8272\u7684\u94C5\u7B14\u3002", examplePinyin: "\u0101n \u0101n y\u01D2u s\u0101n zh\u012B h\xF3ng s\xE8 de qi\u0101n b\u01D0.", exampleEnglish: "Anan has three red pencils." },
-        { pattern: "\u4E00\u652F / \u4E00\u628A / \u4E00\u5757", pinyin: "y\xEC zh\u012B / y\xEC b\u01CE / y\xED ku\xE0i", english: "measure words for pens, scissors, and erasers", example: "\u4E00\u652F\u94C5\u7B14\u3002\u4E00\u628A\u526A\u5200\u3002\u4E00\u5757\u6A61\u76AE\u3002", examplePinyin: "y\xEC zh\u012B qi\u0101n b\u01D0. y\xEC b\u01CE ji\u01CEn d\u0101o. y\xED ku\xE0i xi\xE0ng p\xED.", exampleEnglish: "one pencil, one pair of scissors, one eraser" }
-      ]
-    },
+    stationery: stationeryTopicData,
     "school-supplies": {
       scenes: [
         {
@@ -1968,16 +2023,7 @@
     }
   };
   var schoolSentenceBuilds = {
-    stationery: [
-      { id: "my-pencil", imagePath: "assets/illustrated-stationery/pencil.webp", target: ["\u8FD9", "\u662F", "\u6211\u7684", "\u94C5\u7B14"], distractors: ["\u6709", "\u4E66\u5305", "\u91CC"], pinyin: "zh\xE8 sh\xEC w\u01D2 de qi\u0101n b\u01D0.", english: "This is my pencil." },
-      { id: "my-chair", imagePath: "assets/illustrated-stationery/chair.webp", target: ["\u8FD9", "\u662F", "\u6211\u7684", "\u6905\u5B50"], distractors: ["\u6709", "\u4E66\u5305", "\u91CC"], pinyin: "zh\xE8 sh\xEC w\u01D2 de y\u01D0 zi.", english: "This is my chair." },
-      { id: "my-book", imagePath: "assets/illustrated-stationery/my-book-tiantian-landscape.webp", target: ["\u8FD9", "\u662F", "\u6211\u7684", "\u4E66"], distractors: ["\u6709", "\u4E66\u5305", "\u91CC"], pinyin: "zh\xE8 sh\xEC w\u01D2 de sh\u016B.", english: "This is my book." },
-      { id: "anan-scissors", imagePath: "assets/illustrated-possession/this-is-my-scissors.webp", target: ["\u5B89\u5B89", "\u6709", "\u526A\u5200"], distractors: ["\u8FD9\u662F", "\u6211\u7684", "\u4E66\u5305"], pinyin: "\u0101n \u0101n y\u01D2u ji\u01CEn d\u0101o.", english: "Anan has scissors." },
-      { id: "red-pencil", imagePath: "assets/illustrated-stationery/anan-three-red-pencils.webp", target: ["\u5B89\u5B89", "\u6709", "\u4E09\u652F", "\u7EA2\u8272\u7684", "\u94C5\u7B14"], distractors: ["\u4E00\u628A", "\u4E66\u5305", "\u91CC"], pinyin: "\u0101n \u0101n y\u01D2u s\u0101n zh\u012B h\xF3ng s\xE8 de qi\u0101n b\u01D0.", english: "Anan has three red pencils." },
-      { id: "one-pencil", imagePath: "assets/illustrated-measure-words/one-pencil.webp", target: ["\u6211", "\u6709", "\u4E00\u652F", "\u94C5\u7B14"], distractors: ["\u4E00\u628A", "\u4E66\u5305", "\u91CC"], pinyin: "w\u01D2 y\u01D2u y\xEC zh\u012B qi\u0101n b\u01D0.", english: "I have one pencil." },
-      { id: "one-scissors", imagePath: "assets/illustrated-measure-words/one-scissors.webp", target: ["\u6211", "\u6709", "\u4E00\u628A", "\u526A\u5200"], distractors: ["\u4E00\u652F", "\u4E66\u5305", "\u91CC"], pinyin: "w\u01D2 y\u01D2u y\xEC b\u01CE ji\u01CEn d\u0101o.", english: "I have one pair of scissors." },
-      { id: "one-eraser", imagePath: "assets/illustrated-measure-words/one-eraser.webp", target: ["\u6211", "\u6709", "\u4E00\u5757", "\u6A61\u76AE"], distractors: ["\u4E00\u652F", "\u4E66\u5305", "\u91CC"], pinyin: "w\u01D2 y\u01D2u y\xED ku\xE0i xi\xE0ng p\xED.", english: "I have one eraser." }
-    ],
+    stationery: stationerySentenceBuilds,
     "school-supplies": [
       { id: "stationery", imagePath: "assets/illustrated-stationery/pencil-box.webp", target: ["\u6587\u5177\u76D2", "\u91CC", "\u6709", "\u94C5\u7B14"], distractors: ["\u5B66\u6821", "\u559C\u6B22", "\u56FE\u4E66\u9986"], pinyin: "w\xE9n j\xF9 h\xE9 l\u01D0 y\u01D2u qi\u0101n b\u01D0.", english: "There is a pencil in the pencil case." },
       { id: "eraser", imagePath: "assets/illustrated-stationery/pencil-box.webp", target: ["\u6587\u5177\u76D2", "\u91CC", "\u6709", "\u6A61\u76AE"], distractors: ["\u5B66\u6821", "\u559C\u6B22", "\u56FE\u4E66\u9986"], pinyin: "w\xE9n j\xF9 h\xE9 l\u01D0 y\u01D2u xi\xE0ng p\xED.", english: "There is an eraser in the pencil case." },
@@ -5334,48 +5380,6 @@
     const portableItemIds = /* @__PURE__ */ new Set(["pencil", "ruler", "eraser", "colored-pencils", "scissors", "glue", "pencil-box", "textbook", "workbook"]);
     return schoolPracticeItems("school-supplies").filter((item) => portableItemIds.has(item.id));
   }
-  var stationeryPictureMatchRounds = [
-    {
-      id: "three-red-pencils",
-      imagePath: "assets/illustrated-stationery/three-red-pencils.webp",
-      alt: "three red pencils",
-      target: { measure: "\u4E09\u652F", color: "\u7EA2\u8272\u7684", item: "\u94C5\u7B14" },
-      pinyin: "s\u0101n zh\u012B h\xF3ng s\xE8 de qi\u0101n b\u01D0.",
-      english: "three red pencils"
-    },
-    {
-      id: "orange-scissors",
-      imagePath: "assets/illustrated-stationery/scissors.webp",
-      alt: "orange scissors",
-      target: { measure: "\u4E00\u628A", color: "\u6A59\u8272\u7684", item: "\u526A\u5200" },
-      pinyin: "y\xEC b\u01CE ch\xE9ng s\xE8 de ji\u01CEn d\u0101o.",
-      english: "one pair of orange scissors"
-    },
-    {
-      id: "blue-eraser",
-      imagePath: "assets/illustrated-stationery/blue-eraser.webp",
-      alt: "blue eraser",
-      target: { measure: "\u4E00\u5757", color: "\u84DD\u8272\u7684", item: "\u6A61\u76AE" },
-      pinyin: "y\xED ku\xE0i l\xE1n s\xE8 de xi\xE0ng p\xED.",
-      english: "one blue eraser"
-    }
-  ];
-  var stationeryPictureMatchChoices = {
-    measure: ["\u4E09\u652F", "\u4E00\u628A", "\u4E00\u5757"],
-    color: ["\u7EA2\u8272\u7684", "\u6A59\u8272\u7684", "\u84DD\u8272\u7684"],
-    item: ["\u94C5\u7B14", "\u526A\u5200", "\u6A61\u76AE"]
-  };
-  var stationeryPictureMatchEnglish = {
-    "\u4E09\u652F": "three",
-    "\u4E00\u628A": "one pair",
-    "\u4E00\u5757": "one",
-    "\u7EA2\u8272\u7684": "red",
-    "\u6A59\u8272\u7684": "orange",
-    "\u84DD\u8272\u7684": "blue",
-    "\u94C5\u7B14": "pencil",
-    "\u526A\u5200": "scissors",
-    "\u6A61\u76AE": "eraser"
-  };
   function currentStationeryPictureMatchRound() {
     return stationeryPictureMatchRounds[state.stationeryPictureMatchIndex] ?? stationeryPictureMatchRounds[0];
   }

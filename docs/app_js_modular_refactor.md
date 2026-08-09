@@ -50,6 +50,7 @@ A feature registers its owned topic IDs, creates its scoped state, renders its e
 
 - [ ] Migrate Time & Daily Life in topic-sized commits.
 - [x] Organize Time & Daily Life data into topic-owned files: `weekdays.js`, `time.js`, `dates.js`, `comparisons.js`, `positions.js`, `transport.js`, and `rooms.js`.
+- [x] Move the complete Stationery topic into `src/features/school-life/stationery.js` as the School Life migration pattern.
 - [x] Extract the shared Listen and Choose, Matching Game, and Say It renderer into `src/games/shared-lesson-practice.js` with explicit state, audio, and DOM dependencies.
 - [ ] Migrate School, Food, Foundations, and Family/Home.
 - [ ] Delete the matching legacy code after each replacement passes checks.
