@@ -25,13 +25,15 @@ import { identityConversation, identityCountries, identityQuestion, identityTopi
 import { greetingsGameItemIds, greetingsPractice, greetingsTopic } from "../src/features/foundations/greetings.js";
 import { politeGameItemIds, politePractice, politeWordsTopic } from "../src/features/foundations/polite-words.js";
 import { clothesMatchItems, clothesPractice, clothesTopic } from "../src/features/daily-life/clothes.js";
-import { weatherTopic } from "../src/features/world/weather.js";
+import { natureLesson, natureTopic, weatherLesson, weatherTopic } from "../src/features/world/weather.js";
 import { animalsTopic } from "../src/features/world/animals.js";
-import { coloursTopic } from "../src/features/world/colours.js";
+import { colourLessons, coloursTopic } from "../src/features/world/colours.js";
+import { createWorldRuntime } from "../src/features/world/world-runtime.js";
 import { hobbiesTopic, toysTopic } from "../src/features/play-hobbies/play-hobbies.js";
 import { bodyBonusItemIds, bodyCoreItemIds, bodyDiagramLayout, bodyTopic } from "../src/features/foundations/body.js";
 import { illustratedKids } from "../src/data/characters.js";
 import { bookHomeCategories, books, learningHomeCategories, topicCardMeta, topicGroups } from "../src/data/curriculum.js";
+import { topicData } from "../src/data/topic-registry.js";
 import { buildMultiplicationRhymeItems, buildNumberItem, multiplicationRhymeTopic, numberStages, numbersTopic, telephonePractice } from "../src/features/foundations/numbers.js";
 import { createFoundationState } from "../src/features/foundations/state.js";
 import { createGreetingsController } from "../src/features/foundations/greetings-controller.js";
@@ -219,7 +221,7 @@ test("topic detail rendering and history events are separated from the legacy bo
   assert.match(runtimeSource, /function renderTopicDetail\(/);
 });
 
-test("representative topic links boot after runtime composition", () => {
+test("every learning topic link boots after runtime composition", () => {
   const bootstrap = `
 class Element {
   constructor() {
@@ -254,13 +256,13 @@ globalThis.requestAnimationFrame = (callback) => callback();
 await import(\`./src/app/runtime-wiring.js?topic=\${process.env.TOPIC}\${Date.now()}\`);
 `;
 
-  for (const topic of ["introductions", "numbers", "family", "body", "school", "food", "weekdays"]) {
+  for (const topic of topicData) {
     const result = spawnSync(process.execPath, ["--input-type=module", "-e", bootstrap], {
       cwd: process.cwd(),
-      env: { ...process.env, TOPIC: topic },
+      env: { ...process.env, TOPIC: topic.id },
       encoding: "utf8"
     });
-    assert.equal(result.status, 0, `${topic} failed to boot:\n${result.stderr}`);
+    assert.equal(result.status, 0, `${topic.id} failed to boot:\n${result.stderr}`);
   }
 });
 
@@ -482,9 +484,83 @@ test("clothes owns its scenes and picture matching set", () => {
   assert.equal(clothesMatchItems.length, 5);
 });
 
-test("weather owns its standalone topic definition", () => {
+test("Nature and Weather remain separate book topics", () => {
   assert.equal(weatherTopic.id, "weather");
   assert.equal(weatherTopic.steps.length, 1);
+  assert.equal(weatherTopic.steps[0].book, "4B");
+  assert.equal(natureTopic.id, "nature");
+  assert.equal(natureTopic.steps.length, 1);
+  assert.equal(natureTopic.steps[0].book, "3B");
+  assert.equal(natureLesson.items.length, 8);
+  assert.equal(natureLesson.sentences.length, 8);
+  assert.equal(weatherLesson.items.length, 6);
+  assert.match(natureLesson.imagePath, /illustrated-nature\/day-night-nature\.webp/);
+});
+
+test("Weather groups repeated scene artwork into a two-by-two scene grid", () => {
+  const focusExplorer = { innerHTML: "", querySelectorAll: () => [] };
+  const runtime = createWorldRuntime({
+    state: { showEnglish: true, showPinyin: true },
+    currentTopic: () => weatherTopic,
+    currentBook: () => ({ id: "4b", label: "Book 4B" }),
+    currentLesson: () => ({ lesson: 1 }),
+    focusExplorer,
+    speak: () => {},
+    selectFocusItem: () => {}
+  });
+
+  runtime.renderWorldExplorer();
+  assert.equal((focusExplorer.innerHTML.match(/school-scene-card/g) ?? []).length, 4);
+  assert.doesNotMatch(focusExplorer.innerHTML, />Scenes</);
+  assert.match(focusExplorer.innerHTML, /下雨天/);
+  assert.match(focusExplorer.innerHTML, /下雪天/);
+  assert.doesNotMatch(focusExplorer.innerHTML, /Book words/);
+  assert.match(focusExplorer.innerHTML, /Useful notes/);
+  assert.doesNotMatch(focusExplorer.innerHTML, /下 \+ weather \+ 了/);
+  assert.match(focusExplorer.innerHTML, /今天很 \+ 冷 \/ 热/);
+  assert.match(focusExplorer.innerHTML, /今天是 \+ 天气/);
+  assert.match(focusExplorer.innerHTML, /今天是晴天/);
+  assert.match(focusExplorer.innerHTML, /今天很热/);
+  assert.match(focusExplorer.innerHTML, /下雪了/);
+  assert.match(focusExplorer.innerHTML, /今天很冷/);
+  assert.match(focusExplorer.innerHTML, /下雪了。今天很冷。/);
+});
+
+test("Weather practice connects a weather sentence to getting ready", () => {
+  const focusExplorer = { innerHTML: "", querySelectorAll: () => [] };
+  const activityPanelTitle = { textContent: "" };
+  const activityPanelSummary = { textContent: "" };
+  const activityList = { className: "", innerHTML: "", querySelector: () => null, querySelectorAll: () => [] };
+  const runtime = createWorldRuntime({
+    state: { showEnglish: true, showPinyin: true, tapAudioEnabled: true },
+    currentTopic: () => weatherTopic,
+    currentBook: () => ({ id: "4b", label: "Book 4B" }),
+    currentLesson: () => ({ lesson: 1 }),
+    focusExplorer,
+    activityPanelTitle,
+    activityPanelSummary,
+    activityList,
+    speak: () => {},
+    selectFocusItem: () => {},
+    renderActivityPanel: () => {}
+  });
+
+  runtime.renderWorldPractice(weatherTopic);
+  assert.equal(activityPanelTitle.textContent, "Let's practice");
+  assert.match(activityList.innerHTML, /Get ready for the weather/);
+  assert.match(activityList.innerHTML, /下雨了。带什么？|下雪了。今天很冷。穿什么？|今天是晴天。今天很热。穿什么？|今天刮大风。穿什么？/);
+  assert.match(activityList.innerHTML, /data-weather-dress-choice="umbrella"/);
+  assert.match(activityList.innerHTML, /data-weather-dress-choice="knit-hat"/);
+  assert.match(activityList.innerHTML, /data-weather-dress-choice="shorts"/);
+  assert.match(activityList.innerHTML, /data-weather-dress-choice="jacket"/);
+  assert.match(activityList.innerHTML, /Fill in the weather/);
+  assert.match(activityList.innerHTML, /今天<span class="weather-fill-blank">____<\/span>，很<span class="weather-fill-blank">____<\/span>，/);
+  assert.match(activityList.innerHTML, /data-weather-fill-weather="下雨了"/);
+  assert.match(activityList.innerHTML, /data-weather-fill-weather="下雪了"/);
+  assert.match(activityList.innerHTML, /data-weather-fill-weather="是晴天"/);
+  assert.match(activityList.innerHTML, /data-weather-fill-weather="刮大风"/);
+  assert.match(activityList.innerHTML, /data-weather-fill-temperature="冷"/);
+  assert.match(activityList.innerHTML, /data-weather-fill-temperature="热"/);
 });
 
 test("animals owns its standalone topic definition", () => {
@@ -492,9 +568,80 @@ test("animals owns its standalone topic definition", () => {
   assert.equal(animalsTopic.steps.length, 2);
 });
 
-test("colours owns its topic definition and word set", () => {
+test("colours covers both book colour sets with pictured examples", () => {
   assert.equal(coloursTopic.id, "colours");
-  assert.equal(coloursTopic.focusItems.length, 3);
+  assert.equal(colourLessons["1b"].items.length, 4);
+  assert.equal(colourLessons["2a"].items.length, 9);
+  assert(colourLessons["2a"].items.every((item) => item.imagePath));
+});
+
+test("the Colours topic defaults to the complete nine-colour set", () => {
+  const runtime = createWorldRuntime({
+    state: {},
+    currentTopic: () => coloursTopic,
+    currentBook: () => ({ id: "1b", label: "Book 1B" }),
+    currentLesson: () => ({ lesson: 6 }),
+    focusExplorer: { innerHTML: "", querySelectorAll: () => [] },
+    speak: () => {},
+    selectFocusItem: () => {}
+  });
+
+  assert.equal(runtime.focusItemsForTopic(coloursTopic).length, 9);
+});
+
+test("the Colours practice starts with a randomized colour-and-object mission", () => {
+  const activityList = {
+    className: "",
+    innerHTML: "",
+    querySelector: () => null,
+    querySelectorAll: () => []
+  };
+  const runtime = createWorldRuntime({
+    state: { showEnglish: true, showPinyin: true, tapAudioEnabled: true },
+    currentTopic: () => coloursTopic,
+    currentBook: () => ({ id: "2a", label: "Book 2A" }),
+    currentLesson: () => ({ lesson: 7 }),
+    focusExplorer: { innerHTML: "", querySelectorAll: () => [] },
+    speak: () => {},
+    selectFocusItem: () => {},
+    activityPanelTitle: { textContent: "" },
+    activityPanelSummary: { textContent: "" },
+    activityList,
+    renderActivityPanel: () => {}
+  });
+
+  runtime.renderWorldPractice(coloursTopic);
+  assert.match(activityList.innerHTML, /Colour mission/);
+  assert.match(activityList.innerHTML, /data-world-mission-pick/);
+  assert.match(activityList.innerHTML, /Every round mixes the object colours and their positions/);
+  assert.doesNotMatch(activityList.innerHTML, /Find something orange/);
+  assert.doesNotMatch(activityList.innerHTML, /Next mission/);
+});
+
+test("learner audio controls use the shared green Play button", () => {
+  const styles = readFileSync("styles.css", "utf8");
+  const multiplicationSource = readFileSync("src/features/foundations/foundations-runtime.js", "utf8");
+  const worldSource = readFileSync("src/features/world/world-runtime.js", "utf8");
+
+  assert.match(styles, /\.small-button\.is-play-button/);
+  assert.match(styles, /border-radius: 999px/);
+  assert.match(styles, /#3f8d58/);
+  assert.match(worldSource, /data-world-mission-play>Play</);
+  assert.match(multiplicationSource, /data-multiplication-play-all>Play</);
+  assert.match(multiplicationSource, /data-multiplication-pause/);
+  assert.match(multiplicationSource, /data-multiplication-stop/);
+});
+
+test("navigation display toggles use the compact speaker, Pī, and ABC icon set", () => {
+  const navigationSource = readFileSync("src/core/navigation-runtime.js", "utf8");
+  const displaySource = readFileSync("src/core/display-controls-runtime.js", "utf8");
+  const styles = readFileSync("styles.css", "utf8");
+
+  assert.match(navigationSource, /aria-label="Sound on"/);
+  assert.match(displaySource, /learning-display-sound-icon/);
+  assert.match(displaySource, /learning-display-pinyin-icon[\s\S]*>ā</);
+  assert.match(displaySource, /learning-display-english-icon/);
+  assert.match(styles, /\.learning-display-toggle \{[\s\S]*width: 56px/);
 });
 
 test("play and hobbies owns its toys and hobbies topics", () => {

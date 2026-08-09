@@ -42,6 +42,7 @@ Different asset types should share one visual family, but not all use the same a
 ### Reusable avatar and dictionary assets
 
 - Reusable people, kids, family members, stationery, fruit, clothing, and similar asset-store images should be cleaner than scenes.
+- For a single object, animal, or other non-scene vocabulary asset, use a pure white background by default. Use another background only when the lesson explicitly requires it.
 - Prefer a plain white background, or an almost invisible neutral background when needed.
 - Use centered head-and-shoulders framing for character avatars unless a different crop is required.
 - Keep silhouettes clean and fully visible.

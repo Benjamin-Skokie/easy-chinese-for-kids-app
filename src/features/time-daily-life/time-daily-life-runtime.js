@@ -595,7 +595,7 @@ function renderWeekdaysExplorer() {
       <div class="time-asset-grid time-asset-grid-week">
         ${timeDateWeekItems.map((item) => `
           <section class="time-asset-card weekday-scene-card">
-            <div class="greetings-exchange-top"><div><span class="time-asset-hanzi">${item.hanzi}</span></div><button class="small-button is-action-button" type="button" data-weekday-play-scene="${item.id}">Play scene</button></div>
+            <div class="greetings-exchange-top"><div><span class="time-asset-hanzi">${item.hanzi}</span></div><button class="small-button is-play-button" type="button" data-weekday-play-scene="${item.id}">Play</button></div>
             <img class="time-asset-image" src="${item.imagePath}" alt="${item.english}" />
             <span class="time-asset-context">${item.context}</span>
             ${state.showPinyin ? `<span class="time-asset-context-pinyin">${item.contextPinyin}</span>` : ""}
@@ -634,7 +634,7 @@ function renderDatesExplorer() {
           ${state.showPinyin ? '<p class="time-months-pinyin">yī nián yǒu shí èr ge yuè.</p>' : ""}
           ${state.showEnglish ? '<p class="time-months-english">There are twelve months in a year.</p>' : ""}
         </div>
-        <button class="small-button is-action-button" type="button" data-months-play>Play audio</button>
+        <button class="small-button is-play-button" type="button" data-months-play>Play</button>
       </section>
       ${renderTimeAssetGrid(timeDateMonthItems, "month")}
       <section class="visual-topic-notes">
@@ -721,7 +721,7 @@ function renderRoomsExplorer() {
       <div class="greetings-practice-grid room-scene-grid">
         ${roomScenes.map((scene) => `
           <section class="greetings-exchange room-scene-card">
-            <div class="greetings-exchange-top"><div><p class="body-match-kicker">${scene.label}</p></div><button class="small-button is-action-button" type="button" data-room-play-scene="${scene.id}">Play scene</button></div>
+            <div class="greetings-exchange-top"><div><p class="body-match-kicker">${scene.label}</p></div><button class="small-button is-play-button" type="button" data-room-play-scene="${scene.id}">Play</button></div>
             <div class="room-scene-layout">
               <img class="room-scene-image" src="${scene.imagePath}" alt="${scene.english}" />
               <article class="greetings-line-card"><div class="telephone-bubble-copy"><p class="telephone-line-hanzi">${scene.hanzi}</p>${state.showPinyin ? `<p class="telephone-line-pinyin">${scene.pinyin}</p>` : ""}${state.showEnglish ? `<p class="telephone-line-english">${scene.english}</p>` : ""}</div></article>
@@ -762,7 +762,7 @@ function renderPositionsExplorer() {
           .map(
             (scene) => `
               <section class="greetings-exchange">
-                <div class="greetings-exchange-top"><div><p class="body-match-kicker">Scene ${scene.number}</p><p class="greetings-exchange-prompt">${scene.prompt}</p></div><button class="small-button is-action-button" type="button" data-position-play-scene="${scene.id}">Play scene</button></div>
+                <div class="greetings-exchange-top"><div><p class="body-match-kicker">Scene ${scene.number}</p><p class="greetings-exchange-prompt">${scene.prompt}</p></div><button class="small-button is-play-button" type="button" data-position-play-scene="${scene.id}">Play</button></div>
                 <div class="greetings-scene-layout">
                   <div class="greetings-scene-visual"><img class="greetings-scene-image position-scene-image position-scene-image-${scene.id}" src="${scene.imagePath}" alt="${scene.imageAlt}" /></div>
                   <div class="greetings-line-stack">
@@ -814,7 +814,7 @@ function renderTimeDateExplorer() {
                     <p class="body-match-kicker">Scene ${index + 1}</p>
                     <p class="greetings-exchange-prompt">${item.english}</p>
                   </div>
-                  <button class="small-button is-action-button" type="button" data-time-routine-play="${item.id}">Play scene</button>
+                  <button class="small-button is-play-button" type="button" data-time-routine-play="${item.id}">Play</button>
                 </div>
                 <div class="greetings-scene-layout">
                   <div class="greetings-scene-visual"><img class="greetings-scene-image time-routine-scene-image" src="${item.imagePath}" alt="${item.english}" /></div>
@@ -902,7 +902,7 @@ function renderClothesExplorer() {
                     <p class="body-match-kicker">Scene ${scene.number}</p>
                     <p class="greetings-exchange-prompt">${scene.prompt}</p>
                   </div>
-                  <button class="small-button is-action-button" type="button" data-clothes-play-scene="${scene.id}">Play scene</button>
+                  <button class="small-button is-play-button" type="button" data-clothes-play-scene="${scene.id}">Play</button>
                 </div>
                 <div class="greetings-scene-layout">
                   <div class="greetings-scene-visual">

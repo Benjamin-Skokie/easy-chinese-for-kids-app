@@ -17,7 +17,7 @@ import { greetingsTopic } from "../features/foundations/greetings.js";
 import { identityTopic } from "../features/foundations/identity.js";
 import { familyTopic } from "../features/family/family.js";
 import { clothesTopic } from "../features/daily-life/clothes.js";
-import { weatherTopic } from "../features/world/weather.js";
+import { natureTopic, weatherTopic } from "../features/world/weather.js";
 import { animalsTopic } from "../features/world/animals.js";
 import { coloursTopic } from "../features/world/colours.js";
 import { hobbiesTopic, toysTopic } from "../features/play-hobbies/play-hobbies.js";
@@ -320,6 +320,6 @@ export const topicData = [
   comparisonsTopic,
   positionsTopic,
   transportTopic,
+  natureTopic,
   weatherTopic
 ];
-

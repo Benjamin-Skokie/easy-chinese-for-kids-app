@@ -87,7 +87,7 @@ function selectFocusItem(itemId, options = {}) {
 
 function renderFocusWordList() {
   if (
-    ["body", "dates", "comparisons", "positions", "transport", "daily-life", "multiplication-rhyme", "identity", "stationery", "school-supplies", "classroom", "school", "school-subjects", "food", "food-preferences", "meals-feelings"].includes(currentTopic().id) ||
+    ["body", "dates", "comparisons", "positions", "transport", "daily-life", "weather", "multiplication-rhyme", "identity", "stationery", "school-supplies", "classroom", "school", "school-subjects", "food", "food-preferences", "meals-feelings"].includes(currentTopic().id) ||
     (currentTopic().id === "numbers" && currentNumberStage().telephoneMode)
   ) {
     focusWordList.innerHTML = "";

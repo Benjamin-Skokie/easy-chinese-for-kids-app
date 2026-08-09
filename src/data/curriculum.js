@@ -74,7 +74,7 @@ export const books = [
       { lesson: 4, title: "Hobbies", topicId: "hobbies" },
       { lesson: 5, title: "Food and drink", topicId: "food-preferences" },
       { lesson: 6, title: "Vegetables", topicId: "food" },
-      { lesson: 7, title: "Nature", topicId: "weather" }
+      { lesson: 7, title: "Nature", topicId: "nature" }
     ]
   },
   {
@@ -161,7 +161,7 @@ export const topicGroups = [
     id: "daily-world",
     label: "Daily World",
     description: "Food, hobbies, routines, weather, and the world around the child.",
-    topicIds: ["food", "food-preferences", "meals-feelings", "toys", "hobbies", "comparisons", "positions", "transport", "daily-life", "weather"]
+    topicIds: ["food", "food-preferences", "meals-feelings", "toys", "hobbies", "comparisons", "positions", "transport", "daily-life", "nature", "weather"]
   },
   {
     id: "school-and-time",
@@ -201,6 +201,7 @@ export const topicCardMeta = {
   positions: { zhTitle: "位置和方向", enTitle: "Positions & Directions", hint: "Up, down, inside, outside" },
   transport: { zhTitle: "交通", enTitle: "Transportation", hint: "Walk, bike, bus, train" },
   "daily-life": { zhTitle: "我的房间", enTitle: "My Room", hint: "Rooms and furniture" },
+  nature: { zhTitle: "自然", enTitle: "Nature", hint: "Sky, ground, trees, flowers" },
   weather: { zhTitle: "天气", enTitle: "Weather", hint: "Sun, rain, snow, wind" }
 };
 
@@ -254,10 +255,10 @@ export const learningHomeCategories = [
     id: "world",
     zhTitle: "自然和颜色",
     enTitle: "World Around Us",
-    hint: "Weather, animals, colours",
+    hint: "Nature, weather, animals, colours",
     accent: "#6f7fa4",
     iconSrc: "assets/navigation-icons/panda-bamboo-icon.webp",
-    topicIds: ["weather", "animals", "colours"]
+    topicIds: ["nature", "weather", "animals", "colours"]
   },
   {
     id: "play",
@@ -269,4 +270,3 @@ export const learningHomeCategories = [
     topicIds: ["toys", "hobbies"]
   }
 ];
-

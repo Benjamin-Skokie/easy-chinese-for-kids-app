@@ -1,8 +1,20 @@
 # Lesson Page Production Workflow
 
-Last updated: 2026-08-08
+Last updated: 2026-08-09
 
 This is the required workflow for building or materially changing a learning topic page. It keeps lesson content, reusable templates, assets, and verification aligned as the app grows.
+
+## Required Topic-Build Order
+
+This order is non-negotiable. Do not choose or build a game while the content steps above it are unsettled.
+
+1. **Cross-book audit.** Find every lesson in the series that belongs to the topic. Record new words, sentence frames, dialogues, and later reuse; do not treat an existing asset as content coverage.
+2. **Scene plan.** Decide the minimum scenes that teach those sentence frames. Use the established scene-page template and check the available assets only after the teaching beat of each scene is clear.
+3. **Book words and Useful notes.** Decide whether either section is needed after the scenes are planned. Neither is automatic: include Book words for words that need focused reference, and Useful notes only for a generalizable pattern or distinction that the scenes do not already make clear.
+4. **Practice coverage.** List what the scenes, Book words, and Useful notes already teach and what remains unpractised. Define the exact knowledge a child must recognize, distinguish, complete, or say.
+5. **Interaction design.** Only now choose or invent a game. Its rules, visuals, audio, feedback, and randomization must be a direct fit for the remaining practice goal—not a reused game added to fill space.
+
+The required page order is therefore usually: **scene(s) → optional Book words → optional Useful notes → practice**. A page may omit either or both optional sections when they would duplicate the scenes.
 
 ## Sources Of Truth
 
@@ -10,10 +22,10 @@ Before work begins, use these files in this order:
 
 1. [curriculum_reference.json](./curriculum_reference.json), [series_audit.md](./series_audit.md), and the relevant OCR text: confirm what the book teaches.
 2. [category_topic_content_asset_mapping.json](./category_topic_content_asset_mapping.json): confirm the topic, lesson, and known asset mapping.
-3. [game_templates.md](./game_templates.md): choose a practice pattern that fits the learning goal.
-4. [art_direction.md](./art_direction.md), then [character_bible.md](./character_bible.md) and [school_bible.md](./school_bible.md) when applicable: define the visual brief.
+3. [art_direction.md](./art_direction.md), then [character_bible.md](./character_bible.md) and [school_bible.md](./school_bible.md) when applicable: define the visual brief for the approved scene plan.
+4. [game_templates.md](./game_templates.md): consult only after the practice goal is defined; choose a pattern that fits it.
 
-Do not build a page from memory or create visuals before the lesson goal is clear.
+Do not build a page from memory, create visuals before the scene plan is clear, or choose a game before the practice goal is clear.
 
 ## 0. Bind The Exact Page Before Editing
 
@@ -28,7 +40,7 @@ Search for the topic ID and for the visible text before editing. Do not assume s
 
 List every visible output for a changed interaction: section summary, game title, instructions, progress label, correct/wrong feedback, completion message, and accessibility label. All must describe the same interaction and container. Do not leave stale wording such as a former game container in any of these outputs.
 
-## 1. Build Lesson Contracts Before Topic Work
+## 1. Build Cross-Book Lesson Contracts Before Topic Work
 
 For every textbook lesson assigned to a topic, create or update a lesson contract before page implementation. The contract is the content-completeness record; an asset inventory is not a substitute.
 
@@ -43,22 +55,36 @@ Each lesson contract must identify:
 - existing assets, missing assets, and assets that are only reusable visuals rather than teaching proof
 - an audit status: `needs-content-audit`, `partial`, or `content-complete`
 
-Audit one book at a time, then compare the complete set of lesson contracts against the topic configuration. A topic is incomplete when any required lesson concept has no child-facing scene, note, word, or practice evidence. Do not call a lesson or topic complete merely because it has an asset path or a `strong` asset-coverage label.
+Audit one book at a time, then compare the complete set of lesson contracts against the topic configuration. A topic is incomplete when any required lesson concept has no child-facing scene, note, word, or practice evidence. Do not call a lesson or topic complete merely because it has an asset path or a `strong` asset-coverage label. This audit must happen before scene or game design.
 
-## 2. Write The Topic Brief
+## 2. Plan Scenes, Then Write The Topic Brief
 
 For each topic, record:
 
-- the lesson or lessons it covers
-- the vocabulary and sentence patterns to teach
-- the minimum scenes needed to explain those patterns
-- book words and useful notes
-- one or two appropriate practice templates
+- the lesson or lessons it covers across all books
+- the vocabulary and sentence patterns to teach and reuse
+- the minimum scenes needed to explain those patterns, using the approved page template
+- whether Book words are necessary, and exactly which scene gap they fill
+- whether Useful notes are necessary, and exactly which generalizable pattern they explain
 - the required assets, including reusable assets and new scene assets
+- the remaining practice goals after the scenes and optional supporting sections are accounted for
 
-The brief should distinguish between facts the child needs to learn and optional enrichment. Do not add a game only to make a page longer.
+The brief should distinguish between facts the child needs to learn and optional enrichment. Do not add Book words, Useful notes, or a game merely to make a page longer.
 
-## 3. Use One Topic Data Model
+## 3. Define Practice Before Choosing A Game
+
+For each remaining practice goal, record:
+
+- the exact sentence, distinction, or response being practised
+- what provides the cue (scene, object, audio, question, or sentence frame)
+- what the child must provide (tap, select, sort, fill, order, say, or build)
+- the valid answers and invalid-but-plausible distractors
+- whether the target, answer order, or visual details need randomization
+- whether a complete sentence should remain visible after success
+
+Only after this list is approved may the topic use an existing game template or propose a new interaction.
+
+## 4. Use One Topic Data Model
 
 Each topic should have one structured configuration that owns:
 
@@ -75,7 +101,7 @@ The current app still contains some topic data in `app.js`. New work should move
 
 Keep child-facing copy in the topic or template configuration where possible. If an interaction has a summary, in-card instruction, and completion message, define them together or verify each explicitly after a behavior change. Do not fix one hard-coded string while leaving duplicate wording elsewhere.
 
-## 4. Reuse The Practice Templates
+## 5. Reuse The Practice Templates
 
 Use the shared templates in [game_templates.md](./game_templates.md) unless a lesson genuinely requires a new interaction.
 
@@ -97,7 +123,7 @@ For collection games such as `Pack the backpack` or a food shopping-cart game, d
 - where a correct item lands, and the completion state after all items are collected
 - concise, child-readable instructions that explain those steps
 
-## 5. Asset Workflow
+## 6. Asset Workflow
 
 ### Before generating or selecting an asset
 
@@ -124,7 +150,7 @@ Final app assets must follow [art_direction.md](./art_direction.md): WebP unless
 - Never use `object-fit: fill` for illustrated objects, faces, wheels, clocks, or other shapes that must retain their proportions.
 - If a scene is the only item in a section, choose a compact layout deliberately; do not allow a single asset to become a full-width oversized card by default.
 
-## 6. Verification
+## 7. Verification
 
 ### Automated checks run for every code change
 
@@ -167,14 +193,15 @@ For an existing page, make one focused change at a time:
 
 After each focused change, run the relevant checks and confirm the target topic/data/render path again. Do not combine unrelated page work into the same verification cycle.
 
-## 7. Topic Completion Checklist
+## 8. Topic Completion Checklist
 
 Before considering a topic complete:
 
 - lesson mapping is correct
 - every mapped lesson has a `content-complete` lesson contract, or an explicit approved exception
-- scenes, book words, and useful notes teach the intended language without duplication
-- practice uses the common template behavior
+- scenes teach the intended language using the approved scene template
+- Book words and Useful notes are present only where needed and do not duplicate a scene
+- every practice goal is defined before its game, and the chosen interaction fits that goal
 - every displayed asset is final and listed in a manifest
 - no retired asset is still referenced
 - automated checks pass

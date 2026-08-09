@@ -349,10 +349,13 @@
         const control = button.dataset.displayToggle;
         const enabled = control === "sound" ? state2.tapAudioEnabled : control === "pinyin" ? state2.showPinyin : state2.showEnglish;
         const label = control === "sound" ? "Sound" : control === "pinyin" ? "Pinyin" : "English";
+        const icon = control === "sound" ? '<svg class="learning-display-sound-icon" viewBox="0 0 32 32" aria-hidden="true"><path d="M5 13h6l8-6v18l-8-6H5z" fill="currentColor" stroke="currentColor" stroke-linejoin="round"/><path d="M23 12c2 2 2 6 0 8M26 9c4 4 4 10 0 14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>' : control === "pinyin" ? '<span class="learning-display-letter-icon learning-display-pinyin-icon" aria-hidden="true">\u0101</span>' : '<span class="learning-display-letter-icon learning-display-english-icon" aria-hidden="true">ABC</span>';
         button.classList.toggle("is-toggle-active", enabled);
         button.classList.toggle("is-toggle-inactive", !enabled);
-        button.textContent = `${label} ${enabled ? "on" : "off"}`;
+        button.innerHTML = icon;
         button.setAttribute("aria-pressed", String(enabled));
+        button.setAttribute("aria-label", `${label} ${enabled ? "on" : "off"}`);
+        button.setAttribute("title", `${label} ${enabled ? "on" : "off"}`);
       });
     }
     function renderFocusDisplay2(item) {
@@ -461,7 +464,7 @@
       }
     }
     function renderFocusWordList3() {
-      if (["body", "dates", "comparisons", "positions", "transport", "daily-life", "multiplication-rhyme", "identity", "stationery", "school-supplies", "classroom", "school", "school-subjects", "food", "food-preferences", "meals-feelings"].includes(currentTopic2().id) || currentTopic2().id === "numbers" && currentNumberStage2().telephoneMode) {
+      if (["body", "dates", "comparisons", "positions", "transport", "daily-life", "weather", "multiplication-rhyme", "identity", "stationery", "school-supplies", "classroom", "school", "school-subjects", "food", "food-preferences", "meals-feelings"].includes(currentTopic2().id) || currentTopic2().id === "numbers" && currentNumberStage2().telephoneMode) {
         focusWordList2.innerHTML = "";
         focusWordList2.classList.add("is-hidden");
         return;
@@ -523,7 +526,7 @@
 
   // src/core/lesson-practice-runtime.js
   function createLessonPracticeRuntime(context) {
-    const { state: state2, schoolTopicData: schoolTopicData3, timeDateWeekItems: timeDateWeekItems2, datePracticeItems: datePracticeItems2, timeDateMonthItems: timeDateMonthItems2, timeDateRoutineItems: timeDateRoutineItems2, clothesMatchItems: clothesMatchItems2, illustratedKids: illustratedKids2, numberHanzi: numberHanzi2, buildNumberItem: buildNumberItem2, currentTopic: currentTopic2, currentNumberStage: currentNumberStage2, currentBook: currentBook2, currentLesson: currentLesson2, focusItemsForTopic: focusItemsForTopic2, shuffleArray: shuffleArray2, speak: speak2, renderFocusExplorer: renderFocusExplorer2, renderFocusStatus: renderFocusStatus2, renderSharedLessonPractice: renderSharedLessonPractice2, renderPracticeSayCards: renderPracticeSayCards2, bindPracticeSayCards: bindPracticeSayCards2, activityPanelTitle: activityPanelTitle2, activityPanelSummary: activityPanelSummary2, activityList: activityList2, topicColumns: topicColumns2, ensureWeekdayChallenge: ensureWeekdayChallenge2, ensureWeekdayMatchGame: ensureWeekdayMatchGame2, handleWeekdayChallengePlay: handleWeekdayChallengePlay2, handleWeekdayChallengeGuess: handleWeekdayChallengeGuess2, resetWeekdayMatchGame: resetWeekdayMatchGame2, handleWeekdayMatchPhrase: handleWeekdayMatchPhrase2, handleWeekdayMatchAttempt: handleWeekdayMatchAttempt2, ensureDateChallenge: ensureDateChallenge2, ensureDateMatchGame: ensureDateMatchGame2, handleDateChallengePlay: handleDateChallengePlay2, handleDateChallengeGuess: handleDateChallengeGuess2, resetDateMatchGame: resetDateMatchGame2, handleDateMatchPhrase: handleDateMatchPhrase2, handleDateMatchEvent: handleDateMatchEvent2, familyGameItems: familyGameItems2, familyPersonForItemId: familyPersonForItemId2, familyHeadshotForItemId: familyHeadshotForItemId2, ensureFamilyChallenge: ensureFamilyChallenge2, ensureFamilyMatchGame: ensureFamilyMatchGame2, handleFamilyChallengePlay: handleFamilyChallengePlay2, handleFamilyChallengeGuess: handleFamilyChallengeGuess2, resetFamilyMatchGame: resetFamilyMatchGame2, handleFamilyMatchPhrase: handleFamilyMatchPhrase2, handleFamilyMatchAttempt: handleFamilyMatchAttempt2, greetingsGameItems: greetingsGameItems2, greetingsMeaningLabel: greetingsMeaningLabel2, ensureGreetingsChallenge: ensureGreetingsChallenge2, ensureGreetingsMatchGame: ensureGreetingsMatchGame2, handleGreetingsChallengePlay: handleGreetingsChallengePlay2, handleGreetingsChallengeGuess: handleGreetingsChallengeGuess2, resetGreetingsMatchGame: resetGreetingsMatchGame2, handleGreetingsMatchPhrase: handleGreetingsMatchPhrase2, handleGreetingsMatchAttempt: handleGreetingsMatchAttempt2, politeGameItems: politeGameItems2, politeMeaningLabel: politeMeaningLabel2, ensurePoliteChallenge: ensurePoliteChallenge2, ensurePoliteMatchGame: ensurePoliteMatchGame2, handlePoliteChallengePlay: handlePoliteChallengePlay2, handlePoliteChallengeGuess: handlePoliteChallengeGuess2, resetPoliteMatchGame: resetPoliteMatchGame2, handlePoliteMatchPhrase: handlePoliteMatchPhrase2, handlePoliteMatchAttempt: handlePoliteMatchAttempt2, ensureRoomBuilder: ensureRoomBuilder2, currentRoomBuildItem: currentRoomBuildItem2, handleRoomBuildToken: handleRoomBuildToken2, clearRoomBuilder: clearRoomBuilder2, nextRoomBuilder: nextRoomBuilder2, ensureClothesQuiz: ensureClothesQuiz2, handleClothesQuizPick: handleClothesQuizPick2, nextClothesQuizQuestion: nextClothesQuizQuestion2, ensureTimeRoutineQuiz: ensureTimeRoutineQuiz2, handleTimeRoutineQuizPick: handleTimeRoutineQuizPick2, nextTimeRoutineQuizQuestion: nextTimeRoutineQuizQuestion2, ensureClockQuiz: ensureClockQuiz2, handleClockQuizPick: handleClockQuizPick2, nextClockQuizQuestion: nextClockQuizQuestion2, resetNumberChallenge: resetNumberChallenge2, ensureMathChallenge: ensureMathChallenge2, handleNumberChallengeGuess: handleNumberChallengeGuess2, resetMathChallenge: resetMathChallenge2, handleMathChallengeSubmit: handleMathChallengeSubmit2, renderNumberVisual: renderNumberVisual2, introductionsBuildTarget: introductionsBuildTarget2, ensureIntroductionsBuilder: ensureIntroductionsBuilder2, resetIntroductionsBuilder: resetIntroductionsBuilder2, handleIntroductionsBuildClear: handleIntroductionsBuildClear2, handleIntroductionsBuildToken: handleIntroductionsBuildToken2, ageGameItems: ageGameItems2, ensureAgeChallenge: ensureAgeChallenge2, ensureAgeBuilder: ensureAgeBuilder2, ageBuildTarget: ageBuildTarget2, handleAgeChallengePlay: handleAgeChallengePlay2, handleAgeChallengeGuess: handleAgeChallengeGuess2, resetAgeBuilder: resetAgeBuilder2, handleAgeBuildClear: handleAgeBuildClear2, handleAgeBuildToken: handleAgeBuildToken2, renderSchoolPractice: renderSchoolPractice2 } = context;
+    const { state: state2, schoolTopicData: schoolTopicData3, visualTopicItems: visualTopicItems2, positionPracticeItems: positionPracticeItems2, timeDateWeekItems: timeDateWeekItems2, timeDateClockItems: timeDateClockItems2, datePracticeItems: datePracticeItems2, timeDateMonthItems: timeDateMonthItems2, timeDateRoutineItems: timeDateRoutineItems2, clothesMatchItems: clothesMatchItems2, illustratedKids: illustratedKids2, numberHanzi: numberHanzi2, buildNumberItem: buildNumberItem2, currentTopic: currentTopic2, currentNumberStage: currentNumberStage2, currentBook: currentBook2, currentLesson: currentLesson2, focusItemsForTopic: focusItemsForTopic2, shuffleArray: shuffleArray2, speak: speak2, renderFocusExplorer: renderFocusExplorer2, renderFocusStatus: renderFocusStatus2, renderSharedLessonPractice: renderSharedLessonPractice2, renderPracticeSayCards: renderPracticeSayCards2, bindPracticeSayCards: bindPracticeSayCards2, activityPanelTitle: activityPanelTitle2, activityPanelSummary: activityPanelSummary2, activityList: activityList2, topicColumns: topicColumns2, renderWorldPractice, activeTimeDateSection: activeTimeDateSection2, ensureWeekdayChallenge: ensureWeekdayChallenge2, ensureWeekdayMatchGame: ensureWeekdayMatchGame2, handleWeekdayChallengePlay: handleWeekdayChallengePlay2, handleWeekdayChallengeGuess: handleWeekdayChallengeGuess2, resetWeekdayMatchGame: resetWeekdayMatchGame2, handleWeekdayMatchPhrase: handleWeekdayMatchPhrase2, handleWeekdayMatchAttempt: handleWeekdayMatchAttempt2, ensureDateChallenge: ensureDateChallenge2, ensureDateMatchGame: ensureDateMatchGame2, handleDateChallengePlay: handleDateChallengePlay2, handleDateChallengeGuess: handleDateChallengeGuess2, resetDateMatchGame: resetDateMatchGame2, handleDateMatchPhrase: handleDateMatchPhrase2, handleDateMatchEvent: handleDateMatchEvent2, familyGameItems: familyGameItems2, familyPersonForItemId: familyPersonForItemId2, familyHeadshotForItemId: familyHeadshotForItemId2, ensureFamilyChallenge: ensureFamilyChallenge2, ensureFamilyMatchGame: ensureFamilyMatchGame2, handleFamilyChallengePlay: handleFamilyChallengePlay2, handleFamilyChallengeGuess: handleFamilyChallengeGuess2, resetFamilyMatchGame: resetFamilyMatchGame2, handleFamilyMatchPhrase: handleFamilyMatchPhrase2, handleFamilyMatchAttempt: handleFamilyMatchAttempt2, greetingsGameItems: greetingsGameItems2, greetingsMeaningLabel: greetingsMeaningLabel2, ensureGreetingsChallenge: ensureGreetingsChallenge2, ensureGreetingsMatchGame: ensureGreetingsMatchGame2, handleGreetingsChallengePlay: handleGreetingsChallengePlay2, handleGreetingsChallengeGuess: handleGreetingsChallengeGuess2, resetGreetingsMatchGame: resetGreetingsMatchGame2, handleGreetingsMatchPhrase: handleGreetingsMatchPhrase2, handleGreetingsMatchAttempt: handleGreetingsMatchAttempt2, politeGameItems: politeGameItems2, politeMeaningLabel: politeMeaningLabel2, ensurePoliteChallenge: ensurePoliteChallenge2, ensurePoliteMatchGame: ensurePoliteMatchGame2, handlePoliteChallengePlay: handlePoliteChallengePlay2, handlePoliteChallengeGuess: handlePoliteChallengeGuess2, resetPoliteMatchGame: resetPoliteMatchGame2, handlePoliteMatchPhrase: handlePoliteMatchPhrase2, handlePoliteMatchAttempt: handlePoliteMatchAttempt2, ensureRoomBuilder: ensureRoomBuilder2, currentRoomBuildItem: currentRoomBuildItem2, handleRoomBuildToken: handleRoomBuildToken2, clearRoomBuilder: clearRoomBuilder2, nextRoomBuilder: nextRoomBuilder2, ensureClothesQuiz: ensureClothesQuiz2, handleClothesQuizPick: handleClothesQuizPick2, nextClothesQuizQuestion: nextClothesQuizQuestion2, ensureTimeRoutineQuiz: ensureTimeRoutineQuiz2, handleTimeRoutineQuizPick: handleTimeRoutineQuizPick2, nextTimeRoutineQuizQuestion: nextTimeRoutineQuizQuestion2, ensureClockQuiz: ensureClockQuiz2, handleClockQuizPick: handleClockQuizPick2, nextClockQuizQuestion: nextClockQuizQuestion2, ensureComparisonBuilder: ensureComparisonBuilder2, currentComparisonBuildItem: currentComparisonBuildItem2, handleComparisonBuildToken: handleComparisonBuildToken2, clearComparisonBuilder: clearComparisonBuilder2, nextComparisonBuilder: nextComparisonBuilder2, ensurePositionQuiz: ensurePositionQuiz2, handlePositionQuizPlay: handlePositionQuizPlay2, handlePositionQuizPick: handlePositionQuizPick2, nextPositionQuizQuestion: nextPositionQuizQuestion2, ensureTransportBuilder: ensureTransportBuilder2, currentTransportBuildItem: currentTransportBuildItem2, handleTransportBuildToken: handleTransportBuildToken2, clearTransportBuilder: clearTransportBuilder2, nextTransportBuilder: nextTransportBuilder2, resetNumberChallenge: resetNumberChallenge2, ensureMathChallenge: ensureMathChallenge2, handleNumberChallengeGuess: handleNumberChallengeGuess2, resetMathChallenge: resetMathChallenge2, handleMathChallengeSubmit: handleMathChallengeSubmit2, renderNumberVisual: renderNumberVisual2, introductionsBuildTarget: introductionsBuildTarget2, ensureIntroductionsBuilder: ensureIntroductionsBuilder2, resetIntroductionsBuilder: resetIntroductionsBuilder2, handleIntroductionsBuildClear: handleIntroductionsBuildClear2, handleIntroductionsBuildToken: handleIntroductionsBuildToken2, ageGameItems: ageGameItems2, ensureAgeChallenge: ensureAgeChallenge2, ensureAgeBuilder: ensureAgeBuilder2, ageBuildTarget: ageBuildTarget2, handleAgeChallengePlay: handleAgeChallengePlay2, handleAgeChallengeGuess: handleAgeChallengeGuess2, resetAgeBuilder: resetAgeBuilder2, handleAgeBuildClear: handleAgeBuildClear2, handleAgeBuildToken: handleAgeBuildToken2, renderSchoolPractice: renderSchoolPractice2 } = context;
     function sharedLessonPracticeConfig(topic) {
       if (topic.id === "weekdays") {
         return {
@@ -743,6 +746,10 @@
         activityList2.innerHTML = "";
         return;
       }
+      if (topic.id === "colours" || topic.id === "nature" || topic.id === "weather") {
+        renderWorldPractice(topic);
+        return;
+      }
       if (schoolTopicData3[topic.id]) {
         renderSchoolPractice2(topic);
         return;
@@ -788,9 +795,9 @@
         return;
       }
       if (topic.id === "comparisons") {
-        ensureComparisonBuilder();
-        const prompt = currentComparisonBuildItem();
-        const visual = visualTopicItems.comparisons.find((item) => item.id === prompt.id);
+        ensureComparisonBuilder2();
+        const prompt = currentComparisonBuildItem2();
+        const visual = visualTopicItems2.comparisons.find((item) => item.id === prompt.id);
         activityPanelTitle2.textContent = "Let's practice";
         activityPanelSummary2.textContent = "Complete the sentence with the matching comparison words.";
         activityList2.className = "support-list";
@@ -817,23 +824,23 @@
       </section>
     `;
         activityList2.querySelectorAll("[data-comparison-build-token]").forEach((button) => {
-          button.addEventListener("click", () => handleComparisonBuildToken(Number(button.dataset.comparisonBuildToken)));
+          button.addEventListener("click", () => handleComparisonBuildToken2(Number(button.dataset.comparisonBuildToken)));
         });
-        activityList2.querySelector("[data-comparison-build-clear]")?.addEventListener("click", clearComparisonBuilder);
-        activityList2.querySelector("[data-comparison-build-next]")?.addEventListener("click", nextComparisonBuilder);
+        activityList2.querySelector("[data-comparison-build-clear]")?.addEventListener("click", clearComparisonBuilder2);
+        activityList2.querySelector("[data-comparison-build-next]")?.addEventListener("click", nextComparisonBuilder2);
         return;
       }
       if (topic.id === "positions") {
-        ensurePositionQuiz();
+        ensurePositionQuiz2();
         activityPanelTitle2.textContent = "Let's practice";
         activityPanelSummary2.textContent = "Play the audio, then choose the matching Chinese sentence.";
         activityList2.className = "support-list";
         activityList2.innerHTML = `
       <section class="clothes-quiz-shell position-quiz-shell">
-        <div class="numbers-game-top"><div><p class="body-match-kicker">Listen and choose</p><p class="numbers-game-note">Play the audio, then tap the matching Chinese sentence.</p></div><button class="small-button is-action-button" type="button" data-position-quiz-play>Play audio</button></div>
+        <div class="numbers-game-top"><div><p class="body-match-kicker">Listen and choose</p><p class="numbers-game-note">Play the audio, then tap the matching Chinese sentence.</p></div><button class="small-button is-play-button" type="button" data-position-quiz-play>Play</button></div>
         <div class="clothes-quiz-options">
           ${state2.positionQuizOptionIds.map((itemId) => {
-          const item = positionPracticeItems.find((entry) => entry.id === itemId);
+          const item = positionPracticeItems2.find((entry) => entry.id === itemId);
           const isSelected = state2.positionQuizSelectedId === itemId;
           const resultClass = isSelected ? ` is-${state2.positionQuizResult}` : "";
           const mark = isSelected ? `<span class="answer-result-mark" aria-hidden="true">${state2.positionQuizResult === "correct" ? "\u2713" : "\xD7"}</span>` : "";
@@ -848,16 +855,16 @@
         ])}
     `;
         activityList2.querySelectorAll("[data-position-quiz-pick]").forEach((button) => {
-          button.addEventListener("click", () => handlePositionQuizPick(button.dataset.positionQuizPick));
+          button.addEventListener("click", () => handlePositionQuizPick2(button.dataset.positionQuizPick));
         });
-        activityList2.querySelector("[data-position-quiz-play]")?.addEventListener("click", handlePositionQuizPlay);
-        activityList2.querySelector("[data-position-quiz-next]")?.addEventListener("click", nextPositionQuizQuestion);
+        activityList2.querySelector("[data-position-quiz-play]")?.addEventListener("click", handlePositionQuizPlay2);
+        activityList2.querySelector("[data-position-quiz-next]")?.addEventListener("click", nextPositionQuizQuestion2);
         bindPracticeSayCards2(activityList2);
         return;
       }
       if (topic.id === "transport") {
-        ensureTransportBuilder();
-        const prompt = currentTransportBuildItem();
+        ensureTransportBuilder2();
+        const prompt = currentTransportBuildItem2();
         activityPanelTitle2.textContent = "Let's practice";
         activityPanelSummary2.textContent = "Build the matching sentence from the word cards.";
         activityList2.className = "support-list";
@@ -880,16 +887,16 @@
       </section>
     `;
         activityList2.querySelectorAll("[data-transport-build-token]").forEach((button) => {
-          button.addEventListener("click", () => handleTransportBuildToken(Number(button.dataset.transportBuildToken)));
+          button.addEventListener("click", () => handleTransportBuildToken2(Number(button.dataset.transportBuildToken)));
         });
-        activityList2.querySelector("[data-transport-build-clear]")?.addEventListener("click", clearTransportBuilder);
-        activityList2.querySelector("[data-transport-build-next]")?.addEventListener("click", nextTransportBuilder);
+        activityList2.querySelector("[data-transport-build-clear]")?.addEventListener("click", clearTransportBuilder2);
+        activityList2.querySelector("[data-transport-build-next]")?.addEventListener("click", nextTransportBuilder2);
         return;
       }
-      if (topic.id === "time-date" && activeTimeDateSection() === "clock") {
+      if (topic.id === "time-date" && activeTimeDateSection2() === "clock") {
         ensureClockQuiz2();
         const answerId = state2.clockQuizOrder[state2.clockQuizIndex];
-        const prompt = timeDateClockItems.find((item) => item.id === answerId);
+        const prompt = timeDateClockItems2.find((item) => item.id === answerId);
         activityPanelTitle2.textContent = "Let's practice";
         activityPanelSummary2.textContent = "Look at the clock, then choose the matching Chinese time.";
         activityList2.className = "support-list";
@@ -899,7 +906,7 @@
         <figure class="clothes-quiz-visual time-routine-quiz-visual"><img class="clothes-quiz-image" src="${prompt.imagePath}" alt="${prompt.english}" /></figure>
         <div class="clothes-quiz-options">
           ${state2.clockQuizOptionIds.map((itemId) => {
-          const item = timeDateClockItems.find((entry) => entry.id === itemId);
+          const item = timeDateClockItems2.find((entry) => entry.id === itemId);
           const isSelected = state2.clockQuizSelectedId === itemId;
           const resultClass = isSelected ? ` is-${state2.clockQuizResult}` : "";
           const mark = isSelected ? `<span class="answer-result-mark" aria-hidden="true">${state2.clockQuizResult === "correct" ? "\u2713" : "\xD7"}</span>` : "";
@@ -1202,7 +1209,7 @@
               <p class="body-match-kicker">Listen and choose</p>
               <h4>Which line did you hear?</h4>
             </div>
-            <button class="small-button is-action-button" type="button" data-age-game-play>Play audio</button>
+            <button class="small-button is-play-button" type="button" data-age-game-play>Play</button>
           </div>
           <p class="numbers-game-note">Play the audio, then tap the matching age or grade question or answer.</p>
           ${state2.lastAgeFeedback ? `<p class="greetings-game-feedback">${state2.lastAgeFeedback}</p>` : ""}
@@ -1382,7 +1389,7 @@
       renderSubtopicShelf(topic);
       focusDisplay2.classList.toggle(
         "is-hidden",
-        topic.id === "body" || usesLessonTemplate2(topic) || topic.id === "numbers" || topic.id === "multiplication-rhyme" || topic.id === "weekdays" || topic.id === "time-date" || topic.id === "dates" || topic.id === "comparisons" || topic.id === "positions" || topic.id === "transport" || topic.id === "daily-life" || topic.id === "identity" || topic.id === "clothes" || schoolTopicData3[topic.id] || topic.id === "numbers" && currentNumberStage2().telephoneMode
+        topic.id === "body" || usesLessonTemplate2(topic) || topic.id === "numbers" || topic.id === "multiplication-rhyme" || topic.id === "weekdays" || topic.id === "time-date" || topic.id === "dates" || topic.id === "comparisons" || topic.id === "positions" || topic.id === "transport" || topic.id === "daily-life" || topic.id === "weather" || topic.id === "identity" || topic.id === "clothes" || schoolTopicData3[topic.id] || topic.id === "numbers" && currentNumberStage2().telephoneMode
       );
       renderFocusControls2();
       renderFocusDisplay2(currentFocusItem2());
@@ -1444,7 +1451,8 @@
       renderRoomsExplorer: renderRoomsExplorer2,
       renderSchoolExplorer: renderSchoolExplorer2,
       renderVisualTopicExplorer: renderVisualTopicExplorer2,
-      renderMultiplicationExplorer: renderMultiplicationExplorer2
+      renderMultiplicationExplorer: renderMultiplicationExplorer2,
+      renderWorldExplorer
     } = context;
     function renderDefaultExplorer2() {
       focusExplorer2.innerHTML = "";
@@ -1466,6 +1474,7 @@
       if (topic.interactiveScene === "positions") return renderPositionsExplorer2();
       if (topic.interactiveScene === "rooms") return renderRoomsExplorer2();
       if (schoolTopicData3[topic.id]) return renderSchoolExplorer2(topic.id);
+      if (["colours", "nature", "weather"].includes(topic.id)) return renderWorldExplorer();
       if (["comparisons", "transport", "rooms"].includes(topic.interactiveScene)) return renderVisualTopicExplorer2(topic.interactiveScene);
       if (topic.interactiveScene === "multiplication-rhyme") return renderMultiplicationExplorer2();
       return renderDefaultExplorer2();
@@ -1475,7 +1484,7 @@
 
   // src/core/navigation-runtime.js
   function createNavigationRuntime(context) {
-    const { state: state2, topicData: topicData2, books: books2, topicGroups: topicGroups2, learningHomeCategories: learningHomeCategories2, bookHomeCategories: bookHomeCategories2, topicCardMeta: topicCardMeta2, topicPageUrl: topicPageUrl2, topicGroupsRoot: topicGroupsRoot2, bookSelect: bookSelect2, lessonSelect: lessonSelect2, lookupCard: lookupCard2, bookBrowser: bookBrowser2, topicPanel: topicPanel2, bookPanel: bookPanel2, detailLayout: detailLayout2, learningCultureNav: learningCultureNav2, numberStages: numberStages2, timeDateWeekItems: timeDateWeekItems2, getNumberStageItems, renderFocusControls: renderFocusControls2, renderFocusDisplay: renderFocusDisplay2, renderFocusWordList: renderFocusWordList3, renderFocusExplorer: renderFocusExplorer2, renderActivityPanel: renderActivityPanel2, renderTopicDetail: renderTopicDetail2, updateDisplayControls: updateDisplayControls2, selectBookLesson: selectBookLesson2 } = context;
+    const { state: state2, topicData: topicData2, books: books2, topicGroups: topicGroups2, learningHomeCategories: learningHomeCategories2, bookHomeCategories: bookHomeCategories2, topicCardMeta: topicCardMeta2, topicPageUrl: topicPageUrl2, topicGroupsRoot: topicGroupsRoot2, bookSelect: bookSelect2, lessonSelect: lessonSelect2, lookupCard: lookupCard2, bookBrowser: bookBrowser2, topicPanel: topicPanel2, bookPanel: bookPanel2, detailLayout: detailLayout2, learningCultureNav: learningCultureNav2, numberStages: numberStages2, timeDateWeekItems: timeDateWeekItems2, getNumberStageItems, getWorldFocusItems, renderFocusControls: renderFocusControls2, renderFocusDisplay: renderFocusDisplay2, renderFocusWordList: renderFocusWordList3, renderFocusExplorer: renderFocusExplorer2, renderActivityPanel: renderActivityPanel2, renderTopicDetail: renderTopicDetail2, updateDisplayControls: updateDisplayControls2, selectBookLesson: selectBookLesson2 } = context;
     function currentTopic2() {
       return topicData2.find((topic) => topic.id === state2.selectedTopicId) ?? topicData2[0];
     }
@@ -1489,6 +1498,10 @@
       }
       if (topic.id === "weekdays") {
         return timeDateWeekItems2;
+      }
+      const worldItems = getWorldFocusItems?.(topic);
+      if (worldItems) {
+        return worldItems;
       }
       return topic.focusItems ?? [{ id: "focus", ...topic.focus }];
     }
@@ -1691,9 +1704,9 @@
     function displayControlsMarkup2() {
       return `
     <span class="learning-display-controls" aria-label="Display options">
-      <button class="learning-display-toggle" type="button" data-display-toggle="sound"></button>
-      <button class="learning-display-toggle" type="button" data-display-toggle="pinyin"></button>
-      <button class="learning-display-toggle" type="button" data-display-toggle="english"></button>
+      <button class="learning-display-toggle" type="button" data-display-toggle="sound" aria-label="Sound on" title="Sound on"></button>
+      <button class="learning-display-toggle" type="button" data-display-toggle="pinyin" aria-label="Pinyin on" title="Pinyin on"></button>
+      <button class="learning-display-toggle" type="button" data-display-toggle="english" aria-label="English on" title="English on"></button>
     </span>
   `;
     }
@@ -2164,7 +2177,7 @@
   ].map(([id, hanzi, pinyin, english, context, contextPinyin, contextEnglish, file, audio]) => ({ id, hanzi, pinyin, english, context, contextPinyin, contextEnglish, audio: audio ?? context, imagePath: `assets/illustrated-day-of-week/${file}` }));
 
   // src/features/time-daily-life/time.js
-  var timeDateClockItems2 = [
+  var timeDateClockItems = [
     [1, "\u4E00\u70B9", "y\u012B di\u01CEn"],
     [2, "\u4E24\u70B9", "li\u01CEng di\u01CEn"],
     [3, "\u4E09\u70B9", "s\u0101n di\u01CEn"],
@@ -2351,7 +2364,7 @@
       ]
     }
   ];
-  var positionPracticeItems2 = positionScenes.flatMap((scene) => scene.lines.map((line, index) => ({ id: `${scene.id}-${index}`, ...line, imagePath: scene.imagePath, imageAlt: scene.imageAlt })));
+  var positionPracticeItems = positionScenes.flatMap((scene) => scene.lines.map((line, index) => ({ id: `${scene.id}-${index}`, ...line, imagePath: scene.imagePath, imageAlt: scene.imageAlt })));
 
   // src/features/time-daily-life/transport.js
   var transportTopic = {
@@ -3446,7 +3459,7 @@
     <section class="practice-split-card backpack-game-card">
       <div class="numbers-game-top">
         <div><p class="body-match-kicker">Pack the backpack</p><p class="numbers-game-note">Look at the school thing, then tap its Chinese word.</p></div>
-        <button class="small-button is-action-button" type="button" data-backpack-game-new>New mix</button>
+        <button class="small-button is-play-button" type="button" data-backpack-game-new>Play</button>
       </div>
       <div class="backpack-game-progress" aria-label="${state2.backpackGamePlacedIds.length} of 3 items packed">
         ${[0, 1, 2].map((index) => `<span class="backpack-game-progress-dot${index < state2.backpackGamePlacedIds.length ? " is-packed" : ""}">${index < state2.backpackGamePlacedIds.length ? "\u2713" : ""}</span>`).join("")}
@@ -3681,7 +3694,7 @@
           <div class="school-scene-grid${group.items.length === 1 ? " is-single" : ""}">
             ${group.items.map((scene) => `
               <section class="greetings-exchange school-scene-card">
-                <div class="greetings-exchange-top">${scene.label ? `<div><p class="body-match-kicker">${scene.label}</p></div>` : "<span></span>"}<button class="small-button is-action-button" type="button" data-school-play-scene="${scene.id}">Play scene</button></div>
+                <div class="greetings-exchange-top">${scene.label ? `<div><p class="body-match-kicker">${scene.label}</p></div>` : "<span></span>"}<button class="small-button is-play-button" type="button" data-school-play-scene="${scene.id}">Play</button></div>
                 <div class="school-scene-layout${topicId === "food" ? " is-compact" : ""}">
                   <img class="school-scene-image" src="${scene.imagePath}" alt="${scene.english ?? scene.lines?.[0]?.english ?? ""}" />
                   <div class="greetings-line-stack${scene.compactLines ? " is-compact" : ""}">
@@ -4280,7 +4293,7 @@
       renderActivityPanel2(currentTopic2());
     }
     function renderIntroductionsExplorer2() {
-      focusExplorer2.innerHTML = `<div class="numbers-board"><div class="numbers-stage-card"><p class="body-match-kicker">${currentBook2().label} Lesson ${currentLesson2().lesson}</p><h4>Book theme: asking and saying names</h4><p>This lesson mirrors Book 1A Lesson 6: say hello, ask a name, answer with \u6211\u53EB..., and repeat the new friend's name.</p></div><div class="greetings-practice-grid">${introductionsPractice2.map((exchange) => `<section class="greetings-exchange"><div class="greetings-exchange-top"><div><p class="body-match-kicker">Scene ${exchange.number}</p><p class="greetings-exchange-prompt">${exchange.prompt}</p></div><button class="small-button is-action-button" type="button" data-intro-play-all="${exchange.id}">Play scene</button></div><div class="greetings-scene-layout introductions-scene-layout"><div class="greetings-scene-visual"><img class="greetings-scene-image" src="${exchange.imagePath}" alt="${exchange.imageAlt}" /></div><div class="greetings-line-stack">${exchange.lines.map((line) => `<article class="greetings-line-card intro-line-card"><div class="telephone-bubble-copy"><p class="telephone-line-hanzi">${line.hanzi}</p>${state2.showPinyin ? `<p class="telephone-line-pinyin">${line.pinyin}</p>` : ""}${state2.showEnglish ? `<p class="telephone-line-english">${line.english}</p>` : ""}</div></article>`).join("")}</div></div></section>`).join("")}</div></div>`;
+      focusExplorer2.innerHTML = `<div class="numbers-board"><div class="numbers-stage-card"><p class="body-match-kicker">${currentBook2().label} Lesson ${currentLesson2().lesson}</p><h4>Book theme: asking and saying names</h4><p>This lesson mirrors Book 1A Lesson 6: say hello, ask a name, answer with \u6211\u53EB..., and repeat the new friend's name.</p></div><div class="greetings-practice-grid">${introductionsPractice2.map((exchange) => `<section class="greetings-exchange"><div class="greetings-exchange-top"><div><p class="body-match-kicker">Scene ${exchange.number}</p><p class="greetings-exchange-prompt">${exchange.prompt}</p></div><button class="small-button is-play-button" type="button" data-intro-play-all="${exchange.id}">Play</button></div><div class="greetings-scene-layout introductions-scene-layout"><div class="greetings-scene-visual"><img class="greetings-scene-image" src="${exchange.imagePath}" alt="${exchange.imageAlt}" /></div><div class="greetings-line-stack">${exchange.lines.map((line) => `<article class="greetings-line-card intro-line-card"><div class="telephone-bubble-copy"><p class="telephone-line-hanzi">${line.hanzi}</p>${state2.showPinyin ? `<p class="telephone-line-pinyin">${line.pinyin}</p>` : ""}${state2.showEnglish ? `<p class="telephone-line-english">${line.english}</p>` : ""}</div></article>`).join("")}</div></div></section>`).join("")}</div></div>`;
       focusExplorer2.querySelectorAll("[data-intro-play-all]").forEach((button) => {
         button.addEventListener("click", () => {
           const exchange = introductionsPractice2.find((entry) => entry.id === button.dataset.introPlayAll);
@@ -4506,7 +4519,7 @@
       renderActivityPanel2(currentTopic2());
     }
     function renderAgeExplorer2() {
-      focusExplorer2.innerHTML = `<div class="numbers-board"><div class="numbers-stage-card"><p class="body-match-kicker">${currentBook2().label} Lesson ${currentLesson2().lesson}</p><h4>Book theme: age and school year</h4><p>This lesson starts with <strong>\u4F60\u51E0\u5C81\uFF1F</strong> / <strong>\u6211...\u5C81\u3002</strong> and then adds <strong>\u4F60\u4E0A\u51E0\u5E74\u7EA7\uFF1F</strong> / <strong>\u6211\u4E0A\u4E00\u5E74\u7EA7\u3002</strong></p></div><div class="greetings-practice-grid">${agePractice2.map((exchange) => `<section class="greetings-exchange"><div class="greetings-exchange-top"><div><p class="body-match-kicker">Scene ${exchange.number}</p><p class="greetings-exchange-prompt">${exchange.prompt}</p></div><button class="small-button is-action-button" type="button" data-age-play-all="${exchange.id}">Play scene</button></div><div class="greetings-scene-layout"><div class="greetings-scene-visual"><img class="greetings-scene-image" src="${exchange.imagePath}" alt="${exchange.imageAlt}" /></div><div class="greetings-line-stack">${exchange.lines.map((line) => `<article class="greetings-line-card"><div class="telephone-bubble-copy"><p class="telephone-line-hanzi">${line.hanzi}</p>${state2.showPinyin ? `<p class="telephone-line-pinyin">${line.pinyin}</p>` : ""}${state2.showEnglish ? `<p class="telephone-line-english">${line.english}</p>` : ""}</div></article>`).join("")}</div></div></section>`).join("")}</div></div>`;
+      focusExplorer2.innerHTML = `<div class="numbers-board"><div class="numbers-stage-card"><p class="body-match-kicker">${currentBook2().label} Lesson ${currentLesson2().lesson}</p><h4>Book theme: age and school year</h4><p>This lesson starts with <strong>\u4F60\u51E0\u5C81\uFF1F</strong> / <strong>\u6211...\u5C81\u3002</strong> and then adds <strong>\u4F60\u4E0A\u51E0\u5E74\u7EA7\uFF1F</strong> / <strong>\u6211\u4E0A\u4E00\u5E74\u7EA7\u3002</strong></p></div><div class="greetings-practice-grid">${agePractice2.map((exchange) => `<section class="greetings-exchange"><div class="greetings-exchange-top"><div><p class="body-match-kicker">Scene ${exchange.number}</p><p class="greetings-exchange-prompt">${exchange.prompt}</p></div><button class="small-button is-play-button" type="button" data-age-play-all="${exchange.id}">Play</button></div><div class="greetings-scene-layout"><div class="greetings-scene-visual"><img class="greetings-scene-image" src="${exchange.imagePath}" alt="${exchange.imageAlt}" /></div><div class="greetings-line-stack">${exchange.lines.map((line) => `<article class="greetings-line-card"><div class="telephone-bubble-copy"><p class="telephone-line-hanzi">${line.hanzi}</p>${state2.showPinyin ? `<p class="telephone-line-pinyin">${line.pinyin}</p>` : ""}${state2.showEnglish ? `<p class="telephone-line-english">${line.english}</p>` : ""}</div></article>`).join("")}</div></div></section>`).join("")}</div></div>`;
       focusExplorer2.querySelectorAll("[data-age-play-all]").forEach((button) => button.addEventListener("click", () => {
         const exchange = agePractice2.find((entry) => entry.id === button.dataset.agePlayAll);
         if (!exchange || !state2.tapAudioEnabled) return;
@@ -4761,7 +4774,7 @@
                   <p class="body-match-kicker">Scene ${exchange.number}</p>
                   <p class="greetings-exchange-prompt">${exchange.prompt}</p>
                 </div>
-                <button class="small-button is-action-button" type="button" data-polite-play-all="${exchange.id}">Play scene</button>
+                <button class="small-button is-play-button" type="button" data-polite-play-all="${exchange.id}">Play</button>
               </div>
               <div class="greetings-scene-layout">
                 <div class="greetings-scene-visual">
@@ -5054,7 +5067,7 @@
                       <p class="body-match-kicker">Scene ${exchange.number}</p>
                       <p class="greetings-exchange-prompt">${exchange.prompt}</p>
                     </div>
-                    <button class="small-button is-action-button" type="button" data-greeting-play-all="${exchange.id}">Play scene</button>
+                    <button class="small-button is-play-button" type="button" data-greeting-play-all="${exchange.id}">Play</button>
                   </div>
                   <div class="greetings-scene-layout">
                     <div class="greetings-scene-visual">
@@ -5333,21 +5346,6 @@
     { id: "school-uniform", hanzi: "\u6821\u670D", pinyin: "xi\xE0o f\xFA", english: "school uniform", audio: "\u6821\u670D", imagePath: "assets/illustrated-self-dressing/putting-on-school-uniform.webp", imageAlt: "A child putting on a school uniform" }
   ];
 
-  // src/features/world/weather.js
-  var weatherTopic = {
-    id: "weather",
-    title: "Weather",
-    summary: "A natural topic for daily check-ins, clothing choices, and routine speech.",
-    progressLabel: "4B branch",
-    iconText: "\u4E0B\u96E8",
-    iconColor: "#6f7fa4",
-    focus: { hanzi: "\u4E0B\u96E8\u4E86\u3002", pinyin: "xi\xE0 y\u01D4 le.", english: "It is raining.", audio: "\u4E0B\u96E8\u4E86" },
-    parentGuide: "This is best as a daily one-minute habit. Check the weather together and say the phrase before leaving home.",
-    cultureGuide: "Weather combines nicely with clothing and seasonal culture content later.",
-    activities: ["Tap to hear", "Choose today's weather", "Dress for the weather", "Listen and choose"],
-    steps: [{ book: "4B", lesson: 1, title: "It's raining", note: "Start weather language with a concrete daily phrase." }]
-  };
-
   // src/features/world/animals.js
   var animalsTopic = {
     id: "animals",
@@ -5367,6 +5365,33 @@
   };
 
   // src/features/world/colours.js
+  var colourLessons = {
+    "1b": {
+      title: "Colours",
+      summary: "Name four everyday colours, then describe familiar fruit and animals.",
+      items: [
+        { id: "red", hanzi: "\u7EA2\u8272", pinyin: "h\xF3ng s\xE8", english: "red", audio: "\u7EA2\u8272", imagePath: "assets/illustrated-colors/red-apple.webp", imageAlt: "A red apple", phrase: "\u7EA2\u8272\u7684\u82F9\u679C", phrasePinyin: "h\xF3ng s\xE8 de p\xEDng gu\u01D2", phraseEnglish: "a red apple" },
+        { id: "yellow", hanzi: "\u9EC4\u8272", pinyin: "hu\xE1ng s\xE8", english: "yellow", audio: "\u9EC4\u8272", imagePath: "assets/illustrated-colors/yellow-banana.webp", imageAlt: "A yellow banana", phrase: "\u9EC4\u8272\u7684\u9999\u8549", phrasePinyin: "hu\xE1ng s\xE8 de xi\u0101ng ji\u0101o", phraseEnglish: "a yellow banana" },
+        { id: "blue", hanzi: "\u84DD\u8272", pinyin: "l\xE1n s\xE8", english: "blue", audio: "\u84DD\u8272", imagePath: "assets/illustrated-colors/blue-backpack.webp", imageAlt: "A blue backpack", phrase: "\u84DD\u8272\u7684\u4E66\u5305", phrasePinyin: "l\xE1n s\xE8 de sh\u016B b\u0101o", phraseEnglish: "a blue schoolbag" },
+        { id: "green", hanzi: "\u7EFF\u8272", pinyin: "l\u01DC s\xE8", english: "green", audio: "\u7EFF\u8272", imagePath: "assets/illustrated-colors/green-cucumber.webp", imageAlt: "A green cucumber", phrase: "\u7EFF\u8272\u7684\u9EC4\u74DC", phrasePinyin: "l\u01DC s\xE8 de hu\xE1ng gu\u0101", phraseEnglish: "a green cucumber" }
+      ]
+    },
+    "2a": {
+      title: "Colours",
+      summary: "The complete nine-colour set: 1B starts with four core colours; 2A adds five more for objects, animals, clothes, and body parts.",
+      items: [
+        { id: "purple", hanzi: "\u7D2B\u8272", pinyin: "z\u01D0 s\xE8", english: "purple", audio: "\u7D2B\u8272", imagePath: "assets/illustrated-colors/purple-grapes.webp", imageAlt: "Purple grapes", phrase: "\u7D2B\u8272\u7684\u8461\u8404", phrasePinyin: "z\u01D0 s\xE8 de p\xFA tao", phraseEnglish: "purple grapes" },
+        { id: "orange", hanzi: "\u6A59\u8272", pinyin: "ch\xE9ng s\xE8", english: "orange", audio: "\u6A59\u8272", imagePath: "assets/illustrated-colors/orange-fruit.webp", imageAlt: "An orange fruit", phrase: "\u6A59\u8272\u7684\u6A58\u5B50", phrasePinyin: "ch\xE9ng s\xE8 de j\xFA zi", phraseEnglish: "an orange" },
+        { id: "pink", hanzi: "\u7C89\u7EA2\u8272", pinyin: "f\u011Bn h\xF3ng s\xE8", english: "pink", audio: "\u7C89\u7EA2\u8272", imagePath: "assets/illustrated-colors/pink-flower-white.webp", imageAlt: "A pink flower", phrase: "\u7C89\u7EA2\u8272\u7684\u82B1", phrasePinyin: "f\u011Bn h\xF3ng s\xE8 de hu\u0101", phraseEnglish: "a pink flower" },
+        { id: "black", hanzi: "\u9ED1\u8272", pinyin: "h\u0113i s\xE8", english: "black", audio: "\u9ED1\u8272", imagePath: "assets/illustrated-colors/black-sneakers.webp", imageAlt: "Black sneakers", phrase: "\u9ED1\u8272\u7684\u978B", phrasePinyin: "h\u0113i s\xE8 de xi\xE9", phraseEnglish: "black shoes" },
+        { id: "white", hanzi: "\u767D\u8272", pinyin: "b\xE1i s\xE8", english: "white", audio: "\u767D\u8272", imagePath: "assets/illustrated-colors/white-dog.webp", imageAlt: "A white dog", phrase: "\u767D\u8272\u7684\u72D7", phrasePinyin: "b\xE1i s\xE8 de g\u01D2u", phraseEnglish: "a white dog" },
+        { id: "red", hanzi: "\u7EA2\u8272", pinyin: "h\xF3ng s\xE8", english: "red", audio: "\u7EA2\u8272", imagePath: "assets/illustrated-colors/red-apple.webp", imageAlt: "A red apple", phrase: "\u7EA2\u8272\u7684\u82F9\u679C", phrasePinyin: "h\xF3ng s\xE8 de p\xEDng gu\u01D2", phraseEnglish: "a red apple" },
+        { id: "yellow", hanzi: "\u9EC4\u8272", pinyin: "hu\xE1ng s\xE8", english: "yellow", audio: "\u9EC4\u8272", imagePath: "assets/illustrated-colors/yellow-banana.webp", imageAlt: "A yellow banana", phrase: "\u9EC4\u8272\u7684\u9999\u8549", phrasePinyin: "hu\xE1ng s\xE8 de xi\u0101ng ji\u0101o", phraseEnglish: "a yellow banana" },
+        { id: "blue", hanzi: "\u84DD\u8272", pinyin: "l\xE1n s\xE8", english: "blue", audio: "\u84DD\u8272", imagePath: "assets/illustrated-colors/blue-backpack.webp", imageAlt: "A blue backpack", phrase: "\u84DD\u8272\u7684\u4E66\u5305", phrasePinyin: "l\xE1n s\xE8 de sh\u016B b\u0101o", phraseEnglish: "a blue schoolbag" },
+        { id: "green", hanzi: "\u7EFF\u8272", pinyin: "l\u01DC s\xE8", english: "green", audio: "\u7EFF\u8272", imagePath: "assets/illustrated-colors/green-cucumber.webp", imageAlt: "A green cucumber", phrase: "\u7EFF\u8272\u7684\u9EC4\u74DC", phrasePinyin: "l\u01DC s\xE8 de hu\xE1ng gu\u0101", phraseEnglish: "a green cucumber" }
+      ]
+    }
+  };
   var coloursTopic = {
     id: "colours",
     title: "Colours",
@@ -5375,14 +5400,10 @@
     iconText: "\u7EA2\u84DD",
     iconColor: "#c36f62",
     focus: { hanzi: "\u7EA2\u8272\uFF0C\u84DD\u8272\uFF0C\u9EC4\u8272", pinyin: "h\xF3ng s\xE8, l\xE1n s\xE8, hu\xE1ng s\xE8", english: "red, blue, yellow", audio: "\u7EA2\u8272\uFF0C\u84DD\u8272\uFF0C\u9EC4\u8272" },
-    focusItems: [
-      { id: "red", hanzi: "\u7EA2\u8272", pinyin: "h\xF3ng s\xE8", english: "red", audio: "\u7EA2\u8272" },
-      { id: "blue", hanzi: "\u84DD\u8272", pinyin: "l\xE1n s\xE8", english: "blue", audio: "\u84DD\u8272" },
-      { id: "yellow", hanzi: "\u9EC4\u8272", pinyin: "hu\xE1ng s\xE8", english: "yellow", audio: "\u9EC4\u8272" }
-    ],
+    focusItems: colourLessons["1b"].items,
     parentGuide: "Practice with crayons, clothes, fruit, or toys. The more real and visible the better.",
     cultureGuide: "Colour topics are a natural place to add small festival and clothing connections later.",
-    activities: ["Tap to hear", "Choose the colour", "Colour hunt", "Listen and point"],
+    activities: ["Tap to hear", "Find the colour and object", "Match picture and phrase", "Say what I like"],
     steps: [
       { book: "1B", lesson: 6, title: "Colours", note: "Start with common colour words." },
       { book: "2A", lesson: 7, title: "Colours", note: "Review and strengthen the same topic later." }
@@ -6243,8 +6264,8 @@
               <button class="small-button is-action-button" type="button" data-body-toggle-bonus aria-pressed="${state2.bodyMatchIncludeBonus}">
                 Bonus words ${state2.bodyMatchIncludeBonus ? "on" : "off"}
               </button>
-              <button class="small-button is-action-button" type="button" data-body-reset-match>
-                New mix
+              <button class="small-button is-play-button" type="button" data-body-reset-match>
+                Play
               </button>
             </div>
           </div>
@@ -6316,7 +6337,7 @@
                 </div>
               ` : ""}
           ${roundComplete && !allDone ? '<button class="small-button body-next-round" type="button" data-body-next-round>Next set</button>' : ""}
-          ${allDone ? '<button class="small-button body-next-round" type="button" data-body-play-again>Play again</button>' : ""}
+          ${allDone ? '<button class="small-button is-play-button body-next-round" type="button" data-body-play-again>Play</button>' : ""}
         </div>
         <div class="body-more-practice-card">
           <p class="body-match-kicker">More Practice</p>
@@ -6496,7 +6517,7 @@
               <p class="telephone-line-hanzi">${telephonePractice2.question.hanzi}</p>
               ${state2.showPinyin ? `<p class="telephone-line-pinyin">${telephonePractice2.question.pinyin}</p>` : ""}
               ${state2.showEnglish ? `<p class="telephone-line-english">${telephonePractice2.question.english}</p>` : ""}
-              <button class="small-button is-action-button" type="button" data-telephone-play="question">Play audio</button>
+              <button class="small-button is-play-button" type="button" data-telephone-play="question">Play</button>
             </div>
           </article>
           <article class="telephone-bubble telephone-bubble-answer">
@@ -6512,7 +6533,7 @@
               <p class="telephone-line-hanzi">${telephonePractice2.answer.hanzi}</p>
               ${state2.showPinyin ? `<p class="telephone-line-pinyin">${telephonePractice2.answer.pinyin}</p>` : ""}
               ${state2.showEnglish ? `<p class="telephone-line-english">${telephonePractice2.answer.english}</p>` : ""}
-              <button class="small-button is-action-button" type="button" data-telephone-play="answer">Play audio</button>
+              <button class="small-button is-play-button" type="button" data-telephone-play="answer">Play</button>
             </div>
           </article>
         </div>
@@ -6633,7 +6654,7 @@
                     <p class="body-match-kicker">Scene ${exchange.number}</p>
                     <p class="greetings-exchange-prompt">${exchange.prompt}</p>
                   </div>
-                  <button class="small-button is-action-button" type="button" data-family-play-all="${exchange.id}">Play scene</button>
+                  <button class="small-button is-play-button" type="button" data-family-play-all="${exchange.id}">Play</button>
                 </div>
                 <div class="greetings-scene-layout family-scene-layout">
                   <div class="family-scene-visual">
@@ -6685,7 +6706,7 @@
             <p class="body-match-kicker">${currentBook2().label} Lesson ${currentLesson2().lesson}</p>
             <p class="greetings-exchange-prompt">Countries and languages</p>
           </div>
-          <button class="small-button is-action-button" type="button" data-identity-play-scene>Play scene</button>
+          <button class="small-button is-play-button" type="button" data-identity-play-scene>Play</button>
         </div>
         <div class="greetings-scene-layout">
           <div class="greetings-scene-visual">
@@ -6714,7 +6735,7 @@
             ${state2.showPinyin ? `<p class="telephone-line-pinyin">${identityQuestion2.pinyin}</p>` : ""}
             ${state2.showEnglish ? `<p class="telephone-line-english">${identityQuestion2.english}</p>` : ""}
           </div>
-          <button class="small-button is-action-button" type="button" data-identity-play-question>Play audio</button>
+          <button class="small-button is-play-button" type="button" data-identity-play-question>Play</button>
         </div>
         <div class="identity-country-grid">
           ${identityCountries2.map(
@@ -6781,7 +6802,7 @@
             <p>Tap a cell in the matrix. First see the multiplication fact, then hear and read the Chinese rhyme line.</p>
           </div>
           <div class="multiplication-playback-controls">
-            <button class="small-button is-action-button" type="button" data-multiplication-play-all>Play</button>
+            <button class="small-button is-play-button" type="button" data-multiplication-play-all>Play</button>
             <button class="small-button" type="button" data-multiplication-pause disabled>Pause</button>
             <button class="small-button" type="button" data-multiplication-stop disabled>Stop</button>
           </div>
@@ -6808,7 +6829,7 @@
         <p class="multiplication-line-hanzi">${activeItem.hanzi}</p>
         ${state2.showPinyin ? `<p class="multiplication-line-pinyin">${activeItem.pinyin}</p>` : ""}
         ${state2.showEnglish ? `<p class="multiplication-line-english">${activeItem.english}</p>` : ""}
-        <button class="small-button is-action-button" type="button" data-multiplication-item="${activeItem.id}">Play audio</button>
+        <button class="small-button is-play-button" type="button" data-multiplication-item="${activeItem.id}">Play</button>
       </div>
     </div>
   `;
@@ -6886,7 +6907,7 @@
 
   // src/features/time-daily-life/time-daily-life-runtime.js
   function createTimeDailyLifeRuntime(context) {
-    const { state: state2, timeDateWeekItems: timeDateWeekItems2, timeDateClockItems: timeDateClockItems3, timeDateExpressionItems: timeDateExpressionItems2, timeDateRoutineItems: timeDateRoutineItems2, datePracticeItems: datePracticeItems2, timeDateDateItems: timeDateDateItems2, timeDateMonthItems: timeDateMonthItems2, comparisonPracticeItems: comparisonPracticeItems2, comparisonWordItems: comparisonWordItems2, positionPracticeItems: positionPracticeItems3, positionScenes: positionScenes2, clothesMatchItems: clothesMatchItems2, clothesPractice: clothesPractice2, roomScenes: roomScenes2, roomSentenceTokens: roomSentenceTokens2, transportSentenceTokens: transportSentenceTokens2, visualTopicItems: visualTopicItems3, shuffleArray: shuffleArray2, speak: speak2, speakSceneLines: speakSceneLines2, currentTopic: currentTopic2, currentBook: currentBook2, currentLesson: currentLesson2, renderActivityPanel: renderActivityPanel2, focusExplorer: focusExplorer2, focusStatus: focusStatus2 } = context;
+    const { state: state2, timeDateWeekItems: timeDateWeekItems2, timeDateClockItems: timeDateClockItems2, timeDateExpressionItems: timeDateExpressionItems2, timeDateRoutineItems: timeDateRoutineItems2, datePracticeItems: datePracticeItems2, timeDateDateItems: timeDateDateItems2, timeDateMonthItems: timeDateMonthItems2, comparisonPracticeItems: comparisonPracticeItems2, comparisonWordItems: comparisonWordItems2, positionPracticeItems: positionPracticeItems2, positionScenes: positionScenes2, clothesMatchItems: clothesMatchItems2, clothesPractice: clothesPractice2, roomScenes: roomScenes2, roomSentenceTokens: roomSentenceTokens2, transportSentenceTokens: transportSentenceTokens2, visualTopicItems: visualTopicItems2, shuffleArray: shuffleArray2, speak: speak2, speakSceneLines: speakSceneLines2, currentTopic: currentTopic2, currentBook: currentBook2, currentLesson: currentLesson2, renderActivityPanel: renderActivityPanel2, focusExplorer: focusExplorer2, focusStatus: focusStatus2 } = context;
     function resetWeekdayChallenge2(options = {}) {
       const candidates = timeDateWeekItems2.filter((item) => item.id !== options.excludeId);
       const answers = candidates.length ? candidates : timeDateWeekItems2;
@@ -7024,13 +7045,13 @@
       renderActivityPanel2(currentTopic2());
     }
     function resetClockQuiz2() {
-      state2.clockQuizOrder = shuffleArray2(timeDateClockItems3.map((item) => item.id));
+      state2.clockQuizOrder = shuffleArray2(timeDateClockItems2.map((item) => item.id));
       state2.clockQuizIndex = 0;
       prepareClockQuizQuestion2();
     }
     function prepareClockQuizQuestion2() {
       const answerId = state2.clockQuizOrder[state2.clockQuizIndex];
-      const distractorIds = shuffleArray2(timeDateClockItems3.filter((item) => item.id !== answerId).map((item) => item.id)).slice(0, 3);
+      const distractorIds = shuffleArray2(timeDateClockItems2.filter((item) => item.id !== answerId).map((item) => item.id)).slice(0, 3);
       state2.clockQuizOptionIds = shuffleArray2([answerId, ...distractorIds]);
       state2.clockQuizSelectedId = "";
       state2.clockQuizResult = "";
@@ -7048,7 +7069,7 @@
       state2.clockQuizSelectedId = itemId;
       state2.clockQuizResult = itemId === answerId ? "correct" : "wrong";
       if (state2.clockQuizResult === "correct" && state2.tapAudioEnabled) {
-        const item = timeDateClockItems3.find((entry) => entry.id === answerId);
+        const item = timeDateClockItems2.find((entry) => entry.id === answerId);
         if (item) speak2(`\u51E0\u70B9\u4E86\uFF1F\u73B0\u5728${item.hanzi}\u3002`, 0.78);
       }
       renderActivityPanel2(currentTopic2());
@@ -7133,28 +7154,28 @@
       prepareRoomBuilder2();
       renderActivityPanel2(currentTopic2());
     }
-    function currentTransportBuildItem3() {
+    function currentTransportBuildItem2() {
       const id = state2.transportBuildOrder[state2.transportBuildIndex];
-      return visualTopicItems3.transport.find((item) => item.id === id);
+      return visualTopicItems2.transport.find((item) => item.id === id);
     }
     function resetTransportBuilder2() {
-      state2.transportBuildOrder = shuffleArray2(visualTopicItems3.transport.map((item) => item.id));
+      state2.transportBuildOrder = shuffleArray2(visualTopicItems2.transport.map((item) => item.id));
       state2.transportBuildIndex = 0;
       prepareTransportBuilder2();
     }
     function prepareTransportBuilder2() {
-      const item = currentTransportBuildItem3();
+      const item = currentTransportBuildItem2();
       const tokens = transportSentenceTokens2[item?.id];
       state2.transportBuildSelectedTokens = [];
       state2.transportBuildResult = "";
       state2.transportBuildAvailableTokens = shuffleArray2([...tokens?.target ?? [], ...tokens?.distractors ?? []]);
     }
-    function ensureTransportBuilder3() {
+    function ensureTransportBuilder2() {
       if (!state2.transportBuildOrder.length) resetTransportBuilder2();
     }
-    function handleTransportBuildToken3(tokenIndex) {
+    function handleTransportBuildToken2(tokenIndex) {
       if (state2.transportBuildResult === "correct") return;
-      const item = currentTransportBuildItem3();
+      const item = currentTransportBuildItem2();
       const tokens = transportSentenceTokens2[item?.id];
       const token = state2.transportBuildAvailableTokens[tokenIndex];
       if (!token || !tokens) return;
@@ -7176,52 +7197,52 @@
       }
       renderActivityPanel2(currentTopic2());
     }
-    function clearTransportBuilder3() {
+    function clearTransportBuilder2() {
       prepareTransportBuilder2();
       renderActivityPanel2(currentTopic2());
     }
-    function nextTransportBuilder3() {
+    function nextTransportBuilder2() {
       state2.transportBuildIndex = (state2.transportBuildIndex + 1) % state2.transportBuildOrder.length;
       prepareTransportBuilder2();
       renderActivityPanel2(currentTopic2());
     }
     function resetPositionQuiz2() {
-      state2.positionQuizOrder = shuffleArray2(positionPracticeItems3.map((item) => item.id));
+      state2.positionQuizOrder = shuffleArray2(positionPracticeItems2.map((item) => item.id));
       state2.positionQuizIndex = 0;
       preparePositionQuizQuestion2();
     }
     function preparePositionQuizQuestion2() {
       const answerId = state2.positionQuizOrder[state2.positionQuizIndex];
-      const distractorIds = shuffleArray2(positionPracticeItems3.filter((item) => item.id !== answerId).map((item) => item.id)).slice(0, 3);
+      const distractorIds = shuffleArray2(positionPracticeItems2.filter((item) => item.id !== answerId).map((item) => item.id)).slice(0, 3);
       state2.positionQuizOptionIds = shuffleArray2([answerId, ...distractorIds]);
       state2.positionQuizSelectedId = "";
       state2.positionQuizResult = "";
     }
-    function ensurePositionQuiz3() {
+    function ensurePositionQuiz2() {
       if (!state2.positionQuizOrder.length) resetPositionQuiz2();
     }
-    function handlePositionQuizPlay3() {
-      ensurePositionQuiz3();
-      const item = positionPracticeItems3.find((entry) => entry.id === state2.positionQuizOrder[state2.positionQuizIndex]);
+    function handlePositionQuizPlay2() {
+      ensurePositionQuiz2();
+      const item = positionPracticeItems2.find((entry) => entry.id === state2.positionQuizOrder[state2.positionQuizIndex]);
       if (item && state2.tapAudioEnabled) speak2(item.audio, 0.78);
     }
-    function handlePositionQuizPick3(itemId) {
+    function handlePositionQuizPick2(itemId) {
       if (state2.positionQuizResult === "correct") return;
       const answerId = state2.positionQuizOrder[state2.positionQuizIndex];
       state2.positionQuizSelectedId = itemId;
       state2.positionQuizResult = itemId === answerId ? "correct" : "wrong";
       if (state2.positionQuizResult === "correct" && state2.tapAudioEnabled) {
-        const item = positionPracticeItems3.find((entry) => entry.id === answerId);
+        const item = positionPracticeItems2.find((entry) => entry.id === answerId);
         speak2(item?.audio, 0.78);
       }
       renderActivityPanel2(currentTopic2());
     }
-    function nextPositionQuizQuestion3() {
+    function nextPositionQuizQuestion2() {
       state2.positionQuizIndex = (state2.positionQuizIndex + 1) % state2.positionQuizOrder.length;
       preparePositionQuizQuestion2();
       renderActivityPanel2(currentTopic2());
     }
-    function currentComparisonBuildItem3() {
+    function currentComparisonBuildItem2() {
       const id = state2.comparisonBuildOrder[state2.comparisonBuildIndex];
       return comparisonPracticeItems2.find((item) => item.id === id);
     }
@@ -7231,17 +7252,17 @@
       prepareComparisonBuilder2();
     }
     function prepareComparisonBuilder2() {
-      const item = currentComparisonBuildItem3();
+      const item = currentComparisonBuildItem2();
       state2.comparisonBuildSelectedTokens = [];
       state2.comparisonBuildAvailableTokens = shuffleArray2(item?.options ?? []);
       state2.comparisonBuildResult = "";
     }
-    function ensureComparisonBuilder3() {
+    function ensureComparisonBuilder2() {
       if (!state2.comparisonBuildOrder.length) resetComparisonBuilder2();
     }
-    function handleComparisonBuildToken3(index) {
+    function handleComparisonBuildToken2(index) {
       if (state2.comparisonBuildResult === "correct") return;
-      const item = currentComparisonBuildItem3();
+      const item = currentComparisonBuildItem2();
       const token = state2.comparisonBuildAvailableTokens[index];
       if (!item || !token) return;
       const selected = [...state2.comparisonBuildSelectedTokens, token];
@@ -7261,11 +7282,11 @@
       }
       renderActivityPanel2(currentTopic2());
     }
-    function clearComparisonBuilder3() {
+    function clearComparisonBuilder2() {
       prepareComparisonBuilder2();
       renderActivityPanel2(currentTopic2());
     }
-    function nextComparisonBuilder3() {
+    function nextComparisonBuilder2() {
       state2.comparisonBuildIndex = (state2.comparisonBuildIndex + 1) % state2.comparisonBuildOrder.length;
       prepareComparisonBuilder2();
       renderActivityPanel2(currentTopic2());
@@ -7345,7 +7366,7 @@
       if (lessonKey === "2b:2" || lessonKey === "4a:3") return "clock";
       return "routine";
     }
-    function activeTimeDateSection3() {
+    function activeTimeDateSection2() {
       const source = `${currentBook2().id}:${currentLesson2().lesson}`;
       if (state2.timeDateSectionSource !== source) {
         state2.timeDateSectionSource = source;
@@ -7376,10 +7397,10 @@
           const [collection, id] = button.dataset.timeAsset.split(":");
           const items = {
             week: timeDateWeekItems2,
-            clock: timeDateClockItems3,
+            clock: timeDateClockItems2,
             date: timeDateDateItems2,
             month: timeDateMonthItems2,
-            visual: Object.values(visualTopicItems3).flat()
+            visual: Object.values(visualTopicItems2).flat()
           }[collection] ?? [];
           const item = items.find((entry) => entry.id === id);
           if (item && state2.tapAudioEnabled) {
@@ -7398,7 +7419,7 @@
       <div class="time-asset-grid time-asset-grid-week">
         ${timeDateWeekItems2.map((item) => `
           <section class="time-asset-card weekday-scene-card">
-            <div class="greetings-exchange-top"><div><span class="time-asset-hanzi">${item.hanzi}</span></div><button class="small-button is-action-button" type="button" data-weekday-play-scene="${item.id}">Play scene</button></div>
+            <div class="greetings-exchange-top"><div><span class="time-asset-hanzi">${item.hanzi}</span></div><button class="small-button is-play-button" type="button" data-weekday-play-scene="${item.id}">Play</button></div>
             <img class="time-asset-image" src="${item.imagePath}" alt="${item.english}" />
             <span class="time-asset-context">${item.context}</span>
             ${state2.showPinyin ? `<span class="time-asset-context-pinyin">${item.contextPinyin}</span>` : ""}
@@ -7436,7 +7457,7 @@
           ${state2.showPinyin ? '<p class="time-months-pinyin">y\u012B ni\xE1n y\u01D2u sh\xED \xE8r ge yu\xE8.</p>' : ""}
           ${state2.showEnglish ? '<p class="time-months-english">There are twelve months in a year.</p>' : ""}
         </div>
-        <button class="small-button is-action-button" type="button" data-months-play>Play audio</button>
+        <button class="small-button is-play-button" type="button" data-months-play>Play</button>
       </section>
       ${renderTimeAssetGrid2(timeDateMonthItems2, "month")}
       <section class="visual-topic-notes">
@@ -7459,7 +7480,7 @@
     }
     function renderVisualTopicExplorer2(sceneId) {
       const topic = currentTopic2();
-      const items = visualTopicItems3[sceneId] ?? [];
+      const items = visualTopicItems2[sceneId] ?? [];
       const comparisonWords = sceneId === "comparisons" ? `<div class="comparison-word-grid">${comparisonWordItems2.map((item) => `<button class="comparison-word-card" type="button" data-comparison-word="${item.hanzi}"><span class="comparison-word-hanzi">${item.hanzi}</span>${state2.showPinyin ? `<span class="comparison-word-pinyin">${item.pinyin}</span>` : ""}${state2.showEnglish ? `<span class="comparison-word-english">${item.english}</span>` : ""}</button>`).join("")}</div>` : "";
       const usefulNotes = sceneId === "transport" ? `
         <section class="visual-topic-notes">
@@ -7516,7 +7537,7 @@
       <div class="greetings-practice-grid room-scene-grid">
         ${roomScenes2.map((scene) => `
           <section class="greetings-exchange room-scene-card">
-            <div class="greetings-exchange-top"><div><p class="body-match-kicker">${scene.label}</p></div><button class="small-button is-action-button" type="button" data-room-play-scene="${scene.id}">Play scene</button></div>
+            <div class="greetings-exchange-top"><div><p class="body-match-kicker">${scene.label}</p></div><button class="small-button is-play-button" type="button" data-room-play-scene="${scene.id}">Play</button></div>
             <div class="room-scene-layout">
               <img class="room-scene-image" src="${scene.imagePath}" alt="${scene.english}" />
               <article class="greetings-line-card"><div class="telephone-bubble-copy"><p class="telephone-line-hanzi">${scene.hanzi}</p>${state2.showPinyin ? `<p class="telephone-line-pinyin">${scene.pinyin}</p>` : ""}${state2.showEnglish ? `<p class="telephone-line-english">${scene.english}</p>` : ""}</div></article>
@@ -7525,7 +7546,7 @@
         `).join("")}
       </div>
       <div class="time-months-heading"><p class="body-match-kicker">Book words</p></div>
-      ${renderTimeAssetGrid2(visualTopicItems3.rooms, "visual visual-rooms", "visual")}
+      ${renderTimeAssetGrid2(visualTopicItems2.rooms, "visual visual-rooms", "visual")}
       <section class="visual-topic-notes">
         <p class="body-match-kicker">Useful notes</p>
         <div class="visual-topic-note-grid room-useful-note-grid">
@@ -7554,7 +7575,7 @@
         ${positionScenes2.map(
         (scene) => `
               <section class="greetings-exchange">
-                <div class="greetings-exchange-top"><div><p class="body-match-kicker">Scene ${scene.number}</p><p class="greetings-exchange-prompt">${scene.prompt}</p></div><button class="small-button is-action-button" type="button" data-position-play-scene="${scene.id}">Play scene</button></div>
+                <div class="greetings-exchange-top"><div><p class="body-match-kicker">Scene ${scene.number}</p><p class="greetings-exchange-prompt">${scene.prompt}</p></div><button class="small-button is-play-button" type="button" data-position-play-scene="${scene.id}">Play</button></div>
                 <div class="greetings-scene-layout">
                   <div class="greetings-scene-visual"><img class="greetings-scene-image position-scene-image position-scene-image-${scene.id}" src="${scene.imagePath}" alt="${scene.imageAlt}" /></div>
                   <div class="greetings-line-stack">
@@ -7583,14 +7604,14 @@
       });
     }
     function renderTimeDateExplorer2() {
-      const activeSection = activeTimeDateSection3();
+      const activeSection = activeTimeDateSection2();
       const sections = [
         { id: "routine", hanzi: "\u4F5C\u606F", english: "Routine" },
         { id: "clock", hanzi: "\u65F6\u95F4", english: "Time" }
       ];
       let content = "";
       if (activeSection === "clock") {
-        content = renderTimeAssetGrid2(timeDateClockItems3.filter((item) => item.id !== "clock-7"), "clock");
+        content = renderTimeAssetGrid2(timeDateClockItems2.filter((item) => item.id !== "clock-7"), "clock");
       } else {
         content = `
       <div class="greetings-practice-grid time-routine-scene-grid">
@@ -7602,7 +7623,7 @@
                     <p class="body-match-kicker">Scene ${index + 1}</p>
                     <p class="greetings-exchange-prompt">${item.english}</p>
                   </div>
-                  <button class="small-button is-action-button" type="button" data-time-routine-play="${item.id}">Play scene</button>
+                  <button class="small-button is-play-button" type="button" data-time-routine-play="${item.id}">Play</button>
                 </div>
                 <div class="greetings-scene-layout">
                   <div class="greetings-scene-visual"><img class="greetings-scene-image time-routine-scene-image" src="${item.imagePath}" alt="${item.english}" /></div>
@@ -7683,7 +7704,7 @@
                     <p class="body-match-kicker">Scene ${scene.number}</p>
                     <p class="greetings-exchange-prompt">${scene.prompt}</p>
                   </div>
-                  <button class="small-button is-action-button" type="button" data-clothes-play-scene="${scene.id}">Play scene</button>
+                  <button class="small-button is-play-button" type="button" data-clothes-play-scene="${scene.id}">Play</button>
                 </div>
                 <div class="greetings-scene-layout">
                   <div class="greetings-scene-visual">
@@ -7718,7 +7739,531 @@
         });
       });
     }
-    return { resetWeekdayChallenge: resetWeekdayChallenge2, ensureWeekdayChallenge: ensureWeekdayChallenge2, handleWeekdayChallengePlay: handleWeekdayChallengePlay2, handleWeekdayChallengeGuess: handleWeekdayChallengeGuess2, resetWeekdayMatchGame: resetWeekdayMatchGame2, ensureWeekdayMatchGame: ensureWeekdayMatchGame2, handleWeekdayMatchPhrase: handleWeekdayMatchPhrase2, handleWeekdayMatchAttempt: handleWeekdayMatchAttempt2, resetClothesQuiz: resetClothesQuiz2, prepareClothesQuizQuestion: prepareClothesQuizQuestion2, ensureClothesQuiz: ensureClothesQuiz2, handleClothesQuizPick: handleClothesQuizPick2, nextClothesQuizQuestion: nextClothesQuizQuestion2, resetTimeRoutineQuiz: resetTimeRoutineQuiz2, prepareTimeRoutineQuizQuestion: prepareTimeRoutineQuizQuestion2, ensureTimeRoutineQuiz: ensureTimeRoutineQuiz2, handleTimeRoutineQuizPick: handleTimeRoutineQuizPick2, nextTimeRoutineQuizQuestion: nextTimeRoutineQuizQuestion2, resetClockQuiz: resetClockQuiz2, prepareClockQuizQuestion: prepareClockQuizQuestion2, ensureClockQuiz: ensureClockQuiz2, handleClockQuizPick: handleClockQuizPick2, nextClockQuizQuestion: nextClockQuizQuestion2, currentRoomBuildItem: currentRoomBuildItem2, resetRoomBuilder: resetRoomBuilder2, prepareRoomBuilder: prepareRoomBuilder2, ensureRoomBuilder: ensureRoomBuilder2, isRoomBuildPrefixValid: isRoomBuildPrefixValid2, handleRoomBuildToken: handleRoomBuildToken2, clearRoomBuilder: clearRoomBuilder2, nextRoomBuilder: nextRoomBuilder2, currentTransportBuildItem: currentTransportBuildItem3, resetTransportBuilder: resetTransportBuilder2, prepareTransportBuilder: prepareTransportBuilder2, ensureTransportBuilder: ensureTransportBuilder3, handleTransportBuildToken: handleTransportBuildToken3, clearTransportBuilder: clearTransportBuilder3, nextTransportBuilder: nextTransportBuilder3, resetPositionQuiz: resetPositionQuiz2, preparePositionQuizQuestion: preparePositionQuizQuestion2, ensurePositionQuiz: ensurePositionQuiz3, handlePositionQuizPlay: handlePositionQuizPlay3, handlePositionQuizPick: handlePositionQuizPick3, nextPositionQuizQuestion: nextPositionQuizQuestion3, currentComparisonBuildItem: currentComparisonBuildItem3, resetComparisonBuilder: resetComparisonBuilder2, prepareComparisonBuilder: prepareComparisonBuilder2, ensureComparisonBuilder: ensureComparisonBuilder3, handleComparisonBuildToken: handleComparisonBuildToken3, clearComparisonBuilder: clearComparisonBuilder3, nextComparisonBuilder: nextComparisonBuilder3, resetDateMatchGame: resetDateMatchGame2, ensureDateMatchGame: ensureDateMatchGame2, handleDateMatchPhrase: handleDateMatchPhrase2, handleDateMatchEvent: handleDateMatchEvent2, resetDateChallenge: resetDateChallenge2, ensureDateChallenge: ensureDateChallenge2, handleDateChallengePlay: handleDateChallengePlay2, handleDateChallengeGuess: handleDateChallengeGuess2, timeDateSectionForCurrentLesson: timeDateSectionForCurrentLesson2, activeTimeDateSection: activeTimeDateSection3, renderTimeAssetGrid: renderTimeAssetGrid2, bindTimeAssetAudio: bindTimeAssetAudio2, renderWeekdaysExplorer: renderWeekdaysExplorer2, renderDatesExplorer: renderDatesExplorer2, renderVisualTopicExplorer: renderVisualTopicExplorer2, renderRoomsExplorer: renderRoomsExplorer2, renderPositionsExplorer: renderPositionsExplorer2, renderTimeDateExplorer: renderTimeDateExplorer2, renderClothesExplorer: renderClothesExplorer2 };
+    return { resetWeekdayChallenge: resetWeekdayChallenge2, ensureWeekdayChallenge: ensureWeekdayChallenge2, handleWeekdayChallengePlay: handleWeekdayChallengePlay2, handleWeekdayChallengeGuess: handleWeekdayChallengeGuess2, resetWeekdayMatchGame: resetWeekdayMatchGame2, ensureWeekdayMatchGame: ensureWeekdayMatchGame2, handleWeekdayMatchPhrase: handleWeekdayMatchPhrase2, handleWeekdayMatchAttempt: handleWeekdayMatchAttempt2, resetClothesQuiz: resetClothesQuiz2, prepareClothesQuizQuestion: prepareClothesQuizQuestion2, ensureClothesQuiz: ensureClothesQuiz2, handleClothesQuizPick: handleClothesQuizPick2, nextClothesQuizQuestion: nextClothesQuizQuestion2, resetTimeRoutineQuiz: resetTimeRoutineQuiz2, prepareTimeRoutineQuizQuestion: prepareTimeRoutineQuizQuestion2, ensureTimeRoutineQuiz: ensureTimeRoutineQuiz2, handleTimeRoutineQuizPick: handleTimeRoutineQuizPick2, nextTimeRoutineQuizQuestion: nextTimeRoutineQuizQuestion2, resetClockQuiz: resetClockQuiz2, prepareClockQuizQuestion: prepareClockQuizQuestion2, ensureClockQuiz: ensureClockQuiz2, handleClockQuizPick: handleClockQuizPick2, nextClockQuizQuestion: nextClockQuizQuestion2, currentRoomBuildItem: currentRoomBuildItem2, resetRoomBuilder: resetRoomBuilder2, prepareRoomBuilder: prepareRoomBuilder2, ensureRoomBuilder: ensureRoomBuilder2, isRoomBuildPrefixValid: isRoomBuildPrefixValid2, handleRoomBuildToken: handleRoomBuildToken2, clearRoomBuilder: clearRoomBuilder2, nextRoomBuilder: nextRoomBuilder2, currentTransportBuildItem: currentTransportBuildItem2, resetTransportBuilder: resetTransportBuilder2, prepareTransportBuilder: prepareTransportBuilder2, ensureTransportBuilder: ensureTransportBuilder2, handleTransportBuildToken: handleTransportBuildToken2, clearTransportBuilder: clearTransportBuilder2, nextTransportBuilder: nextTransportBuilder2, resetPositionQuiz: resetPositionQuiz2, preparePositionQuizQuestion: preparePositionQuizQuestion2, ensurePositionQuiz: ensurePositionQuiz2, handlePositionQuizPlay: handlePositionQuizPlay2, handlePositionQuizPick: handlePositionQuizPick2, nextPositionQuizQuestion: nextPositionQuizQuestion2, currentComparisonBuildItem: currentComparisonBuildItem2, resetComparisonBuilder: resetComparisonBuilder2, prepareComparisonBuilder: prepareComparisonBuilder2, ensureComparisonBuilder: ensureComparisonBuilder2, handleComparisonBuildToken: handleComparisonBuildToken2, clearComparisonBuilder: clearComparisonBuilder2, nextComparisonBuilder: nextComparisonBuilder2, resetDateMatchGame: resetDateMatchGame2, ensureDateMatchGame: ensureDateMatchGame2, handleDateMatchPhrase: handleDateMatchPhrase2, handleDateMatchEvent: handleDateMatchEvent2, resetDateChallenge: resetDateChallenge2, ensureDateChallenge: ensureDateChallenge2, handleDateChallengePlay: handleDateChallengePlay2, handleDateChallengeGuess: handleDateChallengeGuess2, timeDateSectionForCurrentLesson: timeDateSectionForCurrentLesson2, activeTimeDateSection: activeTimeDateSection2, renderTimeAssetGrid: renderTimeAssetGrid2, bindTimeAssetAudio: bindTimeAssetAudio2, renderWeekdaysExplorer: renderWeekdaysExplorer2, renderDatesExplorer: renderDatesExplorer2, renderVisualTopicExplorer: renderVisualTopicExplorer2, renderRoomsExplorer: renderRoomsExplorer2, renderPositionsExplorer: renderPositionsExplorer2, renderTimeDateExplorer: renderTimeDateExplorer2, renderClothesExplorer: renderClothesExplorer2 };
+  }
+
+  // src/features/world/weather.js
+  var weatherLesson = {
+    title: "It's Raining",
+    summary: "Describe today\u2019s weather, then connect it to how you feel and what you wear.",
+    items: [
+      { id: "rain", hanzi: "\u4E0B\u96E8\u4E86", pinyin: "xi\xE0 y\u01D4 le", english: "It is raining.", audio: "\u4E0B\u96E8\u4E86", imagePath: "assets/illustrated-weather/rainy-umbrella.webp", imageAlt: "A child under an umbrella in the rain" },
+      { id: "snow", hanzi: "\u4E0B\u96EA\u4E86", pinyin: "xi\xE0 xu\u011B le", english: "It is snowing.", audio: "\u4E0B\u96EA\u4E86", imagePath: "assets/illustrated-weather/snowy-cold.webp", imageAlt: "A snowy winter scene" },
+      { id: "sunny", hanzi: "\u4ECA\u5929\u662F\u6674\u5929", pinyin: "j\u012Bn ti\u0101n sh\xEC q\xEDng ti\u0101n", english: "Today is sunny.", audio: "\u4ECA\u5929\u662F\u6674\u5929", imagePath: "assets/illustrated-weather/sunny-hot.webp", imageAlt: "A bright sunny day" },
+      { id: "cold", hanzi: "\u4ECA\u5929\u5F88\u51B7", pinyin: "j\u012Bn ti\u0101n h\u011Bn l\u011Bng", english: "Today is very cold.", audio: "\u4ECA\u5929\u5F88\u51B7", imagePath: "assets/illustrated-weather/snowy-cold.webp", imageAlt: "A snowy winter scene" },
+      { id: "hot", hanzi: "\u4ECA\u5929\u5F88\u70ED", pinyin: "j\u012Bn ti\u0101n h\u011Bn r\xE8", english: "Today is very hot.", audio: "\u4ECA\u5929\u5F88\u70ED", imagePath: "assets/illustrated-weather/sunny-hot.webp", imageAlt: "A bright sunny day" },
+      { id: "windy", hanzi: "\u4ECA\u5929\u522E\u5927\u98CE", pinyin: "j\u012Bn ti\u0101n gu\u0101 d\xE0 f\u0113ng", english: "It is very windy today.", audio: "\u4ECA\u5929\u522E\u5927\u98CE", imagePath: "assets/illustrated-weather/windy-leaves.webp", imageAlt: "Leaves blowing on a windy day" }
+    ]
+  };
+  var natureLesson = {
+    title: "Nature",
+    summary: "Describe what is in the sky and on the ground using \u5929\u4E0A\u6709\u2026 and \u5730\u4E0A\u6709\u2026.",
+    imagePath: "assets/illustrated-nature/day-night-nature.webp",
+    imageAlt: "A day and night nature scene with sun, moon, stars, trees, flowers, and grass",
+    items: [
+      { id: "sky", hanzi: "\u5929\u4E0A", pinyin: "ti\u0101n sh\xE0ng", english: "in the sky", audio: "\u5929\u4E0A" },
+      { id: "sun", hanzi: "\u592A\u9633", pinyin: "t\xE0i y\xE1ng", english: "sun", audio: "\u592A\u9633" },
+      { id: "star", hanzi: "\u661F\u661F", pinyin: "x\u012Bng xing", english: "star", audio: "\u661F\u661F" },
+      { id: "moon", hanzi: "\u6708\u4EAE", pinyin: "yu\xE8 liang", english: "moon", audio: "\u6708\u4EAE" },
+      { id: "ground", hanzi: "\u5730\u4E0A", pinyin: "d\xEC sh\xE0ng", english: "on the ground", audio: "\u5730\u4E0A" },
+      { id: "tree", hanzi: "\u6811", pinyin: "sh\xF9", english: "tree", audio: "\u6811" },
+      { id: "flower", hanzi: "\u82B1", pinyin: "hu\u0101", english: "flower", audio: "\u82B1" },
+      { id: "grass", hanzi: "\u8349", pinyin: "c\u01CEo", english: "grass", audio: "\u8349" }
+    ],
+    sentences: [
+      { hanzi: "\u5929\u4E0A\u6709\u592A\u9633\u3002", pinyin: "ti\u0101n sh\xE0ng y\u01D2u t\xE0i y\xE1ng.", english: "There is a sun in the sky.", audio: "\u5929\u4E0A\u6709\u592A\u9633" },
+      { hanzi: "\u5929\u4E0A\u6709\u661F\u661F\u3002", pinyin: "ti\u0101n sh\xE0ng y\u01D2u x\u012Bng xing.", english: "There are stars in the sky.", audio: "\u5929\u4E0A\u6709\u661F\u661F" },
+      { hanzi: "\u5929\u4E0A\u6709\u6708\u4EAE\u3002", pinyin: "ti\u0101n sh\xE0ng y\u01D2u yu\xE8 liang.", english: "There is a moon in the sky.", audio: "\u5929\u4E0A\u6709\u6708\u4EAE" },
+      { hanzi: "\u5730\u4E0A\u6709\u6811\u3002", pinyin: "d\xEC sh\xE0ng y\u01D2u sh\xF9.", english: "There is a tree on the ground.", audio: "\u5730\u4E0A\u6709\u6811" },
+      { hanzi: "\u5730\u4E0A\u6709\u82B1\u3002", pinyin: "d\xEC sh\xE0ng y\u01D2u hu\u0101.", english: "There are flowers on the ground.", audio: "\u5730\u4E0A\u6709\u82B1" },
+      { hanzi: "\u5730\u4E0A\u6709\u8349\u3002", pinyin: "d\xEC sh\xE0ng y\u01D2u c\u01CEo.", english: "There is grass on the ground.", audio: "\u5730\u4E0A\u6709\u8349" },
+      { hanzi: "\u5929\u4E0A\u6709\u592A\u9633\u3001\u661F\u661F\u548C\u6708\u4EAE\u3002", pinyin: "ti\u0101n sh\xE0ng y\u01D2u t\xE0i y\xE1ng, x\u012Bng xing h\xE9 yu\xE8 liang.", english: "There are a sun, stars, and a moon in the sky.", audio: "\u5929\u4E0A\u6709\u592A\u9633\u661F\u661F\u548C\u6708\u4EAE" },
+      { hanzi: "\u5730\u4E0A\u6709\u7EFF\u6811\u3001\u7EA2\u82B1\u548C\u5C0F\u8349\u3002", pinyin: "d\xEC sh\xE0ng y\u01D2u l\u01DC sh\xF9, h\xF3ng hu\u0101 h\xE9 xi\u01CEo c\u01CEo.", english: "There are green trees, red flowers, and small grass on the ground.", audio: "\u5730\u4E0A\u6709\u7EFF\u6811\u7EA2\u82B1\u548C\u5C0F\u8349" }
+    ]
+  };
+  var weatherTopic = {
+    id: "weather",
+    title: "Weather",
+    summary: "Use concrete daily weather phrases for rain, snow, sun, wind, heat, and cold.",
+    progressLabel: "4B Lesson 1",
+    iconText: "\u4E0B\u96E8",
+    iconColor: "#6f7fa4",
+    focus: { hanzi: "\u4E0B\u96E8\u4E86\u3002", pinyin: "xi\xE0 y\u01D4 le.", english: "It is raining.", audio: "\u4E0B\u96E8\u4E86" },
+    parentGuide: "This is best as a daily one-minute habit. Check the weather together and say the phrase before leaving home.",
+    cultureGuide: "Weather combines nicely with clothing and seasonal culture content later.",
+    activities: ["Tap to hear", "Describe the scene", "Choose today's weather", "Dress for the weather"],
+    steps: [{ book: "4B", lesson: 1, title: "It's raining", note: "Use concrete daily weather phrases." }]
+  };
+  var natureTopic = {
+    id: "nature",
+    title: "Nature",
+    summary: "Look up and down: describe what is in the sky and on the ground.",
+    progressLabel: "3B Lesson 7",
+    iconText: "\u5929\u5730",
+    iconColor: "#6e9872",
+    focus: { hanzi: "\u5929\u4E0A\u6709\u592A\u9633\u3002", pinyin: "ti\u0101n sh\xE0ng y\u01D2u t\xE0i y\xE1ng.", english: "There is a sun in the sky.", audio: "\u5929\u4E0A\u6709\u592A\u9633" },
+    parentGuide: "Point outside, or use the scene: ask what is in the sky and what is on the ground before saying the full sentence together.",
+    cultureGuide: "This lesson carries colour naturally into meaningful descriptions: \u7EFF\u6811\u3001\u7EA2\u82B1\u548C\u5C0F\u8349\u3002",
+    activities: ["Tap to hear", "Look up and down", "Describe the scene", "Say the full sentence"],
+    steps: [{ book: "3B", lesson: 7, title: "Nature", note: "Describe what is in the sky and on the ground." }]
+  };
+
+  // src/features/world/world-runtime.js
+  var colourSwatches = {
+    red: "#e85b50",
+    yellow: "#f2bd3c",
+    blue: "#4b91d3",
+    green: "#69a95a",
+    purple: "#9b70be",
+    orange: "#e98a38",
+    pink: "#e97aa9",
+    black: "#39404b",
+    white: "#f7f7f2"
+  };
+  var colourMissionObjects = [
+    { id: "balloon", hanzi: "\u6C14\u7403", pinyin: "q\xEC qi\xFA", english: "balloon" },
+    { id: "kite", hanzi: "\u98CE\u7B5D", pinyin: "f\u0113ng zheng", english: "kite" },
+    { id: "backpack", hanzi: "\u4E66\u5305", pinyin: "sh\u016B b\u0101o", english: "backpack" },
+    { id: "cup", hanzi: "\u676F\u5B50", pinyin: "b\u0113i zi", english: "cup" },
+    { id: "hat", hanzi: "\u5E3D\u5B50", pinyin: "m\xE0o zi", english: "hat" },
+    { id: "block", hanzi: "\u79EF\u6728", pinyin: "j\u012B m\xF9", english: "building block" },
+    { id: "pen", hanzi: "\u7B14", pinyin: "b\u01D0", english: "pen" },
+    { id: "toy-car", hanzi: "\u73A9\u5177\u6C7D\u8F66", pinyin: "w\xE1n j\xF9 q\xEC ch\u0113", english: "toy car" }
+  ];
+  var weatherDressRounds = [
+    {
+      id: "rain",
+      prompt: "\u4E0B\u96E8\u4E86\u3002\u5E26\u4EC0\u4E48\uFF1F",
+      promptPinyin: "xi\xE0 y\u01D4 le. d\xE0i sh\xE9n me?",
+      promptEnglish: "It is raining. What should we take?",
+      answerId: "umbrella",
+      answerSentence: "\u4E0B\u96E8\u4E86\u3002\u5E26\u96E8\u4F1E\u3002",
+      answerAudio: "\u5E26\u96E8\u4F1E",
+      answerPinyin: "xi\xE0 y\u01D4 le. d\xE0i y\u01D4 s\u01CEn.",
+      answerEnglish: "It is raining. Take an umbrella."
+    },
+    {
+      id: "snow",
+      prompt: "\u4E0B\u96EA\u4E86\u3002\u4ECA\u5929\u5F88\u51B7\u3002\u7A7F\u4EC0\u4E48\uFF1F",
+      promptPinyin: "xi\xE0 xu\u011B le. j\u012Bn ti\u0101n h\u011Bn l\u011Bng. chu\u0101n sh\xE9n me?",
+      promptEnglish: "It is snowing. Today is cold. What should we wear?",
+      answerId: "knit-hat",
+      answerSentence: "\u4E0B\u96EA\u4E86\u3002\u4ECA\u5929\u5F88\u51B7\u3002\u6234\u5E3D\u5B50\u3002",
+      answerAudio: "\u6234\u5E3D\u5B50",
+      answerPinyin: "xi\xE0 xu\u011B le. j\u012Bn ti\u0101n h\u011Bn l\u011Bng. d\xE0i m\xE0o zi.",
+      answerEnglish: "It is snowing. Today is cold. Wear a hat."
+    },
+    {
+      id: "sunny",
+      prompt: "\u4ECA\u5929\u662F\u6674\u5929\u3002\u4ECA\u5929\u5F88\u70ED\u3002\u7A7F\u4EC0\u4E48\uFF1F",
+      promptPinyin: "j\u012Bn ti\u0101n sh\xEC q\xEDng ti\u0101n. j\u012Bn ti\u0101n h\u011Bn r\xE8. chu\u0101n sh\xE9n me?",
+      promptEnglish: "Today is sunny. Today is hot. What should we wear?",
+      answerId: "shorts",
+      answerSentence: "\u4ECA\u5929\u662F\u6674\u5929\u3002\u4ECA\u5929\u5F88\u70ED\u3002\u7A7F\u77ED\u88E4\u3002",
+      answerAudio: "\u7A7F\u77ED\u88E4",
+      answerPinyin: "j\u012Bn ti\u0101n sh\xEC q\xEDng ti\u0101n. j\u012Bn ti\u0101n h\u011Bn r\xE8. chu\u0101n du\u01CEn k\xF9.",
+      answerEnglish: "Today is sunny. Today is hot. Wear shorts."
+    },
+    {
+      id: "windy",
+      prompt: "\u4ECA\u5929\u522E\u5927\u98CE\u3002\u7A7F\u4EC0\u4E48\uFF1F",
+      promptPinyin: "j\u012Bn ti\u0101n gu\u0101 d\xE0 f\u0113ng. chu\u0101n sh\xE9n me?",
+      promptEnglish: "It is very windy today. What should we wear?",
+      answerId: "jacket",
+      answerSentence: "\u4ECA\u5929\u522E\u5927\u98CE\u3002\u7A7F\u5916\u5957\u3002",
+      answerAudio: "\u7A7F\u5916\u5957",
+      answerPinyin: "j\u012Bn ti\u0101n gu\u0101 d\xE0 f\u0113ng. chu\u0101n w\xE0i t\xE0o.",
+      answerEnglish: "It is very windy today. Wear a jacket."
+    }
+  ];
+  var weatherDressChoices = [
+    { id: "umbrella", hanzi: "\u96E8\u4F1E", imagePath: "assets/illustrated-weather/umbrella.png", imageAlt: "A blue umbrella" },
+    { id: "knit-hat", hanzi: "\u5E3D\u5B50", imagePath: "assets/illustrated-weather/knit-hat.png", imageAlt: "A muted red knit hat" },
+    { id: "shorts", hanzi: "\u77ED\u88E4", imagePath: "assets/illustrated-weather/shorts.png", imageAlt: "A pair of orange shorts" },
+    { id: "jacket", hanzi: "\u5916\u5957", imagePath: "assets/illustrated-weather/windbreaker.png", imageAlt: "A lightweight green windbreaker" }
+  ];
+  var weatherFillRounds = [
+    {
+      id: "rain",
+      imagePath: "assets/illustrated-weather/umbrella.png",
+      imageAlt: "A blue umbrella",
+      clothing: "\u5E26\u96E8\u4F1E",
+      clothingPinyin: "d\xE0i y\u01D4 s\u01CEn",
+      clothingEnglish: "Take an umbrella.",
+      weather: "\u4E0B\u96E8\u4E86",
+      weatherPinyin: "xi\xE0 y\u01D4 le",
+      weatherEnglish: "it is raining",
+      temperatures: ["\u51B7", "\u70ED"]
+    },
+    {
+      id: "hot",
+      imagePath: "assets/illustrated-weather/shorts.png",
+      imageAlt: "A pair of orange shorts",
+      clothing: "\u7A7F\u77ED\u88E4",
+      clothingPinyin: "chu\u0101n du\u01CEn k\xF9",
+      clothingEnglish: "Wear shorts.",
+      weather: "\u662F\u6674\u5929",
+      weatherPinyin: "sh\xEC q\xEDng ti\u0101n",
+      weatherEnglish: "is sunny",
+      temperature: "\u70ED",
+      temperaturePinyin: "r\xE8",
+      temperatureEnglish: "hot"
+    },
+    {
+      id: "cold",
+      imagePath: "assets/illustrated-weather/knit-hat.png",
+      imageAlt: "A muted red knit hat",
+      clothing: "\u6234\u5E3D\u5B50",
+      clothingPinyin: "d\xE0i m\xE0o zi",
+      clothingEnglish: "Wear a hat.",
+      weather: "\u4E0B\u96EA\u4E86",
+      weatherPinyin: "xi\xE0 xu\u011B le",
+      weatherEnglish: "is snowing",
+      temperature: "\u51B7",
+      temperaturePinyin: "l\u011Bng",
+      temperatureEnglish: "cold"
+    },
+    {
+      id: "windy",
+      imagePath: "assets/illustrated-weather/windbreaker.png",
+      imageAlt: "A lightweight green windbreaker",
+      clothing: "\u7A7F\u5916\u5957",
+      clothingPinyin: "chu\u0101n w\xE0i t\xE0o",
+      clothingEnglish: "Wear a jacket.",
+      weather: "\u522E\u5927\u98CE",
+      weatherPinyin: "gu\u0101 d\xE0 f\u0113ng",
+      weatherEnglish: "is very windy",
+      temperature: "\u51B7",
+      temperaturePinyin: "l\u011Bng",
+      temperatureEnglish: "cold"
+    }
+  ];
+  var weatherFillWeatherChoices = ["\u4E0B\u96E8\u4E86", "\u4E0B\u96EA\u4E86", "\u662F\u6674\u5929", "\u522E\u5927\u98CE"];
+  var weatherFillTemperatureData = {
+    \u51B7: { pinyin: "l\u011Bng", english: "cold" },
+    \u70ED: { pinyin: "r\xE8", english: "hot" }
+  };
+  function createWorldRuntime({ state: state2, currentTopic: currentTopic2, currentBook: currentBook2, currentLesson: currentLesson2, focusExplorer: focusExplorer2, speak: speak2, selectFocusItem: selectFocusItem2, activityPanelTitle: activityPanelTitle2, activityPanelSummary: activityPanelSummary2, activityList: activityList2, renderActivityPanel: renderActivityPanel2 }) {
+    function lessonForCurrentBook() {
+      const topic = currentTopic2();
+      if (topic.id === "colours") return colourLessons["2a"];
+      if (topic.id === "nature") return natureLesson;
+      if (topic.id === "weather") return weatherLesson;
+      return null;
+    }
+    function focusItemsForTopic2(topic) {
+      if (topic.id === "colours" || topic.id === "nature" || topic.id === "weather") return lessonForCurrentBook()?.items ?? topic.focusItems;
+      return topic.focusItems;
+    }
+    function renderWorldExplorer() {
+      const lesson = lessonForCurrentBook();
+      if (!lesson) return;
+      if (lesson === weatherLesson) return renderWeatherExplorer();
+      const hasScene = Boolean(lesson.imagePath);
+      focusExplorer2.innerHTML = `
+      <div class="time-date-board world-lesson-board">
+        <div class="numbers-stage-card"><p class="body-match-kicker">${currentBook2().label} Lesson ${currentLesson2().lesson}</p><h4>${lesson.title}</h4><p>${lesson.summary}</p></div>
+        ${hasScene ? `<section class="world-scene-card"><img src="${lesson.imagePath}" alt="${lesson.imageAlt}" /><div>${lesson.sentences.map((line) => `<button class="small-button is-action-button" type="button" data-world-sentence="${line.audio}">${line.hanzi}</button>`).join("")}</div></section>` : ""}
+        <div class="time-months-heading"><p class="body-match-kicker">Book words</p></div>
+        <div class="time-asset-grid world-asset-grid">
+          ${lesson.items.map((item) => `<button class="time-asset-card" type="button" data-world-item="${item.id}">${item.imagePath ? `<img class="time-asset-image" src="${item.imagePath}" alt="${item.imageAlt}" />` : ""}<span class="time-asset-hanzi">${item.hanzi}</span>${state2.showPinyin ? `<span class="time-asset-pinyin">${item.pinyin}</span>` : ""}${state2.showEnglish ? `<span class="time-asset-english">${item.english}</span>` : ""}${item.phrase ? `<span class="time-asset-context">${item.phrase}</span>` : ""}</button>`).join("")}
+        </div>
+      </div>
+    `;
+      focusExplorer2.querySelectorAll("[data-world-item]").forEach((button) => button.addEventListener("click", () => selectFocusItem2(button.dataset.worldItem, { playAudio: true })));
+      focusExplorer2.querySelectorAll("[data-world-sentence]").forEach((button) => button.addEventListener("click", () => {
+        if (state2.tapAudioEnabled) speak2(button.dataset.worldSentence, 0.72);
+      }));
+    }
+    function renderWeatherExplorer() {
+      const sceneLabels = {
+        rain: "\u4E0B\u96E8\u5929",
+        snow: "\u4E0B\u96EA\u5929",
+        sunny: "\u6674\u5929",
+        windy: "\u522E\u5927\u98CE"
+      };
+      const scenes = Array.from(weatherLesson.items.reduce((groups, item) => {
+        const scene = groups.get(item.imagePath) ?? { imagePath: item.imagePath, imageAlt: item.imageAlt, items: [] };
+        scene.items.push(item);
+        groups.set(item.imagePath, scene);
+        return groups;
+      }, /* @__PURE__ */ new Map()).values()).map((scene) => ({ ...scene, title: sceneLabels[scene.items[0].id] }));
+      focusExplorer2.innerHTML = `
+      <div class="time-date-board school-topic-board">
+        <div class="numbers-stage-card"><p class="body-match-kicker">${currentBook2().label} Lesson ${currentLesson2().lesson}</p><h4>${weatherLesson.title}</h4><p>${weatherLesson.summary}</p></div>
+        <section class="school-lesson-section is-weather"><div class="school-scene-grid">${scenes.map((scene, index) => `<section class="greetings-exchange school-scene-card"><div class="greetings-exchange-top"><div><p class="body-match-kicker">${scene.title}</p></div><button class="small-button is-play-button" type="button" data-weather-scene="${index}">Play</button></div><div class="school-scene-layout"><img class="school-scene-image" src="${scene.imagePath}" alt="${scene.imageAlt}" /><div class="greetings-line-stack"><article class="greetings-line-card"><div class="telephone-bubble-copy"><p class="telephone-line-hanzi weather-scene-line">${scene.items.map((item) => item.hanzi).join("\u3002")}\u3002</p>${state2.showPinyin ? `<p class="telephone-line-pinyin">${scene.items.map((item) => item.pinyin).join(". ")}.</p>` : ""}${state2.showEnglish ? `<p class="telephone-line-english">${scene.items.map((item) => item.english).join(" ")}</p>` : ""}</div></article></div></div></section>`).join("")}</div></section>
+        <section class="visual-topic-notes school-review-notes">
+          <p class="body-match-kicker">Useful notes</p>
+          <div class="visual-topic-note-grid school-review-grid">
+            <article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">\u4ECA\u5929\u5F88 + \u51B7 / \u70ED</p>${state2.showPinyin ? '<p class="visual-topic-note-pinyin">j\u012Bn ti\u0101n h\u011Bn l\u011Bng / r\xE8</p>' : ""}${state2.showEnglish ? '<p class="visual-topic-note-english">Use \u5F88 + an adjective to say how the weather feels today.</p>' : ""}<p class="visual-topic-note-example">\u4ECA\u5929\u5F88\u51B7\u3002\u4ECA\u5929\u5F88\u70ED\u3002</p>${state2.showPinyin ? '<p class="visual-topic-note-pinyin">j\u012Bn ti\u0101n h\u011Bn l\u011Bng. j\u012Bn ti\u0101n h\u011Bn r\xE8.</p>' : ""}${state2.showEnglish ? '<p class="visual-topic-note-english">Today is cold. Today is hot.</p>' : ""}</article>
+            <article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">\u4ECA\u5929\u662F + \u5929\u6C14</p>${state2.showPinyin ? '<p class="visual-topic-note-pinyin">j\u012Bn ti\u0101n sh\xEC + ti\u0101n q\xEC</p>' : ""}${state2.showEnglish ? '<p class="visual-topic-note-english">Use \u4ECA\u5929\u662F to name today\u2019s kind of weather.</p>' : ""}<p class="visual-topic-note-example">\u4ECA\u5929\u662F\u6674\u5929\u3002</p>${state2.showPinyin ? '<p class="visual-topic-note-pinyin">j\u012Bn ti\u0101n sh\xEC q\xEDng ti\u0101n.</p>' : ""}${state2.showEnglish ? '<p class="visual-topic-note-english">Today is sunny.</p>' : ""}</article>
+          </div>
+        </section>
+      </div>
+    `;
+      focusExplorer2.querySelectorAll("[data-world-item]").forEach((button) => button.addEventListener("click", () => selectFocusItem2(button.dataset.worldItem, { playAudio: true })));
+      focusExplorer2.querySelectorAll("[data-weather-scene]").forEach((button) => button.addEventListener("click", () => {
+        const scene = scenes[Number(button.dataset.weatherScene)];
+        if (scene && state2.tapAudioEnabled) speak2(scene.items.map((item) => item.audio).join("\uFF0C"), 0.74);
+      }));
+    }
+    function shuffled(items) {
+      const copy = [...items];
+      for (let index = copy.length - 1; index > 0; index -= 1) {
+        const swapIndex = Math.floor(Math.random() * (index + 1));
+        [copy[index], copy[swapIndex]] = [copy[swapIndex], copy[index]];
+      }
+      return copy;
+    }
+    function ensureColourPractice() {
+      const items = colourLessons["2a"].items;
+      if (!state2.worldColourRoundIds?.length || state2.worldColourRoundIds.length !== items.length) {
+        state2.worldColourRoundIds = shuffled(items.map((item) => item.id));
+        state2.worldColourRoundIndex = 0;
+        state2.worldColourPickedId = "";
+        state2.worldColourResult = "";
+        state2.worldFavouriteColourId = "purple";
+      }
+    }
+    function missionObjectMarkup(objectId, colour) {
+      const outline = "#43372c";
+      const shine = "rgba(255,255,255,.34)";
+      const svgStart = `<svg viewBox="0 0 120 96" aria-hidden="true" focusable="false">`;
+      const svgEnd = "";
+      if (objectId === "balloon") return `${svgStart}<path d="M60 8C34 8 25 29 30 48c4 17 17 28 30 34 13-6 26-17 30-34C95 29 86 8 60 8Z" fill="${colour}" stroke="${outline}" stroke-width="3"/><path d="M60 82v11M54 89h12" stroke="${outline}" stroke-width="3" stroke-linecap="round"/><ellipse cx="48" cy="31" rx="7" ry="12" fill="${shine}"/></svg>${svgEnd}`;
+      if (objectId === "kite") return `${svgStart}<path d="M60 7 99 47 60 87 21 47Z" fill="${colour}" stroke="${outline}" stroke-width="3"/><path d="M21 47 99 47M60 7v80M60 87c15 1 18 9 8 11 12 1 15 7 5 10" fill="none" stroke="${outline}" stroke-width="3" stroke-linecap="round"/><path d="M48 22 60 12" stroke="${shine}" stroke-width="6" stroke-linecap="round"/></svg>${svgEnd}`;
+      if (objectId === "backpack") return `${svgStart}<path d="M38 34V24c0-15 44-15 44 0v10" fill="none" stroke="${outline}" stroke-width="6" stroke-linecap="round"/><path d="M28 34c0-8 8-12 16-12h32c8 0 16 4 16 12v49H28V34Z" fill="${colour}" stroke="${outline}" stroke-width="3"/><path d="M37 51h46v25H37z" fill="${shine}" stroke="${outline}" stroke-width="3"/><path d="M51 63h18" stroke="${outline}" stroke-width="3" stroke-linecap="round"/></svg>${svgEnd}`;
+      if (objectId === "cup") return `${svgStart}<path d="M28 24h55v47c0 16-14 18-27 18S28 87 28 71V24Z" fill="${colour}" stroke="${outline}" stroke-width="3"/><path d="M83 35h10c18 0 18 29 0 29H83" fill="none" stroke="${outline}" stroke-width="5"/><path d="M36 30h38" stroke="${shine}" stroke-width="6" stroke-linecap="round"/></svg>${svgEnd}`;
+      if (objectId === "hat") return `${svgStart}<path d="M35 49c0-26 50-26 50 0v12H35V49Z" fill="${colour}" stroke="${outline}" stroke-width="3"/><path d="M14 64c7-10 84-10 92 0 7 9-4 15-46 15S7 73 14 64Z" fill="${colour}" stroke="${outline}" stroke-width="3"/><path d="M45 45c9-7 20-7 29 0" fill="none" stroke="${shine}" stroke-width="5" stroke-linecap="round"/></svg>${svgEnd}`;
+      if (objectId === "block") return `${svgStart}<path d="M26 32 60 13l34 19v38L60 89 26 70V32Z" fill="${colour}" stroke="${outline}" stroke-width="3"/><path d="m26 32 34 19 34-19M60 51v38" fill="none" stroke="${outline}" stroke-width="3"/><path d="m38 35 18-10" stroke="${shine}" stroke-width="6" stroke-linecap="round"/></svg>${svgEnd}`;
+      if (objectId === "pen") return `${svgStart}<path d="M48 19h24l7 13-10 48H51L41 32l7-13Z" fill="${colour}" stroke="${outline}" stroke-width="3" stroke-linejoin="round"/><path d="M48 19 60 8l12 11" fill="${colour}" stroke="${outline}" stroke-width="3" stroke-linejoin="round"/><path d="M50 33h20" stroke="rgba(255,255,255,.58)" stroke-width="5" stroke-linecap="round"/><path d="M72 28h13l-7 24" fill="none" stroke="${outline}" stroke-width="3" stroke-linejoin="round"/><path d="m51 80 9 11 9-11Z" fill="#d9d9d3" stroke="${outline}" stroke-width="3" stroke-linejoin="round"/><path d="M60 91v3" stroke="${outline}" stroke-width="4" stroke-linecap="round"/></svg>${svgEnd}`;
+      return `${svgStart}<path d="M21 45h75v29H21z" fill="${colour}" stroke="${outline}" stroke-width="3"/><path d="M35 45 47 31h28l12 14" fill="${colour}" stroke="${outline}" stroke-width="3"/><circle cx="38" cy="76" r="10" fill="#f7f7f2" stroke="${outline}" stroke-width="3"/><circle cx="80" cy="76" r="10" fill="#f7f7f2" stroke="${outline}" stroke-width="3"/><path d="M51 38h18" stroke="${shine}" stroke-width="5" stroke-linecap="round"/></svg>${svgEnd}`;
+    }
+    function resetColourMission() {
+      const colourItems = colourLessons["2a"].items;
+      const objects = shuffled(colourMissionObjects).slice(0, 6);
+      const colours = shuffled(colourItems).slice(0, 6);
+      state2.worldColourMissionCards = shuffled(objects.map((object, index) => ({ objectId: object.id, colourId: colours[index].id })));
+      state2.worldColourMissionTargetObjectId = state2.worldColourMissionCards[Math.floor(Math.random() * state2.worldColourMissionCards.length)].objectId;
+      state2.worldColourMissionPickedObjectId = "";
+      state2.worldColourMissionResult = "";
+    }
+    function ensureColourMission() {
+      if (!state2.worldColourMissionCards?.length || state2.worldColourMissionCards.length !== 6) resetColourMission();
+    }
+    function currentColourPracticeItem() {
+      ensureColourPractice();
+      const itemId = state2.worldColourRoundIds[state2.worldColourRoundIndex];
+      return colourLessons["2a"].items.find((item) => item.id === itemId) ?? colourLessons["2a"].items[0];
+    }
+    function renderColourPractice() {
+      ensureColourPractice();
+      const items = colourLessons["2a"].items;
+      const target = currentColourPracticeItem();
+      const choices = shuffled([target, ...shuffled(items.filter((item) => item.id !== target.id)).slice(0, 3)]);
+      const favourite = items.find((item) => item.id === state2.worldFavouriteColourId) ?? items[0];
+      ensureColourMission();
+      const missionCards = state2.worldColourMissionCards;
+      const missionTargetCard = missionCards.find((card) => card.objectId === state2.worldColourMissionTargetObjectId) ?? missionCards[0];
+      const missionTargetObject = colourMissionObjects.find((item) => item.id === missionTargetCard.objectId);
+      const missionTargetColour = items.find((item) => item.id === missionTargetCard.colourId);
+      const missionPrompt = `${missionTargetColour.hanzi}\u7684${missionTargetObject.hanzi}`;
+      activityPanelTitle2.textContent = "Let's practice";
+      activityPanelSummary2.textContent = "Listen carefully, find the right colour-and-object pair, then practise complete Chinese descriptions.";
+      activityList2.className = "support-list";
+      activityList2.innerHTML = `
+      <section class="practice-split-card world-colour-mission">
+        <div class="numbers-game-top"><div><p class="body-match-kicker">Colour mission</p><h4>Listen and find the object</h4><p class="numbers-game-note">Every round mixes the object colours and their positions. Listen for the complete phrase, then tap the matching picture.</p></div><button class="small-button is-play-button" type="button" data-world-mission-play>Play</button></div>
+        ${state2.worldColourMissionPickedObjectId ? `<p class="greetings-game-feedback">${state2.worldColourMissionResult === "correct" ? `Great! ${missionPrompt}.` : "Not that one. Listen again and try another picture."}</p>` : ""}
+        <div class="world-colour-mission-grid">${missionCards.map((card) => {
+        const object = colourMissionObjects.find((item) => item.id === card.objectId);
+        const colour = items.find((item) => item.id === card.colourId);
+        const selected = state2.worldColourMissionPickedObjectId === card.objectId;
+        const resultClass = selected ? ` is-${state2.worldColourMissionResult}` : "";
+        return `<button class="world-colour-mission-card${resultClass}" type="button" data-world-mission-pick="${card.objectId}"><span class="world-colour-mission-art">${missionObjectMarkup(object.id, colourSwatches[colour.id])}</span><span class="world-colour-mission-label">${state2.showEnglish ? object.english : ""}</span></button>`;
+      }).join("")}</div>
+      </section>
+      <section class="clothes-quiz-shell world-colour-picture-practice">
+        <div class="numbers-game-top"><div><p class="body-match-kicker">Picture and phrase</p><p class="numbers-game-note">Look at the picture. Which complete Chinese phrase matches it?</p></div><button class="small-button is-play-button" type="button" data-world-colour-play>Play</button></div>
+        <figure class="clothes-quiz-visual"><img class="clothes-quiz-image" src="${target.imagePath}" alt="${target.imageAlt}" /></figure>
+        <div class="clothes-quiz-options">${choices.map((item) => {
+        const selected = state2.worldColourPickedId === item.id;
+        const resultClass = selected ? ` is-${state2.worldColourResult}` : "";
+        const mark = selected ? `<span class="answer-result-mark" aria-hidden="true">${state2.worldColourResult === "correct" ? "\u2713" : "\xD7"}</span>` : "";
+        return `<button class="clothes-quiz-option${resultClass}" type="button" data-world-colour-guess="${item.id}">${mark}<span class="numbers-game-hanzi">${item.phrase}</span>${state2.showPinyin ? `<span class="numbers-game-pinyin">${item.phrasePinyin}</span>` : ""}${state2.showEnglish ? `<span class="numbers-game-english">${item.phraseEnglish}</span>` : ""}</button>`;
+      }).join("")}</div>
+        ${state2.worldColourResult === "correct" ? '<div class="clothes-quiz-next"><button class="small-button is-action-button" type="button" data-world-colour-next>Next picture</button></div>' : ""}
+      </section>
+      <section class="practice-split-card world-favourite-colour-practice"><div class="numbers-game-top"><div><p class="body-match-kicker">My favourite colour</p><p class="numbers-game-note">Choose your favourite colour, then listen and say the sentence.</p></div><button class="small-button is-play-button" type="button" data-world-favourite-play>Play</button></div><div class="world-favourite-colour-options">${items.map((item) => `<button class="small-button${item.id === favourite.id ? " is-action-button" : ""}" type="button" data-world-favourite="${item.id}">${item.hanzi}</button>`).join("")}</div><p class="world-favourite-sentence">\u6211\u559C\u6B22${favourite.hanzi}\u3002${state2.showPinyin ? `<span>w\u01D2 x\u01D0 huan ${favourite.pinyin}.</span>` : ""}${state2.showEnglish ? `<span>I like ${favourite.english}.</span>` : ""}</p></section>
+      <section class="practice-split-card practice-say-card"><p class="body-match-kicker">Book sentence</p><div class="numbers-game-options"><button class="numbers-game-option greetings-game-option family-listen-option" type="button" data-world-say="\u6211\u4E0D\u559C\u6B22\u9ED1\u8272\u548C\u767D\u8272">\u6211\u4E0D\u559C\u6B22\u9ED1\u8272\u548C\u767D\u8272\u3002${state2.showPinyin ? '<span class="numbers-game-pinyin">w\u01D2 b\xF9 x\u01D0 huan h\u0113i s\xE8 h\xE9 b\xE1i s\xE8.</span>' : ""}${state2.showEnglish ? '<span class="numbers-game-english">I do not like black and white.</span>' : ""}</button></div></section>
+    `;
+      activityList2.querySelector("[data-world-mission-play]")?.addEventListener("click", () => {
+        if (state2.tapAudioEnabled) speak2(`\u627E\u4E00\u627E\uFF0C${missionPrompt}`, 0.78);
+      });
+      activityList2.querySelectorAll("[data-world-mission-pick]").forEach((button) => button.addEventListener("click", () => {
+        state2.worldColourMissionPickedObjectId = button.dataset.worldMissionPick;
+        state2.worldColourMissionResult = button.dataset.worldMissionPick === missionTargetObject.id ? "correct" : "wrong";
+        if (state2.worldColourMissionResult === "correct") {
+          if (state2.tapAudioEnabled) speak2(missionPrompt, 0.78);
+          window.setTimeout(() => {
+            resetColourMission();
+            renderActivityPanel2(currentTopic2());
+          }, 1100);
+        }
+        renderActivityPanel2(currentTopic2());
+      }));
+      activityList2.querySelector("[data-world-colour-play]")?.addEventListener("click", () => {
+        if (state2.tapAudioEnabled) speak2(target.phrase, 0.78);
+      });
+      activityList2.querySelectorAll("[data-world-colour-guess]").forEach((button) => button.addEventListener("click", () => {
+        state2.worldColourPickedId = button.dataset.worldColourGuess;
+        state2.worldColourResult = button.dataset.worldColourGuess === target.id ? "correct" : "wrong";
+        if (state2.worldColourResult === "correct" && state2.tapAudioEnabled) speak2(target.phrase, 0.78);
+        renderActivityPanel2(currentTopic2());
+      }));
+      activityList2.querySelector("[data-world-colour-next]")?.addEventListener("click", () => {
+        state2.worldColourRoundIndex = (state2.worldColourRoundIndex + 1) % state2.worldColourRoundIds.length;
+        state2.worldColourPickedId = "";
+        state2.worldColourResult = "";
+        renderActivityPanel2(currentTopic2());
+      });
+      activityList2.querySelectorAll("[data-world-favourite]").forEach((button) => button.addEventListener("click", () => {
+        state2.worldFavouriteColourId = button.dataset.worldFavourite;
+        renderActivityPanel2(currentTopic2());
+      }));
+      activityList2.querySelector("[data-world-favourite-play]")?.addEventListener("click", () => {
+        if (state2.tapAudioEnabled) speak2(`\u6211\u559C\u6B22${favourite.hanzi}`, 0.78);
+      });
+      activityList2.querySelectorAll("[data-world-say]").forEach((button) => button.addEventListener("click", () => {
+        if (state2.tapAudioEnabled) speak2(button.dataset.worldSay, 0.78);
+      }));
+    }
+    function renderNaturePractice() {
+      const target = natureLesson.sentences[Math.floor(Math.random() * natureLesson.sentences.length)];
+      activityPanelTitle2.textContent = "Let's practice";
+      activityPanelSummary2.textContent = "Look at the day-and-night scene, listen to a sentence, then say it back.";
+      activityList2.className = "support-list";
+      activityList2.innerHTML = `<section class="practice-split-card practice-say-card"><div class="numbers-game-top"><div><p class="body-match-kicker">Describe nature</p><p class="numbers-game-note">Play the sentence, point to it in the picture, then say it back.</p></div><button class="small-button is-play-button" type="button" data-world-nature-play>Play</button></div><p class="world-nature-sentence">${target.hanzi}</p>${state2.showPinyin ? `<p>${target.pinyin}</p>` : ""}${state2.showEnglish ? `<p>${target.english}</p>` : ""}</section>`;
+      activityList2.querySelector("[data-world-nature-play]")?.addEventListener("click", () => {
+        if (state2.tapAudioEnabled) speak2(target.audio, 0.72);
+      });
+    }
+    function ensureWeatherDressPractice() {
+      if (!state2.worldWeatherDressRoundIds?.length || state2.worldWeatherDressRoundIds.length !== weatherDressRounds.length) {
+        state2.worldWeatherDressRoundIds = shuffled(weatherDressRounds.map((round) => round.id));
+        state2.worldWeatherDressRoundIndex = 0;
+        state2.worldWeatherDressPickedId = "";
+        state2.worldWeatherDressResult = "";
+      }
+    }
+    function currentWeatherDressRound() {
+      ensureWeatherDressPractice();
+      const id = state2.worldWeatherDressRoundIds[state2.worldWeatherDressRoundIndex];
+      return weatherDressRounds.find((round) => round.id === id) ?? weatherDressRounds[0];
+    }
+    function ensureWeatherFillPractice() {
+      if (!state2.worldWeatherFillRoundIds?.length || state2.worldWeatherFillRoundIds.length !== weatherFillRounds.length) {
+        state2.worldWeatherFillRoundIds = shuffled(weatherFillRounds.map((round) => round.id));
+        state2.worldWeatherFillRoundIndex = 0;
+        state2.worldWeatherFillWeatherPicked = "";
+        state2.worldWeatherFillTemperaturePicked = "";
+        state2.worldWeatherFillWeatherResult = "";
+        state2.worldWeatherFillTemperatureResult = "";
+      }
+    }
+    function currentWeatherFillRound() {
+      ensureWeatherFillPractice();
+      const id = state2.worldWeatherFillRoundIds[state2.worldWeatherFillRoundIndex];
+      return weatherFillRounds.find((round) => round.id === id) ?? weatherFillRounds[0];
+    }
+    function renderWeatherPractice() {
+      const round = currentWeatherDressRound();
+      const choices = shuffled(weatherDressChoices);
+      const selectedChoice = weatherDressChoices.find((choice) => choice.id === state2.worldWeatherDressPickedId);
+      const fillRound = currentWeatherFillRound();
+      const weatherChoices = shuffled(weatherFillWeatherChoices);
+      const temperatureChoices = shuffled(["\u51B7", "\u70ED"]);
+      const fillComplete = state2.worldWeatherFillWeatherResult === "correct" && state2.worldWeatherFillTemperatureResult === "correct";
+      const chosenTemperature = weatherFillTemperatureData[state2.worldWeatherFillTemperaturePicked] ?? weatherFillTemperatureData[fillRound.temperature];
+      activityPanelTitle2.textContent = "Let's practice";
+      activityPanelSummary2.textContent = "Listen to today\u2019s weather, then choose the one thing that helps the child get ready.";
+      activityList2.className = "support-list";
+      activityList2.innerHTML = `
+      <section class="practice-split-card weather-dress-practice">
+        <div class="numbers-game-top"><div><p class="body-match-kicker">Get ready for the weather</p><h4>${round.prompt}</h4>${state2.showPinyin ? `<p class="numbers-game-pinyin">${round.promptPinyin}</p>` : ""}${state2.showEnglish ? `<p class="numbers-game-english">${round.promptEnglish}</p>` : ""}</div><button class="small-button is-play-button" type="button" data-weather-dress-play>Play</button></div>
+        <div class="weather-dress-options">${choices.map((choice) => {
+        const selected = selectedChoice?.id === choice.id;
+        const stateClass = selected ? ` is-${state2.worldWeatherDressResult}` : "";
+        return `<button class="weather-dress-option${stateClass}" type="button" data-weather-dress-choice="${choice.id}" aria-label="${choice.hanzi}"><img src="${choice.imagePath}" alt="${choice.imageAlt}" />${selected ? `<span class="answer-result-mark" aria-hidden="true">${state2.worldWeatherDressResult === "correct" ? "\u2713" : "\xD7"}</span>` : ""}</button>`;
+      }).join("")}</div>
+        ${state2.worldWeatherDressPickedId ? `<div class="weather-dress-feedback ${state2.worldWeatherDressResult === "correct" ? "is-correct" : "is-wrong"}"><p>${state2.worldWeatherDressResult === "correct" ? round.answerSentence : "\u518D\u542C\u4E00\u542C\uFF0C\u60F3\u60F3\u5929\u6C14\u548C\u7528\u54C1\u3002"}</p>${state2.worldWeatherDressResult === "correct" && state2.showPinyin ? `<p class="numbers-game-pinyin">${round.answerPinyin}</p>` : ""}${state2.worldWeatherDressResult === "correct" && state2.showEnglish ? `<p>${round.answerEnglish}</p>` : ""}</div>` : ""}
+      </section>
+      <section class="practice-split-card weather-fill-practice">
+        <div class="numbers-game-top"><div><p class="body-match-kicker">Fill in the weather</p><h4>\u770B\u4E00\u770B\uFF0C\u586B\u4E00\u586B\u3002</h4>${state2.showEnglish ? '<p class="numbers-game-english">Choose a weather phrase and cold or hot.</p>' : ""}</div><button class="small-button is-play-button" type="button" data-weather-fill-play>Play</button></div>
+        <div><p class="weather-fill-sentence">\u4ECA\u5929<span class="weather-fill-blank${state2.worldWeatherFillWeatherResult ? ` is-${state2.worldWeatherFillWeatherResult}` : ""}">${state2.worldWeatherFillWeatherPicked || "____"}</span>\uFF0C\u5F88<span class="weather-fill-blank${state2.worldWeatherFillTemperatureResult ? ` is-${state2.worldWeatherFillTemperatureResult}` : ""}">${state2.worldWeatherFillTemperaturePicked || "____"}</span>\uFF0C${fillRound.clothing}<span class="weather-fill-icon"><img src="${fillRound.imagePath}" alt="${fillRound.imageAlt}" /></span>\u3002</p>${state2.showPinyin && fillComplete ? `<p class="numbers-game-pinyin">j\u012Bn ti\u0101n ${fillRound.weatherPinyin}, h\u011Bn ${chosenTemperature.pinyin}, ${fillRound.clothingPinyin}.</p>` : ""}${state2.showEnglish && fillComplete ? `<p class="numbers-game-english">Today ${fillRound.weatherEnglish}, very ${chosenTemperature.english}. ${fillRound.clothingEnglish}</p>` : ""}</div>
+        <div class="weather-fill-choice-groups"><div><p class="weather-fill-choice-label">\u5929\u6C14</p><div class="weather-fill-options weather-fill-weather-options">${weatherChoices.map((choice) => {
+        const selected = state2.worldWeatherFillWeatherPicked === choice;
+        const stateClass = selected ? ` is-${state2.worldWeatherFillWeatherResult}` : "";
+        return `<button class="weather-fill-option${stateClass}" type="button" data-weather-fill-weather="${choice}">${choice}${selected ? `<span class="answer-result-mark" aria-hidden="true">${state2.worldWeatherFillWeatherResult === "correct" ? "\u2713" : "\xD7"}</span>` : ""}</button>`;
+      }).join("")}</div></div><div><p class="weather-fill-choice-label">\u51B7 / \u70ED</p><div class="weather-fill-options">${temperatureChoices.map((choice) => {
+        const selected = state2.worldWeatherFillTemperaturePicked === choice;
+        const stateClass = selected ? ` is-${state2.worldWeatherFillTemperatureResult}` : "";
+        return `<button class="weather-fill-option${stateClass}" type="button" data-weather-fill-temperature="${choice}">${choice}${selected ? `<span class="answer-result-mark" aria-hidden="true">${state2.worldWeatherFillTemperatureResult === "correct" ? "\u2713" : "\xD7"}</span>` : ""}</button>`;
+      }).join("")}</div></div></div>
+        ${state2.worldWeatherFillWeatherResult === "wrong" || state2.worldWeatherFillTemperatureResult === "wrong" ? '<p class="weather-fill-feedback">\u518D\u770B\u4E00\u770B\u8863\u670D\uFF0C\u60F3\u60F3\u5929\u6C14\u548C\u51B7 / \u70ED\u3002</p>' : ""}
+      </section>
+    `;
+      activityList2.querySelector("[data-weather-dress-play]")?.addEventListener("click", () => {
+        if (state2.worldWeatherDressResult === "correct") {
+          state2.worldWeatherDressRoundIndex = (state2.worldWeatherDressRoundIndex + 1) % state2.worldWeatherDressRoundIds.length;
+          state2.worldWeatherDressPickedId = "";
+          state2.worldWeatherDressResult = "";
+          renderActivityPanel2(currentTopic2());
+          const nextRound = currentWeatherDressRound();
+          if (state2.tapAudioEnabled) speak2(nextRound.prompt, 0.76);
+          return;
+        }
+        if (state2.tapAudioEnabled) speak2(round.prompt, 0.76);
+      });
+      activityList2.querySelectorAll("[data-weather-dress-choice]").forEach((button) => button.addEventListener("click", () => {
+        state2.worldWeatherDressPickedId = button.dataset.weatherDressChoice;
+        state2.worldWeatherDressResult = state2.worldWeatherDressPickedId === round.answerId ? "correct" : "wrong";
+        if (state2.worldWeatherDressResult === "correct") {
+          if (state2.tapAudioEnabled) speak2(round.answerAudio, 0.76);
+        }
+        renderActivityPanel2(currentTopic2());
+      }));
+      activityList2.querySelector("[data-weather-fill-play]")?.addEventListener("click", () => {
+        if (fillComplete) {
+          state2.worldWeatherFillRoundIndex = (state2.worldWeatherFillRoundIndex + 1) % state2.worldWeatherFillRoundIds.length;
+          state2.worldWeatherFillWeatherPicked = "";
+          state2.worldWeatherFillTemperaturePicked = "";
+          state2.worldWeatherFillWeatherResult = "";
+          state2.worldWeatherFillTemperatureResult = "";
+          renderActivityPanel2(currentTopic2());
+          const nextRound = currentWeatherFillRound();
+          return;
+        }
+      });
+      activityList2.querySelectorAll("[data-weather-fill-weather]").forEach((button) => button.addEventListener("click", () => {
+        state2.worldWeatherFillWeatherPicked = button.dataset.weatherFillWeather;
+        state2.worldWeatherFillWeatherResult = state2.worldWeatherFillWeatherPicked === fillRound.weather ? "correct" : "wrong";
+        if (state2.worldWeatherFillWeatherResult === "correct" && state2.tapAudioEnabled) speak2(fillRound.weather, 0.76);
+        renderActivityPanel2(currentTopic2());
+      }));
+      activityList2.querySelectorAll("[data-weather-fill-temperature]").forEach((button) => button.addEventListener("click", () => {
+        state2.worldWeatherFillTemperaturePicked = button.dataset.weatherFillTemperature;
+        state2.worldWeatherFillTemperatureResult = (fillRound.temperatures ?? [fillRound.temperature]).includes(state2.worldWeatherFillTemperaturePicked) ? "correct" : "wrong";
+        if (state2.worldWeatherFillTemperatureResult === "correct" && state2.tapAudioEnabled) speak2(fillRound.temperature, 0.76);
+        renderActivityPanel2(currentTopic2());
+      }));
+    }
+    function renderWorldPractice(topic) {
+      if (topic.id === "colours") return renderColourPractice();
+      if (topic.id === "nature") return renderNaturePractice();
+      if (topic.id === "weather") return renderWeatherPractice();
+    }
+    return { focusItemsForTopic: focusItemsForTopic2, renderWorldExplorer, renderWorldPractice };
   }
 
   // src/data/characters.js
@@ -7811,7 +8356,7 @@
         { lesson: 4, title: "Hobbies", topicId: "hobbies" },
         { lesson: 5, title: "Food and drink", topicId: "food-preferences" },
         { lesson: 6, title: "Vegetables", topicId: "food" },
-        { lesson: 7, title: "Nature", topicId: "weather" }
+        { lesson: 7, title: "Nature", topicId: "nature" }
       ]
     },
     {
@@ -7896,7 +8441,7 @@
       id: "daily-world",
       label: "Daily World",
       description: "Food, hobbies, routines, weather, and the world around the child.",
-      topicIds: ["food", "food-preferences", "meals-feelings", "toys", "hobbies", "comparisons", "positions", "transport", "daily-life", "weather"]
+      topicIds: ["food", "food-preferences", "meals-feelings", "toys", "hobbies", "comparisons", "positions", "transport", "daily-life", "nature", "weather"]
     },
     {
       id: "school-and-time",
@@ -7935,6 +8480,7 @@
     positions: { zhTitle: "\u4F4D\u7F6E\u548C\u65B9\u5411", enTitle: "Positions & Directions", hint: "Up, down, inside, outside" },
     transport: { zhTitle: "\u4EA4\u901A", enTitle: "Transportation", hint: "Walk, bike, bus, train" },
     "daily-life": { zhTitle: "\u6211\u7684\u623F\u95F4", enTitle: "My Room", hint: "Rooms and furniture" },
+    nature: { zhTitle: "\u81EA\u7136", enTitle: "Nature", hint: "Sky, ground, trees, flowers" },
     weather: { zhTitle: "\u5929\u6C14", enTitle: "Weather", hint: "Sun, rain, snow, wind" }
   };
   var learningHomeCategories = [
@@ -7987,10 +8533,10 @@
       id: "world",
       zhTitle: "\u81EA\u7136\u548C\u989C\u8272",
       enTitle: "World Around Us",
-      hint: "Weather, animals, colours",
+      hint: "Nature, weather, animals, colours",
       accent: "#6f7fa4",
       iconSrc: "assets/navigation-icons/panda-bamboo-icon.webp",
-      topicIds: ["weather", "animals", "colours"]
+      topicIds: ["nature", "weather", "animals", "colours"]
     },
     {
       id: "play",
@@ -8004,7 +8550,7 @@
   ];
 
   // src/data/topic-registry.js
-  var visualTopicItems2 = {
+  var visualTopicItems = {
     comparisons: comparisonVisualItems,
     positions: positionVisualItems,
     transport: transportVisualItems,
@@ -8295,6 +8841,7 @@
     comparisonsTopic,
     positionsTopic,
     transportTopic,
+    natureTopic,
     weatherTopic
   ];
 
@@ -8310,7 +8857,7 @@
             ${config.title ? `<h4>${config.title}</h4>` : ""}
             <p class="numbers-game-note">Play the audio, then tap the matching Chinese card.</p>
           </div>
-          <button class="small-button is-action-button" type="button" data-template-listen-play>Play audio</button>
+          <button class="small-button is-play-button" type="button" data-template-listen-play>Play</button>
         </div>
         ${config.feedback() ? `<p class="greetings-game-feedback">${config.feedback()}</p>` : ""}
         <div class="numbers-game-options">
@@ -8352,7 +8899,7 @@
             ${config.title ? `<h4>${config.title}</h4>` : ""}
             <p class="numbers-game-note">Tap a card on the left, then tap its matching card on the right.</p>
           </div>
-          <button class="small-button is-action-button" type="button" data-template-match-new>New mix</button>
+          <button class="small-button is-play-button" type="button" data-template-match-new>Play</button>
         </div>
         ${config.feedback() ? `<div class="greetings-game-feedback">${config.feedback()}</div>` : ""}
         <div class="family-match-board-headings">
@@ -8410,7 +8957,7 @@
             </div>
           </div>
         ` : ""}
-        ${config.showPlayAgain !== false && matchedIds.size === config.items().length ? '<button class="small-button is-action-button" type="button" data-template-match-play-again>Play again</button>' : ""}
+        ${config.showPlayAgain !== false && matchedIds.size === config.items().length ? '<button class="small-button is-play-button" type="button" data-template-match-play-again>Play</button>' : ""}
       </section>
     `;
     }
@@ -8571,6 +9118,7 @@
     return focusExplorerRuntime?.renderFocusExplorer();
   }
   var foundationsRuntime;
+  var worldRuntime;
   var renderFocusDisplay;
   var { bodySentenceForItem, renderFocusStatus, renderFocusWordList: renderFocusWordList2, selectFocusItem } = createFocusRuntime({
     state,
@@ -8662,6 +9210,7 @@
     numberStages,
     timeDateWeekItems,
     getNumberStageItems: () => numberStageItems(),
+    getWorldFocusItems: (topic) => worldRuntime?.focusItemsForTopic(topic),
     renderFocusControls,
     renderFocusDisplay,
     renderFocusWordList: renderFocusWordList2,
@@ -8672,6 +9221,19 @@
     selectBookLesson
   });
   bindViewNavigationEvents({ state, switchView, updateTopicPageVisibility });
+  worldRuntime = createWorldRuntime({
+    state,
+    currentTopic,
+    currentBook,
+    currentLesson,
+    focusExplorer,
+    speak,
+    selectFocusItem,
+    activityPanelTitle,
+    activityPanelSummary,
+    activityList,
+    renderActivityPanel
+  });
   foundationsRuntime = createFoundationsRuntime({
     state,
     numberHanzi,
@@ -8949,26 +9511,26 @@
     handleRoomBuildToken,
     clearRoomBuilder,
     nextRoomBuilder,
-    currentTransportBuildItem: currentTransportBuildItem2,
+    currentTransportBuildItem,
     resetTransportBuilder,
     prepareTransportBuilder,
-    ensureTransportBuilder: ensureTransportBuilder2,
-    handleTransportBuildToken: handleTransportBuildToken2,
-    clearTransportBuilder: clearTransportBuilder2,
-    nextTransportBuilder: nextTransportBuilder2,
+    ensureTransportBuilder,
+    handleTransportBuildToken,
+    clearTransportBuilder,
+    nextTransportBuilder,
     resetPositionQuiz,
     preparePositionQuizQuestion,
-    ensurePositionQuiz: ensurePositionQuiz2,
-    handlePositionQuizPlay: handlePositionQuizPlay2,
-    handlePositionQuizPick: handlePositionQuizPick2,
-    nextPositionQuizQuestion: nextPositionQuizQuestion2,
-    currentComparisonBuildItem: currentComparisonBuildItem2,
+    ensurePositionQuiz,
+    handlePositionQuizPlay,
+    handlePositionQuizPick,
+    nextPositionQuizQuestion,
+    currentComparisonBuildItem,
     resetComparisonBuilder,
     prepareComparisonBuilder,
-    ensureComparisonBuilder: ensureComparisonBuilder2,
-    handleComparisonBuildToken: handleComparisonBuildToken2,
-    clearComparisonBuilder: clearComparisonBuilder2,
-    nextComparisonBuilder: nextComparisonBuilder2,
+    ensureComparisonBuilder,
+    handleComparisonBuildToken,
+    clearComparisonBuilder,
+    nextComparisonBuilder,
     resetDateMatchGame,
     ensureDateMatchGame,
     handleDateMatchPhrase,
@@ -8978,7 +9540,7 @@
     handleDateChallengePlay,
     handleDateChallengeGuess,
     timeDateSectionForCurrentLesson,
-    activeTimeDateSection: activeTimeDateSection2,
+    activeTimeDateSection,
     renderTimeAssetGrid,
     bindTimeAssetAudio,
     renderWeekdaysExplorer,
@@ -8991,7 +9553,7 @@
   } = createTimeDailyLifeRuntime({
     state,
     timeDateWeekItems,
-    timeDateClockItems: timeDateClockItems2,
+    timeDateClockItems,
     timeDateExpressionItems,
     timeDateRoutineItems,
     datePracticeItems,
@@ -8999,14 +9561,14 @@
     timeDateMonthItems,
     comparisonPracticeItems,
     comparisonWordItems,
-    positionPracticeItems: positionPracticeItems2,
+    positionPracticeItems,
     positionScenes,
     clothesMatchItems,
     clothesPractice,
     roomScenes,
     roomSentenceTokens,
     transportSentenceTokens,
-    visualTopicItems: visualTopicItems2,
+    visualTopicItems,
     shuffleArray,
     speak,
     speakSceneLines,
@@ -9065,7 +9627,10 @@
   lessonPracticeRuntime = createLessonPracticeRuntime({
     state,
     schoolTopicData: schoolTopicData2,
+    visualTopicItems,
+    positionPracticeItems,
     timeDateWeekItems,
+    timeDateClockItems,
     datePracticeItems,
     timeDateMonthItems,
     timeDateRoutineItems,
@@ -9085,6 +9650,8 @@
     renderSharedLessonPractice,
     renderPracticeSayCards,
     bindPracticeSayCards,
+    renderWorldPractice: worldRuntime.renderWorldPractice,
+    activeTimeDateSection,
     activityPanelTitle,
     activityPanelSummary,
     activityList,
@@ -9145,6 +9712,20 @@
     ensureClockQuiz,
     handleClockQuizPick,
     nextClockQuizQuestion,
+    ensureComparisonBuilder,
+    currentComparisonBuildItem,
+    handleComparisonBuildToken,
+    clearComparisonBuilder,
+    nextComparisonBuilder,
+    ensurePositionQuiz,
+    handlePositionQuizPlay,
+    handlePositionQuizPick,
+    nextPositionQuizQuestion,
+    ensureTransportBuilder,
+    currentTransportBuildItem,
+    handleTransportBuildToken,
+    clearTransportBuilder,
+    nextTransportBuilder,
     resetNumberChallenge,
     ensureMathChallenge,
     handleNumberChallengeGuess,
@@ -9187,7 +9768,8 @@
     renderRoomsExplorer,
     renderSchoolExplorer,
     renderVisualTopicExplorer,
-    renderMultiplicationExplorer
+    renderMultiplicationExplorer,
+    renderWorldExplorer: worldRuntime.renderWorldExplorer
   });
   var initialTopicId = topicIdFromLocation(window.location, topicById2);
   if (initialTopicId) {

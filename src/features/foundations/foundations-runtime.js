@@ -603,8 +603,8 @@ function renderBodyExplorer() {
               <button class="small-button is-action-button" type="button" data-body-toggle-bonus aria-pressed="${state.bodyMatchIncludeBonus}">
                 Bonus words ${state.bodyMatchIncludeBonus ? "on" : "off"}
               </button>
-              <button class="small-button is-action-button" type="button" data-body-reset-match>
-                New mix
+              <button class="small-button is-play-button" type="button" data-body-reset-match>
+                Play
               </button>
             </div>
           </div>
@@ -696,7 +696,7 @@ function renderBodyExplorer() {
           }
           ${
             allDone
-              ? '<button class="small-button body-next-round" type="button" data-body-play-again>Play again</button>'
+              ? '<button class="small-button is-play-button body-next-round" type="button" data-body-play-again>Play</button>'
               : ""
           }
         </div>
@@ -905,7 +905,7 @@ function renderTelephoneExplorer(stage) {
               <p class="telephone-line-hanzi">${telephonePractice.question.hanzi}</p>
               ${state.showPinyin ? `<p class="telephone-line-pinyin">${telephonePractice.question.pinyin}</p>` : ""}
               ${state.showEnglish ? `<p class="telephone-line-english">${telephonePractice.question.english}</p>` : ""}
-              <button class="small-button is-action-button" type="button" data-telephone-play="question">Play audio</button>
+              <button class="small-button is-play-button" type="button" data-telephone-play="question">Play</button>
             </div>
           </article>
           <article class="telephone-bubble telephone-bubble-answer">
@@ -921,7 +921,7 @@ function renderTelephoneExplorer(stage) {
               <p class="telephone-line-hanzi">${telephonePractice.answer.hanzi}</p>
               ${state.showPinyin ? `<p class="telephone-line-pinyin">${telephonePractice.answer.pinyin}</p>` : ""}
               ${state.showEnglish ? `<p class="telephone-line-english">${telephonePractice.answer.english}</p>` : ""}
-              <button class="small-button is-action-button" type="button" data-telephone-play="answer">Play audio</button>
+              <button class="small-button is-play-button" type="button" data-telephone-play="answer">Play</button>
             </div>
           </article>
         </div>
@@ -1057,7 +1057,7 @@ function renderFamilyExplorer() {
                     <p class="body-match-kicker">Scene ${exchange.number}</p>
                     <p class="greetings-exchange-prompt">${exchange.prompt}</p>
                   </div>
-                  <button class="small-button is-action-button" type="button" data-family-play-all="${exchange.id}">Play scene</button>
+                  <button class="small-button is-play-button" type="button" data-family-play-all="${exchange.id}">Play</button>
                 </div>
                 <div class="greetings-scene-layout family-scene-layout">
                   <div class="family-scene-visual">
@@ -1116,7 +1116,7 @@ function renderIdentityExplorer() {
             <p class="body-match-kicker">${currentBook().label} Lesson ${currentLesson().lesson}</p>
             <p class="greetings-exchange-prompt">Countries and languages</p>
           </div>
-          <button class="small-button is-action-button" type="button" data-identity-play-scene>Play scene</button>
+          <button class="small-button is-play-button" type="button" data-identity-play-scene>Play</button>
         </div>
         <div class="greetings-scene-layout">
           <div class="greetings-scene-visual">
@@ -1147,7 +1147,7 @@ function renderIdentityExplorer() {
             ${state.showPinyin ? `<p class="telephone-line-pinyin">${identityQuestion.pinyin}</p>` : ""}
             ${state.showEnglish ? `<p class="telephone-line-english">${identityQuestion.english}</p>` : ""}
           </div>
-          <button class="small-button is-action-button" type="button" data-identity-play-question>Play audio</button>
+          <button class="small-button is-play-button" type="button" data-identity-play-question>Play</button>
         </div>
         <div class="identity-country-grid">
           ${identityCountries
@@ -1224,7 +1224,7 @@ function renderMultiplicationExplorer() {
             <p>Tap a cell in the matrix. First see the multiplication fact, then hear and read the Chinese rhyme line.</p>
           </div>
           <div class="multiplication-playback-controls">
-            <button class="small-button is-action-button" type="button" data-multiplication-play-all>Play</button>
+            <button class="small-button is-play-button" type="button" data-multiplication-play-all>Play</button>
             <button class="small-button" type="button" data-multiplication-pause disabled>Pause</button>
             <button class="small-button" type="button" data-multiplication-stop disabled>Stop</button>
           </div>
@@ -1251,7 +1251,7 @@ function renderMultiplicationExplorer() {
         <p class="multiplication-line-hanzi">${activeItem.hanzi}</p>
         ${state.showPinyin ? `<p class="multiplication-line-pinyin">${activeItem.pinyin}</p>` : ""}
         ${state.showEnglish ? `<p class="multiplication-line-english">${activeItem.english}</p>` : ""}
-        <button class="small-button is-action-button" type="button" data-multiplication-item="${activeItem.id}">Play audio</button>
+        <button class="small-button is-play-button" type="button" data-multiplication-item="${activeItem.id}">Play</button>
       </div>
     </div>
   `;

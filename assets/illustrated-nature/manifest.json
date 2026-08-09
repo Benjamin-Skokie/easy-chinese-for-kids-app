@@ -1,0 +1,13 @@
+{
+  "collection": "illustrated-nature",
+  "style": "gentle educational watercolor-and-colored-pencil day and night nature scene for young Chinese learners",
+  "items": [
+    {
+      "id": "day-night-nature",
+      "label": "Day and night nature scene",
+      "lessonHints": ["3B Lesson 7 Nature"],
+      "vocabulary": ["天上", "太阳", "星星", "月亮", "地上", "树", "花", "草"],
+      "file": "day-night-nature.webp"
+    }
+  ]
+}

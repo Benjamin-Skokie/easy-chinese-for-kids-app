@@ -200,7 +200,7 @@ export function createPoliteWordsController({
                   <p class="body-match-kicker">Scene ${exchange.number}</p>
                   <p class="greetings-exchange-prompt">${exchange.prompt}</p>
                 </div>
-                <button class="small-button is-action-button" type="button" data-polite-play-all="${exchange.id}">Play scene</button>
+                <button class="small-button is-play-button" type="button" data-polite-play-all="${exchange.id}">Play</button>
               </div>
               <div class="greetings-scene-layout">
                 <div class="greetings-scene-visual">

@@ -10,7 +10,7 @@ export function createSharedLessonPractice({ state, speak, elements, documentRef
             ${config.title ? `<h4>${config.title}</h4>` : ""}
             <p class="numbers-game-note">Play the audio, then tap the matching Chinese card.</p>
           </div>
-          <button class="small-button is-action-button" type="button" data-template-listen-play>Play audio</button>
+          <button class="small-button is-play-button" type="button" data-template-listen-play>Play</button>
         </div>
         ${config.feedback() ? `<p class="greetings-game-feedback">${config.feedback()}</p>` : ""}
         <div class="numbers-game-options">
@@ -59,7 +59,7 @@ export function createSharedLessonPractice({ state, speak, elements, documentRef
             ${config.title ? `<h4>${config.title}</h4>` : ""}
             <p class="numbers-game-note">Tap a card on the left, then tap its matching card on the right.</p>
           </div>
-          <button class="small-button is-action-button" type="button" data-template-match-new>New mix</button>
+          <button class="small-button is-play-button" type="button" data-template-match-new>Play</button>
         </div>
         ${config.feedback() ? `<div class="greetings-game-feedback">${config.feedback()}</div>` : ""}
         <div class="family-match-board-headings">
@@ -117,7 +117,7 @@ export function createSharedLessonPractice({ state, speak, elements, documentRef
             </div>
           </div>
         ` : ""}
-        ${config.showPlayAgain !== false && matchedIds.size === config.items().length ? '<button class="small-button is-action-button" type="button" data-template-match-play-again>Play again</button>' : ""}
+        ${config.showPlayAgain !== false && matchedIds.size === config.items().length ? '<button class="small-button is-play-button" type="button" data-template-match-play-again>Play</button>' : ""}
       </section>
     `;
   }

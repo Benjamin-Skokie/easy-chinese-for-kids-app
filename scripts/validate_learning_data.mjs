@@ -25,6 +25,8 @@ import { familyPractice, illustratedFamily } from "../src/features/family/family
 import { illustratedKids } from "../src/data/characters.js";
 import { books, learningHomeCategories, topicGroups } from "../src/data/curriculum.js";
 import { topicData } from "../src/data/topic-registry.js";
+import { colourLessons } from "../src/features/world/colours.js";
+import { natureLesson, weatherLesson } from "../src/features/world/weather.js";
 
 const errors = [];
 
@@ -124,6 +126,9 @@ clothesMatchItems.forEach((item) => assertAsset(item, `clothes match:${item.id}`
 familyPractice.forEach((item) => assertAsset(item, `family scene:${item.id}`));
 Object.values(illustratedFamily).forEach((item) => assertAsset({ id: item.id, imagePath: item.path }, `family avatar:${item.id}`));
 Object.values(illustratedKids).forEach((item) => assertAsset({ id: item.id, imagePath: item.path }, `character:${item.id}`));
+Object.entries(colourLessons).forEach(([bookId, lesson]) => lesson.items.forEach((item) => assertAsset(item, `colours ${bookId}:${item.id}`)));
+assertAsset({ id: "day-night-nature", imagePath: natureLesson.imagePath }, "nature scene");
+weatherLesson.items.forEach((item) => assertAsset(item, `weather:${item.id}`));
 
 const transportIds = new Set(transportVisualItems.map((item) => item.id));
 Object.keys(transportSentenceTokens).forEach((id) => assert(transportIds.has(id), `transport token entry has no visual: ${id}`));
@@ -154,6 +159,10 @@ assert(greetingsPractice.length === 3, "greetings lesson scenes are incomplete")
 assert(politePractice.length === 3, "polite words lesson scenes are incomplete");
 assert(clothesMatchItems.length === 5, "clothes matching set is incomplete");
 assert(familyPractice.length === 2, "family lesson scenes are incomplete");
+assert(colourLessons["1b"].items.length === 4, "1B colour word set is incomplete");
+assert(colourLessons["2a"].items.length === 9, "2A colour word set is incomplete");
+assert(natureLesson.items.length === 8 && natureLesson.sentences.length === 8, "Nature lesson is incomplete");
+assert(weatherLesson.items.length === 6, "Weather lesson is incomplete");
 
 function assertUnique(values, label) {
   const seen = new Set();
@@ -181,5 +190,5 @@ if (errors.length) {
   console.error(errors.join("\n"));
   process.exitCode = 1;
 } else {
-  console.log("Time & Daily Life data validation passed.");
+  console.log("Learning data validation passed.");
 }

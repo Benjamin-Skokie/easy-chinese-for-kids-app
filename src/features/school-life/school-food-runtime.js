@@ -731,7 +731,7 @@ function renderBackpackGame() {
     <section class="practice-split-card backpack-game-card">
       <div class="numbers-game-top">
         <div><p class="body-match-kicker">Pack the backpack</p><p class="numbers-game-note">Look at the school thing, then tap its Chinese word.</p></div>
-        <button class="small-button is-action-button" type="button" data-backpack-game-new>New mix</button>
+        <button class="small-button is-play-button" type="button" data-backpack-game-new>Play</button>
       </div>
       <div class="backpack-game-progress" aria-label="${state.backpackGamePlacedIds.length} of 3 items packed">
         ${[0, 1, 2].map((index) => `<span class="backpack-game-progress-dot${index < state.backpackGamePlacedIds.length ? " is-packed" : ""}">${index < state.backpackGamePlacedIds.length ? "✓" : ""}</span>`).join("")}
@@ -983,7 +983,7 @@ function renderSchoolExplorer(topicId) {
           <div class="school-scene-grid${group.items.length === 1 ? " is-single" : ""}">
             ${group.items.map((scene) => `
               <section class="greetings-exchange school-scene-card">
-                <div class="greetings-exchange-top">${scene.label ? `<div><p class="body-match-kicker">${scene.label}</p></div>` : "<span></span>"}<button class="small-button is-action-button" type="button" data-school-play-scene="${scene.id}">Play scene</button></div>
+                <div class="greetings-exchange-top">${scene.label ? `<div><p class="body-match-kicker">${scene.label}</p></div>` : "<span></span>"}<button class="small-button is-play-button" type="button" data-school-play-scene="${scene.id}">Play</button></div>
                 <div class="school-scene-layout${topicId === "food" ? " is-compact" : ""}">
                   <img class="school-scene-image" src="${scene.imagePath}" alt="${scene.english ?? scene.lines?.[0]?.english ?? ""}" />
                   <div class="greetings-line-stack${scene.compactLines ? " is-compact" : ""}">

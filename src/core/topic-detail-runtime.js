@@ -123,6 +123,7 @@ function renderTopicDetail() {
       topic.id === "positions" ||
       topic.id === "transport" ||
       topic.id === "daily-life" ||
+      topic.id === "weather" ||
       topic.id === "identity" ||
       topic.id === "clothes" ||
       schoolTopicData[topic.id] ||

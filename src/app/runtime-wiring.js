@@ -36,7 +36,6 @@ import { createGreetingsController } from "../features/foundations/greetings-con
 import { identityConversation, identityCountries, identityQuestion, identityTopic } from "../features/foundations/identity.js";
 import { familyGameItemIds, familyHeadshotsByItemId, familyPersonIdsByItemId, familyPractice, familyTopic, illustratedFamily } from "../features/family/family.js";
 import { clothesMatchItems, clothesPractice, clothesTopic } from "../features/daily-life/clothes.js";
-import { weatherTopic } from "../features/world/weather.js";
 import { animalsTopic } from "../features/world/animals.js";
 import { coloursTopic } from "../features/world/colours.js";
 import { hobbiesTopic, toysTopic } from "../features/play-hobbies/play-hobbies.js";
@@ -46,6 +45,7 @@ import { createFoundationState } from "../features/foundations/state.js";
 import { createFoundationsRuntime } from "../features/foundations/foundations-runtime.js";
 import { createTimeDailyLifeState } from "../features/time-daily-life/state.js";
 import { createTimeDailyLifeRuntime } from "../features/time-daily-life/time-daily-life-runtime.js";
+import { createWorldRuntime } from "../features/world/world-runtime.js";
 import { illustratedKids } from "../data/characters.js";
 import { bookHomeCategories, books, learningHomeCategories, topicCardMeta, topicGroups } from "../data/curriculum.js";
 import { schoolSentenceBuilds, schoolTopicData, topicData, visualTopicItems } from "../data/topic-registry.js";
@@ -145,6 +145,7 @@ function renderFocusExplorer() {
 }
 
 let foundationsRuntime;
+let worldRuntime;
 let renderFocusDisplay;
 const { bodySentenceForItem, renderFocusStatus, renderFocusWordList, selectFocusItem } = createFocusRuntime({
   state,
@@ -235,6 +236,7 @@ const {
   numberStages,
   timeDateWeekItems,
   getNumberStageItems: () => numberStageItems(),
+  getWorldFocusItems: (topic) => worldRuntime?.focusItemsForTopic(topic),
   renderFocusControls,
   renderFocusDisplay,
   renderFocusWordList,
@@ -246,6 +248,20 @@ const {
 });
 
 bindViewNavigationEvents({ state, switchView, updateTopicPageVisibility });
+
+worldRuntime = createWorldRuntime({
+  state,
+  currentTopic,
+  currentBook,
+  currentLesson,
+  focusExplorer,
+  speak,
+  selectFocusItem,
+  activityPanelTitle,
+  activityPanelSummary,
+  activityList,
+  renderActivityPanel
+});
 
 foundationsRuntime = createFoundationsRuntime({
 state,
@@ -652,7 +668,10 @@ topicDetailRuntime.bindTopicDetailEvents();
 lessonPracticeRuntime = createLessonPracticeRuntime({
   state,
   schoolTopicData,
+  visualTopicItems,
+  positionPracticeItems,
   timeDateWeekItems,
+  timeDateClockItems,
   datePracticeItems,
   timeDateMonthItems,
   timeDateRoutineItems,
@@ -672,6 +691,8 @@ lessonPracticeRuntime = createLessonPracticeRuntime({
   renderSharedLessonPractice,
   renderPracticeSayCards,
   bindPracticeSayCards,
+  renderWorldPractice: worldRuntime.renderWorldPractice,
+  activeTimeDateSection,
   activityPanelTitle,
   activityPanelSummary,
   activityList,
@@ -732,6 +753,20 @@ lessonPracticeRuntime = createLessonPracticeRuntime({
   ensureClockQuiz,
   handleClockQuizPick,
   nextClockQuizQuestion,
+  ensureComparisonBuilder,
+  currentComparisonBuildItem,
+  handleComparisonBuildToken,
+  clearComparisonBuilder,
+  nextComparisonBuilder,
+  ensurePositionQuiz,
+  handlePositionQuizPlay,
+  handlePositionQuizPick,
+  nextPositionQuizQuestion,
+  ensureTransportBuilder,
+  currentTransportBuildItem,
+  handleTransportBuildToken,
+  clearTransportBuilder,
+  nextTransportBuilder,
   resetNumberChallenge,
   ensureMathChallenge,
   handleNumberChallengeGuess,
@@ -775,7 +810,8 @@ focusExplorerRuntime = createFocusExplorerRuntime({
   renderRoomsExplorer,
   renderSchoolExplorer,
   renderVisualTopicExplorer,
-  renderMultiplicationExplorer
+  renderMultiplicationExplorer,
+  renderWorldExplorer: worldRuntime.renderWorldExplorer
 });
 
 

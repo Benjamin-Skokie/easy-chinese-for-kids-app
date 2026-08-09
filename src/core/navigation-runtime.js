@@ -1,5 +1,5 @@
 export function createNavigationRuntime(context) {
-  const { state, topicData, books, topicGroups, learningHomeCategories, bookHomeCategories, topicCardMeta, topicPageUrl, topicGroupsRoot, bookSelect, lessonSelect, lookupCard, bookBrowser, topicPanel, bookPanel, detailLayout, learningCultureNav, numberStages, timeDateWeekItems, getNumberStageItems, renderFocusControls, renderFocusDisplay, renderFocusWordList, renderFocusExplorer, renderActivityPanel, renderTopicDetail, updateDisplayControls, selectBookLesson } = context;
+  const { state, topicData, books, topicGroups, learningHomeCategories, bookHomeCategories, topicCardMeta, topicPageUrl, topicGroupsRoot, bookSelect, lessonSelect, lookupCard, bookBrowser, topicPanel, bookPanel, detailLayout, learningCultureNav, numberStages, timeDateWeekItems, getNumberStageItems, getWorldFocusItems, renderFocusControls, renderFocusDisplay, renderFocusWordList, renderFocusExplorer, renderActivityPanel, renderTopicDetail, updateDisplayControls, selectBookLesson } = context;
 
 function currentTopic() {
   return topicData.find((topic) => topic.id === state.selectedTopicId) ?? topicData[0];
@@ -20,6 +20,11 @@ function focusItemsForTopic(topic = currentTopic()) {
 
   if (topic.id === "weekdays") {
     return timeDateWeekItems;
+  }
+
+  const worldItems = getWorldFocusItems?.(topic);
+  if (worldItems) {
+    return worldItems;
   }
 
   return topic.focusItems ?? [{ id: "focus", ...topic.focus }];
@@ -265,9 +270,9 @@ function renderTopicScene(topic) {
 function displayControlsMarkup() {
   return `
     <span class="learning-display-controls" aria-label="Display options">
-      <button class="learning-display-toggle" type="button" data-display-toggle="sound"></button>
-      <button class="learning-display-toggle" type="button" data-display-toggle="pinyin"></button>
-      <button class="learning-display-toggle" type="button" data-display-toggle="english"></button>
+      <button class="learning-display-toggle" type="button" data-display-toggle="sound" aria-label="Sound on" title="Sound on"></button>
+      <button class="learning-display-toggle" type="button" data-display-toggle="pinyin" aria-label="Pinyin on" title="Pinyin on"></button>
+      <button class="learning-display-toggle" type="button" data-display-toggle="english" aria-label="English on" title="English on"></button>
     </span>
   `;
 }

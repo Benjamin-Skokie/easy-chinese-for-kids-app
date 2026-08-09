@@ -57,6 +57,22 @@
       "pinyin": "hei se de yun dong xie",
       "lessonHints": ["2A Lesson 7 Colours"],
       "file": "black-sneakers.webp"
+    },
+    {
+      "id": "pink-flower",
+      "label": "Pink flower",
+      "hanzi": "粉红色的花",
+      "pinyin": "fěn hóng sè de huā",
+      "lessonHints": ["2A Lesson 7 Colours"],
+      "file": "pink-flower-white.webp"
+    },
+    {
+      "id": "white-dog",
+      "label": "White dog",
+      "hanzi": "白色的狗",
+      "pinyin": "bái sè de gǒu",
+      "lessonHints": ["2A Lesson 7 Colours"],
+      "file": "white-dog.webp"
     }
   ]
 }
