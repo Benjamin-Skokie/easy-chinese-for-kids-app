@@ -1,4 +1,5 @@
 .DS_Store
+node_modules/
 tmp/
 *.png
 !assets/illustrated-rooms/bicycle.png

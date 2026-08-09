@@ -1,5 +1,7 @@
 # Structured Learning Content Refactor Plan
 
+> Superseded for implementation by [app_js_modular_refactor.md](./app_js_modular_refactor.md). This document records the earlier multi-page, no-build proposal and is retained for historical context.
+
 Last updated: 2026-08-03
 
 This plan moves `Learn by Topic` and `Learn by Books` from one large `app.js` content model toward a culture-like structure with real URLs, structured content files, and shared rendering.

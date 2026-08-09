@@ -1,0 +1,14 @@
+{
+  "name": "easy-chinese-for-kids-app",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build_app.mjs",
+    "dev": "node scripts/dev_app.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "check": "npm run build && npm test && node --check app.js && git diff --check"
+  },
+  "devDependencies": {
+    "esbuild": "0.25.10"
+  }
+}

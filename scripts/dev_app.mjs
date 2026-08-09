@@ -1,0 +1,107 @@
+import { createReadStream, existsSync, readFileSync } from "node:fs";
+import { createServer } from "node:http";
+import { extname, resolve, sep } from "node:path";
+import { context } from "esbuild";
+
+const root = process.cwd();
+const port = Number(process.env.PORT ?? 4173);
+const clients = new Set();
+const mimeTypes = {
+  ".css": "text/css; charset=utf-8",
+  ".html": "text/html; charset=utf-8",
+  ".js": "text/javascript; charset=utf-8",
+  ".json": "application/json; charset=utf-8",
+  ".svg": "image/svg+xml",
+  ".webp": "image/webp",
+  ".png": "image/png",
+  ".jpg": "image/jpeg",
+  ".jpeg": "image/jpeg",
+  ".gif": "image/gif",
+  ".woff2": "font/woff2"
+};
+
+function reloadClients() {
+  for (const client of clients) {
+    client.write("data: reload\n\n");
+  }
+}
+
+function developmentReloadScript() {
+  return `<script>new EventSource("/__dev-reload").onmessage = () => window.location.reload();</script>`;
+}
+
+function filePathForRequest(pathname) {
+  const relativePath = pathname === "/" ? "index.html" : pathname.replace(/^\/+/, "");
+  const filePath = resolve(root, relativePath);
+  return filePath === root || filePath.startsWith(`${root}${sep}`) ? filePath : null;
+}
+
+const buildContext = await context({
+  entryPoints: ["src/main.js"],
+  bundle: true,
+  format: "iife",
+  platform: "browser",
+  target: ["es2020"],
+  outfile: "app.js",
+  banner: {
+    js: "/* Generated from src/main.js. Do not edit directly. */"
+  },
+  plugins: [{
+    name: "reload-on-successful-build",
+    setup(build) {
+      build.onEnd((result) => {
+        if (!result.errors.length) reloadClients();
+      });
+    }
+  }]
+});
+
+await buildContext.rebuild();
+await buildContext.watch();
+
+const server = createServer((request, response) => {
+  const requestUrl = new URL(request.url ?? "/", `http://localhost:${port}`);
+  if (requestUrl.pathname === "/__dev-reload") {
+    response.writeHead(200, {
+      "Cache-Control": "no-cache",
+      Connection: "keep-alive",
+      "Content-Type": "text/event-stream"
+    });
+    response.write("retry: 1000\n\n");
+    clients.add(response);
+    request.on("close", () => clients.delete(response));
+    return;
+  }
+
+  const filePath = filePathForRequest(decodeURIComponent(requestUrl.pathname));
+  if (!filePath || !existsSync(filePath)) {
+    response.writeHead(404, { "Content-Type": "text/plain; charset=utf-8" });
+    response.end("Not found");
+    return;
+  }
+
+  const extension = extname(filePath).toLowerCase();
+  const contentType = mimeTypes[extension] ?? "application/octet-stream";
+  if (extension === ".html") {
+    const html = readFileSync(filePath, "utf8").replace("</body>", `${developmentReloadScript()}</body>`);
+    response.writeHead(200, { "Content-Type": contentType, "Cache-Control": "no-store" });
+    response.end(html);
+    return;
+  }
+
+  response.writeHead(200, { "Content-Type": contentType, "Cache-Control": "no-store" });
+  createReadStream(filePath).pipe(response);
+});
+
+server.listen(port, "127.0.0.1", () => {
+  console.log(`Easy Chinese app: http://127.0.0.1:${port}`);
+});
+
+async function shutdown() {
+  for (const client of clients) client.end();
+  await buildContext.dispose();
+  server.close();
+}
+
+process.on("SIGINT", shutdown);
+process.on("SIGTERM", shutdown);

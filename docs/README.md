@@ -39,6 +39,7 @@ Purpose: explain which docs are active source-of-truth files, generated review v
 
 - [learning_home_refactor.md](./learning_home_refactor.md): learning home information architecture.
 - [structured_learning_content_refactor.md](./structured_learning_content_refactor.md): plan to move learning content out of `app.js`.
+- [app_js_modular_refactor.md](./app_js_modular_refactor.md): current implementation plan for modularizing the single-page learning app while preserving `file://` use.
 - [learning_topic_coverage_plan.md](./learning_topic_coverage_plan.md): topic build and implementation coverage plan.
 - [lesson_page_workflow.md](./lesson_page_workflow.md): required workflow and completion checklist for topic pages.
 - [time_daily_life_lesson_audit.md](./time_daily_life_lesson_audit.md): current lesson-contract audit for the Time & Daily Life category; use it before changing those pages.

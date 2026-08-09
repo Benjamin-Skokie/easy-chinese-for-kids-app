@@ -1,0 +1,75 @@
+# App JavaScript Modular Refactor
+
+Last updated: 2026-08-09
+
+## Goal
+
+Keep the current single-page application, its `?topic=...` links, and direct `file://` opening behavior while moving maintainable source code out of the monolithic `app.js`.
+
+`src/` is the only hand-edited JavaScript source. The root `app.js` is a committed, generated bundle so a fresh clone can open `index.html` without installing npm packages.
+
+## Decisions
+
+- Preserve `index.html`, current URLs, and Culture as-is.
+- Use a single, exact-version `esbuild` development dependency; it has no runtime browser dependency.
+- Build a non-minified ES2020 IIFE bundle with no dynamic chunks or source map, so `file://` does not need module loading or a local server.
+- Do not split CSS, redesign lessons, or introduce a framework in this refactor.
+- Keep `docs/structured_learning_content_refactor.md` as historical context only; its multi-page/no-build proposal is superseded by this document.
+
+## Target Source Layout
+
+```text
+src/
+  main.js
+  core/          # route, state, DOM, audio, feature registry
+  games/         # shared game behavior
+  features/      # topic data, explorer, practice, scoped state
+  data/          # navigation, books, lessons, shared references
+```
+
+A feature registers its owned topic IDs, creates its scoped state, renders its explorer and practice areas, and cleans up timers or audio on topic changes. Shared games receive declarative configuration and never import a feature renderer.
+
+## Migration Checklist
+
+### 1. Build baseline
+
+- [x] Commit pre-refactor course work separately.
+- [x] Add `src/main.js`, `src/legacy-app.js`, `scripts/build_app.mjs`, package scripts, and an initial build contract test.
+- [x] Install the exact locked dependency and generate the first bundle without changing behavior.
+
+### 2. Core and validation
+
+- [ ] Extract route parsing/navigation, audio, DOM lookup, and shared utilities.
+- [ ] Add data validation for duplicate topic IDs, lesson references, practice references, and asset paths.
+
+### 3. Feature migration
+
+- [ ] Migrate Time & Daily Life in topic-sized commits.
+- [ ] Extract a shared game only after two migrated topics prove the same contract.
+- [ ] Migrate School, Food, Foundations, and Family/Home.
+- [ ] Delete the matching legacy code after each replacement passes checks.
+
+### 4. Completion
+
+- [ ] Remove `src/legacy-app.js`.
+- [ ] Keep `src/main.js` as bootstrap, global controls, and feature dispatch only.
+- [ ] Record ownership and maintenance rules in this document.
+
+## Required Checks
+
+Run for every refactor commit:
+
+```sh
+npm run check
+```
+
+The command regenerates the bundle, runs unit checks, syntax-checks it, and rejects whitespace errors. Before a commit, also verify direct `file://` opening, representative topic URLs, display controls, audio, reset behavior, and browser history manually.
+
+For development, run `npm run dev` once. It serves the app at `http://127.0.0.1:4173`, rebuilds after every change under `src/`, and automatically refreshes the browser. The normal `file://` page remains supported for direct viewing of committed output.
+
+## Ownership Rules
+
+- Feature state belongs in `state.features[featureId]`; navigation and display controls remain core state.
+- A topic configuration owns its scenes, Book Words, Useful Notes, and practice items.
+- Shared games own standard feedback, reset, and completion behavior; features own learning content and answer rules.
+- Generated `app.js` must never be edited by hand.
