@@ -4246,10 +4246,13 @@ function focusLearningPanel() {
     return;
   }
 
-  detailLayout.scrollIntoView({
-    behavior: "smooth",
-    block: "start"
-  });
+  const root = document.documentElement;
+  const previousScrollBehavior = root.style.scrollBehavior;
+  const stickyNavHeight = learningCultureNav?.getBoundingClientRect().height ?? 0;
+  const targetTop = Math.max(0, window.scrollY + detailLayout.getBoundingClientRect().top - stickyNavHeight);
+  root.style.scrollBehavior = "auto";
+  window.scrollTo(0, targetTop);
+  root.style.scrollBehavior = previousScrollBehavior;
 }
 
 function narrowTopicBrowserTo(groupId) {
@@ -4296,7 +4299,7 @@ function openTopicPage(topicId, options = {}) {
     window.history.pushState(null, "", nextUrl);
   }
 
-  if (options.scroll === true) {
+  if (options.scroll !== false) {
     focusLearningPanel();
   }
 }
