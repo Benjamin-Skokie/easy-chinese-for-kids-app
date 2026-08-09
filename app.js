@@ -989,6 +989,43 @@
   ];
 
   // src/features/foundations/age.js
+  var ageTopic = {
+    id: "age",
+    title: "Age",
+    summary: "A first identity lesson: say age, then say what grade you are in.",
+    progressLabel: "1A to 3A",
+    iconText: "\u4E94\u5C81",
+    iconColor: "#7998a5",
+    iconAccent: "#f3d88a",
+    iconTheme: "birthday",
+    focus: {
+      hanzi: "\u6211\u4E94\u5C81\u3002",
+      pinyin: "w\u01D2 w\u01D4 su\xEC.",
+      english: "I am five years old.",
+      audio: "\u6211\u4E94\u5C81"
+    },
+    focusItems: [
+      { id: "ask-age", hanzi: "\u4F60\u51E0\u5C81\uFF1F", pinyin: "n\u01D0 j\u01D0 su\xEC?", english: "How old are you?", audio: "\u4F60\u51E0\u5C81" },
+      { id: "age-five", hanzi: "\u6211\u4E94\u5C81\u3002", pinyin: "w\u01D2 w\u01D4 su\xEC.", english: "I am five years old.", audio: "\u6211\u4E94\u5C81" },
+      { id: "age-six", hanzi: "\u6211\u516D\u5C81\u3002", pinyin: "w\u01D2 li\xF9 su\xEC.", english: "I am six years old.", audio: "\u6211\u516D\u5C81" },
+      { id: "age-seven", hanzi: "\u6211\u4E03\u5C81\u3002", pinyin: "w\u01D2 q\u012B su\xEC.", english: "I am seven years old.", audio: "\u6211\u4E03\u5C81" },
+      { id: "ask-grade", hanzi: "\u4F60\u4E0A\u51E0\u5E74\u7EA7\uFF1F", pinyin: "n\u01D0 sh\xE0ng j\u01D0 ni\xE1n j\xED?", english: "What grade are you in?", audio: "\u4F60\u4E0A\u51E0\u5E74\u7EA7" },
+      { id: "grade-one", hanzi: "\u6211\u4E0A\u4E00\u5E74\u7EA7\u3002", pinyin: "w\u01D2 sh\xE0ng y\xEC ni\xE1n j\xED.", english: "I am in first grade.", audio: "\u6211\u4E0A\u4E00\u5E74\u7EA7" },
+      { id: "me-age-word", hanzi: "\u6211", pinyin: "w\u01D2", english: "I; me", audio: "\u6211" },
+      { id: "how-many-age-word", hanzi: "\u51E0", pinyin: "j\u01D0", english: "how many", audio: "\u51E0" },
+      { id: "age-word", hanzi: "\u5C81", pinyin: "su\xEC", english: "years old", audio: "\u5C81" },
+      { id: "attend-word", hanzi: "\u4E0A", pinyin: "sh\xE0ng", english: "to attend; to be in", audio: "\u4E0A" },
+      { id: "grade-word", hanzi: "\u5E74\u7EA7", pinyin: "ni\xE1n j\xED", english: "grade; school year", audio: "\u5E74\u7EA7" }
+    ],
+    interactiveScene: "age-conversation",
+    parentGuide: "Practice with the child's real age and real school year. Start with the whole exchange, then pause after \u6211 and let the child fill in the number or grade.",
+    cultureGuide: "This lesson often works as an early identity bundle: name, age, and school year all come together in one short getting-to-know-you conversation.",
+    activities: ["Tap to hear", "Fill in my age", "Say my grade", "Listen and point"],
+    steps: [
+      { book: "1A", lesson: 7, title: "I'm 5 years old", note: "Learn the first age sentence pattern." },
+      { book: "3A", lesson: 3, title: "Happy birthday!", note: "Reconnect age with date and birthday language." }
+    ]
+  };
   var agePractice = [
     {
       id: "age-scene-2",
@@ -1391,43 +1428,7 @@
         { book: "4A", lesson: 2, title: "Languages", note: "Say which languages someone can speak." }
       ]
     },
-    {
-      id: "age",
-      title: "Age",
-      summary: "A first identity lesson: say age, then say what grade you are in.",
-      progressLabel: "1A to 3A",
-      iconText: "\u4E94\u5C81",
-      iconColor: "#7998a5",
-      iconAccent: "#f3d88a",
-      iconTheme: "birthday",
-      focus: {
-        hanzi: "\u6211\u4E94\u5C81\u3002",
-        pinyin: "w\u01D2 w\u01D4 su\xEC.",
-        english: "I am five years old.",
-        audio: "\u6211\u4E94\u5C81"
-      },
-      focusItems: [
-        { id: "ask-age", hanzi: "\u4F60\u51E0\u5C81\uFF1F", pinyin: "n\u01D0 j\u01D0 su\xEC?", english: "How old are you?", audio: "\u4F60\u51E0\u5C81" },
-        { id: "age-five", hanzi: "\u6211\u4E94\u5C81\u3002", pinyin: "w\u01D2 w\u01D4 su\xEC.", english: "I am five years old.", audio: "\u6211\u4E94\u5C81" },
-        { id: "age-six", hanzi: "\u6211\u516D\u5C81\u3002", pinyin: "w\u01D2 li\xF9 su\xEC.", english: "I am six years old.", audio: "\u6211\u516D\u5C81" },
-        { id: "age-seven", hanzi: "\u6211\u4E03\u5C81\u3002", pinyin: "w\u01D2 q\u012B su\xEC.", english: "I am seven years old.", audio: "\u6211\u4E03\u5C81" },
-        { id: "ask-grade", hanzi: "\u4F60\u4E0A\u51E0\u5E74\u7EA7\uFF1F", pinyin: "n\u01D0 sh\xE0ng j\u01D0 ni\xE1n j\xED?", english: "What grade are you in?", audio: "\u4F60\u4E0A\u51E0\u5E74\u7EA7" },
-        { id: "grade-one", hanzi: "\u6211\u4E0A\u4E00\u5E74\u7EA7\u3002", pinyin: "w\u01D2 sh\xE0ng y\xEC ni\xE1n j\xED.", english: "I am in first grade.", audio: "\u6211\u4E0A\u4E00\u5E74\u7EA7" },
-        { id: "me-age-word", hanzi: "\u6211", pinyin: "w\u01D2", english: "I; me", audio: "\u6211" },
-        { id: "how-many-age-word", hanzi: "\u51E0", pinyin: "j\u01D0", english: "how many", audio: "\u51E0" },
-        { id: "age-word", hanzi: "\u5C81", pinyin: "su\xEC", english: "years old", audio: "\u5C81" },
-        { id: "attend-word", hanzi: "\u4E0A", pinyin: "sh\xE0ng", english: "to attend; to be in", audio: "\u4E0A" },
-        { id: "grade-word", hanzi: "\u5E74\u7EA7", pinyin: "ni\xE1n j\xED", english: "grade; school year", audio: "\u5E74\u7EA7" }
-      ],
-      interactiveScene: "age-conversation",
-      parentGuide: "Practice with the child's real age and real school year. Start with the whole exchange, then pause after \u6211 and let the child fill in the number or grade.",
-      cultureGuide: "This lesson often works as an early identity bundle: name, age, and school year all come together in one short getting-to-know-you conversation.",
-      activities: ["Tap to hear", "Fill in my age", "Say my grade", "Listen and point"],
-      steps: [
-        { book: "1A", lesson: 7, title: "I'm 5 years old", note: "Learn the first age sentence pattern." },
-        { book: "3A", lesson: 3, title: "Happy birthday!", note: "Reconnect age with date and birthday language." }
-      ]
-    },
+    ageTopic,
     {
       id: "family",
       title: "Family",
@@ -3660,8 +3661,8 @@
     renderActivityPanel(currentTopic());
   }
   function ageGameItems() {
-    const ageTopic = topicById("age");
-    return ageGameItemIds.map((id) => ageTopic?.focusItems.find((item) => item.id === id)).filter(Boolean);
+    const ageTopic2 = topicById("age");
+    return ageGameItemIds.map((id) => ageTopic2?.focusItems.find((item) => item.id === id)).filter(Boolean);
   }
   function resetAgeChallenge(options = {}) {
     const items = ageGameItems();

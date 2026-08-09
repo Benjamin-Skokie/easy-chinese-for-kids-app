@@ -16,7 +16,7 @@ import { foodSentenceBuilds, foodTopicData } from "./features/food/food.js";
 import { foodPreferencesTopicData } from "./features/food/food-preferences.js";
 import { mealsFeelingsSentenceBuilds as mealsFeelingsLessonSentenceBuilds, mealsFeelingsTopicData } from "./features/food/meals-feelings.js";
 import { introductionsBuildPhrases, introductionsGamePrompts, introductionsPractice, introductionsTopic } from "./features/foundations/introductions.js";
-import { ageBuildPhrases, agePractice } from "./features/foundations/age.js";
+import { ageBuildPhrases, agePractice, ageTopic } from "./features/foundations/age.js";
 import { createSharedLessonPractice } from "./games/shared-lesson-practice.js";
 
 const topicData = [
@@ -186,45 +186,7 @@ const topicData = [
       { book: "4A", lesson: 2, title: "Languages", note: "Say which languages someone can speak." }
     ]
   },
-  {
-    id: "age",
-    title: "Age",
-    summary: "A first identity lesson: say age, then say what grade you are in.",
-    progressLabel: "1A to 3A",
-    iconText: "五岁",
-    iconColor: "#7998a5",
-    iconAccent: "#f3d88a",
-    iconTheme: "birthday",
-    focus: {
-      hanzi: "我五岁。",
-      pinyin: "wǒ wǔ suì.",
-      english: "I am five years old.",
-      audio: "我五岁"
-    },
-    focusItems: [
-      { id: "ask-age", hanzi: "你几岁？", pinyin: "nǐ jǐ suì?", english: "How old are you?", audio: "你几岁" },
-      { id: "age-five", hanzi: "我五岁。", pinyin: "wǒ wǔ suì.", english: "I am five years old.", audio: "我五岁" },
-      { id: "age-six", hanzi: "我六岁。", pinyin: "wǒ liù suì.", english: "I am six years old.", audio: "我六岁" },
-      { id: "age-seven", hanzi: "我七岁。", pinyin: "wǒ qī suì.", english: "I am seven years old.", audio: "我七岁" },
-      { id: "ask-grade", hanzi: "你上几年级？", pinyin: "nǐ shàng jǐ nián jí?", english: "What grade are you in?", audio: "你上几年级" },
-      { id: "grade-one", hanzi: "我上一年级。", pinyin: "wǒ shàng yì nián jí.", english: "I am in first grade.", audio: "我上一年级" },
-      { id: "me-age-word", hanzi: "我", pinyin: "wǒ", english: "I; me", audio: "我" },
-      { id: "how-many-age-word", hanzi: "几", pinyin: "jǐ", english: "how many", audio: "几" },
-      { id: "age-word", hanzi: "岁", pinyin: "suì", english: "years old", audio: "岁" },
-      { id: "attend-word", hanzi: "上", pinyin: "shàng", english: "to attend; to be in", audio: "上" },
-      { id: "grade-word", hanzi: "年级", pinyin: "nián jí", english: "grade; school year", audio: "年级" }
-    ],
-    interactiveScene: "age-conversation",
-    parentGuide:
-      "Practice with the child's real age and real school year. Start with the whole exchange, then pause after 我 and let the child fill in the number or grade.",
-    cultureGuide:
-      "This lesson often works as an early identity bundle: name, age, and school year all come together in one short getting-to-know-you conversation.",
-    activities: ["Tap to hear", "Fill in my age", "Say my grade", "Listen and point"],
-    steps: [
-      { book: "1A", lesson: 7, title: "I'm 5 years old", note: "Learn the first age sentence pattern." },
-      { book: "3A", lesson: 3, title: "Happy birthday!", note: "Reconnect age with date and birthday language." }
-    ]
-  },
+  ageTopic,
   {
     id: "family",
     title: "Family",
