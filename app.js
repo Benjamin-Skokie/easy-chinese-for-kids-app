@@ -1530,6 +1530,21 @@
     { id: "school-uniform", hanzi: "\u6821\u670D", pinyin: "xi\xE0o f\xFA", english: "school uniform", audio: "\u6821\u670D", imagePath: "assets/illustrated-self-dressing/putting-on-school-uniform.webp", imageAlt: "A child putting on a school uniform" }
   ];
 
+  // src/features/world/weather.js
+  var weatherTopic = {
+    id: "weather",
+    title: "Weather",
+    summary: "A natural topic for daily check-ins, clothing choices, and routine speech.",
+    progressLabel: "4B branch",
+    iconText: "\u4E0B\u96E8",
+    iconColor: "#6f7fa4",
+    focus: { hanzi: "\u4E0B\u96E8\u4E86\u3002", pinyin: "xi\xE0 y\u01D4 le.", english: "It is raining.", audio: "\u4E0B\u96E8\u4E86" },
+    parentGuide: "This is best as a daily one-minute habit. Check the weather together and say the phrase before leaving home.",
+    cultureGuide: "Weather combines nicely with clothing and seasonal culture content later.",
+    activities: ["Tap to hear", "Choose today's weather", "Dress for the weather", "Listen and choose"],
+    steps: [{ book: "4B", lesson: 1, title: "It's raining", note: "Start weather language with a concrete daily phrase." }]
+  };
+
   // src/games/shared-lesson-practice.js
   function createSharedLessonPractice({ state: state2, speak: speak2, elements, documentRef = document }) {
     const { activityPanelTitle: activityPanelTitle2, activityPanelSummary: activityPanelSummary2, activityList: activityList2 } = elements;
@@ -2202,24 +2217,7 @@
     comparisonsTopic,
     positionsTopic,
     transportTopic,
-    {
-      id: "weather",
-      title: "Weather",
-      summary: "A natural topic for daily check-ins, clothing choices, and routine speech.",
-      progressLabel: "4B branch",
-      iconText: "\u4E0B\u96E8",
-      iconColor: "#6f7fa4",
-      focus: {
-        hanzi: "\u4E0B\u96E8\u4E86\u3002",
-        pinyin: "xi\xE0 y\u01D4 le.",
-        english: "It is raining.",
-        audio: "\u4E0B\u96E8\u4E86"
-      },
-      parentGuide: "This is best as a daily one-minute habit. Check the weather together and say the phrase before leaving home.",
-      cultureGuide: "Weather combines nicely with clothing and seasonal culture content later.",
-      activities: ["Tap to hear", "Choose today's weather", "Dress for the weather", "Listen and choose"],
-      steps: [{ book: "4B", lesson: 1, title: "It's raining", note: "Start weather language with a concrete daily phrase." }]
-    }
+    weatherTopic
   ];
   var numberEnglishBase = [
     "zero",

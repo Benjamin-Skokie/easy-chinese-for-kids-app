@@ -24,6 +24,7 @@ import { identityConversation, identityCountries, identityQuestion, identityTopi
 import { greetingsGameItemIds, greetingsPractice, greetingsTopic } from "../src/features/foundations/greetings.js";
 import { politeGameItemIds, politePractice, politeWordsTopic } from "../src/features/foundations/polite-words.js";
 import { clothesMatchItems, clothesPractice, clothesTopic } from "../src/features/daily-life/clothes.js";
+import { weatherTopic } from "../src/features/world/weather.js";
 import { familyGameItemIds, familyPractice, familyTopic, illustratedFamily } from "../src/features/family/family.js";
 
 test("the local page loads a single bundled application script", () => {
@@ -207,6 +208,11 @@ test("clothes owns its scenes and picture matching set", () => {
   assert.equal(clothesTopic.interactiveScene, "clothes-scenes");
   assert.equal(clothesPractice.length, 2);
   assert.equal(clothesMatchItems.length, 5);
+});
+
+test("weather owns its standalone topic definition", () => {
+  assert.equal(weatherTopic.id, "weather");
+  assert.equal(weatherTopic.steps.length, 1);
 });
 
 test("family owns its lesson metadata, scenes, and matching set", () => {
