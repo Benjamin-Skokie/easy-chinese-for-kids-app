@@ -19,6 +19,7 @@ import { foodSentenceBuilds, foodTopicData } from "../src/features/food/food.js"
 import { foodPreferencesTopicData } from "../src/features/food/food-preferences.js";
 import { mealsFeelingsSentenceBuilds, mealsFeelingsTopicData } from "../src/features/food/meals-feelings.js";
 import { introductionsBuildPhrases, introductionsGamePrompts, introductionsPractice } from "../src/features/foundations/introductions.js";
+import { ageBuildPhrases, agePractice } from "../src/features/foundations/age.js";
 
 test("the local page loads a single bundled application script", () => {
   const html = readFileSync("index.html", "utf8");
@@ -155,4 +156,9 @@ test("introductions owns its scenes and practice activities", () => {
   assert.equal(introductionsPractice.length, 3);
   assert.equal(introductionsGamePrompts.length, 1);
   assert.equal(introductionsBuildPhrases.length, 2);
+});
+
+test("age owns its scenes and sentence practice", () => {
+  assert.equal(agePractice.length, 2);
+  assert.equal(ageBuildPhrases.length, 6);
 });

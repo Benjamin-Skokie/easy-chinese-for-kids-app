@@ -956,6 +956,90 @@
     }
   ];
 
+  // src/features/foundations/age.js
+  var agePractice = [
+    {
+      id: "age-scene-2",
+      number: "1",
+      prompt: "Ask age first, then ask what grade a classmate is in",
+      imagePath: "assets/age/age-scene-2.webp",
+      imageAlt: "Lele and Noah inside a classroom asking age first and then what grade someone is in",
+      lines: [
+        { hanzi: "\u4F60\u51E0\u5C81\uFF1F", pinyin: "n\u01D0 j\u01D0 su\xEC?", english: "How old are you?", audio: "\u4F60\u51E0\u5C81" },
+        { hanzi: "\u6211\u516D\u5C81\u3002", pinyin: "w\u01D2 li\xF9 su\xEC.", english: "I am six years old.", audio: "\u6211\u516D\u5C81" },
+        { hanzi: "\u4F60\u4E0A\u51E0\u5E74\u7EA7\uFF1F", pinyin: "n\u01D0 sh\xE0ng j\u01D0 ni\xE1n j\xED?", english: "What grade are you in?", audio: "\u4F60\u4E0A\u51E0\u5E74\u7EA7" },
+        { hanzi: "\u6211\u4E0A\u4E00\u5E74\u7EA7\u3002", pinyin: "w\u01D2 sh\xE0ng y\xEC ni\xE1n j\xED.", english: "I am in first grade.", audio: "\u6211\u4E0A\u4E00\u5E74\u7EA7" }
+      ]
+    },
+    {
+      id: "age-scene-3",
+      number: "2",
+      prompt: "Connect age language to a birthday moment",
+      imagePath: "assets/age/age-scene-3.webp",
+      imageAlt: "Sisi at a birthday party with seven candles on a cake and friends around the table",
+      lines: [
+        { hanzi: "\u4F60\u51E0\u5C81\uFF1F", pinyin: "n\u01D0 j\u01D0 su\xEC?", english: "How old are you?", audio: "\u4F60\u51E0\u5C81" },
+        { hanzi: "\u6211\u4E03\u5C81\u3002", pinyin: "w\u01D2 q\u012B su\xEC.", english: "I am seven years old.", audio: "\u6211\u4E03\u5C81" }
+      ]
+    }
+  ];
+  var ageBuildPhrases = [
+    {
+      id: "build-ask-age",
+      sourceItemId: "ask-age",
+      targetHanzi: "\u4F60\u51E0\u5C81\uFF1F",
+      prompt: "Build: How old are you?",
+      english: "How old are you?",
+      audio: "\u4F60\u51E0\u5C81",
+      tokens: ["\u4F60", "\u51E0", "\u5C81"]
+    },
+    {
+      id: "build-age-five",
+      sourceItemId: "age-five",
+      targetHanzi: "\u6211\u4E94\u5C81\u3002",
+      prompt: "Build: I am five years old.",
+      english: "I am five years old.",
+      audio: "\u6211\u4E94\u5C81",
+      tokens: ["\u6211", "\u4E94", "\u5C81"]
+    },
+    {
+      id: "build-age-six",
+      sourceItemId: "age-six",
+      targetHanzi: "\u6211\u516D\u5C81\u3002",
+      prompt: "Build: I am six years old.",
+      english: "I am six years old.",
+      audio: "\u6211\u516D\u5C81",
+      tokens: ["\u6211", "\u516D", "\u5C81"]
+    },
+    {
+      id: "build-age-seven",
+      sourceItemId: "age-seven",
+      targetHanzi: "\u6211\u4E03\u5C81\u3002",
+      prompt: "Build: I am seven years old.",
+      english: "I am seven years old.",
+      audio: "\u6211\u4E03\u5C81",
+      tokens: ["\u6211", "\u4E03", "\u5C81"]
+    },
+    {
+      id: "build-ask-grade",
+      sourceItemId: "ask-grade",
+      targetHanzi: "\u4F60\u4E0A\u51E0\u5E74\u7EA7\uFF1F",
+      prompt: "Build: What grade are you in?",
+      english: "What grade are you in?",
+      audio: "\u4F60\u4E0A\u51E0\u5E74\u7EA7",
+      tokens: ["\u4F60", "\u4E0A", "\u51E0", "\u5E74\u7EA7"]
+    },
+    {
+      id: "build-grade-one",
+      sourceItemId: "grade-one",
+      targetHanzi: "\u6211\u4E0A\u4E00\u5E74\u7EA7\u3002",
+      prompt: "Build: I am in first grade.",
+      english: "I am in first grade.",
+      audio: "\u6211\u4E0A\u4E00\u5E74\u7EA7",
+      tokens: ["\u6211", "\u4E0A", "\u4E00", "\u5E74\u7EA7"]
+    }
+  ];
+
   // src/games/shared-lesson-practice.js
   function createSharedLessonPractice({ state: state2, speak: speak2, elements, documentRef = document }) {
     const { activityPanelTitle: activityPanelTitle2, activityPanelSummary: activityPanelSummary2, activityList: activityList2 } = elements;
@@ -2157,88 +2241,6 @@
     food: foodSentenceBuilds,
     "meals-feelings": mealsFeelingsSentenceBuilds
   };
-  var agePractice = [
-    {
-      id: "age-scene-2",
-      number: "1",
-      prompt: "Ask age first, then ask what grade a classmate is in",
-      imagePath: "assets/age/age-scene-2.webp",
-      imageAlt: "Lele and Noah inside a classroom asking age first and then what grade someone is in",
-      lines: [
-        { hanzi: "\u4F60\u51E0\u5C81\uFF1F", pinyin: "n\u01D0 j\u01D0 su\xEC?", english: "How old are you?", audio: "\u4F60\u51E0\u5C81" },
-        { hanzi: "\u6211\u516D\u5C81\u3002", pinyin: "w\u01D2 li\xF9 su\xEC.", english: "I am six years old.", audio: "\u6211\u516D\u5C81" },
-        { hanzi: "\u4F60\u4E0A\u51E0\u5E74\u7EA7\uFF1F", pinyin: "n\u01D0 sh\xE0ng j\u01D0 ni\xE1n j\xED?", english: "What grade are you in?", audio: "\u4F60\u4E0A\u51E0\u5E74\u7EA7" },
-        { hanzi: "\u6211\u4E0A\u4E00\u5E74\u7EA7\u3002", pinyin: "w\u01D2 sh\xE0ng y\xEC ni\xE1n j\xED.", english: "I am in first grade.", audio: "\u6211\u4E0A\u4E00\u5E74\u7EA7" }
-      ]
-    },
-    {
-      id: "age-scene-3",
-      number: "2",
-      prompt: "Connect age language to a birthday moment",
-      imagePath: "assets/age/age-scene-3.webp",
-      imageAlt: "Sisi at a birthday party with seven candles on a cake and friends around the table",
-      lines: [
-        { hanzi: "\u4F60\u51E0\u5C81\uFF1F", pinyin: "n\u01D0 j\u01D0 su\xEC?", english: "How old are you?", audio: "\u4F60\u51E0\u5C81" },
-        { hanzi: "\u6211\u4E03\u5C81\u3002", pinyin: "w\u01D2 q\u012B su\xEC.", english: "I am seven years old.", audio: "\u6211\u4E03\u5C81" }
-      ]
-    }
-  ];
-  var ageBuildPhrases = [
-    {
-      id: "build-ask-age",
-      sourceItemId: "ask-age",
-      targetHanzi: "\u4F60\u51E0\u5C81\uFF1F",
-      prompt: "Build: How old are you?",
-      english: "How old are you?",
-      audio: "\u4F60\u51E0\u5C81",
-      tokens: ["\u4F60", "\u51E0", "\u5C81"]
-    },
-    {
-      id: "build-age-five",
-      sourceItemId: "age-five",
-      targetHanzi: "\u6211\u4E94\u5C81\u3002",
-      prompt: "Build: I am five years old.",
-      english: "I am five years old.",
-      audio: "\u6211\u4E94\u5C81",
-      tokens: ["\u6211", "\u4E94", "\u5C81"]
-    },
-    {
-      id: "build-age-six",
-      sourceItemId: "age-six",
-      targetHanzi: "\u6211\u516D\u5C81\u3002",
-      prompt: "Build: I am six years old.",
-      english: "I am six years old.",
-      audio: "\u6211\u516D\u5C81",
-      tokens: ["\u6211", "\u516D", "\u5C81"]
-    },
-    {
-      id: "build-age-seven",
-      sourceItemId: "age-seven",
-      targetHanzi: "\u6211\u4E03\u5C81\u3002",
-      prompt: "Build: I am seven years old.",
-      english: "I am seven years old.",
-      audio: "\u6211\u4E03\u5C81",
-      tokens: ["\u6211", "\u4E03", "\u5C81"]
-    },
-    {
-      id: "build-ask-grade",
-      sourceItemId: "ask-grade",
-      targetHanzi: "\u4F60\u4E0A\u51E0\u5E74\u7EA7\uFF1F",
-      prompt: "Build: What grade are you in?",
-      english: "What grade are you in?",
-      audio: "\u4F60\u4E0A\u51E0\u5E74\u7EA7",
-      tokens: ["\u4F60", "\u4E0A", "\u51E0", "\u5E74\u7EA7"]
-    },
-    {
-      id: "build-grade-one",
-      sourceItemId: "grade-one",
-      targetHanzi: "\u6211\u4E0A\u4E00\u5E74\u7EA7\u3002",
-      prompt: "Build: I am in first grade.",
-      english: "I am in first grade.",
-      audio: "\u6211\u4E0A\u4E00\u5E74\u7EA7",
-      tokens: ["\u6211", "\u4E0A", "\u4E00", "\u5E74\u7EA7"]
-    }
-  ];
   var clothesPractice = [
     {
       id: "clothes-scene-1",
