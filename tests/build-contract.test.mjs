@@ -93,6 +93,14 @@ test("shared lesson practice is provided by an explicit game factory", () => {
   assert.match(gameSource, /renderSharedLessonPractice\.renderPracticeSayCards = renderPracticeSayCards/);
 });
 
+test("legacy bootstrap retains its shared data and audio bindings", () => {
+  const legacySource = readFileSync("src/legacy-app.js", "utf8");
+  assert.match(legacySource, /const \{ speak, speakSceneLines \} = createAudioService/);
+  assert.match(legacySource, /const visualTopicItems = \{/);
+  assert.match(legacySource, /const schoolTopicData = \{/);
+  assert.match(legacySource, /const schoolSentenceBuilds = \{/);
+});
+
 test("time and calendar content retains its expected teaching sets", () => {
   assert.equal(timeDateWeekItems.length, 7);
   assert.equal(timeDateClockItems.length, 12);

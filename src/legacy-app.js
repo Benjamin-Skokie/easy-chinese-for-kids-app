@@ -32,6 +32,42 @@ import { illustratedKids } from "./data/characters.js";
 import { bookHomeCategories, books, learningHomeCategories, topicCardMeta, topicGroups } from "./data/curriculum.js";
 import { createSharedLessonPractice } from "./games/shared-lesson-practice.js";
 
+const introductionsGameSpeakerIds = ["anan", "tiantian", "sisi", "lele"];
+const ageGameItemIds = ["ask-age", "age-five", "age-six", "age-seven", "ask-grade", "grade-one"];
+const sceneSpeechRate = 0.64;
+const sceneLinePauseMs = 280;
+const { speak, speakSceneLines } = createAudioService({
+  getSceneRate: () => sceneSpeechRate,
+  getSceneLinePauseMs: () => sceneLinePauseMs
+});
+
+const visualTopicItems = {
+  comparisons: comparisonVisualItems,
+  positions: positionVisualItems,
+  transport: transportVisualItems,
+  rooms: roomVisualItems
+};
+
+const schoolTopicData = {
+  stationery: stationeryTopicData,
+  "school-supplies": schoolSuppliesTopicData,
+  classroom: classroomTopicData,
+  school: schoolLessonTopicData,
+  "school-subjects": schoolSubjectsTopicData,
+  food: foodTopicData,
+  "food-preferences": foodPreferencesTopicData,
+  "meals-feelings": mealsFeelingsTopicData
+};
+
+const schoolSentenceBuilds = {
+  stationery: stationerySentenceBuilds,
+  "school-supplies": schoolSuppliesSentenceBuilds,
+  school: schoolLessonSentenceBuilds,
+  "school-subjects": schoolLessonSubjectsSentenceBuilds,
+  food: foodSentenceBuilds,
+  "meals-feelings": mealsFeelingsLessonSentenceBuilds
+};
+
 const topicData = [
   numbersTopic,
   multiplicationRhymeTopic,

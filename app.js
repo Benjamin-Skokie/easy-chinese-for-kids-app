@@ -1,5 +1,49 @@
 /* Generated from src/main.js. Do not edit directly. */
 (() => {
+  // src/core/audio.js
+  function createAudioService({
+    synthesis = globalThis.speechSynthesis,
+    createUtterance = (text) => new globalThis.SpeechSynthesisUtterance(text),
+    getSceneRate,
+    getSceneLinePauseMs,
+    schedule = globalThis.setTimeout
+  } = {}) {
+    const preferredVoiceNames = ["tingting", "ting-ting", "meijia", "mei-jia", "sinji", "sin-ji"];
+    function preferredChineseVoice() {
+      const voices = synthesis?.getVoices?.() ?? [];
+      return preferredVoiceNames.map((name) => voices.find((voice) => voice.name.toLowerCase() === name)).find(Boolean);
+    }
+    function chineseUtterance2(text, rate) {
+      const utterance = createUtterance(text);
+      utterance.lang = "zh-CN";
+      utterance.rate = rate;
+      utterance.pitch = 1;
+      const voice = preferredChineseVoice();
+      if (voice) utterance.voice = voice;
+      return utterance;
+    }
+    function speak2(text, rate = 0.8) {
+      if (!synthesis || !text) return;
+      synthesis.cancel();
+      synthesis.speak(chineseUtterance2(text, rate));
+    }
+    function speakSceneLines2(lines) {
+      if (!synthesis) return;
+      const audioLines = lines.map((line) => line.audio).filter(Boolean);
+      let index = 0;
+      synthesis.cancel();
+      const playNextLine = () => {
+        if (index >= audioLines.length) return;
+        const utterance = chineseUtterance2(audioLines[index], getSceneRate());
+        index += 1;
+        utterance.onend = () => schedule(playNextLine, getSceneLinePauseMs());
+        synthesis.speak(utterance);
+      };
+      playNextLine();
+    }
+    return { speak: speak2, speakSceneLines: speakSceneLines2 };
+  }
+
   // src/core/router.js
   function viewFromLocation(location) {
     const params = new URLSearchParams(location.search);
@@ -383,6 +427,16 @@
       { pattern: "\u4E00\u652F / \u4E00\u628A / \u4E00\u5757", pinyin: "y\xEC zh\u012B / y\xEC b\u01CE / y\xED ku\xE0i", english: "measure words for pens, scissors, and erasers", example: "\u4E00\u652F\u94C5\u7B14\u3002\u4E00\u628A\u526A\u5200\u3002\u4E00\u5757\u6A61\u76AE\u3002", examplePinyin: "y\xEC zh\u012B qi\u0101n b\u01D0. y\xEC b\u01CE ji\u01CEn d\u0101o. y\xED ku\xE0i xi\xE0ng p\xED.", exampleEnglish: "one pencil, one pair of scissors, one eraser" }
     ]
   };
+  var stationerySentenceBuilds = [
+    { id: "my-pencil", imagePath: "assets/illustrated-stationery/pencil.webp", target: ["\u8FD9", "\u662F", "\u6211\u7684", "\u94C5\u7B14"], distractors: ["\u6709", "\u4E66\u5305", "\u91CC"], pinyin: "zh\xE8 sh\xEC w\u01D2 de qi\u0101n b\u01D0.", english: "This is my pencil." },
+    { id: "my-chair", imagePath: "assets/illustrated-stationery/chair.webp", target: ["\u8FD9", "\u662F", "\u6211\u7684", "\u6905\u5B50"], distractors: ["\u6709", "\u4E66\u5305", "\u91CC"], pinyin: "zh\xE8 sh\xEC w\u01D2 de y\u01D0 zi.", english: "This is my chair." },
+    { id: "my-book", imagePath: "assets/illustrated-stationery/my-book-tiantian-landscape.webp", target: ["\u8FD9", "\u662F", "\u6211\u7684", "\u4E66"], distractors: ["\u6709", "\u4E66\u5305", "\u91CC"], pinyin: "zh\xE8 sh\xEC w\u01D2 de sh\u016B.", english: "This is my book." },
+    { id: "anan-scissors", imagePath: "assets/illustrated-possession/this-is-my-scissors.webp", target: ["\u5B89\u5B89", "\u6709", "\u526A\u5200"], distractors: ["\u8FD9\u662F", "\u6211\u7684", "\u4E66\u5305"], pinyin: "\u0101n \u0101n y\u01D2u ji\u01CEn d\u0101o.", english: "Anan has scissors." },
+    { id: "red-pencil", imagePath: "assets/illustrated-stationery/anan-three-red-pencils.webp", target: ["\u5B89\u5B89", "\u6709", "\u4E09\u652F", "\u7EA2\u8272\u7684", "\u94C5\u7B14"], distractors: ["\u4E00\u628A", "\u4E66\u5305", "\u91CC"], pinyin: "\u0101n \u0101n y\u01D2u s\u0101n zh\u012B h\xF3ng s\xE8 de qi\u0101n b\u01D0.", english: "Anan has three red pencils." },
+    { id: "one-pencil", imagePath: "assets/illustrated-measure-words/one-pencil.webp", target: ["\u6211", "\u6709", "\u4E00\u652F", "\u94C5\u7B14"], distractors: ["\u4E00\u628A", "\u4E66\u5305", "\u91CC"], pinyin: "w\u01D2 y\u01D2u y\xEC zh\u012B qi\u0101n b\u01D0.", english: "I have one pencil." },
+    { id: "one-scissors", imagePath: "assets/illustrated-measure-words/one-scissors.webp", target: ["\u6211", "\u6709", "\u4E00\u628A", "\u526A\u5200"], distractors: ["\u4E00\u652F", "\u4E66\u5305", "\u91CC"], pinyin: "w\u01D2 y\u01D2u y\xEC b\u01CE ji\u01CEn d\u0101o.", english: "I have one pair of scissors." },
+    { id: "one-eraser", imagePath: "assets/illustrated-measure-words/one-eraser.webp", target: ["\u6211", "\u6709", "\u4E00\u5757", "\u6A61\u76AE"], distractors: ["\u4E00\u652F", "\u4E66\u5305", "\u91CC"], pinyin: "w\u01D2 y\u01D2u y\xED ku\xE0i xi\xE0ng p\xED.", english: "I have one eraser." }
+  ];
   var stationeryPictureMatchRounds = [
     {
       id: "three-red-pencils",
@@ -469,6 +523,14 @@
       { pattern: "\u91CC / \u5916\u9762", pinyin: "l\u01D0 / w\xE0i mi\xE0n", english: "inside / outside", example: "\u4E66\u5728\u4E66\u5305\u91CC\u3002\u6587\u5177\u76D2\u5728\u4E66\u5305\u5916\u9762\u3002" }
     ]
   };
+  var schoolSuppliesSentenceBuilds = [
+    { id: "stationery", imagePath: "assets/illustrated-stationery/pencil-box.webp", target: ["\u6587\u5177\u76D2", "\u91CC", "\u6709", "\u94C5\u7B14"], distractors: ["\u5B66\u6821", "\u559C\u6B22", "\u56FE\u4E66\u9986"], pinyin: "w\xE9n j\xF9 h\xE9 l\u01D0 y\u01D2u qi\u0101n b\u01D0.", english: "There is a pencil in the pencil case." },
+    { id: "eraser", imagePath: "assets/illustrated-stationery/pencil-box.webp", target: ["\u6587\u5177\u76D2", "\u91CC", "\u6709", "\u6A61\u76AE"], distractors: ["\u5B66\u6821", "\u559C\u6B22", "\u56FE\u4E66\u9986"], pinyin: "w\xE9n j\xF9 h\xE9 l\u01D0 y\u01D2u xi\xE0ng p\xED.", english: "There is an eraser in the pencil case." },
+    { id: "colored-pencils", imagePath: "assets/illustrated-stationery/pencil-box.webp", target: ["\u6587\u5177\u76D2", "\u91CC", "\u6709", "\u5F69\u8272\u94C5\u7B14"], distractors: ["\u5B66\u6821", "\u559C\u6B22", "\u56FE\u4E66\u9986"], pinyin: "w\xE9n j\xF9 h\xE9 l\u01D0 y\u01D2u c\u01CEi s\xE8 qi\u0101n b\u01D0.", english: "There are colored pencils in the pencil case." },
+    { id: "book-in-backpack", imagePath: "assets/illustrated-rooms/positions-inside-outside.webp", target: ["\u4E66", "\u5728", "\u4E66\u5305", "\u91CC"], distractors: ["\u6559\u5BA4", "\u559C\u6B22", "\u6905\u5B50"], pinyin: "sh\u016B z\xE0i sh\u016B b\u0101o l\u01D0.", english: "The book is in the backpack." },
+    { id: "backpack-has-book", imagePath: "assets/illustrated-rooms/positions-inside-outside.webp", target: ["\u4E66\u5305", "\u91CC", "\u6709", "\u4E66"], distractors: ["\u6559\u5BA4", "\u559C\u6B22", "\u6905\u5B50"], pinyin: "sh\u016B b\u0101o l\u01D0 y\u01D2u sh\u016B.", english: "There is a book in the backpack." },
+    { id: "pencil-case-outside", imagePath: "assets/illustrated-rooms/positions-inside-outside.webp", target: ["\u6587\u5177\u76D2", "\u5728", "\u4E66\u5305", "\u5916\u9762"], distractors: ["\u6559\u5BA4", "\u559C\u6B22", "\u6905\u5B50"], pinyin: "w\xE9n j\xF9 h\xE9 z\xE0i sh\u016B b\u0101o w\xE0i mi\xE0n.", english: "The pencil case is outside the backpack." }
+  ];
 
   // src/features/school-life/classroom.js
   var classroomTopicData = {
@@ -525,7 +587,7 @@
   };
 
   // src/features/school-life/school.js
-  var schoolTopicData2 = {
+  var schoolTopicData = {
     scenes: [
       ["school", "School", "\u8FD9\u662F\u5B66\u6821\u3002", "zh\xE8 sh\xEC xu\xE9 xi\xE0o.", "This is a school.", "school_exterior_anchor.webp"],
       ["classroom", "Classroom", "\u5B66\u6821\u6709\u6559\u5BA4\u3002", "xu\xE9 xi\xE0o y\u01D2u ji\xE0o sh\xEC.", "The school has classrooms.", "classroom_anchor.webp"],
@@ -545,6 +607,15 @@
       ["piano", "\u94A2\u7434", "g\u0101ng q\xEDn", "piano", "piano_anchor.webp"]
     ].map(([id, hanzi, pinyin, english, file]) => ({ id, hanzi, pinyin, english, audio: id === "music-room" ? "\u97F3\u6708\u6559\u5BA4" : hanzi, imagePath: `assets/illustrated-school-anchors/${file}` }))
   };
+  var schoolSentenceBuilds = [
+    { id: "classroom", imagePath: "assets/illustrated-school-anchors/classroom_anchor.webp", target: ["\u5B66\u6821", "\u6709", "\u6559\u5BA4"], distractors: ["\u4E66\u5305", "\u91CC", "\u559C\u6B22"], pinyin: "xu\xE9 xi\xE0o y\u01D2u ji\xE0o sh\xEC.", english: "The school has classrooms." },
+    { id: "library", imagePath: "assets/illustrated-school-anchors/library_anchor.webp", target: ["\u5B66\u6821", "\u6709", "\u56FE\u4E66\u9986"], distractors: ["\u4E66\u5305", "\u91CC", "\u559C\u6B22"], pinyin: "xu\xE9 xi\xE0o y\u01D2u t\xFA sh\u016B gu\u01CEn.", english: "The school has a library." },
+    { id: "playground", imagePath: "assets/illustrated-school-anchors/playground_anchor.webp", target: ["\u5B66\u6821", "\u6709", "\u64CD\u573A"], distractors: ["\u6587\u5177\u76D2", "\u91CC", "\u559C\u6B22"], pinyin: "xu\xE9 xi\xE0o y\u01D2u c\u0101o ch\u01CEng.", english: "The school has a playground." },
+    { id: "cafeteria", imagePath: "assets/illustrated-school-anchors/cafeteria_anchor.webp", target: ["\u5B66\u6821", "\u6709", "\u98DF\u5802"], distractors: ["\u6559\u5BA4", "\u91CC", "\u559C\u6B22"], pinyin: "xu\xE9 xi\xE0o y\u01D2u sh\xED t\xE1ng.", english: "The school has a cafeteria." },
+    { id: "auditorium", imagePath: "assets/illustrated-school-anchors/auditorium_anchor.webp", target: ["\u5B66\u6821", "\u6709", "\u793C\u5802"], distractors: ["\u4E66\u5305", "\u91CC", "\u559C\u6B22"], pinyin: "xu\xE9 xi\xE0o y\u01D2u l\u01D0 t\xE1ng.", english: "The school has an auditorium." },
+    { id: "music-room", imagePath: "assets/illustrated-school-anchors/music_classroom_anchor.webp", target: ["\u5B66\u6821", "\u6709", "\u97F3\u4E50\u6559\u5BA4"], distractors: ["\u6587\u5177\u76D2", "\u91CC", "\u559C\u6B22"], pinyin: "xu\xE9 xi\xE0o y\u01D2u y\u012Bn yu\xE8 ji\xE0o sh\xEC.", english: "The school has a music room.", audio: "\u5B66\u6821\u6709\u97F3\u4E50\u6559\u5BA4" },
+    { id: "music-room-piano", imagePath: "assets/illustrated-school-anchors/piano_anchor.webp", target: ["\u97F3\u4E50\u6559\u5BA4", "\u6709", "\u94A2\u7434"], distractors: ["\u6587\u5177\u76D2", "\u91CC", "\u559C\u6B22"], pinyin: "y\u012Bn yu\xE8 ji\xE0o sh\xEC y\u01D2u g\u0101ng q\xEDn.", english: "The music room has a piano.", audio: "\u97F3\u4E50\u6559\u5BA4\u6709\u94A2\u7434" }
+  ];
 
   // src/features/school-life/school-subjects.js
   var schoolSubjectsTopicData = {
@@ -613,6 +684,14 @@
       ["pe", "\u4F53\u80B2\u8BFE", "t\u01D0 y\xF9 k\xE8", "PE class"]
     ].map(([id, hanzi, pinyin, english]) => ({ id, hanzi, pinyin, english, audio: id === "music" ? "\u97F3\u6708\u8BFE" : hanzi }))
   };
+  var schoolSubjectsSentenceBuilds = [
+    { id: "ask-favorite", imagePath: "assets/illustrated-school-subjects/subjects-dialogue.webp", target: ["\u4F60", "\u559C\u6B22", "\u4EC0\u4E48", "\u8BFE"], distractors: ["\u5B66\u6821", "\u6709", "\u56FE\u4E66\u9986"], pinyin: "n\u01D0 x\u01D0 huan sh\xE9n me k\xE8?", english: "What class do you like?" },
+    { id: "go-music", imagePath: "assets/illustrated-activities/anan_go_to_music_class.webp", target: ["\u6211", "\u53BB", "\u4E0A", "\u97F3\u4E50\u8BFE"], distractors: ["\u5B66\u6821", "\u6709", "\u56FE\u4E66\u9986"], pinyin: "w\u01D2 q\xF9 sh\xE0ng y\u012Bn yu\xE8 k\xE8.", english: "I go to music class.", audio: "\u6211\u53BB\u4E0A\u97F3\u6708\u8BFE" },
+    { id: "in-music", imagePath: "assets/illustrated-activities/anan_in_music_class.webp", target: ["\u6211", "\u5728", "\u4E0A", "\u97F3\u4E50\u8BFE"], distractors: ["\u5B66\u6821", "\u6709", "\u56FE\u4E66\u9986"], pinyin: "w\u01D2 z\xE0i sh\xE0ng y\u012Bn yu\xE8 k\xE8.", english: "I am in music class.", audio: "\u6211\u5728\u4E0A\u97F3\u6708\u8BFE" },
+    { id: "music", imagePath: "assets/illustrated-activities/anan_likes_music_class.webp", target: ["\u6211", "\u559C\u6B22", "\u97F3\u4E50\u8BFE"], distractors: ["\u5B66\u6821", "\u6709", "\u56FE\u4E66\u9986"], pinyin: "w\u01D2 x\u01D0 huan y\u012Bn yu\xE8 k\xE8.", english: "I like music class.", audio: "\u6211\u559C\u6B22\u97F3\u6708\u8BFE" },
+    { id: "pe", imagePath: "assets/illustrated-activities/yangyang_likes_pe_class.webp", target: ["\u6211", "\u559C\u6B22", "\u4F53\u80B2\u8BFE"], distractors: ["\u5B66\u6821", "\u6709", "\u6587\u5177\u76D2"], pinyin: "w\u01D2 x\u01D0 huan t\u01D0 y\xF9 k\xE8.", english: "I like PE class." },
+    { id: "dislikes-math", imagePath: "assets/illustrated-activities/lele_dislikes_math_class.webp", target: ["\u6211", "\u4E0D\u559C\u6B22", "\u6570\u5B66\u8BFE"], distractors: ["\u5B66\u6821", "\u6709", "\u6587\u5177\u76D2"], pinyin: "w\u01D2 b\xF9 x\u01D0 huan sh\xF9 xu\xE9 k\xE8.", english: "I do not like math class." }
+  ];
 
   // src/features/food/food.js
   var foodTopicData = {
@@ -662,6 +741,10 @@
       { pattern: "\u559D", pinyin: "h\u0113", english: "drink liquids", example: "Use \u559D for drinks: \u559D\u6C34\u3001\u725B\u5976\u3001\u679C\u6C41\u3002" }
     ]
   };
+  var foodSentenceBuilds = [
+    { id: "fruit", imagePath: "assets/illustrated-food/fruit-group-1b-core.webp", target: ["\u6211", "\u5403", "\u82F9\u679C"], distractors: ["\u559D", "\u5B66\u6821", "\u6559\u5BA4"], pinyin: "w\u01D2 ch\u012B p\xEDng gu\u01D2.", english: "I eat an apple." },
+    { id: "milk", imagePath: "assets/illustrated-food/milk.webp", target: ["\u6211", "\u559D", "\u725B\u5976"], distractors: ["\u5403", "\u5B66\u6821", "\u6559\u5BA4"], pinyin: "w\u01D2 h\u0113 ni\xFA n\u01CEi.", english: "I drink milk." }
+  ];
 
   // src/features/food/food-preferences.js
   var foodPreferencesTopicData = {
@@ -715,6 +798,154 @@
       { pattern: "\u559C\u6B22\u5403 / \u4E0D\u559C\u6B22\u5403", pinyin: "x\u01D0 huan ch\u012B / b\xF9 x\u01D0 huan ch\u012B", english: "like to eat / do not like to eat", example: "\u6211\u559C\u6B22\u5403\u62AB\u8428\u3002\u6211\u4E0D\u559C\u6B22\u5403\u897F\u5170\u82B1\u3002" }
     ]
   };
+
+  // src/features/food/meals-feelings.js
+  var mealsFeelingsTopicData = {
+    practiceSummary: "Match the first line of each food conversation to its reply.",
+    sceneGroups: [
+      {
+        id: "lunch",
+        label: "",
+        items: [
+          {
+            id: "lunch",
+            label: "Lunch",
+            hanzi: "\u6211\u5348\u996D\u559D\u4E86\u725B\u5976\uFF0C\u5403\u4E86\u62AB\u8428\u3002",
+            pinyin: "w\u01D2 w\u01D4 f\xE0n h\u0113 le ni\xFA n\u01CEi, ch\u012B le p\u012B s\xE0.",
+            english: "For lunch, I drank milk and ate pizza.",
+            audio: "\u6211\u5348\u996D\u559D\u4E86\u725B\u5976\u5403\u4E86\u62AB\u8428",
+            imagePath: "assets/illustrated-meals/anan-eating-school-lunch.webp"
+          },
+          {
+            id: "cola-water",
+            label: "No Coke",
+            hanzi: "\u6211\u8981\u559D\u53EF\u4E50\u3002\u6CA1\u6709\u53EF\u4E50\uFF0C\u4F60\u53EF\u4EE5\u559D\u6C34\u3002",
+            pinyin: "w\u01D2 y\xE0o h\u0113 k\u011B l\xE8. m\xE9i y\u01D2u k\u011B l\xE8, n\u01D0 k\u011B y\u01D0 h\u0113 shu\u01D0.",
+            english: "I want to drink Coke. There is no Coke. You can drink water.",
+            audio: "\u6211\u8981\u559D\u53EF\u4E50\u6CA1\u6709\u53EF\u4E50\u4F60\u53EF\u4EE5\u559D\u6C34",
+            imagePath: "assets/illustrated-meals/anan-mom-fridge-cola-water.webp"
+          }
+        ]
+      },
+      {
+        id: "feelings",
+        label: "Food Feelings",
+        items: [
+          { id: "hungry", label: "Hungry", hanzi: "\u6211\u997F\u4E86\uFF0C\u6211\u8981\u5403\u7092\u996D\u3002", pinyin: "w\u01D2 \xE8 le, w\u01D2 y\xE0o ch\u012B ch\u01CEo f\xE0n.", english: "I am hungry. I want to eat fried rice.", audio: "\u6211\u997F\u4E86\u6211\u8981\u5403\u7092\u996D", imagePath: "assets/illustrated-food-feelings/hungry.webp" },
+          { id: "thirsty", label: "Thirsty", hanzi: "\u6211\u6E34\u4E86\uFF0C\u6211\u8981\u559D\u6C34\u3002", pinyin: "w\u01D2 k\u011B le, w\u01D2 y\xE0o h\u0113 shu\u01D0.", english: "I am thirsty. I want to drink water.", audio: "\u6211\u6E34\u4E86\u6211\u8981\u559D\u6C34", imagePath: "assets/illustrated-food-feelings/thirsty.webp" },
+          { id: "delicious", label: "Delicious", hanzi: "\u997A\u5B50\u597D\u5403\u3002", pinyin: "ji\u01CEo zi h\u01CEo ch\u012B.", english: "Dumplings are delicious.", audio: "\u997A\u5B50\u597D\u5403", imagePath: "assets/illustrated-food-feelings/delicious.webp" },
+          { id: "full", label: "Full", hanzi: "\u5988\u5988\uFF0C\u6211\u9971\u4E86\uFF0C\u4E0D\u5403\u4E86\u3002", pinyin: "m\u0101 ma, w\u01D2 b\u01CEo le, b\xF9 ch\u012B le.", english: "Mom, I am full. I do not want to eat any more.", audio: "\u5988\u5988\u6211\u9971\u4E86\u4E0D\u5403\u4E86", imagePath: "assets/illustrated-food-feelings/full.webp" }
+        ]
+      }
+    ],
+    wordGroups: [
+      { id: "feelings", hanzi: "\u98DF\u7269\u611F\u89C9", english: "Food Feelings", items: [["hungry", "\u997F", "\xE8", "hungry", "assets/illustrated-food-feelings/hungry.webp"], ["thirsty", "\u6E34", "k\u011B", "thirsty", "assets/illustrated-food-feelings/thirsty.webp"], ["want", "\u8981", "y\xE0o", "want", "assets/illustrated-food-feelings/want-eat-fried-rice-landscape.webp"], ["delicious", "\u597D\u5403", "h\u01CEo ch\u012B", "delicious", "assets/illustrated-food-feelings/delicious.webp"], ["full", "\u9971", "b\u01CEo", "full", "assets/illustrated-food-feelings/full.webp"]] }
+    ],
+    practiceItems: [
+      { id: "ask-lunch", hanzi: "\u4F60\u5348\u996D\u5403\u4EC0\u4E48\uFF1F", pinyin: "n\u01D0 w\u01D4 f\xE0n ch\u012B sh\xE9n me?", english: "What do you have for lunch?", audio: "\u4F60\u5348\u996D\u5403\u4EC0\u4E48" },
+      { id: "lunch-answer", hanzi: "\u4E09\u660E\u6CBB\u548C\u679C\u6C41\u3002", pinyin: "s\u0101n m\xEDng zh\xEC h\xE9 gu\u01D2 zh\u012B.", english: "Sandwiches and juice.", audio: "\u4E09\u660E\u6CBB\u548C\u679C\u6C41" },
+      { id: "can-eat-chocolate", hanzi: "\u6211\u53EF\u4EE5\u5403\u5DE7\u514B\u529B\u5417\uFF1F", pinyin: "w\u01D2 k\u011B y\u01D0 ch\u012B qi\u01CEo k\xE8 l\xEC ma?", english: "May I eat chocolate?", audio: "\u6211\u53EF\u4EE5\u5403\u5DE7\u514B\u529B\u5417" },
+      { id: "not-now", hanzi: "\u4E0D\u884C\uFF0C\u73B0\u5728\u5403\u996D\u3002", pinyin: "b\xF9 x\xEDng, xi\xE0n z\xE0i ch\u012B f\xE0n.", english: "No, it is time to eat now.", audio: "\u4E0D\u884C\u73B0\u5728\u5403\u996D" },
+      { id: "no-hotdog", hanzi: "\u5BF9\u4E0D\u8D77\uFF0C\u6CA1\u6709\u70ED\u72D7\u3002", pinyin: "du\xEC bu q\u01D0, m\xE9i y\u01D2u r\xE8 g\u01D2u.", english: "Sorry, there are no hot dogs.", audio: "\u5BF9\u4E0D\u8D77\u6CA1\u6709\u70ED\u72D7" },
+      { id: "no-cola-water", hanzi: "\u6CA1\u6709\u53EF\u4E50\uFF0C\u4F60\u53EF\u4EE5\u559D\u6C34\u3002", pinyin: "m\xE9i y\u01D2u k\u011B l\xE8, n\u01D0 k\u011B y\u01D0 h\u0113 shu\u01D0.", english: "There is no Coke. You can drink water.", audio: "\u6CA1\u6709\u53EF\u4E50\u4F60\u53EF\u4EE5\u559D\u6C34" }
+    ],
+    conversationPairs: [
+      { id: "thirsty-coke", hanzi: "\u6211\u6E34\u4E86\u3002", pinyin: "w\u01D2 k\u011B le.", reply: "\u6211\u8981\u559D\u53EF\u4E50\u3002", replyPinyin: "w\u01D2 y\xE0o h\u0113 k\u011B l\xE8.", audio: "\u6211\u6E34\u4E86" },
+      { id: "hungry-hotdog", hanzi: "\u6211\u997F\u4E86\u3002", pinyin: "w\u01D2 \xE8 le.", reply: "\u6211\u8981\u5403\u70ED\u72D7\u3002", replyPinyin: "w\u01D2 y\xE0o ch\u012B r\xE8 g\u01D2u.", audio: "\u6211\u997F\u4E86" },
+      { id: "full-stop", hanzi: "\u5988\u5988\uFF0C\u6211\u9971\u4E86\u3002", pinyin: "m\u0101 ma, w\u01D2 b\u01CEo le.", reply: "\u597D\uFF0C\u4E0D\u5403\u4E86\u3002", replyPinyin: "h\u01CEo, b\xF9 ch\u012B le.", audio: "\u5988\u5988\u6211\u9971\u4E86" },
+      { id: "lunch-sandwich", hanzi: "\u4F60\u5348\u996D\u5403\u4EC0\u4E48\uFF1F", pinyin: "n\u01D0 w\u01D4 f\xE0n ch\u012B sh\xE9n me?", reply: "\u4E09\u660E\u6CBB\u548C\u679C\u6C41\u3002", replyPinyin: "s\u0101n m\xEDng zh\xEC h\xE9 gu\u01D2 zh\u012B.", audio: "\u4F60\u5348\u996D\u5403\u4EC0\u4E48" },
+      { id: "chocolate-mealtime", hanzi: "\u6211\u53EF\u4EE5\u5403\u5DE7\u514B\u529B\u5417\uFF1F", pinyin: "w\u01D2 k\u011B y\u01D0 ch\u012B qi\u01CEo k\xE8 l\xEC ma?", reply: "\u4E0D\u884C\uFF0C\u73B0\u5728\u5403\u996D\u3002", replyPinyin: "b\xF9 x\xEDng, xi\xE0n z\xE0i ch\u012B f\xE0n.", audio: "\u6211\u53EF\u4EE5\u5403\u5DE7\u514B\u529B\u5417" },
+      { id: "no-coke-water", hanzi: "\u6CA1\u6709\u53EF\u4E50\u3002", pinyin: "m\xE9i y\u01D2u k\u011B l\xE8.", reply: "\u4F60\u53EF\u4EE5\u559D\u6C34\u3002", replyPinyin: "n\u01D0 k\u011B y\u01D0 h\u0113 shu\u01D0.", audio: "\u6CA1\u6709\u53EF\u4E50" }
+    ],
+    pictureChoices: [
+      {
+        id: "lunch-picture",
+        imagePath: "assets/illustrated-meals/anan-eating-school-lunch.webp",
+        imageAlt: "Anan eating lunch.",
+        correctId: "lunch-sentence",
+        options: [
+          { id: "lunch-sentence", hanzi: "\u6211\u5348\u996D\u559D\u4E86\u725B\u5976\uFF0C\u5403\u4E86\u62AB\u8428\u3002", pinyin: "w\u01D2 w\u01D4 f\xE0n h\u0113 le ni\xFA n\u01CEi, ch\u012B le p\u012B s\xE0.", english: "For lunch, I drank milk and ate pizza." },
+          { id: "lunch-coke", hanzi: "\u6211\u8981\u559D\u53EF\u4E50\u3002", pinyin: "w\u01D2 y\xE0o h\u0113 k\u011B l\xE8.", english: "I want to drink Coke." },
+          { id: "lunch-hungry", hanzi: "\u6211\u997F\u4E86\uFF0C\u6211\u8981\u5403\u7092\u996D\u3002", pinyin: "w\u01D2 \xE8 le, w\u01D2 y\xE0o ch\u012B ch\u01CEo f\xE0n.", english: "I am hungry. I want to eat fried rice." },
+          { id: "lunch-full", hanzi: "\u5988\u5988\uFF0C\u6211\u9971\u4E86\uFF0C\u4E0D\u5403\u4E86\u3002", pinyin: "m\u0101 ma, w\u01D2 b\u01CEo le, b\xF9 ch\u012B le.", english: "Mom, I am full. I do not want to eat any more." }
+        ]
+      },
+      {
+        id: "no-coke-picture",
+        imagePath: "assets/illustrated-meals/anan-mom-fridge-cola-water.webp",
+        imageAlt: "Anan looking for Coke while Mom offers water.",
+        correctId: "no-coke-sentence",
+        options: [
+          { id: "no-coke-sentence", hanzi: "\u6211\u8981\u559D\u53EF\u4E50\u3002\u6CA1\u6709\u53EF\u4E50\uFF0C\u4F60\u53EF\u4EE5\u559D\u6C34\u3002", pinyin: "w\u01D2 y\xE0o h\u0113 k\u011B l\xE8. m\xE9i y\u01D2u k\u011B l\xE8, n\u01D0 k\u011B y\u01D0 h\u0113 shu\u01D0.", english: "I want to drink Coke. There is no Coke. You can drink water." },
+          { id: "no-coke-lunch", hanzi: "\u6211\u5348\u996D\u559D\u4E86\u725B\u5976\uFF0C\u5403\u4E86\u62AB\u8428\u3002", pinyin: "w\u01D2 w\u01D4 f\xE0n h\u0113 le ni\xFA n\u01CEi, ch\u012B le p\u012B s\xE0.", english: "For lunch, I drank milk and ate pizza." },
+          { id: "no-coke-water", hanzi: "\u6211\u6E34\u4E86\uFF0C\u6211\u8981\u559D\u6C34\u3002", pinyin: "w\u01D2 k\u011B le, w\u01D2 y\xE0o h\u0113 shu\u01D0.", english: "I am thirsty. I want to drink water." },
+          { id: "no-coke-sandwich", hanzi: "\u6211\u559C\u6B22\u5403\u4E09\u660E\u6CBB\u3002", pinyin: "w\u01D2 x\u01D0 huan ch\u012B s\u0101n m\xEDng zh\xEC.", english: "I like to eat sandwiches." }
+        ]
+      },
+      {
+        id: "hungry-picture",
+        imagePath: "assets/illustrated-food-feelings/hungry.webp",
+        imageAlt: "A child who is hungry and wants fried rice.",
+        correctId: "hungry-sentence",
+        options: [
+          { id: "hungry-sentence", hanzi: "\u6211\u997F\u4E86\uFF0C\u6211\u8981\u5403\u7092\u996D\u3002", pinyin: "w\u01D2 \xE8 le, w\u01D2 y\xE0o ch\u012B ch\u01CEo f\xE0n.", english: "I am hungry. I want to eat fried rice." },
+          { id: "hungry-thirsty", hanzi: "\u6211\u6E34\u4E86\uFF0C\u6211\u8981\u559D\u6C34\u3002", pinyin: "w\u01D2 k\u011B le, w\u01D2 y\xE0o h\u0113 shu\u01D0.", english: "I am thirsty. I want to drink water." },
+          { id: "hungry-coke", hanzi: "\u6211\u8981\u559D\u53EF\u4E50\u3002", pinyin: "w\u01D2 y\xE0o h\u0113 k\u011B l\xE8.", english: "I want to drink Coke." },
+          { id: "hungry-full", hanzi: "\u5988\u5988\uFF0C\u6211\u9971\u4E86\uFF0C\u4E0D\u5403\u4E86\u3002", pinyin: "m\u0101 ma, w\u01D2 b\u01CEo le, b\xF9 ch\u012B le.", english: "Mom, I am full. I do not want to eat any more." }
+        ]
+      },
+      {
+        id: "thirsty-picture",
+        imagePath: "assets/illustrated-food-feelings/thirsty.webp",
+        imageAlt: "A child who is thirsty and wants water.",
+        correctId: "thirsty-sentence",
+        options: [
+          { id: "thirsty-sentence", hanzi: "\u6211\u6E34\u4E86\uFF0C\u6211\u8981\u559D\u6C34\u3002", pinyin: "w\u01D2 k\u011B le, w\u01D2 y\xE0o h\u0113 shu\u01D0.", english: "I am thirsty. I want to drink water." },
+          { id: "thirsty-hungry", hanzi: "\u6211\u997F\u4E86\uFF0C\u6211\u8981\u5403\u7092\u996D\u3002", pinyin: "w\u01D2 \xE8 le, w\u01D2 y\xE0o ch\u012B ch\u01CEo f\xE0n.", english: "I am hungry. I want to eat fried rice." },
+          { id: "thirsty-lunch", hanzi: "\u6211\u5348\u996D\u559D\u4E86\u725B\u5976\uFF0C\u5403\u4E86\u62AB\u8428\u3002", pinyin: "w\u01D2 w\u01D4 f\xE0n h\u0113 le ni\xFA n\u01CEi, ch\u012B le p\u012B s\xE0.", english: "For lunch, I drank milk and ate pizza." },
+          { id: "thirsty-full", hanzi: "\u5988\u5988\uFF0C\u6211\u9971\u4E86\uFF0C\u4E0D\u5403\u4E86\u3002", pinyin: "m\u0101 ma, w\u01D2 b\u01CEo le, b\xF9 ch\u012B le.", english: "Mom, I am full. I do not want to eat any more." }
+        ]
+      },
+      {
+        id: "delicious-picture",
+        imagePath: "assets/illustrated-food-feelings/delicious.webp",
+        imageAlt: "Dumplings that taste delicious.",
+        correctId: "delicious-sentence",
+        options: [
+          { id: "delicious-sentence", hanzi: "\u997A\u5B50\u597D\u5403\u3002", pinyin: "ji\u01CEo zi h\u01CEo ch\u012B.", english: "Dumplings are delicious." },
+          { id: "delicious-thirsty", hanzi: "\u6211\u6E34\u4E86\uFF0C\u6211\u8981\u559D\u6C34\u3002", pinyin: "w\u01D2 k\u011B le, w\u01D2 y\xE0o h\u0113 shu\u01D0.", english: "I am thirsty. I want to drink water." },
+          { id: "delicious-coke", hanzi: "\u6211\u8981\u559D\u53EF\u4E50\u3002", pinyin: "w\u01D2 y\xE0o h\u0113 k\u011B l\xE8.", english: "I want to drink Coke." },
+          { id: "delicious-full", hanzi: "\u5988\u5988\uFF0C\u6211\u9971\u4E86\uFF0C\u4E0D\u5403\u4E86\u3002", pinyin: "m\u0101 ma, w\u01D2 b\u01CEo le, b\xF9 ch\u012B le.", english: "Mom, I am full. I do not want to eat any more." }
+        ]
+      },
+      {
+        id: "full-picture",
+        imagePath: "assets/illustrated-food-feelings/full.webp",
+        imageAlt: "A child who is full after eating.",
+        correctId: "full-sentence",
+        options: [
+          { id: "full-sentence", hanzi: "\u5988\u5988\uFF0C\u6211\u9971\u4E86\uFF0C\u4E0D\u5403\u4E86\u3002", pinyin: "m\u0101 ma, w\u01D2 b\u01CEo le, b\xF9 ch\u012B le.", english: "Mom, I am full. I do not want to eat any more." },
+          { id: "full-hungry", hanzi: "\u6211\u997F\u4E86\uFF0C\u6211\u8981\u5403\u7092\u996D\u3002", pinyin: "w\u01D2 \xE8 le, w\u01D2 y\xE0o ch\u012B ch\u01CEo f\xE0n.", english: "I am hungry. I want to eat fried rice." },
+          { id: "full-thirsty", hanzi: "\u6211\u6E34\u4E86\uFF0C\u6211\u8981\u559D\u6C34\u3002", pinyin: "w\u01D2 k\u011B le, w\u01D2 y\xE0o h\u0113 shu\u01D0.", english: "I am thirsty. I want to drink water." },
+          { id: "full-lunch", hanzi: "\u6211\u5348\u996D\u559D\u4E86\u725B\u5976\uFF0C\u5403\u4E86\u62AB\u8428\u3002", pinyin: "w\u01D2 w\u01D4 f\xE0n h\u0113 le ni\xFA n\u01CEi, ch\u012B le p\u012B s\xE0.", english: "For lunch, I drank milk and ate pizza." }
+        ]
+      }
+    ],
+    review: [
+      { pattern: "\u997F\u4E86 / \u6E34\u4E86", pinyin: "\xE8 le / k\u011B le", english: "hungry / thirsty", example: "\u6211\u997F\u4E86\uFF0C\u6211\u8981\u5403\u7092\u996D\u3002 \u6211\u6E34\u4E86\uFF0C\u6211\u8981\u559D\u6C34\u3002", examplePinyin: "w\u01D2 \xE8 le, w\u01D2 y\xE0o ch\u012B ch\u01CEo f\xE0n. w\u01D2 k\u011B le, w\u01D2 y\xE0o h\u0113 shu\u01D0.", exampleEnglish: "When you are hungry, eat. When you are thirsty, drink." },
+      { pattern: "\u4F60\u5348\u996D\u5403\u4EC0\u4E48\uFF1F", pinyin: "n\u01D0 w\u01D4 f\xE0n ch\u012B sh\xE9n me?", english: "What do you have for lunch?", example: "\u6211\u5348\u996D\u5403\u2026\u2026\uFF0C\u559D\u2026\u2026", examplePinyin: "w\u01D2 w\u01D4 f\xE0n ch\u012B..., h\u0113...", exampleEnglish: "For lunch, I eat ... and drink ..." },
+      { pattern: "\u8981 + \u5403 / \u559D + \u98DF\u7269", pinyin: "y\xE0o + ch\u012B / h\u0113 + sh\xED w\xF9", english: "want to eat / drink + food", example: "\u6211\u8981\u5403\u7092\u996D\u3002\u6211\u8981\u559D\u53EF\u4E50\u3002", examplePinyin: "w\u01D2 y\xE0o ch\u012B ch\u01CEo f\xE0n. w\u01D2 y\xE0o h\u0113 k\u011B l\xE8.", exampleEnglish: "I want to eat fried rice. I want to drink Coke." },
+      { pattern: "\u597D\u5403 / \u9971\u4E86", pinyin: "h\u01CEo ch\u012B / b\u01CEo le", english: "delicious / full", example: "\u997A\u5B50\u597D\u5403\u3002\u5988\u5988\uFF0C\u6211\u9971\u4E86\uFF0C\u4E0D\u5403\u4E86\u3002", examplePinyin: "ji\u01CEo zi h\u01CEo ch\u012B. m\u0101 ma, w\u01D2 b\u01CEo le, b\xF9 ch\u012B le.", exampleEnglish: "Dumplings are delicious. Mom, I am full. I do not want to eat any more." },
+      { pattern: "\u6CA1\u6709\u2026\u2026\uFF0C\u4F60\u53EF\u4EE5\u2026\u2026", pinyin: "m\xE9i y\u01D2u..., n\u01D0 k\u011B y\u01D0...", english: "There is no ...; you can ...", example: "\u6CA1\u6709\u53EF\u4E50\u3002\u4F60\u53EF\u4EE5\u559D\u6C34\u3002", examplePinyin: "m\xE9i y\u01D2u k\u011B l\xE8. n\u01D0 k\u011B y\u01D0 h\u0113 shu\u01D0.", exampleEnglish: "There is no Coke. You can drink water." }
+    ]
+  };
+  var mealsFeelingsSentenceBuilds = [
+    { id: "lunch", imagePath: "assets/illustrated-meals/anan-eating-school-lunch.webp", target: ["\u6211", "\u5348\u996D", "\u559D\u4E86", "\u725B\u5976", "\u5403\u4E86", "\u62AB\u8428"], distractors: ["\u8981", "\u6C34", "\u5B66\u6821"], pinyin: "w\u01D2 w\u01D4 f\xE0n h\u0113 le ni\xFA n\u01CEi, ch\u012B le p\u012B s\xE0.", english: "For lunch, I drank milk and ate pizza." },
+    { id: "hungry", imagePath: "assets/illustrated-food-feelings/hungry.webp", target: ["\u6211", "\u997F", "\u4E86", "\u6211", "\u8981", "\u5403", "\u7092\u996D"], distractors: ["\u559D", "\u6C34", "\u5B66\u6821"], pinyin: "w\u01D2 \xE8 le, w\u01D2 y\xE0o ch\u012B ch\u01CEo f\xE0n.", english: "I am hungry. I want to eat fried rice." },
+    { id: "thirsty", imagePath: "assets/illustrated-food-feelings/thirsty.webp", target: ["\u6211", "\u6E34", "\u4E86", "\u6211", "\u8981", "\u559D", "\u6C34"], distractors: ["\u5403", "\u7092\u996D", "\u5B66\u6821"], pinyin: "w\u01D2 k\u011B le, w\u01D2 y\xE0o h\u0113 shu\u01D0.", english: "I am thirsty. I want to drink water." },
+    { id: "delicious", imagePath: "assets/illustrated-food-feelings/delicious.webp", target: ["\u997A\u5B50", "\u597D\u5403"], distractors: ["\u53EF\u4E50", "\u5B66\u6821", "\u6559\u5BA4"], pinyin: "ji\u01CEo zi h\u01CEo ch\u012B.", english: "Dumplings are delicious." },
+    { id: "full", imagePath: "assets/illustrated-food-feelings/full.webp", target: ["\u5988\u5988", "\u6211", "\u9971", "\u4E86", "\u4E0D\u5403", "\u4E86"], distractors: ["\u6E34", "\u8981", "\u5B66\u6821"], pinyin: "m\u0101 ma, w\u01D2 b\u01CEo le, b\xF9 ch\u012B le.", english: "Mom, I am full. I do not want to eat any more." }
+  ];
 
   // src/features/foundations/introductions.js
   var introductionsTopic = {
@@ -2139,6 +2370,37 @@
   }
 
   // src/legacy-app.js
+  var ageGameItemIds = ["ask-age", "age-five", "age-six", "age-seven", "ask-grade", "grade-one"];
+  var sceneSpeechRate = 0.64;
+  var sceneLinePauseMs = 280;
+  var { speak, speakSceneLines } = createAudioService({
+    getSceneRate: () => sceneSpeechRate,
+    getSceneLinePauseMs: () => sceneLinePauseMs
+  });
+  var visualTopicItems = {
+    comparisons: comparisonVisualItems,
+    positions: positionVisualItems,
+    transport: transportVisualItems,
+    rooms: roomVisualItems
+  };
+  var schoolTopicData2 = {
+    stationery: stationeryTopicData,
+    "school-supplies": schoolSuppliesTopicData,
+    classroom: classroomTopicData,
+    school: schoolTopicData,
+    "school-subjects": schoolSubjectsTopicData,
+    food: foodTopicData,
+    "food-preferences": foodPreferencesTopicData,
+    "meals-feelings": mealsFeelingsTopicData
+  };
+  var schoolSentenceBuilds2 = {
+    stationery: stationerySentenceBuilds,
+    "school-supplies": schoolSuppliesSentenceBuilds,
+    school: schoolSentenceBuilds,
+    "school-subjects": schoolSubjectsSentenceBuilds,
+    food: foodSentenceBuilds,
+    "meals-feelings": mealsFeelingsSentenceBuilds
+  };
   var topicData = [
     numbersTopic,
     multiplicationRhymeTopic,
@@ -5030,7 +5292,7 @@
     });
   }
   function schoolWordGroups(topicId = currentTopic().id) {
-    const data = schoolTopicData[topicId];
+    const data = schoolTopicData2[topicId];
     if (!data?.wordGroups) return [];
     return data.wordGroups.map((group) => ({
       ...group,
@@ -5045,7 +5307,7 @@
     }));
   }
   function schoolPracticeItems(topicId = currentTopic().id) {
-    const data = schoolTopicData[topicId];
+    const data = schoolTopicData2[topicId];
     return data?.practiceItems ?? data?.words ?? schoolWordGroups(topicId).flatMap((group) => group.items);
   }
   function backpackGameItems() {
@@ -5158,7 +5420,7 @@
     state.schoolMatchFeedback = "";
   }
   function mealsConversationItems() {
-    return schoolTopicData["meals-feelings"]?.conversationPairs ?? [];
+    return schoolTopicData2["meals-feelings"]?.conversationPairs ?? [];
   }
   function resetMealsConversationMatch() {
     const ids = mealsConversationItems().map((item) => item.id);
@@ -5204,7 +5466,7 @@
     renderActivityPanel(currentTopic());
   }
   function mealsPictureChoiceItems() {
-    return schoolTopicData["meals-feelings"]?.pictureChoices ?? [];
+    return schoolTopicData2["meals-feelings"]?.pictureChoices ?? [];
   }
   function resetMealsPictureQuestion() {
     const prompt = mealsPictureChoiceItems().find((item) => item.id === state.mealsPictureQuizOrder[state.mealsPictureQuizIndex]);
@@ -5338,11 +5600,11 @@
   `;
   }
   function classroomSentenceFrames() {
-    return schoolTopicData.classroom?.sentenceFrames ?? [];
+    return schoolTopicData2.classroom?.sentenceFrames ?? [];
   }
   function classroomSentenceWords() {
     return [
-      ...(schoolTopicData.classroom?.words ?? []).map((item) => item.id === "computer" ? { ...item, sentenceEnglish: "laptop" } : item),
+      ...(schoolTopicData2.classroom?.words ?? []).map((item) => item.id === "computer" ? { ...item, sentenceEnglish: "laptop" } : item),
       { id: "textbook", hanzi: "\u8BFE\u672C", pinyin: "k\xE8 b\u011Bn", english: "textbook", imagePath: "assets/illustrated-stationery/textbook.webp" },
       { id: "workbook", hanzi: "\u7EC3\u4E60\u672C", pinyin: "li\xE0n x\xED b\u011Bn", english: "workbook", imagePath: "assets/illustrated-stationery/workbook.webp" },
       { id: "pencil", hanzi: "\u94C5\u7B14", pinyin: "qi\u0101n b\u01D0", english: "pencil", imagePath: "assets/illustrated-stationery/pencil.webp" },
@@ -5392,7 +5654,7 @@
     const pinyin = `${frame.pinyin}${selectedWord?.pinyin ? ` ${selectedWord.pinyin}` : ""}.`;
     const english = classroomSentenceEnglish(frame, selectedWord);
     activityPanelTitle.textContent = "Let's practice";
-    activityPanelSummary.textContent = schoolTopicData.classroom.practiceSummary;
+    activityPanelSummary.textContent = schoolTopicData2.classroom.practiceSummary;
     activityList.className = "support-list";
     activityList.innerHTML = `
     <section class="family-practice-shell lesson-practice-shell">
@@ -5458,7 +5720,7 @@
     renderActivityPanel(currentTopic());
   }
   function currentSchoolBuildItem() {
-    const items = schoolSentenceBuilds[currentTopic().id] ?? [];
+    const items = schoolSentenceBuilds2[currentTopic().id] ?? [];
     return items.find((item) => item.id === state.schoolBuildOrder[state.schoolBuildIndex]) ?? items[0];
   }
   function prepareSchoolBuilder() {
@@ -5468,7 +5730,7 @@
     state.schoolBuildAvailableTokens = shuffleArray([...item?.target ?? [], ...item?.distractors ?? []]);
   }
   function ensureSchoolBuilder(topicId = currentTopic().id) {
-    const items = schoolSentenceBuilds[topicId] ?? [];
+    const items = schoolSentenceBuilds2[topicId] ?? [];
     const hasCurrentItems = state.schoolBuildOrder.length === items.length && state.schoolBuildOrder.every((id) => items.some((item) => item.id === id));
     if (state.schoolBuildTopicId !== topicId || !hasCurrentItems) {
       state.schoolBuildTopicId = topicId;
@@ -5814,7 +6076,7 @@
     }
     ensureSchoolPractice(topic.id);
     ensureSchoolBuilder(topic.id);
-    const topicData2 = schoolTopicData[topic.id];
+    const topicData2 = schoolTopicData2[topic.id];
     const item = currentSchoolBuildItem();
     const listen = {
       items: () => schoolPracticeItems(topic.id),
@@ -5846,7 +6108,7 @@
     ensureMealsPictureChoice();
     const items = mealsConversationItems();
     activityPanelTitle.textContent = "Let's practice";
-    activityPanelSummary.textContent = schoolTopicData[topic.id].practiceSummary;
+    activityPanelSummary.textContent = schoolTopicData2[topic.id].practiceSummary;
     activityList.className = "support-list";
     activityList.innerHTML = `
     <section class="family-practice-shell lesson-practice-shell">
@@ -5885,7 +6147,7 @@
   }
   function renderFoodPreferencesPractice(topic) {
     activityPanelTitle.textContent = "Let's practice";
-    activityPanelSummary.textContent = schoolTopicData[topic.id].practiceSummary;
+    activityPanelSummary.textContent = schoolTopicData2[topic.id].practiceSummary;
     activityList.className = "support-list";
     activityList.innerHTML = `
     <section class="family-practice-shell lesson-practice-shell">
@@ -5897,7 +6159,7 @@
     activityList.querySelectorAll("[data-food-preference-food]").forEach((button) => button.addEventListener("click", () => handleFoodPreferenceFill(button.dataset.foodPreferenceFood)));
   }
   function sharedLessonPracticeConfig(topic) {
-    if (schoolTopicData[topic.id]) {
+    if (schoolTopicData2[topic.id]) {
       return {
         summary: "Listen for a school word, then match each Chinese card to its English meaning.",
         shellClass: "lesson-practice-shell",
@@ -6149,7 +6411,7 @@
       activityList.innerHTML = "";
       return;
     }
-    if (schoolTopicData[topic.id]) {
+    if (schoolTopicData2[topic.id]) {
       renderSchoolPractice(topic);
       return;
     }
@@ -7248,7 +7510,7 @@
   }
   function renderSchoolExplorer(topicId) {
     const topic = currentTopic();
-    const data = schoolTopicData[topicId];
+    const data = schoolTopicData2[topicId];
     if (!data) {
       renderDefaultExplorer();
       return;
@@ -7942,7 +8204,7 @@
       renderRoomsExplorer();
       return;
     }
-    if (schoolTopicData[topic.id]) {
+    if (schoolTopicData2[topic.id]) {
       renderSchoolExplorer(topic.id);
       return;
     }
@@ -8051,7 +8313,7 @@
     renderSubtopicShelf(topic);
     focusDisplay.classList.toggle(
       "is-hidden",
-      topic.id === "body" || usesLessonTemplate(topic) || topic.id === "numbers" || topic.id === "multiplication-rhyme" || topic.id === "weekdays" || topic.id === "time-date" || topic.id === "dates" || topic.id === "comparisons" || topic.id === "positions" || topic.id === "transport" || topic.id === "daily-life" || topic.id === "identity" || topic.id === "clothes" || schoolTopicData[topic.id] || topic.id === "numbers" && currentNumberStage().telephoneMode
+      topic.id === "body" || usesLessonTemplate(topic) || topic.id === "numbers" || topic.id === "multiplication-rhyme" || topic.id === "weekdays" || topic.id === "time-date" || topic.id === "dates" || topic.id === "comparisons" || topic.id === "positions" || topic.id === "transport" || topic.id === "daily-life" || topic.id === "identity" || topic.id === "clothes" || schoolTopicData2[topic.id] || topic.id === "numbers" && currentNumberStage().telephoneMode
     );
     renderFocusControls();
     renderFocusDisplay(currentFocusItem());
