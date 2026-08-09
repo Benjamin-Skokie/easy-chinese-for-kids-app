@@ -52,6 +52,82 @@
     return `${location.pathname}?topic=${encodeURIComponent(topicId)}#topic-detail`;
   }
 
+  // src/features/time-daily-life/calendar-data.js
+  var timeDateWeekItems = [
+    ["monday", "\u661F\u671F\u4E00", "x\u012Bng q\u012B y\u012B", "Monday", "\u661F\u671F\u4E00\uFF0C\u6211\u4EEC\u5750\u6821\u8F66\u53BB\u5B66\u6821\u3002", "x\u012Bng q\u012B y\u012B, w\u01D2 men zu\xF2 xi\xE0o ch\u0113 q\xF9 xu\xE9 xi\xE0o.", "On Monday, we take the school bus to school.", "Monday.webp"],
+    ["tuesday", "\u661F\u671F\u4E8C", "x\u012Bng q\u012B \xE8r", "Tuesday", "\u661F\u671F\u4E8C\uFF0C\u6211\u4EEC\u4E0A\u4F53\u80B2\u8BFE\u3002", "x\u012Bng q\u012B \xE8r, w\u01D2 men sh\xE0ng t\u01D0 y\xF9 k\xE8.", "On Tuesday, we have PE class.", "Tuesday.webp"],
+    ["wednesday", "\u661F\u671F\u4E09", "x\u012Bng q\u012B s\u0101n", "Wednesday", "\u661F\u671F\u4E09\uFF0C\u6211\u4EEC\u4E0A\u7F8E\u672F\u8BFE\u3002", "x\u012Bng q\u012B s\u0101n, w\u01D2 men sh\xE0ng m\u011Bi sh\xF9 k\xE8.", "On Wednesday, we have art class.", "Wednesday.webp"],
+    ["thursday", "\u661F\u671F\u56DB", "x\u012Bng q\u012B s\xEC", "Thursday", "\u661F\u671F\u56DB\uFF0C\u6211\u4EEC\u4E0A\u97F3\u4E50\u8BFE\u3002", "x\u012Bng q\u012B s\xEC, w\u01D2 men sh\xE0ng y\u012Bn yu\xE8 k\xE8.", "On Thursday, we have music class.", "Thursday.webp", "\u661F\u671F\u56DB\uFF0C\u6211\u4EEC\u4E0A\u97F3\u6708\u8BFE\u3002"],
+    ["friday", "\u661F\u671F\u4E94", "x\u012Bng q\u012B w\u01D4", "Friday", "\u661F\u671F\u4E94\uFF0C\u6211\u4EEC\u53BB\u56FE\u4E66\u9986\u770B\u4E66\u3002", "x\u012Bng q\u012B w\u01D4, w\u01D2 men q\xF9 t\xFA sh\u016B gu\u01CEn k\xE0n sh\u016B.", "On Friday, we read at the library.", "Friday.webp"],
+    ["saturday", "\u661F\u671F\u516D", "x\u012Bng q\u012B li\xF9", "Saturday", "\u661F\u671F\u516D\uFF0C\u6211\u4EEC\u53BB\u516C\u56ED\u9A91\u81EA\u884C\u8F66\u3002", "x\u012Bng q\u012B li\xF9, w\u01D2 men q\xF9 g\u014Dng yu\xE1n q\xED z\xEC x\xEDng ch\u0113.", "On Saturday, we ride bikes in the park.", "Saturday.webp"],
+    ["sunday", "\u661F\u671F\u5929", "x\u012Bng q\u012B ti\u0101n", "Sunday", "\u661F\u671F\u5929\uFF0C\u6211\u4EEC\u5728\u5BB6\u770B\u7535\u5F71\u3002", "x\u012Bng q\u012B ti\u0101n, w\u01D2 men z\xE0i ji\u0101 k\xE0n di\xE0n y\u01D0ng.", "On Sunday, we watch a movie at home.", "Sunday.webp"]
+  ].map(([id, hanzi, pinyin, english, context, contextPinyin, contextEnglish, file, audio]) => ({ id, hanzi, pinyin, english, context, contextPinyin, contextEnglish, audio: audio ?? context, imagePath: `assets/illustrated-day-of-week/${file}` }));
+  var timeDateClockItems = [
+    [1, "\u4E00\u70B9", "y\u012B di\u01CEn"],
+    [2, "\u4E24\u70B9", "li\u01CEng di\u01CEn"],
+    [3, "\u4E09\u70B9", "s\u0101n di\u01CEn"],
+    [4, "\u56DB\u70B9", "s\xEC di\u01CEn"],
+    [5, "\u4E94\u70B9", "w\u01D4 di\u01CEn"],
+    [6, "\u516D\u70B9", "li\xF9 di\u01CEn"],
+    [7, "\u4E03\u70B9", "q\u012B di\u01CEn"],
+    [8, "\u516B\u70B9", "b\u0101 di\u01CEn"],
+    [9, "\u4E5D\u70B9", "ji\u01D4 di\u01CEn"],
+    [10, "\u5341\u70B9", "sh\xED di\u01CEn"],
+    [11, "\u5341\u4E00\u70B9", "sh\xED y\u012B di\u01CEn"],
+    [12, "\u5341\u4E8C\u70B9", "sh\xED \xE8r di\u01CEn"]
+  ].map(([hour, hanzi, pinyin]) => ({ id: `clock-${hour}`, hanzi, pinyin, english: `${hour} o'clock`, audio: hanzi, imagePath: `assets/illustrated-clocks/${hour}oclock.webp` }));
+  var timeDateExpressionItems = [
+    { id: "seven-oclock", hanzi: "\u4E03\u70B9", pinyin: "q\u012B di\u01CEn", english: "7:00", audio: "\u4E03\u70B9" },
+    { id: "quarter-past-seven", hanzi: "\u4E03\u70B9\u4E00\u523B", pinyin: "q\u012B di\u01CEn y\u012B k\xE8", english: "7:15", audio: "\u4E03\u70B9\u4E00\u523B" },
+    { id: "fifteen-past-seven", hanzi: "\u4E03\u70B9\u5341\u4E94\u5206", pinyin: "q\u012B di\u01CEn sh\xED w\u01D4 f\u0113n", english: "7:15", audio: "\u4E03\u70B9\u5341\u4E94\u5206" },
+    { id: "half-past-seven", hanzi: "\u4E03\u70B9\u534A", pinyin: "q\u012B di\u01CEn b\xE0n", english: "7:30", audio: "\u4E03\u70B9\u534A" },
+    { id: "thirty-past-seven", hanzi: "\u4E03\u70B9\u4E09\u5341\u5206", pinyin: "q\u012B di\u01CEn s\u0101n sh\xED f\u0113n", english: "7:30", audio: "\u4E03\u70B9\u4E09\u5341\u5206" },
+    { id: "three-quarters-seven", hanzi: "\u4E03\u70B9\u4E09\u523B", pinyin: "q\u012B di\u01CEn s\u0101n k\xE8", english: "7:45", audio: "\u4E03\u70B9\u4E09\u523B" },
+    { id: "forty-five-past-seven", hanzi: "\u4E03\u70B9\u56DB\u5341\u4E94\u5206", pinyin: "q\u012B di\u01CEn s\xEC sh\xED w\u01D4 f\u0113n", english: "7:45", audio: "\u4E03\u70B9\u56DB\u5341\u4E94\u5206" }
+  ];
+  var timeDateDateItems = [
+    { id: "date-board", hanzi: "\u51E0\u6708\u51E0\u53F7\uFF1F", pinyin: "j\u01D0 yu\xE8 j\u01D0 h\xE0o?", english: "What month and day?", context: "\u770B\u65E5\u5386\uFF0C\u53EF\u4EE5\u77E5\u9053\u51E0\u6708\u51E0\u53F7\u3002", audio: "\u51E0\u6708\u51E0\u53F7", imagePath: "assets/illustrated-dates/calendar-example-dates-board.webp" },
+    { id: "new-year", hanzi: "\u4E00\u6708\u4E00\u53F7", pinyin: "y\u012B yu\xE8 y\u012B h\xE0o", english: "January first", context: "\u4E00\u6708\u4E00\u53F7\u662F\u65B0\u5E74\u3002", audio: "\u4E00\u6708\u4E00\u53F7\u662F\u65B0\u5E74", imagePath: "assets/illustrated-dates/january-first-new-year-calendar.webp" },
+    { id: "field-trip", hanzi: "\u4E94\u6708\u4E8C\u5341\u53F7", pinyin: "w\u01D4 yu\xE8 \xE8r sh\xED h\xE0o", english: "May twentieth", context: "\u4E94\u6708\u4E8C\u5341\u53F7\uFF0C\u6211\u4EEC\u53BB\u6625\u6E38\u3002", audio: "\u4E94\u6708\u4E8C\u5341\u53F7\u6211\u4EEC\u53BB\u6625\u6E38", imagePath: "assets/illustrated-dates/may-twentieth-field-trip-calendar.webp" },
+    { id: "christmas", hanzi: "\u5341\u4E8C\u6708\u4E8C\u5341\u4E94\u53F7", pinyin: "sh\xED \xE8r yu\xE8 \xE8r sh\xED w\u01D4 h\xE0o", english: "December twenty-fifth", context: "\u5341\u4E8C\u6708\u4E8C\u5341\u4E94\u53F7\u662F\u5723\u8BDE\u8282\u3002", audio: "\u5341\u4E8C\u6708\u4E8C\u5341\u4E94\u53F7\u662F\u5723\u8BDE\u8282", imagePath: "assets/illustrated-dates/december-twenty-fifth-christmas-calendar.webp" },
+    { id: "birthday", hanzi: "\u751F\u65E5\u5FEB\u4E50\uFF01", pinyin: "sh\u0113ng r\xEC ku\xE0i l\xE8!", english: "Happy birthday!", context: "\u4ECA\u5929\u662F\u6211\u7684\u751F\u65E5\u3002\u751F\u65E5\u5FEB\u4E50\uFF01", audio: "\u4ECA\u5929\u662F\u6211\u7684\u751F\u65E5\u751F\u65E5\u5FEB\u4E50", imagePath: "assets/illustrated-dates/birthday-party-scene.webp" }
+  ];
+  var timeDateMonthItems = [
+    ["January", "\u4E00\u6708", "y\u012B yu\xE8", "\u4E00\u6708\uFF0C\u65B0\u5E74\u7684\u7B2C\u4E00\u4E2A\u6708\u3002", "y\u012B yu\xE8, x\u012Bn ni\xE1n de d\xEC y\u012B ge yu\xE8.", "January: the first month of the new year."],
+    ["February", "\u4E8C\u6708", "\xE8r yu\xE8", "\u4E8C\u6708\uFF0C\u4E2D\u56FD\u65B0\u5E74\u3002", "\xE8r yu\xE8, Zh\u014Dng gu\xF3 x\u012Bn ni\xE1n.", "February: Chinese New Year."],
+    ["March", "\u4E09\u6708", "s\u0101n yu\xE8", "\u4E09\u6708\uFF0C\u5723\u5E15\u7279\u91CC\u514B\u8282\u3002", "s\u0101n yu\xE8, Sh\xE8ng p\xE0 t\xE8 l\u01D0 k\xE8 Ji\xE9.", "March: St. Patrick's Day."],
+    ["April", "\u56DB\u6708", "s\xEC yu\xE8", "\u56DB\u6708\uFF0C\u6811\u5F00\u59CB\u53D1\u82BD\u3002", "s\xEC yu\xE8, sh\xF9 k\u0101i sh\u01D0 f\u0101 y\xE1.", "In April, trees start to bud."],
+    ["May", "\u4E94\u6708", "w\u01D4 yu\xE8", "\u4E94\u6708\uFF0C\u6BCD\u4EB2\u8282\u3002", "w\u01D4 yu\xE8, M\u01D4 q\u012Bn Ji\xE9.", "May: Mother's Day."],
+    ["June", "\u516D\u6708", "li\xF9 yu\xE8", "\u516D\u6708\uFF0C\u6691\u5047\u5FEB\u5230\u4E86\u3002", "li\xF9 yu\xE8, sh\u01D4 ji\xE0 ku\xE0i d\xE0o le.", "In June, summer vacation is coming soon."],
+    ["July", "\u4E03\u6708", "q\u012B yu\xE8", "\u4E03\u6708\uFF0C\u53BB\u6D77\u8FB9\u73A9\u3002", "q\u012B yu\xE8, q\xF9 h\u01CEi bi\u0101n w\xE1n.", "In July, go to the beach."],
+    ["August", "\u516B\u6708", "b\u0101 yu\xE8", "\u516B\u6708\uFF0C\u53BB\u5EA6\u5047\u3002", "b\u0101 yu\xE8, q\xF9 d\xF9 ji\xE0.", "In August, go on vacation."],
+    ["September", "\u4E5D\u6708", "ji\u01D4 yu\xE8", "\u4E5D\u6708\uFF0C\u5F00\u5B66\u4E86\u3002", "ji\u01D4 yu\xE8, k\u0101i xu\xE9 le.", "In September, school starts."],
+    ["October", "\u5341\u6708", "sh\xED yu\xE8", "\u5341\u6708\uFF0C\u6811\u53F6\u53D8\u7EA2\u4E86\u3002", "sh\xED yu\xE8, sh\xF9 y\xE8 bi\xE0n h\xF3ng le.", "In October, leaves turn red."],
+    ["November", "\u5341\u4E00\u6708", "sh\xED y\u012B yu\xE8", "\u5341\u4E00\u6708\uFF0C\u611F\u6069\u8282\u3002", "sh\xED y\u012B yu\xE8, G\u01CEn \u0113n Ji\xE9.", "Thanksgiving is in November."],
+    ["December", "\u5341\u4E8C\u6708", "sh\xED \xE8r yu\xE8", "\u5341\u4E8C\u6708\uFF0C\u53BB\u6ED1\u96EA\u3002", "sh\xED \xE8r yu\xE8, q\xF9 hu\xE1 xu\u011B.", "In December, go skiing."]
+  ].map(([english, hanzi, pinyin, context, contextPinyin, contextEnglish]) => ({ id: english.toLowerCase(), hanzi, pinyin, english, context, contextPinyin, contextEnglish, hideLabelHanzi: true, hideLabelDetails: true, audio: context, imagePath: `assets/illustrated-months-of-year/${english}.webp` }));
+  var timeDateRoutineItems = [
+    ["wake-up", "\u4E03\u70B9\u8D77\u5E8A\u3002", "q\u012B di\u01CEn q\u01D0 chu\xE1ng.", "Wake up at 7:00.", "\u4E03\u70B9\u8D77\u5E8A", "07am-lele-wake-up.webp"],
+    ["breakfast", "\u4E03\u70B9\u5341\u4E94\u5206\u5403\u65E9\u996D\u3002", "q\u012B di\u01CEn sh\xED w\u01D4 f\u0113n ch\u012B z\u01CEo f\xE0n.", "Have breakfast at 7:15.", "\u4E03\u70B9\u5341\u4E94\u5206\u5403\u65E9\u996D", "0715am-lele-having-breakfast.webp"],
+    ["school", "\u516B\u70B9\u53BB\u5B66\u6821\u3002", "b\u0101 di\u01CEn q\xF9 xu\xE9 xi\xE0o.", "Go to school at 8:00.", "\u516B\u70B9\u53BB\u5B66\u6821", "08am-go-to-school.webp"],
+    ["writing", "\u5341\u70B9\u4E0A\u5199\u5B57\u8BFE\u3002", "sh\xED di\u01CEn sh\xE0ng xi\u011B z\xEC k\xE8.", "Writing class at 10:00.", "\u5341\u70B9\u4E0A\u5199\u5B57\u8BFE", "10am-writing-class.webp"],
+    ["lunch", "\u5341\u4E8C\u70B9\u5403\u5348\u996D\u3002", "sh\xED \xE8r di\u01CEn ch\u012B w\u01D4 f\xE0n.", "Have lunch at 12:00.", "\u5341\u4E8C\u70B9\u5403\u5348\u996D", "12pm-lunch-time.webp"],
+    ["home", "\u4E24\u70B9\u534A\u653E\u5B66\u3002", "li\u01CEng di\u01CEn b\xE0n f\xE0ng xu\xE9.", "School ends at 2:30.", "\u4E24\u70B9\u534A\u653E\u5B66", "0230pm-school-dismissal.webp"],
+    ["playground", "\u56DB\u70B9\u53BB\u64CD\u573A\u73A9\u3002", "s\xEC di\u01CEn q\xF9 c\u0101o ch\u01CEng w\xE1n.", "Play outside at 4:00.", "\u56DB\u70B9\u53BB\u64CD\u573A\u73A9", "04pm-playground.webp"],
+    ["dinner", "\u516D\u70B9\u5403\u665A\u996D\u3002", "li\xF9 di\u01CEn ch\u012B w\u01CEn f\xE0n.", "Have dinner at 6:00.", "\u516D\u70B9\u5403\u665A\u996D", "06pm-family-dinner.webp"],
+    ["tv", "\u4E03\u70B9\u770B\u7535\u89C6\u3002", "q\u012B di\u01CEn k\xE0n di\xE0n sh\xEC.", "Watch TV at 7:00.", "\u4E03\u70B9\u770B\u7535\u89C6", "07pm-tv-time.webp"],
+    ["story", "\u516B\u70B9\u8BB2\u6545\u4E8B\u3002", "b\u0101 di\u01CEn ji\u01CEng g\xF9 sh\xEC.", "Story time at 8:00.", "\u516B\u70B9\u8BB2\u6545\u4E8B", "08pm-story-time.webp"],
+    ["bedtime", "\u4E5D\u70B9\u7761\u89C9\u3002", "ji\u01D4 di\u01CEn shu\xEC ji\xE0o.", "Go to bed at 9:00.", "\u4E5D\u70B9\u7761\u89C9", "09pm-bedtime.webp"]
+  ].map(([id, hanzi, pinyin, english, audio, file]) => ({ id, hanzi, pinyin, english, audio, imagePath: `assets/illustrated-clock-routines/${file}` }));
+  var datePracticeItems = [
+    { id: "date-new-year", hanzi: "\u4E00\u6708\u4E00\u53F7", pinyin: "y\u012B yu\xE8 y\u012B h\xE0o", english: "January first", audio: "\u4E00\u6708\u4E00\u53F7\u662F\u65B0\u5E74", eventHanzi: "\u65B0\u5E74", eventPinyin: "x\u012Bn ni\xE1n", eventEnglish: "New Year" },
+    { id: "date-chinese-new-year", hanzi: "\u4E8C\u6708", pinyin: "\xE8r yu\xE8", english: "February", audio: "\u4E8C\u6708\u4E2D\u56FD\u65B0\u5E74", eventHanzi: "\u4E2D\u56FD\u65B0\u5E74", eventPinyin: "Zh\u014Dng gu\xF3 x\u012Bn ni\xE1n", eventEnglish: "Chinese New Year" },
+    { id: "date-field-trip", hanzi: "\u4E94\u6708\u4E8C\u5341\u53F7", pinyin: "w\u01D4 yu\xE8 \xE8r sh\xED h\xE0o", english: "May twentieth", audio: "\u4E94\u6708\u4E8C\u5341\u53F7\u6211\u4EEC\u53BB\u6625\u6E38", eventHanzi: "\u6625\u6E38", eventPinyin: "ch\u016Bn y\xF3u", eventEnglish: "Field trip" },
+    { id: "date-christmas", hanzi: "\u5341\u4E8C\u6708\u4E8C\u5341\u4E94\u53F7", pinyin: "sh\xED \xE8r yu\xE8 \xE8r sh\xED w\u01D4 h\xE0o", english: "December twenty-fifth", audio: "\u5341\u4E8C\u6708\u4E8C\u5341\u4E94\u53F7\u662F\u5723\u8BDE\u8282", eventHanzi: "\u5723\u8BDE\u8282", eventPinyin: "Sh\xE8ng d\xE0n Ji\xE9", eventEnglish: "Christmas" },
+    { id: "birthday-wish", hanzi: "\u795D\u4F60\u751F\u65E5\u5FEB\u4E50\uFF01", pinyin: "zh\xF9 n\u01D0 sh\u0113ng r\xEC ku\xE0i l\xE8!", english: "Happy birthday!", audio: "\u795D\u4F60\u751F\u65E5\u5FEB\u4E50" },
+    { id: "birthday-party", hanzi: "\u751F\u65E5\u4F1A\u4E0A\u6709\u793C\u7269\u3002", pinyin: "sh\u0113ng r\xEC hu\xEC sh\xE0ng y\u01D2u l\u01D0 w\xF9.", english: "There are presents at a birthday party.", audio: "\u751F\u65E5\u4F1A\u4E0A\u6709\u793C\u7269" }
+  ];
+
   // src/legacy-app.js
   var topicData = [
     {
@@ -1070,80 +1146,6 @@
     getSceneRate: () => sceneSpeechRate,
     getSceneLinePauseMs: () => sceneLinePauseMs
   });
-  var timeDateWeekItems = [
-    ["monday", "\u661F\u671F\u4E00", "x\u012Bng q\u012B y\u012B", "Monday", "\u661F\u671F\u4E00\uFF0C\u6211\u4EEC\u5750\u6821\u8F66\u53BB\u5B66\u6821\u3002", "x\u012Bng q\u012B y\u012B, w\u01D2 men zu\xF2 xi\xE0o ch\u0113 q\xF9 xu\xE9 xi\xE0o.", "On Monday, we take the school bus to school.", "Monday.webp"],
-    ["tuesday", "\u661F\u671F\u4E8C", "x\u012Bng q\u012B \xE8r", "Tuesday", "\u661F\u671F\u4E8C\uFF0C\u6211\u4EEC\u4E0A\u4F53\u80B2\u8BFE\u3002", "x\u012Bng q\u012B \xE8r, w\u01D2 men sh\xE0ng t\u01D0 y\xF9 k\xE8.", "On Tuesday, we have PE class.", "Tuesday.webp"],
-    ["wednesday", "\u661F\u671F\u4E09", "x\u012Bng q\u012B s\u0101n", "Wednesday", "\u661F\u671F\u4E09\uFF0C\u6211\u4EEC\u4E0A\u7F8E\u672F\u8BFE\u3002", "x\u012Bng q\u012B s\u0101n, w\u01D2 men sh\xE0ng m\u011Bi sh\xF9 k\xE8.", "On Wednesday, we have art class.", "Wednesday.webp"],
-    ["thursday", "\u661F\u671F\u56DB", "x\u012Bng q\u012B s\xEC", "Thursday", "\u661F\u671F\u56DB\uFF0C\u6211\u4EEC\u4E0A\u97F3\u4E50\u8BFE\u3002", "x\u012Bng q\u012B s\xEC, w\u01D2 men sh\xE0ng y\u012Bn yu\xE8 k\xE8.", "On Thursday, we have music class.", "Thursday.webp", "\u661F\u671F\u56DB\uFF0C\u6211\u4EEC\u4E0A\u97F3\u6708\u8BFE\u3002"],
-    ["friday", "\u661F\u671F\u4E94", "x\u012Bng q\u012B w\u01D4", "Friday", "\u661F\u671F\u4E94\uFF0C\u6211\u4EEC\u53BB\u56FE\u4E66\u9986\u770B\u4E66\u3002", "x\u012Bng q\u012B w\u01D4, w\u01D2 men q\xF9 t\xFA sh\u016B gu\u01CEn k\xE0n sh\u016B.", "On Friday, we read at the library.", "Friday.webp"],
-    ["saturday", "\u661F\u671F\u516D", "x\u012Bng q\u012B li\xF9", "Saturday", "\u661F\u671F\u516D\uFF0C\u6211\u4EEC\u53BB\u516C\u56ED\u9A91\u81EA\u884C\u8F66\u3002", "x\u012Bng q\u012B li\xF9, w\u01D2 men q\xF9 g\u014Dng yu\xE1n q\xED z\xEC x\xEDng ch\u0113.", "On Saturday, we ride bikes in the park.", "Saturday.webp"],
-    ["sunday", "\u661F\u671F\u5929", "x\u012Bng q\u012B ti\u0101n", "Sunday", "\u661F\u671F\u5929\uFF0C\u6211\u4EEC\u5728\u5BB6\u770B\u7535\u5F71\u3002", "x\u012Bng q\u012B ti\u0101n, w\u01D2 men z\xE0i ji\u0101 k\xE0n di\xE0n y\u01D0ng.", "On Sunday, we watch a movie at home.", "Sunday.webp"]
-  ].map(([id, hanzi, pinyin, english, context, contextPinyin, contextEnglish, file, audio]) => ({ id, hanzi, pinyin, english, context, contextPinyin, contextEnglish, audio: audio ?? context, imagePath: `assets/illustrated-day-of-week/${file}` }));
-  var timeDateClockItems = [
-    [1, "\u4E00\u70B9", "y\u012B di\u01CEn"],
-    [2, "\u4E24\u70B9", "li\u01CEng di\u01CEn"],
-    [3, "\u4E09\u70B9", "s\u0101n di\u01CEn"],
-    [4, "\u56DB\u70B9", "s\xEC di\u01CEn"],
-    [5, "\u4E94\u70B9", "w\u01D4 di\u01CEn"],
-    [6, "\u516D\u70B9", "li\xF9 di\u01CEn"],
-    [7, "\u4E03\u70B9", "q\u012B di\u01CEn"],
-    [8, "\u516B\u70B9", "b\u0101 di\u01CEn"],
-    [9, "\u4E5D\u70B9", "ji\u01D4 di\u01CEn"],
-    [10, "\u5341\u70B9", "sh\xED di\u01CEn"],
-    [11, "\u5341\u4E00\u70B9", "sh\xED y\u012B di\u01CEn"],
-    [12, "\u5341\u4E8C\u70B9", "sh\xED \xE8r di\u01CEn"]
-  ].map(([hour, hanzi, pinyin]) => ({ id: `clock-${hour}`, hanzi, pinyin, english: `${hour} o'clock`, audio: hanzi, imagePath: `assets/illustrated-clocks/${hour}oclock.webp` }));
-  var timeDateExpressionItems = [
-    { id: "seven-oclock", hanzi: "\u4E03\u70B9", pinyin: "q\u012B di\u01CEn", english: "7:00", audio: "\u4E03\u70B9" },
-    { id: "quarter-past-seven", hanzi: "\u4E03\u70B9\u4E00\u523B", pinyin: "q\u012B di\u01CEn y\u012B k\xE8", english: "7:15", audio: "\u4E03\u70B9\u4E00\u523B" },
-    { id: "fifteen-past-seven", hanzi: "\u4E03\u70B9\u5341\u4E94\u5206", pinyin: "q\u012B di\u01CEn sh\xED w\u01D4 f\u0113n", english: "7:15", audio: "\u4E03\u70B9\u5341\u4E94\u5206" },
-    { id: "half-past-seven", hanzi: "\u4E03\u70B9\u534A", pinyin: "q\u012B di\u01CEn b\xE0n", english: "7:30", audio: "\u4E03\u70B9\u534A" },
-    { id: "thirty-past-seven", hanzi: "\u4E03\u70B9\u4E09\u5341\u5206", pinyin: "q\u012B di\u01CEn s\u0101n sh\xED f\u0113n", english: "7:30", audio: "\u4E03\u70B9\u4E09\u5341\u5206" },
-    { id: "three-quarters-seven", hanzi: "\u4E03\u70B9\u4E09\u523B", pinyin: "q\u012B di\u01CEn s\u0101n k\xE8", english: "7:45", audio: "\u4E03\u70B9\u4E09\u523B" },
-    { id: "forty-five-past-seven", hanzi: "\u4E03\u70B9\u56DB\u5341\u4E94\u5206", pinyin: "q\u012B di\u01CEn s\xEC sh\xED w\u01D4 f\u0113n", english: "7:45", audio: "\u4E03\u70B9\u56DB\u5341\u4E94\u5206" }
-  ];
-  var timeDateDateItems = [
-    { id: "date-board", hanzi: "\u51E0\u6708\u51E0\u53F7\uFF1F", pinyin: "j\u01D0 yu\xE8 j\u01D0 h\xE0o?", english: "What month and day?", context: "\u770B\u65E5\u5386\uFF0C\u53EF\u4EE5\u77E5\u9053\u51E0\u6708\u51E0\u53F7\u3002", audio: "\u51E0\u6708\u51E0\u53F7", imagePath: "assets/illustrated-dates/calendar-example-dates-board.webp" },
-    { id: "new-year", hanzi: "\u4E00\u6708\u4E00\u53F7", pinyin: "y\u012B yu\xE8 y\u012B h\xE0o", english: "January first", context: "\u4E00\u6708\u4E00\u53F7\u662F\u65B0\u5E74\u3002", audio: "\u4E00\u6708\u4E00\u53F7\u662F\u65B0\u5E74", imagePath: "assets/illustrated-dates/january-first-new-year-calendar.webp" },
-    { id: "field-trip", hanzi: "\u4E94\u6708\u4E8C\u5341\u53F7", pinyin: "w\u01D4 yu\xE8 \xE8r sh\xED h\xE0o", english: "May twentieth", context: "\u4E94\u6708\u4E8C\u5341\u53F7\uFF0C\u6211\u4EEC\u53BB\u6625\u6E38\u3002", audio: "\u4E94\u6708\u4E8C\u5341\u53F7\u6211\u4EEC\u53BB\u6625\u6E38", imagePath: "assets/illustrated-dates/may-twentieth-field-trip-calendar.webp" },
-    { id: "christmas", hanzi: "\u5341\u4E8C\u6708\u4E8C\u5341\u4E94\u53F7", pinyin: "sh\xED \xE8r yu\xE8 \xE8r sh\xED w\u01D4 h\xE0o", english: "December twenty-fifth", context: "\u5341\u4E8C\u6708\u4E8C\u5341\u4E94\u53F7\u662F\u5723\u8BDE\u8282\u3002", audio: "\u5341\u4E8C\u6708\u4E8C\u5341\u4E94\u53F7\u662F\u5723\u8BDE\u8282", imagePath: "assets/illustrated-dates/december-twenty-fifth-christmas-calendar.webp" },
-    { id: "birthday", hanzi: "\u751F\u65E5\u5FEB\u4E50\uFF01", pinyin: "sh\u0113ng r\xEC ku\xE0i l\xE8!", english: "Happy birthday!", context: "\u4ECA\u5929\u662F\u6211\u7684\u751F\u65E5\u3002\u751F\u65E5\u5FEB\u4E50\uFF01", audio: "\u4ECA\u5929\u662F\u6211\u7684\u751F\u65E5\u751F\u65E5\u5FEB\u4E50", imagePath: "assets/illustrated-dates/birthday-party-scene.webp" }
-  ];
-  var timeDateMonthItems = [
-    ["January", "\u4E00\u6708", "y\u012B yu\xE8", "\u4E00\u6708\uFF0C\u65B0\u5E74\u7684\u7B2C\u4E00\u4E2A\u6708\u3002", "y\u012B yu\xE8, x\u012Bn ni\xE1n de d\xEC y\u012B ge yu\xE8.", "January: the first month of the new year."],
-    ["February", "\u4E8C\u6708", "\xE8r yu\xE8", "\u4E8C\u6708\uFF0C\u4E2D\u56FD\u65B0\u5E74\u3002", "\xE8r yu\xE8, Zh\u014Dng gu\xF3 x\u012Bn ni\xE1n.", "February: Chinese New Year."],
-    ["March", "\u4E09\u6708", "s\u0101n yu\xE8", "\u4E09\u6708\uFF0C\u5723\u5E15\u7279\u91CC\u514B\u8282\u3002", "s\u0101n yu\xE8, Sh\xE8ng p\xE0 t\xE8 l\u01D0 k\xE8 Ji\xE9.", "March: St. Patrick's Day."],
-    ["April", "\u56DB\u6708", "s\xEC yu\xE8", "\u56DB\u6708\uFF0C\u6811\u5F00\u59CB\u53D1\u82BD\u3002", "s\xEC yu\xE8, sh\xF9 k\u0101i sh\u01D0 f\u0101 y\xE1.", "In April, trees start to bud."],
-    ["May", "\u4E94\u6708", "w\u01D4 yu\xE8", "\u4E94\u6708\uFF0C\u6BCD\u4EB2\u8282\u3002", "w\u01D4 yu\xE8, M\u01D4 q\u012Bn Ji\xE9.", "May: Mother's Day."],
-    ["June", "\u516D\u6708", "li\xF9 yu\xE8", "\u516D\u6708\uFF0C\u6691\u5047\u5FEB\u5230\u4E86\u3002", "li\xF9 yu\xE8, sh\u01D4 ji\xE0 ku\xE0i d\xE0o le.", "In June, summer vacation is coming soon."],
-    ["July", "\u4E03\u6708", "q\u012B yu\xE8", "\u4E03\u6708\uFF0C\u53BB\u6D77\u8FB9\u73A9\u3002", "q\u012B yu\xE8, q\xF9 h\u01CEi bi\u0101n w\xE1n.", "In July, go to the beach."],
-    ["August", "\u516B\u6708", "b\u0101 yu\xE8", "\u516B\u6708\uFF0C\u53BB\u5EA6\u5047\u3002", "b\u0101 yu\xE8, q\xF9 d\xF9 ji\xE0.", "In August, go on vacation."],
-    ["September", "\u4E5D\u6708", "ji\u01D4 yu\xE8", "\u4E5D\u6708\uFF0C\u5F00\u5B66\u4E86\u3002", "ji\u01D4 yu\xE8, k\u0101i xu\xE9 le.", "In September, school starts."],
-    ["October", "\u5341\u6708", "sh\xED yu\xE8", "\u5341\u6708\uFF0C\u6811\u53F6\u53D8\u7EA2\u4E86\u3002", "sh\xED yu\xE8, sh\xF9 y\xE8 bi\xE0n h\xF3ng le.", "In October, leaves turn red."],
-    ["November", "\u5341\u4E00\u6708", "sh\xED y\u012B yu\xE8", "\u5341\u4E00\u6708\uFF0C\u611F\u6069\u8282\u3002", "sh\xED y\u012B yu\xE8, G\u01CEn \u0113n Ji\xE9.", "Thanksgiving is in November."],
-    ["December", "\u5341\u4E8C\u6708", "sh\xED \xE8r yu\xE8", "\u5341\u4E8C\u6708\uFF0C\u53BB\u6ED1\u96EA\u3002", "sh\xED \xE8r yu\xE8, q\xF9 hu\xE1 xu\u011B.", "In December, go skiing."]
-  ].map(([english, hanzi, pinyin, context, contextPinyin, contextEnglish]) => ({ id: english.toLowerCase(), hanzi, pinyin, english, context, contextPinyin, contextEnglish, hideLabelHanzi: true, hideLabelDetails: true, audio: context, imagePath: `assets/illustrated-months-of-year/${english}.webp` }));
-  var timeDateRoutineItems = [
-    ["wake-up", "\u4E03\u70B9\u8D77\u5E8A\u3002", "q\u012B di\u01CEn q\u01D0 chu\xE1ng.", "Wake up at 7:00.", "\u4E03\u70B9\u8D77\u5E8A", "07am-lele-wake-up.webp"],
-    ["breakfast", "\u4E03\u70B9\u5341\u4E94\u5206\u5403\u65E9\u996D\u3002", "q\u012B di\u01CEn sh\xED w\u01D4 f\u0113n ch\u012B z\u01CEo f\xE0n.", "Have breakfast at 7:15.", "\u4E03\u70B9\u5341\u4E94\u5206\u5403\u65E9\u996D", "0715am-lele-having-breakfast.webp"],
-    ["school", "\u516B\u70B9\u53BB\u5B66\u6821\u3002", "b\u0101 di\u01CEn q\xF9 xu\xE9 xi\xE0o.", "Go to school at 8:00.", "\u516B\u70B9\u53BB\u5B66\u6821", "08am-go-to-school.webp"],
-    ["writing", "\u5341\u70B9\u4E0A\u5199\u5B57\u8BFE\u3002", "sh\xED di\u01CEn sh\xE0ng xi\u011B z\xEC k\xE8.", "Writing class at 10:00.", "\u5341\u70B9\u4E0A\u5199\u5B57\u8BFE", "10am-writing-class.webp"],
-    ["lunch", "\u5341\u4E8C\u70B9\u5403\u5348\u996D\u3002", "sh\xED \xE8r di\u01CEn ch\u012B w\u01D4 f\xE0n.", "Have lunch at 12:00.", "\u5341\u4E8C\u70B9\u5403\u5348\u996D", "12pm-lunch-time.webp"],
-    ["home", "\u4E24\u70B9\u534A\u653E\u5B66\u3002", "li\u01CEng di\u01CEn b\xE0n f\xE0ng xu\xE9.", "School ends at 2:30.", "\u4E24\u70B9\u534A\u653E\u5B66", "0230pm-school-dismissal.webp"],
-    ["playground", "\u56DB\u70B9\u53BB\u64CD\u573A\u73A9\u3002", "s\xEC di\u01CEn q\xF9 c\u0101o ch\u01CEng w\xE1n.", "Play outside at 4:00.", "\u56DB\u70B9\u53BB\u64CD\u573A\u73A9", "04pm-playground.webp"],
-    ["dinner", "\u516D\u70B9\u5403\u665A\u996D\u3002", "li\xF9 di\u01CEn ch\u012B w\u01CEn f\xE0n.", "Have dinner at 6:00.", "\u516D\u70B9\u5403\u665A\u996D", "06pm-family-dinner.webp"],
-    ["tv", "\u4E03\u70B9\u770B\u7535\u89C6\u3002", "q\u012B di\u01CEn k\xE0n di\xE0n sh\xEC.", "Watch TV at 7:00.", "\u4E03\u70B9\u770B\u7535\u89C6", "07pm-tv-time.webp"],
-    ["story", "\u516B\u70B9\u8BB2\u6545\u4E8B\u3002", "b\u0101 di\u01CEn ji\u01CEng g\xF9 sh\xEC.", "Story time at 8:00.", "\u516B\u70B9\u8BB2\u6545\u4E8B", "08pm-story-time.webp"],
-    ["bedtime", "\u4E5D\u70B9\u7761\u89C9\u3002", "ji\u01D4 di\u01CEn shu\xEC ji\xE0o.", "Go to bed at 9:00.", "\u4E5D\u70B9\u7761\u89C9", "09pm-bedtime.webp"]
-  ].map(([id, hanzi, pinyin, english, audio, file]) => ({ id, hanzi, pinyin, english, audio, imagePath: `assets/illustrated-clock-routines/${file}` }));
-  var datePracticeItems = [
-    { id: "date-new-year", hanzi: "\u4E00\u6708\u4E00\u53F7", pinyin: "y\u012B yu\xE8 y\u012B h\xE0o", english: "January first", audio: "\u4E00\u6708\u4E00\u53F7\u662F\u65B0\u5E74", eventHanzi: "\u65B0\u5E74", eventPinyin: "x\u012Bn ni\xE1n", eventEnglish: "New Year" },
-    { id: "date-chinese-new-year", hanzi: "\u4E8C\u6708", pinyin: "\xE8r yu\xE8", english: "February", audio: "\u4E8C\u6708\u4E2D\u56FD\u65B0\u5E74", eventHanzi: "\u4E2D\u56FD\u65B0\u5E74", eventPinyin: "Zh\u014Dng gu\xF3 x\u012Bn ni\xE1n", eventEnglish: "Chinese New Year" },
-    { id: "date-field-trip", hanzi: "\u4E94\u6708\u4E8C\u5341\u53F7", pinyin: "w\u01D4 yu\xE8 \xE8r sh\xED h\xE0o", english: "May twentieth", audio: "\u4E94\u6708\u4E8C\u5341\u53F7\u6211\u4EEC\u53BB\u6625\u6E38", eventHanzi: "\u6625\u6E38", eventPinyin: "ch\u016Bn y\xF3u", eventEnglish: "Field trip" },
-    { id: "date-christmas", hanzi: "\u5341\u4E8C\u6708\u4E8C\u5341\u4E94\u53F7", pinyin: "sh\xED \xE8r yu\xE8 \xE8r sh\xED w\u01D4 h\xE0o", english: "December twenty-fifth", audio: "\u5341\u4E8C\u6708\u4E8C\u5341\u4E94\u53F7\u662F\u5723\u8BDE\u8282", eventHanzi: "\u5723\u8BDE\u8282", eventPinyin: "Sh\xE8ng d\xE0n Ji\xE9", eventEnglish: "Christmas" },
-    { id: "birthday-wish", hanzi: "\u795D\u4F60\u751F\u65E5\u5FEB\u4E50\uFF01", pinyin: "zh\xF9 n\u01D0 sh\u0113ng r\xEC ku\xE0i l\xE8!", english: "Happy birthday!", audio: "\u795D\u4F60\u751F\u65E5\u5FEB\u4E50" },
-    { id: "birthday-party", hanzi: "\u751F\u65E5\u4F1A\u4E0A\u6709\u793C\u7269\u3002", pinyin: "sh\u0113ng r\xEC hu\xEC sh\xE0ng y\u01D2u l\u01D0 w\xF9.", english: "There are presents at a birthday party.", audio: "\u751F\u65E5\u4F1A\u4E0A\u6709\u793C\u7269" }
-  ];
   var visualTopicItems = {
     comparisons: [
       ["\u5927\uFF0C\u5C0F", "d\xE0, xi\u01CEo", "big, small", "big-small-animals.webp", ["\u5927", "\u5C0F"]],

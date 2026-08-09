@@ -3,6 +3,7 @@ import { readFileSync } from "node:fs";
 import test from "node:test";
 import { createAudioService } from "../src/core/audio.js";
 import { topicIdFromLocation, topicPageUrl, viewFromLocation } from "../src/core/router.js";
+import { datePracticeItems, timeDateClockItems, timeDateMonthItems, timeDateRoutineItems, timeDateWeekItems } from "../src/features/time-daily-life/calendar-data.js";
 
 test("the local page loads a single bundled application script", () => {
   const html = readFileSync("index.html", "utf8");
@@ -35,4 +36,12 @@ test("router preserves the existing topic query and detail hash contract", () =>
   assert.equal(topicIdFromLocation(location, (id) => id === "weekdays"), "weekdays");
   assert.equal(viewFromLocation(location), "topics");
   assert.equal(topicPageUrl(location, "time-date"), "/index.html?topic=time-date#topic-detail");
+});
+
+test("time and calendar content retains its expected teaching sets", () => {
+  assert.equal(timeDateWeekItems.length, 7);
+  assert.equal(timeDateClockItems.length, 12);
+  assert.equal(timeDateMonthItems.length, 12);
+  assert.equal(timeDateRoutineItems.length, 11);
+  assert.equal(datePracticeItems.length, 6);
 });

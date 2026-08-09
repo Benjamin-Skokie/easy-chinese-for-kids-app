@@ -47,6 +47,7 @@ A feature registers its owned topic IDs, creates its scoped state, renders its e
 ### 3. Feature migration
 
 - [ ] Migrate Time & Daily Life in topic-sized commits.
+- [x] Move calendar, clock, date, and routine teaching data to `src/features/time-daily-life/calendar-data.js`.
 - [ ] Extract a shared game only after two migrated topics prove the same contract.
 - [ ] Migrate School, Food, Foundations, and Family/Home.
 - [ ] Delete the matching legacy code after each replacement passes checks.
