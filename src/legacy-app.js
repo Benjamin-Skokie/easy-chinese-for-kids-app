@@ -1,8 +1,12 @@
 import { createAudioService } from "./core/audio.js";
 import { topicIdFromLocation, topicPageUrl, viewFromLocation } from "./core/router.js";
-import { datePracticeItems, timeDateClockItems, timeDateDateItems, timeDateExpressionItems, timeDateMonthItems, timeDateRoutineItems, timeDateWeekItems } from "./features/time-daily-life/calendar-data.js";
-import { timeDailyVisualTopicItems } from "./features/time-daily-life/visual-data.js";
-import { comparisonPracticeItems, comparisonWordItems, positionPracticeItems, positionScenes, roomScenes, roomSentenceTokens, transportSentenceTokens } from "./features/time-daily-life/practice-data.js";
+import { timeDateWeekItems } from "./features/time-daily-life/weekdays.js";
+import { timeDateClockItems, timeDateExpressionItems, timeDateRoutineItems } from "./features/time-daily-life/time.js";
+import { datePracticeItems, timeDateDateItems, timeDateMonthItems } from "./features/time-daily-life/dates.js";
+import { comparisonPracticeItems, comparisonVisualItems, comparisonWordItems } from "./features/time-daily-life/comparisons.js";
+import { positionPracticeItems, positionScenes, positionVisualItems } from "./features/time-daily-life/positions.js";
+import { transportSentenceTokens, transportVisualItems } from "./features/time-daily-life/transport.js";
+import { roomScenes, roomSentenceTokens, roomVisualItems } from "./features/time-daily-life/rooms.js";
 import { createSharedLessonPractice } from "./games/shared-lesson-practice.js";
 
 const topicData = [
@@ -1068,7 +1072,12 @@ const { speak, speakSceneLines } = createAudioService({
   getSceneLinePauseMs: () => sceneLinePauseMs
 });
 
-const visualTopicItems = timeDailyVisualTopicItems;
+const visualTopicItems = {
+  comparisons: comparisonVisualItems,
+  positions: positionVisualItems,
+  transport: transportVisualItems,
+  rooms: roomVisualItems
+};
 
 const schoolTopicData = {
   stationery: {

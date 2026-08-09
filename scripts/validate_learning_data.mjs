@@ -1,8 +1,12 @@
 import { existsSync } from "node:fs";
 import { resolve } from "node:path";
-import { datePracticeItems, timeDateClockItems, timeDateDateItems, timeDateMonthItems, timeDateRoutineItems, timeDateWeekItems } from "../src/features/time-daily-life/calendar-data.js";
-import { comparisonPracticeItems, positionPracticeItems, positionScenes, roomScenes, transportSentenceTokens } from "../src/features/time-daily-life/practice-data.js";
-import { timeDailyVisualTopicItems } from "../src/features/time-daily-life/visual-data.js";
+import { timeDateWeekItems } from "../src/features/time-daily-life/weekdays.js";
+import { timeDateClockItems, timeDateRoutineItems } from "../src/features/time-daily-life/time.js";
+import { datePracticeItems, timeDateDateItems, timeDateMonthItems } from "../src/features/time-daily-life/dates.js";
+import { comparisonPracticeItems, comparisonVisualItems } from "../src/features/time-daily-life/comparisons.js";
+import { positionPracticeItems, positionScenes, positionVisualItems } from "../src/features/time-daily-life/positions.js";
+import { transportSentenceTokens, transportVisualItems } from "../src/features/time-daily-life/transport.js";
+import { roomScenes, roomVisualItems } from "../src/features/time-daily-life/rooms.js";
 
 const errors = [];
 
@@ -21,24 +25,24 @@ for (const [label, items] of [
   ["date", timeDateDateItems],
   ["month", timeDateMonthItems],
   ["routine", timeDateRoutineItems],
-  ["comparison visual", timeDailyVisualTopicItems.comparisons],
-  ["position visual", timeDailyVisualTopicItems.positions],
-  ["transport visual", timeDailyVisualTopicItems.transport],
-  ["room visual", timeDailyVisualTopicItems.rooms],
+  ["comparison visual", comparisonVisualItems],
+  ["position visual", positionVisualItems],
+  ["transport visual", transportVisualItems],
+  ["room visual", roomVisualItems],
   ["room scene", roomScenes],
   ["position scene", positionScenes]
 ]) {
   items.forEach((item) => assertAsset(item, `${label}:${item.id}`));
 }
 
-const transportIds = new Set(timeDailyVisualTopicItems.transport.map((item) => item.id));
+const transportIds = new Set(transportVisualItems.map((item) => item.id));
 Object.keys(transportSentenceTokens).forEach((id) => assert(transportIds.has(id), `transport token entry has no visual: ${id}`));
 transportIds.forEach((id) => assert(transportSentenceTokens[id], `transport visual has no sentence tokens: ${id}`));
 
 const positionLineCount = positionScenes.reduce((count, scene) => count + scene.lines.length, 0);
 assert(positionPracticeItems.length === positionLineCount, "position practice items do not match scene lines");
 assert(datePracticeItems.every((item) => item.id && item.hanzi && item.audio), "date practice has an incomplete item");
-assert(comparisonPracticeItems.every((item) => timeDailyVisualTopicItems.comparisons.some((visual) => visual.id === item.id)), "comparison practice references an unknown visual");
+assert(comparisonPracticeItems.every((item) => comparisonVisualItems.some((visual) => visual.id === item.id)), "comparison practice references an unknown visual");
 
 if (errors.length) {
   console.error(errors.join("\n"));

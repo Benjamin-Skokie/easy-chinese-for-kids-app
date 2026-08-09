@@ -3,9 +3,13 @@ import { readFileSync } from "node:fs";
 import test from "node:test";
 import { createAudioService } from "../src/core/audio.js";
 import { topicIdFromLocation, topicPageUrl, viewFromLocation } from "../src/core/router.js";
-import { datePracticeItems, timeDateClockItems, timeDateMonthItems, timeDateRoutineItems, timeDateWeekItems } from "../src/features/time-daily-life/calendar-data.js";
-import { timeDailyVisualTopicItems } from "../src/features/time-daily-life/visual-data.js";
-import { comparisonPracticeItems, positionPracticeItems, positionScenes, roomScenes, transportSentenceTokens } from "../src/features/time-daily-life/practice-data.js";
+import { timeDateWeekItems } from "../src/features/time-daily-life/weekdays.js";
+import { timeDateClockItems, timeDateRoutineItems } from "../src/features/time-daily-life/time.js";
+import { datePracticeItems, timeDateMonthItems } from "../src/features/time-daily-life/dates.js";
+import { comparisonPracticeItems, comparisonVisualItems } from "../src/features/time-daily-life/comparisons.js";
+import { positionPracticeItems, positionScenes, positionVisualItems } from "../src/features/time-daily-life/positions.js";
+import { transportSentenceTokens, transportVisualItems } from "../src/features/time-daily-life/transport.js";
+import { roomScenes, roomVisualItems } from "../src/features/time-daily-life/rooms.js";
 
 test("the local page loads a single bundled application script", () => {
   const html = readFileSync("index.html", "utf8");
@@ -71,8 +75,11 @@ test("time and calendar content retains its expected teaching sets", () => {
   assert.equal(datePracticeItems.length, 6);
 });
 
-test("time and daily life visual data stays owned by its feature", () => {
-  assert.deepEqual(Object.keys(timeDailyVisualTopicItems), ["comparisons", "positions", "transport", "rooms"]);
+test("time and daily life data stays owned by its topics", () => {
+  assert.equal(comparisonVisualItems.length, 7);
+  assert.equal(positionVisualItems.length, 3);
+  assert.equal(transportVisualItems.length, 8);
+  assert.equal(roomVisualItems.length, 11);
 });
 
 test("time and daily life practice data retains every interaction set", () => {
