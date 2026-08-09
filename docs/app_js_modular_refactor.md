@@ -57,6 +57,7 @@ A feature registers its owned topic IDs, creates its scoped state, renders its e
 - [x] Move the Positions & Directions topic registry definition into `src/features/time-daily-life/positions.js`.
 - [x] Move the Transportation topic registry definition into `src/features/time-daily-life/transport.js`.
 - [x] Move the standalone Weather topic definition into `src/features/world/weather.js`.
+- [x] Move the standalone Pets & Animals topic definition into `src/features/world/animals.js`.
 - [x] Move the complete Stationery topic into `src/features/school-life/stationery.js` as the School Life migration pattern.
 - [x] Move the complete School Supplies topic into `src/features/school-life/school-supplies.js` using atomic source replacement.
 - [x] Move the complete Classroom topic into `src/features/school-life/classroom.js`.

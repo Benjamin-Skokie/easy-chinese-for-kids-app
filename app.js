@@ -1545,6 +1545,24 @@
     steps: [{ book: "4B", lesson: 1, title: "It's raining", note: "Start weather language with a concrete daily phrase." }]
   };
 
+  // src/features/world/animals.js
+  var animalsTopic = {
+    id: "animals",
+    title: "Pets & Animals",
+    summary: "High-interest vocabulary that can connect to home life and stories.",
+    progressLabel: "1B to 2B",
+    iconText: "\u5C0F\u72D7",
+    iconColor: "#8e6f9b",
+    focus: { hanzi: "\u5C0F\u72D7\uFF0C\u5C0F\u732B", pinyin: "xi\u01CEo g\u01D2u, xi\u01CEo m\u0101o", english: "puppy, kitten", audio: "\u5C0F\u72D7\uFF0C\u5C0F\u732B" },
+    parentGuide: "This topic works especially well with pictures and sound imitation. Keep it playful and quick.",
+    cultureGuide: "Animals can later connect naturally to zodiac content and story-based culture lessons.",
+    activities: ["Tap to hear", "Match picture to word", "Listen and choose", "Animal sound game"],
+    steps: [
+      { book: "1B", lesson: 5, title: "Pets", note: "Begin with common pet words." },
+      { book: "2B", lesson: 5, title: "Animals", note: "Broaden into a larger animal set." }
+    ]
+  };
+
   // src/features/foundations/body.js
   var bodyTopic = {
     id: "body",
@@ -2084,27 +2102,7 @@
     ageTopic,
     familyTopic,
     bodyTopic,
-    {
-      id: "animals",
-      title: "Pets & Animals",
-      summary: "High-interest vocabulary that can connect to home life and stories.",
-      progressLabel: "1B to 2B",
-      iconText: "\u5C0F\u72D7",
-      iconColor: "#8e6f9b",
-      focus: {
-        hanzi: "\u5C0F\u72D7\uFF0C\u5C0F\u732B",
-        pinyin: "xi\u01CEo g\u01D2u, xi\u01CEo m\u0101o",
-        english: "puppy, kitten",
-        audio: "\u5C0F\u72D7\uFF0C\u5C0F\u732B"
-      },
-      parentGuide: "This topic works especially well with pictures and sound imitation. Keep it playful and quick.",
-      cultureGuide: "Animals can later connect naturally to zodiac content and story-based culture lessons.",
-      activities: ["Tap to hear", "Match picture to word", "Listen and choose", "Animal sound game"],
-      steps: [
-        { book: "1B", lesson: 5, title: "Pets", note: "Begin with common pet words." },
-        { book: "2B", lesson: 5, title: "Animals", note: "Broaden into a larger animal set." }
-      ]
-    },
+    animalsTopic,
     {
       id: "colours",
       title: "Colours",
