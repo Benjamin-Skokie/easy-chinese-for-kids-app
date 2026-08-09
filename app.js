@@ -255,6 +255,20 @@
   };
 
   // src/features/time-daily-life/rooms.js
+  var dailyLifeTopic = {
+    id: "daily-life",
+    title: "My Home",
+    summary: "Explore the rooms and familiar things in a home.",
+    progressLabel: "4B Lesson 3",
+    iconText: "\u6211\u7684\u5BB6",
+    iconColor: "#6c8c7f",
+    focus: { hanzi: "\u6211\u7684\u5BB6\u91CC\u6709\u5BA2\u5385\u3001\u5367\u5BA4\u548C\u8F66\u5E93\u3002", pinyin: "w\u01D2 de ji\u0101 l\u01D0 y\u01D2u k\xE8 t\u012Bng, w\xF2 sh\xEC h\xE9 ch\u0113 k\xF9.", english: "My home has a living room, bedroom, and garage.", audio: "\u6211\u7684\u5BB6\u91CC\u6709\u5BA2\u5385\u5367\u5BA4\u548C\u8F66\u5E93" },
+    interactiveScene: "rooms",
+    parentGuide: "This topic becomes much easier when children can point to real places and routines in their own day.",
+    cultureGuide: "Daily life topics make the tool feel practical instead of toy-like, which fits your goal well.",
+    activities: ["Tap to hear", "Room scenes", "Room words"],
+    steps: [{ book: "4B", lesson: 3, title: "My room", note: "Bring language into the home setting." }]
+  };
   var roomVisualItems = [
     ["\u5BA2\u5385", "k\xE8 t\u012Bng", "living room", "living-room.webp", "assets/illustrated-rooms"],
     ["\u5367\u5BA4", "w\xF2 sh\xEC", "bedroom", "bedroom.webp", "assets/illustrated-rooms"],
@@ -2142,25 +2156,7 @@
       steps: [{ book: "2A", lesson: 4, title: "My toys", note: "Learn a core toy set with familiar child-friendly objects." }]
     },
     clothesTopic,
-    {
-      id: "daily-life",
-      title: "My Home",
-      summary: "Explore the rooms and familiar things in a home.",
-      progressLabel: "4B Lesson 3",
-      iconText: "\u6211\u7684\u5BB6",
-      iconColor: "#6c8c7f",
-      focus: {
-        hanzi: "\u6211\u7684\u5BB6\u91CC\u6709\u5BA2\u5385\u3001\u5367\u5BA4\u548C\u8F66\u5E93\u3002",
-        pinyin: "w\u01D2 de ji\u0101 l\u01D0 y\u01D2u k\xE8 t\u012Bng, w\xF2 sh\xEC h\xE9 ch\u0113 k\xF9.",
-        english: "My home has a living room, bedroom, and garage.",
-        audio: "\u6211\u7684\u5BB6\u91CC\u6709\u5BA2\u5385\u5367\u5BA4\u548C\u8F66\u5E93"
-      },
-      interactiveScene: "rooms",
-      parentGuide: "This topic becomes much easier when children can point to real places and routines in their own day.",
-      cultureGuide: "Daily life topics make the tool feel practical instead of toy-like, which fits your goal well.",
-      activities: ["Tap to hear", "Room scenes", "Room words"],
-      steps: [{ book: "4B", lesson: 3, title: "My room", note: "Bring language into the home setting." }]
-    },
+    dailyLifeTopic,
     {
       id: "comparisons",
       title: "Descriptions & Comparisons",

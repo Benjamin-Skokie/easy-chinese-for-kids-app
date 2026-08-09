@@ -9,7 +9,7 @@ import { datePracticeItems, timeDateMonthItems } from "../src/features/time-dail
 import { comparisonPracticeItems, comparisonVisualItems } from "../src/features/time-daily-life/comparisons.js";
 import { positionPracticeItems, positionScenes, positionVisualItems } from "../src/features/time-daily-life/positions.js";
 import { transportSentenceTokens, transportVisualItems } from "../src/features/time-daily-life/transport.js";
-import { roomScenes, roomVisualItems } from "../src/features/time-daily-life/rooms.js";
+import { dailyLifeTopic, roomScenes, roomVisualItems } from "../src/features/time-daily-life/rooms.js";
 import { stationeryPictureMatchRounds, stationerySentenceBuilds, stationeryTopicData } from "../src/features/school-life/stationery.js";
 import { schoolSuppliesSentenceBuilds, schoolSuppliesTopicData } from "../src/features/school-life/school-supplies.js";
 import { classroomTopicData } from "../src/features/school-life/classroom.js";
@@ -101,6 +101,8 @@ test("time and daily life data stays owned by its topics", () => {
 });
 
 test("time and daily life practice data retains every interaction set", () => {
+  assert.equal(dailyLifeTopic.id, "daily-life");
+  assert.equal(dailyLifeTopic.interactiveScene, "rooms");
   assert.equal(roomScenes.length, 3);
   assert.equal(positionScenes.length, 4);
   assert.equal(positionPracticeItems.length, 11);

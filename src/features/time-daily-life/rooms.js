@@ -1,3 +1,18 @@
+export const dailyLifeTopic = {
+  id: "daily-life",
+  title: "My Home",
+  summary: "Explore the rooms and familiar things in a home.",
+  progressLabel: "4B Lesson 3",
+  iconText: "我的家",
+  iconColor: "#6c8c7f",
+  focus: { hanzi: "我的家里有客厅、卧室和车库。", pinyin: "wǒ de jiā lǐ yǒu kè tīng, wò shì hé chē kù.", english: "My home has a living room, bedroom, and garage.", audio: "我的家里有客厅卧室和车库" },
+  interactiveScene: "rooms",
+  parentGuide: "This topic becomes much easier when children can point to real places and routines in their own day.",
+  cultureGuide: "Daily life topics make the tool feel practical instead of toy-like, which fits your goal well.",
+  activities: ["Tap to hear", "Room scenes", "Room words"],
+  steps: [{ book: "4B", lesson: 3, title: "My room", note: "Bring language into the home setting." }]
+};
+
 export const roomVisualItems = [
     ["客厅", "kè tīng", "living room", "living-room.webp", "assets/illustrated-rooms"],
     ["卧室", "wò shì", "bedroom", "bedroom.webp", "assets/illustrated-rooms"],
