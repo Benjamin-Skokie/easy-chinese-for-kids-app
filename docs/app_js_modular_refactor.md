@@ -43,6 +43,7 @@ A feature registers its owned topic IDs, creates its scoped state, renders its e
 - [x] Extract URL parsing and topic URL generation into `src/core/router.js` with unit coverage.
 - [x] Extract audio into `src/core/audio.js` with unit coverage.
 - [ ] Add data validation for duplicate topic IDs, lesson references, practice references, and asset paths.
+- [x] Validate Time & Daily Life asset paths and scene/practice relationships in `scripts/validate_learning_data.mjs`.
 
 ### 3. Feature migration
 
