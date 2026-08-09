@@ -1249,6 +1249,144 @@
     return { renderActivityPanel: renderActivityPanel2 };
   }
 
+  // src/core/topic-detail-runtime.js
+  function createTopicDetailRuntime(context) {
+    const { state: state2, books: books2, numberStages: numberStages2, schoolTopicData: schoolTopicData3, topicPageUrl: topicPageUrl2, topicIdFromLocation: topicIdFromLocation2, viewFromLocation: viewFromLocation2, bookSelect: bookSelect2, lessonSelect: lessonSelect2, topicTitle: topicTitle2, topicSummary: topicSummary2, topicProgress: topicProgress2, topicLessonStrip: topicLessonStrip2, subtopicShelf: subtopicShelf2, focusDisplay: focusDisplay2, currentTopic: currentTopic2, currentNumberStage: currentNumberStage2, focusItemsForTopic: focusItemsForTopic2, currentFocusItem: currentFocusItem2, currentBook: currentBook2, currentLesson: currentLesson2, selectedTopicGroupId: selectedTopicGroupId2, bookCategoryForBook: bookCategoryForBook2, categoryIdForTopic: categoryIdForTopic2, narrowTopicBrowserTo: narrowTopicBrowserTo2, renderTopics: renderTopics2, renderBooks: renderBooks2, updateTopicPageVisibility: updateTopicPageVisibility2, focusLearningPanel: focusLearningPanel2, renderFocusControls: renderFocusControls2, renderFocusDisplay: renderFocusDisplay2, renderFocusExplorer: renderFocusExplorer2, renderFocusWordList: renderFocusWordList3, renderFocusStatus: renderFocusStatus2, renderActivityPanel: renderActivityPanel2, ensureBodyMatchGame: ensureBodyMatchGame2, isFamilySentenceItemId: isFamilySentenceItemId2, familyBookWordItems: familyBookWordItems2, usesLessonTemplate: usesLessonTemplate2, syncBookSelectionFromTopic: syncBookSelectionFromTopic2, switchView: switchView2, updateLearningCultureNav: updateLearningCultureNav2 } = context;
+    function selectBookLesson2(bookId, lessonNumber) {
+      const book = books2.find((entry) => entry.id === bookId) ?? books2[0];
+      const lesson = book.lessons.find((entry) => entry.lesson === lessonNumber) ?? book.lessons[0];
+      state2.selectedBookCategoryId = bookCategoryForBook2(book.id).id;
+      state2.selectedBookId = book.id;
+      state2.selectedLessonNumber = lesson.lesson;
+      state2.selectedTopicId = lesson.topicId;
+      state2.expandedCategoryId = categoryIdForTopic2(lesson.topicId);
+      state2.topicPageOpen = true;
+      narrowTopicBrowserTo2(selectedTopicGroupId2());
+      renderTopics2();
+      renderBooks2();
+      renderTopicDetail2();
+      updateTopicPageVisibility2();
+      window.history.pushState(null, "", topicPageUrl2(window.location, lesson.topicId));
+      focusLearningPanel2();
+    }
+    function topicLessonTitle(topic, step) {
+      if (topic.id !== "numbers") {
+        return step.title;
+      }
+      const stage = numberStages2.find(
+        (entry) => entry.bookId === step.book.toLowerCase() && entry.lesson === step.lesson
+      );
+      return stage?.title ?? step.title;
+    }
+    function renderTopicLessonStrip(topic) {
+      if (!topicLessonStrip2) {
+        return;
+      }
+      const steps = topic.steps ?? [];
+      if (!steps.length) {
+        topicLessonStrip2.innerHTML = "";
+        topicLessonStrip2.classList.add("is-hidden");
+        return;
+      }
+      const current = currentLesson2();
+      topicLessonStrip2.classList.remove("is-hidden");
+      topicLessonStrip2.innerHTML = steps.map((step) => {
+        const bookId = step.book.toLowerCase();
+        const isActive = currentBook2().id === bookId && current.lesson === step.lesson;
+        return `
+        <button class="topic-lesson-card${isActive ? " is-active" : ""}" type="button" data-topic-lesson="${bookId}:${step.lesson}">
+          <span class="topic-lesson-meta">Book ${step.book} Lesson ${step.lesson}</span>
+          <strong>${topicLessonTitle(topic, step)}</strong>
+        </button>
+      `;
+      }).join("");
+      topicLessonStrip2.querySelectorAll("[data-topic-lesson]").forEach((button) => {
+        button.addEventListener("click", () => {
+          const [bookId, lessonText] = button.dataset.topicLesson.split(":");
+          selectBookLesson2(bookId, Number(lessonText));
+        });
+      });
+    }
+    function renderSubtopicShelf() {
+      if (!subtopicShelf2) {
+        return;
+      }
+      subtopicShelf2.innerHTML = "";
+      subtopicShelf2.classList.add("is-hidden");
+    }
+    function renderTopicDetail2() {
+      const topic = currentTopic2();
+      const items = focusItemsForTopic2(topic);
+      if (topic.id !== "body") {
+        state2.lastBodyFeedback = "";
+        if (topic.id !== "numbers") {
+          state2.lastNumberFeedback = "";
+        }
+      } else if (!state2.selectedFocusItemId) {
+        state2.selectedFocusItemId = items[0].id;
+        ensureBodyMatchGame2();
+      }
+      if (topic.id !== "numbers" && state2.numberChallengeAdvanceTimer) {
+        window.clearTimeout(state2.numberChallengeAdvanceTimer);
+        state2.numberChallengeAdvanceTimer = null;
+      }
+      const selectedItem = items.find((item) => item.id === state2.selectedFocusItemId);
+      if (topic.id === "family" && (!selectedItem || isFamilySentenceItemId2(selectedItem.id))) {
+        state2.selectedFocusItemId = familyBookWordItems2()[0]?.id ?? items[0].id;
+      } else {
+        state2.selectedFocusItemId = selectedItem?.id ?? items[0].id;
+      }
+      topicTitle2.textContent = topic.title;
+      if (topicSummary2) {
+        topicSummary2.textContent = topic.summary;
+      }
+      if (topicProgress2) {
+        topicProgress2.textContent = topic.progressLabel;
+      }
+      renderTopicLessonStrip(topic);
+      renderSubtopicShelf(topic);
+      focusDisplay2.classList.toggle(
+        "is-hidden",
+        topic.id === "body" || usesLessonTemplate2(topic) || topic.id === "numbers" || topic.id === "multiplication-rhyme" || topic.id === "weekdays" || topic.id === "time-date" || topic.id === "dates" || topic.id === "comparisons" || topic.id === "positions" || topic.id === "transport" || topic.id === "daily-life" || topic.id === "identity" || topic.id === "clothes" || schoolTopicData3[topic.id] || topic.id === "numbers" && currentNumberStage2().telephoneMode
+      );
+      renderFocusControls2();
+      renderFocusDisplay2(currentFocusItem2());
+      renderFocusExplorer2();
+      renderFocusWordList3();
+      renderFocusStatus2();
+      renderActivityPanel2(topic);
+    }
+    function bindTopicDetailEvents() {
+      bookSelect2.addEventListener("change", () => {
+        const book = books2.find((entry) => entry.id === bookSelect2.value) ?? currentBook2();
+        selectBookLesson2(book.id, book.lessons[0].lesson);
+      });
+      lessonSelect2.addEventListener("change", () => {
+        const book = currentBook2();
+        const lesson = book.lessons.find((entry) => String(entry.lesson) === lessonSelect2.value) ?? book.lessons[0];
+        selectBookLesson2(book.id, lesson.lesson);
+      });
+      window.addEventListener("scroll", () => {
+        updateLearningCultureNav2();
+      });
+      window.addEventListener("popstate", () => {
+        const topicId = topicIdFromLocation2(window.location, topicById);
+        state2.topicPageOpen = Boolean(topicId);
+        if (topicId) {
+          state2.selectedTopicId = topicId;
+          state2.expandedCategoryId = categoryIdForTopic2(topicId);
+          syncBookSelectionFromTopic2();
+        }
+        switchView2(viewFromLocation2(window.location));
+        renderTopics2();
+        renderBooks2();
+        renderTopicDetail2();
+        updateTopicPageVisibility2();
+      });
+    }
+    return { bindTopicDetailEvents, renderTopicDetail: renderTopicDetail2, selectBookLesson: selectBookLesson2 };
+  }
+
   // src/core/focus-explorer-runtime.js
   function createFocusExplorerRuntime(context) {
     const {
@@ -1331,7 +1469,7 @@
       }
       return copy;
     }
-    function topicById2(topicId) {
+    function topicById3(topicId) {
       return topicData2.find((topic) => topic.id === topicId);
     }
     function selectedTopicGroupId2() {
@@ -1404,7 +1542,7 @@
       });
     }
     function openTopicPage2(topicId, options = {}) {
-      const topic = topicById2(topicId);
+      const topic = topicById3(topicId);
       if (!topic) {
         return;
       }
@@ -1689,7 +1827,7 @@
         </div>
       </div>
       <div class="category-topic-grid">
-        ${category.topicIds.map((topicId) => topicById2(topicId)).filter(Boolean).map((topic) => {
+        ${category.topicIds.map((topicId) => topicById3(topicId)).filter(Boolean).map((topic) => {
           const meta = topicCardMeta2[topic.id] ?? {};
           return `
               <a class="category-topic-card${topic.id === state2.selectedTopicId ? " is-selected" : ""}" href="${topicPageUrl2(window.location, topic.id)}" data-topic-id="${topic.id}">
@@ -1773,7 +1911,7 @@
           </div>
           <div class="book-category-grid">
             ${booksInCategory.map((entry) => {
-          const firstTopic = topicById2(entry.lessons[0]?.topicId);
+          const firstTopic = topicById3(entry.lessons[0]?.topicId);
           const isSelectedBook = entry.id === selectedBookInCategory.id;
           const entryIndex = books2.findIndex((bookEntry) => bookEntry.id === entry.id);
           return `
@@ -1800,7 +1938,7 @@
             </div>
             <div class="book-lesson-grid">
               ${selectedBookInCategory.lessons.map((lesson) => {
-          const lessonTopic = topicById2(lesson.topicId);
+          const lessonTopic = topicById3(lesson.topicId);
           const isSelectedLesson = selectedBookInCategory.id === book.id && lesson.lesson === activeLesson.lesson;
           return `
                     <button
@@ -1927,7 +2065,7 @@
         item.toggleAttribute("aria-current", isActive);
       });
     }
-    return { currentTopic: currentTopic2, currentNumberStage: currentNumberStage2, focusItemsForTopic: focusItemsForTopic2, currentFocusItem: currentFocusItem2, shuffleArray: shuffleArray2, topicById: topicById2, selectedTopicGroupId: selectedTopicGroupId2, bookById: bookById2, bookCategoryForBook: bookCategoryForBook2, currentBook: currentBook2, currentLesson: currentLesson2, syncBookSelectionFromTopic: syncBookSelectionFromTopic2, syncLessonSelectionFromTopic: syncLessonSelectionFromTopic2, focusLearningPanel: focusLearningPanel2, scrollToSectionTop: scrollToSectionTop2, narrowTopicBrowserTo: narrowTopicBrowserTo2, categoryIdForTopic: categoryIdForTopic2, updateTopicPageVisibility: updateTopicPageVisibility2, scrollCategorySectionIntoView: scrollCategorySectionIntoView2, openTopicPage: openTopicPage2, switchView: switchView2, toggleTopicGroup: toggleTopicGroup2, renderTopicScene: renderTopicScene2, displayControlsMarkup: displayControlsMarkup2, bindDisplayControls: bindDisplayControls2, renderTopicStickyNav: renderTopicStickyNav2, bookAccent: bookAccent2, renderBookStickyNav: renderBookStickyNav2, renderStickyNav: renderStickyNav2, categoryIconMarkup: categoryIconMarkup2, renderTopics: renderTopics2, renderBooks: renderBooks2, updateLearningCultureNav: updateLearningCultureNav2 };
+    return { currentTopic: currentTopic2, currentNumberStage: currentNumberStage2, focusItemsForTopic: focusItemsForTopic2, currentFocusItem: currentFocusItem2, shuffleArray: shuffleArray2, topicById: topicById3, selectedTopicGroupId: selectedTopicGroupId2, bookById: bookById2, bookCategoryForBook: bookCategoryForBook2, currentBook: currentBook2, currentLesson: currentLesson2, syncBookSelectionFromTopic: syncBookSelectionFromTopic2, syncLessonSelectionFromTopic: syncLessonSelectionFromTopic2, focusLearningPanel: focusLearningPanel2, scrollToSectionTop: scrollToSectionTop2, narrowTopicBrowserTo: narrowTopicBrowserTo2, categoryIdForTopic: categoryIdForTopic2, updateTopicPageVisibility: updateTopicPageVisibility2, scrollCategorySectionIntoView: scrollCategorySectionIntoView2, openTopicPage: openTopicPage2, switchView: switchView2, toggleTopicGroup: toggleTopicGroup2, renderTopicScene: renderTopicScene2, displayControlsMarkup: displayControlsMarkup2, bindDisplayControls: bindDisplayControls2, renderTopicStickyNav: renderTopicStickyNav2, bookAccent: bookAccent2, renderBookStickyNav: renderBookStickyNav2, renderStickyNav: renderStickyNav2, categoryIconMarkup: categoryIconMarkup2, renderTopics: renderTopics2, renderBooks: renderBooks2, updateLearningCultureNav: updateLearningCultureNav2 };
   }
 
   // src/core/router.js
@@ -3960,7 +4098,7 @@
     introductionsBuildPhrases: introductionsBuildPhrases2,
     introductionsPractice: introductionsPractice2,
     illustratedKids: illustratedKids2,
-    topicById: topicById2,
+    topicById: topicById3,
     shuffleArray: shuffleArray2,
     speak: speak2,
     speakSceneLines: speakSceneLines2,
@@ -3982,7 +4120,7 @@
       return introductionsGameSpeakerIds2.map((id) => illustratedKids2[id]).filter(Boolean);
     }
     function introductionsSelfIntroItemForKid2(kidId) {
-      const introductionsTopic2 = topicById2("introductions");
+      const introductionsTopic2 = topicById3("introductions");
       const itemIdByKidId = { anan: "my-name-anan", tiantian: "my-name-tiantian", sisi: "my-name-sisi", lele: "my-name-lele" };
       return introductionsTopic2?.focusItems.find((item) => item.id === itemIdByKidId[kidId]) ?? null;
     }
@@ -4208,10 +4346,10 @@
   ];
 
   // src/features/foundations/age-controller.js
-  function createAgeController({ state: state2, ageGameItemIds: ageGameItemIds2, ageBuildPhrases: ageBuildPhrases2, agePractice: agePractice2, topicById: topicById2, shuffleArray: shuffleArray2, speak: speak2, speakSceneLines: speakSceneLines2, currentTopic: currentTopic2, currentFocusItem: currentFocusItem2, currentBook: currentBook2, currentLesson: currentLesson2, renderActivityPanel: renderActivityPanel2, renderFocusDisplay: renderFocusDisplay2, renderFocusExplorer: renderFocusExplorer2, renderFocusStatus: renderFocusStatus2, elements }) {
+  function createAgeController({ state: state2, ageGameItemIds: ageGameItemIds2, ageBuildPhrases: ageBuildPhrases2, agePractice: agePractice2, topicById: topicById3, shuffleArray: shuffleArray2, speak: speak2, speakSceneLines: speakSceneLines2, currentTopic: currentTopic2, currentFocusItem: currentFocusItem2, currentBook: currentBook2, currentLesson: currentLesson2, renderActivityPanel: renderActivityPanel2, renderFocusDisplay: renderFocusDisplay2, renderFocusExplorer: renderFocusExplorer2, renderFocusStatus: renderFocusStatus2, elements }) {
     const { focusExplorer: focusExplorer2, focusStatus: focusStatus2 } = elements;
     function ageGameItems2() {
-      return ageGameItemIds2.map((id) => topicById2("age")?.focusItems.find((item) => item.id === id)).filter(Boolean);
+      return ageGameItemIds2.map((id) => topicById3("age")?.focusItems.find((item) => item.id === id)).filter(Boolean);
     }
     function resetAgeChallenge2(options = {}) {
       const items = ageGameItems2();
@@ -4384,7 +4522,7 @@
     state: state2,
     politeGameItemIds: politeGameItemIds2,
     politePractice: politePractice2,
-    topicById: topicById2,
+    topicById: topicById3,
     shuffleArray: shuffleArray2,
     speak: speak2,
     speakSceneLines: speakSceneLines2,
@@ -4400,7 +4538,7 @@
   }) {
     const { focusExplorer: focusExplorer2, focusStatus: focusStatus2 } = elements;
     function politeGameItems2() {
-      const politeTopic = topicById2("polite-words");
+      const politeTopic = topicById3("polite-words");
       return politeGameItemIds2.map((id) => politeTopic?.focusItems.find((item) => item.id === id)).filter(Boolean);
     }
     function politeMeaningLabel2(itemId) {
@@ -4677,7 +4815,7 @@
     state: state2,
     greetingsGameItemIds: greetingsGameItemIds2,
     greetingsPractice: greetingsPractice2,
-    topicById: topicById2,
+    topicById: topicById3,
     shuffleArray: shuffleArray2,
     speak: speak2,
     speakSceneLines: speakSceneLines2,
@@ -4694,7 +4832,7 @@
   }) {
     const { focusExplorer: focusExplorer2, focusStatus: focusStatus2 } = elements;
     function greetingsGameItems2() {
-      const greetingsTopic2 = topicById2("greetings");
+      const greetingsTopic2 = topicById3("greetings");
       return greetingsGameItemIds2.map((id) => greetingsTopic2?.focusItems.find((item) => item.id === id)).filter(Boolean);
     }
     function resetGreetingsChallenge2(options = {}) {
@@ -5526,7 +5664,7 @@
 
   // src/features/foundations/foundations-runtime.js
   function createFoundationsRuntime(context) {
-    const { state: state2, numberHanzi: numberHanzi2, numberPinyin: numberPinyin2, buildNumberItem: buildNumberItem2, numberStages: numberStages2, telephonePractice: telephonePractice2, familyGameItemIds: familyGameItemIds2, familyPersonIdsByItemId: familyPersonIdsByItemId2, familyHeadshotsByItemId: familyHeadshotsByItemId2, familyPractice: familyPractice2, illustratedFamily: illustratedFamily2, illustratedKids: illustratedKids2, bodyBonusItemIds: bodyBonusItemIds2, bodyCoreItemIds: bodyCoreItemIds2, bodyDiagramLayout: bodyDiagramLayout2, identityConversation: identityConversation2, identityCountries: identityCountries2, identityQuestion: identityQuestion2, topicById: topicById2, focusItemsForTopic: focusItemsForTopic2, currentTopic: currentTopic2, currentNumberStage: currentNumberStage2, currentFocusItem: currentFocusItem2, currentBook: currentBook2, currentLesson: currentLesson2, shuffleArray: shuffleArray2, chineseUtterance: chineseUtterance2, speak: speak2, speakSceneLines: speakSceneLines2, renderActivityPanel: renderActivityPanel2, renderFocusDisplay: renderFocusDisplay2, renderFocusExplorer: renderFocusExplorer2, renderFocusStatus: renderFocusStatus2, selectFocusItem: selectFocusItem2, bodySentenceForItem: bodySentenceForItem2, focusExplorer: focusExplorer2, focusStatus: focusStatus2 } = context;
+    const { state: state2, numberHanzi: numberHanzi2, numberPinyin: numberPinyin2, buildNumberItem: buildNumberItem2, numberStages: numberStages2, telephonePractice: telephonePractice2, familyGameItemIds: familyGameItemIds2, familyPersonIdsByItemId: familyPersonIdsByItemId2, familyHeadshotsByItemId: familyHeadshotsByItemId2, familyPractice: familyPractice2, illustratedFamily: illustratedFamily2, illustratedKids: illustratedKids2, bodyBonusItemIds: bodyBonusItemIds2, bodyCoreItemIds: bodyCoreItemIds2, bodyDiagramLayout: bodyDiagramLayout2, identityConversation: identityConversation2, identityCountries: identityCountries2, identityQuestion: identityQuestion2, topicById: topicById3, focusItemsForTopic: focusItemsForTopic2, currentTopic: currentTopic2, currentNumberStage: currentNumberStage2, currentFocusItem: currentFocusItem2, currentBook: currentBook2, currentLesson: currentLesson2, shuffleArray: shuffleArray2, chineseUtterance: chineseUtterance2, speak: speak2, speakSceneLines: speakSceneLines2, renderActivityPanel: renderActivityPanel2, renderFocusDisplay: renderFocusDisplay2, renderFocusExplorer: renderFocusExplorer2, renderFocusStatus: renderFocusStatus2, selectFocusItem: selectFocusItem2, bodySentenceForItem: bodySentenceForItem2, focusExplorer: focusExplorer2, focusStatus: focusStatus2 } = context;
     function numberStageItems2(stage = currentNumberStage2()) {
       const start = Math.min(stage.start, stage.end);
       const end = Math.max(stage.start, stage.end);
@@ -5591,7 +5729,7 @@
       }
     }
     function familyGameItems2() {
-      const familyTopic2 = topicById2("family");
+      const familyTopic2 = topicById3("family");
       return familyGameItemIds2.map((id) => familyTopic2?.focusItems.find((item) => item.id === id)).filter(Boolean);
     }
     function familyPersonForItemId2(itemId) {
@@ -5612,7 +5750,7 @@
       return ["parents-love-me", "i-love-dad", "i-love-mom"].includes(itemId);
     }
     function familyBookWordItems2() {
-      return focusItemsForTopic2(topicById2("family")).filter((item) => !isFamilySentenceItemId2(item.id));
+      return focusItemsForTopic2(topicById3("family")).filter((item) => !isFamilySentenceItemId2(item.id));
     }
     const lessonTemplateTopicIds = /* @__PURE__ */ new Set(["greetings", "polite-words", "introductions", "age", "family"]);
     function usesLessonTemplate2(topic) {
@@ -5888,7 +6026,7 @@
     }
     function bodyMatchItems2() {
       const ids = state2.bodyMatchIncludeBonus ? [...bodyCoreItemIds2, ...bodyBonusItemIds2] : bodyCoreItemIds2;
-      const bodyTopic2 = topicById2("body");
+      const bodyTopic2 = topicById3("body");
       return ids.map((id) => bodyTopic2?.focusItems.find((item) => item.id === id)).filter(Boolean);
     }
     function nextBodyRound2() {
@@ -8421,143 +8559,20 @@
   function renderActivityPanel(topic) {
     return lessonPracticeRuntime?.renderActivityPanel(topic);
   }
-  function selectBookLesson(bookId, lessonNumber) {
-    const book = books.find((entry) => entry.id === bookId) ?? books[0];
-    const lesson = book.lessons.find((entry) => entry.lesson === lessonNumber) ?? book.lessons[0];
-    state.selectedBookCategoryId = bookCategoryForBook(book.id).id;
-    state.selectedBookId = book.id;
-    state.selectedLessonNumber = lesson.lesson;
-    state.selectedTopicId = lesson.topicId;
-    state.expandedCategoryId = categoryIdForTopic(lesson.topicId);
-    state.topicPageOpen = true;
-    narrowTopicBrowserTo(selectedTopicGroupId());
-    renderTopics();
-    renderBooks();
-    renderTopicDetail();
-    updateTopicPageVisibility();
-    window.history.pushState(null, "", topicPageUrl(window.location, lesson.topicId));
-    focusLearningPanel();
+  var topicDetailRuntime;
+  function selectBookLesson(...args) {
+    return topicDetailRuntime?.selectBookLesson(...args);
   }
-  function topicLessonTitle(topic, step) {
-    if (topic.id !== "numbers") {
-      return step.title;
-    }
-    const stage = numberStages.find(
-      (entry) => entry.bookId === step.book.toLowerCase() && entry.lesson === step.lesson
-    );
-    return stage?.title ?? step.title;
+  function renderTopicDetail(...args) {
+    return topicDetailRuntime?.renderTopicDetail(...args);
   }
-  function renderTopicLessonStrip(topic) {
-    if (!topicLessonStrip) {
-      return;
-    }
-    const steps = topic.steps ?? [];
-    if (!steps.length) {
-      topicLessonStrip.innerHTML = "";
-      topicLessonStrip.classList.add("is-hidden");
-      return;
-    }
-    const current = currentLesson();
-    topicLessonStrip.classList.remove("is-hidden");
-    topicLessonStrip.innerHTML = steps.map((step) => {
-      const bookId = step.book.toLowerCase();
-      const isActive = currentBook().id === bookId && current.lesson === step.lesson;
-      return `
-        <button class="topic-lesson-card${isActive ? " is-active" : ""}" type="button" data-topic-lesson="${bookId}:${step.lesson}">
-          <span class="topic-lesson-meta">Book ${step.book} Lesson ${step.lesson}</span>
-          <strong>${topicLessonTitle(topic, step)}</strong>
-        </button>
-      `;
-    }).join("");
-    topicLessonStrip.querySelectorAll("[data-topic-lesson]").forEach((button) => {
-      button.addEventListener("click", () => {
-        const [bookId, lessonText] = button.dataset.topicLesson.split(":");
-        selectBookLesson(bookId, Number(lessonText));
-      });
-    });
-  }
-  function renderSubtopicShelf() {
-    if (!subtopicShelf) {
-      return;
-    }
-    subtopicShelf.innerHTML = "";
-    subtopicShelf.classList.add("is-hidden");
-  }
-  function renderTopicDetail() {
-    const topic = currentTopic();
-    const items = focusItemsForTopic(topic);
-    if (topic.id !== "body") {
-      state.lastBodyFeedback = "";
-      if (topic.id !== "numbers") {
-        state.lastNumberFeedback = "";
-      }
-    } else if (!state.selectedFocusItemId) {
-      state.selectedFocusItemId = items[0].id;
-      ensureBodyMatchGame();
-    }
-    if (topic.id !== "numbers" && state.numberChallengeAdvanceTimer) {
-      window.clearTimeout(state.numberChallengeAdvanceTimer);
-      state.numberChallengeAdvanceTimer = null;
-    }
-    const selectedItem = items.find((item) => item.id === state.selectedFocusItemId);
-    if (topic.id === "family" && (!selectedItem || isFamilySentenceItemId(selectedItem.id))) {
-      state.selectedFocusItemId = familyBookWordItems()[0]?.id ?? items[0].id;
-    } else {
-      state.selectedFocusItemId = selectedItem?.id ?? items[0].id;
-    }
-    topicTitle.textContent = topic.title;
-    if (topicSummary) {
-      topicSummary.textContent = topic.summary;
-    }
-    if (topicProgress) {
-      topicProgress.textContent = topic.progressLabel;
-    }
-    renderTopicLessonStrip(topic);
-    renderSubtopicShelf(topic);
-    focusDisplay.classList.toggle(
-      "is-hidden",
-      topic.id === "body" || usesLessonTemplate(topic) || topic.id === "numbers" || topic.id === "multiplication-rhyme" || topic.id === "weekdays" || topic.id === "time-date" || topic.id === "dates" || topic.id === "comparisons" || topic.id === "positions" || topic.id === "transport" || topic.id === "daily-life" || topic.id === "identity" || topic.id === "clothes" || schoolTopicData2[topic.id] || topic.id === "numbers" && currentNumberStage().telephoneMode
-    );
-    renderFocusControls();
-    renderFocusDisplay(currentFocusItem());
-    renderFocusExplorer();
-    renderFocusWordList2();
-    renderFocusStatus();
-    renderActivityPanel(topic);
-  }
-  bookSelect.addEventListener("change", () => {
-    const book = books.find((entry) => entry.id === bookSelect.value) ?? currentBook();
-    selectBookLesson(book.id, book.lessons[0].lesson);
-  });
-  lessonSelect.addEventListener("change", () => {
-    const book = currentBook();
-    const lesson = book.lessons.find((entry) => String(entry.lesson) === lessonSelect.value) ?? book.lessons[0];
-    selectBookLesson(book.id, lesson.lesson);
-  });
-  window.addEventListener("scroll", () => {
-    updateLearningCultureNav();
-  });
-  window.addEventListener("popstate", () => {
-    const topicId = topicIdFromLocation(window.location, topicById);
-    state.topicPageOpen = Boolean(topicId);
-    if (topicId) {
-      state.selectedTopicId = topicId;
-      state.expandedCategoryId = categoryIdForTopic(topicId);
-      syncBookSelectionFromTopic();
-    }
-    switchView(viewFromLocation(window.location));
-    renderTopics();
-    renderBooks();
-    renderTopicDetail();
-    updateTopicPageVisibility();
-  });
   var {
     currentTopic,
     currentNumberStage,
     focusItemsForTopic,
     currentFocusItem,
     shuffleArray,
-    topicById,
+    topicById: topicById2,
     selectedTopicGroupId,
     bookById,
     bookCategoryForBook,
@@ -8634,7 +8649,7 @@
     identityConversation,
     identityCountries,
     identityQuestion,
-    topicById,
+    topicById: topicById2,
     focusItemsForTopic,
     currentTopic,
     currentNumberStage,
@@ -8715,7 +8730,7 @@
     state,
     greetingsGameItemIds,
     greetingsPractice,
-    topicById,
+    topicById: topicById2,
     shuffleArray,
     speak,
     speakSceneLines,
@@ -8746,7 +8761,7 @@
     state,
     politeGameItemIds,
     politePractice,
-    topicById,
+    topicById: topicById2,
     shuffleArray,
     speak,
     speakSceneLines,
@@ -8781,7 +8796,7 @@
     introductionsBuildPhrases,
     introductionsPractice,
     illustratedKids,
-    topicById,
+    topicById: topicById2,
     shuffleArray,
     speak,
     speakSceneLines,
@@ -8812,7 +8827,7 @@
     ageGameItemIds,
     ageBuildPhrases,
     agePractice,
-    topicById,
+    topicById: topicById2,
     shuffleArray,
     speak,
     speakSceneLines,
@@ -8960,6 +8975,51 @@
     focusExplorer,
     focusStatus
   });
+  topicDetailRuntime = createTopicDetailRuntime({
+    state,
+    books,
+    numberStages,
+    schoolTopicData: schoolTopicData2,
+    topicPageUrl,
+    topicIdFromLocation,
+    viewFromLocation,
+    bookSelect,
+    lessonSelect,
+    topicTitle,
+    topicSummary,
+    topicProgress,
+    topicLessonStrip,
+    subtopicShelf,
+    focusDisplay,
+    currentTopic,
+    currentNumberStage,
+    focusItemsForTopic,
+    currentFocusItem,
+    currentBook,
+    currentLesson,
+    selectedTopicGroupId,
+    bookCategoryForBook,
+    categoryIdForTopic,
+    narrowTopicBrowserTo,
+    renderTopics,
+    renderBooks,
+    updateTopicPageVisibility,
+    focusLearningPanel,
+    renderFocusControls,
+    renderFocusDisplay,
+    renderFocusExplorer,
+    renderFocusWordList: renderFocusWordList2,
+    renderFocusStatus,
+    renderActivityPanel,
+    ensureBodyMatchGame,
+    isFamilySentenceItemId,
+    familyBookWordItems,
+    usesLessonTemplate,
+    syncBookSelectionFromTopic,
+    switchView,
+    updateLearningCultureNav
+  });
+  topicDetailRuntime.bindTopicDetailEvents();
   lessonPracticeRuntime = createLessonPracticeRuntime({
     state,
     schoolTopicData: schoolTopicData2,
@@ -9087,7 +9147,7 @@
     renderVisualTopicExplorer,
     renderMultiplicationExplorer
   });
-  var initialTopicId = topicIdFromLocation(window.location, topicById);
+  var initialTopicId = topicIdFromLocation(window.location, topicById2);
   if (initialTopicId) {
     state.selectedTopicId = initialTopicId;
     state.expandedCategoryId = categoryIdForTopic(initialTopicId);

@@ -197,6 +197,17 @@ test("shared lesson practice dispatch is separated from the legacy bootstrap", (
   assert.match(runtimeSource, /function renderActivityPanel\(/);
 });
 
+test("topic detail rendering and history events are separated from the legacy bootstrap", () => {
+  const legacySource = readFileSync("src/legacy-app.js", "utf8");
+  const runtimeSource = readFileSync("src/core/topic-detail-runtime.js", "utf8");
+  assert.match(legacySource, /createTopicDetailRuntime\(\{/);
+  assert.match(legacySource, /return topicDetailRuntime\?\.renderTopicDetail/);
+  assert.doesNotMatch(legacySource, /function renderTopicLessonStrip\(/);
+  assert.match(runtimeSource, /export function createTopicDetailRuntime/);
+  assert.match(runtimeSource, /function bindTopicDetailEvents\(/);
+  assert.match(runtimeSource, /function renderTopicDetail\(/);
+});
+
 test("representative topic links boot after runtime composition", () => {
   const bootstrap = `
 class Element {
