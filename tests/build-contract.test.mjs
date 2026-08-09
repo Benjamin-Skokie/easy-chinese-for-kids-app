@@ -6,7 +6,7 @@ import { topicIdFromLocation, topicPageUrl, viewFromLocation } from "../src/core
 import { timeDateWeekItems } from "../src/features/time-daily-life/weekdays.js";
 import { timeDateClockItems, timeDateRoutineItems } from "../src/features/time-daily-life/time.js";
 import { datePracticeItems, timeDateMonthItems } from "../src/features/time-daily-life/dates.js";
-import { comparisonPracticeItems, comparisonVisualItems } from "../src/features/time-daily-life/comparisons.js";
+import { comparisonPracticeItems, comparisonsTopic, comparisonVisualItems } from "../src/features/time-daily-life/comparisons.js";
 import { positionPracticeItems, positionScenes, positionVisualItems } from "../src/features/time-daily-life/positions.js";
 import { transportSentenceTokens, transportVisualItems } from "../src/features/time-daily-life/transport.js";
 import { dailyLifeTopic, roomScenes, roomVisualItems } from "../src/features/time-daily-life/rooms.js";
@@ -94,6 +94,8 @@ test("time and calendar content retains its expected teaching sets", () => {
 });
 
 test("time and daily life data stays owned by its topics", () => {
+  assert.equal(comparisonsTopic.id, "comparisons");
+  assert.equal(comparisonsTopic.interactiveScene, "comparisons");
   assert.equal(comparisonVisualItems.length, 7);
   assert.equal(positionVisualItems.length, 3);
   assert.equal(transportVisualItems.length, 8);

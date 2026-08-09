@@ -3,7 +3,7 @@ import { topicIdFromLocation, topicPageUrl, viewFromLocation } from "./core/rout
 import { timeDateWeekItems } from "./features/time-daily-life/weekdays.js";
 import { timeDateClockItems, timeDateExpressionItems, timeDateRoutineItems } from "./features/time-daily-life/time.js";
 import { datePracticeItems, timeDateDateItems, timeDateMonthItems } from "./features/time-daily-life/dates.js";
-import { comparisonPracticeItems, comparisonVisualItems, comparisonWordItems } from "./features/time-daily-life/comparisons.js";
+import { comparisonPracticeItems, comparisonsTopic, comparisonVisualItems, comparisonWordItems } from "./features/time-daily-life/comparisons.js";
 import { positionPracticeItems, positionScenes, positionVisualItems } from "./features/time-daily-life/positions.js";
 import { transportSentenceTokens, transportVisualItems } from "./features/time-daily-life/transport.js";
 import { dailyLifeTopic, roomScenes, roomSentenceTokens, roomVisualItems } from "./features/time-daily-life/rooms.js";
@@ -551,20 +551,7 @@ const topicData = [
   },
   clothesTopic,
   dailyLifeTopic,
-  {
-    id: "comparisons",
-    title: "Descriptions & Comparisons",
-    summary: "Compare size, amount, speed, length, temperature, and more.",
-    progressLabel: "2B Lesson 6",
-    iconText: "大小",
-    iconColor: "#aa7051",
-    focus: { hanzi: "大和小", pinyin: "dà hé xiǎo", english: "big and small", audio: "大和小" },
-    interactiveScene: "comparisons",
-    parentGuide: "Compare real objects together: a big and small cup, a long and short pencil, or a fast and slow walk.",
-    cultureGuide: "Comparison words are useful across nearly every later topic because children can see and act them out immediately.",
-    activities: ["Tap to hear", "Compare two things", "Say what you see"],
-    steps: [{ book: "2B", lesson: 6, title: "Big or small", note: "Use opposite description words." }]
-  },
+  comparisonsTopic,
   {
     id: "positions",
     title: "Positions & Directions",

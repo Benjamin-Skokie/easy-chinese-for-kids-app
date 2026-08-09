@@ -140,6 +140,20 @@
   ];
 
   // src/features/time-daily-life/comparisons.js
+  var comparisonsTopic = {
+    id: "comparisons",
+    title: "Descriptions & Comparisons",
+    summary: "Compare size, amount, speed, length, temperature, and more.",
+    progressLabel: "2B Lesson 6",
+    iconText: "\u5927\u5C0F",
+    iconColor: "#aa7051",
+    focus: { hanzi: "\u5927\u548C\u5C0F", pinyin: "d\xE0 h\xE9 xi\u01CEo", english: "big and small", audio: "\u5927\u548C\u5C0F" },
+    interactiveScene: "comparisons",
+    parentGuide: "Compare real objects together: a big and small cup, a long and short pencil, or a fast and slow walk.",
+    cultureGuide: "Comparison words are useful across nearly every later topic because children can see and act them out immediately.",
+    activities: ["Tap to hear", "Compare two things", "Say what you see"],
+    steps: [{ book: "2B", lesson: 6, title: "Big or small", note: "Use opposite description words." }]
+  };
   var comparisonVisualItems = [
     ["\u5927\uFF0C\u5C0F", "d\xE0, xi\u01CEo", "big, small", "big-small-animals.webp", ["\u5927", "\u5C0F"]],
     ["\u591A\uFF0C\u5C11", "du\u014D, sh\u01CEo", "many, few", "many-few-carrots.webp", ["\u591A", "\u5C11"]],
@@ -2157,20 +2171,7 @@
     },
     clothesTopic,
     dailyLifeTopic,
-    {
-      id: "comparisons",
-      title: "Descriptions & Comparisons",
-      summary: "Compare size, amount, speed, length, temperature, and more.",
-      progressLabel: "2B Lesson 6",
-      iconText: "\u5927\u5C0F",
-      iconColor: "#aa7051",
-      focus: { hanzi: "\u5927\u548C\u5C0F", pinyin: "d\xE0 h\xE9 xi\u01CEo", english: "big and small", audio: "\u5927\u548C\u5C0F" },
-      interactiveScene: "comparisons",
-      parentGuide: "Compare real objects together: a big and small cup, a long and short pencil, or a fast and slow walk.",
-      cultureGuide: "Comparison words are useful across nearly every later topic because children can see and act them out immediately.",
-      activities: ["Tap to hear", "Compare two things", "Say what you see"],
-      steps: [{ book: "2B", lesson: 6, title: "Big or small", note: "Use opposite description words." }]
-    },
+    comparisonsTopic,
     {
       id: "positions",
       title: "Positions & Directions",

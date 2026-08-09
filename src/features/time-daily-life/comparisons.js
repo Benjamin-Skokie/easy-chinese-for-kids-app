@@ -1,3 +1,18 @@
+export const comparisonsTopic = {
+  id: "comparisons",
+  title: "Descriptions & Comparisons",
+  summary: "Compare size, amount, speed, length, temperature, and more.",
+  progressLabel: "2B Lesson 6",
+  iconText: "大小",
+  iconColor: "#aa7051",
+  focus: { hanzi: "大和小", pinyin: "dà hé xiǎo", english: "big and small", audio: "大和小" },
+  interactiveScene: "comparisons",
+  parentGuide: "Compare real objects together: a big and small cup, a long and short pencil, or a fast and slow walk.",
+  cultureGuide: "Comparison words are useful across nearly every later topic because children can see and act them out immediately.",
+  activities: ["Tap to hear", "Compare two things", "Say what you see"],
+  steps: [{ book: "2B", lesson: 6, title: "Big or small", note: "Use opposite description words." }]
+};
+
 export const comparisonVisualItems = [
     ["大，小", "dà, xiǎo", "big, small", "big-small-animals.webp", ["大", "小"]],
     ["多，少", "duō, shǎo", "many, few", "many-few-carrots.webp", ["多", "少"]],
