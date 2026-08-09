@@ -88,7 +88,7 @@ test("router preserves the existing topic query and detail hash contract", () =>
 });
 
 test("shared lesson practice is provided by an explicit game factory", () => {
-  const legacySource = readFileSync("src/legacy-app.js", "utf8");
+  const legacySource = readFileSync("src/app-runtime.js", "utf8");
   const gameSource = readFileSync("src/games/shared-lesson-practice.js", "utf8");
   assert.match(legacySource, /createSharedLessonPractice\(\{[\s\S]*elements:/);
   assert.match(legacySource, /const renderPracticeSayCards = renderSharedLessonPractice\.renderPracticeSayCards/);
@@ -99,7 +99,7 @@ test("shared lesson practice is provided by an explicit game factory", () => {
 });
 
 test("legacy bootstrap retains its shared data and audio bindings", () => {
-  const legacySource = readFileSync("src/legacy-app.js", "utf8");
+  const legacySource = readFileSync("src/app-runtime.js", "utf8");
   const registrySource = readFileSync("src/data/topic-registry.js", "utf8");
   assert.match(legacySource, /const \{ chineseUtterance, speak, speakSceneLines \} = createAudioService/);
   assert.match(legacySource, /from "\.\/data\/topic-registry\.js"/);
@@ -109,7 +109,7 @@ test("legacy bootstrap retains its shared data and audio bindings", () => {
 });
 
 test("school and food runtime is separated from the legacy bootstrap", () => {
-  const legacySource = readFileSync("src/legacy-app.js", "utf8");
+  const legacySource = readFileSync("src/app-runtime.js", "utf8");
   const runtimeSource = readFileSync("src/features/school-life/school-food-runtime.js", "utf8");
   assert.match(legacySource, /createSchoolFoodRuntime\(\{/);
   assert.doesNotMatch(legacySource, /function schoolPracticeItems\(/);
@@ -121,7 +121,7 @@ test("school and food runtime is separated from the legacy bootstrap", () => {
 });
 
 test("time and daily life runtime is separated from the legacy bootstrap", () => {
-  const legacySource = readFileSync("src/legacy-app.js", "utf8");
+  const legacySource = readFileSync("src/app-runtime.js", "utf8");
   const runtimeSource = readFileSync("src/features/time-daily-life/time-daily-life-runtime.js", "utf8");
   assert.match(legacySource, /createTimeDailyLifeRuntime\(\{/);
   assert.doesNotMatch(legacySource, /function resetWeekdayChallenge\(/);
@@ -130,7 +130,7 @@ test("time and daily life runtime is separated from the legacy bootstrap", () =>
 });
 
 test("foundations runtime is separated from the legacy bootstrap", () => {
-  const legacySource = readFileSync("src/legacy-app.js", "utf8");
+  const legacySource = readFileSync("src/app-runtime.js", "utf8");
   const runtimeSource = readFileSync("src/features/foundations/foundations-runtime.js", "utf8");
   assert.match(legacySource, /createFoundationsRuntime\(\{/);
   assert.doesNotMatch(legacySource, /function familyGameItems\(/);
@@ -143,7 +143,7 @@ test("foundations runtime is separated from the legacy bootstrap", () => {
 });
 
 test("feature runtimes initialize before the first landing-page render", () => {
-  const legacySource = readFileSync("src/legacy-app.js", "utf8");
+  const legacySource = readFileSync("src/app-runtime.js", "utf8");
   const openTopicPageStart = legacySource.indexOf("function openTopicPage(");
   const openTopicPageEnd = legacySource.indexOf("function switchView(", openTopicPageStart);
   const initialRender = legacySource.lastIndexOf("renderTopics();");
@@ -156,7 +156,7 @@ test("feature runtimes initialize before the first landing-page render", () => {
 });
 
 test("navigation and landing-page behavior is separated from the legacy bootstrap", () => {
-  const legacySource = readFileSync("src/legacy-app.js", "utf8");
+  const legacySource = readFileSync("src/app-runtime.js", "utf8");
   const runtimeSource = readFileSync("src/core/navigation-runtime.js", "utf8");
   assert.match(legacySource, /createNavigationRuntime\(\{/);
   assert.doesNotMatch(legacySource, /function openTopicPage\(/);
@@ -167,7 +167,7 @@ test("navigation and landing-page behavior is separated from the legacy bootstra
 });
 
 test("shared focus behavior is separated from the legacy bootstrap", () => {
-  const legacySource = readFileSync("src/legacy-app.js", "utf8");
+  const legacySource = readFileSync("src/app-runtime.js", "utf8");
   const runtimeSource = readFileSync("src/core/focus-runtime.js", "utf8");
   assert.match(legacySource, /createFocusRuntime\(\{/);
   assert.doesNotMatch(legacySource, /function renderFocusWordList\(/);
@@ -178,7 +178,7 @@ test("shared focus behavior is separated from the legacy bootstrap", () => {
 });
 
 test("focus explorer dispatch is separated from the legacy bootstrap", () => {
-  const legacySource = readFileSync("src/legacy-app.js", "utf8");
+  const legacySource = readFileSync("src/app-runtime.js", "utf8");
   const runtimeSource = readFileSync("src/core/focus-explorer-runtime.js", "utf8");
   assert.match(legacySource, /createFocusExplorerRuntime\(\{/);
   assert.doesNotMatch(legacySource, /if \(topic\.interactiveScene === "body-face"\)/);
@@ -187,7 +187,7 @@ test("focus explorer dispatch is separated from the legacy bootstrap", () => {
 });
 
 test("shared lesson practice dispatch is separated from the legacy bootstrap", () => {
-  const legacySource = readFileSync("src/legacy-app.js", "utf8");
+  const legacySource = readFileSync("src/app-runtime.js", "utf8");
   const runtimeSource = readFileSync("src/core/lesson-practice-runtime.js", "utf8");
   assert.match(legacySource, /createLessonPracticeRuntime\(\{/);
   assert.doesNotMatch(legacySource, /function sharedLessonPracticeConfig\(/);
@@ -198,7 +198,7 @@ test("shared lesson practice dispatch is separated from the legacy bootstrap", (
 });
 
 test("topic detail rendering and history events are separated from the legacy bootstrap", () => {
-  const legacySource = readFileSync("src/legacy-app.js", "utf8");
+  const legacySource = readFileSync("src/app-runtime.js", "utf8");
   const runtimeSource = readFileSync("src/core/topic-detail-runtime.js", "utf8");
   assert.match(legacySource, /createTopicDetailRuntime\(\{/);
   assert.match(legacySource, /return topicDetailRuntime\?\.renderTopicDetail/);
@@ -240,7 +240,7 @@ globalThis.window = {
   scrollY: 0, scrollTo() {}, speechSynthesis: { cancel() {}, speak() {}, getVoices() { return []; } }
 };
 globalThis.requestAnimationFrame = (callback) => callback();
-await import(\`./src/legacy-app.js?topic=\${process.env.TOPIC}\${Date.now()}\`);
+await import(\`./src/app-runtime.js?topic=\${process.env.TOPIC}\${Date.now()}\`);
 `;
 
   for (const topic of ["introductions", "numbers", "family", "body", "school", "food", "weekdays"]) {

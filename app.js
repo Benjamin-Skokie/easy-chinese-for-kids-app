@@ -8388,7 +8388,7 @@
     return renderSharedLessonPractice2;
   }
 
-  // src/legacy-app.js
+  // src/app-runtime.js
   var introductionsGameSpeakerIds = ["anan", "tiantian", "sisi", "lele"];
   var ageGameItemIds = ["ask-age", "age-five", "age-six", "age-seven", "ask-grade", "grade-one"];
   var sceneSpeechRate = 0.64;
