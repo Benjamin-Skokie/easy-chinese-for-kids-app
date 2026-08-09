@@ -190,6 +190,20 @@
   ].map(([hanzi, pinyin, english]) => ({ hanzi, pinyin, english }));
 
   // src/features/time-daily-life/positions.js
+  var positionsTopic = {
+    id: "positions",
+    title: "Positions & Directions",
+    summary: "Use up, down, inside, outside, and directions to describe where things are.",
+    progressLabel: "3B Lesson 3",
+    iconText: "\u4E0A\u4E0B",
+    iconColor: "#587d9c",
+    focus: { hanzi: "\u5728\u4E0A\u9762\u3002", pinyin: "z\xE0i sh\xE0ng mi\xE0n.", english: "It is on top.", audio: "\u5728\u4E0A\u9762" },
+    interactiveScene: "positions",
+    parentGuide: "Use a book, backpack, and pencil case to act out each position before naming it.",
+    cultureGuide: "Position language becomes useful quickly in classroom directions, home routines, and simple games.",
+    activities: ["Tap to hear", "Find the position", "Say where it is"],
+    steps: [{ book: "3B", lesson: 3, title: "Positions", note: "Describe where objects are." }]
+  };
   var positionVisualItems = [
     ["\u4E0A\u548C\u4E0B", "sh\xE0ng h\xE9 xi\xE0", "up and down", "positions-up-down.webp"],
     ["\u91CC\u548C\u5916", "l\u01D0 h\xE9 w\xE0i", "inside and outside", "positions-inside-outside.webp"],
@@ -2172,20 +2186,7 @@
     clothesTopic,
     dailyLifeTopic,
     comparisonsTopic,
-    {
-      id: "positions",
-      title: "Positions & Directions",
-      summary: "Use up, down, inside, outside, and directions to describe where things are.",
-      progressLabel: "3B Lesson 3",
-      iconText: "\u4E0A\u4E0B",
-      iconColor: "#587d9c",
-      focus: { hanzi: "\u5728\u4E0A\u9762\u3002", pinyin: "z\xE0i sh\xE0ng mi\xE0n.", english: "It is on top.", audio: "\u5728\u4E0A\u9762" },
-      interactiveScene: "positions",
-      parentGuide: "Use a book, backpack, and pencil case to act out each position before naming it.",
-      cultureGuide: "Position language becomes useful quickly in classroom directions, home routines, and simple games.",
-      activities: ["Tap to hear", "Find the position", "Say where it is"],
-      steps: [{ book: "3B", lesson: 3, title: "Positions", note: "Describe where objects are." }]
-    },
+    positionsTopic,
     {
       id: "transport",
       title: "Transportation",

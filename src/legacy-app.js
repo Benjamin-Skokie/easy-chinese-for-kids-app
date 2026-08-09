@@ -4,7 +4,7 @@ import { timeDateWeekItems } from "./features/time-daily-life/weekdays.js";
 import { timeDateClockItems, timeDateExpressionItems, timeDateRoutineItems } from "./features/time-daily-life/time.js";
 import { datePracticeItems, timeDateDateItems, timeDateMonthItems } from "./features/time-daily-life/dates.js";
 import { comparisonPracticeItems, comparisonsTopic, comparisonVisualItems, comparisonWordItems } from "./features/time-daily-life/comparisons.js";
-import { positionPracticeItems, positionScenes, positionVisualItems } from "./features/time-daily-life/positions.js";
+import { positionPracticeItems, positionScenes, positionsTopic, positionVisualItems } from "./features/time-daily-life/positions.js";
 import { transportSentenceTokens, transportVisualItems } from "./features/time-daily-life/transport.js";
 import { dailyLifeTopic, roomScenes, roomSentenceTokens, roomVisualItems } from "./features/time-daily-life/rooms.js";
 import { stationeryPictureMatchChoices, stationeryPictureMatchEnglish, stationeryPictureMatchRounds, stationerySentenceBuilds, stationeryTopicData } from "./features/school-life/stationery.js";
@@ -552,20 +552,7 @@ const topicData = [
   clothesTopic,
   dailyLifeTopic,
   comparisonsTopic,
-  {
-    id: "positions",
-    title: "Positions & Directions",
-    summary: "Use up, down, inside, outside, and directions to describe where things are.",
-    progressLabel: "3B Lesson 3",
-    iconText: "上下",
-    iconColor: "#587d9c",
-    focus: { hanzi: "在上面。", pinyin: "zài shàng miàn.", english: "It is on top.", audio: "在上面" },
-    interactiveScene: "positions",
-    parentGuide: "Use a book, backpack, and pencil case to act out each position before naming it.",
-    cultureGuide: "Position language becomes useful quickly in classroom directions, home routines, and simple games.",
-    activities: ["Tap to hear", "Find the position", "Say where it is"],
-    steps: [{ book: "3B", lesson: 3, title: "Positions", note: "Describe where objects are." }]
-  },
+  positionsTopic,
   {
     id: "transport",
     title: "Transportation",

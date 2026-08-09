@@ -1,3 +1,18 @@
+export const positionsTopic = {
+  id: "positions",
+  title: "Positions & Directions",
+  summary: "Use up, down, inside, outside, and directions to describe where things are.",
+  progressLabel: "3B Lesson 3",
+  iconText: "上下",
+  iconColor: "#587d9c",
+  focus: { hanzi: "在上面。", pinyin: "zài shàng miàn.", english: "It is on top.", audio: "在上面" },
+  interactiveScene: "positions",
+  parentGuide: "Use a book, backpack, and pencil case to act out each position before naming it.",
+  cultureGuide: "Position language becomes useful quickly in classroom directions, home routines, and simple games.",
+  activities: ["Tap to hear", "Find the position", "Say where it is"],
+  steps: [{ book: "3B", lesson: 3, title: "Positions", note: "Describe where objects are." }]
+};
+
 export const positionVisualItems = [
     ["上和下", "shàng hé xià", "up and down", "positions-up-down.webp"],
     ["里和外", "lǐ hé wài", "inside and outside", "positions-inside-outside.webp"],
@@ -55,4 +70,3 @@ export const positionScenes = [
 ];
 
 export const positionPracticeItems = positionScenes.flatMap((scene) => scene.lines.map((line, index) => ({ id: `${scene.id}-${index}`, ...line, imagePath: scene.imagePath, imageAlt: scene.imageAlt })));
-
