@@ -150,6 +150,17 @@ test("feature runtimes initialize before the first landing-page render", () => {
   assert.ok(legacySource.indexOf("createFoundationsRuntime({") < initialRender);
 });
 
+test("navigation and landing-page behavior is separated from the legacy bootstrap", () => {
+  const legacySource = readFileSync("src/legacy-app.js", "utf8");
+  const runtimeSource = readFileSync("src/core/navigation-runtime.js", "utf8");
+  assert.match(legacySource, /createNavigationRuntime\(\{/);
+  assert.doesNotMatch(legacySource, /function openTopicPage\(/);
+  assert.doesNotMatch(legacySource, /function renderTopics\(/);
+  assert.match(runtimeSource, /export function createNavigationRuntime/);
+  assert.match(runtimeSource, /function openTopicPage\(/);
+  assert.match(runtimeSource, /function renderTopics\(/);
+});
+
 test("greetings interaction is owned by its feature controller", () => {
   const state = { ...createFoundationState(), tapAudioEnabled: false, selectedFocusItemId: null };
   const rendered = [];

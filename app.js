@@ -44,6 +44,636 @@
     return { speak: speak2, speakSceneLines: speakSceneLines2 };
   }
 
+  // src/core/navigation-runtime.js
+  function createNavigationRuntime(context) {
+    const { state: state2, topicData: topicData2, books: books2, topicGroups: topicGroups2, learningHomeCategories: learningHomeCategories2, bookHomeCategories: bookHomeCategories2, topicCardMeta: topicCardMeta2, topicPageUrl: topicPageUrl2, topicGroupsRoot: topicGroupsRoot2, bookSelect: bookSelect2, lessonSelect: lessonSelect2, lookupCard: lookupCard2, bookBrowser: bookBrowser2, topicPanel: topicPanel2, bookPanel: bookPanel2, detailLayout: detailLayout2, learningCultureNav: learningCultureNav2, renderFocusControls: renderFocusControls2, renderFocusDisplay: renderFocusDisplay2, renderFocusWordList: renderFocusWordList3, renderFocusExplorer: renderFocusExplorer2, renderActivityPanel: renderActivityPanel2, renderTopicDetail: renderTopicDetail2, updateDisplayControls: updateDisplayControls2, selectBookLesson: selectBookLesson2 } = context;
+    function currentTopic2() {
+      return topicData2.find((topic) => topic.id === state2.selectedTopicId) ?? topicData2[0];
+    }
+    function currentNumberStage2() {
+      const lesson = currentLesson2();
+      return numberStages.find((stage) => stage.bookId === currentBook2().id && stage.lesson === lesson.lesson) ?? numberStages[0];
+    }
+    function focusItemsForTopic2(topic = currentTopic2()) {
+      if (topic.id === "numbers") {
+        return numberStageItems();
+      }
+      if (topic.id === "weekdays") {
+        return timeDateWeekItems;
+      }
+      return topic.focusItems ?? [{ id: "focus", ...topic.focus }];
+    }
+    function currentFocusItem2() {
+      const items = focusItemsForTopic2();
+      return items.find((item) => item.id === state2.selectedFocusItemId) ?? items[0];
+    }
+    function shuffleArray2(items) {
+      const copy = [...items];
+      for (let index = copy.length - 1; index > 0; index -= 1) {
+        const swapIndex = Math.floor(Math.random() * (index + 1));
+        [copy[index], copy[swapIndex]] = [copy[swapIndex], copy[index]];
+      }
+      return copy;
+    }
+    function topicById2(topicId) {
+      return topicData2.find((topic) => topic.id === topicId);
+    }
+    function selectedTopicGroupId2() {
+      return topicGroups2.find((group) => group.topicIds.includes(state2.selectedTopicId))?.id ?? topicGroups2[0].id;
+    }
+    function bookById2(bookId) {
+      return books2.find((book) => book.id === bookId) ?? books2[0];
+    }
+    function bookCategoryForBook2(bookId) {
+      return bookHomeCategories2.find((category) => category.bookIds.includes(bookId)) ?? bookHomeCategories2[0];
+    }
+    function currentBook2() {
+      return bookById2(state2.selectedBookId);
+    }
+    function currentLesson2() {
+      const book = currentBook2();
+      const exactLesson = book.lessons.find((lesson) => lesson.lesson === state2.selectedLessonNumber);
+      if (exactLesson && exactLesson.topicId === state2.selectedTopicId) {
+        return exactLesson;
+      }
+      return book.lessons.find((lesson) => lesson.topicId === state2.selectedTopicId) ?? book.lessons[0];
+    }
+    function syncBookSelectionFromTopic2() {
+      const topic = currentTopic2();
+      const firstMatch = books2.find(
+        (book) => book.lessons.some((lesson) => topic.steps.some((step) => book.id === step.book.toLowerCase() && step.lesson === lesson.lesson))
+      );
+      if (firstMatch) {
+        state2.selectedBookId = firstMatch.id;
+        state2.selectedBookCategoryId = bookCategoryForBook2(firstMatch.id).id;
+      }
+      syncLessonSelectionFromTopic2();
+    }
+    function syncLessonSelectionFromTopic2() {
+      const book = currentBook2();
+      const firstMatch = book.lessons.find((lesson) => lesson.topicId === state2.selectedTopicId) ?? book.lessons[0];
+      state2.selectedLessonNumber = firstMatch.lesson;
+    }
+    function focusLearningPanel2() {
+      if (!detailLayout2) {
+        return;
+      }
+      scrollToSectionTop2(detailLayout2);
+    }
+    function scrollToSectionTop2(element) {
+      if (!element) {
+        return;
+      }
+      const root = document.documentElement;
+      const previousScrollBehavior = root.style.scrollBehavior;
+      const stickyNavHeight = learningCultureNav2?.getBoundingClientRect().height ?? 0;
+      const targetTop = Math.max(0, window.scrollY + element.getBoundingClientRect().top - stickyNavHeight);
+      root.style.scrollBehavior = "auto";
+      window.scrollTo(0, targetTop);
+      root.style.scrollBehavior = previousScrollBehavior;
+    }
+    function narrowTopicBrowserTo2(groupId) {
+      state2.openTopicGroups = /* @__PURE__ */ new Set([groupId]);
+    }
+    function categoryIdForTopic2(topicId) {
+      return learningHomeCategories2.find((category) => category.topicIds.includes(topicId))?.id ?? "foundations";
+    }
+    function updateTopicPageVisibility2() {
+      detailLayout2?.classList.toggle("is-hidden", !state2.topicPageOpen);
+      document.body.classList.toggle("is-topic-page", state2.topicPageOpen);
+    }
+    function scrollCategorySectionIntoView2(categoryId) {
+      requestAnimationFrame(() => {
+        scrollToSectionTop2(document.getElementById(categoryId));
+      });
+    }
+    function openTopicPage2(topicId, options = {}) {
+      const topic = topicById2(topicId);
+      if (!topic) {
+        return;
+      }
+      state2.selectedTopicId = topic.id;
+      state2.expandedCategoryId = categoryIdForTopic2(topic.id);
+      state2.topicPageOpen = true;
+      renderTopics2();
+      renderBooks2();
+      renderTopicDetail2();
+      updateTopicPageVisibility2();
+      const nextUrl = topicPageUrl2(window.location, topic.id);
+      if (options.replace) {
+        window.history.replaceState(null, "", nextUrl);
+      } else {
+        window.history.pushState(null, "", nextUrl);
+      }
+      if (options.scroll !== false) {
+        focusLearningPanel2();
+      }
+    }
+    function switchView2(view) {
+      state2.currentView = view;
+      document.querySelectorAll(".view-tab").forEach((button) => {
+        const isActive = button.dataset.view === view;
+        button.classList.toggle("is-active", isActive);
+        button.setAttribute("aria-selected", String(isActive));
+      });
+      topicPanel2.classList.toggle("is-hidden", view !== "topics");
+      bookPanel2.classList.toggle("is-hidden", view !== "books");
+      document.querySelectorAll("[data-global-view]").forEach((item) => {
+        item.classList.toggle("is-active", item.dataset.globalView === view);
+      });
+      renderStickyNav2();
+      updateLearningCultureNav2();
+    }
+    function toggleTopicGroup2(groupId) {
+      if (state2.openTopicGroups.has(groupId)) {
+        state2.openTopicGroups.delete(groupId);
+      } else {
+        state2.openTopicGroups.add(groupId);
+      }
+      renderTopics2();
+    }
+    function renderTopicScene2(topic) {
+      const style = `background: linear-gradient(180deg, ${topic.iconColor}, ${topic.iconColor}dd); --topic-accent:${topic.iconAccent ?? "#f5d9a6"};`;
+      if (topic.id === "numbers") {
+        return `
+      <span class="topic-scene topic-scene-art topic-scene-numbers" style="${style}">
+        <span class="topic-scene-dots" aria-hidden="true">
+          <span></span><span></span><span></span><span></span><span></span>
+        </span>
+        <span class="topic-scene-chip-row" aria-hidden="true">
+          <span class="topic-scene-chip">\u4E00</span>
+          <span class="topic-scene-chip">\u4E8C</span>
+          <span class="topic-scene-chip">\u4E09</span>
+        </span>
+      </span>
+    `;
+      }
+      if (topic.id === "multiplication-rhyme") {
+        return `
+      <span class="topic-scene topic-scene-art topic-scene-rhyme" style="${style}">
+        <span class="topic-scene-rhyme-row" aria-hidden="true">
+          <span class="topic-scene-chip">\u4E5D</span>
+          <span class="topic-scene-chip">\u4E5D</span>
+          <span class="topic-scene-chip topic-scene-chip-accent">81</span>
+        </span>
+        <span class="topic-scene-rhythm-bars" aria-hidden="true">
+          <span></span><span></span><span></span><span></span>
+        </span>
+      </span>
+    `;
+      }
+      if (topic.id === "greetings") {
+        return `
+      <span class="topic-scene topic-scene-art topic-scene-greetings" style="${style}">
+        <span class="topic-scene-bubble topic-scene-bubble-left" aria-hidden="true">\u4F60</span>
+        <span class="topic-scene-bubble topic-scene-bubble-right" aria-hidden="true">\u597D</span>
+        <span class="topic-scene-spark topic-scene-spark-top" aria-hidden="true"></span>
+      </span>
+    `;
+      }
+      if (topic.id === "polite-words") {
+        return `
+      <span class="topic-scene topic-scene-art topic-scene-polite" style="${style}">
+        <span class="topic-scene-bubble topic-scene-bubble-wide" aria-hidden="true">\u8C22\u8C22</span>
+        <span class="topic-scene-heart" aria-hidden="true"></span>
+      </span>
+    `;
+      }
+      if (topic.id === "introductions") {
+        return `
+      <span class="topic-scene topic-scene-art topic-scene-intro" style="${style}">
+        <span class="topic-scene-name-tag" aria-hidden="true">\u6211\u53EB</span>
+        <span class="topic-scene-faces" aria-hidden="true">
+          <span></span><span></span>
+        </span>
+      </span>
+    `;
+      }
+      if (topic.id === "age") {
+        return `
+      <span class="topic-scene topic-scene-art topic-scene-age" style="${style}">
+        <span class="topic-scene-pill topic-scene-pill-age" aria-hidden="true">\u516D\u5C81</span>
+        <span class="topic-scene-pill topic-scene-pill-grade" aria-hidden="true">\u4E00\u5E74\u7EA7</span>
+      </span>
+    `;
+      }
+      return `<span class="topic-scene" style="background:${topic.iconColor};">${topic.iconText}</span>`;
+    }
+    function displayControlsMarkup2() {
+      return `
+    <span class="learning-display-controls" aria-label="Display options">
+      <button class="learning-display-toggle" type="button" data-display-toggle="sound"></button>
+      <button class="learning-display-toggle" type="button" data-display-toggle="pinyin"></button>
+      <button class="learning-display-toggle" type="button" data-display-toggle="english"></button>
+    </span>
+  `;
+    }
+    function bindDisplayControls2() {
+      learningCultureNav2.querySelectorAll("[data-display-toggle]").forEach((button) => {
+        button.addEventListener("click", () => {
+          if (button.dataset.displayToggle === "sound") {
+            state2.tapAudioEnabled = !state2.tapAudioEnabled;
+          } else if (button.dataset.displayToggle === "pinyin") {
+            state2.showPinyin = !state2.showPinyin;
+          } else {
+            state2.showEnglish = !state2.showEnglish;
+          }
+          updateDisplayControls2();
+        });
+      });
+    }
+    function renderTopicStickyNav2() {
+      const categoriesMarkup = learningHomeCategories2.map(
+        (category) => `
+        <button
+          class="learning-culture-nav-item${category.id === state2.expandedCategoryId ? " active" : ""}"
+          type="button"
+          data-target="${category.id}"
+          style="--category-accent: ${category.accent};"
+          ${category.id === state2.expandedCategoryId ? 'aria-current="true"' : ""}
+        >
+          <span class="zh">${category.zhTitle}</span>
+          <span class="en">${category.enTitle}</span>
+        </button>
+      `
+      ).join("");
+      learningCultureNav2.innerHTML = `
+    <span class="learning-culture-nav-items">${categoriesMarkup}</span>
+    ${displayControlsMarkup2()}
+  `;
+      bindDisplayControls2();
+      learningCultureNav2.querySelectorAll("[data-target]").forEach((button) => {
+        button.addEventListener("click", () => {
+          state2.expandedCategoryId = button.dataset.target;
+          state2.topicPageOpen = false;
+          renderTopics2();
+          updateTopicPageVisibility2();
+          window.history.pushState(null, "", "#topics-panel");
+          scrollCategorySectionIntoView2(button.dataset.target);
+        });
+      });
+    }
+    function bookAccent2(index) {
+      const accents = ["#be5b49", "#aa7051", "#517b8d", "#6d8a4f", "#c48d46", "#6f7fa4", "#8f6988", "#b8863e"];
+      return accents[index % accents.length];
+    }
+    function renderBookStickyNav2() {
+      const categoriesMarkup = bookHomeCategories2.map((category) => {
+        const isActive = category.id === state2.selectedBookCategoryId;
+        return `
+        <button
+          class="learning-culture-nav-item book-nav-item${isActive ? " active" : ""}"
+          type="button"
+          data-book-category-target="${category.id}"
+          style="--category-accent: ${category.accent};"
+          ${isActive ? 'aria-current="true"' : ""}
+        >
+          <span class="zh">${category.zhTitle}</span>
+          <span class="en">${category.bookIds.length} books</span>
+        </button>
+      `;
+      }).join("");
+      learningCultureNav2.innerHTML = `
+    <span class="learning-culture-nav-items">${categoriesMarkup}</span>
+    ${displayControlsMarkup2()}
+  `;
+      bindDisplayControls2();
+      learningCultureNav2.querySelectorAll("[data-book-category-target]").forEach((button) => {
+        button.addEventListener("click", () => {
+          const selectedCategory = bookHomeCategories2.find((entry) => entry.id === button.dataset.bookCategoryTarget);
+          if (!selectedCategory) {
+            return;
+          }
+          state2.selectedBookCategoryId = selectedCategory.id;
+          if (!selectedCategory.bookIds.includes(state2.selectedBookId)) {
+            const selectedBook = bookById2(selectedCategory.bookIds[0]);
+            state2.selectedBookId = selectedBook.id;
+            state2.selectedLessonNumber = selectedBook.lessons[0].lesson;
+            state2.selectedTopicId = selectedBook.lessons[0].topicId;
+          }
+          state2.topicPageOpen = false;
+          renderBooks2();
+          renderTopicDetail2();
+          updateTopicPageVisibility2();
+          document.getElementById(`book-category-${selectedCategory.id}`)?.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+          });
+        });
+      });
+    }
+    function renderStickyNav2() {
+      if (!learningCultureNav2) {
+        return;
+      }
+      if (state2.currentView === "books") {
+        renderBookStickyNav2();
+      } else {
+        renderTopicStickyNav2();
+      }
+      renderFocusControls2();
+    }
+    function categoryIconMarkup2(category) {
+      if (category.iconEmoji) {
+        return `<span class="category-emoji-icon category-emoji-icon-${category.id}">${category.iconEmoji}</span>`;
+      }
+      return `
+    <img
+      class="category-generated-icon category-generated-icon-${category.id}"
+      src="${category.iconSrc}"
+      alt=""
+      loading="lazy"
+      decoding="async"
+    />
+  `;
+    }
+    function renderTopics2() {
+      topicGroupsRoot2.innerHTML = "";
+      renderStickyNav2();
+      const board = document.createElement("div");
+      board.className = "learning-home-board";
+      learningHomeCategories2.forEach((category) => {
+        const card = document.createElement("article");
+        card.className = "learning-home-card";
+        card.style.setProperty("--category-accent", category.accent);
+        if (category.id === state2.expandedCategoryId) {
+          card.classList.add("is-selected");
+        }
+        card.innerHTML = `
+      <button class="learning-home-card-main" type="button" aria-label="Open ${category.enTitle}">
+        <span class="learning-card-count">${category.topicIds.length} topics</span>
+        <span class="learning-home-card-icon" aria-hidden="true">${categoryIconMarkup2(category)}</span>
+        <span class="topic-copy">
+          <span class="topic-zh-title">${category.zhTitle}</span>
+          <span class="topic-row-title">${category.enTitle}</span>
+          <span class="topic-row-meta">${category.hint}</span>
+        </span>
+      </button>
+    `;
+        card.querySelector(".learning-home-card-main").addEventListener("click", () => {
+          state2.expandedCategoryId = category.id;
+          renderTopics2();
+          scrollCategorySectionIntoView2(category.id);
+        });
+        board.appendChild(card);
+      });
+      topicGroupsRoot2.appendChild(board);
+      learningHomeCategories2.forEach((category) => {
+        const section = document.createElement("section");
+        section.className = "learning-category-section";
+        section.id = category.id;
+        section.style.setProperty("--category-accent", category.accent);
+        section.innerHTML = `
+      <div class="learning-category-head">
+        <span class="learning-category-head-icon" aria-hidden="true">${categoryIconMarkup2(category)}</span>
+        <div>
+          <h3>${category.zhTitle}</h3>
+          <h4>${category.enTitle}</h4>
+          <p>${category.hint}</p>
+        </div>
+      </div>
+      <div class="category-topic-grid">
+        ${category.topicIds.map((topicId) => topicById2(topicId)).filter(Boolean).map((topic) => {
+          const meta = topicCardMeta2[topic.id] ?? {};
+          return `
+              <a class="category-topic-card${topic.id === state2.selectedTopicId ? " is-selected" : ""}" href="${topicPageUrl2(window.location, topic.id)}" data-topic-id="${topic.id}">
+                <span class="category-topic-zh">${meta.zhTitle ?? topic.iconText}</span>
+                <span class="category-topic-en">${meta.enTitle ?? topic.title}</span>
+                <span class="category-topic-hint">${meta.hint ?? topic.progressLabel}</span>
+              </a>
+            `;
+        }).join("")}
+      </div>
+    `;
+        section.querySelectorAll("[data-topic-id]").forEach((link) => {
+          link.addEventListener("click", (event) => {
+            if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) {
+              return;
+            }
+            event.preventDefault();
+            try {
+              openTopicPage2(link.dataset.topicId);
+            } catch (error) {
+              console.error("Could not open topic in place.", error);
+            }
+          });
+        });
+        topicGroupsRoot2.appendChild(section);
+      });
+      updateLearningCultureNav2();
+    }
+    function renderBooks2() {
+      bookSelect2.innerHTML = books2.map((book2) => `<option value="${book2.id}">${book2.label}</option>`).join("");
+      bookSelect2.value = state2.selectedBookId;
+      const book = currentBook2();
+      state2.selectedBookCategoryId = bookCategoryForBook2(book.id).id;
+      lessonSelect2.innerHTML = book.lessons.map(
+        (lesson) => `<option value="${lesson.lesson}">Lesson ${lesson.lesson}: ${lesson.title}</option>`
+      ).join("");
+      const activeLesson = currentLesson2();
+      lessonSelect2.value = String(activeLesson.lesson);
+      bookBrowser2.innerHTML = `
+    <div class="learning-home-board book-home-board">
+      ${bookHomeCategories2.map((category) => {
+        const isSelected = category.id === state2.selectedBookCategoryId;
+        return `
+            <article class="learning-home-card book-home-card${isSelected ? " is-selected" : ""}" style="--category-accent: ${category.accent};">
+              <button class="learning-home-card-main" type="button" data-book-category-card="${category.id}" aria-label="Open ${category.enTitle}">
+                <span class="learning-card-count">${category.bookIds.length} books</span>
+                <span class="learning-home-card-icon" aria-hidden="true">
+                  <span class="category-emoji-icon category-emoji-icon-${category.id}">${category.iconEmoji}</span>
+                </span>
+                <span class="topic-copy">
+                  <span class="topic-zh-title">${category.zhTitle}</span>
+                  <span class="topic-row-title">${category.enTitle}</span>
+                  <span class="topic-row-meta">${category.hint}</span>
+                </span>
+              </button>
+            </article>
+          `;
+      }).join("")}
+    </div>
+  `;
+      lookupCard2.innerHTML = bookHomeCategories2.map((category) => {
+        const booksInCategory = category.bookIds.map((bookId) => bookById2(bookId));
+        const isActiveCategory = category.id === state2.selectedBookCategoryId;
+        const selectedBookInCategory = booksInCategory.find((entry) => entry.id === state2.selectedBookId) ?? booksInCategory[0];
+        const selectedBookIndex = books2.findIndex((entry) => entry.id === selectedBookInCategory.id);
+        return `
+        <section
+          class="learning-category-section book-category-section${isActiveCategory ? " is-selected" : ""}"
+          id="book-category-${category.id}"
+          style="--category-accent: ${category.accent}; --book-accent: ${bookAccent2(Math.max(selectedBookIndex, 0))};"
+        >
+          <div class="learning-category-head">
+            <span class="learning-category-head-icon" aria-hidden="true">
+              <span class="category-emoji-icon category-emoji-icon-${category.id}">${category.iconEmoji}</span>
+            </span>
+            <div>
+              <h3>${category.zhTitle}</h3>
+              <h4>${category.enTitle}</h4>
+              <p>${category.hint}</p>
+            </div>
+          </div>
+          <div class="book-category-grid">
+            ${booksInCategory.map((entry) => {
+          const firstTopic = topicById2(entry.lessons[0]?.topicId);
+          const isSelectedBook = entry.id === selectedBookInCategory.id;
+          const entryIndex = books2.findIndex((bookEntry) => bookEntry.id === entry.id);
+          return `
+                  <button
+                    class="book-browser-card book-category-book-card${isSelectedBook ? " is-selected" : ""}"
+                    style="--book-accent: ${bookAccent2(Math.max(entryIndex, 0))}"
+                    type="button"
+                    data-book-browser="${entry.id}"
+                  >
+                    <span>${entry.label}</span>
+                    <small>${entry.lessons.length} lessons</small>
+                    <em>${firstTopic?.title ?? "Chinese practice"}</em>
+                  </button>
+                `;
+        }).join("")}
+          </div>
+          <div class="book-category-lessons">
+            <div class="book-category-lessons-head">
+              <div>
+                <span class="progress-label">Lessons</span>
+                <h3>${selectedBookInCategory.label}</h3>
+                <p>Pick a lesson to open the matching topic practice.</p>
+              </div>
+            </div>
+            <div class="book-lesson-grid">
+              ${selectedBookInCategory.lessons.map((lesson) => {
+          const lessonTopic = topicById2(lesson.topicId);
+          const isSelectedLesson = selectedBookInCategory.id === book.id && lesson.lesson === activeLesson.lesson;
+          return `
+                    <button
+                      class="book-lesson-card${isSelectedLesson ? " is-selected" : ""}"
+                      type="button"
+                      data-book-lesson="${selectedBookInCategory.id}:${lesson.lesson}"
+                    >
+                      <span>Lesson ${lesson.lesson}</span>
+                      <strong>${lesson.title}</strong>
+                      <small>${lessonTopic?.title ?? "Topic practice"}</small>
+                    </button>
+                  `;
+        }).join("")}
+            </div>
+          </div>
+        </section>
+      `;
+      }).join("");
+      bookBrowser2.querySelectorAll("[data-book-category-card]").forEach((button) => {
+        button.addEventListener("click", () => {
+          const category = bookHomeCategories2.find((entry) => entry.id === button.dataset.bookCategoryCard);
+          if (!category) {
+            return;
+          }
+          state2.selectedBookCategoryId = category.id;
+          if (!category.bookIds.includes(state2.selectedBookId)) {
+            const selectedBook = bookById2(category.bookIds[0]);
+            state2.selectedBookId = selectedBook.id;
+            state2.selectedLessonNumber = selectedBook.lessons[0].lesson;
+            state2.selectedTopicId = selectedBook.lessons[0].topicId;
+          }
+          renderBooks2();
+          document.getElementById(`book-category-${category.id}`)?.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+          });
+        });
+      });
+      lookupCard2.querySelectorAll("[data-book-browser]").forEach((button) => {
+        button.addEventListener("click", () => {
+          const selectedBook = books2.find((entry) => entry.id === button.dataset.bookBrowser);
+          if (!selectedBook) {
+            return;
+          }
+          state2.selectedBookCategoryId = bookCategoryForBook2(selectedBook.id).id;
+          state2.selectedBookId = selectedBook.id;
+          state2.selectedLessonNumber = selectedBook.lessons[0].lesson;
+          state2.selectedTopicId = selectedBook.lessons[0].topicId;
+          renderBooks2();
+          renderTopicDetail2();
+          document.getElementById(`book-category-${state2.selectedBookCategoryId}`)?.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+          });
+        });
+      });
+      lookupCard2.querySelectorAll("[data-book-lesson]").forEach((button) => {
+        button.addEventListener("click", () => {
+          const [bookId, lessonNumber] = button.dataset.bookLesson.split(":");
+          selectBookLesson2(bookId, Number(lessonNumber));
+        });
+      });
+      renderStickyNav2();
+    }
+    function updateLearningCultureNav2() {
+      if (!learningCultureNav2) {
+        return;
+      }
+      if (state2.currentView === "books" && !bookPanel2.classList.contains("is-hidden")) {
+        const bookBoard = bookBrowser2.querySelector(".book-home-board");
+        const bookSections = lookupCard2.querySelectorAll(".book-category-section");
+        const bookNavItems = learningCultureNav2.querySelectorAll("[data-book-category-target]");
+        const showBookNav = bookBoard && window.scrollY > bookBoard.offsetTop + bookBoard.offsetHeight - 60;
+        learningCultureNav2.classList.toggle("visible", showBookNav);
+        if (!showBookNav) {
+          return;
+        }
+        let activeCategoryId = state2.selectedBookCategoryId;
+        const scrollY2 = window.scrollY + 120;
+        bookSections.forEach((section) => {
+          if (section.offsetTop <= scrollY2) {
+            activeCategoryId = section.id.replace("book-category-", "");
+          }
+        });
+        bookNavItems.forEach((item) => {
+          const isActive = item.dataset.bookCategoryTarget === activeCategoryId;
+          item.classList.toggle("active", isActive);
+          item.toggleAttribute("aria-current", isActive);
+        });
+        return;
+      }
+      const cardGrid = topicGroupsRoot2.querySelector(".learning-home-board");
+      const sections = topicGroupsRoot2.querySelectorAll(".learning-category-section");
+      const navItems = learningCultureNav2.querySelectorAll("[data-target]");
+      if (state2.topicPageOpen) {
+        learningCultureNav2.classList.add("visible");
+        const activeCategoryId = state2.expandedCategoryId ?? categoryIdForTopic2(state2.selectedTopicId);
+        navItems.forEach((item) => {
+          const isActive = item.dataset.target === activeCategoryId;
+          item.classList.toggle("active", isActive);
+          item.toggleAttribute("aria-current", isActive);
+        });
+        return;
+      }
+      if (!cardGrid || state2.currentView !== "topics" || topicPanel2.classList.contains("is-hidden")) {
+        learningCultureNav2.classList.remove("visible");
+        return;
+      }
+      const showNav = window.scrollY > cardGrid.offsetTop + cardGrid.offsetHeight - 60;
+      learningCultureNav2.classList.toggle("visible", showNav);
+      if (!showNav) {
+        return;
+      }
+      let current = "";
+      const scrollY = window.scrollY + 120;
+      sections.forEach((section) => {
+        if (section.offsetTop <= scrollY) {
+          current = section.id;
+        }
+      });
+      navItems.forEach((item) => {
+        const isActive = item.dataset.target === current;
+        item.classList.toggle("active", isActive);
+        item.toggleAttribute("aria-current", isActive);
+      });
+    }
+    return { currentTopic: currentTopic2, currentNumberStage: currentNumberStage2, focusItemsForTopic: focusItemsForTopic2, currentFocusItem: currentFocusItem2, shuffleArray: shuffleArray2, topicById: topicById2, selectedTopicGroupId: selectedTopicGroupId2, bookById: bookById2, bookCategoryForBook: bookCategoryForBook2, currentBook: currentBook2, currentLesson: currentLesson2, syncBookSelectionFromTopic: syncBookSelectionFromTopic2, syncLessonSelectionFromTopic: syncLessonSelectionFromTopic2, focusLearningPanel: focusLearningPanel2, scrollToSectionTop: scrollToSectionTop2, narrowTopicBrowserTo: narrowTopicBrowserTo2, categoryIdForTopic: categoryIdForTopic2, updateTopicPageVisibility: updateTopicPageVisibility2, scrollCategorySectionIntoView: scrollCategorySectionIntoView2, openTopicPage: openTopicPage2, switchView: switchView2, toggleTopicGroup: toggleTopicGroup2, renderTopicScene: renderTopicScene2, displayControlsMarkup: displayControlsMarkup2, bindDisplayControls: bindDisplayControls2, renderTopicStickyNav: renderTopicStickyNav2, bookAccent: bookAccent2, renderBookStickyNav: renderBookStickyNav2, renderStickyNav: renderStickyNav2, categoryIconMarkup: categoryIconMarkup2, renderTopics: renderTopics2, renderBooks: renderBooks2, updateLearningCultureNav: updateLearningCultureNav2 };
+  }
+
   // src/core/router.js
   function viewFromLocation(location) {
     const params = new URLSearchParams(location.search);
@@ -60,7 +690,7 @@
   }
 
   // src/features/time-daily-life/weekdays.js
-  var timeDateWeekItems = [
+  var timeDateWeekItems2 = [
     ["monday", "\u661F\u671F\u4E00", "x\u012Bng q\u012B y\u012B", "Monday", "\u661F\u671F\u4E00\uFF0C\u6211\u4EEC\u5750\u6821\u8F66\u53BB\u5B66\u6821\u3002", "x\u012Bng q\u012B y\u012B, w\u01D2 men zu\xF2 xi\xE0o ch\u0113 q\xF9 xu\xE9 xi\xE0o.", "On Monday, we take the school bus to school.", "Monday.webp"],
     ["tuesday", "\u661F\u671F\u4E8C", "x\u012Bng q\u012B \xE8r", "Tuesday", "\u661F\u671F\u4E8C\uFF0C\u6211\u4EEC\u4E0A\u4F53\u80B2\u8BFE\u3002", "x\u012Bng q\u012B \xE8r, w\u01D2 men sh\xE0ng t\u01D0 y\xF9 k\xE8.", "On Tuesday, we have PE class.", "Tuesday.webp"],
     ["wednesday", "\u661F\u671F\u4E09", "x\u012Bng q\u012B s\u0101n", "Wednesday", "\u661F\u671F\u4E09\uFF0C\u6211\u4EEC\u4E0A\u7F8E\u672F\u8BFE\u3002", "x\u012Bng q\u012B s\u0101n, w\u01D2 men sh\xE0ng m\u011Bi sh\xF9 k\xE8.", "On Wednesday, we have art class.", "Wednesday.webp"],
@@ -3456,7 +4086,7 @@
     9: { hanzi: "\u4E5D", pinyin: "ji\u01D4" },
     10: { hanzi: "\u5341", pinyin: "sh\xED" }
   };
-  var numberStages = [
+  var numberStages2 = [
     {
       id: "1a-1",
       bookId: "1a",
@@ -3721,8 +4351,8 @@
 
   // src/features/foundations/foundations-runtime.js
   function createFoundationsRuntime(context) {
-    const { state: state2, numberHanzi: numberHanzi2, numberPinyin: numberPinyin2, buildNumberItem: buildNumberItem2, numberStages: numberStages2, telephonePractice: telephonePractice2, familyGameItemIds: familyGameItemIds2, familyPersonIdsByItemId: familyPersonIdsByItemId2, familyHeadshotsByItemId: familyHeadshotsByItemId2, familyPractice: familyPractice2, illustratedFamily: illustratedFamily2, illustratedKids: illustratedKids2, bodyBonusItemIds: bodyBonusItemIds2, bodyCoreItemIds: bodyCoreItemIds2, bodyDiagramLayout: bodyDiagramLayout2, identityConversation: identityConversation2, identityCountries: identityCountries2, identityQuestion: identityQuestion2, topicById: topicById2, focusItemsForTopic: focusItemsForTopic2, currentTopic: currentTopic2, currentNumberStage: currentNumberStage2, currentFocusItem: currentFocusItem2, currentBook: currentBook2, currentLesson: currentLesson2, shuffleArray: shuffleArray2, speak: speak2, speakSceneLines: speakSceneLines2, renderActivityPanel: renderActivityPanel2, renderFocusDisplay: renderFocusDisplay2, renderFocusExplorer: renderFocusExplorer2, renderFocusStatus: renderFocusStatus2, selectFocusItem: selectFocusItem2, focusExplorer: focusExplorer2, focusStatus: focusStatus2 } = context;
-    function numberStageItems2(stage = currentNumberStage2()) {
+    const { state: state2, numberHanzi: numberHanzi2, numberPinyin: numberPinyin2, buildNumberItem: buildNumberItem2, numberStages: numberStages3, telephonePractice: telephonePractice2, familyGameItemIds: familyGameItemIds2, familyPersonIdsByItemId: familyPersonIdsByItemId2, familyHeadshotsByItemId: familyHeadshotsByItemId2, familyPractice: familyPractice2, illustratedFamily: illustratedFamily2, illustratedKids: illustratedKids2, bodyBonusItemIds: bodyBonusItemIds2, bodyCoreItemIds: bodyCoreItemIds2, bodyDiagramLayout: bodyDiagramLayout2, identityConversation: identityConversation2, identityCountries: identityCountries2, identityQuestion: identityQuestion2, topicById: topicById2, focusItemsForTopic: focusItemsForTopic2, currentTopic: currentTopic2, currentNumberStage: currentNumberStage2, currentFocusItem: currentFocusItem2, currentBook: currentBook2, currentLesson: currentLesson2, shuffleArray: shuffleArray2, speak: speak2, speakSceneLines: speakSceneLines2, renderActivityPanel: renderActivityPanel2, renderFocusDisplay: renderFocusDisplay2, renderFocusExplorer: renderFocusExplorer2, renderFocusStatus: renderFocusStatus2, selectFocusItem: selectFocusItem2, focusExplorer: focusExplorer2, focusStatus: focusStatus2 } = context;
+    function numberStageItems3(stage = currentNumberStage2()) {
       const start = Math.min(stage.start, stage.end);
       const end = Math.max(stage.start, stage.end);
       const items = [];
@@ -3733,7 +4363,7 @@
     }
     function resetNumberChallenge2(options = {}) {
       const stage = currentNumberStage2();
-      const items = numberStageItems2(stage);
+      const items = numberStageItems3(stage);
       const pool = items.map((entry) => entry.value);
       const targetValue = pool[Math.floor(Math.random() * pool.length)];
       const distractors = shuffleArray2(pool.filter((value) => value !== targetValue)).slice(
@@ -4752,7 +5382,7 @@
         });
       });
     }
-    return { numberStageItems: numberStageItems2, resetNumberChallenge: resetNumberChallenge2, ensureNumberChallenge: ensureNumberChallenge2, resetMathChallenge: resetMathChallenge2, ensureMathChallenge: ensureMathChallenge2, familyGameItems: familyGameItems2, familyPersonForItemId: familyPersonForItemId2, familyHeadshotForItemId: familyHeadshotForItemId2, isFamilySentenceItemId: isFamilySentenceItemId2, familyBookWordItems: familyBookWordItems2, usesLessonTemplate: usesLessonTemplate2, bookWordItemsForTopic: bookWordItemsForTopic2, usefulNoteForTopic: usefulNoteForTopic2, familyWordForPersonId: familyWordForPersonId2, resetFamilyChallenge: resetFamilyChallenge2, ensureFamilyChallenge: ensureFamilyChallenge2, resetListenChallengeResult: resetListenChallengeResult2, handleFamilyChallengePlay: handleFamilyChallengePlay2, handleFamilyChallengeGuess: handleFamilyChallengeGuess2, resetFamilyMatchGame: resetFamilyMatchGame2, ensureFamilyMatchGame: ensureFamilyMatchGame2, handleFamilyMatchPhrase: handleFamilyMatchPhrase2, handleFamilyMatchAttempt: handleFamilyMatchAttempt2, mathChallengeAudioText: mathChallengeAudioText2, handleMathChallengeSubmit: handleMathChallengeSubmit2, handleNumberChallengeGuess: handleNumberChallengeGuess2, bodyMatchItems: bodyMatchItems2, nextBodyRound: nextBodyRound2, resetBodyMatchGame: resetBodyMatchGame2, ensureBodyMatchGame: ensureBodyMatchGame2, handleBodyMatchChinese: handleBodyMatchChinese2, handleBodyMatchAttempt: handleBodyMatchAttempt2, numberWordListItems: numberWordListItems2, renderBodyLabelButton: renderBodyLabelButton2, renderBodyExplorer: renderBodyExplorer2, renderNumberVisual: renderNumberVisual2, renderNumbersExplorer: renderNumbersExplorer2, renderTelephoneExplorer: renderTelephoneExplorer2, renderFamilyHomeVisual: renderFamilyHomeVisual2, renderFamilyExplorer: renderFamilyExplorer2, renderIdentityExplorer: renderIdentityExplorer2 };
+    return { numberStageItems: numberStageItems3, resetNumberChallenge: resetNumberChallenge2, ensureNumberChallenge: ensureNumberChallenge2, resetMathChallenge: resetMathChallenge2, ensureMathChallenge: ensureMathChallenge2, familyGameItems: familyGameItems2, familyPersonForItemId: familyPersonForItemId2, familyHeadshotForItemId: familyHeadshotForItemId2, isFamilySentenceItemId: isFamilySentenceItemId2, familyBookWordItems: familyBookWordItems2, usesLessonTemplate: usesLessonTemplate2, bookWordItemsForTopic: bookWordItemsForTopic2, usefulNoteForTopic: usefulNoteForTopic2, familyWordForPersonId: familyWordForPersonId2, resetFamilyChallenge: resetFamilyChallenge2, ensureFamilyChallenge: ensureFamilyChallenge2, resetListenChallengeResult: resetListenChallengeResult2, handleFamilyChallengePlay: handleFamilyChallengePlay2, handleFamilyChallengeGuess: handleFamilyChallengeGuess2, resetFamilyMatchGame: resetFamilyMatchGame2, ensureFamilyMatchGame: ensureFamilyMatchGame2, handleFamilyMatchPhrase: handleFamilyMatchPhrase2, handleFamilyMatchAttempt: handleFamilyMatchAttempt2, mathChallengeAudioText: mathChallengeAudioText2, handleMathChallengeSubmit: handleMathChallengeSubmit2, handleNumberChallengeGuess: handleNumberChallengeGuess2, bodyMatchItems: bodyMatchItems2, nextBodyRound: nextBodyRound2, resetBodyMatchGame: resetBodyMatchGame2, ensureBodyMatchGame: ensureBodyMatchGame2, handleBodyMatchChinese: handleBodyMatchChinese2, handleBodyMatchAttempt: handleBodyMatchAttempt2, numberWordListItems: numberWordListItems2, renderBodyLabelButton: renderBodyLabelButton2, renderBodyExplorer: renderBodyExplorer2, renderNumberVisual: renderNumberVisual2, renderNumbersExplorer: renderNumbersExplorer2, renderTelephoneExplorer: renderTelephoneExplorer2, renderFamilyHomeVisual: renderFamilyHomeVisual2, renderFamilyExplorer: renderFamilyExplorer2, renderIdentityExplorer: renderIdentityExplorer2 };
   }
 
   // src/features/time-daily-life/state.js
@@ -4822,12 +5452,12 @@
 
   // src/features/time-daily-life/time-daily-life-runtime.js
   function createTimeDailyLifeRuntime(context) {
-    const { state: state2, timeDateWeekItems: timeDateWeekItems2, timeDateClockItems: timeDateClockItems2, timeDateExpressionItems: timeDateExpressionItems2, timeDateRoutineItems: timeDateRoutineItems2, datePracticeItems: datePracticeItems2, timeDateDateItems: timeDateDateItems2, timeDateMonthItems: timeDateMonthItems2, comparisonPracticeItems: comparisonPracticeItems2, comparisonWordItems: comparisonWordItems2, positionPracticeItems: positionPracticeItems2, positionScenes: positionScenes2, clothesMatchItems: clothesMatchItems2, clothesPractice: clothesPractice2, roomScenes: roomScenes2, roomSentenceTokens: roomSentenceTokens2, transportSentenceTokens: transportSentenceTokens2, visualTopicItems: visualTopicItems2, shuffleArray: shuffleArray2, speak: speak2, speakSceneLines: speakSceneLines2, currentTopic: currentTopic2, currentBook: currentBook2, currentLesson: currentLesson2, renderActivityPanel: renderActivityPanel2, focusExplorer: focusExplorer2, focusStatus: focusStatus2 } = context;
+    const { state: state2, timeDateWeekItems: timeDateWeekItems3, timeDateClockItems: timeDateClockItems2, timeDateExpressionItems: timeDateExpressionItems2, timeDateRoutineItems: timeDateRoutineItems2, datePracticeItems: datePracticeItems2, timeDateDateItems: timeDateDateItems2, timeDateMonthItems: timeDateMonthItems2, comparisonPracticeItems: comparisonPracticeItems2, comparisonWordItems: comparisonWordItems2, positionPracticeItems: positionPracticeItems2, positionScenes: positionScenes2, clothesMatchItems: clothesMatchItems2, clothesPractice: clothesPractice2, roomScenes: roomScenes2, roomSentenceTokens: roomSentenceTokens2, transportSentenceTokens: transportSentenceTokens2, visualTopicItems: visualTopicItems2, shuffleArray: shuffleArray2, speak: speak2, speakSceneLines: speakSceneLines2, currentTopic: currentTopic2, currentBook: currentBook2, currentLesson: currentLesson2, renderActivityPanel: renderActivityPanel2, focusExplorer: focusExplorer2, focusStatus: focusStatus2 } = context;
     function resetWeekdayChallenge2(options = {}) {
-      const candidates = timeDateWeekItems2.filter((item) => item.id !== options.excludeId);
-      const answers = candidates.length ? candidates : timeDateWeekItems2;
+      const candidates = timeDateWeekItems3.filter((item) => item.id !== options.excludeId);
+      const answers = candidates.length ? candidates : timeDateWeekItems3;
       const answer = answers[Math.floor(Math.random() * answers.length)];
-      const distractors = shuffleArray2(timeDateWeekItems2.filter((item) => item.id !== answer.id)).slice(0, 3);
+      const distractors = shuffleArray2(timeDateWeekItems3.filter((item) => item.id !== answer.id)).slice(0, 3);
       state2.weekdayChallengeAnswerId = answer.id;
       state2.weekdayChallengePromptId = answer.id;
       state2.weekdayChallengeOptionIds = shuffleArray2([answer.id, ...distractors.map((item) => item.id)]);
@@ -4843,7 +5473,7 @@
       ensureWeekdayChallenge2();
       const previousPromptId = state2.weekdayChallengePromptId;
       resetWeekdayChallenge2({ excludeId: previousPromptId });
-      const item = timeDateWeekItems2.find((entry) => entry.id === state2.weekdayChallengePromptId);
+      const item = timeDateWeekItems3.find((entry) => entry.id === state2.weekdayChallengePromptId);
       if (item && state2.tapAudioEnabled) speak2(`\u4ECA\u5929\u661F\u671F\u51E0\uFF1F\u4ECA\u5929${item.hanzi}\u3002`, 0.78);
       renderActivityPanel2(currentTopic2());
     }
@@ -4855,7 +5485,7 @@
       if (!isCorrect) {
         state2.weekdayChallengeWrongIds = /* @__PURE__ */ new Set([...state2.weekdayChallengeWrongIds, itemId]);
       } else if (state2.tapAudioEnabled) {
-        const item = timeDateWeekItems2.find((entry) => entry.id === itemId);
+        const item = timeDateWeekItems3.find((entry) => entry.id === itemId);
         speak2(item?.hanzi, 0.78);
       }
       renderActivityPanel2(currentTopic2());
@@ -4863,8 +5493,8 @@
     function resetWeekdayMatchGame2() {
       state2.weekdaySelectedPhraseId = null;
       state2.weekdayMatchedIds = /* @__PURE__ */ new Set();
-      state2.weekdayPhraseOrder = shuffleArray2(timeDateWeekItems2.map((item) => item.id));
-      state2.weekdayMeaningOrder = shuffleArray2(timeDateWeekItems2.map((item) => item.id));
+      state2.weekdayPhraseOrder = shuffleArray2(timeDateWeekItems3.map((item) => item.id));
+      state2.weekdayMeaningOrder = shuffleArray2(timeDateWeekItems3.map((item) => item.id));
       state2.weekdayMatchFeedback = "";
     }
     function ensureWeekdayMatchGame2() {
@@ -4873,7 +5503,7 @@
     function handleWeekdayMatchPhrase2(itemId) {
       if (state2.weekdayMatchedIds.has(itemId)) return;
       state2.weekdaySelectedPhraseId = itemId;
-      const item = timeDateWeekItems2.find((entry) => entry.id === itemId);
+      const item = timeDateWeekItems3.find((entry) => entry.id === itemId);
       if (item && state2.tapAudioEnabled) speak2(item.hanzi, 0.78);
       renderActivityPanel2(currentTopic2());
     }
@@ -5311,7 +5941,7 @@
         button.addEventListener("click", () => {
           const [collection, id] = button.dataset.timeAsset.split(":");
           const items = {
-            week: timeDateWeekItems2,
+            week: timeDateWeekItems3,
             clock: timeDateClockItems2,
             date: timeDateDateItems2,
             month: timeDateMonthItems2,
@@ -5332,7 +5962,7 @@
         <h4>Days of the Week</h4>
       </div>
       <div class="time-asset-grid time-asset-grid-week">
-        ${timeDateWeekItems2.map((item) => `
+        ${timeDateWeekItems3.map((item) => `
           <section class="time-asset-card weekday-scene-card">
             <div class="greetings-exchange-top"><div><span class="time-asset-hanzi">${item.hanzi}</span></div><button class="small-button is-action-button" type="button" data-weekday-play-scene="${item.id}">Play scene</button></div>
             <img class="time-asset-image" src="${item.imagePath}" alt="${item.english}" />
@@ -5352,7 +5982,7 @@
   `;
       focusExplorer2.querySelectorAll("[data-weekday-play-scene]").forEach((button) => {
         button.addEventListener("click", () => {
-          const item = timeDateWeekItems2.find((entry) => entry.id === button.dataset.weekdayPlayScene);
+          const item = timeDateWeekItems3.find((entry) => entry.id === button.dataset.weekdayPlayScene);
           if (item && state2.tapAudioEnabled) speak2(item.audio, 0.78);
         });
       });
@@ -6623,555 +7253,6 @@
     state.showEnglish = !state.showEnglish;
     updateDisplayControls();
   });
-  function currentTopic() {
-    return topicData.find((topic) => topic.id === state.selectedTopicId) ?? topicData[0];
-  }
-  function currentNumberStage() {
-    const lesson = currentLesson();
-    return numberStages.find((stage) => stage.bookId === currentBook().id && stage.lesson === lesson.lesson) ?? numberStages[0];
-  }
-  function focusItemsForTopic(topic = currentTopic()) {
-    if (topic.id === "numbers") {
-      return numberStageItems();
-    }
-    if (topic.id === "weekdays") {
-      return timeDateWeekItems;
-    }
-    return topic.focusItems ?? [{ id: "focus", ...topic.focus }];
-  }
-  function currentFocusItem() {
-    const items = focusItemsForTopic();
-    return items.find((item) => item.id === state.selectedFocusItemId) ?? items[0];
-  }
-  function shuffleArray(items) {
-    const copy = [...items];
-    for (let index = copy.length - 1; index > 0; index -= 1) {
-      const swapIndex = Math.floor(Math.random() * (index + 1));
-      [copy[index], copy[swapIndex]] = [copy[swapIndex], copy[index]];
-    }
-    return copy;
-  }
-  function topicById(topicId) {
-    return topicData.find((topic) => topic.id === topicId);
-  }
-  function selectedTopicGroupId() {
-    return topicGroups.find((group) => group.topicIds.includes(state.selectedTopicId))?.id ?? topicGroups[0].id;
-  }
-  function bookById(bookId) {
-    return books.find((book) => book.id === bookId) ?? books[0];
-  }
-  function bookCategoryForBook(bookId) {
-    return bookHomeCategories.find((category) => category.bookIds.includes(bookId)) ?? bookHomeCategories[0];
-  }
-  function currentBook() {
-    return bookById(state.selectedBookId);
-  }
-  function currentLesson() {
-    const book = currentBook();
-    const exactLesson = book.lessons.find((lesson) => lesson.lesson === state.selectedLessonNumber);
-    if (exactLesson && exactLesson.topicId === state.selectedTopicId) {
-      return exactLesson;
-    }
-    return book.lessons.find((lesson) => lesson.topicId === state.selectedTopicId) ?? book.lessons[0];
-  }
-  function syncBookSelectionFromTopic() {
-    const topic = currentTopic();
-    const firstMatch = books.find(
-      (book) => book.lessons.some((lesson) => topic.steps.some((step) => book.id === step.book.toLowerCase() && step.lesson === lesson.lesson))
-    );
-    if (firstMatch) {
-      state.selectedBookId = firstMatch.id;
-      state.selectedBookCategoryId = bookCategoryForBook(firstMatch.id).id;
-    }
-    syncLessonSelectionFromTopic();
-  }
-  function syncLessonSelectionFromTopic() {
-    const book = currentBook();
-    const firstMatch = book.lessons.find((lesson) => lesson.topicId === state.selectedTopicId) ?? book.lessons[0];
-    state.selectedLessonNumber = firstMatch.lesson;
-  }
-  function focusLearningPanel() {
-    if (!detailLayout) {
-      return;
-    }
-    scrollToSectionTop(detailLayout);
-  }
-  function scrollToSectionTop(element) {
-    if (!element) {
-      return;
-    }
-    const root = document.documentElement;
-    const previousScrollBehavior = root.style.scrollBehavior;
-    const stickyNavHeight = learningCultureNav?.getBoundingClientRect().height ?? 0;
-    const targetTop = Math.max(0, window.scrollY + element.getBoundingClientRect().top - stickyNavHeight);
-    root.style.scrollBehavior = "auto";
-    window.scrollTo(0, targetTop);
-    root.style.scrollBehavior = previousScrollBehavior;
-  }
-  function narrowTopicBrowserTo(groupId) {
-    state.openTopicGroups = /* @__PURE__ */ new Set([groupId]);
-  }
-  function categoryIdForTopic(topicId) {
-    return learningHomeCategories.find((category) => category.topicIds.includes(topicId))?.id ?? "foundations";
-  }
-  function updateTopicPageVisibility() {
-    detailLayout?.classList.toggle("is-hidden", !state.topicPageOpen);
-    document.body.classList.toggle("is-topic-page", state.topicPageOpen);
-  }
-  function scrollCategorySectionIntoView(categoryId) {
-    requestAnimationFrame(() => {
-      scrollToSectionTop(document.getElementById(categoryId));
-    });
-  }
-  function openTopicPage(topicId, options = {}) {
-    const topic = topicById(topicId);
-    if (!topic) {
-      return;
-    }
-    state.selectedTopicId = topic.id;
-    state.expandedCategoryId = categoryIdForTopic(topic.id);
-    state.topicPageOpen = true;
-    renderTopics();
-    renderBooks();
-    renderTopicDetail();
-    updateTopicPageVisibility();
-    const nextUrl = topicPageUrl(window.location, topic.id);
-    if (options.replace) {
-      window.history.replaceState(null, "", nextUrl);
-    } else {
-      window.history.pushState(null, "", nextUrl);
-    }
-    if (options.scroll !== false) {
-      focusLearningPanel();
-    }
-  }
-  function switchView(view) {
-    state.currentView = view;
-    document.querySelectorAll(".view-tab").forEach((button) => {
-      const isActive = button.dataset.view === view;
-      button.classList.toggle("is-active", isActive);
-      button.setAttribute("aria-selected", String(isActive));
-    });
-    topicPanel.classList.toggle("is-hidden", view !== "topics");
-    bookPanel.classList.toggle("is-hidden", view !== "books");
-    document.querySelectorAll("[data-global-view]").forEach((item) => {
-      item.classList.toggle("is-active", item.dataset.globalView === view);
-    });
-    renderStickyNav();
-    updateLearningCultureNav();
-  }
-  function displayControlsMarkup() {
-    return `
-    <span class="learning-display-controls" aria-label="Display options">
-      <button class="learning-display-toggle" type="button" data-display-toggle="sound"></button>
-      <button class="learning-display-toggle" type="button" data-display-toggle="pinyin"></button>
-      <button class="learning-display-toggle" type="button" data-display-toggle="english"></button>
-    </span>
-  `;
-  }
-  function bindDisplayControls() {
-    learningCultureNav.querySelectorAll("[data-display-toggle]").forEach((button) => {
-      button.addEventListener("click", () => {
-        if (button.dataset.displayToggle === "sound") {
-          state.tapAudioEnabled = !state.tapAudioEnabled;
-        } else if (button.dataset.displayToggle === "pinyin") {
-          state.showPinyin = !state.showPinyin;
-        } else {
-          state.showEnglish = !state.showEnglish;
-        }
-        updateDisplayControls();
-      });
-    });
-  }
-  function renderTopicStickyNav() {
-    const categoriesMarkup = learningHomeCategories.map(
-      (category) => `
-        <button
-          class="learning-culture-nav-item${category.id === state.expandedCategoryId ? " active" : ""}"
-          type="button"
-          data-target="${category.id}"
-          style="--category-accent: ${category.accent};"
-          ${category.id === state.expandedCategoryId ? 'aria-current="true"' : ""}
-        >
-          <span class="zh">${category.zhTitle}</span>
-          <span class="en">${category.enTitle}</span>
-        </button>
-      `
-    ).join("");
-    learningCultureNav.innerHTML = `
-    <span class="learning-culture-nav-items">${categoriesMarkup}</span>
-    ${displayControlsMarkup()}
-  `;
-    bindDisplayControls();
-    learningCultureNav.querySelectorAll("[data-target]").forEach((button) => {
-      button.addEventListener("click", () => {
-        state.expandedCategoryId = button.dataset.target;
-        state.topicPageOpen = false;
-        renderTopics();
-        updateTopicPageVisibility();
-        window.history.pushState(null, "", "#topics-panel");
-        scrollCategorySectionIntoView(button.dataset.target);
-      });
-    });
-  }
-  function bookAccent(index) {
-    const accents = ["#be5b49", "#aa7051", "#517b8d", "#6d8a4f", "#c48d46", "#6f7fa4", "#8f6988", "#b8863e"];
-    return accents[index % accents.length];
-  }
-  function renderBookStickyNav() {
-    const categoriesMarkup = bookHomeCategories.map((category) => {
-      const isActive = category.id === state.selectedBookCategoryId;
-      return `
-        <button
-          class="learning-culture-nav-item book-nav-item${isActive ? " active" : ""}"
-          type="button"
-          data-book-category-target="${category.id}"
-          style="--category-accent: ${category.accent};"
-          ${isActive ? 'aria-current="true"' : ""}
-        >
-          <span class="zh">${category.zhTitle}</span>
-          <span class="en">${category.bookIds.length} books</span>
-        </button>
-      `;
-    }).join("");
-    learningCultureNav.innerHTML = `
-    <span class="learning-culture-nav-items">${categoriesMarkup}</span>
-    ${displayControlsMarkup()}
-  `;
-    bindDisplayControls();
-    learningCultureNav.querySelectorAll("[data-book-category-target]").forEach((button) => {
-      button.addEventListener("click", () => {
-        const selectedCategory = bookHomeCategories.find((entry) => entry.id === button.dataset.bookCategoryTarget);
-        if (!selectedCategory) {
-          return;
-        }
-        state.selectedBookCategoryId = selectedCategory.id;
-        if (!selectedCategory.bookIds.includes(state.selectedBookId)) {
-          const selectedBook = bookById(selectedCategory.bookIds[0]);
-          state.selectedBookId = selectedBook.id;
-          state.selectedLessonNumber = selectedBook.lessons[0].lesson;
-          state.selectedTopicId = selectedBook.lessons[0].topicId;
-        }
-        state.topicPageOpen = false;
-        renderBooks();
-        renderTopicDetail();
-        updateTopicPageVisibility();
-        document.getElementById(`book-category-${selectedCategory.id}`)?.scrollIntoView({
-          behavior: "smooth",
-          block: "start"
-        });
-      });
-    });
-  }
-  function renderStickyNav() {
-    if (!learningCultureNav) {
-      return;
-    }
-    if (state.currentView === "books") {
-      renderBookStickyNav();
-    } else {
-      renderTopicStickyNav();
-    }
-    renderFocusControls();
-  }
-  function categoryIconMarkup(category) {
-    if (category.iconEmoji) {
-      return `<span class="category-emoji-icon category-emoji-icon-${category.id}">${category.iconEmoji}</span>`;
-    }
-    return `
-    <img
-      class="category-generated-icon category-generated-icon-${category.id}"
-      src="${category.iconSrc}"
-      alt=""
-      loading="lazy"
-      decoding="async"
-    />
-  `;
-  }
-  function renderTopics() {
-    topicGroupsRoot.innerHTML = "";
-    renderStickyNav();
-    const board = document.createElement("div");
-    board.className = "learning-home-board";
-    learningHomeCategories.forEach((category) => {
-      const card = document.createElement("article");
-      card.className = "learning-home-card";
-      card.style.setProperty("--category-accent", category.accent);
-      if (category.id === state.expandedCategoryId) {
-        card.classList.add("is-selected");
-      }
-      card.innerHTML = `
-      <button class="learning-home-card-main" type="button" aria-label="Open ${category.enTitle}">
-        <span class="learning-card-count">${category.topicIds.length} topics</span>
-        <span class="learning-home-card-icon" aria-hidden="true">${categoryIconMarkup(category)}</span>
-        <span class="topic-copy">
-          <span class="topic-zh-title">${category.zhTitle}</span>
-          <span class="topic-row-title">${category.enTitle}</span>
-          <span class="topic-row-meta">${category.hint}</span>
-        </span>
-      </button>
-    `;
-      card.querySelector(".learning-home-card-main").addEventListener("click", () => {
-        state.expandedCategoryId = category.id;
-        renderTopics();
-        scrollCategorySectionIntoView(category.id);
-      });
-      board.appendChild(card);
-    });
-    topicGroupsRoot.appendChild(board);
-    learningHomeCategories.forEach((category) => {
-      const section = document.createElement("section");
-      section.className = "learning-category-section";
-      section.id = category.id;
-      section.style.setProperty("--category-accent", category.accent);
-      section.innerHTML = `
-      <div class="learning-category-head">
-        <span class="learning-category-head-icon" aria-hidden="true">${categoryIconMarkup(category)}</span>
-        <div>
-          <h3>${category.zhTitle}</h3>
-          <h4>${category.enTitle}</h4>
-          <p>${category.hint}</p>
-        </div>
-      </div>
-      <div class="category-topic-grid">
-        ${category.topicIds.map((topicId) => topicById(topicId)).filter(Boolean).map((topic) => {
-        const meta = topicCardMeta[topic.id] ?? {};
-        return `
-              <a class="category-topic-card${topic.id === state.selectedTopicId ? " is-selected" : ""}" href="${topicPageUrl(window.location, topic.id)}" data-topic-id="${topic.id}">
-                <span class="category-topic-zh">${meta.zhTitle ?? topic.iconText}</span>
-                <span class="category-topic-en">${meta.enTitle ?? topic.title}</span>
-                <span class="category-topic-hint">${meta.hint ?? topic.progressLabel}</span>
-              </a>
-            `;
-      }).join("")}
-      </div>
-    `;
-      section.querySelectorAll("[data-topic-id]").forEach((link) => {
-        link.addEventListener("click", (event) => {
-          if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) {
-            return;
-          }
-          event.preventDefault();
-          try {
-            openTopicPage(link.dataset.topicId);
-          } catch (error) {
-            console.error("Could not open topic in place.", error);
-          }
-        });
-      });
-      topicGroupsRoot.appendChild(section);
-    });
-    updateLearningCultureNav();
-  }
-  function renderBooks() {
-    bookSelect.innerHTML = books.map((book2) => `<option value="${book2.id}">${book2.label}</option>`).join("");
-    bookSelect.value = state.selectedBookId;
-    const book = currentBook();
-    state.selectedBookCategoryId = bookCategoryForBook(book.id).id;
-    lessonSelect.innerHTML = book.lessons.map(
-      (lesson) => `<option value="${lesson.lesson}">Lesson ${lesson.lesson}: ${lesson.title}</option>`
-    ).join("");
-    const activeLesson = currentLesson();
-    lessonSelect.value = String(activeLesson.lesson);
-    bookBrowser.innerHTML = `
-    <div class="learning-home-board book-home-board">
-      ${bookHomeCategories.map((category) => {
-      const isSelected = category.id === state.selectedBookCategoryId;
-      return `
-            <article class="learning-home-card book-home-card${isSelected ? " is-selected" : ""}" style="--category-accent: ${category.accent};">
-              <button class="learning-home-card-main" type="button" data-book-category-card="${category.id}" aria-label="Open ${category.enTitle}">
-                <span class="learning-card-count">${category.bookIds.length} books</span>
-                <span class="learning-home-card-icon" aria-hidden="true">
-                  <span class="category-emoji-icon category-emoji-icon-${category.id}">${category.iconEmoji}</span>
-                </span>
-                <span class="topic-copy">
-                  <span class="topic-zh-title">${category.zhTitle}</span>
-                  <span class="topic-row-title">${category.enTitle}</span>
-                  <span class="topic-row-meta">${category.hint}</span>
-                </span>
-              </button>
-            </article>
-          `;
-    }).join("")}
-    </div>
-  `;
-    lookupCard.innerHTML = bookHomeCategories.map((category) => {
-      const booksInCategory = category.bookIds.map((bookId) => bookById(bookId));
-      const isActiveCategory = category.id === state.selectedBookCategoryId;
-      const selectedBookInCategory = booksInCategory.find((entry) => entry.id === state.selectedBookId) ?? booksInCategory[0];
-      const selectedBookIndex = books.findIndex((entry) => entry.id === selectedBookInCategory.id);
-      return `
-        <section
-          class="learning-category-section book-category-section${isActiveCategory ? " is-selected" : ""}"
-          id="book-category-${category.id}"
-          style="--category-accent: ${category.accent}; --book-accent: ${bookAccent(Math.max(selectedBookIndex, 0))};"
-        >
-          <div class="learning-category-head">
-            <span class="learning-category-head-icon" aria-hidden="true">
-              <span class="category-emoji-icon category-emoji-icon-${category.id}">${category.iconEmoji}</span>
-            </span>
-            <div>
-              <h3>${category.zhTitle}</h3>
-              <h4>${category.enTitle}</h4>
-              <p>${category.hint}</p>
-            </div>
-          </div>
-          <div class="book-category-grid">
-            ${booksInCategory.map((entry) => {
-        const firstTopic = topicById(entry.lessons[0]?.topicId);
-        const isSelectedBook = entry.id === selectedBookInCategory.id;
-        const entryIndex = books.findIndex((bookEntry) => bookEntry.id === entry.id);
-        return `
-                  <button
-                    class="book-browser-card book-category-book-card${isSelectedBook ? " is-selected" : ""}"
-                    style="--book-accent: ${bookAccent(Math.max(entryIndex, 0))}"
-                    type="button"
-                    data-book-browser="${entry.id}"
-                  >
-                    <span>${entry.label}</span>
-                    <small>${entry.lessons.length} lessons</small>
-                    <em>${firstTopic?.title ?? "Chinese practice"}</em>
-                  </button>
-                `;
-      }).join("")}
-          </div>
-          <div class="book-category-lessons">
-            <div class="book-category-lessons-head">
-              <div>
-                <span class="progress-label">Lessons</span>
-                <h3>${selectedBookInCategory.label}</h3>
-                <p>Pick a lesson to open the matching topic practice.</p>
-              </div>
-            </div>
-            <div class="book-lesson-grid">
-              ${selectedBookInCategory.lessons.map((lesson) => {
-        const lessonTopic = topicById(lesson.topicId);
-        const isSelectedLesson = selectedBookInCategory.id === book.id && lesson.lesson === activeLesson.lesson;
-        return `
-                    <button
-                      class="book-lesson-card${isSelectedLesson ? " is-selected" : ""}"
-                      type="button"
-                      data-book-lesson="${selectedBookInCategory.id}:${lesson.lesson}"
-                    >
-                      <span>Lesson ${lesson.lesson}</span>
-                      <strong>${lesson.title}</strong>
-                      <small>${lessonTopic?.title ?? "Topic practice"}</small>
-                    </button>
-                  `;
-      }).join("")}
-            </div>
-          </div>
-        </section>
-      `;
-    }).join("");
-    bookBrowser.querySelectorAll("[data-book-category-card]").forEach((button) => {
-      button.addEventListener("click", () => {
-        const category = bookHomeCategories.find((entry) => entry.id === button.dataset.bookCategoryCard);
-        if (!category) {
-          return;
-        }
-        state.selectedBookCategoryId = category.id;
-        if (!category.bookIds.includes(state.selectedBookId)) {
-          const selectedBook = bookById(category.bookIds[0]);
-          state.selectedBookId = selectedBook.id;
-          state.selectedLessonNumber = selectedBook.lessons[0].lesson;
-          state.selectedTopicId = selectedBook.lessons[0].topicId;
-        }
-        renderBooks();
-        document.getElementById(`book-category-${category.id}`)?.scrollIntoView({
-          behavior: "smooth",
-          block: "start"
-        });
-      });
-    });
-    lookupCard.querySelectorAll("[data-book-browser]").forEach((button) => {
-      button.addEventListener("click", () => {
-        const selectedBook = books.find((entry) => entry.id === button.dataset.bookBrowser);
-        if (!selectedBook) {
-          return;
-        }
-        state.selectedBookCategoryId = bookCategoryForBook(selectedBook.id).id;
-        state.selectedBookId = selectedBook.id;
-        state.selectedLessonNumber = selectedBook.lessons[0].lesson;
-        state.selectedTopicId = selectedBook.lessons[0].topicId;
-        renderBooks();
-        renderTopicDetail();
-        document.getElementById(`book-category-${state.selectedBookCategoryId}`)?.scrollIntoView({
-          behavior: "smooth",
-          block: "start"
-        });
-      });
-    });
-    lookupCard.querySelectorAll("[data-book-lesson]").forEach((button) => {
-      button.addEventListener("click", () => {
-        const [bookId, lessonNumber] = button.dataset.bookLesson.split(":");
-        selectBookLesson(bookId, Number(lessonNumber));
-      });
-    });
-    renderStickyNav();
-  }
-  function updateLearningCultureNav() {
-    if (!learningCultureNav) {
-      return;
-    }
-    if (state.currentView === "books" && !bookPanel.classList.contains("is-hidden")) {
-      const bookBoard = bookBrowser.querySelector(".book-home-board");
-      const bookSections = lookupCard.querySelectorAll(".book-category-section");
-      const bookNavItems = learningCultureNav.querySelectorAll("[data-book-category-target]");
-      const showBookNav = bookBoard && window.scrollY > bookBoard.offsetTop + bookBoard.offsetHeight - 60;
-      learningCultureNav.classList.toggle("visible", showBookNav);
-      if (!showBookNav) {
-        return;
-      }
-      let activeCategoryId = state.selectedBookCategoryId;
-      const scrollY2 = window.scrollY + 120;
-      bookSections.forEach((section) => {
-        if (section.offsetTop <= scrollY2) {
-          activeCategoryId = section.id.replace("book-category-", "");
-        }
-      });
-      bookNavItems.forEach((item) => {
-        const isActive = item.dataset.bookCategoryTarget === activeCategoryId;
-        item.classList.toggle("active", isActive);
-        item.toggleAttribute("aria-current", isActive);
-      });
-      return;
-    }
-    const cardGrid = topicGroupsRoot.querySelector(".learning-home-board");
-    const sections = topicGroupsRoot.querySelectorAll(".learning-category-section");
-    const navItems = learningCultureNav.querySelectorAll("[data-target]");
-    if (state.topicPageOpen) {
-      learningCultureNav.classList.add("visible");
-      const activeCategoryId = state.expandedCategoryId ?? categoryIdForTopic(state.selectedTopicId);
-      navItems.forEach((item) => {
-        const isActive = item.dataset.target === activeCategoryId;
-        item.classList.toggle("active", isActive);
-        item.toggleAttribute("aria-current", isActive);
-      });
-      return;
-    }
-    if (!cardGrid || state.currentView !== "topics" || topicPanel.classList.contains("is-hidden")) {
-      learningCultureNav.classList.remove("visible");
-      return;
-    }
-    const showNav = window.scrollY > cardGrid.offsetTop + cardGrid.offsetHeight - 60;
-    learningCultureNav.classList.toggle("visible", showNav);
-    if (!showNav) {
-      return;
-    }
-    let current = "";
-    const scrollY = window.scrollY + 120;
-    sections.forEach((section) => {
-      if (section.offsetTop <= scrollY) {
-        current = section.id;
-      }
-    });
-    navItems.forEach((item) => {
-      const isActive = item.dataset.target === current;
-      item.classList.toggle("active", isActive);
-      item.toggleAttribute("aria-current", isActive);
-    });
-  }
   function renderFocusControls() {
     const topic = currentTopic();
     document.body.classList.toggle("is-pinyin-hidden", !state.showPinyin);
@@ -7356,7 +7437,7 @@
           ensureWeekdayMatchGame();
         },
         listen: {
-          items: () => timeDateWeekItems,
+          items: () => timeDateWeekItems2,
           optionIds: () => state.weekdayChallengeOptionIds,
           pickedId: () => state.weekdayChallengePickedId,
           result: () => state.weekdayChallengeResult,
@@ -7368,13 +7449,13 @@
         match: {
           phraseHeading: "Chinese",
           meaningHeading: "English",
-          items: () => timeDateWeekItems,
+          items: () => timeDateWeekItems2,
           phraseIds: () => state.weekdayPhraseOrder,
           meaningIds: () => state.weekdayMeaningOrder,
           matchedIds: () => state.weekdayMatchedIds,
           selectedId: () => state.weekdaySelectedPhraseId,
           feedback: () => state.weekdayMatchFeedback,
-          meaningLabel: (id) => timeDateWeekItems.find((item) => item.id === id)?.english ?? "",
+          meaningLabel: (id) => timeDateWeekItems2.find((item) => item.id === id)?.english ?? "",
           onNew: () => {
             resetWeekdayMatchGame();
             renderActivityPanel(topic);
@@ -8342,7 +8423,7 @@
     if (topic.id !== "numbers") {
       return step.title;
     }
-    const stage = numberStages.find(
+    const stage = numberStages2.find(
       (entry) => entry.bookId === step.book.toLowerCase() && entry.lesson === step.lesson
     );
     return stage?.title ?? step.title;
@@ -8450,6 +8531,67 @@
     renderBooks();
     renderTopicDetail();
     updateTopicPageVisibility();
+  });
+  var {
+    currentTopic,
+    currentNumberStage,
+    focusItemsForTopic,
+    currentFocusItem,
+    shuffleArray,
+    topicById,
+    selectedTopicGroupId,
+    bookById,
+    bookCategoryForBook,
+    currentBook,
+    currentLesson,
+    syncBookSelectionFromTopic,
+    syncLessonSelectionFromTopic,
+    focusLearningPanel,
+    scrollToSectionTop,
+    narrowTopicBrowserTo,
+    categoryIdForTopic,
+    updateTopicPageVisibility,
+    scrollCategorySectionIntoView,
+    openTopicPage,
+    switchView,
+    toggleTopicGroup,
+    renderTopicScene,
+    displayControlsMarkup,
+    bindDisplayControls,
+    renderTopicStickyNav,
+    bookAccent,
+    renderBookStickyNav,
+    renderStickyNav,
+    categoryIconMarkup,
+    renderTopics,
+    renderBooks,
+    updateLearningCultureNav
+  } = createNavigationRuntime({
+    state,
+    topicData,
+    books,
+    topicGroups,
+    learningHomeCategories,
+    bookHomeCategories,
+    topicCardMeta,
+    topicPageUrl,
+    topicGroupsRoot,
+    bookSelect,
+    lessonSelect,
+    lookupCard,
+    bookBrowser,
+    topicPanel,
+    bookPanel,
+    detailLayout,
+    learningCultureNav,
+    renderFocusControls,
+    renderFocusDisplay,
+    renderFocusWordList: renderFocusWordList2,
+    renderFocusExplorer,
+    renderActivityPanel,
+    renderTopicDetail,
+    updateDisplayControls,
+    selectBookLesson
   });
   ({
     greetingsGameItems,
@@ -8685,7 +8827,7 @@
     renderClothesExplorer
   } = createTimeDailyLifeRuntime({
     state,
-    timeDateWeekItems,
+    timeDateWeekItems: timeDateWeekItems2,
     timeDateClockItems,
     timeDateExpressionItems,
     timeDateRoutineItems,
@@ -8713,7 +8855,7 @@
     focusStatus
   });
   var {
-    numberStageItems,
+    numberStageItems: numberStageItems2,
     resetNumberChallenge,
     ensureNumberChallenge,
     resetMathChallenge,
@@ -8759,7 +8901,7 @@
     numberHanzi,
     numberPinyin,
     buildNumberItem,
-    numberStages,
+    numberStages: numberStages2,
     telephonePractice,
     familyGameItemIds,
     familyPersonIdsByItemId,

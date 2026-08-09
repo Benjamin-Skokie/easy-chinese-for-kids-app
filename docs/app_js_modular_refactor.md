@@ -83,6 +83,7 @@ A feature registers its owned topic IDs, creates its scoped state, renders its e
 - [x] Extract the complete School + Food practice runtime into `src/features/school-life/school-food-runtime.js` through one explicit dependency context.
 - [x] Extract the complete Time & Daily Life practice and explorer runtime into `src/features/time-daily-life/time-daily-life-runtime.js` through one explicit dependency context.
 - [x] Extract the remaining Foundations interaction and explorer runtime into `src/features/foundations/foundations-runtime.js` through one explicit dependency context.
+- [x] Extract the navigation, topic-card, book-browser, and routing shell into `src/core/navigation-runtime.js` through one explicit dependency context.
 - [ ] Migrate School, Food, Foundations, and Family/Home. (Greetings and Polite Words controllers extracted.)
 - [ ] Delete the matching legacy code after each replacement passes checks.
 
