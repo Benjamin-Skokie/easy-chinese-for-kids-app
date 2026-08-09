@@ -20,6 +20,7 @@ import { foodPreferencesTopicData } from "../src/features/food/food-preferences.
 import { mealsFeelingsSentenceBuilds, mealsFeelingsTopicData } from "../src/features/food/meals-feelings.js";
 import { introductionsBuildPhrases, introductionsGamePrompts, introductionsPractice, introductionsTopic } from "../src/features/foundations/introductions.js";
 import { ageBuildPhrases, agePractice, ageTopic } from "../src/features/foundations/age.js";
+import { familyGameItemIds, familyPractice, familyTopic, illustratedFamily } from "../src/features/family/family.js";
 
 test("the local page loads a single bundled application script", () => {
   const html = readFileSync("index.html", "utf8");
@@ -167,4 +168,13 @@ test("age owns its scenes and sentence practice", () => {
   assert.equal(ageTopic.steps.length, 2);
   assert.equal(agePractice.length, 2);
   assert.equal(ageBuildPhrases.length, 6);
+});
+
+test("family owns its lesson metadata, scenes, and matching set", () => {
+  assert.equal(familyTopic.id, "family");
+  assert.equal(familyTopic.interactiveScene, "family-home");
+  assert.equal(familyTopic.steps.length, 4);
+  assert.equal(familyPractice.length, 2);
+  assert.equal(familyGameItemIds.length, 6);
+  assert.equal(Object.keys(illustratedFamily).length, 6);
 });

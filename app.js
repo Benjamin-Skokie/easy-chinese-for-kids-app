@@ -1109,6 +1109,112 @@
     }
   ];
 
+  // src/features/family/family.js
+  var familyTopic = {
+    id: "family",
+    title: "Family",
+    summary: "Start with love and belonging, then sort family words by older and younger.",
+    progressLabel: "1B to 3A",
+    iconText: "\u5BB6\u4EBA",
+    iconColor: "#aa7051",
+    iconAccent: "#f1d29b",
+    iconTheme: "family",
+    focus: {
+      hanzi: "\u7238\u7238\u5988\u5988\u7231\u6211\u3002",
+      pinyin: "b\xE0 ba m\u0101 ma \xE0i w\u01D2.",
+      english: "Dad and Mum love me.",
+      audio: "\u7238\u7238\u5988\u5988\u7231\u6211"
+    },
+    focusItems: [
+      { id: "parents-love-me", hanzi: "\u7238\u7238\u5988\u5988\u7231\u6211\u3002", pinyin: "b\xE0 ba m\u0101 ma \xE0i w\u01D2.", english: "Dad and Mum love me.", audio: "\u7238\u7238\u5988\u5988\u7231\u6211" },
+      { id: "i-love-dad", hanzi: "\u6211\u7231\u7238\u7238\u3002", pinyin: "w\u01D2 \xE0i b\xE0 ba.", english: "I love Dad.", audio: "\u6211\u7231\u7238\u7238" },
+      { id: "i-love-mom", hanzi: "\u6211\u7231\u5988\u5988\u3002", pinyin: "w\u01D2 \xE0i m\u0101 ma.", english: "I love Mum.", audio: "\u6211\u7231\u5988\u5988" },
+      { id: "mom-word", hanzi: "\u5988\u5988", pinyin: "m\u0101 ma", english: "mum", audio: "\u5988\u5988" },
+      { id: "dad-word", hanzi: "\u7238\u7238", pinyin: "b\xE0 ba", english: "dad", audio: "\u7238\u7238" },
+      { id: "older-brother-word", hanzi: "\u54E5\u54E5", pinyin: "g\u0113 ge", english: "older brother", audio: "\u54E5\u54E5" },
+      { id: "younger-brother-word", hanzi: "\u5F1F\u5F1F", pinyin: "d\xEC di", english: "younger brother", audio: "\u5F1F\u5F1F" },
+      { id: "older-sister-word", hanzi: "\u59D0\u59D0", pinyin: "ji\u011B jie", english: "older sister", audio: "\u59D0\u59D0" },
+      { id: "younger-sister-word", hanzi: "\u59B9\u59B9", pinyin: "m\xE8i mei", english: "younger sister", audio: "\u59B9\u59B9" }
+    ],
+    interactiveScene: "family-home",
+    parentGuide: "Use one warm family picture for \u7238\u7238\u5988\u5988\u7231\u6211, then switch quickly to family photos, pointing, and real names.",
+    cultureGuide: "This early family lesson works best when love words and family roles stay close to the child's real home life.",
+    activities: ["Tap to hear", "Match family member", "Listen and choose", "Talk about my family"],
+    steps: [
+      { book: "1B", lesson: 1, title: "Mum and dad", note: "Start with immediate family." },
+      { book: "1B", lesson: 2, title: "Brothers and sisters", note: "Expand the family set." },
+      { book: "2A", lesson: 2, title: "Two younger brothers", note: "Add sibling language in sentences." },
+      { book: "3A", lesson: 4, title: "Family", note: "Widen the family topic." }
+    ]
+  };
+  var familyGameItemIds = [
+    "dad-word",
+    "mom-word",
+    "older-brother-word",
+    "younger-brother-word",
+    "older-sister-word",
+    "younger-sister-word"
+  ];
+  var familyPractice = [
+    {
+      id: "family-scene-1",
+      number: "1",
+      prompt: "Start with the family-love sentences from Book 1B",
+      visual: "parents-love",
+      imagePath: "assets/illustrated-family/family-scene-parents-love.webp",
+      imageAlt: "A child happily hugged by mum and dad in a cozy living room",
+      roomLabel: "living-room",
+      sceneLabel: "Living room",
+      sceneMood: "Loved at home",
+      lines: [
+        { hanzi: "\u7238\u7238\u5988\u5988\u7231\u6211\u3002", pinyin: "b\xE0 ba m\u0101 ma \xE0i w\u01D2.", english: "Dad and Mum love me.", audio: "\u7238\u7238\u5988\u5988\u7231\u6211" },
+        { hanzi: "\u6211\u7231\u7238\u7238\u3002", pinyin: "w\u01D2 \xE0i b\xE0 ba.", english: "I love Dad.", audio: "\u6211\u7231\u7238\u7238" },
+        { hanzi: "\u6211\u7231\u5988\u5988\u3002", pinyin: "w\u01D2 \xE0i m\u0101 ma.", english: "I love Mum.", audio: "\u6211\u7231\u5988\u5988" }
+      ]
+    },
+    {
+      id: "family-scene-2",
+      number: "2",
+      prompt: "Compare siblings by boy or girl, then older or younger",
+      visual: "siblings-compare",
+      imagePath: "assets/illustrated-family/family-scene-siblings.webp",
+      imageAlt: "Four siblings together in a living room: older brother, younger brother, older sister, and younger sister",
+      roomLabel: "playroom",
+      sceneLabel: "Sibling map",
+      sceneMood: "See both pairs at once",
+      lines: [
+        { personId: "older-brother", hanzi: "\u54E5\u54E5", pinyin: "g\u0113 ge", english: "older brother", audio: "\u54E5\u54E5" },
+        { personId: "younger-brother", hanzi: "\u5F1F\u5F1F", pinyin: "d\xEC di", english: "younger brother", audio: "\u5F1F\u5F1F" },
+        { personId: "older-sister", hanzi: "\u59D0\u59D0", pinyin: "ji\u011B jie", english: "older sister", audio: "\u59D0\u59D0" },
+        { personId: "younger-sister", hanzi: "\u59B9\u59B9", pinyin: "m\xE8i mei", english: "younger sister", audio: "\u59B9\u59B9" }
+      ]
+    }
+  ];
+  var illustratedFamily = {
+    grandpa: { id: "grandpa", label: "Grandpa", ageGroup: "senior", path: "assets/illustrated-family/grandpa.webp" },
+    grandma: { id: "grandma", label: "Grandma", ageGroup: "senior", path: "assets/illustrated-family/grandma.webp" },
+    dad: { id: "dad", label: "Dad", ageGroup: "adult", path: "assets/illustrated-family/family-avatar-dad.webp" },
+    mom: { id: "mom", label: "Mom", ageGroup: "adult", path: "assets/illustrated-family/family-avatar-mom.webp" },
+    girl: { id: "girl", label: "Older sister", ageGroup: "8", path: "assets/illustrated-family/family-avatar-older-sister.webp" },
+    boy: { id: "boy", label: "Younger brother", ageGroup: "6", path: "assets/illustrated-family/family-avatar-younger-brother.webp" }
+  };
+  var familyPersonIdsByItemId = {
+    "dad-word": "dad",
+    "mom-word": "mom",
+    "older-brother-word": "older-brother",
+    "younger-brother-word": "younger-brother",
+    "older-sister-word": "older-sister",
+    "younger-sister-word": "younger-sister"
+  };
+  var familyHeadshotsByItemId = {
+    "mom-word": "assets/illustrated-family/family-avatar-mom.webp",
+    "dad-word": "assets/illustrated-family/family-avatar-dad.webp",
+    "older-brother-word": "assets/illustrated-family/family-avatar-older-brother.webp",
+    "younger-brother-word": "assets/illustrated-family/family-avatar-younger-brother.webp",
+    "older-sister-word": "assets/illustrated-family/family-avatar-older-sister.webp",
+    "younger-sister-word": "assets/illustrated-family/family-avatar-younger-sister.webp"
+  };
+
   // src/games/shared-lesson-practice.js
   function createSharedLessonPractice({ state: state2, speak: speak2, elements, documentRef = document }) {
     const { activityPanelTitle: activityPanelTitle2, activityPanelSummary: activityPanelSummary2, activityList: activityList2 } = elements;
@@ -1429,43 +1535,7 @@
       ]
     },
     ageTopic,
-    {
-      id: "family",
-      title: "Family",
-      summary: "Start with love and belonging, then sort family words by older and younger.",
-      progressLabel: "1B to 3A",
-      iconText: "\u5BB6\u4EBA",
-      iconColor: "#aa7051",
-      iconAccent: "#f1d29b",
-      iconTheme: "family",
-      focus: {
-        hanzi: "\u7238\u7238\u5988\u5988\u7231\u6211\u3002",
-        pinyin: "b\xE0 ba m\u0101 ma \xE0i w\u01D2.",
-        english: "Dad and Mum love me.",
-        audio: "\u7238\u7238\u5988\u5988\u7231\u6211"
-      },
-      focusItems: [
-        { id: "parents-love-me", hanzi: "\u7238\u7238\u5988\u5988\u7231\u6211\u3002", pinyin: "b\xE0 ba m\u0101 ma \xE0i w\u01D2.", english: "Dad and Mum love me.", audio: "\u7238\u7238\u5988\u5988\u7231\u6211" },
-        { id: "i-love-dad", hanzi: "\u6211\u7231\u7238\u7238\u3002", pinyin: "w\u01D2 \xE0i b\xE0 ba.", english: "I love Dad.", audio: "\u6211\u7231\u7238\u7238" },
-        { id: "i-love-mom", hanzi: "\u6211\u7231\u5988\u5988\u3002", pinyin: "w\u01D2 \xE0i m\u0101 ma.", english: "I love Mum.", audio: "\u6211\u7231\u5988\u5988" },
-        { id: "mom-word", hanzi: "\u5988\u5988", pinyin: "m\u0101 ma", english: "mum", audio: "\u5988\u5988" },
-        { id: "dad-word", hanzi: "\u7238\u7238", pinyin: "b\xE0 ba", english: "dad", audio: "\u7238\u7238" },
-        { id: "older-brother-word", hanzi: "\u54E5\u54E5", pinyin: "g\u0113 ge", english: "older brother", audio: "\u54E5\u54E5" },
-        { id: "younger-brother-word", hanzi: "\u5F1F\u5F1F", pinyin: "d\xEC di", english: "younger brother", audio: "\u5F1F\u5F1F" },
-        { id: "older-sister-word", hanzi: "\u59D0\u59D0", pinyin: "ji\u011B jie", english: "older sister", audio: "\u59D0\u59D0" },
-        { id: "younger-sister-word", hanzi: "\u59B9\u59B9", pinyin: "m\xE8i mei", english: "younger sister", audio: "\u59B9\u59B9" }
-      ],
-      interactiveScene: "family-home",
-      parentGuide: "Use one warm family picture for \u7238\u7238\u5988\u5988\u7231\u6211, then switch quickly to family photos, pointing, and real names.",
-      cultureGuide: "This early family lesson works best when love words and family roles stay close to the child's real home life.",
-      activities: ["Tap to hear", "Match family member", "Listen and choose", "Talk about my family"],
-      steps: [
-        { book: "1B", lesson: 1, title: "Mum and dad", note: "Start with immediate family." },
-        { book: "1B", lesson: 2, title: "Brothers and sisters", note: "Expand the family set." },
-        { book: "2A", lesson: 2, title: "Two younger brothers", note: "Add sibling language in sentences." },
-        { book: "3A", lesson: 4, title: "Family", note: "Widen the family topic." }
-      ]
-    },
+    familyTopic,
     {
       id: "body",
       title: "Body",
@@ -2191,14 +2261,6 @@
   var greetingsGameItemIds = ["hello", "teacher-hello", "good-morning", "goodbye"];
   var politeGameItemIds = ["thank-you", "youre-welcome", "sorry", "never-mind"];
   var ageGameItemIds = ["ask-age", "age-five", "age-six", "age-seven", "ask-grade", "grade-one"];
-  var familyGameItemIds = [
-    "dad-word",
-    "mom-word",
-    "older-brother-word",
-    "younger-brother-word",
-    "older-sister-word",
-    "younger-sister-word"
-  ];
   var identityCountries = [
     { id: "china", label: "China", hanzi: "\u4E2D\u56FD", nationality: "\u4E2D\u56FD\u4EBA", pinyin: "Zh\u014Dng gu\xF3 r\xE9n", asset: "assets/illustrated-flags/china.webp", focusItemId: "china", response: { hanzi: "\u6211\u662F\u4E2D\u56FD\u4EBA\uFF0C\u6211\u4F1A\u8BF4\u6C49\u8BED\u3002", pinyin: "w\u01D2 sh\xEC Zh\u014Dng gu\xF3 r\xE9n, w\u01D2 hu\xEC shu\u014D H\xE0ny\u01D4.", english: "I am Chinese. I can speak Chinese.", audio: "\u6211\u662F\u4E2D\u56FD\u4EBA\uFF0C\u6211\u4F1A\u8BF4\u6C49\u8BED" } },
     { id: "usa", label: "United States", hanzi: "\u7F8E\u56FD", nationality: "\u7F8E\u56FD\u4EBA", pinyin: "M\u011Bi gu\xF3 r\xE9n", asset: "assets/illustrated-flags/united-states.webp", focusItemId: "usa", response: { hanzi: "\u6211\u662F\u7F8E\u56FD\u4EBA\uFF0C\u6211\u4F1A\u8BF4\u82F1\u8BED\u3002", pinyin: "w\u01D2 sh\xEC M\u011Bi gu\xF3 r\xE9n, w\u01D2 hu\xEC shu\u014D Y\u012Bngy\u01D4.", english: "I am American. I can speak English.", audio: "\u6211\u662F\u7F8E\u56FD\u4EBA\uFF0C\u6211\u4F1A\u8BF4\u82F1\u8BED" } },
@@ -2309,79 +2371,6 @@
       ]
     }
   ];
-  var familyPractice = [
-    {
-      id: "family-scene-1",
-      number: "1",
-      prompt: "Start with the family-love sentences from Book 1B",
-      visual: "parents-love",
-      imagePath: "assets/illustrated-family/family-scene-parents-love.webp",
-      imageAlt: "A child happily hugged by mum and dad in a cozy living room",
-      roomLabel: "living-room",
-      sceneLabel: "Living room",
-      sceneMood: "Loved at home",
-      lines: [
-        { hanzi: "\u7238\u7238\u5988\u5988\u7231\u6211\u3002", pinyin: "b\xE0 ba m\u0101 ma \xE0i w\u01D2.", english: "Dad and Mum love me.", audio: "\u7238\u7238\u5988\u5988\u7231\u6211" },
-        { hanzi: "\u6211\u7231\u7238\u7238\u3002", pinyin: "w\u01D2 \xE0i b\xE0 ba.", english: "I love Dad.", audio: "\u6211\u7231\u7238\u7238" },
-        { hanzi: "\u6211\u7231\u5988\u5988\u3002", pinyin: "w\u01D2 \xE0i m\u0101 ma.", english: "I love Mum.", audio: "\u6211\u7231\u5988\u5988" }
-      ]
-    },
-    {
-      id: "family-scene-2",
-      number: "2",
-      prompt: "Compare siblings by boy or girl, then older or younger",
-      visual: "siblings-compare",
-      imagePath: "assets/illustrated-family/family-scene-siblings.webp",
-      imageAlt: "Four siblings together in a living room: older brother, younger brother, older sister, and younger sister",
-      roomLabel: "playroom",
-      sceneLabel: "Sibling map",
-      sceneMood: "See both pairs at once",
-      lines: [
-        { personId: "older-brother", hanzi: "\u54E5\u54E5", pinyin: "g\u0113 ge", english: "older brother", audio: "\u54E5\u54E5" },
-        { personId: "younger-brother", hanzi: "\u5F1F\u5F1F", pinyin: "d\xEC di", english: "younger brother", audio: "\u5F1F\u5F1F" },
-        { personId: "older-sister", hanzi: "\u59D0\u59D0", pinyin: "ji\u011B jie", english: "older sister", audio: "\u59D0\u59D0" },
-        { personId: "younger-sister", hanzi: "\u59B9\u59B9", pinyin: "m\xE8i mei", english: "younger sister", audio: "\u59B9\u59B9" }
-      ]
-    }
-  ];
-  var illustratedFamily = {
-    grandpa: {
-      id: "grandpa",
-      label: "Grandpa",
-      ageGroup: "senior",
-      path: "assets/illustrated-family/grandpa.webp"
-    },
-    grandma: {
-      id: "grandma",
-      label: "Grandma",
-      ageGroup: "senior",
-      path: "assets/illustrated-family/grandma.webp"
-    },
-    dad: {
-      id: "dad",
-      label: "Dad",
-      ageGroup: "adult",
-      path: "assets/illustrated-family/family-avatar-dad.webp"
-    },
-    mom: {
-      id: "mom",
-      label: "Mom",
-      ageGroup: "adult",
-      path: "assets/illustrated-family/family-avatar-mom.webp"
-    },
-    girl: {
-      id: "girl",
-      label: "Older sister",
-      ageGroup: "8",
-      path: "assets/illustrated-family/family-avatar-older-sister.webp"
-    },
-    boy: {
-      id: "boy",
-      label: "Younger brother",
-      ageGroup: "6",
-      path: "assets/illustrated-family/family-avatar-younger-brother.webp"
-    }
-  };
   var illustratedKids = {
     lele: {
       id: "lele",
@@ -3288,19 +3277,11 @@
     renderActivityPanel(currentTopic());
   }
   function familyGameItems() {
-    const familyTopic = topicById("family");
-    return familyGameItemIds.map((id) => familyTopic?.focusItems.find((item) => item.id === id)).filter(Boolean);
+    const familyTopic2 = topicById("family");
+    return familyGameItemIds.map((id) => familyTopic2?.focusItems.find((item) => item.id === id)).filter(Boolean);
   }
   function familyPersonForItemId(itemId) {
-    const personIdByItemId = {
-      "dad-word": "dad",
-      "mom-word": "mom",
-      "older-brother-word": "older-brother",
-      "younger-brother-word": "younger-brother",
-      "older-sister-word": "older-sister",
-      "younger-sister-word": "younger-sister"
-    };
-    const personId = personIdByItemId[itemId];
+    const personId = familyPersonIdsByItemId[itemId];
     return {
       dad: illustratedFamily.dad,
       mom: illustratedFamily.mom,
@@ -3311,14 +3292,7 @@
     }[personId] ?? null;
   }
   function familyHeadshotForItemId(itemId) {
-    return {
-      "mom-word": "assets/illustrated-family/family-avatar-mom.webp",
-      "dad-word": "assets/illustrated-family/family-avatar-dad.webp",
-      "older-brother-word": "assets/illustrated-family/family-avatar-older-brother.webp",
-      "younger-brother-word": "assets/illustrated-family/family-avatar-younger-brother.webp",
-      "older-sister-word": "assets/illustrated-family/family-avatar-older-sister.webp",
-      "younger-sister-word": "assets/illustrated-family/family-avatar-younger-sister.webp"
-    }[itemId] ?? null;
+    return familyHeadshotsByItemId[itemId] ?? null;
   }
   function isFamilySentenceItemId(itemId) {
     return ["parents-love-me", "i-love-dad", "i-love-mom"].includes(itemId);
