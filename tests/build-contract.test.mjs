@@ -55,6 +55,14 @@ test("router preserves the existing topic query and detail hash contract", () =>
   assert.doesNotMatch(topicPageUrl({ pathname: "/", search: "", hash: "" }, "time-date"), /^undefined/);
 });
 
+test("shared lesson practice is provided by an explicit game factory", () => {
+  const legacySource = readFileSync("src/legacy-app.js", "utf8");
+  const gameSource = readFileSync("src/games/shared-lesson-practice.js", "utf8");
+  assert.match(legacySource, /createSharedLessonPractice\(\{[\s\S]*elements:/);
+  assert.doesNotMatch(legacySource, /function renderSharedLessonPractice\(/);
+  assert.match(gameSource, /export function createSharedLessonPractice/);
+});
+
 test("time and calendar content retains its expected teaching sets", () => {
   assert.equal(timeDateWeekItems.length, 7);
   assert.equal(timeDateClockItems.length, 12);
