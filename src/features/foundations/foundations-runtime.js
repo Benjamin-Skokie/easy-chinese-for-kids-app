@@ -1,5 +1,5 @@
 export function createFoundationsRuntime(context) {
-  const { state, numberHanzi, numberPinyin, buildNumberItem, numberStages, telephonePractice, familyGameItemIds, familyPersonIdsByItemId, familyHeadshotsByItemId, familyPractice, illustratedFamily, illustratedKids, bodyBonusItemIds, bodyCoreItemIds, bodyDiagramLayout, identityConversation, identityCountries, identityQuestion, topicById, focusItemsForTopic, currentTopic, currentNumberStage, currentFocusItem, currentBook, currentLesson, shuffleArray, speak, speakSceneLines, renderActivityPanel, renderFocusDisplay, renderFocusExplorer, renderFocusStatus, selectFocusItem, focusExplorer, focusStatus } = context;
+  const { state, numberHanzi, numberPinyin, buildNumberItem, numberStages, telephonePractice, familyGameItemIds, familyPersonIdsByItemId, familyHeadshotsByItemId, familyPractice, illustratedFamily, illustratedKids, bodyBonusItemIds, bodyCoreItemIds, bodyDiagramLayout, identityConversation, identityCountries, identityQuestion, topicById, focusItemsForTopic, currentTopic, currentNumberStage, currentFocusItem, currentBook, currentLesson, shuffleArray, chineseUtterance, speak, speakSceneLines, renderActivityPanel, renderFocusDisplay, renderFocusExplorer, renderFocusStatus, selectFocusItem, bodySentenceForItem, focusExplorer, focusStatus } = context;
 
 function numberStageItems(stage = currentNumberStage()) {
   const start = Math.min(stage.start, stage.end);
@@ -1205,6 +1205,135 @@ function renderIdentityExplorer() {
   });
 }
 
+let multiplicationPlaybackToken = 0;
+let multiplicationPlaybackPaused = false;
+let multiplicationPlaybackContainer = null;
 
-  return { numberStageItems, resetNumberChallenge, ensureNumberChallenge, resetMathChallenge, ensureMathChallenge, familyGameItems, familyPersonForItemId, familyHeadshotForItemId, isFamilySentenceItemId, familyBookWordItems, usesLessonTemplate, bookWordItemsForTopic, usefulNoteForTopic, familyWordForPersonId, resetFamilyChallenge, ensureFamilyChallenge, resetListenChallengeResult, handleFamilyChallengePlay, handleFamilyChallengeGuess, resetFamilyMatchGame, ensureFamilyMatchGame, handleFamilyMatchPhrase, handleFamilyMatchAttempt, mathChallengeAudioText, handleMathChallengeSubmit, handleNumberChallengeGuess, bodyMatchItems, nextBodyRound, resetBodyMatchGame, ensureBodyMatchGame, handleBodyMatchChinese, handleBodyMatchAttempt, numberWordListItems, renderBodyLabelButton, renderBodyExplorer, renderNumberVisual, renderNumbersExplorer, renderTelephoneExplorer, renderFamilyHomeVisual, renderFamilyExplorer, renderIdentityExplorer };
+function renderMultiplicationExplorer() {
+  const items = focusItemsForTopic();
+  const activeItem = currentFocusItem();
+  const itemByPair = new Map(items.map((item) => [`${item.first}-${item.second}`, item]));
+
+  focusExplorer.innerHTML = `
+    <div class="multiplication-board">
+      <div class="numbers-stage-card">
+        <div class="numbers-game-top">
+          <div>
+            <p class="body-match-kicker">Chinese math rhythm</p>
+            <h4>九九乘法口诀</h4>
+            <p>Tap a cell in the matrix. First see the multiplication fact, then hear and read the Chinese rhyme line.</p>
+          </div>
+          <div class="multiplication-playback-controls">
+            <button class="small-button is-action-button" type="button" data-multiplication-play-all>Play</button>
+            <button class="small-button" type="button" data-multiplication-pause disabled>Pause</button>
+            <button class="small-button" type="button" data-multiplication-stop disabled>Stop</button>
+          </div>
+        </div>
+      </div>
+      <div class="multiplication-matrix-card">
+        <div class="multiplication-matrix">
+          <div class="multiplication-corner"></div>
+          ${Array.from({ length: 9 }, (_, index) => index + 1).map((value) => `<div class="multiplication-header">${value}</div>`).join("")}
+          ${Array.from({ length: 9 }, (_, rowIndex) => rowIndex + 1).map((rowValue) => {
+            const rowHeader = `<div class="multiplication-header">${rowValue}</div>`;
+            const cells = Array.from({ length: 9 }, (_, colIndex) => colIndex + 1).map((colValue) => {
+              if (colValue < rowValue) return '<div class="multiplication-cell multiplication-cell-empty"></div>';
+              const item = itemByPair.get(`${rowValue}-${colValue}`);
+              const isActive = item?.id === activeItem.id;
+              return `<button class="multiplication-cell${isActive ? " is-active" : ""}" type="button" data-multiplication-item="${item?.id ?? ""}"><span class="multiplication-cell-fact">${rowValue}×${colValue}</span><span class="multiplication-cell-product">=${item?.product ?? ""}</span></button>`;
+            }).join("");
+            return rowHeader + cells;
+          }).join("")}
+        </div>
+      </div>
+      <div class="multiplication-detail-card">
+        <p class="body-match-kicker">Selected line</p>
+        <p class="multiplication-line-hanzi">${activeItem.hanzi}</p>
+        ${state.showPinyin ? `<p class="multiplication-line-pinyin">${activeItem.pinyin}</p>` : ""}
+        ${state.showEnglish ? `<p class="multiplication-line-english">${activeItem.english}</p>` : ""}
+        <button class="small-button is-action-button" type="button" data-multiplication-item="${activeItem.id}">Play audio</button>
+      </div>
+    </div>
+  `;
+
+  focusExplorer.querySelectorAll("[data-multiplication-item]").forEach((button) => {
+    button.addEventListener("click", () => {
+      stopMultiplicationRhyme();
+      selectFocusItem(button.dataset.multiplicationItem, { playAudio: true });
+    });
+  });
+  focusExplorer.querySelector("[data-multiplication-play-all]")?.addEventListener("click", () => playMultiplicationRhyme(items, focusExplorer));
+  focusExplorer.querySelector("[data-multiplication-pause]")?.addEventListener("click", toggleMultiplicationPause);
+  focusExplorer.querySelector("[data-multiplication-stop]")?.addEventListener("click", stopMultiplicationRhyme);
+}
+
+function playMultiplicationRhyme(items, container) {
+  if (!state.tapAudioEnabled || !("speechSynthesis" in window)) return;
+
+  stopMultiplicationRhyme();
+  multiplicationPlaybackToken += 1;
+  const playbackToken = multiplicationPlaybackToken;
+  let index = 0;
+  multiplicationPlaybackPaused = false;
+  multiplicationPlaybackContainer = container;
+  updateMultiplicationPlaybackControls(container);
+
+  const playNext = () => {
+    if (playbackToken !== multiplicationPlaybackToken || index >= items.length) {
+      finishMultiplicationRhyme(container, playbackToken);
+      return;
+    }
+    const item = items[index];
+    index += 1;
+    container.querySelectorAll(".multiplication-cell").forEach((cell) => {
+      cell.classList.toggle("is-playing", cell.dataset.multiplicationItem === item.id);
+    });
+    const utterance = chineseUtterance(item.audio, 0.72);
+    utterance.onend = () => window.setTimeout(playNext, 140);
+    window.speechSynthesis.speak(utterance);
+  };
+
+  playNext();
+}
+
+function toggleMultiplicationPause() {
+  if (!multiplicationPlaybackContainer || !("speechSynthesis" in window)) return;
+  multiplicationPlaybackPaused = !multiplicationPlaybackPaused;
+  if (multiplicationPlaybackPaused) window.speechSynthesis.pause();
+  else window.speechSynthesis.resume();
+  updateMultiplicationPlaybackControls(multiplicationPlaybackContainer);
+}
+
+function stopMultiplicationRhyme() {
+  multiplicationPlaybackToken += 1;
+  multiplicationPlaybackPaused = false;
+  window.speechSynthesis?.cancel();
+  const container = multiplicationPlaybackContainer;
+  multiplicationPlaybackContainer = null;
+  if (!container) return;
+  container.querySelectorAll(".multiplication-cell.is-playing").forEach((cell) => cell.classList.remove("is-playing"));
+  updateMultiplicationPlaybackControls(container);
+}
+
+function finishMultiplicationRhyme(container, playbackToken) {
+  if (playbackToken !== multiplicationPlaybackToken) return;
+  container.querySelectorAll(".multiplication-cell.is-playing").forEach((cell) => cell.classList.remove("is-playing"));
+  multiplicationPlaybackPaused = false;
+  multiplicationPlaybackContainer = null;
+  updateMultiplicationPlaybackControls(container);
+}
+
+function updateMultiplicationPlaybackControls(container) {
+  const isPlaying = multiplicationPlaybackContainer === container;
+  const pauseButton = container.querySelector("[data-multiplication-pause]");
+  const stopButton = container.querySelector("[data-multiplication-stop]");
+  if (pauseButton) {
+    pauseButton.disabled = !isPlaying;
+    pauseButton.textContent = multiplicationPlaybackPaused ? "Resume" : "Pause";
+  }
+  if (stopButton) stopButton.disabled = !isPlaying;
+}
+
+
+  return { numberStageItems, resetNumberChallenge, ensureNumberChallenge, resetMathChallenge, ensureMathChallenge, familyGameItems, familyPersonForItemId, familyHeadshotForItemId, isFamilySentenceItemId, familyBookWordItems, usesLessonTemplate, bookWordItemsForTopic, usefulNoteForTopic, familyWordForPersonId, resetFamilyChallenge, ensureFamilyChallenge, resetListenChallengeResult, handleFamilyChallengePlay, handleFamilyChallengeGuess, resetFamilyMatchGame, ensureFamilyMatchGame, handleFamilyMatchPhrase, handleFamilyMatchAttempt, mathChallengeAudioText, handleMathChallengeSubmit, handleNumberChallengeGuess, bodyMatchItems, nextBodyRound, resetBodyMatchGame, ensureBodyMatchGame, handleBodyMatchChinese, handleBodyMatchAttempt, numberWordListItems, renderBodyLabelButton, renderBodyExplorer, renderNumberVisual, renderNumbersExplorer, renderTelephoneExplorer, renderFamilyHomeVisual, renderFamilyExplorer, renderIdentityExplorer, renderMultiplicationExplorer };
 }

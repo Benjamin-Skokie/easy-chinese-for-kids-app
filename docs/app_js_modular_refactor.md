@@ -43,10 +43,13 @@ A feature registers its owned topic IDs, creates its scoped state, renders its e
 - [x] Extract URL parsing and topic URL generation into `src/core/router.js` with unit coverage.
 - [x] Extract audio into `src/core/audio.js` with unit coverage.
 - [x] Prefer the installed Mandarin female voice (`Tingting`) while retaining browser-default fallback.
+- [x] Extract the application state factory into `src/core/app-state.js`.
+- [x] Extract global sound, pinyin, number, and English display controls into `src/core/display-controls-runtime.js`.
 - [ ] Add data validation for duplicate topic IDs, lesson references, practice references, and asset paths.
 - [x] Validate Time & Daily Life asset paths and scene/practice relationships in `scripts/validate_learning_data.mjs`.
 - [x] Move the shared illustrated character catalog into `src/data/characters.js` and validate every character asset.
 - [x] Move books, course categories, topic groups, and landing-page topic metadata into `src/data/curriculum.js`.
+- [x] Move the topic registry and shared topic-to-runtime mappings into `src/data/topic-registry.js`.
 
 ### 3. Feature migration
 
@@ -84,6 +87,7 @@ A feature registers its owned topic IDs, creates its scoped state, renders its e
 - [x] Extract the complete Time & Daily Life practice and explorer runtime into `src/features/time-daily-life/time-daily-life-runtime.js` through one explicit dependency context.
 - [x] Extract the remaining Foundations interaction and explorer runtime into `src/features/foundations/foundations-runtime.js` through one explicit dependency context.
 - [x] Extract the navigation, topic-card, book-browser, and routing shell into `src/core/navigation-runtime.js` through one explicit dependency context.
+- [x] Move Multiplication Rhyme playback and explorer behavior into the Foundations runtime.
 - [ ] Migrate School, Food, Foundations, and Family/Home. (Greetings and Polite Words controllers extracted.)
 - [ ] Delete the matching legacy code after each replacement passes checks.
 

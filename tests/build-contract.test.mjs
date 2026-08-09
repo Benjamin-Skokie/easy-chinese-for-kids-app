@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import { spawnSync } from "node:child_process";
 import { readFileSync } from "node:fs";
 import test from "node:test";
 import { createAudioService } from "../src/core/audio.js";
@@ -99,10 +100,12 @@ test("shared lesson practice is provided by an explicit game factory", () => {
 
 test("legacy bootstrap retains its shared data and audio bindings", () => {
   const legacySource = readFileSync("src/legacy-app.js", "utf8");
-  assert.match(legacySource, /const \{ speak, speakSceneLines \} = createAudioService/);
-  assert.match(legacySource, /const visualTopicItems = \{/);
-  assert.match(legacySource, /const schoolTopicData = \{/);
-  assert.match(legacySource, /const schoolSentenceBuilds = \{/);
+  const registrySource = readFileSync("src/data/topic-registry.js", "utf8");
+  assert.match(legacySource, /const \{ chineseUtterance, speak, speakSceneLines \} = createAudioService/);
+  assert.match(legacySource, /from "\.\/data\/topic-registry\.js"/);
+  assert.match(registrySource, /export const visualTopicItems = \{/);
+  assert.match(registrySource, /export const schoolTopicData = \{/);
+  assert.match(registrySource, /export const schoolSentenceBuilds = \{/);
 });
 
 test("school and food runtime is separated from the legacy bootstrap", () => {
@@ -135,6 +138,8 @@ test("foundations runtime is separated from the legacy bootstrap", () => {
   assert.match(runtimeSource, /export function createFoundationsRuntime/);
   assert.match(runtimeSource, /familyPractice/);
   assert.match(legacySource, /familyPractice,/);
+  assert.match(runtimeSource, /bodySentenceForItem/);
+  assert.match(legacySource, /bodySentenceForItem,/);
 });
 
 test("feature runtimes initialize before the first landing-page render", () => {
@@ -159,6 +164,51 @@ test("navigation and landing-page behavior is separated from the legacy bootstra
   assert.match(runtimeSource, /export function createNavigationRuntime/);
   assert.match(runtimeSource, /function openTopicPage\(/);
   assert.match(runtimeSource, /function renderTopics\(/);
+});
+
+test("representative topic links boot after runtime composition", () => {
+  const bootstrap = `
+class Element {
+  constructor() {
+    this.classList = { add() {}, remove() {}, toggle() {} };
+    this.style = { setProperty() {} };
+    this.dataset = {};
+    this.hidden = false;
+    this.innerHTML = "";
+    this.textContent = "";
+    this.value = "";
+  }
+  addEventListener() {}
+  appendChild() {}
+  setAttribute() {}
+  removeAttribute() {}
+  querySelectorAll() { return []; }
+  querySelector() { return new Element(); }
+  closest() { return null; }
+  getBoundingClientRect() { return { top: 0, height: 0 }; }
+}
+const makeElement = () => new Element();
+globalThis.document = {
+  getElementById: makeElement, querySelector: makeElement, querySelectorAll: () => [],
+  createElement: makeElement, body: makeElement(), documentElement: { style: { scrollBehavior: "" } }
+};
+globalThis.window = {
+  location: { pathname: "/index.html", search: \`?topic=\${process.env.TOPIC}\`, hash: "#topic-detail" },
+  history: { pushState() {}, replaceState() {} }, addEventListener() {}, setTimeout, clearTimeout,
+  scrollY: 0, scrollTo() {}, speechSynthesis: { cancel() {}, speak() {}, getVoices() { return []; } }
+};
+globalThis.requestAnimationFrame = (callback) => callback();
+await import(\`./src/legacy-app.js?topic=\${process.env.TOPIC}\${Date.now()}\`);
+`;
+
+  for (const topic of ["introductions", "numbers", "family", "body", "school", "food", "weekdays"]) {
+    const result = spawnSync(process.execPath, ["--input-type=module", "-e", bootstrap], {
+      cwd: process.cwd(),
+      env: { ...process.env, TOPIC: topic },
+      encoding: "utf8"
+    });
+    assert.equal(result.status, 0, `${topic} failed to boot:\n${result.stderr}`);
+  }
 });
 
 test("greetings interaction is owned by its feature controller", () => {

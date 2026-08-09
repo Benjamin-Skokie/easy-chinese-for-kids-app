@@ -47,5 +47,5 @@ export function createAudioService({
     playNextLine();
   }
 
-  return { speak, speakSceneLines };
+  return { chineseUtterance, speak, speakSceneLines };
 }

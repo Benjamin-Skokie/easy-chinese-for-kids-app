@@ -1,5 +1,5 @@
 export function createNavigationRuntime(context) {
-  const { state, topicData, books, topicGroups, learningHomeCategories, bookHomeCategories, topicCardMeta, topicPageUrl, topicGroupsRoot, bookSelect, lessonSelect, lookupCard, bookBrowser, topicPanel, bookPanel, detailLayout, learningCultureNav, renderFocusControls, renderFocusDisplay, renderFocusWordList, renderFocusExplorer, renderActivityPanel, renderTopicDetail, updateDisplayControls, selectBookLesson } = context;
+  const { state, topicData, books, topicGroups, learningHomeCategories, bookHomeCategories, topicCardMeta, topicPageUrl, topicGroupsRoot, bookSelect, lessonSelect, lookupCard, bookBrowser, topicPanel, bookPanel, detailLayout, learningCultureNav, numberStages, timeDateWeekItems, getNumberStageItems, renderFocusControls, renderFocusDisplay, renderFocusWordList, renderFocusExplorer, renderActivityPanel, renderTopicDetail, updateDisplayControls, selectBookLesson } = context;
 
 function currentTopic() {
   return topicData.find((topic) => topic.id === state.selectedTopicId) ?? topicData[0];
@@ -15,7 +15,7 @@ function currentNumberStage() {
 
 function focusItemsForTopic(topic = currentTopic()) {
   if (topic.id === "numbers") {
-    return numberStageItems();
+    return getNumberStageItems();
   }
 
   if (topic.id === "weekdays") {

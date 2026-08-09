@@ -41,25 +41,335 @@
       };
       playNextLine();
     }
-    return { speak: speak2, speakSceneLines: speakSceneLines2 };
+    return { chineseUtterance: chineseUtterance2, speak: speak2, speakSceneLines: speakSceneLines2 };
+  }
+
+  // src/features/foundations/state.js
+  function createFoundationState() {
+    return {
+      bodyMatchIncludeBonus: false,
+      bodySelectedChineseId: null,
+      bodySelectedEnglishId: null,
+      bodyMatchedIds: /* @__PURE__ */ new Set(),
+      bodyRoundIds: [],
+      bodyChineseOrder: [],
+      bodyEnglishOrder: [],
+      bodyMatchUniverseKey: "",
+      lastBodyFeedback: "",
+      numberChallengeStageId: "",
+      numberChallengeTargetValue: null,
+      numberChallengeOptionValues: [],
+      lastNumberFeedback: "",
+      numberChallengeAdvanceTimer: null,
+      mathChallengeStageId: "",
+      mathChallengeOperator: "+",
+      mathChallengeLeft: null,
+      mathChallengeRight: null,
+      mathChallengeAnswer: null,
+      lastMathFeedback: "",
+      mathChallengeSolved: false,
+      mathChallengeInput: "",
+      greetingsChallengeAnswerId: "",
+      greetingsChallengeOptionIds: [],
+      greetingsChallengePickedId: "",
+      greetingsChallengePromptId: "",
+      greetingsChallengeResult: "",
+      greetingsChallengeWrongIds: /* @__PURE__ */ new Set(),
+      lastGreetingsFeedback: "",
+      greetingsListenFeedback: "",
+      greetingsMatchFeedback: "",
+      greetingsSelectedPhraseId: null,
+      greetingsMatchedIds: /* @__PURE__ */ new Set(),
+      greetingsPhraseOrder: [],
+      greetingsMeaningOrder: [],
+      familyChallengeAnswerId: "",
+      familyChallengeOptionIds: [],
+      familyChallengePickedId: "",
+      familyChallengePromptId: "",
+      familyChallengeResult: "",
+      familyChallengeWrongIds: /* @__PURE__ */ new Set(),
+      lastFamilyFeedback: "",
+      familyListenFeedback: "",
+      familyMatchFeedback: "",
+      familySelectedPhraseId: null,
+      familyMatchedIds: /* @__PURE__ */ new Set(),
+      familyPhraseOrder: [],
+      familyMeaningOrder: [],
+      introductionsChallengeAnswerId: "",
+      introductionsChallengeOptionIds: [],
+      introductionsChallengePromptId: "",
+      lastIntroductionsFeedback: "",
+      introductionsBuildTargetId: "",
+      introductionsBuildAvailableTokens: [],
+      introductionsBuildSelectedTokens: [],
+      ageChallengeAnswerId: "",
+      ageChallengeOptionIds: [],
+      ageChallengePromptId: "",
+      lastAgeFeedback: "",
+      ageBuildTargetId: "",
+      ageBuildAvailableTokens: [],
+      ageBuildSelectedTokens: [],
+      politeChallengeAnswerId: "",
+      politeChallengeOptionIds: [],
+      politeChallengePickedId: "",
+      politeChallengePromptId: "",
+      politeChallengeResult: "",
+      politeChallengeWrongIds: /* @__PURE__ */ new Set(),
+      lastPoliteFeedback: "",
+      politeListenFeedback: "",
+      politeMatchFeedback: "",
+      politeSelectedPhraseId: null,
+      politeMatchedIds: /* @__PURE__ */ new Set(),
+      politePhraseOrder: [],
+      politeMeaningOrder: []
+    };
+  }
+
+  // src/features/time-daily-life/state.js
+  function createTimeDailyLifeState() {
+    return {
+      weekdayChallengeAnswerId: "",
+      weekdayChallengeOptionIds: [],
+      weekdayChallengePickedId: "",
+      weekdayChallengePromptId: "",
+      weekdayChallengeResult: "",
+      weekdayChallengeWrongIds: /* @__PURE__ */ new Set(),
+      weekdayListenFeedback: "",
+      weekdayMatchFeedback: "",
+      weekdaySelectedPhraseId: null,
+      weekdayMatchedIds: /* @__PURE__ */ new Set(),
+      weekdayPhraseOrder: [],
+      weekdayMeaningOrder: [],
+      clothesQuizOrder: [],
+      clothesQuizIndex: 0,
+      clothesQuizOptionIds: [],
+      clothesQuizSelectedId: "",
+      clothesQuizResult: "",
+      timeRoutineQuizOrder: [],
+      timeRoutineQuizIndex: 0,
+      timeRoutineQuizOptionIds: [],
+      timeRoutineQuizSelectedId: "",
+      timeRoutineQuizResult: "",
+      clockQuizOrder: [],
+      clockQuizIndex: 0,
+      clockQuizOptionIds: [],
+      clockQuizSelectedId: "",
+      clockQuizResult: "",
+      roomBuildOrder: [],
+      roomBuildIndex: 0,
+      roomBuildAvailableTokens: [],
+      roomBuildSelectedTokens: [],
+      roomBuildResult: "",
+      dateChallengeAnswerId: "",
+      dateChallengeOptionIds: [],
+      dateChallengePickedId: "",
+      dateChallengePromptId: "",
+      dateChallengeResult: "",
+      dateChallengeWrongIds: /* @__PURE__ */ new Set(),
+      dateListenFeedback: "",
+      dateMatchFeedback: "",
+      dateSelectedPhraseId: null,
+      dateMatchedIds: /* @__PURE__ */ new Set(),
+      datePhraseOrder: [],
+      dateEventOrder: [],
+      transportBuildOrder: [],
+      transportBuildIndex: 0,
+      transportBuildAvailableTokens: [],
+      transportBuildSelectedTokens: [],
+      transportBuildResult: "",
+      positionQuizOrder: [],
+      positionQuizIndex: 0,
+      positionQuizOptionIds: [],
+      positionQuizSelectedId: "",
+      positionQuizResult: "",
+      comparisonBuildOrder: [],
+      comparisonBuildIndex: 0,
+      comparisonBuildAvailableTokens: [],
+      comparisonBuildSelectedTokens: [],
+      comparisonBuildResult: ""
+    };
+  }
+
+  // src/core/app-state.js
+  function createAppState() {
+    return {
+      currentView: "topics",
+      selectedTopicId: "numbers",
+      expandedCategoryId: "foundations",
+      selectedBookCategoryId: "first-steps",
+      selectedBookId: "1a",
+      selectedLessonNumber: 1,
+      topicPageOpen: false,
+      openTopicGroups: /* @__PURE__ */ new Set(["foundations"]),
+      showPinyin: true,
+      showArabic: true,
+      showEnglish: true,
+      tapAudioEnabled: true,
+      selectedFocusItemId: null,
+      ...createFoundationState(),
+      ...createTimeDailyLifeState(),
+      schoolPracticeTopicId: "",
+      schoolChallengeAnswerId: "",
+      schoolChallengeOptionIds: [],
+      schoolChallengePickedId: "",
+      schoolChallengePromptId: "",
+      schoolChallengeResult: "",
+      schoolChallengeWrongIds: /* @__PURE__ */ new Set(),
+      schoolListenFeedback: "",
+      schoolMatchFeedback: "",
+      schoolSelectedPhraseId: null,
+      schoolMatchedIds: /* @__PURE__ */ new Set(),
+      schoolPhraseOrder: [],
+      schoolMeaningOrder: [],
+      backpackGameRoundIds: [],
+      backpackGameTargetIndex: 0,
+      backpackGameOptionIds: [],
+      backpackGamePlacedIds: [],
+      backpackGameWrongIds: /* @__PURE__ */ new Set(),
+      backpackGameComplete: false,
+      stationeryPictureMatchIndex: 0,
+      stationeryPictureMatchSelections: { measure: "", color: "", item: "" },
+      stationeryPictureMatchWrong: { measure: /* @__PURE__ */ new Set(), color: /* @__PURE__ */ new Set(), item: /* @__PURE__ */ new Set() },
+      stationeryPictureMatchChoiceOrders: { measure: [], color: [], item: [] },
+      stationeryPictureMatchComplete: false,
+      mealsConversationMatchReady: false,
+      mealsConversationWrongPhraseIds: /* @__PURE__ */ new Set(),
+      mealsConversationWrongReplyIds: /* @__PURE__ */ new Set(),
+      mealsPictureQuizOrder: [],
+      mealsPictureQuizIndex: 0,
+      mealsPictureQuizOptionIds: [],
+      mealsPictureQuizSelectedId: "",
+      mealsPictureQuizResult: "",
+      foodPreferenceSubjectId: "\u6211",
+      foodPreferencePatternId: "like",
+      foodPreferenceFoodId: "",
+      classroomSentenceFrameId: "in-classroom",
+      classroomSentenceWordId: "",
+      schoolBuildTopicId: "",
+      schoolBuildOrder: [],
+      schoolBuildIndex: 0,
+      schoolBuildAvailableTokens: [],
+      schoolBuildSelectedTokens: [],
+      schoolBuildResult: "",
+      foodBookCategoryId: "fruit",
+      mealsWordGroupId: "lunch",
+      foodHungerModeId: "mix",
+      foodHungerRoundIds: [],
+      foodHungerTargetIndex: 0,
+      foodHungerOptionIds: [],
+      foodHungerPlatedIds: [],
+      foodHungerWrongIds: /* @__PURE__ */ new Set(),
+      foodHungerComplete: false,
+      timeDateSectionId: "",
+      timeDateSectionSource: "",
+      identitySelectedCountryId: ""
+    };
+  }
+
+  // src/core/display-controls-runtime.js
+  function createDisplayControlsRuntime(context) {
+    const {
+      state: state2,
+      elements,
+      getCurrentTopic,
+      getCurrentFocusItem,
+      renderFocusWordList: renderFocusWordList3,
+      renderFocusExplorer: renderFocusExplorer2,
+      renderActivityPanel: renderActivityPanel2
+    } = context;
+    const {
+      toggleAudioButton: toggleAudioButton2,
+      togglePinyinButton: togglePinyinButton2,
+      toggleArabicButton: toggleArabicButton2,
+      toggleEnglishButton: toggleEnglishButton2,
+      focusHanzi: focusHanzi2,
+      focusPinyin: focusPinyin2,
+      focusEnglish: focusEnglish2,
+      learningCultureNav: learningCultureNav2
+    } = elements;
+    function updateDisplayControls2() {
+      renderFocusControls2();
+      renderFocusDisplay2(getCurrentFocusItem());
+      renderFocusWordList3();
+      renderFocusExplorer2();
+      renderActivityPanel2(getCurrentTopic());
+    }
+    function renderFocusControls2() {
+      const topic = getCurrentTopic();
+      document.body.classList.toggle("is-pinyin-hidden", !state2.showPinyin);
+      document.body.classList.toggle("is-english-hidden", !state2.showEnglish);
+      const controlPairs = [
+        [toggleAudioButton2, state2.tapAudioEnabled, "Tap sound"],
+        [togglePinyinButton2, state2.showPinyin, "Pinyin"],
+        [toggleArabicButton2, state2.showArabic, "Numbers"],
+        [toggleEnglishButton2, state2.showEnglish, "English"]
+      ];
+      controlPairs.forEach(([button, enabled, label]) => {
+        button.classList.toggle("is-toggle-active", enabled);
+        button.classList.toggle("is-toggle-inactive", !enabled);
+        button.textContent = `${label} ${enabled ? "on" : "off"}`;
+      });
+      toggleArabicButton2.classList.toggle("is-hidden", topic.id !== "numbers");
+      learningCultureNav2?.querySelectorAll("[data-display-toggle]").forEach((button) => {
+        const control = button.dataset.displayToggle;
+        const enabled = control === "sound" ? state2.tapAudioEnabled : control === "pinyin" ? state2.showPinyin : state2.showEnglish;
+        const label = control === "sound" ? "Sound" : control === "pinyin" ? "Pinyin" : "English";
+        button.classList.toggle("is-toggle-active", enabled);
+        button.classList.toggle("is-toggle-inactive", !enabled);
+        button.textContent = `${label} ${enabled ? "on" : "off"}`;
+        button.setAttribute("aria-pressed", String(enabled));
+      });
+    }
+    function renderFocusDisplay2(item) {
+      if (!item) {
+        focusHanzi2.textContent = "";
+        focusPinyin2.textContent = "";
+        focusEnglish2.textContent = "";
+        return;
+      }
+      focusHanzi2.textContent = item.hanzi;
+      focusPinyin2.textContent = state2.showPinyin ? item.pinyin : "";
+      focusEnglish2.textContent = state2.showEnglish ? item.english : "";
+    }
+    function bindDisplayControls2() {
+      toggleAudioButton2.addEventListener("click", () => {
+        state2.tapAudioEnabled = !state2.tapAudioEnabled;
+        updateDisplayControls2();
+      });
+      togglePinyinButton2.addEventListener("click", () => {
+        state2.showPinyin = !state2.showPinyin;
+        updateDisplayControls2();
+      });
+      toggleArabicButton2.addEventListener("click", () => {
+        state2.showArabic = !state2.showArabic;
+        renderFocusControls2();
+        renderFocusExplorer2();
+        renderActivityPanel2(getCurrentTopic());
+      });
+      toggleEnglishButton2.addEventListener("click", () => {
+        state2.showEnglish = !state2.showEnglish;
+        updateDisplayControls2();
+      });
+    }
+    return { bindDisplayControls: bindDisplayControls2, renderFocusControls: renderFocusControls2, renderFocusDisplay: renderFocusDisplay2, updateDisplayControls: updateDisplayControls2 };
   }
 
   // src/core/navigation-runtime.js
   function createNavigationRuntime(context) {
-    const { state: state2, topicData: topicData2, books: books2, topicGroups: topicGroups2, learningHomeCategories: learningHomeCategories2, bookHomeCategories: bookHomeCategories2, topicCardMeta: topicCardMeta2, topicPageUrl: topicPageUrl2, topicGroupsRoot: topicGroupsRoot2, bookSelect: bookSelect2, lessonSelect: lessonSelect2, lookupCard: lookupCard2, bookBrowser: bookBrowser2, topicPanel: topicPanel2, bookPanel: bookPanel2, detailLayout: detailLayout2, learningCultureNav: learningCultureNav2, renderFocusControls: renderFocusControls2, renderFocusDisplay: renderFocusDisplay2, renderFocusWordList: renderFocusWordList3, renderFocusExplorer: renderFocusExplorer2, renderActivityPanel: renderActivityPanel2, renderTopicDetail: renderTopicDetail2, updateDisplayControls: updateDisplayControls2, selectBookLesson: selectBookLesson2 } = context;
+    const { state: state2, topicData: topicData2, books: books2, topicGroups: topicGroups2, learningHomeCategories: learningHomeCategories2, bookHomeCategories: bookHomeCategories2, topicCardMeta: topicCardMeta2, topicPageUrl: topicPageUrl2, topicGroupsRoot: topicGroupsRoot2, bookSelect: bookSelect2, lessonSelect: lessonSelect2, lookupCard: lookupCard2, bookBrowser: bookBrowser2, topicPanel: topicPanel2, bookPanel: bookPanel2, detailLayout: detailLayout2, learningCultureNav: learningCultureNav2, numberStages: numberStages2, timeDateWeekItems: timeDateWeekItems2, getNumberStageItems, renderFocusControls: renderFocusControls2, renderFocusDisplay: renderFocusDisplay2, renderFocusWordList: renderFocusWordList3, renderFocusExplorer: renderFocusExplorer2, renderActivityPanel: renderActivityPanel2, renderTopicDetail: renderTopicDetail2, updateDisplayControls: updateDisplayControls2, selectBookLesson: selectBookLesson2 } = context;
     function currentTopic2() {
       return topicData2.find((topic) => topic.id === state2.selectedTopicId) ?? topicData2[0];
     }
     function currentNumberStage2() {
       const lesson = currentLesson2();
-      return numberStages.find((stage) => stage.bookId === currentBook2().id && stage.lesson === lesson.lesson) ?? numberStages[0];
+      return numberStages2.find((stage) => stage.bookId === currentBook2().id && stage.lesson === lesson.lesson) ?? numberStages2[0];
     }
     function focusItemsForTopic2(topic = currentTopic2()) {
       if (topic.id === "numbers") {
-        return numberStageItems();
+        return getNumberStageItems();
       }
       if (topic.id === "weekdays") {
-        return timeDateWeekItems;
+        return timeDateWeekItems2;
       }
       return topic.focusItems ?? [{ id: "focus", ...topic.focus }];
     }
@@ -690,7 +1000,7 @@
   }
 
   // src/features/time-daily-life/weekdays.js
-  var timeDateWeekItems2 = [
+  var timeDateWeekItems = [
     ["monday", "\u661F\u671F\u4E00", "x\u012Bng q\u012B y\u012B", "Monday", "\u661F\u671F\u4E00\uFF0C\u6211\u4EEC\u5750\u6821\u8F66\u53BB\u5B66\u6821\u3002", "x\u012Bng q\u012B y\u012B, w\u01D2 men zu\xF2 xi\xE0o ch\u0113 q\xF9 xu\xE9 xi\xE0o.", "On Monday, we take the school bus to school.", "Monday.webp"],
     ["tuesday", "\u661F\u671F\u4E8C", "x\u012Bng q\u012B \xE8r", "Tuesday", "\u661F\u671F\u4E8C\uFF0C\u6211\u4EEC\u4E0A\u4F53\u80B2\u8BFE\u3002", "x\u012Bng q\u012B \xE8r, w\u01D2 men sh\xE0ng t\u01D0 y\xF9 k\xE8.", "On Tuesday, we have PE class.", "Tuesday.webp"],
     ["wednesday", "\u661F\u671F\u4E09", "x\u012Bng q\u012B s\u0101n", "Wednesday", "\u661F\u671F\u4E09\uFF0C\u6211\u4EEC\u4E0A\u7F8E\u672F\u8BFE\u3002", "x\u012Bng q\u012B s\u0101n, w\u01D2 men sh\xE0ng m\u011Bi sh\xF9 k\xE8.", "On Wednesday, we have art class.", "Wednesday.webp"],
@@ -4086,7 +4396,7 @@
     9: { hanzi: "\u4E5D", pinyin: "ji\u01D4" },
     10: { hanzi: "\u5341", pinyin: "sh\xED" }
   };
-  var numberStages2 = [
+  var numberStages = [
     {
       id: "1a-1",
       bookId: "1a",
@@ -4268,91 +4578,10 @@
   }
   multiplicationRhymeTopic.focusItems = buildMultiplicationRhymeItems();
 
-  // src/features/foundations/state.js
-  function createFoundationState() {
-    return {
-      bodyMatchIncludeBonus: false,
-      bodySelectedChineseId: null,
-      bodySelectedEnglishId: null,
-      bodyMatchedIds: /* @__PURE__ */ new Set(),
-      bodyRoundIds: [],
-      bodyChineseOrder: [],
-      bodyEnglishOrder: [],
-      bodyMatchUniverseKey: "",
-      lastBodyFeedback: "",
-      numberChallengeStageId: "",
-      numberChallengeTargetValue: null,
-      numberChallengeOptionValues: [],
-      lastNumberFeedback: "",
-      numberChallengeAdvanceTimer: null,
-      mathChallengeStageId: "",
-      mathChallengeOperator: "+",
-      mathChallengeLeft: null,
-      mathChallengeRight: null,
-      mathChallengeAnswer: null,
-      lastMathFeedback: "",
-      mathChallengeSolved: false,
-      mathChallengeInput: "",
-      greetingsChallengeAnswerId: "",
-      greetingsChallengeOptionIds: [],
-      greetingsChallengePickedId: "",
-      greetingsChallengePromptId: "",
-      greetingsChallengeResult: "",
-      greetingsChallengeWrongIds: /* @__PURE__ */ new Set(),
-      lastGreetingsFeedback: "",
-      greetingsListenFeedback: "",
-      greetingsMatchFeedback: "",
-      greetingsSelectedPhraseId: null,
-      greetingsMatchedIds: /* @__PURE__ */ new Set(),
-      greetingsPhraseOrder: [],
-      greetingsMeaningOrder: [],
-      familyChallengeAnswerId: "",
-      familyChallengeOptionIds: [],
-      familyChallengePickedId: "",
-      familyChallengePromptId: "",
-      familyChallengeResult: "",
-      familyChallengeWrongIds: /* @__PURE__ */ new Set(),
-      lastFamilyFeedback: "",
-      familyListenFeedback: "",
-      familyMatchFeedback: "",
-      familySelectedPhraseId: null,
-      familyMatchedIds: /* @__PURE__ */ new Set(),
-      familyPhraseOrder: [],
-      familyMeaningOrder: [],
-      introductionsChallengeAnswerId: "",
-      introductionsChallengeOptionIds: [],
-      introductionsChallengePromptId: "",
-      lastIntroductionsFeedback: "",
-      introductionsBuildTargetId: "",
-      introductionsBuildAvailableTokens: [],
-      introductionsBuildSelectedTokens: [],
-      ageChallengeAnswerId: "",
-      ageChallengeOptionIds: [],
-      ageChallengePromptId: "",
-      lastAgeFeedback: "",
-      ageBuildTargetId: "",
-      ageBuildAvailableTokens: [],
-      ageBuildSelectedTokens: [],
-      politeChallengeAnswerId: "",
-      politeChallengeOptionIds: [],
-      politeChallengePickedId: "",
-      politeChallengePromptId: "",
-      politeChallengeResult: "",
-      politeChallengeWrongIds: /* @__PURE__ */ new Set(),
-      lastPoliteFeedback: "",
-      politeListenFeedback: "",
-      politeMatchFeedback: "",
-      politeSelectedPhraseId: null,
-      politeMatchedIds: /* @__PURE__ */ new Set(),
-      politePhraseOrder: [],
-      politeMeaningOrder: []
-    };
-  }
-
   // src/features/foundations/foundations-runtime.js
   function createFoundationsRuntime(context) {
-    const { state: state2, numberHanzi: numberHanzi2, numberPinyin: numberPinyin2, buildNumberItem: buildNumberItem2, numberStages: numberStages3, telephonePractice: telephonePractice2, familyGameItemIds: familyGameItemIds2, familyPersonIdsByItemId: familyPersonIdsByItemId2, familyHeadshotsByItemId: familyHeadshotsByItemId2, familyPractice: familyPractice2, illustratedFamily: illustratedFamily2, illustratedKids: illustratedKids2, bodyBonusItemIds: bodyBonusItemIds2, bodyCoreItemIds: bodyCoreItemIds2, bodyDiagramLayout: bodyDiagramLayout2, identityConversation: identityConversation2, identityCountries: identityCountries2, identityQuestion: identityQuestion2, topicById: topicById2, focusItemsForTopic: focusItemsForTopic2, currentTopic: currentTopic2, currentNumberStage: currentNumberStage2, currentFocusItem: currentFocusItem2, currentBook: currentBook2, currentLesson: currentLesson2, shuffleArray: shuffleArray2, speak: speak2, speakSceneLines: speakSceneLines2, renderActivityPanel: renderActivityPanel2, renderFocusDisplay: renderFocusDisplay2, renderFocusExplorer: renderFocusExplorer2, renderFocusStatus: renderFocusStatus2, selectFocusItem: selectFocusItem2, focusExplorer: focusExplorer2, focusStatus: focusStatus2 } = context;
-    function numberStageItems3(stage = currentNumberStage2()) {
+    const { state: state2, numberHanzi: numberHanzi2, numberPinyin: numberPinyin2, buildNumberItem: buildNumberItem2, numberStages: numberStages2, telephonePractice: telephonePractice2, familyGameItemIds: familyGameItemIds2, familyPersonIdsByItemId: familyPersonIdsByItemId2, familyHeadshotsByItemId: familyHeadshotsByItemId2, familyPractice: familyPractice2, illustratedFamily: illustratedFamily2, illustratedKids: illustratedKids2, bodyBonusItemIds: bodyBonusItemIds2, bodyCoreItemIds: bodyCoreItemIds2, bodyDiagramLayout: bodyDiagramLayout2, identityConversation: identityConversation2, identityCountries: identityCountries2, identityQuestion: identityQuestion2, topicById: topicById2, focusItemsForTopic: focusItemsForTopic2, currentTopic: currentTopic2, currentNumberStage: currentNumberStage2, currentFocusItem: currentFocusItem2, currentBook: currentBook2, currentLesson: currentLesson2, shuffleArray: shuffleArray2, chineseUtterance: chineseUtterance2, speak: speak2, speakSceneLines: speakSceneLines2, renderActivityPanel: renderActivityPanel2, renderFocusDisplay: renderFocusDisplay2, renderFocusExplorer: renderFocusExplorer2, renderFocusStatus: renderFocusStatus2, selectFocusItem: selectFocusItem2, bodySentenceForItem: bodySentenceForItem2, focusExplorer: focusExplorer2, focusStatus: focusStatus2 } = context;
+    function numberStageItems2(stage = currentNumberStage2()) {
       const start = Math.min(stage.start, stage.end);
       const end = Math.max(stage.start, stage.end);
       const items = [];
@@ -4363,7 +4592,7 @@
     }
     function resetNumberChallenge2(options = {}) {
       const stage = currentNumberStage2();
-      const items = numberStageItems3(stage);
+      const items = numberStageItems2(stage);
       const pool = items.map((entry) => entry.value);
       const targetValue = pool[Math.floor(Math.random() * pool.length)];
       const distractors = shuffleArray2(pool.filter((value) => value !== targetValue)).slice(
@@ -4822,7 +5051,7 @@
     function renderBodyExplorer2() {
       ensureBodyMatchGame2();
       const item = currentFocusItem2();
-      const sentence = bodySentenceForItem(item);
+      const sentence = bodySentenceForItem2(item);
       const items = Object.fromEntries(focusItemsForTopic2().map((entry) => [entry.id, entry]));
       const matchItems = Object.fromEntries(bodyMatchItems2().map((entry) => [entry.id, entry]));
       const roundComplete = state2.bodyRoundIds.length > 0 && state2.bodyRoundIds.every((id) => state2.bodyMatchedIds.has(id));
@@ -4946,7 +5175,7 @@
           <div class="body-sentence-examples">
             ${["eyes", "ears", "nose", "mouth", "head", "hair", "hand", "foot"].map((id) => {
         const practiceItem = items[id];
-        const practiceSentence = bodySentenceForItem(practiceItem);
+        const practiceSentence = bodySentenceForItem2(practiceItem);
         const isActivePractice = item.id === id;
         return `
                   <button
@@ -4977,8 +5206,8 @@
           }
           selectFocusItem2(sentenceItemId, {
             playAudio: true,
-            audioText: bodySentenceForItem(sentenceItem).hanzi,
-            bodyFeedback: `Practice saying ${bodySentenceForItem(sentenceItem).hanzi}.`
+            audioText: bodySentenceForItem2(sentenceItem).hanzi,
+            bodyFeedback: `Practice saying ${bodySentenceForItem2(sentenceItem).hanzi}.`
           });
         });
       });
@@ -5382,82 +5611,134 @@
         });
       });
     }
-    return { numberStageItems: numberStageItems3, resetNumberChallenge: resetNumberChallenge2, ensureNumberChallenge: ensureNumberChallenge2, resetMathChallenge: resetMathChallenge2, ensureMathChallenge: ensureMathChallenge2, familyGameItems: familyGameItems2, familyPersonForItemId: familyPersonForItemId2, familyHeadshotForItemId: familyHeadshotForItemId2, isFamilySentenceItemId: isFamilySentenceItemId2, familyBookWordItems: familyBookWordItems2, usesLessonTemplate: usesLessonTemplate2, bookWordItemsForTopic: bookWordItemsForTopic2, usefulNoteForTopic: usefulNoteForTopic2, familyWordForPersonId: familyWordForPersonId2, resetFamilyChallenge: resetFamilyChallenge2, ensureFamilyChallenge: ensureFamilyChallenge2, resetListenChallengeResult: resetListenChallengeResult2, handleFamilyChallengePlay: handleFamilyChallengePlay2, handleFamilyChallengeGuess: handleFamilyChallengeGuess2, resetFamilyMatchGame: resetFamilyMatchGame2, ensureFamilyMatchGame: ensureFamilyMatchGame2, handleFamilyMatchPhrase: handleFamilyMatchPhrase2, handleFamilyMatchAttempt: handleFamilyMatchAttempt2, mathChallengeAudioText: mathChallengeAudioText2, handleMathChallengeSubmit: handleMathChallengeSubmit2, handleNumberChallengeGuess: handleNumberChallengeGuess2, bodyMatchItems: bodyMatchItems2, nextBodyRound: nextBodyRound2, resetBodyMatchGame: resetBodyMatchGame2, ensureBodyMatchGame: ensureBodyMatchGame2, handleBodyMatchChinese: handleBodyMatchChinese2, handleBodyMatchAttempt: handleBodyMatchAttempt2, numberWordListItems: numberWordListItems2, renderBodyLabelButton: renderBodyLabelButton2, renderBodyExplorer: renderBodyExplorer2, renderNumberVisual: renderNumberVisual2, renderNumbersExplorer: renderNumbersExplorer2, renderTelephoneExplorer: renderTelephoneExplorer2, renderFamilyHomeVisual: renderFamilyHomeVisual2, renderFamilyExplorer: renderFamilyExplorer2, renderIdentityExplorer: renderIdentityExplorer2 };
-  }
-
-  // src/features/time-daily-life/state.js
-  function createTimeDailyLifeState() {
-    return {
-      weekdayChallengeAnswerId: "",
-      weekdayChallengeOptionIds: [],
-      weekdayChallengePickedId: "",
-      weekdayChallengePromptId: "",
-      weekdayChallengeResult: "",
-      weekdayChallengeWrongIds: /* @__PURE__ */ new Set(),
-      weekdayListenFeedback: "",
-      weekdayMatchFeedback: "",
-      weekdaySelectedPhraseId: null,
-      weekdayMatchedIds: /* @__PURE__ */ new Set(),
-      weekdayPhraseOrder: [],
-      weekdayMeaningOrder: [],
-      clothesQuizOrder: [],
-      clothesQuizIndex: 0,
-      clothesQuizOptionIds: [],
-      clothesQuizSelectedId: "",
-      clothesQuizResult: "",
-      timeRoutineQuizOrder: [],
-      timeRoutineQuizIndex: 0,
-      timeRoutineQuizOptionIds: [],
-      timeRoutineQuizSelectedId: "",
-      timeRoutineQuizResult: "",
-      clockQuizOrder: [],
-      clockQuizIndex: 0,
-      clockQuizOptionIds: [],
-      clockQuizSelectedId: "",
-      clockQuizResult: "",
-      roomBuildOrder: [],
-      roomBuildIndex: 0,
-      roomBuildAvailableTokens: [],
-      roomBuildSelectedTokens: [],
-      roomBuildResult: "",
-      dateChallengeAnswerId: "",
-      dateChallengeOptionIds: [],
-      dateChallengePickedId: "",
-      dateChallengePromptId: "",
-      dateChallengeResult: "",
-      dateChallengeWrongIds: /* @__PURE__ */ new Set(),
-      dateListenFeedback: "",
-      dateMatchFeedback: "",
-      dateSelectedPhraseId: null,
-      dateMatchedIds: /* @__PURE__ */ new Set(),
-      datePhraseOrder: [],
-      dateEventOrder: [],
-      transportBuildOrder: [],
-      transportBuildIndex: 0,
-      transportBuildAvailableTokens: [],
-      transportBuildSelectedTokens: [],
-      transportBuildResult: "",
-      positionQuizOrder: [],
-      positionQuizIndex: 0,
-      positionQuizOptionIds: [],
-      positionQuizSelectedId: "",
-      positionQuizResult: "",
-      comparisonBuildOrder: [],
-      comparisonBuildIndex: 0,
-      comparisonBuildAvailableTokens: [],
-      comparisonBuildSelectedTokens: [],
-      comparisonBuildResult: ""
-    };
+    let multiplicationPlaybackToken = 0;
+    let multiplicationPlaybackPaused = false;
+    let multiplicationPlaybackContainer = null;
+    function renderMultiplicationExplorer2() {
+      const items = focusItemsForTopic2();
+      const activeItem = currentFocusItem2();
+      const itemByPair = new Map(items.map((item) => [`${item.first}-${item.second}`, item]));
+      focusExplorer2.innerHTML = `
+    <div class="multiplication-board">
+      <div class="numbers-stage-card">
+        <div class="numbers-game-top">
+          <div>
+            <p class="body-match-kicker">Chinese math rhythm</p>
+            <h4>\u4E5D\u4E5D\u4E58\u6CD5\u53E3\u8BC0</h4>
+            <p>Tap a cell in the matrix. First see the multiplication fact, then hear and read the Chinese rhyme line.</p>
+          </div>
+          <div class="multiplication-playback-controls">
+            <button class="small-button is-action-button" type="button" data-multiplication-play-all>Play</button>
+            <button class="small-button" type="button" data-multiplication-pause disabled>Pause</button>
+            <button class="small-button" type="button" data-multiplication-stop disabled>Stop</button>
+          </div>
+        </div>
+      </div>
+      <div class="multiplication-matrix-card">
+        <div class="multiplication-matrix">
+          <div class="multiplication-corner"></div>
+          ${Array.from({ length: 9 }, (_, index) => index + 1).map((value) => `<div class="multiplication-header">${value}</div>`).join("")}
+          ${Array.from({ length: 9 }, (_, rowIndex) => rowIndex + 1).map((rowValue) => {
+        const rowHeader = `<div class="multiplication-header">${rowValue}</div>`;
+        const cells = Array.from({ length: 9 }, (_, colIndex) => colIndex + 1).map((colValue) => {
+          if (colValue < rowValue) return '<div class="multiplication-cell multiplication-cell-empty"></div>';
+          const item = itemByPair.get(`${rowValue}-${colValue}`);
+          const isActive = item?.id === activeItem.id;
+          return `<button class="multiplication-cell${isActive ? " is-active" : ""}" type="button" data-multiplication-item="${item?.id ?? ""}"><span class="multiplication-cell-fact">${rowValue}\xD7${colValue}</span><span class="multiplication-cell-product">=${item?.product ?? ""}</span></button>`;
+        }).join("");
+        return rowHeader + cells;
+      }).join("")}
+        </div>
+      </div>
+      <div class="multiplication-detail-card">
+        <p class="body-match-kicker">Selected line</p>
+        <p class="multiplication-line-hanzi">${activeItem.hanzi}</p>
+        ${state2.showPinyin ? `<p class="multiplication-line-pinyin">${activeItem.pinyin}</p>` : ""}
+        ${state2.showEnglish ? `<p class="multiplication-line-english">${activeItem.english}</p>` : ""}
+        <button class="small-button is-action-button" type="button" data-multiplication-item="${activeItem.id}">Play audio</button>
+      </div>
+    </div>
+  `;
+      focusExplorer2.querySelectorAll("[data-multiplication-item]").forEach((button) => {
+        button.addEventListener("click", () => {
+          stopMultiplicationRhyme();
+          selectFocusItem2(button.dataset.multiplicationItem, { playAudio: true });
+        });
+      });
+      focusExplorer2.querySelector("[data-multiplication-play-all]")?.addEventListener("click", () => playMultiplicationRhyme(items, focusExplorer2));
+      focusExplorer2.querySelector("[data-multiplication-pause]")?.addEventListener("click", toggleMultiplicationPause);
+      focusExplorer2.querySelector("[data-multiplication-stop]")?.addEventListener("click", stopMultiplicationRhyme);
+    }
+    function playMultiplicationRhyme(items, container) {
+      if (!state2.tapAudioEnabled || !("speechSynthesis" in window)) return;
+      stopMultiplicationRhyme();
+      multiplicationPlaybackToken += 1;
+      const playbackToken = multiplicationPlaybackToken;
+      let index = 0;
+      multiplicationPlaybackPaused = false;
+      multiplicationPlaybackContainer = container;
+      updateMultiplicationPlaybackControls(container);
+      const playNext = () => {
+        if (playbackToken !== multiplicationPlaybackToken || index >= items.length) {
+          finishMultiplicationRhyme(container, playbackToken);
+          return;
+        }
+        const item = items[index];
+        index += 1;
+        container.querySelectorAll(".multiplication-cell").forEach((cell) => {
+          cell.classList.toggle("is-playing", cell.dataset.multiplicationItem === item.id);
+        });
+        const utterance = chineseUtterance2(item.audio, 0.72);
+        utterance.onend = () => window.setTimeout(playNext, 140);
+        window.speechSynthesis.speak(utterance);
+      };
+      playNext();
+    }
+    function toggleMultiplicationPause() {
+      if (!multiplicationPlaybackContainer || !("speechSynthesis" in window)) return;
+      multiplicationPlaybackPaused = !multiplicationPlaybackPaused;
+      if (multiplicationPlaybackPaused) window.speechSynthesis.pause();
+      else window.speechSynthesis.resume();
+      updateMultiplicationPlaybackControls(multiplicationPlaybackContainer);
+    }
+    function stopMultiplicationRhyme() {
+      multiplicationPlaybackToken += 1;
+      multiplicationPlaybackPaused = false;
+      window.speechSynthesis?.cancel();
+      const container = multiplicationPlaybackContainer;
+      multiplicationPlaybackContainer = null;
+      if (!container) return;
+      container.querySelectorAll(".multiplication-cell.is-playing").forEach((cell) => cell.classList.remove("is-playing"));
+      updateMultiplicationPlaybackControls(container);
+    }
+    function finishMultiplicationRhyme(container, playbackToken) {
+      if (playbackToken !== multiplicationPlaybackToken) return;
+      container.querySelectorAll(".multiplication-cell.is-playing").forEach((cell) => cell.classList.remove("is-playing"));
+      multiplicationPlaybackPaused = false;
+      multiplicationPlaybackContainer = null;
+      updateMultiplicationPlaybackControls(container);
+    }
+    function updateMultiplicationPlaybackControls(container) {
+      const isPlaying = multiplicationPlaybackContainer === container;
+      const pauseButton = container.querySelector("[data-multiplication-pause]");
+      const stopButton = container.querySelector("[data-multiplication-stop]");
+      if (pauseButton) {
+        pauseButton.disabled = !isPlaying;
+        pauseButton.textContent = multiplicationPlaybackPaused ? "Resume" : "Pause";
+      }
+      if (stopButton) stopButton.disabled = !isPlaying;
+    }
+    return { numberStageItems: numberStageItems2, resetNumberChallenge: resetNumberChallenge2, ensureNumberChallenge: ensureNumberChallenge2, resetMathChallenge: resetMathChallenge2, ensureMathChallenge: ensureMathChallenge2, familyGameItems: familyGameItems2, familyPersonForItemId: familyPersonForItemId2, familyHeadshotForItemId: familyHeadshotForItemId2, isFamilySentenceItemId: isFamilySentenceItemId2, familyBookWordItems: familyBookWordItems2, usesLessonTemplate: usesLessonTemplate2, bookWordItemsForTopic: bookWordItemsForTopic2, usefulNoteForTopic: usefulNoteForTopic2, familyWordForPersonId: familyWordForPersonId2, resetFamilyChallenge: resetFamilyChallenge2, ensureFamilyChallenge: ensureFamilyChallenge2, resetListenChallengeResult: resetListenChallengeResult2, handleFamilyChallengePlay: handleFamilyChallengePlay2, handleFamilyChallengeGuess: handleFamilyChallengeGuess2, resetFamilyMatchGame: resetFamilyMatchGame2, ensureFamilyMatchGame: ensureFamilyMatchGame2, handleFamilyMatchPhrase: handleFamilyMatchPhrase2, handleFamilyMatchAttempt: handleFamilyMatchAttempt2, mathChallengeAudioText: mathChallengeAudioText2, handleMathChallengeSubmit: handleMathChallengeSubmit2, handleNumberChallengeGuess: handleNumberChallengeGuess2, bodyMatchItems: bodyMatchItems2, nextBodyRound: nextBodyRound2, resetBodyMatchGame: resetBodyMatchGame2, ensureBodyMatchGame: ensureBodyMatchGame2, handleBodyMatchChinese: handleBodyMatchChinese2, handleBodyMatchAttempt: handleBodyMatchAttempt2, numberWordListItems: numberWordListItems2, renderBodyLabelButton: renderBodyLabelButton2, renderBodyExplorer: renderBodyExplorer2, renderNumberVisual: renderNumberVisual2, renderNumbersExplorer: renderNumbersExplorer2, renderTelephoneExplorer: renderTelephoneExplorer2, renderFamilyHomeVisual: renderFamilyHomeVisual2, renderFamilyExplorer: renderFamilyExplorer2, renderIdentityExplorer: renderIdentityExplorer2, renderMultiplicationExplorer: renderMultiplicationExplorer2 };
   }
 
   // src/features/time-daily-life/time-daily-life-runtime.js
   function createTimeDailyLifeRuntime(context) {
-    const { state: state2, timeDateWeekItems: timeDateWeekItems3, timeDateClockItems: timeDateClockItems2, timeDateExpressionItems: timeDateExpressionItems2, timeDateRoutineItems: timeDateRoutineItems2, datePracticeItems: datePracticeItems2, timeDateDateItems: timeDateDateItems2, timeDateMonthItems: timeDateMonthItems2, comparisonPracticeItems: comparisonPracticeItems2, comparisonWordItems: comparisonWordItems2, positionPracticeItems: positionPracticeItems2, positionScenes: positionScenes2, clothesMatchItems: clothesMatchItems2, clothesPractice: clothesPractice2, roomScenes: roomScenes2, roomSentenceTokens: roomSentenceTokens2, transportSentenceTokens: transportSentenceTokens2, visualTopicItems: visualTopicItems2, shuffleArray: shuffleArray2, speak: speak2, speakSceneLines: speakSceneLines2, currentTopic: currentTopic2, currentBook: currentBook2, currentLesson: currentLesson2, renderActivityPanel: renderActivityPanel2, focusExplorer: focusExplorer2, focusStatus: focusStatus2 } = context;
+    const { state: state2, timeDateWeekItems: timeDateWeekItems2, timeDateClockItems: timeDateClockItems2, timeDateExpressionItems: timeDateExpressionItems2, timeDateRoutineItems: timeDateRoutineItems2, datePracticeItems: datePracticeItems2, timeDateDateItems: timeDateDateItems2, timeDateMonthItems: timeDateMonthItems2, comparisonPracticeItems: comparisonPracticeItems2, comparisonWordItems: comparisonWordItems2, positionPracticeItems: positionPracticeItems2, positionScenes: positionScenes2, clothesMatchItems: clothesMatchItems2, clothesPractice: clothesPractice2, roomScenes: roomScenes2, roomSentenceTokens: roomSentenceTokens2, transportSentenceTokens: transportSentenceTokens2, visualTopicItems: visualTopicItems2, shuffleArray: shuffleArray2, speak: speak2, speakSceneLines: speakSceneLines2, currentTopic: currentTopic2, currentBook: currentBook2, currentLesson: currentLesson2, renderActivityPanel: renderActivityPanel2, focusExplorer: focusExplorer2, focusStatus: focusStatus2 } = context;
     function resetWeekdayChallenge2(options = {}) {
-      const candidates = timeDateWeekItems3.filter((item) => item.id !== options.excludeId);
-      const answers = candidates.length ? candidates : timeDateWeekItems3;
+      const candidates = timeDateWeekItems2.filter((item) => item.id !== options.excludeId);
+      const answers = candidates.length ? candidates : timeDateWeekItems2;
       const answer = answers[Math.floor(Math.random() * answers.length)];
-      const distractors = shuffleArray2(timeDateWeekItems3.filter((item) => item.id !== answer.id)).slice(0, 3);
+      const distractors = shuffleArray2(timeDateWeekItems2.filter((item) => item.id !== answer.id)).slice(0, 3);
       state2.weekdayChallengeAnswerId = answer.id;
       state2.weekdayChallengePromptId = answer.id;
       state2.weekdayChallengeOptionIds = shuffleArray2([answer.id, ...distractors.map((item) => item.id)]);
@@ -5473,7 +5754,7 @@
       ensureWeekdayChallenge2();
       const previousPromptId = state2.weekdayChallengePromptId;
       resetWeekdayChallenge2({ excludeId: previousPromptId });
-      const item = timeDateWeekItems3.find((entry) => entry.id === state2.weekdayChallengePromptId);
+      const item = timeDateWeekItems2.find((entry) => entry.id === state2.weekdayChallengePromptId);
       if (item && state2.tapAudioEnabled) speak2(`\u4ECA\u5929\u661F\u671F\u51E0\uFF1F\u4ECA\u5929${item.hanzi}\u3002`, 0.78);
       renderActivityPanel2(currentTopic2());
     }
@@ -5485,7 +5766,7 @@
       if (!isCorrect) {
         state2.weekdayChallengeWrongIds = /* @__PURE__ */ new Set([...state2.weekdayChallengeWrongIds, itemId]);
       } else if (state2.tapAudioEnabled) {
-        const item = timeDateWeekItems3.find((entry) => entry.id === itemId);
+        const item = timeDateWeekItems2.find((entry) => entry.id === itemId);
         speak2(item?.hanzi, 0.78);
       }
       renderActivityPanel2(currentTopic2());
@@ -5493,8 +5774,8 @@
     function resetWeekdayMatchGame2() {
       state2.weekdaySelectedPhraseId = null;
       state2.weekdayMatchedIds = /* @__PURE__ */ new Set();
-      state2.weekdayPhraseOrder = shuffleArray2(timeDateWeekItems3.map((item) => item.id));
-      state2.weekdayMeaningOrder = shuffleArray2(timeDateWeekItems3.map((item) => item.id));
+      state2.weekdayPhraseOrder = shuffleArray2(timeDateWeekItems2.map((item) => item.id));
+      state2.weekdayMeaningOrder = shuffleArray2(timeDateWeekItems2.map((item) => item.id));
       state2.weekdayMatchFeedback = "";
     }
     function ensureWeekdayMatchGame2() {
@@ -5503,7 +5784,7 @@
     function handleWeekdayMatchPhrase2(itemId) {
       if (state2.weekdayMatchedIds.has(itemId)) return;
       state2.weekdaySelectedPhraseId = itemId;
-      const item = timeDateWeekItems3.find((entry) => entry.id === itemId);
+      const item = timeDateWeekItems2.find((entry) => entry.id === itemId);
       if (item && state2.tapAudioEnabled) speak2(item.hanzi, 0.78);
       renderActivityPanel2(currentTopic2());
     }
@@ -5941,7 +6222,7 @@
         button.addEventListener("click", () => {
           const [collection, id] = button.dataset.timeAsset.split(":");
           const items = {
-            week: timeDateWeekItems3,
+            week: timeDateWeekItems2,
             clock: timeDateClockItems2,
             date: timeDateDateItems2,
             month: timeDateMonthItems2,
@@ -5962,7 +6243,7 @@
         <h4>Days of the Week</h4>
       </div>
       <div class="time-asset-grid time-asset-grid-week">
-        ${timeDateWeekItems3.map((item) => `
+        ${timeDateWeekItems2.map((item) => `
           <section class="time-asset-card weekday-scene-card">
             <div class="greetings-exchange-top"><div><span class="time-asset-hanzi">${item.hanzi}</span></div><button class="small-button is-action-button" type="button" data-weekday-play-scene="${item.id}">Play scene</button></div>
             <img class="time-asset-image" src="${item.imagePath}" alt="${item.english}" />
@@ -5982,7 +6263,7 @@
   `;
       focusExplorer2.querySelectorAll("[data-weekday-play-scene]").forEach((button) => {
         button.addEventListener("click", () => {
-          const item = timeDateWeekItems3.find((entry) => entry.id === button.dataset.weekdayPlayScene);
+          const item = timeDateWeekItems2.find((entry) => entry.id === button.dataset.weekdayPlayScene);
           if (item && state2.tapAudioEnabled) speak2(item.audio, 0.78);
         });
       });
@@ -6569,174 +6850,7 @@
     }
   ];
 
-  // src/games/shared-lesson-practice.js
-  function createSharedLessonPractice({ state: state2, speak: speak2, elements, documentRef = document }) {
-    const { activityPanelTitle: activityPanelTitle2, activityPanelSummary: activityPanelSummary2, activityList: activityList2 } = elements;
-    function renderListenPractice2(config) {
-      return `
-      <section class="practice-split-card">
-        <div class="numbers-game-top">
-          <div>
-            <p class="body-match-kicker">${config.kicker ?? "Listen and choose"}</p>
-            ${config.title ? `<h4>${config.title}</h4>` : ""}
-            <p class="numbers-game-note">Play the audio, then tap the matching Chinese card.</p>
-          </div>
-          <button class="small-button is-action-button" type="button" data-template-listen-play>Play audio</button>
-        </div>
-        ${config.feedback() ? `<p class="greetings-game-feedback">${config.feedback()}</p>` : ""}
-        <div class="numbers-game-options">
-          ${config.optionIds().map((id) => {
-        const item = config.items().find((entry) => entry.id === id);
-        if (!item) return "";
-        const isCorrectPick = config.pickedId() === item.id && config.result() === "correct";
-        const isWrongPick = config.wrongIds().has(item.id);
-        const resultClass = isCorrectPick ? " is-correct" : isWrongPick ? " is-wrong" : "";
-        const resultMark = isCorrectPick || isWrongPick ? `<span class="answer-result-mark" aria-hidden="true">${isCorrectPick ? "\u2713" : "\xD7"}</span>` : "";
-        return `
-              <button class="numbers-game-option greetings-game-option family-listen-option${resultClass}" type="button" data-template-listen-guess="${item.id}">
-                ${resultMark}
-                <span class="numbers-game-hanzi">${item.hanzi}</span>
-                ${state2.showPinyin ? `<span class="numbers-game-pinyin">${item.pinyin}</span>` : ""}
-                ${state2.showEnglish ? `<span class="numbers-game-english">${item.english}</span>` : ""}
-              </button>
-            `;
-      }).join("")}
-        </div>
-      </section>
-    `;
-    }
-    function renderMatchMeaningContent(config, id) {
-      return config.meaningContent ? config.meaningContent(id) : `<span class="match-answer-label">${config.meaningLabel(id)}</span>`;
-    }
-    function renderMatchPractice2(config) {
-      const phraseIds = config.phraseIds();
-      const meaningIds = config.meaningIds();
-      const matchedIds = config.matchedIds();
-      const solvedIds = phraseIds.filter((id) => matchedIds.has(id));
-      const remainingPhraseIds = phraseIds.filter((id) => !matchedIds.has(id));
-      const remainingMeaningIds = meaningIds.filter((id) => !matchedIds.has(id));
-      return `
-      <section class="practice-split-card">
-        <div class="numbers-game-top">
-          <div>
-            <p class="body-match-kicker">${config.kicker ?? "Matching game"}</p>
-            ${config.title ? `<h4>${config.title}</h4>` : ""}
-            <p class="numbers-game-note">Tap a card on the left, then tap its matching card on the right.</p>
-          </div>
-          <button class="small-button is-action-button" type="button" data-template-match-new>New mix</button>
-        </div>
-        ${config.feedback() ? `<div class="greetings-game-feedback">${config.feedback()}</div>` : ""}
-        <div class="family-match-board-headings">
-          <p class="body-match-kicker">${config.phraseHeading ?? "Chinese"}</p>
-          <p class="body-match-kicker">${config.meaningHeading ?? "Meaning"}</p>
-        </div>
-        ${solvedIds.length ? `
-          <div class="family-match-solved-pairs">
-            ${solvedIds.map((id) => {
-        const item = config.items().find((entry) => entry.id === id);
-        if (!item) return "";
-        return `
-                <article class="family-match-solved-row">
-                  <div class="polite-match-card polite-match-card-phrase family-match-pair-card is-solved">
-                    <span class="answer-result-mark" aria-hidden="true">\u2713</span>
-                    <span class="numbers-game-hanzi">${item.hanzi}</span>
-                    ${state2.showPinyin ? `<span class="numbers-game-pinyin">${item.pinyin}</span>` : ""}
-                  </div>
-                  <div class="polite-match-card ${config.meaningCardClass ?? "polite-match-card-meaning"} family-match-pair-card is-solved">
-                    <span class="answer-result-mark" aria-hidden="true">\u2713</span>
-                    ${renderMatchMeaningContent(config, id)}
-                  </div>
-                </article>
-              `;
-      }).join("")}
-          </div>
-        ` : ""}
-        ${remainingPhraseIds.length ? `
-          <div class="polite-match-board family-match-open-board">
-            <div class="polite-match-column">
-              ${remainingPhraseIds.map((id) => {
-        const item = config.items().find((entry) => entry.id === id);
-        if (!item) return "";
-        const selected = config.selectedId() === id;
-        const wrong = config.wrongPhraseIds?.().has(id);
-        return `
-                  <button class="polite-match-card polite-match-card-phrase${selected ? " is-selected" : ""}${wrong ? " is-wrong" : ""}" type="button" data-template-match-phrase="${id}">
-                    ${wrong ? '<span class="answer-result-mark" aria-hidden="true">\xD7</span>' : ""}
-                    <span class="numbers-game-hanzi">${item.hanzi}</span>
-                    ${state2.showPinyin ? `<span class="numbers-game-pinyin">${item.pinyin}</span>` : ""}
-                  </button>
-                `;
-      }).join("")}
-            </div>
-            <div class="polite-match-column">
-              ${remainingMeaningIds.map((id) => {
-        const wrong = config.wrongMeaningIds?.().has(id);
-        return `
-                  <button class="polite-match-card ${config.meaningCardClass ?? "polite-match-card-meaning"}${wrong ? " is-wrong" : ""}" type="button" data-template-match-meaning="${id}">
-                    ${wrong ? '<span class="answer-result-mark" aria-hidden="true">\xD7</span>' : ""}
-                    ${renderMatchMeaningContent(config, id)}
-                  </button>
-                `;
-      }).join("")}
-            </div>
-          </div>
-        ` : ""}
-        ${config.showPlayAgain !== false && matchedIds.size === config.items().length ? '<button class="small-button is-action-button" type="button" data-template-match-play-again>Play again</button>' : ""}
-      </section>
-    `;
-    }
-    function renderPracticeSayCards2(items = []) {
-      if (!items.length) return "";
-      return `
-      <section class="practice-split-card practice-say-card">
-        <div class="numbers-game-top"><div><p class="body-match-kicker">Say it</p><p class="numbers-game-note">Tap a sentence, listen, then say it back.</p></div></div>
-        <div class="numbers-game-options">
-          ${items.map((item) => `<button class="numbers-game-option greetings-game-option family-listen-option" type="button" data-practice-say="${item.audio ?? item.hanzi}"><span class="numbers-game-hanzi">${item.hanzi}</span>${state2.showPinyin ? `<span class="numbers-game-pinyin">${item.pinyin}</span>` : ""}${state2.showEnglish ? `<span class="numbers-game-english">${item.english}</span>` : ""}</button>`).join("")}
-        </div>
-      </section>
-    `;
-    }
-    function bindPracticeSayCards2(container) {
-      container.querySelectorAll("[data-practice-say]").forEach((button) => {
-        button.addEventListener("click", () => {
-          if (state2.tapAudioEnabled) speak2(button.dataset.practiceSay, 0.78);
-        });
-      });
-    }
-    function renderSharedLessonPractice2(topic, config) {
-      config.ensure();
-      activityPanelTitle2.textContent = "Let's practice";
-      activityPanelSummary2.textContent = config.summary;
-      activityList2.className = "support-list";
-      activityList2.innerHTML = "";
-      const gameCard = documentRef.createElement("section");
-      gameCard.className = `family-practice-shell${config.shellClass ? ` ${config.shellClass}` : ""}`;
-      gameCard.innerHTML = `<div class="practice-split-board">${renderListenPractice2(config.listen)}${renderMatchPractice2(config.match)}</div>${renderPracticeSayCards2(config.sayItems)}`;
-      activityList2.appendChild(gameCard);
-      activityList2.querySelector("[data-template-listen-play]")?.addEventListener("click", () => config.listen.onPlay());
-      activityList2.querySelectorAll("[data-template-listen-guess]").forEach((button) => button.addEventListener("click", () => config.listen.onGuess(button.dataset.templateListenGuess)));
-      activityList2.querySelector("[data-template-match-new]")?.addEventListener("click", () => config.match.onNew());
-      activityList2.querySelector("[data-template-match-play-again]")?.addEventListener("click", () => config.match.onNew());
-      activityList2.querySelectorAll("[data-template-match-phrase]").forEach((button) => button.addEventListener("click", () => config.match.onPhrase(button.dataset.templateMatchPhrase)));
-      activityList2.querySelectorAll("[data-template-match-meaning]").forEach((button) => button.addEventListener("click", () => config.match.onMeaning(button.dataset.templateMatchMeaning)));
-      bindPracticeSayCards2(activityList2);
-    }
-    renderSharedLessonPractice2.renderListenPractice = renderListenPractice2;
-    renderSharedLessonPractice2.renderMatchPractice = renderMatchPractice2;
-    renderSharedLessonPractice2.renderPracticeSayCards = renderPracticeSayCards2;
-    renderSharedLessonPractice2.bindPracticeSayCards = bindPracticeSayCards2;
-    return renderSharedLessonPractice2;
-  }
-
-  // src/legacy-app.js
-  var introductionsGameSpeakerIds = ["anan", "tiantian", "sisi", "lele"];
-  var ageGameItemIds = ["ask-age", "age-five", "age-six", "age-seven", "ask-grade", "grade-one"];
-  var sceneSpeechRate = 0.64;
-  var sceneLinePauseMs = 280;
-  var { speak, speakSceneLines } = createAudioService({
-    getSceneRate: () => sceneSpeechRate,
-    getSceneLinePauseMs: () => sceneLinePauseMs
-  });
+  // src/data/topic-registry.js
   var visualTopicItems = {
     comparisons: comparisonVisualItems,
     positions: positionVisualItems,
@@ -7030,81 +7144,176 @@
     transportTopic,
     weatherTopic
   ];
-  var state = {
-    currentView: "topics",
-    selectedTopicId: "numbers",
-    expandedCategoryId: "foundations",
-    selectedBookCategoryId: "first-steps",
-    selectedBookId: "1a",
-    selectedLessonNumber: 1,
-    topicPageOpen: false,
-    openTopicGroups: /* @__PURE__ */ new Set(["foundations"]),
-    showPinyin: true,
-    showArabic: true,
-    showEnglish: true,
-    tapAudioEnabled: true,
-    selectedFocusItemId: null,
-    ...createFoundationState(),
-    ...createTimeDailyLifeState(),
-    schoolPracticeTopicId: "",
-    schoolChallengeAnswerId: "",
-    schoolChallengeOptionIds: [],
-    schoolChallengePickedId: "",
-    schoolChallengePromptId: "",
-    schoolChallengeResult: "",
-    schoolChallengeWrongIds: /* @__PURE__ */ new Set(),
-    schoolListenFeedback: "",
-    schoolMatchFeedback: "",
-    schoolSelectedPhraseId: null,
-    schoolMatchedIds: /* @__PURE__ */ new Set(),
-    schoolPhraseOrder: [],
-    schoolMeaningOrder: [],
-    backpackGameRoundIds: [],
-    backpackGameTargetIndex: 0,
-    backpackGameOptionIds: [],
-    backpackGamePlacedIds: [],
-    backpackGameWrongIds: /* @__PURE__ */ new Set(),
-    backpackGameComplete: false,
-    stationeryPictureMatchIndex: 0,
-    stationeryPictureMatchSelections: { measure: "", color: "", item: "" },
-    stationeryPictureMatchWrong: { measure: /* @__PURE__ */ new Set(), color: /* @__PURE__ */ new Set(), item: /* @__PURE__ */ new Set() },
-    stationeryPictureMatchChoiceOrders: { measure: [], color: [], item: [] },
-    stationeryPictureMatchComplete: false,
-    mealsConversationMatchReady: false,
-    mealsConversationWrongPhraseIds: /* @__PURE__ */ new Set(),
-    mealsConversationWrongReplyIds: /* @__PURE__ */ new Set(),
-    mealsPictureQuizOrder: [],
-    mealsPictureQuizIndex: 0,
-    mealsPictureQuizOptionIds: [],
-    mealsPictureQuizSelectedId: "",
-    mealsPictureQuizResult: "",
-    foodPreferenceSubjectId: "\u6211",
-    foodPreferencePatternId: "like",
-    foodPreferenceFoodId: "",
-    classroomSentenceFrameId: "in-classroom",
-    classroomSentenceWordId: "",
-    schoolBuildTopicId: "",
-    schoolBuildOrder: [],
-    schoolBuildIndex: 0,
-    schoolBuildAvailableTokens: [],
-    schoolBuildSelectedTokens: [],
-    schoolBuildResult: "",
-    foodBookCategoryId: "fruit",
-    mealsWordGroupId: "lunch",
-    foodHungerModeId: "mix",
-    foodHungerRoundIds: [],
-    foodHungerTargetIndex: 0,
-    foodHungerOptionIds: [],
-    foodHungerPlatedIds: [],
-    foodHungerWrongIds: /* @__PURE__ */ new Set(),
-    foodHungerComplete: false,
-    timeDateSectionId: "",
-    timeDateSectionSource: "",
-    identitySelectedCountryId: ""
-  };
-  var multiplicationPlaybackToken = 0;
-  var multiplicationPlaybackPaused = false;
-  var multiplicationPlaybackContainer = null;
+
+  // src/games/shared-lesson-practice.js
+  function createSharedLessonPractice({ state: state2, speak: speak2, elements, documentRef = document }) {
+    const { activityPanelTitle: activityPanelTitle2, activityPanelSummary: activityPanelSummary2, activityList: activityList2 } = elements;
+    function renderListenPractice2(config) {
+      return `
+      <section class="practice-split-card">
+        <div class="numbers-game-top">
+          <div>
+            <p class="body-match-kicker">${config.kicker ?? "Listen and choose"}</p>
+            ${config.title ? `<h4>${config.title}</h4>` : ""}
+            <p class="numbers-game-note">Play the audio, then tap the matching Chinese card.</p>
+          </div>
+          <button class="small-button is-action-button" type="button" data-template-listen-play>Play audio</button>
+        </div>
+        ${config.feedback() ? `<p class="greetings-game-feedback">${config.feedback()}</p>` : ""}
+        <div class="numbers-game-options">
+          ${config.optionIds().map((id) => {
+        const item = config.items().find((entry) => entry.id === id);
+        if (!item) return "";
+        const isCorrectPick = config.pickedId() === item.id && config.result() === "correct";
+        const isWrongPick = config.wrongIds().has(item.id);
+        const resultClass = isCorrectPick ? " is-correct" : isWrongPick ? " is-wrong" : "";
+        const resultMark = isCorrectPick || isWrongPick ? `<span class="answer-result-mark" aria-hidden="true">${isCorrectPick ? "\u2713" : "\xD7"}</span>` : "";
+        return `
+              <button class="numbers-game-option greetings-game-option family-listen-option${resultClass}" type="button" data-template-listen-guess="${item.id}">
+                ${resultMark}
+                <span class="numbers-game-hanzi">${item.hanzi}</span>
+                ${state2.showPinyin ? `<span class="numbers-game-pinyin">${item.pinyin}</span>` : ""}
+                ${state2.showEnglish ? `<span class="numbers-game-english">${item.english}</span>` : ""}
+              </button>
+            `;
+      }).join("")}
+        </div>
+      </section>
+    `;
+    }
+    function renderMatchMeaningContent(config, id) {
+      return config.meaningContent ? config.meaningContent(id) : `<span class="match-answer-label">${config.meaningLabel(id)}</span>`;
+    }
+    function renderMatchPractice2(config) {
+      const phraseIds = config.phraseIds();
+      const meaningIds = config.meaningIds();
+      const matchedIds = config.matchedIds();
+      const solvedIds = phraseIds.filter((id) => matchedIds.has(id));
+      const remainingPhraseIds = phraseIds.filter((id) => !matchedIds.has(id));
+      const remainingMeaningIds = meaningIds.filter((id) => !matchedIds.has(id));
+      return `
+      <section class="practice-split-card">
+        <div class="numbers-game-top">
+          <div>
+            <p class="body-match-kicker">${config.kicker ?? "Matching game"}</p>
+            ${config.title ? `<h4>${config.title}</h4>` : ""}
+            <p class="numbers-game-note">Tap a card on the left, then tap its matching card on the right.</p>
+          </div>
+          <button class="small-button is-action-button" type="button" data-template-match-new>New mix</button>
+        </div>
+        ${config.feedback() ? `<div class="greetings-game-feedback">${config.feedback()}</div>` : ""}
+        <div class="family-match-board-headings">
+          <p class="body-match-kicker">${config.phraseHeading ?? "Chinese"}</p>
+          <p class="body-match-kicker">${config.meaningHeading ?? "Meaning"}</p>
+        </div>
+        ${solvedIds.length ? `
+          <div class="family-match-solved-pairs">
+            ${solvedIds.map((id) => {
+        const item = config.items().find((entry) => entry.id === id);
+        if (!item) return "";
+        return `
+                <article class="family-match-solved-row">
+                  <div class="polite-match-card polite-match-card-phrase family-match-pair-card is-solved">
+                    <span class="answer-result-mark" aria-hidden="true">\u2713</span>
+                    <span class="numbers-game-hanzi">${item.hanzi}</span>
+                    ${state2.showPinyin ? `<span class="numbers-game-pinyin">${item.pinyin}</span>` : ""}
+                  </div>
+                  <div class="polite-match-card ${config.meaningCardClass ?? "polite-match-card-meaning"} family-match-pair-card is-solved">
+                    <span class="answer-result-mark" aria-hidden="true">\u2713</span>
+                    ${renderMatchMeaningContent(config, id)}
+                  </div>
+                </article>
+              `;
+      }).join("")}
+          </div>
+        ` : ""}
+        ${remainingPhraseIds.length ? `
+          <div class="polite-match-board family-match-open-board">
+            <div class="polite-match-column">
+              ${remainingPhraseIds.map((id) => {
+        const item = config.items().find((entry) => entry.id === id);
+        if (!item) return "";
+        const selected = config.selectedId() === id;
+        const wrong = config.wrongPhraseIds?.().has(id);
+        return `
+                  <button class="polite-match-card polite-match-card-phrase${selected ? " is-selected" : ""}${wrong ? " is-wrong" : ""}" type="button" data-template-match-phrase="${id}">
+                    ${wrong ? '<span class="answer-result-mark" aria-hidden="true">\xD7</span>' : ""}
+                    <span class="numbers-game-hanzi">${item.hanzi}</span>
+                    ${state2.showPinyin ? `<span class="numbers-game-pinyin">${item.pinyin}</span>` : ""}
+                  </button>
+                `;
+      }).join("")}
+            </div>
+            <div class="polite-match-column">
+              ${remainingMeaningIds.map((id) => {
+        const wrong = config.wrongMeaningIds?.().has(id);
+        return `
+                  <button class="polite-match-card ${config.meaningCardClass ?? "polite-match-card-meaning"}${wrong ? " is-wrong" : ""}" type="button" data-template-match-meaning="${id}">
+                    ${wrong ? '<span class="answer-result-mark" aria-hidden="true">\xD7</span>' : ""}
+                    ${renderMatchMeaningContent(config, id)}
+                  </button>
+                `;
+      }).join("")}
+            </div>
+          </div>
+        ` : ""}
+        ${config.showPlayAgain !== false && matchedIds.size === config.items().length ? '<button class="small-button is-action-button" type="button" data-template-match-play-again>Play again</button>' : ""}
+      </section>
+    `;
+    }
+    function renderPracticeSayCards2(items = []) {
+      if (!items.length) return "";
+      return `
+      <section class="practice-split-card practice-say-card">
+        <div class="numbers-game-top"><div><p class="body-match-kicker">Say it</p><p class="numbers-game-note">Tap a sentence, listen, then say it back.</p></div></div>
+        <div class="numbers-game-options">
+          ${items.map((item) => `<button class="numbers-game-option greetings-game-option family-listen-option" type="button" data-practice-say="${item.audio ?? item.hanzi}"><span class="numbers-game-hanzi">${item.hanzi}</span>${state2.showPinyin ? `<span class="numbers-game-pinyin">${item.pinyin}</span>` : ""}${state2.showEnglish ? `<span class="numbers-game-english">${item.english}</span>` : ""}</button>`).join("")}
+        </div>
+      </section>
+    `;
+    }
+    function bindPracticeSayCards2(container) {
+      container.querySelectorAll("[data-practice-say]").forEach((button) => {
+        button.addEventListener("click", () => {
+          if (state2.tapAudioEnabled) speak2(button.dataset.practiceSay, 0.78);
+        });
+      });
+    }
+    function renderSharedLessonPractice2(topic, config) {
+      config.ensure();
+      activityPanelTitle2.textContent = "Let's practice";
+      activityPanelSummary2.textContent = config.summary;
+      activityList2.className = "support-list";
+      activityList2.innerHTML = "";
+      const gameCard = documentRef.createElement("section");
+      gameCard.className = `family-practice-shell${config.shellClass ? ` ${config.shellClass}` : ""}`;
+      gameCard.innerHTML = `<div class="practice-split-board">${renderListenPractice2(config.listen)}${renderMatchPractice2(config.match)}</div>${renderPracticeSayCards2(config.sayItems)}`;
+      activityList2.appendChild(gameCard);
+      activityList2.querySelector("[data-template-listen-play]")?.addEventListener("click", () => config.listen.onPlay());
+      activityList2.querySelectorAll("[data-template-listen-guess]").forEach((button) => button.addEventListener("click", () => config.listen.onGuess(button.dataset.templateListenGuess)));
+      activityList2.querySelector("[data-template-match-new]")?.addEventListener("click", () => config.match.onNew());
+      activityList2.querySelector("[data-template-match-play-again]")?.addEventListener("click", () => config.match.onNew());
+      activityList2.querySelectorAll("[data-template-match-phrase]").forEach((button) => button.addEventListener("click", () => config.match.onPhrase(button.dataset.templateMatchPhrase)));
+      activityList2.querySelectorAll("[data-template-match-meaning]").forEach((button) => button.addEventListener("click", () => config.match.onMeaning(button.dataset.templateMatchMeaning)));
+      bindPracticeSayCards2(activityList2);
+    }
+    renderSharedLessonPractice2.renderListenPractice = renderListenPractice2;
+    renderSharedLessonPractice2.renderMatchPractice = renderMatchPractice2;
+    renderSharedLessonPractice2.renderPracticeSayCards = renderPracticeSayCards2;
+    renderSharedLessonPractice2.bindPracticeSayCards = bindPracticeSayCards2;
+    return renderSharedLessonPractice2;
+  }
+
+  // src/legacy-app.js
+  var introductionsGameSpeakerIds = ["anan", "tiantian", "sisi", "lele"];
+  var ageGameItemIds = ["ask-age", "age-five", "age-six", "age-seven", "ask-grade", "grade-one"];
+  var sceneSpeechRate = 0.64;
+  var sceneLinePauseMs = 280;
+  var { chineseUtterance, speak, speakSceneLines } = createAudioService({
+    getSceneRate: () => sceneSpeechRate,
+    getSceneLinePauseMs: () => sceneLinePauseMs
+  });
+  var state = createAppState();
   var topicGroupsRoot = document.getElementById("topic-groups");
   var bookSelect = document.getElementById("book-select");
   var lessonSelect = document.getElementById("lesson-select");
@@ -7198,6 +7407,7 @@
   var renderMealsConversationPractice;
   var renderFoodPreferencesPractice;
   var renderClassroomPractice;
+  var renderSchoolExplorer;
   document.querySelectorAll("[data-view]").forEach((button) => {
     button.addEventListener("click", () => {
       switchView(button.dataset.view);
@@ -7228,67 +7438,22 @@
       link.closest(".global-view-menu")?.removeAttribute("open");
     });
   });
-  function updateDisplayControls() {
-    renderFocusControls();
-    renderFocusDisplay(currentFocusItem());
-    renderFocusWordList2();
-    renderFocusExplorer();
-    renderActivityPanel(currentTopic());
-  }
-  toggleAudioButton.addEventListener("click", () => {
-    state.tapAudioEnabled = !state.tapAudioEnabled;
-    updateDisplayControls();
+  var { bindDisplayControls: bindGlobalDisplayControls, renderFocusControls, renderFocusDisplay, updateDisplayControls } = createDisplayControlsRuntime({
+    state,
+    elements: { toggleAudioButton, togglePinyinButton, toggleArabicButton, toggleEnglishButton, focusHanzi, focusPinyin, focusEnglish, learningCultureNav },
+    getCurrentTopic: () => currentTopic(),
+    getCurrentFocusItem: () => currentFocusItem(),
+    renderFocusWordList: renderFocusWordList2,
+    renderFocusExplorer,
+    renderActivityPanel
   });
-  togglePinyinButton.addEventListener("click", () => {
-    state.showPinyin = !state.showPinyin;
-    updateDisplayControls();
-  });
-  toggleArabicButton.addEventListener("click", () => {
-    state.showArabic = !state.showArabic;
-    renderFocusControls();
-    renderFocusExplorer();
-    renderActivityPanel(currentTopic());
-  });
-  toggleEnglishButton.addEventListener("click", () => {
-    state.showEnglish = !state.showEnglish;
-    updateDisplayControls();
-  });
-  function renderFocusControls() {
-    const topic = currentTopic();
-    document.body.classList.toggle("is-pinyin-hidden", !state.showPinyin);
-    document.body.classList.toggle("is-english-hidden", !state.showEnglish);
-    const controlPairs = [
-      [toggleAudioButton, state.tapAudioEnabled, "Tap sound"],
-      [togglePinyinButton, state.showPinyin, "Pinyin"],
-      [toggleArabicButton, state.showArabic, "Numbers"],
-      [toggleEnglishButton, state.showEnglish, "English"]
-    ];
-    controlPairs.forEach(([button, enabled, label]) => {
-      button.classList.toggle("is-toggle-active", enabled);
-      button.classList.toggle("is-toggle-inactive", !enabled);
-      button.textContent = `${label} ${enabled ? "on" : "off"}`;
-    });
-    toggleArabicButton.classList.toggle("is-hidden", topic.id !== "numbers");
-    learningCultureNav?.querySelectorAll("[data-display-toggle]").forEach((button) => {
-      const control = button.dataset.displayToggle;
-      const enabled = control === "sound" ? state.tapAudioEnabled : control === "pinyin" ? state.showPinyin : state.showEnglish;
-      const label = control === "sound" ? "Sound" : control === "pinyin" ? "Pinyin" : "English";
-      button.classList.toggle("is-toggle-active", enabled);
-      button.classList.toggle("is-toggle-inactive", !enabled);
-      button.textContent = `${label} ${enabled ? "on" : "off"}`;
-      button.setAttribute("aria-pressed", String(enabled));
-    });
-  }
-  function renderFocusDisplay(item) {
-    if (!item) {
-      focusHanzi.textContent = "";
-      focusPinyin.textContent = "";
-      focusEnglish.textContent = "";
-      return;
-    }
-    focusHanzi.textContent = item.hanzi;
-    focusPinyin.textContent = state.showPinyin ? item.pinyin : "";
-    focusEnglish.textContent = state.showEnglish ? item.english : "";
+  bindGlobalDisplayControls();
+  function bodySentenceForItem(item) {
+    return {
+      hanzi: `\u6211\u7684${item.hanzi}`,
+      pinyin: `w\u01D2 de ${item.pinyin}`,
+      english: `my ${item.english}`
+    };
   }
   function renderFocusStatus() {
     const topic = currentTopic();
@@ -7437,7 +7602,7 @@
           ensureWeekdayMatchGame();
         },
         listen: {
-          items: () => timeDateWeekItems2,
+          items: () => timeDateWeekItems,
           optionIds: () => state.weekdayChallengeOptionIds,
           pickedId: () => state.weekdayChallengePickedId,
           result: () => state.weekdayChallengeResult,
@@ -7449,13 +7614,13 @@
         match: {
           phraseHeading: "Chinese",
           meaningHeading: "English",
-          items: () => timeDateWeekItems2,
+          items: () => timeDateWeekItems,
           phraseIds: () => state.weekdayPhraseOrder,
           meaningIds: () => state.weekdayMeaningOrder,
           matchedIds: () => state.weekdayMatchedIds,
           selectedId: () => state.weekdaySelectedPhraseId,
           feedback: () => state.weekdayMatchFeedback,
-          meaningLabel: (id) => timeDateWeekItems2.find((item) => item.id === id)?.english ?? "",
+          meaningLabel: (id) => timeDateWeekItems.find((item) => item.id === id)?.english ?? "",
           onNew: () => {
             resetWeekdayMatchGame();
             renderActivityPanel(topic);
@@ -8183,153 +8348,6 @@
   function renderDefaultExplorer() {
     focusExplorer.innerHTML = "";
   }
-  function renderMultiplicationExplorer() {
-    const items = focusItemsForTopic();
-    const activeItem = currentFocusItem();
-    const itemByPair = new Map(items.map((item) => [`${item.first}-${item.second}`, item]));
-    focusExplorer.innerHTML = `
-    <div class="multiplication-board">
-      <div class="numbers-stage-card">
-        <div class="numbers-game-top">
-          <div>
-            <p class="body-match-kicker">Chinese math rhythm</p>
-            <h4>\u4E5D\u4E5D\u4E58\u6CD5\u53E3\u8BC0</h4>
-            <p>Tap a cell in the matrix. First see the multiplication fact, then hear and read the Chinese rhyme line.</p>
-          </div>
-          <div class="multiplication-playback-controls">
-            <button class="small-button is-action-button" type="button" data-multiplication-play-all>Play</button>
-            <button class="small-button" type="button" data-multiplication-pause disabled>Pause</button>
-            <button class="small-button" type="button" data-multiplication-stop disabled>Stop</button>
-          </div>
-        </div>
-      </div>
-      <div class="multiplication-matrix-card">
-        <div class="multiplication-matrix">
-          <div class="multiplication-corner"></div>
-          ${Array.from({ length: 9 }, (_, index) => index + 1).map((value) => `<div class="multiplication-header">${value}</div>`).join("")}
-          ${Array.from({ length: 9 }, (_, rowIndex) => rowIndex + 1).map((rowValue) => {
-      const rowHeader = `<div class="multiplication-header">${rowValue}</div>`;
-      const cells = Array.from({ length: 9 }, (_, colIndex) => colIndex + 1).map((colValue) => {
-        if (colValue < rowValue) {
-          return '<div class="multiplication-cell multiplication-cell-empty"></div>';
-        }
-        const item = itemByPair.get(`${rowValue}-${colValue}`);
-        const isActive = item?.id === activeItem.id;
-        return `
-                    <button
-                      class="multiplication-cell${isActive ? " is-active" : ""}"
-                      type="button"
-                      data-multiplication-item="${item?.id ?? ""}"
-                    >
-                      <span class="multiplication-cell-fact">${rowValue}\xD7${colValue}</span>
-                      <span class="multiplication-cell-product">=${item?.product ?? ""}</span>
-                    </button>
-                  `;
-      }).join("");
-      return rowHeader + cells;
-    }).join("")}
-        </div>
-      </div>
-      <div class="multiplication-detail-card">
-        <p class="body-match-kicker">Selected line</p>
-        <p class="multiplication-line-hanzi">${activeItem.hanzi}</p>
-        ${state.showPinyin ? `<p class="multiplication-line-pinyin">${activeItem.pinyin}</p>` : ""}
-        ${state.showEnglish ? `<p class="multiplication-line-english">${activeItem.english}</p>` : ""}
-        <button class="small-button is-action-button" type="button" data-multiplication-item="${activeItem.id}">Play audio</button>
-      </div>
-    </div>
-  `;
-    focusExplorer.querySelectorAll("[data-multiplication-item]").forEach((button) => {
-      button.addEventListener("click", () => {
-        stopMultiplicationRhyme();
-        selectFocusItem(button.dataset.multiplicationItem, { playAudio: true });
-      });
-    });
-    focusExplorer.querySelector("[data-multiplication-play-all]")?.addEventListener("click", () => {
-      playMultiplicationRhyme(items, focusExplorer);
-    });
-    focusExplorer.querySelector("[data-multiplication-pause]")?.addEventListener("click", () => {
-      toggleMultiplicationPause();
-    });
-    focusExplorer.querySelector("[data-multiplication-stop]")?.addEventListener("click", () => {
-      stopMultiplicationRhyme();
-    });
-  }
-  function playMultiplicationRhyme(items, container) {
-    if (!state.tapAudioEnabled || !("speechSynthesis" in window)) {
-      return;
-    }
-    stopMultiplicationRhyme();
-    multiplicationPlaybackToken += 1;
-    const playbackToken = multiplicationPlaybackToken;
-    let index = 0;
-    multiplicationPlaybackPaused = false;
-    multiplicationPlaybackContainer = container;
-    updateMultiplicationPlaybackControls(container);
-    const playNext = () => {
-      if (playbackToken !== multiplicationPlaybackToken || index >= items.length) {
-        finishMultiplicationRhyme(container, playbackToken);
-        return;
-      }
-      const item = items[index];
-      index += 1;
-      container.querySelectorAll(".multiplication-cell").forEach((cell) => {
-        cell.classList.toggle("is-playing", cell.dataset.multiplicationItem === item.id);
-      });
-      const utterance = chineseUtterance(item.audio, 0.72);
-      utterance.onend = () => window.setTimeout(playNext, 140);
-      window.speechSynthesis.speak(utterance);
-    };
-    playNext();
-  }
-  function toggleMultiplicationPause() {
-    if (!multiplicationPlaybackContainer || !("speechSynthesis" in window)) {
-      return;
-    }
-    multiplicationPlaybackPaused = !multiplicationPlaybackPaused;
-    if (multiplicationPlaybackPaused) {
-      window.speechSynthesis.pause();
-    } else {
-      window.speechSynthesis.resume();
-    }
-    updateMultiplicationPlaybackControls(multiplicationPlaybackContainer);
-  }
-  function stopMultiplicationRhyme() {
-    multiplicationPlaybackToken += 1;
-    multiplicationPlaybackPaused = false;
-    window.speechSynthesis?.cancel();
-    const container = multiplicationPlaybackContainer;
-    multiplicationPlaybackContainer = null;
-    if (container) {
-      container.querySelectorAll(".multiplication-cell.is-playing").forEach((cell) => {
-        cell.classList.remove("is-playing");
-      });
-      updateMultiplicationPlaybackControls(container);
-    }
-  }
-  function finishMultiplicationRhyme(container, playbackToken) {
-    if (playbackToken !== multiplicationPlaybackToken) {
-      return;
-    }
-    container.querySelectorAll(".multiplication-cell.is-playing").forEach((cell) => {
-      cell.classList.remove("is-playing");
-    });
-    multiplicationPlaybackPaused = false;
-    multiplicationPlaybackContainer = null;
-    updateMultiplicationPlaybackControls(container);
-  }
-  function updateMultiplicationPlaybackControls(container) {
-    const isPlaying = multiplicationPlaybackContainer === container;
-    const pauseButton = container.querySelector("[data-multiplication-pause]");
-    const stopButton = container.querySelector("[data-multiplication-stop]");
-    if (pauseButton) {
-      pauseButton.disabled = !isPlaying;
-      pauseButton.textContent = multiplicationPlaybackPaused ? "Resume" : "Pause";
-    }
-    if (stopButton) {
-      stopButton.disabled = !isPlaying;
-    }
-  }
   function renderFocusExplorer() {
     const topic = currentTopic();
     if (topic.interactiveScene === "body-face") {
@@ -8423,7 +8441,7 @@
     if (topic.id !== "numbers") {
       return step.title;
     }
-    const stage = numberStages2.find(
+    const stage = numberStages.find(
       (entry) => entry.bookId === step.book.toLowerCase() && entry.lesson === step.lesson
     );
     return stage?.title ?? step.title;
@@ -8584,6 +8602,9 @@
     bookPanel,
     detailLayout,
     learningCultureNav,
+    numberStages,
+    timeDateWeekItems,
+    getNumberStageItems: () => numberStageItems(),
     renderFocusControls,
     renderFocusDisplay,
     renderFocusWordList: renderFocusWordList2,
@@ -8593,6 +8614,89 @@
     updateDisplayControls,
     selectBookLesson
   });
+  var {
+    numberStageItems,
+    resetNumberChallenge,
+    ensureNumberChallenge,
+    resetMathChallenge,
+    ensureMathChallenge,
+    familyGameItems,
+    familyPersonForItemId,
+    familyHeadshotForItemId,
+    isFamilySentenceItemId,
+    familyBookWordItems,
+    usesLessonTemplate,
+    bookWordItemsForTopic,
+    usefulNoteForTopic,
+    familyWordForPersonId,
+    resetFamilyChallenge,
+    ensureFamilyChallenge,
+    resetListenChallengeResult,
+    handleFamilyChallengePlay,
+    handleFamilyChallengeGuess,
+    resetFamilyMatchGame,
+    ensureFamilyMatchGame,
+    handleFamilyMatchPhrase,
+    handleFamilyMatchAttempt,
+    mathChallengeAudioText,
+    handleMathChallengeSubmit,
+    handleNumberChallengeGuess,
+    bodyMatchItems,
+    nextBodyRound,
+    resetBodyMatchGame,
+    ensureBodyMatchGame,
+    handleBodyMatchChinese,
+    handleBodyMatchAttempt,
+    numberWordListItems,
+    renderBodyLabelButton,
+    renderBodyExplorer,
+    renderNumberVisual,
+    renderNumbersExplorer,
+    renderTelephoneExplorer,
+    renderFamilyHomeVisual,
+    renderFamilyExplorer,
+    renderIdentityExplorer,
+    renderMultiplicationExplorer
+  } = createFoundationsRuntime({
+    state,
+    numberHanzi,
+    numberPinyin,
+    buildNumberItem,
+    numberStages,
+    telephonePractice,
+    familyGameItemIds,
+    familyPersonIdsByItemId,
+    familyHeadshotsByItemId,
+    familyPractice,
+    illustratedFamily,
+    illustratedKids,
+    bodyBonusItemIds,
+    bodyCoreItemIds,
+    bodyDiagramLayout,
+    identityConversation,
+    identityCountries,
+    identityQuestion,
+    topicById,
+    focusItemsForTopic,
+    currentTopic,
+    currentNumberStage,
+    currentFocusItem,
+    currentBook,
+    currentLesson,
+    shuffleArray,
+    speak,
+    speakSceneLines,
+    renderActivityPanel,
+    renderFocusDisplay,
+    renderFocusExplorer,
+    renderFocusStatus,
+    selectFocusItem,
+    bodySentenceForItem,
+    chineseUtterance,
+    focusExplorer,
+    focusStatus
+  });
+  syncBookSelectionFromTopic();
   ({
     greetingsGameItems,
     resetGreetingsChallenge,
@@ -8827,7 +8931,7 @@
     renderClothesExplorer
   } = createTimeDailyLifeRuntime({
     state,
-    timeDateWeekItems: timeDateWeekItems2,
+    timeDateWeekItems,
     timeDateClockItems,
     timeDateExpressionItems,
     timeDateRoutineItems,
@@ -8854,86 +8958,6 @@
     focusExplorer,
     focusStatus
   });
-  var {
-    numberStageItems: numberStageItems2,
-    resetNumberChallenge,
-    ensureNumberChallenge,
-    resetMathChallenge,
-    ensureMathChallenge,
-    familyGameItems,
-    familyPersonForItemId,
-    familyHeadshotForItemId,
-    isFamilySentenceItemId,
-    familyBookWordItems,
-    usesLessonTemplate,
-    bookWordItemsForTopic,
-    usefulNoteForTopic,
-    familyWordForPersonId,
-    resetFamilyChallenge,
-    ensureFamilyChallenge,
-    resetListenChallengeResult,
-    handleFamilyChallengePlay,
-    handleFamilyChallengeGuess,
-    resetFamilyMatchGame,
-    ensureFamilyMatchGame,
-    handleFamilyMatchPhrase,
-    handleFamilyMatchAttempt,
-    mathChallengeAudioText,
-    handleMathChallengeSubmit,
-    handleNumberChallengeGuess,
-    bodyMatchItems,
-    nextBodyRound,
-    resetBodyMatchGame,
-    ensureBodyMatchGame,
-    handleBodyMatchChinese,
-    handleBodyMatchAttempt,
-    numberWordListItems,
-    renderBodyLabelButton,
-    renderBodyExplorer,
-    renderNumberVisual,
-    renderNumbersExplorer,
-    renderTelephoneExplorer,
-    renderFamilyHomeVisual,
-    renderFamilyExplorer,
-    renderIdentityExplorer
-  } = createFoundationsRuntime({
-    state,
-    numberHanzi,
-    numberPinyin,
-    buildNumberItem,
-    numberStages: numberStages2,
-    telephonePractice,
-    familyGameItemIds,
-    familyPersonIdsByItemId,
-    familyHeadshotsByItemId,
-    familyPractice,
-    illustratedFamily,
-    illustratedKids,
-    bodyBonusItemIds,
-    bodyCoreItemIds,
-    bodyDiagramLayout,
-    identityConversation,
-    identityCountries,
-    identityQuestion,
-    topicById,
-    focusItemsForTopic,
-    currentTopic,
-    currentNumberStage,
-    currentFocusItem,
-    currentBook,
-    currentLesson,
-    shuffleArray,
-    speak,
-    speakSceneLines,
-    renderActivityPanel,
-    renderFocusDisplay,
-    renderFocusExplorer,
-    renderFocusStatus,
-    selectFocusItem,
-    focusExplorer,
-    focusStatus
-  });
-  syncBookSelectionFromTopic();
   var initialTopicId = topicIdFromLocation(window.location, topicById);
   if (initialTopicId) {
     state.selectedTopicId = initialTopicId;
