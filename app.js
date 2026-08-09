@@ -476,6 +476,60 @@
     { id: "pencil-case-outside", imagePath: "assets/illustrated-rooms/positions-inside-outside.webp", target: ["\u6587\u5177\u76D2", "\u5728", "\u4E66\u5305", "\u5916\u9762"], distractors: ["\u6559\u5BA4", "\u559C\u6B22", "\u6905\u5B50"], pinyin: "w\xE9n j\xF9 h\xE9 z\xE0i sh\u016B b\u0101o w\xE0i mi\xE0n.", english: "The pencil case is outside the backpack." }
   ];
 
+  // src/features/school-life/classroom.js
+  var classroomTopicData = {
+    practiceSummary: "Choose a classroom sentence start and an object to make your own sentence.",
+    scenes: [
+      {
+        id: "classroom",
+        label: "Our classroom",
+        hanzi: "\u8FD9\u662F\u6211\u4EEC\u7684\u6559\u5BA4\u3002\u6559\u5BA4\u91CC\u6709\u5F88\u591A\u684C\u5B50\u548C\u6905\u5B50\u3002",
+        pinyin: "zh\xE8 sh\xEC w\u01D2 men de ji\xE0o sh\xEC. ji\xE0o sh\xEC l\u01D0 y\u01D2u h\u011Bn du\u014D zhu\u014D zi h\xE9 y\u01D0 zi.",
+        english: "This is our classroom. There are many tables and chairs in the classroom.",
+        audio: "\u8FD9\u662F\u6211\u4EEC\u7684\u6559\u5BA4\u6559\u5BA4\u91CC\u6709\u5F88\u591A\u684C\u5B50\u548C\u6905\u5B50",
+        imagePath: "assets/illustrated-school-anchors/classroom_anchor.webp"
+      },
+      {
+        id: "classroom-things",
+        label: "On the table",
+        hanzi: "\u684C\u5B50\u4E0A\u6709\u94C5\u7B14\u548C\u7B14\u8BB0\u672C\u3002",
+        pinyin: "zhu\u014D zi sh\xE0ng y\u01D2u qi\u0101n b\u01D0 h\xE9 b\u01D0 j\xEC b\u011Bn.",
+        english: "There are pencils and notebooks on the table.",
+        audio: "\u684C\u5B50\u4E0A\u6709\u94C5\u7B14\u548C\u7B14\u8BB0\u672C",
+        imagePath: "assets/illustrated-classrooms/us-classroom-clusters.webp"
+      },
+      {
+        id: "classroom-computer-tv-bookshelf",
+        label: "More classroom things",
+        hanzi: "\u6559\u5BA4\u91CC\u6709\u767D\u677F\u3001\u7535\u89C6\u3001\u7535\u8111\u548C\u4E66\u67B6\u3002",
+        pinyin: "ji\xE0o sh\xEC l\u01D0 y\u01D2u b\xE1i b\u01CEn, di\xE0n sh\xEC, di\xE0n n\u01CEo h\xE9 sh\u016B ji\xE0.",
+        english: "There is a whiteboard, a television, a computer, and a bookshelf in the classroom.",
+        audio: "\u6559\u5BA4\u91CC\u6709\u767D\u677F\u7535\u89C6\u7535\u8111\u548C\u4E66\u67B6",
+        imagePath: "assets/illustrated-classrooms/classroom-computer-tv-bookshelf.webp"
+      }
+    ],
+    words: [
+      ["classroom", "\u6559\u5BA4", "ji\xE0o sh\xEC", "classroom", "assets/illustrated-school-anchors/classroom_anchor.webp"],
+      ["table", "\u684C\u5B50", "zhu\u014D zi", "table", "assets/illustrated-stationery/table.webp"],
+      ["chair", "\u6905\u5B50", "y\u01D0 zi", "chair", "assets/illustrated-stationery/chair.webp"],
+      ["whiteboard", "\u767D\u677F", "b\xE1i b\u01CEn", "whiteboard", "assets/illustrated-classrooms/whiteboard.webp"],
+      ["blackboard", "\u9ED1\u677F", "h\u0113i b\u01CEn", "blackboard", "assets/illustrated-classrooms/blackboard.png"],
+      ["computer", "\u7535\u8111", "di\xE0n n\u01CEo", "computer (laptop)", "assets/illustrated-classrooms/computer.webp"],
+      ["television", "\u7535\u89C6", "di\xE0n sh\xEC", "television", "assets/illustrated-classrooms/television.webp"],
+      ["bookshelf", "\u4E66\u67B6", "sh\u016B ji\xE0", "bookshelf", "assets/illustrated-classrooms/bookshelf.webp"]
+    ].map(([id, hanzi, pinyin, english, imagePath]) => ({ id, hanzi, pinyin, english, audio: hanzi, imagePath })),
+    sentenceFrames: [
+      { id: "in-classroom", hanzi: "\u6559\u5BA4\u91CC\u6709", pinyin: "ji\xE0o sh\xEC l\u01D0 y\u01D2u", english: "There is / are ... in the classroom", wordIds: ["table", "chair", "whiteboard", "blackboard", "computer", "television", "bookshelf"] },
+      { id: "many-in-classroom", hanzi: "\u6559\u5BA4\u91CC\u6709\u5F88\u591A", pinyin: "ji\xE0o sh\xEC l\u01D0 y\u01D2u h\u011Bn du\u014D", english: "There are many ... in the classroom", wordIds: ["table", "chair", "textbook"] },
+      { id: "on-table", hanzi: "\u684C\u5B50\u4E0A\u6709", pinyin: "zhu\u014D zi sh\xE0ng y\u01D2u", english: "There is / are ... on the table", wordIds: ["computer", "textbook", "workbook", "pencil", "ruler", "eraser", "colored-pencils"] }
+    ],
+    review: [
+      { pattern: "\u6559\u5BA4\u91CC\u6709\u2026\u2026", pinyin: "ji\xE0o sh\xEC l\u01D0 y\u01D2u...", english: "There is / are ... in the classroom.", example: "\u6559\u5BA4\u91CC\u6709\u684C\u5B50\u548C\u6905\u5B50\u3002" },
+      { pattern: "\u684C\u5B50\u4E0A\u6709\u2026\u2026", pinyin: "zhu\u014D zi sh\xE0ng y\u01D2u...", english: "There is / are ... on the table.", example: "\u684C\u5B50\u4E0A\u6709\u7535\u8111\u3002" },
+      { pattern: "\u5F88\u591A", pinyin: "h\u011Bn du\u014D", english: "many; much", example: "\u6559\u5BA4\u91CC\u6709\u5F88\u591A\u684C\u5B50\u548C\u6905\u5B50\u3002" }
+    ]
+  };
+
   // src/games/shared-lesson-practice.js
   function createSharedLessonPractice({ state: state2, speak: speak2, elements, documentRef = document }) {
     const { activityPanelTitle: activityPanelTitle2, activityPanelSummary: activityPanelSummary2, activityList: activityList2 } = elements;
@@ -1657,58 +1711,7 @@
   var schoolTopicData = {
     stationery: stationeryTopicData,
     "school-supplies": schoolSuppliesTopicData,
-    classroom: {
-      practiceSummary: "Choose a classroom sentence start and an object to make your own sentence.",
-      scenes: [
-        {
-          id: "classroom",
-          label: "Our classroom",
-          hanzi: "\u8FD9\u662F\u6211\u4EEC\u7684\u6559\u5BA4\u3002\u6559\u5BA4\u91CC\u6709\u5F88\u591A\u684C\u5B50\u548C\u6905\u5B50\u3002",
-          pinyin: "zh\xE8 sh\xEC w\u01D2 men de ji\xE0o sh\xEC. ji\xE0o sh\xEC l\u01D0 y\u01D2u h\u011Bn du\u014D zhu\u014D zi h\xE9 y\u01D0 zi.",
-          english: "This is our classroom. There are many tables and chairs in the classroom.",
-          audio: "\u8FD9\u662F\u6211\u4EEC\u7684\u6559\u5BA4\u6559\u5BA4\u91CC\u6709\u5F88\u591A\u684C\u5B50\u548C\u6905\u5B50",
-          imagePath: "assets/illustrated-school-anchors/classroom_anchor.webp"
-        },
-        {
-          id: "classroom-things",
-          label: "On the table",
-          hanzi: "\u684C\u5B50\u4E0A\u6709\u94C5\u7B14\u548C\u7B14\u8BB0\u672C\u3002",
-          pinyin: "zhu\u014D zi sh\xE0ng y\u01D2u qi\u0101n b\u01D0 h\xE9 b\u01D0 j\xEC b\u011Bn.",
-          english: "There are pencils and notebooks on the table.",
-          audio: "\u684C\u5B50\u4E0A\u6709\u94C5\u7B14\u548C\u7B14\u8BB0\u672C",
-          imagePath: "assets/illustrated-classrooms/us-classroom-clusters.webp"
-        },
-        {
-          id: "classroom-computer-tv-bookshelf",
-          label: "More classroom things",
-          hanzi: "\u6559\u5BA4\u91CC\u6709\u767D\u677F\u3001\u7535\u89C6\u3001\u7535\u8111\u548C\u4E66\u67B6\u3002",
-          pinyin: "ji\xE0o sh\xEC l\u01D0 y\u01D2u b\xE1i b\u01CEn, di\xE0n sh\xEC, di\xE0n n\u01CEo h\xE9 sh\u016B ji\xE0.",
-          english: "There is a whiteboard, a television, a computer, and a bookshelf in the classroom.",
-          audio: "\u6559\u5BA4\u91CC\u6709\u767D\u677F\u7535\u89C6\u7535\u8111\u548C\u4E66\u67B6",
-          imagePath: "assets/illustrated-classrooms/classroom-computer-tv-bookshelf.webp"
-        }
-      ],
-      words: [
-        ["classroom", "\u6559\u5BA4", "ji\xE0o sh\xEC", "classroom", "assets/illustrated-school-anchors/classroom_anchor.webp"],
-        ["table", "\u684C\u5B50", "zhu\u014D zi", "table", "assets/illustrated-stationery/table.webp"],
-        ["chair", "\u6905\u5B50", "y\u01D0 zi", "chair", "assets/illustrated-stationery/chair.webp"],
-        ["whiteboard", "\u767D\u677F", "b\xE1i b\u01CEn", "whiteboard", "assets/illustrated-classrooms/whiteboard.webp"],
-        ["blackboard", "\u9ED1\u677F", "h\u0113i b\u01CEn", "blackboard", "assets/illustrated-classrooms/blackboard.png"],
-        ["computer", "\u7535\u8111", "di\xE0n n\u01CEo", "computer (laptop)", "assets/illustrated-classrooms/computer.webp"],
-        ["television", "\u7535\u89C6", "di\xE0n sh\xEC", "television", "assets/illustrated-classrooms/television.webp"],
-        ["bookshelf", "\u4E66\u67B6", "sh\u016B ji\xE0", "bookshelf", "assets/illustrated-classrooms/bookshelf.webp"]
-      ].map(([id, hanzi, pinyin, english, imagePath]) => ({ id, hanzi, pinyin, english, audio: hanzi, imagePath })),
-      sentenceFrames: [
-        { id: "in-classroom", hanzi: "\u6559\u5BA4\u91CC\u6709", pinyin: "ji\xE0o sh\xEC l\u01D0 y\u01D2u", english: "There is / are ... in the classroom", wordIds: ["table", "chair", "whiteboard", "blackboard", "computer", "television", "bookshelf"] },
-        { id: "many-in-classroom", hanzi: "\u6559\u5BA4\u91CC\u6709\u5F88\u591A", pinyin: "ji\xE0o sh\xEC l\u01D0 y\u01D2u h\u011Bn du\u014D", english: "There are many ... in the classroom", wordIds: ["table", "chair", "textbook"] },
-        { id: "on-table", hanzi: "\u684C\u5B50\u4E0A\u6709", pinyin: "zhu\u014D zi sh\xE0ng y\u01D2u", english: "There is / are ... on the table", wordIds: ["computer", "textbook", "workbook", "pencil", "ruler", "eraser", "colored-pencils"] }
-      ],
-      review: [
-        { pattern: "\u6559\u5BA4\u91CC\u6709\u2026\u2026", pinyin: "ji\xE0o sh\xEC l\u01D0 y\u01D2u...", english: "There is / are ... in the classroom.", example: "\u6559\u5BA4\u91CC\u6709\u684C\u5B50\u548C\u6905\u5B50\u3002" },
-        { pattern: "\u684C\u5B50\u4E0A\u6709\u2026\u2026", pinyin: "zhu\u014D zi sh\xE0ng y\u01D2u...", english: "There is / are ... on the table.", example: "\u684C\u5B50\u4E0A\u6709\u7535\u8111\u3002" },
-        { pattern: "\u5F88\u591A", pinyin: "h\u011Bn du\u014D", english: "many; much", example: "\u6559\u5BA4\u91CC\u6709\u5F88\u591A\u684C\u5B50\u548C\u6905\u5B50\u3002" }
-      ]
-    },
+    classroom: classroomTopicData,
     school: {
       scenes: [
         ["school", "School", "\u8FD9\u662F\u5B66\u6821\u3002", "zh\xE8 sh\xEC xu\xE9 xi\xE0o.", "This is a school.", "school_exterior_anchor.webp"],
