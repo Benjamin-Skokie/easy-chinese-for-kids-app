@@ -1,3 +1,5 @@
+import { createAudioService } from "./core/audio.js";
+
 const topicData = [
   {
     id: "numbers",
@@ -1056,6 +1058,10 @@ const identityConversation = {
 
 const sceneSpeechRate = 0.64;
 const sceneLinePauseMs = 280;
+const { speak, speakSceneLines } = createAudioService({
+  getSceneRate: () => sceneSpeechRate,
+  getSceneLinePauseMs: () => sceneLinePauseMs
+});
 
 const timeDateWeekItems = [
   ["monday", "星期一", "xīng qī yī", "Monday", "星期一，我们坐校车去学校。", "xīng qī yī, wǒ men zuò xiào chē qù xué xiào.", "On Monday, we take the school bus to school.", "Monday.webp"],
@@ -9478,49 +9484,6 @@ lessonSelect.addEventListener("change", () => {
   const lesson = book.lessons.find((entry) => String(entry.lesson) === lessonSelect.value) ?? book.lessons[0];
   selectBookLesson(book.id, lesson.lesson);
 });
-
-function chineseUtterance(text, rate) {
-  const utterance = new SpeechSynthesisUtterance(text);
-  utterance.lang = "zh-CN";
-  utterance.rate = rate;
-  utterance.pitch = 1;
-  return utterance;
-}
-
-function speak(text, rate = 0.8) {
-  if (!("speechSynthesis" in window)) {
-    return;
-  }
-
-  window.speechSynthesis.cancel();
-  window.speechSynthesis.speak(chineseUtterance(text, rate));
-}
-
-function speakSceneLines(lines) {
-  if (!("speechSynthesis" in window)) {
-    return;
-  }
-
-  const audioLines = lines.map((line) => line.audio).filter(Boolean);
-  let index = 0;
-
-  window.speechSynthesis.cancel();
-
-  const playNextLine = () => {
-    if (index >= audioLines.length) {
-      return;
-    }
-
-    const utterance = chineseUtterance(audioLines[index], sceneSpeechRate);
-    index += 1;
-    utterance.onend = () => {
-      window.setTimeout(playNextLine, sceneLinePauseMs);
-    };
-    window.speechSynthesis.speak(utterance);
-  };
-
-  playNextLine();
-}
 
 function viewFromLocation() {
   const params = new URLSearchParams(window.location.search);

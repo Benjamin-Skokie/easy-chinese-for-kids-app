@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import test from "node:test";
+import { createAudioService } from "../src/core/audio.js";
 
 test("the local page loads a single bundled application script", () => {
   const html = readFileSync("index.html", "utf8");
@@ -11,4 +12,19 @@ test("the local page loads a single bundled application script", () => {
 test("the generated bundle keeps its source-of-truth marker", () => {
   const bundle = readFileSync("app.js", "utf8");
   assert.match(bundle, /Generated from src\/main\.js\. Do not edit directly/);
+});
+
+test("audio cancels the prior utterance before speaking a new phrase", () => {
+  const spoken = [];
+  let cancelCount = 0;
+  const audio = createAudioService({
+    synthesis: { cancel: () => { cancelCount += 1; }, speak: (utterance) => spoken.push(utterance) },
+    createUtterance: (text) => ({ text }),
+    getSceneRate: () => 0.64,
+    getSceneLinePauseMs: () => 280
+  });
+
+  audio.speak("你好", 0.78);
+  assert.equal(cancelCount, 1);
+  assert.deepEqual(spoken[0], { text: "你好", lang: "zh-CN", rate: 0.78, pitch: 1 });
 });

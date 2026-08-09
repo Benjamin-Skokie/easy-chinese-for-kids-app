@@ -1,5 +1,42 @@
 /* Generated from src/main.js. Do not edit directly. */
 (() => {
+  // src/core/audio.js
+  function createAudioService({
+    synthesis = globalThis.speechSynthesis,
+    createUtterance = (text) => new globalThis.SpeechSynthesisUtterance(text),
+    getSceneRate,
+    getSceneLinePauseMs,
+    schedule = globalThis.setTimeout
+  } = {}) {
+    function chineseUtterance2(text, rate) {
+      const utterance = createUtterance(text);
+      utterance.lang = "zh-CN";
+      utterance.rate = rate;
+      utterance.pitch = 1;
+      return utterance;
+    }
+    function speak2(text, rate = 0.8) {
+      if (!synthesis || !text) return;
+      synthesis.cancel();
+      synthesis.speak(chineseUtterance2(text, rate));
+    }
+    function speakSceneLines2(lines) {
+      if (!synthesis) return;
+      const audioLines = lines.map((line) => line.audio).filter(Boolean);
+      let index = 0;
+      synthesis.cancel();
+      const playNextLine = () => {
+        if (index >= audioLines.length) return;
+        const utterance = chineseUtterance2(audioLines[index], getSceneRate());
+        index += 1;
+        utterance.onend = () => schedule(playNextLine, getSceneLinePauseMs());
+        synthesis.speak(utterance);
+      };
+      playNextLine();
+    }
+    return { speak: speak2, speakSceneLines: speakSceneLines2 };
+  }
+
   // src/legacy-app.js
   var topicData = [
     {
@@ -1014,6 +1051,10 @@
   };
   var sceneSpeechRate = 0.64;
   var sceneLinePauseMs = 280;
+  var { speak, speakSceneLines } = createAudioService({
+    getSceneRate: () => sceneSpeechRate,
+    getSceneLinePauseMs: () => sceneLinePauseMs
+  });
   var timeDateWeekItems = [
     ["monday", "\u661F\u671F\u4E00", "x\u012Bng q\u012B y\u012B", "Monday", "\u661F\u671F\u4E00\uFF0C\u6211\u4EEC\u5750\u6821\u8F66\u53BB\u5B66\u6821\u3002", "x\u012Bng q\u012B y\u012B, w\u01D2 men zu\xF2 xi\xE0o ch\u0113 q\xF9 xu\xE9 xi\xE0o.", "On Monday, we take the school bus to school.", "Monday.webp"],
     ["tuesday", "\u661F\u671F\u4E8C", "x\u012Bng q\u012B \xE8r", "Tuesday", "\u661F\u671F\u4E8C\uFF0C\u6211\u4EEC\u4E0A\u4F53\u80B2\u8BFE\u3002", "x\u012Bng q\u012B \xE8r, w\u01D2 men sh\xE0ng t\u01D0 y\xF9 k\xE8.", "On Tuesday, we have PE class.", "Tuesday.webp"],
@@ -8348,40 +8389,6 @@
     const lesson = book.lessons.find((entry) => String(entry.lesson) === lessonSelect.value) ?? book.lessons[0];
     selectBookLesson(book.id, lesson.lesson);
   });
-  function chineseUtterance(text, rate) {
-    const utterance = new SpeechSynthesisUtterance(text);
-    utterance.lang = "zh-CN";
-    utterance.rate = rate;
-    utterance.pitch = 1;
-    return utterance;
-  }
-  function speak(text, rate = 0.8) {
-    if (!("speechSynthesis" in window)) {
-      return;
-    }
-    window.speechSynthesis.cancel();
-    window.speechSynthesis.speak(chineseUtterance(text, rate));
-  }
-  function speakSceneLines(lines) {
-    if (!("speechSynthesis" in window)) {
-      return;
-    }
-    const audioLines = lines.map((line) => line.audio).filter(Boolean);
-    let index = 0;
-    window.speechSynthesis.cancel();
-    const playNextLine = () => {
-      if (index >= audioLines.length) {
-        return;
-      }
-      const utterance = chineseUtterance(audioLines[index], sceneSpeechRate);
-      index += 1;
-      utterance.onend = () => {
-        window.setTimeout(playNextLine, sceneLinePauseMs);
-      };
-      window.speechSynthesis.speak(utterance);
-    };
-    playNextLine();
-  }
   function viewFromLocation() {
     const params = new URLSearchParams(window.location.search);
     const requestedView = params.get("view");
