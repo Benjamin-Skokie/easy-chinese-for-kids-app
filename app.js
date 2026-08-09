@@ -3683,6 +3683,843 @@
     };
   }
 
+  // src/features/time-daily-life/time-daily-life-runtime.js
+  function createTimeDailyLifeRuntime(context) {
+    const { state: state2, timeDateWeekItems: timeDateWeekItems2, timeDateClockItems: timeDateClockItems2, timeDateExpressionItems: timeDateExpressionItems2, timeDateRoutineItems: timeDateRoutineItems2, datePracticeItems: datePracticeItems2, timeDateDateItems: timeDateDateItems2, timeDateMonthItems: timeDateMonthItems2, comparisonPracticeItems: comparisonPracticeItems2, comparisonWordItems: comparisonWordItems2, positionPracticeItems: positionPracticeItems2, positionScenes: positionScenes2, clothesMatchItems: clothesMatchItems2, clothesPractice: clothesPractice2, roomScenes: roomScenes2, roomSentenceTokens: roomSentenceTokens2, transportSentenceTokens: transportSentenceTokens2, visualTopicItems: visualTopicItems2, shuffleArray: shuffleArray2, speak: speak2, speakSceneLines: speakSceneLines2, currentTopic: currentTopic2, currentBook: currentBook2, currentLesson: currentLesson2, renderActivityPanel: renderActivityPanel2, focusExplorer: focusExplorer2, focusStatus: focusStatus2 } = context;
+    function resetWeekdayChallenge(options = {}) {
+      const candidates = timeDateWeekItems2.filter((item) => item.id !== options.excludeId);
+      const answers = candidates.length ? candidates : timeDateWeekItems2;
+      const answer = answers[Math.floor(Math.random() * answers.length)];
+      const distractors = shuffleArray2(timeDateWeekItems2.filter((item) => item.id !== answer.id)).slice(0, 3);
+      state2.weekdayChallengeAnswerId = answer.id;
+      state2.weekdayChallengePromptId = answer.id;
+      state2.weekdayChallengeOptionIds = shuffleArray2([answer.id, ...distractors.map((item) => item.id)]);
+      state2.weekdayChallengePickedId = "";
+      state2.weekdayChallengeResult = "";
+      state2.weekdayChallengeWrongIds = /* @__PURE__ */ new Set();
+      state2.weekdayListenFeedback = "";
+    }
+    function ensureWeekdayChallenge2() {
+      if (!state2.weekdayChallengeAnswerId || !state2.weekdayChallengeOptionIds.length) resetWeekdayChallenge();
+    }
+    function handleWeekdayChallengePlay2() {
+      ensureWeekdayChallenge2();
+      const previousPromptId = state2.weekdayChallengePromptId;
+      resetWeekdayChallenge({ excludeId: previousPromptId });
+      const item = timeDateWeekItems2.find((entry) => entry.id === state2.weekdayChallengePromptId);
+      if (item && state2.tapAudioEnabled) speak2(`\u4ECA\u5929\u661F\u671F\u51E0\uFF1F\u4ECA\u5929${item.hanzi}\u3002`, 0.78);
+      renderActivityPanel2(currentTopic2());
+    }
+    function handleWeekdayChallengeGuess2(itemId) {
+      ensureWeekdayChallenge2();
+      const isCorrect = itemId === state2.weekdayChallengeAnswerId;
+      state2.weekdayChallengePickedId = itemId;
+      state2.weekdayChallengeResult = isCorrect ? "correct" : "wrong";
+      if (!isCorrect) {
+        state2.weekdayChallengeWrongIds = /* @__PURE__ */ new Set([...state2.weekdayChallengeWrongIds, itemId]);
+      } else if (state2.tapAudioEnabled) {
+        const item = timeDateWeekItems2.find((entry) => entry.id === itemId);
+        speak2(item?.hanzi, 0.78);
+      }
+      renderActivityPanel2(currentTopic2());
+    }
+    function resetWeekdayMatchGame2() {
+      state2.weekdaySelectedPhraseId = null;
+      state2.weekdayMatchedIds = /* @__PURE__ */ new Set();
+      state2.weekdayPhraseOrder = shuffleArray2(timeDateWeekItems2.map((item) => item.id));
+      state2.weekdayMeaningOrder = shuffleArray2(timeDateWeekItems2.map((item) => item.id));
+      state2.weekdayMatchFeedback = "";
+    }
+    function ensureWeekdayMatchGame2() {
+      if (!state2.weekdayPhraseOrder.length || !state2.weekdayMeaningOrder.length) resetWeekdayMatchGame2();
+    }
+    function handleWeekdayMatchPhrase2(itemId) {
+      if (state2.weekdayMatchedIds.has(itemId)) return;
+      state2.weekdaySelectedPhraseId = itemId;
+      const item = timeDateWeekItems2.find((entry) => entry.id === itemId);
+      if (item && state2.tapAudioEnabled) speak2(item.hanzi, 0.78);
+      renderActivityPanel2(currentTopic2());
+    }
+    function handleWeekdayMatchAttempt2(targetId) {
+      if (!state2.weekdaySelectedPhraseId || state2.weekdayMatchedIds.has(targetId)) return;
+      if (state2.weekdaySelectedPhraseId === targetId) {
+        state2.weekdayMatchedIds = /* @__PURE__ */ new Set([...state2.weekdayMatchedIds, targetId]);
+        state2.weekdaySelectedPhraseId = null;
+        state2.weekdayMatchFeedback = "Matched.";
+      } else {
+        state2.weekdayMatchFeedback = "Try a different card.";
+      }
+      renderActivityPanel2(currentTopic2());
+    }
+    function resetClothesQuiz() {
+      const ids = clothesMatchItems2.map((item) => item.id);
+      state2.clothesQuizOrder = shuffleArray2(ids);
+      state2.clothesQuizIndex = 0;
+      prepareClothesQuizQuestion();
+    }
+    function prepareClothesQuizQuestion() {
+      const answerId = state2.clothesQuizOrder[state2.clothesQuizIndex];
+      const distractorIds = shuffleArray2(clothesMatchItems2.filter((item) => item.id !== answerId).map((item) => item.id)).slice(0, 3);
+      state2.clothesQuizOptionIds = shuffleArray2([answerId, ...distractorIds]);
+      state2.clothesQuizSelectedId = "";
+      state2.clothesQuizResult = "";
+    }
+    function ensureClothesQuiz2() {
+      if (!state2.clothesQuizOrder.length) {
+        resetClothesQuiz();
+      }
+    }
+    function handleClothesQuizPick2(itemId) {
+      if (state2.clothesQuizResult === "correct") {
+        return;
+      }
+      const answerId = state2.clothesQuizOrder[state2.clothesQuizIndex];
+      state2.clothesQuizSelectedId = itemId;
+      state2.clothesQuizResult = itemId === answerId ? "correct" : "wrong";
+      if (state2.clothesQuizResult === "correct" && state2.tapAudioEnabled) {
+        const answer = clothesMatchItems2.find((item) => item.id === answerId);
+        speak2(answer?.audio, 0.78);
+      }
+      renderActivityPanel2(currentTopic2());
+    }
+    function nextClothesQuizQuestion2() {
+      state2.clothesQuizIndex = (state2.clothesQuizIndex + 1) % state2.clothesQuizOrder.length;
+      prepareClothesQuizQuestion();
+      renderActivityPanel2(currentTopic2());
+    }
+    function resetTimeRoutineQuiz() {
+      state2.timeRoutineQuizOrder = shuffleArray2(timeDateRoutineItems2.map((item) => item.id));
+      state2.timeRoutineQuizIndex = 0;
+      prepareTimeRoutineQuizQuestion();
+    }
+    function prepareTimeRoutineQuizQuestion() {
+      const answerId = state2.timeRoutineQuizOrder[state2.timeRoutineQuizIndex];
+      const distractorIds = shuffleArray2(timeDateRoutineItems2.filter((item) => item.id !== answerId).map((item) => item.id)).slice(0, 3);
+      state2.timeRoutineQuizOptionIds = shuffleArray2([answerId, ...distractorIds]);
+      state2.timeRoutineQuizSelectedId = "";
+      state2.timeRoutineQuizResult = "";
+    }
+    function ensureTimeRoutineQuiz2() {
+      if (!state2.timeRoutineQuizOrder.length) {
+        resetTimeRoutineQuiz();
+      }
+    }
+    function handleTimeRoutineQuizPick2(itemId) {
+      if (state2.timeRoutineQuizResult === "correct") {
+        return;
+      }
+      const answerId = state2.timeRoutineQuizOrder[state2.timeRoutineQuizIndex];
+      state2.timeRoutineQuizSelectedId = itemId;
+      state2.timeRoutineQuizResult = itemId === answerId ? "correct" : "wrong";
+      if (state2.timeRoutineQuizResult === "correct" && state2.tapAudioEnabled) {
+        const item = timeDateRoutineItems2.find((entry) => entry.id === answerId);
+        speak2(item?.audio, 0.78);
+      }
+      renderActivityPanel2(currentTopic2());
+    }
+    function nextTimeRoutineQuizQuestion2() {
+      state2.timeRoutineQuizIndex = (state2.timeRoutineQuizIndex + 1) % state2.timeRoutineQuizOrder.length;
+      prepareTimeRoutineQuizQuestion();
+      renderActivityPanel2(currentTopic2());
+    }
+    function resetClockQuiz() {
+      state2.clockQuizOrder = shuffleArray2(timeDateClockItems2.map((item) => item.id));
+      state2.clockQuizIndex = 0;
+      prepareClockQuizQuestion();
+    }
+    function prepareClockQuizQuestion() {
+      const answerId = state2.clockQuizOrder[state2.clockQuizIndex];
+      const distractorIds = shuffleArray2(timeDateClockItems2.filter((item) => item.id !== answerId).map((item) => item.id)).slice(0, 3);
+      state2.clockQuizOptionIds = shuffleArray2([answerId, ...distractorIds]);
+      state2.clockQuizSelectedId = "";
+      state2.clockQuizResult = "";
+    }
+    function ensureClockQuiz2() {
+      if (!state2.clockQuizOrder.length) {
+        resetClockQuiz();
+      }
+    }
+    function handleClockQuizPick2(itemId) {
+      if (state2.clockQuizResult === "correct") {
+        return;
+      }
+      const answerId = state2.clockQuizOrder[state2.clockQuizIndex];
+      state2.clockQuizSelectedId = itemId;
+      state2.clockQuizResult = itemId === answerId ? "correct" : "wrong";
+      if (state2.clockQuizResult === "correct" && state2.tapAudioEnabled) {
+        const item = timeDateClockItems2.find((entry) => entry.id === answerId);
+        if (item) speak2(`\u51E0\u70B9\u4E86\uFF1F\u73B0\u5728${item.hanzi}\u3002`, 0.78);
+      }
+      renderActivityPanel2(currentTopic2());
+    }
+    function nextClockQuizQuestion2() {
+      state2.clockQuizIndex = (state2.clockQuizIndex + 1) % state2.clockQuizOrder.length;
+      prepareClockQuizQuestion();
+      renderActivityPanel2(currentTopic2());
+    }
+    function currentRoomBuildItem2() {
+      const id = state2.roomBuildOrder[state2.roomBuildIndex];
+      return roomScenes2.find((item) => item.id === id);
+    }
+    function resetRoomBuilder() {
+      state2.roomBuildOrder = shuffleArray2(roomScenes2.map((item) => item.id));
+      state2.roomBuildIndex = 0;
+      prepareRoomBuilder();
+    }
+    function prepareRoomBuilder() {
+      const item = currentRoomBuildItem2();
+      const tokens = roomSentenceTokens2[item?.id];
+      state2.roomBuildSelectedTokens = [];
+      state2.roomBuildResult = "";
+      state2.roomBuildAvailableTokens = shuffleArray2([...tokens?.target ?? [], ...tokens?.distractors ?? []]);
+    }
+    function ensureRoomBuilder2() {
+      if (!state2.roomBuildOrder.length) resetRoomBuilder();
+    }
+    function isRoomBuildPrefixValid(selected, tokens) {
+      const prefix = tokens.prefix ?? [];
+      if (selected.length <= prefix.length) {
+        return selected.every((token, index) => token === prefix[index]);
+      }
+      if (!selected.slice(0, prefix.length).every((token, index) => token === prefix[index])) {
+        return false;
+      }
+      const objects = tokens.unorderedObjects ?? [];
+      const body = selected.slice(prefix.length);
+      if (objects.length === 1) {
+        return body.length === 1 && body[0] === objects[0];
+      }
+      const beforeConnectorCount = objects.length - 1;
+      const chosenObjects = body.slice(0, beforeConnectorCount);
+      const chosenAreUniqueObjects = chosenObjects.every((token) => objects.includes(token)) && new Set(chosenObjects).size === chosenObjects.length;
+      if (body.length <= beforeConnectorCount) return chosenAreUniqueObjects;
+      if (body.length === beforeConnectorCount + 1) return chosenAreUniqueObjects && body[beforeConnectorCount] === "\u548C";
+      if (body.length === beforeConnectorCount + 2) {
+        const finalObject = body[beforeConnectorCount + 1];
+        return chosenAreUniqueObjects && body[beforeConnectorCount] === "\u548C" && objects.includes(finalObject) && !chosenObjects.includes(finalObject);
+      }
+      return false;
+    }
+    function handleRoomBuildToken2(tokenIndex) {
+      if (state2.roomBuildResult === "correct") return;
+      const item = currentRoomBuildItem2();
+      const tokens = roomSentenceTokens2[item?.id];
+      const token = state2.roomBuildAvailableTokens[tokenIndex];
+      if (!token || !tokens) return;
+      const selected = [...state2.roomBuildSelectedTokens, token];
+      if (!isRoomBuildPrefixValid(selected, tokens)) {
+        state2.roomBuildResult = "wrong";
+        state2.roomBuildSelectedTokens = [];
+        state2.roomBuildAvailableTokens = shuffleArray2([...tokens.target, ...tokens.distractors]);
+        renderActivityPanel2(currentTopic2());
+        return;
+      }
+      state2.roomBuildResult = "";
+      state2.roomBuildSelectedTokens = selected;
+      state2.roomBuildAvailableTokens = state2.roomBuildAvailableTokens.filter((_, index) => index !== tokenIndex);
+      if (selected.length === tokens.target.length) {
+        state2.roomBuildResult = "correct";
+        if (state2.tapAudioEnabled) speak2(selected.join(""), 0.78);
+      }
+      renderActivityPanel2(currentTopic2());
+    }
+    function clearRoomBuilder2() {
+      prepareRoomBuilder();
+      renderActivityPanel2(currentTopic2());
+    }
+    function nextRoomBuilder2() {
+      state2.roomBuildIndex = (state2.roomBuildIndex + 1) % state2.roomBuildOrder.length;
+      prepareRoomBuilder();
+      renderActivityPanel2(currentTopic2());
+    }
+    function currentTransportBuildItem2() {
+      const id = state2.transportBuildOrder[state2.transportBuildIndex];
+      return visualTopicItems2.transport.find((item) => item.id === id);
+    }
+    function resetTransportBuilder() {
+      state2.transportBuildOrder = shuffleArray2(visualTopicItems2.transport.map((item) => item.id));
+      state2.transportBuildIndex = 0;
+      prepareTransportBuilder();
+    }
+    function prepareTransportBuilder() {
+      const item = currentTransportBuildItem2();
+      const tokens = transportSentenceTokens2[item?.id];
+      state2.transportBuildSelectedTokens = [];
+      state2.transportBuildResult = "";
+      state2.transportBuildAvailableTokens = shuffleArray2([...tokens?.target ?? [], ...tokens?.distractors ?? []]);
+    }
+    function ensureTransportBuilder2() {
+      if (!state2.transportBuildOrder.length) resetTransportBuilder();
+    }
+    function handleTransportBuildToken2(tokenIndex) {
+      if (state2.transportBuildResult === "correct") return;
+      const item = currentTransportBuildItem2();
+      const tokens = transportSentenceTokens2[item?.id];
+      const token = state2.transportBuildAvailableTokens[tokenIndex];
+      if (!token || !tokens) return;
+      const selected = [...state2.transportBuildSelectedTokens, token];
+      const isPrefix = selected.every((entry, index) => entry === tokens.target[index]);
+      if (!isPrefix) {
+        state2.transportBuildResult = "wrong";
+        state2.transportBuildSelectedTokens = [];
+        state2.transportBuildAvailableTokens = shuffleArray2([...tokens.target, ...tokens.distractors]);
+        renderActivityPanel2(currentTopic2());
+        return;
+      }
+      state2.transportBuildResult = "";
+      state2.transportBuildSelectedTokens = selected;
+      state2.transportBuildAvailableTokens = state2.transportBuildAvailableTokens.filter((_, index) => index !== tokenIndex);
+      if (selected.length === tokens.target.length) {
+        state2.transportBuildResult = "correct";
+        if (state2.tapAudioEnabled) speak2(item.audio, 0.78);
+      }
+      renderActivityPanel2(currentTopic2());
+    }
+    function clearTransportBuilder2() {
+      prepareTransportBuilder();
+      renderActivityPanel2(currentTopic2());
+    }
+    function nextTransportBuilder2() {
+      state2.transportBuildIndex = (state2.transportBuildIndex + 1) % state2.transportBuildOrder.length;
+      prepareTransportBuilder();
+      renderActivityPanel2(currentTopic2());
+    }
+    function resetPositionQuiz() {
+      state2.positionQuizOrder = shuffleArray2(positionPracticeItems2.map((item) => item.id));
+      state2.positionQuizIndex = 0;
+      preparePositionQuizQuestion();
+    }
+    function preparePositionQuizQuestion() {
+      const answerId = state2.positionQuizOrder[state2.positionQuizIndex];
+      const distractorIds = shuffleArray2(positionPracticeItems2.filter((item) => item.id !== answerId).map((item) => item.id)).slice(0, 3);
+      state2.positionQuizOptionIds = shuffleArray2([answerId, ...distractorIds]);
+      state2.positionQuizSelectedId = "";
+      state2.positionQuizResult = "";
+    }
+    function ensurePositionQuiz2() {
+      if (!state2.positionQuizOrder.length) resetPositionQuiz();
+    }
+    function handlePositionQuizPlay2() {
+      ensurePositionQuiz2();
+      const item = positionPracticeItems2.find((entry) => entry.id === state2.positionQuizOrder[state2.positionQuizIndex]);
+      if (item && state2.tapAudioEnabled) speak2(item.audio, 0.78);
+    }
+    function handlePositionQuizPick2(itemId) {
+      if (state2.positionQuizResult === "correct") return;
+      const answerId = state2.positionQuizOrder[state2.positionQuizIndex];
+      state2.positionQuizSelectedId = itemId;
+      state2.positionQuizResult = itemId === answerId ? "correct" : "wrong";
+      if (state2.positionQuizResult === "correct" && state2.tapAudioEnabled) {
+        const item = positionPracticeItems2.find((entry) => entry.id === answerId);
+        speak2(item?.audio, 0.78);
+      }
+      renderActivityPanel2(currentTopic2());
+    }
+    function nextPositionQuizQuestion2() {
+      state2.positionQuizIndex = (state2.positionQuizIndex + 1) % state2.positionQuizOrder.length;
+      preparePositionQuizQuestion();
+      renderActivityPanel2(currentTopic2());
+    }
+    function currentComparisonBuildItem2() {
+      const id = state2.comparisonBuildOrder[state2.comparisonBuildIndex];
+      return comparisonPracticeItems2.find((item) => item.id === id);
+    }
+    function resetComparisonBuilder() {
+      state2.comparisonBuildOrder = shuffleArray2(comparisonPracticeItems2.map((item) => item.id));
+      state2.comparisonBuildIndex = 0;
+      prepareComparisonBuilder();
+    }
+    function prepareComparisonBuilder() {
+      const item = currentComparisonBuildItem2();
+      state2.comparisonBuildSelectedTokens = [];
+      state2.comparisonBuildAvailableTokens = shuffleArray2(item?.options ?? []);
+      state2.comparisonBuildResult = "";
+    }
+    function ensureComparisonBuilder2() {
+      if (!state2.comparisonBuildOrder.length) resetComparisonBuilder();
+    }
+    function handleComparisonBuildToken2(index) {
+      if (state2.comparisonBuildResult === "correct") return;
+      const item = currentComparisonBuildItem2();
+      const token = state2.comparisonBuildAvailableTokens[index];
+      if (!item || !token) return;
+      const selected = [...state2.comparisonBuildSelectedTokens, token];
+      if (selected.some((entry, tokenIndex) => entry !== item.target[tokenIndex])) {
+        state2.comparisonBuildResult = "wrong";
+        state2.comparisonBuildSelectedTokens = [];
+        state2.comparisonBuildAvailableTokens = shuffleArray2(item.options);
+        renderActivityPanel2(currentTopic2());
+        return;
+      }
+      state2.comparisonBuildResult = "";
+      state2.comparisonBuildSelectedTokens = selected;
+      state2.comparisonBuildAvailableTokens = state2.comparisonBuildAvailableTokens.filter((_, tokenIndex) => tokenIndex !== index);
+      if (selected.length === item.target.length) {
+        state2.comparisonBuildResult = "correct";
+        if (state2.tapAudioEnabled) speak2(`${item.before}${selected[0]}${item.between}${selected[1]}${item.after}`, 0.78);
+      }
+      renderActivityPanel2(currentTopic2());
+    }
+    function clearComparisonBuilder2() {
+      prepareComparisonBuilder();
+      renderActivityPanel2(currentTopic2());
+    }
+    function nextComparisonBuilder2() {
+      state2.comparisonBuildIndex = (state2.comparisonBuildIndex + 1) % state2.comparisonBuildOrder.length;
+      prepareComparisonBuilder();
+      renderActivityPanel2(currentTopic2());
+    }
+    function resetDateMatchGame2() {
+      const roundIds = shuffleArray2(timeDateMonthItems2.map((item) => item.id)).slice(0, 6);
+      state2.dateSelectedPhraseId = null;
+      state2.dateMatchedIds = /* @__PURE__ */ new Set();
+      state2.datePhraseOrder = shuffleArray2(roundIds);
+      state2.dateEventOrder = shuffleArray2(roundIds);
+      state2.dateMatchFeedback = "";
+    }
+    function ensureDateMatchGame2() {
+      const monthIds = new Set(timeDateMonthItems2.map((item) => item.id));
+      if (!state2.datePhraseOrder.length || !state2.dateEventOrder.length || state2.datePhraseOrder.length !== 6 || state2.dateEventOrder.length !== 6 || state2.datePhraseOrder.some((id) => !monthIds.has(id)) || state2.dateEventOrder.some((id) => !monthIds.has(id))) {
+        resetDateMatchGame2();
+      }
+    }
+    function handleDateMatchPhrase2(itemId) {
+      if (state2.dateMatchedIds.has(itemId)) return;
+      state2.dateSelectedPhraseId = itemId;
+      const item = timeDateMonthItems2.find((entry) => entry.id === itemId);
+      if (item && state2.tapAudioEnabled) speak2(item.hanzi, 0.78);
+      state2.dateMatchFeedback = "";
+      renderActivityPanel2(currentTopic2());
+    }
+    function handleDateMatchEvent2(itemId) {
+      const selectedId = state2.dateSelectedPhraseId;
+      if (!selectedId || state2.dateMatchedIds.has(itemId)) return;
+      if (selectedId === itemId) {
+        state2.dateMatchedIds = /* @__PURE__ */ new Set([...state2.dateMatchedIds, itemId]);
+        state2.dateSelectedPhraseId = null;
+        state2.dateMatchFeedback = "";
+      } else {
+        state2.dateMatchFeedback = "Try again.";
+      }
+      renderActivityPanel2(currentTopic2());
+    }
+    function resetDateChallenge(options = {}) {
+      const available = options.excludeId ? datePracticeItems2.filter((item) => item.id !== options.excludeId) : datePracticeItems2;
+      const answer = available[Math.floor(Math.random() * available.length)] ?? datePracticeItems2[0];
+      const distractors = shuffleArray2(datePracticeItems2.filter((item) => item.id !== answer.id)).slice(0, 3);
+      state2.dateChallengeAnswerId = answer.id;
+      state2.dateChallengePromptId = answer.id;
+      state2.dateChallengeOptionIds = shuffleArray2([answer.id, ...distractors.map((item) => item.id)]);
+      state2.dateChallengePickedId = "";
+      state2.dateChallengeResult = "";
+      state2.dateChallengeWrongIds = /* @__PURE__ */ new Set();
+      state2.dateListenFeedback = "";
+    }
+    function ensureDateChallenge2() {
+      if (!state2.dateChallengeAnswerId || !state2.dateChallengeOptionIds.length) resetDateChallenge();
+    }
+    function handleDateChallengePlay2() {
+      const previousId = state2.dateChallengePromptId;
+      resetDateChallenge({ excludeId: previousId });
+      const item = datePracticeItems2.find((entry) => entry.id === state2.dateChallengePromptId);
+      if (item && state2.tapAudioEnabled) speak2(item.audio, 0.78);
+      renderActivityPanel2(currentTopic2());
+    }
+    function handleDateChallengeGuess2(itemId) {
+      const isCorrect = itemId === state2.dateChallengeAnswerId;
+      state2.dateChallengePickedId = itemId;
+      state2.dateChallengeResult = isCorrect ? "correct" : "wrong";
+      if (isCorrect) {
+        if (state2.tapAudioEnabled) {
+          const item = datePracticeItems2.find((entry) => entry.id === itemId);
+          speak2(item?.hanzi, 0.78);
+        }
+      } else {
+        state2.dateChallengeWrongIds = /* @__PURE__ */ new Set([...state2.dateChallengeWrongIds, itemId]);
+      }
+      renderActivityPanel2(currentTopic2());
+    }
+    function timeDateSectionForCurrentLesson() {
+      const lessonKey = `${currentBook2().id}:${currentLesson2().lesson}`;
+      if (lessonKey === "2b:2" || lessonKey === "4a:3") return "clock";
+      return "routine";
+    }
+    function activeTimeDateSection2() {
+      const source = `${currentBook2().id}:${currentLesson2().lesson}`;
+      if (state2.timeDateSectionSource !== source) {
+        state2.timeDateSectionSource = source;
+        state2.timeDateSectionId = timeDateSectionForCurrentLesson();
+      }
+      return state2.timeDateSectionId || "week";
+    }
+    function renderTimeAssetGrid(items, modifier, collection = modifier) {
+      return `<div class="time-asset-grid time-asset-grid-${modifier}">
+    ${items.map(
+        (item) => `
+          <button class="time-asset-card" type="button" data-time-asset="${collection}:${item.id}">
+            <img class="time-asset-image" src="${item.imagePath}" alt="${item.english}" />
+            ${item.hideLabels || item.hideLabelHanzi ? "" : item.words ? `<span class="time-asset-word-list">${item.words.map((word) => `<span>${word}</span>`).join("")}</span>` : `<span class="time-asset-hanzi">${item.hanzi}</span>`}
+            ${!item.hideLabels && !item.hideLabelDetails && state2.showPinyin ? `<span class="time-asset-pinyin">${item.pinyin}</span>` : ""}
+            ${!item.hideLabels && !item.hideLabelDetails && state2.showEnglish ? `<span class="time-asset-english">${item.english}</span>` : ""}
+            ${item.context ? `<span class="time-asset-context">${item.context}</span>` : ""}
+            ${item.contextPinyin && state2.showPinyin ? `<span class="time-asset-context-pinyin">${item.contextPinyin}</span>` : ""}
+            ${item.contextEnglish && state2.showEnglish ? `<span class="time-asset-context-english">${item.contextEnglish}</span>` : ""}
+          </button>
+        `
+      ).join("")}
+  </div>`;
+    }
+    function bindTimeAssetAudio(container) {
+      container.querySelectorAll("[data-time-asset]").forEach((button) => {
+        button.addEventListener("click", () => {
+          const [collection, id] = button.dataset.timeAsset.split(":");
+          const items = {
+            week: timeDateWeekItems2,
+            clock: timeDateClockItems2,
+            date: timeDateDateItems2,
+            month: timeDateMonthItems2,
+            visual: Object.values(visualTopicItems2).flat()
+          }[collection] ?? [];
+          const item = items.find((entry) => entry.id === id);
+          if (item && state2.tapAudioEnabled) {
+            speak2(item.audio, 0.78);
+          }
+        });
+      });
+    }
+    function renderWeekdaysExplorer2() {
+      focusExplorer2.innerHTML = `
+    <div class="time-date-board">
+      <div class="numbers-stage-card">
+        <p class="body-match-kicker">${currentBook2().label} Lesson ${currentLesson2().lesson}</p>
+        <h4>Days of the Week</h4>
+      </div>
+      <div class="time-asset-grid time-asset-grid-week">
+        ${timeDateWeekItems2.map((item) => `
+          <section class="time-asset-card weekday-scene-card">
+            <div class="greetings-exchange-top"><div><span class="time-asset-hanzi">${item.hanzi}</span></div><button class="small-button is-action-button" type="button" data-weekday-play-scene="${item.id}">Play scene</button></div>
+            <img class="time-asset-image" src="${item.imagePath}" alt="${item.english}" />
+            <span class="time-asset-context">${item.context}</span>
+            ${state2.showPinyin ? `<span class="time-asset-context-pinyin">${item.contextPinyin}</span>` : ""}
+            ${state2.showEnglish ? `<span class="time-asset-context-english">${item.contextEnglish}</span>` : ""}
+          </section>
+        `).join("")}
+      </div>
+      <section class="visual-topic-notes">
+        <p class="body-match-kicker">Useful notes</p>
+        <div class="visual-topic-note-grid">
+          <article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">\u4ECA\u5929\u661F\u671F\u51E0\uFF1F</p>${state2.showPinyin ? '<p class="visual-topic-note-pinyin">j\u012Bn ti\u0101n x\u012Bng q\u012B j\u01D0?</p>' : ""}${state2.showEnglish ? '<p class="visual-topic-note-english">What day is it today?</p>' : ""}<p class="visual-topic-note-example">\u4ECA\u5929\u661F\u671F\u4E00\u3002</p>${state2.showPinyin ? '<p class="visual-topic-note-pinyin">j\u012Bn ti\u0101n x\u012Bng q\u012B y\u012B.</p>' : ""}${state2.showEnglish ? '<p class="visual-topic-note-english">Today is Monday.</p>' : ""}</article>
+        </div>
+      </section>
+    </div>
+  `;
+      focusExplorer2.querySelectorAll("[data-weekday-play-scene]").forEach((button) => {
+        button.addEventListener("click", () => {
+          const item = timeDateWeekItems2.find((entry) => entry.id === button.dataset.weekdayPlayScene);
+          if (item && state2.tapAudioEnabled) speak2(item.audio, 0.78);
+        });
+      });
+    }
+    function renderDatesExplorer2() {
+      focusExplorer2.innerHTML = `
+    <div class="time-date-board">
+      <div class="numbers-stage-card">
+        <p class="body-match-kicker">${currentBook2().label} Lesson ${currentLesson2().lesson}</p>
+        <h4>Dates & Months</h4>
+      </div>
+      ${renderTimeAssetGrid(timeDateDateItems2, "date")}
+      <section class="time-months-intro">
+        <div>
+          <p class="body-match-kicker">Months of the year</p>
+          <p class="time-months-hanzi">\u4E00\u5E74\u6709\u5341\u4E8C\u4E2A\u6708\u3002</p>
+          ${state2.showPinyin ? '<p class="time-months-pinyin">y\u012B ni\xE1n y\u01D2u sh\xED \xE8r ge yu\xE8.</p>' : ""}
+          ${state2.showEnglish ? '<p class="time-months-english">There are twelve months in a year.</p>' : ""}
+        </div>
+        <button class="small-button is-action-button" type="button" data-months-play>Play audio</button>
+      </section>
+      ${renderTimeAssetGrid(timeDateMonthItems2, "month")}
+      <section class="visual-topic-notes">
+        <p class="body-match-kicker">Useful notes</p>
+        <div class="visual-topic-note-grid">
+          <article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">\u4ECA\u5929\u51E0\u6708\u51E0\u53F7\uFF1F</p>${state2.showPinyin ? '<p class="visual-topic-note-pinyin">j\u012Bn ti\u0101n j\u01D0 yu\xE8 j\u01D0 h\xE0o?</p>' : ""}${state2.showEnglish ? '<p class="visual-topic-note-english">What is the date today?</p>' : ""}<p class="visual-topic-note-example">\u4ECA\u5929\u4E94\u6708\u4E8C\u5341\u53F7\u3002</p>${state2.showPinyin ? '<p class="visual-topic-note-pinyin">j\u012Bn ti\u0101n w\u01D4 yu\xE8 \xE8r sh\xED h\xE0o.</p>' : ""}${state2.showEnglish ? '<p class="visual-topic-note-english">Today is May twentieth.</p>' : ""}</article>
+          <article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">\u53F7 / \u65E5</p>${state2.showPinyin ? '<p class="visual-topic-note-pinyin">h\xE0o / r\xEC</p>' : ""}${state2.showEnglish ? '<p class="visual-topic-note-english">two ways to say the day of a date</p>' : ""}<p class="visual-topic-note-example">\u4E94\u6708\u4E8C\u5341\u53F7 = \u4E94\u6708\u4E8C\u5341\u65E5\u3002</p>${state2.showPinyin ? '<p class="visual-topic-note-pinyin">w\u01D4 yu\xE8 \xE8r sh\xED h\xE0o = w\u01D4 yu\xE8 \xE8r sh\xED r\xEC.</p>' : ""}${state2.showEnglish ? '<p class="visual-topic-note-english">Both mean May twentieth.</p>' : ""}</article>
+          <article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">\u795D\u4F60\u751F\u65E5\u5FEB\u4E50\uFF01</p>${state2.showPinyin ? '<p class="visual-topic-note-pinyin">zh\xF9 n\u01D0 sh\u0113ng r\xEC ku\xE0i l\xE8!</p>' : ""}${state2.showEnglish ? '<p class="visual-topic-note-english">Wish you a happy birthday!</p>' : ""}</article>
+          <article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">\u751F\u65E5\u4F1A / \u793C\u7269</p>${state2.showPinyin ? '<p class="visual-topic-note-pinyin">sh\u0113ng r\xEC hu\xEC / l\u01D0 w\xF9</p>' : ""}${state2.showEnglish ? '<p class="visual-topic-note-english">birthday party / present</p>' : ""}<p class="visual-topic-note-example">\u751F\u65E5\u4F1A\u4E0A\u6709\u793C\u7269\u3002</p>${state2.showPinyin ? '<p class="visual-topic-note-pinyin">sh\u0113ng r\xEC hu\xEC sh\xE0ng y\u01D2u l\u01D0 w\xF9.</p>' : ""}${state2.showEnglish ? '<p class="visual-topic-note-english">There are presents at a birthday party.</p>' : ""}</article>
+        </div>
+      </section>
+    </div>
+  `;
+      bindTimeAssetAudio(focusExplorer2);
+      focusExplorer2.querySelector("[data-months-play]")?.addEventListener("click", () => {
+        if (state2.tapAudioEnabled) {
+          speak2("\u4E00\u5E74\u6709\u5341\u4E8C\u4E2A\u6708", 0.78);
+        }
+      });
+    }
+    function renderVisualTopicExplorer2(sceneId) {
+      const topic = currentTopic2();
+      const items = visualTopicItems2[sceneId] ?? [];
+      const comparisonWords = sceneId === "comparisons" ? `<div class="comparison-word-grid">${comparisonWordItems2.map((item) => `<button class="comparison-word-card" type="button" data-comparison-word="${item.hanzi}"><span class="comparison-word-hanzi">${item.hanzi}</span>${state2.showPinyin ? `<span class="comparison-word-pinyin">${item.pinyin}</span>` : ""}${state2.showEnglish ? `<span class="comparison-word-english">${item.english}</span>` : ""}</button>`).join("")}</div>` : "";
+      const usefulNotes = sceneId === "transport" ? `
+        <section class="visual-topic-notes">
+          <p class="body-match-kicker">Useful notes</p>
+          <div class="visual-topic-note-grid">
+            <article class="visual-topic-note-card">
+              <p class="visual-topic-note-hanzi">\u5750\u8F66</p>
+              ${state2.showPinyin ? '<p class="visual-topic-note-pinyin">zu\xF2 ch\u0113</p>' : ""}
+              ${state2.showEnglish ? '<p class="visual-topic-note-english">travel by vehicle; take a ride</p>' : ""}
+              <p class="visual-topic-note-example">\u5750\u6821\u8F66\uFF0C\u5750\u51FA\u79DF\u8F66\uFF0C\u5750\u706B\u8F66\u3002</p>
+            </article>
+            <article class="visual-topic-note-card">
+              <p class="visual-topic-note-hanzi">\u53BB</p>
+              ${state2.showPinyin ? '<p class="visual-topic-note-pinyin">q\xF9</p>' : ""}
+              ${state2.showEnglish ? '<p class="visual-topic-note-english">to go to</p>' : ""}
+              <p class="visual-topic-note-example">\u53BB\u5B66\u6821\uFF0C\u53BB\u52A8\u7269\u56ED\uFF0C\u53BB\u5317\u4EAC\u3002</p>
+            </article>
+            <article class="visual-topic-note-card">
+              <p class="visual-topic-note-hanzi">\u9A91</p>
+              ${state2.showPinyin ? '<p class="visual-topic-note-pinyin">q\xED</p>' : ""}
+              ${state2.showEnglish ? '<p class="visual-topic-note-english">to ride</p>' : ""}
+              <p class="visual-topic-note-example">\u9A91\u81EA\u884C\u8F66\u3002</p>
+            </article>
+          </div>
+        </section>
+      ` : "";
+      focusExplorer2.innerHTML = `
+    <div class="time-date-board">
+      <div class="numbers-stage-card">
+        <p class="body-match-kicker">${currentBook2().label} Lesson ${currentLesson2().lesson}</p>
+        <h4>${topic.title}</h4>
+      </div>
+      <div class="time-months-heading"><p class="body-match-kicker">Book words</p></div>
+      ${renderTimeAssetGrid(items, `visual visual-${sceneId}`, "visual")}
+      ${comparisonWords}
+      ${usefulNotes}
+    </div>
+  `;
+      bindTimeAssetAudio(focusExplorer2);
+      focusExplorer2.querySelectorAll("[data-comparison-word]").forEach((button) => {
+        button.addEventListener("click", () => {
+          if (state2.tapAudioEnabled) speak2(button.dataset.comparisonWord, 0.78);
+        });
+      });
+    }
+    function renderRoomsExplorer2() {
+      const topic = currentTopic2();
+      focusExplorer2.innerHTML = `
+    <div class="time-date-board">
+      <div class="numbers-stage-card">
+        <p class="body-match-kicker">${currentBook2().label} Lesson ${currentLesson2().lesson}</p>
+        <h4>${topic.title}</h4>
+      </div>
+      <div class="greetings-practice-grid room-scene-grid">
+        ${roomScenes2.map((scene) => `
+          <section class="greetings-exchange room-scene-card">
+            <div class="greetings-exchange-top"><div><p class="body-match-kicker">${scene.label}</p></div><button class="small-button is-action-button" type="button" data-room-play-scene="${scene.id}">Play scene</button></div>
+            <div class="room-scene-layout">
+              <img class="room-scene-image" src="${scene.imagePath}" alt="${scene.english}" />
+              <article class="greetings-line-card"><div class="telephone-bubble-copy"><p class="telephone-line-hanzi">${scene.hanzi}</p>${state2.showPinyin ? `<p class="telephone-line-pinyin">${scene.pinyin}</p>` : ""}${state2.showEnglish ? `<p class="telephone-line-english">${scene.english}</p>` : ""}</div></article>
+            </div>
+          </section>
+        `).join("")}
+      </div>
+      <div class="time-months-heading"><p class="body-match-kicker">Book words</p></div>
+      ${renderTimeAssetGrid(visualTopicItems2.rooms, "visual visual-rooms", "visual")}
+      <section class="visual-topic-notes">
+        <p class="body-match-kicker">Useful notes</p>
+        <div class="visual-topic-note-grid room-useful-note-grid">
+          <article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">\u623F\u95F4\u91CC\u6709\u2026\u2026</p>${state2.showPinyin ? '<p class="visual-topic-note-pinyin">f\xE1ng ji\u0101n l\u01D0 y\u01D2u...</p>' : ""}${state2.showEnglish ? '<p class="visual-topic-note-english">There is / are ... in the room.</p>' : ""}<p class="visual-topic-note-example">\u91CC means \u201Cin\u201D; \u6709 means \u201Cthere is / are.\u201D</p></article>
+          <article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">\u5730\u4E0A\u6709\u2026\u2026</p>${state2.showPinyin ? '<p class="visual-topic-note-pinyin">d\xEC sh\xE0ng y\u01D2u...</p>' : ""}${state2.showEnglish ? '<p class="visual-topic-note-english">There is / are ... on the floor.</p>' : ""}<p class="visual-topic-note-example">\u5730\u4E0A\u6709\u4E66\u3002</p>${state2.showPinyin ? '<p class="visual-topic-note-pinyin">d\xEC sh\xE0ng y\u01D2u sh\u016B.</p>' : ""}${state2.showEnglish ? '<p class="visual-topic-note-english">There is a book on the floor.</p>' : ""}</article>
+        </div>
+      </section>
+    </div>
+  `;
+      bindTimeAssetAudio(focusExplorer2);
+      focusExplorer2.querySelectorAll("[data-room-play-scene]").forEach((button) => {
+        button.addEventListener("click", () => {
+          const scene = roomScenes2.find((entry) => entry.id === button.dataset.roomPlayScene);
+          if (scene && state2.tapAudioEnabled) speak2(scene.audio, 0.78);
+        });
+      });
+    }
+    function renderPositionsExplorer2() {
+      focusExplorer2.innerHTML = `
+    <div class="time-date-board">
+      <div class="numbers-stage-card">
+        <p class="body-match-kicker">${currentBook2().label} Lesson ${currentLesson2().lesson}</p>
+        <h4>Positions & Directions</h4>
+      </div>
+      <div class="greetings-practice-grid">
+        ${positionScenes2.map(
+        (scene) => `
+              <section class="greetings-exchange">
+                <div class="greetings-exchange-top"><div><p class="body-match-kicker">Scene ${scene.number}</p><p class="greetings-exchange-prompt">${scene.prompt}</p></div><button class="small-button is-action-button" type="button" data-position-play-scene="${scene.id}">Play scene</button></div>
+                <div class="greetings-scene-layout">
+                  <div class="greetings-scene-visual"><img class="greetings-scene-image position-scene-image position-scene-image-${scene.id}" src="${scene.imagePath}" alt="${scene.imageAlt}" /></div>
+                  <div class="greetings-line-stack">
+                    ${scene.lines.map((line) => `<article class="greetings-line-card"><div class="telephone-bubble-copy"><p class="telephone-line-hanzi">${line.hanzi}</p>${state2.showPinyin ? `<p class="telephone-line-pinyin">${line.pinyin}</p>` : ""}${state2.showEnglish ? `<p class="telephone-line-english">${line.english}</p>` : ""}</div></article>`).join("")}
+                  </div>
+                </div>
+              </section>
+            `
+      ).join("")}
+      </div>
+      <section class="visual-topic-notes">
+        <p class="body-match-kicker">Useful notes</p>
+        <div class="visual-topic-note-grid position-note-grid">
+          <article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">A \u5728 B + \u4F4D\u7F6E</p>${state2.showPinyin ? '<p class="visual-topic-note-pinyin">A z\xE0i B + w\xE8i zh\xEC</p>' : ""}${state2.showEnglish ? '<p class="visual-topic-note-english">A is in / on / beside B.</p>' : ""}<p class="visual-topic-note-example">\u4E66\u67B6\u5728\u684C\u5B50\u5DE6\u8FB9\u3002</p>${state2.showPinyin ? '<p class="visual-topic-note-pinyin">sh\u016B ji\xE0 z\xE0i zhu\u014D zi zu\u01D2 bi\u0101n.</p>' : ""}${state2.showEnglish ? '<p class="visual-topic-note-english">The bookshelf is to the left of the desk.</p>' : ""}</article>
+          <article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">\u524D\u8FB9 = \u524D\u9762\uFF1B\u540E\u8FB9 = \u540E\u9762</p>${state2.showPinyin ? '<p class="visual-topic-note-pinyin">qi\xE1n bi\u0101n = qi\xE1n mi\xE0n; h\xF2u bi\u0101n = h\xF2u mi\xE0n</p>' : ""}${state2.showEnglish ? '<p class="visual-topic-note-english">front and back can use either form here</p>' : ""}</article>
+          ${[["\u4E0A", "sh\xE0ng", "up"], ["\u4E0B", "xi\xE0", "down"], ["\u524D", "qi\xE1n", "front"], ["\u540E", "h\xF2u", "back"], ["\u5DE6", "zu\u01D2", "left"], ["\u53F3", "y\xF2u", "right"]].map(([hanzi, pinyin, english]) => `<article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">${hanzi}</p>${state2.showPinyin ? `<p class="visual-topic-note-pinyin">${pinyin}</p>` : ""}${state2.showEnglish ? `<p class="visual-topic-note-english">${english}</p>` : ""}</article>`).join("")}
+        </div>
+      </section>
+    </div>
+  `;
+      focusExplorer2.querySelectorAll("[data-position-play-scene]").forEach((button) => {
+        button.addEventListener("click", () => {
+          const scene = positionScenes2.find((entry) => entry.id === button.dataset.positionPlayScene);
+          if (scene && state2.tapAudioEnabled) speakSceneLines2(scene.lines);
+        });
+      });
+    }
+    function renderTimeDateExplorer2() {
+      const activeSection = activeTimeDateSection2();
+      const sections = [
+        { id: "routine", hanzi: "\u4F5C\u606F", english: "Routine" },
+        { id: "clock", hanzi: "\u65F6\u95F4", english: "Time" }
+      ];
+      let content = "";
+      if (activeSection === "clock") {
+        content = renderTimeAssetGrid(timeDateClockItems2.filter((item) => item.id !== "clock-7"), "clock");
+      } else {
+        content = `
+      <div class="greetings-practice-grid time-routine-scene-grid">
+        ${timeDateRoutineItems2.map(
+          (item, index) => `
+              <section class="greetings-exchange">
+                <div class="greetings-exchange-top">
+                  <div>
+                    <p class="body-match-kicker">Scene ${index + 1}</p>
+                    <p class="greetings-exchange-prompt">${item.english}</p>
+                  </div>
+                  <button class="small-button is-action-button" type="button" data-time-routine-play="${item.id}">Play scene</button>
+                </div>
+                <div class="greetings-scene-layout">
+                  <div class="greetings-scene-visual"><img class="greetings-scene-image time-routine-scene-image" src="${item.imagePath}" alt="${item.english}" /></div>
+                  <div class="greetings-line-stack">
+                    <article class="greetings-line-card">
+                      <div class="telephone-bubble-copy">
+                        <p class="telephone-line-hanzi">${item.hanzi}</p>
+                        ${state2.showPinyin ? `<p class="telephone-line-pinyin">${item.pinyin}</p>` : ""}
+                        ${state2.showEnglish ? `<p class="telephone-line-english">${item.english}</p>` : ""}
+                      </div>
+                    </article>
+                  </div>
+                </div>
+              </section>
+            `
+        ).join("")}
+      </div>
+    `;
+      }
+      focusExplorer2.innerHTML = `
+    <div class="time-date-board">
+      <div class="numbers-stage-card">
+        <p class="body-match-kicker">${currentBook2().label} Lesson ${currentLesson2().lesson}</p>
+        <h4>Time & Routines</h4>
+      </div>
+      <div class="time-date-section-tabs" role="tablist" aria-label="Time and date sections">
+        ${sections.map(
+        (section) => `<button class="time-date-section-tab${section.id === activeSection ? " is-active" : ""}" type="button" role="tab" aria-selected="${String(section.id === activeSection)}" data-time-date-section="${section.id}"><span>${section.hanzi}</span><small>${section.english}</small></button>`
+      ).join("")}
+      </div>
+      ${content}
+      <section class="visual-topic-notes time-useful-notes">
+        <p class="body-match-kicker">Useful notes</p>
+        <div class="visual-topic-note-grid">
+          <article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">\u51E0\u70B9\u4E86\uFF1F</p>${state2.showPinyin ? '<p class="visual-topic-note-pinyin">j\u01D0 di\u01CEn le?</p>' : ""}${state2.showEnglish ? '<p class="visual-topic-note-english">What time is it?</p>' : ""}<p class="visual-topic-note-example">\u73B0\u5728\u4E03\u70B9\u3002</p>${state2.showPinyin ? '<p class="visual-topic-note-pinyin">xi\xE0n z\xE0i q\u012B di\u01CEn.</p>' : ""}${state2.showEnglish ? `<p class="visual-topic-note-english">It is seven o'clock now.</p>` : ""}</article>
+          <article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">\u5206 / \u96F6</p>${state2.showPinyin ? '<p class="visual-topic-note-pinyin">f\u0113n / l\xEDng</p>' : ""}${state2.showEnglish ? '<p class="visual-topic-note-english">minute / zero</p>' : ""}<p class="visual-topic-note-example">\u73B0\u5728\u4E03\u70B9\u96F6\u4E94\u5206\u3002</p>${state2.showPinyin ? '<p class="visual-topic-note-pinyin">xi\xE0n z\xE0i q\u012B di\u01CEn l\xEDng w\u01D4 f\u0113n.</p>' : ""}${state2.showEnglish ? '<p class="visual-topic-note-english">It is 7:05 now.</p>' : ""}</article>
+          <article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">\u65E9\u4E0A / \u4E0A\u5348 / \u4E2D\u5348 / \u4E0B\u5348 / \u665A\u4E0A</p>${state2.showPinyin ? '<p class="visual-topic-note-pinyin">z\u01CEo shang / sh\xE0ng w\u01D4 / zh\u014Dng w\u01D4 / xi\xE0 w\u01D4 / w\u01CEn shang</p>' : ""}${state2.showEnglish ? '<p class="visual-topic-note-english">early morning / morning / noon / afternoon / evening</p>' : ""}</article>
+          <article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">\u4F60\u6BCF\u5929\u51E0\u70B9\u8D77\u5E8A\uFF1F</p>${state2.showPinyin ? '<p class="visual-topic-note-pinyin">n\u01D0 m\u011Bi ti\u0101n j\u01D0 di\u01CEn q\u01D0 chu\xE1ng?</p>' : ""}${state2.showEnglish ? '<p class="visual-topic-note-english">What time do you get up every day?</p>' : ""}<p class="visual-topic-note-example">\u6211\u6BCF\u5929\u4E03\u70B9\u8D77\u5E8A\u3002</p>${state2.showPinyin ? '<p class="visual-topic-note-pinyin">w\u01D2 m\u011Bi ti\u0101n q\u012B di\u01CEn q\u01D0 chu\xE1ng.</p>' : ""}${state2.showEnglish ? '<p class="visual-topic-note-english">I get up at seven every day.</p>' : ""}</article>
+          <article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">\u5237\u7259 / \u68B3\u5934 / \u7A7F\u6821\u670D / \u7A7F\u978B\u5B50</p>${state2.showPinyin ? '<p class="visual-topic-note-pinyin">shu\u0101 y\xE1 / sh\u016B t\xF3u / chu\u0101n xi\xE0o f\xFA / chu\u0101n xi\xE9 zi</p>' : ""}${state2.showEnglish ? '<p class="visual-topic-note-english">brush teeth / comb hair / put on a school uniform / put on shoes</p>' : ""}</article>
+          <article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">\u4E03\u70B9\u4E00\u523B = \u4E03\u70B9\u5341\u4E94\u5206</p>${state2.showPinyin ? '<p class="visual-topic-note-pinyin">q\u012B di\u01CEn y\u012B k\xE8 = q\u012B di\u01CEn sh\xED w\u01D4 f\u0113n</p>' : ""}${state2.showEnglish ? '<p class="visual-topic-note-english">7:15</p>' : ""}</article>
+          <article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">\u4E03\u70B9\u534A = \u4E03\u70B9\u4E09\u5341\u5206</p>${state2.showPinyin ? '<p class="visual-topic-note-pinyin">q\u012B di\u01CEn b\xE0n = q\u012B di\u01CEn s\u0101n sh\xED f\u0113n</p>' : ""}${state2.showEnglish ? '<p class="visual-topic-note-english">7:30</p>' : ""}</article>
+          <article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">\u4E03\u70B9\u4E09\u523B = \u4E03\u70B9\u56DB\u5341\u4E94\u5206</p>${state2.showPinyin ? '<p class="visual-topic-note-pinyin">q\u012B di\u01CEn s\u0101n k\xE8 = q\u012B di\u01CEn s\xEC sh\xED w\u01D4 f\u0113n</p>' : ""}${state2.showEnglish ? '<p class="visual-topic-note-english">7:45</p>' : ""}</article>
+        </div>
+      </section>
+    </div>
+  `;
+      focusExplorer2.querySelectorAll("[data-time-date-section]").forEach((button) => {
+        button.addEventListener("click", () => {
+          state2.timeDateSectionId = button.dataset.timeDateSection;
+          renderTimeDateExplorer2();
+          renderActivityPanel2(currentTopic2());
+        });
+      });
+      bindTimeAssetAudio(focusExplorer2);
+      focusExplorer2.querySelectorAll("[data-time-routine-play]").forEach((button) => {
+        button.addEventListener("click", () => {
+          const item = timeDateRoutineItems2.find((entry) => entry.id === button.dataset.timeRoutinePlay);
+          if (item && state2.tapAudioEnabled) {
+            speak2(item.audio, 0.78);
+          }
+        });
+      });
+    }
+    function renderClothesExplorer2() {
+      focusExplorer2.innerHTML = `
+    <div class="numbers-board">
+      <div class="numbers-stage-card">
+        <p class="body-match-kicker">${currentBook2().label} Lesson ${currentLesson2().lesson}</p>
+        <h4>Book theme: getting dressed</h4>
+        <p>Learn everyday clothes first, then choose what to wear for the weather.</p>
+      </div>
+      <div class="greetings-practice-grid">
+        ${clothesPractice2.map(
+        (scene) => `
+              <section class="greetings-exchange">
+                <div class="greetings-exchange-top">
+                  <div>
+                    <p class="body-match-kicker">Scene ${scene.number}</p>
+                    <p class="greetings-exchange-prompt">${scene.prompt}</p>
+                  </div>
+                  <button class="small-button is-action-button" type="button" data-clothes-play-scene="${scene.id}">Play scene</button>
+                </div>
+                <div class="greetings-scene-layout">
+                  <div class="greetings-scene-visual">
+                    <img class="greetings-scene-image" src="${scene.imagePath}" alt="${scene.imageAlt}" />
+                  </div>
+                  <div class="greetings-line-stack">
+                    ${scene.lines.map(
+          (line) => `
+                          <article class="greetings-line-card">
+                            <div class="telephone-bubble-copy">
+                              <p class="telephone-line-hanzi">${line.hanzi}</p>
+                              ${state2.showPinyin ? `<p class="telephone-line-pinyin">${line.pinyin}</p>` : ""}
+                              ${state2.showEnglish ? `<p class="telephone-line-english">${line.english}</p>` : ""}
+                            </div>
+                          </article>
+                        `
+        ).join("")}
+                  </div>
+                </div>
+              </section>
+            `
+      ).join("")}
+      </div>
+    </div>
+  `;
+      focusExplorer2.querySelectorAll("[data-clothes-play-scene]").forEach((button) => {
+        button.addEventListener("click", () => {
+          const scene = clothesPractice2.find((entry) => entry.id === button.dataset.clothesPlayScene);
+          if (scene && state2.tapAudioEnabled) {
+            speakSceneLines2(scene.lines);
+          }
+        });
+      });
+    }
+    return { resetWeekdayChallenge, ensureWeekdayChallenge: ensureWeekdayChallenge2, handleWeekdayChallengePlay: handleWeekdayChallengePlay2, handleWeekdayChallengeGuess: handleWeekdayChallengeGuess2, resetWeekdayMatchGame: resetWeekdayMatchGame2, ensureWeekdayMatchGame: ensureWeekdayMatchGame2, handleWeekdayMatchPhrase: handleWeekdayMatchPhrase2, handleWeekdayMatchAttempt: handleWeekdayMatchAttempt2, resetClothesQuiz, prepareClothesQuizQuestion, ensureClothesQuiz: ensureClothesQuiz2, handleClothesQuizPick: handleClothesQuizPick2, nextClothesQuizQuestion: nextClothesQuizQuestion2, resetTimeRoutineQuiz, prepareTimeRoutineQuizQuestion, ensureTimeRoutineQuiz: ensureTimeRoutineQuiz2, handleTimeRoutineQuizPick: handleTimeRoutineQuizPick2, nextTimeRoutineQuizQuestion: nextTimeRoutineQuizQuestion2, resetClockQuiz, prepareClockQuizQuestion, ensureClockQuiz: ensureClockQuiz2, handleClockQuizPick: handleClockQuizPick2, nextClockQuizQuestion: nextClockQuizQuestion2, currentRoomBuildItem: currentRoomBuildItem2, resetRoomBuilder, prepareRoomBuilder, ensureRoomBuilder: ensureRoomBuilder2, isRoomBuildPrefixValid, handleRoomBuildToken: handleRoomBuildToken2, clearRoomBuilder: clearRoomBuilder2, nextRoomBuilder: nextRoomBuilder2, currentTransportBuildItem: currentTransportBuildItem2, resetTransportBuilder, prepareTransportBuilder, ensureTransportBuilder: ensureTransportBuilder2, handleTransportBuildToken: handleTransportBuildToken2, clearTransportBuilder: clearTransportBuilder2, nextTransportBuilder: nextTransportBuilder2, resetPositionQuiz, preparePositionQuizQuestion, ensurePositionQuiz: ensurePositionQuiz2, handlePositionQuizPlay: handlePositionQuizPlay2, handlePositionQuizPick: handlePositionQuizPick2, nextPositionQuizQuestion: nextPositionQuizQuestion2, currentComparisonBuildItem: currentComparisonBuildItem2, resetComparisonBuilder, prepareComparisonBuilder, ensureComparisonBuilder: ensureComparisonBuilder2, handleComparisonBuildToken: handleComparisonBuildToken2, clearComparisonBuilder: clearComparisonBuilder2, nextComparisonBuilder: nextComparisonBuilder2, resetDateMatchGame: resetDateMatchGame2, ensureDateMatchGame: ensureDateMatchGame2, handleDateMatchPhrase: handleDateMatchPhrase2, handleDateMatchEvent: handleDateMatchEvent2, resetDateChallenge, ensureDateChallenge: ensureDateChallenge2, handleDateChallengePlay: handleDateChallengePlay2, handleDateChallengeGuess: handleDateChallengeGuess2, timeDateSectionForCurrentLesson, activeTimeDateSection: activeTimeDateSection2, renderTimeAssetGrid, bindTimeAssetAudio, renderWeekdaysExplorer: renderWeekdaysExplorer2, renderDatesExplorer: renderDatesExplorer2, renderVisualTopicExplorer: renderVisualTopicExplorer2, renderRoomsExplorer: renderRoomsExplorer2, renderPositionsExplorer: renderPositionsExplorer2, renderTimeDateExplorer: renderTimeDateExplorer2, renderClothesExplorer: renderClothesExplorer2 };
+  }
+
   // src/data/characters.js
   var illustratedKids = {
     lele: { id: "lele", label: "Lele", hanziName: "\u4E50\u4E50", gender: "boy", ageGroup: "6-7", skinTone: "light", path: "assets/illustrated-kids/lele.webp" },
@@ -4955,459 +5792,6 @@
     state.lastFamilyFeedback = state.familyMatchFeedback;
     renderActivityPanel(currentTopic());
   }
-  function resetWeekdayChallenge(options = {}) {
-    const candidates = timeDateWeekItems.filter((item) => item.id !== options.excludeId);
-    const answers = candidates.length ? candidates : timeDateWeekItems;
-    const answer = answers[Math.floor(Math.random() * answers.length)];
-    const distractors = shuffleArray(timeDateWeekItems.filter((item) => item.id !== answer.id)).slice(0, 3);
-    state.weekdayChallengeAnswerId = answer.id;
-    state.weekdayChallengePromptId = answer.id;
-    state.weekdayChallengeOptionIds = shuffleArray([answer.id, ...distractors.map((item) => item.id)]);
-    state.weekdayChallengePickedId = "";
-    state.weekdayChallengeResult = "";
-    state.weekdayChallengeWrongIds = /* @__PURE__ */ new Set();
-    state.weekdayListenFeedback = "";
-  }
-  function ensureWeekdayChallenge() {
-    if (!state.weekdayChallengeAnswerId || !state.weekdayChallengeOptionIds.length) resetWeekdayChallenge();
-  }
-  function handleWeekdayChallengePlay() {
-    ensureWeekdayChallenge();
-    const previousPromptId = state.weekdayChallengePromptId;
-    resetWeekdayChallenge({ excludeId: previousPromptId });
-    const item = timeDateWeekItems.find((entry) => entry.id === state.weekdayChallengePromptId);
-    if (item && state.tapAudioEnabled) speak(`\u4ECA\u5929\u661F\u671F\u51E0\uFF1F\u4ECA\u5929${item.hanzi}\u3002`, 0.78);
-    renderActivityPanel(currentTopic());
-  }
-  function handleWeekdayChallengeGuess(itemId) {
-    ensureWeekdayChallenge();
-    const isCorrect = itemId === state.weekdayChallengeAnswerId;
-    state.weekdayChallengePickedId = itemId;
-    state.weekdayChallengeResult = isCorrect ? "correct" : "wrong";
-    if (!isCorrect) {
-      state.weekdayChallengeWrongIds = /* @__PURE__ */ new Set([...state.weekdayChallengeWrongIds, itemId]);
-    } else if (state.tapAudioEnabled) {
-      const item = timeDateWeekItems.find((entry) => entry.id === itemId);
-      speak(item?.hanzi, 0.78);
-    }
-    renderActivityPanel(currentTopic());
-  }
-  function resetWeekdayMatchGame() {
-    state.weekdaySelectedPhraseId = null;
-    state.weekdayMatchedIds = /* @__PURE__ */ new Set();
-    state.weekdayPhraseOrder = shuffleArray(timeDateWeekItems.map((item) => item.id));
-    state.weekdayMeaningOrder = shuffleArray(timeDateWeekItems.map((item) => item.id));
-    state.weekdayMatchFeedback = "";
-  }
-  function ensureWeekdayMatchGame() {
-    if (!state.weekdayPhraseOrder.length || !state.weekdayMeaningOrder.length) resetWeekdayMatchGame();
-  }
-  function handleWeekdayMatchPhrase(itemId) {
-    if (state.weekdayMatchedIds.has(itemId)) return;
-    state.weekdaySelectedPhraseId = itemId;
-    const item = timeDateWeekItems.find((entry) => entry.id === itemId);
-    if (item && state.tapAudioEnabled) speak(item.hanzi, 0.78);
-    renderActivityPanel(currentTopic());
-  }
-  function handleWeekdayMatchAttempt(targetId) {
-    if (!state.weekdaySelectedPhraseId || state.weekdayMatchedIds.has(targetId)) return;
-    if (state.weekdaySelectedPhraseId === targetId) {
-      state.weekdayMatchedIds = /* @__PURE__ */ new Set([...state.weekdayMatchedIds, targetId]);
-      state.weekdaySelectedPhraseId = null;
-      state.weekdayMatchFeedback = "Matched.";
-    } else {
-      state.weekdayMatchFeedback = "Try a different card.";
-    }
-    renderActivityPanel(currentTopic());
-  }
-  function resetClothesQuiz() {
-    const ids = clothesMatchItems.map((item) => item.id);
-    state.clothesQuizOrder = shuffleArray(ids);
-    state.clothesQuizIndex = 0;
-    prepareClothesQuizQuestion();
-  }
-  function prepareClothesQuizQuestion() {
-    const answerId = state.clothesQuizOrder[state.clothesQuizIndex];
-    const distractorIds = shuffleArray(clothesMatchItems.filter((item) => item.id !== answerId).map((item) => item.id)).slice(0, 3);
-    state.clothesQuizOptionIds = shuffleArray([answerId, ...distractorIds]);
-    state.clothesQuizSelectedId = "";
-    state.clothesQuizResult = "";
-  }
-  function ensureClothesQuiz() {
-    if (!state.clothesQuizOrder.length) {
-      resetClothesQuiz();
-    }
-  }
-  function handleClothesQuizPick(itemId) {
-    if (state.clothesQuizResult === "correct") {
-      return;
-    }
-    const answerId = state.clothesQuizOrder[state.clothesQuizIndex];
-    state.clothesQuizSelectedId = itemId;
-    state.clothesQuizResult = itemId === answerId ? "correct" : "wrong";
-    if (state.clothesQuizResult === "correct" && state.tapAudioEnabled) {
-      const answer = clothesMatchItems.find((item) => item.id === answerId);
-      speak(answer?.audio, 0.78);
-    }
-    renderActivityPanel(currentTopic());
-  }
-  function nextClothesQuizQuestion() {
-    state.clothesQuizIndex = (state.clothesQuizIndex + 1) % state.clothesQuizOrder.length;
-    prepareClothesQuizQuestion();
-    renderActivityPanel(currentTopic());
-  }
-  function resetTimeRoutineQuiz() {
-    state.timeRoutineQuizOrder = shuffleArray(timeDateRoutineItems.map((item) => item.id));
-    state.timeRoutineQuizIndex = 0;
-    prepareTimeRoutineQuizQuestion();
-  }
-  function prepareTimeRoutineQuizQuestion() {
-    const answerId = state.timeRoutineQuizOrder[state.timeRoutineQuizIndex];
-    const distractorIds = shuffleArray(timeDateRoutineItems.filter((item) => item.id !== answerId).map((item) => item.id)).slice(0, 3);
-    state.timeRoutineQuizOptionIds = shuffleArray([answerId, ...distractorIds]);
-    state.timeRoutineQuizSelectedId = "";
-    state.timeRoutineQuizResult = "";
-  }
-  function ensureTimeRoutineQuiz() {
-    if (!state.timeRoutineQuizOrder.length) {
-      resetTimeRoutineQuiz();
-    }
-  }
-  function handleTimeRoutineQuizPick(itemId) {
-    if (state.timeRoutineQuizResult === "correct") {
-      return;
-    }
-    const answerId = state.timeRoutineQuizOrder[state.timeRoutineQuizIndex];
-    state.timeRoutineQuizSelectedId = itemId;
-    state.timeRoutineQuizResult = itemId === answerId ? "correct" : "wrong";
-    if (state.timeRoutineQuizResult === "correct" && state.tapAudioEnabled) {
-      const item = timeDateRoutineItems.find((entry) => entry.id === answerId);
-      speak(item?.audio, 0.78);
-    }
-    renderActivityPanel(currentTopic());
-  }
-  function nextTimeRoutineQuizQuestion() {
-    state.timeRoutineQuizIndex = (state.timeRoutineQuizIndex + 1) % state.timeRoutineQuizOrder.length;
-    prepareTimeRoutineQuizQuestion();
-    renderActivityPanel(currentTopic());
-  }
-  function resetClockQuiz() {
-    state.clockQuizOrder = shuffleArray(timeDateClockItems.map((item) => item.id));
-    state.clockQuizIndex = 0;
-    prepareClockQuizQuestion();
-  }
-  function prepareClockQuizQuestion() {
-    const answerId = state.clockQuizOrder[state.clockQuizIndex];
-    const distractorIds = shuffleArray(timeDateClockItems.filter((item) => item.id !== answerId).map((item) => item.id)).slice(0, 3);
-    state.clockQuizOptionIds = shuffleArray([answerId, ...distractorIds]);
-    state.clockQuizSelectedId = "";
-    state.clockQuizResult = "";
-  }
-  function ensureClockQuiz() {
-    if (!state.clockQuizOrder.length) {
-      resetClockQuiz();
-    }
-  }
-  function handleClockQuizPick(itemId) {
-    if (state.clockQuizResult === "correct") {
-      return;
-    }
-    const answerId = state.clockQuizOrder[state.clockQuizIndex];
-    state.clockQuizSelectedId = itemId;
-    state.clockQuizResult = itemId === answerId ? "correct" : "wrong";
-    if (state.clockQuizResult === "correct" && state.tapAudioEnabled) {
-      const item = timeDateClockItems.find((entry) => entry.id === answerId);
-      if (item) speak(`\u51E0\u70B9\u4E86\uFF1F\u73B0\u5728${item.hanzi}\u3002`, 0.78);
-    }
-    renderActivityPanel(currentTopic());
-  }
-  function nextClockQuizQuestion() {
-    state.clockQuizIndex = (state.clockQuizIndex + 1) % state.clockQuizOrder.length;
-    prepareClockQuizQuestion();
-    renderActivityPanel(currentTopic());
-  }
-  function currentRoomBuildItem() {
-    const id = state.roomBuildOrder[state.roomBuildIndex];
-    return roomScenes.find((item) => item.id === id);
-  }
-  function resetRoomBuilder() {
-    state.roomBuildOrder = shuffleArray(roomScenes.map((item) => item.id));
-    state.roomBuildIndex = 0;
-    prepareRoomBuilder();
-  }
-  function prepareRoomBuilder() {
-    const item = currentRoomBuildItem();
-    const tokens = roomSentenceTokens[item?.id];
-    state.roomBuildSelectedTokens = [];
-    state.roomBuildResult = "";
-    state.roomBuildAvailableTokens = shuffleArray([...tokens?.target ?? [], ...tokens?.distractors ?? []]);
-  }
-  function ensureRoomBuilder() {
-    if (!state.roomBuildOrder.length) resetRoomBuilder();
-  }
-  function isRoomBuildPrefixValid(selected, tokens) {
-    const prefix = tokens.prefix ?? [];
-    if (selected.length <= prefix.length) {
-      return selected.every((token, index) => token === prefix[index]);
-    }
-    if (!selected.slice(0, prefix.length).every((token, index) => token === prefix[index])) {
-      return false;
-    }
-    const objects = tokens.unorderedObjects ?? [];
-    const body = selected.slice(prefix.length);
-    if (objects.length === 1) {
-      return body.length === 1 && body[0] === objects[0];
-    }
-    const beforeConnectorCount = objects.length - 1;
-    const chosenObjects = body.slice(0, beforeConnectorCount);
-    const chosenAreUniqueObjects = chosenObjects.every((token) => objects.includes(token)) && new Set(chosenObjects).size === chosenObjects.length;
-    if (body.length <= beforeConnectorCount) return chosenAreUniqueObjects;
-    if (body.length === beforeConnectorCount + 1) return chosenAreUniqueObjects && body[beforeConnectorCount] === "\u548C";
-    if (body.length === beforeConnectorCount + 2) {
-      const finalObject = body[beforeConnectorCount + 1];
-      return chosenAreUniqueObjects && body[beforeConnectorCount] === "\u548C" && objects.includes(finalObject) && !chosenObjects.includes(finalObject);
-    }
-    return false;
-  }
-  function handleRoomBuildToken(tokenIndex) {
-    if (state.roomBuildResult === "correct") return;
-    const item = currentRoomBuildItem();
-    const tokens = roomSentenceTokens[item?.id];
-    const token = state.roomBuildAvailableTokens[tokenIndex];
-    if (!token || !tokens) return;
-    const selected = [...state.roomBuildSelectedTokens, token];
-    if (!isRoomBuildPrefixValid(selected, tokens)) {
-      state.roomBuildResult = "wrong";
-      state.roomBuildSelectedTokens = [];
-      state.roomBuildAvailableTokens = shuffleArray([...tokens.target, ...tokens.distractors]);
-      renderActivityPanel(currentTopic());
-      return;
-    }
-    state.roomBuildResult = "";
-    state.roomBuildSelectedTokens = selected;
-    state.roomBuildAvailableTokens = state.roomBuildAvailableTokens.filter((_, index) => index !== tokenIndex);
-    if (selected.length === tokens.target.length) {
-      state.roomBuildResult = "correct";
-      if (state.tapAudioEnabled) speak(selected.join(""), 0.78);
-    }
-    renderActivityPanel(currentTopic());
-  }
-  function clearRoomBuilder() {
-    prepareRoomBuilder();
-    renderActivityPanel(currentTopic());
-  }
-  function nextRoomBuilder() {
-    state.roomBuildIndex = (state.roomBuildIndex + 1) % state.roomBuildOrder.length;
-    prepareRoomBuilder();
-    renderActivityPanel(currentTopic());
-  }
-  function currentTransportBuildItem() {
-    const id = state.transportBuildOrder[state.transportBuildIndex];
-    return visualTopicItems.transport.find((item) => item.id === id);
-  }
-  function resetTransportBuilder() {
-    state.transportBuildOrder = shuffleArray(visualTopicItems.transport.map((item) => item.id));
-    state.transportBuildIndex = 0;
-    prepareTransportBuilder();
-  }
-  function prepareTransportBuilder() {
-    const item = currentTransportBuildItem();
-    const tokens = transportSentenceTokens[item?.id];
-    state.transportBuildSelectedTokens = [];
-    state.transportBuildResult = "";
-    state.transportBuildAvailableTokens = shuffleArray([...tokens?.target ?? [], ...tokens?.distractors ?? []]);
-  }
-  function ensureTransportBuilder() {
-    if (!state.transportBuildOrder.length) resetTransportBuilder();
-  }
-  function handleTransportBuildToken(tokenIndex) {
-    if (state.transportBuildResult === "correct") return;
-    const item = currentTransportBuildItem();
-    const tokens = transportSentenceTokens[item?.id];
-    const token = state.transportBuildAvailableTokens[tokenIndex];
-    if (!token || !tokens) return;
-    const selected = [...state.transportBuildSelectedTokens, token];
-    const isPrefix = selected.every((entry, index) => entry === tokens.target[index]);
-    if (!isPrefix) {
-      state.transportBuildResult = "wrong";
-      state.transportBuildSelectedTokens = [];
-      state.transportBuildAvailableTokens = shuffleArray([...tokens.target, ...tokens.distractors]);
-      renderActivityPanel(currentTopic());
-      return;
-    }
-    state.transportBuildResult = "";
-    state.transportBuildSelectedTokens = selected;
-    state.transportBuildAvailableTokens = state.transportBuildAvailableTokens.filter((_, index) => index !== tokenIndex);
-    if (selected.length === tokens.target.length) {
-      state.transportBuildResult = "correct";
-      if (state.tapAudioEnabled) speak(item.audio, 0.78);
-    }
-    renderActivityPanel(currentTopic());
-  }
-  function clearTransportBuilder() {
-    prepareTransportBuilder();
-    renderActivityPanel(currentTopic());
-  }
-  function nextTransportBuilder() {
-    state.transportBuildIndex = (state.transportBuildIndex + 1) % state.transportBuildOrder.length;
-    prepareTransportBuilder();
-    renderActivityPanel(currentTopic());
-  }
-  function resetPositionQuiz() {
-    state.positionQuizOrder = shuffleArray(positionPracticeItems.map((item) => item.id));
-    state.positionQuizIndex = 0;
-    preparePositionQuizQuestion();
-  }
-  function preparePositionQuizQuestion() {
-    const answerId = state.positionQuizOrder[state.positionQuizIndex];
-    const distractorIds = shuffleArray(positionPracticeItems.filter((item) => item.id !== answerId).map((item) => item.id)).slice(0, 3);
-    state.positionQuizOptionIds = shuffleArray([answerId, ...distractorIds]);
-    state.positionQuizSelectedId = "";
-    state.positionQuizResult = "";
-  }
-  function ensurePositionQuiz() {
-    if (!state.positionQuizOrder.length) resetPositionQuiz();
-  }
-  function handlePositionQuizPlay() {
-    ensurePositionQuiz();
-    const item = positionPracticeItems.find((entry) => entry.id === state.positionQuizOrder[state.positionQuizIndex]);
-    if (item && state.tapAudioEnabled) speak(item.audio, 0.78);
-  }
-  function handlePositionQuizPick(itemId) {
-    if (state.positionQuizResult === "correct") return;
-    const answerId = state.positionQuizOrder[state.positionQuizIndex];
-    state.positionQuizSelectedId = itemId;
-    state.positionQuizResult = itemId === answerId ? "correct" : "wrong";
-    if (state.positionQuizResult === "correct" && state.tapAudioEnabled) {
-      const item = positionPracticeItems.find((entry) => entry.id === answerId);
-      speak(item?.audio, 0.78);
-    }
-    renderActivityPanel(currentTopic());
-  }
-  function nextPositionQuizQuestion() {
-    state.positionQuizIndex = (state.positionQuizIndex + 1) % state.positionQuizOrder.length;
-    preparePositionQuizQuestion();
-    renderActivityPanel(currentTopic());
-  }
-  function currentComparisonBuildItem() {
-    const id = state.comparisonBuildOrder[state.comparisonBuildIndex];
-    return comparisonPracticeItems.find((item) => item.id === id);
-  }
-  function resetComparisonBuilder() {
-    state.comparisonBuildOrder = shuffleArray(comparisonPracticeItems.map((item) => item.id));
-    state.comparisonBuildIndex = 0;
-    prepareComparisonBuilder();
-  }
-  function prepareComparisonBuilder() {
-    const item = currentComparisonBuildItem();
-    state.comparisonBuildSelectedTokens = [];
-    state.comparisonBuildAvailableTokens = shuffleArray(item?.options ?? []);
-    state.comparisonBuildResult = "";
-  }
-  function ensureComparisonBuilder() {
-    if (!state.comparisonBuildOrder.length) resetComparisonBuilder();
-  }
-  function handleComparisonBuildToken(index) {
-    if (state.comparisonBuildResult === "correct") return;
-    const item = currentComparisonBuildItem();
-    const token = state.comparisonBuildAvailableTokens[index];
-    if (!item || !token) return;
-    const selected = [...state.comparisonBuildSelectedTokens, token];
-    if (selected.some((entry, tokenIndex) => entry !== item.target[tokenIndex])) {
-      state.comparisonBuildResult = "wrong";
-      state.comparisonBuildSelectedTokens = [];
-      state.comparisonBuildAvailableTokens = shuffleArray(item.options);
-      renderActivityPanel(currentTopic());
-      return;
-    }
-    state.comparisonBuildResult = "";
-    state.comparisonBuildSelectedTokens = selected;
-    state.comparisonBuildAvailableTokens = state.comparisonBuildAvailableTokens.filter((_, tokenIndex) => tokenIndex !== index);
-    if (selected.length === item.target.length) {
-      state.comparisonBuildResult = "correct";
-      if (state.tapAudioEnabled) speak(`${item.before}${selected[0]}${item.between}${selected[1]}${item.after}`, 0.78);
-    }
-    renderActivityPanel(currentTopic());
-  }
-  function clearComparisonBuilder() {
-    prepareComparisonBuilder();
-    renderActivityPanel(currentTopic());
-  }
-  function nextComparisonBuilder() {
-    state.comparisonBuildIndex = (state.comparisonBuildIndex + 1) % state.comparisonBuildOrder.length;
-    prepareComparisonBuilder();
-    renderActivityPanel(currentTopic());
-  }
-  function resetDateMatchGame() {
-    const roundIds = shuffleArray(timeDateMonthItems.map((item) => item.id)).slice(0, 6);
-    state.dateSelectedPhraseId = null;
-    state.dateMatchedIds = /* @__PURE__ */ new Set();
-    state.datePhraseOrder = shuffleArray(roundIds);
-    state.dateEventOrder = shuffleArray(roundIds);
-    state.dateMatchFeedback = "";
-  }
-  function ensureDateMatchGame() {
-    const monthIds = new Set(timeDateMonthItems.map((item) => item.id));
-    if (!state.datePhraseOrder.length || !state.dateEventOrder.length || state.datePhraseOrder.length !== 6 || state.dateEventOrder.length !== 6 || state.datePhraseOrder.some((id) => !monthIds.has(id)) || state.dateEventOrder.some((id) => !monthIds.has(id))) {
-      resetDateMatchGame();
-    }
-  }
-  function handleDateMatchPhrase(itemId) {
-    if (state.dateMatchedIds.has(itemId)) return;
-    state.dateSelectedPhraseId = itemId;
-    const item = timeDateMonthItems.find((entry) => entry.id === itemId);
-    if (item && state.tapAudioEnabled) speak(item.hanzi, 0.78);
-    state.dateMatchFeedback = "";
-    renderActivityPanel(currentTopic());
-  }
-  function handleDateMatchEvent(itemId) {
-    const selectedId = state.dateSelectedPhraseId;
-    if (!selectedId || state.dateMatchedIds.has(itemId)) return;
-    if (selectedId === itemId) {
-      state.dateMatchedIds = /* @__PURE__ */ new Set([...state.dateMatchedIds, itemId]);
-      state.dateSelectedPhraseId = null;
-      state.dateMatchFeedback = "";
-    } else {
-      state.dateMatchFeedback = "Try again.";
-    }
-    renderActivityPanel(currentTopic());
-  }
-  function resetDateChallenge(options = {}) {
-    const available = options.excludeId ? datePracticeItems.filter((item) => item.id !== options.excludeId) : datePracticeItems;
-    const answer = available[Math.floor(Math.random() * available.length)] ?? datePracticeItems[0];
-    const distractors = shuffleArray(datePracticeItems.filter((item) => item.id !== answer.id)).slice(0, 3);
-    state.dateChallengeAnswerId = answer.id;
-    state.dateChallengePromptId = answer.id;
-    state.dateChallengeOptionIds = shuffleArray([answer.id, ...distractors.map((item) => item.id)]);
-    state.dateChallengePickedId = "";
-    state.dateChallengeResult = "";
-    state.dateChallengeWrongIds = /* @__PURE__ */ new Set();
-    state.dateListenFeedback = "";
-  }
-  function ensureDateChallenge() {
-    if (!state.dateChallengeAnswerId || !state.dateChallengeOptionIds.length) resetDateChallenge();
-  }
-  function handleDateChallengePlay() {
-    const previousId = state.dateChallengePromptId;
-    resetDateChallenge({ excludeId: previousId });
-    const item = datePracticeItems.find((entry) => entry.id === state.dateChallengePromptId);
-    if (item && state.tapAudioEnabled) speak(item.audio, 0.78);
-    renderActivityPanel(currentTopic());
-  }
-  function handleDateChallengeGuess(itemId) {
-    const isCorrect = itemId === state.dateChallengeAnswerId;
-    state.dateChallengePickedId = itemId;
-    state.dateChallengeResult = isCorrect ? "correct" : "wrong";
-    if (isCorrect) {
-      if (state.tapAudioEnabled) {
-        const item = datePracticeItems.find((entry) => entry.id === itemId);
-        speak(item?.hanzi, 0.78);
-      }
-    } else {
-      state.dateChallengeWrongIds = /* @__PURE__ */ new Set([...state.dateChallengeWrongIds, itemId]);
-    }
-    renderActivityPanel(currentTopic());
-  }
   function mathChallengeAudioText() {
     if (state.mathChallengeAnswer === null) {
       return "";
@@ -5635,6 +6019,106 @@
     state.selectedTopicId = topic.id;
     state.expandedCategoryId = categoryIdForTopic(topic.id);
     state.topicPageOpen = true;
+    const {
+      resetWeekdayChallenge,
+      ensureWeekdayChallenge: ensureWeekdayChallenge2,
+      handleWeekdayChallengePlay: handleWeekdayChallengePlay2,
+      handleWeekdayChallengeGuess: handleWeekdayChallengeGuess2,
+      resetWeekdayMatchGame: resetWeekdayMatchGame2,
+      ensureWeekdayMatchGame: ensureWeekdayMatchGame2,
+      handleWeekdayMatchPhrase: handleWeekdayMatchPhrase2,
+      handleWeekdayMatchAttempt: handleWeekdayMatchAttempt2,
+      resetClothesQuiz,
+      prepareClothesQuizQuestion,
+      ensureClothesQuiz: ensureClothesQuiz2,
+      handleClothesQuizPick: handleClothesQuizPick2,
+      nextClothesQuizQuestion: nextClothesQuizQuestion2,
+      resetTimeRoutineQuiz,
+      prepareTimeRoutineQuizQuestion,
+      ensureTimeRoutineQuiz: ensureTimeRoutineQuiz2,
+      handleTimeRoutineQuizPick: handleTimeRoutineQuizPick2,
+      nextTimeRoutineQuizQuestion: nextTimeRoutineQuizQuestion2,
+      resetClockQuiz,
+      prepareClockQuizQuestion,
+      ensureClockQuiz: ensureClockQuiz2,
+      handleClockQuizPick: handleClockQuizPick2,
+      nextClockQuizQuestion: nextClockQuizQuestion2,
+      currentRoomBuildItem: currentRoomBuildItem2,
+      resetRoomBuilder,
+      prepareRoomBuilder,
+      ensureRoomBuilder: ensureRoomBuilder2,
+      isRoomBuildPrefixValid,
+      handleRoomBuildToken: handleRoomBuildToken2,
+      clearRoomBuilder: clearRoomBuilder2,
+      nextRoomBuilder: nextRoomBuilder2,
+      currentTransportBuildItem: currentTransportBuildItem2,
+      resetTransportBuilder,
+      prepareTransportBuilder,
+      ensureTransportBuilder: ensureTransportBuilder2,
+      handleTransportBuildToken: handleTransportBuildToken2,
+      clearTransportBuilder: clearTransportBuilder2,
+      nextTransportBuilder: nextTransportBuilder2,
+      resetPositionQuiz,
+      preparePositionQuizQuestion,
+      ensurePositionQuiz: ensurePositionQuiz2,
+      handlePositionQuizPlay: handlePositionQuizPlay2,
+      handlePositionQuizPick: handlePositionQuizPick2,
+      nextPositionQuizQuestion: nextPositionQuizQuestion2,
+      currentComparisonBuildItem: currentComparisonBuildItem2,
+      resetComparisonBuilder,
+      prepareComparisonBuilder,
+      ensureComparisonBuilder: ensureComparisonBuilder2,
+      handleComparisonBuildToken: handleComparisonBuildToken2,
+      clearComparisonBuilder: clearComparisonBuilder2,
+      nextComparisonBuilder: nextComparisonBuilder2,
+      resetDateMatchGame: resetDateMatchGame2,
+      ensureDateMatchGame: ensureDateMatchGame2,
+      handleDateMatchPhrase: handleDateMatchPhrase2,
+      handleDateMatchEvent: handleDateMatchEvent2,
+      resetDateChallenge,
+      ensureDateChallenge: ensureDateChallenge2,
+      handleDateChallengePlay: handleDateChallengePlay2,
+      handleDateChallengeGuess: handleDateChallengeGuess2,
+      timeDateSectionForCurrentLesson,
+      activeTimeDateSection: activeTimeDateSection2,
+      renderTimeAssetGrid,
+      bindTimeAssetAudio,
+      renderWeekdaysExplorer: renderWeekdaysExplorer2,
+      renderDatesExplorer: renderDatesExplorer2,
+      renderVisualTopicExplorer: renderVisualTopicExplorer2,
+      renderRoomsExplorer: renderRoomsExplorer2,
+      renderPositionsExplorer: renderPositionsExplorer2,
+      renderTimeDateExplorer: renderTimeDateExplorer2,
+      renderClothesExplorer: renderClothesExplorer2
+    } = createTimeDailyLifeRuntime({
+      state,
+      timeDateWeekItems,
+      timeDateClockItems,
+      timeDateExpressionItems,
+      timeDateRoutineItems,
+      datePracticeItems,
+      timeDateDateItems,
+      timeDateMonthItems,
+      comparisonPracticeItems,
+      comparisonWordItems,
+      positionPracticeItems,
+      positionScenes,
+      clothesMatchItems,
+      clothesPractice,
+      roomScenes,
+      roomSentenceTokens,
+      transportSentenceTokens,
+      visualTopicItems,
+      shuffleArray,
+      speak,
+      speakSceneLines,
+      currentTopic,
+      currentBook,
+      currentLesson,
+      renderActivityPanel,
+      focusExplorer,
+      focusStatus
+    });
     syncBookSelectionFromTopic();
     renderTopics();
     renderBooks();
@@ -7566,209 +8050,6 @@
       });
     });
   }
-  function timeDateSectionForCurrentLesson() {
-    const lessonKey = `${currentBook().id}:${currentLesson().lesson}`;
-    if (lessonKey === "2b:2" || lessonKey === "4a:3") return "clock";
-    return "routine";
-  }
-  function activeTimeDateSection() {
-    const source = `${currentBook().id}:${currentLesson().lesson}`;
-    if (state.timeDateSectionSource !== source) {
-      state.timeDateSectionSource = source;
-      state.timeDateSectionId = timeDateSectionForCurrentLesson();
-    }
-    return state.timeDateSectionId || "week";
-  }
-  function renderTimeAssetGrid(items, modifier, collection = modifier) {
-    return `<div class="time-asset-grid time-asset-grid-${modifier}">
-    ${items.map(
-      (item) => `
-          <button class="time-asset-card" type="button" data-time-asset="${collection}:${item.id}">
-            <img class="time-asset-image" src="${item.imagePath}" alt="${item.english}" />
-            ${item.hideLabels || item.hideLabelHanzi ? "" : item.words ? `<span class="time-asset-word-list">${item.words.map((word) => `<span>${word}</span>`).join("")}</span>` : `<span class="time-asset-hanzi">${item.hanzi}</span>`}
-            ${!item.hideLabels && !item.hideLabelDetails && state.showPinyin ? `<span class="time-asset-pinyin">${item.pinyin}</span>` : ""}
-            ${!item.hideLabels && !item.hideLabelDetails && state.showEnglish ? `<span class="time-asset-english">${item.english}</span>` : ""}
-            ${item.context ? `<span class="time-asset-context">${item.context}</span>` : ""}
-            ${item.contextPinyin && state.showPinyin ? `<span class="time-asset-context-pinyin">${item.contextPinyin}</span>` : ""}
-            ${item.contextEnglish && state.showEnglish ? `<span class="time-asset-context-english">${item.contextEnglish}</span>` : ""}
-          </button>
-        `
-    ).join("")}
-  </div>`;
-  }
-  function bindTimeAssetAudio(container) {
-    container.querySelectorAll("[data-time-asset]").forEach((button) => {
-      button.addEventListener("click", () => {
-        const [collection, id] = button.dataset.timeAsset.split(":");
-        const items = {
-          week: timeDateWeekItems,
-          clock: timeDateClockItems,
-          date: timeDateDateItems,
-          month: timeDateMonthItems,
-          visual: Object.values(visualTopicItems).flat()
-        }[collection] ?? [];
-        const item = items.find((entry) => entry.id === id);
-        if (item && state.tapAudioEnabled) {
-          speak(item.audio, 0.78);
-        }
-      });
-    });
-  }
-  function renderWeekdaysExplorer() {
-    focusExplorer.innerHTML = `
-    <div class="time-date-board">
-      <div class="numbers-stage-card">
-        <p class="body-match-kicker">${currentBook().label} Lesson ${currentLesson().lesson}</p>
-        <h4>Days of the Week</h4>
-      </div>
-      <div class="time-asset-grid time-asset-grid-week">
-        ${timeDateWeekItems.map((item) => `
-          <section class="time-asset-card weekday-scene-card">
-            <div class="greetings-exchange-top"><div><span class="time-asset-hanzi">${item.hanzi}</span></div><button class="small-button is-action-button" type="button" data-weekday-play-scene="${item.id}">Play scene</button></div>
-            <img class="time-asset-image" src="${item.imagePath}" alt="${item.english}" />
-            <span class="time-asset-context">${item.context}</span>
-            ${state.showPinyin ? `<span class="time-asset-context-pinyin">${item.contextPinyin}</span>` : ""}
-            ${state.showEnglish ? `<span class="time-asset-context-english">${item.contextEnglish}</span>` : ""}
-          </section>
-        `).join("")}
-      </div>
-      <section class="visual-topic-notes">
-        <p class="body-match-kicker">Useful notes</p>
-        <div class="visual-topic-note-grid">
-          <article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">\u4ECA\u5929\u661F\u671F\u51E0\uFF1F</p>${state.showPinyin ? '<p class="visual-topic-note-pinyin">j\u012Bn ti\u0101n x\u012Bng q\u012B j\u01D0?</p>' : ""}${state.showEnglish ? '<p class="visual-topic-note-english">What day is it today?</p>' : ""}<p class="visual-topic-note-example">\u4ECA\u5929\u661F\u671F\u4E00\u3002</p>${state.showPinyin ? '<p class="visual-topic-note-pinyin">j\u012Bn ti\u0101n x\u012Bng q\u012B y\u012B.</p>' : ""}${state.showEnglish ? '<p class="visual-topic-note-english">Today is Monday.</p>' : ""}</article>
-        </div>
-      </section>
-    </div>
-  `;
-    focusExplorer.querySelectorAll("[data-weekday-play-scene]").forEach((button) => {
-      button.addEventListener("click", () => {
-        const item = timeDateWeekItems.find((entry) => entry.id === button.dataset.weekdayPlayScene);
-        if (item && state.tapAudioEnabled) speak(item.audio, 0.78);
-      });
-    });
-  }
-  function renderDatesExplorer() {
-    focusExplorer.innerHTML = `
-    <div class="time-date-board">
-      <div class="numbers-stage-card">
-        <p class="body-match-kicker">${currentBook().label} Lesson ${currentLesson().lesson}</p>
-        <h4>Dates & Months</h4>
-      </div>
-      ${renderTimeAssetGrid(timeDateDateItems, "date")}
-      <section class="time-months-intro">
-        <div>
-          <p class="body-match-kicker">Months of the year</p>
-          <p class="time-months-hanzi">\u4E00\u5E74\u6709\u5341\u4E8C\u4E2A\u6708\u3002</p>
-          ${state.showPinyin ? '<p class="time-months-pinyin">y\u012B ni\xE1n y\u01D2u sh\xED \xE8r ge yu\xE8.</p>' : ""}
-          ${state.showEnglish ? '<p class="time-months-english">There are twelve months in a year.</p>' : ""}
-        </div>
-        <button class="small-button is-action-button" type="button" data-months-play>Play audio</button>
-      </section>
-      ${renderTimeAssetGrid(timeDateMonthItems, "month")}
-      <section class="visual-topic-notes">
-        <p class="body-match-kicker">Useful notes</p>
-        <div class="visual-topic-note-grid">
-          <article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">\u4ECA\u5929\u51E0\u6708\u51E0\u53F7\uFF1F</p>${state.showPinyin ? '<p class="visual-topic-note-pinyin">j\u012Bn ti\u0101n j\u01D0 yu\xE8 j\u01D0 h\xE0o?</p>' : ""}${state.showEnglish ? '<p class="visual-topic-note-english">What is the date today?</p>' : ""}<p class="visual-topic-note-example">\u4ECA\u5929\u4E94\u6708\u4E8C\u5341\u53F7\u3002</p>${state.showPinyin ? '<p class="visual-topic-note-pinyin">j\u012Bn ti\u0101n w\u01D4 yu\xE8 \xE8r sh\xED h\xE0o.</p>' : ""}${state.showEnglish ? '<p class="visual-topic-note-english">Today is May twentieth.</p>' : ""}</article>
-          <article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">\u53F7 / \u65E5</p>${state.showPinyin ? '<p class="visual-topic-note-pinyin">h\xE0o / r\xEC</p>' : ""}${state.showEnglish ? '<p class="visual-topic-note-english">two ways to say the day of a date</p>' : ""}<p class="visual-topic-note-example">\u4E94\u6708\u4E8C\u5341\u53F7 = \u4E94\u6708\u4E8C\u5341\u65E5\u3002</p>${state.showPinyin ? '<p class="visual-topic-note-pinyin">w\u01D4 yu\xE8 \xE8r sh\xED h\xE0o = w\u01D4 yu\xE8 \xE8r sh\xED r\xEC.</p>' : ""}${state.showEnglish ? '<p class="visual-topic-note-english">Both mean May twentieth.</p>' : ""}</article>
-          <article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">\u795D\u4F60\u751F\u65E5\u5FEB\u4E50\uFF01</p>${state.showPinyin ? '<p class="visual-topic-note-pinyin">zh\xF9 n\u01D0 sh\u0113ng r\xEC ku\xE0i l\xE8!</p>' : ""}${state.showEnglish ? '<p class="visual-topic-note-english">Wish you a happy birthday!</p>' : ""}</article>
-          <article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">\u751F\u65E5\u4F1A / \u793C\u7269</p>${state.showPinyin ? '<p class="visual-topic-note-pinyin">sh\u0113ng r\xEC hu\xEC / l\u01D0 w\xF9</p>' : ""}${state.showEnglish ? '<p class="visual-topic-note-english">birthday party / present</p>' : ""}<p class="visual-topic-note-example">\u751F\u65E5\u4F1A\u4E0A\u6709\u793C\u7269\u3002</p>${state.showPinyin ? '<p class="visual-topic-note-pinyin">sh\u0113ng r\xEC hu\xEC sh\xE0ng y\u01D2u l\u01D0 w\xF9.</p>' : ""}${state.showEnglish ? '<p class="visual-topic-note-english">There are presents at a birthday party.</p>' : ""}</article>
-        </div>
-      </section>
-    </div>
-  `;
-    bindTimeAssetAudio(focusExplorer);
-    focusExplorer.querySelector("[data-months-play]")?.addEventListener("click", () => {
-      if (state.tapAudioEnabled) {
-        speak("\u4E00\u5E74\u6709\u5341\u4E8C\u4E2A\u6708", 0.78);
-      }
-    });
-  }
-  function renderVisualTopicExplorer(sceneId) {
-    const topic = currentTopic();
-    const items = visualTopicItems[sceneId] ?? [];
-    const comparisonWords = sceneId === "comparisons" ? `<div class="comparison-word-grid">${comparisonWordItems.map((item) => `<button class="comparison-word-card" type="button" data-comparison-word="${item.hanzi}"><span class="comparison-word-hanzi">${item.hanzi}</span>${state.showPinyin ? `<span class="comparison-word-pinyin">${item.pinyin}</span>` : ""}${state.showEnglish ? `<span class="comparison-word-english">${item.english}</span>` : ""}</button>`).join("")}</div>` : "";
-    const usefulNotes = sceneId === "transport" ? `
-        <section class="visual-topic-notes">
-          <p class="body-match-kicker">Useful notes</p>
-          <div class="visual-topic-note-grid">
-            <article class="visual-topic-note-card">
-              <p class="visual-topic-note-hanzi">\u5750\u8F66</p>
-              ${state.showPinyin ? '<p class="visual-topic-note-pinyin">zu\xF2 ch\u0113</p>' : ""}
-              ${state.showEnglish ? '<p class="visual-topic-note-english">travel by vehicle; take a ride</p>' : ""}
-              <p class="visual-topic-note-example">\u5750\u6821\u8F66\uFF0C\u5750\u51FA\u79DF\u8F66\uFF0C\u5750\u706B\u8F66\u3002</p>
-            </article>
-            <article class="visual-topic-note-card">
-              <p class="visual-topic-note-hanzi">\u53BB</p>
-              ${state.showPinyin ? '<p class="visual-topic-note-pinyin">q\xF9</p>' : ""}
-              ${state.showEnglish ? '<p class="visual-topic-note-english">to go to</p>' : ""}
-              <p class="visual-topic-note-example">\u53BB\u5B66\u6821\uFF0C\u53BB\u52A8\u7269\u56ED\uFF0C\u53BB\u5317\u4EAC\u3002</p>
-            </article>
-            <article class="visual-topic-note-card">
-              <p class="visual-topic-note-hanzi">\u9A91</p>
-              ${state.showPinyin ? '<p class="visual-topic-note-pinyin">q\xED</p>' : ""}
-              ${state.showEnglish ? '<p class="visual-topic-note-english">to ride</p>' : ""}
-              <p class="visual-topic-note-example">\u9A91\u81EA\u884C\u8F66\u3002</p>
-            </article>
-          </div>
-        </section>
-      ` : "";
-    focusExplorer.innerHTML = `
-    <div class="time-date-board">
-      <div class="numbers-stage-card">
-        <p class="body-match-kicker">${currentBook().label} Lesson ${currentLesson().lesson}</p>
-        <h4>${topic.title}</h4>
-      </div>
-      <div class="time-months-heading"><p class="body-match-kicker">Book words</p></div>
-      ${renderTimeAssetGrid(items, `visual visual-${sceneId}`, "visual")}
-      ${comparisonWords}
-      ${usefulNotes}
-    </div>
-  `;
-    bindTimeAssetAudio(focusExplorer);
-    focusExplorer.querySelectorAll("[data-comparison-word]").forEach((button) => {
-      button.addEventListener("click", () => {
-        if (state.tapAudioEnabled) speak(button.dataset.comparisonWord, 0.78);
-      });
-    });
-  }
-  function renderRoomsExplorer() {
-    const topic = currentTopic();
-    focusExplorer.innerHTML = `
-    <div class="time-date-board">
-      <div class="numbers-stage-card">
-        <p class="body-match-kicker">${currentBook().label} Lesson ${currentLesson().lesson}</p>
-        <h4>${topic.title}</h4>
-      </div>
-      <div class="greetings-practice-grid room-scene-grid">
-        ${roomScenes.map((scene) => `
-          <section class="greetings-exchange room-scene-card">
-            <div class="greetings-exchange-top"><div><p class="body-match-kicker">${scene.label}</p></div><button class="small-button is-action-button" type="button" data-room-play-scene="${scene.id}">Play scene</button></div>
-            <div class="room-scene-layout">
-              <img class="room-scene-image" src="${scene.imagePath}" alt="${scene.english}" />
-              <article class="greetings-line-card"><div class="telephone-bubble-copy"><p class="telephone-line-hanzi">${scene.hanzi}</p>${state.showPinyin ? `<p class="telephone-line-pinyin">${scene.pinyin}</p>` : ""}${state.showEnglish ? `<p class="telephone-line-english">${scene.english}</p>` : ""}</div></article>
-            </div>
-          </section>
-        `).join("")}
-      </div>
-      <div class="time-months-heading"><p class="body-match-kicker">Book words</p></div>
-      ${renderTimeAssetGrid(visualTopicItems.rooms, "visual visual-rooms", "visual")}
-      <section class="visual-topic-notes">
-        <p class="body-match-kicker">Useful notes</p>
-        <div class="visual-topic-note-grid room-useful-note-grid">
-          <article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">\u623F\u95F4\u91CC\u6709\u2026\u2026</p>${state.showPinyin ? '<p class="visual-topic-note-pinyin">f\xE1ng ji\u0101n l\u01D0 y\u01D2u...</p>' : ""}${state.showEnglish ? '<p class="visual-topic-note-english">There is / are ... in the room.</p>' : ""}<p class="visual-topic-note-example">\u91CC means \u201Cin\u201D; \u6709 means \u201Cthere is / are.\u201D</p></article>
-          <article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">\u5730\u4E0A\u6709\u2026\u2026</p>${state.showPinyin ? '<p class="visual-topic-note-pinyin">d\xEC sh\xE0ng y\u01D2u...</p>' : ""}${state.showEnglish ? '<p class="visual-topic-note-english">There is / are ... on the floor.</p>' : ""}<p class="visual-topic-note-example">\u5730\u4E0A\u6709\u4E66\u3002</p>${state.showPinyin ? '<p class="visual-topic-note-pinyin">d\xEC sh\xE0ng y\u01D2u sh\u016B.</p>' : ""}${state.showEnglish ? '<p class="visual-topic-note-english">There is a book on the floor.</p>' : ""}</article>
-        </div>
-      </section>
-    </div>
-  `;
-    bindTimeAssetAudio(focusExplorer);
-    focusExplorer.querySelectorAll("[data-room-play-scene]").forEach((button) => {
-      button.addEventListener("click", () => {
-        const scene = roomScenes.find((entry) => entry.id === button.dataset.roomPlayScene);
-        if (scene && state.tapAudioEnabled) speak(scene.audio, 0.78);
-      });
-    });
-  }
   function renderSchoolExplorer(topicId) {
     const topic = currentTopic();
     const data = schoolTopicData2[topicId];
@@ -7852,181 +8133,6 @@
       button.addEventListener("click", () => {
         state.mealsWordGroupId = button.dataset.mealsWordGroup;
         renderSchoolExplorer(topicId);
-      });
-    });
-  }
-  function renderPositionsExplorer() {
-    focusExplorer.innerHTML = `
-    <div class="time-date-board">
-      <div class="numbers-stage-card">
-        <p class="body-match-kicker">${currentBook().label} Lesson ${currentLesson().lesson}</p>
-        <h4>Positions & Directions</h4>
-      </div>
-      <div class="greetings-practice-grid">
-        ${positionScenes.map(
-      (scene) => `
-              <section class="greetings-exchange">
-                <div class="greetings-exchange-top"><div><p class="body-match-kicker">Scene ${scene.number}</p><p class="greetings-exchange-prompt">${scene.prompt}</p></div><button class="small-button is-action-button" type="button" data-position-play-scene="${scene.id}">Play scene</button></div>
-                <div class="greetings-scene-layout">
-                  <div class="greetings-scene-visual"><img class="greetings-scene-image position-scene-image position-scene-image-${scene.id}" src="${scene.imagePath}" alt="${scene.imageAlt}" /></div>
-                  <div class="greetings-line-stack">
-                    ${scene.lines.map((line) => `<article class="greetings-line-card"><div class="telephone-bubble-copy"><p class="telephone-line-hanzi">${line.hanzi}</p>${state.showPinyin ? `<p class="telephone-line-pinyin">${line.pinyin}</p>` : ""}${state.showEnglish ? `<p class="telephone-line-english">${line.english}</p>` : ""}</div></article>`).join("")}
-                  </div>
-                </div>
-              </section>
-            `
-    ).join("")}
-      </div>
-      <section class="visual-topic-notes">
-        <p class="body-match-kicker">Useful notes</p>
-        <div class="visual-topic-note-grid position-note-grid">
-          <article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">A \u5728 B + \u4F4D\u7F6E</p>${state.showPinyin ? '<p class="visual-topic-note-pinyin">A z\xE0i B + w\xE8i zh\xEC</p>' : ""}${state.showEnglish ? '<p class="visual-topic-note-english">A is in / on / beside B.</p>' : ""}<p class="visual-topic-note-example">\u4E66\u67B6\u5728\u684C\u5B50\u5DE6\u8FB9\u3002</p>${state.showPinyin ? '<p class="visual-topic-note-pinyin">sh\u016B ji\xE0 z\xE0i zhu\u014D zi zu\u01D2 bi\u0101n.</p>' : ""}${state.showEnglish ? '<p class="visual-topic-note-english">The bookshelf is to the left of the desk.</p>' : ""}</article>
-          <article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">\u524D\u8FB9 = \u524D\u9762\uFF1B\u540E\u8FB9 = \u540E\u9762</p>${state.showPinyin ? '<p class="visual-topic-note-pinyin">qi\xE1n bi\u0101n = qi\xE1n mi\xE0n; h\xF2u bi\u0101n = h\xF2u mi\xE0n</p>' : ""}${state.showEnglish ? '<p class="visual-topic-note-english">front and back can use either form here</p>' : ""}</article>
-          ${[["\u4E0A", "sh\xE0ng", "up"], ["\u4E0B", "xi\xE0", "down"], ["\u524D", "qi\xE1n", "front"], ["\u540E", "h\xF2u", "back"], ["\u5DE6", "zu\u01D2", "left"], ["\u53F3", "y\xF2u", "right"]].map(([hanzi, pinyin, english]) => `<article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">${hanzi}</p>${state.showPinyin ? `<p class="visual-topic-note-pinyin">${pinyin}</p>` : ""}${state.showEnglish ? `<p class="visual-topic-note-english">${english}</p>` : ""}</article>`).join("")}
-        </div>
-      </section>
-    </div>
-  `;
-    focusExplorer.querySelectorAll("[data-position-play-scene]").forEach((button) => {
-      button.addEventListener("click", () => {
-        const scene = positionScenes.find((entry) => entry.id === button.dataset.positionPlayScene);
-        if (scene && state.tapAudioEnabled) speakSceneLines(scene.lines);
-      });
-    });
-  }
-  function renderTimeDateExplorer() {
-    const activeSection = activeTimeDateSection();
-    const sections = [
-      { id: "routine", hanzi: "\u4F5C\u606F", english: "Routine" },
-      { id: "clock", hanzi: "\u65F6\u95F4", english: "Time" }
-    ];
-    let content = "";
-    if (activeSection === "clock") {
-      content = renderTimeAssetGrid(timeDateClockItems.filter((item) => item.id !== "clock-7"), "clock");
-    } else {
-      content = `
-      <div class="greetings-practice-grid time-routine-scene-grid">
-        ${timeDateRoutineItems.map(
-        (item, index) => `
-              <section class="greetings-exchange">
-                <div class="greetings-exchange-top">
-                  <div>
-                    <p class="body-match-kicker">Scene ${index + 1}</p>
-                    <p class="greetings-exchange-prompt">${item.english}</p>
-                  </div>
-                  <button class="small-button is-action-button" type="button" data-time-routine-play="${item.id}">Play scene</button>
-                </div>
-                <div class="greetings-scene-layout">
-                  <div class="greetings-scene-visual"><img class="greetings-scene-image time-routine-scene-image" src="${item.imagePath}" alt="${item.english}" /></div>
-                  <div class="greetings-line-stack">
-                    <article class="greetings-line-card">
-                      <div class="telephone-bubble-copy">
-                        <p class="telephone-line-hanzi">${item.hanzi}</p>
-                        ${state.showPinyin ? `<p class="telephone-line-pinyin">${item.pinyin}</p>` : ""}
-                        ${state.showEnglish ? `<p class="telephone-line-english">${item.english}</p>` : ""}
-                      </div>
-                    </article>
-                  </div>
-                </div>
-              </section>
-            `
-      ).join("")}
-      </div>
-    `;
-    }
-    focusExplorer.innerHTML = `
-    <div class="time-date-board">
-      <div class="numbers-stage-card">
-        <p class="body-match-kicker">${currentBook().label} Lesson ${currentLesson().lesson}</p>
-        <h4>Time & Routines</h4>
-      </div>
-      <div class="time-date-section-tabs" role="tablist" aria-label="Time and date sections">
-        ${sections.map(
-      (section) => `<button class="time-date-section-tab${section.id === activeSection ? " is-active" : ""}" type="button" role="tab" aria-selected="${String(section.id === activeSection)}" data-time-date-section="${section.id}"><span>${section.hanzi}</span><small>${section.english}</small></button>`
-    ).join("")}
-      </div>
-      ${content}
-      <section class="visual-topic-notes time-useful-notes">
-        <p class="body-match-kicker">Useful notes</p>
-        <div class="visual-topic-note-grid">
-          <article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">\u51E0\u70B9\u4E86\uFF1F</p>${state.showPinyin ? '<p class="visual-topic-note-pinyin">j\u01D0 di\u01CEn le?</p>' : ""}${state.showEnglish ? '<p class="visual-topic-note-english">What time is it?</p>' : ""}<p class="visual-topic-note-example">\u73B0\u5728\u4E03\u70B9\u3002</p>${state.showPinyin ? '<p class="visual-topic-note-pinyin">xi\xE0n z\xE0i q\u012B di\u01CEn.</p>' : ""}${state.showEnglish ? `<p class="visual-topic-note-english">It is seven o'clock now.</p>` : ""}</article>
-          <article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">\u5206 / \u96F6</p>${state.showPinyin ? '<p class="visual-topic-note-pinyin">f\u0113n / l\xEDng</p>' : ""}${state.showEnglish ? '<p class="visual-topic-note-english">minute / zero</p>' : ""}<p class="visual-topic-note-example">\u73B0\u5728\u4E03\u70B9\u96F6\u4E94\u5206\u3002</p>${state.showPinyin ? '<p class="visual-topic-note-pinyin">xi\xE0n z\xE0i q\u012B di\u01CEn l\xEDng w\u01D4 f\u0113n.</p>' : ""}${state.showEnglish ? '<p class="visual-topic-note-english">It is 7:05 now.</p>' : ""}</article>
-          <article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">\u65E9\u4E0A / \u4E0A\u5348 / \u4E2D\u5348 / \u4E0B\u5348 / \u665A\u4E0A</p>${state.showPinyin ? '<p class="visual-topic-note-pinyin">z\u01CEo shang / sh\xE0ng w\u01D4 / zh\u014Dng w\u01D4 / xi\xE0 w\u01D4 / w\u01CEn shang</p>' : ""}${state.showEnglish ? '<p class="visual-topic-note-english">early morning / morning / noon / afternoon / evening</p>' : ""}</article>
-          <article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">\u4F60\u6BCF\u5929\u51E0\u70B9\u8D77\u5E8A\uFF1F</p>${state.showPinyin ? '<p class="visual-topic-note-pinyin">n\u01D0 m\u011Bi ti\u0101n j\u01D0 di\u01CEn q\u01D0 chu\xE1ng?</p>' : ""}${state.showEnglish ? '<p class="visual-topic-note-english">What time do you get up every day?</p>' : ""}<p class="visual-topic-note-example">\u6211\u6BCF\u5929\u4E03\u70B9\u8D77\u5E8A\u3002</p>${state.showPinyin ? '<p class="visual-topic-note-pinyin">w\u01D2 m\u011Bi ti\u0101n q\u012B di\u01CEn q\u01D0 chu\xE1ng.</p>' : ""}${state.showEnglish ? '<p class="visual-topic-note-english">I get up at seven every day.</p>' : ""}</article>
-          <article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">\u5237\u7259 / \u68B3\u5934 / \u7A7F\u6821\u670D / \u7A7F\u978B\u5B50</p>${state.showPinyin ? '<p class="visual-topic-note-pinyin">shu\u0101 y\xE1 / sh\u016B t\xF3u / chu\u0101n xi\xE0o f\xFA / chu\u0101n xi\xE9 zi</p>' : ""}${state.showEnglish ? '<p class="visual-topic-note-english">brush teeth / comb hair / put on a school uniform / put on shoes</p>' : ""}</article>
-          <article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">\u4E03\u70B9\u4E00\u523B = \u4E03\u70B9\u5341\u4E94\u5206</p>${state.showPinyin ? '<p class="visual-topic-note-pinyin">q\u012B di\u01CEn y\u012B k\xE8 = q\u012B di\u01CEn sh\xED w\u01D4 f\u0113n</p>' : ""}${state.showEnglish ? '<p class="visual-topic-note-english">7:15</p>' : ""}</article>
-          <article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">\u4E03\u70B9\u534A = \u4E03\u70B9\u4E09\u5341\u5206</p>${state.showPinyin ? '<p class="visual-topic-note-pinyin">q\u012B di\u01CEn b\xE0n = q\u012B di\u01CEn s\u0101n sh\xED f\u0113n</p>' : ""}${state.showEnglish ? '<p class="visual-topic-note-english">7:30</p>' : ""}</article>
-          <article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">\u4E03\u70B9\u4E09\u523B = \u4E03\u70B9\u56DB\u5341\u4E94\u5206</p>${state.showPinyin ? '<p class="visual-topic-note-pinyin">q\u012B di\u01CEn s\u0101n k\xE8 = q\u012B di\u01CEn s\xEC sh\xED w\u01D4 f\u0113n</p>' : ""}${state.showEnglish ? '<p class="visual-topic-note-english">7:45</p>' : ""}</article>
-        </div>
-      </section>
-    </div>
-  `;
-    focusExplorer.querySelectorAll("[data-time-date-section]").forEach((button) => {
-      button.addEventListener("click", () => {
-        state.timeDateSectionId = button.dataset.timeDateSection;
-        renderTimeDateExplorer();
-        renderActivityPanel(currentTopic());
-      });
-    });
-    bindTimeAssetAudio(focusExplorer);
-    focusExplorer.querySelectorAll("[data-time-routine-play]").forEach((button) => {
-      button.addEventListener("click", () => {
-        const item = timeDateRoutineItems.find((entry) => entry.id === button.dataset.timeRoutinePlay);
-        if (item && state.tapAudioEnabled) {
-          speak(item.audio, 0.78);
-        }
-      });
-    });
-  }
-  function renderClothesExplorer() {
-    focusExplorer.innerHTML = `
-    <div class="numbers-board">
-      <div class="numbers-stage-card">
-        <p class="body-match-kicker">${currentBook().label} Lesson ${currentLesson().lesson}</p>
-        <h4>Book theme: getting dressed</h4>
-        <p>Learn everyday clothes first, then choose what to wear for the weather.</p>
-      </div>
-      <div class="greetings-practice-grid">
-        ${clothesPractice.map(
-      (scene) => `
-              <section class="greetings-exchange">
-                <div class="greetings-exchange-top">
-                  <div>
-                    <p class="body-match-kicker">Scene ${scene.number}</p>
-                    <p class="greetings-exchange-prompt">${scene.prompt}</p>
-                  </div>
-                  <button class="small-button is-action-button" type="button" data-clothes-play-scene="${scene.id}">Play scene</button>
-                </div>
-                <div class="greetings-scene-layout">
-                  <div class="greetings-scene-visual">
-                    <img class="greetings-scene-image" src="${scene.imagePath}" alt="${scene.imageAlt}" />
-                  </div>
-                  <div class="greetings-line-stack">
-                    ${scene.lines.map(
-        (line) => `
-                          <article class="greetings-line-card">
-                            <div class="telephone-bubble-copy">
-                              <p class="telephone-line-hanzi">${line.hanzi}</p>
-                              ${state.showPinyin ? `<p class="telephone-line-pinyin">${line.pinyin}</p>` : ""}
-                              ${state.showEnglish ? `<p class="telephone-line-english">${line.english}</p>` : ""}
-                            </div>
-                          </article>
-                        `
-      ).join("")}
-                  </div>
-                </div>
-              </section>
-            `
-    ).join("")}
-      </div>
-    </div>
-  `;
-    focusExplorer.querySelectorAll("[data-clothes-play-scene]").forEach((button) => {
-      button.addEventListener("click", () => {
-        const scene = clothesPractice.find((entry) => entry.id === button.dataset.clothesPlayScene);
-        if (scene && state.tapAudioEnabled) {
-          speakSceneLines(scene.lines);
-        }
       });
     });
   }

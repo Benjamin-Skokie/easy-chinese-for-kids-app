@@ -114,6 +114,15 @@ test("school and food runtime is separated from the legacy bootstrap", () => {
   assert.match(runtimeSource, /export function createSchoolFoodRuntime/);
 });
 
+test("time and daily life runtime is separated from the legacy bootstrap", () => {
+  const legacySource = readFileSync("src/legacy-app.js", "utf8");
+  const runtimeSource = readFileSync("src/features/time-daily-life/time-daily-life-runtime.js", "utf8");
+  assert.match(legacySource, /createTimeDailyLifeRuntime\(\{/);
+  assert.doesNotMatch(legacySource, /function resetWeekdayChallenge\(/);
+  assert.doesNotMatch(legacySource, /function renderTimeDateExplorer\(/);
+  assert.match(runtimeSource, /export function createTimeDailyLifeRuntime/);
+});
+
 test("greetings interaction is owned by its feature controller", () => {
   const state = { ...createFoundationState(), tapAudioEnabled: false, selectedFocusItemId: null };
   const rendered = [];
