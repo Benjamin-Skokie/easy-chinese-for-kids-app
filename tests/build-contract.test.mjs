@@ -26,6 +26,7 @@ import { politeGameItemIds, politePractice, politeWordsTopic } from "../src/feat
 import { clothesMatchItems, clothesPractice, clothesTopic } from "../src/features/daily-life/clothes.js";
 import { weatherTopic } from "../src/features/world/weather.js";
 import { bodyBonusItemIds, bodyCoreItemIds, bodyDiagramLayout, bodyTopic } from "../src/features/foundations/body.js";
+import { illustratedKids } from "../src/data/characters.js";
 import { familyGameItemIds, familyPractice, familyTopic, illustratedFamily } from "../src/features/family/family.js";
 
 test("the local page loads a single bundled application script", () => {
@@ -222,6 +223,12 @@ test("body owns its vocabulary, diagram, and matching sets", () => {
   assert.equal(bodyDiagramLayout.left.length + bodyDiagramLayout.right.length, 12);
   assert.equal(bodyCoreItemIds.length, 8);
   assert.equal(bodyBonusItemIds.length, 4);
+});
+
+test("the shared character catalog retains every illustrated child", () => {
+  assert.equal(Object.keys(illustratedKids).length, 9);
+  assert.equal(illustratedKids.anan.hanziName, "安安");
+  assert.equal(illustratedKids.tiantian.label, "Tiantian");
 });
 
 test("family owns its lesson metadata, scenes, and matching set", () => {

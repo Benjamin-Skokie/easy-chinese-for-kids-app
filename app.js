@@ -1578,6 +1578,19 @@
   var bodyCoreItemIds = ["head", "hair", "eyes", "ears", "nose", "mouth", "hand", "foot"];
   var bodyBonusItemIds = ["forehead", "neck", "arm", "leg"];
 
+  // src/data/characters.js
+  var illustratedKids = {
+    lele: { id: "lele", label: "Lele", hanziName: "\u4E50\u4E50", gender: "boy", ageGroup: "6-7", skinTone: "light", path: "assets/illustrated-kids/lele.webp" },
+    meimei: { id: "meimei", label: "Meimei", hanziName: "\u7F8E\u7F8E", gender: "girl", ageGroup: "6-7", skinTone: "light-medium", path: "assets/illustrated-kids/meimei.webp" },
+    yangyang: { id: "yangyang", label: "Yangyang", hanziName: "\u9633\u9633", gender: "boy", ageGroup: "8-9", skinTone: "tan", path: "assets/illustrated-kids/yangyang.webp" },
+    anan: { id: "anan", label: "Anan", hanziName: "\u5B89\u5B89", gender: "girl", ageGroup: "8-9", skinTone: "light", path: "assets/illustrated-kids/anan.webp" },
+    tiantian: { id: "tiantian", label: "Tiantian", hanziName: "\u5929\u5929", gender: "boy", ageGroup: "9-10", skinTone: "light-medium", path: "assets/illustrated-kids/tiantian.webp" },
+    sisi: { id: "sisi", label: "Sisi", hanziName: "\u601D\u601D", gender: "girl", ageGroup: "8-10", skinTone: "medium brown", path: "assets/illustrated-kids/sisi.webp" },
+    luna: { id: "luna", label: "Luna", hanziName: "\u9732\u5A1C", gender: "girl", ageGroup: "8-10", skinTone: "medium", path: "assets/illustrated-kids/luna.webp" },
+    sophie: { id: "sophie", label: "Sophie", hanziName: "\u82CF\u83F2", gender: "girl", ageGroup: "8-10", skinTone: "light", path: "assets/illustrated-kids/sophie.webp" },
+    jaden: { id: "jaden", label: "Jaden", hanziName: "\u6770\u767B", gender: "boy", ageGroup: "7-8", skinTone: "deep brown", path: "assets/illustrated-kids/jaden.webp" }
+  };
+
   // src/games/shared-lesson-practice.js
   function createSharedLessonPractice({ state: state2, speak: speak2, elements, documentRef = document }) {
     const { activityPanelTitle: activityPanelTitle2, activityPanelSummary: activityPanelSummary2, activityList: activityList2 } = elements;
@@ -2373,89 +2386,6 @@
     "school-subjects": schoolSubjectsSentenceBuilds,
     food: foodSentenceBuilds,
     "meals-feelings": mealsFeelingsSentenceBuilds
-  };
-  var illustratedKids = {
-    lele: {
-      id: "lele",
-      label: "Lele",
-      hanziName: "\u4E50\u4E50",
-      gender: "boy",
-      ageGroup: "6-7",
-      skinTone: "light",
-      path: "assets/illustrated-kids/lele.webp"
-    },
-    meimei: {
-      id: "meimei",
-      label: "Meimei",
-      hanziName: "\u7F8E\u7F8E",
-      gender: "girl",
-      ageGroup: "6-7",
-      skinTone: "light-medium",
-      path: "assets/illustrated-kids/meimei.webp"
-    },
-    yangyang: {
-      id: "yangyang",
-      label: "Yangyang",
-      hanziName: "\u9633\u9633",
-      gender: "boy",
-      ageGroup: "8-9",
-      skinTone: "tan",
-      path: "assets/illustrated-kids/yangyang.webp"
-    },
-    anan: {
-      id: "anan",
-      label: "Anan",
-      hanziName: "\u5B89\u5B89",
-      gender: "girl",
-      ageGroup: "8-9",
-      skinTone: "light",
-      path: "assets/illustrated-kids/anan.webp"
-    },
-    tiantian: {
-      id: "tiantian",
-      label: "Tiantian",
-      hanziName: "\u5929\u5929",
-      gender: "boy",
-      ageGroup: "9-10",
-      skinTone: "light-medium",
-      path: "assets/illustrated-kids/tiantian.webp"
-    },
-    sisi: {
-      id: "sisi",
-      label: "Sisi",
-      hanziName: "\u601D\u601D",
-      gender: "girl",
-      ageGroup: "8-10",
-      skinTone: "medium brown",
-      path: "assets/illustrated-kids/sisi.webp"
-    },
-    luna: {
-      id: "luna",
-      label: "Luna",
-      hanziName: "\u9732\u5A1C",
-      gender: "girl",
-      ageGroup: "8-10",
-      skinTone: "medium",
-      path: "assets/illustrated-kids/luna.webp"
-    },
-    sophie: {
-      id: "sophie",
-      label: "Sophie",
-      hanziName: "\u82CF\u83F2",
-      gender: "girl",
-      ageGroup: "8-10",
-      skinTone: "light",
-      path: "assets/illustrated-kids/sophie.webp"
-    },
-    jaden: {
-      id: "jaden",
-      label: "Jaden",
-      hanziName: "\u6770\u767B",
-      gender: "boy",
-      ageGroup: "7-8",
-      skinTone: "deep brown",
-      path: "assets/illustrated-kids/jaden.webp"
-    }
   };
   function numberEnglish(value) {
     if (value <= 20) {

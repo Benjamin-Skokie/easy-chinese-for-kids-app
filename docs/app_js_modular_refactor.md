@@ -45,6 +45,7 @@ A feature registers its owned topic IDs, creates its scoped state, renders its e
 - [x] Prefer the installed Mandarin female voice (`Tingting`) while retaining browser-default fallback.
 - [ ] Add data validation for duplicate topic IDs, lesson references, practice references, and asset paths.
 - [x] Validate Time & Daily Life asset paths and scene/practice relationships in `scripts/validate_learning_data.mjs`.
+- [x] Move the shared illustrated character catalog into `src/data/characters.js` and validate every character asset.
 
 ### 3. Feature migration
 

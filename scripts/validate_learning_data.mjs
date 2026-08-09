@@ -22,6 +22,7 @@ import { greetingsPractice } from "../src/features/foundations/greetings.js";
 import { politePractice } from "../src/features/foundations/polite-words.js";
 import { clothesMatchItems, clothesPractice } from "../src/features/daily-life/clothes.js";
 import { familyPractice, illustratedFamily } from "../src/features/family/family.js";
+import { illustratedKids } from "../src/data/characters.js";
 
 const errors = [];
 
@@ -120,6 +121,7 @@ clothesPractice.forEach((item) => assertAsset(item, `clothes scene:${item.id}`))
 clothesMatchItems.forEach((item) => assertAsset(item, `clothes match:${item.id}`));
 familyPractice.forEach((item) => assertAsset(item, `family scene:${item.id}`));
 Object.values(illustratedFamily).forEach((item) => assertAsset({ id: item.id, imagePath: item.path }, `family avatar:${item.id}`));
+Object.values(illustratedKids).forEach((item) => assertAsset({ id: item.id, imagePath: item.path }, `character:${item.id}`));
 
 const transportIds = new Set(transportVisualItems.map((item) => item.id));
 Object.keys(transportSentenceTokens).forEach((id) => assert(transportIds.has(id), `transport token entry has no visual: ${id}`));
