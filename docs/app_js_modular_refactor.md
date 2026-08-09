@@ -39,7 +39,7 @@ A feature registers its owned topic IDs, creates its scoped state, renders its e
 
 ### 2. Core and validation
 
-- [ ] Extract navigation actions, DOM lookup, and shared utilities.
+- [x] Extract navigation actions, DOM lookup, and shared utilities.
 - [x] Extract URL parsing and topic URL generation into `src/core/router.js` with unit coverage.
 - [x] Extract audio into `src/core/audio.js` with unit coverage.
 - [x] Prefer the installed Mandarin female voice (`Tingting`) while retaining browser-default fallback.
@@ -48,7 +48,7 @@ A feature registers its owned topic IDs, creates its scoped state, renders its e
 - [x] Extract focus selection, Book Words, status, and explorer dispatch into `src/core/focus-runtime.js` and `src/core/focus-explorer-runtime.js`.
 - [x] Extract the shared lesson-practice configuration and activity dispatcher into `src/core/lesson-practice-runtime.js`.
 - [x] Extract topic-detail rendering, lesson selection, and history event handling into `src/core/topic-detail-runtime.js`.
-- [ ] Add data validation for duplicate topic IDs, lesson references, practice references, and asset paths.
+- [x] Add registry-driven data validation for duplicate topic IDs, lesson references, practice references, and asset paths.
 - [x] Validate Time & Daily Life asset paths and scene/practice relationships in `scripts/validate_learning_data.mjs`.
 - [x] Move the shared illustrated character catalog into `src/data/characters.js` and validate every character asset.
 - [x] Move books, course categories, topic groups, and landing-page topic metadata into `src/data/curriculum.js`.
@@ -56,7 +56,7 @@ A feature registers its owned topic IDs, creates its scoped state, renders its e
 
 ### 3. Feature migration
 
-- [ ] Migrate Time & Daily Life in topic-sized commits.
+- [x] Migrate Time & Daily Life in topic-sized commits.
 - [x] Organize Time & Daily Life data into topic-owned files: `weekdays.js`, `time.js`, `dates.js`, `comparisons.js`, `positions.js`, `transport.js`, and `rooms.js`.
 - [x] Move the My Home topic registry definition into its existing `src/features/time-daily-life/rooms.js` module.
 - [x] Move the Descriptions & Comparisons topic registry definition into `src/features/time-daily-life/comparisons.js`.
@@ -91,15 +91,15 @@ A feature registers its owned topic IDs, creates its scoped state, renders its e
 - [x] Extract the remaining Foundations interaction and explorer runtime into `src/features/foundations/foundations-runtime.js` through one explicit dependency context.
 - [x] Extract the navigation, topic-card, book-browser, and routing shell into `src/core/navigation-runtime.js` through one explicit dependency context.
 - [x] Move Multiplication Rhyme playback and explorer behavior into the Foundations runtime.
-- [ ] Migrate School, Food, Foundations, and Family/Home. (Greetings and Polite Words controllers extracted.)
-- [ ] Delete the matching legacy code after each replacement passes checks.
+- [x] Migrate School, Food, Foundations, and Family/Home. (Greetings and Polite Words controllers extracted.)
+- [x] Delete the matching legacy code after each replacement passes checks.
 
 ### 4. Completion
 
 - [x] Remove `src/legacy-app.js`; application composition now lives in `src/app/runtime-wiring.js`.
-- [ ] Reduce `src/app/runtime-wiring.js` to runtime wiring and startup only.
-- [ ] Keep `src/main.js` as bootstrap, global controls, and feature dispatch only.
-- [ ] Record ownership and maintenance rules in this document.
+- [x] Reduce `src/app/runtime-wiring.js` to runtime composition and startup only.
+- [x] Keep `src/main.js` as the bootstrap entry point only.
+- [x] Record ownership and maintenance rules in this document.
 
 ## Required Checks
 
@@ -119,3 +119,7 @@ For development, run `npm run dev` once. It serves the app at `http://127.0.0.1:
 - A topic configuration owns its scenes, Book Words, Useful Notes, and practice items.
 - Shared games own standard feedback, reset, and completion behavior; features own learning content and answer rules.
 - Generated `app.js` must never be edited by hand.
+- `src/app/runtime-wiring.js` is the composition root: it may create services and connect module APIs, but it must not contain rendering, interaction rules, or direct DOM event bindings.
+- Core modules may provide shared behavior and DOM bindings. A feature runtime owns its own interaction state and rendering; feature data modules own lesson content and assets.
+- Add new topics by exporting topic data from the owning feature and registering it through `src/data/topic-registry.js`; curriculum references must be validated by `npm run validate:data`.
+- Before merging refactor work, run `npm run check`; manually spot-check direct `file://` opening plus a representative topic URL when browser behavior changes.

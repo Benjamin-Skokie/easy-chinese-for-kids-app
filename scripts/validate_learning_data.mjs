@@ -24,6 +24,7 @@ import { clothesMatchItems, clothesPractice } from "../src/features/daily-life/c
 import { familyPractice, illustratedFamily } from "../src/features/family/family.js";
 import { illustratedKids } from "../src/data/characters.js";
 import { books, learningHomeCategories, topicGroups } from "../src/data/curriculum.js";
+import { topicData } from "../src/data/topic-registry.js";
 
 const errors = [];
 
@@ -154,13 +155,25 @@ assert(politePractice.length === 3, "polite words lesson scenes are incomplete")
 assert(clothesMatchItems.length === 5, "clothes matching set is incomplete");
 assert(familyPractice.length === 2, "family lesson scenes are incomplete");
 
-const curriculumTopicIds = new Set([
-  "numbers", "multiplication-rhyme", "greetings", "polite-words", "introductions", "age", "identity", "family", "body", "animals", "colours", "food", "food-preferences", "meals-feelings", "weekdays", "time-date", "dates", "stationery", "school-supplies", "classroom", "school", "school-subjects", "hobbies", "toys", "clothes", "comparisons", "positions", "transport", "daily-life", "weather"
-]);
+function assertUnique(values, label) {
+  const seen = new Set();
+  values.forEach((value) => {
+    assert(!seen.has(value), `duplicate ${label}: ${value}`);
+    seen.add(value);
+  });
+}
+
+const curriculumTopicIds = new Set(topicData.map((topic) => topic.id));
+assertUnique(topicData.map((topic) => topic.id), "topic ID");
+assertUnique(books.map((book) => book.id), "book ID");
+assertUnique(topicGroups.map((category) => category.id), "topic-group ID");
+assertUnique(learningHomeCategories.map((category) => category.id), "learning-category ID");
 for (const book of books) {
+  assertUnique(book.lessons.map((lesson) => lesson.lesson), `lesson number in book ${book.id}`);
   book.lessons.forEach((lesson) => assert(curriculumTopicIds.has(lesson.topicId), `book lesson references an unknown topic: ${lesson.topicId}`));
 }
 for (const category of [...topicGroups, ...learningHomeCategories]) {
+  assertUnique(category.topicIds, `topic reference in category ${category.id}`);
   category.topicIds.forEach((topicId) => assert(curriculumTopicIds.has(topicId), `category references an unknown topic: ${topicId}`));
 }
 

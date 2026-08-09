@@ -1,1 +1,1 @@
-import "./app-runtime.js";
+import "./app/runtime-wiring.js";
