@@ -166,6 +166,26 @@ test("navigation and landing-page behavior is separated from the legacy bootstra
   assert.match(runtimeSource, /function renderTopics\(/);
 });
 
+test("shared focus behavior is separated from the legacy bootstrap", () => {
+  const legacySource = readFileSync("src/legacy-app.js", "utf8");
+  const runtimeSource = readFileSync("src/core/focus-runtime.js", "utf8");
+  assert.match(legacySource, /createFocusRuntime\(\{/);
+  assert.doesNotMatch(legacySource, /function renderFocusWordList\(/);
+  assert.doesNotMatch(legacySource, /function selectFocusItem\(/);
+  assert.match(runtimeSource, /export function createFocusRuntime/);
+  assert.match(runtimeSource, /function renderFocusWordList\(/);
+  assert.match(runtimeSource, /function selectFocusItem\(/);
+});
+
+test("focus explorer dispatch is separated from the legacy bootstrap", () => {
+  const legacySource = readFileSync("src/legacy-app.js", "utf8");
+  const runtimeSource = readFileSync("src/core/focus-explorer-runtime.js", "utf8");
+  assert.match(legacySource, /createFocusExplorerRuntime\(\{/);
+  assert.doesNotMatch(legacySource, /if \(topic\.interactiveScene === "body-face"\)/);
+  assert.match(runtimeSource, /export function createFocusExplorerRuntime/);
+  assert.match(runtimeSource, /if \(topic\.interactiveScene === "body-face"\)/);
+});
+
 test("representative topic links boot after runtime composition", () => {
   const bootstrap = `
 class Element {

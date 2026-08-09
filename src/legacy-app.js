@@ -1,6 +1,8 @@
 import { createAudioService } from "./core/audio.js";
 import { createAppState } from "./core/app-state.js";
 import { createDisplayControlsRuntime } from "./core/display-controls-runtime.js";
+import { createFocusRuntime } from "./core/focus-runtime.js";
+import { createFocusExplorerRuntime } from "./core/focus-explorer-runtime.js";
 import { createNavigationRuntime } from "./core/navigation-runtime.js";
 import { topicIdFromLocation, topicPageUrl, viewFromLocation } from "./core/router.js";
 import { timeDateWeekItems } from "./features/time-daily-life/weekdays.js";
@@ -186,7 +188,30 @@ document.querySelectorAll("[data-global-view]").forEach((link) => {
   });
 });
 
-const { bindDisplayControls: bindGlobalDisplayControls, renderFocusControls, renderFocusDisplay, updateDisplayControls } = createDisplayControlsRuntime({
+let focusExplorerRuntime;
+function renderDefaultExplorer() {
+  return focusExplorerRuntime?.renderDefaultExplorer();
+}
+function renderFocusExplorer() {
+  return focusExplorerRuntime?.renderFocusExplorer();
+}
+
+let foundationsRuntime;
+let renderFocusDisplay;
+const { bodySentenceForItem, renderFocusStatus, renderFocusWordList, selectFocusItem } = createFocusRuntime({
+  state,
+  elements: { focusStatus, focusWordList },
+  getCurrentTopic: () => currentTopic(),
+  getCurrentNumberStage: () => currentNumberStage(),
+  getFocusItemsForTopic: (topic) => focusItemsForTopic(topic),
+  getCurrentFocusItem: () => currentFocusItem(),
+  getFoundations: () => foundationsRuntime,
+  timeDateExpressionItems,
+  speak,
+  renderFocusDisplay: (...args) => renderFocusDisplay(...args),
+  renderFocusExplorer
+});
+const { bindDisplayControls: bindGlobalDisplayControls, renderFocusControls, renderFocusDisplay: renderFocusDisplayImpl, updateDisplayControls } = createDisplayControlsRuntime({
   state,
   elements: { toggleAudioButton, togglePinyinButton, toggleArabicButton, toggleEnglishButton, focusHanzi, focusPinyin, focusEnglish, learningCultureNav },
   getCurrentTopic: () => currentTopic(),
@@ -195,147 +220,8 @@ const { bindDisplayControls: bindGlobalDisplayControls, renderFocusControls, ren
   renderFocusExplorer,
   renderActivityPanel
 });
+renderFocusDisplay = renderFocusDisplayImpl;
 bindGlobalDisplayControls();
-
-function bodySentenceForItem(item) {
-  return {
-    hanzi: `我的${item.hanzi}`,
-    pinyin: `wǒ de ${item.pinyin}`,
-    english: `my ${item.english}`
-  };
-}
-
-function renderFocusStatus() {
-  const topic = currentTopic();
-
-  if (topic.id === "body") {
-    focusStatus.textContent =
-      state.lastBodyFeedback || "Tap a body word to hear it, then point to the same part.";
-    return;
-  }
-
-  if (topic.id === "numbers") {
-    const stage = currentNumberStage();
-    focusStatus.textContent =
-      stage.telephoneMode
-        ? "Listen to the question, then the answer. Telephone numbers are for speaking and listening, not counting objects."
-        : state.lastNumberFeedback || `Now learning ${stage.title}. ${stage.summary}`;
-    return;
-  }
-
-  if (usesLessonTemplate(topic)) {
-    focusStatus.textContent = "";
-    return;
-  }
-
-  if (topic.id === "time-date") {
-    focusStatus.textContent = "";
-    return;
-  }
-
-  if (topic.id === "weekdays" || topic.id === "dates") {
-    focusStatus.textContent = "";
-    return;
-  }
-
-  focusStatus.textContent = "";
-}
-
-function selectFocusItem(itemId, options = {}) {
-  const topic = currentTopic();
-  const items = focusItemsForTopic(topic);
-  const item = items.find((entry) => entry.id === itemId) ?? items[0];
-
-  state.selectedFocusItemId = item.id;
-  if (topic.id === "body") {
-    state.lastBodyFeedback =
-      options.bodyFeedback ?? `Showing ${item.hanzi}${state.showEnglish ? ` (${item.english})` : ""}.`;
-  }
-  renderFocusDisplay(item);
-  renderFocusWordList();
-  renderFocusExplorer();
-  renderFocusStatus();
-
-  if (options.playAudio && state.tapAudioEnabled) {
-    speak(options.audioText ?? item.audio, 0.78);
-  }
-}
-
-function renderFocusWordList() {
-  if (
-    ["body", "dates", "comparisons", "positions", "transport", "daily-life", "multiplication-rhyme", "identity", "stationery", "school-supplies", "classroom", "school", "school-subjects", "food", "food-preferences", "meals-feelings"].includes(currentTopic().id) ||
-    (currentTopic().id === "numbers" && currentNumberStage().telephoneMode)
-  ) {
-    focusWordList.innerHTML = "";
-    focusWordList.classList.add("is-hidden");
-    return;
-  }
-
-  focusWordList.classList.remove("is-hidden");
-  const topic = currentTopic();
-  const items = focusItemsForTopic();
-  const isLessonTemplate = usesLessonTemplate(topic);
-  const showBookWordsHeading = isLessonTemplate || topic.id === "clothes" || topic.id === "time-date" || topic.id === "weekdays";
-  focusWordList.classList.toggle("is-family-book-words", showBookWordsHeading);
-  const visibleItems =
-    topic.id === "numbers"
-      ? numberWordListItems(items, currentFocusItem(), currentNumberStage())
-      : topic.id === "time-date"
-        ? timeDateExpressionItems
-      : isLessonTemplate
-        ? bookWordItemsForTopic(topic)
-        : items;
-  focusWordList.innerHTML = "";
-
-  if (showBookWordsHeading) {
-    const heading = document.createElement("div");
-    heading.className = "family-book-words-heading";
-    heading.innerHTML = `
-      <p class="body-match-kicker">Book words</p>
-    `;
-    focusWordList.appendChild(heading);
-  }
-
-  visibleItems.forEach((item) => {
-    const button = document.createElement("button");
-    button.type = "button";
-    button.className = "focus-word-button";
-    if (item.id === state.selectedFocusItemId) {
-      button.classList.add("is-selected");
-    }
-
-    button.innerHTML = `
-      <span class="focus-word-hanzi">${item.hanzi}</span>
-      ${state.showPinyin ? `<span class="focus-word-label">${item.pinyin}</span>` : ""}
-      ${state.showEnglish ? `<span class="focus-helper">${item.english}</span>` : ""}
-    `;
-
-    button.addEventListener("click", () => {
-      if (topic.id === "time-date" || topic.id === "weekdays") {
-        if (topic.id === "weekdays") {
-          state.selectedFocusItemId = item.id;
-          renderFocusWordList();
-        }
-        if (state.tapAudioEnabled) speak(topic.id === "weekdays" ? item.hanzi : item.audio, 0.78);
-        return;
-      }
-      selectFocusItem(item.id, { playAudio: true });
-    });
-
-    focusWordList.appendChild(button);
-  });
-
-  const noteMarkup = usefulNoteForTopic(topic);
-  if (noteMarkup) {
-    const note = document.createElement("div");
-    note.className = "greetings-note-card family-book-words-note";
-    note.innerHTML = `
-      <p class="body-match-kicker">Useful note</p>
-      ${noteMarkup}
-    `;
-    focusWordList.appendChild(note);
-  }
-}
 
 function sharedLessonPracticeConfig(topic) {
   if (schoolTopicData[topic.id]) {
@@ -1199,100 +1085,6 @@ function renderActivityPanel(topic) {
   activityList.innerHTML = "";
 }
 
-function renderDefaultExplorer() {
-  focusExplorer.innerHTML = "";
-}
-
-function renderFocusExplorer() {
-  const topic = currentTopic();
-  if (topic.interactiveScene === "body-face") {
-    renderBodyExplorer();
-    return;
-  }
-
-  if (topic.id === "numbers") {
-    renderNumbersExplorer();
-    return;
-  }
-
-  if (topic.interactiveScene === "polite-phrases") {
-    renderPoliteWordsExplorer();
-    return;
-  }
-
-  if (topic.interactiveScene === "introductions-conversation") {
-    renderIntroductionsExplorer();
-    return;
-  }
-
-  if (topic.interactiveScene === "identity-scenes") {
-    renderIdentityExplorer();
-    return;
-  }
-
-  if (topic.interactiveScene === "age-conversation") {
-    renderAgeExplorer();
-    return;
-  }
-
-  if (topic.interactiveScene === "family-home") {
-    renderFamilyExplorer();
-    return;
-  }
-
-  if (topic.interactiveScene === "greetings-conversation") {
-    renderGreetingsExplorer();
-    return;
-  }
-
-  if (topic.interactiveScene === "clothes-scenes") {
-    renderClothesExplorer();
-    return;
-  }
-
-  if (topic.interactiveScene === "time-date-routine") {
-    renderTimeDateExplorer();
-    return;
-  }
-
-  if (topic.interactiveScene === "weekdays") {
-    renderWeekdaysExplorer();
-    return;
-  }
-
-  if (topic.interactiveScene === "dates") {
-    renderDatesExplorer();
-    return;
-  }
-
-  if (topic.interactiveScene === "positions") {
-    renderPositionsExplorer();
-    return;
-  }
-
-  if (topic.interactiveScene === "rooms") {
-    renderRoomsExplorer();
-    return;
-  }
-
-  if (schoolTopicData[topic.id]) {
-    renderSchoolExplorer(topic.id);
-    return;
-  }
-
-  if (["comparisons", "transport", "rooms"].includes(topic.interactiveScene)) {
-    renderVisualTopicExplorer(topic.interactiveScene);
-    return;
-  }
-
-  if (topic.interactiveScene === "multiplication-rhyme") {
-    renderMultiplicationExplorer();
-    return;
-  }
-
-  renderDefaultExplorer();
-}
-
 function selectBookLesson(bookId, lessonNumber) {
   const book = books.find((entry) => entry.id === bookId) ?? books[0];
   const lesson = book.lessons.find((entry) => entry.lesson === lessonNumber) ?? book.lessons[0];
@@ -1524,6 +1316,46 @@ const {
   selectBookLesson
 });
 
+foundationsRuntime = createFoundationsRuntime({
+state,
+numberHanzi,
+numberPinyin,
+buildNumberItem,
+numberStages,
+telephonePractice,
+familyGameItemIds,
+  familyPersonIdsByItemId,
+  familyHeadshotsByItemId,
+  familyPractice,
+  illustratedFamily,
+illustratedKids,
+bodyBonusItemIds,
+bodyCoreItemIds,
+bodyDiagramLayout,
+identityConversation,
+identityCountries,
+identityQuestion,
+topicById,
+focusItemsForTopic,
+currentTopic,
+currentNumberStage,
+currentFocusItem,
+currentBook,
+currentLesson,
+shuffleArray,
+speak,
+speakSceneLines,
+renderActivityPanel,
+renderFocusDisplay,
+  renderFocusExplorer,
+  renderFocusStatus,
+  selectFocusItem,
+  bodySentenceForItem,
+  chineseUtterance,
+focusExplorer,
+focusStatus
+});
+
 const {
 numberStageItems,
 resetNumberChallenge,
@@ -1567,45 +1399,7 @@ renderFamilyHomeVisual,
 renderFamilyExplorer,
 renderIdentityExplorer,
 renderMultiplicationExplorer
-} = createFoundationsRuntime({
-state,
-numberHanzi,
-numberPinyin,
-buildNumberItem,
-numberStages,
-telephonePractice,
-familyGameItemIds,
-  familyPersonIdsByItemId,
-  familyHeadshotsByItemId,
-  familyPractice,
-  illustratedFamily,
-illustratedKids,
-bodyBonusItemIds,
-bodyCoreItemIds,
-bodyDiagramLayout,
-identityConversation,
-identityCountries,
-identityQuestion,
-topicById,
-focusItemsForTopic,
-currentTopic,
-currentNumberStage,
-currentFocusItem,
-currentBook,
-currentLesson,
-shuffleArray,
-speak,
-speakSceneLines,
-renderActivityPanel,
-renderFocusDisplay,
-  renderFocusExplorer,
-  renderFocusStatus,
-  selectFocusItem,
-  bodySentenceForItem,
-  chineseUtterance,
-  focusExplorer,
-focusStatus
-});
+} = foundationsRuntime;
 
 
 syncBookSelectionFromTopic();
@@ -1877,6 +1671,29 @@ focusExplorer,
 focusStatus
 });
 
+
+focusExplorerRuntime = createFocusExplorerRuntime({
+  focusExplorer,
+  schoolTopicData,
+  currentTopic,
+  renderBodyExplorer,
+  renderNumbersExplorer,
+  renderPoliteWordsExplorer,
+  renderIntroductionsExplorer,
+  renderIdentityExplorer,
+  renderAgeExplorer,
+  renderFamilyExplorer,
+  renderGreetingsExplorer,
+  renderClothesExplorer,
+  renderTimeDateExplorer,
+  renderWeekdaysExplorer,
+  renderDatesExplorer,
+  renderPositionsExplorer,
+  renderRoomsExplorer,
+  renderSchoolExplorer,
+  renderVisualTopicExplorer,
+  renderMultiplicationExplorer
+});
 
 
 const initialTopicId = topicIdFromLocation(window.location, topicById);
