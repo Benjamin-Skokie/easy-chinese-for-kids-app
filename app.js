@@ -1109,6 +1109,87 @@
     }
   ];
 
+  // src/features/foundations/identity.js
+  var identityTopic = {
+    id: "identity",
+    title: "Countries & Languages",
+    summary: "Say where someone is from and the languages they can speak.",
+    progressLabel: "3A to 4A",
+    iconText: "\u4E2D\u56FD",
+    iconColor: "#587d9c",
+    iconAccent: "#e5bf70",
+    iconTheme: "identity",
+    focus: {
+      hanzi: "\u6211\u662F\u4E2D\u56FD\u4EBA\u3002",
+      pinyin: "w\u01D2 sh\xEC Zh\u014Dng gu\xF3 r\xE9n.",
+      english: "I am Chinese.",
+      audio: "\u6211\u662F\u4E2D\u56FD\u4EBA"
+    },
+    focusItems: [
+      { id: "ask-country", hanzi: "\u4F60\u662F\u54EA\u56FD\u4EBA\uFF1F", pinyin: "n\u01D0 sh\xEC n\u01CE gu\xF3 r\xE9n?", english: "What country are you from?", audio: "\u4F60\u662F\u54EA\u56FD\u4EBA" },
+      { id: "china", hanzi: "\u6211\u662F\u4E2D\u56FD\u4EBA\u3002", pinyin: "w\u01D2 sh\xEC Zh\u014Dng gu\xF3 r\xE9n.", english: "I am Chinese.", audio: "\u6211\u662F\u4E2D\u56FD\u4EBA" },
+      { id: "usa", hanzi: "\u6211\u662F\u7F8E\u56FD\u4EBA\u3002", pinyin: "w\u01D2 sh\xEC M\u011Bi gu\xF3 r\xE9n.", english: "I am American.", audio: "\u6211\u662F\u7F8E\u56FD\u4EBA" },
+      { id: "uk", hanzi: "\u6211\u662F\u82F1\u56FD\u4EBA\u3002", pinyin: "w\u01D2 sh\xEC Y\u012Bng gu\xF3 r\xE9n.", english: "I am British.", audio: "\u6211\u662F\u82F1\u56FD\u4EBA" },
+      { id: "ask-language", hanzi: "\u4F60\u4F1A\u8BF4\u6C49\u8BED\u5417\uFF1F", pinyin: "n\u01D0 hu\xEC shu\u014D H\xE0ny\u01D4 ma?", english: "Can you speak Chinese?", audio: "\u4F60\u4F1A\u8BF4\u6C49\u8BED\u5417" },
+      { id: "speak-chinese", hanzi: "\u6211\u4F1A\u8BF4\u6C49\u8BED\u3002", pinyin: "w\u01D2 hu\xEC shu\u014D H\xE0ny\u01D4.", english: "I can speak Chinese.", audio: "\u6211\u4F1A\u8BF4\u6C49\u8BED" },
+      { id: "speak-english", hanzi: "\u6211\u4F1A\u8BF4\u82F1\u8BED\u3002", pinyin: "w\u01D2 hu\xEC shu\u014D Y\u012Bngy\u01D4.", english: "I can speak English.", audio: "\u6211\u4F1A\u8BF4\u82F1\u8BED" }
+    ],
+    interactiveScene: "identity-scenes",
+    parentGuide: "Use the child's real country and languages. Start with one short answer, then switch the country or language together.",
+    cultureGuide: "Country and language words work best as respectful descriptions of people, not as labels for how anyone should look or act.",
+    activities: ["Tap to hear", "Meet classmates", "Match country and flag", "Say what I speak"],
+    steps: [
+      { book: "3A", lesson: 5, title: "Nationality", note: "Ask and say where someone is from." },
+      { book: "4A", lesson: 2, title: "Languages", note: "Say which languages someone can speak." }
+    ]
+  };
+  var identityCountries = [
+    {
+      id: "china",
+      label: "China",
+      hanzi: "\u4E2D\u56FD",
+      nationality: "\u4E2D\u56FD\u4EBA",
+      pinyin: "Zh\u014Dng gu\xF3 r\xE9n",
+      asset: "assets/illustrated-flags/china.webp",
+      focusItemId: "china",
+      response: { hanzi: "\u6211\u662F\u4E2D\u56FD\u4EBA\uFF0C\u6211\u4F1A\u8BF4\u6C49\u8BED\u3002", pinyin: "w\u01D2 sh\xEC Zh\u014Dng gu\xF3 r\xE9n, w\u01D2 hu\xEC shu\u014D H\xE0ny\u01D4.", english: "I am Chinese. I can speak Chinese.", audio: "\u6211\u662F\u4E2D\u56FD\u4EBA\uFF0C\u6211\u4F1A\u8BF4\u6C49\u8BED" }
+    },
+    {
+      id: "usa",
+      label: "United States",
+      hanzi: "\u7F8E\u56FD",
+      nationality: "\u7F8E\u56FD\u4EBA",
+      pinyin: "M\u011Bi gu\xF3 r\xE9n",
+      asset: "assets/illustrated-flags/united-states.webp",
+      focusItemId: "usa",
+      response: { hanzi: "\u6211\u662F\u7F8E\u56FD\u4EBA\uFF0C\u6211\u4F1A\u8BF4\u82F1\u8BED\u3002", pinyin: "w\u01D2 sh\xEC M\u011Bi gu\xF3 r\xE9n, w\u01D2 hu\xEC shu\u014D Y\u012Bngy\u01D4.", english: "I am American. I can speak English.", audio: "\u6211\u662F\u7F8E\u56FD\u4EBA\uFF0C\u6211\u4F1A\u8BF4\u82F1\u8BED" }
+    },
+    {
+      id: "uk",
+      label: "United Kingdom",
+      hanzi: "\u82F1\u56FD",
+      nationality: "\u82F1\u56FD\u4EBA",
+      pinyin: "Y\u012Bng gu\xF3 r\xE9n",
+      asset: "assets/illustrated-flags/united-kingdom.webp",
+      focusItemId: "uk",
+      response: { hanzi: "\u6211\u662F\u82F1\u56FD\u4EBA\uFF0C\u6211\u4F1A\u8BF4\u82F1\u8BED\u3002", pinyin: "w\u01D2 sh\xEC Y\u012Bng gu\xF3 r\xE9n, w\u01D2 hu\xEC shu\u014D Y\u012Bngy\u01D4.", english: "I am British. I can speak English.", audio: "\u6211\u662F\u82F1\u56FD\u4EBA\uFF0C\u6211\u4F1A\u8BF4\u82F1\u8BED" }
+    }
+  ];
+  var identityQuestion = {
+    hanzi: "\u4F60\u662F\u54EA\u56FD\u4EBA\uFF1F",
+    pinyin: "n\u01D0 sh\xEC n\u01CE gu\xF3 r\xE9n?",
+    english: "What country are you from?",
+    audio: "\u4F60\u662F\u54EA\u56FD\u4EBA"
+  };
+  var identityConversation = {
+    imagePath: "assets/illustrated-identity/classmates-speak-different-languages.webp",
+    imageAlt: "Two classmates talking about where they are from and the languages they speak",
+    lines: [
+      { hanzi: "\u6211\u662F\u4E2D\u56FD\u4EBA\uFF0C\u6211\u4F1A\u8BF4\u6C49\u8BED\u3002", pinyin: "w\u01D2 sh\xEC Zh\u014Dng gu\xF3 r\xE9n, w\u01D2 hu\xEC shu\u014D H\xE0ny\u01D4.", english: "I am Chinese. I can speak Chinese.", audio: "\u6211\u662F\u4E2D\u56FD\u4EBA\uFF0C\u6211\u4F1A\u8BF4\u6C49\u8BED" },
+      { hanzi: "\u6211\u662F\u7F8E\u56FD\u4EBA\uFF0C\u6211\u4F1A\u8BF4\u82F1\u8BED\u3002", pinyin: "w\u01D2 sh\xEC M\u011Bi gu\xF3 r\xE9n, w\u01D2 hu\xEC shu\u014D Y\u012Bngy\u01D4.", english: "I am American. I can speak English.", audio: "\u6211\u662F\u7F8E\u56FD\u4EBA\uFF0C\u6211\u4F1A\u8BF4\u82F1\u8BED" }
+    ]
+  };
+
   // src/features/family/family.js
   var familyTopic = {
     id: "family",
@@ -1501,39 +1582,7 @@
       ]
     },
     introductionsTopic,
-    {
-      id: "identity",
-      title: "Countries & Languages",
-      summary: "Say where someone is from and the languages they can speak.",
-      progressLabel: "3A to 4A",
-      iconText: "\u4E2D\u56FD",
-      iconColor: "#587d9c",
-      iconAccent: "#e5bf70",
-      iconTheme: "identity",
-      focus: {
-        hanzi: "\u6211\u662F\u4E2D\u56FD\u4EBA\u3002",
-        pinyin: "w\u01D2 sh\xEC Zh\u014Dng gu\xF3 r\xE9n.",
-        english: "I am Chinese.",
-        audio: "\u6211\u662F\u4E2D\u56FD\u4EBA"
-      },
-      focusItems: [
-        { id: "ask-country", hanzi: "\u4F60\u662F\u54EA\u56FD\u4EBA\uFF1F", pinyin: "n\u01D0 sh\xEC n\u01CE gu\xF3 r\xE9n?", english: "What country are you from?", audio: "\u4F60\u662F\u54EA\u56FD\u4EBA" },
-        { id: "china", hanzi: "\u6211\u662F\u4E2D\u56FD\u4EBA\u3002", pinyin: "w\u01D2 sh\xEC Zh\u014Dng gu\xF3 r\xE9n.", english: "I am Chinese.", audio: "\u6211\u662F\u4E2D\u56FD\u4EBA" },
-        { id: "usa", hanzi: "\u6211\u662F\u7F8E\u56FD\u4EBA\u3002", pinyin: "w\u01D2 sh\xEC M\u011Bi gu\xF3 r\xE9n.", english: "I am American.", audio: "\u6211\u662F\u7F8E\u56FD\u4EBA" },
-        { id: "uk", hanzi: "\u6211\u662F\u82F1\u56FD\u4EBA\u3002", pinyin: "w\u01D2 sh\xEC Y\u012Bng gu\xF3 r\xE9n.", english: "I am British.", audio: "\u6211\u662F\u82F1\u56FD\u4EBA" },
-        { id: "ask-language", hanzi: "\u4F60\u4F1A\u8BF4\u6C49\u8BED\u5417\uFF1F", pinyin: "n\u01D0 hu\xEC shu\u014D H\xE0ny\u01D4 ma?", english: "Can you speak Chinese?", audio: "\u4F60\u4F1A\u8BF4\u6C49\u8BED\u5417" },
-        { id: "speak-chinese", hanzi: "\u6211\u4F1A\u8BF4\u6C49\u8BED\u3002", pinyin: "w\u01D2 hu\xEC shu\u014D H\xE0ny\u01D4.", english: "I can speak Chinese.", audio: "\u6211\u4F1A\u8BF4\u6C49\u8BED" },
-        { id: "speak-english", hanzi: "\u6211\u4F1A\u8BF4\u82F1\u8BED\u3002", pinyin: "w\u01D2 hu\xEC shu\u014D Y\u012Bngy\u01D4.", english: "I can speak English.", audio: "\u6211\u4F1A\u8BF4\u82F1\u8BED" }
-      ],
-      interactiveScene: "identity-scenes",
-      parentGuide: "Use the child's real country and languages. Start with one short answer, then switch the country or language together.",
-      cultureGuide: "Country and language words work best as respectful descriptions of people, not as labels for how anyone should look or act.",
-      activities: ["Tap to hear", "Meet classmates", "Match country and flag", "Say what I speak"],
-      steps: [
-        { book: "3A", lesson: 5, title: "Nationality", note: "Ask and say where someone is from." },
-        { book: "4A", lesson: 2, title: "Languages", note: "Say which languages someone can speak." }
-      ]
-    },
+    identityTopic,
     ageTopic,
     familyTopic,
     {
@@ -2261,20 +2310,6 @@
   var greetingsGameItemIds = ["hello", "teacher-hello", "good-morning", "goodbye"];
   var politeGameItemIds = ["thank-you", "youre-welcome", "sorry", "never-mind"];
   var ageGameItemIds = ["ask-age", "age-five", "age-six", "age-seven", "ask-grade", "grade-one"];
-  var identityCountries = [
-    { id: "china", label: "China", hanzi: "\u4E2D\u56FD", nationality: "\u4E2D\u56FD\u4EBA", pinyin: "Zh\u014Dng gu\xF3 r\xE9n", asset: "assets/illustrated-flags/china.webp", focusItemId: "china", response: { hanzi: "\u6211\u662F\u4E2D\u56FD\u4EBA\uFF0C\u6211\u4F1A\u8BF4\u6C49\u8BED\u3002", pinyin: "w\u01D2 sh\xEC Zh\u014Dng gu\xF3 r\xE9n, w\u01D2 hu\xEC shu\u014D H\xE0ny\u01D4.", english: "I am Chinese. I can speak Chinese.", audio: "\u6211\u662F\u4E2D\u56FD\u4EBA\uFF0C\u6211\u4F1A\u8BF4\u6C49\u8BED" } },
-    { id: "usa", label: "United States", hanzi: "\u7F8E\u56FD", nationality: "\u7F8E\u56FD\u4EBA", pinyin: "M\u011Bi gu\xF3 r\xE9n", asset: "assets/illustrated-flags/united-states.webp", focusItemId: "usa", response: { hanzi: "\u6211\u662F\u7F8E\u56FD\u4EBA\uFF0C\u6211\u4F1A\u8BF4\u82F1\u8BED\u3002", pinyin: "w\u01D2 sh\xEC M\u011Bi gu\xF3 r\xE9n, w\u01D2 hu\xEC shu\u014D Y\u012Bngy\u01D4.", english: "I am American. I can speak English.", audio: "\u6211\u662F\u7F8E\u56FD\u4EBA\uFF0C\u6211\u4F1A\u8BF4\u82F1\u8BED" } },
-    { id: "uk", label: "United Kingdom", hanzi: "\u82F1\u56FD", nationality: "\u82F1\u56FD\u4EBA", pinyin: "Y\u012Bng gu\xF3 r\xE9n", asset: "assets/illustrated-flags/united-kingdom.webp", focusItemId: "uk", response: { hanzi: "\u6211\u662F\u82F1\u56FD\u4EBA\uFF0C\u6211\u4F1A\u8BF4\u82F1\u8BED\u3002", pinyin: "w\u01D2 sh\xEC Y\u012Bng gu\xF3 r\xE9n, w\u01D2 hu\xEC shu\u014D Y\u012Bngy\u01D4.", english: "I am British. I can speak English.", audio: "\u6211\u662F\u82F1\u56FD\u4EBA\uFF0C\u6211\u4F1A\u8BF4\u82F1\u8BED" } }
-  ];
-  var identityQuestion = { hanzi: "\u4F60\u662F\u54EA\u56FD\u4EBA\uFF1F", pinyin: "n\u01D0 sh\xEC n\u01CE gu\xF3 r\xE9n?", english: "What country are you from?", audio: "\u4F60\u662F\u54EA\u56FD\u4EBA" };
-  var identityConversation = {
-    imagePath: "assets/illustrated-identity/classmates-speak-different-languages.webp",
-    imageAlt: "Two classmates talking about where they are from and the languages they speak",
-    lines: [
-      { hanzi: "\u6211\u662F\u4E2D\u56FD\u4EBA\uFF0C\u6211\u4F1A\u8BF4\u6C49\u8BED\u3002", pinyin: "w\u01D2 sh\xEC Zh\u014Dng gu\xF3 r\xE9n, w\u01D2 hu\xEC shu\u014D H\xE0ny\u01D4.", english: "I am Chinese. I can speak Chinese.", audio: "\u6211\u662F\u4E2D\u56FD\u4EBA\uFF0C\u6211\u4F1A\u8BF4\u6C49\u8BED" },
-      { hanzi: "\u6211\u662F\u7F8E\u56FD\u4EBA\uFF0C\u6211\u4F1A\u8BF4\u82F1\u8BED\u3002", pinyin: "w\u01D2 sh\xEC M\u011Bi gu\xF3 r\xE9n, w\u01D2 hu\xEC shu\u014D Y\u012Bngy\u01D4.", english: "I am American. I can speak English.", audio: "\u6211\u662F\u7F8E\u56FD\u4EBA\uFF0C\u6211\u4F1A\u8BF4\u82F1\u8BED" }
-    ]
-  };
   var sceneSpeechRate = 0.64;
   var sceneLinePauseMs = 280;
   var { speak, speakSceneLines } = createAudioService({

@@ -20,6 +20,7 @@ import { foodPreferencesTopicData } from "../src/features/food/food-preferences.
 import { mealsFeelingsSentenceBuilds, mealsFeelingsTopicData } from "../src/features/food/meals-feelings.js";
 import { introductionsBuildPhrases, introductionsGamePrompts, introductionsPractice, introductionsTopic } from "../src/features/foundations/introductions.js";
 import { ageBuildPhrases, agePractice, ageTopic } from "../src/features/foundations/age.js";
+import { identityConversation, identityCountries, identityQuestion, identityTopic } from "../src/features/foundations/identity.js";
 import { familyGameItemIds, familyPractice, familyTopic, illustratedFamily } from "../src/features/family/family.js";
 
 test("the local page loads a single bundled application script", () => {
@@ -168,6 +169,14 @@ test("age owns its scenes and sentence practice", () => {
   assert.equal(ageTopic.steps.length, 2);
   assert.equal(agePractice.length, 2);
   assert.equal(ageBuildPhrases.length, 6);
+});
+
+test("identity owns its countries, question, and conversation", () => {
+  assert.equal(identityTopic.id, "identity");
+  assert.equal(identityTopic.interactiveScene, "identity-scenes");
+  assert.equal(identityCountries.length, 3);
+  assert.equal(identityQuestion.hanzi, "你是哪国人？");
+  assert.equal(identityConversation.lines.length, 2);
 });
 
 test("family owns its lesson metadata, scenes, and matching set", () => {
