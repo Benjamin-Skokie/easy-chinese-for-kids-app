@@ -34,7 +34,7 @@ A feature registers its owned topic IDs, creates its scoped state, renders its e
 ### 1. Build baseline
 
 - [x] Commit pre-refactor course work separately.
-- [x] Add `src/main.js`, `src/app-runtime.js`, `scripts/build_app.mjs`, package scripts, and an initial build contract test.
+- [x] Add `src/main.js`, `src/app/runtime-wiring.js`, `scripts/build_app.mjs`, package scripts, and an initial build contract test.
 - [x] Install the exact locked dependency and generate the first bundle without changing behavior.
 
 ### 2. Core and validation
@@ -96,8 +96,8 @@ A feature registers its owned topic IDs, creates its scoped state, renders its e
 
 ### 4. Completion
 
-- [x] Remove `src/legacy-app.js`; application composition now lives in `src/app-runtime.js`.
-- [ ] Reduce `src/app-runtime.js` to runtime wiring and startup only.
+- [x] Remove `src/legacy-app.js`; application composition now lives in `src/app/runtime-wiring.js`.
+- [ ] Reduce `src/app/runtime-wiring.js` to runtime wiring and startup only.
 - [ ] Keep `src/main.js` as bootstrap, global controls, and feature dispatch only.
 - [ ] Record ownership and maintenance rules in this document.
 

@@ -266,6 +266,41 @@
     };
   }
 
+  // src/core/dom.js
+  function getAppElements(documentRoot = document) {
+    return {
+      topicGroupsRoot: documentRoot.getElementById("topic-groups"),
+      bookSelect: documentRoot.getElementById("book-select"),
+      lessonSelect: documentRoot.getElementById("lesson-select"),
+      lookupCard: documentRoot.getElementById("lookup-card"),
+      bookBrowser: documentRoot.getElementById("book-browser"),
+      topicTitle: documentRoot.getElementById("topic-title"),
+      topicSummary: documentRoot.getElementById("topic-summary"),
+      topicProgress: documentRoot.getElementById("topic-progress"),
+      topicLessonStrip: documentRoot.getElementById("topic-lesson-strip"),
+      subtopicShelf: documentRoot.getElementById("subtopic-shelf"),
+      focusExplorer: documentRoot.getElementById("focus-explorer"),
+      focusStatus: documentRoot.getElementById("focus-status"),
+      focusDisplay: documentRoot.getElementById("focus-display"),
+      focusHanzi: documentRoot.getElementById("focus-hanzi"),
+      focusPinyin: documentRoot.getElementById("focus-pinyin"),
+      focusEnglish: documentRoot.getElementById("focus-english"),
+      focusWordList: documentRoot.getElementById("focus-word-list"),
+      toggleAudioButton: documentRoot.getElementById("toggle-audio-button"),
+      togglePinyinButton: documentRoot.getElementById("toggle-pinyin-button"),
+      toggleArabicButton: documentRoot.getElementById("toggle-arabic-button"),
+      toggleEnglishButton: documentRoot.getElementById("toggle-english-button"),
+      activityList: documentRoot.getElementById("activity-list"),
+      activityPanelTitle: documentRoot.getElementById("activity-panel-title"),
+      activityPanelSummary: documentRoot.getElementById("activity-panel-summary"),
+      topicPanel: documentRoot.getElementById("topics-panel"),
+      bookPanel: documentRoot.getElementById("books-panel"),
+      topicColumns: documentRoot.querySelector(".topic-columns"),
+      detailLayout: documentRoot.querySelector(".detail-layout"),
+      learningCultureNav: documentRoot.getElementById("learningCultureNav")
+    };
+  }
+
   // src/core/display-controls-runtime.js
   function createDisplayControlsRuntime(context) {
     const {
@@ -8388,7 +8423,7 @@
     return renderSharedLessonPractice2;
   }
 
-  // src/app-runtime.js
+  // src/app/runtime-wiring.js
   var introductionsGameSpeakerIds = ["anan", "tiantian", "sisi", "lele"];
   var ageGameItemIds = ["ask-age", "age-five", "age-six", "age-seven", "ask-grade", "grade-one"];
   var sceneSpeechRate = 0.64;
@@ -8398,35 +8433,37 @@
     getSceneLinePauseMs: () => sceneLinePauseMs
   });
   var state = createAppState();
-  var topicGroupsRoot = document.getElementById("topic-groups");
-  var bookSelect = document.getElementById("book-select");
-  var lessonSelect = document.getElementById("lesson-select");
-  var lookupCard = document.getElementById("lookup-card");
-  var bookBrowser = document.getElementById("book-browser");
-  var topicTitle = document.getElementById("topic-title");
-  var topicSummary = document.getElementById("topic-summary");
-  var topicProgress = document.getElementById("topic-progress");
-  var topicLessonStrip = document.getElementById("topic-lesson-strip");
-  var subtopicShelf = document.getElementById("subtopic-shelf");
-  var focusExplorer = document.getElementById("focus-explorer");
-  var focusStatus = document.getElementById("focus-status");
-  var focusDisplay = document.getElementById("focus-display");
-  var focusHanzi = document.getElementById("focus-hanzi");
-  var focusPinyin = document.getElementById("focus-pinyin");
-  var focusEnglish = document.getElementById("focus-english");
-  var focusWordList = document.getElementById("focus-word-list");
-  var toggleAudioButton = document.getElementById("toggle-audio-button");
-  var togglePinyinButton = document.getElementById("toggle-pinyin-button");
-  var toggleArabicButton = document.getElementById("toggle-arabic-button");
-  var toggleEnglishButton = document.getElementById("toggle-english-button");
-  var activityList = document.getElementById("activity-list");
-  var activityPanelTitle = document.getElementById("activity-panel-title");
-  var activityPanelSummary = document.getElementById("activity-panel-summary");
-  var topicPanel = document.getElementById("topics-panel");
-  var bookPanel = document.getElementById("books-panel");
-  var topicColumns = document.querySelector(".topic-columns");
-  var detailLayout = document.querySelector(".detail-layout");
-  var learningCultureNav = document.getElementById("learningCultureNav");
+  var {
+    topicGroupsRoot,
+    bookSelect,
+    lessonSelect,
+    lookupCard,
+    bookBrowser,
+    topicTitle,
+    topicSummary,
+    topicProgress,
+    topicLessonStrip,
+    subtopicShelf,
+    focusExplorer,
+    focusStatus,
+    focusDisplay,
+    focusHanzi,
+    focusPinyin,
+    focusEnglish,
+    focusWordList,
+    toggleAudioButton,
+    togglePinyinButton,
+    toggleArabicButton,
+    toggleEnglishButton,
+    activityList,
+    activityPanelTitle,
+    activityPanelSummary,
+    topicPanel,
+    bookPanel,
+    topicColumns,
+    detailLayout,
+    learningCultureNav
+  } = getAppElements();
   var renderSharedLessonPractice = createSharedLessonPractice({
     state,
     speak,

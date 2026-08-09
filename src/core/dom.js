@@ -1,0 +1,33 @@
+export function getAppElements(documentRoot = document) {
+  return {
+    topicGroupsRoot: documentRoot.getElementById("topic-groups"),
+    bookSelect: documentRoot.getElementById("book-select"),
+    lessonSelect: documentRoot.getElementById("lesson-select"),
+    lookupCard: documentRoot.getElementById("lookup-card"),
+    bookBrowser: documentRoot.getElementById("book-browser"),
+    topicTitle: documentRoot.getElementById("topic-title"),
+    topicSummary: documentRoot.getElementById("topic-summary"),
+    topicProgress: documentRoot.getElementById("topic-progress"),
+    topicLessonStrip: documentRoot.getElementById("topic-lesson-strip"),
+    subtopicShelf: documentRoot.getElementById("subtopic-shelf"),
+    focusExplorer: documentRoot.getElementById("focus-explorer"),
+    focusStatus: documentRoot.getElementById("focus-status"),
+    focusDisplay: documentRoot.getElementById("focus-display"),
+    focusHanzi: documentRoot.getElementById("focus-hanzi"),
+    focusPinyin: documentRoot.getElementById("focus-pinyin"),
+    focusEnglish: documentRoot.getElementById("focus-english"),
+    focusWordList: documentRoot.getElementById("focus-word-list"),
+    toggleAudioButton: documentRoot.getElementById("toggle-audio-button"),
+    togglePinyinButton: documentRoot.getElementById("toggle-pinyin-button"),
+    toggleArabicButton: documentRoot.getElementById("toggle-arabic-button"),
+    toggleEnglishButton: documentRoot.getElementById("toggle-english-button"),
+    activityList: documentRoot.getElementById("activity-list"),
+    activityPanelTitle: documentRoot.getElementById("activity-panel-title"),
+    activityPanelSummary: documentRoot.getElementById("activity-panel-summary"),
+    topicPanel: documentRoot.getElementById("topics-panel"),
+    bookPanel: documentRoot.getElementById("books-panel"),
+    topicColumns: documentRoot.querySelector(".topic-columns"),
+    detailLayout: documentRoot.querySelector(".detail-layout"),
+    learningCultureNav: documentRoot.getElementById("learningCultureNav")
+  };
+}
