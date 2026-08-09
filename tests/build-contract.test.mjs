@@ -32,6 +32,7 @@ import { bodyBonusItemIds, bodyCoreItemIds, bodyDiagramLayout, bodyTopic } from 
 import { illustratedKids } from "../src/data/characters.js";
 import { bookHomeCategories, books, learningHomeCategories, topicCardMeta, topicGroups } from "../src/data/curriculum.js";
 import { buildMultiplicationRhymeItems, buildNumberItem, multiplicationRhymeTopic, numberStages, numbersTopic, telephonePractice } from "../src/features/foundations/numbers.js";
+import { createFoundationState } from "../src/features/foundations/state.js";
 import { familyGameItemIds, familyPractice, familyTopic, illustratedFamily } from "../src/features/family/family.js";
 
 test("the local page loads a single bundled application script", () => {
@@ -279,6 +280,15 @@ test("numbers owns its stages, telephone script, and rhyme generator", () => {
   assert.equal(telephonePractice.digits.length, 10);
   assert.equal(multiplicationRhymeTopic.focusItems.length, 45);
   assert.equal(buildMultiplicationRhymeItems().at(-1).hanzi, "九九八十一");
+});
+
+test("foundation state creates isolated challenge state", () => {
+  const first = createFoundationState();
+  const second = createFoundationState();
+  first.bodyMatchedIds.add("head");
+  first.greetingsChallengeOptionIds.push("hello");
+  assert.equal(second.bodyMatchedIds.size, 0);
+  assert.equal(second.greetingsChallengeOptionIds.length, 0);
 });
 
 test("family owns its lesson metadata, scenes, and matching set", () => {
