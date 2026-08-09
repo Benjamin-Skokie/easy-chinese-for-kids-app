@@ -694,6 +694,24 @@
   ];
 
   // src/features/food/food.js
+  var foodTopic = {
+    id: "food",
+    title: "Food & Drinks",
+    summary: "Name food and drinks, from fruit and vegetables to snacks and everyday meals.",
+    progressLabel: "1B to 3B",
+    iconText: "\u6C34\u679C",
+    iconColor: "#c48d46",
+    focus: { hanzi: "\u6211\u5403\u82F9\u679C\uFF0C\u559D\u725B\u5976\u3002", pinyin: "w\u01D2 ch\u012B p\xEDng gu\u01D2, h\u0113 ni\xFA n\u01CEi.", english: "I eat apples and drink milk.", audio: "\u6211\u5403\u82F9\u679C\u559D\u725B\u5976" },
+    interactiveScene: "food-scenes",
+    parentGuide: "This is one of the easiest topics to make real. Use snack time, lunch, and shopping to repeat words naturally.",
+    cultureGuide: "Food is a great place to add extra content later: dumplings, mooncakes, z\xF2ngzi, fruit names, and meal routines.",
+    activities: ["Tap to hear", "Name the food", "Match the words", "Build a sentence"],
+    steps: [
+      { book: "1B", lesson: 7, title: "Fruit", note: "Begin with highly visual food words." },
+      { book: "2B", lesson: 7, title: "Snacks", note: "Add everyday treat vocabulary." },
+      { book: "3B", lesson: 6, title: "Vegetables", note: "Extend the category." }
+    ]
+  };
   var foodTopicData = {
     practiceSummary: "Listen for a food word, then build a sentence from the picture.",
     scenes: [
@@ -747,6 +765,20 @@
   ];
 
   // src/features/food/food-preferences.js
+  var foodPreferencesTopic = {
+    id: "food-preferences",
+    title: "Food Preferences",
+    summary: "Ask what someone likes to eat and say what you like or do not like.",
+    progressLabel: "3B Lesson 5",
+    iconText: "\u559C\u6B22",
+    iconColor: "#c48d46",
+    focus: { hanzi: "\u4F60\u559C\u6B22\u5403\u4EC0\u4E48\uFF1F", pinyin: "n\u01D0 x\u01D0 huan ch\u012B sh\xE9n me?", english: "What do you like to eat?", audio: "\u4F60\u559C\u6B22\u5403\u4EC0\u4E48" },
+    interactiveScene: "food-preferences",
+    parentGuide: "Ask \u4F60\u559C\u6B22\u5403\u4EC0\u4E48\uFF1F, then let your child answer with one food they like or do not like.",
+    cultureGuide: "\u559C\u6B22\u5403 and \u4E0D\u559C\u6B22\u5403 make it easy to share a real preference at a meal or snack time.",
+    activities: ["Play scenes", "Say a preference", "Listen and choose", "Build a sentence"],
+    steps: [{ book: "3B", lesson: 5, title: "Food and drink", note: "Talk about foods and drinks you like." }]
+  };
   var foodPreferencesTopicData = {
     practiceSummary: "Make your own sentences about foods you like and do not like.",
     scenes: [
@@ -800,6 +832,23 @@
   };
 
   // src/features/food/meals-feelings.js
+  var mealsFeelingsTopic = {
+    id: "meals-feelings",
+    title: "Meals & Feelings",
+    summary: "Talk about lunch and say when you are hungry or thirsty.",
+    progressLabel: "4A Lessons 5 and 7",
+    iconText: "\u5348\u996D",
+    iconColor: "#c48d46",
+    focus: { hanzi: "\u6211\u5348\u996D\u559D\u4E86\u725B\u5976\uFF0C\u5403\u4E86\u62AB\u8428\u3002", pinyin: "w\u01D2 w\u01D4 f\xE0n h\u0113 le ni\xFA n\u01CEi, ch\u012B le p\u012B s\xE0.", english: "For lunch, I drank milk and ate pizza.", audio: "\u6211\u5348\u996D\u559D\u4E86\u725B\u5976\u5403\u4E86\u62AB\u8428" },
+    interactiveScene: "meals-feelings",
+    parentGuide: "Use lunch or snack time to ask whether your child is hungry or thirsty, then say what they eat or drink.",
+    cultureGuide: "Meals and feelings connect simple food words to a useful everyday situation.",
+    activities: ["Play scenes", "Talk about lunch", "Listen and choose", "Build a sentence"],
+    steps: [
+      { book: "4A", lesson: 5, title: "My lunch", note: "Say what you eat and drink for lunch." },
+      { book: "4A", lesson: 7, title: "I'm hungry", note: "Say when you are hungry or thirsty." }
+    ]
+  };
   var mealsFeelingsTopicData = {
     practiceSummary: "Match the first line of each food conversation to its reply.",
     sceneGroups: [
@@ -2413,70 +2462,9 @@
     bodyTopic,
     animalsTopic,
     coloursTopic,
-    {
-      id: "food",
-      title: "Food & Drinks",
-      summary: "Name food and drinks, from fruit and vegetables to snacks and everyday meals.",
-      progressLabel: "1B to 3B",
-      iconText: "\u6C34\u679C",
-      iconColor: "#c48d46",
-      focus: {
-        hanzi: "\u6211\u5403\u82F9\u679C\uFF0C\u559D\u725B\u5976\u3002",
-        pinyin: "w\u01D2 ch\u012B p\xEDng gu\u01D2, h\u0113 ni\xFA n\u01CEi.",
-        english: "I eat apples and drink milk.",
-        audio: "\u6211\u5403\u82F9\u679C\u559D\u725B\u5976"
-      },
-      interactiveScene: "food-scenes",
-      parentGuide: "This is one of the easiest topics to make real. Use snack time, lunch, and shopping to repeat words naturally.",
-      cultureGuide: "Food is a great place to add extra content later: dumplings, mooncakes, z\xF2ngzi, fruit names, and meal routines.",
-      activities: ["Tap to hear", "Name the food", "Match the words", "Build a sentence"],
-      steps: [
-        { book: "1B", lesson: 7, title: "Fruit", note: "Begin with highly visual food words." },
-        { book: "2B", lesson: 7, title: "Snacks", note: "Add everyday treat vocabulary." },
-        { book: "3B", lesson: 6, title: "Vegetables", note: "Extend the category." }
-      ]
-    },
-    {
-      id: "food-preferences",
-      title: "Food Preferences",
-      summary: "Ask what someone likes to eat and say what you like or do not like.",
-      progressLabel: "3B Lesson 5",
-      iconText: "\u559C\u6B22",
-      iconColor: "#c48d46",
-      focus: {
-        hanzi: "\u4F60\u559C\u6B22\u5403\u4EC0\u4E48\uFF1F",
-        pinyin: "n\u01D0 x\u01D0 huan ch\u012B sh\xE9n me?",
-        english: "What do you like to eat?",
-        audio: "\u4F60\u559C\u6B22\u5403\u4EC0\u4E48"
-      },
-      interactiveScene: "food-preferences",
-      parentGuide: "Ask \u4F60\u559C\u6B22\u5403\u4EC0\u4E48\uFF1F, then let your child answer with one food they like or do not like.",
-      cultureGuide: "\u559C\u6B22\u5403 and \u4E0D\u559C\u6B22\u5403 make it easy to share a real preference at a meal or snack time.",
-      activities: ["Play scenes", "Say a preference", "Listen and choose", "Build a sentence"],
-      steps: [{ book: "3B", lesson: 5, title: "Food and drink", note: "Talk about foods and drinks you like." }]
-    },
-    {
-      id: "meals-feelings",
-      title: "Meals & Feelings",
-      summary: "Talk about lunch and say when you are hungry or thirsty.",
-      progressLabel: "4A Lessons 5 and 7",
-      iconText: "\u5348\u996D",
-      iconColor: "#c48d46",
-      focus: {
-        hanzi: "\u6211\u5348\u996D\u559D\u4E86\u725B\u5976\uFF0C\u5403\u4E86\u62AB\u8428\u3002",
-        pinyin: "w\u01D2 w\u01D4 f\xE0n h\u0113 le ni\xFA n\u01CEi, ch\u012B le p\u012B s\xE0.",
-        english: "For lunch, I drank milk and ate pizza.",
-        audio: "\u6211\u5348\u996D\u559D\u4E86\u725B\u5976\u5403\u4E86\u62AB\u8428"
-      },
-      interactiveScene: "meals-feelings",
-      parentGuide: "Use lunch or snack time to ask whether your child is hungry or thirsty, then say what they eat or drink.",
-      cultureGuide: "Meals and feelings connect simple food words to a useful everyday situation.",
-      activities: ["Play scenes", "Talk about lunch", "Listen and choose", "Build a sentence"],
-      steps: [
-        { book: "4A", lesson: 5, title: "My lunch", note: "Say what you eat and drink for lunch." },
-        { book: "4A", lesson: 7, title: "I'm hungry", note: "Say when you are hungry or thirsty." }
-      ]
-    },
+    foodTopic,
+    foodPreferencesTopic,
+    mealsFeelingsTopic,
     {
       id: "time-date",
       title: "Time & Routines",

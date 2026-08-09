@@ -1,3 +1,18 @@
+export const foodPreferencesTopic = {
+    id: "food-preferences",
+    title: "Food Preferences",
+    summary: "Ask what someone likes to eat and say what you like or do not like.",
+    progressLabel: "3B Lesson 5",
+    iconText: "喜欢",
+    iconColor: "#c48d46",
+    focus: { hanzi: "你喜欢吃什么？", pinyin: "nǐ xǐ huan chī shén me?", english: "What do you like to eat?", audio: "你喜欢吃什么" },
+    interactiveScene: "food-preferences",
+    parentGuide: "Ask 你喜欢吃什么？, then let your child answer with one food they like or do not like.",
+    cultureGuide: "喜欢吃 and 不喜欢吃 make it easy to share a real preference at a meal or snack time.",
+    activities: ["Play scenes", "Say a preference", "Listen and choose", "Build a sentence"],
+    steps: [{ book: "3B", lesson: 5, title: "Food and drink", note: "Talk about foods and drinks you like." }]
+  };
+
 export const foodPreferencesTopicData = {
     practiceSummary: "Make your own sentences about foods you like and do not like.",
     scenes: [

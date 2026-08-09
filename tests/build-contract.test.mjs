@@ -15,9 +15,9 @@ import { schoolSuppliesSentenceBuilds, schoolSuppliesTopicData } from "../src/fe
 import { classroomTopicData } from "../src/features/school-life/classroom.js";
 import { schoolSentenceBuilds, schoolTopicData } from "../src/features/school-life/school.js";
 import { schoolSubjectsSentenceBuilds, schoolSubjectsTopicData } from "../src/features/school-life/school-subjects.js";
-import { foodSentenceBuilds, foodTopicData } from "../src/features/food/food.js";
-import { foodPreferencesTopicData } from "../src/features/food/food-preferences.js";
-import { mealsFeelingsSentenceBuilds, mealsFeelingsTopicData } from "../src/features/food/meals-feelings.js";
+import { foodSentenceBuilds, foodTopic, foodTopicData } from "../src/features/food/food.js";
+import { foodPreferencesTopic, foodPreferencesTopicData } from "../src/features/food/food-preferences.js";
+import { mealsFeelingsSentenceBuilds, mealsFeelingsTopic, mealsFeelingsTopicData } from "../src/features/food/meals-feelings.js";
 import { introductionsBuildPhrases, introductionsGamePrompts, introductionsPractice, introductionsTopic } from "../src/features/foundations/introductions.js";
 import { ageBuildPhrases, agePractice, ageTopic } from "../src/features/foundations/age.js";
 import { identityConversation, identityCountries, identityQuestion, identityTopic } from "../src/features/foundations/identity.js";
@@ -162,17 +162,20 @@ test("school subjects owns its scenes, words, and sentence practice", () => {
 });
 
 test("food owns its scenes, words, and sentence practice", () => {
+  assert.equal(foodTopic.id, "food");
   assert.equal(foodTopicData.scenes.length, 1);
   assert.equal(foodTopicData.words.length, 27);
   assert.equal(foodSentenceBuilds.length, 2);
 });
 
 test("food preferences owns its scenes and vocabulary", () => {
+  assert.equal(foodPreferencesTopic.id, "food-preferences");
   assert.equal(foodPreferencesTopicData.scenes.length, 4);
   assert.equal(foodPreferencesTopicData.words.length, 4);
 });
 
 test("meals and feelings owns its scenes and practice activities", () => {
+  assert.equal(mealsFeelingsTopic.id, "meals-feelings");
   assert.equal(mealsFeelingsTopicData.sceneGroups.length, 2);
   assert.equal(mealsFeelingsTopicData.conversationPairs.length, 6);
   assert.equal(mealsFeelingsTopicData.pictureChoices.length, 6);

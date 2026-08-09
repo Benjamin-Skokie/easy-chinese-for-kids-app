@@ -12,9 +12,9 @@ import { schoolSuppliesSentenceBuilds, schoolSuppliesTopicData } from "./feature
 import { classroomTopicData } from "./features/school-life/classroom.js";
 import { schoolSentenceBuilds as schoolLessonSentenceBuilds, schoolTopicData as schoolLessonTopicData } from "./features/school-life/school.js";
 import { schoolSubjectsSentenceBuilds as schoolLessonSubjectsSentenceBuilds, schoolSubjectsTopicData } from "./features/school-life/school-subjects.js";
-import { foodSentenceBuilds, foodTopicData } from "./features/food/food.js";
-import { foodPreferencesTopicData } from "./features/food/food-preferences.js";
-import { mealsFeelingsSentenceBuilds as mealsFeelingsLessonSentenceBuilds, mealsFeelingsTopicData } from "./features/food/meals-feelings.js";
+import { foodSentenceBuilds, foodTopic, foodTopicData } from "./features/food/food.js";
+import { foodPreferencesTopic, foodPreferencesTopicData } from "./features/food/food-preferences.js";
+import { mealsFeelingsSentenceBuilds as mealsFeelingsLessonSentenceBuilds, mealsFeelingsTopic, mealsFeelingsTopicData } from "./features/food/meals-feelings.js";
 import { introductionsBuildPhrases, introductionsGamePrompts, introductionsPractice, introductionsTopic } from "./features/foundations/introductions.js";
 import { ageBuildPhrases, agePractice, ageTopic } from "./features/foundations/age.js";
 import { politeGameItemIds, politePractice, politeWordsTopic } from "./features/foundations/polite-words.js";
@@ -80,72 +80,9 @@ const topicData = [
   bodyTopic,
   animalsTopic,
   coloursTopic,
-  {
-    id: "food",
-    title: "Food & Drinks",
-    summary: "Name food and drinks, from fruit and vegetables to snacks and everyday meals.",
-    progressLabel: "1B to 3B",
-    iconText: "水果",
-    iconColor: "#c48d46",
-    focus: {
-      hanzi: "我吃苹果，喝牛奶。",
-      pinyin: "wǒ chī píng guǒ, hē niú nǎi.",
-      english: "I eat apples and drink milk.",
-      audio: "我吃苹果喝牛奶"
-    },
-    interactiveScene: "food-scenes",
-    parentGuide:
-      "This is one of the easiest topics to make real. Use snack time, lunch, and shopping to repeat words naturally.",
-    cultureGuide:
-      "Food is a great place to add extra content later: dumplings, mooncakes, zòngzi, fruit names, and meal routines.",
-    activities: ["Tap to hear", "Name the food", "Match the words", "Build a sentence"],
-    steps: [
-      { book: "1B", lesson: 7, title: "Fruit", note: "Begin with highly visual food words." },
-      { book: "2B", lesson: 7, title: "Snacks", note: "Add everyday treat vocabulary." },
-      { book: "3B", lesson: 6, title: "Vegetables", note: "Extend the category." }
-    ]
-  },
-  {
-    id: "food-preferences",
-    title: "Food Preferences",
-    summary: "Ask what someone likes to eat and say what you like or do not like.",
-    progressLabel: "3B Lesson 5",
-    iconText: "喜欢",
-    iconColor: "#c48d46",
-    focus: {
-      hanzi: "你喜欢吃什么？",
-      pinyin: "nǐ xǐ huan chī shén me?",
-      english: "What do you like to eat?",
-      audio: "你喜欢吃什么"
-    },
-    interactiveScene: "food-preferences",
-    parentGuide: "Ask 你喜欢吃什么？, then let your child answer with one food they like or do not like.",
-    cultureGuide: "喜欢吃 and 不喜欢吃 make it easy to share a real preference at a meal or snack time.",
-    activities: ["Play scenes", "Say a preference", "Listen and choose", "Build a sentence"],
-    steps: [{ book: "3B", lesson: 5, title: "Food and drink", note: "Talk about foods and drinks you like." }]
-  },
-  {
-    id: "meals-feelings",
-    title: "Meals & Feelings",
-    summary: "Talk about lunch and say when you are hungry or thirsty.",
-    progressLabel: "4A Lessons 5 and 7",
-    iconText: "午饭",
-    iconColor: "#c48d46",
-    focus: {
-      hanzi: "我午饭喝了牛奶，吃了披萨。",
-      pinyin: "wǒ wǔ fàn hē le niú nǎi, chī le pī sà.",
-      english: "For lunch, I drank milk and ate pizza.",
-      audio: "我午饭喝了牛奶吃了披萨"
-    },
-    interactiveScene: "meals-feelings",
-    parentGuide: "Use lunch or snack time to ask whether your child is hungry or thirsty, then say what they eat or drink.",
-    cultureGuide: "Meals and feelings connect simple food words to a useful everyday situation.",
-    activities: ["Play scenes", "Talk about lunch", "Listen and choose", "Build a sentence"],
-    steps: [
-      { book: "4A", lesson: 5, title: "My lunch", note: "Say what you eat and drink for lunch." },
-      { book: "4A", lesson: 7, title: "I'm hungry", note: "Say when you are hungry or thirsty." }
-    ]
-  },
+  foodTopic,
+  foodPreferencesTopic,
+  mealsFeelingsTopic,
   {
     id: "time-date",
     title: "Time & Routines",

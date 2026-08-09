@@ -1,3 +1,22 @@
+export const foodTopic = {
+    id: "food",
+    title: "Food & Drinks",
+    summary: "Name food and drinks, from fruit and vegetables to snacks and everyday meals.",
+    progressLabel: "1B to 3B",
+    iconText: "水果",
+    iconColor: "#c48d46",
+    focus: { hanzi: "我吃苹果，喝牛奶。", pinyin: "wǒ chī píng guǒ, hē niú nǎi.", english: "I eat apples and drink milk.", audio: "我吃苹果喝牛奶" },
+    interactiveScene: "food-scenes",
+    parentGuide: "This is one of the easiest topics to make real. Use snack time, lunch, and shopping to repeat words naturally.",
+    cultureGuide: "Food is a great place to add extra content later: dumplings, mooncakes, zòngzi, fruit names, and meal routines.",
+    activities: ["Tap to hear", "Name the food", "Match the words", "Build a sentence"],
+    steps: [
+      { book: "1B", lesson: 7, title: "Fruit", note: "Begin with highly visual food words." },
+      { book: "2B", lesson: 7, title: "Snacks", note: "Add everyday treat vocabulary." },
+      { book: "3B", lesson: 6, title: "Vegetables", note: "Extend the category." }
+    ]
+  };
+
 export const foodTopicData = {
     practiceSummary: "Listen for a food word, then build a sentence from the picture.",
     scenes: [

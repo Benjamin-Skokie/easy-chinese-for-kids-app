@@ -1,3 +1,21 @@
+export const mealsFeelingsTopic = {
+    id: "meals-feelings",
+    title: "Meals & Feelings",
+    summary: "Talk about lunch and say when you are hungry or thirsty.",
+    progressLabel: "4A Lessons 5 and 7",
+    iconText: "午饭",
+    iconColor: "#c48d46",
+    focus: { hanzi: "我午饭喝了牛奶，吃了披萨。", pinyin: "wǒ wǔ fàn hē le niú nǎi, chī le pī sà.", english: "For lunch, I drank milk and ate pizza.", audio: "我午饭喝了牛奶吃了披萨" },
+    interactiveScene: "meals-feelings",
+    parentGuide: "Use lunch or snack time to ask whether your child is hungry or thirsty, then say what they eat or drink.",
+    cultureGuide: "Meals and feelings connect simple food words to a useful everyday situation.",
+    activities: ["Play scenes", "Talk about lunch", "Listen and choose", "Build a sentence"],
+    steps: [
+      { book: "4A", lesson: 5, title: "My lunch", note: "Say what you eat and drink for lunch." },
+      { book: "4A", lesson: 7, title: "I'm hungry", note: "Say when you are hungry or thirsty." }
+    ]
+  };
+
 export const mealsFeelingsTopicData = {
     practiceSummary: "Match the first line of each food conversation to its reply.",
     sceneGroups: [
