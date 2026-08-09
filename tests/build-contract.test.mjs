@@ -14,6 +14,7 @@ import { stationeryPictureMatchRounds, stationerySentenceBuilds, stationeryTopic
 import { schoolSuppliesSentenceBuilds, schoolSuppliesTopicData } from "../src/features/school-life/school-supplies.js";
 import { classroomTopicData } from "../src/features/school-life/classroom.js";
 import { schoolSentenceBuilds, schoolTopicData } from "../src/features/school-life/school.js";
+import { schoolSubjectsSentenceBuilds, schoolSubjectsTopicData } from "../src/features/school-life/school-subjects.js";
 
 test("the local page loads a single bundled application script", () => {
   const html = readFileSync("index.html", "utf8");
@@ -117,4 +118,10 @@ test("school owns its scenes, words, and sentence practice", () => {
   assert.equal(schoolTopicData.scenes.length, 7);
   assert.equal(schoolTopicData.words.length, 7);
   assert.equal(schoolSentenceBuilds.length, 7);
+});
+
+test("school subjects owns its scenes, words, and sentence practice", () => {
+  assert.equal(schoolSubjectsTopicData.scenes.length, 6);
+  assert.equal(schoolSubjectsTopicData.words.length, 6);
+  assert.equal(schoolSubjectsSentenceBuilds.length, 6);
 });

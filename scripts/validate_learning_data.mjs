@@ -11,6 +11,7 @@ import { stationeryPictureMatchRounds, stationerySentenceBuilds, stationeryTopic
 import { schoolSuppliesSentenceBuilds, schoolSuppliesTopicData } from "../src/features/school-life/school-supplies.js";
 import { classroomTopicData } from "../src/features/school-life/classroom.js";
 import { schoolSentenceBuilds, schoolTopicData } from "../src/features/school-life/school.js";
+import { schoolSubjectsSentenceBuilds, schoolSubjectsTopicData } from "../src/features/school-life/school-subjects.js";
 
 const errors = [];
 
@@ -69,6 +70,13 @@ for (const [label, items] of [
   items.forEach((item) => assertAsset(item, `${label}:${item.id}`));
 }
 
+for (const [label, items] of [
+  ["school subjects scene", schoolSubjectsTopicData.scenes],
+  ["school subjects sentence", schoolSubjectsSentenceBuilds]
+]) {
+  items.forEach((item) => assertAsset(item, `${label}:${item.id}`));
+}
+
 const transportIds = new Set(transportVisualItems.map((item) => item.id));
 Object.keys(transportSentenceTokens).forEach((id) => assert(transportIds.has(id), `transport token entry has no visual: ${id}`));
 transportIds.forEach((id) => assert(transportSentenceTokens[id], `transport visual has no sentence tokens: ${id}`));
@@ -81,6 +89,8 @@ assert(stationerySentenceBuilds.length >= 8, "stationery sentence practice is in
 assert(schoolSuppliesSentenceBuilds.length >= 6, "school supplies sentence practice is incomplete");
 assert(classroomTopicData.sentenceFrames.length === 3, "classroom sentence frames are incomplete");
 assert(schoolSentenceBuilds.length === 7, "school sentence practice is incomplete");
+assert(schoolSubjectsTopicData.words.length === 6, "school subjects word set is incomplete");
+assert(schoolSubjectsSentenceBuilds.length === 6, "school subjects sentence practice is incomplete");
 
 if (errors.length) {
   console.error(errors.join("\n"));

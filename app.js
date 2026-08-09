@@ -561,6 +561,82 @@
     { id: "music-room-piano", imagePath: "assets/illustrated-school-anchors/piano_anchor.webp", target: ["\u97F3\u4E50\u6559\u5BA4", "\u6709", "\u94A2\u7434"], distractors: ["\u6587\u5177\u76D2", "\u91CC", "\u559C\u6B22"], pinyin: "y\u012Bn yu\xE8 ji\xE0o sh\xEC y\u01D2u g\u0101ng q\xEDn.", english: "The music room has a piano.", audio: "\u97F3\u4E50\u6559\u5BA4\u6709\u94A2\u7434" }
   ];
 
+  // src/features/school-life/school-subjects.js
+  var schoolSubjectsTopicData = {
+    scenes: [
+      {
+        id: "subjects",
+        label: "School subjects",
+        hanzi: "\u6211\u559C\u6B22\u97F3\u4E50\u8BFE\u3002\u4F60\u559C\u6B22\u4EC0\u4E48\u8BFE\uFF1F",
+        pinyin: "w\u01D2 x\u01D0 huan y\u012Bn yu\xE8 k\xE8. n\u01D0 x\u01D0 huan sh\xE9n me k\xE8?",
+        english: "I like music class. What class do you like?",
+        audio: "\u6211\u559C\u6B22\u97F3\u6708\u8BFE\u4F60\u559C\u6B22\u4EC0\u4E48\u8BFE",
+        imagePath: "assets/illustrated-school-subjects/subjects-dialogue.webp"
+      },
+      {
+        id: "go-to-music",
+        label: "Music class",
+        hanzi: "\u6211\u53BB\u4E0A\u97F3\u4E50\u8BFE\u3002",
+        pinyin: "w\u01D2 q\xF9 sh\xE0ng y\u012Bn yu\xE8 k\xE8.",
+        english: "I am going to music class.",
+        audio: "\u6211\u53BB\u4E0A\u97F3\u6708\u8BFE",
+        imagePath: "assets/illustrated-activities/anan_go_to_music_class.webp"
+      },
+      {
+        id: "in-music",
+        label: "Music class",
+        hanzi: "\u6211\u5728\u4E0A\u97F3\u4E50\u8BFE\u3002",
+        pinyin: "w\u01D2 z\xE0i sh\xE0ng y\u012Bn yu\xE8 k\xE8.",
+        english: "I am in music class.",
+        audio: "\u6211\u5728\u4E0A\u97F3\u6708\u8BFE",
+        imagePath: "assets/illustrated-activities/anan_in_music_class.webp"
+      },
+      {
+        id: "likes-music",
+        label: "Music class",
+        hanzi: "\u6211\u559C\u6B22\u97F3\u4E50\u8BFE\u3002",
+        pinyin: "w\u01D2 x\u01D0 huan y\u012Bn yu\xE8 k\xE8.",
+        english: "I like music class.",
+        audio: "\u6211\u559C\u6B22\u97F3\u6708\u8BFE",
+        imagePath: "assets/illustrated-activities/anan_likes_music_class.webp"
+      },
+      {
+        id: "likes-pe",
+        label: "PE class",
+        hanzi: "\u6211\u559C\u6B22\u4F53\u80B2\u8BFE\u3002",
+        pinyin: "w\u01D2 x\u01D0 huan t\u01D0 y\xF9 k\xE8.",
+        english: "I like PE class.",
+        audio: "\u6211\u559C\u6B22\u4F53\u80B2\u8BFE",
+        imagePath: "assets/illustrated-activities/yangyang_likes_pe_class.webp"
+      },
+      {
+        id: "dislikes-math",
+        label: "Math class",
+        hanzi: "\u6211\u4E0D\u559C\u6B22\u6570\u5B66\u8BFE\u3002",
+        pinyin: "w\u01D2 b\xF9 x\u01D0 huan sh\xF9 xu\xE9 k\xE8.",
+        english: "I do not like math class.",
+        audio: "\u6211\u4E0D\u559C\u6B22\u6570\u5B66\u8BFE",
+        imagePath: "assets/illustrated-activities/lele_dislikes_math_class.webp"
+      }
+    ],
+    words: [
+      ["chinese", "\u8BED\u6587\u8BFE", "y\u01D4 w\xE9n k\xE8", "Chinese class"],
+      ["english", "\u82F1\u8BED\u8BFE", "y\u012Bng y\u01D4 k\xE8", "English class"],
+      ["math", "\u6570\u5B66\u8BFE", "sh\xF9 xu\xE9 k\xE8", "math class"],
+      ["music", "\u97F3\u4E50\u8BFE", "y\u012Bn yu\xE8 k\xE8", "music class"],
+      ["art", "\u7F8E\u672F\u8BFE", "m\u011Bi sh\xF9 k\xE8", "art class"],
+      ["pe", "\u4F53\u80B2\u8BFE", "t\u01D0 y\xF9 k\xE8", "PE class"]
+    ].map(([id, hanzi, pinyin, english]) => ({ id, hanzi, pinyin, english, audio: id === "music" ? "\u97F3\u6708\u8BFE" : hanzi }))
+  };
+  var schoolSubjectsSentenceBuilds = [
+    { id: "ask-favorite", imagePath: "assets/illustrated-school-subjects/subjects-dialogue.webp", target: ["\u4F60", "\u559C\u6B22", "\u4EC0\u4E48", "\u8BFE"], distractors: ["\u5B66\u6821", "\u6709", "\u56FE\u4E66\u9986"], pinyin: "n\u01D0 x\u01D0 huan sh\xE9n me k\xE8?", english: "What class do you like?" },
+    { id: "go-music", imagePath: "assets/illustrated-activities/anan_go_to_music_class.webp", target: ["\u6211", "\u53BB", "\u4E0A", "\u97F3\u4E50\u8BFE"], distractors: ["\u5B66\u6821", "\u6709", "\u56FE\u4E66\u9986"], pinyin: "w\u01D2 q\xF9 sh\xE0ng y\u012Bn yu\xE8 k\xE8.", english: "I go to music class.", audio: "\u6211\u53BB\u4E0A\u97F3\u6708\u8BFE" },
+    { id: "in-music", imagePath: "assets/illustrated-activities/anan_in_music_class.webp", target: ["\u6211", "\u5728", "\u4E0A", "\u97F3\u4E50\u8BFE"], distractors: ["\u5B66\u6821", "\u6709", "\u56FE\u4E66\u9986"], pinyin: "w\u01D2 z\xE0i sh\xE0ng y\u012Bn yu\xE8 k\xE8.", english: "I am in music class.", audio: "\u6211\u5728\u4E0A\u97F3\u6708\u8BFE" },
+    { id: "music", imagePath: "assets/illustrated-activities/anan_likes_music_class.webp", target: ["\u6211", "\u559C\u6B22", "\u97F3\u4E50\u8BFE"], distractors: ["\u5B66\u6821", "\u6709", "\u56FE\u4E66\u9986"], pinyin: "w\u01D2 x\u01D0 huan y\u012Bn yu\xE8 k\xE8.", english: "I like music class.", audio: "\u6211\u559C\u6B22\u97F3\u6708\u8BFE" },
+    { id: "pe", imagePath: "assets/illustrated-activities/yangyang_likes_pe_class.webp", target: ["\u6211", "\u559C\u6B22", "\u4F53\u80B2\u8BFE"], distractors: ["\u5B66\u6821", "\u6709", "\u6587\u5177\u76D2"], pinyin: "w\u01D2 x\u01D0 huan t\u01D0 y\xF9 k\xE8.", english: "I like PE class." },
+    { id: "dislikes-math", imagePath: "assets/illustrated-activities/lele_dislikes_math_class.webp", target: ["\u6211", "\u4E0D\u559C\u6B22", "\u6570\u5B66\u8BFE"], distractors: ["\u5B66\u6821", "\u6709", "\u6587\u5177\u76D2"], pinyin: "w\u01D2 b\xF9 x\u01D0 huan sh\xF9 xu\xE9 k\xE8.", english: "I do not like math class." }
+  ];
+
   // src/games/shared-lesson-practice.js
   function createSharedLessonPractice({ state: state2, speak: speak2, elements, documentRef = document }) {
     const { activityPanelTitle: activityPanelTitle2, activityPanelSummary: activityPanelSummary2, activityList: activityList2 } = elements;
@@ -1744,72 +1820,7 @@
     "school-supplies": schoolSuppliesTopicData,
     classroom: classroomTopicData,
     school: schoolTopicData,
-    "school-subjects": {
-      scenes: [
-        {
-          id: "subjects",
-          label: "School subjects",
-          hanzi: "\u6211\u559C\u6B22\u97F3\u4E50\u8BFE\u3002\u4F60\u559C\u6B22\u4EC0\u4E48\u8BFE\uFF1F",
-          pinyin: "w\u01D2 x\u01D0 huan y\u012Bn yu\xE8 k\xE8. n\u01D0 x\u01D0 huan sh\xE9n me k\xE8?",
-          english: "I like music class. What class do you like?",
-          audio: "\u6211\u559C\u6B22\u97F3\u6708\u8BFE\u4F60\u559C\u6B22\u4EC0\u4E48\u8BFE",
-          imagePath: "assets/illustrated-school-subjects/subjects-dialogue.webp"
-        },
-        {
-          id: "go-to-music",
-          label: "Music class",
-          hanzi: "\u6211\u53BB\u4E0A\u97F3\u4E50\u8BFE\u3002",
-          pinyin: "w\u01D2 q\xF9 sh\xE0ng y\u012Bn yu\xE8 k\xE8.",
-          english: "I am going to music class.",
-          audio: "\u6211\u53BB\u4E0A\u97F3\u6708\u8BFE",
-          imagePath: "assets/illustrated-activities/anan_go_to_music_class.webp"
-        },
-        {
-          id: "in-music",
-          label: "Music class",
-          hanzi: "\u6211\u5728\u4E0A\u97F3\u4E50\u8BFE\u3002",
-          pinyin: "w\u01D2 z\xE0i sh\xE0ng y\u012Bn yu\xE8 k\xE8.",
-          english: "I am in music class.",
-          audio: "\u6211\u5728\u4E0A\u97F3\u6708\u8BFE",
-          imagePath: "assets/illustrated-activities/anan_in_music_class.webp"
-        },
-        {
-          id: "likes-music",
-          label: "Music class",
-          hanzi: "\u6211\u559C\u6B22\u97F3\u4E50\u8BFE\u3002",
-          pinyin: "w\u01D2 x\u01D0 huan y\u012Bn yu\xE8 k\xE8.",
-          english: "I like music class.",
-          audio: "\u6211\u559C\u6B22\u97F3\u6708\u8BFE",
-          imagePath: "assets/illustrated-activities/anan_likes_music_class.webp"
-        },
-        {
-          id: "likes-pe",
-          label: "PE class",
-          hanzi: "\u6211\u559C\u6B22\u4F53\u80B2\u8BFE\u3002",
-          pinyin: "w\u01D2 x\u01D0 huan t\u01D0 y\xF9 k\xE8.",
-          english: "I like PE class.",
-          audio: "\u6211\u559C\u6B22\u4F53\u80B2\u8BFE",
-          imagePath: "assets/illustrated-activities/yangyang_likes_pe_class.webp"
-        },
-        {
-          id: "dislikes-math",
-          label: "Math class",
-          hanzi: "\u6211\u4E0D\u559C\u6B22\u6570\u5B66\u8BFE\u3002",
-          pinyin: "w\u01D2 b\xF9 x\u01D0 huan sh\xF9 xu\xE9 k\xE8.",
-          english: "I do not like math class.",
-          audio: "\u6211\u4E0D\u559C\u6B22\u6570\u5B66\u8BFE",
-          imagePath: "assets/illustrated-activities/lele_dislikes_math_class.webp"
-        }
-      ],
-      words: [
-        ["chinese", "\u8BED\u6587\u8BFE", "y\u01D4 w\xE9n k\xE8", "Chinese class"],
-        ["english", "\u82F1\u8BED\u8BFE", "y\u012Bng y\u01D4 k\xE8", "English class"],
-        ["math", "\u6570\u5B66\u8BFE", "sh\xF9 xu\xE9 k\xE8", "math class"],
-        ["music", "\u97F3\u4E50\u8BFE", "y\u012Bn yu\xE8 k\xE8", "music class"],
-        ["art", "\u7F8E\u672F\u8BFE", "m\u011Bi sh\xF9 k\xE8", "art class"],
-        ["pe", "\u4F53\u80B2\u8BFE", "t\u01D0 y\xF9 k\xE8", "PE class"]
-      ].map(([id, hanzi, pinyin, english]) => ({ id, hanzi, pinyin, english, audio: id === "music" ? "\u97F3\u6708\u8BFE" : hanzi }))
-    },
+    "school-subjects": schoolSubjectsTopicData,
     food: {
       practiceSummary: "Listen for a food word, then build a sentence from the picture.",
       scenes: [
@@ -2052,14 +2063,7 @@
     stationery: stationerySentenceBuilds,
     "school-supplies": schoolSuppliesSentenceBuilds,
     school: schoolSentenceBuilds,
-    "school-subjects": [
-      { id: "ask-favorite", imagePath: "assets/illustrated-school-subjects/subjects-dialogue.webp", target: ["\u4F60", "\u559C\u6B22", "\u4EC0\u4E48", "\u8BFE"], distractors: ["\u5B66\u6821", "\u6709", "\u56FE\u4E66\u9986"], pinyin: "n\u01D0 x\u01D0 huan sh\xE9n me k\xE8?", english: "What class do you like?" },
-      { id: "go-music", imagePath: "assets/illustrated-activities/anan_go_to_music_class.webp", target: ["\u6211", "\u53BB", "\u4E0A", "\u97F3\u4E50\u8BFE"], distractors: ["\u5B66\u6821", "\u6709", "\u56FE\u4E66\u9986"], pinyin: "w\u01D2 q\xF9 sh\xE0ng y\u012Bn yu\xE8 k\xE8.", english: "I go to music class.", audio: "\u6211\u53BB\u4E0A\u97F3\u6708\u8BFE" },
-      { id: "in-music", imagePath: "assets/illustrated-activities/anan_in_music_class.webp", target: ["\u6211", "\u5728", "\u4E0A", "\u97F3\u4E50\u8BFE"], distractors: ["\u5B66\u6821", "\u6709", "\u56FE\u4E66\u9986"], pinyin: "w\u01D2 z\xE0i sh\xE0ng y\u012Bn yu\xE8 k\xE8.", english: "I am in music class.", audio: "\u6211\u5728\u4E0A\u97F3\u6708\u8BFE" },
-      { id: "music", imagePath: "assets/illustrated-activities/anan_likes_music_class.webp", target: ["\u6211", "\u559C\u6B22", "\u97F3\u4E50\u8BFE"], distractors: ["\u5B66\u6821", "\u6709", "\u56FE\u4E66\u9986"], pinyin: "w\u01D2 x\u01D0 huan y\u012Bn yu\xE8 k\xE8.", english: "I like music class.", audio: "\u6211\u559C\u6B22\u97F3\u6708\u8BFE" },
-      { id: "pe", imagePath: "assets/illustrated-activities/yangyang_likes_pe_class.webp", target: ["\u6211", "\u559C\u6B22", "\u4F53\u80B2\u8BFE"], distractors: ["\u5B66\u6821", "\u6709", "\u6587\u5177\u76D2"], pinyin: "w\u01D2 x\u01D0 huan t\u01D0 y\xF9 k\xE8.", english: "I like PE class." },
-      { id: "dislikes-math", imagePath: "assets/illustrated-activities/lele_dislikes_math_class.webp", target: ["\u6211", "\u4E0D\u559C\u6B22", "\u6570\u5B66\u8BFE"], distractors: ["\u5B66\u6821", "\u6709", "\u6587\u5177\u76D2"], pinyin: "w\u01D2 b\xF9 x\u01D0 huan sh\xF9 xu\xE9 k\xE8.", english: "I do not like math class." }
-    ],
+    "school-subjects": schoolSubjectsSentenceBuilds,
     food: [
       { id: "fruit", imagePath: "assets/illustrated-food/fruit-group-1b-core.webp", target: ["\u6211", "\u5403", "\u82F9\u679C"], distractors: ["\u559D", "\u5B66\u6821", "\u6559\u5BA4"], pinyin: "w\u01D2 ch\u012B p\xEDng gu\u01D2.", english: "I eat an apple." },
       { id: "milk", imagePath: "assets/illustrated-food/milk.webp", target: ["\u6211", "\u559D", "\u725B\u5976"], distractors: ["\u5403", "\u5B66\u6821", "\u6559\u5BA4"], pinyin: "w\u01D2 h\u0113 ni\xFA n\u01CEi.", english: "I drink milk." }
