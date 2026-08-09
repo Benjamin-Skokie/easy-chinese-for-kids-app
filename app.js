@@ -1434,6 +1434,46 @@
     "younger-sister-word": "assets/illustrated-family/family-avatar-younger-sister.webp"
   };
 
+  // src/features/daily-life/clothes.js
+  var clothesTopic = {
+    id: "clothes",
+    title: "Clothes",
+    summary: "A concrete everyday topic that can grow from basic words into dressing and weather use.",
+    progressLabel: "2A to 4B",
+    iconText: "\u8863\u670D",
+    iconColor: "#9c7b4f",
+    focus: { hanzi: "\u6211\u4F1A\u7A7F\u8863\u670D\u3002", pinyin: "w\u01D2 hu\xEC chu\u0101n y\u012B fu.", english: "I can get dressed.", audio: "\u6211\u4F1A\u7A7F\u8863\u670D" },
+    focusItems: [
+      { id: "shirt", hanzi: "T\u6064", pinyin: "T x\xF9", english: "T-shirt", audio: "T\u6064" },
+      { id: "pants", hanzi: "\u88E4\u5B50", pinyin: "k\xF9 zi", english: "trousers; pants", audio: "\u88E4\u5B50" },
+      { id: "dress", hanzi: "\u88D9\u5B50", pinyin: "q\xFAn zi", english: "dress; skirt", audio: "\u88D9\u5B50" },
+      { id: "shoes", hanzi: "\u978B\u5B50", pinyin: "xi\xE9 zi", english: "shoes", audio: "\u978B\u5B50" },
+      { id: "hat", hanzi: "\u5E3D\u5B50", pinyin: "m\xE0o zi", english: "hat", audio: "\u5E3D\u5B50" },
+      { id: "jacket", hanzi: "\u5916\u5957", pinyin: "w\xE0i t\xE0o", english: "jacket; coat", audio: "\u5916\u5957" },
+      { id: "gloves", hanzi: "\u624B\u5957", pinyin: "sh\u01D2u t\xE0o", english: "gloves", audio: "\u624B\u5957" }
+    ],
+    interactiveScene: "clothes-scenes",
+    parentGuide: "Use getting dressed as the practice moment. Repeating the words during a real routine makes them stick.",
+    cultureGuide: "Clothes can later connect to colours, weather, and festival dress without needing a lot of extra explanation.",
+    activities: ["Tap to hear", "Match the clothing", "Dress for the weather", "Listen and choose"],
+    steps: [
+      { book: "2A", lesson: 6, title: "I can dress myself", note: "Start with dressing language." },
+      { book: "3A", lesson: 7, title: "Clothes", note: "Build a fuller clothing set." },
+      { book: "4B", lesson: 2, title: "Clothes", note: "Reconnect clothing with weather and daily life." }
+    ]
+  };
+  var clothesPractice = [
+    { id: "clothes-scene-1", number: "1", prompt: "Getting dressed for the day", imagePath: "assets/illustrated-clothes/wearing-clothes-scene.webp", imageAlt: "A child getting dressed beside a clothes rack and mirror", lines: [{ hanzi: "\u6211\u4F1A\u7A7F\u8863\u670D\u3002", pinyin: "w\u01D2 hu\xEC chu\u0101n y\u012B fu.", english: "I can get dressed.", audio: "\u6211\u4F1A\u7A7F\u8863\u670D" }, { hanzi: "\u6211\u7A7FT\u6064\u548C\u88E4\u5B50\u3002", pinyin: "w\u01D2 chu\u0101n T x\xF9 h\xE9 k\xF9 zi.", english: "I wear a T-shirt and trousers.", audio: "\u6211\u7A7FT\u6064\u548C\u88E4\u5B50" }] },
+    { id: "clothes-scene-2", number: "2", prompt: "Choosing clothes for rainy weather", imagePath: "assets/illustrated-clothes/weather-linked-clothing-scene.webp", imageAlt: "A child choosing a raincoat by a rainy window", lines: [{ hanzi: "\u4E0B\u96E8\u4E86\u3002", pinyin: "xi\xE0 y\u01D4 le.", english: "It is raining.", audio: "\u4E0B\u96E8\u4E86" }, { hanzi: "\u6211\u7A7F\u96E8\u8863\u548C\u96E8\u978B\u3002", pinyin: "w\u01D2 chu\u0101n y\u01D4 y\u012B h\xE9 y\u01D4 xi\xE9.", english: "I wear a raincoat and rain boots.", audio: "\u6211\u7A7F\u96E8\u8863\u548C\u96E8\u978B" }] }
+  ];
+  var clothesMatchItems = [
+    { id: "shoes", hanzi: "\u978B\u5B50", pinyin: "xi\xE9 zi", english: "shoes", audio: "\u978B\u5B50", imagePath: "assets/illustrated-self-dressing/putting-on-shoes.webp", imageAlt: "A child putting on shoes" },
+    { id: "socks", hanzi: "\u889C\u5B50", pinyin: "w\xE0 zi", english: "socks", audio: "\u889C\u5B50", imagePath: "assets/illustrated-self-dressing/putting-on-socks.webp", imageAlt: "A child putting on socks" },
+    { id: "jacket", hanzi: "\u5916\u5957", pinyin: "w\xE0i t\xE0o", english: "jacket", audio: "\u5916\u5957", imagePath: "assets/illustrated-self-dressing/putting-on-jacket.webp", imageAlt: "A child putting on a jacket" },
+    { id: "hat", hanzi: "\u5E3D\u5B50", pinyin: "m\xE0o zi", english: "hat", audio: "\u5E3D\u5B50", imagePath: "assets/illustrated-self-dressing/putting-on-hat.webp", imageAlt: "A child putting on a hat" },
+    { id: "school-uniform", hanzi: "\u6821\u670D", pinyin: "xi\xE0o f\xFA", english: "school uniform", audio: "\u6821\u670D", imagePath: "assets/illustrated-self-dressing/putting-on-school-uniform.webp", imageAlt: "A child putting on a school uniform" }
+  ];
+
   // src/games/shared-lesson-practice.js
   function createSharedLessonPractice({ state: state2, speak: speak2, elements, documentRef = document }) {
     const { activityPanelTitle: activityPanelTitle2, activityPanelSummary: activityPanelSummary2, activityList: activityList2 } = elements;
@@ -2101,38 +2141,7 @@
       activities: ["Tap to hear", "Find the toy", "Listen and choose", "Sort toys and vehicles"],
       steps: [{ book: "2A", lesson: 4, title: "My toys", note: "Learn a core toy set with familiar child-friendly objects." }]
     },
-    {
-      id: "clothes",
-      title: "Clothes",
-      summary: "A concrete everyday topic that can grow from basic words into dressing and weather use.",
-      progressLabel: "2A to 4B",
-      iconText: "\u8863\u670D",
-      iconColor: "#9c7b4f",
-      focus: {
-        hanzi: "\u6211\u4F1A\u7A7F\u8863\u670D\u3002",
-        pinyin: "w\u01D2 hu\xEC chu\u0101n y\u012B fu.",
-        english: "I can get dressed.",
-        audio: "\u6211\u4F1A\u7A7F\u8863\u670D"
-      },
-      focusItems: [
-        { id: "shirt", hanzi: "T\u6064", pinyin: "T x\xF9", english: "T-shirt", audio: "T\u6064" },
-        { id: "pants", hanzi: "\u88E4\u5B50", pinyin: "k\xF9 zi", english: "trousers; pants", audio: "\u88E4\u5B50" },
-        { id: "dress", hanzi: "\u88D9\u5B50", pinyin: "q\xFAn zi", english: "dress; skirt", audio: "\u88D9\u5B50" },
-        { id: "shoes", hanzi: "\u978B\u5B50", pinyin: "xi\xE9 zi", english: "shoes", audio: "\u978B\u5B50" },
-        { id: "hat", hanzi: "\u5E3D\u5B50", pinyin: "m\xE0o zi", english: "hat", audio: "\u5E3D\u5B50" },
-        { id: "jacket", hanzi: "\u5916\u5957", pinyin: "w\xE0i t\xE0o", english: "jacket; coat", audio: "\u5916\u5957" },
-        { id: "gloves", hanzi: "\u624B\u5957", pinyin: "sh\u01D2u t\xE0o", english: "gloves", audio: "\u624B\u5957" }
-      ],
-      interactiveScene: "clothes-scenes",
-      parentGuide: "Use getting dressed as the practice moment. Repeating the words during a real routine makes them stick.",
-      cultureGuide: "Clothes can later connect to colours, weather, and festival dress without needing a lot of extra explanation.",
-      activities: ["Tap to hear", "Match the clothing", "Dress for the weather", "Listen and choose"],
-      steps: [
-        { book: "2A", lesson: 6, title: "I can dress myself", note: "Start with dressing language." },
-        { book: "3A", lesson: 7, title: "Clothes", note: "Build a fuller clothing set." },
-        { book: "4B", lesson: 2, title: "Clothes", note: "Reconnect clothing with weather and daily life." }
-      ]
-    },
+    clothesTopic,
     {
       id: "daily-life",
       title: "My Home",
@@ -2370,37 +2379,6 @@
     food: foodSentenceBuilds,
     "meals-feelings": mealsFeelingsSentenceBuilds
   };
-  var clothesPractice = [
-    {
-      id: "clothes-scene-1",
-      number: "1",
-      prompt: "Getting dressed for the day",
-      imagePath: "assets/illustrated-clothes/wearing-clothes-scene.webp",
-      imageAlt: "A child getting dressed beside a clothes rack and mirror",
-      lines: [
-        { hanzi: "\u6211\u4F1A\u7A7F\u8863\u670D\u3002", pinyin: "w\u01D2 hu\xEC chu\u0101n y\u012B fu.", english: "I can get dressed.", audio: "\u6211\u4F1A\u7A7F\u8863\u670D" },
-        { hanzi: "\u6211\u7A7FT\u6064\u548C\u88E4\u5B50\u3002", pinyin: "w\u01D2 chu\u0101n T x\xF9 h\xE9 k\xF9 zi.", english: "I wear a T-shirt and trousers.", audio: "\u6211\u7A7FT\u6064\u548C\u88E4\u5B50" }
-      ]
-    },
-    {
-      id: "clothes-scene-2",
-      number: "2",
-      prompt: "Choosing clothes for rainy weather",
-      imagePath: "assets/illustrated-clothes/weather-linked-clothing-scene.webp",
-      imageAlt: "A child choosing a raincoat by a rainy window",
-      lines: [
-        { hanzi: "\u4E0B\u96E8\u4E86\u3002", pinyin: "xi\xE0 y\u01D4 le.", english: "It is raining.", audio: "\u4E0B\u96E8\u4E86" },
-        { hanzi: "\u6211\u7A7F\u96E8\u8863\u548C\u96E8\u978B\u3002", pinyin: "w\u01D2 chu\u0101n y\u01D4 y\u012B h\xE9 y\u01D4 xi\xE9.", english: "I wear a raincoat and rain boots.", audio: "\u6211\u7A7F\u96E8\u8863\u548C\u96E8\u978B" }
-      ]
-    }
-  ];
-  var clothesMatchItems = [
-    { id: "shoes", hanzi: "\u978B\u5B50", pinyin: "xi\xE9 zi", english: "shoes", audio: "\u978B\u5B50", imagePath: "assets/illustrated-self-dressing/putting-on-shoes.webp", imageAlt: "A child putting on shoes" },
-    { id: "socks", hanzi: "\u889C\u5B50", pinyin: "w\xE0 zi", english: "socks", audio: "\u889C\u5B50", imagePath: "assets/illustrated-self-dressing/putting-on-socks.webp", imageAlt: "A child putting on socks" },
-    { id: "jacket", hanzi: "\u5916\u5957", pinyin: "w\xE0i t\xE0o", english: "jacket", audio: "\u5916\u5957", imagePath: "assets/illustrated-self-dressing/putting-on-jacket.webp", imageAlt: "A child putting on a jacket" },
-    { id: "hat", hanzi: "\u5E3D\u5B50", pinyin: "m\xE0o zi", english: "hat", audio: "\u5E3D\u5B50", imagePath: "assets/illustrated-self-dressing/putting-on-hat.webp", imageAlt: "A child putting on a hat" },
-    { id: "school-uniform", hanzi: "\u6821\u670D", pinyin: "xi\xE0o f\xFA", english: "school uniform", audio: "\u6821\u670D", imagePath: "assets/illustrated-self-dressing/putting-on-school-uniform.webp", imageAlt: "A child putting on a school uniform" }
-  ];
   var illustratedKids = {
     lele: {
       id: "lele",

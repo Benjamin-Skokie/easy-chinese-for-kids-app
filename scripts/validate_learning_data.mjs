@@ -20,6 +20,7 @@ import { ageBuildPhrases, agePractice } from "../src/features/foundations/age.js
 import { identityConversation, identityCountries } from "../src/features/foundations/identity.js";
 import { greetingsPractice } from "../src/features/foundations/greetings.js";
 import { politePractice } from "../src/features/foundations/polite-words.js";
+import { clothesMatchItems, clothesPractice } from "../src/features/daily-life/clothes.js";
 import { familyPractice, illustratedFamily } from "../src/features/family/family.js";
 
 const errors = [];
@@ -115,6 +116,8 @@ identityCountries.forEach((item) => assertAsset({ id: item.id, imagePath: item.a
 assertAsset({ id: "conversation", imagePath: identityConversation.imagePath }, "identity conversation");
 greetingsPractice.forEach((item) => assertAsset(item, `greetings scene:${item.id}`));
 politePractice.forEach((item) => assertAsset(item, `polite scene:${item.id}`));
+clothesPractice.forEach((item) => assertAsset(item, `clothes scene:${item.id}`));
+clothesMatchItems.forEach((item) => assertAsset(item, `clothes match:${item.id}`));
 familyPractice.forEach((item) => assertAsset(item, `family scene:${item.id}`));
 Object.values(illustratedFamily).forEach((item) => assertAsset({ id: item.id, imagePath: item.path }, `family avatar:${item.id}`));
 
@@ -144,6 +147,7 @@ assert(ageBuildPhrases.length === 6, "age sentence practice is incomplete");
 assert(identityCountries.length === 3, "identity country set is incomplete");
 assert(greetingsPractice.length === 3, "greetings lesson scenes are incomplete");
 assert(politePractice.length === 3, "polite words lesson scenes are incomplete");
+assert(clothesMatchItems.length === 5, "clothes matching set is incomplete");
 assert(familyPractice.length === 2, "family lesson scenes are incomplete");
 
 if (errors.length) {

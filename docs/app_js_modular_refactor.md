@@ -64,6 +64,7 @@ A feature registers its owned topic IDs, creates its scoped state, renders its e
 - [x] Move the complete Age topic definition, scenes, and sentence-building data into `src/features/foundations/age.js`.
 - [x] Move the complete Countries & Languages topic definition, flag set, and conversation data into `src/features/foundations/identity.js`.
 - [x] Move the complete Family topic definition, scenes, avatar mappings, and matching data into `src/features/family/family.js`.
+- [x] Move the complete Clothes topic definition, scenes, and picture matching data into `src/features/daily-life/clothes.js`.
 - [x] Extract the shared Listen and Choose, Matching Game, and Say It renderer into `src/games/shared-lesson-practice.js` with explicit state, audio, and DOM dependencies.
 - [ ] Migrate School, Food, Foundations, and Family/Home.
 - [ ] Delete the matching legacy code after each replacement passes checks.
