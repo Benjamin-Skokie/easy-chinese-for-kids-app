@@ -1,3 +1,18 @@
+export const transportTopic = {
+  id: "transport",
+  title: "Transportation",
+  summary: "Talk about how people travel to school, places, and family visits.",
+  progressLabel: "4A Lesson 6",
+  iconText: "交通",
+  iconColor: "#6d8a4f",
+  focus: { hanzi: "我坐校车去动物园。", pinyin: "wǒ zuò xiào chē qù dòng wù yuán.", english: "I take the school bus to the zoo.", audio: "我坐校车去动物园" },
+  interactiveScene: "transport",
+  parentGuide: "Start with how the child actually gets to school, then use the other scenes as conversation prompts.",
+  cultureGuide: "Travel scenes make useful speaking practice because each vehicle has a clear destination and reason for the trip.",
+  activities: ["Tap to hear", "Choose the vehicle", "Talk about a trip"],
+  steps: [{ book: "4A", lesson: 6, title: "Means of transport", note: "Say how people travel." }]
+};
+
 export const transportVisualItems = [
     ["我走路去上学。", "wǒ zǒu lù qù shàng xué.", "I walk to school.", "walk-to-school.webp"],
     ["我骑自行车去上学。", "wǒ qí zì xíng chē qù shàng xué.", "I ride a bike to school.", "bike-to-school.webp"],

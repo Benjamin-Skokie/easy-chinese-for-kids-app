@@ -261,6 +261,20 @@
   var positionPracticeItems = positionScenes.flatMap((scene) => scene.lines.map((line, index) => ({ id: `${scene.id}-${index}`, ...line, imagePath: scene.imagePath, imageAlt: scene.imageAlt })));
 
   // src/features/time-daily-life/transport.js
+  var transportTopic = {
+    id: "transport",
+    title: "Transportation",
+    summary: "Talk about how people travel to school, places, and family visits.",
+    progressLabel: "4A Lesson 6",
+    iconText: "\u4EA4\u901A",
+    iconColor: "#6d8a4f",
+    focus: { hanzi: "\u6211\u5750\u6821\u8F66\u53BB\u52A8\u7269\u56ED\u3002", pinyin: "w\u01D2 zu\xF2 xi\xE0o ch\u0113 q\xF9 d\xF2ng w\xF9 yu\xE1n.", english: "I take the school bus to the zoo.", audio: "\u6211\u5750\u6821\u8F66\u53BB\u52A8\u7269\u56ED" },
+    interactiveScene: "transport",
+    parentGuide: "Start with how the child actually gets to school, then use the other scenes as conversation prompts.",
+    cultureGuide: "Travel scenes make useful speaking practice because each vehicle has a clear destination and reason for the trip.",
+    activities: ["Tap to hear", "Choose the vehicle", "Talk about a trip"],
+    steps: [{ book: "4A", lesson: 6, title: "Means of transport", note: "Say how people travel." }]
+  };
   var transportVisualItems = [
     ["\u6211\u8D70\u8DEF\u53BB\u4E0A\u5B66\u3002", "w\u01D2 z\u01D2u l\xF9 q\xF9 sh\xE0ng xu\xE9.", "I walk to school.", "walk-to-school.webp"],
     ["\u6211\u9A91\u81EA\u884C\u8F66\u53BB\u4E0A\u5B66\u3002", "w\u01D2 q\xED z\xEC x\xEDng ch\u0113 q\xF9 sh\xE0ng xu\xE9.", "I ride a bike to school.", "bike-to-school.webp"],
@@ -2187,20 +2201,7 @@
     dailyLifeTopic,
     comparisonsTopic,
     positionsTopic,
-    {
-      id: "transport",
-      title: "Transportation",
-      summary: "Talk about how people travel to school, places, and family visits.",
-      progressLabel: "4A Lesson 6",
-      iconText: "\u4EA4\u901A",
-      iconColor: "#6d8a4f",
-      focus: { hanzi: "\u6211\u5750\u6821\u8F66\u53BB\u52A8\u7269\u56ED\u3002", pinyin: "w\u01D2 zu\xF2 xi\xE0o ch\u0113 q\xF9 d\xF2ng w\xF9 yu\xE1n.", english: "I take the school bus to the zoo.", audio: "\u6211\u5750\u6821\u8F66\u53BB\u52A8\u7269\u56ED" },
-      interactiveScene: "transport",
-      parentGuide: "Start with how the child actually gets to school, then use the other scenes as conversation prompts.",
-      cultureGuide: "Travel scenes make useful speaking practice because each vehicle has a clear destination and reason for the trip.",
-      activities: ["Tap to hear", "Choose the vehicle", "Talk about a trip"],
-      steps: [{ book: "4A", lesson: 6, title: "Means of transport", note: "Say how people travel." }]
-    },
+    transportTopic,
     {
       id: "weather",
       title: "Weather",

@@ -8,7 +8,7 @@ import { timeDateClockItems, timeDateRoutineItems } from "../src/features/time-d
 import { datePracticeItems, timeDateMonthItems } from "../src/features/time-daily-life/dates.js";
 import { comparisonPracticeItems, comparisonsTopic, comparisonVisualItems } from "../src/features/time-daily-life/comparisons.js";
 import { positionPracticeItems, positionScenes, positionsTopic, positionVisualItems } from "../src/features/time-daily-life/positions.js";
-import { transportSentenceTokens, transportVisualItems } from "../src/features/time-daily-life/transport.js";
+import { transportSentenceTokens, transportTopic, transportVisualItems } from "../src/features/time-daily-life/transport.js";
 import { dailyLifeTopic, roomScenes, roomVisualItems } from "../src/features/time-daily-life/rooms.js";
 import { stationeryPictureMatchRounds, stationerySentenceBuilds, stationeryTopicData } from "../src/features/school-life/stationery.js";
 import { schoolSuppliesSentenceBuilds, schoolSuppliesTopicData } from "../src/features/school-life/school-supplies.js";
@@ -99,6 +99,7 @@ test("time and daily life data stays owned by its topics", () => {
   assert.equal(comparisonVisualItems.length, 7);
   assert.equal(positionsTopic.id, "positions");
   assert.equal(positionVisualItems.length, 3);
+  assert.equal(transportTopic.id, "transport");
   assert.equal(transportVisualItems.length, 8);
   assert.equal(roomVisualItems.length, 11);
 });

@@ -5,7 +5,7 @@ import { timeDateClockItems, timeDateExpressionItems, timeDateRoutineItems } fro
 import { datePracticeItems, timeDateDateItems, timeDateMonthItems } from "./features/time-daily-life/dates.js";
 import { comparisonPracticeItems, comparisonsTopic, comparisonVisualItems, comparisonWordItems } from "./features/time-daily-life/comparisons.js";
 import { positionPracticeItems, positionScenes, positionsTopic, positionVisualItems } from "./features/time-daily-life/positions.js";
-import { transportSentenceTokens, transportVisualItems } from "./features/time-daily-life/transport.js";
+import { transportSentenceTokens, transportTopic, transportVisualItems } from "./features/time-daily-life/transport.js";
 import { dailyLifeTopic, roomScenes, roomSentenceTokens, roomVisualItems } from "./features/time-daily-life/rooms.js";
 import { stationeryPictureMatchChoices, stationeryPictureMatchEnglish, stationeryPictureMatchRounds, stationerySentenceBuilds, stationeryTopicData } from "./features/school-life/stationery.js";
 import { schoolSuppliesSentenceBuilds, schoolSuppliesTopicData } from "./features/school-life/school-supplies.js";
@@ -553,20 +553,7 @@ const topicData = [
   dailyLifeTopic,
   comparisonsTopic,
   positionsTopic,
-  {
-    id: "transport",
-    title: "Transportation",
-    summary: "Talk about how people travel to school, places, and family visits.",
-    progressLabel: "4A Lesson 6",
-    iconText: "交通",
-    iconColor: "#6d8a4f",
-    focus: { hanzi: "我坐校车去动物园。", pinyin: "wǒ zuò xiào chē qù dòng wù yuán.", english: "I take the school bus to the zoo.", audio: "我坐校车去动物园" },
-    interactiveScene: "transport",
-    parentGuide: "Start with how the child actually gets to school, then use the other scenes as conversation prompts.",
-    cultureGuide: "Travel scenes make useful speaking practice because each vehicle has a clear destination and reason for the trip.",
-    activities: ["Tap to hear", "Choose the vehicle", "Talk about a trip"],
-    steps: [{ book: "4A", lesson: 6, title: "Means of transport", note: "Say how people travel." }]
-  },
+  transportTopic,
   {
     id: "weather",
     title: "Weather",
