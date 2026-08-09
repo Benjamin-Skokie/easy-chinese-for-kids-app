@@ -4,6 +4,7 @@ import test from "node:test";
 import { createAudioService } from "../src/core/audio.js";
 import { topicIdFromLocation, topicPageUrl, viewFromLocation } from "../src/core/router.js";
 import { datePracticeItems, timeDateClockItems, timeDateMonthItems, timeDateRoutineItems, timeDateWeekItems } from "../src/features/time-daily-life/calendar-data.js";
+import { timeDailyVisualTopicItems } from "../src/features/time-daily-life/visual-data.js";
 
 test("the local page loads a single bundled application script", () => {
   const html = readFileSync("index.html", "utf8");
@@ -44,4 +45,8 @@ test("time and calendar content retains its expected teaching sets", () => {
   assert.equal(timeDateMonthItems.length, 12);
   assert.equal(timeDateRoutineItems.length, 11);
   assert.equal(datePracticeItems.length, 6);
+});
+
+test("time and daily life visual data stays owned by its feature", () => {
+  assert.deepEqual(Object.keys(timeDailyVisualTopicItems), ["comparisons", "positions", "transport", "rooms"]);
 });

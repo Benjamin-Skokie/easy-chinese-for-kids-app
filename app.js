@@ -128,6 +128,47 @@
     { id: "birthday-party", hanzi: "\u751F\u65E5\u4F1A\u4E0A\u6709\u793C\u7269\u3002", pinyin: "sh\u0113ng r\xEC hu\xEC sh\xE0ng y\u01D2u l\u01D0 w\xF9.", english: "There are presents at a birthday party.", audio: "\u751F\u65E5\u4F1A\u4E0A\u6709\u793C\u7269" }
   ];
 
+  // src/features/time-daily-life/visual-data.js
+  var timeDailyVisualTopicItems = {
+    comparisons: [
+      ["\u5927\uFF0C\u5C0F", "d\xE0, xi\u01CEo", "big, small", "big-small-animals.webp", ["\u5927", "\u5C0F"]],
+      ["\u591A\uFF0C\u5C11", "du\u014D, sh\u01CEo", "many, few", "many-few-carrots.webp", ["\u591A", "\u5C11"]],
+      ["\u5FEB\uFF0C\u6162", "ku\xE0i, m\xE0n", "fast, slow", "fast-slow-running.webp", ["\u5FEB", "\u6162"]],
+      ["\u957F\uFF0C\u77ED", "ch\xE1ng, du\u01CEn", "long, short", "long-short-pencils.webp", ["\u957F", "\u77ED"]],
+      ["\u9AD8\uFF0C\u77EE", "g\u0101o, \u01CEi", "tall, short", "tall-short-animals.webp", ["\u9AD8", "\u77EE"]],
+      ["\u51B7\uFF0C\u70ED", "l\u011Bng, r\xE8", "cold, hot", "cold-hot-foods.webp", ["\u51B7", "\u70ED"]],
+      ["\u65B0\uFF0C\u65E7", "x\u012Bn, ji\xF9", "new, old", "new-old-teddy-bears.webp", ["\u65B0", "\u65E7"]]
+    ].map(([hanzi, pinyin, english, file, words]) => ({ id: file, hanzi, pinyin, english, words, audio: hanzi, imagePath: `assets/illustrated-comparisons/${file}` })),
+    positions: [
+      ["\u4E0A\u548C\u4E0B", "sh\xE0ng h\xE9 xi\xE0", "up and down", "positions-up-down.webp"],
+      ["\u91CC\u548C\u5916", "l\u01D0 h\xE9 w\xE0i", "inside and outside", "positions-inside-outside.webp"],
+      ["\u4E0A\u3001\u4E0B\u3001\u524D\u3001\u540E\u3001\u5DE6\u3001\u53F3", "sh\xE0ng, xi\xE0, qi\xE1n, h\xF2u, zu\u01D2, y\xF2u", "up, down, front, back, left, right", "positions-all-directions.webp"]
+    ].map(([hanzi, pinyin, english, file]) => ({ id: file, hanzi, pinyin, english, audio: hanzi, imagePath: `assets/illustrated-rooms/${file}` })),
+    transport: [
+      ["\u6211\u8D70\u8DEF\u53BB\u4E0A\u5B66\u3002", "w\u01D2 z\u01D2u l\xF9 q\xF9 sh\xE0ng xu\xE9.", "I walk to school.", "walk-to-school.webp"],
+      ["\u6211\u9A91\u81EA\u884C\u8F66\u53BB\u4E0A\u5B66\u3002", "w\u01D2 q\xED z\xEC x\xEDng ch\u0113 q\xF9 sh\xE0ng xu\xE9.", "I ride a bike to school.", "bike-to-school.webp"],
+      ["\u6211\u5750\u6821\u8F66\u53BB\u52A8\u7269\u56ED\u3002", "w\u01D2 zu\xF2 xi\xE0o ch\u0113 q\xF9 d\xF2ng w\xF9 yu\xE1n.", "I take the school bus to the zoo.", "school-bus-to-zoo.webp"],
+      ["\u6211\u5750\u51FA\u79DF\u8F66\u53BB\u673A\u573A\u3002", "w\u01D2 zu\xF2 ch\u016B z\u016B ch\u0113 q\xF9 j\u012B ch\u01CEng.", "I take a taxi to the airport.", "taxi-to-airport.webp"],
+      ["\u6211\u5750\u98DE\u673A\u53BB\u770B\u7237\u7237\u5976\u5976\u3002", "w\u01D2 zu\xF2 f\u0113i j\u012B q\xF9 k\xE0n y\xE9 ye n\u01CEi nai.", "I take an airplane to visit my grandparents.", "airplane-to-grandparents.webp"],
+      ["\u6211\u5750\u706B\u8F66\u53BB\u5317\u4EAC\u3002", "w\u01D2 zu\xF2 hu\u01D2 ch\u0113 q\xF9 B\u011Bi j\u012Bng.", "I take a train to Beijing.", "train-to-beijing.webp"],
+      ["\u6211\u5750\u5988\u5988\u7684\u8F66\u53BB\u4E0A\u5B66\u3002", "w\u01D2 zu\xF2 m\u0101 ma de ch\u0113 q\xF9 sh\xE0ng xu\xE9.", "I ride in Mom's car to school.", "mom-car-to-school.webp"],
+      ["\u6211\u5750\u7238\u7238\u7684\u8F66\u53BB\u5546\u5E97\u3002", "w\u01D2 zu\xF2 b\xE0 ba de ch\u0113 q\xF9 sh\u0101ng di\xE0n.", "I ride in Dad's car to the store.", "dad-car-to-grocery-store.webp"]
+    ].map(([hanzi, pinyin, english, file]) => ({ id: file, hanzi, pinyin, english, audio: hanzi, imagePath: `assets/illustrated-transportation/${file}` })),
+    rooms: [
+      ["\u5BA2\u5385", "k\xE8 t\u012Bng", "living room", "living-room.webp", "assets/illustrated-rooms"],
+      ["\u5367\u5BA4", "w\xF2 sh\xEC", "bedroom", "bedroom.webp", "assets/illustrated-rooms"],
+      ["\u8F66\u5E93", "ch\u0113 k\xF9", "garage", "garage.webp", "assets/illustrated-rooms"],
+      ["\u5E8A", "chu\xE1ng", "bed", "bed.webp", "assets/illustrated-furniture"],
+      ["\u4E66\u684C", "sh\u016B zhu\u014D", "desk", "desk.webp", "assets/illustrated-furniture"],
+      ["\u4E66\u67B6", "sh\u016B ji\xE0", "bookshelf", "bookshelf.webp", "assets/illustrated-furniture"],
+      ["\u8863\u67DC", "y\u012B gu\xEC", "wardrobe", "wardrobe.webp", "assets/illustrated-furniture"],
+      ["\u94A2\u7434", "g\u0101ng q\xEDn", "piano", "piano_anchor.webp", "assets/illustrated-school-anchors"],
+      ["\u6C99\u53D1", "sh\u0101 fa", "sofa", "sofa.webp", "assets/illustrated-furniture"],
+      ["\u7535\u89C6\u67DC", "di\xE0n sh\xEC gu\xEC", "TV stand", "tv-stand.webp", "assets/illustrated-furniture"],
+      ["\u81EA\u884C\u8F66", "z\xEC x\xEDng ch\u0113", "bicycle", "bicycle.png", "assets/illustrated-rooms"]
+    ].map(([hanzi, pinyin, english, file, folder]) => ({ id: hanzi, hanzi, pinyin, english, audio: hanzi, imagePath: `${folder}/${file}` }))
+  };
+
   // src/legacy-app.js
   var topicData = [
     {
@@ -1146,45 +1187,7 @@
     getSceneRate: () => sceneSpeechRate,
     getSceneLinePauseMs: () => sceneLinePauseMs
   });
-  var visualTopicItems = {
-    comparisons: [
-      ["\u5927\uFF0C\u5C0F", "d\xE0, xi\u01CEo", "big, small", "big-small-animals.webp", ["\u5927", "\u5C0F"]],
-      ["\u591A\uFF0C\u5C11", "du\u014D, sh\u01CEo", "many, few", "many-few-carrots.webp", ["\u591A", "\u5C11"]],
-      ["\u5FEB\uFF0C\u6162", "ku\xE0i, m\xE0n", "fast, slow", "fast-slow-running.webp", ["\u5FEB", "\u6162"]],
-      ["\u957F\uFF0C\u77ED", "ch\xE1ng, du\u01CEn", "long, short", "long-short-pencils.webp", ["\u957F", "\u77ED"]],
-      ["\u9AD8\uFF0C\u77EE", "g\u0101o, \u01CEi", "tall, short", "tall-short-animals.webp", ["\u9AD8", "\u77EE"]],
-      ["\u51B7\uFF0C\u70ED", "l\u011Bng, r\xE8", "cold, hot", "cold-hot-foods.webp", ["\u51B7", "\u70ED"]],
-      ["\u65B0\uFF0C\u65E7", "x\u012Bn, ji\xF9", "new, old", "new-old-teddy-bears.webp", ["\u65B0", "\u65E7"]]
-    ].map(([hanzi, pinyin, english, file, words]) => ({ id: file, hanzi, pinyin, english, words, audio: hanzi, imagePath: `assets/illustrated-comparisons/${file}` })),
-    positions: [
-      ["\u4E0A\u548C\u4E0B", "sh\xE0ng h\xE9 xi\xE0", "up and down", "positions-up-down.webp"],
-      ["\u91CC\u548C\u5916", "l\u01D0 h\xE9 w\xE0i", "inside and outside", "positions-inside-outside.webp"],
-      ["\u4E0A\u3001\u4E0B\u3001\u524D\u3001\u540E\u3001\u5DE6\u3001\u53F3", "sh\xE0ng, xi\xE0, qi\xE1n, h\xF2u, zu\u01D2, y\xF2u", "up, down, front, back, left, right", "positions-all-directions.webp"]
-    ].map(([hanzi, pinyin, english, file]) => ({ id: file, hanzi, pinyin, english, audio: hanzi, imagePath: `assets/illustrated-rooms/${file}` })),
-    transport: [
-      ["\u6211\u8D70\u8DEF\u53BB\u4E0A\u5B66\u3002", "w\u01D2 z\u01D2u l\xF9 q\xF9 sh\xE0ng xu\xE9.", "I walk to school.", "walk-to-school.webp"],
-      ["\u6211\u9A91\u81EA\u884C\u8F66\u53BB\u4E0A\u5B66\u3002", "w\u01D2 q\xED z\xEC x\xEDng ch\u0113 q\xF9 sh\xE0ng xu\xE9.", "I ride a bike to school.", "bike-to-school.webp"],
-      ["\u6211\u5750\u6821\u8F66\u53BB\u52A8\u7269\u56ED\u3002", "w\u01D2 zu\xF2 xi\xE0o ch\u0113 q\xF9 d\xF2ng w\xF9 yu\xE1n.", "I take the school bus to the zoo.", "school-bus-to-zoo.webp"],
-      ["\u6211\u5750\u51FA\u79DF\u8F66\u53BB\u673A\u573A\u3002", "w\u01D2 zu\xF2 ch\u016B z\u016B ch\u0113 q\xF9 j\u012B ch\u01CEng.", "I take a taxi to the airport.", "taxi-to-airport.webp"],
-      ["\u6211\u5750\u98DE\u673A\u53BB\u770B\u7237\u7237\u5976\u5976\u3002", "w\u01D2 zu\xF2 f\u0113i j\u012B q\xF9 k\xE0n y\xE9 ye n\u01CEi nai.", "I take an airplane to visit my grandparents.", "airplane-to-grandparents.webp"],
-      ["\u6211\u5750\u706B\u8F66\u53BB\u5317\u4EAC\u3002", "w\u01D2 zu\xF2 hu\u01D2 ch\u0113 q\xF9 B\u011Bi j\u012Bng.", "I take a train to Beijing.", "train-to-beijing.webp"],
-      ["\u6211\u5750\u5988\u5988\u7684\u8F66\u53BB\u4E0A\u5B66\u3002", "w\u01D2 zu\xF2 m\u0101 ma de ch\u0113 q\xF9 sh\xE0ng xu\xE9.", "I ride in Mom's car to school.", "mom-car-to-school.webp"],
-      ["\u6211\u5750\u7238\u7238\u7684\u8F66\u53BB\u5546\u5E97\u3002", "w\u01D2 zu\xF2 b\xE0 ba de ch\u0113 q\xF9 sh\u0101ng di\xE0n.", "I ride in Dad's car to the store.", "dad-car-to-grocery-store.webp"]
-    ].map(([hanzi, pinyin, english, file]) => ({ id: file, hanzi, pinyin, english, audio: hanzi, imagePath: `assets/illustrated-transportation/${file}` })),
-    rooms: [
-      ["\u5BA2\u5385", "k\xE8 t\u012Bng", "living room", "living-room.webp", "assets/illustrated-rooms"],
-      ["\u5367\u5BA4", "w\xF2 sh\xEC", "bedroom", "bedroom.webp", "assets/illustrated-rooms"],
-      ["\u8F66\u5E93", "ch\u0113 k\xF9", "garage", "garage.webp", "assets/illustrated-rooms"],
-      ["\u5E8A", "chu\xE1ng", "bed", "bed.webp", "assets/illustrated-furniture"],
-      ["\u4E66\u684C", "sh\u016B zhu\u014D", "desk", "desk.webp", "assets/illustrated-furniture"],
-      ["\u4E66\u67B6", "sh\u016B ji\xE0", "bookshelf", "bookshelf.webp", "assets/illustrated-furniture"],
-      ["\u8863\u67DC", "y\u012B gu\xEC", "wardrobe", "wardrobe.webp", "assets/illustrated-furniture"],
-      ["\u94A2\u7434", "g\u0101ng q\xEDn", "piano", "piano_anchor.webp", "assets/illustrated-school-anchors"],
-      ["\u6C99\u53D1", "sh\u0101 fa", "sofa", "sofa.webp", "assets/illustrated-furniture"],
-      ["\u7535\u89C6\u67DC", "di\xE0n sh\xEC gu\xEC", "TV stand", "tv-stand.webp", "assets/illustrated-furniture"],
-      ["\u81EA\u884C\u8F66", "z\xEC x\xEDng ch\u0113", "bicycle", "bicycle.png", "assets/illustrated-rooms"]
-    ].map(([hanzi, pinyin, english, file, folder]) => ({ id: hanzi, hanzi, pinyin, english, audio: hanzi, imagePath: `${folder}/${file}` }))
-  };
+  var visualTopicItems = timeDailyVisualTopicItems;
   var schoolTopicData = {
     stationery: {
       showWords: false,
