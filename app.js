@@ -1124,7 +1124,9 @@ const datePracticeItems = [
   { id: "date-new-year", hanzi: "一月一号", pinyin: "yī yuè yī hào", english: "January first", audio: "一月一号是新年", eventHanzi: "新年", eventPinyin: "xīn nián", eventEnglish: "New Year" },
   { id: "date-chinese-new-year", hanzi: "二月", pinyin: "èr yuè", english: "February", audio: "二月中国新年", eventHanzi: "中国新年", eventPinyin: "Zhōng guó xīn nián", eventEnglish: "Chinese New Year" },
   { id: "date-field-trip", hanzi: "五月二十号", pinyin: "wǔ yuè èr shí hào", english: "May twentieth", audio: "五月二十号我们去春游", eventHanzi: "春游", eventPinyin: "chūn yóu", eventEnglish: "Field trip" },
-  { id: "date-christmas", hanzi: "十二月二十五号", pinyin: "shí èr yuè èr shí wǔ hào", english: "December twenty-fifth", audio: "十二月二十五号是圣诞节", eventHanzi: "圣诞节", eventPinyin: "Shèng dàn Jié", eventEnglish: "Christmas" }
+  { id: "date-christmas", hanzi: "十二月二十五号", pinyin: "shí èr yuè èr shí wǔ hào", english: "December twenty-fifth", audio: "十二月二十五号是圣诞节", eventHanzi: "圣诞节", eventPinyin: "Shèng dàn Jié", eventEnglish: "Christmas" },
+  { id: "birthday-wish", hanzi: "祝你生日快乐！", pinyin: "zhù nǐ shēng rì kuài lè!", english: "Happy birthday!", audio: "祝你生日快乐" },
+  { id: "birthday-party", hanzi: "生日会上有礼物。", pinyin: "shēng rì huì shàng yǒu lǐ wù.", english: "There are presents at a birthday party.", audio: "生日会上有礼物" }
 ];
 
 const visualTopicItems = {
@@ -1160,6 +1162,7 @@ const visualTopicItems = {
     ["书桌", "shū zhuō", "desk", "desk.webp", "assets/illustrated-furniture"],
     ["书架", "shū jià", "bookshelf", "bookshelf.webp", "assets/illustrated-furniture"],
     ["衣柜", "yī guì", "wardrobe", "wardrobe.webp", "assets/illustrated-furniture"],
+    ["钢琴", "gāng qín", "piano", "piano_anchor.webp", "assets/illustrated-school-anchors"],
     ["沙发", "shā fa", "sofa", "sofa.webp", "assets/illustrated-furniture"],
     ["电视柜", "diàn shì guì", "TV stand", "tv-stand.webp", "assets/illustrated-furniture"],
     ["自行车", "zì xíng chē", "bicycle", "bicycle.png", "assets/illustrated-rooms"]
@@ -3455,7 +3458,7 @@ function handleWeekdayChallengePlay() {
   const previousPromptId = state.weekdayChallengePromptId;
   resetWeekdayChallenge({ excludeId: previousPromptId });
   const item = timeDateWeekItems.find((entry) => entry.id === state.weekdayChallengePromptId);
-  if (item && state.tapAudioEnabled) speak(item.hanzi, 0.78);
+  if (item && state.tapAudioEnabled) speak(`今天星期几？今天${item.hanzi}。`, 0.78);
   renderActivityPanel(currentTopic());
 }
 
@@ -4069,7 +4072,7 @@ function handleClockQuizPick(itemId) {
   state.clockQuizResult = itemId === answerId ? "correct" : "wrong";
   if (state.clockQuizResult === "correct" && state.tapAudioEnabled) {
     const item = timeDateClockItems.find((entry) => entry.id === answerId);
-    speak(item?.audio, 0.78);
+    if (item) speak(`几点了？现在${item.hanzi}。`, 0.78);
   }
   renderActivityPanel(currentTopic());
 }
@@ -4393,7 +4396,7 @@ function handleDateChallengePlay() {
   const previousId = state.dateChallengePromptId;
   resetDateChallenge({ excludeId: previousId });
   const item = datePracticeItems.find((entry) => entry.id === state.dateChallengePromptId);
-  if (item && state.tapAudioEnabled) speak(item.hanzi, 0.78);
+  if (item && state.tapAudioEnabled) speak(item.audio, 0.78);
   renderActivityPanel(currentTopic());
 }
 
@@ -5979,6 +5982,31 @@ function renderMatchPractice(config) {
   `;
 }
 
+function renderPracticeSayCards(items = []) {
+  if (!items.length) return "";
+  return `
+    <section class="practice-split-card practice-say-card">
+      <div class="numbers-game-top">
+        <div>
+          <p class="body-match-kicker">Say it</p>
+          <p class="numbers-game-note">Tap a sentence, listen, then say it back.</p>
+        </div>
+      </div>
+      <div class="numbers-game-options">
+        ${items.map((item) => `<button class="numbers-game-option greetings-game-option family-listen-option" type="button" data-practice-say="${item.audio ?? item.hanzi}"><span class="numbers-game-hanzi">${item.hanzi}</span>${state.showPinyin ? `<span class="numbers-game-pinyin">${item.pinyin}</span>` : ""}${state.showEnglish ? `<span class="numbers-game-english">${item.english}</span>` : ""}</button>`).join("")}
+      </div>
+    </section>
+  `;
+}
+
+function bindPracticeSayCards(container) {
+  container.querySelectorAll("[data-practice-say]").forEach((button) => {
+    button.addEventListener("click", () => {
+      if (state.tapAudioEnabled) speak(button.dataset.practiceSay, 0.78);
+    });
+  });
+}
+
 function renderSharedLessonPractice(topic, config) {
   config.ensure();
   activityPanelTitle.textContent = "Let's practice";
@@ -5993,6 +6021,7 @@ function renderSharedLessonPractice(topic, config) {
       ${renderListenPractice(config.listen)}
       ${renderMatchPractice(config.match)}
     </div>
+    ${renderPracticeSayCards(config.sayItems)}
   `;
   activityList.appendChild(gameCard);
 
@@ -6020,6 +6049,7 @@ function renderSharedLessonPractice(topic, config) {
       config.match.onMeaning(button.dataset.templateMatchMeaning);
     });
   });
+  bindPracticeSayCards(activityList);
 }
 
 function schoolWordGroups(topicId = currentTopic().id) {
@@ -7057,6 +7087,10 @@ function sharedLessonPracticeConfig(topic) {
     return {
       summary: "Listen for the weekday, then match each Chinese day to its English name.",
       shellClass: "lesson-practice-shell",
+      sayItems: [
+        { hanzi: "今天星期几？", pinyin: "jīn tiān xīng qī jǐ?", english: "What day is it today?", audio: "今天星期几" },
+        { hanzi: "今天星期一。", pinyin: "jīn tiān xīng qī yī.", english: "Today is Monday.", audio: "今天星期一" }
+      ],
       ensure: () => {
         ensureWeekdayChallenge();
         ensureWeekdayMatchGame();
@@ -7219,8 +7253,13 @@ function sharedLessonPracticeConfig(topic) {
 
   if (topic.id === "dates") {
     return {
-      summary: "Listen for the date or month, then match it to the event.",
+      summary: "Listen for a date or celebration, then match months to their English names.",
       shellClass: "lesson-practice-shell",
+      sayItems: [
+        { hanzi: "今天几月几号？", pinyin: "jīn tiān jǐ yuè jǐ hào?", english: "What is the date today?", audio: "今天几月几号" },
+        { hanzi: "今天五月二十号。", pinyin: "jīn tiān wǔ yuè èr shí hào.", english: "Today is May twentieth.", audio: "今天五月二十号" },
+        { hanzi: "五月二十号 = 五月二十日。", pinyin: "wǔ yuè èr shí hào = wǔ yuè èr shí rì.", english: "Both mean May twentieth.", audio: "五月二十号五月二十日" }
+      ],
       ensure: () => {
         ensureDateChallenge();
         ensureDateMatchGame();
@@ -7304,12 +7343,16 @@ function renderActivityPanel(topic) {
         </div>
         <div class="intro-build-actions"><button class="small-button" type="button" data-room-build-clear>Clear</button>${state.roomBuildResult === "correct" ? '<button class="small-button is-action-button" type="button" data-room-build-next>Next picture</button>' : ""}</div>
       </section>
+      ${renderPracticeSayCards([
+        { hanzi: "地上有书。", pinyin: "dì shàng yǒu shū.", english: "There is a book on the floor.", audio: "地上有书" }
+      ])}
     `;
     activityList.querySelectorAll("[data-room-build-token]").forEach((button) => {
       button.addEventListener("click", () => handleRoomBuildToken(Number(button.dataset.roomBuildToken)));
     });
     activityList.querySelector("[data-room-build-clear]")?.addEventListener("click", clearRoomBuilder);
     activityList.querySelector("[data-room-build-next]")?.addEventListener("click", nextRoomBuilder);
+    bindPracticeSayCards(activityList);
     return;
   }
 
@@ -7369,12 +7412,17 @@ function renderActivityPanel(topic) {
         </div>
         ${state.positionQuizResult === "correct" ? '<div class="clothes-quiz-next"><button class="small-button is-action-button" type="button" data-position-quiz-next>Next sentence</button></div>' : ""}
       </section>
+      ${renderPracticeSayCards([
+        { hanzi: "书架在桌子左边。", pinyin: "shū jià zài zhuō zi zuǒ biān.", english: "The bookshelf is to the left of the desk.", audio: "书架在桌子左边" },
+        { hanzi: "椅子在女孩后面。", pinyin: "yǐ zi zài nǚ hái hòu miàn.", english: "The chair is behind the girl.", audio: "椅子在女孩后面" }
+      ])}
     `;
     activityList.querySelectorAll("[data-position-quiz-pick]").forEach((button) => {
       button.addEventListener("click", () => handlePositionQuizPick(button.dataset.positionQuizPick));
     });
     activityList.querySelector("[data-position-quiz-play]")?.addEventListener("click", handlePositionQuizPlay);
     activityList.querySelector("[data-position-quiz-next]")?.addEventListener("click", nextPositionQuizQuestion);
+    bindPracticeSayCards(activityList);
     return;
   }
 
@@ -7434,11 +7482,17 @@ function renderActivityPanel(topic) {
         </div>
         ${state.clockQuizResult === "correct" ? '<div class="clothes-quiz-next"><button class="small-button is-action-button" type="button" data-clock-quiz-next>Next clock</button></div>' : ""}
       </section>
+      ${renderPracticeSayCards([
+        { hanzi: "几点了？", pinyin: "jǐ diǎn le?", english: "What time is it?", audio: "几点了" },
+        { hanzi: "现在七点零五分。", pinyin: "xiàn zài qī diǎn líng wǔ fēn.", english: "It is 7:05 now.", audio: "现在七点零五分" },
+        { hanzi: "七点一刻 = 七点十五分。", pinyin: "qī diǎn yī kè = qī diǎn shí wǔ fēn.", english: "7:15", audio: "七点一刻七点十五分" }
+      ])}
     `;
     activityList.querySelectorAll("[data-clock-quiz-pick]").forEach((button) => {
       button.addEventListener("click", () => handleClockQuizPick(button.dataset.clockQuizPick));
     });
     activityList.querySelector("[data-clock-quiz-next]")?.addEventListener("click", nextClockQuizQuestion);
+    bindPracticeSayCards(activityList);
     return;
   }
 
@@ -7473,6 +7527,11 @@ function renderActivityPanel(topic) {
         </div>
         ${state.timeRoutineQuizResult === "correct" ? '<div class="clothes-quiz-next"><button class="small-button is-action-button" type="button" data-time-routine-quiz-next>Next picture</button></div>' : ""}
       </section>
+      ${renderPracticeSayCards([
+        { hanzi: "你每天几点起床？", pinyin: "nǐ měi tiān jǐ diǎn qǐ chuáng?", english: "What time do you get up every day?", audio: "你每天几点起床" },
+        { hanzi: "我每天七点起床。", pinyin: "wǒ měi tiān qī diǎn qǐ chuáng.", english: "I get up at seven every day.", audio: "我每天七点起床" },
+        { hanzi: "刷牙、梳头、穿校服、穿鞋子。", pinyin: "shuā yá, shū tóu, chuān xiào fú, chuān xié zi.", english: "Brush teeth, comb hair, put on a school uniform, put on shoes.", audio: "刷牙梳头穿校服穿鞋子" }
+      ])}
     `;
 
     activityList.querySelectorAll("[data-time-routine-quiz-pick]").forEach((button) => {
@@ -7481,6 +7540,7 @@ function renderActivityPanel(topic) {
       });
     });
     activityList.querySelector("[data-time-routine-quiz-next]")?.addEventListener("click", nextTimeRoutineQuizQuestion);
+    bindPracticeSayCards(activityList);
     return;
   }
 
@@ -8328,6 +8388,12 @@ function renderWeekdaysExplorer() {
           </section>
         `).join("")}
       </div>
+      <section class="visual-topic-notes">
+        <p class="body-match-kicker">Useful notes</p>
+        <div class="visual-topic-note-grid">
+          <article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">今天星期几？</p>${state.showPinyin ? '<p class="visual-topic-note-pinyin">jīn tiān xīng qī jǐ?</p>' : ""}${state.showEnglish ? '<p class="visual-topic-note-english">What day is it today?</p>' : ""}<p class="visual-topic-note-example">今天星期一。</p>${state.showPinyin ? '<p class="visual-topic-note-pinyin">jīn tiān xīng qī yī.</p>' : ""}${state.showEnglish ? '<p class="visual-topic-note-english">Today is Monday.</p>' : ""}</article>
+        </div>
+      </section>
     </div>
   `;
   focusExplorer.querySelectorAll("[data-weekday-play-scene]").forEach((button) => {
@@ -8356,6 +8422,15 @@ function renderDatesExplorer() {
         <button class="small-button is-action-button" type="button" data-months-play>Play audio</button>
       </section>
       ${renderTimeAssetGrid(timeDateMonthItems, "month")}
+      <section class="visual-topic-notes">
+        <p class="body-match-kicker">Useful notes</p>
+        <div class="visual-topic-note-grid">
+          <article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">今天几月几号？</p>${state.showPinyin ? '<p class="visual-topic-note-pinyin">jīn tiān jǐ yuè jǐ hào?</p>' : ""}${state.showEnglish ? '<p class="visual-topic-note-english">What is the date today?</p>' : ""}<p class="visual-topic-note-example">今天五月二十号。</p>${state.showPinyin ? '<p class="visual-topic-note-pinyin">jīn tiān wǔ yuè èr shí hào.</p>' : ""}${state.showEnglish ? '<p class="visual-topic-note-english">Today is May twentieth.</p>' : ""}</article>
+          <article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">号 / 日</p>${state.showPinyin ? '<p class="visual-topic-note-pinyin">hào / rì</p>' : ""}${state.showEnglish ? '<p class="visual-topic-note-english">two ways to say the day of a date</p>' : ""}<p class="visual-topic-note-example">五月二十号 = 五月二十日。</p>${state.showPinyin ? '<p class="visual-topic-note-pinyin">wǔ yuè èr shí hào = wǔ yuè èr shí rì.</p>' : ""}${state.showEnglish ? '<p class="visual-topic-note-english">Both mean May twentieth.</p>' : ""}</article>
+          <article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">祝你生日快乐！</p>${state.showPinyin ? '<p class="visual-topic-note-pinyin">zhù nǐ shēng rì kuài lè!</p>' : ""}${state.showEnglish ? '<p class="visual-topic-note-english">Wish you a happy birthday!</p>' : ""}</article>
+          <article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">生日会 / 礼物</p>${state.showPinyin ? '<p class="visual-topic-note-pinyin">shēng rì huì / lǐ wù</p>' : ""}${state.showEnglish ? '<p class="visual-topic-note-english">birthday party / present</p>' : ""}<p class="visual-topic-note-example">生日会上有礼物。</p>${state.showPinyin ? '<p class="visual-topic-note-pinyin">shēng rì huì shàng yǒu lǐ wù.</p>' : ""}${state.showEnglish ? '<p class="visual-topic-note-english">There are presents at a birthday party.</p>' : ""}</article>
+        </div>
+      </section>
     </div>
   `;
   bindTimeAssetAudio(focusExplorer);
@@ -8445,6 +8520,7 @@ function renderRoomsExplorer() {
         <p class="body-match-kicker">Useful notes</p>
         <div class="visual-topic-note-grid room-useful-note-grid">
           <article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">房间里有……</p>${state.showPinyin ? '<p class="visual-topic-note-pinyin">fáng jiān lǐ yǒu...</p>' : ""}${state.showEnglish ? '<p class="visual-topic-note-english">There is / are ... in the room.</p>' : ""}<p class="visual-topic-note-example">里 means “in”; 有 means “there is / are.”</p></article>
+          <article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">地上有……</p>${state.showPinyin ? '<p class="visual-topic-note-pinyin">dì shàng yǒu...</p>' : ""}${state.showEnglish ? '<p class="visual-topic-note-english">There is / are ... on the floor.</p>' : ""}<p class="visual-topic-note-example">地上有书。</p>${state.showPinyin ? '<p class="visual-topic-note-pinyin">dì shàng yǒu shū.</p>' : ""}${state.showEnglish ? '<p class="visual-topic-note-english">There is a book on the floor.</p>' : ""}</article>
         </div>
       </section>
     </div>
@@ -8578,10 +8654,9 @@ function renderPositionsExplorer() {
       <section class="visual-topic-notes">
         <p class="body-match-kicker">Useful notes</p>
         <div class="visual-topic-note-grid position-note-grid">
-          ${[
-            ["上", "shàng", "up"], ["下", "xià", "down"], ["前", "qián", "front"],
-            ["后", "hòu", "back"], ["左", "zuǒ", "left"], ["右", "yòu", "right"]
-          ].map(([hanzi, pinyin, english]) => `<article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">${hanzi}</p>${state.showPinyin ? `<p class="visual-topic-note-pinyin">${pinyin}</p>` : ""}${state.showEnglish ? `<p class="visual-topic-note-english">${english}</p>` : ""}</article>`).join("")}
+          <article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">A 在 B + 位置</p>${state.showPinyin ? '<p class="visual-topic-note-pinyin">A zài B + wèi zhì</p>' : ""}${state.showEnglish ? '<p class="visual-topic-note-english">A is in / on / beside B.</p>' : ""}<p class="visual-topic-note-example">书架在桌子左边。</p>${state.showPinyin ? '<p class="visual-topic-note-pinyin">shū jià zài zhuō zi zuǒ biān.</p>' : ""}${state.showEnglish ? '<p class="visual-topic-note-english">The bookshelf is to the left of the desk.</p>' : ""}</article>
+          <article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">前边 = 前面；后边 = 后面</p>${state.showPinyin ? '<p class="visual-topic-note-pinyin">qián biān = qián miàn; hòu biān = hòu miàn</p>' : ""}${state.showEnglish ? '<p class="visual-topic-note-english">front and back can use either form here</p>' : ""}</article>
+          ${[["上", "shàng", "up"], ["下", "xià", "down"], ["前", "qián", "front"], ["后", "hòu", "back"], ["左", "zuǒ", "left"], ["右", "yòu", "right"]].map(([hanzi, pinyin, english]) => `<article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">${hanzi}</p>${state.showPinyin ? `<p class="visual-topic-note-pinyin">${pinyin}</p>` : ""}${state.showEnglish ? `<p class="visual-topic-note-english">${english}</p>` : ""}</article>`).join("")}
         </div>
       </section>
     </div>
@@ -8655,6 +8730,11 @@ function renderTimeDateExplorer() {
       <section class="visual-topic-notes time-useful-notes">
         <p class="body-match-kicker">Useful notes</p>
         <div class="visual-topic-note-grid">
+          <article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">几点了？</p>${state.showPinyin ? '<p class="visual-topic-note-pinyin">jǐ diǎn le?</p>' : ""}${state.showEnglish ? '<p class="visual-topic-note-english">What time is it?</p>' : ""}<p class="visual-topic-note-example">现在七点。</p>${state.showPinyin ? '<p class="visual-topic-note-pinyin">xiàn zài qī diǎn.</p>' : ""}${state.showEnglish ? '<p class="visual-topic-note-english">It is seven o\'clock now.</p>' : ""}</article>
+          <article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">分 / 零</p>${state.showPinyin ? '<p class="visual-topic-note-pinyin">fēn / líng</p>' : ""}${state.showEnglish ? '<p class="visual-topic-note-english">minute / zero</p>' : ""}<p class="visual-topic-note-example">现在七点零五分。</p>${state.showPinyin ? '<p class="visual-topic-note-pinyin">xiàn zài qī diǎn líng wǔ fēn.</p>' : ""}${state.showEnglish ? '<p class="visual-topic-note-english">It is 7:05 now.</p>' : ""}</article>
+          <article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">早上 / 上午 / 中午 / 下午 / 晚上</p>${state.showPinyin ? '<p class="visual-topic-note-pinyin">zǎo shang / shàng wǔ / zhōng wǔ / xià wǔ / wǎn shang</p>' : ""}${state.showEnglish ? '<p class="visual-topic-note-english">early morning / morning / noon / afternoon / evening</p>' : ""}</article>
+          <article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">你每天几点起床？</p>${state.showPinyin ? '<p class="visual-topic-note-pinyin">nǐ měi tiān jǐ diǎn qǐ chuáng?</p>' : ""}${state.showEnglish ? '<p class="visual-topic-note-english">What time do you get up every day?</p>' : ""}<p class="visual-topic-note-example">我每天七点起床。</p>${state.showPinyin ? '<p class="visual-topic-note-pinyin">wǒ měi tiān qī diǎn qǐ chuáng.</p>' : ""}${state.showEnglish ? '<p class="visual-topic-note-english">I get up at seven every day.</p>' : ""}</article>
+          <article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">刷牙 / 梳头 / 穿校服 / 穿鞋子</p>${state.showPinyin ? '<p class="visual-topic-note-pinyin">shuā yá / shū tóu / chuān xiào fú / chuān xié zi</p>' : ""}${state.showEnglish ? '<p class="visual-topic-note-english">brush teeth / comb hair / put on a school uniform / put on shoes</p>' : ""}</article>
           <article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">七点一刻 = 七点十五分</p>${state.showPinyin ? '<p class="visual-topic-note-pinyin">qī diǎn yī kè = qī diǎn shí wǔ fēn</p>' : ""}${state.showEnglish ? '<p class="visual-topic-note-english">7:15</p>' : ""}</article>
           <article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">七点半 = 七点三十分</p>${state.showPinyin ? '<p class="visual-topic-note-pinyin">qī diǎn bàn = qī diǎn sān shí fēn</p>' : ""}${state.showEnglish ? '<p class="visual-topic-note-english">7:30</p>' : ""}</article>
           <article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">七点三刻 = 七点四十五分</p>${state.showPinyin ? '<p class="visual-topic-note-pinyin">qī diǎn sān kè = qī diǎn sì shí wǔ fēn</p>' : ""}${state.showEnglish ? '<p class="visual-topic-note-english">7:45</p>' : ""}</article>

@@ -1,8 +1,8 @@
 # Learn By Topics Content Asset Mapping
 
-Last updated: 2026-08-03
+Last updated: 2026-08-08
 
-Purpose: review-friendly topic-first mapping from product learning topics to OCR-backed book lessons, content focus, and current reusable assets.
+Purpose: review-friendly topic-first mapping from product learning topics to OCR-backed book lessons, content focus, and current reusable assets. Coverage labels describe asset availability only; they are not lesson-completeness labels.
 
 Source of truth: `docs/category_topic_content_asset_mapping.json`. This markdown is a human review view; update the JSON first when lesson/content mappings change.
 
@@ -12,7 +12,8 @@ Source of truth: `docs/category_topic_content_asset_mapping.json`. This markdown
 - Topics: 21
 - Lesson records: 64
 - Coverage: strong:56, partial:8
-- Current ordinary lesson coverage is strong after the latest asset pass; the remaining partial area is the culture side path topic, which is intentionally not a core app path yet.
+- Current ordinary lesson asset coverage is strong after the latest asset pass; the remaining partial area is the culture side path topic, which is intentionally not a core app path yet.
+- Each topic still requires a book-by-book lesson-contract audit before it can be treated as content-complete.
 
 ## Topic Index
 

@@ -15,7 +15,37 @@ Before work begins, use these files in this order:
 
 Do not build a page from memory or create visuals before the lesson goal is clear.
 
-## 1. Write The Topic Brief
+## 0. Bind The Exact Page Before Editing
+
+Before changing a topic, write down the exact target URL and verify all of the following in code:
+
+- the `topic.id` used by that URL
+- the topic data object that owns its scenes, words, notes, and practice data
+- the explorer and practice render functions that output the page
+- the established reference template for the requested interaction
+
+Search for the topic ID and for the visible text before editing. Do not assume similarly named topics use the same data block. For example, `food` and `food-preferences` are separate lessons and must be reviewed independently.
+
+List every visible output for a changed interaction: section summary, game title, instructions, progress label, correct/wrong feedback, completion message, and accessibility label. All must describe the same interaction and container. Do not leave stale wording such as a former game container in any of these outputs.
+
+## 1. Build Lesson Contracts Before Topic Work
+
+For every textbook lesson assigned to a topic, create or update a lesson contract before page implementation. The contract is the content-completeness record; an asset inventory is not a substitute.
+
+Each lesson contract must identify:
+
+- exact book and lesson reference, plus the reviewed OCR/page source
+- required vocabulary and measure words
+- required sentence patterns and grammar distinctions
+- dialogue or question-and-answer patterns that need to be understood, even if they do not each need a separate scene
+- required useful notes and examples
+- the scene, book-word, and practice evidence that covers each requirement
+- existing assets, missing assets, and assets that are only reusable visuals rather than teaching proof
+- an audit status: `needs-content-audit`, `partial`, or `content-complete`
+
+Audit one book at a time, then compare the complete set of lesson contracts against the topic configuration. A topic is incomplete when any required lesson concept has no child-facing scene, note, word, or practice evidence. Do not call a lesson or topic complete merely because it has an asset path or a `strong` asset-coverage label.
+
+## 2. Write The Topic Brief
 
 For each topic, record:
 
@@ -28,7 +58,7 @@ For each topic, record:
 
 The brief should distinguish between facts the child needs to learn and optional enrichment. Do not add a game only to make a page longer.
 
-## 2. Use One Topic Data Model
+## 3. Use One Topic Data Model
 
 Each topic should have one structured configuration that owns:
 
@@ -43,7 +73,9 @@ Practice items must reference the same scene or asset IDs used by the topic. Do 
 
 The current app still contains some topic data in `app.js`. New work should move toward a single declarative topic configuration rather than introducing additional parallel arrays.
 
-## 3. Reuse The Practice Templates
+Keep child-facing copy in the topic or template configuration where possible. If an interaction has a summary, in-card instruction, and completion message, define them together or verify each explicitly after a behavior change. Do not fix one hard-coded string while leaving duplicate wording elsewhere.
+
+## 4. Reuse The Practice Templates
 
 Use the shared templates in [game_templates.md](./game_templates.md) unless a lesson genuinely requires a new interaction.
 
@@ -57,7 +89,15 @@ Template acceptance rules:
 
 When a new game is needed, define its behavior and acceptance checklist in `game_templates.md` before applying it to multiple topics.
 
-## 4. Asset Workflow
+For collection games such as `Pack the backpack` or a food shopping-cart game, define:
+
+- category or mix reset behavior
+- the target image and answer choice behavior
+- red cross for a wrong answer and green check for a correct answer
+- where a correct item lands, and the completion state after all items are collected
+- concise, child-readable instructions that explain those steps
+
+## 5. Asset Workflow
 
 ### Before generating or selecting an asset
 
@@ -77,7 +117,14 @@ When a new game is needed, define its behavior and acceptance checklist in `game
 
 Final app assets must follow [art_direction.md](./art_direction.md): WebP unless an exception is documented, no temporary PNG sources in the asset library, and the applicable size limit.
 
-## 5. Verification
+### Container-fit rules
+
+- Decide the rendered aspect ratio before generating or selecting the asset.
+- Preserve the asset's aspect ratio with `object-fit: contain` unless intentional crop is explicitly required.
+- Never use `object-fit: fill` for illustrated objects, faces, wheels, clocks, or other shapes that must retain their proportions.
+- If a scene is the only item in a section, choose a compact layout deliberately; do not allow a single asset to become a full-width oversized card by default.
+
+## 6. Verification
 
 ### Automated checks run for every code change
 
@@ -92,6 +139,10 @@ Also check:
 - final image format, dimensions, and file size meet the asset rules
 - removed asset names have no remaining code references
 - a topic's practice item count matches its configured data rather than stale UI state
+- every lesson contract mapped to the topic has evidence for each required word, pattern, dialogue, and note
+- every CSS custom property used by new selectors is declared in the relevant scope
+- a changed game has no stale labels, asset names, or container terms found by `rg`
+- selected, correct, wrong, and completed states use the intended visible colors rather than relying only on a subtle border
 
 ### Product review
 
@@ -105,11 +156,23 @@ The product owner performs visual and lesson review in the page itself:
 
 Codex should prepare the page and automated checks; visual acceptance of generated art remains a human decision.
 
-## 6. Topic Completion Checklist
+### Change sequencing
+
+For an existing page, make one focused change at a time:
+
+1. data and child-facing copy
+2. interaction behavior and state reset
+3. layout and styling
+4. asset replacement or generation
+
+After each focused change, run the relevant checks and confirm the target topic/data/render path again. Do not combine unrelated page work into the same verification cycle.
+
+## 7. Topic Completion Checklist
 
 Before considering a topic complete:
 
 - lesson mapping is correct
+- every mapped lesson has a `content-complete` lesson contract, or an explicit approved exception
 - scenes, book words, and useful notes teach the intended language without duplication
 - practice uses the common template behavior
 - every displayed asset is final and listed in a manifest
@@ -118,3 +181,5 @@ Before considering a topic complete:
 - product review has approved the page
 
 Commit only after this checklist is satisfied or the remaining exceptions are explicitly noted.
+
+Keep commits narrow: one topic or one reusable template change per commit. Do not accumulate unrelated assets, documentation, and interaction changes into one large commit unless they are required for the same completed feature.

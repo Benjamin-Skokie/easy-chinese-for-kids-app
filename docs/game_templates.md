@@ -139,6 +139,35 @@ Build priority:
 
 - high
 
+### Collection Into A Container
+
+What it is:
+
+- choose a category or a mixed set
+- show one target picture at a time
+- child taps the matching Chinese card
+- a correct item moves into a meaningful container, such as a backpack, shopping cart, or basket
+- complete a short set of three items to finish the round
+
+Required behavior:
+
+- randomize target and answer-card order for every new round
+- show a red cross on a wrong card and keep the target active
+- show a green check on a correct card, then place the item in the container
+- show three progress markers and a clear completion state
+- state the container consistently in the section summary, in-game instruction, accessibility labels, and completion message
+- preserve the container illustration's aspect ratio; never stretch it to fill a card
+
+Best topics:
+
+- school supplies: pack a backpack
+- food and drinks: collect food in a shopping cart
+- clothes: pack for an activity or weather
+
+Build priority:
+
+- already in use; treat as a shared template
+
 ## 6. Build The Phrase
 
 What it is:

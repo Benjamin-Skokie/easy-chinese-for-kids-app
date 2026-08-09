@@ -1,12 +1,19 @@
 {
-  "lastUpdated": "2026-08-03",
+  "lastUpdated": "2026-08-08",
   "purpose": "Production mapping from curriculum category to topic to lesson content and reusable assets.",
   "sourcePolicy": {
     "curriculumAlignmentOnly": true,
     "doNotCopyTextbookArt": true,
     "doNotReuseTextbookCharactersDirectly": true,
     "useToneMarkPinyinInProductCopy": true,
-    "pageReviewBeforeFinalCopy": true
+    "pageReviewBeforeFinalCopy": true,
+    "coverageFieldMeansAssetAvailabilityOnly": true,
+    "contentCompleteRequiresLessonContractAudit": true
+  },
+  "coverageSemantics": {
+    "coverage": "Tracks the availability of reusable visual assets. It does not prove that every vocabulary item, sentence pattern, dialogue, useful note, or practice requirement from the lesson is implemented.",
+    "lessonContract": "The required completeness record for a lesson. It must trace every required teaching element to a child-facing scene, word, useful note, or practice item before the lesson can be marked content-complete.",
+    "auditStatuses": ["needs-content-audit", "partial", "content-complete"]
   },
   "sources": [
     "docs/curriculum_reference.json",

@@ -1,8 +1,8 @@
 # Learn By Books Content Asset Mapping
 
-Last updated: 2026-08-03
+Last updated: 2026-08-08
 
-Purpose: review-friendly book-first mapping from each textbook lesson to the product topic/category and current reusable assets.
+Purpose: review-friendly book-first mapping from each textbook lesson to the product topic/category and current reusable assets. This is an asset-availability view, not proof of complete lesson implementation.
 
 Sources of truth: `docs/ocr/book_asset_coverage_map.json` for lesson coverage and `docs/category_topic_content_asset_mapping.json` for category/topic grouping.
 
@@ -10,7 +10,8 @@ Sources of truth: `docs/ocr/book_asset_coverage_map.json` for lesson coverage an
 
 - Books: 8
 - Lessons: 56
-- All 56 ordinary book lessons currently map to a topic and have strong reusable asset coverage.
+- All 56 ordinary book lessons currently map to a topic and have strong reusable asset coverage. This does not mean all textbook vocabulary, grammar, dialogues, useful notes, or practice requirements are complete.
+- Before building or declaring a topic complete, audit the relevant book lesson-by-lesson against its lesson contracts in the topic data.
 - Culture materials are tracked topic-first as side paths rather than book lessons.
 
 ## Book Index

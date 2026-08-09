@@ -1,8 +1,8 @@
 # Category Topic Content Asset Mapping
 
-Last updated: 2026-08-03
+Last updated: 2026-08-08
 
-Purpose: production-ready mapping from child-facing category to topic to OCR-backed lesson content and reusable asset coverage.
+Purpose: production-ready mapping from child-facing category to topic to OCR-backed lesson content and reusable asset coverage. The coverage status records asset availability, not complete implementation of every textbook teaching point.
 
 Primary data file: [category_topic_content_asset_mapping.json](./category_topic_content_asset_mapping.json)
 
@@ -12,6 +12,7 @@ Source rules:
 - Final product copy should use tone-mark pinyin and original character/visual systems.
 - Contact sheets are only a visual review aid; exact lesson content should be verified against OCR and individual pages before implementation.
 - Existing asset references point to reusable local assets or content folders; gaps should be reviewed before generating new art.
+- A lesson is content-complete only after a lesson-contract audit traces every required word, pattern, dialogue, useful note, and practice requirement to the product page.
 
 ## Sources
 
