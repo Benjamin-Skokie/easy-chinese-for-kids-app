@@ -1072,6 +1072,20 @@
       ]
     }
   ];
+  var introductionsGamePrompts = [
+    {
+      id: "intro-game-anan",
+      speakerId: "anan",
+      sourceItemId: "my-name",
+      hanzi: "\u6211\u53EB\u5B89\u5B89\u3002",
+      pinyin: "w\u01D2 ji\xE0o \u0100n an.",
+      english: "My name is Anan.",
+      audio: "\u6211\u53EB\u5B89\u5B89"
+    },
+    { id: "intro-game-tiantian", speakerId: "tiantian", sourceItemId: "my-name", hanzi: "\u6211\u53EB\u5929\u5929\u3002", pinyin: "w\u01D2 ji\xE0o Ti\u0101n ti\u0101n.", english: "My name is Tiantian.", audio: "\u6211\u53EB\u5929\u5929" },
+    { id: "intro-game-sisi", speakerId: "sisi", sourceItemId: "my-name", hanzi: "\u6211\u53EB\u601D\u601D\u3002", pinyin: "w\u01D2 ji\xE0o S\u012B si.", english: "My name is Sisi.", audio: "\u6211\u53EB\u601D\u601D" },
+    { id: "intro-game-lele", speakerId: "lele", sourceItemId: "my-name", hanzi: "\u6211\u53EB\u4E50\u4E50\u3002", pinyin: "w\u01D2 ji\xE0o L\xE8 le.", english: "My name is Lele.", audio: "\u6211\u53EB\u4E50\u4E50" }
+  ];
   var introductionsBuildPhrases = [
     {
       id: "build-ask-name",
@@ -1092,6 +1106,140 @@
       tokens: ["\u6211", "\u53EB"]
     }
   ];
+
+  // src/features/foundations/introductions-controller.js
+  function createIntroductionsController({
+    state: state2,
+    introductionsGameSpeakerIds: introductionsGameSpeakerIds2,
+    introductionsGamePrompts: introductionsGamePrompts2,
+    introductionsBuildPhrases: introductionsBuildPhrases2,
+    introductionsPractice: introductionsPractice2,
+    illustratedKids: illustratedKids2,
+    topicById: topicById2,
+    shuffleArray: shuffleArray2,
+    speak: speak2,
+    speakSceneLines: speakSceneLines2,
+    currentTopic: currentTopic2,
+    currentFocusItem: currentFocusItem2,
+    currentBook: currentBook2,
+    currentLesson: currentLesson2,
+    renderActivityPanel: renderActivityPanel2,
+    renderFocusDisplay: renderFocusDisplay2,
+    renderFocusExplorer: renderFocusExplorer2,
+    renderFocusStatus: renderFocusStatus2,
+    elements
+  }) {
+    const { focusExplorer: focusExplorer2, focusStatus: focusStatus2 } = elements;
+    function introductionsPromptById2(promptId) {
+      return introductionsGamePrompts2.find((entry) => entry.id === promptId) ?? null;
+    }
+    function introductionsGameKids2() {
+      return introductionsGameSpeakerIds2.map((id) => illustratedKids2[id]).filter(Boolean);
+    }
+    function introductionsSelfIntroItemForKid2(kidId) {
+      const introductionsTopic2 = topicById2("introductions");
+      const itemIdByKidId = { anan: "my-name-anan", tiantian: "my-name-tiantian", sisi: "my-name-sisi", lele: "my-name-lele" };
+      return introductionsTopic2?.focusItems.find((item) => item.id === itemIdByKidId[kidId]) ?? null;
+    }
+    function resetIntroductionsChallenge2(options = {}) {
+      if (!introductionsGamePrompts2.length || !introductionsGameSpeakerIds2.length) return;
+      const prompt = introductionsGamePrompts2[Math.floor(Math.random() * introductionsGamePrompts2.length)];
+      state2.introductionsChallengeAnswerId = prompt.speakerId;
+      state2.introductionsChallengePromptId = prompt.id;
+      state2.introductionsChallengeOptionIds = shuffleArray2([...introductionsGameSpeakerIds2]);
+      state2.lastIntroductionsFeedback = options.feedback ?? "";
+    }
+    function ensureIntroductionsChallenge2() {
+      if (!state2.introductionsChallengeAnswerId || !state2.introductionsChallengeOptionIds.length) resetIntroductionsChallenge2();
+    }
+    function handleIntroductionsChallengePlay2() {
+      ensureIntroductionsChallenge2();
+      const prompt = introductionsPromptById2(state2.introductionsChallengePromptId);
+      if (!prompt) return;
+      if (state2.tapAudioEnabled) speak2(prompt.audio, 0.78);
+      state2.lastIntroductionsFeedback = "Listen again, then tap the child whose name you heard.";
+      renderActivityPanel2(currentTopic2());
+    }
+    function handleIntroductionsChallengeGuess2(kidId) {
+      ensureIntroductionsChallenge2();
+      const answerPrompt = introductionsPromptById2(state2.introductionsChallengePromptId);
+      const pickedKid = illustratedKids2[kidId];
+      const answerKid = illustratedKids2[state2.introductionsChallengeAnswerId];
+      if (!answerPrompt || !pickedKid || !answerKid) return;
+      if (kidId === answerPrompt.speakerId) {
+        state2.selectedFocusItemId = answerPrompt.sourceItemId;
+        if (state2.tapAudioEnabled) speak2(answerPrompt.audio, 0.78);
+        state2.lastIntroductionsFeedback = `Correct! ${answerKid.hanziName} said ${answerPrompt.hanzi}`;
+        renderFocusDisplay2(currentFocusItem2());
+        renderFocusExplorer2();
+        renderFocusStatus2();
+        window.setTimeout(() => {
+          resetIntroductionsChallenge2();
+          renderActivityPanel2(currentTopic2());
+        }, 650);
+        return;
+      }
+      state2.lastIntroductionsFeedback = `Try again. You picked ${pickedKid.hanziName}, but the voice was ${answerKid.hanziName}.`;
+      renderActivityPanel2(currentTopic2());
+    }
+    function introductionsBuildTarget2() {
+      return introductionsBuildPhrases2.find((entry) => entry.id === state2.introductionsBuildTargetId) ?? introductionsBuildPhrases2[0];
+    }
+    function resetIntroductionsBuilder2(options = {}) {
+      const target = introductionsBuildPhrases2[Math.floor(Math.random() * introductionsBuildPhrases2.length)];
+      state2.introductionsBuildTargetId = target.id;
+      state2.introductionsBuildAvailableTokens = shuffleArray2(target.tokens);
+      state2.introductionsBuildSelectedTokens = [];
+      state2.lastIntroductionsFeedback = options.feedback ?? "Build the sentence by tapping the word pieces in order.";
+    }
+    function ensureIntroductionsBuilder2() {
+      const target = introductionsBuildTarget2();
+      if (!state2.introductionsBuildTargetId || !state2.introductionsBuildAvailableTokens.length && !state2.introductionsBuildSelectedTokens.length || !target) resetIntroductionsBuilder2();
+    }
+    function handleIntroductionsBuildToken2(tokenIndex) {
+      const target = introductionsBuildTarget2();
+      const token = state2.introductionsBuildAvailableTokens[tokenIndex];
+      if (!target || !token) return;
+      state2.introductionsBuildSelectedTokens = [...state2.introductionsBuildSelectedTokens, token];
+      state2.introductionsBuildAvailableTokens = state2.introductionsBuildAvailableTokens.filter((_, index) => index !== tokenIndex);
+      if (state2.introductionsBuildSelectedTokens.length === target.tokens.length) {
+        const correct = target.tokens.every((entry, index) => state2.introductionsBuildSelectedTokens[index] === entry);
+        if (correct) {
+          if (state2.tapAudioEnabled) speak2(target.audio, 0.78);
+          state2.lastIntroductionsFeedback = `Correct! ${target.targetHanzi}`;
+          if (target.sourceItemId) {
+            state2.selectedFocusItemId = target.sourceItemId;
+            renderFocusDisplay2(currentFocusItem2());
+            renderFocusExplorer2();
+            renderFocusStatus2();
+          }
+        } else {
+          state2.lastIntroductionsFeedback = "Not quite. Try building the sentence again.";
+        }
+      }
+      renderActivityPanel2(currentTopic2());
+    }
+    function handleIntroductionsBuildClear2() {
+      const target = introductionsBuildTarget2();
+      if (!target) return;
+      state2.introductionsBuildAvailableTokens = shuffleArray2([...state2.introductionsBuildAvailableTokens, ...state2.introductionsBuildSelectedTokens]);
+      state2.introductionsBuildSelectedTokens = [];
+      state2.lastIntroductionsFeedback = "Try building the sentence again.";
+      renderActivityPanel2(currentTopic2());
+    }
+    function renderIntroductionsExplorer2() {
+      focusExplorer2.innerHTML = `<div class="numbers-board"><div class="numbers-stage-card"><p class="body-match-kicker">${currentBook2().label} Lesson ${currentLesson2().lesson}</p><h4>Book theme: asking and saying names</h4><p>This lesson mirrors Book 1A Lesson 6: say hello, ask a name, answer with \u6211\u53EB..., and repeat the new friend's name.</p></div><div class="greetings-practice-grid">${introductionsPractice2.map((exchange) => `<section class="greetings-exchange"><div class="greetings-exchange-top"><div><p class="body-match-kicker">Scene ${exchange.number}</p><p class="greetings-exchange-prompt">${exchange.prompt}</p></div><button class="small-button is-action-button" type="button" data-intro-play-all="${exchange.id}">Play scene</button></div><div class="greetings-scene-layout introductions-scene-layout"><div class="greetings-scene-visual"><img class="greetings-scene-image" src="${exchange.imagePath}" alt="${exchange.imageAlt}" /></div><div class="greetings-line-stack">${exchange.lines.map((line) => `<article class="greetings-line-card intro-line-card"><div class="telephone-bubble-copy"><p class="telephone-line-hanzi">${line.hanzi}</p>${state2.showPinyin ? `<p class="telephone-line-pinyin">${line.pinyin}</p>` : ""}${state2.showEnglish ? `<p class="telephone-line-english">${line.english}</p>` : ""}</div></article>`).join("")}</div></div></section>`).join("")}</div></div>`;
+      focusExplorer2.querySelectorAll("[data-intro-play-all]").forEach((button) => {
+        button.addEventListener("click", () => {
+          const exchange = introductionsPractice2.find((entry) => entry.id === button.dataset.introPlayAll);
+          if (!exchange || !state2.tapAudioEnabled) return;
+          speakSceneLines2(exchange.lines);
+          focusStatus2.textContent = `Listen to the whole scene: ${exchange.lines.map((line) => line.hanzi).join(" ")}`;
+        });
+      });
+    }
+    return { introductionsPromptById: introductionsPromptById2, introductionsGameKids: introductionsGameKids2, introductionsSelfIntroItemForKid: introductionsSelfIntroItemForKid2, resetIntroductionsChallenge: resetIntroductionsChallenge2, ensureIntroductionsChallenge: ensureIntroductionsChallenge2, handleIntroductionsChallengePlay: handleIntroductionsChallengePlay2, handleIntroductionsChallengeGuess: handleIntroductionsChallengeGuess2, introductionsBuildTarget: introductionsBuildTarget2, resetIntroductionsBuilder: resetIntroductionsBuilder2, ensureIntroductionsBuilder: ensureIntroductionsBuilder2, handleIntroductionsBuildToken: handleIntroductionsBuildToken2, handleIntroductionsBuildClear: handleIntroductionsBuildClear2, renderIntroductionsExplorer: renderIntroductionsExplorer2 };
+  }
 
   // src/features/foundations/age.js
   var ageTopic = {
@@ -3016,6 +3164,7 @@
   }
 
   // src/legacy-app.js
+  var introductionsGameSpeakerIds = ["anan", "tiantian", "sisi", "lele"];
   var ageGameItemIds = ["ask-age", "age-five", "age-six", "age-seven", "ask-grade", "grade-one"];
   var sceneSpeechRate = 0.64;
   var sceneLinePauseMs = 280;
@@ -3451,6 +3600,19 @@
   var handlePoliteChallengePlay;
   var handlePoliteChallengeGuess;
   var renderPoliteWordsExplorer;
+  var introductionsPromptById;
+  var introductionsGameKids;
+  var introductionsSelfIntroItemForKid;
+  var resetIntroductionsChallenge;
+  var ensureIntroductionsChallenge;
+  var handleIntroductionsChallengePlay;
+  var handleIntroductionsChallengeGuess;
+  var introductionsBuildTarget;
+  var resetIntroductionsBuilder;
+  var ensureIntroductionsBuilder;
+  var handleIntroductionsBuildToken;
+  var handleIntroductionsBuildClear;
+  var renderIntroductionsExplorer;
   document.querySelectorAll("[data-view]").forEach((button) => {
     button.addEventListener("click", () => {
       switchView(button.dataset.view);
@@ -3875,63 +4037,6 @@
     } else {
       state.weekdayMatchFeedback = "Try a different card.";
     }
-    renderActivityPanel(currentTopic());
-  }
-  function introductionsBuildTarget() {
-    return introductionsBuildPhrases.find((entry) => entry.id === state.introductionsBuildTargetId) ?? introductionsBuildPhrases[0];
-  }
-  function resetIntroductionsBuilder(options = {}) {
-    const target = introductionsBuildPhrases[Math.floor(Math.random() * introductionsBuildPhrases.length)];
-    state.introductionsBuildTargetId = target.id;
-    state.introductionsBuildAvailableTokens = shuffleArray(target.tokens);
-    state.introductionsBuildSelectedTokens = [];
-    state.lastIntroductionsFeedback = options.feedback ?? "Build the sentence by tapping the word pieces in order.";
-  }
-  function ensureIntroductionsBuilder() {
-    const target = introductionsBuildTarget();
-    if (!state.introductionsBuildTargetId || !state.introductionsBuildAvailableTokens.length && !state.introductionsBuildSelectedTokens.length) {
-      resetIntroductionsBuilder();
-      return;
-    }
-    if (!target) {
-      resetIntroductionsBuilder();
-    }
-  }
-  function handleIntroductionsBuildToken(tokenIndex) {
-    const target = introductionsBuildTarget();
-    const token = state.introductionsBuildAvailableTokens[tokenIndex];
-    if (!target || !token) {
-      return;
-    }
-    state.introductionsBuildSelectedTokens = [...state.introductionsBuildSelectedTokens, token];
-    state.introductionsBuildAvailableTokens = state.introductionsBuildAvailableTokens.filter((_, index) => index !== tokenIndex);
-    if (state.introductionsBuildSelectedTokens.length === target.tokens.length) {
-      const correct = target.tokens.every((entry, index) => state.introductionsBuildSelectedTokens[index] === entry);
-      if (correct) {
-        if (state.tapAudioEnabled) {
-          speak(target.audio, 0.78);
-        }
-        state.lastIntroductionsFeedback = `Correct! ${target.targetHanzi}`;
-        if (target.sourceItemId) {
-          state.selectedFocusItemId = target.sourceItemId;
-          renderFocusDisplay(currentFocusItem());
-          renderFocusExplorer();
-          renderFocusStatus();
-        }
-      } else {
-        state.lastIntroductionsFeedback = "Not quite. Try building the sentence again.";
-      }
-    }
-    renderActivityPanel(currentTopic());
-  }
-  function handleIntroductionsBuildClear() {
-    const target = introductionsBuildTarget();
-    if (!target) {
-      return;
-    }
-    state.introductionsBuildAvailableTokens = shuffleArray([...state.introductionsBuildAvailableTokens, ...state.introductionsBuildSelectedTokens]);
-    state.introductionsBuildSelectedTokens = [];
-    state.lastIntroductionsFeedback = "Try building the sentence again.";
     renderActivityPanel(currentTopic());
   }
   function ageGameItems() {
@@ -7914,60 +8019,6 @@
       });
     });
   }
-  function renderIntroductionsExplorer() {
-    focusExplorer.innerHTML = `
-    <div class="numbers-board">
-      <div class="numbers-stage-card">
-        <p class="body-match-kicker">${currentBook().label} Lesson ${currentLesson().lesson}</p>
-        <h4>Book theme: asking and saying names</h4>
-        <p>This lesson mirrors Book 1A Lesson 6: say hello, ask a name, answer with \u6211\u53EB..., and repeat the new friend's name.</p>
-      </div>
-      <div class="greetings-practice-grid">
-        ${introductionsPractice.map(
-      (exchange) => `
-              <section class="greetings-exchange">
-                <div class="greetings-exchange-top">
-                  <div>
-                    <p class="body-match-kicker">Scene ${exchange.number}</p>
-                    <p class="greetings-exchange-prompt">${exchange.prompt}</p>
-                  </div>
-                  <button class="small-button is-action-button" type="button" data-intro-play-all="${exchange.id}">Play scene</button>
-                </div>
-                <div class="greetings-scene-layout introductions-scene-layout">
-                  <div class="greetings-scene-visual">
-                    <img class="greetings-scene-image" src="${exchange.imagePath}" alt="${exchange.imageAlt}" />
-                  </div>
-                  <div class="greetings-line-stack">
-                    ${exchange.lines.map(
-        (line, index) => `
-                          <article class="greetings-line-card intro-line-card">
-                            <div class="telephone-bubble-copy">
-                              <p class="telephone-line-hanzi">${line.hanzi}</p>
-                              ${state.showPinyin ? `<p class="telephone-line-pinyin">${line.pinyin}</p>` : ""}
-                              ${state.showEnglish ? `<p class="telephone-line-english">${line.english}</p>` : ""}
-                            </div>
-                          </article>
-                        `
-      ).join("")}
-                  </div>
-                </div>
-              </section>
-            `
-    ).join("")}
-      </div>
-    </div>
-  `;
-    focusExplorer.querySelectorAll("[data-intro-play-all]").forEach((button) => {
-      button.addEventListener("click", () => {
-        const exchange = introductionsPractice.find((entry) => entry.id === button.dataset.introPlayAll);
-        if (!exchange || !state.tapAudioEnabled) {
-          return;
-        }
-        speakSceneLines(exchange.lines);
-        focusStatus.textContent = `Listen to the whole scene: ${exchange.lines.map((line) => line.hanzi).join(" ")}`;
-      });
-    });
-  }
   function renderAgeExplorer() {
     focusExplorer.innerHTML = `
     <div class="numbers-board">
@@ -8486,6 +8537,41 @@
     state,
     politeGameItemIds,
     politePractice,
+    topicById,
+    shuffleArray,
+    speak,
+    speakSceneLines,
+    currentTopic,
+    currentFocusItem,
+    currentBook,
+    currentLesson,
+    renderActivityPanel,
+    renderFocusDisplay,
+    renderFocusExplorer,
+    renderFocusStatus,
+    elements: { focusExplorer, focusStatus }
+  }));
+  ({
+    introductionsPromptById,
+    introductionsGameKids,
+    introductionsSelfIntroItemForKid,
+    resetIntroductionsChallenge,
+    ensureIntroductionsChallenge,
+    handleIntroductionsChallengePlay,
+    handleIntroductionsChallengeGuess,
+    introductionsBuildTarget,
+    resetIntroductionsBuilder,
+    ensureIntroductionsBuilder,
+    handleIntroductionsBuildToken,
+    handleIntroductionsBuildClear,
+    renderIntroductionsExplorer
+  } = createIntroductionsController({
+    state,
+    introductionsGameSpeakerIds,
+    introductionsGamePrompts,
+    introductionsBuildPhrases,
+    introductionsPractice,
+    illustratedKids,
     topicById,
     shuffleArray,
     speak,

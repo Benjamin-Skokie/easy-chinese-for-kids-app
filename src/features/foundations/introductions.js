@@ -78,14 +78,17 @@ export const introductionsPractice = [
 
 export const introductionsGamePrompts = [
   {
-    id: "intro-game-pattern",
-    speakerId: "",
+    id: "intro-game-anan",
+    speakerId: "anan",
     sourceItemId: "my-name",
-    hanzi: "我叫……",
-    pinyin: "wǒ jiào...",
-    english: "My name is...",
-    audio: "我叫"
-  }
+    hanzi: "我叫安安。",
+    pinyin: "wǒ jiào Ān an.",
+    english: "My name is Anan.",
+    audio: "我叫安安"
+  },
+  { id: "intro-game-tiantian", speakerId: "tiantian", sourceItemId: "my-name", hanzi: "我叫天天。", pinyin: "wǒ jiào Tiān tiān.", english: "My name is Tiantian.", audio: "我叫天天" },
+  { id: "intro-game-sisi", speakerId: "sisi", sourceItemId: "my-name", hanzi: "我叫思思。", pinyin: "wǒ jiào Sī si.", english: "My name is Sisi.", audio: "我叫思思" },
+  { id: "intro-game-lele", speakerId: "lele", sourceItemId: "my-name", hanzi: "我叫乐乐。", pinyin: "wǒ jiào Lè le.", english: "My name is Lele.", audio: "我叫乐乐" }
 ];
 
 export const introductionsBuildPhrases = [

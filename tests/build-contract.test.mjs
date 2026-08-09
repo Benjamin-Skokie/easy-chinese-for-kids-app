@@ -35,6 +35,7 @@ import { buildMultiplicationRhymeItems, buildNumberItem, multiplicationRhymeTopi
 import { createFoundationState } from "../src/features/foundations/state.js";
 import { createGreetingsController } from "../src/features/foundations/greetings-controller.js";
 import { createPoliteWordsController } from "../src/features/foundations/polite-words-controller.js";
+import { createIntroductionsController } from "../src/features/foundations/introductions-controller.js";
 import { familyGameItemIds, familyPractice, familyTopic, illustratedFamily } from "../src/features/family/family.js";
 
 test("the local page loads a single bundled application script", () => {
@@ -170,6 +171,30 @@ test("polite words controller refreshes the prompt when audio is replayed", () =
   assert.notEqual(state.politeChallengePromptId, firstPromptId);
 });
 
+test("introductions controller owns its listening challenge and sentence builder", () => {
+  const state = { ...createFoundationState(), tapAudioEnabled: false };
+  const controller = createIntroductionsController({
+    state,
+    introductionsGameSpeakerIds: ["anan", "tiantian", "sisi", "lele"],
+    introductionsGamePrompts,
+    introductionsBuildPhrases,
+    introductionsPractice,
+    illustratedKids,
+    topicById: (id) => id === "introductions" ? introductionsTopic : null,
+    shuffleArray: (items) => [...items],
+    speak: () => {}, speakSceneLines: () => {}, currentTopic: () => introductionsTopic,
+    currentFocusItem: () => null, currentBook: () => ({ label: "Book 1A" }), currentLesson: () => ({ lesson: 6 }),
+    renderActivityPanel: () => {}, renderFocusDisplay: () => {}, renderFocusExplorer: () => {}, renderFocusStatus: () => {},
+    elements: { focusExplorer: { innerHTML: "", querySelectorAll: () => [] }, focusStatus: { textContent: "" } }
+  });
+
+  controller.resetIntroductionsChallenge();
+  assert.ok(state.introductionsChallengeOptionIds.includes(state.introductionsChallengeAnswerId));
+  controller.resetIntroductionsBuilder();
+  assert.equal(state.introductionsBuildSelectedTokens.length, 0);
+  assert.ok(state.introductionsBuildAvailableTokens.length > 0);
+});
+
 test("time and calendar content retains its expected teaching sets", () => {
   assert.equal(timeDateWeekItems.length, 7);
   assert.equal(timeDateClockItems.length, 12);
@@ -256,7 +281,8 @@ test("introductions owns its scenes and practice activities", () => {
   assert.equal(introductionsTopic.interactiveScene, "introductions-conversation");
   assert.equal(introductionsTopic.steps.length, 2);
   assert.equal(introductionsPractice.length, 3);
-  assert.equal(introductionsGamePrompts.length, 1);
+  assert.equal(introductionsGamePrompts.length, 4);
+  assert.ok(introductionsGamePrompts.every((prompt) => prompt.speakerId));
   assert.equal(introductionsBuildPhrases.length, 2);
 });
 

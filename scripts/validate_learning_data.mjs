@@ -144,7 +144,8 @@ assert(foodPreferencesTopicData.scenes.length === 4, "food preferences scenes ar
 assert(mealsFeelingsTopicData.conversationPairs.length === 6, "meals conversation practice is incomplete");
 assert(mealsFeelingsTopicData.pictureChoices.length === 6, "meals picture choices are incomplete");
 assert(mealsFeelingsSentenceBuilds.length === 5, "meals sentence practice is incomplete");
-assert(introductionsGamePrompts.length === 1, "introductions listening prompt is incomplete");
+assert(introductionsGamePrompts.length === 4, "introductions listening prompt is incomplete");
+assert(introductionsGamePrompts.every((prompt) => prompt.speakerId), "introductions listening prompts need speakers");
 assert(introductionsBuildPhrases.length === 2, "introductions sentence practice is incomplete");
 assert(ageBuildPhrases.length === 6, "age sentence practice is incomplete");
 assert(identityCountries.length === 3, "identity country set is incomplete");
