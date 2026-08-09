@@ -26,6 +26,7 @@ import { politeGameItemIds, politePractice, politeWordsTopic } from "../src/feat
 import { clothesMatchItems, clothesPractice, clothesTopic } from "../src/features/daily-life/clothes.js";
 import { weatherTopic } from "../src/features/world/weather.js";
 import { animalsTopic } from "../src/features/world/animals.js";
+import { hobbiesTopic, toysTopic } from "../src/features/play-hobbies/play-hobbies.js";
 import { bodyBonusItemIds, bodyCoreItemIds, bodyDiagramLayout, bodyTopic } from "../src/features/foundations/body.js";
 import { illustratedKids } from "../src/data/characters.js";
 import { bookHomeCategories, books, learningHomeCategories, topicCardMeta, topicGroups } from "../src/data/curriculum.js";
@@ -222,6 +223,13 @@ test("weather owns its standalone topic definition", () => {
 test("animals owns its standalone topic definition", () => {
   assert.equal(animalsTopic.id, "animals");
   assert.equal(animalsTopic.steps.length, 2);
+});
+
+test("play and hobbies owns its toys and hobbies topics", () => {
+  assert.equal(hobbiesTopic.id, "hobbies");
+  assert.equal(hobbiesTopic.steps.length, 4);
+  assert.equal(toysTopic.id, "toys");
+  assert.equal(toysTopic.focusItems.length, 7);
 });
 
 test("body owns its vocabulary, diagram, and matching sets", () => {

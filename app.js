@@ -1563,6 +1563,50 @@
     ]
   };
 
+  // src/features/play-hobbies/play-hobbies.js
+  var hobbiesTopic = {
+    id: "hobbies",
+    title: "Hobbies",
+    summary: "A good branch for personal expression and longer conversations later.",
+    progressLabel: "2A to 4B",
+    iconText: "\u559C\u6B22",
+    iconColor: "#8f6988",
+    focus: { hanzi: "\u6211\u559C\u6B22\u770B\u4E66\u3002", pinyin: "w\u01D2 x\u01D0 huan k\xE0n sh\u016B.", english: "I like reading.", audio: "\u6211\u559C\u6B22\u770B\u4E66" },
+    parentGuide: "Choose activities the child already loves. Familiar routines make speaking practice feel much less abstract.",
+    cultureGuide: "Hobbies are a nice place to introduce art, music, and cultural interests once the core language is stable.",
+    activities: ["Tap to hear", "Choose what I like", "Listen and choose", "Talk about my hobby"],
+    steps: [
+      { book: "2A", lesson: 5, title: "I love reading", note: "Start with a simple preference pattern." },
+      { book: "3B", lesson: 4, title: "Hobbies", note: "Broaden the hobby set." },
+      { book: "4B", lesson: 4, title: "Hobbies", note: "Revisit hobby language." },
+      { book: "4B", lesson: 7, title: "Leisure time", note: "Use hobbies in free-time language." }
+    ]
+  };
+  var toysTopic = {
+    id: "toys",
+    title: "Toys",
+    summary: "A focused toy and kid-transport word set that fits Book 2A well and works for quick picture-based review.",
+    progressLabel: "2A toy store",
+    iconText: "\u73A9\u5177",
+    iconColor: "#b86f52",
+    iconAccent: "#f2cb7f",
+    iconTheme: "toys",
+    focus: { hanzi: "\u73A9\u5177\u6C7D\u8F66\uFF0C\u706B\u8F66\uFF0C\u98DE\u673A", pinyin: "w\xE1n j\xF9 q\xEC ch\u0113, hu\u01D2 ch\u0113, f\u0113i j\u012B", english: "toy car, train, airplane", audio: "\u73A9\u5177\u6C7D\u8F66\uFF0C\u706B\u8F66\uFF0C\u98DE\u673A" },
+    focusItems: [
+      { id: "toy-car", hanzi: "\u73A9\u5177\u6C7D\u8F66", pinyin: "w\xE1n j\xF9 q\xEC ch\u0113", english: "toy car", audio: "\u73A9\u5177\u6C7D\u8F66" },
+      { id: "train", hanzi: "\u706B\u8F66", pinyin: "hu\u01D2 ch\u0113", english: "train", audio: "\u706B\u8F66" },
+      { id: "airplane", hanzi: "\u98DE\u673A", pinyin: "f\u0113i j\u012B", english: "airplane", audio: "\u98DE\u673A" },
+      { id: "school-bus", hanzi: "\u6821\u8F66", pinyin: "xi\xE0o ch\u0113", english: "school bus", audio: "\u6821\u8F66" },
+      { id: "subway", hanzi: "\u5730\u94C1", pinyin: "d\xEC ti\u011B", english: "subway", audio: "\u5730\u94C1" },
+      { id: "toy-doll", hanzi: "\u73A9\u5177\u5A03\u5A03", pinyin: "w\xE1n j\xF9 w\xE1 wa", english: "toy doll", audio: "\u73A9\u5177\u5A03\u5A03" },
+      { id: "bicycle", hanzi: "\u81EA\u884C\u8F66", pinyin: "z\xEC x\xEDng ch\u0113", english: "bicycle", audio: "\u81EA\u884C\u8F66" }
+    ],
+    parentGuide: "Use the child's own toy shelf first. Point, tap the card, hear the word, then ask the child to find the matching toy or vehicle.",
+    cultureGuide: "This set bridges toy language and everyday transport language, so it can grow naturally into later daily-life lessons.",
+    activities: ["Tap to hear", "Find the toy", "Listen and choose", "Sort toys and vehicles"],
+    steps: [{ book: "2A", lesson: 4, title: "My toys", note: "Learn a core toy set with familiar child-friendly objects." }]
+  };
+
   // src/features/foundations/body.js
   var bodyTopic = {
     id: "body",
@@ -2438,58 +2482,8 @@
       activities: ["Tap to hear", "Say a favorite", "Listen and choose", "Match the words"],
       steps: [{ book: "4B", lesson: 6, title: "School subjects", note: "Talk about favorite classes." }]
     },
-    {
-      id: "hobbies",
-      title: "Hobbies",
-      summary: "A good branch for personal expression and longer conversations later.",
-      progressLabel: "2A to 4B",
-      iconText: "\u559C\u6B22",
-      iconColor: "#8f6988",
-      focus: {
-        hanzi: "\u6211\u559C\u6B22\u770B\u4E66\u3002",
-        pinyin: "w\u01D2 x\u01D0 huan k\xE0n sh\u016B.",
-        english: "I like reading.",
-        audio: "\u6211\u559C\u6B22\u770B\u4E66"
-      },
-      parentGuide: "Choose activities the child already loves. Familiar routines make speaking practice feel much less abstract.",
-      cultureGuide: "Hobbies are a nice place to introduce art, music, and cultural interests once the core language is stable.",
-      activities: ["Tap to hear", "Choose what I like", "Listen and choose", "Talk about my hobby"],
-      steps: [
-        { book: "2A", lesson: 5, title: "I love reading", note: "Start with a simple preference pattern." },
-        { book: "3B", lesson: 4, title: "Hobbies", note: "Broaden the hobby set." },
-        { book: "4B", lesson: 4, title: "Hobbies", note: "Revisit hobby language." },
-        { book: "4B", lesson: 7, title: "Leisure time", note: "Use hobbies in free-time language." }
-      ]
-    },
-    {
-      id: "toys",
-      title: "Toys",
-      summary: "A focused toy and kid-transport word set that fits Book 2A well and works for quick picture-based review.",
-      progressLabel: "2A toy store",
-      iconText: "\u73A9\u5177",
-      iconColor: "#b86f52",
-      iconAccent: "#f2cb7f",
-      iconTheme: "toys",
-      focus: {
-        hanzi: "\u73A9\u5177\u6C7D\u8F66\uFF0C\u706B\u8F66\uFF0C\u98DE\u673A",
-        pinyin: "w\xE1n j\xF9 q\xEC ch\u0113, hu\u01D2 ch\u0113, f\u0113i j\u012B",
-        english: "toy car, train, airplane",
-        audio: "\u73A9\u5177\u6C7D\u8F66\uFF0C\u706B\u8F66\uFF0C\u98DE\u673A"
-      },
-      focusItems: [
-        { id: "toy-car", hanzi: "\u73A9\u5177\u6C7D\u8F66", pinyin: "w\xE1n j\xF9 q\xEC ch\u0113", english: "toy car", audio: "\u73A9\u5177\u6C7D\u8F66" },
-        { id: "train", hanzi: "\u706B\u8F66", pinyin: "hu\u01D2 ch\u0113", english: "train", audio: "\u706B\u8F66" },
-        { id: "airplane", hanzi: "\u98DE\u673A", pinyin: "f\u0113i j\u012B", english: "airplane", audio: "\u98DE\u673A" },
-        { id: "school-bus", hanzi: "\u6821\u8F66", pinyin: "xi\xE0o ch\u0113", english: "school bus", audio: "\u6821\u8F66" },
-        { id: "subway", hanzi: "\u5730\u94C1", pinyin: "d\xEC ti\u011B", english: "subway", audio: "\u5730\u94C1" },
-        { id: "toy-doll", hanzi: "\u73A9\u5177\u5A03\u5A03", pinyin: "w\xE1n j\xF9 w\xE1 wa", english: "toy doll", audio: "\u73A9\u5177\u5A03\u5A03" },
-        { id: "bicycle", hanzi: "\u81EA\u884C\u8F66", pinyin: "z\xEC x\xEDng ch\u0113", english: "bicycle", audio: "\u81EA\u884C\u8F66" }
-      ],
-      parentGuide: "Use the child's own toy shelf first. Point, tap the card, hear the word, then ask the child to find the matching toy or vehicle.",
-      cultureGuide: "This set bridges toy language and everyday transport language, so it can grow naturally into later daily-life lessons.",
-      activities: ["Tap to hear", "Find the toy", "Listen and choose", "Sort toys and vehicles"],
-      steps: [{ book: "2A", lesson: 4, title: "My toys", note: "Learn a core toy set with familiar child-friendly objects." }]
-    },
+    hobbiesTopic,
+    toysTopic,
     clothesTopic,
     dailyLifeTopic,
     comparisonsTopic,
