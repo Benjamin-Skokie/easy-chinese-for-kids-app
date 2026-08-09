@@ -892,6 +892,38 @@
   ];
 
   // src/features/foundations/introductions.js
+  var introductionsTopic = {
+    id: "introductions",
+    title: "Names & Introductions",
+    summary: "Meet a new friend, ask a name, and answer with a warm first self-introduction.",
+    progressLabel: "1A to 3A",
+    iconText: "\u6211\u53EB",
+    iconColor: "#7e8f63",
+    iconAccent: "#d9e49a",
+    iconTheme: "introductions",
+    focus: {
+      hanzi: "\u6211\u53EB\u2026\u2026",
+      pinyin: "w\u01D2 ji\xE0o...",
+      english: "My name is...",
+      audio: "\u6211\u53EB"
+    },
+    focusItems: [
+      { id: "ask-name", hanzi: "\u4F60\u53EB\u4EC0\u4E48\u540D\u5B57\uFF1F", pinyin: "n\u01D0 ji\xE0o sh\xE9n me m\xEDng zi?", english: "What is your name?", audio: "\u4F60\u53EB\u4EC0\u4E48\u540D\u5B57" },
+      { id: "my-name", hanzi: "\u6211\u53EB\u2026\u2026", pinyin: "w\u01D2 ji\xE0o...", english: "My name is...", audio: "\u6211\u53EB" },
+      { id: "me-word", hanzi: "\u6211", pinyin: "w\u01D2", english: "I; me", audio: "\u6211" },
+      { id: "call-word", hanzi: "\u53EB", pinyin: "ji\xE0o", english: "to be called", audio: "\u53EB" },
+      { id: "what-word", hanzi: "\u4EC0\u4E48", pinyin: "sh\xE9n me", english: "what", audio: "\u4EC0\u4E48" },
+      { id: "name-word", hanzi: "\u540D\u5B57", pinyin: "m\xEDng zi", english: "name", audio: "\u540D\u5B57" }
+    ],
+    interactiveScene: "introductions-conversation",
+    parentGuide: "Practice the whole mini-conversation first: \u4F60\u597D, \u4F60\u53EB\u4EC0\u4E48\u540D\u5B57? \u6211\u53EB... Then pause after \u6211\u53EB and let the child fill in their own name.",
+    cultureGuide: "Children connect strongly to names and faces, so recurring kid characters help this lesson feel social instead of abstract.",
+    activities: ["Tap to hear", "Play the conversation", "Say your own name", "Build the sentence"],
+    steps: [
+      { book: "1A", lesson: 6, title: "What's your name?", note: "Learn a first self-introduction pattern." },
+      { book: "2A", lesson: 3, title: "Good friends", note: "Use names and social language in a wider context." }
+    ]
+  };
   var introductionsPractice = [
     {
       id: "intro-scene-1",
@@ -1325,38 +1357,7 @@
         { book: "3A", lesson: 6, title: "Request", note: "Expand polite language into asking for things." }
       ]
     },
-    {
-      id: "introductions",
-      title: "Names & Introductions",
-      summary: "Meet a new friend, ask a name, and answer with a warm first self-introduction.",
-      progressLabel: "1A to 3A",
-      iconText: "\u6211\u53EB",
-      iconColor: "#7e8f63",
-      iconAccent: "#d9e49a",
-      iconTheme: "introductions",
-      focus: {
-        hanzi: "\u6211\u53EB\u2026\u2026",
-        pinyin: "w\u01D2 ji\xE0o...",
-        english: "My name is...",
-        audio: "\u6211\u53EB"
-      },
-      focusItems: [
-        { id: "ask-name", hanzi: "\u4F60\u53EB\u4EC0\u4E48\u540D\u5B57\uFF1F", pinyin: "n\u01D0 ji\xE0o sh\xE9n me m\xEDng zi?", english: "What is your name?", audio: "\u4F60\u53EB\u4EC0\u4E48\u540D\u5B57" },
-        { id: "my-name", hanzi: "\u6211\u53EB\u2026\u2026", pinyin: "w\u01D2 ji\xE0o...", english: "My name is...", audio: "\u6211\u53EB" },
-        { id: "me-word", hanzi: "\u6211", pinyin: "w\u01D2", english: "I; me", audio: "\u6211" },
-        { id: "call-word", hanzi: "\u53EB", pinyin: "ji\xE0o", english: "to be called", audio: "\u53EB" },
-        { id: "what-word", hanzi: "\u4EC0\u4E48", pinyin: "sh\xE9n me", english: "what", audio: "\u4EC0\u4E48" },
-        { id: "name-word", hanzi: "\u540D\u5B57", pinyin: "m\xEDng zi", english: "name", audio: "\u540D\u5B57" }
-      ],
-      interactiveScene: "introductions-conversation",
-      parentGuide: "Practice the whole mini-conversation first: \u4F60\u597D, \u4F60\u53EB\u4EC0\u4E48\u540D\u5B57? \u6211\u53EB... Then pause after \u6211\u53EB and let the child fill in their own name.",
-      cultureGuide: "Children connect strongly to names and faces, so recurring kid characters help this lesson feel social instead of abstract.",
-      activities: ["Tap to hear", "Play the conversation", "Say your own name", "Build the sentence"],
-      steps: [
-        { book: "1A", lesson: 6, title: "What's your name?", note: "Learn a first self-introduction pattern." },
-        { book: "2A", lesson: 3, title: "Good friends", note: "Use names and social language in a wider context." }
-      ]
-    },
+    introductionsTopic,
     {
       id: "identity",
       title: "Countries & Languages",

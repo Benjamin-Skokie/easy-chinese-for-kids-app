@@ -15,7 +15,7 @@ import { schoolSubjectsSentenceBuilds as schoolLessonSubjectsSentenceBuilds, sch
 import { foodSentenceBuilds, foodTopicData } from "./features/food/food.js";
 import { foodPreferencesTopicData } from "./features/food/food-preferences.js";
 import { mealsFeelingsSentenceBuilds as mealsFeelingsLessonSentenceBuilds, mealsFeelingsTopicData } from "./features/food/meals-feelings.js";
-import { introductionsBuildPhrases, introductionsGamePrompts, introductionsPractice } from "./features/foundations/introductions.js";
+import { introductionsBuildPhrases, introductionsGamePrompts, introductionsPractice, introductionsTopic } from "./features/foundations/introductions.js";
 import { ageBuildPhrases, agePractice } from "./features/foundations/age.js";
 import { createSharedLessonPractice } from "./games/shared-lesson-practice.js";
 
@@ -152,40 +152,7 @@ const topicData = [
       { book: "3A", lesson: 6, title: "Request", note: "Expand polite language into asking for things." }
     ]
   },
-  {
-    id: "introductions",
-    title: "Names & Introductions",
-    summary: "Meet a new friend, ask a name, and answer with a warm first self-introduction.",
-    progressLabel: "1A to 3A",
-    iconText: "我叫",
-    iconColor: "#7e8f63",
-    iconAccent: "#d9e49a",
-    iconTheme: "introductions",
-    focus: {
-      hanzi: "我叫……",
-      pinyin: "wǒ jiào...",
-      english: "My name is...",
-      audio: "我叫"
-    },
-    focusItems: [
-      { id: "ask-name", hanzi: "你叫什么名字？", pinyin: "nǐ jiào shén me míng zi?", english: "What is your name?", audio: "你叫什么名字" },
-      { id: "my-name", hanzi: "我叫……", pinyin: "wǒ jiào...", english: "My name is...", audio: "我叫" },
-      { id: "me-word", hanzi: "我", pinyin: "wǒ", english: "I; me", audio: "我" },
-      { id: "call-word", hanzi: "叫", pinyin: "jiào", english: "to be called", audio: "叫" },
-      { id: "what-word", hanzi: "什么", pinyin: "shén me", english: "what", audio: "什么" },
-      { id: "name-word", hanzi: "名字", pinyin: "míng zi", english: "name", audio: "名字" }
-    ],
-    interactiveScene: "introductions-conversation",
-    parentGuide:
-      "Practice the whole mini-conversation first: 你好, 你叫什么名字? 我叫... Then pause after 我叫 and let the child fill in their own name.",
-    cultureGuide:
-      "Children connect strongly to names and faces, so recurring kid characters help this lesson feel social instead of abstract.",
-    activities: ["Tap to hear", "Play the conversation", "Say your own name", "Build the sentence"],
-    steps: [
-      { book: "1A", lesson: 6, title: "What's your name?", note: "Learn a first self-introduction pattern." },
-      { book: "2A", lesson: 3, title: "Good friends", note: "Use names and social language in a wider context." }
-    ]
-  },
+  introductionsTopic,
   {
     id: "identity",
     title: "Countries & Languages",

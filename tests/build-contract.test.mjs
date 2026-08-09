@@ -18,7 +18,7 @@ import { schoolSubjectsSentenceBuilds, schoolSubjectsTopicData } from "../src/fe
 import { foodSentenceBuilds, foodTopicData } from "../src/features/food/food.js";
 import { foodPreferencesTopicData } from "../src/features/food/food-preferences.js";
 import { mealsFeelingsSentenceBuilds, mealsFeelingsTopicData } from "../src/features/food/meals-feelings.js";
-import { introductionsBuildPhrases, introductionsGamePrompts, introductionsPractice } from "../src/features/foundations/introductions.js";
+import { introductionsBuildPhrases, introductionsGamePrompts, introductionsPractice, introductionsTopic } from "../src/features/foundations/introductions.js";
 import { ageBuildPhrases, agePractice } from "../src/features/foundations/age.js";
 
 test("the local page loads a single bundled application script", () => {
@@ -153,6 +153,9 @@ test("meals and feelings owns its scenes and practice activities", () => {
 });
 
 test("introductions owns its scenes and practice activities", () => {
+  assert.equal(introductionsTopic.id, "introductions");
+  assert.equal(introductionsTopic.interactiveScene, "introductions-conversation");
+  assert.equal(introductionsTopic.steps.length, 2);
   assert.equal(introductionsPractice.length, 3);
   assert.equal(introductionsGamePrompts.length, 1);
   assert.equal(introductionsBuildPhrases.length, 2);
