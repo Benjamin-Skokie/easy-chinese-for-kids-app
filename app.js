@@ -1352,6 +1352,233 @@
   ];
   var greetingsGameItemIds = ["hello", "teacher-hello", "good-morning", "goodbye"];
 
+  // src/features/foundations/greetings-controller.js
+  function createGreetingsController({
+    state: state2,
+    greetingsGameItemIds: greetingsGameItemIds2,
+    greetingsPractice: greetingsPractice2,
+    topicById: topicById2,
+    shuffleArray: shuffleArray2,
+    speak: speak2,
+    speakSceneLines: speakSceneLines2,
+    currentTopic: currentTopic2,
+    currentFocusItem: currentFocusItem2,
+    currentBook: currentBook2,
+    currentLesson: currentLesson2,
+    resetListenChallengeResult: resetListenChallengeResult2,
+    renderActivityPanel: renderActivityPanel2,
+    renderFocusDisplay: renderFocusDisplay2,
+    renderFocusExplorer: renderFocusExplorer2,
+    renderFocusStatus: renderFocusStatus2,
+    elements
+  }) {
+    const { focusExplorer: focusExplorer2, focusStatus: focusStatus2 } = elements;
+    function greetingsGameItems2() {
+      const greetingsTopic2 = topicById2("greetings");
+      return greetingsGameItemIds2.map((id) => greetingsTopic2?.focusItems.find((item) => item.id === id)).filter(Boolean);
+    }
+    function resetGreetingsChallenge2(options = {}) {
+      const items = greetingsGameItems2();
+      if (!items.length) {
+        return;
+      }
+      const answer = items[Math.floor(Math.random() * items.length)];
+      const distractors = shuffleArray2(items.filter((item) => item.id !== answer.id)).slice(
+        0,
+        Math.min(3, Math.max(0, items.length - 1))
+      );
+      state2.greetingsChallengeAnswerId = answer.id;
+      state2.greetingsChallengePickedId = "";
+      state2.greetingsChallengePromptId = answer.id;
+      state2.greetingsChallengeOptionIds = shuffleArray2([answer.id, ...distractors.map((item) => item.id)]);
+      state2.greetingsChallengeResult = "";
+      state2.greetingsChallengeWrongIds = /* @__PURE__ */ new Set();
+      state2.greetingsListenFeedback = options.feedback ?? "";
+      state2.lastGreetingsFeedback = state2.greetingsListenFeedback;
+    }
+    function ensureGreetingsChallenge2() {
+      if (!state2.greetingsChallengeAnswerId || !state2.greetingsChallengeOptionIds.length) {
+        resetGreetingsChallenge2();
+      }
+    }
+    function greetingsMeaningLabel2(itemId) {
+      const labels = {
+        hello: "Say hello to a friend",
+        "teacher-hello": "Greet Teacher Li politely",
+        "good-morning": "Say good morning at the start of the day",
+        goodbye: "Say goodbye when leaving"
+      };
+      return labels[itemId] ?? "";
+    }
+    function resetGreetingsMatchGame2(options = {}) {
+      const items = greetingsGameItems2();
+      state2.greetingsSelectedPhraseId = null;
+      state2.greetingsMatchedIds = /* @__PURE__ */ new Set();
+      state2.greetingsPhraseOrder = shuffleArray2(items.map((item) => item.id));
+      state2.greetingsMeaningOrder = shuffleArray2(items.map((item) => item.id));
+      state2.greetingsMatchFeedback = options.feedback ?? "";
+      state2.lastGreetingsFeedback = state2.greetingsMatchFeedback;
+    }
+    function ensureGreetingsMatchGame2() {
+      const items = greetingsGameItems2();
+      if (!state2.greetingsPhraseOrder.length || state2.greetingsPhraseOrder.length !== items.length || state2.greetingsMeaningOrder.length !== items.length) {
+        resetGreetingsMatchGame2();
+      }
+    }
+    function handleGreetingsMatchPhrase2(itemId) {
+      const item = greetingsGameItems2().find((entry) => entry.id === itemId);
+      if (!item || state2.greetingsMatchedIds.has(itemId)) {
+        return;
+      }
+      state2.greetingsSelectedPhraseId = itemId;
+      if (state2.tapAudioEnabled) {
+        speak2(item.audio, 0.78);
+      }
+      state2.greetingsMatchFeedback = `Now find the situation for ${item.hanzi}.`;
+      state2.lastGreetingsFeedback = state2.greetingsMatchFeedback;
+      renderActivityPanel2(currentTopic2());
+    }
+    function handleGreetingsMatchAttempt2(targetId) {
+      if (!state2.greetingsSelectedPhraseId || state2.greetingsMatchedIds.has(targetId)) {
+        return;
+      }
+      const selectedId = state2.greetingsSelectedPhraseId;
+      const selectedItem = greetingsGameItems2().find((entry) => entry.id === selectedId);
+      if (!selectedItem) {
+        return;
+      }
+      if (selectedId === targetId) {
+        state2.greetingsMatchedIds = /* @__PURE__ */ new Set([...state2.greetingsMatchedIds, targetId]);
+        state2.greetingsSelectedPhraseId = null;
+        state2.greetingsMatchFeedback = `Correct! ${selectedItem.hanzi} matches that situation.`;
+        state2.lastGreetingsFeedback = state2.greetingsMatchFeedback;
+        state2.selectedFocusItemId = selectedItem.id;
+        renderFocusDisplay2(currentFocusItem2());
+        renderFocusExplorer2();
+        renderFocusStatus2();
+        if (state2.greetingsMatchedIds.size === greetingsGameItems2().length) {
+          state2.greetingsMatchFeedback = "Great job! You matched all the greetings.";
+          state2.lastGreetingsFeedback = state2.greetingsMatchFeedback;
+        }
+        renderActivityPanel2(currentTopic2());
+        return;
+      }
+      state2.greetingsMatchFeedback = `Try again. ${selectedItem.hanzi} does not match that situation.`;
+      state2.lastGreetingsFeedback = state2.greetingsMatchFeedback;
+      renderActivityPanel2(currentTopic2());
+    }
+    function handleGreetingsChallengePlay2() {
+      ensureGreetingsChallenge2();
+      const item = greetingsGameItems2().find((entry) => entry.id === state2.greetingsChallengePromptId);
+      if (!item) {
+        return;
+      }
+      resetListenChallengeResult2("greetings");
+      if (state2.tapAudioEnabled) {
+        speak2(item.audio, 0.78);
+      }
+      state2.greetingsListenFeedback = `Listen again and find ${item.hanzi}.`;
+      state2.lastGreetingsFeedback = state2.greetingsListenFeedback;
+      renderActivityPanel2(currentTopic2());
+    }
+    function handleGreetingsChallengeGuess2(itemId) {
+      ensureGreetingsChallenge2();
+      const answer = greetingsGameItems2().find((entry) => entry.id === state2.greetingsChallengeAnswerId);
+      const picked = greetingsGameItems2().find((entry) => entry.id === itemId);
+      if (!answer || !picked) {
+        return;
+      }
+      if (itemId === answer.id) {
+        state2.selectedFocusItemId = answer.id;
+        state2.greetingsChallengePickedId = itemId;
+        state2.greetingsChallengeResult = "correct";
+        if (state2.tapAudioEnabled) {
+          speak2(answer.audio, 0.78);
+        }
+        state2.greetingsListenFeedback = `Correct! ${answer.hanzi} matches the audio.`;
+        state2.lastGreetingsFeedback = state2.greetingsListenFeedback;
+        renderFocusDisplay2(currentFocusItem2());
+        renderFocusExplorer2();
+        renderFocusStatus2();
+        renderActivityPanel2(currentTopic2());
+        return;
+      }
+      state2.greetingsChallengePickedId = itemId;
+      state2.greetingsChallengeResult = "wrong";
+      state2.greetingsChallengeWrongIds = /* @__PURE__ */ new Set([...state2.greetingsChallengeWrongIds, itemId]);
+      state2.greetingsListenFeedback = `Try again. You picked ${picked.hanzi}, but the audio is ${answer.hanzi}.`;
+      state2.lastGreetingsFeedback = state2.greetingsListenFeedback;
+      renderActivityPanel2(currentTopic2());
+    }
+    function renderGreetingsExplorer2() {
+      focusExplorer2.innerHTML = `
+      <div class="numbers-board">
+        <div class="numbers-stage-card">
+          <p class="body-match-kicker">${currentBook2().label} Lesson ${currentLesson2().lesson}</p>
+          <h4>Book theme: school greetings</h4>
+          <p>This lesson follows the book page: greet a teacher politely, greet a friend in the morning, and say goodbye.</p>
+        </div>
+        <div class="greetings-practice-grid">
+          ${greetingsPractice2.map(
+        (exchange) => `
+                <section class="greetings-exchange">
+                  <div class="greetings-exchange-top">
+                    <div>
+                      <p class="body-match-kicker">Scene ${exchange.number}</p>
+                      <p class="greetings-exchange-prompt">${exchange.prompt}</p>
+                    </div>
+                    <button class="small-button is-action-button" type="button" data-greeting-play-all="${exchange.id}">Play scene</button>
+                  </div>
+                  <div class="greetings-scene-layout">
+                    <div class="greetings-scene-visual">
+                      <img class="greetings-scene-image" src="${exchange.imagePath}" alt="${exchange.imageAlt}" />
+                    </div>
+                      <div class="greetings-line-stack">
+                      ${exchange.lines.map(
+          (line) => `
+                            <article class="greetings-line-card">
+                              <div class="telephone-bubble-copy">
+                                <p class="telephone-line-hanzi">${line.hanzi}</p>
+                                ${state2.showPinyin ? `<p class="telephone-line-pinyin">${line.pinyin}</p>` : ""}
+                                ${state2.showEnglish ? `<p class="telephone-line-english">${line.english}</p>` : ""}
+                              </div>
+                            </article>
+                          `
+        ).join("")}
+                    </div>
+                  </div>
+                </section>
+              `
+      ).join("")}
+        </div>
+      </div>
+    `;
+      focusExplorer2.querySelectorAll("[data-greeting-play-all]").forEach((button) => {
+        button.addEventListener("click", () => {
+          const exchange = greetingsPractice2.find((entry) => entry.id === button.dataset.greetingPlayAll);
+          if (!exchange || !state2.tapAudioEnabled) {
+            return;
+          }
+          speakSceneLines2(exchange.lines);
+          focusStatus2.textContent = `Listen to the whole scene: ${exchange.lines.map((line) => line.hanzi).join(" ")}`;
+        });
+      });
+    }
+    return {
+      greetingsGameItems: greetingsGameItems2,
+      resetGreetingsChallenge: resetGreetingsChallenge2,
+      ensureGreetingsChallenge: ensureGreetingsChallenge2,
+      greetingsMeaningLabel: greetingsMeaningLabel2,
+      resetGreetingsMatchGame: resetGreetingsMatchGame2,
+      ensureGreetingsMatchGame: ensureGreetingsMatchGame2,
+      handleGreetingsMatchPhrase: handleGreetingsMatchPhrase2,
+      handleGreetingsMatchAttempt: handleGreetingsMatchAttempt2,
+      handleGreetingsChallengePlay: handleGreetingsChallengePlay2,
+      handleGreetingsChallengeGuess: handleGreetingsChallengeGuess2,
+      renderGreetingsExplorer: renderGreetingsExplorer2
+    };
+  }
+
   // src/features/foundations/identity.js
   var identityTopic = {
     id: "identity",
@@ -2978,6 +3205,17 @@
   var renderMatchPractice = renderSharedLessonPractice.renderMatchPractice;
   var renderPracticeSayCards = renderSharedLessonPractice.renderPracticeSayCards;
   var bindPracticeSayCards = renderSharedLessonPractice.bindPracticeSayCards;
+  var greetingsGameItems;
+  var resetGreetingsChallenge;
+  var ensureGreetingsChallenge;
+  var greetingsMeaningLabel;
+  var resetGreetingsMatchGame;
+  var ensureGreetingsMatchGame;
+  var handleGreetingsMatchPhrase;
+  var handleGreetingsMatchAttempt;
+  var handleGreetingsChallengePlay;
+  var handleGreetingsChallengeGuess;
+  var renderGreetingsExplorer;
   document.querySelectorAll("[data-view]").forEach((button) => {
     button.addEventListener("click", () => {
       switchView(button.dataset.view);
@@ -3102,100 +3340,6 @@
     if (state.mathChallengeStageId !== stage.id || state.mathChallengeAnswer === null) {
       resetMathChallenge();
     }
-  }
-  function greetingsGameItems() {
-    const greetingsTopic2 = topicById("greetings");
-    return greetingsGameItemIds.map((id) => greetingsTopic2?.focusItems.find((item) => item.id === id)).filter(Boolean);
-  }
-  function resetGreetingsChallenge(options = {}) {
-    const items = greetingsGameItems();
-    if (!items.length) {
-      return;
-    }
-    const answer = items[Math.floor(Math.random() * items.length)];
-    const distractors = shuffleArray(items.filter((item) => item.id !== answer.id)).slice(
-      0,
-      Math.min(3, Math.max(0, items.length - 1))
-    );
-    state.greetingsChallengeAnswerId = answer.id;
-    state.greetingsChallengePickedId = "";
-    state.greetingsChallengePromptId = answer.id;
-    state.greetingsChallengeOptionIds = shuffleArray([answer.id, ...distractors.map((item) => item.id)]);
-    state.greetingsChallengeResult = "";
-    state.greetingsChallengeWrongIds = /* @__PURE__ */ new Set();
-    state.greetingsListenFeedback = options.feedback ?? "";
-    state.lastGreetingsFeedback = state.greetingsListenFeedback;
-  }
-  function ensureGreetingsChallenge() {
-    if (!state.greetingsChallengeAnswerId || !state.greetingsChallengeOptionIds.length) {
-      resetGreetingsChallenge();
-    }
-  }
-  function greetingsMeaningLabel(itemId) {
-    const labels = {
-      hello: "Say hello to a friend",
-      "teacher-hello": "Greet Teacher Li politely",
-      "good-morning": "Say good morning at the start of the day",
-      goodbye: "Say goodbye when leaving"
-    };
-    return labels[itemId] ?? "";
-  }
-  function resetGreetingsMatchGame(options = {}) {
-    const items = greetingsGameItems();
-    state.greetingsSelectedPhraseId = null;
-    state.greetingsMatchedIds = /* @__PURE__ */ new Set();
-    state.greetingsPhraseOrder = shuffleArray(items.map((item) => item.id));
-    state.greetingsMeaningOrder = shuffleArray(items.map((item) => item.id));
-    state.greetingsMatchFeedback = options.feedback ?? "";
-    state.lastGreetingsFeedback = state.greetingsMatchFeedback;
-  }
-  function ensureGreetingsMatchGame() {
-    const items = greetingsGameItems();
-    if (!state.greetingsPhraseOrder.length || state.greetingsPhraseOrder.length !== items.length || state.greetingsMeaningOrder.length !== items.length) {
-      resetGreetingsMatchGame();
-    }
-  }
-  function handleGreetingsMatchPhrase(itemId) {
-    const item = greetingsGameItems().find((entry) => entry.id === itemId);
-    if (!item || state.greetingsMatchedIds.has(itemId)) {
-      return;
-    }
-    state.greetingsSelectedPhraseId = itemId;
-    if (state.tapAudioEnabled) {
-      speak(item.audio, 0.78);
-    }
-    state.greetingsMatchFeedback = `Now find the situation for ${item.hanzi}.`;
-    state.lastGreetingsFeedback = state.greetingsMatchFeedback;
-    renderActivityPanel(currentTopic());
-  }
-  function handleGreetingsMatchAttempt(targetId) {
-    if (!state.greetingsSelectedPhraseId || state.greetingsMatchedIds.has(targetId)) {
-      return;
-    }
-    const selectedId = state.greetingsSelectedPhraseId;
-    const selectedItem = greetingsGameItems().find((entry) => entry.id === selectedId);
-    if (!selectedItem) {
-      return;
-    }
-    if (selectedId === targetId) {
-      state.greetingsMatchedIds = /* @__PURE__ */ new Set([...state.greetingsMatchedIds, targetId]);
-      state.greetingsSelectedPhraseId = null;
-      state.greetingsMatchFeedback = `Correct! ${selectedItem.hanzi} matches that situation.`;
-      state.lastGreetingsFeedback = state.greetingsMatchFeedback;
-      state.selectedFocusItemId = selectedItem.id;
-      renderFocusDisplay(currentFocusItem());
-      renderFocusExplorer();
-      renderFocusStatus();
-      if (state.greetingsMatchedIds.size === greetingsGameItems().length) {
-        state.greetingsMatchFeedback = "Great job! You matched all the greetings.";
-        state.lastGreetingsFeedback = state.greetingsMatchFeedback;
-      }
-      renderActivityPanel(currentTopic());
-      return;
-    }
-    state.greetingsMatchFeedback = `Try again. ${selectedItem.hanzi} does not match that situation.`;
-    state.lastGreetingsFeedback = state.greetingsMatchFeedback;
-    renderActivityPanel(currentTopic());
   }
   function familyGameItems() {
     const familyTopic2 = topicById("family");
@@ -4198,49 +4342,6 @@
     } else {
       state.dateChallengeWrongIds = /* @__PURE__ */ new Set([...state.dateChallengeWrongIds, itemId]);
     }
-    renderActivityPanel(currentTopic());
-  }
-  function handleGreetingsChallengePlay() {
-    ensureGreetingsChallenge();
-    const item = greetingsGameItems().find((entry) => entry.id === state.greetingsChallengePromptId);
-    if (!item) {
-      return;
-    }
-    resetListenChallengeResult("greetings");
-    if (state.tapAudioEnabled) {
-      speak(item.audio, 0.78);
-    }
-    state.greetingsListenFeedback = `Listen again and find ${item.hanzi}.`;
-    state.lastGreetingsFeedback = state.greetingsListenFeedback;
-    renderActivityPanel(currentTopic());
-  }
-  function handleGreetingsChallengeGuess(itemId) {
-    ensureGreetingsChallenge();
-    const answer = greetingsGameItems().find((entry) => entry.id === state.greetingsChallengeAnswerId);
-    const picked = greetingsGameItems().find((entry) => entry.id === itemId);
-    if (!answer || !picked) {
-      return;
-    }
-    if (itemId === answer.id) {
-      state.selectedFocusItemId = answer.id;
-      state.greetingsChallengePickedId = itemId;
-      state.greetingsChallengeResult = "correct";
-      if (state.tapAudioEnabled) {
-        speak(answer.audio, 0.78);
-      }
-      state.greetingsListenFeedback = `Correct! ${answer.hanzi} matches the audio.`;
-      state.lastGreetingsFeedback = state.greetingsListenFeedback;
-      renderFocusDisplay(currentFocusItem());
-      renderFocusExplorer();
-      renderFocusStatus();
-      renderActivityPanel(currentTopic());
-      return;
-    }
-    state.greetingsChallengePickedId = itemId;
-    state.greetingsChallengeResult = "wrong";
-    state.greetingsChallengeWrongIds = /* @__PURE__ */ new Set([...state.greetingsChallengeWrongIds, itemId]);
-    state.greetingsListenFeedback = `Try again. You picked ${picked.hanzi}, but the audio is ${answer.hanzi}.`;
-    state.lastGreetingsFeedback = state.greetingsListenFeedback;
     renderActivityPanel(currentTopic());
   }
   function mathChallengeAudioText() {
@@ -7253,60 +7354,6 @@
       });
     });
   }
-  function renderGreetingsExplorer() {
-    focusExplorer.innerHTML = `
-    <div class="numbers-board">
-      <div class="numbers-stage-card">
-        <p class="body-match-kicker">${currentBook().label} Lesson ${currentLesson().lesson}</p>
-        <h4>Book theme: school greetings</h4>
-        <p>This lesson follows the book page: greet a teacher politely, greet a friend in the morning, and say goodbye.</p>
-      </div>
-      <div class="greetings-practice-grid">
-        ${greetingsPractice.map(
-      (exchange) => `
-              <section class="greetings-exchange">
-                <div class="greetings-exchange-top">
-                  <div>
-                    <p class="body-match-kicker">Scene ${exchange.number}</p>
-                    <p class="greetings-exchange-prompt">${exchange.prompt}</p>
-                  </div>
-                  <button class="small-button is-action-button" type="button" data-greeting-play-all="${exchange.id}">Play scene</button>
-                </div>
-                <div class="greetings-scene-layout">
-                  <div class="greetings-scene-visual">
-                    <img class="greetings-scene-image" src="${exchange.imagePath}" alt="${exchange.imageAlt}" />
-                  </div>
-                    <div class="greetings-line-stack">
-                    ${exchange.lines.map(
-        (line, index) => `
-                          <article class="greetings-line-card">
-                            <div class="telephone-bubble-copy">
-                              <p class="telephone-line-hanzi">${line.hanzi}</p>
-                              ${state.showPinyin ? `<p class="telephone-line-pinyin">${line.pinyin}</p>` : ""}
-                              ${state.showEnglish ? `<p class="telephone-line-english">${line.english}</p>` : ""}
-                            </div>
-                          </article>
-                        `
-      ).join("")}
-                  </div>
-                </div>
-              </section>
-            `
-    ).join("")}
-      </div>
-    </div>
-  `;
-    focusExplorer.querySelectorAll("[data-greeting-play-all]").forEach((button) => {
-      button.addEventListener("click", async () => {
-        const exchange = greetingsPractice.find((entry) => entry.id === button.dataset.greetingPlayAll);
-        if (!exchange || !state.tapAudioEnabled) {
-          return;
-        }
-        speakSceneLines(exchange.lines);
-        focusStatus.textContent = `Listen to the whole scene: ${exchange.lines.map((line) => line.hanzi).join(" ")}`;
-      });
-    });
-  }
   function timeDateSectionForCurrentLesson() {
     const lessonKey = `${currentBook().id}:${currentLesson().lesson}`;
     if (lessonKey === "2b:2" || lessonKey === "4a:3") return "clock";
@@ -8350,6 +8397,37 @@
     renderTopicDetail();
     updateTopicPageVisibility();
   });
+  ({
+    greetingsGameItems,
+    resetGreetingsChallenge,
+    ensureGreetingsChallenge,
+    greetingsMeaningLabel,
+    resetGreetingsMatchGame,
+    ensureGreetingsMatchGame,
+    handleGreetingsMatchPhrase,
+    handleGreetingsMatchAttempt,
+    handleGreetingsChallengePlay,
+    handleGreetingsChallengeGuess,
+    renderGreetingsExplorer
+  } = createGreetingsController({
+    state,
+    greetingsGameItemIds,
+    greetingsPractice,
+    topicById,
+    shuffleArray,
+    speak,
+    speakSceneLines,
+    currentTopic,
+    currentFocusItem,
+    currentBook,
+    currentLesson,
+    resetListenChallengeResult,
+    renderActivityPanel,
+    renderFocusDisplay,
+    renderFocusExplorer,
+    renderFocusStatus,
+    elements: { focusExplorer, focusStatus }
+  }));
   syncBookSelectionFromTopic();
   var initialTopicId = topicIdFromLocation(window.location, topicById);
   if (initialTopicId) {

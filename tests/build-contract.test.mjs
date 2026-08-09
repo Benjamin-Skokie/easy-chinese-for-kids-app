@@ -33,6 +33,7 @@ import { illustratedKids } from "../src/data/characters.js";
 import { bookHomeCategories, books, learningHomeCategories, topicCardMeta, topicGroups } from "../src/data/curriculum.js";
 import { buildMultiplicationRhymeItems, buildNumberItem, multiplicationRhymeTopic, numberStages, numbersTopic, telephonePractice } from "../src/features/foundations/numbers.js";
 import { createFoundationState } from "../src/features/foundations/state.js";
+import { createGreetingsController } from "../src/features/foundations/greetings-controller.js";
 import { familyGameItemIds, familyPractice, familyTopic, illustratedFamily } from "../src/features/family/family.js";
 
 test("the local page loads a single bundled application script", () => {
@@ -100,6 +101,42 @@ test("legacy bootstrap retains its shared data and audio bindings", () => {
   assert.match(legacySource, /const visualTopicItems = \{/);
   assert.match(legacySource, /const schoolTopicData = \{/);
   assert.match(legacySource, /const schoolSentenceBuilds = \{/);
+});
+
+test("greetings interaction is owned by its feature controller", () => {
+  const state = { ...createFoundationState(), tapAudioEnabled: false, selectedFocusItemId: null };
+  const rendered = [];
+  const controller = createGreetingsController({
+    state,
+    greetingsGameItemIds,
+    greetingsPractice,
+    topicById: (id) => id === "greetings" ? greetingsTopic : null,
+    shuffleArray: (items) => [...items],
+    speak: () => {},
+    speakSceneLines: () => {},
+    currentTopic: () => greetingsTopic,
+    currentFocusItem: () => greetingsTopic.focusItems.find((item) => item.id === state.selectedFocusItemId),
+    currentBook: () => ({ label: "Book 1A" }),
+    currentLesson: () => ({ lesson: 4 }),
+    resetListenChallengeResult: () => {},
+    renderActivityPanel: () => rendered.push("activity"),
+    renderFocusDisplay: () => rendered.push("display"),
+    renderFocusExplorer: () => rendered.push("explorer"),
+    renderFocusStatus: () => rendered.push("status"),
+    elements: {
+      focusExplorer: { innerHTML: "", querySelectorAll: () => [] },
+      focusStatus: { textContent: "" }
+    }
+  });
+
+  controller.resetGreetingsChallenge();
+  const answerId = state.greetingsChallengeAnswerId;
+  assert.ok(greetingsGameItemIds.includes(answerId));
+  assert.equal(state.greetingsChallengeOptionIds.length, greetingsGameItemIds.length);
+  controller.handleGreetingsChallengeGuess(answerId);
+  assert.equal(state.greetingsChallengeResult, "correct");
+  assert.equal(state.selectedFocusItemId, answerId);
+  assert.deepEqual(rendered, ["display", "explorer", "status", "activity"]);
 });
 
 test("time and calendar content retains its expected teaching sets", () => {
