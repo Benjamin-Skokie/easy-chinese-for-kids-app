@@ -693,6 +693,864 @@
     { id: "dislikes-math", imagePath: "assets/illustrated-activities/lele_dislikes_math_class.webp", target: ["\u6211", "\u4E0D\u559C\u6B22", "\u6570\u5B66\u8BFE"], distractors: ["\u5B66\u6821", "\u6709", "\u6587\u5177\u76D2"], pinyin: "w\u01D2 b\xF9 x\u01D0 huan sh\xF9 xu\xE9 k\xE8.", english: "I do not like math class." }
   ];
 
+  // src/features/school-life/school-food-runtime.js
+  function createSchoolFoodRuntime(context) {
+    const { state: state2, schoolTopicData: schoolTopicData3, schoolSentenceBuilds: schoolSentenceBuilds3, stationeryPictureMatchRounds: stationeryPictureMatchRounds2, stationeryPictureMatchChoices: stationeryPictureMatchChoices2, stationeryPictureMatchEnglish: stationeryPictureMatchEnglish2, currentTopic: currentTopic2, shuffleArray: shuffleArray2, speak: speak2, renderActivityPanel: renderActivityPanel2, focusItemsForTopic: focusItemsForTopic2, activityPanelTitle: activityPanelTitle2, activityPanelSummary: activityPanelSummary2, activityList: activityList2, renderListenPractice: renderListenPractice2, renderMatchPractice: renderMatchPractice2 } = context;
+    function schoolPracticeItems2(topicId = currentTopic2().id) {
+      const data = schoolTopicData3[topicId];
+      return data?.practiceItems ?? data?.words ?? schoolWordGroups(topicId).flatMap((group) => group.items);
+    }
+    function backpackGameItems() {
+      const portableItemIds = /* @__PURE__ */ new Set(["pencil", "ruler", "eraser", "colored-pencils", "scissors", "glue", "pencil-box", "textbook", "workbook"]);
+      return schoolPracticeItems2("school-supplies").filter((item) => portableItemIds.has(item.id));
+    }
+    function currentStationeryPictureMatchRound() {
+      return stationeryPictureMatchRounds2[state2.stationeryPictureMatchIndex] ?? stationeryPictureMatchRounds2[0];
+    }
+    function resetStationeryPictureMatch(index = state2.stationeryPictureMatchIndex) {
+      state2.stationeryPictureMatchIndex = index % stationeryPictureMatchRounds2.length;
+      state2.stationeryPictureMatchSelections = { measure: "", color: "", item: "" };
+      state2.stationeryPictureMatchWrong = { measure: /* @__PURE__ */ new Set(), color: /* @__PURE__ */ new Set(), item: /* @__PURE__ */ new Set() };
+      state2.stationeryPictureMatchChoiceOrders = Object.fromEntries(Object.entries(stationeryPictureMatchChoices2).map(([column, choices]) => [column, shuffleArray2([...choices])]));
+      state2.stationeryPictureMatchComplete = false;
+    }
+    function ensureStationeryPictureMatch() {
+      const hasValidOrders = Object.entries(stationeryPictureMatchChoices2).every(([column, choices]) => {
+        const order = state2.stationeryPictureMatchChoiceOrders[column];
+        return order?.length === choices.length && choices.every((choice) => order.includes(choice));
+      });
+      if (!hasValidOrders) resetStationeryPictureMatch();
+    }
+    function handleStationeryPictureMatchPick(column, value) {
+      if (state2.stationeryPictureMatchComplete) return;
+      const round = currentStationeryPictureMatchRound();
+      if (!round || !stationeryPictureMatchChoices2[column]) return;
+      if (value !== round.target[column]) {
+        state2.stationeryPictureMatchWrong = {
+          ...state2.stationeryPictureMatchWrong,
+          [column]: /* @__PURE__ */ new Set([...state2.stationeryPictureMatchWrong[column], value])
+        };
+        renderActivityPanel2(currentTopic2());
+        return;
+      }
+      state2.stationeryPictureMatchSelections = { ...state2.stationeryPictureMatchSelections, [column]: value };
+      state2.stationeryPictureMatchWrong = {
+        ...state2.stationeryPictureMatchWrong,
+        [column]: /* @__PURE__ */ new Set()
+      };
+      state2.stationeryPictureMatchComplete = Object.entries(round.target).every(([key, target]) => state2.stationeryPictureMatchSelections[key] === target);
+      if (state2.stationeryPictureMatchComplete && state2.tapAudioEnabled) speak2(Object.values(round.target).join(""), 0.78);
+      renderActivityPanel2(currentTopic2());
+    }
+    function nextStationeryPictureMatch() {
+      resetStationeryPictureMatch((state2.stationeryPictureMatchIndex + 1) % stationeryPictureMatchRounds2.length);
+      renderActivityPanel2(currentTopic2());
+    }
+    function prepareBackpackGameOptions() {
+      const targetId = state2.backpackGameRoundIds[state2.backpackGameTargetIndex];
+      const items = backpackGameItems();
+      state2.backpackGameOptionIds = shuffleArray2([
+        targetId,
+        ...shuffleArray2(items.filter((item) => item.id !== targetId)).slice(0, 3).map((item) => item.id)
+      ]);
+      state2.backpackGameWrongIds = /* @__PURE__ */ new Set();
+    }
+    function resetBackpackGame() {
+      state2.backpackGameRoundIds = shuffleArray2(backpackGameItems().map((item) => item.id)).slice(0, 3);
+      state2.backpackGameTargetIndex = 0;
+      state2.backpackGamePlacedIds = [];
+      state2.backpackGameComplete = false;
+      prepareBackpackGameOptions();
+    }
+    function ensureBackpackGame() {
+      const items = backpackGameItems();
+      const isValidRound = state2.backpackGameRoundIds.length === 3 && state2.backpackGameRoundIds.every((id) => items.some((item) => item.id === id));
+      if (!isValidRound) resetBackpackGame();
+    }
+    function currentBackpackGameTarget() {
+      return backpackGameItems().find((item) => item.id === state2.backpackGameRoundIds[state2.backpackGameTargetIndex]);
+    }
+    function handleBackpackGameGuess(itemId) {
+      if (state2.backpackGameComplete) return;
+      const target = currentBackpackGameTarget();
+      if (!target) return;
+      if (itemId !== target.id) {
+        state2.backpackGameWrongIds = /* @__PURE__ */ new Set([...state2.backpackGameWrongIds, itemId]);
+        renderActivityPanel2(currentTopic2());
+        return;
+      }
+      state2.backpackGamePlacedIds = [...state2.backpackGamePlacedIds, target.id];
+      if (state2.tapAudioEnabled) speak2(target.audio, 0.78);
+      state2.backpackGameTargetIndex += 1;
+      state2.backpackGameComplete = state2.backpackGameTargetIndex === state2.backpackGameRoundIds.length;
+      if (!state2.backpackGameComplete) prepareBackpackGameOptions();
+      renderActivityPanel2(currentTopic2());
+    }
+    function resetSchoolChallenge(options = {}) {
+      const items = schoolPracticeItems2();
+      const candidates = items.filter((item) => item.id !== options.excludeId);
+      const answers = candidates.length ? candidates : items;
+      const answer = answers[Math.floor(Math.random() * answers.length)];
+      if (!answer) return;
+      const optionIds = currentTopic2().id === "school-subjects" ? shuffleArray2(items.map((item) => item.id)) : shuffleArray2([answer.id, ...shuffleArray2(items.filter((item) => item.id !== answer.id)).slice(0, 3).map((item) => item.id)]);
+      state2.schoolChallengeAnswerId = answer.id;
+      state2.schoolChallengePromptId = answer.id;
+      state2.schoolChallengeOptionIds = optionIds;
+      state2.schoolChallengePickedId = "";
+      state2.schoolChallengeResult = "";
+      state2.schoolChallengeWrongIds = /* @__PURE__ */ new Set();
+      state2.schoolListenFeedback = "";
+    }
+    function resetSchoolMatchGame2() {
+      const ids = schoolPracticeItems2().slice(0, 6).map((item) => item.id);
+      state2.schoolSelectedPhraseId = null;
+      state2.schoolMatchedIds = /* @__PURE__ */ new Set();
+      state2.schoolPhraseOrder = shuffleArray2(ids);
+      state2.schoolMeaningOrder = shuffleArray2(ids);
+      state2.schoolMatchFeedback = "";
+    }
+    function mealsConversationItems() {
+      return schoolTopicData3["meals-feelings"]?.conversationPairs ?? [];
+    }
+    function resetMealsConversationMatch() {
+      const ids = mealsConversationItems().map((item) => item.id);
+      state2.schoolSelectedPhraseId = null;
+      state2.schoolMatchedIds = /* @__PURE__ */ new Set();
+      state2.schoolPhraseOrder = shuffleArray2(ids);
+      state2.schoolMeaningOrder = shuffleArray2(ids);
+      state2.schoolMatchFeedback = "";
+      state2.mealsConversationMatchReady = true;
+      state2.mealsConversationWrongPhraseIds = /* @__PURE__ */ new Set();
+      state2.mealsConversationWrongReplyIds = /* @__PURE__ */ new Set();
+    }
+    function ensureMealsConversationMatch() {
+      const ids = mealsConversationItems().map((item) => item.id);
+      const currentIds = [...state2.schoolPhraseOrder].sort();
+      if (!state2.mealsConversationMatchReady || currentIds.length !== ids.length || currentIds.some((id, index) => id !== [...ids].sort()[index])) {
+        resetMealsConversationMatch();
+      }
+    }
+    function handleMealsConversationPhrase(itemId) {
+      if (state2.schoolMatchedIds.has(itemId)) return;
+      state2.schoolSelectedPhraseId = itemId;
+      state2.mealsConversationWrongPhraseIds = /* @__PURE__ */ new Set();
+      state2.mealsConversationWrongReplyIds = /* @__PURE__ */ new Set();
+      const item = mealsConversationItems().find((entry) => entry.id === itemId);
+      if (item && state2.tapAudioEnabled) speak2(item.audio, 0.78);
+      renderActivityPanel2(currentTopic2());
+    }
+    function handleMealsConversationAttempt(itemId) {
+      const selectedId = state2.schoolSelectedPhraseId;
+      if (!selectedId || state2.schoolMatchedIds.has(itemId)) return;
+      if (selectedId === itemId) {
+        state2.schoolMatchedIds = /* @__PURE__ */ new Set([...state2.schoolMatchedIds, itemId]);
+        state2.schoolMatchFeedback = "Correct!";
+        state2.mealsConversationWrongPhraseIds = /* @__PURE__ */ new Set();
+        state2.mealsConversationWrongReplyIds = /* @__PURE__ */ new Set();
+      } else {
+        state2.schoolMatchFeedback = "Try again.";
+        state2.mealsConversationWrongPhraseIds = /* @__PURE__ */ new Set([selectedId]);
+        state2.mealsConversationWrongReplyIds = /* @__PURE__ */ new Set([itemId]);
+      }
+      state2.schoolSelectedPhraseId = null;
+      renderActivityPanel2(currentTopic2());
+    }
+    function mealsPictureChoiceItems() {
+      return schoolTopicData3["meals-feelings"]?.pictureChoices ?? [];
+    }
+    function resetMealsPictureQuestion() {
+      const prompt = mealsPictureChoiceItems().find((item) => item.id === state2.mealsPictureQuizOrder[state2.mealsPictureQuizIndex]);
+      if (!prompt) return;
+      state2.mealsPictureQuizOptionIds = shuffleArray2(prompt.options.map((option) => option.id));
+      state2.mealsPictureQuizSelectedId = "";
+      state2.mealsPictureQuizResult = "";
+    }
+    function ensureMealsPictureChoice() {
+      const ids = mealsPictureChoiceItems().map((item) => item.id);
+      const currentIds = [...state2.mealsPictureQuizOrder].sort();
+      if (currentIds.length !== ids.length || currentIds.some((id, index) => id !== [...ids].sort()[index])) {
+        state2.mealsPictureQuizOrder = shuffleArray2(ids);
+        state2.mealsPictureQuizIndex = 0;
+        resetMealsPictureQuestion();
+      }
+    }
+    function handleMealsPictureChoice(optionId) {
+      const prompt = mealsPictureChoiceItems().find((item) => item.id === state2.mealsPictureQuizOrder[state2.mealsPictureQuizIndex]);
+      if (!prompt || state2.mealsPictureQuizResult === "correct") return;
+      state2.mealsPictureQuizSelectedId = optionId;
+      state2.mealsPictureQuizResult = optionId === prompt.correctId ? "correct" : "wrong";
+      renderActivityPanel2(currentTopic2());
+    }
+    function nextMealsPictureChoice() {
+      const items = mealsPictureChoiceItems();
+      if (!items.length) return;
+      state2.mealsPictureQuizIndex = (state2.mealsPictureQuizIndex + 1) % items.length;
+      resetMealsPictureQuestion();
+      renderActivityPanel2(currentTopic2());
+    }
+    function renderMealsPictureChoice() {
+      const prompt = mealsPictureChoiceItems().find((item) => item.id === state2.mealsPictureQuizOrder[state2.mealsPictureQuizIndex]);
+      if (!prompt) return "";
+      return `
+    <section class="clothes-quiz-shell meals-picture-choice">
+      <div class="numbers-game-top"><div><p class="body-match-kicker">Look and Choose</p><p class="numbers-game-note">Look at the picture, then tap the Chinese sentence that matches it.</p></div></div>
+      <figure class="clothes-quiz-visual time-routine-quiz-visual"><img class="clothes-quiz-image" src="${prompt.imagePath}" alt="${prompt.imageAlt}" /></figure>
+      <div class="clothes-quiz-options sentence-choice-options">
+        ${state2.mealsPictureQuizOptionIds.map((optionId) => {
+        const option = prompt.options.find((item) => item.id === optionId);
+        if (!option) return "";
+        const selected = state2.mealsPictureQuizSelectedId === optionId;
+        const resultClass = selected ? ` is-${state2.mealsPictureQuizResult}` : "";
+        const mark = selected ? `<span class="answer-result-mark" aria-hidden="true">${state2.mealsPictureQuizResult === "correct" ? "\u2713" : "\xD7"}</span>` : "";
+        return `<button class="clothes-quiz-option${resultClass}" type="button" data-meals-picture-pick="${option.id}">${mark}<span class="numbers-game-hanzi">${option.hanzi}</span>${state2.showPinyin ? `<span class="numbers-game-pinyin">${option.pinyin}</span>` : ""}${state2.showEnglish ? `<span class="numbers-game-english">${option.english}</span>` : ""}</button>`;
+      }).join("")}
+      </div>
+      ${state2.mealsPictureQuizResult === "correct" ? '<div class="clothes-quiz-next"><button class="small-button is-action-button" type="button" data-meals-picture-next>Next picture</button></div>' : ""}
+    </section>
+  `;
+    }
+    function foodPreferenceFillItems() {
+      return [
+        { id: "apple", hanzi: "\u82F9\u679C", pinyin: "p\xEDng gu\u01D2", english: "apple" },
+        { id: "ice-cream", hanzi: "\u51B0\u6DC7\u6DCB", pinyin: "b\u012Bng q\xED l\xEDn", english: "ice cream" },
+        { id: "pizza", hanzi: "\u62AB\u8428", pinyin: "p\u012B s\xE0", english: "pizza" },
+        { id: "broccoli", hanzi: "\u897F\u5170\u82B1", pinyin: "x\u012B l\xE1n hu\u0101", english: "broccoli" },
+        { id: "dumplings", hanzi: "\u997A\u5B50", pinyin: "ji\u01CEo zi", english: "dumplings" },
+        { id: "fried-rice", hanzi: "\u7092\u996D", pinyin: "ch\u01CEo f\xE0n", english: "fried rice" },
+        { id: "chow-mein", hanzi: "\u7092\u9762", pinyin: "ch\u01CEo mi\xE0n", english: "chow mein" },
+        { id: "hamburger", hanzi: "\u6C49\u5821", pinyin: "h\xE0n b\u01CEo", english: "hamburger" },
+        { id: "hot-dog", hanzi: "\u70ED\u72D7", pinyin: "r\xE8 g\u01D2u", english: "hot dog" },
+        { id: "sandwich", hanzi: "\u4E09\u660E\u6CBB", pinyin: "s\u0101n m\xEDng zh\xEC", english: "sandwich" }
+      ];
+    }
+    function foodPreferenceSubjects() {
+      return [
+        { id: "\u6211", hanzi: "\u6211", pinyin: "w\u01D2", english: "I" },
+        { id: "\u7238\u7238", hanzi: "\u7238\u7238", pinyin: "b\xE0 ba", english: "Dad" },
+        { id: "\u5988\u5988", hanzi: "\u5988\u5988", pinyin: "m\u0101 ma", english: "Mom" },
+        { id: "\u7237\u7237", hanzi: "\u7237\u7237", pinyin: "y\xE9 ye", english: "Grandpa" },
+        { id: "\u5976\u5976", hanzi: "\u5976\u5976", pinyin: "n\u01CEi nai", english: "Grandma" },
+        { id: "\u59D0\u59D0", hanzi: "\u59D0\u59D0", pinyin: "ji\u011B jie", english: "Older sister" },
+        { id: "\u59B9\u59B9", hanzi: "\u59B9\u59B9", pinyin: "m\xE8i mei", english: "Younger sister" },
+        { id: "\u5F1F\u5F1F", hanzi: "\u5F1F\u5F1F", pinyin: "d\xEC di", english: "Younger brother" },
+        { id: "\u54E5\u54E5", hanzi: "\u54E5\u54E5", pinyin: "g\u0113 ge", english: "Older brother" }
+      ];
+    }
+    function foodPreferencePatterns() {
+      return [
+        { id: "like", hanzi: "\u559C\u6B22", pinyin: "x\u01D0 huan", english: "likes to eat", firstPersonEnglish: "like to eat" },
+        { id: "dislike", hanzi: "\u4E0D\u559C\u6B22", pinyin: "b\xF9 x\u01D0 huan", english: "does not like to eat", firstPersonEnglish: "do not like to eat" },
+        { id: "want", hanzi: "\u60F3", pinyin: "xi\u01CEng", english: "wants to eat", firstPersonEnglish: "want to eat" },
+        { id: "not-want", hanzi: "\u4E0D\u60F3", pinyin: "b\xF9 xi\u01CEng", english: "does not want to eat", firstPersonEnglish: "do not want to eat" },
+        { id: "need", hanzi: "\u8981", pinyin: "y\xE0o", english: "wants to eat", firstPersonEnglish: "want to eat" },
+        { id: "not-need", hanzi: "\u4E0D\u8981", pinyin: "b\xFA y\xE0o", english: "does not want to eat", firstPersonEnglish: "do not want to eat" }
+      ];
+    }
+    function selectedFoodPreferencePattern() {
+      return foodPreferencePatterns().find((item) => item.id === state2.foodPreferencePatternId) ?? foodPreferencePatterns()[0];
+    }
+    function handleFoodPreferenceSubject(subjectId) {
+      state2.foodPreferenceSubjectId = subjectId;
+      renderActivityPanel2(currentTopic2());
+    }
+    function handleFoodPreferencePattern(patternId) {
+      state2.foodPreferencePatternId = patternId;
+      state2.foodPreferenceFoodId = "";
+      renderActivityPanel2(currentTopic2());
+    }
+    function handleFoodPreferenceFill(foodId) {
+      const item = foodPreferenceFillItems().find((entry) => entry.id === foodId);
+      if (!item) return;
+      const pattern = selectedFoodPreferencePattern();
+      const subject = foodPreferenceSubjects().find((entry) => entry.id === state2.foodPreferenceSubjectId) ?? foodPreferenceSubjects()[0];
+      const sentence = `${subject.hanzi}${pattern.hanzi}\u5403${item.hanzi}`;
+      state2.foodPreferenceFoodId = foodId;
+      if (state2.tapAudioEnabled) speak2(sentence, 0.78);
+      renderActivityPanel2(currentTopic2());
+    }
+    function renderFoodPreferenceFillPractice() {
+      const items = foodPreferenceFillItems();
+      const pattern = selectedFoodPreferencePattern();
+      const subjects = foodPreferenceSubjects();
+      const subject = subjects.find((item) => item.id === state2.foodPreferenceSubjectId) ?? subjects[0];
+      const selectedFood = items.find((item) => item.id === state2.foodPreferenceFoodId);
+      const sentenceHanzi = `${subject.hanzi}${pattern.hanzi}\u5403${selectedFood?.hanzi ?? "____"}\u3002`;
+      const sentencePinyin = `${subject.pinyin} ${pattern.pinyin} ch\u012B${selectedFood?.pinyin ? ` ${selectedFood.pinyin}` : ""}.`;
+      const sentenceEnglish = `${subject.english} ${subject.id === "\u6211" ? pattern.firstPersonEnglish : pattern.english}${selectedFood?.english ? ` ${selectedFood.english}` : ""}.`;
+      return `
+    <section class="clothes-quiz-shell food-preference-fill-practice">
+      <div class="numbers-game-top"><div><p class="body-match-kicker">Make your sentence</p><p class="numbers-game-note">Choose one card in each column. There is no right or wrong answer.</p></div></div>
+      <div class="food-preference-builder-columns">
+        <div class="food-preference-builder-column"><p class="food-preference-choice-label">Subject</p><div class="food-preference-builder-list">${subjects.map((item) => `<button class="food-preference-subject-choice${subject.id === item.id ? " is-active" : ""}" type="button" data-food-preference-subject="${item.id}"><span class="numbers-game-hanzi">${item.hanzi}</span><span class="food-preference-card-meta">${state2.showPinyin ? `<span class="numbers-game-pinyin">${item.pinyin}</span>` : ""}${state2.showEnglish ? `<span class="numbers-game-english">${item.english}</span>` : ""}</span></button>`).join("")}</div></div>
+        <div class="food-preference-builder-column"><p class="food-preference-choice-label">Word</p><div class="food-preference-builder-list">${foodPreferencePatterns().map((item) => `<button class="food-preference-pattern-choice${pattern.id === item.id ? " is-active" : ""}" type="button" data-food-preference-pattern="${item.id}"><span class="numbers-game-hanzi">${item.hanzi}</span><span class="food-preference-card-meta">${state2.showPinyin ? `<span class="numbers-game-pinyin">${item.pinyin}</span>` : ""}${state2.showEnglish ? `<span class="numbers-game-english">${item.english}</span>` : ""}</span></button>`).join("")}</div></div>
+        <div class="food-preference-builder-column"><p class="food-preference-choice-label">Food</p><div class="food-preference-builder-list">${items.map((item) => `<button class="food-preference-fill-choice${selectedFood?.id === item.id ? " is-active" : ""}" type="button" data-food-preference-food="${item.id}"><span class="numbers-game-hanzi">${item.hanzi}</span><span class="food-preference-card-meta">${state2.showPinyin ? `<span class="numbers-game-pinyin">${item.pinyin}</span>` : ""}${state2.showEnglish ? `<span class="numbers-game-english">${item.english}</span>` : ""}</span></button>`).join("")}</div></div>
+      </div>
+      <div class="food-preference-built-sentence"><span class="numbers-game-hanzi">${sentenceHanzi}</span>${state2.showPinyin ? `<span class="numbers-game-pinyin">${sentencePinyin}</span>` : ""}${state2.showEnglish ? `<span class="numbers-game-english">${sentenceEnglish}</span>` : ""}</div>
+    </section>
+  `;
+    }
+    function classroomSentenceFrames() {
+      return schoolTopicData3.classroom?.sentenceFrames ?? [];
+    }
+    function classroomSentenceWords() {
+      return [
+        ...(schoolTopicData3.classroom?.words ?? []).map((item) => item.id === "computer" ? { ...item, sentenceEnglish: "laptop" } : item),
+        { id: "textbook", hanzi: "\u8BFE\u672C", pinyin: "k\xE8 b\u011Bn", english: "textbook", imagePath: "assets/illustrated-stationery/textbook.webp" },
+        { id: "workbook", hanzi: "\u7EC3\u4E60\u672C", pinyin: "li\xE0n x\xED b\u011Bn", english: "workbook", imagePath: "assets/illustrated-stationery/workbook.webp" },
+        { id: "pencil", hanzi: "\u94C5\u7B14", pinyin: "qi\u0101n b\u01D0", english: "pencil", imagePath: "assets/illustrated-stationery/pencil.webp" },
+        { id: "ruler", hanzi: "\u5C3A\u5B50", pinyin: "ch\u01D0 zi", english: "ruler", imagePath: "assets/illustrated-stationery/ruler.webp" },
+        { id: "eraser", hanzi: "\u6A61\u76AE", pinyin: "xi\xE0ng p\xED", english: "eraser", imagePath: "assets/illustrated-stationery/eraser.webp" },
+        { id: "colored-pencils", hanzi: "\u5F69\u8272\u94C5\u7B14", pinyin: "c\u01CEi s\xE8 qi\u0101n b\u01D0", english: "colored pencils", imagePath: "assets/illustrated-stationery/colored-pencils.webp" }
+      ];
+    }
+    function selectedClassroomSentenceFrame() {
+      return classroomSentenceFrames().find((frame) => frame.id === state2.classroomSentenceFrameId) ?? classroomSentenceFrames()[0];
+    }
+    function classroomSentenceEnglish(frame, word) {
+      if (!word) return "";
+      const noun = word.sentenceEnglish ?? word.english;
+      if (frame.id === "many-in-classroom") {
+        return `There are many ${noun.endsWith("s") ? noun : `${noun}s`} in the classroom.`;
+      }
+      if (word.id === "colored-pencils") {
+        return `There are colored pencils${frame.id === "on-table" ? " on the table" : " in the classroom"}.`;
+      }
+      const article = /^[aeiou]/i.test(noun) ? "an" : "a";
+      return `There is ${article} ${noun}${frame.id === "on-table" ? " on the table" : " in the classroom"}.`;
+    }
+    function handleClassroomSentenceFrame(frameId) {
+      const frame = classroomSentenceFrames().find((item) => item.id === frameId);
+      if (!frame) return;
+      state2.classroomSentenceFrameId = frameId;
+      if (!frame.wordIds.includes(state2.classroomSentenceWordId)) {
+        state2.classroomSentenceWordId = "";
+      }
+      renderActivityPanel2(currentTopic2());
+    }
+    function handleClassroomSentenceWord(wordId) {
+      const frame = selectedClassroomSentenceFrame();
+      const word = classroomSentenceWords().find((item) => item.id === wordId);
+      if (!frame || !word || !frame.wordIds.includes(wordId)) return;
+      state2.classroomSentenceWordId = wordId;
+      if (state2.tapAudioEnabled) speak2(`${frame.hanzi}${word.hanzi}`, 0.78);
+      renderActivityPanel2(currentTopic2());
+    }
+    function renderClassroomPractice2(topic) {
+      const frames = classroomSentenceFrames();
+      const frame = selectedClassroomSentenceFrame();
+      const words = classroomSentenceWords().filter((item) => frame.wordIds.includes(item.id));
+      const selectedWord = words.find((item) => item.id === state2.classroomSentenceWordId);
+      const hanzi = `${frame.hanzi}${selectedWord?.hanzi ?? "____"}\u3002`;
+      const pinyin = `${frame.pinyin}${selectedWord?.pinyin ? ` ${selectedWord.pinyin}` : ""}.`;
+      const english = classroomSentenceEnglish(frame, selectedWord);
+      activityPanelTitle2.textContent = "Let's practice";
+      activityPanelSummary2.textContent = schoolTopicData3.classroom.practiceSummary;
+      activityList2.className = "support-list";
+      activityList2.innerHTML = `
+    <section class="family-practice-shell lesson-practice-shell">
+      <section class="clothes-quiz-shell">
+        <div class="numbers-game-top"><div><p class="body-match-kicker">Make a sentence</p><p class="numbers-game-note">Choose a sentence start and an object. Every choice can make a good sentence.</p></div></div>
+        <div class="intro-build-choices">${frames.map((item) => `<button class="intro-build-chip${frame.id === item.id ? " is-selected" : ""}" type="button" data-classroom-sentence-frame="${item.id}">${item.hanzi}</button>`).join("")}</div>
+        <div class="transport-build-target classroom-sentence-output"><span class="numbers-game-hanzi">${hanzi}</span>${state2.showPinyin ? `<span class="numbers-game-pinyin">${pinyin}</span>` : ""}${state2.showEnglish && english ? `<span class="numbers-game-english">${english}</span>` : ""}</div>
+        <div class="intro-build-choices classroom-sentence-object-choices">${words.map((item) => `<button class="intro-build-chip classroom-sentence-object-chip${selectedWord?.id === item.id ? " is-selected" : ""}" type="button" data-classroom-sentence-word="${item.id}"><img class="classroom-sentence-object-icon" src="${item.imagePath}" alt="" aria-hidden="true"><span>${item.hanzi}</span></button>`).join("")}</div>
+      </section>
+    </section>
+  `;
+      activityList2.querySelectorAll("[data-classroom-sentence-frame]").forEach((button) => button.addEventListener("click", () => handleClassroomSentenceFrame(button.dataset.classroomSentenceFrame)));
+      activityList2.querySelectorAll("[data-classroom-sentence-word]").forEach((button) => button.addEventListener("click", () => handleClassroomSentenceWord(button.dataset.classroomSentenceWord)));
+    }
+    function ensureSchoolPractice2(topicId = currentTopic2().id) {
+      const items = schoolPracticeItems2(topicId);
+      const expectedOptionCount = topicId === "school-subjects" ? items.length : Math.min(4, items.length);
+      if (state2.schoolPracticeTopicId !== topicId || state2.schoolChallengeOptionIds.length !== expectedOptionCount) {
+        state2.schoolPracticeTopicId = topicId;
+        resetSchoolChallenge();
+        resetSchoolMatchGame2();
+      }
+    }
+    function handleSchoolChallengePlay2() {
+      ensureSchoolPractice2();
+      resetSchoolChallenge({ excludeId: state2.schoolChallengePromptId });
+      const item = schoolPracticeItems2().find((entry) => entry.id === state2.schoolChallengePromptId);
+      if (item && state2.tapAudioEnabled) speak2(item.audio, 0.78);
+      renderActivityPanel2(currentTopic2());
+    }
+    function handleSchoolChallengeGuess2(itemId) {
+      ensureSchoolPractice2();
+      const correct = itemId === state2.schoolChallengeAnswerId;
+      state2.schoolChallengePickedId = itemId;
+      state2.schoolChallengeResult = correct ? "correct" : "wrong";
+      if (correct) {
+        state2.schoolListenFeedback = "Correct!";
+        const item = schoolPracticeItems2().find((entry) => entry.id === itemId);
+        if (item && state2.tapAudioEnabled) speak2(item.audio, 0.78);
+      } else {
+        state2.schoolChallengeWrongIds = /* @__PURE__ */ new Set([...state2.schoolChallengeWrongIds, itemId]);
+        state2.schoolListenFeedback = "Try again.";
+      }
+      renderActivityPanel2(currentTopic2());
+    }
+    function handleSchoolMatchPhrase2(itemId) {
+      if (state2.schoolMatchedIds.has(itemId)) return;
+      state2.schoolSelectedPhraseId = itemId;
+      const item = schoolPracticeItems2().find((entry) => entry.id === itemId);
+      if (item && state2.tapAudioEnabled) speak2(item.audio, 0.78);
+      renderActivityPanel2(currentTopic2());
+    }
+    function handleSchoolMatchAttempt2(itemId) {
+      const selectedId = state2.schoolSelectedPhraseId;
+      if (!selectedId || state2.schoolMatchedIds.has(itemId)) return;
+      if (selectedId === itemId) {
+        state2.schoolMatchedIds = /* @__PURE__ */ new Set([...state2.schoolMatchedIds, itemId]);
+        state2.schoolMatchFeedback = "Correct!";
+      } else {
+        state2.schoolMatchFeedback = "Try again.";
+      }
+      state2.schoolSelectedPhraseId = null;
+      renderActivityPanel2(currentTopic2());
+    }
+    function currentSchoolBuildItem() {
+      const items = schoolSentenceBuilds3[currentTopic2().id] ?? [];
+      return items.find((item) => item.id === state2.schoolBuildOrder[state2.schoolBuildIndex]) ?? items[0];
+    }
+    function prepareSchoolBuilder() {
+      const item = currentSchoolBuildItem();
+      state2.schoolBuildSelectedTokens = [];
+      state2.schoolBuildResult = "";
+      state2.schoolBuildAvailableTokens = shuffleArray2([...item?.target ?? [], ...item?.distractors ?? []]);
+    }
+    function ensureSchoolBuilder(topicId = currentTopic2().id) {
+      const items = schoolSentenceBuilds3[topicId] ?? [];
+      const hasCurrentItems = state2.schoolBuildOrder.length === items.length && state2.schoolBuildOrder.every((id) => items.some((item) => item.id === id));
+      if (state2.schoolBuildTopicId !== topicId || !hasCurrentItems) {
+        state2.schoolBuildTopicId = topicId;
+        state2.schoolBuildOrder = shuffleArray2(items.map((item) => item.id));
+        state2.schoolBuildIndex = 0;
+        prepareSchoolBuilder();
+      }
+    }
+    function handleSchoolBuildToken(index) {
+      if (state2.schoolBuildResult === "correct") return;
+      const item = currentSchoolBuildItem();
+      const token = state2.schoolBuildAvailableTokens[index];
+      if (!item || !token) return;
+      const selected = [...state2.schoolBuildSelectedTokens, token];
+      const isPrefix = selected.every((entry, tokenIndex) => entry === item.target[tokenIndex]);
+      if (!isPrefix) {
+        state2.schoolBuildResult = "wrong";
+        prepareSchoolBuilder();
+        state2.schoolBuildResult = "wrong";
+        renderActivityPanel2(currentTopic2());
+        return;
+      }
+      state2.schoolBuildSelectedTokens = selected;
+      state2.schoolBuildAvailableTokens = state2.schoolBuildAvailableTokens.filter((_, tokenIndex) => tokenIndex !== index);
+      if (selected.length === item.target.length) {
+        state2.schoolBuildResult = "correct";
+        if (state2.tapAudioEnabled) speak2(item.audio ?? selected.join(""), 0.78);
+      }
+      renderActivityPanel2(currentTopic2());
+    }
+    function clearSchoolBuilder() {
+      prepareSchoolBuilder();
+      renderActivityPanel2(currentTopic2());
+    }
+    function nextSchoolBuilder() {
+      state2.schoolBuildIndex = (state2.schoolBuildIndex + 1) % state2.schoolBuildOrder.length;
+      prepareSchoolBuilder();
+      renderActivityPanel2(currentTopic2());
+    }
+    const foodCategoryGroups2 = {
+      fruit: {
+        hanzi: "\u6C34\u679C",
+        english: "Fruit",
+        items: [
+          { id: "apple", hanzi: "\u82F9\u679C", pinyin: "p\xEDng gu\u01D2", english: "apple" },
+          { id: "banana", hanzi: "\u9999\u8549", pinyin: "xi\u0101ng ji\u0101o", english: "banana" },
+          { id: "grapes", hanzi: "\u8461\u8404", pinyin: "p\xFA tao", english: "grapes" },
+          { id: "strawberry", hanzi: "\u8349\u8393", pinyin: "c\u01CEo m\xE9i", english: "strawberry" },
+          { id: "orange", hanzi: "\u6A59\u5B50", pinyin: "ch\xE9ng zi", english: "orange" },
+          { id: "pear", hanzi: "\u68A8", pinyin: "l\xED", english: "pear" },
+          { id: "watermelon", hanzi: "\u897F\u74DC", pinyin: "x\u012B gu\u0101", english: "watermelon" },
+          { id: "peach", hanzi: "\u6843\u5B50", pinyin: "t\xE1o zi", english: "peach" },
+          { id: "cherries", hanzi: "\u6A31\u6843", pinyin: "y\u012Bng t\xE1o", english: "cherries" }
+        ]
+      },
+      vegetable: {
+        hanzi: "\u852C\u83DC",
+        english: "Vegetables",
+        items: [
+          { id: "carrot", hanzi: "\u80E1\u841D\u535C", pinyin: "h\xFA lu\xF3 bo", english: "carrot" },
+          { id: "cucumber", hanzi: "\u9EC4\u74DC", pinyin: "hu\xE1ng gu\u0101", english: "cucumber" },
+          { id: "tomato", hanzi: "\u897F\u7EA2\u67FF", pinyin: "x\u012B h\xF3ng sh\xEC", english: "tomato" },
+          { id: "broccoli", hanzi: "\u897F\u5170\u82B1", pinyin: "x\u012B l\xE1n hu\u0101", english: "broccoli" },
+          { id: "potatoes", hanzi: "\u571F\u8C46", pinyin: "t\u01D4 d\xF2u", english: "potatoes" }
+        ]
+      },
+      snack: {
+        hanzi: "\u96F6\u98DF",
+        english: "Snacks",
+        items: [
+          { id: "candies", hanzi: "\u7CD6\u679C", pinyin: "t\xE1ng gu\u01D2", english: "candies" },
+          { id: "chocolate", hanzi: "\u5DE7\u514B\u529B", pinyin: "qi\u01CEo k\xE8 l\xEC", english: "chocolate" },
+          { id: "ice-cream", hanzi: "\u51B0\u6DC7\u6DCB", pinyin: "b\u012Bng q\xED l\xEDn", english: "ice cream" },
+          { id: "cake", hanzi: "\u86CB\u7CD5", pinyin: "d\xE0n g\u0101o", english: "cake" }
+        ]
+      },
+      meal: {
+        hanzi: "\u4E3B\u98DF",
+        english: "Meal",
+        items: [
+          { id: "pizza", hanzi: "\u62AB\u8428", pinyin: "p\u012B s\xE0", english: "pizza" },
+          { id: "chow-mein", hanzi: "\u7092\u9762", pinyin: "ch\u01CEo mi\xE0n", english: "chow mein" },
+          { id: "fried-rice", hanzi: "\u7092\u996D", pinyin: "ch\u01CEo f\xE0n", english: "fried rice" },
+          { id: "french-fries", hanzi: "\u85AF\u6761", pinyin: "sh\u01D4 ti\xE1o", english: "French fries" },
+          { id: "hamburger", hanzi: "\u6C49\u5821", pinyin: "h\xE0n b\u01CEo", english: "hamburger" },
+          { id: "hot-dog", hanzi: "\u70ED\u72D7", pinyin: "r\xE8 g\u01D2u", english: "hot dog" }
+        ]
+      },
+      drink: {
+        hanzi: "\u996E\u6599",
+        english: "Drinks",
+        items: [
+          { id: "milk", hanzi: "\u725B\u5976", pinyin: "ni\xFA n\u01CEi", english: "milk" },
+          { id: "juice", hanzi: "\u679C\u6C41", pinyin: "gu\u01D2 zh\u012B", english: "juice" },
+          { id: "cola", hanzi: "\u53EF\u4E50", pinyin: "k\u011B l\xE8", english: "Coke" }
+        ]
+      }
+    };
+    function foodBookWordItems2(data) {
+      const itemIds = new Set(foodCategoryGroups2[state2.foodBookCategoryId]?.items.map((item) => item.id) ?? []);
+      return data.words.filter((item) => itemIds.has(item.id));
+    }
+    function foodCategoryIconPath(itemId) {
+      return `assets/illustrated-food/${itemId}.webp`;
+    }
+    const foodHungerModes = {
+      mix: { hanzi: "\u6DF7\u5408", english: "Mix" },
+      ...Object.fromEntries(Object.entries(foodCategoryGroups2).map(([id, group]) => [id, { hanzi: group.hanzi, english: group.english }]))
+    };
+    function foodHungerItems(modeId = state2.foodHungerModeId) {
+      if (modeId === "mix") return Object.values(foodCategoryGroups2).flatMap((group) => group.items);
+      return foodCategoryGroups2[modeId]?.items ?? [];
+    }
+    function prepareFoodHungerOptions() {
+      const targetId = state2.foodHungerRoundIds[state2.foodHungerTargetIndex];
+      const items = foodHungerItems();
+      state2.foodHungerOptionIds = shuffleArray2([
+        targetId,
+        ...shuffleArray2(items.filter((item) => item.id !== targetId)).slice(0, 3).map((item) => item.id)
+      ]);
+      state2.foodHungerWrongIds = /* @__PURE__ */ new Set();
+    }
+    function resetFoodHungerGame(modeId = state2.foodHungerModeId) {
+      state2.foodHungerModeId = modeId;
+      state2.foodHungerRoundIds = shuffleArray2(foodHungerItems(modeId).map((item) => item.id)).slice(0, 3);
+      state2.foodHungerTargetIndex = 0;
+      state2.foodHungerPlatedIds = [];
+      state2.foodHungerComplete = false;
+      prepareFoodHungerOptions();
+    }
+    function ensureFoodHungerGame() {
+      const items = foodHungerItems();
+      const expectedCount = Math.min(3, items.length);
+      const hasCurrentRound = state2.foodHungerRoundIds.length === expectedCount && state2.foodHungerRoundIds.every((id) => items.some((item) => item.id === id));
+      if (!hasCurrentRound) resetFoodHungerGame();
+    }
+    function currentFoodHungerTarget() {
+      return foodHungerItems().find((item) => item.id === state2.foodHungerRoundIds[state2.foodHungerTargetIndex]);
+    }
+    function handleFoodHungerGuess(itemId) {
+      if (state2.foodHungerComplete) return;
+      const target = currentFoodHungerTarget();
+      if (!target) return;
+      if (itemId !== target.id) {
+        state2.foodHungerWrongIds = /* @__PURE__ */ new Set([...state2.foodHungerWrongIds, itemId]);
+        renderActivityPanel2(currentTopic2());
+        return;
+      }
+      state2.foodHungerPlatedIds = [...state2.foodHungerPlatedIds, target.id];
+      if (state2.tapAudioEnabled) speak2(target.hanzi, 0.78);
+      state2.foodHungerTargetIndex += 1;
+      state2.foodHungerComplete = state2.foodHungerTargetIndex === state2.foodHungerRoundIds.length;
+      if (!state2.foodHungerComplete) prepareFoodHungerOptions();
+      renderActivityPanel2(currentTopic2());
+    }
+    function renderFoodHungerGame() {
+      ensureFoodHungerGame();
+      const items = foodHungerItems();
+      const target = currentFoodHungerTarget();
+      const platedItems = state2.foodHungerPlatedIds.map((id) => items.find((item) => item.id === id)).filter(Boolean);
+      const optionItems = state2.foodHungerOptionIds.map((id) => items.find((item) => item.id === id)).filter(Boolean);
+      const isComplete = state2.foodHungerComplete;
+      return `
+    <section class="practice-split-card food-hunger-game-card">
+      <div class="numbers-game-top"><div><p class="body-match-kicker">\u997F\u4E86\uFF0C\u5403\u70B9\u4EC0\u4E48\uFF1F${state2.showEnglish ? '<span class="food-hunger-kicker-english">Hungry? What should we eat?</span>' : ""}</p><p class="numbers-game-note">Choose a food group or Mix. A food picture will appear. Tap the matching Chinese word to put it in your cart.</p></div></div>
+      <div class="food-category-tabs food-hunger-tabs">${Object.entries(foodHungerModes).map(([id, mode]) => `<button class="food-category-tab${state2.foodHungerModeId === id ? " is-active" : ""}" type="button" data-food-hunger-mode="${id}">${mode.hanzi}${state2.showEnglish ? `<small>${mode.english}</small>` : ""}</button>`).join("")}</div>
+      <div class="backpack-game-progress" aria-label="${state2.foodHungerPlatedIds.length} of ${state2.foodHungerRoundIds.length} foods in the cart">${state2.foodHungerRoundIds.map((_, index) => `<span class="backpack-game-progress-dot${index < state2.foodHungerPlatedIds.length ? " is-packed" : ""}">${index < state2.foodHungerPlatedIds.length ? "\u2713" : ""}</span>`).join("")}</div>
+      <div class="food-hunger-visual${isComplete ? " is-complete" : ""}">
+        ${!isComplete && target ? `<div class="food-hunger-target"><img src="${foodCategoryIconPath(target.id)}" alt="${target.english}"></div>` : ""}
+        <div class="food-hunger-cart"><img class="food-hunger-cart-image" src="assets/illustrated-food/game-shopping-cart.webp" alt="empty shopping cart">${platedItems.map((item, index) => `<img class="food-hunger-plated-item is-item-${index}" src="${foodCategoryIconPath(item.id)}" alt="">`).join("")}${isComplete ? '<span class="food-hunger-complete-mark" aria-label="All foods are in the cart">\u2713</span>' : ""}</div>
+      </div>
+      ${isComplete ? '<p class="backpack-game-complete-message">Your cart is ready!</p>' : `<div class="numbers-game-options backpack-game-options food-hunger-options">${optionItems.map((item) => {
+        const isWrong = state2.foodHungerWrongIds.has(item.id);
+        return `<button class="numbers-game-option greetings-game-option family-listen-option${isWrong ? " is-wrong" : ""}" type="button" data-food-hunger-guess="${item.id}">${isWrong ? '<span class="answer-result-mark" aria-hidden="true">\xD7</span>' : ""}<span class="numbers-game-hanzi">${item.hanzi}</span>${state2.showPinyin ? `<span class="numbers-game-pinyin">${item.pinyin}</span>` : ""}${state2.showEnglish ? `<span class="numbers-game-english">${item.english}</span>` : ""}</button>`;
+      }).join("")}</div>`}
+    </section>
+  `;
+    }
+    function renderFoodPractice2(topic) {
+      ensureSchoolBuilder(topic.id);
+      const item = currentSchoolBuildItem();
+      activityPanelTitle2.textContent = "Let's practice";
+      activityPanelSummary2.textContent = "";
+      activityPanelSummary2.hidden = true;
+      activityList2.className = "support-list";
+      activityList2.innerHTML = `
+    <section class="family-practice-shell lesson-practice-shell">
+      <div class="practice-split-board">
+        ${renderFoodHungerGame()}
+        <section class="practice-split-card">
+          <div class="numbers-game-top"><div><p class="body-match-kicker">Build the sentence</p><p class="numbers-game-note">Tap the word cards in the right order. Some cards do not belong.</p></div></div>
+          <figure class="clothes-quiz-visual school-build-visual"><img class="clothes-quiz-image" src="${item.imagePath}" alt="${item.english}" /></figure>
+          <div class="transport-build-hint">${state2.showPinyin ? `<p class="transport-build-hint-pinyin">${item.pinyin}</p>` : ""}${state2.showEnglish ? `<p class="transport-build-hint-english">${item.english}</p>` : ""}</div>
+          <div class="transport-build-target is-${state2.schoolBuildResult}">${state2.schoolBuildResult ? `<span class="answer-result-mark" aria-hidden="true">${state2.schoolBuildResult === "correct" ? "\u2713" : "\xD7"}</span>` : ""}${state2.schoolBuildSelectedTokens.length ? state2.schoolBuildSelectedTokens.map((token) => `<span class="intro-build-chip is-selected">${token}</span>`).join("") : '<span class="intro-build-placeholder">Your sentence will appear here.</span>'}</div>
+          <div class="intro-build-choices">${state2.schoolBuildAvailableTokens.map((token, index) => `<button class="intro-build-chip" type="button" data-school-build-token="${index}">${token}</button>`).join("")}</div>
+          <div class="intro-build-actions"><button class="small-button" type="button" data-school-build-clear>Clear</button>${state2.schoolBuildResult === "correct" ? '<button class="small-button is-action-button" type="button" data-school-build-next>Next picture</button>' : ""}</div>
+        </section>
+      </div>
+    </section>
+  `;
+      activityList2.querySelectorAll("[data-food-hunger-mode]").forEach((button) => button.addEventListener("click", () => {
+        resetFoodHungerGame(button.dataset.foodHungerMode);
+        renderActivityPanel2(topic);
+      }));
+      activityList2.querySelectorAll("[data-food-hunger-guess]").forEach((button) => button.addEventListener("click", () => handleFoodHungerGuess(button.dataset.foodHungerGuess)));
+      activityList2.querySelectorAll("[data-school-build-token]").forEach((button) => button.addEventListener("click", () => handleSchoolBuildToken(Number(button.dataset.schoolBuildToken))));
+      activityList2.querySelector("[data-school-build-clear]")?.addEventListener("click", clearSchoolBuilder);
+      activityList2.querySelector("[data-school-build-next]")?.addEventListener("click", nextSchoolBuilder);
+    }
+    function renderSchoolSentenceBuilder(item) {
+      return `
+    <section class="practice-split-card">
+      <div class="numbers-game-top"><div><p class="body-match-kicker">Build the sentence</p><p class="numbers-game-note">Tap the word cards in the right order. Some cards do not belong.</p></div></div>
+      <figure class="clothes-quiz-visual school-build-visual"><img class="clothes-quiz-image" src="${item.imagePath}" alt="${item.english}" /></figure>
+      <div class="transport-build-hint">${state2.showPinyin ? `<p class="transport-build-hint-pinyin">${item.pinyin}</p>` : ""}${state2.showEnglish ? `<p class="transport-build-hint-english">${item.english}</p>` : ""}</div>
+      <div class="transport-build-target is-${state2.schoolBuildResult}">${state2.schoolBuildResult ? `<span class="answer-result-mark" aria-hidden="true">${state2.schoolBuildResult === "correct" ? "\u2713" : "\xD7"}</span>` : ""}${state2.schoolBuildSelectedTokens.length ? state2.schoolBuildSelectedTokens.map((token) => `<span class="intro-build-chip is-selected">${token}</span>`).join("") : '<span class="intro-build-placeholder">Your sentence will appear here.</span>'}</div>
+      <div class="intro-build-choices">${state2.schoolBuildAvailableTokens.map((token, index) => `<button class="intro-build-chip" type="button" data-school-build-token="${index}">${token}</button>`).join("")}</div>
+      <div class="intro-build-actions"><button class="small-button" type="button" data-school-build-clear>Clear</button>${state2.schoolBuildResult === "correct" ? '<button class="small-button is-action-button" type="button" data-school-build-next>Next picture</button>' : ""}</div>
+    </section>
+  `;
+    }
+    function renderBackpackGame() {
+      ensureBackpackGame();
+      const items = backpackGameItems();
+      const target = currentBackpackGameTarget();
+      const placedItems = state2.backpackGamePlacedIds.map((id) => items.find((item) => item.id === id)).filter(Boolean);
+      const optionItems = state2.backpackGameOptionIds.map((id) => items.find((item) => item.id === id)).filter(Boolean);
+      const isComplete = state2.backpackGameComplete;
+      return `
+    <section class="practice-split-card backpack-game-card">
+      <div class="numbers-game-top">
+        <div><p class="body-match-kicker">Pack the backpack</p><p class="numbers-game-note">Look at the school thing, then tap its Chinese word.</p></div>
+        <button class="small-button is-action-button" type="button" data-backpack-game-new>New mix</button>
+      </div>
+      <div class="backpack-game-progress" aria-label="${state2.backpackGamePlacedIds.length} of 3 items packed">
+        ${[0, 1, 2].map((index) => `<span class="backpack-game-progress-dot${index < state2.backpackGamePlacedIds.length ? " is-packed" : ""}">${index < state2.backpackGamePlacedIds.length ? "\u2713" : ""}</span>`).join("")}
+      </div>
+      <div class="backpack-game-visual${isComplete ? " is-complete" : ""}">
+        <img class="backpack-game-bag" src="assets/illustrated-stationery/${isComplete ? "backpack.webp" : "open-backpack.webp"}" alt="${isComplete ? "closed backpack" : "open backpack"}">
+        ${!isComplete && target ? `<div class="backpack-game-target"><img src="${target.imagePath}" alt="${target.english}"></div>` : ""}
+        ${!isComplete ? `<div class="backpack-game-packed-items">${placedItems.map((item, index) => `<img class="backpack-game-packed-item is-item-${index}" src="${item.imagePath}" alt="">`).join("")}</div>` : '<span class="backpack-game-complete-mark" aria-label="All packed">\u2713</span>'}
+      </div>
+      ${isComplete ? '<p class="backpack-game-complete-message">All packed!</p>' : `<div class="numbers-game-options backpack-game-options">${optionItems.map((item) => {
+        const isWrong = state2.backpackGameWrongIds.has(item.id);
+        return `<button class="numbers-game-option greetings-game-option family-listen-option${isWrong ? " is-wrong" : ""}" type="button" data-backpack-game-guess="${item.id}">${isWrong ? '<span class="answer-result-mark" aria-hidden="true">\xD7</span>' : ""}<span class="numbers-game-hanzi">${item.hanzi}</span>${state2.showPinyin ? `<span class="numbers-game-pinyin">${item.pinyin}</span>` : ""}${state2.showEnglish ? `<span class="numbers-game-english">${item.english}</span>` : ""}</button>`;
+      }).join("")}</div>`}
+    </section>
+  `;
+    }
+    function renderStationeryPictureMatch() {
+      ensureStationeryPictureMatch();
+      const round = currentStationeryPictureMatchRound();
+      const columnLabels = { measure: "\u6570\u91CF + \u91CF\u8BCD", color: "\u989C\u8272", item: "\u6587\u5177" };
+      const selected = state2.stationeryPictureMatchSelections;
+      const isComplete = state2.stationeryPictureMatchComplete;
+      return `
+    <section class="practice-split-card stationery-picture-match-card">
+      <div class="numbers-game-top"><div><p class="body-match-kicker">Match the picture</p><p class="numbers-game-note">Look at the picture. Choose the quantity, color, and school thing.</p></div></div>
+      <figure class="stationery-picture-match-visual"><img src="${round.imagePath}" alt="${round.alt}"></figure>
+      <div class="stationery-picture-match-columns">
+        ${Object.entries(stationeryPictureMatchChoices2).map(([column, choices]) => `
+          <div class="stationery-picture-match-column">
+            <p class="stationery-picture-match-label">${columnLabels[column]}</p>
+            ${state2.stationeryPictureMatchChoiceOrders[column].map((choice) => {
+        const isCorrect = selected[column] === choice;
+        const isWrong = state2.stationeryPictureMatchWrong[column].has(choice);
+        return `<button class="stationery-picture-match-option${isCorrect ? " is-correct" : ""}${isWrong ? " is-wrong" : ""}" type="button" data-stationery-picture-match-pick="${column}" data-stationery-picture-match-value="${choice}"${isCorrect || isComplete ? " disabled" : ""}><span class="stationery-picture-match-word">${choice}</span>${state2.showEnglish ? `<span class="stationery-picture-match-english">${stationeryPictureMatchEnglish2[choice]}</span>` : ""}${isCorrect || isWrong ? `<span class="answer-result-mark" aria-hidden="true">${isCorrect ? "\u2713" : "\xD7"}</span>` : ""}</button>`;
+      }).join("")}
+          </div>
+        `).join("")}
+      </div>
+      ${isComplete ? `<div class="stationery-picture-match-result is-correct"><span class="answer-result-mark" aria-hidden="true">\u2713</span><div><strong>${Object.values(round.target).join("")}\u3002</strong>${state2.showPinyin ? `<span>${round.pinyin}</span>` : ""}${state2.showEnglish ? `<span>${round.english}</span>` : ""}</div><button class="small-button is-action-button" type="button" data-stationery-picture-match-next>Next picture</button></div>` : ""}
+    </section>
+  `;
+    }
+    function renderStationeryPractice2(topic) {
+      ensureSchoolBuilder(topic.id);
+      const item = currentSchoolBuildItem();
+      activityPanelTitle2.textContent = "Let's practice";
+      activityPanelSummary2.textContent = "Match the words to the picture, then build a sentence from the picture.";
+      activityList2.className = "support-list";
+      activityList2.innerHTML = `
+    <section class="family-practice-shell lesson-practice-shell">
+      <div class="practice-split-board">
+        ${renderStationeryPictureMatch()}
+        ${renderSchoolSentenceBuilder(item)}
+      </div>
+    </section>
+  `;
+      activityList2.querySelectorAll("[data-stationery-picture-match-pick]").forEach((button) => button.addEventListener("click", () => handleStationeryPictureMatchPick(button.dataset.stationeryPictureMatchPick, button.dataset.stationeryPictureMatchValue)));
+      activityList2.querySelector("[data-stationery-picture-match-next]")?.addEventListener("click", nextStationeryPictureMatch);
+      activityList2.querySelectorAll("[data-school-build-token]").forEach((button) => button.addEventListener("click", () => handleSchoolBuildToken(Number(button.dataset.schoolBuildToken))));
+      activityList2.querySelector("[data-school-build-clear]")?.addEventListener("click", clearSchoolBuilder);
+      activityList2.querySelector("[data-school-build-next]")?.addEventListener("click", nextSchoolBuilder);
+    }
+    function renderSchoolSuppliesPractice2(topic) {
+      ensureSchoolBuilder(topic.id);
+      const item = currentSchoolBuildItem();
+      activityPanelTitle2.textContent = "Let's practice";
+      activityPanelSummary2.textContent = "Pack three school things, then build a sentence from the picture.";
+      activityList2.className = "support-list";
+      activityList2.innerHTML = `
+    <section class="family-practice-shell lesson-practice-shell">
+      <div class="practice-split-board">
+        ${renderBackpackGame()}
+        ${renderSchoolSentenceBuilder(item)}
+      </div>
+    </section>
+  `;
+      activityList2.querySelector("[data-backpack-game-new]")?.addEventListener("click", () => {
+        resetBackpackGame();
+        renderActivityPanel2(topic);
+      });
+      activityList2.querySelectorAll("[data-backpack-game-guess]").forEach((button) => button.addEventListener("click", () => handleBackpackGameGuess(button.dataset.backpackGameGuess)));
+      activityList2.querySelectorAll("[data-school-build-token]").forEach((button) => button.addEventListener("click", () => handleSchoolBuildToken(Number(button.dataset.schoolBuildToken))));
+      activityList2.querySelector("[data-school-build-clear]")?.addEventListener("click", clearSchoolBuilder);
+      activityList2.querySelector("[data-school-build-next]")?.addEventListener("click", nextSchoolBuilder);
+    }
+    function renderSchoolPractice2(topic) {
+      if (topic.id === "food") {
+        renderFoodPractice2(topic);
+        return;
+      }
+      if (topic.id === "food-preferences") {
+        renderFoodPreferencesPractice2(topic);
+        return;
+      }
+      if (topic.id === "meals-feelings") {
+        renderMealsConversationPractice2(topic);
+        return;
+      }
+      if (topic.id === "classroom") {
+        renderClassroomPractice2(topic);
+        return;
+      }
+      if (topic.id === "stationery") {
+        renderStationeryPractice2(topic);
+        return;
+      }
+      if (topic.id === "school-supplies") {
+        renderSchoolSuppliesPractice2(topic);
+        return;
+      }
+      ensureSchoolPractice2(topic.id);
+      ensureSchoolBuilder(topic.id);
+      const topicData2 = schoolTopicData3[topic.id];
+      const item = currentSchoolBuildItem();
+      const listen = {
+        items: () => schoolPracticeItems2(topic.id),
+        optionIds: () => state2.schoolChallengeOptionIds,
+        pickedId: () => state2.schoolChallengePickedId,
+        result: () => state2.schoolChallengeResult,
+        wrongIds: () => state2.schoolChallengeWrongIds,
+        feedback: () => state2.schoolListenFeedback
+      };
+      activityPanelTitle2.textContent = "Let's practice";
+      activityPanelSummary2.textContent = topicData2?.practiceSummary ?? "Listen for a school word, then build a sentence from the picture.";
+      activityList2.className = "support-list";
+      activityList2.innerHTML = `
+    <section class="family-practice-shell lesson-practice-shell">
+      <div class="practice-split-board">
+        ${renderListenPractice2(listen)}
+        ${renderSchoolSentenceBuilder(item)}
+      </div>
+    </section>
+  `;
+      activityList2.querySelector("[data-template-listen-play]")?.addEventListener("click", handleSchoolChallengePlay2);
+      activityList2.querySelectorAll("[data-template-listen-guess]").forEach((button) => button.addEventListener("click", () => handleSchoolChallengeGuess2(button.dataset.templateListenGuess)));
+      activityList2.querySelectorAll("[data-school-build-token]").forEach((button) => button.addEventListener("click", () => handleSchoolBuildToken(Number(button.dataset.schoolBuildToken))));
+      activityList2.querySelector("[data-school-build-clear]")?.addEventListener("click", clearSchoolBuilder);
+      activityList2.querySelector("[data-school-build-next]")?.addEventListener("click", nextSchoolBuilder);
+    }
+    function renderMealsConversationPractice2(topic) {
+      ensureMealsConversationMatch();
+      ensureMealsPictureChoice();
+      const items = mealsConversationItems();
+      activityPanelTitle2.textContent = "Let's practice";
+      activityPanelSummary2.textContent = schoolTopicData3[topic.id].practiceSummary;
+      activityList2.className = "support-list";
+      activityList2.innerHTML = `
+    <section class="family-practice-shell lesson-practice-shell">
+      ${renderMatchPractice2({
+        phraseHeading: "First line",
+        meaningHeading: "Reply",
+        items: () => items,
+        phraseIds: () => state2.schoolPhraseOrder,
+        meaningIds: () => state2.schoolMeaningOrder,
+        matchedIds: () => state2.schoolMatchedIds,
+        selectedId: () => state2.schoolSelectedPhraseId,
+        feedback: () => state2.schoolMatchFeedback,
+        wrongPhraseIds: () => state2.mealsConversationWrongPhraseIds,
+        wrongMeaningIds: () => state2.mealsConversationWrongReplyIds,
+        meaningContent: (id) => {
+          const item = items.find((entry) => entry.id === id);
+          if (!item) return "";
+          return `<span class="numbers-game-hanzi">${item.reply}</span>${state2.showPinyin ? `<span class="numbers-game-pinyin">${item.replyPinyin}</span>` : ""}`;
+        }
+      })}
+      ${renderMealsPictureChoice()}
+    </section>
+  `;
+      activityList2.querySelector("[data-template-match-new]")?.addEventListener("click", () => {
+        resetMealsConversationMatch();
+        renderActivityPanel2(topic);
+      });
+      activityList2.querySelector("[data-template-match-play-again]")?.addEventListener("click", () => {
+        resetMealsConversationMatch();
+        renderActivityPanel2(topic);
+      });
+      activityList2.querySelectorAll("[data-template-match-phrase]").forEach((button) => button.addEventListener("click", () => handleMealsConversationPhrase(button.dataset.templateMatchPhrase)));
+      activityList2.querySelectorAll("[data-template-match-meaning]").forEach((button) => button.addEventListener("click", () => handleMealsConversationAttempt(button.dataset.templateMatchMeaning)));
+      activityList2.querySelectorAll("[data-meals-picture-pick]").forEach((button) => button.addEventListener("click", () => handleMealsPictureChoice(button.dataset.mealsPicturePick)));
+      activityList2.querySelector("[data-meals-picture-next]")?.addEventListener("click", nextMealsPictureChoice);
+    }
+    function renderFoodPreferencesPractice2(topic) {
+      activityPanelTitle2.textContent = "Let's practice";
+      activityPanelSummary2.textContent = schoolTopicData3[topic.id].practiceSummary;
+      activityList2.className = "support-list";
+      activityList2.innerHTML = `
+    <section class="family-practice-shell lesson-practice-shell">
+      ${renderFoodPreferenceFillPractice()}
+    </section>
+  `;
+      activityList2.querySelectorAll("[data-food-preference-subject]").forEach((button) => button.addEventListener("click", () => handleFoodPreferenceSubject(button.dataset.foodPreferenceSubject)));
+      activityList2.querySelectorAll("[data-food-preference-pattern]").forEach((button) => button.addEventListener("click", () => handleFoodPreferencePattern(button.dataset.foodPreferencePattern)));
+      activityList2.querySelectorAll("[data-food-preference-food]").forEach((button) => button.addEventListener("click", () => handleFoodPreferenceFill(button.dataset.foodPreferenceFood)));
+    }
+    return { schoolPracticeItems: schoolPracticeItems2, ensureSchoolPractice: ensureSchoolPractice2, renderSchoolPractice: renderSchoolPractice2, renderStationeryPractice: renderStationeryPractice2, renderSchoolSuppliesPractice: renderSchoolSuppliesPractice2, renderFoodPractice: renderFoodPractice2, renderMealsConversationPractice: renderMealsConversationPractice2, renderFoodPreferencesPractice: renderFoodPreferencesPractice2, renderClassroomPractice: renderClassroomPractice2 };
+  }
+
   // src/features/food/food.js
   var foodTopic = {
     id: "food",
@@ -3727,6 +4585,15 @@
   var handleAgeBuildToken;
   var handleAgeBuildClear;
   var renderAgeExplorer;
+  var schoolPracticeItems;
+  var ensureSchoolPractice;
+  var renderSchoolPractice;
+  var renderStationeryPractice;
+  var renderSchoolSuppliesPractice;
+  var renderFoodPractice;
+  var renderMealsConversationPractice;
+  var renderFoodPreferencesPractice;
+  var renderClassroomPractice;
   document.querySelectorAll("[data-view]").forEach((button) => {
     button.addEventListener("click", () => {
       switchView(button.dataset.view);
@@ -5591,7 +6458,7 @@
       });
     });
   }
-  function schoolWordGroups(topicId = currentTopic().id) {
+  function schoolWordGroups2(topicId = currentTopic().id) {
     const data = schoolTopicData2[topicId];
     if (!data?.wordGroups) return [];
     return data.wordGroups.map((group) => ({
@@ -5605,858 +6472,6 @@
         imagePath: file ? file.startsWith("assets/") ? file : `assets/illustrated-food/${file}` : ""
       }))
     }));
-  }
-  function schoolPracticeItems(topicId = currentTopic().id) {
-    const data = schoolTopicData2[topicId];
-    return data?.practiceItems ?? data?.words ?? schoolWordGroups(topicId).flatMap((group) => group.items);
-  }
-  function backpackGameItems() {
-    const portableItemIds = /* @__PURE__ */ new Set(["pencil", "ruler", "eraser", "colored-pencils", "scissors", "glue", "pencil-box", "textbook", "workbook"]);
-    return schoolPracticeItems("school-supplies").filter((item) => portableItemIds.has(item.id));
-  }
-  function currentStationeryPictureMatchRound() {
-    return stationeryPictureMatchRounds[state.stationeryPictureMatchIndex] ?? stationeryPictureMatchRounds[0];
-  }
-  function resetStationeryPictureMatch(index = state.stationeryPictureMatchIndex) {
-    state.stationeryPictureMatchIndex = index % stationeryPictureMatchRounds.length;
-    state.stationeryPictureMatchSelections = { measure: "", color: "", item: "" };
-    state.stationeryPictureMatchWrong = { measure: /* @__PURE__ */ new Set(), color: /* @__PURE__ */ new Set(), item: /* @__PURE__ */ new Set() };
-    state.stationeryPictureMatchChoiceOrders = Object.fromEntries(Object.entries(stationeryPictureMatchChoices).map(([column, choices]) => [column, shuffleArray([...choices])]));
-    state.stationeryPictureMatchComplete = false;
-  }
-  function ensureStationeryPictureMatch() {
-    const hasValidOrders = Object.entries(stationeryPictureMatchChoices).every(([column, choices]) => {
-      const order = state.stationeryPictureMatchChoiceOrders[column];
-      return order?.length === choices.length && choices.every((choice) => order.includes(choice));
-    });
-    if (!hasValidOrders) resetStationeryPictureMatch();
-  }
-  function handleStationeryPictureMatchPick(column, value) {
-    if (state.stationeryPictureMatchComplete) return;
-    const round = currentStationeryPictureMatchRound();
-    if (!round || !stationeryPictureMatchChoices[column]) return;
-    if (value !== round.target[column]) {
-      state.stationeryPictureMatchWrong = {
-        ...state.stationeryPictureMatchWrong,
-        [column]: /* @__PURE__ */ new Set([...state.stationeryPictureMatchWrong[column], value])
-      };
-      renderActivityPanel(currentTopic());
-      return;
-    }
-    state.stationeryPictureMatchSelections = { ...state.stationeryPictureMatchSelections, [column]: value };
-    state.stationeryPictureMatchWrong = {
-      ...state.stationeryPictureMatchWrong,
-      [column]: /* @__PURE__ */ new Set()
-    };
-    state.stationeryPictureMatchComplete = Object.entries(round.target).every(([key, target]) => state.stationeryPictureMatchSelections[key] === target);
-    if (state.stationeryPictureMatchComplete && state.tapAudioEnabled) speak(Object.values(round.target).join(""), 0.78);
-    renderActivityPanel(currentTopic());
-  }
-  function nextStationeryPictureMatch() {
-    resetStationeryPictureMatch((state.stationeryPictureMatchIndex + 1) % stationeryPictureMatchRounds.length);
-    renderActivityPanel(currentTopic());
-  }
-  function prepareBackpackGameOptions() {
-    const targetId = state.backpackGameRoundIds[state.backpackGameTargetIndex];
-    const items = backpackGameItems();
-    state.backpackGameOptionIds = shuffleArray([
-      targetId,
-      ...shuffleArray(items.filter((item) => item.id !== targetId)).slice(0, 3).map((item) => item.id)
-    ]);
-    state.backpackGameWrongIds = /* @__PURE__ */ new Set();
-  }
-  function resetBackpackGame() {
-    state.backpackGameRoundIds = shuffleArray(backpackGameItems().map((item) => item.id)).slice(0, 3);
-    state.backpackGameTargetIndex = 0;
-    state.backpackGamePlacedIds = [];
-    state.backpackGameComplete = false;
-    prepareBackpackGameOptions();
-  }
-  function ensureBackpackGame() {
-    const items = backpackGameItems();
-    const isValidRound = state.backpackGameRoundIds.length === 3 && state.backpackGameRoundIds.every((id) => items.some((item) => item.id === id));
-    if (!isValidRound) resetBackpackGame();
-  }
-  function currentBackpackGameTarget() {
-    return backpackGameItems().find((item) => item.id === state.backpackGameRoundIds[state.backpackGameTargetIndex]);
-  }
-  function handleBackpackGameGuess(itemId) {
-    if (state.backpackGameComplete) return;
-    const target = currentBackpackGameTarget();
-    if (!target) return;
-    if (itemId !== target.id) {
-      state.backpackGameWrongIds = /* @__PURE__ */ new Set([...state.backpackGameWrongIds, itemId]);
-      renderActivityPanel(currentTopic());
-      return;
-    }
-    state.backpackGamePlacedIds = [...state.backpackGamePlacedIds, target.id];
-    if (state.tapAudioEnabled) speak(target.audio, 0.78);
-    state.backpackGameTargetIndex += 1;
-    state.backpackGameComplete = state.backpackGameTargetIndex === state.backpackGameRoundIds.length;
-    if (!state.backpackGameComplete) prepareBackpackGameOptions();
-    renderActivityPanel(currentTopic());
-  }
-  function resetSchoolChallenge(options = {}) {
-    const items = schoolPracticeItems();
-    const candidates = items.filter((item) => item.id !== options.excludeId);
-    const answers = candidates.length ? candidates : items;
-    const answer = answers[Math.floor(Math.random() * answers.length)];
-    if (!answer) return;
-    const optionIds = currentTopic().id === "school-subjects" ? shuffleArray(items.map((item) => item.id)) : shuffleArray([answer.id, ...shuffleArray(items.filter((item) => item.id !== answer.id)).slice(0, 3).map((item) => item.id)]);
-    state.schoolChallengeAnswerId = answer.id;
-    state.schoolChallengePromptId = answer.id;
-    state.schoolChallengeOptionIds = optionIds;
-    state.schoolChallengePickedId = "";
-    state.schoolChallengeResult = "";
-    state.schoolChallengeWrongIds = /* @__PURE__ */ new Set();
-    state.schoolListenFeedback = "";
-  }
-  function resetSchoolMatchGame() {
-    const ids = schoolPracticeItems().slice(0, 6).map((item) => item.id);
-    state.schoolSelectedPhraseId = null;
-    state.schoolMatchedIds = /* @__PURE__ */ new Set();
-    state.schoolPhraseOrder = shuffleArray(ids);
-    state.schoolMeaningOrder = shuffleArray(ids);
-    state.schoolMatchFeedback = "";
-  }
-  function mealsConversationItems() {
-    return schoolTopicData2["meals-feelings"]?.conversationPairs ?? [];
-  }
-  function resetMealsConversationMatch() {
-    const ids = mealsConversationItems().map((item) => item.id);
-    state.schoolSelectedPhraseId = null;
-    state.schoolMatchedIds = /* @__PURE__ */ new Set();
-    state.schoolPhraseOrder = shuffleArray(ids);
-    state.schoolMeaningOrder = shuffleArray(ids);
-    state.schoolMatchFeedback = "";
-    state.mealsConversationMatchReady = true;
-    state.mealsConversationWrongPhraseIds = /* @__PURE__ */ new Set();
-    state.mealsConversationWrongReplyIds = /* @__PURE__ */ new Set();
-  }
-  function ensureMealsConversationMatch() {
-    const ids = mealsConversationItems().map((item) => item.id);
-    const currentIds = [...state.schoolPhraseOrder].sort();
-    if (!state.mealsConversationMatchReady || currentIds.length !== ids.length || currentIds.some((id, index) => id !== [...ids].sort()[index])) {
-      resetMealsConversationMatch();
-    }
-  }
-  function handleMealsConversationPhrase(itemId) {
-    if (state.schoolMatchedIds.has(itemId)) return;
-    state.schoolSelectedPhraseId = itemId;
-    state.mealsConversationWrongPhraseIds = /* @__PURE__ */ new Set();
-    state.mealsConversationWrongReplyIds = /* @__PURE__ */ new Set();
-    const item = mealsConversationItems().find((entry) => entry.id === itemId);
-    if (item && state.tapAudioEnabled) speak(item.audio, 0.78);
-    renderActivityPanel(currentTopic());
-  }
-  function handleMealsConversationAttempt(itemId) {
-    const selectedId = state.schoolSelectedPhraseId;
-    if (!selectedId || state.schoolMatchedIds.has(itemId)) return;
-    if (selectedId === itemId) {
-      state.schoolMatchedIds = /* @__PURE__ */ new Set([...state.schoolMatchedIds, itemId]);
-      state.schoolMatchFeedback = "Correct!";
-      state.mealsConversationWrongPhraseIds = /* @__PURE__ */ new Set();
-      state.mealsConversationWrongReplyIds = /* @__PURE__ */ new Set();
-    } else {
-      state.schoolMatchFeedback = "Try again.";
-      state.mealsConversationWrongPhraseIds = /* @__PURE__ */ new Set([selectedId]);
-      state.mealsConversationWrongReplyIds = /* @__PURE__ */ new Set([itemId]);
-    }
-    state.schoolSelectedPhraseId = null;
-    renderActivityPanel(currentTopic());
-  }
-  function mealsPictureChoiceItems() {
-    return schoolTopicData2["meals-feelings"]?.pictureChoices ?? [];
-  }
-  function resetMealsPictureQuestion() {
-    const prompt = mealsPictureChoiceItems().find((item) => item.id === state.mealsPictureQuizOrder[state.mealsPictureQuizIndex]);
-    if (!prompt) return;
-    state.mealsPictureQuizOptionIds = shuffleArray(prompt.options.map((option) => option.id));
-    state.mealsPictureQuizSelectedId = "";
-    state.mealsPictureQuizResult = "";
-  }
-  function ensureMealsPictureChoice() {
-    const ids = mealsPictureChoiceItems().map((item) => item.id);
-    const currentIds = [...state.mealsPictureQuizOrder].sort();
-    if (currentIds.length !== ids.length || currentIds.some((id, index) => id !== [...ids].sort()[index])) {
-      state.mealsPictureQuizOrder = shuffleArray(ids);
-      state.mealsPictureQuizIndex = 0;
-      resetMealsPictureQuestion();
-    }
-  }
-  function handleMealsPictureChoice(optionId) {
-    const prompt = mealsPictureChoiceItems().find((item) => item.id === state.mealsPictureQuizOrder[state.mealsPictureQuizIndex]);
-    if (!prompt || state.mealsPictureQuizResult === "correct") return;
-    state.mealsPictureQuizSelectedId = optionId;
-    state.mealsPictureQuizResult = optionId === prompt.correctId ? "correct" : "wrong";
-    renderActivityPanel(currentTopic());
-  }
-  function nextMealsPictureChoice() {
-    const items = mealsPictureChoiceItems();
-    if (!items.length) return;
-    state.mealsPictureQuizIndex = (state.mealsPictureQuizIndex + 1) % items.length;
-    resetMealsPictureQuestion();
-    renderActivityPanel(currentTopic());
-  }
-  function renderMealsPictureChoice() {
-    const prompt = mealsPictureChoiceItems().find((item) => item.id === state.mealsPictureQuizOrder[state.mealsPictureQuizIndex]);
-    if (!prompt) return "";
-    return `
-    <section class="clothes-quiz-shell meals-picture-choice">
-      <div class="numbers-game-top"><div><p class="body-match-kicker">Look and Choose</p><p class="numbers-game-note">Look at the picture, then tap the Chinese sentence that matches it.</p></div></div>
-      <figure class="clothes-quiz-visual time-routine-quiz-visual"><img class="clothes-quiz-image" src="${prompt.imagePath}" alt="${prompt.imageAlt}" /></figure>
-      <div class="clothes-quiz-options sentence-choice-options">
-        ${state.mealsPictureQuizOptionIds.map((optionId) => {
-      const option = prompt.options.find((item) => item.id === optionId);
-      if (!option) return "";
-      const selected = state.mealsPictureQuizSelectedId === optionId;
-      const resultClass = selected ? ` is-${state.mealsPictureQuizResult}` : "";
-      const mark = selected ? `<span class="answer-result-mark" aria-hidden="true">${state.mealsPictureQuizResult === "correct" ? "\u2713" : "\xD7"}</span>` : "";
-      return `<button class="clothes-quiz-option${resultClass}" type="button" data-meals-picture-pick="${option.id}">${mark}<span class="numbers-game-hanzi">${option.hanzi}</span>${state.showPinyin ? `<span class="numbers-game-pinyin">${option.pinyin}</span>` : ""}${state.showEnglish ? `<span class="numbers-game-english">${option.english}</span>` : ""}</button>`;
-    }).join("")}
-      </div>
-      ${state.mealsPictureQuizResult === "correct" ? '<div class="clothes-quiz-next"><button class="small-button is-action-button" type="button" data-meals-picture-next>Next picture</button></div>' : ""}
-    </section>
-  `;
-  }
-  function foodPreferenceFillItems() {
-    return [
-      { id: "apple", hanzi: "\u82F9\u679C", pinyin: "p\xEDng gu\u01D2", english: "apple" },
-      { id: "ice-cream", hanzi: "\u51B0\u6DC7\u6DCB", pinyin: "b\u012Bng q\xED l\xEDn", english: "ice cream" },
-      { id: "pizza", hanzi: "\u62AB\u8428", pinyin: "p\u012B s\xE0", english: "pizza" },
-      { id: "broccoli", hanzi: "\u897F\u5170\u82B1", pinyin: "x\u012B l\xE1n hu\u0101", english: "broccoli" },
-      { id: "dumplings", hanzi: "\u997A\u5B50", pinyin: "ji\u01CEo zi", english: "dumplings" },
-      { id: "fried-rice", hanzi: "\u7092\u996D", pinyin: "ch\u01CEo f\xE0n", english: "fried rice" },
-      { id: "chow-mein", hanzi: "\u7092\u9762", pinyin: "ch\u01CEo mi\xE0n", english: "chow mein" },
-      { id: "hamburger", hanzi: "\u6C49\u5821", pinyin: "h\xE0n b\u01CEo", english: "hamburger" },
-      { id: "hot-dog", hanzi: "\u70ED\u72D7", pinyin: "r\xE8 g\u01D2u", english: "hot dog" },
-      { id: "sandwich", hanzi: "\u4E09\u660E\u6CBB", pinyin: "s\u0101n m\xEDng zh\xEC", english: "sandwich" }
-    ];
-  }
-  function foodPreferenceSubjects() {
-    return [
-      { id: "\u6211", hanzi: "\u6211", pinyin: "w\u01D2", english: "I" },
-      { id: "\u7238\u7238", hanzi: "\u7238\u7238", pinyin: "b\xE0 ba", english: "Dad" },
-      { id: "\u5988\u5988", hanzi: "\u5988\u5988", pinyin: "m\u0101 ma", english: "Mom" },
-      { id: "\u7237\u7237", hanzi: "\u7237\u7237", pinyin: "y\xE9 ye", english: "Grandpa" },
-      { id: "\u5976\u5976", hanzi: "\u5976\u5976", pinyin: "n\u01CEi nai", english: "Grandma" },
-      { id: "\u59D0\u59D0", hanzi: "\u59D0\u59D0", pinyin: "ji\u011B jie", english: "Older sister" },
-      { id: "\u59B9\u59B9", hanzi: "\u59B9\u59B9", pinyin: "m\xE8i mei", english: "Younger sister" },
-      { id: "\u5F1F\u5F1F", hanzi: "\u5F1F\u5F1F", pinyin: "d\xEC di", english: "Younger brother" },
-      { id: "\u54E5\u54E5", hanzi: "\u54E5\u54E5", pinyin: "g\u0113 ge", english: "Older brother" }
-    ];
-  }
-  function foodPreferencePatterns() {
-    return [
-      { id: "like", hanzi: "\u559C\u6B22", pinyin: "x\u01D0 huan", english: "likes to eat", firstPersonEnglish: "like to eat" },
-      { id: "dislike", hanzi: "\u4E0D\u559C\u6B22", pinyin: "b\xF9 x\u01D0 huan", english: "does not like to eat", firstPersonEnglish: "do not like to eat" },
-      { id: "want", hanzi: "\u60F3", pinyin: "xi\u01CEng", english: "wants to eat", firstPersonEnglish: "want to eat" },
-      { id: "not-want", hanzi: "\u4E0D\u60F3", pinyin: "b\xF9 xi\u01CEng", english: "does not want to eat", firstPersonEnglish: "do not want to eat" },
-      { id: "need", hanzi: "\u8981", pinyin: "y\xE0o", english: "wants to eat", firstPersonEnglish: "want to eat" },
-      { id: "not-need", hanzi: "\u4E0D\u8981", pinyin: "b\xFA y\xE0o", english: "does not want to eat", firstPersonEnglish: "do not want to eat" }
-    ];
-  }
-  function selectedFoodPreferencePattern() {
-    return foodPreferencePatterns().find((item) => item.id === state.foodPreferencePatternId) ?? foodPreferencePatterns()[0];
-  }
-  function handleFoodPreferenceSubject(subjectId) {
-    state.foodPreferenceSubjectId = subjectId;
-    renderActivityPanel(currentTopic());
-  }
-  function handleFoodPreferencePattern(patternId) {
-    state.foodPreferencePatternId = patternId;
-    state.foodPreferenceFoodId = "";
-    renderActivityPanel(currentTopic());
-  }
-  function handleFoodPreferenceFill(foodId) {
-    const item = foodPreferenceFillItems().find((entry) => entry.id === foodId);
-    if (!item) return;
-    const pattern = selectedFoodPreferencePattern();
-    const subject = foodPreferenceSubjects().find((entry) => entry.id === state.foodPreferenceSubjectId) ?? foodPreferenceSubjects()[0];
-    const sentence = `${subject.hanzi}${pattern.hanzi}\u5403${item.hanzi}`;
-    state.foodPreferenceFoodId = foodId;
-    if (state.tapAudioEnabled) speak(sentence, 0.78);
-    renderActivityPanel(currentTopic());
-  }
-  function renderFoodPreferenceFillPractice() {
-    const items = foodPreferenceFillItems();
-    const pattern = selectedFoodPreferencePattern();
-    const subjects = foodPreferenceSubjects();
-    const subject = subjects.find((item) => item.id === state.foodPreferenceSubjectId) ?? subjects[0];
-    const selectedFood = items.find((item) => item.id === state.foodPreferenceFoodId);
-    const sentenceHanzi = `${subject.hanzi}${pattern.hanzi}\u5403${selectedFood?.hanzi ?? "____"}\u3002`;
-    const sentencePinyin = `${subject.pinyin} ${pattern.pinyin} ch\u012B${selectedFood?.pinyin ? ` ${selectedFood.pinyin}` : ""}.`;
-    const sentenceEnglish = `${subject.english} ${subject.id === "\u6211" ? pattern.firstPersonEnglish : pattern.english}${selectedFood?.english ? ` ${selectedFood.english}` : ""}.`;
-    return `
-    <section class="clothes-quiz-shell food-preference-fill-practice">
-      <div class="numbers-game-top"><div><p class="body-match-kicker">Make your sentence</p><p class="numbers-game-note">Choose one card in each column. There is no right or wrong answer.</p></div></div>
-      <div class="food-preference-builder-columns">
-        <div class="food-preference-builder-column"><p class="food-preference-choice-label">Subject</p><div class="food-preference-builder-list">${subjects.map((item) => `<button class="food-preference-subject-choice${subject.id === item.id ? " is-active" : ""}" type="button" data-food-preference-subject="${item.id}"><span class="numbers-game-hanzi">${item.hanzi}</span><span class="food-preference-card-meta">${state.showPinyin ? `<span class="numbers-game-pinyin">${item.pinyin}</span>` : ""}${state.showEnglish ? `<span class="numbers-game-english">${item.english}</span>` : ""}</span></button>`).join("")}</div></div>
-        <div class="food-preference-builder-column"><p class="food-preference-choice-label">Word</p><div class="food-preference-builder-list">${foodPreferencePatterns().map((item) => `<button class="food-preference-pattern-choice${pattern.id === item.id ? " is-active" : ""}" type="button" data-food-preference-pattern="${item.id}"><span class="numbers-game-hanzi">${item.hanzi}</span><span class="food-preference-card-meta">${state.showPinyin ? `<span class="numbers-game-pinyin">${item.pinyin}</span>` : ""}${state.showEnglish ? `<span class="numbers-game-english">${item.english}</span>` : ""}</span></button>`).join("")}</div></div>
-        <div class="food-preference-builder-column"><p class="food-preference-choice-label">Food</p><div class="food-preference-builder-list">${items.map((item) => `<button class="food-preference-fill-choice${selectedFood?.id === item.id ? " is-active" : ""}" type="button" data-food-preference-food="${item.id}"><span class="numbers-game-hanzi">${item.hanzi}</span><span class="food-preference-card-meta">${state.showPinyin ? `<span class="numbers-game-pinyin">${item.pinyin}</span>` : ""}${state.showEnglish ? `<span class="numbers-game-english">${item.english}</span>` : ""}</span></button>`).join("")}</div></div>
-      </div>
-      <div class="food-preference-built-sentence"><span class="numbers-game-hanzi">${sentenceHanzi}</span>${state.showPinyin ? `<span class="numbers-game-pinyin">${sentencePinyin}</span>` : ""}${state.showEnglish ? `<span class="numbers-game-english">${sentenceEnglish}</span>` : ""}</div>
-    </section>
-  `;
-  }
-  function classroomSentenceFrames() {
-    return schoolTopicData2.classroom?.sentenceFrames ?? [];
-  }
-  function classroomSentenceWords() {
-    return [
-      ...(schoolTopicData2.classroom?.words ?? []).map((item) => item.id === "computer" ? { ...item, sentenceEnglish: "laptop" } : item),
-      { id: "textbook", hanzi: "\u8BFE\u672C", pinyin: "k\xE8 b\u011Bn", english: "textbook", imagePath: "assets/illustrated-stationery/textbook.webp" },
-      { id: "workbook", hanzi: "\u7EC3\u4E60\u672C", pinyin: "li\xE0n x\xED b\u011Bn", english: "workbook", imagePath: "assets/illustrated-stationery/workbook.webp" },
-      { id: "pencil", hanzi: "\u94C5\u7B14", pinyin: "qi\u0101n b\u01D0", english: "pencil", imagePath: "assets/illustrated-stationery/pencil.webp" },
-      { id: "ruler", hanzi: "\u5C3A\u5B50", pinyin: "ch\u01D0 zi", english: "ruler", imagePath: "assets/illustrated-stationery/ruler.webp" },
-      { id: "eraser", hanzi: "\u6A61\u76AE", pinyin: "xi\xE0ng p\xED", english: "eraser", imagePath: "assets/illustrated-stationery/eraser.webp" },
-      { id: "colored-pencils", hanzi: "\u5F69\u8272\u94C5\u7B14", pinyin: "c\u01CEi s\xE8 qi\u0101n b\u01D0", english: "colored pencils", imagePath: "assets/illustrated-stationery/colored-pencils.webp" }
-    ];
-  }
-  function selectedClassroomSentenceFrame() {
-    return classroomSentenceFrames().find((frame) => frame.id === state.classroomSentenceFrameId) ?? classroomSentenceFrames()[0];
-  }
-  function classroomSentenceEnglish(frame, word) {
-    if (!word) return "";
-    const noun = word.sentenceEnglish ?? word.english;
-    if (frame.id === "many-in-classroom") {
-      return `There are many ${noun.endsWith("s") ? noun : `${noun}s`} in the classroom.`;
-    }
-    if (word.id === "colored-pencils") {
-      return `There are colored pencils${frame.id === "on-table" ? " on the table" : " in the classroom"}.`;
-    }
-    const article = /^[aeiou]/i.test(noun) ? "an" : "a";
-    return `There is ${article} ${noun}${frame.id === "on-table" ? " on the table" : " in the classroom"}.`;
-  }
-  function handleClassroomSentenceFrame(frameId) {
-    const frame = classroomSentenceFrames().find((item) => item.id === frameId);
-    if (!frame) return;
-    state.classroomSentenceFrameId = frameId;
-    if (!frame.wordIds.includes(state.classroomSentenceWordId)) {
-      state.classroomSentenceWordId = "";
-    }
-    renderActivityPanel(currentTopic());
-  }
-  function handleClassroomSentenceWord(wordId) {
-    const frame = selectedClassroomSentenceFrame();
-    const word = classroomSentenceWords().find((item) => item.id === wordId);
-    if (!frame || !word || !frame.wordIds.includes(wordId)) return;
-    state.classroomSentenceWordId = wordId;
-    if (state.tapAudioEnabled) speak(`${frame.hanzi}${word.hanzi}`, 0.78);
-    renderActivityPanel(currentTopic());
-  }
-  function renderClassroomPractice(topic) {
-    const frames = classroomSentenceFrames();
-    const frame = selectedClassroomSentenceFrame();
-    const words = classroomSentenceWords().filter((item) => frame.wordIds.includes(item.id));
-    const selectedWord = words.find((item) => item.id === state.classroomSentenceWordId);
-    const hanzi = `${frame.hanzi}${selectedWord?.hanzi ?? "____"}\u3002`;
-    const pinyin = `${frame.pinyin}${selectedWord?.pinyin ? ` ${selectedWord.pinyin}` : ""}.`;
-    const english = classroomSentenceEnglish(frame, selectedWord);
-    activityPanelTitle.textContent = "Let's practice";
-    activityPanelSummary.textContent = schoolTopicData2.classroom.practiceSummary;
-    activityList.className = "support-list";
-    activityList.innerHTML = `
-    <section class="family-practice-shell lesson-practice-shell">
-      <section class="clothes-quiz-shell">
-        <div class="numbers-game-top"><div><p class="body-match-kicker">Make a sentence</p><p class="numbers-game-note">Choose a sentence start and an object. Every choice can make a good sentence.</p></div></div>
-        <div class="intro-build-choices">${frames.map((item) => `<button class="intro-build-chip${frame.id === item.id ? " is-selected" : ""}" type="button" data-classroom-sentence-frame="${item.id}">${item.hanzi}</button>`).join("")}</div>
-        <div class="transport-build-target classroom-sentence-output"><span class="numbers-game-hanzi">${hanzi}</span>${state.showPinyin ? `<span class="numbers-game-pinyin">${pinyin}</span>` : ""}${state.showEnglish && english ? `<span class="numbers-game-english">${english}</span>` : ""}</div>
-        <div class="intro-build-choices classroom-sentence-object-choices">${words.map((item) => `<button class="intro-build-chip classroom-sentence-object-chip${selectedWord?.id === item.id ? " is-selected" : ""}" type="button" data-classroom-sentence-word="${item.id}"><img class="classroom-sentence-object-icon" src="${item.imagePath}" alt="" aria-hidden="true"><span>${item.hanzi}</span></button>`).join("")}</div>
-      </section>
-    </section>
-  `;
-    activityList.querySelectorAll("[data-classroom-sentence-frame]").forEach((button) => button.addEventListener("click", () => handleClassroomSentenceFrame(button.dataset.classroomSentenceFrame)));
-    activityList.querySelectorAll("[data-classroom-sentence-word]").forEach((button) => button.addEventListener("click", () => handleClassroomSentenceWord(button.dataset.classroomSentenceWord)));
-  }
-  function ensureSchoolPractice(topicId = currentTopic().id) {
-    const items = schoolPracticeItems(topicId);
-    const expectedOptionCount = topicId === "school-subjects" ? items.length : Math.min(4, items.length);
-    if (state.schoolPracticeTopicId !== topicId || state.schoolChallengeOptionIds.length !== expectedOptionCount) {
-      state.schoolPracticeTopicId = topicId;
-      resetSchoolChallenge();
-      resetSchoolMatchGame();
-    }
-  }
-  function handleSchoolChallengePlay() {
-    ensureSchoolPractice();
-    resetSchoolChallenge({ excludeId: state.schoolChallengePromptId });
-    const item = schoolPracticeItems().find((entry) => entry.id === state.schoolChallengePromptId);
-    if (item && state.tapAudioEnabled) speak(item.audio, 0.78);
-    renderActivityPanel(currentTopic());
-  }
-  function handleSchoolChallengeGuess(itemId) {
-    ensureSchoolPractice();
-    const correct = itemId === state.schoolChallengeAnswerId;
-    state.schoolChallengePickedId = itemId;
-    state.schoolChallengeResult = correct ? "correct" : "wrong";
-    if (correct) {
-      state.schoolListenFeedback = "Correct!";
-      const item = schoolPracticeItems().find((entry) => entry.id === itemId);
-      if (item && state.tapAudioEnabled) speak(item.audio, 0.78);
-    } else {
-      state.schoolChallengeWrongIds = /* @__PURE__ */ new Set([...state.schoolChallengeWrongIds, itemId]);
-      state.schoolListenFeedback = "Try again.";
-    }
-    renderActivityPanel(currentTopic());
-  }
-  function handleSchoolMatchPhrase(itemId) {
-    if (state.schoolMatchedIds.has(itemId)) return;
-    state.schoolSelectedPhraseId = itemId;
-    const item = schoolPracticeItems().find((entry) => entry.id === itemId);
-    if (item && state.tapAudioEnabled) speak(item.audio, 0.78);
-    renderActivityPanel(currentTopic());
-  }
-  function handleSchoolMatchAttempt(itemId) {
-    const selectedId = state.schoolSelectedPhraseId;
-    if (!selectedId || state.schoolMatchedIds.has(itemId)) return;
-    if (selectedId === itemId) {
-      state.schoolMatchedIds = /* @__PURE__ */ new Set([...state.schoolMatchedIds, itemId]);
-      state.schoolMatchFeedback = "Correct!";
-    } else {
-      state.schoolMatchFeedback = "Try again.";
-    }
-    state.schoolSelectedPhraseId = null;
-    renderActivityPanel(currentTopic());
-  }
-  function currentSchoolBuildItem() {
-    const items = schoolSentenceBuilds2[currentTopic().id] ?? [];
-    return items.find((item) => item.id === state.schoolBuildOrder[state.schoolBuildIndex]) ?? items[0];
-  }
-  function prepareSchoolBuilder() {
-    const item = currentSchoolBuildItem();
-    state.schoolBuildSelectedTokens = [];
-    state.schoolBuildResult = "";
-    state.schoolBuildAvailableTokens = shuffleArray([...item?.target ?? [], ...item?.distractors ?? []]);
-  }
-  function ensureSchoolBuilder(topicId = currentTopic().id) {
-    const items = schoolSentenceBuilds2[topicId] ?? [];
-    const hasCurrentItems = state.schoolBuildOrder.length === items.length && state.schoolBuildOrder.every((id) => items.some((item) => item.id === id));
-    if (state.schoolBuildTopicId !== topicId || !hasCurrentItems) {
-      state.schoolBuildTopicId = topicId;
-      state.schoolBuildOrder = shuffleArray(items.map((item) => item.id));
-      state.schoolBuildIndex = 0;
-      prepareSchoolBuilder();
-    }
-  }
-  function handleSchoolBuildToken(index) {
-    if (state.schoolBuildResult === "correct") return;
-    const item = currentSchoolBuildItem();
-    const token = state.schoolBuildAvailableTokens[index];
-    if (!item || !token) return;
-    const selected = [...state.schoolBuildSelectedTokens, token];
-    const isPrefix = selected.every((entry, tokenIndex) => entry === item.target[tokenIndex]);
-    if (!isPrefix) {
-      state.schoolBuildResult = "wrong";
-      prepareSchoolBuilder();
-      state.schoolBuildResult = "wrong";
-      renderActivityPanel(currentTopic());
-      return;
-    }
-    state.schoolBuildSelectedTokens = selected;
-    state.schoolBuildAvailableTokens = state.schoolBuildAvailableTokens.filter((_, tokenIndex) => tokenIndex !== index);
-    if (selected.length === item.target.length) {
-      state.schoolBuildResult = "correct";
-      if (state.tapAudioEnabled) speak(item.audio ?? selected.join(""), 0.78);
-    }
-    renderActivityPanel(currentTopic());
-  }
-  function clearSchoolBuilder() {
-    prepareSchoolBuilder();
-    renderActivityPanel(currentTopic());
-  }
-  function nextSchoolBuilder() {
-    state.schoolBuildIndex = (state.schoolBuildIndex + 1) % state.schoolBuildOrder.length;
-    prepareSchoolBuilder();
-    renderActivityPanel(currentTopic());
-  }
-  var foodCategoryGroups = {
-    fruit: {
-      hanzi: "\u6C34\u679C",
-      english: "Fruit",
-      items: [
-        { id: "apple", hanzi: "\u82F9\u679C", pinyin: "p\xEDng gu\u01D2", english: "apple" },
-        { id: "banana", hanzi: "\u9999\u8549", pinyin: "xi\u0101ng ji\u0101o", english: "banana" },
-        { id: "grapes", hanzi: "\u8461\u8404", pinyin: "p\xFA tao", english: "grapes" },
-        { id: "strawberry", hanzi: "\u8349\u8393", pinyin: "c\u01CEo m\xE9i", english: "strawberry" },
-        { id: "orange", hanzi: "\u6A59\u5B50", pinyin: "ch\xE9ng zi", english: "orange" },
-        { id: "pear", hanzi: "\u68A8", pinyin: "l\xED", english: "pear" },
-        { id: "watermelon", hanzi: "\u897F\u74DC", pinyin: "x\u012B gu\u0101", english: "watermelon" },
-        { id: "peach", hanzi: "\u6843\u5B50", pinyin: "t\xE1o zi", english: "peach" },
-        { id: "cherries", hanzi: "\u6A31\u6843", pinyin: "y\u012Bng t\xE1o", english: "cherries" }
-      ]
-    },
-    vegetable: {
-      hanzi: "\u852C\u83DC",
-      english: "Vegetables",
-      items: [
-        { id: "carrot", hanzi: "\u80E1\u841D\u535C", pinyin: "h\xFA lu\xF3 bo", english: "carrot" },
-        { id: "cucumber", hanzi: "\u9EC4\u74DC", pinyin: "hu\xE1ng gu\u0101", english: "cucumber" },
-        { id: "tomato", hanzi: "\u897F\u7EA2\u67FF", pinyin: "x\u012B h\xF3ng sh\xEC", english: "tomato" },
-        { id: "broccoli", hanzi: "\u897F\u5170\u82B1", pinyin: "x\u012B l\xE1n hu\u0101", english: "broccoli" },
-        { id: "potatoes", hanzi: "\u571F\u8C46", pinyin: "t\u01D4 d\xF2u", english: "potatoes" }
-      ]
-    },
-    snack: {
-      hanzi: "\u96F6\u98DF",
-      english: "Snacks",
-      items: [
-        { id: "candies", hanzi: "\u7CD6\u679C", pinyin: "t\xE1ng gu\u01D2", english: "candies" },
-        { id: "chocolate", hanzi: "\u5DE7\u514B\u529B", pinyin: "qi\u01CEo k\xE8 l\xEC", english: "chocolate" },
-        { id: "ice-cream", hanzi: "\u51B0\u6DC7\u6DCB", pinyin: "b\u012Bng q\xED l\xEDn", english: "ice cream" },
-        { id: "cake", hanzi: "\u86CB\u7CD5", pinyin: "d\xE0n g\u0101o", english: "cake" }
-      ]
-    },
-    meal: {
-      hanzi: "\u4E3B\u98DF",
-      english: "Meal",
-      items: [
-        { id: "pizza", hanzi: "\u62AB\u8428", pinyin: "p\u012B s\xE0", english: "pizza" },
-        { id: "chow-mein", hanzi: "\u7092\u9762", pinyin: "ch\u01CEo mi\xE0n", english: "chow mein" },
-        { id: "fried-rice", hanzi: "\u7092\u996D", pinyin: "ch\u01CEo f\xE0n", english: "fried rice" },
-        { id: "french-fries", hanzi: "\u85AF\u6761", pinyin: "sh\u01D4 ti\xE1o", english: "French fries" },
-        { id: "hamburger", hanzi: "\u6C49\u5821", pinyin: "h\xE0n b\u01CEo", english: "hamburger" },
-        { id: "hot-dog", hanzi: "\u70ED\u72D7", pinyin: "r\xE8 g\u01D2u", english: "hot dog" }
-      ]
-    },
-    drink: {
-      hanzi: "\u996E\u6599",
-      english: "Drinks",
-      items: [
-        { id: "milk", hanzi: "\u725B\u5976", pinyin: "ni\xFA n\u01CEi", english: "milk" },
-        { id: "juice", hanzi: "\u679C\u6C41", pinyin: "gu\u01D2 zh\u012B", english: "juice" },
-        { id: "cola", hanzi: "\u53EF\u4E50", pinyin: "k\u011B l\xE8", english: "Coke" }
-      ]
-    }
-  };
-  function foodBookWordItems(data) {
-    const itemIds = new Set(foodCategoryGroups[state.foodBookCategoryId]?.items.map((item) => item.id) ?? []);
-    return data.words.filter((item) => itemIds.has(item.id));
-  }
-  function foodCategoryIconPath(itemId) {
-    return `assets/illustrated-food/${itemId}.webp`;
-  }
-  var foodHungerModes = {
-    mix: { hanzi: "\u6DF7\u5408", english: "Mix" },
-    ...Object.fromEntries(Object.entries(foodCategoryGroups).map(([id, group]) => [id, { hanzi: group.hanzi, english: group.english }]))
-  };
-  function foodHungerItems(modeId = state.foodHungerModeId) {
-    if (modeId === "mix") return Object.values(foodCategoryGroups).flatMap((group) => group.items);
-    return foodCategoryGroups[modeId]?.items ?? [];
-  }
-  function prepareFoodHungerOptions() {
-    const targetId = state.foodHungerRoundIds[state.foodHungerTargetIndex];
-    const items = foodHungerItems();
-    state.foodHungerOptionIds = shuffleArray([
-      targetId,
-      ...shuffleArray(items.filter((item) => item.id !== targetId)).slice(0, 3).map((item) => item.id)
-    ]);
-    state.foodHungerWrongIds = /* @__PURE__ */ new Set();
-  }
-  function resetFoodHungerGame(modeId = state.foodHungerModeId) {
-    state.foodHungerModeId = modeId;
-    state.foodHungerRoundIds = shuffleArray(foodHungerItems(modeId).map((item) => item.id)).slice(0, 3);
-    state.foodHungerTargetIndex = 0;
-    state.foodHungerPlatedIds = [];
-    state.foodHungerComplete = false;
-    prepareFoodHungerOptions();
-  }
-  function ensureFoodHungerGame() {
-    const items = foodHungerItems();
-    const expectedCount = Math.min(3, items.length);
-    const hasCurrentRound = state.foodHungerRoundIds.length === expectedCount && state.foodHungerRoundIds.every((id) => items.some((item) => item.id === id));
-    if (!hasCurrentRound) resetFoodHungerGame();
-  }
-  function currentFoodHungerTarget() {
-    return foodHungerItems().find((item) => item.id === state.foodHungerRoundIds[state.foodHungerTargetIndex]);
-  }
-  function handleFoodHungerGuess(itemId) {
-    if (state.foodHungerComplete) return;
-    const target = currentFoodHungerTarget();
-    if (!target) return;
-    if (itemId !== target.id) {
-      state.foodHungerWrongIds = /* @__PURE__ */ new Set([...state.foodHungerWrongIds, itemId]);
-      renderActivityPanel(currentTopic());
-      return;
-    }
-    state.foodHungerPlatedIds = [...state.foodHungerPlatedIds, target.id];
-    if (state.tapAudioEnabled) speak(target.hanzi, 0.78);
-    state.foodHungerTargetIndex += 1;
-    state.foodHungerComplete = state.foodHungerTargetIndex === state.foodHungerRoundIds.length;
-    if (!state.foodHungerComplete) prepareFoodHungerOptions();
-    renderActivityPanel(currentTopic());
-  }
-  function renderFoodHungerGame() {
-    ensureFoodHungerGame();
-    const items = foodHungerItems();
-    const target = currentFoodHungerTarget();
-    const platedItems = state.foodHungerPlatedIds.map((id) => items.find((item) => item.id === id)).filter(Boolean);
-    const optionItems = state.foodHungerOptionIds.map((id) => items.find((item) => item.id === id)).filter(Boolean);
-    const isComplete = state.foodHungerComplete;
-    return `
-    <section class="practice-split-card food-hunger-game-card">
-      <div class="numbers-game-top"><div><p class="body-match-kicker">\u997F\u4E86\uFF0C\u5403\u70B9\u4EC0\u4E48\uFF1F${state.showEnglish ? '<span class="food-hunger-kicker-english">Hungry? What should we eat?</span>' : ""}</p><p class="numbers-game-note">Choose a food group or Mix. A food picture will appear. Tap the matching Chinese word to put it in your cart.</p></div></div>
-      <div class="food-category-tabs food-hunger-tabs">${Object.entries(foodHungerModes).map(([id, mode]) => `<button class="food-category-tab${state.foodHungerModeId === id ? " is-active" : ""}" type="button" data-food-hunger-mode="${id}">${mode.hanzi}${state.showEnglish ? `<small>${mode.english}</small>` : ""}</button>`).join("")}</div>
-      <div class="backpack-game-progress" aria-label="${state.foodHungerPlatedIds.length} of ${state.foodHungerRoundIds.length} foods in the cart">${state.foodHungerRoundIds.map((_, index) => `<span class="backpack-game-progress-dot${index < state.foodHungerPlatedIds.length ? " is-packed" : ""}">${index < state.foodHungerPlatedIds.length ? "\u2713" : ""}</span>`).join("")}</div>
-      <div class="food-hunger-visual${isComplete ? " is-complete" : ""}">
-        ${!isComplete && target ? `<div class="food-hunger-target"><img src="${foodCategoryIconPath(target.id)}" alt="${target.english}"></div>` : ""}
-        <div class="food-hunger-cart"><img class="food-hunger-cart-image" src="assets/illustrated-food/game-shopping-cart.webp" alt="empty shopping cart">${platedItems.map((item, index) => `<img class="food-hunger-plated-item is-item-${index}" src="${foodCategoryIconPath(item.id)}" alt="">`).join("")}${isComplete ? '<span class="food-hunger-complete-mark" aria-label="All foods are in the cart">\u2713</span>' : ""}</div>
-      </div>
-      ${isComplete ? '<p class="backpack-game-complete-message">Your cart is ready!</p>' : `<div class="numbers-game-options backpack-game-options food-hunger-options">${optionItems.map((item) => {
-      const isWrong = state.foodHungerWrongIds.has(item.id);
-      return `<button class="numbers-game-option greetings-game-option family-listen-option${isWrong ? " is-wrong" : ""}" type="button" data-food-hunger-guess="${item.id}">${isWrong ? '<span class="answer-result-mark" aria-hidden="true">\xD7</span>' : ""}<span class="numbers-game-hanzi">${item.hanzi}</span>${state.showPinyin ? `<span class="numbers-game-pinyin">${item.pinyin}</span>` : ""}${state.showEnglish ? `<span class="numbers-game-english">${item.english}</span>` : ""}</button>`;
-    }).join("")}</div>`}
-    </section>
-  `;
-  }
-  function renderFoodPractice(topic) {
-    ensureSchoolBuilder(topic.id);
-    const item = currentSchoolBuildItem();
-    activityPanelTitle.textContent = "Let's practice";
-    activityPanelSummary.textContent = "";
-    activityPanelSummary.hidden = true;
-    activityList.className = "support-list";
-    activityList.innerHTML = `
-    <section class="family-practice-shell lesson-practice-shell">
-      <div class="practice-split-board">
-        ${renderFoodHungerGame()}
-        <section class="practice-split-card">
-          <div class="numbers-game-top"><div><p class="body-match-kicker">Build the sentence</p><p class="numbers-game-note">Tap the word cards in the right order. Some cards do not belong.</p></div></div>
-          <figure class="clothes-quiz-visual school-build-visual"><img class="clothes-quiz-image" src="${item.imagePath}" alt="${item.english}" /></figure>
-          <div class="transport-build-hint">${state.showPinyin ? `<p class="transport-build-hint-pinyin">${item.pinyin}</p>` : ""}${state.showEnglish ? `<p class="transport-build-hint-english">${item.english}</p>` : ""}</div>
-          <div class="transport-build-target is-${state.schoolBuildResult}">${state.schoolBuildResult ? `<span class="answer-result-mark" aria-hidden="true">${state.schoolBuildResult === "correct" ? "\u2713" : "\xD7"}</span>` : ""}${state.schoolBuildSelectedTokens.length ? state.schoolBuildSelectedTokens.map((token) => `<span class="intro-build-chip is-selected">${token}</span>`).join("") : '<span class="intro-build-placeholder">Your sentence will appear here.</span>'}</div>
-          <div class="intro-build-choices">${state.schoolBuildAvailableTokens.map((token, index) => `<button class="intro-build-chip" type="button" data-school-build-token="${index}">${token}</button>`).join("")}</div>
-          <div class="intro-build-actions"><button class="small-button" type="button" data-school-build-clear>Clear</button>${state.schoolBuildResult === "correct" ? '<button class="small-button is-action-button" type="button" data-school-build-next>Next picture</button>' : ""}</div>
-        </section>
-      </div>
-    </section>
-  `;
-    activityList.querySelectorAll("[data-food-hunger-mode]").forEach((button) => button.addEventListener("click", () => {
-      resetFoodHungerGame(button.dataset.foodHungerMode);
-      renderActivityPanel(topic);
-    }));
-    activityList.querySelectorAll("[data-food-hunger-guess]").forEach((button) => button.addEventListener("click", () => handleFoodHungerGuess(button.dataset.foodHungerGuess)));
-    activityList.querySelectorAll("[data-school-build-token]").forEach((button) => button.addEventListener("click", () => handleSchoolBuildToken(Number(button.dataset.schoolBuildToken))));
-    activityList.querySelector("[data-school-build-clear]")?.addEventListener("click", clearSchoolBuilder);
-    activityList.querySelector("[data-school-build-next]")?.addEventListener("click", nextSchoolBuilder);
-  }
-  function renderSchoolSentenceBuilder(item) {
-    return `
-    <section class="practice-split-card">
-      <div class="numbers-game-top"><div><p class="body-match-kicker">Build the sentence</p><p class="numbers-game-note">Tap the word cards in the right order. Some cards do not belong.</p></div></div>
-      <figure class="clothes-quiz-visual school-build-visual"><img class="clothes-quiz-image" src="${item.imagePath}" alt="${item.english}" /></figure>
-      <div class="transport-build-hint">${state.showPinyin ? `<p class="transport-build-hint-pinyin">${item.pinyin}</p>` : ""}${state.showEnglish ? `<p class="transport-build-hint-english">${item.english}</p>` : ""}</div>
-      <div class="transport-build-target is-${state.schoolBuildResult}">${state.schoolBuildResult ? `<span class="answer-result-mark" aria-hidden="true">${state.schoolBuildResult === "correct" ? "\u2713" : "\xD7"}</span>` : ""}${state.schoolBuildSelectedTokens.length ? state.schoolBuildSelectedTokens.map((token) => `<span class="intro-build-chip is-selected">${token}</span>`).join("") : '<span class="intro-build-placeholder">Your sentence will appear here.</span>'}</div>
-      <div class="intro-build-choices">${state.schoolBuildAvailableTokens.map((token, index) => `<button class="intro-build-chip" type="button" data-school-build-token="${index}">${token}</button>`).join("")}</div>
-      <div class="intro-build-actions"><button class="small-button" type="button" data-school-build-clear>Clear</button>${state.schoolBuildResult === "correct" ? '<button class="small-button is-action-button" type="button" data-school-build-next>Next picture</button>' : ""}</div>
-    </section>
-  `;
-  }
-  function renderBackpackGame() {
-    ensureBackpackGame();
-    const items = backpackGameItems();
-    const target = currentBackpackGameTarget();
-    const placedItems = state.backpackGamePlacedIds.map((id) => items.find((item) => item.id === id)).filter(Boolean);
-    const optionItems = state.backpackGameOptionIds.map((id) => items.find((item) => item.id === id)).filter(Boolean);
-    const isComplete = state.backpackGameComplete;
-    return `
-    <section class="practice-split-card backpack-game-card">
-      <div class="numbers-game-top">
-        <div><p class="body-match-kicker">Pack the backpack</p><p class="numbers-game-note">Look at the school thing, then tap its Chinese word.</p></div>
-        <button class="small-button is-action-button" type="button" data-backpack-game-new>New mix</button>
-      </div>
-      <div class="backpack-game-progress" aria-label="${state.backpackGamePlacedIds.length} of 3 items packed">
-        ${[0, 1, 2].map((index) => `<span class="backpack-game-progress-dot${index < state.backpackGamePlacedIds.length ? " is-packed" : ""}">${index < state.backpackGamePlacedIds.length ? "\u2713" : ""}</span>`).join("")}
-      </div>
-      <div class="backpack-game-visual${isComplete ? " is-complete" : ""}">
-        <img class="backpack-game-bag" src="assets/illustrated-stationery/${isComplete ? "backpack.webp" : "open-backpack.webp"}" alt="${isComplete ? "closed backpack" : "open backpack"}">
-        ${!isComplete && target ? `<div class="backpack-game-target"><img src="${target.imagePath}" alt="${target.english}"></div>` : ""}
-        ${!isComplete ? `<div class="backpack-game-packed-items">${placedItems.map((item, index) => `<img class="backpack-game-packed-item is-item-${index}" src="${item.imagePath}" alt="">`).join("")}</div>` : '<span class="backpack-game-complete-mark" aria-label="All packed">\u2713</span>'}
-      </div>
-      ${isComplete ? '<p class="backpack-game-complete-message">All packed!</p>' : `<div class="numbers-game-options backpack-game-options">${optionItems.map((item) => {
-      const isWrong = state.backpackGameWrongIds.has(item.id);
-      return `<button class="numbers-game-option greetings-game-option family-listen-option${isWrong ? " is-wrong" : ""}" type="button" data-backpack-game-guess="${item.id}">${isWrong ? '<span class="answer-result-mark" aria-hidden="true">\xD7</span>' : ""}<span class="numbers-game-hanzi">${item.hanzi}</span>${state.showPinyin ? `<span class="numbers-game-pinyin">${item.pinyin}</span>` : ""}${state.showEnglish ? `<span class="numbers-game-english">${item.english}</span>` : ""}</button>`;
-    }).join("")}</div>`}
-    </section>
-  `;
-  }
-  function renderStationeryPictureMatch() {
-    ensureStationeryPictureMatch();
-    const round = currentStationeryPictureMatchRound();
-    const columnLabels = { measure: "\u6570\u91CF + \u91CF\u8BCD", color: "\u989C\u8272", item: "\u6587\u5177" };
-    const selected = state.stationeryPictureMatchSelections;
-    const isComplete = state.stationeryPictureMatchComplete;
-    return `
-    <section class="practice-split-card stationery-picture-match-card">
-      <div class="numbers-game-top"><div><p class="body-match-kicker">Match the picture</p><p class="numbers-game-note">Look at the picture. Choose the quantity, color, and school thing.</p></div></div>
-      <figure class="stationery-picture-match-visual"><img src="${round.imagePath}" alt="${round.alt}"></figure>
-      <div class="stationery-picture-match-columns">
-        ${Object.entries(stationeryPictureMatchChoices).map(([column, choices]) => `
-          <div class="stationery-picture-match-column">
-            <p class="stationery-picture-match-label">${columnLabels[column]}</p>
-            ${state.stationeryPictureMatchChoiceOrders[column].map((choice) => {
-      const isCorrect = selected[column] === choice;
-      const isWrong = state.stationeryPictureMatchWrong[column].has(choice);
-      return `<button class="stationery-picture-match-option${isCorrect ? " is-correct" : ""}${isWrong ? " is-wrong" : ""}" type="button" data-stationery-picture-match-pick="${column}" data-stationery-picture-match-value="${choice}"${isCorrect || isComplete ? " disabled" : ""}><span class="stationery-picture-match-word">${choice}</span>${state.showEnglish ? `<span class="stationery-picture-match-english">${stationeryPictureMatchEnglish[choice]}</span>` : ""}${isCorrect || isWrong ? `<span class="answer-result-mark" aria-hidden="true">${isCorrect ? "\u2713" : "\xD7"}</span>` : ""}</button>`;
-    }).join("")}
-          </div>
-        `).join("")}
-      </div>
-      ${isComplete ? `<div class="stationery-picture-match-result is-correct"><span class="answer-result-mark" aria-hidden="true">\u2713</span><div><strong>${Object.values(round.target).join("")}\u3002</strong>${state.showPinyin ? `<span>${round.pinyin}</span>` : ""}${state.showEnglish ? `<span>${round.english}</span>` : ""}</div><button class="small-button is-action-button" type="button" data-stationery-picture-match-next>Next picture</button></div>` : ""}
-    </section>
-  `;
-  }
-  function renderStationeryPractice(topic) {
-    ensureSchoolBuilder(topic.id);
-    const item = currentSchoolBuildItem();
-    activityPanelTitle.textContent = "Let's practice";
-    activityPanelSummary.textContent = "Match the words to the picture, then build a sentence from the picture.";
-    activityList.className = "support-list";
-    activityList.innerHTML = `
-    <section class="family-practice-shell lesson-practice-shell">
-      <div class="practice-split-board">
-        ${renderStationeryPictureMatch()}
-        ${renderSchoolSentenceBuilder(item)}
-      </div>
-    </section>
-  `;
-    activityList.querySelectorAll("[data-stationery-picture-match-pick]").forEach((button) => button.addEventListener("click", () => handleStationeryPictureMatchPick(button.dataset.stationeryPictureMatchPick, button.dataset.stationeryPictureMatchValue)));
-    activityList.querySelector("[data-stationery-picture-match-next]")?.addEventListener("click", nextStationeryPictureMatch);
-    activityList.querySelectorAll("[data-school-build-token]").forEach((button) => button.addEventListener("click", () => handleSchoolBuildToken(Number(button.dataset.schoolBuildToken))));
-    activityList.querySelector("[data-school-build-clear]")?.addEventListener("click", clearSchoolBuilder);
-    activityList.querySelector("[data-school-build-next]")?.addEventListener("click", nextSchoolBuilder);
-  }
-  function renderSchoolSuppliesPractice(topic) {
-    ensureSchoolBuilder(topic.id);
-    const item = currentSchoolBuildItem();
-    activityPanelTitle.textContent = "Let's practice";
-    activityPanelSummary.textContent = "Pack three school things, then build a sentence from the picture.";
-    activityList.className = "support-list";
-    activityList.innerHTML = `
-    <section class="family-practice-shell lesson-practice-shell">
-      <div class="practice-split-board">
-        ${renderBackpackGame()}
-        ${renderSchoolSentenceBuilder(item)}
-      </div>
-    </section>
-  `;
-    activityList.querySelector("[data-backpack-game-new]")?.addEventListener("click", () => {
-      resetBackpackGame();
-      renderActivityPanel(topic);
-    });
-    activityList.querySelectorAll("[data-backpack-game-guess]").forEach((button) => button.addEventListener("click", () => handleBackpackGameGuess(button.dataset.backpackGameGuess)));
-    activityList.querySelectorAll("[data-school-build-token]").forEach((button) => button.addEventListener("click", () => handleSchoolBuildToken(Number(button.dataset.schoolBuildToken))));
-    activityList.querySelector("[data-school-build-clear]")?.addEventListener("click", clearSchoolBuilder);
-    activityList.querySelector("[data-school-build-next]")?.addEventListener("click", nextSchoolBuilder);
-  }
-  function renderSchoolPractice(topic) {
-    if (topic.id === "food") {
-      renderFoodPractice(topic);
-      return;
-    }
-    if (topic.id === "food-preferences") {
-      renderFoodPreferencesPractice(topic);
-      return;
-    }
-    if (topic.id === "meals-feelings") {
-      renderMealsConversationPractice(topic);
-      return;
-    }
-    if (topic.id === "classroom") {
-      renderClassroomPractice(topic);
-      return;
-    }
-    if (topic.id === "stationery") {
-      renderStationeryPractice(topic);
-      return;
-    }
-    if (topic.id === "school-supplies") {
-      renderSchoolSuppliesPractice(topic);
-      return;
-    }
-    ensureSchoolPractice(topic.id);
-    ensureSchoolBuilder(topic.id);
-    const topicData2 = schoolTopicData2[topic.id];
-    const item = currentSchoolBuildItem();
-    const listen = {
-      items: () => schoolPracticeItems(topic.id),
-      optionIds: () => state.schoolChallengeOptionIds,
-      pickedId: () => state.schoolChallengePickedId,
-      result: () => state.schoolChallengeResult,
-      wrongIds: () => state.schoolChallengeWrongIds,
-      feedback: () => state.schoolListenFeedback
-    };
-    activityPanelTitle.textContent = "Let's practice";
-    activityPanelSummary.textContent = topicData2?.practiceSummary ?? "Listen for a school word, then build a sentence from the picture.";
-    activityList.className = "support-list";
-    activityList.innerHTML = `
-    <section class="family-practice-shell lesson-practice-shell">
-      <div class="practice-split-board">
-        ${renderListenPractice(listen)}
-        ${renderSchoolSentenceBuilder(item)}
-      </div>
-    </section>
-  `;
-    activityList.querySelector("[data-template-listen-play]")?.addEventListener("click", handleSchoolChallengePlay);
-    activityList.querySelectorAll("[data-template-listen-guess]").forEach((button) => button.addEventListener("click", () => handleSchoolChallengeGuess(button.dataset.templateListenGuess)));
-    activityList.querySelectorAll("[data-school-build-token]").forEach((button) => button.addEventListener("click", () => handleSchoolBuildToken(Number(button.dataset.schoolBuildToken))));
-    activityList.querySelector("[data-school-build-clear]")?.addEventListener("click", clearSchoolBuilder);
-    activityList.querySelector("[data-school-build-next]")?.addEventListener("click", nextSchoolBuilder);
-  }
-  function renderMealsConversationPractice(topic) {
-    ensureMealsConversationMatch();
-    ensureMealsPictureChoice();
-    const items = mealsConversationItems();
-    activityPanelTitle.textContent = "Let's practice";
-    activityPanelSummary.textContent = schoolTopicData2[topic.id].practiceSummary;
-    activityList.className = "support-list";
-    activityList.innerHTML = `
-    <section class="family-practice-shell lesson-practice-shell">
-      ${renderMatchPractice({
-      phraseHeading: "First line",
-      meaningHeading: "Reply",
-      items: () => items,
-      phraseIds: () => state.schoolPhraseOrder,
-      meaningIds: () => state.schoolMeaningOrder,
-      matchedIds: () => state.schoolMatchedIds,
-      selectedId: () => state.schoolSelectedPhraseId,
-      feedback: () => state.schoolMatchFeedback,
-      wrongPhraseIds: () => state.mealsConversationWrongPhraseIds,
-      wrongMeaningIds: () => state.mealsConversationWrongReplyIds,
-      meaningContent: (id) => {
-        const item = items.find((entry) => entry.id === id);
-        if (!item) return "";
-        return `<span class="numbers-game-hanzi">${item.reply}</span>${state.showPinyin ? `<span class="numbers-game-pinyin">${item.replyPinyin}</span>` : ""}`;
-      }
-    })}
-      ${renderMealsPictureChoice()}
-    </section>
-  `;
-    activityList.querySelector("[data-template-match-new]")?.addEventListener("click", () => {
-      resetMealsConversationMatch();
-      renderActivityPanel(topic);
-    });
-    activityList.querySelector("[data-template-match-play-again]")?.addEventListener("click", () => {
-      resetMealsConversationMatch();
-      renderActivityPanel(topic);
-    });
-    activityList.querySelectorAll("[data-template-match-phrase]").forEach((button) => button.addEventListener("click", () => handleMealsConversationPhrase(button.dataset.templateMatchPhrase)));
-    activityList.querySelectorAll("[data-template-match-meaning]").forEach((button) => button.addEventListener("click", () => handleMealsConversationAttempt(button.dataset.templateMatchMeaning)));
-    activityList.querySelectorAll("[data-meals-picture-pick]").forEach((button) => button.addEventListener("click", () => handleMealsPictureChoice(button.dataset.mealsPicturePick)));
-    activityList.querySelector("[data-meals-picture-next]")?.addEventListener("click", nextMealsPictureChoice);
-  }
-  function renderFoodPreferencesPractice(topic) {
-    activityPanelTitle.textContent = "Let's practice";
-    activityPanelSummary.textContent = schoolTopicData2[topic.id].practiceSummary;
-    activityList.className = "support-list";
-    activityList.innerHTML = `
-    <section class="family-practice-shell lesson-practice-shell">
-      ${renderFoodPreferenceFillPractice()}
-    </section>
-  `;
-    activityList.querySelectorAll("[data-food-preference-subject]").forEach((button) => button.addEventListener("click", () => handleFoodPreferenceSubject(button.dataset.foodPreferenceSubject)));
-    activityList.querySelectorAll("[data-food-preference-pattern]").forEach((button) => button.addEventListener("click", () => handleFoodPreferencePattern(button.dataset.foodPreferencePattern)));
-    activityList.querySelectorAll("[data-food-preference-food]").forEach((button) => button.addEventListener("click", () => handleFoodPreferenceFill(button.dataset.foodPreferenceFood)));
   }
   function sharedLessonPracticeConfig(topic) {
     if (schoolTopicData2[topic.id]) {
@@ -7762,7 +7777,7 @@
       return;
     }
     const sceneGroups = data.sceneGroups ?? [{ id: "all", items: data.scenes ?? [] }];
-    const wordGroups = schoolWordGroups(topicId);
+    const wordGroups = schoolWordGroups2(topicId);
     if (topicId === "meals-feelings" && !wordGroups.some((group) => group.id === state.mealsWordGroupId)) {
       state.mealsWordGroupId = wordGroups[0]?.id ?? "";
     }
@@ -8558,6 +8573,34 @@
     renderFocusExplorer,
     renderFocusStatus,
     elements: { focusExplorer, focusStatus }
+  }));
+  ({
+    schoolPracticeItems,
+    ensureSchoolPractice,
+    renderSchoolPractice,
+    renderStationeryPractice,
+    renderSchoolSuppliesPractice,
+    renderFoodPractice,
+    renderMealsConversationPractice,
+    renderFoodPreferencesPractice,
+    renderClassroomPractice
+  } = createSchoolFoodRuntime({
+    state,
+    schoolTopicData: schoolTopicData2,
+    schoolSentenceBuilds: schoolSentenceBuilds2,
+    stationeryPictureMatchRounds,
+    stationeryPictureMatchChoices,
+    stationeryPictureMatchEnglish,
+    currentTopic,
+    shuffleArray,
+    speak,
+    renderActivityPanel,
+    focusItemsForTopic,
+    activityPanelTitle,
+    activityPanelSummary,
+    activityList,
+    renderListenPractice,
+    renderMatchPractice
   }));
   syncBookSelectionFromTopic();
   var initialTopicId = topicIdFromLocation(window.location, topicById);

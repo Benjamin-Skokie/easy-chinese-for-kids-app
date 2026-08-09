@@ -105,6 +105,15 @@ test("legacy bootstrap retains its shared data and audio bindings", () => {
   assert.match(legacySource, /const schoolSentenceBuilds = \{/);
 });
 
+test("school and food runtime is separated from the legacy bootstrap", () => {
+  const legacySource = readFileSync("src/legacy-app.js", "utf8");
+  const runtimeSource = readFileSync("src/features/school-life/school-food-runtime.js", "utf8");
+  assert.match(legacySource, /createSchoolFoodRuntime\(\{/);
+  assert.doesNotMatch(legacySource, /function schoolPracticeItems\(/);
+  assert.doesNotMatch(legacySource, /function renderFoodPractice\(/);
+  assert.match(runtimeSource, /export function createSchoolFoodRuntime/);
+});
+
 test("greetings interaction is owned by its feature controller", () => {
   const state = { ...createFoundationState(), tapAudioEnabled: false, selectedFocusItemId: null };
   const rendered = [];
