@@ -19,6 +19,7 @@ import { introductionsBuildPhrases, introductionsGamePrompts, introductionsPract
 import { ageBuildPhrases, agePractice } from "../src/features/foundations/age.js";
 import { identityConversation, identityCountries } from "../src/features/foundations/identity.js";
 import { greetingsPractice } from "../src/features/foundations/greetings.js";
+import { politePractice } from "../src/features/foundations/polite-words.js";
 import { familyPractice, illustratedFamily } from "../src/features/family/family.js";
 
 const errors = [];
@@ -113,6 +114,7 @@ agePractice.forEach((item) => assertAsset(item, `age scene:${item.id}`));
 identityCountries.forEach((item) => assertAsset({ id: item.id, imagePath: item.asset }, `identity flag:${item.id}`));
 assertAsset({ id: "conversation", imagePath: identityConversation.imagePath }, "identity conversation");
 greetingsPractice.forEach((item) => assertAsset(item, `greetings scene:${item.id}`));
+politePractice.forEach((item) => assertAsset(item, `polite scene:${item.id}`));
 familyPractice.forEach((item) => assertAsset(item, `family scene:${item.id}`));
 Object.values(illustratedFamily).forEach((item) => assertAsset({ id: item.id, imagePath: item.path }, `family avatar:${item.id}`));
 
@@ -141,6 +143,7 @@ assert(introductionsBuildPhrases.length === 2, "introductions sentence practice 
 assert(ageBuildPhrases.length === 6, "age sentence practice is incomplete");
 assert(identityCountries.length === 3, "identity country set is incomplete");
 assert(greetingsPractice.length === 3, "greetings lesson scenes are incomplete");
+assert(politePractice.length === 3, "polite words lesson scenes are incomplete");
 assert(familyPractice.length === 2, "family lesson scenes are incomplete");
 
 if (errors.length) {

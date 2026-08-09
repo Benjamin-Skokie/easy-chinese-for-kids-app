@@ -22,6 +22,7 @@ import { introductionsBuildPhrases, introductionsGamePrompts, introductionsPract
 import { ageBuildPhrases, agePractice, ageTopic } from "../src/features/foundations/age.js";
 import { identityConversation, identityCountries, identityQuestion, identityTopic } from "../src/features/foundations/identity.js";
 import { greetingsGameItemIds, greetingsPractice, greetingsTopic } from "../src/features/foundations/greetings.js";
+import { politeGameItemIds, politePractice, politeWordsTopic } from "../src/features/foundations/polite-words.js";
 import { familyGameItemIds, familyPractice, familyTopic, illustratedFamily } from "../src/features/family/family.js";
 
 test("the local page loads a single bundled application script", () => {
@@ -185,6 +186,13 @@ test("greetings owns its template lesson scenes and listening set", () => {
   assert.equal(greetingsTopic.interactiveScene, "greetings-conversation");
   assert.equal(greetingsPractice.length, 3);
   assert.equal(greetingsGameItemIds.length, 4);
+});
+
+test("polite words owns its template lesson scenes and listening set", () => {
+  assert.equal(politeWordsTopic.id, "polite-words");
+  assert.equal(politeWordsTopic.interactiveScene, "polite-phrases");
+  assert.equal(politePractice.length, 3);
+  assert.equal(politeGameItemIds.length, 4);
 });
 
 test("family owns its lesson metadata, scenes, and matching set", () => {

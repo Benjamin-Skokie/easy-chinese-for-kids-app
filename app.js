@@ -1109,6 +1109,75 @@
     }
   ];
 
+  // src/features/foundations/polite-words.js
+  var politeWordsTopic = {
+    id: "polite-words",
+    title: "Polite Words",
+    summary: "Useful everyday phrases like thank you and simple requests.",
+    progressLabel: "1A to 3A",
+    iconText: "\u8C22\u8C22",
+    iconColor: "#8f6c46",
+    iconAccent: "#e6c77e",
+    iconTheme: "polite",
+    focus: {
+      hanzi: "\u8C22\u8C22\u4F60\uFF01",
+      pinyin: "xi\xE8 xie n\u01D0!",
+      english: "Thank you!",
+      audio: "\u8C22\u8C22\u4F60"
+    },
+    focusItems: [
+      { id: "thank-you", hanzi: "\u8C22\u8C22\u4F60\uFF01", pinyin: "xi\xE8 xie n\u01D0!", english: "Thank you!", audio: "\u8C22\u8C22\u4F60" },
+      { id: "youre-welcome", hanzi: "\u4E0D\u5BA2\u6C14\u3002", pinyin: "b\xFA k\xE8 qi.", english: "You're welcome.", audio: "\u4E0D\u5BA2\u6C14" },
+      { id: "sorry", hanzi: "\u5BF9\u4E0D\u8D77\u3002", pinyin: "du\xEC bu q\u01D0.", english: "I'm sorry.", audio: "\u5BF9\u4E0D\u8D77" },
+      { id: "never-mind", hanzi: "\u6CA1\u5173\u7CFB\u3002", pinyin: "m\xE9i gu\u0101n xi.", english: "Never mind.", audio: "\u6CA1\u5173\u7CFB" },
+      { id: "please", hanzi: "\u8BF7", pinyin: "q\u01D0ng", english: "please", audio: "\u8BF7" }
+    ],
+    interactiveScene: "polite-phrases",
+    parentGuide: "Use these during real routines: handing snacks, passing pencils, cleaning up, or asking for help.",
+    cultureGuide: "Polite language works best when tied to real exchanges. A quick classroom or home routine is better than a long explanation.",
+    activities: ["Tap to hear", "Match phrase to situation", "Listen and choose", "Speak after me"],
+    steps: [
+      { book: "1A", lesson: 5, title: "Thank you!", note: "Start with a core manners phrase." },
+      { book: "3A", lesson: 6, title: "Request", note: "Expand polite language into asking for things." }
+    ]
+  };
+  var politePractice = [
+    {
+      id: "polite-scene-1",
+      number: "1",
+      prompt: "Saying thank you after a friend helps you",
+      imagePath: "assets/polite/polite-scene-1.webp",
+      imageAlt: "Two children in a classroom sharing a crayon politely",
+      lines: [
+        { hanzi: "\u8C22\u8C22\u4F60\uFF01", pinyin: "xi\xE8 xie n\u01D0!", english: "Thank you!", audio: "\u8C22\u8C22\u4F60" },
+        { hanzi: "\u4E0D\u5BA2\u6C14\u3002", pinyin: "b\xFA k\xE8 qi.", english: "You're welcome.", audio: "\u4E0D\u5BA2\u6C14" }
+      ]
+    },
+    {
+      id: "polite-scene-2",
+      number: "2",
+      prompt: "Saying sorry after a mistake",
+      imagePath: "assets/polite/polite-scene-2.webp",
+      imageAlt: "One child apologizing after dropping a pencil case and another child forgiving kindly",
+      lines: [
+        { hanzi: "\u5BF9\u4E0D\u8D77\u3002", pinyin: "du\xEC bu q\u01D0.", english: "I'm sorry.", audio: "\u5BF9\u4E0D\u8D77" },
+        { hanzi: "\u6CA1\u5173\u7CFB\u3002", pinyin: "m\xE9i gu\u0101n xi.", english: "Never mind.", audio: "\u6CA1\u5173\u7CFB" }
+      ]
+    },
+    {
+      id: "polite-scene-3",
+      number: "3",
+      prompt: "A polite classroom phrase from the teacher",
+      imagePath: "assets/polite/polite-scene-3.webp",
+      imageAlt: "A teacher kindly asking children to be quiet in the classroom",
+      lines: [
+        { hanzi: "\u8BF7\u5B89\u9759\u3002", pinyin: "q\u01D0ng \u0101n j\xECng.", english: "Please be quiet.", audio: "\u8BF7\u5B89\u9759" },
+        { hanzi: "\u597D\u3002", pinyin: "h\u01CEo.", english: "Okay.", audio: "\u597D" }
+      ]
+    }
+  ];
+  var politeGameItemIds = ["thank-you", "youre-welcome", "sorry", "never-mind"];
+
   // src/features/foundations/greetings.js
   var greetingsTopic = {
     id: "greetings",
@@ -1583,37 +1652,7 @@
       steps: []
     },
     greetingsTopic,
-    {
-      id: "polite-words",
-      title: "Polite Words",
-      summary: "Useful everyday phrases like thank you and simple requests.",
-      progressLabel: "1A to 3A",
-      iconText: "\u8C22\u8C22",
-      iconColor: "#8f6c46",
-      iconAccent: "#e6c77e",
-      iconTheme: "polite",
-      focus: {
-        hanzi: "\u8C22\u8C22\u4F60\uFF01",
-        pinyin: "xi\xE8 xie n\u01D0!",
-        english: "Thank you!",
-        audio: "\u8C22\u8C22\u4F60"
-      },
-      focusItems: [
-        { id: "thank-you", hanzi: "\u8C22\u8C22\u4F60\uFF01", pinyin: "xi\xE8 xie n\u01D0!", english: "Thank you!", audio: "\u8C22\u8C22\u4F60" },
-        { id: "youre-welcome", hanzi: "\u4E0D\u5BA2\u6C14\u3002", pinyin: "b\xFA k\xE8 qi.", english: "You're welcome.", audio: "\u4E0D\u5BA2\u6C14" },
-        { id: "sorry", hanzi: "\u5BF9\u4E0D\u8D77\u3002", pinyin: "du\xEC bu q\u01D0.", english: "I'm sorry.", audio: "\u5BF9\u4E0D\u8D77" },
-        { id: "never-mind", hanzi: "\u6CA1\u5173\u7CFB\u3002", pinyin: "m\xE9i gu\u0101n xi.", english: "Never mind.", audio: "\u6CA1\u5173\u7CFB" },
-        { id: "please", hanzi: "\u8BF7", pinyin: "q\u01D0ng", english: "please", audio: "\u8BF7" }
-      ],
-      interactiveScene: "polite-phrases",
-      parentGuide: "Use these during real routines: handing snacks, passing pencils, cleaning up, or asking for help.",
-      cultureGuide: "Polite language works best when tied to real exchanges. A quick classroom or home routine is better than a long explanation.",
-      activities: ["Tap to hear", "Match phrase to situation", "Listen and choose", "Speak after me"],
-      steps: [
-        { book: "1A", lesson: 5, title: "Thank you!", note: "Start with a core manners phrase." },
-        { book: "3A", lesson: 6, title: "Request", note: "Expand polite language into asking for things." }
-      ]
-    },
+    politeWordsTopic,
     introductionsTopic,
     identityTopic,
     ageTopic,
@@ -2300,7 +2339,6 @@
     },
     digits: ["\u516D", "\u516B", "\u4E8C", "\u56DB", "\u4E5D", "\u4E03", "\u4E09", "\u4E00", "\u4E09", "\u4E8C"]
   };
-  var politeGameItemIds = ["thank-you", "youre-welcome", "sorry", "never-mind"];
   var ageGameItemIds = ["ask-age", "age-five", "age-six", "age-seven", "ask-grade", "grade-one"];
   var sceneSpeechRate = 0.64;
   var sceneLinePauseMs = 280;
@@ -2362,41 +2400,6 @@
     { id: "jacket", hanzi: "\u5916\u5957", pinyin: "w\xE0i t\xE0o", english: "jacket", audio: "\u5916\u5957", imagePath: "assets/illustrated-self-dressing/putting-on-jacket.webp", imageAlt: "A child putting on a jacket" },
     { id: "hat", hanzi: "\u5E3D\u5B50", pinyin: "m\xE0o zi", english: "hat", audio: "\u5E3D\u5B50", imagePath: "assets/illustrated-self-dressing/putting-on-hat.webp", imageAlt: "A child putting on a hat" },
     { id: "school-uniform", hanzi: "\u6821\u670D", pinyin: "xi\xE0o f\xFA", english: "school uniform", audio: "\u6821\u670D", imagePath: "assets/illustrated-self-dressing/putting-on-school-uniform.webp", imageAlt: "A child putting on a school uniform" }
-  ];
-  var politePractice = [
-    {
-      id: "polite-scene-1",
-      number: "1",
-      prompt: "Saying thank you after a friend helps you",
-      imagePath: "assets/polite/polite-scene-1.webp",
-      imageAlt: "Two children in a classroom sharing a crayon politely",
-      lines: [
-        { hanzi: "\u8C22\u8C22\u4F60\uFF01", pinyin: "xi\xE8 xie n\u01D0!", english: "Thank you!", audio: "\u8C22\u8C22\u4F60" },
-        { hanzi: "\u4E0D\u5BA2\u6C14\u3002", pinyin: "b\xFA k\xE8 qi.", english: "You're welcome.", audio: "\u4E0D\u5BA2\u6C14" }
-      ]
-    },
-    {
-      id: "polite-scene-2",
-      number: "2",
-      prompt: "Saying sorry after a mistake",
-      imagePath: "assets/polite/polite-scene-2.webp",
-      imageAlt: "One child apologizing after dropping a pencil case and another child forgiving kindly",
-      lines: [
-        { hanzi: "\u5BF9\u4E0D\u8D77\u3002", pinyin: "du\xEC bu q\u01D0.", english: "I'm sorry.", audio: "\u5BF9\u4E0D\u8D77" },
-        { hanzi: "\u6CA1\u5173\u7CFB\u3002", pinyin: "m\xE9i gu\u0101n xi.", english: "Never mind.", audio: "\u6CA1\u5173\u7CFB" }
-      ]
-    },
-    {
-      id: "polite-scene-3",
-      number: "3",
-      prompt: "A polite classroom phrase from the teacher",
-      imagePath: "assets/polite/polite-scene-3.webp",
-      imageAlt: "A teacher kindly asking children to be quiet in the classroom",
-      lines: [
-        { hanzi: "\u8BF7\u5B89\u9759\u3002", pinyin: "q\u01D0ng \u0101n j\xECng.", english: "Please be quiet.", audio: "\u8BF7\u5B89\u9759" },
-        { hanzi: "\u597D\u3002", pinyin: "h\u01CEo.", english: "Okay.", audio: "\u597D" }
-      ]
-    }
   ];
   var illustratedKids = {
     lele: {
