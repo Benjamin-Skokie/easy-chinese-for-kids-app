@@ -1545,6 +1545,39 @@
     steps: [{ book: "4B", lesson: 1, title: "It's raining", note: "Start weather language with a concrete daily phrase." }]
   };
 
+  // src/features/foundations/body.js
+  var bodyTopic = {
+    id: "body",
+    title: "Body",
+    summary: "A visual topic that works well for touch interaction and movement.",
+    progressLabel: "1B core topic",
+    iconText: "\u624B\u773C",
+    iconColor: "#5f8f8a",
+    focus: { hanzi: "\u5934\uFF0C\u989D\u5934\uFF0C\u5934\u53D1\uFF0C\u773C\u775B\uFF0C\u8033\u6735\uFF0C\u9F3B\u5B50\uFF0C\u5634\u5DF4\uFF0C\u8116\u5B50\uFF0C\u624B\u81C2\uFF0C\u624B\uFF0C\u817F\uFF0C\u811A", pinyin: "t\xF3u, \xE9 t\xF3u, t\xF3u fa, y\u01CEn jing, \u011Br duo, b\xED zi, zu\u01D0 ba, b\xF3 zi, sh\u01D2u b\xEC, sh\u01D2u, tu\u01D0, ji\u01CEo", english: "head, forehead, hair, eyes, ears, nose, mouth, neck, arm, hand, leg, foot", audio: "\u5934\uFF0C\u989D\u5934\uFF0C\u5934\u53D1\uFF0C\u773C\u775B\uFF0C\u8033\u6735\uFF0C\u9F3B\u5B50\uFF0C\u5634\u5DF4\uFF0C\u8116\u5B50\uFF0C\u624B\u81C2\uFF0C\u624B\uFF0C\u817F\uFF0C\u811A" },
+    focusItems: [
+      { id: "head", hanzi: "\u5934", pinyin: "t\xF3u", english: "head", audio: "\u5934" },
+      { id: "forehead", hanzi: "\u989D\u5934", pinyin: "\xE9 t\xF3u", english: "forehead", audio: "\u989D\u5934" },
+      { id: "hair", hanzi: "\u5934\u53D1", pinyin: "t\xF3u fa", english: "hair", audio: "\u5934\u53D1" },
+      { id: "eyes", hanzi: "\u773C\u775B", pinyin: "y\u01CEn jing", english: "eyes", audio: "\u773C\u775B" },
+      { id: "ears", hanzi: "\u8033\u6735", pinyin: "\u011Br duo", english: "ears", audio: "\u8033\u6735" },
+      { id: "nose", hanzi: "\u9F3B\u5B50", pinyin: "b\xED zi", english: "nose", audio: "\u9F3B\u5B50" },
+      { id: "mouth", hanzi: "\u5634\u5DF4", pinyin: "zu\u01D0 ba", english: "mouth", audio: "\u5634\u5DF4" },
+      { id: "neck", hanzi: "\u8116\u5B50", pinyin: "b\xF3 zi", english: "neck", audio: "\u8116\u5B50" },
+      { id: "arm", hanzi: "\u624B\u81C2", pinyin: "sh\u01D2u b\xEC", english: "arm", audio: "\u624B\u81C2" },
+      { id: "hand", hanzi: "\u624B", pinyin: "sh\u01D2u", english: "hand", audio: "\u624B" },
+      { id: "leg", hanzi: "\u817F", pinyin: "tu\u01D0", english: "leg", audio: "\u817F" },
+      { id: "foot", hanzi: "\u811A", pinyin: "ji\u01CEo", english: "foot", audio: "\u811A" }
+    ],
+    interactiveScene: "body-face",
+    parentGuide: "Tap a body word, hear it together, then point to the same body part on yourself or on the character.",
+    cultureGuide: "Body vocabulary is simple to act out, so it is a good topic for young beginners who are still building confidence.",
+    activities: ["Tap word to hear", "See the body part glow", "Listen and point", "Picture matching"],
+    steps: [{ book: "1B", lesson: 3, title: "Parts of the body (1)", note: "Start with the first body words." }, { book: "1B", lesson: 4, title: "Parts of the body (2)", note: "Expand and reinforce the body set." }]
+  };
+  var bodyDiagramLayout = { left: ["hair", "ears", "nose", "hand", "leg", "foot"], right: ["head", "forehead", "eyes", "mouth", "neck", "arm"] };
+  var bodyCoreItemIds = ["head", "hair", "eyes", "ears", "nose", "mouth", "hand", "foot"];
+  var bodyBonusItemIds = ["forehead", "neck", "arm", "leg"];
+
   // src/games/shared-lesson-practice.js
   function createSharedLessonPractice({ state: state2, speak: speak2, elements, documentRef = document }) {
     const { activityPanelTitle: activityPanelTitle2, activityPanelSummary: activityPanelSummary2, activityList: activityList2 } = elements;
@@ -1768,42 +1801,7 @@
     identityTopic,
     ageTopic,
     familyTopic,
-    {
-      id: "body",
-      title: "Body",
-      summary: "A visual topic that works well for touch interaction and movement.",
-      progressLabel: "1B core topic",
-      iconText: "\u624B\u773C",
-      iconColor: "#5f8f8a",
-      focus: {
-        hanzi: "\u5934\uFF0C\u989D\u5934\uFF0C\u5934\u53D1\uFF0C\u773C\u775B\uFF0C\u8033\u6735\uFF0C\u9F3B\u5B50\uFF0C\u5634\u5DF4\uFF0C\u8116\u5B50\uFF0C\u624B\u81C2\uFF0C\u624B\uFF0C\u817F\uFF0C\u811A",
-        pinyin: "t\xF3u, \xE9 t\xF3u, t\xF3u fa, y\u01CEn jing, \u011Br duo, b\xED zi, zu\u01D0 ba, b\xF3 zi, sh\u01D2u b\xEC, sh\u01D2u, tu\u01D0, ji\u01CEo",
-        english: "head, forehead, hair, eyes, ears, nose, mouth, neck, arm, hand, leg, foot",
-        audio: "\u5934\uFF0C\u989D\u5934\uFF0C\u5934\u53D1\uFF0C\u773C\u775B\uFF0C\u8033\u6735\uFF0C\u9F3B\u5B50\uFF0C\u5634\u5DF4\uFF0C\u8116\u5B50\uFF0C\u624B\u81C2\uFF0C\u624B\uFF0C\u817F\uFF0C\u811A"
-      },
-      focusItems: [
-        { id: "head", hanzi: "\u5934", pinyin: "t\xF3u", english: "head", audio: "\u5934" },
-        { id: "forehead", hanzi: "\u989D\u5934", pinyin: "\xE9 t\xF3u", english: "forehead", audio: "\u989D\u5934" },
-        { id: "hair", hanzi: "\u5934\u53D1", pinyin: "t\xF3u fa", english: "hair", audio: "\u5934\u53D1" },
-        { id: "eyes", hanzi: "\u773C\u775B", pinyin: "y\u01CEn jing", english: "eyes", audio: "\u773C\u775B" },
-        { id: "ears", hanzi: "\u8033\u6735", pinyin: "\u011Br duo", english: "ears", audio: "\u8033\u6735" },
-        { id: "nose", hanzi: "\u9F3B\u5B50", pinyin: "b\xED zi", english: "nose", audio: "\u9F3B\u5B50" },
-        { id: "mouth", hanzi: "\u5634\u5DF4", pinyin: "zu\u01D0 ba", english: "mouth", audio: "\u5634\u5DF4" },
-        { id: "neck", hanzi: "\u8116\u5B50", pinyin: "b\xF3 zi", english: "neck", audio: "\u8116\u5B50" },
-        { id: "arm", hanzi: "\u624B\u81C2", pinyin: "sh\u01D2u b\xEC", english: "arm", audio: "\u624B\u81C2" },
-        { id: "hand", hanzi: "\u624B", pinyin: "sh\u01D2u", english: "hand", audio: "\u624B" },
-        { id: "leg", hanzi: "\u817F", pinyin: "tu\u01D0", english: "leg", audio: "\u817F" },
-        { id: "foot", hanzi: "\u811A", pinyin: "ji\u01CEo", english: "foot", audio: "\u811A" }
-      ],
-      interactiveScene: "body-face",
-      parentGuide: "Tap a body word, hear it together, then point to the same body part on yourself or on the character.",
-      cultureGuide: "Body vocabulary is simple to act out, so it is a good topic for young beginners who are still building confidence.",
-      activities: ["Tap word to hear", "See the body part glow", "Listen and point", "Picture matching"],
-      steps: [
-        { book: "1B", lesson: 3, title: "Parts of the body (1)", note: "Start with the first body words." },
-        { book: "1B", lesson: 4, title: "Parts of the body (2)", note: "Expand and reinforce the body set." }
-      ]
-    },
+    bodyTopic,
     {
       id: "animals",
       title: "Pets & Animals",
@@ -4400,12 +4398,6 @@
     const items = focusItemsForTopic();
     return items.find((item) => item.id === state.selectedFocusItemId) ?? items[0];
   }
-  var bodyDiagramLayout = {
-    left: ["hair", "ears", "nose", "hand", "leg", "foot"],
-    right: ["head", "forehead", "eyes", "mouth", "neck", "arm"]
-  };
-  var bodyCoreItemIds = ["head", "hair", "eyes", "ears", "nose", "mouth", "hand", "foot"];
-  var bodyBonusItemIds = ["forehead", "neck", "arm", "leg"];
   function shuffleArray(items) {
     const copy = [...items];
     for (let index = copy.length - 1; index > 0; index -= 1) {
@@ -4416,8 +4408,8 @@
   }
   function bodyMatchItems() {
     const ids = state.bodyMatchIncludeBonus ? [...bodyCoreItemIds, ...bodyBonusItemIds] : bodyCoreItemIds;
-    const bodyTopic = topicById("body");
-    return ids.map((id) => bodyTopic?.focusItems.find((item) => item.id === id)).filter(Boolean);
+    const bodyTopic2 = topicById("body");
+    return ids.map((id) => bodyTopic2?.focusItems.find((item) => item.id === id)).filter(Boolean);
   }
   function nextBodyRound() {
     const allIds = bodyMatchItems().map((item) => item.id);
