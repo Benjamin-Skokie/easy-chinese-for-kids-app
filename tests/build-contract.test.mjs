@@ -21,6 +21,7 @@ import { mealsFeelingsSentenceBuilds, mealsFeelingsTopicData } from "../src/feat
 import { introductionsBuildPhrases, introductionsGamePrompts, introductionsPractice, introductionsTopic } from "../src/features/foundations/introductions.js";
 import { ageBuildPhrases, agePractice, ageTopic } from "../src/features/foundations/age.js";
 import { identityConversation, identityCountries, identityQuestion, identityTopic } from "../src/features/foundations/identity.js";
+import { greetingsGameItemIds, greetingsPractice, greetingsTopic } from "../src/features/foundations/greetings.js";
 import { familyGameItemIds, familyPractice, familyTopic, illustratedFamily } from "../src/features/family/family.js";
 
 test("the local page loads a single bundled application script", () => {
@@ -177,6 +178,13 @@ test("identity owns its countries, question, and conversation", () => {
   assert.equal(identityCountries.length, 3);
   assert.equal(identityQuestion.hanzi, "你是哪国人？");
   assert.equal(identityConversation.lines.length, 2);
+});
+
+test("greetings owns its template lesson scenes and listening set", () => {
+  assert.equal(greetingsTopic.id, "greetings");
+  assert.equal(greetingsTopic.interactiveScene, "greetings-conversation");
+  assert.equal(greetingsPractice.length, 3);
+  assert.equal(greetingsGameItemIds.length, 4);
 });
 
 test("family owns its lesson metadata, scenes, and matching set", () => {

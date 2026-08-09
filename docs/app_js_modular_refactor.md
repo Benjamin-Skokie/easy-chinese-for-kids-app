@@ -59,6 +59,7 @@ A feature registers its owned topic IDs, creates its scoped state, renders its e
 - [x] Move Food Preferences into `src/features/food/food-preferences.js`.
 - [x] Move Meals & Feelings into `src/features/food/meals-feelings.js`, including conversation, picture-choice, and sentence practice data.
 - [x] Move the complete Introductions topic definition, scenes, and practice data into `src/features/foundations/introductions.js`.
+- [x] Move the complete Greetings template lesson definition, scenes, and listening set into `src/features/foundations/greetings.js`.
 - [x] Move the complete Age topic definition, scenes, and sentence-building data into `src/features/foundations/age.js`.
 - [x] Move the complete Countries & Languages topic definition, flag set, and conversation data into `src/features/foundations/identity.js`.
 - [x] Move the complete Family topic definition, scenes, avatar mappings, and matching data into `src/features/family/family.js`.

@@ -1109,6 +1109,75 @@
     }
   ];
 
+  // src/features/foundations/greetings.js
+  var greetingsTopic = {
+    id: "greetings",
+    title: "Greetings",
+    summary: "Simple social language children can use right away in class and at home.",
+    progressLabel: "1A foundation",
+    iconText: "\u4F60\u597D",
+    iconColor: "#d2874f",
+    iconAccent: "#f7d98f",
+    iconTheme: "greeting",
+    focus: {
+      hanzi: "\u4F60\u597D\uFF01",
+      pinyin: "n\u01D0 h\u01CEo!",
+      english: "Hello!",
+      audio: "\u4F60\u597D"
+    },
+    focusItems: [
+      { id: "hello", hanzi: "\u4F60\u597D\uFF01", pinyin: "n\u01D0 h\u01CEo!", english: "Hello!", audio: "\u4F60\u597D" },
+      { id: "you-casual", hanzi: "\u4F60", pinyin: "n\u01D0", english: "you", audio: "\u4F60" },
+      { id: "you-polite", hanzi: "\u60A8", pinyin: "n\xEDn", english: "you (polite)", audio: "\u60A8" },
+      { id: "teacher-hello", hanzi: "\u674E\u8001\u5E08\uFF0C\u60A8\u597D\uFF01", pinyin: "L\u01D0 l\u01CEo sh\u012B, n\xEDn h\u01CEo!", english: "Hello, Teacher Li!", audio: "\u674E\u8001\u5E08\u60A8\u597D" },
+      { id: "good-morning", hanzi: "\u4F60\u65E9\uFF01", pinyin: "n\u01D0 z\u01CEo!", english: "Good morning!", audio: "\u4F60\u65E9" },
+      { id: "goodbye", hanzi: "\u518D\u89C1\uFF01", pinyin: "z\xE0i ji\xE0n!", english: "Goodbye!", audio: "\u518D\u89C1" },
+      { id: "teacher", hanzi: "\u8001\u5E08", pinyin: "l\u01CEo sh\u012B", english: "teacher", audio: "\u8001\u5E08" },
+      { id: "surname-li", hanzi: "\u674E", pinyin: "L\u01D0", english: "Li (surname)", audio: "\u674E" }
+    ],
+    interactiveScene: "greetings-conversation",
+    parentGuide: "Pair the phrase with movement. Wave, smile, and say it together. Young children remember social language best when it feels physical.",
+    cultureGuide: "Greetings are a gentle bridge into relationship-focused language. The point is warmth and confidence, not a long explanation.",
+    activities: ["Tap to hear", "Echo and repeat", "Choose the greeting", "Role-play turns"],
+    steps: [{ book: "1A", lesson: 4, title: "Hello!", note: "Begin with friendly greetings." }]
+  };
+  var greetingsPractice = [
+    {
+      id: "scene-1",
+      number: "1",
+      prompt: "Greeting a teacher politely",
+      imagePath: "assets/greetings/greetings-scene-1.webp",
+      imageAlt: "Teacher Li greeting Anan outside the school entrance",
+      lines: [
+        { hanzi: "\u4F60\u597D\uFF01", pinyin: "n\u01D0 h\u01CEo!", english: "Hello!", audio: "\u4F60\u597D" },
+        { hanzi: "\u674E\u8001\u5E08\uFF0C\u60A8\u597D\uFF01", pinyin: "L\u01D0 l\u01CEo sh\u012B, n\xEDn h\u01CEo!", english: "Hello, Teacher Li!", audio: "\u674E\u8001\u5E08\u60A8\u597D" }
+      ]
+    },
+    {
+      id: "scene-2",
+      number: "2",
+      prompt: "Friends meeting in the morning",
+      imagePath: "assets/greetings/greetings-scene-2.webp",
+      imageAlt: "Lele and Anan greeting each other on the way into school, with other children arriving behind them",
+      lines: [
+        { hanzi: "\u4F60\u65E9\uFF01", pinyin: "n\u01D0 z\u01CEo!", english: "Good morning!", audio: "\u4F60\u65E9" },
+        { hanzi: "\u4F60\u65E9\uFF01", pinyin: "n\u01D0 z\u01CEo!", english: "Good morning!", audio: "\u4F60\u65E9" }
+      ]
+    },
+    {
+      id: "scene-3",
+      number: "3",
+      prompt: "Saying goodbye",
+      imagePath: "assets/greetings/greetings-scene-3.webp",
+      imageAlt: "Lele and Anan waving goodbye after school as children come out of the building and head home",
+      lines: [
+        { hanzi: "\u518D\u89C1\uFF01", pinyin: "z\xE0i ji\xE0n!", english: "Goodbye!", audio: "\u518D\u89C1" },
+        { hanzi: "\u518D\u89C1\uFF01", pinyin: "z\xE0i ji\xE0n!", english: "Goodbye!", audio: "\u518D\u89C1" }
+      ]
+    }
+  ];
+  var greetingsGameItemIds = ["hello", "teacher-hello", "good-morning", "goodbye"];
+
   // src/features/foundations/identity.js
   var identityTopic = {
     id: "identity",
@@ -1513,43 +1582,7 @@
       activities: ["Tap line to hear", "Repeat with rhythm", "Learn one table at a time", "Build multiplication confidence"],
       steps: []
     },
-    {
-      id: "greetings",
-      title: "Greetings",
-      summary: "Simple social language children can use right away in class and at home.",
-      progressLabel: "1A foundation",
-      iconText: "\u4F60\u597D",
-      iconColor: "#d2874f",
-      iconAccent: "#f7d98f",
-      iconTheme: "greeting",
-      focus: {
-        hanzi: "\u4F60\u597D\uFF01",
-        pinyin: "n\u01D0 h\u01CEo!",
-        english: "Hello!",
-        audio: "\u4F60\u597D"
-      },
-      focusItems: [
-        { id: "hello", hanzi: "\u4F60\u597D\uFF01", pinyin: "n\u01D0 h\u01CEo!", english: "Hello!", audio: "\u4F60\u597D" },
-        { id: "you-casual", hanzi: "\u4F60", pinyin: "n\u01D0", english: "you", audio: "\u4F60" },
-        { id: "you-polite", hanzi: "\u60A8", pinyin: "n\xEDn", english: "you (polite)", audio: "\u60A8" },
-        {
-          id: "teacher-hello",
-          hanzi: "\u674E\u8001\u5E08\uFF0C\u60A8\u597D\uFF01",
-          pinyin: "L\u01D0 l\u01CEo sh\u012B, n\xEDn h\u01CEo!",
-          english: "Hello, Teacher Li!",
-          audio: "\u674E\u8001\u5E08\u60A8\u597D"
-        },
-        { id: "good-morning", hanzi: "\u4F60\u65E9\uFF01", pinyin: "n\u01D0 z\u01CEo!", english: "Good morning!", audio: "\u4F60\u65E9" },
-        { id: "goodbye", hanzi: "\u518D\u89C1\uFF01", pinyin: "z\xE0i ji\xE0n!", english: "Goodbye!", audio: "\u518D\u89C1" },
-        { id: "teacher", hanzi: "\u8001\u5E08", pinyin: "l\u01CEo sh\u012B", english: "teacher", audio: "\u8001\u5E08" },
-        { id: "surname-li", hanzi: "\u674E", pinyin: "L\u01D0", english: "Li (surname)", audio: "\u674E" }
-      ],
-      interactiveScene: "greetings-conversation",
-      parentGuide: "Pair the phrase with movement. Wave, smile, and say it together. Young children remember social language best when it feels physical.",
-      cultureGuide: "Greetings are a gentle bridge into relationship-focused language. The point is warmth and confidence, not a long explanation.",
-      activities: ["Tap to hear", "Echo and repeat", "Choose the greeting", "Role-play turns"],
-      steps: [{ book: "1A", lesson: 4, title: "Hello!", note: "Begin with friendly greetings." }]
-    },
+    greetingsTopic,
     {
       id: "polite-words",
       title: "Polite Words",
@@ -2267,47 +2300,6 @@
     },
     digits: ["\u516D", "\u516B", "\u4E8C", "\u56DB", "\u4E5D", "\u4E03", "\u4E09", "\u4E00", "\u4E09", "\u4E8C"]
   };
-  var greetingsPractice = [
-    {
-      id: "scene-1",
-      number: "1",
-      prompt: "Greeting a teacher politely",
-      imagePath: "assets/greetings/greetings-scene-1.webp",
-      imageAlt: "Teacher Li greeting Anan outside the school entrance",
-      lines: [
-        { hanzi: "\u4F60\u597D\uFF01", pinyin: "n\u01D0 h\u01CEo!", english: "Hello!", audio: "\u4F60\u597D" },
-        {
-          hanzi: "\u674E\u8001\u5E08\uFF0C\u60A8\u597D\uFF01",
-          pinyin: "L\u01D0 l\u01CEo sh\u012B, n\xEDn h\u01CEo!",
-          english: "Hello, Teacher Li!",
-          audio: "\u674E\u8001\u5E08\u60A8\u597D"
-        }
-      ]
-    },
-    {
-      id: "scene-2",
-      number: "2",
-      prompt: "Friends meeting in the morning",
-      imagePath: "assets/greetings/greetings-scene-2.webp",
-      imageAlt: "Lele and Anan greeting each other on the way into school, with other children arriving behind them",
-      lines: [
-        { hanzi: "\u4F60\u65E9\uFF01", pinyin: "n\u01D0 z\u01CEo!", english: "Good morning!", audio: "\u4F60\u65E9" },
-        { hanzi: "\u4F60\u65E9\uFF01", pinyin: "n\u01D0 z\u01CEo!", english: "Good morning!", audio: "\u4F60\u65E9" }
-      ]
-    },
-    {
-      id: "scene-3",
-      number: "3",
-      prompt: "Saying goodbye",
-      imagePath: "assets/greetings/greetings-scene-3.webp",
-      imageAlt: "Lele and Anan waving goodbye after school as children come out of the building and head home",
-      lines: [
-        { hanzi: "\u518D\u89C1\uFF01", pinyin: "z\xE0i ji\xE0n!", english: "Goodbye!", audio: "\u518D\u89C1" },
-        { hanzi: "\u518D\u89C1\uFF01", pinyin: "z\xE0i ji\xE0n!", english: "Goodbye!", audio: "\u518D\u89C1" }
-      ]
-    }
-  ];
-  var greetingsGameItemIds = ["hello", "teacher-hello", "good-morning", "goodbye"];
   var politeGameItemIds = ["thank-you", "youre-welcome", "sorry", "never-mind"];
   var ageGameItemIds = ["ask-age", "age-five", "age-six", "age-seven", "ask-grade", "grade-one"];
   var sceneSpeechRate = 0.64;
@@ -3218,8 +3210,8 @@
     }
   }
   function greetingsGameItems() {
-    const greetingsTopic = topicById("greetings");
-    return greetingsGameItemIds.map((id) => greetingsTopic?.focusItems.find((item) => item.id === id)).filter(Boolean);
+    const greetingsTopic2 = topicById("greetings");
+    return greetingsGameItemIds.map((id) => greetingsTopic2?.focusItems.find((item) => item.id === id)).filter(Boolean);
   }
   function resetGreetingsChallenge(options = {}) {
     const items = greetingsGameItems();
