@@ -2279,6 +2279,384 @@ h4 {
   border: 1px solid rgba(221, 207, 187, 0.72);
 }
 
+.backpack-game-card {
+  gap: 12px;
+}
+
+.backpack-game-progress {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.backpack-game-progress-dot {
+  display: grid;
+  width: 24px;
+  height: 24px;
+  place-items: center;
+  border: 1px solid rgba(161, 179, 147, 0.7);
+  border-radius: 50%;
+  color: transparent;
+  background: #f7f3e9;
+  font-size: 0.86rem;
+  font-weight: 800;
+}
+
+.backpack-game-progress-dot.is-packed {
+  border-color: #5f8f51;
+  color: #fff;
+  background: #5f8f51;
+}
+
+.backpack-game-visual {
+  position: relative;
+  display: grid;
+  min-height: 276px;
+  place-items: center;
+  overflow: hidden;
+  border: 1px solid rgba(221, 207, 187, 0.72);
+  border-radius: 12px;
+  background: #f8f4ea;
+}
+
+.backpack-game-bag {
+  width: min(100%, 360px);
+  height: 264px;
+  object-fit: contain;
+  transform: translateX(-38px);
+}
+
+.backpack-game-target {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  display: grid;
+  width: 158px;
+  height: 142px;
+  place-items: center;
+  padding: 10px;
+  border: 1px solid rgba(221, 207, 187, 0.88);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.92);
+}
+
+.backpack-game-target img {
+  width: 76%;
+  height: 76%;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+}
+
+.backpack-game-packed-item {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+}
+
+.backpack-game-packed-items {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.backpack-game-packed-item {
+  position: absolute;
+  width: 52px;
+  height: 44px;
+  animation: backpack-pack-item 320ms ease-out both;
+}
+
+.backpack-game-packed-item.is-item-0 {
+  bottom: 48px;
+  left: 32%;
+}
+
+.backpack-game-packed-item.is-item-1 {
+  bottom: 40px;
+  left: 44%;
+}
+
+.backpack-game-packed-item.is-item-2 {
+  bottom: 51px;
+  left: 56%;
+}
+
+.backpack-game-complete-mark {
+  position: absolute;
+  right: 24%;
+  bottom: 22%;
+  display: grid;
+  width: 46px;
+  height: 46px;
+  place-items: center;
+  border-radius: 50%;
+  color: #fff;
+  background: #5f8f51;
+  box-shadow: 0 0 0 4px rgba(95, 143, 81, 0.16);
+  font-size: 1.8rem;
+  font-weight: 900;
+}
+
+.backpack-game-complete-message {
+  margin: -2px 0 0;
+  color: #456f3b;
+  font-weight: 800;
+  text-align: center;
+}
+
+.backpack-game-options {
+  margin-top: 0;
+}
+
+.backpack-game-options .greetings-game-option {
+  min-height: 86px;
+  border-radius: 12px;
+}
+
+.backpack-game-options .numbers-game-hanzi {
+  font-size: 1.45rem;
+}
+
+.food-hunger-game-card {
+  gap: 12px;
+}
+
+.food-hunger-kicker-english {
+  color: var(--muted);
+  font-weight: 600;
+  letter-spacing: 0;
+  margin-left: 8px;
+  text-transform: none;
+}
+
+.food-hunger-tabs {
+  margin-bottom: 0;
+}
+
+.food-hunger-visual {
+  position: relative;
+  display: grid;
+  min-height: 276px;
+  place-items: center;
+  overflow: hidden;
+  border: 1px solid rgba(221, 207, 187, 0.72);
+  border-radius: 12px;
+  background: #f8f4ea;
+}
+
+.food-hunger-target {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  display: grid;
+  width: 142px;
+  height: 126px;
+  place-items: center;
+  padding: 8px;
+  border: 1px solid rgba(221, 207, 187, 0.88);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.92);
+}
+
+.food-hunger-target img {
+  width: 88%;
+  height: 88%;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+}
+
+.food-hunger-cart {
+  position: relative;
+  width: min(86%, 360px);
+  height: 290px;
+  margin-top: 22px;
+}
+
+.food-hunger-cart-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.food-hunger-plated-item {
+  position: absolute;
+  width: 86px;
+  height: 76px;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+  animation: backpack-pack-item 320ms ease-out both;
+}
+
+.food-hunger-plated-item.is-item-0 {
+  top: 26%;
+  left: 18%;
+}
+
+.food-hunger-plated-item.is-item-1 {
+  top: 22%;
+  left: 40%;
+}
+
+.food-hunger-plated-item.is-item-2 {
+  top: 27%;
+  right: 14%;
+}
+
+.food-hunger-complete-mark {
+  position: absolute;
+  right: -2%;
+  bottom: 7%;
+  display: grid;
+  width: 46px;
+  height: 46px;
+  place-items: center;
+  border-radius: 50%;
+  color: #fff;
+  background: #5f8f51;
+  box-shadow: 0 0 0 4px rgba(95, 143, 81, 0.16);
+  font-size: 1.8rem;
+  font-weight: 900;
+}
+
+.food-hunger-options {
+  margin-top: 0;
+}
+
+.food-hunger-options .greetings-game-option {
+  min-height: 86px;
+  border-radius: 12px;
+}
+
+.food-hunger-options .numbers-game-hanzi {
+  font-size: 1.45rem;
+}
+
+.stationery-picture-match-card {
+  gap: 12px;
+}
+
+.stationery-picture-match-visual {
+  display: grid;
+  min-height: 280px;
+  aspect-ratio: 4 / 3;
+  margin: 0;
+  place-items: center;
+  overflow: hidden;
+  border: 1px solid rgba(221, 207, 187, 0.72);
+  border-radius: 12px;
+  background: #f8f4ea;
+}
+
+.stationery-picture-match-visual img {
+  width: 100%;
+  height: 100%;
+  padding: 22px;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+}
+
+.stationery-picture-match-columns {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.stationery-picture-match-column {
+  display: grid;
+  gap: 7px;
+}
+
+.stationery-picture-match-label {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.76rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.stationery-picture-match-option {
+  position: relative;
+  display: grid;
+  min-height: 58px;
+  place-items: center;
+  padding: 8px 5px;
+  border: 1px solid rgba(221, 207, 187, 0.88);
+  border-radius: 10px;
+  color: var(--ink);
+  background: #fffdf8;
+  cursor: pointer;
+}
+
+.stationery-picture-match-option:hover:not(:disabled) {
+  border-color: rgba(109, 138, 79, 0.72);
+  background: #f4f8ee;
+}
+
+.stationery-picture-match-option:disabled {
+  cursor: default;
+}
+
+.stationery-picture-match-word {
+  font-size: 1.24rem;
+  font-weight: 700;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.stationery-picture-match-english {
+  color: var(--muted);
+  font-size: 0.74rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.stationery-picture-match-option .answer-result-mark {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 20px;
+  height: 20px;
+  font-size: 0.76rem;
+}
+
+.stationery-picture-match-result {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  gap: 10px;
+  align-items: center;
+  padding: 10px;
+  border-radius: 10px;
+  background: #f2f8ed;
+}
+
+.stationery-picture-match-result > div {
+  display: grid;
+  gap: 2px;
+}
+
+.stationery-picture-match-result strong {
+  font-size: 1.05rem;
+}
+
+.stationery-picture-match-result span:not(.answer-result-mark) {
+  color: var(--muted);
+  font-size: 0.78rem;
+  line-height: 1.25;
+}
+
+@keyframes backpack-pack-item {
+  from {
+    opacity: 0;
+    transform: translate(45px, -80px) scale(1.8);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+  }
+}
+
 .food-category-tabs {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -2783,6 +3161,11 @@ h4 {
   gap: 12px;
 }
 
+.school-scene-layout.is-compact {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: center;
+}
+
 .school-scene-image {
   display: block;
   width: 100%;
@@ -3234,6 +3617,30 @@ h4 {
   display: grid;
   gap: 10px;
   align-content: start;
+}
+
+.greetings-line-stack.is-compact {
+  gap: 5px;
+  padding: 12px 14px;
+  border: 1px solid rgba(221, 207, 187, 0.68);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.greetings-line-stack.is-compact .greetings-line-card {
+  display: block;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+}
+
+.greetings-line-stack.is-compact .telephone-bubble-copy {
+  gap: 2px;
+}
+
+.greetings-line-stack.is-compact .telephone-line-hanzi {
+  font-size: 1.42rem;
 }
 
 .greetings-line-card {
@@ -4068,14 +4475,24 @@ h4 {
 .food-preference-subject-choice.is-active,
 .food-preference-pattern-choice.is-active,
 .food-preference-fill-choice.is-active {
-  border-color: var(--accent);
-  box-shadow: inset 0 0 0 1px var(--accent);
+  border-color: var(--leaf);
+  background: var(--sky);
+  box-shadow: inset 0 0 0 1px var(--leaf);
 }
 
 .food-preference-subject-choice.is-active .numbers-game-hanzi,
 .food-preference-pattern-choice.is-active .numbers-game-hanzi,
 .food-preference-fill-choice.is-active .numbers-game-hanzi {
-  color: var(--accent-deep);
+  color: #456d32;
+}
+
+.food-preference-subject-choice.is-active .numbers-game-pinyin,
+.food-preference-pattern-choice.is-active .numbers-game-pinyin,
+.food-preference-fill-choice.is-active .numbers-game-pinyin,
+.food-preference-subject-choice.is-active .numbers-game-english,
+.food-preference-pattern-choice.is-active .numbers-game-english,
+.food-preference-fill-choice.is-active .numbers-game-english {
+  color: #456d32;
 }
 
 .food-preference-builder-list .numbers-game-hanzi {
@@ -4114,7 +4531,7 @@ h4 {
 .food-preference-fill-choice:hover,
 .food-preference-subject-choice:hover,
 .food-preference-pattern-choice:hover {
-  border-color: var(--accent);
+  border-color: var(--leaf);
 }
 
 .clothes-quiz-visual {
@@ -6132,6 +6549,10 @@ h4 {
   }
 
   .room-scene-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .school-scene-layout.is-compact {
     grid-template-columns: 1fr;
   }
 

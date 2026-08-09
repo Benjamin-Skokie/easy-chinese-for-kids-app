@@ -97,6 +97,54 @@
       "file": "backpack.webp"
     },
     {
+      "id": "open-backpack",
+      "label": "Open backpack",
+      "hanzi": "打开的书包",
+      "pinyin": "da kai de shu bao",
+      "file": "open-backpack.webp",
+      "transparent": true
+    },
+    {
+      "id": "my-chair-and-table",
+      "label": "My chair and table",
+      "hanzi": "这是我的椅子。这是我的桌子。",
+      "pinyin": "zhe shi wo de yi zi. zhe shi wo de zhuo zi.",
+      "file": "my-chair-and-table.webp",
+      "role": "lesson-scene"
+    },
+    {
+      "id": "my-book-tiantian-landscape",
+      "label": "My book",
+      "hanzi": "这是我的书。",
+      "pinyin": "zhe shi wo de shu.",
+      "file": "my-book-tiantian-landscape.webp",
+      "role": "lesson-scene"
+    },
+    {
+      "id": "anan-three-red-pencils",
+      "label": "Anan has three red pencils",
+      "hanzi": "安安有三支红色的铅笔。",
+      "pinyin": "an an you san zhi hong se de qian bi.",
+      "file": "anan-three-red-pencils.webp",
+      "role": "lesson-scene"
+    },
+    {
+      "id": "three-red-pencils",
+      "label": "Three red pencils",
+      "hanzi": "三支红色的铅笔",
+      "pinyin": "san zhi hong se de qian bi",
+      "file": "three-red-pencils.webp",
+      "transparent": true
+    },
+    {
+      "id": "blue-eraser",
+      "label": "Blue eraser",
+      "hanzi": "蓝色的橡皮",
+      "pinyin": "lan se de xiang pi",
+      "file": "blue-eraser.webp",
+      "transparent": true
+    },
+    {
       "id": "pencil-box",
       "label": "Pencil box",
       "hanzi": "铅笔盒",

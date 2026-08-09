@@ -194,7 +194,7 @@ Content focus: `there is in the pencil box / schoolbag`, `铅笔`, `橡皮`, `�
 
 | Lesson | Book title | Core patterns | Use now | Gaps |
 |---|---|---|---|---|
-| `2B-3` | 2B-3 Stationery | `there is in the pencil box / schoolbag` | `assets/illustrated-stationery` | _none_ |
+| `2B-3` | 2B-3 Stationery | `这是我的……`, `……有……`, colors, measure words | `assets/illustrated-stationery`<br>`assets/illustrated-possession`<br>`assets/illustrated-measure-words` | _none_ |
 | `2B-4` | 2B-4 My classroom | `有`, `在` | `assets/illustrated-classrooms`<br>`assets/illustrated-school-anchors`<br>`assets/illustrated-grammar` | _none_ |
 | `3B-1` | 3B-1 My schoolbag | `有`, `没有` | `assets/illustrated-stationery`<br>`assets/illustrated-grammar`<br>`assets/illustrated-rooms` | _none_ |
 | `3B-2` | 3B-2 Our classroom | `有`, `在` | `assets/illustrated-classrooms`<br>`assets/illustrated-school-anchors` | _none_ |

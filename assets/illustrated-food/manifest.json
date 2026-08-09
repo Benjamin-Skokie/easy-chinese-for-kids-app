@@ -13,6 +13,13 @@
   ],
   "items": [
     {
+      "id": "game-shopping-cart",
+      "label": "Empty shopping cart for food game",
+      "file": "game-shopping-cart.webp",
+      "transparent": true,
+      "role": "game-scene"
+    },
+    {
       "id": "apple",
       "label": "Apple",
       "hanzi": "苹果",

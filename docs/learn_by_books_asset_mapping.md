@@ -68,7 +68,7 @@ Sources of truth: `docs/ocr/book_asset_coverage_map.json` for lesson coverage an
 |---:|---|---|---|---|---|
 | 1 | Today is Monday | 时间和日常 / Time & Daily Life / Time & Date | patterns: `今天星期...`<br>vocab: `星期一 to 星期天`, `今天` | `assets/illustrated-day-of-week` | _none_ |
 | 2 | What time is it? | 时间和日常 / Time & Daily Life / Time & Date | patterns: `几点了`<br>vocab: `一点 to 十二点` | `assets/illustrated-clocks`<br>`assets/illustrated-clock-routines` | _none_ |
-| 3 | Stationery | 学校生活 / School Life / School | patterns: `there is in the pencil box / schoolbag`<br>vocab: `铅笔`, `橡皮`, `尺子`, `文具盒`, `课本` | `assets/illustrated-stationery` | _none_ |
+| 3 | Stationery | 学校生活 / School Life / My Stationery | patterns: `这是我的……`, `……有……`, `颜色 + 的 + 文具`, measure words `一支 / 一把 / 一块`<br>vocab: `铅笔`, `橡皮`, `剪刀`, `尺子`, `彩色铅笔` | `assets/illustrated-stationery`<br>`assets/illustrated-possession`<br>`assets/illustrated-measure-words` | _none_ |
 | 4 | My classroom | 学校生活 / School Life / School | patterns: `有`, `在`<br>vocab: `教室`, `桌子`, `椅子`, `黑板` | `assets/illustrated-classrooms`<br>`assets/illustrated-school-anchors`<br>`assets/illustrated-grammar` | _none_ |
 | 5 | Animals | 自然和颜色 / World Around Us / Pets & Animals | patterns: `identify animals`<br>vocab: `animal words` | `assets/illustrated-animals` | _none_ |
 | 6 | Big or small | 学校生活 / School Life / Describing Things | patterns: `A big / small`<br>vocab: `大`, `小` | `assets/illustrated-comparisons` | _none_ |
