@@ -4855,7 +4855,7 @@ function renderTopics() {
           .map((topic) => {
             const meta = topicCardMeta[topic.id] ?? {};
             return `
-              <a class="category-topic-card${topic.id === state.selectedTopicId ? " is-selected" : ""}" href="${topicPageUrl(topic.id)}" data-topic-id="${topic.id}">
+              <a class="category-topic-card${topic.id === state.selectedTopicId ? " is-selected" : ""}" href="${topicPageUrl(window.location, topic.id)}" data-topic-id="${topic.id}">
                 <span class="category-topic-zh">${meta.zhTitle ?? topic.iconText}</span>
                 <span class="category-topic-en">${meta.enTitle ?? topic.title}</span>
                 <span class="category-topic-hint">${meta.hint ?? topic.progressLabel}</span>
@@ -9124,7 +9124,7 @@ function selectBookLesson(bookId, lessonNumber) {
   renderBooks();
   renderTopicDetail();
   updateTopicPageVisibility();
-  window.history.pushState(null, "", topicPageUrl(lesson.topicId));
+  window.history.pushState(null, "", topicPageUrl(window.location, lesson.topicId));
   focusLearningPanel();
 }
 

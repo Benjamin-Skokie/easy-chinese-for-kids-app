@@ -52,6 +52,7 @@ test("router preserves the existing topic query and detail hash contract", () =>
   assert.equal(topicIdFromLocation(location, (id) => id === "weekdays"), "weekdays");
   assert.equal(viewFromLocation(location), "topics");
   assert.equal(topicPageUrl(location, "time-date"), "/index.html?topic=time-date#topic-detail");
+  assert.doesNotMatch(topicPageUrl({ pathname: "/", search: "", hash: "" }, "time-date"), /^undefined/);
 });
 
 test("time and calendar content retains its expected teaching sets", () => {
