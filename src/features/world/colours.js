@@ -28,6 +28,7 @@ export const colourLessons = {
 
 export const coloursTopic = {
   id: "colours",
+  ownsExplorerContent: true,
   title: "Colours",
   summary: "A repeated visual topic that can be practiced easily on phones and tablets.",
   progressLabel: "1B to 2A",

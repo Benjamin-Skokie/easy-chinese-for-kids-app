@@ -8,6 +8,18 @@
       "lessonHints": ["3B Lesson 7 Nature"],
       "vocabulary": ["天上", "太阳", "星星", "月亮", "地上", "树", "花", "草"],
       "file": "day-night-nature.webp"
+    },
+    {
+      "id": "daytime-nature",
+      "label": "Daytime nature scene",
+      "vocabulary": ["天上", "太阳", "地上", "树", "花", "草"],
+      "file": "daytime-nature.webp"
+    },
+    {
+      "id": "nighttime-nature",
+      "label": "Nighttime nature scene",
+      "vocabulary": ["天上", "星星", "月亮"],
+      "file": "nighttime-nature.webp"
     }
   ]
 }

@@ -192,7 +192,57 @@ Build priority:
 
 - medium
 
-## 7. Sorting Game
+## 7. Sentence-Frame Fill
+
+What it is:
+
+- show one short, already-taught sentence frame with one or two blanks
+- show a small inline visual cue for the answer sentence
+- child chooses one word for each blank
+- keep the completed sentence visible after success
+
+Use it when:
+
+- the practice goal is recognition and production of a specific beginner sentence frame
+- every valid answer is a complete, natural sentence already taught by the lesson scenes or Book words
+- a small picture cue can distinguish the target without turning the page into a large scene game
+
+Data contract:
+
+```js
+const rounds = [
+  { id: "sun", frame: "____有____。", answers: ["白天", "太阳"], cue: "sun" },
+  { id: "flower", frame: "____有____。", answers: ["地上", "花"], cue: "flower" }
+];
+```
+
+Each round owns the whole valid sentence. Do **not** assemble a sentence by independently mixing categories such as time, location, and noun unless every resulting combination has been explicitly approved as natural and meaningful. For example, Nature uses `白天有太阳。` and `地上有花。` as separate rounds; it must not generate `白天，地上有花。`.
+
+Required behavior:
+
+- Randomize the round order and each answer-bank order when a new round begins.
+- Keep an answer-bank order stable while the child is answering that round; do not reshuffle after each tap.
+- Mark each chosen blank green or red immediately. A wrong choice remains replaceable.
+- Before completion, the green Play button says only the cue word or another non-revealing prompt. After completion, it says the complete sentence; Play then advances to the next round.
+- Put the cue inline with the sentence, not as a large separate illustration, when the purpose is sentence completion rather than scene exploration.
+- Include plausible words from the same lesson as distractors, but never make the correct answer depend on an unspoken real-world assumption.
+
+Acceptance checklist:
+
+- Every configured round reads as a natural Chinese sentence when its answers are inserted.
+- No words from separate book frames are combined merely to create more permutations.
+- The cue, full sentence, pinyin, English gloss, audio, feedback, and completion state all refer to the same round.
+- Both the round order and answer positions vary across rounds, while answer positions remain stable within a round.
+- The interaction has enough rounds to practise the approved sentence set, rather than only the most visually convenient nouns.
+
+Best topics:
+
+- nature (`白天有太阳。`, `地上有花。`)
+- weather and clothing (`今天下雨了，带雨伞。`)
+- room and positions (`桌子上有书。`)
+- daily life and routine frames
+
+## 8. Sorting Game
 
 What it is:
 
@@ -215,7 +265,7 @@ Build priority:
 
 - medium
 
-## 8. Memory Flip Cards
+## 9. Memory Flip Cards
 
 What it is:
 
@@ -235,7 +285,7 @@ Build priority:
 
 - medium to low
 
-## 9. Drag Into Scene
+## 10. Drag Into Scene
 
 What it is:
 
@@ -257,7 +307,7 @@ Build priority:
 
 - medium to low
 
-## 10. Count And Choose
+## 11. Count And Choose
 
 What it is:
 

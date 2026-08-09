@@ -1001,11 +1001,11 @@ function renderSchoolExplorer(topicId) {
         ${topicId === "meals-feelings" && wordGroups.length > 1 ? `<div class="food-book-tabs lesson-word-tabs" role="tablist" aria-label="Meals and feelings word categories">${wordGroups.map((group) => `<button class="food-book-tab${state.mealsWordGroupId === group.id ? " is-active" : ""}" type="button" role="tab" aria-selected="${state.mealsWordGroupId === group.id}" data-meals-word-group="${group.id}">${group.hanzi}${state.showEnglish ? `<small>${group.english}</small>` : ""}</button>`).join("")}</div>` : ""}
         <div class="school-word-grid${topicId === "school-subjects" ? " is-text-only" : ""}${topicId === "meals-feelings" ? " is-uniform-images" : ""}">
           ${visibleWords.map((item) => `
-            <button class="school-word-card" type="button" data-school-word="${item.id}">
-              ${item.imagePath ? `<img class="school-word-image" src="${item.imagePath}" alt="${item.english}" />` : ""}
-              <span class="time-asset-hanzi">${item.hanzi}</span>
+            <button class="school-word-card${item.imagePath ? " book-word-card" : ""}" type="button" data-school-word="${item.id}">
+              ${item.imagePath ? `<img class="school-word-image book-word-image" src="${item.imagePath}" alt="${item.english}" />` : ""}
+              <span class="${item.imagePath ? "book-word-copy" : ""}"><span class="time-asset-hanzi">${item.hanzi}</span>
               ${state.showPinyin ? `<span class="time-asset-pinyin">${item.pinyin}</span>` : ""}
-              ${state.showEnglish ? `<span class="time-asset-english">${item.english}</span>` : ""}
+              ${state.showEnglish ? `<span class="time-asset-english">${item.english}</span>` : ""}</span>
             </button>
           `).join("")}
         </div>

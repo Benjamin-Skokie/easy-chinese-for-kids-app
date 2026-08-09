@@ -16,6 +16,21 @@ This order is non-negotiable. Do not choose or build a game while the content st
 
 The required page order is therefore usually: **scene(s) → optional Book words → optional Useful notes → practice**. A page may omit either or both optional sections when they would duplicate the scenes.
 
+### One owner for every visible section
+
+A topic page may render **one** Book words section, not a topic-template row plus a generic page-level row. The same rule applies to scenes, Useful notes, and any focus card.
+
+When a custom topic renderer owns scenes and supporting sections, its topic data must set `ownsExplorerContent: true`. The shared page shell must then suppress its generic focus display and generic word list. The custom renderer is responsible for rendering exactly the approved sections, in the required order. Add a render test that checks both the intended section and the absence of its duplicate.
+
+Before implementation, write a section-ownership list in the lesson contract:
+
+| Section | Owner | Render once? |
+| --- | --- | --- |
+| Scenes | custom topic renderer or shared template | yes |
+| Book words | custom topic renderer, shared template, or omitted | yes / omitted |
+| Useful notes | custom topic renderer, shared template, or omitted | yes / omitted |
+| Generic focus display and word list | shared shell only when no custom renderer owns the content | yes / omitted |
+
 ## Sources Of Truth
 
 Before work begins, use these files in this order:
@@ -81,6 +96,8 @@ For each remaining practice goal, record:
 - the valid answers and invalid-but-plausible distractors
 - whether the target, answer order, or visual details need randomization
 - whether a complete sentence should remain visible after success
+
+For a fill-in game, list each complete valid answer sentence before designing the answer banks. The game may randomize approved rounds and answer positions, but it must never produce new combinations just because individual words are compatible categories. Use the **Sentence-Frame Fill** template in [game_templates.md](./game_templates.md) when this is the practice pattern.
 
 Only after this list is approved may the topic use an existing game template or propose a new interaction.
 

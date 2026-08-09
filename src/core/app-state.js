@@ -72,6 +72,14 @@ export function createAppState() {
   foodHungerComplete: false,
   timeDateSectionId: "",
   timeDateSectionSource: "",
-  identitySelectedCountryId: ""
+  identitySelectedCountryId: "",
+  worldNatureFillRoundIds: [],
+  worldNatureFillRoundIndex: 0,
+  worldNatureFillSubjectChoices: [],
+  worldNatureFillWordChoices: [],
+  worldNatureFillSubjectPicked: "",
+  worldNatureFillWordPicked: "",
+  worldNatureFillSubjectResult: "",
+  worldNatureFillWordResult: ""
   };
 }

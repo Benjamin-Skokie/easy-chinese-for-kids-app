@@ -262,7 +262,15 @@
       foodHungerComplete: false,
       timeDateSectionId: "",
       timeDateSectionSource: "",
-      identitySelectedCountryId: ""
+      identitySelectedCountryId: "",
+      worldNatureFillRoundIds: [],
+      worldNatureFillRoundIndex: 0,
+      worldNatureFillSubjectChoices: [],
+      worldNatureFillWordChoices: [],
+      worldNatureFillSubjectPicked: "",
+      worldNatureFillWordPicked: "",
+      worldNatureFillSubjectResult: "",
+      worldNatureFillWordResult: ""
     };
   }
 
@@ -464,7 +472,7 @@
       }
     }
     function renderFocusWordList3() {
-      if (["body", "dates", "comparisons", "positions", "transport", "daily-life", "weather", "multiplication-rhyme", "identity", "stationery", "school-supplies", "classroom", "school", "school-subjects", "food", "food-preferences", "meals-feelings"].includes(currentTopic2().id) || currentTopic2().id === "numbers" && currentNumberStage2().telephoneMode) {
+      if (currentTopic2().ownsExplorerContent || ["body", "dates", "comparisons", "positions", "transport", "daily-life", "multiplication-rhyme", "identity", "stationery", "school-supplies", "classroom", "school", "school-subjects", "food", "food-preferences", "meals-feelings"].includes(currentTopic2().id) || currentTopic2().id === "numbers" && currentNumberStage2().telephoneMode) {
         focusWordList2.innerHTML = "";
         focusWordList2.classList.add("is-hidden");
         return;
@@ -1389,7 +1397,7 @@
       renderSubtopicShelf(topic);
       focusDisplay2.classList.toggle(
         "is-hidden",
-        topic.id === "body" || usesLessonTemplate2(topic) || topic.id === "numbers" || topic.id === "multiplication-rhyme" || topic.id === "weekdays" || topic.id === "time-date" || topic.id === "dates" || topic.id === "comparisons" || topic.id === "positions" || topic.id === "transport" || topic.id === "daily-life" || topic.id === "weather" || topic.id === "identity" || topic.id === "clothes" || schoolTopicData3[topic.id] || topic.id === "numbers" && currentNumberStage2().telephoneMode
+        topic.id === "body" || topic.ownsExplorerContent || usesLessonTemplate2(topic) || topic.id === "numbers" || topic.id === "multiplication-rhyme" || topic.id === "weekdays" || topic.id === "time-date" || topic.id === "dates" || topic.id === "comparisons" || topic.id === "positions" || topic.id === "transport" || topic.id === "daily-life" || topic.id === "identity" || topic.id === "clothes" || schoolTopicData3[topic.id] || topic.id === "numbers" && currentNumberStage2().telephoneMode
       );
       renderFocusControls2();
       renderFocusDisplay2(currentFocusItem2());
@@ -3712,11 +3720,11 @@
         ${topicId === "meals-feelings" && wordGroups.length > 1 ? `<div class="food-book-tabs lesson-word-tabs" role="tablist" aria-label="Meals and feelings word categories">${wordGroups.map((group) => `<button class="food-book-tab${state2.mealsWordGroupId === group.id ? " is-active" : ""}" type="button" role="tab" aria-selected="${state2.mealsWordGroupId === group.id}" data-meals-word-group="${group.id}">${group.hanzi}${state2.showEnglish ? `<small>${group.english}</small>` : ""}</button>`).join("")}</div>` : ""}
         <div class="school-word-grid${topicId === "school-subjects" ? " is-text-only" : ""}${topicId === "meals-feelings" ? " is-uniform-images" : ""}">
           ${visibleWords.map((item) => `
-            <button class="school-word-card" type="button" data-school-word="${item.id}">
-              ${item.imagePath ? `<img class="school-word-image" src="${item.imagePath}" alt="${item.english}" />` : ""}
-              <span class="time-asset-hanzi">${item.hanzi}</span>
+            <button class="school-word-card${item.imagePath ? " book-word-card" : ""}" type="button" data-school-word="${item.id}">
+              ${item.imagePath ? `<img class="school-word-image book-word-image" src="${item.imagePath}" alt="${item.english}" />` : ""}
+              <span class="${item.imagePath ? "book-word-copy" : ""}"><span class="time-asset-hanzi">${item.hanzi}</span>
               ${state2.showPinyin ? `<span class="time-asset-pinyin">${item.pinyin}</span>` : ""}
-              ${state2.showEnglish ? `<span class="time-asset-english">${item.english}</span>` : ""}
+              ${state2.showEnglish ? `<span class="time-asset-english">${item.english}</span>` : ""}</span>
             </button>
           `).join("")}
         </div>
@@ -5394,6 +5402,7 @@
   };
   var coloursTopic = {
     id: "colours",
+    ownsExplorerContent: true,
     title: "Colours",
     summary: "A repeated visual topic that can be practiced easily on phones and tablets.",
     progressLabel: "1B to 2A",
@@ -7378,14 +7387,16 @@
       return `<div class="time-asset-grid time-asset-grid-${modifier}">
     ${items.map(
         (item) => `
-          <button class="time-asset-card" type="button" data-time-asset="${collection}:${item.id}">
-            <img class="time-asset-image" src="${item.imagePath}" alt="${item.english}" />
-            ${item.hideLabels || item.hideLabelHanzi ? "" : item.words ? `<span class="time-asset-word-list">${item.words.map((word) => `<span>${word}</span>`).join("")}</span>` : `<span class="time-asset-hanzi">${item.hanzi}</span>`}
-            ${!item.hideLabels && !item.hideLabelDetails && state2.showPinyin ? `<span class="time-asset-pinyin">${item.pinyin}</span>` : ""}
-            ${!item.hideLabels && !item.hideLabelDetails && state2.showEnglish ? `<span class="time-asset-english">${item.english}</span>` : ""}
-            ${item.context ? `<span class="time-asset-context">${item.context}</span>` : ""}
-            ${item.contextPinyin && state2.showPinyin ? `<span class="time-asset-context-pinyin">${item.contextPinyin}</span>` : ""}
-            ${item.contextEnglish && state2.showEnglish ? `<span class="time-asset-context-english">${item.contextEnglish}</span>` : ""}
+          <button class="time-asset-card book-word-card" type="button" data-time-asset="${collection}:${item.id}">
+            <img class="book-word-image" src="${item.imagePath}" alt="${item.english}" />
+            <span class="book-word-copy">
+              ${item.hideLabels || item.hideLabelHanzi ? "" : item.words ? `<span class="time-asset-word-list">${item.words.map((word) => `<span>${word}</span>`).join("")}</span>` : `<span class="time-asset-hanzi">${item.hanzi}</span>`}
+              ${!item.hideLabels && !item.hideLabelDetails && state2.showPinyin ? `<span class="time-asset-pinyin">${item.pinyin}</span>` : ""}
+              ${!item.hideLabels && !item.hideLabelDetails && state2.showEnglish ? `<span class="time-asset-english">${item.english}</span>` : ""}
+              ${item.context ? `<span class="time-asset-context">${item.context}</span>` : ""}
+              ${item.contextPinyin && state2.showPinyin ? `<span class="time-asset-context-pinyin">${item.contextPinyin}</span>` : ""}
+              ${item.contextEnglish && state2.showEnglish ? `<span class="time-asset-context-english">${item.contextEnglish}</span>` : ""}
+            </span>
           </button>
         `
       ).join("")}
@@ -7759,8 +7770,36 @@
     title: "Nature",
     summary: "Describe what is in the sky and on the ground using \u5929\u4E0A\u6709\u2026 and \u5730\u4E0A\u6709\u2026.",
     imagePath: "assets/illustrated-nature/day-night-nature.webp",
-    imageAlt: "A day and night nature scene with sun, moon, stars, trees, flowers, and grass",
+    usefulNote: {
+      hanzi: "\u62AC\u5934\u770B\u5929\u4E0A\uFF0C\u4F4E\u5934\u770B\u5730\u4E0A\u3002",
+      pinyin: "t\xE1i t\xF3u k\xE0n ti\u0101n sh\xE0ng, d\u012B t\xF3u k\xE0n d\xEC sh\xE0ng.",
+      english: "Look up for the sky; look down for the ground."
+    },
+    scenes: [
+      {
+        id: "look-up",
+        title: "\u767D\u5929",
+        imagePath: "assets/illustrated-nature/daytime-nature.webp",
+        imageAlt: "The sun high in a bright daytime sky above trees, small red flowers, and grass",
+        lines: [
+          { hanzi: "\u5929\u4E0A\u6709\u592A\u9633\u3002", pinyin: "ti\u0101n sh\xE0ng y\u01D2u t\xE0i y\xE1ng.", english: "There is a sun in the sky.", audio: "\u5929\u4E0A\u6709\u592A\u9633" },
+          { hanzi: "\u5730\u4E0A\u6709\u6811\u3001\u82B1\u548C\u8349\u3002", pinyin: "d\xEC sh\xE0ng y\u01D2u sh\xF9, hu\u0101 h\xE9 c\u01CEo.", english: "There are trees, flowers, and grass on the ground.", audio: "\u5730\u4E0A\u6709\u6811\u82B1\u548C\u8349" }
+        ]
+      },
+      {
+        id: "look-down",
+        title: "\u665A\u4E0A",
+        imagePath: "assets/illustrated-nature/nighttime-nature.webp",
+        imageAlt: "The moon and stars high in a night sky above trees and grass",
+        lines: [
+          { hanzi: "\u5929\u4E0A\u6709\u661F\u661F\u3002", pinyin: "ti\u0101n sh\xE0ng y\u01D2u x\u012Bng xing.", english: "There are stars in the sky.", audio: "\u5929\u4E0A\u6709\u661F\u661F" },
+          { hanzi: "\u5929\u4E0A\u6709\u6708\u4EAE\u3002", pinyin: "ti\u0101n sh\xE0ng y\u01D2u yu\xE8 liang.", english: "There is a moon in the sky.", audio: "\u5929\u4E0A\u6709\u6708\u4EAE" }
+        ]
+      }
+    ],
     items: [
+      { id: "daytime", hanzi: "\u767D\u5929", pinyin: "b\xE1i ti\u0101n", english: "daytime", audio: "\u767D\u5929" },
+      { id: "nighttime", hanzi: "\u665A\u4E0A", pinyin: "w\u01CEn shang", english: "nighttime", audio: "\u665A\u4E0A" },
       { id: "sky", hanzi: "\u5929\u4E0A", pinyin: "ti\u0101n sh\xE0ng", english: "in the sky", audio: "\u5929\u4E0A" },
       { id: "sun", hanzi: "\u592A\u9633", pinyin: "t\xE0i y\xE1ng", english: "sun", audio: "\u592A\u9633" },
       { id: "star", hanzi: "\u661F\u661F", pinyin: "x\u012Bng xing", english: "star", audio: "\u661F\u661F" },
@@ -7778,11 +7817,12 @@
       { hanzi: "\u5730\u4E0A\u6709\u82B1\u3002", pinyin: "d\xEC sh\xE0ng y\u01D2u hu\u0101.", english: "There are flowers on the ground.", audio: "\u5730\u4E0A\u6709\u82B1" },
       { hanzi: "\u5730\u4E0A\u6709\u8349\u3002", pinyin: "d\xEC sh\xE0ng y\u01D2u c\u01CEo.", english: "There is grass on the ground.", audio: "\u5730\u4E0A\u6709\u8349" },
       { hanzi: "\u5929\u4E0A\u6709\u592A\u9633\u3001\u661F\u661F\u548C\u6708\u4EAE\u3002", pinyin: "ti\u0101n sh\xE0ng y\u01D2u t\xE0i y\xE1ng, x\u012Bng xing h\xE9 yu\xE8 liang.", english: "There are a sun, stars, and a moon in the sky.", audio: "\u5929\u4E0A\u6709\u592A\u9633\u661F\u661F\u548C\u6708\u4EAE" },
-      { hanzi: "\u5730\u4E0A\u6709\u7EFF\u6811\u3001\u7EA2\u82B1\u548C\u5C0F\u8349\u3002", pinyin: "d\xEC sh\xE0ng y\u01D2u l\u01DC sh\xF9, h\xF3ng hu\u0101 h\xE9 xi\u01CEo c\u01CEo.", english: "There are green trees, red flowers, and small grass on the ground.", audio: "\u5730\u4E0A\u6709\u7EFF\u6811\u7EA2\u82B1\u548C\u5C0F\u8349" }
+      { hanzi: "\u5730\u4E0A\u6709\u6811\u3001\u82B1\u548C\u8349\u3002", pinyin: "d\xEC sh\xE0ng y\u01D2u sh\xF9, hu\u0101 h\xE9 c\u01CEo.", english: "There are trees, flowers, and grass on the ground.", audio: "\u5730\u4E0A\u6709\u6811\u82B1\u548C\u8349" }
     ]
   };
   var weatherTopic = {
     id: "weather",
+    ownsExplorerContent: true,
     title: "Weather",
     summary: "Use concrete daily weather phrases for rain, snow, sun, wind, heat, and cold.",
     progressLabel: "4B Lesson 1",
@@ -7796,6 +7836,7 @@
   };
   var natureTopic = {
     id: "nature",
+    ownsExplorerContent: true,
     title: "Nature",
     summary: "Look up and down: describe what is in the sky and on the ground.",
     progressLabel: "3B Lesson 7",
@@ -7803,7 +7844,7 @@
     iconColor: "#6e9872",
     focus: { hanzi: "\u5929\u4E0A\u6709\u592A\u9633\u3002", pinyin: "ti\u0101n sh\xE0ng y\u01D2u t\xE0i y\xE1ng.", english: "There is a sun in the sky.", audio: "\u5929\u4E0A\u6709\u592A\u9633" },
     parentGuide: "Point outside, or use the scene: ask what is in the sky and what is on the ground before saying the full sentence together.",
-    cultureGuide: "This lesson carries colour naturally into meaningful descriptions: \u7EFF\u6811\u3001\u7EA2\u82B1\u548C\u5C0F\u8349\u3002",
+    cultureGuide: "Keep the focus on the sky-and-ground sentence pattern; colour is not a target of this lesson.",
     activities: ["Tap to hear", "Look up and down", "Describe the scene", "Say the full sentence"],
     steps: [{ book: "3B", lesson: 7, title: "Nature", note: "Describe what is in the sky and on the ground." }]
   };
@@ -7830,6 +7871,28 @@
     { id: "pen", hanzi: "\u7B14", pinyin: "b\u01D0", english: "pen" },
     { id: "toy-car", hanzi: "\u73A9\u5177\u6C7D\u8F66", pinyin: "w\xE1n j\xF9 q\xEC ch\u0113", english: "toy car" }
   ];
+  var natureFillRounds = [
+    { id: "sun", subject: "\u767D\u5929", word: "\u592A\u9633", pinyin: "b\xE1i ti\u0101n y\u01D2u t\xE0i y\xE1ng", english: "There is a sun in the daytime." },
+    { id: "moon", subject: "\u665A\u4E0A", word: "\u6708\u4EAE", pinyin: "w\u01CEn shang y\u01D2u yu\xE8 liang", english: "There is a moon at night." },
+    { id: "star", subject: "\u665A\u4E0A", word: "\u661F\u661F", pinyin: "w\u01CEn shang y\u01D2u x\u012Bng xing", english: "There are stars at night." },
+    { id: "tree", subject: "\u5730\u4E0A", word: "\u6811", pinyin: "d\xEC sh\xE0ng y\u01D2u sh\xF9", english: "There is a tree on the ground." },
+    { id: "flower", subject: "\u5730\u4E0A", word: "\u82B1", pinyin: "d\xEC sh\xE0ng y\u01D2u hu\u0101", english: "There are flowers on the ground." },
+    { id: "grass", subject: "\u5730\u4E0A", word: "\u8349", pinyin: "d\xEC sh\xE0ng y\u01D2u c\u01CEo", english: "There is grass on the ground." }
+  ];
+  function natureIconMarkup(id) {
+    const start = '<svg viewBox="0 0 96 72" aria-hidden="true" focusable="false">';
+    const end = "</svg>";
+    const stroke = "#3f5844";
+    if (id === "daytime" || id === "sun") return `${start}<circle cx="48" cy="36" r="15" fill="#f5c64a" stroke="${stroke}" stroke-width="3"/>${[0, 45, 90, 135, 180, 225, 270, 315].map((angle) => `<path d="M48 12v-7" transform="rotate(${angle} 48 36)" stroke="#e5a832" stroke-width="3" stroke-linecap="round"/>`).join("")}${end}`;
+    if (id === "nighttime") return `${start}<rect x="10" y="9" width="76" height="54" rx="12" fill="#172f55" stroke="#244570" stroke-width="3"/><path d="M56 18c-13 3-16 21-2 28 6 3 13 2 18-3-11 2-19-9-15-19 1-3 1-5-1-6Z" fill="#f6e6a3"/><circle cx="28" cy="25" r="2.5" fill="#f8d861"/><circle cx="33" cy="46" r="2" fill="#f8d861"/><circle cx="70" cy="30" r="2.5" fill="#f8d861"/>${end}`;
+    if (id === "moon") return `${start}<path d="M56 16c-17 4-20 28-3 37 7 4 17 3 23-3-15 3-26-12-20-26 1-4 2-6 0-8Z" fill="#f6e6a3" stroke="${stroke}" stroke-width="3" stroke-linejoin="round"/>${end}`;
+    if (id === "star") return `${start}<path d="m48 10 7 19 20 1-16 12 5 20-16-11-17 11 6-20-17-12 21-1Z" fill="#f7d25a" stroke="${stroke}" stroke-width="3" stroke-linejoin="round"/>${end}`;
+    if (id === "sky") return `${start}<path d="M10 54V16h76v38Z" fill="#a9ddf3"/><path d="M10 54h76" stroke="#77b7d3" stroke-width="4"/><path d="M18 28c4-9 15-8 18 0 8-7 19-1 18 7H18c-6-1-5-6 0-7Z" fill="#fff" stroke="#7aa4bb" stroke-width="2"/>${end}`;
+    if (id === "ground") return `${start}<path d="M8 39c13-7 24 3 38-2 15-6 26 3 42-2v10H8Z" fill="#79b65b"/><path d="M8 48h80v15H8Z" fill="#bb8659" stroke="${stroke}" stroke-width="3" stroke-linejoin="round"/><path d="M17 55h10m11-4h13m12 6h13" stroke="#936441" stroke-width="3" stroke-linecap="round"/>${end}`;
+    if (id === "tree") return `${start}<path d="M45 60h10l-3-23h-4Z" fill="#9a6a43" stroke="${stroke}" stroke-width="3"/><path d="M22 37c0-14 13-22 25-15 10-10 30-1 26 14 10 9 1 23-11 20H30c-11 0-16-12-8-19Z" fill="#72b65c" stroke="${stroke}" stroke-width="3"/>${end}`;
+    if (id === "flower") return `${start}<path d="M48 60V38" stroke="#5b994f" stroke-width="4" stroke-linecap="round"/><path d="M48 50c-9-8-13-1-12 4 6 0 10-1 12-4Zm0-6c8-8 13-1 12 4-6 0-10-1-12-4Z" fill="#73b85e"/><circle cx="48" cy="29" r="7" fill="#f1bf43"/>${[0, 72, 144, 216, 288].map((angle) => `<ellipse cx="48" cy="19" rx="6" ry="10" fill="#e8786d" stroke="${stroke}" stroke-width="2" transform="rotate(${angle} 48 29)"/>`).join("")}${end}`;
+    return `${start}<path d="M12 60h72" stroke="#9bc774" stroke-width="4" stroke-linecap="round"/><path d="M26 60V31m0 18-10-12m10 7 9-13M48 60V23m0 24-11-14m11 8 10-15M69 60V34m0 15-8-10m8 6 9-12" stroke="#4c8b49" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>${end}`;
+  }
   var weatherDressRounds = [
     {
       id: "rain",
@@ -7955,10 +8018,14 @@
       if (topic.id === "colours" || topic.id === "nature" || topic.id === "weather") return lessonForCurrentBook()?.items ?? topic.focusItems;
       return topic.focusItems;
     }
+    function worldSceneCardMarkup(scene, { playAttribute, index, compact = false, extraClass = "" }) {
+      return `<section class="greetings-exchange school-scene-card${extraClass ? ` ${extraClass}` : ""}"><div class="greetings-exchange-top"><div><p class="body-match-kicker">${scene.title}</p></div><button class="small-button is-play-button" type="button" ${playAttribute}="${index}">Play</button></div><div class="school-scene-layout${compact ? " is-compact" : ""}"><img class="school-scene-image${scene.imageClass ? ` ${scene.imageClass}` : ""}" src="${scene.imagePath}" alt="${scene.imageAlt}" /><div class="greetings-line-stack">${scene.lines.map((line) => `<article class="greetings-line-card"><div class="telephone-bubble-copy"><p class="telephone-line-hanzi${line.className ? ` ${line.className}` : ""}">${line.hanzi}</p>${state2.showPinyin ? `<p class="telephone-line-pinyin">${line.pinyin}</p>` : ""}${state2.showEnglish ? `<p class="telephone-line-english">${line.english}</p>` : ""}</div></article>`).join("")}</div></div></section>`;
+    }
     function renderWorldExplorer() {
       const lesson = lessonForCurrentBook();
       if (!lesson) return;
       if (lesson === weatherLesson) return renderWeatherExplorer();
+      if (lesson === natureLesson) return renderNatureExplorer();
       const hasScene = Boolean(lesson.imagePath);
       focusExplorer2.innerHTML = `
       <div class="time-date-board world-lesson-board">
@@ -7966,7 +8033,7 @@
         ${hasScene ? `<section class="world-scene-card"><img src="${lesson.imagePath}" alt="${lesson.imageAlt}" /><div>${lesson.sentences.map((line) => `<button class="small-button is-action-button" type="button" data-world-sentence="${line.audio}">${line.hanzi}</button>`).join("")}</div></section>` : ""}
         <div class="time-months-heading"><p class="body-match-kicker">Book words</p></div>
         <div class="time-asset-grid world-asset-grid">
-          ${lesson.items.map((item) => `<button class="time-asset-card" type="button" data-world-item="${item.id}">${item.imagePath ? `<img class="time-asset-image" src="${item.imagePath}" alt="${item.imageAlt}" />` : ""}<span class="time-asset-hanzi">${item.hanzi}</span>${state2.showPinyin ? `<span class="time-asset-pinyin">${item.pinyin}</span>` : ""}${state2.showEnglish ? `<span class="time-asset-english">${item.english}</span>` : ""}${item.phrase ? `<span class="time-asset-context">${item.phrase}</span>` : ""}</button>`).join("")}
+          ${lesson.items.map((item) => `<button class="time-asset-card book-word-card" type="button" data-world-item="${item.id}">${item.imagePath ? `<img class="book-word-image" src="${item.imagePath}" alt="${item.imageAlt}" />` : ""}<span class="book-word-copy"><span class="time-asset-hanzi">${item.hanzi}</span>${state2.showPinyin ? `<span class="time-asset-pinyin">${item.pinyin}</span>` : ""}${state2.showEnglish ? `<span class="time-asset-english">${item.english}</span>` : ""}${item.phrase ? `<span class="time-asset-context">${item.phrase}</span>` : ""}</span></button>`).join("")}
         </div>
       </div>
     `;
@@ -7987,11 +8054,15 @@
         scene.items.push(item);
         groups.set(item.imagePath, scene);
         return groups;
-      }, /* @__PURE__ */ new Map()).values()).map((scene) => ({ ...scene, title: sceneLabels[scene.items[0].id] }));
+      }, /* @__PURE__ */ new Map()).values()).map((scene) => ({
+        ...scene,
+        title: sceneLabels[scene.items[0].id],
+        lines: [{ hanzi: `${scene.items.map((item) => item.hanzi).join("\u3002")}\u3002`, pinyin: `${scene.items.map((item) => item.pinyin).join(". ")}.`, english: scene.items.map((item) => item.english).join(" "), className: "weather-scene-line" }]
+      }));
       focusExplorer2.innerHTML = `
       <div class="time-date-board school-topic-board">
         <div class="numbers-stage-card"><p class="body-match-kicker">${currentBook2().label} Lesson ${currentLesson2().lesson}</p><h4>${weatherLesson.title}</h4><p>${weatherLesson.summary}</p></div>
-        <section class="school-lesson-section is-weather"><div class="school-scene-grid">${scenes.map((scene, index) => `<section class="greetings-exchange school-scene-card"><div class="greetings-exchange-top"><div><p class="body-match-kicker">${scene.title}</p></div><button class="small-button is-play-button" type="button" data-weather-scene="${index}">Play</button></div><div class="school-scene-layout"><img class="school-scene-image" src="${scene.imagePath}" alt="${scene.imageAlt}" /><div class="greetings-line-stack"><article class="greetings-line-card"><div class="telephone-bubble-copy"><p class="telephone-line-hanzi weather-scene-line">${scene.items.map((item) => item.hanzi).join("\u3002")}\u3002</p>${state2.showPinyin ? `<p class="telephone-line-pinyin">${scene.items.map((item) => item.pinyin).join(". ")}.</p>` : ""}${state2.showEnglish ? `<p class="telephone-line-english">${scene.items.map((item) => item.english).join(" ")}</p>` : ""}</div></article></div></div></section>`).join("")}</div></section>
+        <section class="school-lesson-section is-weather"><div class="school-scene-grid">${scenes.map((scene, index) => worldSceneCardMarkup(scene, { playAttribute: "data-weather-scene", index }))}</div></section>
         <section class="visual-topic-notes school-review-notes">
           <p class="body-match-kicker">Useful notes</p>
           <div class="visual-topic-note-grid school-review-grid">
@@ -8005,6 +8076,21 @@
       focusExplorer2.querySelectorAll("[data-weather-scene]").forEach((button) => button.addEventListener("click", () => {
         const scene = scenes[Number(button.dataset.weatherScene)];
         if (scene && state2.tapAudioEnabled) speak2(scene.items.map((item) => item.audio).join("\uFF0C"), 0.74);
+      }));
+    }
+    function renderNatureExplorer() {
+      focusExplorer2.innerHTML = `
+      <div class="time-date-board school-topic-board">
+        <div class="numbers-stage-card"><p class="body-match-kicker">${currentBook2().label} Lesson ${currentLesson2().lesson}</p><h4>${natureLesson.title}</h4><p>${natureLesson.summary}</p></div>
+        <section class="school-lesson-section is-nature"><div class="school-scene-grid is-single">${natureLesson.scenes.map((scene, index) => worldSceneCardMarkup({ ...scene, imageClass: "nature-scene-image" }, { playAttribute: "data-nature-scene", index, compact: true, extraClass: "nature-scene-card" }))}</div></section>
+        <section class="school-lesson-section"><div class="time-months-heading"><p class="body-match-kicker">Book words</p></div><div class="time-asset-grid world-asset-grid nature-word-grid">${natureLesson.items.map((item) => `<button class="time-asset-card nature-word-card" type="button" data-world-item="${item.id}" aria-label="${item.hanzi}\uFF0C${item.pinyin}\uFF0C${item.english}"><span class="nature-word-row" style="display:flex; width:100%; align-items:center; gap:0.9rem; text-align:left;"><span class="nature-word-icon" style="flex:0 0 4.5rem;">${natureIconMarkup(item.id)}</span><span class="nature-word-copy" style="display:flex; flex:1 1 auto; flex-direction:column; align-items:flex-start; justify-content:center; gap:0.16rem;"><span class="time-asset-hanzi">${item.hanzi}</span>${state2.showPinyin ? `<span class="time-asset-pinyin">${item.pinyin}</span>` : ""}${state2.showEnglish ? `<span class="time-asset-english">${item.english}</span>` : ""}</span></span></button>`).join("")}</div></section>
+        <section class="visual-topic-notes school-review-notes"><p class="body-match-kicker">Useful notes</p><div class="visual-topic-note-grid school-review-grid"><article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">${natureLesson.usefulNote.hanzi}</p>${state2.showPinyin ? `<p class="visual-topic-note-pinyin">${natureLesson.usefulNote.pinyin}</p>` : ""}${state2.showEnglish ? `<p class="visual-topic-note-english">${natureLesson.usefulNote.english}</p>` : ""}</article></div></section>
+      </div>
+    `;
+      focusExplorer2.querySelectorAll("[data-world-item]").forEach((button) => button.addEventListener("click", () => selectFocusItem2(button.dataset.worldItem, { playAudio: true })));
+      focusExplorer2.querySelectorAll("[data-nature-scene]").forEach((button) => button.addEventListener("click", () => {
+        const scene = natureLesson.scenes[Number(button.dataset.natureScene)];
+        if (scene && state2.tapAudioEnabled) speak2(scene.lines.map((line) => line.audio).join("\uFF0C"), 0.74);
       }));
     }
     function shuffled(items) {
@@ -8138,15 +8224,55 @@
         if (state2.tapAudioEnabled) speak2(button.dataset.worldSay, 0.78);
       }));
     }
+    function ensureNatureFillPractice() {
+      if (!state2.worldNatureFillRoundIds?.length || state2.worldNatureFillRoundIds.length !== natureFillRounds.length) {
+        state2.worldNatureFillRoundIds = shuffled(natureFillRounds.map((round) => round.id));
+        state2.worldNatureFillRoundIndex = 0;
+        resetNatureFillChoices();
+      }
+    }
+    function resetNatureFillChoices() {
+      state2.worldNatureFillSubjectChoices = shuffled(["\u767D\u5929", "\u665A\u4E0A", "\u5730\u4E0A"]);
+      state2.worldNatureFillWordChoices = shuffled(natureFillRounds.map((round) => round.word));
+      state2.worldNatureFillSubjectPicked = "";
+      state2.worldNatureFillWordPicked = "";
+      state2.worldNatureFillSubjectResult = "";
+      state2.worldNatureFillWordResult = "";
+    }
+    function currentNatureFillRound() {
+      ensureNatureFillPractice();
+      const id = state2.worldNatureFillRoundIds[state2.worldNatureFillRoundIndex];
+      return natureFillRounds.find((item) => item.id === id) ?? natureFillRounds[0];
+    }
     function renderNaturePractice() {
-      const target = natureLesson.sentences[Math.floor(Math.random() * natureLesson.sentences.length)];
+      const round = currentNatureFillRound();
+      const complete = state2.worldNatureFillSubjectResult === "correct" && state2.worldNatureFillWordResult === "correct";
       activityPanelTitle2.textContent = "Let's practice";
-      activityPanelSummary2.textContent = "Look at the day-and-night scene, listen to a sentence, then say it back.";
+      activityPanelSummary2.textContent = "Look at the picture and complete the sentence with the right words.";
       activityList2.className = "support-list";
-      activityList2.innerHTML = `<section class="practice-split-card practice-say-card"><div class="numbers-game-top"><div><p class="body-match-kicker">Describe nature</p><p class="numbers-game-note">Play the sentence, point to it in the picture, then say it back.</p></div><button class="small-button is-play-button" type="button" data-world-nature-play>Play</button></div><p class="world-nature-sentence">${target.hanzi}</p>${state2.showPinyin ? `<p>${target.pinyin}</p>` : ""}${state2.showEnglish ? `<p>${target.english}</p>` : ""}</section>`;
-      activityList2.querySelector("[data-world-nature-play]")?.addEventListener("click", () => {
-        if (state2.tapAudioEnabled) speak2(target.audio, 0.72);
+      activityList2.innerHTML = `<section class="practice-split-card nature-fill-practice"><div class="numbers-game-top"><div><p class="body-match-kicker">\u770B\u56FE\u586B\u4E00\u586B</p><p class="numbers-game-note">Choose the two words that make the sentence match the picture.</p></div><button class="small-button is-play-button" type="button" data-nature-fill-play>Play</button></div><p class="nature-fill-sentence"><span class="weather-fill-blank${state2.worldNatureFillSubjectResult ? ` is-${state2.worldNatureFillSubjectResult}` : ""}">${state2.worldNatureFillSubjectPicked || "____"}</span>\u6709<span class="weather-fill-blank${state2.worldNatureFillWordResult ? ` is-${state2.worldNatureFillWordResult}` : ""}">${state2.worldNatureFillWordPicked || "____"}</span><span class="nature-fill-inline-icon">${natureIconMarkup(round.id)}</span>\u3002</p>${complete && state2.showPinyin ? `<p class="numbers-game-pinyin">${round.pinyin}</p>` : ""}${complete && state2.showEnglish ? `<p class="numbers-game-english">${round.english}</p>` : ""}<div class="weather-fill-choice-groups"><div><p class="weather-fill-choice-label">\u7B2C\u4E00\u4E2A\u8BCD</p><div class="weather-fill-options">${state2.worldNatureFillSubjectChoices.map((choice) => `<button class="weather-fill-option${state2.worldNatureFillSubjectPicked === choice ? ` is-${state2.worldNatureFillSubjectResult}` : ""}" type="button" data-nature-fill-subject="${choice}">${choice}</button>`).join("")}</div></div><div><p class="weather-fill-choice-label">\u6709\u4EC0\u4E48\uFF1F</p><div class="weather-fill-options">${state2.worldNatureFillWordChoices.map((choice) => `<button class="weather-fill-option${state2.worldNatureFillWordPicked === choice ? ` is-${state2.worldNatureFillWordResult}` : ""}" type="button" data-nature-fill-word="${choice}">${choice}</button>`).join("")}</div></div></div>${state2.worldNatureFillSubjectResult === "wrong" || state2.worldNatureFillWordResult === "wrong" ? '<p class="weather-fill-feedback">\u518D\u770B\u770B\u56FE\uFF0C\u60F3\u60F3\u53E5\u5B50\u7684\u7B2C\u4E00\u4E2A\u8BCD\u548C\u6709\u4EC0\u4E48\u3002</p>' : ""}</section>`;
+      activityList2.querySelector("[data-nature-fill-play]")?.addEventListener("click", () => {
+        if (complete) {
+          state2.worldNatureFillRoundIndex = (state2.worldNatureFillRoundIndex + 1) % state2.worldNatureFillRoundIds.length;
+          resetNatureFillChoices();
+          renderActivityPanel2(currentTopic2());
+          return;
+        }
+        if (state2.tapAudioEnabled) speak2(round.word, 0.76);
       });
+      activityList2.querySelectorAll("[data-nature-fill-subject]").forEach((button) => button.addEventListener("click", () => {
+        state2.worldNatureFillSubjectPicked = button.dataset.natureFillSubject;
+        state2.worldNatureFillSubjectResult = state2.worldNatureFillSubjectPicked === round.subject ? "correct" : "wrong";
+        if (state2.worldNatureFillSubjectResult === "correct" && state2.tapAudioEnabled) speak2(round.subject, 0.76);
+        renderActivityPanel2(currentTopic2());
+      }));
+      activityList2.querySelectorAll("[data-nature-fill-word]").forEach((button) => button.addEventListener("click", () => {
+        state2.worldNatureFillWordPicked = button.dataset.natureFillWord;
+        state2.worldNatureFillWordResult = state2.worldNatureFillWordPicked === round.word ? "correct" : "wrong";
+        const nowComplete = state2.worldNatureFillSubjectResult === "correct" && state2.worldNatureFillWordResult === "correct";
+        if (nowComplete && state2.tapAudioEnabled) speak2(`${round.subject}\u6709${round.word}`, 0.76);
+        renderActivityPanel2(currentTopic2());
+      }));
     }
     function ensureWeatherDressPractice() {
       if (!state2.worldWeatherDressRoundIds?.length || state2.worldWeatherDressRoundIds.length !== weatherDressRounds.length) {

@@ -551,14 +551,16 @@ function renderTimeAssetGrid(items, modifier, collection = modifier) {
     ${items
       .map(
         (item) => `
-          <button class="time-asset-card" type="button" data-time-asset="${collection}:${item.id}">
-            <img class="time-asset-image" src="${item.imagePath}" alt="${item.english}" />
-            ${item.hideLabels || item.hideLabelHanzi ? "" : item.words ? `<span class="time-asset-word-list">${item.words.map((word) => `<span>${word}</span>`).join("")}</span>` : `<span class="time-asset-hanzi">${item.hanzi}</span>`}
-            ${!item.hideLabels && !item.hideLabelDetails && state.showPinyin ? `<span class="time-asset-pinyin">${item.pinyin}</span>` : ""}
-            ${!item.hideLabels && !item.hideLabelDetails && state.showEnglish ? `<span class="time-asset-english">${item.english}</span>` : ""}
-            ${item.context ? `<span class="time-asset-context">${item.context}</span>` : ""}
-            ${item.contextPinyin && state.showPinyin ? `<span class="time-asset-context-pinyin">${item.contextPinyin}</span>` : ""}
-            ${item.contextEnglish && state.showEnglish ? `<span class="time-asset-context-english">${item.contextEnglish}</span>` : ""}
+          <button class="time-asset-card book-word-card" type="button" data-time-asset="${collection}:${item.id}">
+            <img class="book-word-image" src="${item.imagePath}" alt="${item.english}" />
+            <span class="book-word-copy">
+              ${item.hideLabels || item.hideLabelHanzi ? "" : item.words ? `<span class="time-asset-word-list">${item.words.map((word) => `<span>${word}</span>`).join("")}</span>` : `<span class="time-asset-hanzi">${item.hanzi}</span>`}
+              ${!item.hideLabels && !item.hideLabelDetails && state.showPinyin ? `<span class="time-asset-pinyin">${item.pinyin}</span>` : ""}
+              ${!item.hideLabels && !item.hideLabelDetails && state.showEnglish ? `<span class="time-asset-english">${item.english}</span>` : ""}
+              ${item.context ? `<span class="time-asset-context">${item.context}</span>` : ""}
+              ${item.contextPinyin && state.showPinyin ? `<span class="time-asset-context-pinyin">${item.contextPinyin}</span>` : ""}
+              ${item.contextEnglish && state.showEnglish ? `<span class="time-asset-context-english">${item.contextEnglish}</span>` : ""}
+            </span>
           </button>
         `
       )

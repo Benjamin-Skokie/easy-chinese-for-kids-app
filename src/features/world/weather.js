@@ -15,8 +15,36 @@ export const natureLesson = {
   title: "Nature",
   summary: "Describe what is in the sky and on the ground using 天上有… and 地上有….",
   imagePath: "assets/illustrated-nature/day-night-nature.webp",
-  imageAlt: "A day and night nature scene with sun, moon, stars, trees, flowers, and grass",
+  usefulNote: {
+    hanzi: "抬头看天上，低头看地上。",
+    pinyin: "tái tóu kàn tiān shàng, dī tóu kàn dì shàng.",
+    english: "Look up for the sky; look down for the ground."
+  },
+  scenes: [
+    {
+      id: "look-up",
+      title: "白天",
+      imagePath: "assets/illustrated-nature/daytime-nature.webp",
+      imageAlt: "The sun high in a bright daytime sky above trees, small red flowers, and grass",
+      lines: [
+        { hanzi: "天上有太阳。", pinyin: "tiān shàng yǒu tài yáng.", english: "There is a sun in the sky.", audio: "天上有太阳" },
+        { hanzi: "地上有树、花和草。", pinyin: "dì shàng yǒu shù, huā hé cǎo.", english: "There are trees, flowers, and grass on the ground.", audio: "地上有树花和草" }
+      ]
+    },
+    {
+      id: "look-down",
+      title: "晚上",
+      imagePath: "assets/illustrated-nature/nighttime-nature.webp",
+      imageAlt: "The moon and stars high in a night sky above trees and grass",
+      lines: [
+        { hanzi: "天上有星星。", pinyin: "tiān shàng yǒu xīng xing.", english: "There are stars in the sky.", audio: "天上有星星" },
+        { hanzi: "天上有月亮。", pinyin: "tiān shàng yǒu yuè liang.", english: "There is a moon in the sky.", audio: "天上有月亮" }
+      ]
+    }
+  ],
   items: [
+    { id: "daytime", hanzi: "白天", pinyin: "bái tiān", english: "daytime", audio: "白天" },
+    { id: "nighttime", hanzi: "晚上", pinyin: "wǎn shang", english: "nighttime", audio: "晚上" },
     { id: "sky", hanzi: "天上", pinyin: "tiān shàng", english: "in the sky", audio: "天上" },
     { id: "sun", hanzi: "太阳", pinyin: "tài yáng", english: "sun", audio: "太阳" },
     { id: "star", hanzi: "星星", pinyin: "xīng xing", english: "star", audio: "星星" },
@@ -34,12 +62,13 @@ export const natureLesson = {
     { hanzi: "地上有花。", pinyin: "dì shàng yǒu huā.", english: "There are flowers on the ground.", audio: "地上有花" },
     { hanzi: "地上有草。", pinyin: "dì shàng yǒu cǎo.", english: "There is grass on the ground.", audio: "地上有草" },
     { hanzi: "天上有太阳、星星和月亮。", pinyin: "tiān shàng yǒu tài yáng, xīng xing hé yuè liang.", english: "There are a sun, stars, and a moon in the sky.", audio: "天上有太阳星星和月亮" },
-    { hanzi: "地上有绿树、红花和小草。", pinyin: "dì shàng yǒu lǜ shù, hóng huā hé xiǎo cǎo.", english: "There are green trees, red flowers, and small grass on the ground.", audio: "地上有绿树红花和小草" }
+    { hanzi: "地上有树、花和草。", pinyin: "dì shàng yǒu shù, huā hé cǎo.", english: "There are trees, flowers, and grass on the ground.", audio: "地上有树花和草" }
   ]
 };
 
 export const weatherTopic = {
   id: "weather",
+  ownsExplorerContent: true,
   title: "Weather",
   summary: "Use concrete daily weather phrases for rain, snow, sun, wind, heat, and cold.",
   progressLabel: "4B Lesson 1",
@@ -54,6 +83,7 @@ export const weatherTopic = {
 
 export const natureTopic = {
   id: "nature",
+  ownsExplorerContent: true,
   title: "Nature",
   summary: "Look up and down: describe what is in the sky and on the ground.",
   progressLabel: "3B Lesson 7",
@@ -61,7 +91,7 @@ export const natureTopic = {
   iconColor: "#6e9872",
   focus: { hanzi: "天上有太阳。", pinyin: "tiān shàng yǒu tài yáng.", english: "There is a sun in the sky.", audio: "天上有太阳" },
   parentGuide: "Point outside, or use the scene: ask what is in the sky and what is on the ground before saying the full sentence together.",
-  cultureGuide: "This lesson carries colour naturally into meaningful descriptions: 绿树、红花和小草。",
+  cultureGuide: "Keep the focus on the sky-and-ground sentence pattern; colour is not a target of this lesson.",
   activities: ["Tap to hear", "Look up and down", "Describe the scene", "Say the full sentence"],
   steps: [{ book: "3B", lesson: 7, title: "Nature", note: "Describe what is in the sky and on the ground." }]
 };

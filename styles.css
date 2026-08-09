@@ -3261,6 +3261,12 @@ h4 {
   align-content: center;
 }
 
+.school-word-card:not(.book-word-card) > span {
+  display: grid;
+  gap: 5px;
+  justify-items: center;
+}
+
 .school-build-visual {
   aspect-ratio: 4 / 3;
 }
@@ -3388,6 +3394,90 @@ h4 {
 
 .weather-scene-line {
   white-space: nowrap;
+}
+
+.nature-scene-image {
+  aspect-ratio: 16 / 9;
+  object-fit: contain;
+}
+
+.nature-word-card {
+  min-height: 5.75rem;
+  padding: 0.7rem;
+}
+
+.nature-word-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.world-asset-grid .time-asset-card.nature-word-card {
+  align-items: center;
+}
+
+.nature-word-row {
+  box-sizing: border-box;
+  padding-left: 0.5rem;
+}
+
+.nature-word-icon {
+  display: grid;
+  width: 4.5rem;
+  height: 3.45rem;
+  place-items: center;
+}
+
+.nature-word-copy {
+  min-width: 0;
+  padding-left: 1.15rem;
+}
+
+.nature-word-card .time-asset-hanzi,
+.nature-word-card .time-asset-pinyin,
+.nature-word-card .time-asset-english {
+  text-align: left;
+}
+
+.nature-word-card .time-asset-hanzi {
+  font-size: 1.65rem;
+  line-height: 1.1;
+}
+
+.nature-word-card .time-asset-pinyin,
+.nature-word-card .time-asset-english {
+  font-size: 1.02rem;
+}
+
+.nature-word-icon svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.nature-fill-inline-icon {
+  display: inline-block;
+  width: 1.45em;
+  height: 1.1em;
+  margin-left: 0.2em;
+  vertical-align: -0.13em;
+}
+
+.nature-fill-inline-icon svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.nature-fill-practice {
+  display: grid;
+  gap: 1rem;
+}
+
+.nature-fill-sentence {
+  margin: 0;
+  text-align: center;
+  font-family: var(--hanzi-font);
+  font-size: 1.55rem;
+  line-height: 1.6;
 }
 
 .world-favourite-colour-options {
@@ -3686,6 +3776,46 @@ h4 {
 .time-asset-context-pinyin {
   color: var(--berry-dark);
   font-weight: 700;
+}
+
+.book-word-card {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  min-height: 6rem;
+  padding: 0.65rem 0.85rem;
+  text-align: left;
+}
+
+.book-word-image {
+  display: block;
+  flex: 0 0 5.25rem;
+  width: 5.25rem;
+  height: 4.25rem;
+  object-fit: contain;
+}
+
+.book-word-copy {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  min-width: 0;
+  gap: 0.16rem;
+}
+
+.book-word-card .time-asset-hanzi,
+.book-word-card .time-asset-pinyin,
+.book-word-card .time-asset-english,
+.book-word-card .time-asset-context,
+.book-word-card .time-asset-context-pinyin,
+.book-word-card .time-asset-context-english {
+  text-align: left;
+}
+
+.book-word-card .time-asset-word-list {
+  justify-content: flex-start;
 }
 
 .time-months-intro {
@@ -6828,6 +6958,17 @@ h4 {
 }
 
 @media (max-width: 760px) {
+  .book-word-card {
+    gap: 0.5rem;
+    padding: 0.55rem;
+  }
+
+  .book-word-image {
+    flex-basis: 3.75rem;
+    width: 3.75rem;
+    height: 3.4rem;
+  }
+
   .visual-topic-note-grid {
     grid-template-columns: 1fr;
   }
@@ -6841,6 +6982,10 @@ h4 {
   .time-asset-grid-date,
   .comparison-word-grid,
   .time-routine-picker {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .nature-word-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 

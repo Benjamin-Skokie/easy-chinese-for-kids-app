@@ -1,4 +1,4 @@
-import { createReadStream, existsSync, readFileSync } from "node:fs";
+import { createReadStream, existsSync, readFileSync, watch } from "node:fs";
 import { createServer } from "node:http";
 import { extname, resolve, sep } from "node:path";
 import { context } from "esbuild";
@@ -59,6 +59,10 @@ const buildContext = await context({
 await buildContext.rebuild();
 await buildContext.watch();
 
+const staticReloadWatchers = ["index.html", "styles.css"].map((file) =>
+  watch(resolve(root, file), () => reloadClients())
+);
+
 const server = createServer((request, response) => {
   const requestUrl = new URL(request.url ?? "/", `http://localhost:${port}`);
   if (requestUrl.pathname === "/__dev-reload") {
@@ -99,6 +103,7 @@ server.listen(port, "127.0.0.1", () => {
 
 async function shutdown() {
   for (const client of clients) client.end();
+  for (const watcher of staticReloadWatchers) watcher.close();
   await buildContext.dispose();
   server.close();
 }

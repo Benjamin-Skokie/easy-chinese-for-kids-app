@@ -161,7 +161,13 @@ assert(clothesMatchItems.length === 5, "clothes matching set is incomplete");
 assert(familyPractice.length === 2, "family lesson scenes are incomplete");
 assert(colourLessons["1b"].items.length === 4, "1B colour word set is incomplete");
 assert(colourLessons["2a"].items.length === 9, "2A colour word set is incomplete");
-assert(natureLesson.items.length === 8 && natureLesson.sentences.length === 8, "Nature lesson is incomplete");
+const natureRequiredWords = ["白天", "晚上", "天上", "太阳", "星星", "月亮", "地上", "树", "花", "草"];
+assert(
+  natureLesson.items.length === natureRequiredWords.length &&
+    natureRequiredWords.every((word) => natureLesson.items.some((item) => item.hanzi === word)) &&
+    natureLesson.sentences.length === 8,
+  "Nature lesson is incomplete"
+);
 assert(weatherLesson.items.length === 6, "Weather lesson is incomplete");
 
 function assertUnique(values, label) {

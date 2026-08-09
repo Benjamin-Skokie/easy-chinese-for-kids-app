@@ -485,16 +485,31 @@ test("clothes owns its scenes and picture matching set", () => {
 });
 
 test("Nature and Weather remain separate book topics", () => {
+  const topicDetailSource = readFileSync("src/core/topic-detail-runtime.js", "utf8");
+  const focusRuntimeSource = readFileSync("src/core/focus-runtime.js", "utf8");
+  const worldRuntimeSource = readFileSync("src/features/world/world-runtime.js", "utf8");
   assert.equal(weatherTopic.id, "weather");
+  assert.equal(weatherTopic.ownsExplorerContent, true);
   assert.equal(weatherTopic.steps.length, 1);
   assert.equal(weatherTopic.steps[0].book, "4B");
   assert.equal(natureTopic.id, "nature");
+  assert.equal(natureTopic.ownsExplorerContent, true);
   assert.equal(natureTopic.steps.length, 1);
   assert.equal(natureTopic.steps[0].book, "3B");
-  assert.equal(natureLesson.items.length, 8);
+  assert.equal(natureLesson.items.length, 10);
   assert.equal(natureLesson.sentences.length, 8);
+  assert.equal(natureLesson.scenes.length, 2);
+  assert.deepEqual(natureLesson.scenes.map((scene) => scene.title), ["白天", "晚上"]);
+  assert.match(natureLesson.scenes[0].imagePath, /daytime-nature\.webp/);
+  assert.match(natureLesson.scenes[1].imagePath, /nighttime-nature\.webp/);
+  assert.match(natureLesson.scenes.flatMap((scene) => scene.lines).map((line) => line.hanzi).join(" "), /地上有树、花和草/);
+  assert.equal(natureLesson.usefulNote.hanzi, "抬头看天上，低头看地上。");
   assert.equal(weatherLesson.items.length, 6);
   assert.match(natureLesson.imagePath, /illustrated-nature\/day-night-nature\.webp/);
+  assert.match(topicDetailSource, /topic\.ownsExplorerContent/);
+  assert.match(focusRuntimeSource, /currentTopic\(\)\.ownsExplorerContent/);
+  assert.match(worldRuntimeSource, /function worldSceneCardMarkup/);
+  assert.equal((worldRuntimeSource.match(/worldSceneCardMarkup\(/g) ?? []).length, 3);
 });
 
 test("Weather groups repeated scene artwork into a two-by-two scene grid", () => {
@@ -524,6 +539,62 @@ test("Weather groups repeated scene artwork into a two-by-two scene grid", () =>
   assert.match(focusExplorer.innerHTML, /下雪了/);
   assert.match(focusExplorer.innerHTML, /今天很冷/);
   assert.match(focusExplorer.innerHTML, /下雪了。今天很冷。/);
+});
+
+test("Nature keeps its vocabulary inside the two scene cards", () => {
+  const focusExplorer = { innerHTML: "", querySelectorAll: () => [] };
+  const runtime = createWorldRuntime({
+    state: { showEnglish: true, showPinyin: true },
+    currentTopic: () => natureTopic,
+    currentBook: () => ({ id: "3b", label: "Book 3B" }),
+    currentLesson: () => ({ lesson: 7 }),
+    focusExplorer,
+    speak: () => {},
+    selectFocusItem: () => {}
+  });
+
+  runtime.renderWorldExplorer();
+  assert.equal((focusExplorer.innerHTML.match(/school-scene-card/g) ?? []).length, 2);
+  assert.match(focusExplorer.innerHTML, /Book words/);
+  assert.match(focusExplorer.innerHTML, /天上有太阳。/);
+  assert.match(focusExplorer.innerHTML, /天上有星星。/);
+  assert.match(focusExplorer.innerHTML, /天上有月亮。/);
+  assert.match(focusExplorer.innerHTML, /地上有树、花和草。/);
+  assert.match(focusExplorer.innerHTML, />白天</);
+  assert.match(focusExplorer.innerHTML, />晚上</);
+  assert.match(focusExplorer.innerHTML, /抬头看天上，低头看地上。/);
+  assert.match(focusExplorer.innerHTML, /nature-word-icon/);
+  assert.match(focusExplorer.innerHTML, /nature-word-copy/);
+  assert.match(focusExplorer.innerHTML, /nature-word-row/);
+});
+
+test("Nature practice fills a complete sentence from one inline visual cue", () => {
+  const focusExplorer = { innerHTML: "", querySelectorAll: () => [] };
+  const activityPanelTitle = { textContent: "" };
+  const activityPanelSummary = { textContent: "" };
+  const activityList = { className: "", innerHTML: "", querySelector: () => null, querySelectorAll: () => [] };
+  const runtime = createWorldRuntime({
+    state: { showEnglish: true, showPinyin: true, tapAudioEnabled: true },
+    currentTopic: () => natureTopic,
+    currentBook: () => ({ id: "3b", label: "Book 3B" }),
+    currentLesson: () => ({ lesson: 7 }),
+    focusExplorer,
+    activityPanelTitle,
+    activityPanelSummary,
+    activityList,
+    speak: () => {},
+    selectFocusItem: () => {},
+    renderActivityPanel: () => {}
+  });
+
+  runtime.renderWorldPractice(natureTopic);
+  assert.match(activityList.innerHTML, /看图填一填/);
+  assert.match(activityList.innerHTML, /data-nature-fill-subject/);
+  assert.match(activityList.innerHTML, /data-nature-fill-word/);
+  assert.match(activityList.innerHTML, /nature-fill-inline-icon/);
+  assert.match(activityList.innerHTML, /白天/);
+  assert.match(activityList.innerHTML, /晚上/);
+  assert.match(activityList.innerHTML, /地上/);
 });
 
 test("Weather practice connects a weather sentence to getting ready", () => {
@@ -569,6 +640,7 @@ test("animals owns its standalone topic definition", () => {
 });
 
 test("colours covers both book colour sets with pictured examples", () => {
+  assert.equal(coloursTopic.ownsExplorerContent, true);
   assert.equal(coloursTopic.id, "colours");
   assert.equal(colourLessons["1b"].items.length, 4);
   assert.equal(colourLessons["2a"].items.length, 9);
