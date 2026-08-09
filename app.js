@@ -530,6 +530,37 @@
     ]
   };
 
+  // src/features/school-life/school.js
+  var schoolTopicData = {
+    scenes: [
+      ["school", "School", "\u8FD9\u662F\u5B66\u6821\u3002", "zh\xE8 sh\xEC xu\xE9 xi\xE0o.", "This is a school.", "school_exterior_anchor.webp"],
+      ["classroom", "Classroom", "\u5B66\u6821\u6709\u6559\u5BA4\u3002", "xu\xE9 xi\xE0o y\u01D2u ji\xE0o sh\xEC.", "The school has classrooms.", "classroom_anchor.webp"],
+      ["library", "Library", "\u5B66\u6821\u6709\u56FE\u4E66\u9986\u3002", "xu\xE9 xi\xE0o y\u01D2u t\xFA sh\u016B gu\u01CEn.", "The school has a library.", "library_anchor.webp"],
+      ["playground", "Playground", "\u5B66\u6821\u6709\u64CD\u573A\u3002", "xu\xE9 xi\xE0o y\u01D2u c\u0101o ch\u01CEng.", "The school has a playground.", "playground_anchor.webp"],
+      ["cafeteria", "Cafeteria", "\u5B66\u6821\u6709\u98DF\u5802\u3002", "xu\xE9 xi\xE0o y\u01D2u sh\xED t\xE1ng.", "The school has a cafeteria.", "cafeteria_anchor.webp"],
+      ["auditorium", "Auditorium", "\u5B66\u6821\u6709\u793C\u5802\u3002", "xu\xE9 xi\xE0o y\u01D2u l\u01D0 t\xE1ng.", "The school has an auditorium.", "auditorium_anchor.webp"],
+      ["music-room", "Music room", "\u5B66\u6821\u6709\u97F3\u4E50\u6559\u5BA4\u3002\u97F3\u4E50\u6559\u5BA4\u6709\u94A2\u7434\u3002", "xu\xE9 xi\xE0o y\u01D2u y\u012Bn yu\xE8 ji\xE0o sh\xEC. y\u012Bn yu\xE8 ji\xE0o sh\xEC y\u01D2u g\u0101ng q\xEDn.", "The school has a music room. The music room has a piano.", "music_classroom_anchor.webp"]
+    ].map(([id, label, hanzi, pinyin, english, file, folder = "assets/illustrated-school-anchors"]) => ({ id, label, hanzi, pinyin, english, audio: id === "music-room" ? "\u5B66\u6821\u6709\u97F3\u4E50\u6559\u5BA4\u97F3\u4E50\u6559\u5BA4\u6709\u94A2\u7434" : hanzi, imagePath: `${folder}/${file}` })),
+    words: [
+      ["classroom", "\u6559\u5BA4", "ji\xE0o sh\xEC", "classroom", "classroom_anchor.webp"],
+      ["library", "\u56FE\u4E66\u9986", "t\xFA sh\u016B gu\u01CEn", "library", "library_anchor.webp"],
+      ["playground", "\u64CD\u573A", "c\u0101o ch\u01CEng", "playground", "playground_anchor.webp"],
+      ["cafeteria", "\u98DF\u5802", "sh\xED t\xE1ng", "cafeteria", "cafeteria_anchor.webp"],
+      ["auditorium", "\u793C\u5802", "l\u01D0 t\xE1ng", "auditorium", "auditorium_anchor.webp"],
+      ["music-room", "\u97F3\u4E50\u6559\u5BA4", "y\u012Bn yu\xE8 ji\xE0o sh\xEC", "music room", "music_classroom_anchor.webp"],
+      ["piano", "\u94A2\u7434", "g\u0101ng q\xEDn", "piano", "piano_anchor.webp"]
+    ].map(([id, hanzi, pinyin, english, file]) => ({ id, hanzi, pinyin, english, audio: id === "music-room" ? "\u97F3\u6708\u6559\u5BA4" : hanzi, imagePath: `assets/illustrated-school-anchors/${file}` }))
+  };
+  var schoolSentenceBuilds = [
+    { id: "classroom", imagePath: "assets/illustrated-school-anchors/classroom_anchor.webp", target: ["\u5B66\u6821", "\u6709", "\u6559\u5BA4"], distractors: ["\u4E66\u5305", "\u91CC", "\u559C\u6B22"], pinyin: "xu\xE9 xi\xE0o y\u01D2u ji\xE0o sh\xEC.", english: "The school has classrooms." },
+    { id: "library", imagePath: "assets/illustrated-school-anchors/library_anchor.webp", target: ["\u5B66\u6821", "\u6709", "\u56FE\u4E66\u9986"], distractors: ["\u4E66\u5305", "\u91CC", "\u559C\u6B22"], pinyin: "xu\xE9 xi\xE0o y\u01D2u t\xFA sh\u016B gu\u01CEn.", english: "The school has a library." },
+    { id: "playground", imagePath: "assets/illustrated-school-anchors/playground_anchor.webp", target: ["\u5B66\u6821", "\u6709", "\u64CD\u573A"], distractors: ["\u6587\u5177\u76D2", "\u91CC", "\u559C\u6B22"], pinyin: "xu\xE9 xi\xE0o y\u01D2u c\u0101o ch\u01CEng.", english: "The school has a playground." },
+    { id: "cafeteria", imagePath: "assets/illustrated-school-anchors/cafeteria_anchor.webp", target: ["\u5B66\u6821", "\u6709", "\u98DF\u5802"], distractors: ["\u6559\u5BA4", "\u91CC", "\u559C\u6B22"], pinyin: "xu\xE9 xi\xE0o y\u01D2u sh\xED t\xE1ng.", english: "The school has a cafeteria." },
+    { id: "auditorium", imagePath: "assets/illustrated-school-anchors/auditorium_anchor.webp", target: ["\u5B66\u6821", "\u6709", "\u793C\u5802"], distractors: ["\u4E66\u5305", "\u91CC", "\u559C\u6B22"], pinyin: "xu\xE9 xi\xE0o y\u01D2u l\u01D0 t\xE1ng.", english: "The school has an auditorium." },
+    { id: "music-room", imagePath: "assets/illustrated-school-anchors/music_classroom_anchor.webp", target: ["\u5B66\u6821", "\u6709", "\u97F3\u4E50\u6559\u5BA4"], distractors: ["\u6587\u5177\u76D2", "\u91CC", "\u559C\u6B22"], pinyin: "xu\xE9 xi\xE0o y\u01D2u y\u012Bn yu\xE8 ji\xE0o sh\xEC.", english: "The school has a music room.", audio: "\u5B66\u6821\u6709\u97F3\u4E50\u6559\u5BA4" },
+    { id: "music-room-piano", imagePath: "assets/illustrated-school-anchors/piano_anchor.webp", target: ["\u97F3\u4E50\u6559\u5BA4", "\u6709", "\u94A2\u7434"], distractors: ["\u6587\u5177\u76D2", "\u91CC", "\u559C\u6B22"], pinyin: "y\u012Bn yu\xE8 ji\xE0o sh\xEC y\u01D2u g\u0101ng q\xEDn.", english: "The music room has a piano.", audio: "\u97F3\u4E50\u6559\u5BA4\u6709\u94A2\u7434" }
+  ];
+
   // src/games/shared-lesson-practice.js
   function createSharedLessonPractice({ state: state2, speak: speak2, elements, documentRef = document }) {
     const { activityPanelTitle: activityPanelTitle2, activityPanelSummary: activityPanelSummary2, activityList: activityList2 } = elements;
@@ -1708,30 +1739,11 @@
     transport: transportVisualItems,
     rooms: roomVisualItems
   };
-  var schoolTopicData = {
+  var schoolTopicData2 = {
     stationery: stationeryTopicData,
     "school-supplies": schoolSuppliesTopicData,
     classroom: classroomTopicData,
-    school: {
-      scenes: [
-        ["school", "School", "\u8FD9\u662F\u5B66\u6821\u3002", "zh\xE8 sh\xEC xu\xE9 xi\xE0o.", "This is a school.", "school_exterior_anchor.webp"],
-        ["classroom", "Classroom", "\u5B66\u6821\u6709\u6559\u5BA4\u3002", "xu\xE9 xi\xE0o y\u01D2u ji\xE0o sh\xEC.", "The school has classrooms.", "classroom_anchor.webp"],
-        ["library", "Library", "\u5B66\u6821\u6709\u56FE\u4E66\u9986\u3002", "xu\xE9 xi\xE0o y\u01D2u t\xFA sh\u016B gu\u01CEn.", "The school has a library.", "library_anchor.webp"],
-        ["playground", "Playground", "\u5B66\u6821\u6709\u64CD\u573A\u3002", "xu\xE9 xi\xE0o y\u01D2u c\u0101o ch\u01CEng.", "The school has a playground.", "playground_anchor.webp"],
-        ["cafeteria", "Cafeteria", "\u5B66\u6821\u6709\u98DF\u5802\u3002", "xu\xE9 xi\xE0o y\u01D2u sh\xED t\xE1ng.", "The school has a cafeteria.", "cafeteria_anchor.webp"],
-        ["auditorium", "Auditorium", "\u5B66\u6821\u6709\u793C\u5802\u3002", "xu\xE9 xi\xE0o y\u01D2u l\u01D0 t\xE1ng.", "The school has an auditorium.", "auditorium_anchor.webp"],
-        ["music-room", "Music room", "\u5B66\u6821\u6709\u97F3\u4E50\u6559\u5BA4\u3002\u97F3\u4E50\u6559\u5BA4\u6709\u94A2\u7434\u3002", "xu\xE9 xi\xE0o y\u01D2u y\u012Bn yu\xE8 ji\xE0o sh\xEC. y\u012Bn yu\xE8 ji\xE0o sh\xEC y\u01D2u g\u0101ng q\xEDn.", "The school has a music room. The music room has a piano.", "music_classroom_anchor.webp"]
-      ].map(([id, label, hanzi, pinyin, english, file, folder = "assets/illustrated-school-anchors"]) => ({ id, label, hanzi, pinyin, english, audio: id === "music-room" ? "\u5B66\u6821\u6709\u97F3\u4E50\u6559\u5BA4\u97F3\u4E50\u6559\u5BA4\u6709\u94A2\u7434" : hanzi, imagePath: `${folder}/${file}` })),
-      words: [
-        ["classroom", "\u6559\u5BA4", "ji\xE0o sh\xEC", "classroom", "classroom_anchor.webp"],
-        ["library", "\u56FE\u4E66\u9986", "t\xFA sh\u016B gu\u01CEn", "library", "library_anchor.webp"],
-        ["playground", "\u64CD\u573A", "c\u0101o ch\u01CEng", "playground", "playground_anchor.webp"],
-        ["cafeteria", "\u98DF\u5802", "sh\xED t\xE1ng", "cafeteria", "cafeteria_anchor.webp"],
-        ["auditorium", "\u793C\u5802", "l\u01D0 t\xE1ng", "auditorium", "auditorium_anchor.webp"],
-        ["music-room", "\u97F3\u4E50\u6559\u5BA4", "y\u012Bn yu\xE8 ji\xE0o sh\xEC", "music room", "music_classroom_anchor.webp"],
-        ["piano", "\u94A2\u7434", "g\u0101ng q\xEDn", "piano", "piano_anchor.webp"]
-      ].map(([id, hanzi, pinyin, english, file]) => ({ id, hanzi, pinyin, english, audio: id === "music-room" ? "\u97F3\u6708\u6559\u5BA4" : hanzi, imagePath: `assets/illustrated-school-anchors/${file}` }))
-    },
+    school: schoolTopicData,
     "school-subjects": {
       scenes: [
         {
@@ -2036,18 +2048,10 @@
       ]
     }
   };
-  var schoolSentenceBuilds = {
+  var schoolSentenceBuilds2 = {
     stationery: stationerySentenceBuilds,
     "school-supplies": schoolSuppliesSentenceBuilds,
-    school: [
-      { id: "classroom", imagePath: "assets/illustrated-school-anchors/classroom_anchor.webp", target: ["\u5B66\u6821", "\u6709", "\u6559\u5BA4"], distractors: ["\u4E66\u5305", "\u91CC", "\u559C\u6B22"], pinyin: "xu\xE9 xi\xE0o y\u01D2u ji\xE0o sh\xEC.", english: "The school has classrooms." },
-      { id: "library", imagePath: "assets/illustrated-school-anchors/library_anchor.webp", target: ["\u5B66\u6821", "\u6709", "\u56FE\u4E66\u9986"], distractors: ["\u4E66\u5305", "\u91CC", "\u559C\u6B22"], pinyin: "xu\xE9 xi\xE0o y\u01D2u t\xFA sh\u016B gu\u01CEn.", english: "The school has a library." },
-      { id: "playground", imagePath: "assets/illustrated-school-anchors/playground_anchor.webp", target: ["\u5B66\u6821", "\u6709", "\u64CD\u573A"], distractors: ["\u6587\u5177\u76D2", "\u91CC", "\u559C\u6B22"], pinyin: "xu\xE9 xi\xE0o y\u01D2u c\u0101o ch\u01CEng.", english: "The school has a playground." },
-      { id: "cafeteria", imagePath: "assets/illustrated-school-anchors/cafeteria_anchor.webp", target: ["\u5B66\u6821", "\u6709", "\u98DF\u5802"], distractors: ["\u6559\u5BA4", "\u91CC", "\u559C\u6B22"], pinyin: "xu\xE9 xi\xE0o y\u01D2u sh\xED t\xE1ng.", english: "The school has a cafeteria." },
-      { id: "auditorium", imagePath: "assets/illustrated-school-anchors/auditorium_anchor.webp", target: ["\u5B66\u6821", "\u6709", "\u793C\u5802"], distractors: ["\u4E66\u5305", "\u91CC", "\u559C\u6B22"], pinyin: "xu\xE9 xi\xE0o y\u01D2u l\u01D0 t\xE1ng.", english: "The school has an auditorium." },
-      { id: "music-room", imagePath: "assets/illustrated-school-anchors/music_classroom_anchor.webp", target: ["\u5B66\u6821", "\u6709", "\u97F3\u4E50\u6559\u5BA4"], distractors: ["\u6587\u5177\u76D2", "\u91CC", "\u559C\u6B22"], pinyin: "xu\xE9 xi\xE0o y\u01D2u y\u012Bn yu\xE8 ji\xE0o sh\xEC.", english: "The school has a music room.", audio: "\u5B66\u6821\u6709\u97F3\u4E50\u6559\u5BA4" },
-      { id: "music-room-piano", imagePath: "assets/illustrated-school-anchors/piano_anchor.webp", target: ["\u97F3\u4E50\u6559\u5BA4", "\u6709", "\u94A2\u7434"], distractors: ["\u6587\u5177\u76D2", "\u91CC", "\u559C\u6B22"], pinyin: "y\u012Bn yu\xE8 ji\xE0o sh\xEC y\u01D2u g\u0101ng q\xEDn.", english: "The music room has a piano.", audio: "\u97F3\u4E50\u6559\u5BA4\u6709\u94A2\u7434" }
-    ],
+    school: schoolSentenceBuilds,
     "school-subjects": [
       { id: "ask-favorite", imagePath: "assets/illustrated-school-subjects/subjects-dialogue.webp", target: ["\u4F60", "\u559C\u6B22", "\u4EC0\u4E48", "\u8BFE"], distractors: ["\u5B66\u6821", "\u6709", "\u56FE\u4E66\u9986"], pinyin: "n\u01D0 x\u01D0 huan sh\xE9n me k\xE8?", english: "What class do you like?" },
       { id: "go-music", imagePath: "assets/illustrated-activities/anan_go_to_music_class.webp", target: ["\u6211", "\u53BB", "\u4E0A", "\u97F3\u4E50\u8BFE"], distractors: ["\u5B66\u6821", "\u6709", "\u56FE\u4E66\u9986"], pinyin: "w\u01D2 q\xF9 sh\xE0ng y\u012Bn yu\xE8 k\xE8.", english: "I go to music class.", audio: "\u6211\u53BB\u4E0A\u97F3\u6708\u8BFE" },
@@ -5365,7 +5369,7 @@
     });
   }
   function schoolWordGroups(topicId = currentTopic().id) {
-    const data = schoolTopicData[topicId];
+    const data = schoolTopicData2[topicId];
     if (!data?.wordGroups) return [];
     return data.wordGroups.map((group) => ({
       ...group,
@@ -5380,7 +5384,7 @@
     }));
   }
   function schoolPracticeItems(topicId = currentTopic().id) {
-    const data = schoolTopicData[topicId];
+    const data = schoolTopicData2[topicId];
     return data?.practiceItems ?? data?.words ?? schoolWordGroups(topicId).flatMap((group) => group.items);
   }
   function backpackGameItems() {
@@ -5493,7 +5497,7 @@
     state.schoolMatchFeedback = "";
   }
   function mealsConversationItems() {
-    return schoolTopicData["meals-feelings"]?.conversationPairs ?? [];
+    return schoolTopicData2["meals-feelings"]?.conversationPairs ?? [];
   }
   function resetMealsConversationMatch() {
     const ids = mealsConversationItems().map((item) => item.id);
@@ -5539,7 +5543,7 @@
     renderActivityPanel(currentTopic());
   }
   function mealsPictureChoiceItems() {
-    return schoolTopicData["meals-feelings"]?.pictureChoices ?? [];
+    return schoolTopicData2["meals-feelings"]?.pictureChoices ?? [];
   }
   function resetMealsPictureQuestion() {
     const prompt = mealsPictureChoiceItems().find((item) => item.id === state.mealsPictureQuizOrder[state.mealsPictureQuizIndex]);
@@ -5673,11 +5677,11 @@
   `;
   }
   function classroomSentenceFrames() {
-    return schoolTopicData.classroom?.sentenceFrames ?? [];
+    return schoolTopicData2.classroom?.sentenceFrames ?? [];
   }
   function classroomSentenceWords() {
     return [
-      ...(schoolTopicData.classroom?.words ?? []).map((item) => item.id === "computer" ? { ...item, sentenceEnglish: "laptop" } : item),
+      ...(schoolTopicData2.classroom?.words ?? []).map((item) => item.id === "computer" ? { ...item, sentenceEnglish: "laptop" } : item),
       { id: "textbook", hanzi: "\u8BFE\u672C", pinyin: "k\xE8 b\u011Bn", english: "textbook", imagePath: "assets/illustrated-stationery/textbook.webp" },
       { id: "workbook", hanzi: "\u7EC3\u4E60\u672C", pinyin: "li\xE0n x\xED b\u011Bn", english: "workbook", imagePath: "assets/illustrated-stationery/workbook.webp" },
       { id: "pencil", hanzi: "\u94C5\u7B14", pinyin: "qi\u0101n b\u01D0", english: "pencil", imagePath: "assets/illustrated-stationery/pencil.webp" },
@@ -5727,7 +5731,7 @@
     const pinyin = `${frame.pinyin}${selectedWord?.pinyin ? ` ${selectedWord.pinyin}` : ""}.`;
     const english = classroomSentenceEnglish(frame, selectedWord);
     activityPanelTitle.textContent = "Let's practice";
-    activityPanelSummary.textContent = schoolTopicData.classroom.practiceSummary;
+    activityPanelSummary.textContent = schoolTopicData2.classroom.practiceSummary;
     activityList.className = "support-list";
     activityList.innerHTML = `
     <section class="family-practice-shell lesson-practice-shell">
@@ -5793,7 +5797,7 @@
     renderActivityPanel(currentTopic());
   }
   function currentSchoolBuildItem() {
-    const items = schoolSentenceBuilds[currentTopic().id] ?? [];
+    const items = schoolSentenceBuilds2[currentTopic().id] ?? [];
     return items.find((item) => item.id === state.schoolBuildOrder[state.schoolBuildIndex]) ?? items[0];
   }
   function prepareSchoolBuilder() {
@@ -5803,7 +5807,7 @@
     state.schoolBuildAvailableTokens = shuffleArray([...item?.target ?? [], ...item?.distractors ?? []]);
   }
   function ensureSchoolBuilder(topicId = currentTopic().id) {
-    const items = schoolSentenceBuilds[topicId] ?? [];
+    const items = schoolSentenceBuilds2[topicId] ?? [];
     const hasCurrentItems = state.schoolBuildOrder.length === items.length && state.schoolBuildOrder.every((id) => items.some((item) => item.id === id));
     if (state.schoolBuildTopicId !== topicId || !hasCurrentItems) {
       state.schoolBuildTopicId = topicId;
@@ -6149,7 +6153,7 @@
     }
     ensureSchoolPractice(topic.id);
     ensureSchoolBuilder(topic.id);
-    const topicData2 = schoolTopicData[topic.id];
+    const topicData2 = schoolTopicData2[topic.id];
     const item = currentSchoolBuildItem();
     const listen = {
       items: () => schoolPracticeItems(topic.id),
@@ -6181,7 +6185,7 @@
     ensureMealsPictureChoice();
     const items = mealsConversationItems();
     activityPanelTitle.textContent = "Let's practice";
-    activityPanelSummary.textContent = schoolTopicData[topic.id].practiceSummary;
+    activityPanelSummary.textContent = schoolTopicData2[topic.id].practiceSummary;
     activityList.className = "support-list";
     activityList.innerHTML = `
     <section class="family-practice-shell lesson-practice-shell">
@@ -6220,7 +6224,7 @@
   }
   function renderFoodPreferencesPractice(topic) {
     activityPanelTitle.textContent = "Let's practice";
-    activityPanelSummary.textContent = schoolTopicData[topic.id].practiceSummary;
+    activityPanelSummary.textContent = schoolTopicData2[topic.id].practiceSummary;
     activityList.className = "support-list";
     activityList.innerHTML = `
     <section class="family-practice-shell lesson-practice-shell">
@@ -6232,7 +6236,7 @@
     activityList.querySelectorAll("[data-food-preference-food]").forEach((button) => button.addEventListener("click", () => handleFoodPreferenceFill(button.dataset.foodPreferenceFood)));
   }
   function sharedLessonPracticeConfig(topic) {
-    if (schoolTopicData[topic.id]) {
+    if (schoolTopicData2[topic.id]) {
       return {
         summary: "Listen for a school word, then match each Chinese card to its English meaning.",
         shellClass: "lesson-practice-shell",
@@ -6484,7 +6488,7 @@
       activityList.innerHTML = "";
       return;
     }
-    if (schoolTopicData[topic.id]) {
+    if (schoolTopicData2[topic.id]) {
       renderSchoolPractice(topic);
       return;
     }
@@ -7583,7 +7587,7 @@
   }
   function renderSchoolExplorer(topicId) {
     const topic = currentTopic();
-    const data = schoolTopicData[topicId];
+    const data = schoolTopicData2[topicId];
     if (!data) {
       renderDefaultExplorer();
       return;
@@ -8277,7 +8281,7 @@
       renderRoomsExplorer();
       return;
     }
-    if (schoolTopicData[topic.id]) {
+    if (schoolTopicData2[topic.id]) {
       renderSchoolExplorer(topic.id);
       return;
     }
@@ -8386,7 +8390,7 @@
     renderSubtopicShelf(topic);
     focusDisplay.classList.toggle(
       "is-hidden",
-      topic.id === "body" || usesLessonTemplate(topic) || topic.id === "numbers" || topic.id === "multiplication-rhyme" || topic.id === "weekdays" || topic.id === "time-date" || topic.id === "dates" || topic.id === "comparisons" || topic.id === "positions" || topic.id === "transport" || topic.id === "daily-life" || topic.id === "identity" || topic.id === "clothes" || schoolTopicData[topic.id] || topic.id === "numbers" && currentNumberStage().telephoneMode
+      topic.id === "body" || usesLessonTemplate(topic) || topic.id === "numbers" || topic.id === "multiplication-rhyme" || topic.id === "weekdays" || topic.id === "time-date" || topic.id === "dates" || topic.id === "comparisons" || topic.id === "positions" || topic.id === "transport" || topic.id === "daily-life" || topic.id === "identity" || topic.id === "clothes" || schoolTopicData2[topic.id] || topic.id === "numbers" && currentNumberStage().telephoneMode
     );
     renderFocusControls();
     renderFocusDisplay(currentFocusItem());

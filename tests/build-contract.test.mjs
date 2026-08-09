@@ -13,6 +13,7 @@ import { roomScenes, roomVisualItems } from "../src/features/time-daily-life/roo
 import { stationeryPictureMatchRounds, stationerySentenceBuilds, stationeryTopicData } from "../src/features/school-life/stationery.js";
 import { schoolSuppliesSentenceBuilds, schoolSuppliesTopicData } from "../src/features/school-life/school-supplies.js";
 import { classroomTopicData } from "../src/features/school-life/classroom.js";
+import { schoolSentenceBuilds, schoolTopicData } from "../src/features/school-life/school.js";
 
 test("the local page loads a single bundled application script", () => {
   const html = readFileSync("index.html", "utf8");
@@ -110,4 +111,10 @@ test("classroom owns its scenes, words, and sentence frames", () => {
   assert.equal(classroomTopicData.scenes.length, 3);
   assert.equal(classroomTopicData.words.length, 8);
   assert.equal(classroomTopicData.sentenceFrames.length, 3);
+});
+
+test("school owns its scenes, words, and sentence practice", () => {
+  assert.equal(schoolTopicData.scenes.length, 7);
+  assert.equal(schoolTopicData.words.length, 7);
+  assert.equal(schoolSentenceBuilds.length, 7);
 });
