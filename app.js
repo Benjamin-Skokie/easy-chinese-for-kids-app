@@ -690,6 +690,59 @@
     { id: "milk", imagePath: "assets/illustrated-food/milk.webp", target: ["\u6211", "\u559D", "\u725B\u5976"], distractors: ["\u5403", "\u5B66\u6821", "\u6559\u5BA4"], pinyin: "w\u01D2 h\u0113 ni\xFA n\u01CEi.", english: "I drink milk." }
   ];
 
+  // src/features/food/food-preferences.js
+  var foodPreferencesTopicData = {
+    practiceSummary: "Make your own sentences about foods you like and do not like.",
+    scenes: [
+      {
+        id: "food-preferences-dialogue",
+        label: "Food talk",
+        hanzi: "\u6211\u559C\u6B22\u5403\u51B0\u6DC7\u6DCB\u3002\u4F60\u559C\u6B22\u5403\u4EC0\u4E48\uFF1F",
+        pinyin: "w\u01D2 x\u01D0 huan ch\u012B b\u012Bng q\xED l\xEDn. n\u01D0 x\u01D0 huan ch\u012B sh\xE9n me?",
+        english: "I like to eat ice cream. What do you like to eat?",
+        audio: "\u6211\u559C\u6B22\u5403\u51B0\u6DC7\u6DCB\u4F60\u559C\u6B22\u5403\u4EC0\u4E48",
+        imagePath: "assets/illustrated-snacks/food-preferences-dialogue.webp"
+      },
+      {
+        id: "like-pizza",
+        label: "I like",
+        hanzi: "\u6211\u559C\u6B22\u5403\u62AB\u8428\u3002",
+        pinyin: "w\u01D2 x\u01D0 huan ch\u012B p\u012B s\xE0.",
+        english: "I like to eat pizza.",
+        audio: "\u6211\u559C\u6B22\u5403\u62AB\u8428",
+        imagePath: "assets/illustrated-food-feelings/like-pizza.webp"
+      },
+      {
+        id: "dislike-broccoli",
+        label: "I do not like",
+        hanzi: "\u6211\u4E0D\u559C\u6B22\u5403\u897F\u5170\u82B1\u3002",
+        pinyin: "w\u01D2 b\xF9 x\u01D0 huan ch\u012B x\u012B l\xE1n hu\u0101.",
+        english: "I do not like to eat broccoli.",
+        audio: "\u6211\u4E0D\u559C\u6B22\u5403\u897F\u5170\u82B1",
+        imagePath: "assets/illustrated-food-feelings/dislike-broccoli.webp"
+      },
+      {
+        id: "parents-food-preferences",
+        label: "Family preferences",
+        hanzi: "\u5988\u5988\u559C\u6B22\u5403\u997A\u5B50\u3002\u7238\u7238\u4E0D\u559C\u6B22\u5403\u997A\u5B50\u3002",
+        pinyin: "m\u0101 ma x\u01D0 huan ch\u012B ji\u01CEo zi. b\xE0 ba b\xF9 x\u01D0 huan ch\u012B ji\u01CEo zi.",
+        english: "Mom likes to eat dumplings. Dad does not like to eat dumplings.",
+        audio: "\u5988\u5988\u559C\u6B22\u5403\u997A\u5B50\u7238\u7238\u4E0D\u559C\u6B22\u5403\u997A\u5B50",
+        imagePath: "assets/illustrated-snacks/parents-food-preferences.webp"
+      }
+    ],
+    words: [
+      ["ice-cream", "\u51B0\u6DC7\u6DCB", "b\u012Bng q\xED l\xEDn", "ice cream", "ice-cream.webp"],
+      ["pizza", "\u62AB\u8428", "p\u012B s\xE0", "pizza", "pizza.webp"],
+      ["broccoli", "\u897F\u5170\u82B1", "x\u012B l\xE1n hu\u0101", "broccoli", "broccoli.webp"],
+      ["dumplings", "\u997A\u5B50", "ji\u01CEo zi", "dumplings", "dumplings.webp"]
+    ].map(([id, hanzi, pinyin, english, file]) => ({ id, hanzi, pinyin, english, audio: hanzi, imagePath: `assets/illustrated-food/${file}` })),
+    review: [
+      { pattern: "\u4F60\u559C\u6B22\u5403\u4EC0\u4E48\uFF1F", pinyin: "n\u01D0 x\u01D0 huan ch\u012B sh\xE9n me?", english: "What do you like to eat?", example: "Use this question to ask about a favorite food." },
+      { pattern: "\u559C\u6B22\u5403 / \u4E0D\u559C\u6B22\u5403", pinyin: "x\u01D0 huan ch\u012B / b\xF9 x\u01D0 huan ch\u012B", english: "like to eat / do not like to eat", example: "\u6211\u559C\u6B22\u5403\u62AB\u8428\u3002\u6211\u4E0D\u559C\u6B22\u5403\u897F\u5170\u82B1\u3002" }
+    ]
+  };
+
   // src/games/shared-lesson-practice.js
   function createSharedLessonPractice({ state: state2, speak: speak2, elements, documentRef = document }) {
     const { activityPanelTitle: activityPanelTitle2, activityPanelSummary: activityPanelSummary2, activityList: activityList2 } = elements;
@@ -1880,57 +1933,7 @@
     school: schoolTopicData,
     "school-subjects": schoolSubjectsTopicData,
     food: foodTopicData,
-    "food-preferences": {
-      practiceSummary: "Make your own sentences about foods you like and do not like.",
-      scenes: [
-        {
-          id: "food-preferences-dialogue",
-          label: "Food talk",
-          hanzi: "\u6211\u559C\u6B22\u5403\u51B0\u6DC7\u6DCB\u3002\u4F60\u559C\u6B22\u5403\u4EC0\u4E48\uFF1F",
-          pinyin: "w\u01D2 x\u01D0 huan ch\u012B b\u012Bng q\xED l\xEDn. n\u01D0 x\u01D0 huan ch\u012B sh\xE9n me?",
-          english: "I like to eat ice cream. What do you like to eat?",
-          audio: "\u6211\u559C\u6B22\u5403\u51B0\u6DC7\u6DCB\u4F60\u559C\u6B22\u5403\u4EC0\u4E48",
-          imagePath: "assets/illustrated-snacks/food-preferences-dialogue.webp"
-        },
-        {
-          id: "like-pizza",
-          label: "I like",
-          hanzi: "\u6211\u559C\u6B22\u5403\u62AB\u8428\u3002",
-          pinyin: "w\u01D2 x\u01D0 huan ch\u012B p\u012B s\xE0.",
-          english: "I like to eat pizza.",
-          audio: "\u6211\u559C\u6B22\u5403\u62AB\u8428",
-          imagePath: "assets/illustrated-food-feelings/like-pizza.webp"
-        },
-        {
-          id: "dislike-broccoli",
-          label: "I do not like",
-          hanzi: "\u6211\u4E0D\u559C\u6B22\u5403\u897F\u5170\u82B1\u3002",
-          pinyin: "w\u01D2 b\xF9 x\u01D0 huan ch\u012B x\u012B l\xE1n hu\u0101.",
-          english: "I do not like to eat broccoli.",
-          audio: "\u6211\u4E0D\u559C\u6B22\u5403\u897F\u5170\u82B1",
-          imagePath: "assets/illustrated-food-feelings/dislike-broccoli.webp"
-        },
-        {
-          id: "parents-food-preferences",
-          label: "Family preferences",
-          hanzi: "\u5988\u5988\u559C\u6B22\u5403\u997A\u5B50\u3002\u7238\u7238\u4E0D\u559C\u6B22\u5403\u997A\u5B50\u3002",
-          pinyin: "m\u0101 ma x\u01D0 huan ch\u012B ji\u01CEo zi. b\xE0 ba b\xF9 x\u01D0 huan ch\u012B ji\u01CEo zi.",
-          english: "Mom likes to eat dumplings. Dad does not like to eat dumplings.",
-          audio: "\u5988\u5988\u559C\u6B22\u5403\u997A\u5B50\u7238\u7238\u4E0D\u559C\u6B22\u5403\u997A\u5B50",
-          imagePath: "assets/illustrated-snacks/parents-food-preferences.webp"
-        }
-      ],
-      words: [
-        ["ice-cream", "\u51B0\u6DC7\u6DCB", "b\u012Bng q\xED l\xEDn", "ice cream", "ice-cream.webp"],
-        ["pizza", "\u62AB\u8428", "p\u012B s\xE0", "pizza", "pizza.webp"],
-        ["broccoli", "\u897F\u5170\u82B1", "x\u012B l\xE1n hu\u0101", "broccoli", "broccoli.webp"],
-        ["dumplings", "\u997A\u5B50", "ji\u01CEo zi", "dumplings", "dumplings.webp"]
-      ].map(([id, hanzi, pinyin, english, file]) => ({ id, hanzi, pinyin, english, audio: hanzi, imagePath: `assets/illustrated-food/${file}` })),
-      review: [
-        { pattern: "\u4F60\u559C\u6B22\u5403\u4EC0\u4E48\uFF1F", pinyin: "n\u01D0 x\u01D0 huan ch\u012B sh\xE9n me?", english: "What do you like to eat?", example: "Use this question to ask about a favorite food." },
-        { pattern: "\u559C\u6B22\u5403 / \u4E0D\u559C\u6B22\u5403", pinyin: "x\u01D0 huan ch\u012B / b\xF9 x\u01D0 huan ch\u012B", english: "like to eat / do not like to eat", example: "\u6211\u559C\u6B22\u5403\u62AB\u8428\u3002\u6211\u4E0D\u559C\u6B22\u5403\u897F\u5170\u82B1\u3002" }
-      ]
-    },
+    "food-preferences": foodPreferencesTopicData,
     "meals-feelings": {
       practiceSummary: "Match the first line of each food conversation to its reply.",
       sceneGroups: [
