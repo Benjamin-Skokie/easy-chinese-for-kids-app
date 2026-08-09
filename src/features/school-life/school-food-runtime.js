@@ -1,5 +1,5 @@
 export function createSchoolFoodRuntime(context) {
-  const { state, schoolTopicData, schoolSentenceBuilds, stationeryPictureMatchRounds, stationeryPictureMatchChoices, stationeryPictureMatchEnglish, currentTopic, shuffleArray, speak, renderActivityPanel, focusItemsForTopic, activityPanelTitle, activityPanelSummary, activityList, renderListenPractice, renderMatchPractice } = context;
+  const { state, schoolTopicData, schoolSentenceBuilds, stationeryPictureMatchRounds, stationeryPictureMatchChoices, stationeryPictureMatchEnglish, currentTopic, currentBook, currentLesson, shuffleArray, speak, speakSceneLines, renderActivityPanel, focusItemsForTopic, activityPanelTitle, activityPanelSummary, activityList, focusExplorer, renderDefaultExplorer, renderListenPractice, renderMatchPractice } = context;
 
 function schoolPracticeItems(topicId = currentTopic().id) {
   const data = schoolTopicData[topicId];
@@ -935,6 +935,117 @@ function renderFoodPreferencesPractice(topic) {
   activityList.querySelectorAll("[data-food-preference-food]").forEach((button) => button.addEventListener("click", () => handleFoodPreferenceFill(button.dataset.foodPreferenceFood)));
 }
 
+ function schoolWordGroups(topicId = currentTopic().id) {
+  const data = schoolTopicData[topicId];
+  if (!data?.wordGroups) return [];
+  return data.wordGroups.map((group) => ({
+    ...group,
+    items: group.items.map(([id, hanzi, pinyin, english, file]) => ({
+      id,
+      hanzi,
+      pinyin,
+      english,
+      audio: hanzi,
+      imagePath: file ? (file.startsWith("assets/") ? file : `assets/illustrated-food/${file}`) : ""
+    }))
+  }));
+}
 
-  return { schoolPracticeItems, ensureSchoolPractice, renderSchoolPractice, renderStationeryPractice, renderSchoolSuppliesPractice, renderFoodPractice, renderMealsConversationPractice, renderFoodPreferencesPractice, renderClassroomPractice };
+
+
+function renderSchoolExplorer(topicId) {
+  const topic = currentTopic();
+  const data = schoolTopicData[topicId];
+  if (!data) {
+    renderDefaultExplorer();
+    return;
+  }
+  const sceneGroups = data.sceneGroups ?? [{ id: "all", items: data.scenes ?? [] }];
+  const wordGroups = schoolWordGroups(topicId);
+  if (topicId === "meals-feelings" && !wordGroups.some((group) => group.id === state.mealsWordGroupId)) {
+    state.mealsWordGroupId = wordGroups[0]?.id ?? "";
+  }
+  const visibleWords = topicId === "food"
+    ? foodBookWordItems(data)
+    : topicId === "meals-feelings"
+      ? wordGroups.find((group) => group.id === state.mealsWordGroupId)?.items ?? []
+      : data.words;
+
+  focusExplorer.innerHTML = `
+    <div class="time-date-board school-topic-board">
+      <div class="numbers-stage-card">
+        <p class="body-match-kicker">${currentBook().label} Lesson ${currentLesson().lesson}</p>
+        <h4>${topic.title}</h4>
+      </div>
+      ${sceneGroups.map((group) => `
+        <section class="school-lesson-section is-${group.id}">
+          ${group.label ? `<p class="body-match-kicker school-lesson-heading">${group.label}</p>` : ""}
+          <div class="school-scene-grid${group.items.length === 1 ? " is-single" : ""}">
+            ${group.items.map((scene) => `
+              <section class="greetings-exchange school-scene-card">
+                <div class="greetings-exchange-top">${scene.label ? `<div><p class="body-match-kicker">${scene.label}</p></div>` : "<span></span>"}<button class="small-button is-action-button" type="button" data-school-play-scene="${scene.id}">Play scene</button></div>
+                <div class="school-scene-layout${topicId === "food" ? " is-compact" : ""}">
+                  <img class="school-scene-image" src="${scene.imagePath}" alt="${scene.english ?? scene.lines?.[0]?.english ?? ""}" />
+                  <div class="greetings-line-stack${scene.compactLines ? " is-compact" : ""}">
+                    ${(scene.lines ?? [scene]).map((line) => `<article class="greetings-line-card"><div class="telephone-bubble-copy"><p class="telephone-line-hanzi">${line.hanzi}</p>${state.showPinyin ? `<p class="telephone-line-pinyin">${line.pinyin}</p>` : ""}${state.showEnglish ? `<p class="telephone-line-english">${line.english}</p>` : ""}</div></article>`).join("")}
+                  </div>
+                </div>
+              </section>
+            `).join("")}
+          </div>
+        </section>
+      `).join("")}
+      ${data.showWords !== false ? `
+        <div class="time-months-heading"><p class="body-match-kicker">Book words</p></div>
+        ${topicId === "food" ? `<div class="food-book-tabs" role="tablist" aria-label="Food word categories">${Object.entries(foodCategoryGroups).map(([id, group]) => `<button class="food-book-tab${state.foodBookCategoryId === id ? " is-active" : ""}" type="button" role="tab" aria-selected="${state.foodBookCategoryId === id}" data-food-book-category="${id}">${group.hanzi}${state.showEnglish ? `<small>${group.english}</small>` : ""}</button>`).join("")}</div>` : ""}
+        ${topicId === "meals-feelings" && wordGroups.length > 1 ? `<div class="food-book-tabs lesson-word-tabs" role="tablist" aria-label="Meals and feelings word categories">${wordGroups.map((group) => `<button class="food-book-tab${state.mealsWordGroupId === group.id ? " is-active" : ""}" type="button" role="tab" aria-selected="${state.mealsWordGroupId === group.id}" data-meals-word-group="${group.id}">${group.hanzi}${state.showEnglish ? `<small>${group.english}</small>` : ""}</button>`).join("")}</div>` : ""}
+        <div class="school-word-grid${topicId === "school-subjects" ? " is-text-only" : ""}${topicId === "meals-feelings" ? " is-uniform-images" : ""}">
+          ${visibleWords.map((item) => `
+            <button class="school-word-card" type="button" data-school-word="${item.id}">
+              ${item.imagePath ? `<img class="school-word-image" src="${item.imagePath}" alt="${item.english}" />` : ""}
+              <span class="time-asset-hanzi">${item.hanzi}</span>
+              ${state.showPinyin ? `<span class="time-asset-pinyin">${item.pinyin}</span>` : ""}
+              ${state.showEnglish ? `<span class="time-asset-english">${item.english}</span>` : ""}
+            </button>
+          `).join("")}
+        </div>
+      ` : ""}
+      ${data.review ? `<section class="visual-topic-notes school-review-notes"><p class="body-match-kicker">Useful notes</p><div class="visual-topic-note-grid school-review-grid">${data.review.map((item) => `<article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">${item.pattern}</p>${state.showPinyin ? `<p class="visual-topic-note-pinyin">${item.pinyin}</p>` : ""}${state.showEnglish ? `<p class="visual-topic-note-english">${item.english}</p>` : ""}<p class="visual-topic-note-example">${item.example}</p>${state.showPinyin && item.examplePinyin ? `<p class="visual-topic-note-pinyin">${item.examplePinyin}</p>` : ""}${state.showEnglish && item.exampleEnglish ? `<p class="visual-topic-note-english">${item.exampleEnglish}</p>` : ""}</article>`).join("")}</div></section>` : ""}
+      ${topicId === "school-subjects" ? `<section class="visual-topic-notes"><p class="body-match-kicker">Useful note</p><div class="visual-topic-note-grid school-subject-note"><article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">去</p>${state.showPinyin ? '<p class="visual-topic-note-pinyin">qù</p>' : ""}${state.showEnglish ? '<p class="visual-topic-note-english">to go</p>' : ""}<p class="visual-topic-note-example">我去上音乐课。</p></article><article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">在</p>${state.showPinyin ? '<p class="visual-topic-note-pinyin">zài</p>' : ""}${state.showEnglish ? '<p class="visual-topic-note-english">at / in; marks an action happening now</p>' : ""}<p class="visual-topic-note-example">我在上音乐课。</p></article><article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">喜欢</p>${state.showPinyin ? '<p class="visual-topic-note-pinyin">xǐ huan</p>' : ""}${state.showEnglish ? '<p class="visual-topic-note-english">to like</p>' : ""}<p class="visual-topic-note-example">我喜欢音乐课。</p></article><article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">不喜欢</p>${state.showPinyin ? '<p class="visual-topic-note-pinyin">bù xǐ huan</p>' : ""}${state.showEnglish ? '<p class="visual-topic-note-english">to not like</p>' : ""}<p class="visual-topic-note-example">我不喜欢数学课。</p></article></div></section>` : ""}
+    </div>
+  `;
+
+  focusExplorer.querySelectorAll("[data-school-play-scene]").forEach((button) => {
+    button.addEventListener("click", () => {
+      const scene = sceneGroups.flatMap((group) => group.items).find((entry) => entry.id === button.dataset.schoolPlayScene);
+      if (!scene || !state.tapAudioEnabled) return;
+      if (scene.lines?.length) {
+        speakSceneLines(scene.lines.map((line) => ({ ...line, audio: line.audio ?? line.hanzi })));
+        return;
+      }
+      speak(scene.audio, 0.78);
+    });
+  });
+  focusExplorer.querySelectorAll("[data-school-word]").forEach((button) => {
+    button.addEventListener("click", () => {
+      const item = visibleWords.find((entry) => entry.id === button.dataset.schoolWord);
+      if (item && state.tapAudioEnabled) speak(item.audio, 0.78);
+    });
+  });
+  focusExplorer.querySelectorAll("[data-food-book-category]").forEach((button) => {
+    button.addEventListener("click", () => {
+      state.foodBookCategoryId = button.dataset.foodBookCategory;
+      renderSchoolExplorer(topicId);
+    });
+  });
+  focusExplorer.querySelectorAll("[data-meals-word-group]").forEach((button) => {
+    button.addEventListener("click", () => {
+      state.mealsWordGroupId = button.dataset.mealsWordGroup;
+      renderSchoolExplorer(topicId);
+    });
+  });
+}
+
+
+  return { schoolPracticeItems, ensureSchoolPractice, renderSchoolPractice, renderStationeryPractice, renderSchoolSuppliesPractice, renderFoodPractice, renderMealsConversationPractice, renderFoodPreferencesPractice, renderClassroomPractice, renderSchoolExplorer };
 }

@@ -111,7 +111,10 @@ test("school and food runtime is separated from the legacy bootstrap", () => {
   assert.match(legacySource, /createSchoolFoodRuntime\(\{/);
   assert.doesNotMatch(legacySource, /function schoolPracticeItems\(/);
   assert.doesNotMatch(legacySource, /function renderFoodPractice\(/);
+  assert.doesNotMatch(legacySource, /function renderSchoolExplorer\(/);
   assert.match(runtimeSource, /export function createSchoolFoodRuntime/);
+  assert.match(runtimeSource, /function renderSchoolExplorer\(/);
+  assert.match(runtimeSource, /function schoolWordGroups\(/);
 });
 
 test("time and daily life runtime is separated from the legacy bootstrap", () => {
@@ -121,6 +124,30 @@ test("time and daily life runtime is separated from the legacy bootstrap", () =>
   assert.doesNotMatch(legacySource, /function resetWeekdayChallenge\(/);
   assert.doesNotMatch(legacySource, /function renderTimeDateExplorer\(/);
   assert.match(runtimeSource, /export function createTimeDailyLifeRuntime/);
+});
+
+test("foundations runtime is separated from the legacy bootstrap", () => {
+  const legacySource = readFileSync("src/legacy-app.js", "utf8");
+  const runtimeSource = readFileSync("src/features/foundations/foundations-runtime.js", "utf8");
+  assert.match(legacySource, /createFoundationsRuntime\(\{/);
+  assert.doesNotMatch(legacySource, /function familyGameItems\(/);
+  assert.doesNotMatch(legacySource, /function renderNumbersExplorer\(/);
+  assert.match(runtimeSource, /export function createFoundationsRuntime/);
+  assert.match(runtimeSource, /familyPractice/);
+  assert.match(legacySource, /familyPractice,/);
+});
+
+test("feature runtimes initialize before the first landing-page render", () => {
+  const legacySource = readFileSync("src/legacy-app.js", "utf8");
+  const openTopicPageStart = legacySource.indexOf("function openTopicPage(");
+  const openTopicPageEnd = legacySource.indexOf("function switchView(", openTopicPageStart);
+  const initialRender = legacySource.lastIndexOf("renderTopics();");
+  const openTopicPageSource = legacySource.slice(openTopicPageStart, openTopicPageEnd);
+
+  assert.doesNotMatch(openTopicPageSource, /create(?:SchoolFood|TimeDailyLife|Foundations)Runtime\(/);
+  assert.ok(legacySource.indexOf("createSchoolFoodRuntime({") < initialRender);
+  assert.ok(legacySource.indexOf("createTimeDailyLifeRuntime({") < initialRender);
+  assert.ok(legacySource.indexOf("createFoundationsRuntime({") < initialRender);
 });
 
 test("greetings interaction is owned by its feature controller", () => {

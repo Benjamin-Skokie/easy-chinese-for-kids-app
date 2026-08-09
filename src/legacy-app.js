@@ -34,6 +34,7 @@ import { hobbiesTopic, toysTopic } from "./features/play-hobbies/play-hobbies.js
 import { bodyBonusItemIds, bodyCoreItemIds, bodyDiagramLayout, bodyTopic } from "./features/foundations/body.js";
 import { buildNumberItem, multiplicationRhymeTopic, numberHanzi, numberPinyin, numberStages, numbersTopic, telephonePractice } from "./features/foundations/numbers.js";
 import { createFoundationState } from "./features/foundations/state.js";
+import { createFoundationsRuntime } from "./features/foundations/foundations-runtime.js";
 import { createTimeDailyLifeState } from "./features/time-daily-life/state.js";
 import { createTimeDailyLifeRuntime } from "./features/time-daily-life/time-daily-life-runtime.js";
 import { illustratedKids } from "./data/characters.js";
@@ -596,426 +597,6 @@ function currentNumberStage() {
   );
 }
 
-function numberStageItems(stage = currentNumberStage()) {
-  const start = Math.min(stage.start, stage.end);
-  const end = Math.max(stage.start, stage.end);
-  const items = [];
-  for (let value = start; value <= end; value += 1) {
-    items.push(buildNumberItem(value));
-  }
-  return items;
-}
-
-function resetNumberChallenge(options = {}) {
-  const stage = currentNumberStage();
-  const items = numberStageItems(stage);
-  const pool = items.map((entry) => entry.value);
-  const targetValue = pool[Math.floor(Math.random() * pool.length)];
-  const distractors = shuffleArray(pool.filter((value) => value !== targetValue)).slice(
-    0,
-    Math.min(3, Math.max(0, pool.length - 1))
-  );
-
-  state.numberChallengeStageId = stage.id;
-  state.numberChallengeTargetValue = targetValue;
-  state.numberChallengeOptionValues = shuffleArray([targetValue, ...distractors]);
-  state.lastNumberFeedback =
-    options.feedback ??
-    "Look carefully. Pick the number without counting from one every time.";
-}
-
-function ensureNumberChallenge() {
-  const stage = currentNumberStage();
-  if (state.numberChallengeStageId !== stage.id || !state.numberChallengeOptionValues.length) {
-    resetNumberChallenge();
-  }
-}
-
-function resetMathChallenge() {
-  const stage = currentNumberStage();
-  const low = Math.max(1, stage.start);
-  const high = Math.max(low, stage.end);
-  const operator = Math.random() < 0.5 ? "+" : "-";
-  let left;
-  let right;
-  let answer;
-
-  if (operator === "+") {
-    const additionMaxLeft = high > low ? high - 1 : high;
-    left = Math.floor(Math.random() * (additionMaxLeft - low + 1)) + low;
-    const maxRight = Math.max(1, high - left);
-    right = Math.floor(Math.random() * maxRight) + 1;
-    answer = left + right;
-  } else {
-    left = Math.floor(Math.random() * (high - low + 1)) + low;
-    right = Math.floor(Math.random() * (left + 1));
-    answer = left - right;
-  }
-
-  state.mathChallengeStageId = stage.id;
-  state.mathChallengeOperator = operator;
-  state.mathChallengeLeft = left;
-  state.mathChallengeRight = right;
-  state.mathChallengeAnswer = answer;
-  state.lastMathFeedback = "Type the answer, then check it.";
-  state.mathChallengeSolved = false;
-  state.mathChallengeInput = "";
-}
-
-function ensureMathChallenge() {
-  const stage = currentNumberStage();
-  if (state.mathChallengeStageId !== stage.id || state.mathChallengeAnswer === null) {
-    resetMathChallenge();
-  }
-}
-
-function familyGameItems() {
-  const familyTopic = topicById("family");
-  return familyGameItemIds
-    .map((id) => familyTopic?.focusItems.find((item) => item.id === id))
-    .filter(Boolean);
-}
-
-function familyPersonForItemId(itemId) {
-  const personId = familyPersonIdsByItemId[itemId];
-  return (
-    {
-      dad: illustratedFamily.dad,
-      mom: illustratedFamily.mom,
-      "older-brother": { ...illustratedKids.yangyang, label: "Older brother" },
-      "younger-brother": { ...illustratedKids.lele, label: "Younger brother" },
-      "older-sister": { ...illustratedKids.anan, label: "Older sister" },
-      "younger-sister": { ...illustratedKids.meimei, label: "Younger sister" }
-    }[personId] ?? null
-  );
-}
-
-function familyHeadshotForItemId(itemId) {
-  return familyHeadshotsByItemId[itemId] ?? null;
-}
-
-function isFamilySentenceItemId(itemId) {
-  return ["parents-love-me", "i-love-dad", "i-love-mom"].includes(itemId);
-}
-
-function familyBookWordItems() {
-  return focusItemsForTopic(topicById("family")).filter((item) => !isFamilySentenceItemId(item.id));
-}
-
-const lessonTemplateTopicIds = new Set(["greetings", "polite-words", "introductions", "age", "family"]);
-
-function usesLessonTemplate(topic) {
-  return lessonTemplateTopicIds.has(topic.id);
-}
-
-function bookWordItemsForTopic(topic) {
-  if (topic.id === "family") {
-    return familyBookWordItems();
-  }
-
-  return focusItemsForTopic(topic);
-}
-
-function usefulNoteForTopic(topic) {
-  const notes = {
-    greetings: `
-      <p class="greetings-note-hanzi">你 and 您</p>
-      <p class="greetings-note-copy">
-        <strong>你</strong> is the everyday word for “you.” <strong>您</strong> is the polite form, often used for teachers and other adults to show respect.
-      </p>
-      <p class="greetings-note-copy">
-        <strong>老师</strong> means “teacher,” so <strong>李老师，您好！</strong> sounds warm and respectful.
-      </p>
-    `,
-    "polite-words": `
-      <p class="greetings-note-hanzi">谢谢 / 不客气 / 对不起 / 没关系</p>
-      <p class="greetings-note-copy">
-        <strong>谢谢你</strong> means “thank you,” and <strong>不客气</strong> is the kind reply: “you’re welcome.”
-      </p>
-      <p class="greetings-note-copy">
-        <strong>对不起</strong> means “I’m sorry,” and <strong>没关系</strong> is the calm reply: “never mind” or “that’s okay.”
-      </p>
-      <p class="greetings-note-copy">
-        <strong>请</strong> helps children sound polite in requests and classroom directions, for example:
-        <strong>请安静。</strong>
-      </p>
-    `,
-    introductions: `
-      <p class="greetings-note-hanzi">我 / 叫 / 什么 / 名字</p>
-      <p class="greetings-note-copy">
-        <strong>我</strong> means “I” or “me,” and <strong>叫</strong> is used in beginner Chinese to say what someone is called.
-      </p>
-      <p class="greetings-note-copy">
-        <strong>你叫什么名字？</strong> means “What is your name?” and <strong>我叫……</strong> gives the answer pattern: “My name is…”
-      </p>
-      <p class="greetings-note-copy">
-        Let children pause after <strong>我叫</strong> and say their own name out loud.
-      </p>
-    `,
-    age: `
-      <p class="greetings-note-hanzi">你几岁？ / 我...岁。 / 你上几年级？ / 我上一年级。</p>
-      <p class="greetings-note-copy">
-        <strong>你几岁？</strong> literally means “you how-many years old?” Here, <strong>几</strong> asks for a small number, and <strong>岁</strong> is the common word for a child's age.
-      </p>
-      <p class="greetings-note-copy">
-        The answer pattern stays simple: <strong>我 + number + 岁</strong>. So <strong>我五岁</strong> is “I am five years old,” <strong>我六岁</strong> is “I am six years old,” and <strong>我七岁</strong> is “I am seven years old.”
-      </p>
-      <p class="greetings-note-copy">
-        <strong>你上几年级？</strong> asks what school year someone is in, and <strong>我上一年级。</strong> means “I am in first grade.” This topic links naturally with earlier self-introduction language: <strong>你好！你叫什么名字？我叫…… 你几岁？我五岁。你上几年级？我上一年级。</strong>
-      </p>
-    `,
-    family: `
-      <p class="greetings-note-hanzi">爸爸 / 妈妈 / 哥哥 / 弟弟 / 姐姐 / 妹妹</p>
-      <p class="greetings-note-copy">
-        In sentences like <strong>我爱爸爸</strong> and <strong>我爱妈妈</strong>, the family word names who the child loves. <strong>我</strong> names the speaker, and <strong>爱</strong> names the feeling.
-      </p>
-      <p class="greetings-note-copy">
-        <strong>哥哥</strong> and <strong>弟弟</strong> are the brother pair: older brother, then younger brother. <strong>姐姐</strong> and <strong>妹妹</strong> are the sister pair: older sister, then younger sister.
-      </p>
-      <p class="greetings-note-copy">
-        In listening practice, the repeated family word is the anchor. For sisters, <strong>姐姐</strong> and <strong>妹妹</strong> both use <strong>女</strong>, so children can group the two sister words together.
-      </p>
-    `
-  };
-
-  return notes[topic.id] ?? "";
-}
-
-function familyWordForPersonId(personId) {
-  return {
-    mom: "妈妈",
-    dad: "爸爸",
-    "older-brother": "哥哥",
-    "younger-brother": "弟弟",
-    "older-sister": "姐姐",
-    "younger-sister": "妹妹"
-  }[personId] ?? "";
-}
-
-function resetFamilyChallenge(options = {}) {
-  const items = familyGameItems();
-  if (!items.length) {
-    return;
-  }
-
-  const answer = items[Math.floor(Math.random() * items.length)];
-  const distractors = shuffleArray(items.filter((item) => item.id !== answer.id)).slice(
-    0,
-    Math.min(3, Math.max(0, items.length - 1))
-  );
-
-  state.familyChallengeAnswerId = answer.id;
-  state.familyChallengePickedId = "";
-  state.familyChallengePromptId = answer.id;
-  state.familyChallengeOptionIds = shuffleArray([answer.id, ...distractors.map((item) => item.id)]);
-  state.familyChallengeResult = "";
-  state.familyChallengeWrongIds = new Set();
-  state.familyListenFeedback = options.feedback ?? "";
-  state.lastFamilyFeedback = state.familyListenFeedback;
-}
-
-function ensureFamilyChallenge() {
-  if (!state.familyChallengeAnswerId || !state.familyChallengeOptionIds.length) {
-    resetFamilyChallenge();
-  }
-}
-
-function resetListenChallengeResult(challengeKey) {
-  state[`${challengeKey}ChallengePickedId`] = "";
-  state[`${challengeKey}ChallengeResult`] = "";
-  state[`${challengeKey}ChallengeWrongIds`] = new Set();
-}
-
-function handleFamilyChallengePlay() {
-  ensureFamilyChallenge();
-  const item = familyGameItems().find((entry) => entry.id === state.familyChallengePromptId);
-  if (!item) {
-    return;
-  }
-
-  resetListenChallengeResult("family");
-  if (state.tapAudioEnabled) {
-    speak(item.audio, 0.78);
-  }
-  state.familyListenFeedback = `Listen again and find ${item.hanzi}.`;
-  state.lastFamilyFeedback = state.familyListenFeedback;
-  renderActivityPanel(currentTopic());
-}
-
-function handleFamilyChallengeGuess(itemId) {
-  ensureFamilyChallenge();
-  const answer = familyGameItems().find((entry) => entry.id === state.familyChallengeAnswerId);
-  const picked = familyGameItems().find((entry) => entry.id === itemId);
-  if (!answer || !picked) {
-    return;
-  }
-
-  if (itemId === answer.id) {
-    state.selectedFocusItemId = answer.id;
-    state.familyChallengePickedId = itemId;
-    state.familyChallengeResult = "correct";
-    if (state.tapAudioEnabled) {
-      speak(answer.audio, 0.78);
-    }
-    state.familyListenFeedback = "Nice listening.";
-    state.lastFamilyFeedback = state.familyListenFeedback;
-    renderFocusDisplay(currentFocusItem());
-    renderFocusExplorer();
-    renderFocusStatus();
-    renderActivityPanel(currentTopic());
-    return;
-  }
-
-  state.familyChallengePickedId = itemId;
-  state.familyChallengeResult = "wrong";
-  state.familyChallengeWrongIds = new Set([...state.familyChallengeWrongIds, itemId]);
-  state.familyListenFeedback = "Not that one. Try another card.";
-  state.lastFamilyFeedback = state.familyListenFeedback;
-  renderActivityPanel(currentTopic());
-}
-
-function resetFamilyMatchGame() {
-  const items = familyGameItems();
-  state.familySelectedPhraseId = null;
-  state.familyMatchedIds = new Set();
-  state.familyPhraseOrder = shuffleArray(items.map((item) => item.id));
-  state.familyMeaningOrder = shuffleArray(items.map((item) => item.id));
-  state.familyMatchFeedback = "";
-  state.lastFamilyFeedback = state.familyMatchFeedback;
-}
-
-function ensureFamilyMatchGame() {
-  const items = familyGameItems();
-  if (
-    !state.familyPhraseOrder.length ||
-    state.familyPhraseOrder.length !== items.length ||
-    state.familyMeaningOrder.length !== items.length
-  ) {
-    resetFamilyMatchGame();
-  }
-}
-
-function handleFamilyMatchPhrase(itemId) {
-  const item = familyGameItems().find((entry) => entry.id === itemId);
-  if (!item || state.familyMatchedIds.has(itemId)) {
-    return;
-  }
-
-  state.familySelectedPhraseId = itemId;
-  if (state.tapAudioEnabled) {
-    speak(item.audio, 0.78);
-  }
-  state.familyMatchFeedback = `Now find who matches ${item.hanzi}.`;
-  state.lastFamilyFeedback = state.familyMatchFeedback;
-  renderActivityPanel(currentTopic());
-}
-
-function handleFamilyMatchAttempt(targetId) {
-  if (!state.familySelectedPhraseId || state.familyMatchedIds.has(targetId)) {
-    return;
-  }
-
-  const selectedId = state.familySelectedPhraseId;
-  const selectedItem = familyGameItems().find((entry) => entry.id === selectedId);
-  if (!selectedItem) {
-    return;
-  }
-
-  if (selectedId === targetId) {
-    state.familyMatchedIds = new Set([...state.familyMatchedIds, targetId]);
-    state.familySelectedPhraseId = null;
-    state.familyMatchFeedback = "Matched.";
-    state.lastFamilyFeedback = state.familyMatchFeedback;
-    state.selectedFocusItemId = selectedItem.id;
-    renderFocusDisplay(currentFocusItem());
-    renderFocusExplorer();
-    renderFocusStatus();
-
-    if (state.familyMatchedIds.size === familyGameItems().length) {
-      state.familyMatchFeedback = "All family members matched.";
-      state.lastFamilyFeedback = state.familyMatchFeedback;
-    }
-    renderActivityPanel(currentTopic());
-    return;
-  }
-
-  state.familyMatchFeedback = "Try a different family member.";
-  state.lastFamilyFeedback = state.familyMatchFeedback;
-  renderActivityPanel(currentTopic());
-}
-
-function mathChallengeAudioText() {
-  if (state.mathChallengeAnswer === null) {
-    return "";
-  }
-
-  const chineseOperator = state.mathChallengeOperator === "+" ? "加" : "减";
-  return `${numberHanzi(state.mathChallengeLeft)}${chineseOperator}${numberHanzi(state.mathChallengeRight)}等于${numberHanzi(state.mathChallengeAnswer)}`;
-}
-
-function handleMathChallengeSubmit(rawValue) {
-  ensureMathChallenge();
-  if (state.mathChallengeSolved) {
-    return;
-  }
-
-  const trimmed = rawValue.trim();
-  state.mathChallengeInput = trimmed;
-  const answer = Number(trimmed);
-  const audioText = mathChallengeAudioText();
-
-  if (!Number.isFinite(answer)) {
-    state.lastMathFeedback = "Type one number first.";
-    renderActivityPanel(currentTopic());
-    return;
-  }
-
-  if (answer === state.mathChallengeAnswer) {
-    if (state.tapAudioEnabled && audioText) {
-      speak(audioText, 0.78);
-    }
-    state.lastMathFeedback = `Correct! ${audioText}`;
-    state.mathChallengeSolved = true;
-  } else {
-    state.lastMathFeedback = "Try again.";
-  }
-
-  renderActivityPanel(currentTopic());
-}
-
-function handleNumberChallengeGuess(value) {
-  ensureNumberChallenge();
-  const target = state.numberChallengeTargetValue;
-  const targetItem = buildNumberItem(target);
-
-  if (value === target) {
-    state.selectedFocusItemId = targetItem.id;
-    if (state.tapAudioEnabled) {
-      speak(targetItem.audio, 0.78);
-    }
-    state.lastNumberFeedback = `Correct! ${targetItem.hanzi} is right. Here comes a new round.`;
-    renderFocusDisplay(currentFocusItem());
-    renderFocusWordList();
-    renderFocusStatus();
-
-    if (state.numberChallengeAdvanceTimer) {
-      window.clearTimeout(state.numberChallengeAdvanceTimer);
-    }
-
-    state.numberChallengeAdvanceTimer = window.setTimeout(() => {
-      resetNumberChallenge();
-      renderFocusExplorer();
-      renderActivityPanel(currentTopic());
-      renderFocusStatus();
-      state.numberChallengeAdvanceTimer = null;
-    }, 700);
-    return;
-  }
-
-  state.lastNumberFeedback = `Try again. This group is ${targetItem.hanzi}, not ${buildNumberItem(value).hanzi}.`;
-  renderFocusStatus();
-}
-
 function focusItemsForTopic(topic = currentTopic()) {
   if (topic.id === "numbers") {
     return numberStageItems();
@@ -1041,94 +622,6 @@ function shuffleArray(items) {
     [copy[index], copy[swapIndex]] = [copy[swapIndex], copy[index]];
   }
   return copy;
-}
-
-function bodyMatchItems() {
-  const ids = state.bodyMatchIncludeBonus ? [...bodyCoreItemIds, ...bodyBonusItemIds] : bodyCoreItemIds;
-  const bodyTopic = topicById("body");
-  return ids
-    .map((id) => bodyTopic?.focusItems.find((item) => item.id === id))
-    .filter(Boolean);
-}
-
-function nextBodyRound() {
-  const allIds = bodyMatchItems().map((item) => item.id);
-  const remaining = allIds.filter((id) => !state.bodyMatchedIds.has(id));
-
-  state.bodySelectedChineseId = null;
-  state.bodySelectedEnglishId = null;
-  state.bodyRoundIds = shuffleArray(remaining).slice(0, Math.min(3, remaining.length));
-  state.bodyChineseOrder = shuffleArray(state.bodyRoundIds);
-  state.bodyEnglishOrder = shuffleArray(state.bodyRoundIds);
-}
-
-function resetBodyMatchGame() {
-  state.bodyMatchedIds = new Set();
-  state.bodyMatchUniverseKey = bodyMatchItems()
-    .map((item) => item.id)
-    .sort()
-    .join("|");
-  nextBodyRound();
-  state.lastBodyFeedback = "Match the Chinese words with the English words.";
-}
-
-function ensureBodyMatchGame() {
-  const ids = bodyMatchItems()
-    .map((item) => item.id)
-    .sort()
-    .join("|");
-  if (!state.bodyRoundIds.length || state.bodyMatchUniverseKey !== ids) {
-    resetBodyMatchGame();
-  }
-}
-
-function handleBodyMatchChinese(itemId) {
-  state.bodySelectedChineseId = itemId;
-  state.bodySelectedEnglishId = null;
-  selectFocusItem(itemId, {
-    playAudio: true,
-    bodyFeedback: "Now tap the matching English word."
-  });
-}
-
-function handleBodyMatchAttempt(englishId, chineseId = state.bodySelectedChineseId) {
-  const itemsById = Object.fromEntries(bodyMatchItems().map((item) => [item.id, item]));
-
-  if (!chineseId) {
-    state.bodySelectedEnglishId = englishId;
-    state.lastBodyFeedback = "Tap a Chinese word first.";
-    renderFocusExplorer();
-    renderFocusStatus();
-    return;
-  }
-
-  state.bodySelectedEnglishId = englishId;
-
-  if (englishId === chineseId) {
-    state.bodyMatchedIds.add(englishId);
-    state.bodySelectedChineseId = null;
-    state.bodySelectedEnglishId = null;
-    selectFocusItem(englishId, {
-      playAudio: state.tapAudioEnabled,
-      bodyFeedback: `Nice match! ${itemsById[englishId].hanzi} means ${itemsById[englishId].english}.`
-    });
-
-    const roundComplete = state.bodyRoundIds.every((id) => state.bodyMatchedIds.has(id));
-    if (roundComplete) {
-      const total = bodyMatchItems().length;
-      const allDone = state.bodyMatchedIds.size === total;
-      state.lastBodyFeedback = allDone
-        ? "Great job! You matched all the words."
-        : "Round complete! Tap Next set for the next words.";
-      renderFocusExplorer();
-      renderFocusStatus();
-    }
-    return;
-  }
-
-  state.lastBodyFeedback = `Try again. ${itemsById[chineseId].hanzi} is not ${itemsById[englishId].english}.`;
-  renderFocusExplorer();
-  renderFocusStatus();
 }
 
 function topicById(topicId) {
@@ -1234,108 +727,6 @@ function openTopicPage(topicId, options = {}) {
   state.selectedTopicId = topic.id;
   state.expandedCategoryId = categoryIdForTopic(topic.id);
   state.topicPageOpen = true;
-  const {
-  resetWeekdayChallenge,
-  ensureWeekdayChallenge,
-  handleWeekdayChallengePlay,
-  handleWeekdayChallengeGuess,
-  resetWeekdayMatchGame,
-  ensureWeekdayMatchGame,
-  handleWeekdayMatchPhrase,
-  handleWeekdayMatchAttempt,
-  resetClothesQuiz,
-  prepareClothesQuizQuestion,
-  ensureClothesQuiz,
-  handleClothesQuizPick,
-  nextClothesQuizQuestion,
-  resetTimeRoutineQuiz,
-  prepareTimeRoutineQuizQuestion,
-  ensureTimeRoutineQuiz,
-  handleTimeRoutineQuizPick,
-  nextTimeRoutineQuizQuestion,
-  resetClockQuiz,
-  prepareClockQuizQuestion,
-  ensureClockQuiz,
-  handleClockQuizPick,
-  nextClockQuizQuestion,
-  currentRoomBuildItem,
-  resetRoomBuilder,
-  prepareRoomBuilder,
-  ensureRoomBuilder,
-  isRoomBuildPrefixValid,
-  handleRoomBuildToken,
-  clearRoomBuilder,
-  nextRoomBuilder,
-  currentTransportBuildItem,
-  resetTransportBuilder,
-  prepareTransportBuilder,
-  ensureTransportBuilder,
-  handleTransportBuildToken,
-  clearTransportBuilder,
-  nextTransportBuilder,
-  resetPositionQuiz,
-  preparePositionQuizQuestion,
-  ensurePositionQuiz,
-  handlePositionQuizPlay,
-  handlePositionQuizPick,
-  nextPositionQuizQuestion,
-  currentComparisonBuildItem,
-  resetComparisonBuilder,
-  prepareComparisonBuilder,
-  ensureComparisonBuilder,
-  handleComparisonBuildToken,
-  clearComparisonBuilder,
-  nextComparisonBuilder,
-  resetDateMatchGame,
-  ensureDateMatchGame,
-  handleDateMatchPhrase,
-  handleDateMatchEvent,
-  resetDateChallenge,
-  ensureDateChallenge,
-  handleDateChallengePlay,
-  handleDateChallengeGuess,
-  timeDateSectionForCurrentLesson,
-  activeTimeDateSection,
-  renderTimeAssetGrid,
-  bindTimeAssetAudio,
-  renderWeekdaysExplorer,
-  renderDatesExplorer,
-  renderVisualTopicExplorer,
-  renderRoomsExplorer,
-  renderPositionsExplorer,
-  renderTimeDateExplorer,
-  renderClothesExplorer
-} = createTimeDailyLifeRuntime({
-  state,
-  timeDateWeekItems,
-  timeDateClockItems,
-  timeDateExpressionItems,
-  timeDateRoutineItems,
-  datePracticeItems,
-  timeDateDateItems,
-  timeDateMonthItems,
-  comparisonPracticeItems,
-  comparisonWordItems,
-  positionPracticeItems,
-  positionScenes,
-  clothesMatchItems,
-  clothesPractice,
-  roomScenes,
-  roomSentenceTokens,
-  transportSentenceTokens,
-  visualTopicItems,
-  shuffleArray,
-  speak,
-  speakSceneLines,
-  currentTopic,
-  currentBook,
-  currentLesson,
-  renderActivityPanel,
-  focusExplorer,
-  focusStatus
-});
-
-syncBookSelectionFromTopic();
   renderTopics();
   renderBooks();
   renderTopicDetail();
@@ -2122,303 +1513,6 @@ function renderFocusWordList() {
     `;
     focusWordList.appendChild(note);
   }
-}
-
-function numberWordListItems(items, currentItem, stage) {
-  if (stage.end <= 10) {
-    return items;
-  }
-
-  const byValue = [...items].sort((left, right) => left.value - right.value);
-  const currentIndex = Math.max(
-    0,
-    byValue.findIndex((item) => item.id === currentItem.id)
-  );
-  const picked = new Map([[currentItem.id, currentItem]]);
-
-  const offsets = [-1, 1, -2, 2];
-  offsets.forEach((offset) => {
-    const candidate = byValue[currentIndex + offset];
-    if (candidate && picked.size < 5) {
-      picked.set(candidate.id, candidate);
-    }
-  });
-
-  if (picked.size < Math.min(5, byValue.length)) {
-    shuffleArray(byValue).forEach((candidate) => {
-      if (picked.size < Math.min(5, byValue.length)) {
-        picked.set(candidate.id, candidate);
-      }
-    });
-  }
-
-  return shuffleArray([...picked.values()]);
-}
-
-function renderBodyLabelButton(item, align) {
-  const isActive = item.id === state.selectedFocusItemId;
-  return `
-    <button
-      class="body-label-button${isActive ? " is-active" : " is-muted"}"
-      type="button"
-      data-body-item-id="${item.id}"
-      data-body-align="${align}"
-      aria-pressed="${isActive ? "true" : "false"}"
-    >
-      <span class="body-label-hanzi">${item.hanzi}</span>
-      ${state.showPinyin ? `<span class="body-label-pinyin">${item.pinyin}</span>` : ""}
-      ${state.showEnglish ? `<span class="body-label-english">${item.english}</span>` : ""}
-    </button>
-  `;
-}
-
-function renderBodyExplorer() {
-  ensureBodyMatchGame();
-  const item = currentFocusItem();
-  const sentence = bodySentenceForItem(item);
-  const items = Object.fromEntries(focusItemsForTopic().map((entry) => [entry.id, entry]));
-  const matchItems = Object.fromEntries(bodyMatchItems().map((entry) => [entry.id, entry]));
-  const roundComplete =
-    state.bodyRoundIds.length > 0 && state.bodyRoundIds.every((id) => state.bodyMatchedIds.has(id));
-  const allDone =
-    bodyMatchItems().length > 0 && state.bodyMatchedIds.size === bodyMatchItems().length;
-  const solvedMatchIds = state.bodyChineseOrder.filter((id) => state.bodyMatchedIds.has(id));
-  const remainingChineseIds = state.bodyChineseOrder.filter((id) => !state.bodyMatchedIds.has(id));
-  const remainingEnglishIds = state.bodyEnglishOrder.filter((id) => !state.bodyMatchedIds.has(id));
-  focusExplorer.innerHTML = `
-    <div class="body-game">
-      <div class="body-practice-visual">
-        <div class="body-diagram">
-          <div class="body-label-column body-label-column-left">
-            ${bodyDiagramLayout.left.map((id) => renderBodyLabelButton(items[id], "left")).join("")}
-          </div>
-          <div class="body-scene">
-            <div class="body-scene-card">
-              <img
-                class="body-scene-kid"
-                src="assets/body/body-topic-kid-largehead.webp"
-                alt="Cartoon child for body parts learning activity"
-              />
-              <div class="body-part-indicator body-part-indicator-${item.id}" aria-hidden="true"></div>
-            </div>
-          </div>
-          <div class="body-label-column body-label-column-right">
-            ${bodyDiagramLayout.right.map((id) => renderBodyLabelButton(items[id], "right")).join("")}
-          </div>
-        </div>
-        <div class="body-match-panel">
-          <div class="body-match-heading">
-            <div>
-              <p class="body-match-kicker">Match Game</p>
-              <h4>Chinese to English</h4>
-            </div>
-            <div class="body-match-actions">
-              <button class="small-button is-action-button" type="button" data-body-toggle-bonus aria-pressed="${state.bodyMatchIncludeBonus}">
-                Bonus words ${state.bodyMatchIncludeBonus ? "on" : "off"}
-              </button>
-              <button class="small-button is-action-button" type="button" data-body-reset-match>
-                New mix
-              </button>
-            </div>
-          </div>
-          <p class="body-match-helper">Tap a Chinese card, then tap the matching English card.</p>
-          <div class="body-match-progress">
-            Matched ${state.bodyMatchedIds.size} of ${bodyMatchItems().length}
-          </div>
-          <div class="body-match-board-headings">
-            <p class="body-match-kicker">Chinese</p>
-            <p class="body-match-kicker">English</p>
-          </div>
-          ${
-            solvedMatchIds.length
-              ? `
-                <div class="body-match-solved-pairs">
-                  ${solvedMatchIds
-                    .map((id) => {
-                      const matchItem = matchItems[id];
-                      return `
-                        <article class="body-match-solved-row">
-                          <div class="body-match-card body-match-card-chinese is-solved">
-                            <span class="answer-result-mark" aria-hidden="true">✓</span>
-                            <span class="body-match-hanzi">${matchItem.hanzi}</span>
-                            ${state.showPinyin ? `<span class="body-match-pinyin">${matchItem.pinyin}</span>` : ""}
-                          </div>
-                          <div class="body-match-card body-match-card-english is-solved">
-                            <span class="answer-result-mark" aria-hidden="true">✓</span>
-                            <span class="body-match-english">${matchItem.english}</span>
-                          </div>
-                        </article>
-                      `;
-                    })
-                    .join("")}
-                </div>
-              `
-              : ""
-          }
-          ${
-            remainingChineseIds.length
-              ? `
-                <div class="body-match-open-board">
-                  <div class="body-match-column">
-                    ${remainingChineseIds
-              .map((id) => {
-                const matchItem = matchItems[id];
-                const selected = state.bodySelectedChineseId === id;
-                return `
-                  <button
-                    class="body-match-card body-match-card-chinese${selected ? " is-selected" : ""}"
-                    type="button"
-                    data-body-match-chinese="${id}"
-                  >
-                    <span class="body-match-hanzi">${matchItem.hanzi}</span>
-                    ${state.showPinyin ? `<span class="body-match-pinyin">${matchItem.pinyin}</span>` : ""}
-                  </button>
-                `;
-              })
-              .join("")}
-                  </div>
-                  <div class="body-match-column">
-                    ${remainingEnglishIds
-              .map((id) => {
-                const matchItem = matchItems[id];
-                if (!matchItem) {
-                  return "";
-                }
-                const solved = state.bodyMatchedIds.has(id);
-                const selected = state.bodySelectedEnglishId === id;
-                return `
-                  <button
-                    class="body-match-card body-match-card-english${solved ? " is-solved" : ""}${selected ? " is-selected" : ""}"
-                    type="button"
-                    data-body-match-english="${id}"
-                  >
-                    <span class="body-match-english">${matchItem.english}</span>
-                  </button>
-                `;
-              })
-              .join("")}
-                  </div>
-                </div>
-              `
-              : ""
-          }
-          ${
-            roundComplete && !allDone
-              ? '<button class="small-button body-next-round" type="button" data-body-next-round>Next set</button>'
-              : ""
-          }
-          ${
-            allDone
-              ? '<button class="small-button body-next-round" type="button" data-body-play-again>Play again</button>'
-              : ""
-          }
-        </div>
-        <div class="body-more-practice-card">
-          <p class="body-match-kicker">More Practice</p>
-          <h4>Say it with 我的</h4>
-          <p class="body-sentence-hanzi">${sentence.hanzi}</p>
-          ${state.showPinyin ? `<p class="body-sentence-pinyin">${sentence.pinyin}</p>` : ""}
-          ${state.showEnglish ? `<p class="body-sentence-english">${sentence.english}</p>` : ""}
-          <p class="body-sentence-note">Tap a body word, then say the whole phrase aloud.</p>
-          <div class="body-sentence-examples">
-            ${["eyes", "ears", "nose", "mouth", "head", "hair", "hand", "foot"]
-              .map((id) => {
-                const practiceItem = items[id];
-                const practiceSentence = bodySentenceForItem(practiceItem);
-                const isActivePractice = item.id === id;
-                return `
-                  <button
-                    class="body-sentence-chip${isActivePractice ? " is-active" : ""}"
-                    type="button"
-                    data-body-sentence-item="${id}"
-                  >
-                    ${practiceSentence.hanzi}
-                  </button>
-                `;
-              })
-              .join("")}
-          </div>
-        </div>
-      </div>
-    </div>
-  `;
-
-  focusExplorer.querySelectorAll("[data-body-item-id]").forEach((button) => {
-    button.addEventListener("click", () => {
-      selectFocusItem(button.dataset.bodyItemId, { playAudio: true });
-    });
-  });
-
-  focusExplorer.querySelectorAll("[data-body-sentence-item]").forEach((button) => {
-    button.addEventListener("click", () => {
-      const sentenceItemId = button.dataset.bodySentenceItem;
-      const sentenceItem = items[sentenceItemId];
-      if (!sentenceItem) {
-        return;
-      }
-
-      selectFocusItem(sentenceItemId, {
-        playAudio: true,
-        audioText: bodySentenceForItem(sentenceItem).hanzi,
-        bodyFeedback: `Practice saying ${bodySentenceForItem(sentenceItem).hanzi}.`
-      });
-    });
-  });
-
-  focusExplorer.querySelector("[data-body-toggle-bonus]")?.addEventListener("click", () => {
-    state.bodyMatchIncludeBonus = !state.bodyMatchIncludeBonus;
-    resetBodyMatchGame();
-    renderFocusExplorer();
-    renderFocusStatus();
-  });
-
-  focusExplorer.querySelector("[data-body-reset-match]")?.addEventListener("click", () => {
-    resetBodyMatchGame();
-    renderFocusExplorer();
-    renderFocusStatus();
-  });
-
-  focusExplorer.querySelector("[data-body-next-round]")?.addEventListener("click", () => {
-    nextBodyRound();
-    state.lastBodyFeedback = "Here is the next set.";
-    renderFocusExplorer();
-    renderFocusStatus();
-  });
-
-  focusExplorer.querySelector("[data-body-play-again]")?.addEventListener("click", () => {
-    resetBodyMatchGame();
-    renderFocusExplorer();
-    renderFocusStatus();
-  });
-
-  focusExplorer.querySelectorAll("[data-body-match-chinese]").forEach((button) => {
-    button.addEventListener("click", () => {
-      handleBodyMatchChinese(button.dataset.bodyMatchChinese);
-    });
-  });
-
-  focusExplorer.querySelectorAll("[data-body-match-english]").forEach((button) => {
-    button.addEventListener("click", () => {
-      handleBodyMatchAttempt(button.dataset.bodyMatchEnglish);
-    });
-  });
-
-}
-
- function schoolWordGroups(topicId = currentTopic().id) {
-  const data = schoolTopicData[topicId];
-  if (!data?.wordGroups) return [];
-  return data.wordGroups.map((group) => ({
-    ...group,
-    items: group.items.map(([id, hanzi, pinyin, english, file]) => ({
-      id,
-      hanzi,
-      pinyin,
-      english,
-      audio: hanzi,
-      imagePath: file ? (file.startsWith("assets/") ? file : `assets/illustrated-food/${file}`) : ""
-    }))
-  }));
 }
 
 function sharedLessonPracticeConfig(topic) {
@@ -3456,511 +2550,6 @@ function updateMultiplicationPlaybackControls(container) {
   }
 }
 
-function renderNumberVisual(value, stage) {
-  if (value === 0) {
-    return '<p class="numbers-visual-note">Start with zero for phone-number reading.</p>';
-  }
-
-  const emojis = stage.visualEmojis?.length ? stage.visualEmojis : ["⭐"];
-  const chosenEmoji = emojis[(Math.max(value, 1) - 1) % emojis.length];
-  const objectMarkup = (count) =>
-    Array.from(
-      { length: count },
-      () => `<span class="numbers-object">${chosenEmoji}</span>`
-    ).join("");
-
-  if (value <= 20) {
-    const groups = [];
-    let remaining = value;
-    while (remaining > 0) {
-      groups.push(Math.min(5, remaining));
-      remaining -= 5;
-    }
-
-    return groups
-      .map(
-        (count) => `
-          <div class="numbers-object-group">
-            ${objectMarkup(count)}
-          </div>
-        `
-      )
-      .join("");
-  }
-
-  const tens = Math.floor(value / 10);
-  const ones = value % 10;
-
-  return `
-    <div class="numbers-bundle-row">
-      ${Array.from(
-        { length: tens },
-        () => `
-          <div class="numbers-bundle-card">
-            <span class="numbers-bundle-emoji">${chosenEmoji}</span>
-            <span class="numbers-bundle-count">× 10</span>
-          </div>
-        `
-      ).join("")}
-    </div>
-    ${
-      ones
-        ? `
-          <div class="numbers-object-group">
-            ${objectMarkup(ones)}
-          </div>
-        `
-        : ""
-    }
-  `;
-}
-
-function renderNumbersExplorer() {
-  ensureNumberChallenge();
-  const stage = currentNumberStage();
-  if (stage.telephoneMode) {
-    renderTelephoneExplorer(stage);
-    return;
-  }
-  const item = currentFocusItem();
-  focusExplorer.innerHTML = `
-    <div class="numbers-board">
-      <div class="numbers-stage-card">
-        <p class="body-match-kicker">${currentBook().label} Lesson ${stage.lesson}</p>
-        <h4>${stage.title}</h4>
-        <p>${stage.summary}</p>
-      </div>
-      <div class="numbers-showcase-card">
-        <div class="numbers-showcase-copy">
-          <p class="body-match-kicker">Current number</p>
-          <div class="numbers-current-line">
-            <p class="numbers-hanzi">${item.hanzi}</p>
-            <p class="numbers-arabic${state.showArabic ? "" : " is-hidden"}">${item.value}</p>
-          </div>
-        </div>
-        <div class="numbers-count-board">
-          ${renderNumberVisual(item.value, stage)}
-        </div>
-      </div>
-    </div>
-  `;
-}
-
-function renderTelephoneExplorer(stage) {
-  focusExplorer.innerHTML = `
-    <div class="numbers-board">
-      <div class="numbers-stage-card">
-        <p class="body-match-kicker">${currentBook().label} Lesson ${stage.lesson}</p>
-        <h4>${stage.title}</h4>
-        <p>${stage.summary}</p>
-      </div>
-      <div class="telephone-scene-card">
-        <div class="telephone-scene-people">
-          <article class="telephone-bubble telephone-bubble-question">
-            <div class="telephone-figure-card telephone-figure-card-left" aria-hidden="true">
-              <img
-                class="telephone-figure"
-                src="${illustratedKids.anan.path}"
-                alt=""
-              />
-            </div>
-            <div class="telephone-bubble-copy">
-              <p class="body-match-kicker">Ask</p>
-              <p class="telephone-line-hanzi">${telephonePractice.question.hanzi}</p>
-              ${state.showPinyin ? `<p class="telephone-line-pinyin">${telephonePractice.question.pinyin}</p>` : ""}
-              ${state.showEnglish ? `<p class="telephone-line-english">${telephonePractice.question.english}</p>` : ""}
-              <button class="small-button is-action-button" type="button" data-telephone-play="question">Play audio</button>
-            </div>
-          </article>
-          <article class="telephone-bubble telephone-bubble-answer">
-            <div class="telephone-figure-card telephone-figure-card-right" aria-hidden="true">
-              <img
-                class="telephone-figure"
-                src="${illustratedKids.tiantian.path}"
-                alt=""
-              />
-            </div>
-            <div class="telephone-bubble-copy">
-              <p class="body-match-kicker">Answer</p>
-              <p class="telephone-line-hanzi">${telephonePractice.answer.hanzi}</p>
-              ${state.showPinyin ? `<p class="telephone-line-pinyin">${telephonePractice.answer.pinyin}</p>` : ""}
-              ${state.showEnglish ? `<p class="telephone-line-english">${telephonePractice.answer.english}</p>` : ""}
-              <button class="small-button is-action-button" type="button" data-telephone-play="answer">Play audio</button>
-            </div>
-          </article>
-        </div>
-        <div class="telephone-number-strip">
-          <p class="body-match-kicker">Listen to the digits</p>
-          <div class="telephone-digit-row">
-            ${telephonePractice.digits
-              .map(
-                (digit) => `
-                  <button class="telephone-digit-chip" type="button" data-telephone-digit="${digit}">
-                    ${digit}
-                  </button>
-                `
-              )
-              .join("")}
-          </div>
-        </div>
-      </div>
-    </div>
-  `;
-
-  focusExplorer.querySelectorAll("[data-telephone-play]").forEach((button) => {
-    button.addEventListener("click", () => {
-      const line = button.dataset.telephonePlay === "question" ? telephonePractice.question : telephonePractice.answer;
-      if (state.tapAudioEnabled) {
-        speak(line.audio, 0.78);
-      }
-      focusStatus.textContent = button.dataset.telephonePlay === "question"
-        ? "Listen to the question first, then listen for the answer."
-        : "Listen to the answer and notice how each digit is said one by one.";
-    });
-  });
-
-  focusExplorer.querySelectorAll("[data-telephone-digit]").forEach((button) => {
-    button.addEventListener("click", () => {
-      if (state.tapAudioEnabled) {
-        speak(button.dataset.telephoneDigit, 0.78);
-      }
-      focusStatus.textContent = `Practice the digit ${button.dataset.telephoneDigit} by itself.`;
-    });
-  });
-}
-
-function renderSchoolExplorer(topicId) {
-  const topic = currentTopic();
-  const data = schoolTopicData[topicId];
-  if (!data) {
-    renderDefaultExplorer();
-    return;
-  }
-  const sceneGroups = data.sceneGroups ?? [{ id: "all", items: data.scenes ?? [] }];
-  const wordGroups = schoolWordGroups(topicId);
-  if (topicId === "meals-feelings" && !wordGroups.some((group) => group.id === state.mealsWordGroupId)) {
-    state.mealsWordGroupId = wordGroups[0]?.id ?? "";
-  }
-  const visibleWords = topicId === "food"
-    ? foodBookWordItems(data)
-    : topicId === "meals-feelings"
-      ? wordGroups.find((group) => group.id === state.mealsWordGroupId)?.items ?? []
-      : data.words;
-
-  focusExplorer.innerHTML = `
-    <div class="time-date-board school-topic-board">
-      <div class="numbers-stage-card">
-        <p class="body-match-kicker">${currentBook().label} Lesson ${currentLesson().lesson}</p>
-        <h4>${topic.title}</h4>
-      </div>
-      ${sceneGroups.map((group) => `
-        <section class="school-lesson-section is-${group.id}">
-          ${group.label ? `<p class="body-match-kicker school-lesson-heading">${group.label}</p>` : ""}
-          <div class="school-scene-grid${group.items.length === 1 ? " is-single" : ""}">
-            ${group.items.map((scene) => `
-              <section class="greetings-exchange school-scene-card">
-                <div class="greetings-exchange-top">${scene.label ? `<div><p class="body-match-kicker">${scene.label}</p></div>` : "<span></span>"}<button class="small-button is-action-button" type="button" data-school-play-scene="${scene.id}">Play scene</button></div>
-                <div class="school-scene-layout${topicId === "food" ? " is-compact" : ""}">
-                  <img class="school-scene-image" src="${scene.imagePath}" alt="${scene.english ?? scene.lines?.[0]?.english ?? ""}" />
-                  <div class="greetings-line-stack${scene.compactLines ? " is-compact" : ""}">
-                    ${(scene.lines ?? [scene]).map((line) => `<article class="greetings-line-card"><div class="telephone-bubble-copy"><p class="telephone-line-hanzi">${line.hanzi}</p>${state.showPinyin ? `<p class="telephone-line-pinyin">${line.pinyin}</p>` : ""}${state.showEnglish ? `<p class="telephone-line-english">${line.english}</p>` : ""}</div></article>`).join("")}
-                  </div>
-                </div>
-              </section>
-            `).join("")}
-          </div>
-        </section>
-      `).join("")}
-      ${data.showWords !== false ? `
-        <div class="time-months-heading"><p class="body-match-kicker">Book words</p></div>
-        ${topicId === "food" ? `<div class="food-book-tabs" role="tablist" aria-label="Food word categories">${Object.entries(foodCategoryGroups).map(([id, group]) => `<button class="food-book-tab${state.foodBookCategoryId === id ? " is-active" : ""}" type="button" role="tab" aria-selected="${state.foodBookCategoryId === id}" data-food-book-category="${id}">${group.hanzi}${state.showEnglish ? `<small>${group.english}</small>` : ""}</button>`).join("")}</div>` : ""}
-        ${topicId === "meals-feelings" && wordGroups.length > 1 ? `<div class="food-book-tabs lesson-word-tabs" role="tablist" aria-label="Meals and feelings word categories">${wordGroups.map((group) => `<button class="food-book-tab${state.mealsWordGroupId === group.id ? " is-active" : ""}" type="button" role="tab" aria-selected="${state.mealsWordGroupId === group.id}" data-meals-word-group="${group.id}">${group.hanzi}${state.showEnglish ? `<small>${group.english}</small>` : ""}</button>`).join("")}</div>` : ""}
-        <div class="school-word-grid${topicId === "school-subjects" ? " is-text-only" : ""}${topicId === "meals-feelings" ? " is-uniform-images" : ""}">
-          ${visibleWords.map((item) => `
-            <button class="school-word-card" type="button" data-school-word="${item.id}">
-              ${item.imagePath ? `<img class="school-word-image" src="${item.imagePath}" alt="${item.english}" />` : ""}
-              <span class="time-asset-hanzi">${item.hanzi}</span>
-              ${state.showPinyin ? `<span class="time-asset-pinyin">${item.pinyin}</span>` : ""}
-              ${state.showEnglish ? `<span class="time-asset-english">${item.english}</span>` : ""}
-            </button>
-          `).join("")}
-        </div>
-      ` : ""}
-      ${data.review ? `<section class="visual-topic-notes school-review-notes"><p class="body-match-kicker">Useful notes</p><div class="visual-topic-note-grid school-review-grid">${data.review.map((item) => `<article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">${item.pattern}</p>${state.showPinyin ? `<p class="visual-topic-note-pinyin">${item.pinyin}</p>` : ""}${state.showEnglish ? `<p class="visual-topic-note-english">${item.english}</p>` : ""}<p class="visual-topic-note-example">${item.example}</p>${state.showPinyin && item.examplePinyin ? `<p class="visual-topic-note-pinyin">${item.examplePinyin}</p>` : ""}${state.showEnglish && item.exampleEnglish ? `<p class="visual-topic-note-english">${item.exampleEnglish}</p>` : ""}</article>`).join("")}</div></section>` : ""}
-      ${topicId === "school-subjects" ? `<section class="visual-topic-notes"><p class="body-match-kicker">Useful note</p><div class="visual-topic-note-grid school-subject-note"><article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">去</p>${state.showPinyin ? '<p class="visual-topic-note-pinyin">qù</p>' : ""}${state.showEnglish ? '<p class="visual-topic-note-english">to go</p>' : ""}<p class="visual-topic-note-example">我去上音乐课。</p></article><article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">在</p>${state.showPinyin ? '<p class="visual-topic-note-pinyin">zài</p>' : ""}${state.showEnglish ? '<p class="visual-topic-note-english">at / in; marks an action happening now</p>' : ""}<p class="visual-topic-note-example">我在上音乐课。</p></article><article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">喜欢</p>${state.showPinyin ? '<p class="visual-topic-note-pinyin">xǐ huan</p>' : ""}${state.showEnglish ? '<p class="visual-topic-note-english">to like</p>' : ""}<p class="visual-topic-note-example">我喜欢音乐课。</p></article><article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">不喜欢</p>${state.showPinyin ? '<p class="visual-topic-note-pinyin">bù xǐ huan</p>' : ""}${state.showEnglish ? '<p class="visual-topic-note-english">to not like</p>' : ""}<p class="visual-topic-note-example">我不喜欢数学课。</p></article></div></section>` : ""}
-    </div>
-  `;
-
-  focusExplorer.querySelectorAll("[data-school-play-scene]").forEach((button) => {
-    button.addEventListener("click", () => {
-      const scene = sceneGroups.flatMap((group) => group.items).find((entry) => entry.id === button.dataset.schoolPlayScene);
-      if (!scene || !state.tapAudioEnabled) return;
-      if (scene.lines?.length) {
-        speakSceneLines(scene.lines.map((line) => ({ ...line, audio: line.audio ?? line.hanzi })));
-        return;
-      }
-      speak(scene.audio, 0.78);
-    });
-  });
-  focusExplorer.querySelectorAll("[data-school-word]").forEach((button) => {
-    button.addEventListener("click", () => {
-      const item = visibleWords.find((entry) => entry.id === button.dataset.schoolWord);
-      if (item && state.tapAudioEnabled) speak(item.audio, 0.78);
-    });
-  });
-  focusExplorer.querySelectorAll("[data-food-book-category]").forEach((button) => {
-    button.addEventListener("click", () => {
-      state.foodBookCategoryId = button.dataset.foodBookCategory;
-      renderSchoolExplorer(topicId);
-    });
-  });
-  focusExplorer.querySelectorAll("[data-meals-word-group]").forEach((button) => {
-    button.addEventListener("click", () => {
-      state.mealsWordGroupId = button.dataset.mealsWordGroup;
-      renderSchoolExplorer(topicId);
-    });
-  });
-}
-
-function renderFamilyHomeVisual(exchange) {
-  if (exchange.visual === "parents-love") {
-    return `
-      <div class="family-lesson-visual family-lesson-visual-love">
-        <img class="family-lesson-photo" src="${exchange.imagePath}" alt="${exchange.imageAlt}" />
-      </div>
-    `;
-  }
-
-  if (exchange.visual === "siblings-compare") {
-    return `
-      <div class="family-lesson-visual family-lesson-visual-siblings">
-        <img class="family-lesson-photo" src="${exchange.imagePath}" alt="${exchange.imageAlt}" />
-      </div>
-    `;
-  }
-
-  const roomClass = {
-    "living-room": "family-room-living",
-    playroom: "family-room-playroom",
-    "family-visit": "family-room-visit"
-  }[exchange.roomLabel] ?? "family-room-living";
-
-  return `
-    <div class="family-room ${roomClass}">
-      <div class="family-room-scene-bar">
-        <div class="family-room-scene-copy">
-          <p class="family-room-scene-label">${exchange.sceneLabel}</p>
-          <p class="family-room-scene-mood">${exchange.sceneMood}</p>
-        </div>
-        <div class="family-room-scene-sun" aria-hidden="true"></div>
-      </div>
-      <div class="family-room-backdrop">
-        <div class="family-room-window">
-          <div class="family-room-window-sky"></div>
-          <div class="family-room-window-hill family-room-window-hill-back"></div>
-          <div class="family-room-window-hill family-room-window-hill-front"></div>
-        </div>
-        <div class="family-room-curtain family-room-curtain-left"></div>
-        <div class="family-room-curtain family-room-curtain-right"></div>
-        <div class="family-room-rug"></div>
-        <div class="family-room-floor-line"></div>
-        <div class="family-room-furniture family-room-furniture-left"></div>
-        <div class="family-room-furniture family-room-furniture-right"></div>
-        <div class="family-room-decor family-room-decor-left"></div>
-        <div class="family-room-decor family-room-decor-right"></div>
-      </div>
-      <div class="family-room-cast">
-        ${exchange.cast
-          .map((personId, index) => {
-            const person = illustratedFamily[personId];
-            if (!person) {
-              return "";
-            }
-            return `
-              <article class="family-room-person family-room-person-${person.id} family-room-person-${index === 0 ? "left" : "right"}">
-                <div class="family-room-callout">${familyWordForPersonId(person.id)}</div>
-                <div class="family-room-portrait">
-                  <img class="family-room-image" src="${person.path}" alt="${person.label}" />
-                </div>
-                <div class="family-room-name">
-                  <span class="family-room-name-hanzi">${familyWordForPersonId(person.id)}</span>
-                  <span class="family-room-name-english">${person.label}</span>
-                </div>
-              </article>
-            `;
-          })
-          .join("")}
-      </div>
-    </div>
-  `;
-}
-
-function renderFamilyExplorer() {
-  focusExplorer.innerHTML = `
-    <div class="numbers-board">
-      <div class="numbers-stage-card">
-        <p class="body-match-kicker">${currentBook().label} Lesson ${currentLesson().lesson}</p>
-        <h4>Book theme: family at home</h4>
-        <p>Start with 爸爸妈妈爱我, then reuse the same small word set as the child moves to 我爱爸爸, 我爱妈妈, and sibling words.</p>
-      </div>
-      <div class="greetings-practice-grid family-scenes-grid">
-        ${familyPractice
-          .map(
-            (exchange) => `
-              <section class="greetings-exchange">
-                <div class="greetings-exchange-top">
-                  <div>
-                    <p class="body-match-kicker">Scene ${exchange.number}</p>
-                    <p class="greetings-exchange-prompt">${exchange.prompt}</p>
-                  </div>
-                  <button class="small-button is-action-button" type="button" data-family-play-all="${exchange.id}">Play scene</button>
-                </div>
-                <div class="greetings-scene-layout family-scene-layout">
-                  <div class="family-scene-visual">
-                    ${renderFamilyHomeVisual(exchange)}
-                  </div>
-                  <div class="greetings-line-stack">
-                    ${exchange.lines
-                      .map(
-                        (line, index) => `
-                          <article class="greetings-line-card">
-                            <div class="telephone-bubble-copy">
-                              <p class="telephone-line-hanzi">${line.hanzi}</p>
-                              ${state.showPinyin ? `<p class="telephone-line-pinyin">${line.pinyin}</p>` : ""}
-                              ${state.showEnglish ? `<p class="telephone-line-english">${line.english}</p>` : ""}
-                            </div>
-                          </article>
-                        `
-                      )
-                      .join("")}
-                  </div>
-                </div>
-              </section>
-            `
-          )
-          .join("")}
-      </div>
-    </div>
-  `;
-
-  focusExplorer.querySelectorAll("[data-family-play-all]").forEach((button) => {
-    button.addEventListener("click", () => {
-      const exchange = familyPractice.find((entry) => entry.id === button.dataset.familyPlayAll);
-      if (!exchange || !state.tapAudioEnabled) {
-        return;
-      }
-
-      speakSceneLines(exchange.lines);
-      focusStatus.textContent = `Listen to the whole scene: ${exchange.lines.map((line) => line.hanzi).join(" ")}`;
-    });
-  });
-
-  focusExplorer.querySelectorAll("[data-family-word]").forEach((button) => {
-    button.addEventListener("click", () => {
-      selectFocusItem(button.dataset.familyWord, { playAudio: true });
-    });
-  });
-}
-
-function renderIdentityExplorer() {
-  const selectedCountry = identityCountries.find((country) => country.id === state.identitySelectedCountryId);
-  focusExplorer.innerHTML = `
-    <div class="numbers-board identity-board">
-      <section class="greetings-exchange">
-        <div class="greetings-exchange-top">
-          <div>
-            <p class="body-match-kicker">${currentBook().label} Lesson ${currentLesson().lesson}</p>
-            <p class="greetings-exchange-prompt">Countries and languages</p>
-          </div>
-          <button class="small-button is-action-button" type="button" data-identity-play-scene>Play scene</button>
-        </div>
-        <div class="greetings-scene-layout">
-          <div class="greetings-scene-visual">
-            <img class="greetings-scene-image" src="${identityConversation.imagePath}" alt="${identityConversation.imageAlt}" />
-          </div>
-          <div class="greetings-line-stack">
-            ${identityConversation.lines
-              .map(
-                (line) => `
-                  <article class="greetings-line-card">
-                    <div class="telephone-bubble-copy">
-                      <p class="telephone-line-hanzi">${line.hanzi}</p>
-                      ${state.showPinyin ? `<p class="telephone-line-pinyin">${line.pinyin}</p>` : ""}
-                      ${state.showEnglish ? `<p class="telephone-line-english">${line.english}</p>` : ""}
-                    </div>
-                  </article>
-                `
-              )
-              .join("")}
-          </div>
-        </div>
-      </section>
-      <section class="identity-question-section">
-        <div class="identity-question-top">
-          <div>
-            <p class="body-match-kicker">Question</p>
-            <p class="telephone-line-hanzi">${identityQuestion.hanzi}</p>
-            ${state.showPinyin ? `<p class="telephone-line-pinyin">${identityQuestion.pinyin}</p>` : ""}
-            ${state.showEnglish ? `<p class="telephone-line-english">${identityQuestion.english}</p>` : ""}
-          </div>
-          <button class="small-button is-action-button" type="button" data-identity-play-question>Play audio</button>
-        </div>
-        <div class="identity-country-grid">
-          ${identityCountries
-            .map(
-              (country) => `
-                <button class="identity-country-card${selectedCountry?.id === country.id ? " is-selected" : ""}" type="button" data-identity-country="${country.id}">
-                  <img class="identity-flag" src="${country.asset}" alt="${country.label} flag" />
-                  <span class="numbers-game-hanzi">${country.nationality}</span>
-                  ${state.showPinyin ? `<span class="numbers-game-pinyin">${country.pinyin}</span>` : ""}
-                  ${state.showEnglish ? `<span class="numbers-game-english">${country.label}</span>` : ""}
-                </button>
-              `
-            )
-            .join("")}
-        </div>
-        ${
-          selectedCountry
-            ? `
-              <article class="greetings-line-card identity-answer-card">
-                <div class="telephone-bubble-copy">
-                  <p class="telephone-line-hanzi">${selectedCountry.response.hanzi}</p>
-                  ${state.showPinyin ? `<p class="telephone-line-pinyin">${selectedCountry.response.pinyin}</p>` : ""}
-                  ${state.showEnglish ? `<p class="telephone-line-english">${selectedCountry.response.english}</p>` : ""}
-                </div>
-              </article>
-            `
-            : ""
-        }
-      </section>
-    </div>
-  `;
-
-  focusExplorer.querySelector("[data-identity-play-scene]")?.addEventListener("click", () => {
-    if (state.tapAudioEnabled) {
-      speakSceneLines(identityConversation.lines);
-    }
-  });
-  focusExplorer.querySelector("[data-identity-play-question]")?.addEventListener("click", () => {
-    if (state.tapAudioEnabled) {
-      speak(identityQuestion.audio, 0.78);
-    }
-  });
-  focusExplorer.querySelectorAll("[data-identity-country]").forEach((button) => {
-    button.addEventListener("click", () => {
-      const country = identityCountries.find((entry) => entry.id === button.dataset.identityCountry);
-      if (!country) {
-        return;
-      }
-      state.identitySelectedCountryId = country.id;
-      if (state.tapAudioEnabled) {
-        speak(country.response.audio, 0.78);
-      }
-      renderIdentityExplorer();
-    });
-  });
-}
-
 function renderFocusExplorer() {
   const topic = currentTopic();
   if (topic.interactiveScene === "body-face") {
@@ -4357,7 +2946,8 @@ window.addEventListener("popstate", () => {
   renderFoodPractice,
   renderMealsConversationPractice,
   renderFoodPreferencesPractice,
-  renderClassroomPractice
+  renderClassroomPractice,
+  renderSchoolExplorer
 } = createSchoolFoodRuntime({
   state,
   schoolTopicData,
@@ -4366,16 +2956,203 @@ window.addEventListener("popstate", () => {
   stationeryPictureMatchChoices,
   stationeryPictureMatchEnglish,
   currentTopic,
+  currentBook,
+  currentLesson,
   shuffleArray,
   speak,
+  speakSceneLines,
   renderActivityPanel,
   focusItemsForTopic,
   activityPanelTitle,
   activityPanelSummary,
   activityList,
+  focusExplorer,
+  renderDefaultExplorer,
   renderListenPractice,
   renderMatchPractice
 }));
+
+const {
+resetWeekdayChallenge,
+ensureWeekdayChallenge,
+handleWeekdayChallengePlay,
+handleWeekdayChallengeGuess,
+resetWeekdayMatchGame,
+ensureWeekdayMatchGame,
+handleWeekdayMatchPhrase,
+handleWeekdayMatchAttempt,
+resetClothesQuiz,
+prepareClothesQuizQuestion,
+ensureClothesQuiz,
+handleClothesQuizPick,
+nextClothesQuizQuestion,
+resetTimeRoutineQuiz,
+prepareTimeRoutineQuizQuestion,
+ensureTimeRoutineQuiz,
+handleTimeRoutineQuizPick,
+nextTimeRoutineQuizQuestion,
+resetClockQuiz,
+prepareClockQuizQuestion,
+ensureClockQuiz,
+handleClockQuizPick,
+nextClockQuizQuestion,
+currentRoomBuildItem,
+resetRoomBuilder,
+prepareRoomBuilder,
+ensureRoomBuilder,
+isRoomBuildPrefixValid,
+handleRoomBuildToken,
+clearRoomBuilder,
+nextRoomBuilder,
+currentTransportBuildItem,
+resetTransportBuilder,
+prepareTransportBuilder,
+ensureTransportBuilder,
+handleTransportBuildToken,
+clearTransportBuilder,
+nextTransportBuilder,
+resetPositionQuiz,
+preparePositionQuizQuestion,
+ensurePositionQuiz,
+handlePositionQuizPlay,
+handlePositionQuizPick,
+nextPositionQuizQuestion,
+currentComparisonBuildItem,
+resetComparisonBuilder,
+prepareComparisonBuilder,
+ensureComparisonBuilder,
+handleComparisonBuildToken,
+clearComparisonBuilder,
+nextComparisonBuilder,
+resetDateMatchGame,
+ensureDateMatchGame,
+handleDateMatchPhrase,
+handleDateMatchEvent,
+resetDateChallenge,
+ensureDateChallenge,
+handleDateChallengePlay,
+handleDateChallengeGuess,
+timeDateSectionForCurrentLesson,
+activeTimeDateSection,
+renderTimeAssetGrid,
+bindTimeAssetAudio,
+renderWeekdaysExplorer,
+renderDatesExplorer,
+renderVisualTopicExplorer,
+renderRoomsExplorer,
+renderPositionsExplorer,
+renderTimeDateExplorer,
+renderClothesExplorer
+} = createTimeDailyLifeRuntime({
+state,
+timeDateWeekItems,
+timeDateClockItems,
+timeDateExpressionItems,
+timeDateRoutineItems,
+datePracticeItems,
+timeDateDateItems,
+timeDateMonthItems,
+comparisonPracticeItems,
+comparisonWordItems,
+positionPracticeItems,
+positionScenes,
+clothesMatchItems,
+clothesPractice,
+roomScenes,
+roomSentenceTokens,
+transportSentenceTokens,
+visualTopicItems,
+shuffleArray,
+speak,
+speakSceneLines,
+currentTopic,
+currentBook,
+currentLesson,
+renderActivityPanel,
+focusExplorer,
+focusStatus
+});
+
+const {
+numberStageItems,
+resetNumberChallenge,
+ensureNumberChallenge,
+resetMathChallenge,
+ensureMathChallenge,
+familyGameItems,
+familyPersonForItemId,
+familyHeadshotForItemId,
+isFamilySentenceItemId,
+familyBookWordItems,
+usesLessonTemplate,
+bookWordItemsForTopic,
+usefulNoteForTopic,
+familyWordForPersonId,
+resetFamilyChallenge,
+ensureFamilyChallenge,
+resetListenChallengeResult,
+handleFamilyChallengePlay,
+handleFamilyChallengeGuess,
+resetFamilyMatchGame,
+ensureFamilyMatchGame,
+handleFamilyMatchPhrase,
+handleFamilyMatchAttempt,
+mathChallengeAudioText,
+handleMathChallengeSubmit,
+handleNumberChallengeGuess,
+bodyMatchItems,
+nextBodyRound,
+resetBodyMatchGame,
+ensureBodyMatchGame,
+handleBodyMatchChinese,
+handleBodyMatchAttempt,
+numberWordListItems,
+renderBodyLabelButton,
+renderBodyExplorer,
+renderNumberVisual,
+renderNumbersExplorer,
+renderTelephoneExplorer,
+renderFamilyHomeVisual,
+renderFamilyExplorer,
+renderIdentityExplorer
+} = createFoundationsRuntime({
+state,
+numberHanzi,
+numberPinyin,
+buildNumberItem,
+numberStages,
+telephonePractice,
+familyGameItemIds,
+  familyPersonIdsByItemId,
+  familyHeadshotsByItemId,
+  familyPractice,
+  illustratedFamily,
+illustratedKids,
+bodyBonusItemIds,
+bodyCoreItemIds,
+bodyDiagramLayout,
+identityConversation,
+identityCountries,
+identityQuestion,
+topicById,
+focusItemsForTopic,
+currentTopic,
+currentNumberStage,
+currentFocusItem,
+currentBook,
+currentLesson,
+shuffleArray,
+speak,
+speakSceneLines,
+renderActivityPanel,
+renderFocusDisplay,
+renderFocusExplorer,
+renderFocusStatus,
+selectFocusItem,
+focusExplorer,
+focusStatus
+});
+
 
 syncBookSelectionFromTopic();
 

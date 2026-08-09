@@ -82,6 +82,7 @@ A feature registers its owned topic IDs, creates its scoped state, renders its e
 - [x] Extract the shared Listen and Choose, Matching Game, and Say It renderer into `src/games/shared-lesson-practice.js` with explicit state, audio, and DOM dependencies.
 - [x] Extract the complete School + Food practice runtime into `src/features/school-life/school-food-runtime.js` through one explicit dependency context.
 - [x] Extract the complete Time & Daily Life practice and explorer runtime into `src/features/time-daily-life/time-daily-life-runtime.js` through one explicit dependency context.
+- [x] Extract the remaining Foundations interaction and explorer runtime into `src/features/foundations/foundations-runtime.js` through one explicit dependency context.
 - [ ] Migrate School, Food, Foundations, and Family/Home. (Greetings and Polite Words controllers extracted.)
 - [ ] Delete the matching legacy code after each replacement passes checks.
 
