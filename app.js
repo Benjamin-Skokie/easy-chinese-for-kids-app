@@ -1283,6 +1283,230 @@
   ];
   var politeGameItemIds = ["thank-you", "youre-welcome", "sorry", "never-mind"];
 
+  // src/features/foundations/polite-words-controller.js
+  function createPoliteWordsController({
+    state: state2,
+    politeGameItemIds: politeGameItemIds2,
+    politePractice: politePractice2,
+    topicById: topicById2,
+    shuffleArray: shuffleArray2,
+    speak: speak2,
+    speakSceneLines: speakSceneLines2,
+    currentTopic: currentTopic2,
+    currentFocusItem: currentFocusItem2,
+    currentBook: currentBook2,
+    currentLesson: currentLesson2,
+    renderActivityPanel: renderActivityPanel2,
+    renderFocusDisplay: renderFocusDisplay2,
+    renderFocusExplorer: renderFocusExplorer2,
+    renderFocusStatus: renderFocusStatus2,
+    elements
+  }) {
+    const { focusExplorer: focusExplorer2, focusStatus: focusStatus2 } = elements;
+    function politeGameItems2() {
+      const politeTopic = topicById2("polite-words");
+      return politeGameItemIds2.map((id) => politeTopic?.focusItems.find((item) => item.id === id)).filter(Boolean);
+    }
+    function politeMeaningLabel2(itemId) {
+      const labels = {
+        "thank-you": "Thank a friend who helped you",
+        "youre-welcome": "Reply kindly after someone thanks you",
+        sorry: "Say sorry after a mistake",
+        "never-mind": "Forgive kindly after an apology"
+      };
+      return labels[itemId] ?? "";
+    }
+    function resetPoliteMatchGame2(options = {}) {
+      const items = politeGameItems2();
+      state2.politeSelectedPhraseId = null;
+      state2.politeMatchedIds = /* @__PURE__ */ new Set();
+      state2.politePhraseOrder = shuffleArray2(items.map((item) => item.id));
+      state2.politeMeaningOrder = shuffleArray2(items.map((item) => item.id));
+      state2.politeMatchFeedback = options.feedback ?? "";
+      state2.lastPoliteFeedback = state2.politeMatchFeedback;
+    }
+    function ensurePoliteMatchGame2() {
+      const items = politeGameItems2();
+      if (!state2.politePhraseOrder.length || state2.politePhraseOrder.length !== items.length || state2.politeMeaningOrder.length !== items.length) {
+        resetPoliteMatchGame2();
+      }
+    }
+    function handlePoliteMatchPhrase2(itemId) {
+      const item = politeGameItems2().find((entry) => entry.id === itemId);
+      if (!item || state2.politeMatchedIds.has(itemId)) {
+        return;
+      }
+      state2.politeSelectedPhraseId = itemId;
+      if (state2.tapAudioEnabled) {
+        speak2(item.audio, 0.78);
+      }
+      state2.politeMatchFeedback = `Now find the meaning for ${item.hanzi}.`;
+      state2.lastPoliteFeedback = state2.politeMatchFeedback;
+      renderActivityPanel2(currentTopic2());
+    }
+    function handlePoliteMatchAttempt2(targetId) {
+      if (!state2.politeSelectedPhraseId || state2.politeMatchedIds.has(targetId)) {
+        return;
+      }
+      const selectedId = state2.politeSelectedPhraseId;
+      const selectedItem = politeGameItems2().find((entry) => entry.id === selectedId);
+      if (!selectedItem) {
+        return;
+      }
+      if (selectedId === targetId) {
+        state2.politeMatchedIds = /* @__PURE__ */ new Set([...state2.politeMatchedIds, targetId]);
+        state2.politeSelectedPhraseId = null;
+        state2.politeMatchFeedback = `Correct! ${selectedItem.hanzi} matches that meaning.`;
+        state2.lastPoliteFeedback = state2.politeMatchFeedback;
+        state2.selectedFocusItemId = selectedItem.id;
+        renderFocusDisplay2(currentFocusItem2());
+        renderFocusExplorer2();
+        renderFocusStatus2();
+        if (state2.politeMatchedIds.size === politeGameItems2().length) {
+          state2.politeMatchFeedback = "Great job! You matched all the polite phrases.";
+          state2.lastPoliteFeedback = state2.politeMatchFeedback;
+        }
+        renderActivityPanel2(currentTopic2());
+        return;
+      }
+      state2.politeMatchFeedback = `Try again. ${selectedItem.hanzi} does not match that meaning.`;
+      state2.lastPoliteFeedback = state2.politeMatchFeedback;
+      renderActivityPanel2(currentTopic2());
+    }
+    function resetPoliteChallenge2(options = {}) {
+      const items = politeGameItems2();
+      if (!items.length) {
+        return;
+      }
+      const answerChoices = items.filter((item) => item.id !== options.excludeId);
+      const answerPool = answerChoices.length ? answerChoices : items;
+      const answer = answerPool[Math.floor(Math.random() * answerPool.length)];
+      const distractors = shuffleArray2(items.filter((item) => item.id !== answer.id)).slice(
+        0,
+        Math.min(3, Math.max(0, items.length - 1))
+      );
+      state2.politeChallengeAnswerId = answer.id;
+      state2.politeChallengePickedId = "";
+      state2.politeChallengePromptId = answer.id;
+      state2.politeChallengeOptionIds = shuffleArray2([answer.id, ...distractors.map((item) => item.id)]);
+      state2.politeChallengeResult = "";
+      state2.politeChallengeWrongIds = /* @__PURE__ */ new Set();
+      state2.politeListenFeedback = options.feedback ?? "";
+      state2.lastPoliteFeedback = state2.politeListenFeedback;
+    }
+    function ensurePoliteChallenge2() {
+      if (!state2.politeChallengeAnswerId || !state2.politeChallengeOptionIds.length) {
+        resetPoliteChallenge2();
+      }
+    }
+    function handlePoliteChallengePlay2() {
+      const previousPromptId = state2.politeChallengePromptId;
+      resetPoliteChallenge2({ excludeId: previousPromptId });
+      const item = politeGameItems2().find((entry) => entry.id === state2.politeChallengePromptId);
+      if (!item) {
+        return;
+      }
+      if (state2.tapAudioEnabled) {
+        speak2(item.audio, 0.78);
+      }
+      state2.politeListenFeedback = "Listen carefully, then tap the matching card.";
+      state2.lastPoliteFeedback = state2.politeListenFeedback;
+      renderActivityPanel2(currentTopic2());
+    }
+    function handlePoliteChallengeGuess2(itemId) {
+      ensurePoliteChallenge2();
+      const answer = politeGameItems2().find((entry) => entry.id === state2.politeChallengeAnswerId);
+      const picked = politeGameItems2().find((entry) => entry.id === itemId);
+      if (!answer || !picked) {
+        return;
+      }
+      if (itemId === answer.id) {
+        state2.selectedFocusItemId = answer.id;
+        state2.politeChallengePickedId = itemId;
+        state2.politeChallengeResult = "correct";
+        if (state2.tapAudioEnabled) {
+          speak2(answer.audio, 0.78);
+        }
+        state2.politeListenFeedback = `Correct! ${answer.hanzi} matches the audio.`;
+        state2.lastPoliteFeedback = state2.politeListenFeedback;
+        renderFocusDisplay2(currentFocusItem2());
+        renderFocusExplorer2();
+        renderFocusStatus2();
+        renderActivityPanel2(currentTopic2());
+        return;
+      }
+      state2.politeChallengePickedId = itemId;
+      state2.politeChallengeResult = "wrong";
+      state2.politeChallengeWrongIds = /* @__PURE__ */ new Set([...state2.politeChallengeWrongIds, itemId]);
+      state2.politeListenFeedback = `Try again. You picked ${picked.hanzi}, but the audio is ${answer.hanzi}.`;
+      state2.lastPoliteFeedback = state2.politeListenFeedback;
+      renderActivityPanel2(currentTopic2());
+    }
+    function renderPoliteWordsExplorer2() {
+      focusExplorer2.innerHTML = `
+      <div class="numbers-board">
+        <div class="numbers-stage-card">
+          <p class="body-match-kicker">${currentBook2().label} Lesson ${currentLesson2().lesson}</p>
+          <h4>Book theme: kind classroom language</h4>
+          <p>This topic starts with thank you and sorry, then grows into kind replies and polite requests.</p>
+        </div>
+        <div class="greetings-practice-grid">
+          ${politePractice2.map((exchange) => `
+            <section class="greetings-exchange">
+              <div class="greetings-exchange-top">
+                <div>
+                  <p class="body-match-kicker">Scene ${exchange.number}</p>
+                  <p class="greetings-exchange-prompt">${exchange.prompt}</p>
+                </div>
+                <button class="small-button is-action-button" type="button" data-polite-play-all="${exchange.id}">Play scene</button>
+              </div>
+              <div class="greetings-scene-layout">
+                <div class="greetings-scene-visual">
+                  <img class="greetings-scene-image" src="${exchange.imagePath}" alt="${exchange.imageAlt}" />
+                </div>
+                <div class="greetings-line-stack">
+                  ${exchange.lines.map((line) => `
+                    <article class="greetings-line-card">
+                      <div class="telephone-bubble-copy">
+                        <p class="telephone-line-hanzi">${line.hanzi}</p>
+                        ${state2.showPinyin ? `<p class="telephone-line-pinyin">${line.pinyin}</p>` : ""}
+                        ${state2.showEnglish ? `<p class="telephone-line-english">${line.english}</p>` : ""}
+                      </div>
+                    </article>
+                  `).join("")}
+                </div>
+              </div>
+            </section>
+          `).join("")}
+        </div>
+      </div>
+    `;
+      focusExplorer2.querySelectorAll("[data-polite-play-all]").forEach((button) => {
+        button.addEventListener("click", () => {
+          const exchange = politePractice2.find((entry) => entry.id === button.dataset.politePlayAll);
+          if (!exchange || !state2.tapAudioEnabled) {
+            return;
+          }
+          speakSceneLines2(exchange.lines);
+          focusStatus2.textContent = `Listen to the whole scene: ${exchange.lines.map((line) => line.hanzi).join(" ")}`;
+        });
+      });
+    }
+    return {
+      politeGameItems: politeGameItems2,
+      politeMeaningLabel: politeMeaningLabel2,
+      resetPoliteMatchGame: resetPoliteMatchGame2,
+      ensurePoliteMatchGame: ensurePoliteMatchGame2,
+      handlePoliteMatchPhrase: handlePoliteMatchPhrase2,
+      handlePoliteMatchAttempt: handlePoliteMatchAttempt2,
+      resetPoliteChallenge: resetPoliteChallenge2,
+      ensurePoliteChallenge: ensurePoliteChallenge2,
+      handlePoliteChallengePlay: handlePoliteChallengePlay2,
+      handlePoliteChallengeGuess: handlePoliteChallengeGuess2,
+      renderPoliteWordsExplorer: renderPoliteWordsExplorer2
+    };
+  }
+
   // src/features/foundations/greetings.js
   var greetingsTopic = {
     id: "greetings",
@@ -3216,6 +3440,17 @@
   var handleGreetingsChallengePlay;
   var handleGreetingsChallengeGuess;
   var renderGreetingsExplorer;
+  var politeGameItems;
+  var politeMeaningLabel;
+  var resetPoliteMatchGame;
+  var ensurePoliteMatchGame;
+  var handlePoliteMatchPhrase;
+  var handlePoliteMatchAttempt;
+  var resetPoliteChallenge;
+  var ensurePoliteChallenge;
+  var handlePoliteChallengePlay;
+  var handlePoliteChallengeGuess;
+  var renderPoliteWordsExplorer;
   document.querySelectorAll("[data-view]").forEach((button) => {
     button.addEventListener("click", () => {
       switchView(button.dataset.view);
@@ -3815,145 +4050,6 @@
     state.ageBuildAvailableTokens = shuffleArray([...state.ageBuildAvailableTokens, ...state.ageBuildSelectedTokens]);
     state.ageBuildSelectedTokens = [];
     state.lastAgeFeedback = "Try building the sentence again.";
-    renderActivityPanel(currentTopic());
-  }
-  function politeGameItems() {
-    const politeTopic = topicById("polite-words");
-    return politeGameItemIds.map((id) => politeTopic?.focusItems.find((item) => item.id === id)).filter(Boolean);
-  }
-  function politeMeaningLabel(itemId) {
-    const labels = {
-      "thank-you": "Thank a friend who helped you",
-      "youre-welcome": "Reply kindly after someone thanks you",
-      sorry: "Say sorry after a mistake",
-      "never-mind": "Forgive kindly after an apology"
-    };
-    return labels[itemId] ?? "";
-  }
-  function resetPoliteMatchGame(options = {}) {
-    const items = politeGameItems();
-    state.politeSelectedPhraseId = null;
-    state.politeMatchedIds = /* @__PURE__ */ new Set();
-    state.politePhraseOrder = shuffleArray(items.map((item) => item.id));
-    state.politeMeaningOrder = shuffleArray(items.map((item) => item.id));
-    state.politeMatchFeedback = options.feedback ?? "";
-    state.lastPoliteFeedback = state.politeMatchFeedback;
-  }
-  function ensurePoliteMatchGame() {
-    const items = politeGameItems();
-    if (!state.politePhraseOrder.length || state.politePhraseOrder.length !== items.length || state.politeMeaningOrder.length !== items.length) {
-      resetPoliteMatchGame();
-    }
-  }
-  function handlePoliteMatchPhrase(itemId) {
-    const item = politeGameItems().find((entry) => entry.id === itemId);
-    if (!item || state.politeMatchedIds.has(itemId)) {
-      return;
-    }
-    state.politeSelectedPhraseId = itemId;
-    if (state.tapAudioEnabled) {
-      speak(item.audio, 0.78);
-    }
-    state.politeMatchFeedback = `Now find the meaning for ${item.hanzi}.`;
-    state.lastPoliteFeedback = state.politeMatchFeedback;
-    renderActivityPanel(currentTopic());
-  }
-  function handlePoliteMatchAttempt(targetId) {
-    if (!state.politeSelectedPhraseId || state.politeMatchedIds.has(targetId)) {
-      return;
-    }
-    const selectedId = state.politeSelectedPhraseId;
-    const selectedItem = politeGameItems().find((entry) => entry.id === selectedId);
-    if (!selectedItem) {
-      return;
-    }
-    if (selectedId === targetId) {
-      state.politeMatchedIds = /* @__PURE__ */ new Set([...state.politeMatchedIds, targetId]);
-      state.politeSelectedPhraseId = null;
-      state.politeMatchFeedback = `Correct! ${selectedItem.hanzi} matches that meaning.`;
-      state.lastPoliteFeedback = state.politeMatchFeedback;
-      state.selectedFocusItemId = selectedItem.id;
-      renderFocusDisplay(currentFocusItem());
-      renderFocusExplorer();
-      renderFocusStatus();
-      if (state.politeMatchedIds.size === politeGameItems().length) {
-        state.politeMatchFeedback = "Great job! You matched all the polite phrases.";
-        state.lastPoliteFeedback = state.politeMatchFeedback;
-      }
-      renderActivityPanel(currentTopic());
-      return;
-    }
-    state.politeMatchFeedback = `Try again. ${selectedItem.hanzi} does not match that meaning.`;
-    state.lastPoliteFeedback = state.politeMatchFeedback;
-    renderActivityPanel(currentTopic());
-  }
-  function resetPoliteChallenge(options = {}) {
-    const items = politeGameItems();
-    if (!items.length) {
-      return;
-    }
-    const answerChoices = items.filter((item) => item.id !== options.excludeId);
-    const answerPool = answerChoices.length ? answerChoices : items;
-    const answer = answerPool[Math.floor(Math.random() * answerPool.length)];
-    const distractors = shuffleArray(items.filter((item) => item.id !== answer.id)).slice(
-      0,
-      Math.min(3, Math.max(0, items.length - 1))
-    );
-    state.politeChallengeAnswerId = answer.id;
-    state.politeChallengePickedId = "";
-    state.politeChallengePromptId = answer.id;
-    state.politeChallengeOptionIds = shuffleArray([answer.id, ...distractors.map((item) => item.id)]);
-    state.politeChallengeResult = "";
-    state.politeChallengeWrongIds = /* @__PURE__ */ new Set();
-    state.politeListenFeedback = options.feedback ?? "";
-    state.lastPoliteFeedback = state.politeListenFeedback;
-  }
-  function ensurePoliteChallenge() {
-    if (!state.politeChallengeAnswerId || !state.politeChallengeOptionIds.length) {
-      resetPoliteChallenge();
-    }
-  }
-  function handlePoliteChallengePlay() {
-    const previousPromptId = state.politeChallengePromptId;
-    resetPoliteChallenge({ excludeId: previousPromptId });
-    const item = politeGameItems().find((entry) => entry.id === state.politeChallengePromptId);
-    if (!item) {
-      return;
-    }
-    if (state.tapAudioEnabled) {
-      speak(item.audio, 0.78);
-    }
-    state.politeListenFeedback = "Listen carefully, then tap the matching card.";
-    state.lastPoliteFeedback = state.politeListenFeedback;
-    renderActivityPanel(currentTopic());
-  }
-  function handlePoliteChallengeGuess(itemId) {
-    ensurePoliteChallenge();
-    const answer = politeGameItems().find((entry) => entry.id === state.politeChallengeAnswerId);
-    const picked = politeGameItems().find((entry) => entry.id === itemId);
-    if (!answer || !picked) {
-      return;
-    }
-    if (itemId === answer.id) {
-      state.selectedFocusItemId = answer.id;
-      state.politeChallengePickedId = itemId;
-      state.politeChallengeResult = "correct";
-      if (state.tapAudioEnabled) {
-        speak(answer.audio, 0.78);
-      }
-      state.politeListenFeedback = `Correct! ${answer.hanzi} matches the audio.`;
-      state.lastPoliteFeedback = state.politeListenFeedback;
-      renderFocusDisplay(currentFocusItem());
-      renderFocusExplorer();
-      renderFocusStatus();
-      renderActivityPanel(currentTopic());
-      return;
-    }
-    state.politeChallengePickedId = itemId;
-    state.politeChallengeResult = "wrong";
-    state.politeChallengeWrongIds = /* @__PURE__ */ new Set([...state.politeChallengeWrongIds, itemId]);
-    state.politeListenFeedback = `Try again. You picked ${picked.hanzi}, but the audio is ${answer.hanzi}.`;
-    state.lastPoliteFeedback = state.politeListenFeedback;
     renderActivityPanel(currentTopic());
   }
   function resetClothesQuiz() {
@@ -7818,60 +7914,6 @@
       });
     });
   }
-  function renderPoliteWordsExplorer() {
-    focusExplorer.innerHTML = `
-    <div class="numbers-board">
-      <div class="numbers-stage-card">
-        <p class="body-match-kicker">${currentBook().label} Lesson ${currentLesson().lesson}</p>
-        <h4>Book theme: kind classroom language</h4>
-        <p>This topic starts with thank you and sorry, then grows into kind replies and polite requests.</p>
-      </div>
-      <div class="greetings-practice-grid">
-        ${politePractice.map(
-      (exchange) => `
-              <section class="greetings-exchange">
-                <div class="greetings-exchange-top">
-                  <div>
-                    <p class="body-match-kicker">Scene ${exchange.number}</p>
-                    <p class="greetings-exchange-prompt">${exchange.prompt}</p>
-                  </div>
-                  <button class="small-button is-action-button" type="button" data-polite-play-all="${exchange.id}">Play scene</button>
-                </div>
-                <div class="greetings-scene-layout">
-                  <div class="greetings-scene-visual">
-                    <img class="greetings-scene-image" src="${exchange.imagePath}" alt="${exchange.imageAlt}" />
-                  </div>
-                  <div class="greetings-line-stack">
-                    ${exchange.lines.map(
-        (line, index) => `
-                          <article class="greetings-line-card">
-                            <div class="telephone-bubble-copy">
-                              <p class="telephone-line-hanzi">${line.hanzi}</p>
-                              ${state.showPinyin ? `<p class="telephone-line-pinyin">${line.pinyin}</p>` : ""}
-                              ${state.showEnglish ? `<p class="telephone-line-english">${line.english}</p>` : ""}
-                            </div>
-                          </article>
-                        `
-      ).join("")}
-                  </div>
-                </div>
-              </section>
-            `
-    ).join("")}
-      </div>
-    </div>
-  `;
-    focusExplorer.querySelectorAll("[data-polite-play-all]").forEach((button) => {
-      button.addEventListener("click", () => {
-        const exchange = politePractice.find((entry) => entry.id === button.dataset.politePlayAll);
-        if (!exchange || !state.tapAudioEnabled) {
-          return;
-        }
-        speakSceneLines(exchange.lines);
-        focusStatus.textContent = `Listen to the whole scene: ${exchange.lines.map((line) => line.hanzi).join(" ")}`;
-      });
-    });
-  }
   function renderIntroductionsExplorer() {
     focusExplorer.innerHTML = `
     <div class="numbers-board">
@@ -8422,6 +8464,36 @@
     currentBook,
     currentLesson,
     resetListenChallengeResult,
+    renderActivityPanel,
+    renderFocusDisplay,
+    renderFocusExplorer,
+    renderFocusStatus,
+    elements: { focusExplorer, focusStatus }
+  }));
+  ({
+    politeGameItems,
+    politeMeaningLabel,
+    resetPoliteMatchGame,
+    ensurePoliteMatchGame,
+    handlePoliteMatchPhrase,
+    handlePoliteMatchAttempt,
+    resetPoliteChallenge,
+    ensurePoliteChallenge,
+    handlePoliteChallengePlay,
+    handlePoliteChallengeGuess,
+    renderPoliteWordsExplorer
+  } = createPoliteWordsController({
+    state,
+    politeGameItemIds,
+    politePractice,
+    topicById,
+    shuffleArray,
+    speak,
+    speakSceneLines,
+    currentTopic,
+    currentFocusItem,
+    currentBook,
+    currentLesson,
     renderActivityPanel,
     renderFocusDisplay,
     renderFocusExplorer,

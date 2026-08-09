@@ -80,7 +80,7 @@ A feature registers its owned topic IDs, creates its scoped state, renders its e
 - [x] Move the complete Clothes topic definition, scenes, and picture matching data into `src/features/daily-life/clothes.js`.
 - [x] Add `src/features/play-hobbies/play-hobbies.js` as the feature boundary for the Toys and Hobbies topics.
 - [x] Extract the shared Listen and Choose, Matching Game, and Say It renderer into `src/games/shared-lesson-practice.js` with explicit state, audio, and DOM dependencies.
-- [ ] Migrate School, Food, Foundations, and Family/Home. (Greetings controller extracted.)
+- [ ] Migrate School, Food, Foundations, and Family/Home. (Greetings and Polite Words controllers extracted.)
 - [ ] Delete the matching legacy code after each replacement passes checks.
 
 ### 4. Completion

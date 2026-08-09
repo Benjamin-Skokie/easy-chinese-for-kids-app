@@ -34,6 +34,7 @@ import { bookHomeCategories, books, learningHomeCategories, topicCardMeta, topic
 import { buildMultiplicationRhymeItems, buildNumberItem, multiplicationRhymeTopic, numberStages, numbersTopic, telephonePractice } from "../src/features/foundations/numbers.js";
 import { createFoundationState } from "../src/features/foundations/state.js";
 import { createGreetingsController } from "../src/features/foundations/greetings-controller.js";
+import { createPoliteWordsController } from "../src/features/foundations/polite-words-controller.js";
 import { familyGameItemIds, familyPractice, familyTopic, illustratedFamily } from "../src/features/family/family.js";
 
 test("the local page loads a single bundled application script", () => {
@@ -137,6 +138,36 @@ test("greetings interaction is owned by its feature controller", () => {
   assert.equal(state.greetingsChallengeResult, "correct");
   assert.equal(state.selectedFocusItemId, answerId);
   assert.deepEqual(rendered, ["display", "explorer", "status", "activity"]);
+});
+
+test("polite words controller refreshes the prompt when audio is replayed", () => {
+  const state = { ...createFoundationState(), tapAudioEnabled: false, selectedFocusItemId: null };
+  const controller = createPoliteWordsController({
+    state,
+    politeGameItemIds,
+    politePractice,
+    topicById: (id) => id === "polite-words" ? politeWordsTopic : null,
+    shuffleArray: (items) => [...items],
+    speak: () => {},
+    speakSceneLines: () => {},
+    currentTopic: () => politeWordsTopic,
+    currentFocusItem: () => null,
+    currentBook: () => ({ label: "Book 1A" }),
+    currentLesson: () => ({ lesson: 5 }),
+    renderActivityPanel: () => {},
+    renderFocusDisplay: () => {},
+    renderFocusExplorer: () => {},
+    renderFocusStatus: () => {},
+    elements: {
+      focusExplorer: { innerHTML: "", querySelectorAll: () => [] },
+      focusStatus: { textContent: "" }
+    }
+  });
+
+  controller.resetPoliteChallenge();
+  const firstPromptId = state.politeChallengePromptId;
+  controller.handlePoliteChallengePlay();
+  assert.notEqual(state.politeChallengePromptId, firstPromptId);
 });
 
 test("time and calendar content retains its expected teaching sets", () => {
