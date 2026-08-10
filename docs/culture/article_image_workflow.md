@@ -4,7 +4,7 @@ This file describes the process.
 
 Source-of-truth policy:
 
-- Use [culture_art_direction.md](./culture_art_direction.md) for visual judgment and image quality rules.
+- Use [art_direction.md](./art_direction.md) for visual judgment and image quality rules.
 - Use this file for the operational steps of how culture article images are added and built.
 
 ## Goal

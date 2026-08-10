@@ -2,7 +2,7 @@
 
 Last updated: 2026-07-12
 
-Status: historical first-pass OCR asset audit. Keep for provenance, but prefer [docs/learn_by_topics_asset_mapping.md](../learn_by_topics_asset_mapping.md) and [docs/learn_by_books_asset_mapping.md](../learn_by_books_asset_mapping.md) for current manual coverage review.
+Status: historical first-pass OCR asset audit. Keep for provenance, but prefer [category_topic_content_asset_mapping.json](../../category_topic_content_asset_mapping.json) and [book_content_asset_review.json](../../book_content_asset_review.json) for current coverage review.
 
 Purpose: audit the OCR textbook sequence against the current `assets` library, focusing on lesson-level vocabulary coverage and sentence-pattern scene coverage.
 
@@ -10,7 +10,7 @@ Scope:
 
 - This is a practical production audit, not a full textbook transcription.
 - Coverage is judged by each lesson's core teaching goal: the nouns, verbs, settings, and sentence patterns that clearly need visual support.
-- Existing inventory is based on the current `assets` folders, `assets/*/manifest.json`, [docs/asset_summary.md](../asset_summary.md), and [docs/grammar_asset_map.md](../grammar_asset_map.md).
+- Existing inventory is based on the current `assets` folders, `assets/*/manifest.json`, [asset_summary.md](../../asset_summary.md), and [grammar_asset_map.md](../../grammar_asset_map.md).
 
 Status labels:
 
@@ -127,7 +127,7 @@ Status labels:
 - Core pattern: `有 / 没有`, family counting, `一个 / 两个`
 - Coverage: `Partial`
 - Existing support:
-  - [docs/grammar_asset_map.md](../grammar_asset_map.md) already maps `有 / 没有`
+  - [grammar_asset_map.md](../../grammar_asset_map.md) already maps `有 / 没有`
   - [assets/illustrated-family](../../assets/illustrated-family)
 - Gap:
   - no family-specific scene that clearly teaches sibling counting

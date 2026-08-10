@@ -26,7 +26,7 @@ import { greetingsGameItemIds, greetingsPractice, greetingsTopic } from "../src/
 import { politeGameItemIds, politePractice, politeWordsTopic } from "../src/features/foundations/polite-words.js";
 import { clothesMatchItems, clothesPractice, clothesTopic } from "../src/features/daily-life/clothes.js";
 import { natureLesson, natureTopic, weatherLesson, weatherTopic } from "../src/features/world/weather.js";
-import { animalsTopic } from "../src/features/world/animals.js";
+import { animalLessons, animalsTopic, petsTopic } from "../src/features/world/animals.js";
 import { colourLessons, coloursTopic } from "../src/features/world/colours.js";
 import { createWorldRuntime } from "../src/features/world/world-runtime.js";
 import { hobbiesTopic, toysTopic } from "../src/features/play-hobbies/play-hobbies.js";
@@ -43,8 +43,15 @@ import { familyGameItemIds, familyPractice, familyTopic, illustratedFamily } fro
 
 test("the local page loads a single bundled application script", () => {
   const html = readFileSync("index.html", "utf8");
-  assert.match(html, /<script src="app\.js"><\/script>/);
+  assert.match(html, /<script src="app\.js\?v=20260809-weather-scenes"><\/script>/);
   assert.doesNotMatch(html, /type="module"/);
+});
+
+test("direct topic links immediately focus the topic detail for every topic", () => {
+  const runtimeWiringSource = readFileSync("src/app/runtime-wiring.js", "utf8");
+  const stylesSource = readFileSync("styles.css", "utf8");
+  assert.match(runtimeWiringSource, /if \(initialTopicId\) \{\s*requestAnimationFrame\(\(\) => focusLearningPanel\(\)\);/);
+  assert.match(stylesSource, /html \{\s*scroll-behavior: auto;/);
 });
 
 test("the generated bundle keeps its source-of-truth marker", () => {
@@ -509,7 +516,7 @@ test("Nature and Weather remain separate book topics", () => {
   assert.match(topicDetailSource, /topic\.ownsExplorerContent/);
   assert.match(focusRuntimeSource, /currentTopic\(\)\.ownsExplorerContent/);
   assert.match(worldRuntimeSource, /function worldSceneCardMarkup/);
-  assert.equal((worldRuntimeSource.match(/worldSceneCardMarkup\(/g) ?? []).length, 3);
+  assert.equal((worldRuntimeSource.match(/worldSceneCardMarkup\(/g) ?? []).length, 4);
 });
 
 test("Weather groups repeated scene artwork into a two-by-two scene grid", () => {
@@ -525,7 +532,9 @@ test("Weather groups repeated scene artwork into a two-by-two scene grid", () =>
   });
 
   runtime.renderWorldExplorer();
+  assert.equal(weatherLesson.scenes.length, 4);
   assert.equal((focusExplorer.innerHTML.match(/school-scene-card/g) ?? []).length, 4);
+  assert.match(focusExplorer.innerHTML, /weather-scene-grid/);
   assert.doesNotMatch(focusExplorer.innerHTML, />Scenes</);
   assert.match(focusExplorer.innerHTML, /下雨天/);
   assert.match(focusExplorer.innerHTML, /下雪天/);
@@ -588,7 +597,7 @@ test("Nature practice fills a complete sentence from one inline visual cue", () 
   });
 
   runtime.renderWorldPractice(natureTopic);
-  assert.match(activityList.innerHTML, /看图填一填/);
+  assert.match(activityList.innerHTML, /Look and complete/);
   assert.match(activityList.innerHTML, /data-nature-fill-subject/);
   assert.match(activityList.innerHTML, /data-nature-fill-word/);
   assert.match(activityList.innerHTML, /nature-fill-inline-icon/);
@@ -634,9 +643,92 @@ test("Weather practice connects a weather sentence to getting ready", () => {
   assert.match(activityList.innerHTML, /data-weather-fill-temperature="热"/);
 });
 
-test("animals owns its standalone topic definition", () => {
+test("Pets and Zoo Animals are distinct topic pages", () => {
+  const focusRuntimeSource = readFileSync("src/core/focus-explorer-runtime.js", "utf8");
+  const practiceRuntimeSource = readFileSync("src/core/lesson-practice-runtime.js", "utf8");
   assert.equal(animalsTopic.id, "animals");
-  assert.equal(animalsTopic.steps.length, 2);
+  assert.equal(animalsTopic.ownsExplorerContent, true);
+  assert.equal(animalsTopic.steps.length, 1);
+  assert.equal(animalsTopic.steps[0].book, "2B");
+  assert.equal(petsTopic.id, "pets");
+  assert.equal(petsTopic.steps.length, 1);
+  assert.equal(petsTopic.steps[0].book, "1B");
+  assert.equal(animalLessons["1b"].items.length, 4);
+  assert.equal(animalLessons["2b"].items.length, 6);
+  assert.equal(animalLessons["1b"].scenes[0].lines[0].hanzi, "乐乐喜欢狗和金鱼。");
+  assert.equal(animalLessons["2b"].usefulNote, undefined);
+  assert.match(focusRuntimeSource, /\["pets", "animals", "colours", "nature", "weather"\]/);
+  assert.match(practiceRuntimeSource, /\["pets", "animals", "colours", "nature", "weather"\]/);
+  assert.match(readFileSync("src/features/world/world-runtime.js", "utf8"), /topic\.id === "pets"\) return renderAnimalsPractice/);
+});
+
+test("Animals renders book-aware scenes, word cards, and listening practice", () => {
+  const focusExplorer = { innerHTML: "", querySelectorAll: () => [] };
+  const oneB = createWorldRuntime({
+    state: { showEnglish: true, showPinyin: true, tapAudioEnabled: true },
+    currentTopic: () => petsTopic,
+    currentBook: () => ({ id: "1b", label: "Book 1B" }),
+    currentLesson: () => ({ lesson: 5 }),
+    focusExplorer,
+    speak: () => {},
+    selectFocusItem: () => {}
+  });
+
+  oneB.renderWorldExplorer();
+  assert.match(focusExplorer.innerHTML, /乐乐喜欢狗和金鱼。/);
+  assert.match(focusExplorer.innerHTML, /book-word-card/);
+  assert.match(focusExplorer.innerHTML, /Pet story/);
+  assert.match(focusExplorer.innerHTML, /狗吃骨头。/);
+  assert.match(focusExplorer.innerHTML, /熊猫吃竹子。/);
+  assert.match(focusExplorer.innerHTML, /猴子吃香蕉。/);
+  assert.match(focusExplorer.innerHTML, /data-pet-food-story="dog-bone"/);
+  assert.match(focusExplorer.innerHTML, /Useful note/);
+  assert.match(focusExplorer.innerHTML, /我喜欢 \+ 名词。比如：我喜欢猫。/);
+
+  const activityList = { className: "", innerHTML: "", querySelector: () => null, querySelectorAll: () => [] };
+  const twoB = createWorldRuntime({
+    state: { showEnglish: true, showPinyin: true, tapAudioEnabled: true },
+    currentTopic: () => animalsTopic,
+    currentBook: () => ({ id: "2b", label: "Book 2B" }),
+    currentLesson: () => ({ lesson: 5 }),
+    focusExplorer,
+    activityPanelTitle: { textContent: "" },
+    activityPanelSummary: { textContent: "" },
+    activityList,
+    speak: () => {},
+    selectFocusItem: () => {},
+    renderActivityPanel: () => {}
+  });
+
+  twoB.renderWorldExplorer();
+  assert.match(focusExplorer.innerHTML, /动物园里有一只老虎，两头大象，三只熊猫。/);
+  assert.match(focusExplorer.innerHTML, /动物园里有很多猴子、金鱼和乌龟。/);
+  assert.doesNotMatch(focusExplorer.innerHTML, /Useful note/);
+  twoB.renderWorldPractice(animalsTopic);
+  assert.match(activityList.innerHTML, /动物园有/);
+  assert.match(activityList.innerHTML, /data-zoo-sentence-choice="tiger"/);
+  assert.match(activityList.innerHTML, /一只老虎/);
+
+  const petsActivityList = { className: "", innerHTML: "", querySelector: () => null, querySelectorAll: () => [] };
+  const petsRuntime = createWorldRuntime({
+    state: { showEnglish: true, showPinyin: true, tapAudioEnabled: true },
+    currentTopic: () => petsTopic,
+    currentBook: () => ({ id: "1b", label: "Book 1B" }),
+    currentLesson: () => ({ lesson: 5 }),
+    focusExplorer,
+    activityPanelTitle: { textContent: "" },
+    activityPanelSummary: { textContent: "" },
+    activityList: petsActivityList,
+    speak: () => {},
+    selectFocusItem: () => {},
+    renderActivityPanel: () => {}
+  });
+  petsRuntime.renderWorldPractice(petsTopic);
+  assert.match(petsActivityList.innerHTML, /我喜欢/);
+  assert.match(petsActivityList.innerHTML, /data-pets-preference-choice="dog"/);
+  assert.match(petsActivityList.innerHTML, /family-match-open-board/);
+  assert.match(petsActivityList.innerHTML, /data-pet-food-match-animal="dog-bone"/);
+  assert.match(petsActivityList.innerHTML, /data-pet-food-match-food="dog-bone"/);
 });
 
 test("colours covers both book colour sets with pictured examples", () => {

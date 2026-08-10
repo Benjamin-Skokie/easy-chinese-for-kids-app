@@ -6,9 +6,9 @@ This file is the visual source of truth for `culture/` articles.
 
 Use other files for other jobs:
 
-- [culture_article_image_workflow.md](./culture_article_image_workflow.md): process and build steps
-- [culture/content/english_rewrite_guidelines.md](../culture/content/english_rewrite_guidelines.md): child-facing English
-- [art_direction.md](./art_direction.md): broader house style
+- [article_image_workflow.md](./article_image_workflow.md): process and build steps
+- [culture/content/english_rewrite_guidelines.md](../../culture/content/english_rewrite_guidelines.md): child-facing English
+- [art_direction.md](../art_direction.md): broader house style
 
 ## Core Standard
 

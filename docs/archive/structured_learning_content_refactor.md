@@ -1,6 +1,6 @@
 # Structured Learning Content Refactor Plan
 
-> Superseded for implementation by [app_js_modular_refactor.md](./app_js_modular_refactor.md). This document records the earlier multi-page, no-build proposal and is retained for historical context.
+> Superseded for implementation by the completed modular source layout in `src/`. This document records the earlier multi-page, no-build proposal and is retained for historical context.
 
 Last updated: 2026-08-03
 

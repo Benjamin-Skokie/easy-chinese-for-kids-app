@@ -301,7 +301,7 @@
           "existingAssets": [
             "assets/illustrated-family",
             "assets/illustrated-family/family-counting-two-younger-brothers.webp",
-            "docs/grammar_asset_map.md"
+            "docs/curriculum_guide.md"
           ],
           "missingAssets": []
         },
@@ -1057,5 +1057,5 @@
       ]
     }
   ],
-  "status": "legacy seed map; prefer docs/learn_by_topics_asset_mapping.md and docs/learn_by_books_asset_mapping.md for current manual coverage review"
+  "status": "legacy seed map; prefer docs/category_topic_content_asset_mapping.json and docs/book_content_asset_review.json for current coverage review"
 }

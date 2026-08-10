@@ -15,7 +15,7 @@ Primary sources:
 - [series_audit.md](./series_audit.md)
 - [curriculum_reference.json](./curriculum_reference.json)
 - [asset_summary.md](./asset_summary.md)
-- [structured_learning_content_refactor.md](./structured_learning_content_refactor.md)
+- [structured_learning_content_refactor.md](./archive/structured_learning_content_refactor.md) (historical only)
 - [topic_content_asset_matrix.md](./topic_content_asset_matrix.md)
 
 ## Core Principle

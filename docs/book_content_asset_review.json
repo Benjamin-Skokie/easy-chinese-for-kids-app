@@ -320,8 +320,8 @@
           "verification": "ocr-backed; page-level review recommended before final product copy",
           "topic": "Family",
           "topicId": "family",
-          "category": "我和家人 / Me & Family",
-          "categoryId": "me-family",
+          "category": "自然和颜色 / World Around Us",
+          "categoryId": "world-around-us",
           "pagePattern": "matching-and-dialogue"
         },
         {
@@ -431,12 +431,12 @@
             "狗",
             "猫",
             "金鱼",
-            "兔子"
+            "乌龟"
           ],
           "corePatterns": [
-            "我有一只..."
+            "喜欢"
           ],
-          "coverage": "strong",
+          "coverage": "partial",
           "existingAssets": [
             "assets/illustrated-animals",
             "assets/illustrated-pets/lele-with-pets-at-home.webp"
@@ -448,11 +448,11 @@
             "ocrText": "docs/ocr/轻松学中文少儿版1b.txt",
             "contactSheets": "generated/easy_chinese_book_sheets_6page/轻松学中文少儿版1b"
           },
-          "verification": "ocr-backed; page-level review recommended before final product copy",
-          "topic": "Pets & Animals",
-          "topicId": "pets-animals",
-          "category": "自然和颜色 / World Around Us",
-          "categoryId": "world-around-us",
+          "verification": "OCR confirms pet vocabulary and 喜欢; the ownership frame from older mapping data remains unconfirmed.",
+          "topic": "Pets",
+          "topicId": "pets",
+          "category": "我和家人 / Me & Family",
+          "categoryId": "me-family",
           "pagePattern": "animal-picture-match"
         },
         {
@@ -612,7 +612,7 @@
           "existingAssets": [
             "assets/illustrated-family",
             "assets/illustrated-family/family-counting-two-younger-brothers.webp",
-            "docs/grammar_asset_map.md"
+            "docs/curriculum_guide.md"
           ],
           "missingAssets": [],
           "source": {
@@ -981,8 +981,8 @@
             "contactSheets": "generated/easy_chinese_book_sheets_6page/轻松学中文少儿版2b"
           },
           "verification": "ocr-backed; page-level review recommended before final product copy",
-          "topic": "Pets & Animals",
-          "topicId": "pets-animals",
+          "topic": "Zoo Animals",
+          "topicId": "animals",
           "category": "自然和颜色 / World Around Us",
           "categoryId": "world-around-us",
           "pagePattern": "animal-picture-match"

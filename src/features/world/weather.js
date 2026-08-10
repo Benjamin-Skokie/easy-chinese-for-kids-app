@@ -1,6 +1,12 @@
 export const weatherLesson = {
   title: "It's Raining",
   summary: "Describe today’s weather, then connect it to how you feel and what you wear.",
+  scenes: [
+    { id: "rain", title: "下雨天", imagePath: "assets/illustrated-weather/rainy-umbrella.webp", imageAlt: "A child under an umbrella in the rain", lines: [{ hanzi: "下雨了。", pinyin: "xià yǔ le.", english: "It is raining.", audio: "下雨了" }] },
+    { id: "snow", title: "下雪天", imagePath: "assets/illustrated-weather/snowy-cold.webp", imageAlt: "A snowy winter scene", lines: [{ hanzi: "下雪了。今天很冷。", pinyin: "xià xuě le. jīn tiān hěn lěng.", english: "It is snowing. Today is very cold.", audio: "下雪了，今天很冷" }] },
+    { id: "sunny", title: "晴天", imagePath: "assets/illustrated-weather/sunny-hot.webp", imageAlt: "A bright sunny day", lines: [{ hanzi: "今天是晴天。今天很热。", pinyin: "jīn tiān shì qíng tiān. jīn tiān hěn rè.", english: "Today is sunny. Today is very hot.", audio: "今天是晴天，今天很热" }] },
+    { id: "windy", title: "刮大风", imagePath: "assets/illustrated-weather/windy-leaves.webp", imageAlt: "Leaves blowing on a windy day", lines: [{ hanzi: "今天刮大风。", pinyin: "jīn tiān guā dà fēng.", english: "It is very windy today.", audio: "今天刮大风" }] }
+  ],
   items: [
     { id: "rain", hanzi: "下雨了", pinyin: "xià yǔ le", english: "It is raining.", audio: "下雨了", imagePath: "assets/illustrated-weather/rainy-umbrella.webp", imageAlt: "A child under an umbrella in the rain" },
     { id: "snow", hanzi: "下雪了", pinyin: "xià xuě le", english: "It is snowing.", audio: "下雪了", imagePath: "assets/illustrated-weather/snowy-cold.webp", imageAlt: "A snowy winter scene" },

@@ -1,5 +1,7 @@
 # Project Memory
 
+> Archived. Use [development_log.md](../development_log.md) for the project narrative and [README.md](../README.md) for active references.
+
 Last updated: 2026-08-04
 
 This file is the quick handoff memory for the current product state. It should help the next session continue without re-discovering the same decisions.

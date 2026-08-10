@@ -36,7 +36,6 @@ import { createGreetingsController } from "../features/foundations/greetings-con
 import { identityConversation, identityCountries, identityQuestion, identityTopic } from "../features/foundations/identity.js";
 import { familyGameItemIds, familyHeadshotsByItemId, familyPersonIdsByItemId, familyPractice, familyTopic, illustratedFamily } from "../features/family/family.js";
 import { clothesMatchItems, clothesPractice, clothesTopic } from "../features/daily-life/clothes.js";
-import { animalsTopic } from "../features/world/animals.js";
 import { coloursTopic } from "../features/world/colours.js";
 import { hobbiesTopic, toysTopic } from "../features/play-hobbies/play-hobbies.js";
 import { bodyBonusItemIds, bodyCoreItemIds, bodyDiagramLayout, bodyTopic } from "../features/foundations/body.js";
@@ -828,3 +827,7 @@ renderBooks();
 renderTopicDetail();
 switchView(viewFromLocation(window.location));
 updateTopicPageVisibility();
+
+if (initialTopicId) {
+  requestAnimationFrame(() => focusLearningPanel());
+}

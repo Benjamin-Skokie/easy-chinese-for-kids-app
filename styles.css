@@ -26,7 +26,7 @@
 }
 
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: auto;
 }
 
 body {
@@ -3195,6 +3195,11 @@ h4 {
   grid-template-columns: minmax(0, 1fr);
 }
 
+.school-lesson-section.is-weather .weather-scene-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
 .school-scene-layout {
   display: grid;
   gap: 12px;
@@ -3390,10 +3395,6 @@ h4 {
 
 .world-asset-grid .time-asset-card {
   text-align: center;
-}
-
-.weather-scene-line {
-  white-space: nowrap;
 }
 
 .nature-scene-image {
@@ -3818,6 +3819,202 @@ h4 {
   justify-content: flex-start;
 }
 
+.animal-word-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.pet-food-story-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.pet-food-story-card {
+  display: grid;
+  gap: 0.45rem;
+  padding: 0.65rem;
+  border: 1px solid rgba(221, 207, 187, 0.84);
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.76);
+  color: var(--ink);
+  cursor: pointer;
+}
+
+.pet-food-story-card:hover,
+.pet-food-story-card:focus-visible {
+  border-color: rgba(109, 156, 92, 0.72);
+  box-shadow: 0 0 0 3px rgba(109, 156, 92, 0.14);
+}
+
+.pet-food-story-pair {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  color: var(--berry-dark);
+  font-size: 1.2rem;
+  font-weight: 800;
+}
+
+.pet-food-story-pair img {
+  width: 4rem;
+  height: 3.25rem;
+  object-fit: contain;
+}
+
+.pet-food-story-copy {
+  display: grid;
+  gap: 0.1rem;
+  text-align: center;
+}
+
+.pet-food-story-copy .time-asset-context,
+.pet-food-story-copy .time-asset-context-pinyin,
+.pet-food-story-copy .time-asset-context-english {
+  text-align: center;
+}
+
+.animals-measure-prompt {
+  margin: 0;
+  color: var(--ink);
+  font-family: var(--hanzi-font);
+  font-size: clamp(1.75rem, 4vw, 2.4rem);
+  text-align: center;
+}
+
+.animals-measure-blank {
+  display: inline-block;
+  min-width: 2.1rem;
+  margin: 0 0.12rem;
+  border-bottom: 3px solid var(--line);
+  color: var(--berry-dark);
+  text-align: center;
+}
+
+.animals-measure-blank.is-correct { border-color: #5a9b57; color: #357331; }
+.animals-measure-blank.is-wrong { border-color: var(--berry); color: var(--berry-dark); }
+
+.zoo-sentence-practice .numbers-game-options {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.zoo-sentence-choice {
+  grid-template-columns: 3rem minmax(0, 1fr);
+  align-items: center;
+  gap: 0.4rem;
+  min-height: 4.75rem;
+  padding: 0.5rem 0.6rem;
+  text-align: left;
+}
+
+.zoo-sentence-choice img {
+  width: 2.75rem;
+  height: 2.75rem;
+  object-fit: contain;
+}
+
+.zoo-sentence-choice > span {
+  display: grid;
+  gap: 0.05rem;
+}
+
+.animals-measure-feedback {
+  display: grid;
+  gap: 0.12rem;
+  justify-items: center;
+  text-align: center;
+}
+
+.animals-measure-feedback p {
+  margin: 0;
+}
+
+.pets-sentence-practice .numbers-game-options {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 0;
+}
+
+.pets-practice-list {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+}
+
+.pet-food-practice .numbers-game-options {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.pets-sentence-practice .numbers-game-option {
+  min-height: 4.65rem;
+}
+
+.pets-sentence-choice {
+  grid-template-columns: 3rem minmax(0, 1fr);
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.5rem 0.6rem;
+  text-align: left;
+}
+
+.pets-sentence-choice img {
+  width: 2.75rem;
+  height: 2.75rem;
+  object-fit: contain;
+}
+
+.pets-sentence-choice > span {
+  display: grid;
+  gap: 0.05rem;
+}
+
+.pets-sentence-prompt {
+  margin: 0;
+  color: var(--ink);
+  font-family: var(--hanzi-font);
+  font-size: clamp(1.45rem, 3vw, 2rem);
+  text-align: center;
+}
+
+.pets-practice-feedback {
+  display: grid;
+  gap: 0.12rem;
+  justify-items: center;
+  text-align: center;
+}
+
+.pets-practice-feedback p {
+  margin: 0;
+}
+
+.pet-food-match-meaning {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.pet-food-match-copy {
+  display: grid;
+  gap: 0.12rem;
+}
+
+.pet-food-match-copy .match-answer-label {
+  color: var(--ink);
+  font-family: var(--hanzi-font);
+  font-size: 1.45rem;
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+.pet-food-match-practice .polite-match-card {
+  min-height: 6.75rem;
+  align-content: center;
+}
+
+.pet-food-match-meaning img {
+  width: 3.1rem;
+  height: 2.6rem;
+  object-fit: contain;
+}
+
 .time-months-intro {
   display: flex;
   justify-content: space-between;
@@ -4044,6 +4241,19 @@ h4 {
   border-radius: 18px;
   background: rgba(255, 255, 255, 0.7);
   border: 1px solid rgba(221, 207, 187, 0.68);
+}
+
+.animals-scene-card .greetings-line-stack {
+  gap: 7px;
+}
+
+.animals-scene-card .greetings-line-card {
+  padding: 10px 12px;
+  border-radius: 14px;
+}
+
+.animals-scene-card .telephone-bubble-copy {
+  gap: 4px;
 }
 
 .family-scene-layout {
@@ -5452,6 +5662,10 @@ h4 {
   font-weight: 700;
   letter-spacing: 0.05em;
   text-transform: uppercase;
+}
+
+.practice-split-card .numbers-game-top .body-match-kicker {
+  font-family: var(--latin-font);
 }
 
 .body-match-actions {
@@ -6943,6 +7157,10 @@ h4 {
 }
 
 @media (max-width: 900px) {
+  .pets-practice-list {
+    grid-template-columns: 1fr;
+  }
+
   .global-view-menu {
     top: 10px;
     left: 10px;
@@ -6967,6 +7185,14 @@ h4 {
     flex-basis: 3.75rem;
     width: 3.75rem;
     height: 3.4rem;
+  }
+
+  .animal-word-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .pet-food-story-grid {
+    grid-template-columns: 1fr;
   }
 
   .visual-topic-note-grid {

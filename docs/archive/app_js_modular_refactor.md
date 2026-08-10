@@ -14,7 +14,7 @@ Keep the current single-page application, its `?topic=...` links, and direct `fi
 - Use a single, exact-version `esbuild` development dependency; it has no runtime browser dependency.
 - Build a non-minified ES2020 IIFE bundle with no dynamic chunks or source map, so `file://` does not need module loading or a local server.
 - Do not split CSS, redesign lessons, or introduce a framework in this refactor.
-- Keep `docs/structured_learning_content_refactor.md` as historical context only; its multi-page/no-build proposal is superseded by this document.
+- Keep `docs/archive/structured_learning_content_refactor.md` as historical context only; its multi-page/no-build proposal is superseded by this document.
 
 ## Target Source Layout
 

@@ -684,7 +684,7 @@
               "existingAssets": [
                 "assets/illustrated-family",
                 "assets/illustrated-family/family-counting-two-younger-brothers.webp",
-                "docs/grammar_asset_map.md"
+                "docs/curriculum_guide.md"
               ],
               "missingAssets": [],
               "source": {
@@ -1763,17 +1763,15 @@
       "description": "Animals, pets, colors, weather, nature, and observable world vocabulary.",
       "topics": [
         {
-          "id": "pets-animals",
-          "label": "Pets & Animals",
+          "id": "pets",
+          "label": "Pets",
           "pagePattern": "animal-picture-match",
           "contentFocus": [
-            "我有一只...",
+            "喜欢",
             "狗",
             "猫",
             "金鱼",
-            "兔子",
-            "identify animals",
-            "animal words"
+            "乌龟"
           ],
           "lessons": [
             {
@@ -1786,12 +1784,12 @@
                 "狗",
                 "猫",
                 "金鱼",
-                "兔子"
+                "乌龟"
               ],
               "corePatterns": [
-                "我有一只..."
+                "喜欢"
               ],
-              "coverage": "strong",
+              "coverage": "partial",
               "existingAssets": [
                 "assets/illustrated-animals",
                 "assets/illustrated-pets/lele-with-pets-at-home.webp"
@@ -1803,23 +1801,51 @@
                 "ocrText": "docs/ocr/轻松学中文少儿版1b.txt",
                 "contactSheets": "generated/easy_chinese_book_sheets_6page/轻松学中文少儿版1b"
               },
-              "verification": "ocr-backed; page-level review recommended before final product copy"
-            },
+              "verification": "OCR confirms pet vocabulary and 喜欢; the ownership frame from older mapping data remains unconfirmed."
+            }
+          ],
+          "anchorAssets": [
+            "assets/illustrated-animals",
+            "assets/illustrated-pets/lele-with-pets-at-home.webp"
+          ],
+          "assetGaps": [],
+          "coverage": "partial",
+          "nextPass": "Finish the pet-food story as a separate extension; do not mix zoo measure words into this topic."
+        },
+        {
+          "id": "animals",
+          "label": "Zoo Animals",
+          "pagePattern": "animal-measure-word-choice",
+          "contentFocus": [
+            "动物园",
+            "老虎",
+            "大象",
+            "猴子",
+            "熊猫",
+            "只 / 头 / 条"
+          ],
+          "lessons": [
             {
               "ref": "2B-5",
               "book": "2B",
               "lesson": 5,
               "title": "Animals",
-              "progression": null,
+              "progression": "Count animals with the appropriate measure word.",
               "coreVocabulary": [
-                "animal words"
+                "动物园",
+                "老虎",
+                "大象",
+                "猴子",
+                "熊猫",
+                "金鱼"
               ],
               "corePatterns": [
-                "identify animals"
+                "只 / 头 / 条"
               ],
-              "coverage": "strong",
+              "coverage": "partial",
               "existingAssets": [
-                "assets/illustrated-animals"
+                "assets/illustrated-animals",
+                "assets/illustrated-measure-words"
               ],
               "missingAssets": [],
               "source": {
@@ -1828,16 +1854,15 @@
                 "ocrText": "docs/ocr/轻松学中文少儿版2b.txt",
                 "contactSheets": "generated/easy_chinese_book_sheets_6page/轻松学中文少儿版2b"
               },
-              "verification": "ocr-backed; page-level review recommended before final product copy"
+              "verification": "page-level review confirms the measure-word and animal-food exercises; keep the food material in the separate Pets story."
             }
           ],
           "anchorAssets": [
-            "assets/illustrated-animals",
-            "assets/illustrated-pets/lele-with-pets-at-home.webp"
+            "assets/illustrated-animals"
           ],
           "assetGaps": [],
-          "coverage": "strong",
-          "nextPass": "Keep pet ownership and general animal/zoo vocabulary as separate stages."
+          "coverage": "partial",
+          "nextPass": "Cover animal-food matching in the separate Pets story."
         },
         {
           "id": "colours",

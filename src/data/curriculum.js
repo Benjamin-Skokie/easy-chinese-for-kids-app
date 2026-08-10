@@ -20,7 +20,7 @@ export const books = [
       { lesson: 2, title: "Brothers and sisters", topicId: "family" },
       { lesson: 3, title: "Parts of the body (1)", topicId: "body" },
       { lesson: 4, title: "Parts of the body (2)", topicId: "body" },
-      { lesson: 5, title: "Pets", topicId: "animals" },
+      { lesson: 5, title: "Pets", topicId: "pets" },
       { lesson: 6, title: "Colours", topicId: "colours" },
       { lesson: 7, title: "Fruit", topicId: "food" }
     ]
@@ -155,13 +155,13 @@ export const topicGroups = [
     id: "me-and-family",
     label: "Me & Family",
     description: "Personal, family, body, clothes, and everyday child language.",
-    topicIds: ["family", "body", "animals", "colours", "clothes"]
+    topicIds: ["family", "body", "colours", "clothes"]
   },
   {
     id: "daily-world",
     label: "Daily World",
     description: "Food, hobbies, routines, weather, and the world around the child.",
-    topicIds: ["food", "food-preferences", "meals-feelings", "toys", "hobbies", "comparisons", "positions", "transport", "daily-life", "nature", "weather"]
+    topicIds: ["food", "food-preferences", "meals-feelings", "toys", "hobbies", "comparisons", "positions", "transport", "daily-life", "pets", "animals", "nature", "weather"]
   },
   {
     id: "school-and-time",
@@ -181,7 +181,8 @@ export const topicCardMeta = {
   identity: { zhTitle: "国家和语言", enTitle: "Countries & Languages", hint: "Say where you are from and what you speak" },
   family: { zhTitle: "家人", enTitle: "Family", hint: "Mom, dad, siblings, grandparents" },
   body: { zhTitle: "身体", enTitle: "Body", hint: "Tap body parts and listen" },
-  animals: { zhTitle: "动物", enTitle: "Animals", hint: "Pets and favorite animals" },
+  pets: { zhTitle: "宠物", enTitle: "Pets", hint: "Dog, cat, turtle, goldfish" },
+  animals: { zhTitle: "动物园", enTitle: "Zoo Animals", hint: "Count animals with measure words" },
   colours: { zhTitle: "颜色", enTitle: "Colours", hint: "Red, yellow, blue, green" },
   food: { zhTitle: "食物和饮料", enTitle: "Food & Drinks", hint: "Fruit, vegetables, snacks, drinks" },
   "food-preferences": { zhTitle: "喜欢和不喜欢", enTitle: "Food Preferences", hint: "Ask and say what you like to eat" },
@@ -255,10 +256,10 @@ export const learningHomeCategories = [
     id: "world",
     zhTitle: "自然和颜色",
     enTitle: "World Around Us",
-    hint: "Nature, weather, animals, colours",
+    hint: "Nature, weather, pets, zoo animals, colours",
     accent: "#6f7fa4",
     iconSrc: "assets/navigation-icons/panda-bamboo-icon.webp",
-    topicIds: ["nature", "weather", "animals", "colours"]
+    topicIds: ["nature", "weather", "pets", "animals", "colours"]
   },
   {
     id: "play",

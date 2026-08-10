@@ -1,11 +1,11 @@
 # Nature — Lesson Contract and Content Plan
 
-Status: `scenes and Book words in implementation; practice design pending`  
+Status: `content-complete; product visual review pending`
 Topic URL: `index.html?topic=nature#topic-detail`  
 Topic ID: `nature`  
 Primary lesson: **Book 3B, Lesson 7 — Nature**
 
-This is the required content contract for the Nature page. It records the language before any page or game changes are made.
+This is the content contract for the implemented Nature page. It records the language, visual evidence, and practice design that the page must preserve.
 
 ## Section ownership
 
@@ -91,11 +91,6 @@ The selected interaction is **看图填一填**. The small visual cue is inline 
 
 No new asset should be generated until the scene layout proves the composite Nature artwork cannot support the two planned scenes.
 
-## 6. Implementation gate
+## 6. Current verification state
 
-Before implementation, confirm:
-
-- the two scene beats and their exact sentence copy;
-- that the same source art can be presented without tiny or ambiguous ground objects;
-- the selected practice goals and their assessment criteria;
-- only then, the fitting interaction design.
+The approved two-scene structure, one in-topic Book words row, memory note, and `看图填一填` practice are implemented. Automated content and rendering tests pass. Product visual review remains required to confirm scene clarity and touch readability in the live page.

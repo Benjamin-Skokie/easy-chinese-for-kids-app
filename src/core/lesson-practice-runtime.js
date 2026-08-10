@@ -228,7 +228,7 @@ function renderActivityPanel(topic) {
     return;
   }
 
-  if (topic.id === "colours" || topic.id === "nature" || topic.id === "weather") {
+  if (["pets", "animals", "colours", "nature", "weather"].includes(topic.id)) {
     renderWorldPractice(topic);
     return;
   }

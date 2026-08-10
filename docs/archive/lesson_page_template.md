@@ -1,5 +1,7 @@
 # Scene Lesson Page Template
 
+> Archived. The active scene-led page structure now lives in [lesson_page_workflow.md](../lesson_page_workflow.md).
+
 The Weather page is the reference implementation for a scene-led topic page. Nature uses the same template, with different optional sections.
 
 ## Fixed structure

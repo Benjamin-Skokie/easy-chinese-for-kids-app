@@ -1,5 +1,7 @@
 # Cross-Book Sentence and Practice Audit
 
+> Archived. Use [cross_book_knowledge_audit.md](../cross_book_knowledge_audit.md), topic lesson contracts, and [lesson_page_workflow.md](../lesson_page_workflow.md) for current planning.
+
 Last updated: 2026-08-09
 
 ## Why this audit exists
@@ -97,4 +99,3 @@ The Weather page should retain the four scene cards and its two Useful notes. It
 - **Listen and choose:** four weather scenes, shuffled every round; play one of the six book sentences and ask the child to tap the matching scene.
 - **Dress for the weather:** show the selected weather scene and three large outfit choices; choose an appropriate outfit, then hear a full sentence such as `下雪了。今天很冷。穿外套、帽子和手套。`
 - **No duplicate generic word panel:** the page already teaches its book sentences in its scenes; the practice should operate on those sentences rather than re-listing `下雨了` below the lesson.
-

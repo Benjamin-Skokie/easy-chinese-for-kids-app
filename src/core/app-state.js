@@ -80,6 +80,12 @@ export function createAppState() {
   worldNatureFillSubjectPicked: "",
   worldNatureFillWordPicked: "",
   worldNatureFillSubjectResult: "",
-  worldNatureFillWordResult: ""
+  worldNatureFillWordResult: "",
+  zooSentencePickedId: "",
+  petsPreferencePickedId: "",
+  petFoodMatchAnimalId: "",
+  petFoodMatchedIds: [],
+  petFoodWrongAnimalId: "",
+  petFoodWrongFoodId: ""
   };
 }

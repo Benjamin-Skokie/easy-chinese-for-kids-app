@@ -1,4 +1,5 @@
 import { colourLessons } from "./colours.js";
+import { animalLessons } from "./animals.js";
 import { natureLesson, weatherLesson } from "./weather.js";
 
 const colourSwatches = {
@@ -31,6 +32,14 @@ const natureFillRounds = [
   { id: "tree", subject: "地上", word: "树", pinyin: "dì shàng yǒu shù", english: "There is a tree on the ground." },
   { id: "flower", subject: "地上", word: "花", pinyin: "dì shàng yǒu huā", english: "There are flowers on the ground." },
   { id: "grass", subject: "地上", word: "草", pinyin: "dì shàng yǒu cǎo", english: "There is grass on the ground." }
+];
+
+const animalMeasureRounds = [
+  { id: "tiger", number: "一", measure: "只", animal: "老虎", pinyin: "yì zhī lǎo hǔ", english: "one tiger", imagePath: "assets/illustrated-animals/tiger.webp", imageAlt: "A tiger" },
+  { id: "elephant", number: "两", measure: "头", animal: "大象", pinyin: "liǎng tóu dà xiàng", english: "two elephants", imagePath: "assets/illustrated-animals/elephant.webp", imageAlt: "An elephant" },
+  { id: "panda", number: "三", measure: "只", animal: "熊猫", pinyin: "sān zhī xióng māo", english: "three pandas", imagePath: "assets/illustrated-animals/panda.webp", imageAlt: "A panda" },
+  { id: "goldfish", number: "七", measure: "条", animal: "金鱼", pinyin: "qī tiáo jīn yú", english: "seven goldfish", imagePath: "assets/illustrated-animals/goldfish.webp", imageAlt: "A goldfish" },
+  { id: "turtle", number: "六", measure: "只", animal: "乌龟", pinyin: "liù zhī wū guī", english: "six turtles", imagePath: "assets/illustrated-animals/turtle.webp", imageAlt: "A turtle" }
 ];
 
 function natureIconMarkup(id) {
@@ -172,13 +181,15 @@ export function createWorldRuntime({ state, currentTopic, currentBook, currentLe
     // 2A expands that foundation to the complete nine-colour set. Show the
     // full set by default so the topic never silently collapses to four cards.
     if (topic.id === "colours") return colourLessons["2a"];
+    if (topic.id === "pets") return animalLessons["1b"];
+    if (topic.id === "animals") return animalLessons["2b"];
     if (topic.id === "nature") return natureLesson;
     if (topic.id === "weather") return weatherLesson;
     return null;
   }
 
   function focusItemsForTopic(topic) {
-    if (topic.id === "colours" || topic.id === "nature" || topic.id === "weather") return lessonForCurrentBook()?.items ?? topic.focusItems;
+    if (["pets", "animals", "colours", "nature", "weather"].includes(topic.id)) return lessonForCurrentBook()?.items ?? topic.focusItems;
     return topic.focusItems;
   }
 
@@ -189,6 +200,7 @@ export function createWorldRuntime({ state, currentTopic, currentBook, currentLe
   function renderWorldExplorer() {
     const lesson = lessonForCurrentBook();
     if (!lesson) return;
+    if (["pets", "animals"].includes(currentTopic().id)) return renderAnimalsExplorer(lesson);
     if (lesson === weatherLesson) return renderWeatherExplorer();
     if (lesson === natureLesson) return renderNatureExplorer();
     const hasScene = Boolean(lesson.imagePath);
@@ -206,27 +218,33 @@ export function createWorldRuntime({ state, currentTopic, currentBook, currentLe
     focusExplorer.querySelectorAll("[data-world-sentence]").forEach((button) => button.addEventListener("click", () => { if (state.tapAudioEnabled) speak(button.dataset.worldSentence, 0.72); }));
   }
 
-  function renderWeatherExplorer() {
-    const sceneLabels = {
-      rain: "下雨天",
-      snow: "下雪天",
-      sunny: "晴天",
-      windy: "刮大风"
-    };
-    const scenes = Array.from(weatherLesson.items.reduce((groups, item) => {
-      const scene = groups.get(item.imagePath) ?? { imagePath: item.imagePath, imageAlt: item.imageAlt, items: [] };
-      scene.items.push(item);
-      groups.set(item.imagePath, scene);
-      return groups;
-    }, new Map()).values()).map((scene) => ({
-      ...scene,
-      title: sceneLabels[scene.items[0].id],
-      lines: [{ hanzi: `${scene.items.map((item) => item.hanzi).join("。")}。`, pinyin: `${scene.items.map((item) => item.pinyin).join(". ")}.`, english: scene.items.map((item) => item.english).join(" "), className: "weather-scene-line" }]
+  function renderAnimalsExplorer(lesson) {
+    focusExplorer.innerHTML = `
+      <div class="time-date-board school-topic-board">
+        <div class="numbers-stage-card"><p class="body-match-kicker">${currentBook().label} Lesson ${currentLesson().lesson}</p><h4>${lesson.title}</h4><p>${lesson.summary}</p></div>
+        <section class="school-lesson-section is-animals"><div class="school-scene-grid is-single">${lesson.scenes.map((scene, index) => worldSceneCardMarkup(scene, { playAttribute: "data-animals-scene", index, compact: true, extraClass: "animals-scene-card" })).join("")}</div></section>
+        <section class="school-lesson-section"><div class="time-months-heading"><p class="body-match-kicker">Book words</p></div><div class="time-asset-grid world-asset-grid animal-word-grid">${lesson.items.map((item) => `<button class="time-asset-card book-word-card" type="button" data-world-item="${item.id}" aria-label="${item.hanzi}，${item.pinyin}，${item.english}"><img class="book-word-image" src="${item.imagePath}" alt="${item.imageAlt}"><span class="book-word-copy"><span class="time-asset-hanzi">${item.hanzi}</span>${state.showPinyin ? `<span class="time-asset-pinyin">${item.pinyin}</span>` : ""}${state.showEnglish ? `<span class="time-asset-english">${item.english}</span>` : ""}</span></button>`).join("")}</div></section>
+        ${lesson.foodStory ? `<section class="school-lesson-section pet-food-story"><div class="time-months-heading"><p class="body-match-kicker">Pet story</p></div><div class="pet-food-story-grid">${lesson.foodStory.map((story) => `<button class="pet-food-story-card" type="button" data-pet-food-story="${story.id}"><span class="pet-food-story-pair"><img src="${story.animalImagePath}" alt="${story.animalImageAlt}"><span aria-hidden="true">→</span><img src="${story.foodImagePath}" alt="${story.foodImageAlt}"></span><span class="pet-food-story-copy"><span class="time-asset-context">${story.hanzi}</span>${state.showPinyin ? `<span class="time-asset-context-pinyin">${story.pinyin}</span>` : ""}${state.showEnglish ? `<span class="time-asset-context-english">${story.english}</span>` : ""}</span></button>`).join("")}</div></section>` : ""}
+        ${lesson.usefulNote ? `<section class="visual-topic-notes school-review-notes"><p class="body-match-kicker">Useful note</p><div class="visual-topic-note-grid school-review-grid"><article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">${lesson.usefulNote.hanzi}</p>${state.showPinyin ? `<p class="visual-topic-note-pinyin">${lesson.usefulNote.pinyin}</p>` : ""}${state.showEnglish ? `<p class="visual-topic-note-english">${lesson.usefulNote.english}</p>` : ""}</article></div></section>` : ""}
+      </div>
+    `;
+    focusExplorer.querySelectorAll("[data-world-item]").forEach((button) => button.addEventListener("click", () => selectFocusItem(button.dataset.worldItem, { playAudio: true })));
+    focusExplorer.querySelectorAll("[data-animals-scene]").forEach((button) => button.addEventListener("click", () => {
+      const scene = lesson.scenes[Number(button.dataset.animalsScene)];
+      if (scene && state.tapAudioEnabled) speak(scene.lines.map((line) => line.audio).join("，"), 0.74);
     }));
+    focusExplorer.querySelectorAll("[data-pet-food-story]").forEach((button) => button.addEventListener("click", () => {
+      const story = lesson.foodStory?.find((entry) => entry.id === button.dataset.petFoodStory);
+      if (story && state.tapAudioEnabled) speak(story.audio, 0.74);
+    }));
+  }
+
+  function renderWeatherExplorer() {
+    const scenes = weatherLesson.scenes;
     focusExplorer.innerHTML = `
       <div class="time-date-board school-topic-board">
         <div class="numbers-stage-card"><p class="body-match-kicker">${currentBook().label} Lesson ${currentLesson().lesson}</p><h4>${weatherLesson.title}</h4><p>${weatherLesson.summary}</p></div>
-        <section class="school-lesson-section is-weather"><div class="school-scene-grid">${scenes.map((scene, index) => worldSceneCardMarkup(scene, { playAttribute: "data-weather-scene", index }))}</div></section>
+        <section class="school-lesson-section is-weather"><div class="school-scene-grid weather-scene-grid">${scenes.map((scene, index) => worldSceneCardMarkup(scene, { playAttribute: "data-weather-scene", index })).join("")}</div></section>
         <section class="visual-topic-notes school-review-notes">
           <p class="body-match-kicker">Useful notes</p>
           <div class="visual-topic-note-grid school-review-grid">
@@ -239,7 +257,7 @@ export function createWorldRuntime({ state, currentTopic, currentBook, currentLe
     focusExplorer.querySelectorAll("[data-world-item]").forEach((button) => button.addEventListener("click", () => selectFocusItem(button.dataset.worldItem, { playAudio: true })));
     focusExplorer.querySelectorAll("[data-weather-scene]").forEach((button) => button.addEventListener("click", () => {
       const scene = scenes[Number(button.dataset.weatherScene)];
-      if (scene && state.tapAudioEnabled) speak(scene.items.map((item) => item.audio).join("，"), 0.74);
+      if (scene && state.tapAudioEnabled) speak(scene.lines.map((line) => line.audio).join("，"), 0.74);
     }));
   }
 
@@ -266,6 +284,137 @@ export function createWorldRuntime({ state, currentTopic, currentBook, currentLe
       [copy[index], copy[swapIndex]] = [copy[swapIndex], copy[index]];
     }
     return copy;
+  }
+
+  function shuffledWithoutAlignedPairs(items, oppositeOrder) {
+    let order = shuffled(items);
+    let attempts = 0;
+    while (order.some((id, index) => id === oppositeOrder[index]) && attempts < 12) {
+      order = shuffled(items);
+      attempts += 1;
+    }
+    return order.some((id, index) => id === oppositeOrder[index])
+      ? [...oppositeOrder.slice(1), oppositeOrder[0]]
+      : order;
+  }
+
+  function renderAnimalsPractice() {
+    if (currentTopic().id === "pets") return renderPetsPractice();
+    return renderZooSentencePractice();
+  }
+
+  function petSentenceFeedback(sentence) {
+    return `<div class="pets-practice-feedback"><p class="numbers-game-hanzi">${sentence.hanzi}</p>${state.showPinyin ? `<p class="numbers-game-pinyin">${sentence.pinyin}</p>` : ""}${state.showEnglish ? `<p class="numbers-game-english">${sentence.english}</p>` : ""}</div>`;
+  }
+
+  function ensurePetFoodMatch() {
+    const stories = animalLessons["1b"].foodStory;
+    if (state.petFoodMatchOrder?.length === stories.length) return;
+    state.petFoodMatchOrder = shuffled(stories.map((story) => story.id));
+    state.petFoodFoodOrder = shuffledWithoutAlignedPairs(stories.map((story) => story.id), state.petFoodMatchOrder);
+    state.petFoodMatchAnimalId = "";
+    state.petFoodMatchedIds = [];
+    state.petFoodWrongAnimalId = "";
+    state.petFoodWrongFoodId = "";
+  }
+
+  function petFoodMatchCard(story, side) {
+    const isAnimal = side === "animal";
+    if (isAnimal) return `<span class="numbers-game-hanzi">${story.animalHanzi}</span>`;
+    return `<span class="pet-food-match-meaning"><img src="${story.foodImagePath}" alt="${story.foodImageAlt}"><span class="pet-food-match-copy"><span class="match-answer-label">${story.foodHanzi}</span>${state.showPinyin ? `<span class="numbers-game-pinyin">${story.foodPinyin}</span>` : ""}${state.showEnglish ? `<span class="numbers-game-english">${story.foodEnglish}</span>` : ""}</span></span>`;
+  }
+
+  function renderPetFoodMatch(stories) {
+    const matchedIds = new Set(state.petFoodMatchedIds);
+    const solvedIds = state.petFoodMatchOrder.filter((id) => matchedIds.has(id));
+    const remainingAnimalIds = state.petFoodMatchOrder.filter((id) => !matchedIds.has(id));
+    const remainingFoodIds = state.petFoodFoodOrder.filter((id) => !matchedIds.has(id));
+    const storyFor = (id) => stories.find((story) => story.id === id);
+    const feedback = state.petFoodWrongFoodId
+      ? "Try again. Which food does that animal eat?"
+      : solvedIds.length === stories.length ? "都配对了！" : "";
+
+    return `<section class="practice-split-card pet-food-match-practice"><div class="numbers-game-top"><div><p class="body-match-kicker">Match the pairs</p><p class="numbers-game-note">Tap an animal on the left, then tap the food it eats on the right.</p></div><button class="small-button is-play-button" type="button" data-pet-food-match-new>Play</button></div>${feedback ? `<div class="greetings-game-feedback">${feedback}</div>` : ""}<div class="family-match-board-headings"><p class="body-match-kicker">Animal</p><p class="body-match-kicker">Food</p></div>${solvedIds.length ? `<div class="family-match-solved-pairs">${solvedIds.map((id) => { const story = storyFor(id); return `<article class="family-match-solved-row"><div class="polite-match-card polite-match-card-phrase family-match-pair-card is-solved"><span class="answer-result-mark" aria-hidden="true">✓</span>${petFoodMatchCard(story, "animal")}</div><div class="polite-match-card polite-match-card-meaning family-match-pair-card is-solved"><span class="answer-result-mark" aria-hidden="true">✓</span>${petFoodMatchCard(story, "food")}</div></article>`; }).join("")}</div>` : ""}${remainingAnimalIds.length ? `<div class="polite-match-board family-match-open-board"><div class="polite-match-column">${remainingAnimalIds.map((id) => { const story = storyFor(id); const selected = state.petFoodMatchAnimalId === id; const wrong = state.petFoodWrongAnimalId === id; return `<button class="polite-match-card polite-match-card-phrase${selected ? " is-selected" : ""}${wrong ? " is-wrong" : ""}" type="button" data-pet-food-match-animal="${id}">${wrong ? '<span class="answer-result-mark" aria-hidden="true">×</span>' : ""}${petFoodMatchCard(story, "animal")}</button>`; }).join("")}</div><div class="polite-match-column">${remainingFoodIds.map((id) => { const story = storyFor(id); const wrong = state.petFoodWrongFoodId === id; return `<button class="polite-match-card polite-match-card-meaning${wrong ? " is-wrong" : ""}" type="button" data-pet-food-match-food="${id}">${wrong ? '<span class="answer-result-mark" aria-hidden="true">×</span>' : ""}${petFoodMatchCard(story, "food")}</button>`; }).join("")}</div></div>` : ""}${solvedIds.length === stories.length ? '<button class="small-button is-play-button" type="button" data-pet-food-match-new>Play</button>' : ""}</section>`;
+  }
+
+  function renderPetsPractice() {
+    const stories = animalLessons["1b"].foodStory;
+    const preferenceChoices = [
+      ...animalLessons["1b"].items,
+      ...stories.filter((story) => !["dog-bone", "cat-fish"].includes(story.id)).map((story) => ({
+        id: story.id,
+        hanzi: story.animalHanzi,
+        pinyin: story.animalPinyin,
+        english: story.animalEnglish,
+        imagePath: story.animalImagePath,
+        imageAlt: story.animalImageAlt
+      }))
+    ];
+    const selectedPet = preferenceChoices.find((choice) => choice.id === state.petsPreferencePickedId);
+    const preference = selectedPet
+      ? { hanzi: `我喜欢${selectedPet.hanzi}。`, pinyin: `Wǒ xǐ huan ${selectedPet.pinyin}.`, english: `I like ${selectedPet.english}.`, audio: `我喜欢${selectedPet.hanzi}` }
+      : null;
+    ensurePetFoodMatch();
+    activityPanelTitle.textContent = "Let's practice";
+    activityPanelSummary.textContent = "Build a sentence about a pet you like, then match animals to their food.";
+    activityList.className = "support-list pets-practice-list";
+    activityList.innerHTML = `<section class="practice-split-card pets-sentence-practice"><div class="numbers-game-top"><div><p class="body-match-kicker">Build a sentence</p><p class="numbers-game-note">Choose an animal to build a sentence. It will read itself aloud.</p></div><button class="small-button is-play-button" type="button" data-pets-preference-play>Play</button></div><p class="pets-sentence-prompt">我喜欢<span class="animals-measure-blank is-${selectedPet ? "correct" : "empty"}">${selectedPet?.hanzi || "____"}</span>。</p><div class="numbers-game-options">${preferenceChoices.map((choice) => { const selected = state.petsPreferencePickedId === choice.id; return `<button class="numbers-game-option greetings-game-option family-listen-option pets-sentence-choice${selected ? " is-correct" : ""}" type="button" data-pets-preference-choice="${choice.id}"><img src="${choice.imagePath}" alt="${choice.imageAlt}"><span><span class="numbers-game-hanzi">${choice.hanzi}</span>${state.showPinyin ? `<span class="numbers-game-pinyin">${choice.pinyin}</span>` : ""}${state.showEnglish ? `<span class="numbers-game-english">${choice.english}</span>` : ""}</span>${selected ? '<span class="answer-result-mark" aria-hidden="true">✓</span>' : ""}</button>`; }).join("")}</div>${preference ? petSentenceFeedback(preference) : ""}</section>${renderPetFoodMatch(stories)}`;
+    activityList.querySelector("[data-pets-preference-play]")?.addEventListener("click", () => {
+      state.petsPreferencePickedId = "";
+      renderActivityPanel(currentTopic());
+    });
+    activityList.querySelectorAll("[data-pets-preference-choice]").forEach((button) => button.addEventListener("click", () => {
+      state.petsPreferencePickedId = button.dataset.petsPreferenceChoice;
+      const choice = preferenceChoices.find((entry) => entry.id === state.petsPreferencePickedId);
+      if (choice && state.tapAudioEnabled) speak(`我喜欢${choice.hanzi}`, 0.78);
+      renderActivityPanel(currentTopic());
+    }));
+    activityList.querySelectorAll("[data-pet-food-match-animal]").forEach((button) => button.addEventListener("click", () => {
+      state.petFoodMatchAnimalId = button.dataset.petFoodMatchAnimal;
+      state.petFoodWrongAnimalId = "";
+      state.petFoodWrongFoodId = "";
+      renderActivityPanel(currentTopic());
+    }));
+    activityList.querySelectorAll("[data-pet-food-match-food]").forEach((button) => button.addEventListener("click", () => {
+      const foodId = button.dataset.petFoodMatchFood;
+      if (!state.petFoodMatchAnimalId) return;
+      if (state.petFoodMatchAnimalId === foodId) {
+        state.petFoodMatchedIds = [...state.petFoodMatchedIds, foodId];
+        if (state.tapAudioEnabled) speak(stories.find((story) => story.id === foodId).audio, 0.78);
+        state.petFoodMatchAnimalId = "";
+        state.petFoodWrongAnimalId = "";
+        state.petFoodWrongFoodId = "";
+      } else {
+        state.petFoodWrongAnimalId = state.petFoodMatchAnimalId;
+        state.petFoodWrongFoodId = foodId;
+      }
+      renderActivityPanel(currentTopic());
+    }));
+    activityList.querySelectorAll("[data-pet-food-match-new]").forEach((button) => button.addEventListener("click", () => {
+      state.petFoodMatchOrder = [];
+      state.petFoodFoodOrder = [];
+      ensurePetFoodMatch();
+      renderActivityPanel(currentTopic());
+    }));
+  }
+
+  function renderZooSentencePractice() {
+    const selectedRound = animalMeasureRounds.find((round) => round.id === state.zooSentencePickedId);
+    const sentence = selectedRound ? `动物园有${selectedRound.number}${selectedRound.measure}${selectedRound.animal}。` : "";
+    activityPanelTitle.textContent = "Let's practice";
+    activityPanelSummary.textContent = "Build zoo sentences with 动物园有… and animal counting phrases.";
+    activityList.className = "support-list";
+    activityList.innerHTML = `<section class="practice-split-card zoo-sentence-practice"><div class="numbers-game-top"><div><p class="body-match-kicker">Build a sentence</p><p class="numbers-game-note">Choose an animal phrase to build a zoo sentence. It will read itself aloud.</p></div><button class="small-button is-play-button" type="button" data-zoo-sentence-new>Play</button></div><p class="animals-measure-prompt">动物园有<span class="animals-measure-blank is-${selectedRound ? "correct" : "empty"}">${selectedRound ? `${selectedRound.number}${selectedRound.measure}${selectedRound.animal}` : "____"}</span>。</p><div class="numbers-game-options">${animalMeasureRounds.map((round) => { const selected = selectedRound?.id === round.id; return `<button class="numbers-game-option greetings-game-option family-listen-option zoo-sentence-choice${selected ? " is-correct" : ""}" type="button" data-zoo-sentence-choice="${round.id}"><img src="${round.imagePath}" alt="${round.imageAlt}"><span><span class="numbers-game-hanzi">${round.number}${round.measure}${round.animal}</span>${state.showPinyin ? `<span class="numbers-game-pinyin">${round.pinyin}</span>` : ""}${state.showEnglish ? `<span class="numbers-game-english">${round.english}</span>` : ""}</span>${selected ? '<span class="answer-result-mark" aria-hidden="true">✓</span>' : ""}</button>`; }).join("")}</div>${selectedRound ? `<div class="animals-measure-feedback"><p class="numbers-game-hanzi">${sentence}</p>${state.showPinyin ? `<p class="numbers-game-pinyin">Dòng wù yuán yǒu ${selectedRound.pinyin}.</p>` : ""}${state.showEnglish ? `<p class="numbers-game-english">There are ${selectedRound.english} in the zoo.</p>` : ""}</div>` : ""}</section>`;
+    activityList.querySelector("[data-zoo-sentence-new]")?.addEventListener("click", () => {
+      state.zooSentencePickedId = "";
+      renderActivityPanel(currentTopic());
+    });
+    activityList.querySelectorAll("[data-zoo-sentence-choice]").forEach((button) => button.addEventListener("click", () => {
+      state.zooSentencePickedId = button.dataset.zooSentenceChoice;
+      const round = animalMeasureRounds.find((entry) => entry.id === state.zooSentencePickedId);
+      if (round && state.tapAudioEnabled) speak(`动物园有${round.number}${round.measure}${round.animal}`, 0.78);
+      renderActivityPanel(currentTopic());
+    }));
   }
 
   function ensureColourPractice() {
@@ -408,7 +557,7 @@ export function createWorldRuntime({ state, currentTopic, currentBook, currentLe
     activityPanelTitle.textContent = "Let's practice";
     activityPanelSummary.textContent = "Look at the picture and complete the sentence with the right words.";
     activityList.className = "support-list";
-    activityList.innerHTML = `<section class="practice-split-card nature-fill-practice"><div class="numbers-game-top"><div><p class="body-match-kicker">看图填一填</p><p class="numbers-game-note">Choose the two words that make the sentence match the picture.</p></div><button class="small-button is-play-button" type="button" data-nature-fill-play>Play</button></div><p class="nature-fill-sentence"><span class="weather-fill-blank${state.worldNatureFillSubjectResult ? ` is-${state.worldNatureFillSubjectResult}` : ""}">${state.worldNatureFillSubjectPicked || "____"}</span>有<span class="weather-fill-blank${state.worldNatureFillWordResult ? ` is-${state.worldNatureFillWordResult}` : ""}">${state.worldNatureFillWordPicked || "____"}</span><span class="nature-fill-inline-icon">${natureIconMarkup(round.id)}</span>。</p>${complete && state.showPinyin ? `<p class="numbers-game-pinyin">${round.pinyin}</p>` : ""}${complete && state.showEnglish ? `<p class="numbers-game-english">${round.english}</p>` : ""}<div class="weather-fill-choice-groups"><div><p class="weather-fill-choice-label">第一个词</p><div class="weather-fill-options">${state.worldNatureFillSubjectChoices.map((choice) => `<button class="weather-fill-option${state.worldNatureFillSubjectPicked === choice ? ` is-${state.worldNatureFillSubjectResult}` : ""}" type="button" data-nature-fill-subject="${choice}">${choice}</button>`).join("")}</div></div><div><p class="weather-fill-choice-label">有什么？</p><div class="weather-fill-options">${state.worldNatureFillWordChoices.map((choice) => `<button class="weather-fill-option${state.worldNatureFillWordPicked === choice ? ` is-${state.worldNatureFillWordResult}` : ""}" type="button" data-nature-fill-word="${choice}">${choice}</button>`).join("")}</div></div></div>${state.worldNatureFillSubjectResult === "wrong" || state.worldNatureFillWordResult === "wrong" ? '<p class="weather-fill-feedback">再看看图，想想句子的第一个词和有什么。</p>' : ""}</section>`;
+    activityList.innerHTML = `<section class="practice-split-card nature-fill-practice"><div class="numbers-game-top"><div><p class="body-match-kicker">Look and complete</p><p class="numbers-game-note">Choose the two words that make the sentence match the picture.</p></div><button class="small-button is-play-button" type="button" data-nature-fill-play>Play</button></div><p class="nature-fill-sentence"><span class="weather-fill-blank${state.worldNatureFillSubjectResult ? ` is-${state.worldNatureFillSubjectResult}` : ""}">${state.worldNatureFillSubjectPicked || "____"}</span>有<span class="weather-fill-blank${state.worldNatureFillWordResult ? ` is-${state.worldNatureFillWordResult}` : ""}">${state.worldNatureFillWordPicked || "____"}</span><span class="nature-fill-inline-icon">${natureIconMarkup(round.id)}</span>。</p>${complete && state.showPinyin ? `<p class="numbers-game-pinyin">${round.pinyin}</p>` : ""}${complete && state.showEnglish ? `<p class="numbers-game-english">${round.english}</p>` : ""}<div class="weather-fill-choice-groups"><div><p class="weather-fill-choice-label">第一个词</p><div class="weather-fill-options">${state.worldNatureFillSubjectChoices.map((choice) => `<button class="weather-fill-option${state.worldNatureFillSubjectPicked === choice ? ` is-${state.worldNatureFillSubjectResult}` : ""}" type="button" data-nature-fill-subject="${choice}">${choice}</button>`).join("")}</div></div><div><p class="weather-fill-choice-label">有什么？</p><div class="weather-fill-options">${state.worldNatureFillWordChoices.map((choice) => `<button class="weather-fill-option${state.worldNatureFillWordPicked === choice ? ` is-${state.worldNatureFillWordResult}` : ""}" type="button" data-nature-fill-word="${choice}">${choice}</button>`).join("")}</div></div></div>${state.worldNatureFillSubjectResult === "wrong" || state.worldNatureFillWordResult === "wrong" ? '<p class="weather-fill-feedback">再看看图，想想句子的第一个词和有什么。</p>' : ""}</section>`;
     activityList.querySelector("[data-nature-fill-play]")?.addEventListener("click", () => {
       if (complete) {
         state.worldNatureFillRoundIndex = (state.worldNatureFillRoundIndex + 1) % state.worldNatureFillRoundIds.length;
@@ -537,6 +686,8 @@ export function createWorldRuntime({ state, currentTopic, currentBook, currentLe
   }
 
   function renderWorldPractice(topic) {
+    if (topic.id === "pets") return renderAnimalsPractice();
+    if (topic.id === "animals") return renderAnimalsPractice();
     if (topic.id === "colours") return renderColourPractice();
     if (topic.id === "nature") return renderNaturePractice();
     if (topic.id === "weather") return renderWeatherPractice();

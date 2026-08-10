@@ -270,7 +270,13 @@
       worldNatureFillSubjectPicked: "",
       worldNatureFillWordPicked: "",
       worldNatureFillSubjectResult: "",
-      worldNatureFillWordResult: ""
+      worldNatureFillWordResult: "",
+      zooSentencePickedId: "",
+      petsPreferencePickedId: "",
+      petFoodMatchAnimalId: "",
+      petFoodMatchedIds: [],
+      petFoodWrongAnimalId: "",
+      petFoodWrongFoodId: ""
     };
   }
 
@@ -754,7 +760,7 @@
         activityList2.innerHTML = "";
         return;
       }
-      if (topic.id === "colours" || topic.id === "nature" || topic.id === "weather") {
+      if (["pets", "animals", "colours", "nature", "weather"].includes(topic.id)) {
         renderWorldPractice(topic);
         return;
       }
@@ -1482,7 +1488,7 @@
       if (topic.interactiveScene === "positions") return renderPositionsExplorer2();
       if (topic.interactiveScene === "rooms") return renderRoomsExplorer2();
       if (schoolTopicData3[topic.id]) return renderSchoolExplorer2(topic.id);
-      if (["colours", "nature", "weather"].includes(topic.id)) return renderWorldExplorer();
+      if (["pets", "animals", "colours", "nature", "weather"].includes(topic.id)) return renderWorldExplorer();
       if (["comparisons", "transport", "rooms"].includes(topic.interactiveScene)) return renderVisualTopicExplorer2(topic.interactiveScene);
       if (topic.interactiveScene === "multiplication-rhyme") return renderMultiplicationExplorer2();
       return renderDefaultExplorer2();
@@ -3399,7 +3405,7 @@
       const isComplete = state2.foodHungerComplete;
       return `
     <section class="practice-split-card food-hunger-game-card">
-      <div class="numbers-game-top"><div><p class="body-match-kicker">\u997F\u4E86\uFF0C\u5403\u70B9\u4EC0\u4E48\uFF1F${state2.showEnglish ? '<span class="food-hunger-kicker-english">Hungry? What should we eat?</span>' : ""}</p><p class="numbers-game-note">Choose a food group or Mix. A food picture will appear. Tap the matching Chinese word to put it in your cart.</p></div></div>
+      <div class="numbers-game-top"><div><p class="body-match-kicker">Hungry? What should we eat?</p><p class="numbers-game-note">Choose a food group or Mix. A food picture will appear. Tap the matching Chinese word to put it in your cart.</p></div></div>
       <div class="food-category-tabs food-hunger-tabs">${Object.entries(foodHungerModes).map(([id, mode]) => `<button class="food-category-tab${state2.foodHungerModeId === id ? " is-active" : ""}" type="button" data-food-hunger-mode="${id}">${mode.hanzi}${state2.showEnglish ? `<small>${mode.english}</small>` : ""}</button>`).join("")}</div>
       <div class="backpack-game-progress" aria-label="${state2.foodHungerPlatedIds.length} of ${state2.foodHungerRoundIds.length} foods in the cart">${state2.foodHungerRoundIds.map((_, index) => `<span class="backpack-game-progress-dot${index < state2.foodHungerPlatedIds.length ? " is-packed" : ""}">${index < state2.foodHungerPlatedIds.length ? "\u2713" : ""}</span>`).join("")}</div>
       <div class="food-hunger-visual${isComplete ? " is-complete" : ""}">
@@ -5353,24 +5359,6 @@
     { id: "hat", hanzi: "\u5E3D\u5B50", pinyin: "m\xE0o zi", english: "hat", audio: "\u5E3D\u5B50", imagePath: "assets/illustrated-self-dressing/putting-on-hat.webp", imageAlt: "A child putting on a hat" },
     { id: "school-uniform", hanzi: "\u6821\u670D", pinyin: "xi\xE0o f\xFA", english: "school uniform", audio: "\u6821\u670D", imagePath: "assets/illustrated-self-dressing/putting-on-school-uniform.webp", imageAlt: "A child putting on a school uniform" }
   ];
-
-  // src/features/world/animals.js
-  var animalsTopic = {
-    id: "animals",
-    title: "Pets & Animals",
-    summary: "High-interest vocabulary that can connect to home life and stories.",
-    progressLabel: "1B to 2B",
-    iconText: "\u5C0F\u72D7",
-    iconColor: "#8e6f9b",
-    focus: { hanzi: "\u5C0F\u72D7\uFF0C\u5C0F\u732B", pinyin: "xi\u01CEo g\u01D2u, xi\u01CEo m\u0101o", english: "puppy, kitten", audio: "\u5C0F\u72D7\uFF0C\u5C0F\u732B" },
-    parentGuide: "This topic works especially well with pictures and sound imitation. Keep it playful and quick.",
-    cultureGuide: "Animals can later connect naturally to zodiac content and story-based culture lessons.",
-    activities: ["Tap to hear", "Match picture to word", "Listen and choose", "Animal sound game"],
-    steps: [
-      { book: "1B", lesson: 5, title: "Pets", note: "Begin with common pet words." },
-      { book: "2B", lesson: 5, title: "Animals", note: "Broaden into a larger animal set." }
-    ]
-  };
 
   // src/features/world/colours.js
   var colourLessons = {
@@ -7753,10 +7741,109 @@
     return { resetWeekdayChallenge: resetWeekdayChallenge2, ensureWeekdayChallenge: ensureWeekdayChallenge2, handleWeekdayChallengePlay: handleWeekdayChallengePlay2, handleWeekdayChallengeGuess: handleWeekdayChallengeGuess2, resetWeekdayMatchGame: resetWeekdayMatchGame2, ensureWeekdayMatchGame: ensureWeekdayMatchGame2, handleWeekdayMatchPhrase: handleWeekdayMatchPhrase2, handleWeekdayMatchAttempt: handleWeekdayMatchAttempt2, resetClothesQuiz: resetClothesQuiz2, prepareClothesQuizQuestion: prepareClothesQuizQuestion2, ensureClothesQuiz: ensureClothesQuiz2, handleClothesQuizPick: handleClothesQuizPick2, nextClothesQuizQuestion: nextClothesQuizQuestion2, resetTimeRoutineQuiz: resetTimeRoutineQuiz2, prepareTimeRoutineQuizQuestion: prepareTimeRoutineQuizQuestion2, ensureTimeRoutineQuiz: ensureTimeRoutineQuiz2, handleTimeRoutineQuizPick: handleTimeRoutineQuizPick2, nextTimeRoutineQuizQuestion: nextTimeRoutineQuizQuestion2, resetClockQuiz: resetClockQuiz2, prepareClockQuizQuestion: prepareClockQuizQuestion2, ensureClockQuiz: ensureClockQuiz2, handleClockQuizPick: handleClockQuizPick2, nextClockQuizQuestion: nextClockQuizQuestion2, currentRoomBuildItem: currentRoomBuildItem2, resetRoomBuilder: resetRoomBuilder2, prepareRoomBuilder: prepareRoomBuilder2, ensureRoomBuilder: ensureRoomBuilder2, isRoomBuildPrefixValid: isRoomBuildPrefixValid2, handleRoomBuildToken: handleRoomBuildToken2, clearRoomBuilder: clearRoomBuilder2, nextRoomBuilder: nextRoomBuilder2, currentTransportBuildItem: currentTransportBuildItem2, resetTransportBuilder: resetTransportBuilder2, prepareTransportBuilder: prepareTransportBuilder2, ensureTransportBuilder: ensureTransportBuilder2, handleTransportBuildToken: handleTransportBuildToken2, clearTransportBuilder: clearTransportBuilder2, nextTransportBuilder: nextTransportBuilder2, resetPositionQuiz: resetPositionQuiz2, preparePositionQuizQuestion: preparePositionQuizQuestion2, ensurePositionQuiz: ensurePositionQuiz2, handlePositionQuizPlay: handlePositionQuizPlay2, handlePositionQuizPick: handlePositionQuizPick2, nextPositionQuizQuestion: nextPositionQuizQuestion2, currentComparisonBuildItem: currentComparisonBuildItem2, resetComparisonBuilder: resetComparisonBuilder2, prepareComparisonBuilder: prepareComparisonBuilder2, ensureComparisonBuilder: ensureComparisonBuilder2, handleComparisonBuildToken: handleComparisonBuildToken2, clearComparisonBuilder: clearComparisonBuilder2, nextComparisonBuilder: nextComparisonBuilder2, resetDateMatchGame: resetDateMatchGame2, ensureDateMatchGame: ensureDateMatchGame2, handleDateMatchPhrase: handleDateMatchPhrase2, handleDateMatchEvent: handleDateMatchEvent2, resetDateChallenge: resetDateChallenge2, ensureDateChallenge: ensureDateChallenge2, handleDateChallengePlay: handleDateChallengePlay2, handleDateChallengeGuess: handleDateChallengeGuess2, timeDateSectionForCurrentLesson: timeDateSectionForCurrentLesson2, activeTimeDateSection: activeTimeDateSection2, renderTimeAssetGrid: renderTimeAssetGrid2, bindTimeAssetAudio: bindTimeAssetAudio2, renderWeekdaysExplorer: renderWeekdaysExplorer2, renderDatesExplorer: renderDatesExplorer2, renderVisualTopicExplorer: renderVisualTopicExplorer2, renderRoomsExplorer: renderRoomsExplorer2, renderPositionsExplorer: renderPositionsExplorer2, renderTimeDateExplorer: renderTimeDateExplorer2, renderClothesExplorer: renderClothesExplorer2 };
   }
 
+  // src/features/world/animals.js
+  var animalLessons = {
+    "1b": {
+      title: "Pets",
+      summary: "Meet familiar pets and say which animals Lele likes.",
+      scenes: [
+        {
+          title: "\u5BA0\u7269",
+          imagePath: "assets/illustrated-pets/lele-with-pets-at-home.webp",
+          imageAlt: "Lele with a dog and a goldfish at home",
+          lines: [
+            { hanzi: "\u4E50\u4E50\u559C\u6B22\u72D7\u548C\u91D1\u9C7C\u3002", pinyin: "L\xE8 le x\u01D0 huan g\u01D2u h\xE9 j\u012Bn y\xFA.", english: "Lele likes dogs and goldfish.", audio: "\u4E50\u4E50\u559C\u6B22\u72D7\u548C\u91D1\u9C7C" }
+          ]
+        }
+      ],
+      items: [
+        { id: "dog", hanzi: "\u72D7", pinyin: "g\u01D2u", english: "dog", audio: "\u72D7", imagePath: "assets/illustrated-animals/dog.webp", imageAlt: "A dog" },
+        { id: "cat", hanzi: "\u732B", pinyin: "m\u0101o", english: "cat", audio: "\u732B", imagePath: "assets/illustrated-animals/cat.webp", imageAlt: "A cat" },
+        { id: "turtle", hanzi: "\u4E4C\u9F9F", pinyin: "w\u016B gu\u012B", english: "turtle", audio: "\u4E4C\u9F9F", imagePath: "assets/illustrated-animals/turtle.webp", imageAlt: "A turtle" },
+        { id: "goldfish", hanzi: "\u91D1\u9C7C", pinyin: "j\u012Bn y\xFA", english: "goldfish", audio: "\u91D1\u9C7C", imagePath: "assets/illustrated-animals/goldfish.webp", imageAlt: "A goldfish" }
+      ],
+      usefulNote: {
+        hanzi: "\u6211\u559C\u6B22 + \u540D\u8BCD\u3002\u6BD4\u5982\uFF1A\u6211\u559C\u6B22\u732B\u3002",
+        pinyin: "W\u01D2 x\u01D0 huan + m\xEDng c\xED. B\u01D0 r\xFA: W\u01D2 x\u01D0 huan m\u0101o.",
+        english: "\u6211\u559C\u6B22 means \u201CI like.\u201D Put an animal or thing after it."
+      },
+      foodStory: [
+        { id: "dog-bone", animalHanzi: "\u72D7", animalPinyin: "g\u01D2u", animalEnglish: "dog", foodHanzi: "\u9AA8\u5934", foodPinyin: "g\u01D4 tou", foodEnglish: "bones", animalImagePath: "assets/illustrated-animals/dog.webp", animalImageAlt: "A dog", foodImagePath: "assets/illustrated-food/bones.webp", foodImageAlt: "Bones", hanzi: "\u72D7\u5403\u9AA8\u5934\u3002", pinyin: "G\u01D2u ch\u012B g\u01D4 tou.", english: "Dogs eat bones.", audio: "\u72D7\u5403\u9AA8\u5934" },
+        { id: "cat-fish", animalHanzi: "\u732B", animalPinyin: "m\u0101o", animalEnglish: "cat", foodHanzi: "\u9C7C", foodPinyin: "y\xFA", foodEnglish: "fish", animalImagePath: "assets/illustrated-animals/cat.webp", animalImageAlt: "A cat", foodImagePath: "assets/illustrated-food/small-fish.webp", foodImageAlt: "Fish", hanzi: "\u732B\u5403\u9C7C\u3002", pinyin: "M\u0101o ch\u012B y\xFA.", english: "Cats eat fish.", audio: "\u732B\u5403\u9C7C" },
+        { id: "rabbit-carrot", animalHanzi: "\u5C0F\u5154\u5B50", animalPinyin: "xi\u01CEo t\xF9 zi", animalEnglish: "rabbit", foodHanzi: "\u80E1\u841D\u535C", foodPinyin: "h\xFA lu\xF3 bo", foodEnglish: "carrot", animalImagePath: "assets/illustrated-animals/bunny.webp", animalImageAlt: "A rabbit", foodImagePath: "assets/illustrated-food/carrot.webp", foodImageAlt: "A carrot", hanzi: "\u5C0F\u5154\u5B50\u5403\u80E1\u841D\u535C\u3002", pinyin: "Xi\u01CEo t\xF9 zi ch\u012B h\xFA lu\xF3 bo.", english: "The little rabbit eats carrots.", audio: "\u5C0F\u5154\u5B50\u5403\u80E1\u841D\u535C" },
+        { id: "panda-bamboo", animalHanzi: "\u718A\u732B", animalPinyin: "xi\xF3ng m\u0101o", animalEnglish: "panda", foodHanzi: "\u7AF9\u5B50", foodPinyin: "zh\xFA zi", foodEnglish: "bamboo", animalImagePath: "assets/illustrated-animals/panda.webp", animalImageAlt: "A panda", foodImagePath: "assets/illustrated-food/bamboo.webp", foodImageAlt: "Bamboo", hanzi: "\u718A\u732B\u5403\u7AF9\u5B50\u3002", pinyin: "Xi\xF3ng m\u0101o ch\u012B zh\xFA zi.", english: "Pandas eat bamboo.", audio: "\u718A\u732B\u5403\u7AF9\u5B50" },
+        { id: "monkey-banana", animalHanzi: "\u7334\u5B50", animalPinyin: "h\xF3u zi", animalEnglish: "monkey", foodHanzi: "\u9999\u8549", foodPinyin: "xi\u0101ng ji\u0101o", foodEnglish: "banana", animalImagePath: "assets/illustrated-animals/monkey.webp", animalImageAlt: "A monkey", foodImagePath: "assets/illustrated-food/banana.webp", foodImageAlt: "A banana", hanzi: "\u7334\u5B50\u5403\u9999\u8549\u3002", pinyin: "H\xF3u zi ch\u012B xi\u0101ng ji\u0101o.", english: "Monkeys eat bananas.", audio: "\u7334\u5B50\u5403\u9999\u8549" }
+      ]
+    },
+    "2b": {
+      title: "Animals",
+      summary: "Count zoo animals with the right measure words.",
+      scenes: [
+        {
+          title: "\u52A8\u7269\u56ED",
+          imagePath: "assets/illustrated-animals/zoo-scene.webp",
+          imageAlt: "A zoo scene with a tiger, elephant, panda, and monkey",
+          lines: [
+            { hanzi: "\u52A8\u7269\u56ED\u91CC\u6709\u4E00\u53EA\u8001\u864E\uFF0C\u4E24\u5934\u5927\u8C61\uFF0C\u4E09\u53EA\u718A\u732B\u3002", pinyin: "D\xF2ng w\xF9 yu\xE1n l\u01D0 y\u01D2u y\xEC zh\u012B l\u01CEo h\u01D4, li\u01CEng t\xF3u d\xE0 xi\xE0ng, s\u0101n zh\u012B xi\xF3ng m\u0101o.", english: "There is one tiger, two elephants, and three pandas in the zoo.", audio: "\u52A8\u7269\u56ED\u91CC\u6709\u4E00\u53EA\u8001\u864E\uFF0C\u4E24\u5934\u5927\u8C61\uFF0C\u4E09\u53EA\u718A\u732B" },
+            { hanzi: "\u52A8\u7269\u56ED\u91CC\u6709\u5F88\u591A\u7334\u5B50\u3001\u91D1\u9C7C\u548C\u4E4C\u9F9F\u3002", pinyin: "D\xF2ng w\xF9 yu\xE1n l\u01D0 y\u01D2u h\u011Bn du\u014D h\xF3u zi, j\u012Bn y\xFA h\xE9 w\u016B gu\u012B.", english: "There are many monkeys, goldfish, and turtles in the zoo.", audio: "\u52A8\u7269\u56ED\u91CC\u6709\u5F88\u591A\u7334\u5B50\uFF0C\u91D1\u9C7C\u548C\u4E4C\u9F9F" }
+          ]
+        }
+      ],
+      items: [
+        { id: "tiger", hanzi: "\u8001\u864E", pinyin: "l\u01CEo h\u01D4", english: "tiger", audio: "\u8001\u864E", imagePath: "assets/illustrated-animals/tiger.webp", imageAlt: "A tiger" },
+        { id: "elephant", hanzi: "\u5927\u8C61", pinyin: "d\xE0 xi\xE0ng", english: "elephant", audio: "\u5927\u8C61", imagePath: "assets/illustrated-animals/elephant.webp", imageAlt: "An elephant" },
+        { id: "panda", hanzi: "\u718A\u732B", pinyin: "xi\xF3ng m\u0101o", english: "panda", audio: "\u718A\u732B", imagePath: "assets/illustrated-animals/panda.webp", imageAlt: "A panda" },
+        { id: "monkey", hanzi: "\u7334\u5B50", pinyin: "h\xF3u zi", english: "monkey", audio: "\u7334\u5B50", imagePath: "assets/illustrated-animals/monkey.webp", imageAlt: "A monkey" },
+        { id: "goldfish", hanzi: "\u91D1\u9C7C", pinyin: "j\u012Bn y\xFA", english: "goldfish", audio: "\u91D1\u9C7C", imagePath: "assets/illustrated-animals/goldfish.webp", imageAlt: "A goldfish" },
+        { id: "turtle", hanzi: "\u4E4C\u9F9F", pinyin: "w\u016B gu\u012B", english: "turtle", audio: "\u4E4C\u9F9F", imagePath: "assets/illustrated-animals/turtle.webp", imageAlt: "A turtle" }
+      ]
+    }
+  };
+  var animalsTopic = {
+    id: "animals",
+    title: "Zoo Animals",
+    summary: "Count zoo animals with the right measure words.",
+    progressLabel: "2B",
+    iconText: "\u52A8\u7269\u56ED",
+    iconColor: "#6f7fa4",
+    ownsExplorerContent: true,
+    focus: { hanzi: "\u8001\u864E\uFF0C\u5927\u8C61", pinyin: "l\u01CEo h\u01D4, d\xE0 xi\xE0ng", english: "tiger, elephant", audio: "\u8001\u864E\uFF0C\u5927\u8C61" },
+    focusItems: animalLessons["2b"].items,
+    parentGuide: "Use zoo animals to practise the measure words \u53EA, \u5934, and \u6761 in context.",
+    cultureGuide: "Animals can later connect naturally to zodiac content and story-based culture lessons.",
+    activities: ["Tap to hear", "Choose the measure word"],
+    steps: [
+      { book: "2B", lesson: 5, title: "Animals", note: "Count zoo animals with \u53EA, \u5934, and \u6761." }
+    ]
+  };
+  var petsTopic = {
+    id: "pets",
+    title: "Pets",
+    summary: "Meet familiar pets and hear a simple story about them.",
+    progressLabel: "1B",
+    iconText: "\u5BA0\u7269",
+    iconColor: "#8e6f9b",
+    ownsExplorerContent: true,
+    focus: { hanzi: "\u72D7\uFF0C\u732B", pinyin: "g\u01D2u, m\u0101o", english: "dog, cat", audio: "\u72D7\uFF0C\u732B" },
+    focusItems: animalLessons["1b"].items,
+    parentGuide: "Name familiar pets, then follow a short story about what pets eat.",
+    cultureGuide: "Pets can later connect naturally to animal-care stories and everyday home life.",
+    activities: ["Tap to hear", "Complete a pet sentence", "Pet food story"],
+    steps: [
+      { book: "1B", lesson: 5, title: "Pets", note: "Name familiar pets and hear a simple preference sentence." }
+    ]
+  };
+
   // src/features/world/weather.js
   var weatherLesson = {
     title: "It's Raining",
     summary: "Describe today\u2019s weather, then connect it to how you feel and what you wear.",
+    scenes: [
+      { id: "rain", title: "\u4E0B\u96E8\u5929", imagePath: "assets/illustrated-weather/rainy-umbrella.webp", imageAlt: "A child under an umbrella in the rain", lines: [{ hanzi: "\u4E0B\u96E8\u4E86\u3002", pinyin: "xi\xE0 y\u01D4 le.", english: "It is raining.", audio: "\u4E0B\u96E8\u4E86" }] },
+      { id: "snow", title: "\u4E0B\u96EA\u5929", imagePath: "assets/illustrated-weather/snowy-cold.webp", imageAlt: "A snowy winter scene", lines: [{ hanzi: "\u4E0B\u96EA\u4E86\u3002\u4ECA\u5929\u5F88\u51B7\u3002", pinyin: "xi\xE0 xu\u011B le. j\u012Bn ti\u0101n h\u011Bn l\u011Bng.", english: "It is snowing. Today is very cold.", audio: "\u4E0B\u96EA\u4E86\uFF0C\u4ECA\u5929\u5F88\u51B7" }] },
+      { id: "sunny", title: "\u6674\u5929", imagePath: "assets/illustrated-weather/sunny-hot.webp", imageAlt: "A bright sunny day", lines: [{ hanzi: "\u4ECA\u5929\u662F\u6674\u5929\u3002\u4ECA\u5929\u5F88\u70ED\u3002", pinyin: "j\u012Bn ti\u0101n sh\xEC q\xEDng ti\u0101n. j\u012Bn ti\u0101n h\u011Bn r\xE8.", english: "Today is sunny. Today is very hot.", audio: "\u4ECA\u5929\u662F\u6674\u5929\uFF0C\u4ECA\u5929\u5F88\u70ED" }] },
+      { id: "windy", title: "\u522E\u5927\u98CE", imagePath: "assets/illustrated-weather/windy-leaves.webp", imageAlt: "Leaves blowing on a windy day", lines: [{ hanzi: "\u4ECA\u5929\u522E\u5927\u98CE\u3002", pinyin: "j\u012Bn ti\u0101n gu\u0101 d\xE0 f\u0113ng.", english: "It is very windy today.", audio: "\u4ECA\u5929\u522E\u5927\u98CE" }] }
+    ],
     items: [
       { id: "rain", hanzi: "\u4E0B\u96E8\u4E86", pinyin: "xi\xE0 y\u01D4 le", english: "It is raining.", audio: "\u4E0B\u96E8\u4E86", imagePath: "assets/illustrated-weather/rainy-umbrella.webp", imageAlt: "A child under an umbrella in the rain" },
       { id: "snow", hanzi: "\u4E0B\u96EA\u4E86", pinyin: "xi\xE0 xu\u011B le", english: "It is snowing.", audio: "\u4E0B\u96EA\u4E86", imagePath: "assets/illustrated-weather/snowy-cold.webp", imageAlt: "A snowy winter scene" },
@@ -7878,6 +7965,13 @@
     { id: "tree", subject: "\u5730\u4E0A", word: "\u6811", pinyin: "d\xEC sh\xE0ng y\u01D2u sh\xF9", english: "There is a tree on the ground." },
     { id: "flower", subject: "\u5730\u4E0A", word: "\u82B1", pinyin: "d\xEC sh\xE0ng y\u01D2u hu\u0101", english: "There are flowers on the ground." },
     { id: "grass", subject: "\u5730\u4E0A", word: "\u8349", pinyin: "d\xEC sh\xE0ng y\u01D2u c\u01CEo", english: "There is grass on the ground." }
+  ];
+  var animalMeasureRounds = [
+    { id: "tiger", number: "\u4E00", measure: "\u53EA", animal: "\u8001\u864E", pinyin: "y\xEC zh\u012B l\u01CEo h\u01D4", english: "one tiger", imagePath: "assets/illustrated-animals/tiger.webp", imageAlt: "A tiger" },
+    { id: "elephant", number: "\u4E24", measure: "\u5934", animal: "\u5927\u8C61", pinyin: "li\u01CEng t\xF3u d\xE0 xi\xE0ng", english: "two elephants", imagePath: "assets/illustrated-animals/elephant.webp", imageAlt: "An elephant" },
+    { id: "panda", number: "\u4E09", measure: "\u53EA", animal: "\u718A\u732B", pinyin: "s\u0101n zh\u012B xi\xF3ng m\u0101o", english: "three pandas", imagePath: "assets/illustrated-animals/panda.webp", imageAlt: "A panda" },
+    { id: "goldfish", number: "\u4E03", measure: "\u6761", animal: "\u91D1\u9C7C", pinyin: "q\u012B ti\xE1o j\u012Bn y\xFA", english: "seven goldfish", imagePath: "assets/illustrated-animals/goldfish.webp", imageAlt: "A goldfish" },
+    { id: "turtle", number: "\u516D", measure: "\u53EA", animal: "\u4E4C\u9F9F", pinyin: "li\xF9 zh\u012B w\u016B gu\u012B", english: "six turtles", imagePath: "assets/illustrated-animals/turtle.webp", imageAlt: "A turtle" }
   ];
   function natureIconMarkup(id) {
     const start = '<svg viewBox="0 0 96 72" aria-hidden="true" focusable="false">';
@@ -8010,12 +8104,14 @@
     function lessonForCurrentBook() {
       const topic = currentTopic2();
       if (topic.id === "colours") return colourLessons["2a"];
+      if (topic.id === "pets") return animalLessons["1b"];
+      if (topic.id === "animals") return animalLessons["2b"];
       if (topic.id === "nature") return natureLesson;
       if (topic.id === "weather") return weatherLesson;
       return null;
     }
     function focusItemsForTopic2(topic) {
-      if (topic.id === "colours" || topic.id === "nature" || topic.id === "weather") return lessonForCurrentBook()?.items ?? topic.focusItems;
+      if (["pets", "animals", "colours", "nature", "weather"].includes(topic.id)) return lessonForCurrentBook()?.items ?? topic.focusItems;
       return topic.focusItems;
     }
     function worldSceneCardMarkup(scene, { playAttribute, index, compact = false, extraClass = "" }) {
@@ -8024,6 +8120,7 @@
     function renderWorldExplorer() {
       const lesson = lessonForCurrentBook();
       if (!lesson) return;
+      if (["pets", "animals"].includes(currentTopic2().id)) return renderAnimalsExplorer(lesson);
       if (lesson === weatherLesson) return renderWeatherExplorer();
       if (lesson === natureLesson) return renderNatureExplorer();
       const hasScene = Boolean(lesson.imagePath);
@@ -8042,27 +8139,32 @@
         if (state2.tapAudioEnabled) speak2(button.dataset.worldSentence, 0.72);
       }));
     }
-    function renderWeatherExplorer() {
-      const sceneLabels = {
-        rain: "\u4E0B\u96E8\u5929",
-        snow: "\u4E0B\u96EA\u5929",
-        sunny: "\u6674\u5929",
-        windy: "\u522E\u5927\u98CE"
-      };
-      const scenes = Array.from(weatherLesson.items.reduce((groups, item) => {
-        const scene = groups.get(item.imagePath) ?? { imagePath: item.imagePath, imageAlt: item.imageAlt, items: [] };
-        scene.items.push(item);
-        groups.set(item.imagePath, scene);
-        return groups;
-      }, /* @__PURE__ */ new Map()).values()).map((scene) => ({
-        ...scene,
-        title: sceneLabels[scene.items[0].id],
-        lines: [{ hanzi: `${scene.items.map((item) => item.hanzi).join("\u3002")}\u3002`, pinyin: `${scene.items.map((item) => item.pinyin).join(". ")}.`, english: scene.items.map((item) => item.english).join(" "), className: "weather-scene-line" }]
+    function renderAnimalsExplorer(lesson) {
+      focusExplorer2.innerHTML = `
+      <div class="time-date-board school-topic-board">
+        <div class="numbers-stage-card"><p class="body-match-kicker">${currentBook2().label} Lesson ${currentLesson2().lesson}</p><h4>${lesson.title}</h4><p>${lesson.summary}</p></div>
+        <section class="school-lesson-section is-animals"><div class="school-scene-grid is-single">${lesson.scenes.map((scene, index) => worldSceneCardMarkup(scene, { playAttribute: "data-animals-scene", index, compact: true, extraClass: "animals-scene-card" })).join("")}</div></section>
+        <section class="school-lesson-section"><div class="time-months-heading"><p class="body-match-kicker">Book words</p></div><div class="time-asset-grid world-asset-grid animal-word-grid">${lesson.items.map((item) => `<button class="time-asset-card book-word-card" type="button" data-world-item="${item.id}" aria-label="${item.hanzi}\uFF0C${item.pinyin}\uFF0C${item.english}"><img class="book-word-image" src="${item.imagePath}" alt="${item.imageAlt}"><span class="book-word-copy"><span class="time-asset-hanzi">${item.hanzi}</span>${state2.showPinyin ? `<span class="time-asset-pinyin">${item.pinyin}</span>` : ""}${state2.showEnglish ? `<span class="time-asset-english">${item.english}</span>` : ""}</span></button>`).join("")}</div></section>
+        ${lesson.foodStory ? `<section class="school-lesson-section pet-food-story"><div class="time-months-heading"><p class="body-match-kicker">Pet story</p></div><div class="pet-food-story-grid">${lesson.foodStory.map((story) => `<button class="pet-food-story-card" type="button" data-pet-food-story="${story.id}"><span class="pet-food-story-pair"><img src="${story.animalImagePath}" alt="${story.animalImageAlt}"><span aria-hidden="true">\u2192</span><img src="${story.foodImagePath}" alt="${story.foodImageAlt}"></span><span class="pet-food-story-copy"><span class="time-asset-context">${story.hanzi}</span>${state2.showPinyin ? `<span class="time-asset-context-pinyin">${story.pinyin}</span>` : ""}${state2.showEnglish ? `<span class="time-asset-context-english">${story.english}</span>` : ""}</span></button>`).join("")}</div></section>` : ""}
+        ${lesson.usefulNote ? `<section class="visual-topic-notes school-review-notes"><p class="body-match-kicker">Useful note</p><div class="visual-topic-note-grid school-review-grid"><article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">${lesson.usefulNote.hanzi}</p>${state2.showPinyin ? `<p class="visual-topic-note-pinyin">${lesson.usefulNote.pinyin}</p>` : ""}${state2.showEnglish ? `<p class="visual-topic-note-english">${lesson.usefulNote.english}</p>` : ""}</article></div></section>` : ""}
+      </div>
+    `;
+      focusExplorer2.querySelectorAll("[data-world-item]").forEach((button) => button.addEventListener("click", () => selectFocusItem2(button.dataset.worldItem, { playAudio: true })));
+      focusExplorer2.querySelectorAll("[data-animals-scene]").forEach((button) => button.addEventListener("click", () => {
+        const scene = lesson.scenes[Number(button.dataset.animalsScene)];
+        if (scene && state2.tapAudioEnabled) speak2(scene.lines.map((line) => line.audio).join("\uFF0C"), 0.74);
       }));
+      focusExplorer2.querySelectorAll("[data-pet-food-story]").forEach((button) => button.addEventListener("click", () => {
+        const story = lesson.foodStory?.find((entry) => entry.id === button.dataset.petFoodStory);
+        if (story && state2.tapAudioEnabled) speak2(story.audio, 0.74);
+      }));
+    }
+    function renderWeatherExplorer() {
+      const scenes = weatherLesson.scenes;
       focusExplorer2.innerHTML = `
       <div class="time-date-board school-topic-board">
         <div class="numbers-stage-card"><p class="body-match-kicker">${currentBook2().label} Lesson ${currentLesson2().lesson}</p><h4>${weatherLesson.title}</h4><p>${weatherLesson.summary}</p></div>
-        <section class="school-lesson-section is-weather"><div class="school-scene-grid">${scenes.map((scene, index) => worldSceneCardMarkup(scene, { playAttribute: "data-weather-scene", index }))}</div></section>
+        <section class="school-lesson-section is-weather"><div class="school-scene-grid weather-scene-grid">${scenes.map((scene, index) => worldSceneCardMarkup(scene, { playAttribute: "data-weather-scene", index })).join("")}</div></section>
         <section class="visual-topic-notes school-review-notes">
           <p class="body-match-kicker">Useful notes</p>
           <div class="visual-topic-note-grid school-review-grid">
@@ -8075,7 +8177,7 @@
       focusExplorer2.querySelectorAll("[data-world-item]").forEach((button) => button.addEventListener("click", () => selectFocusItem2(button.dataset.worldItem, { playAudio: true })));
       focusExplorer2.querySelectorAll("[data-weather-scene]").forEach((button) => button.addEventListener("click", () => {
         const scene = scenes[Number(button.dataset.weatherScene)];
-        if (scene && state2.tapAudioEnabled) speak2(scene.items.map((item) => item.audio).join("\uFF0C"), 0.74);
+        if (scene && state2.tapAudioEnabled) speak2(scene.lines.map((line) => line.audio).join("\uFF0C"), 0.74);
       }));
     }
     function renderNatureExplorer() {
@@ -8100,6 +8202,140 @@
         [copy[index], copy[swapIndex]] = [copy[swapIndex], copy[index]];
       }
       return copy;
+    }
+    function shuffledWithoutAlignedPairs(items, oppositeOrder) {
+      let order = shuffled(items);
+      let attempts = 0;
+      while (order.some((id, index) => id === oppositeOrder[index]) && attempts < 12) {
+        order = shuffled(items);
+        attempts += 1;
+      }
+      return order.some((id, index) => id === oppositeOrder[index]) ? [...oppositeOrder.slice(1), oppositeOrder[0]] : order;
+    }
+    function renderAnimalsPractice() {
+      if (currentTopic2().id === "pets") return renderPetsPractice();
+      return renderZooSentencePractice();
+    }
+    function petSentenceFeedback(sentence) {
+      return `<div class="pets-practice-feedback"><p class="numbers-game-hanzi">${sentence.hanzi}</p>${state2.showPinyin ? `<p class="numbers-game-pinyin">${sentence.pinyin}</p>` : ""}${state2.showEnglish ? `<p class="numbers-game-english">${sentence.english}</p>` : ""}</div>`;
+    }
+    function ensurePetFoodMatch() {
+      const stories = animalLessons["1b"].foodStory;
+      if (state2.petFoodMatchOrder?.length === stories.length) return;
+      state2.petFoodMatchOrder = shuffled(stories.map((story) => story.id));
+      state2.petFoodFoodOrder = shuffledWithoutAlignedPairs(stories.map((story) => story.id), state2.petFoodMatchOrder);
+      state2.petFoodMatchAnimalId = "";
+      state2.petFoodMatchedIds = [];
+      state2.petFoodWrongAnimalId = "";
+      state2.petFoodWrongFoodId = "";
+    }
+    function petFoodMatchCard(story, side) {
+      const isAnimal = side === "animal";
+      if (isAnimal) return `<span class="numbers-game-hanzi">${story.animalHanzi}</span>`;
+      return `<span class="pet-food-match-meaning"><img src="${story.foodImagePath}" alt="${story.foodImageAlt}"><span class="pet-food-match-copy"><span class="match-answer-label">${story.foodHanzi}</span>${state2.showPinyin ? `<span class="numbers-game-pinyin">${story.foodPinyin}</span>` : ""}${state2.showEnglish ? `<span class="numbers-game-english">${story.foodEnglish}</span>` : ""}</span></span>`;
+    }
+    function renderPetFoodMatch(stories) {
+      const matchedIds = new Set(state2.petFoodMatchedIds);
+      const solvedIds = state2.petFoodMatchOrder.filter((id) => matchedIds.has(id));
+      const remainingAnimalIds = state2.petFoodMatchOrder.filter((id) => !matchedIds.has(id));
+      const remainingFoodIds = state2.petFoodFoodOrder.filter((id) => !matchedIds.has(id));
+      const storyFor = (id) => stories.find((story) => story.id === id);
+      const feedback = state2.petFoodWrongFoodId ? "Try again. Which food does that animal eat?" : solvedIds.length === stories.length ? "\u90FD\u914D\u5BF9\u4E86\uFF01" : "";
+      return `<section class="practice-split-card pet-food-match-practice"><div class="numbers-game-top"><div><p class="body-match-kicker">Match the pairs</p><p class="numbers-game-note">Tap an animal on the left, then tap the food it eats on the right.</p></div><button class="small-button is-play-button" type="button" data-pet-food-match-new>Play</button></div>${feedback ? `<div class="greetings-game-feedback">${feedback}</div>` : ""}<div class="family-match-board-headings"><p class="body-match-kicker">Animal</p><p class="body-match-kicker">Food</p></div>${solvedIds.length ? `<div class="family-match-solved-pairs">${solvedIds.map((id) => {
+        const story = storyFor(id);
+        return `<article class="family-match-solved-row"><div class="polite-match-card polite-match-card-phrase family-match-pair-card is-solved"><span class="answer-result-mark" aria-hidden="true">\u2713</span>${petFoodMatchCard(story, "animal")}</div><div class="polite-match-card polite-match-card-meaning family-match-pair-card is-solved"><span class="answer-result-mark" aria-hidden="true">\u2713</span>${petFoodMatchCard(story, "food")}</div></article>`;
+      }).join("")}</div>` : ""}${remainingAnimalIds.length ? `<div class="polite-match-board family-match-open-board"><div class="polite-match-column">${remainingAnimalIds.map((id) => {
+        const story = storyFor(id);
+        const selected = state2.petFoodMatchAnimalId === id;
+        const wrong = state2.petFoodWrongAnimalId === id;
+        return `<button class="polite-match-card polite-match-card-phrase${selected ? " is-selected" : ""}${wrong ? " is-wrong" : ""}" type="button" data-pet-food-match-animal="${id}">${wrong ? '<span class="answer-result-mark" aria-hidden="true">\xD7</span>' : ""}${petFoodMatchCard(story, "animal")}</button>`;
+      }).join("")}</div><div class="polite-match-column">${remainingFoodIds.map((id) => {
+        const story = storyFor(id);
+        const wrong = state2.petFoodWrongFoodId === id;
+        return `<button class="polite-match-card polite-match-card-meaning${wrong ? " is-wrong" : ""}" type="button" data-pet-food-match-food="${id}">${wrong ? '<span class="answer-result-mark" aria-hidden="true">\xD7</span>' : ""}${petFoodMatchCard(story, "food")}</button>`;
+      }).join("")}</div></div>` : ""}${solvedIds.length === stories.length ? '<button class="small-button is-play-button" type="button" data-pet-food-match-new>Play</button>' : ""}</section>`;
+    }
+    function renderPetsPractice() {
+      const stories = animalLessons["1b"].foodStory;
+      const preferenceChoices = [
+        ...animalLessons["1b"].items,
+        ...stories.filter((story) => !["dog-bone", "cat-fish"].includes(story.id)).map((story) => ({
+          id: story.id,
+          hanzi: story.animalHanzi,
+          pinyin: story.animalPinyin,
+          english: story.animalEnglish,
+          imagePath: story.animalImagePath,
+          imageAlt: story.animalImageAlt
+        }))
+      ];
+      const selectedPet = preferenceChoices.find((choice) => choice.id === state2.petsPreferencePickedId);
+      const preference = selectedPet ? { hanzi: `\u6211\u559C\u6B22${selectedPet.hanzi}\u3002`, pinyin: `W\u01D2 x\u01D0 huan ${selectedPet.pinyin}.`, english: `I like ${selectedPet.english}.`, audio: `\u6211\u559C\u6B22${selectedPet.hanzi}` } : null;
+      ensurePetFoodMatch();
+      activityPanelTitle2.textContent = "Let's practice";
+      activityPanelSummary2.textContent = "Build a sentence about a pet you like, then match animals to their food.";
+      activityList2.className = "support-list pets-practice-list";
+      activityList2.innerHTML = `<section class="practice-split-card pets-sentence-practice"><div class="numbers-game-top"><div><p class="body-match-kicker">Build a sentence</p><p class="numbers-game-note">Choose an animal to build a sentence. It will read itself aloud.</p></div><button class="small-button is-play-button" type="button" data-pets-preference-play>Play</button></div><p class="pets-sentence-prompt">\u6211\u559C\u6B22<span class="animals-measure-blank is-${selectedPet ? "correct" : "empty"}">${selectedPet?.hanzi || "____"}</span>\u3002</p><div class="numbers-game-options">${preferenceChoices.map((choice) => {
+        const selected = state2.petsPreferencePickedId === choice.id;
+        return `<button class="numbers-game-option greetings-game-option family-listen-option pets-sentence-choice${selected ? " is-correct" : ""}" type="button" data-pets-preference-choice="${choice.id}"><img src="${choice.imagePath}" alt="${choice.imageAlt}"><span><span class="numbers-game-hanzi">${choice.hanzi}</span>${state2.showPinyin ? `<span class="numbers-game-pinyin">${choice.pinyin}</span>` : ""}${state2.showEnglish ? `<span class="numbers-game-english">${choice.english}</span>` : ""}</span>${selected ? '<span class="answer-result-mark" aria-hidden="true">\u2713</span>' : ""}</button>`;
+      }).join("")}</div>${preference ? petSentenceFeedback(preference) : ""}</section>${renderPetFoodMatch(stories)}`;
+      activityList2.querySelector("[data-pets-preference-play]")?.addEventListener("click", () => {
+        state2.petsPreferencePickedId = "";
+        renderActivityPanel2(currentTopic2());
+      });
+      activityList2.querySelectorAll("[data-pets-preference-choice]").forEach((button) => button.addEventListener("click", () => {
+        state2.petsPreferencePickedId = button.dataset.petsPreferenceChoice;
+        const choice = preferenceChoices.find((entry) => entry.id === state2.petsPreferencePickedId);
+        if (choice && state2.tapAudioEnabled) speak2(`\u6211\u559C\u6B22${choice.hanzi}`, 0.78);
+        renderActivityPanel2(currentTopic2());
+      }));
+      activityList2.querySelectorAll("[data-pet-food-match-animal]").forEach((button) => button.addEventListener("click", () => {
+        state2.petFoodMatchAnimalId = button.dataset.petFoodMatchAnimal;
+        state2.petFoodWrongAnimalId = "";
+        state2.petFoodWrongFoodId = "";
+        renderActivityPanel2(currentTopic2());
+      }));
+      activityList2.querySelectorAll("[data-pet-food-match-food]").forEach((button) => button.addEventListener("click", () => {
+        const foodId = button.dataset.petFoodMatchFood;
+        if (!state2.petFoodMatchAnimalId) return;
+        if (state2.petFoodMatchAnimalId === foodId) {
+          state2.petFoodMatchedIds = [...state2.petFoodMatchedIds, foodId];
+          if (state2.tapAudioEnabled) speak2(stories.find((story) => story.id === foodId).audio, 0.78);
+          state2.petFoodMatchAnimalId = "";
+          state2.petFoodWrongAnimalId = "";
+          state2.petFoodWrongFoodId = "";
+        } else {
+          state2.petFoodWrongAnimalId = state2.petFoodMatchAnimalId;
+          state2.petFoodWrongFoodId = foodId;
+        }
+        renderActivityPanel2(currentTopic2());
+      }));
+      activityList2.querySelectorAll("[data-pet-food-match-new]").forEach((button) => button.addEventListener("click", () => {
+        state2.petFoodMatchOrder = [];
+        state2.petFoodFoodOrder = [];
+        ensurePetFoodMatch();
+        renderActivityPanel2(currentTopic2());
+      }));
+    }
+    function renderZooSentencePractice() {
+      const selectedRound = animalMeasureRounds.find((round) => round.id === state2.zooSentencePickedId);
+      const sentence = selectedRound ? `\u52A8\u7269\u56ED\u6709${selectedRound.number}${selectedRound.measure}${selectedRound.animal}\u3002` : "";
+      activityPanelTitle2.textContent = "Let's practice";
+      activityPanelSummary2.textContent = "Build zoo sentences with \u52A8\u7269\u56ED\u6709\u2026 and animal counting phrases.";
+      activityList2.className = "support-list";
+      activityList2.innerHTML = `<section class="practice-split-card zoo-sentence-practice"><div class="numbers-game-top"><div><p class="body-match-kicker">Build a sentence</p><p class="numbers-game-note">Choose an animal phrase to build a zoo sentence. It will read itself aloud.</p></div><button class="small-button is-play-button" type="button" data-zoo-sentence-new>Play</button></div><p class="animals-measure-prompt">\u52A8\u7269\u56ED\u6709<span class="animals-measure-blank is-${selectedRound ? "correct" : "empty"}">${selectedRound ? `${selectedRound.number}${selectedRound.measure}${selectedRound.animal}` : "____"}</span>\u3002</p><div class="numbers-game-options">${animalMeasureRounds.map((round) => {
+        const selected = selectedRound?.id === round.id;
+        return `<button class="numbers-game-option greetings-game-option family-listen-option zoo-sentence-choice${selected ? " is-correct" : ""}" type="button" data-zoo-sentence-choice="${round.id}"><img src="${round.imagePath}" alt="${round.imageAlt}"><span><span class="numbers-game-hanzi">${round.number}${round.measure}${round.animal}</span>${state2.showPinyin ? `<span class="numbers-game-pinyin">${round.pinyin}</span>` : ""}${state2.showEnglish ? `<span class="numbers-game-english">${round.english}</span>` : ""}</span>${selected ? '<span class="answer-result-mark" aria-hidden="true">\u2713</span>' : ""}</button>`;
+      }).join("")}</div>${selectedRound ? `<div class="animals-measure-feedback"><p class="numbers-game-hanzi">${sentence}</p>${state2.showPinyin ? `<p class="numbers-game-pinyin">D\xF2ng w\xF9 yu\xE1n y\u01D2u ${selectedRound.pinyin}.</p>` : ""}${state2.showEnglish ? `<p class="numbers-game-english">There are ${selectedRound.english} in the zoo.</p>` : ""}</div>` : ""}</section>`;
+      activityList2.querySelector("[data-zoo-sentence-new]")?.addEventListener("click", () => {
+        state2.zooSentencePickedId = "";
+        renderActivityPanel2(currentTopic2());
+      });
+      activityList2.querySelectorAll("[data-zoo-sentence-choice]").forEach((button) => button.addEventListener("click", () => {
+        state2.zooSentencePickedId = button.dataset.zooSentenceChoice;
+        const round = animalMeasureRounds.find((entry) => entry.id === state2.zooSentencePickedId);
+        if (round && state2.tapAudioEnabled) speak2(`\u52A8\u7269\u56ED\u6709${round.number}${round.measure}${round.animal}`, 0.78);
+        renderActivityPanel2(currentTopic2());
+      }));
     }
     function ensureColourPractice() {
       const items = colourLessons["2a"].items;
@@ -8250,7 +8486,7 @@
       activityPanelTitle2.textContent = "Let's practice";
       activityPanelSummary2.textContent = "Look at the picture and complete the sentence with the right words.";
       activityList2.className = "support-list";
-      activityList2.innerHTML = `<section class="practice-split-card nature-fill-practice"><div class="numbers-game-top"><div><p class="body-match-kicker">\u770B\u56FE\u586B\u4E00\u586B</p><p class="numbers-game-note">Choose the two words that make the sentence match the picture.</p></div><button class="small-button is-play-button" type="button" data-nature-fill-play>Play</button></div><p class="nature-fill-sentence"><span class="weather-fill-blank${state2.worldNatureFillSubjectResult ? ` is-${state2.worldNatureFillSubjectResult}` : ""}">${state2.worldNatureFillSubjectPicked || "____"}</span>\u6709<span class="weather-fill-blank${state2.worldNatureFillWordResult ? ` is-${state2.worldNatureFillWordResult}` : ""}">${state2.worldNatureFillWordPicked || "____"}</span><span class="nature-fill-inline-icon">${natureIconMarkup(round.id)}</span>\u3002</p>${complete && state2.showPinyin ? `<p class="numbers-game-pinyin">${round.pinyin}</p>` : ""}${complete && state2.showEnglish ? `<p class="numbers-game-english">${round.english}</p>` : ""}<div class="weather-fill-choice-groups"><div><p class="weather-fill-choice-label">\u7B2C\u4E00\u4E2A\u8BCD</p><div class="weather-fill-options">${state2.worldNatureFillSubjectChoices.map((choice) => `<button class="weather-fill-option${state2.worldNatureFillSubjectPicked === choice ? ` is-${state2.worldNatureFillSubjectResult}` : ""}" type="button" data-nature-fill-subject="${choice}">${choice}</button>`).join("")}</div></div><div><p class="weather-fill-choice-label">\u6709\u4EC0\u4E48\uFF1F</p><div class="weather-fill-options">${state2.worldNatureFillWordChoices.map((choice) => `<button class="weather-fill-option${state2.worldNatureFillWordPicked === choice ? ` is-${state2.worldNatureFillWordResult}` : ""}" type="button" data-nature-fill-word="${choice}">${choice}</button>`).join("")}</div></div></div>${state2.worldNatureFillSubjectResult === "wrong" || state2.worldNatureFillWordResult === "wrong" ? '<p class="weather-fill-feedback">\u518D\u770B\u770B\u56FE\uFF0C\u60F3\u60F3\u53E5\u5B50\u7684\u7B2C\u4E00\u4E2A\u8BCD\u548C\u6709\u4EC0\u4E48\u3002</p>' : ""}</section>`;
+      activityList2.innerHTML = `<section class="practice-split-card nature-fill-practice"><div class="numbers-game-top"><div><p class="body-match-kicker">Look and complete</p><p class="numbers-game-note">Choose the two words that make the sentence match the picture.</p></div><button class="small-button is-play-button" type="button" data-nature-fill-play>Play</button></div><p class="nature-fill-sentence"><span class="weather-fill-blank${state2.worldNatureFillSubjectResult ? ` is-${state2.worldNatureFillSubjectResult}` : ""}">${state2.worldNatureFillSubjectPicked || "____"}</span>\u6709<span class="weather-fill-blank${state2.worldNatureFillWordResult ? ` is-${state2.worldNatureFillWordResult}` : ""}">${state2.worldNatureFillWordPicked || "____"}</span><span class="nature-fill-inline-icon">${natureIconMarkup(round.id)}</span>\u3002</p>${complete && state2.showPinyin ? `<p class="numbers-game-pinyin">${round.pinyin}</p>` : ""}${complete && state2.showEnglish ? `<p class="numbers-game-english">${round.english}</p>` : ""}<div class="weather-fill-choice-groups"><div><p class="weather-fill-choice-label">\u7B2C\u4E00\u4E2A\u8BCD</p><div class="weather-fill-options">${state2.worldNatureFillSubjectChoices.map((choice) => `<button class="weather-fill-option${state2.worldNatureFillSubjectPicked === choice ? ` is-${state2.worldNatureFillSubjectResult}` : ""}" type="button" data-nature-fill-subject="${choice}">${choice}</button>`).join("")}</div></div><div><p class="weather-fill-choice-label">\u6709\u4EC0\u4E48\uFF1F</p><div class="weather-fill-options">${state2.worldNatureFillWordChoices.map((choice) => `<button class="weather-fill-option${state2.worldNatureFillWordPicked === choice ? ` is-${state2.worldNatureFillWordResult}` : ""}" type="button" data-nature-fill-word="${choice}">${choice}</button>`).join("")}</div></div></div>${state2.worldNatureFillSubjectResult === "wrong" || state2.worldNatureFillWordResult === "wrong" ? '<p class="weather-fill-feedback">\u518D\u770B\u770B\u56FE\uFF0C\u60F3\u60F3\u53E5\u5B50\u7684\u7B2C\u4E00\u4E2A\u8BCD\u548C\u6709\u4EC0\u4E48\u3002</p>' : ""}</section>`;
       activityList2.querySelector("[data-nature-fill-play]")?.addEventListener("click", () => {
         if (complete) {
           state2.worldNatureFillRoundIndex = (state2.worldNatureFillRoundIndex + 1) % state2.worldNatureFillRoundIds.length;
@@ -8385,6 +8621,8 @@
       }));
     }
     function renderWorldPractice(topic) {
+      if (topic.id === "pets") return renderAnimalsPractice();
+      if (topic.id === "animals") return renderAnimalsPractice();
       if (topic.id === "colours") return renderColourPractice();
       if (topic.id === "nature") return renderNaturePractice();
       if (topic.id === "weather") return renderWeatherPractice();
@@ -8428,7 +8666,7 @@
         { lesson: 2, title: "Brothers and sisters", topicId: "family" },
         { lesson: 3, title: "Parts of the body (1)", topicId: "body" },
         { lesson: 4, title: "Parts of the body (2)", topicId: "body" },
-        { lesson: 5, title: "Pets", topicId: "animals" },
+        { lesson: 5, title: "Pets", topicId: "pets" },
         { lesson: 6, title: "Colours", topicId: "colours" },
         { lesson: 7, title: "Fruit", topicId: "food" }
       ]
@@ -8561,13 +8799,13 @@
       id: "me-and-family",
       label: "Me & Family",
       description: "Personal, family, body, clothes, and everyday child language.",
-      topicIds: ["family", "body", "animals", "colours", "clothes"]
+      topicIds: ["family", "body", "colours", "clothes"]
     },
     {
       id: "daily-world",
       label: "Daily World",
       description: "Food, hobbies, routines, weather, and the world around the child.",
-      topicIds: ["food", "food-preferences", "meals-feelings", "toys", "hobbies", "comparisons", "positions", "transport", "daily-life", "nature", "weather"]
+      topicIds: ["food", "food-preferences", "meals-feelings", "toys", "hobbies", "comparisons", "positions", "transport", "daily-life", "pets", "animals", "nature", "weather"]
     },
     {
       id: "school-and-time",
@@ -8586,7 +8824,8 @@
     identity: { zhTitle: "\u56FD\u5BB6\u548C\u8BED\u8A00", enTitle: "Countries & Languages", hint: "Say where you are from and what you speak" },
     family: { zhTitle: "\u5BB6\u4EBA", enTitle: "Family", hint: "Mom, dad, siblings, grandparents" },
     body: { zhTitle: "\u8EAB\u4F53", enTitle: "Body", hint: "Tap body parts and listen" },
-    animals: { zhTitle: "\u52A8\u7269", enTitle: "Animals", hint: "Pets and favorite animals" },
+    pets: { zhTitle: "\u5BA0\u7269", enTitle: "Pets", hint: "Dog, cat, turtle, goldfish" },
+    animals: { zhTitle: "\u52A8\u7269\u56ED", enTitle: "Zoo Animals", hint: "Count animals with measure words" },
     colours: { zhTitle: "\u989C\u8272", enTitle: "Colours", hint: "Red, yellow, blue, green" },
     food: { zhTitle: "\u98DF\u7269\u548C\u996E\u6599", enTitle: "Food & Drinks", hint: "Fruit, vegetables, snacks, drinks" },
     "food-preferences": { zhTitle: "\u559C\u6B22\u548C\u4E0D\u559C\u6B22", enTitle: "Food Preferences", hint: "Ask and say what you like to eat" },
@@ -8659,10 +8898,10 @@
       id: "world",
       zhTitle: "\u81EA\u7136\u548C\u989C\u8272",
       enTitle: "World Around Us",
-      hint: "Nature, weather, animals, colours",
+      hint: "Nature, weather, pets, zoo animals, colours",
       accent: "#6f7fa4",
       iconSrc: "assets/navigation-icons/panda-bamboo-icon.webp",
-      topicIds: ["nature", "weather", "animals", "colours"]
+      topicIds: ["nature", "weather", "pets", "animals", "colours"]
     },
     {
       id: "play",
@@ -8710,6 +8949,7 @@
     ageTopic,
     familyTopic,
     bodyTopic,
+    petsTopic,
     animalsTopic,
     coloursTopic,
     foodTopic,
@@ -9909,4 +10149,7 @@
   renderTopicDetail();
   switchView(viewFromLocation(window.location));
   updateTopicPageVisibility();
+  if (initialTopicId) {
+    requestAnimationFrame(() => focusLearningPanel());
+  }
 })();
