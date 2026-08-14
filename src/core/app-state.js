@@ -86,6 +86,12 @@ export function createAppState() {
   petFoodMatchAnimalId: "",
   petFoodMatchedIds: [],
   petFoodWrongAnimalId: "",
-  petFoodWrongFoodId: ""
+  petFoodWrongFoodId: "",
+  hobbiesBuildOrder: [],
+  hobbiesBuildRoundIndex: 0,
+  hobbiesBuildAvailableTokens: [],
+  hobbiesBuildSelectedTokens: [],
+  hobbiesBuildResult: "",
+  hobbiesBuildLessonKey: ""
   };
 }

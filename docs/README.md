@@ -16,13 +16,14 @@ Read these only when the task requires them:
 - [game_templates.md](./game_templates.md) - after a remaining practice goal calls for an interaction.
 - [art_direction.md](./art_direction.md), [character_bible.md](./character_bible.md), or [school_bible.md](./school_bible.md) - only when selecting or creating new art, or using a recurring character or school scene.
 - [curriculum_guide.md](./curriculum_guide.md) - only for a series-wide progression question or a topic that returns across books with an unclear new language job.
-- [series_audit.md](./series_audit.md) and [development_log.md](./development_log.md) - reference/history, not required page-build input.
+- [series_audit.md](./series_audit.md), [development_log.md](./development_log.md), and [page-build-logs/](./page-build-logs/) - reference/history, not required page-build input.
 
 Do not read the full documentation directory before starting a topic. It is slower and does not improve the page. The contract is the one working record for that topic.
 
 ## Current project references
 
-- [development_log.md](./development_log.md) - historical decisions; consult only when the reason for a current rule is unclear.
+- [development_log.md](./development_log.md) - short cross-page workflow discoveries; consult only when the reason for a current rule is unclear.
+- [page-build-logs/](./page-build-logs/) - detailed iteration records for a specific page; use only when resuming that page.
 - [curriculum_guide.md](./curriculum_guide.md) - series-wide progression rules, not a page-production checklist.
 - [security_publish.md](./security_publish.md) - publishing and security notes.
 

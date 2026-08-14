@@ -45,6 +45,7 @@ import { createFoundationsRuntime } from "../features/foundations/foundations-ru
 import { createTimeDailyLifeState } from "../features/time-daily-life/state.js";
 import { createTimeDailyLifeRuntime } from "../features/time-daily-life/time-daily-life-runtime.js";
 import { createWorldRuntime } from "../features/world/world-runtime.js";
+import { createPlayHobbiesRuntime } from "../features/play-hobbies/play-hobbies-runtime.js";
 import { illustratedKids } from "../data/characters.js";
 import { bookHomeCategories, books, learningHomeCategories, topicCardMeta, topicGroups } from "../data/curriculum.js";
 import { schoolSentenceBuilds, schoolTopicData, topicData, visualTopicItems } from "../data/topic-registry.js";
@@ -145,6 +146,7 @@ function renderFocusExplorer() {
 
 let foundationsRuntime;
 let worldRuntime;
+let playHobbiesRuntime;
 let renderFocusDisplay;
 const { bodySentenceForItem, renderFocusStatus, renderFocusWordList, selectFocusItem } = createFocusRuntime({
   state,
@@ -249,6 +251,20 @@ const {
 bindViewNavigationEvents({ state, switchView, updateTopicPageVisibility });
 
 worldRuntime = createWorldRuntime({
+  state,
+  currentTopic,
+  currentBook,
+  currentLesson,
+  focusExplorer,
+  speak,
+  selectFocusItem,
+  activityPanelTitle,
+  activityPanelSummary,
+  activityList,
+  renderActivityPanel
+});
+
+playHobbiesRuntime = createPlayHobbiesRuntime({
   state,
   currentTopic,
   currentBook,
@@ -691,6 +707,7 @@ lessonPracticeRuntime = createLessonPracticeRuntime({
   renderPracticeSayCards,
   bindPracticeSayCards,
   renderWorldPractice: worldRuntime.renderWorldPractice,
+  renderHobbiesPractice: playHobbiesRuntime.renderHobbiesPractice,
   activeTimeDateSection,
   activityPanelTitle,
   activityPanelSummary,
@@ -810,7 +827,8 @@ focusExplorerRuntime = createFocusExplorerRuntime({
   renderSchoolExplorer,
   renderVisualTopicExplorer,
   renderMultiplicationExplorer,
-  renderWorldExplorer: worldRuntime.renderWorldExplorer
+  renderWorldExplorer: worldRuntime.renderWorldExplorer,
+  renderHobbiesExplorer: playHobbiesRuntime.renderHobbiesExplorer
 });
 
 

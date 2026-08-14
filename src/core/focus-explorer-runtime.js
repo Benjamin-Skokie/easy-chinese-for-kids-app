@@ -20,7 +20,8 @@ export function createFocusExplorerRuntime(context) {
     renderSchoolExplorer,
     renderVisualTopicExplorer,
     renderMultiplicationExplorer,
-    renderWorldExplorer
+    renderWorldExplorer,
+    renderHobbiesExplorer
   } = context;
 
   function renderDefaultExplorer() {
@@ -45,6 +46,7 @@ export function createFocusExplorerRuntime(context) {
     if (topic.interactiveScene === "rooms") return renderRoomsExplorer();
     if (schoolTopicData[topic.id]) return renderSchoolExplorer(topic.id);
     if (["pets", "animals", "colours", "nature", "weather"].includes(topic.id)) return renderWorldExplorer();
+    if (["hobbies", "hobbies-3b"].includes(topic.id)) return renderHobbiesExplorer();
     if (["comparisons", "transport", "rooms"].includes(topic.interactiveScene)) return renderVisualTopicExplorer(topic.interactiveScene);
     if (topic.interactiveScene === "multiplication-rhyme") return renderMultiplicationExplorer();
     return renderDefaultExplorer();

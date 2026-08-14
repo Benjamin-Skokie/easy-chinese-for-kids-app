@@ -1,13 +1,13 @@
 # Asset Summary
 
-Last generated: 2026-08-04
+Last generated: 2026-08-13
 
 Purpose: provide one searchable inventory of illustration assets, using each folder's `manifest.json` as the source of truth.
 
 ## Snapshot
 
-- Collections: 42
-- Manifest entries: 315
+- Collections: 44
+- Manifest entries: 348
 - Entries flagged as missing art: 0
 - Source of truth: per-folder manifests under `assets/*/manifest.json`
 
@@ -46,8 +46,8 @@ Purpose: provide one searchable inventory of illustration assets, using each fol
 
 - Manifest: [assets/illustrated-activities/manifest.json](../assets/illustrated-activities/manifest.json)
 - Style: gentle educational storybook activity scenes for young Chinese learners
-- Entries: 25
-- Files present: 24
+- Entries: 30
+- Files present: 29
 
 **Items**
 
@@ -76,6 +76,11 @@ Purpose: provide one searchable inventory of illustration assets, using each fol
 - `yangyang-likes-pe-class`: `喜欢上体育课` (xǐ huan shàng tǐ yù kè) | Like P.E. class | theme: Yangyang likes P.E. class | sentence: 他喜欢上体育课。 | location: gym | [file](../assets/illustrated-activities/yangyang_likes_pe_class.webp)
 - `lele-dislikes-math-class`: `不喜欢上数学课` (bù xǐ huan shàng shù xué kè) | Do not like math class | theme: Lele does not like math class | sentence: 他不喜欢上数学课。 | location: classroom | [file](../assets/illustrated-activities/lele_dislikes_math_class.webp)
 - `child-reading-book-facing-child`: `看书` (kan shu) | Child reading | theme: A child reads a book oriented toward herself, not toward the viewer | sentence: 她在看书。 | location: library reading corner | [file](../assets/illustrated-activities/child-reading-book-facing-child.webp)
+- `anan-drawing`: `画画儿` (huà huàr) | Draw | theme: Anan draws at home | sentence: 安安喜欢画画儿。 | location: home art table | [file](../assets/illustrated-activities/anan-drawing.webp)
+- `luna-writing-workbook`: `写字` (xiě zì) | Write | theme: Luna writes in a workbook at home | sentence: 露娜喜欢写字。 | location: home desk | [file](../assets/illustrated-activities/luna-writing-workbook.webp)
+- `lele-anan-playing-board-game`: `玩儿游戏` (wánr yóu xì) | Play a game | theme: Lele and Anan play a non-device board game at home | sentence: 乐乐和安安玩儿游戏。 | location: home table | [file](../assets/illustrated-activities/lele-anan-playing-board-game.webp)
+- `noah-ice-skating`: `滑冰` (huá bīng) | Ice skate | theme: Noah ice skates on an outdoor rink | sentence: 诺亚喜欢滑冰。 | location: outdoor ice rink | [file](../assets/illustrated-activities/noah-ice-skating.webp)
+- `luna-dancing-landscape`: `跳舞` (tiào wǔ) | Dance | theme: Luna dances alone in a landscape dance-studio scene | sentence: 她爱跳舞。 | location: dance studio | [file](../assets/illustrated-activities/luna-dancing-landscape.webp)
 
 ### `illustrated-animals`
 
@@ -100,8 +105,8 @@ Purpose: provide one searchable inventory of illustration assets, using each fol
 
 - Manifest: [assets/illustrated-classrooms/manifest.json](../assets/illustrated-classrooms/manifest.json)
 - Style: gentle educational storybook school-place scenes for young Chinese learners
-- Entries: 5
-- Files present: 4
+- Entries: 11
+- Files present: 10
 
 **Groups**
 
@@ -113,6 +118,12 @@ Purpose: provide one searchable inventory of illustration assets, using each fol
 - `playground`: `操场` (cao chang) | Playground | [file](../assets/illustrated-classrooms/playground.webp)
 - `classroom`: `教室` (jiao shi) | Classroom | [file](../assets/illustrated-classrooms/classroom.webp)
 - `us-classroom-clusters`: `教室` (jiao shi) | US classroom clusters | theme: Empty U.S. classroom with grouped student tables and clean chair geometry | [file](../assets/illustrated-classrooms/us-classroom-clusters.webp)
+- `classroom-computer-tv-bookshelf`: `电脑、电视、书架` (diàn nǎo, diàn shì, shū jià) | Classroom computer, television, and bookshelf | theme: A recurring U.S. classroom with a laptop on a table, a wall television, and a bookshelf | [file](../assets/illustrated-classrooms/classroom-computer-tv-bookshelf.webp)
+- `computer`: `电脑` (diàn nǎo) | Computer | theme: Standalone laptop on a classroom table for the Book Words card | [file](../assets/illustrated-classrooms/computer.webp)
+- `whiteboard`: `白板` (bái bǎn) | Whiteboard | theme: Standalone classroom whiteboard for the Book Words card | [file](../assets/illustrated-classrooms/whiteboard.webp)
+- `television`: `电视` (diàn shì) | Television | theme: Standalone wall-mounted classroom television for the Book Words card | [file](../assets/illustrated-classrooms/television.webp)
+- `bookshelf`: `书架` (shū jià) | Bookshelf | theme: Standalone classroom bookshelf for the Book Words card | [file](../assets/illustrated-classrooms/bookshelf.webp)
+- `blackboard`: `黑板` (hei ban) | Blackboard | theme: Standalone dark green classroom chalkboard for the Book Words card | [file](../assets/illustrated-classrooms/blackboard.png)
 
 ### `illustrated-clock-routines`
 
@@ -174,8 +185,8 @@ Purpose: provide one searchable inventory of illustration assets, using each fol
 
 - Manifest: [assets/illustrated-colors/manifest.json](../assets/illustrated-colors/manifest.json)
 - Style: clean educational color teaching boards for young Chinese learners
-- Entries: 7
-- Files present: 7
+- Entries: 9
+- Files present: 9
 
 **Items**
 
@@ -186,6 +197,8 @@ Purpose: provide one searchable inventory of illustration assets, using each fol
 - `purple-grapes`: `紫色的葡萄` (zi se de pu tao) | Purple grapes | [file](../assets/illustrated-colors/purple-grapes.webp)
 - `orange-fruit`: `橙色的橘子` (cheng se de ju zi) | Orange orange | [file](../assets/illustrated-colors/orange-fruit.webp)
 - `black-sneakers`: `黑色的运动鞋` (hei se de yun dong xie) | Black sneakers | [file](../assets/illustrated-colors/black-sneakers.webp)
+- `pink-flower`: `粉红色的花` (fěn hóng sè de huā) | Pink flower | [file](../assets/illustrated-colors/pink-flower-white.webp)
+- `white-dog`: `白色的狗` (bái sè de gǒu) | White dog | [file](../assets/illustrated-colors/white-dog.webp)
 
 ### `illustrated-comparisons`
 
@@ -336,13 +349,14 @@ Purpose: provide one searchable inventory of illustration assets, using each fol
 
 - Manifest: [assets/illustrated-food-feelings/manifest.json](../assets/illustrated-food-feelings/manifest.json)
 - Style: gentle educational storybook food-feeling scenes for young Chinese learners
-- Entries: 6
-- Files present: 6
+- Entries: 7
+- Files present: 7
 
 **Items**
 
 - `hungry`: `饿了` (è le) | I am hungry | hungry | [file](../assets/illustrated-food-feelings/hungry.webp)
 - `thirsty`: `渴了` (kě le) | I am thirsty | thirsty | [file](../assets/illustrated-food-feelings/thirsty.webp)
+- `want`: `要` (yào) | I want to eat rice | want | [file](../assets/illustrated-food-feelings/want-eat-fried-rice-landscape.webp)
 - `full`: `饱了` (bǎo le) | I am full | full | [file](../assets/illustrated-food-feelings/full.webp)
 - `delicious`: `好吃` (hǎo chī) | Delicious | delicious | [file](../assets/illustrated-food-feelings/delicious.webp)
 - `like-pizza`: `喜欢吃披萨` (xǐ huan chī pī sà) | Like to eat pizza | like to eat pizza | [file](../assets/illustrated-food-feelings/like-pizza.webp)
@@ -352,8 +366,8 @@ Purpose: provide one searchable inventory of illustration assets, using each fol
 
 - Manifest: [assets/illustrated-food/manifest.json](../assets/illustrated-food/manifest.json)
 - Style: gentle educational watercolor-and-colored-pencil food art for young Chinese learners
-- Entries: 41
-- Files present: 40
+- Entries: 42
+- Files present: 41
 
 **Groups**
 
@@ -361,6 +375,7 @@ Purpose: provide one searchable inventory of illustration assets, using each fol
 
 **Items**
 
+- `game-shopping-cart`: Empty shopping cart for food game | role: game-scene | [file](../assets/illustrated-food/game-shopping-cart.webp)
 - `apple`: `苹果` (ping guo) | Apple | [file](../assets/illustrated-food/apple.webp)
 - `banana`: `香蕉` (xiang jiao) | Banana | [file](../assets/illustrated-food/banana.webp)
 - `grapes`: `葡萄` (pu tao) | Grapes | [file](../assets/illustrated-food/grapes.webp)
@@ -490,12 +505,13 @@ Purpose: provide one searchable inventory of illustration assets, using each fol
 
 - Manifest: [assets/illustrated-meals/manifest.json](../assets/illustrated-meals/manifest.json)
 - Style: gentle educational storybook meal scenes for young Chinese learners
-- Entries: 1
-- Files present: 1
+- Entries: 2
+- Files present: 2
 
 **Items**
 
 - `anan-eating-school-lunch`: `吃午饭` (chi wu fan) | Eat school lunch | theme: Anan has pizza and sips milk at a straight cafeteria table | sentence: 安安在学校食堂吃午饭。 | [file](../assets/illustrated-meals/anan-eating-school-lunch.webp)
+- `anan-mom-fridge-cola-water`: `我要喝可乐。没有可乐，你可以喝水。` (Wǒ yào hē kě lè. Méi yǒu kě lè, nǐ kě yǐ hē shuǐ.) | No Coke | theme: Anan looks for Coke in the open refrigerator while Mom offers water | [file](../assets/illustrated-meals/anan-mom-fridge-cola-water.webp)
 
 ### `illustrated-measure-words`
 
@@ -534,6 +550,19 @@ Purpose: provide one searchable inventory of illustration assets, using each fol
 - `november`: `十一月` (shi yi yue) | November | theme: Thanksgiving | [file](../assets/illustrated-months-of-year/November.webp)
 - `december`: `十二月` (shi er yue) | December | theme: Skiing | [file](../assets/illustrated-months-of-year/December.webp)
 
+### `illustrated-nature`
+
+- Manifest: [assets/illustrated-nature/manifest.json](../assets/illustrated-nature/manifest.json)
+- Style: gentle educational watercolor-and-colored-pencil day and night nature scene for young Chinese learners
+- Entries: 3
+- Files present: 3
+
+**Items**
+
+- `day-night-nature`: Day and night nature scene | [file](../assets/illustrated-nature/day-night-nature.webp)
+- `daytime-nature`: Daytime nature scene | [file](../assets/illustrated-nature/daytime-nature.webp)
+- `nighttime-nature`: Nighttime nature scene | [file](../assets/illustrated-nature/nighttime-nature.webp)
+
 ### `illustrated-pets`
 
 - Manifest: [assets/illustrated-pets/manifest.json](../assets/illustrated-pets/manifest.json)
@@ -566,14 +595,15 @@ Purpose: provide one searchable inventory of illustration assets, using each fol
 
 - Manifest: [assets/illustrated-rooms/manifest.json](../assets/illustrated-rooms/manifest.json)
 - Style: gentle educational storybook room scenes with slight watercolor softness for young Chinese learners
-- Entries: 6
-- Files present: 6
+- Entries: 7
+- Files present: 7
 
 **Items**
 
 - `living-room`: `客厅` (ke ting) | Living Room | theme: Spacious three-sided living room with the TV facing the sofa | [file](../assets/illustrated-rooms/living-room.webp)
 - `bedroom`: `卧室` (wo shi) | Bedroom | [file](../assets/illustrated-rooms/bedroom.webp)
 - `garage`: `车库` (che ku) | Garage | theme: Open garage with a visible interior door into the house | [file](../assets/illustrated-rooms/garage.webp)
+- `bicycle`: `自行车` (zi xing che) | Bicycle | theme: A complete blue bicycle based on the bicycle in the garage scene | [file](../assets/illustrated-rooms/bicycle.png)
 - `positions-up-down`: `上和下` (shang he xia) | Up and down positions | focus: 桌子 / 课本 / 书包 | [file](../assets/illustrated-rooms/positions-up-down.webp)
 - `positions-inside-outside`: `里和外` (li he wai) | Inside and outside positions | focus: 书包 / 课本 / 铅笔盒 | [file](../assets/illustrated-rooms/positions-inside-outside.webp)
 - `positions-all-directions`: `上、下、前、后、左、右` (shang, xia, qian, hou, zuo, you) | All directions board | focus: 上 / 下 / 前 / 后 / 左 / 右 | [file](../assets/illustrated-rooms/positions-all-directions.webp)
@@ -613,12 +643,13 @@ Purpose: provide one searchable inventory of illustration assets, using each fol
 
 - Manifest: [assets/illustrated-school-subjects/manifest.json](../assets/illustrated-school-subjects/manifest.json)
 - Style: clean educational school subject boards for young Chinese learners
-- Entries: 1
-- Files present: 1
+- Entries: 2
+- Files present: 2
 
 **Items**
 
 - `basic-subjects-board`: `学校科目` (xue xiao ke mu) | Basic subjects board | theme: A reusable no-text board showing Chinese, English, math, music, art, and P.E. through subject objects | [file](../assets/illustrated-school-subjects/basic-subjects-board.webp)
+- `subjects-dialogue`: `我喜欢音乐课。你喜欢什么课？` (wǒ xǐ huan yīn yuè kè. nǐ xǐ huan shén me kè?) | Music class dialogue | theme: Two children having a friendly conversation about their favorite school subjects | [file](../assets/illustrated-school-subjects/subjects-dialogue.webp)
 
 ### `illustrated-self-dressing`
 
@@ -647,12 +678,24 @@ Purpose: provide one searchable inventory of illustration assets, using each fol
 - `nighttime-scene`: `晚上` (wǎn shang) | Nighttime scene | focus: 月亮 / 星星 / 树 / 房子 / 草 | [file](../assets/illustrated-sky-day-night/nighttime-scene.webp)
 - `sky-ground-scene`: `天上和地下` (tiān shàng hé dì xià) | Sky and ground classification scene | [file](../assets/illustrated-sky-day-night/sky-ground-scene.webp)
 
+### `illustrated-snacks`
+
+- Manifest: [assets/illustrated-snacks/manifest.json](../assets/illustrated-snacks/manifest.json)
+- Style: soft polished storybook snack scenes for young Chinese learners
+- Entries: 2
+- Files present: 2
+
+**Items**
+
+- `food-preferences-dialogue`: `我喜欢吃冰淇淋。你喜欢吃什么？` (wǒ xǐ huan chī bīng qí lín. nǐ xǐ huan chī shén me?) | Ice cream preference dialogue | theme: Anan is ready to eat ice cream while talking naturally with a friend at a simple kitchen table | [file](../assets/illustrated-snacks/food-preferences-dialogue.webp)
+- `parents-food-preferences`: `妈妈喜欢吃饺子。爸爸不喜欢吃饺子。` (mā ma xǐ huan chī jiǎo zi. bà ba bù xǐ huan chī jiǎo zi.) | Family food preferences | theme: Mom enjoys dumplings while Dad politely chooses another food at the family dining table | [file](../assets/illustrated-snacks/parents-food-preferences.webp)
+
 ### `illustrated-stationery`
 
 - Manifest: [assets/illustrated-stationery/manifest.json](../assets/illustrated-stationery/manifest.json)
 - Style: gentle educational watercolor-and-colored-pencil stationery art for young Chinese learners
-- Entries: 14
-- Files present: 14
+- Entries: 20
+- Files present: 20
 
 **Groups**
 
@@ -672,6 +715,12 @@ Purpose: provide one searchable inventory of illustration assets, using each fol
 - `textbook`: `课本` (ke ben) | Textbook | [file](../assets/illustrated-stationery/textbook.webp)
 - `workbook`: `练习本` (lian xi ben) | Workbook | [file](../assets/illustrated-stationery/workbook.webp)
 - `backpack`: `书包` (shu bao) | Backpack | [file](../assets/illustrated-stationery/backpack.webp)
+- `open-backpack`: `打开的书包` (da kai de shu bao) | Open backpack | [file](../assets/illustrated-stationery/open-backpack.webp)
+- `my-chair-and-table`: `这是我的椅子。这是我的桌子。` (zhe shi wo de yi zi. zhe shi wo de zhuo zi.) | My chair and table | role: lesson-scene | [file](../assets/illustrated-stationery/my-chair-and-table.webp)
+- `my-book-tiantian-landscape`: `这是我的书。` (zhe shi wo de shu.) | My book | role: lesson-scene | [file](../assets/illustrated-stationery/my-book-tiantian-landscape.webp)
+- `anan-three-red-pencils`: `安安有三支红色的铅笔。` (an an you san zhi hong se de qian bi.) | Anan has three red pencils | role: lesson-scene | [file](../assets/illustrated-stationery/anan-three-red-pencils.webp)
+- `three-red-pencils`: `三支红色的铅笔` (san zhi hong se de qian bi) | Three red pencils | [file](../assets/illustrated-stationery/three-red-pencils.webp)
+- `blue-eraser`: `蓝色的橡皮` (lan se de xiang pi) | Blue eraser | [file](../assets/illustrated-stationery/blue-eraser.webp)
 - `pencil-box`: `铅笔盒` (qian bi he) | Pencil box | [file](../assets/illustrated-stationery/pencil-box.webp)
 
 ### `illustrated-teachers`
@@ -729,13 +778,17 @@ Purpose: provide one searchable inventory of illustration assets, using each fol
 
 - Manifest: [assets/illustrated-weather/manifest.json](../assets/illustrated-weather/manifest.json)
 - Style: gentle educational storybook weather scenes for young Chinese learners
-- Entries: 4
-- Files present: 4
+- Entries: 8
+- Files present: 8
 
 **Items**
 
 - `sunny-hot`: `晴天` (qíng tiān) | Sunny day | [file](../assets/illustrated-weather/sunny-hot.webp)
 - `rainy-umbrella`: `下雨` (xià yǔ) | It is raining | [file](../assets/illustrated-weather/rainy-umbrella.webp)
+- `umbrella`: `雨伞` (yǔ sǎn) | Umbrella | theme: A standalone umbrella for weather-readiness practice | [file](../assets/illustrated-weather/umbrella.png)
+- `knit-hat`: `帽子` (mào zi) | Hat | theme: A standalone muted red wool hat for cold-weather practice | [file](../assets/illustrated-weather/knit-hat.png)
+- `shorts`: `短裤` (duǎn kù) | Shorts | theme: A standalone pair of shorts for hot-weather practice | [file](../assets/illustrated-weather/shorts.png)
+- `windbreaker`: `外套` (wài tào) | Windbreaker | theme: A lightweight windbreaker for windy-weather practice, distinct from rain gear and a winter coat | [file](../assets/illustrated-weather/windbreaker.png)
 - `snowy-cold`: `下雪` (xià xuě) | It is snowing | [file](../assets/illustrated-weather/snowy-cold.webp)
 - `windy-leaves`: `刮大风` (guā dà fēng) | Windy day | [file](../assets/illustrated-weather/windy-leaves.webp)
 

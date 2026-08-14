@@ -1,6 +1,6 @@
 # Project Memory
 
-> Archived. Use [development_log.md](../development_log.md) for the project narrative and [README.md](../README.md) for active references.
+> Archived. Use [development_log.md](../development_log.md) for cross-page workflow discoveries, [page-build-logs/](../page-build-logs/) for page-specific history, and [README.md](../README.md) for active references.
 
 Last updated: 2026-08-04
 

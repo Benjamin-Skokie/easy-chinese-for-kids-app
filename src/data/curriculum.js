@@ -71,7 +71,7 @@ export const books = [
       { lesson: 1, title: "My schoolbag", topicId: "school-supplies" },
       { lesson: 2, title: "Our classroom", topicId: "classroom" },
       { lesson: 3, title: "Positions", topicId: "positions" },
-      { lesson: 4, title: "Hobbies", topicId: "hobbies" },
+      { lesson: 4, title: "Hobbies", topicId: "hobbies-3b" },
       { lesson: 5, title: "Food and drink", topicId: "food-preferences" },
       { lesson: 6, title: "Vegetables", topicId: "food" },
       { lesson: 7, title: "Nature", topicId: "nature" }
@@ -160,8 +160,8 @@ export const topicGroups = [
   {
     id: "daily-world",
     label: "Daily World",
-    description: "Food, hobbies, routines, weather, and the world around the child.",
-    topicIds: ["food", "food-preferences", "meals-feelings", "toys", "hobbies", "comparisons", "positions", "transport", "daily-life", "pets", "animals", "nature", "weather"]
+    description: "Food, routines, weather, and the world around the child.",
+    topicIds: ["food", "food-preferences", "meals-feelings", "toys", "comparisons", "positions", "transport", "daily-life", "pets", "animals", "nature", "weather"]
   },
   {
     id: "school-and-time",
@@ -195,7 +195,8 @@ export const topicCardMeta = {
   classroom: { zhTitle: "教室", enTitle: "Classroom", hint: "Classroom, table, chair, board" },
   school: { zhTitle: "我们的学校", enTitle: "Our School", hint: "Library, playground, cafeteria" },
   "school-subjects": { zhTitle: "学校学科", enTitle: "School Subjects", hint: "Chinese, English, music, art, PE" },
-  hobbies: { zhTitle: "爱好", enTitle: "Hobbies", hint: "Reading, music, sports, games" },
+  hobbies: { zhTitle: "我喜欢", enTitle: "What I Like", hint: "Reading, drawing, writing, games" },
+  "hobbies-3b": { zhTitle: "音乐和运动", enTitle: "Music & Movement", hint: "Singing, dancing, swimming, skating" },
   toys: { zhTitle: "玩具", enTitle: "Toys", hint: "Toy car, train, airplane" },
   clothes: { zhTitle: "衣服", enTitle: "Clothes", hint: "Dress for the day" },
   comparisons: { zhTitle: "描述和比较", enTitle: "Descriptions & Comparisons", hint: "Big, small, long, short" },
@@ -265,9 +266,9 @@ export const learningHomeCategories = [
     id: "play",
     zhTitle: "兴趣和玩具",
     enTitle: "Play & Hobbies",
-    hint: "Toys, sports, music, games",
+    hint: "Toys, reading, music, movement",
     accent: "#8f6988",
     iconSrc: "assets/navigation-icons/teddy-robot-icon.webp",
-    topicIds: ["toys", "hobbies"]
+    topicIds: ["toys", "hobbies", "hobbies-3b"]
   }
 ];

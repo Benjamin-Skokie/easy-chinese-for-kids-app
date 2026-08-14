@@ -21,6 +21,10 @@ The page teaches the distinction through a zoo scene, six pictured Book words, a
 
 There is no Useful note: it would repeat the scene and practice.
 
+## Lesson evidence
+
++- **2B Lesson 5 — Animals:** Words: zoo-animal vocabulary. Task: identify animals; the implemented page confirms `老虎、大象、熊猫、猴子、金鱼、乌龟`.
+
 ## Remaining coverage
 
 The 2B source also has animal-food matching. That belongs to the separate Pets story contract, not this zoo measure-word page.

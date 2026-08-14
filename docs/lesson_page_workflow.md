@@ -1,6 +1,6 @@
 # Lesson Page Build Checklist
 
-Last updated: 2026-08-09
+Last updated: 2026-08-12
 
 Use this checklist to build or materially change one learning topic. It is a decision order, not a page template and not a required reading list.
 
@@ -17,9 +17,9 @@ Record the target URL and confirm in code:
 
 Search for the topic ID and current child-facing copy before editing. Do not assume similarly named topics share a renderer or data model. Record book evidence separately from mapping inference; the book wins if they conflict.
 
-## 2. Create one short contract before implementation
+## 2. Create and maintain one short contract
 
-Create a contract before changing the page, then update that same file as evidence and implementation decisions become clear. Put it in the matching [lesson-contracts/](./lesson-contracts/) category. It is required even when no new art is needed.
+Create a contract before changing the page, then update that same file as evidence and implementation decisions become clear. Every visible topic keeps a contract after it is built, so it remains the compact cross-book record of the page's current and future learning layers. Put it in the matching [lesson-contracts/](./lesson-contracts/) category. It is required even when no new art is needed.
 
 Keep only:
 
@@ -32,34 +32,48 @@ Use the contract to trace every confirmed requirement to a scene, Book words, Us
 
 If the topic returns in a later book, identify the new language job. If it is not clear, then consult [curriculum_guide.md](./curriculum_guide.md).
 
-## 3. Plan the smallest useful page
+## 3. Lock the page blueprint before assets or code
 
-Decide the teaching beats before selecting art or a game:
+Before generating an asset or writing a renderer, put this compact, final decision table in the topic contract. Do not infer extra cards, narrative, layouts, or practice rules while building.
 
-1. What scene or scenes make each target sentence understandable?
-2. Which words still need a focused Book words reference after the scenes?
-3. Does a Useful note explain a reusable distinction that scenes do not?
-4. What remains unpractised after those sections?
+| Section | Decide before build |
+| --- | --- |
+| Scene | Grid/layout, one teaching beat per card, and the exact sentence each scene supports. |
+| Book words | The exact words; whether cards are text-only or need isolated visual support. |
+| Useful note | The single reusable distinction it explains, or omit it. |
+| Practice | The remaining language job, game pattern, allowed answer family, completion display, and Play/reset behavior. |
 
-The usual page order is: **scenes → optional Book words → optional Useful notes → practice**. This is not compulsory: omit any section that does not add a distinct teaching job. Each visible section has one owner. If a custom renderer owns the page content, set `ownsExplorerContent: true` and suppress generic duplicate panels.
+The usual page order is: **Scene → optional Book words → optional Useful notes → Practice**. Start from this structure; do not add narrative or filler cards unless the contract establishes a distinct teaching job for them. If Scene already gives every target word a clear picture and sentence, Book words must be text-only rather than repeat the same images. Each visible section has one owner. If a custom renderer owns the page content, set `ownsExplorerContent: true` and suppress generic duplicate panels.
 
-## 4. Define the practice before choosing the game
+## 4. Define practice as an answer model, not a fixed string
 
 For each remaining learning goal, write down:
 
 - the cue the child receives;
 - the response the child gives;
-- complete valid answers and plausible distractors;
-- feedback and completion behavior;
+- every valid answer or a small explicit answer grammar, including equivalent frames such as `爱` / `喜欢` where the lesson permits them;
+- distractors and invalid combinations;
+- feedback, completion display (Hanzi, pinyin, and English), and speech behavior;
+- what **Play** does: a new randomized round, not merely audio replay;
 - what randomizes between rounds and what stays stable within a round.
 
 Then consult [Practice Patterns](./game_templates.md) and choose the smallest fitting pattern. For sentence-fill practice, each configured round must own a whole approved sentence; never generate sentences from independently mixed word categories.
 
-## 5. Build from approved assets
+For a builder with more than one valid answer, use valid-prefix checking against the approved answer set. Tell the learner before play that more than one answer can be correct. Do not make punctuation a selectable word card.
 
-Reuse the asset library when it clearly teaches the planned scene. Generate new art only for a genuine teaching gap found during page planning. Read visual guidance only at this point, and only the guidance relevant to the new asset.
+## 5. Build from reviewed assets
 
-For new art, follow [art_direction.md](./art_direction.md), plus the character or school bible when applicable. Keep source assets, manifests, lesson data, and practice data aligned; do not copy the same file path into unrelated arrays.
+Reuse the asset library when it clearly teaches the planned scene. Generate new art only for a genuine teaching gap found during page planning. Before any new asset prompt, read [art_direction.md](./art_direction.md); if the scene has a recurring person or school setting, also read the relevant character or school bible and inspect the anchor images.
+
+Write the prompt from the page blueprint. It must explicitly lock:
+
+- the named recurring character and its supplied anchor references;
+- the action pose and what makes the action visibly active;
+- object orientation from the character's point of view (especially paper, books, screens, and drawings);
+- what must be unreadable or omitted to avoid false visual claims;
+- the accepted composition and scene purpose.
+
+Review each generated asset before copying it into the app. Reject it if identity, action, orientation, or teaching beat is wrong, even if its general style is attractive. Keep source assets, manifests, lesson data, and practice data aligned; do not copy the same file path into unrelated arrays.
 
 ## 6. Verify the page
 
@@ -68,7 +82,7 @@ Before handoff:
 - verify every asset path exists and every retired asset is unreferenced;
 - check that scenes, Book words, notes, and generic panels do not duplicate each other;
 - verify the topic is included in both the explorer and practice dispatch paths, not merely its data and renderer;
-- test selected, wrong, correct, and completed states;
+- test selected, wrong, correct, completed, Clear, and Play/new-round states; test at least one alternative valid sentence where the answer model allows more than one;
 - confirm all visible copy describes the current interaction;
 - run the relevant data validation, build, tests, and `git diff --check`;
 - review the actual page at its target desktop and mobile widths.

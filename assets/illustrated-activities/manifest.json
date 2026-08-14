@@ -404,6 +404,99 @@
         "2A Lesson 5 I love reading"
       ],
       "file": "child-reading-book-facing-child.webp"
+    },
+    {
+      "id": "anan-drawing",
+      "label": "Draw",
+      "hanzi": "画画儿",
+      "pinyin": "huà huàr",
+      "personId": "anan",
+      "personLabel": "Anan",
+      "pronoun": "she",
+      "location": "home art table",
+      "sentenceHanzi": "安安喜欢画画儿。",
+      "sentencePinyin": "Ān ān xǐ huan huà huàr.",
+      "sentenceEnglish": "Anan likes drawing.",
+      "theme": "Anan draws at home",
+      "lessonHints": [
+        "2A Lesson 5 I love reading"
+      ],
+      "file": "anan-drawing.webp"
+    },
+    {
+      "id": "luna-writing-workbook",
+      "label": "Write",
+      "hanzi": "写字",
+      "pinyin": "xiě zì",
+      "personId": "luna",
+      "personLabel": "Luna",
+      "pronoun": "she",
+      "location": "home desk",
+      "sentenceHanzi": "露娜喜欢写字。",
+      "sentencePinyin": "Lù nà xǐ huan xiě zì.",
+      "sentenceEnglish": "Luna likes writing.",
+      "theme": "Luna writes in a workbook at home",
+      "lessonHints": [
+        "2A Lesson 5 I love reading"
+      ],
+      "file": "luna-writing-workbook.webp"
+    },
+    {
+      "id": "lele-anan-playing-board-game",
+      "label": "Play a game",
+      "hanzi": "玩儿游戏",
+      "pinyin": "wánr yóu xì",
+      "personIds": [
+        "lele",
+        "anan"
+      ],
+      "personLabel": "Lele and Anan",
+      "pronoun": "they",
+      "location": "home table",
+      "sentenceHanzi": "乐乐和安安玩儿游戏。",
+      "sentencePinyin": "Lè le hé Ān ān wánr yóu xì.",
+      "sentenceEnglish": "Lele and Anan are playing a game.",
+      "theme": "Lele and Anan play a non-device board game at home",
+      "lessonHints": [
+        "2A Lesson 5 I love reading"
+      ],
+      "file": "lele-anan-playing-board-game.webp"
+    },
+    {
+      "id": "noah-ice-skating",
+      "label": "Ice skate",
+      "hanzi": "滑冰",
+      "pinyin": "huá bīng",
+      "personId": "noah",
+      "personLabel": "Noah",
+      "pronoun": "he",
+      "location": "outdoor ice rink",
+      "sentenceHanzi": "诺亚喜欢滑冰。",
+      "sentencePinyin": "Nuò yà xǐ huan huá bīng.",
+      "sentenceEnglish": "Noah likes ice skating.",
+      "theme": "Noah ice skates on an outdoor rink",
+      "lessonHints": [
+        "3B Lesson 4 Hobbies"
+      ],
+      "file": "noah-ice-skating.webp"
+    },
+    {
+      "id": "luna-dancing-landscape",
+      "label": "Dance",
+      "hanzi": "跳舞",
+      "pinyin": "tiào wǔ",
+      "personId": "luna",
+      "personLabel": "Luna",
+      "pronoun": "she",
+      "location": "dance studio",
+      "sentenceHanzi": "她爱跳舞。",
+      "sentencePinyin": "Tā ài tiào wǔ.",
+      "sentenceEnglish": "She loves dancing.",
+      "theme": "Luna dances alone in a landscape dance-studio scene",
+      "lessonHints": [
+        "3B Lesson 4 Hobbies"
+      ],
+      "file": "luna-dancing-landscape.webp"
     }
   ]
 }

@@ -20,7 +20,7 @@ import { clothesTopic } from "../features/daily-life/clothes.js";
 import { natureTopic, weatherTopic } from "../features/world/weather.js";
 import { animalsTopic, petsTopic } from "../features/world/animals.js";
 import { coloursTopic } from "../features/world/colours.js";
-import { hobbiesTopic, toysTopic } from "../features/play-hobbies/play-hobbies.js";
+import { hobbies3bTopic, hobbiesTopic, toysTopic } from "../features/play-hobbies/play-hobbies.js";
 import { bodyTopic } from "../features/foundations/body.js";
 import { multiplicationRhymeTopic, numbersTopic } from "../features/foundations/numbers.js";
 
@@ -315,6 +315,7 @@ export const topicData = [
     steps: [{ book: "4B", lesson: 6, title: "School subjects", note: "Talk about favorite classes." }]
   },
   hobbiesTopic,
+  hobbies3bTopic,
   toysTopic,
   clothesTopic,
   dailyLifeTopic,

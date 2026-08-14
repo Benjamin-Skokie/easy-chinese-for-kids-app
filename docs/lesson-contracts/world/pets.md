@@ -19,6 +19,10 @@ Mapped lesson: **1B Lesson 5 — Pets**
 | Practice | Pets custom renderer | Build `我喜欢…。`, then match each animal to the food in its `…吃…` sentence. |
 | Shared focus panels | Shared shell | Suppressed by `ownsExplorerContent` to avoid duplicates. |
 
+## Lesson evidence
+
++- **1B Lesson 5 — Pets:** Words: `狗、猫、金鱼、乌龟`. Pattern: `喜欢`.
+
 ## Remaining coverage
 
 The mapping's `我有一只…` frame is still unconfirmed by available 1B OCR. Do not add it until the 1B lesson page is visually reviewed.
