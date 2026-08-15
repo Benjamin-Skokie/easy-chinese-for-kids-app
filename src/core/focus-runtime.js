@@ -81,7 +81,7 @@ function selectFocusItem(itemId, options = {}) {
   renderFocusStatus();
 
   if (options.playAudio && state.tapAudioEnabled) {
-    speak(options.audioText ?? item.audio, 0.78);
+    speak(options.audioText ?? item.audio, 0.78, options.voiceNames);
   }
 }
 

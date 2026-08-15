@@ -1,6 +1,6 @@
 # Lesson Page Build Checklist
 
-Last updated: 2026-08-12
+Last updated: 2026-08-14
 
 Use this checklist to build or materially change one learning topic. It is a decision order, not a page template and not a required reading list.
 
@@ -54,10 +54,10 @@ For each remaining learning goal, write down:
 - the cue the child receives;
 - the response the child gives;
 - every valid answer or a small explicit answer grammar, including equivalent frames such as `爱` / `喜欢` where the lesson permits them;
-- distractors and invalid combinations;
-- feedback, completion display (Hanzi, pinyin, and English), and speech behavior;
+- distractors and invalid combinations; for picture-based choice, a distractor must be visually and semantically incompatible, not simply a less-specific sentence that could also fit;
+- feedback, completion display (Hanzi, pinyin, and English), and speech behavior; do not repeat an already visible selected answer unless the duplicate adds a distinct teaching job;
 - which unused choices, distractors, or controls remain visible after success;
-- what **Play** does: a new randomized round, not merely audio replay;
+- what **Play** does: a new randomized round, not merely audio replay; when more than one round exists, it must differ from the current round;
 - the full eligible round set for randomization and what stays stable within a round.
 
 Then consult [Practice Patterns](./game_templates.md) and choose the smallest fitting pattern. For sentence-fill practice, each configured round must own a whole approved sentence; never generate sentences from independently mixed word categories.
@@ -76,6 +76,7 @@ Write the prompt from the page blueprint. It must explicitly lock:
 
 - the named recurring character and its supplied anchor references;
 - the action pose and what makes the action visibly active;
+- for attention-based actions (watching, reading, drawing, writing), the character's body and gaze toward the activity object rather than the camera;
 - object orientation from the character's point of view (especially paper, books, screens, and drawings);
 - the required landscape, portrait, or square composition and the full teaching evidence that must remain inside the frame;
 - what must be unreadable or omitted to avoid false visual claims;
@@ -93,6 +94,7 @@ Before handoff:
 - verify the topic is included in both the explorer and practice dispatch paths, not merely its data and renderer;
 - test selected, wrong, correct, completed, hidden-unused-choice, Clear (when present), and Play/new-round states; confirm each eligible round can be drawn; test at least one alternative valid sentence where the answer model allows more than one;
 - confirm all visible copy describes the current interaction;
+- listen to every new or polyphonic target word in its rendered page; if the default voice is wrong, use and document a scoped voice preference before widening it to other topics;
 - run the relevant data validation, build, tests, and `git diff --check`;
 - review the actual page at its target desktop and mobile widths.
 

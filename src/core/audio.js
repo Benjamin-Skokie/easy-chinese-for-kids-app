@@ -7,27 +7,27 @@ export function createAudioService({
 } = {}) {
   const preferredVoiceNames = ["tingting", "ting-ting", "meijia", "mei-jia", "sinji", "sin-ji"];
 
-  function preferredChineseVoice() {
+  function preferredChineseVoice(names = preferredVoiceNames) {
     const voices = synthesis?.getVoices?.() ?? [];
-    return preferredVoiceNames
+    return names
       .map((name) => voices.find((voice) => voice.name.toLowerCase() === name))
       .find(Boolean);
   }
 
-  function chineseUtterance(text, rate) {
+  function chineseUtterance(text, rate, voiceNames = preferredVoiceNames) {
     const utterance = createUtterance(text);
     utterance.lang = "zh-CN";
     utterance.rate = rate;
     utterance.pitch = 1;
-    const voice = preferredChineseVoice();
+    const voice = preferredChineseVoice(voiceNames);
     if (voice) utterance.voice = voice;
     return utterance;
   }
 
-  function speak(text, rate = 0.8) {
+  function speak(text, rate = 0.8, voiceNames = preferredVoiceNames) {
     if (!synthesis || !text) return;
     synthesis.cancel();
-    synthesis.speak(chineseUtterance(text, rate));
+    synthesis.speak(chineseUtterance(text, rate, voiceNames));
   }
 
   function speakSceneLines(lines) {

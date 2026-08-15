@@ -29,7 +29,7 @@ import { natureLesson, natureTopic, weatherLesson, weatherTopic } from "../src/f
 import { animalLessons, animalsTopic, petsTopic } from "../src/features/world/animals.js";
 import { colourLessons, coloursTopic } from "../src/features/world/colours.js";
 import { createWorldRuntime } from "../src/features/world/world-runtime.js";
-import { hobbies3bTopic, hobbiesTopic, toysTopic } from "../src/features/play-hobbies/play-hobbies.js";
+import { hobbies3bTopic, hobbiesAtHomeTopic, hobbiesLeisureTopic, hobbiesTopic, toysTopic } from "../src/features/play-hobbies/play-hobbies.js";
 import { createPlayHobbiesRuntime } from "../src/features/play-hobbies/play-hobbies-runtime.js";
 import { bodyBonusItemIds, bodyCoreItemIds, bodyDiagramLayout, bodyTopic } from "../src/features/foundations/body.js";
 import { illustratedKids } from "../src/data/characters.js";
@@ -816,18 +816,32 @@ test("play owns separate activity pages for its Hobbies lessons", () => {
   assert.equal(hobbiesTopic.title, "What I Like");
   assert.equal(hobbies3bTopic.title, "Music & Movement");
   assert.equal(hobbies3bTopic.progressLabel, "3B Lesson 4");
+  assert.equal(hobbiesAtHomeTopic.title, "Hobbies at Home");
+  assert.equal(hobbiesAtHomeTopic.progressLabel, "4B Lesson 4");
+  assert.equal(hobbiesAtHomeTopic.focusItems.length, 5);
+  assert.ok(hobbiesAtHomeTopic.focusItems.some((item) => item.imagePath === "assets/illustrated-activities/anan-playing-piano.webp"));
+  assert.equal(hobbiesLeisureTopic.title, "Leisure Time");
+  assert.equal(hobbiesLeisureTopic.progressLabel, "4B Lesson 7");
+  assert.equal(hobbiesLeisureTopic.focusItems.length, 7);
+  assert.ok(hobbiesLeisureTopic.focusItems.some((item) => item.imagePath === "assets/illustrated-activities/kids-running-playground-landscape.webp"));
   assert.ok(hobbiesTopic.focusItems.length >= 11);
   assert.ok(hobbiesTopic.focusItems.some((item) => item.imagePath === "assets/illustrated-activities/noah-ice-skating.webp"));
   assert.equal(toysTopic.id, "toys");
   assert.equal(toysTopic.focusItems.length, 7);
 });
 
-test("Hobbies keeps separate 2A and 3B lesson pages and practice", () => {
+test("Hobbies keeps separate 2A, 3B, and 4B lesson pages and practice", () => {
   const runtimeSource = readFileSync("src/features/play-hobbies/play-hobbies-runtime.js", "utf8");
   assert.equal(typeof createPlayHobbiesRuntime, "function");
   for (const action of ["看书", "画画", "写字", "玩儿游戏", "唱歌", "跳舞", "游泳", "滑冰", "滑雪"]) assert.match(runtimeSource, new RegExp(`"${action}"`));
   assert.match(runtimeSource, /Book 2A Lesson 5/);
   assert.match(runtimeSource, /Book 3B Lesson 4/);
+  assert.match(runtimeSource, /Book 4B Lesson 4/);
+  assert.match(runtimeSource, /Book 4B Lesson 7/);
+  assert.match(runtimeSource, /孩子们在学校操场上跑步/);
+  assert.match(runtimeSource, /tokens: \["孩子们", "在", "学校操场上", "跑步"\]/);
+  assert.match(runtimeSource, /sentence-choice/);
+  assert.match(runtimeSource, /data-hobbies-choice/);
   assert.match(runtimeSource, /你喜欢\$\{action\}吗/);
   assert.match(runtimeSource, /data-hobbies-build-token/);
   assert.match(runtimeSource, /More than one answer can be correct/);

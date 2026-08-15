@@ -9,23 +9,23 @@
     schedule = globalThis.setTimeout
   } = {}) {
     const preferredVoiceNames = ["tingting", "ting-ting", "meijia", "mei-jia", "sinji", "sin-ji"];
-    function preferredChineseVoice() {
+    function preferredChineseVoice(names = preferredVoiceNames) {
       const voices = synthesis?.getVoices?.() ?? [];
-      return preferredVoiceNames.map((name) => voices.find((voice) => voice.name.toLowerCase() === name)).find(Boolean);
+      return names.map((name) => voices.find((voice) => voice.name.toLowerCase() === name)).find(Boolean);
     }
-    function chineseUtterance2(text, rate) {
+    function chineseUtterance2(text, rate, voiceNames = preferredVoiceNames) {
       const utterance = createUtterance(text);
       utterance.lang = "zh-CN";
       utterance.rate = rate;
       utterance.pitch = 1;
-      const voice = preferredChineseVoice();
+      const voice = preferredChineseVoice(voiceNames);
       if (voice) utterance.voice = voice;
       return utterance;
     }
-    function speak2(text, rate = 0.8) {
+    function speak2(text, rate = 0.8, voiceNames = preferredVoiceNames) {
       if (!synthesis || !text) return;
       synthesis.cancel();
-      synthesis.speak(chineseUtterance2(text, rate));
+      synthesis.speak(chineseUtterance2(text, rate, voiceNames));
     }
     function speakSceneLines2(lines) {
       if (!synthesis) return;
@@ -480,7 +480,7 @@
       renderFocusExplorer2();
       renderFocusStatus2();
       if (options.playAudio && state2.tapAudioEnabled) {
-        speak2(options.audioText ?? item.audio, 0.78);
+        speak2(options.audioText ?? item.audio, 0.78, options.voiceNames);
       }
     }
     function renderFocusWordList3() {
@@ -770,7 +770,7 @@
         renderWorldPractice(topic);
         return;
       }
-      if (["hobbies", "hobbies-3b"].includes(topic.id)) {
+      if (["hobbies", "hobbies-3b", "hobbies-at-home", "hobbies-leisure"].includes(topic.id)) {
         renderHobbiesPractice(topic);
         return;
       }
@@ -1500,7 +1500,7 @@
       if (topic.interactiveScene === "rooms") return renderRoomsExplorer2();
       if (schoolTopicData3[topic.id]) return renderSchoolExplorer2(topic.id);
       if (["pets", "animals", "colours", "nature", "weather"].includes(topic.id)) return renderWorldExplorer();
-      if (["hobbies", "hobbies-3b"].includes(topic.id)) return renderHobbiesExplorer();
+      if (["hobbies", "hobbies-3b", "hobbies-at-home", "hobbies-leisure"].includes(topic.id)) return renderHobbiesExplorer();
       if (["comparisons", "transport", "rooms"].includes(topic.interactiveScene)) return renderVisualTopicExplorer2(topic.interactiveScene);
       if (topic.interactiveScene === "multiplication-rhyme") return renderMultiplicationExplorer2();
       return renderDefaultExplorer2();
@@ -5462,6 +5462,50 @@
     activities: ["Tap to hear", "Build a question"],
     steps: [{ book: "3B", lesson: 4, title: "Hobbies", note: "Ask and answer about activity preferences." }]
   };
+  var hobbiesAtHomeTopic = {
+    id: "hobbies-at-home",
+    title: "Hobbies at Home",
+    summary: "Talk about home media and music activities\u2014what someone likes and what they are doing now.",
+    progressLabel: "4B Lesson 4",
+    iconText: "\u5728\u5BB6\u7231\u597D",
+    iconColor: "#8f6988",
+    ownsExplorerContent: true,
+    focus: { hanzi: "\u5979\u5728\u5F39\u94A2\u7434\u3002", pinyin: "t\u0101 z\xE0i t\xE1n g\u0101ng q\xEDn.", english: "She is playing the piano.", audio: "\u5979\u5728\u5F39\u94A2\u7434" },
+    focusItems: [
+      { id: "television", hanzi: "\u770B\u7535\u89C6", pinyin: "k\xE0n di\xE0n sh\xEC", english: "watch television", audio: "\u770B\u7535\u89C6", imagePath: "assets/illustrated-activities/sisi-watching-television.webp", imageAlt: "Sisi watching television at home" },
+      { id: "piano", hanzi: "\u5F39\u94A2\u7434", pinyin: "t\xE1n g\u0101ng q\xEDn", english: "play the piano", audio: "\u5F39\u94A2\u7434", imagePath: "assets/illustrated-activities/anan-playing-piano.webp", imageAlt: "Anan actively playing the piano" },
+      { id: "computer-game", hanzi: "\u73A9\u513F\u7535\u8111\u6E38\u620F", pinyin: "w\xE1nr di\xE0n n\u01CEo y\xF3u x\xEC", english: "play computer games", audio: "\u73A9\u513F\u7535\u8111\u6E38\u620F", imagePath: "assets/illustrated-activities/lele-playing-computer-game.webp", imageAlt: "Lele playing a desktop computer game" },
+      { id: "movie", hanzi: "\u770B\u7535\u5F71", pinyin: "k\xE0n di\xE0n y\u01D0ng", english: "watch a movie", audio: "\u770B\u7535\u5F71", imagePath: "assets/illustrated-activities/tiantian-at-cinema.webp", imageAlt: "Tiantian watching a movie at the cinema" },
+      { id: "cartoons", hanzi: "\u770B\u52A8\u753B\u7247\u513F", pinyin: "k\xE0n d\xF2ng hu\xE0 pi\u0101nr", english: "watch cartoons", audio: "\u770B\u52A8\u753B\u7247\u513F", imagePath: "assets/illustrated-activities/meimei_watching_cartoons.webp", imageAlt: "Meimei watching cartoons at home" }
+    ],
+    parentGuide: "Ask what your child likes to do at home, then notice the difference between a favorite activity and something happening right now.",
+    cultureGuide: "Home activities give children a natural reason to use both preferences and present actions in short conversations.",
+    activities: ["Tap to hear", "Choose the sentence"],
+    steps: [{ book: "4B", lesson: 4, title: "Hobbies", note: "Talk about home activities with \u559C\u6B22, \u7231, and \u5728." }]
+  };
+  var hobbiesLeisureTopic = {
+    id: "hobbies-leisure",
+    title: "Leisure Time",
+    summary: "Say where people are doing outdoor activities.",
+    progressLabel: "4B Lesson 7",
+    iconText: "\u4F11\u95F2",
+    iconColor: "#8f6988",
+    ownsExplorerContent: true,
+    focus: { hanzi: "\u601D\u601D\u5728\u516C\u56ED\u9A91\u81EA\u884C\u8F66\u3002", pinyin: "s\u012B si z\xE0i g\u014Dng yu\xE1n q\xED z\xEC x\xEDng ch\u0113.", english: "Sisi is riding a bike in the park.", audio: "\u601D\u601D\u5728\u516C\u56ED\u9A91\u81EA\u884C\u8F66" },
+    focusItems: [
+      { id: "run", hanzi: "\u8DD1\u6B65", pinyin: "p\u01CEo b\xF9", english: "run", audio: "\u8DD1\u6B65", imagePath: "assets/illustrated-activities/kids-running-playground-landscape.webp", imageAlt: "Children running on a school playground" },
+      { id: "soccer", hanzi: "\u8E22\u8DB3\u7403", pinyin: "t\u012B z\xFA qi\xFA", english: "play soccer", audio: "\u8E22\u8DB3\u7403", imagePath: "assets/illustrated-activities/yangyang-playing-soccer-landscape.webp", imageAlt: "Yangyang kicking a soccer ball in a park" },
+      { id: "bike", hanzi: "\u9A91\u81EA\u884C\u8F66", pinyin: "q\xED z\xEC x\xEDng ch\u0113", english: "ride a bike", audio: "\u9A91\u81EA\u884C\u8F66", imagePath: "assets/illustrated-activities/sisi-riding-bike-landscape.webp", imageAlt: "Sisi riding a bike in a park" },
+      { id: "sand", hanzi: "\u73A9\u513F\u6C99\u5B50", pinyin: "w\xE1nr sh\u0101 zi", english: "play with sand", audio: "\u73A9\u513F\u6C99\u5B50", imagePath: "assets/illustrated-activities/meimei-playing-sand-4x3.webp", imageAlt: "Meimei playing with sand at the beach" },
+      { id: "playground", hanzi: "\u5B66\u6821\u64CD\u573A", pinyin: "xu\xE9 xi\xE0o c\u0101o ch\u01CEng", english: "school playground", audio: "\u5B66\u6821\u64CD\u573A" },
+      { id: "park", hanzi: "\u516C\u56ED", pinyin: "g\u014Dng yu\xE1n", english: "park", audio: "\u516C\u56ED" },
+      { id: "beach", hanzi: "\u6D77\u8FB9", pinyin: "h\u01CEi bi\u0101n", english: "beach", audio: "\u6D77\u8FB9" }
+    ],
+    parentGuide: "Use a familiar park, playground, or beach picture to help your child connect the place word with the activity.",
+    cultureGuide: "Outdoor activities make a natural next step after talking about what someone likes to do at home.",
+    activities: ["Tap to hear", "Build the sentence"],
+    steps: [{ book: "4B", lesson: 7, title: "Leisure time", note: "Say where someone is doing an outdoor activity." }]
+  };
   var toysTopic = {
     id: "toys",
     title: "Toys",
@@ -8709,6 +8753,54 @@
       rounds: [["sing", "\u5531\u6B4C", "ch\xE0ng g\u0113", "singing"], ["dance", "\u8DF3\u821E", "ti\xE0o w\u01D4", "dancing"], ["swim", "\u6E38\u6CF3", "y\xF3u y\u01D2ng", "swimming"], ["skate", "\u6ED1\u51B0", "hu\xE1 b\u012Bng", "skating"], ["ski", "\u6ED1\u96EA", "hu\xE1 xu\u011B", "skiing"]].map(([itemId, action, actionPinyin, actionEnglish]) => ({ itemId, action, actionPinyin, actionEnglish, distractors: ["\u770B\u4E66"], answers: [
         { tokens: ["\u4F60", "\u559C\u6B22", action, "\u5417"], hanzi: `\u4F60\u559C\u6B22${action}\u5417\uFF1F`, pinyin: `n\u01D0 x\u01D0 huan ${actionPinyin} ma?`, english: `Do you like ${actionEnglish}?`, audio: `\u4F60\u559C\u6B22${action}\u5417\uFF1F\u6211\u559C\u6B22${action}\u3002` }
       ] }))
+    },
+    "4b:4": {
+      book: "Book 4B Lesson 4",
+      title: "Hobbies at Home",
+      intro: "Hear the home activities, then notice the difference between a favorite and an activity happening now.",
+      itemIds: ["television", "piano", "computer-game", "movie", "cartoons"],
+      scenes: [
+        ["cartoons", "\u5979\u559C\u6B22\u770B\u52A8\u753B\u7247\u513F\u3002", "t\u0101 x\u01D0 huan k\xE0n d\xF2ng hu\xE0 pi\u0101nr.", "She likes watching cartoons.", "\u5979\u559C\u6B22\u770B\u52A8\u753B\u7247\u513F"],
+        ["piano", "\u5979\u5728\u5F39\u94A2\u7434\u3002", "t\u0101 z\xE0i t\xE1n g\u0101ng q\xEDn.", "She is playing the piano.", "\u5979\u5728\u5F39\u94A2\u7434"],
+        ["computer-game", "\u4ED6\u5728\u73A9\u513F\u7535\u8111\u6E38\u620F\u3002", "t\u0101 z\xE0i w\xE1nr di\xE0n n\u01CEo y\xF3u x\xEC.", "He is playing computer games.", "\u4ED6\u5728\u73A9\u513F\u7535\u8111\u6E38\u620F"],
+        ["television", "\u5979\u559C\u6B22\u770B\u7535\u89C6\u3002", "t\u0101 x\u01D0 huan k\xE0n di\xE0n sh\xEC.", "She likes watching television.", "\u5979\u559C\u6B22\u770B\u7535\u89C6"],
+        ["movie", "\u4ED6\u7231\u770B\u7535\u5F71\u3002", "t\u0101 \xE0i k\xE0n di\xE0n y\u01D0ng.", "He loves watching movies.", "\u4ED6\u7231\u770B\u7535\u5F71"]
+      ],
+      note: ["\u559C\u6B22 / \u7231 \u2026\uFF1B\u5728 + \u6D3B\u52A8", "x\u01D0 huan / \xE0i \u2026; z\xE0i + hu\xF3 d\xF2ng", "\u559C\u6B22 and \u7231 say what someone generally likes. \u5728 + activity says what someone is doing now.", "\u5979\u559C\u6B22\u770B\u7535\u89C6\u3002 \u5979\u5728\u5F39\u94A2\u7434\u3002"],
+      practiceType: "sentence-choice",
+      sentenceOptions: {
+        cartoons: { hanzi: "\u5979\u559C\u6B22\u770B\u52A8\u753B\u7247\u513F\u3002", pinyin: "t\u0101 x\u01D0 huan k\xE0n d\xF2ng hu\xE0 pi\u0101nr.", english: "She likes watching cartoons.", audio: "\u5979\u559C\u6B22\u770B\u52A8\u753B\u7247\u513F" },
+        piano: { hanzi: "\u5979\u5728\u5F39\u94A2\u7434\u3002", pinyin: "t\u0101 z\xE0i t\xE1n g\u0101ng q\xEDn.", english: "She is playing the piano.", audio: "\u5979\u5728\u5F39\u94A2\u7434" },
+        computer: { hanzi: "\u4ED6\u5728\u73A9\u513F\u7535\u8111\u6E38\u620F\u3002", pinyin: "t\u0101 z\xE0i w\xE1nr di\xE0n n\u01CEo y\xF3u x\xEC.", english: "He is playing computer games.", audio: "\u4ED6\u5728\u73A9\u513F\u7535\u8111\u6E38\u620F" },
+        television: { hanzi: "\u5979\u559C\u6B22\u770B\u7535\u89C6\u3002", pinyin: "t\u0101 x\u01D0 huan k\xE0n di\xE0n sh\xEC.", english: "She likes watching television.", audio: "\u5979\u559C\u6B22\u770B\u7535\u89C6" },
+        movie: { hanzi: "\u4ED6\u7231\u770B\u7535\u5F71\u3002", pinyin: "t\u0101 \xE0i k\xE0n di\xE0n y\u01D0ng.", english: "He loves watching movies.", audio: "\u4ED6\u7231\u770B\u7535\u5F71" }
+      },
+      rounds: [
+        { itemId: "cartoons", correctId: "cartoons", optionIds: ["cartoons", "piano"] },
+        { itemId: "piano", correctId: "piano", optionIds: ["piano", "computer"] },
+        { itemId: "computer-game", correctId: "computer", optionIds: ["computer", "movie"] },
+        { itemId: "television", correctId: "television", optionIds: ["television", "movie"] },
+        { itemId: "movie", correctId: "movie", optionIds: ["movie", "computer"] }
+      ]
+    },
+    "4b:7": {
+      book: "Book 4B Lesson 7",
+      title: "Leisure Time",
+      intro: "Hear each outdoor activity, then say where it happens.",
+      itemIds: ["run", "soccer", "bike", "sand", "playground", "park", "beach"],
+      scenes: [
+        ["run", "\u5B69\u5B50\u4EEC\u5728\u5B66\u6821\u64CD\u573A\u4E0A\u8DD1\u6B65\u3002", "h\xE1i zi men z\xE0i xu\xE9 xi\xE0o c\u0101o ch\u01CEng sh\xE0ng p\u01CEo b\xF9.", "The children are running on the school playground.", "\u5B69\u5B50\u4EEC\u5728\u5B66\u6821\u64CD\u573A\u4E0A\u8DD1\u6B65"],
+        ["soccer", "\u9633\u9633\u5728\u516C\u56ED\u8E22\u8DB3\u7403\u3002", "y\xE1ng y\xE1ng z\xE0i g\u014Dng yu\xE1n t\u012B z\xFA qi\xFA.", "Yangyang is playing soccer in the park.", "\u9633\u9633\u5728\u516C\u56ED\u8E22\u8DB3\u7403"],
+        ["bike", "\u601D\u601D\u5728\u516C\u56ED\u9A91\u81EA\u884C\u8F66\u3002", "s\u012B si z\xE0i g\u014Dng yu\xE1n q\xED z\xEC x\xEDng ch\u0113.", "Sisi is riding a bike in the park.", "\u601D\u601D\u5728\u516C\u56ED\u9A91\u81EA\u884C\u8F66"],
+        ["sand", "\u7F8E\u7F8E\u5728\u6D77\u8FB9\u73A9\u513F\u6C99\u5B50\u3002", "m\u011Bi mei z\xE0i h\u01CEi bi\u0101n w\xE1nr sh\u0101 zi.", "Meimei is playing with sand at the beach.", "\u7F8E\u7F8E\u5728\u6D77\u8FB9\u73A9\u513F\u6C99\u5B50"]
+      ],
+      note: ["\u5728 + \u5730\u70B9 + \u6D3B\u52A8", "z\xE0i + d\xEC di\u01CEn + hu\xF3 d\xF2ng", "Use \u5728 + place + activity to say where someone is doing something.", "\u601D\u601D\u5728\u516C\u56ED\u9A91\u81EA\u884C\u8F66\u3002"],
+      rounds: [
+        { itemId: "run", distractors: ["\u516C\u56ED", "\u8E22\u8DB3\u7403"], answers: [{ tokens: ["\u5B69\u5B50\u4EEC", "\u5728", "\u5B66\u6821\u64CD\u573A\u4E0A", "\u8DD1\u6B65"], hanzi: "\u5B69\u5B50\u4EEC\u5728\u5B66\u6821\u64CD\u573A\u4E0A\u8DD1\u6B65\u3002", pinyin: "h\xE1i zi men z\xE0i xu\xE9 xi\xE0o c\u0101o ch\u01CEng sh\xE0ng p\u01CEo b\xF9.", english: "The children are running on the school playground.", audio: "\u5B69\u5B50\u4EEC\u5728\u5B66\u6821\u64CD\u573A\u4E0A\u8DD1\u6B65" }] },
+        { itemId: "soccer", distractors: ["\u6D77\u8FB9", "\u9A91\u81EA\u884C\u8F66"], answers: [{ tokens: ["\u9633\u9633", "\u5728", "\u516C\u56ED", "\u8E22\u8DB3\u7403"], hanzi: "\u9633\u9633\u5728\u516C\u56ED\u8E22\u8DB3\u7403\u3002", pinyin: "y\xE1ng y\xE1ng z\xE0i g\u014Dng yu\xE1n t\u012B z\xFA qi\xFA.", english: "Yangyang is playing soccer in the park.", audio: "\u9633\u9633\u5728\u516C\u56ED\u8E22\u8DB3\u7403" }] },
+        { itemId: "bike", distractors: ["\u5B66\u6821\u64CD\u573A", "\u73A9\u513F\u6C99\u5B50"], answers: [{ tokens: ["\u601D\u601D", "\u5728", "\u516C\u56ED", "\u9A91\u81EA\u884C\u8F66"], hanzi: "\u601D\u601D\u5728\u516C\u56ED\u9A91\u81EA\u884C\u8F66\u3002", pinyin: "s\u012B si z\xE0i g\u014Dng yu\xE1n q\xED z\xEC x\xEDng ch\u0113.", english: "Sisi is riding a bike in the park.", audio: "\u601D\u601D\u5728\u516C\u56ED\u9A91\u81EA\u884C\u8F66" }] },
+        { itemId: "sand", distractors: ["\u516C\u56ED", "\u8DD1\u6B65"], answers: [{ tokens: ["\u7F8E\u7F8E", "\u5728", "\u6D77\u8FB9", "\u73A9\u513F\u6C99\u5B50"], hanzi: "\u7F8E\u7F8E\u5728\u6D77\u8FB9\u73A9\u513F\u6C99\u5B50\u3002", pinyin: "m\u011Bi mei z\xE0i h\u01CEi bi\u0101n w\xE1nr sh\u0101 zi.", english: "Meimei is playing with sand at the beach.", audio: "\u7F8E\u7F8E\u5728\u6D77\u8FB9\u73A9\u513F\u6C99\u5B50" }] }
+      ]
     }
   };
   function shuffled(items) {
@@ -8720,52 +8812,62 @@
     return copy;
   }
   function createPlayHobbiesRuntime({ state: state2, currentTopic: currentTopic2, currentBook: currentBook2, currentLesson: currentLesson2, focusExplorer: focusExplorer2, speak: speak2, selectFocusItem: selectFocusItem2, activityPanelTitle: activityPanelTitle2, activityPanelSummary: activityPanelSummary2, activityList: activityList2, renderActivityPanel: renderActivityPanel2 }) {
-    const lessonKey = () => currentTopic2().id === "hobbies-3b" ? "3b:4" : "2a:5";
+    const lessonKey = () => ({ "hobbies-3b": "3b:4", "hobbies-at-home": "4b:4", "hobbies-leisure": "4b:7" })[currentTopic2().id] ?? "2a:5";
     const lesson = () => lessons[lessonKey()] ?? lessons["2a:5"];
+    const voiceNames = () => lessonKey() === "4b:4" ? ["meijia", "mei-jia", "tingting", "ting-ting", "sinji", "sin-ji"] : void 0;
+    const speakLesson = (text, rate) => speak2(text, rate, voiceNames());
     const round = () => lesson().rounds.find((entry) => entry.itemId === state2.hobbiesBuildOrder[state2.hobbiesBuildRoundIndex]) ?? lesson().rounds[0];
     const answerFor = (entry, tokens = state2.hobbiesBuildSelectedTokens) => entry.answers.find((answer) => answer.tokens.length === tokens.length && answer.tokens.every((token, index) => token === tokens[index]));
     const validPrefix = (entry, tokens) => entry.answers.some((answer) => tokens.every((token, index) => token === answer.tokens[index]));
     function resetRound(newGame = false) {
-      if (state2.hobbiesBuildLessonKey !== lessonKey()) {
+      const sameLesson = state2.hobbiesBuildLessonKey === lessonKey();
+      const previousRoundId = sameLesson ? round().itemId : "";
+      if (!sameLesson) {
         state2.hobbiesBuildLessonKey = lessonKey();
         newGame = true;
       }
       if (!state2.hobbiesBuildOrder.length || newGame) {
-        state2.hobbiesBuildOrder = shuffled(lesson().rounds).map((entry2) => entry2.itemId);
+        const order = shuffled(lesson().rounds).map((entry2) => entry2.itemId);
+        if (newGame && previousRoundId && order.length > 1 && order[0] === previousRoundId) [order[0], order[1]] = [order[1], order[0]];
+        state2.hobbiesBuildOrder = order;
         state2.hobbiesBuildRoundIndex = 0;
       }
       const entry = round();
       state2.hobbiesBuildSelectedTokens = [];
-      state2.hobbiesBuildAvailableTokens = shuffled([.../* @__PURE__ */ new Set([...entry.answers.flatMap((answer) => answer.tokens), ...entry.distractors])]);
+      state2.hobbiesBuildAvailableTokens = lesson().practiceType === "sentence-choice" ? shuffled(entry.optionIds) : shuffled([.../* @__PURE__ */ new Set([...entry.answers.flatMap((answer) => answer.tokens), ...entry.distractors])]);
       state2.hobbiesBuildResult = "";
     }
     function renderHobbiesExplorer() {
-      if (!["hobbies", "hobbies-3b"].includes(currentTopic2().id)) return;
+      if (!["hobbies", "hobbies-3b", "hobbies-at-home", "hobbies-leisure"].includes(currentTopic2().id)) return;
       const page = lesson();
       const items = currentTopic2().focusItems;
       const itemFor = (id) => items.find((item) => item.id === id);
+      const imageClass = "school-scene-image";
       focusExplorer2.innerHTML = `<div class="time-date-board school-topic-board hobbies-topic-board"><div class="numbers-stage-card"><p class="body-match-kicker">${page.book}</p><h4>${page.title}</h4><p>${page.intro}</p></div><section class="school-lesson-section"><div class="time-months-heading"><p class="body-match-kicker">Scene</p></div><div class="school-scene-grid hobbies-scene-grid">${page.scenes.map(([id, hanzi, pinyin, english, audio]) => {
         const item = itemFor(id);
-        return `<section class="greetings-exchange school-scene-card"><div class="greetings-exchange-top"><span></span><button class="small-button is-play-button" type="button" data-hobbies-scene="${audio}">Play</button></div><div class="school-scene-layout"><img class="school-scene-image" src="${item.imagePath}" alt="${item.imageAlt}"><div class="greetings-line-stack is-compact"><article class="greetings-line-card"><div class="telephone-bubble-copy"><p class="telephone-line-hanzi">${hanzi}</p>${state2.showPinyin ? `<p class="telephone-line-pinyin">${pinyin}</p>` : ""}${state2.showEnglish ? `<p class="telephone-line-english">${english}</p>` : ""}</div></article></div></div></section>`;
+        return `<section class="greetings-exchange school-scene-card"><div class="greetings-exchange-top"><span></span><button class="small-button is-play-button" type="button" data-hobbies-scene="${audio}">Play</button></div><div class="school-scene-layout"><img class="${imageClass}" src="${item.imagePath}" alt="${item.imageAlt}"><div class="greetings-line-stack is-compact"><article class="greetings-line-card"><div class="telephone-bubble-copy"><p class="telephone-line-hanzi">${hanzi}</p>${state2.showPinyin ? `<p class="telephone-line-pinyin">${pinyin}</p>` : ""}${state2.showEnglish ? `<p class="telephone-line-english">${english}</p>` : ""}</div></article></div></div></section>`;
       }).join("")}</div></section><section class="school-lesson-section"><div class="time-months-heading"><p class="body-match-kicker">Book words</p></div><div class="school-word-grid is-text-only hobbies-word-grid">${page.itemIds.map((id) => {
         const item = itemFor(id);
         return `<button class="school-word-card is-text-only" type="button" data-hobbies-word="${id}"><span class="time-asset-hanzi">${item.hanzi}</span>${state2.showPinyin ? `<span class="time-asset-pinyin">${item.pinyin}</span>` : ""}${state2.showEnglish ? `<span class="time-asset-english">${item.english}</span>` : ""}</button>`;
       }).join("")}</div></section><section class="visual-topic-notes school-review-notes"><p class="body-match-kicker">Useful notes</p><div class="visual-topic-note-grid school-review-grid"><article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">${page.note[0]}</p>${state2.showPinyin ? `<p class="visual-topic-note-pinyin">${page.note[1]}</p>` : ""}${state2.showEnglish ? `<p class="visual-topic-note-english">${page.note[2]}</p>` : ""}<p class="visual-topic-note-example">${page.note[3]}</p></article></div></section></div>`;
-      focusExplorer2.querySelectorAll("[data-hobbies-word]").forEach((button) => button.addEventListener("click", () => selectFocusItem2(button.dataset.hobbiesWord, { playAudio: true })));
-      focusExplorer2.querySelectorAll("[data-hobbies-scene]").forEach((button) => button.addEventListener("click", () => state2.tapAudioEnabled && speak2(button.dataset.hobbiesScene, 0.74)));
+      focusExplorer2.querySelectorAll("[data-hobbies-word]").forEach((button) => button.addEventListener("click", () => selectFocusItem2(button.dataset.hobbiesWord, { playAudio: true, voiceNames: voiceNames() })));
+      focusExplorer2.querySelectorAll("[data-hobbies-scene]").forEach((button) => button.addEventListener("click", () => state2.tapAudioEnabled && speakLesson(button.dataset.hobbiesScene, 0.74)));
     }
     function renderHobbiesPractice(topic) {
+      if (lesson().practiceType === "sentence-choice") return renderHobbiesSentenceChoice(topic);
       if (state2.hobbiesBuildLessonKey !== lessonKey() || !state2.hobbiesBuildAvailableTokens.length) resetRound();
       const entry = round();
       const item = topic.focusItems.find((item2) => item2.id === entry.itemId);
       const complete = state2.hobbiesBuildResult === "correct";
       const answer = complete ? answerFor(entry) : null;
+      const isQuestion = lessonKey() === "3b:4";
+      const isLeisure = lessonKey() === "4b:7";
       activityPanelTitle2.textContent = "Let's practice";
-      activityPanelSummary2.textContent = lessonKey() === "3b:4" ? "Build a question with \u5417, then hear a friend\u2019s answer." : "Build a sentence that fits the picture. More than one answer can be correct.";
+      activityPanelSummary2.textContent = isQuestion ? "Build a question with \u5417, then hear a friend\u2019s answer." : isLeisure ? "Build the complete sentence that matches the picture." : "Build a sentence that fits the picture. More than one answer can be correct.";
       activityList2.className = "support-list";
       const reply = lessonKey() === "3b:4" && answer ? `<div class="transport-build-hint"><p class="numbers-game-hanzi">\u6211\u559C\u6B22${entry.action}\u3002</p><p class="transport-build-hint-pinyin">w\u01D2 x\u01D0 huan ${entry.actionPinyin}.</p><p class="transport-build-hint-english">I like ${entry.actionEnglish}.</p></div>` : "";
-      const usesFourByThreeCover = lessonKey() === "3b:4";
-      activityList2.innerHTML = `<section class="clothes-quiz-shell transport-builder-shell"><div class="numbers-game-top"><div><p class="body-match-kicker">Build the ${lessonKey() === "3b:4" ? "question" : "sentence"}</p><p class="numbers-game-note">${lessonKey() === "3b:4" ? "Make a question about the picture. Use \u5417 at the end." : "More than one answer can be correct. Tap the word cards in the right order to make any sentence that fits the picture."}</p></div><button class="small-button is-play-button" type="button" data-hobbies-build-play>${lessonKey() === "3b:4" ? "New game" : "Play"}</button></div><figure class="clothes-quiz-visual school-build-visual"><img class="clothes-quiz-image${usesFourByThreeCover ? " hobbies-3b-practice-image" : ""}" src="${item.imagePath}" alt="${item.imageAlt}"></figure><div class="transport-build-target is-${state2.hobbiesBuildResult}">${state2.hobbiesBuildResult ? `<span class="answer-result-mark" aria-hidden="true">${complete ? "\u2713" : "\xD7"}</span>` : ""}${state2.hobbiesBuildSelectedTokens.length ? state2.hobbiesBuildSelectedTokens.map((token) => `<span class="intro-build-chip is-selected">${token}</span>`).join("") : lessonKey() === "3b:4" ? '<span class="intro-build-placeholder">Build a question: \u2026\u5417</span>' : '<span class="intro-build-placeholder">Your sentence will appear here.</span>'}</div>${answer ? `<div class="transport-build-hint"><p class="numbers-game-hanzi">${answer.hanzi}</p><p class="transport-build-hint-pinyin">${answer.pinyin}</p><p class="transport-build-hint-english">${answer.english}</p></div>${reply}` : ""}${complete && lessonKey() === "3b:4" ? "" : `<div class="intro-build-choices">${state2.hobbiesBuildAvailableTokens.map((token, index) => `<button class="intro-build-chip" type="button" data-hobbies-build-token="${index}" ${complete ? "disabled" : ""}>${token}</button>`).join("")}</div>`}${lessonKey() === "3b:4" ? "" : '<div class="intro-build-actions"><button class="small-button" type="button" data-hobbies-build-clear>Clear</button></div>'}</section>`;
+      const usesFourByThreeCover = isQuestion || isLeisure;
+      activityList2.innerHTML = `<section class="clothes-quiz-shell transport-builder-shell"><div class="numbers-game-top"><div><p class="body-match-kicker">Build the ${isQuestion ? "question" : "sentence"}</p><p class="numbers-game-note">${isQuestion ? "Make a question about the picture. Use \u5417 at the end." : isLeisure ? "Tap the word cards in the right order to make the complete sentence." : "More than one answer can be correct. Tap the word cards in the right order to make any sentence that fits the picture."}</p></div><button class="small-button is-play-button" type="button" data-hobbies-build-play>${isQuestion || isLeisure ? "New game" : "Play"}</button></div><figure class="clothes-quiz-visual school-build-visual"><img class="clothes-quiz-image${usesFourByThreeCover ? " hobbies-3b-practice-image" : ""}" src="${item.imagePath}" alt="${item.imageAlt}"></figure><div class="transport-build-target is-${state2.hobbiesBuildResult}">${state2.hobbiesBuildResult ? `<span class="answer-result-mark" aria-hidden="true">${complete ? "\u2713" : "\xD7"}</span>` : ""}${state2.hobbiesBuildSelectedTokens.length ? state2.hobbiesBuildSelectedTokens.map((token) => `<span class="intro-build-chip is-selected">${token}</span>`).join("") : isQuestion ? '<span class="intro-build-placeholder">Build a question: \u2026\u5417</span>' : isLeisure ? '<span class="intro-build-placeholder">Build the sentence.</span>' : '<span class="intro-build-placeholder">Your sentence will appear here.</span>'}</div>${answer ? `<div class="transport-build-hint"><p class="numbers-game-hanzi">${answer.hanzi}</p><p class="transport-build-hint-pinyin">${answer.pinyin}</p><p class="transport-build-hint-english">${answer.english}</p></div>${reply}` : ""}${complete && (isQuestion || isLeisure) ? "" : `<div class="intro-build-choices">${state2.hobbiesBuildAvailableTokens.map((token, index) => `<button class="intro-build-chip" type="button" data-hobbies-build-token="${index}" ${complete ? "disabled" : ""}>${token}</button>`).join("")}</div>`}${isQuestion || isLeisure ? "" : '<div class="intro-build-actions"><button class="small-button" type="button" data-hobbies-build-clear>Clear</button></div>'}</section>`;
       activityList2.querySelector("[data-hobbies-build-play]").addEventListener("click", () => {
         resetRound(true);
         renderActivityPanel2(topic);
@@ -8783,13 +8885,42 @@
         state2.hobbiesBuildAvailableTokens = state2.hobbiesBuildAvailableTokens.filter((_, index) => index !== Number(button.dataset.hobbiesBuildToken));
         const done = answerFor(entry, selected);
         state2.hobbiesBuildResult = done ? "correct" : "";
-        if (done && state2.tapAudioEnabled) speak2(done.audio, 0.76);
+        if (done && state2.tapAudioEnabled) speakLesson(done.audio, 0.76);
         renderActivityPanel2(topic);
       }));
       activityList2.querySelector("[data-hobbies-build-clear]")?.addEventListener("click", () => {
         resetRound();
         renderActivityPanel2(topic);
       });
+    }
+    function renderHobbiesSentenceChoice(topic) {
+      if (state2.hobbiesBuildLessonKey !== lessonKey() || !state2.hobbiesBuildAvailableTokens.length) resetRound();
+      const entry = round();
+      const item = topic.focusItems.find((focusItem) => focusItem.id === entry.itemId);
+      const page = lesson();
+      const complete = state2.hobbiesBuildResult === "correct";
+      activityPanelTitle2.textContent = "Let's practice";
+      activityPanelSummary2.textContent = "Look at the picture, then choose the Chinese sentence that matches it.";
+      activityList2.className = "support-list";
+      activityList2.innerHTML = `<section class="clothes-quiz-shell"><div class="numbers-game-top"><div><p class="body-match-kicker">Look and choose</p><p class="numbers-game-note">Choose the complete sentence that matches the picture.</p></div><button class="small-button is-play-button" type="button" data-hobbies-choice-new>New game</button></div><figure class="clothes-quiz-visual school-build-visual"><img class="clothes-quiz-image hobbies-3b-practice-image" src="${item.imagePath}" alt="${item.imageAlt}"></figure><div class="clothes-quiz-options sentence-choice-options">${state2.hobbiesBuildAvailableTokens.map((optionId) => {
+        const option = page.sentenceOptions[optionId];
+        const selected = state2.hobbiesBuildSelectedTokens[0] === optionId;
+        const resultClass = selected ? ` is-${state2.hobbiesBuildResult}` : "";
+        const mark = selected ? `<span class="answer-result-mark" aria-hidden="true">${complete ? "\u2713" : "\xD7"}</span>` : "";
+        return `<button class="clothes-quiz-option${resultClass}" type="button" data-hobbies-choice="${optionId}" ${complete ? "disabled" : ""}>${mark}<span class="numbers-game-hanzi">${option.hanzi}</span>${state2.showPinyin ? `<span class="numbers-game-pinyin">${option.pinyin}</span>` : ""}${state2.showEnglish ? `<span class="numbers-game-english">${option.english}</span>` : ""}</button>`;
+      }).join("")}</div></section>`;
+      activityList2.querySelector("[data-hobbies-choice-new]").addEventListener("click", () => {
+        resetRound(true);
+        renderActivityPanel2(topic);
+      });
+      activityList2.querySelectorAll("[data-hobbies-choice]").forEach((button) => button.addEventListener("click", () => {
+        if (state2.hobbiesBuildResult === "correct") return;
+        const optionId = button.dataset.hobbiesChoice;
+        state2.hobbiesBuildSelectedTokens = [optionId];
+        state2.hobbiesBuildResult = optionId === entry.correctId ? "correct" : "wrong";
+        if (state2.hobbiesBuildResult === "correct" && state2.tapAudioEnabled) speakLesson(page.sentenceOptions[optionId].audio, 0.76);
+        renderActivityPanel2(topic);
+      }));
     }
     return { renderHobbiesExplorer, renderHobbiesPractice };
   }
@@ -8907,10 +9038,10 @@
         { lesson: 1, title: "It's raining", topicId: "weather" },
         { lesson: 2, title: "Clothes", topicId: "clothes" },
         { lesson: 3, title: "My room", topicId: "daily-life" },
-        { lesson: 4, title: "Hobbies", topicId: "hobbies" },
+        { lesson: 4, title: "Hobbies", topicId: "hobbies-at-home" },
         { lesson: 5, title: "Our school", topicId: "school" },
         { lesson: 6, title: "School subjects", topicId: "school-subjects" },
-        { lesson: 7, title: "Leisure time", topicId: "hobbies" }
+        { lesson: 7, title: "Leisure time", topicId: "hobbies-leisure" }
       ]
     }
   ];
@@ -9004,6 +9135,8 @@
     "school-subjects": { zhTitle: "\u5B66\u6821\u5B66\u79D1", enTitle: "School Subjects", hint: "Chinese, English, music, art, PE" },
     hobbies: { zhTitle: "\u6211\u559C\u6B22", enTitle: "What I Like", hint: "Reading, drawing, writing, games" },
     "hobbies-3b": { zhTitle: "\u97F3\u4E50\u548C\u8FD0\u52A8", enTitle: "Music & Movement", hint: "Singing, dancing, swimming, skating" },
+    "hobbies-at-home": { zhTitle: "\u5728\u5BB6\u7231\u597D", enTitle: "Hobbies at Home", hint: "Television, piano, games, movies" },
+    "hobbies-leisure": { zhTitle: "\u4F11\u95F2\u65F6\u95F4", enTitle: "Leisure Time", hint: "Running, soccer, biking, sand" },
     toys: { zhTitle: "\u73A9\u5177", enTitle: "Toys", hint: "Toy car, train, airplane" },
     clothes: { zhTitle: "\u8863\u670D", enTitle: "Clothes", hint: "Dress for the day" },
     comparisons: { zhTitle: "\u63CF\u8FF0\u548C\u6BD4\u8F83", enTitle: "Descriptions & Comparisons", hint: "Big, small, long, short" },
@@ -9075,7 +9208,7 @@
       hint: "Toys, reading, music, movement",
       accent: "#8f6988",
       iconSrc: "assets/navigation-icons/teddy-robot-icon.webp",
-      topicIds: ["toys", "hobbies", "hobbies-3b"]
+      topicIds: ["toys", "hobbies", "hobbies-3b", "hobbies-at-home", "hobbies-leisure"]
     }
   ];
 
@@ -9367,6 +9500,8 @@
     },
     hobbiesTopic,
     hobbies3bTopic,
+    hobbiesAtHomeTopic,
+    hobbiesLeisureTopic,
     toysTopic,
     clothesTopic,
     dailyLifeTopic,

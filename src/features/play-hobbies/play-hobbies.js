@@ -42,6 +42,52 @@ export const hobbies3bTopic = {
   steps: [{ book: "3B", lesson: 4, title: "Hobbies", note: "Ask and answer about activity preferences." }]
 };
 
+export const hobbiesAtHomeTopic = {
+  id: "hobbies-at-home",
+  title: "Hobbies at Home",
+  summary: "Talk about home media and music activities—what someone likes and what they are doing now.",
+  progressLabel: "4B Lesson 4",
+  iconText: "在家爱好",
+  iconColor: "#8f6988",
+  ownsExplorerContent: true,
+  focus: { hanzi: "她在弹钢琴。", pinyin: "tā zài tán gāng qín.", english: "She is playing the piano.", audio: "她在弹钢琴" },
+  focusItems: [
+    { id: "television", hanzi: "看电视", pinyin: "kàn diàn shì", english: "watch television", audio: "看电视", imagePath: "assets/illustrated-activities/sisi-watching-television.webp", imageAlt: "Sisi watching television at home" },
+    { id: "piano", hanzi: "弹钢琴", pinyin: "tán gāng qín", english: "play the piano", audio: "弹钢琴", imagePath: "assets/illustrated-activities/anan-playing-piano.webp", imageAlt: "Anan actively playing the piano" },
+    { id: "computer-game", hanzi: "玩儿电脑游戏", pinyin: "wánr diàn nǎo yóu xì", english: "play computer games", audio: "玩儿电脑游戏", imagePath: "assets/illustrated-activities/lele-playing-computer-game.webp", imageAlt: "Lele playing a desktop computer game" },
+    { id: "movie", hanzi: "看电影", pinyin: "kàn diàn yǐng", english: "watch a movie", audio: "看电影", imagePath: "assets/illustrated-activities/tiantian-at-cinema.webp", imageAlt: "Tiantian watching a movie at the cinema" },
+    { id: "cartoons", hanzi: "看动画片儿", pinyin: "kàn dòng huà piānr", english: "watch cartoons", audio: "看动画片儿", imagePath: "assets/illustrated-activities/meimei_watching_cartoons.webp", imageAlt: "Meimei watching cartoons at home" }
+  ],
+  parentGuide: "Ask what your child likes to do at home, then notice the difference between a favorite activity and something happening right now.",
+  cultureGuide: "Home activities give children a natural reason to use both preferences and present actions in short conversations.",
+  activities: ["Tap to hear", "Choose the sentence"],
+  steps: [{ book: "4B", lesson: 4, title: "Hobbies", note: "Talk about home activities with 喜欢, 爱, and 在." }]
+};
+
+export const hobbiesLeisureTopic = {
+  id: "hobbies-leisure",
+  title: "Leisure Time",
+  summary: "Say where people are doing outdoor activities.",
+  progressLabel: "4B Lesson 7",
+  iconText: "休闲",
+  iconColor: "#8f6988",
+  ownsExplorerContent: true,
+  focus: { hanzi: "思思在公园骑自行车。", pinyin: "sī si zài gōng yuán qí zì xíng chē.", english: "Sisi is riding a bike in the park.", audio: "思思在公园骑自行车" },
+  focusItems: [
+    { id: "run", hanzi: "跑步", pinyin: "pǎo bù", english: "run", audio: "跑步", imagePath: "assets/illustrated-activities/kids-running-playground-landscape.webp", imageAlt: "Children running on a school playground" },
+    { id: "soccer", hanzi: "踢足球", pinyin: "tī zú qiú", english: "play soccer", audio: "踢足球", imagePath: "assets/illustrated-activities/yangyang-playing-soccer-landscape.webp", imageAlt: "Yangyang kicking a soccer ball in a park" },
+    { id: "bike", hanzi: "骑自行车", pinyin: "qí zì xíng chē", english: "ride a bike", audio: "骑自行车", imagePath: "assets/illustrated-activities/sisi-riding-bike-landscape.webp", imageAlt: "Sisi riding a bike in a park" },
+    { id: "sand", hanzi: "玩儿沙子", pinyin: "wánr shā zi", english: "play with sand", audio: "玩儿沙子", imagePath: "assets/illustrated-activities/meimei-playing-sand-4x3.webp", imageAlt: "Meimei playing with sand at the beach" },
+    { id: "playground", hanzi: "学校操场", pinyin: "xué xiào cāo chǎng", english: "school playground", audio: "学校操场" },
+    { id: "park", hanzi: "公园", pinyin: "gōng yuán", english: "park", audio: "公园" },
+    { id: "beach", hanzi: "海边", pinyin: "hǎi biān", english: "beach", audio: "海边" }
+  ],
+  parentGuide: "Use a familiar park, playground, or beach picture to help your child connect the place word with the activity.",
+  cultureGuide: "Outdoor activities make a natural next step after talking about what someone likes to do at home.",
+  activities: ["Tap to hear", "Build the sentence"],
+  steps: [{ book: "4B", lesson: 7, title: "Leisure time", note: "Say where someone is doing an outdoor activity." }]
+};
+
 export const toysTopic = {
   id: "toys",
   title: "Toys",

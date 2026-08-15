@@ -233,7 +233,7 @@ function renderActivityPanel(topic) {
     return;
   }
 
-  if (["hobbies", "hobbies-3b"].includes(topic.id)) {
+  if (["hobbies", "hobbies-3b", "hobbies-at-home", "hobbies-leisure"].includes(topic.id)) {
     renderHobbiesPractice(topic);
     return;
   }

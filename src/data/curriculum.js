@@ -97,10 +97,10 @@ export const books = [
       { lesson: 1, title: "It's raining", topicId: "weather" },
       { lesson: 2, title: "Clothes", topicId: "clothes" },
       { lesson: 3, title: "My room", topicId: "daily-life" },
-      { lesson: 4, title: "Hobbies", topicId: "hobbies" },
+      { lesson: 4, title: "Hobbies", topicId: "hobbies-at-home" },
       { lesson: 5, title: "Our school", topicId: "school" },
       { lesson: 6, title: "School subjects", topicId: "school-subjects" },
-      { lesson: 7, title: "Leisure time", topicId: "hobbies" }
+      { lesson: 7, title: "Leisure time", topicId: "hobbies-leisure" }
     ]
   }
 ];
@@ -197,6 +197,8 @@ export const topicCardMeta = {
   "school-subjects": { zhTitle: "学校学科", enTitle: "School Subjects", hint: "Chinese, English, music, art, PE" },
   hobbies: { zhTitle: "我喜欢", enTitle: "What I Like", hint: "Reading, drawing, writing, games" },
   "hobbies-3b": { zhTitle: "音乐和运动", enTitle: "Music & Movement", hint: "Singing, dancing, swimming, skating" },
+  "hobbies-at-home": { zhTitle: "在家爱好", enTitle: "Hobbies at Home", hint: "Television, piano, games, movies" },
+  "hobbies-leisure": { zhTitle: "休闲时间", enTitle: "Leisure Time", hint: "Running, soccer, biking, sand" },
   toys: { zhTitle: "玩具", enTitle: "Toys", hint: "Toy car, train, airplane" },
   clothes: { zhTitle: "衣服", enTitle: "Clothes", hint: "Dress for the day" },
   comparisons: { zhTitle: "描述和比较", enTitle: "Descriptions & Comparisons", hint: "Big, small, long, short" },
@@ -269,6 +271,6 @@ export const learningHomeCategories = [
     hint: "Toys, reading, music, movement",
     accent: "#8f6988",
     iconSrc: "assets/navigation-icons/teddy-robot-icon.webp",
-    topicIds: ["toys", "hobbies", "hobbies-3b"]
+    topicIds: ["toys", "hobbies", "hobbies-3b", "hobbies-at-home", "hobbies-leisure"]
   }
 ];

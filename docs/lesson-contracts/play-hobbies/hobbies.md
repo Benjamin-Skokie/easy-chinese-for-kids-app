@@ -1,6 +1,6 @@
 # Hobbies
 
-Status: `partially implemented` — **What I Like (2A Lesson 5)** and its child page **Hobbies (3B Lesson 4)** are live; the two 4B lesson pages remain planned.  
+Status: `implemented` — **What I Like (2A Lesson 5)**, **Music & Movement (3B Lesson 4)**, **Hobbies at Home (4B Lesson 4)**, and **Leisure Time (4B Lesson 7)** are live sibling pages.
 URL: `index.html?topic=hobbies#topic-detail`  
 Mapped lessons: **2A Lesson 5 — I Love Reading; 3B Lesson 4 — Hobbies; 4B Lesson 4 — Hobbies; 4B Lesson 7 — Leisure Time**
 
@@ -51,8 +51,32 @@ The Play & Hobbies category should show these as equal topic cards. Book lesson 
 | Scene | Hobbies 3B page renderer | A 2×3 grid with five compact activity scenes. Every card uses the shared 4:3 scene frame. The chorus supports `我们爱唱歌。`; Luna’s solo scene supports `她爱跳舞。`; the other scenes support `我喜欢游泳。`, `我喜欢滑冰。`, and `我喜欢滑雪。`. The Useful note and practice supply the question-and-answer exchange. |
 | Book words | Hobbies renderer | `我们`, `唱歌`, `跳舞`, `游泳`, `滑冰`, and `滑雪` as text-only cards. Scene images already teach each activity. |
 | Useful note | Hobbies renderer | `你喜欢…吗？` asks whether someone likes an activity. Answer with `我喜欢…。`; the book also uses `爱` for a strong preference. |
-| Practice | Hobbies renderer | A paired-question builder: the picture cue identifies one activity; build `你喜欢 + activity + 吗` or the affirmative response `我喜欢 + activity`. Each completed pair displays Hanzi, pinyin, English, and speech. **Play** starts a different random activity. |
+| Practice | Hobbies renderer | A question builder: the picture cue identifies one activity; build `你喜欢 + activity + 吗`. Completion shows that question, then its affirmative reply with Hanzi, pinyin, English, and speech. **New game** starts a randomized activity round. |
 | Shared focus panels | Shared shell | Suppress generic duplicate panels when the Hobbies renderer owns the lesson content. |
+
+## Approved third lesson page
+
+**Hobbies at Home (4B Lesson 4)** is a separate sibling page. It keeps the book’s home media and music activity set together, while making the contrast between a general preference and an action happening now visible and explicit.
+
+| Section | Owner | Final decision before build |
+| --- | --- | --- |
+| Scene | Hobbies 4B page renderer | A 2×3 grid of five 4:3 landscape scenes: Meimei is watching cartoons (`她喜欢看动画片儿。`); Anan is actively playing a piano (`她在弹钢琴。`); Lele is actively playing a computer game (`他在玩儿电脑游戏。`); Sisi is watching television (`她喜欢看电视。`); and Tiantian is at a cinema screen (`他爱看电影。`). Each card carries its complete sentence, pinyin, English, and Play control. |
+| Book words | Hobbies 4B page renderer | Text-only cards for `看电视`, `弹钢琴`, `玩儿电脑游戏`, `看电影`, and `看动画片儿`. The scene grid already supplies the visual evidence. |
+| Useful note | Hobbies 4B page renderer | `喜欢 / 爱` say what someone generally likes; `在 + activity` says what someone is doing now. |
+| Practice | Hobbies 4B page renderer | A sentence-choice game. Each round uses one unambiguous activity scene and two same-topic full-sentence options: the target sentence versus a visibly incompatible activity sentence. It practices reading complete current-action or preference sentences, without pretending a still picture disproves a compatible general preference (for example, both `她喜欢看电视。` and `她喜欢看动画片儿。` may fit a cartoon-on-TV scene). Randomize the round and option order. On success, the selected option receives a green check and speech; do not repeat the same sentence below it. **New game** chooses a different randomized round. |
+| Shared focus panels | Shared shell | Suppress generic duplicate panels when the custom Hobbies renderer owns the lesson content. |
+
+## Approved fourth lesson page
+
+**Leisure Time (4B Lesson 7)** is the final separate sibling page. Its job is not another preference lesson: every scene practices the book frame `在 + place + activity`.
+
+| Section | Owner | Final decision before build |
+| --- | --- | --- |
+| Scene | Hobbies 4B Lesson 7 page renderer | A 2×2 grid of four exact 4:3 landscape scenes: children running on a school playground (`孩子们在学校操场上跑步。`); Yangyang kicking soccer in a park (`阳阳在公园踢足球。`); Sisi riding a bike in a park (`思思在公园骑自行车。`); and Meimei playing with sand at the beach (`美美在海边玩儿沙子。`). Each card carries its complete sentence, pinyin, English, and Play control. |
+| Book words | Hobbies 4B Lesson 7 page renderer | Text-only cards for `跑步`, `踢足球`, `骑自行车`, `玩儿沙子`, `学校操场`, `公园`, and `海边`. |
+| Useful note | Hobbies 4B Lesson 7 page renderer | `在 + 地点 + 活动` says where someone is doing an activity. |
+| Practice | Hobbies 4B Lesson 7 page renderer | A sentence-frame fill. Each image cue owns one complete approved sentence; the child chooses the fixed subject, place, and activity chunks for that specific scene. Only same-lesson chunks are distractors; never mix pieces to manufacture a sentence. A successful sentence shows Hanzi, pinyin, English, and speech. **New game** chooses a different randomized round. |
+| Shared focus panels | Shared shell | Suppress generic duplicate panels when the custom Hobbies renderer owns the lesson content. |
 
 ## Asset audit
 
@@ -60,8 +84,8 @@ The Play & Hobbies category should show these as equal topic cards. Book lesson 
 | --- | --- | --- |
 | **What I Like (2A)** | `child-reading-book-facing-child.webp` for `看书`; `anan-drawing.webp` for `画画儿`; `luna-writing-workbook.webp` for `写字`; `lele-anan-playing-board-game.webp` for non-device `玩儿游戏`. | The four activity cues now have exact, character-bible-matched assets. |
 | **Music & Movement (3B)** | `kids_singing_chorus.webp`, `luna-dancing-landscape.webp`, `jaden_swimming.webp`, `noah-ice-skating.webp`, `noah_skiing.webp`. | All five activity cues now have exact, landscape-ready scenes. The original portrait `luna_dancing.webp` remains in the library but is not used in this grid. |
-| **Hobbies at Home (4B)** | `meimei_watching_cartoons.webp`; `tiantian_playing_ipad_games.webp` is a close but not exact match for `玩儿电脑游戏`. | No exact scene for `看电视`, `弹钢琴`, or `看电影`; `piano_anchor.webp` is an environment asset, not an activity scene. |
-| **Leisure Time (4B)** | `kids_running_playground.webp`, soccer scenes, and bicycle scenes. | No `玩儿沙子` image. |
+| **Hobbies at Home (4B)** | `meimei_watching_cartoons.webp`, `anan-playing-piano.webp`, `lele-playing-computer-game.webp`, `sisi-watching-television.webp`, and `tiantian-at-cinema.webp`. | All five scene assets are exact 4:3 landscape evidence. `tiantian_playing_ipad_games.webp` and `piano_anchor.webp` remain unused because they do not teach the contracted scene. |
+| **Leisure Time (4B)** | `kids-running-playground-landscape.webp`, `yangyang-playing-soccer-landscape.webp`, `sisi-riding-bike-landscape.webp`, and `meimei-playing-sand-4x3.webp`. | All four production scene files are reviewed native 4:3 landscape. The first three were adapted from their established scene assets to prevent UI cropping; Yangyang’s portrait soccer asset is not used. Sand play was the only missing teaching scene. |
 
 Use a partial-fit asset only as a Book words cue, never to support a sentence that it does not depict. Do not reuse an asset from a later lesson as proof that the 2A page teaches its later wording. For the new drawing and writing art, orient the paper toward the child: even if the child faces the camera, the paper must be angled away toward the child, with no camera-facing presentation page.
 
@@ -74,4 +98,4 @@ Use a partial-fit asset only as a Book words cue, never to support a sentence th
 
 ## Remaining coverage
 
-**What I Like (2A Lesson 5)** is implemented with the four activity assets, the `我喜欢… / 我每天…` note, and a complete-sentence builder. **Music & Movement (3B Lesson 4)** is implemented as a separate activity page with five activity scenes and a question builder. The 4B lessons remain separate planned activity pages, not additional Book words for either implemented page.
+**What I Like (2A Lesson 5)** is implemented with the four activity assets, the `我喜欢… / 我每天…` note, and a complete-sentence builder. **Music & Movement (3B Lesson 4)** is implemented as a separate activity page with five activity scenes and a question builder. **Hobbies at Home (4B Lesson 4)** is implemented with five exact landscape scenes, the preference/current-action note, and randomized sentence choice. **Leisure Time (4B Lesson 7)** is implemented as a separate sibling page with four exact 4:3 scenes, the place-and-activity note, and a fixed sentence builder; it is not additional Book words for another Hobbies page.

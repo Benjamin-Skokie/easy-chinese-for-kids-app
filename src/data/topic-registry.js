@@ -20,7 +20,7 @@ import { clothesTopic } from "../features/daily-life/clothes.js";
 import { natureTopic, weatherTopic } from "../features/world/weather.js";
 import { animalsTopic, petsTopic } from "../features/world/animals.js";
 import { coloursTopic } from "../features/world/colours.js";
-import { hobbies3bTopic, hobbiesTopic, toysTopic } from "../features/play-hobbies/play-hobbies.js";
+import { hobbies3bTopic, hobbiesAtHomeTopic, hobbiesLeisureTopic, hobbiesTopic, toysTopic } from "../features/play-hobbies/play-hobbies.js";
 import { bodyTopic } from "../features/foundations/body.js";
 import { multiplicationRhymeTopic, numbersTopic } from "../features/foundations/numbers.js";
 
@@ -316,6 +316,8 @@ export const topicData = [
   },
   hobbiesTopic,
   hobbies3bTopic,
+  hobbiesAtHomeTopic,
+  hobbiesLeisureTopic,
   toysTopic,
   clothesTopic,
   dailyLifeTopic,

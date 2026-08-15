@@ -1,13 +1,13 @@
 # Asset Summary
 
-Last generated: 2026-08-13
+Last generated: 2026-08-15
 
 Purpose: provide one searchable inventory of illustration assets, using each folder's `manifest.json` as the source of truth.
 
 ## Snapshot
 
 - Collections: 44
-- Manifest entries: 348
+- Manifest entries: 356
 - Entries flagged as missing art: 0
 - Source of truth: per-folder manifests under `assets/*/manifest.json`
 
@@ -46,8 +46,8 @@ Purpose: provide one searchable inventory of illustration assets, using each fol
 
 - Manifest: [assets/illustrated-activities/manifest.json](../assets/illustrated-activities/manifest.json)
 - Style: gentle educational storybook activity scenes for young Chinese learners
-- Entries: 30
-- Files present: 29
+- Entries: 38
+- Files present: 37
 
 **Items**
 
@@ -81,6 +81,14 @@ Purpose: provide one searchable inventory of illustration assets, using each fol
 - `lele-anan-playing-board-game`: `玩儿游戏` (wánr yóu xì) | Play a game | theme: Lele and Anan play a non-device board game at home | sentence: 乐乐和安安玩儿游戏。 | location: home table | [file](../assets/illustrated-activities/lele-anan-playing-board-game.webp)
 - `noah-ice-skating`: `滑冰` (huá bīng) | Ice skate | theme: Noah ice skates on an outdoor rink | sentence: 诺亚喜欢滑冰。 | location: outdoor ice rink | [file](../assets/illustrated-activities/noah-ice-skating.webp)
 - `luna-dancing-landscape`: `跳舞` (tiào wǔ) | Dance | theme: Luna dances alone in a landscape dance-studio scene | sentence: 她爱跳舞。 | location: dance studio | [file](../assets/illustrated-activities/luna-dancing-landscape.webp)
+- `anan-playing-piano`: `弹钢琴` (tán gāng qín) | Play piano | theme: Anan actively plays the piano at home | sentence: 她在弹钢琴。 | location: home living room | [file](../assets/illustrated-activities/anan-playing-piano.webp)
+- `lele-playing-computer-game`: `玩儿电脑游戏` (wánr diàn nǎo yóu xì) | Play computer games | theme: Lele actively plays a desktop computer game | sentence: 他在玩儿电脑游戏。 | location: home study | [file](../assets/illustrated-activities/lele-playing-computer-game.webp)
+- `sisi-watching-television`: `看电视` (kàn diàn shì) | Watch television | theme: Sisi watches television at home | sentence: 她喜欢看电视。 | location: home living room | [file](../assets/illustrated-activities/sisi-watching-television.webp)
+- `tiantian-at-cinema`: `看电影` (kàn diàn yǐng) | Watch a movie | theme: Tiantian watches a movie at the cinema | sentence: 他爱看电影。 | location: cinema | [file](../assets/illustrated-activities/tiantian-at-cinema.webp)
+- `meimei-playing-sand-4x3`: `玩儿沙子` (wánr shā zi) | Play with sand | theme: Meimei builds a sandcastle at the beach | sentence: 美美在海边玩儿沙子。 | location: beach | [file](../assets/illustrated-activities/meimei-playing-sand-4x3.webp)
+- `yangyang-playing-soccer-landscape`: `踢足球` (tī zú qiú) | Play soccer | theme: Yangyang kicks a soccer ball in a 4:3 landscape park scene | sentence: 阳阳在公园踢足球。 | location: park soccer field | [file](../assets/illustrated-activities/yangyang-playing-soccer-landscape.webp)
+- `kids-running-playground-landscape`: `跑步` (pǎo bù) | Run | theme: Children running on a school playground in a 4:3 landscape scene | sentence: 孩子们在学校操场上跑步。 | location: school playground | [file](../assets/illustrated-activities/kids-running-playground-landscape.webp)
+- `sisi-riding-bike-landscape`: `骑自行车` (qí zì xíng chē) | Ride a bike | theme: Sisi riding a bike in a 4:3 landscape park scene | sentence: 思思在公园骑自行车。 | location: park | [file](../assets/illustrated-activities/sisi-riding-bike-landscape.webp)
 
 ### `illustrated-animals`
 
