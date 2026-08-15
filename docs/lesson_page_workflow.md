@@ -38,12 +38,14 @@ Before generating an asset or writing a renderer, put this compact, final decisi
 
 | Section | Decide before build |
 | --- | --- |
-| Scene | Grid/layout, one teaching beat per card, and the exact sentence each scene supports. |
+| Scene | Grid/layout, required visible image ratio, one teaching beat per card, and the exact sentence each scene supports—including the people visibly present. |
 | Book words | The exact words; whether cards are text-only or need isolated visual support. |
 | Useful note | The single reusable distinction it explains, or omit it. |
-| Practice | The remaining language job, game pattern, allowed answer family, completion display, and Play/reset behavior. |
+| Practice | The remaining language job, game pattern, allowed answer family, whether the response is a question and its required marker, completion display (including unused-choice treatment), and Play/reset/randomization behavior. |
 
 The usual page order is: **Scene → optional Book words → optional Useful notes → Practice**. Start from this structure; do not add narrative or filler cards unless the contract establishes a distinct teaching job for them. If Scene already gives every target word a clear picture and sentence, Book words must be text-only rather than repeat the same images. Each visible section has one owner. If a custom renderer owns the page content, set `ownsExplorerContent: true` and suppress generic duplicate panels.
+
+If a later book lesson owns different scenes, language, and practice, make it a separate sibling activity page in the relevant home category. Do not place it as a tab, renderer branch, or feature-sized navigation shelf inside an earlier completed lesson.
 
 ## 4. Define practice as an answer model, not a fixed string
 
@@ -54,22 +56,28 @@ For each remaining learning goal, write down:
 - every valid answer or a small explicit answer grammar, including equivalent frames such as `爱` / `喜欢` where the lesson permits them;
 - distractors and invalid combinations;
 - feedback, completion display (Hanzi, pinyin, and English), and speech behavior;
+- which unused choices, distractors, or controls remain visible after success;
 - what **Play** does: a new randomized round, not merely audio replay;
-- what randomizes between rounds and what stays stable within a round.
+- the full eligible round set for randomization and what stays stable within a round.
 
 Then consult [Practice Patterns](./game_templates.md) and choose the smallest fitting pattern. For sentence-fill practice, each configured round must own a whole approved sentence; never generate sentences from independently mixed word categories.
 
 For a builder with more than one valid answer, use valid-prefix checking against the approved answer set. Tell the learner before play that more than one answer can be correct. Do not make punctuation a selectable word card.
 
+When the target is a question, say so in both the instruction and empty target, and name the required question marker (for example, `吗`). A statement without that marker must not appear to be an equally valid target.
+
 ## 5. Build from reviewed assets
 
 Reuse the asset library when it clearly teaches the planned scene. Generate new art only for a genuine teaching gap found during page planning. Before any new asset prompt, read [art_direction.md](./art_direction.md); if the scene has a recurring person or school setting, also read the relevant character or school bible and inspect the anchor images.
+
+Check each selected asset’s native aspect ratio against the scene grid before coding. The grid’s visible image ratio is a page requirement: select or generate an asset that fits it rather than relying on `contain` to expose mismatched source shapes. Use a deliberate crop only when it preserves the teaching evidence.
 
 Write the prompt from the page blueprint. It must explicitly lock:
 
 - the named recurring character and its supplied anchor references;
 - the action pose and what makes the action visibly active;
 - object orientation from the character's point of view (especially paper, books, screens, and drawings);
+- the required landscape, portrait, or square composition and the full teaching evidence that must remain inside the frame;
 - what must be unreadable or omitted to avoid false visual claims;
 - the accepted composition and scene purpose.
 
@@ -80,9 +88,10 @@ Review each generated asset before copying it into the app. Reject it if identit
 Before handoff:
 
 - verify every asset path exists and every retired asset is unreferenced;
+- verify every scene image uses the contracted display ratio and its sentence matches the visible subject;
 - check that scenes, Book words, notes, and generic panels do not duplicate each other;
 - verify the topic is included in both the explorer and practice dispatch paths, not merely its data and renderer;
-- test selected, wrong, correct, completed, Clear, and Play/new-round states; test at least one alternative valid sentence where the answer model allows more than one;
+- test selected, wrong, correct, completed, hidden-unused-choice, Clear (when present), and Play/new-round states; confirm each eligible round can be drawn; test at least one alternative valid sentence where the answer model allows more than one;
 - confirm all visible copy describes the current interaction;
 - run the relevant data validation, build, tests, and `git diff --check`;
 - review the actual page at its target desktop and mobile widths.

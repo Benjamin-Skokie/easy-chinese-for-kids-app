@@ -48,7 +48,7 @@ The Play & Hobbies category should show these as equal topic cards. Book lesson 
 
 | Section | Owner | Decision |
 | --- | --- | --- |
-| Scene | Hobbies 3B page renderer | A 2×3 grid with five compact activity scenes. The chorus supports `我们爱唱歌。`; Luna’s solo scene supports `她爱跳舞。`; the other scenes support `我喜欢游泳。`, `我喜欢滑冰。`, and `我喜欢滑雪。`. The Useful note and practice supply the question-and-answer exchange. Use a contain-style image fit so full-body action evidence is never cropped. |
+| Scene | Hobbies 3B page renderer | A 2×3 grid with five compact activity scenes. Every card uses the shared 4:3 scene frame. The chorus supports `我们爱唱歌。`; Luna’s solo scene supports `她爱跳舞。`; the other scenes support `我喜欢游泳。`, `我喜欢滑冰。`, and `我喜欢滑雪。`. The Useful note and practice supply the question-and-answer exchange. |
 | Book words | Hobbies renderer | `我们`, `唱歌`, `跳舞`, `游泳`, `滑冰`, and `滑雪` as text-only cards. Scene images already teach each activity. |
 | Useful note | Hobbies renderer | `你喜欢…吗？` asks whether someone likes an activity. Answer with `我喜欢…。`; the book also uses `爱` for a strong preference. |
 | Practice | Hobbies renderer | A paired-question builder: the picture cue identifies one activity; build `你喜欢 + activity + 吗` or the affirmative response `我喜欢 + activity`. Each completed pair displays Hanzi, pinyin, English, and speech. **Play** starts a different random activity. |

@@ -4,46 +4,6 @@ Last updated: 2026-08-12
 
 This file preserves the detailed iteration record for the first Hobbies page, **What I Like** (Book 2A Lesson 5), including the redirects that changed its assets, page structure, and practice. The earlier product-history sections are retained as context for why the current workflow exists. It is not current build instruction; use [lesson_page_workflow.md](../lesson_page_workflow.md) instead.
 
-## Follow-on page: Hobbies (3B Lesson 4)
-
-**Scope decision:** The next page remains inside the Hobbies navigation area, but is selected by **Book 3B · Lesson 4**. It does not append its vocabulary to the 2A page. The lesson owns five new activity words—`唱歌`, `跳舞`, `游泳`, `滑冰`, and `滑雪`—and its distinct language job is asking `你喜欢…吗？` and answering `我喜欢…`.
-
-**Blueprint before implementation:** The page uses a 2×3 scene grid (five activity scenes), text-only Book words, one question/answer Useful note, and a question builder. Completion shows and speaks both the built question and an affirmative answer. **Play** changes to a new activity.
-
-**Asset decision:** Four exact, character-anchored activity scenes already existed. `滑冰` was the only genuine gap. A new Noah ice-skating scene was created only after reviewing the art direction and Noah’s character anchor; it was accepted because it clearly shows skates and a gliding pose, preserves Noah’s blond hair and blue eyes, and stays within the lesson-scene size limit.
-
-**Implementation decision:** Lesson-specific data is selected by the active book and lesson, so the existing 2A content remains untouched when the learner chooses 3B. This is the working model for the later Hobbies pages too: shared navigation, separate lesson data, scenes, note, and practice.
-
-## Redirect: separate child page, preserve parent layout
-
-**What went wrong:** The first implementation used one Hobbies renderer keyed by the selected book lesson. That made the 3B six-cell grid class apply to the existing 2A scene section, changing the approved 2×2 layout. It also exposed the 3B lesson as a book-selection tab rather than as its own page under Hobbies. The generic scene image rule used `object-fit: cover`, which cropped Noah’s skates—the exact visual evidence for `滑冰`.
-
-**Corrected rule:** A later book lesson that needs its own scenes and practice must be a separate child topic/page beneath its parent topic, not a branch in the parent renderer. Its renderer, state, and grid classes must be scoped to that child page so an earlier page cannot change. For action scenes where the whole figure or object is teaching evidence, use a contain-style image treatment rather than crop it.
-
-**Correction:** Restore **What I Like (2A)** to its dedicated 2×2 grid. Create a separate **Hobbies (3B)** child page reachable from the Hobbies page shelf and from Book 3B Lesson 4. Scope the five-scene 3B grid and the non-cropping scene image rule to that child only.
-
-## Redirect: activity pages, not an in-page Hobbies landing shelf
-
-**What went wrong:** The child-page correction still treated the 2A lesson as a Hobbies landing page and inserted a large “More Hobbies lessons” card with a feature-sized image underneath it. That makes the completed lesson feel like navigation furniture rather than a focused learning page, and it is not what “separate pages” meant.
-
-**Corrected rule:** Hobbies is a grouping in the home navigation, not a page that needs its own large child-page shelf. Each focused activity lesson is a normal, sibling topic card in **Play & Hobbies**. The first two are **What I Like (2A)** and **Music & Movement (3B)**. Later 4B lessons will be added as their own cards when built. No in-page lesson shelf, no parent/child detour, and no oversized navigation image.
-
-## Redirect: scene sentence must match the visible subject
-
-**What went wrong:** The 3B dance card used `我们爱跳舞。` even though its asset shows Luna alone. It also appeared cropped because the general `.school-scene-image` rule came later in the stylesheet and overrode the earlier 3B contain rule.
-
-**Corrected rule:** A scene sentence must state exactly the visible subject: one child uses `她` or `他`; `我们` is only valid when the image visibly shows the group. For a scene where the full figure teaches the action, the scoped non-cropping rule must appear after the shared image rule (or have stronger specificity), then be checked in the actual page.
-
-**Correction:** Luna’s card now says `她爱跳舞。` and the 3B image rule is placed after the shared scene-image declaration so all five action scenes use `object-fit: contain`.
-
-## Redirect: asset aspect ratio must match its assigned layout
-
-**What went wrong:** The existing Luna dancing asset is portrait (`1024×1536`), but the Music & Movement scene grid is landscape. Changing CSS to avoid a crop only exposed unused background space; the asset itself was the wrong format for that card.
-
-**Corrected rule:** Check each assigned asset’s native aspect ratio before layout implementation. If a scene card requires a landscape image, generate or select a landscape scene rather than trying to rescue a portrait asset with CSS. Keep a still-useful portrait asset in the library unless replacement was explicitly requested.
-
-**Correction:** A new `1400×1050` landscape Luna dancing scene is used only by Music & Movement. It preserves Luna’s side-braid identity and keeps her full dance pose inside the 4:3 scene frame; the original portrait file is retained but unreferenced by this page.
-
 ## 1. We began with coverage, but coverage was not learning
 
 **What went wrong:** Early planning could show that a topic had an asset folder or a mapped textbook lesson, yet the page still failed to teach the required sentence, distinction, or dialogue.
