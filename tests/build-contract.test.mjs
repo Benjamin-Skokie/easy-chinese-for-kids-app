@@ -48,6 +48,12 @@ test("the local page loads a single bundled application script", () => {
   assert.doesNotMatch(html, /type="module"/);
 });
 
+test("the Chinese landing-page headline is slightly reduced while keeping its original palette", () => {
+  const stylesSource = readFileSync("styles.css", "utf8");
+  assert.match(stylesSource, /\.library-hero h1 \{[\s\S]*font-size: clamp\(2\.3rem, 4vw, 3\.4rem\)[\s\S]*background: linear-gradient\(135deg, #7c5420, #b8863e\)/);
+  assert.match(stylesSource, /\.library-hero h2 \{[\s\S]*font-size: clamp\(1\.3rem, 2\.2vw, 1\.7rem\)[\s\S]*color: var\(--sun\)/);
+});
+
 test("the landing hero features six scrollable culture-story highlights", () => {
   const html = readFileSync("index.html", "utf8");
   const carouselSource = readFileSync("src/core/story-highlights.js", "utf8");
@@ -62,25 +68,43 @@ test("the landing hero features six scrollable culture-story highlights", () => 
 test("culture is an in-page landing view with category cards and no duplicate culture hero", () => {
   const landingHtml = readFileSync("index.html", "utf8");
   const cultureHtml = readFileSync("culture/index.html", "utf8");
+  const stylesSource = readFileSync("styles.css", "utf8");
   assert.match(landingHtml, /href="#culture-panel" data-global-view="culture"/);
   assert.match(landingHtml, /id="culture-panel"/);
   assert.match(landingHtml, /href="#culture-philosophy"/);
   assert.match(landingHtml, /id="culture-economy"/);
   assert.match(landingHtml, /id="culture-military"/);
   assert.match(landingHtml, /culture\/books\/philosophy\/yin-yang\/index\.html/);
+  assert.match(landingHtml, /id="culture-panel"[\s\S]*id="culture-philosophy"[\s\S]*id="culture-folk-tales"[\s\S]*<\/section>\s*<\/section>\s*<section id="topic-detail"/);
+  assert.match(stylesSource, /\.culture-category-section \.topic\.done \{\s*border: 1px solid rgba\(240, 168, 48, 0\.25\);\s*background: var\(--paper-soft\)/);
+  assert.match(stylesSource, /\.culture-category-section \.topic\.done \.zh \{\s*color: var\(--cat-accent, var\(--berry\)\);/);
+  assert.match(readFileSync("src/core/navigation-runtime.js", "utf8"), /card\.style\.getPropertyValue\("--cat-accent"\)/);
   assert.doesNotMatch(cultureHtml, /发现中国文化/);
   assert.equal(viewFromLocation({ search: "", hash: "#culture-panel" }), "culture");
   assert.equal(viewFromLocation({ search: "", hash: "#culture-philosophy" }), "culture");
 });
 
-test("Learn by Books expands only the selected stage", () => {
+test("Learn by Books shows each textbook directly and links lessons to topic practice", () => {
   const navigationSource = readFileSync("src/core/navigation-runtime.js", "utf8");
-  assert.match(navigationSource, /lookupCard\.innerHTML = bookHomeCategories\s*\.filter\(\(category\) => category\.id === state\.selectedBookCategoryId\)/);
+  assert.match(navigationSource, /class="learning-home-board book-library-grid"/);
+  assert.match(navigationSource, /data-book-browser="\$\{entry\.id\}"/);
+  assert.match(navigationSource, /data-book-lesson-section="\$\{entry\.id\}"/);
+  assert.match(navigationSource, /主题练习：\$\{topicMeta\?\.zhTitle/);
+  assert.doesNotMatch(navigationSource, /data-book-category-card/);
+});
+
+test("sticky category navigation highlights the final item at the bottom of the page", () => {
+  const navigationSource = readFileSync("src/core/navigation-runtime.js", "utf8");
+  assert.match(navigationSource, /const atPageBottom = \(\) =>/);
+  assert.match(navigationSource, /activeCategoryId = sections\[sections\.length - 1\]/);
+  assert.match(navigationSource, /activeBookId = bookSections\[bookSections\.length - 1\]/);
 });
 
 test("direct topic links immediately focus the topic detail for every topic", () => {
+  const landingHtml = readFileSync("index.html", "utf8");
   const runtimeWiringSource = readFileSync("src/app/runtime-wiring.js", "utf8");
   const stylesSource = readFileSync("styles.css", "utf8");
+  assert.match(landingHtml, /href="#books-panel" data-global-view="books">← Back to books/);
   assert.match(runtimeWiringSource, /if \(initialTopicId\) \{\s*requestAnimationFrame\(\(\) => focusLearningPanel\(\)\);/);
   assert.match(stylesSource, /html \{\s*scroll-behavior: auto;/);
 });
@@ -243,6 +267,7 @@ test("global view-event bindings stay outside the application composition root",
   assert.doesNotMatch(wiringSource, /document\.querySelectorAll\("\[data-global-view\]"\)/);
   assert.match(eventSource, /export function bindViewNavigationEvents/);
   assert.match(eventSource, /\[data-global-view\]/);
+  assert.match(eventSource, /window\.history\.pushState\(null, "", `\$\{window\.location\.pathname\}\$\{viewHash\(link\.dataset\.globalView\)\}`\)/);
 });
 
 test("shared focus behavior is separated from the legacy bootstrap", () => {
@@ -862,8 +887,8 @@ test("navigation display toggles use the compact speaker, Pī, and ABC icon set"
 
   assert.match(navigationSource, /aria-label="Sound on"/);
   assert.match(displaySource, /learning-display-sound-icon/);
-  assert.match(displaySource, /learning-display-pinyin-icon[\s\S]*>ā</);
-  assert.match(displaySource, /learning-display-english-icon/);
+  assert.match(displaySource, /learning-display-pinyin-icon[\s\S]*>Pīn</);
+  assert.match(displaySource, /learning-display-english-icon[\s\S]*>En</);
   assert.match(styles, /\.learning-display-toggle \{[\s\S]*width: 56px/);
 });
 

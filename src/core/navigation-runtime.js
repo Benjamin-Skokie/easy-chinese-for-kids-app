@@ -335,49 +335,45 @@ function bookAccent(index) {
 }
 
 function renderBookStickyNav() {
-  const categoriesMarkup = bookHomeCategories
-    .map((category) => {
-      const isActive = category.id === state.selectedBookCategoryId;
+  const booksMarkup = books
+    .map((book, index) => {
+      const isActive = book.id === state.selectedBookId;
       return `
         <button
           class="learning-culture-nav-item book-nav-item${isActive ? " active" : ""}"
           type="button"
-          data-book-category-target="${category.id}"
-          style="--category-accent: ${category.accent};"
+          data-book-nav-target="${book.id}"
+          style="--category-accent: ${bookAccent(index)};"
           ${isActive ? 'aria-current="true"' : ""}
         >
-          <span class="zh">${category.zhTitle}</span>
-          <span class="en">${category.bookIds.length} books</span>
+          <span class="zh">课本 ${book.id.toUpperCase()}</span>
+          <span class="en">${book.label}</span>
         </button>
       `;
     })
     .join("");
 
   learningCultureNav.innerHTML = `
-    <span class="learning-culture-nav-items">${categoriesMarkup}</span>
+    <span class="learning-culture-nav-items">${booksMarkup}</span>
     ${displayControlsMarkup()}
   `;
 
   bindDisplayControls();
-  learningCultureNav.querySelectorAll("[data-book-category-target]").forEach((button) => {
+  learningCultureNav.querySelectorAll("[data-book-nav-target]").forEach((button) => {
     button.addEventListener("click", () => {
-      const selectedCategory = bookHomeCategories.find((entry) => entry.id === button.dataset.bookCategoryTarget);
-      if (!selectedCategory) {
+      const selectedBook = bookById(button.dataset.bookNavTarget);
+      if (!selectedBook) {
         return;
       }
 
-      state.selectedBookCategoryId = selectedCategory.id;
-      if (!selectedCategory.bookIds.includes(state.selectedBookId)) {
-        const selectedBook = bookById(selectedCategory.bookIds[0]);
-        state.selectedBookId = selectedBook.id;
-        state.selectedLessonNumber = selectedBook.lessons[0].lesson;
-        state.selectedTopicId = selectedBook.lessons[0].topicId;
-      }
+      state.selectedBookCategoryId = bookCategoryForBook(selectedBook.id).id;
+      state.selectedBookId = selectedBook.id;
+      state.selectedLessonNumber = selectedBook.lessons[0].lesson;
+      state.selectedTopicId = selectedBook.lessons[0].topicId;
       state.topicPageOpen = false;
       renderBooks();
-      renderTopicDetail();
       updateTopicPageVisibility();
-      document.getElementById(`book-category-${selectedCategory.id}`)?.scrollIntoView({
+      document.getElementById(`book-lessons-${selectedBook.id}`)?.scrollIntoView({
         behavior: "smooth",
         block: "start"
       });
@@ -390,12 +386,15 @@ function renderCultureStickyNav() {
   learningCultureNav.innerHTML = `
     <span class="learning-culture-nav-items">
       ${cards
-        .map((card) => `
-          <button class="learning-culture-nav-item" type="button" data-culture-nav-target="${card.dataset.cultureTarget}">
+        .map((card) => {
+          const accent = card.style.getPropertyValue("--cat-accent");
+          return `
+          <button class="learning-culture-nav-item" type="button" data-culture-nav-target="${card.dataset.cultureTarget}" style="--category-accent: ${accent};">
             <span class="zh">${card.querySelector(".culture-card-name strong")?.textContent ?? ""}</span>
             <span class="en">${card.querySelector(".culture-card-name em")?.textContent ?? ""}</span>
           </button>
-        `)
+        `;
+        })
         .join("")}
     </span>
   `;
@@ -553,21 +552,23 @@ function renderBooks() {
   lessonSelect.value = String(activeLesson.lesson);
 
   bookBrowser.innerHTML = `
-    <div class="learning-home-board book-home-board">
-      ${bookHomeCategories
-        .map((category) => {
-          const isSelected = category.id === state.selectedBookCategoryId;
+    <div class="learning-home-board book-library-grid" aria-label="Chinese textbooks">
+      ${books
+        .map((entry, index) => {
+          const topicLabels = [...new Set(entry.lessons.map((lesson) => topicCardMeta[lesson.topicId]?.enTitle ?? topicById(lesson.topicId)?.title))]
+            .filter(Boolean)
+            .slice(0, 3)
+            .join(" · ");
+          const isSelectedBook = entry.id === book.id;
           return `
-            <article class="learning-home-card book-home-card${isSelected ? " is-selected" : ""}" style="--category-accent: ${category.accent};">
-              <button class="learning-home-card-main" type="button" data-book-category-card="${category.id}" aria-label="Open ${category.enTitle}">
-                <span class="learning-card-count">${category.bookIds.length} books</span>
-                <span class="learning-home-card-icon" aria-hidden="true">
-                  <span class="category-emoji-icon category-emoji-icon-${category.id}">${category.iconEmoji}</span>
-                </span>
+            <article class="learning-home-card book-library-card${isSelectedBook ? " is-selected" : ""}" style="--category-accent: ${bookAccent(index)};">
+              <button class="learning-home-card-main" type="button" data-book-browser="${entry.id}" aria-label="Open ${entry.label}">
+                <span class="learning-card-count">${entry.lessons.length} lessons</span>
+                <span class="learning-home-card-icon" aria-hidden="true">${entry.id.toUpperCase()}</span>
                 <span class="topic-copy">
-                  <span class="topic-zh-title">${category.zhTitle}</span>
-                  <span class="topic-row-title">${category.enTitle}</span>
-                  <span class="topic-row-meta">${category.hint}</span>
+                  <span class="topic-zh-title">课本 ${entry.id.toUpperCase()}</span>
+                  <span class="topic-row-title">${entry.label}</span>
+                  <span class="topic-row-meta">${topicLabels}</span>
                 </span>
               </button>
             </article>
@@ -577,111 +578,36 @@ function renderBooks() {
     </div>
   `;
 
-  // Keep the book route focused: stages are the navigation, and only the chosen
-  // stage expands into books and lessons below it.
-  lookupCard.innerHTML = bookHomeCategories
-    .filter((category) => category.id === state.selectedBookCategoryId)
-    .map((category) => {
-      const booksInCategory = category.bookIds.map((bookId) => bookById(bookId));
-      const isActiveCategory = category.id === state.selectedBookCategoryId;
-      const selectedBookInCategory =
-        booksInCategory.find((entry) => entry.id === state.selectedBookId) ?? booksInCategory[0];
-      const selectedBookIndex = books.findIndex((entry) => entry.id === selectedBookInCategory.id);
-
+  lookupCard.innerHTML = books
+    .map((entry, index) => {
+      const isSelectedBook = entry.id === book.id;
       return `
-        <section
-          class="learning-category-section book-category-section${isActiveCategory ? " is-selected" : ""}"
-          id="book-category-${category.id}"
-          style="--category-accent: ${category.accent}; --book-accent: ${bookAccent(Math.max(selectedBookIndex, 0))};"
-        >
-          <div class="learning-category-head">
-            <span class="learning-category-head-icon" aria-hidden="true">
-              <span class="category-emoji-icon category-emoji-icon-${category.id}">${category.iconEmoji}</span>
-            </span>
-            <div>
-              <h3>${category.zhTitle}</h3>
-              <h4>${category.enTitle}</h4>
-              <p>${category.hint}</p>
-            </div>
+        <section class="book-lesson-section${isSelectedBook ? " is-selected" : ""}" id="book-lessons-${entry.id}" data-book-lesson-section="${entry.id}" style="--book-accent: ${bookAccent(index)};">
+          <div class="book-lesson-head">
+            <h3>${entry.label}</h3>
           </div>
-          <div class="book-category-grid">
-            ${booksInCategory
-              .map((entry) => {
-                const firstTopic = topicById(entry.lessons[0]?.topicId);
-                const isSelectedBook = entry.id === selectedBookInCategory.id;
-                const entryIndex = books.findIndex((bookEntry) => bookEntry.id === entry.id);
+          <div class="book-lesson-grid">
+            ${entry.lessons
+              .map((lesson) => {
+                const lessonTopic = topicById(lesson.topicId);
+                const topicMeta = topicCardMeta[lesson.topicId];
+                const isSelectedLesson = isSelectedBook && lesson.lesson === activeLesson.lesson;
                 return `
-                  <button
-                    class="book-browser-card book-category-book-card${isSelectedBook ? " is-selected" : ""}"
-                    style="--book-accent: ${bookAccent(Math.max(entryIndex, 0))}"
-                    type="button"
-                    data-book-browser="${entry.id}"
-                  >
-                    <span>${entry.label}</span>
-                    <small>${entry.lessons.length} lessons</small>
-                    <em>${firstTopic?.title ?? "Chinese practice"}</em>
+                  <button class="book-lesson-card${isSelectedLesson ? " is-selected" : ""}" type="button" data-book-lesson="${entry.id}:${lesson.lesson}">
+                    <span>Lesson ${lesson.lesson}</span>
+                    <strong>${lesson.title}</strong>
+                    <small>主题练习：${topicMeta?.zhTitle ?? lessonTopic?.title ?? "Topic practice"} · ${topicMeta?.enTitle ?? ""}</small>
                   </button>
                 `;
               })
               .join("")}
-          </div>
-          <div class="book-category-lessons">
-            <div class="book-category-lessons-head">
-              <div>
-                <span class="progress-label">Lessons</span>
-                <h3>${selectedBookInCategory.label}</h3>
-                <p>Pick a lesson to open the matching topic practice.</p>
-              </div>
-            </div>
-            <div class="book-lesson-grid">
-              ${selectedBookInCategory.lessons
-                .map((lesson) => {
-                  const lessonTopic = topicById(lesson.topicId);
-                  const isSelectedLesson =
-                    selectedBookInCategory.id === book.id && lesson.lesson === activeLesson.lesson;
-                  return `
-                    <button
-                      class="book-lesson-card${isSelectedLesson ? " is-selected" : ""}"
-                      type="button"
-                      data-book-lesson="${selectedBookInCategory.id}:${lesson.lesson}"
-                    >
-                      <span>Lesson ${lesson.lesson}</span>
-                      <strong>${lesson.title}</strong>
-                      <small>${lessonTopic?.title ?? "Topic practice"}</small>
-                    </button>
-                  `;
-                })
-                .join("")}
-            </div>
           </div>
         </section>
       `;
     })
     .join("");
 
-  bookBrowser.querySelectorAll("[data-book-category-card]").forEach((button) => {
-    button.addEventListener("click", () => {
-      const category = bookHomeCategories.find((entry) => entry.id === button.dataset.bookCategoryCard);
-      if (!category) {
-        return;
-      }
-
-      state.selectedBookCategoryId = category.id;
-      if (!category.bookIds.includes(state.selectedBookId)) {
-        const selectedBook = bookById(category.bookIds[0]);
-        state.selectedBookId = selectedBook.id;
-        state.selectedLessonNumber = selectedBook.lessons[0].lesson;
-        state.selectedTopicId = selectedBook.lessons[0].topicId;
-      }
-      renderBooks();
-      document.getElementById(`book-category-${category.id}`)?.scrollIntoView({
-        behavior: "smooth",
-        block: "start"
-      });
-    });
-  });
-
-  lookupCard.querySelectorAll("[data-book-browser]").forEach((button) => {
+  bookBrowser.querySelectorAll("[data-book-browser]").forEach((button) => {
     button.addEventListener("click", () => {
       const selectedBook = books.find((entry) => entry.id === button.dataset.bookBrowser);
       if (!selectedBook) {
@@ -693,8 +619,7 @@ function renderBooks() {
       state.selectedLessonNumber = selectedBook.lessons[0].lesson;
       state.selectedTopicId = selectedBook.lessons[0].topicId;
       renderBooks();
-      renderTopicDetail();
-      document.getElementById(`book-category-${state.selectedBookCategoryId}`)?.scrollIntoView({
+      document.getElementById(`book-lessons-${selectedBook.id}`)?.scrollIntoView({
         behavior: "smooth",
         block: "start"
       });
@@ -716,6 +641,9 @@ function updateLearningCultureNav() {
     return;
   }
 
+  const atPageBottom = () =>
+    window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4;
+
   if (state.currentView === "culture" && !culturePanel?.classList.contains("is-hidden")) {
     const cardGrid = culturePanel.querySelector(".culture-card-grid");
     const sections = culturePanel.querySelectorAll(".culture-category-section");
@@ -733,6 +661,9 @@ function updateLearningCultureNav() {
         activeCategoryId = section.id.replace("culture-", "");
       }
     });
+    if (atPageBottom()) {
+      activeCategoryId = sections[sections.length - 1]?.id.replace("culture-", "") ?? activeCategoryId;
+    }
     navItems.forEach((item) => {
       const isActive = item.dataset.cultureNavTarget === activeCategoryId;
       item.classList.toggle("active", isActive);
@@ -742,25 +673,28 @@ function updateLearningCultureNav() {
   }
 
   if (state.currentView === "books" && !bookPanel.classList.contains("is-hidden")) {
-    const bookBoard = bookBrowser.querySelector(".book-home-board");
-    const bookSections = lookupCard.querySelectorAll(".book-category-section");
-    const bookNavItems = learningCultureNav.querySelectorAll("[data-book-category-target]");
+    const bookBoard = bookBrowser.querySelector(".book-library-grid");
+    const bookSections = lookupCard.querySelectorAll("[data-book-lesson-section]");
+    const bookNavItems = learningCultureNav.querySelectorAll("[data-book-nav-target]");
     const showBookNav = bookBoard && window.scrollY > bookBoard.offsetTop + bookBoard.offsetHeight - 60;
     learningCultureNav.classList.toggle("visible", showBookNav);
     if (!showBookNav) {
       return;
     }
 
-    let activeCategoryId = state.selectedBookCategoryId;
+    let activeBookId = state.selectedBookId;
     const scrollY = window.scrollY + 120;
     bookSections.forEach((section) => {
       if (section.offsetTop <= scrollY) {
-        activeCategoryId = section.id.replace("book-category-", "");
+        activeBookId = section.dataset.bookLessonSection;
       }
     });
+    if (atPageBottom()) {
+      activeBookId = bookSections[bookSections.length - 1]?.dataset.bookLessonSection ?? activeBookId;
+    }
 
     bookNavItems.forEach((item) => {
-      const isActive = item.dataset.bookCategoryTarget === activeCategoryId;
+      const isActive = item.dataset.bookNavTarget === activeBookId;
       item.classList.toggle("active", isActive);
       item.toggleAttribute("aria-current", isActive);
     });
@@ -800,6 +734,9 @@ function updateLearningCultureNav() {
       current = section.id;
     }
   });
+  if (atPageBottom()) {
+    current = sections[sections.length - 1]?.id ?? current;
+  }
 
   navItems.forEach((item) => {
     const isActive = item.dataset.target === current;

@@ -1,4 +1,6 @@
 export function bindViewNavigationEvents({ state, switchView, updateTopicPageVisibility }) {
+  const viewHash = (view) => ({ topics: "#topics-panel", books: "#books-panel", culture: "#culture-panel" }[view] ?? "#topics-panel");
+
   document.querySelectorAll("[data-view]").forEach((button) => {
     button.addEventListener("click", () => {
       switchView(button.dataset.view);
@@ -25,6 +27,7 @@ export function bindViewNavigationEvents({ state, switchView, updateTopicPageVis
       state.topicPageOpen = false;
       switchView(link.dataset.globalView);
       updateTopicPageVisibility();
+      window.history.pushState(null, "", `${window.location.pathname}${viewHash(link.dataset.globalView)}`);
       document.querySelector(".switcher-panel")?.scrollIntoView({
         behavior: "smooth",
         block: "start"

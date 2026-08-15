@@ -693,6 +693,13 @@ h4 {
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
+.book-library-grid {
+  display: grid;
+  grid-column: 1 / -1;
+  gap: 14px;
+  width: 100%;
+}
+
 .book-browser-card,
 .book-lesson-card {
   display: grid;
@@ -717,6 +724,11 @@ h4 {
   font-family: var(--display-font);
   font-size: 1.25rem;
   font-weight: 700;
+}
+
+.book-library-card {
+  min-height: 0;
+  padding: 0;
 }
 
 .book-browser-card small,
@@ -1152,6 +1164,21 @@ h4 {
 .sub-panel-heading {
   display: grid;
   gap: 8px;
+}
+
+.detail-back-link {
+  width: fit-content;
+  color: var(--berry);
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+}
+
+.detail-back-link:hover,
+.detail-back-link:focus-visible {
+  color: var(--berry-dark);
+  text-decoration: underline;
 }
 
 .section-heading h2,
@@ -6528,11 +6555,11 @@ h4 {
 }
 
 .culture-category-section .topic.done .zh {
-  color: var(--berry-dark);
+  color: var(--cat-accent, var(--berry));
 }
 
 .culture-category-section .topic.done .en {
-  color: #a5680b;
+  color: var(--cat-accent, var(--berry));
   font-weight: 500;
 }
 
@@ -6540,7 +6567,7 @@ h4 {
   position: absolute;
   top: 50%;
   right: 18px;
-  color: #a5680b;
+  color: var(--cat-accent, var(--berry));
   content: "→";
   opacity: 0;
   transform: translateY(-50%);
@@ -6605,7 +6632,7 @@ h4 {
 
 .library-hero h1 {
   font-family: var(--display-font);
-  font-size: clamp(2.6rem, 4.5vw, 3.8rem);
+  font-size: clamp(2.3rem, 4vw, 3.4rem);
   line-height: 1.15;
   letter-spacing: 0;
   background: linear-gradient(135deg, #7c5420, #b8863e);
@@ -6919,8 +6946,8 @@ h4 {
 }
 
 .learning-display-sound-icon {
-  width: 29px;
-  height: 29px;
+  width: 33px;
+  height: 33px;
 }
 
 .learning-display-letter-icon {
@@ -6932,13 +6959,16 @@ h4 {
 }
 
 .learning-display-pinyin-icon {
-  font-size: 1.65rem;
-  letter-spacing: 0;
+  font-family: var(--display-font);
+  font-size: 1.5rem;
+  font-style: italic;
+  letter-spacing: 0.02em;
 }
 
 .learning-display-english-icon {
-  font-size: 0.86rem;
-  letter-spacing: -0.09em;
+  font-family: var(--display-font);
+  font-size: 1.5rem;
+  letter-spacing: 0.01em;
 }
 
 .learning-home-board {
@@ -7400,20 +7430,6 @@ h4 {
   border-bottom: 2px solid rgba(45, 34, 24, 0.06);
 }
 
-.book-lesson-icon {
-  display: grid;
-  flex: 0 0 54px;
-  width: 54px;
-  height: 54px;
-  place-items: center;
-  border-radius: 16px;
-  color: var(--book-accent, var(--berry));
-  background: color-mix(in srgb, var(--book-accent, var(--sun)) 13%, transparent);
-  font-family: var(--hanzi-font);
-  font-size: 1.8rem;
-  font-weight: 800;
-}
-
 .book-lesson-head h3 {
   margin-top: 4px;
   color: var(--book-accent, var(--berry));
@@ -7567,6 +7583,7 @@ h4 {
   .learning-home-board {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
+
 }
 
 @media (max-width: 900px) {
@@ -7737,6 +7754,7 @@ h4 {
   .learning-home-board {
     grid-template-columns: 1fr;
   }
+
 
   .story-highlights {
     margin-top: 18px;
