@@ -44,6 +44,7 @@ jobs:
             --exclude books_pdf \
             --exclude generated \
             --exclude assets_archive \
+            --exclude assets/_png-archive \
             --exclude docs \
             --exclude src \
             --exclude scripts \
