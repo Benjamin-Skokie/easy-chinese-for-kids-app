@@ -4,7 +4,7 @@ title_en: From Herding Buffalo to Emperor: Why Was Zhu Yuanzhang Always So Busy?
 slug: emperor-day
 category: politics
 difficulty: 简单
-back_href: ../../../index.html#politics
+back_href: ../../../../index.html#culture-politics
 style_notes: "用 --- 分隔 frontmatter；正文强调优先用 *斜体*；尽量不用 **粗体**。"
 ---
 

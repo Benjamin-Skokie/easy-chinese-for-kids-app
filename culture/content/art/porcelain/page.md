@@ -4,7 +4,7 @@ title_en: Porcelain: Clay That Shines Like Jade
 slug: porcelain
 category: art
 difficulty: 简单
-back_href: ../../../index.html#art
+back_href: ../../../../index.html#culture-art
 style_notes: "用 --- 分隔 frontmatter；正文强调优先用 *斜体*；尽量不用 **粗体**。"
 ---
 

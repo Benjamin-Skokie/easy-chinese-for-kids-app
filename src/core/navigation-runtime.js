@@ -577,7 +577,10 @@ function renderBooks() {
     </div>
   `;
 
+  // Keep the book route focused: stages are the navigation, and only the chosen
+  // stage expands into books and lessons below it.
   lookupCard.innerHTML = bookHomeCategories
+    .filter((category) => category.id === state.selectedBookCategoryId)
     .map((category) => {
       const booksInCategory = category.bookIds.map((bookId) => bookById(bookId));
       const isActiveCategory = category.id === state.selectedBookCategoryId;

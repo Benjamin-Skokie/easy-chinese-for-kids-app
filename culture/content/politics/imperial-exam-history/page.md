@@ -4,7 +4,7 @@ title_en: From Recommendations to Exams: How Could an Ordinary Person Become an 
 slug: imperial-exam-history
 category: politics
 difficulty: 中等
-back_href: ../../../index.html#politics
+back_href: ../../../../index.html#culture-politics
 style_notes: "用 --- 分隔 frontmatter；正文强调优先用 *斜体*；尽量不用 **粗体**。"
 ---
 

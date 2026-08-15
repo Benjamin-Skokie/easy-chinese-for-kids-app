@@ -1995,7 +1995,7 @@
       }).join("")}
     </div>
   `;
-      lookupCard2.innerHTML = bookHomeCategories2.map((category) => {
+      lookupCard2.innerHTML = bookHomeCategories2.filter((category) => category.id === state2.selectedBookCategoryId).map((category) => {
         const booksInCategory = category.bookIds.map((bookId) => bookById2(bookId));
         const isActiveCategory = category.id === state2.selectedBookCategoryId;
         const selectedBookInCategory = booksInCategory.find((entry) => entry.id === state2.selectedBookId) ?? booksInCategory[0];

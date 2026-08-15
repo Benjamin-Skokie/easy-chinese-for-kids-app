@@ -4,7 +4,7 @@ title_en: The Six Arts: What Did Students Learn in Ancient Times?
 slug: six-arts
 category: politics
 difficulty: 中等
-back_href: ../../../index.html#politics
+back_href: ../../../../index.html#culture-politics
 style_notes: "用 --- 分隔 frontmatter；正文强调优先用 *斜体*；尽量不用 **粗体**。"
 ---
 

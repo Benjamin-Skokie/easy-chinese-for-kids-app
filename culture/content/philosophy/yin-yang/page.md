@@ -4,7 +4,7 @@ title_en: Yin and Yang: The Dance of Sun and Moon
 slug: yin-yang
 category: philosophy
 difficulty: 中等
-back_href: ../../../index.html
+back_href: ../../../../index.html#culture-philosophy
 stylesheet_href: ../../../shared/styles.css
 source_images: ../../../content/philosophy/yin-yang/images
 style_notes: "用 --- 分隔 frontmatter；正文强调优先用 *斜体*；尽量不用 **粗体**。"

@@ -4,7 +4,7 @@ title_en: Zhaozhou Bridge: A Stone Rainbow Across a Thousand Years
 slug: zhaozhou-bridge
 category: architecture
 difficulty: 简单
-back_href: ../../../index.html#architecture
+back_href: ../../../../index.html#culture-architecture
 style_notes: "用 --- 分隔 frontmatter；正文强调优先用 *斜体*；尽量不用 **粗体**。"
 ---
 

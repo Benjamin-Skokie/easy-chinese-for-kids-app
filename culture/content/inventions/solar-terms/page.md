@@ -4,7 +4,7 @@ title_en: The 24 Solar Terms: Following the Sun Through the Year
 slug: solar-terms
 category: inventions
 difficulty: 简单
-back_href: ../../../index.html#inventions
+back_href: ../../../../index.html#culture-inventions
 style_notes: "用 --- 分隔 frontmatter；正文强调优先用 *斜体*；尽量不用 **粗体**。"
 ---
 

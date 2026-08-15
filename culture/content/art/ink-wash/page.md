@@ -4,7 +4,7 @@ title_en: Ink Wash Painting: Magic Without Colors
 slug: ink-wash
 category: art
 difficulty: 简单
-back_href: ../../../index.html#art
+back_href: ../../../../index.html#culture-art
 style_notes: "用 --- 分隔 frontmatter；正文强调优先用 *斜体*；尽量不用 **粗体**。"
 ---
 

@@ -4,7 +4,7 @@ title_en: The Secret of Chopsticks
 slug: chopsticks
 category: food
 difficulty: 简单
-back_href: ../../../index.html#food
+back_href: ../../../../index.html#culture-food
 style_notes: "用 --- 分隔 frontmatter；正文强调优先用 *斜体*；尽量不用 **粗体**。"
 ---
 

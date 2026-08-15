@@ -4,7 +4,7 @@ title_en: Dragon and Phoenix: China's Luckiest Pair
 slug: dragon-phoenix
 category: culture
 difficulty: 中等
-back_href: ../../../index.html#culture
+back_href: ../../../../index.html#culture-culture
 style_notes: "用 --- 分隔 frontmatter；正文强调优先用 *斜体*；尽量不用 **粗体**。"
 ---
 

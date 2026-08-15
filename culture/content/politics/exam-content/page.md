@@ -4,7 +4,7 @@ title_en: What Was on the Imperial Exams? The Same Child in Different Times
 slug: exam-content
 category: politics
 difficulty: 中等
-back_href: ../../../index.html#politics
+back_href: ../../../../index.html#culture-politics
 style_notes: "用 --- 分隔 frontmatter；正文强调优先用 *斜体*；尽量不用 **粗体**。"
 ---
 

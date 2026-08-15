@@ -4,7 +4,7 @@ title_en: Classic of Mountains and Seas: China's Ancient Book of Wonders
 slug: shan-hai-jing
 category: literature
 difficulty: 中等
-back_href: ../../../index.html#literature
+back_href: ../../../../index.html#culture-literature
 style_notes: "用 --- 分隔 frontmatter；正文强调优先用 *斜体*；尽量不用 **粗体**。"
 ---
 

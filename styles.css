@@ -690,6 +690,7 @@ h4 {
 
 .book-home-board {
   width: 100%;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
 .book-browser-card,
@@ -6651,13 +6652,13 @@ h4 {
 
 .story-highlights-track {
   display: flex;
-  width: 500%;
+  width: 600%;
 }
 
 .story-highlight-slide {
   position: relative;
   display: block;
-  flex: 0 0 20%;
+  flex: 0 0 16.666667%;
   aspect-ratio: 16 / 8;
   overflow: hidden;
   scroll-snap-align: start;
@@ -6671,6 +6672,12 @@ h4 {
   height: 100%;
   object-fit: cover;
   transition: transform 280ms ease;
+}
+
+/* Keep the money story as one full-bleed image with no added background treatment. */
+.story-highlight-slide--money img {
+  object-fit: cover;
+  object-position: center center;
 }
 
 .story-highlight-slide:hover img,

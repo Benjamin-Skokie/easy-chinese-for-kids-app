@@ -4,7 +4,7 @@ title_en: Smiles in the Temple: Maitreya Buddha's Big Belly
 slug: maitreya-buddha
 category: religion
 difficulty: 简单
-back_href: ../../../index.html#religion
+back_href: ../../../../index.html#culture-religion
 style_notes: "用 --- 分隔 frontmatter；正文强调优先用 *斜体*；尽量不用 **粗体**。"
 ---
 

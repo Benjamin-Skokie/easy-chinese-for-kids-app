@@ -4,7 +4,7 @@ title_en: Hua Mulan: The Girl Who Took Her Father's Place
 slug: mulan
 category: figures
 difficulty: 简单
-back_href: ../../../index.html#figures
+back_href: ../../../../index.html#culture-figures
 style_notes: "用 --- 分隔 frontmatter；正文强调优先用 *斜体*；尽量不用 **粗体**。"
 ---
 

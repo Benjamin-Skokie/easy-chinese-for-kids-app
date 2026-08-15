@@ -238,7 +238,7 @@ export async function buildPhilosophyPage({ category = "philosophy", slug, targe
   const html = template
     .replace("{{TITLE}}", frontmatter.title_zh)
     .replace("{{STYLESHEET_HREF}}", "./styles.css")
-    .replace("{{BACK_HREF}}", frontmatter.back_href || "../../../index.html")
+    .replace("{{BACK_HREF}}", `../../../../index.html#culture-${category}`)
     .replace("{{BODY}}", builtBody)
     .replace("</body>", `${glossaryScriptHtml}\n  </body>`);
 

@@ -48,13 +48,14 @@ test("the local page loads a single bundled application script", () => {
   assert.doesNotMatch(html, /type="module"/);
 });
 
-test("the landing hero features five scrollable culture-story highlights", () => {
+test("the landing hero features six scrollable culture-story highlights", () => {
   const html = readFileSync("index.html", "utf8");
   const carouselSource = readFileSync("src/core/story-highlights.js", "utf8");
   assert.match(html, /<section class="story-highlights" data-story-highlights/);
-  assert.equal((html.match(/data-story-highlight-dot=/g) ?? []).length, 5);
+  assert.equal((html.match(/data-story-highlight-dot=/g) ?? []).length, 6);
   assert.match(html, /culture\/books\/folk-tales\/monkey-king\/index\.html/);
   assert.match(html, /culture\/books\/figures\/mulan\/index\.html/);
+  assert.match(html, /culture\/books\/politics\/emperor-day\/index\.html/);
   assert.match(carouselSource, /viewport\.scrollTo/);
 });
 
@@ -70,6 +71,11 @@ test("culture is an in-page landing view with category cards and no duplicate cu
   assert.doesNotMatch(cultureHtml, /发现中国文化/);
   assert.equal(viewFromLocation({ search: "", hash: "#culture-panel" }), "culture");
   assert.equal(viewFromLocation({ search: "", hash: "#culture-philosophy" }), "culture");
+});
+
+test("Learn by Books expands only the selected stage", () => {
+  const navigationSource = readFileSync("src/core/navigation-runtime.js", "utf8");
+  assert.match(navigationSource, /lookupCard\.innerHTML = bookHomeCategories\s*\.filter\(\(category\) => category\.id === state\.selectedBookCategoryId\)/);
 });
 
 test("direct topic links immediately focus the topic detail for every topic", () => {

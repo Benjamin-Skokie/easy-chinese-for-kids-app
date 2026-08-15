@@ -4,7 +4,7 @@ title_en: Why Did Lord Guan Enter Temples?
 slug: lord-guan
 category: religion
 difficulty: 中等
-back_href: ../../../index.html#religion
+back_href: ../../../../index.html#culture-religion
 style_notes: "用 --- 分隔 frontmatter；正文强调优先用 *斜体*；尽量不用 **粗体**。"
 ---
 
