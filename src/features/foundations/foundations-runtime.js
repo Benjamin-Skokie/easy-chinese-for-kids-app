@@ -691,7 +691,7 @@ function renderBodyExplorer() {
           }
           ${
             roundComplete && !allDone
-              ? '<button class="small-button body-next-round" type="button" data-body-next-round>Next set</button>'
+              ? '<button class="small-button is-practice-advance-button body-next-round" type="button" data-body-next-round>Next set</button>'
               : ""
           }
           ${
@@ -1225,8 +1225,8 @@ function renderMultiplicationExplorer() {
           </div>
           <div class="multiplication-playback-controls">
             <button class="small-button is-play-button" type="button" data-multiplication-play-all>Play</button>
-            <button class="small-button" type="button" data-multiplication-pause disabled>Pause</button>
-            <button class="small-button" type="button" data-multiplication-stop disabled>Stop</button>
+            <button class="small-button is-playback-control-button is-pause-button" type="button" data-multiplication-pause aria-label="Pause multiplication rhyme" disabled>Pause</button>
+            <button class="small-button is-playback-control-button is-stop-button" type="button" data-multiplication-stop aria-label="Stop multiplication rhyme" disabled>Stop</button>
           </div>
         </div>
       </div>
@@ -1247,11 +1247,13 @@ function renderMultiplicationExplorer() {
         </div>
       </div>
       <div class="multiplication-detail-card">
-        <p class="body-match-kicker">Selected line</p>
+        <div class="numbers-game-top">
+          <p class="body-match-kicker">Selected line</p>
+          <button class="small-button is-play-button" type="button" data-multiplication-item="${activeItem.id}">Play</button>
+        </div>
         <p class="multiplication-line-hanzi">${activeItem.hanzi}</p>
         ${state.showPinyin ? `<p class="multiplication-line-pinyin">${activeItem.pinyin}</p>` : ""}
         ${state.showEnglish ? `<p class="multiplication-line-english">${activeItem.english}</p>` : ""}
-        <button class="small-button is-play-button" type="button" data-multiplication-item="${activeItem.id}">Play</button>
       </div>
     </div>
   `;
@@ -1330,6 +1332,9 @@ function updateMultiplicationPlaybackControls(container) {
   if (pauseButton) {
     pauseButton.disabled = !isPlaying;
     pauseButton.textContent = multiplicationPlaybackPaused ? "Resume" : "Pause";
+    pauseButton.classList.toggle("is-resume-button", multiplicationPlaybackPaused);
+    pauseButton.classList.toggle("is-pause-button", !multiplicationPlaybackPaused);
+    pauseButton.setAttribute("aria-label", multiplicationPlaybackPaused ? "Resume multiplication rhyme" : "Pause multiplication rhyme");
   }
   if (stopButton) stopButton.disabled = !isPlaying;
 }

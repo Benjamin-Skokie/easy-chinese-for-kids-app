@@ -272,7 +272,7 @@ function renderActivityPanel(topic) {
         <div class="intro-build-choices">
           ${state.roomBuildAvailableTokens.map((token, index) => `<button class="intro-build-chip" type="button" data-room-build-token="${index}">${token}</button>`).join("")}
         </div>
-        <div class="intro-build-actions"><button class="small-button" type="button" data-room-build-clear>Clear</button>${state.roomBuildResult === "correct" ? '<button class="small-button is-action-button" type="button" data-room-build-next>Next picture</button>' : ""}</div>
+        <div class="intro-build-actions"><button class="small-button" type="button" data-room-build-clear>Clear</button>${state.roomBuildResult === "correct" ? '<button class="small-button is-practice-advance-button" type="button" data-room-build-next>Next picture</button>' : ""}</div>
       </section>
       ${renderPracticeSayCards([
         { hanzi: "地上有书。", pinyin: "dì shàng yǒu shū.", english: "There is a book on the floor.", audio: "地上有书" }
@@ -313,7 +313,7 @@ function renderActivityPanel(topic) {
         <div class="intro-build-choices">
           ${state.comparisonBuildAvailableTokens.map((token, index) => `<button class="intro-build-chip" type="button" data-comparison-build-token="${index}">${token}</button>`).join("")}
         </div>
-        <div class="intro-build-actions"><button class="small-button" type="button" data-comparison-build-clear>Clear</button>${state.comparisonBuildResult === "correct" ? '<button class="small-button is-action-button" type="button" data-comparison-build-next>Next picture</button>' : ""}</div>
+        <div class="intro-build-actions"><button class="small-button" type="button" data-comparison-build-clear>Clear</button>${state.comparisonBuildResult === "correct" ? '<button class="small-button is-practice-advance-button" type="button" data-comparison-build-next>Next picture</button>' : ""}</div>
       </section>
     `;
     activityList.querySelectorAll("[data-comparison-build-token]").forEach((button) => {
@@ -341,7 +341,7 @@ function renderActivityPanel(topic) {
             return `<button class="clothes-quiz-option${resultClass}" type="button" data-position-quiz-pick="${item.id}">${mark}<span class="numbers-game-hanzi">${item.hanzi}</span>${state.showPinyin ? `<span class="numbers-game-pinyin">${item.pinyin}</span>` : ""}${state.showEnglish ? `<span class="numbers-game-english">${item.english}</span>` : ""}</button>`;
           }).join("")}
         </div>
-        ${state.positionQuizResult === "correct" ? '<div class="clothes-quiz-next"><button class="small-button is-action-button" type="button" data-position-quiz-next>Next sentence</button></div>' : ""}
+        ${state.positionQuizResult === "correct" ? '<div class="clothes-quiz-next"><button class="small-button is-practice-advance-button" type="button" data-position-quiz-next>Next sentence</button></div>' : ""}
       </section>
       ${renderPracticeSayCards([
         { hanzi: "书架在桌子左边。", pinyin: "shū jià zài zhuō zi zuǒ biān.", english: "The bookshelf is to the left of the desk.", audio: "书架在桌子左边" },
@@ -378,7 +378,7 @@ function renderActivityPanel(topic) {
         <div class="intro-build-choices">
           ${state.transportBuildAvailableTokens.map((token, index) => `<button class="intro-build-chip" type="button" data-transport-build-token="${index}">${token}</button>`).join("")}
         </div>
-        <div class="intro-build-actions"><button class="small-button" type="button" data-transport-build-clear>Clear</button>${state.transportBuildResult === "correct" ? '<button class="small-button is-action-button" type="button" data-transport-build-next>Next picture</button>' : ""}</div>
+        <div class="intro-build-actions"><button class="small-button" type="button" data-transport-build-clear>Clear</button>${state.transportBuildResult === "correct" ? '<button class="small-button is-practice-advance-button" type="button" data-transport-build-next>Next picture</button>' : ""}</div>
       </section>
     `;
     activityList.querySelectorAll("[data-transport-build-token]").forEach((button) => {
@@ -411,7 +411,7 @@ function renderActivityPanel(topic) {
             })
             .join("")}
         </div>
-        ${state.clockQuizResult === "correct" ? '<div class="clothes-quiz-next"><button class="small-button is-action-button" type="button" data-clock-quiz-next>Next clock</button></div>' : ""}
+        ${state.clockQuizResult === "correct" ? '<div class="clothes-quiz-next"><button class="small-button is-practice-advance-button" type="button" data-clock-quiz-next>Next clock</button></div>' : ""}
       </section>
       ${renderPracticeSayCards([
         { hanzi: "几点了？", pinyin: "jǐ diǎn le?", english: "What time is it?", audio: "几点了" },
@@ -456,7 +456,7 @@ function renderActivityPanel(topic) {
             })
             .join("")}
         </div>
-        ${state.timeRoutineQuizResult === "correct" ? '<div class="clothes-quiz-next"><button class="small-button is-action-button" type="button" data-time-routine-quiz-next>Next picture</button></div>' : ""}
+        ${state.timeRoutineQuizResult === "correct" ? '<div class="clothes-quiz-next"><button class="small-button is-practice-advance-button" type="button" data-time-routine-quiz-next>Next picture</button></div>' : ""}
       </section>
       ${renderPracticeSayCards([
         { hanzi: "你每天几点起床？", pinyin: "nǐ měi tiān jǐ diǎn qǐ chuáng?", english: "What time do you get up every day?", audio: "你每天几点起床" },
@@ -490,6 +490,11 @@ function renderActivityPanel(topic) {
             <p class="body-match-kicker">Picture choice</p>
             <p class="numbers-game-note">Tap the Chinese word that matches the picture.</p>
           </div>
+          ${
+            state.clothesQuizResult === "correct"
+              ? '<button class="small-button is-practice-advance-button" type="button" data-clothes-quiz-next>Next picture</button>'
+              : ""
+          }
         </div>
         <figure class="clothes-quiz-visual">
           <img class="clothes-quiz-image" src="${prompt.imagePath}" alt="${prompt.imageAlt}" ${imageLoadingAttrs()} />
@@ -505,11 +510,6 @@ function renderActivityPanel(topic) {
             })
             .join("")}
         </div>
-        ${
-          state.clothesQuizResult === "correct"
-            ? `<div class="clothes-quiz-next"><button class="small-button is-action-button" type="button" data-clothes-quiz-next>Next picture</button></div>`
-            : ""
-        }
       </section>
     `;
 
@@ -548,7 +548,7 @@ function renderActivityPanel(topic) {
           <p class="body-match-kicker">Quick Game</p>
           <h4>How many do you see?</h4>
         </div>
-        <button class="small-button is-action-button" type="button" data-number-game-refresh>Try another</button>
+        <button class="small-button is-practice-advance-button" type="button" data-number-game-refresh>Try another</button>
       </div>
       <p class="numbers-game-note">The quantity changes each round, so kids do not always count in order from one.</p>
       <div class="numbers-game-visual">
@@ -615,7 +615,7 @@ function renderActivityPanel(topic) {
       <p class="math-game-feedback">${state.lastMathFeedback}</p>
       ${
         state.mathChallengeSolved
-          ? '<button class="small-button is-action-button math-game-next" type="button" data-math-game-next>Next question</button>'
+          ? '<button class="small-button is-practice-advance-button math-game-next" type="button" data-math-game-next>Next question</button>'
           : ""
       }
     `;
@@ -664,7 +664,7 @@ function renderActivityPanel(topic) {
             <p class="body-match-kicker">Build the sentence</p>
             <p class="numbers-game-note">Tap the word pieces in order.</p>
           </div>
-          <button class="small-button is-action-button" type="button" data-intro-build-new>New phrase</button>
+          <button class="small-button is-practice-advance-button" type="button" data-intro-build-new>New phrase</button>
         </div>
         ${state.lastIntroductionsFeedback ? `<p class="greetings-game-feedback">${state.lastIntroductionsFeedback}</p>` : ""}
         <div class="intro-build-target">
@@ -771,7 +771,7 @@ function renderActivityPanel(topic) {
               <p class="body-match-kicker">Build the phrase</p>
               <h4>${buildTarget.prompt}</h4>
             </div>
-            <button class="small-button is-action-button" type="button" data-age-build-new>New phrase</button>
+            <button class="small-button is-practice-advance-button" type="button" data-age-build-new>New phrase</button>
           </div>
           <p class="numbers-game-note">Tap the word pieces in order to build the sentence.</p>
           <div class="intro-build-target">

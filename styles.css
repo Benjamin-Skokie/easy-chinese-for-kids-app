@@ -1775,7 +1775,9 @@ h4 {
   box-shadow: 0 0 0 3px rgba(190, 91, 73, 0.16), 0 14px 28px rgba(190, 91, 73, 0.24);
 }
 
-.small-button.is-play-button {
+.small-button.is-play-button,
+.small-button.is-practice-advance-button,
+.small-button.is-playback-control-button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -1794,7 +1796,9 @@ h4 {
   font-size: 0;
 }
 
-.small-button.is-play-button::before {
+.small-button.is-play-button::before,
+.small-button.is-practice-advance-button::before,
+.small-button.is-playback-control-button::before {
   content: "";
   width: 0;
   height: 0;
@@ -1804,14 +1808,70 @@ h4 {
   filter: drop-shadow(0 1px 0 rgba(27, 76, 42, 0.24));
 }
 
+.small-button.is-pause-button::before {
+  width: 16px;
+  height: 20px;
+  border: 0;
+  background: linear-gradient(90deg, currentColor 0 5px, transparent 5px 11px, currentColor 11px 16px);
+}
+
+.small-button.is-stop-button::before {
+  width: 18px;
+  height: 18px;
+  border: 0;
+  background: currentColor;
+  border-radius: 3px;
+}
+
+.small-button.is-pause-button {
+  color: #5d4511;
+  border-color: rgba(177, 126, 30, 0.48);
+  background: linear-gradient(145deg, #f7d568, #dfa92d);
+  box-shadow: 0 9px 20px rgba(191, 139, 28, 0.26), inset 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+.small-button.is-stop-button {
+  color: #fff8f5;
+  border-color: rgba(142, 54, 46, 0.46);
+  background: linear-gradient(145deg, #df806d, #b9473b);
+  box-shadow: 0 9px 20px rgba(171, 61, 49, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.28);
+}
+
+.small-button.is-resume-button::before {
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 16px solid currentColor;
+  background: transparent;
+}
+
 .small-button.is-play-button:hover,
-.small-button.is-play-button:focus-visible {
+.small-button.is-play-button:focus-visible,
+.small-button.is-practice-advance-button:hover,
+.small-button.is-practice-advance-button:focus-visible,
+.small-button.is-playback-control-button:hover,
+.small-button.is-playback-control-button:focus-visible {
   background: linear-gradient(145deg, #89c873, #347d4d);
   box-shadow: 0 0 0 4px rgba(82, 158, 91, 0.2), 0 12px 24px rgba(52, 121, 74, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.3);
 }
 
-.small-button.is-play-button:active {
+.small-button.is-play-button:active,
+.small-button.is-practice-advance-button:active,
+.small-button.is-playback-control-button:active {
   transform: translateY(1px) scale(0.98);
+}
+
+.small-button.is-pause-button:hover,
+.small-button.is-pause-button:focus-visible {
+  background: linear-gradient(145deg, #ffe17b, #d89d22);
+  box-shadow: 0 0 0 4px rgba(234, 183, 53, 0.22), 0 12px 24px rgba(191, 139, 28, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.42);
+}
+
+.small-button.is-stop-button:hover,
+.small-button.is-stop-button:focus-visible {
+  background: linear-gradient(145deg, #ed927c, #a93d34);
+  box-shadow: 0 0 0 4px rgba(198, 75, 61, 0.2), 0 12px 24px rgba(171, 61, 49, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.3);
 }
 
 .small-button.is-hidden {
@@ -5167,6 +5227,8 @@ h4 {
 .clothes-quiz-visual {
   width: min(100%, 420px);
   margin: 0 auto;
+  justify-self: center;
+  align-self: center;
   overflow: hidden;
   border: 1px solid rgba(221, 207, 187, 0.84);
   border-radius: 8px;
@@ -5411,10 +5473,9 @@ h4 {
   min-width: 0;
 }
 
-.multiplication-playback-controls .small-button:not(.is-play-button) {
-  min-width: 82px;
-  min-height: 48px;
-  border-radius: 999px;
+.multiplication-playback-controls .small-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.42;
 }
 
 .multiplication-matrix-card,
@@ -5494,6 +5555,17 @@ h4 {
 .multiplication-detail-card {
   display: grid;
   gap: 10px;
+  position: relative;
+}
+
+.multiplication-detail-card .numbers-game-top {
+  display: block;
+}
+
+.multiplication-detail-card .numbers-game-top .small-button {
+  position: absolute;
+  top: 18px;
+  right: 18px;
 }
 
 .multiplication-line-hanzi {

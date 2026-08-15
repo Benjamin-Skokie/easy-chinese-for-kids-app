@@ -124,6 +124,27 @@ test("the lazy-image trial keeps the first lesson scene eager and game art lazy"
   assert.match(practiceSource, /imageLoadingAttrs\(\)/);
 });
 
+test("new and next practice rounds use the shared green-arrow control", () => {
+  const stylesSource = readFileSync("styles.css", "utf8");
+  const lessonSource = readFileSync("src/core/lesson-practice-runtime.js", "utf8");
+  const schoolSource = readFileSync("src/features/school-life/school-food-runtime.js", "utf8");
+  const worldSource = readFileSync("src/features/world/world-runtime.js", "utf8");
+  const foundationsSource = readFileSync("src/features/foundations/foundations-runtime.js", "utf8");
+  assert.match(stylesSource, /\.small-button\.is-practice-advance-button/);
+  assert.match(lessonSource, /is-practice-advance-button" type="button" data-room-build-next/);
+  assert.match(lessonSource, /is-practice-advance-button" type="button" data-number-game-refresh/);
+  assert.match(lessonSource, /numbers-game-top[\s\S]*data-clothes-quiz-next[\s\S]*clothes-quiz-visual/);
+  assert.match(schoolSource, /is-practice-advance-button" type="button" data-stationery-picture-match-next/);
+  assert.match(worldSource, /is-practice-advance-button" type="button" data-world-colour-next/);
+  assert.match(foundationsSource, /is-practice-advance-button body-next-round" type="button" data-body-next-round/);
+});
+
+test("picture-led practice cards keep their image centered", () => {
+  const stylesSource = readFileSync("styles.css", "utf8");
+  assert.match(stylesSource, /\.clothes-quiz-visual \{[\s\S]*margin: 0 auto;[\s\S]*justify-self: center;/);
+  assert.match(stylesSource, /\.clothes-quiz-image \{[\s\S]*object-fit: contain;/);
+});
+
 test("Leisure Time uses Tiantian for the park soccer scene", () => {
   const runtimeSource = readFileSync("src/features/play-hobbies/play-hobbies-runtime.js", "utf8");
   assert.match(runtimeSource, /天天在公园踢足球/);
@@ -136,10 +157,10 @@ test("Leisure Time sentence builder shows its word-order scaffold", () => {
   assert.match(runtimeSource, /hobbies-sentence-slot/);
 });
 
-test("Leisure Time prefers the Meijia Mandarin voice", () => {
+test("Leisure Time uses the shared site-wide Tingting preference", () => {
   const runtimeSource = readFileSync("src/features/play-hobbies/play-hobbies-runtime.js", "utf8");
-  assert.match(runtimeSource, /\["4b:4", "4b:7"\]\.includes\(lessonKey\(\)\)/);
-  assert.match(runtimeSource, /\["meijia", "mei-jia", "tingting"/);
+  assert.match(runtimeSource, /const speakLesson = \(text, rate\) => speak\(text, rate\);/);
+  assert.doesNotMatch(runtimeSource, /const voiceNames/);
 });
 
 test("audio cancels the prior utterance before speaking a new phrase", () => {
@@ -157,11 +178,12 @@ test("audio cancels the prior utterance before speaking a new phrase", () => {
   assert.deepEqual(spoken[0], { text: "你好", lang: "zh-CN", rate: 0.78, pitch: 1 });
 });
 
-test("audio prefers the clear Mandarin female voice when it is installed", () => {
+test("audio prefers Tingting over other installed Chinese voices", () => {
   const spoken = [];
   const tingting = { name: "Tingting", lang: "zh-CN" };
+  const meijia = { name: "Meijia", lang: "zh-CN" };
   const audio = createAudioService({
-    synthesis: { cancel: () => {}, speak: (utterance) => spoken.push(utterance), getVoices: () => [{ name: "Eddy", lang: "zh-CN" }, tingting] },
+    synthesis: { cancel: () => {}, speak: (utterance) => spoken.push(utterance), getVoices: () => [{ name: "Eddy", lang: "zh-CN" }, tingting, meijia] },
     createUtterance: (text) => ({ text }),
     getSceneRate: () => 0.64,
     getSceneLinePauseMs: () => 280
@@ -876,8 +898,13 @@ test("learner audio controls use the shared green Play button", () => {
   assert.match(styles, /#3f8d58/);
   assert.match(worldSource, /data-world-mission-play>Play</);
   assert.match(multiplicationSource, /data-multiplication-play-all>Play</);
-  assert.match(multiplicationSource, /data-multiplication-pause/);
-  assert.match(multiplicationSource, /data-multiplication-stop/);
+  assert.match(multiplicationSource, /is-playback-control-button is-pause-button/);
+  assert.match(multiplicationSource, /is-playback-control-button is-stop-button/);
+  assert.match(styles, /\.small-button\.is-playback-control-button/);
+  assert.match(styles, /\.small-button\.is-pause-button \{[\s\S]*#dfa92d/);
+  assert.match(styles, /\.small-button\.is-stop-button \{[\s\S]*#b9473b/);
+  assert.match(multiplicationSource, /<div class="numbers-game-top">[\s\S]*Selected line[\s\S]*data-multiplication-item="\$\{activeItem\.id\}"/);
+  assert.match(styles, /\.multiplication-detail-card \.numbers-game-top \.small-button \{[\s\S]*position: absolute/);
 });
 
 test("navigation display toggles use the compact speaker, Pī, and ABC icon set", () => {

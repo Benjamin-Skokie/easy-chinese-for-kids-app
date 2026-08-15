@@ -5,7 +5,7 @@ export function createAudioService({
   getSceneLinePauseMs,
   schedule = globalThis.setTimeout
 } = {}) {
-  const preferredVoiceNames = ["tingting", "ting-ting", "meijia", "mei-jia", "sinji", "sin-ji"];
+  const preferredVoiceNames = ["tingting", "ting-ting"];
 
   function preferredChineseVoice(names = preferredVoiceNames) {
     const voices = synthesis?.getVoices?.() ?? [];

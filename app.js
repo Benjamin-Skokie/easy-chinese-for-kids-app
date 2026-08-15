@@ -8,7 +8,7 @@
     getSceneLinePauseMs,
     schedule = globalThis.setTimeout
   } = {}) {
-    const preferredVoiceNames = ["tingting", "ting-ting", "meijia", "mei-jia", "sinji", "sin-ji"];
+    const preferredVoiceNames = ["tingting", "ting-ting"];
     function preferredChineseVoice(names = preferredVoiceNames) {
       const voices = synthesis?.getVoices?.() ?? [];
       return names.map((name) => voices.find((voice) => voice.name.toLowerCase() === name)).find(Boolean);
@@ -810,7 +810,7 @@
         <div class="intro-build-choices">
           ${state2.roomBuildAvailableTokens.map((token, index) => `<button class="intro-build-chip" type="button" data-room-build-token="${index}">${token}</button>`).join("")}
         </div>
-        <div class="intro-build-actions"><button class="small-button" type="button" data-room-build-clear>Clear</button>${state2.roomBuildResult === "correct" ? '<button class="small-button is-action-button" type="button" data-room-build-next>Next picture</button>' : ""}</div>
+        <div class="intro-build-actions"><button class="small-button" type="button" data-room-build-clear>Clear</button>${state2.roomBuildResult === "correct" ? '<button class="small-button is-practice-advance-button" type="button" data-room-build-next>Next picture</button>' : ""}</div>
       </section>
       ${renderPracticeSayCards2([
           { hanzi: "\u5730\u4E0A\u6709\u4E66\u3002", pinyin: "d\xEC sh\xE0ng y\u01D2u sh\u016B.", english: "There is a book on the floor.", audio: "\u5730\u4E0A\u6709\u4E66" }
@@ -850,7 +850,7 @@
         <div class="intro-build-choices">
           ${state2.comparisonBuildAvailableTokens.map((token, index) => `<button class="intro-build-chip" type="button" data-comparison-build-token="${index}">${token}</button>`).join("")}
         </div>
-        <div class="intro-build-actions"><button class="small-button" type="button" data-comparison-build-clear>Clear</button>${state2.comparisonBuildResult === "correct" ? '<button class="small-button is-action-button" type="button" data-comparison-build-next>Next picture</button>' : ""}</div>
+        <div class="intro-build-actions"><button class="small-button" type="button" data-comparison-build-clear>Clear</button>${state2.comparisonBuildResult === "correct" ? '<button class="small-button is-practice-advance-button" type="button" data-comparison-build-next>Next picture</button>' : ""}</div>
       </section>
     `;
         activityList2.querySelectorAll("[data-comparison-build-token]").forEach((button) => {
@@ -877,7 +877,7 @@
           return `<button class="clothes-quiz-option${resultClass}" type="button" data-position-quiz-pick="${item.id}">${mark}<span class="numbers-game-hanzi">${item.hanzi}</span>${state2.showPinyin ? `<span class="numbers-game-pinyin">${item.pinyin}</span>` : ""}${state2.showEnglish ? `<span class="numbers-game-english">${item.english}</span>` : ""}</button>`;
         }).join("")}
         </div>
-        ${state2.positionQuizResult === "correct" ? '<div class="clothes-quiz-next"><button class="small-button is-action-button" type="button" data-position-quiz-next>Next sentence</button></div>' : ""}
+        ${state2.positionQuizResult === "correct" ? '<div class="clothes-quiz-next"><button class="small-button is-practice-advance-button" type="button" data-position-quiz-next>Next sentence</button></div>' : ""}
       </section>
       ${renderPracticeSayCards2([
           { hanzi: "\u4E66\u67B6\u5728\u684C\u5B50\u5DE6\u8FB9\u3002", pinyin: "sh\u016B ji\xE0 z\xE0i zhu\u014D zi zu\u01D2 bi\u0101n.", english: "The bookshelf is to the left of the desk.", audio: "\u4E66\u67B6\u5728\u684C\u5B50\u5DE6\u8FB9" },
@@ -913,7 +913,7 @@
         <div class="intro-build-choices">
           ${state2.transportBuildAvailableTokens.map((token, index) => `<button class="intro-build-chip" type="button" data-transport-build-token="${index}">${token}</button>`).join("")}
         </div>
-        <div class="intro-build-actions"><button class="small-button" type="button" data-transport-build-clear>Clear</button>${state2.transportBuildResult === "correct" ? '<button class="small-button is-action-button" type="button" data-transport-build-next>Next picture</button>' : ""}</div>
+        <div class="intro-build-actions"><button class="small-button" type="button" data-transport-build-clear>Clear</button>${state2.transportBuildResult === "correct" ? '<button class="small-button is-practice-advance-button" type="button" data-transport-build-next>Next picture</button>' : ""}</div>
       </section>
     `;
         activityList2.querySelectorAll("[data-transport-build-token]").forEach((button) => {
@@ -943,7 +943,7 @@
           return `<button class="clothes-quiz-option${resultClass}" type="button" data-clock-quiz-pick="${item.id}">${mark}<span class="numbers-game-hanzi">${item.hanzi}</span>${state2.showPinyin ? `<span class="numbers-game-pinyin">${item.pinyin}</span>` : ""}${state2.showEnglish ? `<span class="numbers-game-english">${item.english}</span>` : ""}</button>`;
         }).join("")}
         </div>
-        ${state2.clockQuizResult === "correct" ? '<div class="clothes-quiz-next"><button class="small-button is-action-button" type="button" data-clock-quiz-next>Next clock</button></div>' : ""}
+        ${state2.clockQuizResult === "correct" ? '<div class="clothes-quiz-next"><button class="small-button is-practice-advance-button" type="button" data-clock-quiz-next>Next clock</button></div>' : ""}
       </section>
       ${renderPracticeSayCards2([
           { hanzi: "\u51E0\u70B9\u4E86\uFF1F", pinyin: "j\u01D0 di\u01CEn le?", english: "What time is it?", audio: "\u51E0\u70B9\u4E86" },
@@ -985,7 +985,7 @@
           return `<button class="clothes-quiz-option${resultClass}" type="button" data-time-routine-quiz-pick="${item.id}">${mark}<span class="numbers-game-hanzi">${item.hanzi}</span>${state2.showPinyin ? `<span class="numbers-game-pinyin">${item.pinyin}</span>` : ""}${state2.showEnglish ? `<span class="numbers-game-english">${item.english}</span>` : ""}</button>`;
         }).join("")}
         </div>
-        ${state2.timeRoutineQuizResult === "correct" ? '<div class="clothes-quiz-next"><button class="small-button is-action-button" type="button" data-time-routine-quiz-next>Next picture</button></div>' : ""}
+        ${state2.timeRoutineQuizResult === "correct" ? '<div class="clothes-quiz-next"><button class="small-button is-practice-advance-button" type="button" data-time-routine-quiz-next>Next picture</button></div>' : ""}
       </section>
       ${renderPracticeSayCards2([
           { hanzi: "\u4F60\u6BCF\u5929\u51E0\u70B9\u8D77\u5E8A\uFF1F", pinyin: "n\u01D0 m\u011Bi ti\u0101n j\u01D0 di\u01CEn q\u01D0 chu\xE1ng?", english: "What time do you get up every day?", audio: "\u4F60\u6BCF\u5929\u51E0\u70B9\u8D77\u5E8A" },
@@ -1016,6 +1016,7 @@
             <p class="body-match-kicker">Picture choice</p>
             <p class="numbers-game-note">Tap the Chinese word that matches the picture.</p>
           </div>
+          ${state2.clothesQuizResult === "correct" ? '<button class="small-button is-practice-advance-button" type="button" data-clothes-quiz-next>Next picture</button>' : ""}
         </div>
         <figure class="clothes-quiz-visual">
           <img class="clothes-quiz-image" src="${prompt.imagePath}" alt="${prompt.imageAlt}" ${imageLoadingAttrs()} />
@@ -1029,7 +1030,6 @@
           return `<button class="clothes-quiz-option${resultClass}" type="button" data-clothes-quiz-pick="${item.id}">${mark}<span class="numbers-game-hanzi">${item.hanzi}</span>${state2.showPinyin ? `<span class="numbers-game-pinyin">${item.pinyin}</span>` : ""}${state2.showEnglish ? `<span class="numbers-game-english">${item.english}</span>` : ""}</button>`;
         }).join("")}
         </div>
-        ${state2.clothesQuizResult === "correct" ? `<div class="clothes-quiz-next"><button class="small-button is-action-button" type="button" data-clothes-quiz-next>Next picture</button></div>` : ""}
       </section>
     `;
         activityList2.querySelectorAll("[data-clothes-quiz-pick]").forEach((button) => {
@@ -1064,7 +1064,7 @@
           <p class="body-match-kicker">Quick Game</p>
           <h4>How many do you see?</h4>
         </div>
-        <button class="small-button is-action-button" type="button" data-number-game-refresh>Try another</button>
+        <button class="small-button is-practice-advance-button" type="button" data-number-game-refresh>Try another</button>
       </div>
       <p class="numbers-game-note">The quantity changes each round, so kids do not always count in order from one.</p>
       <div class="numbers-game-visual">
@@ -1126,7 +1126,7 @@
       </form>
       <p class="numbers-game-note">This stage uses numbers up to ${stage.end}.</p>
       <p class="math-game-feedback">${state2.lastMathFeedback}</p>
-      ${state2.mathChallengeSolved ? '<button class="small-button is-action-button math-game-next" type="button" data-math-game-next>Next question</button>' : ""}
+      ${state2.mathChallengeSolved ? '<button class="small-button is-practice-advance-button math-game-next" type="button" data-math-game-next>Next question</button>' : ""}
     `;
         activityList2.appendChild(mathCard);
         activityList2.querySelector("[data-number-game-refresh]")?.addEventListener("click", () => {
@@ -1167,7 +1167,7 @@
             <p class="body-match-kicker">Build the sentence</p>
             <p class="numbers-game-note">Tap the word pieces in order.</p>
           </div>
-          <button class="small-button is-action-button" type="button" data-intro-build-new>New phrase</button>
+          <button class="small-button is-practice-advance-button" type="button" data-intro-build-new>New phrase</button>
         </div>
         ${state2.lastIntroductionsFeedback ? `<p class="greetings-game-feedback">${state2.lastIntroductionsFeedback}</p>` : ""}
         <div class="intro-build-target">
@@ -1265,7 +1265,7 @@
               <p class="body-match-kicker">Build the phrase</p>
               <h4>${buildTarget.prompt}</h4>
             </div>
-            <button class="small-button is-action-button" type="button" data-age-build-new>New phrase</button>
+            <button class="small-button is-practice-advance-button" type="button" data-age-build-new>New phrase</button>
           </div>
           <p class="numbers-game-note">Tap the word pieces in order to build the sentence.</p>
           <div class="intro-build-target">
@@ -3057,7 +3057,7 @@
         return `<button class="clothes-quiz-option${resultClass}" type="button" data-meals-picture-pick="${option.id}">${mark}<span class="numbers-game-hanzi">${option.hanzi}</span>${state2.showPinyin ? `<span class="numbers-game-pinyin">${option.pinyin}</span>` : ""}${state2.showEnglish ? `<span class="numbers-game-english">${option.english}</span>` : ""}</button>`;
       }).join("")}
       </div>
-      ${state2.mealsPictureQuizResult === "correct" ? '<div class="clothes-quiz-next"><button class="small-button is-action-button" type="button" data-meals-picture-next>Next picture</button></div>' : ""}
+      ${state2.mealsPictureQuizResult === "correct" ? '<div class="clothes-quiz-next"><button class="small-button is-practice-advance-button" type="button" data-meals-picture-next>Next picture</button></div>' : ""}
     </section>
   `;
     }
@@ -3468,7 +3468,7 @@
           <div class="transport-build-hint">${state2.showPinyin ? `<p class="transport-build-hint-pinyin">${item.pinyin}</p>` : ""}${state2.showEnglish ? `<p class="transport-build-hint-english">${item.english}</p>` : ""}</div>
           <div class="transport-build-target is-${state2.schoolBuildResult}">${state2.schoolBuildResult ? `<span class="answer-result-mark" aria-hidden="true">${state2.schoolBuildResult === "correct" ? "\u2713" : "\xD7"}</span>` : ""}${state2.schoolBuildSelectedTokens.length ? state2.schoolBuildSelectedTokens.map((token) => `<span class="intro-build-chip is-selected">${token}</span>`).join("") : '<span class="intro-build-placeholder">Your sentence will appear here.</span>'}</div>
           <div class="intro-build-choices">${state2.schoolBuildAvailableTokens.map((token, index) => `<button class="intro-build-chip" type="button" data-school-build-token="${index}">${token}</button>`).join("")}</div>
-          <div class="intro-build-actions"><button class="small-button" type="button" data-school-build-clear>Clear</button>${state2.schoolBuildResult === "correct" ? '<button class="small-button is-action-button" type="button" data-school-build-next>Next picture</button>' : ""}</div>
+          <div class="intro-build-actions"><button class="small-button" type="button" data-school-build-clear>Clear</button>${state2.schoolBuildResult === "correct" ? '<button class="small-button is-practice-advance-button" type="button" data-school-build-next>Next picture</button>' : ""}</div>
         </section>
       </div>
     </section>
@@ -3490,7 +3490,7 @@
       <div class="transport-build-hint">${state2.showPinyin ? `<p class="transport-build-hint-pinyin">${item.pinyin}</p>` : ""}${state2.showEnglish ? `<p class="transport-build-hint-english">${item.english}</p>` : ""}</div>
       <div class="transport-build-target is-${state2.schoolBuildResult}">${state2.schoolBuildResult ? `<span class="answer-result-mark" aria-hidden="true">${state2.schoolBuildResult === "correct" ? "\u2713" : "\xD7"}</span>` : ""}${state2.schoolBuildSelectedTokens.length ? state2.schoolBuildSelectedTokens.map((token) => `<span class="intro-build-chip is-selected">${token}</span>`).join("") : '<span class="intro-build-placeholder">Your sentence will appear here.</span>'}</div>
       <div class="intro-build-choices">${state2.schoolBuildAvailableTokens.map((token, index) => `<button class="intro-build-chip" type="button" data-school-build-token="${index}">${token}</button>`).join("")}</div>
-      <div class="intro-build-actions"><button class="small-button" type="button" data-school-build-clear>Clear</button>${state2.schoolBuildResult === "correct" ? '<button class="small-button is-action-button" type="button" data-school-build-next>Next picture</button>' : ""}</div>
+      <div class="intro-build-actions"><button class="small-button" type="button" data-school-build-clear>Clear</button>${state2.schoolBuildResult === "correct" ? '<button class="small-button is-practice-advance-button" type="button" data-school-build-next>Next picture</button>' : ""}</div>
     </section>
   `;
     }
@@ -3544,7 +3544,7 @@
           </div>
         `).join("")}
       </div>
-      ${isComplete ? `<div class="stationery-picture-match-result is-correct"><span class="answer-result-mark" aria-hidden="true">\u2713</span><div><strong>${Object.values(round.target).join("")}\u3002</strong>${state2.showPinyin ? `<span>${round.pinyin}</span>` : ""}${state2.showEnglish ? `<span>${round.english}</span>` : ""}</div><button class="small-button is-action-button" type="button" data-stationery-picture-match-next>Next picture</button></div>` : ""}
+      ${isComplete ? `<div class="stationery-picture-match-result is-correct"><span class="answer-result-mark" aria-hidden="true">\u2713</span><div><strong>${Object.values(round.target).join("")}\u3002</strong>${state2.showPinyin ? `<span>${round.pinyin}</span>` : ""}${state2.showEnglish ? `<span>${round.english}</span>` : ""}</div><button class="small-button is-practice-advance-button" type="button" data-stationery-picture-match-next>Next picture</button></div>` : ""}
     </section>
   `;
     }
@@ -6433,7 +6433,7 @@
                   </div>
                 </div>
               ` : ""}
-          ${roundComplete && !allDone ? '<button class="small-button body-next-round" type="button" data-body-next-round>Next set</button>' : ""}
+          ${roundComplete && !allDone ? '<button class="small-button is-practice-advance-button body-next-round" type="button" data-body-next-round>Next set</button>' : ""}
           ${allDone ? '<button class="small-button is-play-button body-next-round" type="button" data-body-play-again>Play</button>' : ""}
         </div>
         <div class="body-more-practice-card">
@@ -6900,8 +6900,8 @@
           </div>
           <div class="multiplication-playback-controls">
             <button class="small-button is-play-button" type="button" data-multiplication-play-all>Play</button>
-            <button class="small-button" type="button" data-multiplication-pause disabled>Pause</button>
-            <button class="small-button" type="button" data-multiplication-stop disabled>Stop</button>
+            <button class="small-button is-playback-control-button is-pause-button" type="button" data-multiplication-pause aria-label="Pause multiplication rhyme" disabled>Pause</button>
+            <button class="small-button is-playback-control-button is-stop-button" type="button" data-multiplication-stop aria-label="Stop multiplication rhyme" disabled>Stop</button>
           </div>
         </div>
       </div>
@@ -6922,11 +6922,13 @@
         </div>
       </div>
       <div class="multiplication-detail-card">
-        <p class="body-match-kicker">Selected line</p>
+        <div class="numbers-game-top">
+          <p class="body-match-kicker">Selected line</p>
+          <button class="small-button is-play-button" type="button" data-multiplication-item="${activeItem.id}">Play</button>
+        </div>
         <p class="multiplication-line-hanzi">${activeItem.hanzi}</p>
         ${state2.showPinyin ? `<p class="multiplication-line-pinyin">${activeItem.pinyin}</p>` : ""}
         ${state2.showEnglish ? `<p class="multiplication-line-english">${activeItem.english}</p>` : ""}
-        <button class="small-button is-play-button" type="button" data-multiplication-item="${activeItem.id}">Play</button>
       </div>
     </div>
   `;
@@ -6996,6 +6998,9 @@
       if (pauseButton) {
         pauseButton.disabled = !isPlaying;
         pauseButton.textContent = multiplicationPlaybackPaused ? "Resume" : "Pause";
+        pauseButton.classList.toggle("is-resume-button", multiplicationPlaybackPaused);
+        pauseButton.classList.toggle("is-pause-button", !multiplicationPlaybackPaused);
+        pauseButton.setAttribute("aria-label", multiplicationPlaybackPaused ? "Resume multiplication rhyme" : "Pause multiplication rhyme");
       }
       if (stopButton) stopButton.disabled = !isPlaying;
     }
@@ -8514,7 +8519,7 @@
         const mark = selected ? `<span class="answer-result-mark" aria-hidden="true">${state2.worldColourResult === "correct" ? "\u2713" : "\xD7"}</span>` : "";
         return `<button class="clothes-quiz-option${resultClass}" type="button" data-world-colour-guess="${item.id}">${mark}<span class="numbers-game-hanzi">${item.phrase}</span>${state2.showPinyin ? `<span class="numbers-game-pinyin">${item.phrasePinyin}</span>` : ""}${state2.showEnglish ? `<span class="numbers-game-english">${item.phraseEnglish}</span>` : ""}</button>`;
       }).join("")}</div>
-        ${state2.worldColourResult === "correct" ? '<div class="clothes-quiz-next"><button class="small-button is-action-button" type="button" data-world-colour-next>Next picture</button></div>' : ""}
+        ${state2.worldColourResult === "correct" ? '<div class="clothes-quiz-next"><button class="small-button is-practice-advance-button" type="button" data-world-colour-next>Next picture</button></div>' : ""}
       </section>
       <section class="practice-split-card world-favourite-colour-practice"><div class="numbers-game-top"><div><p class="body-match-kicker">My favourite colour</p><p class="numbers-game-note">Choose your favourite colour, then listen and say the sentence.</p></div><button class="small-button is-play-button" type="button" data-world-favourite-play>Play</button></div><div class="world-favourite-colour-options">${items.map((item) => `<button class="small-button${item.id === favourite.id ? " is-action-button" : ""}" type="button" data-world-favourite="${item.id}">${item.hanzi}</button>`).join("")}</div><p class="world-favourite-sentence">\u6211\u559C\u6B22${favourite.hanzi}\u3002${state2.showPinyin ? `<span>w\u01D2 x\u01D0 huan ${favourite.pinyin}.</span>` : ""}${state2.showEnglish ? `<span>I like ${favourite.english}.</span>` : ""}</p></section>
       <section class="practice-split-card practice-say-card"><p class="body-match-kicker">Book sentence</p><div class="numbers-game-options"><button class="numbers-game-option greetings-game-option family-listen-option" type="button" data-world-say="\u6211\u4E0D\u559C\u6B22\u9ED1\u8272\u548C\u767D\u8272">\u6211\u4E0D\u559C\u6B22\u9ED1\u8272\u548C\u767D\u8272\u3002${state2.showPinyin ? '<span class="numbers-game-pinyin">w\u01D2 b\xF9 x\u01D0 huan h\u0113i s\xE8 h\xE9 b\xE1i s\xE8.</span>' : ""}${state2.showEnglish ? '<span class="numbers-game-english">I do not like black and white.</span>' : ""}</button></div></section>
@@ -8834,8 +8839,7 @@
   function createPlayHobbiesRuntime({ state: state2, currentTopic: currentTopic2, currentBook: currentBook2, currentLesson: currentLesson2, focusExplorer: focusExplorer2, speak: speak2, selectFocusItem: selectFocusItem2, activityPanelTitle: activityPanelTitle2, activityPanelSummary: activityPanelSummary2, activityList: activityList2, renderActivityPanel: renderActivityPanel2 }) {
     const lessonKey = () => ({ "hobbies-3b": "3b:4", "hobbies-at-home": "4b:4", "hobbies-leisure": "4b:7" })[currentTopic2().id] ?? "2a:5";
     const lesson = () => lessons[lessonKey()] ?? lessons["2a:5"];
-    const voiceNames = () => ["4b:4", "4b:7"].includes(lessonKey()) ? ["meijia", "mei-jia", "tingting", "ting-ting", "sinji", "sin-ji"] : void 0;
-    const speakLesson = (text, rate) => speak2(text, rate, voiceNames());
+    const speakLesson = (text, rate) => speak2(text, rate);
     const round = () => lesson().rounds.find((entry) => entry.itemId === state2.hobbiesBuildOrder[state2.hobbiesBuildRoundIndex]) ?? lesson().rounds[0];
     const answerFor = (entry, tokens = state2.hobbiesBuildSelectedTokens) => entry.answers.find((answer) => answer.tokens.length === tokens.length && answer.tokens.every((token, index) => token === tokens[index]));
     const validPrefix = (entry, tokens) => entry.answers.some((answer) => tokens.every((token, index) => token === answer.tokens[index]));
@@ -8870,7 +8874,7 @@
         const item = itemFor(id);
         return `<button class="school-word-card is-text-only" type="button" data-hobbies-word="${id}"><span class="time-asset-hanzi">${item.hanzi}</span>${state2.showPinyin ? `<span class="time-asset-pinyin">${item.pinyin}</span>` : ""}${state2.showEnglish ? `<span class="time-asset-english">${item.english}</span>` : ""}</button>`;
       }).join("")}</div></section><section class="visual-topic-notes school-review-notes"><p class="body-match-kicker">Useful notes</p><div class="visual-topic-note-grid school-review-grid"><article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">${page.note[0]}</p>${state2.showPinyin ? `<p class="visual-topic-note-pinyin">${page.note[1]}</p>` : ""}${state2.showEnglish ? `<p class="visual-topic-note-english">${page.note[2]}</p>` : ""}<p class="visual-topic-note-example">${page.note[3]}</p></article></div></section></div>`;
-      focusExplorer2.querySelectorAll("[data-hobbies-word]").forEach((button) => button.addEventListener("click", () => selectFocusItem2(button.dataset.hobbiesWord, { playAudio: true, voiceNames: voiceNames() })));
+      focusExplorer2.querySelectorAll("[data-hobbies-word]").forEach((button) => button.addEventListener("click", () => selectFocusItem2(button.dataset.hobbiesWord, { playAudio: true })));
       focusExplorer2.querySelectorAll("[data-hobbies-scene]").forEach((button) => button.addEventListener("click", () => state2.tapAudioEnabled && speakLesson(button.dataset.hobbiesScene, 0.74)));
     }
     function renderHobbiesPractice(topic) {
