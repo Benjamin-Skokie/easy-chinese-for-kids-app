@@ -53,6 +53,14 @@ jobs:
             --exclude culture/content \
             --exclude culture/experiments \
             ./ _site/
+          while IFS= read -r link; do
+            target=$(readlink "$link")
+            source="culture/content/${target#*/culture/content/}"
+            test -f "$source"
+            rm "$link"
+            cp "$source" "$link"
+          done < <(find _site -type l -print)
+          test -z "$(find _site -type l -print -quit)"
           test -f _site/index.html
 
       - name: Upload Pages artifact
