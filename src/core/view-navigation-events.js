@@ -32,4 +32,24 @@ export function bindViewNavigationEvents({ state, switchView, updateTopicPageVis
       link.closest(".global-view-menu")?.removeAttribute("open");
     });
   });
+
+  document.querySelectorAll("[data-culture-target]").forEach((link) => {
+    link.addEventListener("click", (event) => {
+      if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) {
+        return;
+      }
+
+      event.preventDefault();
+      const target = document.getElementById(`culture-${link.dataset.cultureTarget}`);
+      if (!target) {
+        return;
+      }
+
+      document.querySelectorAll("[data-culture-target]").forEach((card) => {
+        card.classList.toggle("is-selected", card === link);
+      });
+      window.history.pushState(null, "", link.getAttribute("href"));
+      target.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  });
 }

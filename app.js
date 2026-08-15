@@ -315,6 +315,7 @@
       activityPanelSummary: documentRoot.getElementById("activity-panel-summary"),
       topicPanel: documentRoot.getElementById("topics-panel"),
       bookPanel: documentRoot.getElementById("books-panel"),
+      culturePanel: documentRoot.getElementById("culture-panel"),
       topicColumns: documentRoot.querySelector(".topic-columns"),
       detailLayout: documentRoot.querySelector(".detail-layout"),
       learningCultureNav: documentRoot.getElementById("learningCultureNav")
@@ -1515,7 +1516,7 @@
 
   // src/core/navigation-runtime.js
   function createNavigationRuntime(context) {
-    const { state: state2, topicData: topicData2, books: books2, topicGroups: topicGroups2, learningHomeCategories: learningHomeCategories2, bookHomeCategories: bookHomeCategories2, topicCardMeta: topicCardMeta2, topicPageUrl: topicPageUrl2, topicGroupsRoot: topicGroupsRoot2, bookSelect: bookSelect2, lessonSelect: lessonSelect2, lookupCard: lookupCard2, bookBrowser: bookBrowser2, topicPanel: topicPanel2, bookPanel: bookPanel2, detailLayout: detailLayout2, learningCultureNav: learningCultureNav2, numberStages: numberStages2, timeDateWeekItems: timeDateWeekItems2, getNumberStageItems, getWorldFocusItems, renderFocusControls: renderFocusControls2, renderFocusDisplay: renderFocusDisplay2, renderFocusWordList: renderFocusWordList3, renderFocusExplorer: renderFocusExplorer2, renderActivityPanel: renderActivityPanel2, renderTopicDetail: renderTopicDetail2, updateDisplayControls: updateDisplayControls2, selectBookLesson: selectBookLesson2 } = context;
+    const { state: state2, topicData: topicData2, books: books2, topicGroups: topicGroups2, learningHomeCategories: learningHomeCategories2, bookHomeCategories: bookHomeCategories2, topicCardMeta: topicCardMeta2, topicPageUrl: topicPageUrl2, topicGroupsRoot: topicGroupsRoot2, bookSelect: bookSelect2, lessonSelect: lessonSelect2, lookupCard: lookupCard2, bookBrowser: bookBrowser2, topicPanel: topicPanel2, bookPanel: bookPanel2, culturePanel: culturePanel2, detailLayout: detailLayout2, learningCultureNav: learningCultureNav2, numberStages: numberStages2, timeDateWeekItems: timeDateWeekItems2, getNumberStageItems, getWorldFocusItems, renderFocusControls: renderFocusControls2, renderFocusDisplay: renderFocusDisplay2, renderFocusWordList: renderFocusWordList3, renderFocusExplorer: renderFocusExplorer2, renderActivityPanel: renderActivityPanel2, renderTopicDetail: renderTopicDetail2, updateDisplayControls: updateDisplayControls2, selectBookLesson: selectBookLesson2 } = context;
     function currentTopic2() {
       return topicData2.find((topic) => topic.id === state2.selectedTopicId) ?? topicData2[0];
     }
@@ -1651,6 +1652,7 @@
       });
       topicPanel2.classList.toggle("is-hidden", view !== "topics");
       bookPanel2.classList.toggle("is-hidden", view !== "books");
+      culturePanel2?.classList.toggle("is-hidden", view !== "culture");
       document.querySelectorAll("[data-global-view]").forEach((item) => {
         item.classList.toggle("is-active", item.dataset.globalView === view);
       });
@@ -1835,8 +1837,34 @@
         });
       });
     }
+    function renderCultureStickyNav() {
+      const cards = [...culturePanel2.querySelectorAll("[data-culture-target]")];
+      learningCultureNav2.innerHTML = `
+    <span class="learning-culture-nav-items">
+      ${cards.map((card) => `
+          <button class="learning-culture-nav-item" type="button" data-culture-nav-target="${card.dataset.cultureTarget}">
+            <span class="zh">${card.querySelector(".culture-card-name strong")?.textContent ?? ""}</span>
+            <span class="en">${card.querySelector(".culture-card-name em")?.textContent ?? ""}</span>
+          </button>
+        `).join("")}
+    </span>
+  `;
+      learningCultureNav2.querySelectorAll("[data-culture-nav-target]").forEach((button) => {
+        button.addEventListener("click", () => {
+          const target = document.getElementById(`culture-${button.dataset.cultureNavTarget}`);
+          if (target) {
+            window.history.pushState(null, "", `#culture-${button.dataset.cultureNavTarget}`);
+            target.scrollIntoView({ behavior: "smooth", block: "start" });
+          }
+        });
+      });
+    }
     function renderStickyNav2() {
       if (!learningCultureNav2) {
+        return;
+      }
+      if (state2.currentView === "culture") {
+        renderCultureStickyNav();
         return;
       }
       if (state2.currentView === "books") {
@@ -2086,6 +2114,29 @@
       if (!learningCultureNav2) {
         return;
       }
+      if (state2.currentView === "culture" && !culturePanel2?.classList.contains("is-hidden")) {
+        const cardGrid2 = culturePanel2.querySelector(".culture-card-grid");
+        const sections2 = culturePanel2.querySelectorAll(".culture-category-section");
+        const navItems2 = learningCultureNav2.querySelectorAll("[data-culture-nav-target]");
+        const showNav2 = cardGrid2 && window.scrollY > cardGrid2.offsetTop + cardGrid2.offsetHeight - 60;
+        learningCultureNav2.classList.toggle("visible", showNav2);
+        if (!showNav2) {
+          return;
+        }
+        let activeCategoryId = "";
+        const scrollY2 = window.scrollY + 120;
+        sections2.forEach((section) => {
+          if (section.offsetTop <= scrollY2) {
+            activeCategoryId = section.id.replace("culture-", "");
+          }
+        });
+        navItems2.forEach((item) => {
+          const isActive = item.dataset.cultureNavTarget === activeCategoryId;
+          item.classList.toggle("active", isActive);
+          item.toggleAttribute("aria-current", isActive);
+        });
+        return;
+      }
       if (state2.currentView === "books" && !bookPanel2.classList.contains("is-hidden")) {
         const bookBoard = bookBrowser2.querySelector(".book-home-board");
         const bookSections = lookupCard2.querySelectorAll(".book-category-section");
@@ -2179,6 +2230,23 @@
         link.closest(".global-view-menu")?.removeAttribute("open");
       });
     });
+    document.querySelectorAll("[data-culture-target]").forEach((link) => {
+      link.addEventListener("click", (event) => {
+        if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) {
+          return;
+        }
+        event.preventDefault();
+        const target = document.getElementById(`culture-${link.dataset.cultureTarget}`);
+        if (!target) {
+          return;
+        }
+        document.querySelectorAll("[data-culture-target]").forEach((card) => {
+          card.classList.toggle("is-selected", card === link);
+        });
+        window.history.pushState(null, "", link.getAttribute("href"));
+        target.scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+    });
   }
 
   // src/core/router.js
@@ -2186,6 +2254,9 @@
     const params = new URLSearchParams(location.search);
     const requestedView = params.get("view");
     const hash = location.hash.replace("#", "");
+    if (requestedView === "culture" || hash === "culture" || hash === "culture-panel" || hash.startsWith("culture-")) {
+      return "culture";
+    }
     return requestedView === "books" || hash === "books" || hash === "books-panel" ? "books" : "topics";
   }
   function topicIdFromLocation(location, hasTopic) {
@@ -9715,6 +9786,7 @@
     activityPanelSummary,
     topicPanel,
     bookPanel,
+    culturePanel,
     topicColumns,
     detailLayout,
     learningCultureNav
@@ -9880,6 +9952,7 @@
     bookBrowser,
     topicPanel,
     bookPanel,
+    culturePanel,
     detailLayout,
     learningCultureNav,
     numberStages,
@@ -10475,6 +10548,8 @@
   updateTopicPageVisibility();
   if (initialTopicId) {
     requestAnimationFrame(() => focusLearningPanel());
+  } else if (window.location.hash.startsWith("#culture-")) {
+    requestAnimationFrame(() => document.querySelector(window.location.hash)?.scrollIntoView({ block: "start" }));
   }
 
   // src/core/story-highlights.js

@@ -26,6 +26,7 @@ export function getAppElements(documentRoot = document) {
     activityPanelSummary: documentRoot.getElementById("activity-panel-summary"),
     topicPanel: documentRoot.getElementById("topics-panel"),
     bookPanel: documentRoot.getElementById("books-panel"),
+    culturePanel: documentRoot.getElementById("culture-panel"),
     topicColumns: documentRoot.querySelector(".topic-columns"),
     detailLayout: documentRoot.querySelector(".detail-layout"),
     learningCultureNav: documentRoot.getElementById("learningCultureNav")

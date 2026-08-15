@@ -67,7 +67,7 @@ const {
   topicProgress, topicLessonStrip, subtopicShelf, focusExplorer, focusStatus, focusDisplay,
   focusHanzi, focusPinyin, focusEnglish, focusWordList, toggleAudioButton, togglePinyinButton,
   toggleArabicButton, toggleEnglishButton, activityList, activityPanelTitle, activityPanelSummary,
-  topicPanel, bookPanel, topicColumns, detailLayout, learningCultureNav
+  topicPanel, bookPanel, culturePanel, topicColumns, detailLayout, learningCultureNav
 } = getAppElements();
 const renderSharedLessonPractice = createSharedLessonPractice({
   state,
@@ -232,6 +232,7 @@ const {
   bookBrowser,
   topicPanel,
   bookPanel,
+  culturePanel,
   detailLayout,
   learningCultureNav,
   numberStages,
@@ -848,4 +849,6 @@ updateTopicPageVisibility();
 
 if (initialTopicId) {
   requestAnimationFrame(() => focusLearningPanel());
+} else if (window.location.hash.startsWith("#culture-")) {
+  requestAnimationFrame(() => document.querySelector(window.location.hash)?.scrollIntoView({ block: "start" }));
 }

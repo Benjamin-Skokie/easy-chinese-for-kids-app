@@ -21,7 +21,7 @@
           <span class="global-view-zh">课本</span>
           <span class="global-view-en">Learn by Books</span>
         </a>
-        <a class="global-view-item" href="culture/index.html">
+        <a class="global-view-item" href="#culture-panel" data-global-view="culture">
           <span class="global-view-zh">文化</span>
           <span class="global-view-en">Culture</span>
         </a>
@@ -80,7 +80,7 @@
               <span class="library-route-en">Learn by Books</span>
             </span>
           </a>
-          <a class="library-hero-route" href="culture/index.html">
+          <a class="library-hero-route" href="#culture-panel" data-global-view="culture">
             <span class="library-route-symbol">文</span>
             <span class="library-route-copy">
               <span class="library-route-zh">文化故事</span>
@@ -125,6 +125,932 @@
             </div>
             <div id="book-browser" class="book-browser"></div>
             <div id="lookup-card" class="lookup-card"></div>
+          </section>
+
+          <section
+            id="culture-panel"
+            class="view-panel culture-panel is-hidden"
+            aria-label="Discover Chinese culture by topic"
+          >
+            <div class="culture-card-grid">
+              <a href="#culture-philosophy" class="culture-category-card" data-culture-target="philosophy" style="--cat-accent: #7c5cbf">
+                <span class="culture-card-count">4 books</span><span class="culture-card-emoji">☯️</span>
+                <span class="culture-card-name"><strong>哲学</strong><em>Philosophy</em></span>
+                <span class="culture-card-hint">阴阳、孔子、老子<br /><small>Yin-Yang, Confucius, Laozi</small></span>
+              </a>
+              <a href="#culture-economy" class="culture-category-card" data-culture-target="economy" style="--cat-accent: #219e8b">
+                <span class="culture-card-count">5 books</span><span class="culture-card-emoji">🪙</span>
+                <span class="culture-card-name"><strong>经济</strong><em>Economy</em></span>
+                <span class="culture-card-hint">贝壳钱、丝绸之路<br /><small>Shell money, Silk Road</small></span>
+              </a>
+              <a href="#culture-military" class="culture-category-card" data-culture-target="military" style="--cat-accent: #6b8e4e">
+                <span class="culture-card-count">5 books</span><span class="culture-card-emoji">🏯</span>
+                <span class="culture-card-name"><strong>军事</strong><em>Military</em></span>
+                <span class="culture-card-hint">长城、孙子兵法<br /><small>Great Wall, Art of War</small></span>
+              </a>
+              <a href="#culture-inventions" class="culture-category-card" data-culture-target="inventions" style="--cat-accent: #e07b4c">
+                <span class="culture-card-count">8 books</span><span class="culture-card-emoji">⚙️</span>
+                <span class="culture-card-name"><strong>发明与科学</strong><em>Inventions</em></span>
+                <span class="culture-card-hint">火药、造纸、指南针、算盘<br /><small>Gunpowder, Paper, Compass, Abacus</small></span>
+              </a>
+              <a href="#culture-politics" class="culture-category-card" data-culture-target="politics" style="--cat-accent: #b85c3a">
+                <span class="culture-card-count">5 books</span><span class="culture-card-emoji">👑</span>
+                <span class="culture-card-name"><strong>政治</strong><em>Politics</em></span>
+                <span class="culture-card-hint">皇帝、科举、六艺<br /><small>Emperors, Exams, Six Arts</small></span>
+              </a>
+              <a href="#culture-culture" class="culture-category-card" data-culture-target="culture" style="--cat-accent: #d9444c">
+                <span class="culture-card-count">12 books</span><span class="culture-card-emoji">🐉</span>
+                <span class="culture-card-name"><strong>文化</strong><em>Culture</em></span>
+                <span class="culture-card-hint">龙凤凰、汉字、功夫、麻将<br /><small>Dragon, Characters, Kung Fu, Mahjong</small></span>
+              </a>
+              <a href="#culture-art" class="culture-category-card" data-culture-target="art" style="--cat-accent: #d4658c">
+                <span class="culture-card-count">12 books</span><span class="culture-card-emoji">🎨</span>
+                <span class="culture-card-name"><strong>艺术</strong><em>Art</em></span>
+                <span class="culture-card-hint">水墨画、京剧、书法<br /><small>Ink Wash, Opera, Calligraphy</small></span>
+              </a>
+              <a href="#culture-folk-customs" class="culture-category-card" data-culture-target="folk-customs" style="--cat-accent: #e8453c">
+                <span class="culture-card-count">6 books</span><span class="culture-card-emoji">🏮</span>
+                <span class="culture-card-name"><strong>民俗</strong><em>Folk Customs</em></span>
+                <span class="culture-card-hint">春节、中秋、十二生肖<br /><small>New Year, Mid-Autumn, Zodiac</small></span>
+              </a>
+              <a href="#culture-geography" class="culture-category-card" data-culture-target="geography" style="--cat-accent: #4a9e6f">
+                <span class="culture-card-count">4 books</span><span class="culture-card-emoji">🏔️</span>
+                <span class="culture-card-name"><strong>地理</strong><em>Geography</em></span>
+                <span class="culture-card-hint">长江黄河、熊猫家乡<br /><small>Rivers, Mountains, Pandas</small></span>
+              </a>
+              <a href="#culture-architecture" class="culture-category-card" data-culture-target="architecture" style="--cat-accent: #c0815e">
+                <span class="culture-card-count">6 books</span><span class="culture-card-emoji">🏛️</span>
+                <span class="culture-card-name"><strong>建筑</strong><em>Architecture</em></span>
+                <span class="culture-card-hint">故宫、园林、天坛、土楼<br /><small>Forbidden City, Gardens</small></span>
+              </a>
+              <a href="#culture-clothing" class="culture-category-card" data-culture-target="clothing" style="--cat-accent: #9b6fa3">
+                <span class="culture-card-count">5 books</span><span class="culture-card-emoji">👘</span>
+                <span class="culture-card-name"><strong>服饰</strong><em>Clothing</em></span>
+                <span class="culture-card-hint">皇帝冕服、唐朝发髻<br /><small>Imperial Robes, Tang Style</small></span>
+              </a>
+              <a href="#culture-food" class="culture-category-card" data-culture-target="food" style="--cat-accent: #e0913b">
+                <span class="culture-card-count">4 books</span><span class="culture-card-emoji">🥟</span>
+                <span class="culture-card-name"><strong>饮食</strong><em>Food &amp; Drink</em></span>
+                <span class="culture-card-hint">筷子、饺子、五种味道<br /><small>Chopsticks, Dumplings, Flavors</small></span>
+              </a>
+              <a href="#culture-figures" class="culture-category-card" data-culture-target="figures" style="--cat-accent: #b8863e">
+                <span class="culture-card-count">9 books</span><span class="culture-card-emoji">⭐</span>
+                <span class="culture-card-name"><strong>历史人物</strong><em>Figures</em></span>
+                <span class="culture-card-hint">秦始皇、李白、武则天、曹操<br /><small>Qin Shi Huang, Li Bai, Wu Zetian, Cao Cao</small></span>
+              </a>
+              <a href="#culture-literature" class="culture-category-card" data-culture-target="literature" style="--cat-accent: #4e7aad">
+                <span class="culture-card-count">8 books</span><span class="culture-card-emoji">📜</span>
+                <span class="culture-card-name"><strong>文学</strong><em>Literature</em></span>
+                <span class="culture-card-hint">唐诗宋词、四大名著、山海经<br /><small>Poetry, Classics, Mythical Beasts</small></span>
+              </a>
+              <a href="#culture-religion" class="culture-category-card" data-culture-target="religion" style="--cat-accent: #8c6a4e">
+                <span class="culture-card-count">4 books</span><span class="culture-card-emoji">🛕</span>
+                <span class="culture-card-name"><strong>宗教</strong><em>Religion</em></span>
+                <span class="culture-card-hint">佛教、道教、关公<br /><small>Buddhism, Daoism, Lord Guan</small></span>
+              </a>
+              <a href="#culture-folk-tales" class="culture-category-card" data-culture-target="folk-tales" style="--cat-accent: #5c6bc0">
+                <span class="culture-card-count">5 books</span><span class="culture-card-emoji">📖</span>
+                <span class="culture-card-name"><strong>民间故事</strong><em>Folk Tales</em></span>
+                <span class="culture-card-hint">嫦娥、马良、白蛇<br /><small>Chang'e, Ma Liang, White Snake</small></span>
+              </a>
+            </div>
+          </section>
+      <section class="culture-category-section with-books" id="culture-philosophy" style="--cat-accent: #7c5cbf">
+        <div class="cat-head">
+          <span class="cat-icon">☯️</span>
+          <div>
+            <h3>哲学</h3>
+            <h4>Philosophy</h4>
+            <p class="cat-desc zh">古人在安静的院子里仰望天空，思考自然和生命的道理。</p>
+            <p class="cat-desc en">Long ago, people looked up at the sky from quiet courtyards, thinking about nature and the meaning of life.</p>
+          </div>
+        </div>
+        <ul class="topic-grid">
+          <li class="topic done">
+            <a href="culture/books/philosophy/yin-yang/index.html">
+              <span class="zh">阴和阳：太阳与月亮的舞蹈</span>
+              <span class="en">Yin and Yang: The Dance of Sun and Moon</span>
+            </a>
+          </li>
+          <li class="topic done">
+            <a href="culture/books/philosophy/confucius/index.html">
+              <span class="zh">孔子说：己所不欲，勿施于人</span>
+              <span class="en">Confucius Says: Do Not Do to Others What You Would Not Want</span>
+            </a>
+          </li>
+          <li class="topic done">
+            <a href="culture/books/philosophy/laozi/index.html">
+              <span class="zh">老子的智慧：上善若水</span>
+              <span class="en">Laozi's Wisdom: The Highest Good Is Like Water</span>
+            </a>
+          </li>
+          <li class="topic done">
+            <a href="culture/books/philosophy/seed-dao/index.html">
+              <span class="zh">一颗种子的耐心：什么是"道"？</span>
+              <span class="en">The Patience of a Seed: What Is the Dao?</span>
+            </a>
+          </li>
+        </ul>
+      </section>
+
+      <section class="culture-category-section with-books" id="culture-economy" style="--cat-accent: #219e8b">
+        <div class="cat-head">
+          <span class="cat-icon">🪙</span>
+          <div>
+            <h3>经济</h3>
+            <h4>Economy</h4>
+            <p class="cat-desc zh">很久很久以前，人们怎么买东西、做生意呢？</p>
+            <p class="cat-desc en">How did people buy things and do business long, long ago?</p>
+          </div>
+        </div>
+        <ul class="topic-grid">
+          <li class="topic done">
+            <a href="culture/books/economy/ancient-market/index.html">
+              <span class="zh">热闹的古代市场：赶集去！</span>
+              <span class="en">Ancient Markets: The Noisy Heart of Everyday Life</span>
+            </a>
+          </li>
+          <li class="topic done">
+            <a href="culture/books/economy/ancient-money/index.html">
+              <span class="zh">从贝壳到铜钱：中国古代的钱</span>
+              <span class="en">From Shells to Paper Notes: Money in Ancient China</span>
+            </a>
+          </li>
+          <li class="topic done">
+            <a href="culture/books/economy/silk-road/index.html">
+              <span class="zh">丝绸之路：一条连接世界的彩带</span>
+              <span class="en">The Silk Road: Not One Road, but Many</span>
+            </a>
+          </li>
+          <li class="topic done">
+            <a href="culture/books/economy/tang-cosmopolitan/index.html">
+              <span class="zh">唐朝长安：远方的人都来</span>
+              <span class="en">Tang Chang'an: A Capital Where Many Worlds Met</span>
+            </a>
+          </li>
+          <li class="topic done">
+            <a href="culture/books/economy/tea/index.html">
+              <span class="zh">小小茶叶，大大生意</span>
+              <span class="en">Tea: A Small Leaf with a Very Long Journey</span>
+            </a>
+          </li>
+        </ul>
+      </section>
+
+      <section class="culture-category-section" id="culture-military" style="--cat-accent: #6b8e4e">
+        <div class="cat-head">
+          <span class="cat-icon">🏯</span>
+          <div>
+            <h3>军事</h3>
+            <h4>Military &amp; Defense</h4>
+            <p class="cat-desc zh">古代人用什么聪明的方法保护自己的家园？</p>
+            <p class="cat-desc en">What clever ways did ancient people use to defend their homes?</p>
+          </div>
+        </div>
+        <ul class="topic-grid">
+          <li class="topic done">
+            <a href="culture/books/military/great-wall/index.html">
+              <span class="zh">长城：守护家园的石头巨龙</span>
+              <span class="en">The Great Wall: The Stone Dragon That Guarded Home</span>
+            </a>
+          </li>
+          <li class="topic done">
+            <a href="culture/books/military/ancient-armor/index.html">
+              <span class="zh">各朝代的兵服：从皮甲到铁甲</span>
+              <span class="en">From Leather to Iron: Armor Through the Dynasties</span>
+            </a>
+          </li>
+          <li class="topic done">
+            <a href="culture/books/military/mingguang-armor/index.html">
+              <span class="zh">将军的明光铠：像镜子一样闪亮的战衣</span>
+              <span class="en">A General's Mingguang Armor: Bright as a Mirror</span>
+            </a>
+          </li>
+          <li class="topic done">
+            <a href="culture/books/military/warships/index.html">
+              <span class="zh">战船：水上的移动城堡</span>
+              <span class="en">Warships: Moving Castles on Water</span>
+            </a>
+          </li>
+          <li class="topic done">
+            <a href="culture/books/military/art-of-war/index.html">
+              <span class="zh">《孙子兵法》：像捉迷藏一样的智慧</span>
+              <span class="en">The Art of War: Wisdom Like Hide-and-Seek</span>
+            </a>
+          </li>
+        </ul>
+      </section>
+
+      <section class="culture-category-section" id="culture-inventions" style="--cat-accent: #e07b4c">
+        <div class="cat-head">
+          <span class="cat-icon">⚙️</span>
+          <div>
+            <h3>古代发明与科学</h3>
+            <h4>Ancient Inventions &amp; Science</h4>
+            <p class="cat-desc zh">从火药到造纸，从指南针到节气，看看古人怎么观察世界，也改变世界。</p>
+            <p class="cat-desc en">From gunpowder to paper, from the compass to the solar terms, see how people long ago studied the world and changed it.</p>
+          </div>
+        </div>
+        <ul class="topic-grid">
+          <li class="topic done">
+            <a href="culture/books/inventions/guan-yu-blade/index.html">
+              <span class="zh">关羽的青龙偃月刀是真的吗？</span>
+              <span class="en">Did Guan Yu Really Use the Green Dragon Crescent Blade?</span>
+            </a>
+          </li>
+          <li class="topic done">
+            <a href="culture/books/inventions/gunpowder/index.html">
+              <span class="zh">火药的发明：从炼丹炉到烟花</span>
+              <span class="en">Gunpowder: From Alchemy to Fireworks</span>
+            </a>
+          </li>
+          <li class="topic done">
+            <a href="culture/books/inventions/chariots/index.html">
+              <span class="zh">古代的战车像今天的坦克吗？</span>
+              <span class="en">Were Ancient Chariots Like Today's Tanks?</span>
+            </a>
+          </li>
+          <li class="topic done">
+            <a href="culture/books/inventions/kites/index.html">
+              <span class="zh">会飞的彩虹：中国的风筝</span>
+              <span class="en">Flying Rainbows: Chinese Kites</span>
+            </a>
+          </li>
+          <li class="topic done">
+            <a href="culture/books/inventions/paper-making/index.html">
+              <span class="zh">纸是怎么从树皮变出来的？</span>
+              <span class="en">How Did Tree Bark Become Paper?</span>
+            </a>
+          </li>
+          <li class="topic done">
+            <a href="culture/books/inventions/compass/index.html">
+              <span class="zh">指南针为什么总能找到路？</span>
+              <span class="en">Why Can a Compass Always Find the Way?</span>
+            </a>
+          </li>
+          <li class="topic done">
+            <a href="culture/books/inventions/abacus/index.html">
+              <span class="zh">算盘：噼里啪啦的计算器</span>
+              <span class="en">The Abacus: A Click-Clack Calculator</span>
+            </a>
+          </li>
+          <li class="topic done">
+            <a href="culture/books/inventions/solar-terms/index.html">
+              <span class="zh">二十四节气：跟着太阳过一年</span>
+              <span class="en">The 24 Solar Terms: Following the Sun Through the Year</span>
+            </a>
+          </li>
+        </ul>
+      </section>
+
+      <section class="culture-category-section with-books" id="culture-politics" style="--cat-accent: #b85c3a">
+        <div class="cat-head">
+          <span class="cat-icon">👑</span>
+          <div>
+            <h3>政治</h3>
+            <h4>Politics</h4>
+            <p class="cat-desc zh">皇帝怎么管理国家？学生学什么？怎么才能做官？</p>
+            <p class="cat-desc en">How did emperors rule? What did students learn? How did exams decide your future?</p>
+          </div>
+        </div>
+        <ul class="topic-grid">
+          <li class="topic done">
+            <a href="culture/books/politics/emperor-day/index.html">
+              <span class="zh">从放牛娃到皇帝：朱元璋为什么忙个不停？</span>
+              <span class="en">From Herding Buffalo to Emperor: Why Was Zhu Yuanzhang Always So Busy?</span>
+            </a>
+          </li>
+          <li class="topic done">
+            <a href="culture/books/politics/six-arts/index.html">
+              <span class="zh">君子六艺：春秋时期的学生学什么？</span>
+              <span class="en">The Six Arts: What Did Students Learn in Ancient Times?</span>
+            </a>
+          </li>
+          <li class="topic done">
+            <a href="culture/books/politics/imperial-exam-history/index.html">
+              <span class="zh">从举荐到科举：一个普通人怎么走到朝堂上</span>
+              <span class="en">From Recommendations to Exams: How Could an Ordinary Person Become an Official?</span>
+            </a>
+          </li>
+          <li class="topic done">
+            <a href="culture/books/politics/exam-content/index.html">
+              <span class="zh">科举考什么？同一个穷孩子，放进不同时代</span>
+              <span class="en">What Was on the Imperial Exams? The Same Child in Different Times</span>
+            </a>
+          </li>
+          <li class="topic done">
+            <a href="culture/books/politics/yu-the-great/index.html">
+              <span class="zh">大禹治水：从治理洪水到建立王朝</span>
+              <span class="en">Yu the Great: From Flood Control to a New Dynasty</span>
+            </a>
+          </li>
+        </ul>
+      </section>
+
+      <section class="culture-category-section with-books" id="culture-culture" style="--cat-accent: #d9444c">
+        <div class="cat-head">
+          <span class="cat-icon">🐉</span>
+          <div>
+            <h3>文化</h3>
+            <h4>Culture</h4>
+            <p class="cat-desc zh">中国人相信什么？喜欢什么样的符号和仪式？</p>
+            <p class="cat-desc en">What do Chinese people believe in? What symbols and customs do they love?</p>
+          </div>
+        </div>
+        <ul class="topic-grid">
+          <li class="topic done">
+            <a href="culture/books/culture/dragon-phoenix/index.html">
+              <span class="zh">龙和凤凰：中国最吉祥的伙伴</span>
+              <span class="en">Dragon and Phoenix: China's Luckiest Pair</span>
+            </a>
+          </li>
+          <li class="topic done">
+            <a href="culture/books/culture/chinese-characters/index.html">
+              <span class="zh">汉字是画出来的吗？</span>
+              <span class="en">Were Chinese Characters Drawn Like Pictures?</span>
+            </a>
+          </li>
+          <li class="topic done">
+            <a href="culture/books/culture/chinese-knot/index.html">
+              <span class="zh">红红的中国结，满满的祝福</span>
+              <span class="en">Red Chinese Knots, Full of Good Wishes</span>
+            </a>
+          </li>
+          <li class="topic done">
+            <a href="culture/books/culture/new-year-greeting/index.html">
+              <span class="zh">给长辈拜年：双手抱拳的学问</span>
+              <span class="en">Greeting Elders at New Year</span>
+            </a>
+          </li>
+          <li class="topic done">
+            <a href="culture/books/culture/kung-fu/index.html">
+              <span class="zh">功夫：像风一样快，像山一样稳</span>
+              <span class="en">Kung Fu: Fast Like Wind, Steady Like a Mountain</span>
+            </a>
+          </li>
+          <li class="topic done">
+            <a href="culture/books/culture/weiqi/index.html">
+              <span class="zh">黑白棋子的千年智慧：围棋</span>
+              <span class="en">Weiqi: Thousand-Year Wisdom in Black and White Stones</span>
+            </a>
+          </li>
+          <li class="topic done">
+            <a href="culture/books/culture/mahjong/index.html">
+              <span class="zh">麻将：一桌子哗啦啦的热闹</span>
+              <span class="en">Mahjong: A Lively Table Full of Tiles</span>
+            </a>
+          </li>
+          <li class="topic done">
+            <a href="culture/books/culture/cuju/index.html">
+              <span class="zh">蹴鞠：两千年前的踢球游戏</span>
+              <span class="en">Cuju: Kicking a Ball Two Thousand Years Ago</span>
+            </a>
+          </li>
+          <li class="topic done">
+            <a href="culture/books/culture/polo/index.html">
+              <span class="zh">马球：唐朝人最爱的马上比赛</span>
+              <span class="en">Polo: A Favorite Horseback Game in the Tang Dynasty</span>
+            </a>
+          </li>
+          <li class="topic done">
+            <a href="culture/books/culture/family-titles/index.html">
+              <span class="zh">舅舅还是叔叔？中国人的亲戚地图</span>
+              <span class="en">Uncle or Uncle? A Chinese Family Map</span>
+            </a>
+          </li>
+          <li class="topic done">
+            <a href="culture/books/culture/craftsmanship-spirit/index.html">
+              <span class="zh">慢慢做好一件事：中国的工匠精神</span>
+              <span class="en">Doing One Thing Well, Slowly</span>
+            </a>
+          </li>
+          <li class="topic done">
+            <a href="culture/books/culture/idiom-spirit/index.html">
+              <span class="zh">成语里藏着的小故事</span>
+              <span class="en">Tiny Stories Hidden Inside Idioms</span>
+            </a>
+          </li>
+        </ul>
+      </section>
+
+      <section class="culture-category-section with-books" id="culture-art" style="--cat-accent: #d4658c">
+        <div class="cat-head">
+          <span class="cat-icon">🎨</span>
+          <div>
+            <h3>艺术</h3>
+            <h4>Art</h4>
+            <p class="cat-desc zh">不用颜料能画画？脸会说话？青铜钟会唱歌？</p>
+            <p class="cat-desc en">Can you paint without colors? Can a face talk? Can bronze bells sing?</p>
+          </div>
+        </div>
+        <ul class="topic-grid">
+          <li class="topic done">
+            <a href="culture/books/art/ink-wash/index.html">
+              <span class="zh">水墨画：不用颜料的魔法</span>
+              <span class="en">Ink Wash Painting: Magic Without Colors</span>
+            </a>
+          </li>
+          <li class="topic done">
+            <a href="culture/books/art/peking-opera/index.html">
+              <span class="zh">京剧脸谱会说话</span>
+              <span class="en">Peking Opera Face Paint Can Talk</span>
+            </a>
+          </li>
+          <li class="topic done">
+            <a href="culture/books/art/paper-cutting/index.html">
+              <span class="zh">剪纸：一张纸变成一个小世界</span>
+              <span class="en">Paper Cutting: One Sheet Becomes a Tiny World</span>
+            </a>
+          </li>
+          <li class="topic done">
+            <a href="culture/books/art/bianzhong/index.html">
+              <span class="zh">能演奏音乐的古老青铜钟：编钟</span>
+              <span class="en">Ancient Bronze Bells That Could Play Music</span>
+            </a>
+          </li>
+          <li class="topic done">
+            <a href="culture/books/art/calligraphy/index.html">
+              <span class="zh">用毛笔跳舞：神奇的书法</span>
+              <span class="en">Dancing with a Brush: The Magic of Calligraphy</span>
+            </a>
+          </li>
+          <li class="topic done">
+            <a href="culture/books/art/porcelain/index.html">
+              <span class="zh">像玉石一样光滑的泥土：瓷器</span>
+              <span class="en">Porcelain: Clay That Shines Like Jade</span>
+            </a>
+          </li>
+          <li class="topic done">
+            <a href="culture/books/art/dunhuang/index.html">
+              <span class="zh">敦煌：沙漠里的千年画廊</span>
+              <span class="en">Dunhuang: A Thousand-Year Gallery in the Desert</span>
+            </a>
+          </li>
+          <li class="topic done">
+            <a href="culture/books/art/terracotta-warriors/index.html">
+              <span class="zh">兵马俑：地下站了两千年的军队</span>
+              <span class="en">Terracotta Warriors: An Army Underground for Two Thousand Years</span>
+            </a>
+          </li>
+          <li class="topic done">
+            <a href="culture/books/art/gongbi/index.html">
+              <span class="zh">工笔画：慢慢长出来的细节</span>
+              <span class="en">Gongbi Painting: Details That Grow Slowly</span>
+            </a>
+          </li>
+          <li class="topic done">
+            <a href="culture/books/art/guqin/index.html">
+              <span class="zh">古琴：书房里最安静的琴</span>
+              <span class="en">Guqin: The Quietest Instrument in the Study</span>
+            </a>
+          </li>
+          <li class="topic done">
+            <a href="culture/books/art/pipa/index.html">
+              <span class="zh">琵琶：会唱歌的木头</span>
+              <span class="en">Pipa: Wood That Can Sing</span>
+            </a>
+          </li>
+          <li class="topic done">
+            <a href="culture/books/art/erhu/index.html">
+              <span class="zh">二胡：两根弦讲一个故事</span>
+              <span class="en">Erhu: Two Strings Tell a Story</span>
+            </a>
+          </li>
+        </ul>
+      </section>
+
+      <section class="culture-category-section with-books" id="culture-folk-customs" style="--cat-accent: #e8453c">
+        <div class="cat-head">
+          <span class="cat-icon">🏮</span>
+          <div>
+            <h3>民俗</h3>
+            <h4>Folk Customs</h4>
+            <p class="cat-desc zh">节日、庆典、传统——人们一年中最开心的日子。</p>
+            <p class="cat-desc en">Festivals, celebrations, and traditions — the happiest days of the year.</p>
+          </div>
+        </div>
+        <ul class="topic-grid">
+          <li class="topic done">
+            <a href="culture/books/folk-customs/chinese-new-year/index.html">
+              <span class="zh">春节</span>
+              <span class="en">Spring Festival</span>
+            </a>
+          </li>
+          <li class="topic done">
+            <a href="culture/books/folk-customs/mid-autumn/index.html">
+              <span class="zh">中秋节</span>
+              <span class="en">Mid-Autumn Festival</span>
+            </a>
+          </li>
+          <li class="topic done">
+            <a href="culture/books/folk-customs/dragon-boat/index.html">
+              <span class="zh">端午节</span>
+              <span class="en">Dragon Boat Festival</span>
+            </a>
+          </li>
+          <li class="topic done">
+            <a href="culture/books/folk-customs/qingming/index.html">
+              <span class="zh">清明节</span>
+              <span class="en">Qingming Festival</span>
+            </a>
+          </li>
+          <li class="topic done">
+            <a href="culture/books/folk-customs/chinese-zodiac/index.html">
+              <span class="zh">十二生肖</span>
+              <span class="en">The Chinese Zodiac</span>
+            </a>
+          </li>
+          <li class="topic done">
+            <a href="culture/books/folk-customs/lantern-festival/index.html">
+              <span class="zh">元宵节</span>
+              <span class="en">Lantern Festival</span>
+            </a>
+          </li>
+        </ul>
+      </section>
+
+      <section class="culture-category-section with-books" id="culture-geography" style="--cat-accent: #4a9e6f">
+        <div class="cat-head">
+          <span class="cat-icon">🏔️</span>
+          <div>
+            <h3>地理</h3>
+            <h4>Geography</h4>
+            <p class="cat-desc zh">从高山到大河，从熊猫家乡到如画山水。</p>
+            <p class="cat-desc en">From towering mountains to mighty rivers, from panda homeland to picture-perfect landscapes.</p>
+          </div>
+        </div>
+        <ul class="topic-grid">
+          <li class="topic done">
+            <a href="culture/books/geography/guilin/index.html">
+              <span class="zh">桂林的水就像一幅活的画</span>
+              <span class="en">Guilin's Water Looks Like a Living Painting</span>
+            </a>
+          </li>
+          <li class="topic done">
+            <a href="culture/books/geography/yangtze-yellow-river/index.html">
+              <span class="zh">两条母亲河：长江与黄河</span>
+              <span class="en">Two Mother Rivers: The Yangtze and the Yellow River</span>
+            </a>
+          </li>
+          <li class="topic done">
+            <a href="culture/books/geography/highest-mountains/index.html">
+              <span class="zh">最高的山峰在哪里？</span>
+              <span class="en">Where Are the Highest Mountains?</span>
+            </a>
+          </li>
+          <li class="topic done">
+            <a href="culture/books/geography/panda-hometown/index.html">
+              <span class="zh">大熊猫的家乡：四川的青山绿水</span>
+              <span class="en">The Giant Panda's Home: Sichuan's Green Mountains and Clear Water</span>
+            </a>
+          </li>
+        </ul>
+      </section>
+
+      <section class="culture-category-section with-books" id="culture-architecture" style="--cat-accent: #c0815e">
+        <div class="cat-head">
+          <span class="cat-icon">🏛️</span>
+          <div>
+            <h3>建筑</h3>
+            <h4>Architecture</h4>
+            <p class="cat-desc zh">中国人用木头、石头和想象力造出了世界上最美的房子。</p>
+            <p class="cat-desc en">Chinese people used wood, stone, and imagination to build some of the world's most beautiful structures.</p>
+          </div>
+        </div>
+        <ul class="topic-grid">
+          <li class="topic done">
+            <a href="culture/books/architecture/forbidden-city/index.html">
+              <span class="zh">故宫：世界上最大的皇宫之一</span>
+              <span class="en">The Forbidden City: One of the World's Biggest Palaces</span>
+            </a>
+          </li>
+          <li class="topic done">
+            <a href="culture/books/architecture/suzhou-gardens/index.html">
+              <span class="zh">苏州园林：把山水搬回家</span>
+              <span class="en">Suzhou Gardens: Bringing Mountains and Water Home</span>
+            </a>
+          </li>
+          <li class="topic done">
+            <a href="culture/books/architecture/temple-of-heaven/index.html">
+              <span class="zh">天坛：皇帝和天空说话的地方</span>
+              <span class="en">Temple of Heaven: Where Emperors Talked to the Sky</span>
+            </a>
+          </li>
+          <li class="topic done">
+            <a href="culture/books/architecture/tulou/index.html">
+              <span class="zh">土楼：一个圆圈里的村庄</span>
+              <span class="en">Tulou: A Village Inside a Circle</span>
+            </a>
+          </li>
+          <li class="topic done">
+            <a href="culture/books/architecture/pagodas/index.html">
+              <span class="zh">宝塔：一层一层接近天空</span>
+              <span class="en">Pagodas: Reaching the Sky Step by Step</span>
+            </a>
+          </li>
+          <li class="topic done">
+            <a href="culture/books/architecture/zhaozhou-bridge/index.html">
+              <span class="zh">赵州桥：石头架起的千年彩虹</span>
+              <span class="en">Zhaozhou Bridge: A Stone Rainbow Across a Thousand Years</span>
+            </a>
+          </li>
+        </ul>
+      </section>
+
+      <section class="culture-category-section with-books" id="culture-clothing" style="--cat-accent: #9b6fa3">
+        <div class="cat-head">
+          <span class="cat-icon">👘</span>
+          <div>
+            <h3>服饰</h3>
+            <h4>Clothing</h4>
+            <p class="cat-desc zh">皇帝穿什么？官员怎么穿？唐朝的男女又是什么模样？</p>
+            <p class="cat-desc en">What did emperors wear? How about officials? And what did Tang Dynasty men and women look like?</p>
+          </div>
+        </div>
+        <ul class="topic-grid">
+          <li class="topic done">
+            <a href="culture/books/clothing/imperial-robes/index.html">
+              <span class="zh">皇帝穿什么？冕服、衮服和猎装</span>
+              <span class="en">What Did the Emperor Wear? Mianfu, Gunfu, and Hunting Dress</span>
+            </a>
+          </li>
+          <li class="topic done">
+            <a href="culture/books/clothing/bufu/index.html">
+              <span class="zh">官员的补服：衣服上的“身份证”</span>
+              <span class="en">Official Rank Badges: An ID Card on Clothing</span>
+            </a>
+          </li>
+          <li class="topic done">
+            <a href="culture/books/clothing/tang-men-headwear/index.html">
+              <span class="zh">幞头纱帽：唐朝男子的头饰</span>
+              <span class="en">Futou: Tang Dynasty Men's Headwear</span>
+            </a>
+          </li>
+          <li class="topic done">
+            <a href="culture/books/clothing/tang-women-hair/index.html">
+              <span class="zh">云鬓花颜：唐朝女子的发髻与金钗</span>
+              <span class="en">Tang Women: Cloud-High Hair and Golden Hairpins</span>
+            </a>
+          </li>
+          <li class="topic done">
+            <a href="culture/books/clothing/hanfu/index.html">
+              <span class="zh">汉服：穿在身上的历史书</span>
+              <span class="en">Hanfu: A History Book Worn on the Body</span>
+            </a>
+          </li>
+        </ul>
+      </section>
+
+      <section class="culture-category-section with-books" id="culture-food" style="--cat-accent: #e0913b">
+        <div class="cat-head">
+          <span class="cat-icon">🥟</span>
+          <div>
+            <h3>饮食</h3>
+            <h4>Food &amp; Drink</h4>
+            <p class="cat-desc zh">两根棍子怎么吃饭？饺子里会藏什么？饭菜里又为什么有这么多味道？</p>
+            <p class="cat-desc en">How do two sticks help you eat? What might be hidden inside a dumpling? And why do meals have so many flavors?</p>
+          </div>
+        </div>
+        <ul class="topic-grid">
+          <li class="topic done">
+            <a href="culture/books/food/chinese-cuisine/index.html">
+              <span class="zh">中国菜</span>
+              <span class="en">Chinese Food Has Many Flavors</span>
+            </a>
+          </li>
+          <li class="topic done">
+            <a href="culture/books/food/chopsticks/index.html">
+              <span class="zh">筷子</span>
+              <span class="en">The Secret of Chopsticks</span>
+            </a>
+          </li>
+          <li class="topic done">
+            <a href="culture/books/food/dumplings/index.html">
+              <span class="zh">饺子</span>
+              <span class="en">What Surprise Is Hidden Inside a Dumpling?</span>
+            </a>
+          </li>
+          <li class="topic done">
+            <a href="culture/books/food/flavors/index.html">
+              <span class="zh">五种味道</span>
+              <span class="en">Sour, Sweet, Bitter, Spicy, and Salty</span>
+            </a>
+          </li>
+        </ul>
+      </section>
+
+      <section class="culture-category-section with-books" id="culture-figures" style="--cat-accent: #b8863e">
+        <div class="cat-head">
+          <span class="cat-icon">⭐</span>
+          <div>
+            <h3>历史人物</h3>
+            <h4>Historical Figures</h4>
+            <p class="cat-desc zh">有些人改变了中国，他们的故事今天还在流传。</p>
+            <p class="cat-desc en">Some people changed China, and their stories are still told today.</p>
+          </div>
+        </div>
+        <ul class="topic-grid">
+          <li class="topic done">
+            <a href="culture/books/figures/qin-shi-huang/index.html">
+              <span class="zh">秦始皇：统一中国的第一个皇帝</span>
+              <span class="en">Qin Shi Huang: The First Emperor Who United China</span>
+            </a>
+          </li>
+          <li class="topic done">
+            <a href="culture/books/figures/mulan/index.html">
+              <span class="zh">花木兰：替父从军的女孩</span>
+              <span class="en">Hua Mulan: The Girl Who Took Her Father's Place</span>
+            </a>
+          </li>
+          <li class="topic done">
+            <a href="culture/books/figures/li-bai/index.html">
+              <span class="zh">李白：唐朝最有名的大诗人之一</span>
+              <span class="en">Li Bai: One of the Most Famous Poets of the Tang Dynasty</span>
+            </a>
+          </li>
+          <li class="topic done">
+            <a href="culture/books/figures/zheng-he/index.html">
+              <span class="zh">郑和：带着大船队去远航</span>
+              <span class="en">Zheng He: Sailing Far with a Great Fleet</span>
+            </a>
+          </li>
+          <li class="topic done">
+            <a href="culture/books/figures/wu-zetian/index.html">
+              <span class="zh">武则天：中国唯一的女皇帝</span>
+              <span class="en">Wu Zetian: China's Only Woman Emperor</span>
+            </a>
+          </li>
+          <li class="topic done">
+            <a href="culture/books/figures/luban/index.html">
+              <span class="zh">鲁班：会发明工具的木匠</span>
+              <span class="en">Lu Ban: The Carpenter Who Invented Tools</span>
+            </a>
+          </li>
+          <li class="topic done">
+            <a href="culture/books/figures/shang-yang/index.html">
+              <span class="zh">商鞅：让秦国变强的人</span>
+              <span class="en">Shang Yang: The Man Who Made Qin Stronger</span>
+            </a>
+          </li>
+          <li class="topic done">
+            <a href="culture/books/figures/cao-cao/index.html">
+              <span class="zh">曹操：三国时代最厉害的人物之一</span>
+              <span class="en">Cao Cao: One of the Most Powerful Figures of the Three Kingdoms</span>
+            </a>
+          </li>
+          <li class="topic done">
+            <a href="culture/books/figures/li-shi-zhen/index.html">
+              <span class="zh">李时珍：写药书的大医生</span>
+              <span class="en">Li Shizhen: The Great Doctor Who Wrote a Medicine Book</span>
+            </a>
+          </li>
+        </ul>
+      </section>
+
+      <section class="culture-category-section" id="culture-literature" style="--cat-accent: #4e7aad">
+        <div class="cat-head">
+          <span class="cat-icon">📜</span>
+          <div>
+            <h3>文学</h3>
+            <h4>Literature</h4>
+            <p class="cat-desc zh">中国人把最美的文字写成了诗、词和伟大的故事。</p>
+            <p class="cat-desc en">Chinese people turned their most beautiful words into poems, songs, and great stories.</p>
+          </div>
+        </div>
+        <ul class="topic-grid">
+          <li class="topic done">
+            <a href="culture/books/literature/tang-poems/index.html">
+              <span class="zh">唐诗：一句话就是一个世界</span>
+              <span class="en">Tang Poems: One Line Can Hold a Whole World</span>
+            </a>
+          </li>
+          <li class="topic done">
+            <a href="culture/books/literature/song-ci/index.html">
+              <span class="zh">宋词：唱着歌的诗</span>
+              <span class="en">Song Ci: Poems That Were Sung</span>
+            </a>
+          </li>
+          <li class="topic done">
+            <a href="culture/books/literature/quiet-night-thought/index.html">
+              <span class="zh">静夜思：很多小孩都会念</span>
+              <span class="en">Quiet Night Thought: A Poem Many Children Know</span>
+            </a>
+          </li>
+          <li class="topic done">
+            <a href="culture/books/literature/journey-to-west/index.html">
+              <span class="zh">《西游记》：跟着猴王去冒险</span>
+              <span class="en">Journey to the West: Adventure with the Monkey King</span>
+            </a>
+          </li>
+          <li class="topic done">
+            <a href="culture/books/literature/three-kingdoms/index.html">
+              <span class="zh">《三国演义》：三个国家斗智斗勇</span>
+              <span class="en">Romance of the Three Kingdoms: Three States, Many Heroes</span>
+            </a>
+          </li>
+          <li class="topic done">
+            <a href="culture/books/literature/water-margin/index.html">
+              <span class="zh">《水浒传》：一百零八位好汉的故事</span>
+              <span class="en">Water Margin: The Story of 108 Heroes</span>
+            </a>
+          </li>
+          <li class="topic done">
+            <a href="culture/books/literature/dream-red-chamber/index.html">
+              <span class="zh">《红楼梦》：大观园里的世界</span>
+              <span class="en">Dream of the Red Chamber: A World Inside Grand View Garden</span>
+            </a>
+          </li>
+          <li class="topic done">
+            <a href="culture/books/literature/shan-hai-jing/index.html">
+              <span class="zh">《山海经》：中国最古老的神怪百科全书</span>
+              <span class="en">Classic of Mountains and Seas: China's Ancient Book of Wonders</span>
+            </a>
+          </li>
+        </ul>
+      </section>
+
+      <section class="culture-category-section" id="culture-religion" style="--cat-accent: #8c6a4e">
+        <div class="cat-head">
+          <span class="cat-icon">🛕</span>
+          <div>
+            <h3>宗教</h3>
+            <h4>Religion &amp; Belief</h4>
+            <p class="cat-desc zh">白马来送的信仰、微笑的佛、会飞的神仙。</p>
+            <p class="cat-desc en">Faith carried by white horses, smiling Buddhas, and flying immortals.</p>
+          </div>
+        </div>
+        <ul class="topic-grid">
+          <li class="topic done">
+            <a href="culture/books/religion/buddhism-comes-to-china/index.html">
+              <span class="zh">白马驮来的信仰：佛教来到中国</span>
+              <span class="en">A Faith Carried by White Horses: Buddhism Comes to China</span>
+            </a>
+          </li>
+          <li class="topic done">
+            <a href="culture/books/religion/maitreya-buddha/index.html">
+              <span class="zh">寺庙里的笑容：弥勒佛的大肚子</span>
+              <span class="en">Smiles in the Temple: Maitreya Buddha's Big Belly</span>
+            </a>
+          </li>
+          <li class="topic done">
+            <a href="culture/books/religion/daoism/index.html">
+              <span class="zh">道教：追求快乐飞翔的神仙</span>
+              <span class="en">Daoism: Seeking the Joyful Flying Immortals</span>
+            </a>
+          </li>
+          <li class="topic done">
+            <a href="culture/books/religion/lord-guan/index.html">
+              <span class="zh">关公为什么会进庙？</span>
+              <span class="en">Why Did Lord Guan Enter Temples?</span>
+            </a>
+          </li>
+        </ul>
+      </section>
+
+      <section class="culture-category-section with-books" id="culture-folk-tales" style="--cat-accent: #5c6bc0">
+        <div class="cat-head">
+          <span class="cat-icon">📖</span>
+          <div>
+            <h3>民间故事</h3>
+            <h4>Folk Tales</h4>
+            <p class="cat-desc zh">最精彩的故事，一代一代讲下来，每个中国小孩都听过。</p>
+            <p class="cat-desc en">The most wonderful stories, told from generation to generation. Every Chinese child has heard them.</p>
+          </div>
+        </div>
+        <ul class="topic-grid">
+          <li class="topic done">
+            <a href="culture/books/folk-tales/chang-e-moon/index.html">
+              <span class="zh">嫦娥奔月</span>
+              <span class="en">Chang'e Flies to the Moon</span>
+            </a>
+          </li>
+          <li class="topic done">
+            <a href="culture/books/folk-tales/qixi-cowherd-weaver-girl/index.html">
+              <span class="zh">七夕</span>
+              <span class="en">The Cowherd and the Weaver Girl</span>
+            </a>
+          </li>
+          <li class="topic done">
+            <a href="culture/books/folk-tales/ma-liang/index.html">
+              <span class="zh">神笔马良</span>
+              <span class="en">Ma Liang and the Magic Brush</span>
+            </a>
+          </li>
+          <li class="topic done">
+            <a href="culture/books/folk-tales/white-snake/index.html">
+              <span class="zh">白蛇传</span>
+              <span class="en">The Legend of the White Snake</span>
+            </a>
+          </li>
+          <li class="topic done">
+            <a href="culture/books/folk-tales/yu-gong/index.html">
+              <span class="zh">愚公移山</span>
+              <span class="en">Yu Gong Moves the Mountains</span>
+            </a>
+          </li>
+        </ul>
+      </section>
+
           </section>
         </section>
 

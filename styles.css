@@ -6314,6 +6314,282 @@ h4 {
   background: transparent;
 }
 
+/* Culture is a third landing-page path, parallel to Topics and Books. */
+.culture-panel {
+  padding: 0;
+}
+
+.culture-card-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.culture-category-card {
+  position: relative;
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  padding: 24px 14px 20px;
+  border: 1px solid rgba(45, 34, 24, 0.07);
+  border-radius: 20px;
+  color: var(--ink);
+  background: var(--paper);
+  box-shadow: var(--shadow);
+  text-align: center;
+  text-decoration: none;
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.culture-category-card::before {
+  position: absolute;
+  inset: 0 0 auto;
+  height: 4px;
+  background: var(--cat-accent, var(--sun));
+  content: "";
+}
+
+.culture-category-card:hover,
+.culture-category-card:focus-visible {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(45, 34, 24, 0.11);
+}
+
+.culture-category-card.is-selected {
+  outline: 3px solid color-mix(in srgb, var(--cat-accent, var(--sun)) 24%, transparent);
+  outline-offset: 2px;
+}
+
+.culture-card-emoji {
+  display: grid;
+  width: 52px;
+  height: 52px;
+  margin-bottom: 12px;
+  place-items: center;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--cat-accent, var(--sun)) 12%, transparent);
+  font-size: 1.8rem;
+  line-height: 1;
+}
+
+.culture-card-count {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  padding: 3px 9px;
+  border-radius: 10px;
+  color: #fff;
+  background: var(--cat-accent, var(--sun));
+  font-size: 0.65rem;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.culture-card-name {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 6px;
+  line-height: 1.35;
+}
+
+.culture-card-name strong {
+  font-family: var(--hanzi-font);
+  font-size: 1rem;
+}
+
+.culture-card-name em {
+  color: var(--cat-accent, var(--sun));
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 700;
+}
+
+.culture-card-name em::before {
+  color: #ccc5b8;
+  content: "· ";
+}
+
+.culture-card-hint {
+  margin-top: 6px;
+  color: var(--muted);
+  font-family: var(--hanzi-font);
+  font-size: 0.78rem;
+  line-height: 1.35;
+}
+
+.culture-card-hint small {
+  color: #9b9188;
+  font-family: var(--latin-font);
+  font-size: 0.74rem;
+}
+
+.culture-category-section {
+  margin-top: 40px;
+  padding: 40px;
+  border: 1px solid rgba(45, 34, 24, 0.07);
+  border-radius: 28px;
+  background: var(--paper);
+  box-shadow: var(--shadow);
+  scroll-margin-top: 72px;
+}
+
+.culture-category-section .cat-head {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 28px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid rgba(45, 34, 24, 0.06);
+}
+
+.culture-category-section .cat-icon {
+  display: grid;
+  width: 56px;
+  height: 56px;
+  flex-shrink: 0;
+  place-items: center;
+  border-radius: 16px;
+  background: color-mix(in srgb, var(--cat-accent, var(--sun)) 12%, transparent);
+  font-size: 1.8rem;
+  line-height: 1;
+}
+
+.culture-category-section .cat-head h3 {
+  color: var(--cat-accent, var(--berry));
+  font-size: clamp(1.8rem, 2.4vw, 2.2rem);
+}
+
+.culture-category-section .cat-head h4 {
+  margin-top: 2px;
+  color: var(--muted);
+  font-size: clamp(1.05rem, 1.5vw, 1.3rem);
+}
+
+.culture-category-section .cat-desc {
+  max-width: 56ch;
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+
+.culture-category-section .topic-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.culture-category-section .topic {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 18px 22px;
+  border-radius: 16px;
+  transition: transform 150ms ease, box-shadow 150ms ease, background 150ms ease;
+}
+
+.culture-category-section .topic .zh {
+  color: var(--ink);
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.45;
+}
+
+.culture-category-section .topic .en {
+  color: var(--muted);
+  font-size: 0.85rem;
+  line-height: 1.45;
+}
+
+.culture-category-section .topic.done {
+  border: 1px solid rgba(240, 168, 48, 0.25);
+  background: var(--paper-soft);
+}
+
+.culture-category-section .topic.done a {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  text-decoration: none;
+}
+
+.culture-category-section .topic.done:hover {
+  transform: translateY(-2px);
+  background: #fef0d9;
+  box-shadow: var(--shadow);
+}
+
+.culture-category-section .topic.done .zh {
+  color: var(--berry-dark);
+}
+
+.culture-category-section .topic.done .en {
+  color: #a5680b;
+  font-weight: 500;
+}
+
+.culture-category-section .topic.done::after {
+  position: absolute;
+  top: 50%;
+  right: 18px;
+  color: #a5680b;
+  content: "→";
+  opacity: 0;
+  transform: translateY(-50%);
+  transition: opacity 150ms ease, right 150ms ease;
+}
+
+.culture-category-section .topic.done:hover::after {
+  right: 14px;
+  opacity: 1;
+}
+
+.culture-category-section .topic.upcoming {
+  border: 1px solid rgba(45, 34, 24, 0.05);
+  background: #f8f6f3;
+}
+
+.culture-category-section .topic.upcoming .zh {
+  color: #9a8e80;
+}
+
+.culture-category-section .topic.upcoming .en {
+  color: #bab0a4;
+}
+
+@media (max-width: 800px) {
+  .culture-card-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .culture-category-section {
+    padding: 28px 20px;
+  }
+
+  .culture-category-section .topic-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 520px) {
+  .culture-card-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .culture-category-section .cat-head {
+    flex-direction: column;
+    gap: 8px;
+  }
+}
+
 /* Final cascade for the learning-home refactor. Keep this after legacy landing rules. */
 .library-hero h1 {
   max-width: none;

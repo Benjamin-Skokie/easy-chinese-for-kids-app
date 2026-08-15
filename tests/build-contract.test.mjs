@@ -58,6 +58,20 @@ test("the landing hero features five scrollable culture-story highlights", () =>
   assert.match(carouselSource, /viewport\.scrollTo/);
 });
 
+test("culture is an in-page landing view with category cards and no duplicate culture hero", () => {
+  const landingHtml = readFileSync("index.html", "utf8");
+  const cultureHtml = readFileSync("culture/index.html", "utf8");
+  assert.match(landingHtml, /href="#culture-panel" data-global-view="culture"/);
+  assert.match(landingHtml, /id="culture-panel"/);
+  assert.match(landingHtml, /href="#culture-philosophy"/);
+  assert.match(landingHtml, /id="culture-economy"/);
+  assert.match(landingHtml, /id="culture-military"/);
+  assert.match(landingHtml, /culture\/books\/philosophy\/yin-yang\/index\.html/);
+  assert.doesNotMatch(cultureHtml, /发现中国文化/);
+  assert.equal(viewFromLocation({ search: "", hash: "#culture-panel" }), "culture");
+  assert.equal(viewFromLocation({ search: "", hash: "#culture-philosophy" }), "culture");
+});
+
 test("direct topic links immediately focus the topic detail for every topic", () => {
   const runtimeWiringSource = readFileSync("src/app/runtime-wiring.js", "utf8");
   const stylesSource = readFileSync("styles.css", "utf8");
