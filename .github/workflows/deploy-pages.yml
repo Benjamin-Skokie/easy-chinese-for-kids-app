@@ -41,6 +41,16 @@ jobs:
             --exclude .github \
             --exclude node_modules \
             --exclude _site \
+            --exclude books_pdf \
+            --exclude generated \
+            --exclude assets_archive \
+            --exclude docs \
+            --exclude src \
+            --exclude scripts \
+            --exclude tests \
+            --exclude tmp \
+            --exclude culture/content \
+            --exclude culture/experiments \
             ./ _site/
           test -f _site/index.html
 
