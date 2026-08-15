@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>No Stress Learning Chinese</title>
-    <link rel="stylesheet" href="styles.css?v=20260814-leisure-tiantiansoccer" />
+    <link rel="stylesheet" href="styles.css?v=20260815-story-carousel" />
   </head>
   <body>
     <nav class="learning-culture-nav" id="learningCultureNav" aria-label="Topic categories"></nav>
@@ -30,9 +30,41 @@
 
     <div class="site-shell">
       <header class="library-hero">
-        <h1>今天学点什么？</h1>
-        <h2>What shall we learn today?</h2>
-        <p class="library-hero-subtitle">Use topics for everyday practice. Use books for homework review. Open culture stories when you want a picture-book reading break.</p>
+        <h1>学中文，也发现文字背后的世界。</h1>
+        <h2>Learn the language. Discover the world behind it.</h2>
+        <section class="story-highlights" data-story-highlights aria-label="Featured culture stories">
+          <div class="story-highlights-viewport">
+            <div class="story-highlights-track">
+              <a class="story-highlight-slide" href="culture/books/folk-tales/monkey-king/index.html">
+                <img src="culture/books/folk-tales/monkey-king/images/2-great-sage-at-gate.webp" alt="The Monkey King at Heaven's gate" loading="eager" decoding="async" fetchpriority="high" />
+                <span class="story-highlight-copy"><span class="story-highlight-kicker">Folk tale</span><strong>美猴王大闹天宫</strong><small>The Monkey King Makes Trouble in Heaven</small><em>Open story <span aria-hidden="true">→</span></em></span>
+              </a>
+              <a class="story-highlight-slide" href="culture/books/folk-customs/mid-autumn/index.html">
+                <img src="culture/books/folk-customs/mid-autumn/images/chang-e-story.webp" alt="Chang'e and the moon in the Mid-Autumn Festival story" loading="lazy" decoding="async" />
+                <span class="story-highlight-copy"><span class="story-highlight-kicker">Festival</span><strong>中秋节</strong><small>Mid-Autumn Festival</small><em>Open story <span aria-hidden="true">→</span></em></span>
+              </a>
+              <a class="story-highlight-slide" href="culture/books/figures/mulan/index.html">
+                <img src="culture/books/figures/mulan/images/army-camp.webp" alt="Hua Mulan training in an army camp" loading="lazy" decoding="async" />
+                <span class="story-highlight-copy"><span class="story-highlight-kicker">Historical figure</span><strong>花木兰</strong><small>The Girl Who Took Her Father's Place</small><em>Open story <span aria-hidden="true">→</span></em></span>
+              </a>
+              <a class="story-highlight-slide" href="culture/books/folk-tales/ma-liang/index.html">
+                <img src="culture/books/folk-tales/ma-liang/images/2-magic-rooster.webp" alt="Ma Liang's magic brush brings a rooster to life" loading="lazy" decoding="async" />
+                <span class="story-highlight-copy"><span class="story-highlight-kicker">Folk tale</span><strong>神笔马良</strong><small>Ma Liang and the Magic Brush</small><em>Open story <span aria-hidden="true">→</span></em></span>
+              </a>
+              <a class="story-highlight-slide" href="culture/books/food/dumplings/index.html">
+                <img src="culture/books/food/dumplings/images/family-making-dumplings.webp" alt="A family making dumplings together" loading="lazy" decoding="async" />
+                <span class="story-highlight-copy"><span class="story-highlight-kicker">Food story</span><strong>饺子</strong><small>What Surprise Is Hidden Inside a Dumpling?</small><em>Open story <span aria-hidden="true">→</span></em></span>
+              </a>
+            </div>
+          </div>
+          <div class="story-highlight-dots" role="tablist" aria-label="Choose a featured story">
+            <button type="button" aria-label="Show 美猴王大闹天宫" aria-current="true" data-story-highlight-dot="0"></button>
+            <button type="button" aria-label="Show 中秋节" data-story-highlight-dot="1"></button>
+            <button type="button" aria-label="Show 花木兰" data-story-highlight-dot="2"></button>
+            <button type="button" aria-label="Show 神笔马良" data-story-highlight-dot="3"></button>
+            <button type="button" aria-label="Show 饺子" data-story-highlight-dot="4"></button>
+          </div>
+        </section>
         <div class="library-hero-routes" aria-label="Learning paths">
           <a class="library-hero-route is-active" href="#topics-panel" data-global-view="topics">
             <span class="library-route-symbol">图</span>
@@ -150,6 +182,6 @@
       </main>
     </div>
 
-    <script src="app.js?v=20260814-leisure-tiantiansoccer"></script>
+    <script src="app.js?v=20260815-story-carousel"></script>
   </body>
 </html>

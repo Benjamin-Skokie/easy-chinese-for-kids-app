@@ -1,6 +1,7 @@
 import { colourLessons } from "./colours.js";
 import { animalLessons } from "./animals.js";
 import { natureLesson, weatherLesson } from "./weather.js";
+import { imageLoadingAttrs } from "../../core/image-loading.js";
 
 const colourSwatches = {
   red: "#e85b50",
@@ -194,7 +195,7 @@ export function createWorldRuntime({ state, currentTopic, currentBook, currentLe
   }
 
   function worldSceneCardMarkup(scene, { playAttribute, index, compact = false, extraClass = "" }) {
-    return `<section class="greetings-exchange school-scene-card${extraClass ? ` ${extraClass}` : ""}"><div class="greetings-exchange-top"><div><p class="body-match-kicker">${scene.title}</p></div><button class="small-button is-play-button" type="button" ${playAttribute}="${index}">Play</button></div><div class="school-scene-layout${compact ? " is-compact" : ""}"><img class="school-scene-image${scene.imageClass ? ` ${scene.imageClass}` : ""}" src="${scene.imagePath}" alt="${scene.imageAlt}" /><div class="greetings-line-stack">${scene.lines.map((line) => `<article class="greetings-line-card"><div class="telephone-bubble-copy"><p class="telephone-line-hanzi${line.className ? ` ${line.className}` : ""}">${line.hanzi}</p>${state.showPinyin ? `<p class="telephone-line-pinyin">${line.pinyin}</p>` : ""}${state.showEnglish ? `<p class="telephone-line-english">${line.english}</p>` : ""}</div></article>`).join("")}</div></div></section>`;
+    return `<section class="greetings-exchange school-scene-card${extraClass ? ` ${extraClass}` : ""}"><div class="greetings-exchange-top"><div><p class="body-match-kicker">${scene.title}</p></div><button class="small-button is-play-button" type="button" ${playAttribute}="${index}">Play</button></div><div class="school-scene-layout${compact ? " is-compact" : ""}"><img class="school-scene-image${scene.imageClass ? ` ${scene.imageClass}` : ""}" src="${scene.imagePath}" alt="${scene.imageAlt}" ${imageLoadingAttrs({ primary: index === 0 })} /><div class="greetings-line-stack">${scene.lines.map((line) => `<article class="greetings-line-card"><div class="telephone-bubble-copy"><p class="telephone-line-hanzi${line.className ? ` ${line.className}` : ""}">${line.hanzi}</p>${state.showPinyin ? `<p class="telephone-line-pinyin">${line.pinyin}</p>` : ""}${state.showEnglish ? `<p class="telephone-line-english">${line.english}</p>` : ""}</div></article>`).join("")}</div></div></section>`;
   }
 
   function renderWorldExplorer() {

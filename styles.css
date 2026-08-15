@@ -6355,6 +6355,122 @@ h4 {
   margin-top: 24px;
 }
 
+.story-highlights {
+  width: min(100%, 880px);
+  margin: 24px auto 0;
+}
+
+.story-highlights-viewport {
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+  scroll-snap-type: inline mandatory;
+  border-radius: 20px;
+  scrollbar-width: none;
+  box-shadow: 0 12px 28px rgba(45, 34, 24, 0.14);
+}
+
+.story-highlights-viewport::-webkit-scrollbar {
+  display: none;
+}
+
+.story-highlights-track {
+  display: flex;
+  width: 500%;
+}
+
+.story-highlight-slide {
+  position: relative;
+  display: block;
+  flex: 0 0 20%;
+  aspect-ratio: 16 / 8;
+  overflow: hidden;
+  scroll-snap-align: start;
+  color: #fff;
+  background: #2d2218;
+  text-decoration: none;
+}
+
+.story-highlight-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 280ms ease;
+}
+
+.story-highlight-slide:hover img,
+.story-highlight-slide:focus-visible img {
+  transform: scale(1.045);
+}
+
+.story-highlight-slide::after {
+  position: absolute;
+  inset: 35% 0 0;
+  content: "";
+  background: linear-gradient(transparent, rgba(25, 17, 11, 0.9));
+  pointer-events: none;
+}
+
+.story-highlight-copy {
+  position: absolute;
+  right: 18px;
+  bottom: 16px;
+  left: 18px;
+  z-index: 1;
+  display: grid;
+  gap: 3px;
+}
+
+.story-highlight-kicker {
+  color: #ffe1a6;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.story-highlight-copy strong {
+  font-family: var(--hanzi-font);
+  font-size: 1.35rem;
+  line-height: 1.18;
+}
+
+.story-highlight-copy small {
+  color: rgba(255, 255, 255, 0.84);
+  font-size: 0.86rem;
+  line-height: 1.32;
+}
+
+.story-highlight-copy em {
+  margin-top: 6px;
+  color: #ffe1a6;
+  font-size: 0.78rem;
+  font-style: normal;
+  font-weight: 800;
+}
+
+.story-highlight-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 13px;
+}
+
+.story-highlight-dots button {
+  width: 7px;
+  height: 7px;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(124, 84, 32, 0.26);
+  cursor: pointer;
+  transition: width 180ms ease, background 180ms ease;
+}
+
+.story-highlight-dots button[aria-current="true"] {
+  width: 24px;
+  background: var(--berry);
+}
+
 .section-heading h2 {
   font-family: var(--display-font);
   letter-spacing: 0;
@@ -7337,6 +7453,24 @@ h4 {
 
   .learning-home-board {
     grid-template-columns: 1fr;
+  }
+
+  .story-highlights {
+    margin-top: 18px;
+  }
+
+  .story-highlight-slide {
+    aspect-ratio: 4 / 3;
+  }
+
+  .story-highlight-copy {
+    right: 15px;
+    bottom: 14px;
+    left: 15px;
+  }
+
+  .story-highlight-copy strong {
+    font-size: 1.2rem;
   }
 
   .food-book-tabs {
