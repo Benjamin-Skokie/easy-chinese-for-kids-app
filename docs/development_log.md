@@ -52,3 +52,11 @@ The detailed records are [What I Like (2A)](./page-build-logs/what_i_like_2a_5.m
 **Corrected rule:** Listen to every new or polyphonic target in its actual page. If the default voice is wrong, use a documented page-scoped voice preference first; only promote it after it is tested across more lessons.
 
 **Workflow update:** Section 6 now includes the rendered-audio check. Hobbies at Home uses Meijia as the first scoped trial.
+
+## 2026-08-14 — A lesson correction must reach every learner-facing surface
+
+**Failed assumption:** Replacing the visible scene or changing one text string completes a lesson correction.
+
+**Corrected rule:** A named-character replacement must update the scene asset, sentence, sentence-builder tokens, playback string, manifest, and retired production file as one change. If a lesson selects a preferred voice, apply it to scene controls, Book words, and practice completion—not just one of those paths. For structured sentence builders, put the child-facing order clue inside the answer box as pale slots that disappear as words are placed.
+
+**Workflow update:** Sections 4–6 now require in-box scaffolds when needed, full-surface lesson corrections, complete scoped-voice wiring, and an updated bundle/style URL version after browser-facing changes.

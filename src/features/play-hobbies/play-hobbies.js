@@ -75,7 +75,7 @@ export const hobbiesLeisureTopic = {
   focus: { hanzi: "思思在公园骑自行车。", pinyin: "sī si zài gōng yuán qí zì xíng chē.", english: "Sisi is riding a bike in the park.", audio: "思思在公园骑自行车" },
   focusItems: [
     { id: "run", hanzi: "跑步", pinyin: "pǎo bù", english: "run", audio: "跑步", imagePath: "assets/illustrated-activities/kids-running-playground-landscape.webp", imageAlt: "Children running on a school playground" },
-    { id: "soccer", hanzi: "踢足球", pinyin: "tī zú qiú", english: "play soccer", audio: "踢足球", imagePath: "assets/illustrated-activities/yangyang-playing-soccer-landscape.webp", imageAlt: "Yangyang kicking a soccer ball in a park" },
+    { id: "soccer", hanzi: "踢足球", pinyin: "tī zú qiú", english: "play soccer", audio: "踢足球", imagePath: "assets/illustrated-activities/tiantian-playing-soccer-landscape.webp", imageAlt: "Tiantian kicking a soccer ball in a park" },
     { id: "bike", hanzi: "骑自行车", pinyin: "qí zì xíng chē", english: "ride a bike", audio: "骑自行车", imagePath: "assets/illustrated-activities/sisi-riding-bike-landscape.webp", imageAlt: "Sisi riding a bike in a park" },
     { id: "sand", hanzi: "玩儿沙子", pinyin: "wánr shā zi", english: "play with sand", audio: "玩儿沙子", imagePath: "assets/illustrated-activities/meimei-playing-sand-4x3.webp", imageAlt: "Meimei playing with sand at the beach" },
     { id: "playground", hanzi: "学校操场", pinyin: "xué xiào cāo chǎng", english: "school playground", audio: "学校操场" },

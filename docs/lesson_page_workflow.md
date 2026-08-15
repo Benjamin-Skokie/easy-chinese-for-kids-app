@@ -56,6 +56,7 @@ For each remaining learning goal, write down:
 - every valid answer or a small explicit answer grammar, including equivalent frames such as `爱` / `喜欢` where the lesson permits them;
 - distractors and invalid combinations; for picture-based choice, a distractor must be visually and semantically incompatible, not simply a less-specific sentence that could also fit;
 - feedback, completion display (Hanzi, pinyin, and English), and speech behavior; do not repeat an already visible selected answer unless the duplicate adds a distinct teaching job;
+- any construction scaffold the child needs (for example, `Who · 在 · Where · What`), including whether it appears as pale slots inside the answer box and disappears as words are selected;
 - which unused choices, distractors, or controls remain visible after success;
 - what **Play** does: a new randomized round, not merely audio replay; when more than one round exists, it must differ from the current round;
 - the full eligible round set for randomization and what stays stable within a round.
@@ -82,7 +83,7 @@ Write the prompt from the page blueprint. It must explicitly lock:
 - what must be unreadable or omitted to avoid false visual claims;
 - the accepted composition and scene purpose.
 
-Review each generated asset before copying it into the app. Reject it if identity, action, orientation, or teaching beat is wrong, even if its general style is attractive. Keep source assets, manifests, lesson data, and practice data aligned; do not copy the same file path into unrelated arrays.
+Review each generated asset before copying it into the app. Reject it if identity, action, orientation, or teaching beat is wrong, even if its general style is attractive. If a reviewed named-character asset is rejected, replace its lesson sentence, practice round, manifest entry, and file together; remove the rejected production asset. Keep source assets, manifests, lesson data, and practice data aligned; do not copy the same file path into unrelated arrays.
 
 ## 6. Verify the page
 
@@ -94,8 +95,9 @@ Before handoff:
 - verify the topic is included in both the explorer and practice dispatch paths, not merely its data and renderer;
 - test selected, wrong, correct, completed, hidden-unused-choice, Clear (when present), and Play/new-round states; confirm each eligible round can be drawn; test at least one alternative valid sentence where the answer model allows more than one;
 - confirm all visible copy describes the current interaction;
-- listen to every new or polyphonic target word in its rendered page; if the default voice is wrong, use and document a scoped voice preference before widening it to other topics;
+- listen to every new or polyphonic target word in its rendered page; if the default voice is wrong, use and document a scoped voice preference before widening it to other topics. Verify that preference reaches every lesson speech surface: scene controls, Book words, and practice-completion playback;
 - run the relevant data validation, build, tests, and `git diff --check`;
+- when a browser-facing bundle or stylesheet changes, update its versioned URL in `index.html` so local cached copies cannot hide the change;
 - review the actual page at its target desktop and mobile widths.
 
 Update the same contract with the result and remaining evidence gaps. Keep the change scoped to one topic or one reusable pattern.

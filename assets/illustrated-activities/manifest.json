@@ -579,20 +579,20 @@
       "file": "meimei-playing-sand-4x3.webp"
     },
     {
-      "id": "yangyang-playing-soccer-landscape",
+      "id": "tiantian-playing-soccer-landscape",
       "label": "Play soccer",
       "hanzi": "踢足球",
       "pinyin": "tī zú qiú",
-      "personId": "yangyang",
-      "personLabel": "Yangyang",
+      "personId": "tiantian",
+      "personLabel": "Tiantian",
       "pronoun": "he",
       "location": "park soccer field",
-      "sentenceHanzi": "阳阳在公园踢足球。",
-      "sentencePinyin": "Yáng yáng zài gōng yuán tī zú qiú.",
-      "sentenceEnglish": "Yangyang is playing soccer in the park.",
-      "theme": "Yangyang kicks a soccer ball in a 4:3 landscape park scene",
+      "sentenceHanzi": "天天在公园踢足球。",
+      "sentencePinyin": "Tiān tiān zài gōng yuán tī zú qiú.",
+      "sentenceEnglish": "Tiantian is playing soccer in the park.",
+      "theme": "Tiantian kicks a soccer ball in a 4:3 landscape park scene",
       "lessonHints": ["4B Lesson 7 Leisure Time"],
-      "file": "yangyang-playing-soccer-landscape.webp"
+      "file": "tiantian-playing-soccer-landscape.webp"
     },
     {
       "id": "kids-running-playground-landscape",
