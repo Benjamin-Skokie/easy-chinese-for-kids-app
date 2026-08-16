@@ -42,7 +42,7 @@ page: 2
 layout: text-wrap-image
 heading_zh: 一只碗好看，常常是因为有人练了很多很多次
 heading_en: A Beautiful Bowl Often Means Years of Practice
-image: 2-porcelain-painter-hands-v3.png
+image: 2-porcelain-painter-hands-v3.webp
 caption_zh: 一条鱼、一片叶子、一圈蓝线，看起来轻轻松松，背后常常是很久很久的练习。
 caption_en: A fish, a leaf, or one blue line may look easy, but it often comes from a very long time of practice.
 [zh]

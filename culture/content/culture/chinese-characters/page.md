@@ -18,7 +18,7 @@ page: 1
 layout: text-wrap-image
 heading_zh: 一家中药铺里，藏着三千多年前的字
 heading_en: A Medicine Shop Was Hiding Very Old Writing
-image: 1-medicine-shop-discovery-overhead-v2.png
+image: 1-medicine-shop-discovery-overhead-v2.webp
 caption_zh: 被当成药材的骨头上，竟然刻着很古老的文字。
 caption_en: On bones being sold as medicine, someone noticed marks that were actually very old writing.
 [zh]

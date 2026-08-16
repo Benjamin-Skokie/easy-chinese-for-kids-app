@@ -61,7 +61,7 @@ page: 3
 layout: text-wrap-image
 heading_zh: 成都熊猫基地
 heading_en: The Panda Base in Chengdu
-image: panda-base-chengdu-cubs.png
+image: panda-base-chengdu-cubs.webp
 caption_zh: 成都熊猫基地是很多人认识大熊猫和熊猫宝宝的一处著名地方
 caption_en: The panda base in Chengdu is one famous place where people get to know pandas and cubs.
 [zh]

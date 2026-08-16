@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import { spawnSync } from "node:child_process";
-import { readFileSync } from "node:fs";
+import { existsSync, readFileSync, readdirSync } from "node:fs";
+import { join, normalize } from "node:path";
 import test from "node:test";
 import { createAudioService } from "../src/core/audio.js";
 import { topicIdFromLocation, topicPageUrl, viewFromLocation } from "../src/core/router.js";
@@ -44,8 +45,32 @@ import { familyGameItemIds, familyPractice, familyTopic, illustratedFamily } fro
 
 test("the local page loads a single bundled application script", () => {
   const html = readFileSync("index.html", "utf8");
-  assert.match(html, /<script src="app\.js\?v=20260815-story-carousel"><\/script>/);
+  assert.match(html, /<script src="app\.js\?v=20260815-everyday-actions"><\/script>/);
   assert.doesNotMatch(html, /type="module"/);
+});
+
+test("Culture book image references are present and committed for GitHub Pages", () => {
+  const pages = [];
+  const collectBookPages = (directory) => {
+    for (const entry of readdirSync(directory, { withFileTypes: true })) {
+      const filePath = join(directory, entry.name);
+      if (entry.isDirectory()) collectBookPages(filePath);
+      if (entry.isFile() && entry.name === "index.html") pages.push(filePath);
+    }
+  };
+  collectBookPages("culture/books");
+
+  for (const pagePath of pages) {
+    const html = readFileSync(pagePath, "utf8");
+    for (const match of html.matchAll(/(?:src|href)="([^\"]+)"/g)) {
+      const assetUrl = match[1];
+      if (!/^\.?\/?images\/.+\.(?:webp|png|jpe?g|gif|svg)(?:[?#].*)?$/i.test(assetUrl)) continue;
+      const assetPath = normalize(join(pagePath, "..", assetUrl.split(/[?#]/)[0]));
+      assert.ok(existsSync(assetPath), `${pagePath} references a missing image: ${assetUrl}`);
+      const tracked = spawnSync("git", ["ls-files", "--error-unmatch", assetPath], { encoding: "utf8" });
+      assert.equal(tracked.status, 0, `${pagePath} references an image not committed for GitHub Pages: ${assetUrl}`);
+    }
+  }
 });
 
 test("the Chinese landing-page headline is slightly reduced while keeping its original palette", () => {

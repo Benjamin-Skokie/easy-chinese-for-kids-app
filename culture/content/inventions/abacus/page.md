@@ -46,7 +46,7 @@ page: 2
 layout: text-wrap-image
 heading_zh: 学算盘，像唱歌一样
 heading_en: Learning It Was Almost Like Singing
-image: abacus-classroom-v3.png
+image: abacus-classroom-v3.webp
 caption_zh: 孩子们一边听口诀，一边拨珠子。学算盘的时候，教室里常常很有节奏。
 caption_en: Children learned by listening to number chants and moving the beads. An abacus lesson often had a strong rhythm.
 [zh]
@@ -70,7 +70,7 @@ page: 3
 layout: text-wrap-image
 heading_zh: 为什么它这么快？
 heading_en: Why Is It So Fast?
-image: shop-abacus-overhead-diagonal-v3.png
+image: shop-abacus-overhead-diagonal-v3.webp
 caption_zh: 在商店和账房里，会用算盘的人常常一边看账本，一边拨珠，动作又快又稳。
 caption_en: In shops and accounting rooms, skilled users often watched the ledger while moving the beads, fast and steady at the same time.
 [zh]

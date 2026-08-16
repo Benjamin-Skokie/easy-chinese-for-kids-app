@@ -17,7 +17,7 @@ page: 1
 layout: text-wrap-image
 heading_zh: 两条河改写了很多人的生活
 heading_en: Two Rivers Changed Many Lives
-image: two-mother-rivers-map.png
+image: two-mother-rivers-map.webp
 caption_zh: 一张简单地图，把北边的黄河和南边的长江分清楚了
 caption_en: A simple map shows the Yellow River in the north and the Yangtze in the south.
 [zh]
@@ -95,7 +95,7 @@ page: 4
 layout: text-wrap-image
 heading_zh: 南北方——两条河带出不同日子
 heading_en: North and South: Two Rivers, Two Ways of Life
-image: north-south-river-life-split.png
+image: north-south-river-life-split.webp
 caption_zh: 北方的麦田和南方的水网，带出不同的日子
 caption_en: Northern wheat fields and southern waterways shaped different daily lives.
 [zh]

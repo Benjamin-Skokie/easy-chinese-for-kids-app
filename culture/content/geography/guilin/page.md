@@ -41,7 +41,7 @@ page: 2
 layout: text-wrap-image
 heading_zh: 漓江 - 像一幅慢慢展开的山水画
 heading_en: The Li River: A Painting That Slowly Opens
-image: li-river-20-yuan-note.png
+image: li-river-20-yuan-note.webp
 caption_zh: 二十元纸币背面的黄布倒影，正是漓江的一段风景
 caption_en: The view on the back of China's 20-yuan bill comes from the Li River.
 [zh]

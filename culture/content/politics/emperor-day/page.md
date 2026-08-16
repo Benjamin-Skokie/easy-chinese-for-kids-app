@@ -18,7 +18,7 @@ page: 1
 layout: text-wrap-image
 heading_zh: 这个皇帝，小时候并不住皇宫
 heading_en: This Emperor Did Not Grow Up in a Palace
-image: zhu-yuanzhang-herding-buffalo.png
+image: zhu-yuanzhang-herding-buffalo.webp
 caption_zh: 朱元璋少时家里极穷，只能替地主放牛，换一点生计。
 caption_en: Zhu Yuanzhang's family was extremely poor, so as a boy he herded a landlord's buffalo to help keep the family alive.
 [zh]
@@ -46,7 +46,7 @@ page: 2
 layout: text-wrap-image
 heading_zh: 从早朝开始，他什么都想亲自管
 heading_en: Starting at Court, He Wanted to Handle Everything Himself
-image: morning-court-ming.png
+image: morning-court-ming.webp
 caption_zh: 大臣一件一件往上报，朱元璋总想自己听、自己问、自己定。
 caption_en: Officials reported matters one by one, and Zhu Yuanzhang wanted to hear, question, and decide for himself.
 [zh]
@@ -82,7 +82,7 @@ page: 3
 layout: text-wrap-image
 heading_zh: 奏章越堆越高，皇帝像下不了班
 heading_en: The Reports Kept Piling Up, and the Emperor Could Never Clock Out
-image: late-night-memorials-ming.png
+image: late-night-memorials-ming.webp
 caption_zh: 到了深夜，案上还是一摞一摞的奏章。大事小事，都等着朱元璋看。
 caption_en: Even late at night, stacks of reports still covered the desk. Big matters and small ones all waited for Zhu Yuanzhang to read.
 [zh]

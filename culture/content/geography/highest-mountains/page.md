@@ -17,7 +17,7 @@ page: 1
 layout: text-wrap-image
 heading_zh: 珠穆朗玛——离天空最近的地方之一
 heading_en: Qomolangma: One of the Closest Places to the Sky
-image: qomolangma-location-map.png
+image: qomolangma-location-map.webp
 caption_zh: 珠穆朗玛峰在喜马拉雅山脉里，立在中国和尼泊尔的交界处
 caption_en: Qomolangma stands in the Himalayas on the border between China and Nepal.
 [zh]
@@ -61,7 +61,7 @@ page: 3
 layout: text-wrap-image
 heading_zh: 珠峰属于谁？
 heading_en: Who Does Everest Belong To?
-image: everest-climbers-shared-summit.png
+image: everest-climbers-shared-summit.webp
 caption_zh: 登山者沿着高高的山脊向顶峰前进，山顶在中国和尼泊尔之间共享
 caption_en: Climbers move along the high ridge toward a summit shared by China and Nepal.
 [zh]

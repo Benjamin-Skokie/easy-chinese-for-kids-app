@@ -42,7 +42,7 @@ page: 2
 layout: text-wrap-image
 heading_zh: 规则不算难，难的是整盘都要看
 heading_en: The Rules Are Simple, but the Whole Board Is Hard
-image: 2-weiqi-board-closeup-reference-style-v3.png
+image: 2-weiqi-board-closeup-reference-style-v3.webp
 caption_zh: 黑子先下，白子后下，围住对方、围出地盘，规则不多，可变化非常多。
 caption_en: Black goes first, white goes second, and players fight for territory. The rules are short, but the possibilities are huge.
 [zh]
