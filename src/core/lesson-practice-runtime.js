@@ -1,7 +1,7 @@
 import { imageLoadingAttrs } from "./image-loading.js";
 
 export function createLessonPracticeRuntime(context) {
-  const { state, schoolTopicData, visualTopicItems, positionPracticeItems, timeDateWeekItems, timeDateClockItems, datePracticeItems, timeDateMonthItems, timeDateRoutineItems, clothesMatchItems, illustratedKids, numberHanzi, buildNumberItem, currentTopic, currentNumberStage, currentBook, currentLesson, focusItemsForTopic, shuffleArray, speak, renderFocusExplorer, renderFocusStatus, renderSharedLessonPractice, renderPracticeSayCards, bindPracticeSayCards, activityPanelTitle, activityPanelSummary, activityList, topicColumns, renderWorldPractice, renderHobbiesPractice, activeTimeDateSection, ensureWeekdayChallenge, ensureWeekdayMatchGame, handleWeekdayChallengePlay, handleWeekdayChallengeGuess, resetWeekdayMatchGame, handleWeekdayMatchPhrase, handleWeekdayMatchAttempt, ensureDateChallenge, ensureDateMatchGame, handleDateChallengePlay, handleDateChallengeGuess, resetDateMatchGame, handleDateMatchPhrase, handleDateMatchEvent, familyGameItems, familyPersonForItemId, familyHeadshotForItemId, ensureFamilyChallenge, ensureFamilyMatchGame, handleFamilyChallengePlay, handleFamilyChallengeGuess, resetFamilyMatchGame, handleFamilyMatchPhrase, handleFamilyMatchAttempt, greetingsGameItems, greetingsMeaningLabel, ensureGreetingsChallenge, ensureGreetingsMatchGame, handleGreetingsChallengePlay, handleGreetingsChallengeGuess, resetGreetingsMatchGame, handleGreetingsMatchPhrase, handleGreetingsMatchAttempt, politeGameItems, politeMeaningLabel, ensurePoliteChallenge, ensurePoliteMatchGame, handlePoliteChallengePlay, handlePoliteChallengeGuess, resetPoliteMatchGame, handlePoliteMatchPhrase, handlePoliteMatchAttempt, ensureRoomBuilder, currentRoomBuildItem, handleRoomBuildToken, clearRoomBuilder, nextRoomBuilder, ensureClothesQuiz, handleClothesQuizPick, nextClothesQuizQuestion, ensureTimeRoutineQuiz, handleTimeRoutineQuizPick, nextTimeRoutineQuizQuestion, ensureClockQuiz, handleClockQuizPick, nextClockQuizQuestion, ensureComparisonBuilder, currentComparisonBuildItem, handleComparisonBuildToken, clearComparisonBuilder, nextComparisonBuilder, ensurePositionQuiz, handlePositionQuizPlay, handlePositionQuizPick, nextPositionQuizQuestion, ensureTransportBuilder, currentTransportBuildItem, handleTransportBuildToken, clearTransportBuilder, nextTransportBuilder, resetNumberChallenge, ensureMathChallenge, handleNumberChallengeGuess, resetMathChallenge, handleMathChallengeSubmit, renderNumberVisual, introductionsBuildTarget, ensureIntroductionsBuilder, resetIntroductionsBuilder, handleIntroductionsBuildClear, handleIntroductionsBuildToken, ageGameItems, ensureAgeChallenge, ensureAgeBuilder, ageBuildTarget, handleAgeChallengePlay, handleAgeChallengeGuess, resetAgeBuilder, handleAgeBuildClear, handleAgeBuildToken, renderSchoolPractice } = context;
+  const { state, schoolTopicData, visualTopicItems, positionPracticeItems, timeDateWeekItems, timeDateClockItems, datePracticeItems, timeDateMonthItems, timeDateRoutineItems, clothesMatchItems, everydayActionItems, illustratedKids, numberHanzi, buildNumberItem, currentTopic, currentNumberStage, currentBook, currentLesson, focusItemsForTopic, shuffleArray, speak, renderFocusExplorer, renderFocusStatus, renderSharedLessonPractice, renderPracticeSayCards, bindPracticeSayCards, activityPanelTitle, activityPanelSummary, activityList, topicColumns, renderWorldPractice, renderHobbiesPractice, activeTimeDateSection, ensureWeekdayChallenge, ensureWeekdayMatchGame, handleWeekdayChallengePlay, handleWeekdayChallengeGuess, resetWeekdayMatchGame, handleWeekdayMatchPhrase, handleWeekdayMatchAttempt, ensureDateChallenge, ensureDateMatchGame, handleDateChallengePlay, handleDateChallengeGuess, resetDateMatchGame, handleDateMatchPhrase, handleDateMatchEvent, familyGameItems, familyPersonForItemId, familyHeadshotForItemId, ensureFamilyChallenge, ensureFamilyMatchGame, handleFamilyChallengePlay, handleFamilyChallengeGuess, resetFamilyMatchGame, handleFamilyMatchPhrase, handleFamilyMatchAttempt, greetingsGameItems, greetingsMeaningLabel, ensureGreetingsChallenge, ensureGreetingsMatchGame, handleGreetingsChallengePlay, handleGreetingsChallengeGuess, resetGreetingsMatchGame, handleGreetingsMatchPhrase, handleGreetingsMatchAttempt, politeGameItems, politeMeaningLabel, ensurePoliteChallenge, ensurePoliteMatchGame, handlePoliteChallengePlay, handlePoliteChallengeGuess, resetPoliteMatchGame, handlePoliteMatchPhrase, handlePoliteMatchAttempt, ensureRoomBuilder, currentRoomBuildItem, handleRoomBuildToken, clearRoomBuilder, nextRoomBuilder, ensureClothesQuiz, handleClothesQuizPick, nextClothesQuizQuestion, ensureTimeRoutineQuiz, handleTimeRoutineQuizPick, nextTimeRoutineQuizQuestion, ensureClockQuiz, handleClockQuizPick, nextClockQuizQuestion, ensureComparisonBuilder, currentComparisonBuildItem, handleComparisonBuildToken, clearComparisonBuilder, nextComparisonBuilder, ensurePositionQuiz, handlePositionQuizPlay, handlePositionQuizPick, nextPositionQuizQuestion, ensureTransportBuilder, currentTransportBuildItem, handleTransportBuildToken, clearTransportBuilder, nextTransportBuilder, ensureEverydayActionsQuiz, currentEverydayAction, handleEverydayActionsPick, nextEverydayActionsQuestion, resetNumberChallenge, ensureMathChallenge, handleNumberChallengeGuess, resetMathChallenge, handleMathChallengeSubmit, renderNumberVisual, introductionsBuildTarget, ensureIntroductionsBuilder, resetIntroductionsBuilder, handleIntroductionsBuildClear, handleIntroductionsBuildToken, ageGameItems, ensureAgeChallenge, ensureAgeBuilder, ageBuildTarget, handleAgeChallengePlay, handleAgeChallengeGuess, resetAgeBuilder, handleAgeBuildClear, handleAgeBuildToken, renderSchoolPractice } = context;
 
 function sharedLessonPracticeConfig(topic) {
   if (topic.id === "weekdays") {
@@ -354,6 +354,35 @@ function renderActivityPanel(topic) {
     activityList.querySelector("[data-position-quiz-play]")?.addEventListener("click", handlePositionQuizPlay);
     activityList.querySelector("[data-position-quiz-next]")?.addEventListener("click", nextPositionQuizQuestion);
     bindPracticeSayCards(activityList);
+    return;
+  }
+
+  if (topic.id === "everyday-actions") {
+    ensureEverydayActionsQuiz();
+    const prompt = currentEverydayAction();
+    activityPanelTitle.textContent = "Let's practice";
+    activityPanelSummary.textContent = "Look at the picture, then choose the matching action word.";
+    activityList.className = "support-list";
+    activityList.innerHTML = `
+      <section class="clothes-quiz-shell everyday-actions-quiz-shell">
+        <div class="numbers-game-top"><div><p class="body-match-kicker">Picture choice</p><p class="numbers-game-note">Which action does the picture show?</p></div><button class="small-button is-practice-advance-button" type="button" data-everyday-actions-new aria-label="Start a new game">New game</button></div>
+        <figure class="clothes-quiz-visual everyday-actions-quiz-visual"><img class="everyday-actions-quiz-image" src="${prompt.imagePath}" alt="${prompt.sentenceEnglish}" /></figure>
+        <div class="clothes-quiz-options">
+          ${state.everydayActionsOptionIds.map((itemId) => {
+            const item = everydayActionItems.find((entry) => entry.id === itemId);
+            const isSelected = state.everydayActionsSelectedId === itemId;
+            const resultClass = isSelected ? ` is-${state.everydayActionsResult}` : "";
+            const mark = isSelected ? `<span class="answer-result-mark" aria-hidden="true">${state.everydayActionsResult === "correct" ? "✓" : "×"}</span>` : "";
+            return `<button class="clothes-quiz-option${resultClass}" type="button" data-everyday-actions-pick="${item.id}">${mark}<span class="numbers-game-hanzi">${item.hanzi}</span>${state.showPinyin ? `<span class="numbers-game-pinyin">${item.pinyin}</span>` : ""}${state.showEnglish ? `<span class="numbers-game-english">${item.english}</span>` : ""}</button>`;
+          }).join("")}
+        </div>
+        ${state.everydayActionsResult === "correct" ? `<div class="everyday-actions-answer"><p class="telephone-line-hanzi">${prompt.sentence}</p>${state.showPinyin ? `<p class="telephone-line-pinyin">${prompt.sentencePinyin}</p>` : ""}${state.showEnglish ? `<p class="telephone-line-english">${prompt.sentenceEnglish}</p>` : ""}</div>` : ""}
+      </section>
+    `;
+    activityList.querySelectorAll("[data-everyday-actions-pick]").forEach((button) => {
+      button.addEventListener("click", () => handleEverydayActionsPick(button.dataset.everydayActionsPick));
+    });
+    activityList.querySelector("[data-everyday-actions-new]")?.addEventListener("click", nextEverydayActionsQuestion);
     return;
   }
 

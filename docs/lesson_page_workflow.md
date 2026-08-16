@@ -1,6 +1,6 @@
 # Lesson Page Build Checklist
 
-Last updated: 2026-08-14
+Last updated: 2026-08-15
 
 Use this checklist to build or materially change one learning topic. It is a decision order, not a page template and not a required reading list.
 
@@ -38,10 +38,10 @@ Before generating an asset or writing a renderer, put this compact, final decisi
 
 | Section | Decide before build |
 | --- | --- |
-| Scene | Grid/layout, required visible image ratio, one teaching beat per card, and the exact sentence each scene supports—including the people visibly present. |
+| Scene | Grid/layout, required visible image ratio, one teaching beat per card, and the exact sentence each scene supports—including the people visibly present. For a repeated action set, also lock the recurring character, clothing, backdrop, and image dimensions across the complete set. |
 | Book words | The exact words; whether cards are text-only or need isolated visual support. |
 | Useful note | The single reusable distinction it explains, or omit it. |
-| Practice | The remaining language job, game pattern, allowed answer family, whether the response is a question and its required marker, completion display (including unused-choice treatment), and Play/reset/randomization behavior. |
+| Practice | The remaining language job, game pattern, allowed answer family, whether the response is a question and its required marker, completion display (including unused-choice treatment), and the exact job of every control: audio replay, new round, or both. Do not reuse a Play-shaped control for a different job without stating its state transition. |
 
 The usual page order is: **Scene → optional Book words → optional Useful notes → Practice**. Start from this structure; do not add narrative or filler cards unless the contract establishes a distinct teaching job for them. If Scene already gives every target word a clear picture and sentence, Book words must be text-only rather than repeat the same images. Each visible section has one owner. If a custom renderer owns the page content, set `ownsExplorerContent: true` and suppress generic duplicate panels.
 
@@ -61,6 +61,8 @@ For each remaining learning goal, write down:
 - what **Play** does: a new randomized round, not merely audio replay; when more than one round exists, it must differ from the current round;
 - the full eligible round set for randomization and what stays stable within a round.
 
+For a compact picture-choice practice panel, use one top-right green control only. Its label, icon, and behavior must agree in every state. If it starts a new round, it must never speak; if the correct choice should speak the complete sentence, trigger that speech from the correct-answer event instead. Do not add a second bottom Play, arrow, or New-game control after success.
+
 Then consult [Practice Patterns](./game_templates.md) and choose the smallest fitting pattern. For sentence-fill practice, each configured round must own a whole approved sentence; never generate sentences from independently mixed word categories.
 
 For a builder with more than one valid answer, use valid-prefix checking against the approved answer set. Tell the learner before play that more than one answer can be correct. Do not make punctuation a selectable word card.
@@ -72,6 +74,10 @@ When the target is a question, say so in both the instruction and empty target, 
 Reuse the asset library when it clearly teaches the planned scene. Generate new art only for a genuine teaching gap found during page planning. Before any new asset prompt, read [art_direction.md](./art_direction.md); if the scene has a recurring person or school setting, also read the relevant character or school bible and inspect the anchor images.
 
 Check each selected asset’s native aspect ratio against the scene grid before coding. The grid’s visible image ratio is a page requirement: select or generate an asset that fits it rather than relying on `contain` to expose mismatched source shapes. Use a deliberate crop only when it preserves the teaching evidence.
+
+For a scene grid specified as **N × 2**, render exactly two columns on desktop and one column on phones. Every card must have the same visible image frame and height. CSS padding or `object-fit: contain` is not a substitute for a coherent asset series when source backgrounds or subject scale make cards look uneven. For a new repeated action series, create final assets at the contracted ratio (normally 4:3), with the same recurring child, consistent clothing and scale, and a clean white or transparent background. Inspect every final image at normal page size for visual defects and semantic mistakes—for example, damaged skin details, unsafe poses, or shoes on a bed—before wiring it into the lesson.
+
+Keep production image URLs relative to the page or application root; never use a local `file://` or machine-specific path. Prefer WebP for new raster assets. A file that only exists locally is not a deployable asset: confirm that every referenced image is tracked and will be included in the published site.
 
 Write the prompt from the page blueprint. It must explicitly lock:
 
@@ -89,11 +95,12 @@ Review each generated asset before copying it into the app. Reject it if identit
 
 Before handoff:
 
-- verify every asset path exists and every retired asset is unreferenced;
+- verify every asset path exists, is repository-tracked for deployment, uses the intended relative URL, and every retired asset is unreferenced;
 - verify every scene image uses the contracted display ratio and its sentence matches the visible subject;
 - check that scenes, Book words, notes, and generic panels do not duplicate each other;
 - verify the topic is included in both the explorer and practice dispatch paths, not merely its data and renderer;
-- test selected, wrong, correct, completed, hidden-unused-choice, Clear (when present), and Play/new-round states; confirm each eligible round can be drawn; test at least one alternative valid sentence where the answer model allows more than one;
+- test selected, wrong, correct, completed, hidden-unused-choice, Clear (when present), and every control state; confirm each eligible round can be drawn and that a new-round control creates a different round; test at least one alternative valid sentence where the answer model allows more than one;
+- after the correct answer, confirm speech occurs only at the contracted moment, every duplicate bottom control is absent, and the sole top-right control performs its contracted job;
 - confirm all visible copy describes the current interaction;
 - listen to every new or polyphonic target word in its rendered page; if the default voice is wrong, use and document a scoped voice preference before widening it to other topics. Verify that preference reaches every lesson speech surface: scene controls, Book words, and practice-completion playback;
 - run the relevant data validation, build, tests, and `git diff --check`;

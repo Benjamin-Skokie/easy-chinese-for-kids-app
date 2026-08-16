@@ -8,6 +8,7 @@ export function createTimeDailyLifeState() {
     dateChallengeAnswerId: "", dateChallengeOptionIds: [], dateChallengePickedId: "", dateChallengePromptId: "", dateChallengeResult: "", dateChallengeWrongIds: new Set(), dateListenFeedback: "", dateMatchFeedback: "", dateSelectedPhraseId: null, dateMatchedIds: new Set(), datePhraseOrder: [], dateEventOrder: [],
     transportBuildOrder: [], transportBuildIndex: 0, transportBuildAvailableTokens: [], transportBuildSelectedTokens: [], transportBuildResult: "",
     positionQuizOrder: [], positionQuizIndex: 0, positionQuizOptionIds: [], positionQuizSelectedId: "", positionQuizResult: "",
-    comparisonBuildOrder: [], comparisonBuildIndex: 0, comparisonBuildAvailableTokens: [], comparisonBuildSelectedTokens: [], comparisonBuildResult: ""
+    comparisonBuildOrder: [], comparisonBuildIndex: 0, comparisonBuildAvailableTokens: [], comparisonBuildSelectedTokens: [], comparisonBuildResult: "",
+    everydayActionsOrder: [], everydayActionsIndex: 0, everydayActionsOptionIds: [], everydayActionsSelectedId: "", everydayActionsResult: ""
   };
 }

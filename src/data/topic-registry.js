@@ -2,6 +2,7 @@ import { comparisonVisualItems, comparisonsTopic, comparisonWordItems } from "..
 import { positionsTopic, positionVisualItems } from "../features/time-daily-life/positions.js";
 import { transportTopic, transportVisualItems } from "../features/time-daily-life/transport.js";
 import { dailyLifeTopic, roomVisualItems } from "../features/time-daily-life/rooms.js";
+import { everydayActionsTopic } from "../features/time-daily-life/everyday-actions.js";
 import { stationerySentenceBuilds, stationeryTopicData } from "../features/school-life/stationery.js";
 import { schoolSuppliesSentenceBuilds, schoolSuppliesTopicData } from "../features/school-life/school-supplies.js";
 import { classroomTopicData } from "../features/school-life/classroom.js";
@@ -67,6 +68,7 @@ export const topicData = [
   foodTopic,
   foodPreferencesTopic,
   mealsFeelingsTopic,
+  everydayActionsTopic,
   {
     id: "time-date",
     title: "Time & Routines",

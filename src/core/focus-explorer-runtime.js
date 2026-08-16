@@ -15,6 +15,7 @@ export function createFocusExplorerRuntime(context) {
     renderTimeDateExplorer,
     renderWeekdaysExplorer,
     renderDatesExplorer,
+    renderEverydayActionsExplorer,
     renderPositionsExplorer,
     renderRoomsExplorer,
     renderSchoolExplorer,
@@ -42,6 +43,7 @@ export function createFocusExplorerRuntime(context) {
     if (topic.interactiveScene === "time-date-routine") return renderTimeDateExplorer();
     if (topic.interactiveScene === "weekdays") return renderWeekdaysExplorer();
     if (topic.interactiveScene === "dates") return renderDatesExplorer();
+    if (topic.interactiveScene === "everyday-actions") return renderEverydayActionsExplorer();
     if (topic.interactiveScene === "positions") return renderPositionsExplorer();
     if (topic.interactiveScene === "rooms") return renderRoomsExplorer();
     if (schoolTopicData[topic.id]) return renderSchoolExplorer(topic.id);

@@ -49,6 +49,16 @@ test("the local page loads a single bundled application script", () => {
   assert.doesNotMatch(html, /type="module"/);
 });
 
+test("Everyday Actions keeps one silent new-game button in the practice header", () => {
+  const practiceSource = readFileSync("src/core/lesson-practice-runtime.js", "utf8");
+  const timeRuntimeSource = readFileSync("src/features/time-daily-life/time-daily-life-runtime.js", "utf8");
+  assert.match(practiceSource, /is-practice-advance-button" type="button" data-everyday-actions-new aria-label="Start a new game">New game<\/button>/);
+  assert.match(practiceSource, /\[data-everyday-actions-new\]"\)\?\.addEventListener\("click", nextEverydayActionsQuestion\)/);
+  assert.doesNotMatch(practiceSource, /data-everyday-actions-play/);
+  assert.match(timeRuntimeSource, /handleEverydayActionsPick[\s\S]{0,500}state\.everydayActionsResult === "correct"[\s\S]{0,160}speak\(currentEverydayAction\(\)\?\.sentence, 0\.78\)/);
+  assert.doesNotMatch(practiceSource, /data-everyday-actions-next/);
+});
+
 test("Culture book image references are present and committed for GitHub Pages", () => {
   const pages = [];
   const collectBookPages = (directory) => {

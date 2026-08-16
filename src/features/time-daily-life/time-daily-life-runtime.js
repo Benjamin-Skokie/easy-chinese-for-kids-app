@@ -1,5 +1,5 @@
 export function createTimeDailyLifeRuntime(context) {
-  const { state, timeDateWeekItems, timeDateClockItems, timeDateExpressionItems, timeDateRoutineItems, datePracticeItems, timeDateDateItems, timeDateMonthItems, comparisonPracticeItems, comparisonWordItems, positionPracticeItems, positionScenes, clothesMatchItems, clothesPractice, roomScenes, roomSentenceTokens, transportSentenceTokens, visualTopicItems, shuffleArray, speak, speakSceneLines, currentTopic, currentBook, currentLesson, renderActivityPanel, focusExplorer, focusStatus } = context;
+  const { state, timeDateWeekItems, timeDateClockItems, timeDateExpressionItems, timeDateRoutineItems, datePracticeItems, timeDateDateItems, timeDateMonthItems, comparisonPracticeItems, comparisonWordItems, positionPracticeItems, positionScenes, clothesMatchItems, clothesPractice, roomScenes, roomSentenceTokens, transportSentenceTokens, everydayActionItems, visualTopicItems, shuffleArray, speak, speakSceneLines, currentTopic, currentBook, currentLesson, renderActivityPanel, focusExplorer, focusStatus } = context;
 
 function resetWeekdayChallenge(options = {}) {
   const candidates = timeDateWeekItems.filter((item) => item.id !== options.excludeId);
@@ -344,6 +344,48 @@ function clearTransportBuilder() {
 function nextTransportBuilder() {
   state.transportBuildIndex = (state.transportBuildIndex + 1) % state.transportBuildOrder.length;
   prepareTransportBuilder();
+  renderActivityPanel(currentTopic());
+}
+
+function currentEverydayAction() {
+  const id = state.everydayActionsOrder[state.everydayActionsIndex];
+  return everydayActionItems.find((item) => item.id === id);
+}
+
+function resetEverydayActionsQuiz(options = {}) {
+  const ids = everydayActionItems.map((item) => item.id);
+  const availableIds = ids.filter((id) => id !== options.excludeId);
+  state.everydayActionsOrder = shuffleArray(availableIds.length ? availableIds : ids);
+  state.everydayActionsIndex = 0;
+  prepareEverydayActionsQuestion();
+}
+
+function prepareEverydayActionsQuestion() {
+  const answerId = state.everydayActionsOrder[state.everydayActionsIndex];
+  const distractorIds = shuffleArray(everydayActionItems.filter((item) => item.id !== answerId).map((item) => item.id)).slice(0, 3);
+  state.everydayActionsOptionIds = shuffleArray([answerId, ...distractorIds]);
+  state.everydayActionsSelectedId = "";
+  state.everydayActionsResult = "";
+}
+
+function ensureEverydayActionsQuiz() {
+  if (!state.everydayActionsOrder.length) resetEverydayActionsQuiz();
+}
+
+function handleEverydayActionsPick(itemId) {
+  if (state.everydayActionsResult === "correct") return;
+  const answerId = state.everydayActionsOrder[state.everydayActionsIndex];
+  state.everydayActionsSelectedId = itemId;
+  state.everydayActionsResult = itemId === answerId ? "correct" : "wrong";
+  if (state.everydayActionsResult === "correct") {
+    speak(currentEverydayAction()?.sentence, 0.78);
+  }
+  renderActivityPanel(currentTopic());
+}
+
+function nextEverydayActionsQuestion() {
+  const previousId = state.everydayActionsOrder[state.everydayActionsIndex];
+  resetEverydayActionsQuiz({ excludeId: previousId });
   renderActivityPanel(currentTopic());
 }
 
@@ -712,6 +754,33 @@ function renderVisualTopicExplorer(sceneId) {
   });
 }
 
+function renderEverydayActionsExplorer() {
+  focusExplorer.innerHTML = `
+    <div class="time-date-board everyday-actions-board">
+      <div class="numbers-stage-card">
+        <p class="body-match-kicker">Topic unit</p>
+        <h4>Everyday Actions</h4>
+        <p>Look at each picture, hear the action, and say the full sentence.</p>
+      </div>
+      <div class="everyday-actions-gallery">
+        ${everydayActionItems.map((item) => `
+          <article class="everyday-action-card">
+            <div class="everyday-action-card-top"><p class="body-match-kicker">${item.english}</p><button class="small-button is-play-button" type="button" data-everyday-action-play="${item.id}">Play</button></div>
+            <div class="everyday-action-visual"><img class="everyday-action-image" src="${item.imagePath}" alt="${item.sentenceEnglish}" /></div>
+            <div class="everyday-action-copy"><p class="everyday-action-word">${item.hanzi}</p><p class="telephone-line-hanzi">${item.sentence}</p>${state.showPinyin ? `<p class="telephone-line-pinyin">${item.sentencePinyin}</p>` : ""}${state.showEnglish ? `<p class="telephone-line-english">${item.sentenceEnglish}</p>` : ""}</div>
+          </article>
+        `).join("")}
+      </div>
+    </div>
+  `;
+  focusExplorer.querySelectorAll("[data-everyday-action-play]").forEach((button) => {
+    button.addEventListener("click", () => {
+      const item = everydayActionItems.find((entry) => entry.id === button.dataset.everydayActionPlay);
+      if (item && state.tapAudioEnabled) speak(item.audio, 0.78);
+    });
+  });
+}
+
 function renderRoomsExplorer() {
   const topic = currentTopic();
   focusExplorer.innerHTML = `
@@ -945,5 +1014,5 @@ function renderClothesExplorer() {
 }
 
 
-  return { resetWeekdayChallenge, ensureWeekdayChallenge, handleWeekdayChallengePlay, handleWeekdayChallengeGuess, resetWeekdayMatchGame, ensureWeekdayMatchGame, handleWeekdayMatchPhrase, handleWeekdayMatchAttempt, resetClothesQuiz, prepareClothesQuizQuestion, ensureClothesQuiz, handleClothesQuizPick, nextClothesQuizQuestion, resetTimeRoutineQuiz, prepareTimeRoutineQuizQuestion, ensureTimeRoutineQuiz, handleTimeRoutineQuizPick, nextTimeRoutineQuizQuestion, resetClockQuiz, prepareClockQuizQuestion, ensureClockQuiz, handleClockQuizPick, nextClockQuizQuestion, currentRoomBuildItem, resetRoomBuilder, prepareRoomBuilder, ensureRoomBuilder, isRoomBuildPrefixValid, handleRoomBuildToken, clearRoomBuilder, nextRoomBuilder, currentTransportBuildItem, resetTransportBuilder, prepareTransportBuilder, ensureTransportBuilder, handleTransportBuildToken, clearTransportBuilder, nextTransportBuilder, resetPositionQuiz, preparePositionQuizQuestion, ensurePositionQuiz, handlePositionQuizPlay, handlePositionQuizPick, nextPositionQuizQuestion, currentComparisonBuildItem, resetComparisonBuilder, prepareComparisonBuilder, ensureComparisonBuilder, handleComparisonBuildToken, clearComparisonBuilder, nextComparisonBuilder, resetDateMatchGame, ensureDateMatchGame, handleDateMatchPhrase, handleDateMatchEvent, resetDateChallenge, ensureDateChallenge, handleDateChallengePlay, handleDateChallengeGuess, timeDateSectionForCurrentLesson, activeTimeDateSection, renderTimeAssetGrid, bindTimeAssetAudio, renderWeekdaysExplorer, renderDatesExplorer, renderVisualTopicExplorer, renderRoomsExplorer, renderPositionsExplorer, renderTimeDateExplorer, renderClothesExplorer };
+  return { resetWeekdayChallenge, ensureWeekdayChallenge, handleWeekdayChallengePlay, handleWeekdayChallengeGuess, resetWeekdayMatchGame, ensureWeekdayMatchGame, handleWeekdayMatchPhrase, handleWeekdayMatchAttempt, resetClothesQuiz, prepareClothesQuizQuestion, ensureClothesQuiz, handleClothesQuizPick, nextClothesQuizQuestion, resetTimeRoutineQuiz, prepareTimeRoutineQuizQuestion, ensureTimeRoutineQuiz, handleTimeRoutineQuizPick, nextTimeRoutineQuizQuestion, resetClockQuiz, prepareClockQuizQuestion, ensureClockQuiz, handleClockQuizPick, nextClockQuizQuestion, currentRoomBuildItem, resetRoomBuilder, prepareRoomBuilder, ensureRoomBuilder, isRoomBuildPrefixValid, handleRoomBuildToken, clearRoomBuilder, nextRoomBuilder, currentTransportBuildItem, resetTransportBuilder, prepareTransportBuilder, ensureTransportBuilder, handleTransportBuildToken, clearTransportBuilder, nextTransportBuilder, ensureEverydayActionsQuiz, currentEverydayAction, handleEverydayActionsPick, nextEverydayActionsQuestion, resetPositionQuiz, preparePositionQuizQuestion, ensurePositionQuiz, handlePositionQuizPlay, handlePositionQuizPick, nextPositionQuizQuestion, currentComparisonBuildItem, resetComparisonBuilder, prepareComparisonBuilder, ensureComparisonBuilder, handleComparisonBuildToken, clearComparisonBuilder, nextComparisonBuilder, resetDateMatchGame, ensureDateMatchGame, handleDateMatchPhrase, handleDateMatchEvent, resetDateChallenge, ensureDateChallenge, handleDateChallengePlay, handleDateChallengeGuess, timeDateSectionForCurrentLesson, activeTimeDateSection, renderTimeAssetGrid, bindTimeAssetAudio, renderWeekdaysExplorer, renderDatesExplorer, renderVisualTopicExplorer, renderEverydayActionsExplorer, renderRoomsExplorer, renderPositionsExplorer, renderTimeDateExplorer, renderClothesExplorer };
 }

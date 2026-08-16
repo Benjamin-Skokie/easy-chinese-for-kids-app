@@ -161,7 +161,7 @@ export const topicGroups = [
     id: "daily-world",
     label: "Daily World",
     description: "Food, routines, weather, and the world around the child.",
-    topicIds: ["food", "food-preferences", "meals-feelings", "toys", "comparisons", "positions", "transport", "daily-life", "pets", "animals", "nature", "weather"]
+    topicIds: ["food", "food-preferences", "meals-feelings", "toys", "comparisons", "positions", "transport", "daily-life", "everyday-actions", "pets", "animals", "nature", "weather"]
   },
   {
     id: "school-and-time",
@@ -205,6 +205,7 @@ export const topicCardMeta = {
   positions: { zhTitle: "位置和方向", enTitle: "Positions & Directions", hint: "Up, down, inside, outside" },
   transport: { zhTitle: "交通", enTitle: "Transportation", hint: "Walk, bike, bus, train" },
   "daily-life": { zhTitle: "我的房间", enTitle: "My Room", hint: "Rooms and furniture" },
+  "everyday-actions": { zhTitle: "日常动作", enTitle: "Everyday Actions", hint: "Walk, run, sit, stand, climb, lie down" },
   nature: { zhTitle: "自然", enTitle: "Nature", hint: "Sky, ground, trees, flowers" },
   weather: { zhTitle: "天气", enTitle: "Weather", hint: "Sun, rain, snow, wind" }
 };
@@ -232,10 +233,10 @@ export const learningHomeCategories = [
     id: "time-daily",
     zhTitle: "时间和日常",
     enTitle: "Time & Daily Life",
-    hint: "Week, time, dates, routines, home",
+    hint: "Week, time, dates, routines, home, actions",
     accent: "#517b8d",
     iconSrc: "assets/illustrated-clocks/10oclock.webp",
-    topicIds: ["weekdays", "time-date", "dates", "comparisons", "positions", "transport", "daily-life"]
+    topicIds: ["weekdays", "time-date", "dates", "comparisons", "positions", "transport", "daily-life", "everyday-actions"]
   },
   {
     id: "school-life",

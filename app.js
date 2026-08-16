@@ -186,7 +186,12 @@
       comparisonBuildIndex: 0,
       comparisonBuildAvailableTokens: [],
       comparisonBuildSelectedTokens: [],
-      comparisonBuildResult: ""
+      comparisonBuildResult: "",
+      everydayActionsOrder: [],
+      everydayActionsIndex: 0,
+      everydayActionsOptionIds: [],
+      everydayActionsSelectedId: "",
+      everydayActionsResult: ""
     };
   }
 
@@ -552,7 +557,7 @@
 
   // src/core/lesson-practice-runtime.js
   function createLessonPracticeRuntime(context) {
-    const { state: state2, schoolTopicData: schoolTopicData3, visualTopicItems: visualTopicItems2, positionPracticeItems: positionPracticeItems2, timeDateWeekItems: timeDateWeekItems2, timeDateClockItems: timeDateClockItems2, datePracticeItems: datePracticeItems2, timeDateMonthItems: timeDateMonthItems2, timeDateRoutineItems: timeDateRoutineItems2, clothesMatchItems: clothesMatchItems2, illustratedKids: illustratedKids2, numberHanzi: numberHanzi2, buildNumberItem: buildNumberItem2, currentTopic: currentTopic2, currentNumberStage: currentNumberStage2, currentBook: currentBook2, currentLesson: currentLesson2, focusItemsForTopic: focusItemsForTopic2, shuffleArray: shuffleArray2, speak: speak2, renderFocusExplorer: renderFocusExplorer2, renderFocusStatus: renderFocusStatus2, renderSharedLessonPractice: renderSharedLessonPractice2, renderPracticeSayCards: renderPracticeSayCards2, bindPracticeSayCards: bindPracticeSayCards2, activityPanelTitle: activityPanelTitle2, activityPanelSummary: activityPanelSummary2, activityList: activityList2, topicColumns: topicColumns2, renderWorldPractice, renderHobbiesPractice, activeTimeDateSection: activeTimeDateSection2, ensureWeekdayChallenge: ensureWeekdayChallenge2, ensureWeekdayMatchGame: ensureWeekdayMatchGame2, handleWeekdayChallengePlay: handleWeekdayChallengePlay2, handleWeekdayChallengeGuess: handleWeekdayChallengeGuess2, resetWeekdayMatchGame: resetWeekdayMatchGame2, handleWeekdayMatchPhrase: handleWeekdayMatchPhrase2, handleWeekdayMatchAttempt: handleWeekdayMatchAttempt2, ensureDateChallenge: ensureDateChallenge2, ensureDateMatchGame: ensureDateMatchGame2, handleDateChallengePlay: handleDateChallengePlay2, handleDateChallengeGuess: handleDateChallengeGuess2, resetDateMatchGame: resetDateMatchGame2, handleDateMatchPhrase: handleDateMatchPhrase2, handleDateMatchEvent: handleDateMatchEvent2, familyGameItems: familyGameItems2, familyPersonForItemId: familyPersonForItemId2, familyHeadshotForItemId: familyHeadshotForItemId2, ensureFamilyChallenge: ensureFamilyChallenge2, ensureFamilyMatchGame: ensureFamilyMatchGame2, handleFamilyChallengePlay: handleFamilyChallengePlay2, handleFamilyChallengeGuess: handleFamilyChallengeGuess2, resetFamilyMatchGame: resetFamilyMatchGame2, handleFamilyMatchPhrase: handleFamilyMatchPhrase2, handleFamilyMatchAttempt: handleFamilyMatchAttempt2, greetingsGameItems: greetingsGameItems2, greetingsMeaningLabel: greetingsMeaningLabel2, ensureGreetingsChallenge: ensureGreetingsChallenge2, ensureGreetingsMatchGame: ensureGreetingsMatchGame2, handleGreetingsChallengePlay: handleGreetingsChallengePlay2, handleGreetingsChallengeGuess: handleGreetingsChallengeGuess2, resetGreetingsMatchGame: resetGreetingsMatchGame2, handleGreetingsMatchPhrase: handleGreetingsMatchPhrase2, handleGreetingsMatchAttempt: handleGreetingsMatchAttempt2, politeGameItems: politeGameItems2, politeMeaningLabel: politeMeaningLabel2, ensurePoliteChallenge: ensurePoliteChallenge2, ensurePoliteMatchGame: ensurePoliteMatchGame2, handlePoliteChallengePlay: handlePoliteChallengePlay2, handlePoliteChallengeGuess: handlePoliteChallengeGuess2, resetPoliteMatchGame: resetPoliteMatchGame2, handlePoliteMatchPhrase: handlePoliteMatchPhrase2, handlePoliteMatchAttempt: handlePoliteMatchAttempt2, ensureRoomBuilder: ensureRoomBuilder2, currentRoomBuildItem: currentRoomBuildItem2, handleRoomBuildToken: handleRoomBuildToken2, clearRoomBuilder: clearRoomBuilder2, nextRoomBuilder: nextRoomBuilder2, ensureClothesQuiz: ensureClothesQuiz2, handleClothesQuizPick: handleClothesQuizPick2, nextClothesQuizQuestion: nextClothesQuizQuestion2, ensureTimeRoutineQuiz: ensureTimeRoutineQuiz2, handleTimeRoutineQuizPick: handleTimeRoutineQuizPick2, nextTimeRoutineQuizQuestion: nextTimeRoutineQuizQuestion2, ensureClockQuiz: ensureClockQuiz2, handleClockQuizPick: handleClockQuizPick2, nextClockQuizQuestion: nextClockQuizQuestion2, ensureComparisonBuilder: ensureComparisonBuilder2, currentComparisonBuildItem: currentComparisonBuildItem2, handleComparisonBuildToken: handleComparisonBuildToken2, clearComparisonBuilder: clearComparisonBuilder2, nextComparisonBuilder: nextComparisonBuilder2, ensurePositionQuiz: ensurePositionQuiz2, handlePositionQuizPlay: handlePositionQuizPlay2, handlePositionQuizPick: handlePositionQuizPick2, nextPositionQuizQuestion: nextPositionQuizQuestion2, ensureTransportBuilder: ensureTransportBuilder2, currentTransportBuildItem: currentTransportBuildItem2, handleTransportBuildToken: handleTransportBuildToken2, clearTransportBuilder: clearTransportBuilder2, nextTransportBuilder: nextTransportBuilder2, resetNumberChallenge: resetNumberChallenge2, ensureMathChallenge: ensureMathChallenge2, handleNumberChallengeGuess: handleNumberChallengeGuess2, resetMathChallenge: resetMathChallenge2, handleMathChallengeSubmit: handleMathChallengeSubmit2, renderNumberVisual: renderNumberVisual2, introductionsBuildTarget: introductionsBuildTarget2, ensureIntroductionsBuilder: ensureIntroductionsBuilder2, resetIntroductionsBuilder: resetIntroductionsBuilder2, handleIntroductionsBuildClear: handleIntroductionsBuildClear2, handleIntroductionsBuildToken: handleIntroductionsBuildToken2, ageGameItems: ageGameItems2, ensureAgeChallenge: ensureAgeChallenge2, ensureAgeBuilder: ensureAgeBuilder2, ageBuildTarget: ageBuildTarget2, handleAgeChallengePlay: handleAgeChallengePlay2, handleAgeChallengeGuess: handleAgeChallengeGuess2, resetAgeBuilder: resetAgeBuilder2, handleAgeBuildClear: handleAgeBuildClear2, handleAgeBuildToken: handleAgeBuildToken2, renderSchoolPractice: renderSchoolPractice2 } = context;
+    const { state: state2, schoolTopicData: schoolTopicData3, visualTopicItems: visualTopicItems2, positionPracticeItems: positionPracticeItems2, timeDateWeekItems: timeDateWeekItems2, timeDateClockItems: timeDateClockItems2, datePracticeItems: datePracticeItems2, timeDateMonthItems: timeDateMonthItems2, timeDateRoutineItems: timeDateRoutineItems2, clothesMatchItems: clothesMatchItems2, everydayActionItems: everydayActionItems2, illustratedKids: illustratedKids2, numberHanzi: numberHanzi2, buildNumberItem: buildNumberItem2, currentTopic: currentTopic2, currentNumberStage: currentNumberStage2, currentBook: currentBook2, currentLesson: currentLesson2, focusItemsForTopic: focusItemsForTopic2, shuffleArray: shuffleArray2, speak: speak2, renderFocusExplorer: renderFocusExplorer2, renderFocusStatus: renderFocusStatus2, renderSharedLessonPractice: renderSharedLessonPractice2, renderPracticeSayCards: renderPracticeSayCards2, bindPracticeSayCards: bindPracticeSayCards2, activityPanelTitle: activityPanelTitle2, activityPanelSummary: activityPanelSummary2, activityList: activityList2, topicColumns: topicColumns2, renderWorldPractice, renderHobbiesPractice, activeTimeDateSection: activeTimeDateSection2, ensureWeekdayChallenge: ensureWeekdayChallenge2, ensureWeekdayMatchGame: ensureWeekdayMatchGame2, handleWeekdayChallengePlay: handleWeekdayChallengePlay2, handleWeekdayChallengeGuess: handleWeekdayChallengeGuess2, resetWeekdayMatchGame: resetWeekdayMatchGame2, handleWeekdayMatchPhrase: handleWeekdayMatchPhrase2, handleWeekdayMatchAttempt: handleWeekdayMatchAttempt2, ensureDateChallenge: ensureDateChallenge2, ensureDateMatchGame: ensureDateMatchGame2, handleDateChallengePlay: handleDateChallengePlay2, handleDateChallengeGuess: handleDateChallengeGuess2, resetDateMatchGame: resetDateMatchGame2, handleDateMatchPhrase: handleDateMatchPhrase2, handleDateMatchEvent: handleDateMatchEvent2, familyGameItems: familyGameItems2, familyPersonForItemId: familyPersonForItemId2, familyHeadshotForItemId: familyHeadshotForItemId2, ensureFamilyChallenge: ensureFamilyChallenge2, ensureFamilyMatchGame: ensureFamilyMatchGame2, handleFamilyChallengePlay: handleFamilyChallengePlay2, handleFamilyChallengeGuess: handleFamilyChallengeGuess2, resetFamilyMatchGame: resetFamilyMatchGame2, handleFamilyMatchPhrase: handleFamilyMatchPhrase2, handleFamilyMatchAttempt: handleFamilyMatchAttempt2, greetingsGameItems: greetingsGameItems2, greetingsMeaningLabel: greetingsMeaningLabel2, ensureGreetingsChallenge: ensureGreetingsChallenge2, ensureGreetingsMatchGame: ensureGreetingsMatchGame2, handleGreetingsChallengePlay: handleGreetingsChallengePlay2, handleGreetingsChallengeGuess: handleGreetingsChallengeGuess2, resetGreetingsMatchGame: resetGreetingsMatchGame2, handleGreetingsMatchPhrase: handleGreetingsMatchPhrase2, handleGreetingsMatchAttempt: handleGreetingsMatchAttempt2, politeGameItems: politeGameItems2, politeMeaningLabel: politeMeaningLabel2, ensurePoliteChallenge: ensurePoliteChallenge2, ensurePoliteMatchGame: ensurePoliteMatchGame2, handlePoliteChallengePlay: handlePoliteChallengePlay2, handlePoliteChallengeGuess: handlePoliteChallengeGuess2, resetPoliteMatchGame: resetPoliteMatchGame2, handlePoliteMatchPhrase: handlePoliteMatchPhrase2, handlePoliteMatchAttempt: handlePoliteMatchAttempt2, ensureRoomBuilder: ensureRoomBuilder2, currentRoomBuildItem: currentRoomBuildItem2, handleRoomBuildToken: handleRoomBuildToken2, clearRoomBuilder: clearRoomBuilder2, nextRoomBuilder: nextRoomBuilder2, ensureClothesQuiz: ensureClothesQuiz2, handleClothesQuizPick: handleClothesQuizPick2, nextClothesQuizQuestion: nextClothesQuizQuestion2, ensureTimeRoutineQuiz: ensureTimeRoutineQuiz2, handleTimeRoutineQuizPick: handleTimeRoutineQuizPick2, nextTimeRoutineQuizQuestion: nextTimeRoutineQuizQuestion2, ensureClockQuiz: ensureClockQuiz2, handleClockQuizPick: handleClockQuizPick2, nextClockQuizQuestion: nextClockQuizQuestion2, ensureComparisonBuilder: ensureComparisonBuilder2, currentComparisonBuildItem: currentComparisonBuildItem2, handleComparisonBuildToken: handleComparisonBuildToken2, clearComparisonBuilder: clearComparisonBuilder2, nextComparisonBuilder: nextComparisonBuilder2, ensurePositionQuiz: ensurePositionQuiz2, handlePositionQuizPlay: handlePositionQuizPlay2, handlePositionQuizPick: handlePositionQuizPick2, nextPositionQuizQuestion: nextPositionQuizQuestion2, ensureTransportBuilder: ensureTransportBuilder2, currentTransportBuildItem: currentTransportBuildItem2, handleTransportBuildToken: handleTransportBuildToken2, clearTransportBuilder: clearTransportBuilder2, nextTransportBuilder: nextTransportBuilder2, ensureEverydayActionsQuiz: ensureEverydayActionsQuiz2, currentEverydayAction: currentEverydayAction2, handleEverydayActionsPick: handleEverydayActionsPick2, nextEverydayActionsQuestion: nextEverydayActionsQuestion2, resetNumberChallenge: resetNumberChallenge2, ensureMathChallenge: ensureMathChallenge2, handleNumberChallengeGuess: handleNumberChallengeGuess2, resetMathChallenge: resetMathChallenge2, handleMathChallengeSubmit: handleMathChallengeSubmit2, renderNumberVisual: renderNumberVisual2, introductionsBuildTarget: introductionsBuildTarget2, ensureIntroductionsBuilder: ensureIntroductionsBuilder2, resetIntroductionsBuilder: resetIntroductionsBuilder2, handleIntroductionsBuildClear: handleIntroductionsBuildClear2, handleIntroductionsBuildToken: handleIntroductionsBuildToken2, ageGameItems: ageGameItems2, ensureAgeChallenge: ensureAgeChallenge2, ensureAgeBuilder: ensureAgeBuilder2, ageBuildTarget: ageBuildTarget2, handleAgeChallengePlay: handleAgeChallengePlay2, handleAgeChallengeGuess: handleAgeChallengeGuess2, resetAgeBuilder: resetAgeBuilder2, handleAgeBuildClear: handleAgeBuildClear2, handleAgeBuildToken: handleAgeBuildToken2, renderSchoolPractice: renderSchoolPractice2 } = context;
     function sharedLessonPracticeConfig(topic) {
       if (topic.id === "weekdays") {
         return {
@@ -890,6 +895,34 @@
         activityList2.querySelector("[data-position-quiz-play]")?.addEventListener("click", handlePositionQuizPlay2);
         activityList2.querySelector("[data-position-quiz-next]")?.addEventListener("click", nextPositionQuizQuestion2);
         bindPracticeSayCards2(activityList2);
+        return;
+      }
+      if (topic.id === "everyday-actions") {
+        ensureEverydayActionsQuiz2();
+        const prompt = currentEverydayAction2();
+        activityPanelTitle2.textContent = "Let's practice";
+        activityPanelSummary2.textContent = "Look at the picture, then choose the matching action word.";
+        activityList2.className = "support-list";
+        activityList2.innerHTML = `
+      <section class="clothes-quiz-shell everyday-actions-quiz-shell">
+        <div class="numbers-game-top"><div><p class="body-match-kicker">Picture choice</p><p class="numbers-game-note">Which action does the picture show?</p></div><button class="small-button is-practice-advance-button" type="button" data-everyday-actions-new aria-label="Start a new game">New game</button></div>
+        <figure class="clothes-quiz-visual everyday-actions-quiz-visual"><img class="everyday-actions-quiz-image" src="${prompt.imagePath}" alt="${prompt.sentenceEnglish}" /></figure>
+        <div class="clothes-quiz-options">
+          ${state2.everydayActionsOptionIds.map((itemId) => {
+          const item = everydayActionItems2.find((entry) => entry.id === itemId);
+          const isSelected = state2.everydayActionsSelectedId === itemId;
+          const resultClass = isSelected ? ` is-${state2.everydayActionsResult}` : "";
+          const mark = isSelected ? `<span class="answer-result-mark" aria-hidden="true">${state2.everydayActionsResult === "correct" ? "\u2713" : "\xD7"}</span>` : "";
+          return `<button class="clothes-quiz-option${resultClass}" type="button" data-everyday-actions-pick="${item.id}">${mark}<span class="numbers-game-hanzi">${item.hanzi}</span>${state2.showPinyin ? `<span class="numbers-game-pinyin">${item.pinyin}</span>` : ""}${state2.showEnglish ? `<span class="numbers-game-english">${item.english}</span>` : ""}</button>`;
+        }).join("")}
+        </div>
+        ${state2.everydayActionsResult === "correct" ? `<div class="everyday-actions-answer"><p class="telephone-line-hanzi">${prompt.sentence}</p>${state2.showPinyin ? `<p class="telephone-line-pinyin">${prompt.sentencePinyin}</p>` : ""}${state2.showEnglish ? `<p class="telephone-line-english">${prompt.sentenceEnglish}</p>` : ""}</div>` : ""}
+      </section>
+    `;
+        activityList2.querySelectorAll("[data-everyday-actions-pick]").forEach((button) => {
+          button.addEventListener("click", () => handleEverydayActionsPick2(button.dataset.everydayActionsPick));
+        });
+        activityList2.querySelector("[data-everyday-actions-new]")?.addEventListener("click", nextEverydayActionsQuestion2);
         return;
       }
       if (topic.id === "transport") {
@@ -1477,6 +1510,7 @@
       renderTimeDateExplorer: renderTimeDateExplorer2,
       renderWeekdaysExplorer: renderWeekdaysExplorer2,
       renderDatesExplorer: renderDatesExplorer2,
+      renderEverydayActionsExplorer: renderEverydayActionsExplorer2,
       renderPositionsExplorer: renderPositionsExplorer2,
       renderRoomsExplorer: renderRoomsExplorer2,
       renderSchoolExplorer: renderSchoolExplorer2,
@@ -1502,6 +1536,7 @@
       if (topic.interactiveScene === "time-date-routine") return renderTimeDateExplorer2();
       if (topic.interactiveScene === "weekdays") return renderWeekdaysExplorer2();
       if (topic.interactiveScene === "dates") return renderDatesExplorer2();
+      if (topic.interactiveScene === "everyday-actions") return renderEverydayActionsExplorer2();
       if (topic.interactiveScene === "positions") return renderPositionsExplorer2();
       if (topic.interactiveScene === "rooms") return renderRoomsExplorer2();
       if (schoolTopicData3[topic.id]) return renderSchoolExplorer2(topic.id);
@@ -2510,6 +2545,31 @@
     "living-room": { prefix: ["\u5BA2\u5385", "\u91CC", "\u6709"], target: ["\u5BA2\u5385", "\u91CC", "\u6709", "\u6C99\u53D1", "\u548C", "\u7535\u89C6"], unorderedObjects: ["\u6C99\u53D1", "\u7535\u89C6"], distractors: ["\u5E8A", "\u8F66\u5E93", "\u81EA\u884C\u8F66"] },
     garage: { prefix: ["\u8F66\u5E93", "\u91CC", "\u6709"], target: ["\u8F66\u5E93", "\u91CC", "\u6709", "\u81EA\u884C\u8F66"], unorderedObjects: ["\u81EA\u884C\u8F66"], distractors: ["\u4E66\u684C", "\u6C99\u53D1", "\u7535\u89C6"] }
   };
+
+  // src/features/time-daily-life/everyday-actions.js
+  var everydayActionsTopic = {
+    id: "everyday-actions",
+    title: "Everyday Actions",
+    summary: "See, hear, and name six everyday actions.",
+    progressLabel: "Everyday words",
+    iconText: "\u52A8\u4F5C",
+    iconColor: "#517b8d",
+    focus: { hanzi: "\u4ED6\u5728\u8D70\u8DEF\u3002", pinyin: "t\u0101 z\xE0i z\u01D2u l\xF9.", english: "He is walking.", audio: "\u4ED6\u5728\u8D70\u8DEF" },
+    interactiveScene: "everyday-actions",
+    ownsExplorerContent: true,
+    parentGuide: "Act out one word at a time\u2014walk, run, sit, stand, climb, or lie down\u2014then say it together.",
+    cultureGuide: "Everyday action words make it easier to describe what people are doing in familiar places.",
+    activities: ["Tap to hear", "Name the action", "Picture choice"],
+    steps: [{ book: "Topic unit", lesson: 1, title: "Everyday Actions", note: "A visual vocabulary unit that reinforces action words across daily life." }]
+  };
+  var everydayActionItems = [
+    { id: "walk", hanzi: "\u8D70\u8DEF", pinyin: "z\u01D2u l\xF9", english: "walk", sentence: "\u4ED6\u5728\u8D70\u8DEF\u3002", sentencePinyin: "t\u0101 z\xE0i z\u01D2u l\xF9.", sentenceEnglish: "He is walking.", imagePath: "assets/illustrated-actions-basic/walk-v2.webp" },
+    { id: "run", hanzi: "\u8DD1\u6B65", pinyin: "p\u01CEo b\xF9", english: "run", sentence: "\u4ED6\u5728\u8DD1\u6B65\u3002", sentencePinyin: "t\u0101 z\xE0i p\u01CEo b\xF9.", sentenceEnglish: "He is running.", imagePath: "assets/illustrated-actions-basic/run-v2.webp" },
+    { id: "sit", hanzi: "\u5750", pinyin: "zu\xF2", english: "sit", sentence: "\u4ED6\u5750\u5728\u6905\u5B50\u4E0A\u3002", sentencePinyin: "t\u0101 zu\xF2 z\xE0i y\u01D0 zi sh\xE0ng.", sentenceEnglish: "He is sitting on a chair.", imagePath: "assets/illustrated-actions-basic/sit-chair-v2.webp" },
+    { id: "stand", hanzi: "\u7AD9", pinyin: "zh\xE0n", english: "stand", sentence: "\u4ED6\u7AD9\u7740\u3002", sentencePinyin: "t\u0101 zh\xE0n zhe.", sentenceEnglish: "He is standing.", imagePath: "assets/illustrated-actions-basic/stand-v2.webp" },
+    { id: "climb", hanzi: "\u722C", pinyin: "p\xE1", english: "climb", sentence: "\u4ED6\u5728\u722C\u68AF\u5B50\u3002", sentencePinyin: "t\u0101 z\xE0i p\xE1 t\u012B zi.", sentenceEnglish: "He is climbing a ladder.", imagePath: "assets/illustrated-actions-basic/climb-ladder-v2.webp" },
+    { id: "lie-down", hanzi: "\u8EBA", pinyin: "t\u01CEng", english: "lie down", sentence: "\u4ED6\u8EBA\u5728\u5E8A\u4E0A\u3002", sentencePinyin: "t\u0101 t\u01CEng z\xE0i chu\xE1ng sh\xE0ng.", sentenceEnglish: "He is lying on a bed.", imagePath: "assets/illustrated-actions-basic/lie-bed-v3.webp" }
+  ].map((item) => ({ ...item, audio: item.sentence }));
 
   // src/features/school-life/stationery.js
   var stationeryTopicData = {
@@ -7009,7 +7069,7 @@
 
   // src/features/time-daily-life/time-daily-life-runtime.js
   function createTimeDailyLifeRuntime(context) {
-    const { state: state2, timeDateWeekItems: timeDateWeekItems2, timeDateClockItems: timeDateClockItems2, timeDateExpressionItems: timeDateExpressionItems2, timeDateRoutineItems: timeDateRoutineItems2, datePracticeItems: datePracticeItems2, timeDateDateItems: timeDateDateItems2, timeDateMonthItems: timeDateMonthItems2, comparisonPracticeItems: comparisonPracticeItems2, comparisonWordItems: comparisonWordItems2, positionPracticeItems: positionPracticeItems2, positionScenes: positionScenes2, clothesMatchItems: clothesMatchItems2, clothesPractice: clothesPractice2, roomScenes: roomScenes2, roomSentenceTokens: roomSentenceTokens2, transportSentenceTokens: transportSentenceTokens2, visualTopicItems: visualTopicItems2, shuffleArray: shuffleArray2, speak: speak2, speakSceneLines: speakSceneLines2, currentTopic: currentTopic2, currentBook: currentBook2, currentLesson: currentLesson2, renderActivityPanel: renderActivityPanel2, focusExplorer: focusExplorer2, focusStatus: focusStatus2 } = context;
+    const { state: state2, timeDateWeekItems: timeDateWeekItems2, timeDateClockItems: timeDateClockItems2, timeDateExpressionItems: timeDateExpressionItems2, timeDateRoutineItems: timeDateRoutineItems2, datePracticeItems: datePracticeItems2, timeDateDateItems: timeDateDateItems2, timeDateMonthItems: timeDateMonthItems2, comparisonPracticeItems: comparisonPracticeItems2, comparisonWordItems: comparisonWordItems2, positionPracticeItems: positionPracticeItems2, positionScenes: positionScenes2, clothesMatchItems: clothesMatchItems2, clothesPractice: clothesPractice2, roomScenes: roomScenes2, roomSentenceTokens: roomSentenceTokens2, transportSentenceTokens: transportSentenceTokens2, everydayActionItems: everydayActionItems2, visualTopicItems: visualTopicItems2, shuffleArray: shuffleArray2, speak: speak2, speakSceneLines: speakSceneLines2, currentTopic: currentTopic2, currentBook: currentBook2, currentLesson: currentLesson2, renderActivityPanel: renderActivityPanel2, focusExplorer: focusExplorer2, focusStatus: focusStatus2 } = context;
     function resetWeekdayChallenge2(options = {}) {
       const candidates = timeDateWeekItems2.filter((item) => item.id !== options.excludeId);
       const answers = candidates.length ? candidates : timeDateWeekItems2;
@@ -7306,6 +7366,42 @@
     function nextTransportBuilder2() {
       state2.transportBuildIndex = (state2.transportBuildIndex + 1) % state2.transportBuildOrder.length;
       prepareTransportBuilder2();
+      renderActivityPanel2(currentTopic2());
+    }
+    function currentEverydayAction2() {
+      const id = state2.everydayActionsOrder[state2.everydayActionsIndex];
+      return everydayActionItems2.find((item) => item.id === id);
+    }
+    function resetEverydayActionsQuiz(options = {}) {
+      const ids = everydayActionItems2.map((item) => item.id);
+      const availableIds = ids.filter((id) => id !== options.excludeId);
+      state2.everydayActionsOrder = shuffleArray2(availableIds.length ? availableIds : ids);
+      state2.everydayActionsIndex = 0;
+      prepareEverydayActionsQuestion();
+    }
+    function prepareEverydayActionsQuestion() {
+      const answerId = state2.everydayActionsOrder[state2.everydayActionsIndex];
+      const distractorIds = shuffleArray2(everydayActionItems2.filter((item) => item.id !== answerId).map((item) => item.id)).slice(0, 3);
+      state2.everydayActionsOptionIds = shuffleArray2([answerId, ...distractorIds]);
+      state2.everydayActionsSelectedId = "";
+      state2.everydayActionsResult = "";
+    }
+    function ensureEverydayActionsQuiz2() {
+      if (!state2.everydayActionsOrder.length) resetEverydayActionsQuiz();
+    }
+    function handleEverydayActionsPick2(itemId) {
+      if (state2.everydayActionsResult === "correct") return;
+      const answerId = state2.everydayActionsOrder[state2.everydayActionsIndex];
+      state2.everydayActionsSelectedId = itemId;
+      state2.everydayActionsResult = itemId === answerId ? "correct" : "wrong";
+      if (state2.everydayActionsResult === "correct") {
+        speak2(currentEverydayAction2()?.sentence, 0.78);
+      }
+      renderActivityPanel2(currentTopic2());
+    }
+    function nextEverydayActionsQuestion2() {
+      const previousId = state2.everydayActionsOrder[state2.everydayActionsIndex];
+      resetEverydayActionsQuiz({ excludeId: previousId });
       renderActivityPanel2(currentTopic2());
     }
     function resetPositionQuiz2() {
@@ -7630,6 +7726,32 @@
         });
       });
     }
+    function renderEverydayActionsExplorer2() {
+      focusExplorer2.innerHTML = `
+    <div class="time-date-board everyday-actions-board">
+      <div class="numbers-stage-card">
+        <p class="body-match-kicker">Topic unit</p>
+        <h4>Everyday Actions</h4>
+        <p>Look at each picture, hear the action, and say the full sentence.</p>
+      </div>
+      <div class="everyday-actions-gallery">
+        ${everydayActionItems2.map((item) => `
+          <article class="everyday-action-card">
+            <div class="everyday-action-card-top"><p class="body-match-kicker">${item.english}</p><button class="small-button is-play-button" type="button" data-everyday-action-play="${item.id}">Play</button></div>
+            <div class="everyday-action-visual"><img class="everyday-action-image" src="${item.imagePath}" alt="${item.sentenceEnglish}" /></div>
+            <div class="everyday-action-copy"><p class="everyday-action-word">${item.hanzi}</p><p class="telephone-line-hanzi">${item.sentence}</p>${state2.showPinyin ? `<p class="telephone-line-pinyin">${item.sentencePinyin}</p>` : ""}${state2.showEnglish ? `<p class="telephone-line-english">${item.sentenceEnglish}</p>` : ""}</div>
+          </article>
+        `).join("")}
+      </div>
+    </div>
+  `;
+      focusExplorer2.querySelectorAll("[data-everyday-action-play]").forEach((button) => {
+        button.addEventListener("click", () => {
+          const item = everydayActionItems2.find((entry) => entry.id === button.dataset.everydayActionPlay);
+          if (item && state2.tapAudioEnabled) speak2(item.audio, 0.78);
+        });
+      });
+    }
     function renderRoomsExplorer2() {
       const topic = currentTopic2();
       focusExplorer2.innerHTML = `
@@ -7843,7 +7965,7 @@
         });
       });
     }
-    return { resetWeekdayChallenge: resetWeekdayChallenge2, ensureWeekdayChallenge: ensureWeekdayChallenge2, handleWeekdayChallengePlay: handleWeekdayChallengePlay2, handleWeekdayChallengeGuess: handleWeekdayChallengeGuess2, resetWeekdayMatchGame: resetWeekdayMatchGame2, ensureWeekdayMatchGame: ensureWeekdayMatchGame2, handleWeekdayMatchPhrase: handleWeekdayMatchPhrase2, handleWeekdayMatchAttempt: handleWeekdayMatchAttempt2, resetClothesQuiz: resetClothesQuiz2, prepareClothesQuizQuestion: prepareClothesQuizQuestion2, ensureClothesQuiz: ensureClothesQuiz2, handleClothesQuizPick: handleClothesQuizPick2, nextClothesQuizQuestion: nextClothesQuizQuestion2, resetTimeRoutineQuiz: resetTimeRoutineQuiz2, prepareTimeRoutineQuizQuestion: prepareTimeRoutineQuizQuestion2, ensureTimeRoutineQuiz: ensureTimeRoutineQuiz2, handleTimeRoutineQuizPick: handleTimeRoutineQuizPick2, nextTimeRoutineQuizQuestion: nextTimeRoutineQuizQuestion2, resetClockQuiz: resetClockQuiz2, prepareClockQuizQuestion: prepareClockQuizQuestion2, ensureClockQuiz: ensureClockQuiz2, handleClockQuizPick: handleClockQuizPick2, nextClockQuizQuestion: nextClockQuizQuestion2, currentRoomBuildItem: currentRoomBuildItem2, resetRoomBuilder: resetRoomBuilder2, prepareRoomBuilder: prepareRoomBuilder2, ensureRoomBuilder: ensureRoomBuilder2, isRoomBuildPrefixValid: isRoomBuildPrefixValid2, handleRoomBuildToken: handleRoomBuildToken2, clearRoomBuilder: clearRoomBuilder2, nextRoomBuilder: nextRoomBuilder2, currentTransportBuildItem: currentTransportBuildItem2, resetTransportBuilder: resetTransportBuilder2, prepareTransportBuilder: prepareTransportBuilder2, ensureTransportBuilder: ensureTransportBuilder2, handleTransportBuildToken: handleTransportBuildToken2, clearTransportBuilder: clearTransportBuilder2, nextTransportBuilder: nextTransportBuilder2, resetPositionQuiz: resetPositionQuiz2, preparePositionQuizQuestion: preparePositionQuizQuestion2, ensurePositionQuiz: ensurePositionQuiz2, handlePositionQuizPlay: handlePositionQuizPlay2, handlePositionQuizPick: handlePositionQuizPick2, nextPositionQuizQuestion: nextPositionQuizQuestion2, currentComparisonBuildItem: currentComparisonBuildItem2, resetComparisonBuilder: resetComparisonBuilder2, prepareComparisonBuilder: prepareComparisonBuilder2, ensureComparisonBuilder: ensureComparisonBuilder2, handleComparisonBuildToken: handleComparisonBuildToken2, clearComparisonBuilder: clearComparisonBuilder2, nextComparisonBuilder: nextComparisonBuilder2, resetDateMatchGame: resetDateMatchGame2, ensureDateMatchGame: ensureDateMatchGame2, handleDateMatchPhrase: handleDateMatchPhrase2, handleDateMatchEvent: handleDateMatchEvent2, resetDateChallenge: resetDateChallenge2, ensureDateChallenge: ensureDateChallenge2, handleDateChallengePlay: handleDateChallengePlay2, handleDateChallengeGuess: handleDateChallengeGuess2, timeDateSectionForCurrentLesson: timeDateSectionForCurrentLesson2, activeTimeDateSection: activeTimeDateSection2, renderTimeAssetGrid: renderTimeAssetGrid2, bindTimeAssetAudio: bindTimeAssetAudio2, renderWeekdaysExplorer: renderWeekdaysExplorer2, renderDatesExplorer: renderDatesExplorer2, renderVisualTopicExplorer: renderVisualTopicExplorer2, renderRoomsExplorer: renderRoomsExplorer2, renderPositionsExplorer: renderPositionsExplorer2, renderTimeDateExplorer: renderTimeDateExplorer2, renderClothesExplorer: renderClothesExplorer2 };
+    return { resetWeekdayChallenge: resetWeekdayChallenge2, ensureWeekdayChallenge: ensureWeekdayChallenge2, handleWeekdayChallengePlay: handleWeekdayChallengePlay2, handleWeekdayChallengeGuess: handleWeekdayChallengeGuess2, resetWeekdayMatchGame: resetWeekdayMatchGame2, ensureWeekdayMatchGame: ensureWeekdayMatchGame2, handleWeekdayMatchPhrase: handleWeekdayMatchPhrase2, handleWeekdayMatchAttempt: handleWeekdayMatchAttempt2, resetClothesQuiz: resetClothesQuiz2, prepareClothesQuizQuestion: prepareClothesQuizQuestion2, ensureClothesQuiz: ensureClothesQuiz2, handleClothesQuizPick: handleClothesQuizPick2, nextClothesQuizQuestion: nextClothesQuizQuestion2, resetTimeRoutineQuiz: resetTimeRoutineQuiz2, prepareTimeRoutineQuizQuestion: prepareTimeRoutineQuizQuestion2, ensureTimeRoutineQuiz: ensureTimeRoutineQuiz2, handleTimeRoutineQuizPick: handleTimeRoutineQuizPick2, nextTimeRoutineQuizQuestion: nextTimeRoutineQuizQuestion2, resetClockQuiz: resetClockQuiz2, prepareClockQuizQuestion: prepareClockQuizQuestion2, ensureClockQuiz: ensureClockQuiz2, handleClockQuizPick: handleClockQuizPick2, nextClockQuizQuestion: nextClockQuizQuestion2, currentRoomBuildItem: currentRoomBuildItem2, resetRoomBuilder: resetRoomBuilder2, prepareRoomBuilder: prepareRoomBuilder2, ensureRoomBuilder: ensureRoomBuilder2, isRoomBuildPrefixValid: isRoomBuildPrefixValid2, handleRoomBuildToken: handleRoomBuildToken2, clearRoomBuilder: clearRoomBuilder2, nextRoomBuilder: nextRoomBuilder2, currentTransportBuildItem: currentTransportBuildItem2, resetTransportBuilder: resetTransportBuilder2, prepareTransportBuilder: prepareTransportBuilder2, ensureTransportBuilder: ensureTransportBuilder2, handleTransportBuildToken: handleTransportBuildToken2, clearTransportBuilder: clearTransportBuilder2, nextTransportBuilder: nextTransportBuilder2, ensureEverydayActionsQuiz: ensureEverydayActionsQuiz2, currentEverydayAction: currentEverydayAction2, handleEverydayActionsPick: handleEverydayActionsPick2, nextEverydayActionsQuestion: nextEverydayActionsQuestion2, resetPositionQuiz: resetPositionQuiz2, preparePositionQuizQuestion: preparePositionQuizQuestion2, ensurePositionQuiz: ensurePositionQuiz2, handlePositionQuizPlay: handlePositionQuizPlay2, handlePositionQuizPick: handlePositionQuizPick2, nextPositionQuizQuestion: nextPositionQuizQuestion2, currentComparisonBuildItem: currentComparisonBuildItem2, resetComparisonBuilder: resetComparisonBuilder2, prepareComparisonBuilder: prepareComparisonBuilder2, ensureComparisonBuilder: ensureComparisonBuilder2, handleComparisonBuildToken: handleComparisonBuildToken2, clearComparisonBuilder: clearComparisonBuilder2, nextComparisonBuilder: nextComparisonBuilder2, resetDateMatchGame: resetDateMatchGame2, ensureDateMatchGame: ensureDateMatchGame2, handleDateMatchPhrase: handleDateMatchPhrase2, handleDateMatchEvent: handleDateMatchEvent2, resetDateChallenge: resetDateChallenge2, ensureDateChallenge: ensureDateChallenge2, handleDateChallengePlay: handleDateChallengePlay2, handleDateChallengeGuess: handleDateChallengeGuess2, timeDateSectionForCurrentLesson: timeDateSectionForCurrentLesson2, activeTimeDateSection: activeTimeDateSection2, renderTimeAssetGrid: renderTimeAssetGrid2, bindTimeAssetAudio: bindTimeAssetAudio2, renderWeekdaysExplorer: renderWeekdaysExplorer2, renderDatesExplorer: renderDatesExplorer2, renderVisualTopicExplorer: renderVisualTopicExplorer2, renderEverydayActionsExplorer: renderEverydayActionsExplorer2, renderRoomsExplorer: renderRoomsExplorer2, renderPositionsExplorer: renderPositionsExplorer2, renderTimeDateExplorer: renderTimeDateExplorer2, renderClothesExplorer: renderClothesExplorer2 };
   }
 
   // src/features/world/animals.js
@@ -9126,7 +9248,7 @@
       id: "daily-world",
       label: "Daily World",
       description: "Food, routines, weather, and the world around the child.",
-      topicIds: ["food", "food-preferences", "meals-feelings", "toys", "comparisons", "positions", "transport", "daily-life", "pets", "animals", "nature", "weather"]
+      topicIds: ["food", "food-preferences", "meals-feelings", "toys", "comparisons", "positions", "transport", "daily-life", "everyday-actions", "pets", "animals", "nature", "weather"]
     },
     {
       id: "school-and-time",
@@ -9169,6 +9291,7 @@
     positions: { zhTitle: "\u4F4D\u7F6E\u548C\u65B9\u5411", enTitle: "Positions & Directions", hint: "Up, down, inside, outside" },
     transport: { zhTitle: "\u4EA4\u901A", enTitle: "Transportation", hint: "Walk, bike, bus, train" },
     "daily-life": { zhTitle: "\u6211\u7684\u623F\u95F4", enTitle: "My Room", hint: "Rooms and furniture" },
+    "everyday-actions": { zhTitle: "\u65E5\u5E38\u52A8\u4F5C", enTitle: "Everyday Actions", hint: "Walk, run, sit, stand, climb, lie down" },
     nature: { zhTitle: "\u81EA\u7136", enTitle: "Nature", hint: "Sky, ground, trees, flowers" },
     weather: { zhTitle: "\u5929\u6C14", enTitle: "Weather", hint: "Sun, rain, snow, wind" }
   };
@@ -9195,10 +9318,10 @@
       id: "time-daily",
       zhTitle: "\u65F6\u95F4\u548C\u65E5\u5E38",
       enTitle: "Time & Daily Life",
-      hint: "Week, time, dates, routines, home",
+      hint: "Week, time, dates, routines, home, actions",
       accent: "#517b8d",
       iconSrc: "assets/illustrated-clocks/10oclock.webp",
-      topicIds: ["weekdays", "time-date", "dates", "comparisons", "positions", "transport", "daily-life"]
+      topicIds: ["weekdays", "time-date", "dates", "comparisons", "positions", "transport", "daily-life", "everyday-actions"]
     },
     {
       id: "school-life",
@@ -9279,6 +9402,7 @@
     foodTopic,
     foodPreferencesTopic,
     mealsFeelingsTopic,
+    everydayActionsTopic,
     {
       id: "time-date",
       title: "Time & Routines",
@@ -10227,6 +10351,10 @@
     handleTransportBuildToken,
     clearTransportBuilder,
     nextTransportBuilder,
+    ensureEverydayActionsQuiz,
+    currentEverydayAction,
+    handleEverydayActionsPick,
+    nextEverydayActionsQuestion,
     resetPositionQuiz,
     preparePositionQuizQuestion,
     ensurePositionQuiz,
@@ -10255,6 +10383,7 @@
     renderWeekdaysExplorer,
     renderDatesExplorer,
     renderVisualTopicExplorer,
+    renderEverydayActionsExplorer,
     renderRoomsExplorer,
     renderPositionsExplorer,
     renderTimeDateExplorer,
@@ -10277,6 +10406,7 @@
     roomScenes,
     roomSentenceTokens,
     transportSentenceTokens,
+    everydayActionItems,
     visualTopicItems,
     shuffleArray,
     speak,
@@ -10344,6 +10474,7 @@
     timeDateMonthItems,
     timeDateRoutineItems,
     clothesMatchItems,
+    everydayActionItems,
     illustratedKids,
     numberHanzi,
     buildNumberItem,
@@ -10436,6 +10567,10 @@
     handleTransportBuildToken,
     clearTransportBuilder,
     nextTransportBuilder,
+    ensureEverydayActionsQuiz,
+    currentEverydayAction,
+    handleEverydayActionsPick,
+    nextEverydayActionsQuestion,
     resetNumberChallenge,
     ensureMathChallenge,
     handleNumberChallengeGuess,
@@ -10474,6 +10609,7 @@
     renderTimeDateExplorer,
     renderWeekdaysExplorer,
     renderDatesExplorer,
+    renderEverydayActionsExplorer,
     renderPositionsExplorer,
     renderRoomsExplorer,
     renderSchoolExplorer,
