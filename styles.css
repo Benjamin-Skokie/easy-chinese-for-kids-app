@@ -3106,6 +3106,7 @@ h4 {
 .greetings-exchange {
   display: grid;
   gap: 12px;
+  align-content: start;
   padding: 16px;
   border-radius: 22px;
   background: rgba(255, 255, 255, 0.56);
@@ -3128,6 +3129,7 @@ h4 {
   grid-template-columns: minmax(0, 1fr) minmax(280px, 1fr);
   gap: 16px;
   align-items: stretch;
+  align-content: start;
 }
 
 .greetings-scene-visual {
@@ -3302,6 +3304,7 @@ h4 {
 .school-scene-layout {
   display: grid;
   gap: 12px;
+  align-content: start;
 }
 
 .school-scene-layout.is-compact {
@@ -7912,8 +7915,21 @@ h4 {
   .polite-scene-grid .greetings-exchange-top,
   .room-scene-grid .greetings-exchange-top,
   .time-routine-scene-grid .greetings-exchange-top,
-  .weather-scene-grid .greetings-exchange-top {
+  .weather-scene-grid .greetings-exchange-top,
+  .greetings-practice-grid .greetings-exchange-top {
     min-height: 58px;
+  }
+
+  /* Keep the image row level across every two-column scene grid. Cards with
+     fewer dialogue lines receive their extra height after the sentence stack,
+     never above the illustration. */
+  .school-scene-grid > .greetings-exchange,
+  .polite-scene-grid > .greetings-exchange,
+  .room-scene-grid > .greetings-exchange,
+  .time-routine-scene-grid > .greetings-exchange,
+  .weather-scene-grid > .greetings-exchange,
+  .greetings-practice-grid > .greetings-exchange {
+    grid-template-rows: minmax(58px, auto) minmax(0, 1fr);
   }
 }
 

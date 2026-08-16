@@ -46,7 +46,7 @@ import { familyGameItemIds, familyPractice, familyTopic, illustratedFamily } fro
 
 test("the local page loads a single bundled application script", () => {
   const html = readFileSync("index.html", "utf8");
-  assert.match(html, /<link rel="stylesheet" href="styles\.css\?v=20260816-mobile-nav-controls" \/>/);
+  assert.match(html, /<link rel="stylesheet" href="styles\.css\?v=20260816-scene-alignment" \/>/);
   assert.match(html, /<script src="app\.js\?v=20260816-date-month-scenes"><\/script>/);
   assert.doesNotMatch(html, /type="module"/);
 });
@@ -117,7 +117,8 @@ test("all phone scene grids use one portrait column and aligned landscape header
   const styles = readFileSync("styles.css", "utf8");
   assert.match(styles, /@media \(max-width: 760px\) and \(orientation: portrait\) \{\s+\.school-scene-grid,[\s\S]{0,240}\.time-routine-scene-grid,[\s\S]{0,240}grid-template-columns: minmax\(0, 1fr\);/);
   assert.match(styles, /@media \(max-width: 760px\) and \(orientation: landscape\) \{\s+\.school-scene-grid,[\s\S]{0,300}\.toys-scene-grid \{\s+grid-template-columns: repeat\(2, minmax\(0, 1fr\)\);/);
-  assert.match(styles, /@media \(max-width: 760px\) and \(orientation: landscape\) \{[\s\S]{0,500}\.school-scene-grid \.greetings-exchange-top,[\s\S]{0,220}\.weather-scene-grid \.greetings-exchange-top \{\s+min-height: 58px;/);
+  assert.match(styles, /@media \(max-width: 760px\) and \(orientation: landscape\) \{[\s\S]{0,600}\.school-scene-grid \.greetings-exchange-top,[\s\S]{0,300}\.greetings-practice-grid \.greetings-exchange-top \{\s+min-height: 58px;/);
+  assert.match(styles, /\.greetings-practice-grid > \.greetings-exchange \{\s+grid-template-rows: minmax\(58px, auto\) minmax\(0, 1fr\);/);
   assert.match(styles, /@media \(max-width: 760px\) \{\s+\.school-scene-grid \.greetings-exchange-top,[\s\S]{0,360}\.greetings-practice-grid \.greetings-exchange-top \{\s+flex-direction: row;\s+align-items: flex-start;/);
   assert.match(styles, /\.school-scene-grid \.small-button\.is-play-button,[\s\S]{0,380}\.greetings-practice-grid \.small-button\.is-play-button \{\s+width: 46px !important;\s+height: 46px;/);
 });

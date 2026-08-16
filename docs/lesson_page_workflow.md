@@ -61,6 +61,7 @@ English translation
 - The green Play button is the only scene-card control and stays at the top right.
 - Use the shared sentence classes without local font overrides: `.telephone-line-hanzi` (Chinese), `.telephone-line-pinyin` (pinyin), and `.telephone-line-english` (English). Their shared type scale is the standard for every scene, including Hobbies and Toys.
 - Use the shared card frame and sentence stack. A 2 × 2 desktop scene grid means equal card treatment for every card; do not use a `compact` class to reduce padding, gaps, borders, or type.
+- In a two-column scene grid, keep every title and illustration aligned. Reserve one shared title row; if cards have different numbers of sentence boxes, leave the extra space after the shorter sentence stack rather than moving its image.
 - Keep the teaching sentence beneath the image. The title labels the situation; it does not replace, repeat, or translate the sentence.
 
 If a later book lesson owns different scenes, language, and practice, make it a separate sibling activity page in the relevant home category. Do not place it as a tab, renderer branch, or feature-sized navigation shelf inside an earlier completed lesson.
