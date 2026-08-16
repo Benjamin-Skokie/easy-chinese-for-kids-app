@@ -156,7 +156,7 @@ assert(introductionsBuildPhrases.length === 2, "introductions sentence practice 
 assert(ageBuildPhrases.length === 6, "age sentence practice is incomplete");
 assert(identityCountries.length === 3, "identity country set is incomplete");
 assert(greetingsPractice.length === 3, "greetings lesson scenes are incomplete");
-assert(politePractice.length === 3, "polite words lesson scenes are incomplete");
+assert(politePractice.length === 4, "polite words lesson scenes are incomplete");
 assert(clothesMatchItems.length === 5, "clothes matching set is incomplete");
 assert(familyPractice.length === 2, "family lesson scenes are incomplete");
 assert(colourLessons["1b"].items.length === 4, "1B colour word set is incomplete");

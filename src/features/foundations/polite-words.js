@@ -18,7 +18,8 @@ export const politeWordsTopic = {
     { id: "youre-welcome", hanzi: "不客气。", pinyin: "bú kè qi.", english: "You're welcome.", audio: "不客气" },
     { id: "sorry", hanzi: "对不起。", pinyin: "duì bu qǐ.", english: "I'm sorry.", audio: "对不起" },
     { id: "never-mind", hanzi: "没关系。", pinyin: "méi guān xi.", english: "Never mind.", audio: "没关系" },
-    { id: "please", hanzi: "请", pinyin: "qǐng", english: "please", audio: "请" }
+    { id: "please", hanzi: "请", pinyin: "qǐng", english: "please", audio: "请" },
+    { id: "ask-teacher", hanzi: "我可以问老师吗？", pinyin: "wǒ kě yǐ wèn lǎo shī ma?", english: "May I ask the teacher?", audio: "我可以问老师吗" }
   ],
   interactiveScene: "polite-phrases",
   parentGuide: "Use these during real routines: handing snacks, passing pencils, cleaning up, or asking for help.",
@@ -63,7 +64,18 @@ export const politePractice = [
       { hanzi: "请安静。", pinyin: "qǐng ān jìng.", english: "Please be quiet.", audio: "请安静" },
       { hanzi: "好。", pinyin: "hǎo.", english: "Okay.", audio: "好" }
     ]
+  },
+  {
+    id: "school-request-teacher-help",
+    number: "4",
+    prompt: "Asking a teacher politely for help",
+    imagePath: "assets/illustrated-grammar/school-request-teacher-help.webp",
+    imageAlt: "A child politely asking a teacher for help in a classroom",
+    lines: [
+      { hanzi: "我可以问老师吗？", pinyin: "wǒ kě yǐ wèn lǎo shī ma?", english: "May I ask the teacher?", audio: "我可以问老师吗" },
+      { hanzi: "可以。", pinyin: "kě yǐ.", english: "Yes, you may.", audio: "可以" }
+    ]
   }
 ];
 
-export const politeGameItemIds = ["thank-you", "youre-welcome", "sorry", "never-mind"];
+export const politeGameItemIds = ["thank-you", "youre-welcome", "sorry", "never-mind", "ask-teacher"];

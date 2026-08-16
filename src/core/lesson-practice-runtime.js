@@ -150,6 +150,7 @@ function sharedLessonPracticeConfig(topic) {
         result: () => state.politeChallengeResult,
         wrongIds: () => state.politeChallengeWrongIds,
         feedback: () => state.politeListenFeedback,
+        playLabel: () => state.politeChallengeResult === "correct" ? "New game" : "Play",
         onPlay: handlePoliteChallengePlay,
         onGuess: handlePoliteChallengeGuess
       },

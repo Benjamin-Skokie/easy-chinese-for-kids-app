@@ -30,7 +30,8 @@ export function createPoliteWordsController({
       "thank-you": "Thank a friend who helped you",
       "youre-welcome": "Reply kindly after someone thanks you",
       sorry: "Say sorry after a mistake",
-      "never-mind": "Forgive kindly after an apology"
+      "never-mind": "Forgive kindly after an apology",
+      "ask-teacher": "Ask politely before speaking with the teacher"
     };
 
     return labels[itemId] ?? "";
@@ -185,6 +186,7 @@ export function createPoliteWordsController({
   }
 
   function renderPoliteWordsExplorer() {
+    const words = topicById("polite-words")?.focusItems ?? [];
     focusExplorer.innerHTML = `
       <div class="numbers-board">
         <div class="numbers-stage-card">
@@ -192,7 +194,7 @@ export function createPoliteWordsController({
           <h4>Book theme: kind classroom language</h4>
           <p>This topic starts with thank you and sorry, then grows into kind replies and polite requests.</p>
         </div>
-        <div class="greetings-practice-grid">
+        <div class="greetings-practice-grid polite-scene-grid">
           ${politePractice.map((exchange) => `
             <section class="greetings-exchange">
               <div class="greetings-exchange-top">
@@ -202,7 +204,7 @@ export function createPoliteWordsController({
                 </div>
                 <button class="small-button is-play-button" type="button" data-polite-play-all="${exchange.id}">Play</button>
               </div>
-              <div class="greetings-scene-layout">
+              <div class="greetings-scene-layout polite-scene-layout">
                 <div class="greetings-scene-visual">
                   <img class="greetings-scene-image" src="${exchange.imagePath}" alt="${exchange.imageAlt}" />
                 </div>
@@ -221,6 +223,12 @@ export function createPoliteWordsController({
             </section>
           `).join("")}
         </div>
+        <section class="school-lesson-section polite-book-words">
+          <div class="time-months-heading"><p class="body-match-kicker">Book words</p></div>
+          <div class="school-word-grid is-text-only">
+            ${words.map((word) => `<button class="school-word-card is-text-only" type="button" data-polite-word="${word.id}"><span class="time-asset-hanzi">${word.hanzi}</span>${state.showPinyin ? `<span class="time-asset-pinyin">${word.pinyin}</span>` : ""}${state.showEnglish ? `<span class="time-asset-english">${word.english}</span>` : ""}</button>`).join("")}
+          </div>
+        </section>
       </div>
     `;
 
@@ -233,6 +241,12 @@ export function createPoliteWordsController({
 
         speakSceneLines(exchange.lines);
         focusStatus.textContent = `Listen to the whole scene: ${exchange.lines.map((line) => line.hanzi).join(" ")}`;
+      });
+    });
+    focusExplorer.querySelectorAll("[data-polite-word]").forEach((button) => {
+      button.addEventListener("click", () => {
+        const word = words.find((entry) => entry.id === button.dataset.politeWord);
+        if (word && state.tapAudioEnabled) speak(word.audio, 0.78);
       });
     });
   }

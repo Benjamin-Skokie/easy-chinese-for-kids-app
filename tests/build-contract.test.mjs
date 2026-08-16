@@ -46,7 +46,8 @@ import { familyGameItemIds, familyPractice, familyTopic, illustratedFamily } fro
 
 test("the local page loads a single bundled application script", () => {
   const html = readFileSync("index.html", "utf8");
-  assert.match(html, /<script src="app\.js\?v=20260815-toys-category-word"><\/script>/);
+  assert.match(html, /<link rel="stylesheet" href="styles\.css\?v=20260816-requests-side-by-side-lines" \/>/);
+  assert.match(html, /<script src="app\.js\?v=20260815-requests"><\/script>/);
   assert.doesNotMatch(html, /type="module"/);
 });
 
@@ -646,8 +647,23 @@ test("greetings owns its template lesson scenes and listening set", () => {
 test("polite words owns its template lesson scenes and listening set", () => {
   assert.equal(politeWordsTopic.id, "polite-words");
   assert.equal(politeWordsTopic.interactiveScene, "polite-phrases");
-  assert.equal(politePractice.length, 3);
-  assert.equal(politeGameItemIds.length, 4);
+  assert.equal(politePractice.length, 4);
+  assert.equal(politeGameItemIds.length, 5);
+  assert.deepEqual(politePractice.at(-1)?.lines.map((line) => line.hanzi), ["我可以问老师吗？", "可以。"]);
+  assert.ok(existsSync("assets/illustrated-grammar/school-request-teacher-help.webp"));
+});
+
+test("Polite Words adds its request scene to a two-column grid and no-repeat listening", () => {
+  const controllerSource = readFileSync("src/features/foundations/polite-words-controller.js", "utf8");
+  const practiceSource = readFileSync("src/core/lesson-practice-runtime.js", "utf8");
+  const stylesSource = readFileSync("styles.css", "utf8");
+  assert.match(controllerSource, /polite-scene-grid/);
+  assert.match(controllerSource, /data-polite-word/);
+  assert.match(practiceSource, /state\.politeChallengeResult === "correct" \? "New game" : "Play"/);
+  assert.match(stylesSource, /\.polite-scene-grid \{\s+grid-template-columns: repeat\(2, minmax\(0, 1fr\)\);/);
+  assert.match(stylesSource, /\.polite-scene-grid \{\s+grid-template-columns: minmax\(0, 1fr\);/);
+  assert.match(stylesSource, /\.greetings-scene-layout\.polite-scene-layout \{\s+grid-template-columns: minmax\(0, 1fr\);/);
+  assert.match(stylesSource, /\.polite-scene-layout \.greetings-line-stack \{\s+grid-template-columns: repeat\(2, minmax\(0, 1fr\)\);/);
 });
 
 test("clothes owns its scenes and picture matching set", () => {

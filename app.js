@@ -708,6 +708,7 @@
             result: () => state2.politeChallengeResult,
             wrongIds: () => state2.politeChallengeWrongIds,
             feedback: () => state2.politeListenFeedback,
+            playLabel: () => state2.politeChallengeResult === "correct" ? "New game" : "Play",
             onPlay: handlePoliteChallengePlay2,
             onGuess: handlePoliteChallengeGuess2
           },
@@ -4713,7 +4714,8 @@
       { id: "youre-welcome", hanzi: "\u4E0D\u5BA2\u6C14\u3002", pinyin: "b\xFA k\xE8 qi.", english: "You're welcome.", audio: "\u4E0D\u5BA2\u6C14" },
       { id: "sorry", hanzi: "\u5BF9\u4E0D\u8D77\u3002", pinyin: "du\xEC bu q\u01D0.", english: "I'm sorry.", audio: "\u5BF9\u4E0D\u8D77" },
       { id: "never-mind", hanzi: "\u6CA1\u5173\u7CFB\u3002", pinyin: "m\xE9i gu\u0101n xi.", english: "Never mind.", audio: "\u6CA1\u5173\u7CFB" },
-      { id: "please", hanzi: "\u8BF7", pinyin: "q\u01D0ng", english: "please", audio: "\u8BF7" }
+      { id: "please", hanzi: "\u8BF7", pinyin: "q\u01D0ng", english: "please", audio: "\u8BF7" },
+      { id: "ask-teacher", hanzi: "\u6211\u53EF\u4EE5\u95EE\u8001\u5E08\u5417\uFF1F", pinyin: "w\u01D2 k\u011B y\u01D0 w\xE8n l\u01CEo sh\u012B ma?", english: "May I ask the teacher?", audio: "\u6211\u53EF\u4EE5\u95EE\u8001\u5E08\u5417" }
     ],
     interactiveScene: "polite-phrases",
     parentGuide: "Use these during real routines: handing snacks, passing pencils, cleaning up, or asking for help.",
@@ -4757,9 +4759,20 @@
         { hanzi: "\u8BF7\u5B89\u9759\u3002", pinyin: "q\u01D0ng \u0101n j\xECng.", english: "Please be quiet.", audio: "\u8BF7\u5B89\u9759" },
         { hanzi: "\u597D\u3002", pinyin: "h\u01CEo.", english: "Okay.", audio: "\u597D" }
       ]
+    },
+    {
+      id: "school-request-teacher-help",
+      number: "4",
+      prompt: "Asking a teacher politely for help",
+      imagePath: "assets/illustrated-grammar/school-request-teacher-help.webp",
+      imageAlt: "A child politely asking a teacher for help in a classroom",
+      lines: [
+        { hanzi: "\u6211\u53EF\u4EE5\u95EE\u8001\u5E08\u5417\uFF1F", pinyin: "w\u01D2 k\u011B y\u01D0 w\xE8n l\u01CEo sh\u012B ma?", english: "May I ask the teacher?", audio: "\u6211\u53EF\u4EE5\u95EE\u8001\u5E08\u5417" },
+        { hanzi: "\u53EF\u4EE5\u3002", pinyin: "k\u011B y\u01D0.", english: "Yes, you may.", audio: "\u53EF\u4EE5" }
+      ]
     }
   ];
-  var politeGameItemIds = ["thank-you", "youre-welcome", "sorry", "never-mind"];
+  var politeGameItemIds = ["thank-you", "youre-welcome", "sorry", "never-mind", "ask-teacher"];
 
   // src/features/foundations/polite-words-controller.js
   function createPoliteWordsController({
@@ -4790,7 +4803,8 @@
         "thank-you": "Thank a friend who helped you",
         "youre-welcome": "Reply kindly after someone thanks you",
         sorry: "Say sorry after a mistake",
-        "never-mind": "Forgive kindly after an apology"
+        "never-mind": "Forgive kindly after an apology",
+        "ask-teacher": "Ask politely before speaking with the teacher"
       };
       return labels[itemId] ?? "";
     }
@@ -4921,6 +4935,7 @@
       renderActivityPanel2(currentTopic2());
     }
     function renderPoliteWordsExplorer2() {
+      const words = topicById3("polite-words")?.focusItems ?? [];
       focusExplorer2.innerHTML = `
       <div class="numbers-board">
         <div class="numbers-stage-card">
@@ -4928,7 +4943,7 @@
           <h4>Book theme: kind classroom language</h4>
           <p>This topic starts with thank you and sorry, then grows into kind replies and polite requests.</p>
         </div>
-        <div class="greetings-practice-grid">
+        <div class="greetings-practice-grid polite-scene-grid">
           ${politePractice2.map((exchange) => `
             <section class="greetings-exchange">
               <div class="greetings-exchange-top">
@@ -4938,7 +4953,7 @@
                 </div>
                 <button class="small-button is-play-button" type="button" data-polite-play-all="${exchange.id}">Play</button>
               </div>
-              <div class="greetings-scene-layout">
+              <div class="greetings-scene-layout polite-scene-layout">
                 <div class="greetings-scene-visual">
                   <img class="greetings-scene-image" src="${exchange.imagePath}" alt="${exchange.imageAlt}" />
                 </div>
@@ -4957,6 +4972,12 @@
             </section>
           `).join("")}
         </div>
+        <section class="school-lesson-section polite-book-words">
+          <div class="time-months-heading"><p class="body-match-kicker">Book words</p></div>
+          <div class="school-word-grid is-text-only">
+            ${words.map((word) => `<button class="school-word-card is-text-only" type="button" data-polite-word="${word.id}"><span class="time-asset-hanzi">${word.hanzi}</span>${state2.showPinyin ? `<span class="time-asset-pinyin">${word.pinyin}</span>` : ""}${state2.showEnglish ? `<span class="time-asset-english">${word.english}</span>` : ""}</button>`).join("")}
+          </div>
+        </section>
       </div>
     `;
       focusExplorer2.querySelectorAll("[data-polite-play-all]").forEach((button) => {
@@ -4967,6 +4988,12 @@
           }
           speakSceneLines2(exchange.lines);
           focusStatus2.textContent = `Listen to the whole scene: ${exchange.lines.map((line) => line.hanzi).join(" ")}`;
+        });
+      });
+      focusExplorer2.querySelectorAll("[data-polite-word]").forEach((button) => {
+        button.addEventListener("click", () => {
+          const word = words.find((entry) => entry.id === button.dataset.politeWord);
+          if (word && state2.tapAudioEnabled) speak2(word.audio, 0.78);
         });
       });
     }

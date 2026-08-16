@@ -29,10 +29,10 @@ then update both records when the work is complete.
   - Lives in **Time & Daily Life / 时间和日常** as an enrichment topic, not a
     claimed textbook lesson.
 
-- [ ] **Requests — 3A Lesson 6** — proposed focused sibling page in Foundations
-  - Decide in a contract whether this is a sibling of Polite Words, then teach
-    `请…` and `我可以…吗？` with a complete question-and-answer exchange.
-  - `school-request-teacher-help.webp` is the primary candidate scene.
+- [ ] **Requests — 3A Lesson 6** — implemented as the later request layer of
+  Polite Words; visual QA remains.
+  - Teaches `请…` and `我可以…吗？` with `我可以问老师吗？ / 可以。`.
+  - Uses `school-request-teacher-help.webp` as its primary scene.
 
 ## Partial topic coverage
 
@@ -55,7 +55,7 @@ also changed from `partial`.
 
 - [ ] Greetings — `lesson-contracts/foundations/greetings.md`
 - [ ] Introductions — `lesson-contracts/foundations/introductions.md`
-- [ ] Polite Words — `lesson-contracts/foundations/polite-words.md`
+- [ ] Polite Words — `lesson-contracts/foundations/polite-words.md` (Requests implementation complete; visual QA remains)
 - [ ] Numbers — `lesson-contracts/foundations/numbers.md`
 - [ ] Multiplication Rhyme — `lesson-contracts/foundations/multiplication-rhyme.md`
 - [ ] Age — `lesson-contracts/foundations/age.md`
