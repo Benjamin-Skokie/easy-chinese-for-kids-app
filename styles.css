@@ -7826,6 +7826,97 @@ h4 {
   }
 }
 
+@media (max-width: 760px) and (orientation: portrait) {
+  .school-scene-grid,
+  .polite-scene-grid,
+  .room-scene-grid,
+  .time-routine-scene-grid,
+  .school-lesson-section.is-weather .weather-scene-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .learning-display-controls {
+    gap: 4px;
+    padding-left: 4px;
+  }
+
+  .learning-display-toggle {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+  }
+
+  .learning-display-sound-icon {
+    width: 27px;
+    height: 27px;
+  }
+}
+
+@media (max-width: 760px) {
+  .school-scene-grid .greetings-exchange-top,
+  .polite-scene-grid .greetings-exchange-top,
+  .room-scene-grid .greetings-exchange-top,
+  .time-routine-scene-grid .greetings-exchange-top,
+  .weather-scene-grid .greetings-exchange-top,
+  .greetings-practice-grid .greetings-exchange-top {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .school-scene-grid .small-button.is-play-button,
+  .polite-scene-grid .small-button.is-play-button,
+  .room-scene-grid .small-button.is-play-button,
+  .time-routine-scene-grid .small-button.is-play-button,
+  .weather-scene-grid .small-button.is-play-button,
+  .greetings-practice-grid .small-button.is-play-button {
+    width: 46px !important;
+    height: 46px;
+    flex: 0 0 46px;
+  }
+
+  .school-scene-grid .small-button.is-play-button::before,
+  .polite-scene-grid .small-button.is-play-button::before,
+  .room-scene-grid .small-button.is-play-button::before,
+  .time-routine-scene-grid .small-button.is-play-button::before,
+  .weather-scene-grid .small-button.is-play-button::before,
+  .greetings-practice-grid .small-button.is-play-button::before {
+    border-top-width: 8px;
+    border-bottom-width: 8px;
+    border-left-width: 12px;
+  }
+
+  /* Matching depends on seeing both answer sets together. Keep the left and
+     right columns side by side on phones instead of stacking them. */
+  .polite-match-board,
+  .family-match-board-headings,
+  .family-match-solved-row,
+  .body-match-board-headings,
+  .body-match-solved-row,
+  .body-match-open-board {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+  }
+}
+
+@media (max-width: 760px) and (orientation: landscape) {
+  .school-scene-grid,
+  .polite-scene-grid,
+  .room-scene-grid,
+  .time-routine-scene-grid,
+  .school-lesson-section.is-weather .weather-scene-grid,
+  .toys-scene-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .school-scene-grid .greetings-exchange-top,
+  .polite-scene-grid .greetings-exchange-top,
+  .room-scene-grid .greetings-exchange-top,
+  .time-routine-scene-grid .greetings-exchange-top,
+  .weather-scene-grid .greetings-exchange-top {
+    min-height: 58px;
+  }
+}
+
 @media (min-width: 761px) and (max-width: 980px) {
   .comparison-word-grid {
     grid-template-columns: repeat(4, minmax(0, 1fr));

@@ -46,7 +46,7 @@ import { familyGameItemIds, familyPractice, familyTopic, illustratedFamily } fro
 
 test("the local page loads a single bundled application script", () => {
   const html = readFileSync("index.html", "utf8");
-  assert.match(html, /<link rel="stylesheet" href="styles\.css\?v=20260816-date-month-scenes" \/>/);
+  assert.match(html, /<link rel="stylesheet" href="styles\.css\?v=20260816-mobile-nav-controls" \/>/);
   assert.match(html, /<script src="app\.js\?v=20260816-date-month-scenes"><\/script>/);
   assert.doesNotMatch(html, /type="module"/);
 });
@@ -111,6 +111,26 @@ test("Dates and months use standard scene cards", () => {
   assert.match(runtimeSource, /telephone-line-hanzi">\$\{item\.context\}/);
   assert.match(styles, /\.date-scene-grid \.school-scene-image \{\s+object-fit: contain;/);
   assert.match(styles, /\.month-scene-grid \.school-scene-image \{\s+object-fit: contain;/);
+});
+
+test("all phone scene grids use one portrait column and aligned landscape headers", () => {
+  const styles = readFileSync("styles.css", "utf8");
+  assert.match(styles, /@media \(max-width: 760px\) and \(orientation: portrait\) \{\s+\.school-scene-grid,[\s\S]{0,240}\.time-routine-scene-grid,[\s\S]{0,240}grid-template-columns: minmax\(0, 1fr\);/);
+  assert.match(styles, /@media \(max-width: 760px\) and \(orientation: landscape\) \{\s+\.school-scene-grid,[\s\S]{0,300}\.toys-scene-grid \{\s+grid-template-columns: repeat\(2, minmax\(0, 1fr\)\);/);
+  assert.match(styles, /@media \(max-width: 760px\) and \(orientation: landscape\) \{[\s\S]{0,500}\.school-scene-grid \.greetings-exchange-top,[\s\S]{0,220}\.weather-scene-grid \.greetings-exchange-top \{\s+min-height: 58px;/);
+  assert.match(styles, /@media \(max-width: 760px\) \{\s+\.school-scene-grid \.greetings-exchange-top,[\s\S]{0,360}\.greetings-practice-grid \.greetings-exchange-top \{\s+flex-direction: row;\s+align-items: flex-start;/);
+  assert.match(styles, /\.school-scene-grid \.small-button\.is-play-button,[\s\S]{0,380}\.greetings-practice-grid \.small-button\.is-play-button \{\s+width: 46px !important;\s+height: 46px;/);
+});
+
+test("phone matching games keep their left and right columns together", () => {
+  const styles = readFileSync("styles.css", "utf8");
+  assert.match(styles, /\.polite-match-board,[\s\S]{0,220}\.body-match-open-board \{\s+grid-template-columns: repeat\(2, minmax\(0, 1fr\)\);\s+gap: 8px;/);
+});
+
+test("portrait phone navigation keeps display controls compact", () => {
+  const styles = readFileSync("styles.css", "utf8");
+  assert.match(styles, /@media \(max-width: 760px\) and \(orientation: portrait\) \{[\s\S]{0,500}\.learning-display-controls \{\s+gap: 4px;\s+padding-left: 4px;/);
+  assert.match(styles, /\.learning-display-toggle \{\s+width: 44px;\s+height: 44px;\s+border-radius: 12px;/);
 });
 
 test("Comparisons keeps its sole new-game control at the top right", () => {
