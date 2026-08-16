@@ -79,7 +79,7 @@ For each remaining learning goal, write down:
 - what **Play** does: a new randomized round, not merely audio replay; when more than one round exists, it must differ from the current round;
 - the full eligible round set for randomization and what stays stable within a round.
 
-For a compact picture-choice practice panel, use one top-right green control only. Its label, icon, and behavior must agree in every state. If it starts a new round, it must never speak; if the correct choice should speak the complete sentence, trigger that speech from the correct-answer event instead. Do not add a second bottom Play, arrow, or New-game control after success.
+For every randomized practice panel, use one top-right green control only. Its label, icon, and behavior must agree in every state. A new picture or sentence-builder round starts silently; a listen-and-choose round starts a new question and immediately plays its prompt audio. If the correct choice should speak the complete sentence, trigger that speech from the correct-answer event instead. Do not add a second bottom Play, arrow, or New-game control after success.
 
 ### Standard practice typography
 

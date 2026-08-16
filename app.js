@@ -810,7 +810,7 @@
         activityList2.className = "support-list";
         activityList2.innerHTML = `
       <section class="clothes-quiz-shell room-builder-shell">
-        <div class="numbers-game-top"><div><p class="body-match-kicker">Build the sentence</p><p class="numbers-game-note">Tap the word cards in order. Some cards do not belong.</p></div></div>
+        <div class="numbers-game-top"><div><p class="body-match-kicker">Build the sentence</p><p class="numbers-game-note">Tap the word cards in order. Some cards do not belong.</p></div><button class="small-button is-practice-advance-button" type="button" data-room-build-new aria-label="Start a new game">New game</button></div>
         <figure class="clothes-quiz-visual room-build-visual"><img class="clothes-quiz-image" src="${prompt.imagePath}" alt="${prompt.english}" /></figure>
         <div class="transport-build-hint">
           ${state2.showPinyin ? `<p class="transport-build-hint-pinyin">${prompt.pinyin}</p>` : ""}
@@ -823,7 +823,7 @@
         <div class="intro-build-choices">
           ${state2.roomBuildAvailableTokens.map((token, index) => `<button class="intro-build-chip" type="button" data-room-build-token="${index}">${token}</button>`).join("")}
         </div>
-        <div class="intro-build-actions"><button class="small-button" type="button" data-room-build-clear>Clear</button>${state2.roomBuildResult === "correct" ? '<button class="small-button is-practice-advance-button" type="button" data-room-build-next>Next picture</button>' : ""}</div>
+        <div class="intro-build-actions"><button class="small-button" type="button" data-room-build-clear>Clear</button></div>
       </section>
       ${renderPracticeSayCards2([
           { hanzi: "\u5730\u4E0A\u6709\u4E66\u3002", pinyin: "d\xEC sh\xE0ng y\u01D2u sh\u016B.", english: "There is a book on the floor.", audio: "\u5730\u4E0A\u6709\u4E66" }
@@ -833,7 +833,7 @@
           button.addEventListener("click", () => handleRoomBuildToken2(Number(button.dataset.roomBuildToken)));
         });
         activityList2.querySelector("[data-room-build-clear]")?.addEventListener("click", clearRoomBuilder2);
-        activityList2.querySelector("[data-room-build-next]")?.addEventListener("click", nextRoomBuilder2);
+        activityList2.querySelector("[data-room-build-new]")?.addEventListener("click", nextRoomBuilder2);
         bindPracticeSayCards2(activityList2);
         return;
       }
@@ -846,7 +846,7 @@
         activityList2.className = "support-list";
         activityList2.innerHTML = `
       <section class="clothes-quiz-shell comparison-builder-shell">
-        <div class="numbers-game-top"><div><p class="body-match-kicker">Complete the sentence</p><p class="numbers-game-note">Tap the two word cards in the order that completes the sentence.</p></div></div>
+        <div class="numbers-game-top"><div><p class="body-match-kicker">Complete the sentence</p><p class="numbers-game-note">Tap the two word cards in the order that completes the sentence.</p></div><button class="small-button is-practice-advance-button" type="button" data-comparison-build-new aria-label="Start a new game">New game</button></div>
         <figure class="clothes-quiz-visual comparison-quiz-visual"><img class="clothes-quiz-image" src="${visual.imagePath}" alt="${visual.english}" /></figure>
         <div class="transport-build-hint">
           ${state2.showPinyin ? `<p class="transport-build-hint-pinyin">${prompt.pinyin}</p>` : ""}
@@ -863,14 +863,14 @@
         <div class="intro-build-choices">
           ${state2.comparisonBuildAvailableTokens.map((token, index) => `<button class="intro-build-chip" type="button" data-comparison-build-token="${index}">${token}</button>`).join("")}
         </div>
-        <div class="intro-build-actions"><button class="small-button" type="button" data-comparison-build-clear>Clear</button>${state2.comparisonBuildResult === "correct" ? '<button class="small-button is-practice-advance-button" type="button" data-comparison-build-next>Next picture</button>' : ""}</div>
+        <div class="intro-build-actions"><button class="small-button" type="button" data-comparison-build-clear>Clear</button></div>
       </section>
     `;
         activityList2.querySelectorAll("[data-comparison-build-token]").forEach((button) => {
           button.addEventListener("click", () => handleComparisonBuildToken2(Number(button.dataset.comparisonBuildToken)));
         });
         activityList2.querySelector("[data-comparison-build-clear]")?.addEventListener("click", clearComparisonBuilder2);
-        activityList2.querySelector("[data-comparison-build-next]")?.addEventListener("click", nextComparisonBuilder2);
+        activityList2.querySelector("[data-comparison-build-new]")?.addEventListener("click", nextComparisonBuilder2);
         return;
       }
       if (topic.id === "positions") {
@@ -880,7 +880,7 @@
         activityList2.className = "support-list";
         activityList2.innerHTML = `
       <section class="clothes-quiz-shell position-quiz-shell">
-        <div class="numbers-game-top"><div><p class="body-match-kicker">Listen and choose</p><p class="numbers-game-note">Play the audio, then tap the matching Chinese sentence.</p></div><button class="small-button is-play-button" type="button" data-position-quiz-play>Play</button></div>
+        <div class="numbers-game-top"><div><p class="body-match-kicker">Listen and choose</p><p class="numbers-game-note">Start a new round, then listen and tap the matching Chinese sentence.</p></div><button class="small-button is-practice-advance-button" type="button" data-position-quiz-new aria-label="Start a new game">New game</button></div>
         <div class="clothes-quiz-options">
           ${state2.positionQuizOptionIds.map((itemId) => {
           const item = positionPracticeItems2.find((entry) => entry.id === itemId);
@@ -890,7 +890,6 @@
           return `<button class="clothes-quiz-option${resultClass}" type="button" data-position-quiz-pick="${item.id}">${mark}<span class="numbers-game-hanzi">${item.hanzi}</span>${state2.showPinyin ? `<span class="numbers-game-pinyin">${item.pinyin}</span>` : ""}${state2.showEnglish ? `<span class="numbers-game-english">${item.english}</span>` : ""}</button>`;
         }).join("")}
         </div>
-        ${state2.positionQuizResult === "correct" ? '<div class="clothes-quiz-next"><button class="small-button is-practice-advance-button" type="button" data-position-quiz-next>Next sentence</button></div>' : ""}
       </section>
       ${renderPracticeSayCards2([
           { hanzi: "\u4E66\u67B6\u5728\u684C\u5B50\u5DE6\u8FB9\u3002", pinyin: "sh\u016B ji\xE0 z\xE0i zhu\u014D zi zu\u01D2 bi\u0101n.", english: "The bookshelf is to the left of the desk.", audio: "\u4E66\u67B6\u5728\u684C\u5B50\u5DE6\u8FB9" },
@@ -900,8 +899,10 @@
         activityList2.querySelectorAll("[data-position-quiz-pick]").forEach((button) => {
           button.addEventListener("click", () => handlePositionQuizPick2(button.dataset.positionQuizPick));
         });
-        activityList2.querySelector("[data-position-quiz-play]")?.addEventListener("click", handlePositionQuizPlay2);
-        activityList2.querySelector("[data-position-quiz-next]")?.addEventListener("click", nextPositionQuizQuestion2);
+        activityList2.querySelector("[data-position-quiz-new]")?.addEventListener("click", () => {
+          nextPositionQuizQuestion2();
+          handlePositionQuizPlay2();
+        });
         bindPracticeSayCards2(activityList2);
         return;
       }
@@ -941,7 +942,7 @@
         activityList2.className = "support-list";
         activityList2.innerHTML = `
       <section class="clothes-quiz-shell transport-builder-shell">
-        <div class="numbers-game-top"><div><p class="body-match-kicker">Build the sentence</p><p class="numbers-game-note">Tap the word cards in order. Some cards do not belong.</p></div></div>
+        <div class="numbers-game-top"><div><p class="body-match-kicker">Build the sentence</p><p class="numbers-game-note">Tap the word cards in order. Some cards do not belong.</p></div><button class="small-button is-practice-advance-button" type="button" data-transport-build-new aria-label="Start a new game">New game</button></div>
         <figure class="clothes-quiz-visual transport-quiz-visual"><img class="clothes-quiz-image" src="${prompt.imagePath}" alt="${prompt.english}" /></figure>
         <div class="transport-build-hint">
           ${state2.showPinyin ? `<p class="transport-build-hint-pinyin">${prompt.pinyin}</p>` : ""}
@@ -954,14 +955,14 @@
         <div class="intro-build-choices">
           ${state2.transportBuildAvailableTokens.map((token, index) => `<button class="intro-build-chip" type="button" data-transport-build-token="${index}">${token}</button>`).join("")}
         </div>
-        <div class="intro-build-actions"><button class="small-button" type="button" data-transport-build-clear>Clear</button>${state2.transportBuildResult === "correct" ? '<button class="small-button is-practice-advance-button" type="button" data-transport-build-next>Next picture</button>' : ""}</div>
+        <div class="intro-build-actions"><button class="small-button" type="button" data-transport-build-clear>Clear</button></div>
       </section>
     `;
         activityList2.querySelectorAll("[data-transport-build-token]").forEach((button) => {
           button.addEventListener("click", () => handleTransportBuildToken2(Number(button.dataset.transportBuildToken)));
         });
         activityList2.querySelector("[data-transport-build-clear]")?.addEventListener("click", clearTransportBuilder2);
-        activityList2.querySelector("[data-transport-build-next]")?.addEventListener("click", nextTransportBuilder2);
+        activityList2.querySelector("[data-transport-build-new]")?.addEventListener("click", nextTransportBuilder2);
         return;
       }
       if (topic.id === "time-date" && activeTimeDateSection2() === "clock") {
@@ -973,7 +974,7 @@
         activityList2.className = "support-list";
         activityList2.innerHTML = `
       <section class="clothes-quiz-shell time-routine-quiz-shell">
-        <div class="numbers-game-top"><div><p class="body-match-kicker">Picture choice</p><p class="numbers-game-note">Tap the Chinese time that matches the clock.</p></div></div>
+        <div class="numbers-game-top"><div><p class="body-match-kicker">Picture choice</p><p class="numbers-game-note">Tap the Chinese time that matches the clock.</p></div><button class="small-button is-practice-advance-button" type="button" data-clock-quiz-new aria-label="Start a new game">New game</button></div>
         <figure class="clothes-quiz-visual time-routine-quiz-visual"><img class="clothes-quiz-image" src="${prompt.imagePath}" alt="${prompt.english}" /></figure>
         <div class="clothes-quiz-options">
           ${state2.clockQuizOptionIds.map((itemId) => {
@@ -984,7 +985,6 @@
           return `<button class="clothes-quiz-option${resultClass}" type="button" data-clock-quiz-pick="${item.id}">${mark}<span class="numbers-game-hanzi">${item.hanzi}</span>${state2.showPinyin ? `<span class="numbers-game-pinyin">${item.pinyin}</span>` : ""}${state2.showEnglish ? `<span class="numbers-game-english">${item.english}</span>` : ""}</button>`;
         }).join("")}
         </div>
-        ${state2.clockQuizResult === "correct" ? '<div class="clothes-quiz-next"><button class="small-button is-practice-advance-button" type="button" data-clock-quiz-next>Next clock</button></div>' : ""}
       </section>
       ${renderPracticeSayCards2([
           { hanzi: "\u51E0\u70B9\u4E86\uFF1F", pinyin: "j\u01D0 di\u01CEn le?", english: "What time is it?", audio: "\u51E0\u70B9\u4E86" },
@@ -995,7 +995,7 @@
         activityList2.querySelectorAll("[data-clock-quiz-pick]").forEach((button) => {
           button.addEventListener("click", () => handleClockQuizPick2(button.dataset.clockQuizPick));
         });
-        activityList2.querySelector("[data-clock-quiz-next]")?.addEventListener("click", nextClockQuizQuestion2);
+        activityList2.querySelector("[data-clock-quiz-new]")?.addEventListener("click", nextClockQuizQuestion2);
         bindPracticeSayCards2(activityList2);
         return;
       }
@@ -1012,7 +1012,7 @@
           <div>
             <p class="body-match-kicker">Picture choice</p>
             <p class="numbers-game-note">Tap the Chinese sentence that matches the picture.</p>
-          </div>
+          </div><button class="small-button is-practice-advance-button" type="button" data-time-routine-quiz-new aria-label="Start a new game">New game</button>
         </div>
         <figure class="clothes-quiz-visual time-routine-quiz-visual">
           <img class="clothes-quiz-image" src="${prompt.imagePath}" alt="${prompt.english}" />
@@ -1026,7 +1026,6 @@
           return `<button class="clothes-quiz-option${resultClass}" type="button" data-time-routine-quiz-pick="${item.id}">${mark}<span class="numbers-game-hanzi">${item.hanzi}</span>${state2.showPinyin ? `<span class="numbers-game-pinyin">${item.pinyin}</span>` : ""}${state2.showEnglish ? `<span class="numbers-game-english">${item.english}</span>` : ""}</button>`;
         }).join("")}
         </div>
-        ${state2.timeRoutineQuizResult === "correct" ? '<div class="clothes-quiz-next"><button class="small-button is-practice-advance-button" type="button" data-time-routine-quiz-next>Next picture</button></div>' : ""}
       </section>
       ${renderPracticeSayCards2([
           { hanzi: "\u4F60\u6BCF\u5929\u51E0\u70B9\u8D77\u5E8A\uFF1F", pinyin: "n\u01D0 m\u011Bi ti\u0101n j\u01D0 di\u01CEn q\u01D0 chu\xE1ng?", english: "What time do you get up every day?", audio: "\u4F60\u6BCF\u5929\u51E0\u70B9\u8D77\u5E8A" },
@@ -1039,7 +1038,7 @@
             handleTimeRoutineQuizPick2(button.dataset.timeRoutineQuizPick);
           });
         });
-        activityList2.querySelector("[data-time-routine-quiz-next]")?.addEventListener("click", nextTimeRoutineQuizQuestion2);
+        activityList2.querySelector("[data-time-routine-quiz-new]")?.addEventListener("click", nextTimeRoutineQuizQuestion2);
         bindPracticeSayCards2(activityList2);
         return;
       }
@@ -1057,7 +1056,7 @@
             <p class="body-match-kicker">Picture choice</p>
             <p class="numbers-game-note">Tap the Chinese word that matches the picture.</p>
           </div>
-          ${state2.clothesQuizResult === "correct" ? '<button class="small-button is-practice-advance-button" type="button" data-clothes-quiz-next>Next picture</button>' : ""}
+          <button class="small-button is-practice-advance-button" type="button" data-clothes-quiz-new aria-label="Start a new game">New game</button>
         </div>
         <figure class="clothes-quiz-visual">
           <img class="clothes-quiz-image" src="${prompt.imagePath}" alt="${prompt.imageAlt}" ${imageLoadingAttrs()} />
@@ -1078,7 +1077,7 @@
             handleClothesQuizPick2(button.dataset.clothesQuizPick);
           });
         });
-        activityList2.querySelector("[data-clothes-quiz-next]")?.addEventListener("click", nextClothesQuizQuestion2);
+        activityList2.querySelector("[data-clothes-quiz-new]")?.addEventListener("click", nextClothesQuizQuestion2);
         return;
       }
       if (topic.id === "numbers") {
@@ -1136,6 +1135,7 @@
         <div>
           <p class="body-match-kicker">Mini Math</p>
         </div>
+        <button class="small-button is-practice-advance-button" type="button" data-math-game-new aria-label="Start a new game">New game</button>
       </div>
       <p class="numbers-game-note">Type the answer and press Enter. After a correct answer, listen first, then move to the next question.</p>
       <form class="math-game-form" data-math-game-form>
@@ -1167,7 +1167,6 @@
       </form>
       <p class="numbers-game-note">This stage uses numbers up to ${stage.end}.</p>
       <p class="math-game-feedback">${state2.lastMathFeedback}</p>
-      ${state2.mathChallengeSolved ? '<button class="small-button is-practice-advance-button math-game-next" type="button" data-math-game-next>Next question</button>' : ""}
     `;
         activityList2.appendChild(mathCard);
         activityList2.querySelector("[data-number-game-refresh]")?.addEventListener("click", () => {
@@ -1181,7 +1180,7 @@
             handleNumberChallengeGuess2(Number(button.dataset.numberGameGuess));
           });
         });
-        activityList2.querySelector("[data-math-game-next]")?.addEventListener("click", () => {
+        activityList2.querySelector("[data-math-game-new]")?.addEventListener("click", () => {
           resetMathChallenge2();
           renderActivityPanel2(topic);
         });
@@ -2305,11 +2304,11 @@
 
   // src/features/time-daily-life/dates.js
   var timeDateDateItems = [
-    { id: "date-board", hanzi: "\u51E0\u6708\u51E0\u53F7\uFF1F", pinyin: "j\u01D0 yu\xE8 j\u01D0 h\xE0o?", english: "What month and day?", context: "\u770B\u65E5\u5386\uFF0C\u53EF\u4EE5\u77E5\u9053\u51E0\u6708\u51E0\u53F7\u3002", audio: "\u51E0\u6708\u51E0\u53F7", imagePath: "assets/illustrated-dates/calendar-example-dates-board.webp" },
-    { id: "new-year", hanzi: "\u4E00\u6708\u4E00\u53F7", pinyin: "y\u012B yu\xE8 y\u012B h\xE0o", english: "January first", context: "\u4E00\u6708\u4E00\u53F7\u662F\u65B0\u5E74\u3002", audio: "\u4E00\u6708\u4E00\u53F7\u662F\u65B0\u5E74", imagePath: "assets/illustrated-dates/january-first-new-year-calendar.webp" },
-    { id: "field-trip", hanzi: "\u4E94\u6708\u4E8C\u5341\u53F7", pinyin: "w\u01D4 yu\xE8 \xE8r sh\xED h\xE0o", english: "May twentieth", context: "\u4E94\u6708\u4E8C\u5341\u53F7\uFF0C\u6211\u4EEC\u53BB\u6625\u6E38\u3002", audio: "\u4E94\u6708\u4E8C\u5341\u53F7\u6211\u4EEC\u53BB\u6625\u6E38", imagePath: "assets/illustrated-dates/may-twentieth-field-trip-calendar.webp" },
-    { id: "christmas", hanzi: "\u5341\u4E8C\u6708\u4E8C\u5341\u4E94\u53F7", pinyin: "sh\xED \xE8r yu\xE8 \xE8r sh\xED w\u01D4 h\xE0o", english: "December twenty-fifth", context: "\u5341\u4E8C\u6708\u4E8C\u5341\u4E94\u53F7\u662F\u5723\u8BDE\u8282\u3002", audio: "\u5341\u4E8C\u6708\u4E8C\u5341\u4E94\u53F7\u662F\u5723\u8BDE\u8282", imagePath: "assets/illustrated-dates/december-twenty-fifth-christmas-calendar.webp" },
-    { id: "birthday", hanzi: "\u751F\u65E5\u5FEB\u4E50\uFF01", pinyin: "sh\u0113ng r\xEC ku\xE0i l\xE8!", english: "Happy birthday!", context: "\u4ECA\u5929\u662F\u6211\u7684\u751F\u65E5\u3002\u751F\u65E5\u5FEB\u4E50\uFF01", audio: "\u4ECA\u5929\u662F\u6211\u7684\u751F\u65E5\u751F\u65E5\u5FEB\u4E50", imagePath: "assets/illustrated-dates/birthday-party-scene.webp" }
+    { id: "date-board", hanzi: "\u51E0\u6708\u51E0\u53F7\uFF1F", pinyin: "j\u01D0 yu\xE8 j\u01D0 h\xE0o?", english: "What month and day?", context: "\u770B\u65E5\u5386\uFF0C\u53EF\u4EE5\u77E5\u9053\u51E0\u6708\u51E0\u53F7\u3002", contextPinyin: "k\xE0n r\xEC l\xEC, k\u011B y\u01D0 zh\u012B d\xE0o j\u01D0 yu\xE8 j\u01D0 h\xE0o.", contextEnglish: "Look at a calendar to find the month and day.", audio: "\u51E0\u6708\u51E0\u53F7", imagePath: "assets/illustrated-dates/calendar-example-dates-board.webp" },
+    { id: "new-year", hanzi: "\u4E00\u6708\u4E00\u53F7", pinyin: "y\u012B yu\xE8 y\u012B h\xE0o", english: "January first", context: "\u4E00\u6708\u4E00\u53F7\u662F\u65B0\u5E74\u3002", contextPinyin: "y\u012B yu\xE8 y\u012B h\xE0o sh\xEC x\u012Bn ni\xE1n.", contextEnglish: "January first is New Year's Day.", audio: "\u4E00\u6708\u4E00\u53F7\u662F\u65B0\u5E74", imagePath: "assets/illustrated-dates/january-first-new-year-calendar.webp" },
+    { id: "field-trip", hanzi: "\u4E94\u6708\u4E8C\u5341\u53F7", pinyin: "w\u01D4 yu\xE8 \xE8r sh\xED h\xE0o", english: "May twentieth", context: "\u4E94\u6708\u4E8C\u5341\u53F7\uFF0C\u6211\u4EEC\u53BB\u6625\u6E38\u3002", contextPinyin: "w\u01D4 yu\xE8 \xE8r sh\xED h\xE0o, w\u01D2 men q\xF9 ch\u016Bn y\xF3u.", contextEnglish: "On May twentieth, we go on a spring outing.", audio: "\u4E94\u6708\u4E8C\u5341\u53F7\u6211\u4EEC\u53BB\u6625\u6E38", imagePath: "assets/illustrated-dates/may-twentieth-field-trip-calendar.webp" },
+    { id: "christmas", hanzi: "\u5341\u4E8C\u6708\u4E8C\u5341\u4E94\u53F7", pinyin: "sh\xED \xE8r yu\xE8 \xE8r sh\xED w\u01D4 h\xE0o", english: "December twenty-fifth", context: "\u5341\u4E8C\u6708\u4E8C\u5341\u4E94\u53F7\u662F\u5723\u8BDE\u8282\u3002", contextPinyin: "sh\xED \xE8r yu\xE8 \xE8r sh\xED w\u01D4 h\xE0o sh\xEC sh\xE8ng d\xE0n ji\xE9.", contextEnglish: "December twenty-fifth is Christmas.", audio: "\u5341\u4E8C\u6708\u4E8C\u5341\u4E94\u53F7\u662F\u5723\u8BDE\u8282", imagePath: "assets/illustrated-dates/december-twenty-fifth-christmas-calendar.webp" },
+    { id: "birthday", hanzi: "\u751F\u65E5\u5FEB\u4E50\uFF01", pinyin: "sh\u0113ng r\xEC ku\xE0i l\xE8!", english: "Happy birthday!", context: "\u4ECA\u5929\u662F\u6211\u7684\u751F\u65E5\u3002\u751F\u65E5\u5FEB\u4E50\uFF01", contextPinyin: "j\u012Bn ti\u0101n sh\xEC w\u01D2 de sh\u0113ng r\xEC. sh\u0113ng r\xEC ku\xE0i l\xE8!", contextEnglish: "Today is my birthday. Happy birthday!", audio: "\u4ECA\u5929\u662F\u6211\u7684\u751F\u65E5\u751F\u65E5\u5FEB\u4E50", imagePath: "assets/illustrated-dates/birthday-party-scene.webp" }
   ];
   var timeDateMonthItems = [
     ["January", "\u4E00\u6708", "y\u012B yu\xE8", "\u4E00\u6708\uFF0C\u65B0\u5E74\u7684\u7B2C\u4E00\u4E2A\u6708\u3002", "y\u012B yu\xE8, x\u012Bn ni\xE1n de d\xEC y\u012B ge yu\xE8.", "January: the first month of the new year."],
@@ -2475,7 +2474,24 @@
     ["\u6211\u5750\u706B\u8F66\u53BB\u5317\u4EAC\u3002", "w\u01D2 zu\xF2 hu\u01D2 ch\u0113 q\xF9 B\u011Bi j\u012Bng.", "I take a train to Beijing.", "train-to-beijing.webp"],
     ["\u6211\u5750\u5988\u5988\u7684\u8F66\u53BB\u4E0A\u5B66\u3002", "w\u01D2 zu\xF2 m\u0101 ma de ch\u0113 q\xF9 sh\xE0ng xu\xE9.", "I ride in Mom's car to school.", "mom-car-to-school.webp"],
     ["\u6211\u5750\u7238\u7238\u7684\u8F66\u53BB\u5546\u5E97\u3002", "w\u01D2 zu\xF2 b\xE0 ba de ch\u0113 q\xF9 sh\u0101ng di\xE0n.", "I ride in Dad's car to the store.", "dad-car-to-grocery-store.webp"]
-  ].map(([hanzi, pinyin, english, file]) => ({ id: file, hanzi, pinyin, english, audio: hanzi, imagePath: `assets/illustrated-transportation/${file}` }));
+  ].map(([hanzi, pinyin, english, file]) => ({
+    id: file,
+    hanzi,
+    pinyin,
+    english,
+    sceneTitle: {
+      "walk-to-school.webp": "Walk to school",
+      "bike-to-school.webp": "Bike to school",
+      "school-bus-to-zoo.webp": "School bus trip",
+      "taxi-to-airport.webp": "Taxi to the airport",
+      "airplane-to-grandparents.webp": "Fly to grandparents",
+      "train-to-beijing.webp": "Train to Beijing",
+      "mom-car-to-school.webp": "Mom's car to school",
+      "dad-car-to-grocery-store.webp": "Dad's car to the store"
+    }[file],
+    audio: hanzi,
+    imagePath: `assets/illustrated-transportation/${file}`
+  }));
   var transportSentenceTokens = {
     "walk-to-school.webp": { target: ["\u6211", "\u8D70\u8DEF", "\u53BB", "\u4E0A\u5B66"], distractors: ["\u5750", "\u6821\u8F66", "\u52A8\u7269\u56ED"] },
     "bike-to-school.webp": { target: ["\u6211", "\u9A91\u81EA\u884C\u8F66", "\u53BB", "\u4E0A\u5B66"], distractors: ["\u5750", "\u706B\u8F66", "\u5317\u4EAC"] },
@@ -3150,7 +3166,7 @@
       if (!prompt) return "";
       return `
     <section class="clothes-quiz-shell meals-picture-choice">
-      <div class="numbers-game-top"><div><p class="body-match-kicker">Look and Choose</p><p class="numbers-game-note">Look at the picture, then tap the Chinese sentence that matches it.</p></div></div>
+      <div class="numbers-game-top"><div><p class="body-match-kicker">Look and Choose</p><p class="numbers-game-note">Look at the picture, then tap the Chinese sentence that matches it.</p></div><button class="small-button is-practice-advance-button" type="button" data-meals-picture-new aria-label="Start a new game">New game</button></div>
       <figure class="clothes-quiz-visual time-routine-quiz-visual"><img class="clothes-quiz-image" src="${prompt.imagePath}" alt="${prompt.imageAlt}" /></figure>
       <div class="clothes-quiz-options sentence-choice-options">
         ${state2.mealsPictureQuizOptionIds.map((optionId) => {
@@ -3162,7 +3178,6 @@
         return `<button class="clothes-quiz-option${resultClass}" type="button" data-meals-picture-pick="${option.id}">${mark}<span class="numbers-game-hanzi">${option.hanzi}</span>${state2.showPinyin ? `<span class="numbers-game-pinyin">${option.pinyin}</span>` : ""}${state2.showEnglish ? `<span class="numbers-game-english">${option.english}</span>` : ""}</button>`;
       }).join("")}
       </div>
-      ${state2.mealsPictureQuizResult === "correct" ? '<div class="clothes-quiz-next"><button class="small-button is-practice-advance-button" type="button" data-meals-picture-next>Next picture</button></div>' : ""}
     </section>
   `;
     }
@@ -3568,12 +3583,12 @@
       <div class="practice-split-board">
         ${renderFoodHungerGame()}
         <section class="practice-split-card">
-          <div class="numbers-game-top"><div><p class="body-match-kicker">Build the sentence</p><p class="numbers-game-note">Tap the word cards in the right order. Some cards do not belong.</p></div></div>
+          <div class="numbers-game-top"><div><p class="body-match-kicker">Build the sentence</p><p class="numbers-game-note">Tap the word cards in the right order. Some cards do not belong.</p></div><button class="small-button is-practice-advance-button" type="button" data-school-build-new aria-label="Start a new game">New game</button></div>
           <figure class="clothes-quiz-visual school-build-visual"><img class="clothes-quiz-image" src="${item.imagePath}" alt="${item.english}" /></figure>
           <div class="transport-build-hint">${state2.showPinyin ? `<p class="transport-build-hint-pinyin">${item.pinyin}</p>` : ""}${state2.showEnglish ? `<p class="transport-build-hint-english">${item.english}</p>` : ""}</div>
           <div class="transport-build-target is-${state2.schoolBuildResult}">${state2.schoolBuildResult ? `<span class="answer-result-mark" aria-hidden="true">${state2.schoolBuildResult === "correct" ? "\u2713" : "\xD7"}</span>` : ""}${state2.schoolBuildSelectedTokens.length ? state2.schoolBuildSelectedTokens.map((token) => `<span class="intro-build-chip is-selected">${token}</span>`).join("") : '<span class="intro-build-placeholder">Your sentence will appear here.</span>'}</div>
           <div class="intro-build-choices">${state2.schoolBuildAvailableTokens.map((token, index) => `<button class="intro-build-chip" type="button" data-school-build-token="${index}">${token}</button>`).join("")}</div>
-          <div class="intro-build-actions"><button class="small-button" type="button" data-school-build-clear>Clear</button>${state2.schoolBuildResult === "correct" ? '<button class="small-button is-practice-advance-button" type="button" data-school-build-next>Next picture</button>' : ""}</div>
+          <div class="intro-build-actions"><button class="small-button" type="button" data-school-build-clear>Clear</button></div>
         </section>
       </div>
     </section>
@@ -3585,17 +3600,17 @@
       activityList2.querySelectorAll("[data-food-hunger-guess]").forEach((button) => button.addEventListener("click", () => handleFoodHungerGuess(button.dataset.foodHungerGuess)));
       activityList2.querySelectorAll("[data-school-build-token]").forEach((button) => button.addEventListener("click", () => handleSchoolBuildToken(Number(button.dataset.schoolBuildToken))));
       activityList2.querySelector("[data-school-build-clear]")?.addEventListener("click", clearSchoolBuilder);
-      activityList2.querySelector("[data-school-build-next]")?.addEventListener("click", nextSchoolBuilder);
+      activityList2.querySelector("[data-school-build-new]")?.addEventListener("click", nextSchoolBuilder);
     }
     function renderSchoolSentenceBuilder(item) {
       return `
     <section class="practice-split-card">
-      <div class="numbers-game-top"><div><p class="body-match-kicker">Build the sentence</p><p class="numbers-game-note">Tap the word cards in the right order. Some cards do not belong.</p></div></div>
+      <div class="numbers-game-top"><div><p class="body-match-kicker">Build the sentence</p><p class="numbers-game-note">Tap the word cards in the right order. Some cards do not belong.</p></div><button class="small-button is-practice-advance-button" type="button" data-school-build-new aria-label="Start a new game">New game</button></div>
       <figure class="clothes-quiz-visual school-build-visual"><img class="clothes-quiz-image" src="${item.imagePath}" alt="${item.english}" /></figure>
       <div class="transport-build-hint">${state2.showPinyin ? `<p class="transport-build-hint-pinyin">${item.pinyin}</p>` : ""}${state2.showEnglish ? `<p class="transport-build-hint-english">${item.english}</p>` : ""}</div>
       <div class="transport-build-target is-${state2.schoolBuildResult}">${state2.schoolBuildResult ? `<span class="answer-result-mark" aria-hidden="true">${state2.schoolBuildResult === "correct" ? "\u2713" : "\xD7"}</span>` : ""}${state2.schoolBuildSelectedTokens.length ? state2.schoolBuildSelectedTokens.map((token) => `<span class="intro-build-chip is-selected">${token}</span>`).join("") : '<span class="intro-build-placeholder">Your sentence will appear here.</span>'}</div>
       <div class="intro-build-choices">${state2.schoolBuildAvailableTokens.map((token, index) => `<button class="intro-build-chip" type="button" data-school-build-token="${index}">${token}</button>`).join("")}</div>
-      <div class="intro-build-actions"><button class="small-button" type="button" data-school-build-clear>Clear</button>${state2.schoolBuildResult === "correct" ? '<button class="small-button is-practice-advance-button" type="button" data-school-build-next>Next picture</button>' : ""}</div>
+      <div class="intro-build-actions"><button class="small-button" type="button" data-school-build-clear>Clear</button></div>
     </section>
   `;
     }
@@ -3635,7 +3650,7 @@
       const isComplete = state2.stationeryPictureMatchComplete;
       return `
     <section class="practice-split-card stationery-picture-match-card">
-      <div class="numbers-game-top"><div><p class="body-match-kicker">Match the picture</p><p class="numbers-game-note">Look at the picture. Choose the quantity, color, and school thing.</p></div></div>
+      <div class="numbers-game-top"><div><p class="body-match-kicker">Match the picture</p><p class="numbers-game-note">Look at the picture. Choose the quantity, color, and school thing.</p></div><button class="small-button is-practice-advance-button" type="button" data-stationery-picture-match-new aria-label="Start a new game">New game</button></div>
       <figure class="stationery-picture-match-visual"><img src="${round.imagePath}" alt="${round.alt}"></figure>
       <div class="stationery-picture-match-columns">
         ${Object.entries(stationeryPictureMatchChoices2).map(([column, choices]) => `
@@ -3649,7 +3664,7 @@
           </div>
         `).join("")}
       </div>
-      ${isComplete ? `<div class="stationery-picture-match-result is-correct"><span class="answer-result-mark" aria-hidden="true">\u2713</span><div><strong>${Object.values(round.target).join("")}\u3002</strong>${state2.showPinyin ? `<span class="telephone-line-pinyin">${round.pinyin}</span>` : ""}${state2.showEnglish ? `<span>${round.english}</span>` : ""}</div><button class="small-button is-practice-advance-button" type="button" data-stationery-picture-match-next>Next picture</button></div>` : ""}
+      ${isComplete ? `<div class="stationery-picture-match-result is-correct"><span class="answer-result-mark" aria-hidden="true">\u2713</span><div><strong>${Object.values(round.target).join("")}\u3002</strong>${state2.showPinyin ? `<span class="telephone-line-pinyin">${round.pinyin}</span>` : ""}${state2.showEnglish ? `<span>${round.english}</span>` : ""}</div></div>` : ""}
     </section>
   `;
     }
@@ -3668,10 +3683,10 @@
     </section>
   `;
       activityList2.querySelectorAll("[data-stationery-picture-match-pick]").forEach((button) => button.addEventListener("click", () => handleStationeryPictureMatchPick(button.dataset.stationeryPictureMatchPick, button.dataset.stationeryPictureMatchValue)));
-      activityList2.querySelector("[data-stationery-picture-match-next]")?.addEventListener("click", nextStationeryPictureMatch);
+      activityList2.querySelector("[data-stationery-picture-match-new]")?.addEventListener("click", nextStationeryPictureMatch);
       activityList2.querySelectorAll("[data-school-build-token]").forEach((button) => button.addEventListener("click", () => handleSchoolBuildToken(Number(button.dataset.schoolBuildToken))));
       activityList2.querySelector("[data-school-build-clear]")?.addEventListener("click", clearSchoolBuilder);
-      activityList2.querySelector("[data-school-build-next]")?.addEventListener("click", nextSchoolBuilder);
+      activityList2.querySelector("[data-school-build-new]")?.addEventListener("click", nextSchoolBuilder);
     }
     function renderSchoolSuppliesPractice2(topic) {
       ensureSchoolBuilder(topic.id);
@@ -3694,7 +3709,7 @@
       activityList2.querySelectorAll("[data-backpack-game-guess]").forEach((button) => button.addEventListener("click", () => handleBackpackGameGuess(button.dataset.backpackGameGuess)));
       activityList2.querySelectorAll("[data-school-build-token]").forEach((button) => button.addEventListener("click", () => handleSchoolBuildToken(Number(button.dataset.schoolBuildToken))));
       activityList2.querySelector("[data-school-build-clear]")?.addEventListener("click", clearSchoolBuilder);
-      activityList2.querySelector("[data-school-build-next]")?.addEventListener("click", nextSchoolBuilder);
+      activityList2.querySelector("[data-school-build-new]")?.addEventListener("click", nextSchoolBuilder);
     }
     function renderSchoolPractice2(topic) {
       if (topic.id === "food") {
@@ -3748,7 +3763,7 @@
       activityList2.querySelectorAll("[data-template-listen-guess]").forEach((button) => button.addEventListener("click", () => handleSchoolChallengeGuess(button.dataset.templateListenGuess)));
       activityList2.querySelectorAll("[data-school-build-token]").forEach((button) => button.addEventListener("click", () => handleSchoolBuildToken(Number(button.dataset.schoolBuildToken))));
       activityList2.querySelector("[data-school-build-clear]")?.addEventListener("click", clearSchoolBuilder);
-      activityList2.querySelector("[data-school-build-next]")?.addEventListener("click", nextSchoolBuilder);
+      activityList2.querySelector("[data-school-build-new]")?.addEventListener("click", nextSchoolBuilder);
     }
     function renderMealsConversationPractice2(topic) {
       ensureMealsConversationMatch();
@@ -3790,7 +3805,7 @@
       activityList2.querySelectorAll("[data-template-match-phrase]").forEach((button) => button.addEventListener("click", () => handleMealsConversationPhrase(button.dataset.templateMatchPhrase)));
       activityList2.querySelectorAll("[data-template-match-meaning]").forEach((button) => button.addEventListener("click", () => handleMealsConversationAttempt(button.dataset.templateMatchMeaning)));
       activityList2.querySelectorAll("[data-meals-picture-pick]").forEach((button) => button.addEventListener("click", () => handleMealsPictureChoice(button.dataset.mealsPicturePick)));
-      activityList2.querySelector("[data-meals-picture-next]")?.addEventListener("click", nextMealsPictureChoice);
+      activityList2.querySelector("[data-meals-picture-new]")?.addEventListener("click", nextMealsPictureChoice);
     }
     function renderFoodPreferencesPractice2(topic) {
       activityPanelTitle2.textContent = "Let's practice";
@@ -6505,8 +6520,8 @@
               <button class="small-button is-action-button" type="button" data-body-toggle-bonus aria-pressed="${state2.bodyMatchIncludeBonus}">
                 Bonus words ${state2.bodyMatchIncludeBonus ? "on" : "off"}
               </button>
-              <button class="small-button is-play-button" type="button" data-body-reset-match>
-                Play
+              <button class="small-button is-practice-advance-button" type="button" data-body-reset-match aria-label="Start a new game">
+                New game
               </button>
             </div>
           </div>
@@ -6577,8 +6592,6 @@
                   </div>
                 </div>
               ` : ""}
-          ${roundComplete && !allDone ? '<button class="small-button is-practice-advance-button body-next-round" type="button" data-body-next-round>Next set</button>' : ""}
-          ${allDone ? '<button class="small-button is-play-button body-next-round" type="button" data-body-play-again>Play</button>' : ""}
         </div>
         <div class="body-more-practice-card">
           <p class="body-match-kicker">More Practice</p>
@@ -6633,17 +6646,6 @@
         renderFocusStatus2();
       });
       focusExplorer2.querySelector("[data-body-reset-match]")?.addEventListener("click", () => {
-        resetBodyMatchGame2();
-        renderFocusExplorer2();
-        renderFocusStatus2();
-      });
-      focusExplorer2.querySelector("[data-body-next-round]")?.addEventListener("click", () => {
-        nextBodyRound2();
-        state2.lastBodyFeedback = "Here is the next set.";
-        renderFocusExplorer2();
-        renderFocusStatus2();
-      });
-      focusExplorer2.querySelector("[data-body-play-again]")?.addEventListener("click", () => {
         resetBodyMatchGame2();
         renderFocusExplorer2();
         renderFocusStatus2();
@@ -7730,7 +7732,12 @@
         <p class="body-match-kicker">${currentBook2().label} Lesson ${currentLesson2().lesson}</p>
         <h4>Dates & Months</h4>
       </div>
-      ${renderTimeAssetGrid2(timeDateDateItems2, "date")}
+      <section class="school-lesson-section">
+        <div class="time-months-heading"><p class="body-match-kicker">Scenes</p></div>
+        <div class="school-scene-grid date-scene-grid">
+          ${timeDateDateItems2.map((item) => `<section class="greetings-exchange school-scene-card"><div class="greetings-exchange-top"><div><p class="body-match-kicker">${item.english}</p></div><button class="small-button is-play-button" type="button" data-date-scene="${item.id}">Play</button></div><div class="school-scene-layout"><img class="school-scene-image" src="${item.imagePath}" alt="${item.english}" /><div class="greetings-line-stack"><article class="greetings-line-card"><div class="telephone-bubble-copy"><p class="telephone-line-hanzi">${item.context}</p>${state2.showPinyin ? `<p class="telephone-line-pinyin">${item.contextPinyin}</p>` : ""}${state2.showEnglish ? `<p class="telephone-line-english">${item.contextEnglish}</p>` : ""}</div></article></div></div></section>`).join("")}
+        </div>
+      </section>
       <section class="time-months-intro">
         <div>
           <p class="body-match-kicker">Months of the year</p>
@@ -7740,7 +7747,11 @@
         </div>
         <button class="small-button is-play-button" type="button" data-months-play>Play</button>
       </section>
-      ${renderTimeAssetGrid2(timeDateMonthItems2, "month")}
+      <section class="school-lesson-section">
+        <div class="school-scene-grid month-scene-grid">
+          ${timeDateMonthItems2.map((item) => `<section class="greetings-exchange school-scene-card"><div class="greetings-exchange-top"><div><p class="body-match-kicker">${item.english}</p></div><button class="small-button is-play-button" type="button" data-month-scene="${item.id}">Play</button></div><div class="school-scene-layout"><img class="school-scene-image" src="${item.imagePath}" alt="${item.english}" /><div class="greetings-line-stack"><article class="greetings-line-card"><div class="telephone-bubble-copy"><p class="telephone-line-hanzi">${item.context}</p>${state2.showPinyin ? `<p class="telephone-line-pinyin">${item.contextPinyin}</p>` : ""}${state2.showEnglish ? `<p class="telephone-line-english">${item.contextEnglish}</p>` : ""}</div></article></div></div></section>`).join("")}
+        </div>
+      </section>
       <section class="visual-topic-notes">
         <p class="body-match-kicker">Useful notes</p>
         <div class="visual-topic-note-grid">
@@ -7753,6 +7764,18 @@
     </div>
   `;
       bindTimeAssetAudio2(focusExplorer2);
+      focusExplorer2.querySelectorAll("[data-date-scene]").forEach((button) => {
+        button.addEventListener("click", () => {
+          const item = timeDateDateItems2.find((entry) => entry.id === button.dataset.dateScene);
+          if (item && state2.tapAudioEnabled) speak2(item.audio, 0.78);
+        });
+      });
+      focusExplorer2.querySelectorAll("[data-month-scene]").forEach((button) => {
+        button.addEventListener("click", () => {
+          const item = timeDateMonthItems2.find((entry) => entry.id === button.dataset.monthScene);
+          if (item && state2.tapAudioEnabled) speak2(item.audio, 0.78);
+        });
+      });
       focusExplorer2.querySelector("[data-months-play]")?.addEventListener("click", () => {
         if (state2.tapAudioEnabled) {
           speak2("\u4E00\u5E74\u6709\u5341\u4E8C\u4E2A\u6708", 0.78);
@@ -7763,6 +7786,7 @@
       const topic = currentTopic2();
       const items = visualTopicItems2[sceneId] ?? [];
       const comparisonScenes = sceneId === "comparisons" ? `<section class="school-lesson-section"><div class="time-months-heading"><p class="body-match-kicker">Scenes</p></div><div class="school-scene-grid comparison-scene-grid">${items.map((item) => `<section class="greetings-exchange school-scene-card"><div class="greetings-exchange-top"><div><p class="body-match-kicker">${item.english}</p></div><button class="small-button is-play-button" type="button" data-comparison-scene="${item.audio}">Play</button></div><div class="school-scene-layout"><img class="school-scene-image" src="${item.imagePath}" alt="${item.english}" /><div class="greetings-line-stack"><article class="greetings-line-card"><div class="telephone-bubble-copy"><p class="telephone-line-hanzi">${item.hanzi}</p>${state2.showPinyin ? `<p class="telephone-line-pinyin">${item.pinyin}</p>` : ""}${state2.showEnglish ? `<p class="telephone-line-english">${item.english}</p>` : ""}</div></article></div></div></section>`).join("")}</div></section>` : "";
+      const transportScenes = sceneId === "transport" ? `<section class="school-lesson-section"><div class="time-months-heading"><p class="body-match-kicker">Scenes</p></div><div class="school-scene-grid transport-scene-grid">${items.map((item) => `<section class="greetings-exchange school-scene-card"><div class="greetings-exchange-top"><div><p class="body-match-kicker">${item.sceneTitle}</p></div><button class="small-button is-play-button" type="button" data-transport-scene="${item.audio}">Play</button></div><div class="school-scene-layout"><img class="school-scene-image" src="${item.imagePath}" alt="${item.english}" /><div class="greetings-line-stack"><article class="greetings-line-card"><div class="telephone-bubble-copy"><p class="telephone-line-hanzi">${item.hanzi}</p>${state2.showPinyin ? `<p class="telephone-line-pinyin">${item.pinyin}</p>` : ""}${state2.showEnglish ? `<p class="telephone-line-english">${item.english}</p>` : ""}</div></article></div></div></section>`).join("")}</div></section>` : "";
       const comparisonWords = sceneId === "comparisons" ? `<section class="school-lesson-section"><div class="time-months-heading"><p class="body-match-kicker">Book words</p></div><div class="comparison-word-grid">${comparisonWordItems2.map((item) => `<button class="comparison-word-card" type="button" data-comparison-word="${item.hanzi}"><span class="comparison-word-hanzi">${item.hanzi}</span>${state2.showPinyin ? `<span class="comparison-word-pinyin">${item.pinyin}</span>` : ""}${state2.showEnglish ? `<span class="comparison-word-english">${item.english}</span>` : ""}</button>`).join("")}</div></section>` : "";
       const usefulNotes = sceneId === "transport" ? `
         <section class="visual-topic-notes">
@@ -7795,7 +7819,7 @@
         <p class="body-match-kicker">${currentBook2().label} Lesson ${currentLesson2().lesson}</p>
         <h4>${topic.title}</h4>
       </div>
-      ${comparisonScenes || `<div class="time-months-heading"><p class="body-match-kicker">Book words</p></div>${renderTimeAssetGrid2(items, `visual visual-${sceneId}`, "visual")}`}
+      ${comparisonScenes || transportScenes || `<div class="time-months-heading"><p class="body-match-kicker">Book words</p></div>${renderTimeAssetGrid2(items, `visual visual-${sceneId}`, "visual")}`}
       ${comparisonWords}
       ${usefulNotes}
     </div>
@@ -7809,6 +7833,11 @@
       focusExplorer2.querySelectorAll("[data-comparison-scene]").forEach((button) => {
         button.addEventListener("click", () => {
           if (state2.tapAudioEnabled) speak2(button.dataset.comparisonScene, 0.78);
+        });
+      });
+      focusExplorer2.querySelectorAll("[data-transport-scene]").forEach((button) => {
+        button.addEventListener("click", () => {
+          if (state2.tapAudioEnabled) speak2(button.dataset.transportScene, 0.78);
         });
       });
     }
@@ -8718,7 +8747,7 @@
       }).join("")}</div>
       </section>
       <section class="clothes-quiz-shell world-colour-picture-practice">
-        <div class="numbers-game-top"><div><p class="body-match-kicker">Picture and phrase</p><p class="numbers-game-note">Look at the picture. Which complete Chinese phrase matches it?</p></div><button class="small-button is-play-button" type="button" data-world-colour-play>Play</button></div>
+        <div class="numbers-game-top"><div><p class="body-match-kicker">Picture and phrase</p><p class="numbers-game-note">Look at the picture. Which complete Chinese phrase matches it?</p></div><button class="small-button is-practice-advance-button" type="button" data-world-colour-new aria-label="Start a new game">New game</button></div>
         <figure class="clothes-quiz-visual"><img class="clothes-quiz-image" src="${target.imagePath}" alt="${target.imageAlt}" /></figure>
         <div class="clothes-quiz-options">${choices.map((item) => {
         const selected = state2.worldColourPickedId === item.id;
@@ -8726,7 +8755,6 @@
         const mark = selected ? `<span class="answer-result-mark" aria-hidden="true">${state2.worldColourResult === "correct" ? "\u2713" : "\xD7"}</span>` : "";
         return `<button class="clothes-quiz-option${resultClass}" type="button" data-world-colour-guess="${item.id}">${mark}<span class="numbers-game-hanzi">${item.phrase}</span>${state2.showPinyin ? `<span class="numbers-game-pinyin">${item.phrasePinyin}</span>` : ""}${state2.showEnglish ? `<span class="numbers-game-english">${item.phraseEnglish}</span>` : ""}</button>`;
       }).join("")}</div>
-        ${state2.worldColourResult === "correct" ? '<div class="clothes-quiz-next"><button class="small-button is-practice-advance-button" type="button" data-world-colour-next>Next picture</button></div>' : ""}
       </section>
       <section class="practice-split-card world-favourite-colour-practice"><div class="numbers-game-top"><div><p class="body-match-kicker">My favourite colour</p><p class="numbers-game-note">Choose your favourite colour, then listen and say the sentence.</p></div><button class="small-button is-play-button" type="button" data-world-favourite-play>Play</button></div><div class="world-favourite-colour-options">${items.map((item) => `<button class="small-button${item.id === favourite.id ? " is-action-button" : ""}" type="button" data-world-favourite="${item.id}">${item.hanzi}</button>`).join("")}</div><p class="world-favourite-sentence">\u6211\u559C\u6B22${favourite.hanzi}\u3002${state2.showPinyin ? `<span>w\u01D2 x\u01D0 huan ${favourite.pinyin}.</span>` : ""}${state2.showEnglish ? `<span>I like ${favourite.english}.</span>` : ""}</p></section>
       <section class="practice-split-card practice-say-card"><p class="body-match-kicker">Book sentence</p><div class="numbers-game-options"><button class="numbers-game-option greetings-game-option family-listen-option" type="button" data-world-say="\u6211\u4E0D\u559C\u6B22\u9ED1\u8272\u548C\u767D\u8272">\u6211\u4E0D\u559C\u6B22\u9ED1\u8272\u548C\u767D\u8272\u3002${state2.showPinyin ? '<span class="numbers-game-pinyin">w\u01D2 b\xF9 x\u01D0 huan h\u0113i s\xE8 h\xE9 b\xE1i s\xE8.</span>' : ""}${state2.showEnglish ? '<span class="numbers-game-english">I do not like black and white.</span>' : ""}</button></div></section>
@@ -8746,8 +8774,11 @@
         }
         renderActivityPanel2(currentTopic2());
       }));
-      activityList2.querySelector("[data-world-colour-play]")?.addEventListener("click", () => {
-        if (state2.tapAudioEnabled) speak2(target.phrase, 0.78);
+      activityList2.querySelector("[data-world-colour-new]")?.addEventListener("click", () => {
+        advanceShuffledOrder(state2, "worldColourRoundIds", "worldColourRoundIndex", shuffled3);
+        state2.worldColourPickedId = "";
+        state2.worldColourResult = "";
+        renderActivityPanel2(currentTopic2());
       });
       activityList2.querySelectorAll("[data-world-colour-guess]").forEach((button) => button.addEventListener("click", () => {
         state2.worldColourPickedId = button.dataset.worldColourGuess;
@@ -8755,12 +8786,6 @@
         if (state2.worldColourResult === "correct" && state2.tapAudioEnabled) speak2(target.phrase, 0.78);
         renderActivityPanel2(currentTopic2());
       }));
-      activityList2.querySelector("[data-world-colour-next]")?.addEventListener("click", () => {
-        advanceShuffledOrder(state2, "worldColourRoundIds", "worldColourRoundIndex", shuffled3);
-        state2.worldColourPickedId = "";
-        state2.worldColourResult = "";
-        renderActivityPanel2(currentTopic2());
-      });
       activityList2.querySelectorAll("[data-world-favourite]").forEach((button) => button.addEventListener("click", () => {
         state2.worldFavouriteColourId = button.dataset.worldFavourite;
         renderActivityPanel2(currentTopic2());

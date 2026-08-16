@@ -492,10 +492,9 @@ export function createWorldRuntime({ state, currentTopic, currentBook, currentLe
         <div class="world-colour-mission-grid">${missionCards.map((card) => { const object = colourMissionObjects.find((item) => item.id === card.objectId); const colour = items.find((item) => item.id === card.colourId); const selected = state.worldColourMissionPickedObjectId === card.objectId; const resultClass = selected ? ` is-${state.worldColourMissionResult}` : ""; return `<button class="world-colour-mission-card${resultClass}" type="button" data-world-mission-pick="${card.objectId}"><span class="world-colour-mission-art">${missionObjectMarkup(object.id, colourSwatches[colour.id])}</span><span class="world-colour-mission-label">${state.showEnglish ? object.english : ""}</span></button>`; }).join("")}</div>
       </section>
       <section class="clothes-quiz-shell world-colour-picture-practice">
-        <div class="numbers-game-top"><div><p class="body-match-kicker">Picture and phrase</p><p class="numbers-game-note">Look at the picture. Which complete Chinese phrase matches it?</p></div><button class="small-button is-play-button" type="button" data-world-colour-play>Play</button></div>
+        <div class="numbers-game-top"><div><p class="body-match-kicker">Picture and phrase</p><p class="numbers-game-note">Look at the picture. Which complete Chinese phrase matches it?</p></div><button class="small-button is-practice-advance-button" type="button" data-world-colour-new aria-label="Start a new game">New game</button></div>
         <figure class="clothes-quiz-visual"><img class="clothes-quiz-image" src="${target.imagePath}" alt="${target.imageAlt}" /></figure>
         <div class="clothes-quiz-options">${choices.map((item) => { const selected = state.worldColourPickedId === item.id; const resultClass = selected ? ` is-${state.worldColourResult}` : ""; const mark = selected ? `<span class="answer-result-mark" aria-hidden="true">${state.worldColourResult === "correct" ? "✓" : "×"}</span>` : ""; return `<button class="clothes-quiz-option${resultClass}" type="button" data-world-colour-guess="${item.id}">${mark}<span class="numbers-game-hanzi">${item.phrase}</span>${state.showPinyin ? `<span class="numbers-game-pinyin">${item.phrasePinyin}</span>` : ""}${state.showEnglish ? `<span class="numbers-game-english">${item.phraseEnglish}</span>` : ""}</button>`; }).join("")}</div>
-        ${state.worldColourResult === "correct" ? '<div class="clothes-quiz-next"><button class="small-button is-practice-advance-button" type="button" data-world-colour-next>Next picture</button></div>' : ""}
       </section>
       <section class="practice-split-card world-favourite-colour-practice"><div class="numbers-game-top"><div><p class="body-match-kicker">My favourite colour</p><p class="numbers-game-note">Choose your favourite colour, then listen and say the sentence.</p></div><button class="small-button is-play-button" type="button" data-world-favourite-play>Play</button></div><div class="world-favourite-colour-options">${items.map((item) => `<button class="small-button${item.id === favourite.id ? " is-action-button" : ""}" type="button" data-world-favourite="${item.id}">${item.hanzi}</button>`).join("")}</div><p class="world-favourite-sentence">我喜欢${favourite.hanzi}。${state.showPinyin ? `<span>wǒ xǐ huan ${favourite.pinyin}.</span>` : ""}${state.showEnglish ? `<span>I like ${favourite.english}.</span>` : ""}</p></section>
       <section class="practice-split-card practice-say-card"><p class="body-match-kicker">Book sentence</p><div class="numbers-game-options"><button class="numbers-game-option greetings-game-option family-listen-option" type="button" data-world-say="我不喜欢黑色和白色">我不喜欢黑色和白色。${state.showPinyin ? '<span class="numbers-game-pinyin">wǒ bù xǐ huan hēi sè hé bái sè.</span>' : ""}${state.showEnglish ? '<span class="numbers-game-english">I do not like black and white.</span>' : ""}</button></div></section>
@@ -512,19 +511,18 @@ export function createWorldRuntime({ state, currentTopic, currentBook, currentLe
       }
       renderActivityPanel(currentTopic());
     }));
-    activityList.querySelector("[data-world-colour-play]")?.addEventListener("click", () => { if (state.tapAudioEnabled) speak(target.phrase, 0.78); });
+    activityList.querySelector("[data-world-colour-new]")?.addEventListener("click", () => {
+      advanceShuffledOrder(state, "worldColourRoundIds", "worldColourRoundIndex", shuffled);
+      state.worldColourPickedId = "";
+      state.worldColourResult = "";
+      renderActivityPanel(currentTopic());
+    });
     activityList.querySelectorAll("[data-world-colour-guess]").forEach((button) => button.addEventListener("click", () => {
       state.worldColourPickedId = button.dataset.worldColourGuess;
       state.worldColourResult = button.dataset.worldColourGuess === target.id ? "correct" : "wrong";
       if (state.worldColourResult === "correct" && state.tapAudioEnabled) speak(target.phrase, 0.78);
       renderActivityPanel(currentTopic());
     }));
-    activityList.querySelector("[data-world-colour-next]")?.addEventListener("click", () => {
-      advanceShuffledOrder(state, "worldColourRoundIds", "worldColourRoundIndex", shuffled);
-      state.worldColourPickedId = "";
-      state.worldColourResult = "";
-      renderActivityPanel(currentTopic());
-    });
     activityList.querySelectorAll("[data-world-favourite]").forEach((button) => button.addEventListener("click", () => {
       state.worldFavouriteColourId = button.dataset.worldFavourite;
       renderActivityPanel(currentTopic());

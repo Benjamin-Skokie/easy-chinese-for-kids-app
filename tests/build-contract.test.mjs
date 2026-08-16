@@ -46,8 +46,8 @@ import { familyGameItemIds, familyPractice, familyTopic, illustratedFamily } fro
 
 test("the local page loads a single bundled application script", () => {
   const html = readFileSync("index.html", "utf8");
-  assert.match(html, /<link rel="stylesheet" href="styles\.css\?v=20260816-comparison-images" \/>/);
-  assert.match(html, /<script src="app\.js\?v=20260816-comparison-scenes"><\/script>/);
+  assert.match(html, /<link rel="stylesheet" href="styles\.css\?v=20260816-date-month-scenes" \/>/);
+  assert.match(html, /<script src="app\.js\?v=20260816-date-month-scenes"><\/script>/);
   assert.doesNotMatch(html, /type="module"/);
 });
 
@@ -87,8 +87,37 @@ test("Comparisons uses illustrated pairs as scenes and individual characters as 
   assert.match(runtimeSource, /school-scene-grid comparison-scene-grid/);
   assert.match(runtimeSource, /data-comparison-scene/);
   assert.match(runtimeSource, /const comparisonWords = sceneId === "comparisons"[\s\S]{0,900}Book words[\s\S]{0,300}comparison-word-grid/);
-  assert.match(runtimeSource, /\$\{comparisonScenes \|\| `<div class="time-months-heading">/);
+  assert.match(runtimeSource, /\$\{comparisonScenes \|\| transportScenes \|\| `<div class="time-months-heading">/);
   assert.match(styles, /\.comparison-word-grid \{\s+display: grid;\s+grid-template-columns: repeat\(4, minmax\(0, 1fr\)\);/);
+});
+
+test("Transport keeps its illustrated sentence cards in Scenes", () => {
+  const runtimeSource = readFileSync("src/features/time-daily-life/time-daily-life-runtime.js", "utf8");
+  const transportSource = readFileSync("src/features/time-daily-life/transport.js", "utf8");
+  assert.match(runtimeSource, /const transportScenes = sceneId === "transport"/);
+  assert.match(runtimeSource, /school-scene-grid transport-scene-grid/);
+  assert.match(runtimeSource, /data-transport-scene/);
+  assert.match(runtimeSource, /comparisonScenes \|\| transportScenes \|\|/);
+  assert.match(transportSource, /sceneTitle:/);
+});
+
+test("Dates and months use standard scene cards", () => {
+  const runtimeSource = readFileSync("src/features/time-daily-life/time-daily-life-runtime.js", "utf8");
+  const styles = readFileSync("styles.css", "utf8");
+  assert.match(runtimeSource, /school-scene-grid date-scene-grid/);
+  assert.match(runtimeSource, /data-date-scene/);
+  assert.match(runtimeSource, /school-scene-grid month-scene-grid/);
+  assert.match(runtimeSource, /data-month-scene/);
+  assert.match(runtimeSource, /telephone-line-hanzi">\$\{item\.context\}/);
+  assert.match(styles, /\.date-scene-grid \.school-scene-image \{\s+object-fit: contain;/);
+  assert.match(styles, /\.month-scene-grid \.school-scene-image \{\s+object-fit: contain;/);
+});
+
+test("Comparisons keeps its sole new-game control at the top right", () => {
+  const practiceSource = readFileSync("src/core/lesson-practice-runtime.js", "utf8");
+  assert.match(practiceSource, /is-practice-advance-button" type="button" data-comparison-build-new aria-label="Start a new game">New game<\/button>/);
+  assert.match(practiceSource, /\[data-comparison-build-new\]"\)\?\.addEventListener\("click", nextComparisonBuilder\)/);
+  assert.doesNotMatch(practiceSource, /data-comparison-build-next/);
 });
 
 test("Everyday Actions keeps one silent new-game button in the practice header", () => {
@@ -225,19 +254,23 @@ test("the lazy-image trial keeps the first lesson scene eager and game art lazy"
   assert.match(practiceSource, /imageLoadingAttrs\(\)/);
 });
 
-test("new and next practice rounds use the shared green-arrow control", () => {
+test("randomized practice keeps its single green new-game control in the header", () => {
   const stylesSource = readFileSync("styles.css", "utf8");
   const lessonSource = readFileSync("src/core/lesson-practice-runtime.js", "utf8");
   const schoolSource = readFileSync("src/features/school-life/school-food-runtime.js", "utf8");
   const worldSource = readFileSync("src/features/world/world-runtime.js", "utf8");
   const foundationsSource = readFileSync("src/features/foundations/foundations-runtime.js", "utf8");
   assert.match(stylesSource, /\.small-button\.is-practice-advance-button/);
-  assert.match(lessonSource, /is-practice-advance-button" type="button" data-room-build-next/);
+  assert.match(lessonSource, /is-practice-advance-button" type="button" data-room-build-new/);
   assert.match(lessonSource, /is-practice-advance-button" type="button" data-number-game-refresh/);
-  assert.match(lessonSource, /numbers-game-top[\s\S]*data-clothes-quiz-next[\s\S]*clothes-quiz-visual/);
-  assert.match(schoolSource, /is-practice-advance-button" type="button" data-stationery-picture-match-next/);
-  assert.match(worldSource, /is-practice-advance-button" type="button" data-world-colour-next/);
-  assert.match(foundationsSource, /is-practice-advance-button body-next-round" type="button" data-body-next-round/);
+  assert.match(lessonSource, /numbers-game-top[\s\S]*data-clothes-quiz-new[\s\S]*clothes-quiz-visual/);
+  assert.match(schoolSource, /is-practice-advance-button" type="button" data-stationery-picture-match-new/);
+  assert.match(worldSource, /is-practice-advance-button" type="button" data-world-colour-new/);
+  assert.match(foundationsSource, /is-practice-advance-button" type="button" data-body-reset-match/);
+  assert.doesNotMatch(lessonSource, /data-(room-build|comparison-build|position-quiz|transport-build|clock-quiz|time-routine-quiz|clothes-quiz)-next/);
+  assert.doesNotMatch(schoolSource, /data-(school-build|stationery-picture-match|meals-picture)-next/);
+  assert.doesNotMatch(worldSource, /data-world-colour-next/);
+  assert.doesNotMatch(foundationsSource, /data-body-(next-round|play-again)/);
 });
 
 test("picture-led practice cards keep their image centered", () => {

@@ -670,7 +670,12 @@ function renderDatesExplorer() {
         <p class="body-match-kicker">${currentBook().label} Lesson ${currentLesson().lesson}</p>
         <h4>Dates & Months</h4>
       </div>
-      ${renderTimeAssetGrid(timeDateDateItems, "date")}
+      <section class="school-lesson-section">
+        <div class="time-months-heading"><p class="body-match-kicker">Scenes</p></div>
+        <div class="school-scene-grid date-scene-grid">
+          ${timeDateDateItems.map((item) => `<section class="greetings-exchange school-scene-card"><div class="greetings-exchange-top"><div><p class="body-match-kicker">${item.english}</p></div><button class="small-button is-play-button" type="button" data-date-scene="${item.id}">Play</button></div><div class="school-scene-layout"><img class="school-scene-image" src="${item.imagePath}" alt="${item.english}" /><div class="greetings-line-stack"><article class="greetings-line-card"><div class="telephone-bubble-copy"><p class="telephone-line-hanzi">${item.context}</p>${state.showPinyin ? `<p class="telephone-line-pinyin">${item.contextPinyin}</p>` : ""}${state.showEnglish ? `<p class="telephone-line-english">${item.contextEnglish}</p>` : ""}</div></article></div></div></section>`).join("")}
+        </div>
+      </section>
       <section class="time-months-intro">
         <div>
           <p class="body-match-kicker">Months of the year</p>
@@ -680,7 +685,11 @@ function renderDatesExplorer() {
         </div>
         <button class="small-button is-play-button" type="button" data-months-play>Play</button>
       </section>
-      ${renderTimeAssetGrid(timeDateMonthItems, "month")}
+      <section class="school-lesson-section">
+        <div class="school-scene-grid month-scene-grid">
+          ${timeDateMonthItems.map((item) => `<section class="greetings-exchange school-scene-card"><div class="greetings-exchange-top"><div><p class="body-match-kicker">${item.english}</p></div><button class="small-button is-play-button" type="button" data-month-scene="${item.id}">Play</button></div><div class="school-scene-layout"><img class="school-scene-image" src="${item.imagePath}" alt="${item.english}" /><div class="greetings-line-stack"><article class="greetings-line-card"><div class="telephone-bubble-copy"><p class="telephone-line-hanzi">${item.context}</p>${state.showPinyin ? `<p class="telephone-line-pinyin">${item.contextPinyin}</p>` : ""}${state.showEnglish ? `<p class="telephone-line-english">${item.contextEnglish}</p>` : ""}</div></article></div></div></section>`).join("")}
+        </div>
+      </section>
       <section class="visual-topic-notes">
         <p class="body-match-kicker">Useful notes</p>
         <div class="visual-topic-note-grid">
@@ -693,6 +702,18 @@ function renderDatesExplorer() {
     </div>
   `;
   bindTimeAssetAudio(focusExplorer);
+  focusExplorer.querySelectorAll("[data-date-scene]").forEach((button) => {
+    button.addEventListener("click", () => {
+      const item = timeDateDateItems.find((entry) => entry.id === button.dataset.dateScene);
+      if (item && state.tapAudioEnabled) speak(item.audio, 0.78);
+    });
+  });
+  focusExplorer.querySelectorAll("[data-month-scene]").forEach((button) => {
+    button.addEventListener("click", () => {
+      const item = timeDateMonthItems.find((entry) => entry.id === button.dataset.monthScene);
+      if (item && state.tapAudioEnabled) speak(item.audio, 0.78);
+    });
+  });
   focusExplorer.querySelector("[data-months-play]")?.addEventListener("click", () => {
     if (state.tapAudioEnabled) {
       speak("一年有十二个月", 0.78);
@@ -705,6 +726,9 @@ function renderVisualTopicExplorer(sceneId) {
   const items = visualTopicItems[sceneId] ?? [];
   const comparisonScenes = sceneId === "comparisons"
     ? `<section class="school-lesson-section"><div class="time-months-heading"><p class="body-match-kicker">Scenes</p></div><div class="school-scene-grid comparison-scene-grid">${items.map((item) => `<section class="greetings-exchange school-scene-card"><div class="greetings-exchange-top"><div><p class="body-match-kicker">${item.english}</p></div><button class="small-button is-play-button" type="button" data-comparison-scene="${item.audio}">Play</button></div><div class="school-scene-layout"><img class="school-scene-image" src="${item.imagePath}" alt="${item.english}" /><div class="greetings-line-stack"><article class="greetings-line-card"><div class="telephone-bubble-copy"><p class="telephone-line-hanzi">${item.hanzi}</p>${state.showPinyin ? `<p class="telephone-line-pinyin">${item.pinyin}</p>` : ""}${state.showEnglish ? `<p class="telephone-line-english">${item.english}</p>` : ""}</div></article></div></div></section>`).join("")}</div></section>`
+    : "";
+  const transportScenes = sceneId === "transport"
+    ? `<section class="school-lesson-section"><div class="time-months-heading"><p class="body-match-kicker">Scenes</p></div><div class="school-scene-grid transport-scene-grid">${items.map((item) => `<section class="greetings-exchange school-scene-card"><div class="greetings-exchange-top"><div><p class="body-match-kicker">${item.sceneTitle}</p></div><button class="small-button is-play-button" type="button" data-transport-scene="${item.audio}">Play</button></div><div class="school-scene-layout"><img class="school-scene-image" src="${item.imagePath}" alt="${item.english}" /><div class="greetings-line-stack"><article class="greetings-line-card"><div class="telephone-bubble-copy"><p class="telephone-line-hanzi">${item.hanzi}</p>${state.showPinyin ? `<p class="telephone-line-pinyin">${item.pinyin}</p>` : ""}${state.showEnglish ? `<p class="telephone-line-english">${item.english}</p>` : ""}</div></article></div></div></section>`).join("")}</div></section>`
     : "";
   const comparisonWords = sceneId === "comparisons"
     ? `<section class="school-lesson-section"><div class="time-months-heading"><p class="body-match-kicker">Book words</p></div><div class="comparison-word-grid">${comparisonWordItems.map((item) => `<button class="comparison-word-card" type="button" data-comparison-word="${item.hanzi}"><span class="comparison-word-hanzi">${item.hanzi}</span>${state.showPinyin ? `<span class="comparison-word-pinyin">${item.pinyin}</span>` : ""}${state.showEnglish ? `<span class="comparison-word-english">${item.english}</span>` : ""}</button>`).join("")}</div></section>`
@@ -743,7 +767,7 @@ function renderVisualTopicExplorer(sceneId) {
         <p class="body-match-kicker">${currentBook().label} Lesson ${currentLesson().lesson}</p>
         <h4>${topic.title}</h4>
       </div>
-      ${comparisonScenes || `<div class="time-months-heading"><p class="body-match-kicker">Book words</p></div>${renderTimeAssetGrid(items, `visual visual-${sceneId}`, "visual")}`}
+      ${comparisonScenes || transportScenes || `<div class="time-months-heading"><p class="body-match-kicker">Book words</p></div>${renderTimeAssetGrid(items, `visual visual-${sceneId}`, "visual")}`}
       ${comparisonWords}
       ${usefulNotes}
     </div>
@@ -757,6 +781,11 @@ function renderVisualTopicExplorer(sceneId) {
   focusExplorer.querySelectorAll("[data-comparison-scene]").forEach((button) => {
     button.addEventListener("click", () => {
       if (state.tapAudioEnabled) speak(button.dataset.comparisonScene, 0.78);
+    });
+  });
+  focusExplorer.querySelectorAll("[data-transport-scene]").forEach((button) => {
+    button.addEventListener("click", () => {
+      if (state.tapAudioEnabled) speak(button.dataset.transportScene, 0.78);
     });
   });
 }

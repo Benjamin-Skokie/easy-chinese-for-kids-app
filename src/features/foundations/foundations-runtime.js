@@ -605,8 +605,8 @@ function renderBodyExplorer() {
               <button class="small-button is-action-button" type="button" data-body-toggle-bonus aria-pressed="${state.bodyMatchIncludeBonus}">
                 Bonus words ${state.bodyMatchIncludeBonus ? "on" : "off"}
               </button>
-              <button class="small-button is-play-button" type="button" data-body-reset-match>
-                Play
+              <button class="small-button is-practice-advance-button" type="button" data-body-reset-match aria-label="Start a new game">
+                New game
               </button>
             </div>
           </div>
@@ -691,16 +691,6 @@ function renderBodyExplorer() {
               `
               : ""
           }
-          ${
-            roundComplete && !allDone
-              ? '<button class="small-button is-practice-advance-button body-next-round" type="button" data-body-next-round>Next set</button>'
-              : ""
-          }
-          ${
-            allDone
-              ? '<button class="small-button is-play-button body-next-round" type="button" data-body-play-again>Play</button>'
-              : ""
-          }
         </div>
         <div class="body-more-practice-card">
           <p class="body-match-kicker">More Practice</p>
@@ -762,19 +752,6 @@ function renderBodyExplorer() {
   });
 
   focusExplorer.querySelector("[data-body-reset-match]")?.addEventListener("click", () => {
-    resetBodyMatchGame();
-    renderFocusExplorer();
-    renderFocusStatus();
-  });
-
-  focusExplorer.querySelector("[data-body-next-round]")?.addEventListener("click", () => {
-    nextBodyRound();
-    state.lastBodyFeedback = "Here is the next set.";
-    renderFocusExplorer();
-    renderFocusStatus();
-  });
-
-  focusExplorer.querySelector("[data-body-play-again]")?.addEventListener("click", () => {
     resetBodyMatchGame();
     renderFocusExplorer();
     renderFocusStatus();

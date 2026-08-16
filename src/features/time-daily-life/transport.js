@@ -22,7 +22,24 @@ export const transportVisualItems = [
     ["我坐火车去北京。", "wǒ zuò huǒ chē qù Běi jīng.", "I take a train to Beijing.", "train-to-beijing.webp"],
     ["我坐妈妈的车去上学。", "wǒ zuò mā ma de chē qù shàng xué.", "I ride in Mom's car to school.", "mom-car-to-school.webp"],
     ["我坐爸爸的车去商店。", "wǒ zuò bà ba de chē qù shāng diàn.", "I ride in Dad's car to the store.", "dad-car-to-grocery-store.webp"]
-  ].map(([hanzi, pinyin, english, file]) => ({ id: file, hanzi, pinyin, english, audio: hanzi, imagePath: `assets/illustrated-transportation/${file}` }));
+  ].map(([hanzi, pinyin, english, file]) => ({
+    id: file,
+    hanzi,
+    pinyin,
+    english,
+    sceneTitle: {
+      "walk-to-school.webp": "Walk to school",
+      "bike-to-school.webp": "Bike to school",
+      "school-bus-to-zoo.webp": "School bus trip",
+      "taxi-to-airport.webp": "Taxi to the airport",
+      "airplane-to-grandparents.webp": "Fly to grandparents",
+      "train-to-beijing.webp": "Train to Beijing",
+      "mom-car-to-school.webp": "Mom's car to school",
+      "dad-car-to-grocery-store.webp": "Dad's car to the store"
+    }[file],
+    audio: hanzi,
+    imagePath: `assets/illustrated-transportation/${file}`
+  }));
 
 export const transportSentenceTokens = {
   "walk-to-school.webp": { target: ["我", "走路", "去", "上学"], distractors: ["坐", "校车", "动物园"] },

@@ -3211,11 +3211,11 @@ h4 {
 }
 
 .time-asset-grid-date {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .time-asset-grid-month {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .time-asset-grid-week {
@@ -3322,6 +3322,14 @@ h4 {
 /* Comparison illustrations have different source proportions. Keep the full
    visual inside the shared 4:3 scene frame instead of trimming its edges. */
 .comparison-scene-grid .school-scene-image {
+  object-fit: contain;
+}
+
+.date-scene-grid .school-scene-image {
+  object-fit: contain;
+}
+
+.month-scene-grid .school-scene-image {
   object-fit: contain;
 }
 

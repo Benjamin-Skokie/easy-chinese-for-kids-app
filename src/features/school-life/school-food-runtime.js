@@ -225,7 +225,7 @@ function renderMealsPictureChoice() {
   if (!prompt) return "";
   return `
     <section class="clothes-quiz-shell meals-picture-choice">
-      <div class="numbers-game-top"><div><p class="body-match-kicker">Look and Choose</p><p class="numbers-game-note">Look at the picture, then tap the Chinese sentence that matches it.</p></div></div>
+      <div class="numbers-game-top"><div><p class="body-match-kicker">Look and Choose</p><p class="numbers-game-note">Look at the picture, then tap the Chinese sentence that matches it.</p></div><button class="small-button is-practice-advance-button" type="button" data-meals-picture-new aria-label="Start a new game">New game</button></div>
       <figure class="clothes-quiz-visual time-routine-quiz-visual"><img class="clothes-quiz-image" src="${prompt.imagePath}" alt="${prompt.imageAlt}" /></figure>
       <div class="clothes-quiz-options sentence-choice-options">
         ${state.mealsPictureQuizOptionIds.map((optionId) => {
@@ -237,7 +237,6 @@ function renderMealsPictureChoice() {
           return `<button class="clothes-quiz-option${resultClass}" type="button" data-meals-picture-pick="${option.id}">${mark}<span class="numbers-game-hanzi">${option.hanzi}</span>${state.showPinyin ? `<span class="numbers-game-pinyin">${option.pinyin}</span>` : ""}${state.showEnglish ? `<span class="numbers-game-english">${option.english}</span>` : ""}</button>`;
         }).join("")}
       </div>
-      ${state.mealsPictureQuizResult === "correct" ? '<div class="clothes-quiz-next"><button class="small-button is-practice-advance-button" type="button" data-meals-picture-next>Next picture</button></div>' : ""}
     </section>
   `;
 }
@@ -682,12 +681,12 @@ function renderFoodPractice(topic) {
       <div class="practice-split-board">
         ${renderFoodHungerGame()}
         <section class="practice-split-card">
-          <div class="numbers-game-top"><div><p class="body-match-kicker">Build the sentence</p><p class="numbers-game-note">Tap the word cards in the right order. Some cards do not belong.</p></div></div>
+          <div class="numbers-game-top"><div><p class="body-match-kicker">Build the sentence</p><p class="numbers-game-note">Tap the word cards in the right order. Some cards do not belong.</p></div><button class="small-button is-practice-advance-button" type="button" data-school-build-new aria-label="Start a new game">New game</button></div>
           <figure class="clothes-quiz-visual school-build-visual"><img class="clothes-quiz-image" src="${item.imagePath}" alt="${item.english}" /></figure>
           <div class="transport-build-hint">${state.showPinyin ? `<p class="transport-build-hint-pinyin">${item.pinyin}</p>` : ""}${state.showEnglish ? `<p class="transport-build-hint-english">${item.english}</p>` : ""}</div>
           <div class="transport-build-target is-${state.schoolBuildResult}">${state.schoolBuildResult ? `<span class="answer-result-mark" aria-hidden="true">${state.schoolBuildResult === "correct" ? "✓" : "×"}</span>` : ""}${state.schoolBuildSelectedTokens.length ? state.schoolBuildSelectedTokens.map((token) => `<span class="intro-build-chip is-selected">${token}</span>`).join("") : '<span class="intro-build-placeholder">Your sentence will appear here.</span>'}</div>
           <div class="intro-build-choices">${state.schoolBuildAvailableTokens.map((token, index) => `<button class="intro-build-chip" type="button" data-school-build-token="${index}">${token}</button>`).join("")}</div>
-          <div class="intro-build-actions"><button class="small-button" type="button" data-school-build-clear>Clear</button>${state.schoolBuildResult === "correct" ? '<button class="small-button is-practice-advance-button" type="button" data-school-build-next>Next picture</button>' : ""}</div>
+          <div class="intro-build-actions"><button class="small-button" type="button" data-school-build-clear>Clear</button></div>
         </section>
       </div>
     </section>
@@ -699,18 +698,18 @@ function renderFoodPractice(topic) {
   activityList.querySelectorAll("[data-food-hunger-guess]").forEach((button) => button.addEventListener("click", () => handleFoodHungerGuess(button.dataset.foodHungerGuess)));
   activityList.querySelectorAll("[data-school-build-token]").forEach((button) => button.addEventListener("click", () => handleSchoolBuildToken(Number(button.dataset.schoolBuildToken))));
   activityList.querySelector("[data-school-build-clear]")?.addEventListener("click", clearSchoolBuilder);
-  activityList.querySelector("[data-school-build-next]")?.addEventListener("click", nextSchoolBuilder);
+  activityList.querySelector("[data-school-build-new]")?.addEventListener("click", nextSchoolBuilder);
 }
 
 function renderSchoolSentenceBuilder(item) {
   return `
     <section class="practice-split-card">
-      <div class="numbers-game-top"><div><p class="body-match-kicker">Build the sentence</p><p class="numbers-game-note">Tap the word cards in the right order. Some cards do not belong.</p></div></div>
+      <div class="numbers-game-top"><div><p class="body-match-kicker">Build the sentence</p><p class="numbers-game-note">Tap the word cards in the right order. Some cards do not belong.</p></div><button class="small-button is-practice-advance-button" type="button" data-school-build-new aria-label="Start a new game">New game</button></div>
       <figure class="clothes-quiz-visual school-build-visual"><img class="clothes-quiz-image" src="${item.imagePath}" alt="${item.english}" /></figure>
       <div class="transport-build-hint">${state.showPinyin ? `<p class="transport-build-hint-pinyin">${item.pinyin}</p>` : ""}${state.showEnglish ? `<p class="transport-build-hint-english">${item.english}</p>` : ""}</div>
       <div class="transport-build-target is-${state.schoolBuildResult}">${state.schoolBuildResult ? `<span class="answer-result-mark" aria-hidden="true">${state.schoolBuildResult === "correct" ? "✓" : "×"}</span>` : ""}${state.schoolBuildSelectedTokens.length ? state.schoolBuildSelectedTokens.map((token) => `<span class="intro-build-chip is-selected">${token}</span>`).join("") : '<span class="intro-build-placeholder">Your sentence will appear here.</span>'}</div>
       <div class="intro-build-choices">${state.schoolBuildAvailableTokens.map((token, index) => `<button class="intro-build-chip" type="button" data-school-build-token="${index}">${token}</button>`).join("")}</div>
-      <div class="intro-build-actions"><button class="small-button" type="button" data-school-build-clear>Clear</button>${state.schoolBuildResult === "correct" ? '<button class="small-button is-practice-advance-button" type="button" data-school-build-next>Next picture</button>' : ""}</div>
+      <div class="intro-build-actions"><button class="small-button" type="button" data-school-build-clear>Clear</button></div>
     </section>
   `;
 }
@@ -758,7 +757,7 @@ function renderStationeryPictureMatch() {
   const isComplete = state.stationeryPictureMatchComplete;
   return `
     <section class="practice-split-card stationery-picture-match-card">
-      <div class="numbers-game-top"><div><p class="body-match-kicker">Match the picture</p><p class="numbers-game-note">Look at the picture. Choose the quantity, color, and school thing.</p></div></div>
+      <div class="numbers-game-top"><div><p class="body-match-kicker">Match the picture</p><p class="numbers-game-note">Look at the picture. Choose the quantity, color, and school thing.</p></div><button class="small-button is-practice-advance-button" type="button" data-stationery-picture-match-new aria-label="Start a new game">New game</button></div>
       <figure class="stationery-picture-match-visual"><img src="${round.imagePath}" alt="${round.alt}"></figure>
       <div class="stationery-picture-match-columns">
         ${Object.entries(stationeryPictureMatchChoices).map(([column, choices]) => `
@@ -772,7 +771,7 @@ function renderStationeryPictureMatch() {
           </div>
         `).join("")}
       </div>
-      ${isComplete ? `<div class="stationery-picture-match-result is-correct"><span class="answer-result-mark" aria-hidden="true">✓</span><div><strong>${Object.values(round.target).join("")}。</strong>${state.showPinyin ? `<span class="telephone-line-pinyin">${round.pinyin}</span>` : ""}${state.showEnglish ? `<span>${round.english}</span>` : ""}</div><button class="small-button is-practice-advance-button" type="button" data-stationery-picture-match-next>Next picture</button></div>` : ""}
+      ${isComplete ? `<div class="stationery-picture-match-result is-correct"><span class="answer-result-mark" aria-hidden="true">✓</span><div><strong>${Object.values(round.target).join("")}。</strong>${state.showPinyin ? `<span class="telephone-line-pinyin">${round.pinyin}</span>` : ""}${state.showEnglish ? `<span>${round.english}</span>` : ""}</div></div>` : ""}
     </section>
   `;
 }
@@ -792,10 +791,10 @@ function renderStationeryPractice(topic) {
     </section>
   `;
   activityList.querySelectorAll("[data-stationery-picture-match-pick]").forEach((button) => button.addEventListener("click", () => handleStationeryPictureMatchPick(button.dataset.stationeryPictureMatchPick, button.dataset.stationeryPictureMatchValue)));
-  activityList.querySelector("[data-stationery-picture-match-next]")?.addEventListener("click", nextStationeryPictureMatch);
+  activityList.querySelector("[data-stationery-picture-match-new]")?.addEventListener("click", nextStationeryPictureMatch);
   activityList.querySelectorAll("[data-school-build-token]").forEach((button) => button.addEventListener("click", () => handleSchoolBuildToken(Number(button.dataset.schoolBuildToken))));
   activityList.querySelector("[data-school-build-clear]")?.addEventListener("click", clearSchoolBuilder);
-  activityList.querySelector("[data-school-build-next]")?.addEventListener("click", nextSchoolBuilder);
+  activityList.querySelector("[data-school-build-new]")?.addEventListener("click", nextSchoolBuilder);
 }
 
 function renderSchoolSuppliesPractice(topic) {
@@ -819,7 +818,7 @@ function renderSchoolSuppliesPractice(topic) {
   activityList.querySelectorAll("[data-backpack-game-guess]").forEach((button) => button.addEventListener("click", () => handleBackpackGameGuess(button.dataset.backpackGameGuess)));
   activityList.querySelectorAll("[data-school-build-token]").forEach((button) => button.addEventListener("click", () => handleSchoolBuildToken(Number(button.dataset.schoolBuildToken))));
   activityList.querySelector("[data-school-build-clear]")?.addEventListener("click", clearSchoolBuilder);
-  activityList.querySelector("[data-school-build-next]")?.addEventListener("click", nextSchoolBuilder);
+  activityList.querySelector("[data-school-build-new]")?.addEventListener("click", nextSchoolBuilder);
 }
 
 function renderSchoolPractice(topic) {
@@ -874,7 +873,7 @@ function renderSchoolPractice(topic) {
   activityList.querySelectorAll("[data-template-listen-guess]").forEach((button) => button.addEventListener("click", () => handleSchoolChallengeGuess(button.dataset.templateListenGuess)));
   activityList.querySelectorAll("[data-school-build-token]").forEach((button) => button.addEventListener("click", () => handleSchoolBuildToken(Number(button.dataset.schoolBuildToken))));
   activityList.querySelector("[data-school-build-clear]")?.addEventListener("click", clearSchoolBuilder);
-  activityList.querySelector("[data-school-build-next]")?.addEventListener("click", nextSchoolBuilder);
+  activityList.querySelector("[data-school-build-new]")?.addEventListener("click", nextSchoolBuilder);
 }
 
 function renderMealsConversationPractice(topic) {
@@ -917,7 +916,7 @@ function renderMealsConversationPractice(topic) {
   activityList.querySelectorAll("[data-template-match-phrase]").forEach((button) => button.addEventListener("click", () => handleMealsConversationPhrase(button.dataset.templateMatchPhrase)));
   activityList.querySelectorAll("[data-template-match-meaning]").forEach((button) => button.addEventListener("click", () => handleMealsConversationAttempt(button.dataset.templateMatchMeaning)));
   activityList.querySelectorAll("[data-meals-picture-pick]").forEach((button) => button.addEventListener("click", () => handleMealsPictureChoice(button.dataset.mealsPicturePick)));
-  activityList.querySelector("[data-meals-picture-next]")?.addEventListener("click", nextMealsPictureChoice);
+  activityList.querySelector("[data-meals-picture-new]")?.addEventListener("click", nextMealsPictureChoice);
 }
 
 function renderFoodPreferencesPractice(topic) {
