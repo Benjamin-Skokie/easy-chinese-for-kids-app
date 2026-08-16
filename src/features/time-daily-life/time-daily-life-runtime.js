@@ -703,8 +703,11 @@ function renderDatesExplorer() {
 function renderVisualTopicExplorer(sceneId) {
   const topic = currentTopic();
   const items = visualTopicItems[sceneId] ?? [];
+  const comparisonScenes = sceneId === "comparisons"
+    ? `<section class="school-lesson-section"><div class="time-months-heading"><p class="body-match-kicker">Scenes</p></div><div class="school-scene-grid comparison-scene-grid">${items.map((item) => `<section class="greetings-exchange school-scene-card"><div class="greetings-exchange-top"><div><p class="body-match-kicker">${item.english}</p></div><button class="small-button is-play-button" type="button" data-comparison-scene="${item.audio}">Play</button></div><div class="school-scene-layout"><img class="school-scene-image" src="${item.imagePath}" alt="${item.english}" /><div class="greetings-line-stack"><article class="greetings-line-card"><div class="telephone-bubble-copy"><p class="telephone-line-hanzi">${item.hanzi}</p>${state.showPinyin ? `<p class="telephone-line-pinyin">${item.pinyin}</p>` : ""}${state.showEnglish ? `<p class="telephone-line-english">${item.english}</p>` : ""}</div></article></div></div></section>`).join("")}</div></section>`
+    : "";
   const comparisonWords = sceneId === "comparisons"
-    ? `<div class="comparison-word-grid">${comparisonWordItems.map((item) => `<button class="comparison-word-card" type="button" data-comparison-word="${item.hanzi}"><span class="comparison-word-hanzi">${item.hanzi}</span>${state.showPinyin ? `<span class="comparison-word-pinyin">${item.pinyin}</span>` : ""}${state.showEnglish ? `<span class="comparison-word-english">${item.english}</span>` : ""}</button>`).join("")}</div>`
+    ? `<section class="school-lesson-section"><div class="time-months-heading"><p class="body-match-kicker">Book words</p></div><div class="comparison-word-grid">${comparisonWordItems.map((item) => `<button class="comparison-word-card" type="button" data-comparison-word="${item.hanzi}"><span class="comparison-word-hanzi">${item.hanzi}</span>${state.showPinyin ? `<span class="comparison-word-pinyin">${item.pinyin}</span>` : ""}${state.showEnglish ? `<span class="comparison-word-english">${item.english}</span>` : ""}</button>`).join("")}</div></section>`
     : "";
   const usefulNotes =
     sceneId === "transport"
@@ -740,8 +743,7 @@ function renderVisualTopicExplorer(sceneId) {
         <p class="body-match-kicker">${currentBook().label} Lesson ${currentLesson().lesson}</p>
         <h4>${topic.title}</h4>
       </div>
-      <div class="time-months-heading"><p class="body-match-kicker">Book words</p></div>
-      ${renderTimeAssetGrid(items, `visual visual-${sceneId}`, "visual")}
+      ${comparisonScenes || `<div class="time-months-heading"><p class="body-match-kicker">Book words</p></div>${renderTimeAssetGrid(items, `visual visual-${sceneId}`, "visual")}`}
       ${comparisonWords}
       ${usefulNotes}
     </div>
@@ -750,6 +752,11 @@ function renderVisualTopicExplorer(sceneId) {
   focusExplorer.querySelectorAll("[data-comparison-word]").forEach((button) => {
     button.addEventListener("click", () => {
       if (state.tapAudioEnabled) speak(button.dataset.comparisonWord, 0.78);
+    });
+  });
+  focusExplorer.querySelectorAll("[data-comparison-scene]").forEach((button) => {
+    button.addEventListener("click", () => {
+      if (state.tapAudioEnabled) speak(button.dataset.comparisonScene, 0.78);
     });
   });
 }

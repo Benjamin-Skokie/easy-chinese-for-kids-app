@@ -46,8 +46,8 @@ import { familyGameItemIds, familyPractice, familyTopic, illustratedFamily } fro
 
 test("the local page loads a single bundled application script", () => {
   const html = readFileSync("index.html", "utf8");
-  assert.match(html, /<link rel="stylesheet" href="styles\.css\?v=20260816-scene-card-parity" \/>/);
-  assert.match(html, /<script src="app\.js\?v=20260816-scene-card-parity"><\/script>/);
+  assert.match(html, /<link rel="stylesheet" href="styles\.css\?v=20260816-comparison-images" \/>/);
+  assert.match(html, /<script src="app\.js\?v=20260816-comparison-scenes"><\/script>/);
   assert.doesNotMatch(html, /type="module"/);
 });
 
@@ -67,13 +67,28 @@ test("topic scenes use short English titles instead of ordinal labels", () => {
   assert.match(readFileSync("src/features/play-hobbies/play-hobbies-runtime.js", "utf8"), /sceneTitle = \(id\)/);
 });
 
-test("compact and regular scenes share the same Chinese, pinyin, and English type scale", () => {
+test("scene and practice learner copy share the same Chinese, pinyin, and English type scale", () => {
   const styles = readFileSync("styles.css", "utf8");
-  assert.match(styles, /\.telephone-line-hanzi \{\s+font-family: var\(--hanzi-font\);\s+font-size: 1\.8rem;/);
-  assert.match(styles, /\.telephone-line-pinyin \{\s+color: var\(--berry-dark\);\s+font-size: 0\.95rem;/);
-  assert.match(styles, /\.telephone-line-english \{\s+color: var\(--muted\);\s+font-size: 0\.98rem;/);
+  assert.match(styles, /--learner-hanzi-size: 1\.3rem;/);
+  assert.match(styles, /--learner-pinyin-size: 0\.95rem;/);
+  assert.match(styles, /--learner-english-size: 1\.1rem;/);
+  for (const selector of ["telephone-line-hanzi", "numbers-game-hanzi", "weather-fill-sentence", "animals-measure-prompt", "multiplication-line-hanzi", "body-match-hanzi", "time-asset-hanzi", "visual-topic-note-hanzi"]) {
+    assert.match(styles, new RegExp(`\\.${selector.replace("-", "-")} \\{[\\s\\S]{0,180}font-size: var\\(--learner-hanzi-size\\)`));
+  }
+  assert.doesNotMatch(styles, /sentence-choice-options \.numbers-game-(hanzi|pinyin|english)/);
   assert.doesNotMatch(styles, /\.greetings-line-stack\.is-compact/);
   assert.doesNotMatch(readFileSync("src/features/play-hobbies/play-hobbies-runtime.js", "utf8"), /greetings-line-stack is-compact/);
+});
+
+test("Comparisons uses illustrated pairs as scenes and individual characters as Book words", () => {
+  const runtimeSource = readFileSync("src/features/time-daily-life/time-daily-life-runtime.js", "utf8");
+  const styles = readFileSync("styles.css", "utf8");
+  assert.match(runtimeSource, /const comparisonScenes = sceneId === "comparisons"/);
+  assert.match(runtimeSource, /school-scene-grid comparison-scene-grid/);
+  assert.match(runtimeSource, /data-comparison-scene/);
+  assert.match(runtimeSource, /const comparisonWords = sceneId === "comparisons"[\s\S]{0,900}Book words[\s\S]{0,300}comparison-word-grid/);
+  assert.match(runtimeSource, /\$\{comparisonScenes \|\| `<div class="time-months-heading">/);
+  assert.match(styles, /\.comparison-word-grid \{\s+display: grid;\s+grid-template-columns: repeat\(4, minmax\(0, 1fr\)\);/);
 });
 
 test("Everyday Actions keeps one silent new-game button in the practice header", () => {

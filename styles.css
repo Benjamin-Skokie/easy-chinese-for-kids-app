@@ -19,6 +19,9 @@
   --latin-font: "Avenir Next", "Trebuchet MS", "Helvetica Neue", sans-serif;
   --hanzi-font: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
   --display-font: "Palatino Linotype", "Book Antiqua", Georgia, serif;
+  --learner-hanzi-size: 1.3rem;
+  --learner-pinyin-size: 0.95rem;
+  --learner-english-size: 1.1rem;
 }
 
 * {
@@ -2541,10 +2544,6 @@ h4 {
   border-radius: 12px;
 }
 
-.backpack-game-options .numbers-game-hanzi {
-  font-size: 1.45rem;
-}
-
 .food-hunger-game-card {
   gap: 12px;
 }
@@ -2655,10 +2654,6 @@ h4 {
   border-radius: 12px;
 }
 
-.food-hunger-options .numbers-game-hanzi {
-  font-size: 1.45rem;
-}
-
 .stationery-picture-match-card {
   gap: 12px;
 }
@@ -2725,7 +2720,8 @@ h4 {
 }
 
 .stationery-picture-match-word {
-  font-size: 1.24rem;
+  font-family: var(--hanzi-font);
+  font-size: var(--learner-hanzi-size);
   font-weight: 700;
   line-height: 1.2;
   white-space: nowrap;
@@ -2733,8 +2729,7 @@ h4 {
 
 .stationery-picture-match-english {
   color: var(--muted);
-  font-size: 0.74rem;
-  font-weight: 600;
+  font-size: var(--learner-english-size);
   line-height: 1.2;
 }
 
@@ -2763,13 +2758,20 @@ h4 {
 }
 
 .stationery-picture-match-result strong {
-  font-size: 1.05rem;
+  font-family: var(--hanzi-font);
+  font-size: var(--learner-hanzi-size);
 }
 
 .stationery-picture-match-result span:not(.answer-result-mark) {
   color: var(--muted);
-  font-size: 0.78rem;
+  font-size: var(--learner-english-size);
   line-height: 1.25;
+}
+
+.stationery-picture-match-result .telephone-line-pinyin {
+  color: var(--berry-dark);
+  font-size: var(--learner-pinyin-size);
+  font-weight: 700;
 }
 
 @keyframes backpack-pack-item {
@@ -2900,10 +2902,6 @@ h4 {
   min-height: 92px;
 }
 
-.food-match-meaning-card .match-answer-label {
-  font-size: 1.08rem;
-}
-
 .intro-build-target {
   display: grid;
   gap: 10px;
@@ -2925,7 +2923,7 @@ h4 {
   border-radius: 18px;
   background: rgba(255, 255, 255, 0.86);
   font-family: var(--hanzi-font);
-  font-size: 1.2rem;
+  font-size: var(--learner-hanzi-size);
   color: var(--ink);
   cursor: pointer;
 }
@@ -2990,10 +2988,6 @@ h4 {
   box-shadow: none;
 }
 
-.polite-match-card .numbers-game-hanzi {
-  font-size: 1.45rem;
-}
-
 .family-match-board-headings {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
@@ -3046,7 +3040,7 @@ h4 {
 .greetings-note-hanzi {
   margin-top: 6px;
   font-family: var(--hanzi-font);
-  font-size: 1.6rem;
+  font-size: var(--learner-hanzi-size);
   color: var(--ink);
 }
 
@@ -3242,7 +3236,7 @@ h4 {
 
 .comparison-word-grid {
   display: grid;
-  grid-template-columns: repeat(7, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 8px;
 }
 
@@ -3267,19 +3261,19 @@ h4 {
 
 .comparison-word-hanzi {
   font-family: var(--hanzi-font);
-  font-size: 1.42rem;
+  font-size: var(--learner-hanzi-size);
   line-height: 1.1;
 }
 
 .comparison-word-pinyin {
   color: var(--berry-dark);
-  font-size: 0.76rem;
+  font-size: var(--learner-pinyin-size);
   font-weight: 700;
 }
 
 .comparison-word-english {
   color: var(--muted);
-  font-size: 0.76rem;
+  font-size: var(--learner-english-size);
 }
 
 .room-scene-grid {
@@ -3323,6 +3317,12 @@ h4 {
   border: 1px solid rgba(221, 207, 187, 0.72);
   border-radius: 8px;
   background: #fffdf8;
+}
+
+/* Comparison illustrations have different source proportions. Keep the full
+   visual inside the shared 4:3 scene frame instead of trimming its edges. */
+.comparison-scene-grid .school-scene-image {
+  object-fit: contain;
 }
 
 .school-word-grid {
@@ -3434,24 +3434,24 @@ h4 {
 
 .visual-topic-note-hanzi {
   font-family: var(--hanzi-font);
-  font-size: 1.45rem;
+  font-size: var(--learner-hanzi-size);
   line-height: 1.15;
 }
 
 .visual-topic-note-pinyin {
   color: var(--berry-dark);
-  font-size: 0.9rem;
+  font-size: var(--learner-pinyin-size);
   font-weight: 700;
 }
 
 .visual-topic-note-english {
   color: var(--muted);
-  font-size: 0.9rem;
+  font-size: var(--learner-english-size);
 }
 
 .visual-topic-note-example {
   font-family: var(--hanzi-font);
-  font-size: 0.96rem;
+  font-size: var(--learner-hanzi-size);
   line-height: 1.35;
 }
 
@@ -3543,16 +3543,6 @@ h4 {
   text-align: left;
 }
 
-.nature-word-card .time-asset-hanzi {
-  font-size: 1.65rem;
-  line-height: 1.1;
-}
-
-.nature-word-card .time-asset-pinyin,
-.nature-word-card .time-asset-english {
-  font-size: 1.02rem;
-}
-
 .nature-word-icon svg {
   display: block;
   width: 100%;
@@ -3582,7 +3572,7 @@ h4 {
   margin: 0;
   text-align: center;
   font-family: var(--hanzi-font);
-  font-size: 1.55rem;
+  font-size: var(--learner-hanzi-size);
   line-height: 1.6;
 }
 
@@ -3595,7 +3585,7 @@ h4 {
 .world-favourite-sentence,
 .world-nature-sentence {
   font-family: var(--hanzi-font);
-  font-size: 1.35rem;
+  font-size: var(--learner-hanzi-size);
   line-height: 1.5;
 }
 
@@ -3648,7 +3638,7 @@ h4 {
 
 .weather-dress-feedback.is-correct { background: #f1faed; }
 .weather-dress-feedback p { margin: 0; }
-.weather-dress-feedback p:first-child { font-family: var(--hanzi-font); font-size: 1.2rem; }
+.weather-dress-feedback p:first-child { font-family: var(--hanzi-font); font-size: var(--learner-hanzi-size); }
 
 .weather-fill-practice { display: grid; gap: 1rem; }
 
@@ -3670,7 +3660,7 @@ h4 {
 .weather-fill-sentence {
   margin: 0;
   font-family: var(--hanzi-font);
-  font-size: clamp(1.3rem, 2.6vw, 1.8rem);
+  font-size: var(--learner-hanzi-size);
   line-height: 1.55;
 }
 
@@ -3713,7 +3703,7 @@ h4 {
   background: #fffdf8;
   color: var(--ink);
   font-family: var(--hanzi-font);
-  font-size: 1.55rem;
+  font-size: var(--learner-hanzi-size);
   cursor: pointer;
 }
 
@@ -3800,24 +3790,30 @@ h4 {
 }
 
 .weekday-scene-card .time-asset-context {
-  font-size: 1.1rem;
+  font-size: var(--learner-hanzi-size);
   line-height: 1.4;
 }
 
-.weekday-scene-card .time-asset-context-pinyin,
+.weekday-scene-card .time-asset-context-pinyin {
+  font-size: var(--learner-pinyin-size);
+}
+
 .weekday-scene-card .time-asset-context-english {
-  font-size: 0.92rem;
+  font-size: var(--learner-english-size);
   line-height: 1.35;
 }
 
 .time-asset-grid-month .time-asset-context {
-  font-size: 1.1rem;
+  font-size: var(--learner-hanzi-size);
   line-height: 1.4;
 }
 
-.time-asset-grid-month .time-asset-context-pinyin,
+.time-asset-grid-month .time-asset-context-pinyin {
+  font-size: var(--learner-pinyin-size);
+}
+
 .time-asset-grid-month .time-asset-context-english {
-  font-size: 0.92rem;
+  font-size: var(--learner-english-size);
   line-height: 1.35;
 }
 
@@ -3832,7 +3828,7 @@ h4 {
 
 .time-asset-hanzi {
   font-family: var(--hanzi-font);
-  font-size: 1.35rem;
+  font-size: var(--learner-hanzi-size);
   line-height: 1.1;
   text-align: center;
 }
@@ -3842,7 +3838,7 @@ h4 {
   justify-content: center;
   gap: 8px;
   font-family: var(--hanzi-font);
-  font-size: 1.35rem;
+  font-size: var(--learner-hanzi-size);
   line-height: 1.1;
 }
 
@@ -3852,37 +3848,41 @@ h4 {
 }
 
 .time-asset-pinyin,
-.time-asset-english,
-.time-asset-context {
+.time-asset-english {
   color: var(--muted);
-  font-size: 0.82rem;
   line-height: 1.2;
   text-align: center;
 }
 
 .time-asset-pinyin {
   color: var(--berry-dark);
+  font-size: var(--learner-pinyin-size);
   font-weight: 700;
 }
+
+.time-asset-english { font-size: var(--learner-english-size); }
 
 .time-asset-context {
   font-family: var(--hanzi-font);
   color: var(--ink);
+  font-size: var(--learner-hanzi-size);
   line-height: 1.35;
 }
 
 .time-asset-context-pinyin,
 .time-asset-context-english {
   color: var(--muted);
-  font-size: 0.78rem;
   line-height: 1.25;
   text-align: center;
 }
 
 .time-asset-context-pinyin {
   color: var(--berry-dark);
+  font-size: var(--learner-pinyin-size);
   font-weight: 700;
 }
+
+.time-asset-context-english { font-size: var(--learner-english-size); }
 
 .book-word-card {
   display: flex;
@@ -3983,7 +3983,7 @@ h4 {
   margin: 0;
   color: var(--ink);
   font-family: var(--hanzi-font);
-  font-size: clamp(1.75rem, 4vw, 2.4rem);
+  font-size: var(--learner-hanzi-size);
   text-align: center;
 }
 
@@ -4075,7 +4075,7 @@ h4 {
   margin: 0;
   color: var(--ink);
   font-family: var(--hanzi-font);
-  font-size: clamp(1.45rem, 3vw, 2rem);
+  font-size: var(--learner-hanzi-size);
   text-align: center;
 }
 
@@ -4104,7 +4104,7 @@ h4 {
 .pet-food-match-copy .match-answer-label {
   color: var(--ink);
   font-family: var(--hanzi-font);
-  font-size: 1.45rem;
+  font-size: var(--learner-hanzi-size);
   font-weight: 700;
   line-height: 1.15;
 }
@@ -4254,19 +4254,19 @@ h4 {
 
 .time-routine-hanzi {
   font-family: var(--hanzi-font);
-  font-size: clamp(2rem, 4vw, 2.9rem);
+  font-size: var(--learner-hanzi-size);
   line-height: 1.15;
 }
 
 .time-routine-pinyin {
   color: var(--berry-dark);
-  font-size: 1.04rem;
+  font-size: var(--learner-pinyin-size);
   font-weight: 700;
 }
 
 .time-routine-english {
   color: var(--muted);
-  font-size: 1rem;
+  font-size: var(--learner-english-size);
 }
 
 .time-routine-chip-row {
@@ -5001,19 +5001,19 @@ h4 {
 
 .telephone-line-hanzi {
   font-family: var(--hanzi-font);
-  font-size: 1.8rem;
+  font-size: var(--learner-hanzi-size);
   color: var(--ink);
 }
 
 .telephone-line-pinyin {
   color: var(--berry-dark);
-  font-size: 0.95rem;
+  font-size: var(--learner-pinyin-size);
   font-weight: 700;
 }
 
 .telephone-line-english {
   color: var(--muted);
-  font-size: 0.98rem;
+  font-size: var(--learner-english-size);
 }
 
 .telephone-number-strip {
@@ -5036,7 +5036,7 @@ h4 {
   border-radius: 18px;
   background: rgba(255, 255, 255, 0.82);
   font-family: var(--hanzi-font);
-  font-size: 1.5rem;
+  font-size: var(--learner-hanzi-size);
   color: var(--ink);
   cursor: pointer;
 }
@@ -5055,7 +5055,7 @@ h4 {
 
 .numbers-game-hanzi {
   font-family: var(--hanzi-font);
-  font-size: 1.8rem;
+  font-size: var(--learner-hanzi-size);
   color: var(--ink);
 }
 
@@ -5067,13 +5067,13 @@ h4 {
 
 .numbers-game-pinyin {
   color: var(--berry-dark);
-  font-size: 0.92rem;
+  font-size: var(--learner-pinyin-size);
   font-weight: 700;
 }
 
 .numbers-game-english {
   color: var(--muted);
-  font-size: 0.95rem;
+  font-size: var(--learner-english-size);
 }
 
 .match-answer-label {
@@ -5106,19 +5106,6 @@ h4 {
 
 .sentence-choice-options .clothes-quiz-option {
   min-height: 104px;
-}
-
-.sentence-choice-options .numbers-game-hanzi {
-  font-size: 1.45rem;
-  line-height: 1.35;
-}
-
-.sentence-choice-options .numbers-game-pinyin {
-  font-size: 0.92rem;
-}
-
-.sentence-choice-options .numbers-game-english {
-  font-size: 0.95rem;
 }
 
 .food-preference-choice-label {
@@ -5179,25 +5166,26 @@ h4 {
 }
 
 .food-preference-builder-list .numbers-game-hanzi {
-  font-size: 1.18rem;
+  font-size: var(--learner-hanzi-size);
   flex: 0 0 auto;
 }
 
 .food-preference-card-meta {
   display: flex;
+  flex-direction: column;
   flex: 0 1 auto;
   justify-content: flex-start;
   gap: 4px;
   min-width: 0;
-  white-space: nowrap;
+  white-space: normal;
 }
 
-.food-preference-builder-list .numbers-game-pinyin,
+.food-preference-builder-list .numbers-game-pinyin {
+  font-size: var(--learner-pinyin-size);
+}
+
 .food-preference-builder-list .numbers-game-english {
-  font-size: 0.76rem;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  font-size: var(--learner-english-size);
 }
 
 .food-preference-built-sentence {
@@ -5248,7 +5236,8 @@ h4 {
   gap: 8px;
   margin: 0;
   color: var(--ink);
-  font-size: clamp(1.35rem, 2.8vw, 1.8rem);
+  font-family: var(--hanzi-font);
+  font-size: var(--learner-hanzi-size);
   font-weight: 800;
 }
 
@@ -5321,10 +5310,6 @@ h4 {
   text-align: center;
 }
 
-.classroom-sentence-output .numbers-game-english {
-  font-size: 1.05rem;
-}
-
 .classroom-sentence-object-choices {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(94px, 1fr));
@@ -5338,7 +5323,7 @@ h4 {
   display: grid;
   place-items: center;
   gap: 4px;
-  font-size: 1rem;
+  font-size: var(--learner-hanzi-size);
   line-height: 1.2;
 }
 
@@ -5355,11 +5340,13 @@ h4 {
 
 .transport-build-hint-pinyin {
   color: var(--berry-dark);
+  font-size: var(--learner-pinyin-size);
   font-weight: 700;
 }
 
 .transport-build-hint-english {
   color: var(--muted);
+  font-size: var(--learner-english-size);
 }
 
 .transport-build-target.is-correct {
@@ -5374,7 +5361,7 @@ h4 {
 
 .comparison-build-target {
   font-family: var(--hanzi-font);
-  font-size: 1.18rem;
+  font-size: var(--learner-hanzi-size);
   line-height: 1.75;
 }
 
@@ -5386,7 +5373,7 @@ h4 {
   justify-content: center;
   border-bottom: 2px solid var(--berry);
   color: var(--berry-dark);
-  font-size: 1.34rem;
+  font-size: var(--learner-hanzi-size);
   font-weight: 700;
 }
 
@@ -5588,19 +5575,19 @@ h4 {
 
 .multiplication-line-hanzi {
   font-family: var(--hanzi-font);
-  font-size: 2rem;
+  font-size: var(--learner-hanzi-size);
   color: var(--ink);
 }
 
 .multiplication-line-pinyin {
   color: var(--berry-dark);
-  font-size: 0.92rem;
+  font-size: var(--learner-pinyin-size);
   font-weight: 700;
 }
 
 .multiplication-line-english {
   color: var(--muted);
-  font-size: 0.95rem;
+  font-size: var(--learner-english-size);
 }
 
 .body-game {
@@ -5628,16 +5615,20 @@ h4 {
 
 .body-sentence-hanzi {
   font-family: var(--hanzi-font);
-  font-size: 2rem;
+  font-size: var(--learner-hanzi-size);
   color: var(--ink);
 }
 
 .body-sentence-pinyin {
   color: var(--berry-dark);
+  font-size: var(--learner-pinyin-size);
   font-weight: 700;
 }
 
-.body-sentence-english,
+.body-sentence-english {
+  font-size: var(--learner-english-size);
+}
+
 .body-sentence-note {
   color: var(--muted);
 }
@@ -5656,7 +5647,7 @@ h4 {
   background: #f0e6d4;
   color: var(--ink);
   font-family: var(--hanzi-font);
-  font-size: 1.05rem;
+  font-size: var(--learner-hanzi-size);
   cursor: pointer;
 }
 
@@ -5740,20 +5731,20 @@ h4 {
 
 .body-label-hanzi {
   font-family: var(--hanzi-font);
-  font-size: 1.9rem;
+  font-size: var(--learner-hanzi-size);
   line-height: 1.1;
   color: var(--ink);
 }
 
 .body-label-pinyin {
   color: var(--berry-dark);
-  font-size: 0.98rem;
+  font-size: var(--learner-pinyin-size);
   font-weight: 700;
 }
 
 .body-label-english {
   color: var(--muted);
-  font-size: 0.96rem;
+  font-size: var(--learner-english-size);
 }
 
 .body-label-button.is-muted .body-label-hanzi,
@@ -5883,20 +5874,19 @@ h4 {
 
 .body-match-hanzi {
   font-family: var(--hanzi-font);
-  font-size: 1.75rem;
+  font-size: var(--learner-hanzi-size);
   color: var(--ink);
 }
 
 .body-match-pinyin {
   color: var(--berry-dark);
-  font-size: 0.96rem;
+  font-size: var(--learner-pinyin-size);
   font-weight: 700;
 }
 
 .body-match-english {
-  color: var(--ink);
-  font-size: 1.02rem;
-  font-weight: 700;
+  color: var(--muted);
+  font-size: var(--learner-english-size);
 }
 
 .body-next-round {
@@ -7783,10 +7773,6 @@ h4 {
   .food-preference-fill-choice {
     min-height: 48px;
     padding: 6px 4px;
-  }
-
-  .food-preference-builder-list .numbers-game-hanzi {
-    font-size: 1.06rem;
   }
 
   .topic-board {

@@ -3649,7 +3649,7 @@
           </div>
         `).join("")}
       </div>
-      ${isComplete ? `<div class="stationery-picture-match-result is-correct"><span class="answer-result-mark" aria-hidden="true">\u2713</span><div><strong>${Object.values(round.target).join("")}\u3002</strong>${state2.showPinyin ? `<span>${round.pinyin}</span>` : ""}${state2.showEnglish ? `<span>${round.english}</span>` : ""}</div><button class="small-button is-practice-advance-button" type="button" data-stationery-picture-match-next>Next picture</button></div>` : ""}
+      ${isComplete ? `<div class="stationery-picture-match-result is-correct"><span class="answer-result-mark" aria-hidden="true">\u2713</span><div><strong>${Object.values(round.target).join("")}\u3002</strong>${state2.showPinyin ? `<span class="telephone-line-pinyin">${round.pinyin}</span>` : ""}${state2.showEnglish ? `<span>${round.english}</span>` : ""}</div><button class="small-button is-practice-advance-button" type="button" data-stationery-picture-match-next>Next picture</button></div>` : ""}
     </section>
   `;
     }
@@ -7762,7 +7762,8 @@
     function renderVisualTopicExplorer2(sceneId) {
       const topic = currentTopic2();
       const items = visualTopicItems2[sceneId] ?? [];
-      const comparisonWords = sceneId === "comparisons" ? `<div class="comparison-word-grid">${comparisonWordItems2.map((item) => `<button class="comparison-word-card" type="button" data-comparison-word="${item.hanzi}"><span class="comparison-word-hanzi">${item.hanzi}</span>${state2.showPinyin ? `<span class="comparison-word-pinyin">${item.pinyin}</span>` : ""}${state2.showEnglish ? `<span class="comparison-word-english">${item.english}</span>` : ""}</button>`).join("")}</div>` : "";
+      const comparisonScenes = sceneId === "comparisons" ? `<section class="school-lesson-section"><div class="time-months-heading"><p class="body-match-kicker">Scenes</p></div><div class="school-scene-grid comparison-scene-grid">${items.map((item) => `<section class="greetings-exchange school-scene-card"><div class="greetings-exchange-top"><div><p class="body-match-kicker">${item.english}</p></div><button class="small-button is-play-button" type="button" data-comparison-scene="${item.audio}">Play</button></div><div class="school-scene-layout"><img class="school-scene-image" src="${item.imagePath}" alt="${item.english}" /><div class="greetings-line-stack"><article class="greetings-line-card"><div class="telephone-bubble-copy"><p class="telephone-line-hanzi">${item.hanzi}</p>${state2.showPinyin ? `<p class="telephone-line-pinyin">${item.pinyin}</p>` : ""}${state2.showEnglish ? `<p class="telephone-line-english">${item.english}</p>` : ""}</div></article></div></div></section>`).join("")}</div></section>` : "";
+      const comparisonWords = sceneId === "comparisons" ? `<section class="school-lesson-section"><div class="time-months-heading"><p class="body-match-kicker">Book words</p></div><div class="comparison-word-grid">${comparisonWordItems2.map((item) => `<button class="comparison-word-card" type="button" data-comparison-word="${item.hanzi}"><span class="comparison-word-hanzi">${item.hanzi}</span>${state2.showPinyin ? `<span class="comparison-word-pinyin">${item.pinyin}</span>` : ""}${state2.showEnglish ? `<span class="comparison-word-english">${item.english}</span>` : ""}</button>`).join("")}</div></section>` : "";
       const usefulNotes = sceneId === "transport" ? `
         <section class="visual-topic-notes">
           <p class="body-match-kicker">Useful notes</p>
@@ -7794,8 +7795,7 @@
         <p class="body-match-kicker">${currentBook2().label} Lesson ${currentLesson2().lesson}</p>
         <h4>${topic.title}</h4>
       </div>
-      <div class="time-months-heading"><p class="body-match-kicker">Book words</p></div>
-      ${renderTimeAssetGrid2(items, `visual visual-${sceneId}`, "visual")}
+      ${comparisonScenes || `<div class="time-months-heading"><p class="body-match-kicker">Book words</p></div>${renderTimeAssetGrid2(items, `visual visual-${sceneId}`, "visual")}`}
       ${comparisonWords}
       ${usefulNotes}
     </div>
@@ -7804,6 +7804,11 @@
       focusExplorer2.querySelectorAll("[data-comparison-word]").forEach((button) => {
         button.addEventListener("click", () => {
           if (state2.tapAudioEnabled) speak2(button.dataset.comparisonWord, 0.78);
+        });
+      });
+      focusExplorer2.querySelectorAll("[data-comparison-scene]").forEach((button) => {
+        button.addEventListener("click", () => {
+          if (state2.tapAudioEnabled) speak2(button.dataset.comparisonScene, 0.78);
         });
       });
     }

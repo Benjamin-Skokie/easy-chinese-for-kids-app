@@ -81,6 +81,16 @@ For each remaining learning goal, write down:
 
 For a compact picture-choice practice panel, use one top-right green control only. Its label, icon, and behavior must agree in every state. If it starts a new round, it must never speak; if the correct choice should speak the complete sentence, trigger that speech from the correct-answer event instead. Do not add a second bottom Play, arrow, or New-game control after success.
 
+### Standard practice typography
+
+Practice uses the same learner-facing type scale as scenes. Do not enlarge a question or shrink an answer card to make a game feel more dramatic or more compact:
+
+- Chinese: `--learner-hanzi-size` (`1.3rem`)
+- Pinyin: `--learner-pinyin-size` (`0.95rem`)
+- English: `--learner-english-size` (`1.1rem`)
+
+Apply these shared values to question prompts, choices, selected answers, completion feedback, Book words, and Useful notes. Small section labels, instructions, progress counters, and control labels are interface text and may remain smaller. If the shared scale does not fit a game, change the card layout or grid—not the learner text size.
+
 Then consult [Practice Patterns](./game_templates.md) and choose the smallest fitting pattern. For sentence-fill practice, each configured round must own a whole approved sentence; never generate sentences from independently mixed word categories.
 
 For a builder with more than one valid answer, use valid-prefix checking against the approved answer set. Tell the learner before play that more than one answer can be correct. Do not make punctuation a selectable word card.
