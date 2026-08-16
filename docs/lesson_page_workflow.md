@@ -1,6 +1,6 @@
 # Lesson Page Build Checklist
 
-Last updated: 2026-08-15
+Last updated: 2026-08-16
 
 Use this checklist to build or materially change one learning topic. It is a decision order, not a page template and not a required reading list.
 
@@ -45,6 +45,24 @@ Before generating an asset or writing a renderer, put this compact, final decisi
 
 The usual page order is: **Scene → optional Book words → optional Useful notes → Practice**. Start from this structure; do not add narrative or filler cards unless the contract establishes a distinct teaching job for them. If Scene already gives every target word a clear picture and sentence, Book words must be text-only rather than repeat the same images. Each visible section has one owner. If a custom renderer owns the page content, set `ownsExplorerContent: true` and suppress generic duplicate panels.
 
+### Standard scene-card template
+
+Every scene card uses the same structure and shared classes. Do not create a compact or topic-specific visual variant for a card that belongs in the same scene grid.
+
+```text
+Short English scene title                 [Play]
+4:3 scene illustration
+Chinese sentence
+Pinyin
+English translation
+```
+
+- The title is one short English phrase only (for example, `Rainy day` or `Greeting a teacher`): never `Scene 1`, a Chinese title, an empty title, or a full explanatory sentence.
+- The green Play button is the only scene-card control and stays at the top right.
+- Use the shared sentence classes without local font overrides: `.telephone-line-hanzi` (Chinese), `.telephone-line-pinyin` (pinyin), and `.telephone-line-english` (English). Their shared type scale is the standard for every scene, including Hobbies and Toys.
+- Use the shared card frame and sentence stack. A 2 × 2 desktop scene grid means equal card treatment for every card; do not use a `compact` class to reduce padding, gaps, borders, or type.
+- Keep the teaching sentence beneath the image. The title labels the situation; it does not replace, repeat, or translate the sentence.
+
 If a later book lesson owns different scenes, language, and practice, make it a separate sibling activity page in the relevant home category. Do not place it as a tab, renderer branch, or feature-sized navigation shelf inside an earlier completed lesson.
 
 ## 4. Define practice as an answer model, not a fixed string
@@ -75,7 +93,7 @@ Reuse the asset library when it clearly teaches the planned scene. Generate new 
 
 Check each selected asset’s native aspect ratio against the scene grid before coding. The grid’s visible image ratio is a page requirement: select or generate an asset that fits it rather than relying on `contain` to expose mismatched source shapes. Use a deliberate crop only when it preserves the teaching evidence.
 
-For a scene grid specified as **N × 2**, render exactly two columns on desktop and one column on phones. Every card must have the same visible image frame and height. CSS padding or `object-fit: contain` is not a substitute for a coherent asset series when source backgrounds or subject scale make cards look uneven. For a new repeated action series, create final assets at the contracted ratio (normally 4:3), with the same recurring child, consistent clothing and scale, and a clean white or transparent background. Inspect every final image at normal page size for visual defects and semantic mistakes—for example, damaged skin details, unsafe poses, or shoes on a bed—before wiring it into the lesson.
+For a scene grid specified as **N × 2**, render exactly two columns on desktop and one column on phones. Every card must have the same visible image frame, height, and standard scene-card typography. CSS padding or `object-fit: contain` is not a substitute for a coherent asset series when source backgrounds or subject scale make cards look uneven. For a new repeated action series, create final assets at the contracted ratio (normally 4:3), with the same recurring child, consistent clothing and scale, and a clean white or transparent background. Inspect every final image at normal page size for visual defects and semantic mistakes—for example, damaged skin details, unsafe poses, or shoes on a bed—before wiring it into the lesson.
 
 Keep production image URLs relative to the page or application root; never use a local `file://` or machine-specific path. Prefer WebP for new raster assets. A file that only exists locally is not a deployable asset: confirm that every referenced image is tracked and will be included in the published site.
 

@@ -4313,30 +4313,6 @@ h4 {
   align-content: start;
 }
 
-.greetings-line-stack.is-compact {
-  gap: 5px;
-  padding: 12px 14px;
-  border: 1px solid rgba(221, 207, 187, 0.68);
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.7);
-}
-
-.greetings-line-stack.is-compact .greetings-line-card {
-  display: block;
-  padding: 0;
-  border: 0;
-  border-radius: 0;
-  background: transparent;
-}
-
-.greetings-line-stack.is-compact .telephone-bubble-copy {
-  gap: 2px;
-}
-
-.greetings-line-stack.is-compact .telephone-line-hanzi {
-  font-size: 1.42rem;
-}
-
 .greetings-line-card {
   display: flex;
   justify-content: space-between;

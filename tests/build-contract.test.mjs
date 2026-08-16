@@ -46,8 +46,8 @@ import { familyGameItemIds, familyPractice, familyTopic, illustratedFamily } fro
 
 test("the local page loads a single bundled application script", () => {
   const html = readFileSync("index.html", "utf8");
-  assert.match(html, /<link rel="stylesheet" href="styles\.css\?v=20260816-requests-side-by-side-lines" \/>/);
-  assert.match(html, /<script src="app\.js\?v=20260816-scene-titles"><\/script>/);
+  assert.match(html, /<link rel="stylesheet" href="styles\.css\?v=20260816-scene-card-parity" \/>/);
+  assert.match(html, /<script src="app\.js\?v=20260816-scene-card-parity"><\/script>/);
   assert.doesNotMatch(html, /type="module"/);
 });
 
@@ -65,6 +65,15 @@ test("topic scenes use short English titles instead of ordinal labels", () => {
   assert.match(readFileSync("src/features/world/weather.js", "utf8"), /title: "Rainy day"/);
   assert.match(readFileSync("src/features/world/animals.js", "utf8"), /title: "Pets at home"/);
   assert.match(readFileSync("src/features/play-hobbies/play-hobbies-runtime.js", "utf8"), /sceneTitle = \(id\)/);
+});
+
+test("compact and regular scenes share the same Chinese, pinyin, and English type scale", () => {
+  const styles = readFileSync("styles.css", "utf8");
+  assert.match(styles, /\.telephone-line-hanzi \{\s+font-family: var\(--hanzi-font\);\s+font-size: 1\.8rem;/);
+  assert.match(styles, /\.telephone-line-pinyin \{\s+color: var\(--berry-dark\);\s+font-size: 0\.95rem;/);
+  assert.match(styles, /\.telephone-line-english \{\s+color: var\(--muted\);\s+font-size: 0\.98rem;/);
+  assert.doesNotMatch(styles, /\.greetings-line-stack\.is-compact/);
+  assert.doesNotMatch(readFileSync("src/features/play-hobbies/play-hobbies-runtime.js", "utf8"), /greetings-line-stack is-compact/);
 });
 
 test("Everyday Actions keeps one silent new-game button in the practice header", () => {

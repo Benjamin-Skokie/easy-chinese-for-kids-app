@@ -21,7 +21,7 @@ Each scene card always has:
 3. one undistorted scene illustration;
 4. sentence line(s) that directly describe that illustration.
 
-The shared `worldSceneCardMarkup()` renderer owns this card structure. A topic supplies only scene data: title, illustration, sentence lines, and whether the card needs the compact layout.
+The shared `worldSceneCardMarkup()` renderer owns this card structure. A topic supplies only scene data: title, illustration, and sentence lines. The active workflow does not allow a compact scene-card variant within a shared grid.
 
 ## Optional section rules
 
