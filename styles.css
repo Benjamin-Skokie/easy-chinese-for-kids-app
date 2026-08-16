@@ -3283,6 +3283,10 @@ h4 {
   grid-template-columns: minmax(0, 1fr);
 }
 
+.toys-scene-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
 .school-lesson-section.is-weather .weather-scene-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -5246,6 +5250,31 @@ h4 {
 
 .clothes-quiz-image.hobbies-3b-practice-image {
   object-fit: cover;
+}
+
+.toy-practice-frame {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  color: var(--ink);
+  font-size: clamp(1.35rem, 2.8vw, 1.8rem);
+  font-weight: 800;
+}
+
+.toy-practice-blank {
+  min-width: 4.5em;
+  padding: 3px 12px;
+  border-bottom: 2px dashed rgba(143, 105, 136, 0.45);
+  color: rgba(122, 110, 96, 0.54);
+  text-align: center;
+}
+
+.toy-practice-blank.is-correct {
+  border-bottom-style: solid;
+  border-color: rgba(72, 137, 97, 0.55);
+  color: #397452;
 }
 
 .hobbies-sentence-slot {
@@ -7734,6 +7763,10 @@ h4 {
   .school-word-grid,
   .school-word-grid.is-text-only {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .toys-scene-grid {
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .school-lesson-section.is-lunch .school-scene-grid.is-single {

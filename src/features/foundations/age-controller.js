@@ -4,7 +4,9 @@ export function createAgeController({ state, ageGameItemIds, ageBuildPhrases, ag
   function resetAgeChallenge(options = {}) {
     const items = ageGameItems();
     if (!items.length) return;
-    const answer = items[Math.floor(Math.random() * items.length)];
+    const answerId = nextRandomCycleId(state, "age-listen", items.map((item) => item.id));
+    const answer = items.find((item) => item.id === answerId);
+    if (!answer) return;
     const distractors = shuffleArray(items.filter((item) => item.id !== answer.id)).slice(0, Math.min(3, Math.max(0, items.length - 1)));
     state.ageChallengeAnswerId = answer.id;
     state.ageChallengePromptId = answer.id;
@@ -38,7 +40,9 @@ export function createAgeController({ state, ageGameItemIds, ageBuildPhrases, ag
   }
   function ageBuildTarget() { return ageBuildPhrases.find((entry) => entry.id === state.ageBuildTargetId) ?? ageBuildPhrases[0]; }
   function resetAgeBuilder(options = {}) {
-    const target = ageBuildPhrases[Math.floor(Math.random() * ageBuildPhrases.length)];
+    const targetId = nextRandomCycleId(state, "age-build", ageBuildPhrases.map((entry) => entry.id));
+    const target = ageBuildPhrases.find((entry) => entry.id === targetId);
+    if (!target) return;
     state.ageBuildTargetId = target.id;
     state.ageBuildAvailableTokens = shuffleArray(target.tokens);
     state.ageBuildSelectedTokens = [];
@@ -80,3 +84,4 @@ export function createAgeController({ state, ageGameItemIds, ageBuildPhrases, ag
   }
   return { ageGameItems, resetAgeChallenge, ensureAgeChallenge, handleAgeChallengePlay, handleAgeChallengeGuess, ageBuildTarget, resetAgeBuilder, ensureAgeBuilder, handleAgeBuildToken, handleAgeBuildClear, renderAgeExplorer };
 }
+import { nextRandomCycleId } from "../../core/random-cycle.js";

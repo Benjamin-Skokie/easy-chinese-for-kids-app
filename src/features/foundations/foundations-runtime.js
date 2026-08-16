@@ -15,7 +15,7 @@ function resetNumberChallenge(options = {}) {
   const stage = currentNumberStage();
   const items = numberStageItems(stage);
   const pool = items.map((entry) => entry.value);
-  const targetValue = pool[Math.floor(Math.random() * pool.length)];
+  const targetValue = nextRandomCycleId(state, `numbers-listen:${stage.id}`, pool);
   const distractors = shuffleArray(pool.filter((value) => value !== targetValue)).slice(
     0,
     Math.min(3, Math.max(0, pool.length - 1))
@@ -40,22 +40,22 @@ function resetMathChallenge() {
   const stage = currentNumberStage();
   const low = Math.max(1, stage.start);
   const high = Math.max(low, stage.end);
-  const operator = Math.random() < 0.5 ? "+" : "-";
-  let left;
-  let right;
-  let answer;
-
-  if (operator === "+") {
-    const additionMaxLeft = high > low ? high - 1 : high;
-    left = Math.floor(Math.random() * (additionMaxLeft - low + 1)) + low;
-    const maxRight = Math.max(1, high - left);
-    right = Math.floor(Math.random() * maxRight) + 1;
-    answer = left + right;
-  } else {
-    left = Math.floor(Math.random() * (high - low + 1)) + low;
-    right = Math.floor(Math.random() * (left + 1));
-    answer = left - right;
-  }
+  const additionMaxLeft = high > low ? high - 1 : high;
+  const problems = [
+    ...Array.from({ length: Math.max(0, additionMaxLeft - low + 1) }, (_, offset) => {
+      const left = low + offset;
+      return Array.from({ length: Math.max(1, high - left) }, (_, rightOffset) => {
+        const right = rightOffset + 1;
+        return { operator: "+", left, right, answer: left + right };
+      });
+    }).flat(),
+    ...Array.from({ length: high - low + 1 }, (_, offset) => {
+      const left = low + offset;
+      return Array.from({ length: left + 1 }, (_, right) => ({ operator: "-", left, right, answer: left - right }));
+    }).flat()
+  ];
+  const problemId = nextRandomCycleId(state, `math:${stage.id}`, problems.map((problem) => `${problem.operator}:${problem.left}:${problem.right}`));
+  const { operator, left, right, answer } = problems.find((problem) => `${problem.operator}:${problem.left}:${problem.right}` === problemId) ?? problems[0];
 
   state.mathChallengeStageId = stage.id;
   state.mathChallengeOperator = operator;
@@ -203,7 +203,9 @@ function resetFamilyChallenge(options = {}) {
     return;
   }
 
-  const answer = items[Math.floor(Math.random() * items.length)];
+  const answerId = nextRandomCycleId(state, "family-listen", items.map((item) => item.id));
+  const answer = items.find((item) => item.id === answerId);
+  if (!answer) return;
   const distractors = shuffleArray(items.filter((item) => item.id !== answer.id)).slice(
     0,
     Math.min(3, Math.max(0, items.length - 1))
@@ -1342,3 +1344,4 @@ function updateMultiplicationPlaybackControls(container) {
 
   return { numberStageItems, resetNumberChallenge, ensureNumberChallenge, resetMathChallenge, ensureMathChallenge, familyGameItems, familyPersonForItemId, familyHeadshotForItemId, isFamilySentenceItemId, familyBookWordItems, usesLessonTemplate, bookWordItemsForTopic, usefulNoteForTopic, familyWordForPersonId, resetFamilyChallenge, ensureFamilyChallenge, resetListenChallengeResult, handleFamilyChallengePlay, handleFamilyChallengeGuess, resetFamilyMatchGame, ensureFamilyMatchGame, handleFamilyMatchPhrase, handleFamilyMatchAttempt, mathChallengeAudioText, handleMathChallengeSubmit, handleNumberChallengeGuess, bodyMatchItems, nextBodyRound, resetBodyMatchGame, ensureBodyMatchGame, handleBodyMatchChinese, handleBodyMatchAttempt, numberWordListItems, renderBodyLabelButton, renderBodyExplorer, renderNumberVisual, renderNumbersExplorer, renderTelephoneExplorer, renderFamilyHomeVisual, renderFamilyExplorer, renderIdentityExplorer, renderMultiplicationExplorer };
 }
+import { nextRandomCycleId } from "../../core/random-cycle.js";

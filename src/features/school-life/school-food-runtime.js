@@ -107,9 +107,8 @@ function handleBackpackGameGuess(itemId) {
 
 function resetSchoolChallenge(options = {}) {
   const items = schoolPracticeItems();
-  const candidates = items.filter((item) => item.id !== options.excludeId);
-  const answers = candidates.length ? candidates : items;
-  const answer = answers[Math.floor(Math.random() * answers.length)];
+  const answerId = nextRandomCycleId(state, `school-listen:${currentTopic().id}`, items.map((item) => item.id));
+  const answer = items.find((item) => item.id === answerId);
   if (!answer) return;
   const optionIds = currentTopic().id === "school-subjects"
     ? shuffleArray(items.map((item) => item.id))
@@ -216,7 +215,7 @@ function handleMealsPictureChoice(optionId) {
 function nextMealsPictureChoice() {
   const items = mealsPictureChoiceItems();
   if (!items.length) return;
-  state.mealsPictureQuizIndex = (state.mealsPictureQuizIndex + 1) % items.length;
+  advanceShuffledOrder(state, "mealsPictureQuizOrder", "mealsPictureQuizIndex", shuffleArray);
   resetMealsPictureQuestion();
   renderActivityPanel(currentTopic());
 }
@@ -517,7 +516,7 @@ function clearSchoolBuilder() {
 }
 
 function nextSchoolBuilder() {
-  state.schoolBuildIndex = (state.schoolBuildIndex + 1) % state.schoolBuildOrder.length;
+  advanceShuffledOrder(state, "schoolBuildOrder", "schoolBuildIndex", shuffleArray);
   prepareSchoolBuilder();
   renderActivityPanel(currentTopic());
 }
@@ -1049,3 +1048,4 @@ function renderSchoolExplorer(topicId) {
 
   return { schoolPracticeItems, ensureSchoolPractice, renderSchoolPractice, renderStationeryPractice, renderSchoolSuppliesPractice, renderFoodPractice, renderMealsConversationPractice, renderFoodPreferencesPractice, renderClassroomPractice, renderSchoolExplorer };
 }
+import { advanceShuffledOrder, nextRandomCycleId } from "../../core/random-cycle.js";

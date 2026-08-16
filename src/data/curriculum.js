@@ -199,7 +199,7 @@ export const topicCardMeta = {
   "hobbies-3b": { zhTitle: "音乐和运动", enTitle: "Music & Movement", hint: "Singing, dancing, swimming, skating" },
   "hobbies-at-home": { zhTitle: "在家爱好", enTitle: "Hobbies at Home", hint: "Television, piano, games, movies" },
   "hobbies-leisure": { zhTitle: "休闲时间", enTitle: "Leisure Time", hint: "Running, soccer, biking, sand" },
-  toys: { zhTitle: "玩具", enTitle: "Toys", hint: "Toy car, train, airplane" },
+  toys: { zhTitle: "玩具", enTitle: "Toys", hint: "Doll, toy train, airplane, bear" },
   clothes: { zhTitle: "衣服", enTitle: "Clothes", hint: "Dress for the day" },
   comparisons: { zhTitle: "描述和比较", enTitle: "Descriptions & Comparisons", hint: "Big, small, long, short" },
   positions: { zhTitle: "位置和方向", enTitle: "Positions & Directions", hint: "Up, down, inside, outside" },

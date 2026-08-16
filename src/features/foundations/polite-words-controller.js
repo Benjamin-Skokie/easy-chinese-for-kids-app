@@ -112,9 +112,9 @@ export function createPoliteWordsController({
       return;
     }
 
-    const answerChoices = items.filter((item) => item.id !== options.excludeId);
-    const answerPool = answerChoices.length ? answerChoices : items;
-    const answer = answerPool[Math.floor(Math.random() * answerPool.length)];
+    const answerId = nextRandomCycleId(state, "polite-words-listen", items.map((item) => item.id));
+    const answer = items.find((item) => item.id === answerId);
+    if (!answer) return;
     const distractors = shuffleArray(items.filter((item) => item.id !== answer.id)).slice(
       0,
       Math.min(3, Math.max(0, items.length - 1))
@@ -251,3 +251,4 @@ export function createPoliteWordsController({
     renderPoliteWordsExplorer
   };
 }
+import { nextRandomCycleId } from "../../core/random-cycle.js";

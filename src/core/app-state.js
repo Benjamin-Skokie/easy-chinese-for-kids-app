@@ -16,6 +16,7 @@ export function createAppState() {
   showEnglish: true,
   tapAudioEnabled: true,
   selectedFocusItemId: null,
+  randomPracticeCycles: {},
   ...createFoundationState(),
   ...createTimeDailyLifeState(),
   schoolPracticeTopicId: "",
@@ -92,6 +93,11 @@ export function createAppState() {
   hobbiesBuildAvailableTokens: [],
   hobbiesBuildSelectedTokens: [],
   hobbiesBuildResult: "",
-  hobbiesBuildLessonKey: ""
+  hobbiesBuildLessonKey: "",
+  toysPracticeItemId: "",
+  toysPracticeOptionIds: [],
+  toysPracticeSelectedId: "",
+  toysPracticeResult: "",
+  toysPracticeWrongIds: new Set()
   };
 }

@@ -2,6 +2,7 @@ import { colourLessons } from "./colours.js";
 import { animalLessons } from "./animals.js";
 import { natureLesson, weatherLesson } from "./weather.js";
 import { imageLoadingAttrs } from "../../core/image-loading.js";
+import { advanceShuffledOrder, nextRandomCycleId } from "../../core/random-cycle.js";
 
 const colourSwatches = {
   red: "#e85b50",
@@ -446,10 +447,15 @@ export function createWorldRuntime({ state, currentTopic, currentBook, currentLe
 
   function resetColourMission() {
     const colourItems = colourLessons["2a"].items;
-    const objects = shuffled(colourMissionObjects).slice(0, 6);
+    const targetObjectId = nextRandomCycleId(state, "colours-mission-target", colourMissionObjects.map((object) => object.id));
+    const targetObject = colourMissionObjects.find((object) => object.id === targetObjectId);
+    const objects = shuffled([
+      targetObject,
+      ...shuffled(colourMissionObjects.filter((object) => object.id !== targetObjectId)).slice(0, 5)
+    ].filter(Boolean));
     const colours = shuffled(colourItems).slice(0, 6);
     state.worldColourMissionCards = shuffled(objects.map((object, index) => ({ objectId: object.id, colourId: colours[index].id })));
-    state.worldColourMissionTargetObjectId = state.worldColourMissionCards[Math.floor(Math.random() * state.worldColourMissionCards.length)].objectId;
+    state.worldColourMissionTargetObjectId = targetObjectId;
     state.worldColourMissionPickedObjectId = "";
     state.worldColourMissionResult = "";
   }
@@ -514,7 +520,7 @@ export function createWorldRuntime({ state, currentTopic, currentBook, currentLe
       renderActivityPanel(currentTopic());
     }));
     activityList.querySelector("[data-world-colour-next]")?.addEventListener("click", () => {
-      state.worldColourRoundIndex = (state.worldColourRoundIndex + 1) % state.worldColourRoundIds.length;
+      advanceShuffledOrder(state, "worldColourRoundIds", "worldColourRoundIndex", shuffled);
       state.worldColourPickedId = "";
       state.worldColourResult = "";
       renderActivityPanel(currentTopic());
@@ -561,7 +567,7 @@ export function createWorldRuntime({ state, currentTopic, currentBook, currentLe
     activityList.innerHTML = `<section class="practice-split-card nature-fill-practice"><div class="numbers-game-top"><div><p class="body-match-kicker">Look and complete</p><p class="numbers-game-note">Choose the two words that make the sentence match the picture.</p></div><button class="small-button is-play-button" type="button" data-nature-fill-play>Play</button></div><p class="nature-fill-sentence"><span class="weather-fill-blank${state.worldNatureFillSubjectResult ? ` is-${state.worldNatureFillSubjectResult}` : ""}">${state.worldNatureFillSubjectPicked || "____"}</span>有<span class="weather-fill-blank${state.worldNatureFillWordResult ? ` is-${state.worldNatureFillWordResult}` : ""}">${state.worldNatureFillWordPicked || "____"}</span><span class="nature-fill-inline-icon">${natureIconMarkup(round.id)}</span>。</p>${complete && state.showPinyin ? `<p class="numbers-game-pinyin">${round.pinyin}</p>` : ""}${complete && state.showEnglish ? `<p class="numbers-game-english">${round.english}</p>` : ""}<div class="weather-fill-choice-groups"><div><p class="weather-fill-choice-label">第一个词</p><div class="weather-fill-options">${state.worldNatureFillSubjectChoices.map((choice) => `<button class="weather-fill-option${state.worldNatureFillSubjectPicked === choice ? ` is-${state.worldNatureFillSubjectResult}` : ""}" type="button" data-nature-fill-subject="${choice}">${choice}</button>`).join("")}</div></div><div><p class="weather-fill-choice-label">有什么？</p><div class="weather-fill-options">${state.worldNatureFillWordChoices.map((choice) => `<button class="weather-fill-option${state.worldNatureFillWordPicked === choice ? ` is-${state.worldNatureFillWordResult}` : ""}" type="button" data-nature-fill-word="${choice}">${choice}</button>`).join("")}</div></div></div>${state.worldNatureFillSubjectResult === "wrong" || state.worldNatureFillWordResult === "wrong" ? '<p class="weather-fill-feedback">再看看图，想想句子的第一个词和有什么。</p>' : ""}</section>`;
     activityList.querySelector("[data-nature-fill-play]")?.addEventListener("click", () => {
       if (complete) {
-        state.worldNatureFillRoundIndex = (state.worldNatureFillRoundIndex + 1) % state.worldNatureFillRoundIds.length;
+        advanceShuffledOrder(state, "worldNatureFillRoundIds", "worldNatureFillRoundIndex", shuffled);
         resetNatureFillChoices();
         renderActivityPanel(currentTopic());
         return;
@@ -642,7 +648,7 @@ export function createWorldRuntime({ state, currentTopic, currentBook, currentLe
     `;
     activityList.querySelector("[data-weather-dress-play]")?.addEventListener("click", () => {
       if (state.worldWeatherDressResult === "correct") {
-        state.worldWeatherDressRoundIndex = (state.worldWeatherDressRoundIndex + 1) % state.worldWeatherDressRoundIds.length;
+        advanceShuffledOrder(state, "worldWeatherDressRoundIds", "worldWeatherDressRoundIndex", shuffled);
         state.worldWeatherDressPickedId = "";
         state.worldWeatherDressResult = "";
         renderActivityPanel(currentTopic());
@@ -662,7 +668,7 @@ export function createWorldRuntime({ state, currentTopic, currentBook, currentLe
     }));
     activityList.querySelector("[data-weather-fill-play]")?.addEventListener("click", () => {
       if (fillComplete) {
-        state.worldWeatherFillRoundIndex = (state.worldWeatherFillRoundIndex + 1) % state.worldWeatherFillRoundIds.length;
+        advanceShuffledOrder(state, "worldWeatherFillRoundIds", "worldWeatherFillRoundIndex", shuffled);
         state.worldWeatherFillWeatherPicked = "";
         state.worldWeatherFillTemperaturePicked = "";
         state.worldWeatherFillWeatherResult = "";

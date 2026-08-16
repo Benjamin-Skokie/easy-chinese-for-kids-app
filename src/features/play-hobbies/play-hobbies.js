@@ -91,24 +91,32 @@ export const hobbiesLeisureTopic = {
 export const toysTopic = {
   id: "toys",
   title: "Toys",
-  summary: "A focused toy and kid-transport word set that fits Book 2A well and works for quick picture-based review.",
-  progressLabel: "2A toy store",
+  summary: "Name four toys and say what you have.",
+  progressLabel: "2A Lesson 4",
   iconText: "玩具",
   iconColor: "#b86f52",
   iconAccent: "#f2cb7f",
   iconTheme: "toys",
-  focus: { hanzi: "玩具汽车，火车，飞机", pinyin: "wán jù qì chē, huǒ chē, fēi jī", english: "toy car, train, airplane", audio: "玩具汽车，火车，飞机" },
+  ownsExplorerContent: true,
+  focus: { hanzi: "我有玩具。", pinyin: "wǒ yǒu wán jù.", english: "I have toys.", audio: "我有玩具" },
   focusItems: [
-    { id: "toy-car", hanzi: "玩具汽车", pinyin: "wán jù qì chē", english: "toy car", audio: "玩具汽车" },
-    { id: "train", hanzi: "火车", pinyin: "huǒ chē", english: "train", audio: "火车" },
-    { id: "airplane", hanzi: "飞机", pinyin: "fēi jī", english: "airplane", audio: "飞机" },
-    { id: "school-bus", hanzi: "校车", pinyin: "xiào chē", english: "school bus", audio: "校车" },
-    { id: "subway", hanzi: "地铁", pinyin: "dì tiě", english: "subway", audio: "地铁" },
-    { id: "toy-doll", hanzi: "玩具娃娃", pinyin: "wán jù wá wa", english: "toy doll", audio: "玩具娃娃" },
-    { id: "bicycle", hanzi: "自行车", pinyin: "zì xíng chē", english: "bicycle", audio: "自行车" }
+    { id: "doll", hanzi: "娃娃", pinyin: "wá wa", english: "doll", audio: "娃娃", imagePath: "assets/illustrated-toys/toy-doll.webp", imageAlt: "A doll" },
+    { id: "toy-train", hanzi: "玩具火车", pinyin: "wán jù huǒ chē", english: "toy train", audio: "玩具火车", imagePath: "assets/illustrated-toys/train.webp", imageAlt: "A toy train" },
+    { id: "toy-airplane", hanzi: "玩具飞机", pinyin: "wán jù fēi jī", english: "toy airplane", audio: "玩具飞机", imagePath: "assets/illustrated-toys/airplane.webp", imageAlt: "A toy airplane" },
+    { id: "toy-bear", hanzi: "玩具熊", pinyin: "wán jù xióng", english: "toy bear", audio: "玩具熊", imagePath: "assets/illustrated-toys/teddy-bear.webp", imageAlt: "A toy bear" }
   ],
-  parentGuide: "Use the child's own toy shelf first. Point, tap the card, hear the word, then ask the child to find the matching toy or vehicle.",
-  cultureGuide: "This set bridges toy language and everyday transport language, so it can grow naturally into later daily-life lessons.",
-  activities: ["Tap to hear", "Find the toy", "Listen and choose", "Sort toys and vehicles"],
-  steps: [{ book: "2A", lesson: 4, title: "My toys", note: "Learn a core toy set with familiar child-friendly objects." }]
+  flashcardItems: [
+    { id: "toys", hanzi: "玩具", pinyin: "wán jù", english: "toys", audio: "玩具", imagePath: "assets/illustrated-toys/toys-collection.webp", imageAlt: "A collection of toys" },
+    { id: "toy-car", hanzi: "玩具汽车", pinyin: "wán jù qì chē", english: "toy car", audio: "玩具汽车", imagePath: "assets/illustrated-toys/toy-car.webp", imageAlt: "A toy car" },
+    { id: "toy-train", hanzi: "玩具火车", pinyin: "wán jù huǒ chē", english: "toy train", audio: "玩具火车", imagePath: "assets/illustrated-toys/train.webp", imageAlt: "A toy train" },
+    { id: "toy-airplane", hanzi: "玩具飞机", pinyin: "wán jù fēi jī", english: "toy airplane", audio: "玩具飞机", imagePath: "assets/illustrated-toys/airplane.webp", imageAlt: "A toy airplane" },
+    { id: "school-bus", hanzi: "玩具校车", pinyin: "wán jù xiào chē", english: "toy school bus", audio: "玩具校车", imagePath: "assets/illustrated-toys/school-bus.webp", imageAlt: "A toy school bus" },
+    { id: "doll", hanzi: "娃娃", pinyin: "wá wa", english: "doll", audio: "娃娃", imagePath: "assets/illustrated-toys/toy-doll.webp", imageAlt: "A doll" },
+    { id: "bicycle", hanzi: "自行车", pinyin: "zì xíng chē", english: "bicycle", audio: "自行车", imagePath: "assets/illustrated-toys/bicycle.webp", imageAlt: "A bicycle" },
+    { id: "toy-bear", hanzi: "玩具熊", pinyin: "wán jù xióng", english: "toy bear", audio: "玩具熊", imagePath: "assets/illustrated-toys/teddy-bear.webp", imageAlt: "A toy bear" }
+  ],
+  parentGuide: "Point to a real toy at home and say 我有… together.",
+  cultureGuide: "Keep this page with the Book 2A ownership frame; later requests to use someone else's toy belong in Requests.",
+  activities: ["Tap to hear", "Say 我有…", "Picture choice"],
+  steps: [{ book: "2A", lesson: 4, title: "My toys", note: "Name four toys with 我有…" }]
 };

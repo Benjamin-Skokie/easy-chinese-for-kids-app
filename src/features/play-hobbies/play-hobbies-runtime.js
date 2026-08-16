@@ -81,9 +81,25 @@ const lessons = {
   }
 };
 
+import { advanceShuffledOrder, nextRandomCycleId } from "../../core/random-cycle.js";
+
 function shuffled(items) { const copy = [...items]; for (let i = copy.length - 1; i > 0; i -= 1) { const j = Math.floor(Math.random() * (i + 1)); [copy[i], copy[j]] = [copy[j], copy[i]]; } return copy; }
 
 export function createPlayHobbiesRuntime({ state, currentTopic, currentBook, currentLesson, focusExplorer, speak, selectFocusItem, activityPanelTitle, activityPanelSummary, activityList, renderActivityPanel }) {
+  const toyItems = () => currentTopic().flashcardItems;
+  const currentToyPracticeItem = () => toyItems().find((item) => item.id === state.toysPracticeItemId) ?? toyItems()[0];
+  const nextToysPracticeRound = () => {
+    const items = toyItems();
+    const itemId = nextRandomCycleId(state, "toys-picture-choice", items.map((item) => item.id));
+    state.toysPracticeItemId = itemId;
+    state.toysPracticeOptionIds = shuffled(items.map((item) => item.id));
+    state.toysPracticeSelectedId = "";
+    state.toysPracticeResult = "";
+    state.toysPracticeWrongIds = new Set();
+  };
+  const ensureToysPractice = () => {
+    if (!state.toysPracticeItemId || !state.toysPracticeOptionIds.length) nextToysPracticeRound();
+  };
   const lessonKey = () => ({ "hobbies-3b": "3b:4", "hobbies-at-home": "4b:4", "hobbies-leisure": "4b:7" }[currentTopic().id] ?? "2a:5");
   const lesson = () => lessons[lessonKey()] ?? lessons["2a:5"];
   const speakLesson = (text, rate) => speak(text, rate);
@@ -92,16 +108,17 @@ export function createPlayHobbiesRuntime({ state, currentTopic, currentBook, cur
   const validPrefix = (entry, tokens) => entry.answers.some((answer) => tokens.every((token, index) => token === answer.tokens[index]));
   function resetRound(newGame = false) {
     const sameLesson = state.hobbiesBuildLessonKey === lessonKey();
-    const previousRoundId = sameLesson ? round().itemId : "";
     if (!sameLesson) { state.hobbiesBuildLessonKey = lessonKey(); newGame = true; }
-    if (!state.hobbiesBuildOrder.length || newGame) {
+    if (!state.hobbiesBuildOrder.length) {
       const order = shuffled(lesson().rounds).map((entry) => entry.itemId);
-      if (newGame && previousRoundId && order.length > 1 && order[0] === previousRoundId) [order[0], order[1]] = [order[1], order[0]];
       state.hobbiesBuildOrder = order; state.hobbiesBuildRoundIndex = 0;
+    } else if (newGame) {
+      advanceShuffledOrder(state, "hobbiesBuildOrder", "hobbiesBuildRoundIndex", shuffled);
     }
     const entry = round(); state.hobbiesBuildSelectedTokens = []; state.hobbiesBuildAvailableTokens = lesson().practiceType === "sentence-choice" ? shuffled(entry.optionIds) : shuffled([...new Set([...entry.answers.flatMap((answer) => answer.tokens), ...entry.distractors])]); state.hobbiesBuildResult = "";
   }
   function renderHobbiesExplorer() {
+    if (currentTopic().id === "toys") return renderToysExplorer();
     if (!["hobbies", "hobbies-3b", "hobbies-at-home", "hobbies-leisure"].includes(currentTopic().id)) return;
     const page = lesson(); const items = currentTopic().focusItems; const itemFor = (id) => items.find((item) => item.id === id);
     const imageClass = "school-scene-image";
@@ -109,7 +126,50 @@ export function createPlayHobbiesRuntime({ state, currentTopic, currentBook, cur
     focusExplorer.querySelectorAll("[data-hobbies-word]").forEach((button) => button.addEventListener("click", () => selectFocusItem(button.dataset.hobbiesWord, { playAudio: true })));
     focusExplorer.querySelectorAll("[data-hobbies-scene]").forEach((button) => button.addEventListener("click", () => state.tapAudioEnabled && speakLesson(button.dataset.hobbiesScene, 0.74)));
   }
+  function renderToysExplorer() {
+    const flashcards = currentTopic().flashcardItems;
+    const scenes = [
+      { id: "doll", imagePath: "assets/illustrated-toys/lele-playing-doll.webp", alt: "Lele playing with a doll", hanzi: "我有娃娃。", pinyin: "wǒ yǒu wá wa.", english: "I have a doll.", audio: "我有娃娃" },
+      { id: "toy-train", imagePath: "assets/illustrated-toys/lele-playing-toy-train.webp", alt: "Lele pushing a toy train", hanzi: "我有玩具火车。", pinyin: "wǒ yǒu wán jù huǒ chē.", english: "I have a toy train.", audio: "我有玩具火车" },
+      { id: "toy-airplane", imagePath: "assets/illustrated-toys/lele-playing-toy-airplane.webp", alt: "Lele flying a toy airplane", hanzi: "我有玩具飞机。", pinyin: "wǒ yǒu wán jù fēi jī.", english: "I have a toy airplane.", audio: "我有玩具飞机" },
+      { id: "toy-bear", imagePath: "assets/illustrated-toys/lele-playing-toy-bear.webp", alt: "Lele high-fiving a toy bear", hanzi: "我有玩具熊。", pinyin: "wǒ yǒu wán jù xióng.", english: "I have a toy bear.", audio: "我有玩具熊" }
+    ];
+    focusExplorer.innerHTML = `<div class="time-date-board school-topic-board hobbies-topic-board"><section class="school-lesson-section"><div class="time-months-heading"><p class="body-match-kicker">Scene</p></div><div class="school-scene-grid toys-scene-grid">${scenes.map((scene) => `<section class="greetings-exchange school-scene-card"><div class="greetings-exchange-top"><span></span><button class="small-button is-play-button" type="button" data-toys-scene-play="${scene.id}">Play</button></div><div class="school-scene-layout"><img class="school-scene-image" src="${scene.imagePath}" alt="${scene.alt}"><div class="greetings-line-stack is-compact"><article class="greetings-line-card"><div class="telephone-bubble-copy"><p class="telephone-line-hanzi">${scene.hanzi}</p>${state.showPinyin ? `<p class="telephone-line-pinyin">${scene.pinyin}</p>` : ""}${state.showEnglish ? `<p class="telephone-line-english">${scene.english}</p>` : ""}</div></article></div></div></section>`).join("")}</div></section><section class="school-lesson-section"><div class="time-months-heading"><p class="body-match-kicker">Book words &amp; more</p></div><div class="school-word-grid toys-flashcard-grid">${flashcards.map((item) => `<button class="school-word-card book-word-card" type="button" data-toys-flashcard="${item.id}"><img class="school-word-image book-word-image" src="${item.imagePath}" alt="${item.imageAlt}"><span class="book-word-copy"><span class="time-asset-hanzi">${item.hanzi}</span>${state.showPinyin ? `<span class="time-asset-pinyin">${item.pinyin}</span>` : ""}${state.showEnglish ? `<span class="time-asset-english">${item.english}</span>` : ""}</span></button>`).join("")}</div></section></div>`;
+    focusExplorer.querySelectorAll("[data-toys-scene-play]").forEach((button) => button.addEventListener("click", () => {
+      const scene = scenes.find((entry) => entry.id === button.dataset.toysScenePlay);
+      if (scene && state.tapAudioEnabled) speakLesson(scene.audio, 0.74);
+    }));
+    focusExplorer.querySelectorAll("[data-toys-flashcard]").forEach((button) => button.addEventListener("click", () => {
+      const item = flashcards.find((entry) => entry.id === button.dataset.toysFlashcard);
+      if (item && state.tapAudioEnabled) speakLesson(item.audio, 0.78);
+    }));
+  }
+  function renderToysPractice(topic) {
+    ensureToysPractice();
+    const item = currentToyPracticeItem();
+    if (!item) return;
+    const complete = state.toysPracticeResult === "correct";
+    activityPanelTitle.textContent = "Let's practice";
+    activityPanelSummary.textContent = "Look at the toy, then choose the word that completes 我有…";
+    activityList.className = "support-list";
+    activityList.innerHTML = `<section class="clothes-quiz-shell toys-practice-shell"><div class="numbers-game-top"><div><p class="body-match-kicker">Look and choose</p><p class="numbers-game-note">Look at the picture. Which toy completes 我有…?</p></div><button class="small-button is-practice-advance-button" type="button" data-toys-practice-new>New game</button></div><figure class="clothes-quiz-visual school-build-visual"><img class="clothes-quiz-image" src="${item.imagePath}" alt="${item.imageAlt}"></figure><p class="toy-practice-frame">我有<span class="toy-practice-blank${complete ? " is-correct" : ""}">${complete ? item.hanzi : "…"}</span>。</p>${complete && state.showPinyin ? `<p class="numbers-game-pinyin">wǒ yǒu ${item.pinyin}.</p>` : ""}${complete && state.showEnglish ? `<p class="numbers-game-english">I have a ${item.english}.</p>` : ""}<div class="clothes-quiz-options">${state.toysPracticeOptionIds.map((optionId) => { const option = toyItems().find((entry) => entry.id === optionId); if (!option) return ""; const isCorrect = complete && option.id === item.id; const isWrong = state.toysPracticeWrongIds.has(option.id); return `<button class="clothes-quiz-option${isCorrect ? " is-correct" : isWrong ? " is-wrong" : ""}" type="button" data-toys-practice-pick="${option.id}" ${complete ? "disabled" : ""}>${isCorrect || isWrong ? `<span class="answer-result-mark" aria-hidden="true">${isCorrect ? "✓" : "×"}</span>` : ""}<span class="numbers-game-hanzi">${option.hanzi}</span>${state.showPinyin ? `<span class="numbers-game-pinyin">${option.pinyin}</span>` : ""}${state.showEnglish ? `<span class="numbers-game-english">${option.english}</span>` : ""}</button>`; }).join("")}</div></section>`;
+    activityList.querySelector("[data-toys-practice-new]")?.addEventListener("click", () => { nextToysPracticeRound(); renderActivityPanel(topic); });
+    activityList.querySelectorAll("[data-toys-practice-pick]").forEach((button) => button.addEventListener("click", () => {
+      if (state.toysPracticeResult === "correct") return;
+      const pickedId = button.dataset.toysPracticePick;
+      state.toysPracticeSelectedId = pickedId;
+      if (pickedId === item.id) {
+        state.toysPracticeResult = "correct";
+        if (state.tapAudioEnabled) speakLesson(`我有${item.hanzi}`, 0.78);
+      } else {
+        state.toysPracticeResult = "wrong";
+        state.toysPracticeWrongIds = new Set([...state.toysPracticeWrongIds, pickedId]);
+      }
+      renderActivityPanel(topic);
+    }));
+  }
   function renderHobbiesPractice(topic) {
+    if (topic.id === "toys") return renderToysPractice(topic);
     if (lesson().practiceType === "sentence-choice") return renderHobbiesSentenceChoice(topic);
     if (state.hobbiesBuildLessonKey !== lessonKey() || !state.hobbiesBuildAvailableTokens.length) resetRound(); const entry = round(); const item = topic.focusItems.find((item) => item.id === entry.itemId); const complete = state.hobbiesBuildResult === "correct"; const answer = complete ? answerFor(entry) : null;
     const isQuestion = lessonKey() === "3b:4"; const isLeisure = lessonKey() === "4b:7";
@@ -133,5 +193,5 @@ export function createPlayHobbiesRuntime({ state, currentTopic, currentBook, cur
     activityList.querySelector("[data-hobbies-choice-new]").addEventListener("click", () => { resetRound(true); renderActivityPanel(topic); });
     activityList.querySelectorAll("[data-hobbies-choice]").forEach((button) => button.addEventListener("click", () => { if (state.hobbiesBuildResult === "correct") return; const optionId = button.dataset.hobbiesChoice; state.hobbiesBuildSelectedTokens = [optionId]; state.hobbiesBuildResult = optionId === entry.correctId ? "correct" : "wrong"; if (state.hobbiesBuildResult === "correct" && state.tapAudioEnabled) speakLesson(page.sentenceOptions[optionId].audio, 0.76); renderActivityPanel(topic); }));
   }
-  return { renderHobbiesExplorer, renderHobbiesPractice };
+  return { renderHobbiesExplorer, renderHobbiesPractice, renderToysExplorer, renderToysPractice };
 }

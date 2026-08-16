@@ -2,9 +2,9 @@ export function createTimeDailyLifeRuntime(context) {
   const { state, timeDateWeekItems, timeDateClockItems, timeDateExpressionItems, timeDateRoutineItems, datePracticeItems, timeDateDateItems, timeDateMonthItems, comparisonPracticeItems, comparisonWordItems, positionPracticeItems, positionScenes, clothesMatchItems, clothesPractice, roomScenes, roomSentenceTokens, transportSentenceTokens, everydayActionItems, visualTopicItems, shuffleArray, speak, speakSceneLines, currentTopic, currentBook, currentLesson, renderActivityPanel, focusExplorer, focusStatus } = context;
 
 function resetWeekdayChallenge(options = {}) {
-  const candidates = timeDateWeekItems.filter((item) => item.id !== options.excludeId);
-  const answers = candidates.length ? candidates : timeDateWeekItems;
-  const answer = answers[Math.floor(Math.random() * answers.length)];
+  const answerId = nextRandomCycleId(state, "weekdays-listen", timeDateWeekItems.map((item) => item.id));
+  const answer = timeDateWeekItems.find((item) => item.id === answerId);
+  if (!answer) return;
   const distractors = shuffleArray(timeDateWeekItems.filter((item) => item.id !== answer.id)).slice(0, 3);
   state.weekdayChallengeAnswerId = answer.id;
   state.weekdayChallengePromptId = answer.id;
@@ -111,7 +111,7 @@ function handleClothesQuizPick(itemId) {
 }
 
 function nextClothesQuizQuestion() {
-  state.clothesQuizIndex = (state.clothesQuizIndex + 1) % state.clothesQuizOrder.length;
+  advanceShuffledOrder(state, "clothesQuizOrder", "clothesQuizIndex", shuffleArray);
   prepareClothesQuizQuestion();
   renderActivityPanel(currentTopic());
 }
@@ -152,7 +152,7 @@ function handleTimeRoutineQuizPick(itemId) {
 }
 
 function nextTimeRoutineQuizQuestion() {
-  state.timeRoutineQuizIndex = (state.timeRoutineQuizIndex + 1) % state.timeRoutineQuizOrder.length;
+  advanceShuffledOrder(state, "timeRoutineQuizOrder", "timeRoutineQuizIndex", shuffleArray);
   prepareTimeRoutineQuizQuestion();
   renderActivityPanel(currentTopic());
 }
@@ -193,7 +193,7 @@ function handleClockQuizPick(itemId) {
 }
 
 function nextClockQuizQuestion() {
-  state.clockQuizIndex = (state.clockQuizIndex + 1) % state.clockQuizOrder.length;
+  advanceShuffledOrder(state, "clockQuizOrder", "clockQuizIndex", shuffleArray);
   prepareClockQuizQuestion();
   renderActivityPanel(currentTopic());
 }
@@ -281,7 +281,7 @@ function clearRoomBuilder() {
 }
 
 function nextRoomBuilder() {
-  state.roomBuildIndex = (state.roomBuildIndex + 1) % state.roomBuildOrder.length;
+  advanceShuffledOrder(state, "roomBuildOrder", "roomBuildIndex", shuffleArray);
   prepareRoomBuilder();
   renderActivityPanel(currentTopic());
 }
@@ -342,7 +342,7 @@ function clearTransportBuilder() {
 }
 
 function nextTransportBuilder() {
-  state.transportBuildIndex = (state.transportBuildIndex + 1) % state.transportBuildOrder.length;
+  advanceShuffledOrder(state, "transportBuildOrder", "transportBuildIndex", shuffleArray);
   prepareTransportBuilder();
   renderActivityPanel(currentTopic());
 }
@@ -384,8 +384,8 @@ function handleEverydayActionsPick(itemId) {
 }
 
 function nextEverydayActionsQuestion() {
-  const previousId = state.everydayActionsOrder[state.everydayActionsIndex];
-  resetEverydayActionsQuiz({ excludeId: previousId });
+  advanceShuffledOrder(state, "everydayActionsOrder", "everydayActionsIndex", shuffleArray);
+  prepareEverydayActionsQuestion();
   renderActivityPanel(currentTopic());
 }
 
@@ -426,7 +426,7 @@ function handlePositionQuizPick(itemId) {
 }
 
 function nextPositionQuizQuestion() {
-  state.positionQuizIndex = (state.positionQuizIndex + 1) % state.positionQuizOrder.length;
+  advanceShuffledOrder(state, "positionQuizOrder", "positionQuizIndex", shuffleArray);
   preparePositionQuizQuestion();
   renderActivityPanel(currentTopic());
 }
@@ -482,7 +482,7 @@ function clearComparisonBuilder() {
 }
 
 function nextComparisonBuilder() {
-  state.comparisonBuildIndex = (state.comparisonBuildIndex + 1) % state.comparisonBuildOrder.length;
+  advanceShuffledOrder(state, "comparisonBuildOrder", "comparisonBuildIndex", shuffleArray);
   prepareComparisonBuilder();
   renderActivityPanel(currentTopic());
 }
@@ -533,8 +533,8 @@ function handleDateMatchEvent(itemId) {
 }
 
 function resetDateChallenge(options = {}) {
-  const available = options.excludeId ? datePracticeItems.filter((item) => item.id !== options.excludeId) : datePracticeItems;
-  const answer = available[Math.floor(Math.random() * available.length)] ?? datePracticeItems[0];
+  const answerId = nextRandomCycleId(state, "dates-listen", datePracticeItems.map((item) => item.id));
+  const answer = datePracticeItems.find((item) => item.id === answerId) ?? datePracticeItems[0];
   const distractors = shuffleArray(datePracticeItems.filter((item) => item.id !== answer.id)).slice(0, 3);
   state.dateChallengeAnswerId = answer.id;
   state.dateChallengePromptId = answer.id;
@@ -1016,3 +1016,4 @@ function renderClothesExplorer() {
 
   return { resetWeekdayChallenge, ensureWeekdayChallenge, handleWeekdayChallengePlay, handleWeekdayChallengeGuess, resetWeekdayMatchGame, ensureWeekdayMatchGame, handleWeekdayMatchPhrase, handleWeekdayMatchAttempt, resetClothesQuiz, prepareClothesQuizQuestion, ensureClothesQuiz, handleClothesQuizPick, nextClothesQuizQuestion, resetTimeRoutineQuiz, prepareTimeRoutineQuizQuestion, ensureTimeRoutineQuiz, handleTimeRoutineQuizPick, nextTimeRoutineQuizQuestion, resetClockQuiz, prepareClockQuizQuestion, ensureClockQuiz, handleClockQuizPick, nextClockQuizQuestion, currentRoomBuildItem, resetRoomBuilder, prepareRoomBuilder, ensureRoomBuilder, isRoomBuildPrefixValid, handleRoomBuildToken, clearRoomBuilder, nextRoomBuilder, currentTransportBuildItem, resetTransportBuilder, prepareTransportBuilder, ensureTransportBuilder, handleTransportBuildToken, clearTransportBuilder, nextTransportBuilder, ensureEverydayActionsQuiz, currentEverydayAction, handleEverydayActionsPick, nextEverydayActionsQuestion, resetPositionQuiz, preparePositionQuizQuestion, ensurePositionQuiz, handlePositionQuizPlay, handlePositionQuizPick, nextPositionQuizQuestion, currentComparisonBuildItem, resetComparisonBuilder, prepareComparisonBuilder, ensureComparisonBuilder, handleComparisonBuildToken, clearComparisonBuilder, nextComparisonBuilder, resetDateMatchGame, ensureDateMatchGame, handleDateMatchPhrase, handleDateMatchEvent, resetDateChallenge, ensureDateChallenge, handleDateChallengePlay, handleDateChallengeGuess, timeDateSectionForCurrentLesson, activeTimeDateSection, renderTimeAssetGrid, bindTimeAssetAudio, renderWeekdaysExplorer, renderDatesExplorer, renderVisualTopicExplorer, renderEverydayActionsExplorer, renderRoomsExplorer, renderPositionsExplorer, renderTimeDateExplorer, renderClothesExplorer };
 }
+import { advanceShuffledOrder, nextRandomCycleId } from "../../core/random-cycle.js";

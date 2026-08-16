@@ -2,6 +2,7 @@ export function createSharedLessonPractice({ state, speak, elements, documentRef
   const { activityPanelTitle, activityPanelSummary, activityList } = elements;
 
   function renderListenPractice(config) {
+    const playLabel = typeof config.playLabel === "function" ? config.playLabel() : (config.playLabel ?? "Play");
     return `
       <section class="practice-split-card">
         <div class="numbers-game-top">
@@ -10,7 +11,7 @@ export function createSharedLessonPractice({ state, speak, elements, documentRef
             ${config.title ? `<h4>${config.title}</h4>` : ""}
             <p class="numbers-game-note">Play the audio, then tap the matching Chinese card.</p>
           </div>
-          <button class="small-button is-play-button" type="button" data-template-listen-play>Play</button>
+          <button class="small-button is-play-button" type="button" data-template-listen-play>${playLabel}</button>
         </div>
         ${config.feedback() ? `<p class="greetings-game-feedback">${config.feedback()}</p>` : ""}
         <div class="numbers-game-options">

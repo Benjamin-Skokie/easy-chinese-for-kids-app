@@ -21,7 +21,9 @@ export function createIntroductionsController({
 
   function resetIntroductionsChallenge(options = {}) {
     if (!introductionsGamePrompts.length || !introductionsGameSpeakerIds.length) return;
-    const prompt = introductionsGamePrompts[Math.floor(Math.random() * introductionsGamePrompts.length)];
+    const promptId = nextRandomCycleId(state, "introductions-listen", introductionsGamePrompts.map((entry) => entry.id));
+    const prompt = introductionsPromptById(promptId);
+    if (!prompt) return;
     state.introductionsChallengeAnswerId = prompt.speakerId;
     state.introductionsChallengePromptId = prompt.id;
     state.introductionsChallengeOptionIds = shuffleArray([...introductionsGameSpeakerIds]);
@@ -71,7 +73,9 @@ export function createIntroductionsController({
   }
 
   function resetIntroductionsBuilder(options = {}) {
-    const target = introductionsBuildPhrases[Math.floor(Math.random() * introductionsBuildPhrases.length)];
+    const targetId = nextRandomCycleId(state, "introductions-build", introductionsBuildPhrases.map((entry) => entry.id));
+    const target = introductionsBuildPhrases.find((entry) => entry.id === targetId);
+    if (!target) return;
     state.introductionsBuildTargetId = target.id;
     state.introductionsBuildAvailableTokens = shuffleArray(target.tokens);
     state.introductionsBuildSelectedTokens = [];
@@ -130,3 +134,4 @@ export function createIntroductionsController({
 
   return { introductionsPromptById, introductionsGameKids, introductionsSelfIntroItemForKid, resetIntroductionsChallenge, ensureIntroductionsChallenge, handleIntroductionsChallengePlay, handleIntroductionsChallengeGuess, introductionsBuildTarget, resetIntroductionsBuilder, ensureIntroductionsBuilder, handleIntroductionsBuildToken, handleIntroductionsBuildClear, renderIntroductionsExplorer };
 }
+import { nextRandomCycleId } from "../../core/random-cycle.js";

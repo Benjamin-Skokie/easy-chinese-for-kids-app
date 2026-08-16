@@ -32,7 +32,9 @@ export function createGreetingsController({
       return;
     }
 
-    const answer = items[Math.floor(Math.random() * items.length)];
+    const answerId = nextRandomCycleId(state, "greetings-listen", items.map((item) => item.id));
+    const answer = items.find((item) => item.id === answerId);
+    if (!answer) return;
     const distractors = shuffleArray(items.filter((item) => item.id !== answer.id)).slice(
       0,
       Math.min(3, Math.max(0, items.length - 1))
@@ -137,6 +139,19 @@ export function createGreetingsController({
 
   function handleGreetingsChallengePlay() {
     ensureGreetingsChallenge();
+    if (state.greetingsChallengeResult === "correct") {
+      resetGreetingsChallenge({
+        excludeId: state.greetingsChallengeAnswerId,
+        feedback: "Listen carefully, then tap the matching card."
+      });
+      const nextItem = greetingsGameItems().find((entry) => entry.id === state.greetingsChallengePromptId);
+      if (nextItem && state.tapAudioEnabled) {
+        speak(nextItem.audio, 0.78);
+      }
+      renderActivityPanel(currentTopic());
+      return;
+    }
+
     const item = greetingsGameItems().find((entry) => entry.id === state.greetingsChallengePromptId);
     if (!item) {
       return;
@@ -258,3 +273,4 @@ export function createGreetingsController({
     renderGreetingsExplorer
   };
 }
+import { nextRandomCycleId } from "../../core/random-cycle.js";

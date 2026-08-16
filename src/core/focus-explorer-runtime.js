@@ -48,7 +48,7 @@ export function createFocusExplorerRuntime(context) {
     if (topic.interactiveScene === "rooms") return renderRoomsExplorer();
     if (schoolTopicData[topic.id]) return renderSchoolExplorer(topic.id);
     if (["pets", "animals", "colours", "nature", "weather"].includes(topic.id)) return renderWorldExplorer();
-    if (["hobbies", "hobbies-3b", "hobbies-at-home", "hobbies-leisure"].includes(topic.id)) return renderHobbiesExplorer();
+    if (["toys", "hobbies", "hobbies-3b", "hobbies-at-home", "hobbies-leisure"].includes(topic.id)) return renderHobbiesExplorer();
     if (["comparisons", "transport", "rooms"].includes(topic.interactiveScene)) return renderVisualTopicExplorer(topic.interactiveScene);
     if (topic.interactiveScene === "multiplication-rhyme") return renderMultiplicationExplorer();
     return renderDefaultExplorer();

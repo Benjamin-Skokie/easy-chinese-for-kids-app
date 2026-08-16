@@ -20,10 +20,9 @@ then update both records when the work is complete.
 
 ## New or replacement topics
 
-- [ ] **Toys — 2A Lesson 4: My Toys**
-  - Replace the current placeholder topic with the approved page in
-    [`lesson-contracts/play-hobbies/toys.md`](./lesson-contracts/play-hobbies/toys.md).
-  - Teach `娃娃`, `玩具火车`, `玩具飞机`, and `玩具熊` with `我有…`.
+- [x] **Toys — 2A Lesson 4: My Toys**
+  - Completed with `娃娃`, `玩具火车`, `玩具飞机`, and `玩具熊` using `我有…`.
+  - Contract: [`lesson-contracts/play-hobbies/toys.md`](./lesson-contracts/play-hobbies/toys.md).
 
 - [x] **Everyday Actions / 日常动作** — completed Learn by Topic unit
   - Contract: [`lesson-contracts/daily-life/action-basics.md`](./lesson-contracts/daily-life/action-basics.md).

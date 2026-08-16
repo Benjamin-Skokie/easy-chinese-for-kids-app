@@ -7,10 +7,17 @@
       "label": "Book 2A toy store core set",
       "book": "2A",
       "lesson": 4,
-      "items": ["toy-car", "train", "airplane", "school-bus", "toy-doll", "bicycle", "teddy-bear"]
+      "items": ["toys", "toy-car", "train", "airplane", "school-bus", "toy-doll", "bicycle", "teddy-bear", "lele-playing-doll", "lele-playing-toy-train", "lele-playing-toy-airplane", "lele-playing-toy-bear"]
     }
   ],
   "items": [
+    {
+      "id": "toys",
+      "label": "Toys",
+      "hanzi": "玩具",
+      "pinyin": "wan ju",
+      "file": "toys-collection.webp"
+    },
     {
       "id": "toy-car",
       "label": "Toy car",
@@ -34,9 +41,9 @@
     },
     {
       "id": "school-bus",
-      "label": "School bus",
-      "hanzi": "校车",
-      "pinyin": "xiao che",
+      "label": "Toy school bus",
+      "hanzi": "玩具校车",
+      "pinyin": "wan ju xiao che",
       "file": "school-bus.webp"
     },
     {
@@ -59,6 +66,46 @@
       "hanzi": "泰迪熊",
       "pinyin": "tai di xiong",
       "file": "teddy-bear.webp"
+    },
+    {
+      "id": "lele-playing-doll",
+      "label": "Lele playing with a doll",
+      "hanzi": "我有娃娃。",
+      "pinyin": "wo you wa wa.",
+      "personId": "lele",
+      "theme": "Lele has a tea party with a doll in his home playroom",
+      "sentenceHanzi": "我有娃娃。",
+      "file": "lele-playing-doll.webp"
+    },
+    {
+      "id": "lele-playing-toy-train",
+      "label": "Lele playing with a toy train",
+      "hanzi": "我有玩具火车。",
+      "pinyin": "wo you wan ju huo che.",
+      "personId": "lele",
+      "theme": "Lele pushes a toy train on a track in his home playroom",
+      "sentenceHanzi": "我有玩具火车。",
+      "file": "lele-playing-toy-train.webp"
+    },
+    {
+      "id": "lele-playing-toy-airplane",
+      "label": "Lele playing with a toy airplane",
+      "hanzi": "我有玩具飞机。",
+      "pinyin": "wo you wan ju fei ji.",
+      "personId": "lele",
+      "theme": "Lele flies a toy airplane in his home playroom",
+      "sentenceHanzi": "我有玩具飞机。",
+      "file": "lele-playing-toy-airplane.webp"
+    },
+    {
+      "id": "lele-playing-toy-bear",
+      "label": "Lele playing with a toy bear",
+      "hanzi": "我有玩具熊。",
+      "pinyin": "wo you wan ju xiong.",
+      "personId": "lele",
+      "theme": "Lele high-fives a toy bear in his home playroom",
+      "sentenceHanzi": "我有玩具熊。",
+      "file": "lele-playing-toy-bear.webp"
     }
   ]
 }

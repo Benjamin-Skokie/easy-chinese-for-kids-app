@@ -111,6 +111,7 @@ function sharedLessonPracticeConfig(topic) {
         result: () => state.greetingsChallengeResult,
         wrongIds: () => state.greetingsChallengeWrongIds,
         feedback: () => state.greetingsListenFeedback,
+        playLabel: () => state.greetingsChallengeResult === "correct" ? "New game" : "Play",
         onPlay: handleGreetingsChallengePlay,
         onGuess: handleGreetingsChallengeGuess
       },
@@ -235,7 +236,7 @@ function renderActivityPanel(topic) {
     return;
   }
 
-  if (["hobbies", "hobbies-3b", "hobbies-at-home", "hobbies-leisure"].includes(topic.id)) {
+  if (["toys", "hobbies", "hobbies-3b", "hobbies-at-home", "hobbies-leisure"].includes(topic.id)) {
     renderHobbiesPractice(topic);
     return;
   }

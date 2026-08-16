@@ -4,6 +4,7 @@ import { existsSync, readFileSync, readdirSync } from "node:fs";
 import { join, normalize } from "node:path";
 import test from "node:test";
 import { createAudioService } from "../src/core/audio.js";
+import { advanceShuffledOrder, nextRandomCycleId } from "../src/core/random-cycle.js";
 import { topicIdFromLocation, topicPageUrl, viewFromLocation } from "../src/core/router.js";
 import { timeDateWeekItems } from "../src/features/time-daily-life/weekdays.js";
 import { timeDateClockItems, timeDateRoutineItems } from "../src/features/time-daily-life/time.js";
@@ -45,7 +46,7 @@ import { familyGameItemIds, familyPractice, familyTopic, illustratedFamily } fro
 
 test("the local page loads a single bundled application script", () => {
   const html = readFileSync("index.html", "utf8");
-  assert.match(html, /<script src="app\.js\?v=20260815-everyday-actions"><\/script>/);
+  assert.match(html, /<script src="app\.js\?v=20260815-toys-category-word"><\/script>/);
   assert.doesNotMatch(html, /type="module"/);
 });
 
@@ -57,6 +58,30 @@ test("Everyday Actions keeps one silent new-game button in the practice header",
   assert.doesNotMatch(practiceSource, /data-everyday-actions-play/);
   assert.match(timeRuntimeSource, /handleEverydayActionsPick[\s\S]{0,500}state\.everydayActionsResult === "correct"[\s\S]{0,160}speak\(currentEverydayAction\(\)\?\.sentence, 0\.78\)/);
   assert.doesNotMatch(practiceSource, /data-everyday-actions-next/);
+});
+
+test("Greetings starts a different listen-and-choose round after a correct answer", () => {
+  const practiceSource = readFileSync("src/core/lesson-practice-runtime.js", "utf8");
+  const controllerSource = readFileSync("src/features/foundations/greetings-controller.js", "utf8");
+  const sharedPracticeSource = readFileSync("src/games/shared-lesson-practice.js", "utf8");
+  assert.match(practiceSource, /playLabel: \(\) => state\.greetingsChallengeResult === "correct" \? "New game" : "Play"/);
+  assert.match(sharedPracticeSource, /const playLabel = typeof config\.playLabel === "function" \? config\.playLabel\(\) : \(config\.playLabel \?\? "Play"\)/);
+  assert.match(controllerSource, /state\.greetingsChallengeResult === "correct"[\s\S]{0,300}resetGreetingsChallenge\(\{[\s\S]{0,360}speak\(nextItem\.audio, 0\.78\)/);
+  assert.match(controllerSource, /nextRandomCycleId\(state, "greetings-listen", items\.map\(\(item\) => item\.id\)\)/);
+});
+
+test("random practice cycles show every prompt before repeating", () => {
+  const state = {};
+  const ids = ["one", "two", "three", "four"];
+  const firstPass = ids.map(() => nextRandomCycleId(state, "test", ids, () => 0.25));
+  assert.equal(new Set(firstPass).size, ids.length);
+  assert.deepEqual(new Set(firstPass), new Set(ids));
+  assert.notEqual(nextRandomCycleId(state, "test", ids, () => 0.25), firstPass.at(-1));
+
+  const orderState = { order: ["one", "two", "three"], index: 2 };
+  advanceShuffledOrder(orderState, "order", "index", (items) => [...items]);
+  assert.equal(orderState.index, 0);
+  assert.equal(orderState.order[0], "one");
 });
 
 test("Culture book image references are present and committed for GitHub Pages", () => {
@@ -972,7 +997,37 @@ test("play owns separate activity pages for its Hobbies lessons", () => {
   assert.ok(hobbiesTopic.focusItems.length >= 11);
   assert.ok(hobbiesTopic.focusItems.some((item) => item.imagePath === "assets/illustrated-activities/noah-ice-skating.webp"));
   assert.equal(toysTopic.id, "toys");
-  assert.equal(toysTopic.focusItems.length, 7);
+  assert.equal(toysTopic.ownsExplorerContent, true);
+  assert.deepEqual(toysTopic.focusItems.map((item) => item.hanzi), ["娃娃", "玩具火车", "玩具飞机", "玩具熊"]);
+  assert.ok(toysTopic.focusItems.every((item) => item.imagePath.startsWith("assets/illustrated-toys/")));
+});
+
+test("Toys owns a 2 by 2 scene series and a no-repeat picture-choice practice", () => {
+  const runtimeSource = readFileSync("src/features/play-hobbies/play-hobbies-runtime.js", "utf8");
+  const explorerSource = readFileSync("src/core/focus-explorer-runtime.js", "utf8");
+  const practiceSource = readFileSync("src/core/lesson-practice-runtime.js", "utf8");
+  const stylesSource = readFileSync("styles.css", "utf8");
+  for (const file of ["lele-playing-doll.webp", "lele-playing-toy-train.webp", "lele-playing-toy-airplane.webp", "lele-playing-toy-bear.webp"]) {
+    assert.match(runtimeSource, new RegExp(`assets/illustrated-toys/${file.replace(".", "\\.")}`));
+    assert.ok(existsSync(`assets/illustrated-toys/${file}`));
+  }
+  assert.match(runtimeSource, /school-scene-grid toys-scene-grid/);
+  assert.match(runtimeSource, /data-toys-flashcard/);
+  assert.match(runtimeSource, /<p class="body-match-kicker">Book words &amp; more<\/p>/);
+  assert.doesNotMatch(runtimeSource, /data-toys-word/);
+  assert.deepEqual(toysTopic.flashcardItems.map((item) => item.id), ["toys", "toy-car", "toy-train", "toy-airplane", "school-bus", "doll", "bicycle", "toy-bear"]);
+  assert.equal(toysTopic.flashcardItems.find((item) => item.id === "toys")?.hanzi, "玩具");
+  assert.ok(existsSync("assets/illustrated-toys/toys-collection.webp"));
+  assert.equal(toysTopic.flashcardItems.find((item) => item.id === "school-bus")?.hanzi, "玩具校车");
+  assert.ok(toysTopic.flashcardItems.every((item) => item.imagePath.startsWith("assets/illustrated-toys/")));
+  assert.match(stylesSource, /\.toys-scene-grid \{\s+grid-template-columns: repeat\(2, minmax\(0, 1fr\)\);/);
+  assert.match(stylesSource, /\.toys-scene-grid \{\s+grid-template-columns: minmax\(0, 1fr\);/);
+  assert.match(runtimeSource, /nextRandomCycleId\(state, "toys-picture-choice"/);
+  assert.match(runtimeSource, /const toyItems = \(\) => currentTopic\(\)\.flashcardItems/);
+  assert.match(runtimeSource, /data-toys-practice-new/);
+  assert.match(runtimeSource, /speakLesson\(`我有\$\{item\.hanzi\}`, 0\.78\)/);
+  assert.match(explorerSource, /\["toys", "hobbies", "hobbies-3b", "hobbies-at-home", "hobbies-leisure"\]/);
+  assert.match(practiceSource, /\["toys", "hobbies", "hobbies-3b", "hobbies-at-home", "hobbies-leisure"\]/);
 });
 
 test("Hobbies keeps separate 2A, 3B, and 4B lesson pages and practice", () => {

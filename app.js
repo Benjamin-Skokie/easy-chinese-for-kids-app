@@ -211,6 +211,7 @@
       showEnglish: true,
       tapAudioEnabled: true,
       selectedFocusItemId: null,
+      randomPracticeCycles: {},
       ...createFoundationState(),
       ...createTimeDailyLifeState(),
       schoolPracticeTopicId: "",
@@ -287,7 +288,12 @@
       hobbiesBuildAvailableTokens: [],
       hobbiesBuildSelectedTokens: [],
       hobbiesBuildResult: "",
-      hobbiesBuildLessonKey: ""
+      hobbiesBuildLessonKey: "",
+      toysPracticeItemId: "",
+      toysPracticeOptionIds: [],
+      toysPracticeSelectedId: "",
+      toysPracticeResult: "",
+      toysPracticeWrongIds: /* @__PURE__ */ new Set()
     };
   }
 
@@ -664,6 +670,7 @@
             result: () => state2.greetingsChallengeResult,
             wrongIds: () => state2.greetingsChallengeWrongIds,
             feedback: () => state2.greetingsListenFeedback,
+            playLabel: () => state2.greetingsChallengeResult === "correct" ? "New game" : "Play",
             onPlay: handleGreetingsChallengePlay2,
             onGuess: handleGreetingsChallengeGuess2
           },
@@ -781,7 +788,7 @@
         renderWorldPractice(topic);
         return;
       }
-      if (["hobbies", "hobbies-3b", "hobbies-at-home", "hobbies-leisure"].includes(topic.id)) {
+      if (["toys", "hobbies", "hobbies-3b", "hobbies-at-home", "hobbies-leisure"].includes(topic.id)) {
         renderHobbiesPractice(topic);
         return;
       }
@@ -1541,7 +1548,7 @@
       if (topic.interactiveScene === "rooms") return renderRoomsExplorer2();
       if (schoolTopicData3[topic.id]) return renderSchoolExplorer2(topic.id);
       if (["pets", "animals", "colours", "nature", "weather"].includes(topic.id)) return renderWorldExplorer();
-      if (["hobbies", "hobbies-3b", "hobbies-at-home", "hobbies-leisure"].includes(topic.id)) return renderHobbiesExplorer();
+      if (["toys", "hobbies", "hobbies-3b", "hobbies-at-home", "hobbies-leisure"].includes(topic.id)) return renderHobbiesExplorer();
       if (["comparisons", "transport", "rooms"].includes(topic.interactiveScene)) return renderVisualTopicExplorer2(topic.interactiveScene);
       if (topic.interactiveScene === "multiplication-rhyme") return renderMultiplicationExplorer2();
       return renderDefaultExplorer2();
@@ -2905,6 +2912,48 @@
     { id: "dislikes-math", imagePath: "assets/illustrated-activities/lele_dislikes_math_class.webp", target: ["\u6211", "\u4E0D\u559C\u6B22", "\u6570\u5B66\u8BFE"], distractors: ["\u5B66\u6821", "\u6709", "\u6587\u5177\u76D2"], pinyin: "w\u01D2 b\xF9 x\u01D0 huan sh\xF9 xu\xE9 k\xE8.", english: "I do not like math class." }
   ];
 
+  // src/core/random-cycle.js
+  function shuffled(items, random = Math.random) {
+    const copy = [...items];
+    for (let index = copy.length - 1; index > 0; index -= 1) {
+      const swapIndex = Math.floor(random() * (index + 1));
+      [copy[index], copy[swapIndex]] = [copy[swapIndex], copy[index]];
+    }
+    return copy;
+  }
+  function nextRandomCycleId(state2, cycleKey, ids, random = Math.random) {
+    const uniqueIds = [...new Set(ids)];
+    if (!uniqueIds.length) return null;
+    state2.randomPracticeCycles ?? (state2.randomPracticeCycles = {});
+    const previous = state2.randomPracticeCycles[cycleKey];
+    const signature = uniqueIds.join("");
+    let remainingIds = previous?.signature === signature ? previous.remainingIds.filter((id2) => uniqueIds.includes(id2)) : [];
+    if (!remainingIds.length) {
+      remainingIds = shuffled(uniqueIds, random);
+      if (previous?.lastId && remainingIds.length > 1 && remainingIds[0] === previous.lastId) {
+        [remainingIds[0], remainingIds[1]] = [remainingIds[1], remainingIds[0]];
+      }
+    }
+    const id = remainingIds.shift();
+    state2.randomPracticeCycles[cycleKey] = { signature, remainingIds, lastId: id };
+    return id;
+  }
+  function advanceShuffledOrder(state2, orderKey, indexKey, shuffle) {
+    const currentOrder = state2[orderKey] ?? [];
+    if (!currentOrder.length) return;
+    const nextIndex = state2[indexKey] + 1;
+    if (nextIndex < currentOrder.length) {
+      state2[indexKey] = nextIndex;
+      return;
+    }
+    const nextOrder = shuffle(currentOrder);
+    if (nextOrder.length > 1 && nextOrder[0] === currentOrder[currentOrder.length - 1]) {
+      [nextOrder[0], nextOrder[1]] = [nextOrder[1], nextOrder[0]];
+    }
+    state2[orderKey] = nextOrder;
+    state2[indexKey] = 0;
+  }
+
   // src/features/school-life/school-food-runtime.js
   function createSchoolFoodRuntime(context) {
     const { state: state2, schoolTopicData: schoolTopicData3, schoolSentenceBuilds: schoolSentenceBuilds3, stationeryPictureMatchRounds: stationeryPictureMatchRounds2, stationeryPictureMatchChoices: stationeryPictureMatchChoices2, stationeryPictureMatchEnglish: stationeryPictureMatchEnglish2, currentTopic: currentTopic2, currentBook: currentBook2, currentLesson: currentLesson2, shuffleArray: shuffleArray2, speak: speak2, speakSceneLines: speakSceneLines2, renderActivityPanel: renderActivityPanel2, focusItemsForTopic: focusItemsForTopic2, activityPanelTitle: activityPanelTitle2, activityPanelSummary: activityPanelSummary2, activityList: activityList2, focusExplorer: focusExplorer2, renderDefaultExplorer: renderDefaultExplorer2, renderListenPractice: renderListenPractice2, renderMatchPractice: renderMatchPractice2 } = context;
@@ -3000,9 +3049,8 @@
     }
     function resetSchoolChallenge(options = {}) {
       const items = schoolPracticeItems2();
-      const candidates = items.filter((item) => item.id !== options.excludeId);
-      const answers = candidates.length ? candidates : items;
-      const answer = answers[Math.floor(Math.random() * answers.length)];
+      const answerId = nextRandomCycleId(state2, `school-listen:${currentTopic2().id}`, items.map((item) => item.id));
+      const answer = items.find((item) => item.id === answerId);
       if (!answer) return;
       const optionIds = currentTopic2().id === "school-subjects" ? shuffleArray2(items.map((item) => item.id)) : shuffleArray2([answer.id, ...shuffleArray2(items.filter((item) => item.id !== answer.id)).slice(0, 3).map((item) => item.id)]);
       state2.schoolChallengeAnswerId = answer.id;
@@ -3096,7 +3144,7 @@
     function nextMealsPictureChoice() {
       const items = mealsPictureChoiceItems();
       if (!items.length) return;
-      state2.mealsPictureQuizIndex = (state2.mealsPictureQuizIndex + 1) % items.length;
+      advanceShuffledOrder(state2, "mealsPictureQuizOrder", "mealsPictureQuizIndex", shuffleArray2);
       resetMealsPictureQuestion();
       renderActivityPanel2(currentTopic2());
     }
@@ -3368,7 +3416,7 @@
       renderActivityPanel2(currentTopic2());
     }
     function nextSchoolBuilder() {
-      state2.schoolBuildIndex = (state2.schoolBuildIndex + 1) % state2.schoolBuildOrder.length;
+      advanceShuffledOrder(state2, "schoolBuildOrder", "schoolBuildIndex", shuffleArray2);
       prepareSchoolBuilder();
       renderActivityPanel2(currentTopic2());
     }
@@ -4314,7 +4362,9 @@
     }
     function resetIntroductionsChallenge2(options = {}) {
       if (!introductionsGamePrompts2.length || !introductionsGameSpeakerIds2.length) return;
-      const prompt = introductionsGamePrompts2[Math.floor(Math.random() * introductionsGamePrompts2.length)];
+      const promptId = nextRandomCycleId(state2, "introductions-listen", introductionsGamePrompts2.map((entry) => entry.id));
+      const prompt = introductionsPromptById2(promptId);
+      if (!prompt) return;
       state2.introductionsChallengeAnswerId = prompt.speakerId;
       state2.introductionsChallengePromptId = prompt.id;
       state2.introductionsChallengeOptionIds = shuffleArray2([...introductionsGameSpeakerIds2]);
@@ -4357,7 +4407,9 @@
       return introductionsBuildPhrases2.find((entry) => entry.id === state2.introductionsBuildTargetId) ?? introductionsBuildPhrases2[0];
     }
     function resetIntroductionsBuilder2(options = {}) {
-      const target = introductionsBuildPhrases2[Math.floor(Math.random() * introductionsBuildPhrases2.length)];
+      const targetId = nextRandomCycleId(state2, "introductions-build", introductionsBuildPhrases2.map((entry) => entry.id));
+      const target = introductionsBuildPhrases2.find((entry) => entry.id === targetId);
+      if (!target) return;
       state2.introductionsBuildTargetId = target.id;
       state2.introductionsBuildAvailableTokens = shuffleArray2(target.tokens);
       state2.introductionsBuildSelectedTokens = [];
@@ -4542,7 +4594,9 @@
     function resetAgeChallenge2(options = {}) {
       const items = ageGameItems2();
       if (!items.length) return;
-      const answer = items[Math.floor(Math.random() * items.length)];
+      const answerId = nextRandomCycleId(state2, "age-listen", items.map((item) => item.id));
+      const answer = items.find((item) => item.id === answerId);
+      if (!answer) return;
       const distractors = shuffleArray2(items.filter((item) => item.id !== answer.id)).slice(0, Math.min(3, Math.max(0, items.length - 1)));
       state2.ageChallengeAnswerId = answer.id;
       state2.ageChallengePromptId = answer.id;
@@ -4585,7 +4639,9 @@
       return ageBuildPhrases2.find((entry) => entry.id === state2.ageBuildTargetId) ?? ageBuildPhrases2[0];
     }
     function resetAgeBuilder2(options = {}) {
-      const target = ageBuildPhrases2[Math.floor(Math.random() * ageBuildPhrases2.length)];
+      const targetId = nextRandomCycleId(state2, "age-build", ageBuildPhrases2.map((entry) => entry.id));
+      const target = ageBuildPhrases2.find((entry) => entry.id === targetId);
+      if (!target) return;
       state2.ageBuildTargetId = target.id;
       state2.ageBuildAvailableTokens = shuffleArray2(target.tokens);
       state2.ageBuildSelectedTokens = [];
@@ -4800,9 +4856,9 @@
       if (!items.length) {
         return;
       }
-      const answerChoices = items.filter((item) => item.id !== options.excludeId);
-      const answerPool = answerChoices.length ? answerChoices : items;
-      const answer = answerPool[Math.floor(Math.random() * answerPool.length)];
+      const answerId = nextRandomCycleId(state2, "polite-words-listen", items.map((item) => item.id));
+      const answer = items.find((item) => item.id === answerId);
+      if (!answer) return;
       const distractors = shuffleArray2(items.filter((item) => item.id !== answer.id)).slice(
         0,
         Math.min(3, Math.max(0, items.length - 1))
@@ -5028,7 +5084,9 @@
       if (!items.length) {
         return;
       }
-      const answer = items[Math.floor(Math.random() * items.length)];
+      const answerId = nextRandomCycleId(state2, "greetings-listen", items.map((item) => item.id));
+      const answer = items.find((item) => item.id === answerId);
+      if (!answer) return;
       const distractors = shuffleArray2(items.filter((item) => item.id !== answer.id)).slice(
         0,
         Math.min(3, Math.max(0, items.length - 1))
@@ -5115,6 +5173,18 @@
     }
     function handleGreetingsChallengePlay2() {
       ensureGreetingsChallenge2();
+      if (state2.greetingsChallengeResult === "correct") {
+        resetGreetingsChallenge2({
+          excludeId: state2.greetingsChallengeAnswerId,
+          feedback: "Listen carefully, then tap the matching card."
+        });
+        const nextItem = greetingsGameItems2().find((entry) => entry.id === state2.greetingsChallengePromptId);
+        if (nextItem && state2.tapAudioEnabled) {
+          speak2(nextItem.audio, 0.78);
+        }
+        renderActivityPanel2(currentTopic2());
+        return;
+      }
       const item = greetingsGameItems2().find((entry) => entry.id === state2.greetingsChallengePromptId);
       if (!item) {
         return;
@@ -5589,26 +5659,34 @@
   var toysTopic = {
     id: "toys",
     title: "Toys",
-    summary: "A focused toy and kid-transport word set that fits Book 2A well and works for quick picture-based review.",
-    progressLabel: "2A toy store",
+    summary: "Name four toys and say what you have.",
+    progressLabel: "2A Lesson 4",
     iconText: "\u73A9\u5177",
     iconColor: "#b86f52",
     iconAccent: "#f2cb7f",
     iconTheme: "toys",
-    focus: { hanzi: "\u73A9\u5177\u6C7D\u8F66\uFF0C\u706B\u8F66\uFF0C\u98DE\u673A", pinyin: "w\xE1n j\xF9 q\xEC ch\u0113, hu\u01D2 ch\u0113, f\u0113i j\u012B", english: "toy car, train, airplane", audio: "\u73A9\u5177\u6C7D\u8F66\uFF0C\u706B\u8F66\uFF0C\u98DE\u673A" },
+    ownsExplorerContent: true,
+    focus: { hanzi: "\u6211\u6709\u73A9\u5177\u3002", pinyin: "w\u01D2 y\u01D2u w\xE1n j\xF9.", english: "I have toys.", audio: "\u6211\u6709\u73A9\u5177" },
     focusItems: [
-      { id: "toy-car", hanzi: "\u73A9\u5177\u6C7D\u8F66", pinyin: "w\xE1n j\xF9 q\xEC ch\u0113", english: "toy car", audio: "\u73A9\u5177\u6C7D\u8F66" },
-      { id: "train", hanzi: "\u706B\u8F66", pinyin: "hu\u01D2 ch\u0113", english: "train", audio: "\u706B\u8F66" },
-      { id: "airplane", hanzi: "\u98DE\u673A", pinyin: "f\u0113i j\u012B", english: "airplane", audio: "\u98DE\u673A" },
-      { id: "school-bus", hanzi: "\u6821\u8F66", pinyin: "xi\xE0o ch\u0113", english: "school bus", audio: "\u6821\u8F66" },
-      { id: "subway", hanzi: "\u5730\u94C1", pinyin: "d\xEC ti\u011B", english: "subway", audio: "\u5730\u94C1" },
-      { id: "toy-doll", hanzi: "\u73A9\u5177\u5A03\u5A03", pinyin: "w\xE1n j\xF9 w\xE1 wa", english: "toy doll", audio: "\u73A9\u5177\u5A03\u5A03" },
-      { id: "bicycle", hanzi: "\u81EA\u884C\u8F66", pinyin: "z\xEC x\xEDng ch\u0113", english: "bicycle", audio: "\u81EA\u884C\u8F66" }
+      { id: "doll", hanzi: "\u5A03\u5A03", pinyin: "w\xE1 wa", english: "doll", audio: "\u5A03\u5A03", imagePath: "assets/illustrated-toys/toy-doll.webp", imageAlt: "A doll" },
+      { id: "toy-train", hanzi: "\u73A9\u5177\u706B\u8F66", pinyin: "w\xE1n j\xF9 hu\u01D2 ch\u0113", english: "toy train", audio: "\u73A9\u5177\u706B\u8F66", imagePath: "assets/illustrated-toys/train.webp", imageAlt: "A toy train" },
+      { id: "toy-airplane", hanzi: "\u73A9\u5177\u98DE\u673A", pinyin: "w\xE1n j\xF9 f\u0113i j\u012B", english: "toy airplane", audio: "\u73A9\u5177\u98DE\u673A", imagePath: "assets/illustrated-toys/airplane.webp", imageAlt: "A toy airplane" },
+      { id: "toy-bear", hanzi: "\u73A9\u5177\u718A", pinyin: "w\xE1n j\xF9 xi\xF3ng", english: "toy bear", audio: "\u73A9\u5177\u718A", imagePath: "assets/illustrated-toys/teddy-bear.webp", imageAlt: "A toy bear" }
     ],
-    parentGuide: "Use the child's own toy shelf first. Point, tap the card, hear the word, then ask the child to find the matching toy or vehicle.",
-    cultureGuide: "This set bridges toy language and everyday transport language, so it can grow naturally into later daily-life lessons.",
-    activities: ["Tap to hear", "Find the toy", "Listen and choose", "Sort toys and vehicles"],
-    steps: [{ book: "2A", lesson: 4, title: "My toys", note: "Learn a core toy set with familiar child-friendly objects." }]
+    flashcardItems: [
+      { id: "toys", hanzi: "\u73A9\u5177", pinyin: "w\xE1n j\xF9", english: "toys", audio: "\u73A9\u5177", imagePath: "assets/illustrated-toys/toys-collection.webp", imageAlt: "A collection of toys" },
+      { id: "toy-car", hanzi: "\u73A9\u5177\u6C7D\u8F66", pinyin: "w\xE1n j\xF9 q\xEC ch\u0113", english: "toy car", audio: "\u73A9\u5177\u6C7D\u8F66", imagePath: "assets/illustrated-toys/toy-car.webp", imageAlt: "A toy car" },
+      { id: "toy-train", hanzi: "\u73A9\u5177\u706B\u8F66", pinyin: "w\xE1n j\xF9 hu\u01D2 ch\u0113", english: "toy train", audio: "\u73A9\u5177\u706B\u8F66", imagePath: "assets/illustrated-toys/train.webp", imageAlt: "A toy train" },
+      { id: "toy-airplane", hanzi: "\u73A9\u5177\u98DE\u673A", pinyin: "w\xE1n j\xF9 f\u0113i j\u012B", english: "toy airplane", audio: "\u73A9\u5177\u98DE\u673A", imagePath: "assets/illustrated-toys/airplane.webp", imageAlt: "A toy airplane" },
+      { id: "school-bus", hanzi: "\u73A9\u5177\u6821\u8F66", pinyin: "w\xE1n j\xF9 xi\xE0o ch\u0113", english: "toy school bus", audio: "\u73A9\u5177\u6821\u8F66", imagePath: "assets/illustrated-toys/school-bus.webp", imageAlt: "A toy school bus" },
+      { id: "doll", hanzi: "\u5A03\u5A03", pinyin: "w\xE1 wa", english: "doll", audio: "\u5A03\u5A03", imagePath: "assets/illustrated-toys/toy-doll.webp", imageAlt: "A doll" },
+      { id: "bicycle", hanzi: "\u81EA\u884C\u8F66", pinyin: "z\xEC x\xEDng ch\u0113", english: "bicycle", audio: "\u81EA\u884C\u8F66", imagePath: "assets/illustrated-toys/bicycle.webp", imageAlt: "A bicycle" },
+      { id: "toy-bear", hanzi: "\u73A9\u5177\u718A", pinyin: "w\xE1n j\xF9 xi\xF3ng", english: "toy bear", audio: "\u73A9\u5177\u718A", imagePath: "assets/illustrated-toys/teddy-bear.webp", imageAlt: "A toy bear" }
+    ],
+    parentGuide: "Point to a real toy at home and say \u6211\u6709\u2026 together.",
+    cultureGuide: "Keep this page with the Book 2A ownership frame; later requests to use someone else's toy belong in Requests.",
+    activities: ["Tap to hear", "Say \u6211\u6709\u2026", "Picture choice"],
+    steps: [{ book: "2A", lesson: 4, title: "My toys", note: "Name four toys with \u6211\u6709\u2026" }]
   };
 
   // src/features/foundations/body.js
@@ -5925,7 +6003,7 @@
       const stage = currentNumberStage2();
       const items = numberStageItems2(stage);
       const pool = items.map((entry) => entry.value);
-      const targetValue = pool[Math.floor(Math.random() * pool.length)];
+      const targetValue = nextRandomCycleId(state2, `numbers-listen:${stage.id}`, pool);
       const distractors = shuffleArray2(pool.filter((value) => value !== targetValue)).slice(
         0,
         Math.min(3, Math.max(0, pool.length - 1))
@@ -5945,21 +6023,22 @@
       const stage = currentNumberStage2();
       const low = Math.max(1, stage.start);
       const high = Math.max(low, stage.end);
-      const operator = Math.random() < 0.5 ? "+" : "-";
-      let left;
-      let right;
-      let answer;
-      if (operator === "+") {
-        const additionMaxLeft = high > low ? high - 1 : high;
-        left = Math.floor(Math.random() * (additionMaxLeft - low + 1)) + low;
-        const maxRight = Math.max(1, high - left);
-        right = Math.floor(Math.random() * maxRight) + 1;
-        answer = left + right;
-      } else {
-        left = Math.floor(Math.random() * (high - low + 1)) + low;
-        right = Math.floor(Math.random() * (left + 1));
-        answer = left - right;
-      }
+      const additionMaxLeft = high > low ? high - 1 : high;
+      const problems = [
+        ...Array.from({ length: Math.max(0, additionMaxLeft - low + 1) }, (_, offset) => {
+          const left2 = low + offset;
+          return Array.from({ length: Math.max(1, high - left2) }, (_2, rightOffset) => {
+            const right2 = rightOffset + 1;
+            return { operator: "+", left: left2, right: right2, answer: left2 + right2 };
+          });
+        }).flat(),
+        ...Array.from({ length: high - low + 1 }, (_, offset) => {
+          const left2 = low + offset;
+          return Array.from({ length: left2 + 1 }, (_2, right2) => ({ operator: "-", left: left2, right: right2, answer: left2 - right2 }));
+        }).flat()
+      ];
+      const problemId = nextRandomCycleId(state2, `math:${stage.id}`, problems.map((problem) => `${problem.operator}:${problem.left}:${problem.right}`));
+      const { operator, left, right, answer } = problems.find((problem) => `${problem.operator}:${problem.left}:${problem.right}` === problemId) ?? problems[0];
       state2.mathChallengeStageId = stage.id;
       state2.mathChallengeOperator = operator;
       state2.mathChallengeLeft = left;
@@ -6087,7 +6166,9 @@
       if (!items.length) {
         return;
       }
-      const answer = items[Math.floor(Math.random() * items.length)];
+      const answerId = nextRandomCycleId(state2, "family-listen", items.map((item) => item.id));
+      const answer = items.find((item) => item.id === answerId);
+      if (!answer) return;
       const distractors = shuffleArray2(items.filter((item) => item.id !== answer.id)).slice(
         0,
         Math.min(3, Math.max(0, items.length - 1))
@@ -7071,9 +7152,9 @@
   function createTimeDailyLifeRuntime(context) {
     const { state: state2, timeDateWeekItems: timeDateWeekItems2, timeDateClockItems: timeDateClockItems2, timeDateExpressionItems: timeDateExpressionItems2, timeDateRoutineItems: timeDateRoutineItems2, datePracticeItems: datePracticeItems2, timeDateDateItems: timeDateDateItems2, timeDateMonthItems: timeDateMonthItems2, comparisonPracticeItems: comparisonPracticeItems2, comparisonWordItems: comparisonWordItems2, positionPracticeItems: positionPracticeItems2, positionScenes: positionScenes2, clothesMatchItems: clothesMatchItems2, clothesPractice: clothesPractice2, roomScenes: roomScenes2, roomSentenceTokens: roomSentenceTokens2, transportSentenceTokens: transportSentenceTokens2, everydayActionItems: everydayActionItems2, visualTopicItems: visualTopicItems2, shuffleArray: shuffleArray2, speak: speak2, speakSceneLines: speakSceneLines2, currentTopic: currentTopic2, currentBook: currentBook2, currentLesson: currentLesson2, renderActivityPanel: renderActivityPanel2, focusExplorer: focusExplorer2, focusStatus: focusStatus2 } = context;
     function resetWeekdayChallenge2(options = {}) {
-      const candidates = timeDateWeekItems2.filter((item) => item.id !== options.excludeId);
-      const answers = candidates.length ? candidates : timeDateWeekItems2;
-      const answer = answers[Math.floor(Math.random() * answers.length)];
+      const answerId = nextRandomCycleId(state2, "weekdays-listen", timeDateWeekItems2.map((item) => item.id));
+      const answer = timeDateWeekItems2.find((item) => item.id === answerId);
+      if (!answer) return;
       const distractors = shuffleArray2(timeDateWeekItems2.filter((item) => item.id !== answer.id)).slice(0, 3);
       state2.weekdayChallengeAnswerId = answer.id;
       state2.weekdayChallengePromptId = answer.id;
@@ -7167,7 +7248,7 @@
       renderActivityPanel2(currentTopic2());
     }
     function nextClothesQuizQuestion2() {
-      state2.clothesQuizIndex = (state2.clothesQuizIndex + 1) % state2.clothesQuizOrder.length;
+      advanceShuffledOrder(state2, "clothesQuizOrder", "clothesQuizIndex", shuffleArray2);
       prepareClothesQuizQuestion2();
       renderActivityPanel2(currentTopic2());
     }
@@ -7202,7 +7283,7 @@
       renderActivityPanel2(currentTopic2());
     }
     function nextTimeRoutineQuizQuestion2() {
-      state2.timeRoutineQuizIndex = (state2.timeRoutineQuizIndex + 1) % state2.timeRoutineQuizOrder.length;
+      advanceShuffledOrder(state2, "timeRoutineQuizOrder", "timeRoutineQuizIndex", shuffleArray2);
       prepareTimeRoutineQuizQuestion2();
       renderActivityPanel2(currentTopic2());
     }
@@ -7237,7 +7318,7 @@
       renderActivityPanel2(currentTopic2());
     }
     function nextClockQuizQuestion2() {
-      state2.clockQuizIndex = (state2.clockQuizIndex + 1) % state2.clockQuizOrder.length;
+      advanceShuffledOrder(state2, "clockQuizOrder", "clockQuizIndex", shuffleArray2);
       prepareClockQuizQuestion2();
       renderActivityPanel2(currentTopic2());
     }
@@ -7312,7 +7393,7 @@
       renderActivityPanel2(currentTopic2());
     }
     function nextRoomBuilder2() {
-      state2.roomBuildIndex = (state2.roomBuildIndex + 1) % state2.roomBuildOrder.length;
+      advanceShuffledOrder(state2, "roomBuildOrder", "roomBuildIndex", shuffleArray2);
       prepareRoomBuilder2();
       renderActivityPanel2(currentTopic2());
     }
@@ -7364,7 +7445,7 @@
       renderActivityPanel2(currentTopic2());
     }
     function nextTransportBuilder2() {
-      state2.transportBuildIndex = (state2.transportBuildIndex + 1) % state2.transportBuildOrder.length;
+      advanceShuffledOrder(state2, "transportBuildOrder", "transportBuildIndex", shuffleArray2);
       prepareTransportBuilder2();
       renderActivityPanel2(currentTopic2());
     }
@@ -7400,8 +7481,8 @@
       renderActivityPanel2(currentTopic2());
     }
     function nextEverydayActionsQuestion2() {
-      const previousId = state2.everydayActionsOrder[state2.everydayActionsIndex];
-      resetEverydayActionsQuiz({ excludeId: previousId });
+      advanceShuffledOrder(state2, "everydayActionsOrder", "everydayActionsIndex", shuffleArray2);
+      prepareEverydayActionsQuestion();
       renderActivityPanel2(currentTopic2());
     }
     function resetPositionQuiz2() {
@@ -7436,7 +7517,7 @@
       renderActivityPanel2(currentTopic2());
     }
     function nextPositionQuizQuestion2() {
-      state2.positionQuizIndex = (state2.positionQuizIndex + 1) % state2.positionQuizOrder.length;
+      advanceShuffledOrder(state2, "positionQuizOrder", "positionQuizIndex", shuffleArray2);
       preparePositionQuizQuestion2();
       renderActivityPanel2(currentTopic2());
     }
@@ -7485,7 +7566,7 @@
       renderActivityPanel2(currentTopic2());
     }
     function nextComparisonBuilder2() {
-      state2.comparisonBuildIndex = (state2.comparisonBuildIndex + 1) % state2.comparisonBuildOrder.length;
+      advanceShuffledOrder(state2, "comparisonBuildOrder", "comparisonBuildIndex", shuffleArray2);
       prepareComparisonBuilder2();
       renderActivityPanel2(currentTopic2());
     }
@@ -7524,8 +7605,8 @@
       renderActivityPanel2(currentTopic2());
     }
     function resetDateChallenge2(options = {}) {
-      const available = options.excludeId ? datePracticeItems2.filter((item) => item.id !== options.excludeId) : datePracticeItems2;
-      const answer = available[Math.floor(Math.random() * available.length)] ?? datePracticeItems2[0];
+      const answerId = nextRandomCycleId(state2, "dates-listen", datePracticeItems2.map((item) => item.id));
+      const answer = datePracticeItems2.find((item) => item.id === answerId) ?? datePracticeItems2[0];
       const distractors = shuffleArray2(datePracticeItems2.filter((item) => item.id !== answer.id)).slice(0, 3);
       state2.dateChallengeAnswerId = answer.id;
       state2.dateChallengePromptId = answer.id;
@@ -8422,7 +8503,7 @@
         if (scene && state2.tapAudioEnabled) speak2(scene.lines.map((line) => line.audio).join("\uFF0C"), 0.74);
       }));
     }
-    function shuffled2(items) {
+    function shuffled3(items) {
       const copy = [...items];
       for (let index = copy.length - 1; index > 0; index -= 1) {
         const swapIndex = Math.floor(Math.random() * (index + 1));
@@ -8431,10 +8512,10 @@
       return copy;
     }
     function shuffledWithoutAlignedPairs(items, oppositeOrder) {
-      let order = shuffled2(items);
+      let order = shuffled3(items);
       let attempts = 0;
       while (order.some((id, index) => id === oppositeOrder[index]) && attempts < 12) {
-        order = shuffled2(items);
+        order = shuffled3(items);
         attempts += 1;
       }
       return order.some((id, index) => id === oppositeOrder[index]) ? [...oppositeOrder.slice(1), oppositeOrder[0]] : order;
@@ -8449,7 +8530,7 @@
     function ensurePetFoodMatch() {
       const stories = animalLessons["1b"].foodStory;
       if (state2.petFoodMatchOrder?.length === stories.length) return;
-      state2.petFoodMatchOrder = shuffled2(stories.map((story) => story.id));
+      state2.petFoodMatchOrder = shuffled3(stories.map((story) => story.id));
       state2.petFoodFoodOrder = shuffledWithoutAlignedPairs(stories.map((story) => story.id), state2.petFoodMatchOrder);
       state2.petFoodMatchAnimalId = "";
       state2.petFoodMatchedIds = [];
@@ -8567,7 +8648,7 @@
     function ensureColourPractice() {
       const items = colourLessons["2a"].items;
       if (!state2.worldColourRoundIds?.length || state2.worldColourRoundIds.length !== items.length) {
-        state2.worldColourRoundIds = shuffled2(items.map((item) => item.id));
+        state2.worldColourRoundIds = shuffled3(items.map((item) => item.id));
         state2.worldColourRoundIndex = 0;
         state2.worldColourPickedId = "";
         state2.worldColourResult = "";
@@ -8590,10 +8671,15 @@
     }
     function resetColourMission() {
       const colourItems = colourLessons["2a"].items;
-      const objects = shuffled2(colourMissionObjects).slice(0, 6);
-      const colours = shuffled2(colourItems).slice(0, 6);
-      state2.worldColourMissionCards = shuffled2(objects.map((object, index) => ({ objectId: object.id, colourId: colours[index].id })));
-      state2.worldColourMissionTargetObjectId = state2.worldColourMissionCards[Math.floor(Math.random() * state2.worldColourMissionCards.length)].objectId;
+      const targetObjectId = nextRandomCycleId(state2, "colours-mission-target", colourMissionObjects.map((object) => object.id));
+      const targetObject = colourMissionObjects.find((object) => object.id === targetObjectId);
+      const objects = shuffled3([
+        targetObject,
+        ...shuffled3(colourMissionObjects.filter((object) => object.id !== targetObjectId)).slice(0, 5)
+      ].filter(Boolean));
+      const colours = shuffled3(colourItems).slice(0, 6);
+      state2.worldColourMissionCards = shuffled3(objects.map((object, index) => ({ objectId: object.id, colourId: colours[index].id })));
+      state2.worldColourMissionTargetObjectId = targetObjectId;
       state2.worldColourMissionPickedObjectId = "";
       state2.worldColourMissionResult = "";
     }
@@ -8609,7 +8695,7 @@
       ensureColourPractice();
       const items = colourLessons["2a"].items;
       const target = currentColourPracticeItem();
-      const choices = shuffled2([target, ...shuffled2(items.filter((item) => item.id !== target.id)).slice(0, 3)]);
+      const choices = shuffled3([target, ...shuffled3(items.filter((item) => item.id !== target.id)).slice(0, 3)]);
       const favourite = items.find((item) => item.id === state2.worldFavouriteColourId) ?? items[0];
       ensureColourMission();
       const missionCards = state2.worldColourMissionCards;
@@ -8671,7 +8757,7 @@
         renderActivityPanel2(currentTopic2());
       }));
       activityList2.querySelector("[data-world-colour-next]")?.addEventListener("click", () => {
-        state2.worldColourRoundIndex = (state2.worldColourRoundIndex + 1) % state2.worldColourRoundIds.length;
+        advanceShuffledOrder(state2, "worldColourRoundIds", "worldColourRoundIndex", shuffled3);
         state2.worldColourPickedId = "";
         state2.worldColourResult = "";
         renderActivityPanel2(currentTopic2());
@@ -8689,14 +8775,14 @@
     }
     function ensureNatureFillPractice() {
       if (!state2.worldNatureFillRoundIds?.length || state2.worldNatureFillRoundIds.length !== natureFillRounds.length) {
-        state2.worldNatureFillRoundIds = shuffled2(natureFillRounds.map((round) => round.id));
+        state2.worldNatureFillRoundIds = shuffled3(natureFillRounds.map((round) => round.id));
         state2.worldNatureFillRoundIndex = 0;
         resetNatureFillChoices();
       }
     }
     function resetNatureFillChoices() {
-      state2.worldNatureFillSubjectChoices = shuffled2(["\u767D\u5929", "\u665A\u4E0A", "\u5730\u4E0A"]);
-      state2.worldNatureFillWordChoices = shuffled2(natureFillRounds.map((round) => round.word));
+      state2.worldNatureFillSubjectChoices = shuffled3(["\u767D\u5929", "\u665A\u4E0A", "\u5730\u4E0A"]);
+      state2.worldNatureFillWordChoices = shuffled3(natureFillRounds.map((round) => round.word));
       state2.worldNatureFillSubjectPicked = "";
       state2.worldNatureFillWordPicked = "";
       state2.worldNatureFillSubjectResult = "";
@@ -8716,7 +8802,7 @@
       activityList2.innerHTML = `<section class="practice-split-card nature-fill-practice"><div class="numbers-game-top"><div><p class="body-match-kicker">Look and complete</p><p class="numbers-game-note">Choose the two words that make the sentence match the picture.</p></div><button class="small-button is-play-button" type="button" data-nature-fill-play>Play</button></div><p class="nature-fill-sentence"><span class="weather-fill-blank${state2.worldNatureFillSubjectResult ? ` is-${state2.worldNatureFillSubjectResult}` : ""}">${state2.worldNatureFillSubjectPicked || "____"}</span>\u6709<span class="weather-fill-blank${state2.worldNatureFillWordResult ? ` is-${state2.worldNatureFillWordResult}` : ""}">${state2.worldNatureFillWordPicked || "____"}</span><span class="nature-fill-inline-icon">${natureIconMarkup(round.id)}</span>\u3002</p>${complete && state2.showPinyin ? `<p class="numbers-game-pinyin">${round.pinyin}</p>` : ""}${complete && state2.showEnglish ? `<p class="numbers-game-english">${round.english}</p>` : ""}<div class="weather-fill-choice-groups"><div><p class="weather-fill-choice-label">\u7B2C\u4E00\u4E2A\u8BCD</p><div class="weather-fill-options">${state2.worldNatureFillSubjectChoices.map((choice) => `<button class="weather-fill-option${state2.worldNatureFillSubjectPicked === choice ? ` is-${state2.worldNatureFillSubjectResult}` : ""}" type="button" data-nature-fill-subject="${choice}">${choice}</button>`).join("")}</div></div><div><p class="weather-fill-choice-label">\u6709\u4EC0\u4E48\uFF1F</p><div class="weather-fill-options">${state2.worldNatureFillWordChoices.map((choice) => `<button class="weather-fill-option${state2.worldNatureFillWordPicked === choice ? ` is-${state2.worldNatureFillWordResult}` : ""}" type="button" data-nature-fill-word="${choice}">${choice}</button>`).join("")}</div></div></div>${state2.worldNatureFillSubjectResult === "wrong" || state2.worldNatureFillWordResult === "wrong" ? '<p class="weather-fill-feedback">\u518D\u770B\u770B\u56FE\uFF0C\u60F3\u60F3\u53E5\u5B50\u7684\u7B2C\u4E00\u4E2A\u8BCD\u548C\u6709\u4EC0\u4E48\u3002</p>' : ""}</section>`;
       activityList2.querySelector("[data-nature-fill-play]")?.addEventListener("click", () => {
         if (complete) {
-          state2.worldNatureFillRoundIndex = (state2.worldNatureFillRoundIndex + 1) % state2.worldNatureFillRoundIds.length;
+          advanceShuffledOrder(state2, "worldNatureFillRoundIds", "worldNatureFillRoundIndex", shuffled3);
           resetNatureFillChoices();
           renderActivityPanel2(currentTopic2());
           return;
@@ -8739,7 +8825,7 @@
     }
     function ensureWeatherDressPractice() {
       if (!state2.worldWeatherDressRoundIds?.length || state2.worldWeatherDressRoundIds.length !== weatherDressRounds.length) {
-        state2.worldWeatherDressRoundIds = shuffled2(weatherDressRounds.map((round) => round.id));
+        state2.worldWeatherDressRoundIds = shuffled3(weatherDressRounds.map((round) => round.id));
         state2.worldWeatherDressRoundIndex = 0;
         state2.worldWeatherDressPickedId = "";
         state2.worldWeatherDressResult = "";
@@ -8752,7 +8838,7 @@
     }
     function ensureWeatherFillPractice() {
       if (!state2.worldWeatherFillRoundIds?.length || state2.worldWeatherFillRoundIds.length !== weatherFillRounds.length) {
-        state2.worldWeatherFillRoundIds = shuffled2(weatherFillRounds.map((round) => round.id));
+        state2.worldWeatherFillRoundIds = shuffled3(weatherFillRounds.map((round) => round.id));
         state2.worldWeatherFillRoundIndex = 0;
         state2.worldWeatherFillWeatherPicked = "";
         state2.worldWeatherFillTemperaturePicked = "";
@@ -8767,11 +8853,11 @@
     }
     function renderWeatherPractice() {
       const round = currentWeatherDressRound();
-      const choices = shuffled2(weatherDressChoices);
+      const choices = shuffled3(weatherDressChoices);
       const selectedChoice = weatherDressChoices.find((choice) => choice.id === state2.worldWeatherDressPickedId);
       const fillRound = currentWeatherFillRound();
-      const weatherChoices = shuffled2(weatherFillWeatherChoices);
-      const temperatureChoices = shuffled2(["\u51B7", "\u70ED"]);
+      const weatherChoices = shuffled3(weatherFillWeatherChoices);
+      const temperatureChoices = shuffled3(["\u51B7", "\u70ED"]);
       const fillComplete = state2.worldWeatherFillWeatherResult === "correct" && state2.worldWeatherFillTemperatureResult === "correct";
       const chosenTemperature = weatherFillTemperatureData[state2.worldWeatherFillTemperaturePicked] ?? weatherFillTemperatureData[fillRound.temperature];
       activityPanelTitle2.textContent = "Let's practice";
@@ -8804,7 +8890,7 @@
     `;
       activityList2.querySelector("[data-weather-dress-play]")?.addEventListener("click", () => {
         if (state2.worldWeatherDressResult === "correct") {
-          state2.worldWeatherDressRoundIndex = (state2.worldWeatherDressRoundIndex + 1) % state2.worldWeatherDressRoundIds.length;
+          advanceShuffledOrder(state2, "worldWeatherDressRoundIds", "worldWeatherDressRoundIndex", shuffled3);
           state2.worldWeatherDressPickedId = "";
           state2.worldWeatherDressResult = "";
           renderActivityPanel2(currentTopic2());
@@ -8824,7 +8910,7 @@
       }));
       activityList2.querySelector("[data-weather-fill-play]")?.addEventListener("click", () => {
         if (fillComplete) {
-          state2.worldWeatherFillRoundIndex = (state2.worldWeatherFillRoundIndex + 1) % state2.worldWeatherFillRoundIds.length;
+          advanceShuffledOrder(state2, "worldWeatherFillRoundIds", "worldWeatherFillRoundIndex", shuffled3);
           state2.worldWeatherFillWeatherPicked = "";
           state2.worldWeatherFillTemperaturePicked = "";
           state2.worldWeatherFillWeatherResult = "";
@@ -8950,7 +9036,7 @@
       ]
     }
   };
-  function shuffled(items) {
+  function shuffled2(items) {
     const copy = [...items];
     for (let i = copy.length - 1; i > 0; i -= 1) {
       const j = Math.floor(Math.random() * (i + 1));
@@ -8959,6 +9045,20 @@
     return copy;
   }
   function createPlayHobbiesRuntime({ state: state2, currentTopic: currentTopic2, currentBook: currentBook2, currentLesson: currentLesson2, focusExplorer: focusExplorer2, speak: speak2, selectFocusItem: selectFocusItem2, activityPanelTitle: activityPanelTitle2, activityPanelSummary: activityPanelSummary2, activityList: activityList2, renderActivityPanel: renderActivityPanel2 }) {
+    const toyItems = () => currentTopic2().flashcardItems;
+    const currentToyPracticeItem = () => toyItems().find((item) => item.id === state2.toysPracticeItemId) ?? toyItems()[0];
+    const nextToysPracticeRound = () => {
+      const items = toyItems();
+      const itemId = nextRandomCycleId(state2, "toys-picture-choice", items.map((item) => item.id));
+      state2.toysPracticeItemId = itemId;
+      state2.toysPracticeOptionIds = shuffled2(items.map((item) => item.id));
+      state2.toysPracticeSelectedId = "";
+      state2.toysPracticeResult = "";
+      state2.toysPracticeWrongIds = /* @__PURE__ */ new Set();
+    };
+    const ensureToysPractice = () => {
+      if (!state2.toysPracticeItemId || !state2.toysPracticeOptionIds.length) nextToysPracticeRound();
+    };
     const lessonKey = () => ({ "hobbies-3b": "3b:4", "hobbies-at-home": "4b:4", "hobbies-leisure": "4b:7" })[currentTopic2().id] ?? "2a:5";
     const lesson = () => lessons[lessonKey()] ?? lessons["2a:5"];
     const speakLesson = (text, rate) => speak2(text, rate);
@@ -8967,23 +9067,24 @@
     const validPrefix = (entry, tokens) => entry.answers.some((answer) => tokens.every((token, index) => token === answer.tokens[index]));
     function resetRound(newGame = false) {
       const sameLesson = state2.hobbiesBuildLessonKey === lessonKey();
-      const previousRoundId = sameLesson ? round().itemId : "";
       if (!sameLesson) {
         state2.hobbiesBuildLessonKey = lessonKey();
         newGame = true;
       }
-      if (!state2.hobbiesBuildOrder.length || newGame) {
-        const order = shuffled(lesson().rounds).map((entry2) => entry2.itemId);
-        if (newGame && previousRoundId && order.length > 1 && order[0] === previousRoundId) [order[0], order[1]] = [order[1], order[0]];
+      if (!state2.hobbiesBuildOrder.length) {
+        const order = shuffled2(lesson().rounds).map((entry2) => entry2.itemId);
         state2.hobbiesBuildOrder = order;
         state2.hobbiesBuildRoundIndex = 0;
+      } else if (newGame) {
+        advanceShuffledOrder(state2, "hobbiesBuildOrder", "hobbiesBuildRoundIndex", shuffled2);
       }
       const entry = round();
       state2.hobbiesBuildSelectedTokens = [];
-      state2.hobbiesBuildAvailableTokens = lesson().practiceType === "sentence-choice" ? shuffled(entry.optionIds) : shuffled([.../* @__PURE__ */ new Set([...entry.answers.flatMap((answer) => answer.tokens), ...entry.distractors])]);
+      state2.hobbiesBuildAvailableTokens = lesson().practiceType === "sentence-choice" ? shuffled2(entry.optionIds) : shuffled2([.../* @__PURE__ */ new Set([...entry.answers.flatMap((answer) => answer.tokens), ...entry.distractors])]);
       state2.hobbiesBuildResult = "";
     }
     function renderHobbiesExplorer() {
+      if (currentTopic2().id === "toys") return renderToysExplorer();
       if (!["hobbies", "hobbies-3b", "hobbies-at-home", "hobbies-leisure"].includes(currentTopic2().id)) return;
       const page = lesson();
       const items = currentTopic2().focusItems;
@@ -8999,7 +9100,59 @@
       focusExplorer2.querySelectorAll("[data-hobbies-word]").forEach((button) => button.addEventListener("click", () => selectFocusItem2(button.dataset.hobbiesWord, { playAudio: true })));
       focusExplorer2.querySelectorAll("[data-hobbies-scene]").forEach((button) => button.addEventListener("click", () => state2.tapAudioEnabled && speakLesson(button.dataset.hobbiesScene, 0.74)));
     }
+    function renderToysExplorer() {
+      const flashcards = currentTopic2().flashcardItems;
+      const scenes = [
+        { id: "doll", imagePath: "assets/illustrated-toys/lele-playing-doll.webp", alt: "Lele playing with a doll", hanzi: "\u6211\u6709\u5A03\u5A03\u3002", pinyin: "w\u01D2 y\u01D2u w\xE1 wa.", english: "I have a doll.", audio: "\u6211\u6709\u5A03\u5A03" },
+        { id: "toy-train", imagePath: "assets/illustrated-toys/lele-playing-toy-train.webp", alt: "Lele pushing a toy train", hanzi: "\u6211\u6709\u73A9\u5177\u706B\u8F66\u3002", pinyin: "w\u01D2 y\u01D2u w\xE1n j\xF9 hu\u01D2 ch\u0113.", english: "I have a toy train.", audio: "\u6211\u6709\u73A9\u5177\u706B\u8F66" },
+        { id: "toy-airplane", imagePath: "assets/illustrated-toys/lele-playing-toy-airplane.webp", alt: "Lele flying a toy airplane", hanzi: "\u6211\u6709\u73A9\u5177\u98DE\u673A\u3002", pinyin: "w\u01D2 y\u01D2u w\xE1n j\xF9 f\u0113i j\u012B.", english: "I have a toy airplane.", audio: "\u6211\u6709\u73A9\u5177\u98DE\u673A" },
+        { id: "toy-bear", imagePath: "assets/illustrated-toys/lele-playing-toy-bear.webp", alt: "Lele high-fiving a toy bear", hanzi: "\u6211\u6709\u73A9\u5177\u718A\u3002", pinyin: "w\u01D2 y\u01D2u w\xE1n j\xF9 xi\xF3ng.", english: "I have a toy bear.", audio: "\u6211\u6709\u73A9\u5177\u718A" }
+      ];
+      focusExplorer2.innerHTML = `<div class="time-date-board school-topic-board hobbies-topic-board"><section class="school-lesson-section"><div class="time-months-heading"><p class="body-match-kicker">Scene</p></div><div class="school-scene-grid toys-scene-grid">${scenes.map((scene) => `<section class="greetings-exchange school-scene-card"><div class="greetings-exchange-top"><span></span><button class="small-button is-play-button" type="button" data-toys-scene-play="${scene.id}">Play</button></div><div class="school-scene-layout"><img class="school-scene-image" src="${scene.imagePath}" alt="${scene.alt}"><div class="greetings-line-stack is-compact"><article class="greetings-line-card"><div class="telephone-bubble-copy"><p class="telephone-line-hanzi">${scene.hanzi}</p>${state2.showPinyin ? `<p class="telephone-line-pinyin">${scene.pinyin}</p>` : ""}${state2.showEnglish ? `<p class="telephone-line-english">${scene.english}</p>` : ""}</div></article></div></div></section>`).join("")}</div></section><section class="school-lesson-section"><div class="time-months-heading"><p class="body-match-kicker">Book words &amp; more</p></div><div class="school-word-grid toys-flashcard-grid">${flashcards.map((item) => `<button class="school-word-card book-word-card" type="button" data-toys-flashcard="${item.id}"><img class="school-word-image book-word-image" src="${item.imagePath}" alt="${item.imageAlt}"><span class="book-word-copy"><span class="time-asset-hanzi">${item.hanzi}</span>${state2.showPinyin ? `<span class="time-asset-pinyin">${item.pinyin}</span>` : ""}${state2.showEnglish ? `<span class="time-asset-english">${item.english}</span>` : ""}</span></button>`).join("")}</div></section></div>`;
+      focusExplorer2.querySelectorAll("[data-toys-scene-play]").forEach((button) => button.addEventListener("click", () => {
+        const scene = scenes.find((entry) => entry.id === button.dataset.toysScenePlay);
+        if (scene && state2.tapAudioEnabled) speakLesson(scene.audio, 0.74);
+      }));
+      focusExplorer2.querySelectorAll("[data-toys-flashcard]").forEach((button) => button.addEventListener("click", () => {
+        const item = flashcards.find((entry) => entry.id === button.dataset.toysFlashcard);
+        if (item && state2.tapAudioEnabled) speakLesson(item.audio, 0.78);
+      }));
+    }
+    function renderToysPractice(topic) {
+      ensureToysPractice();
+      const item = currentToyPracticeItem();
+      if (!item) return;
+      const complete = state2.toysPracticeResult === "correct";
+      activityPanelTitle2.textContent = "Let's practice";
+      activityPanelSummary2.textContent = "Look at the toy, then choose the word that completes \u6211\u6709\u2026";
+      activityList2.className = "support-list";
+      activityList2.innerHTML = `<section class="clothes-quiz-shell toys-practice-shell"><div class="numbers-game-top"><div><p class="body-match-kicker">Look and choose</p><p class="numbers-game-note">Look at the picture. Which toy completes \u6211\u6709\u2026?</p></div><button class="small-button is-practice-advance-button" type="button" data-toys-practice-new>New game</button></div><figure class="clothes-quiz-visual school-build-visual"><img class="clothes-quiz-image" src="${item.imagePath}" alt="${item.imageAlt}"></figure><p class="toy-practice-frame">\u6211\u6709<span class="toy-practice-blank${complete ? " is-correct" : ""}">${complete ? item.hanzi : "\u2026"}</span>\u3002</p>${complete && state2.showPinyin ? `<p class="numbers-game-pinyin">w\u01D2 y\u01D2u ${item.pinyin}.</p>` : ""}${complete && state2.showEnglish ? `<p class="numbers-game-english">I have a ${item.english}.</p>` : ""}<div class="clothes-quiz-options">${state2.toysPracticeOptionIds.map((optionId) => {
+        const option = toyItems().find((entry) => entry.id === optionId);
+        if (!option) return "";
+        const isCorrect = complete && option.id === item.id;
+        const isWrong = state2.toysPracticeWrongIds.has(option.id);
+        return `<button class="clothes-quiz-option${isCorrect ? " is-correct" : isWrong ? " is-wrong" : ""}" type="button" data-toys-practice-pick="${option.id}" ${complete ? "disabled" : ""}>${isCorrect || isWrong ? `<span class="answer-result-mark" aria-hidden="true">${isCorrect ? "\u2713" : "\xD7"}</span>` : ""}<span class="numbers-game-hanzi">${option.hanzi}</span>${state2.showPinyin ? `<span class="numbers-game-pinyin">${option.pinyin}</span>` : ""}${state2.showEnglish ? `<span class="numbers-game-english">${option.english}</span>` : ""}</button>`;
+      }).join("")}</div></section>`;
+      activityList2.querySelector("[data-toys-practice-new]")?.addEventListener("click", () => {
+        nextToysPracticeRound();
+        renderActivityPanel2(topic);
+      });
+      activityList2.querySelectorAll("[data-toys-practice-pick]").forEach((button) => button.addEventListener("click", () => {
+        if (state2.toysPracticeResult === "correct") return;
+        const pickedId = button.dataset.toysPracticePick;
+        state2.toysPracticeSelectedId = pickedId;
+        if (pickedId === item.id) {
+          state2.toysPracticeResult = "correct";
+          if (state2.tapAudioEnabled) speakLesson(`\u6211\u6709${item.hanzi}`, 0.78);
+        } else {
+          state2.toysPracticeResult = "wrong";
+          state2.toysPracticeWrongIds = /* @__PURE__ */ new Set([...state2.toysPracticeWrongIds, pickedId]);
+        }
+        renderActivityPanel2(topic);
+      }));
+    }
     function renderHobbiesPractice(topic) {
+      if (topic.id === "toys") return renderToysPractice(topic);
       if (lesson().practiceType === "sentence-choice") return renderHobbiesSentenceChoice(topic);
       if (state2.hobbiesBuildLessonKey !== lessonKey() || !state2.hobbiesBuildAvailableTokens.length) resetRound();
       const entry = round();
@@ -9070,7 +9223,7 @@
         renderActivityPanel2(topic);
       }));
     }
-    return { renderHobbiesExplorer, renderHobbiesPractice };
+    return { renderHobbiesExplorer, renderHobbiesPractice, renderToysExplorer, renderToysPractice };
   }
 
   // src/data/characters.js
@@ -9285,7 +9438,7 @@
     "hobbies-3b": { zhTitle: "\u97F3\u4E50\u548C\u8FD0\u52A8", enTitle: "Music & Movement", hint: "Singing, dancing, swimming, skating" },
     "hobbies-at-home": { zhTitle: "\u5728\u5BB6\u7231\u597D", enTitle: "Hobbies at Home", hint: "Television, piano, games, movies" },
     "hobbies-leisure": { zhTitle: "\u4F11\u95F2\u65F6\u95F4", enTitle: "Leisure Time", hint: "Running, soccer, biking, sand" },
-    toys: { zhTitle: "\u73A9\u5177", enTitle: "Toys", hint: "Toy car, train, airplane" },
+    toys: { zhTitle: "\u73A9\u5177", enTitle: "Toys", hint: "Doll, toy train, airplane, bear" },
     clothes: { zhTitle: "\u8863\u670D", enTitle: "Clothes", hint: "Dress for the day" },
     comparisons: { zhTitle: "\u63CF\u8FF0\u548C\u6BD4\u8F83", enTitle: "Descriptions & Comparisons", hint: "Big, small, long, short" },
     positions: { zhTitle: "\u4F4D\u7F6E\u548C\u65B9\u5411", enTitle: "Positions & Directions", hint: "Up, down, inside, outside" },
@@ -9666,6 +9819,7 @@
   function createSharedLessonPractice({ state: state2, speak: speak2, elements, documentRef = document }) {
     const { activityPanelTitle: activityPanelTitle2, activityPanelSummary: activityPanelSummary2, activityList: activityList2 } = elements;
     function renderListenPractice2(config) {
+      const playLabel = typeof config.playLabel === "function" ? config.playLabel() : config.playLabel ?? "Play";
       return `
       <section class="practice-split-card">
         <div class="numbers-game-top">
@@ -9674,7 +9828,7 @@
             ${config.title ? `<h4>${config.title}</h4>` : ""}
             <p class="numbers-game-note">Play the audio, then tap the matching Chinese card.</p>
           </div>
-          <button class="small-button is-play-button" type="button" data-template-listen-play>Play</button>
+          <button class="small-button is-play-button" type="button" data-template-listen-play>${playLabel}</button>
         </div>
         ${config.feedback() ? `<p class="greetings-game-feedback">${config.feedback()}</p>` : ""}
         <div class="numbers-game-options">
