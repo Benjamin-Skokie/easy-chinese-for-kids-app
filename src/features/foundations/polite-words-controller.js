@@ -198,10 +198,7 @@ export function createPoliteWordsController({
           ${politePractice.map((exchange) => `
             <section class="greetings-exchange">
               <div class="greetings-exchange-top">
-                <div>
-                  <p class="body-match-kicker">Scene ${exchange.number}</p>
-                  <p class="greetings-exchange-prompt">${exchange.prompt}</p>
-                </div>
+                <div><p class="body-match-kicker">${exchange.title}</p></div>
                 <button class="small-button is-play-button" type="button" data-polite-play-all="${exchange.id}">Play</button>
               </div>
               <div class="greetings-scene-layout polite-scene-layout">

@@ -982,7 +982,7 @@ function renderSchoolExplorer(topicId) {
           <div class="school-scene-grid${group.items.length === 1 ? " is-single" : ""}">
             ${group.items.map((scene) => `
               <section class="greetings-exchange school-scene-card">
-                <div class="greetings-exchange-top">${scene.label ? `<div><p class="body-match-kicker">${scene.label}</p></div>` : "<span></span>"}<button class="small-button is-play-button" type="button" data-school-play-scene="${scene.id}">Play</button></div>
+                <div class="greetings-exchange-top"><div><p class="body-match-kicker">${scene.title ?? scene.label ?? "Look and listen"}</p></div><button class="small-button is-play-button" type="button" data-school-play-scene="${scene.id}">Play</button></div>
                 <div class="school-scene-layout${topicId === "food" ? " is-compact" : ""}">
                   <img class="school-scene-image" src="${scene.imagePath}" alt="${scene.english ?? scene.lines?.[0]?.english ?? ""}" />
                   <div class="greetings-line-stack${scene.compactLines ? " is-compact" : ""}">

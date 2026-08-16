@@ -792,7 +792,7 @@ function renderRoomsExplorer() {
       <div class="greetings-practice-grid room-scene-grid">
         ${roomScenes.map((scene) => `
           <section class="greetings-exchange room-scene-card">
-            <div class="greetings-exchange-top"><div><p class="body-match-kicker">${scene.label}</p></div><button class="small-button is-play-button" type="button" data-room-play-scene="${scene.id}">Play</button></div>
+            <div class="greetings-exchange-top"><div><p class="body-match-kicker">${scene.title}</p></div><button class="small-button is-play-button" type="button" data-room-play-scene="${scene.id}">Play</button></div>
             <div class="room-scene-layout">
               <img class="room-scene-image" src="${scene.imagePath}" alt="${scene.english}" />
               <article class="greetings-line-card"><div class="telephone-bubble-copy"><p class="telephone-line-hanzi">${scene.hanzi}</p>${state.showPinyin ? `<p class="telephone-line-pinyin">${scene.pinyin}</p>` : ""}${state.showEnglish ? `<p class="telephone-line-english">${scene.english}</p>` : ""}</div></article>
@@ -833,7 +833,7 @@ function renderPositionsExplorer() {
           .map(
             (scene) => `
               <section class="greetings-exchange">
-                <div class="greetings-exchange-top"><div><p class="body-match-kicker">Scene ${scene.number}</p><p class="greetings-exchange-prompt">${scene.prompt}</p></div><button class="small-button is-play-button" type="button" data-position-play-scene="${scene.id}">Play</button></div>
+                <div class="greetings-exchange-top"><div><p class="body-match-kicker">${scene.title}</p></div><button class="small-button is-play-button" type="button" data-position-play-scene="${scene.id}">Play</button></div>
                 <div class="greetings-scene-layout">
                   <div class="greetings-scene-visual"><img class="greetings-scene-image position-scene-image position-scene-image-${scene.id}" src="${scene.imagePath}" alt="${scene.imageAlt}" /></div>
                   <div class="greetings-line-stack">
@@ -878,13 +878,10 @@ function renderTimeDateExplorer() {
       <div class="greetings-practice-grid time-routine-scene-grid">
         ${timeDateRoutineItems
           .map(
-            (item, index) => `
+            (item) => `
               <section class="greetings-exchange">
                 <div class="greetings-exchange-top">
-                  <div>
-                    <p class="body-match-kicker">Scene ${index + 1}</p>
-                    <p class="greetings-exchange-prompt">${item.english}</p>
-                  </div>
+                  <div><p class="body-match-kicker">${item.title}</p></div>
                   <button class="small-button is-play-button" type="button" data-time-routine-play="${item.id}">Play</button>
                 </div>
                 <div class="greetings-scene-layout">
@@ -969,10 +966,7 @@ function renderClothesExplorer() {
             (scene) => `
               <section class="greetings-exchange">
                 <div class="greetings-exchange-top">
-                  <div>
-                    <p class="body-match-kicker">Scene ${scene.number}</p>
-                    <p class="greetings-exchange-prompt">${scene.prompt}</p>
-                  </div>
+                  <div><p class="body-match-kicker">${scene.title}</p></div>
                   <button class="small-button is-play-button" type="button" data-clothes-play-scene="${scene.id}">Play</button>
                 </div>
                 <div class="greetings-scene-layout">

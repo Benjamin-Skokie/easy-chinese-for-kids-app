@@ -22,8 +22,7 @@ export const positionVisualItems = [
 export const positionScenes = [
   {
     id: "up-down",
-    number: "1",
-    prompt: "Up and down",
+    title: "Up and down",
     imagePath: "assets/illustrated-rooms/positions-up-down.webp",
     imageAlt: "A book and backpack showing up and down positions around a desk",
     lines: [
@@ -34,8 +33,7 @@ export const positionScenes = [
   },
   {
     id: "inside-outside",
-    number: "2",
-    prompt: "Inside and outside",
+    title: "Inside and outside",
     imagePath: "assets/illustrated-rooms/positions-inside-outside.webp",
     imageAlt: "A backpack, book, and pencil case showing inside and outside positions",
     lines: [
@@ -46,8 +44,7 @@ export const positionScenes = [
   },
   {
     id: "directions",
-    number: "3",
-    prompt: "Front, back, left, and right",
+    title: "Directions",
     imagePath: "assets/illustrated-rooms/positions-all-directions.webp",
     imageAlt: "A room board showing front, back, left, and right directions",
     lines: [
@@ -56,8 +53,7 @@ export const positionScenes = [
   },
   {
     id: "room-directions",
-    number: "4",
-    prompt: "Directions in a room",
+    title: "Around the room",
     imagePath: "assets/illustrated-rooms/positions-room.webp",
     imageAlt: "A girl, chair, bookshelf, and dog in a room for practicing directions",
     lines: [

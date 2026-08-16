@@ -30,7 +30,7 @@ export const roomVisualItems = [
 export const roomScenes = [
   {
     id: "my-room",
-    label: "My room",
+    title: "My room",
     hanzi: "我的房间里有床、书桌和衣柜。",
     pinyin: "wǒ de fáng jiān lǐ yǒu chuáng, shū zhuō hé yī guì.",
     english: "There is a bed, desk, and wardrobe in my room.",
@@ -39,7 +39,7 @@ export const roomScenes = [
   },
   {
     id: "living-room",
-    label: "Living room",
+    title: "Living room",
     hanzi: "客厅里有沙发和电视。",
     pinyin: "kè tīng lǐ yǒu shā fa hé diàn shì.",
     english: "There is a sofa and TV in the living room.",
@@ -48,7 +48,7 @@ export const roomScenes = [
   },
   {
     id: "garage",
-    label: "Garage",
+    title: "Garage",
     hanzi: "车库里有自行车。",
     pinyin: "chē kù lǐ yǒu zì xíng chē.",
     english: "There is a bicycle in the garage.",

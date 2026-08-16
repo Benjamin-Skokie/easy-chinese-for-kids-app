@@ -27,8 +27,8 @@ export const clothesTopic = {
 };
 
 export const clothesPractice = [
-  { id: "clothes-scene-1", number: "1", prompt: "Getting dressed for the day", imagePath: "assets/illustrated-clothes/wearing-clothes-scene.webp", imageAlt: "A child getting dressed beside a clothes rack and mirror", lines: [{ hanzi: "我会穿衣服。", pinyin: "wǒ huì chuān yī fu.", english: "I can get dressed.", audio: "我会穿衣服" }, { hanzi: "我穿T恤和裤子。", pinyin: "wǒ chuān T xù hé kù zi.", english: "I wear a T-shirt and trousers.", audio: "我穿T恤和裤子" }] },
-  { id: "clothes-scene-2", number: "2", prompt: "Choosing clothes for rainy weather", imagePath: "assets/illustrated-clothes/weather-linked-clothing-scene.webp", imageAlt: "A child choosing a raincoat by a rainy window", lines: [{ hanzi: "下雨了。", pinyin: "xià yǔ le.", english: "It is raining.", audio: "下雨了" }, { hanzi: "我穿雨衣和雨鞋。", pinyin: "wǒ chuān yǔ yī hé yǔ xié.", english: "I wear a raincoat and rain boots.", audio: "我穿雨衣和雨鞋" }] }
+  { id: "clothes-scene-1", title: "Getting dressed", imagePath: "assets/illustrated-clothes/wearing-clothes-scene.webp", imageAlt: "A child getting dressed beside a clothes rack and mirror", lines: [{ hanzi: "我会穿衣服。", pinyin: "wǒ huì chuān yī fu.", english: "I can get dressed.", audio: "我会穿衣服" }, { hanzi: "我穿T恤和裤子。", pinyin: "wǒ chuān T xù hé kù zi.", english: "I wear a T-shirt and trousers.", audio: "我穿T恤和裤子" }] },
+  { id: "clothes-scene-2", title: "Rainy day clothes", imagePath: "assets/illustrated-clothes/weather-linked-clothing-scene.webp", imageAlt: "A child choosing a raincoat by a rainy window", lines: [{ hanzi: "下雨了。", pinyin: "xià yǔ le.", english: "It is raining.", audio: "下雨了" }, { hanzi: "我穿雨衣和雨鞋。", pinyin: "wǒ chuān yǔ yī hé yǔ xié.", english: "I wear a raincoat and rain boots.", audio: "我穿雨衣和雨鞋" }] }
 ];
 
 export const clothesMatchItems = [

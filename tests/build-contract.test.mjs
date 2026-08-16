@@ -47,8 +47,24 @@ import { familyGameItemIds, familyPractice, familyTopic, illustratedFamily } fro
 test("the local page loads a single bundled application script", () => {
   const html = readFileSync("index.html", "utf8");
   assert.match(html, /<link rel="stylesheet" href="styles\.css\?v=20260816-requests-side-by-side-lines" \/>/);
-  assert.match(html, /<script src="app\.js\?v=20260815-requests"><\/script>/);
+  assert.match(html, /<script src="app\.js\?v=20260816-scene-titles"><\/script>/);
   assert.doesNotMatch(html, /type="module"/);
+});
+
+test("topic scenes use short English titles instead of ordinal labels", () => {
+  const sceneRenderers = [
+    "src/features/foundations/greetings-controller.js",
+    "src/features/foundations/introductions-controller.js",
+    "src/features/foundations/age-controller.js",
+    "src/features/foundations/polite-words-controller.js",
+    "src/features/foundations/foundations-runtime.js",
+    "src/features/time-daily-life/time-daily-life-runtime.js"
+  ].map((file) => readFileSync(file, "utf8")).join("\n");
+  assert.doesNotMatch(sceneRenderers, /Scene \$\{/);
+  assert.doesNotMatch(sceneRenderers, /exchange\.prompt|scene\.prompt/);
+  assert.match(readFileSync("src/features/world/weather.js", "utf8"), /title: "Rainy day"/);
+  assert.match(readFileSync("src/features/world/animals.js", "utf8"), /title: "Pets at home"/);
+  assert.match(readFileSync("src/features/play-hobbies/play-hobbies-runtime.js", "utf8"), /sceneTitle = \(id\)/);
 });
 
 test("Everyday Actions keeps one silent new-game button in the practice header", () => {
@@ -688,7 +704,7 @@ test("Nature and Weather remain separate book topics", () => {
   assert.equal(natureLesson.items.length, 10);
   assert.equal(natureLesson.sentences.length, 8);
   assert.equal(natureLesson.scenes.length, 2);
-  assert.deepEqual(natureLesson.scenes.map((scene) => scene.title), ["白天", "晚上"]);
+  assert.deepEqual(natureLesson.scenes.map((scene) => scene.title), ["Daytime", "Nighttime"]);
   assert.match(natureLesson.scenes[0].imagePath, /daytime-nature\.webp/);
   assert.match(natureLesson.scenes[1].imagePath, /nighttime-nature\.webp/);
   assert.match(natureLesson.scenes.flatMap((scene) => scene.lines).map((line) => line.hanzi).join(" "), /地上有树、花和草/);
@@ -718,8 +734,8 @@ test("Weather groups repeated scene artwork into a two-by-two scene grid", () =>
   assert.equal((focusExplorer.innerHTML.match(/school-scene-card/g) ?? []).length, 4);
   assert.match(focusExplorer.innerHTML, /weather-scene-grid/);
   assert.doesNotMatch(focusExplorer.innerHTML, />Scenes</);
-  assert.match(focusExplorer.innerHTML, /下雨天/);
-  assert.match(focusExplorer.innerHTML, /下雪天/);
+  assert.match(focusExplorer.innerHTML, /Rainy day/);
+  assert.match(focusExplorer.innerHTML, /Snowy day/);
   assert.doesNotMatch(focusExplorer.innerHTML, /Book words/);
   assert.match(focusExplorer.innerHTML, /Useful notes/);
   assert.doesNotMatch(focusExplorer.innerHTML, /下 \+ weather \+ 了/);
@@ -1072,7 +1088,8 @@ test("Hobbies keeps separate 2A, 3B, and 4B lesson pages and practice", () => {
   assert.match(runtimeSource, /answer\.pinyin/);
   assert.match(runtimeSource, /answer\.english/);
   assert.match(runtimeSource, /hobbies-scene-grid/);
-  assert.match(runtimeSource, /<p class="body-match-kicker">Scene<\/p>/);
+  assert.match(runtimeSource, /Scenes<\/p>/);
+  assert.match(runtimeSource, /const sceneTitle = \(id\)/);
   assert.match(runtimeSource, /audio: `我喜欢\$\{action\}`/);
 });
 

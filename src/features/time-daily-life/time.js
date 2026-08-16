@@ -15,15 +15,15 @@ export const timeDateExpressionItems = [
 ];
 
 export const timeDateRoutineItems = [
-  ["wake-up", "七点起床。", "qī diǎn qǐ chuáng.", "Wake up at 7:00.", "七点起床", "07am-lele-wake-up.webp"],
-  ["breakfast", "七点十五分吃早饭。", "qī diǎn shí wǔ fēn chī zǎo fàn.", "Have breakfast at 7:15.", "七点十五分吃早饭", "0715am-lele-having-breakfast.webp"],
-  ["school", "八点去学校。", "bā diǎn qù xué xiào.", "Go to school at 8:00.", "八点去学校", "08am-go-to-school.webp"],
-  ["writing", "十点上写字课。", "shí diǎn shàng xiě zì kè.", "Writing class at 10:00.", "十点上写字课", "10am-writing-class.webp"],
-  ["lunch", "十二点吃午饭。", "shí èr diǎn chī wǔ fàn.", "Have lunch at 12:00.", "十二点吃午饭", "12pm-lunch-time.webp"],
-  ["home", "两点半放学。", "liǎng diǎn bàn fàng xué.", "School ends at 2:30.", "两点半放学", "0230pm-school-dismissal.webp"],
-  ["playground", "四点去操场玩。", "sì diǎn qù cāo chǎng wán.", "Play outside at 4:00.", "四点去操场玩", "04pm-playground.webp"],
-  ["dinner", "六点吃晚饭。", "liù diǎn chī wǎn fàn.", "Have dinner at 6:00.", "六点吃晚饭", "06pm-family-dinner.webp"],
-  ["tv", "七点看电视。", "qī diǎn kàn diàn shì.", "Watch TV at 7:00.", "七点看电视", "07pm-tv-time.webp"],
-  ["story", "八点讲故事。", "bā diǎn jiǎng gù shì.", "Story time at 8:00.", "八点讲故事", "08pm-story-time.webp"],
-  ["bedtime", "九点睡觉。", "jiǔ diǎn shuì jiào.", "Go to bed at 9:00.", "九点睡觉", "09pm-bedtime.webp"]
-].map(([id, hanzi, pinyin, english, audio, file]) => ({ id, hanzi, pinyin, english, audio, imagePath: `assets/illustrated-clock-routines/${file}` }));
+  ["wake-up", "Wake up", "七点起床。", "qī diǎn qǐ chuáng.", "Wake up at 7:00.", "七点起床", "07am-lele-wake-up.webp"],
+  ["breakfast", "Breakfast", "七点十五分吃早饭。", "qī diǎn shí wǔ fēn chī zǎo fàn.", "Have breakfast at 7:15.", "七点十五分吃早饭", "0715am-lele-having-breakfast.webp"],
+  ["school", "School time", "八点去学校。", "bā diǎn qù xué xiào.", "Go to school at 8:00.", "八点去学校", "08am-go-to-school.webp"],
+  ["writing", "Writing class", "十点上写字课。", "shí diǎn shàng xiě zì kè.", "Writing class at 10:00.", "十点上写字课", "10am-writing-class.webp"],
+  ["lunch", "Lunch", "十二点吃午饭。", "shí èr diǎn chī wǔ fàn.", "Have lunch at 12:00.", "十二点吃午饭", "12pm-lunch-time.webp"],
+  ["home", "After school", "两点半放学。", "liǎng diǎn bàn fàng xué.", "School ends at 2:30.", "两点半放学", "0230pm-school-dismissal.webp"],
+  ["playground", "Playtime", "四点去操场玩。", "sì diǎn qù cāo chǎng wán.", "Play outside at 4:00.", "四点去操场玩", "04pm-playground.webp"],
+  ["dinner", "Dinner", "六点吃晚饭。", "liù diǎn chī wǎn fàn.", "Have dinner at 6:00.", "六点吃晚饭", "06pm-family-dinner.webp"],
+  ["tv", "TV time", "七点看电视。", "qī diǎn kàn diàn shì.", "Watch TV at 7:00.", "七点看电视", "07pm-tv-time.webp"],
+  ["story", "Story time", "八点讲故事。", "bā diǎn jiǎng gù shì.", "Story time at 8:00.", "八点讲故事", "08pm-story-time.webp"],
+  ["bedtime", "Bedtime", "九点睡觉。", "jiǔ diǎn shuì jiào.", "Go to bed at 9:00.", "九点睡觉", "09pm-bedtime.webp"]
+].map(([id, title, hanzi, pinyin, english, audio, file]) => ({ id, title, hanzi, pinyin, english, audio, imagePath: `assets/illustrated-clock-routines/${file}` }));

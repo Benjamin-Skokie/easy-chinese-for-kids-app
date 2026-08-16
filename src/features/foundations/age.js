@@ -40,8 +40,7 @@ export const ageTopic = {
 export const agePractice = [
   {
     id: "age-scene-2",
-    number: "1",
-    prompt: "Ask age first, then ask what grade a classmate is in",
+    title: "Age and grade",
     imagePath: "assets/age/age-scene-2.webp",
     imageAlt: "Lele and Noah inside a classroom asking age first and then what grade someone is in",
     lines: [
@@ -53,8 +52,7 @@ export const agePractice = [
   },
   {
     id: "age-scene-3",
-    number: "2",
-    prompt: "Connect age language to a birthday moment",
+    title: "Birthday age",
     imagePath: "assets/age/age-scene-3.webp",
     imageAlt: "Sisi at a birthday party with seven candles on a cake and friends around the table",
     lines: [

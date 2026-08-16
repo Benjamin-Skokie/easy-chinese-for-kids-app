@@ -2290,18 +2290,18 @@
     { id: "forty-five-past-seven", hanzi: "\u4E03\u70B9\u56DB\u5341\u4E94\u5206", pinyin: "q\u012B di\u01CEn s\xEC sh\xED w\u01D4 f\u0113n", english: "7:45", audio: "\u4E03\u70B9\u56DB\u5341\u4E94\u5206" }
   ];
   var timeDateRoutineItems = [
-    ["wake-up", "\u4E03\u70B9\u8D77\u5E8A\u3002", "q\u012B di\u01CEn q\u01D0 chu\xE1ng.", "Wake up at 7:00.", "\u4E03\u70B9\u8D77\u5E8A", "07am-lele-wake-up.webp"],
-    ["breakfast", "\u4E03\u70B9\u5341\u4E94\u5206\u5403\u65E9\u996D\u3002", "q\u012B di\u01CEn sh\xED w\u01D4 f\u0113n ch\u012B z\u01CEo f\xE0n.", "Have breakfast at 7:15.", "\u4E03\u70B9\u5341\u4E94\u5206\u5403\u65E9\u996D", "0715am-lele-having-breakfast.webp"],
-    ["school", "\u516B\u70B9\u53BB\u5B66\u6821\u3002", "b\u0101 di\u01CEn q\xF9 xu\xE9 xi\xE0o.", "Go to school at 8:00.", "\u516B\u70B9\u53BB\u5B66\u6821", "08am-go-to-school.webp"],
-    ["writing", "\u5341\u70B9\u4E0A\u5199\u5B57\u8BFE\u3002", "sh\xED di\u01CEn sh\xE0ng xi\u011B z\xEC k\xE8.", "Writing class at 10:00.", "\u5341\u70B9\u4E0A\u5199\u5B57\u8BFE", "10am-writing-class.webp"],
-    ["lunch", "\u5341\u4E8C\u70B9\u5403\u5348\u996D\u3002", "sh\xED \xE8r di\u01CEn ch\u012B w\u01D4 f\xE0n.", "Have lunch at 12:00.", "\u5341\u4E8C\u70B9\u5403\u5348\u996D", "12pm-lunch-time.webp"],
-    ["home", "\u4E24\u70B9\u534A\u653E\u5B66\u3002", "li\u01CEng di\u01CEn b\xE0n f\xE0ng xu\xE9.", "School ends at 2:30.", "\u4E24\u70B9\u534A\u653E\u5B66", "0230pm-school-dismissal.webp"],
-    ["playground", "\u56DB\u70B9\u53BB\u64CD\u573A\u73A9\u3002", "s\xEC di\u01CEn q\xF9 c\u0101o ch\u01CEng w\xE1n.", "Play outside at 4:00.", "\u56DB\u70B9\u53BB\u64CD\u573A\u73A9", "04pm-playground.webp"],
-    ["dinner", "\u516D\u70B9\u5403\u665A\u996D\u3002", "li\xF9 di\u01CEn ch\u012B w\u01CEn f\xE0n.", "Have dinner at 6:00.", "\u516D\u70B9\u5403\u665A\u996D", "06pm-family-dinner.webp"],
-    ["tv", "\u4E03\u70B9\u770B\u7535\u89C6\u3002", "q\u012B di\u01CEn k\xE0n di\xE0n sh\xEC.", "Watch TV at 7:00.", "\u4E03\u70B9\u770B\u7535\u89C6", "07pm-tv-time.webp"],
-    ["story", "\u516B\u70B9\u8BB2\u6545\u4E8B\u3002", "b\u0101 di\u01CEn ji\u01CEng g\xF9 sh\xEC.", "Story time at 8:00.", "\u516B\u70B9\u8BB2\u6545\u4E8B", "08pm-story-time.webp"],
-    ["bedtime", "\u4E5D\u70B9\u7761\u89C9\u3002", "ji\u01D4 di\u01CEn shu\xEC ji\xE0o.", "Go to bed at 9:00.", "\u4E5D\u70B9\u7761\u89C9", "09pm-bedtime.webp"]
-  ].map(([id, hanzi, pinyin, english, audio, file]) => ({ id, hanzi, pinyin, english, audio, imagePath: `assets/illustrated-clock-routines/${file}` }));
+    ["wake-up", "Wake up", "\u4E03\u70B9\u8D77\u5E8A\u3002", "q\u012B di\u01CEn q\u01D0 chu\xE1ng.", "Wake up at 7:00.", "\u4E03\u70B9\u8D77\u5E8A", "07am-lele-wake-up.webp"],
+    ["breakfast", "Breakfast", "\u4E03\u70B9\u5341\u4E94\u5206\u5403\u65E9\u996D\u3002", "q\u012B di\u01CEn sh\xED w\u01D4 f\u0113n ch\u012B z\u01CEo f\xE0n.", "Have breakfast at 7:15.", "\u4E03\u70B9\u5341\u4E94\u5206\u5403\u65E9\u996D", "0715am-lele-having-breakfast.webp"],
+    ["school", "School time", "\u516B\u70B9\u53BB\u5B66\u6821\u3002", "b\u0101 di\u01CEn q\xF9 xu\xE9 xi\xE0o.", "Go to school at 8:00.", "\u516B\u70B9\u53BB\u5B66\u6821", "08am-go-to-school.webp"],
+    ["writing", "Writing class", "\u5341\u70B9\u4E0A\u5199\u5B57\u8BFE\u3002", "sh\xED di\u01CEn sh\xE0ng xi\u011B z\xEC k\xE8.", "Writing class at 10:00.", "\u5341\u70B9\u4E0A\u5199\u5B57\u8BFE", "10am-writing-class.webp"],
+    ["lunch", "Lunch", "\u5341\u4E8C\u70B9\u5403\u5348\u996D\u3002", "sh\xED \xE8r di\u01CEn ch\u012B w\u01D4 f\xE0n.", "Have lunch at 12:00.", "\u5341\u4E8C\u70B9\u5403\u5348\u996D", "12pm-lunch-time.webp"],
+    ["home", "After school", "\u4E24\u70B9\u534A\u653E\u5B66\u3002", "li\u01CEng di\u01CEn b\xE0n f\xE0ng xu\xE9.", "School ends at 2:30.", "\u4E24\u70B9\u534A\u653E\u5B66", "0230pm-school-dismissal.webp"],
+    ["playground", "Playtime", "\u56DB\u70B9\u53BB\u64CD\u573A\u73A9\u3002", "s\xEC di\u01CEn q\xF9 c\u0101o ch\u01CEng w\xE1n.", "Play outside at 4:00.", "\u56DB\u70B9\u53BB\u64CD\u573A\u73A9", "04pm-playground.webp"],
+    ["dinner", "Dinner", "\u516D\u70B9\u5403\u665A\u996D\u3002", "li\xF9 di\u01CEn ch\u012B w\u01CEn f\xE0n.", "Have dinner at 6:00.", "\u516D\u70B9\u5403\u665A\u996D", "06pm-family-dinner.webp"],
+    ["tv", "TV time", "\u4E03\u70B9\u770B\u7535\u89C6\u3002", "q\u012B di\u01CEn k\xE0n di\xE0n sh\xEC.", "Watch TV at 7:00.", "\u4E03\u70B9\u770B\u7535\u89C6", "07pm-tv-time.webp"],
+    ["story", "Story time", "\u516B\u70B9\u8BB2\u6545\u4E8B\u3002", "b\u0101 di\u01CEn ji\u01CEng g\xF9 sh\xEC.", "Story time at 8:00.", "\u516B\u70B9\u8BB2\u6545\u4E8B", "08pm-story-time.webp"],
+    ["bedtime", "Bedtime", "\u4E5D\u70B9\u7761\u89C9\u3002", "ji\u01D4 di\u01CEn shu\xEC ji\xE0o.", "Go to bed at 9:00.", "\u4E5D\u70B9\u7761\u89C9", "09pm-bedtime.webp"]
+  ].map(([id, title, hanzi, pinyin, english, audio, file]) => ({ id, title, hanzi, pinyin, english, audio, imagePath: `assets/illustrated-clock-routines/${file}` }));
 
   // src/features/time-daily-life/dates.js
   var timeDateDateItems = [
@@ -2407,8 +2407,7 @@
   var positionScenes = [
     {
       id: "up-down",
-      number: "1",
-      prompt: "Up and down",
+      title: "Up and down",
       imagePath: "assets/illustrated-rooms/positions-up-down.webp",
       imageAlt: "A book and backpack showing up and down positions around a desk",
       lines: [
@@ -2419,8 +2418,7 @@
     },
     {
       id: "inside-outside",
-      number: "2",
-      prompt: "Inside and outside",
+      title: "Inside and outside",
       imagePath: "assets/illustrated-rooms/positions-inside-outside.webp",
       imageAlt: "A backpack, book, and pencil case showing inside and outside positions",
       lines: [
@@ -2431,8 +2429,7 @@
     },
     {
       id: "directions",
-      number: "3",
-      prompt: "Front, back, left, and right",
+      title: "Directions",
       imagePath: "assets/illustrated-rooms/positions-all-directions.webp",
       imageAlt: "A room board showing front, back, left, and right directions",
       lines: [
@@ -2441,8 +2438,7 @@
     },
     {
       id: "room-directions",
-      number: "4",
-      prompt: "Directions in a room",
+      title: "Around the room",
       imagePath: "assets/illustrated-rooms/positions-room.webp",
       imageAlt: "A girl, chair, bookshelf, and dog in a room for practicing directions",
       lines: [
@@ -2522,7 +2518,7 @@
   var roomScenes = [
     {
       id: "my-room",
-      label: "My room",
+      title: "My room",
       hanzi: "\u6211\u7684\u623F\u95F4\u91CC\u6709\u5E8A\u3001\u4E66\u684C\u548C\u8863\u67DC\u3002",
       pinyin: "w\u01D2 de f\xE1ng ji\u0101n l\u01D0 y\u01D2u chu\xE1ng, sh\u016B zhu\u014D h\xE9 y\u012B gu\xEC.",
       english: "There is a bed, desk, and wardrobe in my room.",
@@ -2531,7 +2527,7 @@
     },
     {
       id: "living-room",
-      label: "Living room",
+      title: "Living room",
       hanzi: "\u5BA2\u5385\u91CC\u6709\u6C99\u53D1\u548C\u7535\u89C6\u3002",
       pinyin: "k\xE8 t\u012Bng l\u01D0 y\u01D2u sh\u0101 fa h\xE9 di\xE0n sh\xEC.",
       english: "There is a sofa and TV in the living room.",
@@ -2540,7 +2536,7 @@
     },
     {
       id: "garage",
-      label: "Garage",
+      title: "Garage",
       hanzi: "\u8F66\u5E93\u91CC\u6709\u81EA\u884C\u8F66\u3002",
       pinyin: "ch\u0113 k\xF9 l\u01D0 y\u01D2u z\xEC x\xEDng ch\u0113.",
       english: "There is a bicycle in the garage.",
@@ -3849,7 +3845,7 @@
           <div class="school-scene-grid${group.items.length === 1 ? " is-single" : ""}">
             ${group.items.map((scene) => `
               <section class="greetings-exchange school-scene-card">
-                <div class="greetings-exchange-top">${scene.label ? `<div><p class="body-match-kicker">${scene.label}</p></div>` : "<span></span>"}<button class="small-button is-play-button" type="button" data-school-play-scene="${scene.id}">Play</button></div>
+                <div class="greetings-exchange-top"><div><p class="body-match-kicker">${scene.title ?? scene.label ?? "Look and listen"}</p></div><button class="small-button is-play-button" type="button" data-school-play-scene="${scene.id}">Play</button></div>
                 <div class="school-scene-layout${topicId === "food" ? " is-compact" : ""}">
                   <img class="school-scene-image" src="${scene.imagePath}" alt="${scene.english ?? scene.lines?.[0]?.english ?? ""}" />
                   <div class="greetings-line-stack${scene.compactLines ? " is-compact" : ""}">
@@ -4252,8 +4248,7 @@
   var introductionsPractice = [
     {
       id: "intro-scene-1",
-      number: "1",
-      prompt: "Meet a new friend and ask their name",
+      title: "Meeting a friend",
       imagePath: "assets/introductions/introductions-scene-1.webp",
       imageAlt: "Two children meeting and introducing themselves",
       cast: ["lele", "anan"],
@@ -4266,8 +4261,7 @@
     },
     {
       id: "intro-scene-2",
-      number: "2",
-      prompt: "Say your own name clearly, then greet back",
+      title: "Sharing a name",
       imagePath: "assets/introductions/introductions-scene-2.webp",
       imageAlt: "Two children talking in a classroom",
       cast: ["tiantian", "sisi"],
@@ -4279,8 +4273,7 @@
     },
     {
       id: "intro-scene-3",
-      number: "3",
-      prompt: "Two children trade names after saying hello",
+      title: "New friends",
       imagePath: "assets/introductions/introductions-scene-3.webp",
       imageAlt: "Two friends greeting each other",
       cast: ["sisi", "lele"],
@@ -4452,7 +4445,7 @@
       renderActivityPanel2(currentTopic2());
     }
     function renderIntroductionsExplorer2() {
-      focusExplorer2.innerHTML = `<div class="numbers-board"><div class="numbers-stage-card"><p class="body-match-kicker">${currentBook2().label} Lesson ${currentLesson2().lesson}</p><h4>Book theme: asking and saying names</h4><p>This lesson mirrors Book 1A Lesson 6: say hello, ask a name, answer with \u6211\u53EB..., and repeat the new friend's name.</p></div><div class="greetings-practice-grid">${introductionsPractice2.map((exchange) => `<section class="greetings-exchange"><div class="greetings-exchange-top"><div><p class="body-match-kicker">Scene ${exchange.number}</p><p class="greetings-exchange-prompt">${exchange.prompt}</p></div><button class="small-button is-play-button" type="button" data-intro-play-all="${exchange.id}">Play</button></div><div class="greetings-scene-layout introductions-scene-layout"><div class="greetings-scene-visual"><img class="greetings-scene-image" src="${exchange.imagePath}" alt="${exchange.imageAlt}" /></div><div class="greetings-line-stack">${exchange.lines.map((line) => `<article class="greetings-line-card intro-line-card"><div class="telephone-bubble-copy"><p class="telephone-line-hanzi">${line.hanzi}</p>${state2.showPinyin ? `<p class="telephone-line-pinyin">${line.pinyin}</p>` : ""}${state2.showEnglish ? `<p class="telephone-line-english">${line.english}</p>` : ""}</div></article>`).join("")}</div></div></section>`).join("")}</div></div>`;
+      focusExplorer2.innerHTML = `<div class="numbers-board"><div class="numbers-stage-card"><p class="body-match-kicker">${currentBook2().label} Lesson ${currentLesson2().lesson}</p><h4>Book theme: asking and saying names</h4><p>This lesson mirrors Book 1A Lesson 6: say hello, ask a name, answer with \u6211\u53EB..., and repeat the new friend's name.</p></div><div class="greetings-practice-grid">${introductionsPractice2.map((exchange) => `<section class="greetings-exchange"><div class="greetings-exchange-top"><div><p class="body-match-kicker">${exchange.title}</p></div><button class="small-button is-play-button" type="button" data-intro-play-all="${exchange.id}">Play</button></div><div class="greetings-scene-layout introductions-scene-layout"><div class="greetings-scene-visual"><img class="greetings-scene-image" src="${exchange.imagePath}" alt="${exchange.imageAlt}" /></div><div class="greetings-line-stack">${exchange.lines.map((line) => `<article class="greetings-line-card intro-line-card"><div class="telephone-bubble-copy"><p class="telephone-line-hanzi">${line.hanzi}</p>${state2.showPinyin ? `<p class="telephone-line-pinyin">${line.pinyin}</p>` : ""}${state2.showEnglish ? `<p class="telephone-line-english">${line.english}</p>` : ""}</div></article>`).join("")}</div></div></section>`).join("")}</div></div>`;
       focusExplorer2.querySelectorAll("[data-intro-play-all]").forEach((button) => {
         button.addEventListener("click", () => {
           const exchange = introductionsPractice2.find((entry) => entry.id === button.dataset.introPlayAll);
@@ -4506,8 +4499,7 @@
   var agePractice = [
     {
       id: "age-scene-2",
-      number: "1",
-      prompt: "Ask age first, then ask what grade a classmate is in",
+      title: "Age and grade",
       imagePath: "assets/age/age-scene-2.webp",
       imageAlt: "Lele and Noah inside a classroom asking age first and then what grade someone is in",
       lines: [
@@ -4519,8 +4511,7 @@
     },
     {
       id: "age-scene-3",
-      number: "2",
-      prompt: "Connect age language to a birthday moment",
+      title: "Birthday age",
       imagePath: "assets/age/age-scene-3.webp",
       imageAlt: "Sisi at a birthday party with seven candles on a cake and friends around the table",
       lines: [
@@ -4682,7 +4673,7 @@
       renderActivityPanel2(currentTopic2());
     }
     function renderAgeExplorer2() {
-      focusExplorer2.innerHTML = `<div class="numbers-board"><div class="numbers-stage-card"><p class="body-match-kicker">${currentBook2().label} Lesson ${currentLesson2().lesson}</p><h4>Book theme: age and school year</h4><p>This lesson starts with <strong>\u4F60\u51E0\u5C81\uFF1F</strong> / <strong>\u6211...\u5C81\u3002</strong> and then adds <strong>\u4F60\u4E0A\u51E0\u5E74\u7EA7\uFF1F</strong> / <strong>\u6211\u4E0A\u4E00\u5E74\u7EA7\u3002</strong></p></div><div class="greetings-practice-grid">${agePractice2.map((exchange) => `<section class="greetings-exchange"><div class="greetings-exchange-top"><div><p class="body-match-kicker">Scene ${exchange.number}</p><p class="greetings-exchange-prompt">${exchange.prompt}</p></div><button class="small-button is-play-button" type="button" data-age-play-all="${exchange.id}">Play</button></div><div class="greetings-scene-layout"><div class="greetings-scene-visual"><img class="greetings-scene-image" src="${exchange.imagePath}" alt="${exchange.imageAlt}" /></div><div class="greetings-line-stack">${exchange.lines.map((line) => `<article class="greetings-line-card"><div class="telephone-bubble-copy"><p class="telephone-line-hanzi">${line.hanzi}</p>${state2.showPinyin ? `<p class="telephone-line-pinyin">${line.pinyin}</p>` : ""}${state2.showEnglish ? `<p class="telephone-line-english">${line.english}</p>` : ""}</div></article>`).join("")}</div></div></section>`).join("")}</div></div>`;
+      focusExplorer2.innerHTML = `<div class="numbers-board"><div class="numbers-stage-card"><p class="body-match-kicker">${currentBook2().label} Lesson ${currentLesson2().lesson}</p><h4>Book theme: age and school year</h4><p>This lesson starts with <strong>\u4F60\u51E0\u5C81\uFF1F</strong> / <strong>\u6211...\u5C81\u3002</strong> and then adds <strong>\u4F60\u4E0A\u51E0\u5E74\u7EA7\uFF1F</strong> / <strong>\u6211\u4E0A\u4E00\u5E74\u7EA7\u3002</strong></p></div><div class="greetings-practice-grid">${agePractice2.map((exchange) => `<section class="greetings-exchange"><div class="greetings-exchange-top"><div><p class="body-match-kicker">${exchange.title}</p></div><button class="small-button is-play-button" type="button" data-age-play-all="${exchange.id}">Play</button></div><div class="greetings-scene-layout"><div class="greetings-scene-visual"><img class="greetings-scene-image" src="${exchange.imagePath}" alt="${exchange.imageAlt}" /></div><div class="greetings-line-stack">${exchange.lines.map((line) => `<article class="greetings-line-card"><div class="telephone-bubble-copy"><p class="telephone-line-hanzi">${line.hanzi}</p>${state2.showPinyin ? `<p class="telephone-line-pinyin">${line.pinyin}</p>` : ""}${state2.showEnglish ? `<p class="telephone-line-english">${line.english}</p>` : ""}</div></article>`).join("")}</div></div></section>`).join("")}</div></div>`;
       focusExplorer2.querySelectorAll("[data-age-play-all]").forEach((button) => button.addEventListener("click", () => {
         const exchange = agePractice2.find((entry) => entry.id === button.dataset.agePlayAll);
         if (!exchange || !state2.tapAudioEnabled) return;
@@ -4729,8 +4720,7 @@
   var politePractice = [
     {
       id: "polite-scene-1",
-      number: "1",
-      prompt: "Saying thank you after a friend helps you",
+      title: "Thanking a friend",
       imagePath: "assets/polite/polite-scene-1.webp",
       imageAlt: "Two children in a classroom sharing a crayon politely",
       lines: [
@@ -4740,8 +4730,7 @@
     },
     {
       id: "polite-scene-2",
-      number: "2",
-      prompt: "Saying sorry after a mistake",
+      title: "Saying sorry",
       imagePath: "assets/polite/polite-scene-2.webp",
       imageAlt: "One child apologizing after dropping a pencil case and another child forgiving kindly",
       lines: [
@@ -4751,8 +4740,7 @@
     },
     {
       id: "polite-scene-3",
-      number: "3",
-      prompt: "A polite classroom phrase from the teacher",
+      title: "Quiet classroom",
       imagePath: "assets/polite/polite-scene-3.webp",
       imageAlt: "A teacher kindly asking children to be quiet in the classroom",
       lines: [
@@ -4762,8 +4750,7 @@
     },
     {
       id: "school-request-teacher-help",
-      number: "4",
-      prompt: "Asking a teacher politely for help",
+      title: "Asking a teacher",
       imagePath: "assets/illustrated-grammar/school-request-teacher-help.webp",
       imageAlt: "A child politely asking a teacher for help in a classroom",
       lines: [
@@ -4947,10 +4934,7 @@
           ${politePractice2.map((exchange) => `
             <section class="greetings-exchange">
               <div class="greetings-exchange-top">
-                <div>
-                  <p class="body-match-kicker">Scene ${exchange.number}</p>
-                  <p class="greetings-exchange-prompt">${exchange.prompt}</p>
-                </div>
+                <div><p class="body-match-kicker">${exchange.title}</p></div>
                 <button class="small-button is-play-button" type="button" data-polite-play-all="${exchange.id}">Play</button>
               </div>
               <div class="greetings-scene-layout polite-scene-layout">
@@ -5047,8 +5031,7 @@
   var greetingsPractice = [
     {
       id: "scene-1",
-      number: "1",
-      prompt: "Greeting a teacher politely",
+      title: "Greeting a teacher",
       imagePath: "assets/greetings/greetings-scene-1.webp",
       imageAlt: "Teacher Li greeting Anan outside the school entrance",
       lines: [
@@ -5058,8 +5041,7 @@
     },
     {
       id: "scene-2",
-      number: "2",
-      prompt: "Friends meeting in the morning",
+      title: "Morning friends",
       imagePath: "assets/greetings/greetings-scene-2.webp",
       imageAlt: "Lele and Anan greeting each other on the way into school, with other children arriving behind them",
       lines: [
@@ -5069,8 +5051,7 @@
     },
     {
       id: "scene-3",
-      number: "3",
-      prompt: "Saying goodbye",
+      title: "Saying goodbye",
       imagePath: "assets/greetings/greetings-scene-3.webp",
       imageAlt: "Lele and Anan waving goodbye after school as children come out of the building and head home",
       lines: [
@@ -5266,10 +5247,7 @@
         (exchange) => `
                 <section class="greetings-exchange">
                   <div class="greetings-exchange-top">
-                    <div>
-                      <p class="body-match-kicker">Scene ${exchange.number}</p>
-                      <p class="greetings-exchange-prompt">${exchange.prompt}</p>
-                    </div>
+                  <div><p class="body-match-kicker">${exchange.title}</p></div>
                     <button class="small-button is-play-button" type="button" data-greeting-play-all="${exchange.id}">Play</button>
                   </div>
                   <div class="greetings-scene-layout">
@@ -5452,8 +5430,7 @@
   var familyPractice = [
     {
       id: "family-scene-1",
-      number: "1",
-      prompt: "Start with the family-love sentences from Book 1B",
+      title: "Family love",
       visual: "parents-love",
       imagePath: "assets/illustrated-family/family-scene-parents-love.webp",
       imageAlt: "A child happily hugged by mum and dad in a cozy living room",
@@ -5468,8 +5445,7 @@
     },
     {
       id: "family-scene-2",
-      number: "2",
-      prompt: "Compare siblings by boy or girl, then older or younger",
+      title: "Siblings",
       visual: "siblings-compare",
       imagePath: "assets/illustrated-family/family-scene-siblings.webp",
       imageAlt: "Four siblings together in a living room: older brother, younger brother, older sister, and younger sister",
@@ -5538,8 +5514,8 @@
     ]
   };
   var clothesPractice = [
-    { id: "clothes-scene-1", number: "1", prompt: "Getting dressed for the day", imagePath: "assets/illustrated-clothes/wearing-clothes-scene.webp", imageAlt: "A child getting dressed beside a clothes rack and mirror", lines: [{ hanzi: "\u6211\u4F1A\u7A7F\u8863\u670D\u3002", pinyin: "w\u01D2 hu\xEC chu\u0101n y\u012B fu.", english: "I can get dressed.", audio: "\u6211\u4F1A\u7A7F\u8863\u670D" }, { hanzi: "\u6211\u7A7FT\u6064\u548C\u88E4\u5B50\u3002", pinyin: "w\u01D2 chu\u0101n T x\xF9 h\xE9 k\xF9 zi.", english: "I wear a T-shirt and trousers.", audio: "\u6211\u7A7FT\u6064\u548C\u88E4\u5B50" }] },
-    { id: "clothes-scene-2", number: "2", prompt: "Choosing clothes for rainy weather", imagePath: "assets/illustrated-clothes/weather-linked-clothing-scene.webp", imageAlt: "A child choosing a raincoat by a rainy window", lines: [{ hanzi: "\u4E0B\u96E8\u4E86\u3002", pinyin: "xi\xE0 y\u01D4 le.", english: "It is raining.", audio: "\u4E0B\u96E8\u4E86" }, { hanzi: "\u6211\u7A7F\u96E8\u8863\u548C\u96E8\u978B\u3002", pinyin: "w\u01D2 chu\u0101n y\u01D4 y\u012B h\xE9 y\u01D4 xi\xE9.", english: "I wear a raincoat and rain boots.", audio: "\u6211\u7A7F\u96E8\u8863\u548C\u96E8\u978B" }] }
+    { id: "clothes-scene-1", title: "Getting dressed", imagePath: "assets/illustrated-clothes/wearing-clothes-scene.webp", imageAlt: "A child getting dressed beside a clothes rack and mirror", lines: [{ hanzi: "\u6211\u4F1A\u7A7F\u8863\u670D\u3002", pinyin: "w\u01D2 hu\xEC chu\u0101n y\u012B fu.", english: "I can get dressed.", audio: "\u6211\u4F1A\u7A7F\u8863\u670D" }, { hanzi: "\u6211\u7A7FT\u6064\u548C\u88E4\u5B50\u3002", pinyin: "w\u01D2 chu\u0101n T x\xF9 h\xE9 k\xF9 zi.", english: "I wear a T-shirt and trousers.", audio: "\u6211\u7A7FT\u6064\u548C\u88E4\u5B50" }] },
+    { id: "clothes-scene-2", title: "Rainy day clothes", imagePath: "assets/illustrated-clothes/weather-linked-clothing-scene.webp", imageAlt: "A child choosing a raincoat by a rainy window", lines: [{ hanzi: "\u4E0B\u96E8\u4E86\u3002", pinyin: "xi\xE0 y\u01D4 le.", english: "It is raining.", audio: "\u4E0B\u96E8\u4E86" }, { hanzi: "\u6211\u7A7F\u96E8\u8863\u548C\u96E8\u978B\u3002", pinyin: "w\u01D2 chu\u0101n y\u01D4 y\u012B h\xE9 y\u01D4 xi\xE9.", english: "I wear a raincoat and rain boots.", audio: "\u6211\u7A7F\u96E8\u8863\u548C\u96E8\u978B" }] }
   ];
   var clothesMatchItems = [
     { id: "shoes", hanzi: "\u978B\u5B50", pinyin: "xi\xE9 zi", english: "shoes", audio: "\u978B\u5B50", imagePath: "assets/illustrated-self-dressing/putting-on-shoes.webp", imageAlt: "A child putting on shoes" },
@@ -6915,10 +6891,7 @@
         (exchange) => `
               <section class="greetings-exchange">
                 <div class="greetings-exchange-top">
-                  <div>
-                    <p class="body-match-kicker">Scene ${exchange.number}</p>
-                    <p class="greetings-exchange-prompt">${exchange.prompt}</p>
-                  </div>
+                  <div><p class="body-match-kicker">${exchange.title}</p></div>
                   <button class="small-button is-play-button" type="button" data-family-play-all="${exchange.id}">Play</button>
                 </div>
                 <div class="greetings-scene-layout family-scene-layout">
@@ -7871,7 +7844,7 @@
       <div class="greetings-practice-grid room-scene-grid">
         ${roomScenes2.map((scene) => `
           <section class="greetings-exchange room-scene-card">
-            <div class="greetings-exchange-top"><div><p class="body-match-kicker">${scene.label}</p></div><button class="small-button is-play-button" type="button" data-room-play-scene="${scene.id}">Play</button></div>
+            <div class="greetings-exchange-top"><div><p class="body-match-kicker">${scene.title}</p></div><button class="small-button is-play-button" type="button" data-room-play-scene="${scene.id}">Play</button></div>
             <div class="room-scene-layout">
               <img class="room-scene-image" src="${scene.imagePath}" alt="${scene.english}" />
               <article class="greetings-line-card"><div class="telephone-bubble-copy"><p class="telephone-line-hanzi">${scene.hanzi}</p>${state2.showPinyin ? `<p class="telephone-line-pinyin">${scene.pinyin}</p>` : ""}${state2.showEnglish ? `<p class="telephone-line-english">${scene.english}</p>` : ""}</div></article>
@@ -7909,7 +7882,7 @@
         ${positionScenes2.map(
         (scene) => `
               <section class="greetings-exchange">
-                <div class="greetings-exchange-top"><div><p class="body-match-kicker">Scene ${scene.number}</p><p class="greetings-exchange-prompt">${scene.prompt}</p></div><button class="small-button is-play-button" type="button" data-position-play-scene="${scene.id}">Play</button></div>
+                <div class="greetings-exchange-top"><div><p class="body-match-kicker">${scene.title}</p></div><button class="small-button is-play-button" type="button" data-position-play-scene="${scene.id}">Play</button></div>
                 <div class="greetings-scene-layout">
                   <div class="greetings-scene-visual"><img class="greetings-scene-image position-scene-image position-scene-image-${scene.id}" src="${scene.imagePath}" alt="${scene.imageAlt}" /></div>
                   <div class="greetings-line-stack">
@@ -7950,13 +7923,10 @@
         content = `
       <div class="greetings-practice-grid time-routine-scene-grid">
         ${timeDateRoutineItems2.map(
-          (item, index) => `
+          (item) => `
               <section class="greetings-exchange">
                 <div class="greetings-exchange-top">
-                  <div>
-                    <p class="body-match-kicker">Scene ${index + 1}</p>
-                    <p class="greetings-exchange-prompt">${item.english}</p>
-                  </div>
+                  <div><p class="body-match-kicker">${item.title}</p></div>
                   <button class="small-button is-play-button" type="button" data-time-routine-play="${item.id}">Play</button>
                 </div>
                 <div class="greetings-scene-layout">
@@ -8034,10 +8004,7 @@
         (scene) => `
               <section class="greetings-exchange">
                 <div class="greetings-exchange-top">
-                  <div>
-                    <p class="body-match-kicker">Scene ${scene.number}</p>
-                    <p class="greetings-exchange-prompt">${scene.prompt}</p>
-                  </div>
+                  <div><p class="body-match-kicker">${scene.title}</p></div>
                   <button class="small-button is-play-button" type="button" data-clothes-play-scene="${scene.id}">Play</button>
                 </div>
                 <div class="greetings-scene-layout">
@@ -8083,7 +8050,7 @@
       summary: "Meet familiar pets and say which animals Lele likes.",
       scenes: [
         {
-          title: "\u5BA0\u7269",
+          title: "Pets at home",
           imagePath: "assets/illustrated-pets/lele-with-pets-at-home.webp",
           imageAlt: "Lele with a dog and a goldfish at home",
           lines: [
@@ -8115,7 +8082,7 @@
       summary: "Count zoo animals with the right measure words.",
       scenes: [
         {
-          title: "\u52A8\u7269\u56ED",
+          title: "At the zoo",
           imagePath: "assets/illustrated-animals/zoo-scene.webp",
           imageAlt: "A zoo scene with a tiger, elephant, panda, and monkey",
           lines: [
@@ -8174,10 +8141,10 @@
     title: "It's Raining",
     summary: "Describe today\u2019s weather, then connect it to how you feel and what you wear.",
     scenes: [
-      { id: "rain", title: "\u4E0B\u96E8\u5929", imagePath: "assets/illustrated-weather/rainy-umbrella.webp", imageAlt: "A child under an umbrella in the rain", lines: [{ hanzi: "\u4E0B\u96E8\u4E86\u3002", pinyin: "xi\xE0 y\u01D4 le.", english: "It is raining.", audio: "\u4E0B\u96E8\u4E86" }] },
-      { id: "snow", title: "\u4E0B\u96EA\u5929", imagePath: "assets/illustrated-weather/snowy-cold.webp", imageAlt: "A snowy winter scene", lines: [{ hanzi: "\u4E0B\u96EA\u4E86\u3002\u4ECA\u5929\u5F88\u51B7\u3002", pinyin: "xi\xE0 xu\u011B le. j\u012Bn ti\u0101n h\u011Bn l\u011Bng.", english: "It is snowing. Today is very cold.", audio: "\u4E0B\u96EA\u4E86\uFF0C\u4ECA\u5929\u5F88\u51B7" }] },
-      { id: "sunny", title: "\u6674\u5929", imagePath: "assets/illustrated-weather/sunny-hot.webp", imageAlt: "A bright sunny day", lines: [{ hanzi: "\u4ECA\u5929\u662F\u6674\u5929\u3002\u4ECA\u5929\u5F88\u70ED\u3002", pinyin: "j\u012Bn ti\u0101n sh\xEC q\xEDng ti\u0101n. j\u012Bn ti\u0101n h\u011Bn r\xE8.", english: "Today is sunny. Today is very hot.", audio: "\u4ECA\u5929\u662F\u6674\u5929\uFF0C\u4ECA\u5929\u5F88\u70ED" }] },
-      { id: "windy", title: "\u522E\u5927\u98CE", imagePath: "assets/illustrated-weather/windy-leaves.webp", imageAlt: "Leaves blowing on a windy day", lines: [{ hanzi: "\u4ECA\u5929\u522E\u5927\u98CE\u3002", pinyin: "j\u012Bn ti\u0101n gu\u0101 d\xE0 f\u0113ng.", english: "It is very windy today.", audio: "\u4ECA\u5929\u522E\u5927\u98CE" }] }
+      { id: "rain", title: "Rainy day", imagePath: "assets/illustrated-weather/rainy-umbrella.webp", imageAlt: "A child under an umbrella in the rain", lines: [{ hanzi: "\u4E0B\u96E8\u4E86\u3002", pinyin: "xi\xE0 y\u01D4 le.", english: "It is raining.", audio: "\u4E0B\u96E8\u4E86" }] },
+      { id: "snow", title: "Snowy day", imagePath: "assets/illustrated-weather/snowy-cold.webp", imageAlt: "A snowy winter scene", lines: [{ hanzi: "\u4E0B\u96EA\u4E86\u3002\u4ECA\u5929\u5F88\u51B7\u3002", pinyin: "xi\xE0 xu\u011B le. j\u012Bn ti\u0101n h\u011Bn l\u011Bng.", english: "It is snowing. Today is very cold.", audio: "\u4E0B\u96EA\u4E86\uFF0C\u4ECA\u5929\u5F88\u51B7" }] },
+      { id: "sunny", title: "Sunny day", imagePath: "assets/illustrated-weather/sunny-hot.webp", imageAlt: "A bright sunny day", lines: [{ hanzi: "\u4ECA\u5929\u662F\u6674\u5929\u3002\u4ECA\u5929\u5F88\u70ED\u3002", pinyin: "j\u012Bn ti\u0101n sh\xEC q\xEDng ti\u0101n. j\u012Bn ti\u0101n h\u011Bn r\xE8.", english: "Today is sunny. Today is very hot.", audio: "\u4ECA\u5929\u662F\u6674\u5929\uFF0C\u4ECA\u5929\u5F88\u70ED" }] },
+      { id: "windy", title: "Windy day", imagePath: "assets/illustrated-weather/windy-leaves.webp", imageAlt: "Leaves blowing on a windy day", lines: [{ hanzi: "\u4ECA\u5929\u522E\u5927\u98CE\u3002", pinyin: "j\u012Bn ti\u0101n gu\u0101 d\xE0 f\u0113ng.", english: "It is very windy today.", audio: "\u4ECA\u5929\u522E\u5927\u98CE" }] }
     ],
     items: [
       { id: "rain", hanzi: "\u4E0B\u96E8\u4E86", pinyin: "xi\xE0 y\u01D4 le", english: "It is raining.", audio: "\u4E0B\u96E8\u4E86", imagePath: "assets/illustrated-weather/rainy-umbrella.webp", imageAlt: "A child under an umbrella in the rain" },
@@ -8200,7 +8167,7 @@
     scenes: [
       {
         id: "look-up",
-        title: "\u767D\u5929",
+        title: "Daytime",
         imagePath: "assets/illustrated-nature/daytime-nature.webp",
         imageAlt: "The sun high in a bright daytime sky above trees, small red flowers, and grass",
         lines: [
@@ -8210,7 +8177,7 @@
       },
       {
         id: "look-down",
-        title: "\u665A\u4E0A",
+        title: "Nighttime",
         imagePath: "assets/illustrated-nature/nighttime-nature.webp",
         imageAlt: "The moon and stars high in a night sky above trees and grass",
         lines: [
@@ -9088,6 +9055,12 @@
     };
     const lessonKey = () => ({ "hobbies-3b": "3b:4", "hobbies-at-home": "4b:4", "hobbies-leisure": "4b:7" })[currentTopic2().id] ?? "2a:5";
     const lesson = () => lessons[lessonKey()] ?? lessons["2a:5"];
+    const sceneTitle = (id) => ({
+      "2a:5": { read: "Reading time", draw: "Drawing time", write: "Writing time", play: "Game time" },
+      "3b:4": { sing: "Singing together", dance: "Dance time", swim: "Swimming", skate: "Ice skating", ski: "Skiing" },
+      "4b:4": { cartoons: "Watching cartoons", piano: "Playing piano", "computer-game": "Computer games", television: "Watching TV", movie: "Movie time" },
+      "4b:7": { run: "Running", soccer: "Playing soccer", bike: "Riding a bike", sand: "Playing in sand" }
+    })[lessonKey()]?.[id] ?? "Look and listen";
     const speakLesson = (text, rate) => speak2(text, rate);
     const round = () => lesson().rounds.find((entry) => entry.itemId === state2.hobbiesBuildOrder[state2.hobbiesBuildRoundIndex]) ?? lesson().rounds[0];
     const answerFor = (entry, tokens = state2.hobbiesBuildSelectedTokens) => entry.answers.find((answer) => answer.tokens.length === tokens.length && answer.tokens.every((token, index) => token === tokens[index]));
@@ -9117,9 +9090,9 @@
       const items = currentTopic2().focusItems;
       const itemFor = (id) => items.find((item) => item.id === id);
       const imageClass = "school-scene-image";
-      focusExplorer2.innerHTML = `<div class="time-date-board school-topic-board hobbies-topic-board"><div class="numbers-stage-card"><p class="body-match-kicker">${page.book}</p><h4>${page.title}</h4><p>${page.intro}</p></div><section class="school-lesson-section"><div class="time-months-heading"><p class="body-match-kicker">Scene</p></div><div class="school-scene-grid hobbies-scene-grid">${page.scenes.map(([id, hanzi, pinyin, english, audio]) => {
+      focusExplorer2.innerHTML = `<div class="time-date-board school-topic-board hobbies-topic-board"><div class="numbers-stage-card"><p class="body-match-kicker">${page.book}</p><h4>${page.title}</h4><p>${page.intro}</p></div><section class="school-lesson-section"><div class="time-months-heading"><p class="body-match-kicker">Scenes</p></div><div class="school-scene-grid hobbies-scene-grid">${page.scenes.map(([id, hanzi, pinyin, english, audio]) => {
         const item = itemFor(id);
-        return `<section class="greetings-exchange school-scene-card"><div class="greetings-exchange-top"><span></span><button class="small-button is-play-button" type="button" data-hobbies-scene="${audio}">Play</button></div><div class="school-scene-layout"><img class="${imageClass}" src="${item.imagePath}" alt="${item.imageAlt}"><div class="greetings-line-stack is-compact"><article class="greetings-line-card"><div class="telephone-bubble-copy"><p class="telephone-line-hanzi">${hanzi}</p>${state2.showPinyin ? `<p class="telephone-line-pinyin">${pinyin}</p>` : ""}${state2.showEnglish ? `<p class="telephone-line-english">${english}</p>` : ""}</div></article></div></div></section>`;
+        return `<section class="greetings-exchange school-scene-card"><div class="greetings-exchange-top"><div><p class="body-match-kicker">${sceneTitle(id)}</p></div><button class="small-button is-play-button" type="button" data-hobbies-scene="${audio}">Play</button></div><div class="school-scene-layout"><img class="${imageClass}" src="${item.imagePath}" alt="${item.imageAlt}"><div class="greetings-line-stack is-compact"><article class="greetings-line-card"><div class="telephone-bubble-copy"><p class="telephone-line-hanzi">${hanzi}</p>${state2.showPinyin ? `<p class="telephone-line-pinyin">${pinyin}</p>` : ""}${state2.showEnglish ? `<p class="telephone-line-english">${english}</p>` : ""}</div></article></div></div></section>`;
       }).join("")}</div></section><section class="school-lesson-section"><div class="time-months-heading"><p class="body-match-kicker">Book words</p></div><div class="school-word-grid is-text-only hobbies-word-grid">${page.itemIds.map((id) => {
         const item = itemFor(id);
         return `<button class="school-word-card is-text-only" type="button" data-hobbies-word="${id}"><span class="time-asset-hanzi">${item.hanzi}</span>${state2.showPinyin ? `<span class="time-asset-pinyin">${item.pinyin}</span>` : ""}${state2.showEnglish ? `<span class="time-asset-english">${item.english}</span>` : ""}</button>`;
@@ -9130,12 +9103,12 @@
     function renderToysExplorer() {
       const flashcards = currentTopic2().flashcardItems;
       const scenes = [
-        { id: "doll", imagePath: "assets/illustrated-toys/lele-playing-doll.webp", alt: "Lele playing with a doll", hanzi: "\u6211\u6709\u5A03\u5A03\u3002", pinyin: "w\u01D2 y\u01D2u w\xE1 wa.", english: "I have a doll.", audio: "\u6211\u6709\u5A03\u5A03" },
-        { id: "toy-train", imagePath: "assets/illustrated-toys/lele-playing-toy-train.webp", alt: "Lele pushing a toy train", hanzi: "\u6211\u6709\u73A9\u5177\u706B\u8F66\u3002", pinyin: "w\u01D2 y\u01D2u w\xE1n j\xF9 hu\u01D2 ch\u0113.", english: "I have a toy train.", audio: "\u6211\u6709\u73A9\u5177\u706B\u8F66" },
-        { id: "toy-airplane", imagePath: "assets/illustrated-toys/lele-playing-toy-airplane.webp", alt: "Lele flying a toy airplane", hanzi: "\u6211\u6709\u73A9\u5177\u98DE\u673A\u3002", pinyin: "w\u01D2 y\u01D2u w\xE1n j\xF9 f\u0113i j\u012B.", english: "I have a toy airplane.", audio: "\u6211\u6709\u73A9\u5177\u98DE\u673A" },
-        { id: "toy-bear", imagePath: "assets/illustrated-toys/lele-playing-toy-bear.webp", alt: "Lele high-fiving a toy bear", hanzi: "\u6211\u6709\u73A9\u5177\u718A\u3002", pinyin: "w\u01D2 y\u01D2u w\xE1n j\xF9 xi\xF3ng.", english: "I have a toy bear.", audio: "\u6211\u6709\u73A9\u5177\u718A" }
+        { id: "doll", title: "Doll tea party", imagePath: "assets/illustrated-toys/lele-playing-doll.webp", alt: "Lele playing with a doll", hanzi: "\u6211\u6709\u5A03\u5A03\u3002", pinyin: "w\u01D2 y\u01D2u w\xE1 wa.", english: "I have a doll.", audio: "\u6211\u6709\u5A03\u5A03" },
+        { id: "toy-train", title: "Toy train", imagePath: "assets/illustrated-toys/lele-playing-toy-train.webp", alt: "Lele pushing a toy train", hanzi: "\u6211\u6709\u73A9\u5177\u706B\u8F66\u3002", pinyin: "w\u01D2 y\u01D2u w\xE1n j\xF9 hu\u01D2 ch\u0113.", english: "I have a toy train.", audio: "\u6211\u6709\u73A9\u5177\u706B\u8F66" },
+        { id: "toy-airplane", title: "Toy airplane", imagePath: "assets/illustrated-toys/lele-playing-toy-airplane.webp", alt: "Lele flying a toy airplane", hanzi: "\u6211\u6709\u73A9\u5177\u98DE\u673A\u3002", pinyin: "w\u01D2 y\u01D2u w\xE1n j\xF9 f\u0113i j\u012B.", english: "I have a toy airplane.", audio: "\u6211\u6709\u73A9\u5177\u98DE\u673A" },
+        { id: "toy-bear", title: "Toy bear", imagePath: "assets/illustrated-toys/lele-playing-toy-bear.webp", alt: "Lele high-fiving a toy bear", hanzi: "\u6211\u6709\u73A9\u5177\u718A\u3002", pinyin: "w\u01D2 y\u01D2u w\xE1n j\xF9 xi\xF3ng.", english: "I have a toy bear.", audio: "\u6211\u6709\u73A9\u5177\u718A" }
       ];
-      focusExplorer2.innerHTML = `<div class="time-date-board school-topic-board hobbies-topic-board"><section class="school-lesson-section"><div class="time-months-heading"><p class="body-match-kicker">Scene</p></div><div class="school-scene-grid toys-scene-grid">${scenes.map((scene) => `<section class="greetings-exchange school-scene-card"><div class="greetings-exchange-top"><span></span><button class="small-button is-play-button" type="button" data-toys-scene-play="${scene.id}">Play</button></div><div class="school-scene-layout"><img class="school-scene-image" src="${scene.imagePath}" alt="${scene.alt}"><div class="greetings-line-stack is-compact"><article class="greetings-line-card"><div class="telephone-bubble-copy"><p class="telephone-line-hanzi">${scene.hanzi}</p>${state2.showPinyin ? `<p class="telephone-line-pinyin">${scene.pinyin}</p>` : ""}${state2.showEnglish ? `<p class="telephone-line-english">${scene.english}</p>` : ""}</div></article></div></div></section>`).join("")}</div></section><section class="school-lesson-section"><div class="time-months-heading"><p class="body-match-kicker">Book words &amp; more</p></div><div class="school-word-grid toys-flashcard-grid">${flashcards.map((item) => `<button class="school-word-card book-word-card" type="button" data-toys-flashcard="${item.id}"><img class="school-word-image book-word-image" src="${item.imagePath}" alt="${item.imageAlt}"><span class="book-word-copy"><span class="time-asset-hanzi">${item.hanzi}</span>${state2.showPinyin ? `<span class="time-asset-pinyin">${item.pinyin}</span>` : ""}${state2.showEnglish ? `<span class="time-asset-english">${item.english}</span>` : ""}</span></button>`).join("")}</div></section></div>`;
+      focusExplorer2.innerHTML = `<div class="time-date-board school-topic-board hobbies-topic-board"><section class="school-lesson-section"><div class="time-months-heading"><p class="body-match-kicker">Scenes</p></div><div class="school-scene-grid toys-scene-grid">${scenes.map((scene) => `<section class="greetings-exchange school-scene-card"><div class="greetings-exchange-top"><div><p class="body-match-kicker">${scene.title}</p></div><button class="small-button is-play-button" type="button" data-toys-scene-play="${scene.id}">Play</button></div><div class="school-scene-layout"><img class="school-scene-image" src="${scene.imagePath}" alt="${scene.alt}"><div class="greetings-line-stack is-compact"><article class="greetings-line-card"><div class="telephone-bubble-copy"><p class="telephone-line-hanzi">${scene.hanzi}</p>${state2.showPinyin ? `<p class="telephone-line-pinyin">${scene.pinyin}</p>` : ""}${state2.showEnglish ? `<p class="telephone-line-english">${scene.english}</p>` : ""}</div></article></div></div></section>`).join("")}</div></section><section class="school-lesson-section"><div class="time-months-heading"><p class="body-match-kicker">Book words &amp; more</p></div><div class="school-word-grid toys-flashcard-grid">${flashcards.map((item) => `<button class="school-word-card book-word-card" type="button" data-toys-flashcard="${item.id}"><img class="school-word-image book-word-image" src="${item.imagePath}" alt="${item.imageAlt}"><span class="book-word-copy"><span class="time-asset-hanzi">${item.hanzi}</span>${state2.showPinyin ? `<span class="time-asset-pinyin">${item.pinyin}</span>` : ""}${state2.showEnglish ? `<span class="time-asset-english">${item.english}</span>` : ""}</span></button>`).join("")}</div></section></div>`;
       focusExplorer2.querySelectorAll("[data-toys-scene-play]").forEach((button) => button.addEventListener("click", () => {
         const scene = scenes.find((entry) => entry.id === button.dataset.toysScenePlay);
         if (scene && state2.tapAudioEnabled) speakLesson(scene.audio, 0.74);

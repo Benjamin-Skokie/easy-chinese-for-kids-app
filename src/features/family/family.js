@@ -48,8 +48,7 @@ export const familyGameItemIds = [
 export const familyPractice = [
   {
     id: "family-scene-1",
-    number: "1",
-    prompt: "Start with the family-love sentences from Book 1B",
+    title: "Family love",
     visual: "parents-love",
     imagePath: "assets/illustrated-family/family-scene-parents-love.webp",
     imageAlt: "A child happily hugged by mum and dad in a cozy living room",
@@ -64,8 +63,7 @@ export const familyPractice = [
   },
   {
     id: "family-scene-2",
-    number: "2",
-    prompt: "Compare siblings by boy or girl, then older or younger",
+    title: "Siblings",
     visual: "siblings-compare",
     imagePath: "assets/illustrated-family/family-scene-siblings.webp",
     imageAlt: "Four siblings together in a living room: older brother, younger brother, older sister, and younger sister",

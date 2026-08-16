@@ -4,7 +4,7 @@ export const animalLessons = {
     summary: "Meet familiar pets and say which animals Lele likes.",
     scenes: [
       {
-        title: "宠物",
+        title: "Pets at home",
         imagePath: "assets/illustrated-pets/lele-with-pets-at-home.webp",
         imageAlt: "Lele with a dog and a goldfish at home",
         lines: [
@@ -36,7 +36,7 @@ export const animalLessons = {
     summary: "Count zoo animals with the right measure words.",
     scenes: [
       {
-        title: "动物园",
+        title: "At the zoo",
         imagePath: "assets/illustrated-animals/zoo-scene.webp",
         imageAlt: "A zoo scene with a tiger, elephant, panda, and monkey",
         lines: [

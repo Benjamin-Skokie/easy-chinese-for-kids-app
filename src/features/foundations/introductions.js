@@ -35,8 +35,7 @@ export const introductionsTopic = {
 export const introductionsPractice = [
   {
     id: "intro-scene-1",
-    number: "1",
-    prompt: "Meet a new friend and ask their name",
+    title: "Meeting a friend",
     imagePath: "assets/introductions/introductions-scene-1.webp",
     imageAlt: "Two children meeting and introducing themselves",
     cast: ["lele", "anan"],
@@ -49,8 +48,7 @@ export const introductionsPractice = [
   },
   {
     id: "intro-scene-2",
-    number: "2",
-    prompt: "Say your own name clearly, then greet back",
+    title: "Sharing a name",
     imagePath: "assets/introductions/introductions-scene-2.webp",
     imageAlt: "Two children talking in a classroom",
     cast: ["tiantian", "sisi"],
@@ -62,8 +60,7 @@ export const introductionsPractice = [
   },
   {
     id: "intro-scene-3",
-    number: "3",
-    prompt: "Two children trade names after saying hello",
+    title: "New friends",
     imagePath: "assets/introductions/introductions-scene-3.webp",
     imageAlt: "Two friends greeting each other",
     cast: ["sisi", "lele"],

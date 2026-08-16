@@ -34,8 +34,7 @@ export const politeWordsTopic = {
 export const politePractice = [
   {
     id: "polite-scene-1",
-    number: "1",
-    prompt: "Saying thank you after a friend helps you",
+    title: "Thanking a friend",
     imagePath: "assets/polite/polite-scene-1.webp",
     imageAlt: "Two children in a classroom sharing a crayon politely",
     lines: [
@@ -45,8 +44,7 @@ export const politePractice = [
   },
   {
     id: "polite-scene-2",
-    number: "2",
-    prompt: "Saying sorry after a mistake",
+    title: "Saying sorry",
     imagePath: "assets/polite/polite-scene-2.webp",
     imageAlt: "One child apologizing after dropping a pencil case and another child forgiving kindly",
     lines: [
@@ -56,8 +54,7 @@ export const politePractice = [
   },
   {
     id: "polite-scene-3",
-    number: "3",
-    prompt: "A polite classroom phrase from the teacher",
+    title: "Quiet classroom",
     imagePath: "assets/polite/polite-scene-3.webp",
     imageAlt: "A teacher kindly asking children to be quiet in the classroom",
     lines: [
@@ -67,8 +64,7 @@ export const politePractice = [
   },
   {
     id: "school-request-teacher-help",
-    number: "4",
-    prompt: "Asking a teacher politely for help",
+    title: "Asking a teacher",
     imagePath: "assets/illustrated-grammar/school-request-teacher-help.webp",
     imageAlt: "A child politely asking a teacher for help in a classroom",
     lines: [

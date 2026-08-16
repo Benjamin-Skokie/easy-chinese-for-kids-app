@@ -33,8 +33,7 @@ export const greetingsTopic = {
 export const greetingsPractice = [
   {
     id: "scene-1",
-    number: "1",
-    prompt: "Greeting a teacher politely",
+    title: "Greeting a teacher",
     imagePath: "assets/greetings/greetings-scene-1.webp",
     imageAlt: "Teacher Li greeting Anan outside the school entrance",
     lines: [
@@ -44,8 +43,7 @@ export const greetingsPractice = [
   },
   {
     id: "scene-2",
-    number: "2",
-    prompt: "Friends meeting in the morning",
+    title: "Morning friends",
     imagePath: "assets/greetings/greetings-scene-2.webp",
     imageAlt: "Lele and Anan greeting each other on the way into school, with other children arriving behind them",
     lines: [
@@ -55,8 +53,7 @@ export const greetingsPractice = [
   },
   {
     id: "scene-3",
-    number: "3",
-    prompt: "Saying goodbye",
+    title: "Saying goodbye",
     imagePath: "assets/greetings/greetings-scene-3.webp",
     imageAlt: "Lele and Anan waving goodbye after school as children come out of the building and head home",
     lines: [
