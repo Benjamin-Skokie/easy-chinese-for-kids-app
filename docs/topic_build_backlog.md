@@ -1,6 +1,6 @@
 # Topic Build Backlog
 
-Last reviewed: 2026-08-15
+Last reviewed: 2026-08-18
 
 This is the short, project-wide list of work that is easy to lose between
 individual lesson builds. It is a planning index, not a replacement for a
@@ -30,7 +30,7 @@ then update both records when the work is complete.
     claimed textbook lesson.
 
 - [ ] **Requests — 3A Lesson 6** — implemented as the later request layer of
-  Polite Words; visual QA remains.
+  Polite Words; desktop QA is complete and phone portrait/landscape visual QA remains.
   - Teaches `请…` and `我可以…吗？` with `我可以问老师吗？ / 可以。`.
   - Uses `school-request-teacher-help.webp` as its primary scene.
 
@@ -43,6 +43,7 @@ also changed from `partial`.
 ### Daily Life
 
 - [ ] Clothes — `lesson-contracts/daily-life/clothes.md`
+  - Implementation covers 2A self-dressing, 3A clothing-board, and 4B school-uniform; visual QA remains.
 - [ ] Positions & Directions — `lesson-contracts/daily-life/positions.md`
 - [ ] Time & Routines — `lesson-contracts/daily-life/time-routines.md`
 - [ ] Comparisons — `lesson-contracts/daily-life/comparisons.md`
@@ -55,12 +56,13 @@ also changed from `partial`.
 
 - [ ] Greetings — `lesson-contracts/foundations/greetings.md`
 - [ ] Introductions — `lesson-contracts/foundations/introductions.md`
-- [ ] Polite Words — `lesson-contracts/foundations/polite-words.md` (Requests implementation complete; visual QA remains)
+- [ ] Polite Words — `lesson-contracts/foundations/polite-words.md` (Requests implementation and desktop QA complete; phone visual QA remains)
 - [ ] Numbers — `lesson-contracts/foundations/numbers.md`
 - [ ] Multiplication Rhyme — `lesson-contracts/foundations/multiplication-rhyme.md`
 - [ ] Age — `lesson-contracts/foundations/age.md`
 - [ ] Countries & Nationality — `lesson-contracts/foundations/countries-nationality.md`
-- [ ] Body — `lesson-contracts/foundations/body.md`
+- [x] Body — `lesson-contracts/foundations/body.md`
+  - Completed with the diagram and matching review plus a no-repeat spotlight Look and choose practice.
 - [ ] Family — `lesson-contracts/family/family.md`
 
 ### Food, World, and School Life
@@ -80,10 +82,9 @@ also changed from `partial`.
 
 ## Asset-integration candidates
 
-- [ ] Add `walk.webp` to Transportation only if it supports a complete
-  `走路` travel sentence, rather than a standalone verb card.
-- [ ] Decide whether Family should add the `我有… / 我没有…` contrast using
-  `illustrated-grammar/you-mei-you-contrast.webp`.
+- [ ] Extend Family’s 2A Lesson 2 layer with complete `我有… / 我没有…`
+  sibling-count sentences using `family-counting-two-younger-brothers.webp`.
+  Do not use the unrelated schoolbag `有 / 没有` grammar visual.
 - [ ] After reviewing the 3B source, decide whether Positions should use the
   positive `书包在桌子下面。` scene. Do not introduce `不在` unless it is
   directly supported.

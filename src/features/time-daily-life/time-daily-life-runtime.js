@@ -1,5 +1,5 @@
 export function createTimeDailyLifeRuntime(context) {
-  const { state, timeDateWeekItems, timeDateClockItems, timeDateExpressionItems, timeDateRoutineItems, datePracticeItems, timeDateDateItems, timeDateMonthItems, comparisonPracticeItems, comparisonWordItems, positionPracticeItems, positionScenes, clothesMatchItems, clothesPractice, roomScenes, roomSentenceTokens, transportSentenceTokens, everydayActionItems, visualTopicItems, shuffleArray, speak, speakSceneLines, currentTopic, currentBook, currentLesson, renderActivityPanel, focusExplorer, focusStatus } = context;
+  const { state, timeDateWeekItems, timeDateClockItems, timeDateExpressionItems, timeDateRoutineItems, datePracticeItems, timeDateDateItems, timeDateMonthItems, comparisonPracticeItems, comparisonWordItems, positionPracticeItems, positionScenes, clothesMatchItems, clothesSentenceItems, clothesBookWords, clothesPractice, roomScenes, roomSentenceTokens, transportSentenceTokens, everydayActionItems, visualTopicItems, shuffleArray, speak, speakSceneLines, currentTopic, currentBook, currentLesson, renderActivityPanel, focusExplorer, focusStatus } = context;
 
 function resetWeekdayChallenge(options = {}) {
   const answerId = nextRandomCycleId(state, "weekdays-listen", timeDateWeekItems.map((item) => item.id));
@@ -113,6 +113,41 @@ function handleClothesQuizPick(itemId) {
 function nextClothesQuizQuestion() {
   advanceShuffledOrder(state, "clothesQuizOrder", "clothesQuizIndex", shuffleArray);
   prepareClothesQuizQuestion();
+  renderActivityPanel(currentTopic());
+}
+
+function resetClothesSentenceQuiz() {
+  state.clothesSentenceOrder = shuffleArray(clothesSentenceItems.map((item) => item.id));
+  state.clothesSentenceIndex = 0;
+  prepareClothesSentenceQuestion();
+}
+
+function prepareClothesSentenceQuestion() {
+  const answerId = state.clothesSentenceOrder[state.clothesSentenceIndex];
+  const distractorIds = shuffleArray(clothesSentenceItems.filter((item) => item.id !== answerId).map((item) => item.id)).slice(0, 3);
+  state.clothesSentenceOptionIds = shuffleArray([answerId, ...distractorIds]);
+  state.clothesSentenceSelectedId = "";
+  state.clothesSentenceResult = "";
+}
+
+function ensureClothesSentenceQuiz() {
+  if (!state.clothesSentenceOrder.length) resetClothesSentenceQuiz();
+}
+
+function handleClothesSentencePick(itemId) {
+  if (state.clothesSentenceResult === "correct") return;
+  const answerId = state.clothesSentenceOrder[state.clothesSentenceIndex];
+  state.clothesSentenceSelectedId = itemId;
+  state.clothesSentenceResult = itemId === answerId ? "correct" : "wrong";
+  if (state.clothesSentenceResult === "correct" && state.tapAudioEnabled) {
+    speak(clothesSentenceItems.find((item) => item.id === answerId)?.audio, 0.78);
+  }
+  renderActivityPanel(currentTopic());
+}
+
+function nextClothesSentenceQuestion() {
+  advanceShuffledOrder(state, "clothesSentenceOrder", "clothesSentenceIndex", shuffleArray);
+  prepareClothesSentenceQuestion();
   renderActivityPanel(currentTopic());
 }
 
@@ -1030,6 +1065,12 @@ function renderClothesExplorer() {
           )
           .join("")}
       </div>
+      <section class="school-lesson-section clothes-book-words">
+        <div class="time-months-heading"><p class="body-match-kicker">Book words</p></div>
+        <div class="time-asset-grid clothes-word-grid">
+          ${clothesBookWords.map((word) => `<button class="time-asset-card book-word-card" type="button" data-clothes-word="${word.id}"><img class="book-word-image" src="${word.imagePath}" alt="${word.english}" /><span class="book-word-copy"><span class="time-asset-hanzi">${word.hanzi}</span>${state.showPinyin ? `<span class="time-asset-pinyin">${word.pinyin}</span>` : ""}${state.showEnglish ? `<span class="time-asset-english">${word.english}</span>` : ""}</span></button>`).join("")}
+        </div>
+      </section>
     </div>
   `;
 
@@ -1041,9 +1082,15 @@ function renderClothesExplorer() {
       }
     });
   });
+  focusExplorer.querySelectorAll("[data-clothes-word]").forEach((button) => {
+    button.addEventListener("click", () => {
+      const word = clothesBookWords.find((entry) => entry.id === button.dataset.clothesWord);
+      if (word && state.tapAudioEnabled) speak(word.audio, 0.78);
+    });
+  });
 }
 
 
-  return { resetWeekdayChallenge, ensureWeekdayChallenge, handleWeekdayChallengePlay, handleWeekdayChallengeGuess, resetWeekdayMatchGame, ensureWeekdayMatchGame, handleWeekdayMatchPhrase, handleWeekdayMatchAttempt, resetClothesQuiz, prepareClothesQuizQuestion, ensureClothesQuiz, handleClothesQuizPick, nextClothesQuizQuestion, resetTimeRoutineQuiz, prepareTimeRoutineQuizQuestion, ensureTimeRoutineQuiz, handleTimeRoutineQuizPick, nextTimeRoutineQuizQuestion, resetClockQuiz, prepareClockQuizQuestion, ensureClockQuiz, handleClockQuizPick, nextClockQuizQuestion, currentRoomBuildItem, resetRoomBuilder, prepareRoomBuilder, ensureRoomBuilder, isRoomBuildPrefixValid, handleRoomBuildToken, clearRoomBuilder, nextRoomBuilder, currentTransportBuildItem, resetTransportBuilder, prepareTransportBuilder, ensureTransportBuilder, handleTransportBuildToken, clearTransportBuilder, nextTransportBuilder, ensureEverydayActionsQuiz, currentEverydayAction, handleEverydayActionsPick, nextEverydayActionsQuestion, resetPositionQuiz, preparePositionQuizQuestion, ensurePositionQuiz, handlePositionQuizPlay, handlePositionQuizPick, nextPositionQuizQuestion, currentComparisonBuildItem, resetComparisonBuilder, prepareComparisonBuilder, ensureComparisonBuilder, handleComparisonBuildToken, clearComparisonBuilder, nextComparisonBuilder, resetDateMatchGame, ensureDateMatchGame, handleDateMatchPhrase, handleDateMatchEvent, resetDateChallenge, ensureDateChallenge, handleDateChallengePlay, handleDateChallengeGuess, timeDateSectionForCurrentLesson, activeTimeDateSection, renderTimeAssetGrid, bindTimeAssetAudio, renderWeekdaysExplorer, renderDatesExplorer, renderVisualTopicExplorer, renderEverydayActionsExplorer, renderRoomsExplorer, renderPositionsExplorer, renderTimeDateExplorer, renderClothesExplorer };
+  return { resetWeekdayChallenge, ensureWeekdayChallenge, handleWeekdayChallengePlay, handleWeekdayChallengeGuess, resetWeekdayMatchGame, ensureWeekdayMatchGame, handleWeekdayMatchPhrase, handleWeekdayMatchAttempt, resetClothesQuiz, prepareClothesQuizQuestion, ensureClothesQuiz, handleClothesQuizPick, nextClothesQuizQuestion, resetClothesSentenceQuiz, prepareClothesSentenceQuestion, ensureClothesSentenceQuiz, handleClothesSentencePick, nextClothesSentenceQuestion, resetTimeRoutineQuiz, prepareTimeRoutineQuizQuestion, ensureTimeRoutineQuiz, handleTimeRoutineQuizPick, nextTimeRoutineQuizQuestion, resetClockQuiz, prepareClockQuizQuestion, ensureClockQuiz, handleClockQuizPick, nextClockQuizQuestion, currentRoomBuildItem, resetRoomBuilder, prepareRoomBuilder, ensureRoomBuilder, isRoomBuildPrefixValid, handleRoomBuildToken, clearRoomBuilder, nextRoomBuilder, currentTransportBuildItem, resetTransportBuilder, prepareTransportBuilder, ensureTransportBuilder, handleTransportBuildToken, clearTransportBuilder, nextTransportBuilder, ensureEverydayActionsQuiz, currentEverydayAction, handleEverydayActionsPick, nextEverydayActionsQuestion, resetPositionQuiz, preparePositionQuizQuestion, ensurePositionQuiz, handlePositionQuizPlay, handlePositionQuizPick, nextPositionQuizQuestion, currentComparisonBuildItem, resetComparisonBuilder, prepareComparisonBuilder, ensureComparisonBuilder, handleComparisonBuildToken, clearComparisonBuilder, nextComparisonBuilder, resetDateMatchGame, ensureDateMatchGame, handleDateMatchPhrase, handleDateMatchEvent, resetDateChallenge, ensureDateChallenge, handleDateChallengePlay, handleDateChallengeGuess, timeDateSectionForCurrentLesson, activeTimeDateSection, renderTimeAssetGrid, bindTimeAssetAudio, renderWeekdaysExplorer, renderDatesExplorer, renderVisualTopicExplorer, renderEverydayActionsExplorer, renderRoomsExplorer, renderPositionsExplorer, renderTimeDateExplorer, renderClothesExplorer };
 }
 import { advanceShuffledOrder, nextRandomCycleId } from "../../core/random-cycle.js";

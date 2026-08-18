@@ -1,5 +1,5 @@
 export function createFoundationsRuntime(context) {
-  const { state, numberHanzi, numberPinyin, buildNumberItem, numberStages, telephonePractice, familyGameItemIds, familyPersonIdsByItemId, familyHeadshotsByItemId, familyPractice, illustratedFamily, illustratedKids, bodyBonusItemIds, bodyCoreItemIds, bodyDiagramLayout, identityConversation, identityCountries, identityQuestion, topicById, focusItemsForTopic, currentTopic, currentNumberStage, currentFocusItem, currentBook, currentLesson, shuffleArray, chineseUtterance, speak, speakSceneLines, renderActivityPanel, renderFocusDisplay, renderFocusExplorer, renderFocusStatus, selectFocusItem, bodySentenceForItem, focusExplorer, focusStatus } = context;
+  const { state, numberHanzi, numberPinyin, buildNumberItem, numberStages, telephonePractice, familyGameItemIds, familyPersonIdsByItemId, familyHeadshotsByItemId, familyPractice, illustratedFamily, illustratedKids, bodyBonusItemIds, bodyCoreItemIds, bodyDiagramLayout, identityConversation, identityCountries, identityQuestion, topicById, focusItemsForTopic, currentTopic, currentNumberStage, currentFocusItem, currentBook, currentLesson, shuffleArray, chineseUtterance, speak, speakSceneLines, renderActivityPanel, renderFocusDisplay, renderFocusExplorer, renderFocusStatus, selectFocusItem, bodySentenceForItem, focusExplorer, focusStatus, activityPanelTitle, activityPanelSummary, activityList } = context;
 
 function numberStageItems(stage = currentNumberStage()) {
   const start = Math.min(stage.start, stage.end);
@@ -425,7 +425,7 @@ function handleNumberChallengeGuess(value) {
 
 
 function bodyMatchItems() {
-  const ids = state.bodyMatchIncludeBonus ? [...bodyCoreItemIds, ...bodyBonusItemIds] : bodyCoreItemIds;
+  const ids = [...bodyCoreItemIds, ...bodyBonusItemIds];
   const bodyTopic = topicById("body");
   return ids
     .map((id) => bodyTopic?.focusItems.find((item) => item.id === id))
@@ -470,6 +470,7 @@ function handleBodyMatchChinese(itemId) {
     playAudio: true,
     bodyFeedback: "Now tap the matching English word."
   });
+  renderActivityPanel(currentTopic());
 }
 
 function handleBodyMatchAttempt(englishId, chineseId = state.bodySelectedChineseId) {
@@ -478,8 +479,7 @@ function handleBodyMatchAttempt(englishId, chineseId = state.bodySelectedChinese
   if (!chineseId) {
     state.bodySelectedEnglishId = englishId;
     state.lastBodyFeedback = "Tap a Chinese word first.";
-    renderFocusExplorer();
-    renderFocusStatus();
+    renderActivityPanel(currentTopic());
     return;
   }
 
@@ -501,15 +501,117 @@ function handleBodyMatchAttempt(englishId, chineseId = state.bodySelectedChinese
       state.lastBodyFeedback = allDone
         ? "Great job! You matched all the words."
         : "Round complete! Tap Next set for the next words.";
-      renderFocusExplorer();
-      renderFocusStatus();
     }
+    renderActivityPanel(currentTopic());
     return;
   }
 
   state.lastBodyFeedback = `Try again. ${itemsById[chineseId].hanzi} is not ${itemsById[englishId].english}.`;
-  renderFocusExplorer();
-  renderFocusStatus();
+  renderActivityPanel(currentTopic());
+}
+
+function bodySpotlightItems() {
+  const bodyTopic = topicById("body");
+  return bodyCoreItemIds
+    .map((id) => bodyTopic?.focusItems.find((item) => item.id === id))
+    .filter(Boolean);
+}
+
+function nextBodySpotlightRound() {
+  const items = bodySpotlightItems();
+  const promptId = nextRandomCycleId(state, "body-spotlight-choose", items.map((item) => item.id));
+  state.bodySpotlightPromptId = promptId;
+  state.bodySpotlightOptionIds = shuffleArray([
+    promptId,
+    ...shuffleArray(items.filter((item) => item.id !== promptId).map((item) => item.id)).slice(0, 3)
+  ]);
+  state.bodySpotlightResult = "";
+  state.bodySpotlightWrongIds = new Set();
+}
+
+function startBodySpotlightRound() {
+  nextBodySpotlightRound();
+  renderActivityPanel(currentTopic());
+}
+
+function handleBodySpotlightGuess(itemId) {
+  const prompt = bodySpotlightItems().find((item) => item.id === state.bodySpotlightPromptId);
+  if (!prompt || state.bodySpotlightResult === "correct") return;
+
+  if (itemId === prompt.id) {
+    state.bodySpotlightResult = "correct";
+    if (state.tapAudioEnabled) speak(bodySentenceForItem(prompt).hanzi, 0.78);
+  } else {
+    state.bodySpotlightResult = "wrong";
+    state.bodySpotlightWrongIds = new Set([...state.bodySpotlightWrongIds, itemId]);
+  }
+  renderActivityPanel(currentTopic());
+}
+
+const bodySpotlightRegions = {
+  head: { x: 50, y: 24, width: 46, height: 22 },
+  hair: { x: 50, y: 15, width: 31, height: 13 },
+  eyes: { x: 41, y: 29, width: 15, height: 10 },
+  ears: { x: 28, y: 31.5, width: 13, height: 13 },
+  nose: { x: 50, y: 32, width: 12, height: 9 },
+  mouth: { x: 50, y: 36.5, width: 17, height: 8 },
+  hand: { x: 27, y: 61, width: 17, height: 13 },
+  foot: { x: 36.5, y: 87.5, width: 18, height: 13 }
+};
+
+function renderBodyPractice() {
+  const items = bodySpotlightItems();
+  const prompt = items.find((item) => item.id === state.bodySpotlightPromptId);
+  const complete = state.bodySpotlightResult === "correct";
+  const sentence = prompt ? bodySentenceForItem(prompt) : null;
+  const region = prompt ? bodySpotlightRegions[prompt.id] : null;
+  const spotlightOptionMarkup = prompt
+    ? state.bodySpotlightOptionIds.map((id) => {
+        const option = items.find((item) => item.id === id);
+        const isCorrect = complete && id === prompt.id;
+        const isWrong = state.bodySpotlightWrongIds.has(id);
+        return `<button class="numbers-game-option body-spotlight-option${isCorrect ? " is-correct" : ""}${isWrong ? " is-wrong" : ""}" type="button" data-body-spotlight-guess="${id}" ${complete ? "disabled" : ""}><span class="numbers-game-hanzi">${option.hanzi}</span>${state.showPinyin ? `<span class="numbers-game-pinyin">${option.pinyin}</span>` : ""}${state.showEnglish ? `<span class="numbers-game-english">${option.english}</span>` : ""}</button>`;
+      })
+    : [];
+  const spotlightVisualMarkup = `
+    <figure class="body-listen-visual">
+      <div class="body-listen-scene-card">
+        <img class="body-listen-image" src="assets/body/body-topic-kid-largehead.webp" alt="Cartoon child for body parts practice">
+        ${region ? `<span class="body-spotlight-window" style="--body-spotlight-x: ${region.x}%; --body-spotlight-y: ${region.y}%; --body-spotlight-width: ${region.width}%; --body-spotlight-height: ${region.height}%;" aria-hidden="true"></span>` : ""}
+      </div>
+    </figure>`;
+
+  activityPanelTitle.textContent = "Let's practice";
+  activityPanelSummary.textContent = "Look at the highlighted body part, then choose its word.";
+  activityList.className = "support-list";
+  activityList.innerHTML = `
+    <section class="clothes-quiz-shell body-listen-practice">
+      <div class="numbers-game-top">
+        <div>
+          <p class="body-match-kicker">Look and choose</p>
+          <p class="numbers-game-note">Press New game to reveal one body part. Then choose the matching word.</p>
+        </div>
+        <button class="small-button is-practice-advance-button" type="button" data-body-spotlight-new aria-label="Start a new game">New game</button>
+      </div>
+      <div class="body-spotlight-desktop">
+        ${spotlightVisualMarkup}
+        ${prompt ? `<div class="numbers-game-options body-spotlight-options">${spotlightOptionMarkup.join("")}</div>` : ""}
+      </div>
+      ${prompt ? `<div class="body-spotlight-mobile">
+        <div class="body-spotlight-option-column">${spotlightOptionMarkup.slice(0, 2).join("")}</div>
+        ${spotlightVisualMarkup}
+        <div class="body-spotlight-option-column">${spotlightOptionMarkup.slice(2).join("")}</div>
+      </div>` : ""}
+      ${complete && sentence ? `<div class="body-listen-answer"><p class="telephone-line-hanzi">${sentence.hanzi}</p>${state.showPinyin ? `<p class="telephone-line-pinyin">${sentence.pinyin}</p>` : ""}${state.showEnglish ? `<p class="telephone-line-english">${sentence.english}</p>` : ""}</div>` : ""}
+      ${renderBodyMatchPanel()}
+    </section>
+  `;
+
+  activityList.querySelector("[data-body-spotlight-new]")?.addEventListener("click", startBodySpotlightRound);
+  activityList.querySelectorAll("[data-body-spotlight-guess]").forEach((button) => {
+    button.addEventListener("click", () => handleBodySpotlightGuess(button.dataset.bodySpotlightGuess));
+  });
+  bindBodyMatchPanel(activityList);
 }
 
 
@@ -561,50 +663,20 @@ function renderBodyLabelButton(item, align) {
   `;
 }
 
-function renderBodyExplorer() {
+function renderBodyMatchPanel() {
   ensureBodyMatchGame();
-  const item = currentFocusItem();
-  const sentence = bodySentenceForItem(item);
-  const items = Object.fromEntries(focusItemsForTopic().map((entry) => [entry.id, entry]));
   const matchItems = Object.fromEntries(bodyMatchItems().map((entry) => [entry.id, entry]));
-  const roundComplete =
-    state.bodyRoundIds.length > 0 && state.bodyRoundIds.every((id) => state.bodyMatchedIds.has(id));
-  const allDone =
-    bodyMatchItems().length > 0 && state.bodyMatchedIds.size === bodyMatchItems().length;
   const solvedMatchIds = state.bodyChineseOrder.filter((id) => state.bodyMatchedIds.has(id));
   const remainingChineseIds = state.bodyChineseOrder.filter((id) => !state.bodyMatchedIds.has(id));
   const remainingEnglishIds = state.bodyEnglishOrder.filter((id) => !state.bodyMatchedIds.has(id));
-  focusExplorer.innerHTML = `
-    <div class="body-game">
-      <div class="body-practice-visual">
-        <div class="body-diagram">
-          <div class="body-label-column body-label-column-left">
-            ${bodyDiagramLayout.left.map((id) => renderBodyLabelButton(items[id], "left")).join("")}
-          </div>
-          <div class="body-scene">
-            <div class="body-scene-card">
-              <img
-                class="body-scene-kid"
-                src="assets/body/body-topic-kid-largehead.webp"
-                alt="Cartoon child for body parts learning activity"
-              />
-              <div class="body-part-indicator body-part-indicator-${item.id}" aria-hidden="true"></div>
-            </div>
-          </div>
-          <div class="body-label-column body-label-column-right">
-            ${bodyDiagramLayout.right.map((id) => renderBodyLabelButton(items[id], "right")).join("")}
-          </div>
-        </div>
-        <div class="body-match-panel">
+  return `
+        <section class="body-match-panel">
           <div class="body-match-heading">
             <div>
               <p class="body-match-kicker">Match Game</p>
               <h4>Chinese to English</h4>
             </div>
             <div class="body-match-actions">
-              <button class="small-button is-action-button" type="button" data-body-toggle-bonus aria-pressed="${state.bodyMatchIncludeBonus}">
-                Bonus words ${state.bodyMatchIncludeBonus ? "on" : "off"}
-              </button>
               <button class="small-button is-practice-advance-button" type="button" data-body-reset-match aria-label="Start a new game">
                 New game
               </button>
@@ -691,31 +763,47 @@ function renderBodyExplorer() {
               `
               : ""
           }
-        </div>
-        <div class="body-more-practice-card">
-          <p class="body-match-kicker">More Practice</p>
-          <h4>Say it with 我的</h4>
-          <p class="body-sentence-hanzi">${sentence.hanzi}</p>
-          ${state.showPinyin ? `<p class="body-sentence-pinyin">${sentence.pinyin}</p>` : ""}
-          ${state.showEnglish ? `<p class="body-sentence-english">${sentence.english}</p>` : ""}
-          <p class="body-sentence-note">Tap a body word, then say the whole phrase aloud.</p>
-          <div class="body-sentence-examples">
-            ${["eyes", "ears", "nose", "mouth", "head", "hair", "hand", "foot"]
-              .map((id) => {
-                const practiceItem = items[id];
-                const practiceSentence = bodySentenceForItem(practiceItem);
-                const isActivePractice = item.id === id;
-                return `
-                  <button
-                    class="body-sentence-chip${isActivePractice ? " is-active" : ""}"
-                    type="button"
-                    data-body-sentence-item="${id}"
-                  >
-                    ${practiceSentence.hanzi}
-                  </button>
-                `;
-              })
-              .join("")}
+        </section>
+  `;
+}
+
+function bindBodyMatchPanel(root) {
+  root.querySelector("[data-body-reset-match]")?.addEventListener("click", () => {
+    resetBodyMatchGame();
+    renderActivityPanel(currentTopic());
+  });
+
+  root.querySelectorAll("[data-body-match-chinese]").forEach((button) => {
+    button.addEventListener("click", () => handleBodyMatchChinese(button.dataset.bodyMatchChinese));
+  });
+
+  root.querySelectorAll("[data-body-match-english]").forEach((button) => {
+    button.addEventListener("click", () => handleBodyMatchAttempt(button.dataset.bodyMatchEnglish));
+  });
+}
+
+function renderBodyExplorer() {
+  const item = currentFocusItem();
+  const items = Object.fromEntries(focusItemsForTopic().map((entry) => [entry.id, entry]));
+  focusExplorer.innerHTML = `
+    <div class="body-game">
+      <div class="body-practice-visual">
+        <div class="body-diagram">
+          <div class="body-label-column body-label-column-left">
+            ${bodyDiagramLayout.left.map((id) => renderBodyLabelButton(items[id], "left")).join("")}
+          </div>
+          <div class="body-scene">
+            <div class="body-scene-card">
+              <img
+                class="body-scene-kid"
+                src="assets/body/body-topic-kid-largehead.webp"
+                alt="Cartoon child for body parts learning activity"
+              />
+              <div class="body-part-indicator body-part-indicator-${item.id}" aria-hidden="true"></div>
+            </div>
+          </div>
+          <div class="body-label-column body-label-column-right">
+            ${bodyDiagramLayout.right.map((id) => renderBodyLabelButton(items[id], "right")).join("")}
           </div>
         </div>
       </div>
@@ -725,47 +813,6 @@ function renderBodyExplorer() {
   focusExplorer.querySelectorAll("[data-body-item-id]").forEach((button) => {
     button.addEventListener("click", () => {
       selectFocusItem(button.dataset.bodyItemId, { playAudio: true });
-    });
-  });
-
-  focusExplorer.querySelectorAll("[data-body-sentence-item]").forEach((button) => {
-    button.addEventListener("click", () => {
-      const sentenceItemId = button.dataset.bodySentenceItem;
-      const sentenceItem = items[sentenceItemId];
-      if (!sentenceItem) {
-        return;
-      }
-
-      selectFocusItem(sentenceItemId, {
-        playAudio: true,
-        audioText: bodySentenceForItem(sentenceItem).hanzi,
-        bodyFeedback: `Practice saying ${bodySentenceForItem(sentenceItem).hanzi}.`
-      });
-    });
-  });
-
-  focusExplorer.querySelector("[data-body-toggle-bonus]")?.addEventListener("click", () => {
-    state.bodyMatchIncludeBonus = !state.bodyMatchIncludeBonus;
-    resetBodyMatchGame();
-    renderFocusExplorer();
-    renderFocusStatus();
-  });
-
-  focusExplorer.querySelector("[data-body-reset-match]")?.addEventListener("click", () => {
-    resetBodyMatchGame();
-    renderFocusExplorer();
-    renderFocusStatus();
-  });
-
-  focusExplorer.querySelectorAll("[data-body-match-chinese]").forEach((button) => {
-    button.addEventListener("click", () => {
-      handleBodyMatchChinese(button.dataset.bodyMatchChinese);
-    });
-  });
-
-  focusExplorer.querySelectorAll("[data-body-match-english]").forEach((button) => {
-    button.addEventListener("click", () => {
-      handleBodyMatchAttempt(button.dataset.bodyMatchEnglish);
     });
   });
 
@@ -1316,6 +1363,6 @@ function updateMultiplicationPlaybackControls(container) {
 }
 
 
-  return { numberStageItems, resetNumberChallenge, ensureNumberChallenge, resetMathChallenge, ensureMathChallenge, familyGameItems, familyPersonForItemId, familyHeadshotForItemId, isFamilySentenceItemId, familyBookWordItems, usesLessonTemplate, bookWordItemsForTopic, usefulNoteForTopic, familyWordForPersonId, resetFamilyChallenge, ensureFamilyChallenge, resetListenChallengeResult, handleFamilyChallengePlay, handleFamilyChallengeGuess, resetFamilyMatchGame, ensureFamilyMatchGame, handleFamilyMatchPhrase, handleFamilyMatchAttempt, mathChallengeAudioText, handleMathChallengeSubmit, handleNumberChallengeGuess, bodyMatchItems, nextBodyRound, resetBodyMatchGame, ensureBodyMatchGame, handleBodyMatchChinese, handleBodyMatchAttempt, numberWordListItems, renderBodyLabelButton, renderBodyExplorer, renderNumberVisual, renderNumbersExplorer, renderTelephoneExplorer, renderFamilyHomeVisual, renderFamilyExplorer, renderIdentityExplorer, renderMultiplicationExplorer };
+  return { numberStageItems, resetNumberChallenge, ensureNumberChallenge, resetMathChallenge, ensureMathChallenge, familyGameItems, familyPersonForItemId, familyHeadshotForItemId, isFamilySentenceItemId, familyBookWordItems, usesLessonTemplate, bookWordItemsForTopic, usefulNoteForTopic, familyWordForPersonId, resetFamilyChallenge, ensureFamilyChallenge, resetListenChallengeResult, handleFamilyChallengePlay, handleFamilyChallengeGuess, resetFamilyMatchGame, ensureFamilyMatchGame, handleFamilyMatchPhrase, handleFamilyMatchAttempt, mathChallengeAudioText, handleMathChallengeSubmit, handleNumberChallengeGuess, bodyMatchItems, nextBodyRound, resetBodyMatchGame, ensureBodyMatchGame, handleBodyMatchChinese, handleBodyMatchAttempt, nextBodySpotlightRound, startBodySpotlightRound, handleBodySpotlightGuess, renderBodyPractice, numberWordListItems, renderBodyLabelButton, renderBodyExplorer, renderNumberVisual, renderNumbersExplorer, renderTelephoneExplorer, renderFamilyHomeVisual, renderFamilyExplorer, renderIdentityExplorer, renderMultiplicationExplorer };
 }
 import { nextRandomCycleId } from "../../core/random-cycle.js";

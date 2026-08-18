@@ -26,7 +26,7 @@ import { ageBuildPhrases, agePractice, ageTopic } from "../src/features/foundati
 import { identityConversation, identityCountries, identityQuestion, identityTopic } from "../src/features/foundations/identity.js";
 import { greetingsGameItemIds, greetingsPractice, greetingsTopic } from "../src/features/foundations/greetings.js";
 import { politeGameItemIds, politePractice, politeWordsTopic } from "../src/features/foundations/polite-words.js";
-import { clothesMatchItems, clothesPractice, clothesTopic } from "../src/features/daily-life/clothes.js";
+import { clothesBookWords, clothesMatchItems, clothesPractice, clothesSentenceItems, clothesTopic } from "../src/features/daily-life/clothes.js";
 import { natureLesson, natureTopic, weatherLesson, weatherTopic } from "../src/features/world/weather.js";
 import { animalLessons, animalsTopic, petsTopic } from "../src/features/world/animals.js";
 import { colourLessons, coloursTopic } from "../src/features/world/colours.js";
@@ -46,9 +46,20 @@ import { familyGameItemIds, familyPractice, familyTopic, illustratedFamily } fro
 
 test("the local page loads a single bundled application script", () => {
   const html = readFileSync("index.html", "utf8");
-  assert.match(html, /<link rel="stylesheet" href="styles\.css\?v=20260816-scene-alignment" \/>/);
-  assert.match(html, /<script src="app\.js\?v=20260816-date-month-scenes"><\/script>/);
+  assert.match(html, /<link rel="stylesheet" href="styles\.css\?v=20260817-clothes-book-icons" \/>/);
+  assert.match(html, /<script src="app\.js\?v=20260817-clothes-scene-copy"><\/script>/);
   assert.doesNotMatch(html, /type="module"/);
+});
+
+test("absolute filesystem paths are rejected before commits and deployment", () => {
+  const packageSource = readFileSync("package.json", "utf8");
+  const workflowSource = readFileSync(".github/workflows/deploy-pages.yml", "utf8");
+  assert.match(packageSource, /"check:paths": "node scripts\/check_relative_paths\.mjs"/);
+  assert.match(packageSource, /"setup:hooks": "git config core\.hooksPath \.githooks"/);
+  assert.match(readFileSync(".githooks/pre-commit", "utf8"), /check_relative_paths\.mjs --staged/);
+  assert.match(readFileSync(".githooks/commit-msg", "utf8"), /check_relative_paths\.mjs --message-file/);
+  assert.match(workflowSource, /run: npm run check:paths/);
+  assert.match(workflowSource, /check_relative_paths\.mjs --commit-range/);
 });
 
 test("topic scenes use short English titles instead of ordinal labels", () => {
@@ -126,6 +137,7 @@ test("all phone scene grids use one portrait column and aligned landscape header
 test("phone matching games keep their left and right columns together", () => {
   const styles = readFileSync("styles.css", "utf8");
   assert.match(styles, /\.polite-match-board,[\s\S]{0,220}\.body-match-open-board \{\s+grid-template-columns: repeat\(2, minmax\(0, 1fr\)\);\s+gap: 8px;/);
+  assert.match(styles, /@media \(max-width: 760px\) and \(orientation: portrait\) \{[\s\S]{0,900}\.lesson-practice-shell \.polite-match-card \{\s+height: auto;\s+min-height: 92px;/);
 });
 
 test("portrait phone navigation keeps display controls compact", () => {
@@ -741,6 +753,7 @@ test("greetings owns its template lesson scenes and listening set", () => {
 test("polite words owns its template lesson scenes and listening set", () => {
   assert.equal(politeWordsTopic.id, "polite-words");
   assert.equal(politeWordsTopic.interactiveScene, "polite-phrases");
+  assert.equal(politeWordsTopic.ownsExplorerContent, true);
   assert.equal(politePractice.length, 4);
   assert.equal(politeGameItemIds.length, 5);
   assert.deepEqual(politePractice.at(-1)?.lines.map((line) => line.hanzi), ["我可以问老师吗？", "可以。"]);
@@ -753,6 +766,7 @@ test("Polite Words adds its request scene to a two-column grid and no-repeat lis
   const stylesSource = readFileSync("styles.css", "utf8");
   assert.match(controllerSource, /polite-scene-grid/);
   assert.match(controllerSource, /data-polite-word/);
+  assert.match(controllerSource, /我可以…吗？/);
   assert.match(practiceSource, /state\.politeChallengeResult === "correct" \? "New game" : "Play"/);
   assert.match(stylesSource, /\.polite-scene-grid \{\s+grid-template-columns: repeat\(2, minmax\(0, 1fr\)\);/);
   assert.match(stylesSource, /\.polite-scene-grid \{\s+grid-template-columns: minmax\(0, 1fr\);/);
@@ -761,10 +775,18 @@ test("Polite Words adds its request scene to a two-column grid and no-repeat lis
 });
 
 test("clothes owns its scenes and picture matching set", () => {
+  const runtimeSource = readFileSync("src/features/time-daily-life/time-daily-life-runtime.js", "utf8");
   assert.equal(clothesTopic.id, "clothes");
   assert.equal(clothesTopic.interactiveScene, "clothes-scenes");
+  assert.equal(clothesTopic.ownsExplorerContent, true);
   assert.equal(clothesPractice.length, 2);
-  assert.equal(clothesMatchItems.length, 5);
+  assert.deepEqual(clothesBookWords.map((item) => item.id), ["shirt", "pants", "dress", "shoes", "hat", "jacket", "gloves", "school-uniform"]);
+  assert.deepEqual(clothesMatchItems.map((item) => item.id), clothesBookWords.map((item) => item.id));
+  assert.deepEqual(clothesSentenceItems.map((item) => item.id), ["shoes", "socks", "jacket", "hat", "school-uniform"]);
+  assert.ok(clothesBookWords.every((item) => existsSync(item.imagePath)));
+  assert.ok(clothesSentenceItems.every((item) => existsSync(item.imagePath)));
+  assert.match(runtimeSource, /time-asset-card book-word-card/);
+  assert.doesNotMatch(runtimeSource, /clothes-book-board/);
 });
 
 test("Nature and Weather remain separate book topics", () => {
@@ -1177,6 +1199,23 @@ test("body owns its vocabulary, diagram, and matching sets", () => {
   assert.equal(bodyDiagramLayout.left.length + bodyDiagramLayout.right.length, 12);
   assert.equal(bodyCoreItemIds.length, 8);
   assert.equal(bodyBonusItemIds.length, 4);
+});
+
+test("Body adds a no-repeat spotlight-and-choose practice without duplicating its matching review", () => {
+  const practiceSource = readFileSync("src/core/lesson-practice-runtime.js", "utf8");
+  const foundationsSource = readFileSync("src/features/foundations/foundations-runtime.js", "utf8");
+  assert.match(practiceSource, /if \(topic\.id === "body"\) \{\s+renderBodyPractice\(\);/);
+  assert.match(foundationsSource, /nextRandomCycleId\(state, "body-spotlight-choose"/);
+  assert.match(foundationsSource, /data-body-spotlight-new/);
+  assert.match(foundationsSource, /data-body-spotlight-guess/);
+  assert.match(foundationsSource, /bodySpotlightRegions/);
+  assert.match(foundationsSource, /ears: \{ x: 28, y: 31\.5, width: 13, height: 13 \}/);
+  assert.doesNotMatch(foundationsSource, /body-listen-hotspot/);
+  assert.match(foundationsSource, /\$\{renderBodyMatchPanel\(\)\}/);
+  assert.doesNotMatch(foundationsSource, /Say it with 我的/);
+  assert.doesNotMatch(foundationsSource, /bodyMatchIncludeBonus|data-body-toggle-bonus/);
+  assert.match(foundationsSource, /body-spotlight-mobile/);
+  assert.match(foundationsSource, /bodySentenceForItem\(prompt\)\.hanzi/);
 });
 
 test("the shared character catalog retains every illustrated child", () => {

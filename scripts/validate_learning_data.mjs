@@ -20,7 +20,7 @@ import { ageBuildPhrases, agePractice } from "../src/features/foundations/age.js
 import { identityConversation, identityCountries } from "../src/features/foundations/identity.js";
 import { greetingsPractice } from "../src/features/foundations/greetings.js";
 import { politePractice } from "../src/features/foundations/polite-words.js";
-import { clothesMatchItems, clothesPractice } from "../src/features/daily-life/clothes.js";
+import { clothesMatchItems, clothesPractice, clothesSentenceItems } from "../src/features/daily-life/clothes.js";
 import { familyPractice, illustratedFamily } from "../src/features/family/family.js";
 import { illustratedKids } from "../src/data/characters.js";
 import { books, learningHomeCategories, topicGroups } from "../src/data/curriculum.js";
@@ -123,6 +123,7 @@ greetingsPractice.forEach((item) => assertAsset(item, `greetings scene:${item.id
 politePractice.forEach((item) => assertAsset(item, `polite scene:${item.id}`));
 clothesPractice.forEach((item) => assertAsset(item, `clothes scene:${item.id}`));
 clothesMatchItems.forEach((item) => assertAsset(item, `clothes match:${item.id}`));
+clothesSentenceItems.forEach((item) => assertAsset(item, `clothes sentence:${item.id}`));
 familyPractice.forEach((item) => assertAsset(item, `family scene:${item.id}`));
 Object.values(illustratedFamily).forEach((item) => assertAsset({ id: item.id, imagePath: item.path }, `family avatar:${item.id}`));
 Object.values(illustratedKids).forEach((item) => assertAsset({ id: item.id, imagePath: item.path }, `character:${item.id}`));
@@ -157,7 +158,8 @@ assert(ageBuildPhrases.length === 6, "age sentence practice is incomplete");
 assert(identityCountries.length === 3, "identity country set is incomplete");
 assert(greetingsPractice.length === 3, "greetings lesson scenes are incomplete");
 assert(politePractice.length === 4, "polite words lesson scenes are incomplete");
-assert(clothesMatchItems.length === 5, "clothes matching set is incomplete");
+assert(clothesMatchItems.length === 8, "clothes matching set is incomplete");
+assert(clothesSentenceItems.length === 5, "clothes sentence set is incomplete");
 assert(familyPractice.length === 2, "family lesson scenes are incomplete");
 assert(colourLessons["1b"].items.length === 4, "1B colour word set is incomplete");
 assert(colourLessons["2a"].items.length === 9, "2A colour word set is incomplete");

@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import argparse
+import tempfile
 from pathlib import Path
 
 import fitz
@@ -50,7 +51,7 @@ def render_pdf(pdf: Path, out_dir: Path, columns: int, thumb_width: int, pages_p
 def main() -> int:
     parser = argparse.ArgumentParser(description="Render local book PDFs into review contact sheets.")
     parser.add_argument("--source", type=Path, default=Path("books_pdf"))
-    parser.add_argument("--output", type=Path, default=Path("/private/tmp/easy_chinese_book_sheets"))
+    parser.add_argument("--output", type=Path, default=Path(tempfile.gettempdir()) / "easy_chinese_book_sheets")
     parser.add_argument("--match", default="", help="Only render PDFs whose file name contains this string.")
     parser.add_argument("--columns", type=int, default=3)
     parser.add_argument("--thumb-width", type=int, default=420)

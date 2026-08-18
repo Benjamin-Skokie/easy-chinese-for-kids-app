@@ -5266,6 +5266,42 @@ h4 {
   color: #397452;
 }
 
+.clothes-sentence-frame {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: baseline;
+  gap: 4px;
+  min-height: 46px;
+  padding: 8px 12px;
+  border: 1px solid rgba(221, 207, 187, 0.84);
+  border-radius: 8px;
+  background: #fffdf8;
+  text-align: center;
+}
+
+.clothes-sentence-frame .numbers-game-pinyin,
+.clothes-sentence-frame .numbers-game-english {
+  flex-basis: 100%;
+}
+
+.clothes-sentence-blank {
+  min-width: 4.5em;
+  padding: 3px 8px;
+  border-bottom: 2px dashed rgba(143, 105, 136, 0.45);
+  color: rgba(122, 110, 96, 0.54);
+  font-family: var(--hanzi-font);
+  font-size: var(--learner-hanzi-size);
+  font-weight: 800;
+  text-align: center;
+}
+
+.clothes-sentence-frame.is-correct .clothes-sentence-blank {
+  border-bottom-style: solid;
+  border-color: rgba(72, 137, 97, 0.55);
+  color: #397452;
+}
+
 .hobbies-sentence-slot {
   padding: 7px 10px;
   border: 1px dashed rgba(122, 110, 96, 0.24);
@@ -5605,6 +5641,74 @@ h4 {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
   margin-top: 6px;
+}
+
+.body-listen-practice {
+  display: grid;
+  gap: 16px;
+}
+
+.body-listen-visual {
+  display: grid;
+  place-items: center;
+  min-height: 500px;
+  margin: 0;
+  padding: 16px;
+  border: 1px solid rgba(221, 207, 187, 0.76);
+  border-radius: 22px;
+  background: linear-gradient(180deg, #dcebef, #f7efe2 70%);
+}
+
+.body-listen-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.body-listen-scene-card {
+  position: relative;
+  width: min(340px, 100%);
+  aspect-ratio: 1024 / 1536;
+  overflow: hidden;
+}
+
+.body-spotlight-window {
+  position: absolute;
+  z-index: 1;
+  top: var(--body-spotlight-y);
+  left: var(--body-spotlight-x);
+  width: var(--body-spotlight-width);
+  height: var(--body-spotlight-height);
+  transform: translate(-50%, -50%);
+  border: 2px solid rgba(255, 255, 255, 0.92);
+  border-radius: 50%;
+  background: transparent;
+  box-shadow: 0 0 0 100vmax rgba(48, 41, 31, 0.64);
+  pointer-events: none;
+}
+
+.body-spotlight-options {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 0;
+}
+
+.body-spotlight-option.is-wrong {
+  border-color: rgba(190, 91, 73, 0.8);
+  background: #fff3f1;
+}
+
+.body-spotlight-option.is-correct {
+  border-color: rgba(111, 143, 97, 0.8);
+  background: #eef7ea;
+}
+}
+
+.body-listen-answer {
+  padding: 14px 16px;
+  border: 1px solid rgba(111, 143, 97, 0.32);
+  border-radius: 18px;
+  background: linear-gradient(180deg, #eef7ea, #dcefd2);
 }
 
 .body-practice-visual {
@@ -7853,6 +7957,14 @@ h4 {
     width: 27px;
     height: 27px;
   }
+
+  /* Long question cards, such as 我可以问老师吗？, need to grow instead of
+     clipping their Hanzi and pinyin in the phone's two-column match board. */
+  .lesson-practice-shell .polite-match-card {
+    height: auto;
+    min-height: 92px;
+    align-content: start;
+  }
 }
 
 @media (max-width: 760px) {
@@ -7930,6 +8042,92 @@ h4 {
   .weather-scene-grid > .greetings-exchange,
   .greetings-practice-grid > .greetings-exchange {
     grid-template-rows: minmax(58px, auto) minmax(0, 1fr);
+  }
+}
+
+/* On phone-sized screens, the body artwork is narrow enough to keep the
+   vocabulary and picture-choice cards beside it rather than wasting its sides. */
+.body-spotlight-mobile {
+  display: none;
+}
+
+@media (max-width: 760px) {
+  .body-diagram {
+    grid-template-columns: minmax(74px, 1fr) minmax(150px, 170px) minmax(74px, 1fr);
+    gap: 6px;
+    align-items: center;
+  }
+
+  .body-label-column {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+
+  .body-label-button,
+  .body-label-column-right .body-label-button {
+    padding: 7px 4px;
+    border-radius: 12px;
+    gap: 2px;
+    text-align: center;
+  }
+
+  .body-scene {
+    order: initial;
+    min-height: 0;
+    padding: 6px;
+    border-radius: 18px;
+  }
+
+  .body-scene-card {
+    width: 100%;
+  }
+
+  .body-spotlight-desktop {
+    display: none;
+  }
+
+  .body-spotlight-mobile {
+    display: grid;
+    grid-template-columns: minmax(74px, 1fr) minmax(150px, 170px) minmax(74px, 1fr);
+    gap: 6px;
+    align-items: center;
+  }
+
+  .body-spotlight-mobile .body-listen-visual {
+    min-height: 0;
+    padding: 6px;
+    border-radius: 18px;
+  }
+
+  .body-spotlight-mobile .body-listen-scene-card {
+    width: 100%;
+  }
+
+  .body-spotlight-option-column {
+    display: grid;
+    gap: 6px;
+  }
+
+  .body-spotlight-option {
+    min-width: 0;
+    min-height: 0;
+    padding: 7px 4px;
+    border-radius: 12px;
+    text-align: center;
+  }
+}
+
+@media (min-width: 521px) and (max-width: 760px) and (orientation: landscape) {
+  .body-diagram,
+  .body-spotlight-mobile {
+    grid-template-columns: minmax(110px, 1fr) minmax(210px, 260px) minmax(110px, 1fr);
+    gap: 10px;
+  }
+
+  .body-label-button,
+  .body-label-column-right .body-label-button,
+  .body-spotlight-option {
+    padding: 9px 7px;
   }
 }
 

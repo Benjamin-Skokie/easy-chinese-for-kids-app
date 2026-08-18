@@ -1,7 +1,7 @@
 export function createTimeDailyLifeState() {
   return {
     weekdayChallengeAnswerId: "", weekdayChallengeOptionIds: [], weekdayChallengePickedId: "", weekdayChallengePromptId: "", weekdayChallengeResult: "", weekdayChallengeWrongIds: new Set(), weekdayListenFeedback: "", weekdayMatchFeedback: "", weekdaySelectedPhraseId: null, weekdayMatchedIds: new Set(), weekdayPhraseOrder: [], weekdayMeaningOrder: [],
-    clothesQuizOrder: [], clothesQuizIndex: 0, clothesQuizOptionIds: [], clothesQuizSelectedId: "", clothesQuizResult: "",
+    clothesQuizOrder: [], clothesQuizIndex: 0, clothesQuizOptionIds: [], clothesQuizSelectedId: "", clothesQuizResult: "", clothesSentenceOrder: [], clothesSentenceIndex: 0, clothesSentenceOptionIds: [], clothesSentenceSelectedId: "", clothesSentenceResult: "",
     timeRoutineQuizOrder: [], timeRoutineQuizIndex: 0, timeRoutineQuizOptionIds: [], timeRoutineQuizSelectedId: "", timeRoutineQuizResult: "",
     clockQuizOrder: [], clockQuizIndex: 0, clockQuizOptionIds: [], clockQuizSelectedId: "", clockQuizResult: "",
     roomBuildOrder: [], roomBuildIndex: 0, roomBuildAvailableTokens: [], roomBuildSelectedTokens: [], roomBuildResult: "",

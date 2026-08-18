@@ -36,7 +36,7 @@ import { greetingsGameItemIds, greetingsPractice, greetingsTopic } from "../feat
 import { createGreetingsController } from "../features/foundations/greetings-controller.js";
 import { identityConversation, identityCountries, identityQuestion, identityTopic } from "../features/foundations/identity.js";
 import { familyGameItemIds, familyHeadshotsByItemId, familyPersonIdsByItemId, familyPractice, familyTopic, illustratedFamily } from "../features/family/family.js";
-import { clothesMatchItems, clothesPractice, clothesTopic } from "../features/daily-life/clothes.js";
+import { clothesBookWords, clothesMatchItems, clothesPractice, clothesSentenceItems, clothesTopic } from "../features/daily-life/clothes.js";
 import { coloursTopic } from "../features/world/colours.js";
 import { hobbiesTopic, toysTopic } from "../features/play-hobbies/play-hobbies.js";
 import { bodyBonusItemIds, bodyCoreItemIds, bodyDiagramLayout, bodyTopic } from "../features/foundations/body.js";
@@ -317,7 +317,10 @@ renderFocusDisplay,
   bodySentenceForItem,
   chineseUtterance,
 focusExplorer,
-focusStatus
+focusStatus,
+activityPanelTitle,
+activityPanelSummary,
+activityList
 });
 
 const {
@@ -353,6 +356,7 @@ resetBodyMatchGame,
 ensureBodyMatchGame,
 handleBodyMatchChinese,
 handleBodyMatchAttempt,
+renderBodyPractice,
 numberWordListItems,
 renderBodyLabelButton,
 renderBodyExplorer,
@@ -548,6 +552,11 @@ prepareClothesQuizQuestion,
 ensureClothesQuiz,
 handleClothesQuizPick,
 nextClothesQuizQuestion,
+resetClothesSentenceQuiz,
+prepareClothesSentenceQuestion,
+ensureClothesSentenceQuiz,
+handleClothesSentencePick,
+nextClothesSentenceQuestion,
 resetTimeRoutineQuiz,
 prepareTimeRoutineQuizQuestion,
 ensureTimeRoutineQuiz,
@@ -624,6 +633,8 @@ comparisonWordItems,
 positionPracticeItems,
 positionScenes,
 clothesMatchItems,
+clothesSentenceItems,
+clothesBookWords,
 clothesPractice,
 roomScenes,
 roomSentenceTokens,
@@ -698,7 +709,8 @@ lessonPracticeRuntime = createLessonPracticeRuntime({
   datePracticeItems,
   timeDateMonthItems,
   timeDateRoutineItems,
-  clothesMatchItems,
+clothesMatchItems,
+clothesSentenceItems,
   everydayActionItems,
   illustratedKids,
   numberHanzi,
@@ -715,6 +727,7 @@ lessonPracticeRuntime = createLessonPracticeRuntime({
   renderSharedLessonPractice,
   renderPracticeSayCards,
   bindPracticeSayCards,
+  renderBodyPractice,
   renderWorldPractice: worldRuntime.renderWorldPractice,
   renderHobbiesPractice: playHobbiesRuntime.renderHobbiesPractice,
   activeTimeDateSection,
@@ -771,7 +784,10 @@ lessonPracticeRuntime = createLessonPracticeRuntime({
   nextRoomBuilder,
   ensureClothesQuiz,
   handleClothesQuizPick,
-  nextClothesQuizQuestion,
+nextClothesQuizQuestion,
+ensureClothesSentenceQuiz,
+handleClothesSentencePick,
+nextClothesSentenceQuestion,
   ensureTimeRoutineQuiz,
   handleTimeRoutineQuizPick,
   nextTimeRoutineQuizQuestion,

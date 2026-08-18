@@ -7,6 +7,7 @@ export const politeWordsTopic = {
   iconColor: "#8f6c46",
   iconAccent: "#e6c77e",
   iconTheme: "polite",
+  ownsExplorerContent: true,
   focus: {
     hanzi: "谢谢你！",
     pinyin: "xiè xie nǐ!",

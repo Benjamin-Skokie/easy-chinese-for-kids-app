@@ -14,7 +14,7 @@ URL: `index.html?topic=family#topic-detail`
 
 ## Current contract
 
-The page owns parent and sibling vocabulary, family scenes, and early ownership/counting frames. It can claim the `有 / 没有` grammar visual only when a practice round contrasts complete family sentences.
+The page owns parent and sibling vocabulary, family scenes, and early ownership/counting frames. Build its `我有… / 我没有…` practice from the family-specific two-younger-brothers scene; do not reuse the unrelated schoolbag `有 / 没有` grammar visual.
 
 ## Lesson evidence
 

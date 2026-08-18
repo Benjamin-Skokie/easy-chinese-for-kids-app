@@ -1,6 +1,6 @@
 export function createFoundationState() {
   return {
-    bodyMatchIncludeBonus: false, bodySelectedChineseId: null, bodySelectedEnglishId: null, bodyMatchedIds: new Set(), bodyRoundIds: [], bodyChineseOrder: [], bodyEnglishOrder: [], bodyMatchUniverseKey: "", lastBodyFeedback: "",
+    bodySelectedChineseId: null, bodySelectedEnglishId: null, bodyMatchedIds: new Set(), bodyRoundIds: [], bodyChineseOrder: [], bodyEnglishOrder: [], bodyMatchUniverseKey: "", lastBodyFeedback: "", bodySpotlightPromptId: "", bodySpotlightOptionIds: [], bodySpotlightResult: "", bodySpotlightWrongIds: new Set(),
     numberChallengeStageId: "", numberChallengeTargetValue: null, numberChallengeOptionValues: [], lastNumberFeedback: "", numberChallengeAdvanceTimer: null,
     mathChallengeStageId: "", mathChallengeOperator: "+", mathChallengeLeft: null, mathChallengeRight: null, mathChallengeAnswer: null, lastMathFeedback: "", mathChallengeSolved: false, mathChallengeInput: "",
     greetingsChallengeAnswerId: "", greetingsChallengeOptionIds: [], greetingsChallengePickedId: "", greetingsChallengePromptId: "", greetingsChallengeResult: "", greetingsChallengeWrongIds: new Set(), lastGreetingsFeedback: "", greetingsListenFeedback: "", greetingsMatchFeedback: "", greetingsSelectedPhraseId: null, greetingsMatchedIds: new Set(), greetingsPhraseOrder: [], greetingsMeaningOrder: [],

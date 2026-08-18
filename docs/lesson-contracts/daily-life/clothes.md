@@ -1,6 +1,6 @@
 # Clothes
 
-Status: `partial`  
+Status: `implementation complete; visual QA pending`
 URL: `index.html?topic=clothes#topic-detail`
 
 ## Cross-book progression
@@ -13,14 +13,21 @@ URL: `index.html?topic=clothes#topic-detail`
 
 ## Current contract
 
-The page owns clothing vocabulary and dressing practice. Grow the same page through the book layers; weather-driven clothing choices should be an application, not a replacement for the clothes lesson.
+The page owns clothing vocabulary and dressing practice. Grow the same page through the book layers; weather-driven clothing choices are an application, not a replacement for the clothes lesson.
+
+| Section | Final decision |
+| --- | --- |
+| Scenes | Keep the existing 1 × 2 desktop grid: `Getting dressed` covers 2A’s `我会穿衣服。` and 3A’s everyday clothing set; `Rainy day clothes` applies clothing to weather without replacing the lesson. Both use the shared scene-card template and stack on phones. |
+| Book words | Use one shared icon card per word—image on top, then `T恤、裤子、裙子、鞋子、帽子、外套、手套、校服` with its Chinese, pinyin, and English. The existing isolated everyday-life assets supply every icon, including 4B’s school uniform. |
+| Useful note | Omit; the scenes and words already establish the `穿…` pattern. |
+| Practice | First, picture choice reuses the eight isolated Book Words icons, so it checks a single clothing word. Second, `Complete the sentence` uses the five self-dressing action images to complete `我穿……。` (and `我戴帽子。`). Both games run without replacement; each has one top-right New game control, and a correct choice speaks the completed phrase. |
 
 ## Lesson evidence
 
-+- **2A Lesson 6 — I can dress myself:** Words: `穿、鞋、帽子`. Sentence: `我会穿衣服。`.
+- **2A Lesson 6 — I can dress myself:** Words: `穿、鞋、帽子`. Sentence: `我会穿衣服。`.
 - **3A Lesson 7 — Clothes:** Words: `衬衫、裤子、裙子、鞋、帽子、手套、外套`. Frame: wearing clothes.
 - **4B Lesson 2 — Clothes:** Words: `衬衫、裤子、裙子、校服`. Frame: `穿…`.
 
-## Remaining coverage
+## Asset decision
 
-Audit the early everyday-life duplicate assets before adding them; prefer the current illustrated-clothes set.
+The 4:3 `illustrated-clothes` scenes and the isolated everyday-life clothing icons are the production assets. The portrait self-dressing images are used only by the action-sentence practice, never as single-word practice cues.

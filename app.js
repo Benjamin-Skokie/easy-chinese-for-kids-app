@@ -47,7 +47,6 @@
   // src/features/foundations/state.js
   function createFoundationState() {
     return {
-      bodyMatchIncludeBonus: false,
       bodySelectedChineseId: null,
       bodySelectedEnglishId: null,
       bodyMatchedIds: /* @__PURE__ */ new Set(),
@@ -56,6 +55,10 @@
       bodyEnglishOrder: [],
       bodyMatchUniverseKey: "",
       lastBodyFeedback: "",
+      bodySpotlightPromptId: "",
+      bodySpotlightOptionIds: [],
+      bodySpotlightResult: "",
+      bodySpotlightWrongIds: /* @__PURE__ */ new Set(),
       numberChallengeStageId: "",
       numberChallengeTargetValue: null,
       numberChallengeOptionValues: [],
@@ -145,6 +148,11 @@
       clothesQuizOptionIds: [],
       clothesQuizSelectedId: "",
       clothesQuizResult: "",
+      clothesSentenceOrder: [],
+      clothesSentenceIndex: 0,
+      clothesSentenceOptionIds: [],
+      clothesSentenceSelectedId: "",
+      clothesSentenceResult: "",
       timeRoutineQuizOrder: [],
       timeRoutineQuizIndex: 0,
       timeRoutineQuizOptionIds: [],
@@ -563,7 +571,7 @@
 
   // src/core/lesson-practice-runtime.js
   function createLessonPracticeRuntime(context) {
-    const { state: state2, schoolTopicData: schoolTopicData3, visualTopicItems: visualTopicItems2, positionPracticeItems: positionPracticeItems2, timeDateWeekItems: timeDateWeekItems2, timeDateClockItems: timeDateClockItems2, datePracticeItems: datePracticeItems2, timeDateMonthItems: timeDateMonthItems2, timeDateRoutineItems: timeDateRoutineItems2, clothesMatchItems: clothesMatchItems2, everydayActionItems: everydayActionItems2, illustratedKids: illustratedKids2, numberHanzi: numberHanzi2, buildNumberItem: buildNumberItem2, currentTopic: currentTopic2, currentNumberStage: currentNumberStage2, currentBook: currentBook2, currentLesson: currentLesson2, focusItemsForTopic: focusItemsForTopic2, shuffleArray: shuffleArray2, speak: speak2, renderFocusExplorer: renderFocusExplorer2, renderFocusStatus: renderFocusStatus2, renderSharedLessonPractice: renderSharedLessonPractice2, renderPracticeSayCards: renderPracticeSayCards2, bindPracticeSayCards: bindPracticeSayCards2, activityPanelTitle: activityPanelTitle2, activityPanelSummary: activityPanelSummary2, activityList: activityList2, topicColumns: topicColumns2, renderWorldPractice, renderHobbiesPractice, activeTimeDateSection: activeTimeDateSection2, ensureWeekdayChallenge: ensureWeekdayChallenge2, ensureWeekdayMatchGame: ensureWeekdayMatchGame2, handleWeekdayChallengePlay: handleWeekdayChallengePlay2, handleWeekdayChallengeGuess: handleWeekdayChallengeGuess2, resetWeekdayMatchGame: resetWeekdayMatchGame2, handleWeekdayMatchPhrase: handleWeekdayMatchPhrase2, handleWeekdayMatchAttempt: handleWeekdayMatchAttempt2, ensureDateChallenge: ensureDateChallenge2, ensureDateMatchGame: ensureDateMatchGame2, handleDateChallengePlay: handleDateChallengePlay2, handleDateChallengeGuess: handleDateChallengeGuess2, resetDateMatchGame: resetDateMatchGame2, handleDateMatchPhrase: handleDateMatchPhrase2, handleDateMatchEvent: handleDateMatchEvent2, familyGameItems: familyGameItems2, familyPersonForItemId: familyPersonForItemId2, familyHeadshotForItemId: familyHeadshotForItemId2, ensureFamilyChallenge: ensureFamilyChallenge2, ensureFamilyMatchGame: ensureFamilyMatchGame2, handleFamilyChallengePlay: handleFamilyChallengePlay2, handleFamilyChallengeGuess: handleFamilyChallengeGuess2, resetFamilyMatchGame: resetFamilyMatchGame2, handleFamilyMatchPhrase: handleFamilyMatchPhrase2, handleFamilyMatchAttempt: handleFamilyMatchAttempt2, greetingsGameItems: greetingsGameItems2, greetingsMeaningLabel: greetingsMeaningLabel2, ensureGreetingsChallenge: ensureGreetingsChallenge2, ensureGreetingsMatchGame: ensureGreetingsMatchGame2, handleGreetingsChallengePlay: handleGreetingsChallengePlay2, handleGreetingsChallengeGuess: handleGreetingsChallengeGuess2, resetGreetingsMatchGame: resetGreetingsMatchGame2, handleGreetingsMatchPhrase: handleGreetingsMatchPhrase2, handleGreetingsMatchAttempt: handleGreetingsMatchAttempt2, politeGameItems: politeGameItems2, politeMeaningLabel: politeMeaningLabel2, ensurePoliteChallenge: ensurePoliteChallenge2, ensurePoliteMatchGame: ensurePoliteMatchGame2, handlePoliteChallengePlay: handlePoliteChallengePlay2, handlePoliteChallengeGuess: handlePoliteChallengeGuess2, resetPoliteMatchGame: resetPoliteMatchGame2, handlePoliteMatchPhrase: handlePoliteMatchPhrase2, handlePoliteMatchAttempt: handlePoliteMatchAttempt2, ensureRoomBuilder: ensureRoomBuilder2, currentRoomBuildItem: currentRoomBuildItem2, handleRoomBuildToken: handleRoomBuildToken2, clearRoomBuilder: clearRoomBuilder2, nextRoomBuilder: nextRoomBuilder2, ensureClothesQuiz: ensureClothesQuiz2, handleClothesQuizPick: handleClothesQuizPick2, nextClothesQuizQuestion: nextClothesQuizQuestion2, ensureTimeRoutineQuiz: ensureTimeRoutineQuiz2, handleTimeRoutineQuizPick: handleTimeRoutineQuizPick2, nextTimeRoutineQuizQuestion: nextTimeRoutineQuizQuestion2, ensureClockQuiz: ensureClockQuiz2, handleClockQuizPick: handleClockQuizPick2, nextClockQuizQuestion: nextClockQuizQuestion2, ensureComparisonBuilder: ensureComparisonBuilder2, currentComparisonBuildItem: currentComparisonBuildItem2, handleComparisonBuildToken: handleComparisonBuildToken2, clearComparisonBuilder: clearComparisonBuilder2, nextComparisonBuilder: nextComparisonBuilder2, ensurePositionQuiz: ensurePositionQuiz2, handlePositionQuizPlay: handlePositionQuizPlay2, handlePositionQuizPick: handlePositionQuizPick2, nextPositionQuizQuestion: nextPositionQuizQuestion2, ensureTransportBuilder: ensureTransportBuilder2, currentTransportBuildItem: currentTransportBuildItem2, handleTransportBuildToken: handleTransportBuildToken2, clearTransportBuilder: clearTransportBuilder2, nextTransportBuilder: nextTransportBuilder2, ensureEverydayActionsQuiz: ensureEverydayActionsQuiz2, currentEverydayAction: currentEverydayAction2, handleEverydayActionsPick: handleEverydayActionsPick2, nextEverydayActionsQuestion: nextEverydayActionsQuestion2, resetNumberChallenge: resetNumberChallenge2, ensureMathChallenge: ensureMathChallenge2, handleNumberChallengeGuess: handleNumberChallengeGuess2, resetMathChallenge: resetMathChallenge2, handleMathChallengeSubmit: handleMathChallengeSubmit2, renderNumberVisual: renderNumberVisual2, introductionsBuildTarget: introductionsBuildTarget2, ensureIntroductionsBuilder: ensureIntroductionsBuilder2, resetIntroductionsBuilder: resetIntroductionsBuilder2, handleIntroductionsBuildClear: handleIntroductionsBuildClear2, handleIntroductionsBuildToken: handleIntroductionsBuildToken2, ageGameItems: ageGameItems2, ensureAgeChallenge: ensureAgeChallenge2, ensureAgeBuilder: ensureAgeBuilder2, ageBuildTarget: ageBuildTarget2, handleAgeChallengePlay: handleAgeChallengePlay2, handleAgeChallengeGuess: handleAgeChallengeGuess2, resetAgeBuilder: resetAgeBuilder2, handleAgeBuildClear: handleAgeBuildClear2, handleAgeBuildToken: handleAgeBuildToken2, renderSchoolPractice: renderSchoolPractice2 } = context;
+    const { state: state2, schoolTopicData: schoolTopicData3, visualTopicItems: visualTopicItems2, positionPracticeItems: positionPracticeItems2, timeDateWeekItems: timeDateWeekItems2, timeDateClockItems: timeDateClockItems2, datePracticeItems: datePracticeItems2, timeDateMonthItems: timeDateMonthItems2, timeDateRoutineItems: timeDateRoutineItems2, clothesMatchItems: clothesMatchItems2, clothesSentenceItems: clothesSentenceItems2, everydayActionItems: everydayActionItems2, illustratedKids: illustratedKids2, numberHanzi: numberHanzi2, buildNumberItem: buildNumberItem2, currentTopic: currentTopic2, currentNumberStage: currentNumberStage2, currentBook: currentBook2, currentLesson: currentLesson2, focusItemsForTopic: focusItemsForTopic2, shuffleArray: shuffleArray2, speak: speak2, renderFocusExplorer: renderFocusExplorer2, renderFocusStatus: renderFocusStatus2, renderSharedLessonPractice: renderSharedLessonPractice2, renderPracticeSayCards: renderPracticeSayCards2, bindPracticeSayCards: bindPracticeSayCards2, activityPanelTitle: activityPanelTitle2, activityPanelSummary: activityPanelSummary2, activityList: activityList2, topicColumns: topicColumns2, renderBodyPractice: renderBodyPractice2, renderWorldPractice, renderHobbiesPractice, activeTimeDateSection: activeTimeDateSection2, ensureWeekdayChallenge: ensureWeekdayChallenge2, ensureWeekdayMatchGame: ensureWeekdayMatchGame2, handleWeekdayChallengePlay: handleWeekdayChallengePlay2, handleWeekdayChallengeGuess: handleWeekdayChallengeGuess2, resetWeekdayMatchGame: resetWeekdayMatchGame2, handleWeekdayMatchPhrase: handleWeekdayMatchPhrase2, handleWeekdayMatchAttempt: handleWeekdayMatchAttempt2, ensureDateChallenge: ensureDateChallenge2, ensureDateMatchGame: ensureDateMatchGame2, handleDateChallengePlay: handleDateChallengePlay2, handleDateChallengeGuess: handleDateChallengeGuess2, resetDateMatchGame: resetDateMatchGame2, handleDateMatchPhrase: handleDateMatchPhrase2, handleDateMatchEvent: handleDateMatchEvent2, familyGameItems: familyGameItems2, familyPersonForItemId: familyPersonForItemId2, familyHeadshotForItemId: familyHeadshotForItemId2, ensureFamilyChallenge: ensureFamilyChallenge2, ensureFamilyMatchGame: ensureFamilyMatchGame2, handleFamilyChallengePlay: handleFamilyChallengePlay2, handleFamilyChallengeGuess: handleFamilyChallengeGuess2, resetFamilyMatchGame: resetFamilyMatchGame2, handleFamilyMatchPhrase: handleFamilyMatchPhrase2, handleFamilyMatchAttempt: handleFamilyMatchAttempt2, greetingsGameItems: greetingsGameItems2, greetingsMeaningLabel: greetingsMeaningLabel2, ensureGreetingsChallenge: ensureGreetingsChallenge2, ensureGreetingsMatchGame: ensureGreetingsMatchGame2, handleGreetingsChallengePlay: handleGreetingsChallengePlay2, handleGreetingsChallengeGuess: handleGreetingsChallengeGuess2, resetGreetingsMatchGame: resetGreetingsMatchGame2, handleGreetingsMatchPhrase: handleGreetingsMatchPhrase2, handleGreetingsMatchAttempt: handleGreetingsMatchAttempt2, politeGameItems: politeGameItems2, politeMeaningLabel: politeMeaningLabel2, ensurePoliteChallenge: ensurePoliteChallenge2, ensurePoliteMatchGame: ensurePoliteMatchGame2, handlePoliteChallengePlay: handlePoliteChallengePlay2, handlePoliteChallengeGuess: handlePoliteChallengeGuess2, resetPoliteMatchGame: resetPoliteMatchGame2, handlePoliteMatchPhrase: handlePoliteMatchPhrase2, handlePoliteMatchAttempt: handlePoliteMatchAttempt2, ensureRoomBuilder: ensureRoomBuilder2, currentRoomBuildItem: currentRoomBuildItem2, handleRoomBuildToken: handleRoomBuildToken2, clearRoomBuilder: clearRoomBuilder2, nextRoomBuilder: nextRoomBuilder2, ensureClothesQuiz: ensureClothesQuiz2, handleClothesQuizPick: handleClothesQuizPick2, nextClothesQuizQuestion: nextClothesQuizQuestion2, ensureClothesSentenceQuiz: ensureClothesSentenceQuiz2, handleClothesSentencePick: handleClothesSentencePick2, nextClothesSentenceQuestion: nextClothesSentenceQuestion2, ensureTimeRoutineQuiz: ensureTimeRoutineQuiz2, handleTimeRoutineQuizPick: handleTimeRoutineQuizPick2, nextTimeRoutineQuizQuestion: nextTimeRoutineQuizQuestion2, ensureClockQuiz: ensureClockQuiz2, handleClockQuizPick: handleClockQuizPick2, nextClockQuizQuestion: nextClockQuizQuestion2, ensureComparisonBuilder: ensureComparisonBuilder2, currentComparisonBuildItem: currentComparisonBuildItem2, handleComparisonBuildToken: handleComparisonBuildToken2, clearComparisonBuilder: clearComparisonBuilder2, nextComparisonBuilder: nextComparisonBuilder2, ensurePositionQuiz: ensurePositionQuiz2, handlePositionQuizPlay: handlePositionQuizPlay2, handlePositionQuizPick: handlePositionQuizPick2, nextPositionQuizQuestion: nextPositionQuizQuestion2, ensureTransportBuilder: ensureTransportBuilder2, currentTransportBuildItem: currentTransportBuildItem2, handleTransportBuildToken: handleTransportBuildToken2, clearTransportBuilder: clearTransportBuilder2, nextTransportBuilder: nextTransportBuilder2, ensureEverydayActionsQuiz: ensureEverydayActionsQuiz2, currentEverydayAction: currentEverydayAction2, handleEverydayActionsPick: handleEverydayActionsPick2, nextEverydayActionsQuestion: nextEverydayActionsQuestion2, resetNumberChallenge: resetNumberChallenge2, ensureMathChallenge: ensureMathChallenge2, handleNumberChallengeGuess: handleNumberChallengeGuess2, resetMathChallenge: resetMathChallenge2, handleMathChallengeSubmit: handleMathChallengeSubmit2, renderNumberVisual: renderNumberVisual2, introductionsBuildTarget: introductionsBuildTarget2, ensureIntroductionsBuilder: ensureIntroductionsBuilder2, resetIntroductionsBuilder: resetIntroductionsBuilder2, handleIntroductionsBuildClear: handleIntroductionsBuildClear2, handleIntroductionsBuildToken: handleIntroductionsBuildToken2, ageGameItems: ageGameItems2, ensureAgeChallenge: ensureAgeChallenge2, ensureAgeBuilder: ensureAgeBuilder2, ageBuildTarget: ageBuildTarget2, handleAgeChallengePlay: handleAgeChallengePlay2, handleAgeChallengeGuess: handleAgeChallengeGuess2, resetAgeBuilder: resetAgeBuilder2, handleAgeBuildClear: handleAgeBuildClear2, handleAgeBuildToken: handleAgeBuildToken2, renderSchoolPractice: renderSchoolPractice2 } = context;
     function sharedLessonPracticeConfig(topic) {
       if (topic.id === "weekdays") {
         return {
@@ -779,10 +787,7 @@
       topicColumns2?.classList.remove("is-hidden");
       activityPanelSummary2.hidden = false;
       if (topic.id === "body") {
-        topicColumns2?.classList.add("is-hidden");
-        activityPanelTitle2.textContent = "";
-        activityPanelSummary2.textContent = "";
-        activityList2.innerHTML = "";
+        renderBodyPractice2();
         return;
       }
       if (["pets", "animals", "colours", "nature", "weather"].includes(topic.id)) {
@@ -1044,8 +1049,12 @@
       }
       if (topic.id === "clothes") {
         ensureClothesQuiz2();
+        ensureClothesSentenceQuiz2();
         const answerId = state2.clothesQuizOrder[state2.clothesQuizIndex];
         const prompt = clothesMatchItems2.find((item) => item.id === answerId);
+        const sentenceAnswerId = state2.clothesSentenceOrder[state2.clothesSentenceIndex];
+        const sentencePrompt = clothesSentenceItems2.find((item) => item.id === sentenceAnswerId);
+        const sentenceComplete = state2.clothesSentenceResult === "correct";
         activityPanelTitle2.textContent = "Let's practice";
         activityPanelSummary2.textContent = "Look at the picture, then choose the matching Chinese word.";
         activityList2.className = "support-list";
@@ -1059,7 +1068,7 @@
           <button class="small-button is-practice-advance-button" type="button" data-clothes-quiz-new aria-label="Start a new game">New game</button>
         </div>
         <figure class="clothes-quiz-visual">
-          <img class="clothes-quiz-image" src="${prompt.imagePath}" alt="${prompt.imageAlt}" ${imageLoadingAttrs()} />
+          <img class="clothes-quiz-image" src="${prompt.imagePath}" alt="${prompt.english}" ${imageLoadingAttrs()} />
         </figure>
         <div class="clothes-quiz-options">
           ${state2.clothesQuizOptionIds.map((itemId) => {
@@ -1071,6 +1080,33 @@
         }).join("")}
         </div>
       </section>
+      <section class="clothes-quiz-shell">
+        <div class="numbers-game-top">
+          <div>
+            <p class="body-match-kicker">Complete the sentence</p>
+            <p class="numbers-game-note">Look at the action, then choose the word that completes the sentence.</p>
+          </div>
+          <button class="small-button is-practice-advance-button" type="button" data-clothes-sentence-new aria-label="Start a new game">New game</button>
+        </div>
+        <figure class="clothes-quiz-visual">
+          <img class="clothes-quiz-image" src="${sentencePrompt.imagePath}" alt="${sentencePrompt.imageAlt}" ${imageLoadingAttrs()} />
+        </figure>
+        <div class="clothes-sentence-frame${sentenceComplete ? " is-correct" : ""}">
+          <span class="numbers-game-hanzi">${sentencePrompt.frame}</span>
+          <span class="clothes-sentence-blank">${sentenceComplete ? sentencePrompt.hanzi : "\u2026\u2026"}</span><span class="numbers-game-hanzi">\u3002</span>
+          ${sentenceComplete && state2.showPinyin ? `<span class="numbers-game-pinyin">${sentencePrompt.framePinyin} ${sentencePrompt.pinyin}.</span>` : ""}
+          ${sentenceComplete && state2.showEnglish ? `<span class="numbers-game-english">I wear ${sentencePrompt.english}.</span>` : ""}
+        </div>
+        <div class="clothes-quiz-options">
+          ${state2.clothesSentenceOptionIds.map((itemId) => {
+          const item = clothesSentenceItems2.find((entry) => entry.id === itemId);
+          const isSelected = state2.clothesSentenceSelectedId === itemId;
+          const resultClass = isSelected ? ` is-${state2.clothesSentenceResult}` : "";
+          const mark = isSelected ? `<span class="answer-result-mark" aria-hidden="true">${state2.clothesSentenceResult === "correct" ? "\u2713" : "\xD7"}</span>` : "";
+          return `<button class="clothes-quiz-option${resultClass}" type="button" data-clothes-sentence-pick="${item.id}" ${sentenceComplete ? "disabled" : ""}>${mark}<span class="numbers-game-hanzi">${item.hanzi}</span>${state2.showPinyin ? `<span class="numbers-game-pinyin">${item.pinyin}</span>` : ""}${state2.showEnglish ? `<span class="numbers-game-english">${item.english}</span>` : ""}</button>`;
+        }).join("")}
+        </div>
+      </section>
     `;
         activityList2.querySelectorAll("[data-clothes-quiz-pick]").forEach((button) => {
           button.addEventListener("click", () => {
@@ -1078,6 +1114,12 @@
           });
         });
         activityList2.querySelector("[data-clothes-quiz-new]")?.addEventListener("click", nextClothesQuizQuestion2);
+        activityList2.querySelectorAll("[data-clothes-sentence-pick]").forEach((button) => {
+          button.addEventListener("click", () => {
+            handleClothesSentencePick2(button.dataset.clothesSentencePick);
+          });
+        });
+        activityList2.querySelector("[data-clothes-sentence-new]")?.addEventListener("click", nextClothesSentenceQuestion2);
         return;
       }
       if (topic.id === "numbers") {
@@ -4709,6 +4751,7 @@
     iconColor: "#8f6c46",
     iconAccent: "#e6c77e",
     iconTheme: "polite",
+    ownsExplorerContent: true,
     focus: {
       hanzi: "\u8C22\u8C22\u4F60\uFF01",
       pinyin: "xi\xE8 xie n\u01D0!",
@@ -4976,6 +5019,12 @@
           <div class="school-word-grid is-text-only">
             ${words.map((word) => `<button class="school-word-card is-text-only" type="button" data-polite-word="${word.id}"><span class="time-asset-hanzi">${word.hanzi}</span>${state2.showPinyin ? `<span class="time-asset-pinyin">${word.pinyin}</span>` : ""}${state2.showEnglish ? `<span class="time-asset-english">${word.english}</span>` : ""}</button>`).join("")}
           </div>
+        </section>
+        <section class="greetings-note-card polite-useful-note">
+          <p class="body-match-kicker">Useful note</p>
+          <p class="greetings-note-hanzi">\u8BF7 / \u6211\u53EF\u4EE5\u2026\u5417\uFF1F</p>
+          <p class="greetings-note-copy"><strong>\u8BF7</strong> makes a request or classroom direction polite: <strong>\u8BF7\u5B89\u9759\u3002</strong></p>
+          <p class="greetings-note-copy"><strong>\u6211\u53EF\u4EE5\u2026\u5417\uFF1F</strong> asks permission and ends with the question marker <strong>\u5417</strong>: <strong>\u6211\u53EF\u4EE5\u95EE\u8001\u5E08\u5417\uFF1F</strong></p>
         </section>
       </div>
     `;
@@ -5501,6 +5550,16 @@
   };
 
   // src/features/daily-life/clothes.js
+  var clothesBookWords = [
+    { id: "shirt", hanzi: "T\u6064", pinyin: "T x\xF9", english: "T-shirt", audio: "T\u6064", imagePath: "assets/illustrated-everyday-life/clothes.webp" },
+    { id: "pants", hanzi: "\u88E4\u5B50", pinyin: "k\xF9 zi", english: "trousers; pants", audio: "\u88E4\u5B50", imagePath: "assets/illustrated-everyday-life/pants.webp" },
+    { id: "dress", hanzi: "\u88D9\u5B50", pinyin: "q\xFAn zi", english: "dress; skirt", audio: "\u88D9\u5B50", imagePath: "assets/illustrated-everyday-life/skirt.webp" },
+    { id: "shoes", hanzi: "\u978B\u5B50", pinyin: "xi\xE9 zi", english: "shoes", audio: "\u978B\u5B50", imagePath: "assets/illustrated-everyday-life/shoes.webp" },
+    { id: "hat", hanzi: "\u5E3D\u5B50", pinyin: "m\xE0o zi", english: "hat", audio: "\u5E3D\u5B50", imagePath: "assets/illustrated-everyday-life/hat.webp" },
+    { id: "jacket", hanzi: "\u5916\u5957", pinyin: "w\xE0i t\xE0o", english: "jacket; coat", audio: "\u5916\u5957", imagePath: "assets/illustrated-everyday-life/jacket.webp" },
+    { id: "gloves", hanzi: "\u624B\u5957", pinyin: "sh\u01D2u t\xE0o", english: "gloves", audio: "\u624B\u5957", imagePath: "assets/illustrated-everyday-life/gloves.webp" },
+    { id: "school-uniform", hanzi: "\u6821\u670D", pinyin: "xi\xE0o f\xFA", english: "school uniform", audio: "\u6821\u670D", imagePath: "assets/illustrated-everyday-life/school-uniform.webp" }
+  ];
   var clothesTopic = {
     id: "clothes",
     title: "Clothes",
@@ -5508,16 +5567,9 @@
     progressLabel: "2A to 4B",
     iconText: "\u8863\u670D",
     iconColor: "#9c7b4f",
+    ownsExplorerContent: true,
     focus: { hanzi: "\u6211\u4F1A\u7A7F\u8863\u670D\u3002", pinyin: "w\u01D2 hu\xEC chu\u0101n y\u012B fu.", english: "I can get dressed.", audio: "\u6211\u4F1A\u7A7F\u8863\u670D" },
-    focusItems: [
-      { id: "shirt", hanzi: "T\u6064", pinyin: "T x\xF9", english: "T-shirt", audio: "T\u6064" },
-      { id: "pants", hanzi: "\u88E4\u5B50", pinyin: "k\xF9 zi", english: "trousers; pants", audio: "\u88E4\u5B50" },
-      { id: "dress", hanzi: "\u88D9\u5B50", pinyin: "q\xFAn zi", english: "dress; skirt", audio: "\u88D9\u5B50" },
-      { id: "shoes", hanzi: "\u978B\u5B50", pinyin: "xi\xE9 zi", english: "shoes", audio: "\u978B\u5B50" },
-      { id: "hat", hanzi: "\u5E3D\u5B50", pinyin: "m\xE0o zi", english: "hat", audio: "\u5E3D\u5B50" },
-      { id: "jacket", hanzi: "\u5916\u5957", pinyin: "w\xE0i t\xE0o", english: "jacket; coat", audio: "\u5916\u5957" },
-      { id: "gloves", hanzi: "\u624B\u5957", pinyin: "sh\u01D2u t\xE0o", english: "gloves", audio: "\u624B\u5957" }
-    ],
+    focusItems: clothesBookWords,
     interactiveScene: "clothes-scenes",
     parentGuide: "Use getting dressed as the practice moment. Repeating the words during a real routine makes them stick.",
     cultureGuide: "Clothes can later connect to colours, weather, and festival dress without needing a lot of extra explanation.",
@@ -5529,15 +5581,16 @@
     ]
   };
   var clothesPractice = [
-    { id: "clothes-scene-1", title: "Getting dressed", imagePath: "assets/illustrated-clothes/wearing-clothes-scene.webp", imageAlt: "A child getting dressed beside a clothes rack and mirror", lines: [{ hanzi: "\u6211\u4F1A\u7A7F\u8863\u670D\u3002", pinyin: "w\u01D2 hu\xEC chu\u0101n y\u012B fu.", english: "I can get dressed.", audio: "\u6211\u4F1A\u7A7F\u8863\u670D" }, { hanzi: "\u6211\u7A7FT\u6064\u548C\u88E4\u5B50\u3002", pinyin: "w\u01D2 chu\u0101n T x\xF9 h\xE9 k\xF9 zi.", english: "I wear a T-shirt and trousers.", audio: "\u6211\u7A7FT\u6064\u548C\u88E4\u5B50" }] },
+    { id: "clothes-scene-1", title: "Getting dressed", imagePath: "assets/illustrated-clothes/wearing-clothes-scene.webp", imageAlt: "A child putting on a jacket beside a clothes rack and mirror", lines: [{ hanzi: "\u6211\u4F1A\u7A7F\u8863\u670D\u3002", pinyin: "w\u01D2 hu\xEC chu\u0101n y\u012B fu.", english: "I can get dressed.", audio: "\u6211\u4F1A\u7A7F\u8863\u670D" }, { hanzi: "\u6211\u7A7F\u5916\u5957\u3002", pinyin: "w\u01D2 chu\u0101n w\xE0i t\xE0o.", english: "I wear a jacket.", audio: "\u6211\u7A7F\u5916\u5957" }] },
     { id: "clothes-scene-2", title: "Rainy day clothes", imagePath: "assets/illustrated-clothes/weather-linked-clothing-scene.webp", imageAlt: "A child choosing a raincoat by a rainy window", lines: [{ hanzi: "\u4E0B\u96E8\u4E86\u3002", pinyin: "xi\xE0 y\u01D4 le.", english: "It is raining.", audio: "\u4E0B\u96E8\u4E86" }, { hanzi: "\u6211\u7A7F\u96E8\u8863\u548C\u96E8\u978B\u3002", pinyin: "w\u01D2 chu\u0101n y\u01D4 y\u012B h\xE9 y\u01D4 xi\xE9.", english: "I wear a raincoat and rain boots.", audio: "\u6211\u7A7F\u96E8\u8863\u548C\u96E8\u978B" }] }
   ];
-  var clothesMatchItems = [
-    { id: "shoes", hanzi: "\u978B\u5B50", pinyin: "xi\xE9 zi", english: "shoes", audio: "\u978B\u5B50", imagePath: "assets/illustrated-self-dressing/putting-on-shoes.webp", imageAlt: "A child putting on shoes" },
-    { id: "socks", hanzi: "\u889C\u5B50", pinyin: "w\xE0 zi", english: "socks", audio: "\u889C\u5B50", imagePath: "assets/illustrated-self-dressing/putting-on-socks.webp", imageAlt: "A child putting on socks" },
-    { id: "jacket", hanzi: "\u5916\u5957", pinyin: "w\xE0i t\xE0o", english: "jacket", audio: "\u5916\u5957", imagePath: "assets/illustrated-self-dressing/putting-on-jacket.webp", imageAlt: "A child putting on a jacket" },
-    { id: "hat", hanzi: "\u5E3D\u5B50", pinyin: "m\xE0o zi", english: "hat", audio: "\u5E3D\u5B50", imagePath: "assets/illustrated-self-dressing/putting-on-hat.webp", imageAlt: "A child putting on a hat" },
-    { id: "school-uniform", hanzi: "\u6821\u670D", pinyin: "xi\xE0o f\xFA", english: "school uniform", audio: "\u6821\u670D", imagePath: "assets/illustrated-self-dressing/putting-on-school-uniform.webp", imageAlt: "A child putting on a school uniform" }
+  var clothesMatchItems = clothesBookWords;
+  var clothesSentenceItems = [
+    { id: "shoes", hanzi: "\u978B\u5B50", pinyin: "xi\xE9 zi", english: "shoes", frame: "\u6211\u7A7F", framePinyin: "w\u01D2 chu\u0101n", audio: "\u6211\u7A7F\u978B\u5B50", imagePath: "assets/illustrated-self-dressing/putting-on-shoes.webp", imageAlt: "A child putting on shoes" },
+    { id: "socks", hanzi: "\u889C\u5B50", pinyin: "w\xE0 zi", english: "socks", frame: "\u6211\u7A7F", framePinyin: "w\u01D2 chu\u0101n", audio: "\u6211\u7A7F\u889C\u5B50", imagePath: "assets/illustrated-self-dressing/putting-on-socks.webp", imageAlt: "A child putting on socks" },
+    { id: "jacket", hanzi: "\u5916\u5957", pinyin: "w\xE0i t\xE0o", english: "a jacket", frame: "\u6211\u7A7F", framePinyin: "w\u01D2 chu\u0101n", audio: "\u6211\u7A7F\u5916\u5957", imagePath: "assets/illustrated-self-dressing/putting-on-jacket.webp", imageAlt: "A child putting on a jacket" },
+    { id: "hat", hanzi: "\u5E3D\u5B50", pinyin: "m\xE0o zi", english: "a hat", frame: "\u6211\u6234", framePinyin: "w\u01D2 d\xE0i", audio: "\u6211\u6234\u5E3D\u5B50", imagePath: "assets/illustrated-self-dressing/putting-on-hat.webp", imageAlt: "A child putting on a hat" },
+    { id: "school-uniform", hanzi: "\u6821\u670D", pinyin: "xi\xE0o f\xFA", english: "a school uniform", frame: "\u6211\u7A7F", framePinyin: "w\u01D2 chu\u0101n", audio: "\u6211\u7A7F\u6821\u670D", imagePath: "assets/illustrated-self-dressing/putting-on-school-uniform.webp", imageAlt: "A child putting on a school uniform" }
   ];
 
   // src/features/world/colours.js
@@ -6007,7 +6060,7 @@
 
   // src/features/foundations/foundations-runtime.js
   function createFoundationsRuntime(context) {
-    const { state: state2, numberHanzi: numberHanzi2, numberPinyin: numberPinyin2, buildNumberItem: buildNumberItem2, numberStages: numberStages2, telephonePractice: telephonePractice2, familyGameItemIds: familyGameItemIds2, familyPersonIdsByItemId: familyPersonIdsByItemId2, familyHeadshotsByItemId: familyHeadshotsByItemId2, familyPractice: familyPractice2, illustratedFamily: illustratedFamily2, illustratedKids: illustratedKids2, bodyBonusItemIds: bodyBonusItemIds2, bodyCoreItemIds: bodyCoreItemIds2, bodyDiagramLayout: bodyDiagramLayout2, identityConversation: identityConversation2, identityCountries: identityCountries2, identityQuestion: identityQuestion2, topicById: topicById3, focusItemsForTopic: focusItemsForTopic2, currentTopic: currentTopic2, currentNumberStage: currentNumberStage2, currentFocusItem: currentFocusItem2, currentBook: currentBook2, currentLesson: currentLesson2, shuffleArray: shuffleArray2, chineseUtterance: chineseUtterance2, speak: speak2, speakSceneLines: speakSceneLines2, renderActivityPanel: renderActivityPanel2, renderFocusDisplay: renderFocusDisplay2, renderFocusExplorer: renderFocusExplorer2, renderFocusStatus: renderFocusStatus2, selectFocusItem: selectFocusItem2, bodySentenceForItem: bodySentenceForItem2, focusExplorer: focusExplorer2, focusStatus: focusStatus2 } = context;
+    const { state: state2, numberHanzi: numberHanzi2, numberPinyin: numberPinyin2, buildNumberItem: buildNumberItem2, numberStages: numberStages2, telephonePractice: telephonePractice2, familyGameItemIds: familyGameItemIds2, familyPersonIdsByItemId: familyPersonIdsByItemId2, familyHeadshotsByItemId: familyHeadshotsByItemId2, familyPractice: familyPractice2, illustratedFamily: illustratedFamily2, illustratedKids: illustratedKids2, bodyBonusItemIds: bodyBonusItemIds2, bodyCoreItemIds: bodyCoreItemIds2, bodyDiagramLayout: bodyDiagramLayout2, identityConversation: identityConversation2, identityCountries: identityCountries2, identityQuestion: identityQuestion2, topicById: topicById3, focusItemsForTopic: focusItemsForTopic2, currentTopic: currentTopic2, currentNumberStage: currentNumberStage2, currentFocusItem: currentFocusItem2, currentBook: currentBook2, currentLesson: currentLesson2, shuffleArray: shuffleArray2, chineseUtterance: chineseUtterance2, speak: speak2, speakSceneLines: speakSceneLines2, renderActivityPanel: renderActivityPanel2, renderFocusDisplay: renderFocusDisplay2, renderFocusExplorer: renderFocusExplorer2, renderFocusStatus: renderFocusStatus2, selectFocusItem: selectFocusItem2, bodySentenceForItem: bodySentenceForItem2, focusExplorer: focusExplorer2, focusStatus: focusStatus2, activityPanelTitle: activityPanelTitle2, activityPanelSummary: activityPanelSummary2, activityList: activityList2 } = context;
     function numberStageItems2(stage = currentNumberStage2()) {
       const start = Math.min(stage.start, stage.end);
       const end = Math.max(stage.start, stage.end);
@@ -6371,7 +6424,7 @@
       renderFocusStatus2();
     }
     function bodyMatchItems2() {
-      const ids = state2.bodyMatchIncludeBonus ? [...bodyCoreItemIds2, ...bodyBonusItemIds2] : bodyCoreItemIds2;
+      const ids = [...bodyCoreItemIds2, ...bodyBonusItemIds2];
       const bodyTopic2 = topicById3("body");
       return ids.map((id) => bodyTopic2?.focusItems.find((item) => item.id === id)).filter(Boolean);
     }
@@ -6403,14 +6456,14 @@
         playAudio: true,
         bodyFeedback: "Now tap the matching English word."
       });
+      renderActivityPanel2(currentTopic2());
     }
     function handleBodyMatchAttempt2(englishId, chineseId = state2.bodySelectedChineseId) {
       const itemsById = Object.fromEntries(bodyMatchItems2().map((item) => [item.id, item]));
       if (!chineseId) {
         state2.bodySelectedEnglishId = englishId;
         state2.lastBodyFeedback = "Tap a Chinese word first.";
-        renderFocusExplorer2();
-        renderFocusStatus2();
+        renderActivityPanel2(currentTopic2());
         return;
       }
       state2.bodySelectedEnglishId = englishId;
@@ -6427,14 +6480,103 @@
           const total = bodyMatchItems2().length;
           const allDone = state2.bodyMatchedIds.size === total;
           state2.lastBodyFeedback = allDone ? "Great job! You matched all the words." : "Round complete! Tap Next set for the next words.";
-          renderFocusExplorer2();
-          renderFocusStatus2();
         }
+        renderActivityPanel2(currentTopic2());
         return;
       }
       state2.lastBodyFeedback = `Try again. ${itemsById[chineseId].hanzi} is not ${itemsById[englishId].english}.`;
-      renderFocusExplorer2();
-      renderFocusStatus2();
+      renderActivityPanel2(currentTopic2());
+    }
+    function bodySpotlightItems() {
+      const bodyTopic2 = topicById3("body");
+      return bodyCoreItemIds2.map((id) => bodyTopic2?.focusItems.find((item) => item.id === id)).filter(Boolean);
+    }
+    function nextBodySpotlightRound() {
+      const items = bodySpotlightItems();
+      const promptId = nextRandomCycleId(state2, "body-spotlight-choose", items.map((item) => item.id));
+      state2.bodySpotlightPromptId = promptId;
+      state2.bodySpotlightOptionIds = shuffleArray2([
+        promptId,
+        ...shuffleArray2(items.filter((item) => item.id !== promptId).map((item) => item.id)).slice(0, 3)
+      ]);
+      state2.bodySpotlightResult = "";
+      state2.bodySpotlightWrongIds = /* @__PURE__ */ new Set();
+    }
+    function startBodySpotlightRound() {
+      nextBodySpotlightRound();
+      renderActivityPanel2(currentTopic2());
+    }
+    function handleBodySpotlightGuess(itemId) {
+      const prompt = bodySpotlightItems().find((item) => item.id === state2.bodySpotlightPromptId);
+      if (!prompt || state2.bodySpotlightResult === "correct") return;
+      if (itemId === prompt.id) {
+        state2.bodySpotlightResult = "correct";
+        if (state2.tapAudioEnabled) speak2(bodySentenceForItem2(prompt).hanzi, 0.78);
+      } else {
+        state2.bodySpotlightResult = "wrong";
+        state2.bodySpotlightWrongIds = /* @__PURE__ */ new Set([...state2.bodySpotlightWrongIds, itemId]);
+      }
+      renderActivityPanel2(currentTopic2());
+    }
+    const bodySpotlightRegions = {
+      head: { x: 50, y: 24, width: 46, height: 22 },
+      hair: { x: 50, y: 15, width: 31, height: 13 },
+      eyes: { x: 41, y: 29, width: 15, height: 10 },
+      ears: { x: 28, y: 31.5, width: 13, height: 13 },
+      nose: { x: 50, y: 32, width: 12, height: 9 },
+      mouth: { x: 50, y: 36.5, width: 17, height: 8 },
+      hand: { x: 27, y: 61, width: 17, height: 13 },
+      foot: { x: 36.5, y: 87.5, width: 18, height: 13 }
+    };
+    function renderBodyPractice2() {
+      const items = bodySpotlightItems();
+      const prompt = items.find((item) => item.id === state2.bodySpotlightPromptId);
+      const complete = state2.bodySpotlightResult === "correct";
+      const sentence = prompt ? bodySentenceForItem2(prompt) : null;
+      const region = prompt ? bodySpotlightRegions[prompt.id] : null;
+      const spotlightOptionMarkup = prompt ? state2.bodySpotlightOptionIds.map((id) => {
+        const option = items.find((item) => item.id === id);
+        const isCorrect = complete && id === prompt.id;
+        const isWrong = state2.bodySpotlightWrongIds.has(id);
+        return `<button class="numbers-game-option body-spotlight-option${isCorrect ? " is-correct" : ""}${isWrong ? " is-wrong" : ""}" type="button" data-body-spotlight-guess="${id}" ${complete ? "disabled" : ""}><span class="numbers-game-hanzi">${option.hanzi}</span>${state2.showPinyin ? `<span class="numbers-game-pinyin">${option.pinyin}</span>` : ""}${state2.showEnglish ? `<span class="numbers-game-english">${option.english}</span>` : ""}</button>`;
+      }) : [];
+      const spotlightVisualMarkup = `
+    <figure class="body-listen-visual">
+      <div class="body-listen-scene-card">
+        <img class="body-listen-image" src="assets/body/body-topic-kid-largehead.webp" alt="Cartoon child for body parts practice">
+        ${region ? `<span class="body-spotlight-window" style="--body-spotlight-x: ${region.x}%; --body-spotlight-y: ${region.y}%; --body-spotlight-width: ${region.width}%; --body-spotlight-height: ${region.height}%;" aria-hidden="true"></span>` : ""}
+      </div>
+    </figure>`;
+      activityPanelTitle2.textContent = "Let's practice";
+      activityPanelSummary2.textContent = "Look at the highlighted body part, then choose its word.";
+      activityList2.className = "support-list";
+      activityList2.innerHTML = `
+    <section class="clothes-quiz-shell body-listen-practice">
+      <div class="numbers-game-top">
+        <div>
+          <p class="body-match-kicker">Look and choose</p>
+          <p class="numbers-game-note">Press New game to reveal one body part. Then choose the matching word.</p>
+        </div>
+        <button class="small-button is-practice-advance-button" type="button" data-body-spotlight-new aria-label="Start a new game">New game</button>
+      </div>
+      <div class="body-spotlight-desktop">
+        ${spotlightVisualMarkup}
+        ${prompt ? `<div class="numbers-game-options body-spotlight-options">${spotlightOptionMarkup.join("")}</div>` : ""}
+      </div>
+      ${prompt ? `<div class="body-spotlight-mobile">
+        <div class="body-spotlight-option-column">${spotlightOptionMarkup.slice(0, 2).join("")}</div>
+        ${spotlightVisualMarkup}
+        <div class="body-spotlight-option-column">${spotlightOptionMarkup.slice(2).join("")}</div>
+      </div>` : ""}
+      ${complete && sentence ? `<div class="body-listen-answer"><p class="telephone-line-hanzi">${sentence.hanzi}</p>${state2.showPinyin ? `<p class="telephone-line-pinyin">${sentence.pinyin}</p>` : ""}${state2.showEnglish ? `<p class="telephone-line-english">${sentence.english}</p>` : ""}</div>` : ""}
+      ${renderBodyMatchPanel()}
+    </section>
+  `;
+      activityList2.querySelector("[data-body-spotlight-new]")?.addEventListener("click", startBodySpotlightRound);
+      activityList2.querySelectorAll("[data-body-spotlight-guess]").forEach((button) => {
+        button.addEventListener("click", () => handleBodySpotlightGuess(button.dataset.bodySpotlightGuess));
+      });
+      bindBodyMatchPanel(activityList2);
     }
     function numberWordListItems2(items, currentItem, stage) {
       if (stage.end <= 10) {
@@ -6478,48 +6620,20 @@
     </button>
   `;
     }
-    function renderBodyExplorer2() {
+    function renderBodyMatchPanel() {
       ensureBodyMatchGame2();
-      const item = currentFocusItem2();
-      const sentence = bodySentenceForItem2(item);
-      const items = Object.fromEntries(focusItemsForTopic2().map((entry) => [entry.id, entry]));
       const matchItems = Object.fromEntries(bodyMatchItems2().map((entry) => [entry.id, entry]));
-      const roundComplete = state2.bodyRoundIds.length > 0 && state2.bodyRoundIds.every((id) => state2.bodyMatchedIds.has(id));
-      const allDone = bodyMatchItems2().length > 0 && state2.bodyMatchedIds.size === bodyMatchItems2().length;
       const solvedMatchIds = state2.bodyChineseOrder.filter((id) => state2.bodyMatchedIds.has(id));
       const remainingChineseIds = state2.bodyChineseOrder.filter((id) => !state2.bodyMatchedIds.has(id));
       const remainingEnglishIds = state2.bodyEnglishOrder.filter((id) => !state2.bodyMatchedIds.has(id));
-      focusExplorer2.innerHTML = `
-    <div class="body-game">
-      <div class="body-practice-visual">
-        <div class="body-diagram">
-          <div class="body-label-column body-label-column-left">
-            ${bodyDiagramLayout2.left.map((id) => renderBodyLabelButton2(items[id], "left")).join("")}
-          </div>
-          <div class="body-scene">
-            <div class="body-scene-card">
-              <img
-                class="body-scene-kid"
-                src="assets/body/body-topic-kid-largehead.webp"
-                alt="Cartoon child for body parts learning activity"
-              />
-              <div class="body-part-indicator body-part-indicator-${item.id}" aria-hidden="true"></div>
-            </div>
-          </div>
-          <div class="body-label-column body-label-column-right">
-            ${bodyDiagramLayout2.right.map((id) => renderBodyLabelButton2(items[id], "right")).join("")}
-          </div>
-        </div>
-        <div class="body-match-panel">
+      return `
+        <section class="body-match-panel">
           <div class="body-match-heading">
             <div>
               <p class="body-match-kicker">Match Game</p>
               <h4>Chinese to English</h4>
             </div>
             <div class="body-match-actions">
-              <button class="small-button is-action-button" type="button" data-body-toggle-bonus aria-pressed="${state2.bodyMatchIncludeBonus}">
-                Bonus words ${state2.bodyMatchIncludeBonus ? "on" : "off"}
-              </button>
               <button class="small-button is-practice-advance-button" type="button" data-body-reset-match aria-label="Start a new game">
                 New game
               </button>
@@ -6592,29 +6706,43 @@
                   </div>
                 </div>
               ` : ""}
-        </div>
-        <div class="body-more-practice-card">
-          <p class="body-match-kicker">More Practice</p>
-          <h4>Say it with \u6211\u7684</h4>
-          <p class="body-sentence-hanzi">${sentence.hanzi}</p>
-          ${state2.showPinyin ? `<p class="body-sentence-pinyin">${sentence.pinyin}</p>` : ""}
-          ${state2.showEnglish ? `<p class="body-sentence-english">${sentence.english}</p>` : ""}
-          <p class="body-sentence-note">Tap a body word, then say the whole phrase aloud.</p>
-          <div class="body-sentence-examples">
-            ${["eyes", "ears", "nose", "mouth", "head", "hair", "hand", "foot"].map((id) => {
-        const practiceItem = items[id];
-        const practiceSentence = bodySentenceForItem2(practiceItem);
-        const isActivePractice = item.id === id;
-        return `
-                  <button
-                    class="body-sentence-chip${isActivePractice ? " is-active" : ""}"
-                    type="button"
-                    data-body-sentence-item="${id}"
-                  >
-                    ${practiceSentence.hanzi}
-                  </button>
-                `;
-      }).join("")}
+        </section>
+  `;
+    }
+    function bindBodyMatchPanel(root) {
+      root.querySelector("[data-body-reset-match]")?.addEventListener("click", () => {
+        resetBodyMatchGame2();
+        renderActivityPanel2(currentTopic2());
+      });
+      root.querySelectorAll("[data-body-match-chinese]").forEach((button) => {
+        button.addEventListener("click", () => handleBodyMatchChinese2(button.dataset.bodyMatchChinese));
+      });
+      root.querySelectorAll("[data-body-match-english]").forEach((button) => {
+        button.addEventListener("click", () => handleBodyMatchAttempt2(button.dataset.bodyMatchEnglish));
+      });
+    }
+    function renderBodyExplorer2() {
+      const item = currentFocusItem2();
+      const items = Object.fromEntries(focusItemsForTopic2().map((entry) => [entry.id, entry]));
+      focusExplorer2.innerHTML = `
+    <div class="body-game">
+      <div class="body-practice-visual">
+        <div class="body-diagram">
+          <div class="body-label-column body-label-column-left">
+            ${bodyDiagramLayout2.left.map((id) => renderBodyLabelButton2(items[id], "left")).join("")}
+          </div>
+          <div class="body-scene">
+            <div class="body-scene-card">
+              <img
+                class="body-scene-kid"
+                src="assets/body/body-topic-kid-largehead.webp"
+                alt="Cartoon child for body parts learning activity"
+              />
+              <div class="body-part-indicator body-part-indicator-${item.id}" aria-hidden="true"></div>
+            </div>
+          </div>
+          <div class="body-label-column body-label-column-right">
+            ${bodyDiagramLayout2.right.map((id) => renderBodyLabelButton2(items[id], "right")).join("")}
           </div>
         </div>
       </div>
@@ -6623,41 +6751,6 @@
       focusExplorer2.querySelectorAll("[data-body-item-id]").forEach((button) => {
         button.addEventListener("click", () => {
           selectFocusItem2(button.dataset.bodyItemId, { playAudio: true });
-        });
-      });
-      focusExplorer2.querySelectorAll("[data-body-sentence-item]").forEach((button) => {
-        button.addEventListener("click", () => {
-          const sentenceItemId = button.dataset.bodySentenceItem;
-          const sentenceItem = items[sentenceItemId];
-          if (!sentenceItem) {
-            return;
-          }
-          selectFocusItem2(sentenceItemId, {
-            playAudio: true,
-            audioText: bodySentenceForItem2(sentenceItem).hanzi,
-            bodyFeedback: `Practice saying ${bodySentenceForItem2(sentenceItem).hanzi}.`
-          });
-        });
-      });
-      focusExplorer2.querySelector("[data-body-toggle-bonus]")?.addEventListener("click", () => {
-        state2.bodyMatchIncludeBonus = !state2.bodyMatchIncludeBonus;
-        resetBodyMatchGame2();
-        renderFocusExplorer2();
-        renderFocusStatus2();
-      });
-      focusExplorer2.querySelector("[data-body-reset-match]")?.addEventListener("click", () => {
-        resetBodyMatchGame2();
-        renderFocusExplorer2();
-        renderFocusStatus2();
-      });
-      focusExplorer2.querySelectorAll("[data-body-match-chinese]").forEach((button) => {
-        button.addEventListener("click", () => {
-          handleBodyMatchChinese2(button.dataset.bodyMatchChinese);
-        });
-      });
-      focusExplorer2.querySelectorAll("[data-body-match-english]").forEach((button) => {
-        button.addEventListener("click", () => {
-          handleBodyMatchAttempt2(button.dataset.bodyMatchEnglish);
         });
       });
     }
@@ -7147,12 +7240,12 @@
       }
       if (stopButton) stopButton.disabled = !isPlaying;
     }
-    return { numberStageItems: numberStageItems2, resetNumberChallenge: resetNumberChallenge2, ensureNumberChallenge: ensureNumberChallenge2, resetMathChallenge: resetMathChallenge2, ensureMathChallenge: ensureMathChallenge2, familyGameItems: familyGameItems2, familyPersonForItemId: familyPersonForItemId2, familyHeadshotForItemId: familyHeadshotForItemId2, isFamilySentenceItemId: isFamilySentenceItemId2, familyBookWordItems: familyBookWordItems2, usesLessonTemplate: usesLessonTemplate2, bookWordItemsForTopic: bookWordItemsForTopic2, usefulNoteForTopic: usefulNoteForTopic2, familyWordForPersonId: familyWordForPersonId2, resetFamilyChallenge: resetFamilyChallenge2, ensureFamilyChallenge: ensureFamilyChallenge2, resetListenChallengeResult: resetListenChallengeResult2, handleFamilyChallengePlay: handleFamilyChallengePlay2, handleFamilyChallengeGuess: handleFamilyChallengeGuess2, resetFamilyMatchGame: resetFamilyMatchGame2, ensureFamilyMatchGame: ensureFamilyMatchGame2, handleFamilyMatchPhrase: handleFamilyMatchPhrase2, handleFamilyMatchAttempt: handleFamilyMatchAttempt2, mathChallengeAudioText: mathChallengeAudioText2, handleMathChallengeSubmit: handleMathChallengeSubmit2, handleNumberChallengeGuess: handleNumberChallengeGuess2, bodyMatchItems: bodyMatchItems2, nextBodyRound: nextBodyRound2, resetBodyMatchGame: resetBodyMatchGame2, ensureBodyMatchGame: ensureBodyMatchGame2, handleBodyMatchChinese: handleBodyMatchChinese2, handleBodyMatchAttempt: handleBodyMatchAttempt2, numberWordListItems: numberWordListItems2, renderBodyLabelButton: renderBodyLabelButton2, renderBodyExplorer: renderBodyExplorer2, renderNumberVisual: renderNumberVisual2, renderNumbersExplorer: renderNumbersExplorer2, renderTelephoneExplorer: renderTelephoneExplorer2, renderFamilyHomeVisual: renderFamilyHomeVisual2, renderFamilyExplorer: renderFamilyExplorer2, renderIdentityExplorer: renderIdentityExplorer2, renderMultiplicationExplorer: renderMultiplicationExplorer2 };
+    return { numberStageItems: numberStageItems2, resetNumberChallenge: resetNumberChallenge2, ensureNumberChallenge: ensureNumberChallenge2, resetMathChallenge: resetMathChallenge2, ensureMathChallenge: ensureMathChallenge2, familyGameItems: familyGameItems2, familyPersonForItemId: familyPersonForItemId2, familyHeadshotForItemId: familyHeadshotForItemId2, isFamilySentenceItemId: isFamilySentenceItemId2, familyBookWordItems: familyBookWordItems2, usesLessonTemplate: usesLessonTemplate2, bookWordItemsForTopic: bookWordItemsForTopic2, usefulNoteForTopic: usefulNoteForTopic2, familyWordForPersonId: familyWordForPersonId2, resetFamilyChallenge: resetFamilyChallenge2, ensureFamilyChallenge: ensureFamilyChallenge2, resetListenChallengeResult: resetListenChallengeResult2, handleFamilyChallengePlay: handleFamilyChallengePlay2, handleFamilyChallengeGuess: handleFamilyChallengeGuess2, resetFamilyMatchGame: resetFamilyMatchGame2, ensureFamilyMatchGame: ensureFamilyMatchGame2, handleFamilyMatchPhrase: handleFamilyMatchPhrase2, handleFamilyMatchAttempt: handleFamilyMatchAttempt2, mathChallengeAudioText: mathChallengeAudioText2, handleMathChallengeSubmit: handleMathChallengeSubmit2, handleNumberChallengeGuess: handleNumberChallengeGuess2, bodyMatchItems: bodyMatchItems2, nextBodyRound: nextBodyRound2, resetBodyMatchGame: resetBodyMatchGame2, ensureBodyMatchGame: ensureBodyMatchGame2, handleBodyMatchChinese: handleBodyMatchChinese2, handleBodyMatchAttempt: handleBodyMatchAttempt2, nextBodySpotlightRound, startBodySpotlightRound, handleBodySpotlightGuess, renderBodyPractice: renderBodyPractice2, numberWordListItems: numberWordListItems2, renderBodyLabelButton: renderBodyLabelButton2, renderBodyExplorer: renderBodyExplorer2, renderNumberVisual: renderNumberVisual2, renderNumbersExplorer: renderNumbersExplorer2, renderTelephoneExplorer: renderTelephoneExplorer2, renderFamilyHomeVisual: renderFamilyHomeVisual2, renderFamilyExplorer: renderFamilyExplorer2, renderIdentityExplorer: renderIdentityExplorer2, renderMultiplicationExplorer: renderMultiplicationExplorer2 };
   }
 
   // src/features/time-daily-life/time-daily-life-runtime.js
   function createTimeDailyLifeRuntime(context) {
-    const { state: state2, timeDateWeekItems: timeDateWeekItems2, timeDateClockItems: timeDateClockItems2, timeDateExpressionItems: timeDateExpressionItems2, timeDateRoutineItems: timeDateRoutineItems2, datePracticeItems: datePracticeItems2, timeDateDateItems: timeDateDateItems2, timeDateMonthItems: timeDateMonthItems2, comparisonPracticeItems: comparisonPracticeItems2, comparisonWordItems: comparisonWordItems2, positionPracticeItems: positionPracticeItems2, positionScenes: positionScenes2, clothesMatchItems: clothesMatchItems2, clothesPractice: clothesPractice2, roomScenes: roomScenes2, roomSentenceTokens: roomSentenceTokens2, transportSentenceTokens: transportSentenceTokens2, everydayActionItems: everydayActionItems2, visualTopicItems: visualTopicItems2, shuffleArray: shuffleArray2, speak: speak2, speakSceneLines: speakSceneLines2, currentTopic: currentTopic2, currentBook: currentBook2, currentLesson: currentLesson2, renderActivityPanel: renderActivityPanel2, focusExplorer: focusExplorer2, focusStatus: focusStatus2 } = context;
+    const { state: state2, timeDateWeekItems: timeDateWeekItems2, timeDateClockItems: timeDateClockItems2, timeDateExpressionItems: timeDateExpressionItems2, timeDateRoutineItems: timeDateRoutineItems2, datePracticeItems: datePracticeItems2, timeDateDateItems: timeDateDateItems2, timeDateMonthItems: timeDateMonthItems2, comparisonPracticeItems: comparisonPracticeItems2, comparisonWordItems: comparisonWordItems2, positionPracticeItems: positionPracticeItems2, positionScenes: positionScenes2, clothesMatchItems: clothesMatchItems2, clothesSentenceItems: clothesSentenceItems2, clothesBookWords: clothesBookWords2, clothesPractice: clothesPractice2, roomScenes: roomScenes2, roomSentenceTokens: roomSentenceTokens2, transportSentenceTokens: transportSentenceTokens2, everydayActionItems: everydayActionItems2, visualTopicItems: visualTopicItems2, shuffleArray: shuffleArray2, speak: speak2, speakSceneLines: speakSceneLines2, currentTopic: currentTopic2, currentBook: currentBook2, currentLesson: currentLesson2, renderActivityPanel: renderActivityPanel2, focusExplorer: focusExplorer2, focusStatus: focusStatus2 } = context;
     function resetWeekdayChallenge2(options = {}) {
       const answerId = nextRandomCycleId(state2, "weekdays-listen", timeDateWeekItems2.map((item) => item.id));
       const answer = timeDateWeekItems2.find((item) => item.id === answerId);
@@ -7252,6 +7345,36 @@
     function nextClothesQuizQuestion2() {
       advanceShuffledOrder(state2, "clothesQuizOrder", "clothesQuizIndex", shuffleArray2);
       prepareClothesQuizQuestion2();
+      renderActivityPanel2(currentTopic2());
+    }
+    function resetClothesSentenceQuiz2() {
+      state2.clothesSentenceOrder = shuffleArray2(clothesSentenceItems2.map((item) => item.id));
+      state2.clothesSentenceIndex = 0;
+      prepareClothesSentenceQuestion2();
+    }
+    function prepareClothesSentenceQuestion2() {
+      const answerId = state2.clothesSentenceOrder[state2.clothesSentenceIndex];
+      const distractorIds = shuffleArray2(clothesSentenceItems2.filter((item) => item.id !== answerId).map((item) => item.id)).slice(0, 3);
+      state2.clothesSentenceOptionIds = shuffleArray2([answerId, ...distractorIds]);
+      state2.clothesSentenceSelectedId = "";
+      state2.clothesSentenceResult = "";
+    }
+    function ensureClothesSentenceQuiz2() {
+      if (!state2.clothesSentenceOrder.length) resetClothesSentenceQuiz2();
+    }
+    function handleClothesSentencePick2(itemId) {
+      if (state2.clothesSentenceResult === "correct") return;
+      const answerId = state2.clothesSentenceOrder[state2.clothesSentenceIndex];
+      state2.clothesSentenceSelectedId = itemId;
+      state2.clothesSentenceResult = itemId === answerId ? "correct" : "wrong";
+      if (state2.clothesSentenceResult === "correct" && state2.tapAudioEnabled) {
+        speak2(clothesSentenceItems2.find((item) => item.id === answerId)?.audio, 0.78);
+      }
+      renderActivityPanel2(currentTopic2());
+    }
+    function nextClothesSentenceQuestion2() {
+      advanceShuffledOrder(state2, "clothesSentenceOrder", "clothesSentenceIndex", shuffleArray2);
+      prepareClothesSentenceQuestion2();
       renderActivityPanel2(currentTopic2());
     }
     function resetTimeRoutineQuiz2() {
@@ -8063,6 +8186,12 @@
             `
       ).join("")}
       </div>
+      <section class="school-lesson-section clothes-book-words">
+        <div class="time-months-heading"><p class="body-match-kicker">Book words</p></div>
+        <div class="time-asset-grid clothes-word-grid">
+          ${clothesBookWords2.map((word) => `<button class="time-asset-card book-word-card" type="button" data-clothes-word="${word.id}"><img class="book-word-image" src="${word.imagePath}" alt="${word.english}" /><span class="book-word-copy"><span class="time-asset-hanzi">${word.hanzi}</span>${state2.showPinyin ? `<span class="time-asset-pinyin">${word.pinyin}</span>` : ""}${state2.showEnglish ? `<span class="time-asset-english">${word.english}</span>` : ""}</span></button>`).join("")}
+        </div>
+      </section>
     </div>
   `;
       focusExplorer2.querySelectorAll("[data-clothes-play-scene]").forEach((button) => {
@@ -8073,8 +8202,14 @@
           }
         });
       });
+      focusExplorer2.querySelectorAll("[data-clothes-word]").forEach((button) => {
+        button.addEventListener("click", () => {
+          const word = clothesBookWords2.find((entry) => entry.id === button.dataset.clothesWord);
+          if (word && state2.tapAudioEnabled) speak2(word.audio, 0.78);
+        });
+      });
     }
-    return { resetWeekdayChallenge: resetWeekdayChallenge2, ensureWeekdayChallenge: ensureWeekdayChallenge2, handleWeekdayChallengePlay: handleWeekdayChallengePlay2, handleWeekdayChallengeGuess: handleWeekdayChallengeGuess2, resetWeekdayMatchGame: resetWeekdayMatchGame2, ensureWeekdayMatchGame: ensureWeekdayMatchGame2, handleWeekdayMatchPhrase: handleWeekdayMatchPhrase2, handleWeekdayMatchAttempt: handleWeekdayMatchAttempt2, resetClothesQuiz: resetClothesQuiz2, prepareClothesQuizQuestion: prepareClothesQuizQuestion2, ensureClothesQuiz: ensureClothesQuiz2, handleClothesQuizPick: handleClothesQuizPick2, nextClothesQuizQuestion: nextClothesQuizQuestion2, resetTimeRoutineQuiz: resetTimeRoutineQuiz2, prepareTimeRoutineQuizQuestion: prepareTimeRoutineQuizQuestion2, ensureTimeRoutineQuiz: ensureTimeRoutineQuiz2, handleTimeRoutineQuizPick: handleTimeRoutineQuizPick2, nextTimeRoutineQuizQuestion: nextTimeRoutineQuizQuestion2, resetClockQuiz: resetClockQuiz2, prepareClockQuizQuestion: prepareClockQuizQuestion2, ensureClockQuiz: ensureClockQuiz2, handleClockQuizPick: handleClockQuizPick2, nextClockQuizQuestion: nextClockQuizQuestion2, currentRoomBuildItem: currentRoomBuildItem2, resetRoomBuilder: resetRoomBuilder2, prepareRoomBuilder: prepareRoomBuilder2, ensureRoomBuilder: ensureRoomBuilder2, isRoomBuildPrefixValid: isRoomBuildPrefixValid2, handleRoomBuildToken: handleRoomBuildToken2, clearRoomBuilder: clearRoomBuilder2, nextRoomBuilder: nextRoomBuilder2, currentTransportBuildItem: currentTransportBuildItem2, resetTransportBuilder: resetTransportBuilder2, prepareTransportBuilder: prepareTransportBuilder2, ensureTransportBuilder: ensureTransportBuilder2, handleTransportBuildToken: handleTransportBuildToken2, clearTransportBuilder: clearTransportBuilder2, nextTransportBuilder: nextTransportBuilder2, ensureEverydayActionsQuiz: ensureEverydayActionsQuiz2, currentEverydayAction: currentEverydayAction2, handleEverydayActionsPick: handleEverydayActionsPick2, nextEverydayActionsQuestion: nextEverydayActionsQuestion2, resetPositionQuiz: resetPositionQuiz2, preparePositionQuizQuestion: preparePositionQuizQuestion2, ensurePositionQuiz: ensurePositionQuiz2, handlePositionQuizPlay: handlePositionQuizPlay2, handlePositionQuizPick: handlePositionQuizPick2, nextPositionQuizQuestion: nextPositionQuizQuestion2, currentComparisonBuildItem: currentComparisonBuildItem2, resetComparisonBuilder: resetComparisonBuilder2, prepareComparisonBuilder: prepareComparisonBuilder2, ensureComparisonBuilder: ensureComparisonBuilder2, handleComparisonBuildToken: handleComparisonBuildToken2, clearComparisonBuilder: clearComparisonBuilder2, nextComparisonBuilder: nextComparisonBuilder2, resetDateMatchGame: resetDateMatchGame2, ensureDateMatchGame: ensureDateMatchGame2, handleDateMatchPhrase: handleDateMatchPhrase2, handleDateMatchEvent: handleDateMatchEvent2, resetDateChallenge: resetDateChallenge2, ensureDateChallenge: ensureDateChallenge2, handleDateChallengePlay: handleDateChallengePlay2, handleDateChallengeGuess: handleDateChallengeGuess2, timeDateSectionForCurrentLesson: timeDateSectionForCurrentLesson2, activeTimeDateSection: activeTimeDateSection2, renderTimeAssetGrid: renderTimeAssetGrid2, bindTimeAssetAudio: bindTimeAssetAudio2, renderWeekdaysExplorer: renderWeekdaysExplorer2, renderDatesExplorer: renderDatesExplorer2, renderVisualTopicExplorer: renderVisualTopicExplorer2, renderEverydayActionsExplorer: renderEverydayActionsExplorer2, renderRoomsExplorer: renderRoomsExplorer2, renderPositionsExplorer: renderPositionsExplorer2, renderTimeDateExplorer: renderTimeDateExplorer2, renderClothesExplorer: renderClothesExplorer2 };
+    return { resetWeekdayChallenge: resetWeekdayChallenge2, ensureWeekdayChallenge: ensureWeekdayChallenge2, handleWeekdayChallengePlay: handleWeekdayChallengePlay2, handleWeekdayChallengeGuess: handleWeekdayChallengeGuess2, resetWeekdayMatchGame: resetWeekdayMatchGame2, ensureWeekdayMatchGame: ensureWeekdayMatchGame2, handleWeekdayMatchPhrase: handleWeekdayMatchPhrase2, handleWeekdayMatchAttempt: handleWeekdayMatchAttempt2, resetClothesQuiz: resetClothesQuiz2, prepareClothesQuizQuestion: prepareClothesQuizQuestion2, ensureClothesQuiz: ensureClothesQuiz2, handleClothesQuizPick: handleClothesQuizPick2, nextClothesQuizQuestion: nextClothesQuizQuestion2, resetClothesSentenceQuiz: resetClothesSentenceQuiz2, prepareClothesSentenceQuestion: prepareClothesSentenceQuestion2, ensureClothesSentenceQuiz: ensureClothesSentenceQuiz2, handleClothesSentencePick: handleClothesSentencePick2, nextClothesSentenceQuestion: nextClothesSentenceQuestion2, resetTimeRoutineQuiz: resetTimeRoutineQuiz2, prepareTimeRoutineQuizQuestion: prepareTimeRoutineQuizQuestion2, ensureTimeRoutineQuiz: ensureTimeRoutineQuiz2, handleTimeRoutineQuizPick: handleTimeRoutineQuizPick2, nextTimeRoutineQuizQuestion: nextTimeRoutineQuizQuestion2, resetClockQuiz: resetClockQuiz2, prepareClockQuizQuestion: prepareClockQuizQuestion2, ensureClockQuiz: ensureClockQuiz2, handleClockQuizPick: handleClockQuizPick2, nextClockQuizQuestion: nextClockQuizQuestion2, currentRoomBuildItem: currentRoomBuildItem2, resetRoomBuilder: resetRoomBuilder2, prepareRoomBuilder: prepareRoomBuilder2, ensureRoomBuilder: ensureRoomBuilder2, isRoomBuildPrefixValid: isRoomBuildPrefixValid2, handleRoomBuildToken: handleRoomBuildToken2, clearRoomBuilder: clearRoomBuilder2, nextRoomBuilder: nextRoomBuilder2, currentTransportBuildItem: currentTransportBuildItem2, resetTransportBuilder: resetTransportBuilder2, prepareTransportBuilder: prepareTransportBuilder2, ensureTransportBuilder: ensureTransportBuilder2, handleTransportBuildToken: handleTransportBuildToken2, clearTransportBuilder: clearTransportBuilder2, nextTransportBuilder: nextTransportBuilder2, ensureEverydayActionsQuiz: ensureEverydayActionsQuiz2, currentEverydayAction: currentEverydayAction2, handleEverydayActionsPick: handleEverydayActionsPick2, nextEverydayActionsQuestion: nextEverydayActionsQuestion2, resetPositionQuiz: resetPositionQuiz2, preparePositionQuizQuestion: preparePositionQuizQuestion2, ensurePositionQuiz: ensurePositionQuiz2, handlePositionQuizPlay: handlePositionQuizPlay2, handlePositionQuizPick: handlePositionQuizPick2, nextPositionQuizQuestion: nextPositionQuizQuestion2, currentComparisonBuildItem: currentComparisonBuildItem2, resetComparisonBuilder: resetComparisonBuilder2, prepareComparisonBuilder: prepareComparisonBuilder2, ensureComparisonBuilder: ensureComparisonBuilder2, handleComparisonBuildToken: handleComparisonBuildToken2, clearComparisonBuilder: clearComparisonBuilder2, nextComparisonBuilder: nextComparisonBuilder2, resetDateMatchGame: resetDateMatchGame2, ensureDateMatchGame: ensureDateMatchGame2, handleDateMatchPhrase: handleDateMatchPhrase2, handleDateMatchEvent: handleDateMatchEvent2, resetDateChallenge: resetDateChallenge2, ensureDateChallenge: ensureDateChallenge2, handleDateChallengePlay: handleDateChallengePlay2, handleDateChallengeGuess: handleDateChallengeGuess2, timeDateSectionForCurrentLesson: timeDateSectionForCurrentLesson2, activeTimeDateSection: activeTimeDateSection2, renderTimeAssetGrid: renderTimeAssetGrid2, bindTimeAssetAudio: bindTimeAssetAudio2, renderWeekdaysExplorer: renderWeekdaysExplorer2, renderDatesExplorer: renderDatesExplorer2, renderVisualTopicExplorer: renderVisualTopicExplorer2, renderEverydayActionsExplorer: renderEverydayActionsExplorer2, renderRoomsExplorer: renderRoomsExplorer2, renderPositionsExplorer: renderPositionsExplorer2, renderTimeDateExplorer: renderTimeDateExplorer2, renderClothesExplorer: renderClothesExplorer2 };
   }
 
   // src/features/world/animals.js
@@ -10288,7 +10423,10 @@
     bodySentenceForItem,
     chineseUtterance,
     focusExplorer,
-    focusStatus
+    focusStatus,
+    activityPanelTitle,
+    activityPanelSummary,
+    activityList
   });
   var {
     numberStageItems,
@@ -10323,6 +10461,7 @@
     ensureBodyMatchGame,
     handleBodyMatchChinese,
     handleBodyMatchAttempt,
+    renderBodyPractice,
     numberWordListItems,
     renderBodyLabelButton,
     renderBodyExplorer,
@@ -10510,6 +10649,11 @@
     ensureClothesQuiz,
     handleClothesQuizPick,
     nextClothesQuizQuestion,
+    resetClothesSentenceQuiz,
+    prepareClothesSentenceQuestion,
+    ensureClothesSentenceQuiz,
+    handleClothesSentencePick,
+    nextClothesSentenceQuestion,
     resetTimeRoutineQuiz,
     prepareTimeRoutineQuizQuestion,
     ensureTimeRoutineQuiz,
@@ -10586,6 +10730,8 @@
     positionPracticeItems,
     positionScenes,
     clothesMatchItems,
+    clothesSentenceItems,
+    clothesBookWords,
     clothesPractice,
     roomScenes,
     roomSentenceTokens,
@@ -10658,6 +10804,7 @@
     timeDateMonthItems,
     timeDateRoutineItems,
     clothesMatchItems,
+    clothesSentenceItems,
     everydayActionItems,
     illustratedKids,
     numberHanzi,
@@ -10674,6 +10821,7 @@
     renderSharedLessonPractice,
     renderPracticeSayCards,
     bindPracticeSayCards,
+    renderBodyPractice,
     renderWorldPractice: worldRuntime.renderWorldPractice,
     renderHobbiesPractice: playHobbiesRuntime.renderHobbiesPractice,
     activeTimeDateSection,
@@ -10731,6 +10879,9 @@
     ensureClothesQuiz,
     handleClothesQuizPick,
     nextClothesQuizQuestion,
+    ensureClothesSentenceQuiz,
+    handleClothesSentencePick,
+    nextClothesSentenceQuestion,
     ensureTimeRoutineQuiz,
     handleTimeRoutineQuizPick,
     nextTimeRoutineQuizQuestion,

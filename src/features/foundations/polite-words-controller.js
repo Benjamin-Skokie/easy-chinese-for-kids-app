@@ -226,6 +226,12 @@ export function createPoliteWordsController({
             ${words.map((word) => `<button class="school-word-card is-text-only" type="button" data-polite-word="${word.id}"><span class="time-asset-hanzi">${word.hanzi}</span>${state.showPinyin ? `<span class="time-asset-pinyin">${word.pinyin}</span>` : ""}${state.showEnglish ? `<span class="time-asset-english">${word.english}</span>` : ""}</button>`).join("")}
           </div>
         </section>
+        <section class="greetings-note-card polite-useful-note">
+          <p class="body-match-kicker">Useful note</p>
+          <p class="greetings-note-hanzi">请 / 我可以…吗？</p>
+          <p class="greetings-note-copy"><strong>请</strong> makes a request or classroom direction polite: <strong>请安静。</strong></p>
+          <p class="greetings-note-copy"><strong>我可以…吗？</strong> asks permission and ends with the question marker <strong>吗</strong>: <strong>我可以问老师吗？</strong></p>
+        </section>
       </div>
     `;
 
