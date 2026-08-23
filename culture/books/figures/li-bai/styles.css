@@ -71,6 +71,26 @@ h1, h2, h3, h4 {
   color: var(--accent);
 }
 
+.difficulty-badge {
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 7px 14px;
+  margin: 20px 0 0;
+  padding: 8px 14px;
+  border: 1px solid rgba(44, 62, 107, 0.14);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.7);
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.difficulty-badge .zh {
+  color: var(--primary-deep);
+}
+
 .hero .lead {
   margin-top: 16px;
   font-size: 1.02rem;

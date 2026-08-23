@@ -1,122 +1,164 @@
 ---
-title_zh: 能演奏音乐的古老青铜钟：编钟
-title_en: Ancient Bronze Bells That Could Play Music
+title_zh: 一口钟，为什么有两个音？
+title_en: Why Can One Bell Play Two Notes?
 slug: bianzhong
 category: art
-difficulty: 简单
+difficulty: 中等
 back_href: ../../../../index.html#culture-art
 style_notes: "用 --- 分隔 frontmatter；正文强调优先用 *斜体*；尽量不用 **粗体**。"
 ---
 
 [hero]
-title_zh: 能演奏音乐的古老青铜钟：编钟
-title_en: Ancient Bronze Bells That Could Play Music
+title_zh: 一口钟，为什么有两个音？
+title_en: Why Can One Bell Play Two Notes?
 [/hero]
 
 [section]
 page: 1
 layout: text-wrap-image
-heading_zh: 墓里不是一堆旧东西，而是一整支乐队
-heading_en: Inside the Tomb Was a Whole Orchestra
-image: 1-tomb-bell-chamber.webp
-caption_zh: 考古学家打开古墓时，看见的不是几件零散乐器，而是一整套整整齐齐挂好的青铜钟。
-caption_en: When archaeologists opened the ancient tomb, they did not find a few loose instruments. They found a whole set of bronze bells hanging in order.
+heading_zh: 先听，不要碰
+heading_en: Listen First—Do Not Touch
+image: 2-two-notes-bell-shape.webp
+caption_zh: 这幅现代示意图用两个槌子标出正鼓部与侧鼓部的不同击点，并非原钟演奏照片。文物不可触摸或敲击，博物馆演奏通常使用复制品。
+caption_en: This modern diagram uses two mallets to mark center and side striking areas; it is not a photograph of the original bell being played. Museum objects must not be touched or struck, and performances usually use replicas.
 [zh]
-一九七七年，湖北随州一座古墓被发现了。考古学家把水慢慢抽走以后，看见墓里露出了一排排大钟。
+先听两段短录音：第一段声音较低，第二段声音较高。老师揭晓答案——两个音来自同一口编钟，只是木槌敲在不同位置。怎么可能？一口钟不是应该只有一个“当”吗？
 
-那些钟不是随便堆在地上的。它们挂在木架上，排得整整齐齐，像一支安安静静等着演奏的乐队。
+你可以用家里一只结实、空的金属碗做一个很小的观察：请成人把碗放稳，用木勺轻轻碰两个位置，听声音会不会有差别。普通圆碗不一定产生编钟那样清楚的两个固定音，所以这个活动只能提出问题，不能复制古代乐器。绝不要敲博物馆文物，也不要拿玻璃、瓷器或不明金属来试。
 
-墓主人是两千多年前的一位国君，叫曾侯乙。他把这么大一套乐器放进墓里，好像想把音乐也一起带走。
+真正的线索藏在钟的形状里。许多先秦乐钟从下方看不是正圆，而像两片瓦合在一起，横截面呈扁圆或透镜形。敲击正面中央和侧面特定位置，会激起不同的主要振动方式，于是耳朵听见两个不同音高。这不是魔法，而是形状、厚度、青铜材料和击点一起作用。
 [/zh]
 [en]
-In 1977, people discovered an ancient tomb in Suizhou, Hubei. After the water inside was slowly pumped away, archaeologists saw rows of large bells appear.
+Listen to two short recordings. The first note is lower and the second is higher. Then the teacher reveals the answer: both came from the same bronze bell, struck in different places. How can that be? Shouldn’t one bell have only one “ding”?
 
-The bells were not tossed on the ground. They hung neatly on wooden frames, like an orchestra waiting quietly for the music to begin.
+You can make a small observation with a sturdy, empty metal mixing bowl at home. Ask an adult to place it securely and tap two spots very gently with a wooden spoon. Do they sound different? An ordinary round bowl may not produce two clear, fixed pitches like an ancient Chinese bell, so this activity raises a question; it does not copy the instrument. Never strike a museum object, and do not experiment with glass, pottery, or unknown metal.
 
-The tomb belonged to a ruler from more than 2,000 years ago, Marquis Yi of Zeng. It was almost as if he wanted to take music with him.
+The real clue lies in the bell’s shape. From below, many early Chinese music bells are not circular. Their cross-section is flattened or lens-shaped, like two curved roof tiles meeting. Striking a marked area at the center and another at the side excites different main patterns of vibration, so the ear hears two pitches. It is not magic. Shape, wall thickness, bronze, and striking point work together.
 [/en]
 [/section]
 
 [section]
 page: 2
 layout: text-wrap-image
-heading_zh: 这些钟最厉害的地方，是一口钟能敲出两个音
-heading_en: The Amazing Part Is That One Bell Can Make Two Notes
-image: 2-two-notes-bell-shape.webp
-caption_zh: 编钟不是圆圆的，而是有点扁。敲正面和敲侧面，声音会不一样。
-caption_en: These bells are not fully round. Because they are flatter, striking the front and the side can make different notes.
+heading_zh: 水退以后，出现了六十五口钟
+heading_en: As the Water Fell, Sixty-Five Bells Appeared
+image: 1-tomb-bell-chamber.webp
+caption_zh: 这是一幅现代想象的发掘场景，不是1978年的现场照片。钟架、灯光、人员位置和墓室环境经过艺术化处理。
+caption_en: This is a modern imagined excavation scene, not a photograph from 1978. The rack, lighting, people, and tomb chamber have been artistically reconstructed.
 [zh]
-很多孩子一看到编钟，都会先想：钟不就是“当”地响一下吗？
+1978年，考古人员在湖北随县擂鼓墩——今天属于随州市——发掘一座战国早期墓葬。墓室进了水；清理过程中，一座曲尺形的铜木钟架和成组青铜钟逐渐显露。正式考古资料把这套编钟记为六十五件，分三层八组悬挂：上层十九件钮钟，中下层四十五件甬钟，另有一件镈钟。
 
-可编钟特别的地方就在这里。它不是圆圆的钟，而是有点扁。这样一来，声音更清楚，也更适合连着演奏旋律。
+许多器物上有“曾侯乙”相关铭文，因此墓主人被认定为曾国国君曾侯乙。“侯”是当时的诸侯称号，不是统一帝国里的皇帝。墓葬大约形成于公元前433年前后，距今两千四百多年。我们知道这些，是因为器物位置、骨骼、文字和年代证据互相支持，不是因为有人留下了墓主人完整传记。
 
-更神奇的是，一口钟常常能敲出两个不同的音。敲前面是一个音，敲旁边又是另一个音。所以几十口钟合在一起，就能演出很丰富的音乐。
+第六十五件镈钟尤其不同。铭文说，楚惠王熊章在位第五十六年，也就是公元前433年，为曾侯乙制作这件宗庙礼器。它帮助考古学家判断墓葬年代，也让我们看见曾国与强大的邻国楚国之间存在政治和礼仪联系。但铭文没有给我们一段可以随意补写的葬礼电影；谁亲手送钟、现场说了什么，仍不能凭想象确定。
 [/zh]
 [en]
-When many children first see these bells, they think, "Doesn't a bell just go ding once?"
+In 1978, archaeologists excavated an early Warring States tomb at Leigudun in Sui County, Hubei—an area now within Suizhou. Water had entered the chambers. As the site was cleared, an L-shaped bronze-and-wood rack and groups of bronze bells came into view. Archaeological records count sixty-five bells, arranged in eight groups on three levels: nineteen knob-hung bells above, forty-five handle-hung bells in the middle and below, and one large *bo* bell.
 
-But these bells are special. They are not fully round. They are a little flatter, which helps the sound stay clear and makes melodies easier to hear.
+Inscriptions naming Marquis Yi of Zeng on many objects identify the tomb’s owner as the ruler of the state of Zeng. “Marquis” was a regional ruler’s title, not the emperor of a unified empire. The burial dates to around 433 BCE, more than 2,400 years ago. Archaeologists reach these conclusions by combining object positions, human remains, writing, and dates—not because a complete biography of the man survived.
 
-Even more surprising, one bell can often make two different notes. Strike the front, and you hear one note. Strike the side, and you hear another. That is why a whole set of bells can make such rich music.
+The sixty-fifth bell is especially different. Its inscription says that King Hui of Chu, Xiong Zhang, had this ritual bell made for Marquis Yi in the fifty-sixth year of his reign, equivalent to 433 BCE. It helps date the tomb and points to political and ritual ties between Zeng and its powerful neighbor Chu. The words do not give us permission to invent a funeral movie, however. We do not know who carried the bell in or what anyone said at the burial.
 [/en]
 [/section]
 
 [section]
 page: 3
-layout: text-wrap-image
-heading_zh: 钟上还刻着字，像把音乐秘密写在青铜上
-heading_en: The Bells Also Carry Their Music Secrets in Writing
-image: 3-bell-inscriptions-closeup.webp
-caption_zh: 有些编钟上刻着很多字，告诉人们这口钟该发什么音。
-caption_en: Some of the bells have many carved characters that tell people what notes the bell should make.
+layout: text-only
+heading_zh: 两个音，是怎样藏在一口钟里的？
+heading_en: How Do Two Notes Hide Inside One Bell?
 [zh]
-编钟上不只有花纹，还有很多刻出来的字。这些字不是装饰，而是在告诉人们：这口钟能发什么音，那口钟又该放在哪里。
+圆钟受到敲击后，许多方向会以相似方式振动。合瓦形钟打破了这种圆形对称：从正面敲时，一组振动更强；从侧面指定位置敲时，另一组振动更强。曾侯乙编钟上，这两个音通常相隔大三度或小三度——你可以把“三度”先理解成一段固定的音高距离，而不是三个完全相同的台阶。
 
-这说明古代工匠做钟时，不只是会铸铜，也很懂声音。他们没有今天的机器，却能把大小、形状和音高做得很准。
+钟的声音还需要及时减弱。若前一个音拖得太久，下一音进来时，旋律会混成一团。扁圆钟体能让部分振动较快衰减，有利于连续奏出清楚音符。不过，大钟与小钟的余音、音量和音色仍会不同；“一钟双音”也不是说随便敲哪里都有两个完美音。
 
-所以编钟不只是乐器，也像一堂藏在青铜里的科学课。
+一整套钟还要彼此配合。工匠需要计划钟的大小、形状、壁厚和铜合金，再用复杂陶范把钟铸成；一些研究还观察到铸后磨砺与钟内结构和调音有关。我们不能知道每一位工匠怎样口头传授方法，但成组尺寸、击点铭文与实测声音说明，设计、铸造、辨音和调整必须紧密合作。
 [/zh]
 [en]
-The bells do not carry only patterns. Many of them also have carved writing. Those characters are not just decoration. They tell people what notes each bell should make and how the set fits together.
+When a round bell is struck, it can vibrate in similar ways around many directions. A lens-shaped bell breaks that circular symmetry. A center strike makes one vibration pattern stronger, while a strike at a chosen side point brings out another. On the Marquis Yi bells, the two pitches are usually separated by a major or minor third. For now, you can think of a “third” as a particular musical distance, not three identical steps.
 
-That shows us something important. The ancient makers did not only know how to cast bronze. They also understood sound very well. They had no modern machines, yet they could shape the bells with great care.
+The sound also needs to fade soon enough. If one tone rings too long, the next can blur into it. The flattened body helps some vibrations die away relatively quickly, making a sequence of clear notes more practical. Large and small bells still differ in volume, tone color, and ringing time. “One bell, two notes” does not mean that every random spot produces a perfect new pitch.
 
-So these bells are not only instruments. They are also a science lesson hidden inside bronze.
+A whole set must work together as well. Craftspeople had to plan size, shape, wall thickness, and bronze alloy, then assemble complex clay molds for casting. Studies also connect marks from work after casting and inner features of the bells with tuning. We cannot know every spoken lesson used in a workshop, but the matched sizes, labeled striking points, and measured pitches show that design, casting, careful listening, and adjustment had to work closely together.
 [/en]
 [/section]
 
 [section]
 page: 4
-layout: text-only
-heading_zh: 最让人吃惊的是，两千多年前的声音今天还能再听见
-heading_en: The Most Surprising Part Is That We Can Still Hear Them Today
+layout: text-wrap-image
+heading_zh: 三千七百五十五个字，不是一份乐谱
+heading_en: 3,755 Characters—but Not a Musical Score
+image: 3-bell-inscriptions-closeup.webp
+caption_zh: 这幅现代想象图中的大字不是曾侯乙编钟铭文的可靠摹写，人物触碰钟体的动作也不符合今天的文物保护规范。真实研究依靠原件记录、拓片、照片与数字资料。
+caption_en: The large characters in this modern imagined scene are not a reliable copy of the Marquis Yi inscriptions, and touching the bell would violate modern conservation practice. Researchers use object records, rubbings, photographs, and digital data.
 [zh]
-编钟出土以后，被送进了博物馆。后来人们真的又把它们敲响了。
+钟体、钟架和挂钩上共有三千七百五十五字铭文，内容包括编号、事件记录、标音和乐律理论。有些字指出同一口钟两个击点的音名；另一些讨论不同诸侯国使用的音名怎样对应。音乐研究者因此能把钟上文字和实际测得的声音互相核对。
 
-想一想，这很神奇。两千多年前有人听过的声音，今天的孩子居然还能再听见。
+可是，这些字不是一首从头到尾告诉乐手“下一拍敲哪口钟”的现代乐谱。它们更像乐器标签、术语对照表、调音知识和政治记录的组合。今天的学者对部分术语和音律结构仍会提出不同解释，所以儿童故事不能把每一种译名写成已经没有争议的答案。
 
-所以编钟最动人的地方，不只是它很大、很多、很重，而是它让古代的音乐一直活到了今天。
+铭文也显示音乐知识会跨越国界。曾、楚以及其他地区有自己的称呼和关系系统，而钟上的对照让不同传统能够被比较。这既是声音知识，也是礼制语言：拥有一套规模巨大、刻有精密信息的青铜乐器，会向宾客展示一个诸侯国的资源、秩序和文化能力。
 [/zh]
 [en]
-After the bells were brought out of the tomb, they were taken to a museum. Later, people really played them again.
+The bells, rack, and hooks carry 3,755 inscribed characters. They include numbers, event records, pitch labels, and music theory. Some name the two striking pitches on one bell; others compare terms used by different regional states. Music researchers can therefore check the written labels against measured sounds.
 
-That is the wonderful part. A sound heard more than 2,000 years ago can still be heard by children today.
+The writing is not a modern score telling a player, beat by beat, which bell comes next. It is closer to a combination of instrument labels, terminology chart, tuning knowledge, and political record. Scholars still debate parts of the terminology and tuning system, so a children’s story should not turn every proposed translation into a settled answer.
 
-So the most moving thing about these bells is not only that they are big, heavy, and grand. It is that they carried ancient music all the way into the present.
+The inscriptions also show musical knowledge crossing borders. Zeng, Chu, and other regions used their own terms and relationships, while the bell texts made comparison possible. This was both sound knowledge and ritual language. Owning a huge, carefully labeled bronze instrument showed visitors the resources, order, and cultural skill of a regional court.
+[/en]
+[/section]
+
+[section]
+page: 5
+layout: text-only
+heading_zh: 这是乐器，也是权力的声音
+heading_en: An Instrument—and the Sound of Power
+[zh]
+曾侯乙墓中不只有钟，还有编磬、鼓、瑟、笙、排箫和篪等乐器。中室的大型组合被研究者理解为祭祀、宴飨等重大活动所用，另一组较小乐器靠近主棺所在的东室。这样的摆放让我们看见，不同规模的音乐可能服务不同空间与场合。
+
+编钟属于礼乐世界：仪式用音乐安排动作和秩序，宴会音乐接待宾客；一整架青铜钟又把财富、人手和政治等级摆在眼前。但“礼器”不等于“从来没有真正演奏”。固定音高、成套音列、击点标记以及同墓乐器都支持它具有实际演奏功能。它也不是“只给皇帝听”，因为曾侯乙是诸侯国君，贵族宫廷与祭祀宴会同样使用乐钟。
+
+我们却不知道曾侯乙最喜欢哪首曲子，也没有任何战国录音留下来。现代演奏者可以根据乐器性能研究古代音乐，也可以用复制编钟演奏新编乐曲；后者展示了复制品今天能做什么，却不等于还原公元前433年的一场音乐会。
+[/zh]
+[en]
+The tomb held more than bells. It also contained stone chimes, drums, *se* zithers, mouth organs, panpipes, and flutes. Researchers interpret the large group in the central chamber as instruments for major activities such as ancestral rituals and banquets. A smaller group stood in the eastern chamber near the main coffin. Their placement suggests that music of different sizes could serve different spaces and occasions.
+
+The bells belonged to a world of ritual and music. Ceremonial music organized movement and rank; banquet music received guests. A huge bronze rack also displayed wealth, labor, and political status. But “ritual object” does not mean “never actually played.” Fixed pitches, organized tone sets, marked striking points, and accompanying instruments all support real performance. Nor were the bells “only for an emperor.” Marquis Yi was a regional ruler, and aristocratic courts used bells for rituals and feasts.
+
+We do not know Marquis Yi’s favorite piece, and no Warring States recording survives. Modern musicians can use research to explore ancient sound, or they can play newly arranged music on replica bells. The second choice shows what a replica can do today; it does not recreate one exact concert from 433 BCE.
+[/en]
+[/section]
+
+[section]
+page: 6
+layout: text-only
+heading_zh: 今天听见的，常常是复制品
+heading_en: What You Hear Today Is Often a Replica
+[zh]
+原件首先是不可替代的文物。反复敲击会带来震动、磨损和意外风险，所以博物馆展演通常使用经过研究制作的复制品。20世纪80年代，湖北省博物馆联合多家研究机构检测原钟的合金、结构、发声和频率，完成成套复制；今天的编钟乐团也明确以复制件演出。
+
+复制不是按一下按钮就“克隆古代声音”。研究者与工匠要决定怎样记录尺寸、复制纹样、选择合金、铸造钟体，再测试两个击点的音高；若结果不对，还要寻找形状、厚度或制作过程中的原因。复制品保护了原件，也把一件不能随便敲的文物变成可以检验声学假设的工具。
+
+现在回到开头的两个音。真正让人惊讶的，不是“古人没有机器却创造了魔法”，而是许多无名制模者、铸工、刻铭者、调音者和乐师，把一次次观察变成了能反复工作的系统。我们隔着两千四百多年听见的，是青铜振动，也是合作留下的证据。
+[/zh]
+[en]
+The originals are irreplaceable museum objects first. Repeated striking creates vibration, wear, and risk, so museum performances normally use carefully researched replicas. In the 1980s, the Hubei Provincial Museum worked with several research institutions to study alloy, structure, sound production, and frequency before completing a replica set. The museum’s bell ensemble clearly identifies its performance instruments as replicas.
+
+Replication is not pressing a button to “clone the ancient sound.” Researchers and craftspeople must decide how to record dimensions, reproduce patterns, choose an alloy, cast the bell, and test both striking pitches. If the result is wrong, they look for a cause in shape, thickness, or production. A replica protects the original and turns an object that must not be casually struck into a tool for testing acoustic ideas.
+
+Now return to the two notes at the beginning. The wonder is not that people “had no machines but created magic.” It is that many unnamed mold makers, founders, inscribers, tuners, and musicians turned repeated observation into a system that worked. Across more than 2,400 years, we hear vibrating bronze—and evidence of collaboration.
 [/en]
 [/section]
 
 [ending]
-heading_zh: 小结
-heading_en: In Summary
+heading_zh: 最好的答案，还会带出新问题
+heading_en: The Best Answer Opens More Questions
 [zh]
-编钟是一整套能演奏音乐的青铜钟。它们挂在架子上，一口钟还能发出两个音。
+一口钟能发两个音，因为合瓦形钟体允许不同击点激起不同的主要振动方式；而让六十五口钟成为一套乐器，还需要精确铸造、调音、铭文、钟架与演奏者共同配合。
 
-所以它们不只是古墓里的宝物，也是古代工匠、音乐家和做钟的人一起留下来的聪明作品。
+可是答案没有结束侦探工作。古代乐曲究竟怎样编排？不同国家的音名怎样交流？制度和真实演奏有多少距离？编钟留下的不是一句“世界第一”，而是一组还能继续研究的问题。
 [/zh]
 [en]
-These bronze bells are a whole musical set. They hang on frames, and one bell can even make two notes.
+One bell can produce two notes because its lens-shaped body allows different striking points to excite different main vibration patterns. Turning sixty-five bells into one instrument also required casting, tuning, inscriptions, a strong rack, and performers working together.
 
-So they are not only treasures from an ancient tomb. They are also a smart and beautiful work left by ancient makers and musicians together.
+The answer does not end the investigation. How were ancient pieces arranged? How did states translate one another’s pitch names? How closely did real performance follow ritual rules? The bells leave us more than a slogan about being “the world’s first.” They leave a set of questions that research can keep exploring.
 [/en]
 [/ending]

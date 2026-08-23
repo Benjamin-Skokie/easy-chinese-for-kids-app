@@ -1,51 +1,47 @@
-> Difficulty: Easy
+> Difficulty: Medium
 
-# Guilin's Water Looks Like a Living Painting
+# Guilin: Reading the Landscape on a 20-Yuan Note
 
-## Mountains That Pop Up from the Ground
+## Why Doesn't the Banknote Match the River Exactly?
 
-Guilin's mountains do not look like many other mountains. They do not run together in one long line. Instead, small peaks stand up one by one. From far away, they look like green bamboo shoots popping out of the ground along the Li River.
+Turn over a Chinese 20-yuan note and you will see steep peaks beside the water, with a tiny boat crossing their reflections. China's central bank calls the picture “Guilin scenery.” Tourism materials often connect it with the Huangbu Reflection stretch of the Li River near Xingping in Yangshuo.
 
-These mountains were not made by volcanoes. They were carved by water.
+Yet if you hold the note up beside the river, every ridge may not line up perfectly. The banknote image was designed and engraved, and local sources do not always name the same nearby feature as its exact background. The safest description is that it represents the famous Li River scenery around Xingping—not that it is a photograph taken from one guaranteed spot.
 
-Millions of years ago, Guilin was under the sea. Thick layers of limestone formed on the sea floor. Later, the sea moved away, and the limestone was left in the open air. Rainwater in this part of China has a tiny bit of acid in it. Drop by drop, year after year, it slowly ate into the rock.
-
-After a very, very long time, the water carved the stone into tall, separate peaks. So Guilin's mountains are not just mountain shapes. They are water sculptures.
+Today's official sightseeing cruise usually begins at Mopan Mountain or Zhujiang wharf outside central Guilin and travels about 61 kilometers to Yangshuo. Each bend rearranges the peaks, almost as if someone were slowly unrolling a long painting. The banknote captures the character of the view, but it cannot hold the whole journey.
 
 ---
 
-## The Li River: A Painting That Slowly Opens
+## Water Mattered, but It Did Not Work Alone
 
-The Li River from Guilin to Yangshuo runs for more than 80 kilometers. Many people say it looks like a Chinese landscape painting.
+Why do Guilin's peaks rise one by one from low ground instead of forming a single connected ridge? The story begins with limestone. Long ago, this region had marine environments where carbonate sediment collected and eventually became thick beds of rock. Later, movements of Earth's crust lifted and cracked those beds, giving rain and groundwater paths into the stone.
 
-The river is calm. The water has a soft green color. On both sides, the mountains rise one after another in strange and wonderful shapes. One looks like an elephant drinking water. Another looks like a camel crossing the river. Another may look like an old man lifting his head to look at the moon.
+As rain passes through air and soil, it picks up carbon dioxide and becomes weakly acidic. It slowly dissolves limestone along cracks. Groundwater enlarges caves, rivers cut into the land and carry sediment away, and weakened rock sometimes collapses. Lower areas wear down while tougher pieces remain standing above them.
 
-The mountains shine upside down in the water. A bamboo raft comes by. The boatman pushes a long pole into the river. For a moment, you may not know which part is the real mountain and which part is the reflection.
-
-On the back of China's 20-yuan bill, there is a famous view from the Li River called Huangbu Reflection. It is not a building or a person on the bill. It is water and mountains. When people stand there today with a 20-yuan bill in their hands, it is easy to imagine people long ago riding past in boats and staring at the same view.
+This kind of landscape is called *karst*. Guilin has both clusters of cone-shaped peaks and separate tower-like peaks, and it is part of the UNESCO-listed South China Karst. Calling the mountains “water sculptures” makes a lovely picture, but it leaves out most of the team: rock type, cracks, uplift, chemical dissolving, river erosion, and collapse all helped shape them over an immense span of time.
 
 ---
 
-## Silver Cave: Guilin Underground
+## A Cave Grows Larger While a Stalagmite Grows Taller
 
-Guilin's wonders are more than what you see above the ground. Under the mountains, there is Silver Cave, a huge limestone cave that has been forming for a very, very long time.
+The same drop of water can do two opposite jobs. Underground, weakly acidic water dissolves limestone and widens tiny cracks into passages and chambers. But when a drop enters an air-filled cave and releases some of its carbon dioxide, dissolved calcite may be left behind again.
 
-Inside the cave are stalactites hanging down from the ceiling and stalagmites growing up from the floor. Under the lights, they can look like a palace made of silver.
+Deposits growing down from the ceiling form stalactites. Deposits building upward from the floor form stalagmites. If the two meet, they can become a column. This growth is often slow, but there is no universal rule that every formation grows one centimeter in 100 years. Rainfall, drip speed, cave-air carbon dioxide, and the route water takes through the rock all change the rate. Growth may even pause, so the height of a stalagmite is not a simple ruler for its age.
 
-A stalactite may need more than 100 years to grow just one centimeter. Some of the stone shapes in the cave are seven or eight meters tall. That means they were made by water drops from far, far back in time.
-
----
-
-## Why Do Mountains and Water Feel Alive in Chinese Painting?
-
-Chinese landscape painting is about more than copying what a place looks like. It also tries to show a feeling.
-
-An artist may paint a mountain but leave empty white space near its foot. That blank space can feel like water. The artist may leave clouds unfinished, or let the mountains fade into mist. Somehow, the picture can feel more alive because it does not explain every little thing.
-
-Guilin and the Li River are not the only places that shaped Chinese ideas of beauty. But they make the idea easy to feel. When people say, "It is like traveling inside a painting," Guilin helps you understand what they mean.
+Silver Cave near Yangshuo is a developed visitor cave. Today, people follow a walkway while modern lights make the formations look like a silver palace. The deeper wonder is not a dramatic slogan about age. It is the two-way journey in which water first removes limestone and later leaves a little of the mineral behind.
 
 ---
 
-## Summary
+## What Makes the River Feel Like a Chinese Landscape Painting?
 
-Guilin's mountains were carved slowly by water. The Li River mixes mountains, clouds, boats, and reflections until they seem to melt together. The Huangbu Reflection on the 20-yuan bill, the slow-growing stones inside Silver Cave, and the feeling of walking into a painting all make Guilin one of China's most famous landscape places.
+The Chinese term *shanshui painting* literally means “mountain-and-water painting.” A handscroll is often revealed a little at a time, allowing the viewer's eyes to travel past paths, streams, and mist. A boat trip on the Li River has a similar rhythm: one peak blocks the view, the boat rounds a bend, and another space opens.
+
+Unpainted paper can also do important work. Depending on its place in the picture, it may suggest water, sky, mist, or faraway distance. That does not mean every blank area is water. Chinese artists also worked differently across periods. Some paid close attention to observed forms, while some scholar-artists cared especially about how brushwork expressed mood and character. “Freehand expression” did not mean careless drawing, and it was never the only way to paint.
+
+Guilin helps us feel what people mean by “traveling inside a painting,” but it was not the single source of Chinese landscape art. Painters recorded real places, rearranged them, or invented mountains of the imagination. The Li River feels painting-like not because every artist copied Guilin, but because water, layered peaks, and mist turn looking into a journey that unfolds slowly.
+
+---
+
+## Look at the Banknote Again
+
+Look at the 20-yuan note again, and it becomes more than a marker for one photo stop. Marine sediment became limestone; rock beds rose and cracked; weakly acidic water widened the openings; rivers carried material away; and cave drips left some minerals behind again. People later engraved this complicated landscape on money, illuminated its caves for visitors, and compared its river journey to an unfolding handscroll. One small note cannot contain Guilin, but it can offer the first clue for reading it.

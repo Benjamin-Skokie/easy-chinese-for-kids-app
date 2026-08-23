@@ -1,99 +1,59 @@
-> Difficulty: Medium
+> Difficulty: Hard
 
-# Hanfu: A History Book Worn on the Body
+# Which Clothes in the Closet Count as Hanfu?
 
-## Crossed Collar, Right Over Left: The Most Obvious Old Rule
+## Does a Crossed Collar Give Us the Answer?
 
-When many people look at ancient Chinese clothing, the first thing they notice is the slanting collar.
+Imagine a huge closet holding crossed-collar robes, round-collar robes, short jackets, long skirts, trousers, narrow riding clothes, and new designs made today. The door has only one label: *hanfu*. Now choose the “real” hanfu. Where would you look first? Many people would point to the diagonal front in the picture, which closes toward the wearer's right. This is called a crossed collar with right closure. It appeared in many kinds of clothing over a long time, but it is not a magic identity card.
 
-The right front panel crosses over the left panel, making a diagonal line across the chest.
+Today, *hanfu* usually means a broad family of clothes that revival participants have organized, reconstructed, or designed using evidence about Han Chinese dress from different historical periods. The two Chinese characters in the word appeared in older texts, but they could simply mean “the clothing of Han people” or “dress of the Han dynasty” in a particular passage. The current umbrella category, carrying a clear cultural identity across many dynasties, took shape only in recent decades.
 
-This is called a crossed collar with the right side over the left.
-
-This way of wearing clothing was common for a very long time. Later, it became one of the signs many people most strongly connect with *hanfu*.
-
-Why was the right side usually over the left?
-
-It was not just a way of dressing. It was also tied to old cultural ideas.
-
-In ancient books, wearing the left side over the right was sometimes used to describe clothing styles different from the customs of the central Chinese states.
-
-Which side of the collar crossed over which side slowly became full of cultural meaning.
+People in the Han dynasty did not open a closet each morning and ask, “Which style of hanfu should I wear today?” They used the names of garments in their own time and dressed according to gender, position, work, occasion, region, and fashion. Researchers now compare surviving textile pieces, excavated clothes, paintings, tomb figures, written rules, and household records. Every kind of evidence has a missing corner: cloth decays, colors fade, art may show an ideal figure, and a rulebook cannot prove that everybody followed the rule.
 
 ---
 
-## Upper Garment and Lower Skirt: One of China's Earliest Clothing Ideas
+## Why Does One Closet Hold So Many Shapes?
 
-One of the earliest basic forms often tied to *hanfu* was simple:
+Crossed collars with right closure were common, but ancient closets held much more. A robe might have a crossed collar or a round one. Someone might wear a jacket with a skirt, while someone else wore trousers beneath a robe. Sleeves could be wide or narrow, and hems, belts, hats, and shoes kept changing. A garment name might refer to a different cut in another dynasty. Even in the same period, people at court, in cities, in villages, and near frontiers did not all dress alike. Hanfu was never one school uniform worn for thousands of years in changing colors.
 
-an upper garment on top,
-and a lower skirt or wrap below.
+Clothes also traveled with people and technology. During the Tang dynasty, Chang'an was connected with grasslands, Central Asia, and more distant markets. Round collars, narrow sleeves, tall boots, and clothes suited to riding became widely popular. Local tailors remade these forms, which entered ceremonial, official, and daily dress and later influenced neighboring regions. Calling them “purely Central Plains clothing” erases exchange. Calling them only “foreign clothes” erases generations of local work. Cultural contact is not one drop spoiling a glass of pure water. It is more like many threads that have already crossed inside the cloth.
 
-This idea appeared very early. Later, it grew into many different styles.
-
-Pants, of course, also became more and more common over time. But in early ideas about important formal clothing, the upper-garment-and-lower-skirt pattern stayed central.
-
-From this simple base came many later forms:
-
-*shenyi*, a deep robe,
-long robes,
-short jackets with skirts,
-and many other styles.
-
-They did not all look the same, but the old idea stayed underneath.
+That history also reminds us to respect the clothing names used by different communities today. Manchu, Tibetan, Uyghur, Miao, and other peoples have complex, living dress traditions of their own. They should not all be stuffed into the category of hanfu simply because they belong to China's history. At the same time, a Han Chinese garment does not stop belonging to its history because it adopted a collar, pattern, or technique from somewhere else. Categories should help us ask questions, not guard a gate of imagined “purity.”
 
 ---
 
-## Wide Robes and Big Sleeves: Hands That Did Not Work
+## Can a Wide Sleeve Tell Us Who Wore It?
 
-Hanfu sleeves could be very large.
+Wide sleeves can create a calm, dignified feeling, so movies and illustrations often give them to scholars who are writing. Real life was less tidy. A person might put on layered ceremonial dress for a formal event and change into something easier at home. Officials had regulated hats, colors, fabrics, and ornaments. Farmers, craftspeople, soldiers, and riders needed clothing that worked with their tasks. Even when rich and poor people wore a similar shape, the fabric, dye, patches, and number of garments could be completely different.
 
-Formal sleeves could hang so wide that they covered the whole hand. This kind of sleeve is sometimes called a hanging sleeve.
+Governments in different dynasties used dress rules to display rank, office, gender, and ritual role. It was as if the state wrote an instruction book for how society ought to look. But an instruction book is not a street photograph. Tang law punished people for wearing colors above their rank—which also tells us that some people did it. On one nineteenth-century Qing court robe, five-clawed dragons were officially reserved for the emperor and heir, yet museum research notes that this rule was often overlooked later. Trade, imitation, secondhand clothing, and personal taste could all move the boundaries.
 
-Why make sleeves so big?
-
-Because people wearing this kind of clothing did not need to do heavy physical work.
-
-If your sleeves are so wide that they get in the way, it shows your hands are meant for writing, playing the qin, and performing ceremonies.
-
-Working people wore narrow sleeves and short clothing, easier for moving and labor.
-
-You could sometimes tell from sleeves whether a person lived by hand labor or by study and office work.
-
-Big sleeves also had a practical use.
-
-They could work like pockets.
-
-Hidden pouches could be sewn inside. Put something in the sleeve, and it would not fall out easily.
-
-There is an old phrase, "two sleeves full of clear wind." It means an honest official has nothing hidden in his sleeves, not even a little silver.
-
-Only wind.
+Clothing can offer evidence about identity, but it must be read beside excavation location, inscriptions, dates, and other objects. A round-collar robe does not prove that its wearer came from Central Asia. A wide sleeve does not prove that its wearer was a scholar. And a modern “ancient-style” picture certainly cannot prove what a real historical person wore. Clothing is testimony, not the whole verdict.
 
 ---
 
-## Hanfu Today
+## Did Older Clothing Vanish as Soon as the Qing Began?
 
-Twenty years ago, *hanfu* was still a small hobby.
+In 1644, the Manchus established the Qing dynasty. The early Qing court made hairstyle and clothing into signs of submission to the new government. In particular, it forced many male subjects to shave the front of the head, wear a queue, and change official and public dress. These orders met fierce resistance and brought violence. Even so, it is too simple to summarize the next 250 years by saying, “Every Han person instantly removed hanfu and wore one identical Manchu outfit forever.”
 
-Today, many more people enjoy it.
+Rules differed by gender, status, occasion, and region. Male officials' formal clothing was more tightly shaped by Qing court regulations. Many Han women continued wearing jackets with skirts or trousers, while Manchu women had distinctive robes, hairstyles, and shoes. Yet Han women's dress did not freeze on the final day of the Ming, and Manchu clothing did not stay unchanged. City fashions, marriage, markets, and mutual imitation kept altering cuts, borders, cuffs, and decoration.
 
-Some wear *shenyi*, ruqun skirts, or beizi jackets to museums, flower-viewing events, and traditional festivals.
-
-Some carefully study the differences between clothing forms from different dynasties.
-
-For many people today, wearing *hanfu* is not just dressing up in an old style.
-
-It feels more like reconnecting with a very long clothing tradition.
-
-When the clothes are worn on the body, history is no longer only sitting in a museum case.
+Qing court dress was not made by replacing every earlier Chinese element. Riding traditions helped shape narrow sleeves, slits, boots, trousers, and horse-hoof cuffs, while formal robes also incorporated older dragon designs, pleated skirts, and imperial ritual ideas. Some people treated dress as a mark of political loyalty. Some followed rules, some chased fashion, and some simply wore what they could obtain. Historical change included force, adaptation, and creativity. We need to see all three before asking one garment to speak for hundreds of millions of people.
 
 ---
 
-## Summary
+## Is Hanfu Today Reconstruction or New Fashion?
 
-Crossed collar with right side over left, upper garment and lower skirt, wide robes and big sleeves: when people hear these words, many can picture ancient Chinese clothing.
+The present-day hanfu revival grew quickly from online discussion and public dressing in the early twenty-first century, with 2003 often treated as a key starting point. Some people study excavation reports and museum collections, trying to reconstruct the cloth, cut, and dressing method of one period. Some wear updated hanfu to school, work, or on trips. Others dress for festivals, weddings, photography, performances, or game characters. Sneakers, zippers, synthetic fabrics, and modern taste also enter the closet.
 
-Young people today are putting *hanfu* back on their bodies.
+People join for many reasons. They may love the look, enjoy handcraft, seek a connection with family or cultural history, express a Chinese identity within global fashion, or simply have fun taking pictures with friends. Shops, designers, factories, short-video platforms, tourist sites, and photography services have turned the interest into a large market. This makes hanfu easier to buy, but it can also reward the styles that photograph and sell best. Modern hanfu is therefore both an investigation of the past and a creation of the present.
 
-Of course, they are not wearing a perfectly unchanged past. They are giving a serious answer to a long clothing tradition.
+Disagreements remain. People debate which forms are “correct,” whether mixing is acceptable, whether hanfu should represent Han identity or all of China, and whether an identity movement can push other people aside. Some participants care deeply about ritual and cultural belonging; others value beauty, everyday comfort, or freedom to mix styles. It is unfair to call every hanfu wearer a nationalist. It is also dishonest to pretend that identity questions never matter. The closet gives us no single answer. It asks us to explain our evidence, respect other traditions, and admit when we are making a modern choice.
+
+---
+
+## The Answer Is Not Hidden in One Collar
+
+So which clothes in the closet count as hanfu? Researchers, designers, and wearers draw the boundary in different places. A careful answer begins by stating its definition. Then it asks what artifact, image, or text guided a garment, which parts required guesswork, and which parts were redesigned for bodies and lives today.
+
+Crossed collars, wide sleeves, and long skirts can all be clues, but no single detail can tell the whole history. What people wear is made from surviving evidence, exchange among communities, modern imagination, and the wearer's choice today.

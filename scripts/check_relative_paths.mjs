@@ -44,7 +44,10 @@ function scanRepository() {
 }
 
 function scanStagedDiff() {
-  const diff = execFileSync("git", ["diff", "--cached", "--no-ext-diff", "--unified=0"], { encoding: "utf8" });
+  const diff = execFileSync("git", ["diff", "--cached", "--no-ext-diff", "--unified=0"], {
+    encoding: "utf8",
+    maxBuffer: 32 * 1024 * 1024
+  });
   return diff
     .split(/\r?\n/)
     .filter((line) => line.startsWith("+") && !line.startsWith("+++"))

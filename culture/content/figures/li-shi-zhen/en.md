@@ -1,147 +1,69 @@
-> Difficulty: Medium
+> Difficulty: Hard
 
-# Li Shizhen: A Lifetime Spent Writing a Great Book About Life
+# Can a Great Book Still Be Wrong? Li Shizhen and Bencao Gangmu
 
-## A Young Man Who Left the Exams Behind
+## An Important Book Is Not Right About Everything
 
-Li Shizhen was born in Qichun, Hubei, during the Ming dynasty.
+At a library computer, Xiaohe scrolls through a book about medicines printed more than four hundred years ago. Its pages show plants, animals, and minerals, together with quotations from many older works. “This is *Bencao Gangmu*, compiled by Li Shizhen,” her teacher says. “It became one of the most influential books in the history of Chinese materia medica.”
 
-His grandfather had traveled from place to place treating patients. His father was also a doctor.
+“So is everything in it correct?” Xiaohe asks.
 
-But his father hoped Li Shizhen would take the usual road for a scholar: study for the exams, earn a degree, and become an official.
-
-When Li Shizhen was young, he passed the first level of the exams. Then he stopped.
-
-He pushed the exam books aside and told his father, "I want to be a doctor."
-
-His father was silent for a long time.
-
-Then he handed his own medical box to his son.
-
-"Carry it well."
-
-Li Shizhen picked up the old woven rattan box his father had used for decades.
-
-It was the lightest step of his life.
-
-It was also the heaviest.
+That question opens Li Shizhen's story. A book can be remarkable for organizing names, preserving older sources, and building a system of classification while still carrying mistakes from its own time. Respecting Li today does not require turning him into a flawless “modern scientist.” A better tribute is to see how carefully he checked earlier books—and then bring the same care to checking his.
 
 ---
 
-## Finding Dangerous Mistakes in Medicine Books
+## From the Exam Road to Medical Books and Patients
 
-Li Shizhen practiced medicine for more than 30 years.
+Li Shizhen was born in 1518 in Qizhou, in the area of today's Qichun, Hubei. Several generations of his family were connected with healing and medicinal materials. At the time, a student who passed a series of civil service examinations could gain status and perhaps enter government. Biographical accounts say that Li qualified as a local student at about fourteen—often simplified as becoming a *xiucai*—but later failed the higher provincial examination three times. Instead of staking his whole life on more exams, he studied medicine with his father, treated people near home, read, and wrote.
 
-As he treated patients, he kept finding a serious problem: old medicine books did not always agree.
+Later accounts also place him in the household of the Prince of Chu and briefly connect him with the Imperial Medical Institute in Beijing. Biographies disagree about the exact offices and timing, so we should not turn them into a dramatic tale in which Li cures a prince and is instantly summoned to the palace. They do suggest that he encountered both clinical practice and wider collections of books and materials. He wrote other medical works, including studies of the pulse. His interest in medicine did not suddenly appear in old age.
 
-The same herb might be described in different ways. Herbs from different places could work differently. Some books even mixed up plants that were not the same at all.
-
-One mistake might call two different plants by the same name.
-
-Another mistake might confuse a helpful medicine with a poisonous one.
-
-These were not small errors.
-
-They could kill people.
-
-For hundreds of years, no one had carefully checked and corrected all these records.
-
-So Li Shizhen made a huge decision.
-
-He would rebuild the study of Chinese medicinal plants and materials.
-
-He would not just add a few notes to old books. He would check the real things one by one. If he could not be sure, he would not write it as fact.
+Nor does leaving the exam path mean his earlier study was useless. Comparing quotations, reading difficult classical prose, and sorting out several things with the same name all required deep training with texts. Li changed roads, but he carried his reading skills into medicine.
 
 ---
 
-## Thirty Years in the Wild
+## He Was Not a Lone Hero Tasting Every Plant in the Mountains
 
-In 1565, Li Shizhen was 48 years old.
+One name in an old materia medica might point to different plants in different places. One substance could also have several names. Copy a sentence without checking, and its mistake keeps traveling. Li compared earlier materia medica, recipe books, classics, histories, and other writings, tracing where quotations came from. He also examined materials and sought knowledge from people familiar with them, including drug workers, collectors, farmers, and fishers. Names, habitats, and uses did not spring from the mind of one “genius.” Many people whose names never reached the book's cover helped create its knowledge.
 
-He closed his clinic, put a bamboo basket on his back, and began traveling.
+Later stories often picture Li crossing most of China with a basket, personally tasting every drug, or returning to his search after poisoning or a snakebite. Historical evidence supports his interest in investigation, regional knowledge, and actual materials. It does not confirm these thrilling details or provide a dependable map of journeys across the whole country. The tale of the ancient Divine Farmer tasting a hundred herbs is itself a legend; it cannot prove that Li tested poisons on his own body.
 
-He went through much of China: Hubei, Jiangxi, Anhui, Jiangsu, Henan, Hebei, Shandong, Fujian, Guangdong, and more.
-
-He wore out countless straw sandals. He broke many bamboo carrying poles. Sometimes he searched alone in deep mountains for days just to find one plant.
-
-He also met the nightmare of every plant gatherer: danger in the wild.
-
-One story says he was collecting a medicinal root on a snake mountain when a venomous snake rushed toward his basket and bit the space between his thumb and finger.
-
-The people with him killed the snake. Li Shizhen had someone let blood from the wound and used medicine to slow the bleeding.
-
-The next morning, after changing the bandage, he went back into the mountains.
-
-He did more than collect samples.
-
-He also tasted many medicines himself.
-
-This was an old tradition in Chinese medicine: try the plant, feel what it does, and record it carefully.
-
-He wrote down whether a medicine was mild or poisonous, what it seemed to help, and when it should be used with care.
-
-He let his own body carry much of the risk, so later people would make fewer deadly mistakes.
+Tasting an unknown plant is not a research method to copy today. Similar leaves can belong to completely different species, and plant, mineral, or animal substances can all be poisonous. Children must never gather, taste, or mix a medicine from an old book, a picture, or a website.
 
 ---
 
-## Twenty-Seven Years Writing Bencao Gangmu
+## Each Entry Worked Like an Evidence File
 
-When Li Shizhen came home, he faced a mountain of notes.
+The strength of *Bencao Gangmu* lies not only in its size but in its method of organization. Li arranged materials into broad sections such as water, fire, earth, metals and stones, herbs, grains, vegetables, fruits, trees, insects, scaled creatures, shelled creatures, birds, beasts, and humans, then divided them further. The Chinese term *bencao* does not mean herbs alone. The book also includes animals, minerals, foods, and manufactured objects. This is not a modern biological system based on evolutionary relationships, but it made related entries easier to compare than they had been in a jumble of earlier books.
 
-He spent 27 years turning those field records into a huge book: *Bencao Gangmu*, often called *Compendium of Materia Medica* in English.
+Many entries work like evidence files. They establish a main name and list alternatives, then collect information about origin, appearance, and earlier claims. They may also discuss processing, traditional qualities called “flavor and nature,” reported uses, Li's comments, and attached recipes. Li often preserved quotations so later readers could tell who had made a claim. He investigated names and pointed out cases in which different substances shared a name or an old picture did not match its text. Layering old claims, observations, and judgment in this way was one of the book's great achievements.
 
-The book had 52 volumes and nearly two million Chinese characters.
-
-It recorded 1,892 kinds of medicines and more than 11,000 formulas.
-
-For each item, he wrote about its names, where it came from, how to prepare it, what it was like, what it could treat, and related formulas.
-
-That made the book one of the most important works in the history of Chinese medicine.
-
-Later, it did not stay only in China.
-
-It traveled to Japan and Europe and became an important window into Chinese knowledge about medicines from nature.
+A common count gives the work 52 *juan*, or textual sections, and 1,892 medicinal entries, 374 of them additions to the earlier materia medica record. It also gathers about 11,000 prescriptions. Summaries often mention about 1,100 illustrations, but plates, copies, and counts vary among editions. The Library of Congress describes its 1603 edition as 52 *juan* of text plus two of illustrations. Numbers make sense only when we name the edition and the counting method.
 
 ---
 
-## He Never Saw It Printed
+## He Corrected Old Errors—and Carried Some Forward
 
-After *Bencao Gangmu* was finished, Li Shizhen tried to find someone to print it.
+Li could spot cases in which earlier writers had confused names, pictures, or materials, and he was willing to place his own disagreement after a quotation. That habit of correction matters. But he had no microscope, modern chemistry, randomized controlled trials, or today's systems of biological classification. Nor could he personally verify every ancient report he included. To cast a wide net, he drew from medicine, history, literature, and tales of the strange. The more material he gathered, the more uneven its reliability became.
 
-Book printers respected the work when they saw it.
+The book records not only plants but substances from animals and human bodies, minerals, and manufactured objects. Some remedies depend on symbolism, resemblance, or supernatural ideas about illness. Some mineral materials contain mercury, arsenic, or other substances that can cause serious harm. A material “believed to treat” something in the past has not automatically been shown effective by modern research, and its preparation and dose are not automatically safe. Calling *Bencao Gangmu* a “modern medical encyclopedia” would actually hide what makes it valuable as a sixteenth-century work.
 
-Then they shook their heads.
-
-The book was nearly two million characters long. Carving the printing blocks would cost an enormous amount of money.
-
-Li Shizhen asked for help for many years.
-
-In 1593, he died.
-
-By then he was too weak to walk. He lay in bed, put the whole manuscript in order, and asked his son to keep showing it to booksellers.
-
-He did not live to see the book printed.
-
-Three years after his death, a bookseller in Jinling finally took the manuscript.
-
-Later, *Bencao Gangmu* was printed. Over the next few hundred years, it was printed again and again. Versions appeared in Japanese, French, Russian, German, and English.
-
-Li Shizhen spent a doctor's lifetime carrying out a job that was huge, tiny in detail, and full of hardship.
-
-Sadly, he never saw how far his book would travel.
+“Great” and “wrong in places” can both be true. The book is great because it preserved and reorganized an enormous body of knowledge, took names and corrections seriously, and left sources for later readers to check. It contains errors because every author works within the tools, ideas, and evidence of a time. The best way to carry Li's spirit forward is not to defend every old sentence. It is to keep asking, “Where is the evidence? Has better evidence appeared since?”
 
 ---
 
-## Summary
+## From a 1578 Draft to Centuries of Reprinting and Rechecking
 
-Li Shizhen left the exam road and picked up his father's medical box.
+Li worked on the compendium for about twenty-seven years. He completed a first draft in 1578 and continued revising it. The scholar Wang Shizhen wrote a preface in 1590. Major catalogs give both 1593 and 1596 for the earliest Jinling edition printed by Hu Chenglong, perhaps reflecting different records of block cutting, printing, and edition dates. Li died in 1593. Bibliographic dates alone therefore cannot prove the full dramatic scene in which he arranges his manuscript on his deathbed and a printer appears exactly three years later. What we can say is that an early edition emerged around the end of his life, while broad circulation came mostly after his death.
 
-After more than 30 years of treating patients, he saw that old medicine books had too many dangerous mistakes.
+The book did not then stand still. It was formally introduced in Japan around 1607, and local Japanese reprints began in 1637. Scholars added reading marks, illustrations, commentary, and observations about local specimens. In the nineteenth century, British pharmaceutical researchers were still selecting, translating, and checking Chinese drug knowledge from it. The first complete English translation of the entire work did not appear until 2003. In 2011, early *Bencao Gangmu* editions entered UNESCO's Memory of the World Register. Transmission did not mean accepting every claim. It meant reprinting, translating, comparing, cutting, expanding, and investigating again.
 
-So he carried a basket across much of China and checked medicines piece by piece.
+Today, the safest role for a reader is historical detective, not self-prescribing doctor. “Natural” does not mean safe. An herb may cause side effects, be dangerous at a particular dose, be mistaken for another species, or interact with medicine. If someone is ill or swallows an unknown substance, tell a trusted adult immediately and get help from a doctor, pharmacist, or local poison control service. Never test an old formula on yourself.
 
-He spent 27 years writing *Bencao Gangmu*, a book of nearly two million characters with almost 1,900 medicines.
+---
 
-The book was too big and too costly to print while he was alive.
+## In Summary: The Best Tribute Is to Keep Checking
 
-But it survived, and it continued to shape how later people organized medical knowledge.
+Li Shizhen moved from examination study into medical practice and writing. He brought textual scholarship, name checking, observation, and other people's experience into one long project. The 1,892 entries in *Bencao Gangmu* were not the result of “one man tasting everything under heaven.” They formed an enormous archive built as Li reorganized older books, materials, and shared knowledge.
+
+The work corrected inherited errors and also left new questions and limitations of its time. Its most living quality may be that later readers never stopped annotating and checking it again. Whenever we meet a medical claim—ancient, modern, or even in this story—we should ask for evidence and leave real health decisions to trained professionals.

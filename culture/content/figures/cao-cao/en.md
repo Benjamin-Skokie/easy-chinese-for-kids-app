@@ -1,135 +1,79 @@
-> Difficulty: Medium
+> Difficulty: Hard
 
-# Cao Cao: Much More Than a "Crafty Hero"
+# Why Does Cao Cao Seem Like Two Different People in History and Fiction?
 
-## Xu Shao Gave Him a Name
+## First Look: Is This Cao Cao—or Someone's Idea of Him?
 
-Near the end of the Eastern Han dynasty, young Cao Cao was not yet the famous man people would argue about for centuries.
+The central figure stands tall in a military camp while people around him look respectful or suspicious. It is easy to say, “That is Cao Cao.” Yet photography did not exist in his lifetime, and no reliable contemporary portrait survives. Both the face and the meeting were generated for a modern image. It shows not Cao Cao himself but a familiar modern idea of him: powerful, unreadable, and frightening.
 
-One old story says he visited Xu Shao, a man known for judging people's talent, and asked, "What kind of person am I?"
+To investigate him, we need to separate at least five layers of evidence. First comes the *Records of the Three Kingdoms*, compiled by Chen Shou several decades after Cao Cao's death. Second are the many earlier texts added by the fifth-century commentator Pei Songzhi, some of which disagree with one another. More than a thousand years later came the novel *Romance of the Three Kingdoms*. Opera and popular tales added further layers, followed by film, games, and AI illustrations. A later work is not necessarily worthless, but it does not automatically become an earlier fact.
 
-Xu Shao looked at him for a long time. Then he said, "In peaceful times, you could be a capable minister. In troubled times, you would be a crafty hero."
-
-That meant: when the world is calm, you can help run it. When the world is in chaos, you may become powerful, clever, and dangerous.
-
-Some stories say Cao Cao laughed when he heard this. Some say he became angry. No one can know for sure.
-
-But those words followed him for the rest of his life.
-
-People criticized him while he was alive. Almost 2,000 years after he died, people still argue about him.
-
-Was he a great leader? Was he a dangerous planner?
-
-If one person can keep people arguing for that long, he must have been remarkable.
+Instead of beginning with “Was Cao Cao good or bad?” we can first ask, “Where did this detail come from?” The same person may look like two people in history and fiction because history writing, literature, and theater are trying to do different things.
 
 ---
 
-## A Young Officer Who Would Not Look Away
+## If He Controlled the Emperor, Was Cao Cao an Emperor Too?
 
-When Cao Cao was just over 20, he became a local officer in Luoyang. His job was to keep order in the northern part of the city, near the palace.
+Cao Cao was born in 155 and grew up near the end of the Eastern Han dynasty. Court conflict, regional uprisings, and wars among military leaders weakened the central government. Emperor Xian was still the formal emperor, but powerful men including Dong Zhuo and Li Jue had controlled him. The court moved from place to place and sometimes lacked basic supplies. In 196, Cao Cao brought the emperor to Xu, conducted government through Han offices and imperial authority, and gradually concentrated military and political power in his own hands.
 
-It was not a very high position. But Cao Cao did something that made people remember him.
+Later writers often summarized this relationship as “holding the emperor to command the lords.” The word “holding” stresses the emperor's lack of freedom. Cao Cao's supporters instead spoke of “honoring” or “supporting” the emperor, stressing protection and the restoration of court order. Each description catches part of the situation. Emperor Xian was not just an empty name: imperial orders and Han institutions still carried political force. Yet he could not freely decide every major matter. Cao Cao used that legitimacy to command other leaders and also moved against court officials who opposed him.
 
-A powerful palace servant named Jian Shuo had an uncle who used his family connection to break the law. Most people would not dare touch the relatives of powerful people in the palace.
-
-Cao Cao dared.
-
-He arrested the man and punished him according to the law.
-
-For a young government officer just starting his career, this was risky. He had offended one of the most powerful groups in Luoyang.
-
-But from then on, many people remembered him as the young officer who refused to pretend he had seen nothing.
-
-Later, Dong Zhuo took control of the royal court. Stories tell of Cao Cao bringing a dagger close to Dong Zhuo. When the plan failed, he quickly said he had come to offer the dagger as a gift, then escaped from Luoyang.
-
-The details may not all be certain. But Cao Cao did leave Luoyang soon after. In Chenliu, he raised soldiers with his own family money and began building his power.
+During his life, Cao Cao rose through such offices and ranks as Excellency of Works and chancellor. He became Duke of Wei in 213 and King of Wei in 216. He never took the throne as emperor. After Cao Cao died in 220, his son Cao Pi forced Emperor Xian to abdicate and founded the state of Wei. Only then was Cao Cao honored after death as “Martial Emperor.” Later histories call him Emperor Wu of Wei, which can make a young reader think he ruled as emperor while alive. More precisely, his highest title in life was King of Wei; the imperial title was posthumous.
 
 ---
 
-## Guandu: Winning the Battle He Should Have Lost
+## He Was a Commander and a Poet—but Did He Write Beside This River?
 
-Cao Cao fought many battles in his life. The most important was the Battle of Guandu.
+Poems attributed to Cao Cao include *Ballad of Haoli*, *Short Song*, and *Viewing the Sea*. He wrote about landscapes ruined by war, the shortness of life, the search for talent, and the expansive feeling of facing the sea. His work, together with writing by Cao Pi, Cao Zhi, Wang Can, Chen Lin, and others, became an important part of Jian'an literature. Admiring his poems does not require approving every political act. Literature lets us hear the language of an age, but it is not a machine that opens the author's private mind.
 
-His enemy was Yuan Shao.
+Later artists loved the scene called “composing poetry with a lance held crosswise”: Cao Cao stands on a warship before Red Cliffs, holds a long weapon, drinks, and creates *Short Song*. It is wonderfully dramatic, but no contemporary record proves that he composed the poem on that night or on that ship. This picture goes further, combining brush, scroll, armor, riverbank, and sunset like a character poster. We can say that Cao Cao was a military commander and that poems by him survive. We cannot use the illustration as a photograph showing both things happening together.
 
-Yuan Shao had about 100,000 soldiers. Cao Cao had fewer than 20,000.
-
-Yuan Shao was north of the Yellow River with plenty of food. Cao Cao was south of the river, and his supplies were almost gone.
-
-Then one of Yuan Shao's advisers, Xu You, came over to Cao Cao's side.
-
-Later stories made this moment very dramatic. Some say Cao Cao ran out barefoot to welcome Xu You. The main point is clear: Cao Cao saw a chance inside the enemy camp, and he was ready to grab it.
-
-Xu You told him, "I know where Yuan Shao keeps his grain."
-
-Cao Cao sent a small group of strong soldiers by night to Wuchao, the place where Yuan Shao stored food.
-
-They set it on fire.
-
-Yuan Shao's most important supplies were ruined. His soldiers lost heart. After Guandu, Cao Cao grew stronger and stronger in northern China.
-
-That battle became one key step toward his control of the north.
+His 210 edict on recruiting talent contains the phrase “promote talent alone.” It told officials to find capable people of obscure birth and even people with damaged reputations if they could help govern. That broadened Cao Cao's search, but it was not equal-opportunity hiring in the modern sense. Recruitment served his wars and government, and ordinary women, enslaved people, and most poor farmers did not suddenly gain equal access to office. A careful judgment asks both what the policy challenged and what it left unchanged.
 
 ---
 
-## A General Who Wrote Poems by the River
+## Did Ten Thousand Really Defeat One Hundred Thousand at Guandu?
 
-Around the time of the Battle of Red Cliffs, later people often imagined Cao Cao standing at the front of a boat on the Yangtze River.
+The Battle of Guandu in 200 was a turning point in the growth of Cao Cao's power. Historical texts say that Yuan Shao selected 100,000 infantry and had 10,000 horses, while another passage gives the round figure “more than 100,000.” The *Records of the Three Kingdoms* says Cao Cao had “fewer than 10,000” at Guandu. Even Pei Songzhi, who annotated that history, thought the second number was too small. He noted that Cao Cao had already absorbed or defeated many large forces. “Fewer than 10,000” may count only one location, stage, or directly commanded force, but no complete army register survives for us to check.
 
-The winter wind blows. Warships shine with lamps on the water. Cao Cao lifts a cup of wine and begins to chant a poem.
+The safest conclusion is that Yuan Shao held a clear numerical advantage, not that an exact score of 100,000 to 10,000 is beyond question. Cao Cao ran short of grain and at one point considered withdrawing to Xu. Yuan Shao's adviser Xu You then defected and supplied important information, including the location of a grain depot. Cao Cao personally led a night attack on Wuchao and burned the supplies. When Yuan Shao's command failed to respond effectively, the situation collapsed rapidly.
 
-That picture may be partly shaped by literature. But it feels very much like Cao Cao: a man about to fight a huge battle, with soldiers in his mind and poems in his heart.
-
-In one famous poem, he wrote about drinking, singing, and how short life feels. He compared life to morning dew, gone when the sun rises.
-
-He also wrote that he would welcome talented people, just as the ancient Duke of Zhou was said to care for the wise.
-
-Cao Cao was about to fight at Red Cliffs. He did not know he would lose. He did not know fire would burn his linked ships.
-
-But in that windy moment, he poured his unfinished ambition into a poem.
-
-He lost Red Cliffs.
-
-But the poems he wrote stayed in Chinese memory for a very long time.
+The Wuchao raid was not magic in which one genius had one clever idea and instantly ended a war. Intelligence, a defector's information, guards' decisions, supply routes, night movement, and command failures on both sides all mattered. Guandu badly damaged Yuan Shao, but it did not unite the north overnight. Yuan remained powerful the following year, and Cao Cao fought for several more years before overcoming Yuan's heirs and other rivals. The neater a number sounds, the more we should ask whom it counted, who recorded it, and whether later readers challenged it.
 
 ---
 
-## Counting Both Sides
+## The Farming Colonies Eased a Food Crisis—Were They Only Good?
 
-Cao Cao hurt many people.
+Years of war left fields abandoned and people displaced across the Central Plain, while armies often survived by taking food. Beginning in 196, Cao Cao adopted proposals associated with Zao Zhi, Han Hao, and others and established farming colonies near Xu, later expanding the system. The government organized displaced civilians or soldiers to cultivate land, supplied or controlled fields, oxen, and tools, and collected a substantial share of the harvest. The system restored some production and created a steadier military food supply, helping Cao Cao continue his campaigns.
 
-Some famous stories about him, such as killing Lu Boshe's family or saying he would rather wrong others than let others wrong him, are strongly shaped by later storytelling and novels.
+Yet “making abandoned fields grow again” was not the same as unconditional relief. Colony households were supervised by agricultural officials, owed a large portion of their harvest, and could be tightly bound to the system. Military colonies served the army even more directly. Recovery from war and stronger state control over people and land could happen at the same time. Calling the colonies only an act of kindness hides who supplied the labor and who gained the food and power.
 
-But he really did use harsh methods in war and government. He did things that still make later readers uncomfortable.
-
-The death of the doctor Hua Tuo is also surrounded by legend. People often add stories about lost medical skills, and not every detail can be proved.
-
-But if we count one side, we also have to count the other.
-
-Cao Cao supported farming colonies, so land ruined by war could be planted again. This helped central China recover.
-
-He looked for talented people and did not care only about noble family background. That helped him gather skilled people around him.
-
-He wrote poems such as "Short Song Style" and "Watching the Sea." Around him, a group of strong writers also grew.
-
-Later, people called the poems and writing of that time the "Jian'an style": bold, sad, direct, and full of life.
-
-Cao Cao did not create a whole age of writing by himself. But he was one of its important people.
+Likewise, Cao Cao ended some regional warfare in the north and rebuilt administration and recruitment networks, producing a measure of order. He also waged brutal wars. Early histories clearly report massacres and the killing of many civilians during his campaigns in Xu Province. The reported totals may be exaggerated, but uncertainty about a number does not erase the violence. He also executed political opponents and people he considered threats. A poet, an organizer of government, and a ruler responsible for mass violence can be the same person. Complexity does not make achievements and harms cancel each other out, and it does not mean refusing to judge.
 
 ---
 
-## Summary
+## Who Put “I Would Rather Betray the World” into His Mouth?
 
-It is hard to find another person in Chinese history quite like Cao Cao.
+When Pei Songzhi annotated the *Records of the Three Kingdoms*, he included three older accounts of Cao Cao visiting the home of Lü Boshe. One says people in the household tried to rob Cao Cao and he fought back. Another says suspicion led him to kill. A work by Sun Sheng adds the sound of food vessels, a mistaken fear of attack, and the words “I would rather wrong others than let others wrong me.” These accounts were written after the event, contradict one another, and do not appear in Chen Shou's main text. None can be played back as an eyewitness recording.
 
-He was a powerful minister who kept the emperor under his control and gave orders to other lords.
+*Romance of the Three Kingdoms* reshaped the material into a complete scene. Cao Cao mistakenly kills people preparing to entertain him, then kills Lü Boshe as he returns with wine and says, “I would rather betray everyone under heaven than let anyone betray me.” The novel expands “others” into “everyone under heaven,” removes the earlier account's grief, and places Chen Gong beside him as a witness. The result is a tremendously powerful portrait of a dangerous political schemer. It is important literature, not word-for-word historical evidence.
 
-He was also the man who wrote lines about singing over wine and wondering how short life is.
+Other celebrated episodes—including Guan Yu releasing Cao Cao at Huarong Pass, Cao cutting off his beard and throwing away his robe while fleeing Ma Chao, and his failed attempt to stab Dong Zhuo before pretending the dagger was a gift—also belong especially to the novel and related performances. Cao Cao's retreat after Red Cliffs did cross a muddy Huarong route. He did fight Ma Chao and leave the capital rather than serve Dong Zhuo. But the complete scenes and speeches are literary constructions. In Peking opera, Cao Cao often wears a white painted face, which helps that stage tradition present a suspicious, calculating character. It is not paint preserved from his skin, and it is not a historical certificate of personality.
 
-Many stories about him mix history, novels, and opera until they become louder and brighter than the real person.
+---
 
-Cao Cao cannot fit neatly into the words "good person" or "bad person."
+## If We Find a Tomb, Can We See Cao Cao's Real Face?
 
-He was not simple. He was brilliant, frightening, and hard to ignore.
+In 2008–2009, archaeologists carried out a rescue excavation of a looted tomb at Xigaoxue near Anyang, Henan. Its date, location, scale, and inscribed stone tags—including ones referring to objects “regularly used by King Wu of Wei”—formed a group of connected clues. Archaeological institutions identified Tomb M2 as Cao Cao's Gaoling mausoleum. The tomb also contained partial remains of a man estimated to be around sixty, broadly consistent with Cao Cao's age in his mid-sixties at death. The identification rests on evidence working together, not on one tag or one skull alone.
 
-That is why people are still talking about him almost 2,000 years later.
+The tomb had long been robbed and disturbed, and the bones were incomplete. Even if the skull belonged to Cao Cao, a facial “reconstruction” still requires specialists to estimate soft-tissue depth and choose hair, skin, beard, and expression. It is not a photograph washed clean after two thousand years underground. DNA projects using present-day Cao families or remains from other tombs face questions about sample origins, family links, contamination, and the accuracy of historical genealogies. A disputed result should not be presented as a final answer.
+
+Archaeology can show how a tomb was built, what it once contained, how it was disturbed, and whether burial information in texts matches material evidence. It cannot tell us exactly what Cao Cao thought when he saw an enemy, and it cannot rule that he was either “hero” or “villain.” At the end, we do not receive one perfect true face. We gain a better method: return the main historical text, later annotations, novel, stage, and modern science to their proper layers of evidence.
+
+---
+
+## In Summary: Label the Evidence Before Judging the Person
+
+Cao Cao was the most powerful subject acting under Emperor Xian and later King of Wei—not an emperor called Emperor Wu during his lifetime. He overcame a larger force at Guandu, but the troop totals are not an exact scoreboard. He established farming colonies, recruited talent, and wrote major poems. He also waged wars, massacred communities, and crushed opponents. These claims have historical evidence, but we must still examine who recorded them, when, and with what uncertainty.
+
+Fiction sends him through Huarong Pass, makes him cut off his beard and discard his robe, and gives him the louder phrase “everyone under heaven.” Opera adds an unforgettable white face. Literature and theater make a person memorable; historical reading asks us not to pour those inventions backward into the second century. Cao Cao can look like two people because his actions really were contradictory and because many later ages rewrote him. Label the evidence first, then judge. That is how we see more than a painted face.

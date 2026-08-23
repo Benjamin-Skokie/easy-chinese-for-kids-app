@@ -1,101 +1,79 @@
-> Difficulty: Easy
+> Difficulty: Medium
 
-# How Busy Was an Emperor's Day?
+# A Day at the Emperor’s Desk: How Busy Was Zhu Yuanzhang?
 
-## The Emperor's Morning: Waking Up at 3 A.M.
+## Do We Really Know When He Woke Up?
 
-Do you think an emperor could sleep until noon?
+The easiest way to describe “a day in the life of an emperor” is to draw a schedule: wake at three, hold court at five, meet officials all day, and read reports late into the night. The problem is that schedules like this often mix customs from different dynasties and different rulers. We do not have trustworthy evidence that Zhu Yuanzhang, the first emperor of the Ming dynasty, followed one exact timetable every day.
 
-Not at all.
+History is not completely silent, though. Official records preserve court meetings, government orders, and the movement of paperwork. They cannot show us what Zhu ate for breakfast or when he went to bed each night. They can answer a better question: *What work actually reached him as emperor?*
 
-In the Qing dynasty, hardworking emperors such as Kangxi, Yongzheng, and Qianlong often got up very early. Three o'clock in the morning was still completely dark. Even the roosters were not awake yet.
-
-Palace workers stood outside the emperor's bedroom with hot water and towels. When the time came, they went in and called him: "Your Majesty, it is time to get up."
-
-After washing his face and rinsing his mouth, the emperor's first job was not to sit on the throne. It was to greet the empress dowager, usually his mother or grandmother, and ask how she was.
-
-Even an emperor was still a son or grandson. Long ago in China, showing respect to parents and grandparents was one of the most important rules. Since the emperor was supposed to set an example for the whole country, he had to be especially careful about it.
+This article follows one ruler in one period. Zhu Yuanzhang, also called the Hongwu emperor, ruled from 1368 to 1398. He founded the Ming dynasty, and his capital was in the city now called Nanjing.
 
 ---
 
-## Morning Court: The Work of the Country Begins
+## From a Poor Childhood to a New Dynasty
 
-After greeting his elder, the emperor went to morning court. This often began around five or six in the morning.
+Zhu Yuanzhang was born in 1328 near present-day Fengyang in Anhui Province. The evidence clearly shows that his family was extremely poor. Later biographical accounts also say that he herded animals for others as a boy and then became a monk. Famine, disease, and warfare shook the final years of the Yuan dynasty. Zhu joined a rebel army and, after years of fighting, founded a new dynasty.
 
-Morning court was one of the most important parts of his day. Civil officials and military officials stood in the great hall. One by one, they gave reports.
+We can keep the picture of a boy walking beside a water buffalo, but it needs a label. It is a modern imagined scene based on accounts of Zhu's childhood, not a portrait made on one known day. We do not know the color of the animal or where the boy was looking.
 
-A flood happened here. People there needed food.
-
-A battle was going on near the border. More soldiers might be needed.
-
-This official should get a better job. That official should be punished.
-
-The emperor sat on the dragon throne, listened, and made decisions.
-
-So could the emperor just do anything he wanted? Not really.
-
-Many people were watching his decisions. If ministers thought he was wrong, they might argue with him right there in court. Sometimes the emperor and his officials disagreed so much that a meeting could drag from morning almost to noon.
-
-Of course, not every emperor lived by the exact same schedule every day. But for a hardworking emperor, the day was rarely easy.
+When Zhu became emperor, he did not inherit a government that was already running smoothly. He had to rebuild institutions after years of war and make new orders reach distant places. Instead of guessing what time he opened his eyes, let us follow a government report toward his desk.
 
 ---
 
-## Reading Memorials: Homework That Never Ends
+## How Did a Report Reach the Emperor?
 
-After morning court, could the emperor finally rest?
+Imagine that a flood struck a county. Local officials needed to describe the damage and ask for grain or a break from taxes. They would send a formal written document to the central government. Ancient China had several kinds of official documents. For this story, think of a memorial as a report, request, or piece of advice sent toward the emperor.
 
-Usually, no.
+A messenger could not simply run into the emperor's room. Government offices received, registered, checked, and passed along documents. Zhu gradually changed this route so that some important reports no longer had to pass first through the Central Secretariat, the highest administrative office. Some matters were presented at court, while others moved through a written process.
 
-Waiting for him were piles and piles of memorials. Memorials were official reports written by ministers and local officials. They came from all over China. On some days there might be dozens. On other days, hundreds.
-
-Emperor Yongzheng was famous for working very hard. During his 13 years as emperor, he read and answered more than 40,000 memorials.
-
-He did not just stamp them and move on. He read them himself. He wrote comments himself. Some comments were several hundred Chinese characters long, almost like a short essay. Sometimes it looked less like an emperor signing papers and more like a teacher correcting a student's writing.
-
-Yongzheng would even write friendly lines such as, "I am well. How are you?" It meant: "I am fine. What about you?"
-
-Late at night, past ten o'clock, candles were still burning deep inside the palace. The emperor was still reading the last reports of the day.
-
-Then, at three in the morning, the next round began.
+One memorial could contain more than one issue. River repairs, grain shipments, appointments, court cases, and news from the borders might all require study by different offices and a decision from above. The emperor's workload began with a huge government sending him information and choices.
 
 ---
 
-## When Could an Emperor Have Fun?
+## In 1380, He Removed an Important Desk
 
-Emperors did have ways to relax, but not much time.
+At the beginning of the Ming dynasty, the Central Secretariat helped run the government. Its chancellor stood between the emperor and many parts of the administration. The office could review reports before the emperor saw them and help send orders back out. You might picture it as an important desk between the ruler and six major ministries.
 
-Some liked hunting. Qing emperors often went to the Mulan hunting grounds in autumn with princes and officials. They rode horses and shot arrows. It was exercise, but it was also military training.
+In 1380, after the case against Chancellor Hu Weiyong, Zhu abolished the Central Secretariat and stopped appointing a chancellor. The Six Ministries then answered more directly to the emperor. Together, they handled officials, taxes and population records, ceremonies, the military, law, and public works.
 
-Some emperors liked poetry, painting, or calligraphy. Emperor Huizong of the Song dynasty was a gifted artist. His thin, sharp style of calligraphy is still studied today.
-
-Some emperors liked building things. Emperor Tianqi of the Ming dynasty was said to be very good at woodworking. People said his tiny wooden boats were so carefully made that they could really float on water.
-
-But hobbies were not simple for an emperor.
-
-The Song scholar Sima Guang once warned that anything an emperor liked could become much bigger below him. If the emperor liked paintings, officials everywhere might rush to find famous paintings for him. If he liked crickets, local officials might force ordinary people to catch crickets.
-
-One small hobby in the palace could become a big problem for people outside the palace. That is why some good emperors tried not to show too many personal likes. They did not want to trouble the people.
+This change pulled more power toward the emperor. It also brought more government business closer to his desk. It was not simply a personal habit of a ruler who liked to “do all his own homework.” It was a major political choice that shaped the Ming government for generations.
 
 ---
 
-## The Emperor Could Not "Just Do Anything"
+## How Much Business Arrived in Eight Days?
 
-People often think the emperor had the most power, so he could do whatever he wanted.
+The *Veritable Records of Ming Taizu*, an official chronicle compiled after Zhu's death, preserves an astonishing count. During one eight-day stretch in 1384, officials counted 1,660 memorials from offices inside and outside the capital. Those documents contained 3,391 separate matters. That averages more than two hundred documents and four hundred issues each day.
 
-But a hardworking emperor was often one of the least free people in the country.
+Now slow down. The record counts what government offices submitted. It does not say that Zhu read every character alone or wrote a long answer to every item with his own brush. One memorial could hold several matters. The numbers also cannot tell us exactly when he lit a lamp or put down his brush on those nights.
 
-Officials watched almost everything he did. What he ate, who he met, and what he said could all be written down. He could not act too casually. He could not leave the palace whenever he felt like it. He could not lose his temper at everyone around him, because he represented the whole dynasty.
-
-His decisions affected the whole country.
-
-The candles burning at three in the morning, the memorials piled on the desk, the greetings to elders, the ceremonies, the ritual offerings, the meetings, and the reports -- all of these were part of the job.
-
-Being emperor was much more tiring than it looked from far away.
+Even with those limits, the count teaches us something important. After the chancellorship disappeared, the emperor stood at the end of more decision-making paths. Officials still had to sort, discuss, summarize, and carry out the work. The crowded desk belonged to Zhu, but it also belonged to a whole government organized around imperial power.
 
 ---
 
-## Summary
+## The Emperor Did Not Truly Work Alone
 
-An emperor's day could begin at three in the morning. He greeted his elders, listened to reports at court, made decisions, and read piles of memorials. Ceremonies and rituals filled even more time.
+A painting of the emperor sitting alone among paper stacks leaves many people outside the frame. Officials in the Six Ministries handled matters in their own areas. Other offices received and organized reports. Scholars serving near the emperor could help review documents, record decisions, or draft words that followed his instructions. Zhu removed the chancellor, but he did not remove the rest of government.
 
-Being emperor may look grand. But for a truly hardworking ruler, it was more like a job that never let him clock out. He lived in the biggest house, but he also carried one of the heaviest responsibilities.
+Over time, the Ming developed grand secretaries and then a Grand Secretariat to help manage complicated paperwork. Zhu's early assistants did not yet have all the influence that later grand secretaries gained, and they were not simply chancellors with a new name. The system pulled final authority toward one ruler while also searching for new ways to keep the paperwork moving.
+
+That is the puzzle at the center of this story. Removing a powerful helper can give the emperor more control. But when more roads lead to one person, that point can also become the biggest traffic jam.
+
+---
+
+## Busy Does Not Mean Every Decision Was Good
+
+Zhu spent great energy rebuilding government in the early Ming, and he controlled officials with severe rules. Yet a large pile of documents shows workload, not wisdom. It does not prove that every choice was fair or effective. In the later part of his reign, his rule became increasingly harsh, and many officials were imprisoned or killed during major political purges.
+
+This is not a story saying that the busiest emperor must be the best emperor. When power is concentrated, a ruler's choices are harder to avoid. His mistakes and suspicions can also cause greater harm. Studying the papers on one desk helps us ask not only how hard one person worked, but also how a government shared power, moved information, and handled risk.
+
+---
+
+## Look Again at the Lamp
+
+Now return to the picture of Zhu at night. A moon hangs outside the window. He sits alone beside a lamp, surrounded by stacks of memorials. The scene is a useful symbol of concentrated government work, but it is not a record of one particular night. The artist chose moonlight, a flame, and tall paper stacks to make an invisible pressure easy to see.
+
+We cannot fill in every hour of Zhu's ordinary day. We can establish facts that matter more: the early Ming government produced a huge flow of business; the 1380 reform made the Six Ministries answer more directly to the emperor; many officials still helped sort, draft, and carry out decisions; and concentrated power brought concentrated work and danger.
+
+An emperor's day is not an empty schedule that we may fill with guesses. A more trustworthy story follows a document through the government and asks why so many paths ended at the same desk.

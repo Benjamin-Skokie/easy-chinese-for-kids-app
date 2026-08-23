@@ -1,97 +1,49 @@
 > Difficulty: Medium
 
-# Zhaozhou Bridge: A Thousand-Year Rainbow Made of Stone
+# Zhaozhou Bridge: Legends and the Stone Arch
 
-## A Bridge That Has Stood for 1,400 Years
+## How Old Is This Hoofprint?
 
-In Zhao County, Hebei, a stone bridge crosses the Xiao River.
+Suppose someone points to a dent on Zhaozhou Bridge and says, “Look! An immortal's donkey made that print!” Would you believe it? In a local legend, the immortal Zhang Guolao loaded the sun and moon onto his donkey, while Lord Chai pushed a cart carrying famous mountains. Their impossible weight made the bridge shake, so the master builder Lu Ban leaped underneath and held it up. The story explains the hoofprint and wheel rut on top—and even handprints underneath.
 
-It was built in the Sui dynasty, about 1,400 years ago.
+The tale traveled widely in the folk song *Little Cowherd*. It shows how strongly people admired the bridge and great builders. But Lu Ban was said to have lived more than a thousand years before this Sui dynasty bridge, so he could not have built it. There is another surprise: during a major restoration in the 1950s, the old deck stones were replaced, and workers carved a wheel rut and hoofprint into the new surface to match the legend. An old story does not make the marks we see today ancient, and there is no evidence that they were an early “speed bump.”
 
-During all those centuries, it faced major earthquakes and many floods. Yet the bridge still stands, and people can still cross it today.
-
-The builder was named Li Chun.
-
-History books say almost nothing about him. After his name, there is no long life story.
-
-What he left behind was this bridge.
-
-It is the oldest surviving stone bridge known in the world with one main arch and smaller open arches above it.
+Who, then, built the real bridge? A Tang dynasty inscription written after the bridge was built calls it “the work of the Sui craftsman Li Chun.” That is why the design and construction are credited to Li Chun. The bridge probably dates from about 595 to 605, but no Sui construction diary or complete blueprint survives, and almost nothing is known about Li Chun's life. His name rests on an important early clue; it should not be expanded into an invented biography filled with childhood dreams and conversations.
 
 ---
 
-## Two Small Holes Above the Arch: A Brilliant Idea
+## A Low Stone Rainbow
 
-Stand under Zhaozhou Bridge and look up.
+Zhaozhou Bridge is also called Anji Bridge, meaning “Safe Crossing Bridge.” It spans the Jiao River in today's Zhao County, Hebei. The main opening is about 37 meters wide, but the top of the arch rises only about 7.2 meters above its starting level. Instead of forming a tall half circle, the arch uses only part of a circle. Engineers call this a segmental arch. Its low curve creates a gentler roadway for walkers, horses, and carts.
 
-The main arch is not a half circle. It is a shallow curve, like a bent eyebrow.
+Why does a stone arch not simply fall into the river? Builders first erected a temporary wooden frame to hold the stones. Then they arranged wedge-shaped blocks along the curve. After the frame was removed, each stone was pulled downward by its weight but also pressed against its neighbors. Compression traveled along the arch into the abutments and ground at both ends. One “magic keystone” in the middle did not hold the bridge alone; the whole arch and both supports worked together.
 
-This kind of arch can stretch farther and make the bridge deck gentler. But it also pushes more sideways, so the bridge supports have to be strong.
-
-Still, the idea that changed bridge history was about more than the big arch.
-
-It was the small openings at both ends of the big arch.
-
-Engineers call this an open-spandrel arch, which means the space above the main arch is opened up instead of filled with solid stone.
-
-What were those small openings good for?
-
-First, they made the bridge lighter. By opening four small arches above the big one, builders removed a lot of stone. That meant less pressure on the bridge supports.
-
-Second, they helped with floodwater. When the river rose high enough, water could pass through the small openings too. That reduced the force hitting the main arch.
-
-Third, they made the bridge beautiful.
-
-The four small openings broke up the heavy feeling of the stone. The bridge did not look like a pile of rock lying over the river. It looked like a stone rainbow floating above the water.
-
-Today, these ideas sound like basic engineering.
-
-But 1,400 years ago, no one had made a bridge quite like this. Li Chun was the first known designer of an open-spandrel arch bridge. Europe did not build similar open-spandrel arches until the 1800s, more than 1,200 years later.
+A shallow arch also has a challenge. Compared with a taller semicircular arch, it pushes outward more strongly, so its abutments and foundations must resist that sideways force. The achievement of Zhaozhou Bridge was not finding a shape untouched by physics. It was making the span, gentle road, stone arch, and supports cooperate. The design has a history of about fourteen centuries, but that does not mean every stone stayed unchanged for all that time.
 
 ---
 
-## A Stone "Key"
+## Why Put Four Small Arches Above the Main One?
 
-Zhaozhou Bridge was built from stone blocks, one piece at a time.
+Many masonry arch bridges fill the space between the main arch and the roadway with solid material. At Zhaozhou, builders instead opened two small arches above each end of the main one—four openings altogether. This is called an open-spandrel design. With all its features named precisely, Zhaozhou is generally recognized as the oldest known surviving open-spandrel segmental stone arch bridge. That careful title does not mean no earlier bridge anywhere had ever used a segmental arch, an opening, or a similar idea in another material.
 
-It used no mortar, the glue-like material builders often put between stones, to hold everything together.
+The four openings first remove earth and stone that would otherwise fill the shoulders of the main arch. Less material means less permanent weight for the main arch and abutments to carry. The smaller arches are not merely holes with decorative rings around them. They transfer the load above them toward parts of the main arch, so engineers must consider how the entire family of arches works together.
 
-The stones pressed against one another. The harder they pressed, the tighter the bridge became.
-
-When the bridge was built, the final stone set into the arch was called the keystone.
-
-The workers built the arch from both sides toward the middle. At the top, they left one wedge-shaped gap. Then they hammered the keystone down into that gap.
-
-At that moment, the pressure locked the stones tightly together.
-
-Once the keystone was in place, the bridge held itself shut.
+The Jiao River can be small in dry weather and rise quickly during the rainy season. When floodwater reaches the smaller arches, their openings provide extra space for water and reduce the solid surface that the current can strike. They help during floods, but they cannot promise that every flood will leave the bridge untouched. Records since the Tang dynasty describe flood damage, settlement at an abutment, tilting smaller arches, and cracked or fallen masonry. Good engineering is not a promise of “safe forever.” It is a way of giving weight, traffic, water, and stone a better path.
 
 ---
 
-## Donkey Hoofprints on the Bridge
+## Which Stones Still Come from the Sui Dynasty?
 
-On the stone deck of Zhaozhou Bridge, people say there is a donkey hoofprint and a wheel mark.
+From the riverbank, the main arch looks like one curve. Across the width of the bridge, however, it is made from twenty-eight narrower stone arch ribs placed side by side. Craftspeople used iron cramps and transverse ties to connect neighboring stones or ribs and reduce the danger of their separating or leaning outward. The arch carries most loads through compression between stones, and early sections are often described as dry-set masonry. But that does not mean “the whole bridge survived through friction plus one final stone.” Iron connectors and the entire structural system also worked together, and later repairs introduced new bonding materials.
 
-A folk story says they were left by Zhang Guolao, an immortal who rode across the bridge on a donkey. In the story, he carried the sun and moon on the donkey's back. The bridge began to sink under the weight.
+Zhaozhou Bridge has, in fact, been repaired again and again. About two centuries after it was built, an early recorded repair followed flood damage. In later centuries, floods, weathering, warfare, traffic, and poor maintenance caused more harm. When architect Liang Sicheng studied the bridge in the 1930s, three eastern arch ribs had collapsed, and other parts were cracked or leaning outward. A major restoration in the 1950s dismantled and rebuilt damaged areas, injected cement grout, and replaced the deck, railings, and many stone pieces. Some ancient railings and other components recovered from the river or removed from the bridge were preserved in museums.
 
-Lu Ban, the legendary master builder, rushed under the bridge and held it up with his hands. So the donkey hoofprint, the wheel mark, and even handprints were left in the stone.
+The bridge we see today is therefore neither a brand-new copy nor a stone sculpture left perfectly unchanged since 605. It preserves its Sui design, a substantial part of the old masonry in the main arch, repairs from later periods, and materials and appearances shaped by modern restoration. Saving a bridge can force difficult choices between keeping old material and preventing collapse. Later conservation experts may also question choices made by earlier restorers.
 
-This story is made up.
-
-But the marks are real.
-
-Modern researchers think the dents may have been carved into the stones on purpose before the bridge was finished. Their real job may have been like a speed bump.
-
-In ancient times, carts and horses going down the bridge could move too fast. When wheels and hooves reached the rough dents, the extra rubbing helped slow them down and kept them from rushing out of control.
-
-A little mark full of legend may also hide an ancient traffic-safety design.
+Now look again at the donkey hoofprint. We can keep two answers at once. As folklore, it shows how people marveled at the bridge. As physical evidence, it reminds us to ask when the stone in front of us was placed there. Zhaozhou's real achievement needs no immortal to prove it: a shallow arch, four smaller arches, twenty-eight stone ribs, many iron connectors, and generations of repair already tell a more fascinating story.
 
 ---
 
-## Summary
+## In Summary
 
-Zhaozhou Bridge was built in the Sui dynasty about 1,400 years ago. Li Chun opened small arches above the main arch, making the bridge lighter, better during floods, and more graceful.
-
-The stones used no mortar. The way the stones pressed and rubbed against one another, plus the final keystone, locked the bridge together.
-
-The donkey hoofprint is a legend, but it may hide a clever speed-control design from long ago.
+Zhaozhou Bridge was probably built between about 595 and 605 and is credited to the Sui craftsman Li Chun on the evidence of a Tang inscription. Its low segmental main arch crosses the Jiao River, while four open-spandrel arches reduce weight and add space for high water. The bridge preserves an ancient design and some Sui masonry, but it has also been repaired many times. Separating original material, restoration, and folklore makes this stone rainbow more real—not less wonderful.

@@ -168,8 +168,23 @@ function renderSection(block, availableImages = new Set()) {
       </section>`;
 }
 
-function buildBody(blocks, availableImages = new Set()) {
+function formatDifficulty(value) {
+  const normalized = String(value || "").trim().toLowerCase();
+  const levels = {
+    easy: { zh: "简单", en: "Easy" },
+    "简单": { zh: "简单", en: "Easy" },
+    medium: { zh: "中等", en: "Medium" },
+    "中等": { zh: "中等", en: "Medium" },
+    hard: { zh: "困难", en: "Hard" },
+    "困难": { zh: "困难", en: "Hard" }
+  };
+
+  return levels[normalized] || { zh: value || "未标注", en: value || "Not rated" };
+}
+
+function buildBody(blocks, availableImages = new Set(), difficulty = "") {
   const output = [];
+  const difficultyLabel = formatDifficulty(difficulty);
 
   for (const block of blocks) {
     if (block.type === "hero") {
@@ -177,6 +192,7 @@ function buildBody(blocks, availableImages = new Set()) {
         <div class="hero-copy">
           <h1>${formatInline(parseField(block.raw, "title_zh"))}</h1>
           <h2>${formatInline(parseField(block.raw, "title_en"))}</h2>
+          <p class="difficulty-badge"><span class="zh">阅读难度 · ${escapeHtml(difficultyLabel.zh)}</span><span class="en">Reading level · ${escapeHtml(difficultyLabel.en)}</span></p>
         </div>
       </section>`);
       continue;
@@ -233,7 +249,7 @@ export async function buildPhilosophyPage({ category = "philosophy", slug, targe
     }
   }
   const availableImages = new Set(sourceFiles);
-  const builtBody = buildBody(blocks, availableImages);
+  const builtBody = buildBody(blocks, availableImages, frontmatter.difficulty);
 
   const html = template
     .replace("{{TITLE}}", frontmatter.title_zh)

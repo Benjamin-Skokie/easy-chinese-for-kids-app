@@ -1,139 +1,47 @@
-> Difficulty: Medium
+> Difficulty: Hard
 
-# Shang Yang: The Man Who Changed a State's Fate
+# Shang Yang: Who Paid the Price When the State Grew Stronger?
 
-## One Log and Ten Pieces of Gold
+## Could Moving One Log Make a State Trust Its New Laws?
 
-In the fourth century BCE, a famous story spread through the capital of Qin.
+A log stands outside the southern gate of Qin's capital. A notice promises ten pieces of gold to anyone who carries it to the northern gate. People gather, but no one believes such an easy task will bring a great reward. The offer rises to fifty. At last, someone moves the log, and the government really pays. Then the new laws are announced.
 
-Shang Yang placed a wooden log at the south gate. Beside it, he posted a notice:
+This famous “moving the log to build trust” story comes from Sima Qian's *Records of the Grand Historian*, written more than two hundred years after Shang Yang's death. We have no original notice, winner's name, or recording from the gate, so its details are not checkable news. Yet the story captures a real problem of reform. Writing an order is easy; convincing thousands of families that officials will enforce it is hard. One question remains: if a government reliably carries out harsh punishments, what does that kind of “trust” mean for ordinary people?
 
-Whoever carries this log to the north gate will receive a reward.
+## Why Did Gongsun Yang Find His Chance in Qin?
 
-Everyone laughed.
+Shang Yang was born Gongsun Yang and was also called Wei Yang because he came from the small state of Wey. During the Warring States period, states competed for land, people, and armies, while talented advisers crossed borders looking for rulers who would listen. In the mid-fourth century BCE, Duke Xiao of Qin called for people who could strengthen his western state. Wei Yang came to Qin and won support for reforms. Only after receiving the territory of Shang did he become known as Shang Yang.
 
-No one moved.
+Traditional accounts often divide his changes into two rounds, beginning around 356 and 350 BCE. Not every rule, date, or attribution is equally certain. His main biography, in the *Records of the Grand Historian*, was written later. The chapters gathered as the *Book of Lord Shang* accumulated over time rather than forming one policy manual written by Shang Yang all at once. Still, the direction is clear: Qin wanted to turn scattered people, land, taxes, and military service into resources the government could record, compare, and mobilize.
 
-More and more people gathered to watch. The crowd seemed to build up like a wall of mud.
+## The New System Opened Some Doors and Locked Others
 
-"Carry a log to the north gate and get gold? If this is a trick, at least make it believable."
+Earlier aristocrats often inherited status from their ancestors. Qin's new ranks of merit allowed some ordinary men to gain rank, land, or other rewards through military achievement. They also weakened the idea that noble birth alone should protect privilege. The government promoted farming and cloth production because grain, textiles, taxes, and soldiers could support war. Counties, household registers, and standard measures helped the center manage local communities. For some people, the system opened a new path upward.
 
-So Shang Yang raised the reward to fifty pieces of gold.
+But every open door had another side. Military merit was often tied to enemies killed, joining personal hopes to warfare. Families were organized into groups of five or ten households that watched one another; failure to report an offense could bring shared punishment. The government encouraged adult men to form separate households, making families easier to register and tax. Even family life entered the state's account books. Promoting agriculture did not simply give every farmer freedom. It aimed to produce the grain and labor the state needed.
 
-At last, a young farmer pushed through the crowd.
+So “Shang Yang made Qin more efficient” tells only half the truth. The fuller sentence is this: the institutions he promoted gave the government more power to reward, collect, and recruit—and more power to watch and punish.
 
-He lifted the log and carried it step by step through the whole capital, past all the staring faces and mocking eyes.
+## Why Was Qin's “Same Standards” Not Modern Rule of Law?
 
-When he reached the north gate, he set the log down.
+The *Records of the Grand Historian* says that when the crown prince broke a new rule, Shang Yang argued that the law could not lose credibility. Because the heir could not be punished directly, his teachers and attendants were punished instead. This tale is often reduced to “princes and commoners were equal before the law.” Yet the story itself shows that rank still mattered: the prince did not receive the punishment an ordinary person would have faced. The message was that aristocratic circles could no longer block every state command, not that everyone had equal rights in a modern court.
 
-Shang Yang gave him the reward in front of everyone.
+Written standards can be more predictable than nobles deciding everything at will, but “having laws” is not automatically “rule of law.” Modern rule of law also requires limits on government power, fair procedures, and ways for an accused person to answer a charge. Shang Yang's politics first aimed to strengthen the ruler's state and make officials and subjects follow common commands. Rules might be clear while punishments remained extremely harsh. The state inspected its people; the people did not have equal power to inspect the highest ruler.
 
-People told this story later to explain one thing:
+## Buried Bamboo Slips Show the System Entering Daily Life
 
-before new laws can work, people must believe the government will keep its word.
+Few government documents survive intact from Shang Yang's own time, but later Qin tombs and wells have yielded thousands of bamboo and wooden slips. The Shuihudi texts preserve statutes, investigation models, and administrative questions and answers. The Liye slips include everyday records about households, grain, couriers, and messages between offices. Most date after Shang Yang, so each rule cannot be called his personal reform. They do show that Qin later developed a dense government system built with writing.
 
----
+That machine did not run on Shang Yang alone. Scribes made copies, local officials collected forms, couriers traveled, storehouses checked numbers, and ordinary people entered household registers. Orders sent from the capital could still arrive late. Officials made mistakes, and life never fitted a statute perfectly. When we take the phrase “strong state” apart, we find no abstract giant. We find many people registering, carrying, farming, serving—and enduring punishment.
 
-## Qin: A State Other People Looked Down On
+## An Inn Refused Him—but “His Own Law Killed Him” Is Too Simple
 
-Before the log story, what was Qin like?
+In 338 BCE, Duke Xiao—Shang Yang's protector—died. A new ruler took the throne, and old political enemies accused the reformer of rebellion. The *Records of the Grand Historian* says Shang Yang fled toward the frontier and tried to stay at an inn. Not knowing his identity, the innkeeper explained that Lord Shang's law forbade accepting a guest without proper papers; the inn would be punished too. Shang Yang supposedly sighed at what his laws had become. The scene is almost perfectly ironic, which makes it powerful history-writing—but not a word-for-word memory from the fugitive.
 
-Before Shang Yang's big changes, Qin was not the strongest state. Other states to the east often saw Qin as far away, rough, and backward.
+Shang Yang then failed to escape into Wei, returned to his own territory, resisted Qin forces, and was killed. King Huiwen of Qin had his corpse torn apart and displayed, and his family was destroyed. It is misleading to say that Shang Yang was simply “sentenced to death by his own law.” Political revenge, an accusation of rebellion, and armed resistance all shaped his end. More important, the new ruler killed the reformer without discarding all the major institutions. A political machine can destroy someone who helped enlarge it and still keep running.
 
-Duke Xiao of Qin did not want this to continue.
+## Qin's Strength Was Not a Report Card with Only One Side
 
-He invited Shang Yang from the state of Wei and supported his big changes.
+Shang Yang's reforms helped Qin weaken hereditary privilege, reward military service, expand registration, and manage territory more directly. They also helped gather resources for long wars. Qin conquered all six rival states more than a century after his death, so unification was not one man's creation. Other reformers, rulers, officials, soldiers, farmers, geography, and the choices of Qin's rivals all mattered.
 
-Shang Yang did three major things.
-
-First, he changed the rules about land. The basic idea was to make land use, farming, and taxes fit real life better. Farmers had a more direct connection to the land they worked.
-
-When that happened, people had more reason to farm hard.
-
-Second, he rewarded military success.
-
-No matter what family you came from, if you did well on the battlefield, you could receive a higher place and rewards.
-
-This meant nobles no longer owned every path upward by birth.
-
-Ordinary people also had a reason to fight fiercely for a future.
-
-Third, he used a harsh rule that made neighbors responsible for one another.
-
-Individuals, families, and neighbors were tied closely together. If someone broke the law, others nearby could also be punished.
-
-This helped the government act fast.
-
-It also made life feel tight and frightening.
-
----
-
-## The Price of Big Changes: He Offended Everyone
-
-Shang Yang's changes made Qin's nobles hate him.
-
-Before, much of the land belonged to them. Now land could be connected more directly to working farmers.
-
-Before, high place belonged to them. Now it had to be earned through success in war.
-
-Every time Shang Yang gave rewards for what people did, it felt as if he was tearing a piece of fat from the nobles' mouths.
-
-He also offended the crown prince.
-
-When the prince's teachers broke the new law, Shang Yang punished them according to the law.
-
-Later people often used this story to show that under Shang Yang, even people close to the prince could not easily escape the rules.
-
-When Duke Xiao died, Shang Yang knew he was in danger.
-
-The crown prince became the new ruler, King Huiwen of Qin.
-
-One of his first orders was to arrest Shang Yang.
-
-Shang Yang fled from Xianyang to the border and tried to stay at an inn for the night.
-
-The innkeeper said, "Lord Shang's law says we cannot let someone stay without proper papers."
-
-Shang Yang gave a bitter smile.
-
-The law he had used to control others now blocked him from a place to sleep.
-
-Later he was captured and put to death in a cruel way. His family was punished too.
-
-A man who pushed law so hard finally died inside the hard government machine he helped build.
-
----
-
-## He Died, but His Laws Stayed
-
-Shang Yang died.
-
-But many of his rules did not disappear.
-
-The new rulers kept using them, and Qin grew stronger over the next decades.
-
-Later, Qin united all the states. Of course, that did not happen because of Shang Yang alone.
-
-But his changes became one very important layer at the bottom.
-
-Shang Yang truly changed a state, and he paid for it with his life.
-
-The log at the south gate disappeared long ago.
-
-But Qin bamboo slips, old law writings, and army reward records still let us see the hard bones left by those changes.
-
----
-
-## Summary
-
-Shang Yang is most famous for the log at the city gate.
-
-But his greatest power was this: he drove a whole new set of rules deep into Qin.
-
-He made the state stronger.
-
-He also made it colder and harder.
-
-Shang Yang did not live to see Qin unite the land.
-
-But later Qin still carried his marks: the cuts, the strength, and the sharp edge of his laws.
+The difficult historical task is not choosing between two labels—“great reformer” or “cruel villain.” It is seeing capacity and cost at the same time. Who gained a new opportunity? Who came under tighter control? Can a state's success cancel the suffering of individuals? A log can be carried from one gate to another. Judging a reform cannot be moved so easily from one extreme to the other.

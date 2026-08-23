@@ -1,194 +1,49 @@
-> Difficulty: Medium
+> Difficulty: Hard
 
-# Guqin: A Three-Thousand-Year-Old Elder in the Scholar's Study
+# How Can One String Make Three Kinds of Sound?
 
-## Not a Performance, But a Conversation
+## First, Meet the Guqin—not the Guzheng
 
-The *guqin* may be one of the quietest instruments in Chinese music.
+Imagine that a teacher lets you try a practice guqin—not an antique inside a museum case. First, you pluck a string without touching it with your left hand. The note sounds full and clear. Next, you press the string against the smooth board, pluck again, and slide your finger. The pitch moves with you. Finally, you barely touch the string near a small round stud. When you pluck, a light, bell-like sound flashes out. How can one string make three kinds of sound?
 
-It does not compete with anyone for volume.
-
-A guqin's strings were traditionally made of silk. The sound is soft and gentle. If you sit just a few meters away, the music already feels faint.
-
-Many times, the guqin was not meant for performing in front of a large crowd.
-
-It was more like playing for yourself.
-
-It was a way to speak what was inside the heart.
-
-In the study of a Chinese scholar, people often named four important arts: qin, chess, calligraphy, and painting. Qin came first.
-
-For many ancient scholars, the guqin was more than a skill. It was a way to train the self.
-
-You did not play it to show off.
-
-You sat down and let the noise inside your heart slowly leave through seven strings.
-
-When people long ago said "the guqin nourishes the heart," this is what they meant.
+First, do not call this instrument a guzheng. A common modern guzheng is larger, usually has twenty-one strings, and supports each string with a movable bridge. A guqin usually has seven strings and no row of bridges, so the left hand can slide freely along the surface. Thirteen small studs, called *hui*, help players locate harmonics. Both are Chinese plucked string instruments, but their structures, sounds, and musical traditions are different.
 
 ---
 
-## A Three-Thousand-Year-Old Elder
+## Open, Stopped, and Harmonic: Three Ways to Set a String Moving
 
-How long is the guqin's history?
+The first sound is *san*, an open-string note. The right hand plucks while the whole length of the string vibrates. The second is *an*, a stopped note. A left-hand finger presses the string to the board, changing the length that can vibrate. Sliding or rocking that finger can continue to change the pitch and color. The third is *fan*, a harmonic. The left hand touches a special point lightly instead of pressing down, then releases after the right hand plucks. The string vibrates in sections and produces a clear, floating tone. The thirteen *hui* are not piano keys or thirteen fixed notes. They are more like signposts for finding exact proportions along a string.
 
-At least several thousand years.
-
-In oracle bone writing, the character for music already shows strings stretched over wood. The early picture may already carry the shadow of a qin.
-
-The tomb of Marquis Yi of Zeng gave us bronze bells, but it also gave us a real ten-string qin from the early Warring States period.
-
-Even today, the guqin's basic form has not changed much:
-
-a long wooden body,
-seven strings,
-thirteen position markers.
-
-Thousands of years have passed, but it still looks close to its old self.
-
-Why did it not change much?
-
-Because it did not need to.
-
-The guqin's soul is not mainly in its outer shape.
-
-It is in the way it is played.
-
-The guqin has many finger methods. The right hand plucks in different ways. The left hand presses, slides, shakes, and bends the sound.
-
-Even the names of the techniques feel full of flavor.
-
-The same note can sound completely different. If the fingertip gently rocks on the string, the note lingers. If the finger presses and stops, the sound ends sharply.
-
-The most charming part of the guqin is often the tiny space between two notes:
-
-the sound that is almost gone,
-but not quite gone.
+Guqin notation also works a little like a map for the fingers. In the common system called *jianzipu*, or reduced-character notation, pieces of Chinese characters are shortened and combined into symbols. A symbol can tell the player which string to use, where the left hand goes, how the right hand plucks, and sometimes how to slide or ornament a sound. Traditional *jianzipu*, however, usually does not record every note length and speed as completely as a modern staff score. Players learn from teachers, compare old versions, and turn written finger instructions into sounding music through a process called *dapu*. That is why one old piece can have several different but carefully reasoned performances. It is not random; notation, teaching, and musical judgment work together.
 
 ---
 
-## Ji Kang: The Strange Man Who Forged Iron and Played Qin
+## “Very Old” Does Not Mean “Unchanged for 3,000 Years”
 
-During the Three Kingdoms period, there was a brilliant man named Ji Kang.
+Early books and archaeology show that instruments called *qin*, or related zithers, existed very long ago in China. Yet excavated early instruments have different numbers of strings and different structures. We should not treat every one as a small copy of today's guqin. Stories say that Fuxi or Shennong invented the qin, or that Kings Wen and Wu added strings. These are traditions that connect the instrument to legendary sage-kings, not confirmed invention records. From objects, images, and texts, researchers think the familiar unfretted form with seven strings and thirteen studs developed over a long time. It began to emerge around the end of the Han period, and seven strings were basically standard by the Tang.
 
-He was tall, handsome, and talented in poetry, calligraphy, music, and philosophy. He became the spiritual leader of the Seven Sages of the Bamboo Grove.
-
-But the most interesting contrast in Ji Kang was this:
-
-he did more than play qin and write poems.
-
-He also forged iron.
-
-Yes, forged iron.
-
-He took off his shirt under a big tree, worked the bellows, swung a hammer, and struck hot metal until sparks flew. His good friend Xiang Xiu helped pump the bellows. One hammered, the other blew air into the fire.
-
-Can you imagine it?
-
-The same fingers that could play *Guangling San* could also hold a hammer and beat red-hot iron into farm tools.
-
-Long ago in China, many people thought scholars should use the mind while laborers used the body. But one of the greatest scholars chose to do heavy physical work.
-
-He did not do it because he was poor.
-
-Ji Kang had enough money.
-
-He simply liked it.
-
-Once, a powerful man named Zhong Hui came to visit with many followers. Zhong Hui was important and close to Sima Zhao.
-
-Ji Kang was bare-chested under a tree, forging iron. He saw Zhong Hui arrive but did not look up. He kept hammering: ding, ding, ding. Xiang Xiu kept working the bellows beside him.
-
-They left Zhong Hui standing in the sun for a long time and said nothing.
-
-Zhong Hui's face turned cold. He turned to leave.
-
-Only then did Ji Kang speak:
-
-"What did you hear that made you come? What did you see that makes you leave?"
-
-Zhong Hui answered coldly:
-
-"I came hearing what I had heard. I leave seeing what I have seen."
-
-From then on, Zhong Hui hated him.
-
-Later, Zhong Hui spoke against Ji Kang to Sima Zhao. He said Ji Kang would not serve the ruler above or bow to nobles below. In other words: this man obeys no one.
-
-Sima Zhao began to see Ji Kang as dangerous.
-
-Ji Kang was too straight and proud, and Zhong Hui was not the only person he had offended. Sima Zhao found a charge against him and sentenced him to death.
-
-On the day of execution, more than 3,000 students came to the eastern market of Luoyang. They were some of the best young scholars in the country. They knelt and begged the court:
-
-Let Ji Kang be our teacher. Spare his life.
-
-The request was refused.
-
-Ji Kang did not panic. He looked up at the shadow of the sun and said, "There is still time."
-
-He asked for his beloved guqin. Then he sat at the execution ground, facing the students and the executioner's blade, and played *Guangling San*.
-
-When the final note ended, he said:
-
-"From today, *Guangling San* is gone."
-
-Then he calmly went to his death.
-
-This is not a novel. It is recorded in history.
-
-From then on, *Guangling San* became one of the most tragic names in the world of guqin.
-
-Luckily, it was not truly gone. Later guqin players pieced it back together from old scores. You can still hear it today.
+Nor does an old qin travel through time without change. Makers select wood, hollow out a sound chamber, join a top and bottom board, and build up a lacquered surface. String makers traditionally twisted many fine silk threads into strings of different thicknesses. Today, many players use brighter, more durable nylon-wrapped metal strings, while others still choose silk. To identify a “Tang qin,” museum specialists compare wood, shape, lacquer, crack patterns, inscriptions inside the instrument, and ownership history. An inscription on the back is not enough by itself. The Palace Museum's *Dasheng Yiyin*, for example, is identified as a Tang instrument, but two string-supporting parts were replaced and the qin received modern repairs. An old instrument can carry words and parts from more than one period. Those changes are part of its long life.
 
 ---
 
-## Bo Ya Broke His Qin for the Friend Who Understood
+## Who Played? Not Only Male Scholars in Studies
 
-Even earlier, in the Spring and Autumn period, there was another famous qin story.
+The guqin became closely tied to the identity of educated scholars. The ancient *Book of Rites* says that a *shi*—a person of learning and social standing—should not set aside the qin and se without reason. This describes an ideal: a cultivated person ought to keep music close. Later, the guqin joined calligraphy, painting, and a strategy game as arts a scholar was expected to study. But “should know” does not mean every scholar really played, and it certainly does not mean everyone in ancient China practiced in a private study each day. The qin also appeared in rituals, friendly gatherings, songs, and public performance. Its uses changed across periods.
 
-A qin player named Bo Ya was playing outdoors. A woodcutter named Zhong Ziqi passed by, put down his bundle of firewood, and listened.
-
-Bo Ya played a passage about high mountains.
-
-Zhong Ziqi said, "So grand, like Mount Tai!"
-
-Bo Ya played another passage about flowing water.
-
-Zhong Ziqi said, "So wide and rushing, like a great river!"
-
-Bo Ya was amazed.
-
-A woodcutter from the countryside had understood every meaning inside his music.
-
-The two became deep friends.
-
-After Zhong Ziqi died, Bo Ya went to his grave. He lifted his favorite qin and smashed it against a stone.
-
-From then on, he never played again.
-
-People asked why.
-
-He said, "The only person in the world who understood me is gone. Who would I play for now?"
-
-The Chinese word *zhiyin*, meaning a true friend who understands your heart, comes from the story of Bo Ya and Zhong Ziqi.
-
-When you say, "You are my *zhiyin*," you are borrowing a qin story from more than 2,000 years ago.
+If every picture shows one man playing alone, we miss many participants. Historical records include women guqin players, Buddhist monks known for playing, and professional musicians. Instrument makers, repairers, and string makers were essential partners, too. Today, children and adults, women and men, concert artists and hobbyists all learn. The guqin can be heard in concert halls, schools, and recording studios, sometimes together with other instruments. UNESCO proclaimed guqin music a Masterpiece of the Oral and Intangible Heritage of Humanity in 2003 and placed it on the Representative List in 2008. Listing it does not mean locking it in the past. It means supporting teaching, making, performing, and continued learning.
 
 ---
 
-## Summary
+## Did Boya Play the “Flowing Water” We Hear Today?
 
-The guqin has seven strings and one wooden body. Its shape has stayed close to the same for thousands of years.
+The story of Boya and Ziqi tests how carefully we listen to the past. Ancient books handed down in later copies, including the *Liezi* and *Lüshi Chunqiu*, say that Boya played with mountains or flowing water in mind, and Ziqi understood his meaning. The *Lüshi Chunqiu* version also says that after Ziqi died, Boya broke his instrument's strings and stopped playing. Plays, stories, and local traditions later added such details as a woodcutter, a meeting beside a river, and a smashed qin. The tradition gave Chinese the word *zhiyin* for a person who truly understands you. But the clothes, place, and expressions in a modern illustration are not a historical photograph.
 
-It was never mainly an instrument for showing off to an audience. It was a conversation between one person and the self.
+“Thinking of mountains and flowing water” does not mean Boya performed the exact score heard in a recording today. Early surviving notation for the separate pieces *High Mountains* and *Flowing Water* appears in the Ming-dynasty *Shenqi Mipu*, already far removed from the time in which the story is set. A version of *Flowing Water* often played today comes through the nineteenth-century master Zhang Kongshan. Guqin pieces kept growing as players copied, taught, interpreted, and reconstructed scores. The textual tradition about Boya's understanding friend and the performance history of *High Mountains* and *Flowing Water* are connected—but they are not the same evidence.
 
-Ji Kang played *Guangling San* before his death. Bo Ya broke his qin for the friend who truly understood him.
+---
 
-These stories are not decorations added to the guqin.
+## Hear One String—and Many Hands
 
-They are part of what the guqin is.
+Pluck a practice string once more: an open note lets its full length speak, a stopped note lets the finger reshape it, and a harmonic divides its vibration. Just do not test this on an antique in a museum. Protecting an object is one way to keep its music available for study.
 
-A good qin does more than play melody.
-
-It plays character.
+The guqin may sound as if it comes from seven strings, but many hands are behind it: instrument and string makers, teachers and students, old notation and new interpretation, scholars, women, monks, professional musicians, and learners today. Being truly old does not mean never changing. It means that after change, people still listen carefully, learn seriously, and ask honestly where the evidence comes from.

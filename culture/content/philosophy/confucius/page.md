@@ -1,112 +1,143 @@
 ---
-title_zh: 孔子说：己所不欲，勿施于人
-title_en: Confucius Says: Do Not Do to Others What You Would Not Want
+title_zh: 孔子的一句话：先把自己放到别人心里
+title_en: Confucius’s Big Question: How Would It Feel to Be Them?
 slug: confucius
 category: philosophy
-difficulty: 中等
+difficulty: 困难
 style_notes: "用 --- 分隔 frontmatter；正文强调优先用 *斜体*；尽量不用 **粗体**。"
 ---
 
 [hero]
-title_zh: 孔子说：己所不欲，勿施于人
-title_en: Confucius Says: Do Not Do to Others What You Would Not Want
+title_zh: 孔子的一句话：先把自己放到别人心里
+title_en: Confucius’s Big Question: How Would It Feel to Be Them?
 [/hero]
 
 [section]
 page: 1
 layout: two-column
-heading_zh: 一个老师和他的三千个学生
-heading_en: One Teacher and 3,000 Students
+heading_zh: 一个动荡时代里的老师
+heading_en: A Teacher in a Troubled Time
 image: 2-1-confucius-teaching.webp
-caption_zh: 孔子常被记住的样子 - 坐在学生中间讲怎么做人
-caption_en: Confucius is remembered as a teacher who helped students learn how to live.
+caption_zh: 后人常把孔子想象成一位和学生一起读书、讨论的老师
+caption_en: Later generations remembered Confucius as a teacher who learned and talked with his students.
 [zh]
-两千五百年前，一个叫孔子的人做了一件很特别的事 - 他收学生讲学。不是今天这种有操场和校门的学校，更像是一群人跟着老师学怎么做人、怎么读书、怎么处事。
+两千五百多年前，孔子出生在鲁国——那是当时许多小国中的一个，位置在今天[[山东]]的曲阜一带。那时的中国还没有统一，许多小国彼此来往、争夺，也常常打仗。大人们讨论的是怎样让国家变强；孔子却总在追问另一个问题：*人怎样才能把日子过好，也和别人相处得好？*
 
-他不太关心怎么造房子、怎么打仗，更关心人怎么对父母好，怎么对朋友好，怎么把自己站稳。他常讲的一个字叫"仁"，大意和关心别人、体谅别人很有关系。后人常说他有三千弟子，其中有名有姓的七十二人。孔子和学生们的对话，后来被整理进了《论语》。
+他读诗、学礼、研究古书，也带着学生一路学习、讨论。那并不是一所今天这样的学校：没有铃声，没有整齐的课桌。学生跟着老师读书、提问，有时还会认真争论。
+
+孔子关心的并不只是“知道多少”。他更在意一个人会不会认真学习，会不会答应了事就做到，会不会在自己生气或得意的时候，仍然想到别人。
+
+他常说的一个重要字是 *仁*。这个字很难用一个英文词完全说清，可以把它先理解成：心里装着别人，愿意用善意和责任去对待人。孔子觉得，这不是背会一句漂亮话就行，而是一辈子慢慢练出来的本领。
 [/zh]
 [en]
-More than 2,500 years ago, a man named Confucius did something special. He gathered students and taught them.
+More than 2,500 years ago, Confucius was born in Lu, one of the many small states that existed before China became one united country. Lu was near today’s city of Qufu in [[Shandong]]. The rulers of these states made plans, formed alliances, and sometimes fought wars.
 
-This was not a school with a playground and a front gate like schools today. It was more like a group of people following one teacher. They learned how to be a good person, how to read, and how to handle life.
+While grown-ups argued about how to make a state powerful, Confucius kept returning to a different question: *How can people live well and get along well with one another?*
 
-Confucius was not mainly interested in how to build houses or fight wars. He cared more about how people treat their parents, how they treat friends, and how they become steady inside.
+He studied poems, old books, music, and rules for important ceremonies. He also taught students. This was not a school with a bell and rows of desks. Students learned by reading, asking questions, and sometimes disagreeing with their teacher.
 
-One word he often talked about was *ren*. It is about caring for other people and trying to understand them.
+Confucius cared about more than how much a person knew. He cared whether someone kept a promise, learned carefully, and remembered other people even when feeling angry, excited, or proud.
 
-Later people said Confucius had 3,000 students, and 72 of them became especially famous. The conversations between Confucius and his students were later collected into a book called *The Analects*.
+One of his important ideas was *ren* (say “run”). No single English word captures it perfectly. You can begin by thinking of it as a caring, responsible way of treating other people. Confucius believed it took a lifetime of practice.
 [/en]
 [/section]
 
 [section]
 page: 2
 layout: two-column reverse
-heading_zh: 八個字，全世界都认得
-heading_en: Eight Chinese Characters Known Around the World
+heading_zh: “有没有一句话能用一辈子？”
+heading_en: “Is There One Idea I Can Use for My Whole Life?”
 image: 2-2-returning-toy.webp
-caption_zh: 你不喜欢的事，就不要对别人做
-caption_en: If you would not like it, do not do it to someone else.
+caption_zh: 换位想一想：你不希望别人这样对你，就别这样对别人
+caption_en: Try switching places in your mind: if you would not like it, do not do it to someone else.
 [zh]
-孔子说过很多话。其中有一句特别有名。这句话只有八个字：
+《论语》里记着这样一段问答。这本书收集了许多和孔子、学生有关的谈话与问答。其中一位学生叫子贡。他问孔子：“有没有一个字，或者一句话，可以让我用一辈子去做？”孔子回答：“*其恕乎！己所不欲，勿施于人。*”
 
-拆开来看 - "己"是你自己。"所不欲"是你不想要的东西、你不喜欢的事情。"勿"是不要。"施于人"是放到别人身上。合起来 - 你自己不喜欢的事情，不要对别人做。
+这里的“恕”，不是简单地说“算了吧”。它更像一种换位思考的能力：先从自己身上想一想，再去想别人会不会也有同样的感受。
 
-你被别人抢过玩具吗？你被抢的时候很不开心。那下次你就知道了 - 我也不应该抢别人的玩具。排队的时候有人插到你前面，你生气吗？你生气了。那你自己以后排队，就不要插队。
+“己所不欲，勿施于人”可以这样读：你自己不希望别人这样对你，就不要把同样的事加在别人身上。
 
-在你想做一件事之前，先把自己当成别人，试一下。你自己受不了的事情，就不要对别人做。这就是孔子的全部意思。
+比如，大家正在搭积木。你辛辛苦苦搭了一座小城堡，别人突然一把推倒，你会怎样？也许会又生气又难过。下一次，当你看见别人的作品时，这种记忆就提醒你：我不能因为好玩，就去毁掉它。
+
+又比如，朋友讲了一件不想让大家知道的事。你当然也不喜欢自己的秘密被人到处说。那就先停一停，不把它当成好笑的新闻传出去。
 [/zh]
 [en]
-Confucius said many things. One line is especially famous. In Chinese, it has only eight characters:
+*The Analects* collects many sayings and conversations connected with Confucius and his students. In one of them, a student named Zigong asked a huge question: “Is there one word, or one idea, that I can use all my life?” Confucius answered: *“What you do not want done to yourself, do not do to others.”*
 
-Let's break it apart. *Ji* means yourself. *Suo bu yu* means what you do not want or do not like. *Wu* means do not. *Shi yu ren* means put it onto another person.
+The key Chinese word here is *shu*. It is about making an effort to imagine another person’s feelings. Start with your own experience, then use it to understand someone else.
 
-Put it together, and it means: do not do to other people what you would not want done to you.
+Imagine that you spent a long time building a block castle. Someone comes by and knocks it down just for fun. You might feel angry and sad. The next time you see someone else’s creation, that memory can remind you not to wreck it.
 
-Has someone ever grabbed your toy? You did not like it, right? Then next time you know: I should not grab someone else's toy either.
-
-Has someone ever cut in front of you in line? That feels unfair. So when you stand in line later, do not cut in front of other people.
-
-Before you do something, try putting yourself in the other person's place. If you would hate it, do not do it to someone else. That is the heart of Confucius's idea.
+Or perhaps a friend tells you something private. You would not want your own secret turned into playground news. So you pause before passing it along.
 [/en]
 [/section]
 
 [section]
 page: 3
-layout: two-column
-heading_zh: 这本《论语》有多重要
-heading_en: Why The Analects Mattered So Much
-image: 2-3-analects-bamboo-slips.webp
-caption_zh: 孔子和学生的谈话被整理成《论语》
-caption_en: The Analects collected conversations that people have read for more than 2,000 years.
+layout: text-only
+heading_zh: 简单的话，难练的功课
+heading_en: Easy to Say, Hard to Practice
 [zh]
-孔子去世以后，学生们把他几十年的谈话收集起来编成了《论语》。两千年来，中国的读书人从小就要背《论语》。学写字用《论语》里的句子当字帖，学道理用《论语》里的故事当教材，考科举的试卷题目很多都从《论语》里出。不认字的农民也能说几句《论语》里的话 - 因为一代一代传下来，早就变成了日常生活里的常用语。
+孔子的意思并不只是“别做坏事”。它还要求人多走一步：当你想说一句尖刻的话、抢一个机会、把麻烦推给别人时，先问自己：*如果我是对方，我会觉得公平吗？*
 
-《论语》对中国传统教育和思想的影响非常深。在家里教孩子、在书院里读书、在官场上谈修身治国，常常都能听见它的回声。它当然不是唯一重要的书，但一定是最有影响力的经典之一。
+这句话听起来很简单，可真的做到并不容易。人着急时，只看得见自己的作业；人委屈时，只觉得自己最委屈；人赢了游戏时，也许根本没有注意到旁边输了的人。
+
+所以，孔子讲“恕”并不是要大家永远同意别人，更不是说不可以有规则。有人插队、欺负同学，当然应该制止，也可以请老师帮忙。关键是，解决问题时别用同样不公平的办法回敬对方。
+
+你可以说：“我也在等，请你排到后面。”这既是在保护自己，也是在尊重别人。这样做有时比大声吵回去更需要勇气。孔子还很看重学习和反省：今天做得不好，可以想一想；明天再试一次。像练写字、练投篮一样，学着体谅别人，也要一次一次地练。
 [/zh]
 [en]
-After Confucius died, his students collected many of his conversations and made them into *The Analects*.
+Confucius was not only saying, “Don’t be mean.” He was asking people to take one extra step. Before saying something sharp, grabbing the best chance, or pushing a problem onto someone else, ask: *If I were them, would this feel fair?*
 
-For more than 2,000 years, many Chinese students learned parts of this book when they were young. People used lines from *The Analects* to practice calligraphy. They used its stories to learn how to behave. Many civil service exam questions also came from it.
+That sounds simple. Doing it is harder. When we are rushing, we mostly see our own homework. When we are upset, our own hurt can feel biggest. When we win a game, we may not even notice the person who lost.
 
-Even farmers who could not read might know a few lines, because the words were passed down again and again until they became part of everyday speech.
+That is why *shu* is not the same as agreeing with everyone or having no rules. If someone cuts in line or picks on another child, it is right to stop them and ask an adult for help. The point is not to answer unfairness with more unfairness.
 
-*The Analects* deeply shaped how many Chinese students learned and thought. People could hear its echo at home, in schools, and in the way officials talked about improving themselves and governing well.
+You might say, “I’ve been waiting too. Please go to the back of the line.” You are standing up for yourself while still respecting the other person. Sometimes that takes more courage than shouting back. Confucius also cared about looking back at your choices: if you handled something badly today, learn from it and try again tomorrow.
+[/en]
+[/section]
 
-It was not the only important book in China. But it was certainly one of the most influential.
+[section]
+page: 4
+layout: two-column
+heading_zh: 《论语》从哪里来？
+heading_en: Where Did *The Analects* Come From?
+image: 2-3-analects-bamboo-slips.webp
+caption_zh: 《论语》收集了孔子和弟子相关的许多谈话与问题
+caption_en: *The Analects* gathered many conversations and questions connected with Confucius and his students.
+[zh]
+孔子没有亲手写下一本叫《论语》的书。孔子去世以后，与他有关的谈话、问答和故事在不同人之间流传。后来，追随孔子思想的人把其中许多材料整理成了《论语》。它不是一本按日期写好的传记，更像一间能听见许多声音的小屋：有老师的回答，也有学生的问题，还有后人不断思考这些回答的痕迹。
+
+后来的传统说孔子有“三千弟子”，其中“七十二贤人”特别出名。这些数目流传很广，但离孔子生活的年代已经很久，今天的历史学家不能把它们当成精确的班级名单。
+
+我们能够确定的是：孔子后来被人们看作中国历史上最重要的老师之一，而《论语》也成了影响很深的一部经典。许多世纪里，读书人读它，老师讲它，家庭里的大人也会用里面的话提醒孩子。它影响过教育、家庭关系和人们对“好老师、好学生、好官员”的想象。不过，中国历史上还有许多别的思想家和书；《论语》很重要，却不是唯一的声音。
+[/zh]
+[en]
+Confucius did not sit down and write a book called *The Analects*. After his death, conversations, questions, and stories connected with him were passed from person to person. Over time, people who followed his ideas gathered many of them into *The Analects*.
+
+It is not a biography written day by day. It is more like a room full of voices: a teacher answering, students asking, and later readers thinking hard about what those answers meant.
+
+Tradition says that Confucius taught 3,000 students and that 72 were especially famous. Those numbers have been repeated for a very long time, but they are not a precise class list that historians can check today.
+
+What we do know is that later generations remembered Confucius as one of China’s most important teachers, and *The Analects* became a deeply influential classic. For centuries, students read it, teachers explained it, and families repeated its sayings. It was not the only important book or the only voice in Chinese thought—but it was one of the most lasting.
 [/en]
 [/section]
 
 [ending]
-heading_zh: 小结
-heading_en: In Summary
+heading_zh: 一句话，今天还用得上吗？
+heading_en: Can One Old Sentence Still Help Us?
 [zh]
-一个讲怎么做人的老师，后来被记成了中国最重要的老师之一。他那句"己所不欲，勿施于人"，过了两千多年，很多人还是觉得说得通。你不想被粗暴对待，就别先去粗暴对待别人。这样的话听起来简单，可越长大越会发现，它并不容易，也正因为这样才一直有人反复去讲。
+孔子的这句话没有告诉我们每一道难题的答案。比如，两位朋友都想玩同一个玩具，该怎么办？光说“我不喜欢被拒绝”，还不够；你们还得学着轮流、商量，或者一起想出新玩法。
+
+但它给了我们一个很好的起点：不要只站在自己的位置上看事情。先把自己放到别人的心里，再决定下一步怎么做。
+
+两千多年过去了，教室变了，玩具变了，孩子会遇到的新问题也变了。可每当有人愿意停下来想：“如果我是他，会有什么感觉？”孔子那句短短的话，就又在今天活了一次。
 [/zh]
 [en]
-Confucius was a teacher who talked about how to be a good person. Later, people remembered him as one of the most important teachers in Chinese history.
+Confucius’s line does not solve every problem by itself. If two friends both want the same toy, saying “I don’t like being told no” is only the beginning. They still need to take turns, make a plan, or invent a new game together.
 
-More than 2,000 years later, many people still understand his line: do not do to others what you would not want done to you. If you do not want people to treat you roughly, do not treat others roughly first.
+But the line gives us a strong place to start: do not look at a problem only from where you are standing. Try stepping into the other person’s shoes before you decide what to do next.
 
-That sounds simple. But the older you get, the more you notice that it is not always easy. Maybe that is why people keep saying it again and again.
+More than two thousand years have passed. Schools have changed. Toys have changed. Children have brand-new problems to solve. But whenever someone stops and wonders, “How would I feel if that happened to me?” Confucius’s short sentence comes alive again.
 [/en]
 [/ending]

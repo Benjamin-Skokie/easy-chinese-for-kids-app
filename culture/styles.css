@@ -447,6 +447,34 @@ a { text-decoration: none; color: inherit; }
 
 .topic.done a { display: flex; flex-direction: column; gap: 4px; }
 
+.culture-difficulty {
+  align-self: flex-start;
+  display: inline-flex;
+  gap: 5px;
+  margin-bottom: 3px;
+  padding: 3px 8px;
+  border: 1px solid color-mix(in srgb, var(--cat-accent, var(--gold)) 24%, transparent);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--cat-accent, var(--gold)) 8%, white);
+  color: var(--cat-accent, var(--gold));
+  font-size: 0.7rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.culture-difficulty .zh,
+.culture-difficulty .en {
+  color: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+}
+
+.culture-difficulty .en::before {
+  content: "·";
+  margin-right: 5px;
+}
+
 .topic.done:hover {
   background: #fef0d9;
   transform: translateY(-2px);

@@ -1,81 +1,49 @@
-> Difficulty: Medium
+> Difficulty: Hard
 
-# Dunhuang: A Thousand-Year Gallery in the Desert
+# Is a Wall a Photograph from 1,000 Years Ago?
 
-## A Forgotten Treasure House
+## Caves in a Cliff, Made Across Many Centuries
 
-In the Gobi Desert of northwestern China, there is a place called Dunhuang.
+Suppose an old wall shows musicians, carts, and people at work. Can we treat it like a photograph taken 1,000 years ago? At the Mogao Caves near Dunhuang in northwestern China, the painted figures can look ready to move. Yet a mural is not a moment caught by a camera. Someone paid for it, someone planned it, and teams made it layer by layer. One wall could hold religious stories, an imagined perfect world, and details from everyday life all at once.
 
-There is sand, and more sand. When the wind rises, you can hardly see anything.
-
-But in this lonely place stands a cliff full of handmade wonders:
-
-the Mogao Caves.
-
-The Mogao Caves are not natural caves. People carved them by hand into the cliff.
-
-Starting in the 4th century, people dug caves, made statues, and painted walls here. The work continued off and on for about a thousand years.
-
-There are 492 caves, more than 2,000 painted sculptures, and about 45,000 square meters of murals.
-
-If you spread those murals flat like a road, they could cover about six soccer fields.
+An inscription made in 698 says that a monk named Lezun opened the first cave in 366. That account matters, but it is not an eyewitness record from 366. The inscription was made more than 300 years later, and other later texts give different starting dates. It is safer to say that, according to later tradition, cave making began here in the fourth century. The surviving art stretches across many periods, from the era of the Sixteen Kingdoms through the Northern Dynasties, Sui, Tang, Five Dynasties, Song, Western Xia, and Yuan. People worked at Mogao for about a thousand years. One Tang cave cannot stand for all of them.
 
 ---
 
-## A Daoist Priest Opened the Treasure Room
+## Who Turned a Gravel Cliff into a Gallery?
 
-In 1900, a Daoist priest named Wang Yuanlu was clearing sand when he accidentally knocked open a wall.
+Many caves were sponsored by donors. They might be local officials, powerful families, merchants, or other believers. Monks organized worship and teaching. Other people planned rooms, cut into the cliff, built wooden supports, prepared materials, painted walls, or shaped sculptures. Emperors and powerful patrons sometimes appear in the records, but every layer of plaster and every painted line also preserves the work of craftspeople whose names were never written down.
 
-Behind it was a sealed room.
-
-Inside were ancient scrolls, documents, embroidery, and paintings. They had been hidden for nearly a thousand years.
-
-People later saw this as one of the most surprising old discoveries in the world:
-
-the Dunhuang Library Cave.
-
-Sadly, the Qing government at the time was weak and did not guard the treasures well.
-
-Within a few years, people from Britain, France, Japan, Russia, and other places came one after another. They bought many scrolls and paintings from Priest Wang for very low prices.
-
-Wang was not a bad person. He was poor, and he did not fully understand what he was holding.
-
-Today, Dunhuang treasures are scattered in museums across many countries. The British Museum and the National Library of France hold large numbers of them.
-
-For many Chinese people, this is a painful part of the story: so many old Chinese treasures left China.
-
-At the same time, people around the world began studying Dunhuang. Researchers in many countries now read the scrolls and look closely at the paintings.
+Mogao's gravelly rock is too crumbly for carving detailed stone statues. For many figures, sculptors tied branches into a frame, wrapped it with reeds or grass, added layers of clay, and then painted the surface. A mural was not simply brushed onto bare rock, either. Studies of particular caves have found straw in coarse mud plaster, hemp in a finer layer, and pigments such as cinnabar, azurite, malachite, or lapis lazuli bound to the surface. Some areas were gilded. Methods varied across caves and centuries, but the materials reveal one important fact: Mogao was not just the creation of a few famous artists. It was also a giant worksite and workshop carried on by generations.
 
 ---
 
-## Feitian: The Most Beautiful Figures of Dunhuang
+## The Walls Hold Evidence—and Storytelling Imagination
 
-The most famous figures in Dunhuang murals are called *feitian*, or flying heavenly beings.
+Murals do offer evidence. Tools, clothes, instruments, and donor portraits can be compared with written documents, excavated objects, and art at other sites. But painters were not news photographers. In the Northern Wei painting known as *The Deer King Jataka* in Cave 257, a nine-colored deer saves a person and is later betrayed. The wall works like a picture story, but its scenes begin at both ends and meet in the middle. It shows how artists told a Buddhist teaching story. It does not prove that a nine-colored deer once lived in the desert.
 
-The idea first came from Indian stories and Buddhist art. But by the time these figures appeared in Dunhuang, they had become deeply Chinese in style.
-
-They wear flowing skirts and long ribbons. They have no wings, but they fly through the air.
-
-They do not need feathers.
-
-Their ribbons seem to lift them.
-
-The style changed over time. In the Northern Wei period, the figures could look strong and simple. By the Tang dynasty, they became fuller, livelier, and more graceful. Many of the most beautiful flying figures are from the Tang.
-
-Dunhuang murals show much more than *feitian*. They show Buddhist stories, pictures of the people who paid for caves to be made, and many scenes of daily life: farming, making wine, weddings, travel, punishment, music, and dance.
-
-If you want to see what ancient Chinese life looked like, few places are better than walking through Dunhuang's murals.
+The flying beings called *feitian* need the same care. They are not “Chinese angels,” and they do not all have wings. Images of heavenly beings and musicians traveled with Buddhist art from India through Central Asia. At Dunhuang, artists combined them with local ideas about immortals, clothing, ribbons, and movement. Their bodies, costumes, and poses changed from the early caves through the Sui and Tang periods. A famous Middle Tang mural shows a dancer holding a pipa behind the back. People today can try similar positions, but a painted dance in a Buddhist paradise is not a video. By itself, it cannot prove every step of the movement or let us hear what the performance sounded like.
 
 ---
 
-## Summary
+## The Library Cave Held Much More Than Sutras
 
-The Mogao Caves of Dunhuang were painted in the desert for about a thousand years.
+In 1900, the Daoist priest Wang Yuanlu was caring for and repairing the Mogao site when he found a sealed entrance off the corridor of Cave 16. The tiny room behind it is now Cave 17. It was packed with tens of thousands of handwritten documents, printed pages, paintings, and textiles. It is called the Library Cave, but it did not contain only Buddhist sutras. There were temple accounts, contracts, shopping lists, calendars, travel records, and writings from several religions, in many languages and scripts. The room is like a sealed archive that lets merchants, copyists, and ordinary residents speak alongside monks.
 
-More than 400 caves and 45,000 square meters of murals show ideas from China, India, Persia, and other places meeting in one desert town.
+Wang reported the discovery to local officials and carried some manuscripts away to ask for help, but the collection did not receive strong protection. In 1907, Aurel Stein arrived on an expedition funded by the British Indian government and the British Museum. For a small payment, he obtained large groups of manuscripts, paintings, and textiles. In 1908, the French explorer Paul Pelliot obtained thousands more. Other objects later went to collections in Japan, Russia, and elsewhere. It is too simple to say, “Wang found treasure, and foreigners bought it.” Wang discovered and guarded the cave, but he also took part in the sales. Official neglect, weak local resources, and well-funded foreign expeditions together led to a massive dispersal. Today, the objects can be studied in collections around the world, but their journey leaves a hard question: who gets to decide when cultural heritage should leave its home?
 
-These paintings are still alive, but they are also growing old. Their colors slowly darken. Some images fade bit by bit.
+---
 
-Scientists and art protectors keep working to save them.
+## What Can a Digital Image Save?
 
-That is why we can still see this thousand-year gallery in the desert, fading but not yet silent.
+Mogao's walls are still changing. Some mineral pigments are fairly stable, while others can darken or fade because of light, moisture, and chemical reactions. Painted surfaces may lift, crumble, or flake away. Even the moisture and carbon dioxide in visitors' breath can briefly change the environment of a small cave. Conservators therefore monitor temperature, humidity, carbon dioxide, and visitor numbers. They may close or limit access when needed. High-resolution photography and 3-D scanning also let more people study the caves without crowding into the originals.
+
+Digital records are extremely valuable, but they cannot stop clay from aging or replace the space, materials, and history of a real cave. Conservation is not a one-time repair that makes an object last forever. It is continuing work: watch closely, study carefully, and make the smallest suitable treatment. So, is a mural a photograph from 1,000 years ago? No. It is more like a complicated witness. It carries traces of the past, but it also carries an artist's way of telling stories, changes in its materials, and choices made by later people. To begin reading that witness, ask: When was this image made, for whom, and from what? Which parts are evidence, and which are imagination?
+
+---
+
+## Look at the Wall—and Question It
+
+Dunhuang shows us much more than beautiful flying figures. It brings together unnamed craftspeople, changes across many periods, objects that were sealed and later scattered, and conservation work that continues today.
+
+A wall does not tell the truth all by itself. But when we compare its images with materials, documents, and historical records, it can tell us much more than “the ancient world was beautiful.”

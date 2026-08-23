@@ -1,6 +1,6 @@
 ---
-title_zh: 长城：守护家园的石头巨龙
-title_en: The Great Wall: The Stone Dragon That Guarded Home
+title_zh: 长城不是一堵墙：读懂两千年的边疆
+title_en: The Great Wall Is Not One Wall: Reading Two Thousand Years of Frontier History
 slug: great-wall
 category: military
 difficulty: 中等
@@ -8,133 +8,151 @@ style_notes: "用 --- 分隔 frontmatter；正文强调优先用 *斜体*；尽�
 ---
 
 [hero]
-title_zh: 长城：守护家园的石头巨龙
-title_en: The Great Wall: The Stone Dragon That Guarded Home
+title_zh: 长城不是一堵墙：读懂两千年的边疆
+title_en: The Great Wall Is Not One Wall: Reading Two Thousand Years of Frontier History
 [/hero]
 
 [section]
 page: 1
 layout: text-wrap-image
-heading_zh: 世界上最长的人造建筑之一
-heading_en: One of the Longest Things People Ever Built
+heading_zh: 哪一个才是长城？
+heading_en: Which One Is the Great Wall?
 image: 1-1-stone-dragon-ridge.webp
-caption_zh: 长城像一条石头巨龙，盘在群山的山脊上
-caption_en: The Great Wall looks like a stone dragon winding over the mountains.
+caption_zh: 现代想象图：北京山地常见的明长城风貌。砖墙与敌楼并不代表所有时代、所有地区的长城。
+caption_en: A modern imagined Ming-style Wall near Beijing; brick walls and towers do not represent every place or period.
 [zh]
-长城是世界上最著名的人造建筑之一。
+一位游客站在北京附近的山脊上，眼前是高大的砖墙、垛口和一座座敌楼。这个画面太有名了，以至于很多人以为长城从东到西都是这个样子。可是，在甘肃的戈壁里，一道被风吹残的土墙也可能是长城；有些地方甚至只剩壕沟、烽燧或关堡。
 
-长城有多长？如果把各个朝代修的长城连在一起，总长度超过两万公里 - 比地球周长的三分之一还多。从东边的山海关，一直到西边的嘉峪关，横跨整个中国北部。
+所以，“长城”不是一条从头到尾连续的墙，也不是一个朝代一次修完的建筑。它是许多政权在不同年代修建、使用、废弃又改造的边疆防御系统。2012年的官方调查把历代认定的墙体、壕堑等线性遗存合计为21,196.18千米，同时还登记了烽燧、关堡等相关设施。这个数字并不表示有人能沿着一条完整城墙走完这么远。
 
-有人说长城是"石头巨龙"。从远处看，它确实像一条大龙，盘在山脊上，时高时低，时隐时现。修这条"龙"用了多少时间？不是十年，不是一百年，而是整整两千多年。
+还有一个著名说法也不是真的：肉眼不能从月球看见长城。即使在较低的地球轨道上，它也通常很难用肉眼分辨，因为墙体很窄，颜色又接近周围地面。长城的伟大不需要靠太空传说证明。
 [/zh]
 [en]
-The Great Wall is one of the most famous human-made structures in the world.
+A visitor stands on a mountain ridge near Beijing. Ahead are tall brick walls, battlements, and watchtowers. The view is so famous that many people imagine the entire Great Wall looking this way. But a wind-worn ridge of earth in the Gansu desert can also be part of the Great Wall. In other places, only a ditch, beacon mound, fortress, or pass remains.
 
-How long is it? If you connect the wall sections built in different dynasties, the total length is more than 20,000 kilometers. That is more than one third of the way around Earth. From Shanhaiguan in the east to Jiayuguan in the west, it crosses northern China.
+“The Great Wall” is not one unbroken wall, and one dynasty did not build it all at once. It is a large family of frontier systems that different governments built, used, abandoned, and changed. In 2012, an official survey gave a combined length of 13,170 miles (21,196.18 kilometers) for recognized walls, trenches, and other linear remains from many periods. It also recorded beacon stations, passes, forts, and related structures as parts of Great Wall heritage. The number does not mean that anyone can walk that far along one complete wall.
 
-Some people call the Great Wall a "stone dragon." From far away, it really can look like a giant dragon lying across the mountain ridges. Sometimes it climbs high. Sometimes it drops low. Sometimes it disappears behind a hill, then appears again.
-
-How long did it take to build this "dragon"? Not 10 years. Not 100 years. More than 2,000 years.
+One famous claim is also false: people cannot see the Great Wall with their bare eyes from the Moon. It is usually difficult to spot even from low Earth orbit because it is narrow and close in color to the land around it. The Wall does not need a space myth to be extraordinary.
 [/en]
 [/section]
 
 [section]
 page: 2
 layout: text-wrap-image
-heading_zh: 为什么要修长城？
-heading_en: Why Did People Build the Great Wall?
+heading_zh: 第一层：战国的墙与秦的北方防线
+heading_en: First Layer: Warring States Walls and the Qin Northern Line
 image: 1-2-building-frontier-wall.webp
-caption_zh: 各国的短墙后来被一段一段连起来，变成更长的防线
-caption_en: Short frontier walls were joined bit by bit into a much longer line.
+caption_zh: 现代想象图：这幅砖石施工图更像后世长城，不能当作秦代修墙现场的复原。
+caption_en: A modern imagined masonry work site that looks later than the Qin; it is not a reconstruction of Qin construction.
 [zh]
-很久以前，中国北方的草原上，住着很多游牧民族。他们骑马的功夫非常厉害，来去如风。有时候他们会骑马南下，抢走农民的粮食和牛羊。
+两千三百多年前，中国还没有统一。战国时期的楚、齐、魏、赵、燕、秦等国修建过各自的墙。这些墙方向不同，彼此并不相连；有的防备北方骑马人群，有的却是为了防邻近诸侯国。最早的长城不是一道清楚的“农民对游牧人”分界线，而是许多国家争夺土地、道路和安全的结果。
 
-农耕的人打不过骑兵。怎么办？修一堵墙，挡在他们前面。
+公元前221年，秦始皇统一六国。他下令拆除一些失去作用的内地城墙，又利用、修整和连接秦、赵、燕北部的部分旧防线，并修建新段。这样出现了横跨帝国北方的庞大防御工程。可是秦代多用当地泥土夯筑，路线也和后来的明长城不完全相同；今天游客常走的砖石长城，并不是秦始皇脚下的原墙。
 
-一开始，各国各自修自己的短墙。后来秦始皇统一了天下，说："把所有的短墙连起来。"于是几十万人被派到北方，把一段一段的旧墙连成了第一道"万里长城"。后来汉朝、明朝，又不断地修、不断地加长、不断地加高。
-
-所以长城不是一个人修的，不是一代人修的。它是两千多年来，无数华夏先民一砖一石垒起来的。
+修墙也不是按下一道命令就完成。士兵和被征发的劳役人员要挖土、夯实、搬运材料，还要在遥远边地取得粮食和工具。史书留下皇帝与将军的名字，却很少告诉我们一个普通修墙人哪天受伤、想不想家，或者最后去了哪里。
 [/zh]
 [en]
-Long ago, many nomadic peoples lived on the grasslands north of China. They moved with their herds and were excellent horse riders. They could come and go as fast as the wind. Sometimes riders came south and took grain, cattle, and sheep from farming villages.
+More than 2,300 years ago, China was not yet one empire. During the Warring States period, states including Chu, Qi, Wei, Zhao, Yan, and Qin built walls of their own. The walls pointed in different directions and did not form one line. Some faced groups of riders to the north, while others defended one state from another. The earliest walls were not a simple border between “farmers” and “nomads.” They grew out of many struggles over land, roads, and safety.
 
-Farming people had a hard time fighting fast horse soldiers. What could they do? One answer was: build a wall in the way.
+In 221 BCE, the First Emperor of Qin united the rival states. He ordered some walls inside the new empire removed. Along the northern frontier, his government reused, repaired, and joined parts of older Qin, Zhao, and Yan lines and built new sections. This created an enormous defense project across the north. But Qin builders mostly rammed local earth into hard layers, and their route did not exactly match the later Ming Wall. The brick Wall tourists walk on today is not the same surface Qin soldiers stood on.
 
-At first, different states built their own short walls. Later, Qin Shi Huang united the land and ordered old wall sections to be joined together. Many workers were sent north to connect those pieces into a much longer frontier wall.
-
-After that, the Han dynasty and the Ming dynasty kept rebuilding, lengthening, and raising walls in different places.
-
-So the Great Wall was not built by one person. It was not built by one generation. For more than 2,000 years, countless people laid brick after brick and stone after stone.
+Building did not happen just because an emperor gave an order. Soldiers and drafted laborers dug soil, pounded it firm, carried supplies, and somehow had to obtain food and tools in distant places. Histories saved the names of emperors and generals. They rarely tell us when one ordinary worker was hurt, missed home, or disappeared from the record.
 [/en]
 [/section]
 
 [section]
 page: 3
-layout: text-wrap-image
-heading_zh: 长城不是一堵简单的墙
-heading_en: Not Just a Wall
-image: 1-3-beacon-tower-smoke.webp
-caption_zh: 烽火台一点烟，消息就能一站一站传得很远
-caption_en: One tower sent smoke. The next tower saw it. The warning traveled on.
+layout: text-only
+heading_zh: 第二层：汉代向西，明代重新筑起
+heading_en: Second Layer: Han Routes West and Ming Walls on the Mountains
 [zh]
-长城不是一堵简单的墙。它是一套完整的军事防御系统。
+汉代的防线向西延伸到河西走廊和更远的戈壁地区，与守卫交通、屯田、传递军情和管理往来联系在一起。那里缺少大块石料，工匠便就地取材，用夯土、砂砾，有时夹入芦苇和红柳。远远看去，它不像北京山上的城墙，却同样属于长城历史。
 
-城墙上每隔一段距离，就有一座高高的塔楼，叫"烽火台"。白天发现敌人，士兵在烽火台上烧狼粪 - 狼粪烧起来的烟特别浓、特别直，风不容易吹散，老远就能看见。晚上烧干柴，用火光报信。一个烽火台点烟，下一个看到了马上也点烟，就这样一站接一站传下去 - 敌人的消息，几个小时就能从边境传到首都。
+秦汉以后，北魏、北齐、隋、金等不同政权也修过或利用过类似防线。修长城的并不只是一个朝代，也不能简单说成一个固定族群永远在墙内、另一个固定族群永远在墙外。王朝版图、人群称呼和政治关系一直在改变。
 
-烽火台之间还有"敌楼"，是士兵平时住的地方。城墙上面很宽，可以并排跑好几匹马，方便快速调动士兵。墙的外侧高、内侧低，敌人从外面爬不上来，自己的士兵从里面上去却很方便 - 这就是长城的作战优势。
+到了明代，也就是1368年至1644年，北方防务再次推动大规模建设。明军在重要关口和北京附近的山地使用砖石加固墙体，修建敌楼、城堡与多重防线。今天八达岭、慕田峪等著名景区主要展示的正是明长城。我们熟悉的“石头巨龙”，其实只是长城两千年历史中最醒目、保存较好的一层。
 [/zh]
 [en]
-The Great Wall was not just a wall. It was a whole defense system.
+The Han dynasty extended frontier defenses west through the Hexi Corridor and into desert country. The system helped guard travel routes, support military farms, carry warnings, and control movement. Where large stone was scarce, builders used what they had: packed earth and gravel, sometimes strengthened with layers of reeds or red willow. These remains may look nothing like the Wall near Beijing, but they belong to the same long history.
 
-Every so often along the wall stood a tall beacon tower. In the daytime, if soldiers saw enemies, they could send up smoke. Some old descriptions say they burned wolf dung because the smoke was thick and easy to see from far away. At night, they used firelight.
+After the Qin and Han, governments including the Northern Wei, Northern Qi, Sui, and Jin also built or reused long frontier defenses. The Great Wall was not the work of only one dynasty. Nor did one unchanging people always live “inside” while another unchanging people always lived “outside.” Kingdoms expanded and fell, group names changed, and political relationships shifted again and again.
 
-One tower sent a signal. The next tower saw it and sent its own signal. Then the next tower did the same. In this way, news of danger could travel from tower to tower very quickly.
-
-Between the beacon towers were guard towers where soldiers could stay. The top of the wall was wide enough in some places for horses to move along it, so soldiers could shift position more quickly. The outside of the wall was high and hard to climb. The inside was easier for defenders to use.
-
-That was the Wall's advantage: it was stone, road, lookout point, and warning system all at once.
+During the Ming dynasty, from 1368 to 1644, northern defense led to another age of major construction. Ming forces strengthened important mountain passes and areas near Beijing with brick and stone. They built watchtowers, forts, and walls in several lines. Famous visitor sites such as Badaling and Mutianyu mainly show Ming construction. The “stone dragon” we know best is one dramatic, well-preserved layer of a much longer story.
 [/en]
 [/section]
 
 [section]
 page: 4
 layout: text-wrap-image
-heading_zh: 长城上的生活和长城的传说
-heading_en: Life on the Wall and the Legend of Meng Jiangnu
-image: 1-4-soldier-night-watch-wall.webp
-caption_zh: 站在北风里守夜的士兵，身后是村庄和百姓的家
-caption_en: Soldiers watched in the cold wind, with villages and families behind them.
+heading_zh: 一条信号怎样翻过山头
+heading_en: How Did a Warning Cross a Mountain?
+image: 1-3-beacon-tower-smoke.webp
+caption_zh: 现代想象图：烽火接力。真实信号、燃料、台站位置和传递速度会随时代与条件而变。
+caption_en: A modern imagined beacon relay; signals, fuel, station positions, and speed varied by period and conditions.
 [zh]
-士兵们在这高高的山墙上怎么生活的？
+墙本身不能看见危险，也不能追赶任何人。真正让防线运转的是守军、关口、城堡、道路和一座座可以互相望见的烽燧。士兵观察到情况后，会按照当时的规定发出信号；白天可以用烟、旗帜等，夜间可以用火，不同朝代还使用鼓声或炮声表示不同等级的警报。
 
-很苦。长城大多修在荒山野岭，冬天冷得刺骨，夏天热得要命，风沙刮起来，连眼睛都睁不开。守城的士兵常常好几个月回不了家，每天在城墙上走几十里路巡逻，晚上睡在冰冷的石头敌楼里。吃的粮食全靠山下运上来，有时候大雪封山，粮送不上来，就只能啃干饼子喝雪水。
+这不是随便点一堆“狼粪”，烟就一定笔直冲天。史料显示，各地燃料和信号办法并不一样，“狼烟”也不能简单等同于烧狼粪。更重要的是，烽火只能传递预先约定的简短信息，例如发现敌情和大概规模。遇到大雨、柴草受潮、风沙遮住视线，或下一座烽燧没有回应时，守军还要派人骑马送文书。
 
-但长城上的士兵也知道，自己站在全中国最重要的一条线上。他面对的北边，是可能来犯的敌人；身后是南边，是农田、村庄和百姓的家。只要他还在城墙上站着，南边的农民就能安心地种地，小孩子就能安心地睡觉。
-
-长城还有一个家喻户晓的传说 - 孟姜女的故事。她的丈夫被征去修长城，再也没有回来。她走了很远很远去找他，最后在长城边痛哭三天三夜，传说连一段城墙都被哭倒了。这个故事不是真实历史，但它提醒人们：长城虽然伟大，修长城的人付出的代价，老百姓从来没有忘记。
+图中的黑烟与接力场面是现代想象，不是一场有日期的明代警报。真实速度取决于能见度、台站距离、人员是否在岗以及信号路线。烽火能让警报快速传到附近军区，但不能保证“几小时从任何边境直达首都”。
 [/zh]
 [en]
-How did soldiers live on this high wall in the mountains?
+A wall cannot see danger or chase anyone. Soldiers, gates, forts, roads, and beacon stations made the system work. When guards spotted trouble, they followed rules for sending signals. Smoke or flags could be used by day and fire by night. In different periods, drums or cannon blasts also helped show the kind or size of a threat.
 
-It was hard. Much of the Great Wall was built in wild mountain country. Winter was bitterly cold. Summer could be burning hot. When wind and sand rose, soldiers could hardly open their eyes.
+This was not as simple as burning a pile of “wolf dung” and watching a perfectly straight cloud rise. Fuels and signal rules varied, and the old term “wolf smoke” does not prove that every beacon burned wolf dung. More important, a beacon could send only a short, prearranged message, such as “danger spotted” and perhaps its rough size. If rain soaked the fuel, a dust storm blocked the view, or the next station did not answer, a rider had to carry a written warning instead.
 
-Soldiers guarding the Wall might not go home for months. They patrolled long distances along the wall during the day. At night, they slept in cold stone towers. Food had to be carried up from below. If heavy snow blocked the mountain roads, they might be left with dry cakes and melted snow.
+The black smoke and tower-to-tower relay in our picture are modern imagination, not one dated Ming alarm. Real speed depended on visibility, distance, watchful guards, and the route. Beacons could warn a nearby command quickly. They could not promise to carry news from any frontier point to the capital in a few hours.
+[/en]
+[/section]
 
-But the soldiers also knew what was behind them: farms, villages, and families. As long as they stayed at their posts, people farther south could plant crops and children could sleep more safely.
+[section]
+page: 5
+layout: text-wrap-image
+heading_zh: 墙边既有冲突，也有市场
+heading_en: A Border with Battles—and Markets
+image: 1-4-soldier-night-watch-wall.webp
+caption_zh: 现代想象图：守军与山谷村落。衣甲、长矛、夜色和村庄都不是一场真实巡逻的复原。
+caption_en: A modern imagined guard and valley settlement; the armor, spear, night, and village do not reconstruct a real patrol.
+[zh]
+长城的确用于防御。它可以让骑兵难以突然穿过某些道路，把出入口集中到容易监视的关口，也给守军争取准备时间。但它不是一只密封的盒子：军队可能攻破关口、绕过没有墙的地方，防线也可能因为缺兵少粮而失去作用。
 
-The Great Wall also has a famous legend: Meng Jiangnu. In the story, her husband was taken away to build the Wall and never came home. She walked a very long way to find him. When she reached the Wall, she cried for three days and three nights. The legend says her crying made part of the Wall fall down.
+关口能关闭，也能打开。和平或议和时期，边口会有市场，不同人群交换马匹、牲畜、粮食、布匹和生活用品；使者、商人、士兵和迁居者也从通道往来。战争、贸易、赏赐、结盟和移民常在同一片边地先后发生。墙两边不是两种从不相见的世界，而是一片既紧张又互相需要的地区。
 
-That story is not literal history. But it reminds people of something true: the Great Wall is amazing, and ordinary people paid a heavy price to build it.
+图中守军的身后亮着村庄的灯。这是象征性的现代画面，却提醒我们：长城边上不仅有将军和战斗，也有军户、农民、牧民、商贩与家人。许多不同族群的人曾在这里冲突，也曾一起生活和交换技术、语言与食物。
+[/zh]
+[en]
+The Wall did serve defense. It could slow mounted forces at important paths, move crossings toward guarded gates, and buy time for soldiers to prepare. But it was not a sealed box. Armies sometimes broke through a pass, went around a section, or found a weak line with too few soldiers and supplies.
+
+Gates could close, and they could also open. During peaceful agreements, border markets let different communities trade horses, livestock, grain, cloth, and everyday goods. Envoys, merchants, soldiers, and migrants also moved through the passes. War, trade, gifts, alliances, and migration could all take place along the same frontier. The two sides of the Wall were not separate worlds that never met. They formed a tense region in which people also depended on one another.
+
+Village lights glow behind the guard in our picture. The scene is symbolic, but it reminds us that frontier life included military families, farmers, herders, traders, and children as well as generals and battles. People from many communities fought there, lived there, and exchanged food, words, and skills.
+[/en]
+[/section]
+
+[section]
+page: 6
+layout: text-only
+heading_zh: 谁的伟大，谁的代价？
+heading_en: Whose Achievement, and Whose Cost?
+[zh]
+古代长城显示了惊人的测量、选址、夯筑和组织能力，也留下了劳役与死亡的记忆。孟姜女哭长城就是最有名的传说之一。她哭倒秦长城、找到丈夫遗骨的情节不是可以查证的秦代事件；这个故事由更早的“杞梁妻哭夫”传说经过许多世纪变化，后来才和秦始皇及长城连在一起。
+
+传说不等于事实，却能保存人们对事实的感受。孟姜女的眼泪让一座宏伟工程出现了另一个问题：当皇帝命令修筑边防时，谁在搬土，谁离开家庭，谁承担风险？欣赏长城的工程成就，与记住普通人的代价，并不矛盾。
+[/zh]
+[en]
+The Great Wall shows astonishing skill in surveying, choosing terrain, building with local materials, and organizing work. It also carries memories of forced labor and death. The legend of Meng Jiangnu is the most famous example. Her tears bringing down a Qin wall and revealing her husband’s bones are not a recorded event from the Qin dynasty. The tale grew from a much older story about a mourning wife and became attached to the First Emperor and the Great Wall centuries later.
+
+A legend is not the same as a fact, but it can preserve how people felt about real experience. Meng Jiangnu’s tears ask a question that the grand structure might hide: When a ruler orders a frontier wall, who carries the earth, who leaves a family behind, and who faces the danger? We can admire the engineering and remember the workers’ cost at the same time.
 [/en]
 [/section]
 
 [ending]
-heading_zh: 小结
-heading_en: Summary
+heading_zh: 再看那条“石龙”
+heading_en: Look at the “Stone Dragon” Again
 [zh]
-今天的长城已经不用打仗了，但它仍然是世界上最让人震撼的古代建筑之一。它不只是一堵石墙，更是一整套守护边境的系统，也是一段把智慧、力量、坚持和普通人的付出都压在一起的历史。
+今天再看山脊上的砖墙，不妨也想象戈壁中的土垄、消失的木料、开放过的市场和早已听不见的多种语言。长城不是一条把历史切成两半的石龙，而是一部用土、砖、烽火、关门和人群往来共同写成的边疆史。
 [/zh]
 [en]
-Today the Great Wall no longer fights wars, but it is still one of the world's most astonishing ancient structures. It is not just a stone wall. It is a border defense system, a warning system, and a long history of skill, strength, patience, and ordinary people's hard work.
+When you next picture the brick Wall on a green ridge, add other images too: a low earthen line in the desert, wood that vanished long ago, a market beside an open gate, and many languages that can no longer be heard. The Great Wall is not a stone dragon cutting history in two. It is a frontier history written in earth, brick, warning fires, gates, and human movement.
 [/en]
 [/ending]
