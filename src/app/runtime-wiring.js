@@ -41,7 +41,8 @@ import { clothesBookWords, clothesMatchItems, clothesPractice, clothesSentenceIt
 import { coloursTopic } from "../features/world/colours.js";
 import { hobbiesTopic, toysTopic } from "../features/play-hobbies/play-hobbies.js";
 import { bodyBonusItemIds, bodyCoreItemIds, bodyDiagramLayout, bodyTopic } from "../features/foundations/body.js";
-import { buildNumberItem, multiplicationRhymeTopic, numberHanzi, numberPinyin, numberStages, numbersTopic, telephonePractice } from "../features/foundations/numbers.js";
+import { buildNumberItem, multiplicationRhymeTopic, numberHanzi, numberPinyin, numberStages, numbersTopic } from "../features/foundations/numbers.js";
+import { telephonePractice } from "../features/foundations/telephone-numbers.js";
 import { createFoundationState } from "../features/foundations/state.js";
 import { createFoundationsRuntime } from "../features/foundations/foundations-runtime.js";
 import { createTimeDailyLifeState } from "../features/time-daily-life/state.js";
@@ -379,8 +380,8 @@ numberWordListItems,
 renderBodyLabelButton,
 renderBodyExplorer,
 renderNumberVisual,
-renderNumbersExplorer,
-renderTelephoneExplorer,
+  renderNumbersExplorer,
+  renderTelephoneExplorer,
 renderFamilyHomeVisual,
 renderFamilyExplorer,
 renderIdentityExplorer,
@@ -899,6 +900,7 @@ focusExplorerRuntime = createFocusExplorerRuntime({
   currentTopic,
   renderBodyExplorer,
   renderNumbersExplorer,
+  renderTelephoneExplorer,
   renderPoliteWordsExplorer,
   renderIntroductionsExplorer,
   renderIdentityExplorer,

@@ -5,6 +5,7 @@ export function createFocusExplorerRuntime(context) {
     currentTopic,
     renderBodyExplorer,
     renderNumbersExplorer,
+    renderTelephoneExplorer,
     renderPoliteWordsExplorer,
     renderIntroductionsExplorer,
     renderIdentityExplorer,
@@ -33,6 +34,7 @@ export function createFocusExplorerRuntime(context) {
     const topic = currentTopic();
     if (topic.interactiveScene === "body-face") return renderBodyExplorer();
     if (topic.id === "numbers") return renderNumbersExplorer();
+    if (topic.interactiveScene === "telephone-numbers") return renderTelephoneExplorer();
     if (topic.interactiveScene === "polite-phrases") return renderPoliteWordsExplorer();
     if (topic.interactiveScene === "introductions-conversation") return renderIntroductionsExplorer();
     if (topic.interactiveScene === "identity-scenes") return renderIdentityExplorer();

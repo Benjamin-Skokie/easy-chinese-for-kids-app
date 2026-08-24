@@ -37,7 +37,8 @@ import { bodyBonusItemIds, bodyCoreItemIds, bodyDiagramLayout, bodyTopic } from 
 import { illustratedKids } from "../src/data/characters.js";
 import { bookHomeCategories, books, learningHomeCategories, topicCardMeta, topicGroups } from "../src/data/curriculum.js";
 import { topicData } from "../src/data/topic-registry.js";
-import { buildMultiplicationRhymeItems, buildNumberItem, multiplicationRhymeTopic, numberStages, numbersTopic, telephonePractice } from "../src/features/foundations/numbers.js";
+import { buildMultiplicationRhymeItems, buildNumberItem, multiplicationRhymeTopic, numberStages, numbersTopic } from "../src/features/foundations/numbers.js";
+import { telephoneNumbersTopic, telephonePractice } from "../src/features/foundations/telephone-numbers.js";
 import { createFoundationState } from "../src/features/foundations/state.js";
 import { createGreetingsController } from "../src/features/foundations/greetings-controller.js";
 import { createPoliteWordsController } from "../src/features/foundations/polite-words-controller.js";
@@ -1258,11 +1259,13 @@ test("the shared curriculum retains its books and learning navigation", () => {
   assert.equal(topicCardMeta["school-subjects"].zhTitle, "学校学科");
 });
 
-test("numbers owns its stages, telephone script, and rhyme generator", () => {
+test("numbers keeps its counting stages while My Family 2 owns 4A Lesson 1", () => {
   assert.equal(numbersTopic.id, "numbers");
-  assert.equal(numberStages.length, 6);
+  assert.equal(numberStages.length, 5);
   assert.equal(buildNumberItem(42).hanzi, "四十二");
-  assert.equal(telephonePractice.digits.length, 10);
+  assert.equal(telephoneNumbersTopic.id, "telephone-numbers");
+  assert.equal(telephoneNumbersTopic.title, "My Family 2");
+  assert.equal(telephonePractice.residence.lines[1].hanzi, "他们住在北京。");
   assert.equal(multiplicationRhymeTopic.focusItems.length, 45);
   assert.equal(buildMultiplicationRhymeItems().at(-1).hanzi, "九九八十一");
 });
@@ -1280,7 +1283,9 @@ test("family owns its lesson metadata, scenes, and matching set", () => {
   assert.equal(familyTopic.id, "family");
   assert.equal(familyTopic.interactiveScene, "family-home");
   assert.equal(familyTopic.steps.length, 4);
-  assert.equal(familyPractice.length, 2);
+  assert.equal(familyPractice.length, 3);
+  assert.equal(familyPractice[2].lines[0].hanzi, "这是我的家人。");
+  assert.equal(familyPractice[2].lines[1].hanzi, "我家有六口人。");
   assert.equal(familyGameItemIds.length, 6);
   assert.equal(Object.keys(illustratedFamily).length, 6);
 });

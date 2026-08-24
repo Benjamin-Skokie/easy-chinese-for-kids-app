@@ -28,9 +28,11 @@ export function createSharedLessonPractice({ state, speak, elements, documentRef
             return `
               <button class="numbers-game-option greetings-game-option family-listen-option${resultClass}" type="button" data-template-listen-guess="${item.id}">
                 ${resultMark}
-                <span class="numbers-game-hanzi">${item.hanzi}</span>
-                ${state.showPinyin ? `<span class="numbers-game-pinyin">${item.pinyin}</span>` : ""}
-                ${state.showEnglish ? `<span class="numbers-game-english">${item.english}</span>` : ""}
+                <span class="family-listen-copy">
+                  <span class="numbers-game-hanzi">${item.hanzi}</span>
+                  <span class="numbers-game-pinyin">${state.showPinyin ? item.pinyin : ""}</span>
+                  <span class="numbers-game-english">${state.showEnglish ? item.english : ""}</span>
+                </span>
               </button>
             `;
           }).join("")}

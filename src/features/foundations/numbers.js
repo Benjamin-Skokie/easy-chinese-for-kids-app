@@ -2,7 +2,7 @@ export const numbersTopic = {
   id: "numbers",
   title: "Numbers",
   summary: "A stage-by-stage number path that grows from first counting to real-life number use.",
-  progressLabel: "1A to 4A",
+  progressLabel: "1A to 3A",
   iconText: "一二三",
   iconColor: "#be5b49",
   iconAccent: "#f3c977",
@@ -23,8 +23,7 @@ export const numbersTopic = {
     { book: "1A", lesson: 2, title: "Numbers (2)", note: "Extend to 6-10." },
     { book: "1A", lesson: 3, title: "Numbers (3)", note: "Move into 11-20." },
     { book: "2A", lesson: 1, title: "Numbers", note: "Grow to 21-40." },
-    { book: "3A", lesson: 1, title: "Numbers", note: "Grow to 41-100." },
-    { book: "4A", lesson: 1, title: "Telephone numbers", note: "Use numbers in a real-life format." }
+    { book: "3A", lesson: 1, title: "Numbers", note: "Grow to 41-100." }
   ]
 };
 
@@ -146,36 +145,7 @@ export const numberStages = [
     visualEmojis: ["⭐", "🌟", "✨", "💫", "🪐"],
     visualLabel: "stars"
   },
-  {
-    id: "4a-1",
-    bookId: "4a",
-    lesson: 1,
-    title: "Telephone numbers",
-    summary: "Use number reading in a real-life sequence instead of isolated counting.",
-    start: 0,
-    end: 9,
-    practicePrompt: "Say each digit clearly, one by one, in a phone-number rhythm.",
-    telephoneMode: true,
-    visualEmojis: ["☎️", "📞", "🔢", "🎧", "📟"],
-    visualLabel: "phone digits"
-  }
 ];
-
-export const telephonePractice = {
-  question: {
-    hanzi: "你的电话号码是多少？",
-    pinyin: "nǐ de diàn huà hào mǎ shì duō shao?",
-    english: "What is your phone number?",
-    audio: "你的电话号码是多少"
-  },
-  answer: {
-    hanzi: "我的电话号码是六八二四九七三一三二。",
-    pinyin: "wǒ de diàn huà hào mǎ shì liù bā èr sì jiǔ qī sān yī sān èr.",
-    english: "My phone number is 6824973132.",
-    audio: "我的电话号码是六八二四九七三一三二"
-  },
-  digits: ["六", "八", "二", "四", "九", "七", "三", "一", "三", "二"]
-};
 export function numberEnglish(value) {
   if (value <= 20) {
     return numberEnglishBase[value];

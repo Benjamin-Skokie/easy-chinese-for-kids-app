@@ -9,11 +9,10 @@ URL: `index.html?topic=numbers#topic-detail`
 | --- | --- |
 | 1A Lessons 1–3 | Count and recognise the early number sequence. |
 | 2A Lesson 1; 3A Lesson 1 | Extend number range and fluency. |
-| 4A Lesson 1 | Apply numbers to telephone numbers. |
 
 ## Current contract
 
-The page owns number stages, number-word audio, counting practice, and the telephone-number extension. Keep each stage bounded to its confirmed range; use pictured objects only to make counting visible. Do not mix arithmetic, dates, or measure-word language into the core sequence unless a stage explicitly owns it.
+The page owns number stages, number-word audio, and counting practice. Keep each stage bounded to its confirmed range; use pictured objects only to make counting visible. Do not mix arithmetic, dates, telephone-number language, or measure-word language into the core sequence unless a stage explicitly owns it.
 
 ## Lesson evidence
 
@@ -22,7 +21,6 @@ The page owns number stages, number-word audio, counting practice, and the telep
 - **1A Lesson 3 — Numbers (3):** Words: `一` through `十`. Frame: count pictured objects.
 - **2A Lesson 1:** Words: `二十六、三十八、四十`. Frame: count larger quantities.
 - **3A Lesson 1:** Words: `四十一、五十三、一百`. Frame: count higher numbers.
-- **4A Lesson 1:** Words: `电话号码、多少、哪里、他们`. Frame: `电话号码是多少？`.
 
 ## Remaining coverage
 

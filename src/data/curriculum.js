@@ -81,7 +81,7 @@ export const books = [
     id: "4a",
     label: "Book 4A",
     lessons: [
-      { lesson: 1, title: "Telephone numbers", topicId: "numbers" },
+      { lesson: 1, title: "Telephone numbers", topicId: "telephone-numbers" },
       { lesson: 2, title: "Languages", topicId: "languages" },
       { lesson: 3, title: "Tell the time", topicId: "time-date" },
       { lesson: 4, title: "Daily routine", topicId: "time-date" },
@@ -155,7 +155,7 @@ export const topicGroups = [
     id: "me-and-family",
     label: "Me & Family",
     description: "Personal, family, body, clothes, and everyday child language.",
-    topicIds: ["family", "body", "colours", "clothes"]
+    topicIds: ["family", "telephone-numbers", "body", "colours", "clothes"]
   },
   {
     id: "daily-world",
@@ -173,6 +173,7 @@ export const topicGroups = [
 
 export const topicCardMeta = {
   numbers: { zhTitle: "数字", enTitle: "Numbers", hint: "Count, hear, and use numbers" },
+  "telephone-numbers": { zhTitle: "我的家人（二）", enTitle: "My Family 2", hint: "Introduce grandparents, where they live, and a telephone number" },
   "multiplication-rhyme": { zhTitle: "九九乘法", enTitle: "Multiplication Rhyme", hint: "Classic rhythm practice" },
   greetings: { zhTitle: "打招呼", enTitle: "Greetings", hint: "Hello, good morning, goodbye" },
   "polite-words": { zhTitle: "礼貌用语", enTitle: "Polite Words", hint: "Thank you, sorry, please" },
@@ -180,7 +181,7 @@ export const topicCardMeta = {
   age: { zhTitle: "年龄", enTitle: "Age", hint: "Ask and say how old you are" },
   identity: { zhTitle: "国籍", enTitle: "Nationality", hint: "Ask and say where someone is from" },
   languages: { zhTitle: "语言", enTitle: "Languages", hint: "Say which language someone speaks" },
-  family: { zhTitle: "家人", enTitle: "Family", hint: "Mom, dad, siblings, grandparents" },
+  family: { zhTitle: "我的家人（一）", enTitle: "My Family 1", hint: "Mom, dad, siblings, and grandparents" },
   body: { zhTitle: "身体", enTitle: "Body", hint: "Tap body parts and listen" },
   pets: { zhTitle: "宠物", enTitle: "Pets", hint: "Dog, cat, turtle, goldfish" },
   animals: { zhTitle: "动物园", enTitle: "Zoo Animals", hint: "Count animals with measure words" },
@@ -225,10 +226,10 @@ export const learningHomeCategories = [
     id: "me-family",
     zhTitle: "我和家人",
     enTitle: "Me & Family",
-    hint: "Family, body, clothes",
+    hint: "Family, grandparents, body, clothes",
     accent: "#aa7051",
     iconEmoji: "🏠",
-    topicIds: ["family", "body", "clothes"]
+    topicIds: ["family", "telephone-numbers", "body", "clothes"]
   },
   {
     id: "time-daily",

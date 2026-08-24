@@ -1,5 +1,8 @@
 export function createFoundationsRuntime(context) {
   const { state, numberHanzi, numberPinyin, buildNumberItem, numberStages, telephonePractice, familyGameItemIds, familyPersonIdsByItemId, familyHeadshotsByItemId, familyPractice, illustratedFamily, illustratedKids, bodyBonusItemIds, bodyCoreItemIds, bodyDiagramLayout, identityConversation, nationalityConversation, identityCountries, identityExploreCountries, identityLanguageQuestion, identityQuestion, topicById, focusItemsForTopic, currentTopic, currentNumberStage, currentFocusItem, currentBook, currentLesson, shuffleArray, chineseUtterance, speak, speakSceneLines, renderActivityPanel, renderFocusDisplay, renderFocusExplorer, renderFocusStatus, selectFocusItem, bodySentenceForItem, focusExplorer, focusStatus, activityPanelTitle, activityPanelSummary, activityList } = context;
+  let telephoneMatchSelectedId = "";
+  let telephoneMatchedIds = new Set();
+  let telephoneMatchFeedback = "";
 
 function numberStageItems(stage = currentNumberStage()) {
   const start = Math.min(stage.start, stage.end);
@@ -183,6 +186,9 @@ function usefulNoteForTopic(topic) {
       </p>
       <p class="greetings-note-copy">
         In listening practice, the repeated family word is the anchor. For sisters, <strong>姐姐</strong> and <strong>妹妹</strong> both use <strong>女</strong>, so children can group the two sister words together.
+      </p>
+      <p class="greetings-note-copy">
+        In <strong>我家有五口人</strong>, <strong>口</strong> is the measure word used to count people in a family. Children can use the same frame with their own family photo.
       </p>
     `,
     languages: `
@@ -893,10 +899,6 @@ function renderNumberVisual(value, stage) {
 function renderNumbersExplorer() {
   ensureNumberChallenge();
   const stage = currentNumberStage();
-  if (stage.telephoneMode) {
-    renderTelephoneExplorer(stage);
-    return;
-  }
   const item = currentFocusItem();
   focusExplorer.innerHTML = `
     <div class="numbers-board">
@@ -921,85 +923,71 @@ function renderNumbersExplorer() {
   `;
 }
 
-function renderTelephoneExplorer(stage) {
+function renderTelephoneExplorer() {
+  const residence = telephonePractice.residence;
+  const phone = telephonePractice.telephone;
+  const profilePairs = [
+    { id: "home", question: residence.lines[0], answer: residence.lines[1] },
+    { id: "phone", question: phone.lines[0], answer: phone.lines[1] }
+  ];
+  const renderLines = (lines) => lines.map((line) => `<article class="greetings-line-card"><div class="telephone-bubble-copy"><p class="telephone-line-hanzi">${line.hanzi}</p>${state.showPinyin ? `<p class="telephone-line-pinyin">${line.pinyin}</p>` : ""}${state.showEnglish ? `<p class="telephone-line-english">${line.english}</p>` : ""}</div></article>`).join("");
   focusExplorer.innerHTML = `
-    <div class="numbers-board">
-      <div class="numbers-stage-card">
-        <p class="body-match-kicker">${currentBook().label} Lesson ${stage.lesson}</p>
-        <h4>${stage.title}</h4>
-        <p>${stage.summary}</p>
-      </div>
-      <div class="telephone-scene-card">
-        <div class="telephone-scene-people">
-          <article class="telephone-bubble telephone-bubble-question">
-            <div class="telephone-figure-card telephone-figure-card-left" aria-hidden="true">
-              <img
-                class="telephone-figure"
-                src="${illustratedKids.anan.path}"
-                alt=""
-              />
-            </div>
-            <div class="telephone-bubble-copy">
-              <p class="body-match-kicker">Ask</p>
-              <p class="telephone-line-hanzi">${telephonePractice.question.hanzi}</p>
-              ${state.showPinyin ? `<p class="telephone-line-pinyin">${telephonePractice.question.pinyin}</p>` : ""}
-              ${state.showEnglish ? `<p class="telephone-line-english">${telephonePractice.question.english}</p>` : ""}
-              <button class="small-button is-play-button" type="button" data-telephone-play="question">Play</button>
-            </div>
-          </article>
-          <article class="telephone-bubble telephone-bubble-answer">
-            <div class="telephone-figure-card telephone-figure-card-right" aria-hidden="true">
-              <img
-                class="telephone-figure"
-                src="${illustratedKids.tiantian.path}"
-                alt=""
-              />
-            </div>
-            <div class="telephone-bubble-copy">
-              <p class="body-match-kicker">Answer</p>
-              <p class="telephone-line-hanzi">${telephonePractice.answer.hanzi}</p>
-              ${state.showPinyin ? `<p class="telephone-line-pinyin">${telephonePractice.answer.pinyin}</p>` : ""}
-              ${state.showEnglish ? `<p class="telephone-line-english">${telephonePractice.answer.english}</p>` : ""}
-              <button class="small-button is-play-button" type="button" data-telephone-play="answer">Play</button>
-            </div>
-          </article>
+    <div class="time-date-board school-topic-board telephone-topic-board">
+      <section class="school-lesson-section"><div class="time-months-heading"><p class="body-match-kicker">Scenes</p></div>
+        <div class="school-scene-grid">
+          ${[residence, phone].map((scene) => `<section class="greetings-exchange school-scene-card"><div class="greetings-exchange-top"><p class="body-match-kicker">${scene.title}</p><button class="small-button is-play-button" type="button" data-telephone-scene-play="${scene === residence ? "residence" : "telephone"}">Play</button></div><div class="school-scene-layout"><img class="school-scene-image" src="${scene.imagePath}" alt="${scene.imageAlt}"><div class="greetings-line-stack">${renderLines(scene.lines)}</div></div></section>`).join("")}
         </div>
-        <div class="telephone-number-strip">
-          <p class="body-match-kicker">Listen to the digits</p>
-          <div class="telephone-digit-row">
-            ${telephonePractice.digits
-              .map(
-                (digit) => `
-                  <button class="telephone-digit-chip" type="button" data-telephone-digit="${digit}">
-                    ${digit}
-                  </button>
-                `
-              )
-              .join("")}
-          </div>
-        </div>
-      </div>
+      </section>
+      <section class="school-lesson-section"><div class="time-months-heading"><p class="body-match-kicker">Book words</p></div>
+        <div class="school-word-grid is-text-only">${currentTopic().focusItems.map((item) => `<button class="school-word-card is-text-only" type="button" data-telephone-word="${item.id}"><span class="time-asset-hanzi">${item.hanzi}</span>${state.showPinyin ? `<span class="time-asset-pinyin">${item.pinyin}</span>` : ""}${state.showEnglish ? `<span class="time-asset-english">${item.english}</span>` : ""}</button>`).join("")}</div>
+      </section>
+      <section class="visual-topic-notes school-review-notes"><p class="body-match-kicker">Useful note</p><div class="visual-topic-note-grid school-review-grid"><article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">他们 + 住在 + 北京</p><p class="visual-topic-note-copy"><strong>他们</strong> means “they.” <strong>住在</strong> means “live in,” and the place comes last: <strong>他们住在北京。</strong> To ask the place, replace <strong>北京</strong> with <strong>哪儿</strong>: <strong>他们住在哪儿？</strong></p></article></div></section>
+      <section class="practice-split-card"><div class="numbers-game-top"><div><p class="body-match-kicker">Let's practice</p><p class="numbers-game-note">Tap a question on the left, then tap its matching answer on the right.</p></div><button class="small-button is-play-button" type="button" data-telephone-practice-play>Play</button></div>
+        ${telephoneMatchFeedback ? `<p class="greetings-game-feedback">${telephoneMatchFeedback}</p>` : ""}
+        <div class="family-match-board-headings"><p class="body-match-kicker">Question</p><p class="body-match-kicker">Answer</p></div>
+        <div class="polite-match-board family-match-open-board"><div class="polite-match-column">${profilePairs.filter((pair) => !telephoneMatchedIds.has(pair.id)).map((pair) => `<button class="polite-match-card polite-match-card-phrase${telephoneMatchSelectedId === pair.id ? " is-selected" : ""}" type="button" data-telephone-question="${pair.id}"><span class="numbers-game-hanzi">${pair.question.hanzi}</span>${state.showPinyin ? `<span class="numbers-game-pinyin">${pair.question.pinyin}</span>` : ""}${state.showEnglish ? `<span class="numbers-game-english">${pair.question.english}</span>` : ""}</button>`).join("")}</div><div class="polite-match-column">${profilePairs.filter((pair) => !telephoneMatchedIds.has(pair.id)).slice().reverse().map((pair) => `<button class="polite-match-card polite-match-card-meaning" type="button" data-telephone-answer="${pair.id}"><span class="numbers-game-hanzi">${pair.answer.hanzi}</span>${state.showPinyin ? `<span class="numbers-game-pinyin">${pair.answer.pinyin}</span>` : ""}${state.showEnglish ? `<span class="numbers-game-english">${pair.answer.english}</span>` : ""}</button>`).join("")}</div></div>
+        ${telephoneMatchedIds.size ? `<div class="family-match-solved-pairs">${profilePairs.filter((pair) => telephoneMatchedIds.has(pair.id)).map((pair) => `<article class="family-match-solved-row"><div class="polite-match-card family-match-pair-card is-solved"><span class="answer-result-mark">✓</span><span class="numbers-game-hanzi">${pair.question.hanzi}</span></div><div class="polite-match-card family-match-pair-card is-solved"><span class="answer-result-mark">✓</span><span class="numbers-game-hanzi">${pair.answer.hanzi}</span></div></article>`).join("")}</div>` : ""}
+        ${telephoneMatchedIds.size === profilePairs.length ? `<section class="nationality-conversation-reveal" aria-live="polite">${renderLines([residence.lines[1], phone.lines[1]])}</section>` : ""}
+      </section>
     </div>
   `;
 
-  focusExplorer.querySelectorAll("[data-telephone-play]").forEach((button) => {
+  focusExplorer.querySelectorAll("[data-telephone-scene-play]").forEach((button) => {
     button.addEventListener("click", () => {
-      const line = button.dataset.telephonePlay === "question" ? telephonePractice.question : telephonePractice.answer;
-      if (state.tapAudioEnabled) {
-        speak(line.audio, 0.78);
-      }
-      focusStatus.textContent = button.dataset.telephonePlay === "question"
-        ? "Listen to the question first, then listen for the answer."
-        : "Listen to the answer and notice how each digit is said one by one.";
+      const scene = button.dataset.telephoneScenePlay === "residence" ? residence : phone;
+      if (state.tapAudioEnabled) speakSceneLines(scene.lines, 0.74);
     });
   });
-
-  focusExplorer.querySelectorAll("[data-telephone-digit]").forEach((button) => {
+  focusExplorer.querySelectorAll("[data-telephone-word]").forEach((button) => {
+    button.addEventListener("click", () => selectFocusItem(button.dataset.telephoneWord, { playAudio: true }));
+  });
+  focusExplorer.querySelector("[data-telephone-practice-play]")?.addEventListener("click", () => {
+    telephoneMatchSelectedId = "";
+    telephoneMatchedIds = new Set();
+    telephoneMatchFeedback = "";
+    if (state.tapAudioEnabled) speakSceneLines(profilePairs.flatMap((pair) => [pair.question, pair.answer]), 0.74);
+    renderTelephoneExplorer();
+  });
+  focusExplorer.querySelectorAll("[data-telephone-question]").forEach((button) => {
     button.addEventListener("click", () => {
-      if (state.tapAudioEnabled) {
-        speak(button.dataset.telephoneDigit, 0.78);
-      }
-      focusStatus.textContent = `Practice the digit ${button.dataset.telephoneDigit} by itself.`;
+      const pair = profilePairs.find((entry) => entry.id === button.dataset.telephoneQuestion);
+      telephoneMatchSelectedId = pair?.id ?? "";
+      telephoneMatchFeedback = "Now choose its answer.";
+      if (pair && state.tapAudioEnabled) speak(pair.question.audio, 0.78);
+      renderTelephoneExplorer();
+    });
+  });
+  focusExplorer.querySelectorAll("[data-telephone-answer]").forEach((button) => {
+    button.addEventListener("click", () => {
+      if (!telephoneMatchSelectedId) { telephoneMatchFeedback = "Choose a question first."; renderTelephoneExplorer(); return; }
+      if (telephoneMatchSelectedId === button.dataset.telephoneAnswer) {
+        telephoneMatchedIds = new Set([...telephoneMatchedIds, telephoneMatchSelectedId]);
+        const pair = profilePairs.find((entry) => entry.id === telephoneMatchSelectedId);
+        telephoneMatchFeedback = telephoneMatchedIds.size === profilePairs.length ? "Grandparents profile complete." : "Matched. Choose the next question.";
+        telephoneMatchSelectedId = "";
+        if (pair && state.tapAudioEnabled) speak(pair.answer.audio, 0.78);
+      } else telephoneMatchFeedback = "Try a different answer.";
+      renderTelephoneExplorer();
     });
   });
 }
@@ -1020,6 +1008,10 @@ function renderFamilyHomeVisual(exchange) {
         <img class="family-lesson-photo" src="${exchange.imagePath}" alt="${exchange.imageAlt}" />
       </div>
     `;
+  }
+
+  if (exchange.visual === "family-introduction") {
+    return `<div class="family-lesson-visual family-lesson-visual-introduction"><img class="family-lesson-photo" src="${exchange.imagePath}" alt="${exchange.imageAlt}" /></div>`;
   }
 
   const roomClass = {

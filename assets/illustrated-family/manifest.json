@@ -97,6 +97,15 @@
         "2A Lesson 2 Two younger brothers"
       ],
       "file": "family-counting-two-younger-brothers.webp"
+    },
+    {
+      "id": "family-introduction-full-family",
+      "label": "Full family introduction",
+      "hanzi": "这是我的家人",
+      "pinyin": "zhe shi wo de jia ren",
+      "theme": "A natural six-person family portrait: Mum, Dad, Anan, Lele, a younger sister, and a younger brother",
+      "lessonHints": ["3A Lesson 4 Family"],
+      "file": "family-introduction-full-family.webp"
     }
   ]
 }

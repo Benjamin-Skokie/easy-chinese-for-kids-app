@@ -118,7 +118,11 @@ function sharedLessonPracticeConfig(topic) {
 
   if (topic.id === "family") {
     return {
-      summary: "Practice the three core family sentences, then sort sibling and parent words by who they name.",
+      summary: "Listen for family words, match each word to a family member, then introduce a five-person family.",
+      sayItems: [
+        { hanzi: "我家有五口人。", pinyin: "wǒ jiā yǒu wǔ kǒu rén.", english: "There are five people in my family.", audio: "我家有五口人" },
+        { hanzi: "爸爸、妈妈、哥哥、弟弟和我。", pinyin: "bà ba, mā ma, gē ge, dì di hé wǒ.", english: "Dad, Mum, my older brother, my younger brother, and me.", audio: "爸爸妈妈哥哥弟弟和我" }
+      ],
       ensure: () => {
         ensureFamilyChallenge();
         ensureFamilyMatchGame();
@@ -291,6 +295,15 @@ function sharedLessonPracticeConfig(topic) {
 }
 
 function renderActivityPanel(topic) {
+  if (topic.id === "telephone-numbers") {
+    topicColumns?.classList.add("is-hidden");
+    activityPanelTitle.textContent = "";
+    activityPanelSummary.textContent = "";
+    activityList.className = "support-list";
+    activityList.innerHTML = "";
+    return;
+  }
+
   topicColumns?.classList.remove("is-hidden");
   activityPanelSummary.hidden = false;
 

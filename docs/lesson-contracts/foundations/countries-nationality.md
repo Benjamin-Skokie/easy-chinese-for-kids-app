@@ -1,6 +1,6 @@
 # Nationality and Languages
 
-Status: `partial`  
+Status: `complete`
 URLs: `index.html?topic=identity#topic-detail`; `index.html?topic=languages#topic-detail`
 Mapped lessons: **3A Lesson 5 — Nationality; 4A Lesson 2 — Languages**
 
@@ -38,4 +38,4 @@ Do not put one lesson behind a tab or a navigation shelf inside the other page.
 
 ## Remaining coverage
 
-Nationality and Languages now have separate page ownership. Canada, Mexico, and Australia are extra rounds in the single flag-supported nationality listening game, while Languages retains only the 4A textbook language set. Remaining work is desktop and phone visual QA.
+Nationality and Languages now have separate page ownership. Canada, Mexico, and Australia are extra rounds in the flag-and-symbol country matching game, while Languages retains only the 4A textbook language set. Both pages follow the lesson workflow: scene, Book words, Useful note, then practice.

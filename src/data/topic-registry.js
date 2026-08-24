@@ -24,6 +24,7 @@ import { coloursTopic } from "../features/world/colours.js";
 import { hobbies3bTopic, hobbiesAtHomeTopic, hobbiesLeisureTopic, hobbiesTopic, toysTopic } from "../features/play-hobbies/play-hobbies.js";
 import { bodyTopic } from "../features/foundations/body.js";
 import { multiplicationRhymeTopic, numbersTopic } from "../features/foundations/numbers.js";
+import { telephoneNumbersTopic } from "../features/foundations/telephone-numbers.js";
 
 export const visualTopicItems = {
   comparisons: comparisonVisualItems,
@@ -54,6 +55,7 @@ export const schoolSentenceBuilds = {
 
 export const topicData = [
   numbersTopic,
+  telephoneNumbersTopic,
   multiplicationRhymeTopic,
   greetingsTopic,
   politeWordsTopic,

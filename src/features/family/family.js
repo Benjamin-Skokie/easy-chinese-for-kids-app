@@ -1,7 +1,7 @@
 export const familyTopic = {
   id: "family",
-  title: "Family",
-  summary: "Start with love and belonging, then sort family words by older and younger.",
+  title: "My Family 1",
+  summary: "Name family members, then introduce who is in your family.",
   progressLabel: "1B to 3A",
   iconText: "家人",
   iconColor: "#aa7051",
@@ -23,11 +23,15 @@ export const familyTopic = {
     { id: "younger-brother-word", hanzi: "弟弟", pinyin: "dì di", english: "younger brother", audio: "弟弟" },
     { id: "older-sister-word", hanzi: "姐姐", pinyin: "jiě jie", english: "older sister", audio: "姐姐" },
     { id: "younger-sister-word", hanzi: "妹妹", pinyin: "mèi mei", english: "younger sister", audio: "妹妹" }
+    , { id: "grandpa-word", hanzi: "爷爷", pinyin: "yé ye", english: "paternal grandpa", audio: "爷爷" }
+    , { id: "grandma-word", hanzi: "奶奶", pinyin: "nǎi nai", english: "paternal grandma", audio: "奶奶" }
+    , { id: "maternal-grandpa-word", hanzi: "外公", pinyin: "wài gōng", english: "maternal grandpa", audio: "外公" }
+    , { id: "maternal-grandma-word", hanzi: "外婆", pinyin: "wài pó", english: "maternal grandma", audio: "外婆" }
   ],
   interactiveScene: "family-home",
-  parentGuide: "Use one warm family picture for 爸爸妈妈爱我, then switch quickly to family photos, pointing, and real names.",
+  parentGuide: "Use the family-photo scene to count five people, then let children point to and introduce their own family members.",
   cultureGuide: "This early family lesson works best when love words and family roles stay close to the child's real home life.",
-  activities: ["Tap to hear", "Match family member", "Listen and choose", "Talk about my family"],
+  activities: ["Listen", "Book words", "Introduce my family", "Practice"],
   steps: [
     { book: "1B", lesson: 1, title: "Mum and dad", note: "Start with immediate family." },
     { book: "1B", lesson: 2, title: "Brothers and sisters", note: "Expand the family set." },
@@ -77,6 +81,17 @@ export const familyPractice = [
       { personId: "younger-sister", hanzi: "妹妹", pinyin: "mèi mei", english: "younger sister", audio: "妹妹" }
     ]
   }
+  , {
+    id: "family-scene-3",
+    title: "My family",
+    visual: "family-introduction",
+    imagePath: "assets/illustrated-family/family-introduction-full-family.webp",
+    imageAlt: "A family of six in a living room: Mum, Dad, Anan, Lele, a younger sister, and a younger brother",
+    lines: [
+      { hanzi: "这是我的家人。", pinyin: "zhè shì wǒ de jiā rén.", english: "This is my family.", audio: "这是我的家人" },
+      { hanzi: "我家有六口人。", pinyin: "wǒ jiā yǒu liù kǒu rén.", english: "There are six people in my family.", audio: "我家有六口人" }
+    ]
+  }
 ];
 
 export const illustratedFamily = {
@@ -95,6 +110,10 @@ export const familyPersonIdsByItemId = {
   "younger-brother-word": "younger-brother",
   "older-sister-word": "older-sister",
   "younger-sister-word": "younger-sister"
+  , "grandpa-word": "grandpa"
+  , "grandma-word": "grandma"
+  , "maternal-grandpa-word": "grandpa"
+  , "maternal-grandma-word": "grandma"
 };
 
 export const familyHeadshotsByItemId = {
@@ -104,4 +123,8 @@ export const familyHeadshotsByItemId = {
   "younger-brother-word": "assets/illustrated-family/family-avatar-younger-brother.webp",
   "older-sister-word": "assets/illustrated-family/family-avatar-older-sister.webp",
   "younger-sister-word": "assets/illustrated-family/family-avatar-younger-sister.webp"
+  , "grandpa-word": "assets/illustrated-family/grandpa.webp"
+  , "grandma-word": "assets/illustrated-family/grandma.webp"
+  , "maternal-grandpa-word": "assets/illustrated-family/grandpa.webp"
+  , "maternal-grandma-word": "assets/illustrated-family/grandma.webp"
 };

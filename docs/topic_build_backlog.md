@@ -29,6 +29,10 @@ then update both records when the work is complete.
   - Lives in **Time & Daily Life / 时间和日常** as an enrichment topic, not a
     claimed textbook lesson.
 
+- [x] **My Family 2 / 我的家人（二） — 4A Lesson 1: Telephone numbers**
+  - Me & Family continuation for `住 / 哪儿 / 他们 / 北京 / 电话号码 / 多少`.
+  - Contract: [`lesson-contracts/family/my-family-2.md`](./lesson-contracts/family/my-family-2.md).
+
 - [ ] **Requests — 3A Lesson 6** — implemented as the later request layer of
   Polite Words; desktop QA is complete and phone portrait/landscape visual QA remains.
   - Teaches `请…` and `我可以…吗？` with `我可以问老师吗？ / 可以。`.
@@ -45,6 +49,7 @@ also changed from `partial`.
 - [ ] Clothes — `lesson-contracts/daily-life/clothes.md`
   - Implementation covers 2A self-dressing, 3A clothing-board, and 4B school-uniform; visual QA remains.
 - [ ] Positions & Directions — `lesson-contracts/daily-life/positions.md`
+  - Implementation is complete; visual QA remains.
 - [ ] Time & Routines — `lesson-contracts/daily-life/time-routines.md`
 - [ ] Comparisons — `lesson-contracts/daily-life/comparisons.md`
 - [ ] Transportation — `lesson-contracts/daily-life/transport.md`
@@ -60,7 +65,8 @@ also changed from `partial`.
 - [ ] Numbers — `lesson-contracts/foundations/numbers.md`
 - [ ] Multiplication Rhyme — `lesson-contracts/foundations/multiplication-rhyme.md`
 - [ ] Age — `lesson-contracts/foundations/age.md`
-- [ ] Countries & Nationality — `lesson-contracts/foundations/countries-nationality.md`
+- [x] Countries & Nationality — `lesson-contracts/foundations/countries-nationality.md`
+  - Completed as two sibling pages: Nationality and Languages.
 - [x] Body — `lesson-contracts/foundations/body.md`
   - Completed with the diagram and matching review plus a no-repeat spotlight Look and choose practice.
 - [ ] Family — `lesson-contracts/family/family.md`
@@ -85,9 +91,6 @@ also changed from `partial`.
 - [ ] Extend Family’s 2A Lesson 2 layer with complete `我有… / 我没有…`
   sibling-count sentences using `family-counting-two-younger-brothers.webp`.
   Do not use the unrelated schoolbag `有 / 没有` grammar visual.
-- [ ] After reviewing the 3B source, decide whether Positions should use the
-  positive `书包在桌子下面。` scene. Do not introduce `不在` unless it is
-  directly supported.
 - [ ] Review the exact 3A Request language before using
   `can-watch-tv-homework-first.webp`.
 - [x] Everyday Actions now uses its consistent 4:3 replacement set

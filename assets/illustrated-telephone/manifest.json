@@ -1,0 +1,15 @@
+{
+  "collection": "illustrated-telephone",
+  "style": "original gentle storybook scenes for Chinese communication lessons",
+  "items": [
+    {
+      "id": "grandparents-live-in-beijing",
+      "label": "Grandparents live in Beijing",
+      "hanzi": "他们住在北京",
+      "pinyin": "ta men zhu zai Bei jing",
+      "theme": "Grandpa and Grandma walk in a Beijing park",
+      "lessonHint": "4A Lesson 1 Telephone numbers",
+      "file": "grandparents-live-in-beijing.webp"
+    }
+  ]
+}
