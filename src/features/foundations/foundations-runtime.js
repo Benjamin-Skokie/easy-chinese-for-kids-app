@@ -118,6 +118,10 @@ function bookWordItemsForTopic(topic) {
     return familyBookWordItems();
   }
 
+  if (topic.id === "languages") {
+    return focusItemsForTopic(topic).filter((item) => item.id !== "speak-language");
+  }
+
   return focusItemsForTopic(topic);
 }
 
@@ -179,6 +183,15 @@ function usefulNoteForTopic(topic) {
       </p>
       <p class="greetings-note-copy">
         In listening practice, the repeated family word is the anchor. For sisters, <strong>姐姐</strong> and <strong>妹妹</strong> both use <strong>女</strong>, so children can group the two sister words together.
+      </p>
+    `,
+    languages: `
+      <p class="greetings-note-hanzi">国家 / 国籍 / 语言</p>
+      <p class="greetings-note-copy">
+        <strong>国家</strong> names a country, <strong>国籍</strong> names a nationality, and <strong>语言</strong> names a language. In this lesson, listen for the language word after <strong>说</strong>.
+      </p>
+      <p class="greetings-note-copy">
+        People can speak one language or more than one language. The sentence pattern helps us practise words; it does not describe every person from a country.
       </p>
     `
   };
@@ -1486,6 +1499,27 @@ function renderLegacyNationalityExplorer() {
 }
 
 function renderLanguagesExplorer() {
+  renderLanguagesScene();
+}
+
+function renderLanguagesScene() {
+  focusExplorer.innerHTML = `
+    <div class="numbers-board identity-board">
+      <section class="greetings-exchange">
+        <div class="greetings-exchange-top">
+          <div><p class="body-match-kicker">4A Lesson 2 · Languages</p><p class="greetings-exchange-prompt">Two classmates talk about the languages they speak.</p></div>
+          <button class="small-button is-play-button" type="button" data-languages-play-scene>Play</button>
+        </div>
+        <div class="greetings-scene-layout"><div class="greetings-scene-visual"><img class="greetings-scene-image" src="${identityConversation.imagePath}" alt="${identityConversation.imageAlt}" /></div><div class="greetings-line-stack">${identityConversation.lines.map((line) => `<article class="greetings-line-card"><div class="telephone-bubble-copy"><p class="telephone-line-hanzi">${line.hanzi}</p>${state.showPinyin ? `<p class="telephone-line-pinyin">${line.pinyin}</p>` : ""}${state.showEnglish ? `<p class="telephone-line-english">${line.english}</p>` : ""}</div></article>`).join("")}</div></div>
+      </section>
+    </div>
+  `;
+  focusExplorer.querySelector("[data-languages-play-scene]")?.addEventListener("click", () => {
+    if (state.tapAudioEnabled) speakSceneLines(identityConversation.lines);
+  });
+}
+
+function renderLegacyLanguagesExplorer() {
   const selectedCountry = identityCountries.find((country) => country.id === state.identityLanguageSelectedCountryId);
   focusExplorer.innerHTML = `
     <div class="numbers-board identity-board">

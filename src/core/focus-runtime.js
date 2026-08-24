@@ -100,14 +100,14 @@ function renderFocusWordList() {
   const topic = currentTopic();
   const items = focusItemsForTopic();
   const isLessonTemplate = usesLessonTemplate(topic);
-  const showBookWordsHeading = isLessonTemplate || topic.id === "clothes" || topic.id === "time-date" || topic.id === "weekdays";
+  const showBookWordsHeading = isLessonTemplate || topic.id === "clothes" || topic.id === "time-date" || topic.id === "weekdays" || topic.id === "languages";
   focusWordList.classList.toggle("is-family-book-words", showBookWordsHeading);
   const visibleItems =
     topic.id === "numbers"
       ? numberWordListItems(items, currentFocusItem(), currentNumberStage())
       : topic.id === "time-date"
         ? timeDateExpressionItems
-      : isLessonTemplate
+      : isLessonTemplate || topic.id === "languages"
         ? bookWordItemsForTopic(topic)
         : items;
   focusWordList.innerHTML = "";

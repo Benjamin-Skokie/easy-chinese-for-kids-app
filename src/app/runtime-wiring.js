@@ -97,6 +97,15 @@ let ensureNationalityChallenge;
 let currentNationalityAnswer;
 let handleNationalityChallengePlay;
 let handleNationalityChallengeGuess;
+let ensureNationalityMatchGame;
+let resetNationalityMatchGame;
+let handleNationalityMatchPhrase;
+let handleNationalityMatchAttempt;
+let languagePracticeItems;
+let ensureLanguageChallenge;
+let currentLanguageAnswer;
+let handleLanguageChallengePlay;
+let handleLanguageChallengeGuess;
 let politeGameItems;
 let politeMeaningLabel;
 let resetPoliteMatchGame;
@@ -418,7 +427,16 @@ syncBookSelectionFromTopic();
   ensureNationalityChallenge,
   currentNationalityAnswer,
   handleNationalityChallengePlay,
-  handleNationalityChallengeGuess
+  handleNationalityChallengeGuess,
+  ensureNationalityMatchGame,
+  resetNationalityMatchGame,
+  handleNationalityMatchPhrase,
+  handleNationalityMatchAttempt,
+  languagePracticeItems,
+  ensureLanguageChallenge,
+  currentLanguageAnswer,
+  handleLanguageChallengePlay,
+  handleLanguageChallengeGuess
 } = createNationalityController({
   state,
   countries: [...identityCountries, ...identityExploreCountries],
@@ -799,6 +817,15 @@ clothesSentenceItems,
   currentNationalityAnswer,
   handleNationalityChallengePlay,
   handleNationalityChallengeGuess,
+  ensureNationalityMatchGame,
+  resetNationalityMatchGame,
+  handleNationalityMatchPhrase,
+  handleNationalityMatchAttempt,
+  languagePracticeItems,
+  ensureLanguageChallenge,
+  currentLanguageAnswer,
+  handleLanguageChallengePlay,
+  handleLanguageChallengeGuess,
   politeGameItems,
   politeMeaningLabel,
   ensurePoliteChallenge,

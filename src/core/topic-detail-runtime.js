@@ -124,7 +124,7 @@ function renderTopicDetail() {
       topic.id === "positions" ||
       topic.id === "transport" ||
       topic.id === "daily-life" ||
-      topic.id === "identity" ||
+      ["identity", "languages"].includes(topic.id) ||
       topic.id === "clothes" ||
       schoolTopicData[topic.id] ||
       (topic.id === "numbers" && currentNumberStage().telephoneMode)

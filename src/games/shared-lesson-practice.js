@@ -9,7 +9,7 @@ export function createSharedLessonPractice({ state, speak, elements, documentRef
           <div>
             <p class="body-match-kicker">${config.kicker ?? "Listen and choose"}</p>
             ${config.title ? `<h4>${config.title}</h4>` : ""}
-            <p class="numbers-game-note">Play the audio, then tap the matching Chinese card.</p>
+            <p class="numbers-game-note">${config.instruction ?? "Play the audio, then tap the matching Chinese card."}</p>
           </div>
           <button class="small-button is-play-button" type="button" data-template-listen-play>${playLabel}</button>
         </div>
@@ -60,7 +60,7 @@ export function createSharedLessonPractice({ state, speak, elements, documentRef
           <div>
             <p class="body-match-kicker">${config.kicker ?? "Matching game"}</p>
             ${config.title ? `<h4>${config.title}</h4>` : ""}
-            <p class="numbers-game-note">Tap a card on the left, then tap its matching card on the right.</p>
+            <p class="numbers-game-note">${config.instruction ?? "Tap a card on the left, then tap its matching card on the right."}</p>
           </div>
           <button class="small-button is-play-button" type="button" data-template-match-new>Play</button>
         </div>
@@ -78,8 +78,7 @@ export function createSharedLessonPractice({ state, speak, elements, documentRef
                 <article class="family-match-solved-row">
                   <div class="polite-match-card polite-match-card-phrase family-match-pair-card is-solved">
                     <span class="answer-result-mark" aria-hidden="true">✓</span>
-                    <span class="numbers-game-hanzi">${item.hanzi}</span>
-                    ${state.showPinyin ? `<span class="numbers-game-pinyin">${item.pinyin}</span>` : ""}
+                    ${config.phraseContent ? config.phraseContent(id) : `<span class="numbers-game-hanzi">${item.hanzi}</span>${state.showPinyin ? `<span class="numbers-game-pinyin">${item.pinyin}</span>` : ""}`}
                   </div>
                   <div class="polite-match-card ${config.meaningCardClass ?? "polite-match-card-meaning"} family-match-pair-card is-solved">
                     <span class="answer-result-mark" aria-hidden="true">✓</span>
@@ -101,8 +100,7 @@ export function createSharedLessonPractice({ state, speak, elements, documentRef
                 return `
                   <button class="polite-match-card polite-match-card-phrase${selected ? " is-selected" : ""}${wrong ? " is-wrong" : ""}" type="button" data-template-match-phrase="${id}">
                     ${wrong ? '<span class="answer-result-mark" aria-hidden="true">×</span>' : ""}
-                    <span class="numbers-game-hanzi">${item.hanzi}</span>
-                    ${state.showPinyin ? `<span class="numbers-game-pinyin">${item.pinyin}</span>` : ""}
+                    ${config.phraseContent ? config.phraseContent(id) : `<span class="numbers-game-hanzi">${item.hanzi}</span>${state.showPinyin ? `<span class="numbers-game-pinyin">${item.pinyin}</span>` : ""}`}
                   </button>
                 `;
               }).join("")}

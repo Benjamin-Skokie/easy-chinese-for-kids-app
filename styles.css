@@ -2373,6 +2373,38 @@ h4 {
   margin: 0;
 }
 
+.nationality-match-country {
+  display: grid;
+  grid-template-columns: 72px minmax(0, 1fr);
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  text-align: left;
+}
+
+.nationality-match-copy,
+.nationality-match-symbol-card {
+  display: grid;
+  gap: 4px;
+}
+
+.nationality-match-symbol-card {
+  grid-template-columns: 76px minmax(0, 1fr);
+  align-items: center;
+  gap: 12px;
+  text-align: left;
+}
+
+.nationality-match-symbol-card .numbers-game-english,
+.nationality-match-copy .numbers-game-english {
+  color: var(--muted);
+  font-size: 0.85rem;
+  line-height: 1.25;
+}
+
+.nationality-match-flag { width: 72px; height: 48px; object-fit: contain; }
+.nationality-match-symbol { width: 76px; height: 76px; object-fit: contain; }
+
 .identity-explore-section {
   padding-top: 4px;
 }

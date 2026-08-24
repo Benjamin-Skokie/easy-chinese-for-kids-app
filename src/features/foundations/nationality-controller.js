@@ -8,8 +8,23 @@ export function createNationalityController({ state, countries, question, shuffl
     english: country.response.english,
     flagAsset: country.asset,
     flagAlt: `${country.label} flag`,
+    countryHanzi: country.hanzi,
+    countryPinyin: country.pinyin.replace(" rén", ""),
+    symbolAsset: country.symbolAsset,
+    symbolCaption: country.symbolCaption,
     response: country.response
   }));
+  const languageItems = countries
+    .filter((country) => ["china", "usa", "germany", "france"].includes(country.id))
+    .map((country) => ({
+      id: country.language.hanzi,
+      hanzi: country.language.hanzi,
+      pinyin: country.language.pinyin,
+      english: country.language.english,
+      flagAsset: country.asset,
+      flagAlt: `${country.label} flag`,
+      sentence: { hanzi: `${country.nationality}说${country.language.hanzi}。`, pinyin: `${country.pinyin} shuō ${country.language.pinyin}.`, english: `${country.nationality} people speak ${country.language.english}.`, audio: `${country.nationality}说${country.language.hanzi}` }
+    }));
 
   function resetNationalityChallenge(options = {}) {
     const answerId = nextRandomCycleId(state, "nationality-listen", practiceItems.map((item) => item.id));
@@ -64,5 +79,82 @@ export function createNationalityController({ state, countries, question, shuffl
     renderActivityPanel(currentTopic());
   }
 
-  return { nationalityPracticeItems: () => practiceItems, ensureNationalityChallenge, currentNationalityAnswer: currentAnswer, handleNationalityChallengePlay, handleNationalityChallengeGuess };
+  function resetNationalityMatchGame() {
+    state.nationalityMatchSelectedId = null;
+    state.nationalityMatchedIds = new Set();
+    state.nationalityMatchPhraseOrder = shuffleArray(practiceItems.map((item) => item.id));
+    state.nationalityMatchSymbolOrder = shuffleArray(practiceItems.map((item) => item.id));
+    state.nationalityMatchFeedback = "";
+  }
+
+  function ensureNationalityMatchGame() {
+    if (state.nationalityMatchPhraseOrder.length !== practiceItems.length || state.nationalityMatchSymbolOrder.length !== practiceItems.length) resetNationalityMatchGame();
+  }
+
+  function handleNationalityMatchPhrase(itemId) {
+    if (state.nationalityMatchedIds.has(itemId)) return;
+    state.nationalityMatchSelectedId = itemId;
+    state.nationalityMatchFeedback = "Now choose the matching country symbol.";
+    renderActivityPanel(currentTopic());
+  }
+
+  function handleNationalityMatchAttempt(itemId) {
+    const selectedId = state.nationalityMatchSelectedId;
+    if (!selectedId || state.nationalityMatchedIds.has(itemId)) return;
+    if (selectedId === itemId) {
+      state.nationalityMatchedIds = new Set([...state.nationalityMatchedIds, itemId]);
+      state.nationalityMatchSelectedId = null;
+      state.nationalityMatchFeedback = state.nationalityMatchedIds.size === practiceItems.length ? "Great job! You matched every country." : "Correct! Choose another flag and country name.";
+    } else {
+      state.nationalityMatchFeedback = "Not that symbol. Try another one.";
+    }
+    renderActivityPanel(currentTopic());
+  }
+
+  function resetLanguageChallenge() {
+    const answerId = nextRandomCycleId(state, "languages-listen", languageItems.map((item) => item.id));
+    const answer = languageItems.find((item) => item.id === answerId);
+    if (!answer) return;
+    state.languageChallengeAnswerId = answer.id;
+    state.languageChallengeOptionIds = shuffleArray(languageItems.map((item) => item.id));
+    state.languageChallengePickedId = "";
+    state.languageChallengeResult = "";
+    state.languageChallengeWrongIds = new Set();
+    state.languageListenFeedback = "";
+  }
+
+  function ensureLanguageChallenge() {
+    if (!state.languageChallengeAnswerId || !state.languageChallengeOptionIds.length) resetLanguageChallenge();
+  }
+
+  function currentLanguageAnswer() {
+    ensureLanguageChallenge();
+    return languageItems.find((item) => item.id === state.languageChallengeAnswerId) ?? languageItems[0];
+  }
+
+  function handleLanguageChallengePlay() {
+    ensureLanguageChallenge();
+    if (state.languageChallengeResult === "correct") resetLanguageChallenge();
+    const answer = currentLanguageAnswer();
+    if (state.tapAudioEnabled && answer) speakSceneLines([answer.sentence]);
+    state.languageListenFeedback = "";
+    renderActivityPanel(currentTopic());
+  }
+
+  function handleLanguageChallengeGuess(itemId) {
+    const answer = currentLanguageAnswer();
+    if (!answer || state.languageChallengeResult === "correct") return;
+    state.languageChallengePickedId = itemId;
+    if (itemId === answer.id) {
+      state.languageChallengeResult = "correct";
+      state.languageListenFeedback = "Correct! Read the sentence below.";
+    } else {
+      state.languageChallengeResult = "wrong";
+      state.languageChallengeWrongIds = new Set([...state.languageChallengeWrongIds, itemId]);
+      state.languageListenFeedback = "Not this one. Press Play and listen again.";
+    }
+    renderActivityPanel(currentTopic());
+  }
+
+  return { nationalityPracticeItems: () => practiceItems, ensureNationalityChallenge, currentNationalityAnswer: currentAnswer, handleNationalityChallengePlay, handleNationalityChallengeGuess, ensureNationalityMatchGame, resetNationalityMatchGame, handleNationalityMatchPhrase, handleNationalityMatchAttempt, languagePracticeItems: () => languageItems, ensureLanguageChallenge, currentLanguageAnswer, handleLanguageChallengePlay, handleLanguageChallengeGuess };
 }
