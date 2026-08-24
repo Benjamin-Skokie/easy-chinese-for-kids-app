@@ -13,7 +13,7 @@ import { timeDateWeekItems } from "../features/time-daily-life/weekdays.js";
 import { timeDateClockItems, timeDateExpressionItems, timeDateRoutineItems } from "../features/time-daily-life/time.js";
 import { datePracticeItems, timeDateDateItems, timeDateMonthItems } from "../features/time-daily-life/dates.js";
 import { comparisonPracticeItems, comparisonsTopic, comparisonVisualItems, comparisonWordItems } from "../features/time-daily-life/comparisons.js";
-import { positionPracticeItems, positionScenes, positionsTopic, positionVisualItems } from "../features/time-daily-life/positions.js";
+import { positionBookWords, positionPracticeItems, positionScenes, positionsTopic, positionVisualItems } from "../features/time-daily-life/positions.js";
 import { transportSentenceTokens, transportTopic, transportVisualItems } from "../features/time-daily-life/transport.js";
 import { dailyLifeTopic, roomScenes, roomSentenceTokens, roomVisualItems } from "../features/time-daily-life/rooms.js";
 import { everydayActionItems } from "../features/time-daily-life/everyday-actions.js";
@@ -34,7 +34,8 @@ import { politeGameItemIds, politePractice, politeWordsTopic } from "../features
 import { createPoliteWordsController } from "../features/foundations/polite-words-controller.js";
 import { greetingsGameItemIds, greetingsPractice, greetingsTopic } from "../features/foundations/greetings.js";
 import { createGreetingsController } from "../features/foundations/greetings-controller.js";
-import { identityConversation, identityCountries, identityQuestion, identityTopic } from "../features/foundations/identity.js";
+import { createNationalityController } from "../features/foundations/nationality-controller.js";
+import { identityConversation, identityCountries, identityExploreCountries, identityLanguageQuestion, identityQuestion, nationalityConversation } from "../features/foundations/identity.js";
 import { familyGameItemIds, familyHeadshotsByItemId, familyPersonIdsByItemId, familyPractice, familyTopic, illustratedFamily } from "../features/family/family.js";
 import { clothesBookWords, clothesMatchItems, clothesPractice, clothesSentenceItems, clothesTopic } from "../features/daily-life/clothes.js";
 import { coloursTopic } from "../features/world/colours.js";
@@ -91,6 +92,11 @@ let handleGreetingsMatchAttempt;
 let handleGreetingsChallengePlay;
 let handleGreetingsChallengeGuess;
 let renderGreetingsExplorer;
+let nationalityPracticeItems;
+let ensureNationalityChallenge;
+let currentNationalityAnswer;
+let handleNationalityChallengePlay;
+let handleNationalityChallengeGuess;
 let politeGameItems;
 let politeMeaningLabel;
 let resetPoliteMatchGame;
@@ -297,7 +303,10 @@ bodyBonusItemIds,
 bodyCoreItemIds,
 bodyDiagramLayout,
 identityConversation,
+nationalityConversation,
 identityCountries,
+identityExploreCountries,
+identityLanguageQuestion,
 identityQuestion,
 topicById,
 focusItemsForTopic,
@@ -402,6 +411,22 @@ syncBookSelectionFromTopic();
   renderFocusExplorer,
   renderFocusStatus,
   elements: { focusExplorer, focusStatus }
+}));
+
+({
+  nationalityPracticeItems,
+  ensureNationalityChallenge,
+  currentNationalityAnswer,
+  handleNationalityChallengePlay,
+  handleNationalityChallengeGuess
+} = createNationalityController({
+  state,
+  countries: [...identityCountries, ...identityExploreCountries],
+  question: identityQuestion,
+  shuffleArray,
+  speakSceneLines,
+  currentTopic,
+  renderActivityPanel
 }));
 
 ({
@@ -632,6 +657,7 @@ comparisonPracticeItems,
 comparisonWordItems,
 positionPracticeItems,
 positionScenes,
+positionBookWords,
 clothesMatchItems,
 clothesSentenceItems,
 clothesBookWords,
@@ -768,6 +794,11 @@ clothesSentenceItems,
   resetGreetingsMatchGame,
   handleGreetingsMatchPhrase,
   handleGreetingsMatchAttempt,
+  nationalityPracticeItems,
+  ensureNationalityChallenge,
+  currentNationalityAnswer,
+  handleNationalityChallengePlay,
+  handleNationalityChallengeGuess,
   politeGameItems,
   politeMeaningLabel,
   ensurePoliteChallenge,

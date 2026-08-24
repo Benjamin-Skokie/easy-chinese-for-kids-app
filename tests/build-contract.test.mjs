@@ -10,7 +10,7 @@ import { timeDateWeekItems } from "../src/features/time-daily-life/weekdays.js";
 import { timeDateClockItems, timeDateRoutineItems } from "../src/features/time-daily-life/time.js";
 import { datePracticeItems, timeDateMonthItems } from "../src/features/time-daily-life/dates.js";
 import { comparisonPracticeItems, comparisonsTopic, comparisonVisualItems } from "../src/features/time-daily-life/comparisons.js";
-import { positionPracticeItems, positionScenes, positionsTopic, positionVisualItems } from "../src/features/time-daily-life/positions.js";
+import { positionBookWords, positionPracticeItems, positionScenes, positionsTopic, positionVisualItems } from "../src/features/time-daily-life/positions.js";
 import { transportSentenceTokens, transportTopic, transportVisualItems } from "../src/features/time-daily-life/transport.js";
 import { dailyLifeTopic, roomScenes, roomVisualItems } from "../src/features/time-daily-life/rooms.js";
 import { stationeryPictureMatchRounds, stationerySentenceBuilds, stationeryTopicData } from "../src/features/school-life/stationery.js";
@@ -23,7 +23,7 @@ import { foodPreferencesTopic, foodPreferencesTopicData } from "../src/features/
 import { mealsFeelingsSentenceBuilds, mealsFeelingsTopic, mealsFeelingsTopicData } from "../src/features/food/meals-feelings.js";
 import { introductionsBuildPhrases, introductionsGamePrompts, introductionsPractice, introductionsTopic } from "../src/features/foundations/introductions.js";
 import { ageBuildPhrases, agePractice, ageTopic } from "../src/features/foundations/age.js";
-import { identityConversation, identityCountries, identityQuestion, identityTopic } from "../src/features/foundations/identity.js";
+import { identityConversation, identityCountries, identityExploreCountries, identityLanguageQuestion, identityQuestion, identityTopic, languagesTopic, nationalityConversation } from "../src/features/foundations/identity.js";
 import { greetingsGameItemIds, greetingsPractice, greetingsTopic } from "../src/features/foundations/greetings.js";
 import { politeGameItemIds, politePractice, politeWordsTopic } from "../src/features/foundations/polite-words.js";
 import { clothesBookWords, clothesMatchItems, clothesPractice, clothesSentenceItems, clothesTopic } from "../src/features/daily-life/clothes.js";
@@ -46,8 +46,8 @@ import { familyGameItemIds, familyPractice, familyTopic, illustratedFamily } fro
 
 test("the local page loads a single bundled application script", () => {
   const html = readFileSync("index.html", "utf8");
-  assert.match(html, /<link rel="stylesheet" href="styles\.css\?v=20260817-clothes-book-icons" \/>/);
-  assert.match(html, /<script src="app\.js\?v=20260817-clothes-scene-copy"><\/script>/);
+  assert.match(html, /<link rel="stylesheet" href="styles\.css\?v=20260818-positions-layout" \/>/);
+  assert.match(html, /<script src="app\.js\?v=20260818-positions-layout"><\/script>/);
   assert.doesNotMatch(html, /type="module"/);
 });
 
@@ -659,8 +659,8 @@ test("time and daily life practice data retains every interaction set", () => {
   assert.equal(dailyLifeTopic.id, "daily-life");
   assert.equal(dailyLifeTopic.interactiveScene, "rooms");
   assert.equal(roomScenes.length, 3);
-  assert.equal(positionScenes.length, 4);
-  assert.equal(positionPracticeItems.length, 11);
+  assert.equal(positionScenes.length, 3);
+  assert.equal(positionPracticeItems.length, 8);
   assert.equal(comparisonPracticeItems.length, 7);
   assert.equal(Object.keys(transportSentenceTokens).length, 8);
 });
@@ -735,12 +735,23 @@ test("age owns its scenes and sentence practice", () => {
   assert.equal(ageBuildPhrases.length, 6);
 });
 
-test("identity owns its countries, question, and conversation", () => {
+test("nationality and languages are separate book-aligned topics", () => {
   assert.equal(identityTopic.id, "identity");
   assert.equal(identityTopic.interactiveScene, "identity-scenes");
-  assert.equal(identityCountries.length, 3);
+  assert.equal(identityTopic.steps.length, 1);
+  assert.equal(languagesTopic.id, "languages");
+  assert.equal(languagesTopic.interactiveScene, "identity-scenes");
+  assert.equal(languagesTopic.steps.length, 1);
+  assert.equal(identityCountries.length, 5);
+  assert.deepEqual(identityCountries.map((country) => country.hanzi), ["中国", "美国", "英国", "德国", "法国"]);
+  assert.deepEqual(identityExploreCountries.map((country) => country.hanzi), ["加拿大", "墨西哥", "澳大利亚"]);
+  assert.ok(identityCountries.every((country) => country.symbolAsset && country.symbolCaption));
+  assert.ok(identityCountries.every((country) => country.language));
+  assert.ok(identityExploreCountries.every((country) => country.symbolAsset && country.symbolCaption));
   assert.equal(identityQuestion.hanzi, "你是哪国人？");
+  assert.equal(identityLanguageQuestion.hanzi, "说一说。");
   assert.equal(identityConversation.lines.length, 2);
+  assert.equal(nationalityConversation.imagePath, "assets/introductions/introductions-scene-4.webp");
 });
 
 test("greetings owns its template lesson scenes and listening set", () => {
@@ -787,6 +798,21 @@ test("clothes owns its scenes and picture matching set", () => {
   assert.ok(clothesSentenceItems.every((item) => existsSync(item.imagePath)));
   assert.match(runtimeSource, /time-asset-card book-word-card/);
   assert.doesNotMatch(runtimeSource, /clothes-book-board/);
+});
+
+test("Positions uses a two-column scene grid with text-only direction words", () => {
+  const runtimeSource = readFileSync("src/features/time-daily-life/time-daily-life-runtime.js", "utf8");
+  const stylesSource = readFileSync("styles.css", "utf8");
+  const practiceSource = readFileSync("src/core/lesson-practice-runtime.js", "utf8");
+  assert.equal(positionsTopic.ownsExplorerContent, true);
+  assert.equal(positionScenes.length, 3);
+  assert.deepEqual(positionBookWords.map((item) => item.hanzi), ["上", "下", "里", "外", "前", "后", "左", "右"]);
+  assert.ok(positionPracticeItems.some((item) => item.hanzi === "书包在桌子下面。"));
+  assert.match(runtimeSource, /greetings-practice-grid position-scene-grid/);
+  assert.match(runtimeSource, /data-position-word/);
+  assert.match(stylesSource, /\.position-scene-grid \{\s+grid-template-columns: repeat\(2, minmax\(0, 1fr\)\);/);
+  assert.match(stylesSource, /\.greetings-scene-image\.position-scene-image \{\s+aspect-ratio: 4 \/ 3;\s+object-fit: cover;/);
+  assert.doesNotMatch(practiceSource, /\$\{renderPracticeSayCards\(\[\s+\{ hanzi: "书架在桌子左边。"/);
 });
 
 test("Nature and Weather remain separate book topics", () => {

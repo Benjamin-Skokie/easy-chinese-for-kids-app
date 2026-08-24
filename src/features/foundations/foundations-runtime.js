@@ -1,5 +1,5 @@
 export function createFoundationsRuntime(context) {
-  const { state, numberHanzi, numberPinyin, buildNumberItem, numberStages, telephonePractice, familyGameItemIds, familyPersonIdsByItemId, familyHeadshotsByItemId, familyPractice, illustratedFamily, illustratedKids, bodyBonusItemIds, bodyCoreItemIds, bodyDiagramLayout, identityConversation, identityCountries, identityQuestion, topicById, focusItemsForTopic, currentTopic, currentNumberStage, currentFocusItem, currentBook, currentLesson, shuffleArray, chineseUtterance, speak, speakSceneLines, renderActivityPanel, renderFocusDisplay, renderFocusExplorer, renderFocusStatus, selectFocusItem, bodySentenceForItem, focusExplorer, focusStatus, activityPanelTitle, activityPanelSummary, activityList } = context;
+  const { state, numberHanzi, numberPinyin, buildNumberItem, numberStages, telephonePractice, familyGameItemIds, familyPersonIdsByItemId, familyHeadshotsByItemId, familyPractice, illustratedFamily, illustratedKids, bodyBonusItemIds, bodyCoreItemIds, bodyDiagramLayout, identityConversation, nationalityConversation, identityCountries, identityExploreCountries, identityLanguageQuestion, identityQuestion, topicById, focusItemsForTopic, currentTopic, currentNumberStage, currentFocusItem, currentBook, currentLesson, shuffleArray, chineseUtterance, speak, speakSceneLines, renderActivityPanel, renderFocusDisplay, renderFocusExplorer, renderFocusStatus, selectFocusItem, bodySentenceForItem, focusExplorer, focusStatus, activityPanelTitle, activityPanelSummary, activityList } = context;
 
 function numberStageItems(stage = currentNumberStage()) {
   const start = Math.min(stage.start, stage.end);
@@ -1129,18 +1129,117 @@ function renderFamilyExplorer() {
   });
 }
 
-function renderIdentityExplorer() {
-  const selectedCountry = identityCountries.find((country) => country.id === state.identitySelectedCountryId);
+function renderLegacyIdentityExplorer() {
+  const allIdentityCountries = [...identityCountries, ...identityExploreCountries];
+  const selectedCountry = allIdentityCountries.find((country) => country.id === state.identitySelectedCountryId);
+  const coreCountryIds = identityCountries.map((country) => country.id);
+  const validPracticeIds = Array.isArray(state.identityPracticeRemainingIds)
+    ? state.identityPracticeRemainingIds.filter((id) => coreCountryIds.includes(id))
+    : [];
+  if (!state.identityPracticeTargetId || !coreCountryIds.includes(state.identityPracticeTargetId)) {
+    const nextIds = validPracticeIds.length ? validPracticeIds : shuffleArray(coreCountryIds);
+    state.identityPracticeTargetId = nextIds.pop();
+    state.identityPracticeRemainingIds = nextIds;
+    state.identityPracticeFeedback = "";
+  }
+  const practiceCountry = identityCountries.find((country) => country.id === state.identityPracticeTargetId) ?? identityCountries[0];
+  const selectedLanguageCountry = identityCountries.find((country) => country.id === state.identityLanguageSelectedCountryId);
+  const countryCard = (country, group) => `
+    <button class="identity-country-card${selectedCountry?.id === country.id ? " is-selected" : ""}" type="button" data-identity-country="${country.id}" data-identity-group="${group}">
+      <img class="identity-flag" src="${country.asset}" alt="${country.label} flag" />
+      <span class="numbers-game-hanzi">${country.nationality}</span>
+      ${state.showPinyin ? `<span class="numbers-game-pinyin">${country.pinyin}</span>` : ""}
+      ${state.showEnglish ? `<span class="numbers-game-english">${country.label}</span>` : ""}
+    </button>
+  `;
   focusExplorer.innerHTML = `
     <div class="numbers-board identity-board">
-      <section class="greetings-exchange">
+      <section class="identity-question-section">
+        <div class="identity-question-top">
+          <div>
+            <p class="body-match-kicker">3A Lesson 5 · Nationality</p>
+            <p class="greetings-exchange-prompt">Listen to the conversation. Choose the reply.</p>
+            <p class="telephone-line-hanzi">${identityQuestion.hanzi}</p>
+            ${state.showPinyin ? `<p class="telephone-line-pinyin">${identityQuestion.pinyin}</p>` : ""}
+            ${state.showEnglish ? `<p class="telephone-line-english">${identityQuestion.english}</p>` : ""}
+          </div>
+          <button class="small-button is-play-button" type="button" data-identity-play-question>Play</button>
+        </div>
+        <div class="identity-practice-card">
+          <div class="identity-practice-visual">
+            <img class="identity-flag" src="${practiceCountry.asset}" alt="${practiceCountry.label} flag" />
+            <p class="numbers-game-hanzi">${practiceCountry.hanzi}</p>
+          </div>
+          <div class="identity-practice-options" aria-label="Choose a nationality answer">
+            ${identityCountries.map((country) => `<button class="choice-button" type="button" data-identity-practice-country="${country.id}">${country.nationality}</button>`).join("")}
+          </div>
+          <p class="identity-practice-feedback" aria-live="polite">${state.identityPracticeFeedback || "Choose the answer that completes 我是…人。"}</p>
+          ${state.identityPracticeFeedback.startsWith("Correct") ? '<button class="small-button is-new-game-button" type="button" data-identity-next-practice>New round</button>' : ""}
+        </div>
+        ${
+          selectedCountry
+            ? `
+              <article class="greetings-line-card identity-answer-card">
+                <div class="telephone-bubble-copy">
+                  <p class="telephone-line-hanzi">${selectedCountry.response.hanzi}</p>
+                  ${state.showPinyin ? `<p class="telephone-line-pinyin">${selectedCountry.response.pinyin}</p>` : ""}
+                  ${state.showEnglish ? `<p class="telephone-line-english">${selectedCountry.response.english}</p>` : ""}
+                </div>
+                <div class="identity-symbol-detail">
+                  <img src="${selectedCountry.symbolAsset}" alt="${selectedCountry.symbolCaption}" />
+                  <p>${selectedCountry.symbolCaption}</p>
+                </div>
+              </article>
+            `
+            : ""
+        }
+      </section>
+      <section class="identity-question-section identity-explore-section">
+        <div>
+          <p class="body-match-kicker">Explore more countries</p>
+          <p>These extra country words are for exploring, not for the 3A practice set.</p>
+        </div>
+        <div class="identity-country-grid identity-explore-grid">
+          ${identityExploreCountries.map((country) => countryCard(country, "explore")).join("")}
+        </div>
+      </section>
+      <section class="greetings-exchange identity-language-section">
         <div class="greetings-exchange-top">
           <div>
-            <p class="body-match-kicker">${currentBook().label} Lesson ${currentLesson().lesson}</p>
-            <p class="greetings-exchange-prompt">Countries and languages</p>
+            <p class="body-match-kicker">4A Lesson 2 · Languages</p>
+            <p class="greetings-exchange-prompt">Say one sentence for each picture.</p>
+            <p class="telephone-line-hanzi">${identityLanguageQuestion.hanzi}</p>
+            ${state.showPinyin ? `<p class="telephone-line-pinyin">${identityLanguageQuestion.pinyin}</p>` : ""}
+            ${state.showEnglish ? `<p class="telephone-line-english">${identityLanguageQuestion.english}</p>` : ""}
           </div>
-          <button class="small-button is-play-button" type="button" data-identity-play-scene>Play</button>
+          <button class="small-button is-play-button" type="button" data-identity-play-language>Play</button>
         </div>
+        <div class="identity-language-grid">
+          ${identityCountries
+            .map(
+              (country) => `
+                <button class="identity-language-card${selectedLanguageCountry?.id === country.id ? " is-selected" : ""}" type="button" data-identity-language-country="${country.id}">
+                  <img class="identity-flag" src="${country.asset}" alt="${country.label} flag" />
+                  <span class="numbers-game-hanzi">${country.nationality}说${country.language.hanzi}。</span>
+                  ${state.showPinyin ? `<span class="numbers-game-pinyin">${country.pinyin} shuō ${country.language.pinyin}.</span>` : ""}
+                  ${state.showEnglish ? `<span class="numbers-game-english">${country.nationality} people speak ${country.language.english}.</span>` : ""}
+                </button>
+              `
+            )
+            .join("")}
+        </div>
+        ${
+          selectedLanguageCountry
+            ? `<article class="greetings-line-card identity-answer-card">
+                <div class="telephone-bubble-copy">
+                  <p class="body-match-kicker">Make your own sentence</p>
+                  <p class="telephone-line-hanzi">我是${selectedLanguageCountry.nationality}。我说${selectedLanguageCountry.language.hanzi}。</p>
+                  ${state.showPinyin ? `<p class="telephone-line-pinyin">wǒ shì ${selectedLanguageCountry.pinyin}. wǒ shuō ${selectedLanguageCountry.language.pinyin}.</p>` : ""}
+                  ${state.showEnglish ? `<p class="telephone-line-english">${selectedLanguageCountry.response.english} I speak ${selectedLanguageCountry.language.english}.</p>` : ""}
+                </div>
+              </article>`
+            : ""
+        }
         <div class="greetings-scene-layout">
           <div class="greetings-scene-visual">
             <img class="greetings-scene-image" src="${identityConversation.imagePath}" alt="${identityConversation.imageAlt}" />
@@ -1162,48 +1261,10 @@ function renderIdentityExplorer() {
           </div>
         </div>
       </section>
-      <section class="identity-question-section">
-        <div class="identity-question-top">
-          <div>
-            <p class="body-match-kicker">Question</p>
-            <p class="telephone-line-hanzi">${identityQuestion.hanzi}</p>
-            ${state.showPinyin ? `<p class="telephone-line-pinyin">${identityQuestion.pinyin}</p>` : ""}
-            ${state.showEnglish ? `<p class="telephone-line-english">${identityQuestion.english}</p>` : ""}
-          </div>
-          <button class="small-button is-play-button" type="button" data-identity-play-question>Play</button>
-        </div>
-        <div class="identity-country-grid">
-          ${identityCountries
-            .map(
-              (country) => `
-                <button class="identity-country-card${selectedCountry?.id === country.id ? " is-selected" : ""}" type="button" data-identity-country="${country.id}">
-                  <img class="identity-flag" src="${country.asset}" alt="${country.label} flag" />
-                  <span class="numbers-game-hanzi">${country.nationality}</span>
-                  ${state.showPinyin ? `<span class="numbers-game-pinyin">${country.pinyin}</span>` : ""}
-                  ${state.showEnglish ? `<span class="numbers-game-english">${country.label}</span>` : ""}
-                </button>
-              `
-            )
-            .join("")}
-        </div>
-        ${
-          selectedCountry
-            ? `
-              <article class="greetings-line-card identity-answer-card">
-                <div class="telephone-bubble-copy">
-                  <p class="telephone-line-hanzi">${selectedCountry.response.hanzi}</p>
-                  ${state.showPinyin ? `<p class="telephone-line-pinyin">${selectedCountry.response.pinyin}</p>` : ""}
-                  ${state.showEnglish ? `<p class="telephone-line-english">${selectedCountry.response.english}</p>` : ""}
-                </div>
-              </article>
-            `
-            : ""
-        }
-      </section>
     </div>
   `;
 
-  focusExplorer.querySelector("[data-identity-play-scene]")?.addEventListener("click", () => {
+  focusExplorer.querySelector("[data-identity-play-language]")?.addEventListener("click", () => {
     if (state.tapAudioEnabled) {
       speakSceneLines(identityConversation.lines);
     }
@@ -1215,7 +1276,7 @@ function renderIdentityExplorer() {
   });
   focusExplorer.querySelectorAll("[data-identity-country]").forEach((button) => {
     button.addEventListener("click", () => {
-      const country = identityCountries.find((entry) => entry.id === button.dataset.identityCountry);
+      const country = allIdentityCountries.find((entry) => entry.id === button.dataset.identityCountry);
       if (!country) {
         return;
       }
@@ -1224,6 +1285,234 @@ function renderIdentityExplorer() {
         speak(country.response.audio, 0.78);
       }
       renderIdentityExplorer();
+    });
+  });
+  focusExplorer.querySelectorAll("[data-identity-practice-country]").forEach((button) => {
+    button.addEventListener("click", () => {
+      const country = identityCountries.find((entry) => entry.id === button.dataset.identityPracticeCountry);
+      if (!country) return;
+      if (country.id === practiceCountry.id) {
+        state.identitySelectedCountryId = country.id;
+        state.identityPracticeFeedback = `Correct! ${identityQuestion.hanzi} ${country.response.hanzi}`;
+        if (state.tapAudioEnabled) speak(`${identityQuestion.audio} ${country.response.audio}`, 0.78);
+      } else {
+        state.identityPracticeFeedback = "Try again. Look carefully at the flag.";
+        if (state.tapAudioEnabled) speak(country.nationality, 0.78);
+      }
+      renderIdentityExplorer();
+    });
+  });
+  focusExplorer.querySelector("[data-identity-next-practice]")?.addEventListener("click", () => {
+    const nextIds = state.identityPracticeRemainingIds?.length ? state.identityPracticeRemainingIds : shuffleArray(coreCountryIds);
+    state.identityPracticeTargetId = nextIds.pop();
+    state.identityPracticeRemainingIds = nextIds;
+    state.identityPracticeFeedback = "";
+    state.identitySelectedCountryId = "";
+    renderIdentityExplorer();
+  });
+  focusExplorer.querySelectorAll("[data-identity-language-country]").forEach((button) => {
+    button.addEventListener("click", () => {
+      const country = identityCountries.find((entry) => entry.id === button.dataset.identityLanguageCountry);
+      if (!country) return;
+      state.identityLanguageSelectedCountryId = country.id;
+      if (state.tapAudioEnabled) speak(`${country.nationality}说${country.language.hanzi}`, 0.78);
+      renderIdentityExplorer();
+    });
+  });
+}
+
+function renderIdentityExplorer() {
+  if (currentTopic().id === "languages") {
+    renderLanguagesExplorer();
+    return;
+  }
+
+  renderNationalityScene();
+}
+
+function renderNationalityScene() {
+  focusExplorer.innerHTML = `
+    <div class="numbers-board identity-board">
+      <section class="greetings-exchange">
+        <div class="greetings-exchange-top">
+          <div>
+            <p class="body-match-kicker">3A Lesson 5 · Nationality</p>
+            <p class="greetings-exchange-prompt">Lele and Noah share family photos.</p>
+          </div>
+          <button class="small-button is-play-button" type="button" data-nationality-play-scene>Play</button>
+        </div>
+        <div class="greetings-scene-layout">
+          <div class="greetings-scene-visual"><img class="greetings-scene-image" src="${nationalityConversation.imagePath}" alt="${nationalityConversation.imageAlt}" /></div>
+          <div class="greetings-line-stack">${nationalityConversation.lines.map((line) => `<article class="greetings-line-card"><div class="telephone-bubble-copy"><p class="telephone-line-hanzi">${line.hanzi}</p>${state.showPinyin ? `<p class="telephone-line-pinyin">${line.pinyin}</p>` : ""}${state.showEnglish ? `<p class="telephone-line-english">${line.english}</p>` : ""}</div></article>`).join("")}</div>
+        </div>
+      </section>
+    </div>
+  `;
+  focusExplorer.querySelector("[data-nationality-play-scene]")?.addEventListener("click", () => {
+    if (state.tapAudioEnabled) speakSceneLines(nationalityConversation.lines);
+  });
+}
+
+function renderLegacyNationalityExplorer() {
+  const practiceCountries = identityCountries;
+  const flagCountries = [...identityCountries, ...identityExploreCountries];
+  const practiceIds = practiceCountries.map((country) => country.id);
+  const remainingIds = Array.isArray(state.identityPracticeRemainingIds)
+    ? state.identityPracticeRemainingIds.filter((id) => practiceIds.includes(id))
+    : [];
+  if (!state.identityPracticeTargetId || !practiceIds.includes(state.identityPracticeTargetId)) {
+    const nextIds = remainingIds.length ? remainingIds : shuffleArray(practiceIds);
+    state.identityPracticeTargetId = nextIds.pop();
+    state.identityPracticeRemainingIds = nextIds;
+    state.identityPracticeFeedback = "";
+  }
+  const target = practiceCountries.find((country) => country.id === state.identityPracticeTargetId) ?? practiceCountries[0];
+  const flagIds = flagCountries.map((country) => country.id);
+  const remainingFlagIds = Array.isArray(state.identityFlagPracticeRemainingIds)
+    ? state.identityFlagPracticeRemainingIds.filter((id) => flagIds.includes(id))
+    : [];
+  if (!state.identityFlagPracticeTargetId || !flagIds.includes(state.identityFlagPracticeTargetId)) {
+    const nextIds = remainingFlagIds.length ? remainingFlagIds : shuffleArray(flagIds);
+    state.identityFlagPracticeTargetId = nextIds.pop();
+    state.identityFlagPracticeRemainingIds = nextIds;
+    state.identityFlagPracticeFeedback = "";
+  }
+  const flagTarget = flagCountries.find((country) => country.id === state.identityFlagPracticeTargetId) ?? flagCountries[0];
+  const selectedCountry = flagCountries.find((country) => country.id === state.identitySelectedCountryId);
+
+  focusExplorer.innerHTML = `
+    <div class="numbers-board identity-board">
+      <section class="greetings-exchange">
+        <div class="greetings-exchange-top">
+          <div>
+            <p class="body-match-kicker">3A Lesson 5 · Nationality</p>
+            <p class="greetings-exchange-prompt">Lele and Noah share family photos.</p>
+          </div>
+          <button class="small-button is-play-button" type="button" data-nationality-play-scene>Play</button>
+        </div>
+        <div class="greetings-scene-layout">
+          <div class="greetings-scene-visual">
+            <img class="greetings-scene-image" src="${nationalityConversation.imagePath}" alt="${nationalityConversation.imageAlt}" />
+          </div>
+          <div class="greetings-line-stack">
+            ${nationalityConversation.lines.map((line) => `<article class="greetings-line-card"><div class="telephone-bubble-copy"><p class="telephone-line-hanzi">${line.hanzi}</p>${state.showPinyin ? `<p class="telephone-line-pinyin">${line.pinyin}</p>` : ""}${state.showEnglish ? `<p class="telephone-line-english">${line.english}</p>` : ""}</div></article>`).join("")}
+          </div>
+        </div>
+      </section>
+      <section class="identity-question-section">
+        <div class="identity-question-top">
+          <div>
+            <p class="body-match-kicker">Practice</p>
+            <p class="greetings-exchange-prompt">Look at the flag. Make the conversation.</p>
+            <p class="telephone-line-hanzi">${identityQuestion.hanzi}</p>
+            ${state.showPinyin ? `<p class="telephone-line-pinyin">${identityQuestion.pinyin}</p>` : ""}
+            ${state.showEnglish ? `<p class="telephone-line-english">${identityQuestion.english}</p>` : ""}
+          </div>
+          <button class="small-button is-play-button" type="button" data-nationality-play-question>Play</button>
+        </div>
+        <div class="identity-practice-card">
+          <div class="identity-practice-visual"><p>Play the whole conversation, then choose what the speaker says.</p></div>
+          <div class="identity-practice-options" aria-label="Choose a nationality answer">${practiceCountries.map((country) => `<button class="choice-button" type="button" data-nationality-answer="${country.id}">${country.nationality}</button>`).join("")}</div>
+          <p class="identity-practice-feedback" aria-live="polite">${state.identityPracticeFeedback || "Choose the reply that completes 我是…人。"}</p>
+          ${state.identityPracticeFeedback.startsWith("Correct") ? '<button class="small-button is-new-game-button" type="button" data-nationality-next-round>New round</button>' : ""}
+        </div>
+      </section>
+      <section class="identity-question-section">
+        <div>
+          <p class="body-match-kicker">Country flags</p>
+          <p class="greetings-exchange-prompt">Look at the flag. Choose the country name.</p>
+        </div>
+        <div class="identity-practice-card">
+          <div class="identity-practice-visual"><img class="identity-flag" src="${flagTarget.asset}" alt="${flagTarget.label} flag" /><p class="numbers-game-hanzi">?</p></div>
+          <div class="identity-practice-options" aria-label="Choose a country name">${flagCountries.map((country) => `<button class="choice-button" type="button" data-flag-country-answer="${country.id}">${country.hanzi}</button>`).join("")}</div>
+          <p class="identity-practice-feedback" aria-live="polite">${state.identityFlagPracticeFeedback || "Choose the country name for this flag."}</p>
+          ${state.identityFlagPracticeFeedback.startsWith("Correct") ? '<button class="small-button is-new-game-button" type="button" data-flag-next-round>New round</button>' : ""}
+        </div>
+        ${selectedCountry ? `<article class="greetings-line-card identity-answer-card"><div class="telephone-bubble-copy"><p class="telephone-line-hanzi">${selectedCountry.hanzi}</p>${state.showPinyin ? `<p class="telephone-line-pinyin">${selectedCountry.hanzi === "中国" ? "Zhōngguó" : selectedCountry.pinyin.replace(" rén", "")}</p>` : ""}${state.showEnglish ? `<p class="telephone-line-english">${selectedCountry.label}</p>` : ""}</div><div class="identity-symbol-detail"><img src="${selectedCountry.symbolAsset}" alt="${selectedCountry.symbolCaption}" /><p>${selectedCountry.symbolCaption}</p></div></article>` : ""}
+      </section>
+    </div>
+  `;
+
+  focusExplorer.querySelector("[data-nationality-play-scene]")?.addEventListener("click", () => {
+    if (state.tapAudioEnabled) speakSceneLines(nationalityConversation.lines);
+  });
+  focusExplorer.querySelector("[data-nationality-play-question]")?.addEventListener("click", () => {
+    if (state.tapAudioEnabled) speakSceneLines([identityQuestion, target.response]);
+  });
+  focusExplorer.querySelectorAll("[data-nationality-answer]").forEach((button) => {
+    button.addEventListener("click", () => {
+      const answer = practiceCountries.find((country) => country.id === button.dataset.nationalityAnswer);
+      if (!answer) return;
+      if (answer.id === target.id) {
+        state.identityPracticeFeedback = `Correct! ${identityQuestion.hanzi} ${answer.response.hanzi}`;
+        if (state.tapAudioEnabled) speak(`${identityQuestion.audio} ${answer.response.audio}`, 0.78);
+      } else {
+        state.identityPracticeFeedback = "Try again. Listen to the conversation once more.";
+        if (state.tapAudioEnabled) speak(answer.nationality, 0.78);
+      }
+      renderNationalityExplorer();
+    });
+  });
+  focusExplorer.querySelector("[data-nationality-next-round]")?.addEventListener("click", () => {
+    const nextIds = state.identityPracticeRemainingIds?.length ? state.identityPracticeRemainingIds : shuffleArray(practiceIds);
+    state.identityPracticeTargetId = nextIds.pop();
+    state.identityPracticeRemainingIds = nextIds;
+    state.identityPracticeFeedback = "";
+    renderNationalityExplorer();
+  });
+  focusExplorer.querySelectorAll("[data-flag-country-answer]").forEach((button) => {
+    button.addEventListener("click", () => {
+      const answer = flagCountries.find((country) => country.id === button.dataset.flagCountryAnswer);
+      if (!answer) return;
+      if (answer.id === flagTarget.id) {
+        state.identitySelectedCountryId = answer.id;
+        state.identityFlagPracticeFeedback = `Correct! ${answer.hanzi}`;
+        if (state.tapAudioEnabled) speak(answer.hanzi, 0.78);
+      } else {
+        state.identityFlagPracticeFeedback = "Try again. Look carefully at the flag.";
+        if (state.tapAudioEnabled) speak(answer.hanzi, 0.78);
+      }
+      renderNationalityExplorer();
+    });
+  });
+  focusExplorer.querySelector("[data-flag-next-round]")?.addEventListener("click", () => {
+    const nextIds = state.identityFlagPracticeRemainingIds?.length ? state.identityFlagPracticeRemainingIds : shuffleArray(flagIds);
+    state.identityFlagPracticeTargetId = nextIds.pop();
+    state.identityFlagPracticeRemainingIds = nextIds;
+    state.identityFlagPracticeFeedback = "";
+    state.identitySelectedCountryId = "";
+    renderNationalityExplorer();
+  });
+}
+
+function renderLanguagesExplorer() {
+  const selectedCountry = identityCountries.find((country) => country.id === state.identityLanguageSelectedCountryId);
+  focusExplorer.innerHTML = `
+    <div class="numbers-board identity-board">
+      <section class="greetings-exchange">
+        <div class="greetings-exchange-top">
+          <div><p class="body-match-kicker">4A Lesson 2 · Languages</p><p class="greetings-exchange-prompt">Two classmates talk about the languages they speak.</p></div>
+          <button class="small-button is-play-button" type="button" data-languages-play-scene>Play</button>
+        </div>
+        <div class="greetings-scene-layout"><div class="greetings-scene-visual"><img class="greetings-scene-image" src="${identityConversation.imagePath}" alt="${identityConversation.imageAlt}" /></div><div class="greetings-line-stack">${identityConversation.lines.map((line) => `<article class="greetings-line-card"><div class="telephone-bubble-copy"><p class="telephone-line-hanzi">${line.hanzi}</p>${state.showPinyin ? `<p class="telephone-line-pinyin">${line.pinyin}</p>` : ""}${state.showEnglish ? `<p class="telephone-line-english">${line.english}</p>` : ""}</div></article>`).join("")}</div></div>
+      </section>
+      <section class="identity-question-section identity-language-section">
+        <div><p class="body-match-kicker">Practice</p><p class="greetings-exchange-prompt">Say one sentence for each picture.</p><p class="telephone-line-hanzi">${identityLanguageQuestion.hanzi}</p>${state.showPinyin ? `<p class="telephone-line-pinyin">${identityLanguageQuestion.pinyin}</p>` : ""}${state.showEnglish ? `<p class="telephone-line-english">${identityLanguageQuestion.english}</p>` : ""}</div>
+        <div class="identity-language-grid">${identityCountries.map((country) => `<button class="identity-language-card${selectedCountry?.id === country.id ? " is-selected" : ""}" type="button" data-languages-country="${country.id}"><img class="identity-flag" src="${country.asset}" alt="${country.label} flag" /><span class="numbers-game-hanzi">${country.nationality}说${country.language.hanzi}。</span>${state.showPinyin ? `<span class="numbers-game-pinyin">${country.pinyin} shuō ${country.language.pinyin}.</span>` : ""}${state.showEnglish ? `<span class="numbers-game-english">${country.nationality} people speak ${country.language.english}.</span>` : ""}</button>`).join("")}</div>
+        ${selectedCountry ? `<article class="greetings-line-card identity-answer-card"><div class="telephone-bubble-copy"><p class="body-match-kicker">Make your own sentence</p><p class="telephone-line-hanzi">我是${selectedCountry.nationality}。我说${selectedCountry.language.hanzi}。</p>${state.showPinyin ? `<p class="telephone-line-pinyin">wǒ shì ${selectedCountry.pinyin}. wǒ shuō ${selectedCountry.language.pinyin}.</p>` : ""}${state.showEnglish ? `<p class="telephone-line-english">${selectedCountry.response.english} I speak ${selectedCountry.language.english}.</p>` : ""}</div></article>` : ""}
+      </section>
+    </div>
+  `;
+  focusExplorer.querySelector("[data-languages-play-scene]")?.addEventListener("click", () => {
+    if (state.tapAudioEnabled) speakSceneLines(identityConversation.lines);
+  });
+  focusExplorer.querySelectorAll("[data-languages-country]").forEach((button) => {
+    button.addEventListener("click", () => {
+      const country = identityCountries.find((entry) => entry.id === button.dataset.languagesCountry);
+      if (!country) return;
+      state.identityLanguageSelectedCountryId = country.id;
+      if (state.tapAudioEnabled) speak(`${country.nationality}说${country.language.hanzi}`, 0.78);
+      renderLanguagesExplorer();
     });
   });
 }

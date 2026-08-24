@@ -1,9 +1,39 @@
 import { imageLoadingAttrs } from "./image-loading.js";
 
 export function createLessonPracticeRuntime(context) {
-  const { state, schoolTopicData, visualTopicItems, positionPracticeItems, timeDateWeekItems, timeDateClockItems, datePracticeItems, timeDateMonthItems, timeDateRoutineItems, clothesMatchItems, clothesSentenceItems, everydayActionItems, illustratedKids, numberHanzi, buildNumberItem, currentTopic, currentNumberStage, currentBook, currentLesson, focusItemsForTopic, shuffleArray, speak, renderFocusExplorer, renderFocusStatus, renderSharedLessonPractice, renderPracticeSayCards, bindPracticeSayCards, activityPanelTitle, activityPanelSummary, activityList, topicColumns, renderBodyPractice, renderWorldPractice, renderHobbiesPractice, activeTimeDateSection, ensureWeekdayChallenge, ensureWeekdayMatchGame, handleWeekdayChallengePlay, handleWeekdayChallengeGuess, resetWeekdayMatchGame, handleWeekdayMatchPhrase, handleWeekdayMatchAttempt, ensureDateChallenge, ensureDateMatchGame, handleDateChallengePlay, handleDateChallengeGuess, resetDateMatchGame, handleDateMatchPhrase, handleDateMatchEvent, familyGameItems, familyPersonForItemId, familyHeadshotForItemId, ensureFamilyChallenge, ensureFamilyMatchGame, handleFamilyChallengePlay, handleFamilyChallengeGuess, resetFamilyMatchGame, handleFamilyMatchPhrase, handleFamilyMatchAttempt, greetingsGameItems, greetingsMeaningLabel, ensureGreetingsChallenge, ensureGreetingsMatchGame, handleGreetingsChallengePlay, handleGreetingsChallengeGuess, resetGreetingsMatchGame, handleGreetingsMatchPhrase, handleGreetingsMatchAttempt, politeGameItems, politeMeaningLabel, ensurePoliteChallenge, ensurePoliteMatchGame, handlePoliteChallengePlay, handlePoliteChallengeGuess, resetPoliteMatchGame, handlePoliteMatchPhrase, handlePoliteMatchAttempt, ensureRoomBuilder, currentRoomBuildItem, handleRoomBuildToken, clearRoomBuilder, nextRoomBuilder, ensureClothesQuiz, handleClothesQuizPick, nextClothesQuizQuestion, ensureClothesSentenceQuiz, handleClothesSentencePick, nextClothesSentenceQuestion, ensureTimeRoutineQuiz, handleTimeRoutineQuizPick, nextTimeRoutineQuizQuestion, ensureClockQuiz, handleClockQuizPick, nextClockQuizQuestion, ensureComparisonBuilder, currentComparisonBuildItem, handleComparisonBuildToken, clearComparisonBuilder, nextComparisonBuilder, ensurePositionQuiz, handlePositionQuizPlay, handlePositionQuizPick, nextPositionQuizQuestion, ensureTransportBuilder, currentTransportBuildItem, handleTransportBuildToken, clearTransportBuilder, nextTransportBuilder, ensureEverydayActionsQuiz, currentEverydayAction, handleEverydayActionsPick, nextEverydayActionsQuestion, resetNumberChallenge, ensureMathChallenge, handleNumberChallengeGuess, resetMathChallenge, handleMathChallengeSubmit, renderNumberVisual, introductionsBuildTarget, ensureIntroductionsBuilder, resetIntroductionsBuilder, handleIntroductionsBuildClear, handleIntroductionsBuildToken, ageGameItems, ensureAgeChallenge, ensureAgeBuilder, ageBuildTarget, handleAgeChallengePlay, handleAgeChallengeGuess, resetAgeBuilder, handleAgeBuildClear, handleAgeBuildToken, renderSchoolPractice } = context;
+  const { state, schoolTopicData, visualTopicItems, positionPracticeItems, timeDateWeekItems, timeDateClockItems, datePracticeItems, timeDateMonthItems, timeDateRoutineItems, clothesMatchItems, clothesSentenceItems, everydayActionItems, illustratedKids, numberHanzi, buildNumberItem, currentTopic, currentNumberStage, currentBook, currentLesson, focusItemsForTopic, shuffleArray, speak, renderFocusExplorer, renderFocusStatus, renderSharedLessonPractice, renderPracticeSayCards, bindPracticeSayCards, activityPanelTitle, activityPanelSummary, activityList, topicColumns, renderBodyPractice, renderWorldPractice, renderHobbiesPractice, activeTimeDateSection, ensureWeekdayChallenge, ensureWeekdayMatchGame, handleWeekdayChallengePlay, handleWeekdayChallengeGuess, resetWeekdayMatchGame, handleWeekdayMatchPhrase, handleWeekdayMatchAttempt, ensureDateChallenge, ensureDateMatchGame, handleDateChallengePlay, handleDateChallengeGuess, resetDateMatchGame, handleDateMatchPhrase, handleDateMatchEvent, familyGameItems, familyPersonForItemId, familyHeadshotForItemId, ensureFamilyChallenge, ensureFamilyMatchGame, handleFamilyChallengePlay, handleFamilyChallengeGuess, resetFamilyMatchGame, handleFamilyMatchPhrase, handleFamilyMatchAttempt, greetingsGameItems, greetingsMeaningLabel, ensureGreetingsChallenge, ensureGreetingsMatchGame, handleGreetingsChallengePlay, handleGreetingsChallengeGuess, resetGreetingsMatchGame, handleGreetingsMatchPhrase, handleGreetingsMatchAttempt, nationalityPracticeItems, ensureNationalityChallenge, currentNationalityAnswer, handleNationalityChallengePlay, handleNationalityChallengeGuess, politeGameItems, politeMeaningLabel, ensurePoliteChallenge, ensurePoliteMatchGame, handlePoliteChallengePlay, handlePoliteChallengeGuess, resetPoliteMatchGame, handlePoliteMatchPhrase, handlePoliteMatchAttempt, ensureRoomBuilder, currentRoomBuildItem, handleRoomBuildToken, clearRoomBuilder, nextRoomBuilder, ensureClothesQuiz, handleClothesQuizPick, nextClothesQuizQuestion, ensureClothesSentenceQuiz, handleClothesSentencePick, nextClothesSentenceQuestion, ensureTimeRoutineQuiz, handleTimeRoutineQuizPick, nextTimeRoutineQuizQuestion, ensureClockQuiz, handleClockQuizPick, nextClockQuizQuestion, ensureComparisonBuilder, currentComparisonBuildItem, handleComparisonBuildToken, clearComparisonBuilder, nextComparisonBuilder, ensurePositionQuiz, handlePositionQuizPlay, handlePositionQuizPick, nextPositionQuizQuestion, ensureTransportBuilder, currentTransportBuildItem, handleTransportBuildToken, clearTransportBuilder, nextTransportBuilder, ensureEverydayActionsQuiz, currentEverydayAction, handleEverydayActionsPick, nextEverydayActionsQuestion, resetNumberChallenge, ensureMathChallenge, handleNumberChallengeGuess, resetMathChallenge, handleMathChallengeSubmit, renderNumberVisual, introductionsBuildTarget, ensureIntroductionsBuilder, resetIntroductionsBuilder, handleIntroductionsBuildClear, handleIntroductionsBuildToken, ageGameItems, ensureAgeChallenge, ensureAgeBuilder, ageBuildTarget, handleAgeChallengePlay, handleAgeChallengeGuess, resetAgeBuilder, handleAgeBuildClear, handleAgeBuildToken, renderSchoolPractice } = context;
 
 function sharedLessonPracticeConfig(topic) {
+  if (topic.id === "identity") {
+    return {
+      summary: "Listen to the conversation. Use the flag as a clue, then choose the nationality you hear.",
+      shellClass: "lesson-practice-shell nationality-practice-shell",
+      ensure: ensureNationalityChallenge,
+      listen: {
+        kicker: "Listen and choose",
+        title: "Which nationality do you hear?",
+        items: nationalityPracticeItems,
+        optionIds: () => state.nationalityChallengeOptionIds,
+        pickedId: () => state.nationalityChallengePickedId,
+        result: () => state.nationalityChallengeResult,
+        wrongIds: () => state.nationalityChallengeWrongIds,
+        feedback: () => state.nationalityListenFeedback,
+        playLabel: () => state.nationalityChallengeResult === "correct" ? "New game" : "Play",
+        visualMarkup: () => {
+          const item = currentNationalityAnswer();
+          return item ? `<figure class="nationality-practice-flag"><img src="${item.flagAsset}" alt="${item.flagAlt}" /></figure>` : "";
+        },
+        completionMarkup: () => {
+          if (state.nationalityChallengeResult !== "correct") return "";
+          const item = currentNationalityAnswer();
+          return `<section class="nationality-conversation-reveal" aria-live="polite"><p class="body-match-kicker">Conversation</p><article><p class="telephone-line-hanzi">你是哪国人？</p><p class="telephone-line-pinyin">nǐ shì nǎ guó rén?</p><p class="telephone-line-english">What nationality are you?</p></article><article><p class="telephone-line-hanzi">${item.response.hanzi}</p><p class="telephone-line-pinyin">${item.response.pinyin}</p><p class="telephone-line-english">${item.response.english}</p></article></section>`;
+        },
+        onPlay: handleNationalityChallengePlay,
+        onGuess: handleNationalityChallengeGuess
+      }
+    };
+  }
+
   if (topic.id === "weekdays") {
     return {
       summary: "Listen for the weekday, then match each Chinese day to its English name.",
@@ -341,10 +371,6 @@ function renderActivityPanel(topic) {
           }).join("")}
         </div>
       </section>
-      ${renderPracticeSayCards([
-        { hanzi: "书架在桌子左边。", pinyin: "shū jià zài zhuō zi zuǒ biān.", english: "The bookshelf is to the left of the desk.", audio: "书架在桌子左边" },
-        { hanzi: "椅子在女孩后面。", pinyin: "yǐ zi zài nǚ hái hòu miàn.", english: "The chair is behind the girl.", audio: "椅子在女孩后面" }
-      ])}
     `;
     activityList.querySelectorAll("[data-position-quiz-pick]").forEach((button) => {
       button.addEventListener("click", () => handlePositionQuizPick(button.dataset.positionQuizPick));
@@ -353,7 +379,6 @@ function renderActivityPanel(topic) {
       nextPositionQuizQuestion();
       handlePositionQuizPlay();
     });
-    bindPracticeSayCards(activityList);
     return;
   }
 

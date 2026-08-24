@@ -13,6 +13,7 @@ export function createSharedLessonPractice({ state, speak, elements, documentRef
           </div>
           <button class="small-button is-play-button" type="button" data-template-listen-play>${playLabel}</button>
         </div>
+        ${config.visualMarkup?.() ?? ""}
         ${config.feedback() ? `<p class="greetings-game-feedback">${config.feedback()}</p>` : ""}
         <div class="numbers-game-options">
           ${config.optionIds().map((id) => {
@@ -34,6 +35,7 @@ export function createSharedLessonPractice({ state, speak, elements, documentRef
             `;
           }).join("")}
         </div>
+        ${config.completionMarkup?.() ?? ""}
       </section>
     `;
   }
@@ -152,15 +154,17 @@ export function createSharedLessonPractice({ state, speak, elements, documentRef
 
     const gameCard = documentRef.createElement("section");
     gameCard.className = `family-practice-shell${config.shellClass ? ` ${config.shellClass}` : ""}`;
-    gameCard.innerHTML = `<div class="practice-split-board">${renderListenPractice(config.listen)}${renderMatchPractice(config.match)}</div>${renderPracticeSayCards(config.sayItems)}`;
+    gameCard.innerHTML = `<div class="practice-split-board">${renderListenPractice(config.listen)}${config.match ? renderMatchPractice(config.match) : ""}</div>${renderPracticeSayCards(config.sayItems)}`;
     activityList.appendChild(gameCard);
 
     activityList.querySelector("[data-template-listen-play]")?.addEventListener("click", () => config.listen.onPlay());
     activityList.querySelectorAll("[data-template-listen-guess]").forEach((button) => button.addEventListener("click", () => config.listen.onGuess(button.dataset.templateListenGuess)));
-    activityList.querySelector("[data-template-match-new]")?.addEventListener("click", () => config.match.onNew());
-    activityList.querySelector("[data-template-match-play-again]")?.addEventListener("click", () => config.match.onNew());
-    activityList.querySelectorAll("[data-template-match-phrase]").forEach((button) => button.addEventListener("click", () => config.match.onPhrase(button.dataset.templateMatchPhrase)));
-    activityList.querySelectorAll("[data-template-match-meaning]").forEach((button) => button.addEventListener("click", () => config.match.onMeaning(button.dataset.templateMatchMeaning)));
+    if (config.match) {
+      activityList.querySelector("[data-template-match-new]")?.addEventListener("click", () => config.match.onNew());
+      activityList.querySelector("[data-template-match-play-again]")?.addEventListener("click", () => config.match.onNew());
+      activityList.querySelectorAll("[data-template-match-phrase]").forEach((button) => button.addEventListener("click", () => config.match.onPhrase(button.dataset.templateMatchPhrase)));
+      activityList.querySelectorAll("[data-template-match-meaning]").forEach((button) => button.addEventListener("click", () => config.match.onMeaning(button.dataset.templateMatchMeaning)));
+    }
     bindPracticeSayCards(activityList);
   }
 

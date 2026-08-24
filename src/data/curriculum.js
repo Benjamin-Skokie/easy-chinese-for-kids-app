@@ -82,7 +82,7 @@ export const books = [
     label: "Book 4A",
     lessons: [
       { lesson: 1, title: "Telephone numbers", topicId: "numbers" },
-      { lesson: 2, title: "Languages", topicId: "identity" },
+      { lesson: 2, title: "Languages", topicId: "languages" },
       { lesson: 3, title: "Tell the time", topicId: "time-date" },
       { lesson: 4, title: "Daily routine", topicId: "time-date" },
       { lesson: 5, title: "My lunch", topicId: "meals-feelings" },
@@ -149,7 +149,7 @@ export const topicGroups = [
     id: "foundations",
     label: "Foundations",
     description: "The first speaking patterns young learners need most.",
-    topicIds: ["numbers", "multiplication-rhyme", "greetings", "polite-words", "introductions", "age", "identity"]
+    topicIds: ["numbers", "multiplication-rhyme", "greetings", "polite-words", "introductions", "age", "identity", "languages"]
   },
   {
     id: "me-and-family",
@@ -178,7 +178,8 @@ export const topicCardMeta = {
   "polite-words": { zhTitle: "礼貌用语", enTitle: "Polite Words", hint: "Thank you, sorry, please" },
   introductions: { zhTitle: "介绍自己", enTitle: "Introductions", hint: "Say your name and meet friends" },
   age: { zhTitle: "年龄", enTitle: "Age", hint: "Ask and say how old you are" },
-  identity: { zhTitle: "国家和语言", enTitle: "Countries & Languages", hint: "Say where you are from and what you speak" },
+  identity: { zhTitle: "国籍", enTitle: "Nationality", hint: "Ask and say where someone is from" },
+  languages: { zhTitle: "语言", enTitle: "Languages", hint: "Say which language someone speaks" },
   family: { zhTitle: "家人", enTitle: "Family", hint: "Mom, dad, siblings, grandparents" },
   body: { zhTitle: "身体", enTitle: "Body", hint: "Tap body parts and listen" },
   pets: { zhTitle: "宠物", enTitle: "Pets", hint: "Dog, cat, turtle, goldfish" },
@@ -215,10 +216,10 @@ export const learningHomeCategories = [
     id: "foundations",
     zhTitle: "开口说中文",
     enTitle: "Start Speaking",
-    hint: "Numbers, greetings, names, age, identity",
+    hint: "Numbers, greetings, names, age, nationality, languages",
     accent: "#be5b49",
     iconSrc: "assets/navigation-icons/lele-wave-icon.webp",
-    topicIds: ["numbers", "greetings", "polite-words", "introductions", "age", "identity", "multiplication-rhyme"]
+    topicIds: ["numbers", "greetings", "polite-words", "introductions", "age", "identity", "languages", "multiplication-rhyme"]
   },
   {
     id: "me-family",

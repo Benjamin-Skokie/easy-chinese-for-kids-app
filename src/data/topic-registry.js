@@ -15,7 +15,7 @@ import { introductionsTopic } from "../features/foundations/introductions.js";
 import { ageTopic } from "../features/foundations/age.js";
 import { politeWordsTopic } from "../features/foundations/polite-words.js";
 import { greetingsTopic } from "../features/foundations/greetings.js";
-import { identityTopic } from "../features/foundations/identity.js";
+import { identityTopic, languagesTopic } from "../features/foundations/identity.js";
 import { familyTopic } from "../features/family/family.js";
 import { clothesTopic } from "../features/daily-life/clothes.js";
 import { natureTopic, weatherTopic } from "../features/world/weather.js";
@@ -59,6 +59,7 @@ export const topicData = [
   politeWordsTopic,
   introductionsTopic,
   identityTopic,
+  languagesTopic,
   ageTopic,
   familyTopic,
   bodyTopic,

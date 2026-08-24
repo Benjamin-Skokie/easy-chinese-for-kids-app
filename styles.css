@@ -2248,7 +2248,7 @@ h4 {
 
 .identity-country-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 12px;
 }
 
@@ -2277,13 +2277,156 @@ h4 {
   object-fit: contain;
 }
 
+.identity-practice-card {
+  display: grid;
+  gap: 14px;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: #fffaf2;
+}
+
+.identity-practice-visual {
+  display: grid;
+  justify-items: center;
+  gap: 4px;
+}
+
+.identity-practice-visual .identity-flag {
+  width: 96px;
+  height: 64px;
+}
+
+.identity-practice-options,
+.identity-language-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.identity-practice-options .choice-button,
+.identity-language-card {
+  min-height: 80px;
+  padding: 10px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--paper);
+  color: var(--ink);
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.identity-language-card {
+  display: grid;
+  justify-items: center;
+  align-content: start;
+  gap: 6px;
+  min-height: 156px;
+}
+
+.identity-language-card.is-selected {
+  border-color: #5e9a5a;
+  background: #eef8e9;
+  box-shadow: 0 0 0 3px rgba(94, 154, 90, 0.2);
+}
+
+.identity-practice-feedback {
+  min-height: 1.5em;
+  margin: 0;
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.nationality-practice-shell .practice-split-board {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.nationality-practice-flag {
+  display: grid;
+  place-items: center;
+  margin: 14px 0 2px;
+  min-height: 90px;
+}
+
+.nationality-practice-flag img {
+  width: 120px;
+  height: 80px;
+  object-fit: contain;
+}
+
+.nationality-conversation-reveal {
+  display: grid;
+  gap: 10px;
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+}
+
+.nationality-conversation-reveal article {
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: #f6fbf3;
+}
+
+.nationality-conversation-reveal p {
+  margin: 0;
+}
+
+.identity-explore-section {
+  padding-top: 4px;
+}
+
+.identity-explore-section > div > p:last-child {
+  color: var(--muted);
+  margin-top: 4px;
+}
+
+.identity-symbol-detail {
+  display: grid;
+  grid-template-columns: 112px minmax(0, 1fr);
+  gap: 12px;
+  align-items: center;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--line);
+}
+
+.identity-symbol-detail img {
+  width: 112px;
+  aspect-ratio: 1;
+  object-fit: contain;
+}
+
+.identity-symbol-detail p {
+  color: var(--muted);
+  margin: 0;
+}
+
+.identity-language-section {
+  margin-top: 2px;
+}
+
 @media (max-width: 700px) {
   .identity-question-top {
     flex-direction: column;
   }
 
   .identity-country-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .identity-practice-options,
+  .identity-language-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .identity-symbol-detail {
+    grid-template-columns: 88px minmax(0, 1fr);
+  }
+
+  .identity-symbol-detail img {
+    width: 88px;
   }
 }
 
@@ -3088,6 +3231,10 @@ h4 {
 .greetings-practice-grid {
   display: grid;
   gap: 14px;
+}
+
+.position-scene-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .polite-scene-grid {
@@ -5329,12 +5476,8 @@ h4 {
 }
 
 .greetings-scene-image.position-scene-image {
-  aspect-ratio: 5 / 4;
-  object-fit: contain;
-}
-
-.greetings-scene-image.position-scene-image-directions {
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
 }
 
 .transport-build-target {
@@ -6743,6 +6886,34 @@ h4 {
   text-decoration: none;
 }
 
+.culture-category-section .culture-difficulty {
+  align-self: flex-start;
+  display: inline-flex;
+  gap: 5px;
+  margin-bottom: 3px;
+  padding: 3px 8px;
+  border: 1px solid color-mix(in srgb, var(--cat-accent, var(--berry)) 24%, transparent);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--cat-accent, var(--berry)) 8%, white);
+  color: var(--cat-accent, var(--berry));
+  font-size: 0.7rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.culture-category-section .culture-difficulty .zh,
+.culture-category-section .culture-difficulty .en {
+  color: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+}
+
+.culture-category-section .culture-difficulty .en::before {
+  content: "·";
+  margin-right: 5px;
+}
+
 .culture-category-section .topic.done:hover {
   transform: translateY(-2px);
   background: #fef0d9;
@@ -7936,6 +8107,7 @@ h4 {
 @media (max-width: 760px) and (orientation: portrait) {
   .school-scene-grid,
   .polite-scene-grid,
+  .position-scene-grid,
   .room-scene-grid,
   .time-routine-scene-grid,
   .school-lesson-section.is-weather .weather-scene-grid {
