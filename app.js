@@ -2713,7 +2713,6 @@
     progressLabel: "3B Lesson 3",
     iconText: "\u4E0A\u4E0B",
     iconColor: "#587d9c",
-    ownsExplorerContent: true,
     focus: { hanzi: "\u5728\u4E0A\u9762\u3002", pinyin: "z\xE0i sh\xE0ng mi\xE0n.", english: "It is on top.", audio: "\u5728\u4E0A\u9762" },
     interactiveScene: "positions",
     parentGuide: "Use a book, backpack, and pencil case to act out each position before naming it.",
@@ -2734,7 +2733,8 @@
       imageAlt: "A book and backpack showing up and down positions around a desk",
       lines: [
         { hanzi: "\u4E66\u5728\u684C\u5B50\u4E0A\u3002", pinyin: "sh\u016B z\xE0i zhu\u014D zi sh\xE0ng.", english: "The book is on the desk.", audio: "\u4E66\u5728\u684C\u5B50\u4E0A" },
-        { hanzi: "\u4E66\u5305\u5728\u684C\u5B50\u4E0B\u9762\u3002", pinyin: "sh\u016B b\u0101o z\xE0i zhu\u014D zi xi\xE0 mi\xE0n.", english: "The backpack is under the desk.", audio: "\u4E66\u5305\u5728\u684C\u5B50\u4E0B\u9762" }
+        { hanzi: "\u684C\u5B50\u4E0A\u6709\u4E66\u3002", pinyin: "zhu\u014D zi sh\xE0ng y\u01D2u sh\u016B.", english: "There is a book on the desk.", audio: "\u684C\u5B50\u4E0A\u6709\u4E66" },
+        { hanzi: "\u4E66\u5305\u5728\u684C\u5B50\u4E0B\u3002", pinyin: "sh\u016B b\u0101o z\xE0i zhu\u014D zi xi\xE0.", english: "The backpack is under the desk.", audio: "\u4E66\u5305\u5728\u684C\u5B50\u4E0B" }
       ]
     },
     {
@@ -2743,8 +2743,18 @@
       imagePath: "assets/illustrated-rooms/positions-inside-outside.webp",
       imageAlt: "A backpack, book, and pencil case showing inside and outside positions",
       lines: [
-        { hanzi: "\u4E66\u5728\u4E66\u5305\u91CC\u9762\u3002", pinyin: "sh\u016B z\xE0i sh\u016B b\u0101o l\u01D0 mi\xE0n.", english: "The book is in the backpack.", audio: "\u4E66\u5728\u4E66\u5305\u91CC\u9762" },
+        { hanzi: "\u4E66\u5305\u91CC\u6709\u4E66\u3002", pinyin: "sh\u016B b\u0101o l\u01D0 y\u01D2u sh\u016B.", english: "There is a book in the backpack.", audio: "\u4E66\u5305\u91CC\u6709\u4E66" },
+        { hanzi: "\u4E66\u5728\u4E66\u5305\u91CC\u3002", pinyin: "sh\u016B z\xE0i sh\u016B b\u0101o l\u01D0.", english: "The book is in the backpack.", audio: "\u4E66\u5728\u4E66\u5305\u91CC" },
         { hanzi: "\u6587\u5177\u76D2\u5728\u4E66\u5305\u5916\u9762\u3002", pinyin: "w\xE9n j\xF9 h\xE9 z\xE0i sh\u016B b\u0101o w\xE0i mi\xE0n.", english: "The pencil case is outside the backpack.", audio: "\u6587\u5177\u76D2\u5728\u4E66\u5305\u5916\u9762" }
+      ]
+    },
+    {
+      id: "directions",
+      title: "Directions",
+      imagePath: "assets/illustrated-rooms/positions-all-directions.webp",
+      imageAlt: "A room board showing front, back, left, and right directions",
+      lines: [
+        { hanzi: "\u4E0A\u3001\u4E0B\u3001\u524D\u3001\u540E\u3001\u5DE6\u3001\u53F3\u3002", pinyin: "sh\xE0ng, xi\xE0, qi\xE1n, h\xF2u, zu\u01D2, y\xF2u.", english: "Up, down, front, back, left, right.", audio: "\u4E0A\u4E0B\u524D\u540E\u5DE6\u53F3" }
       ]
     },
     {
@@ -2755,20 +2765,10 @@
       lines: [
         { hanzi: "\u5973\u5B69\u5728\u684C\u5B50\u524D\u9762\u3002", pinyin: "n\u01DA h\xE1i z\xE0i zhu\u014D zi qi\xE1n mi\xE0n.", english: "The girl is in front of the desk.", audio: "\u5973\u5B69\u5728\u684C\u5B50\u524D\u9762" },
         { hanzi: "\u6905\u5B50\u5728\u5973\u5B69\u540E\u9762\u3002", pinyin: "y\u01D0 zi z\xE0i n\u01DA h\xE1i h\xF2u mi\xE0n.", english: "The chair is behind the girl.", audio: "\u6905\u5B50\u5728\u5973\u5B69\u540E\u9762" },
-        { hanzi: "\u4E66\u67B6\u5728\u684C\u5B50\u5DE6\u8FB9\u3002", pinyin: "sh\u016B ji\xE0 z\xE0i zhu\u014D zi zu\u01D2 bi\u0101n.", english: "The bookshelf is to the left of the desk.", audio: "\u4E66\u67B6\u5728\u684C\u5B50\u5DE6\u8FB9" },
-        { hanzi: "\u5C0F\u72D7\u5728\u684C\u5B50\u53F3\u8FB9\u3002", pinyin: "xi\u01CEo g\u01D2u z\xE0i zhu\u014D zi y\xF2u bi\u0101n.", english: "The dog is to the right of the desk.", audio: "\u5C0F\u72D7\u5728\u684C\u5B50\u53F3\u8FB9" }
+        { hanzi: "\u4E66\u67B6\u5728\u5973\u5B69\u5DE6\u8FB9\u3002", pinyin: "sh\u016B ji\xE0 z\xE0i n\u01DA h\xE1i zu\u01D2 bi\u0101n.", english: "The bookshelf is to the girl's left.", audio: "\u4E66\u67B6\u5728\u5973\u5B69\u5DE6\u8FB9" },
+        { hanzi: "\u5C0F\u72D7\u5728\u5973\u5B69\u53F3\u8FB9\u3002", pinyin: "xi\u01CEo g\u01D2u z\xE0i n\u01DA h\xE1i y\xF2u bi\u0101n.", english: "The dog is to the girl's right.", audio: "\u5C0F\u72D7\u5728\u5973\u5B69\u53F3\u8FB9" }
       ]
     }
-  ];
-  var positionBookWords = [
-    { hanzi: "\u4E0A", pinyin: "sh\xE0ng", english: "up; on" },
-    { hanzi: "\u4E0B", pinyin: "xi\xE0", english: "down; under" },
-    { hanzi: "\u91CC", pinyin: "l\u01D0", english: "inside" },
-    { hanzi: "\u5916", pinyin: "w\xE0i", english: "outside" },
-    { hanzi: "\u524D", pinyin: "qi\xE1n", english: "front" },
-    { hanzi: "\u540E", pinyin: "h\xF2u", english: "back" },
-    { hanzi: "\u5DE6", pinyin: "zu\u01D2", english: "left" },
-    { hanzi: "\u53F3", pinyin: "y\xF2u", english: "right" }
   ];
   var positionPracticeItems = positionScenes.flatMap((scene) => scene.lines.map((line, index) => ({ id: `${scene.id}-${index}`, ...line, imagePath: scene.imagePath, imageAlt: scene.imageAlt })));
 
@@ -8210,7 +8210,7 @@
 
   // src/features/time-daily-life/time-daily-life-runtime.js
   function createTimeDailyLifeRuntime(context) {
-    const { state: state2, timeDateWeekItems: timeDateWeekItems2, timeDateClockItems: timeDateClockItems2, timeDateExpressionItems: timeDateExpressionItems2, timeDateRoutineItems: timeDateRoutineItems2, datePracticeItems: datePracticeItems2, timeDateDateItems: timeDateDateItems2, timeDateMonthItems: timeDateMonthItems2, comparisonPracticeItems: comparisonPracticeItems2, comparisonWordItems: comparisonWordItems2, positionPracticeItems: positionPracticeItems2, positionScenes: positionScenes2, positionBookWords: positionBookWords2, clothesMatchItems: clothesMatchItems2, clothesSentenceItems: clothesSentenceItems2, clothesBookWords: clothesBookWords2, clothesPractice: clothesPractice2, roomScenes: roomScenes2, roomSentenceTokens: roomSentenceTokens2, transportSentenceTokens: transportSentenceTokens2, everydayActionItems: everydayActionItems2, visualTopicItems: visualTopicItems2, shuffleArray: shuffleArray2, speak: speak2, speakSceneLines: speakSceneLines2, currentTopic: currentTopic2, currentBook: currentBook2, currentLesson: currentLesson2, renderActivityPanel: renderActivityPanel2, focusExplorer: focusExplorer2, focusStatus: focusStatus2 } = context;
+    const { state: state2, timeDateWeekItems: timeDateWeekItems2, timeDateClockItems: timeDateClockItems2, timeDateExpressionItems: timeDateExpressionItems2, timeDateRoutineItems: timeDateRoutineItems2, datePracticeItems: datePracticeItems2, timeDateDateItems: timeDateDateItems2, timeDateMonthItems: timeDateMonthItems2, comparisonPracticeItems: comparisonPracticeItems2, comparisonWordItems: comparisonWordItems2, positionPracticeItems: positionPracticeItems2, positionScenes: positionScenes2, clothesMatchItems: clothesMatchItems2, clothesSentenceItems: clothesSentenceItems2, clothesBookWords: clothesBookWords2, clothesPractice: clothesPractice2, roomScenes: roomScenes2, roomSentenceTokens: roomSentenceTokens2, transportSentenceTokens: transportSentenceTokens2, everydayActionItems: everydayActionItems2, visualTopicItems: visualTopicItems2, shuffleArray: shuffleArray2, speak: speak2, speakSceneLines: speakSceneLines2, currentTopic: currentTopic2, currentBook: currentBook2, currentLesson: currentLesson2, renderActivityPanel: renderActivityPanel2, focusExplorer: focusExplorer2, focusStatus: focusStatus2 } = context;
     function resetWeekdayChallenge2(options = {}) {
       const answerId = nextRandomCycleId(state2, "weekdays-listen", timeDateWeekItems2.map((item) => item.id));
       const answer = timeDateWeekItems2.find((item) => item.id === answerId);
@@ -9000,7 +9000,7 @@
         <p class="body-match-kicker">${currentBook2().label} Lesson ${currentLesson2().lesson}</p>
         <h4>Positions & Directions</h4>
       </div>
-      <div class="greetings-practice-grid position-scene-grid">
+      <div class="greetings-practice-grid">
         ${positionScenes2.map(
         (scene) => `
               <section class="greetings-exchange">
@@ -9015,16 +9015,12 @@
             `
       ).join("")}
       </div>
-      <section class="school-lesson-section">
-        <div class="time-months-heading"><p class="body-match-kicker">Book words</p></div>
-        <div class="comparison-word-grid position-word-grid">
-          ${positionBookWords2.map((word) => `<button class="comparison-word-card" type="button" data-position-word="${word.hanzi}"><span class="comparison-word-hanzi">${word.hanzi}</span>${state2.showPinyin ? `<span class="comparison-word-pinyin">${word.pinyin}</span>` : ""}${state2.showEnglish ? `<span class="comparison-word-english">${word.english}</span>` : ""}</button>`).join("")}
-        </div>
-      </section>
       <section class="visual-topic-notes">
         <p class="body-match-kicker">Useful notes</p>
         <div class="visual-topic-note-grid position-note-grid">
           <article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">A \u5728 B + \u4F4D\u7F6E</p>${state2.showPinyin ? '<p class="visual-topic-note-pinyin">A z\xE0i B + w\xE8i zh\xEC</p>' : ""}${state2.showEnglish ? '<p class="visual-topic-note-english">A is in / on / beside B.</p>' : ""}<p class="visual-topic-note-example">\u4E66\u67B6\u5728\u684C\u5B50\u5DE6\u8FB9\u3002</p>${state2.showPinyin ? '<p class="visual-topic-note-pinyin">sh\u016B ji\xE0 z\xE0i zhu\u014D zi zu\u01D2 bi\u0101n.</p>' : ""}${state2.showEnglish ? '<p class="visual-topic-note-english">The bookshelf is to the left of the desk.</p>' : ""}</article>
+          <article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">\u524D\u8FB9 = \u524D\u9762\uFF1B\u540E\u8FB9 = \u540E\u9762</p>${state2.showPinyin ? '<p class="visual-topic-note-pinyin">qi\xE1n bi\u0101n = qi\xE1n mi\xE0n; h\xF2u bi\u0101n = h\xF2u mi\xE0n</p>' : ""}${state2.showEnglish ? '<p class="visual-topic-note-english">front and back can use either form here</p>' : ""}</article>
+          ${[["\u4E0A", "sh\xE0ng", "up"], ["\u4E0B", "xi\xE0", "down"], ["\u524D", "qi\xE1n", "front"], ["\u540E", "h\xF2u", "back"], ["\u5DE6", "zu\u01D2", "left"], ["\u53F3", "y\xF2u", "right"]].map(([hanzi, pinyin, english]) => `<article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">${hanzi}</p>${state2.showPinyin ? `<p class="visual-topic-note-pinyin">${pinyin}</p>` : ""}${state2.showEnglish ? `<p class="visual-topic-note-english">${english}</p>` : ""}</article>`).join("")}
         </div>
       </section>
     </div>
@@ -9033,11 +9029,6 @@
         button.addEventListener("click", () => {
           const scene = positionScenes2.find((entry) => entry.id === button.dataset.positionPlayScene);
           if (scene && state2.tapAudioEnabled) speakSceneLines2(scene.lines);
-        });
-      });
-      focusExplorer2.querySelectorAll("[data-position-word]").forEach((button) => {
-        button.addEventListener("click", () => {
-          if (state2.tapAudioEnabled) speak2(button.dataset.positionWord, 0.78);
         });
       });
     }
@@ -11759,7 +11750,6 @@
     comparisonWordItems,
     positionPracticeItems,
     positionScenes,
-    positionBookWords,
     clothesMatchItems,
     clothesSentenceItems,
     clothesBookWords,

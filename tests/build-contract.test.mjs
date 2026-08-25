@@ -10,7 +10,7 @@ import { timeDateWeekItems } from "../src/features/time-daily-life/weekdays.js";
 import { timeDateClockItems, timeDateRoutineItems } from "../src/features/time-daily-life/time.js";
 import { datePracticeItems, timeDateMonthItems } from "../src/features/time-daily-life/dates.js";
 import { comparisonPracticeItems, comparisonsTopic, comparisonVisualItems } from "../src/features/time-daily-life/comparisons.js";
-import { positionBookWords, positionPracticeItems, positionScenes, positionsTopic, positionVisualItems } from "../src/features/time-daily-life/positions.js";
+import { positionPracticeItems, positionScenes, positionsTopic, positionVisualItems } from "../src/features/time-daily-life/positions.js";
 import { transportSentenceTokens, transportTopic, transportVisualItems } from "../src/features/time-daily-life/transport.js";
 import { dailyLifeTopic, roomScenes, roomVisualItems } from "../src/features/time-daily-life/rooms.js";
 import { stationeryPictureMatchRounds, stationerySentenceBuilds, stationeryTopicData } from "../src/features/school-life/stationery.js";
@@ -661,8 +661,8 @@ test("time and daily life practice data retains every interaction set", () => {
   assert.equal(dailyLifeTopic.id, "daily-life");
   assert.equal(dailyLifeTopic.interactiveScene, "rooms");
   assert.equal(roomScenes.length, 3);
-  assert.equal(positionScenes.length, 3);
-  assert.equal(positionPracticeItems.length, 8);
+  assert.equal(positionScenes.length, 4);
+  assert.equal(positionPracticeItems.length, 11);
   assert.equal(comparisonPracticeItems.length, 7);
   assert.equal(Object.keys(transportSentenceTokens).length, 8);
 });
@@ -813,21 +813,6 @@ test("clothes owns its scenes and picture matching set", () => {
   assert.ok(clothesSentenceItems.every((item) => existsSync(item.imagePath)));
   assert.match(runtimeSource, /time-asset-card book-word-card/);
   assert.doesNotMatch(runtimeSource, /clothes-book-board/);
-});
-
-test("Positions uses a two-column scene grid with text-only direction words", () => {
-  const runtimeSource = readFileSync("src/features/time-daily-life/time-daily-life-runtime.js", "utf8");
-  const stylesSource = readFileSync("styles.css", "utf8");
-  const practiceSource = readFileSync("src/core/lesson-practice-runtime.js", "utf8");
-  assert.equal(positionsTopic.ownsExplorerContent, true);
-  assert.equal(positionScenes.length, 3);
-  assert.deepEqual(positionBookWords.map((item) => item.hanzi), ["上", "下", "里", "外", "前", "后", "左", "右"]);
-  assert.ok(positionPracticeItems.some((item) => item.hanzi === "书包在桌子下面。"));
-  assert.match(runtimeSource, /greetings-practice-grid position-scene-grid/);
-  assert.match(runtimeSource, /data-position-word/);
-  assert.match(stylesSource, /\.position-scene-grid \{\s+grid-template-columns: repeat\(2, minmax\(0, 1fr\)\);/);
-  assert.match(stylesSource, /\.greetings-scene-image\.position-scene-image \{\s+aspect-ratio: 4 \/ 3;\s+object-fit: cover;/);
-  assert.doesNotMatch(practiceSource, /\$\{renderPracticeSayCards\(\[\s+\{ hanzi: "书架在桌子左边。"/);
 });
 
 test("Nature and Weather remain separate book topics", () => {
