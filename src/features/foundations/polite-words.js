@@ -1,8 +1,8 @@
 export const politeWordsTopic = {
   id: "polite-words",
   title: "Polite Words",
-  summary: "Useful everyday phrases like thank you and simple requests.",
-  progressLabel: "1A to 3A",
+  summary: "Useful everyday phrases for kind classroom moments.",
+  progressLabel: "1A Lesson 5",
   iconText: "谢谢",
   iconColor: "#8f6c46",
   iconAccent: "#e6c77e",
@@ -19,17 +19,13 @@ export const politeWordsTopic = {
     { id: "youre-welcome", hanzi: "不客气。", pinyin: "bú kè qi.", english: "You're welcome.", audio: "不客气" },
     { id: "sorry", hanzi: "对不起。", pinyin: "duì bu qǐ.", english: "I'm sorry.", audio: "对不起" },
     { id: "never-mind", hanzi: "没关系。", pinyin: "méi guān xi.", english: "Never mind.", audio: "没关系" },
-    { id: "please", hanzi: "请", pinyin: "qǐng", english: "please", audio: "请" },
-    { id: "ask-teacher", hanzi: "我可以问老师吗？", pinyin: "wǒ kě yǐ wèn lǎo shī ma?", english: "May I ask the teacher?", audio: "我可以问老师吗" }
+    { id: "please", hanzi: "请", pinyin: "qǐng", english: "please", audio: "请" }
   ],
   interactiveScene: "polite-phrases",
   parentGuide: "Use these during real routines: handing snacks, passing pencils, cleaning up, or asking for help.",
   cultureGuide: "Polite language works best when tied to real exchanges. A quick classroom or home routine is better than a long explanation.",
   activities: ["Tap to hear", "Match phrase to situation", "Listen and choose", "Speak after me"],
-  steps: [
-    { book: "1A", lesson: 5, title: "Thank you!", note: "Start with a core manners phrase." },
-    { book: "3A", lesson: 6, title: "Request", note: "Expand polite language into asking for things." }
-  ]
+  steps: [{ book: "1A", lesson: 5, title: "Thank you!", note: "Use kind words in everyday classroom moments." }]
 };
 
 export const politePractice = [
@@ -62,17 +58,7 @@ export const politePractice = [
       { hanzi: "请安静。", pinyin: "qǐng ān jìng.", english: "Please be quiet.", audio: "请安静" },
       { hanzi: "好。", pinyin: "hǎo.", english: "Okay.", audio: "好" }
     ]
-  },
-  {
-    id: "school-request-teacher-help",
-    title: "Asking a teacher",
-    imagePath: "assets/illustrated-grammar/school-request-teacher-help.webp",
-    imageAlt: "A child politely asking a teacher for help in a classroom",
-    lines: [
-      { hanzi: "我可以问老师吗？", pinyin: "wǒ kě yǐ wèn lǎo shī ma?", english: "May I ask the teacher?", audio: "我可以问老师吗" },
-      { hanzi: "可以。", pinyin: "kě yǐ.", english: "Yes, you may.", audio: "可以" }
-    ]
   }
 ];
 
-export const politeGameItemIds = ["thank-you", "youre-welcome", "sorry", "never-mind", "ask-teacher"];
+export const politeGameItemIds = ["thank-you", "youre-welcome", "sorry", "never-mind"];

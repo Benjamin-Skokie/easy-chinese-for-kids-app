@@ -2600,6 +2600,15 @@ h4 {
   border: 1px solid rgba(221, 207, 187, 0.72);
 }
 
+.request-sentence-builder .request-builder-visual {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  margin: 14px 0;
+  border-radius: 18px;
+  object-fit: cover;
+}
+
 .backpack-game-card {
   gap: 12px;
 }
@@ -3296,6 +3305,10 @@ h4 {
 
 .polite-scene-layout .greetings-line-stack {
   grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.polite-scene-layout .greetings-line-stack.is-request-lines {
+  grid-template-columns: minmax(0, 1fr) minmax(5.25rem, 0.42fr);
 }
 
 .greetings-exchange {

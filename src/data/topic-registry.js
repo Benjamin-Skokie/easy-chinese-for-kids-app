@@ -18,6 +18,7 @@ import { greetingsTopic } from "../features/foundations/greetings.js";
 import { identityTopic, languagesTopic } from "../features/foundations/identity.js";
 import { familyTopic } from "../features/family/family.js";
 import { clothesTopic } from "../features/daily-life/clothes.js";
+import { requestsPermissionTopic } from "../features/daily-life/requests-permission.js";
 import { natureTopic, weatherTopic } from "../features/world/weather.js";
 import { animalsTopic, petsTopic } from "../features/world/animals.js";
 import { coloursTopic } from "../features/world/colours.js";
@@ -71,6 +72,7 @@ export const topicData = [
   foodTopic,
   foodPreferencesTopic,
   mealsFeelingsTopic,
+  requestsPermissionTopic,
   everydayActionsTopic,
   {
     id: "time-date",

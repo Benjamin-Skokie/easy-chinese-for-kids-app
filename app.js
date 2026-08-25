@@ -127,6 +127,11 @@
       politeMatchedIds: /* @__PURE__ */ new Set(),
       politePhraseOrder: [],
       politeMeaningOrder: [],
+      requestBuildTargetId: "",
+      requestBuildAvailableTokens: [],
+      requestBuildSelectedTokens: [],
+      requestBuildFeedback: "",
+      requestBuildResult: "",
       nationalityChallengeAnswerId: "",
       nationalityChallengeOptionIds: [],
       nationalityChallengePickedId: "",
@@ -588,9 +593,51 @@
     return primary ? 'loading="eager" decoding="async"' : 'loading="lazy" decoding="async"';
   }
 
+  // src/core/random-cycle.js
+  function shuffled(items, random = Math.random) {
+    const copy = [...items];
+    for (let index = copy.length - 1; index > 0; index -= 1) {
+      const swapIndex = Math.floor(random() * (index + 1));
+      [copy[index], copy[swapIndex]] = [copy[swapIndex], copy[index]];
+    }
+    return copy;
+  }
+  function nextRandomCycleId(state2, cycleKey, ids, random = Math.random) {
+    const uniqueIds = [...new Set(ids)];
+    if (!uniqueIds.length) return null;
+    state2.randomPracticeCycles ?? (state2.randomPracticeCycles = {});
+    const previous = state2.randomPracticeCycles[cycleKey];
+    const signature = uniqueIds.join("");
+    let remainingIds = previous?.signature === signature ? previous.remainingIds.filter((id2) => uniqueIds.includes(id2)) : [];
+    if (!remainingIds.length) {
+      remainingIds = shuffled(uniqueIds, random);
+      if (previous?.lastId && remainingIds.length > 1 && remainingIds[0] === previous.lastId) {
+        [remainingIds[0], remainingIds[1]] = [remainingIds[1], remainingIds[0]];
+      }
+    }
+    const id = remainingIds.shift();
+    state2.randomPracticeCycles[cycleKey] = { signature, remainingIds, lastId: id };
+    return id;
+  }
+  function advanceShuffledOrder(state2, orderKey, indexKey, shuffle) {
+    const currentOrder = state2[orderKey] ?? [];
+    if (!currentOrder.length) return;
+    const nextIndex = state2[indexKey] + 1;
+    if (nextIndex < currentOrder.length) {
+      state2[indexKey] = nextIndex;
+      return;
+    }
+    const nextOrder = shuffle(currentOrder);
+    if (nextOrder.length > 1 && nextOrder[0] === currentOrder[currentOrder.length - 1]) {
+      [nextOrder[0], nextOrder[1]] = [nextOrder[1], nextOrder[0]];
+    }
+    state2[orderKey] = nextOrder;
+    state2[indexKey] = 0;
+  }
+
   // src/core/lesson-practice-runtime.js
   function createLessonPracticeRuntime(context) {
-    const { state: state2, schoolTopicData: schoolTopicData3, visualTopicItems: visualTopicItems2, positionPracticeItems: positionPracticeItems2, timeDateWeekItems: timeDateWeekItems2, timeDateClockItems: timeDateClockItems2, datePracticeItems: datePracticeItems2, timeDateMonthItems: timeDateMonthItems2, timeDateRoutineItems: timeDateRoutineItems2, clothesMatchItems: clothesMatchItems2, clothesSentenceItems: clothesSentenceItems2, everydayActionItems: everydayActionItems2, illustratedKids: illustratedKids2, numberHanzi: numberHanzi2, buildNumberItem: buildNumberItem2, currentTopic: currentTopic2, currentNumberStage: currentNumberStage2, currentBook: currentBook2, currentLesson: currentLesson2, focusItemsForTopic: focusItemsForTopic2, shuffleArray: shuffleArray2, speak: speak2, renderFocusExplorer: renderFocusExplorer2, renderFocusStatus: renderFocusStatus2, renderSharedLessonPractice: renderSharedLessonPractice2, renderPracticeSayCards: renderPracticeSayCards2, bindPracticeSayCards: bindPracticeSayCards2, activityPanelTitle: activityPanelTitle2, activityPanelSummary: activityPanelSummary2, activityList: activityList2, topicColumns: topicColumns2, renderBodyPractice: renderBodyPractice2, renderWorldPractice, renderHobbiesPractice, activeTimeDateSection: activeTimeDateSection2, ensureWeekdayChallenge: ensureWeekdayChallenge2, ensureWeekdayMatchGame: ensureWeekdayMatchGame2, handleWeekdayChallengePlay: handleWeekdayChallengePlay2, handleWeekdayChallengeGuess: handleWeekdayChallengeGuess2, resetWeekdayMatchGame: resetWeekdayMatchGame2, handleWeekdayMatchPhrase: handleWeekdayMatchPhrase2, handleWeekdayMatchAttempt: handleWeekdayMatchAttempt2, ensureDateChallenge: ensureDateChallenge2, ensureDateMatchGame: ensureDateMatchGame2, handleDateChallengePlay: handleDateChallengePlay2, handleDateChallengeGuess: handleDateChallengeGuess2, resetDateMatchGame: resetDateMatchGame2, handleDateMatchPhrase: handleDateMatchPhrase2, handleDateMatchEvent: handleDateMatchEvent2, familyGameItems: familyGameItems2, familyListenItems: familyListenItems2, familyPersonForItemId: familyPersonForItemId2, familyHeadshotForItemId: familyHeadshotForItemId2, ensureFamilyChallenge: ensureFamilyChallenge2, ensureFamilyMatchGame: ensureFamilyMatchGame2, handleFamilyChallengePlay: handleFamilyChallengePlay2, handleFamilyChallengeGuess: handleFamilyChallengeGuess2, resetFamilyMatchGame: resetFamilyMatchGame2, handleFamilyMatchPhrase: handleFamilyMatchPhrase2, handleFamilyMatchAttempt: handleFamilyMatchAttempt2, greetingsGameItems: greetingsGameItems2, greetingsMeaningLabel: greetingsMeaningLabel2, ensureGreetingsChallenge: ensureGreetingsChallenge2, ensureGreetingsMatchGame: ensureGreetingsMatchGame2, handleGreetingsChallengePlay: handleGreetingsChallengePlay2, handleGreetingsChallengeGuess: handleGreetingsChallengeGuess2, resetGreetingsMatchGame: resetGreetingsMatchGame2, handleGreetingsMatchPhrase: handleGreetingsMatchPhrase2, handleGreetingsMatchAttempt: handleGreetingsMatchAttempt2, nationalityPracticeItems: nationalityPracticeItems2, ensureNationalityChallenge: ensureNationalityChallenge2, currentNationalityAnswer: currentNationalityAnswer2, handleNationalityChallengePlay: handleNationalityChallengePlay2, handleNationalityChallengeGuess: handleNationalityChallengeGuess2, ensureNationalityMatchGame: ensureNationalityMatchGame2, resetNationalityMatchGame: resetNationalityMatchGame2, handleNationalityMatchPhrase: handleNationalityMatchPhrase2, handleNationalityMatchAttempt: handleNationalityMatchAttempt2, languagePracticeItems: languagePracticeItems2, ensureLanguageChallenge: ensureLanguageChallenge2, currentLanguageAnswer: currentLanguageAnswer2, handleLanguageChallengePlay: handleLanguageChallengePlay2, handleLanguageChallengeGuess: handleLanguageChallengeGuess2, politeGameItems: politeGameItems2, politeMeaningLabel: politeMeaningLabel2, ensurePoliteChallenge: ensurePoliteChallenge2, ensurePoliteMatchGame: ensurePoliteMatchGame2, handlePoliteChallengePlay: handlePoliteChallengePlay2, handlePoliteChallengeGuess: handlePoliteChallengeGuess2, resetPoliteMatchGame: resetPoliteMatchGame2, handlePoliteMatchPhrase: handlePoliteMatchPhrase2, handlePoliteMatchAttempt: handlePoliteMatchAttempt2, ensureRoomBuilder: ensureRoomBuilder2, currentRoomBuildItem: currentRoomBuildItem2, handleRoomBuildToken: handleRoomBuildToken2, clearRoomBuilder: clearRoomBuilder2, nextRoomBuilder: nextRoomBuilder2, ensureClothesQuiz: ensureClothesQuiz2, handleClothesQuizPick: handleClothesQuizPick2, nextClothesQuizQuestion: nextClothesQuizQuestion2, ensureClothesSentenceQuiz: ensureClothesSentenceQuiz2, handleClothesSentencePick: handleClothesSentencePick2, nextClothesSentenceQuestion: nextClothesSentenceQuestion2, ensureTimeRoutineQuiz: ensureTimeRoutineQuiz2, handleTimeRoutineQuizPick: handleTimeRoutineQuizPick2, nextTimeRoutineQuizQuestion: nextTimeRoutineQuizQuestion2, ensureClockQuiz: ensureClockQuiz2, handleClockQuizPick: handleClockQuizPick2, nextClockQuizQuestion: nextClockQuizQuestion2, ensureComparisonBuilder: ensureComparisonBuilder2, currentComparisonBuildItem: currentComparisonBuildItem2, handleComparisonBuildToken: handleComparisonBuildToken2, clearComparisonBuilder: clearComparisonBuilder2, nextComparisonBuilder: nextComparisonBuilder2, ensurePositionQuiz: ensurePositionQuiz2, handlePositionQuizPlay: handlePositionQuizPlay2, handlePositionQuizPick: handlePositionQuizPick2, nextPositionQuizQuestion: nextPositionQuizQuestion2, ensureTransportBuilder: ensureTransportBuilder2, currentTransportBuildItem: currentTransportBuildItem2, handleTransportBuildToken: handleTransportBuildToken2, clearTransportBuilder: clearTransportBuilder2, nextTransportBuilder: nextTransportBuilder2, ensureEverydayActionsQuiz: ensureEverydayActionsQuiz2, currentEverydayAction: currentEverydayAction2, handleEverydayActionsPick: handleEverydayActionsPick2, nextEverydayActionsQuestion: nextEverydayActionsQuestion2, resetNumberChallenge: resetNumberChallenge2, ensureMathChallenge: ensureMathChallenge2, handleNumberChallengeGuess: handleNumberChallengeGuess2, resetMathChallenge: resetMathChallenge2, handleMathChallengeSubmit: handleMathChallengeSubmit2, renderNumberVisual: renderNumberVisual2, introductionsBuildTarget: introductionsBuildTarget2, ensureIntroductionsBuilder: ensureIntroductionsBuilder2, resetIntroductionsBuilder: resetIntroductionsBuilder2, handleIntroductionsBuildClear: handleIntroductionsBuildClear2, handleIntroductionsBuildToken: handleIntroductionsBuildToken2, ageGameItems: ageGameItems2, ensureAgeChallenge: ensureAgeChallenge2, ensureAgeBuilder: ensureAgeBuilder2, ageBuildTarget: ageBuildTarget2, handleAgeChallengePlay: handleAgeChallengePlay2, handleAgeChallengeGuess: handleAgeChallengeGuess2, resetAgeBuilder: resetAgeBuilder2, handleAgeBuildClear: handleAgeBuildClear2, handleAgeBuildToken: handleAgeBuildToken2, renderSchoolPractice: renderSchoolPractice2 } = context;
+    const { state: state2, schoolTopicData: schoolTopicData3, visualTopicItems: visualTopicItems2, positionPracticeItems: positionPracticeItems2, timeDateWeekItems: timeDateWeekItems2, timeDateClockItems: timeDateClockItems2, datePracticeItems: datePracticeItems2, timeDateMonthItems: timeDateMonthItems2, timeDateRoutineItems: timeDateRoutineItems2, clothesMatchItems: clothesMatchItems2, clothesSentenceItems: clothesSentenceItems2, everydayActionItems: everydayActionItems2, requestBuildPhrases: requestBuildPhrases2, illustratedKids: illustratedKids2, numberHanzi: numberHanzi2, buildNumberItem: buildNumberItem2, currentTopic: currentTopic2, currentNumberStage: currentNumberStage2, currentBook: currentBook2, currentLesson: currentLesson2, focusItemsForTopic: focusItemsForTopic2, shuffleArray: shuffleArray2, speak: speak2, renderFocusExplorer: renderFocusExplorer2, renderFocusStatus: renderFocusStatus2, renderSharedLessonPractice: renderSharedLessonPractice2, renderPracticeSayCards: renderPracticeSayCards2, bindPracticeSayCards: bindPracticeSayCards2, activityPanelTitle: activityPanelTitle2, activityPanelSummary: activityPanelSummary2, activityList: activityList2, topicColumns: topicColumns2, renderBodyPractice: renderBodyPractice2, renderWorldPractice, renderHobbiesPractice, activeTimeDateSection: activeTimeDateSection2, ensureWeekdayChallenge: ensureWeekdayChallenge2, ensureWeekdayMatchGame: ensureWeekdayMatchGame2, handleWeekdayChallengePlay: handleWeekdayChallengePlay2, handleWeekdayChallengeGuess: handleWeekdayChallengeGuess2, resetWeekdayMatchGame: resetWeekdayMatchGame2, handleWeekdayMatchPhrase: handleWeekdayMatchPhrase2, handleWeekdayMatchAttempt: handleWeekdayMatchAttempt2, ensureDateChallenge: ensureDateChallenge2, ensureDateMatchGame: ensureDateMatchGame2, handleDateChallengePlay: handleDateChallengePlay2, handleDateChallengeGuess: handleDateChallengeGuess2, resetDateMatchGame: resetDateMatchGame2, handleDateMatchPhrase: handleDateMatchPhrase2, handleDateMatchEvent: handleDateMatchEvent2, familyGameItems: familyGameItems2, familyListenItems: familyListenItems2, familyPersonForItemId: familyPersonForItemId2, familyHeadshotForItemId: familyHeadshotForItemId2, ensureFamilyChallenge: ensureFamilyChallenge2, ensureFamilyMatchGame: ensureFamilyMatchGame2, handleFamilyChallengePlay: handleFamilyChallengePlay2, handleFamilyChallengeGuess: handleFamilyChallengeGuess2, resetFamilyMatchGame: resetFamilyMatchGame2, handleFamilyMatchPhrase: handleFamilyMatchPhrase2, handleFamilyMatchAttempt: handleFamilyMatchAttempt2, greetingsGameItems: greetingsGameItems2, greetingsMeaningLabel: greetingsMeaningLabel2, ensureGreetingsChallenge: ensureGreetingsChallenge2, ensureGreetingsMatchGame: ensureGreetingsMatchGame2, handleGreetingsChallengePlay: handleGreetingsChallengePlay2, handleGreetingsChallengeGuess: handleGreetingsChallengeGuess2, resetGreetingsMatchGame: resetGreetingsMatchGame2, handleGreetingsMatchPhrase: handleGreetingsMatchPhrase2, handleGreetingsMatchAttempt: handleGreetingsMatchAttempt2, nationalityPracticeItems: nationalityPracticeItems2, ensureNationalityChallenge: ensureNationalityChallenge2, currentNationalityAnswer: currentNationalityAnswer2, handleNationalityChallengePlay: handleNationalityChallengePlay2, handleNationalityChallengeGuess: handleNationalityChallengeGuess2, ensureNationalityMatchGame: ensureNationalityMatchGame2, resetNationalityMatchGame: resetNationalityMatchGame2, handleNationalityMatchPhrase: handleNationalityMatchPhrase2, handleNationalityMatchAttempt: handleNationalityMatchAttempt2, languagePracticeItems: languagePracticeItems2, ensureLanguageChallenge: ensureLanguageChallenge2, currentLanguageAnswer: currentLanguageAnswer2, handleLanguageChallengePlay: handleLanguageChallengePlay2, handleLanguageChallengeGuess: handleLanguageChallengeGuess2, politeGameItems: politeGameItems2, politeMeaningLabel: politeMeaningLabel2, ensurePoliteChallenge: ensurePoliteChallenge2, ensurePoliteMatchGame: ensurePoliteMatchGame2, handlePoliteChallengePlay: handlePoliteChallengePlay2, handlePoliteChallengeGuess: handlePoliteChallengeGuess2, resetPoliteMatchGame: resetPoliteMatchGame2, handlePoliteMatchPhrase: handlePoliteMatchPhrase2, handlePoliteMatchAttempt: handlePoliteMatchAttempt2, ensureRoomBuilder: ensureRoomBuilder2, currentRoomBuildItem: currentRoomBuildItem2, handleRoomBuildToken: handleRoomBuildToken2, clearRoomBuilder: clearRoomBuilder2, nextRoomBuilder: nextRoomBuilder2, ensureClothesQuiz: ensureClothesQuiz2, handleClothesQuizPick: handleClothesQuizPick2, nextClothesQuizQuestion: nextClothesQuizQuestion2, ensureClothesSentenceQuiz: ensureClothesSentenceQuiz2, handleClothesSentencePick: handleClothesSentencePick2, nextClothesSentenceQuestion: nextClothesSentenceQuestion2, ensureTimeRoutineQuiz: ensureTimeRoutineQuiz2, handleTimeRoutineQuizPick: handleTimeRoutineQuizPick2, nextTimeRoutineQuizQuestion: nextTimeRoutineQuizQuestion2, ensureClockQuiz: ensureClockQuiz2, handleClockQuizPick: handleClockQuizPick2, nextClockQuizQuestion: nextClockQuizQuestion2, ensureComparisonBuilder: ensureComparisonBuilder2, currentComparisonBuildItem: currentComparisonBuildItem2, handleComparisonBuildToken: handleComparisonBuildToken2, clearComparisonBuilder: clearComparisonBuilder2, nextComparisonBuilder: nextComparisonBuilder2, ensurePositionQuiz: ensurePositionQuiz2, handlePositionQuizPlay: handlePositionQuizPlay2, handlePositionQuizPick: handlePositionQuizPick2, nextPositionQuizQuestion: nextPositionQuizQuestion2, ensureTransportBuilder: ensureTransportBuilder2, currentTransportBuildItem: currentTransportBuildItem2, handleTransportBuildToken: handleTransportBuildToken2, clearTransportBuilder: clearTransportBuilder2, nextTransportBuilder: nextTransportBuilder2, ensureEverydayActionsQuiz: ensureEverydayActionsQuiz2, currentEverydayAction: currentEverydayAction2, handleEverydayActionsPick: handleEverydayActionsPick2, nextEverydayActionsQuestion: nextEverydayActionsQuestion2, resetNumberChallenge: resetNumberChallenge2, ensureMathChallenge: ensureMathChallenge2, handleNumberChallengeGuess: handleNumberChallengeGuess2, resetMathChallenge: resetMathChallenge2, handleMathChallengeSubmit: handleMathChallengeSubmit2, renderNumberVisual: renderNumberVisual2, introductionsBuildTarget: introductionsBuildTarget2, ensureIntroductionsBuilder: ensureIntroductionsBuilder2, resetIntroductionsBuilder: resetIntroductionsBuilder2, handleIntroductionsBuildClear: handleIntroductionsBuildClear2, handleIntroductionsBuildToken: handleIntroductionsBuildToken2, ageGameItems: ageGameItems2, ensureAgeChallenge: ensureAgeChallenge2, ensureAgeBuilder: ensureAgeBuilder2, ageBuildTarget: ageBuildTarget2, handleAgeChallengePlay: handleAgeChallengePlay2, handleAgeChallengeGuess: handleAgeChallengeGuess2, resetAgeBuilder: resetAgeBuilder2, handleAgeBuildClear: handleAgeBuildClear2, handleAgeBuildToken: handleAgeBuildToken2, renderSchoolPractice: renderSchoolPractice2 } = context;
     function familySentenceBuilderMarkup() {
       const labels = { "older-sister": "\u59D0\u59D0", "older-brother": "\u54E5\u54E5", "younger-brother": "\u5F1F\u5F1F", "younger-sister": "\u59B9\u59B9" };
       const counts = state2.familySentenceCounts;
@@ -640,6 +687,59 @@
         if (state2.familyHouseholdCount && state2.familyHouseholdCount < nextMinimum) state2.familyHouseholdCount = 0;
         renderActivityPanel2(currentTopic2());
         speakSentence();
+      }));
+    }
+    function requestBuildTarget() {
+      return requestBuildPhrases2.find((entry) => entry.id === state2.requestBuildTargetId) ?? requestBuildPhrases2[0];
+    }
+    function resetRequestBuilder() {
+      const targetId = nextRandomCycleId(state2, "requests-permission-build", requestBuildPhrases2.map((entry) => entry.id));
+      const target = requestBuildPhrases2.find((entry) => entry.id === targetId);
+      if (!target) return;
+      state2.requestBuildTargetId = target.id;
+      state2.requestBuildAvailableTokens = shuffleArray2(target.tokens);
+      state2.requestBuildSelectedTokens = [];
+      state2.requestBuildFeedback = "Look at the picture, then tap the word pieces in order.";
+      state2.requestBuildResult = "";
+    }
+    function ensureRequestBuilder() {
+      const target = requestBuildTarget();
+      if (!state2.requestBuildTargetId || !state2.requestBuildAvailableTokens.length && !state2.requestBuildSelectedTokens.length || !target) resetRequestBuilder();
+    }
+    function handleRequestBuildToken(tokenIndex) {
+      const target = requestBuildTarget();
+      const token = state2.requestBuildAvailableTokens[tokenIndex];
+      if (!target || !token || state2.requestBuildResult === "correct") return;
+      state2.requestBuildSelectedTokens = [...state2.requestBuildSelectedTokens, token];
+      state2.requestBuildAvailableTokens = state2.requestBuildAvailableTokens.filter((_, index) => index !== tokenIndex);
+      if (state2.requestBuildSelectedTokens.length === target.tokens.length) {
+        const isCorrect = target.tokens.every((entry, index) => state2.requestBuildSelectedTokens[index] === entry);
+        if (isCorrect) {
+          state2.requestBuildResult = "correct";
+          state2.requestBuildFeedback = `Correct! ${target.targetHanzi}`;
+          speak2(target.audio, 0.78);
+        } else {
+          state2.requestBuildResult = "wrong";
+          state2.requestBuildFeedback = "Not quite. Try again.";
+          state2.requestBuildAvailableTokens = shuffleArray2(target.tokens);
+          state2.requestBuildSelectedTokens = [];
+        }
+      }
+      renderActivityPanel2(currentTopic2());
+    }
+    function requestSentenceBuilderMarkup() {
+      const target = requestBuildTarget();
+      if (!target) return "";
+      const complete = state2.requestBuildResult === "correct";
+      return `<section class="practice-split-card request-sentence-builder"><div class="numbers-game-top"><div><p class="body-match-kicker">Build a sentence</p><p class="numbers-game-note">Look at the picture, then tap the word pieces in order.</p></div><button class="small-button is-play-button" type="button" data-request-builder-play>Play</button></div><img class="request-builder-visual" src="${target.imagePath}" alt="${target.imageAlt}" ${imageLoadingAttrs({ width: 1200, height: 900 })} /><div class="intro-build-target"><div class="intro-build-selected">${state2.requestBuildSelectedTokens.length ? state2.requestBuildSelectedTokens.map((token) => `<span class="intro-build-chip is-selected">${token}</span>`).join("") : '<span class="intro-build-placeholder">Tap the word pieces below.</span>'}</div>${complete ? `<p class="numbers-game-pinyin">${target.targetPinyin}</p><p class="numbers-game-english">${target.english}</p>` : ""}</div><div class="intro-build-choices">${state2.requestBuildAvailableTokens.map((token, index) => `<button class="intro-build-chip" type="button" data-request-builder-token="${index}">${token}</button>`).join("")}</div>${state2.requestBuildFeedback ? `<p class="greetings-game-feedback${state2.requestBuildResult === "correct" ? " is-correct" : state2.requestBuildResult === "wrong" ? " is-wrong" : ""}">${state2.requestBuildFeedback}</p>` : ""}</section>`;
+    }
+    function bindRequestSentenceBuilder(container) {
+      container.querySelector("[data-request-builder-play]")?.addEventListener("click", () => {
+        resetRequestBuilder();
+        renderActivityPanel2(currentTopic2());
+      });
+      container.querySelectorAll("[data-request-builder-token]").forEach((button) => button.addEventListener("click", () => {
+        handleRequestBuildToken(Number(button.dataset.requestBuilderToken));
       }));
     }
     function sharedLessonPracticeConfig(topic) {
@@ -845,6 +945,34 @@
             },
             onPhrase: handleGreetingsMatchPhrase2,
             onMeaning: handleGreetingsMatchAttempt2
+          }
+        };
+      }
+      if (topic.id === "requests-permission") {
+        return {
+          summary: "Build a complete request, then match each Chinese sentence to its English translation.",
+          shellClass: "lesson-practice-shell",
+          ensure: () => {
+            ensureRequestBuilder();
+            ensurePoliteMatchGame2();
+          },
+          builder: { markup: requestSentenceBuilderMarkup, bind: bindRequestSentenceBuilder },
+          match: {
+            phraseHeading: "Chinese",
+            meaningHeading: "English",
+            items: politeGameItems2,
+            phraseIds: () => state2.politePhraseOrder,
+            meaningIds: () => state2.politeMeaningOrder,
+            matchedIds: () => state2.politeMatchedIds,
+            selectedId: () => state2.politeSelectedPhraseId,
+            feedback: () => state2.politeMatchFeedback,
+            meaningLabel: politeMeaningLabel2,
+            onNew: () => {
+              resetPoliteMatchGame2();
+              renderActivityPanel2(topic);
+            },
+            onPhrase: handlePoliteMatchPhrase2,
+            onMeaning: handlePoliteMatchAttempt2
           }
         };
       }
@@ -3119,48 +3247,6 @@
     { id: "dislikes-math", imagePath: "assets/illustrated-activities/lele_dislikes_math_class.webp", target: ["\u6211", "\u4E0D\u559C\u6B22", "\u6570\u5B66\u8BFE"], distractors: ["\u5B66\u6821", "\u6709", "\u6587\u5177\u76D2"], pinyin: "w\u01D2 b\xF9 x\u01D0 huan sh\xF9 xu\xE9 k\xE8.", english: "I do not like math class." }
   ];
 
-  // src/core/random-cycle.js
-  function shuffled(items, random = Math.random) {
-    const copy = [...items];
-    for (let index = copy.length - 1; index > 0; index -= 1) {
-      const swapIndex = Math.floor(random() * (index + 1));
-      [copy[index], copy[swapIndex]] = [copy[swapIndex], copy[index]];
-    }
-    return copy;
-  }
-  function nextRandomCycleId(state2, cycleKey, ids, random = Math.random) {
-    const uniqueIds = [...new Set(ids)];
-    if (!uniqueIds.length) return null;
-    state2.randomPracticeCycles ?? (state2.randomPracticeCycles = {});
-    const previous = state2.randomPracticeCycles[cycleKey];
-    const signature = uniqueIds.join("");
-    let remainingIds = previous?.signature === signature ? previous.remainingIds.filter((id2) => uniqueIds.includes(id2)) : [];
-    if (!remainingIds.length) {
-      remainingIds = shuffled(uniqueIds, random);
-      if (previous?.lastId && remainingIds.length > 1 && remainingIds[0] === previous.lastId) {
-        [remainingIds[0], remainingIds[1]] = [remainingIds[1], remainingIds[0]];
-      }
-    }
-    const id = remainingIds.shift();
-    state2.randomPracticeCycles[cycleKey] = { signature, remainingIds, lastId: id };
-    return id;
-  }
-  function advanceShuffledOrder(state2, orderKey, indexKey, shuffle) {
-    const currentOrder = state2[orderKey] ?? [];
-    if (!currentOrder.length) return;
-    const nextIndex = state2[indexKey] + 1;
-    if (nextIndex < currentOrder.length) {
-      state2[indexKey] = nextIndex;
-      return;
-    }
-    const nextOrder = shuffle(currentOrder);
-    if (nextOrder.length > 1 && nextOrder[0] === currentOrder[currentOrder.length - 1]) {
-      [nextOrder[0], nextOrder[1]] = [nextOrder[1], nextOrder[0]];
-    }
-    state2[orderKey] = nextOrder;
-    state2[indexKey] = 0;
-  }
-
   // src/features/school-life/school-food-runtime.js
   function createSchoolFoodRuntime(context) {
     const { state: state2, schoolTopicData: schoolTopicData3, schoolSentenceBuilds: schoolSentenceBuilds3, stationeryPictureMatchRounds: stationeryPictureMatchRounds2, stationeryPictureMatchChoices: stationeryPictureMatchChoices2, stationeryPictureMatchEnglish: stationeryPictureMatchEnglish2, currentTopic: currentTopic2, currentBook: currentBook2, currentLesson: currentLesson2, shuffleArray: shuffleArray2, speak: speak2, speakSceneLines: speakSceneLines2, renderActivityPanel: renderActivityPanel2, focusItemsForTopic: focusItemsForTopic2, activityPanelTitle: activityPanelTitle2, activityPanelSummary: activityPanelSummary2, activityList: activityList2, focusExplorer: focusExplorer2, renderDefaultExplorer: renderDefaultExplorer2, renderListenPractice: renderListenPractice2, renderMatchPractice: renderMatchPractice2 } = context;
@@ -4897,8 +4983,8 @@
   var politeWordsTopic = {
     id: "polite-words",
     title: "Polite Words",
-    summary: "Useful everyday phrases like thank you and simple requests.",
-    progressLabel: "1A to 3A",
+    summary: "Useful everyday phrases for kind classroom moments.",
+    progressLabel: "1A Lesson 5",
     iconText: "\u8C22\u8C22",
     iconColor: "#8f6c46",
     iconAccent: "#e6c77e",
@@ -4915,17 +5001,13 @@
       { id: "youre-welcome", hanzi: "\u4E0D\u5BA2\u6C14\u3002", pinyin: "b\xFA k\xE8 qi.", english: "You're welcome.", audio: "\u4E0D\u5BA2\u6C14" },
       { id: "sorry", hanzi: "\u5BF9\u4E0D\u8D77\u3002", pinyin: "du\xEC bu q\u01D0.", english: "I'm sorry.", audio: "\u5BF9\u4E0D\u8D77" },
       { id: "never-mind", hanzi: "\u6CA1\u5173\u7CFB\u3002", pinyin: "m\xE9i gu\u0101n xi.", english: "Never mind.", audio: "\u6CA1\u5173\u7CFB" },
-      { id: "please", hanzi: "\u8BF7", pinyin: "q\u01D0ng", english: "please", audio: "\u8BF7" },
-      { id: "ask-teacher", hanzi: "\u6211\u53EF\u4EE5\u95EE\u8001\u5E08\u5417\uFF1F", pinyin: "w\u01D2 k\u011B y\u01D0 w\xE8n l\u01CEo sh\u012B ma?", english: "May I ask the teacher?", audio: "\u6211\u53EF\u4EE5\u95EE\u8001\u5E08\u5417" }
+      { id: "please", hanzi: "\u8BF7", pinyin: "q\u01D0ng", english: "please", audio: "\u8BF7" }
     ],
     interactiveScene: "polite-phrases",
     parentGuide: "Use these during real routines: handing snacks, passing pencils, cleaning up, or asking for help.",
     cultureGuide: "Polite language works best when tied to real exchanges. A quick classroom or home routine is better than a long explanation.",
     activities: ["Tap to hear", "Match phrase to situation", "Listen and choose", "Speak after me"],
-    steps: [
-      { book: "1A", lesson: 5, title: "Thank you!", note: "Start with a core manners phrase." },
-      { book: "3A", lesson: 6, title: "Request", note: "Expand polite language into asking for things." }
-    ]
+    steps: [{ book: "1A", lesson: 5, title: "Thank you!", note: "Use kind words in everyday classroom moments." }]
   };
   var politePractice = [
     {
@@ -4957,25 +5039,17 @@
         { hanzi: "\u8BF7\u5B89\u9759\u3002", pinyin: "q\u01D0ng \u0101n j\xECng.", english: "Please be quiet.", audio: "\u8BF7\u5B89\u9759" },
         { hanzi: "\u597D\u3002", pinyin: "h\u01CEo.", english: "Okay.", audio: "\u597D" }
       ]
-    },
-    {
-      id: "school-request-teacher-help",
-      title: "Asking a teacher",
-      imagePath: "assets/illustrated-grammar/school-request-teacher-help.webp",
-      imageAlt: "A child politely asking a teacher for help in a classroom",
-      lines: [
-        { hanzi: "\u6211\u53EF\u4EE5\u95EE\u8001\u5E08\u5417\uFF1F", pinyin: "w\u01D2 k\u011B y\u01D0 w\xE8n l\u01CEo sh\u012B ma?", english: "May I ask the teacher?", audio: "\u6211\u53EF\u4EE5\u95EE\u8001\u5E08\u5417" },
-        { hanzi: "\u53EF\u4EE5\u3002", pinyin: "k\u011B y\u01D0.", english: "Yes, you may.", audio: "\u53EF\u4EE5" }
-      ]
     }
   ];
-  var politeGameItemIds = ["thank-you", "youre-welcome", "sorry", "never-mind", "ask-teacher"];
+  var politeGameItemIds = ["thank-you", "youre-welcome", "sorry", "never-mind"];
 
   // src/features/foundations/polite-words-controller.js
   function createPoliteWordsController({
     state: state2,
     politeGameItemIds: politeGameItemIds2,
     politePractice: politePractice2,
+    requestGameItemIds: requestGameItemIds2,
+    requestPractice: requestPractice2,
     topicById: topicById3,
     shuffleArray: shuffleArray2,
     speak: speak2,
@@ -4991,9 +5065,21 @@
     elements
   }) {
     const { focusExplorer: focusExplorer2, focusStatus: focusStatus2 } = elements;
+    function activeLesson() {
+      const isRequestLesson = currentTopic2().id === "requests-permission";
+      return {
+        topicId: isRequestLesson ? "requests-permission" : "polite-words",
+        gameItemIds: isRequestLesson ? requestGameItemIds2 : politeGameItemIds2,
+        practice: isRequestLesson ? requestPractice2 : politePractice2,
+        title: isRequestLesson ? "Book theme: polite requests and permission" : "Book theme: kind classroom language",
+        introduction: isRequestLesson ? "Ask politely, then listen for whether the answer is yes or no." : "Use thank you, sorry, and please in kind everyday classroom moments.",
+        note: isRequestLesson ? `<p class="greetings-note-hanzi">\u8BF7 / \u6211\u53EF\u4EE5\u2026\u5417\uFF1F / \u53EF\u4EE5 / \u4E0D\u53EF\u4EE5</p><p class="greetings-note-copy"><strong>\u8BF7</strong> makes a request polite. <strong>\u6211\u53EF\u4EE5\u2026\u5417\uFF1F</strong> asks permission and ends with <strong>\u5417</strong>.</p><p class="greetings-note-copy"><strong>\u53EF\u4EE5\u3002</strong> means yes; <strong>\u4E0D\u53EF\u4EE5\u3002</strong> means no.</p>` : `<p class="greetings-note-hanzi">\u8C22\u8C22 / \u4E0D\u5BA2\u6C14 / \u5BF9\u4E0D\u8D77 / \u6CA1\u5173\u7CFB</p><p class="greetings-note-copy"><strong>\u8C22\u8C22\u4F60</strong> means \u201Cthank you,\u201D and <strong>\u4E0D\u5BA2\u6C14</strong> is the kind reply: \u201Cyou\u2019re welcome.\u201D</p><p class="greetings-note-copy"><strong>\u5BF9\u4E0D\u8D77</strong> is an apology; <strong>\u6CA1\u5173\u7CFB</strong> is a gentle response.</p>`
+      };
+    }
     function politeGameItems2() {
-      const politeTopic = topicById3("polite-words");
-      return politeGameItemIds2.map((id) => politeTopic?.focusItems.find((item) => item.id === id)).filter(Boolean);
+      const lesson = activeLesson();
+      const politeTopic = topicById3(lesson.topicId);
+      return lesson.gameItemIds.map((id) => politeTopic?.focusItems.find((item) => item.id === id)).filter(Boolean);
     }
     function politeMeaningLabel2(itemId) {
       const labels = {
@@ -5003,6 +5089,14 @@
         "never-mind": "Forgive kindly after an apology",
         "ask-teacher": "Ask politely before speaking with the teacher"
       };
+      if (currentTopic2().id === "requests-permission") {
+        return {
+          "ask-teacher": "May I ask the teacher a question?",
+          "ask-tv": "May I watch TV?",
+          "yes-permission": "Yes, you may.",
+          "no-permission": "No, you may not."
+        }[itemId] ?? "";
+      }
       return labels[itemId] ?? "";
     }
     function resetPoliteMatchGame2(options = {}) {
@@ -5132,16 +5226,18 @@
       renderActivityPanel2(currentTopic2());
     }
     function renderPoliteWordsExplorer2() {
-      const words = topicById3("polite-words")?.focusItems ?? [];
+      const lesson = activeLesson();
+      const topic = topicById3(lesson.topicId);
+      const words = topic?.bookWords ?? topic?.focusItems ?? [];
       focusExplorer2.innerHTML = `
       <div class="numbers-board">
         <div class="numbers-stage-card">
           <p class="body-match-kicker">${currentBook2().label} Lesson ${currentLesson2().lesson}</p>
-          <h4>Book theme: kind classroom language</h4>
-          <p>This topic starts with thank you and sorry, then grows into kind replies and polite requests.</p>
+          <h4>${lesson.title}</h4>
+          <p>${lesson.introduction}</p>
         </div>
         <div class="greetings-practice-grid polite-scene-grid">
-          ${politePractice2.map((exchange) => `
+          ${lesson.practice.map((exchange) => `
             <section class="greetings-exchange">
               <div class="greetings-exchange-top">
                 <div><p class="body-match-kicker">${exchange.title}</p></div>
@@ -5151,7 +5247,7 @@
                 <div class="greetings-scene-visual">
                   <img class="greetings-scene-image" src="${exchange.imagePath}" alt="${exchange.imageAlt}" />
                 </div>
-                <div class="greetings-line-stack">
+                <div class="greetings-line-stack${currentTopic2().id === "requests-permission" ? " is-request-lines" : ""}">
                   ${exchange.lines.map((line) => `
                     <article class="greetings-line-card">
                       <div class="telephone-bubble-copy">
@@ -5174,15 +5270,13 @@
         </section>
         <section class="greetings-note-card polite-useful-note">
           <p class="body-match-kicker">Useful note</p>
-          <p class="greetings-note-hanzi">\u8BF7 / \u6211\u53EF\u4EE5\u2026\u5417\uFF1F</p>
-          <p class="greetings-note-copy"><strong>\u8BF7</strong> makes a request or classroom direction polite: <strong>\u8BF7\u5B89\u9759\u3002</strong></p>
-          <p class="greetings-note-copy"><strong>\u6211\u53EF\u4EE5\u2026\u5417\uFF1F</strong> asks permission and ends with the question marker <strong>\u5417</strong>: <strong>\u6211\u53EF\u4EE5\u95EE\u8001\u5E08\u5417\uFF1F</strong></p>
+          ${lesson.note}
         </section>
       </div>
     `;
       focusExplorer2.querySelectorAll("[data-polite-play-all]").forEach((button) => {
         button.addEventListener("click", () => {
-          const exchange = politePractice2.find((entry) => entry.id === button.dataset.politePlayAll);
+          const exchange = lesson.practice.find((entry) => entry.id === button.dataset.politePlayAll);
           if (!exchange || !state2.tapAudioEnabled) {
             return;
           }
@@ -6043,6 +6137,99 @@
     { id: "jacket", hanzi: "\u5916\u5957", pinyin: "w\xE0i t\xE0o", english: "a jacket", frame: "\u6211\u7A7F", framePinyin: "w\u01D2 chu\u0101n", audio: "\u6211\u7A7F\u5916\u5957", imagePath: "assets/illustrated-self-dressing/putting-on-jacket.webp", imageAlt: "A child putting on a jacket" },
     { id: "hat", hanzi: "\u5E3D\u5B50", pinyin: "m\xE0o zi", english: "a hat", frame: "\u6211\u6234", framePinyin: "w\u01D2 d\xE0i", audio: "\u6211\u6234\u5E3D\u5B50", imagePath: "assets/illustrated-self-dressing/putting-on-hat.webp", imageAlt: "A child putting on a hat" },
     { id: "school-uniform", hanzi: "\u6821\u670D", pinyin: "xi\xE0o f\xFA", english: "a school uniform", frame: "\u6211\u7A7F", framePinyin: "w\u01D2 chu\u0101n", audio: "\u6211\u7A7F\u6821\u670D", imagePath: "assets/illustrated-self-dressing/putting-on-school-uniform.webp", imageAlt: "A child putting on a school uniform" }
+  ];
+
+  // src/features/daily-life/requests-permission.js
+  var requestsPermissionTopic = {
+    id: "requests-permission",
+    title: "Requests & Permission",
+    summary: "Ask politely, then understand yes and no permission answers.",
+    progressLabel: "3A Lesson 6",
+    iconText: "\u53EF\u4EE5\u5417",
+    iconColor: "#517b8d",
+    iconAccent: "#b9d6df",
+    iconTheme: "requests",
+    ownsExplorerContent: true,
+    interactiveScene: "polite-phrases",
+    focus: { hanzi: "\u6211\u53EF\u4EE5\u770B\u7535\u89C6\u5417\uFF1F", pinyin: "w\u01D2 k\u011B y\u01D0 k\xE0n di\xE0n sh\xEC ma?", english: "May I watch TV?", audio: "\u6211\u53EF\u4EE5\u770B\u7535\u89C6\u5417" },
+    bookWords: [
+      { id: "please", hanzi: "\u8BF7", pinyin: "q\u01D0ng", english: "please", audio: "\u8BF7" },
+      { id: "yes-permission", hanzi: "\u53EF\u4EE5\u3002", pinyin: "k\u011B y\u01D0.", english: "yes, you may", audio: "\u53EF\u4EE5" },
+      { id: "no-permission", hanzi: "\u4E0D\u53EF\u4EE5\u3002", pinyin: "b\xF9 k\u011B y\u01D0.", english: "no, you may not", audio: "\u4E0D\u53EF\u4EE5" }
+    ],
+    focusItems: [
+      { id: "ask-teacher", hanzi: "\u6211\u53EF\u4EE5\u95EE\u8001\u5E08\u5417\uFF1F", pinyin: "w\u01D2 k\u011B y\u01D0 w\xE8n l\u01CEo sh\u012B ma?", english: "May I ask the teacher?", audio: "\u6211\u53EF\u4EE5\u95EE\u8001\u5E08\u5417" },
+      { id: "ask-tv", hanzi: "\u6211\u53EF\u4EE5\u770B\u7535\u89C6\u5417\uFF1F", pinyin: "w\u01D2 k\u011B y\u01D0 k\xE0n di\xE0n sh\xEC ma?", english: "May I watch TV?", audio: "\u6211\u53EF\u4EE5\u770B\u7535\u89C6\u5417" },
+      { id: "yes-permission", hanzi: "\u53EF\u4EE5\u3002", pinyin: "k\u011B y\u01D0.", english: "Yes, you may.", audio: "\u53EF\u4EE5" },
+      { id: "no-permission", hanzi: "\u4E0D\u53EF\u4EE5\u3002", pinyin: "b\xF9 k\u011B y\u01D0.", english: "No, you may not.", audio: "\u4E0D\u53EF\u4EE5" },
+      { id: "please", hanzi: "\u8BF7", pinyin: "q\u01D0ng", english: "please", audio: "\u8BF7" }
+    ],
+    steps: [{ book: "3A", lesson: 6, title: "Request", note: "Ask politely and understand permission answers." }]
+  };
+  var requestPractice = [
+    {
+      id: "tv-not-yet",
+      title: "Not yet",
+      imagePath: "assets/illustrated-grammar/request-tv-not-yet.webp",
+      imageAlt: "A child asks to watch television before finishing homework",
+      lines: [
+        { hanzi: "\u6211\u53EF\u4EE5\u770B\u7535\u89C6\u5417\uFF1F", pinyin: "w\u01D2 k\u011B y\u01D0 k\xE0n di\xE0n sh\xEC ma?", english: "May I watch TV?", audio: "\u6211\u53EF\u4EE5\u770B\u7535\u89C6\u5417" },
+        { hanzi: "\u4E0D\u53EF\u4EE5\u3002", pinyin: "b\xF9 k\u011B y\u01D0.", english: "No, you may not.", audio: "\u4E0D\u53EF\u4EE5" }
+      ]
+    },
+    {
+      id: "tv-now-you-can",
+      title: "Now you can",
+      imagePath: "assets/illustrated-grammar/request-tv-now-you-can.webp",
+      imageAlt: "A child receives permission to watch television after finishing homework",
+      lines: [
+        { hanzi: "\u6211\u73B0\u5728\u53EF\u4EE5\u770B\u7535\u89C6\u5417\uFF1F", pinyin: "w\u01D2 xi\xE0n z\xE0i k\u011B y\u01D0 k\xE0n di\xE0n sh\xEC ma?", english: "May I watch TV now?", audio: "\u6211\u73B0\u5728\u53EF\u4EE5\u770B\u7535\u89C6\u5417" },
+        { hanzi: "\u53EF\u4EE5\u3002", pinyin: "k\u011B y\u01D0.", english: "Yes, you may.", audio: "\u53EF\u4EE5" }
+      ]
+    },
+    {
+      id: "school-request-teacher-help",
+      title: "Asking a teacher",
+      imagePath: "assets/illustrated-grammar/school-request-teacher-help.webp",
+      imageAlt: "A child politely asking a teacher for help in a classroom",
+      lines: [
+        { hanzi: "\u6211\u53EF\u4EE5\u95EE\u8001\u5E08\u5417\uFF1F", pinyin: "w\u01D2 k\u011B y\u01D0 w\xE8n l\u01CEo sh\u012B ma?", english: "May I ask the teacher?", audio: "\u6211\u53EF\u4EE5\u95EE\u8001\u5E08\u5417" },
+        { hanzi: "\u53EF\u4EE5\u3002", pinyin: "k\u011B y\u01D0.", english: "Yes, you may.", audio: "\u53EF\u4EE5" }
+      ]
+    }
+  ];
+  var requestGameItemIds = ["ask-teacher", "ask-tv", "yes-permission", "no-permission"];
+  var requestBuildPhrases = [
+    {
+      id: "watch-tv",
+      tokens: ["\u6211", "\u53EF\u4EE5", "\u770B\u7535\u89C6", "\u5417"],
+      targetHanzi: "\u6211\u53EF\u4EE5\u770B\u7535\u89C6\u5417\uFF1F",
+      targetPinyin: "w\u01D2 k\u011B y\u01D0 k\xE0n di\xE0n sh\xEC ma?",
+      english: "May I watch TV?",
+      audio: "\u6211\u53EF\u4EE5\u770B\u7535\u89C6\u5417",
+      imagePath: "assets/illustrated-grammar/request-tv-not-yet.webp",
+      imageAlt: "Lele asks his mother if he may watch television before finishing homework"
+    },
+    {
+      id: "watch-tv-now",
+      tokens: ["\u6211", "\u73B0\u5728", "\u53EF\u4EE5", "\u770B\u7535\u89C6", "\u5417"],
+      targetHanzi: "\u6211\u73B0\u5728\u53EF\u4EE5\u770B\u7535\u89C6\u5417\uFF1F",
+      targetPinyin: "w\u01D2 xi\xE0n z\xE0i k\u011B y\u01D0 k\xE0n di\xE0n sh\xEC ma?",
+      english: "May I watch TV now?",
+      audio: "\u6211\u73B0\u5728\u53EF\u4EE5\u770B\u7535\u89C6\u5417",
+      imagePath: "assets/illustrated-grammar/request-tv-now-you-can.webp",
+      imageAlt: "Lele asks his mother if he may watch television after finishing homework"
+    },
+    {
+      id: "ask-teacher",
+      tokens: ["\u6211", "\u53EF\u4EE5", "\u95EE\u8001\u5E08", "\u5417"],
+      targetHanzi: "\u6211\u53EF\u4EE5\u95EE\u8001\u5E08\u5417\uFF1F",
+      targetPinyin: "w\u01D2 k\u011B y\u01D0 w\xE8n l\u01CEo sh\u012B ma?",
+      english: "May I ask the teacher a question?",
+      audio: "\u6211\u53EF\u4EE5\u95EE\u8001\u5E08\u5417",
+      imagePath: "assets/illustrated-grammar/school-request-teacher-help.webp",
+      imageAlt: "A child asks a teacher if he may ask her a question"
+    }
   ];
 
   // src/features/world/colours.js
@@ -10253,7 +10440,7 @@
         { lesson: 3, title: "Happy birthday!", topicId: "dates" },
         { lesson: 4, title: "Family", topicId: "family" },
         { lesson: 5, title: "Nationality", topicId: "identity" },
-        { lesson: 6, title: "Request", topicId: "polite-words" },
+        { lesson: 6, title: "Request", topicId: "requests-permission" },
         { lesson: 7, title: "Clothes", topicId: "clothes" }
       ]
     },
@@ -10352,7 +10539,7 @@
       id: "daily-world",
       label: "Daily World",
       description: "Food, routines, weather, and the world around the child.",
-      topicIds: ["food", "food-preferences", "meals-feelings", "toys", "comparisons", "positions", "transport", "daily-life", "everyday-actions", "pets", "animals", "nature", "weather"]
+      topicIds: ["food", "food-preferences", "meals-feelings", "toys", "comparisons", "positions", "transport", "daily-life", "everyday-actions", "requests-permission", "pets", "animals", "nature", "weather"]
     },
     {
       id: "school-and-time",
@@ -10367,6 +10554,7 @@
     "multiplication-rhyme": { zhTitle: "\u4E5D\u4E5D\u4E58\u6CD5", enTitle: "Multiplication Rhyme", hint: "Classic rhythm practice" },
     greetings: { zhTitle: "\u6253\u62DB\u547C", enTitle: "Greetings", hint: "Hello, good morning, goodbye" },
     "polite-words": { zhTitle: "\u793C\u8C8C\u7528\u8BED", enTitle: "Polite Words", hint: "Thank you, sorry, please" },
+    "requests-permission": { zhTitle: "\u8BF7\u6C42\u548C\u8BB8\u53EF", enTitle: "Requests & Permission", hint: "Ask politely and hear yes or no" },
     introductions: { zhTitle: "\u4ECB\u7ECD\u81EA\u5DF1", enTitle: "Introductions", hint: "Say your name and meet friends" },
     age: { zhTitle: "\u5E74\u9F84", enTitle: "Age", hint: "Ask and say how old you are" },
     identity: { zhTitle: "\u56FD\u7C4D", enTitle: "Nationality", hint: "Ask and say where someone is from" },
@@ -10424,10 +10612,10 @@
       id: "time-daily",
       zhTitle: "\u65F6\u95F4\u548C\u65E5\u5E38",
       enTitle: "Time & Daily Life",
-      hint: "Week, time, dates, routines, home, actions",
+      hint: "Week, time, dates, routines, home, actions, requests",
       accent: "#517b8d",
       iconSrc: "assets/illustrated-clocks/10oclock.webp",
-      topicIds: ["weekdays", "time-date", "dates", "comparisons", "positions", "transport", "daily-life", "everyday-actions"]
+      topicIds: ["weekdays", "time-date", "dates", "comparisons", "positions", "transport", "daily-life", "everyday-actions", "requests-permission"]
     },
     {
       id: "school-life",
@@ -10510,6 +10698,7 @@
     foodTopic,
     foodPreferencesTopic,
     mealsFeelingsTopic,
+    requestsPermissionTopic,
     everydayActionsTopic,
     {
       id: "time-date",
@@ -11359,6 +11548,8 @@
     state,
     politeGameItemIds,
     politePractice,
+    requestGameItemIds,
+    requestPractice,
     topicById: topicById2,
     shuffleArray,
     speak,
@@ -11645,6 +11836,7 @@
     clothesMatchItems,
     clothesSentenceItems,
     everydayActionItems,
+    requestBuildPhrases,
     illustratedKids,
     numberHanzi,
     buildNumberItem,

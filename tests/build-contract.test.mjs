@@ -26,6 +26,7 @@ import { ageBuildPhrases, agePractice, ageTopic } from "../src/features/foundati
 import { identityConversation, identityCountries, identityExploreCountries, identityLanguageQuestion, identityQuestion, identityTopic, languagesTopic, nationalityConversation } from "../src/features/foundations/identity.js";
 import { greetingsGameItemIds, greetingsPractice, greetingsTopic } from "../src/features/foundations/greetings.js";
 import { politeGameItemIds, politePractice, politeWordsTopic } from "../src/features/foundations/polite-words.js";
+import { requestBuildPhrases, requestGameItemIds, requestPractice, requestsPermissionTopic } from "../src/features/daily-life/requests-permission.js";
 import { clothesBookWords, clothesMatchItems, clothesPractice, clothesSentenceItems, clothesTopic } from "../src/features/daily-life/clothes.js";
 import { natureLesson, natureTopic, weatherLesson, weatherTopic } from "../src/features/world/weather.js";
 import { animalLessons, animalsTopic, petsTopic } from "../src/features/world/animals.js";
@@ -762,24 +763,35 @@ test("greetings owns its template lesson scenes and listening set", () => {
   assert.equal(greetingsGameItemIds.length, 4);
 });
 
-test("polite words owns its template lesson scenes and listening set", () => {
+test("Polite Words and Requests & Permission own separate book-aligned lessons", () => {
   assert.equal(politeWordsTopic.id, "polite-words");
   assert.equal(politeWordsTopic.interactiveScene, "polite-phrases");
   assert.equal(politeWordsTopic.ownsExplorerContent, true);
-  assert.equal(politePractice.length, 4);
-  assert.equal(politeGameItemIds.length, 5);
-  assert.deepEqual(politePractice.at(-1)?.lines.map((line) => line.hanzi), ["我可以问老师吗？", "可以。"]);
+  assert.equal(politePractice.length, 3);
+  assert.equal(politeGameItemIds.length, 4);
+  assert.equal(requestsPermissionTopic.id, "requests-permission");
+  assert.equal(requestPractice.length, 3);
+  assert.equal(requestGameItemIds.length, 4);
+  assert.equal(requestBuildPhrases.length, 3);
+  assert.ok(requestBuildPhrases.every((phrase) => phrase.tokens.length >= 4 && existsSync(phrase.imagePath)));
+  assert.deepEqual(requestPractice[0]?.lines.map((line) => line.hanzi), ["我可以看电视吗？", "不可以。"]);
+  assert.deepEqual(requestPractice[1]?.lines.map((line) => line.hanzi), ["我现在可以看电视吗？", "可以。"]);
+  assert.deepEqual(requestPractice[2]?.lines.map((line) => line.hanzi), ["我可以问老师吗？", "可以。"]);
   assert.ok(existsSync("assets/illustrated-grammar/school-request-teacher-help.webp"));
+  assert.ok(existsSync("assets/illustrated-grammar/can-watch-tv-homework-first.webp"));
 });
 
-test("Polite Words adds its request scene to a two-column grid and no-repeat listening", () => {
+test("Requests & Permission uses the shared two-column scene grid, sentence builder, and literal translations", () => {
   const controllerSource = readFileSync("src/features/foundations/polite-words-controller.js", "utf8");
   const practiceSource = readFileSync("src/core/lesson-practice-runtime.js", "utf8");
   const stylesSource = readFileSync("styles.css", "utf8");
   assert.match(controllerSource, /polite-scene-grid/);
   assert.match(controllerSource, /data-polite-word/);
   assert.match(controllerSource, /我可以…吗？/);
-  assert.match(practiceSource, /state\.politeChallengeResult === "correct" \? "New game" : "Play"/);
+  assert.match(practiceSource, /function requestSentenceBuilderMarkup\(\)/);
+  assert.match(practiceSource, /Build a complete request, then match each Chinese sentence to its English translation/);
+  assert.match(practiceSource, /state\.requestBuildFeedback = "Not quite\. Try again\."/);
+  assert.match(practiceSource, /speak\(target\.audio, 0\.78\)/);
   assert.match(stylesSource, /\.polite-scene-grid \{\s+grid-template-columns: repeat\(2, minmax\(0, 1fr\)\);/);
   assert.match(stylesSource, /\.polite-scene-grid \{\s+grid-template-columns: minmax\(0, 1fr\);/);
   assert.match(stylesSource, /\.greetings-scene-layout\.polite-scene-layout \{\s+grid-template-columns: minmax\(0, 1fr\);/);

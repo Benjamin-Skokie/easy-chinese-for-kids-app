@@ -38,6 +38,7 @@ import { createNationalityController } from "../features/foundations/nationality
 import { identityConversation, identityCountries, identityExploreCountries, identityLanguageQuestion, identityQuestion, nationalityConversation } from "../features/foundations/identity.js";
 import { familyGameItemIds, familyHeadshotsByItemId, familyPersonIdsByItemId, familyPossessionPractice, familyPractice, familyTopic, illustratedFamily } from "../features/family/family.js";
 import { clothesBookWords, clothesMatchItems, clothesPractice, clothesSentenceItems, clothesTopic } from "../features/daily-life/clothes.js";
+import { requestBuildPhrases, requestGameItemIds, requestPractice } from "../features/daily-life/requests-permission.js";
 import { coloursTopic } from "../features/world/colours.js";
 import { hobbiesTopic, toysTopic } from "../features/play-hobbies/play-hobbies.js";
 import { bodyBonusItemIds, bodyCoreItemIds, bodyDiagramLayout, bodyTopic } from "../features/foundations/body.js";
@@ -466,6 +467,8 @@ syncBookSelectionFromTopic();
   state,
   politeGameItemIds,
   politePractice,
+  requestGameItemIds,
+  requestPractice,
   topicById,
   shuffleArray,
   speak,
@@ -759,6 +762,7 @@ lessonPracticeRuntime = createLessonPracticeRuntime({
 clothesMatchItems,
 clothesSentenceItems,
   everydayActionItems,
+  requestBuildPhrases,
   illustratedKids,
   numberHanzi,
   buildNumberItem,

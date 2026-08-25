@@ -2,6 +2,8 @@ export function createPoliteWordsController({
   state,
   politeGameItemIds,
   politePractice,
+  requestGameItemIds,
+  requestPractice,
   topicById,
   shuffleArray,
   speak,
@@ -18,9 +20,24 @@ export function createPoliteWordsController({
 }) {
   const { focusExplorer, focusStatus } = elements;
 
+  function activeLesson() {
+    const isRequestLesson = currentTopic().id === "requests-permission";
+    return {
+      topicId: isRequestLesson ? "requests-permission" : "polite-words",
+      gameItemIds: isRequestLesson ? requestGameItemIds : politeGameItemIds,
+      practice: isRequestLesson ? requestPractice : politePractice,
+      title: isRequestLesson ? "Book theme: polite requests and permission" : "Book theme: kind classroom language",
+      introduction: isRequestLesson ? "Ask politely, then listen for whether the answer is yes or no." : "Use thank you, sorry, and please in kind everyday classroom moments.",
+      note: isRequestLesson
+        ? `<p class="greetings-note-hanzi">请 / 我可以…吗？ / 可以 / 不可以</p><p class="greetings-note-copy"><strong>请</strong> makes a request polite. <strong>我可以…吗？</strong> asks permission and ends with <strong>吗</strong>.</p><p class="greetings-note-copy"><strong>可以。</strong> means yes; <strong>不可以。</strong> means no.</p>`
+        : `<p class="greetings-note-hanzi">谢谢 / 不客气 / 对不起 / 没关系</p><p class="greetings-note-copy"><strong>谢谢你</strong> means “thank you,” and <strong>不客气</strong> is the kind reply: “you’re welcome.”</p><p class="greetings-note-copy"><strong>对不起</strong> is an apology; <strong>没关系</strong> is a gentle response.</p>`
+    };
+  }
+
   function politeGameItems() {
-    const politeTopic = topicById("polite-words");
-    return politeGameItemIds
+    const lesson = activeLesson();
+    const politeTopic = topicById(lesson.topicId);
+    return lesson.gameItemIds
       .map((id) => politeTopic?.focusItems.find((item) => item.id === id))
       .filter(Boolean);
   }
@@ -33,6 +50,15 @@ export function createPoliteWordsController({
       "never-mind": "Forgive kindly after an apology",
       "ask-teacher": "Ask politely before speaking with the teacher"
     };
+
+    if (currentTopic().id === "requests-permission") {
+      return {
+        "ask-teacher": "May I ask the teacher a question?",
+        "ask-tv": "May I watch TV?",
+        "yes-permission": "Yes, you may.",
+        "no-permission": "No, you may not."
+      }[itemId] ?? "";
+    }
 
     return labels[itemId] ?? "";
   }
@@ -186,16 +212,18 @@ export function createPoliteWordsController({
   }
 
   function renderPoliteWordsExplorer() {
-    const words = topicById("polite-words")?.focusItems ?? [];
+    const lesson = activeLesson();
+    const topic = topicById(lesson.topicId);
+    const words = topic?.bookWords ?? topic?.focusItems ?? [];
     focusExplorer.innerHTML = `
       <div class="numbers-board">
         <div class="numbers-stage-card">
           <p class="body-match-kicker">${currentBook().label} Lesson ${currentLesson().lesson}</p>
-          <h4>Book theme: kind classroom language</h4>
-          <p>This topic starts with thank you and sorry, then grows into kind replies and polite requests.</p>
+          <h4>${lesson.title}</h4>
+          <p>${lesson.introduction}</p>
         </div>
         <div class="greetings-practice-grid polite-scene-grid">
-          ${politePractice.map((exchange) => `
+          ${lesson.practice.map((exchange) => `
             <section class="greetings-exchange">
               <div class="greetings-exchange-top">
                 <div><p class="body-match-kicker">${exchange.title}</p></div>
@@ -205,7 +233,7 @@ export function createPoliteWordsController({
                 <div class="greetings-scene-visual">
                   <img class="greetings-scene-image" src="${exchange.imagePath}" alt="${exchange.imageAlt}" />
                 </div>
-                <div class="greetings-line-stack">
+                <div class="greetings-line-stack${currentTopic().id === "requests-permission" ? " is-request-lines" : ""}">
                   ${exchange.lines.map((line) => `
                     <article class="greetings-line-card">
                       <div class="telephone-bubble-copy">
@@ -228,16 +256,14 @@ export function createPoliteWordsController({
         </section>
         <section class="greetings-note-card polite-useful-note">
           <p class="body-match-kicker">Useful note</p>
-          <p class="greetings-note-hanzi">请 / 我可以…吗？</p>
-          <p class="greetings-note-copy"><strong>请</strong> makes a request or classroom direction polite: <strong>请安静。</strong></p>
-          <p class="greetings-note-copy"><strong>我可以…吗？</strong> asks permission and ends with the question marker <strong>吗</strong>: <strong>我可以问老师吗？</strong></p>
+          ${lesson.note}
         </section>
       </div>
     `;
 
     focusExplorer.querySelectorAll("[data-polite-play-all]").forEach((button) => {
       button.addEventListener("click", () => {
-        const exchange = politePractice.find((entry) => entry.id === button.dataset.politePlayAll);
+        const exchange = lesson.practice.find((entry) => entry.id === button.dataset.politePlayAll);
         if (!exchange || !state.tapAudioEnabled) {
           return;
         }

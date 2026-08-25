@@ -33,10 +33,9 @@ then update both records when the work is complete.
   - Me & Family continuation for `住 / 哪儿 / 他们 / 北京 / 电话号码 / 多少`.
   - Contract: [`lesson-contracts/family/my-family-2.md`](./lesson-contracts/family/my-family-2.md).
 
-- [ ] **Requests — 3A Lesson 6** — implemented as the later request layer of
-  Polite Words; desktop QA is complete and phone portrait/landscape visual QA remains.
-  - Teaches `请…` and `我可以…吗？` with `我可以问老师吗？ / 可以。`.
-  - Uses `school-request-teacher-help.webp` as its primary scene.
+- [ ] **Requests & Permission — 3A Lesson 6** — separate Daily World lesson.
+  - Teaches `请…`, `我可以…吗？`, `可以。`, and `不可以。` with classroom and home visual scenes.
+  - Contract: [`lesson-contracts/daily-life/requests-permission.md`](./lesson-contracts/daily-life/requests-permission.md).
 
 ## Partial topic coverage
 

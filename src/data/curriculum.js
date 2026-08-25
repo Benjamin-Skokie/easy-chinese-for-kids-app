@@ -60,7 +60,7 @@ export const books = [
       { lesson: 3, title: "Happy birthday!", topicId: "dates" },
       { lesson: 4, title: "Family", topicId: "family" },
       { lesson: 5, title: "Nationality", topicId: "identity" },
-      { lesson: 6, title: "Request", topicId: "polite-words" },
+      { lesson: 6, title: "Request", topicId: "requests-permission" },
       { lesson: 7, title: "Clothes", topicId: "clothes" }
     ]
   },
@@ -161,7 +161,7 @@ export const topicGroups = [
     id: "daily-world",
     label: "Daily World",
     description: "Food, routines, weather, and the world around the child.",
-    topicIds: ["food", "food-preferences", "meals-feelings", "toys", "comparisons", "positions", "transport", "daily-life", "everyday-actions", "pets", "animals", "nature", "weather"]
+    topicIds: ["food", "food-preferences", "meals-feelings", "toys", "comparisons", "positions", "transport", "daily-life", "everyday-actions", "requests-permission", "pets", "animals", "nature", "weather"]
   },
   {
     id: "school-and-time",
@@ -177,6 +177,7 @@ export const topicCardMeta = {
   "multiplication-rhyme": { zhTitle: "九九乘法", enTitle: "Multiplication Rhyme", hint: "Classic rhythm practice" },
   greetings: { zhTitle: "打招呼", enTitle: "Greetings", hint: "Hello, good morning, goodbye" },
   "polite-words": { zhTitle: "礼貌用语", enTitle: "Polite Words", hint: "Thank you, sorry, please" },
+  "requests-permission": { zhTitle: "请求和许可", enTitle: "Requests & Permission", hint: "Ask politely and hear yes or no" },
   introductions: { zhTitle: "介绍自己", enTitle: "Introductions", hint: "Say your name and meet friends" },
   age: { zhTitle: "年龄", enTitle: "Age", hint: "Ask and say how old you are" },
   identity: { zhTitle: "国籍", enTitle: "Nationality", hint: "Ask and say where someone is from" },
@@ -235,10 +236,10 @@ export const learningHomeCategories = [
     id: "time-daily",
     zhTitle: "时间和日常",
     enTitle: "Time & Daily Life",
-    hint: "Week, time, dates, routines, home, actions",
+    hint: "Week, time, dates, routines, home, actions, requests",
     accent: "#517b8d",
     iconSrc: "assets/illustrated-clocks/10oclock.webp",
-    topicIds: ["weekdays", "time-date", "dates", "comparisons", "positions", "transport", "daily-life", "everyday-actions"]
+    topicIds: ["weekdays", "time-date", "dates", "comparisons", "positions", "transport", "daily-life", "everyday-actions", "requests-permission"]
   },
   {
     id: "school-life",

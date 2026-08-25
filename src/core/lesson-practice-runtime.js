@@ -1,7 +1,8 @@
 import { imageLoadingAttrs } from "./image-loading.js";
+import { nextRandomCycleId } from "./random-cycle.js";
 
 export function createLessonPracticeRuntime(context) {
-  const { state, schoolTopicData, visualTopicItems, positionPracticeItems, timeDateWeekItems, timeDateClockItems, datePracticeItems, timeDateMonthItems, timeDateRoutineItems, clothesMatchItems, clothesSentenceItems, everydayActionItems, illustratedKids, numberHanzi, buildNumberItem, currentTopic, currentNumberStage, currentBook, currentLesson, focusItemsForTopic, shuffleArray, speak, renderFocusExplorer, renderFocusStatus, renderSharedLessonPractice, renderPracticeSayCards, bindPracticeSayCards, activityPanelTitle, activityPanelSummary, activityList, topicColumns, renderBodyPractice, renderWorldPractice, renderHobbiesPractice, activeTimeDateSection, ensureWeekdayChallenge, ensureWeekdayMatchGame, handleWeekdayChallengePlay, handleWeekdayChallengeGuess, resetWeekdayMatchGame, handleWeekdayMatchPhrase, handleWeekdayMatchAttempt, ensureDateChallenge, ensureDateMatchGame, handleDateChallengePlay, handleDateChallengeGuess, resetDateMatchGame, handleDateMatchPhrase, handleDateMatchEvent, familyGameItems, familyListenItems, familyPersonForItemId, familyHeadshotForItemId, ensureFamilyChallenge, ensureFamilyMatchGame, handleFamilyChallengePlay, handleFamilyChallengeGuess, resetFamilyMatchGame, handleFamilyMatchPhrase, handleFamilyMatchAttempt, greetingsGameItems, greetingsMeaningLabel, ensureGreetingsChallenge, ensureGreetingsMatchGame, handleGreetingsChallengePlay, handleGreetingsChallengeGuess, resetGreetingsMatchGame, handleGreetingsMatchPhrase, handleGreetingsMatchAttempt, nationalityPracticeItems, ensureNationalityChallenge, currentNationalityAnswer, handleNationalityChallengePlay, handleNationalityChallengeGuess, ensureNationalityMatchGame, resetNationalityMatchGame, handleNationalityMatchPhrase, handleNationalityMatchAttempt, languagePracticeItems, ensureLanguageChallenge, currentLanguageAnswer, handleLanguageChallengePlay, handleLanguageChallengeGuess, politeGameItems, politeMeaningLabel, ensurePoliteChallenge, ensurePoliteMatchGame, handlePoliteChallengePlay, handlePoliteChallengeGuess, resetPoliteMatchGame, handlePoliteMatchPhrase, handlePoliteMatchAttempt, ensureRoomBuilder, currentRoomBuildItem, handleRoomBuildToken, clearRoomBuilder, nextRoomBuilder, ensureClothesQuiz, handleClothesQuizPick, nextClothesQuizQuestion, ensureClothesSentenceQuiz, handleClothesSentencePick, nextClothesSentenceQuestion, ensureTimeRoutineQuiz, handleTimeRoutineQuizPick, nextTimeRoutineQuizQuestion, ensureClockQuiz, handleClockQuizPick, nextClockQuizQuestion, ensureComparisonBuilder, currentComparisonBuildItem, handleComparisonBuildToken, clearComparisonBuilder, nextComparisonBuilder, ensurePositionQuiz, handlePositionQuizPlay, handlePositionQuizPick, nextPositionQuizQuestion, ensureTransportBuilder, currentTransportBuildItem, handleTransportBuildToken, clearTransportBuilder, nextTransportBuilder, ensureEverydayActionsQuiz, currentEverydayAction, handleEverydayActionsPick, nextEverydayActionsQuestion, resetNumberChallenge, ensureMathChallenge, handleNumberChallengeGuess, resetMathChallenge, handleMathChallengeSubmit, renderNumberVisual, introductionsBuildTarget, ensureIntroductionsBuilder, resetIntroductionsBuilder, handleIntroductionsBuildClear, handleIntroductionsBuildToken, ageGameItems, ensureAgeChallenge, ensureAgeBuilder, ageBuildTarget, handleAgeChallengePlay, handleAgeChallengeGuess, resetAgeBuilder, handleAgeBuildClear, handleAgeBuildToken, renderSchoolPractice } = context;
+  const { state, schoolTopicData, visualTopicItems, positionPracticeItems, timeDateWeekItems, timeDateClockItems, datePracticeItems, timeDateMonthItems, timeDateRoutineItems, clothesMatchItems, clothesSentenceItems, everydayActionItems, requestBuildPhrases, illustratedKids, numberHanzi, buildNumberItem, currentTopic, currentNumberStage, currentBook, currentLesson, focusItemsForTopic, shuffleArray, speak, renderFocusExplorer, renderFocusStatus, renderSharedLessonPractice, renderPracticeSayCards, bindPracticeSayCards, activityPanelTitle, activityPanelSummary, activityList, topicColumns, renderBodyPractice, renderWorldPractice, renderHobbiesPractice, activeTimeDateSection, ensureWeekdayChallenge, ensureWeekdayMatchGame, handleWeekdayChallengePlay, handleWeekdayChallengeGuess, resetWeekdayMatchGame, handleWeekdayMatchPhrase, handleWeekdayMatchAttempt, ensureDateChallenge, ensureDateMatchGame, handleDateChallengePlay, handleDateChallengeGuess, resetDateMatchGame, handleDateMatchPhrase, handleDateMatchEvent, familyGameItems, familyListenItems, familyPersonForItemId, familyHeadshotForItemId, ensureFamilyChallenge, ensureFamilyMatchGame, handleFamilyChallengePlay, handleFamilyChallengeGuess, resetFamilyMatchGame, handleFamilyMatchPhrase, handleFamilyMatchAttempt, greetingsGameItems, greetingsMeaningLabel, ensureGreetingsChallenge, ensureGreetingsMatchGame, handleGreetingsChallengePlay, handleGreetingsChallengeGuess, resetGreetingsMatchGame, handleGreetingsMatchPhrase, handleGreetingsMatchAttempt, nationalityPracticeItems, ensureNationalityChallenge, currentNationalityAnswer, handleNationalityChallengePlay, handleNationalityChallengeGuess, ensureNationalityMatchGame, resetNationalityMatchGame, handleNationalityMatchPhrase, handleNationalityMatchAttempt, languagePracticeItems, ensureLanguageChallenge, currentLanguageAnswer, handleLanguageChallengePlay, handleLanguageChallengeGuess, politeGameItems, politeMeaningLabel, ensurePoliteChallenge, ensurePoliteMatchGame, handlePoliteChallengePlay, handlePoliteChallengeGuess, resetPoliteMatchGame, handlePoliteMatchPhrase, handlePoliteMatchAttempt, ensureRoomBuilder, currentRoomBuildItem, handleRoomBuildToken, clearRoomBuilder, nextRoomBuilder, ensureClothesQuiz, handleClothesQuizPick, nextClothesQuizQuestion, ensureClothesSentenceQuiz, handleClothesSentencePick, nextClothesSentenceQuestion, ensureTimeRoutineQuiz, handleTimeRoutineQuizPick, nextTimeRoutineQuizQuestion, ensureClockQuiz, handleClockQuizPick, nextClockQuizQuestion, ensureComparisonBuilder, currentComparisonBuildItem, handleComparisonBuildToken, clearComparisonBuilder, nextComparisonBuilder, ensurePositionQuiz, handlePositionQuizPlay, handlePositionQuizPick, nextPositionQuizQuestion, ensureTransportBuilder, currentTransportBuildItem, handleTransportBuildToken, clearTransportBuilder, nextTransportBuilder, ensureEverydayActionsQuiz, currentEverydayAction, handleEverydayActionsPick, nextEverydayActionsQuestion, resetNumberChallenge, ensureMathChallenge, handleNumberChallengeGuess, resetMathChallenge, handleMathChallengeSubmit, renderNumberVisual, introductionsBuildTarget, ensureIntroductionsBuilder, resetIntroductionsBuilder, handleIntroductionsBuildClear, handleIntroductionsBuildToken, ageGameItems, ensureAgeChallenge, ensureAgeBuilder, ageBuildTarget, handleAgeChallengePlay, handleAgeChallengeGuess, resetAgeBuilder, handleAgeBuildClear, handleAgeBuildToken, renderSchoolPractice } = context;
 
 function familySentenceBuilderMarkup() {
   const labels = { "older-sister": "姐姐", "older-brother": "哥哥", "younger-brother": "弟弟", "younger-sister": "妹妹" };
@@ -53,6 +54,65 @@ function bindFamilySentenceBuilder(container) {
     if (state.familyHouseholdCount && state.familyHouseholdCount < nextMinimum) state.familyHouseholdCount = 0;
     renderActivityPanel(currentTopic());
     speakSentence();
+  }));
+}
+
+function requestBuildTarget() {
+  return requestBuildPhrases.find((entry) => entry.id === state.requestBuildTargetId) ?? requestBuildPhrases[0];
+}
+
+function resetRequestBuilder() {
+  const targetId = nextRandomCycleId(state, "requests-permission-build", requestBuildPhrases.map((entry) => entry.id));
+  const target = requestBuildPhrases.find((entry) => entry.id === targetId);
+  if (!target) return;
+  state.requestBuildTargetId = target.id;
+  state.requestBuildAvailableTokens = shuffleArray(target.tokens);
+  state.requestBuildSelectedTokens = [];
+  state.requestBuildFeedback = "Look at the picture, then tap the word pieces in order.";
+  state.requestBuildResult = "";
+}
+
+function ensureRequestBuilder() {
+  const target = requestBuildTarget();
+  if (!state.requestBuildTargetId || (!state.requestBuildAvailableTokens.length && !state.requestBuildSelectedTokens.length) || !target) resetRequestBuilder();
+}
+
+function handleRequestBuildToken(tokenIndex) {
+  const target = requestBuildTarget();
+  const token = state.requestBuildAvailableTokens[tokenIndex];
+  if (!target || !token || state.requestBuildResult === "correct") return;
+  state.requestBuildSelectedTokens = [...state.requestBuildSelectedTokens, token];
+  state.requestBuildAvailableTokens = state.requestBuildAvailableTokens.filter((_, index) => index !== tokenIndex);
+  if (state.requestBuildSelectedTokens.length === target.tokens.length) {
+    const isCorrect = target.tokens.every((entry, index) => state.requestBuildSelectedTokens[index] === entry);
+    if (isCorrect) {
+      state.requestBuildResult = "correct";
+      state.requestBuildFeedback = `Correct! ${target.targetHanzi}`;
+      speak(target.audio, 0.78);
+    } else {
+      state.requestBuildResult = "wrong";
+      state.requestBuildFeedback = "Not quite. Try again.";
+      state.requestBuildAvailableTokens = shuffleArray(target.tokens);
+      state.requestBuildSelectedTokens = [];
+    }
+  }
+  renderActivityPanel(currentTopic());
+}
+
+function requestSentenceBuilderMarkup() {
+  const target = requestBuildTarget();
+  if (!target) return "";
+  const complete = state.requestBuildResult === "correct";
+  return `<section class="practice-split-card request-sentence-builder"><div class="numbers-game-top"><div><p class="body-match-kicker">Build a sentence</p><p class="numbers-game-note">Look at the picture, then tap the word pieces in order.</p></div><button class="small-button is-play-button" type="button" data-request-builder-play>Play</button></div><img class="request-builder-visual" src="${target.imagePath}" alt="${target.imageAlt}" ${imageLoadingAttrs({ width: 1200, height: 900 })} /><div class="intro-build-target"><div class="intro-build-selected">${state.requestBuildSelectedTokens.length ? state.requestBuildSelectedTokens.map((token) => `<span class="intro-build-chip is-selected">${token}</span>`).join("") : '<span class="intro-build-placeholder">Tap the word pieces below.</span>'}</div>${complete ? `<p class="numbers-game-pinyin">${target.targetPinyin}</p><p class="numbers-game-english">${target.english}</p>` : ""}</div><div class="intro-build-choices">${state.requestBuildAvailableTokens.map((token, index) => `<button class="intro-build-chip" type="button" data-request-builder-token="${index}">${token}</button>`).join("")}</div>${state.requestBuildFeedback ? `<p class="greetings-game-feedback${state.requestBuildResult === "correct" ? " is-correct" : state.requestBuildResult === "wrong" ? " is-wrong" : ""}">${state.requestBuildFeedback}</p>` : ""}</section>`;
+}
+
+function bindRequestSentenceBuilder(container) {
+  container.querySelector("[data-request-builder-play]")?.addEventListener("click", () => {
+    resetRequestBuilder();
+    renderActivityPanel(currentTopic());
+  });
+  container.querySelectorAll("[data-request-builder-token]").forEach((button) => button.addEventListener("click", () => {
+    handleRequestBuildToken(Number(button.dataset.requestBuilderToken));
   }));
 }
 
@@ -244,6 +304,35 @@ function sharedLessonPracticeConfig(topic) {
         },
         onPhrase: handleGreetingsMatchPhrase,
         onMeaning: handleGreetingsMatchAttempt
+      }
+    };
+  }
+
+  if (topic.id === "requests-permission") {
+    return {
+      summary: "Build a complete request, then match each Chinese sentence to its English translation.",
+      shellClass: "lesson-practice-shell",
+      ensure: () => {
+        ensureRequestBuilder();
+        ensurePoliteMatchGame();
+      },
+      builder: { markup: requestSentenceBuilderMarkup, bind: bindRequestSentenceBuilder },
+      match: {
+        phraseHeading: "Chinese",
+        meaningHeading: "English",
+        items: politeGameItems,
+        phraseIds: () => state.politePhraseOrder,
+        meaningIds: () => state.politeMeaningOrder,
+        matchedIds: () => state.politeMatchedIds,
+        selectedId: () => state.politeSelectedPhraseId,
+        feedback: () => state.politeMatchFeedback,
+        meaningLabel: politeMeaningLabel,
+        onNew: () => {
+          resetPoliteMatchGame();
+          renderActivityPanel(topic);
+        },
+        onPhrase: handlePoliteMatchPhrase,
+        onMeaning: handlePoliteMatchAttempt
       }
     };
   }
