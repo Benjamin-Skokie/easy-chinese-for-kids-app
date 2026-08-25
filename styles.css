@@ -3299,6 +3299,13 @@ h4 {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
+/* Position scenes use the shared 2 × 2 lesson-card pattern: visual first,
+   then the sentence box beneath it. */
+.position-scene-grid .greetings-scene-layout {
+  grid-template-columns: minmax(0, 1fr);
+  gap: 10px;
+}
+
 .polite-scene-grid {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
@@ -5683,6 +5690,11 @@ h4 {
 .greetings-scene-image.position-scene-image {
   aspect-ratio: 4 / 3;
   object-fit: cover;
+}
+
+.greetings-scene-image.position-scene-image-all-directions {
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
 }
 
 .transport-build-target {

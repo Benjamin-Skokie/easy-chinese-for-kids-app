@@ -1,6 +1,6 @@
 # Positions & Directions
 
-Status: `partial`  
+Status: `implementation complete; visual QA pending`
 URL: `index.html?topic=positions#topic-detail`  
 Mapped lesson: **3B Lesson 3 — Positions**
 
@@ -12,7 +12,14 @@ Mapped lesson: **3B Lesson 3 — Positions**
 
 ## Current contract
 
-The page owns position scenes, location vocabulary, and full `…在…` sentences. The grammar contrast asset may be added only after the positive location frame is secure.
+The page owns position scenes, location vocabulary, and full `…在…` sentences. The positive `书包在桌子下面。` scene is direct 3B coverage. Do not use the unrelated negative grammar contrast asset.
+
+| Section | Final decision |
+| --- | --- |
+| Scenes | Use a 2 × 2 desktop grid (one column on portrait phones) with 4:3 image frames. `Up and down`, `Inside and outside`, `Directions`, and `Around the room` each teach visible object relations. `Directions` restores the visual board for `上、下、前、后、左、右`, but it is not a listening-game answer. |
+| Book words | Use text-only cards for `上、下、里、外、前、后、左、右`; the scenes already carry the visual evidence. |
+| Useful note | Keep one reusable frame: `A 在 B + 位置`, with one object-based example. |
+| Practice | Use no-repeat Finish the sentence. Show the source picture and a full sentence with one missing position word; the learner chooses from a small set of position-word choices. The sole top-right New game advances to a different round. A correct choice reveals pinyin and English, then speaks the completed sentence once. |
 
 ## Lesson evidence
 

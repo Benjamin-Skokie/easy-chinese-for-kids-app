@@ -1,6 +1,6 @@
 # Topic Build Backlog
 
-Last reviewed: 2026-08-18
+Last reviewed: 2026-08-25
 
 This is the short, project-wide list of work that is easy to lose between
 individual lesson builds. It is a planning index, not a replacement for a
@@ -33,7 +33,7 @@ then update both records when the work is complete.
   - Me & Family continuation for `住 / 哪儿 / 他们 / 北京 / 电话号码 / 多少`.
   - Contract: [`lesson-contracts/family/my-family-2.md`](./lesson-contracts/family/my-family-2.md).
 
-- [ ] **Requests & Permission — 3A Lesson 6** — separate Daily World lesson.
+- [ ] **Requests & Permission — 3A Lesson 6** — built; final visual review pending.
   - Teaches `请…`, `我可以…吗？`, `可以。`, and `不可以。` with classroom and home visual scenes.
   - Contract: [`lesson-contracts/daily-life/requests-permission.md`](./lesson-contracts/daily-life/requests-permission.md).
 
@@ -60,7 +60,7 @@ also changed from `partial`.
 
 - [ ] Greetings — `lesson-contracts/foundations/greetings.md`
 - [ ] Introductions — `lesson-contracts/foundations/introductions.md`
-  - **Coverage to add:** 2A Lesson 3 *Good friends*: `朋友` and `他是我的好朋友。`. Add this as the 2A continuation within Names & Introductions, not as a separate topic.
+  - 2A Lesson 3 *Good friends* is built within Names & Introductions: `朋友` and `他是我的好朋友。`. Final visual and touch-size review remains.
 - [ ] Polite Words — `lesson-contracts/foundations/polite-words.md` (Requests implementation and desktop QA complete; phone visual QA remains)
 - [ ] Numbers — `lesson-contracts/foundations/numbers.md`
 - [ ] Multiplication Rhyme — `lesson-contracts/foundations/multiplication-rhyme.md`

@@ -1164,19 +1164,26 @@
       }
       if (topic.id === "positions") {
         ensurePositionQuiz2();
+        const prompt = positionPracticeItems2.find((item) => item.id === state2.positionQuizOrder[state2.positionQuizIndex]);
+        const complete = state2.positionQuizResult === "correct";
         activityPanelTitle2.textContent = "Let's practice";
-        activityPanelSummary2.textContent = "Play the audio, then choose the matching Chinese sentence.";
+        activityPanelSummary2.textContent = "Look at the picture, then complete the sentence with the right position word.";
         activityList2.className = "support-list";
         activityList2.innerHTML = `
       <section class="clothes-quiz-shell position-quiz-shell">
-        <div class="numbers-game-top"><div><p class="body-match-kicker">Listen and choose</p><p class="numbers-game-note">Start a new round, then listen and tap the matching Chinese sentence.</p></div><button class="small-button is-practice-advance-button" type="button" data-position-quiz-new aria-label="Start a new game">New game</button></div>
+        <div class="numbers-game-top"><div><p class="body-match-kicker">Finish the sentence</p><p class="numbers-game-note">Look at the picture, then choose the word that completes the sentence.</p></div><button class="small-button is-play-button" type="button" data-position-quiz-new>New game</button></div>
+        <figure class="clothes-quiz-visual position-quiz-visual"><img class="clothes-quiz-image" src="${prompt.imagePath}" alt="${prompt.imageAlt}" ${imageLoadingAttrs()} /></figure>
+        <div class="clothes-sentence-frame${complete ? " is-correct" : ""}">
+          <span class="numbers-game-hanzi">${prompt.sentenceStart}</span><span class="clothes-sentence-blank${state2.positionQuizResult ? ` is-${state2.positionQuizResult}` : ""}">${state2.positionQuizSelectedId || "____"}</span><span class="numbers-game-hanzi">\u3002</span>
+          ${complete && state2.showPinyin ? `<span class="numbers-game-pinyin">${prompt.pinyin}</span>` : ""}
+          ${complete && state2.showEnglish ? `<span class="numbers-game-english">${prompt.english}</span>` : ""}
+        </div>
         <div class="clothes-quiz-options">
-          ${state2.positionQuizOptionIds.map((itemId) => {
-          const item = positionPracticeItems2.find((entry) => entry.id === itemId);
-          const isSelected = state2.positionQuizSelectedId === itemId;
+          ${state2.positionQuizOptionIds.map((word) => {
+          const isSelected = state2.positionQuizSelectedId === word;
           const resultClass = isSelected ? ` is-${state2.positionQuizResult}` : "";
           const mark = isSelected ? `<span class="answer-result-mark" aria-hidden="true">${state2.positionQuizResult === "correct" ? "\u2713" : "\xD7"}</span>` : "";
-          return `<button class="clothes-quiz-option${resultClass}" type="button" data-position-quiz-pick="${item.id}">${mark}<span class="numbers-game-hanzi">${item.hanzi}</span>${state2.showPinyin ? `<span class="numbers-game-pinyin">${item.pinyin}</span>` : ""}${state2.showEnglish ? `<span class="numbers-game-english">${item.english}</span>` : ""}</button>`;
+          return `<button class="clothes-quiz-option${resultClass}" type="button" data-position-quiz-pick="${word}" ${complete ? "disabled" : ""}>${mark}<span class="numbers-game-hanzi">${word}</span></button>`;
         }).join("")}
         </div>
       </section>
@@ -1186,7 +1193,6 @@
         });
         activityList2.querySelector("[data-position-quiz-new]")?.addEventListener("click", () => {
           nextPositionQuizQuestion2();
-          handlePositionQuizPlay2();
         });
         return;
       }
@@ -2708,6 +2714,7 @@
     progressLabel: "3B Lesson 3",
     iconText: "\u4E0A\u4E0B",
     iconColor: "#587d9c",
+    ownsExplorerContent: true,
     focus: { hanzi: "\u5728\u4E0A\u9762\u3002", pinyin: "z\xE0i sh\xE0ng mi\xE0n.", english: "It is on top.", audio: "\u5728\u4E0A\u9762" },
     interactiveScene: "positions",
     parentGuide: "Use a book, backpack, and pencil case to act out each position before naming it.",
@@ -2727,9 +2734,8 @@
       imagePath: "assets/illustrated-rooms/positions-up-down.webp",
       imageAlt: "A book and backpack showing up and down positions around a desk",
       lines: [
-        { hanzi: "\u4E66\u5728\u684C\u5B50\u4E0A\u3002", pinyin: "sh\u016B z\xE0i zhu\u014D zi sh\xE0ng.", english: "The book is on the desk.", audio: "\u4E66\u5728\u684C\u5B50\u4E0A" },
-        { hanzi: "\u684C\u5B50\u4E0A\u6709\u4E66\u3002", pinyin: "zhu\u014D zi sh\xE0ng y\u01D2u sh\u016B.", english: "There is a book on the desk.", audio: "\u684C\u5B50\u4E0A\u6709\u4E66" },
-        { hanzi: "\u4E66\u5305\u5728\u684C\u5B50\u4E0B\u3002", pinyin: "sh\u016B b\u0101o z\xE0i zhu\u014D zi xi\xE0.", english: "The backpack is under the desk.", audio: "\u4E66\u5305\u5728\u684C\u5B50\u4E0B" }
+        { hanzi: "\u4E66\u5728\u684C\u5B50\u4E0A\u3002", sentenceStart: "\u4E66\u5728\u684C\u5B50", answer: "\u4E0A", pinyin: "sh\u016B z\xE0i zhu\u014D zi sh\xE0ng.", english: "The book is on the desk.", audio: "\u4E66\u5728\u684C\u5B50\u4E0A" },
+        { hanzi: "\u4E66\u5305\u5728\u684C\u5B50\u4E0B\u9762\u3002", sentenceStart: "\u4E66\u5305\u5728\u684C\u5B50", answer: "\u4E0B\u9762", pinyin: "sh\u016B b\u0101o z\xE0i zhu\u014D zi xi\xE0 mi\xE0n.", english: "The backpack is under the desk.", audio: "\u4E66\u5305\u5728\u684C\u5B50\u4E0B\u9762" }
       ]
     },
     {
@@ -2738,18 +2744,8 @@
       imagePath: "assets/illustrated-rooms/positions-inside-outside.webp",
       imageAlt: "A backpack, book, and pencil case showing inside and outside positions",
       lines: [
-        { hanzi: "\u4E66\u5305\u91CC\u6709\u4E66\u3002", pinyin: "sh\u016B b\u0101o l\u01D0 y\u01D2u sh\u016B.", english: "There is a book in the backpack.", audio: "\u4E66\u5305\u91CC\u6709\u4E66" },
-        { hanzi: "\u4E66\u5728\u4E66\u5305\u91CC\u3002", pinyin: "sh\u016B z\xE0i sh\u016B b\u0101o l\u01D0.", english: "The book is in the backpack.", audio: "\u4E66\u5728\u4E66\u5305\u91CC" },
-        { hanzi: "\u6587\u5177\u76D2\u5728\u4E66\u5305\u5916\u9762\u3002", pinyin: "w\xE9n j\xF9 h\xE9 z\xE0i sh\u016B b\u0101o w\xE0i mi\xE0n.", english: "The pencil case is outside the backpack.", audio: "\u6587\u5177\u76D2\u5728\u4E66\u5305\u5916\u9762" }
-      ]
-    },
-    {
-      id: "directions",
-      title: "Directions",
-      imagePath: "assets/illustrated-rooms/positions-all-directions.webp",
-      imageAlt: "A room board showing front, back, left, and right directions",
-      lines: [
-        { hanzi: "\u4E0A\u3001\u4E0B\u3001\u524D\u3001\u540E\u3001\u5DE6\u3001\u53F3\u3002", pinyin: "sh\xE0ng, xi\xE0, qi\xE1n, h\xF2u, zu\u01D2, y\xF2u.", english: "Up, down, front, back, left, right.", audio: "\u4E0A\u4E0B\u524D\u540E\u5DE6\u53F3" }
+        { hanzi: "\u4E66\u5728\u4E66\u5305\u91CC\u9762\u3002", sentenceStart: "\u4E66\u5728\u4E66\u5305", answer: "\u91CC\u9762", pinyin: "sh\u016B z\xE0i sh\u016B b\u0101o l\u01D0 mi\xE0n.", english: "The book is in the backpack.", audio: "\u4E66\u5728\u4E66\u5305\u91CC\u9762" },
+        { hanzi: "\u6587\u5177\u76D2\u5728\u4E66\u5305\u5916\u9762\u3002", sentenceStart: "\u6587\u5177\u76D2\u5728\u4E66\u5305", answer: "\u5916\u9762", pinyin: "w\xE9n j\xF9 h\xE9 z\xE0i sh\u016B b\u0101o w\xE0i mi\xE0n.", english: "The pencil case is outside the backpack.", audio: "\u6587\u5177\u76D2\u5728\u4E66\u5305\u5916\u9762" }
       ]
     },
     {
@@ -2758,14 +2754,34 @@
       imagePath: "assets/illustrated-rooms/positions-room.webp",
       imageAlt: "A girl, chair, bookshelf, and dog in a room for practicing directions",
       lines: [
-        { hanzi: "\u5973\u5B69\u5728\u684C\u5B50\u524D\u9762\u3002", pinyin: "n\u01DA h\xE1i z\xE0i zhu\u014D zi qi\xE1n mi\xE0n.", english: "The girl is in front of the desk.", audio: "\u5973\u5B69\u5728\u684C\u5B50\u524D\u9762" },
-        { hanzi: "\u6905\u5B50\u5728\u5973\u5B69\u540E\u9762\u3002", pinyin: "y\u01D0 zi z\xE0i n\u01DA h\xE1i h\xF2u mi\xE0n.", english: "The chair is behind the girl.", audio: "\u6905\u5B50\u5728\u5973\u5B69\u540E\u9762" },
-        { hanzi: "\u4E66\u67B6\u5728\u5973\u5B69\u5DE6\u8FB9\u3002", pinyin: "sh\u016B ji\xE0 z\xE0i n\u01DA h\xE1i zu\u01D2 bi\u0101n.", english: "The bookshelf is to the girl's left.", audio: "\u4E66\u67B6\u5728\u5973\u5B69\u5DE6\u8FB9" },
-        { hanzi: "\u5C0F\u72D7\u5728\u5973\u5B69\u53F3\u8FB9\u3002", pinyin: "xi\u01CEo g\u01D2u z\xE0i n\u01DA h\xE1i y\xF2u bi\u0101n.", english: "The dog is to the girl's right.", audio: "\u5C0F\u72D7\u5728\u5973\u5B69\u53F3\u8FB9" }
+        { hanzi: "\u5973\u5B69\u5728\u684C\u5B50\u524D\u9762\u3002", sentenceStart: "\u5973\u5B69\u5728\u684C\u5B50", answer: "\u524D\u9762", pinyin: "n\u01DA h\xE1i z\xE0i zhu\u014D zi qi\xE1n mi\xE0n.", english: "The girl is in front of the desk.", audio: "\u5973\u5B69\u5728\u684C\u5B50\u524D\u9762" },
+        { hanzi: "\u6905\u5B50\u5728\u5973\u5B69\u540E\u9762\u3002", sentenceStart: "\u6905\u5B50\u5728\u5973\u5B69", answer: "\u540E\u9762", pinyin: "y\u01D0 zi z\xE0i n\u01DA h\xE1i h\xF2u mi\xE0n.", english: "The chair is behind the girl.", audio: "\u6905\u5B50\u5728\u5973\u5B69\u540E\u9762" },
+        { hanzi: "\u4E66\u67B6\u5728\u684C\u5B50\u5DE6\u8FB9\u3002", sentenceStart: "\u4E66\u67B6\u5728\u684C\u5B50", answer: "\u5DE6\u8FB9", pinyin: "sh\u016B ji\xE0 z\xE0i zhu\u014D zi zu\u01D2 bi\u0101n.", english: "The bookshelf is to the left of the desk.", audio: "\u4E66\u67B6\u5728\u684C\u5B50\u5DE6\u8FB9" },
+        { hanzi: "\u5C0F\u72D7\u5728\u684C\u5B50\u53F3\u8FB9\u3002", sentenceStart: "\u5C0F\u72D7\u5728\u684C\u5B50", answer: "\u53F3\u8FB9", pinyin: "xi\u01CEo g\u01D2u z\xE0i zhu\u014D zi y\xF2u bi\u0101n.", english: "The dog is to the right of the desk.", audio: "\u5C0F\u72D7\u5728\u684C\u5B50\u53F3\u8FB9" }
+      ]
+    },
+    {
+      id: "all-directions",
+      title: "Directions",
+      imagePath: "assets/illustrated-rooms/positions-all-directions.webp",
+      imageAlt: "A visual board showing up, down, front, back, left, and right",
+      practice: false,
+      lines: [
+        { hanzi: "\u4E0A\u3001\u4E0B\u3001\u524D\u3001\u540E\u3001\u5DE6\u3001\u53F3\u3002", pinyin: "sh\xE0ng, xi\xE0, qi\xE1n, h\xF2u, zu\u01D2, y\xF2u.", english: "Up, down, front, back, left, right.", audio: "\u4E0A\uFF0C\u4E0B\uFF0C\u524D\uFF0C\u540E\uFF0C\u5DE6\uFF0C\u53F3" }
       ]
     }
   ];
-  var positionPracticeItems = positionScenes.flatMap((scene) => scene.lines.map((line, index) => ({ id: `${scene.id}-${index}`, ...line, imagePath: scene.imagePath, imageAlt: scene.imageAlt })));
+  var positionBookWords = [
+    { hanzi: "\u4E0A", pinyin: "sh\xE0ng", english: "up; on" },
+    { hanzi: "\u4E0B", pinyin: "xi\xE0", english: "down; under" },
+    { hanzi: "\u91CC", pinyin: "l\u01D0", english: "inside" },
+    { hanzi: "\u5916", pinyin: "w\xE0i", english: "outside" },
+    { hanzi: "\u524D", pinyin: "qi\xE1n", english: "front" },
+    { hanzi: "\u540E", pinyin: "h\xF2u", english: "back" },
+    { hanzi: "\u5DE6", pinyin: "zu\u01D2", english: "left" },
+    { hanzi: "\u53F3", pinyin: "y\xF2u", english: "right" }
+  ];
+  var positionPracticeItems = positionScenes.filter((scene) => scene.practice !== false).flatMap((scene) => scene.lines.map((line, index) => ({ id: `${scene.id}-${index}`, ...line, imagePath: scene.imagePath, imageAlt: scene.imageAlt })));
 
   // src/features/time-daily-life/transport.js
   var transportTopic = {
@@ -8231,7 +8247,7 @@
 
   // src/features/time-daily-life/time-daily-life-runtime.js
   function createTimeDailyLifeRuntime(context) {
-    const { state: state2, timeDateWeekItems: timeDateWeekItems2, timeDateClockItems: timeDateClockItems2, timeDateExpressionItems: timeDateExpressionItems2, timeDateRoutineItems: timeDateRoutineItems2, datePracticeItems: datePracticeItems2, timeDateDateItems: timeDateDateItems2, timeDateMonthItems: timeDateMonthItems2, comparisonPracticeItems: comparisonPracticeItems2, comparisonWordItems: comparisonWordItems2, positionPracticeItems: positionPracticeItems2, positionScenes: positionScenes2, clothesMatchItems: clothesMatchItems2, clothesSentenceItems: clothesSentenceItems2, clothesBookWords: clothesBookWords2, clothesPractice: clothesPractice2, roomScenes: roomScenes2, roomSentenceTokens: roomSentenceTokens2, transportSentenceTokens: transportSentenceTokens2, everydayActionItems: everydayActionItems2, visualTopicItems: visualTopicItems2, shuffleArray: shuffleArray2, speak: speak2, speakSceneLines: speakSceneLines2, currentTopic: currentTopic2, currentBook: currentBook2, currentLesson: currentLesson2, renderActivityPanel: renderActivityPanel2, focusExplorer: focusExplorer2, focusStatus: focusStatus2 } = context;
+    const { state: state2, timeDateWeekItems: timeDateWeekItems2, timeDateClockItems: timeDateClockItems2, timeDateExpressionItems: timeDateExpressionItems2, timeDateRoutineItems: timeDateRoutineItems2, datePracticeItems: datePracticeItems2, timeDateDateItems: timeDateDateItems2, timeDateMonthItems: timeDateMonthItems2, comparisonPracticeItems: comparisonPracticeItems2, comparisonWordItems: comparisonWordItems2, positionPracticeItems: positionPracticeItems2, positionScenes: positionScenes2, positionBookWords: positionBookWords2, clothesMatchItems: clothesMatchItems2, clothesSentenceItems: clothesSentenceItems2, clothesBookWords: clothesBookWords2, clothesPractice: clothesPractice2, roomScenes: roomScenes2, roomSentenceTokens: roomSentenceTokens2, transportSentenceTokens: transportSentenceTokens2, everydayActionItems: everydayActionItems2, visualTopicItems: visualTopicItems2, shuffleArray: shuffleArray2, speak: speak2, speakSceneLines: speakSceneLines2, currentTopic: currentTopic2, currentBook: currentBook2, currentLesson: currentLesson2, renderActivityPanel: renderActivityPanel2, focusExplorer: focusExplorer2, focusStatus: focusStatus2 } = context;
     function resetWeekdayChallenge2(options = {}) {
       const answerId = nextRandomCycleId(state2, "weekdays-listen", timeDateWeekItems2.map((item) => item.id));
       const answer = timeDateWeekItems2.find((item) => item.id === answerId);
@@ -8603,8 +8619,9 @@
     }
     function preparePositionQuizQuestion2() {
       const answerId = state2.positionQuizOrder[state2.positionQuizIndex];
-      const distractorIds = shuffleArray2(positionPracticeItems2.filter((item) => item.id !== answerId).map((item) => item.id)).slice(0, 3);
-      state2.positionQuizOptionIds = shuffleArray2([answerId, ...distractorIds]);
+      const answer = positionPracticeItems2.find((item) => item.id === answerId)?.answer;
+      const distractors = shuffleArray2([...new Set(positionPracticeItems2.map((item) => item.answer).filter((word) => word !== answer))]).slice(0, 3);
+      state2.positionQuizOptionIds = shuffleArray2([answer, ...distractors]);
       state2.positionQuizSelectedId = "";
       state2.positionQuizResult = "";
     }
@@ -8619,8 +8636,9 @@
     function handlePositionQuizPick2(itemId) {
       if (state2.positionQuizResult === "correct") return;
       const answerId = state2.positionQuizOrder[state2.positionQuizIndex];
+      const answer = positionPracticeItems2.find((entry) => entry.id === answerId)?.answer;
       state2.positionQuizSelectedId = itemId;
-      state2.positionQuizResult = itemId === answerId ? "correct" : "wrong";
+      state2.positionQuizResult = itemId === answer ? "correct" : "wrong";
       if (state2.positionQuizResult === "correct" && state2.tapAudioEnabled) {
         const item = positionPracticeItems2.find((entry) => entry.id === answerId);
         speak2(item?.audio, 0.78);
@@ -9021,7 +9039,7 @@
         <p class="body-match-kicker">${currentBook2().label} Lesson ${currentLesson2().lesson}</p>
         <h4>Positions & Directions</h4>
       </div>
-      <div class="greetings-practice-grid">
+      <div class="greetings-practice-grid position-scene-grid">
         ${positionScenes2.map(
         (scene) => `
               <section class="greetings-exchange">
@@ -9036,12 +9054,16 @@
             `
       ).join("")}
       </div>
+      <section class="school-lesson-section">
+        <div class="time-months-heading"><p class="body-match-kicker">Book words</p></div>
+        <div class="comparison-word-grid position-word-grid">
+          ${positionBookWords2.map((word) => `<button class="comparison-word-card" type="button" data-position-word="${word.hanzi}"><span class="comparison-word-hanzi">${word.hanzi}</span>${state2.showPinyin ? `<span class="comparison-word-pinyin">${word.pinyin}</span>` : ""}${state2.showEnglish ? `<span class="comparison-word-english">${word.english}</span>` : ""}</button>`).join("")}
+        </div>
+      </section>
       <section class="visual-topic-notes">
         <p class="body-match-kicker">Useful notes</p>
         <div class="visual-topic-note-grid position-note-grid">
           <article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">A \u5728 B + \u4F4D\u7F6E</p>${state2.showPinyin ? '<p class="visual-topic-note-pinyin">A z\xE0i B + w\xE8i zh\xEC</p>' : ""}${state2.showEnglish ? '<p class="visual-topic-note-english">A is in / on / beside B.</p>' : ""}<p class="visual-topic-note-example">\u4E66\u67B6\u5728\u684C\u5B50\u5DE6\u8FB9\u3002</p>${state2.showPinyin ? '<p class="visual-topic-note-pinyin">sh\u016B ji\xE0 z\xE0i zhu\u014D zi zu\u01D2 bi\u0101n.</p>' : ""}${state2.showEnglish ? '<p class="visual-topic-note-english">The bookshelf is to the left of the desk.</p>' : ""}</article>
-          <article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">\u524D\u8FB9 = \u524D\u9762\uFF1B\u540E\u8FB9 = \u540E\u9762</p>${state2.showPinyin ? '<p class="visual-topic-note-pinyin">qi\xE1n bi\u0101n = qi\xE1n mi\xE0n; h\xF2u bi\u0101n = h\xF2u mi\xE0n</p>' : ""}${state2.showEnglish ? '<p class="visual-topic-note-english">front and back can use either form here</p>' : ""}</article>
-          ${[["\u4E0A", "sh\xE0ng", "up"], ["\u4E0B", "xi\xE0", "down"], ["\u524D", "qi\xE1n", "front"], ["\u540E", "h\xF2u", "back"], ["\u5DE6", "zu\u01D2", "left"], ["\u53F3", "y\xF2u", "right"]].map(([hanzi, pinyin, english]) => `<article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">${hanzi}</p>${state2.showPinyin ? `<p class="visual-topic-note-pinyin">${pinyin}</p>` : ""}${state2.showEnglish ? `<p class="visual-topic-note-english">${english}</p>` : ""}</article>`).join("")}
         </div>
       </section>
     </div>
@@ -9050,6 +9072,11 @@
         button.addEventListener("click", () => {
           const scene = positionScenes2.find((entry) => entry.id === button.dataset.positionPlayScene);
           if (scene && state2.tapAudioEnabled) speakSceneLines2(scene.lines);
+        });
+      });
+      focusExplorer2.querySelectorAll("[data-position-word]").forEach((button) => {
+        button.addEventListener("click", () => {
+          if (state2.tapAudioEnabled) speak2(button.dataset.positionWord, 0.78);
         });
       });
     }
@@ -11772,6 +11799,7 @@
     comparisonWordItems,
     positionPracticeItems,
     positionScenes,
+    positionBookWords,
     clothesMatchItems,
     clothesSentenceItems,
     clothesBookWords,

@@ -1,5 +1,5 @@
 export function createTimeDailyLifeRuntime(context) {
-  const { state, timeDateWeekItems, timeDateClockItems, timeDateExpressionItems, timeDateRoutineItems, datePracticeItems, timeDateDateItems, timeDateMonthItems, comparisonPracticeItems, comparisonWordItems, positionPracticeItems, positionScenes, clothesMatchItems, clothesSentenceItems, clothesBookWords, clothesPractice, roomScenes, roomSentenceTokens, transportSentenceTokens, everydayActionItems, visualTopicItems, shuffleArray, speak, speakSceneLines, currentTopic, currentBook, currentLesson, renderActivityPanel, focusExplorer, focusStatus } = context;
+  const { state, timeDateWeekItems, timeDateClockItems, timeDateExpressionItems, timeDateRoutineItems, datePracticeItems, timeDateDateItems, timeDateMonthItems, comparisonPracticeItems, comparisonWordItems, positionPracticeItems, positionScenes, positionBookWords, clothesMatchItems, clothesSentenceItems, clothesBookWords, clothesPractice, roomScenes, roomSentenceTokens, transportSentenceTokens, everydayActionItems, visualTopicItems, shuffleArray, speak, speakSceneLines, currentTopic, currentBook, currentLesson, renderActivityPanel, focusExplorer, focusStatus } = context;
 
 function resetWeekdayChallenge(options = {}) {
   const answerId = nextRandomCycleId(state, "weekdays-listen", timeDateWeekItems.map((item) => item.id));
@@ -432,8 +432,9 @@ function resetPositionQuiz() {
 
 function preparePositionQuizQuestion() {
   const answerId = state.positionQuizOrder[state.positionQuizIndex];
-  const distractorIds = shuffleArray(positionPracticeItems.filter((item) => item.id !== answerId).map((item) => item.id)).slice(0, 3);
-  state.positionQuizOptionIds = shuffleArray([answerId, ...distractorIds]);
+  const answer = positionPracticeItems.find((item) => item.id === answerId)?.answer;
+  const distractors = shuffleArray([...new Set(positionPracticeItems.map((item) => item.answer).filter((word) => word !== answer))]).slice(0, 3);
+  state.positionQuizOptionIds = shuffleArray([answer, ...distractors]);
   state.positionQuizSelectedId = "";
   state.positionQuizResult = "";
 }
@@ -451,8 +452,9 @@ function handlePositionQuizPlay() {
 function handlePositionQuizPick(itemId) {
   if (state.positionQuizResult === "correct") return;
   const answerId = state.positionQuizOrder[state.positionQuizIndex];
+  const answer = positionPracticeItems.find((entry) => entry.id === answerId)?.answer;
   state.positionQuizSelectedId = itemId;
-  state.positionQuizResult = itemId === answerId ? "correct" : "wrong";
+  state.positionQuizResult = itemId === answer ? "correct" : "wrong";
   if (state.positionQuizResult === "correct" && state.tapAudioEnabled) {
     const item = positionPracticeItems.find((entry) => entry.id === answerId);
     speak(item?.audio, 0.78);
@@ -899,7 +901,7 @@ function renderPositionsExplorer() {
         <p class="body-match-kicker">${currentBook().label} Lesson ${currentLesson().lesson}</p>
         <h4>Positions & Directions</h4>
       </div>
-      <div class="greetings-practice-grid">
+      <div class="greetings-practice-grid position-scene-grid">
         ${positionScenes
           .map(
             (scene) => `
@@ -916,12 +918,16 @@ function renderPositionsExplorer() {
           )
           .join("")}
       </div>
+      <section class="school-lesson-section">
+        <div class="time-months-heading"><p class="body-match-kicker">Book words</p></div>
+        <div class="comparison-word-grid position-word-grid">
+          ${positionBookWords.map((word) => `<button class="comparison-word-card" type="button" data-position-word="${word.hanzi}"><span class="comparison-word-hanzi">${word.hanzi}</span>${state.showPinyin ? `<span class="comparison-word-pinyin">${word.pinyin}</span>` : ""}${state.showEnglish ? `<span class="comparison-word-english">${word.english}</span>` : ""}</button>`).join("")}
+        </div>
+      </section>
       <section class="visual-topic-notes">
         <p class="body-match-kicker">Useful notes</p>
         <div class="visual-topic-note-grid position-note-grid">
           <article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">A 在 B + 位置</p>${state.showPinyin ? '<p class="visual-topic-note-pinyin">A zài B + wèi zhì</p>' : ""}${state.showEnglish ? '<p class="visual-topic-note-english">A is in / on / beside B.</p>' : ""}<p class="visual-topic-note-example">书架在桌子左边。</p>${state.showPinyin ? '<p class="visual-topic-note-pinyin">shū jià zài zhuō zi zuǒ biān.</p>' : ""}${state.showEnglish ? '<p class="visual-topic-note-english">The bookshelf is to the left of the desk.</p>' : ""}</article>
-          <article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">前边 = 前面；后边 = 后面</p>${state.showPinyin ? '<p class="visual-topic-note-pinyin">qián biān = qián miàn; hòu biān = hòu miàn</p>' : ""}${state.showEnglish ? '<p class="visual-topic-note-english">front and back can use either form here</p>' : ""}</article>
-          ${[["上", "shàng", "up"], ["下", "xià", "down"], ["前", "qián", "front"], ["后", "hòu", "back"], ["左", "zuǒ", "left"], ["右", "yòu", "right"]].map(([hanzi, pinyin, english]) => `<article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">${hanzi}</p>${state.showPinyin ? `<p class="visual-topic-note-pinyin">${pinyin}</p>` : ""}${state.showEnglish ? `<p class="visual-topic-note-english">${english}</p>` : ""}</article>`).join("")}
         </div>
       </section>
     </div>
@@ -930,6 +936,11 @@ function renderPositionsExplorer() {
     button.addEventListener("click", () => {
       const scene = positionScenes.find((entry) => entry.id === button.dataset.positionPlayScene);
       if (scene && state.tapAudioEnabled) speakSceneLines(scene.lines);
+    });
+  });
+  focusExplorer.querySelectorAll("[data-position-word]").forEach((button) => {
+    button.addEventListener("click", () => {
+      if (state.tapAudioEnabled) speak(button.dataset.positionWord, 0.78);
     });
   });
 }

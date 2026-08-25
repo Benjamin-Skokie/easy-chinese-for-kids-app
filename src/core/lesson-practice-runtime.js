@@ -537,19 +537,26 @@ function renderActivityPanel(topic) {
 
   if (topic.id === "positions") {
     ensurePositionQuiz();
+    const prompt = positionPracticeItems.find((item) => item.id === state.positionQuizOrder[state.positionQuizIndex]);
+    const complete = state.positionQuizResult === "correct";
     activityPanelTitle.textContent = "Let's practice";
-    activityPanelSummary.textContent = "Play the audio, then choose the matching Chinese sentence.";
+    activityPanelSummary.textContent = "Look at the picture, then complete the sentence with the right position word.";
     activityList.className = "support-list";
     activityList.innerHTML = `
       <section class="clothes-quiz-shell position-quiz-shell">
-        <div class="numbers-game-top"><div><p class="body-match-kicker">Listen and choose</p><p class="numbers-game-note">Start a new round, then listen and tap the matching Chinese sentence.</p></div><button class="small-button is-practice-advance-button" type="button" data-position-quiz-new aria-label="Start a new game">New game</button></div>
+        <div class="numbers-game-top"><div><p class="body-match-kicker">Finish the sentence</p><p class="numbers-game-note">Look at the picture, then choose the word that completes the sentence.</p></div><button class="small-button is-play-button" type="button" data-position-quiz-new>New game</button></div>
+        <figure class="clothes-quiz-visual position-quiz-visual"><img class="clothes-quiz-image" src="${prompt.imagePath}" alt="${prompt.imageAlt}" ${imageLoadingAttrs()} /></figure>
+        <div class="clothes-sentence-frame${complete ? " is-correct" : ""}">
+          <span class="numbers-game-hanzi">${prompt.sentenceStart}</span><span class="clothes-sentence-blank${state.positionQuizResult ? ` is-${state.positionQuizResult}` : ""}">${state.positionQuizSelectedId || "____"}</span><span class="numbers-game-hanzi">。</span>
+          ${complete && state.showPinyin ? `<span class="numbers-game-pinyin">${prompt.pinyin}</span>` : ""}
+          ${complete && state.showEnglish ? `<span class="numbers-game-english">${prompt.english}</span>` : ""}
+        </div>
         <div class="clothes-quiz-options">
-          ${state.positionQuizOptionIds.map((itemId) => {
-            const item = positionPracticeItems.find((entry) => entry.id === itemId);
-            const isSelected = state.positionQuizSelectedId === itemId;
+          ${state.positionQuizOptionIds.map((word) => {
+            const isSelected = state.positionQuizSelectedId === word;
             const resultClass = isSelected ? ` is-${state.positionQuizResult}` : "";
             const mark = isSelected ? `<span class="answer-result-mark" aria-hidden="true">${state.positionQuizResult === "correct" ? "✓" : "×"}</span>` : "";
-            return `<button class="clothes-quiz-option${resultClass}" type="button" data-position-quiz-pick="${item.id}">${mark}<span class="numbers-game-hanzi">${item.hanzi}</span>${state.showPinyin ? `<span class="numbers-game-pinyin">${item.pinyin}</span>` : ""}${state.showEnglish ? `<span class="numbers-game-english">${item.english}</span>` : ""}</button>`;
+            return `<button class="clothes-quiz-option${resultClass}" type="button" data-position-quiz-pick="${word}" ${complete ? "disabled" : ""}>${mark}<span class="numbers-game-hanzi">${word}</span></button>`;
           }).join("")}
         </div>
       </section>
@@ -559,7 +566,6 @@ function renderActivityPanel(topic) {
     });
     activityList.querySelector("[data-position-quiz-new]")?.addEventListener("click", () => {
       nextPositionQuizQuestion();
-      handlePositionQuizPlay();
     });
     return;
   }

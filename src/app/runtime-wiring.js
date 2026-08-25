@@ -13,7 +13,7 @@ import { timeDateWeekItems } from "../features/time-daily-life/weekdays.js";
 import { timeDateClockItems, timeDateExpressionItems, timeDateRoutineItems } from "../features/time-daily-life/time.js";
 import { datePracticeItems, timeDateDateItems, timeDateMonthItems } from "../features/time-daily-life/dates.js";
 import { comparisonPracticeItems, comparisonsTopic, comparisonVisualItems, comparisonWordItems } from "../features/time-daily-life/comparisons.js";
-import { positionPracticeItems, positionScenes, positionsTopic, positionVisualItems } from "../features/time-daily-life/positions.js";
+import { positionBookWords, positionPracticeItems, positionScenes, positionsTopic, positionVisualItems } from "../features/time-daily-life/positions.js";
 import { transportSentenceTokens, transportTopic, transportVisualItems } from "../features/time-daily-life/transport.js";
 import { dailyLifeTopic, roomScenes, roomSentenceTokens, roomVisualItems } from "../features/time-daily-life/rooms.js";
 import { everydayActionItems } from "../features/time-daily-life/everyday-actions.js";
@@ -681,6 +681,7 @@ comparisonPracticeItems,
 comparisonWordItems,
 positionPracticeItems,
 positionScenes,
+positionBookWords,
 clothesMatchItems,
 clothesSentenceItems,
 clothesBookWords,
