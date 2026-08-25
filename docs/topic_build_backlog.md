@@ -49,9 +49,11 @@ also changed from `partial`.
   - Implementation covers 2A self-dressing, 3A clothing-board, and 4B school-uniform; visual QA remains.
 - [ ] Positions & Directions — `lesson-contracts/daily-life/positions.md`
   - Implementation is complete; visual QA remains.
-- [ ] Time & Routines — `lesson-contracts/daily-life/time-routines.md`
+- [x] Time & Routines — `lesson-contracts/daily-life/time-routines.md`
+  - Completed with whole-hour and routine lessons, advanced time words, and a three-column time sentence maker.
 - [ ] Comparisons — `lesson-contracts/daily-life/comparisons.md`
-- [ ] Transportation — `lesson-contracts/daily-life/transport.md`
+- [x] Transportation — `lesson-contracts/daily-life/transport.md`
+  - Completed with `公共汽车` and `我坐公共汽车去地铁站。`, alongside the existing travel scenes and sentence builder.
 - [ ] Home — `lesson-contracts/daily-life/home.md`
 - [ ] Days of the Week — `lesson-contracts/daily-life/weekdays.md`
 - [ ] Dates & Months — `lesson-contracts/daily-life/dates-months.md`

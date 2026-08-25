@@ -1,6 +1,6 @@
 # Transportation
 
-Status: `partial`  
+Status: `complete`
 URL: `index.html?topic=transport#topic-detail`  
 Mapped lesson: **4A Lesson 6 — Means of transport**
 
@@ -16,8 +16,8 @@ The page owns travel scenes and complete destination sentences. `走路` may cla
 
 ## Lesson evidence
 
-+- **4A Lesson 6 — Means of transport:** Words: `走路、自行车、汽车、出租车、火车、飞机、校车`. Frames: `坐…去…` / `骑…去…`.
+- **4A Lesson 6 — Means of transport:** Words: `走路、自行车、汽车、公共汽车、出租车、火车、飞机、校车`. Frames: `坐…去…` / `骑…去…`.
 
 ## Remaining coverage
 
-Toy trains and planes stay in Toys unless the travel sentence is the learning target.
+All book vocabulary and the two travel frames are now represented with destination sentences and builder rounds. Toy trains and planes stay in Toys unless the travel sentence is the learning target.

@@ -245,8 +245,8 @@ Purpose: provide one searchable inventory of illustration assets, using each fol
 
 - Manifest: [assets/illustrated-country-symbols/manifest.json](../assets/illustrated-country-symbols/manifest.json)
 - Style: gentle educational watercolor-and-colored-pencil country symbols on white background
-- Entries: 8
-- Files present: 8
+- Entries: 9
+- Files present: 9
 
 **Items**
 
@@ -776,6 +776,7 @@ Purpose: provide one searchable inventory of illustration assets, using each fol
 - `walk-to-school`: `走路去上学` (zou lu qu shang xue) | Walk to school | sentence: 乐乐走路去上学。 | [file](../assets/illustrated-transportation/walk-to-school.webp)
 - `bike-to-school`: `骑自行车去上学` (qi zi xing che qu shang xue) | Ride a bike to school | sentence: 乐乐骑自行车去上学。 | [file](../assets/illustrated-transportation/bike-to-school.webp)
 - `school-bus-to-zoo`: `坐校车去动物园` (zuo xiao che qu dong wu yuan) | School bus to the zoo | sentence: 乐乐坐校车去动物园。 | [file](../assets/illustrated-transportation/school-bus-to-zoo.webp)
+- `public-bus-to-subway-station`: `坐公共汽车去地铁站` (zuo gong gong qi che qu di tie zhan) | Public bus to subway station | sentence: 露娜坐公共汽车去地铁站。 | [file](../assets/illustrated-transportation/public-bus-to-subway-station.webp)
 - `taxi-to-airport`: `坐出租车去机场` (zuo chu zu che qu ji chang) | Taxi to the airport | sentence: 乐乐坐出租车去机场。 | [file](../assets/illustrated-transportation/taxi-to-airport.webp)
 - `airplane-to-grandparents`: `坐飞机去看爷爷奶奶` (zuo fei ji qu kan ye ye nai nai) | Airplane to visit grandparents | sentence: 乐乐坐飞机去看爷爷奶奶。 | [file](../assets/illustrated-transportation/airplane-to-grandparents.webp)
 - `train-to-beijing`: `坐火车去北京` (zuo huo che qu Bei jing) | Train to Beijing | sentence: 乐乐坐火车去北京。 | [file](../assets/illustrated-transportation/train-to-beijing.webp)
@@ -841,4 +842,3 @@ Purpose: provide one searchable inventory of illustration assets, using each fol
 - `polite-scene-1`: `谢谢` (xiè xie) | Sharing politely | theme: Two children in a classroom sharing a crayon politely | [file](../assets/polite/polite-scene-1.webp)
 - `polite-scene-2`: `对不起` (duì bu qǐ) | Saying sorry | theme: A child drops a pencil case and another child responds during a polite apology moment | [file](../assets/polite/polite-scene-2.webp)
 - `polite-scene-3`: `请安静` (qǐng ān jìng) | Please be quiet | theme: Teacher asks a busy classroom to quiet down gently but with authority | [file](../assets/polite/polite-scene-3.webp)
-

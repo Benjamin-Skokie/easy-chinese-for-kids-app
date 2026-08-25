@@ -2892,6 +2892,7 @@
     ["\u6211\u8D70\u8DEF\u53BB\u4E0A\u5B66\u3002", "w\u01D2 z\u01D2u l\xF9 q\xF9 sh\xE0ng xu\xE9.", "I walk to school.", "walk-to-school.webp"],
     ["\u6211\u9A91\u81EA\u884C\u8F66\u53BB\u4E0A\u5B66\u3002", "w\u01D2 q\xED z\xEC x\xEDng ch\u0113 q\xF9 sh\xE0ng xu\xE9.", "I ride a bike to school.", "bike-to-school.webp"],
     ["\u6211\u5750\u6821\u8F66\u53BB\u52A8\u7269\u56ED\u3002", "w\u01D2 zu\xF2 xi\xE0o ch\u0113 q\xF9 d\xF2ng w\xF9 yu\xE1n.", "I take the school bus to the zoo.", "school-bus-to-zoo.webp"],
+    ["\u6211\u5750\u516C\u5171\u6C7D\u8F66\u53BB\u5730\u94C1\u7AD9\u3002", "w\u01D2 zu\xF2 g\u014Dng g\xF2ng q\xEC ch\u0113 q\xF9 d\xEC ti\u011B zh\xE0n.", "I take the public bus to the subway station.", "public-bus-to-subway-station.webp"],
     ["\u6211\u5750\u51FA\u79DF\u8F66\u53BB\u673A\u573A\u3002", "w\u01D2 zu\xF2 ch\u016B z\u016B ch\u0113 q\xF9 j\u012B ch\u01CEng.", "I take a taxi to the airport.", "taxi-to-airport.webp"],
     ["\u6211\u5750\u98DE\u673A\u53BB\u770B\u7237\u7237\u5976\u5976\u3002", "w\u01D2 zu\xF2 f\u0113i j\u012B q\xF9 k\xE0n y\xE9 ye n\u01CEi nai.", "I take an airplane to visit my grandparents.", "airplane-to-grandparents.webp"],
     ["\u6211\u5750\u706B\u8F66\u53BB\u5317\u4EAC\u3002", "w\u01D2 zu\xF2 hu\u01D2 ch\u0113 q\xF9 B\u011Bi j\u012Bng.", "I take a train to Beijing.", "train-to-beijing.webp"],
@@ -2906,6 +2907,7 @@
       "walk-to-school.webp": "Walk to school",
       "bike-to-school.webp": "Bike to school",
       "school-bus-to-zoo.webp": "School bus trip",
+      "public-bus-to-subway-station.webp": "Bus to the subway station",
       "taxi-to-airport.webp": "Taxi to the airport",
       "airplane-to-grandparents.webp": "Fly to grandparents",
       "train-to-beijing.webp": "Train to Beijing",
@@ -2915,10 +2917,22 @@
     audio: hanzi,
     imagePath: `assets/illustrated-transportation/${file}`
   }));
+  var transportBookWords = [
+    ["\u8D70\u8DEF", "z\u01D2u l\xF9", "walk"],
+    ["\u81EA\u884C\u8F66", "z\xEC x\xEDng ch\u0113", "bicycle"],
+    ["\u6C7D\u8F66", "q\xEC ch\u0113", "car"],
+    ["\u516C\u5171\u6C7D\u8F66", "g\u014Dng g\xF2ng q\xEC ch\u0113", "public bus"],
+    ["\u51FA\u79DF\u8F66", "ch\u016B z\u016B ch\u0113", "taxi"],
+    ["\u706B\u8F66", "hu\u01D2 ch\u0113", "train"],
+    ["\u98DE\u673A", "f\u0113i j\u012B", "airplane"],
+    ["\u6821\u8F66", "xi\xE0o ch\u0113", "school bus"],
+    ["\u5730\u94C1\u7AD9", "d\xEC ti\u011B zh\xE0n", "subway station"]
+  ].map(([hanzi, pinyin, english]) => ({ hanzi, pinyin, english, audio: hanzi }));
   var transportSentenceTokens = {
     "walk-to-school.webp": { target: ["\u6211", "\u8D70\u8DEF", "\u53BB", "\u4E0A\u5B66"], distractors: ["\u5750", "\u6821\u8F66", "\u52A8\u7269\u56ED"] },
     "bike-to-school.webp": { target: ["\u6211", "\u9A91\u81EA\u884C\u8F66", "\u53BB", "\u4E0A\u5B66"], distractors: ["\u5750", "\u706B\u8F66", "\u5317\u4EAC"] },
     "school-bus-to-zoo.webp": { target: ["\u6211", "\u5750", "\u6821\u8F66", "\u53BB", "\u52A8\u7269\u56ED"], distractors: ["\u9A91\u81EA\u884C\u8F66", "\u4E0A\u5B66"] },
+    "public-bus-to-subway-station.webp": { target: ["\u6211", "\u5750", "\u516C\u5171\u6C7D\u8F66", "\u53BB", "\u5730\u94C1\u7AD9"], distractors: ["\u6821\u8F66", "\u52A8\u7269\u56ED"] },
     "taxi-to-airport.webp": { target: ["\u6211", "\u5750", "\u51FA\u79DF\u8F66", "\u53BB", "\u673A\u573A"], distractors: ["\u6821\u8F66", "\u52A8\u7269\u56ED"] },
     "airplane-to-grandparents.webp": { target: ["\u6211", "\u5750", "\u98DE\u673A", "\u53BB\u770B", "\u7237\u7237\u5976\u5976"], distractors: ["\u706B\u8F66", "\u5317\u4EAC"] },
     "train-to-beijing.webp": { target: ["\u6211", "\u5750", "\u706B\u8F66", "\u53BB", "\u5317\u4EAC"], distractors: ["\u98DE\u673A", "\u673A\u573A"] },
@@ -8337,7 +8351,7 @@
 
   // src/features/time-daily-life/time-daily-life-runtime.js
   function createTimeDailyLifeRuntime(context) {
-    const { state: state2, timeDateWeekItems: timeDateWeekItems2, timeDateClockItems: timeDateClockItems2, timeDateExpressionItems: timeDateExpressionItems2, timeDateRoutineItems: timeDateRoutineItems2, timeAdvancedBookWords: timeAdvancedBookWords2, timeRoutineBookWords: timeRoutineBookWords2, datePracticeItems: datePracticeItems2, timeDateDateItems: timeDateDateItems2, timeDateMonthItems: timeDateMonthItems2, comparisonPracticeItems: comparisonPracticeItems2, comparisonWordItems: comparisonWordItems2, positionPracticeItems: positionPracticeItems2, positionScenes: positionScenes2, positionBookWords: positionBookWords2, clothesMatchItems: clothesMatchItems2, clothesSentenceItems: clothesSentenceItems2, clothesBookWords: clothesBookWords2, clothesPractice: clothesPractice2, roomScenes: roomScenes2, roomSentenceTokens: roomSentenceTokens2, transportSentenceTokens: transportSentenceTokens2, everydayActionItems: everydayActionItems2, visualTopicItems: visualTopicItems2, shuffleArray: shuffleArray2, speak: speak2, speakSceneLines: speakSceneLines2, currentTopic: currentTopic2, currentBook: currentBook2, currentLesson: currentLesson2, renderActivityPanel: renderActivityPanel2, focusExplorer: focusExplorer2, focusStatus: focusStatus2 } = context;
+    const { state: state2, timeDateWeekItems: timeDateWeekItems2, timeDateClockItems: timeDateClockItems2, timeDateExpressionItems: timeDateExpressionItems2, timeDateRoutineItems: timeDateRoutineItems2, timeAdvancedBookWords: timeAdvancedBookWords2, timeRoutineBookWords: timeRoutineBookWords2, datePracticeItems: datePracticeItems2, timeDateDateItems: timeDateDateItems2, timeDateMonthItems: timeDateMonthItems2, comparisonPracticeItems: comparisonPracticeItems2, comparisonWordItems: comparisonWordItems2, positionPracticeItems: positionPracticeItems2, positionScenes: positionScenes2, positionBookWords: positionBookWords2, clothesMatchItems: clothesMatchItems2, clothesSentenceItems: clothesSentenceItems2, clothesBookWords: clothesBookWords2, clothesPractice: clothesPractice2, roomScenes: roomScenes2, roomSentenceTokens: roomSentenceTokens2, transportSentenceTokens: transportSentenceTokens2, transportBookWords: transportBookWords2, everydayActionItems: everydayActionItems2, visualTopicItems: visualTopicItems2, shuffleArray: shuffleArray2, speak: speak2, speakSceneLines: speakSceneLines2, currentTopic: currentTopic2, currentBook: currentBook2, currentLesson: currentLesson2, renderActivityPanel: renderActivityPanel2, focusExplorer: focusExplorer2, focusStatus: focusStatus2 } = context;
     function resetWeekdayChallenge2(options = {}) {
       const answerId = nextRandomCycleId(state2, "weekdays-listen", timeDateWeekItems2.map((item) => item.id));
       const answer = timeDateWeekItems2.find((item) => item.id === answerId);
@@ -9006,6 +9020,7 @@
       const comparisonScenes = sceneId === "comparisons" ? `<section class="school-lesson-section"><div class="time-months-heading"><p class="body-match-kicker">Scenes</p></div><div class="school-scene-grid comparison-scene-grid">${items.map((item) => `<section class="greetings-exchange school-scene-card"><div class="greetings-exchange-top"><div><p class="body-match-kicker">${item.english}</p></div><button class="small-button is-play-button" type="button" data-comparison-scene="${item.audio}">Play</button></div><div class="school-scene-layout"><img class="school-scene-image" src="${item.imagePath}" alt="${item.english}" /><div class="greetings-line-stack"><article class="greetings-line-card"><div class="telephone-bubble-copy"><p class="telephone-line-hanzi">${item.hanzi}</p>${state2.showPinyin ? `<p class="telephone-line-pinyin">${item.pinyin}</p>` : ""}${state2.showEnglish ? `<p class="telephone-line-english">${item.english}</p>` : ""}</div></article></div></div></section>`).join("")}</div></section>` : "";
       const transportScenes = sceneId === "transport" ? `<section class="school-lesson-section"><div class="time-months-heading"><p class="body-match-kicker">Scenes</p></div><div class="school-scene-grid transport-scene-grid">${items.map((item) => `<section class="greetings-exchange school-scene-card"><div class="greetings-exchange-top"><div><p class="body-match-kicker">${item.sceneTitle}</p></div><button class="small-button is-play-button" type="button" data-transport-scene="${item.audio}">Play</button></div><div class="school-scene-layout"><img class="school-scene-image" src="${item.imagePath}" alt="${item.english}" /><div class="greetings-line-stack"><article class="greetings-line-card"><div class="telephone-bubble-copy"><p class="telephone-line-hanzi">${item.hanzi}</p>${state2.showPinyin ? `<p class="telephone-line-pinyin">${item.pinyin}</p>` : ""}${state2.showEnglish ? `<p class="telephone-line-english">${item.english}</p>` : ""}</div></article></div></div></section>`).join("")}</div></section>` : "";
       const comparisonWords = sceneId === "comparisons" ? `<section class="school-lesson-section"><div class="time-months-heading"><p class="body-match-kicker">Book words</p></div><div class="comparison-word-grid">${comparisonWordItems2.map((item) => `<button class="comparison-word-card" type="button" data-comparison-word="${item.hanzi}"><span class="comparison-word-hanzi">${item.hanzi}</span>${state2.showPinyin ? `<span class="comparison-word-pinyin">${item.pinyin}</span>` : ""}${state2.showEnglish ? `<span class="comparison-word-english">${item.english}</span>` : ""}</button>`).join("")}</div></section>` : "";
+      const transportWords = sceneId === "transport" ? `<section class="school-lesson-section"><div class="time-months-heading"><p class="body-match-kicker">Book words</p></div><div class="comparison-word-grid">${transportBookWords2.map((item) => `<button class="comparison-word-card" type="button" data-transport-word="${item.hanzi}"><span class="comparison-word-hanzi">${item.hanzi}</span>${state2.showPinyin ? `<span class="comparison-word-pinyin">${item.pinyin}</span>` : ""}${state2.showEnglish ? `<span class="comparison-word-english">${item.english}</span>` : ""}</button>`).join("")}</div></section>` : "";
       const usefulNotes = sceneId === "transport" ? `
         <section class="visual-topic-notes">
           <p class="body-match-kicker">Useful notes</p>
@@ -9014,13 +9029,13 @@
               <p class="visual-topic-note-hanzi">\u5750\u8F66</p>
               ${state2.showPinyin ? '<p class="visual-topic-note-pinyin">zu\xF2 ch\u0113</p>' : ""}
               ${state2.showEnglish ? '<p class="visual-topic-note-english">travel by vehicle; take a ride</p>' : ""}
-              <p class="visual-topic-note-example">\u5750\u6821\u8F66\uFF0C\u5750\u51FA\u79DF\u8F66\uFF0C\u5750\u706B\u8F66\u3002</p>
+              <p class="visual-topic-note-example">\u5750\u6821\u8F66\uFF0C\u5750\u516C\u5171\u6C7D\u8F66\uFF0C\u5750\u51FA\u79DF\u8F66\u3002</p>
             </article>
             <article class="visual-topic-note-card">
               <p class="visual-topic-note-hanzi">\u53BB</p>
               ${state2.showPinyin ? '<p class="visual-topic-note-pinyin">q\xF9</p>' : ""}
               ${state2.showEnglish ? '<p class="visual-topic-note-english">to go to</p>' : ""}
-              <p class="visual-topic-note-example">\u53BB\u5B66\u6821\uFF0C\u53BB\u52A8\u7269\u56ED\uFF0C\u53BB\u5317\u4EAC\u3002</p>
+              <p class="visual-topic-note-example">\u53BB\u5B66\u6821\uFF0C\u53BB\u5730\u94C1\u7AD9\uFF0C\u53BB\u5317\u4EAC\u3002</p>
             </article>
             <article class="visual-topic-note-card">
               <p class="visual-topic-note-hanzi">\u9A91</p>
@@ -9039,6 +9054,7 @@
       </div>
       ${comparisonScenes || transportScenes || `<div class="time-months-heading"><p class="body-match-kicker">Book words</p></div>${renderTimeAssetGrid2(items, `visual visual-${sceneId}`, "visual")}`}
       ${comparisonWords}
+      ${transportWords}
       ${usefulNotes}
     </div>
   `;
@@ -9046,6 +9062,11 @@
       focusExplorer2.querySelectorAll("[data-comparison-word]").forEach((button) => {
         button.addEventListener("click", () => {
           if (state2.tapAudioEnabled) speak2(button.dataset.comparisonWord, 0.78);
+        });
+      });
+      focusExplorer2.querySelectorAll("[data-transport-word]").forEach((button) => {
+        button.addEventListener("click", () => {
+          if (state2.tapAudioEnabled) speak2(button.dataset.transportWord, 0.78);
         });
       });
       focusExplorer2.querySelectorAll("[data-comparison-scene]").forEach((button) => {
@@ -11902,6 +11923,7 @@
     roomScenes,
     roomSentenceTokens,
     transportSentenceTokens,
+    transportBookWords,
     everydayActionItems,
     visualTopicItems,
     shuffleArray,

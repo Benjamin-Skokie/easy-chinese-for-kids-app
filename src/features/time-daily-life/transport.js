@@ -17,6 +17,7 @@ export const transportVisualItems = [
     ["我走路去上学。", "wǒ zǒu lù qù shàng xué.", "I walk to school.", "walk-to-school.webp"],
     ["我骑自行车去上学。", "wǒ qí zì xíng chē qù shàng xué.", "I ride a bike to school.", "bike-to-school.webp"],
     ["我坐校车去动物园。", "wǒ zuò xiào chē qù dòng wù yuán.", "I take the school bus to the zoo.", "school-bus-to-zoo.webp"],
+    ["我坐公共汽车去地铁站。", "wǒ zuò gōng gòng qì chē qù dì tiě zhàn.", "I take the public bus to the subway station.", "public-bus-to-subway-station.webp"],
     ["我坐出租车去机场。", "wǒ zuò chū zū chē qù jī chǎng.", "I take a taxi to the airport.", "taxi-to-airport.webp"],
     ["我坐飞机去看爷爷奶奶。", "wǒ zuò fēi jī qù kàn yé ye nǎi nai.", "I take an airplane to visit my grandparents.", "airplane-to-grandparents.webp"],
     ["我坐火车去北京。", "wǒ zuò huǒ chē qù Běi jīng.", "I take a train to Beijing.", "train-to-beijing.webp"],
@@ -31,6 +32,7 @@ export const transportVisualItems = [
       "walk-to-school.webp": "Walk to school",
       "bike-to-school.webp": "Bike to school",
       "school-bus-to-zoo.webp": "School bus trip",
+      "public-bus-to-subway-station.webp": "Bus to the subway station",
       "taxi-to-airport.webp": "Taxi to the airport",
       "airplane-to-grandparents.webp": "Fly to grandparents",
       "train-to-beijing.webp": "Train to Beijing",
@@ -41,10 +43,23 @@ export const transportVisualItems = [
     imagePath: `assets/illustrated-transportation/${file}`
   }));
 
+export const transportBookWords = [
+  ["走路", "zǒu lù", "walk"],
+  ["自行车", "zì xíng chē", "bicycle"],
+  ["汽车", "qì chē", "car"],
+  ["公共汽车", "gōng gòng qì chē", "public bus"],
+  ["出租车", "chū zū chē", "taxi"],
+  ["火车", "huǒ chē", "train"],
+  ["飞机", "fēi jī", "airplane"],
+  ["校车", "xiào chē", "school bus"],
+  ["地铁站", "dì tiě zhàn", "subway station"]
+].map(([hanzi, pinyin, english]) => ({ hanzi, pinyin, english, audio: hanzi }));
+
 export const transportSentenceTokens = {
   "walk-to-school.webp": { target: ["我", "走路", "去", "上学"], distractors: ["坐", "校车", "动物园"] },
   "bike-to-school.webp": { target: ["我", "骑自行车", "去", "上学"], distractors: ["坐", "火车", "北京"] },
   "school-bus-to-zoo.webp": { target: ["我", "坐", "校车", "去", "动物园"], distractors: ["骑自行车", "上学"] },
+  "public-bus-to-subway-station.webp": { target: ["我", "坐", "公共汽车", "去", "地铁站"], distractors: ["校车", "动物园"] },
   "taxi-to-airport.webp": { target: ["我", "坐", "出租车", "去", "机场"], distractors: ["校车", "动物园"] },
   "airplane-to-grandparents.webp": { target: ["我", "坐", "飞机", "去看", "爷爷奶奶"], distractors: ["火车", "北京"] },
   "train-to-beijing.webp": { target: ["我", "坐", "火车", "去", "北京"], distractors: ["飞机", "机场"] },

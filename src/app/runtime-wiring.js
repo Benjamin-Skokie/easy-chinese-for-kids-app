@@ -14,7 +14,7 @@ import { timeAdvancedBookWords, timeDateClockItems, timeDateExpressionItems, tim
 import { datePracticeItems, timeDateDateItems, timeDateMonthItems } from "../features/time-daily-life/dates.js";
 import { comparisonPracticeItems, comparisonsTopic, comparisonVisualItems, comparisonWordItems } from "../features/time-daily-life/comparisons.js";
 import { positionBookWords, positionPracticeItems, positionScenes, positionsTopic, positionVisualItems } from "../features/time-daily-life/positions.js";
-import { transportSentenceTokens, transportTopic, transportVisualItems } from "../features/time-daily-life/transport.js";
+import { transportBookWords, transportSentenceTokens, transportTopic, transportVisualItems } from "../features/time-daily-life/transport.js";
 import { dailyLifeTopic, roomScenes, roomSentenceTokens, roomVisualItems } from "../features/time-daily-life/rooms.js";
 import { everydayActionItems } from "../features/time-daily-life/everyday-actions.js";
 import { stationeryPictureMatchChoices, stationeryPictureMatchEnglish, stationeryPictureMatchRounds, stationerySentenceBuilds, stationeryTopicData } from "../features/school-life/stationery.js";
@@ -692,6 +692,7 @@ clothesPractice,
 roomScenes,
 roomSentenceTokens,
 transportSentenceTokens,
+transportBookWords,
 everydayActionItems,
 visualTopicItems,
 shuffleArray,

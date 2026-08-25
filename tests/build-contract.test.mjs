@@ -49,7 +49,7 @@ import { familyGameItemIds, familyPractice, familyTopic, illustratedFamily } fro
 test("the local page loads a single bundled application script", () => {
   const html = readFileSync("index.html", "utf8");
   assert.match(html, /<link rel="stylesheet" href="styles\.css\?v=20260825-routine-time-columns" \/>/);
-  assert.match(html, /<script src="app\.js\?v=20260825-routine-time-columns"><\/script>/);
+  assert.match(html, /<script src="app\.js\?v=20260825-transport-book-words"><\/script>/);
   assert.doesNotMatch(html, /type="module"/);
 });
 
@@ -653,7 +653,7 @@ test("time and daily life data stays owned by its topics", () => {
   assert.equal(positionsTopic.id, "positions");
   assert.equal(positionVisualItems.length, 3);
   assert.equal(transportTopic.id, "transport");
-  assert.equal(transportVisualItems.length, 8);
+  assert.equal(transportVisualItems.length, 9);
   assert.equal(roomVisualItems.length, 11);
 });
 
@@ -664,7 +664,7 @@ test("time and daily life practice data retains every interaction set", () => {
   assert.equal(positionScenes.length, 4);
   assert.equal(positionPracticeItems.length, 8);
   assert.equal(comparisonPracticeItems.length, 7);
-  assert.equal(Object.keys(transportSentenceTokens).length, 8);
+  assert.equal(Object.keys(transportSentenceTokens).length, 9);
 });
 
 test("stationery owns its scenes, words, and practice rounds", () => {

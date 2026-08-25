@@ -1,6 +1,6 @@
 # Time & Routines
 
-Status: `partial`  
+Status: `complete`
 URL: `index.html?topic=time-date#topic-detail`
 
 ## Cross-book progression

@@ -41,6 +41,19 @@
       "file": "school-bus-to-zoo.webp"
     },
     {
+      "id": "public-bus-to-subway-station",
+      "label": "Public bus to the subway station",
+      "personId": "luna",
+      "personLabel": "Luna",
+      "hanzi": "坐公共汽车去地铁站",
+      "pinyin": "zuo gong gong qi che qu di tie zhan",
+      "sentenceHanzi": "露娜坐公共汽车去地铁站。",
+      "sentencePinyin": "Lu na zuo gong gong qi che qu di tie zhan.",
+      "sentenceEnglish": "Luna takes the public bus to the subway station.",
+      "destination": "subway station entrance",
+      "file": "public-bus-to-subway-station.webp"
+    },
+    {
       "id": "taxi-to-airport",
       "label": "Taxi to the airport",
       "hanzi": "坐出租车去机场",

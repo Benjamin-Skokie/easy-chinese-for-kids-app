@@ -1,5 +1,5 @@
 export function createTimeDailyLifeRuntime(context) {
-  const { state, timeDateWeekItems, timeDateClockItems, timeDateExpressionItems, timeDateRoutineItems, timeAdvancedBookWords, timeRoutineBookWords, datePracticeItems, timeDateDateItems, timeDateMonthItems, comparisonPracticeItems, comparisonWordItems, positionPracticeItems, positionScenes, positionBookWords, clothesMatchItems, clothesSentenceItems, clothesBookWords, clothesPractice, roomScenes, roomSentenceTokens, transportSentenceTokens, everydayActionItems, visualTopicItems, shuffleArray, speak, speakSceneLines, currentTopic, currentBook, currentLesson, renderActivityPanel, focusExplorer, focusStatus } = context;
+  const { state, timeDateWeekItems, timeDateClockItems, timeDateExpressionItems, timeDateRoutineItems, timeAdvancedBookWords, timeRoutineBookWords, datePracticeItems, timeDateDateItems, timeDateMonthItems, comparisonPracticeItems, comparisonWordItems, positionPracticeItems, positionScenes, positionBookWords, clothesMatchItems, clothesSentenceItems, clothesBookWords, clothesPractice, roomScenes, roomSentenceTokens, transportSentenceTokens, transportBookWords, everydayActionItems, visualTopicItems, shuffleArray, speak, speakSceneLines, currentTopic, currentBook, currentLesson, renderActivityPanel, focusExplorer, focusStatus } = context;
 
 function resetWeekdayChallenge(options = {}) {
   const answerId = nextRandomCycleId(state, "weekdays-listen", timeDateWeekItems.map((item) => item.id));
@@ -771,6 +771,9 @@ function renderVisualTopicExplorer(sceneId) {
   const comparisonWords = sceneId === "comparisons"
     ? `<section class="school-lesson-section"><div class="time-months-heading"><p class="body-match-kicker">Book words</p></div><div class="comparison-word-grid">${comparisonWordItems.map((item) => `<button class="comparison-word-card" type="button" data-comparison-word="${item.hanzi}"><span class="comparison-word-hanzi">${item.hanzi}</span>${state.showPinyin ? `<span class="comparison-word-pinyin">${item.pinyin}</span>` : ""}${state.showEnglish ? `<span class="comparison-word-english">${item.english}</span>` : ""}</button>`).join("")}</div></section>`
     : "";
+  const transportWords = sceneId === "transport"
+    ? `<section class="school-lesson-section"><div class="time-months-heading"><p class="body-match-kicker">Book words</p></div><div class="comparison-word-grid">${transportBookWords.map((item) => `<button class="comparison-word-card" type="button" data-transport-word="${item.hanzi}"><span class="comparison-word-hanzi">${item.hanzi}</span>${state.showPinyin ? `<span class="comparison-word-pinyin">${item.pinyin}</span>` : ""}${state.showEnglish ? `<span class="comparison-word-english">${item.english}</span>` : ""}</button>`).join("")}</div></section>`
+    : "";
   const usefulNotes =
     sceneId === "transport"
       ? `
@@ -781,13 +784,13 @@ function renderVisualTopicExplorer(sceneId) {
               <p class="visual-topic-note-hanzi">坐车</p>
               ${state.showPinyin ? '<p class="visual-topic-note-pinyin">zuò chē</p>' : ""}
               ${state.showEnglish ? '<p class="visual-topic-note-english">travel by vehicle; take a ride</p>' : ""}
-              <p class="visual-topic-note-example">坐校车，坐出租车，坐火车。</p>
+              <p class="visual-topic-note-example">坐校车，坐公共汽车，坐出租车。</p>
             </article>
             <article class="visual-topic-note-card">
               <p class="visual-topic-note-hanzi">去</p>
               ${state.showPinyin ? '<p class="visual-topic-note-pinyin">qù</p>' : ""}
               ${state.showEnglish ? '<p class="visual-topic-note-english">to go to</p>' : ""}
-              <p class="visual-topic-note-example">去学校，去动物园，去北京。</p>
+              <p class="visual-topic-note-example">去学校，去地铁站，去北京。</p>
             </article>
             <article class="visual-topic-note-card">
               <p class="visual-topic-note-hanzi">骑</p>
@@ -807,6 +810,7 @@ function renderVisualTopicExplorer(sceneId) {
       </div>
       ${comparisonScenes || transportScenes || `<div class="time-months-heading"><p class="body-match-kicker">Book words</p></div>${renderTimeAssetGrid(items, `visual visual-${sceneId}`, "visual")}`}
       ${comparisonWords}
+      ${transportWords}
       ${usefulNotes}
     </div>
   `;
@@ -814,6 +818,11 @@ function renderVisualTopicExplorer(sceneId) {
   focusExplorer.querySelectorAll("[data-comparison-word]").forEach((button) => {
     button.addEventListener("click", () => {
       if (state.tapAudioEnabled) speak(button.dataset.comparisonWord, 0.78);
+    });
+  });
+  focusExplorer.querySelectorAll("[data-transport-word]").forEach((button) => {
+    button.addEventListener("click", () => {
+      if (state.tapAudioEnabled) speak(button.dataset.transportWord, 0.78);
     });
   });
   focusExplorer.querySelectorAll("[data-comparison-scene]").forEach((button) => {
