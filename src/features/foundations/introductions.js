@@ -19,14 +19,15 @@ export const introductionsTopic = {
       { id: "me-word", hanzi: "我", pinyin: "wǒ", english: "I; me", audio: "我" },
       { id: "call-word", hanzi: "叫", pinyin: "jiào", english: "to be called", audio: "叫" },
       { id: "what-word", hanzi: "什么", pinyin: "shén me", english: "what", audio: "什么" },
-      { id: "name-word", hanzi: "名字", pinyin: "míng zi", english: "name", audio: "名字" }
+      { id: "name-word", hanzi: "名字", pinyin: "míng zi", english: "name", audio: "名字" },
+      { id: "friend-word", hanzi: "朋友", pinyin: "péng you", english: "friend", audio: "朋友" }
     ],
     interactiveScene: "introductions-conversation",
     parentGuide:
       "Practice the whole mini-conversation first: 你好, 你叫什么名字? 我叫... Then pause after 我叫 and let the child fill in their own name.",
     cultureGuide:
       "Children connect strongly to names and faces, so recurring kid characters help this lesson feel social instead of abstract.",
-    activities: ["Tap to hear", "Play the conversation", "Say your own name", "Build the sentence"],
+    activities: ["Tap to hear", "Play the conversation", "Build the sentence"],
     steps: [
       { book: "1A", lesson: 6, title: "What's your name?", note: "Learn a first self-introduction pattern." },
       { book: "2A", lesson: 3, title: "Good friends", note: "Use names and social language in a wider context." }
@@ -70,6 +71,17 @@ export const introductionsPractice = [
       { speakerId: "yangyang", hanzi: "我叫阳阳。", pinyin: "wǒ jiào Yáng yáng.", english: "My name is Yangyang.", audio: "我叫阳阳" },
       { speakerId: "jaden", hanzi: "我叫杰登。", pinyin: "wǒ jiào Jié dēng.", english: "My name is Jaden.", audio: "我叫杰登" }
     ]
+  },
+  {
+    id: "good-friends",
+    title: "Good friends",
+    imagePath: "assets/introductions/good-friends-scene.webp",
+    imageAlt: "Luna introduces Noah as her good friend to Sisi in a classroom",
+    cast: ["luna", "noah", "sisi"],
+    lines: [
+      { speakerId: "luna", hanzi: "他是我的好朋友。", pinyin: "tā shì wǒ de hǎo péng you.", english: "He is my good friend.", audio: "他是我的好朋友" },
+      { speakerId: "sisi", hanzi: "你好，诺亚！", pinyin: "nǐ hǎo, Nuò yà!", english: "Hello, Noah!", audio: "你好诺亚" }
+    ]
   }
 ];
 
@@ -93,6 +105,7 @@ export const introductionsBuildPhrases = [
     id: "build-ask-name",
     sourceItemId: "ask-name",
     targetHanzi: "你叫什么名字？",
+    targetPinyin: "nǐ jiào shén me míng zi?",
     prompt: "Build: What is your name?",
     english: "What is your name?",
     audio: "你叫什么名字",
@@ -102,9 +115,20 @@ export const introductionsBuildPhrases = [
     id: "build-my-name",
     sourceItemId: "my-name",
     targetHanzi: "我叫……",
+    targetPinyin: "wǒ jiào...",
     prompt: "Build: My name is...",
     english: "My name is...",
     audio: "我叫",
     tokens: ["我", "叫"]
+  },
+  {
+    id: "build-good-friend",
+    sourceItemId: "friend-word",
+    targetHanzi: "他是我的好朋友。",
+    targetPinyin: "tā shì wǒ de hǎo péng you.",
+    prompt: "Build: He is my good friend.",
+    english: "He is my good friend.",
+    audio: "他是我的好朋友",
+    tokens: ["他", "是", "我的", "好朋友"]
   }
 ];

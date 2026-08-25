@@ -915,11 +915,12 @@ function renderActivityPanel(topic) {
   if (topic.id === "introductions") {
     ensureIntroductionsBuilder();
     activityPanelTitle.textContent = "Let's practice";
-    activityPanelSummary.textContent = "Build the two core introduction patterns, then say your own name.";
+    activityPanelSummary.textContent = "Build the introduction sentences from the book.";
     activityList.className = "support-list";
     activityList.innerHTML = "";
 
     const buildTarget = introductionsBuildTarget();
+    const buildComplete = state.introductionsBuildSelectedTokens.length === buildTarget.tokens.length;
     const gameCard = document.createElement("section");
     gameCard.className = "family-practice-shell";
     gameCard.innerHTML = `
@@ -927,23 +928,19 @@ function renderActivityPanel(topic) {
         <div class="numbers-game-top">
           <div>
             <p class="body-match-kicker">Build the sentence</p>
-            <p class="numbers-game-note">Tap the word pieces in order.</p>
+            <p class="numbers-game-note">Tap the word pieces below to build the sentence.</p>
           </div>
-          <button class="small-button is-practice-advance-button" type="button" data-intro-build-new>New phrase</button>
+          <button class="small-button is-play-button" type="button" data-intro-build-new>Play</button>
         </div>
         ${state.lastIntroductionsFeedback ? `<p class="greetings-game-feedback">${state.lastIntroductionsFeedback}</p>` : ""}
         <div class="intro-build-target">
-          <p class="body-match-kicker">Sentence</p>
           <div class="intro-build-selected">
             ${state.introductionsBuildSelectedTokens.length ? state.introductionsBuildSelectedTokens.map((token) => `<span class="intro-build-chip is-selected">${token}</span>`).join("") : '<span class="intro-build-placeholder">Your sentence will appear here.</span>'}
           </div>
-          <p class="numbers-game-english">${buildTarget.english}</p>
+          ${buildComplete ? `<p class="numbers-game-pinyin">${buildTarget.targetPinyin}</p><p class="numbers-game-english">${buildTarget.english}</p>` : `<p class="numbers-game-english">${buildTarget.english}</p>`}
         </div>
         <div class="intro-build-choices">
           ${state.introductionsBuildAvailableTokens.map((token, index) => `<button class="intro-build-chip" type="button" data-intro-build-token="${index}">${token}</button>`).join("")}
-        </div>
-        <div class="intro-build-actions">
-          <button class="small-button" type="button" data-intro-build-clear>Clear</button>
         </div>
         <div class="intro-character-grid" aria-label="Friends">
           ${Object.values(illustratedKids)
@@ -968,9 +965,6 @@ function renderActivityPanel(topic) {
       resetIntroductionsBuilder();
       renderActivityPanel(topic);
     });
-    activityList.querySelector("[data-intro-build-clear]")?.addEventListener("click", () => {
-      handleIntroductionsBuildClear();
-    });
     activityList.querySelectorAll("[data-intro-build-token]").forEach((button) => {
       button.addEventListener("click", () => {
         handleIntroductionsBuildToken(Number(button.dataset.introBuildToken));
@@ -984,7 +978,6 @@ function renderActivityPanel(topic) {
         }
       });
     });
-
     return;
   }
 

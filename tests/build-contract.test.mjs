@@ -723,10 +723,12 @@ test("introductions owns its scenes and practice activities", () => {
   assert.equal(introductionsTopic.id, "introductions");
   assert.equal(introductionsTopic.interactiveScene, "introductions-conversation");
   assert.equal(introductionsTopic.steps.length, 2);
-  assert.equal(introductionsPractice.length, 3);
+  assert.equal(introductionsPractice.length, 4);
+  assert.ok(introductionsPractice.some((scene) => scene.id === "good-friends" && scene.lines.some((line) => line.hanzi === "他是我的好朋友。")));
   assert.equal(introductionsGamePrompts.length, 4);
   assert.ok(introductionsGamePrompts.every((prompt) => prompt.speakerId));
-  assert.equal(introductionsBuildPhrases.length, 2);
+  assert.equal(introductionsBuildPhrases.length, 3);
+  assert.ok(introductionsBuildPhrases.some((phrase) => phrase.targetHanzi === "他是我的好朋友。"));
 });
 
 test("age owns its scenes and sentence practice", () => {
@@ -1245,9 +1247,10 @@ test("Body adds a no-repeat spotlight-and-choose practice without duplicating it
 });
 
 test("the shared character catalog retains every illustrated child", () => {
-  assert.equal(Object.keys(illustratedKids).length, 9);
+  assert.equal(Object.keys(illustratedKids).length, 10);
   assert.equal(illustratedKids.anan.hanziName, "安安");
   assert.equal(illustratedKids.tiantian.label, "Tiantian");
+  assert.equal(illustratedKids.noah.hanziName, "诺亚");
 });
 
 test("the shared curriculum retains its books and learning navigation", () => {

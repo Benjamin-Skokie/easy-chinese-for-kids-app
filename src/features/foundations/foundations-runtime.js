@@ -157,7 +157,7 @@ function usefulNoteForTopic(topic) {
       </p>
     `,
     introductions: `
-      <p class="greetings-note-hanzi">我 / 叫 / 什么 / 名字</p>
+      <p class="greetings-note-hanzi">我 / 叫 / 什么 / 名字 / 朋友</p>
       <p class="greetings-note-copy">
         <strong>我</strong> means “I” or “me,” and <strong>叫</strong> is used in beginner Chinese to say what someone is called.
       </p>
@@ -166,6 +166,9 @@ function usefulNoteForTopic(topic) {
       </p>
       <p class="greetings-note-copy">
         Let children pause after <strong>我叫</strong> and say their own name out loud.
+      </p>
+      <p class="greetings-note-copy">
+        In <strong>他是我的好朋友。</strong>, <strong>他</strong> points to a boy already in the scene, and <strong>我的好朋友</strong> means “my good friend.”
       </p>
     `,
     age: `
@@ -1083,7 +1086,7 @@ function renderFamilyExplorer() {
         ${familyPractice
           .map(
             (exchange) => `
-              <section class="greetings-exchange">
+              <section class="greetings-exchange family-scene-${exchange.id}">
                 <div class="greetings-exchange-top">
                   <div><p class="body-match-kicker">${exchange.title}</p></div>
                   <button class="small-button is-play-button" type="button" data-family-play-all="${exchange.id}">Play</button>
@@ -1098,7 +1101,7 @@ function renderFamilyExplorer() {
                         (line, index) => `
                           <article class="greetings-line-card">
                             <div class="telephone-bubble-copy">
-                              <p class="telephone-line-hanzi">${line.hanzi}</p>
+                              ${line.positionLabel ? `<div class="family-scene-sentence-line"><span class="family-scene-position-label">${line.positionLabel}：</span><span class="telephone-line-hanzi">${line.hanzi}</span></div>` : `<p class="telephone-line-hanzi">${line.hanzi}</p>`}
                               ${state.showPinyin ? `<p class="telephone-line-pinyin">${line.pinyin}</p>` : ""}
                               ${state.showEnglish ? `<p class="telephone-line-english">${line.english}</p>` : ""}
                             </div>

@@ -1515,10 +1515,11 @@
       if (topic.id === "introductions") {
         ensureIntroductionsBuilder2();
         activityPanelTitle2.textContent = "Let's practice";
-        activityPanelSummary2.textContent = "Build the two core introduction patterns, then say your own name.";
+        activityPanelSummary2.textContent = "Build the introduction sentences from the book.";
         activityList2.className = "support-list";
         activityList2.innerHTML = "";
         const buildTarget = introductionsBuildTarget2();
+        const buildComplete = state2.introductionsBuildSelectedTokens.length === buildTarget.tokens.length;
         const gameCard = document.createElement("section");
         gameCard.className = "family-practice-shell";
         gameCard.innerHTML = `
@@ -1526,23 +1527,19 @@
         <div class="numbers-game-top">
           <div>
             <p class="body-match-kicker">Build the sentence</p>
-            <p class="numbers-game-note">Tap the word pieces in order.</p>
+            <p class="numbers-game-note">Tap the word pieces below to build the sentence.</p>
           </div>
-          <button class="small-button is-practice-advance-button" type="button" data-intro-build-new>New phrase</button>
+          <button class="small-button is-play-button" type="button" data-intro-build-new>Play</button>
         </div>
         ${state2.lastIntroductionsFeedback ? `<p class="greetings-game-feedback">${state2.lastIntroductionsFeedback}</p>` : ""}
         <div class="intro-build-target">
-          <p class="body-match-kicker">Sentence</p>
           <div class="intro-build-selected">
             ${state2.introductionsBuildSelectedTokens.length ? state2.introductionsBuildSelectedTokens.map((token) => `<span class="intro-build-chip is-selected">${token}</span>`).join("") : '<span class="intro-build-placeholder">Your sentence will appear here.</span>'}
           </div>
-          <p class="numbers-game-english">${buildTarget.english}</p>
+          ${buildComplete ? `<p class="numbers-game-pinyin">${buildTarget.targetPinyin}</p><p class="numbers-game-english">${buildTarget.english}</p>` : `<p class="numbers-game-english">${buildTarget.english}</p>`}
         </div>
         <div class="intro-build-choices">
           ${state2.introductionsBuildAvailableTokens.map((token, index) => `<button class="intro-build-chip" type="button" data-intro-build-token="${index}">${token}</button>`).join("")}
-        </div>
-        <div class="intro-build-actions">
-          <button class="small-button" type="button" data-intro-build-clear>Clear</button>
         </div>
         <div class="intro-character-grid" aria-label="Friends">
           ${Object.values(illustratedKids2).map(
@@ -1563,9 +1560,6 @@
         activityList2.querySelector("[data-intro-build-new]")?.addEventListener("click", () => {
           resetIntroductionsBuilder2();
           renderActivityPanel2(topic);
-        });
-        activityList2.querySelector("[data-intro-build-clear]")?.addEventListener("click", () => {
-          handleIntroductionsBuildClear2();
         });
         activityList2.querySelectorAll("[data-intro-build-token]").forEach((button) => {
           button.addEventListener("click", () => {
@@ -4530,12 +4524,13 @@
       { id: "me-word", hanzi: "\u6211", pinyin: "w\u01D2", english: "I; me", audio: "\u6211" },
       { id: "call-word", hanzi: "\u53EB", pinyin: "ji\xE0o", english: "to be called", audio: "\u53EB" },
       { id: "what-word", hanzi: "\u4EC0\u4E48", pinyin: "sh\xE9n me", english: "what", audio: "\u4EC0\u4E48" },
-      { id: "name-word", hanzi: "\u540D\u5B57", pinyin: "m\xEDng zi", english: "name", audio: "\u540D\u5B57" }
+      { id: "name-word", hanzi: "\u540D\u5B57", pinyin: "m\xEDng zi", english: "name", audio: "\u540D\u5B57" },
+      { id: "friend-word", hanzi: "\u670B\u53CB", pinyin: "p\xE9ng you", english: "friend", audio: "\u670B\u53CB" }
     ],
     interactiveScene: "introductions-conversation",
     parentGuide: "Practice the whole mini-conversation first: \u4F60\u597D, \u4F60\u53EB\u4EC0\u4E48\u540D\u5B57? \u6211\u53EB... Then pause after \u6211\u53EB and let the child fill in their own name.",
     cultureGuide: "Children connect strongly to names and faces, so recurring kid characters help this lesson feel social instead of abstract.",
-    activities: ["Tap to hear", "Play the conversation", "Say your own name", "Build the sentence"],
+    activities: ["Tap to hear", "Play the conversation", "Build the sentence"],
     steps: [
       { book: "1A", lesson: 6, title: "What's your name?", note: "Learn a first self-introduction pattern." },
       { book: "2A", lesson: 3, title: "Good friends", note: "Use names and social language in a wider context." }
@@ -4579,6 +4574,17 @@
         { speakerId: "yangyang", hanzi: "\u6211\u53EB\u9633\u9633\u3002", pinyin: "w\u01D2 ji\xE0o Y\xE1ng y\xE1ng.", english: "My name is Yangyang.", audio: "\u6211\u53EB\u9633\u9633" },
         { speakerId: "jaden", hanzi: "\u6211\u53EB\u6770\u767B\u3002", pinyin: "w\u01D2 ji\xE0o Ji\xE9 d\u0113ng.", english: "My name is Jaden.", audio: "\u6211\u53EB\u6770\u767B" }
       ]
+    },
+    {
+      id: "good-friends",
+      title: "Good friends",
+      imagePath: "assets/introductions/good-friends-scene.webp",
+      imageAlt: "Luna introduces Noah as her good friend to Sisi in a classroom",
+      cast: ["luna", "noah", "sisi"],
+      lines: [
+        { speakerId: "luna", hanzi: "\u4ED6\u662F\u6211\u7684\u597D\u670B\u53CB\u3002", pinyin: "t\u0101 sh\xEC w\u01D2 de h\u01CEo p\xE9ng you.", english: "He is my good friend.", audio: "\u4ED6\u662F\u6211\u7684\u597D\u670B\u53CB" },
+        { speakerId: "sisi", hanzi: "\u4F60\u597D\uFF0C\u8BFA\u4E9A\uFF01", pinyin: "n\u01D0 h\u01CEo, Nu\xF2 y\xE0!", english: "Hello, Noah!", audio: "\u4F60\u597D\u8BFA\u4E9A" }
+      ]
     }
   ];
   var introductionsGamePrompts = [
@@ -4600,6 +4606,7 @@
       id: "build-ask-name",
       sourceItemId: "ask-name",
       targetHanzi: "\u4F60\u53EB\u4EC0\u4E48\u540D\u5B57\uFF1F",
+      targetPinyin: "n\u01D0 ji\xE0o sh\xE9n me m\xEDng zi?",
       prompt: "Build: What is your name?",
       english: "What is your name?",
       audio: "\u4F60\u53EB\u4EC0\u4E48\u540D\u5B57",
@@ -4609,10 +4616,21 @@
       id: "build-my-name",
       sourceItemId: "my-name",
       targetHanzi: "\u6211\u53EB\u2026\u2026",
+      targetPinyin: "w\u01D2 ji\xE0o...",
       prompt: "Build: My name is...",
       english: "My name is...",
       audio: "\u6211\u53EB",
       tokens: ["\u6211", "\u53EB"]
+    },
+    {
+      id: "build-good-friend",
+      sourceItemId: "friend-word",
+      targetHanzi: "\u4ED6\u662F\u6211\u7684\u597D\u670B\u53CB\u3002",
+      targetPinyin: "t\u0101 sh\xEC w\u01D2 de h\u01CEo p\xE9ng you.",
+      prompt: "Build: He is my good friend.",
+      english: "He is my good friend.",
+      audio: "\u4ED6\u662F\u6211\u7684\u597D\u670B\u53CB",
+      tokens: ["\u4ED6", "\u662F", "\u6211\u7684", "\u597D\u670B\u53CB"]
     }
   ];
 
@@ -4703,7 +4721,7 @@
       state2.introductionsBuildTargetId = target.id;
       state2.introductionsBuildAvailableTokens = shuffleArray2(target.tokens);
       state2.introductionsBuildSelectedTokens = [];
-      state2.lastIntroductionsFeedback = options.feedback ?? "Build the sentence by tapping the word pieces in order.";
+      state2.lastIntroductionsFeedback = options.feedback ?? "Tap the word pieces below to build the sentence.";
     }
     function ensureIntroductionsBuilder2() {
       const target = introductionsBuildTarget2();
@@ -4727,7 +4745,9 @@
             renderFocusStatus2();
           }
         } else {
-          state2.lastIntroductionsFeedback = "Not quite. Try building the sentence again.";
+          state2.introductionsBuildAvailableTokens = shuffleArray2(target.tokens);
+          state2.introductionsBuildSelectedTokens = [];
+          state2.lastIntroductionsFeedback = "Not quite. Try again.";
         }
       }
       renderActivityPanel2(currentTopic2());
@@ -4741,7 +4761,7 @@
       renderActivityPanel2(currentTopic2());
     }
     function renderIntroductionsExplorer2() {
-      focusExplorer2.innerHTML = `<div class="numbers-board"><div class="numbers-stage-card"><p class="body-match-kicker">${currentBook2().label} Lesson ${currentLesson2().lesson}</p><h4>Book theme: asking and saying names</h4><p>This lesson mirrors Book 1A Lesson 6: say hello, ask a name, answer with \u6211\u53EB..., and repeat the new friend's name.</p></div><div class="greetings-practice-grid">${introductionsPractice2.map((exchange) => `<section class="greetings-exchange"><div class="greetings-exchange-top"><div><p class="body-match-kicker">${exchange.title}</p></div><button class="small-button is-play-button" type="button" data-intro-play-all="${exchange.id}">Play</button></div><div class="greetings-scene-layout introductions-scene-layout"><div class="greetings-scene-visual"><img class="greetings-scene-image" src="${exchange.imagePath}" alt="${exchange.imageAlt}" /></div><div class="greetings-line-stack">${exchange.lines.map((line) => `<article class="greetings-line-card intro-line-card"><div class="telephone-bubble-copy"><p class="telephone-line-hanzi">${line.hanzi}</p>${state2.showPinyin ? `<p class="telephone-line-pinyin">${line.pinyin}</p>` : ""}${state2.showEnglish ? `<p class="telephone-line-english">${line.english}</p>` : ""}</div></article>`).join("")}</div></div></section>`).join("")}</div></div>`;
+      focusExplorer2.innerHTML = `<div class="numbers-board"><div class="numbers-stage-card"><p class="body-match-kicker">${currentBook2().label} Lesson ${currentLesson2().lesson}</p><h4>Book theme: names and good friends</h4><p>Say hello, ask a name, answer with \u6211\u53EB\u2026, then introduce a friend with \u4ED6\u662F\u6211\u7684\u597D\u670B\u53CB\u3002</p></div><div class="greetings-practice-grid introductions-explorer-grid">${introductionsPractice2.map((exchange) => `<section class="greetings-exchange"><div class="greetings-exchange-top"><div><p class="body-match-kicker">${exchange.title}</p></div><button class="small-button is-play-button" type="button" data-intro-play-all="${exchange.id}">Play</button></div><div class="greetings-scene-layout introductions-scene-layout"><div class="greetings-scene-visual"><img class="greetings-scene-image" src="${exchange.imagePath}" alt="${exchange.imageAlt}" /></div><div class="greetings-line-stack">${exchange.lines.map((line) => `<article class="greetings-line-card intro-line-card"><div class="telephone-bubble-copy"><p class="telephone-line-hanzi">${line.hanzi}</p>${state2.showPinyin ? `<p class="telephone-line-pinyin">${line.pinyin}</p>` : ""}${state2.showEnglish ? `<p class="telephone-line-english">${line.english}</p>` : ""}</div></article>`).join("")}</div></div></section>`).join("")}</div></div>`;
       focusExplorer2.querySelectorAll("[data-intro-play-all]").forEach((button) => {
         button.addEventListener("click", () => {
           const exchange = introductionsPractice2.find((entry) => entry.id === button.dataset.introPlayAll);
@@ -6028,10 +6048,7 @@
       sceneLabel: "Sibling map",
       sceneMood: "See both pairs at once",
       lines: [
-        { personId: "older-brother", hanzi: "\u54E5\u54E5", pinyin: "g\u0113 ge", english: "older brother", audio: "\u54E5\u54E5" },
-        { personId: "younger-brother", hanzi: "\u5F1F\u5F1F", pinyin: "d\xEC di", english: "younger brother", audio: "\u5F1F\u5F1F" },
-        { personId: "older-sister", hanzi: "\u59D0\u59D0", pinyin: "ji\u011B jie", english: "older sister", audio: "\u59D0\u59D0" },
-        { personId: "younger-sister", hanzi: "\u59B9\u59B9", pinyin: "m\xE8i mei", english: "younger sister", audio: "\u59B9\u59B9" }
+        { hanzi: "\u6211\u4EEC\u662F\u54E5\u54E5\u3001\u5F1F\u5F1F\u3001\u59D0\u59D0\u548C\u59B9\u59B9\u3002", pinyin: "w\u01D2 men sh\xEC g\u0113 ge, d\xEC di, ji\u011B jie h\xE9 m\xE8i mei.", english: "We are an older brother, younger brother, older sister, and younger sister.", audio: "\u6211\u4EEC\u662F\u54E5\u54E5\u5F1F\u5F1F\u59D0\u59D0\u548C\u59B9\u59B9" }
       ]
     },
     {
@@ -6041,9 +6058,9 @@
       imagePath: "assets/illustrated-family/family-counting-two-younger-brothers.webp",
       imageAlt: "Three siblings having dinner together: a girl on the left and two boys",
       lines: [
-        { hanzi: "\u6211\u6709\u4E24\u4E2A\u5F1F\u5F1F\u3002", pinyin: "w\u01D2 y\u01D2u li\u01CEng ge d\xEC di.", english: "I have two younger brothers.", audio: "\u6211\u6709\u4E24\u4E2A\u5F1F\u5F1F" },
-        { hanzi: "\u6211\u6709\u4E00\u4E2A\u59D0\u59D0\u548C\u4E00\u4E2A\u5F1F\u5F1F\u3002", pinyin: "w\u01D2 y\u01D2u y\xED ge ji\u011B jie h\xE9 y\xED ge d\xEC di.", english: "I have one older sister and one younger brother.", audio: "\u6211\u6709\u4E00\u4E2A\u59D0\u59D0\u548C\u4E00\u4E2A\u5F1F\u5F1F" },
-        { hanzi: "\u6211\u6709\u4E00\u4E2A\u59D0\u59D0\u548C\u4E00\u4E2A\u54E5\u54E5\u3002", pinyin: "w\u01D2 y\u01D2u y\xED ge ji\u011B jie h\xE9 y\xED ge g\u0113 ge.", english: "I have one older sister and one older brother.", audio: "\u6211\u6709\u4E00\u4E2A\u59D0\u59D0\u548C\u4E00\u4E2A\u54E5\u54E5" }
+        { positionLabel: "\u5DE6", hanzi: "\u6211\u6709\u4E24\u4E2A\u5F1F\u5F1F\u3002", pinyin: "zu\u01D2: w\u01D2 y\u01D2u li\u01CEng ge d\xEC di.", english: "Left: I have two younger brothers.", audio: "\u6211\u6709\u4E24\u4E2A\u5F1F\u5F1F" },
+        { positionLabel: "\u4E2D", hanzi: "\u6211\u6709\u4E00\u4E2A\u59D0\u59D0\u548C\u4E00\u4E2A\u5F1F\u5F1F\u3002", pinyin: "zh\u014Dng: w\u01D2 y\u01D2u y\xED ge ji\u011B jie h\xE9 y\xED ge d\xEC di.", english: "Middle: I have one older sister and one younger brother.", audio: "\u6211\u6709\u4E00\u4E2A\u59D0\u59D0\u548C\u4E00\u4E2A\u5F1F\u5F1F" },
+        { positionLabel: "\u53F3", hanzi: "\u6211\u6709\u4E00\u4E2A\u59D0\u59D0\u548C\u4E00\u4E2A\u54E5\u54E5\u3002", pinyin: "y\xF2u: w\u01D2 y\u01D2u y\xED ge ji\u011B jie h\xE9 y\xED ge g\u0113 ge.", english: "Right: I have one older sister and one older brother.", audio: "\u6211\u6709\u4E00\u4E2A\u59D0\u59D0\u548C\u4E00\u4E2A\u54E5\u54E5" }
       ]
     },
     {
@@ -6857,7 +6874,7 @@
       </p>
     `,
         introductions: `
-      <p class="greetings-note-hanzi">\u6211 / \u53EB / \u4EC0\u4E48 / \u540D\u5B57</p>
+      <p class="greetings-note-hanzi">\u6211 / \u53EB / \u4EC0\u4E48 / \u540D\u5B57 / \u670B\u53CB</p>
       <p class="greetings-note-copy">
         <strong>\u6211</strong> means \u201CI\u201D or \u201Cme,\u201D and <strong>\u53EB</strong> is used in beginner Chinese to say what someone is called.
       </p>
@@ -6866,6 +6883,9 @@
       </p>
       <p class="greetings-note-copy">
         Let children pause after <strong>\u6211\u53EB</strong> and say their own name out loud.
+      </p>
+      <p class="greetings-note-copy">
+        In <strong>\u4ED6\u662F\u6211\u7684\u597D\u670B\u53CB\u3002</strong>, <strong>\u4ED6</strong> points to a boy already in the scene, and <strong>\u6211\u7684\u597D\u670B\u53CB</strong> means \u201Cmy good friend.\u201D
       </p>
     `,
         age: `
@@ -7659,7 +7679,7 @@
       <div class="greetings-practice-grid family-scenes-grid">
         ${familyPractice2.map(
         (exchange) => `
-              <section class="greetings-exchange">
+              <section class="greetings-exchange family-scene-${exchange.id}">
                 <div class="greetings-exchange-top">
                   <div><p class="body-match-kicker">${exchange.title}</p></div>
                   <button class="small-button is-play-button" type="button" data-family-play-all="${exchange.id}">Play</button>
@@ -7673,7 +7693,7 @@
           (line, index) => `
                           <article class="greetings-line-card">
                             <div class="telephone-bubble-copy">
-                              <p class="telephone-line-hanzi">${line.hanzi}</p>
+                              ${line.positionLabel ? `<div class="family-scene-sentence-line"><span class="family-scene-position-label">${line.positionLabel}\uFF1A</span><span class="telephone-line-hanzi">${line.hanzi}</span></div>` : `<p class="telephone-line-hanzi">${line.hanzi}</p>`}
                               ${state2.showPinyin ? `<p class="telephone-line-pinyin">${line.pinyin}</p>` : ""}
                               ${state2.showEnglish ? `<p class="telephone-line-english">${line.english}</p>` : ""}
                             </div>
@@ -10366,6 +10386,7 @@
     tiantian: { id: "tiantian", label: "Tiantian", hanziName: "\u5929\u5929", gender: "boy", ageGroup: "9-10", skinTone: "light-medium", path: "assets/illustrated-kids/tiantian.webp" },
     sisi: { id: "sisi", label: "Sisi", hanziName: "\u601D\u601D", gender: "girl", ageGroup: "8-10", skinTone: "medium brown", path: "assets/illustrated-kids/sisi.webp" },
     luna: { id: "luna", label: "Luna", hanziName: "\u9732\u5A1C", gender: "girl", ageGroup: "8-10", skinTone: "medium", path: "assets/illustrated-kids/luna.webp" },
+    noah: { id: "noah", label: "Noah", hanziName: "\u8BFA\u4E9A", gender: "boy", ageGroup: "7-8", skinTone: "fair", path: "assets/illustrated-kids/noah.webp" },
     sophie: { id: "sophie", label: "Sophie", hanziName: "\u82CF\u83F2", gender: "girl", ageGroup: "8-10", skinTone: "light", path: "assets/illustrated-kids/sophie.webp" },
     jaden: { id: "jaden", label: "Jaden", hanziName: "\u6770\u767B", gender: "boy", ageGroup: "7-8", skinTone: "deep brown", path: "assets/illustrated-kids/jaden.webp" }
   };

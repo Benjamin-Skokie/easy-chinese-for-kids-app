@@ -79,10 +79,7 @@ export const familyPractice = [
     sceneLabel: "Sibling map",
     sceneMood: "See both pairs at once",
     lines: [
-      { personId: "older-brother", hanzi: "哥哥", pinyin: "gē ge", english: "older brother", audio: "哥哥" },
-      { personId: "younger-brother", hanzi: "弟弟", pinyin: "dì di", english: "younger brother", audio: "弟弟" },
-      { personId: "older-sister", hanzi: "姐姐", pinyin: "jiě jie", english: "older sister", audio: "姐姐" },
-      { personId: "younger-sister", hanzi: "妹妹", pinyin: "mèi mei", english: "younger sister", audio: "妹妹" }
+      { hanzi: "我们是哥哥、弟弟、姐姐和妹妹。", pinyin: "wǒ men shì gē ge, dì di, jiě jie hé mèi mei.", english: "We are an older brother, younger brother, older sister, and younger sister.", audio: "我们是哥哥弟弟姐姐和妹妹" }
     ]
   },
   {
@@ -92,9 +89,9 @@ export const familyPractice = [
     imagePath: "assets/illustrated-family/family-counting-two-younger-brothers.webp",
     imageAlt: "Three siblings having dinner together: a girl on the left and two boys",
     lines: [
-      { hanzi: "我有两个弟弟。", pinyin: "wǒ yǒu liǎng ge dì di.", english: "I have two younger brothers.", audio: "我有两个弟弟" },
-      { hanzi: "我有一个姐姐和一个弟弟。", pinyin: "wǒ yǒu yí ge jiě jie hé yí ge dì di.", english: "I have one older sister and one younger brother.", audio: "我有一个姐姐和一个弟弟" },
-      { hanzi: "我有一个姐姐和一个哥哥。", pinyin: "wǒ yǒu yí ge jiě jie hé yí ge gē ge.", english: "I have one older sister and one older brother.", audio: "我有一个姐姐和一个哥哥" }
+      { positionLabel: "左", hanzi: "我有两个弟弟。", pinyin: "zuǒ: wǒ yǒu liǎng ge dì di.", english: "Left: I have two younger brothers.", audio: "我有两个弟弟" },
+      { positionLabel: "中", hanzi: "我有一个姐姐和一个弟弟。", pinyin: "zhōng: wǒ yǒu yí ge jiě jie hé yí ge dì di.", english: "Middle: I have one older sister and one younger brother.", audio: "我有一个姐姐和一个弟弟" },
+      { positionLabel: "右", hanzi: "我有一个姐姐和一个哥哥。", pinyin: "yòu: wǒ yǒu yí ge jiě jie hé yí ge gē ge.", english: "Right: I have one older sister and one older brother.", audio: "我有一个姐姐和一个哥哥" }
     ]
   }
   , {

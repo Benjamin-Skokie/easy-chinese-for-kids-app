@@ -79,7 +79,7 @@ export function createIntroductionsController({
     state.introductionsBuildTargetId = target.id;
     state.introductionsBuildAvailableTokens = shuffleArray(target.tokens);
     state.introductionsBuildSelectedTokens = [];
-    state.lastIntroductionsFeedback = options.feedback ?? "Build the sentence by tapping the word pieces in order.";
+    state.lastIntroductionsFeedback = options.feedback ?? "Tap the word pieces below to build the sentence.";
   }
 
   function ensureIntroductionsBuilder() {
@@ -105,7 +105,9 @@ export function createIntroductionsController({
           renderFocusStatus();
         }
       } else {
-        state.lastIntroductionsFeedback = "Not quite. Try building the sentence again.";
+        state.introductionsBuildAvailableTokens = shuffleArray(target.tokens);
+        state.introductionsBuildSelectedTokens = [];
+        state.lastIntroductionsFeedback = "Not quite. Try again.";
       }
     }
     renderActivityPanel(currentTopic());
@@ -121,7 +123,7 @@ export function createIntroductionsController({
   }
 
   function renderIntroductionsExplorer() {
-    focusExplorer.innerHTML = `<div class="numbers-board"><div class="numbers-stage-card"><p class="body-match-kicker">${currentBook().label} Lesson ${currentLesson().lesson}</p><h4>Book theme: asking and saying names</h4><p>This lesson mirrors Book 1A Lesson 6: say hello, ask a name, answer with 我叫..., and repeat the new friend's name.</p></div><div class="greetings-practice-grid">${introductionsPractice.map((exchange) => `<section class="greetings-exchange"><div class="greetings-exchange-top"><div><p class="body-match-kicker">${exchange.title}</p></div><button class="small-button is-play-button" type="button" data-intro-play-all="${exchange.id}">Play</button></div><div class="greetings-scene-layout introductions-scene-layout"><div class="greetings-scene-visual"><img class="greetings-scene-image" src="${exchange.imagePath}" alt="${exchange.imageAlt}" /></div><div class="greetings-line-stack">${exchange.lines.map((line) => `<article class="greetings-line-card intro-line-card"><div class="telephone-bubble-copy"><p class="telephone-line-hanzi">${line.hanzi}</p>${state.showPinyin ? `<p class="telephone-line-pinyin">${line.pinyin}</p>` : ""}${state.showEnglish ? `<p class="telephone-line-english">${line.english}</p>` : ""}</div></article>`).join("")}</div></div></section>`).join("")}</div></div>`;
+    focusExplorer.innerHTML = `<div class="numbers-board"><div class="numbers-stage-card"><p class="body-match-kicker">${currentBook().label} Lesson ${currentLesson().lesson}</p><h4>Book theme: names and good friends</h4><p>Say hello, ask a name, answer with 我叫…, then introduce a friend with 他是我的好朋友。</p></div><div class="greetings-practice-grid introductions-explorer-grid">${introductionsPractice.map((exchange) => `<section class="greetings-exchange"><div class="greetings-exchange-top"><div><p class="body-match-kicker">${exchange.title}</p></div><button class="small-button is-play-button" type="button" data-intro-play-all="${exchange.id}">Play</button></div><div class="greetings-scene-layout introductions-scene-layout"><div class="greetings-scene-visual"><img class="greetings-scene-image" src="${exchange.imagePath}" alt="${exchange.imageAlt}" /></div><div class="greetings-line-stack">${exchange.lines.map((line) => `<article class="greetings-line-card intro-line-card"><div class="telephone-bubble-copy"><p class="telephone-line-hanzi">${line.hanzi}</p>${state.showPinyin ? `<p class="telephone-line-pinyin">${line.pinyin}</p>` : ""}${state.showEnglish ? `<p class="telephone-line-english">${line.english}</p>` : ""}</div></article>`).join("")}</div></div></section>`).join("")}</div></div>`;
     focusExplorer.querySelectorAll("[data-intro-play-all]").forEach((button) => {
       button.addEventListener("click", () => {
         const exchange = introductionsPractice.find((entry) => entry.id === button.dataset.introPlayAll);

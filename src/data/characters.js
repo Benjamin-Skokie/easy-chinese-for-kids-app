@@ -6,6 +6,7 @@ export const illustratedKids = {
   tiantian: { id: "tiantian", label: "Tiantian", hanziName: "天天", gender: "boy", ageGroup: "9-10", skinTone: "light-medium", path: "assets/illustrated-kids/tiantian.webp" },
   sisi: { id: "sisi", label: "Sisi", hanziName: "思思", gender: "girl", ageGroup: "8-10", skinTone: "medium brown", path: "assets/illustrated-kids/sisi.webp" },
   luna: { id: "luna", label: "Luna", hanziName: "露娜", gender: "girl", ageGroup: "8-10", skinTone: "medium", path: "assets/illustrated-kids/luna.webp" },
+  noah: { id: "noah", label: "Noah", hanziName: "诺亚", gender: "boy", ageGroup: "7-8", skinTone: "fair", path: "assets/illustrated-kids/noah.webp" },
   sophie: { id: "sophie", label: "Sophie", hanziName: "苏菲", gender: "girl", ageGroup: "8-10", skinTone: "light", path: "assets/illustrated-kids/sophie.webp" },
   jaden: { id: "jaden", label: "Jaden", hanziName: "杰登", gender: "boy", ageGroup: "7-8", skinTone: "deep brown", path: "assets/illustrated-kids/jaden.webp" }
 };

@@ -3290,6 +3290,11 @@ h4 {
   gap: 14px;
 }
 
+.introductions-explorer-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+}
+
 .position-scene-grid {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
@@ -5106,6 +5111,14 @@ h4 {
 }
 
 @media (max-width: 560px) {
+  .introductions-explorer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .family-scenes-grid {
+    grid-template-columns: 1fr;
+  }
+
   .family-sentence-choice-grid {
     grid-template-columns: 1fr;
   }
@@ -5118,6 +5131,50 @@ h4 {
 
 .introductions-scene-layout {
   grid-template-columns: minmax(0, 1fr) minmax(280px, 1fr);
+}
+
+.introductions-explorer-grid .introductions-scene-layout {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.introductions-explorer-grid .greetings-line-stack {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.family-scenes-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.family-scenes-grid .family-scene-layout {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.family-scene-family-scene-1 .greetings-line-stack {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.family-scene-family-scene-1 .greetings-line-card:first-child {
+  grid-column: 1 / -1;
+}
+
+.family-scene-family-scene-2 .greetings-line-stack {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.family-scene-position-label {
+  margin-right: 0.35rem;
+  font-family: var(--hanzi-font);
+  font-size: var(--learner-hanzi-size);
+}
+
+.family-scene-sentence-line {
+  display: flex;
+  align-items: baseline;
+  gap: 0.35rem;
+}
+
+.family-scene-sentence-line .telephone-line-hanzi {
+  margin: 0;
 }
 
 .introductions-scene-layout .greetings-scene-image {
