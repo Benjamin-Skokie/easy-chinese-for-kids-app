@@ -262,6 +262,8 @@ function sharedLessonPracticeConfig(topic) {
         meaningIds: () => state.nationalityMatchSymbolOrder,
         matchedIds: () => state.nationalityMatchedIds,
         selectedId: () => state.nationalityMatchSelectedId,
+        wrongPhraseIds: () => state.nationalityMatchWrongPhraseIds,
+        wrongMeaningIds: () => state.nationalityMatchWrongMeaningIds,
         feedback: () => state.nationalityMatchFeedback,
         phraseContent: (id) => { const item = nationalityPracticeItems().find((entry) => entry.id === id); return item ? `<span class="nationality-match-country"><img class="nationality-match-flag" src="${item.flagAsset}" alt="${item.flagAlt}" /><span class="nationality-match-copy"><span class="numbers-game-hanzi">${item.countryHanzi}</span><span class="numbers-game-english">${item.flagAlt.replace(" flag", "")}</span></span></span>` : ""; },
         meaningContent: (id) => { const item = nationalityPracticeItems().find((entry) => entry.id === id); return item ? `<span class="nationality-match-symbol-card"><img class="nationality-match-symbol" src="${item.symbolAsset}" alt="${item.symbolCaption}" /><span class="numbers-game-english">${item.symbolCaption}</span></span>` : ""; },
@@ -302,6 +304,8 @@ function sharedLessonPracticeConfig(topic) {
         meaningIds: () => state.weekdayMeaningOrder,
         matchedIds: () => state.weekdayMatchedIds,
         selectedId: () => state.weekdaySelectedPhraseId,
+        wrongPhraseIds: () => state.weekdayMatchWrongPhraseIds,
+        wrongMeaningIds: () => state.weekdayMatchWrongMeaningIds,
         feedback: () => state.weekdayMatchFeedback,
         meaningLabel: (id) => timeDateWeekItems.find((item) => item.id === id)?.english ?? "",
         onNew: () => {
@@ -317,6 +321,7 @@ function sharedLessonPracticeConfig(topic) {
   if (topic.id === "family") {
     return {
       summary: "Make your own family sentence, then match each family word to the right family member.",
+      shellClass: "family-lesson-practice-shell",
       ensure: () => {
         ensureFamilyMatchGame();
       },
@@ -330,7 +335,10 @@ function sharedLessonPracticeConfig(topic) {
         meaningIds: () => state.familyMeaningOrder,
         matchedIds: () => state.familyMatchedIds,
         selectedId: () => state.familySelectedPhraseId,
+        wrongPhraseIds: () => state.familyMatchWrongPhraseIds,
+        wrongMeaningIds: () => state.familyMatchWrongMeaningIds,
         feedback: () => state.familyMatchFeedback,
+        showPlayAgain: false,
         meaningLabel: (id) => familyPersonForItemId(id)?.label ?? "",
         meaningContent: (id) => {
           const person = familyPersonForItemId(id);
@@ -381,6 +389,8 @@ function sharedLessonPracticeConfig(topic) {
         meaningIds: () => state.greetingsMeaningOrder,
         matchedIds: () => state.greetingsMatchedIds,
         selectedId: () => state.greetingsSelectedPhraseId,
+        wrongPhraseIds: () => state.greetingsMatchWrongPhraseIds,
+        wrongMeaningIds: () => state.greetingsMatchWrongMeaningIds,
         feedback: () => state.greetingsMatchFeedback,
         meaningLabel: greetingsMeaningLabel,
         onNew: () => {
@@ -410,6 +420,8 @@ function sharedLessonPracticeConfig(topic) {
         meaningIds: () => state.politeMeaningOrder,
         matchedIds: () => state.politeMatchedIds,
         selectedId: () => state.politeSelectedPhraseId,
+        wrongPhraseIds: () => state.politeMatchWrongPhraseIds,
+        wrongMeaningIds: () => state.politeMatchWrongMeaningIds,
         feedback: () => state.politeMatchFeedback,
         meaningLabel: politeMeaningLabel,
         onNew: () => {
@@ -449,6 +461,8 @@ function sharedLessonPracticeConfig(topic) {
         meaningIds: () => state.politeMeaningOrder,
         matchedIds: () => state.politeMatchedIds,
         selectedId: () => state.politeSelectedPhraseId,
+        wrongPhraseIds: () => state.politeMatchWrongPhraseIds,
+        wrongMeaningIds: () => state.politeMatchWrongMeaningIds,
         feedback: () => state.politeMatchFeedback,
         meaningLabel: politeMeaningLabel,
         onNew: () => {
@@ -492,6 +506,8 @@ function sharedLessonPracticeConfig(topic) {
         meaningIds: () => state.dateEventOrder,
         matchedIds: () => state.dateMatchedIds,
         selectedId: () => state.dateSelectedPhraseId,
+        wrongPhraseIds: () => state.dateMatchWrongPhraseIds,
+        wrongMeaningIds: () => state.dateMatchWrongMeaningIds,
         feedback: () => state.dateMatchFeedback,
         meaningLabel: (id) => timeDateMonthItems.find((item) => item.id === id)?.english ?? "",
         onNew: () => {

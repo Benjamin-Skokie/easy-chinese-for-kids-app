@@ -2522,6 +2522,14 @@ h4 {
   font-weight: 700;
 }
 
+.greetings-game-feedback.is-correct {
+  color: #386c32;
+}
+
+.greetings-game-feedback.is-wrong {
+  color: var(--berry-dark);
+}
+
 .greetings-game-option {
   min-height: 132px;
   justify-content: center;
@@ -3249,6 +3257,13 @@ h4 {
 
 .family-match-open-board {
   margin-top: 10px;
+}
+
+.family-lesson-practice-shell .family-match-open-board .polite-match-card {
+  height: 104px;
+  min-height: 104px;
+  padding-block: 10px;
+  align-content: center;
 }
 
 .greetings-game-scene-note {
@@ -5314,6 +5329,11 @@ h4 {
   opacity: 0.38;
 }
 
+.family-sentence-builder .numbers-game-option {
+  justify-items: center;
+  text-align: center;
+}
+
 .family-sentence-choice-options .numbers-game-option {
   min-height: 2.55rem;
   padding: 0.4rem;
@@ -6566,6 +6586,11 @@ h4 {
   border-color: rgba(111, 143, 97, 0.32);
   background: linear-gradient(180deg, #eef7ea, #dcefd2);
   cursor: default;
+}
+
+.body-match-card.is-wrong {
+  border-color: rgba(190, 91, 73, 0.48);
+  background: linear-gradient(180deg, #fff7f4, #f7ded8);
 }
 
 .body-match-card:disabled {

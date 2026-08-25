@@ -3,6 +3,8 @@ export function createFoundationsRuntime(context) {
   let telephoneMatchSelectedId = "";
   let telephoneMatchedIds = new Set();
   let telephoneMatchFeedback = "";
+  let telephoneWrongQuestionIds = new Set();
+  let telephoneWrongAnswerIds = new Set();
 
 function numberStageItems(stage = currentNumberStage()) {
   const start = Math.min(stage.start, stage.end);
@@ -318,6 +320,8 @@ function resetFamilyMatchGame() {
   state.familyMatchedIds = new Set();
   state.familyPhraseOrder = shuffleArray(items.map((item) => item.id));
   state.familyMeaningOrder = shuffleArray(items.map((item) => item.id));
+  state.familyMatchWrongPhraseIds = new Set();
+  state.familyMatchWrongMeaningIds = new Set();
   state.familyMatchFeedback = "";
   state.lastFamilyFeedback = state.familyMatchFeedback;
 }
@@ -378,6 +382,8 @@ function handleFamilyMatchAttempt(targetId) {
   }
 
   state.familyMatchFeedback = "Try a different family member.";
+  state.familyMatchWrongPhraseIds = new Set([...state.familyMatchWrongPhraseIds, selectedId]);
+  state.familyMatchWrongMeaningIds = new Set([...state.familyMatchWrongMeaningIds, targetId]);
   state.lastFamilyFeedback = state.familyMatchFeedback;
   renderActivityPanel(currentTopic());
 }
@@ -473,6 +479,8 @@ function nextBodyRound() {
 
 function resetBodyMatchGame() {
   state.bodyMatchedIds = new Set();
+  state.bodyMatchWrongChineseIds = new Set();
+  state.bodyMatchWrongEnglishIds = new Set();
   state.bodyMatchUniverseKey = bodyMatchItems()
     .map((item) => item.id)
     .sort()
@@ -535,6 +543,8 @@ function handleBodyMatchAttempt(englishId, chineseId = state.bodySelectedChinese
   }
 
   state.lastBodyFeedback = `Try again. ${itemsById[chineseId].hanzi} is not ${itemsById[englishId].english}.`;
+  state.bodyMatchWrongChineseIds = new Set([...state.bodyMatchWrongChineseIds, chineseId]);
+  state.bodyMatchWrongEnglishIds = new Set([...state.bodyMatchWrongEnglishIds, englishId]);
   renderActivityPanel(currentTopic());
 }
 
@@ -753,12 +763,14 @@ function renderBodyMatchPanel() {
               .map((id) => {
                 const matchItem = matchItems[id];
                 const selected = state.bodySelectedChineseId === id;
+                const wrong = state.bodyMatchWrongChineseIds.has(id);
                 return `
                   <button
-                    class="body-match-card body-match-card-chinese${selected ? " is-selected" : ""}"
+                    class="body-match-card body-match-card-chinese${selected ? " is-selected" : ""}${wrong ? " is-wrong" : ""}"
                     type="button"
                     data-body-match-chinese="${id}"
                   >
+                    ${wrong ? '<span class="answer-result-mark" aria-hidden="true">×</span>' : ""}
                     <span class="body-match-hanzi">${matchItem.hanzi}</span>
                     ${state.showPinyin ? `<span class="body-match-pinyin">${matchItem.pinyin}</span>` : ""}
                   </button>
@@ -775,12 +787,14 @@ function renderBodyMatchPanel() {
                 }
                 const solved = state.bodyMatchedIds.has(id);
                 const selected = state.bodySelectedEnglishId === id;
+                const wrong = state.bodyMatchWrongEnglishIds.has(id);
                 return `
                   <button
-                    class="body-match-card body-match-card-english${solved ? " is-solved" : ""}${selected ? " is-selected" : ""}"
+                    class="body-match-card body-match-card-english${solved ? " is-solved" : ""}${selected ? " is-selected" : ""}${wrong ? " is-wrong" : ""}"
                     type="button"
                     data-body-match-english="${id}"
                   >
+                    ${wrong ? '<span class="answer-result-mark" aria-hidden="true">×</span>' : ""}
                     <span class="body-match-english">${matchItem.english}</span>
                   </button>
                 `;
@@ -954,7 +968,7 @@ function renderTelephoneExplorer() {
       <section class="practice-split-card"><div class="numbers-game-top"><div><p class="body-match-kicker">Let's practice</p><p class="numbers-game-note">Tap a question on the left, then tap its matching answer on the right.</p></div><button class="small-button is-play-button" type="button" data-telephone-practice-play>Play</button></div>
         ${telephoneMatchFeedback ? `<p class="greetings-game-feedback">${telephoneMatchFeedback}</p>` : ""}
         <div class="family-match-board-headings"><p class="body-match-kicker">Question</p><p class="body-match-kicker">Answer</p></div>
-        <div class="polite-match-board family-match-open-board"><div class="polite-match-column">${profilePairs.filter((pair) => !telephoneMatchedIds.has(pair.id)).map((pair) => `<button class="polite-match-card polite-match-card-phrase${telephoneMatchSelectedId === pair.id ? " is-selected" : ""}" type="button" data-telephone-question="${pair.id}"><span class="numbers-game-hanzi">${pair.question.hanzi}</span>${state.showPinyin ? `<span class="numbers-game-pinyin">${pair.question.pinyin}</span>` : ""}${state.showEnglish ? `<span class="numbers-game-english">${pair.question.english}</span>` : ""}</button>`).join("")}</div><div class="polite-match-column">${profilePairs.filter((pair) => !telephoneMatchedIds.has(pair.id)).slice().reverse().map((pair) => `<button class="polite-match-card polite-match-card-meaning" type="button" data-telephone-answer="${pair.id}"><span class="numbers-game-hanzi">${pair.answer.hanzi}</span>${state.showPinyin ? `<span class="numbers-game-pinyin">${pair.answer.pinyin}</span>` : ""}${state.showEnglish ? `<span class="numbers-game-english">${pair.answer.english}</span>` : ""}</button>`).join("")}</div></div>
+        <div class="polite-match-board family-match-open-board"><div class="polite-match-column">${profilePairs.filter((pair) => !telephoneMatchedIds.has(pair.id)).map((pair) => { const wrong = telephoneWrongQuestionIds.has(pair.id); return `<button class="polite-match-card polite-match-card-phrase${telephoneMatchSelectedId === pair.id ? " is-selected" : ""}${wrong ? " is-wrong" : ""}" type="button" data-telephone-question="${pair.id}">${wrong ? '<span class="answer-result-mark" aria-hidden="true">×</span>' : ""}<span class="numbers-game-hanzi">${pair.question.hanzi}</span>${state.showPinyin ? `<span class="numbers-game-pinyin">${pair.question.pinyin}</span>` : ""}${state.showEnglish ? `<span class="numbers-game-english">${pair.question.english}</span>` : ""}</button>`; }).join("")}</div><div class="polite-match-column">${profilePairs.filter((pair) => !telephoneMatchedIds.has(pair.id)).slice().reverse().map((pair) => { const wrong = telephoneWrongAnswerIds.has(pair.id); return `<button class="polite-match-card polite-match-card-meaning${wrong ? " is-wrong" : ""}" type="button" data-telephone-answer="${pair.id}">${wrong ? '<span class="answer-result-mark" aria-hidden="true">×</span>' : ""}<span class="numbers-game-hanzi">${pair.answer.hanzi}</span>${state.showPinyin ? `<span class="numbers-game-pinyin">${pair.answer.pinyin}</span>` : ""}${state.showEnglish ? `<span class="numbers-game-english">${pair.answer.english}</span>` : ""}</button>`; }).join("")}</div></div>
         ${telephoneMatchedIds.size ? `<div class="family-match-solved-pairs">${profilePairs.filter((pair) => telephoneMatchedIds.has(pair.id)).map((pair) => `<article class="family-match-solved-row"><div class="polite-match-card family-match-pair-card is-solved"><span class="answer-result-mark">✓</span><span class="numbers-game-hanzi">${pair.question.hanzi}</span></div><div class="polite-match-card family-match-pair-card is-solved"><span class="answer-result-mark">✓</span><span class="numbers-game-hanzi">${pair.answer.hanzi}</span></div></article>`).join("")}</div>` : ""}
         ${telephoneMatchedIds.size === profilePairs.length ? `<section class="nationality-conversation-reveal" aria-live="polite">${renderLines([residence.lines[1], phone.lines[1]])}</section>` : ""}
       </section>
@@ -974,6 +988,8 @@ function renderTelephoneExplorer() {
     telephoneMatchSelectedId = "";
     telephoneMatchedIds = new Set();
     telephoneMatchFeedback = "";
+    telephoneWrongQuestionIds = new Set();
+    telephoneWrongAnswerIds = new Set();
     if (state.tapAudioEnabled) speakSceneLines(profilePairs.flatMap((pair) => [pair.question, pair.answer]), 0.74);
     renderTelephoneExplorer();
   });
@@ -995,7 +1011,11 @@ function renderTelephoneExplorer() {
         telephoneMatchFeedback = telephoneMatchedIds.size === profilePairs.length ? "Grandparents profile complete." : "Matched. Choose the next question.";
         telephoneMatchSelectedId = "";
         if (pair && state.tapAudioEnabled) speak(pair.answer.audio, 0.78);
-      } else telephoneMatchFeedback = "Try a different answer.";
+      } else {
+        telephoneMatchFeedback = "Try a different answer.";
+        telephoneWrongQuestionIds = new Set([...telephoneWrongQuestionIds, telephoneMatchSelectedId]);
+        telephoneWrongAnswerIds = new Set([...telephoneWrongAnswerIds, button.dataset.telephoneAnswer]);
+      }
       renderTelephoneExplorer();
     });
   });

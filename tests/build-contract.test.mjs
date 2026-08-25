@@ -52,6 +52,8 @@ test("the local page loads a single bundled application script", () => {
   assert.match(html, /<link rel="stylesheet" href="styles\.css\?v=20260825-number-feedback-v3" \/>/);
   assert.match(html, /<script src="app\.js\?v=20260825-number-feedback-v3"><\/script>/);
   assert.doesNotMatch(html, /type="module"/);
+  assert.doesNotMatch(html, /Tap a word to hear it and explore the picture\./);
+  assert.doesNotMatch(html, /<h3>Review<\/h3>/);
 });
 
 test("absolute filesystem paths are rejected before commits and deployment", () => {
@@ -202,6 +204,37 @@ test("Greetings starts a different listen-and-choose round after a correct answe
   assert.match(sharedPracticeSource, /const playLabel = typeof config\.playLabel === "function" \? config\.playLabel\(\) : \(config\.playLabel \?\? "Play"\)/);
   assert.match(controllerSource, /state\.greetingsChallengeResult === "correct"[\s\S]{0,300}resetGreetingsChallenge\(\{[\s\S]{0,360}speak\(nextItem\.audio, 0\.78\)/);
   assert.match(controllerSource, /nextRandomCycleId\(state, "greetings-listen", items\.map\(\(item\) => item\.id\)\)/);
+});
+
+test("evaluated practice choices keep visible correct or wrong feedback", () => {
+  const sharedPracticeSource = readFileSync("src/games/shared-lesson-practice.js", "utf8");
+  const practiceSource = readFileSync("src/core/lesson-practice-runtime.js", "utf8");
+  const foundationsSource = readFileSync("src/features/foundations/foundations-runtime.js", "utf8");
+  const schoolSource = readFileSync("src/features/school-life/school-food-runtime.js", "utf8");
+
+  assert.match(sharedPracticeSource, /wrongPhraseIds\?\.\(\)\.has\(id\)/);
+  assert.match(sharedPracticeSource, /wrongMeaningIds\?\.\(\)\.has\(id\)/);
+  for (const game of ["nationality", "weekday", "family", "greetings", "polite", "date"]) {
+    assert.match(practiceSource, new RegExp(`wrongPhraseIds: \\(\\) => state\\.${game}MatchWrongPhraseIds`));
+    assert.match(practiceSource, new RegExp(`wrongMeaningIds: \\(\\) => state\\.${game}MatchWrongMeaningIds`));
+  }
+  assert.match(foundationsSource, /bodyMatchWrongChineseIds[\s\S]{0,800}answer-result-mark/);
+  assert.match(foundationsSource, /telephoneWrongQuestionIds[\s\S]{0,2200}telephoneWrongAnswerIds/);
+  assert.match(schoolSource, /backpackGameFeedback[\s\S]{0,1000}Correct!/);
+  assert.match(schoolSource, /foodHungerFeedback[\s\S]{0,1200}Correct!/);
+});
+
+test("My Family matching keeps paired cards aligned and one round-reset control", () => {
+  const practiceSource = readFileSync("src/core/lesson-practice-runtime.js", "utf8");
+  const styles = readFileSync("styles.css", "utf8");
+  assert.match(practiceSource, /summary: "Make your own family sentence[\s\S]{0,160}shellClass: "family-lesson-practice-shell"/);
+  assert.match(practiceSource, /feedback: \(\) => state\.familyMatchFeedback,[\s\S]{0,100}showPlayAgain: false/);
+  assert.match(styles, /\.family-lesson-practice-shell \.family-match-open-board \.polite-match-card \{[\s\S]{0,120}height: 104px;/);
+});
+
+test("My Family sentence choices center their labels", () => {
+  const styles = readFileSync("styles.css", "utf8");
+  assert.match(styles, /\.family-sentence-builder \.numbers-game-option \{[\s\S]{0,100}justify-items: center;[\s\S]{0,100}text-align: center;/);
 });
 
 test("random practice cycles show every prompt before repeating", () => {

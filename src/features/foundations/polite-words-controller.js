@@ -71,6 +71,8 @@ export function createPoliteWordsController({
     state.politeMatchedIds = new Set();
     state.politePhraseOrder = shuffleArray(items.map((item) => item.id));
     state.politeMeaningOrder = shuffleArray(items.map((item) => item.id));
+    state.politeMatchWrongPhraseIds = new Set();
+    state.politeMatchWrongMeaningIds = new Set();
     state.politeMatchFeedback = options.feedback ?? "";
     state.lastPoliteFeedback = state.politeMatchFeedback;
   }
@@ -131,6 +133,8 @@ export function createPoliteWordsController({
     }
 
     state.politeMatchFeedback = `Try again. ${selectedItem.hanzi} does not match that meaning.`;
+    state.politeMatchWrongPhraseIds = new Set([...state.politeMatchWrongPhraseIds, selectedId]);
+    state.politeMatchWrongMeaningIds = new Set([...state.politeMatchWrongMeaningIds, targetId]);
     state.lastPoliteFeedback = state.politeMatchFeedback;
     renderActivityPanel(currentTopic());
   }

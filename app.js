@@ -903,6 +903,8 @@
             meaningIds: () => state2.nationalityMatchSymbolOrder,
             matchedIds: () => state2.nationalityMatchedIds,
             selectedId: () => state2.nationalityMatchSelectedId,
+            wrongPhraseIds: () => state2.nationalityMatchWrongPhraseIds,
+            wrongMeaningIds: () => state2.nationalityMatchWrongMeaningIds,
             feedback: () => state2.nationalityMatchFeedback,
             phraseContent: (id) => {
               const item = nationalityPracticeItems2().find((entry) => entry.id === id);
@@ -951,6 +953,8 @@
             meaningIds: () => state2.weekdayMeaningOrder,
             matchedIds: () => state2.weekdayMatchedIds,
             selectedId: () => state2.weekdaySelectedPhraseId,
+            wrongPhraseIds: () => state2.weekdayMatchWrongPhraseIds,
+            wrongMeaningIds: () => state2.weekdayMatchWrongMeaningIds,
             feedback: () => state2.weekdayMatchFeedback,
             meaningLabel: (id) => timeDateWeekItems2.find((item) => item.id === id)?.english ?? "",
             onNew: () => {
@@ -965,6 +969,7 @@
       if (topic.id === "family") {
         return {
           summary: "Make your own family sentence, then match each family word to the right family member.",
+          shellClass: "family-lesson-practice-shell",
           ensure: () => {
             ensureFamilyMatchGame2();
           },
@@ -978,7 +983,10 @@
             meaningIds: () => state2.familyMeaningOrder,
             matchedIds: () => state2.familyMatchedIds,
             selectedId: () => state2.familySelectedPhraseId,
+            wrongPhraseIds: () => state2.familyMatchWrongPhraseIds,
+            wrongMeaningIds: () => state2.familyMatchWrongMeaningIds,
             feedback: () => state2.familyMatchFeedback,
+            showPlayAgain: false,
             meaningLabel: (id) => familyPersonForItemId2(id)?.label ?? "",
             meaningContent: (id) => {
               const person = familyPersonForItemId2(id);
@@ -1028,6 +1036,8 @@
             meaningIds: () => state2.greetingsMeaningOrder,
             matchedIds: () => state2.greetingsMatchedIds,
             selectedId: () => state2.greetingsSelectedPhraseId,
+            wrongPhraseIds: () => state2.greetingsMatchWrongPhraseIds,
+            wrongMeaningIds: () => state2.greetingsMatchWrongMeaningIds,
             feedback: () => state2.greetingsMatchFeedback,
             meaningLabel: greetingsMeaningLabel2,
             onNew: () => {
@@ -1056,6 +1066,8 @@
             meaningIds: () => state2.politeMeaningOrder,
             matchedIds: () => state2.politeMatchedIds,
             selectedId: () => state2.politeSelectedPhraseId,
+            wrongPhraseIds: () => state2.politeMatchWrongPhraseIds,
+            wrongMeaningIds: () => state2.politeMatchWrongMeaningIds,
             feedback: () => state2.politeMatchFeedback,
             meaningLabel: politeMeaningLabel2,
             onNew: () => {
@@ -1094,6 +1106,8 @@
             meaningIds: () => state2.politeMeaningOrder,
             matchedIds: () => state2.politeMatchedIds,
             selectedId: () => state2.politeSelectedPhraseId,
+            wrongPhraseIds: () => state2.politeMatchWrongPhraseIds,
+            wrongMeaningIds: () => state2.politeMatchWrongMeaningIds,
             feedback: () => state2.politeMatchFeedback,
             meaningLabel: politeMeaningLabel2,
             onNew: () => {
@@ -1136,6 +1150,8 @@
             meaningIds: () => state2.dateEventOrder,
             matchedIds: () => state2.dateMatchedIds,
             selectedId: () => state2.dateSelectedPhraseId,
+            wrongPhraseIds: () => state2.dateMatchWrongPhraseIds,
+            wrongMeaningIds: () => state2.dateMatchWrongMeaningIds,
             feedback: () => state2.dateMatchFeedback,
             meaningLabel: (id) => timeDateMonthItems2.find((item) => item.id === id)?.english ?? "",
             onNew: () => {
@@ -3580,6 +3596,7 @@
       state2.backpackGameTargetIndex = 0;
       state2.backpackGamePlacedIds = [];
       state2.backpackGameComplete = false;
+      state2.backpackGameFeedback = "";
       prepareBackpackGameOptions();
     }
     function ensureBackpackGame() {
@@ -3596,10 +3613,12 @@
       if (!target) return;
       if (itemId !== target.id) {
         state2.backpackGameWrongIds = /* @__PURE__ */ new Set([...state2.backpackGameWrongIds, itemId]);
+        state2.backpackGameFeedback = "Not this one. Try another card.";
         renderActivityPanel2(currentTopic2());
         return;
       }
       state2.backpackGamePlacedIds = [...state2.backpackGamePlacedIds, target.id];
+      state2.backpackGameFeedback = `Correct! ${target.hanzi} goes in the backpack.`;
       if (state2.tapAudioEnabled) speak2(target.audio, 0.78);
       state2.backpackGameTargetIndex += 1;
       state2.backpackGameComplete = state2.backpackGameTargetIndex === state2.backpackGameRoundIds.length;
@@ -4067,6 +4086,7 @@
       state2.foodHungerTargetIndex = 0;
       state2.foodHungerPlatedIds = [];
       state2.foodHungerComplete = false;
+      state2.foodHungerFeedback = "";
       prepareFoodHungerOptions();
     }
     function ensureFoodHungerGame() {
@@ -4084,10 +4104,12 @@
       if (!target) return;
       if (itemId !== target.id) {
         state2.foodHungerWrongIds = /* @__PURE__ */ new Set([...state2.foodHungerWrongIds, itemId]);
+        state2.foodHungerFeedback = "Not this one. Try another card.";
         renderActivityPanel2(currentTopic2());
         return;
       }
       state2.foodHungerPlatedIds = [...state2.foodHungerPlatedIds, target.id];
+      state2.foodHungerFeedback = `Correct! ${target.hanzi} is in the cart.`;
       if (state2.tapAudioEnabled) speak2(target.hanzi, 0.78);
       state2.foodHungerTargetIndex += 1;
       state2.foodHungerComplete = state2.foodHungerTargetIndex === state2.foodHungerRoundIds.length;
@@ -4104,6 +4126,7 @@
       return `
     <section class="practice-split-card food-hunger-game-card">
       <div class="numbers-game-top"><div><p class="body-match-kicker">Hungry? What should we eat?</p><p class="numbers-game-note">Choose a food group or Mix. A food picture will appear. Tap the matching Chinese word to put it in your cart.</p></div></div>
+      ${state2.foodHungerFeedback ? `<p class="greetings-game-feedback ${state2.foodHungerFeedback.startsWith("Correct") ? "is-correct" : "is-wrong"}">${state2.foodHungerFeedback}</p>` : ""}
       <div class="food-category-tabs food-hunger-tabs">${Object.entries(foodHungerModes).map(([id, mode]) => `<button class="food-category-tab${state2.foodHungerModeId === id ? " is-active" : ""}" type="button" data-food-hunger-mode="${id}">${mode.hanzi}${state2.showEnglish ? `<small>${mode.english}</small>` : ""}</button>`).join("")}</div>
       <div class="backpack-game-progress" aria-label="${state2.foodHungerPlatedIds.length} of ${state2.foodHungerRoundIds.length} foods in the cart">${state2.foodHungerRoundIds.map((_, index) => `<span class="backpack-game-progress-dot${index < state2.foodHungerPlatedIds.length ? " is-packed" : ""}">${index < state2.foodHungerPlatedIds.length ? "\u2713" : ""}</span>`).join("")}</div>
       <div class="food-hunger-visual${isComplete ? " is-complete" : ""}">
@@ -4173,6 +4196,7 @@
         <div><p class="body-match-kicker">Pack the backpack</p><p class="numbers-game-note">Look at the school thing, then tap its Chinese word.</p></div>
         <button class="small-button is-play-button" type="button" data-backpack-game-new>Play</button>
       </div>
+      ${state2.backpackGameFeedback ? `<p class="greetings-game-feedback ${state2.backpackGameFeedback.startsWith("Correct") ? "is-correct" : "is-wrong"}">${state2.backpackGameFeedback}</p>` : ""}
       <div class="backpack-game-progress" aria-label="${state2.backpackGamePlacedIds.length} of 3 items packed">
         ${[0, 1, 2].map((index) => `<span class="backpack-game-progress-dot${index < state2.backpackGamePlacedIds.length ? " is-packed" : ""}">${index < state2.backpackGamePlacedIds.length ? "\u2713" : ""}</span>`).join("")}
       </div>
@@ -5408,6 +5432,8 @@
       state2.politeMatchedIds = /* @__PURE__ */ new Set();
       state2.politePhraseOrder = shuffleArray2(items.map((item) => item.id));
       state2.politeMeaningOrder = shuffleArray2(items.map((item) => item.id));
+      state2.politeMatchWrongPhraseIds = /* @__PURE__ */ new Set();
+      state2.politeMatchWrongMeaningIds = /* @__PURE__ */ new Set();
       state2.politeMatchFeedback = options.feedback ?? "";
       state2.lastPoliteFeedback = state2.politeMatchFeedback;
     }
@@ -5456,6 +5482,8 @@
         return;
       }
       state2.politeMatchFeedback = `Try again. ${selectedItem.hanzi} does not match that meaning.`;
+      state2.politeMatchWrongPhraseIds = /* @__PURE__ */ new Set([...state2.politeMatchWrongPhraseIds, selectedId]);
+      state2.politeMatchWrongMeaningIds = /* @__PURE__ */ new Set([...state2.politeMatchWrongMeaningIds, targetId]);
       state2.lastPoliteFeedback = state2.politeMatchFeedback;
       renderActivityPanel2(currentTopic2());
     }
@@ -5836,6 +5864,8 @@
       state2.greetingsMatchedIds = /* @__PURE__ */ new Set();
       state2.greetingsPhraseOrder = shuffleArray2(items.map((item) => item.id));
       state2.greetingsMeaningOrder = shuffleArray2(items.map((item) => item.id));
+      state2.greetingsMatchWrongPhraseIds = /* @__PURE__ */ new Set();
+      state2.greetingsMatchWrongMeaningIds = /* @__PURE__ */ new Set();
       state2.greetingsMatchFeedback = options.feedback ?? "";
       state2.lastGreetingsFeedback = state2.greetingsMatchFeedback;
     }
@@ -5884,6 +5914,8 @@
         return;
       }
       state2.greetingsMatchFeedback = `Try again. ${selectedItem.hanzi} does not match that situation.`;
+      state2.greetingsMatchWrongPhraseIds = /* @__PURE__ */ new Set([...state2.greetingsMatchWrongPhraseIds, selectedId]);
+      state2.greetingsMatchWrongMeaningIds = /* @__PURE__ */ new Set([...state2.greetingsMatchWrongMeaningIds, targetId]);
       state2.lastGreetingsFeedback = state2.greetingsMatchFeedback;
       renderActivityPanel2(currentTopic2());
     }
@@ -6084,6 +6116,8 @@
       state2.nationalityMatchedIds = /* @__PURE__ */ new Set();
       state2.nationalityMatchPhraseOrder = shuffleArray2(practiceItems.map((item) => item.id));
       state2.nationalityMatchSymbolOrder = shuffleArray2(practiceItems.map((item) => item.id));
+      state2.nationalityMatchWrongPhraseIds = /* @__PURE__ */ new Set();
+      state2.nationalityMatchWrongMeaningIds = /* @__PURE__ */ new Set();
       state2.nationalityMatchFeedback = "";
     }
     function ensureNationalityMatchGame2() {
@@ -6104,6 +6138,8 @@
         state2.nationalityMatchFeedback = state2.nationalityMatchedIds.size === practiceItems.length ? "Great job! You matched every country." : "Correct! Choose another flag and country name.";
       } else {
         state2.nationalityMatchFeedback = "Not that symbol. Try another one.";
+        state2.nationalityMatchWrongPhraseIds = /* @__PURE__ */ new Set([...state2.nationalityMatchWrongPhraseIds, selectedId]);
+        state2.nationalityMatchWrongMeaningIds = /* @__PURE__ */ new Set([...state2.nationalityMatchWrongMeaningIds, itemId]);
       }
       renderActivityPanel2(currentTopic2());
     }
@@ -7147,6 +7183,8 @@
     let telephoneMatchSelectedId = "";
     let telephoneMatchedIds = /* @__PURE__ */ new Set();
     let telephoneMatchFeedback = "";
+    let telephoneWrongQuestionIds = /* @__PURE__ */ new Set();
+    let telephoneWrongAnswerIds = /* @__PURE__ */ new Set();
     function numberStageItems2(stage = currentNumberStage2()) {
       const start = Math.min(stage.start, stage.end);
       const end = Math.max(stage.start, stage.end);
@@ -7424,6 +7462,8 @@
       state2.familyMatchedIds = /* @__PURE__ */ new Set();
       state2.familyPhraseOrder = shuffleArray2(items.map((item) => item.id));
       state2.familyMeaningOrder = shuffleArray2(items.map((item) => item.id));
+      state2.familyMatchWrongPhraseIds = /* @__PURE__ */ new Set();
+      state2.familyMatchWrongMeaningIds = /* @__PURE__ */ new Set();
       state2.familyMatchFeedback = "";
       state2.lastFamilyFeedback = state2.familyMatchFeedback;
     }
@@ -7472,6 +7512,8 @@
         return;
       }
       state2.familyMatchFeedback = "Try a different family member.";
+      state2.familyMatchWrongPhraseIds = /* @__PURE__ */ new Set([...state2.familyMatchWrongPhraseIds, selectedId]);
+      state2.familyMatchWrongMeaningIds = /* @__PURE__ */ new Set([...state2.familyMatchWrongMeaningIds, targetId]);
       state2.lastFamilyFeedback = state2.familyMatchFeedback;
       renderActivityPanel2(currentTopic2());
     }
@@ -7548,6 +7590,8 @@
     }
     function resetBodyMatchGame2() {
       state2.bodyMatchedIds = /* @__PURE__ */ new Set();
+      state2.bodyMatchWrongChineseIds = /* @__PURE__ */ new Set();
+      state2.bodyMatchWrongEnglishIds = /* @__PURE__ */ new Set();
       state2.bodyMatchUniverseKey = bodyMatchItems2().map((item) => item.id).sort().join("|");
       nextBodyRound2();
       state2.lastBodyFeedback = "Match the Chinese words with the English words.";
@@ -7594,6 +7638,8 @@
         return;
       }
       state2.lastBodyFeedback = `Try again. ${itemsById[chineseId].hanzi} is not ${itemsById[englishId].english}.`;
+      state2.bodyMatchWrongChineseIds = /* @__PURE__ */ new Set([...state2.bodyMatchWrongChineseIds, chineseId]);
+      state2.bodyMatchWrongEnglishIds = /* @__PURE__ */ new Set([...state2.bodyMatchWrongEnglishIds, englishId]);
       renderActivityPanel2(currentTopic2());
     }
     function bodySpotlightItems() {
@@ -7782,12 +7828,14 @@
                     ${remainingChineseIds.map((id) => {
         const matchItem = matchItems[id];
         const selected = state2.bodySelectedChineseId === id;
+        const wrong = state2.bodyMatchWrongChineseIds.has(id);
         return `
                   <button
-                    class="body-match-card body-match-card-chinese${selected ? " is-selected" : ""}"
+                    class="body-match-card body-match-card-chinese${selected ? " is-selected" : ""}${wrong ? " is-wrong" : ""}"
                     type="button"
                     data-body-match-chinese="${id}"
                   >
+                    ${wrong ? '<span class="answer-result-mark" aria-hidden="true">\xD7</span>' : ""}
                     <span class="body-match-hanzi">${matchItem.hanzi}</span>
                     ${state2.showPinyin ? `<span class="body-match-pinyin">${matchItem.pinyin}</span>` : ""}
                   </button>
@@ -7802,12 +7850,14 @@
         }
         const solved = state2.bodyMatchedIds.has(id);
         const selected = state2.bodySelectedEnglishId === id;
+        const wrong = state2.bodyMatchWrongEnglishIds.has(id);
         return `
                   <button
-                    class="body-match-card body-match-card-english${solved ? " is-solved" : ""}${selected ? " is-selected" : ""}"
+                    class="body-match-card body-match-card-english${solved ? " is-solved" : ""}${selected ? " is-selected" : ""}${wrong ? " is-wrong" : ""}"
                     type="button"
                     data-body-match-english="${id}"
                   >
+                    ${wrong ? '<span class="answer-result-mark" aria-hidden="true">\xD7</span>' : ""}
                     <span class="body-match-english">${matchItem.english}</span>
                   </button>
                 `;
@@ -7957,7 +8007,13 @@
       <section class="practice-split-card"><div class="numbers-game-top"><div><p class="body-match-kicker">Let's practice</p><p class="numbers-game-note">Tap a question on the left, then tap its matching answer on the right.</p></div><button class="small-button is-play-button" type="button" data-telephone-practice-play>Play</button></div>
         ${telephoneMatchFeedback ? `<p class="greetings-game-feedback">${telephoneMatchFeedback}</p>` : ""}
         <div class="family-match-board-headings"><p class="body-match-kicker">Question</p><p class="body-match-kicker">Answer</p></div>
-        <div class="polite-match-board family-match-open-board"><div class="polite-match-column">${profilePairs.filter((pair) => !telephoneMatchedIds.has(pair.id)).map((pair) => `<button class="polite-match-card polite-match-card-phrase${telephoneMatchSelectedId === pair.id ? " is-selected" : ""}" type="button" data-telephone-question="${pair.id}"><span class="numbers-game-hanzi">${pair.question.hanzi}</span>${state2.showPinyin ? `<span class="numbers-game-pinyin">${pair.question.pinyin}</span>` : ""}${state2.showEnglish ? `<span class="numbers-game-english">${pair.question.english}</span>` : ""}</button>`).join("")}</div><div class="polite-match-column">${profilePairs.filter((pair) => !telephoneMatchedIds.has(pair.id)).slice().reverse().map((pair) => `<button class="polite-match-card polite-match-card-meaning" type="button" data-telephone-answer="${pair.id}"><span class="numbers-game-hanzi">${pair.answer.hanzi}</span>${state2.showPinyin ? `<span class="numbers-game-pinyin">${pair.answer.pinyin}</span>` : ""}${state2.showEnglish ? `<span class="numbers-game-english">${pair.answer.english}</span>` : ""}</button>`).join("")}</div></div>
+        <div class="polite-match-board family-match-open-board"><div class="polite-match-column">${profilePairs.filter((pair) => !telephoneMatchedIds.has(pair.id)).map((pair) => {
+        const wrong = telephoneWrongQuestionIds.has(pair.id);
+        return `<button class="polite-match-card polite-match-card-phrase${telephoneMatchSelectedId === pair.id ? " is-selected" : ""}${wrong ? " is-wrong" : ""}" type="button" data-telephone-question="${pair.id}">${wrong ? '<span class="answer-result-mark" aria-hidden="true">\xD7</span>' : ""}<span class="numbers-game-hanzi">${pair.question.hanzi}</span>${state2.showPinyin ? `<span class="numbers-game-pinyin">${pair.question.pinyin}</span>` : ""}${state2.showEnglish ? `<span class="numbers-game-english">${pair.question.english}</span>` : ""}</button>`;
+      }).join("")}</div><div class="polite-match-column">${profilePairs.filter((pair) => !telephoneMatchedIds.has(pair.id)).slice().reverse().map((pair) => {
+        const wrong = telephoneWrongAnswerIds.has(pair.id);
+        return `<button class="polite-match-card polite-match-card-meaning${wrong ? " is-wrong" : ""}" type="button" data-telephone-answer="${pair.id}">${wrong ? '<span class="answer-result-mark" aria-hidden="true">\xD7</span>' : ""}<span class="numbers-game-hanzi">${pair.answer.hanzi}</span>${state2.showPinyin ? `<span class="numbers-game-pinyin">${pair.answer.pinyin}</span>` : ""}${state2.showEnglish ? `<span class="numbers-game-english">${pair.answer.english}</span>` : ""}</button>`;
+      }).join("")}</div></div>
         ${telephoneMatchedIds.size ? `<div class="family-match-solved-pairs">${profilePairs.filter((pair) => telephoneMatchedIds.has(pair.id)).map((pair) => `<article class="family-match-solved-row"><div class="polite-match-card family-match-pair-card is-solved"><span class="answer-result-mark">\u2713</span><span class="numbers-game-hanzi">${pair.question.hanzi}</span></div><div class="polite-match-card family-match-pair-card is-solved"><span class="answer-result-mark">\u2713</span><span class="numbers-game-hanzi">${pair.answer.hanzi}</span></div></article>`).join("")}</div>` : ""}
         ${telephoneMatchedIds.size === profilePairs.length ? `<section class="nationality-conversation-reveal" aria-live="polite">${renderLines([residence.lines[1], phone.lines[1]])}</section>` : ""}
       </section>
@@ -7976,6 +8032,8 @@
         telephoneMatchSelectedId = "";
         telephoneMatchedIds = /* @__PURE__ */ new Set();
         telephoneMatchFeedback = "";
+        telephoneWrongQuestionIds = /* @__PURE__ */ new Set();
+        telephoneWrongAnswerIds = /* @__PURE__ */ new Set();
         if (state2.tapAudioEnabled) speakSceneLines2(profilePairs.flatMap((pair) => [pair.question, pair.answer]), 0.74);
         renderTelephoneExplorer2();
       });
@@ -8001,7 +8059,11 @@
             telephoneMatchFeedback = telephoneMatchedIds.size === profilePairs.length ? "Grandparents profile complete." : "Matched. Choose the next question.";
             telephoneMatchSelectedId = "";
             if (pair && state2.tapAudioEnabled) speak2(pair.answer.audio, 0.78);
-          } else telephoneMatchFeedback = "Try a different answer.";
+          } else {
+            telephoneMatchFeedback = "Try a different answer.";
+            telephoneWrongQuestionIds = /* @__PURE__ */ new Set([...telephoneWrongQuestionIds, telephoneMatchSelectedId]);
+            telephoneWrongAnswerIds = /* @__PURE__ */ new Set([...telephoneWrongAnswerIds, button.dataset.telephoneAnswer]);
+          }
           renderTelephoneExplorer2();
         });
       });
@@ -8685,6 +8747,8 @@
       state2.weekdayMatchedIds = /* @__PURE__ */ new Set();
       state2.weekdayPhraseOrder = shuffleArray2(timeDateWeekItems2.map((item) => item.id));
       state2.weekdayMeaningOrder = shuffleArray2(timeDateWeekItems2.map((item) => item.id));
+      state2.weekdayMatchWrongPhraseIds = /* @__PURE__ */ new Set();
+      state2.weekdayMatchWrongMeaningIds = /* @__PURE__ */ new Set();
       state2.weekdayMatchFeedback = "";
     }
     function ensureWeekdayMatchGame2() {
@@ -8705,6 +8769,8 @@
         state2.weekdayMatchFeedback = "Matched.";
       } else {
         state2.weekdayMatchFeedback = "Try a different card.";
+        state2.weekdayMatchWrongPhraseIds = /* @__PURE__ */ new Set([...state2.weekdayMatchWrongPhraseIds, state2.weekdaySelectedPhraseId]);
+        state2.weekdayMatchWrongMeaningIds = /* @__PURE__ */ new Set([...state2.weekdayMatchWrongMeaningIds, targetId]);
       }
       renderActivityPanel2(currentTopic2());
     }
@@ -9100,6 +9166,8 @@
       state2.dateMatchedIds = /* @__PURE__ */ new Set();
       state2.datePhraseOrder = shuffleArray2(roundIds);
       state2.dateEventOrder = shuffleArray2(roundIds);
+      state2.dateMatchWrongPhraseIds = /* @__PURE__ */ new Set();
+      state2.dateMatchWrongMeaningIds = /* @__PURE__ */ new Set();
       state2.dateMatchFeedback = "";
     }
     function ensureDateMatchGame2() {
@@ -9125,6 +9193,8 @@
         state2.dateMatchFeedback = "";
       } else {
         state2.dateMatchFeedback = "Try again.";
+        state2.dateMatchWrongPhraseIds = /* @__PURE__ */ new Set([...state2.dateMatchWrongPhraseIds, selectedId]);
+        state2.dateMatchWrongMeaningIds = /* @__PURE__ */ new Set([...state2.dateMatchWrongMeaningIds, itemId]);
       }
       renderActivityPanel2(currentTopic2());
     }

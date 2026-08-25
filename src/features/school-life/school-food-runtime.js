@@ -73,6 +73,7 @@ function resetBackpackGame() {
   state.backpackGameTargetIndex = 0;
   state.backpackGamePlacedIds = [];
   state.backpackGameComplete = false;
+  state.backpackGameFeedback = "";
   prepareBackpackGameOptions();
 }
 
@@ -94,10 +95,12 @@ function handleBackpackGameGuess(itemId) {
   if (!target) return;
   if (itemId !== target.id) {
     state.backpackGameWrongIds = new Set([...state.backpackGameWrongIds, itemId]);
+    state.backpackGameFeedback = "Not this one. Try another card.";
     renderActivityPanel(currentTopic());
     return;
   }
   state.backpackGamePlacedIds = [...state.backpackGamePlacedIds, target.id];
+  state.backpackGameFeedback = `Correct! ${target.hanzi} goes in the backpack.`;
   if (state.tapAudioEnabled) speak(target.audio, 0.78);
   state.backpackGameTargetIndex += 1;
   state.backpackGameComplete = state.backpackGameTargetIndex === state.backpackGameRoundIds.length;
@@ -615,6 +618,7 @@ function resetFoodHungerGame(modeId = state.foodHungerModeId) {
   state.foodHungerTargetIndex = 0;
   state.foodHungerPlatedIds = [];
   state.foodHungerComplete = false;
+  state.foodHungerFeedback = "";
   prepareFoodHungerOptions();
 }
 
@@ -637,10 +641,12 @@ function handleFoodHungerGuess(itemId) {
   if (!target) return;
   if (itemId !== target.id) {
     state.foodHungerWrongIds = new Set([...state.foodHungerWrongIds, itemId]);
+    state.foodHungerFeedback = "Not this one. Try another card.";
     renderActivityPanel(currentTopic());
     return;
   }
   state.foodHungerPlatedIds = [...state.foodHungerPlatedIds, target.id];
+  state.foodHungerFeedback = `Correct! ${target.hanzi} is in the cart.`;
   if (state.tapAudioEnabled) speak(target.hanzi, 0.78);
   state.foodHungerTargetIndex += 1;
   state.foodHungerComplete = state.foodHungerTargetIndex === state.foodHungerRoundIds.length;
@@ -658,6 +664,7 @@ function renderFoodHungerGame() {
   return `
     <section class="practice-split-card food-hunger-game-card">
       <div class="numbers-game-top"><div><p class="body-match-kicker">Hungry? What should we eat?</p><p class="numbers-game-note">Choose a food group or Mix. A food picture will appear. Tap the matching Chinese word to put it in your cart.</p></div></div>
+      ${state.foodHungerFeedback ? `<p class="greetings-game-feedback ${state.foodHungerFeedback.startsWith("Correct") ? "is-correct" : "is-wrong"}">${state.foodHungerFeedback}</p>` : ""}
       <div class="food-category-tabs food-hunger-tabs">${Object.entries(foodHungerModes).map(([id, mode]) => `<button class="food-category-tab${state.foodHungerModeId === id ? " is-active" : ""}" type="button" data-food-hunger-mode="${id}">${mode.hanzi}${state.showEnglish ? `<small>${mode.english}</small>` : ""}</button>`).join("")}</div>
       <div class="backpack-game-progress" aria-label="${state.foodHungerPlatedIds.length} of ${state.foodHungerRoundIds.length} foods in the cart">${state.foodHungerRoundIds.map((_, index) => `<span class="backpack-game-progress-dot${index < state.foodHungerPlatedIds.length ? " is-packed" : ""}">${index < state.foodHungerPlatedIds.length ? "✓" : ""}</span>`).join("")}</div>
       <div class="food-hunger-visual${isComplete ? " is-complete" : ""}">
@@ -731,6 +738,7 @@ function renderBackpackGame() {
         <div><p class="body-match-kicker">Pack the backpack</p><p class="numbers-game-note">Look at the school thing, then tap its Chinese word.</p></div>
         <button class="small-button is-play-button" type="button" data-backpack-game-new>Play</button>
       </div>
+      ${state.backpackGameFeedback ? `<p class="greetings-game-feedback ${state.backpackGameFeedback.startsWith("Correct") ? "is-correct" : "is-wrong"}">${state.backpackGameFeedback}</p>` : ""}
       <div class="backpack-game-progress" aria-label="${state.backpackGamePlacedIds.length} of 3 items packed">
         ${[0, 1, 2].map((index) => `<span class="backpack-game-progress-dot${index < state.backpackGamePlacedIds.length ? " is-packed" : ""}">${index < state.backpackGamePlacedIds.length ? "✓" : ""}</span>`).join("")}
       </div>

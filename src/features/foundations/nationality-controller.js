@@ -84,6 +84,8 @@ export function createNationalityController({ state, countries, question, shuffl
     state.nationalityMatchedIds = new Set();
     state.nationalityMatchPhraseOrder = shuffleArray(practiceItems.map((item) => item.id));
     state.nationalityMatchSymbolOrder = shuffleArray(practiceItems.map((item) => item.id));
+    state.nationalityMatchWrongPhraseIds = new Set();
+    state.nationalityMatchWrongMeaningIds = new Set();
     state.nationalityMatchFeedback = "";
   }
 
@@ -107,6 +109,8 @@ export function createNationalityController({ state, countries, question, shuffl
       state.nationalityMatchFeedback = state.nationalityMatchedIds.size === practiceItems.length ? "Great job! You matched every country." : "Correct! Choose another flag and country name.";
     } else {
       state.nationalityMatchFeedback = "Not that symbol. Try another one.";
+      state.nationalityMatchWrongPhraseIds = new Set([...state.nationalityMatchWrongPhraseIds, selectedId]);
+      state.nationalityMatchWrongMeaningIds = new Set([...state.nationalityMatchWrongMeaningIds, itemId]);
     }
     renderActivityPanel(currentTopic());
   }

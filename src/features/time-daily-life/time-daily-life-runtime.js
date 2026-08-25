@@ -47,6 +47,8 @@ function resetWeekdayMatchGame() {
   state.weekdayMatchedIds = new Set();
   state.weekdayPhraseOrder = shuffleArray(timeDateWeekItems.map((item) => item.id));
   state.weekdayMeaningOrder = shuffleArray(timeDateWeekItems.map((item) => item.id));
+  state.weekdayMatchWrongPhraseIds = new Set();
+  state.weekdayMatchWrongMeaningIds = new Set();
   state.weekdayMatchFeedback = "";
 }
 
@@ -70,6 +72,8 @@ function handleWeekdayMatchAttempt(targetId) {
     state.weekdayMatchFeedback = "Matched.";
   } else {
     state.weekdayMatchFeedback = "Try a different card.";
+    state.weekdayMatchWrongPhraseIds = new Set([...state.weekdayMatchWrongPhraseIds, state.weekdaySelectedPhraseId]);
+    state.weekdayMatchWrongMeaningIds = new Set([...state.weekdayMatchWrongMeaningIds, targetId]);
   }
   renderActivityPanel(currentTopic());
 }
@@ -530,6 +534,8 @@ function resetDateMatchGame() {
   state.dateMatchedIds = new Set();
   state.datePhraseOrder = shuffleArray(roundIds);
   state.dateEventOrder = shuffleArray(roundIds);
+  state.dateMatchWrongPhraseIds = new Set();
+  state.dateMatchWrongMeaningIds = new Set();
   state.dateMatchFeedback = "";
 }
 
@@ -565,6 +571,8 @@ function handleDateMatchEvent(itemId) {
     state.dateMatchFeedback = "";
   } else {
     state.dateMatchFeedback = "Try again.";
+    state.dateMatchWrongPhraseIds = new Set([...state.dateMatchWrongPhraseIds, selectedId]);
+    state.dateMatchWrongMeaningIds = new Set([...state.dateMatchWrongMeaningIds, itemId]);
   }
   renderActivityPanel(currentTopic());
 }

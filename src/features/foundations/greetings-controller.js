@@ -73,6 +73,8 @@ export function createGreetingsController({
     state.greetingsMatchedIds = new Set();
     state.greetingsPhraseOrder = shuffleArray(items.map((item) => item.id));
     state.greetingsMeaningOrder = shuffleArray(items.map((item) => item.id));
+    state.greetingsMatchWrongPhraseIds = new Set();
+    state.greetingsMatchWrongMeaningIds = new Set();
     state.greetingsMatchFeedback = options.feedback ?? "";
     state.lastGreetingsFeedback = state.greetingsMatchFeedback;
   }
@@ -133,6 +135,8 @@ export function createGreetingsController({
     }
 
     state.greetingsMatchFeedback = `Try again. ${selectedItem.hanzi} does not match that situation.`;
+    state.greetingsMatchWrongPhraseIds = new Set([...state.greetingsMatchWrongPhraseIds, selectedId]);
+    state.greetingsMatchWrongMeaningIds = new Set([...state.greetingsMatchWrongMeaningIds, targetId]);
     state.lastGreetingsFeedback = state.greetingsMatchFeedback;
     renderActivityPanel(currentTopic());
   }
