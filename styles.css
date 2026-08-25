@@ -3444,6 +3444,36 @@ h4 {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
+/* Twelve clock faces need enough space for children to read the hands. */
+.time-asset-grid-clock {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.time-asset-grid-clock .book-word-card {
+  flex-direction: row;
+  justify-content: center;
+  min-height: 12rem;
+  text-align: left;
+}
+
+.time-asset-grid-clock .book-word-image {
+  flex: 0 0 auto;
+  width: min(64%, 11rem);
+  height: auto;
+}
+
+.time-asset-grid-clock .book-word-copy {
+  align-items: center;
+  padding-left: 0.55rem;
+}
+
+.time-asset-grid-clock .time-asset-hanzi,
+.time-asset-grid-clock .time-asset-pinyin,
+.time-asset-grid-clock .time-asset-english {
+  text-align: center;
+}
+
 .time-asset-grid.visual-transport {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
@@ -3944,9 +3974,60 @@ h4 {
 .weather-fill-option.is-wrong { border-color: var(--berry); background: #fff3f1; }
 .weather-fill-feedback { margin: 0; color: var(--berry-dark); }
 
+.time-routine-builder-options {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+.time-routine-builder-options > div { min-width: 0; }
+
+.time-routine-builder-group {
+  border: 2px solid transparent;
+  border-radius: 16px;
+  padding: 0.7rem;
+}
+
+.time-routine-builder-group.is-hour { background: #edf6ff; border-color: #b8d8ef; }
+.time-routine-builder-group.is-minutes { background: #fff5e8; border-color: #efd1a8; }
+.time-routine-builder-group.is-action { background: #f4effd; border-color: #d5c3ee; }
+
+.time-routine-builder-options .weather-fill-choice-label {
+  color: var(--ink);
+  font-family: var(--latin-font);
+  font-size: 1.12rem;
+  font-weight: 850;
+  letter-spacing: 0.02em;
+  margin-bottom: 0.6rem;
+}
+
+.time-routine-builder-group.is-hour .weather-fill-choice-label { color: #21638f; }
+.time-routine-builder-group.is-minutes .weather-fill-choice-label { color: #9a5b19; }
+.time-routine-builder-group.is-action .weather-fill-choice-label { color: #654497; }
+
+.time-routine-builder-options .weather-fill-options {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.55rem;
+}
+
+.time-routine-builder-options .weather-fill-option {
+  align-items: center;
+  display: grid;
+  justify-items: center;
+  min-height: 4.2rem;
+}
+
+.time-routine-builder-options .weather-fill-option.is-selected {
+  background: #f1faed;
+  border-color: #5a9b57;
+  color: #456d32;
+}
+
 @media (max-width: 520px) {
   .weather-dress-options { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.5rem; }
   .weather-fill-choice-groups { grid-template-columns: 1fr; }
+  .time-routine-builder-options { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.65rem; }
+  .time-routine-builder-options .weather-fill-options { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0.4rem; }
+  .time-routine-builder-options .weather-fill-option { min-height: 3.6rem; }
 }
 
 .world-colour-mission-grid {

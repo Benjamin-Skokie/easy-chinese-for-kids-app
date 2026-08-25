@@ -1,5 +1,5 @@
 export function createTimeDailyLifeRuntime(context) {
-  const { state, timeDateWeekItems, timeDateClockItems, timeDateExpressionItems, timeDateRoutineItems, datePracticeItems, timeDateDateItems, timeDateMonthItems, comparisonPracticeItems, comparisonWordItems, positionPracticeItems, positionScenes, positionBookWords, clothesMatchItems, clothesSentenceItems, clothesBookWords, clothesPractice, roomScenes, roomSentenceTokens, transportSentenceTokens, everydayActionItems, visualTopicItems, shuffleArray, speak, speakSceneLines, currentTopic, currentBook, currentLesson, renderActivityPanel, focusExplorer, focusStatus } = context;
+  const { state, timeDateWeekItems, timeDateClockItems, timeDateExpressionItems, timeDateRoutineItems, timeAdvancedBookWords, timeRoutineBookWords, datePracticeItems, timeDateDateItems, timeDateMonthItems, comparisonPracticeItems, comparisonWordItems, positionPracticeItems, positionScenes, positionBookWords, clothesMatchItems, clothesSentenceItems, clothesBookWords, clothesPractice, roomScenes, roomSentenceTokens, transportSentenceTokens, everydayActionItems, visualTopicItems, shuffleArray, speak, speakSceneLines, currentTopic, currentBook, currentLesson, renderActivityPanel, focusExplorer, focusStatus } = context;
 
 function resetWeekdayChallenge(options = {}) {
   const answerId = nextRandomCycleId(state, "weekdays-listen", timeDateWeekItems.map((item) => item.id));
@@ -612,7 +612,8 @@ function handleDateChallengeGuess(itemId) {
 
 function timeDateSectionForCurrentLesson() {
   const lessonKey = `${currentBook().id}:${currentLesson().lesson}`;
-  if (lessonKey === "2b:2" || lessonKey === "4a:3") return "clock";
+  if (lessonKey === "2b:2") return "clock";
+  if (lessonKey === "4a:3") return "routine";
   return "routine";
 }
 
@@ -948,16 +949,21 @@ function renderPositionsExplorer() {
 function renderTimeDateExplorer() {
   const activeSection = activeTimeDateSection();
   const sections = [
-    { id: "routine", hanzi: "作息", english: "Routine" },
-    { id: "clock", hanzi: "时间", english: "Time" }
+    { id: "clock", hanzi: "整点", english: "Whole hours" },
+    { id: "routine", hanzi: "作息", english: "Routine" }
   ];
+  const wordGrid = (words) => `<section class="school-lesson-section time-book-word-section"><div class="time-months-heading"><p class="body-match-kicker">Book words</p></div><div class="comparison-word-grid time-text-word-grid">${words.map((word) => `<button class="comparison-word-card" type="button" data-time-book-word="${word.id}"><span class="comparison-word-hanzi">${word.hanzi}</span>${state.showPinyin ? `<span class="comparison-word-pinyin">${word.pinyin}</span>` : ""}${state.showEnglish ? `<span class="comparison-word-english">${word.english}</span>` : ""}</button>`).join("")}</div></section>`;
+  const clockNotes = `<section class="visual-topic-notes time-useful-notes"><p class="body-match-kicker">Useful notes</p><div class="visual-topic-note-grid"><article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">几点了？</p>${state.showPinyin ? '<p class="visual-topic-note-pinyin">jǐ diǎn le?</p>' : ""}${state.showEnglish ? '<p class="visual-topic-note-english">What time is it?</p>' : ""}<p class="visual-topic-note-example">现在七点。</p>${state.showPinyin ? '<p class="visual-topic-note-pinyin">xiàn zài qī diǎn.</p>' : ""}${state.showEnglish ? '<p class="visual-topic-note-english">It is seven o\'clock now.</p>' : ""}</article></div></section>`;
+  const routineNotes = `<section class="visual-topic-notes time-useful-notes"><p class="body-match-kicker">Useful notes</p><div class="visual-topic-note-grid"><article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">现在几点了？</p>${state.showPinyin ? '<p class="visual-topic-note-pinyin">xiàn zài jǐ diǎn le?</p>' : ""}${state.showEnglish ? '<p class="visual-topic-note-english">What time is it now?</p>' : ""}<p class="visual-topic-note-example">现在七点零五分。</p>${state.showPinyin ? '<p class="visual-topic-note-pinyin">xiàn zài qī diǎn líng wǔ fēn.</p>' : ""}${state.showEnglish ? '<p class="visual-topic-note-english">It is 7:05 now.</p>' : ""}</article><article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">一刻 = 十五分 · 半 = 三十分 · 三刻 = 四十五分</p>${state.showPinyin ? '<p class="visual-topic-note-pinyin">yī kè = shí wǔ fēn · bàn = sān shí fēn · sān kè = sì shí wǔ fēn</p>' : ""}${state.showEnglish ? '<p class="visual-topic-note-english">a quarter = 15 minutes · half = 30 minutes · three quarters = 45 minutes</p>' : ""}<p class="visual-topic-note-example">两点一刻 = 两点十五分。</p>${state.showPinyin ? '<p class="visual-topic-note-pinyin">liǎng diǎn yī kè = liǎng diǎn shí wǔ fēn.</p>' : ""}${state.showEnglish ? '<p class="visual-topic-note-english">2:15.</p>' : ""}</article><article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">时间放在动作前面</p>${state.showPinyin ? '<p class="visual-topic-note-pinyin">shí jiān fàng zài dòng zuò qián miàn</p>' : ""}${state.showEnglish ? '<p class="visual-topic-note-english">Put the time before the action.</p>' : ""}<p class="visual-topic-note-example">七点起床。两点半放学。</p>${state.showPinyin ? '<p class="visual-topic-note-pinyin">qī diǎn qǐ chuáng. liǎng diǎn bàn fàng xué.</p>' : ""}${state.showEnglish ? '<p class="visual-topic-note-english">Get up at seven. School ends at 2:30.</p>' : ""}</article></div></section>`;
   let content = "";
+  let notes = "";
 
   if (activeSection === "clock") {
-    content = renderTimeAssetGrid(timeDateClockItems.filter((item) => item.id !== "clock-7"), "clock");
+    content = `<section class="school-lesson-section"><div class="time-months-heading"><p class="body-match-kicker">Book words</p></div>${renderTimeAssetGrid(timeDateClockItems, "clock")}</section>`;
+    notes = clockNotes;
   } else {
     content = `
-      <div class="greetings-practice-grid time-routine-scene-grid">
+      <section class="school-lesson-section"><div class="time-months-heading"><p class="body-match-kicker">Scenes</p></div><div class="greetings-practice-grid time-routine-scene-grid">
         ${timeDateRoutineItems
           .map(
             (item) => `
@@ -982,8 +988,10 @@ function renderTimeDateExplorer() {
             `
           )
           .join("")}
-      </div>
+      </div></section>
+      ${wordGrid([...timeAdvancedBookWords, ...timeRoutineBookWords])}
     `;
+    notes = routineNotes;
   }
 
   focusExplorer.innerHTML = `
@@ -1000,19 +1008,7 @@ function renderTimeDateExplorer() {
           .join("")}
       </div>
       ${content}
-      <section class="visual-topic-notes time-useful-notes">
-        <p class="body-match-kicker">Useful notes</p>
-        <div class="visual-topic-note-grid">
-          <article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">几点了？</p>${state.showPinyin ? '<p class="visual-topic-note-pinyin">jǐ diǎn le?</p>' : ""}${state.showEnglish ? '<p class="visual-topic-note-english">What time is it?</p>' : ""}<p class="visual-topic-note-example">现在七点。</p>${state.showPinyin ? '<p class="visual-topic-note-pinyin">xiàn zài qī diǎn.</p>' : ""}${state.showEnglish ? '<p class="visual-topic-note-english">It is seven o\'clock now.</p>' : ""}</article>
-          <article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">分 / 零</p>${state.showPinyin ? '<p class="visual-topic-note-pinyin">fēn / líng</p>' : ""}${state.showEnglish ? '<p class="visual-topic-note-english">minute / zero</p>' : ""}<p class="visual-topic-note-example">现在七点零五分。</p>${state.showPinyin ? '<p class="visual-topic-note-pinyin">xiàn zài qī diǎn líng wǔ fēn.</p>' : ""}${state.showEnglish ? '<p class="visual-topic-note-english">It is 7:05 now.</p>' : ""}</article>
-          <article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">早上 / 上午 / 中午 / 下午 / 晚上</p>${state.showPinyin ? '<p class="visual-topic-note-pinyin">zǎo shang / shàng wǔ / zhōng wǔ / xià wǔ / wǎn shang</p>' : ""}${state.showEnglish ? '<p class="visual-topic-note-english">early morning / morning / noon / afternoon / evening</p>' : ""}</article>
-          <article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">你每天几点起床？</p>${state.showPinyin ? '<p class="visual-topic-note-pinyin">nǐ měi tiān jǐ diǎn qǐ chuáng?</p>' : ""}${state.showEnglish ? '<p class="visual-topic-note-english">What time do you get up every day?</p>' : ""}<p class="visual-topic-note-example">我每天七点起床。</p>${state.showPinyin ? '<p class="visual-topic-note-pinyin">wǒ měi tiān qī diǎn qǐ chuáng.</p>' : ""}${state.showEnglish ? '<p class="visual-topic-note-english">I get up at seven every day.</p>' : ""}</article>
-          <article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">刷牙 / 梳头 / 穿校服 / 穿鞋子</p>${state.showPinyin ? '<p class="visual-topic-note-pinyin">shuā yá / shū tóu / chuān xiào fú / chuān xié zi</p>' : ""}${state.showEnglish ? '<p class="visual-topic-note-english">brush teeth / comb hair / put on a school uniform / put on shoes</p>' : ""}</article>
-          <article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">七点一刻 = 七点十五分</p>${state.showPinyin ? '<p class="visual-topic-note-pinyin">qī diǎn yī kè = qī diǎn shí wǔ fēn</p>' : ""}${state.showEnglish ? '<p class="visual-topic-note-english">7:15</p>' : ""}</article>
-          <article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">七点半 = 七点三十分</p>${state.showPinyin ? '<p class="visual-topic-note-pinyin">qī diǎn bàn = qī diǎn sān shí fēn</p>' : ""}${state.showEnglish ? '<p class="visual-topic-note-english">7:30</p>' : ""}</article>
-          <article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">七点三刻 = 七点四十五分</p>${state.showPinyin ? '<p class="visual-topic-note-pinyin">qī diǎn sān kè = qī diǎn sì shí wǔ fēn</p>' : ""}${state.showEnglish ? '<p class="visual-topic-note-english">7:45</p>' : ""}</article>
-        </div>
-      </section>
+      ${notes}
     </div>
   `;
 
@@ -1021,6 +1017,12 @@ function renderTimeDateExplorer() {
       state.timeDateSectionId = button.dataset.timeDateSection;
       renderTimeDateExplorer();
       renderActivityPanel(currentTopic());
+    });
+  });
+  focusExplorer.querySelectorAll("[data-time-book-word]").forEach((button) => {
+    button.addEventListener("click", () => {
+      const word = [...timeAdvancedBookWords, ...timeRoutineBookWords].find((item) => item.id === button.dataset.timeBookWord);
+      if (word && state.tapAudioEnabled) speak(word.audio, 0.78);
     });
   });
   bindTimeAssetAudio(focusExplorer);

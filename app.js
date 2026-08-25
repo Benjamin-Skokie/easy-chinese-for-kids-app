@@ -182,6 +182,13 @@
       timeRoutineQuizOptionIds: [],
       timeRoutineQuizSelectedId: "",
       timeRoutineQuizResult: "",
+      timeRoutineBuildOrder: [],
+      timeRoutineBuildIndex: 0,
+      timeRoutineBuildHour: null,
+      timeRoutineBuildMinute: null,
+      timeRoutineBuildAction: "",
+      timeRoutineBuildActionChoices: [],
+      timeRoutineBuildComplete: false,
       clockQuizOrder: [],
       clockQuizIndex: 0,
       clockQuizOptionIds: [],
@@ -528,7 +535,7 @@
       }
     }
     function renderFocusWordList3() {
-      if (currentTopic2().ownsExplorerContent || ["body", "dates", "comparisons", "positions", "transport", "daily-life", "multiplication-rhyme", "identity", "stationery", "school-supplies", "classroom", "school", "school-subjects", "food", "food-preferences", "meals-feelings"].includes(currentTopic2().id) || currentTopic2().id === "numbers" && currentNumberStage2().telephoneMode) {
+      if (currentTopic2().ownsExplorerContent || ["body", "time-date", "dates", "comparisons", "positions", "transport", "daily-life", "multiplication-rhyme", "identity", "stationery", "school-supplies", "classroom", "school", "school-subjects", "food", "food-preferences", "meals-feelings"].includes(currentTopic2().id) || currentTopic2().id === "numbers" && currentNumberStage2().telephoneMode) {
         focusWordList2.innerHTML = "";
         focusWordList2.classList.add("is-hidden");
         return;
@@ -637,7 +644,56 @@
 
   // src/core/lesson-practice-runtime.js
   function createLessonPracticeRuntime(context) {
-    const { state: state2, schoolTopicData: schoolTopicData3, visualTopicItems: visualTopicItems2, positionPracticeItems: positionPracticeItems2, timeDateWeekItems: timeDateWeekItems2, timeDateClockItems: timeDateClockItems2, datePracticeItems: datePracticeItems2, timeDateMonthItems: timeDateMonthItems2, timeDateRoutineItems: timeDateRoutineItems2, clothesMatchItems: clothesMatchItems2, clothesSentenceItems: clothesSentenceItems2, everydayActionItems: everydayActionItems2, requestBuildPhrases: requestBuildPhrases2, illustratedKids: illustratedKids2, numberHanzi: numberHanzi2, buildNumberItem: buildNumberItem2, currentTopic: currentTopic2, currentNumberStage: currentNumberStage2, currentBook: currentBook2, currentLesson: currentLesson2, focusItemsForTopic: focusItemsForTopic2, shuffleArray: shuffleArray2, speak: speak2, renderFocusExplorer: renderFocusExplorer2, renderFocusStatus: renderFocusStatus2, renderSharedLessonPractice: renderSharedLessonPractice2, renderPracticeSayCards: renderPracticeSayCards2, bindPracticeSayCards: bindPracticeSayCards2, activityPanelTitle: activityPanelTitle2, activityPanelSummary: activityPanelSummary2, activityList: activityList2, topicColumns: topicColumns2, renderBodyPractice: renderBodyPractice2, renderWorldPractice, renderHobbiesPractice, activeTimeDateSection: activeTimeDateSection2, ensureWeekdayChallenge: ensureWeekdayChallenge2, ensureWeekdayMatchGame: ensureWeekdayMatchGame2, handleWeekdayChallengePlay: handleWeekdayChallengePlay2, handleWeekdayChallengeGuess: handleWeekdayChallengeGuess2, resetWeekdayMatchGame: resetWeekdayMatchGame2, handleWeekdayMatchPhrase: handleWeekdayMatchPhrase2, handleWeekdayMatchAttempt: handleWeekdayMatchAttempt2, ensureDateChallenge: ensureDateChallenge2, ensureDateMatchGame: ensureDateMatchGame2, handleDateChallengePlay: handleDateChallengePlay2, handleDateChallengeGuess: handleDateChallengeGuess2, resetDateMatchGame: resetDateMatchGame2, handleDateMatchPhrase: handleDateMatchPhrase2, handleDateMatchEvent: handleDateMatchEvent2, familyGameItems: familyGameItems2, familyListenItems: familyListenItems2, familyPersonForItemId: familyPersonForItemId2, familyHeadshotForItemId: familyHeadshotForItemId2, ensureFamilyChallenge: ensureFamilyChallenge2, ensureFamilyMatchGame: ensureFamilyMatchGame2, handleFamilyChallengePlay: handleFamilyChallengePlay2, handleFamilyChallengeGuess: handleFamilyChallengeGuess2, resetFamilyMatchGame: resetFamilyMatchGame2, handleFamilyMatchPhrase: handleFamilyMatchPhrase2, handleFamilyMatchAttempt: handleFamilyMatchAttempt2, greetingsGameItems: greetingsGameItems2, greetingsMeaningLabel: greetingsMeaningLabel2, ensureGreetingsChallenge: ensureGreetingsChallenge2, ensureGreetingsMatchGame: ensureGreetingsMatchGame2, handleGreetingsChallengePlay: handleGreetingsChallengePlay2, handleGreetingsChallengeGuess: handleGreetingsChallengeGuess2, resetGreetingsMatchGame: resetGreetingsMatchGame2, handleGreetingsMatchPhrase: handleGreetingsMatchPhrase2, handleGreetingsMatchAttempt: handleGreetingsMatchAttempt2, nationalityPracticeItems: nationalityPracticeItems2, ensureNationalityChallenge: ensureNationalityChallenge2, currentNationalityAnswer: currentNationalityAnswer2, handleNationalityChallengePlay: handleNationalityChallengePlay2, handleNationalityChallengeGuess: handleNationalityChallengeGuess2, ensureNationalityMatchGame: ensureNationalityMatchGame2, resetNationalityMatchGame: resetNationalityMatchGame2, handleNationalityMatchPhrase: handleNationalityMatchPhrase2, handleNationalityMatchAttempt: handleNationalityMatchAttempt2, languagePracticeItems: languagePracticeItems2, ensureLanguageChallenge: ensureLanguageChallenge2, currentLanguageAnswer: currentLanguageAnswer2, handleLanguageChallengePlay: handleLanguageChallengePlay2, handleLanguageChallengeGuess: handleLanguageChallengeGuess2, politeGameItems: politeGameItems2, politeMeaningLabel: politeMeaningLabel2, ensurePoliteChallenge: ensurePoliteChallenge2, ensurePoliteMatchGame: ensurePoliteMatchGame2, handlePoliteChallengePlay: handlePoliteChallengePlay2, handlePoliteChallengeGuess: handlePoliteChallengeGuess2, resetPoliteMatchGame: resetPoliteMatchGame2, handlePoliteMatchPhrase: handlePoliteMatchPhrase2, handlePoliteMatchAttempt: handlePoliteMatchAttempt2, ensureRoomBuilder: ensureRoomBuilder2, currentRoomBuildItem: currentRoomBuildItem2, handleRoomBuildToken: handleRoomBuildToken2, clearRoomBuilder: clearRoomBuilder2, nextRoomBuilder: nextRoomBuilder2, ensureClothesQuiz: ensureClothesQuiz2, handleClothesQuizPick: handleClothesQuizPick2, nextClothesQuizQuestion: nextClothesQuizQuestion2, ensureClothesSentenceQuiz: ensureClothesSentenceQuiz2, handleClothesSentencePick: handleClothesSentencePick2, nextClothesSentenceQuestion: nextClothesSentenceQuestion2, ensureTimeRoutineQuiz: ensureTimeRoutineQuiz2, handleTimeRoutineQuizPick: handleTimeRoutineQuizPick2, nextTimeRoutineQuizQuestion: nextTimeRoutineQuizQuestion2, ensureClockQuiz: ensureClockQuiz2, handleClockQuizPick: handleClockQuizPick2, nextClockQuizQuestion: nextClockQuizQuestion2, ensureComparisonBuilder: ensureComparisonBuilder2, currentComparisonBuildItem: currentComparisonBuildItem2, handleComparisonBuildToken: handleComparisonBuildToken2, clearComparisonBuilder: clearComparisonBuilder2, nextComparisonBuilder: nextComparisonBuilder2, ensurePositionQuiz: ensurePositionQuiz2, handlePositionQuizPlay: handlePositionQuizPlay2, handlePositionQuizPick: handlePositionQuizPick2, nextPositionQuizQuestion: nextPositionQuizQuestion2, ensureTransportBuilder: ensureTransportBuilder2, currentTransportBuildItem: currentTransportBuildItem2, handleTransportBuildToken: handleTransportBuildToken2, clearTransportBuilder: clearTransportBuilder2, nextTransportBuilder: nextTransportBuilder2, ensureEverydayActionsQuiz: ensureEverydayActionsQuiz2, currentEverydayAction: currentEverydayAction2, handleEverydayActionsPick: handleEverydayActionsPick2, nextEverydayActionsQuestion: nextEverydayActionsQuestion2, resetNumberChallenge: resetNumberChallenge2, ensureMathChallenge: ensureMathChallenge2, handleNumberChallengeGuess: handleNumberChallengeGuess2, resetMathChallenge: resetMathChallenge2, handleMathChallengeSubmit: handleMathChallengeSubmit2, renderNumberVisual: renderNumberVisual2, introductionsBuildTarget: introductionsBuildTarget2, ensureIntroductionsBuilder: ensureIntroductionsBuilder2, resetIntroductionsBuilder: resetIntroductionsBuilder2, handleIntroductionsBuildClear: handleIntroductionsBuildClear2, handleIntroductionsBuildToken: handleIntroductionsBuildToken2, ageGameItems: ageGameItems2, ensureAgeChallenge: ensureAgeChallenge2, ensureAgeBuilder: ensureAgeBuilder2, ageBuildTarget: ageBuildTarget2, handleAgeChallengePlay: handleAgeChallengePlay2, handleAgeChallengeGuess: handleAgeChallengeGuess2, resetAgeBuilder: resetAgeBuilder2, handleAgeBuildClear: handleAgeBuildClear2, handleAgeBuildToken: handleAgeBuildToken2, renderSchoolPractice: renderSchoolPractice2 } = context;
+    const { state: state2, schoolTopicData: schoolTopicData3, visualTopicItems: visualTopicItems2, positionPracticeItems: positionPracticeItems2, timeDateWeekItems: timeDateWeekItems2, timeDateClockItems: timeDateClockItems2, datePracticeItems: datePracticeItems2, timeDateMonthItems: timeDateMonthItems2, timeDateRoutineItems: timeDateRoutineItems2, timeRoutineSentenceBuilds: timeRoutineSentenceBuilds2, clothesMatchItems: clothesMatchItems2, clothesSentenceItems: clothesSentenceItems2, everydayActionItems: everydayActionItems2, requestBuildPhrases: requestBuildPhrases2, illustratedKids: illustratedKids2, numberHanzi: numberHanzi2, buildNumberItem: buildNumberItem2, currentTopic: currentTopic2, currentNumberStage: currentNumberStage2, currentBook: currentBook2, currentLesson: currentLesson2, focusItemsForTopic: focusItemsForTopic2, shuffleArray: shuffleArray2, speak: speak2, renderFocusExplorer: renderFocusExplorer2, renderFocusStatus: renderFocusStatus2, renderSharedLessonPractice: renderSharedLessonPractice2, renderPracticeSayCards: renderPracticeSayCards2, bindPracticeSayCards: bindPracticeSayCards2, activityPanelTitle: activityPanelTitle2, activityPanelSummary: activityPanelSummary2, activityList: activityList2, topicColumns: topicColumns2, renderBodyPractice: renderBodyPractice2, renderWorldPractice, renderHobbiesPractice, activeTimeDateSection: activeTimeDateSection2, ensureWeekdayChallenge: ensureWeekdayChallenge2, ensureWeekdayMatchGame: ensureWeekdayMatchGame2, handleWeekdayChallengePlay: handleWeekdayChallengePlay2, handleWeekdayChallengeGuess: handleWeekdayChallengeGuess2, resetWeekdayMatchGame: resetWeekdayMatchGame2, handleWeekdayMatchPhrase: handleWeekdayMatchPhrase2, handleWeekdayMatchAttempt: handleWeekdayMatchAttempt2, ensureDateChallenge: ensureDateChallenge2, ensureDateMatchGame: ensureDateMatchGame2, handleDateChallengePlay: handleDateChallengePlay2, handleDateChallengeGuess: handleDateChallengeGuess2, resetDateMatchGame: resetDateMatchGame2, handleDateMatchPhrase: handleDateMatchPhrase2, handleDateMatchEvent: handleDateMatchEvent2, familyGameItems: familyGameItems2, familyListenItems: familyListenItems2, familyPersonForItemId: familyPersonForItemId2, familyHeadshotForItemId: familyHeadshotForItemId2, ensureFamilyChallenge: ensureFamilyChallenge2, ensureFamilyMatchGame: ensureFamilyMatchGame2, handleFamilyChallengePlay: handleFamilyChallengePlay2, handleFamilyChallengeGuess: handleFamilyChallengeGuess2, resetFamilyMatchGame: resetFamilyMatchGame2, handleFamilyMatchPhrase: handleFamilyMatchPhrase2, handleFamilyMatchAttempt: handleFamilyMatchAttempt2, greetingsGameItems: greetingsGameItems2, greetingsMeaningLabel: greetingsMeaningLabel2, ensureGreetingsChallenge: ensureGreetingsChallenge2, ensureGreetingsMatchGame: ensureGreetingsMatchGame2, handleGreetingsChallengePlay: handleGreetingsChallengePlay2, handleGreetingsChallengeGuess: handleGreetingsChallengeGuess2, resetGreetingsMatchGame: resetGreetingsMatchGame2, handleGreetingsMatchPhrase: handleGreetingsMatchPhrase2, handleGreetingsMatchAttempt: handleGreetingsMatchAttempt2, nationalityPracticeItems: nationalityPracticeItems2, ensureNationalityChallenge: ensureNationalityChallenge2, currentNationalityAnswer: currentNationalityAnswer2, handleNationalityChallengePlay: handleNationalityChallengePlay2, handleNationalityChallengeGuess: handleNationalityChallengeGuess2, ensureNationalityMatchGame: ensureNationalityMatchGame2, resetNationalityMatchGame: resetNationalityMatchGame2, handleNationalityMatchPhrase: handleNationalityMatchPhrase2, handleNationalityMatchAttempt: handleNationalityMatchAttempt2, languagePracticeItems: languagePracticeItems2, ensureLanguageChallenge: ensureLanguageChallenge2, currentLanguageAnswer: currentLanguageAnswer2, handleLanguageChallengePlay: handleLanguageChallengePlay2, handleLanguageChallengeGuess: handleLanguageChallengeGuess2, politeGameItems: politeGameItems2, politeMeaningLabel: politeMeaningLabel2, ensurePoliteChallenge: ensurePoliteChallenge2, ensurePoliteMatchGame: ensurePoliteMatchGame2, handlePoliteChallengePlay: handlePoliteChallengePlay2, handlePoliteChallengeGuess: handlePoliteChallengeGuess2, resetPoliteMatchGame: resetPoliteMatchGame2, handlePoliteMatchPhrase: handlePoliteMatchPhrase2, handlePoliteMatchAttempt: handlePoliteMatchAttempt2, ensureRoomBuilder: ensureRoomBuilder2, currentRoomBuildItem: currentRoomBuildItem2, handleRoomBuildToken: handleRoomBuildToken2, clearRoomBuilder: clearRoomBuilder2, nextRoomBuilder: nextRoomBuilder2, ensureClothesQuiz: ensureClothesQuiz2, handleClothesQuizPick: handleClothesQuizPick2, nextClothesQuizQuestion: nextClothesQuizQuestion2, ensureClothesSentenceQuiz: ensureClothesSentenceQuiz2, handleClothesSentencePick: handleClothesSentencePick2, nextClothesSentenceQuestion: nextClothesSentenceQuestion2, ensureTimeRoutineQuiz: ensureTimeRoutineQuiz2, handleTimeRoutineQuizPick: handleTimeRoutineQuizPick2, nextTimeRoutineQuizQuestion: nextTimeRoutineQuizQuestion2, ensureClockQuiz: ensureClockQuiz2, handleClockQuizPick: handleClockQuizPick2, nextClockQuizQuestion: nextClockQuizQuestion2, ensureComparisonBuilder: ensureComparisonBuilder2, currentComparisonBuildItem: currentComparisonBuildItem2, handleComparisonBuildToken: handleComparisonBuildToken2, clearComparisonBuilder: clearComparisonBuilder2, nextComparisonBuilder: nextComparisonBuilder2, ensurePositionQuiz: ensurePositionQuiz2, handlePositionQuizPlay: handlePositionQuizPlay2, handlePositionQuizPick: handlePositionQuizPick2, nextPositionQuizQuestion: nextPositionQuizQuestion2, ensureTransportBuilder: ensureTransportBuilder2, currentTransportBuildItem: currentTransportBuildItem2, handleTransportBuildToken: handleTransportBuildToken2, clearTransportBuilder: clearTransportBuilder2, nextTransportBuilder: nextTransportBuilder2, ensureEverydayActionsQuiz: ensureEverydayActionsQuiz2, currentEverydayAction: currentEverydayAction2, handleEverydayActionsPick: handleEverydayActionsPick2, nextEverydayActionsQuestion: nextEverydayActionsQuestion2, resetNumberChallenge: resetNumberChallenge2, ensureMathChallenge: ensureMathChallenge2, handleNumberChallengeGuess: handleNumberChallengeGuess2, resetMathChallenge: resetMathChallenge2, handleMathChallengeSubmit: handleMathChallengeSubmit2, renderNumberVisual: renderNumberVisual2, introductionsBuildTarget: introductionsBuildTarget2, ensureIntroductionsBuilder: ensureIntroductionsBuilder2, resetIntroductionsBuilder: resetIntroductionsBuilder2, handleIntroductionsBuildClear: handleIntroductionsBuildClear2, handleIntroductionsBuildToken: handleIntroductionsBuildToken2, ageGameItems: ageGameItems2, ensureAgeChallenge: ensureAgeChallenge2, ensureAgeBuilder: ensureAgeBuilder2, ageBuildTarget: ageBuildTarget2, handleAgeChallengePlay: handleAgeChallengePlay2, handleAgeChallengeGuess: handleAgeChallengeGuess2, resetAgeBuilder: resetAgeBuilder2, handleAgeBuildClear: handleAgeBuildClear2, handleAgeBuildToken: handleAgeBuildToken2, renderSchoolPractice: renderSchoolPractice2 } = context;
+    function resetTimeRoutineBuilder(advance = false) {
+      if (!state2.timeRoutineBuildOrder.length) state2.timeRoutineBuildOrder = shuffleArray2(timeRoutineSentenceBuilds2.map((item) => item.itemId));
+      else if (advance) {
+        state2.timeRoutineBuildIndex = (state2.timeRoutineBuildIndex + 1) % state2.timeRoutineBuildOrder.length;
+        if (state2.timeRoutineBuildIndex === 0) state2.timeRoutineBuildOrder = shuffleArray2(timeRoutineSentenceBuilds2.map((item) => item.itemId));
+      }
+      state2.timeRoutineBuildHour = null;
+      state2.timeRoutineBuildMinute = null;
+      state2.timeRoutineBuildAction = "";
+      state2.timeRoutineBuildActionChoices = shuffleArray2(timeRoutineSentenceBuilds2.map((item) => item.itemId)).slice(0, 4);
+      state2.timeRoutineBuildComplete = false;
+    }
+    function currentTimeRoutineBuild() {
+      const itemId = state2.timeRoutineBuildOrder[state2.timeRoutineBuildIndex];
+      const build = timeRoutineSentenceBuilds2.find((item2) => item2.itemId === itemId);
+      const item = timeDateRoutineItems2.find((entry) => entry.id === itemId);
+      return build && item ? { build, item } : null;
+    }
+    function ensureTimeRoutineBuilder() {
+      if (!state2.timeRoutineBuildOrder.length) resetTimeRoutineBuilder();
+    }
+    function updateTimeRoutineBuilder(kind, value) {
+      const target = currentTimeRoutineBuild();
+      if (!target || state2.timeRoutineBuildComplete) return;
+      const numericValue = Number(value);
+      if (kind === "hour") state2.timeRoutineBuildHour = numericValue;
+      else if (kind === "minute") state2.timeRoutineBuildMinute = numericValue;
+      else state2.timeRoutineBuildAction = value;
+      state2.timeRoutineBuildComplete = state2.timeRoutineBuildHour !== null && state2.timeRoutineBuildMinute !== null && Boolean(state2.timeRoutineBuildAction);
+      if (state2.timeRoutineBuildComplete) speak2(timeRoutineBuildSentence(), 0.78);
+      renderActivityPanel2(currentTopic2());
+    }
+    function timeRoutineBuildAction() {
+      return timeRoutineSentenceBuilds2.find((item) => item.itemId === state2.timeRoutineBuildAction);
+    }
+    function timeRoutineBuildSentence() {
+      const hours = { 1: "\u4E00", 2: "\u4E24", 3: "\u4E09", 4: "\u56DB", 5: "\u4E94", 6: "\u516D", 7: "\u4E03", 8: "\u516B", 9: "\u4E5D", 10: "\u5341", 11: "\u5341\u4E00", 12: "\u5341\u4E8C" };
+      const minutes = { 0: "", 15: "\u5341\u4E94\u5206", 30: "\u4E09\u5341\u5206", 45: "\u56DB\u5341\u4E94\u5206" };
+      return `${hours[state2.timeRoutineBuildHour]}\u70B9${minutes[state2.timeRoutineBuildMinute]}${timeRoutineBuildAction().action}`;
+    }
+    function timeRoutineBuildPinyin() {
+      const hours = { 1: "y\u012B", 2: "li\u01CEng", 3: "s\u0101n", 4: "s\xEC", 5: "w\u01D4", 6: "li\xF9", 7: "q\u012B", 8: "b\u0101", 9: "ji\u01D4", 10: "sh\xED", 11: "sh\xED y\u012B", 12: "sh\xED \xE8r" };
+      const minutes = { 0: "", 15: "sh\xED w\u01D4 f\u0113n", 30: "s\u0101n sh\xED f\u0113n", 45: "s\xEC sh\xED w\u01D4 f\u0113n" };
+      return `${hours[state2.timeRoutineBuildHour]} di\u01CEn${minutes[state2.timeRoutineBuildMinute] ? ` ${minutes[state2.timeRoutineBuildMinute]}` : ""} ${timeRoutineBuildAction().actionPinyin}.`;
+    }
+    function timeRoutineBuildEnglish() {
+      const minutes = String(state2.timeRoutineBuildMinute).padStart(2, "0");
+      return `${timeRoutineBuildAction().actionEnglish} at ${state2.timeRoutineBuildHour}:${minutes}.`;
+    }
     function familySentenceBuilderMarkup() {
       const labels = { "older-sister": "\u59D0\u59D0", "older-brother": "\u54E5\u54E5", "younger-brother": "\u5F1F\u5F1F", "younger-sister": "\u59B9\u59B9" };
       const counts = state2.familySentenceCounts;
@@ -1276,23 +1332,19 @@
         }).join("")}
         </div>
       </section>
-      ${renderPracticeSayCards2([
-          { hanzi: "\u51E0\u70B9\u4E86\uFF1F", pinyin: "j\u01D0 di\u01CEn le?", english: "What time is it?", audio: "\u51E0\u70B9\u4E86" },
-          { hanzi: "\u73B0\u5728\u4E03\u70B9\u96F6\u4E94\u5206\u3002", pinyin: "xi\xE0n z\xE0i q\u012B di\u01CEn l\xEDng w\u01D4 f\u0113n.", english: "It is 7:05 now.", audio: "\u73B0\u5728\u4E03\u70B9\u96F6\u4E94\u5206" },
-          { hanzi: "\u4E03\u70B9\u4E00\u523B = \u4E03\u70B9\u5341\u4E94\u5206\u3002", pinyin: "q\u012B di\u01CEn y\u012B k\xE8 = q\u012B di\u01CEn sh\xED w\u01D4 f\u0113n.", english: "7:15", audio: "\u4E03\u70B9\u4E00\u523B\u4E03\u70B9\u5341\u4E94\u5206" }
-        ])}
     `;
         activityList2.querySelectorAll("[data-clock-quiz-pick]").forEach((button) => {
           button.addEventListener("click", () => handleClockQuizPick2(button.dataset.clockQuizPick));
         });
         activityList2.querySelector("[data-clock-quiz-new]")?.addEventListener("click", nextClockQuizQuestion2);
-        bindPracticeSayCards2(activityList2);
         return;
       }
       if (topic.id === "time-date") {
         ensureTimeRoutineQuiz2();
+        ensureTimeRoutineBuilder();
         const answerId = state2.timeRoutineQuizOrder[state2.timeRoutineQuizIndex];
         const prompt = timeDateRoutineItems2.find((item) => item.id === answerId);
+        const timeBuilder = currentTimeRoutineBuild();
         activityPanelTitle2.textContent = "Let's practice";
         activityPanelSummary2.textContent = "Look at the routine picture, then choose the matching Chinese sentence.";
         activityList2.className = "support-list";
@@ -1317,11 +1369,18 @@
         }).join("")}
         </div>
       </section>
-      ${renderPracticeSayCards2([
-          { hanzi: "\u4F60\u6BCF\u5929\u51E0\u70B9\u8D77\u5E8A\uFF1F", pinyin: "n\u01D0 m\u011Bi ti\u0101n j\u01D0 di\u01CEn q\u01D0 chu\xE1ng?", english: "What time do you get up every day?", audio: "\u4F60\u6BCF\u5929\u51E0\u70B9\u8D77\u5E8A" },
-          { hanzi: "\u6211\u6BCF\u5929\u4E03\u70B9\u8D77\u5E8A\u3002", pinyin: "w\u01D2 m\u011Bi ti\u0101n q\u012B di\u01CEn q\u01D0 chu\xE1ng.", english: "I get up at seven every day.", audio: "\u6211\u6BCF\u5929\u4E03\u70B9\u8D77\u5E8A" },
-          { hanzi: "\u5237\u7259\u3001\u68B3\u5934\u3001\u7A7F\u6821\u670D\u3001\u7A7F\u978B\u5B50\u3002", pinyin: "shu\u0101 y\xE1, sh\u016B t\xF3u, chu\u0101n xi\xE0o f\xFA, chu\u0101n xi\xE9 zi.", english: "Brush teeth, comb hair, put on a school uniform, put on shoes.", audio: "\u5237\u7259\u68B3\u5934\u7A7F\u6821\u670D\u7A7F\u978B\u5B50" }
-        ])}
+      <section class="clothes-quiz-shell time-routine-builder-shell">
+        <div class="numbers-game-top"><div><p class="body-match-kicker">Complete the sentence</p><p class="numbers-game-note">Choose an hour, minutes, and an action to make your own sentence.</p></div><button class="small-button is-play-button" type="button" data-time-routine-builder-new>Play</button></div>
+        <div class="clothes-sentence-frame">
+          ${state2.timeRoutineBuildComplete ? `<span class="numbers-game-hanzi">${timeRoutineBuildSentence()}\u3002</span>` : `<span class="clothes-sentence-blank">${state2.timeRoutineBuildHour ?? "__"}</span><span class="numbers-game-hanzi">\u70B9</span><span class="clothes-sentence-blank">${state2.timeRoutineBuildMinute ?? "__"}</span><span class="numbers-game-hanzi">\u5206</span><span class="clothes-sentence-blank is-action">${timeRoutineBuildAction()?.action ?? "__"}</span><span class="numbers-game-hanzi">\u3002</span>`}
+          ${state2.timeRoutineBuildComplete && state2.showPinyin ? `<span class="numbers-game-pinyin">${timeRoutineBuildPinyin()}</span>` : ""}
+          ${state2.timeRoutineBuildComplete && state2.showEnglish ? `<span class="numbers-game-english">${timeRoutineBuildEnglish()}</span>` : ""}
+        </div>
+        <div class="weather-fill-choice-groups time-routine-builder-options"><div class="time-routine-builder-group is-hour"><p class="weather-fill-choice-label">Hour</p><div class="weather-fill-options">${timeBuilder.build.hourChoices.map((hour) => `<button class="weather-fill-option${state2.timeRoutineBuildHour === hour ? " is-selected" : ""}" type="button" data-time-routine-builder-hour="${hour}" ${state2.timeRoutineBuildComplete ? "disabled" : ""}>${hour}</button>`).join("")}</div></div><div class="time-routine-builder-group is-minutes"><p class="weather-fill-choice-label">Minutes</p><div class="weather-fill-options">${[0, 15, 30, 45].map((minute) => `<button class="weather-fill-option${state2.timeRoutineBuildMinute === minute ? " is-selected" : ""}" type="button" data-time-routine-builder-minute="${minute}" ${state2.timeRoutineBuildComplete ? "disabled" : ""}>${minute}</button>`).join("")}</div></div><div class="time-routine-builder-group is-action"><p class="weather-fill-choice-label">Action</p><div class="weather-fill-options">${state2.timeRoutineBuildActionChoices.map((actionId) => {
+          const action = timeRoutineSentenceBuilds2.find((item) => item.itemId === actionId);
+          return `<button class="weather-fill-option${state2.timeRoutineBuildAction === actionId ? " is-selected" : ""}" type="button" data-time-routine-builder-action="${actionId}" ${state2.timeRoutineBuildComplete ? "disabled" : ""}>${action.action}</button>`;
+        }).join("")}</div></div></div>
+      </section>
     `;
         activityList2.querySelectorAll("[data-time-routine-quiz-pick]").forEach((button) => {
           button.addEventListener("click", () => {
@@ -1329,7 +1388,13 @@
           });
         });
         activityList2.querySelector("[data-time-routine-quiz-new]")?.addEventListener("click", nextTimeRoutineQuizQuestion2);
-        bindPracticeSayCards2(activityList2);
+        activityList2.querySelector("[data-time-routine-builder-new]")?.addEventListener("click", () => {
+          resetTimeRoutineBuilder(true);
+          renderActivityPanel2(currentTopic2());
+        });
+        activityList2.querySelectorAll("[data-time-routine-builder-hour]").forEach((button) => button.addEventListener("click", () => updateTimeRoutineBuilder("hour", button.dataset.timeRoutineBuilderHour)));
+        activityList2.querySelectorAll("[data-time-routine-builder-minute]").forEach((button) => button.addEventListener("click", () => updateTimeRoutineBuilder("minute", button.dataset.timeRoutineBuilderMinute)));
+        activityList2.querySelectorAll("[data-time-routine-builder-action]").forEach((button) => button.addEventListener("click", () => updateTimeRoutineBuilder("action", button.dataset.timeRoutineBuilderAction)));
         return;
       }
       if (topic.id === "clothes") {
@@ -2610,6 +2675,31 @@
     { id: "thirty-past-seven", hanzi: "\u4E03\u70B9\u4E09\u5341\u5206", pinyin: "q\u012B di\u01CEn s\u0101n sh\xED f\u0113n", english: "7:30", audio: "\u4E03\u70B9\u4E09\u5341\u5206" },
     { id: "three-quarters-seven", hanzi: "\u4E03\u70B9\u4E09\u523B", pinyin: "q\u012B di\u01CEn s\u0101n k\xE8", english: "7:45", audio: "\u4E03\u70B9\u4E09\u523B" },
     { id: "forty-five-past-seven", hanzi: "\u4E03\u70B9\u56DB\u5341\u4E94\u5206", pinyin: "q\u012B di\u01CEn s\xEC sh\xED w\u01D4 f\u0113n", english: "7:45", audio: "\u4E03\u70B9\u56DB\u5341\u4E94\u5206" }
+  ];
+  var timeAdvancedBookWords = [
+    { id: "now", hanzi: "\u73B0\u5728", pinyin: "xi\xE0n z\xE0i", english: "now", audio: "\u73B0\u5728" },
+    { id: "quarter", hanzi: "\u4E00\u523B", pinyin: "y\u012B k\xE8", english: "a quarter (of an hour)", audio: "\u4E00\u523B" },
+    { id: "half", hanzi: "\u534A", pinyin: "b\xE0n", english: "half", audio: "\u534A" },
+    { id: "minute", hanzi: "\u5206", pinyin: "f\u0113n", english: "minute", audio: "\u5206" },
+    { id: "three-quarters", hanzi: "\u4E09\u523B", pinyin: "s\u0101n k\xE8", english: "three quarters (of an hour)", audio: "\u4E09\u523B" },
+    { id: "zero", hanzi: "\u96F6", pinyin: "l\xEDng", english: "zero", audio: "\u96F6" }
+  ];
+  var timeRoutineBookWords = [
+    { id: "wake-up", hanzi: "\u8D77\u5E8A", pinyin: "q\u01D0 chu\xE1ng", english: "get up", audio: "\u8D77\u5E8A" },
+    { id: "breakfast", hanzi: "\u5403\u65E9\u996D", pinyin: "ch\u012B z\u01CEo f\xE0n", english: "have breakfast", audio: "\u5403\u65E9\u996D" },
+    { id: "go-to-school", hanzi: "\u53BB\u5B66\u6821", pinyin: "q\xF9 xu\xE9 xi\xE0o", english: "go to school", audio: "\u53BB\u5B66\u6821" },
+    { id: "school-ends", hanzi: "\u653E\u5B66", pinyin: "f\xE0ng xu\xE9", english: "school ends", audio: "\u653E\u5B66" },
+    { id: "dinner", hanzi: "\u5403\u665A\u996D", pinyin: "ch\u012B w\u01CEn f\xE0n", english: "have dinner", audio: "\u5403\u665A\u996D" },
+    { id: "bedtime", hanzi: "\u7761\u89C9", pinyin: "shu\xEC ji\xE0o", english: "go to bed", audio: "\u7761\u89C9" }
+  ];
+  var timeRoutineSentenceBuilds = [
+    { itemId: "wake-up", hourChoices: [6, 7, 8, 9], action: "\u8D77\u5E8A", actionPinyin: "q\u01D0 chu\xE1ng", actionEnglish: "get up" },
+    { itemId: "breakfast", hourChoices: [6, 7, 8, 9], action: "\u5403\u65E9\u996D", actionPinyin: "ch\u012B z\u01CEo f\xE0n", actionEnglish: "have breakfast" },
+    { itemId: "school", hourChoices: [7, 8, 9, 10], action: "\u53BB\u5B66\u6821", actionPinyin: "q\xF9 xu\xE9 xi\xE0o", actionEnglish: "go to school" },
+    { itemId: "lunch", hourChoices: [11, 12, 1, 2], action: "\u5403\u5348\u996D", actionPinyin: "ch\u012B w\u01D4 f\xE0n", actionEnglish: "have lunch" },
+    { itemId: "home", hourChoices: [1, 2, 3, 4], action: "\u653E\u5B66", actionPinyin: "f\xE0ng xu\xE9", actionEnglish: "school ends" },
+    { itemId: "dinner", hourChoices: [5, 6, 7, 8], action: "\u5403\u665A\u996D", actionPinyin: "ch\u012B w\u01CEn f\xE0n", actionEnglish: "have dinner" },
+    { itemId: "bedtime", hourChoices: [8, 9, 10, 11], action: "\u7761\u89C9", actionPinyin: "shu\xEC ji\xE0o", actionEnglish: "go to bed" }
   ];
   var timeDateRoutineItems = [
     ["wake-up", "Wake up", "\u4E03\u70B9\u8D77\u5E8A\u3002", "q\u012B di\u01CEn q\u01D0 chu\xE1ng.", "Wake up at 7:00.", "\u4E03\u70B9\u8D77\u5E8A", "07am-lele-wake-up.webp"],
@@ -8247,7 +8337,7 @@
 
   // src/features/time-daily-life/time-daily-life-runtime.js
   function createTimeDailyLifeRuntime(context) {
-    const { state: state2, timeDateWeekItems: timeDateWeekItems2, timeDateClockItems: timeDateClockItems2, timeDateExpressionItems: timeDateExpressionItems2, timeDateRoutineItems: timeDateRoutineItems2, datePracticeItems: datePracticeItems2, timeDateDateItems: timeDateDateItems2, timeDateMonthItems: timeDateMonthItems2, comparisonPracticeItems: comparisonPracticeItems2, comparisonWordItems: comparisonWordItems2, positionPracticeItems: positionPracticeItems2, positionScenes: positionScenes2, positionBookWords: positionBookWords2, clothesMatchItems: clothesMatchItems2, clothesSentenceItems: clothesSentenceItems2, clothesBookWords: clothesBookWords2, clothesPractice: clothesPractice2, roomScenes: roomScenes2, roomSentenceTokens: roomSentenceTokens2, transportSentenceTokens: transportSentenceTokens2, everydayActionItems: everydayActionItems2, visualTopicItems: visualTopicItems2, shuffleArray: shuffleArray2, speak: speak2, speakSceneLines: speakSceneLines2, currentTopic: currentTopic2, currentBook: currentBook2, currentLesson: currentLesson2, renderActivityPanel: renderActivityPanel2, focusExplorer: focusExplorer2, focusStatus: focusStatus2 } = context;
+    const { state: state2, timeDateWeekItems: timeDateWeekItems2, timeDateClockItems: timeDateClockItems2, timeDateExpressionItems: timeDateExpressionItems2, timeDateRoutineItems: timeDateRoutineItems2, timeAdvancedBookWords: timeAdvancedBookWords2, timeRoutineBookWords: timeRoutineBookWords2, datePracticeItems: datePracticeItems2, timeDateDateItems: timeDateDateItems2, timeDateMonthItems: timeDateMonthItems2, comparisonPracticeItems: comparisonPracticeItems2, comparisonWordItems: comparisonWordItems2, positionPracticeItems: positionPracticeItems2, positionScenes: positionScenes2, positionBookWords: positionBookWords2, clothesMatchItems: clothesMatchItems2, clothesSentenceItems: clothesSentenceItems2, clothesBookWords: clothesBookWords2, clothesPractice: clothesPractice2, roomScenes: roomScenes2, roomSentenceTokens: roomSentenceTokens2, transportSentenceTokens: transportSentenceTokens2, everydayActionItems: everydayActionItems2, visualTopicItems: visualTopicItems2, shuffleArray: shuffleArray2, speak: speak2, speakSceneLines: speakSceneLines2, currentTopic: currentTopic2, currentBook: currentBook2, currentLesson: currentLesson2, renderActivityPanel: renderActivityPanel2, focusExplorer: focusExplorer2, focusStatus: focusStatus2 } = context;
     function resetWeekdayChallenge2(options = {}) {
       const answerId = nextRandomCycleId(state2, "weekdays-listen", timeDateWeekItems2.map((item) => item.id));
       const answer = timeDateWeekItems2.find((item) => item.id === answerId);
@@ -8771,7 +8861,8 @@
     }
     function timeDateSectionForCurrentLesson2() {
       const lessonKey = `${currentBook2().id}:${currentLesson2().lesson}`;
-      if (lessonKey === "2b:2" || lessonKey === "4a:3") return "clock";
+      if (lessonKey === "2b:2") return "clock";
+      if (lessonKey === "4a:3") return "routine";
       return "routine";
     }
     function activeTimeDateSection2() {
@@ -9083,15 +9174,20 @@
     function renderTimeDateExplorer2() {
       const activeSection = activeTimeDateSection2();
       const sections = [
-        { id: "routine", hanzi: "\u4F5C\u606F", english: "Routine" },
-        { id: "clock", hanzi: "\u65F6\u95F4", english: "Time" }
+        { id: "clock", hanzi: "\u6574\u70B9", english: "Whole hours" },
+        { id: "routine", hanzi: "\u4F5C\u606F", english: "Routine" }
       ];
+      const wordGrid = (words) => `<section class="school-lesson-section time-book-word-section"><div class="time-months-heading"><p class="body-match-kicker">Book words</p></div><div class="comparison-word-grid time-text-word-grid">${words.map((word) => `<button class="comparison-word-card" type="button" data-time-book-word="${word.id}"><span class="comparison-word-hanzi">${word.hanzi}</span>${state2.showPinyin ? `<span class="comparison-word-pinyin">${word.pinyin}</span>` : ""}${state2.showEnglish ? `<span class="comparison-word-english">${word.english}</span>` : ""}</button>`).join("")}</div></section>`;
+      const clockNotes = `<section class="visual-topic-notes time-useful-notes"><p class="body-match-kicker">Useful notes</p><div class="visual-topic-note-grid"><article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">\u51E0\u70B9\u4E86\uFF1F</p>${state2.showPinyin ? '<p class="visual-topic-note-pinyin">j\u01D0 di\u01CEn le?</p>' : ""}${state2.showEnglish ? '<p class="visual-topic-note-english">What time is it?</p>' : ""}<p class="visual-topic-note-example">\u73B0\u5728\u4E03\u70B9\u3002</p>${state2.showPinyin ? '<p class="visual-topic-note-pinyin">xi\xE0n z\xE0i q\u012B di\u01CEn.</p>' : ""}${state2.showEnglish ? `<p class="visual-topic-note-english">It is seven o'clock now.</p>` : ""}</article></div></section>`;
+      const routineNotes = `<section class="visual-topic-notes time-useful-notes"><p class="body-match-kicker">Useful notes</p><div class="visual-topic-note-grid"><article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">\u73B0\u5728\u51E0\u70B9\u4E86\uFF1F</p>${state2.showPinyin ? '<p class="visual-topic-note-pinyin">xi\xE0n z\xE0i j\u01D0 di\u01CEn le?</p>' : ""}${state2.showEnglish ? '<p class="visual-topic-note-english">What time is it now?</p>' : ""}<p class="visual-topic-note-example">\u73B0\u5728\u4E03\u70B9\u96F6\u4E94\u5206\u3002</p>${state2.showPinyin ? '<p class="visual-topic-note-pinyin">xi\xE0n z\xE0i q\u012B di\u01CEn l\xEDng w\u01D4 f\u0113n.</p>' : ""}${state2.showEnglish ? '<p class="visual-topic-note-english">It is 7:05 now.</p>' : ""}</article><article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">\u4E00\u523B = \u5341\u4E94\u5206 \xB7 \u534A = \u4E09\u5341\u5206 \xB7 \u4E09\u523B = \u56DB\u5341\u4E94\u5206</p>${state2.showPinyin ? '<p class="visual-topic-note-pinyin">y\u012B k\xE8 = sh\xED w\u01D4 f\u0113n \xB7 b\xE0n = s\u0101n sh\xED f\u0113n \xB7 s\u0101n k\xE8 = s\xEC sh\xED w\u01D4 f\u0113n</p>' : ""}${state2.showEnglish ? '<p class="visual-topic-note-english">a quarter = 15 minutes \xB7 half = 30 minutes \xB7 three quarters = 45 minutes</p>' : ""}<p class="visual-topic-note-example">\u4E24\u70B9\u4E00\u523B = \u4E24\u70B9\u5341\u4E94\u5206\u3002</p>${state2.showPinyin ? '<p class="visual-topic-note-pinyin">li\u01CEng di\u01CEn y\u012B k\xE8 = li\u01CEng di\u01CEn sh\xED w\u01D4 f\u0113n.</p>' : ""}${state2.showEnglish ? '<p class="visual-topic-note-english">2:15.</p>' : ""}</article><article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">\u65F6\u95F4\u653E\u5728\u52A8\u4F5C\u524D\u9762</p>${state2.showPinyin ? '<p class="visual-topic-note-pinyin">sh\xED ji\u0101n f\xE0ng z\xE0i d\xF2ng zu\xF2 qi\xE1n mi\xE0n</p>' : ""}${state2.showEnglish ? '<p class="visual-topic-note-english">Put the time before the action.</p>' : ""}<p class="visual-topic-note-example">\u4E03\u70B9\u8D77\u5E8A\u3002\u4E24\u70B9\u534A\u653E\u5B66\u3002</p>${state2.showPinyin ? '<p class="visual-topic-note-pinyin">q\u012B di\u01CEn q\u01D0 chu\xE1ng. li\u01CEng di\u01CEn b\xE0n f\xE0ng xu\xE9.</p>' : ""}${state2.showEnglish ? '<p class="visual-topic-note-english">Get up at seven. School ends at 2:30.</p>' : ""}</article></div></section>`;
       let content = "";
+      let notes = "";
       if (activeSection === "clock") {
-        content = renderTimeAssetGrid2(timeDateClockItems2.filter((item) => item.id !== "clock-7"), "clock");
+        content = `<section class="school-lesson-section"><div class="time-months-heading"><p class="body-match-kicker">Book words</p></div>${renderTimeAssetGrid2(timeDateClockItems2, "clock")}</section>`;
+        notes = clockNotes;
       } else {
         content = `
-      <div class="greetings-practice-grid time-routine-scene-grid">
+      <section class="school-lesson-section"><div class="time-months-heading"><p class="body-match-kicker">Scenes</p></div><div class="greetings-practice-grid time-routine-scene-grid">
         ${timeDateRoutineItems2.map(
           (item) => `
               <section class="greetings-exchange">
@@ -9114,8 +9210,10 @@
               </section>
             `
         ).join("")}
-      </div>
+      </div></section>
+      ${wordGrid([...timeAdvancedBookWords2, ...timeRoutineBookWords2])}
     `;
+        notes = routineNotes;
       }
       focusExplorer2.innerHTML = `
     <div class="time-date-board">
@@ -9129,19 +9227,7 @@
       ).join("")}
       </div>
       ${content}
-      <section class="visual-topic-notes time-useful-notes">
-        <p class="body-match-kicker">Useful notes</p>
-        <div class="visual-topic-note-grid">
-          <article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">\u51E0\u70B9\u4E86\uFF1F</p>${state2.showPinyin ? '<p class="visual-topic-note-pinyin">j\u01D0 di\u01CEn le?</p>' : ""}${state2.showEnglish ? '<p class="visual-topic-note-english">What time is it?</p>' : ""}<p class="visual-topic-note-example">\u73B0\u5728\u4E03\u70B9\u3002</p>${state2.showPinyin ? '<p class="visual-topic-note-pinyin">xi\xE0n z\xE0i q\u012B di\u01CEn.</p>' : ""}${state2.showEnglish ? `<p class="visual-topic-note-english">It is seven o'clock now.</p>` : ""}</article>
-          <article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">\u5206 / \u96F6</p>${state2.showPinyin ? '<p class="visual-topic-note-pinyin">f\u0113n / l\xEDng</p>' : ""}${state2.showEnglish ? '<p class="visual-topic-note-english">minute / zero</p>' : ""}<p class="visual-topic-note-example">\u73B0\u5728\u4E03\u70B9\u96F6\u4E94\u5206\u3002</p>${state2.showPinyin ? '<p class="visual-topic-note-pinyin">xi\xE0n z\xE0i q\u012B di\u01CEn l\xEDng w\u01D4 f\u0113n.</p>' : ""}${state2.showEnglish ? '<p class="visual-topic-note-english">It is 7:05 now.</p>' : ""}</article>
-          <article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">\u65E9\u4E0A / \u4E0A\u5348 / \u4E2D\u5348 / \u4E0B\u5348 / \u665A\u4E0A</p>${state2.showPinyin ? '<p class="visual-topic-note-pinyin">z\u01CEo shang / sh\xE0ng w\u01D4 / zh\u014Dng w\u01D4 / xi\xE0 w\u01D4 / w\u01CEn shang</p>' : ""}${state2.showEnglish ? '<p class="visual-topic-note-english">early morning / morning / noon / afternoon / evening</p>' : ""}</article>
-          <article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">\u4F60\u6BCF\u5929\u51E0\u70B9\u8D77\u5E8A\uFF1F</p>${state2.showPinyin ? '<p class="visual-topic-note-pinyin">n\u01D0 m\u011Bi ti\u0101n j\u01D0 di\u01CEn q\u01D0 chu\xE1ng?</p>' : ""}${state2.showEnglish ? '<p class="visual-topic-note-english">What time do you get up every day?</p>' : ""}<p class="visual-topic-note-example">\u6211\u6BCF\u5929\u4E03\u70B9\u8D77\u5E8A\u3002</p>${state2.showPinyin ? '<p class="visual-topic-note-pinyin">w\u01D2 m\u011Bi ti\u0101n q\u012B di\u01CEn q\u01D0 chu\xE1ng.</p>' : ""}${state2.showEnglish ? '<p class="visual-topic-note-english">I get up at seven every day.</p>' : ""}</article>
-          <article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">\u5237\u7259 / \u68B3\u5934 / \u7A7F\u6821\u670D / \u7A7F\u978B\u5B50</p>${state2.showPinyin ? '<p class="visual-topic-note-pinyin">shu\u0101 y\xE1 / sh\u016B t\xF3u / chu\u0101n xi\xE0o f\xFA / chu\u0101n xi\xE9 zi</p>' : ""}${state2.showEnglish ? '<p class="visual-topic-note-english">brush teeth / comb hair / put on a school uniform / put on shoes</p>' : ""}</article>
-          <article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">\u4E03\u70B9\u4E00\u523B = \u4E03\u70B9\u5341\u4E94\u5206</p>${state2.showPinyin ? '<p class="visual-topic-note-pinyin">q\u012B di\u01CEn y\u012B k\xE8 = q\u012B di\u01CEn sh\xED w\u01D4 f\u0113n</p>' : ""}${state2.showEnglish ? '<p class="visual-topic-note-english">7:15</p>' : ""}</article>
-          <article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">\u4E03\u70B9\u534A = \u4E03\u70B9\u4E09\u5341\u5206</p>${state2.showPinyin ? '<p class="visual-topic-note-pinyin">q\u012B di\u01CEn b\xE0n = q\u012B di\u01CEn s\u0101n sh\xED f\u0113n</p>' : ""}${state2.showEnglish ? '<p class="visual-topic-note-english">7:30</p>' : ""}</article>
-          <article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">\u4E03\u70B9\u4E09\u523B = \u4E03\u70B9\u56DB\u5341\u4E94\u5206</p>${state2.showPinyin ? '<p class="visual-topic-note-pinyin">q\u012B di\u01CEn s\u0101n k\xE8 = q\u012B di\u01CEn s\xEC sh\xED w\u01D4 f\u0113n</p>' : ""}${state2.showEnglish ? '<p class="visual-topic-note-english">7:45</p>' : ""}</article>
-        </div>
-      </section>
+      ${notes}
     </div>
   `;
       focusExplorer2.querySelectorAll("[data-time-date-section]").forEach((button) => {
@@ -9149,6 +9235,12 @@
           state2.timeDateSectionId = button.dataset.timeDateSection;
           renderTimeDateExplorer2();
           renderActivityPanel2(currentTopic2());
+        });
+      });
+      focusExplorer2.querySelectorAll("[data-time-book-word]").forEach((button) => {
+        button.addEventListener("click", () => {
+          const word = [...timeAdvancedBookWords2, ...timeRoutineBookWords2].find((item) => item.id === button.dataset.timeBookWord);
+          if (word && state2.tapAudioEnabled) speak2(word.audio, 0.78);
         });
       });
       bindTimeAssetAudio2(focusExplorer2);
@@ -11792,6 +11884,9 @@
     timeDateClockItems,
     timeDateExpressionItems,
     timeDateRoutineItems,
+    timeAdvancedBookWords,
+    timeRoutineBookWords,
+    timeRoutineSentenceBuilds,
     datePracticeItems,
     timeDateDateItems,
     timeDateMonthItems,
@@ -11874,6 +11969,7 @@
     datePracticeItems,
     timeDateMonthItems,
     timeDateRoutineItems,
+    timeRoutineSentenceBuilds,
     clothesMatchItems,
     clothesSentenceItems,
     everydayActionItems,

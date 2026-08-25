@@ -10,7 +10,7 @@ import { createNavigationRuntime } from "../core/navigation-runtime.js";
 import { bindViewNavigationEvents } from "../core/view-navigation-events.js";
 import { topicIdFromLocation, topicPageUrl, viewFromLocation } from "../core/router.js";
 import { timeDateWeekItems } from "../features/time-daily-life/weekdays.js";
-import { timeDateClockItems, timeDateExpressionItems, timeDateRoutineItems } from "../features/time-daily-life/time.js";
+import { timeAdvancedBookWords, timeDateClockItems, timeDateExpressionItems, timeDateRoutineItems, timeRoutineBookWords, timeRoutineSentenceBuilds } from "../features/time-daily-life/time.js";
 import { datePracticeItems, timeDateDateItems, timeDateMonthItems } from "../features/time-daily-life/dates.js";
 import { comparisonPracticeItems, comparisonsTopic, comparisonVisualItems, comparisonWordItems } from "../features/time-daily-life/comparisons.js";
 import { positionBookWords, positionPracticeItems, positionScenes, positionsTopic, positionVisualItems } from "../features/time-daily-life/positions.js";
@@ -674,6 +674,9 @@ timeDateWeekItems,
 timeDateClockItems,
 timeDateExpressionItems,
 timeDateRoutineItems,
+timeAdvancedBookWords,
+timeRoutineBookWords,
+timeRoutineSentenceBuilds,
 datePracticeItems,
 timeDateDateItems,
 timeDateMonthItems,
@@ -759,6 +762,7 @@ lessonPracticeRuntime = createLessonPracticeRuntime({
   datePracticeItems,
   timeDateMonthItems,
   timeDateRoutineItems,
+  timeRoutineSentenceBuilds,
 clothesMatchItems,
 clothesSentenceItems,
   everydayActionItems,

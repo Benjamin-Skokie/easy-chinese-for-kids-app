@@ -48,8 +48,8 @@ import { familyGameItemIds, familyPractice, familyTopic, illustratedFamily } fro
 
 test("the local page loads a single bundled application script", () => {
   const html = readFileSync("index.html", "utf8");
-  assert.match(html, /<link rel="stylesheet" href="styles\.css\?v=20260825-positions-direction-board" \/>/);
-  assert.match(html, /<script src="app\.js\?v=20260825-positions-sentence-fill"><\/script>/);
+  assert.match(html, /<link rel="stylesheet" href="styles\.css\?v=20260825-routine-time-columns" \/>/);
+  assert.match(html, /<script src="app\.js\?v=20260825-routine-time-columns"><\/script>/);
   assert.doesNotMatch(html, /type="module"/);
 });
 

@@ -14,6 +14,34 @@ export const timeDateExpressionItems = [
   { id: "forty-five-past-seven", hanzi: "七点四十五分", pinyin: "qī diǎn sì shí wǔ fēn", english: "7:45", audio: "七点四十五分" }
 ];
 
+export const timeAdvancedBookWords = [
+  { id: "now", hanzi: "现在", pinyin: "xiàn zài", english: "now", audio: "现在" },
+  { id: "quarter", hanzi: "一刻", pinyin: "yī kè", english: "a quarter (of an hour)", audio: "一刻" },
+  { id: "half", hanzi: "半", pinyin: "bàn", english: "half", audio: "半" },
+  { id: "minute", hanzi: "分", pinyin: "fēn", english: "minute", audio: "分" },
+  { id: "three-quarters", hanzi: "三刻", pinyin: "sān kè", english: "three quarters (of an hour)", audio: "三刻" },
+  { id: "zero", hanzi: "零", pinyin: "líng", english: "zero", audio: "零" }
+];
+
+export const timeRoutineBookWords = [
+  { id: "wake-up", hanzi: "起床", pinyin: "qǐ chuáng", english: "get up", audio: "起床" },
+  { id: "breakfast", hanzi: "吃早饭", pinyin: "chī zǎo fàn", english: "have breakfast", audio: "吃早饭" },
+  { id: "go-to-school", hanzi: "去学校", pinyin: "qù xué xiào", english: "go to school", audio: "去学校" },
+  { id: "school-ends", hanzi: "放学", pinyin: "fàng xué", english: "school ends", audio: "放学" },
+  { id: "dinner", hanzi: "吃晚饭", pinyin: "chī wǎn fàn", english: "have dinner", audio: "吃晚饭" },
+  { id: "bedtime", hanzi: "睡觉", pinyin: "shuì jiào", english: "go to bed", audio: "睡觉" }
+];
+
+export const timeRoutineSentenceBuilds = [
+  { itemId: "wake-up", hourChoices: [6, 7, 8, 9], action: "起床", actionPinyin: "qǐ chuáng", actionEnglish: "get up" },
+  { itemId: "breakfast", hourChoices: [6, 7, 8, 9], action: "吃早饭", actionPinyin: "chī zǎo fàn", actionEnglish: "have breakfast" },
+  { itemId: "school", hourChoices: [7, 8, 9, 10], action: "去学校", actionPinyin: "qù xué xiào", actionEnglish: "go to school" },
+  { itemId: "lunch", hourChoices: [11, 12, 1, 2], action: "吃午饭", actionPinyin: "chī wǔ fàn", actionEnglish: "have lunch" },
+  { itemId: "home", hourChoices: [1, 2, 3, 4], action: "放学", actionPinyin: "fàng xué", actionEnglish: "school ends" },
+  { itemId: "dinner", hourChoices: [5, 6, 7, 8], action: "吃晚饭", actionPinyin: "chī wǎn fàn", actionEnglish: "have dinner" },
+  { itemId: "bedtime", hourChoices: [8, 9, 10, 11], action: "睡觉", actionPinyin: "shuì jiào", actionEnglish: "go to bed" }
+];
+
 export const timeDateRoutineItems = [
   ["wake-up", "Wake up", "七点起床。", "qī diǎn qǐ chuáng.", "Wake up at 7:00.", "七点起床", "07am-lele-wake-up.webp"],
   ["breakfast", "Breakfast", "七点十五分吃早饭。", "qī diǎn shí wǔ fēn chī zǎo fàn.", "Have breakfast at 7:15.", "七点十五分吃早饭", "0715am-lele-having-breakfast.webp"],
