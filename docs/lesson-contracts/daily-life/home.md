@@ -1,6 +1,6 @@
 # My Home
 
-Status: `partial`  
+Status: `complete`
 URL: `index.html?topic=daily-life#topic-detail`  
 Mapped lesson: **4B Lesson 3 — My room**
 
@@ -16,8 +16,8 @@ The page owns home/room scenes, furniture words, and `家里有…` descriptions
 
 ## Lesson evidence
 
-+- **4B Lesson 3 — My room:** Words: `房间、床、书桌、衣柜`. Frame: `房间里有…`.
+- **4B Lesson 3 — My room:** Words: `房间、床、书桌、衣柜、钢琴`. Frame: `房间里有…`.
 
 ## Remaining coverage
 
-Keep object location language in Positions & Directions.
+The Home page now includes a piano scene and a compact `有 / 没有` grammar note. Keep object location language in Positions & Directions.

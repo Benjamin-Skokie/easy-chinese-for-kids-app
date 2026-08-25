@@ -48,8 +48,8 @@ import { familyGameItemIds, familyPractice, familyTopic, illustratedFamily } fro
 
 test("the local page loads a single bundled application script", () => {
   const html = readFileSync("index.html", "utf8");
-  assert.match(html, /<link rel="stylesheet" href="styles\.css\?v=20260825-routine-time-columns" \/>/);
-  assert.match(html, /<script src="app\.js\?v=20260825-transport-book-words"><\/script>/);
+  assert.match(html, /<link rel="stylesheet" href="styles\.css\?v=20260825-home-grammar-note" \/>/);
+  assert.match(html, /<script src="app\.js\?v=20260825-home-practice-builder"><\/script>/);
   assert.doesNotMatch(html, /type="module"/);
 });
 
@@ -660,7 +660,7 @@ test("time and daily life data stays owned by its topics", () => {
 test("time and daily life practice data retains every interaction set", () => {
   assert.equal(dailyLifeTopic.id, "daily-life");
   assert.equal(dailyLifeTopic.interactiveScene, "rooms");
-  assert.equal(roomScenes.length, 3);
+  assert.equal(roomScenes.length, 4);
   assert.equal(positionScenes.length, 4);
   assert.equal(positionPracticeItems.length, 8);
   assert.equal(comparisonPracticeItems.length, 7);

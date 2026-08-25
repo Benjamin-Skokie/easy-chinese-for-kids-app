@@ -1170,16 +1170,12 @@
         </div>
         <div class="intro-build-actions"><button class="small-button" type="button" data-room-build-clear>Clear</button></div>
       </section>
-      ${renderPracticeSayCards2([
-          { hanzi: "\u5730\u4E0A\u6709\u4E66\u3002", pinyin: "d\xEC sh\xE0ng y\u01D2u sh\u016B.", english: "There is a book on the floor.", audio: "\u5730\u4E0A\u6709\u4E66" }
-        ])}
     `;
         activityList2.querySelectorAll("[data-room-build-token]").forEach((button) => {
           button.addEventListener("click", () => handleRoomBuildToken2(Number(button.dataset.roomBuildToken)));
         });
         activityList2.querySelector("[data-room-build-clear]")?.addEventListener("click", clearRoomBuilder2);
         activityList2.querySelector("[data-room-build-new]")?.addEventListener("click", nextRoomBuilder2);
-        bindPracticeSayCards2(activityList2);
         return;
       }
       if (topic.id === "comparisons") {
@@ -2988,6 +2984,15 @@
       imagePath: "assets/illustrated-rooms/living-room.webp"
     },
     {
+      id: "piano-room",
+      title: "Piano in the living room",
+      hanzi: "\u5BA2\u5385\u91CC\u6709\u94A2\u7434\u3002",
+      pinyin: "k\xE8 t\u012Bng l\u01D0 y\u01D2u g\u0101ng q\xEDn.",
+      english: "There is a piano in the living room.",
+      audio: "\u5BA2\u5385\u91CC\u6709\u94A2\u7434",
+      imagePath: "assets/illustrated-activities/anan-playing-piano.webp"
+    },
+    {
       id: "garage",
       title: "Garage",
       hanzi: "\u8F66\u5E93\u91CC\u6709\u81EA\u884C\u8F66\u3002",
@@ -3000,6 +3005,7 @@
   var roomSentenceTokens = {
     "my-room": { prefix: ["\u6211\u7684", "\u623F\u95F4", "\u91CC", "\u6709"], target: ["\u6211\u7684", "\u623F\u95F4", "\u91CC", "\u6709", "\u5E8A", "\u4E66\u684C", "\u548C", "\u8863\u67DC"], unorderedObjects: ["\u5E8A", "\u4E66\u684C", "\u8863\u67DC"], distractors: ["\u5BA2\u5385", "\u6C99\u53D1", "\u81EA\u884C\u8F66"] },
     "living-room": { prefix: ["\u5BA2\u5385", "\u91CC", "\u6709"], target: ["\u5BA2\u5385", "\u91CC", "\u6709", "\u6C99\u53D1", "\u548C", "\u7535\u89C6"], unorderedObjects: ["\u6C99\u53D1", "\u7535\u89C6"], distractors: ["\u5E8A", "\u8F66\u5E93", "\u81EA\u884C\u8F66"] },
+    "piano-room": { prefix: ["\u5BA2\u5385", "\u91CC", "\u6709"], target: ["\u5BA2\u5385", "\u91CC", "\u6709", "\u94A2\u7434"], unorderedObjects: ["\u94A2\u7434"], distractors: ["\u5E8A", "\u8863\u67DC", "\u81EA\u884C\u8F66"] },
     garage: { prefix: ["\u8F66\u5E93", "\u91CC", "\u6709"], target: ["\u8F66\u5E93", "\u91CC", "\u6709", "\u81EA\u884C\u8F66"], unorderedObjects: ["\u81EA\u884C\u8F66"], distractors: ["\u4E66\u684C", "\u6C99\u53D1", "\u7535\u89C6"] }
   };
 
@@ -9132,6 +9138,7 @@
         <div class="visual-topic-note-grid room-useful-note-grid">
           <article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">\u623F\u95F4\u91CC\u6709\u2026\u2026</p>${state2.showPinyin ? '<p class="visual-topic-note-pinyin">f\xE1ng ji\u0101n l\u01D0 y\u01D2u...</p>' : ""}${state2.showEnglish ? '<p class="visual-topic-note-english">There is / are ... in the room.</p>' : ""}<p class="visual-topic-note-example">\u91CC means \u201Cin\u201D; \u6709 means \u201Cthere is / are.\u201D</p></article>
           <article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">\u5730\u4E0A\u6709\u2026\u2026</p>${state2.showPinyin ? '<p class="visual-topic-note-pinyin">d\xEC sh\xE0ng y\u01D2u...</p>' : ""}${state2.showEnglish ? '<p class="visual-topic-note-english">There is / are ... on the floor.</p>' : ""}<p class="visual-topic-note-example">\u5730\u4E0A\u6709\u4E66\u3002</p>${state2.showPinyin ? '<p class="visual-topic-note-pinyin">d\xEC sh\xE0ng y\u01D2u sh\u016B.</p>' : ""}${state2.showEnglish ? '<p class="visual-topic-note-english">There is a book on the floor.</p>' : ""}</article>
+          <article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">\u6709 / \u6CA1\u6709</p>${state2.showPinyin ? '<p class="visual-topic-note-pinyin">y\u01D2u / m\xE9i y\u01D2u</p>' : ""}${state2.showEnglish ? '<p class="visual-topic-note-english">there is / there is not</p>' : ""}<p class="visual-topic-note-example">\u623F\u95F4\u91CC\u6709\u94A2\u7434\u3002\u623F\u95F4\u91CC\u6CA1\u6709\u94A2\u7434\u3002</p></article>
         </div>
       </section>
     </div>

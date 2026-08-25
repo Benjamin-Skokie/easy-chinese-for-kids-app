@@ -890,6 +890,7 @@ function renderRoomsExplorer() {
         <div class="visual-topic-note-grid room-useful-note-grid">
           <article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">房间里有……</p>${state.showPinyin ? '<p class="visual-topic-note-pinyin">fáng jiān lǐ yǒu...</p>' : ""}${state.showEnglish ? '<p class="visual-topic-note-english">There is / are ... in the room.</p>' : ""}<p class="visual-topic-note-example">里 means “in”; 有 means “there is / are.”</p></article>
           <article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">地上有……</p>${state.showPinyin ? '<p class="visual-topic-note-pinyin">dì shàng yǒu...</p>' : ""}${state.showEnglish ? '<p class="visual-topic-note-english">There is / are ... on the floor.</p>' : ""}<p class="visual-topic-note-example">地上有书。</p>${state.showPinyin ? '<p class="visual-topic-note-pinyin">dì shàng yǒu shū.</p>' : ""}${state.showEnglish ? '<p class="visual-topic-note-english">There is a book on the floor.</p>' : ""}</article>
+          <article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">有 / 没有</p>${state.showPinyin ? '<p class="visual-topic-note-pinyin">yǒu / méi yǒu</p>' : ""}${state.showEnglish ? '<p class="visual-topic-note-english">there is / there is not</p>' : ""}<p class="visual-topic-note-example">房间里有钢琴。房间里没有钢琴。</p></article>
         </div>
       </section>
     </div>

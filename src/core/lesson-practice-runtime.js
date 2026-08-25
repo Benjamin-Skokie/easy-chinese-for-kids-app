@@ -542,16 +542,12 @@ function renderActivityPanel(topic) {
         </div>
         <div class="intro-build-actions"><button class="small-button" type="button" data-room-build-clear>Clear</button></div>
       </section>
-      ${renderPracticeSayCards([
-        { hanzi: "地上有书。", pinyin: "dì shàng yǒu shū.", english: "There is a book on the floor.", audio: "地上有书" }
-      ])}
     `;
     activityList.querySelectorAll("[data-room-build-token]").forEach((button) => {
       button.addEventListener("click", () => handleRoomBuildToken(Number(button.dataset.roomBuildToken)));
     });
     activityList.querySelector("[data-room-build-clear]")?.addEventListener("click", clearRoomBuilder);
     activityList.querySelector("[data-room-build-new]")?.addEventListener("click", nextRoomBuilder);
-    bindPracticeSayCards(activityList);
     return;
   }
 

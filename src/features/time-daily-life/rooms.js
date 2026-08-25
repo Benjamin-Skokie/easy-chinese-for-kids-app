@@ -47,6 +47,15 @@ export const roomScenes = [
     imagePath: "assets/illustrated-rooms/living-room.webp"
   },
   {
+    id: "piano-room",
+    title: "Piano in the living room",
+    hanzi: "客厅里有钢琴。",
+    pinyin: "kè tīng lǐ yǒu gāng qín.",
+    english: "There is a piano in the living room.",
+    audio: "客厅里有钢琴",
+    imagePath: "assets/illustrated-activities/anan-playing-piano.webp"
+  },
+  {
     id: "garage",
     title: "Garage",
     hanzi: "车库里有自行车。",
@@ -60,5 +69,6 @@ export const roomScenes = [
 export const roomSentenceTokens = {
   "my-room": { prefix: ["我的", "房间", "里", "有"], target: ["我的", "房间", "里", "有", "床", "书桌", "和", "衣柜"], unorderedObjects: ["床", "书桌", "衣柜"], distractors: ["客厅", "沙发", "自行车"] },
   "living-room": { prefix: ["客厅", "里", "有"], target: ["客厅", "里", "有", "沙发", "和", "电视"], unorderedObjects: ["沙发", "电视"], distractors: ["床", "车库", "自行车"] },
+  "piano-room": { prefix: ["客厅", "里", "有"], target: ["客厅", "里", "有", "钢琴"], unorderedObjects: ["钢琴"], distractors: ["床", "衣柜", "自行车"] },
   garage: { prefix: ["车库", "里", "有"], target: ["车库", "里", "有", "自行车"], unorderedObjects: ["自行车"], distractors: ["书桌", "沙发", "电视"] }
 };

@@ -54,7 +54,8 @@ also changed from `partial`.
 - [ ] Comparisons — `lesson-contracts/daily-life/comparisons.md`
 - [x] Transportation — `lesson-contracts/daily-life/transport.md`
   - Completed with `公共汽车` and `我坐公共汽车去地铁站。`, alongside the existing travel scenes and sentence builder.
-- [ ] Home — `lesson-contracts/daily-life/home.md`
+- [x] Home — `lesson-contracts/daily-life/home.md`
+  - Completed with the piano room scene, a piano builder round, and the `有 / 没有` visual note.
 - [ ] Days of the Week — `lesson-contracts/daily-life/weekdays.md`
 - [ ] Dates & Months — `lesson-contracts/daily-life/dates-months.md`
 
