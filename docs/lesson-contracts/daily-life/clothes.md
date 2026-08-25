@@ -17,8 +17,8 @@ The page owns clothing vocabulary and dressing practice. Grow the same page thro
 
 | Section | Final decision |
 | --- | --- |
-| Scenes | Keep the existing 1 × 2 desktop grid: `Getting dressed` covers 2A’s `我会穿衣服。` and 3A’s everyday clothing set; `Rainy day clothes` applies clothing to weather without replacing the lesson. Both use the shared scene-card template and stack on phones. |
-| Book words | Use one shared icon card per word—image on top, then `T恤、裤子、裙子、鞋子、帽子、外套、手套、校服` with its Chinese, pinyin, and English. The existing isolated everyday-life assets supply every icon, including 4B’s school uniform. |
+| Scenes | Use a 2 × 2 desktop grid with three occupied cards: `Getting dressed` covers 2A’s `我会穿衣服。`; `School morning` gives 4B’s direct `我穿校服。`; `Rainy day clothes` applies clothing to weather without replacing the lesson. All use the shared scene-card template and stack on phones. |
+| Book words | Use one shared icon card per word—image on top, then `衬衫、裤子、裙子、鞋子、帽子、外套、手套、校服` with its Chinese, pinyin, and English. The dedicated `衬衫` asset replaces the former non-book T-shirt card. |
 | Useful note | Omit; the scenes and words already establish the `穿…` pattern. |
 | Practice | First, picture choice reuses the eight isolated Book Words icons, so it checks a single clothing word. Second, `Complete the sentence` uses the five self-dressing action images to complete `我穿……。` (and `我戴帽子。`). Both games run without replacement; each has one top-right New game control, and a correct choice speaks the completed phrase. |
 

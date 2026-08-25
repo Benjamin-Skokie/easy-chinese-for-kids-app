@@ -45,6 +45,13 @@
       "file": "clothes.webp"
     },
     {
+      "id": "shirt",
+      "label": "Shirt",
+      "hanzi": "衬衫",
+      "pinyin": "chen shan",
+      "file": "collared-shirt.webp"
+    },
+    {
       "id": "jacket",
       "label": "Jacket",
       "hanzi": "外套",

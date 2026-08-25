@@ -1,5 +1,5 @@
 export const clothesBookWords = [
-  { id: "shirt", hanzi: "T恤", pinyin: "T xù", english: "T-shirt", audio: "T恤", imagePath: "assets/illustrated-everyday-life/clothes.webp" },
+  { id: "shirt", hanzi: "衬衫", pinyin: "chèn shān", english: "shirt", audio: "衬衫", imagePath: "assets/illustrated-everyday-life/collared-shirt.webp" },
   { id: "pants", hanzi: "裤子", pinyin: "kù zi", english: "trousers; pants", audio: "裤子", imagePath: "assets/illustrated-everyday-life/pants.webp" },
   { id: "dress", hanzi: "裙子", pinyin: "qún zi", english: "dress; skirt", audio: "裙子", imagePath: "assets/illustrated-everyday-life/skirt.webp" },
   { id: "shoes", hanzi: "鞋子", pinyin: "xié zi", english: "shoes", audio: "鞋子", imagePath: "assets/illustrated-everyday-life/shoes.webp" },
@@ -32,7 +32,8 @@ export const clothesTopic = {
 
 export const clothesPractice = [
   { id: "clothes-scene-1", title: "Getting dressed", imagePath: "assets/illustrated-clothes/wearing-clothes-scene.webp", imageAlt: "A child putting on a jacket beside a clothes rack and mirror", lines: [{ hanzi: "我会穿衣服。", pinyin: "wǒ huì chuān yī fu.", english: "I can get dressed.", audio: "我会穿衣服" }, { hanzi: "我穿外套。", pinyin: "wǒ chuān wài tào.", english: "I wear a jacket.", audio: "我穿外套" }] },
-  { id: "clothes-scene-2", title: "Rainy day clothes", imagePath: "assets/illustrated-clothes/weather-linked-clothing-scene.webp", imageAlt: "A child choosing a raincoat by a rainy window", lines: [{ hanzi: "下雨了。", pinyin: "xià yǔ le.", english: "It is raining.", audio: "下雨了" }, { hanzi: "我穿雨衣和雨鞋。", pinyin: "wǒ chuān yǔ yī hé yǔ xié.", english: "I wear a raincoat and rain boots.", audio: "我穿雨衣和雨鞋" }] }
+  { id: "clothes-scene-2", title: "Rainy day clothes", imagePath: "assets/illustrated-clothes/weather-linked-clothing-scene.webp", imageAlt: "A child choosing a raincoat by a rainy window", lines: [{ hanzi: "下雨了。", pinyin: "xià yǔ le.", english: "It is raining.", audio: "下雨了" }, { hanzi: "我穿雨衣和雨鞋。", pinyin: "wǒ chuān yǔ yī hé yǔ xié.", english: "I wear a raincoat and rain boots.", audio: "我穿雨衣和雨鞋" }] },
+  { id: "school-morning-uniform", title: "School morning", imagePath: "assets/illustrated-clothes/school-morning-uniform.webp", imageAlt: "Luna wears her complete school uniform and backpack by a closed front door", lines: [{ hanzi: "我穿校服。", pinyin: "wǒ chuān xiào fú.", english: "I wear a school uniform.", audio: "我穿校服" }] }
 ];
 
 // The quiz deliberately reuses the isolated Book Words icons.  Action images belong

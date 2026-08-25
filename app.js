@@ -6097,7 +6097,7 @@
 
   // src/features/daily-life/clothes.js
   var clothesBookWords = [
-    { id: "shirt", hanzi: "T\u6064", pinyin: "T x\xF9", english: "T-shirt", audio: "T\u6064", imagePath: "assets/illustrated-everyday-life/clothes.webp" },
+    { id: "shirt", hanzi: "\u886C\u886B", pinyin: "ch\xE8n sh\u0101n", english: "shirt", audio: "\u886C\u886B", imagePath: "assets/illustrated-everyday-life/collared-shirt.webp" },
     { id: "pants", hanzi: "\u88E4\u5B50", pinyin: "k\xF9 zi", english: "trousers; pants", audio: "\u88E4\u5B50", imagePath: "assets/illustrated-everyday-life/pants.webp" },
     { id: "dress", hanzi: "\u88D9\u5B50", pinyin: "q\xFAn zi", english: "dress; skirt", audio: "\u88D9\u5B50", imagePath: "assets/illustrated-everyday-life/skirt.webp" },
     { id: "shoes", hanzi: "\u978B\u5B50", pinyin: "xi\xE9 zi", english: "shoes", audio: "\u978B\u5B50", imagePath: "assets/illustrated-everyday-life/shoes.webp" },
@@ -6128,7 +6128,8 @@
   };
   var clothesPractice = [
     { id: "clothes-scene-1", title: "Getting dressed", imagePath: "assets/illustrated-clothes/wearing-clothes-scene.webp", imageAlt: "A child putting on a jacket beside a clothes rack and mirror", lines: [{ hanzi: "\u6211\u4F1A\u7A7F\u8863\u670D\u3002", pinyin: "w\u01D2 hu\xEC chu\u0101n y\u012B fu.", english: "I can get dressed.", audio: "\u6211\u4F1A\u7A7F\u8863\u670D" }, { hanzi: "\u6211\u7A7F\u5916\u5957\u3002", pinyin: "w\u01D2 chu\u0101n w\xE0i t\xE0o.", english: "I wear a jacket.", audio: "\u6211\u7A7F\u5916\u5957" }] },
-    { id: "clothes-scene-2", title: "Rainy day clothes", imagePath: "assets/illustrated-clothes/weather-linked-clothing-scene.webp", imageAlt: "A child choosing a raincoat by a rainy window", lines: [{ hanzi: "\u4E0B\u96E8\u4E86\u3002", pinyin: "xi\xE0 y\u01D4 le.", english: "It is raining.", audio: "\u4E0B\u96E8\u4E86" }, { hanzi: "\u6211\u7A7F\u96E8\u8863\u548C\u96E8\u978B\u3002", pinyin: "w\u01D2 chu\u0101n y\u01D4 y\u012B h\xE9 y\u01D4 xi\xE9.", english: "I wear a raincoat and rain boots.", audio: "\u6211\u7A7F\u96E8\u8863\u548C\u96E8\u978B" }] }
+    { id: "clothes-scene-2", title: "Rainy day clothes", imagePath: "assets/illustrated-clothes/weather-linked-clothing-scene.webp", imageAlt: "A child choosing a raincoat by a rainy window", lines: [{ hanzi: "\u4E0B\u96E8\u4E86\u3002", pinyin: "xi\xE0 y\u01D4 le.", english: "It is raining.", audio: "\u4E0B\u96E8\u4E86" }, { hanzi: "\u6211\u7A7F\u96E8\u8863\u548C\u96E8\u978B\u3002", pinyin: "w\u01D2 chu\u0101n y\u01D4 y\u012B h\xE9 y\u01D4 xi\xE9.", english: "I wear a raincoat and rain boots.", audio: "\u6211\u7A7F\u96E8\u8863\u548C\u96E8\u978B" }] },
+    { id: "school-morning-uniform", title: "School morning", imagePath: "assets/illustrated-clothes/school-morning-uniform.webp", imageAlt: "Luna wears her complete school uniform and backpack by a closed front door", lines: [{ hanzi: "\u6211\u7A7F\u6821\u670D\u3002", pinyin: "w\u01D2 chu\u0101n xi\xE0o f\xFA.", english: "I wear a school uniform.", audio: "\u6211\u7A7F\u6821\u670D" }] }
   ];
   var clothesMatchItems = clothesBookWords;
   var clothesSentenceItems = [

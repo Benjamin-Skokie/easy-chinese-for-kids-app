@@ -803,8 +803,10 @@ test("clothes owns its scenes and picture matching set", () => {
   assert.equal(clothesTopic.id, "clothes");
   assert.equal(clothesTopic.interactiveScene, "clothes-scenes");
   assert.equal(clothesTopic.ownsExplorerContent, true);
-  assert.equal(clothesPractice.length, 2);
+  assert.equal(clothesPractice.length, 3);
   assert.deepEqual(clothesBookWords.map((item) => item.id), ["shirt", "pants", "dress", "shoes", "hat", "jacket", "gloves", "school-uniform"]);
+  assert.equal(clothesBookWords[0]?.hanzi, "衬衫");
+  assert.equal(clothesPractice[2]?.lines[0]?.hanzi, "我穿校服。");
   assert.deepEqual(clothesMatchItems.map((item) => item.id), clothesBookWords.map((item) => item.id));
   assert.deepEqual(clothesSentenceItems.map((item) => item.id), ["shoes", "socks", "jacket", "hat", "school-uniform"]);
   assert.ok(clothesBookWords.every((item) => existsSync(item.imagePath)));

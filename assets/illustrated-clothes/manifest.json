@@ -9,7 +9,7 @@
       "pinyin": "yi fu",
       "theme": "A reusable no-text board showing common clothing items for beginner clothes lessons",
       "focus": [
-        "T恤",
+        "衬衫",
         "裤子",
         "裙子",
         "鞋子",
@@ -41,6 +41,17 @@
         "4B Lesson 1 It is raining"
       ],
       "file": "weather-linked-clothing-scene.webp"
+    },
+    {
+      "id": "school-morning-uniform",
+      "label": "School morning uniform",
+      "hanzi": "我穿校服",
+      "pinyin": "wo chuan xiao fu",
+      "theme": "Luna wears her complete school uniform and backpack by a closed front door before school",
+      "lessonHints": [
+        "4B Lesson 2 Clothes"
+      ],
+      "file": "school-morning-uniform.webp"
     }
   ]
 }

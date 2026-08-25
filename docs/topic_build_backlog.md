@@ -60,6 +60,7 @@ also changed from `partial`.
 
 - [ ] Greetings — `lesson-contracts/foundations/greetings.md`
 - [ ] Introductions — `lesson-contracts/foundations/introductions.md`
+  - **Coverage to add:** 2A Lesson 3 *Good friends*: `朋友` and `他是我的好朋友。`. Add this as the 2A continuation within Names & Introductions, not as a separate topic.
 - [ ] Polite Words — `lesson-contracts/foundations/polite-words.md` (Requests implementation and desktop QA complete; phone visual QA remains)
 - [ ] Numbers — `lesson-contracts/foundations/numbers.md`
 - [ ] Multiplication Rhyme — `lesson-contracts/foundations/multiplication-rhyme.md`
