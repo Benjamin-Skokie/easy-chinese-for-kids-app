@@ -5011,6 +5011,93 @@ h4 {
   object-fit: cover;
 }
 
+.family-sentence-choice-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+  margin-top: 0.9rem;
+}
+
+.family-sentence-choice {
+  padding: 0.8rem;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: #fffdf8;
+}
+
+.family-sentence-choice-options {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.4rem;
+  margin-top: 0.45rem;
+}
+
+.family-sentence-sibling-label {
+  margin: 0;
+  color: var(--ink);
+  font-family: var(--hanzi-font);
+  font-size: var(--learner-hanzi-size);
+  font-weight: 750;
+}
+
+.family-household-choice {
+  margin-top: 0.9rem;
+}
+
+.family-household-label {
+  margin: 0;
+  color: var(--ink);
+  font-family: var(--hanzi-font);
+  font-size: var(--learner-hanzi-size);
+  font-weight: 750;
+}
+
+.family-household-choice-options {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 0.4rem;
+  margin-top: 0.45rem;
+}
+
+.family-sentence-builder .numbers-game-option:disabled {
+  cursor: not-allowed;
+  opacity: 0.38;
+}
+
+.family-sentence-choice-options .numbers-game-option {
+  min-height: 2.55rem;
+  padding: 0.4rem;
+  font-size: 0.95rem;
+}
+
+.family-sentence-builder .numbers-game-option.is-selected {
+  border-color: #5e9a5a;
+  background: #eef8e9;
+  color: #24572c;
+  box-shadow: 0 0 0 3px rgba(94, 154, 90, 0.18);
+}
+
+.family-sentence-preview {
+  margin-top: 1rem;
+  padding: 0.9rem 1rem;
+  border-radius: 14px;
+  background: #eef6e3;
+}
+
+.family-sentence-preview p {
+  margin: 0;
+}
+
+.family-sentence-preview p + p {
+  margin-top: 0.25rem;
+}
+
+@media (max-width: 560px) {
+  .family-sentence-choice-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 .family-match-copy {
   display: grid;
   gap: 2px;

@@ -36,7 +36,7 @@ import { greetingsGameItemIds, greetingsPractice, greetingsTopic } from "../feat
 import { createGreetingsController } from "../features/foundations/greetings-controller.js";
 import { createNationalityController } from "../features/foundations/nationality-controller.js";
 import { identityConversation, identityCountries, identityExploreCountries, identityLanguageQuestion, identityQuestion, nationalityConversation } from "../features/foundations/identity.js";
-import { familyGameItemIds, familyHeadshotsByItemId, familyPersonIdsByItemId, familyPractice, familyTopic, illustratedFamily } from "../features/family/family.js";
+import { familyGameItemIds, familyHeadshotsByItemId, familyPersonIdsByItemId, familyPossessionPractice, familyPractice, familyTopic, illustratedFamily } from "../features/family/family.js";
 import { clothesBookWords, clothesMatchItems, clothesPractice, clothesSentenceItems, clothesTopic } from "../features/daily-life/clothes.js";
 import { coloursTopic } from "../features/world/colours.js";
 import { hobbiesTopic, toysTopic } from "../features/play-hobbies/play-hobbies.js";
@@ -304,6 +304,7 @@ buildNumberItem,
 numberStages,
 telephonePractice,
 familyGameItemIds,
+familyPossessionPractice,
   familyPersonIdsByItemId,
   familyHeadshotsByItemId,
   familyPractice,
@@ -349,6 +350,7 @@ ensureNumberChallenge,
 resetMathChallenge,
 ensureMathChallenge,
 familyGameItems,
+familyListenItems,
 familyPersonForItemId,
 familyHeadshotForItemId,
 isFamilySentenceItemId,
@@ -795,6 +797,7 @@ clothesSentenceItems,
   handleDateMatchPhrase,
   handleDateMatchEvent,
   familyGameItems,
+  familyListenItems,
   familyPersonForItemId,
   familyHeadshotForItemId,
   ensureFamilyChallenge,

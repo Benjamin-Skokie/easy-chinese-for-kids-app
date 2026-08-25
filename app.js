@@ -98,6 +98,8 @@
       familyMatchedIds: /* @__PURE__ */ new Set(),
       familyPhraseOrder: [],
       familyMeaningOrder: [],
+      familyHouseholdCount: 0,
+      familySentenceCounts: { "older-sister": null, "older-brother": null, "younger-brother": null, "younger-sister": null },
       introductionsChallengeAnswerId: "",
       introductionsChallengeOptionIds: [],
       introductionsChallengePromptId: "",
@@ -124,7 +126,24 @@
       politeSelectedPhraseId: null,
       politeMatchedIds: /* @__PURE__ */ new Set(),
       politePhraseOrder: [],
-      politeMeaningOrder: []
+      politeMeaningOrder: [],
+      nationalityChallengeAnswerId: "",
+      nationalityChallengeOptionIds: [],
+      nationalityChallengePickedId: "",
+      nationalityChallengeResult: "",
+      nationalityChallengeWrongIds: /* @__PURE__ */ new Set(),
+      nationalityListenFeedback: "",
+      nationalityMatchSelectedId: null,
+      nationalityMatchedIds: /* @__PURE__ */ new Set(),
+      nationalityMatchPhraseOrder: [],
+      nationalityMatchSymbolOrder: [],
+      nationalityMatchFeedback: "",
+      languageChallengeAnswerId: "",
+      languageChallengeOptionIds: [],
+      languageChallengePickedId: "",
+      languageChallengeResult: "",
+      languageChallengeWrongIds: /* @__PURE__ */ new Set(),
+      languageListenFeedback: ""
     };
   }
 
@@ -513,9 +532,9 @@
       const topic = currentTopic2();
       const items = focusItemsForTopic2();
       const isLessonTemplate = usesLessonTemplate2(topic);
-      const showBookWordsHeading = isLessonTemplate || topic.id === "clothes" || topic.id === "time-date" || topic.id === "weekdays";
+      const showBookWordsHeading = isLessonTemplate || topic.id === "clothes" || topic.id === "time-date" || topic.id === "weekdays" || topic.id === "languages";
       focusWordList2.classList.toggle("is-family-book-words", showBookWordsHeading);
-      const visibleItems = topic.id === "numbers" ? numberWordListItems2(items, currentFocusItem2(), currentNumberStage2()) : topic.id === "time-date" ? timeDateExpressionItems2 : isLessonTemplate ? bookWordItemsForTopic2(topic) : items;
+      const visibleItems = topic.id === "numbers" ? numberWordListItems2(items, currentFocusItem2(), currentNumberStage2()) : topic.id === "time-date" ? timeDateExpressionItems2 : isLessonTemplate || topic.id === "languages" ? bookWordItemsForTopic2(topic) : items;
       focusWordList2.innerHTML = "";
       if (showBookWordsHeading) {
         const heading = document.createElement("div");
@@ -571,8 +590,146 @@
 
   // src/core/lesson-practice-runtime.js
   function createLessonPracticeRuntime(context) {
-    const { state: state2, schoolTopicData: schoolTopicData3, visualTopicItems: visualTopicItems2, positionPracticeItems: positionPracticeItems2, timeDateWeekItems: timeDateWeekItems2, timeDateClockItems: timeDateClockItems2, datePracticeItems: datePracticeItems2, timeDateMonthItems: timeDateMonthItems2, timeDateRoutineItems: timeDateRoutineItems2, clothesMatchItems: clothesMatchItems2, clothesSentenceItems: clothesSentenceItems2, everydayActionItems: everydayActionItems2, illustratedKids: illustratedKids2, numberHanzi: numberHanzi2, buildNumberItem: buildNumberItem2, currentTopic: currentTopic2, currentNumberStage: currentNumberStage2, currentBook: currentBook2, currentLesson: currentLesson2, focusItemsForTopic: focusItemsForTopic2, shuffleArray: shuffleArray2, speak: speak2, renderFocusExplorer: renderFocusExplorer2, renderFocusStatus: renderFocusStatus2, renderSharedLessonPractice: renderSharedLessonPractice2, renderPracticeSayCards: renderPracticeSayCards2, bindPracticeSayCards: bindPracticeSayCards2, activityPanelTitle: activityPanelTitle2, activityPanelSummary: activityPanelSummary2, activityList: activityList2, topicColumns: topicColumns2, renderBodyPractice: renderBodyPractice2, renderWorldPractice, renderHobbiesPractice, activeTimeDateSection: activeTimeDateSection2, ensureWeekdayChallenge: ensureWeekdayChallenge2, ensureWeekdayMatchGame: ensureWeekdayMatchGame2, handleWeekdayChallengePlay: handleWeekdayChallengePlay2, handleWeekdayChallengeGuess: handleWeekdayChallengeGuess2, resetWeekdayMatchGame: resetWeekdayMatchGame2, handleWeekdayMatchPhrase: handleWeekdayMatchPhrase2, handleWeekdayMatchAttempt: handleWeekdayMatchAttempt2, ensureDateChallenge: ensureDateChallenge2, ensureDateMatchGame: ensureDateMatchGame2, handleDateChallengePlay: handleDateChallengePlay2, handleDateChallengeGuess: handleDateChallengeGuess2, resetDateMatchGame: resetDateMatchGame2, handleDateMatchPhrase: handleDateMatchPhrase2, handleDateMatchEvent: handleDateMatchEvent2, familyGameItems: familyGameItems2, familyPersonForItemId: familyPersonForItemId2, familyHeadshotForItemId: familyHeadshotForItemId2, ensureFamilyChallenge: ensureFamilyChallenge2, ensureFamilyMatchGame: ensureFamilyMatchGame2, handleFamilyChallengePlay: handleFamilyChallengePlay2, handleFamilyChallengeGuess: handleFamilyChallengeGuess2, resetFamilyMatchGame: resetFamilyMatchGame2, handleFamilyMatchPhrase: handleFamilyMatchPhrase2, handleFamilyMatchAttempt: handleFamilyMatchAttempt2, greetingsGameItems: greetingsGameItems2, greetingsMeaningLabel: greetingsMeaningLabel2, ensureGreetingsChallenge: ensureGreetingsChallenge2, ensureGreetingsMatchGame: ensureGreetingsMatchGame2, handleGreetingsChallengePlay: handleGreetingsChallengePlay2, handleGreetingsChallengeGuess: handleGreetingsChallengeGuess2, resetGreetingsMatchGame: resetGreetingsMatchGame2, handleGreetingsMatchPhrase: handleGreetingsMatchPhrase2, handleGreetingsMatchAttempt: handleGreetingsMatchAttempt2, politeGameItems: politeGameItems2, politeMeaningLabel: politeMeaningLabel2, ensurePoliteChallenge: ensurePoliteChallenge2, ensurePoliteMatchGame: ensurePoliteMatchGame2, handlePoliteChallengePlay: handlePoliteChallengePlay2, handlePoliteChallengeGuess: handlePoliteChallengeGuess2, resetPoliteMatchGame: resetPoliteMatchGame2, handlePoliteMatchPhrase: handlePoliteMatchPhrase2, handlePoliteMatchAttempt: handlePoliteMatchAttempt2, ensureRoomBuilder: ensureRoomBuilder2, currentRoomBuildItem: currentRoomBuildItem2, handleRoomBuildToken: handleRoomBuildToken2, clearRoomBuilder: clearRoomBuilder2, nextRoomBuilder: nextRoomBuilder2, ensureClothesQuiz: ensureClothesQuiz2, handleClothesQuizPick: handleClothesQuizPick2, nextClothesQuizQuestion: nextClothesQuizQuestion2, ensureClothesSentenceQuiz: ensureClothesSentenceQuiz2, handleClothesSentencePick: handleClothesSentencePick2, nextClothesSentenceQuestion: nextClothesSentenceQuestion2, ensureTimeRoutineQuiz: ensureTimeRoutineQuiz2, handleTimeRoutineQuizPick: handleTimeRoutineQuizPick2, nextTimeRoutineQuizQuestion: nextTimeRoutineQuizQuestion2, ensureClockQuiz: ensureClockQuiz2, handleClockQuizPick: handleClockQuizPick2, nextClockQuizQuestion: nextClockQuizQuestion2, ensureComparisonBuilder: ensureComparisonBuilder2, currentComparisonBuildItem: currentComparisonBuildItem2, handleComparisonBuildToken: handleComparisonBuildToken2, clearComparisonBuilder: clearComparisonBuilder2, nextComparisonBuilder: nextComparisonBuilder2, ensurePositionQuiz: ensurePositionQuiz2, handlePositionQuizPlay: handlePositionQuizPlay2, handlePositionQuizPick: handlePositionQuizPick2, nextPositionQuizQuestion: nextPositionQuizQuestion2, ensureTransportBuilder: ensureTransportBuilder2, currentTransportBuildItem: currentTransportBuildItem2, handleTransportBuildToken: handleTransportBuildToken2, clearTransportBuilder: clearTransportBuilder2, nextTransportBuilder: nextTransportBuilder2, ensureEverydayActionsQuiz: ensureEverydayActionsQuiz2, currentEverydayAction: currentEverydayAction2, handleEverydayActionsPick: handleEverydayActionsPick2, nextEverydayActionsQuestion: nextEverydayActionsQuestion2, resetNumberChallenge: resetNumberChallenge2, ensureMathChallenge: ensureMathChallenge2, handleNumberChallengeGuess: handleNumberChallengeGuess2, resetMathChallenge: resetMathChallenge2, handleMathChallengeSubmit: handleMathChallengeSubmit2, renderNumberVisual: renderNumberVisual2, introductionsBuildTarget: introductionsBuildTarget2, ensureIntroductionsBuilder: ensureIntroductionsBuilder2, resetIntroductionsBuilder: resetIntroductionsBuilder2, handleIntroductionsBuildClear: handleIntroductionsBuildClear2, handleIntroductionsBuildToken: handleIntroductionsBuildToken2, ageGameItems: ageGameItems2, ensureAgeChallenge: ensureAgeChallenge2, ensureAgeBuilder: ensureAgeBuilder2, ageBuildTarget: ageBuildTarget2, handleAgeChallengePlay: handleAgeChallengePlay2, handleAgeChallengeGuess: handleAgeChallengeGuess2, resetAgeBuilder: resetAgeBuilder2, handleAgeBuildClear: handleAgeBuildClear2, handleAgeBuildToken: handleAgeBuildToken2, renderSchoolPractice: renderSchoolPractice2 } = context;
+    const { state: state2, schoolTopicData: schoolTopicData3, visualTopicItems: visualTopicItems2, positionPracticeItems: positionPracticeItems2, timeDateWeekItems: timeDateWeekItems2, timeDateClockItems: timeDateClockItems2, datePracticeItems: datePracticeItems2, timeDateMonthItems: timeDateMonthItems2, timeDateRoutineItems: timeDateRoutineItems2, clothesMatchItems: clothesMatchItems2, clothesSentenceItems: clothesSentenceItems2, everydayActionItems: everydayActionItems2, illustratedKids: illustratedKids2, numberHanzi: numberHanzi2, buildNumberItem: buildNumberItem2, currentTopic: currentTopic2, currentNumberStage: currentNumberStage2, currentBook: currentBook2, currentLesson: currentLesson2, focusItemsForTopic: focusItemsForTopic2, shuffleArray: shuffleArray2, speak: speak2, renderFocusExplorer: renderFocusExplorer2, renderFocusStatus: renderFocusStatus2, renderSharedLessonPractice: renderSharedLessonPractice2, renderPracticeSayCards: renderPracticeSayCards2, bindPracticeSayCards: bindPracticeSayCards2, activityPanelTitle: activityPanelTitle2, activityPanelSummary: activityPanelSummary2, activityList: activityList2, topicColumns: topicColumns2, renderBodyPractice: renderBodyPractice2, renderWorldPractice, renderHobbiesPractice, activeTimeDateSection: activeTimeDateSection2, ensureWeekdayChallenge: ensureWeekdayChallenge2, ensureWeekdayMatchGame: ensureWeekdayMatchGame2, handleWeekdayChallengePlay: handleWeekdayChallengePlay2, handleWeekdayChallengeGuess: handleWeekdayChallengeGuess2, resetWeekdayMatchGame: resetWeekdayMatchGame2, handleWeekdayMatchPhrase: handleWeekdayMatchPhrase2, handleWeekdayMatchAttempt: handleWeekdayMatchAttempt2, ensureDateChallenge: ensureDateChallenge2, ensureDateMatchGame: ensureDateMatchGame2, handleDateChallengePlay: handleDateChallengePlay2, handleDateChallengeGuess: handleDateChallengeGuess2, resetDateMatchGame: resetDateMatchGame2, handleDateMatchPhrase: handleDateMatchPhrase2, handleDateMatchEvent: handleDateMatchEvent2, familyGameItems: familyGameItems2, familyListenItems: familyListenItems2, familyPersonForItemId: familyPersonForItemId2, familyHeadshotForItemId: familyHeadshotForItemId2, ensureFamilyChallenge: ensureFamilyChallenge2, ensureFamilyMatchGame: ensureFamilyMatchGame2, handleFamilyChallengePlay: handleFamilyChallengePlay2, handleFamilyChallengeGuess: handleFamilyChallengeGuess2, resetFamilyMatchGame: resetFamilyMatchGame2, handleFamilyMatchPhrase: handleFamilyMatchPhrase2, handleFamilyMatchAttempt: handleFamilyMatchAttempt2, greetingsGameItems: greetingsGameItems2, greetingsMeaningLabel: greetingsMeaningLabel2, ensureGreetingsChallenge: ensureGreetingsChallenge2, ensureGreetingsMatchGame: ensureGreetingsMatchGame2, handleGreetingsChallengePlay: handleGreetingsChallengePlay2, handleGreetingsChallengeGuess: handleGreetingsChallengeGuess2, resetGreetingsMatchGame: resetGreetingsMatchGame2, handleGreetingsMatchPhrase: handleGreetingsMatchPhrase2, handleGreetingsMatchAttempt: handleGreetingsMatchAttempt2, nationalityPracticeItems: nationalityPracticeItems2, ensureNationalityChallenge: ensureNationalityChallenge2, currentNationalityAnswer: currentNationalityAnswer2, handleNationalityChallengePlay: handleNationalityChallengePlay2, handleNationalityChallengeGuess: handleNationalityChallengeGuess2, ensureNationalityMatchGame: ensureNationalityMatchGame2, resetNationalityMatchGame: resetNationalityMatchGame2, handleNationalityMatchPhrase: handleNationalityMatchPhrase2, handleNationalityMatchAttempt: handleNationalityMatchAttempt2, languagePracticeItems: languagePracticeItems2, ensureLanguageChallenge: ensureLanguageChallenge2, currentLanguageAnswer: currentLanguageAnswer2, handleLanguageChallengePlay: handleLanguageChallengePlay2, handleLanguageChallengeGuess: handleLanguageChallengeGuess2, politeGameItems: politeGameItems2, politeMeaningLabel: politeMeaningLabel2, ensurePoliteChallenge: ensurePoliteChallenge2, ensurePoliteMatchGame: ensurePoliteMatchGame2, handlePoliteChallengePlay: handlePoliteChallengePlay2, handlePoliteChallengeGuess: handlePoliteChallengeGuess2, resetPoliteMatchGame: resetPoliteMatchGame2, handlePoliteMatchPhrase: handlePoliteMatchPhrase2, handlePoliteMatchAttempt: handlePoliteMatchAttempt2, ensureRoomBuilder: ensureRoomBuilder2, currentRoomBuildItem: currentRoomBuildItem2, handleRoomBuildToken: handleRoomBuildToken2, clearRoomBuilder: clearRoomBuilder2, nextRoomBuilder: nextRoomBuilder2, ensureClothesQuiz: ensureClothesQuiz2, handleClothesQuizPick: handleClothesQuizPick2, nextClothesQuizQuestion: nextClothesQuizQuestion2, ensureClothesSentenceQuiz: ensureClothesSentenceQuiz2, handleClothesSentencePick: handleClothesSentencePick2, nextClothesSentenceQuestion: nextClothesSentenceQuestion2, ensureTimeRoutineQuiz: ensureTimeRoutineQuiz2, handleTimeRoutineQuizPick: handleTimeRoutineQuizPick2, nextTimeRoutineQuizQuestion: nextTimeRoutineQuizQuestion2, ensureClockQuiz: ensureClockQuiz2, handleClockQuizPick: handleClockQuizPick2, nextClockQuizQuestion: nextClockQuizQuestion2, ensureComparisonBuilder: ensureComparisonBuilder2, currentComparisonBuildItem: currentComparisonBuildItem2, handleComparisonBuildToken: handleComparisonBuildToken2, clearComparisonBuilder: clearComparisonBuilder2, nextComparisonBuilder: nextComparisonBuilder2, ensurePositionQuiz: ensurePositionQuiz2, handlePositionQuizPlay: handlePositionQuizPlay2, handlePositionQuizPick: handlePositionQuizPick2, nextPositionQuizQuestion: nextPositionQuizQuestion2, ensureTransportBuilder: ensureTransportBuilder2, currentTransportBuildItem: currentTransportBuildItem2, handleTransportBuildToken: handleTransportBuildToken2, clearTransportBuilder: clearTransportBuilder2, nextTransportBuilder: nextTransportBuilder2, ensureEverydayActionsQuiz: ensureEverydayActionsQuiz2, currentEverydayAction: currentEverydayAction2, handleEverydayActionsPick: handleEverydayActionsPick2, nextEverydayActionsQuestion: nextEverydayActionsQuestion2, resetNumberChallenge: resetNumberChallenge2, ensureMathChallenge: ensureMathChallenge2, handleNumberChallengeGuess: handleNumberChallengeGuess2, resetMathChallenge: resetMathChallenge2, handleMathChallengeSubmit: handleMathChallengeSubmit2, renderNumberVisual: renderNumberVisual2, introductionsBuildTarget: introductionsBuildTarget2, ensureIntroductionsBuilder: ensureIntroductionsBuilder2, resetIntroductionsBuilder: resetIntroductionsBuilder2, handleIntroductionsBuildClear: handleIntroductionsBuildClear2, handleIntroductionsBuildToken: handleIntroductionsBuildToken2, ageGameItems: ageGameItems2, ensureAgeChallenge: ensureAgeChallenge2, ensureAgeBuilder: ensureAgeBuilder2, ageBuildTarget: ageBuildTarget2, handleAgeChallengePlay: handleAgeChallengePlay2, handleAgeChallengeGuess: handleAgeChallengeGuess2, resetAgeBuilder: resetAgeBuilder2, handleAgeBuildClear: handleAgeBuildClear2, handleAgeBuildToken: handleAgeBuildToken2, renderSchoolPractice: renderSchoolPractice2 } = context;
+    function familySentenceBuilderMarkup() {
+      const labels = { "older-sister": "\u59D0\u59D0", "older-brother": "\u54E5\u54E5", "younger-brother": "\u5F1F\u5F1F", "younger-sister": "\u59B9\u59B9" };
+      const counts = state2.familySentenceCounts;
+      const selectedSiblingCount = Object.values(counts).reduce((sum, count) => sum + (count ?? 0), 0);
+      const minimumHouseholdCount = 2 + selectedSiblingCount;
+      const countWords = ["\u6CA1\u6709", "\u4E00\u4E2A", "\u4E24\u4E2A", "\u4E09\u4E2A"];
+      const phrases = Object.entries(counts).filter(([, count]) => count > 0).map(([id, count]) => `${countWords[count]}${labels[id]}`);
+      const total = state2.familyHouseholdCount;
+      const householdHanzi = ["", "\u4E00", "\u4E8C", "\u4E09", "\u56DB", "\u4E94", "\u516D", "\u4E03", "\u516B", "\u4E5D", "\u5341", "\u5341\u4E00", "\u5341\u4E8C", "\u5341\u4E09", "\u5341\u56DB"];
+      const totalHanzi = householdHanzi[total];
+      const totalPinyin = ["", "y\u012B", "\xE8r", "s\u0101n", "s\xEC", "w\u01D4", "li\xF9", "q\u012B", "b\u0101", "ji\u01D4", "sh\xED", "sh\xED y\u012B", "sh\xED \xE8r", "sh\xED s\u0101n", "sh\xED s\xEC"][total];
+      const join = (items) => items.length < 2 ? items[0] : `${items.slice(0, -1).join("\u3001")}\u548C${items.at(-1)}`;
+      const noSiblings = Object.entries(counts).filter(([, count]) => count === 0).map(([id]) => labels[id]);
+      return `<section class="practice-split-card family-sentence-builder"><div class="numbers-game-top"><div><p class="body-match-kicker">Make your own sentence</p><p class="numbers-game-note">Choose your household size and the brothers and sisters you have.</p></div><button class="small-button is-play-button" type="button" data-family-sentence-play>Play</button></div><div class="family-sentence-choice family-household-choice"><p class="family-household-label">\u6211\u5BB6\u6709\u51E0\u53E3\u4EBA\uFF1F</p><div class="family-household-choice-options">${[2, 3, 4, 5, 6].map((value) => `<button class="numbers-game-option${total === value ? " is-selected" : ""}" type="button" data-family-household-count="${value}" ${value < minimumHouseholdCount ? "disabled" : ""}>${householdHanzi[value]}\u53E3</button>`).join("")}</div></div><div class="family-sentence-choice-grid">${Object.entries(labels).map(([id, label]) => `<div class="family-sentence-choice"><p class="family-sentence-sibling-label">${label}</p><div class="family-sentence-choice-options">${countWords.map((text, value) => `<button class="numbers-game-option${counts[id] === value ? " is-selected" : ""}" type="button" data-family-sentence-count="${id}" data-family-sentence-value="${value}" ${selectedSiblingCount - (counts[id] ?? 0) + value > 4 ? "disabled" : ""}>${text}</button>`).join("")}</div></div>`).join("")}</div><div class="family-sentence-preview">${total ? `<p class="numbers-game-hanzi">\u6211\u5BB6\u6709${totalHanzi}\u53E3\u4EBA\u3002</p>${state2.showPinyin ? `<p class="numbers-game-pinyin">w\u01D2 ji\u0101 y\u01D2u ${totalPinyin} k\u01D2u r\xE9n.</p>` : ""}` : ""}${phrases.length ? `<p class="numbers-game-hanzi">\u6211\u6709${join(phrases)}\u3002</p>` : ""}${noSiblings.length ? `<p class="numbers-game-hanzi">\u6211\u6CA1\u6709${join(noSiblings)}\u3002</p>` : ""}</div></section>`;
+    }
+    function bindFamilySentenceBuilder(container) {
+      const completedSentence = () => {
+        const labels = { "older-sister": "\u59D0\u59D0", "older-brother": "\u54E5\u54E5", "younger-brother": "\u5F1F\u5F1F", "younger-sister": "\u59B9\u59B9" };
+        const countWords = ["\u6CA1\u6709", "\u4E00\u4E2A", "\u4E24\u4E2A", "\u4E09\u4E2A"];
+        const householdHanzi = ["", "\u4E00", "\u4E8C", "\u4E09", "\u56DB", "\u4E94", "\u516D"];
+        const counts = state2.familySentenceCounts;
+        const join = (items) => items.length < 2 ? items[0] : `${items.slice(0, -1).join("\u3001")}\u548C${items.at(-1)}`;
+        const positive = Object.entries(counts).filter(([, count]) => count > 0).map(([id, count]) => `${countWords[count]}${labels[id]}`);
+        const negative = Object.entries(counts).filter(([, count]) => count === 0).map(([id]) => labels[id]);
+        return [`\u6211\u5BB6\u6709${householdHanzi[state2.familyHouseholdCount]}\u53E3\u4EBA\u3002`, positive.length ? `\u6211\u6709${join(positive)}\u3002` : "", negative.length ? `\u6211\u6CA1\u6709${join(negative)}\u3002` : ""].filter(Boolean).join("");
+      };
+      const speakSentence = () => {
+        const hasAllChoices = state2.familyHouseholdCount && Object.values(state2.familySentenceCounts).every((count) => count !== null);
+        if (!hasAllChoices) return;
+        const text = completedSentence();
+        if (text) speak2(text, 0.78);
+      };
+      container.querySelector("[data-family-sentence-play]")?.addEventListener("click", () => {
+        state2.familyHouseholdCount = 0;
+        state2.familySentenceCounts = { "older-sister": null, "older-brother": null, "younger-brother": null, "younger-sister": null };
+        renderActivityPanel2(currentTopic2());
+      });
+      container.querySelectorAll("[data-family-household-count]").forEach((button) => button.addEventListener("click", () => {
+        state2.familyHouseholdCount = Number(button.dataset.familyHouseholdCount);
+        renderActivityPanel2(currentTopic2());
+        speakSentence();
+      }));
+      container.querySelectorAll("[data-family-sentence-count]").forEach((button) => button.addEventListener("click", () => {
+        const nextCounts = { ...state2.familySentenceCounts, [button.dataset.familySentenceCount]: Number(button.dataset.familySentenceValue) };
+        const nextMinimum = 2 + Object.values(nextCounts).reduce((sum, count) => sum + (count ?? 0), 0);
+        state2.familySentenceCounts = nextCounts;
+        if (state2.familyHouseholdCount && state2.familyHouseholdCount < nextMinimum) state2.familyHouseholdCount = 0;
+        renderActivityPanel2(currentTopic2());
+        speakSentence();
+      }));
+    }
     function sharedLessonPracticeConfig(topic) {
+      if (topic.id === "languages") {
+        return {
+          summary: "Listen to the sentence, then choose the language you hear.",
+          shellClass: "lesson-practice-shell nationality-practice-shell",
+          ensure: ensureLanguageChallenge2,
+          listen: {
+            kicker: "Listen and choose",
+            title: "Which language do you hear?",
+            instruction: "Listen carefully, then choose the language you hear.",
+            items: languagePracticeItems2,
+            optionIds: () => state2.languageChallengeOptionIds,
+            pickedId: () => state2.languageChallengePickedId,
+            result: () => state2.languageChallengeResult,
+            wrongIds: () => state2.languageChallengeWrongIds,
+            feedback: () => state2.languageListenFeedback,
+            playLabel: () => state2.languageChallengeResult === "correct" ? "New game" : "Play",
+            visualMarkup: () => {
+              const item = currentLanguageAnswer2();
+              return item ? `<figure class="nationality-practice-flag"><img src="${item.flagAsset}" alt="${item.flagAlt}" /></figure>` : "";
+            },
+            completionMarkup: () => {
+              if (state2.languageChallengeResult !== "correct") return "";
+              const item = currentLanguageAnswer2();
+              return `<section class="nationality-conversation-reveal" aria-live="polite"><p class="body-match-kicker">Sentence</p><article><p class="telephone-line-hanzi">${item.sentence.hanzi}</p><p class="telephone-line-pinyin">${item.sentence.pinyin}</p><p class="telephone-line-english">${item.sentence.english}</p></article></section>`;
+            },
+            onPlay: handleLanguageChallengePlay2,
+            onGuess: handleLanguageChallengeGuess2
+          }
+        };
+      }
+      if (topic.id === "identity") {
+        return {
+          summary: "Listen to the conversation. Use the flag as a clue, then choose the nationality you hear.",
+          shellClass: "lesson-practice-shell nationality-practice-shell",
+          ensure: () => {
+            ensureNationalityChallenge2();
+            ensureNationalityMatchGame2();
+          },
+          listen: {
+            kicker: "Listen and choose",
+            title: "Which nationality do you hear?",
+            items: nationalityPracticeItems2,
+            optionIds: () => state2.nationalityChallengeOptionIds,
+            pickedId: () => state2.nationalityChallengePickedId,
+            result: () => state2.nationalityChallengeResult,
+            wrongIds: () => state2.nationalityChallengeWrongIds,
+            feedback: () => state2.nationalityListenFeedback,
+            playLabel: () => state2.nationalityChallengeResult === "correct" ? "New game" : "Play",
+            visualMarkup: () => {
+              const item = currentNationalityAnswer2();
+              return item ? `<figure class="nationality-practice-flag"><img src="${item.flagAsset}" alt="${item.flagAlt}" /></figure>` : "";
+            },
+            completionMarkup: () => {
+              if (state2.nationalityChallengeResult !== "correct") return "";
+              const item = currentNationalityAnswer2();
+              return `<section class="nationality-conversation-reveal" aria-live="polite"><p class="body-match-kicker">Conversation</p><article><p class="telephone-line-hanzi">\u4F60\u662F\u54EA\u56FD\u4EBA\uFF1F</p><p class="telephone-line-pinyin">n\u01D0 sh\xEC n\u01CE gu\xF3 r\xE9n?</p><p class="telephone-line-english">What nationality are you?</p></article><article><p class="telephone-line-hanzi">${item.response.hanzi}</p><p class="telephone-line-pinyin">${item.response.pinyin}</p><p class="telephone-line-english">${item.response.english}</p></article></section>`;
+            },
+            onPlay: handleNationalityChallengePlay2,
+            onGuess: handleNationalityChallengeGuess2
+          },
+          match: {
+            phraseHeading: "Flag and country",
+            meaningHeading: "Country symbol",
+            instruction: "Match each flag and country name to its country symbol.",
+            items: nationalityPracticeItems2,
+            phraseIds: () => state2.nationalityMatchPhraseOrder,
+            meaningIds: () => state2.nationalityMatchSymbolOrder,
+            matchedIds: () => state2.nationalityMatchedIds,
+            selectedId: () => state2.nationalityMatchSelectedId,
+            feedback: () => state2.nationalityMatchFeedback,
+            phraseContent: (id) => {
+              const item = nationalityPracticeItems2().find((entry) => entry.id === id);
+              return item ? `<span class="nationality-match-country"><img class="nationality-match-flag" src="${item.flagAsset}" alt="${item.flagAlt}" /><span class="nationality-match-copy"><span class="numbers-game-hanzi">${item.countryHanzi}</span><span class="numbers-game-english">${item.flagAlt.replace(" flag", "")}</span></span></span>` : "";
+            },
+            meaningContent: (id) => {
+              const item = nationalityPracticeItems2().find((entry) => entry.id === id);
+              return item ? `<span class="nationality-match-symbol-card"><img class="nationality-match-symbol" src="${item.symbolAsset}" alt="${item.symbolCaption}" /><span class="numbers-game-english">${item.symbolCaption}</span></span>` : "";
+            },
+            onNew: () => {
+              resetNationalityMatchGame2();
+              renderActivityPanel2(topic);
+            },
+            onPhrase: handleNationalityMatchPhrase2,
+            onMeaning: handleNationalityMatchAttempt2
+          }
+        };
+      }
       if (topic.id === "weekdays") {
         return {
           summary: "Listen for the weekday, then match each Chinese day to its English name.",
@@ -616,21 +773,11 @@
       }
       if (topic.id === "family") {
         return {
-          summary: "Practice the three core family sentences, then sort sibling and parent words by who they name.",
+          summary: "Make your own family sentence, then match each family word to the right family member.",
           ensure: () => {
-            ensureFamilyChallenge2();
             ensureFamilyMatchGame2();
           },
-          listen: {
-            items: familyGameItems2,
-            optionIds: () => state2.familyChallengeOptionIds,
-            pickedId: () => state2.familyChallengePickedId,
-            result: () => state2.familyChallengeResult,
-            wrongIds: () => state2.familyChallengeWrongIds,
-            feedback: () => state2.familyListenFeedback,
-            onPlay: handleFamilyChallengePlay2,
-            onGuess: handleFamilyChallengeGuess2
-          },
+          builder: { markup: familySentenceBuilderMarkup, bind: bindFamilySentenceBuilder },
           match: {
             phraseHeading: "Chinese",
             meaningHeading: "Family member",
@@ -784,6 +931,14 @@
       return null;
     }
     function renderActivityPanel2(topic) {
+      if (topic.id === "telephone-numbers") {
+        topicColumns2?.classList.add("is-hidden");
+        activityPanelTitle2.textContent = "";
+        activityPanelSummary2.textContent = "";
+        activityList2.className = "support-list";
+        activityList2.innerHTML = "";
+        return;
+      }
       topicColumns2?.classList.remove("is-hidden");
       activityPanelSummary2.hidden = false;
       if (topic.id === "body") {
@@ -896,10 +1051,6 @@
         }).join("")}
         </div>
       </section>
-      ${renderPracticeSayCards2([
-          { hanzi: "\u4E66\u67B6\u5728\u684C\u5B50\u5DE6\u8FB9\u3002", pinyin: "sh\u016B ji\xE0 z\xE0i zhu\u014D zi zu\u01D2 bi\u0101n.", english: "The bookshelf is to the left of the desk.", audio: "\u4E66\u67B6\u5728\u684C\u5B50\u5DE6\u8FB9" },
-          { hanzi: "\u6905\u5B50\u5728\u5973\u5B69\u540E\u9762\u3002", pinyin: "y\u01D0 zi z\xE0i n\u01DA h\xE1i h\xF2u mi\xE0n.", english: "The chair is behind the girl.", audio: "\u6905\u5B50\u5728\u5973\u5B69\u540E\u9762" }
-        ])}
     `;
         activityList2.querySelectorAll("[data-position-quiz-pick]").forEach((button) => {
           button.addEventListener("click", () => handlePositionQuizPick2(button.dataset.positionQuizPick));
@@ -908,7 +1059,6 @@
           nextPositionQuizQuestion2();
           handlePositionQuizPlay2();
         });
-        bindPracticeSayCards2(activityList2);
         return;
       }
       if (topic.id === "everyday-actions") {
@@ -1501,7 +1651,7 @@
       renderSubtopicShelf(topic);
       focusDisplay2.classList.toggle(
         "is-hidden",
-        topic.id === "body" || topic.ownsExplorerContent || usesLessonTemplate2(topic) || topic.id === "numbers" || topic.id === "multiplication-rhyme" || topic.id === "weekdays" || topic.id === "time-date" || topic.id === "dates" || topic.id === "comparisons" || topic.id === "positions" || topic.id === "transport" || topic.id === "daily-life" || topic.id === "identity" || topic.id === "clothes" || schoolTopicData3[topic.id] || topic.id === "numbers" && currentNumberStage2().telephoneMode
+        topic.id === "body" || topic.ownsExplorerContent || usesLessonTemplate2(topic) || topic.id === "numbers" || topic.id === "multiplication-rhyme" || topic.id === "weekdays" || topic.id === "time-date" || topic.id === "dates" || topic.id === "comparisons" || topic.id === "positions" || topic.id === "transport" || topic.id === "daily-life" || ["identity", "languages"].includes(topic.id) || topic.id === "clothes" || schoolTopicData3[topic.id] || topic.id === "numbers" && currentNumberStage2().telephoneMode
       );
       renderFocusControls2();
       renderFocusDisplay2(currentFocusItem2());
@@ -1549,6 +1699,7 @@
       currentTopic: currentTopic2,
       renderBodyExplorer: renderBodyExplorer2,
       renderNumbersExplorer: renderNumbersExplorer2,
+      renderTelephoneExplorer: renderTelephoneExplorer2,
       renderPoliteWordsExplorer: renderPoliteWordsExplorer2,
       renderIntroductionsExplorer: renderIntroductionsExplorer2,
       renderIdentityExplorer: renderIdentityExplorer2,
@@ -1575,6 +1726,7 @@
       const topic = currentTopic2();
       if (topic.interactiveScene === "body-face") return renderBodyExplorer2();
       if (topic.id === "numbers") return renderNumbersExplorer2();
+      if (topic.interactiveScene === "telephone-numbers") return renderTelephoneExplorer2();
       if (topic.interactiveScene === "polite-phrases") return renderPoliteWordsExplorer2();
       if (topic.interactiveScene === "introductions-conversation") return renderIntroductionsExplorer2();
       if (topic.interactiveScene === "identity-scenes") return renderIdentityExplorer2();
@@ -2433,6 +2585,7 @@
     progressLabel: "3B Lesson 3",
     iconText: "\u4E0A\u4E0B",
     iconColor: "#587d9c",
+    ownsExplorerContent: true,
     focus: { hanzi: "\u5728\u4E0A\u9762\u3002", pinyin: "z\xE0i sh\xE0ng mi\xE0n.", english: "It is on top.", audio: "\u5728\u4E0A\u9762" },
     interactiveScene: "positions",
     parentGuide: "Use a book, backpack, and pencil case to act out each position before naming it.",
@@ -2453,8 +2606,7 @@
       imageAlt: "A book and backpack showing up and down positions around a desk",
       lines: [
         { hanzi: "\u4E66\u5728\u684C\u5B50\u4E0A\u3002", pinyin: "sh\u016B z\xE0i zhu\u014D zi sh\xE0ng.", english: "The book is on the desk.", audio: "\u4E66\u5728\u684C\u5B50\u4E0A" },
-        { hanzi: "\u684C\u5B50\u4E0A\u6709\u4E66\u3002", pinyin: "zhu\u014D zi sh\xE0ng y\u01D2u sh\u016B.", english: "There is a book on the desk.", audio: "\u684C\u5B50\u4E0A\u6709\u4E66" },
-        { hanzi: "\u4E66\u5305\u5728\u684C\u5B50\u4E0B\u3002", pinyin: "sh\u016B b\u0101o z\xE0i zhu\u014D zi xi\xE0.", english: "The backpack is under the desk.", audio: "\u4E66\u5305\u5728\u684C\u5B50\u4E0B" }
+        { hanzi: "\u4E66\u5305\u5728\u684C\u5B50\u4E0B\u9762\u3002", pinyin: "sh\u016B b\u0101o z\xE0i zhu\u014D zi xi\xE0 mi\xE0n.", english: "The backpack is under the desk.", audio: "\u4E66\u5305\u5728\u684C\u5B50\u4E0B\u9762" }
       ]
     },
     {
@@ -2463,18 +2615,8 @@
       imagePath: "assets/illustrated-rooms/positions-inside-outside.webp",
       imageAlt: "A backpack, book, and pencil case showing inside and outside positions",
       lines: [
-        { hanzi: "\u4E66\u5305\u91CC\u6709\u4E66\u3002", pinyin: "sh\u016B b\u0101o l\u01D0 y\u01D2u sh\u016B.", english: "There is a book in the backpack.", audio: "\u4E66\u5305\u91CC\u6709\u4E66" },
-        { hanzi: "\u4E66\u5728\u4E66\u5305\u91CC\u3002", pinyin: "sh\u016B z\xE0i sh\u016B b\u0101o l\u01D0.", english: "The book is in the backpack.", audio: "\u4E66\u5728\u4E66\u5305\u91CC" },
+        { hanzi: "\u4E66\u5728\u4E66\u5305\u91CC\u9762\u3002", pinyin: "sh\u016B z\xE0i sh\u016B b\u0101o l\u01D0 mi\xE0n.", english: "The book is in the backpack.", audio: "\u4E66\u5728\u4E66\u5305\u91CC\u9762" },
         { hanzi: "\u6587\u5177\u76D2\u5728\u4E66\u5305\u5916\u9762\u3002", pinyin: "w\xE9n j\xF9 h\xE9 z\xE0i sh\u016B b\u0101o w\xE0i mi\xE0n.", english: "The pencil case is outside the backpack.", audio: "\u6587\u5177\u76D2\u5728\u4E66\u5305\u5916\u9762" }
-      ]
-    },
-    {
-      id: "directions",
-      title: "Directions",
-      imagePath: "assets/illustrated-rooms/positions-all-directions.webp",
-      imageAlt: "A room board showing front, back, left, and right directions",
-      lines: [
-        { hanzi: "\u4E0A\u3001\u4E0B\u3001\u524D\u3001\u540E\u3001\u5DE6\u3001\u53F3\u3002", pinyin: "sh\xE0ng, xi\xE0, qi\xE1n, h\xF2u, zu\u01D2, y\xF2u.", english: "Up, down, front, back, left, right.", audio: "\u4E0A\u4E0B\u524D\u540E\u5DE6\u53F3" }
       ]
     },
     {
@@ -2485,10 +2627,20 @@
       lines: [
         { hanzi: "\u5973\u5B69\u5728\u684C\u5B50\u524D\u9762\u3002", pinyin: "n\u01DA h\xE1i z\xE0i zhu\u014D zi qi\xE1n mi\xE0n.", english: "The girl is in front of the desk.", audio: "\u5973\u5B69\u5728\u684C\u5B50\u524D\u9762" },
         { hanzi: "\u6905\u5B50\u5728\u5973\u5B69\u540E\u9762\u3002", pinyin: "y\u01D0 zi z\xE0i n\u01DA h\xE1i h\xF2u mi\xE0n.", english: "The chair is behind the girl.", audio: "\u6905\u5B50\u5728\u5973\u5B69\u540E\u9762" },
-        { hanzi: "\u4E66\u67B6\u5728\u5973\u5B69\u5DE6\u8FB9\u3002", pinyin: "sh\u016B ji\xE0 z\xE0i n\u01DA h\xE1i zu\u01D2 bi\u0101n.", english: "The bookshelf is to the girl's left.", audio: "\u4E66\u67B6\u5728\u5973\u5B69\u5DE6\u8FB9" },
-        { hanzi: "\u5C0F\u72D7\u5728\u5973\u5B69\u53F3\u8FB9\u3002", pinyin: "xi\u01CEo g\u01D2u z\xE0i n\u01DA h\xE1i y\xF2u bi\u0101n.", english: "The dog is to the girl's right.", audio: "\u5C0F\u72D7\u5728\u5973\u5B69\u53F3\u8FB9" }
+        { hanzi: "\u4E66\u67B6\u5728\u684C\u5B50\u5DE6\u8FB9\u3002", pinyin: "sh\u016B ji\xE0 z\xE0i zhu\u014D zi zu\u01D2 bi\u0101n.", english: "The bookshelf is to the left of the desk.", audio: "\u4E66\u67B6\u5728\u684C\u5B50\u5DE6\u8FB9" },
+        { hanzi: "\u5C0F\u72D7\u5728\u684C\u5B50\u53F3\u8FB9\u3002", pinyin: "xi\u01CEo g\u01D2u z\xE0i zhu\u014D zi y\xF2u bi\u0101n.", english: "The dog is to the right of the desk.", audio: "\u5C0F\u72D7\u5728\u684C\u5B50\u53F3\u8FB9" }
       ]
     }
+  ];
+  var positionBookWords = [
+    { hanzi: "\u4E0A", pinyin: "sh\xE0ng", english: "up; on" },
+    { hanzi: "\u4E0B", pinyin: "xi\xE0", english: "down; under" },
+    { hanzi: "\u91CC", pinyin: "l\u01D0", english: "inside" },
+    { hanzi: "\u5916", pinyin: "w\xE0i", english: "outside" },
+    { hanzi: "\u524D", pinyin: "qi\xE1n", english: "front" },
+    { hanzi: "\u540E", pinyin: "h\xF2u", english: "back" },
+    { hanzi: "\u5DE6", pinyin: "zu\u01D2", english: "left" },
+    { hanzi: "\u53F3", pinyin: "y\xF2u", english: "right" }
   ];
   var positionPracticeItems = positionScenes.flatMap((scene) => scene.lines.map((line, index) => ({ id: `${scene.id}-${index}`, ...line, imagePath: scene.imagePath, imageAlt: scene.imageAlt })));
 
@@ -5364,12 +5516,154 @@
     };
   }
 
+  // src/features/foundations/nationality-controller.js
+  function createNationalityController({ state: state2, countries, question, shuffleArray: shuffleArray2, speakSceneLines: speakSceneLines2, currentTopic: currentTopic2, renderActivityPanel: renderActivityPanel2 }) {
+    const practiceItems = countries.map((country) => ({
+      id: country.id,
+      hanzi: country.nationality,
+      pinyin: country.pinyin,
+      english: country.response.english,
+      flagAsset: country.asset,
+      flagAlt: `${country.label} flag`,
+      countryHanzi: country.hanzi,
+      countryPinyin: country.pinyin.replace(" r\xE9n", ""),
+      symbolAsset: country.symbolAsset,
+      symbolCaption: country.symbolCaption,
+      response: country.response
+    }));
+    const languageItems = countries.filter((country) => ["china", "usa", "germany", "france"].includes(country.id)).map((country) => ({
+      id: country.language.hanzi,
+      hanzi: country.language.hanzi,
+      pinyin: country.language.pinyin,
+      english: country.language.english,
+      flagAsset: country.asset,
+      flagAlt: `${country.label} flag`,
+      sentence: { hanzi: `${country.nationality}\u8BF4${country.language.hanzi}\u3002`, pinyin: `${country.pinyin} shu\u014D ${country.language.pinyin}.`, english: `${country.nationality} people speak ${country.language.english}.`, audio: `${country.nationality}\u8BF4${country.language.hanzi}` }
+    }));
+    function resetNationalityChallenge(options = {}) {
+      const answerId = nextRandomCycleId(state2, "nationality-listen", practiceItems.map((item) => item.id));
+      const answer = practiceItems.find((item) => item.id === answerId);
+      if (!answer) return;
+      const distractors = shuffleArray2(practiceItems.filter((item) => item.id !== answer.id)).slice(0, 3);
+      state2.nationalityChallengeAnswerId = answer.id;
+      state2.nationalityChallengeOptionIds = shuffleArray2([answer.id, ...distractors.map((item) => item.id)]);
+      state2.nationalityChallengePickedId = "";
+      state2.nationalityChallengeResult = "";
+      state2.nationalityChallengeWrongIds = /* @__PURE__ */ new Set();
+      state2.nationalityListenFeedback = options.feedback ?? "Press Play. Listen to the conversation, then choose the nationality you hear.";
+    }
+    function ensureNationalityChallenge2() {
+      if (!state2.nationalityChallengeAnswerId || !state2.nationalityChallengeOptionIds.length) resetNationalityChallenge();
+    }
+    function currentAnswer() {
+      ensureNationalityChallenge2();
+      return practiceItems.find((item) => item.id === state2.nationalityChallengeAnswerId) ?? practiceItems[0];
+    }
+    function playConversation(item) {
+      if (state2.tapAudioEnabled && item) speakSceneLines2([question, item.response]);
+    }
+    function handleNationalityChallengePlay2() {
+      ensureNationalityChallenge2();
+      if (state2.nationalityChallengeResult === "correct") {
+        resetNationalityChallenge();
+      }
+      const answer = currentAnswer();
+      playConversation(answer);
+      state2.nationalityListenFeedback = "Listen carefully, then choose the nationality you hear.";
+      renderActivityPanel2(currentTopic2());
+    }
+    function handleNationalityChallengeGuess2(itemId) {
+      const answer = currentAnswer();
+      const picked = practiceItems.find((item) => item.id === itemId);
+      if (!answer || !picked || state2.nationalityChallengeResult === "correct") return;
+      state2.nationalityChallengePickedId = itemId;
+      if (itemId === answer.id) {
+        state2.nationalityChallengeResult = "correct";
+        state2.nationalityListenFeedback = "Correct! Read the conversation below.";
+      } else {
+        state2.nationalityChallengeResult = "wrong";
+        state2.nationalityChallengeWrongIds = /* @__PURE__ */ new Set([...state2.nationalityChallengeWrongIds, itemId]);
+        state2.nationalityListenFeedback = "Not this one. Press Play and listen again.";
+      }
+      renderActivityPanel2(currentTopic2());
+    }
+    function resetNationalityMatchGame2() {
+      state2.nationalityMatchSelectedId = null;
+      state2.nationalityMatchedIds = /* @__PURE__ */ new Set();
+      state2.nationalityMatchPhraseOrder = shuffleArray2(practiceItems.map((item) => item.id));
+      state2.nationalityMatchSymbolOrder = shuffleArray2(practiceItems.map((item) => item.id));
+      state2.nationalityMatchFeedback = "";
+    }
+    function ensureNationalityMatchGame2() {
+      if (state2.nationalityMatchPhraseOrder.length !== practiceItems.length || state2.nationalityMatchSymbolOrder.length !== practiceItems.length) resetNationalityMatchGame2();
+    }
+    function handleNationalityMatchPhrase2(itemId) {
+      if (state2.nationalityMatchedIds.has(itemId)) return;
+      state2.nationalityMatchSelectedId = itemId;
+      state2.nationalityMatchFeedback = "Now choose the matching country symbol.";
+      renderActivityPanel2(currentTopic2());
+    }
+    function handleNationalityMatchAttempt2(itemId) {
+      const selectedId = state2.nationalityMatchSelectedId;
+      if (!selectedId || state2.nationalityMatchedIds.has(itemId)) return;
+      if (selectedId === itemId) {
+        state2.nationalityMatchedIds = /* @__PURE__ */ new Set([...state2.nationalityMatchedIds, itemId]);
+        state2.nationalityMatchSelectedId = null;
+        state2.nationalityMatchFeedback = state2.nationalityMatchedIds.size === practiceItems.length ? "Great job! You matched every country." : "Correct! Choose another flag and country name.";
+      } else {
+        state2.nationalityMatchFeedback = "Not that symbol. Try another one.";
+      }
+      renderActivityPanel2(currentTopic2());
+    }
+    function resetLanguageChallenge() {
+      const answerId = nextRandomCycleId(state2, "languages-listen", languageItems.map((item) => item.id));
+      const answer = languageItems.find((item) => item.id === answerId);
+      if (!answer) return;
+      state2.languageChallengeAnswerId = answer.id;
+      state2.languageChallengeOptionIds = shuffleArray2(languageItems.map((item) => item.id));
+      state2.languageChallengePickedId = "";
+      state2.languageChallengeResult = "";
+      state2.languageChallengeWrongIds = /* @__PURE__ */ new Set();
+      state2.languageListenFeedback = "";
+    }
+    function ensureLanguageChallenge2() {
+      if (!state2.languageChallengeAnswerId || !state2.languageChallengeOptionIds.length) resetLanguageChallenge();
+    }
+    function currentLanguageAnswer2() {
+      ensureLanguageChallenge2();
+      return languageItems.find((item) => item.id === state2.languageChallengeAnswerId) ?? languageItems[0];
+    }
+    function handleLanguageChallengePlay2() {
+      ensureLanguageChallenge2();
+      if (state2.languageChallengeResult === "correct") resetLanguageChallenge();
+      const answer = currentLanguageAnswer2();
+      if (state2.tapAudioEnabled && answer) speakSceneLines2([answer.sentence]);
+      state2.languageListenFeedback = "";
+      renderActivityPanel2(currentTopic2());
+    }
+    function handleLanguageChallengeGuess2(itemId) {
+      const answer = currentLanguageAnswer2();
+      if (!answer || state2.languageChallengeResult === "correct") return;
+      state2.languageChallengePickedId = itemId;
+      if (itemId === answer.id) {
+        state2.languageChallengeResult = "correct";
+        state2.languageListenFeedback = "Correct! Read the sentence below.";
+      } else {
+        state2.languageChallengeResult = "wrong";
+        state2.languageChallengeWrongIds = /* @__PURE__ */ new Set([...state2.languageChallengeWrongIds, itemId]);
+        state2.languageListenFeedback = "Not this one. Press Play and listen again.";
+      }
+      renderActivityPanel2(currentTopic2());
+    }
+    return { nationalityPracticeItems: () => practiceItems, ensureNationalityChallenge: ensureNationalityChallenge2, currentNationalityAnswer: currentAnswer, handleNationalityChallengePlay: handleNationalityChallengePlay2, handleNationalityChallengeGuess: handleNationalityChallengeGuess2, ensureNationalityMatchGame: ensureNationalityMatchGame2, resetNationalityMatchGame: resetNationalityMatchGame2, handleNationalityMatchPhrase: handleNationalityMatchPhrase2, handleNationalityMatchAttempt: handleNationalityMatchAttempt2, languagePracticeItems: () => languageItems, ensureLanguageChallenge: ensureLanguageChallenge2, currentLanguageAnswer: currentLanguageAnswer2, handleLanguageChallengePlay: handleLanguageChallengePlay2, handleLanguageChallengeGuess: handleLanguageChallengeGuess2 };
+  }
+
   // src/features/foundations/identity.js
   var identityTopic = {
     id: "identity",
-    title: "Countries & Languages",
-    summary: "Say where someone is from and the languages they can speak.",
-    progressLabel: "3A to 4A",
+    title: "Nationality",
+    summary: "Ask and answer where someone is from.",
+    progressLabel: "3A",
     iconText: "\u4E2D\u56FD",
     iconColor: "#587d9c",
     iconAccent: "#e5bf70",
@@ -5381,21 +5675,50 @@
       audio: "\u6211\u662F\u4E2D\u56FD\u4EBA"
     },
     focusItems: [
-      { id: "ask-country", hanzi: "\u4F60\u662F\u54EA\u56FD\u4EBA\uFF1F", pinyin: "n\u01D0 sh\xEC n\u01CE gu\xF3 r\xE9n?", english: "What country are you from?", audio: "\u4F60\u662F\u54EA\u56FD\u4EBA" },
+      { id: "ask-country", hanzi: "\u4F60\u662F\u54EA\u56FD\u4EBA\uFF1F", pinyin: "n\u01D0 sh\xEC n\u01CE gu\xF3 r\xE9n?", english: "What nationality are you?", audio: "\u4F60\u662F\u54EA\u56FD\u4EBA" },
       { id: "china", hanzi: "\u6211\u662F\u4E2D\u56FD\u4EBA\u3002", pinyin: "w\u01D2 sh\xEC Zh\u014Dng gu\xF3 r\xE9n.", english: "I am Chinese.", audio: "\u6211\u662F\u4E2D\u56FD\u4EBA" },
       { id: "usa", hanzi: "\u6211\u662F\u7F8E\u56FD\u4EBA\u3002", pinyin: "w\u01D2 sh\xEC M\u011Bi gu\xF3 r\xE9n.", english: "I am American.", audio: "\u6211\u662F\u7F8E\u56FD\u4EBA" },
       { id: "uk", hanzi: "\u6211\u662F\u82F1\u56FD\u4EBA\u3002", pinyin: "w\u01D2 sh\xEC Y\u012Bng gu\xF3 r\xE9n.", english: "I am British.", audio: "\u6211\u662F\u82F1\u56FD\u4EBA" },
-      { id: "ask-language", hanzi: "\u4F60\u4F1A\u8BF4\u6C49\u8BED\u5417\uFF1F", pinyin: "n\u01D0 hu\xEC shu\u014D H\xE0ny\u01D4 ma?", english: "Can you speak Chinese?", audio: "\u4F60\u4F1A\u8BF4\u6C49\u8BED\u5417" },
-      { id: "speak-chinese", hanzi: "\u6211\u4F1A\u8BF4\u6C49\u8BED\u3002", pinyin: "w\u01D2 hu\xEC shu\u014D H\xE0ny\u01D4.", english: "I can speak Chinese.", audio: "\u6211\u4F1A\u8BF4\u6C49\u8BED" },
-      { id: "speak-english", hanzi: "\u6211\u4F1A\u8BF4\u82F1\u8BED\u3002", pinyin: "w\u01D2 hu\xEC shu\u014D Y\u012Bngy\u01D4.", english: "I can speak English.", audio: "\u6211\u4F1A\u8BF4\u82F1\u8BED" }
+      { id: "germany", hanzi: "\u6211\u662F\u5FB7\u56FD\u4EBA\u3002", pinyin: "w\u01D2 sh\xEC D\xE9 gu\xF3 r\xE9n.", english: "I am German.", audio: "\u6211\u662F\u5FB7\u56FD\u4EBA" },
+      { id: "france", hanzi: "\u6211\u662F\u6CD5\u56FD\u4EBA\u3002", pinyin: "w\u01D2 sh\xEC F\u01CE gu\xF3 r\xE9n.", english: "I am French.", audio: "\u6211\u662F\u6CD5\u56FD\u4EBA" },
+      { id: "speak-language", hanzi: "\u6211\u662F\u4E2D\u56FD\u4EBA\u3002\u6211\u8BF4\u6C49\u8BED\u3002", pinyin: "w\u01D2 sh\xEC Zh\u014Dng gu\xF3 r\xE9n. w\u01D2 shu\u014D H\xE0ny\u01D4.", english: "I am Chinese. I speak Chinese.", audio: "\u6211\u662F\u4E2D\u56FD\u4EBA\u3002\u6211\u8BF4\u6C49\u8BED" }
     ],
     interactiveScene: "identity-scenes",
-    parentGuide: "Use the child's real country and languages. Start with one short answer, then switch the country or language together.",
-    cultureGuide: "Country and language words work best as respectful descriptions of people, not as labels for how anyone should look or act.",
-    activities: ["Tap to hear", "Meet classmates", "Match country and flag", "Say what I speak"],
+    parentGuide: "Look at Lele and Noah's family photos, then practise the question and answer together.",
+    cultureGuide: "A flag can help introduce a country word, but it does not define what every person from that country looks like.",
+    activities: ["Listen", "Book words", "Ask and answer"],
     steps: [
-      { book: "3A", lesson: 5, title: "Nationality", note: "Ask and say where someone is from." },
-      { book: "4A", lesson: 2, title: "Languages", note: "Say which languages someone can speak." }
+      { book: "3A", lesson: 5, title: "Nationality", note: "Ask and answer \u4F60\u662F\u54EA\u56FD\u4EBA\uFF1F / \u6211\u662F\u2026\u4EBA\u3002" }
+    ]
+  };
+  var languagesTopic = {
+    id: "languages",
+    title: "Languages",
+    summary: "Say which language someone speaks.",
+    progressLabel: "4A",
+    iconText: "\u8BED\u8A00",
+    iconColor: "#587d9c",
+    iconAccent: "#e5bf70",
+    iconTheme: "identity",
+    focus: {
+      hanzi: "\u6211\u662F\u4E2D\u56FD\u4EBA\u3002\u6211\u8BF4\u6C49\u8BED\u3002",
+      pinyin: "w\u01D2 sh\xEC Zh\u014Dng gu\xF3 r\xE9n. w\u01D2 shu\u014D H\xE0ny\u01D4.",
+      english: "I am Chinese. I speak Chinese.",
+      audio: "\u6211\u662F\u4E2D\u56FD\u4EBA\u3002\u6211\u8BF4\u6C49\u8BED"
+    },
+    focusItems: [
+      { id: "chinese", hanzi: "\u6C49\u8BED", pinyin: "H\xE0ny\u01D4", english: "Chinese", audio: "\u6C49\u8BED" },
+      { id: "english", hanzi: "\u82F1\u8BED", pinyin: "Y\u012Bngy\u01D4", english: "English", audio: "\u82F1\u8BED" },
+      { id: "german", hanzi: "\u5FB7\u8BED", pinyin: "D\xE9y\u01D4", english: "German", audio: "\u5FB7\u8BED" },
+      { id: "french", hanzi: "\u6CD5\u8BED", pinyin: "F\u01CEy\u01D4", english: "French", audio: "\u6CD5\u8BED" },
+      { id: "speak-language", hanzi: "\u6211\u662F\u4E2D\u56FD\u4EBA\u3002\u6211\u8BF4\u6C49\u8BED\u3002", pinyin: "w\u01D2 sh\xEC Zh\u014Dng gu\xF3 r\xE9n. w\u01D2 shu\u014D H\xE0ny\u01D4.", english: "I am Chinese. I speak Chinese.", audio: "\u6211\u662F\u4E2D\u56FD\u4EBA\u3002\u6211\u8BF4\u6C49\u8BED" }
+    ],
+    interactiveScene: "identity-scenes",
+    parentGuide: "Read the scene together, then say the country-and-language sentence for each picture.",
+    cultureGuide: "People can speak more than one language. A nationality and a language are useful words to learn, not labels for what every person is like.",
+    activities: ["Listen", "Book words", "Say the sentence"],
+    steps: [
+      { book: "4A", lesson: 2, title: "Languages", note: "Say \u2026\u4EBA\u8BF4\u2026\u8BED and \u6211\u662F\u2026\u4EBA\u3002\u6211\u8BF4\u2026\u8BED\u3002" }
     ]
   };
   var identityCountries = [
@@ -5405,9 +5728,12 @@
       hanzi: "\u4E2D\u56FD",
       nationality: "\u4E2D\u56FD\u4EBA",
       pinyin: "Zh\u014Dng gu\xF3 r\xE9n",
+      language: { hanzi: "\u6C49\u8BED", pinyin: "H\xE0ny\u01D4", english: "Chinese" },
       asset: "assets/illustrated-flags/china.webp",
       focusItemId: "china",
-      response: { hanzi: "\u6211\u662F\u4E2D\u56FD\u4EBA\uFF0C\u6211\u4F1A\u8BF4\u6C49\u8BED\u3002", pinyin: "w\u01D2 sh\xEC Zh\u014Dng gu\xF3 r\xE9n, w\u01D2 hu\xEC shu\u014D H\xE0ny\u01D4.", english: "I am Chinese. I can speak Chinese.", audio: "\u6211\u662F\u4E2D\u56FD\u4EBA\uFF0C\u6211\u4F1A\u8BF4\u6C49\u8BED" }
+      symbolAsset: "assets/illustrated-country-symbols/china.webp",
+      symbolCaption: "The Great Wall is a well-known landmark in China.",
+      response: { hanzi: "\u6211\u662F\u4E2D\u56FD\u4EBA\u3002", pinyin: "w\u01D2 sh\xEC Zh\u014Dng gu\xF3 r\xE9n.", english: "I am Chinese.", audio: "\u6211\u662F\u4E2D\u56FD\u4EBA" }
     },
     {
       id: "usa",
@@ -5415,9 +5741,12 @@
       hanzi: "\u7F8E\u56FD",
       nationality: "\u7F8E\u56FD\u4EBA",
       pinyin: "M\u011Bi gu\xF3 r\xE9n",
+      language: { hanzi: "\u82F1\u8BED", pinyin: "Y\u012Bngy\u01D4", english: "English" },
       asset: "assets/illustrated-flags/united-states.webp",
       focusItemId: "usa",
-      response: { hanzi: "\u6211\u662F\u7F8E\u56FD\u4EBA\uFF0C\u6211\u4F1A\u8BF4\u82F1\u8BED\u3002", pinyin: "w\u01D2 sh\xEC M\u011Bi gu\xF3 r\xE9n, w\u01D2 hu\xEC shu\u014D Y\u012Bngy\u01D4.", english: "I am American. I can speak English.", audio: "\u6211\u662F\u7F8E\u56FD\u4EBA\uFF0C\u6211\u4F1A\u8BF4\u82F1\u8BED" }
+      symbolAsset: "assets/illustrated-country-symbols/united-states.webp",
+      symbolCaption: "The Statue of Liberty is a well-known landmark in the United States.",
+      response: { hanzi: "\u6211\u662F\u7F8E\u56FD\u4EBA\u3002", pinyin: "w\u01D2 sh\xEC M\u011Bi gu\xF3 r\xE9n.", english: "I am American.", audio: "\u6211\u662F\u7F8E\u56FD\u4EBA" }
     },
     {
       id: "uk",
@@ -5425,31 +5754,110 @@
       hanzi: "\u82F1\u56FD",
       nationality: "\u82F1\u56FD\u4EBA",
       pinyin: "Y\u012Bng gu\xF3 r\xE9n",
+      language: { hanzi: "\u82F1\u8BED", pinyin: "Y\u012Bngy\u01D4", english: "English" },
       asset: "assets/illustrated-flags/united-kingdom.webp",
       focusItemId: "uk",
-      response: { hanzi: "\u6211\u662F\u82F1\u56FD\u4EBA\uFF0C\u6211\u4F1A\u8BF4\u82F1\u8BED\u3002", pinyin: "w\u01D2 sh\xEC Y\u012Bng gu\xF3 r\xE9n, w\u01D2 hu\xEC shu\u014D Y\u012Bngy\u01D4.", english: "I am British. I can speak English.", audio: "\u6211\u662F\u82F1\u56FD\u4EBA\uFF0C\u6211\u4F1A\u8BF4\u82F1\u8BED" }
+      symbolAsset: "assets/illustrated-country-symbols/united-kingdom.webp",
+      symbolCaption: "Big Ben is a well-known landmark in the United Kingdom.",
+      response: { hanzi: "\u6211\u662F\u82F1\u56FD\u4EBA\u3002", pinyin: "w\u01D2 sh\xEC Y\u012Bng gu\xF3 r\xE9n.", english: "I am British.", audio: "\u6211\u662F\u82F1\u56FD\u4EBA" }
+    },
+    {
+      id: "germany",
+      label: "Germany",
+      hanzi: "\u5FB7\u56FD",
+      nationality: "\u5FB7\u56FD\u4EBA",
+      pinyin: "D\xE9 gu\xF3 r\xE9n",
+      language: { hanzi: "\u5FB7\u8BED", pinyin: "D\xE9y\u01D4", english: "German" },
+      asset: "assets/illustrated-flags/germany.webp",
+      focusItemId: "germany",
+      symbolAsset: "assets/illustrated-country-symbols/germany.webp",
+      symbolCaption: "The Brandenburg Gate is a well-known landmark in Germany.",
+      response: { hanzi: "\u6211\u662F\u5FB7\u56FD\u4EBA\u3002", pinyin: "w\u01D2 sh\xEC D\xE9 gu\xF3 r\xE9n.", english: "I am German.", audio: "\u6211\u662F\u5FB7\u56FD\u4EBA" }
+    },
+    {
+      id: "france",
+      label: "France",
+      hanzi: "\u6CD5\u56FD",
+      nationality: "\u6CD5\u56FD\u4EBA",
+      pinyin: "F\u01CE gu\xF3 r\xE9n",
+      language: { hanzi: "\u6CD5\u8BED", pinyin: "F\u01CEy\u01D4", english: "French" },
+      asset: "assets/illustrated-flags/france.webp",
+      focusItemId: "france",
+      symbolAsset: "assets/illustrated-country-symbols/france.webp",
+      symbolCaption: "The Eiffel Tower is a well-known landmark in France.",
+      response: { hanzi: "\u6211\u662F\u6CD5\u56FD\u4EBA\u3002", pinyin: "w\u01D2 sh\xEC F\u01CE gu\xF3 r\xE9n.", english: "I am French.", audio: "\u6211\u662F\u6CD5\u56FD\u4EBA" }
+    }
+  ];
+  var identityExploreCountries = [
+    {
+      id: "canada",
+      label: "Canada",
+      hanzi: "\u52A0\u62FF\u5927",
+      nationality: "\u52A0\u62FF\u5927\u4EBA",
+      pinyin: "Ji\u0101 n\xE1 d\xE0 r\xE9n",
+      asset: "assets/illustrated-flags/canada.webp",
+      symbolAsset: "assets/illustrated-country-symbols/canada.webp",
+      symbolCaption: "Hockey is a popular sport in Canada.",
+      response: { hanzi: "\u6211\u662F\u52A0\u62FF\u5927\u4EBA\u3002", pinyin: "w\u01D2 sh\xEC Ji\u0101 n\xE1 d\xE0 r\xE9n.", english: "I am Canadian.", audio: "\u6211\u662F\u52A0\u62FF\u5927\u4EBA" }
+    },
+    {
+      id: "mexico",
+      label: "Mexico",
+      hanzi: "\u58A8\u897F\u54E5",
+      nationality: "\u58A8\u897F\u54E5\u4EBA",
+      pinyin: "M\xF2 x\u012B g\u0113 r\xE9n",
+      asset: "assets/illustrated-flags/mexico.webp",
+      symbolAsset: "assets/illustrated-country-symbols/mexico.webp",
+      symbolCaption: "Chich\xE9n Itz\xE1 is an ancient city in Mexico.",
+      response: { hanzi: "\u6211\u662F\u58A8\u897F\u54E5\u4EBA\u3002", pinyin: "w\u01D2 sh\xEC M\xF2 x\u012B g\u0113 r\xE9n.", english: "I am Mexican.", audio: "\u6211\u662F\u58A8\u897F\u54E5\u4EBA" }
+    },
+    {
+      id: "australia",
+      label: "Australia",
+      hanzi: "\u6FB3\u5927\u5229\u4E9A",
+      nationality: "\u6FB3\u5927\u5229\u4E9A\u4EBA",
+      pinyin: "\xC0o d\xE0 l\xEC y\xE0 r\xE9n",
+      asset: "assets/illustrated-flags/australia.webp",
+      symbolAsset: "assets/illustrated-country-symbols/australia.webp",
+      symbolCaption: "Kangaroos live in Australia.",
+      response: { hanzi: "\u6211\u662F\u6FB3\u5927\u5229\u4E9A\u4EBA\u3002", pinyin: "w\u01D2 sh\xEC \xC0o d\xE0 l\xEC y\xE0 r\xE9n.", english: "I am Australian.", audio: "\u6211\u662F\u6FB3\u5927\u5229\u4E9A\u4EBA" }
     }
   ];
   var identityQuestion = {
     hanzi: "\u4F60\u662F\u54EA\u56FD\u4EBA\uFF1F",
     pinyin: "n\u01D0 sh\xEC n\u01CE gu\xF3 r\xE9n?",
-    english: "What country are you from?",
+    english: "What nationality are you?",
     audio: "\u4F60\u662F\u54EA\u56FD\u4EBA"
+  };
+  var identityLanguageQuestion = {
+    hanzi: "\u8BF4\u4E00\u8BF4\u3002",
+    pinyin: "shu\u014D yi shu\u014D.",
+    english: "Say a sentence.",
+    audio: "\u8BF4\u4E00\u8BF4"
   };
   var identityConversation = {
     imagePath: "assets/illustrated-identity/classmates-speak-different-languages.webp",
-    imageAlt: "Two classmates talking about where they are from and the languages they speak",
+    imageAlt: "Two classmates talking about the languages they speak",
     lines: [
-      { hanzi: "\u6211\u662F\u4E2D\u56FD\u4EBA\uFF0C\u6211\u4F1A\u8BF4\u6C49\u8BED\u3002", pinyin: "w\u01D2 sh\xEC Zh\u014Dng gu\xF3 r\xE9n, w\u01D2 hu\xEC shu\u014D H\xE0ny\u01D4.", english: "I am Chinese. I can speak Chinese.", audio: "\u6211\u662F\u4E2D\u56FD\u4EBA\uFF0C\u6211\u4F1A\u8BF4\u6C49\u8BED" },
-      { hanzi: "\u6211\u662F\u7F8E\u56FD\u4EBA\uFF0C\u6211\u4F1A\u8BF4\u82F1\u8BED\u3002", pinyin: "w\u01D2 sh\xEC M\u011Bi gu\xF3 r\xE9n, w\u01D2 hu\xEC shu\u014D Y\u012Bngy\u01D4.", english: "I am American. I can speak English.", audio: "\u6211\u662F\u7F8E\u56FD\u4EBA\uFF0C\u6211\u4F1A\u8BF4\u82F1\u8BED" }
+      { hanzi: "\u6211\u662F\u4E2D\u56FD\u4EBA\u3002\u6211\u8BF4\u6C49\u8BED\u3002", pinyin: "w\u01D2 sh\xEC Zh\u014Dng gu\xF3 r\xE9n. w\u01D2 shu\u014D H\xE0ny\u01D4.", english: "I am Chinese. I speak Chinese.", audio: "\u6211\u662F\u4E2D\u56FD\u4EBA\u3002\u6211\u8BF4\u6C49\u8BED" },
+      { hanzi: "\u6211\u662F\u7F8E\u56FD\u4EBA\u3002\u6211\u8BF4\u82F1\u8BED\u3002", pinyin: "w\u01D2 sh\xEC M\u011Bi gu\xF3 r\xE9n. w\u01D2 shu\u014D Y\u012Bngy\u01D4.", english: "I am American. I speak English.", audio: "\u6211\u662F\u7F8E\u56FD\u4EBA\u3002\u6211\u8BF4\u82F1\u8BED" }
+    ]
+  };
+  var nationalityConversation = {
+    imagePath: "assets/introductions/introductions-scene-4.webp",
+    imageAlt: "Lele and Noah hold family photos and talk together at school",
+    lines: [
+      { hanzi: "\u4F60\u662F\u54EA\u56FD\u4EBA\uFF1F", pinyin: "n\u01D0 sh\xEC n\u01CE gu\xF3 r\xE9n?", english: "What nationality are you?", audio: "\u4F60\u662F\u54EA\u56FD\u4EBA" },
+      { hanzi: "\u6211\u662F\u4E2D\u56FD\u4EBA\u3002", pinyin: "w\u01D2 sh\xEC Zh\u014Dng gu\xF3 r\xE9n.", english: "I am Chinese.", audio: "\u6211\u662F\u4E2D\u56FD\u4EBA" },
+      { hanzi: "\u6211\u662F\u7F8E\u56FD\u4EBA\u3002", pinyin: "w\u01D2 sh\xEC M\u011Bi gu\xF3 r\xE9n.", english: "I am American.", audio: "\u6211\u662F\u7F8E\u56FD\u4EBA" }
     ]
   };
 
   // src/features/family/family.js
   var familyTopic = {
     id: "family",
-    title: "Family",
-    summary: "Start with love and belonging, then sort family words by older and younger.",
+    title: "My Family 1",
+    summary: "Name family members, then introduce who is in your family.",
     progressLabel: "1B to 3A",
     iconText: "\u5BB6\u4EBA",
     iconColor: "#aa7051",
@@ -5470,12 +5878,20 @@
       { id: "older-brother-word", hanzi: "\u54E5\u54E5", pinyin: "g\u0113 ge", english: "older brother", audio: "\u54E5\u54E5" },
       { id: "younger-brother-word", hanzi: "\u5F1F\u5F1F", pinyin: "d\xEC di", english: "younger brother", audio: "\u5F1F\u5F1F" },
       { id: "older-sister-word", hanzi: "\u59D0\u59D0", pinyin: "ji\u011B jie", english: "older sister", audio: "\u59D0\u59D0" },
-      { id: "younger-sister-word", hanzi: "\u59B9\u59B9", pinyin: "m\xE8i mei", english: "younger sister", audio: "\u59B9\u59B9" }
+      { id: "younger-sister-word", hanzi: "\u59B9\u59B9", pinyin: "m\xE8i mei", english: "younger sister", audio: "\u59B9\u59B9" },
+      { id: "have-word", hanzi: "\u6709", pinyin: "y\u01D2u", english: "have", audio: "\u6709" },
+      { id: "not-have-word", hanzi: "\u6CA1\u6709", pinyin: "m\xE9i y\u01D2u", english: "do not have", audio: "\u6CA1\u6709" },
+      { id: "one-word", hanzi: "\u4E00\u4E2A", pinyin: "y\xED ge", english: "one", audio: "\u4E00\u4E2A" },
+      { id: "two-word", hanzi: "\u4E24\u4E2A", pinyin: "li\u01CEng ge", english: "two", audio: "\u4E24\u4E2A" },
+      { id: "grandpa-word", hanzi: "\u7237\u7237", pinyin: "y\xE9 ye", english: "paternal grandpa", audio: "\u7237\u7237" },
+      { id: "grandma-word", hanzi: "\u5976\u5976", pinyin: "n\u01CEi nai", english: "paternal grandma", audio: "\u5976\u5976" },
+      { id: "maternal-grandpa-word", hanzi: "\u5916\u516C", pinyin: "w\xE0i g\u014Dng", english: "maternal grandpa", audio: "\u5916\u516C" },
+      { id: "maternal-grandma-word", hanzi: "\u5916\u5A46", pinyin: "w\xE0i p\xF3", english: "maternal grandma", audio: "\u5916\u5A46" }
     ],
     interactiveScene: "family-home",
-    parentGuide: "Use one warm family picture for \u7238\u7238\u5988\u5988\u7231\u6211, then switch quickly to family photos, pointing, and real names.",
+    parentGuide: "Use the family-photo scene to count five people, then let children point to and introduce their own family members.",
     cultureGuide: "This early family lesson works best when love words and family roles stay close to the child's real home life.",
-    activities: ["Tap to hear", "Match family member", "Listen and choose", "Talk about my family"],
+    activities: ["Listen", "Book words", "Introduce my family", "Practice"],
     steps: [
       { book: "1B", lesson: 1, title: "Mum and dad", note: "Start with immediate family." },
       { book: "1B", lesson: 2, title: "Brothers and sisters", note: "Expand the family set." },
@@ -5522,6 +5938,29 @@
         { personId: "older-sister", hanzi: "\u59D0\u59D0", pinyin: "ji\u011B jie", english: "older sister", audio: "\u59D0\u59D0" },
         { personId: "younger-sister", hanzi: "\u59B9\u59B9", pinyin: "m\xE8i mei", english: "younger sister", audio: "\u59B9\u59B9" }
       ]
+    },
+    {
+      id: "family-scene-2a",
+      title: "Three siblings",
+      visual: "sibling-count",
+      imagePath: "assets/illustrated-family/family-counting-two-younger-brothers.webp",
+      imageAlt: "Three siblings having dinner together: a girl on the left and two boys",
+      lines: [
+        { hanzi: "\u6211\u6709\u4E24\u4E2A\u5F1F\u5F1F\u3002", pinyin: "w\u01D2 y\u01D2u li\u01CEng ge d\xEC di.", english: "I have two younger brothers.", audio: "\u6211\u6709\u4E24\u4E2A\u5F1F\u5F1F" },
+        { hanzi: "\u6211\u6709\u4E00\u4E2A\u59D0\u59D0\u548C\u4E00\u4E2A\u5F1F\u5F1F\u3002", pinyin: "w\u01D2 y\u01D2u y\xED ge ji\u011B jie h\xE9 y\xED ge d\xEC di.", english: "I have one older sister and one younger brother.", audio: "\u6211\u6709\u4E00\u4E2A\u59D0\u59D0\u548C\u4E00\u4E2A\u5F1F\u5F1F" },
+        { hanzi: "\u6211\u6709\u4E00\u4E2A\u59D0\u59D0\u548C\u4E00\u4E2A\u54E5\u54E5\u3002", pinyin: "w\u01D2 y\u01D2u y\xED ge ji\u011B jie h\xE9 y\xED ge g\u0113 ge.", english: "I have one older sister and one older brother.", audio: "\u6211\u6709\u4E00\u4E2A\u59D0\u59D0\u548C\u4E00\u4E2A\u54E5\u54E5" }
+      ]
+    },
+    {
+      id: "family-scene-3",
+      title: "My family",
+      visual: "family-introduction",
+      imagePath: "assets/illustrated-family/family-introduction-full-family.webp",
+      imageAlt: "A family of six in a living room: Mum, Dad, Anan, Lele, a younger sister, and a younger brother",
+      lines: [
+        { hanzi: "\u8FD9\u662F\u6211\u7684\u5BB6\u4EBA\u3002", pinyin: "zh\xE8 sh\xEC w\u01D2 de ji\u0101 r\xE9n.", english: "This is my family.", audio: "\u8FD9\u662F\u6211\u7684\u5BB6\u4EBA" },
+        { hanzi: "\u6211\u5BB6\u6709\u516D\u53E3\u4EBA\u3002", pinyin: "w\u01D2 ji\u0101 y\u01D2u li\xF9 k\u01D2u r\xE9n.", english: "There are six people in my family.", audio: "\u6211\u5BB6\u6709\u516D\u53E3\u4EBA" }
+      ]
     }
   ];
   var illustratedFamily = {
@@ -5532,13 +5971,22 @@
     girl: { id: "girl", label: "Older sister", ageGroup: "8", path: "assets/illustrated-family/family-avatar-older-sister.webp" },
     boy: { id: "boy", label: "Younger brother", ageGroup: "6", path: "assets/illustrated-family/family-avatar-younger-brother.webp" }
   };
+  var familyPossessionPractice = [
+    { id: "two-younger-brothers", hanzi: "\u6211\u6709\u4E24\u4E2A\u5F1F\u5F1F\u3002", pinyin: "w\u01D2 y\u01D2u li\u01CEng ge d\xEC di.", english: "I have two younger brothers.", audio: "\u6211\u6709\u4E24\u4E2A\u5F1F\u5F1F" },
+    { id: "older-sister-younger-brother", hanzi: "\u6211\u6709\u4E00\u4E2A\u59D0\u59D0\u548C\u4E00\u4E2A\u5F1F\u5F1F\u3002", pinyin: "w\u01D2 y\u01D2u y\xED ge ji\u011B jie h\xE9 y\xED ge d\xEC di.", english: "I have one older sister and one younger brother.", audio: "\u6211\u6709\u4E00\u4E2A\u59D0\u59D0\u548C\u4E00\u4E2A\u5F1F\u5F1F" },
+    { id: "older-sister-older-brother", hanzi: "\u6211\u6709\u4E00\u4E2A\u59D0\u59D0\u548C\u4E00\u4E2A\u54E5\u54E5\u3002", pinyin: "w\u01D2 y\u01D2u y\xED ge ji\u011B jie h\xE9 y\xED ge g\u0113 ge.", english: "I have one older sister and one older brother.", audio: "\u6211\u6709\u4E00\u4E2A\u59D0\u59D0\u548C\u4E00\u4E2A\u54E5\u54E5" }
+  ];
   var familyPersonIdsByItemId = {
     "dad-word": "dad",
     "mom-word": "mom",
     "older-brother-word": "older-brother",
     "younger-brother-word": "younger-brother",
     "older-sister-word": "older-sister",
-    "younger-sister-word": "younger-sister"
+    "younger-sister-word": "younger-sister",
+    "grandpa-word": "grandpa",
+    "grandma-word": "grandma",
+    "maternal-grandpa-word": "grandpa",
+    "maternal-grandma-word": "grandma"
   };
   var familyHeadshotsByItemId = {
     "mom-word": "assets/illustrated-family/family-avatar-mom.webp",
@@ -5546,7 +5994,11 @@
     "older-brother-word": "assets/illustrated-family/family-avatar-older-brother.webp",
     "younger-brother-word": "assets/illustrated-family/family-avatar-younger-brother.webp",
     "older-sister-word": "assets/illustrated-family/family-avatar-older-sister.webp",
-    "younger-sister-word": "assets/illustrated-family/family-avatar-younger-sister.webp"
+    "younger-sister-word": "assets/illustrated-family/family-avatar-younger-sister.webp",
+    "grandpa-word": "assets/illustrated-family/grandpa.webp",
+    "grandma-word": "assets/illustrated-family/grandma.webp",
+    "maternal-grandpa-word": "assets/illustrated-family/grandpa.webp",
+    "maternal-grandma-word": "assets/illustrated-family/grandma.webp"
   };
 
   // src/features/daily-life/clothes.js
@@ -5798,7 +6250,7 @@
     id: "numbers",
     title: "Numbers",
     summary: "A stage-by-stage number path that grows from first counting to real-life number use.",
-    progressLabel: "1A to 4A",
+    progressLabel: "1A to 3A",
     iconText: "\u4E00\u4E8C\u4E09",
     iconColor: "#be5b49",
     iconAccent: "#f3c977",
@@ -5819,8 +6271,7 @@
       { book: "1A", lesson: 2, title: "Numbers (2)", note: "Extend to 6-10." },
       { book: "1A", lesson: 3, title: "Numbers (3)", note: "Move into 11-20." },
       { book: "2A", lesson: 1, title: "Numbers", note: "Grow to 21-40." },
-      { book: "3A", lesson: 1, title: "Numbers", note: "Grow to 41-100." },
-      { book: "4A", lesson: 1, title: "Telephone numbers", note: "Use numbers in a real-life format." }
+      { book: "3A", lesson: 1, title: "Numbers", note: "Grow to 41-100." }
     ]
   };
   var multiplicationRhymeTopic = {
@@ -5936,36 +6387,8 @@
       practicePrompt: "Read by tens first, then slow down and notice the ones.",
       visualEmojis: ["\u2B50", "\u{1F31F}", "\u2728", "\u{1F4AB}", "\u{1FA90}"],
       visualLabel: "stars"
-    },
-    {
-      id: "4a-1",
-      bookId: "4a",
-      lesson: 1,
-      title: "Telephone numbers",
-      summary: "Use number reading in a real-life sequence instead of isolated counting.",
-      start: 0,
-      end: 9,
-      practicePrompt: "Say each digit clearly, one by one, in a phone-number rhythm.",
-      telephoneMode: true,
-      visualEmojis: ["\u260E\uFE0F", "\u{1F4DE}", "\u{1F522}", "\u{1F3A7}", "\u{1F4DF}"],
-      visualLabel: "phone digits"
     }
   ];
-  var telephonePractice = {
-    question: {
-      hanzi: "\u4F60\u7684\u7535\u8BDD\u53F7\u7801\u662F\u591A\u5C11\uFF1F",
-      pinyin: "n\u01D0 de di\xE0n hu\xE0 h\xE0o m\u01CE sh\xEC du\u014D shao?",
-      english: "What is your phone number?",
-      audio: "\u4F60\u7684\u7535\u8BDD\u53F7\u7801\u662F\u591A\u5C11"
-    },
-    answer: {
-      hanzi: "\u6211\u7684\u7535\u8BDD\u53F7\u7801\u662F\u516D\u516B\u4E8C\u56DB\u4E5D\u4E03\u4E09\u4E00\u4E09\u4E8C\u3002",
-      pinyin: "w\u01D2 de di\xE0n hu\xE0 h\xE0o m\u01CE sh\xEC li\xF9 b\u0101 \xE8r s\xEC ji\u01D4 q\u012B s\u0101n y\u012B s\u0101n \xE8r.",
-      english: "My phone number is 6824973132.",
-      audio: "\u6211\u7684\u7535\u8BDD\u53F7\u7801\u662F\u516D\u516B\u4E8C\u56DB\u4E5D\u4E03\u4E09\u4E00\u4E09\u4E8C"
-    },
-    digits: ["\u516D", "\u516B", "\u4E8C", "\u56DB", "\u4E5D", "\u4E03", "\u4E09", "\u4E00", "\u4E09", "\u4E8C"]
-  };
   function numberEnglish(value) {
     if (value <= 20) {
       return numberEnglishBase[value];
@@ -6058,9 +6481,64 @@
   }
   multiplicationRhymeTopic.focusItems = buildMultiplicationRhymeItems();
 
+  // src/features/foundations/telephone-numbers.js
+  var telephoneNumbersTopic = {
+    id: "telephone-numbers",
+    title: "My Family 2",
+    summary: "Introduce your grandparents, say where they live, and share a made-up family telephone number.",
+    progressLabel: "4A Lesson 1",
+    iconText: "\u7535\u8BDD",
+    iconColor: "#6c8c7f",
+    iconAccent: "#d7e4ba",
+    iconTheme: "telephone",
+    ownsExplorerContent: true,
+    interactiveScene: "telephone-numbers",
+    focus: { hanzi: "\u4ED6\u4EEC\u4F4F\u5728\u5317\u4EAC\u3002", pinyin: "t\u0101 men zh\xF9 z\xE0i B\u011Bi j\u012Bng.", english: "They live in Beijing.", audio: "\u4ED6\u4EEC\u4F4F\u5728\u5317\u4EAC" },
+    focusItems: [
+      { id: "live", hanzi: "\u4F4F", pinyin: "zh\xF9", english: "live", audio: "\u4F4F" },
+      { id: "where", hanzi: "\u54EA\u513F", pinyin: "n\u01CEr", english: "where", audio: "\u54EA\u513F" },
+      { id: "they", hanzi: "\u4ED6\u4EEC", pinyin: "t\u0101 men", english: "they", audio: "\u4ED6\u4EEC" },
+      { id: "beijing", hanzi: "\u5317\u4EAC", pinyin: "B\u011Bi j\u012Bng", english: "Beijing", audio: "\u5317\u4EAC" },
+      { id: "telephone-number", hanzi: "\u7535\u8BDD\u53F7\u7801", pinyin: "di\xE0n hu\xE0 h\xE0o m\u01CE", english: "telephone number", audio: "\u7535\u8BDD\u53F7\u7801" },
+      { id: "how-many", hanzi: "\u591A\u5C11", pinyin: "du\u014D shao", english: "how many", audio: "\u591A\u5C11" }
+    ],
+    parentGuide: "Use a made-up telephone number only. This lesson practises the language pattern, not sharing personal contact details.",
+    cultureGuide: "This later family lesson extends an introduction with where grandparents live and a made-up family telephone number.",
+    activities: ["Scene", "Book words", "Useful note", "Practice"],
+    steps: [{ book: "4A", lesson: 1, title: "Telephone numbers", note: "Ask where family lives and exchange a telephone number." }]
+  };
+  var telephonePractice = {
+    residence: {
+      title: "Living in Beijing",
+      imagePath: "assets/illustrated-telephone/grandparents-live-in-beijing.webp",
+      imageAlt: "Grandpa and Grandma walking together in a Beijing park",
+      lines: [
+        { hanzi: "\u4F60\u7237\u7237\u3001\u5976\u5976\u4F4F\u5728\u54EA\u513F\uFF1F", pinyin: "n\u01D0 y\xE9 ye, n\u01CEi nai zh\xF9 z\xE0i n\u01CEr?", english: "Where do your grandpa and grandma live?", audio: "\u4F60\u7237\u7237\u5976\u5976\u4F4F\u5728\u54EA\u513F" },
+        { hanzi: "\u4ED6\u4EEC\u4F4F\u5728\u5317\u4EAC\u3002", pinyin: "t\u0101 men zh\xF9 z\xE0i B\u011Bi j\u012Bng.", english: "They live in Beijing.", audio: "\u4ED6\u4EEC\u4F4F\u5728\u5317\u4EAC" }
+      ]
+    },
+    telephone: {
+      title: "Telephone number",
+      imagePath: "assets/illustrated-identity/classmates-exchange-phone-number.webp",
+      imageAlt: "Anan and Sisi exchange a made-up family telephone number in class",
+      lines: [
+        { hanzi: "\u4F60\u7684\u7535\u8BDD\u53F7\u7801\u662F\u591A\u5C11\uFF1F", pinyin: "n\u01D0 de di\xE0n hu\xE0 h\xE0o m\u01CE sh\xEC du\u014D shao?", english: "What is your telephone number?", audio: "\u4F60\u7684\u7535\u8BDD\u53F7\u7801\u662F\u591A\u5C11" },
+        { hanzi: "\u6211\u7684\u7535\u8BDD\u53F7\u7801\u662F\u516D\u4E03\u56DB\u4E94\u4E00\u4E00\u4E00\u4E00\u3002", pinyin: "w\u01D2 de di\xE0n hu\xE0 h\xE0o m\u01CE sh\xEC li\xF9 q\u012B s\xEC w\u01D4 y\u012B y\u012B y\u012B y\u012B.", english: "My telephone number is 6745 1111.", audio: "\u6211\u7684\u7535\u8BDD\u53F7\u7801\u662F\u516D\u4E03\u56DB\u4E94\u4E00\u4E00\u4E00\u4E00" }
+      ]
+    },
+    locationChoices: [
+      { id: "beijing", hanzi: "\u5317\u4EAC", pinyin: "B\u011Bi j\u012Bng", english: "Beijing" },
+      { id: "school", hanzi: "\u5B66\u6821", pinyin: "xu\xE9 xi\xE0o", english: "school" },
+      { id: "park", hanzi: "\u516C\u56ED", pinyin: "g\u014Dng yu\xE1n", english: "park" }
+    ]
+  };
+
   // src/features/foundations/foundations-runtime.js
   function createFoundationsRuntime(context) {
-    const { state: state2, numberHanzi: numberHanzi2, numberPinyin: numberPinyin2, buildNumberItem: buildNumberItem2, numberStages: numberStages2, telephonePractice: telephonePractice2, familyGameItemIds: familyGameItemIds2, familyPersonIdsByItemId: familyPersonIdsByItemId2, familyHeadshotsByItemId: familyHeadshotsByItemId2, familyPractice: familyPractice2, illustratedFamily: illustratedFamily2, illustratedKids: illustratedKids2, bodyBonusItemIds: bodyBonusItemIds2, bodyCoreItemIds: bodyCoreItemIds2, bodyDiagramLayout: bodyDiagramLayout2, identityConversation: identityConversation2, identityCountries: identityCountries2, identityQuestion: identityQuestion2, topicById: topicById3, focusItemsForTopic: focusItemsForTopic2, currentTopic: currentTopic2, currentNumberStage: currentNumberStage2, currentFocusItem: currentFocusItem2, currentBook: currentBook2, currentLesson: currentLesson2, shuffleArray: shuffleArray2, chineseUtterance: chineseUtterance2, speak: speak2, speakSceneLines: speakSceneLines2, renderActivityPanel: renderActivityPanel2, renderFocusDisplay: renderFocusDisplay2, renderFocusExplorer: renderFocusExplorer2, renderFocusStatus: renderFocusStatus2, selectFocusItem: selectFocusItem2, bodySentenceForItem: bodySentenceForItem2, focusExplorer: focusExplorer2, focusStatus: focusStatus2, activityPanelTitle: activityPanelTitle2, activityPanelSummary: activityPanelSummary2, activityList: activityList2 } = context;
+    const { state: state2, numberHanzi: numberHanzi2, numberPinyin: numberPinyin2, buildNumberItem: buildNumberItem2, numberStages: numberStages2, telephonePractice: telephonePractice2, familyGameItemIds: familyGameItemIds2, familyPossessionPractice: familyPossessionPractice2, familyPersonIdsByItemId: familyPersonIdsByItemId2, familyHeadshotsByItemId: familyHeadshotsByItemId2, familyPractice: familyPractice2, illustratedFamily: illustratedFamily2, illustratedKids: illustratedKids2, bodyBonusItemIds: bodyBonusItemIds2, bodyCoreItemIds: bodyCoreItemIds2, bodyDiagramLayout: bodyDiagramLayout2, identityConversation: identityConversation2, nationalityConversation: nationalityConversation2, identityCountries: identityCountries2, identityExploreCountries: identityExploreCountries2, identityLanguageQuestion: identityLanguageQuestion2, identityQuestion: identityQuestion2, topicById: topicById3, focusItemsForTopic: focusItemsForTopic2, currentTopic: currentTopic2, currentNumberStage: currentNumberStage2, currentFocusItem: currentFocusItem2, currentBook: currentBook2, currentLesson: currentLesson2, shuffleArray: shuffleArray2, chineseUtterance: chineseUtterance2, speak: speak2, speakSceneLines: speakSceneLines2, renderActivityPanel: renderActivityPanel2, renderFocusDisplay: renderFocusDisplay2, renderFocusExplorer: renderFocusExplorer2, renderFocusStatus: renderFocusStatus2, selectFocusItem: selectFocusItem2, bodySentenceForItem: bodySentenceForItem2, focusExplorer: focusExplorer2, focusStatus: focusStatus2, activityPanelTitle: activityPanelTitle2, activityPanelSummary: activityPanelSummary2, activityList: activityList2 } = context;
+    let telephoneMatchSelectedId = "";
+    let telephoneMatchedIds = /* @__PURE__ */ new Set();
+    let telephoneMatchFeedback = "";
     function numberStageItems2(stage = currentNumberStage2()) {
       const start = Math.min(stage.start, stage.end);
       const end = Math.max(stage.start, stage.end);
@@ -6129,6 +6607,9 @@
       const familyTopic2 = topicById3("family");
       return familyGameItemIds2.map((id) => familyTopic2?.focusItems.find((item) => item.id === id)).filter(Boolean);
     }
+    function familyListenItems2() {
+      return familyPossessionPractice2;
+    }
     function familyPersonForItemId2(itemId) {
       const personId = familyPersonIdsByItemId2[itemId];
       return {
@@ -6156,6 +6637,9 @@
     function bookWordItemsForTopic2(topic) {
       if (topic.id === "family") {
         return familyBookWordItems2();
+      }
+      if (topic.id === "languages") {
+        return focusItemsForTopic2(topic).filter((item) => item.id !== "speak-language");
       }
       return focusItemsForTopic2(topic);
     }
@@ -6208,15 +6692,24 @@
       </p>
     `,
         family: `
-      <p class="greetings-note-hanzi">\u7238\u7238 / \u5988\u5988 / \u54E5\u54E5 / \u5F1F\u5F1F / \u59D0\u59D0 / \u59B9\u59B9</p>
+      <p class="greetings-note-hanzi">\u6709 / \u4E00\u4E2A / \u4E24\u4E2A</p>
       <p class="greetings-note-copy">
-        In sentences like <strong>\u6211\u7231\u7238\u7238</strong> and <strong>\u6211\u7231\u5988\u5988</strong>, the family word names who the child loves. <strong>\u6211</strong> names the speaker, and <strong>\u7231</strong> names the feeling.
+        <strong>\u6709</strong> means \u201Chave.\u201D Put the family members after it: <strong>\u6211\u6709\u4E00\u4E2A\u59D0\u59D0\u548C\u4E00\u4E2A\u5F1F\u5F1F\u3002</strong>
       </p>
       <p class="greetings-note-copy">
-        <strong>\u54E5\u54E5</strong> and <strong>\u5F1F\u5F1F</strong> are the brother pair: older brother, then younger brother. <strong>\u59D0\u59D0</strong> and <strong>\u59B9\u59B9</strong> are the sister pair: older sister, then younger sister.
+        Use <strong>\u4E00\u4E2A</strong> for one and <strong>\u4E24\u4E2A</strong> for two before a family member: <strong>\u4E00\u4E2A\u59D0\u59D0</strong>, <strong>\u4E24\u4E2A\u5F1F\u5F1F</strong>.
       </p>
       <p class="greetings-note-copy">
-        In listening practice, the repeated family word is the anchor. For sisters, <strong>\u59D0\u59D0</strong> and <strong>\u59B9\u59B9</strong> both use <strong>\u5973</strong>, so children can group the two sister words together.
+        In <strong>\u6211\u5BB6\u6709\u4E94\u53E3\u4EBA</strong>, <strong>\u53E3</strong> is the measure word used to count people in a family. Children can use the same frame with their own family photo.
+      </p>
+    `,
+        languages: `
+      <p class="greetings-note-hanzi">\u56FD\u5BB6 / \u56FD\u7C4D / \u8BED\u8A00</p>
+      <p class="greetings-note-copy">
+        <strong>\u56FD\u5BB6</strong> names a country, <strong>\u56FD\u7C4D</strong> names a nationality, and <strong>\u8BED\u8A00</strong> names a language. In this lesson, listen for the language word after <strong>\u8BF4</strong>.
+      </p>
+      <p class="greetings-note-copy">
+        People can speak one language or more than one language. The sentence pattern helps us practise words; it does not describe every person from a country.
       </p>
     `
       };
@@ -6233,7 +6726,7 @@
       }[personId] ?? "";
     }
     function resetFamilyChallenge2(options = {}) {
-      const items = familyGameItems2();
+      const items = familyListenItems2();
       if (!items.length) {
         return;
       }
@@ -6264,8 +6757,8 @@
       state2[`${challengeKey}ChallengeWrongIds`] = /* @__PURE__ */ new Set();
     }
     function handleFamilyChallengePlay2() {
-      ensureFamilyChallenge2();
-      const item = familyGameItems2().find((entry) => entry.id === state2.familyChallengePromptId);
+      resetFamilyChallenge2();
+      const item = familyListenItems2().find((entry) => entry.id === state2.familyChallengePromptId);
       if (!item) {
         return;
       }
@@ -6279,13 +6772,12 @@
     }
     function handleFamilyChallengeGuess2(itemId) {
       ensureFamilyChallenge2();
-      const answer = familyGameItems2().find((entry) => entry.id === state2.familyChallengeAnswerId);
-      const picked = familyGameItems2().find((entry) => entry.id === itemId);
+      const answer = familyListenItems2().find((entry) => entry.id === state2.familyChallengeAnswerId);
+      const picked = familyListenItems2().find((entry) => entry.id === itemId);
       if (!answer || !picked) {
         return;
       }
       if (itemId === answer.id) {
-        state2.selectedFocusItemId = answer.id;
         state2.familyChallengePickedId = itemId;
         state2.familyChallengeResult = "correct";
         if (state2.tapAudioEnabled) {
@@ -6293,9 +6785,6 @@
         }
         state2.familyListenFeedback = "Nice listening.";
         state2.lastFamilyFeedback = state2.familyListenFeedback;
-        renderFocusDisplay2(currentFocusItem2());
-        renderFocusExplorer2();
-        renderFocusStatus2();
         renderActivityPanel2(currentTopic2());
         return;
       }
@@ -6803,10 +7292,6 @@
     function renderNumbersExplorer2() {
       ensureNumberChallenge2();
       const stage = currentNumberStage2();
-      if (stage.telephoneMode) {
-        renderTelephoneExplorer2(stage);
-        return;
-      }
       const item = currentFocusItem2();
       focusExplorer2.innerHTML = `
     <div class="numbers-board">
@@ -6830,79 +7315,74 @@
     </div>
   `;
     }
-    function renderTelephoneExplorer2(stage) {
+    function renderTelephoneExplorer2() {
+      const residence = telephonePractice2.residence;
+      const phone = telephonePractice2.telephone;
+      const profilePairs = [
+        { id: "home", question: residence.lines[0], answer: residence.lines[1] },
+        { id: "phone", question: phone.lines[0], answer: phone.lines[1] }
+      ];
+      const renderLines = (lines) => lines.map((line) => `<article class="greetings-line-card"><div class="telephone-bubble-copy"><p class="telephone-line-hanzi">${line.hanzi}</p>${state2.showPinyin ? `<p class="telephone-line-pinyin">${line.pinyin}</p>` : ""}${state2.showEnglish ? `<p class="telephone-line-english">${line.english}</p>` : ""}</div></article>`).join("");
       focusExplorer2.innerHTML = `
-    <div class="numbers-board">
-      <div class="numbers-stage-card">
-        <p class="body-match-kicker">${currentBook2().label} Lesson ${stage.lesson}</p>
-        <h4>${stage.title}</h4>
-        <p>${stage.summary}</p>
-      </div>
-      <div class="telephone-scene-card">
-        <div class="telephone-scene-people">
-          <article class="telephone-bubble telephone-bubble-question">
-            <div class="telephone-figure-card telephone-figure-card-left" aria-hidden="true">
-              <img
-                class="telephone-figure"
-                src="${illustratedKids2.anan.path}"
-                alt=""
-              />
-            </div>
-            <div class="telephone-bubble-copy">
-              <p class="body-match-kicker">Ask</p>
-              <p class="telephone-line-hanzi">${telephonePractice2.question.hanzi}</p>
-              ${state2.showPinyin ? `<p class="telephone-line-pinyin">${telephonePractice2.question.pinyin}</p>` : ""}
-              ${state2.showEnglish ? `<p class="telephone-line-english">${telephonePractice2.question.english}</p>` : ""}
-              <button class="small-button is-play-button" type="button" data-telephone-play="question">Play</button>
-            </div>
-          </article>
-          <article class="telephone-bubble telephone-bubble-answer">
-            <div class="telephone-figure-card telephone-figure-card-right" aria-hidden="true">
-              <img
-                class="telephone-figure"
-                src="${illustratedKids2.tiantian.path}"
-                alt=""
-              />
-            </div>
-            <div class="telephone-bubble-copy">
-              <p class="body-match-kicker">Answer</p>
-              <p class="telephone-line-hanzi">${telephonePractice2.answer.hanzi}</p>
-              ${state2.showPinyin ? `<p class="telephone-line-pinyin">${telephonePractice2.answer.pinyin}</p>` : ""}
-              ${state2.showEnglish ? `<p class="telephone-line-english">${telephonePractice2.answer.english}</p>` : ""}
-              <button class="small-button is-play-button" type="button" data-telephone-play="answer">Play</button>
-            </div>
-          </article>
+    <div class="time-date-board school-topic-board telephone-topic-board">
+      <section class="school-lesson-section"><div class="time-months-heading"><p class="body-match-kicker">Scenes</p></div>
+        <div class="school-scene-grid">
+          ${[residence, phone].map((scene) => `<section class="greetings-exchange school-scene-card"><div class="greetings-exchange-top"><p class="body-match-kicker">${scene.title}</p><button class="small-button is-play-button" type="button" data-telephone-scene-play="${scene === residence ? "residence" : "telephone"}">Play</button></div><div class="school-scene-layout"><img class="school-scene-image" src="${scene.imagePath}" alt="${scene.imageAlt}"><div class="greetings-line-stack">${renderLines(scene.lines)}</div></div></section>`).join("")}
         </div>
-        <div class="telephone-number-strip">
-          <p class="body-match-kicker">Listen to the digits</p>
-          <div class="telephone-digit-row">
-            ${telephonePractice2.digits.map(
-        (digit) => `
-                  <button class="telephone-digit-chip" type="button" data-telephone-digit="${digit}">
-                    ${digit}
-                  </button>
-                `
-      ).join("")}
-          </div>
-        </div>
-      </div>
+      </section>
+      <section class="school-lesson-section"><div class="time-months-heading"><p class="body-match-kicker">Book words</p></div>
+        <div class="school-word-grid is-text-only">${currentTopic2().focusItems.map((item) => `<button class="school-word-card is-text-only" type="button" data-telephone-word="${item.id}"><span class="time-asset-hanzi">${item.hanzi}</span>${state2.showPinyin ? `<span class="time-asset-pinyin">${item.pinyin}</span>` : ""}${state2.showEnglish ? `<span class="time-asset-english">${item.english}</span>` : ""}</button>`).join("")}</div>
+      </section>
+      <section class="visual-topic-notes school-review-notes"><p class="body-match-kicker">Useful note</p><div class="visual-topic-note-grid school-review-grid"><article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">\u4ED6\u4EEC + \u4F4F\u5728 + \u5317\u4EAC</p><p class="visual-topic-note-copy"><strong>\u4ED6\u4EEC</strong> means \u201Cthey.\u201D <strong>\u4F4F\u5728</strong> means \u201Clive in,\u201D and the place comes last: <strong>\u4ED6\u4EEC\u4F4F\u5728\u5317\u4EAC\u3002</strong> To ask the place, replace <strong>\u5317\u4EAC</strong> with <strong>\u54EA\u513F</strong>: <strong>\u4ED6\u4EEC\u4F4F\u5728\u54EA\u513F\uFF1F</strong></p></article></div></section>
+      <section class="practice-split-card"><div class="numbers-game-top"><div><p class="body-match-kicker">Let's practice</p><p class="numbers-game-note">Tap a question on the left, then tap its matching answer on the right.</p></div><button class="small-button is-play-button" type="button" data-telephone-practice-play>Play</button></div>
+        ${telephoneMatchFeedback ? `<p class="greetings-game-feedback">${telephoneMatchFeedback}</p>` : ""}
+        <div class="family-match-board-headings"><p class="body-match-kicker">Question</p><p class="body-match-kicker">Answer</p></div>
+        <div class="polite-match-board family-match-open-board"><div class="polite-match-column">${profilePairs.filter((pair) => !telephoneMatchedIds.has(pair.id)).map((pair) => `<button class="polite-match-card polite-match-card-phrase${telephoneMatchSelectedId === pair.id ? " is-selected" : ""}" type="button" data-telephone-question="${pair.id}"><span class="numbers-game-hanzi">${pair.question.hanzi}</span>${state2.showPinyin ? `<span class="numbers-game-pinyin">${pair.question.pinyin}</span>` : ""}${state2.showEnglish ? `<span class="numbers-game-english">${pair.question.english}</span>` : ""}</button>`).join("")}</div><div class="polite-match-column">${profilePairs.filter((pair) => !telephoneMatchedIds.has(pair.id)).slice().reverse().map((pair) => `<button class="polite-match-card polite-match-card-meaning" type="button" data-telephone-answer="${pair.id}"><span class="numbers-game-hanzi">${pair.answer.hanzi}</span>${state2.showPinyin ? `<span class="numbers-game-pinyin">${pair.answer.pinyin}</span>` : ""}${state2.showEnglish ? `<span class="numbers-game-english">${pair.answer.english}</span>` : ""}</button>`).join("")}</div></div>
+        ${telephoneMatchedIds.size ? `<div class="family-match-solved-pairs">${profilePairs.filter((pair) => telephoneMatchedIds.has(pair.id)).map((pair) => `<article class="family-match-solved-row"><div class="polite-match-card family-match-pair-card is-solved"><span class="answer-result-mark">\u2713</span><span class="numbers-game-hanzi">${pair.question.hanzi}</span></div><div class="polite-match-card family-match-pair-card is-solved"><span class="answer-result-mark">\u2713</span><span class="numbers-game-hanzi">${pair.answer.hanzi}</span></div></article>`).join("")}</div>` : ""}
+        ${telephoneMatchedIds.size === profilePairs.length ? `<section class="nationality-conversation-reveal" aria-live="polite">${renderLines([residence.lines[1], phone.lines[1]])}</section>` : ""}
+      </section>
     </div>
   `;
-      focusExplorer2.querySelectorAll("[data-telephone-play]").forEach((button) => {
+      focusExplorer2.querySelectorAll("[data-telephone-scene-play]").forEach((button) => {
         button.addEventListener("click", () => {
-          const line = button.dataset.telephonePlay === "question" ? telephonePractice2.question : telephonePractice2.answer;
-          if (state2.tapAudioEnabled) {
-            speak2(line.audio, 0.78);
-          }
-          focusStatus2.textContent = button.dataset.telephonePlay === "question" ? "Listen to the question first, then listen for the answer." : "Listen to the answer and notice how each digit is said one by one.";
+          const scene = button.dataset.telephoneScenePlay === "residence" ? residence : phone;
+          if (state2.tapAudioEnabled) speakSceneLines2(scene.lines, 0.74);
         });
       });
-      focusExplorer2.querySelectorAll("[data-telephone-digit]").forEach((button) => {
+      focusExplorer2.querySelectorAll("[data-telephone-word]").forEach((button) => {
+        button.addEventListener("click", () => selectFocusItem2(button.dataset.telephoneWord, { playAudio: true }));
+      });
+      focusExplorer2.querySelector("[data-telephone-practice-play]")?.addEventListener("click", () => {
+        telephoneMatchSelectedId = "";
+        telephoneMatchedIds = /* @__PURE__ */ new Set();
+        telephoneMatchFeedback = "";
+        if (state2.tapAudioEnabled) speakSceneLines2(profilePairs.flatMap((pair) => [pair.question, pair.answer]), 0.74);
+        renderTelephoneExplorer2();
+      });
+      focusExplorer2.querySelectorAll("[data-telephone-question]").forEach((button) => {
         button.addEventListener("click", () => {
-          if (state2.tapAudioEnabled) {
-            speak2(button.dataset.telephoneDigit, 0.78);
+          const pair = profilePairs.find((entry) => entry.id === button.dataset.telephoneQuestion);
+          telephoneMatchSelectedId = pair?.id ?? "";
+          telephoneMatchFeedback = "Now choose its answer.";
+          if (pair && state2.tapAudioEnabled) speak2(pair.question.audio, 0.78);
+          renderTelephoneExplorer2();
+        });
+      });
+      focusExplorer2.querySelectorAll("[data-telephone-answer]").forEach((button) => {
+        button.addEventListener("click", () => {
+          if (!telephoneMatchSelectedId) {
+            telephoneMatchFeedback = "Choose a question first.";
+            renderTelephoneExplorer2();
+            return;
           }
-          focusStatus2.textContent = `Practice the digit ${button.dataset.telephoneDigit} by itself.`;
+          if (telephoneMatchSelectedId === button.dataset.telephoneAnswer) {
+            telephoneMatchedIds = /* @__PURE__ */ new Set([...telephoneMatchedIds, telephoneMatchSelectedId]);
+            const pair = profilePairs.find((entry) => entry.id === telephoneMatchSelectedId);
+            telephoneMatchFeedback = telephoneMatchedIds.size === profilePairs.length ? "Grandparents profile complete." : "Matched. Choose the next question.";
+            telephoneMatchSelectedId = "";
+            if (pair && state2.tapAudioEnabled) speak2(pair.answer.audio, 0.78);
+          } else telephoneMatchFeedback = "Try a different answer.";
+          renderTelephoneExplorer2();
         });
       });
     }
@@ -6920,6 +7400,12 @@
         <img class="family-lesson-photo" src="${exchange.imagePath}" alt="${exchange.imageAlt}" />
       </div>
     `;
+      }
+      if (exchange.visual === "sibling-count") {
+        return `<div class="family-lesson-visual family-lesson-visual-siblings"><img class="family-lesson-photo" src="${exchange.imagePath}" alt="${exchange.imageAlt}" /></div>`;
+      }
+      if (exchange.visual === "family-introduction") {
+        return `<div class="family-lesson-visual family-lesson-visual-introduction"><img class="family-lesson-photo" src="${exchange.imagePath}" alt="${exchange.imageAlt}" /></div>`;
       }
       const roomClass = {
         "living-room": "family-room-living",
@@ -7029,18 +7515,105 @@
         });
       });
     }
-    function renderIdentityExplorer2() {
-      const selectedCountry = identityCountries2.find((country) => country.id === state2.identitySelectedCountryId);
+    function renderLegacyIdentityExplorer() {
+      const allIdentityCountries = [...identityCountries2, ...identityExploreCountries2];
+      const selectedCountry = allIdentityCountries.find((country) => country.id === state2.identitySelectedCountryId);
+      const coreCountryIds = identityCountries2.map((country) => country.id);
+      const validPracticeIds = Array.isArray(state2.identityPracticeRemainingIds) ? state2.identityPracticeRemainingIds.filter((id) => coreCountryIds.includes(id)) : [];
+      if (!state2.identityPracticeTargetId || !coreCountryIds.includes(state2.identityPracticeTargetId)) {
+        const nextIds = validPracticeIds.length ? validPracticeIds : shuffleArray2(coreCountryIds);
+        state2.identityPracticeTargetId = nextIds.pop();
+        state2.identityPracticeRemainingIds = nextIds;
+        state2.identityPracticeFeedback = "";
+      }
+      const practiceCountry = identityCountries2.find((country) => country.id === state2.identityPracticeTargetId) ?? identityCountries2[0];
+      const selectedLanguageCountry = identityCountries2.find((country) => country.id === state2.identityLanguageSelectedCountryId);
+      const countryCard = (country, group) => `
+    <button class="identity-country-card${selectedCountry?.id === country.id ? " is-selected" : ""}" type="button" data-identity-country="${country.id}" data-identity-group="${group}">
+      <img class="identity-flag" src="${country.asset}" alt="${country.label} flag" />
+      <span class="numbers-game-hanzi">${country.nationality}</span>
+      ${state2.showPinyin ? `<span class="numbers-game-pinyin">${country.pinyin}</span>` : ""}
+      ${state2.showEnglish ? `<span class="numbers-game-english">${country.label}</span>` : ""}
+    </button>
+  `;
       focusExplorer2.innerHTML = `
     <div class="numbers-board identity-board">
-      <section class="greetings-exchange">
+      <section class="identity-question-section">
+        <div class="identity-question-top">
+          <div>
+            <p class="body-match-kicker">3A Lesson 5 \xB7 Nationality</p>
+            <p class="greetings-exchange-prompt">Listen to the conversation. Choose the reply.</p>
+            <p class="telephone-line-hanzi">${identityQuestion2.hanzi}</p>
+            ${state2.showPinyin ? `<p class="telephone-line-pinyin">${identityQuestion2.pinyin}</p>` : ""}
+            ${state2.showEnglish ? `<p class="telephone-line-english">${identityQuestion2.english}</p>` : ""}
+          </div>
+          <button class="small-button is-play-button" type="button" data-identity-play-question>Play</button>
+        </div>
+        <div class="identity-practice-card">
+          <div class="identity-practice-visual">
+            <img class="identity-flag" src="${practiceCountry.asset}" alt="${practiceCountry.label} flag" />
+            <p class="numbers-game-hanzi">${practiceCountry.hanzi}</p>
+          </div>
+          <div class="identity-practice-options" aria-label="Choose a nationality answer">
+            ${identityCountries2.map((country) => `<button class="choice-button" type="button" data-identity-practice-country="${country.id}">${country.nationality}</button>`).join("")}
+          </div>
+          <p class="identity-practice-feedback" aria-live="polite">${state2.identityPracticeFeedback || "Choose the answer that completes \u6211\u662F\u2026\u4EBA\u3002"}</p>
+          ${state2.identityPracticeFeedback.startsWith("Correct") ? '<button class="small-button is-new-game-button" type="button" data-identity-next-practice>New round</button>' : ""}
+        </div>
+        ${selectedCountry ? `
+              <article class="greetings-line-card identity-answer-card">
+                <div class="telephone-bubble-copy">
+                  <p class="telephone-line-hanzi">${selectedCountry.response.hanzi}</p>
+                  ${state2.showPinyin ? `<p class="telephone-line-pinyin">${selectedCountry.response.pinyin}</p>` : ""}
+                  ${state2.showEnglish ? `<p class="telephone-line-english">${selectedCountry.response.english}</p>` : ""}
+                </div>
+                <div class="identity-symbol-detail">
+                  <img src="${selectedCountry.symbolAsset}" alt="${selectedCountry.symbolCaption}" />
+                  <p>${selectedCountry.symbolCaption}</p>
+                </div>
+              </article>
+            ` : ""}
+      </section>
+      <section class="identity-question-section identity-explore-section">
+        <div>
+          <p class="body-match-kicker">Explore more countries</p>
+          <p>These extra country words are for exploring, not for the 3A practice set.</p>
+        </div>
+        <div class="identity-country-grid identity-explore-grid">
+          ${identityExploreCountries2.map((country) => countryCard(country, "explore")).join("")}
+        </div>
+      </section>
+      <section class="greetings-exchange identity-language-section">
         <div class="greetings-exchange-top">
           <div>
-            <p class="body-match-kicker">${currentBook2().label} Lesson ${currentLesson2().lesson}</p>
-            <p class="greetings-exchange-prompt">Countries and languages</p>
+            <p class="body-match-kicker">4A Lesson 2 \xB7 Languages</p>
+            <p class="greetings-exchange-prompt">Say one sentence for each picture.</p>
+            <p class="telephone-line-hanzi">${identityLanguageQuestion2.hanzi}</p>
+            ${state2.showPinyin ? `<p class="telephone-line-pinyin">${identityLanguageQuestion2.pinyin}</p>` : ""}
+            ${state2.showEnglish ? `<p class="telephone-line-english">${identityLanguageQuestion2.english}</p>` : ""}
           </div>
-          <button class="small-button is-play-button" type="button" data-identity-play-scene>Play</button>
+          <button class="small-button is-play-button" type="button" data-identity-play-language>Play</button>
         </div>
+        <div class="identity-language-grid">
+          ${identityCountries2.map(
+        (country) => `
+                <button class="identity-language-card${selectedLanguageCountry?.id === country.id ? " is-selected" : ""}" type="button" data-identity-language-country="${country.id}">
+                  <img class="identity-flag" src="${country.asset}" alt="${country.label} flag" />
+                  <span class="numbers-game-hanzi">${country.nationality}\u8BF4${country.language.hanzi}\u3002</span>
+                  ${state2.showPinyin ? `<span class="numbers-game-pinyin">${country.pinyin} shu\u014D ${country.language.pinyin}.</span>` : ""}
+                  ${state2.showEnglish ? `<span class="numbers-game-english">${country.nationality} people speak ${country.language.english}.</span>` : ""}
+                </button>
+              `
+      ).join("")}
+        </div>
+        ${selectedLanguageCountry ? `<article class="greetings-line-card identity-answer-card">
+                <div class="telephone-bubble-copy">
+                  <p class="body-match-kicker">Make your own sentence</p>
+                  <p class="telephone-line-hanzi">\u6211\u662F${selectedLanguageCountry.nationality}\u3002\u6211\u8BF4${selectedLanguageCountry.language.hanzi}\u3002</p>
+                  ${state2.showPinyin ? `<p class="telephone-line-pinyin">w\u01D2 sh\xEC ${selectedLanguageCountry.pinyin}. w\u01D2 shu\u014D ${selectedLanguageCountry.language.pinyin}.</p>` : ""}
+                  ${state2.showEnglish ? `<p class="telephone-line-english">${selectedLanguageCountry.response.english} I speak ${selectedLanguageCountry.language.english}.</p>` : ""}
+                </div>
+              </article>` : ""}
         <div class="greetings-scene-layout">
           <div class="greetings-scene-visual">
             <img class="greetings-scene-image" src="${identityConversation2.imagePath}" alt="${identityConversation2.imageAlt}" />
@@ -7060,41 +7633,9 @@
           </div>
         </div>
       </section>
-      <section class="identity-question-section">
-        <div class="identity-question-top">
-          <div>
-            <p class="body-match-kicker">Question</p>
-            <p class="telephone-line-hanzi">${identityQuestion2.hanzi}</p>
-            ${state2.showPinyin ? `<p class="telephone-line-pinyin">${identityQuestion2.pinyin}</p>` : ""}
-            ${state2.showEnglish ? `<p class="telephone-line-english">${identityQuestion2.english}</p>` : ""}
-          </div>
-          <button class="small-button is-play-button" type="button" data-identity-play-question>Play</button>
-        </div>
-        <div class="identity-country-grid">
-          ${identityCountries2.map(
-        (country) => `
-                <button class="identity-country-card${selectedCountry?.id === country.id ? " is-selected" : ""}" type="button" data-identity-country="${country.id}">
-                  <img class="identity-flag" src="${country.asset}" alt="${country.label} flag" />
-                  <span class="numbers-game-hanzi">${country.nationality}</span>
-                  ${state2.showPinyin ? `<span class="numbers-game-pinyin">${country.pinyin}</span>` : ""}
-                  ${state2.showEnglish ? `<span class="numbers-game-english">${country.label}</span>` : ""}
-                </button>
-              `
-      ).join("")}
-        </div>
-        ${selectedCountry ? `
-              <article class="greetings-line-card identity-answer-card">
-                <div class="telephone-bubble-copy">
-                  <p class="telephone-line-hanzi">${selectedCountry.response.hanzi}</p>
-                  ${state2.showPinyin ? `<p class="telephone-line-pinyin">${selectedCountry.response.pinyin}</p>` : ""}
-                  ${state2.showEnglish ? `<p class="telephone-line-english">${selectedCountry.response.english}</p>` : ""}
-                </div>
-              </article>
-            ` : ""}
-      </section>
     </div>
   `;
-      focusExplorer2.querySelector("[data-identity-play-scene]")?.addEventListener("click", () => {
+      focusExplorer2.querySelector("[data-identity-play-language]")?.addEventListener("click", () => {
         if (state2.tapAudioEnabled) {
           speakSceneLines2(identityConversation2.lines);
         }
@@ -7106,7 +7647,7 @@
       });
       focusExplorer2.querySelectorAll("[data-identity-country]").forEach((button) => {
         button.addEventListener("click", () => {
-          const country = identityCountries2.find((entry) => entry.id === button.dataset.identityCountry);
+          const country = allIdentityCountries.find((entry) => entry.id === button.dataset.identityCountry);
           if (!country) {
             return;
           }
@@ -7115,6 +7656,242 @@
             speak2(country.response.audio, 0.78);
           }
           renderIdentityExplorer2();
+        });
+      });
+      focusExplorer2.querySelectorAll("[data-identity-practice-country]").forEach((button) => {
+        button.addEventListener("click", () => {
+          const country = identityCountries2.find((entry) => entry.id === button.dataset.identityPracticeCountry);
+          if (!country) return;
+          if (country.id === practiceCountry.id) {
+            state2.identitySelectedCountryId = country.id;
+            state2.identityPracticeFeedback = `Correct! ${identityQuestion2.hanzi} ${country.response.hanzi}`;
+            if (state2.tapAudioEnabled) speak2(`${identityQuestion2.audio} ${country.response.audio}`, 0.78);
+          } else {
+            state2.identityPracticeFeedback = "Try again. Look carefully at the flag.";
+            if (state2.tapAudioEnabled) speak2(country.nationality, 0.78);
+          }
+          renderIdentityExplorer2();
+        });
+      });
+      focusExplorer2.querySelector("[data-identity-next-practice]")?.addEventListener("click", () => {
+        const nextIds = state2.identityPracticeRemainingIds?.length ? state2.identityPracticeRemainingIds : shuffleArray2(coreCountryIds);
+        state2.identityPracticeTargetId = nextIds.pop();
+        state2.identityPracticeRemainingIds = nextIds;
+        state2.identityPracticeFeedback = "";
+        state2.identitySelectedCountryId = "";
+        renderIdentityExplorer2();
+      });
+      focusExplorer2.querySelectorAll("[data-identity-language-country]").forEach((button) => {
+        button.addEventListener("click", () => {
+          const country = identityCountries2.find((entry) => entry.id === button.dataset.identityLanguageCountry);
+          if (!country) return;
+          state2.identityLanguageSelectedCountryId = country.id;
+          if (state2.tapAudioEnabled) speak2(`${country.nationality}\u8BF4${country.language.hanzi}`, 0.78);
+          renderIdentityExplorer2();
+        });
+      });
+    }
+    function renderIdentityExplorer2() {
+      if (currentTopic2().id === "languages") {
+        renderLanguagesExplorer();
+        return;
+      }
+      renderNationalityScene();
+    }
+    function renderNationalityScene() {
+      focusExplorer2.innerHTML = `
+    <div class="numbers-board identity-board">
+      <section class="greetings-exchange">
+        <div class="greetings-exchange-top">
+          <div>
+            <p class="body-match-kicker">3A Lesson 5 \xB7 Nationality</p>
+            <p class="greetings-exchange-prompt">Lele and Noah share family photos.</p>
+          </div>
+          <button class="small-button is-play-button" type="button" data-nationality-play-scene>Play</button>
+        </div>
+        <div class="greetings-scene-layout">
+          <div class="greetings-scene-visual"><img class="greetings-scene-image" src="${nationalityConversation2.imagePath}" alt="${nationalityConversation2.imageAlt}" /></div>
+          <div class="greetings-line-stack">${nationalityConversation2.lines.map((line) => `<article class="greetings-line-card"><div class="telephone-bubble-copy"><p class="telephone-line-hanzi">${line.hanzi}</p>${state2.showPinyin ? `<p class="telephone-line-pinyin">${line.pinyin}</p>` : ""}${state2.showEnglish ? `<p class="telephone-line-english">${line.english}</p>` : ""}</div></article>`).join("")}</div>
+        </div>
+      </section>
+    </div>
+  `;
+      focusExplorer2.querySelector("[data-nationality-play-scene]")?.addEventListener("click", () => {
+        if (state2.tapAudioEnabled) speakSceneLines2(nationalityConversation2.lines);
+      });
+    }
+    function renderLegacyNationalityExplorer() {
+      const practiceCountries = identityCountries2;
+      const flagCountries = [...identityCountries2, ...identityExploreCountries2];
+      const practiceIds = practiceCountries.map((country) => country.id);
+      const remainingIds = Array.isArray(state2.identityPracticeRemainingIds) ? state2.identityPracticeRemainingIds.filter((id) => practiceIds.includes(id)) : [];
+      if (!state2.identityPracticeTargetId || !practiceIds.includes(state2.identityPracticeTargetId)) {
+        const nextIds = remainingIds.length ? remainingIds : shuffleArray2(practiceIds);
+        state2.identityPracticeTargetId = nextIds.pop();
+        state2.identityPracticeRemainingIds = nextIds;
+        state2.identityPracticeFeedback = "";
+      }
+      const target = practiceCountries.find((country) => country.id === state2.identityPracticeTargetId) ?? practiceCountries[0];
+      const flagIds = flagCountries.map((country) => country.id);
+      const remainingFlagIds = Array.isArray(state2.identityFlagPracticeRemainingIds) ? state2.identityFlagPracticeRemainingIds.filter((id) => flagIds.includes(id)) : [];
+      if (!state2.identityFlagPracticeTargetId || !flagIds.includes(state2.identityFlagPracticeTargetId)) {
+        const nextIds = remainingFlagIds.length ? remainingFlagIds : shuffleArray2(flagIds);
+        state2.identityFlagPracticeTargetId = nextIds.pop();
+        state2.identityFlagPracticeRemainingIds = nextIds;
+        state2.identityFlagPracticeFeedback = "";
+      }
+      const flagTarget = flagCountries.find((country) => country.id === state2.identityFlagPracticeTargetId) ?? flagCountries[0];
+      const selectedCountry = flagCountries.find((country) => country.id === state2.identitySelectedCountryId);
+      focusExplorer2.innerHTML = `
+    <div class="numbers-board identity-board">
+      <section class="greetings-exchange">
+        <div class="greetings-exchange-top">
+          <div>
+            <p class="body-match-kicker">3A Lesson 5 \xB7 Nationality</p>
+            <p class="greetings-exchange-prompt">Lele and Noah share family photos.</p>
+          </div>
+          <button class="small-button is-play-button" type="button" data-nationality-play-scene>Play</button>
+        </div>
+        <div class="greetings-scene-layout">
+          <div class="greetings-scene-visual">
+            <img class="greetings-scene-image" src="${nationalityConversation2.imagePath}" alt="${nationalityConversation2.imageAlt}" />
+          </div>
+          <div class="greetings-line-stack">
+            ${nationalityConversation2.lines.map((line) => `<article class="greetings-line-card"><div class="telephone-bubble-copy"><p class="telephone-line-hanzi">${line.hanzi}</p>${state2.showPinyin ? `<p class="telephone-line-pinyin">${line.pinyin}</p>` : ""}${state2.showEnglish ? `<p class="telephone-line-english">${line.english}</p>` : ""}</div></article>`).join("")}
+          </div>
+        </div>
+      </section>
+      <section class="identity-question-section">
+        <div class="identity-question-top">
+          <div>
+            <p class="body-match-kicker">Practice</p>
+            <p class="greetings-exchange-prompt">Look at the flag. Make the conversation.</p>
+            <p class="telephone-line-hanzi">${identityQuestion2.hanzi}</p>
+            ${state2.showPinyin ? `<p class="telephone-line-pinyin">${identityQuestion2.pinyin}</p>` : ""}
+            ${state2.showEnglish ? `<p class="telephone-line-english">${identityQuestion2.english}</p>` : ""}
+          </div>
+          <button class="small-button is-play-button" type="button" data-nationality-play-question>Play</button>
+        </div>
+        <div class="identity-practice-card">
+          <div class="identity-practice-visual"><p>Play the whole conversation, then choose what the speaker says.</p></div>
+          <div class="identity-practice-options" aria-label="Choose a nationality answer">${practiceCountries.map((country) => `<button class="choice-button" type="button" data-nationality-answer="${country.id}">${country.nationality}</button>`).join("")}</div>
+          <p class="identity-practice-feedback" aria-live="polite">${state2.identityPracticeFeedback || "Choose the reply that completes \u6211\u662F\u2026\u4EBA\u3002"}</p>
+          ${state2.identityPracticeFeedback.startsWith("Correct") ? '<button class="small-button is-new-game-button" type="button" data-nationality-next-round>New round</button>' : ""}
+        </div>
+      </section>
+      <section class="identity-question-section">
+        <div>
+          <p class="body-match-kicker">Country flags</p>
+          <p class="greetings-exchange-prompt">Look at the flag. Choose the country name.</p>
+        </div>
+        <div class="identity-practice-card">
+          <div class="identity-practice-visual"><img class="identity-flag" src="${flagTarget.asset}" alt="${flagTarget.label} flag" /><p class="numbers-game-hanzi">?</p></div>
+          <div class="identity-practice-options" aria-label="Choose a country name">${flagCountries.map((country) => `<button class="choice-button" type="button" data-flag-country-answer="${country.id}">${country.hanzi}</button>`).join("")}</div>
+          <p class="identity-practice-feedback" aria-live="polite">${state2.identityFlagPracticeFeedback || "Choose the country name for this flag."}</p>
+          ${state2.identityFlagPracticeFeedback.startsWith("Correct") ? '<button class="small-button is-new-game-button" type="button" data-flag-next-round>New round</button>' : ""}
+        </div>
+        ${selectedCountry ? `<article class="greetings-line-card identity-answer-card"><div class="telephone-bubble-copy"><p class="telephone-line-hanzi">${selectedCountry.hanzi}</p>${state2.showPinyin ? `<p class="telephone-line-pinyin">${selectedCountry.hanzi === "\u4E2D\u56FD" ? "Zh\u014Dnggu\xF3" : selectedCountry.pinyin.replace(" r\xE9n", "")}</p>` : ""}${state2.showEnglish ? `<p class="telephone-line-english">${selectedCountry.label}</p>` : ""}</div><div class="identity-symbol-detail"><img src="${selectedCountry.symbolAsset}" alt="${selectedCountry.symbolCaption}" /><p>${selectedCountry.symbolCaption}</p></div></article>` : ""}
+      </section>
+    </div>
+  `;
+      focusExplorer2.querySelector("[data-nationality-play-scene]")?.addEventListener("click", () => {
+        if (state2.tapAudioEnabled) speakSceneLines2(nationalityConversation2.lines);
+      });
+      focusExplorer2.querySelector("[data-nationality-play-question]")?.addEventListener("click", () => {
+        if (state2.tapAudioEnabled) speakSceneLines2([identityQuestion2, target.response]);
+      });
+      focusExplorer2.querySelectorAll("[data-nationality-answer]").forEach((button) => {
+        button.addEventListener("click", () => {
+          const answer = practiceCountries.find((country) => country.id === button.dataset.nationalityAnswer);
+          if (!answer) return;
+          if (answer.id === target.id) {
+            state2.identityPracticeFeedback = `Correct! ${identityQuestion2.hanzi} ${answer.response.hanzi}`;
+            if (state2.tapAudioEnabled) speak2(`${identityQuestion2.audio} ${answer.response.audio}`, 0.78);
+          } else {
+            state2.identityPracticeFeedback = "Try again. Listen to the conversation once more.";
+            if (state2.tapAudioEnabled) speak2(answer.nationality, 0.78);
+          }
+          renderNationalityExplorer();
+        });
+      });
+      focusExplorer2.querySelector("[data-nationality-next-round]")?.addEventListener("click", () => {
+        const nextIds = state2.identityPracticeRemainingIds?.length ? state2.identityPracticeRemainingIds : shuffleArray2(practiceIds);
+        state2.identityPracticeTargetId = nextIds.pop();
+        state2.identityPracticeRemainingIds = nextIds;
+        state2.identityPracticeFeedback = "";
+        renderNationalityExplorer();
+      });
+      focusExplorer2.querySelectorAll("[data-flag-country-answer]").forEach((button) => {
+        button.addEventListener("click", () => {
+          const answer = flagCountries.find((country) => country.id === button.dataset.flagCountryAnswer);
+          if (!answer) return;
+          if (answer.id === flagTarget.id) {
+            state2.identitySelectedCountryId = answer.id;
+            state2.identityFlagPracticeFeedback = `Correct! ${answer.hanzi}`;
+            if (state2.tapAudioEnabled) speak2(answer.hanzi, 0.78);
+          } else {
+            state2.identityFlagPracticeFeedback = "Try again. Look carefully at the flag.";
+            if (state2.tapAudioEnabled) speak2(answer.hanzi, 0.78);
+          }
+          renderNationalityExplorer();
+        });
+      });
+      focusExplorer2.querySelector("[data-flag-next-round]")?.addEventListener("click", () => {
+        const nextIds = state2.identityFlagPracticeRemainingIds?.length ? state2.identityFlagPracticeRemainingIds : shuffleArray2(flagIds);
+        state2.identityFlagPracticeTargetId = nextIds.pop();
+        state2.identityFlagPracticeRemainingIds = nextIds;
+        state2.identityFlagPracticeFeedback = "";
+        state2.identitySelectedCountryId = "";
+        renderNationalityExplorer();
+      });
+    }
+    function renderLanguagesExplorer() {
+      renderLanguagesScene();
+    }
+    function renderLanguagesScene() {
+      focusExplorer2.innerHTML = `
+    <div class="numbers-board identity-board">
+      <section class="greetings-exchange">
+        <div class="greetings-exchange-top">
+          <div><p class="body-match-kicker">4A Lesson 2 \xB7 Languages</p><p class="greetings-exchange-prompt">Two classmates talk about the languages they speak.</p></div>
+          <button class="small-button is-play-button" type="button" data-languages-play-scene>Play</button>
+        </div>
+        <div class="greetings-scene-layout"><div class="greetings-scene-visual"><img class="greetings-scene-image" src="${identityConversation2.imagePath}" alt="${identityConversation2.imageAlt}" /></div><div class="greetings-line-stack">${identityConversation2.lines.map((line) => `<article class="greetings-line-card"><div class="telephone-bubble-copy"><p class="telephone-line-hanzi">${line.hanzi}</p>${state2.showPinyin ? `<p class="telephone-line-pinyin">${line.pinyin}</p>` : ""}${state2.showEnglish ? `<p class="telephone-line-english">${line.english}</p>` : ""}</div></article>`).join("")}</div></div>
+      </section>
+    </div>
+  `;
+      focusExplorer2.querySelector("[data-languages-play-scene]")?.addEventListener("click", () => {
+        if (state2.tapAudioEnabled) speakSceneLines2(identityConversation2.lines);
+      });
+    }
+    function renderLegacyLanguagesExplorer() {
+      const selectedCountry = identityCountries2.find((country) => country.id === state2.identityLanguageSelectedCountryId);
+      focusExplorer2.innerHTML = `
+    <div class="numbers-board identity-board">
+      <section class="greetings-exchange">
+        <div class="greetings-exchange-top">
+          <div><p class="body-match-kicker">4A Lesson 2 \xB7 Languages</p><p class="greetings-exchange-prompt">Two classmates talk about the languages they speak.</p></div>
+          <button class="small-button is-play-button" type="button" data-languages-play-scene>Play</button>
+        </div>
+        <div class="greetings-scene-layout"><div class="greetings-scene-visual"><img class="greetings-scene-image" src="${identityConversation2.imagePath}" alt="${identityConversation2.imageAlt}" /></div><div class="greetings-line-stack">${identityConversation2.lines.map((line) => `<article class="greetings-line-card"><div class="telephone-bubble-copy"><p class="telephone-line-hanzi">${line.hanzi}</p>${state2.showPinyin ? `<p class="telephone-line-pinyin">${line.pinyin}</p>` : ""}${state2.showEnglish ? `<p class="telephone-line-english">${line.english}</p>` : ""}</div></article>`).join("")}</div></div>
+      </section>
+      <section class="identity-question-section identity-language-section">
+        <div><p class="body-match-kicker">Practice</p><p class="greetings-exchange-prompt">Say one sentence for each picture.</p><p class="telephone-line-hanzi">${identityLanguageQuestion2.hanzi}</p>${state2.showPinyin ? `<p class="telephone-line-pinyin">${identityLanguageQuestion2.pinyin}</p>` : ""}${state2.showEnglish ? `<p class="telephone-line-english">${identityLanguageQuestion2.english}</p>` : ""}</div>
+        <div class="identity-language-grid">${identityCountries2.map((country) => `<button class="identity-language-card${selectedCountry?.id === country.id ? " is-selected" : ""}" type="button" data-languages-country="${country.id}"><img class="identity-flag" src="${country.asset}" alt="${country.label} flag" /><span class="numbers-game-hanzi">${country.nationality}\u8BF4${country.language.hanzi}\u3002</span>${state2.showPinyin ? `<span class="numbers-game-pinyin">${country.pinyin} shu\u014D ${country.language.pinyin}.</span>` : ""}${state2.showEnglish ? `<span class="numbers-game-english">${country.nationality} people speak ${country.language.english}.</span>` : ""}</button>`).join("")}</div>
+        ${selectedCountry ? `<article class="greetings-line-card identity-answer-card"><div class="telephone-bubble-copy"><p class="body-match-kicker">Make your own sentence</p><p class="telephone-line-hanzi">\u6211\u662F${selectedCountry.nationality}\u3002\u6211\u8BF4${selectedCountry.language.hanzi}\u3002</p>${state2.showPinyin ? `<p class="telephone-line-pinyin">w\u01D2 sh\xEC ${selectedCountry.pinyin}. w\u01D2 shu\u014D ${selectedCountry.language.pinyin}.</p>` : ""}${state2.showEnglish ? `<p class="telephone-line-english">${selectedCountry.response.english} I speak ${selectedCountry.language.english}.</p>` : ""}</div></article>` : ""}
+      </section>
+    </div>
+  `;
+      focusExplorer2.querySelector("[data-languages-play-scene]")?.addEventListener("click", () => {
+        if (state2.tapAudioEnabled) speakSceneLines2(identityConversation2.lines);
+      });
+      focusExplorer2.querySelectorAll("[data-languages-country]").forEach((button) => {
+        button.addEventListener("click", () => {
+          const country = identityCountries2.find((entry) => entry.id === button.dataset.languagesCountry);
+          if (!country) return;
+          state2.identityLanguageSelectedCountryId = country.id;
+          if (state2.tapAudioEnabled) speak2(`${country.nationality}\u8BF4${country.language.hanzi}`, 0.78);
+          renderLanguagesExplorer();
         });
       });
     }
@@ -7240,12 +8017,12 @@
       }
       if (stopButton) stopButton.disabled = !isPlaying;
     }
-    return { numberStageItems: numberStageItems2, resetNumberChallenge: resetNumberChallenge2, ensureNumberChallenge: ensureNumberChallenge2, resetMathChallenge: resetMathChallenge2, ensureMathChallenge: ensureMathChallenge2, familyGameItems: familyGameItems2, familyPersonForItemId: familyPersonForItemId2, familyHeadshotForItemId: familyHeadshotForItemId2, isFamilySentenceItemId: isFamilySentenceItemId2, familyBookWordItems: familyBookWordItems2, usesLessonTemplate: usesLessonTemplate2, bookWordItemsForTopic: bookWordItemsForTopic2, usefulNoteForTopic: usefulNoteForTopic2, familyWordForPersonId: familyWordForPersonId2, resetFamilyChallenge: resetFamilyChallenge2, ensureFamilyChallenge: ensureFamilyChallenge2, resetListenChallengeResult: resetListenChallengeResult2, handleFamilyChallengePlay: handleFamilyChallengePlay2, handleFamilyChallengeGuess: handleFamilyChallengeGuess2, resetFamilyMatchGame: resetFamilyMatchGame2, ensureFamilyMatchGame: ensureFamilyMatchGame2, handleFamilyMatchPhrase: handleFamilyMatchPhrase2, handleFamilyMatchAttempt: handleFamilyMatchAttempt2, mathChallengeAudioText: mathChallengeAudioText2, handleMathChallengeSubmit: handleMathChallengeSubmit2, handleNumberChallengeGuess: handleNumberChallengeGuess2, bodyMatchItems: bodyMatchItems2, nextBodyRound: nextBodyRound2, resetBodyMatchGame: resetBodyMatchGame2, ensureBodyMatchGame: ensureBodyMatchGame2, handleBodyMatchChinese: handleBodyMatchChinese2, handleBodyMatchAttempt: handleBodyMatchAttempt2, nextBodySpotlightRound, startBodySpotlightRound, handleBodySpotlightGuess, renderBodyPractice: renderBodyPractice2, numberWordListItems: numberWordListItems2, renderBodyLabelButton: renderBodyLabelButton2, renderBodyExplorer: renderBodyExplorer2, renderNumberVisual: renderNumberVisual2, renderNumbersExplorer: renderNumbersExplorer2, renderTelephoneExplorer: renderTelephoneExplorer2, renderFamilyHomeVisual: renderFamilyHomeVisual2, renderFamilyExplorer: renderFamilyExplorer2, renderIdentityExplorer: renderIdentityExplorer2, renderMultiplicationExplorer: renderMultiplicationExplorer2 };
+    return { numberStageItems: numberStageItems2, resetNumberChallenge: resetNumberChallenge2, ensureNumberChallenge: ensureNumberChallenge2, resetMathChallenge: resetMathChallenge2, ensureMathChallenge: ensureMathChallenge2, familyGameItems: familyGameItems2, familyListenItems: familyListenItems2, familyPersonForItemId: familyPersonForItemId2, familyHeadshotForItemId: familyHeadshotForItemId2, isFamilySentenceItemId: isFamilySentenceItemId2, familyBookWordItems: familyBookWordItems2, usesLessonTemplate: usesLessonTemplate2, bookWordItemsForTopic: bookWordItemsForTopic2, usefulNoteForTopic: usefulNoteForTopic2, familyWordForPersonId: familyWordForPersonId2, resetFamilyChallenge: resetFamilyChallenge2, ensureFamilyChallenge: ensureFamilyChallenge2, resetListenChallengeResult: resetListenChallengeResult2, handleFamilyChallengePlay: handleFamilyChallengePlay2, handleFamilyChallengeGuess: handleFamilyChallengeGuess2, resetFamilyMatchGame: resetFamilyMatchGame2, ensureFamilyMatchGame: ensureFamilyMatchGame2, handleFamilyMatchPhrase: handleFamilyMatchPhrase2, handleFamilyMatchAttempt: handleFamilyMatchAttempt2, mathChallengeAudioText: mathChallengeAudioText2, handleMathChallengeSubmit: handleMathChallengeSubmit2, handleNumberChallengeGuess: handleNumberChallengeGuess2, bodyMatchItems: bodyMatchItems2, nextBodyRound: nextBodyRound2, resetBodyMatchGame: resetBodyMatchGame2, ensureBodyMatchGame: ensureBodyMatchGame2, handleBodyMatchChinese: handleBodyMatchChinese2, handleBodyMatchAttempt: handleBodyMatchAttempt2, nextBodySpotlightRound, startBodySpotlightRound, handleBodySpotlightGuess, renderBodyPractice: renderBodyPractice2, numberWordListItems: numberWordListItems2, renderBodyLabelButton: renderBodyLabelButton2, renderBodyExplorer: renderBodyExplorer2, renderNumberVisual: renderNumberVisual2, renderNumbersExplorer: renderNumbersExplorer2, renderTelephoneExplorer: renderTelephoneExplorer2, renderFamilyHomeVisual: renderFamilyHomeVisual2, renderFamilyExplorer: renderFamilyExplorer2, renderIdentityExplorer: renderIdentityExplorer2, renderMultiplicationExplorer: renderMultiplicationExplorer2 };
   }
 
   // src/features/time-daily-life/time-daily-life-runtime.js
   function createTimeDailyLifeRuntime(context) {
-    const { state: state2, timeDateWeekItems: timeDateWeekItems2, timeDateClockItems: timeDateClockItems2, timeDateExpressionItems: timeDateExpressionItems2, timeDateRoutineItems: timeDateRoutineItems2, datePracticeItems: datePracticeItems2, timeDateDateItems: timeDateDateItems2, timeDateMonthItems: timeDateMonthItems2, comparisonPracticeItems: comparisonPracticeItems2, comparisonWordItems: comparisonWordItems2, positionPracticeItems: positionPracticeItems2, positionScenes: positionScenes2, clothesMatchItems: clothesMatchItems2, clothesSentenceItems: clothesSentenceItems2, clothesBookWords: clothesBookWords2, clothesPractice: clothesPractice2, roomScenes: roomScenes2, roomSentenceTokens: roomSentenceTokens2, transportSentenceTokens: transportSentenceTokens2, everydayActionItems: everydayActionItems2, visualTopicItems: visualTopicItems2, shuffleArray: shuffleArray2, speak: speak2, speakSceneLines: speakSceneLines2, currentTopic: currentTopic2, currentBook: currentBook2, currentLesson: currentLesson2, renderActivityPanel: renderActivityPanel2, focusExplorer: focusExplorer2, focusStatus: focusStatus2 } = context;
+    const { state: state2, timeDateWeekItems: timeDateWeekItems2, timeDateClockItems: timeDateClockItems2, timeDateExpressionItems: timeDateExpressionItems2, timeDateRoutineItems: timeDateRoutineItems2, datePracticeItems: datePracticeItems2, timeDateDateItems: timeDateDateItems2, timeDateMonthItems: timeDateMonthItems2, comparisonPracticeItems: comparisonPracticeItems2, comparisonWordItems: comparisonWordItems2, positionPracticeItems: positionPracticeItems2, positionScenes: positionScenes2, positionBookWords: positionBookWords2, clothesMatchItems: clothesMatchItems2, clothesSentenceItems: clothesSentenceItems2, clothesBookWords: clothesBookWords2, clothesPractice: clothesPractice2, roomScenes: roomScenes2, roomSentenceTokens: roomSentenceTokens2, transportSentenceTokens: transportSentenceTokens2, everydayActionItems: everydayActionItems2, visualTopicItems: visualTopicItems2, shuffleArray: shuffleArray2, speak: speak2, speakSceneLines: speakSceneLines2, currentTopic: currentTopic2, currentBook: currentBook2, currentLesson: currentLesson2, renderActivityPanel: renderActivityPanel2, focusExplorer: focusExplorer2, focusStatus: focusStatus2 } = context;
     function resetWeekdayChallenge2(options = {}) {
       const answerId = nextRandomCycleId(state2, "weekdays-listen", timeDateWeekItems2.map((item) => item.id));
       const answer = timeDateWeekItems2.find((item) => item.id === answerId);
@@ -8035,7 +8812,7 @@
         <p class="body-match-kicker">${currentBook2().label} Lesson ${currentLesson2().lesson}</p>
         <h4>Positions & Directions</h4>
       </div>
-      <div class="greetings-practice-grid">
+      <div class="greetings-practice-grid position-scene-grid">
         ${positionScenes2.map(
         (scene) => `
               <section class="greetings-exchange">
@@ -8050,12 +8827,16 @@
             `
       ).join("")}
       </div>
+      <section class="school-lesson-section">
+        <div class="time-months-heading"><p class="body-match-kicker">Book words</p></div>
+        <div class="comparison-word-grid position-word-grid">
+          ${positionBookWords2.map((word) => `<button class="comparison-word-card" type="button" data-position-word="${word.hanzi}"><span class="comparison-word-hanzi">${word.hanzi}</span>${state2.showPinyin ? `<span class="comparison-word-pinyin">${word.pinyin}</span>` : ""}${state2.showEnglish ? `<span class="comparison-word-english">${word.english}</span>` : ""}</button>`).join("")}
+        </div>
+      </section>
       <section class="visual-topic-notes">
         <p class="body-match-kicker">Useful notes</p>
         <div class="visual-topic-note-grid position-note-grid">
           <article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">A \u5728 B + \u4F4D\u7F6E</p>${state2.showPinyin ? '<p class="visual-topic-note-pinyin">A z\xE0i B + w\xE8i zh\xEC</p>' : ""}${state2.showEnglish ? '<p class="visual-topic-note-english">A is in / on / beside B.</p>' : ""}<p class="visual-topic-note-example">\u4E66\u67B6\u5728\u684C\u5B50\u5DE6\u8FB9\u3002</p>${state2.showPinyin ? '<p class="visual-topic-note-pinyin">sh\u016B ji\xE0 z\xE0i zhu\u014D zi zu\u01D2 bi\u0101n.</p>' : ""}${state2.showEnglish ? '<p class="visual-topic-note-english">The bookshelf is to the left of the desk.</p>' : ""}</article>
-          <article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">\u524D\u8FB9 = \u524D\u9762\uFF1B\u540E\u8FB9 = \u540E\u9762</p>${state2.showPinyin ? '<p class="visual-topic-note-pinyin">qi\xE1n bi\u0101n = qi\xE1n mi\xE0n; h\xF2u bi\u0101n = h\xF2u mi\xE0n</p>' : ""}${state2.showEnglish ? '<p class="visual-topic-note-english">front and back can use either form here</p>' : ""}</article>
-          ${[["\u4E0A", "sh\xE0ng", "up"], ["\u4E0B", "xi\xE0", "down"], ["\u524D", "qi\xE1n", "front"], ["\u540E", "h\xF2u", "back"], ["\u5DE6", "zu\u01D2", "left"], ["\u53F3", "y\xF2u", "right"]].map(([hanzi, pinyin, english]) => `<article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">${hanzi}</p>${state2.showPinyin ? `<p class="visual-topic-note-pinyin">${pinyin}</p>` : ""}${state2.showEnglish ? `<p class="visual-topic-note-english">${english}</p>` : ""}</article>`).join("")}
         </div>
       </section>
     </div>
@@ -8064,6 +8845,11 @@
         button.addEventListener("click", () => {
           const scene = positionScenes2.find((entry) => entry.id === button.dataset.positionPlayScene);
           if (scene && state2.tapAudioEnabled) speakSceneLines2(scene.lines);
+        });
+      });
+      focusExplorer2.querySelectorAll("[data-position-word]").forEach((button) => {
+        button.addEventListener("click", () => {
+          if (state2.tapAudioEnabled) speak2(button.dataset.positionWord, 0.78);
         });
       });
     }
@@ -9488,8 +10274,8 @@
       id: "4a",
       label: "Book 4A",
       lessons: [
-        { lesson: 1, title: "Telephone numbers", topicId: "numbers" },
-        { lesson: 2, title: "Languages", topicId: "identity" },
+        { lesson: 1, title: "Telephone numbers", topicId: "telephone-numbers" },
+        { lesson: 2, title: "Languages", topicId: "languages" },
         { lesson: 3, title: "Tell the time", topicId: "time-date" },
         { lesson: 4, title: "Daily routine", topicId: "time-date" },
         { lesson: 5, title: "My lunch", topicId: "meals-feelings" },
@@ -9554,13 +10340,13 @@
       id: "foundations",
       label: "Foundations",
       description: "The first speaking patterns young learners need most.",
-      topicIds: ["numbers", "multiplication-rhyme", "greetings", "polite-words", "introductions", "age", "identity"]
+      topicIds: ["numbers", "multiplication-rhyme", "greetings", "polite-words", "introductions", "age", "identity", "languages"]
     },
     {
       id: "me-and-family",
       label: "Me & Family",
       description: "Personal, family, body, clothes, and everyday child language.",
-      topicIds: ["family", "body", "colours", "clothes"]
+      topicIds: ["family", "telephone-numbers", "body", "colours", "clothes"]
     },
     {
       id: "daily-world",
@@ -9577,13 +10363,15 @@
   ];
   var topicCardMeta = {
     numbers: { zhTitle: "\u6570\u5B57", enTitle: "Numbers", hint: "Count, hear, and use numbers" },
+    "telephone-numbers": { zhTitle: "\u6211\u7684\u5BB6\u4EBA\uFF08\u4E8C\uFF09", enTitle: "My Family 2", hint: "Introduce grandparents, where they live, and a telephone number" },
     "multiplication-rhyme": { zhTitle: "\u4E5D\u4E5D\u4E58\u6CD5", enTitle: "Multiplication Rhyme", hint: "Classic rhythm practice" },
     greetings: { zhTitle: "\u6253\u62DB\u547C", enTitle: "Greetings", hint: "Hello, good morning, goodbye" },
     "polite-words": { zhTitle: "\u793C\u8C8C\u7528\u8BED", enTitle: "Polite Words", hint: "Thank you, sorry, please" },
     introductions: { zhTitle: "\u4ECB\u7ECD\u81EA\u5DF1", enTitle: "Introductions", hint: "Say your name and meet friends" },
     age: { zhTitle: "\u5E74\u9F84", enTitle: "Age", hint: "Ask and say how old you are" },
-    identity: { zhTitle: "\u56FD\u5BB6\u548C\u8BED\u8A00", enTitle: "Countries & Languages", hint: "Say where you are from and what you speak" },
-    family: { zhTitle: "\u5BB6\u4EBA", enTitle: "Family", hint: "Mom, dad, siblings, grandparents" },
+    identity: { zhTitle: "\u56FD\u7C4D", enTitle: "Nationality", hint: "Ask and say where someone is from" },
+    languages: { zhTitle: "\u8BED\u8A00", enTitle: "Languages", hint: "Say which language someone speaks" },
+    family: { zhTitle: "\u6211\u7684\u5BB6\u4EBA\uFF08\u4E00\uFF09", enTitle: "My Family 1", hint: "Mom, dad, siblings, and grandparents" },
     body: { zhTitle: "\u8EAB\u4F53", enTitle: "Body", hint: "Tap body parts and listen" },
     pets: { zhTitle: "\u5BA0\u7269", enTitle: "Pets", hint: "Dog, cat, turtle, goldfish" },
     animals: { zhTitle: "\u52A8\u7269\u56ED", enTitle: "Zoo Animals", hint: "Count animals with measure words" },
@@ -9618,19 +10406,19 @@
       id: "foundations",
       zhTitle: "\u5F00\u53E3\u8BF4\u4E2D\u6587",
       enTitle: "Start Speaking",
-      hint: "Numbers, greetings, names, age, identity",
+      hint: "Numbers, greetings, names, age, nationality, languages",
       accent: "#be5b49",
       iconSrc: "assets/navigation-icons/lele-wave-icon.webp",
-      topicIds: ["numbers", "greetings", "polite-words", "introductions", "age", "identity", "multiplication-rhyme"]
+      topicIds: ["numbers", "greetings", "polite-words", "introductions", "age", "identity", "languages", "multiplication-rhyme"]
     },
     {
       id: "me-family",
       zhTitle: "\u6211\u548C\u5BB6\u4EBA",
       enTitle: "Me & Family",
-      hint: "Family, body, clothes",
+      hint: "Family, grandparents, body, clothes",
       accent: "#aa7051",
       iconEmoji: "\u{1F3E0}",
-      topicIds: ["family", "body", "clothes"]
+      topicIds: ["family", "telephone-numbers", "body", "clothes"]
     },
     {
       id: "time-daily",
@@ -9706,11 +10494,13 @@
   };
   var topicData = [
     numbersTopic,
+    telephoneNumbersTopic,
     multiplicationRhymeTopic,
     greetingsTopic,
     politeWordsTopic,
     introductionsTopic,
     identityTopic,
+    languagesTopic,
     ageTopic,
     familyTopic,
     bodyTopic,
@@ -9991,10 +10781,11 @@
           <div>
             <p class="body-match-kicker">${config.kicker ?? "Listen and choose"}</p>
             ${config.title ? `<h4>${config.title}</h4>` : ""}
-            <p class="numbers-game-note">Play the audio, then tap the matching Chinese card.</p>
+            <p class="numbers-game-note">${config.instruction ?? "Play the audio, then tap the matching Chinese card."}</p>
           </div>
           <button class="small-button is-play-button" type="button" data-template-listen-play>${playLabel}</button>
         </div>
+        ${config.visualMarkup?.() ?? ""}
         ${config.feedback() ? `<p class="greetings-game-feedback">${config.feedback()}</p>` : ""}
         <div class="numbers-game-options">
           ${config.optionIds().map((id) => {
@@ -10007,13 +10798,16 @@
         return `
               <button class="numbers-game-option greetings-game-option family-listen-option${resultClass}" type="button" data-template-listen-guess="${item.id}">
                 ${resultMark}
-                <span class="numbers-game-hanzi">${item.hanzi}</span>
-                ${state2.showPinyin ? `<span class="numbers-game-pinyin">${item.pinyin}</span>` : ""}
-                ${state2.showEnglish ? `<span class="numbers-game-english">${item.english}</span>` : ""}
+                <span class="family-listen-copy">
+                  <span class="numbers-game-hanzi">${item.hanzi}</span>
+                  <span class="numbers-game-pinyin">${state2.showPinyin ? item.pinyin : ""}</span>
+                  <span class="numbers-game-english">${state2.showEnglish ? item.english : ""}</span>
+                </span>
               </button>
             `;
       }).join("")}
         </div>
+        ${config.completionMarkup?.() ?? ""}
       </section>
     `;
     }
@@ -10033,7 +10827,7 @@
           <div>
             <p class="body-match-kicker">${config.kicker ?? "Matching game"}</p>
             ${config.title ? `<h4>${config.title}</h4>` : ""}
-            <p class="numbers-game-note">Tap a card on the left, then tap its matching card on the right.</p>
+            <p class="numbers-game-note">${config.instruction ?? "Tap a card on the left, then tap its matching card on the right."}</p>
           </div>
           <button class="small-button is-play-button" type="button" data-template-match-new>Play</button>
         </div>
@@ -10051,8 +10845,7 @@
                 <article class="family-match-solved-row">
                   <div class="polite-match-card polite-match-card-phrase family-match-pair-card is-solved">
                     <span class="answer-result-mark" aria-hidden="true">\u2713</span>
-                    <span class="numbers-game-hanzi">${item.hanzi}</span>
-                    ${state2.showPinyin ? `<span class="numbers-game-pinyin">${item.pinyin}</span>` : ""}
+                    ${config.phraseContent ? config.phraseContent(id) : `<span class="numbers-game-hanzi">${item.hanzi}</span>${state2.showPinyin ? `<span class="numbers-game-pinyin">${item.pinyin}</span>` : ""}`}
                   </div>
                   <div class="polite-match-card ${config.meaningCardClass ?? "polite-match-card-meaning"} family-match-pair-card is-solved">
                     <span class="answer-result-mark" aria-hidden="true">\u2713</span>
@@ -10074,8 +10867,7 @@
         return `
                   <button class="polite-match-card polite-match-card-phrase${selected ? " is-selected" : ""}${wrong ? " is-wrong" : ""}" type="button" data-template-match-phrase="${id}">
                     ${wrong ? '<span class="answer-result-mark" aria-hidden="true">\xD7</span>' : ""}
-                    <span class="numbers-game-hanzi">${item.hanzi}</span>
-                    ${state2.showPinyin ? `<span class="numbers-game-pinyin">${item.pinyin}</span>` : ""}
+                    ${config.phraseContent ? config.phraseContent(id) : `<span class="numbers-game-hanzi">${item.hanzi}</span>${state2.showPinyin ? `<span class="numbers-game-pinyin">${item.pinyin}</span>` : ""}`}
                   </button>
                 `;
       }).join("")}
@@ -10123,14 +10915,17 @@
       activityList2.innerHTML = "";
       const gameCard = documentRef.createElement("section");
       gameCard.className = `family-practice-shell${config.shellClass ? ` ${config.shellClass}` : ""}`;
-      gameCard.innerHTML = `<div class="practice-split-board">${renderListenPractice2(config.listen)}${renderMatchPractice2(config.match)}</div>${renderPracticeSayCards2(config.sayItems)}`;
+      gameCard.innerHTML = `<div class="practice-split-board">${config.listen ? renderListenPractice2(config.listen) : ""}${config.match ? renderMatchPractice2(config.match) : ""}${config.builder ? config.builder.markup() : ""}</div>${renderPracticeSayCards2(config.sayItems)}`;
       activityList2.appendChild(gameCard);
-      activityList2.querySelector("[data-template-listen-play]")?.addEventListener("click", () => config.listen.onPlay());
-      activityList2.querySelectorAll("[data-template-listen-guess]").forEach((button) => button.addEventListener("click", () => config.listen.onGuess(button.dataset.templateListenGuess)));
-      activityList2.querySelector("[data-template-match-new]")?.addEventListener("click", () => config.match.onNew());
-      activityList2.querySelector("[data-template-match-play-again]")?.addEventListener("click", () => config.match.onNew());
-      activityList2.querySelectorAll("[data-template-match-phrase]").forEach((button) => button.addEventListener("click", () => config.match.onPhrase(button.dataset.templateMatchPhrase)));
-      activityList2.querySelectorAll("[data-template-match-meaning]").forEach((button) => button.addEventListener("click", () => config.match.onMeaning(button.dataset.templateMatchMeaning)));
+      activityList2.querySelector("[data-template-listen-play]")?.addEventListener("click", () => config.listen?.onPlay());
+      activityList2.querySelectorAll("[data-template-listen-guess]").forEach((button) => button.addEventListener("click", () => config.listen?.onGuess(button.dataset.templateListenGuess)));
+      if (config.match) {
+        activityList2.querySelector("[data-template-match-new]")?.addEventListener("click", () => config.match.onNew());
+        activityList2.querySelector("[data-template-match-play-again]")?.addEventListener("click", () => config.match.onNew());
+        activityList2.querySelectorAll("[data-template-match-phrase]").forEach((button) => button.addEventListener("click", () => config.match.onPhrase(button.dataset.templateMatchPhrase)));
+        activityList2.querySelectorAll("[data-template-match-meaning]").forEach((button) => button.addEventListener("click", () => config.match.onMeaning(button.dataset.templateMatchMeaning)));
+      }
+      config.builder?.bind(activityList2);
       bindPracticeSayCards2(activityList2);
     }
     renderSharedLessonPractice2.renderListenPractice = renderListenPractice2;
@@ -10202,6 +10997,20 @@
   var handleGreetingsChallengePlay;
   var handleGreetingsChallengeGuess;
   var renderGreetingsExplorer;
+  var nationalityPracticeItems;
+  var ensureNationalityChallenge;
+  var currentNationalityAnswer;
+  var handleNationalityChallengePlay;
+  var handleNationalityChallengeGuess;
+  var ensureNationalityMatchGame;
+  var resetNationalityMatchGame;
+  var handleNationalityMatchPhrase;
+  var handleNationalityMatchAttempt;
+  var languagePracticeItems;
+  var ensureLanguageChallenge;
+  var currentLanguageAnswer;
+  var handleLanguageChallengePlay;
+  var handleLanguageChallengeGuess;
   var politeGameItems;
   var politeMeaningLabel;
   var resetPoliteMatchGame;
@@ -10394,6 +11203,7 @@
     numberStages,
     telephonePractice,
     familyGameItemIds,
+    familyPossessionPractice,
     familyPersonIdsByItemId,
     familyHeadshotsByItemId,
     familyPractice,
@@ -10403,7 +11213,10 @@
     bodyCoreItemIds,
     bodyDiagramLayout,
     identityConversation,
+    nationalityConversation,
     identityCountries,
+    identityExploreCountries,
+    identityLanguageQuestion,
     identityQuestion,
     topicById: topicById2,
     focusItemsForTopic,
@@ -10435,6 +11248,7 @@
     resetMathChallenge,
     ensureMathChallenge,
     familyGameItems,
+    familyListenItems,
     familyPersonForItemId,
     familyHeadshotForItemId,
     isFamilySentenceItemId,
@@ -10504,6 +11318,30 @@
     renderFocusExplorer,
     renderFocusStatus,
     elements: { focusExplorer, focusStatus }
+  }));
+  ({
+    nationalityPracticeItems,
+    ensureNationalityChallenge,
+    currentNationalityAnswer,
+    handleNationalityChallengePlay,
+    handleNationalityChallengeGuess,
+    ensureNationalityMatchGame,
+    resetNationalityMatchGame,
+    handleNationalityMatchPhrase,
+    handleNationalityMatchAttempt,
+    languagePracticeItems,
+    ensureLanguageChallenge,
+    currentLanguageAnswer,
+    handleLanguageChallengePlay,
+    handleLanguageChallengeGuess
+  } = createNationalityController({
+    state,
+    countries: [...identityCountries, ...identityExploreCountries],
+    question: identityQuestion,
+    shuffleArray,
+    speakSceneLines,
+    currentTopic,
+    renderActivityPanel
   }));
   ({
     politeGameItems,
@@ -10729,6 +11567,7 @@
     comparisonWordItems,
     positionPracticeItems,
     positionScenes,
+    positionBookWords,
     clothesMatchItems,
     clothesSentenceItems,
     clothesBookWords,
@@ -10844,6 +11683,7 @@
     handleDateMatchPhrase,
     handleDateMatchEvent,
     familyGameItems,
+    familyListenItems,
     familyPersonForItemId,
     familyHeadshotForItemId,
     ensureFamilyChallenge,
@@ -10862,6 +11702,20 @@
     resetGreetingsMatchGame,
     handleGreetingsMatchPhrase,
     handleGreetingsMatchAttempt,
+    nationalityPracticeItems,
+    ensureNationalityChallenge,
+    currentNationalityAnswer,
+    handleNationalityChallengePlay,
+    handleNationalityChallengeGuess,
+    ensureNationalityMatchGame,
+    resetNationalityMatchGame,
+    handleNationalityMatchPhrase,
+    handleNationalityMatchAttempt,
+    languagePracticeItems,
+    ensureLanguageChallenge,
+    currentLanguageAnswer,
+    handleLanguageChallengePlay,
+    handleLanguageChallengeGuess,
     politeGameItems,
     politeMeaningLabel,
     ensurePoliteChallenge,
@@ -10934,6 +11788,7 @@
     currentTopic,
     renderBodyExplorer,
     renderNumbersExplorer,
+    renderTelephoneExplorer,
     renderPoliteWordsExplorer,
     renderIntroductionsExplorer,
     renderIdentityExplorer,

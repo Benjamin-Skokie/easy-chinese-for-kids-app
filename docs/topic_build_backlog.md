@@ -69,7 +69,7 @@ also changed from `partial`.
   - Completed as two sibling pages: Nationality and Languages.
 - [x] Body — `lesson-contracts/foundations/body.md`
   - Completed with the diagram and matching review plus a no-repeat spotlight Look and choose practice.
-- [ ] Family — `lesson-contracts/family/family.md`
+- [x] Family — `lesson-contracts/family/family.md`
 
 ### Food, World, and School Life
 
@@ -88,9 +88,6 @@ also changed from `partial`.
 
 ## Asset-integration candidates
 
-- [ ] Extend Family’s 2A Lesson 2 layer with complete `我有… / 我没有…`
-  sibling-count sentences using `family-counting-two-younger-brothers.webp`.
-  Do not use the unrelated schoolbag `有 / 没有` grammar visual.
 - [ ] Review the exact 3A Request language before using
   `can-watch-tv-homework-first.webp`.
 - [x] Everyday Actions now uses its consistent 4:3 replacement set

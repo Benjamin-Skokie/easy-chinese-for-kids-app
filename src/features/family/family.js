@@ -22,7 +22,11 @@ export const familyTopic = {
     { id: "older-brother-word", hanzi: "哥哥", pinyin: "gē ge", english: "older brother", audio: "哥哥" },
     { id: "younger-brother-word", hanzi: "弟弟", pinyin: "dì di", english: "younger brother", audio: "弟弟" },
     { id: "older-sister-word", hanzi: "姐姐", pinyin: "jiě jie", english: "older sister", audio: "姐姐" },
-    { id: "younger-sister-word", hanzi: "妹妹", pinyin: "mèi mei", english: "younger sister", audio: "妹妹" }
+    { id: "younger-sister-word", hanzi: "妹妹", pinyin: "mèi mei", english: "younger sister", audio: "妹妹" },
+    { id: "have-word", hanzi: "有", pinyin: "yǒu", english: "have", audio: "有" },
+    { id: "not-have-word", hanzi: "没有", pinyin: "méi yǒu", english: "do not have", audio: "没有" },
+    { id: "one-word", hanzi: "一个", pinyin: "yí ge", english: "one", audio: "一个" },
+    { id: "two-word", hanzi: "两个", pinyin: "liǎng ge", english: "two", audio: "两个" }
     , { id: "grandpa-word", hanzi: "爷爷", pinyin: "yé ye", english: "paternal grandpa", audio: "爷爷" }
     , { id: "grandma-word", hanzi: "奶奶", pinyin: "nǎi nai", english: "paternal grandma", audio: "奶奶" }
     , { id: "maternal-grandpa-word", hanzi: "外公", pinyin: "wài gōng", english: "maternal grandpa", audio: "外公" }
@@ -80,6 +84,18 @@ export const familyPractice = [
       { personId: "older-sister", hanzi: "姐姐", pinyin: "jiě jie", english: "older sister", audio: "姐姐" },
       { personId: "younger-sister", hanzi: "妹妹", pinyin: "mèi mei", english: "younger sister", audio: "妹妹" }
     ]
+  },
+  {
+    id: "family-scene-2a",
+    title: "Three siblings",
+    visual: "sibling-count",
+    imagePath: "assets/illustrated-family/family-counting-two-younger-brothers.webp",
+    imageAlt: "Three siblings having dinner together: a girl on the left and two boys",
+    lines: [
+      { hanzi: "我有两个弟弟。", pinyin: "wǒ yǒu liǎng ge dì di.", english: "I have two younger brothers.", audio: "我有两个弟弟" },
+      { hanzi: "我有一个姐姐和一个弟弟。", pinyin: "wǒ yǒu yí ge jiě jie hé yí ge dì di.", english: "I have one older sister and one younger brother.", audio: "我有一个姐姐和一个弟弟" },
+      { hanzi: "我有一个姐姐和一个哥哥。", pinyin: "wǒ yǒu yí ge jiě jie hé yí ge gē ge.", english: "I have one older sister and one older brother.", audio: "我有一个姐姐和一个哥哥" }
+    ]
   }
   , {
     id: "family-scene-3",
@@ -102,6 +118,12 @@ export const illustratedFamily = {
   girl: { id: "girl", label: "Older sister", ageGroup: "8", path: "assets/illustrated-family/family-avatar-older-sister.webp" },
   boy: { id: "boy", label: "Younger brother", ageGroup: "6", path: "assets/illustrated-family/family-avatar-younger-brother.webp" }
 };
+
+export const familyPossessionPractice = [
+  { id: "two-younger-brothers", hanzi: "我有两个弟弟。", pinyin: "wǒ yǒu liǎng ge dì di.", english: "I have two younger brothers.", audio: "我有两个弟弟" },
+  { id: "older-sister-younger-brother", hanzi: "我有一个姐姐和一个弟弟。", pinyin: "wǒ yǒu yí ge jiě jie hé yí ge dì di.", english: "I have one older sister and one younger brother.", audio: "我有一个姐姐和一个弟弟" },
+  { id: "older-sister-older-brother", hanzi: "我有一个姐姐和一个哥哥。", pinyin: "wǒ yǒu yí ge jiě jie hé yí ge gē ge.", english: "I have one older sister and one older brother.", audio: "我有一个姐姐和一个哥哥" }
+];
 
 export const familyPersonIdsByItemId = {
   "dad-word": "dad",

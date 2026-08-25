@@ -1283,9 +1283,12 @@ test("family owns its lesson metadata, scenes, and matching set", () => {
   assert.equal(familyTopic.id, "family");
   assert.equal(familyTopic.interactiveScene, "family-home");
   assert.equal(familyTopic.steps.length, 4);
-  assert.equal(familyPractice.length, 3);
-  assert.equal(familyPractice[2].lines[0].hanzi, "这是我的家人。");
-  assert.equal(familyPractice[2].lines[1].hanzi, "我家有六口人。");
+  assert.equal(familyPractice.length, 4);
+  assert.equal(familyPractice[2].lines[0].hanzi, "我有两个弟弟。");
+  assert.equal(familyPractice[2].lines[1].hanzi, "我有一个姐姐和一个弟弟。");
+  assert.equal(familyPractice[2].lines[2].hanzi, "我有一个姐姐和一个哥哥。");
+  assert.equal(familyPractice[3].lines[0].hanzi, "这是我的家人。");
+  assert.equal(familyPractice[3].lines[1].hanzi, "我家有六口人。");
   assert.equal(familyGameItemIds.length, 6);
   assert.equal(Object.keys(illustratedFamily).length, 6);
 });

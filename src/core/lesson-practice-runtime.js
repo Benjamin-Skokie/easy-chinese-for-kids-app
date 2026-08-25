@@ -1,7 +1,60 @@
 import { imageLoadingAttrs } from "./image-loading.js";
 
 export function createLessonPracticeRuntime(context) {
-  const { state, schoolTopicData, visualTopicItems, positionPracticeItems, timeDateWeekItems, timeDateClockItems, datePracticeItems, timeDateMonthItems, timeDateRoutineItems, clothesMatchItems, clothesSentenceItems, everydayActionItems, illustratedKids, numberHanzi, buildNumberItem, currentTopic, currentNumberStage, currentBook, currentLesson, focusItemsForTopic, shuffleArray, speak, renderFocusExplorer, renderFocusStatus, renderSharedLessonPractice, renderPracticeSayCards, bindPracticeSayCards, activityPanelTitle, activityPanelSummary, activityList, topicColumns, renderBodyPractice, renderWorldPractice, renderHobbiesPractice, activeTimeDateSection, ensureWeekdayChallenge, ensureWeekdayMatchGame, handleWeekdayChallengePlay, handleWeekdayChallengeGuess, resetWeekdayMatchGame, handleWeekdayMatchPhrase, handleWeekdayMatchAttempt, ensureDateChallenge, ensureDateMatchGame, handleDateChallengePlay, handleDateChallengeGuess, resetDateMatchGame, handleDateMatchPhrase, handleDateMatchEvent, familyGameItems, familyPersonForItemId, familyHeadshotForItemId, ensureFamilyChallenge, ensureFamilyMatchGame, handleFamilyChallengePlay, handleFamilyChallengeGuess, resetFamilyMatchGame, handleFamilyMatchPhrase, handleFamilyMatchAttempt, greetingsGameItems, greetingsMeaningLabel, ensureGreetingsChallenge, ensureGreetingsMatchGame, handleGreetingsChallengePlay, handleGreetingsChallengeGuess, resetGreetingsMatchGame, handleGreetingsMatchPhrase, handleGreetingsMatchAttempt, nationalityPracticeItems, ensureNationalityChallenge, currentNationalityAnswer, handleNationalityChallengePlay, handleNationalityChallengeGuess, ensureNationalityMatchGame, resetNationalityMatchGame, handleNationalityMatchPhrase, handleNationalityMatchAttempt, languagePracticeItems, ensureLanguageChallenge, currentLanguageAnswer, handleLanguageChallengePlay, handleLanguageChallengeGuess, politeGameItems, politeMeaningLabel, ensurePoliteChallenge, ensurePoliteMatchGame, handlePoliteChallengePlay, handlePoliteChallengeGuess, resetPoliteMatchGame, handlePoliteMatchPhrase, handlePoliteMatchAttempt, ensureRoomBuilder, currentRoomBuildItem, handleRoomBuildToken, clearRoomBuilder, nextRoomBuilder, ensureClothesQuiz, handleClothesQuizPick, nextClothesQuizQuestion, ensureClothesSentenceQuiz, handleClothesSentencePick, nextClothesSentenceQuestion, ensureTimeRoutineQuiz, handleTimeRoutineQuizPick, nextTimeRoutineQuizQuestion, ensureClockQuiz, handleClockQuizPick, nextClockQuizQuestion, ensureComparisonBuilder, currentComparisonBuildItem, handleComparisonBuildToken, clearComparisonBuilder, nextComparisonBuilder, ensurePositionQuiz, handlePositionQuizPlay, handlePositionQuizPick, nextPositionQuizQuestion, ensureTransportBuilder, currentTransportBuildItem, handleTransportBuildToken, clearTransportBuilder, nextTransportBuilder, ensureEverydayActionsQuiz, currentEverydayAction, handleEverydayActionsPick, nextEverydayActionsQuestion, resetNumberChallenge, ensureMathChallenge, handleNumberChallengeGuess, resetMathChallenge, handleMathChallengeSubmit, renderNumberVisual, introductionsBuildTarget, ensureIntroductionsBuilder, resetIntroductionsBuilder, handleIntroductionsBuildClear, handleIntroductionsBuildToken, ageGameItems, ensureAgeChallenge, ensureAgeBuilder, ageBuildTarget, handleAgeChallengePlay, handleAgeChallengeGuess, resetAgeBuilder, handleAgeBuildClear, handleAgeBuildToken, renderSchoolPractice } = context;
+  const { state, schoolTopicData, visualTopicItems, positionPracticeItems, timeDateWeekItems, timeDateClockItems, datePracticeItems, timeDateMonthItems, timeDateRoutineItems, clothesMatchItems, clothesSentenceItems, everydayActionItems, illustratedKids, numberHanzi, buildNumberItem, currentTopic, currentNumberStage, currentBook, currentLesson, focusItemsForTopic, shuffleArray, speak, renderFocusExplorer, renderFocusStatus, renderSharedLessonPractice, renderPracticeSayCards, bindPracticeSayCards, activityPanelTitle, activityPanelSummary, activityList, topicColumns, renderBodyPractice, renderWorldPractice, renderHobbiesPractice, activeTimeDateSection, ensureWeekdayChallenge, ensureWeekdayMatchGame, handleWeekdayChallengePlay, handleWeekdayChallengeGuess, resetWeekdayMatchGame, handleWeekdayMatchPhrase, handleWeekdayMatchAttempt, ensureDateChallenge, ensureDateMatchGame, handleDateChallengePlay, handleDateChallengeGuess, resetDateMatchGame, handleDateMatchPhrase, handleDateMatchEvent, familyGameItems, familyListenItems, familyPersonForItemId, familyHeadshotForItemId, ensureFamilyChallenge, ensureFamilyMatchGame, handleFamilyChallengePlay, handleFamilyChallengeGuess, resetFamilyMatchGame, handleFamilyMatchPhrase, handleFamilyMatchAttempt, greetingsGameItems, greetingsMeaningLabel, ensureGreetingsChallenge, ensureGreetingsMatchGame, handleGreetingsChallengePlay, handleGreetingsChallengeGuess, resetGreetingsMatchGame, handleGreetingsMatchPhrase, handleGreetingsMatchAttempt, nationalityPracticeItems, ensureNationalityChallenge, currentNationalityAnswer, handleNationalityChallengePlay, handleNationalityChallengeGuess, ensureNationalityMatchGame, resetNationalityMatchGame, handleNationalityMatchPhrase, handleNationalityMatchAttempt, languagePracticeItems, ensureLanguageChallenge, currentLanguageAnswer, handleLanguageChallengePlay, handleLanguageChallengeGuess, politeGameItems, politeMeaningLabel, ensurePoliteChallenge, ensurePoliteMatchGame, handlePoliteChallengePlay, handlePoliteChallengeGuess, resetPoliteMatchGame, handlePoliteMatchPhrase, handlePoliteMatchAttempt, ensureRoomBuilder, currentRoomBuildItem, handleRoomBuildToken, clearRoomBuilder, nextRoomBuilder, ensureClothesQuiz, handleClothesQuizPick, nextClothesQuizQuestion, ensureClothesSentenceQuiz, handleClothesSentencePick, nextClothesSentenceQuestion, ensureTimeRoutineQuiz, handleTimeRoutineQuizPick, nextTimeRoutineQuizQuestion, ensureClockQuiz, handleClockQuizPick, nextClockQuizQuestion, ensureComparisonBuilder, currentComparisonBuildItem, handleComparisonBuildToken, clearComparisonBuilder, nextComparisonBuilder, ensurePositionQuiz, handlePositionQuizPlay, handlePositionQuizPick, nextPositionQuizQuestion, ensureTransportBuilder, currentTransportBuildItem, handleTransportBuildToken, clearTransportBuilder, nextTransportBuilder, ensureEverydayActionsQuiz, currentEverydayAction, handleEverydayActionsPick, nextEverydayActionsQuestion, resetNumberChallenge, ensureMathChallenge, handleNumberChallengeGuess, resetMathChallenge, handleMathChallengeSubmit, renderNumberVisual, introductionsBuildTarget, ensureIntroductionsBuilder, resetIntroductionsBuilder, handleIntroductionsBuildClear, handleIntroductionsBuildToken, ageGameItems, ensureAgeChallenge, ensureAgeBuilder, ageBuildTarget, handleAgeChallengePlay, handleAgeChallengeGuess, resetAgeBuilder, handleAgeBuildClear, handleAgeBuildToken, renderSchoolPractice } = context;
+
+function familySentenceBuilderMarkup() {
+  const labels = { "older-sister": "姐姐", "older-brother": "哥哥", "younger-brother": "弟弟", "younger-sister": "妹妹" };
+  const counts = state.familySentenceCounts;
+  const selectedSiblingCount = Object.values(counts).reduce((sum, count) => sum + (count ?? 0), 0);
+  const minimumHouseholdCount = 2 + selectedSiblingCount;
+  const countWords = ["没有", "一个", "两个", "三个"];
+  const phrases = Object.entries(counts).filter(([, count]) => count > 0).map(([id, count]) => `${countWords[count]}${labels[id]}`);
+  const total = state.familyHouseholdCount;
+  const householdHanzi = ["", "一", "二", "三", "四", "五", "六", "七", "八", "九", "十", "十一", "十二", "十三", "十四"];
+  const totalHanzi = householdHanzi[total];
+  const totalPinyin = ["", "yī", "èr", "sān", "sì", "wǔ", "liù", "qī", "bā", "jiǔ", "shí", "shí yī", "shí èr", "shí sān", "shí sì"][total];
+  const join = (items) => items.length < 2 ? items[0] : `${items.slice(0, -1).join("、")}和${items.at(-1)}`;
+  const noSiblings = Object.entries(counts).filter(([, count]) => count === 0).map(([id]) => labels[id]);
+  return `<section class="practice-split-card family-sentence-builder"><div class="numbers-game-top"><div><p class="body-match-kicker">Make your own sentence</p><p class="numbers-game-note">Choose your household size and the brothers and sisters you have.</p></div><button class="small-button is-play-button" type="button" data-family-sentence-play>Play</button></div><div class="family-sentence-choice family-household-choice"><p class="family-household-label">我家有几口人？</p><div class="family-household-choice-options">${[2,3,4,5,6].map((value) => `<button class="numbers-game-option${total === value ? " is-selected" : ""}" type="button" data-family-household-count="${value}" ${value < minimumHouseholdCount ? "disabled" : ""}>${householdHanzi[value]}口</button>`).join("")}</div></div><div class="family-sentence-choice-grid">${Object.entries(labels).map(([id, label]) => `<div class="family-sentence-choice"><p class="family-sentence-sibling-label">${label}</p><div class="family-sentence-choice-options">${countWords.map((text, value) => `<button class="numbers-game-option${counts[id] === value ? " is-selected" : ""}" type="button" data-family-sentence-count="${id}" data-family-sentence-value="${value}" ${selectedSiblingCount - (counts[id] ?? 0) + value > 4 ? "disabled" : ""}>${text}</button>`).join("")}</div></div>`).join("")}</div><div class="family-sentence-preview">${total ? `<p class="numbers-game-hanzi">我家有${totalHanzi}口人。</p>${state.showPinyin ? `<p class="numbers-game-pinyin">wǒ jiā yǒu ${totalPinyin} kǒu rén.</p>` : ""}` : ""}${phrases.length ? `<p class="numbers-game-hanzi">我有${join(phrases)}。</p>` : ""}${noSiblings.length ? `<p class="numbers-game-hanzi">我没有${join(noSiblings)}。</p>` : ""}</div></section>`;
+}
+
+function bindFamilySentenceBuilder(container) {
+  const completedSentence = () => {
+    const labels = { "older-sister": "姐姐", "older-brother": "哥哥", "younger-brother": "弟弟", "younger-sister": "妹妹" };
+    const countWords = ["没有", "一个", "两个", "三个"];
+    const householdHanzi = ["", "一", "二", "三", "四", "五", "六"];
+    const counts = state.familySentenceCounts;
+    const join = (items) => items.length < 2 ? items[0] : `${items.slice(0, -1).join("、")}和${items.at(-1)}`;
+    const positive = Object.entries(counts).filter(([, count]) => count > 0).map(([id, count]) => `${countWords[count]}${labels[id]}`);
+    const negative = Object.entries(counts).filter(([, count]) => count === 0).map(([id]) => labels[id]);
+    return [`我家有${householdHanzi[state.familyHouseholdCount]}口人。`, positive.length ? `我有${join(positive)}。` : "", negative.length ? `我没有${join(negative)}。` : ""].filter(Boolean).join("");
+  };
+  const speakSentence = () => {
+    const hasAllChoices = state.familyHouseholdCount && Object.values(state.familySentenceCounts).every((count) => count !== null);
+    if (!hasAllChoices) return;
+    const text = completedSentence();
+  if (text) speak(text, 0.78);
+  };
+  container.querySelector("[data-family-sentence-play]")?.addEventListener("click", () => {
+    state.familyHouseholdCount = 0;
+    state.familySentenceCounts = { "older-sister": null, "older-brother": null, "younger-brother": null, "younger-sister": null };
+    renderActivityPanel(currentTopic());
+  });
+  container.querySelectorAll("[data-family-household-count]").forEach((button) => button.addEventListener("click", () => {
+    state.familyHouseholdCount = Number(button.dataset.familyHouseholdCount);
+    renderActivityPanel(currentTopic());
+    speakSentence();
+  }));
+  container.querySelectorAll("[data-family-sentence-count]").forEach((button) => button.addEventListener("click", () => {
+    const nextCounts = { ...state.familySentenceCounts, [button.dataset.familySentenceCount]: Number(button.dataset.familySentenceValue) };
+    const nextMinimum = 2 + Object.values(nextCounts).reduce((sum, count) => sum + (count ?? 0), 0);
+    state.familySentenceCounts = nextCounts;
+    if (state.familyHouseholdCount && state.familyHouseholdCount < nextMinimum) state.familyHouseholdCount = 0;
+    renderActivityPanel(currentTopic());
+    speakSentence();
+  }));
+}
 
 function sharedLessonPracticeConfig(topic) {
   if (topic.id === "languages") {
@@ -118,25 +171,11 @@ function sharedLessonPracticeConfig(topic) {
 
   if (topic.id === "family") {
     return {
-      summary: "Listen for family words, match each word to a family member, then introduce a five-person family.",
-      sayItems: [
-        { hanzi: "我家有五口人。", pinyin: "wǒ jiā yǒu wǔ kǒu rén.", english: "There are five people in my family.", audio: "我家有五口人" },
-        { hanzi: "爸爸、妈妈、哥哥、弟弟和我。", pinyin: "bà ba, mā ma, gē ge, dì di hé wǒ.", english: "Dad, Mum, my older brother, my younger brother, and me.", audio: "爸爸妈妈哥哥弟弟和我" }
-      ],
+      summary: "Make your own family sentence, then match each family word to the right family member.",
       ensure: () => {
-        ensureFamilyChallenge();
         ensureFamilyMatchGame();
       },
-      listen: {
-        items: familyGameItems,
-        optionIds: () => state.familyChallengeOptionIds,
-        pickedId: () => state.familyChallengePickedId,
-        result: () => state.familyChallengeResult,
-        wrongIds: () => state.familyChallengeWrongIds,
-        feedback: () => state.familyListenFeedback,
-        onPlay: handleFamilyChallengePlay,
-        onGuess: handleFamilyChallengeGuess
-      },
+      builder: { markup: familySentenceBuilderMarkup, bind: bindFamilySentenceBuilder },
       match: {
         phraseHeading: "Chinese",
         meaningHeading: "Family member",

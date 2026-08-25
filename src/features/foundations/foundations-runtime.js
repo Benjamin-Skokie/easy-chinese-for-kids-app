@@ -1,5 +1,5 @@
 export function createFoundationsRuntime(context) {
-  const { state, numberHanzi, numberPinyin, buildNumberItem, numberStages, telephonePractice, familyGameItemIds, familyPersonIdsByItemId, familyHeadshotsByItemId, familyPractice, illustratedFamily, illustratedKids, bodyBonusItemIds, bodyCoreItemIds, bodyDiagramLayout, identityConversation, nationalityConversation, identityCountries, identityExploreCountries, identityLanguageQuestion, identityQuestion, topicById, focusItemsForTopic, currentTopic, currentNumberStage, currentFocusItem, currentBook, currentLesson, shuffleArray, chineseUtterance, speak, speakSceneLines, renderActivityPanel, renderFocusDisplay, renderFocusExplorer, renderFocusStatus, selectFocusItem, bodySentenceForItem, focusExplorer, focusStatus, activityPanelTitle, activityPanelSummary, activityList } = context;
+  const { state, numberHanzi, numberPinyin, buildNumberItem, numberStages, telephonePractice, familyGameItemIds, familyPossessionPractice, familyPersonIdsByItemId, familyHeadshotsByItemId, familyPractice, illustratedFamily, illustratedKids, bodyBonusItemIds, bodyCoreItemIds, bodyDiagramLayout, identityConversation, nationalityConversation, identityCountries, identityExploreCountries, identityLanguageQuestion, identityQuestion, topicById, focusItemsForTopic, currentTopic, currentNumberStage, currentFocusItem, currentBook, currentLesson, shuffleArray, chineseUtterance, speak, speakSceneLines, renderActivityPanel, renderFocusDisplay, renderFocusExplorer, renderFocusStatus, selectFocusItem, bodySentenceForItem, focusExplorer, focusStatus, activityPanelTitle, activityPanelSummary, activityList } = context;
   let telephoneMatchSelectedId = "";
   let telephoneMatchedIds = new Set();
   let telephoneMatchFeedback = "";
@@ -82,6 +82,10 @@ function familyGameItems() {
   return familyGameItemIds
     .map((id) => familyTopic?.focusItems.find((item) => item.id === id))
     .filter(Boolean);
+}
+
+function familyListenItems() {
+  return familyPossessionPractice;
 }
 
 function familyPersonForItemId(itemId) {
@@ -177,15 +181,12 @@ function usefulNoteForTopic(topic) {
       </p>
     `,
     family: `
-      <p class="greetings-note-hanzi">爸爸 / 妈妈 / 哥哥 / 弟弟 / 姐姐 / 妹妹</p>
+      <p class="greetings-note-hanzi">有 / 一个 / 两个</p>
       <p class="greetings-note-copy">
-        In sentences like <strong>我爱爸爸</strong> and <strong>我爱妈妈</strong>, the family word names who the child loves. <strong>我</strong> names the speaker, and <strong>爱</strong> names the feeling.
+        <strong>有</strong> means “have.” Put the family members after it: <strong>我有一个姐姐和一个弟弟。</strong>
       </p>
       <p class="greetings-note-copy">
-        <strong>哥哥</strong> and <strong>弟弟</strong> are the brother pair: older brother, then younger brother. <strong>姐姐</strong> and <strong>妹妹</strong> are the sister pair: older sister, then younger sister.
-      </p>
-      <p class="greetings-note-copy">
-        In listening practice, the repeated family word is the anchor. For sisters, <strong>姐姐</strong> and <strong>妹妹</strong> both use <strong>女</strong>, so children can group the two sister words together.
+        Use <strong>一个</strong> for one and <strong>两个</strong> for two before a family member: <strong>一个姐姐</strong>, <strong>两个弟弟</strong>.
       </p>
       <p class="greetings-note-copy">
         In <strong>我家有五口人</strong>, <strong>口</strong> is the measure word used to count people in a family. Children can use the same frame with their own family photo.
@@ -217,7 +218,7 @@ function familyWordForPersonId(personId) {
 }
 
 function resetFamilyChallenge(options = {}) {
-  const items = familyGameItems();
+  const items = familyListenItems();
   if (!items.length) {
     return;
   }
@@ -253,8 +254,8 @@ function resetListenChallengeResult(challengeKey) {
 }
 
 function handleFamilyChallengePlay() {
-  ensureFamilyChallenge();
-  const item = familyGameItems().find((entry) => entry.id === state.familyChallengePromptId);
+  resetFamilyChallenge();
+  const item = familyListenItems().find((entry) => entry.id === state.familyChallengePromptId);
   if (!item) {
     return;
   }
@@ -270,14 +271,13 @@ function handleFamilyChallengePlay() {
 
 function handleFamilyChallengeGuess(itemId) {
   ensureFamilyChallenge();
-  const answer = familyGameItems().find((entry) => entry.id === state.familyChallengeAnswerId);
-  const picked = familyGameItems().find((entry) => entry.id === itemId);
+  const answer = familyListenItems().find((entry) => entry.id === state.familyChallengeAnswerId);
+  const picked = familyListenItems().find((entry) => entry.id === itemId);
   if (!answer || !picked) {
     return;
   }
 
   if (itemId === answer.id) {
-    state.selectedFocusItemId = answer.id;
     state.familyChallengePickedId = itemId;
     state.familyChallengeResult = "correct";
     if (state.tapAudioEnabled) {
@@ -285,9 +285,6 @@ function handleFamilyChallengeGuess(itemId) {
     }
     state.familyListenFeedback = "Nice listening.";
     state.lastFamilyFeedback = state.familyListenFeedback;
-    renderFocusDisplay(currentFocusItem());
-    renderFocusExplorer();
-    renderFocusStatus();
     renderActivityPanel(currentTopic());
     return;
   }
@@ -1010,6 +1007,10 @@ function renderFamilyHomeVisual(exchange) {
     `;
   }
 
+  if (exchange.visual === "sibling-count") {
+    return `<div class="family-lesson-visual family-lesson-visual-siblings"><img class="family-lesson-photo" src="${exchange.imagePath}" alt="${exchange.imageAlt}" /></div>`;
+  }
+
   if (exchange.visual === "family-introduction") {
     return `<div class="family-lesson-visual family-lesson-visual-introduction"><img class="family-lesson-photo" src="${exchange.imagePath}" alt="${exchange.imageAlt}" /></div>`;
   }
@@ -1678,6 +1679,6 @@ function updateMultiplicationPlaybackControls(container) {
 }
 
 
-  return { numberStageItems, resetNumberChallenge, ensureNumberChallenge, resetMathChallenge, ensureMathChallenge, familyGameItems, familyPersonForItemId, familyHeadshotForItemId, isFamilySentenceItemId, familyBookWordItems, usesLessonTemplate, bookWordItemsForTopic, usefulNoteForTopic, familyWordForPersonId, resetFamilyChallenge, ensureFamilyChallenge, resetListenChallengeResult, handleFamilyChallengePlay, handleFamilyChallengeGuess, resetFamilyMatchGame, ensureFamilyMatchGame, handleFamilyMatchPhrase, handleFamilyMatchAttempt, mathChallengeAudioText, handleMathChallengeSubmit, handleNumberChallengeGuess, bodyMatchItems, nextBodyRound, resetBodyMatchGame, ensureBodyMatchGame, handleBodyMatchChinese, handleBodyMatchAttempt, nextBodySpotlightRound, startBodySpotlightRound, handleBodySpotlightGuess, renderBodyPractice, numberWordListItems, renderBodyLabelButton, renderBodyExplorer, renderNumberVisual, renderNumbersExplorer, renderTelephoneExplorer, renderFamilyHomeVisual, renderFamilyExplorer, renderIdentityExplorer, renderMultiplicationExplorer };
+  return { numberStageItems, resetNumberChallenge, ensureNumberChallenge, resetMathChallenge, ensureMathChallenge, familyGameItems, familyListenItems, familyPersonForItemId, familyHeadshotForItemId, isFamilySentenceItemId, familyBookWordItems, usesLessonTemplate, bookWordItemsForTopic, usefulNoteForTopic, familyWordForPersonId, resetFamilyChallenge, ensureFamilyChallenge, resetListenChallengeResult, handleFamilyChallengePlay, handleFamilyChallengeGuess, resetFamilyMatchGame, ensureFamilyMatchGame, handleFamilyMatchPhrase, handleFamilyMatchAttempt, mathChallengeAudioText, handleMathChallengeSubmit, handleNumberChallengeGuess, bodyMatchItems, nextBodyRound, resetBodyMatchGame, ensureBodyMatchGame, handleBodyMatchChinese, handleBodyMatchAttempt, nextBodySpotlightRound, startBodySpotlightRound, handleBodySpotlightGuess, renderBodyPractice, numberWordListItems, renderBodyLabelButton, renderBodyExplorer, renderNumberVisual, renderNumbersExplorer, renderTelephoneExplorer, renderFamilyHomeVisual, renderFamilyExplorer, renderIdentityExplorer, renderMultiplicationExplorer };
 }
 import { nextRandomCycleId } from "../../core/random-cycle.js";
