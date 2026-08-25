@@ -9,6 +9,9 @@ export function createAgeController({ state, ageGameItemIds, ageBuildPhrases, ag
     if (!answer) return;
     const distractors = shuffleArray(items.filter((item) => item.id !== answer.id)).slice(0, Math.min(3, Math.max(0, items.length - 1)));
     state.ageChallengeAnswerId = answer.id;
+    state.ageChallengePickedId = "";
+    state.ageChallengeResult = "";
+    state.ageChallengeWrongIds = new Set();
     state.ageChallengePromptId = answer.id;
     state.ageChallengeOptionIds = shuffleArray([answer.id, ...distractors.map((item) => item.id)]);
     state.lastAgeFeedback = options.feedback ?? "";
@@ -28,13 +31,18 @@ export function createAgeController({ state, ageGameItemIds, ageBuildPhrases, ag
     const picked = ageGameItems().find((entry) => entry.id === itemId);
     if (!answer || !picked) return;
     if (itemId === answer.id) {
+      state.ageChallengePickedId = itemId;
+      state.ageChallengeResult = "correct";
       state.selectedFocusItemId = answer.id;
       if (state.tapAudioEnabled) speak(answer.audio, 0.78);
       state.lastAgeFeedback = `Correct! ${answer.hanzi} matches the audio.`;
-      renderFocusDisplay(currentFocusItem()); renderFocusExplorer(); renderFocusStatus();
+      renderFocusDisplay(currentFocusItem()); renderFocusExplorer(); renderFocusStatus(); renderActivityPanel(currentTopic());
       window.setTimeout(() => { resetAgeChallenge(); renderActivityPanel(currentTopic()); }, 650);
       return;
     }
+    state.ageChallengePickedId = itemId;
+    state.ageChallengeResult = "wrong";
+    state.ageChallengeWrongIds = new Set([...state.ageChallengeWrongIds, itemId]);
     state.lastAgeFeedback = `Try again. You picked ${picked.hanzi}, but the audio is ${answer.hanzi}.`;
     renderActivityPanel(currentTopic());
   }

@@ -1,5 +1,5 @@
 export function createTopicDetailRuntime(context) {
-  const { state, books, numberStages, schoolTopicData, topicPageUrl, topicIdFromLocation, viewFromLocation, bookSelect, lessonSelect, topicTitle, topicSummary, topicProgress, topicLessonStrip, subtopicShelf, focusDisplay, currentTopic, currentNumberStage, focusItemsForTopic, currentFocusItem, currentBook, currentLesson, selectedTopicGroupId, bookCategoryForBook, categoryIdForTopic, narrowTopicBrowserTo, renderTopics, renderBooks, updateTopicPageVisibility, focusLearningPanel, renderFocusControls, renderFocusDisplay, renderFocusExplorer, renderFocusWordList, renderFocusStatus, renderActivityPanel, ensureBodyMatchGame, isFamilySentenceItemId, familyBookWordItems, usesLessonTemplate, syncBookSelectionFromTopic, switchView, updateLearningCultureNav } = context;
+  const { state, books, numberStages, schoolTopicData, topicPageUrl, topicIdFromLocation, viewFromLocation, bookSelect, lessonSelect, topicTitle, topicSummary, topicProgress, topicLessonStrip, subtopicShelf, focusDisplay, focusExplorer, currentTopic, currentNumberStage, focusItemsForTopic, currentFocusItem, currentBook, currentLesson, selectedTopicGroupId, bookCategoryForBook, categoryIdForTopic, narrowTopicBrowserTo, renderTopics, renderBooks, updateTopicPageVisibility, focusLearningPanel, renderFocusControls, renderFocusDisplay, renderFocusExplorer, renderFocusWordList, renderFocusStatus, renderActivityPanel, ensureBodyMatchGame, isFamilySentenceItemId, familyBookWordItems, usesLessonTemplate, syncBookSelectionFromTopic, switchView, updateLearningCultureNav } = context;
 
 function selectBookLesson(bookId, lessonNumber) {
   const book = books.find((entry) => entry.id === bookId) ?? books[0];
@@ -18,6 +18,32 @@ function selectBookLesson(bookId, lessonNumber) {
   updateTopicPageVisibility();
   window.history.pushState(null, "", topicPageUrl(window.location, lesson.topicId));
   focusLearningPanel();
+}
+
+function viewBookLessonSource(bookId, lessonNumber) {
+  const book = books.find((entry) => entry.id === bookId);
+  const lesson = book?.lessons.find((entry) => entry.lesson === lessonNumber);
+  if (!book || !lesson) {
+    return;
+  }
+
+  state.selectedBookCategoryId = bookCategoryForBook(book.id).id;
+  state.selectedBookId = book.id;
+  state.selectedLessonNumber = lesson.lesson;
+  state.selectedTopicId = lesson.topicId;
+  state.topicPageOpen = false;
+  renderTopics();
+  renderBooks();
+  updateTopicPageVisibility();
+  switchView("books");
+  window.history.pushState(null, "", `${window.location.pathname}?view=books#book-lessons-${book.id}`);
+
+  window.requestAnimationFrame(() => {
+    document.querySelector(`[data-book-lesson="${book.id}:${lesson.lesson}"]`)?.scrollIntoView({
+      behavior: "smooth",
+      block: "center"
+    });
+  });
 }
 
 function topicLessonTitle(topic, step) {
@@ -50,7 +76,7 @@ function renderTopicLessonStrip(topic) {
       const bookId = step.book.toLowerCase();
       const isActive = currentBook().id === bookId && current.lesson === step.lesson;
       return `
-        <button class="topic-lesson-card${isActive ? " is-active" : ""}" type="button" data-topic-lesson="${bookId}:${step.lesson}">
+        <button class="topic-lesson-card${isActive ? " is-active" : ""}" type="button" data-topic-lesson-source="${bookId}:${step.lesson}" aria-label="View Book ${step.book} Lesson ${step.lesson}: ${step.title} in Learn by Books">
           <span class="topic-lesson-meta">Book ${step.book} Lesson ${step.lesson}</span>
           <strong>${topicLessonTitle(topic, step)}</strong>
         </button>
@@ -58,11 +84,40 @@ function renderTopicLessonStrip(topic) {
     })
     .join("");
 
-  topicLessonStrip.querySelectorAll("[data-topic-lesson]").forEach((button) => {
+  topicLessonStrip.querySelectorAll("[data-topic-lesson-source]").forEach((button) => {
     button.addEventListener("click", () => {
-      const [bookId, lessonText] = button.dataset.topicLesson.split(":");
-      selectBookLesson(bookId, Number(lessonText));
+      const [bookId, lessonText] = button.dataset.topicLessonSource.split(":");
+      viewBookLessonSource(bookId, Number(lessonText));
     });
+  });
+}
+
+function linkInlineBookLessonBadges() {
+  if (!focusExplorer) {
+    return;
+  }
+
+  focusExplorer.querySelectorAll(".numbers-stage-card .body-match-kicker").forEach((badge) => {
+    const match = badge.textContent.trim().match(/^(?:Book\s+)?([1-4][AB])\s+Lesson\s+(\d+)\b/i);
+    if (!match) {
+      return;
+    }
+
+    const bookId = match[1].toLowerCase();
+    const lessonNumber = Number(match[2]);
+    const lesson = books.find((book) => book.id === bookId)?.lessons.find((entry) => entry.lesson === lessonNumber);
+    if (!lesson) {
+      return;
+    }
+
+    const link = document.createElement("button");
+    link.className = "inline-book-lesson-link";
+    link.type = "button";
+    link.dataset.topicLessonSource = `${bookId}:${lessonNumber}`;
+    link.textContent = badge.textContent;
+    link.setAttribute("aria-label", `View Book ${match[1].toUpperCase()} Lesson ${lessonNumber}: ${lesson.title} in Learn by Books`);
+    link.addEventListener("click", () => viewBookLessonSource(bookId, lessonNumber));
+    badge.replaceWith(link);
   });
 }
 
@@ -132,6 +187,7 @@ function renderTopicDetail() {
   renderFocusControls();
   renderFocusDisplay(currentFocusItem());
   renderFocusExplorer();
+  linkInlineBookLessonBadges();
   renderFocusWordList();
   renderFocusStatus();
 

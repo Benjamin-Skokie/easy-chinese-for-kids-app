@@ -2,7 +2,34 @@ import { imageLoadingAttrs } from "./image-loading.js";
 import { nextRandomCycleId } from "./random-cycle.js";
 
 export function createLessonPracticeRuntime(context) {
-  const { state, schoolTopicData, visualTopicItems, positionPracticeItems, timeDateWeekItems, timeDateClockItems, datePracticeItems, timeDateMonthItems, timeDateRoutineItems, timeRoutineSentenceBuilds, clothesMatchItems, clothesSentenceItems, everydayActionItems, requestBuildPhrases, illustratedKids, numberHanzi, buildNumberItem, currentTopic, currentNumberStage, currentBook, currentLesson, focusItemsForTopic, shuffleArray, speak, renderFocusExplorer, renderFocusStatus, renderSharedLessonPractice, renderPracticeSayCards, bindPracticeSayCards, activityPanelTitle, activityPanelSummary, activityList, topicColumns, renderBodyPractice, renderWorldPractice, renderHobbiesPractice, activeTimeDateSection, ensureWeekdayChallenge, ensureWeekdayMatchGame, handleWeekdayChallengePlay, handleWeekdayChallengeGuess, resetWeekdayMatchGame, handleWeekdayMatchPhrase, handleWeekdayMatchAttempt, ensureDateChallenge, ensureDateMatchGame, handleDateChallengePlay, handleDateChallengeGuess, resetDateMatchGame, handleDateMatchPhrase, handleDateMatchEvent, familyGameItems, familyListenItems, familyPersonForItemId, familyHeadshotForItemId, ensureFamilyChallenge, ensureFamilyMatchGame, handleFamilyChallengePlay, handleFamilyChallengeGuess, resetFamilyMatchGame, handleFamilyMatchPhrase, handleFamilyMatchAttempt, greetingsGameItems, greetingsMeaningLabel, ensureGreetingsChallenge, ensureGreetingsMatchGame, handleGreetingsChallengePlay, handleGreetingsChallengeGuess, resetGreetingsMatchGame, handleGreetingsMatchPhrase, handleGreetingsMatchAttempt, nationalityPracticeItems, ensureNationalityChallenge, currentNationalityAnswer, handleNationalityChallengePlay, handleNationalityChallengeGuess, ensureNationalityMatchGame, resetNationalityMatchGame, handleNationalityMatchPhrase, handleNationalityMatchAttempt, languagePracticeItems, ensureLanguageChallenge, currentLanguageAnswer, handleLanguageChallengePlay, handleLanguageChallengeGuess, politeGameItems, politeMeaningLabel, ensurePoliteChallenge, ensurePoliteMatchGame, handlePoliteChallengePlay, handlePoliteChallengeGuess, resetPoliteMatchGame, handlePoliteMatchPhrase, handlePoliteMatchAttempt, ensureRoomBuilder, currentRoomBuildItem, handleRoomBuildToken, clearRoomBuilder, nextRoomBuilder, ensureClothesQuiz, handleClothesQuizPick, nextClothesQuizQuestion, ensureClothesSentenceQuiz, handleClothesSentencePick, nextClothesSentenceQuestion, ensureTimeRoutineQuiz, handleTimeRoutineQuizPick, nextTimeRoutineQuizQuestion, ensureClockQuiz, handleClockQuizPick, nextClockQuizQuestion, ensureComparisonBuilder, currentComparisonBuildItem, handleComparisonBuildToken, clearComparisonBuilder, nextComparisonBuilder, ensurePositionQuiz, handlePositionQuizPlay, handlePositionQuizPick, nextPositionQuizQuestion, ensureTransportBuilder, currentTransportBuildItem, handleTransportBuildToken, clearTransportBuilder, nextTransportBuilder, ensureEverydayActionsQuiz, currentEverydayAction, handleEverydayActionsPick, nextEverydayActionsQuestion, resetNumberChallenge, ensureMathChallenge, handleNumberChallengeGuess, resetMathChallenge, handleMathChallengeSubmit, renderNumberVisual, introductionsBuildTarget, ensureIntroductionsBuilder, resetIntroductionsBuilder, handleIntroductionsBuildClear, handleIntroductionsBuildToken, ageGameItems, ensureAgeChallenge, ensureAgeBuilder, ageBuildTarget, handleAgeChallengePlay, handleAgeChallengeGuess, resetAgeBuilder, handleAgeBuildClear, handleAgeBuildToken, renderSchoolPractice } = context;
+  const { state, schoolTopicData, visualTopicItems, positionPracticeItems, timeDateWeekItems, timeDateClockItems, datePracticeItems, timeDateMonthItems, timeDateRoutineItems, timeRoutineSentenceBuilds, clothesMatchItems, clothesSentenceItems, everydayActionItems, requestBuildPhrases, isItPracticeRounds, illustratedKids, numberHanzi, buildNumberItem, currentTopic, currentNumberStage, currentBook, currentLesson, focusItemsForTopic, shuffleArray, speak, renderFocusExplorer, renderFocusStatus, renderSharedLessonPractice, renderPracticeSayCards, bindPracticeSayCards, activityPanelTitle, activityPanelSummary, activityList, topicColumns, renderBodyPractice, renderWorldPractice, renderHobbiesPractice, activeTimeDateSection, ensureWeekdayChallenge, ensureWeekdayMatchGame, handleWeekdayChallengePlay, handleWeekdayChallengeGuess, resetWeekdayMatchGame, handleWeekdayMatchPhrase, handleWeekdayMatchAttempt, ensureDateChallenge, ensureDateMatchGame, handleDateChallengePlay, handleDateChallengeGuess, resetDateMatchGame, handleDateMatchPhrase, handleDateMatchEvent, familyGameItems, familyListenItems, familyPersonForItemId, familyHeadshotForItemId, ensureFamilyChallenge, ensureFamilyMatchGame, handleFamilyChallengePlay, handleFamilyChallengeGuess, resetFamilyMatchGame, handleFamilyMatchPhrase, handleFamilyMatchAttempt, greetingsGameItems, greetingsMeaningLabel, ensureGreetingsChallenge, ensureGreetingsMatchGame, handleGreetingsChallengePlay, handleGreetingsChallengeGuess, resetGreetingsMatchGame, handleGreetingsMatchPhrase, handleGreetingsMatchAttempt, nationalityPracticeItems, ensureNationalityChallenge, currentNationalityAnswer, handleNationalityChallengePlay, handleNationalityChallengeGuess, ensureNationalityMatchGame, resetNationalityMatchGame, handleNationalityMatchPhrase, handleNationalityMatchAttempt, languagePracticeItems, ensureLanguageChallenge, currentLanguageAnswer, handleLanguageChallengePlay, handleLanguageChallengeGuess, politeGameItems, politeMeaningLabel, ensurePoliteChallenge, ensurePoliteMatchGame, handlePoliteChallengePlay, handlePoliteChallengeGuess, resetPoliteMatchGame, handlePoliteMatchPhrase, handlePoliteMatchAttempt, ensureRoomBuilder, currentRoomBuildItem, handleRoomBuildToken, clearRoomBuilder, nextRoomBuilder, ensureClothesQuiz, handleClothesQuizPick, nextClothesQuizQuestion, ensureClothesSentenceQuiz, handleClothesSentencePick, nextClothesSentenceQuestion, ensureTimeRoutineQuiz, handleTimeRoutineQuizPick, nextTimeRoutineQuizQuestion, ensureClockQuiz, handleClockQuizPick, nextClockQuizQuestion, ensureComparisonBuilder, currentComparisonBuildItem, handleComparisonBuildToken, clearComparisonBuilder, nextComparisonBuilder, ensurePositionQuiz, handlePositionQuizPlay, handlePositionQuizPick, nextPositionQuizQuestion, ensureTransportBuilder, currentTransportBuildItem, handleTransportBuildToken, clearTransportBuilder, nextTransportBuilder, ensureEverydayActionsQuiz, currentEverydayAction, handleEverydayActionsPick, nextEverydayActionsQuestion, resetNumberChallenge, ensureMathChallenge, handleNumberChallengeGuess, resetMathChallenge, handleMathChallengeSubmit, renderNumberVisual, introductionsBuildTarget, ensureIntroductionsBuilder, resetIntroductionsBuilder, handleIntroductionsBuildClear, handleIntroductionsBuildToken, ageGameItems, ensureAgeChallenge, ensureAgeBuilder, ageBuildTarget, handleAgeChallengePlay, handleAgeChallengeGuess, resetAgeBuilder, handleAgeBuildClear, handleAgeBuildToken, renderSchoolPractice } = context;
+
+  function startIsItPracticeRound() {
+    state.isItPracticeRoundId = nextRandomCycleId(state, "is-it-practice", isItPracticeRounds.map((round) => round.id));
+    state.isItPracticePickedId = "";
+    state.isItPracticeResult = "";
+    state.isItPracticeWrongIds = new Set();
+  }
+
+  function currentIsItPracticeRound() {
+    if (!state.isItPracticeRoundId) startIsItPracticeRound();
+    return isItPracticeRounds.find((round) => round.id === state.isItPracticeRoundId) ?? isItPracticeRounds[0];
+  }
+
+  function chooseIsItPracticeAnswer(answerId) {
+    const round = currentIsItPracticeRound();
+    if (!round || state.isItPracticeResult === "correct") return;
+    state.isItPracticePickedId = answerId;
+    if (answerId === round.answerId) {
+      state.isItPracticeResult = "correct";
+      const answer = round.options.find((option) => option.id === answerId);
+      if (answer && state.tapAudioEnabled) speak(answer.audio, 0.78);
+    } else {
+      state.isItPracticeResult = "wrong";
+      state.isItPracticeWrongIds = new Set([...state.isItPracticeWrongIds, answerId]);
+    }
+    renderActivityPanel(currentTopic());
+  }
 
   function resetTimeRoutineBuilder(advance = false) {
     if (!state.timeRoutineBuildOrder.length) state.timeRoutineBuildOrder = shuffleArray(timeRoutineSentenceBuilds.map((item) => item.itemId));
@@ -493,6 +520,50 @@ function renderActivityPanel(topic) {
   topicColumns?.classList.remove("is-hidden");
   activityPanelSummary.hidden = false;
 
+  if (topic.id === "is-it") {
+    const round = currentIsItPracticeRound();
+    const complete = state.isItPracticeResult === "correct";
+    const answer = round.options.find((option) => option.id === round.answerId);
+    activityPanelTitle.textContent = "Let's practice";
+    activityPanelSummary.textContent = "Look at one picture, then choose the answer.";
+    activityList.className = "support-list";
+    activityList.innerHTML = `
+      <section class="clothes-quiz-shell is-it-practice-shell">
+        <div class="numbers-game-top">
+          <div>
+            <p class="body-match-kicker">Look and choose</p>
+            <p class="numbers-game-note">Look at the picture, then choose the answer.</p>
+          </div>
+          <button class="small-button is-practice-advance-button" type="button" data-is-it-practice-new aria-label="Start a new game">New game</button>
+        </div>
+        <figure class="clothes-quiz-visual is-it-practice-visual">
+          <img class="is-it-practice-image is-${round.panel}" src="assets/illustrated-grammar/shi-bu-shi-meimei-package.webp" alt="${round.panel === "left" ? "A sealed package" : "Meimei under an opened box"}" ${imageLoadingAttrs()} />
+        </figure>
+        <div class="is-it-question-card">
+          <p class="telephone-line-hanzi">${round.question}</p>
+          ${state.showPinyin ? `<p class="telephone-line-pinyin">${round.questionPinyin}</p>` : ""}
+          ${state.showEnglish ? `<p class="telephone-line-english">${round.questionEnglish}</p>` : ""}
+        </div>
+        <div class="numbers-game-options is-it-practice-options">
+          ${round.options.map((option) => {
+            const isCorrect = complete && option.id === round.answerId;
+            const isWrong = state.isItPracticeWrongIds.has(option.id);
+            return `<button class="numbers-game-option greetings-game-option family-listen-option${isCorrect ? " is-correct" : ""}${isWrong ? " is-wrong" : ""}" type="button" data-is-it-practice-answer="${option.id}" ${complete ? "disabled" : ""}>${isCorrect || isWrong ? `<span class="answer-result-mark" aria-hidden="true">${isCorrect ? "✓" : "×"}</span>` : ""}<span class="family-listen-copy"><span class="numbers-game-hanzi">${option.hanzi}</span>${state.showPinyin ? `<span class="numbers-game-pinyin">${option.pinyin}</span>` : ""}${state.showEnglish ? `<span class="numbers-game-english">${option.english}</span>` : ""}</span></button>`;
+          }).join("")}
+        </div>
+        ${complete && answer ? `<div class="everyday-actions-answer"><p class="telephone-line-hanzi">${answer.hanzi}</p>${state.showPinyin ? `<p class="telephone-line-pinyin">${answer.pinyin}</p>` : ""}${state.showEnglish ? `<p class="telephone-line-english">${answer.english}</p>` : ""}</div>` : ""}
+      </section>
+    `;
+    activityList.querySelector("[data-is-it-practice-new]")?.addEventListener("click", () => {
+      startIsItPracticeRound();
+      renderActivityPanel(topic);
+    });
+    activityList.querySelectorAll("[data-is-it-practice-answer]").forEach((button) => {
+      button.addEventListener("click", () => chooseIsItPracticeAnswer(button.dataset.isItPracticeAnswer));
+    });
+    return;
+  }
+
   if (topic.id === "body") {
     renderBodyPractice();
     return;
@@ -889,8 +960,16 @@ function renderActivityPanel(topic) {
         ${state.numberChallengeOptionValues
           .map((value) => {
             const option = buildNumberItem(value);
+            const isCorrect = state.numberChallengeResult === "correct" && value === state.numberChallengeTargetValue;
+            const isWrong = state.numberChallengeWrongValues.has(value);
+            const feedbackStyle = isCorrect
+              ? "border-color: #5f8f51; background: #dcefd2; box-shadow: 0 0 0 3px rgba(111, 143, 97, 0.16);"
+              : isWrong
+                ? "border-color: #be5b49; background: #f7ded8; box-shadow: 0 0 0 3px rgba(190, 91, 73, 0.12);"
+                : "";
             return `
-              <button class="numbers-game-option" type="button" data-number-game-guess="${value}">
+              <button class="numbers-game-option${isCorrect ? " is-correct" : ""}${isWrong ? " is-wrong" : ""}" type="button" data-number-game-guess="${value}" style="${feedbackStyle}" ${state.numberChallengeResult === "correct" ? "disabled" : ""}>
+                ${isCorrect || isWrong ? `<span class="answer-result-mark" aria-hidden="true">${isCorrect ? "✓" : "×"}</span>` : ""}
                 <span class="numbers-game-hanzi">${option.hanzi}</span>
                 ${state.showArabic ? `<span class="numbers-game-arabic">${option.value}</span>` : ""}
                 ${state.showPinyin ? `<span class="numbers-game-pinyin">${option.pinyin}</span>` : ""}
@@ -900,6 +979,7 @@ function renderActivityPanel(topic) {
           })
           .join("")}
       </div>
+      ${state.numberChallengeResult ? `<p class="greetings-game-feedback is-${state.numberChallengeResult}">${state.lastNumberFeedback}</p>` : ""}
     `;
     activityList.appendChild(gameCard);
 
@@ -957,7 +1037,18 @@ function renderActivityPanel(topic) {
 
     activityList.querySelectorAll("[data-number-game-guess]").forEach((button) => {
       button.addEventListener("click", () => {
-        handleNumberChallengeGuess(Number(button.dataset.numberGameGuess));
+        const value = Number(button.dataset.numberGameGuess);
+        const correct = value === state.numberChallengeTargetValue;
+        button.classList.add(correct ? "is-correct" : "is-wrong");
+        button.style.borderColor = correct ? "#5f8f51" : "#be5b49";
+        button.style.background = correct ? "#dcefd2" : "#f7ded8";
+        button.style.boxShadow = correct
+          ? "0 0 0 3px rgba(111, 143, 97, 0.16)"
+          : "0 0 0 3px rgba(190, 91, 73, 0.12)";
+        if (!button.querySelector(".answer-result-mark")) {
+          button.insertAdjacentHTML("afterbegin", `<span class="answer-result-mark" aria-hidden="true">${correct ? "✓" : "×"}</span>`);
+        }
+        handleNumberChallengeGuess(value);
       });
     });
 
@@ -1074,8 +1165,11 @@ function renderActivityPanel(topic) {
                 if (!item) {
                   return "";
                 }
+                const isCorrect = state.ageChallengeResult === "correct" && item.id === state.ageChallengeAnswerId;
+                const isWrong = state.ageChallengeWrongIds.has(item.id);
                 return `
-                  <button class="numbers-game-option greetings-game-option" type="button" data-age-game-guess="${item.id}">
+                  <button class="numbers-game-option greetings-game-option${isCorrect ? " is-correct" : ""}${isWrong ? " is-wrong" : ""}" type="button" data-age-game-guess="${item.id}" ${state.ageChallengeResult === "correct" ? "disabled" : ""}>
+                    ${isCorrect || isWrong ? `<span class="answer-result-mark" aria-hidden="true">${isCorrect ? "✓" : "×"}</span>` : ""}
                     <span class="numbers-game-hanzi">${item.hanzi}</span>
                     ${state.showPinyin ? `<span class="numbers-game-pinyin">${item.pinyin}</span>` : ""}
                     ${state.showEnglish ? `<span class="numbers-game-english">${item.english}</span>` : ""}

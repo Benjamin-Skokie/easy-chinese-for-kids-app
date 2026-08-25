@@ -26,10 +26,10 @@ export function createPoliteWordsController({
       topicId: isRequestLesson ? "requests-permission" : "polite-words",
       gameItemIds: isRequestLesson ? requestGameItemIds : politeGameItemIds,
       practice: isRequestLesson ? requestPractice : politePractice,
-      title: isRequestLesson ? "Book theme: polite requests and permission" : "Book theme: kind classroom language",
-      introduction: isRequestLesson ? "Ask politely, then listen for whether the answer is yes or no." : "Use thank you, sorry, and please in kind everyday classroom moments.",
+      title: isRequestLesson ? "Book theme: asking permission" : "Book theme: kind classroom language",
+      introduction: isRequestLesson ? "Ask with 我可以…吗？, then listen for 可以 or 不行." : "Use thank you, sorry, and please in kind everyday classroom moments.",
       note: isRequestLesson
-        ? `<p class="greetings-note-hanzi">请 / 我可以…吗？ / 可以 / 不可以</p><p class="greetings-note-copy"><strong>请</strong> makes a request polite. <strong>我可以…吗？</strong> asks permission and ends with <strong>吗</strong>.</p><p class="greetings-note-copy"><strong>可以。</strong> means yes; <strong>不可以。</strong> means no.</p>`
+        ? `<p class="greetings-note-hanzi">我可以……吗？ / 可以 / 不行</p><p class="greetings-note-copy"><strong>我可以…吗？</strong> asks permission and ends with <strong>吗</strong>.</p><p class="greetings-note-copy"><strong>可以。</strong> means yes; <strong>不行。</strong> means no. The book practises this with actions such as <strong>喝水</strong>, <strong>吃饭</strong>, and <strong>去厕所</strong>.</p>`
         : `<p class="greetings-note-hanzi">谢谢 / 不客气 / 对不起 / 没关系</p><p class="greetings-note-copy"><strong>谢谢你</strong> means “thank you,” and <strong>不客气</strong> is the kind reply: “you’re welcome.”</p><p class="greetings-note-copy"><strong>对不起</strong> is an apology; <strong>没关系</strong> is a gentle response.</p>`
     };
   }
@@ -55,6 +55,8 @@ export function createPoliteWordsController({
       return {
         "ask-teacher": "May I ask the teacher a question?",
         "ask-tv": "May I watch TV?",
+        "ask-cola": "May I drink Coke?",
+        "no-water": "No. You may drink water.",
         "yes-permission": "Yes, you may.",
         "no-permission": "No, you may not."
       }[itemId] ?? "";
@@ -213,18 +215,19 @@ export function createPoliteWordsController({
 
   function renderPoliteWordsExplorer() {
     const lesson = activeLesson();
+    const isRequestLesson = currentTopic().id === "requests-permission";
     const topic = topicById(lesson.topicId);
     const words = topic?.bookWords ?? topic?.focusItems ?? [];
     focusExplorer.innerHTML = `
       <div class="numbers-board">
-        <div class="numbers-stage-card">
+        ${isRequestLesson ? "" : `<div class="numbers-stage-card">
           <p class="body-match-kicker">${currentBook().label} Lesson ${currentLesson().lesson}</p>
           <h4>${lesson.title}</h4>
           <p>${lesson.introduction}</p>
-        </div>
+        </div>`}
         <div class="greetings-practice-grid polite-scene-grid">
           ${lesson.practice.map((exchange) => `
-            <section class="greetings-exchange">
+            <section class="greetings-exchange${currentTopic().id === "requests-permission" && exchange.id === "cola-or-water" ? " is-request-cola-scene" : ""}${currentTopic().id === "requests-permission" && exchange.id === "school-request-teacher-help" ? " is-request-teacher-scene" : ""}">
               <div class="greetings-exchange-top">
                 <div><p class="body-match-kicker">${exchange.title}</p></div>
                 <button class="small-button is-play-button" type="button" data-polite-play-all="${exchange.id}">Play</button>
@@ -233,7 +236,7 @@ export function createPoliteWordsController({
                 <div class="greetings-scene-visual">
                   <img class="greetings-scene-image" src="${exchange.imagePath}" alt="${exchange.imageAlt}" />
                 </div>
-                <div class="greetings-line-stack${currentTopic().id === "requests-permission" ? " is-request-lines" : ""}">
+                <div class="greetings-line-stack${currentTopic().id === "requests-permission" ? ` is-request-lines${exchange.id === "cola-or-water" ? " is-request-cola-lines" : ""}` : ""}">
                   ${exchange.lines.map((line) => `
                     <article class="greetings-line-card">
                       <div class="telephone-bubble-copy">

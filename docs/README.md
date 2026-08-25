@@ -23,6 +23,7 @@ Do not read the full documentation directory before starting a topic. It is slow
 ## Current project references
 
 - [topic_build_backlog.md](./topic_build_backlog.md) - short cross-catalog checklist for new topics, partial coverage, and optional asset integrations.
+- [cross_book_ocr_audit.md](./cross_book_ocr_audit.md) - OCR-first source map for all textbook lesson titles, page ranges, and app-topic tags.
 - [development_log.md](./development_log.md) - short cross-page workflow discoveries; consult only when the reason for a current rule is unclear.
 - [page-build-logs/](./page-build-logs/) - detailed iteration records for a specific page; use only when resuming that page.
 - [curriculum_guide.md](./curriculum_guide.md) - series-wide progression rules, not a page-production checklist.

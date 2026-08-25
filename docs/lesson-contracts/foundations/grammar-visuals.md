@@ -1,7 +1,7 @@
 # Grammar Visuals
 
-Status: `deferred`  
-URL: none — shared supporting assets, not a navigation topic
+Status: `implemented`
+URL: `index.html?topic=is-it#topic-detail` — the `是不是` visual has an optional Start Speaking owner; the other visuals remain shared supporting assets.
 
 ## Confirmed language and scope
 
@@ -13,7 +13,7 @@ URL: none — shared supporting assets, not a navigation topic
 | `可以 / 不可以` and school request | 3A Lesson 6 Requests (`请…`, `我可以…吗`). | Permission/request dialogue with a complete question and answer. |
 | `在` location contrast | 3B Lesson 3 Positions. | Object-location practice such as `书包在桌子下面。` alongside the book’s position language. |
 
-The library’s `是不是` package contrast and negated `在不在` contrast have no confirmed mapped lesson yet. Keep them unassigned; do not invent a yes/no grammar page around them.
+The package contrast is now an explicitly labelled **Topic enrichment**, not a book lesson. Its scope is one concrete `这是不是…？` question and a `是 / 不是` response. The negated `在不在` contrast remains unassigned.
 
 ## Approved ownership rules
 
@@ -23,8 +23,8 @@ The library’s `是不是` package contrast and negated `在不在` contrast ha
 | `school-request-teacher-help.webp` | Requests renderer | Primary visual candidate for the 3A Requests layer. |
 | `can-watch-tv-homework-first.webp` | Requests renderer, pending source-copy review | May support permission practice, but do not ship its homework/TV wording until it is confirmed against the book’s request examples. |
 | `zai-bu-zai-under-table-contrast.webp` | Positions renderer, pending source-copy review | May support location contrast after the positive `在` lesson is established; do not introduce `不在` as a separate target prematurely. |
-| `shi-bu-shi-meimei-package.webp` | Unassigned | Hold until a book-backed `是不是` / `这是不是…` lesson is identified. |
+| `shi-bu-shi-meimei-package.webp` | Is It? enrichment | Single two-panel scene: `这是不是包裹？` → `不是，这是美美。`; practice crops each panel so the child answers `是，这是一个包裹。` or `不是，这是美美。` from visual evidence. |
 
 ## Remaining coverage
 
-When a topic contract claims one of these visuals, it must record the exact sentence, the learner response, and why the image teaches that pattern better than the topic’s existing scene. If the pattern is not book-backed, leave the asset in this library.
+When a topic contract claims one of these visuals, it must record the exact sentence, the learner response, and why the image teaches that pattern better than the topic’s existing scene. Non-book use must be labelled as an enrichment topic.

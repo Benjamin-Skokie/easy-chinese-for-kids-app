@@ -26,6 +26,7 @@ import { ageBuildPhrases, agePractice, ageTopic } from "../src/features/foundati
 import { identityConversation, identityCountries, identityExploreCountries, identityLanguageQuestion, identityQuestion, identityTopic, languagesTopic, nationalityConversation } from "../src/features/foundations/identity.js";
 import { greetingsGameItemIds, greetingsPractice, greetingsTopic } from "../src/features/foundations/greetings.js";
 import { politeGameItemIds, politePractice, politeWordsTopic } from "../src/features/foundations/polite-words.js";
+import { isItPracticeRounds, isItScene, isItTopic } from "../src/features/foundations/is-it.js";
 import { requestBuildPhrases, requestGameItemIds, requestPractice, requestsPermissionTopic } from "../src/features/daily-life/requests-permission.js";
 import { clothesBookWords, clothesMatchItems, clothesPractice, clothesSentenceItems, clothesTopic } from "../src/features/daily-life/clothes.js";
 import { natureLesson, natureTopic, weatherLesson, weatherTopic } from "../src/features/world/weather.js";
@@ -48,8 +49,8 @@ import { familyGameItemIds, familyPractice, familyTopic, illustratedFamily } fro
 
 test("the local page loads a single bundled application script", () => {
   const html = readFileSync("index.html", "utf8");
-  assert.match(html, /<link rel="stylesheet" href="styles\.css\?v=20260825-home-grammar-note" \/>/);
-  assert.match(html, /<script src="app\.js\?v=20260825-home-practice-builder"><\/script>/);
+  assert.match(html, /<link rel="stylesheet" href="styles\.css\?v=20260825-number-feedback-v3" \/>/);
+  assert.match(html, /<script src="app\.js\?v=20260825-number-feedback-v3"><\/script>/);
   assert.doesNotMatch(html, /type="module"/);
 });
 
@@ -153,6 +154,34 @@ test("Comparisons keeps its sole new-game control at the top right", () => {
   assert.match(practiceSource, /is-practice-advance-button" type="button" data-comparison-build-new aria-label="Start a new game">New game<\/button>/);
   assert.match(practiceSource, /\[data-comparison-build-new\]"\)\?\.addEventListener\("click", nextComparisonBuilder\)/);
   assert.doesNotMatch(practiceSource, /data-comparison-build-next/);
+});
+
+test("Number choice cards use the same two-column language layout for every range", () => {
+  const practiceSource = readFileSync("src/core/lesson-practice-runtime.js", "utf8");
+  const foundationsSource = readFileSync("src/features/foundations/foundations-runtime.js", "utf8");
+  const styles = readFileSync("styles.css", "utf8");
+  assert.match(styles, /\.numbers-game-option\[data-number-game-guess\] \{\s+grid-template-columns: minmax\(4\.5rem, 0\.7fr\) minmax\(0, 1fr\);/);
+  assert.match(styles, /data-number-game-guess\] \.numbers-game-hanzi,[\s\S]{0,120}grid-column: 1;/);
+  assert.match(styles, /data-number-game-guess\] \.numbers-game-pinyin,[\s\S]{0,120}grid-column: 2;/);
+  assert.match(styles, /\.numbers-game-option\.is-correct,[\s\S]{0,220}background: linear-gradient\(180deg, #f4fbf0, #dcefd2\);/);
+  assert.match(styles, /\.numbers-game-option\.is-wrong,[\s\S]{0,220}background: linear-gradient\(180deg, #fff7f4, #f7ded8\);/);
+  assert.match(practiceSource, /numberChallengeWrongValues\.has\(value\)/);
+  assert.match(practiceSource, /border-color: #5f8f51; background: #dcefd2/);
+  assert.match(practiceSource, /border-color: #be5b49; background: #f7ded8/);
+  assert.match(practiceSource, /button\.style\.background = correct \? "#dcefd2" : "#f7ded8"/);
+  assert.match(practiceSource, /data-number-game-guess="\$\{value\}" style="\$\{feedbackStyle\}" \$\{state\.numberChallengeResult === "correct" \? "disabled" : ""\}/);
+  assert.match(foundationsSource, /state\.numberChallengeResult = "correct"/);
+  assert.match(foundationsSource, /state\.numberChallengeWrongValues = new Set/);
+  assert.doesNotMatch(foundationsSource, /Here comes a new round/);
+});
+
+test("listen-and-choose games show card-level correct or wrong feedback", () => {
+  const practiceSource = readFileSync("src/core/lesson-practice-runtime.js", "utf8");
+  const ageControllerSource = readFileSync("src/features/foundations/age-controller.js", "utf8");
+  assert.match(practiceSource, /data-age-game-guess="\$\{item\.id\}" \$\{state\.ageChallengeResult === "correct" \? "disabled" : ""\}/);
+  assert.match(practiceSource, /state\.ageChallengeWrongIds\.has\(item\.id\)/);
+  assert.match(ageControllerSource, /state\.ageChallengeResult = "correct"/);
+  assert.match(ageControllerSource, /state\.ageChallengeWrongIds = new Set/);
 });
 
 test("Everyday Actions keeps one silent new-game button in the practice header", () => {
@@ -765,6 +794,16 @@ test("greetings owns its template lesson scenes and listening set", () => {
   assert.equal(greetingsGameItemIds.length, 4);
 });
 
+test("Is It is an explicit enrichment topic with visual yes-or-no practice", () => {
+  assert.equal(isItTopic.progressLabel, "Topic enrichment");
+  assert.equal(isItTopic.interactiveScene, "is-it-contrast");
+  assert.equal(isItScene.imagePath, "assets/illustrated-grammar/shi-bu-shi-meimei-package.webp");
+  assert.deepEqual(isItPracticeRounds.map((round) => round.panel), ["left", "right"]);
+  assert.ok(topicData.includes(isItTopic));
+  assert.ok(topicGroups.find((group) => group.id === "daily-world")?.topicIds.includes("is-it"));
+  assert.ok(learningHomeCategories.find((category) => category.id === "time-daily")?.topicIds.includes("is-it"));
+});
+
 test("Polite Words and Requests & Permission own separate book-aligned lessons", () => {
   assert.equal(politeWordsTopic.id, "polite-words");
   assert.equal(politeWordsTopic.interactiveScene, "polite-phrases");
@@ -772,15 +811,19 @@ test("Polite Words and Requests & Permission own separate book-aligned lessons",
   assert.equal(politePractice.length, 3);
   assert.equal(politeGameItemIds.length, 4);
   assert.equal(requestsPermissionTopic.id, "requests-permission");
-  assert.equal(requestPractice.length, 3);
+  assert.equal(requestsPermissionTopic.summary, "Ask with 我可以…吗？, then listen for 可以 or 不行。");
+  assert.equal(requestPractice.length, 4);
   assert.equal(requestGameItemIds.length, 4);
-  assert.equal(requestBuildPhrases.length, 3);
+  assert.equal(requestBuildPhrases.length, 4);
   assert.ok(requestBuildPhrases.every((phrase) => phrase.tokens.length >= 4 && existsSync(phrase.imagePath)));
-  assert.deepEqual(requestPractice[0]?.lines.map((line) => line.hanzi), ["我可以看电视吗？", "不可以。"]);
-  assert.deepEqual(requestPractice[1]?.lines.map((line) => line.hanzi), ["我现在可以看电视吗？", "可以。"]);
-  assert.deepEqual(requestPractice[2]?.lines.map((line) => line.hanzi), ["我可以问老师吗？", "可以。"]);
+  assert.deepEqual(requestPractice[0]?.lines.map((line) => line.hanzi), ["我可以喝可乐吗？", "不行。你可以喝水。"]);
+  assert.deepEqual(requestPractice[1]?.lines.map((line) => line.hanzi), ["我可以看电视吗？", "不可以。"]);
+  assert.deepEqual(requestPractice[2]?.lines.map((line) => line.hanzi), ["我现在可以看电视吗？", "可以。"]);
+  assert.deepEqual(requestPractice[3]?.lines.map((line) => line.hanzi), ["我可以问老师吗？", "可以。"]);
+  assert.deepEqual(requestsPermissionTopic.bookWords.map((word) => word.hanzi), ["可以。", "不行。", "吗", "喝水", "吃饭", "厕所"]);
   assert.ok(existsSync("assets/illustrated-grammar/school-request-teacher-help.webp"));
   assert.ok(existsSync("assets/illustrated-grammar/can-watch-tv-homework-first.webp"));
+  assert.ok(existsSync("assets/illustrated-meals/anan-mom-fridge-cola-water.webp"));
 });
 
 test("Requests & Permission uses the shared two-column scene grid, sentence builder, and literal translations", () => {
@@ -788,6 +831,7 @@ test("Requests & Permission uses the shared two-column scene grid, sentence buil
   const practiceSource = readFileSync("src/core/lesson-practice-runtime.js", "utf8");
   const stylesSource = readFileSync("styles.css", "utf8");
   assert.match(controllerSource, /polite-scene-grid/);
+  assert.match(controllerSource, /isRequestLesson \? "" : `<div class="numbers-stage-card">/);
   assert.match(controllerSource, /data-polite-word/);
   assert.match(controllerSource, /我可以…吗？/);
   assert.match(practiceSource, /function requestSentenceBuilderMarkup\(\)/);
@@ -796,6 +840,12 @@ test("Requests & Permission uses the shared two-column scene grid, sentence buil
   assert.match(practiceSource, /speak\(target\.audio, 0\.78\)/);
   assert.match(stylesSource, /\.polite-scene-grid \{\s+grid-template-columns: repeat\(2, minmax\(0, 1fr\)\);/);
   assert.match(stylesSource, /\.polite-scene-grid \{\s+grid-template-columns: minmax\(0, 1fr\);/);
+  assert.match(controllerSource, /is-request-cola-scene/);
+  assert.match(controllerSource, /is-request-teacher-scene/);
+  assert.match(controllerSource, /is-request-cola-lines/);
+  assert.match(stylesSource, /\.polite-scene-grid \.is-request-cola-scene \{\s+order: 1;/);
+  assert.match(stylesSource, /\.polite-scene-grid \.is-request-teacher-scene \{\s+order: 1;/);
+  assert.match(stylesSource, /is-request-lines\.is-request-cola-lines \{\s+grid-template-columns: minmax\(0, 0\.72fr\) minmax\(0, 1\.28fr\);/);
   assert.match(stylesSource, /\.greetings-scene-layout\.polite-scene-layout \{\s+grid-template-columns: minmax\(0, 1fr\);/);
   assert.match(stylesSource, /\.polite-scene-layout \.greetings-line-stack \{\s+grid-template-columns: repeat\(2, minmax\(0, 1fr\)\);/);
 });
@@ -1251,6 +1301,48 @@ test("the shared character catalog retains every illustrated child", () => {
   assert.equal(illustratedKids.anan.hanziName, "安安");
   assert.equal(illustratedKids.tiantian.label, "Tiantian");
   assert.equal(illustratedKids.noah.hanziName, "诺亚");
+});
+
+test("every textbook lesson uses the OCR title and an explicit page-range tag", () => {
+  const reference = JSON.parse(readFileSync("docs/curriculum_reference.json", "utf8"));
+  const pageTags = JSON.parse(readFileSync("docs/ocr/book_lesson_page_tags.json", "utf8"));
+  assert.equal(reference.books.length, books.length);
+
+  for (const referenceBook of reference.books) {
+    const appBook = books.find((book) => book.id === referenceBook.book);
+    const tags = pageTags.books[referenceBook.book];
+    assert.ok(appBook, `missing app book mapping for ${referenceBook.book}`);
+    assert.ok(tags, `missing OCR page tags for ${referenceBook.book}`);
+    assert.equal(appBook.lessons.length, referenceBook.lessons.length);
+    assert.equal(tags.lessonStartPages.length, referenceBook.lessons.length);
+    assert.equal(tags.lessonEndPages.length, referenceBook.lessons.length);
+
+    referenceBook.lessons.forEach((referenceLesson, index) => {
+      const appLesson = appBook.lessons[index];
+      assert.equal(appLesson.lesson, referenceLesson.lesson, `${referenceBook.book} lesson order`);
+      assert.equal(appLesson.title, referenceLesson.title, `${referenceBook.book} lesson ${referenceLesson.lesson} title`);
+      assert.ok(appLesson.topicId, `${referenceBook.book} lesson ${referenceLesson.lesson} needs a topic tag`);
+      assert.ok(tags.lessonStartPages[index] <= tags.lessonEndPages[index], `${referenceBook.book} lesson ${referenceLesson.lesson} page range`);
+    });
+  }
+});
+
+test("every displayed book lesson source resolves to the exact curriculum lesson", () => {
+  for (const topic of topicData) {
+    for (const step of topic.steps ?? []) {
+      const book = books.find((entry) => entry.id === step.book.toLowerCase());
+      const lesson = book?.lessons.find((entry) => entry.lesson === step.lesson);
+      assert.ok(lesson, `${topic.id} has a valid ${step.book} Lesson ${step.lesson} source`);
+      assert.equal(lesson.title, step.title, `${topic.id} source title matches ${step.book} Lesson ${step.lesson}`);
+    }
+  }
+
+  const topicDetailSource = readFileSync("src/core/topic-detail-runtime.js", "utf8");
+  assert.match(topicDetailSource, /function linkInlineBookLessonBadges\(\)/);
+  assert.match(topicDetailSource, /function viewBookLessonSource\(bookId, lessonNumber\)/);
+  assert.match(topicDetailSource, /data-topic-lesson-source/);
+  assert.match(topicDetailSource, /\?view=books#book-lessons-\$\{book\.id\}/);
+  assert.match(topicDetailSource, /link\.dataset\.topicLessonSource/);
 });
 
 test("the shared curriculum retains its books and learning navigation", () => {

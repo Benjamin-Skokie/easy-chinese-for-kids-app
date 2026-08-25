@@ -27,6 +27,9 @@ function resetNumberChallenge(options = {}) {
   state.numberChallengeStageId = stage.id;
   state.numberChallengeTargetValue = targetValue;
   state.numberChallengeOptionValues = shuffleArray([targetValue, ...distractors]);
+  state.numberChallengePickedValue = null;
+  state.numberChallengeResult = "";
+  state.numberChallengeWrongValues = new Set();
   state.lastNumberFeedback =
     options.feedback ??
     "Look carefully. Pick the number without counting from one every time.";
@@ -114,7 +117,7 @@ function familyBookWordItems() {
   return focusItemsForTopic(topicById("family")).filter((item) => !isFamilySentenceItemId(item.id));
 }
 
-const lessonTemplateTopicIds = new Set(["greetings", "polite-words", "introductions", "age", "family"]);
+const lessonTemplateTopicIds = new Set(["greetings", "polite-words", "introductions", "is-it", "age", "family"]);
 
 function usesLessonTemplate(topic) {
   return lessonTemplateTopicIds.has(topic.id);
@@ -169,6 +172,15 @@ function usefulNoteForTopic(topic) {
       </p>
       <p class="greetings-note-copy">
         In <strong>他是我的好朋友。</strong>, <strong>他</strong> points to a boy already in the scene, and <strong>我的好朋友</strong> means “my good friend.”
+      </p>
+    `,
+    "is-it": `
+      <p class="greetings-note-hanzi">是不是……？ / 是 / 不是</p>
+      <p class="greetings-note-copy">
+        Put <strong>是不是</strong> around the thing you are asking about: <strong>这是不是包裹？</strong> means “Is this a package?”
+      </p>
+      <p class="greetings-note-copy">
+        Answer with <strong>是。</strong> for yes or <strong>不是。</strong> for no. Then say what it really is: <strong>不是，这是美美。</strong>
       </p>
     `,
     age: `
@@ -413,32 +425,29 @@ function handleNumberChallengeGuess(value) {
   ensureNumberChallenge();
   const target = state.numberChallengeTargetValue;
   const targetItem = buildNumberItem(target);
+  if (state.numberChallengeResult === "correct") return;
+
+  state.numberChallengePickedValue = value;
 
   if (value === target) {
+    state.numberChallengeResult = "correct";
     state.selectedFocusItemId = targetItem.id;
     if (state.tapAudioEnabled) {
       speak(targetItem.audio, 0.78);
     }
-    state.lastNumberFeedback = `Correct! ${targetItem.hanzi} is right. Here comes a new round.`;
+    state.lastNumberFeedback = `Correct! ${targetItem.hanzi} is right.`;
     renderFocusDisplay(currentFocusItem());
     renderFocusWordList();
+    renderActivityPanel(currentTopic());
     renderFocusStatus();
 
-    if (state.numberChallengeAdvanceTimer) {
-      window.clearTimeout(state.numberChallengeAdvanceTimer);
-    }
-
-    state.numberChallengeAdvanceTimer = window.setTimeout(() => {
-      resetNumberChallenge();
-      renderFocusExplorer();
-      renderActivityPanel(currentTopic());
-      renderFocusStatus();
-      state.numberChallengeAdvanceTimer = null;
-    }, 700);
     return;
   }
 
+  state.numberChallengeResult = "wrong";
+  state.numberChallengeWrongValues = new Set([...state.numberChallengeWrongValues, value]);
   state.lastNumberFeedback = `Try again. This group is ${targetItem.hanzi}, not ${buildNumberItem(value).hanzi}.`;
+  renderActivityPanel(currentTopic());
   renderFocusStatus();
 }
 

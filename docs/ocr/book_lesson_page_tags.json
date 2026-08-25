@@ -1,0 +1,14 @@
+{
+  "source": "OCR page markers in docs/ocr; PDF pages are one higher than the printed lesson-page number shown inside the textbook.",
+  "lastReviewed": "2026-08-25",
+  "books": {
+    "1a": { "ocrFile": "轻松学中文少儿版1a.txt", "lessonStartPages": [3, 15, 27, 39, 51, 63, 75], "lessonEndPages": [14, 26, 38, 50, 62, 74, 86], "nonLessonPages": [[1, 2], [87, 93]] },
+    "1b": { "ocrFile": "轻松学中文少儿版1b.txt", "lessonStartPages": [3, 15, 27, 39, 51, 63, 75], "lessonEndPages": [14, 26, 38, 50, 62, 74, 86], "nonLessonPages": [[1, 2], [87, 93]] },
+    "2a": { "ocrFile": "轻松学中文少儿版2a.txt", "lessonStartPages": [3, 15, 27, 39, 51, 63, 75], "lessonEndPages": [14, 26, 38, 50, 62, 74, 86], "nonLessonPages": [[1, 2], [87, 93]] },
+    "2b": { "ocrFile": "轻松学中文少儿版2b.txt", "lessonStartPages": [3, 15, 27, 39, 51, 63, 75], "lessonEndPages": [14, 26, 38, 50, 62, 74, 86], "nonLessonPages": [[1, 2], [87, 93]] },
+    "3a": { "ocrFile": "轻松学中文少儿版3a.txt", "lessonStartPages": [3, 17, 31, 45, 59, 73, 87], "lessonEndPages": [16, 30, 44, 58, 72, 86, 100], "nonLessonPages": [[1, 2]] },
+    "3b": { "ocrFile": "轻松学中文少儿版3b.txt", "lessonStartPages": [11, 25, 39, 53, 67, 81, 95], "lessonEndPages": [24, 38, 52, 66, 80, 94, 108], "nonLessonPages": [[1, 10], [109, 117]] },
+    "4a": { "ocrFile": "轻松学中文少儿版4a.txt", "lessonStartPages": [3, 17, 31, 45, 59, 73, 87], "lessonEndPages": [16, 30, 44, 58, 72, 86, 100], "nonLessonPages": [[1, 2]] },
+    "4b": { "ocrFile": "轻松学中文少儿版4b.txt", "lessonStartPages": [3, 17, 31, 45, 59, 73, 87], "lessonEndPages": [16, 30, 44, 58, 72, 86, 100], "nonLessonPages": [[1, 2], [101, 102]] }
+  }
+}

@@ -32,6 +32,8 @@ import { ageBuildPhrases, agePractice, ageTopic } from "../features/foundations/
 import { createAgeController } from "../features/foundations/age-controller.js";
 import { politeGameItemIds, politePractice, politeWordsTopic } from "../features/foundations/polite-words.js";
 import { createPoliteWordsController } from "../features/foundations/polite-words-controller.js";
+import { isItPracticeRounds, isItScene } from "../features/foundations/is-it.js";
+import { createIsItController } from "../features/foundations/is-it-controller.js";
 import { greetingsGameItemIds, greetingsPractice, greetingsTopic } from "../features/foundations/greetings.js";
 import { createGreetingsController } from "../features/foundations/greetings-controller.js";
 import { createNationalityController } from "../features/foundations/nationality-controller.js";
@@ -119,6 +121,7 @@ let ensurePoliteChallenge;
 let handlePoliteChallengePlay;
 let handlePoliteChallengeGuess;
 let renderPoliteWordsExplorer;
+let renderIsItExplorer;
 let introductionsPromptById;
 let introductionsGameKids;
 let introductionsSelfIntroItemForKid;
@@ -484,6 +487,14 @@ syncBookSelectionFromTopic();
   elements: { focusExplorer, focusStatus }
 }));
 
+({ renderIsItExplorer } = createIsItController({
+  state,
+  isItScene,
+  currentTopic,
+  speakSceneLines,
+  focusExplorer
+}));
+
 ({
   introductionsPromptById,
   introductionsGameKids,
@@ -768,6 +779,7 @@ clothesMatchItems,
 clothesSentenceItems,
   everydayActionItems,
   requestBuildPhrases,
+  isItPracticeRounds,
   illustratedKids,
   numberHanzi,
   buildNumberItem,
@@ -914,6 +926,7 @@ focusExplorerRuntime = createFocusExplorerRuntime({
   renderNumbersExplorer,
   renderTelephoneExplorer,
   renderPoliteWordsExplorer,
+  renderIsItExplorer,
   renderIntroductionsExplorer,
   renderIdentityExplorer,
   renderAgeExplorer,

@@ -26,6 +26,7 @@ import { hobbies3bTopic, hobbiesAtHomeTopic, hobbiesLeisureTopic, hobbiesTopic, 
 import { bodyTopic } from "../features/foundations/body.js";
 import { multiplicationRhymeTopic, numbersTopic } from "../features/foundations/numbers.js";
 import { telephoneNumbersTopic } from "../features/foundations/telephone-numbers.js";
+import { isItTopic } from "../features/foundations/is-it.js";
 
 export const visualTopicItems = {
   comparisons: comparisonVisualItems,
@@ -60,6 +61,7 @@ export const topicData = [
   multiplicationRhymeTopic,
   greetingsTopic,
   politeWordsTopic,
+  isItTopic,
   introductionsTopic,
   identityTopic,
   languagesTopic,

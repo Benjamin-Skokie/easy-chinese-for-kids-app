@@ -11,7 +11,7 @@ export const everydayActionsTopic = {
   parentGuide: "Act out one word at a time—walk, run, sit, stand, climb, or lie down—then say it together.",
   cultureGuide: "Everyday action words make it easier to describe what people are doing in familiar places.",
   activities: ["Tap to hear", "Name the action", "Picture choice"],
-  steps: [{ book: "Topic unit", lesson: 1, title: "Everyday Actions", note: "A visual vocabulary unit that reinforces action words across daily life." }]
+  steps: []
 };
 
 export const everydayActionItems = [

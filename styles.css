@@ -1710,6 +1710,35 @@ h4 {
   line-height: 1.25;
 }
 
+.inline-book-lesson-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 0;
+  border: 0;
+  color: #a5680b;
+  background: transparent;
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  line-height: 1.2;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.inline-book-lesson-link::after {
+  content: "↗";
+  font-size: 0.9rem;
+}
+
+.inline-book-lesson-link:hover,
+.inline-book-lesson-link:focus-visible {
+  color: var(--berry);
+  text-decoration: underline;
+}
+
 .is-pinyin-hidden #topic-detail [class*="pinyin"] {
   display: none !important;
 }
@@ -3263,9 +3292,59 @@ h4 {
   cursor: pointer;
 }
 
+/* Number-choice cards keep the symbol pair and language pair in two columns.
+   This makes every range, including 1–10, use the compact 11–20 treatment. */
+.numbers-game-option[data-number-game-guess] {
+  grid-template-columns: minmax(4.5rem, 0.7fr) minmax(0, 1fr);
+  grid-template-rows: minmax(1.5rem, auto) minmax(1.25rem, auto);
+  column-gap: 16px;
+  row-gap: 5px;
+  align-items: center;
+}
+
+.numbers-game-option[data-number-game-guess] .numbers-game-hanzi,
+.numbers-game-option[data-number-game-guess] .numbers-game-arabic {
+  grid-column: 1;
+}
+
+.numbers-game-option[data-number-game-guess] .numbers-game-pinyin,
+.numbers-game-option[data-number-game-guess] .numbers-game-english {
+  grid-column: 2;
+}
+
+.numbers-game-option[data-number-game-guess] .numbers-game-hanzi,
+.numbers-game-option[data-number-game-guess] .numbers-game-pinyin {
+  grid-row: 1;
+}
+
+.numbers-game-option[data-number-game-guess] .numbers-game-arabic,
+.numbers-game-option[data-number-game-guess] .numbers-game-english {
+  grid-row: 2;
+}
+
 .numbers-game-option:hover,
 .numbers-game-option:focus-visible {
   border-color: rgba(190, 91, 73, 0.4);
+  box-shadow: 0 0 0 3px rgba(190, 91, 73, 0.12);
+}
+
+/* Shared choice-game feedback: every selected answer stays visibly green or
+   red, including the number cards that do not use the family-listen layout. */
+.numbers-game-option.is-correct,
+.numbers-game-option.is-correct:hover,
+.numbers-game-option.is-correct:focus-visible {
+  position: relative;
+  border-color: rgba(111, 143, 97, 0.72);
+  background: linear-gradient(180deg, #f4fbf0, #dcefd2);
+  box-shadow: 0 0 0 3px rgba(111, 143, 97, 0.16);
+}
+
+.numbers-game-option.is-wrong,
+.numbers-game-option.is-wrong:hover,
+.numbers-game-option.is-wrong:focus-visible {
+  position: relative;
+  border-color: rgba(190, 91, 73, 0.62);
+  background: linear-gradient(180deg, #fff7f4, #f7ded8);
   box-shadow: 0 0 0 3px rgba(190, 91, 73, 0.12);
 }
 
@@ -3310,6 +3389,16 @@ h4 {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
+/* Keep the two TV exchanges together first. The cola/water exchange then sits
+   beside the teacher exchange; its short question still receives less width. */
+.polite-scene-grid .is-request-cola-scene {
+  order: 1;
+}
+
+.polite-scene-grid .is-request-teacher-scene {
+  order: 1;
+}
+
 .greetings-scene-layout.polite-scene-layout {
   grid-template-columns: minmax(0, 1fr);
   gap: 12px;
@@ -3321,6 +3410,10 @@ h4 {
 
 .polite-scene-layout .greetings-line-stack.is-request-lines {
   grid-template-columns: minmax(0, 1fr) minmax(5.25rem, 0.42fr);
+}
+
+.polite-scene-layout .greetings-line-stack.is-request-lines.is-request-cola-lines {
+  grid-template-columns: minmax(0, 0.72fr) minmax(0, 1.28fr);
 }
 
 .greetings-exchange {
@@ -3367,6 +3460,57 @@ h4 {
   border-radius: 8px;
   border: 1px solid rgba(221, 207, 187, 0.78);
   background: #fffdf8;
+}
+
+.is-it-scene-card {
+  max-width: 920px;
+  margin: 0 auto;
+}
+
+.is-it-scene-image {
+  aspect-ratio: 2 / 1;
+  object-fit: contain;
+  background: #f9e9b9;
+}
+
+.is-it-line-stack {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.is-it-practice-shell {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.is-it-practice-visual {
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  background: #f9e9b9;
+}
+
+.is-it-practice-image {
+  display: block;
+  width: 200%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+}
+
+.is-it-practice-image.is-left {
+  transform: translateX(0);
+}
+
+.is-it-practice-image.is-right {
+  transform: translateX(-50%);
+}
+
+.is-it-question-card,
+.is-it-practice-shell .everyday-actions-answer {
+  text-align: center;
+}
+
+.is-it-practice-options {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .time-routine-card {

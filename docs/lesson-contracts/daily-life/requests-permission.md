@@ -1,20 +1,20 @@
 # Requests & Permission
 
-Status: `built — awaiting review`
+Status: `partial` — book core added; source-alignment review remains
 URL: `index.html?topic=requests-permission#topic-detail`
 
 ## Book evidence
 
-- **3A Lesson 6 — Request:** `请…`, `我可以…吗？`, `可以。`, and `不可以。`.
+- **3A Lesson 6 — Request, OCR pages 73–78:** `可以`, `不行`, `吗`, `厕所`, `喝水`, and `吃饭`; the core frame is `我可以…吗？` with `可以。` or `不行。`.
 
 ## Approved page blueprint
 
 | Section | Owner | Decision |
 | --- | --- | --- |
-| Scene | Requests & Permission renderer | A 2 × 2 desktop grid with three occupied cards: two distinct 4:3 home TV-permission scenes fill the first row (`我可以看电视吗？ / 不可以。`, then `我现在可以看电视吗？ / 可以。`), and the 4:3 classroom request, `我可以问老师吗？ / 可以。`, is in the lower-left card. Each card has one top-right Play control. |
-| Book words | Requests & Permission renderer | Text-only cards for `请`, `可以。`, and `不可以。`; the full requests stay in the scene. |
-| Useful note | Requests & Permission renderer | Explain that `请` makes a request polite, while `我可以…吗？` asks permission; `可以` and `不可以` are the two answers. |
-| Practice | Shared lesson-game template | Two activities only: build a picture-led request from word pieces (the two TV requests or `我可以问老师吗？`), then match each Chinese request or reply to its exact English translation. Each activity has one top-right green Play button; completing the builder speaks the complete sentence and reveals Chinese, pinyin, and English. |
+| Scene | Requests & Permission renderer | A 2 × 2 desktop grid: the existing cola/water visual is the book-tagged core scene, `我可以喝可乐吗？ / 不行。你可以喝水。`. The two TV scenes and classroom request remain enrichment rather than replacing the book layer. Each card has one top-right Play control. |
+| Book words | Requests & Permission renderer | Text-only cards for `可以、不行、吗、喝水、吃饭、厕所`. `请` remains available as enrichment but is not presented as 3A Lesson 6 book evidence. |
+| Useful note | Requests & Permission renderer | Explain that `我可以…吗？` asks permission; `可以` and `不行` answer it. |
+| Practice | Shared lesson-game template | The picture-led builder includes the cola question. Matching includes the full `不行。你可以喝水。` reply. Each activity has one top-right green Play button; completing the builder speaks the complete sentence and reveals Chinese, pinyin, and English. |
 
 ## Scope
 

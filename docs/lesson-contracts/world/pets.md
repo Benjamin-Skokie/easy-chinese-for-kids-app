@@ -21,7 +21,7 @@ Mapped lesson: **1B Lesson 5 — Pets**
 
 ## Lesson evidence
 
-+- **1B Lesson 5 — Pets:** Words: `狗、猫、金鱼、乌龟`. Pattern: `喜欢`.
++- **1B Lesson 5 — Pets:** Words: `狗、猫、金鱼、乌龟`. Pattern: `喜欢`. The OCR does not introduce `我有一只…`, so that ownership/counting frame is intentionally not part of this lesson.
 
 ## Remaining coverage
 

@@ -62,6 +62,9 @@
       numberChallengeStageId: "",
       numberChallengeTargetValue: null,
       numberChallengeOptionValues: [],
+      numberChallengePickedValue: null,
+      numberChallengeResult: "",
+      numberChallengeWrongValues: /* @__PURE__ */ new Set(),
       lastNumberFeedback: "",
       numberChallengeAdvanceTimer: null,
       mathChallengeStageId: "",
@@ -109,6 +112,9 @@
       introductionsBuildSelectedTokens: [],
       ageChallengeAnswerId: "",
       ageChallengeOptionIds: [],
+      ageChallengePickedId: "",
+      ageChallengeResult: "",
+      ageChallengeWrongIds: /* @__PURE__ */ new Set(),
       ageChallengePromptId: "",
       lastAgeFeedback: "",
       ageBuildTargetId: "",
@@ -132,6 +138,10 @@
       requestBuildSelectedTokens: [],
       requestBuildFeedback: "",
       requestBuildResult: "",
+      isItPracticeRoundId: "",
+      isItPracticePickedId: "",
+      isItPracticeResult: "",
+      isItPracticeWrongIds: /* @__PURE__ */ new Set(),
       nationalityChallengeAnswerId: "",
       nationalityChallengeOptionIds: [],
       nationalityChallengePickedId: "",
@@ -644,7 +654,31 @@
 
   // src/core/lesson-practice-runtime.js
   function createLessonPracticeRuntime(context) {
-    const { state: state2, schoolTopicData: schoolTopicData3, visualTopicItems: visualTopicItems2, positionPracticeItems: positionPracticeItems2, timeDateWeekItems: timeDateWeekItems2, timeDateClockItems: timeDateClockItems2, datePracticeItems: datePracticeItems2, timeDateMonthItems: timeDateMonthItems2, timeDateRoutineItems: timeDateRoutineItems2, timeRoutineSentenceBuilds: timeRoutineSentenceBuilds2, clothesMatchItems: clothesMatchItems2, clothesSentenceItems: clothesSentenceItems2, everydayActionItems: everydayActionItems2, requestBuildPhrases: requestBuildPhrases2, illustratedKids: illustratedKids2, numberHanzi: numberHanzi2, buildNumberItem: buildNumberItem2, currentTopic: currentTopic2, currentNumberStage: currentNumberStage2, currentBook: currentBook2, currentLesson: currentLesson2, focusItemsForTopic: focusItemsForTopic2, shuffleArray: shuffleArray2, speak: speak2, renderFocusExplorer: renderFocusExplorer2, renderFocusStatus: renderFocusStatus2, renderSharedLessonPractice: renderSharedLessonPractice2, renderPracticeSayCards: renderPracticeSayCards2, bindPracticeSayCards: bindPracticeSayCards2, activityPanelTitle: activityPanelTitle2, activityPanelSummary: activityPanelSummary2, activityList: activityList2, topicColumns: topicColumns2, renderBodyPractice: renderBodyPractice2, renderWorldPractice, renderHobbiesPractice, activeTimeDateSection: activeTimeDateSection2, ensureWeekdayChallenge: ensureWeekdayChallenge2, ensureWeekdayMatchGame: ensureWeekdayMatchGame2, handleWeekdayChallengePlay: handleWeekdayChallengePlay2, handleWeekdayChallengeGuess: handleWeekdayChallengeGuess2, resetWeekdayMatchGame: resetWeekdayMatchGame2, handleWeekdayMatchPhrase: handleWeekdayMatchPhrase2, handleWeekdayMatchAttempt: handleWeekdayMatchAttempt2, ensureDateChallenge: ensureDateChallenge2, ensureDateMatchGame: ensureDateMatchGame2, handleDateChallengePlay: handleDateChallengePlay2, handleDateChallengeGuess: handleDateChallengeGuess2, resetDateMatchGame: resetDateMatchGame2, handleDateMatchPhrase: handleDateMatchPhrase2, handleDateMatchEvent: handleDateMatchEvent2, familyGameItems: familyGameItems2, familyListenItems: familyListenItems2, familyPersonForItemId: familyPersonForItemId2, familyHeadshotForItemId: familyHeadshotForItemId2, ensureFamilyChallenge: ensureFamilyChallenge2, ensureFamilyMatchGame: ensureFamilyMatchGame2, handleFamilyChallengePlay: handleFamilyChallengePlay2, handleFamilyChallengeGuess: handleFamilyChallengeGuess2, resetFamilyMatchGame: resetFamilyMatchGame2, handleFamilyMatchPhrase: handleFamilyMatchPhrase2, handleFamilyMatchAttempt: handleFamilyMatchAttempt2, greetingsGameItems: greetingsGameItems2, greetingsMeaningLabel: greetingsMeaningLabel2, ensureGreetingsChallenge: ensureGreetingsChallenge2, ensureGreetingsMatchGame: ensureGreetingsMatchGame2, handleGreetingsChallengePlay: handleGreetingsChallengePlay2, handleGreetingsChallengeGuess: handleGreetingsChallengeGuess2, resetGreetingsMatchGame: resetGreetingsMatchGame2, handleGreetingsMatchPhrase: handleGreetingsMatchPhrase2, handleGreetingsMatchAttempt: handleGreetingsMatchAttempt2, nationalityPracticeItems: nationalityPracticeItems2, ensureNationalityChallenge: ensureNationalityChallenge2, currentNationalityAnswer: currentNationalityAnswer2, handleNationalityChallengePlay: handleNationalityChallengePlay2, handleNationalityChallengeGuess: handleNationalityChallengeGuess2, ensureNationalityMatchGame: ensureNationalityMatchGame2, resetNationalityMatchGame: resetNationalityMatchGame2, handleNationalityMatchPhrase: handleNationalityMatchPhrase2, handleNationalityMatchAttempt: handleNationalityMatchAttempt2, languagePracticeItems: languagePracticeItems2, ensureLanguageChallenge: ensureLanguageChallenge2, currentLanguageAnswer: currentLanguageAnswer2, handleLanguageChallengePlay: handleLanguageChallengePlay2, handleLanguageChallengeGuess: handleLanguageChallengeGuess2, politeGameItems: politeGameItems2, politeMeaningLabel: politeMeaningLabel2, ensurePoliteChallenge: ensurePoliteChallenge2, ensurePoliteMatchGame: ensurePoliteMatchGame2, handlePoliteChallengePlay: handlePoliteChallengePlay2, handlePoliteChallengeGuess: handlePoliteChallengeGuess2, resetPoliteMatchGame: resetPoliteMatchGame2, handlePoliteMatchPhrase: handlePoliteMatchPhrase2, handlePoliteMatchAttempt: handlePoliteMatchAttempt2, ensureRoomBuilder: ensureRoomBuilder2, currentRoomBuildItem: currentRoomBuildItem2, handleRoomBuildToken: handleRoomBuildToken2, clearRoomBuilder: clearRoomBuilder2, nextRoomBuilder: nextRoomBuilder2, ensureClothesQuiz: ensureClothesQuiz2, handleClothesQuizPick: handleClothesQuizPick2, nextClothesQuizQuestion: nextClothesQuizQuestion2, ensureClothesSentenceQuiz: ensureClothesSentenceQuiz2, handleClothesSentencePick: handleClothesSentencePick2, nextClothesSentenceQuestion: nextClothesSentenceQuestion2, ensureTimeRoutineQuiz: ensureTimeRoutineQuiz2, handleTimeRoutineQuizPick: handleTimeRoutineQuizPick2, nextTimeRoutineQuizQuestion: nextTimeRoutineQuizQuestion2, ensureClockQuiz: ensureClockQuiz2, handleClockQuizPick: handleClockQuizPick2, nextClockQuizQuestion: nextClockQuizQuestion2, ensureComparisonBuilder: ensureComparisonBuilder2, currentComparisonBuildItem: currentComparisonBuildItem2, handleComparisonBuildToken: handleComparisonBuildToken2, clearComparisonBuilder: clearComparisonBuilder2, nextComparisonBuilder: nextComparisonBuilder2, ensurePositionQuiz: ensurePositionQuiz2, handlePositionQuizPlay: handlePositionQuizPlay2, handlePositionQuizPick: handlePositionQuizPick2, nextPositionQuizQuestion: nextPositionQuizQuestion2, ensureTransportBuilder: ensureTransportBuilder2, currentTransportBuildItem: currentTransportBuildItem2, handleTransportBuildToken: handleTransportBuildToken2, clearTransportBuilder: clearTransportBuilder2, nextTransportBuilder: nextTransportBuilder2, ensureEverydayActionsQuiz: ensureEverydayActionsQuiz2, currentEverydayAction: currentEverydayAction2, handleEverydayActionsPick: handleEverydayActionsPick2, nextEverydayActionsQuestion: nextEverydayActionsQuestion2, resetNumberChallenge: resetNumberChallenge2, ensureMathChallenge: ensureMathChallenge2, handleNumberChallengeGuess: handleNumberChallengeGuess2, resetMathChallenge: resetMathChallenge2, handleMathChallengeSubmit: handleMathChallengeSubmit2, renderNumberVisual: renderNumberVisual2, introductionsBuildTarget: introductionsBuildTarget2, ensureIntroductionsBuilder: ensureIntroductionsBuilder2, resetIntroductionsBuilder: resetIntroductionsBuilder2, handleIntroductionsBuildClear: handleIntroductionsBuildClear2, handleIntroductionsBuildToken: handleIntroductionsBuildToken2, ageGameItems: ageGameItems2, ensureAgeChallenge: ensureAgeChallenge2, ensureAgeBuilder: ensureAgeBuilder2, ageBuildTarget: ageBuildTarget2, handleAgeChallengePlay: handleAgeChallengePlay2, handleAgeChallengeGuess: handleAgeChallengeGuess2, resetAgeBuilder: resetAgeBuilder2, handleAgeBuildClear: handleAgeBuildClear2, handleAgeBuildToken: handleAgeBuildToken2, renderSchoolPractice: renderSchoolPractice2 } = context;
+    const { state: state2, schoolTopicData: schoolTopicData3, visualTopicItems: visualTopicItems2, positionPracticeItems: positionPracticeItems2, timeDateWeekItems: timeDateWeekItems2, timeDateClockItems: timeDateClockItems2, datePracticeItems: datePracticeItems2, timeDateMonthItems: timeDateMonthItems2, timeDateRoutineItems: timeDateRoutineItems2, timeRoutineSentenceBuilds: timeRoutineSentenceBuilds2, clothesMatchItems: clothesMatchItems2, clothesSentenceItems: clothesSentenceItems2, everydayActionItems: everydayActionItems2, requestBuildPhrases: requestBuildPhrases2, isItPracticeRounds: isItPracticeRounds2, illustratedKids: illustratedKids2, numberHanzi: numberHanzi2, buildNumberItem: buildNumberItem2, currentTopic: currentTopic2, currentNumberStage: currentNumberStage2, currentBook: currentBook2, currentLesson: currentLesson2, focusItemsForTopic: focusItemsForTopic2, shuffleArray: shuffleArray2, speak: speak2, renderFocusExplorer: renderFocusExplorer2, renderFocusStatus: renderFocusStatus2, renderSharedLessonPractice: renderSharedLessonPractice2, renderPracticeSayCards: renderPracticeSayCards2, bindPracticeSayCards: bindPracticeSayCards2, activityPanelTitle: activityPanelTitle2, activityPanelSummary: activityPanelSummary2, activityList: activityList2, topicColumns: topicColumns2, renderBodyPractice: renderBodyPractice2, renderWorldPractice, renderHobbiesPractice, activeTimeDateSection: activeTimeDateSection2, ensureWeekdayChallenge: ensureWeekdayChallenge2, ensureWeekdayMatchGame: ensureWeekdayMatchGame2, handleWeekdayChallengePlay: handleWeekdayChallengePlay2, handleWeekdayChallengeGuess: handleWeekdayChallengeGuess2, resetWeekdayMatchGame: resetWeekdayMatchGame2, handleWeekdayMatchPhrase: handleWeekdayMatchPhrase2, handleWeekdayMatchAttempt: handleWeekdayMatchAttempt2, ensureDateChallenge: ensureDateChallenge2, ensureDateMatchGame: ensureDateMatchGame2, handleDateChallengePlay: handleDateChallengePlay2, handleDateChallengeGuess: handleDateChallengeGuess2, resetDateMatchGame: resetDateMatchGame2, handleDateMatchPhrase: handleDateMatchPhrase2, handleDateMatchEvent: handleDateMatchEvent2, familyGameItems: familyGameItems2, familyListenItems: familyListenItems2, familyPersonForItemId: familyPersonForItemId2, familyHeadshotForItemId: familyHeadshotForItemId2, ensureFamilyChallenge: ensureFamilyChallenge2, ensureFamilyMatchGame: ensureFamilyMatchGame2, handleFamilyChallengePlay: handleFamilyChallengePlay2, handleFamilyChallengeGuess: handleFamilyChallengeGuess2, resetFamilyMatchGame: resetFamilyMatchGame2, handleFamilyMatchPhrase: handleFamilyMatchPhrase2, handleFamilyMatchAttempt: handleFamilyMatchAttempt2, greetingsGameItems: greetingsGameItems2, greetingsMeaningLabel: greetingsMeaningLabel2, ensureGreetingsChallenge: ensureGreetingsChallenge2, ensureGreetingsMatchGame: ensureGreetingsMatchGame2, handleGreetingsChallengePlay: handleGreetingsChallengePlay2, handleGreetingsChallengeGuess: handleGreetingsChallengeGuess2, resetGreetingsMatchGame: resetGreetingsMatchGame2, handleGreetingsMatchPhrase: handleGreetingsMatchPhrase2, handleGreetingsMatchAttempt: handleGreetingsMatchAttempt2, nationalityPracticeItems: nationalityPracticeItems2, ensureNationalityChallenge: ensureNationalityChallenge2, currentNationalityAnswer: currentNationalityAnswer2, handleNationalityChallengePlay: handleNationalityChallengePlay2, handleNationalityChallengeGuess: handleNationalityChallengeGuess2, ensureNationalityMatchGame: ensureNationalityMatchGame2, resetNationalityMatchGame: resetNationalityMatchGame2, handleNationalityMatchPhrase: handleNationalityMatchPhrase2, handleNationalityMatchAttempt: handleNationalityMatchAttempt2, languagePracticeItems: languagePracticeItems2, ensureLanguageChallenge: ensureLanguageChallenge2, currentLanguageAnswer: currentLanguageAnswer2, handleLanguageChallengePlay: handleLanguageChallengePlay2, handleLanguageChallengeGuess: handleLanguageChallengeGuess2, politeGameItems: politeGameItems2, politeMeaningLabel: politeMeaningLabel2, ensurePoliteChallenge: ensurePoliteChallenge2, ensurePoliteMatchGame: ensurePoliteMatchGame2, handlePoliteChallengePlay: handlePoliteChallengePlay2, handlePoliteChallengeGuess: handlePoliteChallengeGuess2, resetPoliteMatchGame: resetPoliteMatchGame2, handlePoliteMatchPhrase: handlePoliteMatchPhrase2, handlePoliteMatchAttempt: handlePoliteMatchAttempt2, ensureRoomBuilder: ensureRoomBuilder2, currentRoomBuildItem: currentRoomBuildItem2, handleRoomBuildToken: handleRoomBuildToken2, clearRoomBuilder: clearRoomBuilder2, nextRoomBuilder: nextRoomBuilder2, ensureClothesQuiz: ensureClothesQuiz2, handleClothesQuizPick: handleClothesQuizPick2, nextClothesQuizQuestion: nextClothesQuizQuestion2, ensureClothesSentenceQuiz: ensureClothesSentenceQuiz2, handleClothesSentencePick: handleClothesSentencePick2, nextClothesSentenceQuestion: nextClothesSentenceQuestion2, ensureTimeRoutineQuiz: ensureTimeRoutineQuiz2, handleTimeRoutineQuizPick: handleTimeRoutineQuizPick2, nextTimeRoutineQuizQuestion: nextTimeRoutineQuizQuestion2, ensureClockQuiz: ensureClockQuiz2, handleClockQuizPick: handleClockQuizPick2, nextClockQuizQuestion: nextClockQuizQuestion2, ensureComparisonBuilder: ensureComparisonBuilder2, currentComparisonBuildItem: currentComparisonBuildItem2, handleComparisonBuildToken: handleComparisonBuildToken2, clearComparisonBuilder: clearComparisonBuilder2, nextComparisonBuilder: nextComparisonBuilder2, ensurePositionQuiz: ensurePositionQuiz2, handlePositionQuizPlay: handlePositionQuizPlay2, handlePositionQuizPick: handlePositionQuizPick2, nextPositionQuizQuestion: nextPositionQuizQuestion2, ensureTransportBuilder: ensureTransportBuilder2, currentTransportBuildItem: currentTransportBuildItem2, handleTransportBuildToken: handleTransportBuildToken2, clearTransportBuilder: clearTransportBuilder2, nextTransportBuilder: nextTransportBuilder2, ensureEverydayActionsQuiz: ensureEverydayActionsQuiz2, currentEverydayAction: currentEverydayAction2, handleEverydayActionsPick: handleEverydayActionsPick2, nextEverydayActionsQuestion: nextEverydayActionsQuestion2, resetNumberChallenge: resetNumberChallenge2, ensureMathChallenge: ensureMathChallenge2, handleNumberChallengeGuess: handleNumberChallengeGuess2, resetMathChallenge: resetMathChallenge2, handleMathChallengeSubmit: handleMathChallengeSubmit2, renderNumberVisual: renderNumberVisual2, introductionsBuildTarget: introductionsBuildTarget2, ensureIntroductionsBuilder: ensureIntroductionsBuilder2, resetIntroductionsBuilder: resetIntroductionsBuilder2, handleIntroductionsBuildClear: handleIntroductionsBuildClear2, handleIntroductionsBuildToken: handleIntroductionsBuildToken2, ageGameItems: ageGameItems2, ensureAgeChallenge: ensureAgeChallenge2, ensureAgeBuilder: ensureAgeBuilder2, ageBuildTarget: ageBuildTarget2, handleAgeChallengePlay: handleAgeChallengePlay2, handleAgeChallengeGuess: handleAgeChallengeGuess2, resetAgeBuilder: resetAgeBuilder2, handleAgeBuildClear: handleAgeBuildClear2, handleAgeBuildToken: handleAgeBuildToken2, renderSchoolPractice: renderSchoolPractice2 } = context;
+    function startIsItPracticeRound() {
+      state2.isItPracticeRoundId = nextRandomCycleId(state2, "is-it-practice", isItPracticeRounds2.map((round) => round.id));
+      state2.isItPracticePickedId = "";
+      state2.isItPracticeResult = "";
+      state2.isItPracticeWrongIds = /* @__PURE__ */ new Set();
+    }
+    function currentIsItPracticeRound() {
+      if (!state2.isItPracticeRoundId) startIsItPracticeRound();
+      return isItPracticeRounds2.find((round) => round.id === state2.isItPracticeRoundId) ?? isItPracticeRounds2[0];
+    }
+    function chooseIsItPracticeAnswer(answerId) {
+      const round = currentIsItPracticeRound();
+      if (!round || state2.isItPracticeResult === "correct") return;
+      state2.isItPracticePickedId = answerId;
+      if (answerId === round.answerId) {
+        state2.isItPracticeResult = "correct";
+        const answer = round.options.find((option) => option.id === answerId);
+        if (answer && state2.tapAudioEnabled) speak2(answer.audio, 0.78);
+      } else {
+        state2.isItPracticeResult = "wrong";
+        state2.isItPracticeWrongIds = /* @__PURE__ */ new Set([...state2.isItPracticeWrongIds, answerId]);
+      }
+      renderActivityPanel2(currentTopic2());
+    }
     function resetTimeRoutineBuilder(advance = false) {
       if (!state2.timeRoutineBuildOrder.length) state2.timeRoutineBuildOrder = shuffleArray2(timeRoutineSentenceBuilds2.map((item) => item.itemId));
       else if (advance) {
@@ -1126,6 +1160,49 @@
       }
       topicColumns2?.classList.remove("is-hidden");
       activityPanelSummary2.hidden = false;
+      if (topic.id === "is-it") {
+        const round = currentIsItPracticeRound();
+        const complete = state2.isItPracticeResult === "correct";
+        const answer = round.options.find((option) => option.id === round.answerId);
+        activityPanelTitle2.textContent = "Let's practice";
+        activityPanelSummary2.textContent = "Look at one picture, then choose the answer.";
+        activityList2.className = "support-list";
+        activityList2.innerHTML = `
+      <section class="clothes-quiz-shell is-it-practice-shell">
+        <div class="numbers-game-top">
+          <div>
+            <p class="body-match-kicker">Look and choose</p>
+            <p class="numbers-game-note">Look at the picture, then choose the answer.</p>
+          </div>
+          <button class="small-button is-practice-advance-button" type="button" data-is-it-practice-new aria-label="Start a new game">New game</button>
+        </div>
+        <figure class="clothes-quiz-visual is-it-practice-visual">
+          <img class="is-it-practice-image is-${round.panel}" src="assets/illustrated-grammar/shi-bu-shi-meimei-package.webp" alt="${round.panel === "left" ? "A sealed package" : "Meimei under an opened box"}" ${imageLoadingAttrs()} />
+        </figure>
+        <div class="is-it-question-card">
+          <p class="telephone-line-hanzi">${round.question}</p>
+          ${state2.showPinyin ? `<p class="telephone-line-pinyin">${round.questionPinyin}</p>` : ""}
+          ${state2.showEnglish ? `<p class="telephone-line-english">${round.questionEnglish}</p>` : ""}
+        </div>
+        <div class="numbers-game-options is-it-practice-options">
+          ${round.options.map((option) => {
+          const isCorrect = complete && option.id === round.answerId;
+          const isWrong = state2.isItPracticeWrongIds.has(option.id);
+          return `<button class="numbers-game-option greetings-game-option family-listen-option${isCorrect ? " is-correct" : ""}${isWrong ? " is-wrong" : ""}" type="button" data-is-it-practice-answer="${option.id}" ${complete ? "disabled" : ""}>${isCorrect || isWrong ? `<span class="answer-result-mark" aria-hidden="true">${isCorrect ? "\u2713" : "\xD7"}</span>` : ""}<span class="family-listen-copy"><span class="numbers-game-hanzi">${option.hanzi}</span>${state2.showPinyin ? `<span class="numbers-game-pinyin">${option.pinyin}</span>` : ""}${state2.showEnglish ? `<span class="numbers-game-english">${option.english}</span>` : ""}</span></button>`;
+        }).join("")}
+        </div>
+        ${complete && answer ? `<div class="everyday-actions-answer"><p class="telephone-line-hanzi">${answer.hanzi}</p>${state2.showPinyin ? `<p class="telephone-line-pinyin">${answer.pinyin}</p>` : ""}${state2.showEnglish ? `<p class="telephone-line-english">${answer.english}</p>` : ""}</div>` : ""}
+      </section>
+    `;
+        activityList2.querySelector("[data-is-it-practice-new]")?.addEventListener("click", () => {
+          startIsItPracticeRound();
+          renderActivityPanel2(topic);
+        });
+        activityList2.querySelectorAll("[data-is-it-practice-answer]").forEach((button) => {
+          button.addEventListener("click", () => chooseIsItPracticeAnswer(button.dataset.isItPracticeAnswer));
+        });
+        return;
+      }
       if (topic.id === "body") {
         renderBodyPractice2();
         return;
@@ -1501,8 +1578,12 @@
       <div class="numbers-game-options">
         ${state2.numberChallengeOptionValues.map((value) => {
           const option = buildNumberItem2(value);
+          const isCorrect = state2.numberChallengeResult === "correct" && value === state2.numberChallengeTargetValue;
+          const isWrong = state2.numberChallengeWrongValues.has(value);
+          const feedbackStyle = isCorrect ? "border-color: #5f8f51; background: #dcefd2; box-shadow: 0 0 0 3px rgba(111, 143, 97, 0.16);" : isWrong ? "border-color: #be5b49; background: #f7ded8; box-shadow: 0 0 0 3px rgba(190, 91, 73, 0.12);" : "";
           return `
-              <button class="numbers-game-option" type="button" data-number-game-guess="${value}">
+              <button class="numbers-game-option${isCorrect ? " is-correct" : ""}${isWrong ? " is-wrong" : ""}" type="button" data-number-game-guess="${value}" style="${feedbackStyle}" ${state2.numberChallengeResult === "correct" ? "disabled" : ""}>
+                ${isCorrect || isWrong ? `<span class="answer-result-mark" aria-hidden="true">${isCorrect ? "\u2713" : "\xD7"}</span>` : ""}
                 <span class="numbers-game-hanzi">${option.hanzi}</span>
                 ${state2.showArabic ? `<span class="numbers-game-arabic">${option.value}</span>` : ""}
                 ${state2.showPinyin ? `<span class="numbers-game-pinyin">${option.pinyin}</span>` : ""}
@@ -1511,6 +1592,7 @@
             `;
         }).join("")}
       </div>
+      ${state2.numberChallengeResult ? `<p class="greetings-game-feedback is-${state2.numberChallengeResult}">${state2.lastNumberFeedback}</p>` : ""}
     `;
         activityList2.appendChild(gameCard);
         const mathCard = document.createElement("section");
@@ -1565,7 +1647,16 @@
         });
         activityList2.querySelectorAll("[data-number-game-guess]").forEach((button) => {
           button.addEventListener("click", () => {
-            handleNumberChallengeGuess2(Number(button.dataset.numberGameGuess));
+            const value = Number(button.dataset.numberGameGuess);
+            const correct = value === state2.numberChallengeTargetValue;
+            button.classList.add(correct ? "is-correct" : "is-wrong");
+            button.style.borderColor = correct ? "#5f8f51" : "#be5b49";
+            button.style.background = correct ? "#dcefd2" : "#f7ded8";
+            button.style.boxShadow = correct ? "0 0 0 3px rgba(111, 143, 97, 0.16)" : "0 0 0 3px rgba(190, 91, 73, 0.12)";
+            if (!button.querySelector(".answer-result-mark")) {
+              button.insertAdjacentHTML("afterbegin", `<span class="answer-result-mark" aria-hidden="true">${correct ? "\u2713" : "\xD7"}</span>`);
+            }
+            handleNumberChallengeGuess2(value);
           });
         });
         activityList2.querySelector("[data-math-game-new]")?.addEventListener("click", () => {
@@ -1671,8 +1762,11 @@
           if (!item) {
             return "";
           }
+          const isCorrect = state2.ageChallengeResult === "correct" && item.id === state2.ageChallengeAnswerId;
+          const isWrong = state2.ageChallengeWrongIds.has(item.id);
           return `
-                  <button class="numbers-game-option greetings-game-option" type="button" data-age-game-guess="${item.id}">
+                  <button class="numbers-game-option greetings-game-option${isCorrect ? " is-correct" : ""}${isWrong ? " is-wrong" : ""}" type="button" data-age-game-guess="${item.id}" ${state2.ageChallengeResult === "correct" ? "disabled" : ""}>
+                    ${isCorrect || isWrong ? `<span class="answer-result-mark" aria-hidden="true">${isCorrect ? "\u2713" : "\xD7"}</span>` : ""}
                     <span class="numbers-game-hanzi">${item.hanzi}</span>
                     ${state2.showPinyin ? `<span class="numbers-game-pinyin">${item.pinyin}</span>` : ""}
                     ${state2.showEnglish ? `<span class="numbers-game-english">${item.english}</span>` : ""}
@@ -1745,7 +1839,7 @@
 
   // src/core/topic-detail-runtime.js
   function createTopicDetailRuntime(context) {
-    const { state: state2, books: books2, numberStages: numberStages2, schoolTopicData: schoolTopicData3, topicPageUrl: topicPageUrl2, topicIdFromLocation: topicIdFromLocation2, viewFromLocation: viewFromLocation2, bookSelect: bookSelect2, lessonSelect: lessonSelect2, topicTitle: topicTitle2, topicSummary: topicSummary2, topicProgress: topicProgress2, topicLessonStrip: topicLessonStrip2, subtopicShelf: subtopicShelf2, focusDisplay: focusDisplay2, currentTopic: currentTopic2, currentNumberStage: currentNumberStage2, focusItemsForTopic: focusItemsForTopic2, currentFocusItem: currentFocusItem2, currentBook: currentBook2, currentLesson: currentLesson2, selectedTopicGroupId: selectedTopicGroupId2, bookCategoryForBook: bookCategoryForBook2, categoryIdForTopic: categoryIdForTopic2, narrowTopicBrowserTo: narrowTopicBrowserTo2, renderTopics: renderTopics2, renderBooks: renderBooks2, updateTopicPageVisibility: updateTopicPageVisibility2, focusLearningPanel: focusLearningPanel2, renderFocusControls: renderFocusControls2, renderFocusDisplay: renderFocusDisplay2, renderFocusExplorer: renderFocusExplorer2, renderFocusWordList: renderFocusWordList3, renderFocusStatus: renderFocusStatus2, renderActivityPanel: renderActivityPanel2, ensureBodyMatchGame: ensureBodyMatchGame2, isFamilySentenceItemId: isFamilySentenceItemId2, familyBookWordItems: familyBookWordItems2, usesLessonTemplate: usesLessonTemplate2, syncBookSelectionFromTopic: syncBookSelectionFromTopic2, switchView: switchView2, updateLearningCultureNav: updateLearningCultureNav2 } = context;
+    const { state: state2, books: books2, numberStages: numberStages2, schoolTopicData: schoolTopicData3, topicPageUrl: topicPageUrl2, topicIdFromLocation: topicIdFromLocation2, viewFromLocation: viewFromLocation2, bookSelect: bookSelect2, lessonSelect: lessonSelect2, topicTitle: topicTitle2, topicSummary: topicSummary2, topicProgress: topicProgress2, topicLessonStrip: topicLessonStrip2, subtopicShelf: subtopicShelf2, focusDisplay: focusDisplay2, focusExplorer: focusExplorer2, currentTopic: currentTopic2, currentNumberStage: currentNumberStage2, focusItemsForTopic: focusItemsForTopic2, currentFocusItem: currentFocusItem2, currentBook: currentBook2, currentLesson: currentLesson2, selectedTopicGroupId: selectedTopicGroupId2, bookCategoryForBook: bookCategoryForBook2, categoryIdForTopic: categoryIdForTopic2, narrowTopicBrowserTo: narrowTopicBrowserTo2, renderTopics: renderTopics2, renderBooks: renderBooks2, updateTopicPageVisibility: updateTopicPageVisibility2, focusLearningPanel: focusLearningPanel2, renderFocusControls: renderFocusControls2, renderFocusDisplay: renderFocusDisplay2, renderFocusExplorer: renderFocusExplorer2, renderFocusWordList: renderFocusWordList3, renderFocusStatus: renderFocusStatus2, renderActivityPanel: renderActivityPanel2, ensureBodyMatchGame: ensureBodyMatchGame2, isFamilySentenceItemId: isFamilySentenceItemId2, familyBookWordItems: familyBookWordItems2, usesLessonTemplate: usesLessonTemplate2, syncBookSelectionFromTopic: syncBookSelectionFromTopic2, switchView: switchView2, updateLearningCultureNav: updateLearningCultureNav2 } = context;
     function selectBookLesson2(bookId, lessonNumber) {
       const book = books2.find((entry) => entry.id === bookId) ?? books2[0];
       const lesson = book.lessons.find((entry) => entry.lesson === lessonNumber) ?? book.lessons[0];
@@ -1762,6 +1856,29 @@
       updateTopicPageVisibility2();
       window.history.pushState(null, "", topicPageUrl2(window.location, lesson.topicId));
       focusLearningPanel2();
+    }
+    function viewBookLessonSource(bookId, lessonNumber) {
+      const book = books2.find((entry) => entry.id === bookId);
+      const lesson = book?.lessons.find((entry) => entry.lesson === lessonNumber);
+      if (!book || !lesson) {
+        return;
+      }
+      state2.selectedBookCategoryId = bookCategoryForBook2(book.id).id;
+      state2.selectedBookId = book.id;
+      state2.selectedLessonNumber = lesson.lesson;
+      state2.selectedTopicId = lesson.topicId;
+      state2.topicPageOpen = false;
+      renderTopics2();
+      renderBooks2();
+      updateTopicPageVisibility2();
+      switchView2("books");
+      window.history.pushState(null, "", `${window.location.pathname}?view=books#book-lessons-${book.id}`);
+      window.requestAnimationFrame(() => {
+        document.querySelector(`[data-book-lesson="${book.id}:${lesson.lesson}"]`)?.scrollIntoView({
+          behavior: "smooth",
+          block: "center"
+        });
+      });
     }
     function topicLessonTitle(topic, step) {
       if (topic.id !== "numbers") {
@@ -1788,17 +1905,42 @@
         const bookId = step.book.toLowerCase();
         const isActive = currentBook2().id === bookId && current.lesson === step.lesson;
         return `
-        <button class="topic-lesson-card${isActive ? " is-active" : ""}" type="button" data-topic-lesson="${bookId}:${step.lesson}">
+        <button class="topic-lesson-card${isActive ? " is-active" : ""}" type="button" data-topic-lesson-source="${bookId}:${step.lesson}" aria-label="View Book ${step.book} Lesson ${step.lesson}: ${step.title} in Learn by Books">
           <span class="topic-lesson-meta">Book ${step.book} Lesson ${step.lesson}</span>
           <strong>${topicLessonTitle(topic, step)}</strong>
         </button>
       `;
       }).join("");
-      topicLessonStrip2.querySelectorAll("[data-topic-lesson]").forEach((button) => {
+      topicLessonStrip2.querySelectorAll("[data-topic-lesson-source]").forEach((button) => {
         button.addEventListener("click", () => {
-          const [bookId, lessonText] = button.dataset.topicLesson.split(":");
-          selectBookLesson2(bookId, Number(lessonText));
+          const [bookId, lessonText] = button.dataset.topicLessonSource.split(":");
+          viewBookLessonSource(bookId, Number(lessonText));
         });
+      });
+    }
+    function linkInlineBookLessonBadges() {
+      if (!focusExplorer2) {
+        return;
+      }
+      focusExplorer2.querySelectorAll(".numbers-stage-card .body-match-kicker").forEach((badge) => {
+        const match = badge.textContent.trim().match(/^(?:Book\s+)?([1-4][AB])\s+Lesson\s+(\d+)\b/i);
+        if (!match) {
+          return;
+        }
+        const bookId = match[1].toLowerCase();
+        const lessonNumber = Number(match[2]);
+        const lesson = books2.find((book) => book.id === bookId)?.lessons.find((entry) => entry.lesson === lessonNumber);
+        if (!lesson) {
+          return;
+        }
+        const link = document.createElement("button");
+        link.className = "inline-book-lesson-link";
+        link.type = "button";
+        link.dataset.topicLessonSource = `${bookId}:${lessonNumber}`;
+        link.textContent = badge.textContent;
+        link.setAttribute("aria-label", `View Book ${match[1].toUpperCase()} Lesson ${lessonNumber}: ${lesson.title} in Learn by Books`);
+        link.addEventListener("click", () => viewBookLessonSource(bookId, lessonNumber));
+        badge.replaceWith(link);
       });
     }
     function renderSubtopicShelf() {
@@ -1846,6 +1988,7 @@
       renderFocusControls2();
       renderFocusDisplay2(currentFocusItem2());
       renderFocusExplorer2();
+      linkInlineBookLessonBadges();
       renderFocusWordList3();
       renderFocusStatus2();
       renderActivityPanel2(topic);
@@ -1891,6 +2034,7 @@
       renderNumbersExplorer: renderNumbersExplorer2,
       renderTelephoneExplorer: renderTelephoneExplorer2,
       renderPoliteWordsExplorer: renderPoliteWordsExplorer2,
+      renderIsItExplorer: renderIsItExplorer2,
       renderIntroductionsExplorer: renderIntroductionsExplorer2,
       renderIdentityExplorer: renderIdentityExplorer2,
       renderAgeExplorer: renderAgeExplorer2,
@@ -1918,6 +2062,7 @@
       if (topic.id === "numbers") return renderNumbersExplorer2();
       if (topic.interactiveScene === "telephone-numbers") return renderTelephoneExplorer2();
       if (topic.interactiveScene === "polite-phrases") return renderPoliteWordsExplorer2();
+      if (topic.interactiveScene === "is-it-contrast") return renderIsItExplorer2();
       if (topic.interactiveScene === "introductions-conversation") return renderIntroductionsExplorer2();
       if (topic.interactiveScene === "identity-scenes") return renderIdentityExplorer2();
       if (topic.interactiveScene === "age-conversation") return renderAgeExplorer2();
@@ -3023,7 +3168,7 @@
     parentGuide: "Act out one word at a time\u2014walk, run, sit, stand, climb, or lie down\u2014then say it together.",
     cultureGuide: "Everyday action words make it easier to describe what people are doing in familiar places.",
     activities: ["Tap to hear", "Name the action", "Picture choice"],
-    steps: [{ book: "Topic unit", lesson: 1, title: "Everyday Actions", note: "A visual vocabulary unit that reinforces action words across daily life." }]
+    steps: []
   };
   var everydayActionItems = [
     { id: "walk", hanzi: "\u8D70\u8DEF", pinyin: "z\u01D2u l\xF9", english: "walk", sentence: "\u4ED6\u5728\u8D70\u8DEF\u3002", sentencePinyin: "t\u0101 z\xE0i z\u01D2u l\xF9.", sentenceEnglish: "He is walking.", imagePath: "assets/illustrated-actions-basic/walk-v2.webp" },
@@ -5033,6 +5178,9 @@
       if (!answer) return;
       const distractors = shuffleArray2(items.filter((item) => item.id !== answer.id)).slice(0, Math.min(3, Math.max(0, items.length - 1)));
       state2.ageChallengeAnswerId = answer.id;
+      state2.ageChallengePickedId = "";
+      state2.ageChallengeResult = "";
+      state2.ageChallengeWrongIds = /* @__PURE__ */ new Set();
       state2.ageChallengePromptId = answer.id;
       state2.ageChallengeOptionIds = shuffleArray2([answer.id, ...distractors.map((item) => item.id)]);
       state2.lastAgeFeedback = options.feedback ?? "";
@@ -5054,18 +5202,24 @@
       const picked = ageGameItems2().find((entry) => entry.id === itemId);
       if (!answer || !picked) return;
       if (itemId === answer.id) {
+        state2.ageChallengePickedId = itemId;
+        state2.ageChallengeResult = "correct";
         state2.selectedFocusItemId = answer.id;
         if (state2.tapAudioEnabled) speak2(answer.audio, 0.78);
         state2.lastAgeFeedback = `Correct! ${answer.hanzi} matches the audio.`;
         renderFocusDisplay2(currentFocusItem2());
         renderFocusExplorer2();
         renderFocusStatus2();
+        renderActivityPanel2(currentTopic2());
         window.setTimeout(() => {
           resetAgeChallenge2();
           renderActivityPanel2(currentTopic2());
         }, 650);
         return;
       }
+      state2.ageChallengePickedId = itemId;
+      state2.ageChallengeResult = "wrong";
+      state2.ageChallengeWrongIds = /* @__PURE__ */ new Set([...state2.ageChallengeWrongIds, itemId]);
       state2.lastAgeFeedback = `Try again. You picked ${picked.hanzi}, but the audio is ${answer.hanzi}.`;
       renderActivityPanel2(currentTopic2());
     }
@@ -5218,9 +5372,9 @@
         topicId: isRequestLesson ? "requests-permission" : "polite-words",
         gameItemIds: isRequestLesson ? requestGameItemIds2 : politeGameItemIds2,
         practice: isRequestLesson ? requestPractice2 : politePractice2,
-        title: isRequestLesson ? "Book theme: polite requests and permission" : "Book theme: kind classroom language",
-        introduction: isRequestLesson ? "Ask politely, then listen for whether the answer is yes or no." : "Use thank you, sorry, and please in kind everyday classroom moments.",
-        note: isRequestLesson ? `<p class="greetings-note-hanzi">\u8BF7 / \u6211\u53EF\u4EE5\u2026\u5417\uFF1F / \u53EF\u4EE5 / \u4E0D\u53EF\u4EE5</p><p class="greetings-note-copy"><strong>\u8BF7</strong> makes a request polite. <strong>\u6211\u53EF\u4EE5\u2026\u5417\uFF1F</strong> asks permission and ends with <strong>\u5417</strong>.</p><p class="greetings-note-copy"><strong>\u53EF\u4EE5\u3002</strong> means yes; <strong>\u4E0D\u53EF\u4EE5\u3002</strong> means no.</p>` : `<p class="greetings-note-hanzi">\u8C22\u8C22 / \u4E0D\u5BA2\u6C14 / \u5BF9\u4E0D\u8D77 / \u6CA1\u5173\u7CFB</p><p class="greetings-note-copy"><strong>\u8C22\u8C22\u4F60</strong> means \u201Cthank you,\u201D and <strong>\u4E0D\u5BA2\u6C14</strong> is the kind reply: \u201Cyou\u2019re welcome.\u201D</p><p class="greetings-note-copy"><strong>\u5BF9\u4E0D\u8D77</strong> is an apology; <strong>\u6CA1\u5173\u7CFB</strong> is a gentle response.</p>`
+        title: isRequestLesson ? "Book theme: asking permission" : "Book theme: kind classroom language",
+        introduction: isRequestLesson ? "Ask with \u6211\u53EF\u4EE5\u2026\u5417\uFF1F, then listen for \u53EF\u4EE5 or \u4E0D\u884C." : "Use thank you, sorry, and please in kind everyday classroom moments.",
+        note: isRequestLesson ? `<p class="greetings-note-hanzi">\u6211\u53EF\u4EE5\u2026\u2026\u5417\uFF1F / \u53EF\u4EE5 / \u4E0D\u884C</p><p class="greetings-note-copy"><strong>\u6211\u53EF\u4EE5\u2026\u5417\uFF1F</strong> asks permission and ends with <strong>\u5417</strong>.</p><p class="greetings-note-copy"><strong>\u53EF\u4EE5\u3002</strong> means yes; <strong>\u4E0D\u884C\u3002</strong> means no. The book practises this with actions such as <strong>\u559D\u6C34</strong>, <strong>\u5403\u996D</strong>, and <strong>\u53BB\u5395\u6240</strong>.</p>` : `<p class="greetings-note-hanzi">\u8C22\u8C22 / \u4E0D\u5BA2\u6C14 / \u5BF9\u4E0D\u8D77 / \u6CA1\u5173\u7CFB</p><p class="greetings-note-copy"><strong>\u8C22\u8C22\u4F60</strong> means \u201Cthank you,\u201D and <strong>\u4E0D\u5BA2\u6C14</strong> is the kind reply: \u201Cyou\u2019re welcome.\u201D</p><p class="greetings-note-copy"><strong>\u5BF9\u4E0D\u8D77</strong> is an apology; <strong>\u6CA1\u5173\u7CFB</strong> is a gentle response.</p>`
       };
     }
     function politeGameItems2() {
@@ -5240,6 +5394,8 @@
         return {
           "ask-teacher": "May I ask the teacher a question?",
           "ask-tv": "May I watch TV?",
+          "ask-cola": "May I drink Coke?",
+          "no-water": "No. You may drink water.",
           "yes-permission": "Yes, you may.",
           "no-permission": "No, you may not."
         }[itemId] ?? "";
@@ -5374,18 +5530,19 @@
     }
     function renderPoliteWordsExplorer2() {
       const lesson = activeLesson();
+      const isRequestLesson = currentTopic2().id === "requests-permission";
       const topic = topicById3(lesson.topicId);
       const words = topic?.bookWords ?? topic?.focusItems ?? [];
       focusExplorer2.innerHTML = `
       <div class="numbers-board">
-        <div class="numbers-stage-card">
+        ${isRequestLesson ? "" : `<div class="numbers-stage-card">
           <p class="body-match-kicker">${currentBook2().label} Lesson ${currentLesson2().lesson}</p>
           <h4>${lesson.title}</h4>
           <p>${lesson.introduction}</p>
-        </div>
+        </div>`}
         <div class="greetings-practice-grid polite-scene-grid">
           ${lesson.practice.map((exchange) => `
-            <section class="greetings-exchange">
+            <section class="greetings-exchange${currentTopic2().id === "requests-permission" && exchange.id === "cola-or-water" ? " is-request-cola-scene" : ""}${currentTopic2().id === "requests-permission" && exchange.id === "school-request-teacher-help" ? " is-request-teacher-scene" : ""}">
               <div class="greetings-exchange-top">
                 <div><p class="body-match-kicker">${exchange.title}</p></div>
                 <button class="small-button is-play-button" type="button" data-polite-play-all="${exchange.id}">Play</button>
@@ -5394,7 +5551,7 @@
                 <div class="greetings-scene-visual">
                   <img class="greetings-scene-image" src="${exchange.imagePath}" alt="${exchange.imageAlt}" />
                 </div>
-                <div class="greetings-line-stack${currentTopic2().id === "requests-permission" ? " is-request-lines" : ""}">
+                <div class="greetings-line-stack${currentTopic2().id === "requests-permission" ? ` is-request-lines${exchange.id === "cola-or-water" ? " is-request-cola-lines" : ""}` : ""}">
                   ${exchange.lines.map((line) => `
                     <article class="greetings-line-card">
                       <div class="telephone-bubble-copy">
@@ -5451,6 +5608,100 @@
       handlePoliteChallengeGuess: handlePoliteChallengeGuess2,
       renderPoliteWordsExplorer: renderPoliteWordsExplorer2
     };
+  }
+
+  // src/features/foundations/is-it.js
+  var isItTopic = {
+    id: "is-it",
+    title: "Is It?",
+    summary: "Ask a simple yes-or-no question, then answer with \u662F or \u4E0D\u662F.",
+    progressLabel: "Topic enrichment",
+    iconText: "\u662F\u4E0D\u662F",
+    iconColor: "#8a6e4a",
+    iconAccent: "#efd38e",
+    iconTheme: "grammar",
+    focus: {
+      hanzi: "\u8FD9\u662F\u4E0D\u662F\u5305\u88F9\uFF1F",
+      pinyin: "zh\xE8 sh\xEC b\xFA sh\xEC b\u0101o gu\u01D2?",
+      english: "Is this a package?",
+      audio: "\u8FD9\u662F\u4E0D\u662F\u5305\u88F9"
+    },
+    focusItems: [
+      { id: "is", hanzi: "\u662F", pinyin: "sh\xEC", english: "is; yes", audio: "\u662F" },
+      { id: "is-not", hanzi: "\u4E0D\u662F", pinyin: "b\xFA sh\xEC", english: "is not; no", audio: "\u4E0D\u662F" },
+      { id: "package", hanzi: "\u5305\u88F9", pinyin: "b\u0101o gu\u01D2", english: "package", audio: "\u5305\u88F9" },
+      { id: "younger-sister", hanzi: "\u59B9\u59B9", pinyin: "m\xE8i mei", english: "younger sister", audio: "\u59B9\u59B9" }
+    ],
+    interactiveScene: "is-it-contrast",
+    parentGuide: "Point to a familiar object and ask \u8FD9\u662F\u4E0D\u662F\u2026\uFF1F Let the child answer \u662F or \u4E0D\u662F before naming what it really is.",
+    cultureGuide: "This is an optional speaking pattern, separate from the book sequence. Keep it concrete: one visible object, one short yes-or-no answer.",
+    activities: ["Play the scene", "Learn the words", "Look and choose"],
+    steps: []
+  };
+  var isItScene = {
+    id: "package-or-meimei",
+    title: "Package surprise",
+    imagePath: "assets/illustrated-grammar/shi-bu-shi-meimei-package.webp",
+    imageAlt: "A package on the left and Meimei under the opened box on the right",
+    lines: [
+      { hanzi: "\u8FD9\u662F\u4E0D\u662F\u5305\u88F9\uFF1F", pinyin: "zh\xE8 sh\xEC b\xFA sh\xEC b\u0101o gu\u01D2?", english: "Is this a package?", audio: "\u8FD9\u662F\u4E0D\u662F\u5305\u88F9" },
+      { hanzi: "\u4E0D\u662F\uFF0C\u8FD9\u662F\u7F8E\u7F8E\u3002", pinyin: "b\xFA sh\xEC, zh\xE8 sh\xEC M\u011Bi mei.", english: "No, this is Meimei.", audio: "\u4E0D\u662F\u8FD9\u662F\u7F8E\u7F8E" }
+    ]
+  };
+  var isItPracticeRounds = [
+    {
+      id: "package",
+      panel: "left",
+      question: "\u8FD9\u662F\u4E0D\u662F\u5305\u88F9\uFF1F",
+      questionPinyin: "zh\xE8 sh\xEC b\xFA sh\xEC b\u0101o gu\u01D2?",
+      questionEnglish: "Is this a package?",
+      answerId: "yes-package",
+      options: [
+        { id: "yes-package", hanzi: "\u662F\uFF0C\u8FD9\u662F\u4E00\u4E2A\u5305\u88F9\u3002", pinyin: "sh\xEC, zh\xE8 sh\xEC y\xED ge b\u0101o gu\u01D2.", english: "Yes, this is a package.", audio: "\u662F\u8FD9\u662F\u4E00\u4E2A\u5305\u88F9" },
+        { id: "no-meimei", hanzi: "\u4E0D\u662F\uFF0C\u8FD9\u662F\u7F8E\u7F8E\u3002", pinyin: "b\xFA sh\xEC, zh\xE8 sh\xEC M\u011Bi mei.", english: "No, this is Meimei.", audio: "\u4E0D\u662F\u8FD9\u662F\u7F8E\u7F8E" }
+      ]
+    },
+    {
+      id: "meimei",
+      panel: "right",
+      question: "\u8FD9\u662F\u4E0D\u662F\u5305\u88F9\uFF1F",
+      questionPinyin: "zh\xE8 sh\xEC b\xFA sh\xEC b\u0101o gu\u01D2?",
+      questionEnglish: "Is this a package?",
+      answerId: "no-meimei",
+      options: [
+        { id: "yes-package", hanzi: "\u662F\uFF0C\u8FD9\u662F\u4E00\u4E2A\u5305\u88F9\u3002", pinyin: "sh\xEC, zh\xE8 sh\xEC y\xED ge b\u0101o gu\u01D2.", english: "Yes, this is a package.", audio: "\u662F\u8FD9\u662F\u4E00\u4E2A\u5305\u88F9" },
+        { id: "no-meimei", hanzi: "\u4E0D\u662F\uFF0C\u8FD9\u662F\u7F8E\u7F8E\u3002", pinyin: "b\xFA sh\xEC, zh\xE8 sh\xEC M\u011Bi mei.", english: "No, this is Meimei.", audio: "\u4E0D\u662F\u8FD9\u662F\u7F8E\u7F8E" }
+      ]
+    }
+  ];
+
+  // src/features/foundations/is-it-controller.js
+  function createIsItController({ state: state2, isItScene: isItScene2, currentTopic: currentTopic2, speakSceneLines: speakSceneLines2, focusExplorer: focusExplorer2 }) {
+    function renderIsItExplorer2() {
+      focusExplorer2.innerHTML = `
+      <div class="numbers-board">
+        <div class="numbers-stage-card">
+          <p class="body-match-kicker">Topic enrichment</p>
+          <h4>Ask: is it?</h4>
+          <p>Look at the picture, ask <strong>\u8FD9\u662F\u4E0D\u662F\u2026\uFF1F</strong>, then answer <strong>\u662F</strong> or <strong>\u4E0D\u662F</strong>.</p>
+        </div>
+        <section class="greetings-exchange is-it-scene-card">
+          <div class="greetings-exchange-top">
+            <p class="body-match-kicker">${isItScene2.title}</p>
+            <button class="small-button is-play-button" type="button" data-is-it-play>Play</button>
+          </div>
+          <img class="greetings-scene-image is-it-scene-image" src="${isItScene2.imagePath}" alt="${isItScene2.imageAlt}" />
+          <div class="greetings-line-stack is-it-line-stack">
+            ${isItScene2.lines.map((line) => `<article class="greetings-line-card"><div class="telephone-bubble-copy"><p class="telephone-line-hanzi">${line.hanzi}</p>${state2.showPinyin ? `<p class="telephone-line-pinyin">${line.pinyin}</p>` : ""}${state2.showEnglish ? `<p class="telephone-line-english">${line.english}</p>` : ""}</div></article>`).join("")}
+          </div>
+        </section>
+      </div>
+    `;
+      focusExplorer2.querySelector("[data-is-it-play]")?.addEventListener("click", () => {
+        if (state2.tapAudioEnabled && currentTopic2().id === "is-it") speakSceneLines2(isItScene2.lines);
+      });
+    }
+    return { renderIsItExplorer: renderIsItExplorer2 };
   }
 
   // src/features/foundations/greetings.js
@@ -6288,7 +6539,7 @@
   var requestsPermissionTopic = {
     id: "requests-permission",
     title: "Requests & Permission",
-    summary: "Ask politely, then understand yes and no permission answers.",
+    summary: "Ask with \u6211\u53EF\u4EE5\u2026\u5417\uFF1F, then listen for \u53EF\u4EE5 or \u4E0D\u884C\u3002",
     progressLabel: "3A Lesson 6",
     iconText: "\u53EF\u4EE5\u5417",
     iconColor: "#517b8d",
@@ -6296,22 +6547,37 @@
     iconTheme: "requests",
     ownsExplorerContent: true,
     interactiveScene: "polite-phrases",
-    focus: { hanzi: "\u6211\u53EF\u4EE5\u770B\u7535\u89C6\u5417\uFF1F", pinyin: "w\u01D2 k\u011B y\u01D0 k\xE0n di\xE0n sh\xEC ma?", english: "May I watch TV?", audio: "\u6211\u53EF\u4EE5\u770B\u7535\u89C6\u5417" },
+    focus: { hanzi: "\u6211\u53EF\u4EE5\u559D\u53EF\u4E50\u5417\uFF1F", pinyin: "w\u01D2 k\u011B y\u01D0 h\u0113 k\u011B l\xE8 ma?", english: "May I drink Coke?", audio: "\u6211\u53EF\u4EE5\u559D\u53EF\u4E50\u5417" },
     bookWords: [
-      { id: "please", hanzi: "\u8BF7", pinyin: "q\u01D0ng", english: "please", audio: "\u8BF7" },
-      { id: "yes-permission", hanzi: "\u53EF\u4EE5\u3002", pinyin: "k\u011B y\u01D0.", english: "yes, you may", audio: "\u53EF\u4EE5" },
-      { id: "no-permission", hanzi: "\u4E0D\u53EF\u4EE5\u3002", pinyin: "b\xF9 k\u011B y\u01D0.", english: "no, you may not", audio: "\u4E0D\u53EF\u4EE5" }
+      { id: "yes-permission", hanzi: "\u53EF\u4EE5\u3002", pinyin: "k\u011B y\u01D0.", english: "yes; may", audio: "\u53EF\u4EE5" },
+      { id: "no-permission", hanzi: "\u4E0D\u884C\u3002", pinyin: "b\xF9 x\xEDng.", english: "no; may not", audio: "\u4E0D\u884C" },
+      { id: "question-particle", hanzi: "\u5417", pinyin: "ma", english: "question particle", audio: "\u5417" },
+      { id: "drink-water", hanzi: "\u559D\u6C34", pinyin: "h\u0113 shu\u01D0", english: "drink water", audio: "\u559D\u6C34" },
+      { id: "eat-meal", hanzi: "\u5403\u996D", pinyin: "ch\u012B f\xE0n", english: "eat a meal", audio: "\u5403\u996D" },
+      { id: "toilet", hanzi: "\u5395\u6240", pinyin: "c\xE8 su\u01D2", english: "toilet; restroom", audio: "\u5395\u6240" }
     ],
     focusItems: [
       { id: "ask-teacher", hanzi: "\u6211\u53EF\u4EE5\u95EE\u8001\u5E08\u5417\uFF1F", pinyin: "w\u01D2 k\u011B y\u01D0 w\xE8n l\u01CEo sh\u012B ma?", english: "May I ask the teacher?", audio: "\u6211\u53EF\u4EE5\u95EE\u8001\u5E08\u5417" },
       { id: "ask-tv", hanzi: "\u6211\u53EF\u4EE5\u770B\u7535\u89C6\u5417\uFF1F", pinyin: "w\u01D2 k\u011B y\u01D0 k\xE0n di\xE0n sh\xEC ma?", english: "May I watch TV?", audio: "\u6211\u53EF\u4EE5\u770B\u7535\u89C6\u5417" },
+      { id: "ask-cola", hanzi: "\u6211\u53EF\u4EE5\u559D\u53EF\u4E50\u5417\uFF1F", pinyin: "w\u01D2 k\u011B y\u01D0 h\u0113 k\u011B l\xE8 ma?", english: "May I drink Coke?", audio: "\u6211\u53EF\u4EE5\u559D\u53EF\u4E50\u5417" },
+      { id: "no-water", hanzi: "\u4E0D\u884C\u3002\u4F60\u53EF\u4EE5\u559D\u6C34\u3002", pinyin: "b\xF9 x\xEDng. n\u01D0 k\u011B y\u01D0 h\u0113 shu\u01D0.", english: "No. You may drink water.", audio: "\u4E0D\u884C\u4F60\u53EF\u4EE5\u559D\u6C34" },
       { id: "yes-permission", hanzi: "\u53EF\u4EE5\u3002", pinyin: "k\u011B y\u01D0.", english: "Yes, you may.", audio: "\u53EF\u4EE5" },
-      { id: "no-permission", hanzi: "\u4E0D\u53EF\u4EE5\u3002", pinyin: "b\xF9 k\u011B y\u01D0.", english: "No, you may not.", audio: "\u4E0D\u53EF\u4EE5" },
+      { id: "no-permission", hanzi: "\u4E0D\u884C\u3002", pinyin: "b\xF9 x\xEDng.", english: "No, you may not.", audio: "\u4E0D\u884C" },
       { id: "please", hanzi: "\u8BF7", pinyin: "q\u01D0ng", english: "please", audio: "\u8BF7" }
     ],
     steps: [{ book: "3A", lesson: 6, title: "Request", note: "Ask politely and understand permission answers." }]
   };
   var requestPractice = [
+    {
+      id: "cola-or-water",
+      title: "Choose water",
+      imagePath: "assets/illustrated-meals/anan-mom-fridge-cola-water.webp",
+      imageAlt: "Anan asks Mom for Coke and Mom offers water instead",
+      lines: [
+        { hanzi: "\u6211\u53EF\u4EE5\u559D\u53EF\u4E50\u5417\uFF1F", pinyin: "w\u01D2 k\u011B y\u01D0 h\u0113 k\u011B l\xE8 ma?", english: "May I drink Coke?", audio: "\u6211\u53EF\u4EE5\u559D\u53EF\u4E50\u5417" },
+        { hanzi: "\u4E0D\u884C\u3002\u4F60\u53EF\u4EE5\u559D\u6C34\u3002", pinyin: "b\xF9 x\xEDng. n\u01D0 k\u011B y\u01D0 h\u0113 shu\u01D0.", english: "No. You may drink water.", audio: "\u4E0D\u884C\u4F60\u53EF\u4EE5\u559D\u6C34" }
+      ]
+    },
     {
       id: "tv-not-yet",
       title: "Not yet",
@@ -6343,8 +6609,18 @@
       ]
     }
   ];
-  var requestGameItemIds = ["ask-teacher", "ask-tv", "yes-permission", "no-permission"];
+  var requestGameItemIds = ["ask-cola", "no-water", "ask-tv", "yes-permission"];
   var requestBuildPhrases = [
+    {
+      id: "drink-cola",
+      tokens: ["\u6211", "\u53EF\u4EE5", "\u559D\u53EF\u4E50", "\u5417"],
+      targetHanzi: "\u6211\u53EF\u4EE5\u559D\u53EF\u4E50\u5417\uFF1F",
+      targetPinyin: "w\u01D2 k\u011B y\u01D0 h\u0113 k\u011B l\xE8 ma?",
+      english: "May I drink Coke?",
+      audio: "\u6211\u53EF\u4EE5\u559D\u53EF\u4E50\u5417",
+      imagePath: "assets/illustrated-meals/anan-mom-fridge-cola-water.webp",
+      imageAlt: "Anan asks Mom if she may drink Coke"
+    },
     {
       id: "watch-tv",
       tokens: ["\u6211", "\u53EF\u4EE5", "\u770B\u7535\u89C6", "\u5417"],
@@ -6892,6 +7168,9 @@
       state2.numberChallengeStageId = stage.id;
       state2.numberChallengeTargetValue = targetValue;
       state2.numberChallengeOptionValues = shuffleArray2([targetValue, ...distractors]);
+      state2.numberChallengePickedValue = null;
+      state2.numberChallengeResult = "";
+      state2.numberChallengeWrongValues = /* @__PURE__ */ new Set();
       state2.lastNumberFeedback = options.feedback ?? "Look carefully. Pick the number without counting from one every time.";
     }
     function ensureNumberChallenge2() {
@@ -6962,7 +7241,7 @@
     function familyBookWordItems2() {
       return focusItemsForTopic2(topicById3("family")).filter((item) => !isFamilySentenceItemId2(item.id));
     }
-    const lessonTemplateTopicIds = /* @__PURE__ */ new Set(["greetings", "polite-words", "introductions", "age", "family"]);
+    const lessonTemplateTopicIds = /* @__PURE__ */ new Set(["greetings", "polite-words", "introductions", "is-it", "age", "family"]);
     function usesLessonTemplate2(topic) {
       return lessonTemplateTopicIds.has(topic.id);
     }
@@ -7012,6 +7291,15 @@
       </p>
       <p class="greetings-note-copy">
         In <strong>\u4ED6\u662F\u6211\u7684\u597D\u670B\u53CB\u3002</strong>, <strong>\u4ED6</strong> points to a boy already in the scene, and <strong>\u6211\u7684\u597D\u670B\u53CB</strong> means \u201Cmy good friend.\u201D
+      </p>
+    `,
+        "is-it": `
+      <p class="greetings-note-hanzi">\u662F\u4E0D\u662F\u2026\u2026\uFF1F / \u662F / \u4E0D\u662F</p>
+      <p class="greetings-note-copy">
+        Put <strong>\u662F\u4E0D\u662F</strong> around the thing you are asking about: <strong>\u8FD9\u662F\u4E0D\u662F\u5305\u88F9\uFF1F</strong> means \u201CIs this a package?\u201D
+      </p>
+      <p class="greetings-note-copy">
+        Answer with <strong>\u662F\u3002</strong> for yes or <strong>\u4E0D\u662F\u3002</strong> for no. Then say what it really is: <strong>\u4E0D\u662F\uFF0C\u8FD9\u662F\u7F8E\u7F8E\u3002</strong>
       </p>
     `,
         age: `
@@ -7223,28 +7511,25 @@
       ensureNumberChallenge2();
       const target = state2.numberChallengeTargetValue;
       const targetItem = buildNumberItem2(target);
+      if (state2.numberChallengeResult === "correct") return;
+      state2.numberChallengePickedValue = value;
       if (value === target) {
+        state2.numberChallengeResult = "correct";
         state2.selectedFocusItemId = targetItem.id;
         if (state2.tapAudioEnabled) {
           speak2(targetItem.audio, 0.78);
         }
-        state2.lastNumberFeedback = `Correct! ${targetItem.hanzi} is right. Here comes a new round.`;
+        state2.lastNumberFeedback = `Correct! ${targetItem.hanzi} is right.`;
         renderFocusDisplay2(currentFocusItem2());
         renderFocusWordList();
+        renderActivityPanel2(currentTopic2());
         renderFocusStatus2();
-        if (state2.numberChallengeAdvanceTimer) {
-          window.clearTimeout(state2.numberChallengeAdvanceTimer);
-        }
-        state2.numberChallengeAdvanceTimer = window.setTimeout(() => {
-          resetNumberChallenge2();
-          renderFocusExplorer2();
-          renderActivityPanel2(currentTopic2());
-          renderFocusStatus2();
-          state2.numberChallengeAdvanceTimer = null;
-        }, 700);
         return;
       }
+      state2.numberChallengeResult = "wrong";
+      state2.numberChallengeWrongValues = /* @__PURE__ */ new Set([...state2.numberChallengeWrongValues, value]);
       state2.lastNumberFeedback = `Try again. This group is ${targetItem.hanzi}, not ${buildNumberItem2(value).hanzi}.`;
+      renderActivityPanel2(currentTopic2());
       renderFocusStatus2();
     }
     function bodyMatchItems2() {
@@ -10700,7 +10985,7 @@
       id: "daily-world",
       label: "Daily World",
       description: "Food, routines, weather, and the world around the child.",
-      topicIds: ["food", "food-preferences", "meals-feelings", "toys", "comparisons", "positions", "transport", "daily-life", "everyday-actions", "requests-permission", "pets", "animals", "nature", "weather"]
+      topicIds: ["food", "food-preferences", "meals-feelings", "toys", "comparisons", "positions", "transport", "daily-life", "everyday-actions", "requests-permission", "is-it", "pets", "animals", "nature", "weather"]
     },
     {
       id: "school-and-time",
@@ -10715,6 +11000,7 @@
     "multiplication-rhyme": { zhTitle: "\u4E5D\u4E5D\u4E58\u6CD5", enTitle: "Multiplication Rhyme", hint: "Classic rhythm practice" },
     greetings: { zhTitle: "\u6253\u62DB\u547C", enTitle: "Greetings", hint: "Hello, good morning, goodbye" },
     "polite-words": { zhTitle: "\u793C\u8C8C\u7528\u8BED", enTitle: "Polite Words", hint: "Thank you, sorry, please" },
+    "is-it": { zhTitle: "\u662F\u4E0D\u662F", enTitle: "Is It?", hint: "Ask a simple yes-or-no question" },
     "requests-permission": { zhTitle: "\u8BF7\u6C42\u548C\u8BB8\u53EF", enTitle: "Requests & Permission", hint: "Ask politely and hear yes or no" },
     introductions: { zhTitle: "\u4ECB\u7ECD\u81EA\u5DF1", enTitle: "Introductions", hint: "Say your name and meet friends" },
     age: { zhTitle: "\u5E74\u9F84", enTitle: "Age", hint: "Ask and say how old you are" },
@@ -10776,7 +11062,7 @@
       hint: "Week, time, dates, routines, home, actions, requests",
       accent: "#517b8d",
       iconSrc: "assets/illustrated-clocks/10oclock.webp",
-      topicIds: ["weekdays", "time-date", "dates", "comparisons", "positions", "transport", "daily-life", "everyday-actions", "requests-permission"]
+      topicIds: ["weekdays", "time-date", "dates", "comparisons", "positions", "transport", "daily-life", "everyday-actions", "requests-permission", "is-it"]
     },
     {
       id: "school-life",
@@ -10847,6 +11133,7 @@
     multiplicationRhymeTopic,
     greetingsTopic,
     politeWordsTopic,
+    isItTopic,
     introductionsTopic,
     identityTopic,
     languagesTopic,
@@ -11372,6 +11659,7 @@
   var handlePoliteChallengePlay;
   var handlePoliteChallengeGuess;
   var renderPoliteWordsExplorer;
+  var renderIsItExplorer;
   var introductionsPromptById;
   var introductionsGameKids;
   var introductionsSelfIntroItemForKid;
@@ -11725,6 +12013,13 @@
     renderFocusStatus,
     elements: { focusExplorer, focusStatus }
   }));
+  ({ renderIsItExplorer } = createIsItController({
+    state,
+    isItScene,
+    currentTopic,
+    speakSceneLines,
+    focusExplorer
+  }));
   ({
     introductionsPromptById,
     introductionsGameKids,
@@ -12003,6 +12298,7 @@
     clothesSentenceItems,
     everydayActionItems,
     requestBuildPhrases,
+    isItPracticeRounds,
     illustratedKids,
     numberHanzi,
     buildNumberItem,
@@ -12148,6 +12444,7 @@
     renderNumbersExplorer,
     renderTelephoneExplorer,
     renderPoliteWordsExplorer,
+    renderIsItExplorer,
     renderIntroductionsExplorer,
     renderIdentityExplorer,
     renderAgeExplorer,

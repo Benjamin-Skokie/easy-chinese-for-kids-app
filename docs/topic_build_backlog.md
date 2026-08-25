@@ -33,8 +33,8 @@ then update both records when the work is complete.
   - Me & Family continuation for `住 / 哪儿 / 他们 / 北京 / 电话号码 / 多少`.
   - Contract: [`lesson-contracts/family/my-family-2.md`](./lesson-contracts/family/my-family-2.md).
 
-- [ ] **Requests & Permission — 3A Lesson 6** — built; final visual review pending.
-  - Teaches `请…`, `我可以…吗？`, `可以。`, and `不可以。` with classroom and home visual scenes.
+- [ ] **Requests & Permission — 3A Lesson 6** — book core added; final source-alignment review pending.
+  - Teaches the OCR core `我可以…吗？`, `可以。`, and `不行。`; TV and teacher scenarios remain enrichment.
   - Contract: [`lesson-contracts/daily-life/requests-permission.md`](./lesson-contracts/daily-life/requests-permission.md).
 
 ## Partial topic coverage
@@ -55,7 +55,10 @@ also changed from `partial`.
 - [x] Transportation — `lesson-contracts/daily-life/transport.md`
   - Completed with `公共汽车` and `我坐公共汽车去地铁站。`, alongside the existing travel scenes and sentence builder.
 - [x] Home — `lesson-contracts/daily-life/home.md`
-  - Completed with the piano room scene, a piano builder round, and the `有 / 没有` visual note.
+  - Completed with the piano room scene, a piano builder round, and a compact `有 / 没有` note.
+
+- [x] Is It? — `lesson-contracts/foundations/is-it.md`
+  - Optional Time & Daily Life enrichment, not a book lesson. Uses the package/Meimei contrast visual for `这是不是…？` and `是 / 不是`.
 - [ ] Days of the Week — `lesson-contracts/daily-life/weekdays.md`
 - [ ] Dates & Months — `lesson-contracts/daily-life/dates-months.md`
 
@@ -98,6 +101,9 @@ also changed from `partial`.
   Life unit. The older source cards remain available only as source assets.
 
 ## Review-only work
+
+- [ ] **Textbook culture and appendix pages** — decide their product ownership from the OCR source map.
+  - These pages are now tagged separately in `ocr/book_lesson_page_tags.json`; do not attach them to an adjacent language lesson by default.
 
 - [ ] **Nature** is content-complete. Perform a product visual and touch-size
   review, then update `lesson-contracts/world/nature.md`.

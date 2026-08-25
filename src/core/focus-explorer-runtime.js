@@ -7,6 +7,7 @@ export function createFocusExplorerRuntime(context) {
     renderNumbersExplorer,
     renderTelephoneExplorer,
     renderPoliteWordsExplorer,
+    renderIsItExplorer,
     renderIntroductionsExplorer,
     renderIdentityExplorer,
     renderAgeExplorer,
@@ -36,6 +37,7 @@ export function createFocusExplorerRuntime(context) {
     if (topic.id === "numbers") return renderNumbersExplorer();
     if (topic.interactiveScene === "telephone-numbers") return renderTelephoneExplorer();
     if (topic.interactiveScene === "polite-phrases") return renderPoliteWordsExplorer();
+    if (topic.interactiveScene === "is-it-contrast") return renderIsItExplorer();
     if (topic.interactiveScene === "introductions-conversation") return renderIntroductionsExplorer();
     if (topic.interactiveScene === "identity-scenes") return renderIdentityExplorer();
     if (topic.interactiveScene === "age-conversation") return renderAgeExplorer();
