@@ -13,7 +13,7 @@ export const bodyTopic = {
   parentGuide: "Tap a body word, hear it together, then point to the same body part on yourself or on the character.",
   cultureGuide: "Body vocabulary is simple to act out, so it is a good topic for young beginners who are still building confidence.",
   activities: ["Tap word to hear", "See the body part glow", "Listen and point", "Picture matching"],
-  steps: [{ book: "1B", lesson: 3, title: "Parts of the body (1)", note: "Start with the first body words." }, { book: "1B", lesson: 4, title: "Parts of the body (2)", note: "Expand and reinforce the body set." }]
+  steps: [{ book: "1B", lesson: 3, title: "Parts of the body (1)", cardLabel: "Name body parts", note: "Start with the first body words." }, { book: "1B", lesson: 4, title: "Parts of the body (2)", cardLabel: "Learn more body parts", note: "Expand and reinforce the body set." }]
 };
 
 export const bodyDiagramLayout = { left: ["hair", "ears", "nose", "hand", "leg", "foot"], right: ["head", "forehead", "eyes", "mouth", "neck", "arm"] };

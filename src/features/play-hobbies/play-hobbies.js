@@ -23,7 +23,7 @@ export const hobbiesTopic = {
   parentGuide: "Choose activities the child already loves. Familiar routines make speaking practice feel much less abstract.",
   cultureGuide: "Hobbies are a nice place to introduce art, music, and cultural interests once the core language is stable.",
   activities: ["Tap to hear", "Build a sentence"],
-  steps: [{ book: "2A", lesson: 5, title: "I love reading", note: "Start with a simple preference pattern." }],
+  steps: [{ book: "2A", lesson: 5, title: "I love reading", cardLabel: "Say what you like", note: "Start with a simple preference pattern." }],
 };
 
 export const hobbies3bTopic = {
@@ -39,7 +39,7 @@ export const hobbies3bTopic = {
   parentGuide: hobbiesTopic.parentGuide,
   cultureGuide: hobbiesTopic.cultureGuide,
   activities: ["Tap to hear", "Build a question"],
-  steps: [{ book: "3B", lesson: 4, title: "Hobbies", note: "Ask and answer about activity preferences." }]
+  steps: [{ book: "3B", lesson: 4, title: "Hobbies", cardLabel: "Ask about hobbies", note: "Ask and answer about activity preferences." }]
 };
 
 export const hobbiesAtHomeTopic = {
@@ -61,7 +61,7 @@ export const hobbiesAtHomeTopic = {
   parentGuide: "Ask what your child likes to do at home, then notice the difference between a favorite activity and something happening right now.",
   cultureGuide: "Home activities give children a natural reason to use both preferences and present actions in short conversations.",
   activities: ["Tap to hear", "Choose the sentence"],
-  steps: [{ book: "4B", lesson: 4, title: "Hobbies", note: "Talk about home activities with 喜欢, 爱, and 在." }]
+  steps: [{ book: "4B", lesson: 4, title: "Hobbies", cardLabel: "Talk about home activities", note: "Talk about home activities with 喜欢, 爱, and 在." }]
 };
 
 export const hobbiesLeisureTopic = {
@@ -85,7 +85,7 @@ export const hobbiesLeisureTopic = {
   parentGuide: "Use a familiar park, playground, or beach picture to help your child connect the place word with the activity.",
   cultureGuide: "Outdoor activities make a natural next step after talking about what someone likes to do at home.",
   activities: ["Tap to hear", "Build the sentence"],
-  steps: [{ book: "4B", lesson: 7, title: "Leisure time", note: "Say where someone is doing an outdoor activity." }]
+  steps: [{ book: "4B", lesson: 7, title: "Leisure time", cardLabel: "Say where activities happen", note: "Say where someone is doing an outdoor activity." }]
 };
 
 export const toysTopic = {
@@ -118,5 +118,5 @@ export const toysTopic = {
   parentGuide: "Point to a real toy at home and say 我有… together.",
   cultureGuide: "Keep this page with the Book 2A ownership frame; later requests to use someone else's toy belong in Requests.",
   activities: ["Tap to hear", "Say 我有…", "Picture choice"],
-  steps: [{ book: "2A", lesson: 4, title: "My toys", note: "Name four toys with 我有…" }]
+  steps: [{ book: "2A", lesson: 4, title: "My toys", cardLabel: "Say what toys you have", note: "Name four toys with 我有…" }]
 };

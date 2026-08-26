@@ -37,10 +37,10 @@ export const familyTopic = {
   cultureGuide: "This early family lesson works best when love words and family roles stay close to the child's real home life.",
   activities: ["Listen", "Book words", "Introduce my family", "Practice"],
   steps: [
-    { book: "1B", lesson: 1, title: "Mum and dad", note: "Start with immediate family." },
-    { book: "1B", lesson: 2, title: "Brothers and sisters", note: "Expand the family set." },
-    { book: "2A", lesson: 2, title: "Two younger brothers", note: "Add sibling language in sentences." },
-    { book: "3A", lesson: 4, title: "Family", note: "Widen the family topic." }
+    { book: "1B", lesson: 1, title: "Mum and dad", cardLabel: "Talk about Mom and Dad", note: "Start with immediate family." },
+    { book: "1B", lesson: 2, title: "Brothers and sisters", cardLabel: "Name brothers and sisters", note: "Expand the family set." },
+    { book: "2A", lesson: 2, title: "Two younger brothers", cardLabel: "Talk about siblings", note: "Add sibling language in sentences." },
+    { book: "3A", lesson: 4, title: "Family", cardLabel: "Talk about your family", note: "Widen the family topic." }
   ]
 };
 

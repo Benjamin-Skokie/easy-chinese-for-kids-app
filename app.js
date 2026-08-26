@@ -1885,6 +1885,9 @@
       focusLearningPanel2();
     }
     function topicLessonTitle(topic, step) {
+      if (step.cardLabel) {
+        return step.cardLabel;
+      }
       if (topic.id !== "numbers") {
         return step.title;
       }
@@ -1914,7 +1917,7 @@
         const bookId = step.book.toLowerCase();
         const isActive = state2.lessonScope?.bookId === bookId && state2.lessonScope.lessonNumber === step.lesson;
         return `
-        <button class="topic-lesson-card${isActive ? " is-active" : ""}" type="button" data-topic-lesson-source="${bookId}:${step.lesson}" aria-label="Show only Book ${step.book} Lesson ${step.lesson}: ${step.title}">
+        <button class="topic-lesson-card${isActive ? " is-active" : ""}" type="button" data-topic-lesson-source="${bookId}:${step.lesson}" aria-label="Show only Book ${step.book} Lesson ${step.lesson}: ${topicLessonTitle(topic, step)}">
           <span class="topic-lesson-meta">Book ${step.book} Lesson ${step.lesson}</span>
           <strong>${topicLessonTitle(topic, step)}</strong>
         </button>
@@ -2953,7 +2956,7 @@
     parentGuide: "Compare real objects together: a big and small cup, a long and short pencil, or a fast and slow walk.",
     cultureGuide: "Comparison words are useful across nearly every later topic because children can see and act them out immediately.",
     activities: ["Tap to hear", "Compare two things", "Say what you see"],
-    steps: [{ book: "2B", lesson: 6, title: "Big or small", note: "Use opposite description words." }]
+    steps: [{ book: "2B", lesson: 6, title: "Big or small", cardLabel: "Compare big and small", note: "Use opposite description words." }]
   };
   var comparisonVisualItems = [
     ["\u5927\uFF0C\u5C0F", "d\xE0, xi\u01CEo", "big, small", "big-small-animals.webp", ["\u5927", "\u5C0F"]],
@@ -3004,7 +3007,7 @@
     parentGuide: "Use a book, backpack, and pencil case to act out each position before naming it.",
     cultureGuide: "Position language becomes useful quickly in classroom directions, home routines, and simple games.",
     activities: ["Tap to hear", "Find the position", "Say where it is"],
-    steps: [{ book: "3B", lesson: 3, title: "Positions", note: "Describe where objects are." }]
+    steps: [{ book: "3B", lesson: 3, title: "Positions", cardLabel: "Say where things are", note: "Describe where objects are." }]
   };
   var positionVisualItems = [
     ["\u4E0A\u548C\u4E0B", "sh\xE0ng h\xE9 xi\xE0", "up and down", "positions-up-down.webp"],
@@ -3080,7 +3083,7 @@
     parentGuide: "Start with how the child actually gets to school, then use the other scenes as conversation prompts.",
     cultureGuide: "Travel scenes make useful speaking practice because each vehicle has a clear destination and reason for the trip.",
     activities: ["Tap to hear", "Choose the vehicle", "Talk about a trip"],
-    steps: [{ book: "4A", lesson: 6, title: "Means of transport", note: "Say how people travel." }]
+    steps: [{ book: "4A", lesson: 6, title: "Means of transport", cardLabel: "Say how you travel", note: "Say how people travel." }]
   };
   var transportVisualItems = [
     ["\u6211\u8D70\u8DEF\u53BB\u4E0A\u5B66\u3002", "w\u01D2 z\u01D2u l\xF9 q\xF9 sh\xE0ng xu\xE9.", "I walk to school.", "walk-to-school.webp"],
@@ -3147,7 +3150,7 @@
     parentGuide: "This topic becomes much easier when children can point to real places and routines in their own day.",
     cultureGuide: "Daily life topics make the tool feel practical instead of toy-like, which fits your goal well.",
     activities: ["Tap to hear", "Room scenes", "Room words"],
-    steps: [{ book: "4B", lesson: 3, title: "My room", note: "Bring language into the home setting." }]
+    steps: [{ book: "4B", lesson: 3, title: "My room", cardLabel: "Name rooms at home", note: "Bring language into the home setting." }]
   };
   var roomVisualItems = [
     ["\u5BA2\u5385", "k\xE8 t\u012Bng", "living room", "living-room.webp", "assets/illustrated-rooms"],
@@ -4582,9 +4585,9 @@
     cultureGuide: "Food is a great place to add extra content later: dumplings, mooncakes, z\xF2ngzi, fruit names, and meal routines.",
     activities: ["Tap to hear", "Name the food", "Match the words", "Build a sentence"],
     steps: [
-      { book: "1B", lesson: 7, title: "Fruit", note: "Begin with highly visual food words." },
-      { book: "2B", lesson: 7, title: "Snacks", note: "Add everyday treat vocabulary." },
-      { book: "3B", lesson: 6, title: "Vegetables", note: "Extend the category." }
+      { book: "1B", lesson: 7, title: "Fruit", cardLabel: "Name fruit", note: "Begin with highly visual food words." },
+      { book: "2B", lesson: 7, title: "Snacks", cardLabel: "Name snacks", note: "Add everyday treat vocabulary." },
+      { book: "3B", lesson: 6, title: "Vegetables", cardLabel: "Name vegetables", note: "Extend the category." }
     ]
   };
   var foodTopicData = {
@@ -4661,7 +4664,7 @@
     parentGuide: "Ask \u4F60\u559C\u6B22\u5403\u4EC0\u4E48\uFF1F, then let your child answer with one food they like or do not like.",
     cultureGuide: "\u559C\u6B22\u5403 and \u4E0D\u559C\u6B22\u5403 make it easy to share a real preference at a meal or snack time.",
     activities: ["Play scenes", "Say a preference", "Listen and choose", "Build a sentence"],
-    steps: [{ book: "3B", lesson: 5, title: "Food and drink", note: "Talk about foods and drinks you like." }]
+    steps: [{ book: "3B", lesson: 5, title: "Food and drink", cardLabel: "Talk about food you like", note: "Talk about foods and drinks you like." }]
   };
   var foodPreferencesTopicData = {
     practiceSummary: "Make your own sentences about foods you like and do not like.",
@@ -4729,8 +4732,8 @@
     cultureGuide: "Meals and feelings connect simple food words to a useful everyday situation.",
     activities: ["Play scenes", "Talk about lunch", "Listen and choose", "Build a sentence"],
     steps: [
-      { book: "4A", lesson: 5, title: "My lunch", note: "Say what you eat and drink for lunch." },
-      { book: "4A", lesson: 7, title: "I'm hungry", note: "Say when you are hungry or thirsty." }
+      { book: "4A", lesson: 5, title: "My lunch", cardLabel: "Talk about lunch", note: "Say what you eat and drink for lunch." },
+      { book: "4A", lesson: 7, title: "I'm hungry", cardLabel: "Say when you are hungry", note: "Say when you are hungry or thirsty." }
     ]
   };
   var mealsFeelingsTopicData = {
@@ -4910,8 +4913,8 @@
     cultureGuide: "Children connect strongly to names and faces, so recurring kid characters help this lesson feel social instead of abstract.",
     activities: ["Tap to hear", "Play the conversation", "Build the sentence"],
     steps: [
-      { book: "1A", lesson: 6, title: "What's your name?", note: "Learn a first self-introduction pattern." },
-      { book: "2A", lesson: 3, title: "Good friends", note: "Use names and social language in a wider context." }
+      { book: "1A", lesson: 6, title: "What's your name?", cardLabel: "Say your name", note: "Learn a first self-introduction pattern." },
+      { book: "2A", lesson: 3, title: "Good friends", cardLabel: "Introduce a friend", note: "Use names and social language in a wider context." }
     ]
   };
   var introductionsPractice = [
@@ -5186,8 +5189,8 @@
     cultureGuide: "This lesson often works as an early identity bundle: name, age, and school year all come together in one short getting-to-know-you conversation.",
     activities: ["Tap to hear", "Fill in my age", "Say my grade", "Listen and point"],
     steps: [
-      { book: "1A", lesson: 7, title: "I'm 5 years old", note: "Learn the first age sentence pattern." },
-      { book: "3A", lesson: 3, title: "Happy birthday!", note: "Reconnect age with date and birthday language." }
+      { book: "1A", lesson: 7, title: "I'm 5 years old", cardLabel: "Say your age", note: "Learn the first age sentence pattern." },
+      { book: "3A", lesson: 3, title: "Happy birthday!", cardLabel: "Talk about birthday ages", note: "Reconnect age with date and birthday language." }
     ]
   };
   var agePractice = [
@@ -5415,7 +5418,7 @@
     parentGuide: "Use these during real routines: handing snacks, passing pencils, cleaning up, or asking for help.",
     cultureGuide: "Polite language works best when tied to real exchanges. A quick classroom or home routine is better than a long explanation.",
     activities: ["Tap to hear", "Match phrase to situation", "Listen and choose", "Speak after me"],
-    steps: [{ book: "1A", lesson: 5, title: "Thank you!", note: "Use kind words in everyday classroom moments." }]
+    steps: [{ book: "1A", lesson: 5, title: "Thank you!", cardLabel: "Use polite words", note: "Use kind words in everyday classroom moments." }]
   };
   var politePractice = [
     {
@@ -5845,7 +5848,7 @@
     parentGuide: "Pair the phrase with movement. Wave, smile, and say it together. Young children remember social language best when it feels physical.",
     cultureGuide: "Greetings are a gentle bridge into relationship-focused language. The point is warmth and confidence, not a long explanation.",
     activities: ["Tap to hear", "Echo and repeat", "Choose the greeting", "Role-play turns"],
-    steps: [{ book: "1A", lesson: 4, title: "Hello!", note: "Begin with friendly greetings." }]
+    steps: [{ book: "1A", lesson: 4, title: "Hello!", cardLabel: "Say hello and goodbye", note: "Begin with friendly greetings." }]
   };
   var greetingsPractice = [
     {
@@ -6299,7 +6302,7 @@
     cultureGuide: "A flag can help introduce a country word, but it does not define what every person from that country looks like.",
     activities: ["Listen", "Book words", "Ask and answer"],
     steps: [
-      { book: "3A", lesson: 5, title: "Nationality", note: "Ask and answer \u4F60\u662F\u54EA\u56FD\u4EBA\uFF1F / \u6211\u662F\u2026\u4EBA\u3002" }
+      { book: "3A", lesson: 5, title: "Nationality", cardLabel: "Say where you are from", note: "Ask and answer \u4F60\u662F\u54EA\u56FD\u4EBA\uFF1F / \u6211\u662F\u2026\u4EBA\u3002" }
     ]
   };
   var languagesTopic = {
@@ -6329,7 +6332,7 @@
     cultureGuide: "People can speak more than one language. A nationality and a language are useful words to learn, not labels for what every person is like.",
     activities: ["Listen", "Book words", "Say the sentence"],
     steps: [
-      { book: "4A", lesson: 2, title: "Languages", note: "Say \u2026\u4EBA\u8BF4\u2026\u8BED and \u6211\u662F\u2026\u4EBA\u3002\u6211\u8BF4\u2026\u8BED\u3002" }
+      { book: "4A", lesson: 2, title: "Languages", cardLabel: "Say what language you speak", note: "Say \u2026\u4EBA\u8BF4\u2026\u8BED and \u6211\u662F\u2026\u4EBA\u3002\u6211\u8BF4\u2026\u8BED\u3002" }
     ]
   };
   var identityCountries = [
@@ -6504,10 +6507,10 @@
     cultureGuide: "This early family lesson works best when love words and family roles stay close to the child's real home life.",
     activities: ["Listen", "Book words", "Introduce my family", "Practice"],
     steps: [
-      { book: "1B", lesson: 1, title: "Mum and dad", note: "Start with immediate family." },
-      { book: "1B", lesson: 2, title: "Brothers and sisters", note: "Expand the family set." },
-      { book: "2A", lesson: 2, title: "Two younger brothers", note: "Add sibling language in sentences." },
-      { book: "3A", lesson: 4, title: "Family", note: "Widen the family topic." }
+      { book: "1B", lesson: 1, title: "Mum and dad", cardLabel: "Talk about Mom and Dad", note: "Start with immediate family." },
+      { book: "1B", lesson: 2, title: "Brothers and sisters", cardLabel: "Name brothers and sisters", note: "Expand the family set." },
+      { book: "2A", lesson: 2, title: "Two younger brothers", cardLabel: "Talk about siblings", note: "Add sibling language in sentences." },
+      { book: "3A", lesson: 4, title: "Family", cardLabel: "Talk about your family", note: "Widen the family topic." }
     ]
   };
   var familyGameItemIds = [
@@ -6639,9 +6642,9 @@
     cultureGuide: "Clothes can later connect to colours, weather, and festival dress without needing a lot of extra explanation.",
     activities: ["Tap to hear", "Match the clothing", "Dress for the weather", "Listen and choose"],
     steps: [
-      { book: "2A", lesson: 6, title: "I can dress myself", note: "Start with dressing language." },
-      { book: "3A", lesson: 7, title: "Clothes", note: "Build a fuller clothing set." },
-      { book: "4B", lesson: 2, title: "Clothes", note: "Reconnect clothing with weather and daily life." }
+      { book: "2A", lesson: 6, title: "I can dress myself", cardLabel: "Get dressed", note: "Start with dressing language." },
+      { book: "3A", lesson: 7, title: "Clothes", cardLabel: "Name clothes", note: "Build a fuller clothing set." },
+      { book: "4B", lesson: 2, title: "Clothes", cardLabel: "Choose clothes for the weather", note: "Reconnect clothing with weather and daily life." }
     ]
   };
   var clothesPractice = [
@@ -6688,7 +6691,7 @@
       { id: "no-permission", hanzi: "\u4E0D\u884C\u3002", pinyin: "b\xF9 x\xEDng.", english: "No, you may not.", audio: "\u4E0D\u884C" },
       { id: "please", hanzi: "\u8BF7", pinyin: "q\u01D0ng", english: "please", audio: "\u8BF7" }
     ],
-    steps: [{ book: "3A", lesson: 6, title: "Request", note: "Ask politely and understand permission answers." }]
+    steps: [{ book: "3A", lesson: 6, title: "Request", cardLabel: "Ask for permission", note: "Ask politely and understand permission answers." }]
   };
   var requestPractice = [
     {
@@ -6818,8 +6821,8 @@
     cultureGuide: "Colour topics are a natural place to add small festival and clothing connections later.",
     activities: ["Tap to hear", "Find the colour and object", "Match picture and phrase", "Say what I like"],
     steps: [
-      { book: "1B", lesson: 6, title: "Colours", note: "Start with common colour words." },
-      { book: "2A", lesson: 7, title: "Colours", note: "Review and strengthen the same topic later." }
+      { book: "1B", lesson: 6, title: "Colours", cardLabel: "Name basic colours", note: "Start with common colour words." },
+      { book: "2A", lesson: 7, title: "Colours", cardLabel: "Talk about colours you like", note: "Review and strengthen the same topic later." }
     ]
   };
 
@@ -6849,7 +6852,7 @@
     parentGuide: "Choose activities the child already loves. Familiar routines make speaking practice feel much less abstract.",
     cultureGuide: "Hobbies are a nice place to introduce art, music, and cultural interests once the core language is stable.",
     activities: ["Tap to hear", "Build a sentence"],
-    steps: [{ book: "2A", lesson: 5, title: "I love reading", note: "Start with a simple preference pattern." }]
+    steps: [{ book: "2A", lesson: 5, title: "I love reading", cardLabel: "Say what you like", note: "Start with a simple preference pattern." }]
   };
   var hobbies3bTopic = {
     id: "hobbies-3b",
@@ -6864,7 +6867,7 @@
     parentGuide: hobbiesTopic.parentGuide,
     cultureGuide: hobbiesTopic.cultureGuide,
     activities: ["Tap to hear", "Build a question"],
-    steps: [{ book: "3B", lesson: 4, title: "Hobbies", note: "Ask and answer about activity preferences." }]
+    steps: [{ book: "3B", lesson: 4, title: "Hobbies", cardLabel: "Ask about hobbies", note: "Ask and answer about activity preferences." }]
   };
   var hobbiesAtHomeTopic = {
     id: "hobbies-at-home",
@@ -6885,7 +6888,7 @@
     parentGuide: "Ask what your child likes to do at home, then notice the difference between a favorite activity and something happening right now.",
     cultureGuide: "Home activities give children a natural reason to use both preferences and present actions in short conversations.",
     activities: ["Tap to hear", "Choose the sentence"],
-    steps: [{ book: "4B", lesson: 4, title: "Hobbies", note: "Talk about home activities with \u559C\u6B22, \u7231, and \u5728." }]
+    steps: [{ book: "4B", lesson: 4, title: "Hobbies", cardLabel: "Talk about home activities", note: "Talk about home activities with \u559C\u6B22, \u7231, and \u5728." }]
   };
   var hobbiesLeisureTopic = {
     id: "hobbies-leisure",
@@ -6908,7 +6911,7 @@
     parentGuide: "Use a familiar park, playground, or beach picture to help your child connect the place word with the activity.",
     cultureGuide: "Outdoor activities make a natural next step after talking about what someone likes to do at home.",
     activities: ["Tap to hear", "Build the sentence"],
-    steps: [{ book: "4B", lesson: 7, title: "Leisure time", note: "Say where someone is doing an outdoor activity." }]
+    steps: [{ book: "4B", lesson: 7, title: "Leisure time", cardLabel: "Say where activities happen", note: "Say where someone is doing an outdoor activity." }]
   };
   var toysTopic = {
     id: "toys",
@@ -6940,7 +6943,7 @@
     parentGuide: "Point to a real toy at home and say \u6211\u6709\u2026 together.",
     cultureGuide: "Keep this page with the Book 2A ownership frame; later requests to use someone else's toy belong in Requests.",
     activities: ["Tap to hear", "Say \u6211\u6709\u2026", "Picture choice"],
-    steps: [{ book: "2A", lesson: 4, title: "My toys", note: "Name four toys with \u6211\u6709\u2026" }]
+    steps: [{ book: "2A", lesson: 4, title: "My toys", cardLabel: "Say what toys you have", note: "Name four toys with \u6211\u6709\u2026" }]
   };
 
   // src/features/foundations/body.js
@@ -6970,7 +6973,7 @@
     parentGuide: "Tap a body word, hear it together, then point to the same body part on yourself or on the character.",
     cultureGuide: "Body vocabulary is simple to act out, so it is a good topic for young beginners who are still building confidence.",
     activities: ["Tap word to hear", "See the body part glow", "Listen and point", "Picture matching"],
-    steps: [{ book: "1B", lesson: 3, title: "Parts of the body (1)", note: "Start with the first body words." }, { book: "1B", lesson: 4, title: "Parts of the body (2)", note: "Expand and reinforce the body set." }]
+    steps: [{ book: "1B", lesson: 3, title: "Parts of the body (1)", cardLabel: "Name body parts", note: "Start with the first body words." }, { book: "1B", lesson: 4, title: "Parts of the body (2)", cardLabel: "Learn more body parts", note: "Expand and reinforce the body set." }]
   };
   var bodyDiagramLayout = { left: ["hair", "ears", "nose", "hand", "leg", "foot"], right: ["head", "forehead", "eyes", "mouth", "neck", "arm"] };
   var bodyCoreItemIds = ["head", "hair", "eyes", "ears", "nose", "mouth", "hand", "foot"];
@@ -6998,11 +7001,11 @@
     cultureGuide: "Numbers connect easily to food, family, and festival routines. Counting dumplings, oranges, or mooncakes makes practice feel real.",
     activities: ["Tap to hear", "Count and say", "Match picture to number", "Listen and choose"],
     steps: [
-      { book: "1A", lesson: 1, title: "Numbers (1)", note: "Learn 1-5 with first counting practice." },
-      { book: "1A", lesson: 2, title: "Numbers (2)", note: "Extend to 6-10." },
-      { book: "1A", lesson: 3, title: "Numbers (3)", note: "Move into 11-20." },
-      { book: "2A", lesson: 1, title: "Numbers", note: "Grow to 21-40." },
-      { book: "3A", lesson: 1, title: "Numbers", note: "Grow to 41-100." }
+      { book: "1A", lesson: 1, title: "Numbers (1)", cardLabel: "Count from 1 to 5", note: "Learn 1-5 with first counting practice." },
+      { book: "1A", lesson: 2, title: "Numbers (2)", cardLabel: "Count from 6 to 10", note: "Extend to 6-10." },
+      { book: "1A", lesson: 3, title: "Numbers (3)", cardLabel: "Count from 11 to 20", note: "Move into 11-20." },
+      { book: "2A", lesson: 1, title: "Numbers", cardLabel: "Count from 21 to 40", note: "Grow to 21-40." },
+      { book: "3A", lesson: 1, title: "Numbers", cardLabel: "Count from 41 to 100", note: "Grow to 41-100." }
     ]
   };
   var multiplicationRhymeTopic = {
@@ -7236,7 +7239,7 @@
     parentGuide: "Use a made-up telephone number only. This lesson practises the language pattern, not sharing personal contact details.",
     cultureGuide: "This later family lesson extends an introduction with where grandparents live and a made-up family telephone number.",
     activities: ["Scene", "Book words", "Useful note", "Practice"],
-    steps: [{ book: "4A", lesson: 1, title: "Telephone numbers", note: "Ask where family lives and exchange a telephone number." }]
+    steps: [{ book: "4A", lesson: 1, title: "Telephone numbers", cardLabel: "Say where family lives", note: "Ask where family lives and exchange a telephone number." }]
   };
   var telephonePractice = {
     residence: {
@@ -9888,7 +9891,7 @@
     cultureGuide: "Animals can later connect naturally to zodiac content and story-based culture lessons.",
     activities: ["Tap to hear", "Choose the measure word"],
     steps: [
-      { book: "2B", lesson: 5, title: "Animals", note: "Count zoo animals with \u53EA, \u5934, and \u6761." }
+      { book: "2B", lesson: 5, title: "Animals", cardLabel: "Count zoo animals", note: "Count zoo animals with \u53EA, \u5934, and \u6761." }
     ]
   };
   var petsTopic = {
@@ -9905,7 +9908,7 @@
     cultureGuide: "Pets can later connect naturally to animal-care stories and everyday home life.",
     activities: ["Tap to hear", "Complete a pet sentence", "Pet food story"],
     steps: [
-      { book: "1B", lesson: 5, title: "Pets", note: "Name familiar pets and hear a simple preference sentence." }
+      { book: "1B", lesson: 5, title: "Pets", cardLabel: "Name pets", note: "Name familiar pets and hear a simple preference sentence." }
     ]
   };
 
@@ -9994,7 +9997,7 @@
     parentGuide: "This is best as a daily one-minute habit. Check the weather together and say the phrase before leaving home.",
     cultureGuide: "Weather combines nicely with clothing and seasonal culture content later.",
     activities: ["Tap to hear", "Describe the scene", "Choose today's weather", "Dress for the weather"],
-    steps: [{ book: "4B", lesson: 1, title: "It's raining", note: "Use concrete daily weather phrases." }]
+    steps: [{ book: "4B", lesson: 1, title: "It's raining", cardLabel: "Talk about rainy weather", note: "Use concrete daily weather phrases." }]
   };
   var natureTopic = {
     id: "nature",
@@ -10008,7 +10011,7 @@
     parentGuide: "Point outside, or use the scene: ask what is in the sky and what is on the ground before saying the full sentence together.",
     cultureGuide: "Keep the focus on the sky-and-ground sentence pattern; colour is not a target of this lesson.",
     activities: ["Tap to hear", "Look up and down", "Describe the scene", "Say the full sentence"],
-    steps: [{ book: "3B", lesson: 7, title: "Nature", note: "Describe what is in the sky and on the ground." }]
+    steps: [{ book: "3B", lesson: 7, title: "Nature", cardLabel: "Talk about nature", note: "Describe what is in the sky and on the ground." }]
   };
 
   // src/features/world/world-runtime.js
@@ -11458,9 +11461,9 @@
       cultureGuide: "Time and date language pairs naturally with birthday and holiday content later.",
       activities: ["Tap to hear", "Read the clock", "Daily routines"],
       steps: [
-        { book: "2B", lesson: 2, title: "What time is it?", note: "Add telling time." },
-        { book: "4A", lesson: 3, title: "Tell the time", note: "Revisit time in a more functional way." },
-        { book: "4A", lesson: 4, title: "Daily routine", note: "Use time language in everyday life." }
+        { book: "2B", lesson: 2, title: "What time is it?", cardLabel: "Tell the time", note: "Add telling time." },
+        { book: "4A", lesson: 3, title: "Tell the time", cardLabel: "Read clock times", note: "Revisit time in a more functional way." },
+        { book: "4A", lesson: 4, title: "Daily routine", cardLabel: "Talk about your routine", note: "Use time language in everyday life." }
       ]
     },
     {
@@ -11489,7 +11492,7 @@
       parentGuide: "Use the real day of the week at breakfast or on the way to school, then repeat it together.",
       cultureGuide: "A weekly rhythm gives children an easy, useful way to connect school, family routines, and calendar language.",
       activities: ["Tap to hear", "Say today's day", "Put the week in order"],
-      steps: [{ book: "2B", lesson: 1, title: "Today is Monday", note: "Learn the days of the week." }]
+      steps: [{ book: "2B", lesson: 1, title: "Today is Monday", cardLabel: "Name the days of the week", note: "Learn the days of the week." }]
     },
     {
       id: "dates",
@@ -11516,8 +11519,8 @@
       cultureGuide: "Dates are most memorable when connected to a child's own celebrations, school events, and seasonal activities.",
       activities: ["Tap to hear", "Read a calendar", "Say a birthday date"],
       steps: [
-        { book: "3A", lesson: 2, title: "Date", note: "Say month and day." },
-        { book: "3A", lesson: 3, title: "Happy birthday!", note: "Use dates for birthdays and celebrations." }
+        { book: "3A", lesson: 2, title: "Date", cardLabel: "Say the date", note: "Say month and day." },
+        { book: "3A", lesson: 3, title: "Happy birthday!", cardLabel: "Talk about birthdays", note: "Use dates for birthdays and celebrations." }
       ]
     },
     {
@@ -11532,7 +11535,7 @@
       parentGuide: "Use a real pencil, eraser, or pair of scissors to practise \u8FD9\u662F\u6211\u7684 and count the objects together.",
       cultureGuide: "This lesson builds practical ownership, color, and measure-word language from everyday school objects.",
       activities: ["Tap to hear", "Name my things", "Match the picture", "Build a sentence"],
-      steps: [{ book: "2B", lesson: 3, title: "Stationery", note: "Talk about school things, colors, and measure words." }]
+      steps: [{ book: "2B", lesson: 3, title: "Stationery", cardLabel: "Name your school things", note: "Talk about school things, colors, and measure words." }]
     },
     {
       id: "school-supplies",
@@ -11546,7 +11549,7 @@
       parentGuide: "Use a real pencil case or backpack to point to each object while saying its Chinese name.",
       cultureGuide: "These everyday classroom words give children quick, useful ways to speak Chinese during school routines.",
       activities: ["Tap to hear", "Name school things", "Pack a backpack", "Build a sentence"],
-      steps: [{ book: "3B", lesson: 1, title: "My schoolbag", note: "Say what is in a backpack." }]
+      steps: [{ book: "3B", lesson: 1, title: "My schoolbag", cardLabel: "Pack your backpack", note: "Say what is in a backpack." }]
     },
     {
       id: "classroom",
@@ -11561,8 +11564,8 @@
       cultureGuide: "Classroom language supports simple descriptions with \u6709 (there is / are) and \u5728 (at / in).",
       activities: ["Tap to hear", "Look around", "Listen and choose", "Match the words"],
       steps: [
-        { book: "2B", lesson: 4, title: "My classroom", note: "Name the classroom and its furniture." },
-        { book: "3B", lesson: 2, title: "Our classroom", note: "Describe things in the classroom." }
+        { book: "2B", lesson: 4, title: "My classroom", cardLabel: "Name classroom things", note: "Name the classroom and its furniture." },
+        { book: "3B", lesson: 2, title: "Our classroom", cardLabel: "Describe your classroom", note: "Describe things in the classroom." }
       ]
     },
     {
@@ -11577,7 +11580,7 @@
       parentGuide: "Use the school map or a walk around school to connect each place name to a real place.",
       cultureGuide: "The pattern \u5B66\u6821\u6709... is a natural way for children to describe places and things around them.",
       activities: ["Play scenes", "Explore school places", "Listen and choose", "Match the words"],
-      steps: [{ book: "4B", lesson: 5, title: "Our school", note: "Name school places with \u5B66\u6821\u6709..." }]
+      steps: [{ book: "4B", lesson: 5, title: "Our school", cardLabel: "Name places at school", note: "Name school places with \u5B66\u6821\u6709..." }]
     },
     {
       id: "school-subjects",
@@ -11591,7 +11594,7 @@
       parentGuide: "Ask which class your child likes best, then replace the final subject word in \u6211\u559C\u6B22...\u8BFE.",
       cultureGuide: "School subjects make a useful bridge from naming words to sharing a personal preference.",
       activities: ["Tap to hear", "Say a favorite", "Listen and choose", "Match the words"],
-      steps: [{ book: "4B", lesson: 6, title: "School subjects", note: "Talk about favorite classes." }]
+      steps: [{ book: "4B", lesson: 6, title: "School subjects", cardLabel: "Talk about school subjects", note: "Talk about favorite classes." }]
     },
     hobbiesTopic,
     hobbies3bTopic,

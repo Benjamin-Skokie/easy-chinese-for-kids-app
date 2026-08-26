@@ -40,7 +40,7 @@ export const coloursTopic = {
   cultureGuide: "Colour topics are a natural place to add small festival and clothing connections later.",
   activities: ["Tap to hear", "Find the colour and object", "Match picture and phrase", "Say what I like"],
   steps: [
-    { book: "1B", lesson: 6, title: "Colours", note: "Start with common colour words." },
-    { book: "2A", lesson: 7, title: "Colours", note: "Review and strengthen the same topic later." }
+    { book: "1B", lesson: 6, title: "Colours", cardLabel: "Name basic colours", note: "Start with common colour words." },
+    { book: "2A", lesson: 7, title: "Colours", cardLabel: "Talk about colours you like", note: "Review and strengthen the same topic later." }
   ]
 };

@@ -1451,6 +1451,7 @@ test("every displayed book lesson source resolves to the exact curriculum lesson
       const lesson = book?.lessons.find((entry) => entry.lesson === step.lesson);
       assert.ok(lesson, `${topic.id} has a valid ${step.book} Lesson ${step.lesson} source`);
       assert.equal(lesson.title, step.title, `${topic.id} source title matches ${step.book} Lesson ${step.lesson}`);
+      assert.ok(step.cardLabel, `${topic.id} ${step.book} Lesson ${step.lesson} needs a useful lesson-card label`);
     }
   }
 
@@ -1463,6 +1464,7 @@ test("every displayed book lesson source resolves to the exact curriculum lesson
   assert.match(topicDetailSource, /state\.lessonScope = null;/);
   assert.match(topicDetailSource, /topicLessonStrip\.innerHTML = allContentCard \+ steps/);
   assert.match(topicDetailSource, /topicSummary\.textContent = scopedStep\?\.note \?\? topic\.summary/);
+  assert.match(topicDetailSource, /if \(step\.cardLabel\) \{/);
   assert.match(topicDetailSource, /link\.dataset\.topicLessonSource/);
 });
 

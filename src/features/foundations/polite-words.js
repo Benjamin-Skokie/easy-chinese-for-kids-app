@@ -25,7 +25,7 @@ export const politeWordsTopic = {
   parentGuide: "Use these during real routines: handing snacks, passing pencils, cleaning up, or asking for help.",
   cultureGuide: "Polite language works best when tied to real exchanges. A quick classroom or home routine is better than a long explanation.",
   activities: ["Tap to hear", "Match phrase to situation", "Listen and choose", "Speak after me"],
-  steps: [{ book: "1A", lesson: 5, title: "Thank you!", note: "Use kind words in everyday classroom moments." }]
+  steps: [{ book: "1A", lesson: 5, title: "Thank you!", cardLabel: "Use polite words", note: "Use kind words in everyday classroom moments." }]
 };
 
 export const politePractice = [

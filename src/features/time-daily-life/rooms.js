@@ -10,7 +10,7 @@ export const dailyLifeTopic = {
   parentGuide: "This topic becomes much easier when children can point to real places and routines in their own day.",
   cultureGuide: "Daily life topics make the tool feel practical instead of toy-like, which fits your goal well.",
   activities: ["Tap to hear", "Room scenes", "Room words"],
-  steps: [{ book: "4B", lesson: 3, title: "My room", note: "Bring language into the home setting." }]
+  steps: [{ book: "4B", lesson: 3, title: "My room", cardLabel: "Name rooms at home", note: "Bring language into the home setting." }]
 };
 
 export const roomVisualItems = [

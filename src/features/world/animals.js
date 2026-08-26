@@ -70,7 +70,7 @@ export const animalsTopic = {
   cultureGuide: "Animals can later connect naturally to zodiac content and story-based culture lessons.",
   activities: ["Tap to hear", "Choose the measure word"],
   steps: [
-    { book: "2B", lesson: 5, title: "Animals", note: "Count zoo animals with 只, 头, and 条." }
+    { book: "2B", lesson: 5, title: "Animals", cardLabel: "Count zoo animals", note: "Count zoo animals with 只, 头, and 条." }
   ]
 };
 
@@ -88,6 +88,6 @@ export const petsTopic = {
   cultureGuide: "Pets can later connect naturally to animal-care stories and everyday home life.",
   activities: ["Tap to hear", "Complete a pet sentence", "Pet food story"],
   steps: [
-    { book: "1B", lesson: 5, title: "Pets", note: "Name familiar pets and hear a simple preference sentence." }
+    { book: "1B", lesson: 5, title: "Pets", cardLabel: "Name pets", note: "Name familiar pets and hear a simple preference sentence." }
   ]
 };

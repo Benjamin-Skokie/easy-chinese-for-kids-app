@@ -11,7 +11,7 @@ export const positionsTopic = {
   parentGuide: "Use a book, backpack, and pencil case to act out each position before naming it.",
   cultureGuide: "Position language becomes useful quickly in classroom directions, home routines, and simple games.",
   activities: ["Tap to hear", "Find the position", "Say where it is"],
-  steps: [{ book: "3B", lesson: 3, title: "Positions", note: "Describe where objects are." }]
+  steps: [{ book: "3B", lesson: 3, title: "Positions", cardLabel: "Say where things are", note: "Describe where objects are." }]
 };
 
 export const positionVisualItems = [

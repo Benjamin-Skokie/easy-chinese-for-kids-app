@@ -11,8 +11,8 @@ export const mealsFeelingsTopic = {
     cultureGuide: "Meals and feelings connect simple food words to a useful everyday situation.",
     activities: ["Play scenes", "Talk about lunch", "Listen and choose", "Build a sentence"],
     steps: [
-      { book: "4A", lesson: 5, title: "My lunch", note: "Say what you eat and drink for lunch." },
-      { book: "4A", lesson: 7, title: "I'm hungry", note: "Say when you are hungry or thirsty." }
+      { book: "4A", lesson: 5, title: "My lunch", cardLabel: "Talk about lunch", note: "Say what you eat and drink for lunch." },
+      { book: "4A", lesson: 7, title: "I'm hungry", cardLabel: "Say when you are hungry", note: "Say when you are hungry or thirsty." }
     ]
   };
 

@@ -188,9 +188,9 @@ export const topicData = [
       "Time and date language pairs naturally with birthday and holiday content later.",
     activities: ["Tap to hear", "Read the clock", "Daily routines"],
     steps: [
-      { book: "2B", lesson: 2, title: "What time is it?", note: "Add telling time." },
-      { book: "4A", lesson: 3, title: "Tell the time", note: "Revisit time in a more functional way." },
-      { book: "4A", lesson: 4, title: "Daily routine", note: "Use time language in everyday life." }
+      { book: "2B", lesson: 2, title: "What time is it?", cardLabel: "Tell the time", note: "Add telling time." },
+      { book: "4A", lesson: 3, title: "Tell the time", cardLabel: "Read clock times", note: "Revisit time in a more functional way." },
+      { book: "4A", lesson: 4, title: "Daily routine", cardLabel: "Talk about your routine", note: "Use time language in everyday life." }
     ]
   },
   {
@@ -219,7 +219,7 @@ export const topicData = [
     parentGuide: "Use the real day of the week at breakfast or on the way to school, then repeat it together.",
     cultureGuide: "A weekly rhythm gives children an easy, useful way to connect school, family routines, and calendar language.",
     activities: ["Tap to hear", "Say today's day", "Put the week in order"],
-    steps: [{ book: "2B", lesson: 1, title: "Today is Monday", note: "Learn the days of the week." }]
+    steps: [{ book: "2B", lesson: 1, title: "Today is Monday", cardLabel: "Name the days of the week", note: "Learn the days of the week." }]
   },
   {
     id: "dates",
@@ -246,8 +246,8 @@ export const topicData = [
     cultureGuide: "Dates are most memorable when connected to a child's own celebrations, school events, and seasonal activities.",
     activities: ["Tap to hear", "Read a calendar", "Say a birthday date"],
     steps: [
-      { book: "3A", lesson: 2, title: "Date", note: "Say month and day." },
-      { book: "3A", lesson: 3, title: "Happy birthday!", note: "Use dates for birthdays and celebrations." }
+      { book: "3A", lesson: 2, title: "Date", cardLabel: "Say the date", note: "Say month and day." },
+      { book: "3A", lesson: 3, title: "Happy birthday!", cardLabel: "Talk about birthdays", note: "Use dates for birthdays and celebrations." }
     ]
   },
   {
@@ -262,7 +262,7 @@ export const topicData = [
     parentGuide: "Use a real pencil, eraser, or pair of scissors to practise 这是我的 and count the objects together.",
     cultureGuide: "This lesson builds practical ownership, color, and measure-word language from everyday school objects.",
     activities: ["Tap to hear", "Name my things", "Match the picture", "Build a sentence"],
-    steps: [{ book: "2B", lesson: 3, title: "Stationery", note: "Talk about school things, colors, and measure words." }]
+    steps: [{ book: "2B", lesson: 3, title: "Stationery", cardLabel: "Name your school things", note: "Talk about school things, colors, and measure words." }]
   },
   {
     id: "school-supplies",
@@ -276,7 +276,7 @@ export const topicData = [
     parentGuide: "Use a real pencil case or backpack to point to each object while saying its Chinese name.",
     cultureGuide: "These everyday classroom words give children quick, useful ways to speak Chinese during school routines.",
     activities: ["Tap to hear", "Name school things", "Pack a backpack", "Build a sentence"],
-    steps: [{ book: "3B", lesson: 1, title: "My schoolbag", note: "Say what is in a backpack." }]
+    steps: [{ book: "3B", lesson: 1, title: "My schoolbag", cardLabel: "Pack your backpack", note: "Say what is in a backpack." }]
   },
   {
     id: "classroom",
@@ -291,8 +291,8 @@ export const topicData = [
     cultureGuide: "Classroom language supports simple descriptions with 有 (there is / are) and 在 (at / in).",
     activities: ["Tap to hear", "Look around", "Listen and choose", "Match the words"],
     steps: [
-      { book: "2B", lesson: 4, title: "My classroom", note: "Name the classroom and its furniture." },
-      { book: "3B", lesson: 2, title: "Our classroom", note: "Describe things in the classroom." }
+      { book: "2B", lesson: 4, title: "My classroom", cardLabel: "Name classroom things", note: "Name the classroom and its furniture." },
+      { book: "3B", lesson: 2, title: "Our classroom", cardLabel: "Describe your classroom", note: "Describe things in the classroom." }
     ]
   },
   {
@@ -307,7 +307,7 @@ export const topicData = [
     parentGuide: "Use the school map or a walk around school to connect each place name to a real place.",
     cultureGuide: "The pattern 学校有... is a natural way for children to describe places and things around them.",
     activities: ["Play scenes", "Explore school places", "Listen and choose", "Match the words"],
-    steps: [{ book: "4B", lesson: 5, title: "Our school", note: "Name school places with 学校有..." }]
+    steps: [{ book: "4B", lesson: 5, title: "Our school", cardLabel: "Name places at school", note: "Name school places with 学校有..." }]
   },
   {
     id: "school-subjects",
@@ -321,7 +321,7 @@ export const topicData = [
     parentGuide: "Ask which class your child likes best, then replace the final subject word in 我喜欢...课.",
     cultureGuide: "School subjects make a useful bridge from naming words to sharing a personal preference.",
     activities: ["Tap to hear", "Say a favorite", "Listen and choose", "Match the words"],
-    steps: [{ book: "4B", lesson: 6, title: "School subjects", note: "Talk about favorite classes." }]
+    steps: [{ book: "4B", lesson: 6, title: "School subjects", cardLabel: "Talk about school subjects", note: "Talk about favorite classes." }]
   },
   hobbiesTopic,
   hobbies3bTopic,

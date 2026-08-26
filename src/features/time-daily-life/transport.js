@@ -10,7 +10,7 @@ export const transportTopic = {
   parentGuide: "Start with how the child actually gets to school, then use the other scenes as conversation prompts.",
   cultureGuide: "Travel scenes make useful speaking practice because each vehicle has a clear destination and reason for the trip.",
   activities: ["Tap to hear", "Choose the vehicle", "Talk about a trip"],
-  steps: [{ book: "4A", lesson: 6, title: "Means of transport", note: "Say how people travel." }]
+  steps: [{ book: "4A", lesson: 6, title: "Means of transport", cardLabel: "Say how you travel", note: "Say how people travel." }]
 };
 
 export const transportVisualItems = [

@@ -33,8 +33,8 @@ export const ageTopic = {
       "This lesson often works as an early identity bundle: name, age, and school year all come together in one short getting-to-know-you conversation.",
     activities: ["Tap to hear", "Fill in my age", "Say my grade", "Listen and point"],
     steps: [
-      { book: "1A", lesson: 7, title: "I'm 5 years old", note: "Learn the first age sentence pattern." },
-      { book: "3A", lesson: 3, title: "Happy birthday!", note: "Reconnect age with date and birthday language." }
+      { book: "1A", lesson: 7, title: "I'm 5 years old", cardLabel: "Say your age", note: "Learn the first age sentence pattern." },
+      { book: "3A", lesson: 3, title: "Happy birthday!", cardLabel: "Talk about birthday ages", note: "Reconnect age with date and birthday language." }
     ]
 };
 export const agePractice = [

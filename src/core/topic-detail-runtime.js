@@ -22,6 +22,9 @@ function selectBookLesson(bookId, lessonNumber) {
 }
 
 function topicLessonTitle(topic, step) {
+  if (step.cardLabel) {
+    return step.cardLabel;
+  }
   if (topic.id !== "numbers") {
     return step.title;
   }
@@ -58,7 +61,7 @@ function renderTopicLessonStrip(topic) {
       const bookId = step.book.toLowerCase();
       const isActive = state.lessonScope?.bookId === bookId && state.lessonScope.lessonNumber === step.lesson;
       return `
-        <button class="topic-lesson-card${isActive ? " is-active" : ""}" type="button" data-topic-lesson-source="${bookId}:${step.lesson}" aria-label="Show only Book ${step.book} Lesson ${step.lesson}: ${step.title}">
+        <button class="topic-lesson-card${isActive ? " is-active" : ""}" type="button" data-topic-lesson-source="${bookId}:${step.lesson}" aria-label="Show only Book ${step.book} Lesson ${step.lesson}: ${topicLessonTitle(topic, step)}">
           <span class="topic-lesson-meta">Book ${step.book} Lesson ${step.lesson}</span>
           <strong>${topicLessonTitle(topic, step)}</strong>
         </button>

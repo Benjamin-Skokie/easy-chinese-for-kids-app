@@ -27,7 +27,7 @@ export const greetingsTopic = {
   parentGuide: "Pair the phrase with movement. Wave, smile, and say it together. Young children remember social language best when it feels physical.",
   cultureGuide: "Greetings are a gentle bridge into relationship-focused language. The point is warmth and confidence, not a long explanation.",
   activities: ["Tap to hear", "Echo and repeat", "Choose the greeting", "Role-play turns"],
-  steps: [{ book: "1A", lesson: 4, title: "Hello!", note: "Begin with friendly greetings." }]
+  steps: [{ book: "1A", lesson: 4, title: "Hello!", cardLabel: "Say hello and goodbye", note: "Begin with friendly greetings." }]
 };
 
 export const greetingsPractice = [

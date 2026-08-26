@@ -19,11 +19,11 @@ export const numbersTopic = {
   cultureGuide: "Numbers connect easily to food, family, and festival routines. Counting dumplings, oranges, or mooncakes makes practice feel real.",
   activities: ["Tap to hear", "Count and say", "Match picture to number", "Listen and choose"],
   steps: [
-    { book: "1A", lesson: 1, title: "Numbers (1)", note: "Learn 1-5 with first counting practice." },
-    { book: "1A", lesson: 2, title: "Numbers (2)", note: "Extend to 6-10." },
-    { book: "1A", lesson: 3, title: "Numbers (3)", note: "Move into 11-20." },
-    { book: "2A", lesson: 1, title: "Numbers", note: "Grow to 21-40." },
-    { book: "3A", lesson: 1, title: "Numbers", note: "Grow to 41-100." }
+    { book: "1A", lesson: 1, title: "Numbers (1)", cardLabel: "Count from 1 to 5", note: "Learn 1-5 with first counting practice." },
+    { book: "1A", lesson: 2, title: "Numbers (2)", cardLabel: "Count from 6 to 10", note: "Extend to 6-10." },
+    { book: "1A", lesson: 3, title: "Numbers (3)", cardLabel: "Count from 11 to 20", note: "Move into 11-20." },
+    { book: "2A", lesson: 1, title: "Numbers", cardLabel: "Count from 21 to 40", note: "Grow to 21-40." },
+    { book: "3A", lesson: 1, title: "Numbers", cardLabel: "Count from 41 to 100", note: "Grow to 41-100." }
   ]
 };
 

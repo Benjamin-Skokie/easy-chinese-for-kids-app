@@ -29,8 +29,8 @@ export const introductionsTopic = {
       "Children connect strongly to names and faces, so recurring kid characters help this lesson feel social instead of abstract.",
     activities: ["Tap to hear", "Play the conversation", "Build the sentence"],
     steps: [
-      { book: "1A", lesson: 6, title: "What's your name?", note: "Learn a first self-introduction pattern." },
-      { book: "2A", lesson: 3, title: "Good friends", note: "Use names and social language in a wider context." }
+      { book: "1A", lesson: 6, title: "What's your name?", cardLabel: "Say your name", note: "Learn a first self-introduction pattern." },
+      { book: "2A", lesson: 3, title: "Good friends", cardLabel: "Introduce a friend", note: "Use names and social language in a wider context." }
     ]
 };
 export const introductionsPractice = [

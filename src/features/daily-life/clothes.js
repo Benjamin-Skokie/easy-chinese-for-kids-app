@@ -24,9 +24,9 @@ export const clothesTopic = {
   cultureGuide: "Clothes can later connect to colours, weather, and festival dress without needing a lot of extra explanation.",
   activities: ["Tap to hear", "Match the clothing", "Dress for the weather", "Listen and choose"],
   steps: [
-    { book: "2A", lesson: 6, title: "I can dress myself", note: "Start with dressing language." },
-    { book: "3A", lesson: 7, title: "Clothes", note: "Build a fuller clothing set." },
-    { book: "4B", lesson: 2, title: "Clothes", note: "Reconnect clothing with weather and daily life." }
+    { book: "2A", lesson: 6, title: "I can dress myself", cardLabel: "Get dressed", note: "Start with dressing language." },
+    { book: "3A", lesson: 7, title: "Clothes", cardLabel: "Name clothes", note: "Build a fuller clothing set." },
+    { book: "4B", lesson: 2, title: "Clothes", cardLabel: "Choose clothes for the weather", note: "Reconnect clothing with weather and daily life." }
   ]
 };
 

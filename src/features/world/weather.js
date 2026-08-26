@@ -84,7 +84,7 @@ export const weatherTopic = {
   parentGuide: "This is best as a daily one-minute habit. Check the weather together and say the phrase before leaving home.",
   cultureGuide: "Weather combines nicely with clothing and seasonal culture content later.",
   activities: ["Tap to hear", "Describe the scene", "Choose today's weather", "Dress for the weather"],
-  steps: [{ book: "4B", lesson: 1, title: "It's raining", note: "Use concrete daily weather phrases." }]
+  steps: [{ book: "4B", lesson: 1, title: "It's raining", cardLabel: "Talk about rainy weather", note: "Use concrete daily weather phrases." }]
 };
 
 export const natureTopic = {
@@ -99,5 +99,5 @@ export const natureTopic = {
   parentGuide: "Point outside, or use the scene: ask what is in the sky and what is on the ground before saying the full sentence together.",
   cultureGuide: "Keep the focus on the sky-and-ground sentence pattern; colour is not a target of this lesson.",
   activities: ["Tap to hear", "Look up and down", "Describe the scene", "Say the full sentence"],
-  steps: [{ book: "3B", lesson: 7, title: "Nature", note: "Describe what is in the sky and on the ground." }]
+  steps: [{ book: "3B", lesson: 7, title: "Nature", cardLabel: "Talk about nature", note: "Describe what is in the sky and on the ground." }]
 };

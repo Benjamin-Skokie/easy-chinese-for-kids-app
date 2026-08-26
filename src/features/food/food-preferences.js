@@ -10,7 +10,7 @@ export const foodPreferencesTopic = {
     parentGuide: "Ask 你喜欢吃什么？, then let your child answer with one food they like or do not like.",
     cultureGuide: "喜欢吃 and 不喜欢吃 make it easy to share a real preference at a meal or snack time.",
     activities: ["Play scenes", "Say a preference", "Listen and choose", "Build a sentence"],
-    steps: [{ book: "3B", lesson: 5, title: "Food and drink", note: "Talk about foods and drinks you like." }]
+    steps: [{ book: "3B", lesson: 5, title: "Food and drink", cardLabel: "Talk about food you like", note: "Talk about foods and drinks you like." }]
   };
 
 export const foodPreferencesTopicData = {

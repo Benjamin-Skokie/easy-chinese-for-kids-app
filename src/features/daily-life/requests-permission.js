@@ -27,7 +27,7 @@ export const requestsPermissionTopic = {
     { id: "no-permission", hanzi: "不行。", pinyin: "bù xíng.", english: "No, you may not.", audio: "不行" },
     { id: "please", hanzi: "请", pinyin: "qǐng", english: "please", audio: "请" }
   ],
-  steps: [{ book: "3A", lesson: 6, title: "Request", note: "Ask politely and understand permission answers." }]
+  steps: [{ book: "3A", lesson: 6, title: "Request", cardLabel: "Ask for permission", note: "Ask politely and understand permission answers." }]
 };
 
 export const requestPractice = [

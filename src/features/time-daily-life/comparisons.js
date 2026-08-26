@@ -10,7 +10,7 @@ export const comparisonsTopic = {
   parentGuide: "Compare real objects together: a big and small cup, a long and short pencil, or a fast and slow walk.",
   cultureGuide: "Comparison words are useful across nearly every later topic because children can see and act them out immediately.",
   activities: ["Tap to hear", "Compare two things", "Say what you see"],
-  steps: [{ book: "2B", lesson: 6, title: "Big or small", note: "Use opposite description words." }]
+  steps: [{ book: "2B", lesson: 6, title: "Big or small", cardLabel: "Compare big and small", note: "Use opposite description words." }]
 };
 
 export const comparisonVisualItems = [

@@ -11,9 +11,9 @@ export const foodTopic = {
     cultureGuide: "Food is a great place to add extra content later: dumplings, mooncakes, zòngzi, fruit names, and meal routines.",
     activities: ["Tap to hear", "Name the food", "Match the words", "Build a sentence"],
     steps: [
-      { book: "1B", lesson: 7, title: "Fruit", note: "Begin with highly visual food words." },
-      { book: "2B", lesson: 7, title: "Snacks", note: "Add everyday treat vocabulary." },
-      { book: "3B", lesson: 6, title: "Vegetables", note: "Extend the category." }
+      { book: "1B", lesson: 7, title: "Fruit", cardLabel: "Name fruit", note: "Begin with highly visual food words." },
+      { book: "2B", lesson: 7, title: "Snacks", cardLabel: "Name snacks", note: "Add everyday treat vocabulary." },
+      { book: "3B", lesson: 6, title: "Vegetables", cardLabel: "Name vegetables", note: "Extend the category." }
     ]
   };
 

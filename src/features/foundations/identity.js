@@ -27,7 +27,7 @@ export const identityTopic = {
   cultureGuide: "A flag can help introduce a country word, but it does not define what every person from that country looks like.",
   activities: ["Listen", "Book words", "Ask and answer"],
   steps: [
-    { book: "3A", lesson: 5, title: "Nationality", note: "Ask and answer 你是哪国人？ / 我是…人。" }
+    { book: "3A", lesson: 5, title: "Nationality", cardLabel: "Say where you are from", note: "Ask and answer 你是哪国人？ / 我是…人。" }
   ]
 };
 
@@ -58,7 +58,7 @@ export const languagesTopic = {
   cultureGuide: "People can speak more than one language. A nationality and a language are useful words to learn, not labels for what every person is like.",
   activities: ["Listen", "Book words", "Say the sentence"],
   steps: [
-    { book: "4A", lesson: 2, title: "Languages", note: "Say …人说…语 and 我是…人。我说…语。" }
+    { book: "4A", lesson: 2, title: "Languages", cardLabel: "Say what language you speak", note: "Say …人说…语 and 我是…人。我说…语。" }
   ]
 };
 
