@@ -1,6 +1,6 @@
 # Lesson Page Build Checklist
 
-Last updated: 2026-08-16
+Last updated: 2026-08-25
 
 Use this checklist to build or materially change one learning topic. It is a decision order, not a page template and not a required reading list.
 
@@ -43,7 +43,21 @@ Before generating an asset or writing a renderer, put this compact, final decisi
 | Useful note | The single reusable distinction it explains, or omit it. |
 | Practice | The remaining language job, game pattern, allowed answer family, whether the response is a question and its required marker, completion display (including unused-choice treatment), and the exact job of every control: audio replay, new round, or both. Do not reuse a Play-shaped control for a different job without stating its state transition. |
 
-The usual page order is: **Scene → optional Book words → optional Useful notes → Practice**. Start from this structure; do not add narrative or filler cards unless the contract establishes a distinct teaching job for them. If Scene already gives every target word a clear picture and sentence, Book words must be text-only rather than repeat the same images. Each visible section has one owner. If a custom renderer owns the page content, set `ownsExplorerContent: true` and suppress generic duplicate panels.
+The usual page order is: **Review → optional Book words → optional Useful notes → Practice**. Review is the universal visible heading for the scene/dialogue area; do not use `Scenes` or repeat a Book/Lesson title inside the page content. Omit Review entirely when the selected content has no scene cards. Start from this structure; do not add narrative or filler cards unless the contract establishes a distinct teaching job for them. If Scene already gives every target word a clear picture and sentence, Book words must be text-only rather than repeat the same images. Each visible section has one owner. If a custom renderer owns the page content, set `ownsExplorerContent: true` and suppress generic duplicate panels.
+
+### Lesson-scoped topic pages
+
+When one topic serves more than one book lesson, its lesson strip is the only Book/Lesson navigation and identification surface. Do not repeat the selected lesson title, description, or `Book X Lesson Y` in the page body.
+
+- Every lesson card shows `Book X Lesson Y` and one short, child-facing label (for example, `Fruit`).
+- Show **All topic content** only when the topic maps to two or more lessons. A one-lesson topic has no All-topic card.
+- Selecting a lesson filters every owned section in the same order: Review, Book words, Useful notes, then Let's practice.
+- Every scene, Book word, Useful note, and practice round that belongs to a textbook lesson must carry its explicit source key: `lessonSources: ["1b:7"]`. An item may name multiple source keys.
+- Content without `lessonSources` is enrichment. It appears in All topic content and never in a selected Book/Lesson view.
+- Hide a section when its filtered content is empty. In particular, when there are no filtered scene cards, render neither **Review** nor a substitute Book/Lesson heading; begin with Book words if it has content.
+- The all-topic default includes all tagged lesson content plus enrichment.
+
+Record the actual item-to-lesson mapping in the topic's existing lesson contract and the OCR page-tag source, [book_lesson_page_tags.json](./ocr/book_lesson_page_tags.json). Do not create a separate handoff or duplicate audit document.
 
 ### Standard scene-card template
 

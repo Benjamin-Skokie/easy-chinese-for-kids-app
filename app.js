@@ -4470,7 +4470,7 @@
       const visibleWords = topicId === "food" ? foodBookWordItems(data) : topicId === "meals-feelings" ? wordGroups.find((group) => group.id === state2.mealsWordGroupId)?.items ?? [] : data.words;
       focusExplorer2.innerHTML = `
     <div class="time-date-board school-topic-board">
-      ${topicId === "food" ? '<div class="time-months-heading"><p class="body-match-kicker">Review</p></div>' : `<div class="numbers-stage-card"><p class="body-match-kicker">${currentBook2().label} Lesson ${currentLesson2().lesson}</p><h4>${topic.title}</h4></div>`}
+      ${topicId === "food" ? filteredSceneGroups.length ? '<div class="time-months-heading"><p class="body-match-kicker">Review</p></div>' : "" : `<div class="numbers-stage-card"><p class="body-match-kicker">${currentBook2().label} Lesson ${currentLesson2().lesson}</p><h4>${topic.title}</h4></div>`}
       ${filteredSceneGroups.map((group) => `
         <section class="school-lesson-section is-${group.id}">
           ${group.label ? `<p class="body-match-kicker school-lesson-heading">${group.label}</p>` : ""}

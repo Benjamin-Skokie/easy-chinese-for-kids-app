@@ -1014,7 +1014,7 @@ function renderSchoolExplorer(topicId) {
   focusExplorer.innerHTML = `
     <div class="time-date-board school-topic-board">
       ${topicId === "food"
-        ? '<div class="time-months-heading"><p class="body-match-kicker">Review</p></div>'
+        ? filteredSceneGroups.length ? '<div class="time-months-heading"><p class="body-match-kicker">Review</p></div>' : ""
         : `<div class="numbers-stage-card"><p class="body-match-kicker">${currentBook().label} Lesson ${currentLesson().lesson}</p><h4>${topic.title}</h4></div>`}
       ${filteredSceneGroups.map((group) => `
         <section class="school-lesson-section is-${group.id}">

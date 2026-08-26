@@ -1,6 +1,6 @@
 # Development Log
 
-Last updated: 2026-08-14
+Last updated: 2026-08-25
 
 This is the short, forward-looking record for **cross-page workflow discoveries**. Add an entry only when a completed page exposes a reusable gap in the active workflow, then update [lesson_page_workflow.md](./lesson_page_workflow.md) in the same change. Keep page-specific iteration, rejected assets, and local design redirects in `page-build-logs/` instead.
 
@@ -60,3 +60,11 @@ The detailed records are [What I Like (2A)](./page-build-logs/what_i_like_2a_5.m
 **Corrected rule:** A named-character replacement must update the scene asset, sentence, sentence-builder tokens, playback string, manifest, and retired production file as one change. If a lesson selects a preferred voice, apply it to scene controls, Book words, and practice completion—not just one of those paths. For structured sentence builders, put the child-facing order clue inside the answer box as pale slots that disappear as words are placed.
 
 **Workflow update:** Sections 4–6 now require in-box scaffolds when needed, full-surface lesson corrections, complete scoped-voice wiring, and an updated bundle/style URL version after browser-facing changes.
+
+## 2026-08-25 — Cross-book topics need one explicit lesson-scoping contract
+
+**Failed assumption:** Filtering a scene or a word list is enough to make a cross-book topic behave like the selected textbook lesson. Repeating the selected Book/Lesson title in the page body can compensate for unclear navigation.
+
+**Corrected rule:** The lesson strip is the sole Book/Lesson navigation and identification surface. When selected, it filters every owned section—Review, Book words, Useful notes, and practice—using explicit `lessonSources` keys. Untagged material is all-topic enrichment only. Show All topic content only when two or more lessons map to the topic; hide any section left empty by filtering. Review is the universal scene/dialogue heading and is omitted when no filtered scene cards remain.
+
+**Workflow update:** Section 3 now defines the lesson-card, all-content, section-order, heading, and source-tag rules. Food & Drinks is the first implementation: 1B Fruit, 2B Snacks, and 3B Vegetables filter independently while drinks and preference-sentence builders remain all-topic enrichment.

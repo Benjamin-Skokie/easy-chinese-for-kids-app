@@ -788,9 +788,9 @@ test("food owns its scenes, words, and sentence practice", () => {
   assert.equal(foodSentenceBuilds.length, 10);
 });
 
-test("Food uses one Review heading instead of repeating the selected book lesson", () => {
+test("Food uses one Review heading only when the selected lesson has scene cards", () => {
   const source = readFileSync("src/features/school-life/school-food-runtime.js", "utf8");
-  assert.match(source, /topicId === "food"[\s\S]{0,140}time-months-heading[\s\S]{0,100}body-match-kicker">Review/);
+  assert.match(source, /topicId === "food"[\s\S]{0,120}filteredSceneGroups\.length \? '<div class="time-months-heading"><p class="body-match-kicker">Review<\/p><\/div>' : ""/);
 });
 
 test("Food lesson cards describe and scope their matching food content", () => {
