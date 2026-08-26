@@ -83,6 +83,8 @@ export function createAppState() {
   worldNatureFillWordPicked: "",
   worldNatureFillSubjectResult: "",
   worldNatureFillWordResult: "",
+  worldFavouriteColourId: "",
+  worldUnfavouriteColourId: "",
   zooSentencePickedId: "",
   petsPreferencePickedId: "",
   petFoodMatchAnimalId: "",

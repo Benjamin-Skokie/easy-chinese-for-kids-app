@@ -472,7 +472,7 @@ function schoolBuildItems(topicId = currentTopic().id) {
   const items = schoolSentenceBuilds[topicId] ?? [];
   const source = lessonScopeKey();
   return topicId === "food" && source
-    ? items.filter((item) => item.lessonSources?.includes(source))
+    ? filterLessonContent(items, state.lessonScope)
     : items;
 }
 
@@ -997,10 +997,10 @@ function renderSchoolExplorer(topicId) {
     return;
   }
   const sceneGroups = data.sceneGroups ?? [{ id: "all", items: data.scenes ?? [] }];
-  const source = lessonScopeKey();
-  const filteredSceneGroups = source
-    ? sceneGroups.map((group) => ({ ...group, items: group.items.filter((item) => !item.lessonSources || item.lessonSources.includes(source)) })).filter((group) => group.items.length)
-    : sceneGroups;
+  // Food is fully source-tagged. Other school-topic renderers opt in only after
+  // their scene, word, note, and practice data have been migrated together.
+  const contentScope = topicId === "food" ? state.lessonScope : null;
+  const filteredSceneGroups = filterLessonGroups(sceneGroups, contentScope);
   const wordGroups = schoolWordGroups(topicId);
   if (topicId === "meals-feelings" && !wordGroups.some((group) => group.id === state.mealsWordGroupId)) {
     state.mealsWordGroupId = wordGroups[0]?.id ?? "";
@@ -1013,9 +1013,7 @@ function renderSchoolExplorer(topicId) {
 
   focusExplorer.innerHTML = `
     <div class="time-date-board school-topic-board">
-      ${topicId === "food"
-        ? filteredSceneGroups.length ? '<div class="time-months-heading"><p class="body-match-kicker">Review</p></div>' : ""
-        : `<div class="numbers-stage-card"><p class="body-match-kicker">${currentBook().label} Lesson ${currentLesson().lesson}</p><h4>${topic.title}</h4></div>`}
+      ${filteredSceneGroups.length ? '<div class="time-months-heading"><p class="body-match-kicker">Review</p></div>' : ""}
       ${filteredSceneGroups.map((group) => `
         <section class="school-lesson-section is-${group.id}">
           ${group.label ? `<p class="body-match-kicker school-lesson-heading">${group.label}</p>` : ""}
@@ -1049,7 +1047,7 @@ function renderSchoolExplorer(topicId) {
           `).join("")}
         </div>
       ` : ""}
-      ${data.review ? `<section class="visual-topic-notes school-review-notes"><p class="body-match-kicker">Useful notes</p><div class="visual-topic-note-grid school-review-grid">${data.review.filter((item) => !source || !item.lessonSources || item.lessonSources.includes(source)).map((item) => `<article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">${item.pattern}</p>${state.showPinyin ? `<p class="visual-topic-note-pinyin">${item.pinyin}</p>` : ""}${state.showEnglish ? `<p class="visual-topic-note-english">${item.english}</p>` : ""}<p class="visual-topic-note-example">${item.example}</p>${state.showPinyin && item.examplePinyin ? `<p class="visual-topic-note-pinyin">${item.examplePinyin}</p>` : ""}${state.showEnglish && item.exampleEnglish ? `<p class="visual-topic-note-english">${item.exampleEnglish}</p>` : ""}</article>`).join("")}</div></section>` : ""}
+      ${(() => { const visibleNotes = filterLessonContent(data.review, contentScope); return visibleNotes.length ? `<section class="visual-topic-notes school-review-notes"><p class="body-match-kicker">Useful notes</p><div class="visual-topic-note-grid school-review-grid">${visibleNotes.map((item) => `<article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">${item.pattern}</p>${state.showPinyin ? `<p class="visual-topic-note-pinyin">${item.pinyin}</p>` : ""}${state.showEnglish ? `<p class="visual-topic-note-english">${item.english}</p>` : ""}<p class="visual-topic-note-example">${item.example}</p>${state.showPinyin && item.examplePinyin ? `<p class="visual-topic-note-pinyin">${item.examplePinyin}</p>` : ""}${state.showEnglish && item.exampleEnglish ? `<p class="visual-topic-note-english">${item.exampleEnglish}</p>` : ""}</article>`).join("")}</div></section>` : ""; })()}
       ${topicId === "school-subjects" ? `<section class="visual-topic-notes"><p class="body-match-kicker">Useful note</p><div class="visual-topic-note-grid school-subject-note"><article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">去</p>${state.showPinyin ? '<p class="visual-topic-note-pinyin">qù</p>' : ""}${state.showEnglish ? '<p class="visual-topic-note-english">to go</p>' : ""}<p class="visual-topic-note-example">我去上音乐课。</p></article><article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">在</p>${state.showPinyin ? '<p class="visual-topic-note-pinyin">zài</p>' : ""}${state.showEnglish ? '<p class="visual-topic-note-english">at / in; marks an action happening now</p>' : ""}<p class="visual-topic-note-example">我在上音乐课。</p></article><article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">喜欢</p>${state.showPinyin ? '<p class="visual-topic-note-pinyin">xǐ huan</p>' : ""}${state.showEnglish ? '<p class="visual-topic-note-english">to like</p>' : ""}<p class="visual-topic-note-example">我喜欢音乐课。</p></article><article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">不喜欢</p>${state.showPinyin ? '<p class="visual-topic-note-pinyin">bù xǐ huan</p>' : ""}${state.showEnglish ? '<p class="visual-topic-note-english">to not like</p>' : ""}<p class="visual-topic-note-example">我不喜欢数学课。</p></article></div></section>` : ""}
     </div>
   `;
@@ -1089,3 +1087,4 @@ function renderSchoolExplorer(topicId) {
   return { schoolPracticeItems, ensureSchoolPractice, renderSchoolPractice, renderStationeryPractice, renderSchoolSuppliesPractice, renderFoodPractice, renderMealsConversationPractice, renderFoodPreferencesPractice, renderClassroomPractice, renderSchoolExplorer };
 }
 import { advanceShuffledOrder, nextRandomCycleId } from "../../core/random-cycle.js";
+import { filterLessonContent, filterLessonGroups } from "../../core/lesson-scoping.js";

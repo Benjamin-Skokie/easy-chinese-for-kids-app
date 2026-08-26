@@ -177,12 +177,18 @@ const weatherFillTemperatureData = {
 };
 
 export function createWorldRuntime({ state, currentTopic, currentBook, currentLesson, focusExplorer, speak, selectFocusItem, activityPanelTitle, activityPanelSummary, activityList, renderActivityPanel }) {
+  function colourItems() {
+    return state.lessonScope?.bookId === "1b"
+      ? colourLessons["1b"].items
+      : colourLessons["2a"].items;
+  }
+
   function lessonForCurrentBook() {
     const topic = currentTopic();
     // Colours is one cumulative topic: 1B introduces four core colours and
     // 2A expands that foundation to the complete nine-colour set. Show the
     // full set by default so the topic never silently collapses to four cards.
-    if (topic.id === "colours") return colourLessons["2a"];
+    if (topic.id === "colours") return { ...colourLessons["2a"], items: colourItems() };
     if (topic.id === "pets") return animalLessons["1b"];
     if (topic.id === "animals") return animalLessons["2b"];
     if (topic.id === "nature") return natureLesson;
@@ -208,7 +214,7 @@ export function createWorldRuntime({ state, currentTopic, currentBook, currentLe
     const hasScene = Boolean(lesson.imagePath);
     focusExplorer.innerHTML = `
       <div class="time-date-board world-lesson-board">
-        <div class="numbers-stage-card"><p class="body-match-kicker">${currentBook().label} Lesson ${currentLesson().lesson}</p><h4>${lesson.title}</h4><p>${lesson.summary}</p></div>
+        ${currentTopic().id === "colours" ? "" : `<div class="numbers-stage-card"><p class="body-match-kicker">${currentBook().label} Lesson ${currentLesson().lesson}</p><h4>${lesson.title}</h4><p>${lesson.summary}</p></div>`}
         ${hasScene ? `<section class="world-scene-card"><img src="${lesson.imagePath}" alt="${lesson.imageAlt}" /><div>${lesson.sentences.map((line) => `<button class="small-button is-action-button" type="button" data-world-sentence="${line.audio}">${line.hanzi}</button>`).join("")}</div></section>` : ""}
         <div class="time-months-heading"><p class="body-match-kicker">Book words</p></div>
         <div class="time-asset-grid world-asset-grid">
@@ -420,13 +426,17 @@ export function createWorldRuntime({ state, currentTopic, currentBook, currentLe
   }
 
   function ensureColourPractice() {
-    const items = colourLessons["2a"].items;
-    if (!state.worldColourRoundIds?.length || state.worldColourRoundIds.length !== items.length) {
+    const items = colourItems();
+    const hasMatchingRound =
+      state.worldColourRoundIds?.length === items.length &&
+      state.worldColourRoundIds.every((id) => items.some((item) => item.id === id));
+    if (!hasMatchingRound) {
       state.worldColourRoundIds = shuffled(items.map((item) => item.id));
       state.worldColourRoundIndex = 0;
       state.worldColourPickedId = "";
       state.worldColourResult = "";
       state.worldFavouriteColourId = "purple";
+      state.worldUnfavouriteColourId = "black";
     }
   }
 
@@ -446,14 +456,15 @@ export function createWorldRuntime({ state, currentTopic, currentBook, currentLe
   }
 
   function resetColourMission() {
-    const colourItems = colourLessons["2a"].items;
+    const items = colourItems();
+    const count = Math.min(6, items.length);
     const targetObjectId = nextRandomCycleId(state, "colours-mission-target", colourMissionObjects.map((object) => object.id));
     const targetObject = colourMissionObjects.find((object) => object.id === targetObjectId);
     const objects = shuffled([
       targetObject,
-      ...shuffled(colourMissionObjects.filter((object) => object.id !== targetObjectId)).slice(0, 5)
+      ...shuffled(colourMissionObjects.filter((object) => object.id !== targetObjectId)).slice(0, count - 1)
     ].filter(Boolean));
-    const colours = shuffled(colourItems).slice(0, 6);
+    const colours = shuffled(items).slice(0, count);
     state.worldColourMissionCards = shuffled(objects.map((object, index) => ({ objectId: object.id, colourId: colours[index].id })));
     state.worldColourMissionTargetObjectId = targetObjectId;
     state.worldColourMissionPickedObjectId = "";
@@ -461,21 +472,25 @@ export function createWorldRuntime({ state, currentTopic, currentBook, currentLe
   }
 
   function ensureColourMission() {
-    if (!state.worldColourMissionCards?.length || state.worldColourMissionCards.length !== 6) resetColourMission();
+    const items = colourItems();
+    const expectedCount = Math.min(6, items.length);
+    if (!state.worldColourMissionCards?.length || state.worldColourMissionCards.length !== expectedCount || state.worldColourMissionCards.some((card) => !items.some((item) => item.id === card.colourId))) resetColourMission();
   }
 
   function currentColourPracticeItem() {
     ensureColourPractice();
     const itemId = state.worldColourRoundIds[state.worldColourRoundIndex];
-    return colourLessons["2a"].items.find((item) => item.id === itemId) ?? colourLessons["2a"].items[0];
+    const items = colourItems();
+    return items.find((item) => item.id === itemId) ?? items[0];
   }
 
   function renderColourPractice() {
     ensureColourPractice();
-    const items = colourLessons["2a"].items;
+    const items = colourItems();
     const target = currentColourPracticeItem();
     const choices = shuffled([target, ...shuffled(items.filter((item) => item.id !== target.id)).slice(0, 3)]);
     const favourite = items.find((item) => item.id === state.worldFavouriteColourId) ?? items[0];
+    const unfavourite = items.find((item) => item.id === state.worldUnfavouriteColourId) ?? items[0];
     ensureColourMission();
     const missionCards = state.worldColourMissionCards;
     const missionTargetCard = missionCards.find((card) => card.objectId === state.worldColourMissionTargetObjectId) ?? missionCards[0];
@@ -497,7 +512,7 @@ export function createWorldRuntime({ state, currentTopic, currentBook, currentLe
         <div class="clothes-quiz-options">${choices.map((item) => { const selected = state.worldColourPickedId === item.id; const resultClass = selected ? ` is-${state.worldColourResult}` : ""; const mark = selected ? `<span class="answer-result-mark" aria-hidden="true">${state.worldColourResult === "correct" ? "✓" : "×"}</span>` : ""; return `<button class="clothes-quiz-option${resultClass}" type="button" data-world-colour-guess="${item.id}">${mark}<span class="numbers-game-hanzi">${item.phrase}</span>${state.showPinyin ? `<span class="numbers-game-pinyin">${item.phrasePinyin}</span>` : ""}${state.showEnglish ? `<span class="numbers-game-english">${item.phraseEnglish}</span>` : ""}</button>`; }).join("")}</div>
       </section>
       <section class="practice-split-card world-favourite-colour-practice"><div class="numbers-game-top"><div><p class="body-match-kicker">My favourite colour</p><p class="numbers-game-note">Choose your favourite colour, then listen and say the sentence.</p></div><button class="small-button is-play-button" type="button" data-world-favourite-play>Play</button></div><div class="world-favourite-colour-options">${items.map((item) => `<button class="small-button${item.id === favourite.id ? " is-action-button" : ""}" type="button" data-world-favourite="${item.id}">${item.hanzi}</button>`).join("")}</div><p class="world-favourite-sentence">我喜欢${favourite.hanzi}。${state.showPinyin ? `<span>wǒ xǐ huan ${favourite.pinyin}.</span>` : ""}${state.showEnglish ? `<span>I like ${favourite.english}.</span>` : ""}</p></section>
-      <section class="practice-split-card practice-say-card"><p class="body-match-kicker">Book sentence</p><div class="numbers-game-options"><button class="numbers-game-option greetings-game-option family-listen-option" type="button" data-world-say="我不喜欢黑色和白色">我不喜欢黑色和白色。${state.showPinyin ? '<span class="numbers-game-pinyin">wǒ bù xǐ huan hēi sè hé bái sè.</span>' : ""}${state.showEnglish ? '<span class="numbers-game-english">I do not like black and white.</span>' : ""}</button></div></section>
+      ${!state.lessonScope || state.lessonScope.bookId === "2a" ? `<section class="practice-split-card world-favourite-colour-practice"><div class="numbers-game-top"><div><p class="body-match-kicker">A colour I don't like</p><p class="numbers-game-note">Choose a colour, then listen and say the sentence.</p></div><button class="small-button is-play-button" type="button" data-world-unfavourite-play>Play</button></div><div class="world-favourite-colour-options">${items.map((item) => `<button class="small-button${item.id === unfavourite.id ? " is-action-button" : ""}" type="button" data-world-unfavourite="${item.id}">${item.hanzi}</button>`).join("")}</div><p class="world-favourite-sentence">我不喜欢${unfavourite.hanzi}。${state.showPinyin ? `<span>wǒ bù xǐ huan ${unfavourite.pinyin}.</span>` : ""}${state.showEnglish ? `<span>I do not like ${unfavourite.english}.</span>` : ""}</p></section>` : ""}
     `;
     activityList.querySelector("[data-world-mission-play]")?.addEventListener("click", () => {
       if (state.tapAudioEnabled) speak(`找一找，${missionPrompt}`, 0.78);
@@ -530,7 +545,13 @@ export function createWorldRuntime({ state, currentTopic, currentBook, currentLe
     activityList.querySelector("[data-world-favourite-play]")?.addEventListener("click", () => {
       if (state.tapAudioEnabled) speak(`我喜欢${favourite.hanzi}`, 0.78);
     });
-    activityList.querySelectorAll("[data-world-say]").forEach((button) => button.addEventListener("click", () => { if (state.tapAudioEnabled) speak(button.dataset.worldSay, 0.78); }));
+    activityList.querySelectorAll("[data-world-unfavourite]").forEach((button) => button.addEventListener("click", () => {
+      state.worldUnfavouriteColourId = button.dataset.worldUnfavourite;
+      renderActivityPanel(currentTopic());
+    }));
+    activityList.querySelector("[data-world-unfavourite-play]")?.addEventListener("click", () => {
+      if (state.tapAudioEnabled) speak(`我不喜欢${unfavourite.hanzi}`, 0.78);
+    });
   }
 
   function ensureNatureFillPractice() {

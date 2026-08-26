@@ -4,6 +4,7 @@ import { existsSync, readFileSync, readdirSync } from "node:fs";
 import { join, normalize } from "node:path";
 import test from "node:test";
 import { createAudioService } from "../src/core/audio.js";
+import { filterLessonContent, filterLessonGroups, lessonScopeKey } from "../src/core/lesson-scoping.js";
 import { advanceShuffledOrder, nextRandomCycleId } from "../src/core/random-cycle.js";
 import { lessonScopeFromLocation, topicIdFromLocation, topicPageUrl, viewFromLocation } from "../src/core/router.js";
 import { timeDateWeekItems } from "../src/features/time-daily-life/weekdays.js";
@@ -453,6 +454,15 @@ test("router preserves the existing topic query and detail hash contract", () =>
   assert.doesNotMatch(topicPageUrl({ pathname: "/", search: "", hash: "" }, "time-date"), /^undefined/);
 });
 
+test("lesson scoping keeps enrichment in all-topic content and filters grouped content strictly", () => {
+  const scope = { bookId: "1b", lessonNumber: 7 };
+  const items = [{ id: "fruit", lessonSources: ["1b:7"] }, { id: "enrichment" }, { id: "snack", lessonSources: ["2b:7"] }];
+  assert.equal(lessonScopeKey(scope), "1b:7");
+  assert.deepEqual(filterLessonContent(items, scope).map((item) => item.id), ["fruit"]);
+  assert.deepEqual(filterLessonContent(items).map((item) => item.id), ["fruit", "enrichment", "snack"]);
+  assert.deepEqual(filterLessonGroups([{ id: "fruit", items }, { id: "empty", items: [{ id: "snack", lessonSources: ["2b:7"] }] }], scope).map((group) => group.id), ["fruit"]);
+});
+
 test("shared lesson practice is provided by an explicit game factory", () => {
   const legacySource = readFileSync("src/app/runtime-wiring.js", "utf8");
   const gameSource = readFileSync("src/games/shared-lesson-practice.js", "utf8");
@@ -790,7 +800,7 @@ test("food owns its scenes, words, and sentence practice", () => {
 
 test("Food uses one Review heading only when the selected lesson has scene cards", () => {
   const source = readFileSync("src/features/school-life/school-food-runtime.js", "utf8");
-  assert.match(source, /topicId === "food"[\s\S]{0,120}filteredSceneGroups\.length \? '<div class="time-months-heading"><p class="body-match-kicker">Review<\/p><\/div>' : ""/);
+  assert.match(source, /filteredSceneGroups\.length \? '<div class="time-months-heading"><p class="body-match-kicker">Review<\/p><\/div>' : ""/);
 });
 
 test("Food lesson cards describe and scope their matching food content", () => {
@@ -800,7 +810,7 @@ test("Food lesson cards describe and scope their matching food content", () => {
 
   assert.match(detailSource, /<strong>\$\{topicLessonTitle\(topic, step\)\}<\/strong>/);
   assert.match(foodRuntime, /foodCategoryByLessonSource[\s\S]{0,180}"1b:7": "fruit"[\s\S]{0,120}"2b:7": "snack"[\s\S]{0,120}"3b:6": "vegetable"/);
-  assert.match(foodRuntime, /filteredSceneGroups[\s\S]{0,320}lessonSources/);
+  assert.match(foodRuntime, /const contentScope = topicId === "food" \? state\.lessonScope : null;[\s\S]{0,160}filteredSceneGroups = filterLessonGroups\(sceneGroups, contentScope\)/);
   assert.match(foodRuntime, /function renderFoodPractice\(topic\) \{[\s\S]{0,180}ensureSchoolBuilder\(topic\.id\)[\s\S]{0,700}renderFoodHungerGame/);
   assert.match(foodData, /lessonSources: \["1b:7"\]/);
 });
@@ -813,7 +823,7 @@ test("Food enrichment builds eat and drink sentences from individual pictures", 
   assert.match(foodData, /id: "cola", imagePath: "assets\/illustrated-food\/cola\.webp"[\s\S]{0,180}我喝可乐/);
   assert.doesNotMatch(foodData, /id: "cola"[\s\S]{0,260}lessonSources/);
   const foodRuntime = readFileSync("src/features/school-life/school-food-runtime.js", "utf8");
-  assert.match(foodRuntime, /function schoolBuildItems[\s\S]{0,300}lessonSources\?\.includes\(source\)/);
+  assert.match(foodRuntime, /function schoolBuildItems[\s\S]{0,300}filterLessonContent\(items, state\.lessonScope\)/);
 });
 
 test("Food all-topic sentence builder includes like and dislike prompts without changing book-scoped lessons", () => {
@@ -1219,6 +1229,23 @@ test("the Colours topic defaults to the complete nine-colour set", () => {
   assert.equal(runtime.focusItemsForTopic(coloursTopic).length, 9);
 });
 
+test("the Colours lesson filter keeps the 1B core set and hides the later sentence", () => {
+  const focusExplorer = { innerHTML: "", querySelectorAll: () => [] };
+  const runtime = createWorldRuntime({
+    state: { lessonScope: { bookId: "1b", lessonNumber: 6 } },
+    currentTopic: () => coloursTopic,
+    currentBook: () => ({ id: "1b", label: "Book 1B" }),
+    currentLesson: () => ({ lesson: 6 }),
+    focusExplorer,
+    speak: () => {},
+    selectFocusItem: () => {}
+  });
+
+  assert.equal(runtime.focusItemsForTopic(coloursTopic).length, 4);
+  runtime.renderWorldExplorer();
+  assert.doesNotMatch(focusExplorer.innerHTML, /Book 1B Lesson 6/);
+});
+
 test("the Colours practice starts with a randomized colour-and-object mission", () => {
   const activityList = {
     className: "",
@@ -1356,7 +1383,7 @@ test("Hobbies keeps separate 2A, 3B, and 4B lesson pages and practice", () => {
   assert.match(runtimeSource, /answer\.pinyin/);
   assert.match(runtimeSource, /answer\.english/);
   assert.match(runtimeSource, /hobbies-scene-grid/);
-  assert.match(runtimeSource, /Scenes<\/p>/);
+  assert.match(runtimeSource, /Review<\/p>/);
   assert.match(runtimeSource, /const sceneTitle = \(id\)/);
   assert.match(runtimeSource, /audio: `我喜欢\$\{action\}`/);
 });

@@ -327,6 +327,8 @@
       worldNatureFillWordPicked: "",
       worldNatureFillSubjectResult: "",
       worldNatureFillWordResult: "",
+      worldFavouriteColourId: "",
+      worldUnfavouriteColourId: "",
       zooSentencePickedId: "",
       petsPreferencePickedId: "",
       petFoodMatchAnimalId: "",
@@ -2082,31 +2084,40 @@
     function renderDefaultExplorer2() {
       focusExplorer2.innerHTML = "";
     }
+    function normalizeLessonPageChrome(topic) {
+      if (!topic.steps?.length) return;
+      focusExplorer2.querySelectorAll(".numbers-stage-card").forEach((card) => card.remove());
+      focusExplorer2.querySelectorAll(".body-match-kicker").forEach((heading) => {
+        if (heading.textContent.trim().toLowerCase() === "scenes") heading.textContent = "Review";
+      });
+    }
     function renderFocusExplorer2() {
       const topic = currentTopic2();
-      if (topic.interactiveScene === "body-face") return renderBodyExplorer2();
-      if (topic.id === "numbers") return renderNumbersExplorer2();
-      if (topic.interactiveScene === "telephone-numbers") return renderTelephoneExplorer2();
-      if (topic.interactiveScene === "polite-phrases") return renderPoliteWordsExplorer2();
-      if (topic.interactiveScene === "is-it-contrast") return renderIsItExplorer2();
-      if (topic.interactiveScene === "introductions-conversation") return renderIntroductionsExplorer2();
-      if (topic.interactiveScene === "identity-scenes") return renderIdentityExplorer2();
-      if (topic.interactiveScene === "age-conversation") return renderAgeExplorer2();
-      if (topic.interactiveScene === "family-home") return renderFamilyExplorer2();
-      if (topic.interactiveScene === "greetings-conversation") return renderGreetingsExplorer2();
-      if (topic.interactiveScene === "clothes-scenes") return renderClothesExplorer2();
-      if (topic.interactiveScene === "time-date-routine") return renderTimeDateExplorer2();
-      if (topic.interactiveScene === "weekdays") return renderWeekdaysExplorer2();
-      if (topic.interactiveScene === "dates") return renderDatesExplorer2();
-      if (topic.interactiveScene === "everyday-actions") return renderEverydayActionsExplorer2();
-      if (topic.interactiveScene === "positions") return renderPositionsExplorer2();
-      if (topic.interactiveScene === "rooms") return renderRoomsExplorer2();
-      if (schoolTopicData3[topic.id]) return renderSchoolExplorer2(topic.id);
-      if (["pets", "animals", "colours", "nature", "weather"].includes(topic.id)) return renderWorldExplorer();
-      if (["toys", "hobbies", "hobbies-3b", "hobbies-at-home", "hobbies-leisure"].includes(topic.id)) return renderHobbiesExplorer();
-      if (["comparisons", "transport", "rooms"].includes(topic.interactiveScene)) return renderVisualTopicExplorer2(topic.interactiveScene);
-      if (topic.interactiveScene === "multiplication-rhyme") return renderMultiplicationExplorer2();
-      return renderDefaultExplorer2();
+      let renderer = renderDefaultExplorer2;
+      if (topic.interactiveScene === "body-face") renderer = renderBodyExplorer2;
+      else if (topic.id === "numbers") renderer = renderNumbersExplorer2;
+      else if (topic.interactiveScene === "telephone-numbers") renderer = renderTelephoneExplorer2;
+      else if (topic.interactiveScene === "polite-phrases") renderer = renderPoliteWordsExplorer2;
+      else if (topic.interactiveScene === "is-it-contrast") renderer = renderIsItExplorer2;
+      else if (topic.interactiveScene === "introductions-conversation") renderer = renderIntroductionsExplorer2;
+      else if (topic.interactiveScene === "identity-scenes") renderer = renderIdentityExplorer2;
+      else if (topic.interactiveScene === "age-conversation") renderer = renderAgeExplorer2;
+      else if (topic.interactiveScene === "family-home") renderer = renderFamilyExplorer2;
+      else if (topic.interactiveScene === "greetings-conversation") renderer = renderGreetingsExplorer2;
+      else if (topic.interactiveScene === "clothes-scenes") renderer = renderClothesExplorer2;
+      else if (topic.interactiveScene === "time-date-routine") renderer = renderTimeDateExplorer2;
+      else if (topic.interactiveScene === "weekdays") renderer = renderWeekdaysExplorer2;
+      else if (topic.interactiveScene === "dates") renderer = renderDatesExplorer2;
+      else if (topic.interactiveScene === "everyday-actions") renderer = renderEverydayActionsExplorer2;
+      else if (topic.interactiveScene === "positions") renderer = renderPositionsExplorer2;
+      else if (topic.interactiveScene === "rooms") renderer = renderRoomsExplorer2;
+      else if (schoolTopicData3[topic.id]) renderer = () => renderSchoolExplorer2(topic.id);
+      else if (["pets", "animals", "colours", "nature", "weather"].includes(topic.id)) renderer = renderWorldExplorer;
+      else if (["toys", "hobbies", "hobbies-3b", "hobbies-at-home", "hobbies-leisure"].includes(topic.id)) renderer = renderHobbiesExplorer;
+      else if (["comparisons", "transport", "rooms"].includes(topic.interactiveScene)) renderer = () => renderVisualTopicExplorer2(topic.interactiveScene);
+      else if (topic.interactiveScene === "multiplication-rhyme") renderer = renderMultiplicationExplorer2;
+      renderer();
+      normalizeLessonPageChrome(topic);
     }
     return { renderDefaultExplorer: renderDefaultExplorer2, renderFocusExplorer: renderFocusExplorer2 };
   }
@@ -3555,6 +3566,19 @@
     { id: "dislikes-math", imagePath: "assets/illustrated-activities/lele_dislikes_math_class.webp", target: ["\u6211", "\u4E0D\u559C\u6B22", "\u6570\u5B66\u8BFE"], distractors: ["\u5B66\u6821", "\u6709", "\u6587\u5177\u76D2"], pinyin: "w\u01D2 b\xF9 x\u01D0 huan sh\xF9 xu\xE9 k\xE8.", english: "I do not like math class." }
   ];
 
+  // src/core/lesson-scoping.js
+  function lessonScopeKey(scope) {
+    return scope ? `${scope.bookId}:${scope.lessonNumber}` : "";
+  }
+  function filterLessonContent(items = [], scope = null) {
+    const source = lessonScopeKey(scope);
+    if (!source) return items;
+    return items.filter((item) => item.lessonSources?.includes(source));
+  }
+  function filterLessonGroups(groups = [], scope = null) {
+    return groups.map((group) => ({ ...group, items: filterLessonContent(group.items, scope) })).filter((group) => group.items.length);
+  }
+
   // src/features/school-life/school-food-runtime.js
   function createSchoolFoodRuntime(context) {
     const { state: state2, schoolTopicData: schoolTopicData3, schoolSentenceBuilds: schoolSentenceBuilds3, stationeryPictureMatchRounds: stationeryPictureMatchRounds2, stationeryPictureMatchChoices: stationeryPictureMatchChoices2, stationeryPictureMatchEnglish: stationeryPictureMatchEnglish2, currentTopic: currentTopic2, currentBook: currentBook2, currentLesson: currentLesson2, shuffleArray: shuffleArray2, speak: speak2, speakSceneLines: speakSceneLines2, renderActivityPanel: renderActivityPanel2, focusItemsForTopic: focusItemsForTopic2, activityPanelTitle: activityPanelTitle2, activityPanelSummary: activityPanelSummary2, activityList: activityList2, focusExplorer: focusExplorer2, renderDefaultExplorer: renderDefaultExplorer2, renderListenPractice: renderListenPractice2, renderMatchPractice: renderMatchPractice2 } = context;
@@ -3562,7 +3586,7 @@
       const data = schoolTopicData3[topicId];
       return data?.practiceItems ?? data?.words ?? schoolWordGroups(topicId).flatMap((group) => group.items);
     }
-    function lessonScopeKey() {
+    function lessonScopeKey2() {
       return state2.lessonScope ? `${state2.lessonScope.bookId}:${state2.lessonScope.lessonNumber}` : "";
     }
     function backpackGameItems() {
@@ -3977,8 +4001,8 @@
     }
     function schoolBuildItems(topicId = currentTopic2().id) {
       const items = schoolSentenceBuilds3[topicId] ?? [];
-      const source = lessonScopeKey();
-      return topicId === "food" && source ? items.filter((item) => item.lessonSources?.includes(source)) : items;
+      const source = lessonScopeKey2();
+      return topicId === "food" && source ? filterLessonContent(items, state2.lessonScope) : items;
     }
     function currentSchoolBuildItem() {
       const items = schoolBuildItems();
@@ -3992,7 +4016,7 @@
     }
     function ensureSchoolBuilder(topicId = currentTopic2().id) {
       const items = schoolBuildItems(topicId);
-      const builderKey = `${topicId}:${lessonScopeKey()}`;
+      const builderKey = `${topicId}:${lessonScopeKey2()}`;
       const hasCurrentItems = state2.schoolBuildOrder.length === items.length && state2.schoolBuildOrder.every((id) => items.some((item) => item.id === id));
       if (state2.schoolBuildTopicId !== builderKey || !hasCurrentItems) {
         state2.schoolBuildTopicId = builderKey;
@@ -4097,7 +4121,7 @@
       "3b:6": "vegetable"
     };
     function scopedFoodCategoryId() {
-      return foodCategoryByLessonSource[lessonScopeKey()] ?? "";
+      return foodCategoryByLessonSource[lessonScopeKey2()] ?? "";
     }
     function foodBookWordItems(data) {
       const categoryId = scopedFoodCategoryId() || state2.foodBookCategoryId;
@@ -4461,8 +4485,8 @@
         return;
       }
       const sceneGroups = data.sceneGroups ?? [{ id: "all", items: data.scenes ?? [] }];
-      const source = lessonScopeKey();
-      const filteredSceneGroups = source ? sceneGroups.map((group) => ({ ...group, items: group.items.filter((item) => !item.lessonSources || item.lessonSources.includes(source)) })).filter((group) => group.items.length) : sceneGroups;
+      const contentScope = topicId === "food" ? state2.lessonScope : null;
+      const filteredSceneGroups = filterLessonGroups(sceneGroups, contentScope);
       const wordGroups = schoolWordGroups(topicId);
       if (topicId === "meals-feelings" && !wordGroups.some((group) => group.id === state2.mealsWordGroupId)) {
         state2.mealsWordGroupId = wordGroups[0]?.id ?? "";
@@ -4470,7 +4494,7 @@
       const visibleWords = topicId === "food" ? foodBookWordItems(data) : topicId === "meals-feelings" ? wordGroups.find((group) => group.id === state2.mealsWordGroupId)?.items ?? [] : data.words;
       focusExplorer2.innerHTML = `
     <div class="time-date-board school-topic-board">
-      ${topicId === "food" ? filteredSceneGroups.length ? '<div class="time-months-heading"><p class="body-match-kicker">Review</p></div>' : "" : `<div class="numbers-stage-card"><p class="body-match-kicker">${currentBook2().label} Lesson ${currentLesson2().lesson}</p><h4>${topic.title}</h4></div>`}
+      ${filteredSceneGroups.length ? '<div class="time-months-heading"><p class="body-match-kicker">Review</p></div>' : ""}
       ${filteredSceneGroups.map((group) => `
         <section class="school-lesson-section is-${group.id}">
           ${group.label ? `<p class="body-match-kicker school-lesson-heading">${group.label}</p>` : ""}
@@ -4504,7 +4528,10 @@
           `).join("")}
         </div>
       ` : ""}
-      ${data.review ? `<section class="visual-topic-notes school-review-notes"><p class="body-match-kicker">Useful notes</p><div class="visual-topic-note-grid school-review-grid">${data.review.filter((item) => !source || !item.lessonSources || item.lessonSources.includes(source)).map((item) => `<article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">${item.pattern}</p>${state2.showPinyin ? `<p class="visual-topic-note-pinyin">${item.pinyin}</p>` : ""}${state2.showEnglish ? `<p class="visual-topic-note-english">${item.english}</p>` : ""}<p class="visual-topic-note-example">${item.example}</p>${state2.showPinyin && item.examplePinyin ? `<p class="visual-topic-note-pinyin">${item.examplePinyin}</p>` : ""}${state2.showEnglish && item.exampleEnglish ? `<p class="visual-topic-note-english">${item.exampleEnglish}</p>` : ""}</article>`).join("")}</div></section>` : ""}
+      ${(() => {
+        const visibleNotes = filterLessonContent(data.review, contentScope);
+        return visibleNotes.length ? `<section class="visual-topic-notes school-review-notes"><p class="body-match-kicker">Useful notes</p><div class="visual-topic-note-grid school-review-grid">${visibleNotes.map((item) => `<article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">${item.pattern}</p>${state2.showPinyin ? `<p class="visual-topic-note-pinyin">${item.pinyin}</p>` : ""}${state2.showEnglish ? `<p class="visual-topic-note-english">${item.english}</p>` : ""}<p class="visual-topic-note-example">${item.example}</p>${state2.showPinyin && item.examplePinyin ? `<p class="visual-topic-note-pinyin">${item.examplePinyin}</p>` : ""}${state2.showEnglish && item.exampleEnglish ? `<p class="visual-topic-note-english">${item.exampleEnglish}</p>` : ""}</article>`).join("")}</div></section>` : "";
+      })()}
       ${topicId === "school-subjects" ? `<section class="visual-topic-notes"><p class="body-match-kicker">Useful note</p><div class="visual-topic-note-grid school-subject-note"><article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">\u53BB</p>${state2.showPinyin ? '<p class="visual-topic-note-pinyin">q\xF9</p>' : ""}${state2.showEnglish ? '<p class="visual-topic-note-english">to go</p>' : ""}<p class="visual-topic-note-example">\u6211\u53BB\u4E0A\u97F3\u4E50\u8BFE\u3002</p></article><article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">\u5728</p>${state2.showPinyin ? '<p class="visual-topic-note-pinyin">z\xE0i</p>' : ""}${state2.showEnglish ? '<p class="visual-topic-note-english">at / in; marks an action happening now</p>' : ""}<p class="visual-topic-note-example">\u6211\u5728\u4E0A\u97F3\u4E50\u8BFE\u3002</p></article><article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">\u559C\u6B22</p>${state2.showPinyin ? '<p class="visual-topic-note-pinyin">x\u01D0 huan</p>' : ""}${state2.showEnglish ? '<p class="visual-topic-note-english">to like</p>' : ""}<p class="visual-topic-note-example">\u6211\u559C\u6B22\u97F3\u4E50\u8BFE\u3002</p></article><article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">\u4E0D\u559C\u6B22</p>${state2.showPinyin ? '<p class="visual-topic-note-pinyin">b\xF9 x\u01D0 huan</p>' : ""}${state2.showEnglish ? '<p class="visual-topic-note-english">to not like</p>' : ""}<p class="visual-topic-note-example">\u6211\u4E0D\u559C\u6B22\u6570\u5B66\u8BFE\u3002</p></article></div></section>` : ""}
     </div>
   `;
@@ -10149,9 +10176,12 @@
     \u70ED: { pinyin: "r\xE8", english: "hot" }
   };
   function createWorldRuntime({ state: state2, currentTopic: currentTopic2, currentBook: currentBook2, currentLesson: currentLesson2, focusExplorer: focusExplorer2, speak: speak2, selectFocusItem: selectFocusItem2, activityPanelTitle: activityPanelTitle2, activityPanelSummary: activityPanelSummary2, activityList: activityList2, renderActivityPanel: renderActivityPanel2 }) {
+    function colourItems() {
+      return state2.lessonScope?.bookId === "1b" ? colourLessons["1b"].items : colourLessons["2a"].items;
+    }
     function lessonForCurrentBook() {
       const topic = currentTopic2();
-      if (topic.id === "colours") return colourLessons["2a"];
+      if (topic.id === "colours") return { ...colourLessons["2a"], items: colourItems() };
       if (topic.id === "pets") return animalLessons["1b"];
       if (topic.id === "animals") return animalLessons["2b"];
       if (topic.id === "nature") return natureLesson;
@@ -10174,7 +10204,7 @@
       const hasScene = Boolean(lesson.imagePath);
       focusExplorer2.innerHTML = `
       <div class="time-date-board world-lesson-board">
-        <div class="numbers-stage-card"><p class="body-match-kicker">${currentBook2().label} Lesson ${currentLesson2().lesson}</p><h4>${lesson.title}</h4><p>${lesson.summary}</p></div>
+        ${currentTopic2().id === "colours" ? "" : `<div class="numbers-stage-card"><p class="body-match-kicker">${currentBook2().label} Lesson ${currentLesson2().lesson}</p><h4>${lesson.title}</h4><p>${lesson.summary}</p></div>`}
         ${hasScene ? `<section class="world-scene-card"><img src="${lesson.imagePath}" alt="${lesson.imageAlt}" /><div>${lesson.sentences.map((line) => `<button class="small-button is-action-button" type="button" data-world-sentence="${line.audio}">${line.hanzi}</button>`).join("")}</div></section>` : ""}
         <div class="time-months-heading"><p class="body-match-kicker">Book words</p></div>
         <div class="time-asset-grid world-asset-grid">
@@ -10386,13 +10416,15 @@
       }));
     }
     function ensureColourPractice() {
-      const items = colourLessons["2a"].items;
-      if (!state2.worldColourRoundIds?.length || state2.worldColourRoundIds.length !== items.length) {
+      const items = colourItems();
+      const hasMatchingRound = state2.worldColourRoundIds?.length === items.length && state2.worldColourRoundIds.every((id) => items.some((item) => item.id === id));
+      if (!hasMatchingRound) {
         state2.worldColourRoundIds = shuffled3(items.map((item) => item.id));
         state2.worldColourRoundIndex = 0;
         state2.worldColourPickedId = "";
         state2.worldColourResult = "";
         state2.worldFavouriteColourId = "purple";
+        state2.worldUnfavouriteColourId = "black";
       }
     }
     function missionObjectMarkup(objectId, colour) {
@@ -10410,33 +10442,38 @@
       return `${svgStart}<path d="M21 45h75v29H21z" fill="${colour}" stroke="${outline}" stroke-width="3"/><path d="M35 45 47 31h28l12 14" fill="${colour}" stroke="${outline}" stroke-width="3"/><circle cx="38" cy="76" r="10" fill="#f7f7f2" stroke="${outline}" stroke-width="3"/><circle cx="80" cy="76" r="10" fill="#f7f7f2" stroke="${outline}" stroke-width="3"/><path d="M51 38h18" stroke="${shine}" stroke-width="5" stroke-linecap="round"/></svg>${svgEnd}`;
     }
     function resetColourMission() {
-      const colourItems = colourLessons["2a"].items;
+      const items = colourItems();
+      const count = Math.min(6, items.length);
       const targetObjectId = nextRandomCycleId(state2, "colours-mission-target", colourMissionObjects.map((object) => object.id));
       const targetObject = colourMissionObjects.find((object) => object.id === targetObjectId);
       const objects = shuffled3([
         targetObject,
-        ...shuffled3(colourMissionObjects.filter((object) => object.id !== targetObjectId)).slice(0, 5)
+        ...shuffled3(colourMissionObjects.filter((object) => object.id !== targetObjectId)).slice(0, count - 1)
       ].filter(Boolean));
-      const colours = shuffled3(colourItems).slice(0, 6);
+      const colours = shuffled3(items).slice(0, count);
       state2.worldColourMissionCards = shuffled3(objects.map((object, index) => ({ objectId: object.id, colourId: colours[index].id })));
       state2.worldColourMissionTargetObjectId = targetObjectId;
       state2.worldColourMissionPickedObjectId = "";
       state2.worldColourMissionResult = "";
     }
     function ensureColourMission() {
-      if (!state2.worldColourMissionCards?.length || state2.worldColourMissionCards.length !== 6) resetColourMission();
+      const items = colourItems();
+      const expectedCount = Math.min(6, items.length);
+      if (!state2.worldColourMissionCards?.length || state2.worldColourMissionCards.length !== expectedCount || state2.worldColourMissionCards.some((card) => !items.some((item) => item.id === card.colourId))) resetColourMission();
     }
     function currentColourPracticeItem() {
       ensureColourPractice();
       const itemId = state2.worldColourRoundIds[state2.worldColourRoundIndex];
-      return colourLessons["2a"].items.find((item) => item.id === itemId) ?? colourLessons["2a"].items[0];
+      const items = colourItems();
+      return items.find((item) => item.id === itemId) ?? items[0];
     }
     function renderColourPractice() {
       ensureColourPractice();
-      const items = colourLessons["2a"].items;
+      const items = colourItems();
       const target = currentColourPracticeItem();
       const choices = shuffled3([target, ...shuffled3(items.filter((item) => item.id !== target.id)).slice(0, 3)]);
       const favourite = items.find((item) => item.id === state2.worldFavouriteColourId) ?? items[0];
+      const unfavourite = items.find((item) => item.id === state2.worldUnfavouriteColourId) ?? items[0];
       ensureColourMission();
       const missionCards = state2.worldColourMissionCards;
       const missionTargetCard = missionCards.find((card) => card.objectId === state2.worldColourMissionTargetObjectId) ?? missionCards[0];
@@ -10469,7 +10506,7 @@
       }).join("")}</div>
       </section>
       <section class="practice-split-card world-favourite-colour-practice"><div class="numbers-game-top"><div><p class="body-match-kicker">My favourite colour</p><p class="numbers-game-note">Choose your favourite colour, then listen and say the sentence.</p></div><button class="small-button is-play-button" type="button" data-world-favourite-play>Play</button></div><div class="world-favourite-colour-options">${items.map((item) => `<button class="small-button${item.id === favourite.id ? " is-action-button" : ""}" type="button" data-world-favourite="${item.id}">${item.hanzi}</button>`).join("")}</div><p class="world-favourite-sentence">\u6211\u559C\u6B22${favourite.hanzi}\u3002${state2.showPinyin ? `<span>w\u01D2 x\u01D0 huan ${favourite.pinyin}.</span>` : ""}${state2.showEnglish ? `<span>I like ${favourite.english}.</span>` : ""}</p></section>
-      <section class="practice-split-card practice-say-card"><p class="body-match-kicker">Book sentence</p><div class="numbers-game-options"><button class="numbers-game-option greetings-game-option family-listen-option" type="button" data-world-say="\u6211\u4E0D\u559C\u6B22\u9ED1\u8272\u548C\u767D\u8272">\u6211\u4E0D\u559C\u6B22\u9ED1\u8272\u548C\u767D\u8272\u3002${state2.showPinyin ? '<span class="numbers-game-pinyin">w\u01D2 b\xF9 x\u01D0 huan h\u0113i s\xE8 h\xE9 b\xE1i s\xE8.</span>' : ""}${state2.showEnglish ? '<span class="numbers-game-english">I do not like black and white.</span>' : ""}</button></div></section>
+      ${!state2.lessonScope || state2.lessonScope.bookId === "2a" ? `<section class="practice-split-card world-favourite-colour-practice"><div class="numbers-game-top"><div><p class="body-match-kicker">A colour I don't like</p><p class="numbers-game-note">Choose a colour, then listen and say the sentence.</p></div><button class="small-button is-play-button" type="button" data-world-unfavourite-play>Play</button></div><div class="world-favourite-colour-options">${items.map((item) => `<button class="small-button${item.id === unfavourite.id ? " is-action-button" : ""}" type="button" data-world-unfavourite="${item.id}">${item.hanzi}</button>`).join("")}</div><p class="world-favourite-sentence">\u6211\u4E0D\u559C\u6B22${unfavourite.hanzi}\u3002${state2.showPinyin ? `<span>w\u01D2 b\xF9 x\u01D0 huan ${unfavourite.pinyin}.</span>` : ""}${state2.showEnglish ? `<span>I do not like ${unfavourite.english}.</span>` : ""}</p></section>` : ""}
     `;
       activityList2.querySelector("[data-world-mission-play]")?.addEventListener("click", () => {
         if (state2.tapAudioEnabled) speak2(`\u627E\u4E00\u627E\uFF0C${missionPrompt}`, 0.78);
@@ -10505,9 +10542,13 @@
       activityList2.querySelector("[data-world-favourite-play]")?.addEventListener("click", () => {
         if (state2.tapAudioEnabled) speak2(`\u6211\u559C\u6B22${favourite.hanzi}`, 0.78);
       });
-      activityList2.querySelectorAll("[data-world-say]").forEach((button) => button.addEventListener("click", () => {
-        if (state2.tapAudioEnabled) speak2(button.dataset.worldSay, 0.78);
+      activityList2.querySelectorAll("[data-world-unfavourite]").forEach((button) => button.addEventListener("click", () => {
+        state2.worldUnfavouriteColourId = button.dataset.worldUnfavourite;
+        renderActivityPanel2(currentTopic2());
       }));
+      activityList2.querySelector("[data-world-unfavourite-play]")?.addEventListener("click", () => {
+        if (state2.tapAudioEnabled) speak2(`\u6211\u4E0D\u559C\u6B22${unfavourite.hanzi}`, 0.78);
+      });
     }
     function ensureNatureFillPractice() {
       if (!state2.worldNatureFillRoundIds?.length || state2.worldNatureFillRoundIds.length !== natureFillRounds.length) {
@@ -10832,7 +10873,7 @@
       const items = currentTopic2().focusItems;
       const itemFor = (id) => items.find((item) => item.id === id);
       const imageClass = "school-scene-image";
-      focusExplorer2.innerHTML = `<div class="time-date-board school-topic-board hobbies-topic-board"><div class="numbers-stage-card"><p class="body-match-kicker">${page.book}</p><h4>${page.title}</h4><p>${page.intro}</p></div><section class="school-lesson-section"><div class="time-months-heading"><p class="body-match-kicker">Scenes</p></div><div class="school-scene-grid hobbies-scene-grid">${page.scenes.map(([id, hanzi, pinyin, english, audio]) => {
+      focusExplorer2.innerHTML = `<div class="time-date-board school-topic-board hobbies-topic-board"><section class="school-lesson-section"><div class="time-months-heading"><p class="body-match-kicker">Review</p></div><div class="school-scene-grid hobbies-scene-grid">${page.scenes.map(([id, hanzi, pinyin, english, audio]) => {
         const item = itemFor(id);
         return `<section class="greetings-exchange school-scene-card"><div class="greetings-exchange-top"><div><p class="body-match-kicker">${sceneTitle(id)}</p></div><button class="small-button is-play-button" type="button" data-hobbies-scene="${audio}">Play</button></div><div class="school-scene-layout"><img class="${imageClass}" src="${item.imagePath}" alt="${item.imageAlt}"><div class="greetings-line-stack"><article class="greetings-line-card"><div class="telephone-bubble-copy"><p class="telephone-line-hanzi">${hanzi}</p>${state2.showPinyin ? `<p class="telephone-line-pinyin">${pinyin}</p>` : ""}${state2.showEnglish ? `<p class="telephone-line-english">${english}</p>` : ""}</div></article></div></div></section>`;
       }).join("")}</div></section><section class="school-lesson-section"><div class="time-months-heading"><p class="body-match-kicker">Book words</p></div><div class="school-word-grid is-text-only hobbies-word-grid">${page.itemIds.map((id) => {
@@ -10850,7 +10891,7 @@
         { id: "toy-airplane", title: "Toy airplane", imagePath: "assets/illustrated-toys/lele-playing-toy-airplane.webp", alt: "Lele flying a toy airplane", hanzi: "\u6211\u6709\u73A9\u5177\u98DE\u673A\u3002", pinyin: "w\u01D2 y\u01D2u w\xE1n j\xF9 f\u0113i j\u012B.", english: "I have a toy airplane.", audio: "\u6211\u6709\u73A9\u5177\u98DE\u673A" },
         { id: "toy-bear", title: "Toy bear", imagePath: "assets/illustrated-toys/lele-playing-toy-bear.webp", alt: "Lele high-fiving a toy bear", hanzi: "\u6211\u6709\u73A9\u5177\u718A\u3002", pinyin: "w\u01D2 y\u01D2u w\xE1n j\xF9 xi\xF3ng.", english: "I have a toy bear.", audio: "\u6211\u6709\u73A9\u5177\u718A" }
       ];
-      focusExplorer2.innerHTML = `<div class="time-date-board school-topic-board hobbies-topic-board"><section class="school-lesson-section"><div class="time-months-heading"><p class="body-match-kicker">Scenes</p></div><div class="school-scene-grid toys-scene-grid">${scenes.map((scene) => `<section class="greetings-exchange school-scene-card"><div class="greetings-exchange-top"><div><p class="body-match-kicker">${scene.title}</p></div><button class="small-button is-play-button" type="button" data-toys-scene-play="${scene.id}">Play</button></div><div class="school-scene-layout"><img class="school-scene-image" src="${scene.imagePath}" alt="${scene.alt}"><div class="greetings-line-stack"><article class="greetings-line-card"><div class="telephone-bubble-copy"><p class="telephone-line-hanzi">${scene.hanzi}</p>${state2.showPinyin ? `<p class="telephone-line-pinyin">${scene.pinyin}</p>` : ""}${state2.showEnglish ? `<p class="telephone-line-english">${scene.english}</p>` : ""}</div></article></div></div></section>`).join("")}</div></section><section class="school-lesson-section"><div class="time-months-heading"><p class="body-match-kicker">Book words &amp; more</p></div><div class="school-word-grid toys-flashcard-grid">${flashcards.map((item) => `<button class="school-word-card book-word-card" type="button" data-toys-flashcard="${item.id}"><img class="school-word-image book-word-image" src="${item.imagePath}" alt="${item.imageAlt}"><span class="book-word-copy"><span class="time-asset-hanzi">${item.hanzi}</span>${state2.showPinyin ? `<span class="time-asset-pinyin">${item.pinyin}</span>` : ""}${state2.showEnglish ? `<span class="time-asset-english">${item.english}</span>` : ""}</span></button>`).join("")}</div></section></div>`;
+      focusExplorer2.innerHTML = `<div class="time-date-board school-topic-board hobbies-topic-board"><section class="school-lesson-section"><div class="time-months-heading"><p class="body-match-kicker">Review</p></div><div class="school-scene-grid toys-scene-grid">${scenes.map((scene) => `<section class="greetings-exchange school-scene-card"><div class="greetings-exchange-top"><div><p class="body-match-kicker">${scene.title}</p></div><button class="small-button is-play-button" type="button" data-toys-scene-play="${scene.id}">Play</button></div><div class="school-scene-layout"><img class="school-scene-image" src="${scene.imagePath}" alt="${scene.alt}"><div class="greetings-line-stack"><article class="greetings-line-card"><div class="telephone-bubble-copy"><p class="telephone-line-hanzi">${scene.hanzi}</p>${state2.showPinyin ? `<p class="telephone-line-pinyin">${scene.pinyin}</p>` : ""}${state2.showEnglish ? `<p class="telephone-line-english">${scene.english}</p>` : ""}</div></article></div></div></section>`).join("")}</div></section><section class="school-lesson-section"><div class="time-months-heading"><p class="body-match-kicker">Book words &amp; more</p></div><div class="school-word-grid toys-flashcard-grid">${flashcards.map((item) => `<button class="school-word-card book-word-card" type="button" data-toys-flashcard="${item.id}"><img class="school-word-image book-word-image" src="${item.imagePath}" alt="${item.imageAlt}"><span class="book-word-copy"><span class="time-asset-hanzi">${item.hanzi}</span>${state2.showPinyin ? `<span class="time-asset-pinyin">${item.pinyin}</span>` : ""}${state2.showEnglish ? `<span class="time-asset-english">${item.english}</span>` : ""}</span></button>`).join("")}</div></section></div>`;
       focusExplorer2.querySelectorAll("[data-toys-scene-play]").forEach((button) => button.addEventListener("click", () => {
         const scene = scenes.find((entry) => entry.id === button.dataset.toysScenePlay);
         if (scene && state2.tapAudioEnabled) speakLesson(scene.audio, 0.74);
