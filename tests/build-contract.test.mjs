@@ -350,7 +350,7 @@ test("direct topic links immediately focus the topic detail for every topic", ()
   const landingHtml = readFileSync("index.html", "utf8");
   const runtimeWiringSource = readFileSync("src/app/runtime-wiring.js", "utf8");
   const stylesSource = readFileSync("styles.css", "utf8");
-  assert.match(landingHtml, /href="#books-panel" data-global-view="books">← Back to books/);
+  assert.match(landingHtml, /href="#topics-panel" data-global-view="topics">← Back to Topics/);
   assert.match(runtimeWiringSource, /if \(initialTopicId\) \{\s*requestAnimationFrame\(\(\) => focusLearningPanel\(\)\);/);
   assert.match(stylesSource, /html \{\s*scroll-behavior: auto;/);
 });
