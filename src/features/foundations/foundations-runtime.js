@@ -86,6 +86,7 @@ function familyGameItems() {
   const familyTopic = topicById("family");
   return familyGameItemIds
     .map((id) => familyTopic?.focusItems.find((item) => item.id === id))
+    .filter((item) => !state.lessonScope || item?.lessonSources?.includes(`${state.lessonScope.bookId}:${state.lessonScope.lessonNumber}`))
     .filter(Boolean);
 }
 
@@ -116,7 +117,10 @@ function isFamilySentenceItemId(itemId) {
 }
 
 function familyBookWordItems() {
-  return focusItemsForTopic(topicById("family")).filter((item) => !isFamilySentenceItemId(item.id));
+  const source = state.lessonScope ? `${state.lessonScope.bookId}:${state.lessonScope.lessonNumber}` : "";
+  return focusItemsForTopic(topicById("family"))
+    .filter((item) => !isFamilySentenceItemId(item.id))
+    .filter((item) => !source || item.lessonSources?.includes(source));
 }
 
 const lessonTemplateTopicIds = new Set(["greetings", "polite-words", "introductions", "is-it", "age", "family"]);
@@ -197,7 +201,13 @@ function usefulNoteForTopic(topic) {
         <strong>你上几年级？</strong> asks what school year someone is in, and <strong>我上一年级。</strong> means “I am in first grade.” This topic links naturally with earlier self-introduction language: <strong>你好！你叫什么名字？我叫…… 你几岁？我五岁。你上几年级？我上一年级。</strong>
       </p>
     `,
-    family: `
+    family: state.lessonScope && `${state.lessonScope.bookId}:${state.lessonScope.lessonNumber}` === "1b:1" ? `
+      <p class="greetings-note-hanzi">爸爸 / 妈妈</p>
+      <p class="greetings-note-copy"><strong>爸爸</strong> means “dad” and <strong>妈妈</strong> means “mom.” Use <strong>我的</strong> to say “my”: <strong>这是我的爸爸。</strong></p>
+    ` : state.lessonScope && `${state.lessonScope.bookId}:${state.lessonScope.lessonNumber}` === "1b:2" ? `
+      <p class="greetings-note-hanzi">哥哥 / 弟弟 / 姐姐 / 妹妹</p>
+      <p class="greetings-note-copy">These words show both gender and age order: <strong>哥哥、姐姐</strong> are older; <strong>弟弟、妹妹</strong> are younger.</p>
+    ` : `
       <p class="greetings-note-hanzi">有 / 一个 / 两个</p>
       <p class="greetings-note-copy">
         <strong>有</strong> means “have.” Put the family members after it: <strong>我有一个姐姐和一个弟弟。</strong>
@@ -1104,15 +1114,38 @@ function renderFamilyHomeVisual(exchange) {
 }
 
 function renderFamilyExplorer() {
+  const familyLessonKey = state.lessonScope ? `${state.lessonScope.bookId}:${state.lessonScope.lessonNumber}` : "";
+  const familyLessonTheme = {
+    "1b:1": {
+      title: "Book theme: Mom and Dad",
+      description: "Learn 爸爸 and 妈妈 through simple family-love sentences: 爸爸妈妈爱我、我爱爸爸、我爱妈妈。"
+    },
+    "1b:2": {
+      title: "Book theme: brothers and sisters",
+      description: "Learn how 哥哥、姐姐 name older siblings, while 弟弟、妹妹 name younger siblings."
+    },
+    "2a:2": {
+      title: "Book theme: two younger brothers",
+      description: "Use 有 with family words to say who is in a family: 我有两个弟弟。"
+    },
+    "3a:4": {
+      title: "Book theme: my family",
+      description: "Introduce a wider family and say how many people are in it: 这是我的家人。我家有六口人。"
+    }
+  }[familyLessonKey] ?? {
+    title: "Book theme: family at home",
+    description: "Start with 爸爸妈妈爱我, then reuse the same small word set as the child moves to 我爱爸爸, 我爱妈妈, and sibling words."
+  };
   focusExplorer.innerHTML = `
     <div class="numbers-board">
       <div class="numbers-stage-card">
         <p class="body-match-kicker">${currentBook().label} Lesson ${currentLesson().lesson}</p>
-        <h4>Book theme: family at home</h4>
-        <p>Start with 爸爸妈妈爱我, then reuse the same small word set as the child moves to 我爱爸爸, 我爱妈妈, and sibling words.</p>
+        <h4>${familyLessonTheme.title}</h4>
+        <p>${familyLessonTheme.description}</p>
       </div>
       <div class="greetings-practice-grid family-scenes-grid">
         ${familyPractice
+          .filter((exchange) => !state.lessonScope || exchange.lessonSources?.includes(`${state.lessonScope.bookId}:${state.lessonScope.lessonNumber}`))
           .map(
             (exchange) => `
               <section class="greetings-exchange family-scene-${exchange.id}">

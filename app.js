@@ -253,6 +253,7 @@
       selectedBookCategoryId: "first-steps",
       selectedBookId: "1a",
       selectedLessonNumber: 1,
+      lessonScope: null,
       topicPageOpen: false,
       openTopicGroups: /* @__PURE__ */ new Set(["foundations"]),
       showPinyin: true,
@@ -967,13 +968,20 @@
         };
       }
       if (topic.id === "family") {
+        const familyLessonSource = state2.lessonScope ? `${state2.lessonScope.bookId}:${state2.lessonScope.lessonNumber}` : "";
+        const familyPracticeSummary = {
+          "1b:1": "Match \u7238\u7238 and \u5988\u5988 to the right family member.",
+          "1b:2": "Match \u54E5\u54E5\u3001\u5F1F\u5F1F\u3001\u59D0\u59D0\u3001\u59B9\u59B9 to the right family member.",
+          "2a:2": "Build your own family sentence, then match the sibling words.",
+          "3a:4": "Make a family sentence, then match family words to the right person."
+        }[familyLessonSource] ?? "Make your own family sentence, then match each family word to the right family member.";
         return {
-          summary: "Make your own family sentence, then match each family word to the right family member.",
+          summary: familyPracticeSummary,
           shellClass: "family-lesson-practice-shell",
           ensure: () => {
             ensureFamilyMatchGame2();
           },
-          builder: { markup: familySentenceBuilderMarkup, bind: bindFamilySentenceBuilder },
+          builder: !familyLessonSource || ["2a:2", "3a:4"].includes(familyLessonSource) ? { markup: familySentenceBuilderMarkup, bind: bindFamilySentenceBuilder } : null,
           match: {
             phraseHeading: "Chinese",
             meaningHeading: "Family member",
@@ -1855,13 +1863,14 @@
 
   // src/core/topic-detail-runtime.js
   function createTopicDetailRuntime(context) {
-    const { state: state2, books: books2, numberStages: numberStages2, schoolTopicData: schoolTopicData3, topicPageUrl: topicPageUrl2, topicIdFromLocation: topicIdFromLocation2, viewFromLocation: viewFromLocation2, bookSelect: bookSelect2, lessonSelect: lessonSelect2, topicTitle: topicTitle2, topicSummary: topicSummary2, topicProgress: topicProgress2, topicLessonStrip: topicLessonStrip2, subtopicShelf: subtopicShelf2, focusDisplay: focusDisplay2, focusExplorer: focusExplorer2, currentTopic: currentTopic2, currentNumberStage: currentNumberStage2, focusItemsForTopic: focusItemsForTopic2, currentFocusItem: currentFocusItem2, currentBook: currentBook2, currentLesson: currentLesson2, selectedTopicGroupId: selectedTopicGroupId2, bookCategoryForBook: bookCategoryForBook2, categoryIdForTopic: categoryIdForTopic2, narrowTopicBrowserTo: narrowTopicBrowserTo2, renderTopics: renderTopics2, renderBooks: renderBooks2, updateTopicPageVisibility: updateTopicPageVisibility2, focusLearningPanel: focusLearningPanel2, renderFocusControls: renderFocusControls2, renderFocusDisplay: renderFocusDisplay2, renderFocusExplorer: renderFocusExplorer2, renderFocusWordList: renderFocusWordList3, renderFocusStatus: renderFocusStatus2, renderActivityPanel: renderActivityPanel2, ensureBodyMatchGame: ensureBodyMatchGame2, isFamilySentenceItemId: isFamilySentenceItemId2, familyBookWordItems: familyBookWordItems2, usesLessonTemplate: usesLessonTemplate2, syncBookSelectionFromTopic: syncBookSelectionFromTopic2, switchView: switchView2, updateLearningCultureNav: updateLearningCultureNav2 } = context;
+    const { state: state2, books: books2, numberStages: numberStages2, schoolTopicData: schoolTopicData3, topicPageUrl: topicPageUrl2, topicIdFromLocation: topicIdFromLocation2, lessonScopeFromLocation: lessonScopeFromLocation2, viewFromLocation: viewFromLocation2, bookSelect: bookSelect2, lessonSelect: lessonSelect2, topicTitle: topicTitle2, topicSummary: topicSummary2, topicProgress: topicProgress2, topicLessonStrip: topicLessonStrip2, subtopicShelf: subtopicShelf2, focusDisplay: focusDisplay2, focusExplorer: focusExplorer2, currentTopic: currentTopic2, currentNumberStage: currentNumberStage2, focusItemsForTopic: focusItemsForTopic2, currentFocusItem: currentFocusItem2, currentBook: currentBook2, currentLesson: currentLesson2, selectedTopicGroupId: selectedTopicGroupId2, bookCategoryForBook: bookCategoryForBook2, categoryIdForTopic: categoryIdForTopic2, narrowTopicBrowserTo: narrowTopicBrowserTo2, renderTopics: renderTopics2, renderBooks: renderBooks2, updateTopicPageVisibility: updateTopicPageVisibility2, focusLearningPanel: focusLearningPanel2, renderFocusControls: renderFocusControls2, renderFocusDisplay: renderFocusDisplay2, renderFocusExplorer: renderFocusExplorer2, renderFocusWordList: renderFocusWordList3, renderFocusStatus: renderFocusStatus2, renderActivityPanel: renderActivityPanel2, ensureBodyMatchGame: ensureBodyMatchGame2, isFamilySentenceItemId: isFamilySentenceItemId2, familyBookWordItems: familyBookWordItems2, usesLessonTemplate: usesLessonTemplate2, syncBookSelectionFromTopic: syncBookSelectionFromTopic2, switchView: switchView2, updateLearningCultureNav: updateLearningCultureNav2 } = context;
     function selectBookLesson2(bookId, lessonNumber) {
       const book = books2.find((entry) => entry.id === bookId) ?? books2[0];
       const lesson = book.lessons.find((entry) => entry.lesson === lessonNumber) ?? book.lessons[0];
       state2.selectedBookCategoryId = bookCategoryForBook2(book.id).id;
       state2.selectedBookId = book.id;
       state2.selectedLessonNumber = lesson.lesson;
+      state2.lessonScope = { bookId: book.id, lessonNumber: lesson.lesson };
       state2.selectedTopicId = lesson.topicId;
       state2.expandedCategoryId = categoryIdForTopic2(lesson.topicId);
       state2.topicPageOpen = true;
@@ -1870,31 +1879,8 @@
       renderBooks2();
       renderTopicDetail2();
       updateTopicPageVisibility2();
-      window.history.pushState(null, "", topicPageUrl2(window.location, lesson.topicId));
+      window.history.pushState(null, "", topicPageUrl2(window.location, lesson.topicId, state2.lessonScope));
       focusLearningPanel2();
-    }
-    function viewBookLessonSource(bookId, lessonNumber) {
-      const book = books2.find((entry) => entry.id === bookId);
-      const lesson = book?.lessons.find((entry) => entry.lesson === lessonNumber);
-      if (!book || !lesson) {
-        return;
-      }
-      state2.selectedBookCategoryId = bookCategoryForBook2(book.id).id;
-      state2.selectedBookId = book.id;
-      state2.selectedLessonNumber = lesson.lesson;
-      state2.selectedTopicId = lesson.topicId;
-      state2.topicPageOpen = false;
-      renderTopics2();
-      renderBooks2();
-      updateTopicPageVisibility2();
-      switchView2("books");
-      window.history.pushState(null, "", `${window.location.pathname}?view=books#book-lessons-${book.id}`);
-      window.requestAnimationFrame(() => {
-        document.querySelector(`[data-book-lesson="${book.id}:${lesson.lesson}"]`)?.scrollIntoView({
-          behavior: "smooth",
-          block: "center"
-        });
-      });
     }
     function topicLessonTitle(topic, step) {
       if (topic.id !== "numbers") {
@@ -1915,13 +1901,18 @@
         topicLessonStrip2.classList.add("is-hidden");
         return;
       }
-      const current = currentLesson2();
       topicLessonStrip2.classList.remove("is-hidden");
-      topicLessonStrip2.innerHTML = steps.map((step) => {
+      const allContentCard = steps.length > 1 ? `
+      <button class="topic-lesson-card topic-lesson-card-all${state2.lessonScope ? "" : " is-active"}" type="button" data-topic-all-content aria-label="Show all ${topic.title} content across books">
+        <span class="topic-lesson-meta">Learn by topic</span>
+        <strong>All topic content</strong>
+      </button>
+    ` : "";
+      topicLessonStrip2.innerHTML = allContentCard + steps.map((step) => {
         const bookId = step.book.toLowerCase();
-        const isActive = currentBook2().id === bookId && current.lesson === step.lesson;
+        const isActive = state2.lessonScope?.bookId === bookId && state2.lessonScope.lessonNumber === step.lesson;
         return `
-        <button class="topic-lesson-card${isActive ? " is-active" : ""}" type="button" data-topic-lesson-source="${bookId}:${step.lesson}" aria-label="View Book ${step.book} Lesson ${step.lesson}: ${step.title} in Learn by Books">
+        <button class="topic-lesson-card${isActive ? " is-active" : ""}" type="button" data-topic-lesson-source="${bookId}:${step.lesson}" aria-label="Show only Book ${step.book} Lesson ${step.lesson}: ${step.title}">
           <span class="topic-lesson-meta">Book ${step.book} Lesson ${step.lesson}</span>
           <strong>${topicLessonTitle(topic, step)}</strong>
         </button>
@@ -1930,8 +1921,16 @@
       topicLessonStrip2.querySelectorAll("[data-topic-lesson-source]").forEach((button) => {
         button.addEventListener("click", () => {
           const [bookId, lessonText] = button.dataset.topicLessonSource.split(":");
-          viewBookLessonSource(bookId, Number(lessonText));
+          selectBookLesson2(bookId, Number(lessonText));
         });
+      });
+      topicLessonStrip2.querySelector("[data-topic-all-content]")?.addEventListener("click", () => {
+        state2.lessonScope = null;
+        syncBookSelectionFromTopic2();
+        renderTopics2();
+        renderBooks2();
+        renderTopicDetail2();
+        window.history.pushState(null, "", topicPageUrl2(window.location, topic.id));
       });
     }
     function linkInlineBookLessonBadges() {
@@ -1954,8 +1953,8 @@
         link.type = "button";
         link.dataset.topicLessonSource = `${bookId}:${lessonNumber}`;
         link.textContent = badge.textContent;
-        link.setAttribute("aria-label", `View Book ${match[1].toUpperCase()} Lesson ${lessonNumber}: ${lesson.title} in Learn by Books`);
-        link.addEventListener("click", () => viewBookLessonSource(bookId, lessonNumber));
+        link.setAttribute("aria-label", `Show only Book ${match[1].toUpperCase()} Lesson ${lessonNumber}: ${lesson.title}`);
+        link.addEventListener("click", () => selectBookLesson2(bookId, lessonNumber));
         badge.replaceWith(link);
       });
     }
@@ -1990,7 +1989,9 @@
       }
       topicTitle2.textContent = topic.title;
       if (topicSummary2) {
-        topicSummary2.textContent = topic.summary;
+        const scope = state2.lessonScope;
+        const scopedStep = scope ? (topic.steps ?? []).find((step) => step.book.toLowerCase() === scope.bookId && step.lesson === scope.lessonNumber) : null;
+        topicSummary2.textContent = scopedStep?.note ?? topic.summary;
       }
       if (topicProgress2) {
         topicProgress2.textContent = topic.progressLabel;
@@ -2028,7 +2029,16 @@
         if (topicId) {
           state2.selectedTopicId = topicId;
           state2.expandedCategoryId = categoryIdForTopic2(topicId);
-          syncBookSelectionFromTopic2();
+          const scope = lessonScopeFromLocation2(window.location, books2, topicId);
+          state2.lessonScope = scope;
+          if (scope) {
+            state2.selectedBookId = scope.bookId;
+            state2.selectedLessonNumber = scope.lessonNumber;
+          } else {
+            syncBookSelectionFromTopic2();
+          }
+        } else {
+          state2.lessonScope = null;
         }
         switchView2(viewFromLocation2(window.location));
         renderTopics2();
@@ -2112,17 +2122,19 @@
       return numberStages2.find((stage) => stage.bookId === currentBook2().id && stage.lesson === lesson.lesson) ?? numberStages2[0];
     }
     function focusItemsForTopic2(topic = currentTopic2()) {
+      const source = state2.lessonScope ? `${state2.lessonScope.bookId}:${state2.lessonScope.lessonNumber}` : "";
+      const forSelectedLesson = (items) => source ? items.filter((item) => !item.lessonSources || item.lessonSources.includes(source)) : items;
       if (topic.id === "numbers") {
         return getNumberStageItems();
       }
       if (topic.id === "weekdays") {
-        return timeDateWeekItems2;
+        return forSelectedLesson(timeDateWeekItems2);
       }
       const worldItems = getWorldFocusItems?.(topic);
       if (worldItems) {
-        return worldItems;
+        return forSelectedLesson(worldItems);
       }
-      return topic.focusItems ?? [{ id: "focus", ...topic.focus }];
+      return forSelectedLesson(topic.focusItems ?? [{ id: "focus", ...topic.focus }]);
     }
     function currentFocusItem2() {
       const items = focusItemsForTopic2();
@@ -2214,6 +2226,7 @@
         return;
       }
       state2.selectedTopicId = topic.id;
+      state2.lessonScope = null;
       state2.expandedCategoryId = categoryIdForTopic2(topic.id);
       state2.topicPageOpen = true;
       renderTopics2();
@@ -2794,8 +2807,21 @@
     const topicId = new URLSearchParams(location.search).get("topic");
     return hasTopic(topicId) ? topicId : null;
   }
-  function topicPageUrl(location, topicId) {
-    return `${location.pathname}?topic=${encodeURIComponent(topicId)}#topic-detail`;
+  function lessonScopeFromLocation(location, books2, topicId) {
+    const params = new URLSearchParams(location.search);
+    const bookId = params.get("book")?.toLowerCase();
+    const lessonNumber = Number(params.get("lesson"));
+    const lesson = books2.find((book) => book.id === bookId)?.lessons.find((entry) => entry.lesson === lessonNumber);
+    return lesson?.topicId === topicId ? { bookId, lessonNumber } : null;
+  }
+  function topicPageUrl(location, topicId, lessonScope = null) {
+    const params = new URLSearchParams();
+    params.set("topic", topicId);
+    if (lessonScope) {
+      params.set("book", lessonScope.bookId);
+      params.set("lesson", String(lessonScope.lessonNumber));
+    }
+    return `${location.pathname}?${params.toString()}#topic-detail`;
   }
 
   // src/features/time-daily-life/weekdays.js
@@ -3536,6 +3562,9 @@
       const data = schoolTopicData3[topicId];
       return data?.practiceItems ?? data?.words ?? schoolWordGroups(topicId).flatMap((group) => group.items);
     }
+    function lessonScopeKey() {
+      return state2.lessonScope ? `${state2.lessonScope.bookId}:${state2.lessonScope.lessonNumber}` : "";
+    }
     function backpackGameItems() {
       const portableItemIds = /* @__PURE__ */ new Set(["pencil", "ruler", "eraser", "colored-pencils", "scissors", "glue", "pencil-box", "textbook", "workbook"]);
       return schoolPracticeItems2("school-supplies").filter((item) => portableItemIds.has(item.id));
@@ -3946,8 +3975,13 @@
       state2.schoolSelectedPhraseId = null;
       renderActivityPanel2(currentTopic2());
     }
+    function schoolBuildItems(topicId = currentTopic2().id) {
+      const items = schoolSentenceBuilds3[topicId] ?? [];
+      const source = lessonScopeKey();
+      return topicId === "food" && source ? items.filter((item) => item.lessonSources?.includes(source)) : items;
+    }
     function currentSchoolBuildItem() {
-      const items = schoolSentenceBuilds3[currentTopic2().id] ?? [];
+      const items = schoolBuildItems();
       return items.find((item) => item.id === state2.schoolBuildOrder[state2.schoolBuildIndex]) ?? items[0];
     }
     function prepareSchoolBuilder() {
@@ -3957,10 +3991,11 @@
       state2.schoolBuildAvailableTokens = shuffleArray2([...item?.target ?? [], ...item?.distractors ?? []]);
     }
     function ensureSchoolBuilder(topicId = currentTopic2().id) {
-      const items = schoolSentenceBuilds3[topicId] ?? [];
+      const items = schoolBuildItems(topicId);
+      const builderKey = `${topicId}:${lessonScopeKey()}`;
       const hasCurrentItems = state2.schoolBuildOrder.length === items.length && state2.schoolBuildOrder.every((id) => items.some((item) => item.id === id));
-      if (state2.schoolBuildTopicId !== topicId || !hasCurrentItems) {
-        state2.schoolBuildTopicId = topicId;
+      if (state2.schoolBuildTopicId !== builderKey || !hasCurrentItems) {
+        state2.schoolBuildTopicId = builderKey;
         state2.schoolBuildOrder = shuffleArray2(items.map((item) => item.id));
         state2.schoolBuildIndex = 0;
         prepareSchoolBuilder();
@@ -4056,8 +4091,17 @@
         ]
       }
     };
+    const foodCategoryByLessonSource = {
+      "1b:7": "fruit",
+      "2b:7": "snack",
+      "3b:6": "vegetable"
+    };
+    function scopedFoodCategoryId() {
+      return foodCategoryByLessonSource[lessonScopeKey()] ?? "";
+    }
     function foodBookWordItems(data) {
-      const itemIds = new Set(foodCategoryGroups[state2.foodBookCategoryId]?.items.map((item) => item.id) ?? []);
+      const categoryId = scopedFoodCategoryId() || state2.foodBookCategoryId;
+      const itemIds = new Set(foodCategoryGroups[categoryId]?.items.map((item) => item.id) ?? []);
       return data.words.filter((item) => itemIds.has(item.id));
     }
     function foodCategoryIconPath(itemId) {
@@ -4067,7 +4111,7 @@
       mix: { hanzi: "\u6DF7\u5408", english: "Mix" },
       ...Object.fromEntries(Object.entries(foodCategoryGroups).map(([id, group]) => [id, { hanzi: group.hanzi, english: group.english }]))
     };
-    function foodHungerItems(modeId = state2.foodHungerModeId) {
+    function foodHungerItems(modeId = scopedFoodCategoryId() || state2.foodHungerModeId) {
       if (modeId === "mix") return Object.values(foodCategoryGroups).flatMap((group) => group.items);
       return foodCategoryGroups[modeId]?.items ?? [];
     }
@@ -4080,7 +4124,7 @@
       ]);
       state2.foodHungerWrongIds = /* @__PURE__ */ new Set();
     }
-    function resetFoodHungerGame(modeId = state2.foodHungerModeId) {
+    function resetFoodHungerGame(modeId = scopedFoodCategoryId() || state2.foodHungerModeId) {
       state2.foodHungerModeId = modeId;
       state2.foodHungerRoundIds = shuffleArray2(foodHungerItems(modeId).map((item) => item.id)).slice(0, 3);
       state2.foodHungerTargetIndex = 0;
@@ -4117,6 +4161,10 @@
       renderActivityPanel2(currentTopic2());
     }
     function renderFoodHungerGame() {
+      const scopedCategoryId = scopedFoodCategoryId();
+      if (scopedCategoryId && state2.foodHungerModeId !== scopedCategoryId) {
+        resetFoodHungerGame(scopedCategoryId);
+      }
       ensureFoodHungerGame();
       const items = foodHungerItems();
       const target = currentFoodHungerTarget();
@@ -4127,7 +4175,7 @@
     <section class="practice-split-card food-hunger-game-card">
       <div class="numbers-game-top"><div><p class="body-match-kicker">Hungry? What should we eat?</p><p class="numbers-game-note">Choose a food group or Mix. A food picture will appear. Tap the matching Chinese word to put it in your cart.</p></div></div>
       ${state2.foodHungerFeedback ? `<p class="greetings-game-feedback ${state2.foodHungerFeedback.startsWith("Correct") ? "is-correct" : "is-wrong"}">${state2.foodHungerFeedback}</p>` : ""}
-      <div class="food-category-tabs food-hunger-tabs">${Object.entries(foodHungerModes).map(([id, mode]) => `<button class="food-category-tab${state2.foodHungerModeId === id ? " is-active" : ""}" type="button" data-food-hunger-mode="${id}">${mode.hanzi}${state2.showEnglish ? `<small>${mode.english}</small>` : ""}</button>`).join("")}</div>
+      ${scopedCategoryId ? `<p class="body-match-kicker">${foodHungerModes[scopedCategoryId].hanzi}${state2.showEnglish ? ` \xB7 ${foodHungerModes[scopedCategoryId].english}` : ""}</p>` : `<div class="food-category-tabs food-hunger-tabs">${Object.entries(foodHungerModes).map(([id, mode]) => `<button class="food-category-tab${state2.foodHungerModeId === id ? " is-active" : ""}" type="button" data-food-hunger-mode="${id}">${mode.hanzi}${state2.showEnglish ? `<small>${mode.english}</small>` : ""}</button>`).join("")}</div>`}
       <div class="backpack-game-progress" aria-label="${state2.foodHungerPlatedIds.length} of ${state2.foodHungerRoundIds.length} foods in the cart">${state2.foodHungerRoundIds.map((_, index) => `<span class="backpack-game-progress-dot${index < state2.foodHungerPlatedIds.length ? " is-packed" : ""}">${index < state2.foodHungerPlatedIds.length ? "\u2713" : ""}</span>`).join("")}</div>
       <div class="food-hunger-visual${isComplete ? " is-complete" : ""}">
         ${!isComplete && target ? `<div class="food-hunger-target"><img src="${foodCategoryIconPath(target.id)}" alt="${target.english}"></div>` : ""}
@@ -4413,6 +4461,8 @@
         return;
       }
       const sceneGroups = data.sceneGroups ?? [{ id: "all", items: data.scenes ?? [] }];
+      const source = lessonScopeKey();
+      const filteredSceneGroups = source ? sceneGroups.map((group) => ({ ...group, items: group.items.filter((item) => !item.lessonSources || item.lessonSources.includes(source)) })).filter((group) => group.items.length) : sceneGroups;
       const wordGroups = schoolWordGroups(topicId);
       if (topicId === "meals-feelings" && !wordGroups.some((group) => group.id === state2.mealsWordGroupId)) {
         state2.mealsWordGroupId = wordGroups[0]?.id ?? "";
@@ -4420,11 +4470,8 @@
       const visibleWords = topicId === "food" ? foodBookWordItems(data) : topicId === "meals-feelings" ? wordGroups.find((group) => group.id === state2.mealsWordGroupId)?.items ?? [] : data.words;
       focusExplorer2.innerHTML = `
     <div class="time-date-board school-topic-board">
-      <div class="numbers-stage-card">
-        <p class="body-match-kicker">${currentBook2().label} Lesson ${currentLesson2().lesson}</p>
-        <h4>${topic.title}</h4>
-      </div>
-      ${sceneGroups.map((group) => `
+      ${topicId === "food" ? '<div class="time-months-heading"><p class="body-match-kicker">Review</p></div>' : `<div class="numbers-stage-card"><p class="body-match-kicker">${currentBook2().label} Lesson ${currentLesson2().lesson}</p><h4>${topic.title}</h4></div>`}
+      ${filteredSceneGroups.map((group) => `
         <section class="school-lesson-section is-${group.id}">
           ${group.label ? `<p class="body-match-kicker school-lesson-heading">${group.label}</p>` : ""}
           <div class="school-scene-grid${group.items.length === 1 ? " is-single" : ""}">
@@ -4444,7 +4491,7 @@
       `).join("")}
       ${data.showWords !== false ? `
         <div class="time-months-heading"><p class="body-match-kicker">Book words</p></div>
-        ${topicId === "food" ? `<div class="food-book-tabs" role="tablist" aria-label="Food word categories">${Object.entries(foodCategoryGroups).map(([id, group]) => `<button class="food-book-tab${state2.foodBookCategoryId === id ? " is-active" : ""}" type="button" role="tab" aria-selected="${state2.foodBookCategoryId === id}" data-food-book-category="${id}">${group.hanzi}${state2.showEnglish ? `<small>${group.english}</small>` : ""}</button>`).join("")}</div>` : ""}
+        ${topicId === "food" && !scopedFoodCategoryId() ? `<div class="food-book-tabs" role="tablist" aria-label="Food word categories">${Object.entries(foodCategoryGroups).map(([id, group]) => `<button class="food-book-tab${state2.foodBookCategoryId === id ? " is-active" : ""}" type="button" role="tab" aria-selected="${state2.foodBookCategoryId === id}" data-food-book-category="${id}">${group.hanzi}${state2.showEnglish ? `<small>${group.english}</small>` : ""}</button>`).join("")}</div>` : ""}
         ${topicId === "meals-feelings" && wordGroups.length > 1 ? `<div class="food-book-tabs lesson-word-tabs" role="tablist" aria-label="Meals and feelings word categories">${wordGroups.map((group) => `<button class="food-book-tab${state2.mealsWordGroupId === group.id ? " is-active" : ""}" type="button" role="tab" aria-selected="${state2.mealsWordGroupId === group.id}" data-meals-word-group="${group.id}">${group.hanzi}${state2.showEnglish ? `<small>${group.english}</small>` : ""}</button>`).join("")}</div>` : ""}
         <div class="school-word-grid${topicId === "school-subjects" ? " is-text-only" : ""}${topicId === "meals-feelings" ? " is-uniform-images" : ""}">
           ${visibleWords.map((item) => `
@@ -4457,7 +4504,7 @@
           `).join("")}
         </div>
       ` : ""}
-      ${data.review ? `<section class="visual-topic-notes school-review-notes"><p class="body-match-kicker">Useful notes</p><div class="visual-topic-note-grid school-review-grid">${data.review.map((item) => `<article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">${item.pattern}</p>${state2.showPinyin ? `<p class="visual-topic-note-pinyin">${item.pinyin}</p>` : ""}${state2.showEnglish ? `<p class="visual-topic-note-english">${item.english}</p>` : ""}<p class="visual-topic-note-example">${item.example}</p>${state2.showPinyin && item.examplePinyin ? `<p class="visual-topic-note-pinyin">${item.examplePinyin}</p>` : ""}${state2.showEnglish && item.exampleEnglish ? `<p class="visual-topic-note-english">${item.exampleEnglish}</p>` : ""}</article>`).join("")}</div></section>` : ""}
+      ${data.review ? `<section class="visual-topic-notes school-review-notes"><p class="body-match-kicker">Useful notes</p><div class="visual-topic-note-grid school-review-grid">${data.review.filter((item) => !source || !item.lessonSources || item.lessonSources.includes(source)).map((item) => `<article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">${item.pattern}</p>${state2.showPinyin ? `<p class="visual-topic-note-pinyin">${item.pinyin}</p>` : ""}${state2.showEnglish ? `<p class="visual-topic-note-english">${item.english}</p>` : ""}<p class="visual-topic-note-example">${item.example}</p>${state2.showPinyin && item.examplePinyin ? `<p class="visual-topic-note-pinyin">${item.examplePinyin}</p>` : ""}${state2.showEnglish && item.exampleEnglish ? `<p class="visual-topic-note-english">${item.exampleEnglish}</p>` : ""}</article>`).join("")}</div></section>` : ""}
       ${topicId === "school-subjects" ? `<section class="visual-topic-notes"><p class="body-match-kicker">Useful note</p><div class="visual-topic-note-grid school-subject-note"><article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">\u53BB</p>${state2.showPinyin ? '<p class="visual-topic-note-pinyin">q\xF9</p>' : ""}${state2.showEnglish ? '<p class="visual-topic-note-english">to go</p>' : ""}<p class="visual-topic-note-example">\u6211\u53BB\u4E0A\u97F3\u4E50\u8BFE\u3002</p></article><article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">\u5728</p>${state2.showPinyin ? '<p class="visual-topic-note-pinyin">z\xE0i</p>' : ""}${state2.showEnglish ? '<p class="visual-topic-note-english">at / in; marks an action happening now</p>' : ""}<p class="visual-topic-note-example">\u6211\u5728\u4E0A\u97F3\u4E50\u8BFE\u3002</p></article><article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">\u559C\u6B22</p>${state2.showPinyin ? '<p class="visual-topic-note-pinyin">x\u01D0 huan</p>' : ""}${state2.showEnglish ? '<p class="visual-topic-note-english">to like</p>' : ""}<p class="visual-topic-note-example">\u6211\u559C\u6B22\u97F3\u4E50\u8BFE\u3002</p></article><article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">\u4E0D\u559C\u6B22</p>${state2.showPinyin ? '<p class="visual-topic-note-pinyin">b\xF9 x\u01D0 huan</p>' : ""}${state2.showEnglish ? '<p class="visual-topic-note-english">to not like</p>' : ""}<p class="visual-topic-note-example">\u6211\u4E0D\u559C\u6B22\u6570\u5B66\u8BFE\u3002</p></article></div></section>` : ""}
     </div>
   `;
@@ -4523,7 +4570,8 @@
         pinyin: "w\u01D2 x\u01D0 huan p\xEDng gu\u01D2, xi\u0101ng ji\u0101o, p\xFA tao h\xE9 c\u01CEo m\xE9i.",
         english: "I like apples, bananas, grapes, and strawberries.",
         audio: "\u6211\u559C\u6B22\u82F9\u679C\u9999\u8549\u8461\u8404\u548C\u8349\u8393",
-        imagePath: "assets/illustrated-food/fruit-group-1b-core.webp"
+        imagePath: "assets/illustrated-food/fruit-group-1b-core.webp",
+        lessonSources: ["1b:7"]
       }
     ],
     words: [
@@ -4556,13 +4604,21 @@
       ["potatoes", "\u571F\u8C46", "t\u01D4 d\xF2u", "potatoes", "potatoes.webp"]
     ].map(([id, hanzi, pinyin, english, file]) => ({ id, hanzi, pinyin, english, audio: hanzi, imagePath: `assets/illustrated-food/${file}` })),
     review: [
-      { pattern: "\u5403", pinyin: "ch\u012B", english: "eat solid food", example: "Use \u5403 for food you chew: \u5403\u82F9\u679C\u3001\u62AB\u8428\u3001\u7092\u996D\u3002" },
+      { pattern: "\u5403", pinyin: "ch\u012B", english: "eat solid food", example: "Use \u5403 for food you chew: \u5403\u82F9\u679C\u3001\u62AB\u8428\u3001\u7092\u996D\u3002", lessonSources: ["1b:7", "2b:7", "3b:6"] },
       { pattern: "\u559D", pinyin: "h\u0113", english: "drink liquids", example: "Use \u559D for drinks: \u559D\u6C34\u3001\u725B\u5976\u3001\u679C\u6C41\u3002" }
     ]
   };
   var foodSentenceBuilds = [
-    { id: "fruit", imagePath: "assets/illustrated-food/fruit-group-1b-core.webp", target: ["\u6211", "\u5403", "\u82F9\u679C"], distractors: ["\u559D", "\u5B66\u6821", "\u6559\u5BA4"], pinyin: "w\u01D2 ch\u012B p\xEDng gu\u01D2.", english: "I eat an apple." },
-    { id: "milk", imagePath: "assets/illustrated-food/milk.webp", target: ["\u6211", "\u559D", "\u725B\u5976"], distractors: ["\u5403", "\u5B66\u6821", "\u6559\u5BA4"], pinyin: "w\u01D2 h\u0113 ni\xFA n\u01CEi.", english: "I drink milk." }
+    { id: "apple", imagePath: "assets/illustrated-food/apple.webp", target: ["\u6211", "\u5403", "\u82F9\u679C"], distractors: ["\u559D", "\u5B66\u6821", "\u6559\u5BA4"], pinyin: "w\u01D2 ch\u012B p\xEDng gu\u01D2.", english: "I eat an apple.", audio: "\u6211\u5403\u82F9\u679C", lessonSources: ["1b:7"] },
+    { id: "banana", imagePath: "assets/illustrated-food/banana.webp", target: ["\u6211", "\u5403", "\u9999\u8549"], distractors: ["\u559D", "\u5B66\u6821", "\u6559\u5BA4"], pinyin: "w\u01D2 ch\u012B xi\u0101ng ji\u0101o.", english: "I eat a banana.", audio: "\u6211\u5403\u9999\u8549", lessonSources: ["1b:7"] },
+    { id: "cake", imagePath: "assets/illustrated-food/cake.webp", target: ["\u6211", "\u5403", "\u86CB\u7CD5"], distractors: ["\u559D", "\u5B66\u6821", "\u6559\u5BA4"], pinyin: "w\u01D2 ch\u012B d\xE0n g\u0101o.", english: "I eat cake.", audio: "\u6211\u5403\u86CB\u7CD5", lessonSources: ["2b:7"] },
+    { id: "carrot", imagePath: "assets/illustrated-food/carrot.webp", target: ["\u6211", "\u5403", "\u80E1\u841D\u535C"], distractors: ["\u559D", "\u5B66\u6821", "\u6559\u5BA4"], pinyin: "w\u01D2 ch\u012B h\xFA lu\xF3 bo.", english: "I eat a carrot.", audio: "\u6211\u5403\u80E1\u841D\u535C", lessonSources: ["3b:6"] },
+    { id: "milk", imagePath: "assets/illustrated-food/milk.webp", target: ["\u6211", "\u559D", "\u725B\u5976"], distractors: ["\u5403", "\u5B66\u6821", "\u6559\u5BA4"], pinyin: "w\u01D2 h\u0113 ni\xFA n\u01CEi.", english: "I drink milk.", audio: "\u6211\u559D\u725B\u5976" },
+    { id: "juice", imagePath: "assets/illustrated-food/juice.webp", target: ["\u6211", "\u559D", "\u679C\u6C41"], distractors: ["\u5403", "\u5B66\u6821", "\u6559\u5BA4"], pinyin: "w\u01D2 h\u0113 gu\u01D2 zh\u012B.", english: "I drink juice.", audio: "\u6211\u559D\u679C\u6C41" },
+    { id: "cola", imagePath: "assets/illustrated-food/cola.webp", target: ["\u6211", "\u559D", "\u53EF\u4E50"], distractors: ["\u5403", "\u5B66\u6821", "\u6559\u5BA4"], pinyin: "w\u01D2 h\u0113 k\u011B l\xE8.", english: "I drink Coke.", audio: "\u6211\u559D\u53EF\u4E50" },
+    { id: "like-cola", imagePath: "assets/illustrated-food/cola.webp", target: ["\u6211", "\u559C\u6B22", "\u559D", "\u53EF\u4E50"], distractors: ["\u4E0D\u559C\u6B22", "\u5403", "\u5B66\u6821"], pinyin: "w\u01D2 x\u01D0 huan h\u0113 k\u011B l\xE8.", english: "I like to drink Coke.", audio: "\u6211\u559C\u6B22\u559D\u53EF\u4E50" },
+    { id: "like-apple", imagePath: "assets/illustrated-food/apple.webp", target: ["\u6211", "\u559C\u6B22", "\u5403", "\u82F9\u679C"], distractors: ["\u4E0D\u559C\u6B22", "\u559D", "\u5B66\u6821"], pinyin: "w\u01D2 x\u01D0 huan ch\u012B p\xEDng gu\u01D2.", english: "I like to eat apples.", audio: "\u6211\u559C\u6B22\u5403\u82F9\u679C" },
+    { id: "dislike-broccoli", imagePath: "assets/illustrated-food/broccoli.webp", target: ["\u6211", "\u4E0D\u559C\u6B22", "\u5403", "\u897F\u5170\u82B1"], distractors: ["\u559C\u6B22", "\u559D", "\u5B66\u6821"], pinyin: "w\u01D2 b\xF9 x\u01D0 huan ch\u012B x\u012B l\xE1n hu\u0101.", english: "I do not like to eat broccoli.", audio: "\u6211\u4E0D\u559C\u6B22\u5403\u897F\u5170\u82B1" }
   ];
 
   // src/features/food/food-preferences.js
@@ -6394,27 +6450,27 @@
     focus: {
       hanzi: "\u7238\u7238\u5988\u5988\u7231\u6211\u3002",
       pinyin: "b\xE0 ba m\u0101 ma \xE0i w\u01D2.",
-      english: "Dad and Mum love me.",
+      english: "Dad and Mom love me.",
       audio: "\u7238\u7238\u5988\u5988\u7231\u6211"
     },
     focusItems: [
-      { id: "parents-love-me", hanzi: "\u7238\u7238\u5988\u5988\u7231\u6211\u3002", pinyin: "b\xE0 ba m\u0101 ma \xE0i w\u01D2.", english: "Dad and Mum love me.", audio: "\u7238\u7238\u5988\u5988\u7231\u6211" },
-      { id: "i-love-dad", hanzi: "\u6211\u7231\u7238\u7238\u3002", pinyin: "w\u01D2 \xE0i b\xE0 ba.", english: "I love Dad.", audio: "\u6211\u7231\u7238\u7238" },
-      { id: "i-love-mom", hanzi: "\u6211\u7231\u5988\u5988\u3002", pinyin: "w\u01D2 \xE0i m\u0101 ma.", english: "I love Mum.", audio: "\u6211\u7231\u5988\u5988" },
-      { id: "mom-word", hanzi: "\u5988\u5988", pinyin: "m\u0101 ma", english: "mum", audio: "\u5988\u5988" },
-      { id: "dad-word", hanzi: "\u7238\u7238", pinyin: "b\xE0 ba", english: "dad", audio: "\u7238\u7238" },
-      { id: "older-brother-word", hanzi: "\u54E5\u54E5", pinyin: "g\u0113 ge", english: "older brother", audio: "\u54E5\u54E5" },
-      { id: "younger-brother-word", hanzi: "\u5F1F\u5F1F", pinyin: "d\xEC di", english: "younger brother", audio: "\u5F1F\u5F1F" },
-      { id: "older-sister-word", hanzi: "\u59D0\u59D0", pinyin: "ji\u011B jie", english: "older sister", audio: "\u59D0\u59D0" },
-      { id: "younger-sister-word", hanzi: "\u59B9\u59B9", pinyin: "m\xE8i mei", english: "younger sister", audio: "\u59B9\u59B9" },
-      { id: "have-word", hanzi: "\u6709", pinyin: "y\u01D2u", english: "have", audio: "\u6709" },
-      { id: "not-have-word", hanzi: "\u6CA1\u6709", pinyin: "m\xE9i y\u01D2u", english: "do not have", audio: "\u6CA1\u6709" },
-      { id: "one-word", hanzi: "\u4E00\u4E2A", pinyin: "y\xED ge", english: "one", audio: "\u4E00\u4E2A" },
-      { id: "two-word", hanzi: "\u4E24\u4E2A", pinyin: "li\u01CEng ge", english: "two", audio: "\u4E24\u4E2A" },
-      { id: "grandpa-word", hanzi: "\u7237\u7237", pinyin: "y\xE9 ye", english: "paternal grandpa", audio: "\u7237\u7237" },
-      { id: "grandma-word", hanzi: "\u5976\u5976", pinyin: "n\u01CEi nai", english: "paternal grandma", audio: "\u5976\u5976" },
-      { id: "maternal-grandpa-word", hanzi: "\u5916\u516C", pinyin: "w\xE0i g\u014Dng", english: "maternal grandpa", audio: "\u5916\u516C" },
-      { id: "maternal-grandma-word", hanzi: "\u5916\u5A46", pinyin: "w\xE0i p\xF3", english: "maternal grandma", audio: "\u5916\u5A46" }
+      { id: "parents-love-me", hanzi: "\u7238\u7238\u5988\u5988\u7231\u6211\u3002", pinyin: "b\xE0 ba m\u0101 ma \xE0i w\u01D2.", english: "Dad and Mom love me.", audio: "\u7238\u7238\u5988\u5988\u7231\u6211", lessonSources: ["1b:1"] },
+      { id: "i-love-dad", hanzi: "\u6211\u7231\u7238\u7238\u3002", pinyin: "w\u01D2 \xE0i b\xE0 ba.", english: "I love Dad.", audio: "\u6211\u7231\u7238\u7238", lessonSources: ["1b:1"] },
+      { id: "i-love-mom", hanzi: "\u6211\u7231\u5988\u5988\u3002", pinyin: "w\u01D2 \xE0i m\u0101 ma.", english: "I love Mom.", audio: "\u6211\u7231\u5988\u5988", lessonSources: ["1b:1"] },
+      { id: "mom-word", hanzi: "\u5988\u5988", pinyin: "m\u0101 ma", english: "mom", audio: "\u5988\u5988", lessonSources: ["1b:1", "3a:4"] },
+      { id: "dad-word", hanzi: "\u7238\u7238", pinyin: "b\xE0 ba", english: "dad", audio: "\u7238\u7238", lessonSources: ["1b:1", "3a:4"] },
+      { id: "older-brother-word", hanzi: "\u54E5\u54E5", pinyin: "g\u0113 ge", english: "older brother", audio: "\u54E5\u54E5", lessonSources: ["1b:2", "2a:2", "3a:4"] },
+      { id: "younger-brother-word", hanzi: "\u5F1F\u5F1F", pinyin: "d\xEC di", english: "younger brother", audio: "\u5F1F\u5F1F", lessonSources: ["1b:2", "2a:2", "3a:4"] },
+      { id: "older-sister-word", hanzi: "\u59D0\u59D0", pinyin: "ji\u011B jie", english: "older sister", audio: "\u59D0\u59D0", lessonSources: ["1b:2", "2a:2", "3a:4"] },
+      { id: "younger-sister-word", hanzi: "\u59B9\u59B9", pinyin: "m\xE8i mei", english: "younger sister", audio: "\u59B9\u59B9", lessonSources: ["1b:2", "2a:2", "3a:4"] },
+      { id: "have-word", hanzi: "\u6709", pinyin: "y\u01D2u", english: "have", audio: "\u6709", lessonSources: ["2a:2", "3a:4"] },
+      { id: "not-have-word", hanzi: "\u6CA1\u6709", pinyin: "m\xE9i y\u01D2u", english: "do not have", audio: "\u6CA1\u6709", lessonSources: ["2a:2", "3a:4"] },
+      { id: "one-word", hanzi: "\u4E00\u4E2A", pinyin: "y\xED ge", english: "one", audio: "\u4E00\u4E2A", lessonSources: ["2a:2"] },
+      { id: "two-word", hanzi: "\u4E24\u4E2A", pinyin: "li\u01CEng ge", english: "two", audio: "\u4E24\u4E2A", lessonSources: ["2a:2"] },
+      { id: "grandpa-word", hanzi: "\u7237\u7237", pinyin: "y\xE9 ye", english: "paternal grandpa", audio: "\u7237\u7237", lessonSources: ["3a:4"] },
+      { id: "grandma-word", hanzi: "\u5976\u5976", pinyin: "n\u01CEi nai", english: "paternal grandma", audio: "\u5976\u5976", lessonSources: ["3a:4"] },
+      { id: "maternal-grandpa-word", hanzi: "\u5916\u516C", pinyin: "w\xE0i g\u014Dng", english: "maternal grandpa", audio: "\u5916\u516C", lessonSources: ["3a:4"] },
+      { id: "maternal-grandma-word", hanzi: "\u5916\u5A46", pinyin: "w\xE0i p\xF3", english: "maternal grandma", audio: "\u5916\u5A46", lessonSources: ["3a:4"] }
     ],
     interactiveScene: "family-home",
     parentGuide: "Use the family-photo scene to count five people, then let children point to and introduce their own family members.",
@@ -6438,21 +6494,23 @@
   var familyPractice = [
     {
       id: "family-scene-1",
+      lessonSources: ["1b:1"],
       title: "Family love",
       visual: "parents-love",
       imagePath: "assets/illustrated-family/family-scene-parents-love.webp",
-      imageAlt: "A child happily hugged by mum and dad in a cozy living room",
+      imageAlt: "A child happily hugged by Mom and Dad in a cozy living room",
       roomLabel: "living-room",
       sceneLabel: "Living room",
       sceneMood: "Loved at home",
       lines: [
-        { hanzi: "\u7238\u7238\u5988\u5988\u7231\u6211\u3002", pinyin: "b\xE0 ba m\u0101 ma \xE0i w\u01D2.", english: "Dad and Mum love me.", audio: "\u7238\u7238\u5988\u5988\u7231\u6211" },
+        { hanzi: "\u7238\u7238\u5988\u5988\u7231\u6211\u3002", pinyin: "b\xE0 ba m\u0101 ma \xE0i w\u01D2.", english: "Dad and Mom love me.", audio: "\u7238\u7238\u5988\u5988\u7231\u6211" },
         { hanzi: "\u6211\u7231\u7238\u7238\u3002", pinyin: "w\u01D2 \xE0i b\xE0 ba.", english: "I love Dad.", audio: "\u6211\u7231\u7238\u7238" },
-        { hanzi: "\u6211\u7231\u5988\u5988\u3002", pinyin: "w\u01D2 \xE0i m\u0101 ma.", english: "I love Mum.", audio: "\u6211\u7231\u5988\u5988" }
+        { hanzi: "\u6211\u7231\u5988\u5988\u3002", pinyin: "w\u01D2 \xE0i m\u0101 ma.", english: "I love Mom.", audio: "\u6211\u7231\u5988\u5988" }
       ]
     },
     {
       id: "family-scene-2",
+      lessonSources: ["1b:2"],
       title: "Siblings",
       visual: "siblings-compare",
       imagePath: "assets/illustrated-family/family-scene-siblings.webp",
@@ -6466,6 +6524,7 @@
     },
     {
       id: "family-scene-2a",
+      lessonSources: ["2a:2"],
       title: "Three siblings",
       visual: "sibling-count",
       imagePath: "assets/illustrated-family/family-counting-two-younger-brothers.webp",
@@ -6478,10 +6537,11 @@
     },
     {
       id: "family-scene-3",
+      lessonSources: ["3a:4"],
       title: "My family",
       visual: "family-introduction",
       imagePath: "assets/illustrated-family/family-introduction-full-family.webp",
-      imageAlt: "A family of six in a living room: Mum, Dad, Anan, Lele, a younger sister, and a younger brother",
+      imageAlt: "A family of six in a living room: Mom, Dad, Anan, Lele, a younger sister, and a younger brother",
       lines: [
         { hanzi: "\u8FD9\u662F\u6211\u7684\u5BB6\u4EBA\u3002", pinyin: "zh\xE8 sh\xEC w\u01D2 de ji\u0101 r\xE9n.", english: "This is my family.", audio: "\u8FD9\u662F\u6211\u7684\u5BB6\u4EBA" },
         { hanzi: "\u6211\u5BB6\u6709\u516D\u53E3\u4EBA\u3002", pinyin: "w\u01D2 ji\u0101 y\u01D2u li\xF9 k\u01D2u r\xE9n.", english: "There are six people in my family.", audio: "\u6211\u5BB6\u6709\u516D\u53E3\u4EBA" }
@@ -7254,7 +7314,7 @@
     }
     function familyGameItems2() {
       const familyTopic2 = topicById3("family");
-      return familyGameItemIds2.map((id) => familyTopic2?.focusItems.find((item) => item.id === id)).filter(Boolean);
+      return familyGameItemIds2.map((id) => familyTopic2?.focusItems.find((item) => item.id === id)).filter((item) => !state2.lessonScope || item?.lessonSources?.includes(`${state2.lessonScope.bookId}:${state2.lessonScope.lessonNumber}`)).filter(Boolean);
     }
     function familyListenItems2() {
       return familyPossessionPractice2;
@@ -7277,7 +7337,8 @@
       return ["parents-love-me", "i-love-dad", "i-love-mom"].includes(itemId);
     }
     function familyBookWordItems2() {
-      return focusItemsForTopic2(topicById3("family")).filter((item) => !isFamilySentenceItemId2(item.id));
+      const source = state2.lessonScope ? `${state2.lessonScope.bookId}:${state2.lessonScope.lessonNumber}` : "";
+      return focusItemsForTopic2(topicById3("family")).filter((item) => !isFamilySentenceItemId2(item.id)).filter((item) => !source || item.lessonSources?.includes(source));
     }
     const lessonTemplateTopicIds = /* @__PURE__ */ new Set(["greetings", "polite-words", "introductions", "is-it", "age", "family"]);
     function usesLessonTemplate2(topic) {
@@ -7352,7 +7413,13 @@
         <strong>\u4F60\u4E0A\u51E0\u5E74\u7EA7\uFF1F</strong> asks what school year someone is in, and <strong>\u6211\u4E0A\u4E00\u5E74\u7EA7\u3002</strong> means \u201CI am in first grade.\u201D This topic links naturally with earlier self-introduction language: <strong>\u4F60\u597D\uFF01\u4F60\u53EB\u4EC0\u4E48\u540D\u5B57\uFF1F\u6211\u53EB\u2026\u2026 \u4F60\u51E0\u5C81\uFF1F\u6211\u4E94\u5C81\u3002\u4F60\u4E0A\u51E0\u5E74\u7EA7\uFF1F\u6211\u4E0A\u4E00\u5E74\u7EA7\u3002</strong>
       </p>
     `,
-        family: `
+        family: state2.lessonScope && `${state2.lessonScope.bookId}:${state2.lessonScope.lessonNumber}` === "1b:1" ? `
+      <p class="greetings-note-hanzi">\u7238\u7238 / \u5988\u5988</p>
+      <p class="greetings-note-copy"><strong>\u7238\u7238</strong> means \u201Cdad\u201D and <strong>\u5988\u5988</strong> means \u201Cmom.\u201D Use <strong>\u6211\u7684</strong> to say \u201Cmy\u201D: <strong>\u8FD9\u662F\u6211\u7684\u7238\u7238\u3002</strong></p>
+    ` : state2.lessonScope && `${state2.lessonScope.bookId}:${state2.lessonScope.lessonNumber}` === "1b:2" ? `
+      <p class="greetings-note-hanzi">\u54E5\u54E5 / \u5F1F\u5F1F / \u59D0\u59D0 / \u59B9\u59B9</p>
+      <p class="greetings-note-copy">These words show both gender and age order: <strong>\u54E5\u54E5\u3001\u59D0\u59D0</strong> are older; <strong>\u5F1F\u5F1F\u3001\u59B9\u59B9</strong> are younger.</p>
+    ` : `
       <p class="greetings-note-hanzi">\u6709 / \u4E00\u4E2A / \u4E24\u4E2A</p>
       <p class="greetings-note-copy">
         <strong>\u6709</strong> means \u201Chave.\u201D Put the family members after it: <strong>\u6211\u6709\u4E00\u4E2A\u59D0\u59D0\u548C\u4E00\u4E2A\u5F1F\u5F1F\u3002</strong>
@@ -8142,15 +8209,37 @@
   `;
     }
     function renderFamilyExplorer2() {
+      const familyLessonKey = state2.lessonScope ? `${state2.lessonScope.bookId}:${state2.lessonScope.lessonNumber}` : "";
+      const familyLessonTheme = {
+        "1b:1": {
+          title: "Book theme: Mom and Dad",
+          description: "Learn \u7238\u7238 and \u5988\u5988 through simple family-love sentences: \u7238\u7238\u5988\u5988\u7231\u6211\u3001\u6211\u7231\u7238\u7238\u3001\u6211\u7231\u5988\u5988\u3002"
+        },
+        "1b:2": {
+          title: "Book theme: brothers and sisters",
+          description: "Learn how \u54E5\u54E5\u3001\u59D0\u59D0 name older siblings, while \u5F1F\u5F1F\u3001\u59B9\u59B9 name younger siblings."
+        },
+        "2a:2": {
+          title: "Book theme: two younger brothers",
+          description: "Use \u6709 with family words to say who is in a family: \u6211\u6709\u4E24\u4E2A\u5F1F\u5F1F\u3002"
+        },
+        "3a:4": {
+          title: "Book theme: my family",
+          description: "Introduce a wider family and say how many people are in it: \u8FD9\u662F\u6211\u7684\u5BB6\u4EBA\u3002\u6211\u5BB6\u6709\u516D\u53E3\u4EBA\u3002"
+        }
+      }[familyLessonKey] ?? {
+        title: "Book theme: family at home",
+        description: "Start with \u7238\u7238\u5988\u5988\u7231\u6211, then reuse the same small word set as the child moves to \u6211\u7231\u7238\u7238, \u6211\u7231\u5988\u5988, and sibling words."
+      };
       focusExplorer2.innerHTML = `
     <div class="numbers-board">
       <div class="numbers-stage-card">
         <p class="body-match-kicker">${currentBook2().label} Lesson ${currentLesson2().lesson}</p>
-        <h4>Book theme: family at home</h4>
-        <p>Start with \u7238\u7238\u5988\u5988\u7231\u6211, then reuse the same small word set as the child moves to \u6211\u7231\u7238\u7238, \u6211\u7231\u5988\u5988, and sibling words.</p>
+        <h4>${familyLessonTheme.title}</h4>
+        <p>${familyLessonTheme.description}</p>
       </div>
       <div class="greetings-practice-grid family-scenes-grid">
-        ${familyPractice2.map(
+        ${familyPractice2.filter((exchange) => !state2.lessonScope || exchange.lessonSources?.includes(`${state2.lessonScope.bookId}:${state2.lessonScope.lessonNumber}`)).map(
         (exchange) => `
               <section class="greetings-exchange family-scene-${exchange.id}">
                 <div class="greetings-exchange-top">
@@ -12315,6 +12404,7 @@
     schoolTopicData: schoolTopicData2,
     topicPageUrl,
     topicIdFromLocation,
+    lessonScopeFromLocation,
     viewFromLocation,
     bookSelect,
     lessonSelect,
@@ -12538,7 +12628,14 @@
     state.selectedTopicId = initialTopicId;
     state.expandedCategoryId = categoryIdForTopic(initialTopicId);
     state.topicPageOpen = true;
-    syncBookSelectionFromTopic();
+    const initialLessonScope = lessonScopeFromLocation(window.location, books, initialTopicId);
+    state.lessonScope = initialLessonScope;
+    if (initialLessonScope) {
+      state.selectedBookId = initialLessonScope.bookId;
+      state.selectedLessonNumber = initialLessonScope.lessonNumber;
+    } else {
+      syncBookSelectionFromTopic();
+    }
   }
   renderTopics();
   renderBooks();

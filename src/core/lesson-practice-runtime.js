@@ -319,13 +319,20 @@ function sharedLessonPracticeConfig(topic) {
   }
 
   if (topic.id === "family") {
+    const familyLessonSource = state.lessonScope ? `${state.lessonScope.bookId}:${state.lessonScope.lessonNumber}` : "";
+    const familyPracticeSummary = {
+      "1b:1": "Match 爸爸 and 妈妈 to the right family member.",
+      "1b:2": "Match 哥哥、弟弟、姐姐、妹妹 to the right family member.",
+      "2a:2": "Build your own family sentence, then match the sibling words.",
+      "3a:4": "Make a family sentence, then match family words to the right person."
+    }[familyLessonSource] ?? "Make your own family sentence, then match each family word to the right family member.";
     return {
-      summary: "Make your own family sentence, then match each family word to the right family member.",
+      summary: familyPracticeSummary,
       shellClass: "family-lesson-practice-shell",
       ensure: () => {
         ensureFamilyMatchGame();
       },
-      builder: { markup: familySentenceBuilderMarkup, bind: bindFamilySentenceBuilder },
+      builder: !familyLessonSource || ["2a:2", "3a:4"].includes(familyLessonSource) ? { markup: familySentenceBuilderMarkup, bind: bindFamilySentenceBuilder } : null,
       match: {
         phraseHeading: "Chinese",
         meaningHeading: "Family member",

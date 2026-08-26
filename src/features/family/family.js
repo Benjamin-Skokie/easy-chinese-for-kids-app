@@ -10,27 +10,27 @@ export const familyTopic = {
   focus: {
     hanzi: "爸爸妈妈爱我。",
     pinyin: "bà ba mā ma ài wǒ.",
-    english: "Dad and Mum love me.",
+    english: "Dad and Mom love me.",
     audio: "爸爸妈妈爱我"
   },
   focusItems: [
-    { id: "parents-love-me", hanzi: "爸爸妈妈爱我。", pinyin: "bà ba mā ma ài wǒ.", english: "Dad and Mum love me.", audio: "爸爸妈妈爱我" },
-    { id: "i-love-dad", hanzi: "我爱爸爸。", pinyin: "wǒ ài bà ba.", english: "I love Dad.", audio: "我爱爸爸" },
-    { id: "i-love-mom", hanzi: "我爱妈妈。", pinyin: "wǒ ài mā ma.", english: "I love Mum.", audio: "我爱妈妈" },
-    { id: "mom-word", hanzi: "妈妈", pinyin: "mā ma", english: "mum", audio: "妈妈" },
-    { id: "dad-word", hanzi: "爸爸", pinyin: "bà ba", english: "dad", audio: "爸爸" },
-    { id: "older-brother-word", hanzi: "哥哥", pinyin: "gē ge", english: "older brother", audio: "哥哥" },
-    { id: "younger-brother-word", hanzi: "弟弟", pinyin: "dì di", english: "younger brother", audio: "弟弟" },
-    { id: "older-sister-word", hanzi: "姐姐", pinyin: "jiě jie", english: "older sister", audio: "姐姐" },
-    { id: "younger-sister-word", hanzi: "妹妹", pinyin: "mèi mei", english: "younger sister", audio: "妹妹" },
-    { id: "have-word", hanzi: "有", pinyin: "yǒu", english: "have", audio: "有" },
-    { id: "not-have-word", hanzi: "没有", pinyin: "méi yǒu", english: "do not have", audio: "没有" },
-    { id: "one-word", hanzi: "一个", pinyin: "yí ge", english: "one", audio: "一个" },
-    { id: "two-word", hanzi: "两个", pinyin: "liǎng ge", english: "two", audio: "两个" }
-    , { id: "grandpa-word", hanzi: "爷爷", pinyin: "yé ye", english: "paternal grandpa", audio: "爷爷" }
-    , { id: "grandma-word", hanzi: "奶奶", pinyin: "nǎi nai", english: "paternal grandma", audio: "奶奶" }
-    , { id: "maternal-grandpa-word", hanzi: "外公", pinyin: "wài gōng", english: "maternal grandpa", audio: "外公" }
-    , { id: "maternal-grandma-word", hanzi: "外婆", pinyin: "wài pó", english: "maternal grandma", audio: "外婆" }
+    { id: "parents-love-me", hanzi: "爸爸妈妈爱我。", pinyin: "bà ba mā ma ài wǒ.", english: "Dad and Mom love me.", audio: "爸爸妈妈爱我", lessonSources: ["1b:1"] },
+    { id: "i-love-dad", hanzi: "我爱爸爸。", pinyin: "wǒ ài bà ba.", english: "I love Dad.", audio: "我爱爸爸", lessonSources: ["1b:1"] },
+    { id: "i-love-mom", hanzi: "我爱妈妈。", pinyin: "wǒ ài mā ma.", english: "I love Mom.", audio: "我爱妈妈", lessonSources: ["1b:1"] },
+    { id: "mom-word", hanzi: "妈妈", pinyin: "mā ma", english: "mom", audio: "妈妈", lessonSources: ["1b:1", "3a:4"] },
+    { id: "dad-word", hanzi: "爸爸", pinyin: "bà ba", english: "dad", audio: "爸爸", lessonSources: ["1b:1", "3a:4"] },
+    { id: "older-brother-word", hanzi: "哥哥", pinyin: "gē ge", english: "older brother", audio: "哥哥", lessonSources: ["1b:2", "2a:2", "3a:4"] },
+    { id: "younger-brother-word", hanzi: "弟弟", pinyin: "dì di", english: "younger brother", audio: "弟弟", lessonSources: ["1b:2", "2a:2", "3a:4"] },
+    { id: "older-sister-word", hanzi: "姐姐", pinyin: "jiě jie", english: "older sister", audio: "姐姐", lessonSources: ["1b:2", "2a:2", "3a:4"] },
+    { id: "younger-sister-word", hanzi: "妹妹", pinyin: "mèi mei", english: "younger sister", audio: "妹妹", lessonSources: ["1b:2", "2a:2", "3a:4"] },
+    { id: "have-word", hanzi: "有", pinyin: "yǒu", english: "have", audio: "有", lessonSources: ["2a:2", "3a:4"] },
+    { id: "not-have-word", hanzi: "没有", pinyin: "méi yǒu", english: "do not have", audio: "没有", lessonSources: ["2a:2", "3a:4"] },
+    { id: "one-word", hanzi: "一个", pinyin: "yí ge", english: "one", audio: "一个", lessonSources: ["2a:2"] },
+    { id: "two-word", hanzi: "两个", pinyin: "liǎng ge", english: "two", audio: "两个", lessonSources: ["2a:2"] },
+    { id: "grandpa-word", hanzi: "爷爷", pinyin: "yé ye", english: "paternal grandpa", audio: "爷爷", lessonSources: ["3a:4"] },
+    { id: "grandma-word", hanzi: "奶奶", pinyin: "nǎi nai", english: "paternal grandma", audio: "奶奶", lessonSources: ["3a:4"] },
+    { id: "maternal-grandpa-word", hanzi: "外公", pinyin: "wài gōng", english: "maternal grandpa", audio: "外公", lessonSources: ["3a:4"] },
+    { id: "maternal-grandma-word", hanzi: "外婆", pinyin: "wài pó", english: "maternal grandma", audio: "外婆", lessonSources: ["3a:4"] }
   ],
   interactiveScene: "family-home",
   parentGuide: "Use the family-photo scene to count five people, then let children point to and introduce their own family members.",
@@ -56,21 +56,23 @@ export const familyGameItemIds = [
 export const familyPractice = [
   {
     id: "family-scene-1",
+    lessonSources: ["1b:1"],
     title: "Family love",
     visual: "parents-love",
     imagePath: "assets/illustrated-family/family-scene-parents-love.webp",
-    imageAlt: "A child happily hugged by mum and dad in a cozy living room",
+    imageAlt: "A child happily hugged by Mom and Dad in a cozy living room",
     roomLabel: "living-room",
     sceneLabel: "Living room",
     sceneMood: "Loved at home",
     lines: [
-      { hanzi: "爸爸妈妈爱我。", pinyin: "bà ba mā ma ài wǒ.", english: "Dad and Mum love me.", audio: "爸爸妈妈爱我" },
+      { hanzi: "爸爸妈妈爱我。", pinyin: "bà ba mā ma ài wǒ.", english: "Dad and Mom love me.", audio: "爸爸妈妈爱我" },
       { hanzi: "我爱爸爸。", pinyin: "wǒ ài bà ba.", english: "I love Dad.", audio: "我爱爸爸" },
-      { hanzi: "我爱妈妈。", pinyin: "wǒ ài mā ma.", english: "I love Mum.", audio: "我爱妈妈" }
+      { hanzi: "我爱妈妈。", pinyin: "wǒ ài mā ma.", english: "I love Mom.", audio: "我爱妈妈" }
     ]
   },
   {
     id: "family-scene-2",
+    lessonSources: ["1b:2"],
     title: "Siblings",
     visual: "siblings-compare",
     imagePath: "assets/illustrated-family/family-scene-siblings.webp",
@@ -84,6 +86,7 @@ export const familyPractice = [
   },
   {
     id: "family-scene-2a",
+    lessonSources: ["2a:2"],
     title: "Three siblings",
     visual: "sibling-count",
     imagePath: "assets/illustrated-family/family-counting-two-younger-brothers.webp",
@@ -96,10 +99,11 @@ export const familyPractice = [
   }
   , {
     id: "family-scene-3",
+    lessonSources: ["3a:4"],
     title: "My family",
     visual: "family-introduction",
     imagePath: "assets/illustrated-family/family-introduction-full-family.webp",
-    imageAlt: "A family of six in a living room: Mum, Dad, Anan, Lele, a younger sister, and a younger brother",
+    imageAlt: "A family of six in a living room: Mom, Dad, Anan, Lele, a younger sister, and a younger brother",
     lines: [
       { hanzi: "这是我的家人。", pinyin: "zhè shì wǒ de jiā rén.", english: "This is my family.", audio: "这是我的家人" },
       { hanzi: "我家有六口人。", pinyin: "wǒ jiā yǒu liù kǒu rén.", english: "There are six people in my family.", audio: "我家有六口人" }

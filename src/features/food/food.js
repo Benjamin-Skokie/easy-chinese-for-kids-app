@@ -27,7 +27,8 @@ export const foodTopicData = {
         pinyin: "wǒ xǐ huan píng guǒ, xiāng jiāo, pú tao hé cǎo méi.",
         english: "I like apples, bananas, grapes, and strawberries.",
         audio: "我喜欢苹果香蕉葡萄和草莓",
-        imagePath: "assets/illustrated-food/fruit-group-1b-core.webp"
+        imagePath: "assets/illustrated-food/fruit-group-1b-core.webp",
+        lessonSources: ["1b:7"]
       }
     ],
     words: [
@@ -60,12 +61,20 @@ export const foodTopicData = {
       ["potatoes", "土豆", "tǔ dòu", "potatoes", "potatoes.webp"]
     ].map(([id, hanzi, pinyin, english, file]) => ({ id, hanzi, pinyin, english, audio: hanzi, imagePath: `assets/illustrated-food/${file}` })),
     review: [
-      { pattern: "吃", pinyin: "chī", english: "eat solid food", example: "Use 吃 for food you chew: 吃苹果、披萨、炒饭。" },
+      { pattern: "吃", pinyin: "chī", english: "eat solid food", example: "Use 吃 for food you chew: 吃苹果、披萨、炒饭。", lessonSources: ["1b:7", "2b:7", "3b:6"] },
       { pattern: "喝", pinyin: "hē", english: "drink liquids", example: "Use 喝 for drinks: 喝水、牛奶、果汁。" }
     ]
 };
 
 export const foodSentenceBuilds = [
-    { id: "fruit", imagePath: "assets/illustrated-food/fruit-group-1b-core.webp", target: ["我", "吃", "苹果"], distractors: ["喝", "学校", "教室"], pinyin: "wǒ chī píng guǒ.", english: "I eat an apple." },
-    { id: "milk", imagePath: "assets/illustrated-food/milk.webp", target: ["我", "喝", "牛奶"], distractors: ["吃", "学校", "教室"], pinyin: "wǒ hē niú nǎi.", english: "I drink milk." }
+    { id: "apple", imagePath: "assets/illustrated-food/apple.webp", target: ["我", "吃", "苹果"], distractors: ["喝", "学校", "教室"], pinyin: "wǒ chī píng guǒ.", english: "I eat an apple.", audio: "我吃苹果", lessonSources: ["1b:7"] },
+    { id: "banana", imagePath: "assets/illustrated-food/banana.webp", target: ["我", "吃", "香蕉"], distractors: ["喝", "学校", "教室"], pinyin: "wǒ chī xiāng jiāo.", english: "I eat a banana.", audio: "我吃香蕉", lessonSources: ["1b:7"] },
+    { id: "cake", imagePath: "assets/illustrated-food/cake.webp", target: ["我", "吃", "蛋糕"], distractors: ["喝", "学校", "教室"], pinyin: "wǒ chī dàn gāo.", english: "I eat cake.", audio: "我吃蛋糕", lessonSources: ["2b:7"] },
+    { id: "carrot", imagePath: "assets/illustrated-food/carrot.webp", target: ["我", "吃", "胡萝卜"], distractors: ["喝", "学校", "教室"], pinyin: "wǒ chī hú luó bo.", english: "I eat a carrot.", audio: "我吃胡萝卜", lessonSources: ["3b:6"] },
+    { id: "milk", imagePath: "assets/illustrated-food/milk.webp", target: ["我", "喝", "牛奶"], distractors: ["吃", "学校", "教室"], pinyin: "wǒ hē niú nǎi.", english: "I drink milk.", audio: "我喝牛奶" },
+    { id: "juice", imagePath: "assets/illustrated-food/juice.webp", target: ["我", "喝", "果汁"], distractors: ["吃", "学校", "教室"], pinyin: "wǒ hē guǒ zhī.", english: "I drink juice.", audio: "我喝果汁" },
+    { id: "cola", imagePath: "assets/illustrated-food/cola.webp", target: ["我", "喝", "可乐"], distractors: ["吃", "学校", "教室"], pinyin: "wǒ hē kě lè.", english: "I drink Coke.", audio: "我喝可乐" },
+    { id: "like-cola", imagePath: "assets/illustrated-food/cola.webp", target: ["我", "喜欢", "喝", "可乐"], distractors: ["不喜欢", "吃", "学校"], pinyin: "wǒ xǐ huan hē kě lè.", english: "I like to drink Coke.", audio: "我喜欢喝可乐" },
+    { id: "like-apple", imagePath: "assets/illustrated-food/apple.webp", target: ["我", "喜欢", "吃", "苹果"], distractors: ["不喜欢", "喝", "学校"], pinyin: "wǒ xǐ huan chī píng guǒ.", english: "I like to eat apples.", audio: "我喜欢吃苹果" },
+    { id: "dislike-broccoli", imagePath: "assets/illustrated-food/broccoli.webp", target: ["我", "不喜欢", "吃", "西兰花"], distractors: ["喜欢", "喝", "学校"], pinyin: "wǒ bù xǐ huan chī xī lán huā.", english: "I do not like to eat broccoli.", audio: "我不喜欢吃西兰花" }
 ];

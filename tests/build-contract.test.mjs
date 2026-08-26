@@ -5,7 +5,7 @@ import { join, normalize } from "node:path";
 import test from "node:test";
 import { createAudioService } from "../src/core/audio.js";
 import { advanceShuffledOrder, nextRandomCycleId } from "../src/core/random-cycle.js";
-import { topicIdFromLocation, topicPageUrl, viewFromLocation } from "../src/core/router.js";
+import { lessonScopeFromLocation, topicIdFromLocation, topicPageUrl, viewFromLocation } from "../src/core/router.js";
 import { timeDateWeekItems } from "../src/features/time-daily-life/weekdays.js";
 import { timeDateClockItems, timeDateRoutineItems } from "../src/features/time-daily-life/time.js";
 import { datePracticeItems, timeDateMonthItems } from "../src/features/time-daily-life/dates.js";
@@ -50,7 +50,7 @@ import { familyGameItemIds, familyPractice, familyTopic, illustratedFamily } fro
 test("the local page loads a single bundled application script", () => {
   const html = readFileSync("index.html", "utf8");
   assert.match(html, /<link rel="stylesheet" href="styles\.css\?v=20260825-number-feedback-v3" \/>/);
-  assert.match(html, /<script src="app\.js\?v=20260825-number-feedback-v3"><\/script>/);
+  assert.match(html, /<script src="app\.js\?v=20260825-lesson-scope-v1"><\/script>/);
   assert.doesNotMatch(html, /type="module"/);
   assert.doesNotMatch(html, /Tap a word to hear it and explore the picture\./);
   assert.doesNotMatch(html, /<h3>Review<\/h3>/);
@@ -227,9 +227,27 @@ test("evaluated practice choices keep visible correct or wrong feedback", () => 
 test("My Family matching keeps paired cards aligned and one round-reset control", () => {
   const practiceSource = readFileSync("src/core/lesson-practice-runtime.js", "utf8");
   const styles = readFileSync("styles.css", "utf8");
-  assert.match(practiceSource, /summary: "Make your own family sentence[\s\S]{0,160}shellClass: "family-lesson-practice-shell"/);
+  assert.match(practiceSource, /const familyPracticeSummary = \{[\s\S]{0,700}shellClass: "family-lesson-practice-shell"/);
   assert.match(practiceSource, /feedback: \(\) => state\.familyMatchFeedback,[\s\S]{0,100}showPlayAgain: false/);
   assert.match(styles, /\.family-lesson-practice-shell \.family-match-open-board \.polite-match-card \{[\s\S]{0,120}height: 104px;/);
+});
+
+test("lesson scope keeps all-topic content first and filters every My Family section", () => {
+  const detailSource = readFileSync("src/core/topic-detail-runtime.js", "utf8");
+  const foundationsSource = readFileSync("src/features/foundations/foundations-runtime.js", "utf8");
+  const practiceSource = readFileSync("src/core/lesson-practice-runtime.js", "utf8");
+
+  assert.match(detailSource, /topicLessonStrip\.innerHTML = allContentCard \+ steps/);
+  assert.match(detailSource, /const allContentCard = steps\.length > 1/);
+  assert.match(detailSource, /<strong>\$\{topicLessonTitle\(topic, step\)\}<\/strong>/);
+  assert.match(detailSource, /topicSummary\.textContent = scopedStep\?\.note \?\? topic\.summary/);
+  assert.match(detailSource, /state\.lessonScope = null;[\s\S]{0,100}syncBookSelectionFromTopic\(\)/);
+  assert.match(foundationsSource, /familyBookWordItems\(\)[\s\S]{0,360}lessonSources\?\.includes\(source\)/);
+  assert.match(foundationsSource, /familyPractice[\s\S]{0,800}lessonSources\?\.includes/);
+  assert.match(foundationsSource, /family: state\.lessonScope[\s\S]{0,800}"1b:2"/);
+  assert.match(foundationsSource, /familyLessonTheme[\s\S]{0,1500}"2a:2"/);
+  assert.match(practiceSource, /familyPracticeSummary[\s\S]{0,700}"3a:4"/);
+  assert.match(practiceSource, /items: familyGameItems,/);
 });
 
 test("My Family sentence choices center their labels", () => {
@@ -429,6 +447,9 @@ test("router preserves the existing topic query and detail hash contract", () =>
   assert.equal(topicIdFromLocation(location, (id) => id === "weekdays"), "weekdays");
   assert.equal(viewFromLocation(location), "topics");
   assert.equal(topicPageUrl(location, "time-date"), "/index.html?topic=time-date#topic-detail");
+  assert.equal(topicPageUrl(location, "family", { bookId: "1b", lessonNumber: 2 }), "/index.html?topic=family&book=1b&lesson=2#topic-detail");
+  assert.deepEqual(lessonScopeFromLocation({ pathname: "/", search: "?topic=family&book=1b&lesson=2", hash: "#topic-detail" }, books, "family"), { bookId: "1b", lessonNumber: 2 });
+  assert.equal(lessonScopeFromLocation({ pathname: "/", search: "?topic=family&book=1b&lesson=2", hash: "#topic-detail" }, books, "numbers"), null);
   assert.doesNotMatch(topicPageUrl({ pathname: "/", search: "", hash: "" }, "time-date"), /^undefined/);
 });
 
@@ -764,7 +785,43 @@ test("food owns its scenes, words, and sentence practice", () => {
   assert.equal(foodTopic.id, "food");
   assert.equal(foodTopicData.scenes.length, 1);
   assert.equal(foodTopicData.words.length, 27);
-  assert.equal(foodSentenceBuilds.length, 2);
+  assert.equal(foodSentenceBuilds.length, 10);
+});
+
+test("Food uses one Review heading instead of repeating the selected book lesson", () => {
+  const source = readFileSync("src/features/school-life/school-food-runtime.js", "utf8");
+  assert.match(source, /topicId === "food"[\s\S]{0,140}time-months-heading[\s\S]{0,100}body-match-kicker">Review/);
+});
+
+test("Food lesson cards describe and scope their matching food content", () => {
+  const detailSource = readFileSync("src/core/topic-detail-runtime.js", "utf8");
+  const foodRuntime = readFileSync("src/features/school-life/school-food-runtime.js", "utf8");
+  const foodData = readFileSync("src/features/food/food.js", "utf8");
+
+  assert.match(detailSource, /<strong>\$\{topicLessonTitle\(topic, step\)\}<\/strong>/);
+  assert.match(foodRuntime, /foodCategoryByLessonSource[\s\S]{0,180}"1b:7": "fruit"[\s\S]{0,120}"2b:7": "snack"[\s\S]{0,120}"3b:6": "vegetable"/);
+  assert.match(foodRuntime, /filteredSceneGroups[\s\S]{0,320}lessonSources/);
+  assert.match(foodRuntime, /function renderFoodPractice\(topic\) \{[\s\S]{0,180}ensureSchoolBuilder\(topic\.id\)[\s\S]{0,700}renderFoodHungerGame/);
+  assert.match(foodData, /lessonSources: \["1b:7"\]/);
+});
+
+test("Food enrichment builds eat and drink sentences from individual pictures", () => {
+  const foodData = readFileSync("src/features/food/food.js", "utf8");
+  assert.match(foodData, /id: "apple", imagePath: "assets\/illustrated-food\/apple\.webp"/);
+  assert.match(foodData, /id: "banana", imagePath: "assets\/illustrated-food\/banana\.webp"/);
+  assert.match(foodData, /id: "carrot", imagePath: "assets\/illustrated-food\/carrot\.webp"/);
+  assert.match(foodData, /id: "cola", imagePath: "assets\/illustrated-food\/cola\.webp"[\s\S]{0,180}我喝可乐/);
+  assert.doesNotMatch(foodData, /id: "cola"[\s\S]{0,260}lessonSources/);
+  const foodRuntime = readFileSync("src/features/school-life/school-food-runtime.js", "utf8");
+  assert.match(foodRuntime, /function schoolBuildItems[\s\S]{0,300}lessonSources\?\.includes\(source\)/);
+});
+
+test("Food all-topic sentence builder includes like and dislike prompts without changing book-scoped lessons", () => {
+  const foodData = readFileSync("src/features/food/food.js", "utf8");
+  assert.match(foodData, /id: "like-cola"[\s\S]{0,240}我喜欢喝可乐/);
+  assert.match(foodData, /id: "like-apple"[\s\S]{0,240}我喜欢吃苹果/);
+  assert.match(foodData, /id: "dislike-broccoli"[\s\S]{0,280}我不喜欢吃西兰花/);
+  assert.doesNotMatch(foodData, /id: "like-cola"[\s\S]{0,300}lessonSources/);
 });
 
 test("food preferences owns its scenes and vocabulary", () => {
@@ -1372,9 +1429,13 @@ test("every displayed book lesson source resolves to the exact curriculum lesson
 
   const topicDetailSource = readFileSync("src/core/topic-detail-runtime.js", "utf8");
   assert.match(topicDetailSource, /function linkInlineBookLessonBadges\(\)/);
-  assert.match(topicDetailSource, /function viewBookLessonSource\(bookId, lessonNumber\)/);
   assert.match(topicDetailSource, /data-topic-lesson-source/);
-  assert.match(topicDetailSource, /\?view=books#book-lessons-\$\{book\.id\}/);
+  assert.match(topicDetailSource, /state\.lessonScope = \{ bookId: book\.id, lessonNumber: lesson\.lesson \}/);
+  assert.match(topicDetailSource, /selectBookLesson\(bookId, Number\(lessonText\)\)/);
+  assert.match(topicDetailSource, /data-topic-all-content/);
+  assert.match(topicDetailSource, /state\.lessonScope = null;/);
+  assert.match(topicDetailSource, /topicLessonStrip\.innerHTML = allContentCard \+ steps/);
+  assert.match(topicDetailSource, /topicSummary\.textContent = scopedStep\?\.note \?\? topic\.summary/);
   assert.match(topicDetailSource, /link\.dataset\.topicLessonSource/);
 });
 

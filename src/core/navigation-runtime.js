@@ -14,20 +14,25 @@ function currentNumberStage() {
 }
 
 function focusItemsForTopic(topic = currentTopic()) {
+  const source = state.lessonScope ? `${state.lessonScope.bookId}:${state.lessonScope.lessonNumber}` : "";
+  const forSelectedLesson = (items) => source
+    ? items.filter((item) => !item.lessonSources || item.lessonSources.includes(source))
+    : items;
+
   if (topic.id === "numbers") {
     return getNumberStageItems();
   }
 
   if (topic.id === "weekdays") {
-    return timeDateWeekItems;
+    return forSelectedLesson(timeDateWeekItems);
   }
 
   const worldItems = getWorldFocusItems?.(topic);
   if (worldItems) {
-    return worldItems;
+    return forSelectedLesson(worldItems);
   }
 
-  return topic.focusItems ?? [{ id: "focus", ...topic.focus }];
+  return forSelectedLesson(topic.focusItems ?? [{ id: "focus", ...topic.focus }]);
 }
 
 function currentFocusItem() {
@@ -146,6 +151,7 @@ function openTopicPage(topicId, options = {}) {
   }
 
   state.selectedTopicId = topic.id;
+  state.lessonScope = null;
   state.expandedCategoryId = categoryIdForTopic(topic.id);
   state.topicPageOpen = true;
   renderTopics();

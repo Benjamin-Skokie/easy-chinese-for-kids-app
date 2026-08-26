@@ -8,7 +8,7 @@ import { createTopicDetailRuntime } from "../core/topic-detail-runtime.js";
 import { createFocusExplorerRuntime } from "../core/focus-explorer-runtime.js";
 import { createNavigationRuntime } from "../core/navigation-runtime.js";
 import { bindViewNavigationEvents } from "../core/view-navigation-events.js";
-import { topicIdFromLocation, topicPageUrl, viewFromLocation } from "../core/router.js";
+import { lessonScopeFromLocation, topicIdFromLocation, topicPageUrl, viewFromLocation } from "../core/router.js";
 import { timeDateWeekItems } from "../features/time-daily-life/weekdays.js";
 import { timeAdvancedBookWords, timeDateClockItems, timeDateExpressionItems, timeDateRoutineItems, timeRoutineBookWords, timeRoutineSentenceBuilds } from "../features/time-daily-life/time.js";
 import { datePracticeItems, timeDateDateItems, timeDateMonthItems } from "../features/time-daily-life/dates.js";
@@ -725,6 +725,7 @@ topicDetailRuntime = createTopicDetailRuntime({
   schoolTopicData,
   topicPageUrl,
   topicIdFromLocation,
+  lessonScopeFromLocation,
   viewFromLocation,
   bookSelect,
   lessonSelect,
@@ -952,7 +953,14 @@ if (initialTopicId) {
   state.selectedTopicId = initialTopicId;
   state.expandedCategoryId = categoryIdForTopic(initialTopicId);
   state.topicPageOpen = true;
-  syncBookSelectionFromTopic();
+  const initialLessonScope = lessonScopeFromLocation(window.location, books, initialTopicId);
+  state.lessonScope = initialLessonScope;
+  if (initialLessonScope) {
+    state.selectedBookId = initialLessonScope.bookId;
+    state.selectedLessonNumber = initialLessonScope.lessonNumber;
+  } else {
+    syncBookSelectionFromTopic();
+  }
 }
 
 renderTopics();

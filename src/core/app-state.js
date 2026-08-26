@@ -9,6 +9,7 @@ export function createAppState() {
   selectedBookCategoryId: "first-steps",
   selectedBookId: "1a",
   selectedLessonNumber: 1,
+  lessonScope: null,
   topicPageOpen: false,
   openTopicGroups: new Set(["foundations"]),
   showPinyin: true,

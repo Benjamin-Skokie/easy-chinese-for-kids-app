@@ -6,6 +6,10 @@ function schoolPracticeItems(topicId = currentTopic().id) {
   return data?.practiceItems ?? data?.words ?? schoolWordGroups(topicId).flatMap((group) => group.items);
 }
 
+function lessonScopeKey() {
+  return state.lessonScope ? `${state.lessonScope.bookId}:${state.lessonScope.lessonNumber}` : "";
+}
+
 function backpackGameItems() {
   const portableItemIds = new Set(["pencil", "ruler", "eraser", "colored-pencils", "scissors", "glue", "pencil-box", "textbook", "workbook"]);
   return schoolPracticeItems("school-supplies").filter((item) => portableItemIds.has(item.id));
@@ -464,8 +468,16 @@ function handleSchoolMatchAttempt(itemId) {
   renderActivityPanel(currentTopic());
 }
 
+function schoolBuildItems(topicId = currentTopic().id) {
+  const items = schoolSentenceBuilds[topicId] ?? [];
+  const source = lessonScopeKey();
+  return topicId === "food" && source
+    ? items.filter((item) => item.lessonSources?.includes(source))
+    : items;
+}
+
 function currentSchoolBuildItem() {
-  const items = schoolSentenceBuilds[currentTopic().id] ?? [];
+  const items = schoolBuildItems();
   return items.find((item) => item.id === state.schoolBuildOrder[state.schoolBuildIndex]) ?? items[0];
 }
 
@@ -477,12 +489,13 @@ function prepareSchoolBuilder() {
 }
 
 function ensureSchoolBuilder(topicId = currentTopic().id) {
-  const items = schoolSentenceBuilds[topicId] ?? [];
+  const items = schoolBuildItems(topicId);
+  const builderKey = `${topicId}:${lessonScopeKey()}`;
   const hasCurrentItems =
     state.schoolBuildOrder.length === items.length &&
     state.schoolBuildOrder.every((id) => items.some((item) => item.id === id));
-  if (state.schoolBuildTopicId !== topicId || !hasCurrentItems) {
-    state.schoolBuildTopicId = topicId;
+  if (state.schoolBuildTopicId !== builderKey || !hasCurrentItems) {
+    state.schoolBuildTopicId = builderKey;
     state.schoolBuildOrder = shuffleArray(items.map((item) => item.id));
     state.schoolBuildIndex = 0;
     prepareSchoolBuilder();
@@ -583,8 +596,19 @@ const foodCategoryGroups = {
   }
 };
 
+const foodCategoryByLessonSource = {
+  "1b:7": "fruit",
+  "2b:7": "snack",
+  "3b:6": "vegetable"
+};
+
+function scopedFoodCategoryId() {
+  return foodCategoryByLessonSource[lessonScopeKey()] ?? "";
+}
+
 function foodBookWordItems(data) {
-  const itemIds = new Set(foodCategoryGroups[state.foodBookCategoryId]?.items.map((item) => item.id) ?? []);
+  const categoryId = scopedFoodCategoryId() || state.foodBookCategoryId;
+  const itemIds = new Set(foodCategoryGroups[categoryId]?.items.map((item) => item.id) ?? []);
   return data.words.filter((item) => itemIds.has(item.id));
 }
 
@@ -597,7 +621,7 @@ const foodHungerModes = {
   ...Object.fromEntries(Object.entries(foodCategoryGroups).map(([id, group]) => [id, { hanzi: group.hanzi, english: group.english }]))
 };
 
-function foodHungerItems(modeId = state.foodHungerModeId) {
+function foodHungerItems(modeId = scopedFoodCategoryId() || state.foodHungerModeId) {
   if (modeId === "mix") return Object.values(foodCategoryGroups).flatMap((group) => group.items);
   return foodCategoryGroups[modeId]?.items ?? [];
 }
@@ -612,7 +636,7 @@ function prepareFoodHungerOptions() {
   state.foodHungerWrongIds = new Set();
 }
 
-function resetFoodHungerGame(modeId = state.foodHungerModeId) {
+function resetFoodHungerGame(modeId = scopedFoodCategoryId() || state.foodHungerModeId) {
   state.foodHungerModeId = modeId;
   state.foodHungerRoundIds = shuffleArray(foodHungerItems(modeId).map((item) => item.id)).slice(0, 3);
   state.foodHungerTargetIndex = 0;
@@ -655,6 +679,10 @@ function handleFoodHungerGuess(itemId) {
 }
 
 function renderFoodHungerGame() {
+  const scopedCategoryId = scopedFoodCategoryId();
+  if (scopedCategoryId && state.foodHungerModeId !== scopedCategoryId) {
+    resetFoodHungerGame(scopedCategoryId);
+  }
   ensureFoodHungerGame();
   const items = foodHungerItems();
   const target = currentFoodHungerTarget();
@@ -665,7 +693,9 @@ function renderFoodHungerGame() {
     <section class="practice-split-card food-hunger-game-card">
       <div class="numbers-game-top"><div><p class="body-match-kicker">Hungry? What should we eat?</p><p class="numbers-game-note">Choose a food group or Mix. A food picture will appear. Tap the matching Chinese word to put it in your cart.</p></div></div>
       ${state.foodHungerFeedback ? `<p class="greetings-game-feedback ${state.foodHungerFeedback.startsWith("Correct") ? "is-correct" : "is-wrong"}">${state.foodHungerFeedback}</p>` : ""}
-      <div class="food-category-tabs food-hunger-tabs">${Object.entries(foodHungerModes).map(([id, mode]) => `<button class="food-category-tab${state.foodHungerModeId === id ? " is-active" : ""}" type="button" data-food-hunger-mode="${id}">${mode.hanzi}${state.showEnglish ? `<small>${mode.english}</small>` : ""}</button>`).join("")}</div>
+      ${scopedCategoryId
+        ? `<p class="body-match-kicker">${foodHungerModes[scopedCategoryId].hanzi}${state.showEnglish ? ` · ${foodHungerModes[scopedCategoryId].english}` : ""}</p>`
+        : `<div class="food-category-tabs food-hunger-tabs">${Object.entries(foodHungerModes).map(([id, mode]) => `<button class="food-category-tab${state.foodHungerModeId === id ? " is-active" : ""}" type="button" data-food-hunger-mode="${id}">${mode.hanzi}${state.showEnglish ? `<small>${mode.english}</small>` : ""}</button>`).join("")}</div>`}
       <div class="backpack-game-progress" aria-label="${state.foodHungerPlatedIds.length} of ${state.foodHungerRoundIds.length} foods in the cart">${state.foodHungerRoundIds.map((_, index) => `<span class="backpack-game-progress-dot${index < state.foodHungerPlatedIds.length ? " is-packed" : ""}">${index < state.foodHungerPlatedIds.length ? "✓" : ""}</span>`).join("")}</div>
       <div class="food-hunger-visual${isComplete ? " is-complete" : ""}">
         ${!isComplete && target ? `<div class="food-hunger-target"><img src="${foodCategoryIconPath(target.id)}" alt="${target.english}"></div>` : ""}
@@ -967,6 +997,10 @@ function renderSchoolExplorer(topicId) {
     return;
   }
   const sceneGroups = data.sceneGroups ?? [{ id: "all", items: data.scenes ?? [] }];
+  const source = lessonScopeKey();
+  const filteredSceneGroups = source
+    ? sceneGroups.map((group) => ({ ...group, items: group.items.filter((item) => !item.lessonSources || item.lessonSources.includes(source)) })).filter((group) => group.items.length)
+    : sceneGroups;
   const wordGroups = schoolWordGroups(topicId);
   if (topicId === "meals-feelings" && !wordGroups.some((group) => group.id === state.mealsWordGroupId)) {
     state.mealsWordGroupId = wordGroups[0]?.id ?? "";
@@ -979,11 +1013,10 @@ function renderSchoolExplorer(topicId) {
 
   focusExplorer.innerHTML = `
     <div class="time-date-board school-topic-board">
-      <div class="numbers-stage-card">
-        <p class="body-match-kicker">${currentBook().label} Lesson ${currentLesson().lesson}</p>
-        <h4>${topic.title}</h4>
-      </div>
-      ${sceneGroups.map((group) => `
+      ${topicId === "food"
+        ? '<div class="time-months-heading"><p class="body-match-kicker">Review</p></div>'
+        : `<div class="numbers-stage-card"><p class="body-match-kicker">${currentBook().label} Lesson ${currentLesson().lesson}</p><h4>${topic.title}</h4></div>`}
+      ${filteredSceneGroups.map((group) => `
         <section class="school-lesson-section is-${group.id}">
           ${group.label ? `<p class="body-match-kicker school-lesson-heading">${group.label}</p>` : ""}
           <div class="school-scene-grid${group.items.length === 1 ? " is-single" : ""}">
@@ -1003,7 +1036,7 @@ function renderSchoolExplorer(topicId) {
       `).join("")}
       ${data.showWords !== false ? `
         <div class="time-months-heading"><p class="body-match-kicker">Book words</p></div>
-        ${topicId === "food" ? `<div class="food-book-tabs" role="tablist" aria-label="Food word categories">${Object.entries(foodCategoryGroups).map(([id, group]) => `<button class="food-book-tab${state.foodBookCategoryId === id ? " is-active" : ""}" type="button" role="tab" aria-selected="${state.foodBookCategoryId === id}" data-food-book-category="${id}">${group.hanzi}${state.showEnglish ? `<small>${group.english}</small>` : ""}</button>`).join("")}</div>` : ""}
+        ${topicId === "food" && !scopedFoodCategoryId() ? `<div class="food-book-tabs" role="tablist" aria-label="Food word categories">${Object.entries(foodCategoryGroups).map(([id, group]) => `<button class="food-book-tab${state.foodBookCategoryId === id ? " is-active" : ""}" type="button" role="tab" aria-selected="${state.foodBookCategoryId === id}" data-food-book-category="${id}">${group.hanzi}${state.showEnglish ? `<small>${group.english}</small>` : ""}</button>`).join("")}</div>` : ""}
         ${topicId === "meals-feelings" && wordGroups.length > 1 ? `<div class="food-book-tabs lesson-word-tabs" role="tablist" aria-label="Meals and feelings word categories">${wordGroups.map((group) => `<button class="food-book-tab${state.mealsWordGroupId === group.id ? " is-active" : ""}" type="button" role="tab" aria-selected="${state.mealsWordGroupId === group.id}" data-meals-word-group="${group.id}">${group.hanzi}${state.showEnglish ? `<small>${group.english}</small>` : ""}</button>`).join("")}</div>` : ""}
         <div class="school-word-grid${topicId === "school-subjects" ? " is-text-only" : ""}${topicId === "meals-feelings" ? " is-uniform-images" : ""}">
           ${visibleWords.map((item) => `
@@ -1016,7 +1049,7 @@ function renderSchoolExplorer(topicId) {
           `).join("")}
         </div>
       ` : ""}
-      ${data.review ? `<section class="visual-topic-notes school-review-notes"><p class="body-match-kicker">Useful notes</p><div class="visual-topic-note-grid school-review-grid">${data.review.map((item) => `<article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">${item.pattern}</p>${state.showPinyin ? `<p class="visual-topic-note-pinyin">${item.pinyin}</p>` : ""}${state.showEnglish ? `<p class="visual-topic-note-english">${item.english}</p>` : ""}<p class="visual-topic-note-example">${item.example}</p>${state.showPinyin && item.examplePinyin ? `<p class="visual-topic-note-pinyin">${item.examplePinyin}</p>` : ""}${state.showEnglish && item.exampleEnglish ? `<p class="visual-topic-note-english">${item.exampleEnglish}</p>` : ""}</article>`).join("")}</div></section>` : ""}
+      ${data.review ? `<section class="visual-topic-notes school-review-notes"><p class="body-match-kicker">Useful notes</p><div class="visual-topic-note-grid school-review-grid">${data.review.filter((item) => !source || !item.lessonSources || item.lessonSources.includes(source)).map((item) => `<article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">${item.pattern}</p>${state.showPinyin ? `<p class="visual-topic-note-pinyin">${item.pinyin}</p>` : ""}${state.showEnglish ? `<p class="visual-topic-note-english">${item.english}</p>` : ""}<p class="visual-topic-note-example">${item.example}</p>${state.showPinyin && item.examplePinyin ? `<p class="visual-topic-note-pinyin">${item.examplePinyin}</p>` : ""}${state.showEnglish && item.exampleEnglish ? `<p class="visual-topic-note-english">${item.exampleEnglish}</p>` : ""}</article>`).join("")}</div></section>` : ""}
       ${topicId === "school-subjects" ? `<section class="visual-topic-notes"><p class="body-match-kicker">Useful note</p><div class="visual-topic-note-grid school-subject-note"><article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">去</p>${state.showPinyin ? '<p class="visual-topic-note-pinyin">qù</p>' : ""}${state.showEnglish ? '<p class="visual-topic-note-english">to go</p>' : ""}<p class="visual-topic-note-example">我去上音乐课。</p></article><article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">在</p>${state.showPinyin ? '<p class="visual-topic-note-pinyin">zài</p>' : ""}${state.showEnglish ? '<p class="visual-topic-note-english">at / in; marks an action happening now</p>' : ""}<p class="visual-topic-note-example">我在上音乐课。</p></article><article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">喜欢</p>${state.showPinyin ? '<p class="visual-topic-note-pinyin">xǐ huan</p>' : ""}${state.showEnglish ? '<p class="visual-topic-note-english">to like</p>' : ""}<p class="visual-topic-note-example">我喜欢音乐课。</p></article><article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">不喜欢</p>${state.showPinyin ? '<p class="visual-topic-note-pinyin">bù xǐ huan</p>' : ""}${state.showEnglish ? '<p class="visual-topic-note-english">to not like</p>' : ""}<p class="visual-topic-note-example">我不喜欢数学课。</p></article></div></section>` : ""}
     </div>
   `;
