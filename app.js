@@ -2646,7 +2646,6 @@
         <span class="topic-copy">
           <span class="topic-zh-title">${category.zhTitle}</span>
           <span class="topic-row-title">${category.enTitle}</span>
-          <span class="topic-row-meta">${category.hint}</span>
         </span>
       </button>
     `;
@@ -2666,10 +2665,10 @@
         section.innerHTML = `
       <div class="learning-category-head">
         <span class="learning-category-head-icon" aria-hidden="true">${categoryIconMarkup2(category)}</span>
-        <div>
+        <div class="learning-category-title">
           <h3>${category.zhTitle}</h3>
+          <span class="learning-category-title-separator" aria-hidden="true">\xB7</span>
           <h4>${category.enTitle}</h4>
-          <p>${category.hint}</p>
         </div>
       </div>
       <div class="category-topic-grid">
@@ -2677,8 +2676,11 @@
           const meta = topicCardMeta2[topic.id] ?? {};
           return `
               <a class="category-topic-card${topic.id === state2.selectedTopicId ? " is-selected" : ""}" href="${topicPageUrl2(window.location, topic.id)}" data-topic-id="${topic.id}">
-                <span class="category-topic-zh">${meta.zhTitle ?? topic.iconText}</span>
-                <span class="category-topic-en">${meta.enTitle ?? topic.title}</span>
+                <span class="category-topic-title">
+                  <span class="category-topic-zh">${meta.zhTitle ?? topic.iconText}</span>
+                  <span class="category-topic-separator" aria-hidden="true">\xB7</span>
+                  <span class="category-topic-en">${meta.enTitle ?? topic.title}</span>
+                </span>
                 <span class="category-topic-hint">${meta.hint ?? topic.progressLabel}</span>
               </a>
             `;
@@ -2715,7 +2717,6 @@
       bookBrowser2.innerHTML = `
     <div class="learning-home-board book-library-grid" aria-label="Chinese textbooks">
       ${books2.map((entry, index) => {
-        const topicLabels = [...new Set(entry.lessons.map((lesson) => topicCardMeta2[lesson.topicId]?.enTitle ?? topicById3(lesson.topicId)?.title))].filter(Boolean).slice(0, 3).join(" \xB7 ");
         const isSelectedBook = entry.id === book.id;
         return `
             <article class="learning-home-card book-library-card${isSelectedBook ? " is-selected" : ""}" style="--category-accent: ${bookAccent2(index)};">
@@ -2725,7 +2726,6 @@
                 <span class="topic-copy">
                   <span class="topic-zh-title">\u8BFE\u672C ${entry.id.toUpperCase()}</span>
                   <span class="topic-row-title">${entry.label}</span>
-                  <span class="topic-row-meta">${topicLabels}</span>
                 </span>
               </button>
             </article>
@@ -11379,21 +11379,21 @@
     numbers: { zhTitle: "\u6570\u5B57", enTitle: "Numbers", hint: "Count, hear, and use numbers" },
     "telephone-numbers": { zhTitle: "\u6211\u7684\u5BB6\u4EBA\uFF08\u4E8C\uFF09", enTitle: "My Family 2", hint: "Introduce grandparents, where they live, and a telephone number" },
     "multiplication-rhyme": { zhTitle: "\u4E5D\u4E5D\u4E58\u6CD5", enTitle: "Multiplication Rhyme", hint: "Classic rhythm practice" },
-    greetings: { zhTitle: "\u6253\u62DB\u547C", enTitle: "Greetings", hint: "Hello, good morning, goodbye" },
+    greetings: { zhTitle: "\u6253\u62DB\u547C", enTitle: "Greetings", hint: "Everyday hellos and goodbyes" },
     "polite-words": { zhTitle: "\u793C\u8C8C\u7528\u8BED", enTitle: "Polite Words", hint: "Thank you, sorry, please" },
     "is-it": { zhTitle: "\u662F\u4E0D\u662F", enTitle: "Is It?", hint: "Ask a simple yes-or-no question" },
-    "requests-permission": { zhTitle: "\u8BF7\u6C42\u548C\u8BB8\u53EF", enTitle: "Requests & Permission", hint: "Ask politely and hear yes or no" },
+    "requests-permission": { zhTitle: "\u8BF7\u6C42\u548C\u8BB8\u53EF", enTitle: "Requests & Permission", hint: "Asking permission at home and school" },
     introductions: { zhTitle: "\u4ECB\u7ECD\u81EA\u5DF1", enTitle: "Introductions", hint: "Say your name and meet friends" },
-    age: { zhTitle: "\u5E74\u9F84", enTitle: "Age", hint: "Ask and say how old you are" },
+    age: { zhTitle: "\u5E74\u9F84", enTitle: "Age", hint: "Ages, birthdays, and grades" },
     identity: { zhTitle: "\u56FD\u7C4D", enTitle: "Nationality", hint: "Ask and say where someone is from" },
     languages: { zhTitle: "\u8BED\u8A00", enTitle: "Languages", hint: "Say which language someone speaks" },
-    family: { zhTitle: "\u6211\u7684\u5BB6\u4EBA\uFF08\u4E00\uFF09", enTitle: "My Family 1", hint: "Mom, dad, siblings, and grandparents" },
-    body: { zhTitle: "\u8EAB\u4F53", enTitle: "Body", hint: "Tap body parts and listen" },
+    family: { zhTitle: "\u6211\u7684\u5BB6\u4EBA\uFF08\u4E00\uFF09", enTitle: "My Family 1", hint: "Parents, siblings, and grandparents" },
+    body: { zhTitle: "\u8EAB\u4F53", enTitle: "Body", hint: "Head-to-toe body words" },
     pets: { zhTitle: "\u5BA0\u7269", enTitle: "Pets", hint: "Dog, cat, turtle, goldfish" },
     animals: { zhTitle: "\u52A8\u7269\u56ED", enTitle: "Zoo Animals", hint: "Count animals with measure words" },
-    colours: { zhTitle: "\u989C\u8272", enTitle: "Colours", hint: "Red, yellow, blue, green" },
+    colours: { zhTitle: "\u989C\u8272", enTitle: "Colours", hint: "Colours and favourites" },
     food: { zhTitle: "\u98DF\u7269\u548C\u996E\u6599", enTitle: "Food & Drinks", hint: "Fruit, vegetables, snacks, drinks" },
-    "food-preferences": { zhTitle: "\u559C\u6B22\u548C\u4E0D\u559C\u6B22", enTitle: "Food Preferences", hint: "Ask and say what you like to eat" },
+    "food-preferences": { zhTitle: "\u559C\u6B22\u548C\u4E0D\u559C\u6B22", enTitle: "Food Preferences", hint: "Food and drink likes and dislikes" },
     "meals-feelings": { zhTitle: "\u5348\u996D\u548C\u611F\u89C9", enTitle: "Meals & Feelings", hint: "Lunch, hungry, thirsty" },
     weekdays: { zhTitle: "\u661F\u671F", enTitle: "Days of the Week", hint: "Monday to Sunday" },
     "time-date": { zhTitle: "\u65F6\u95F4", enTitle: "Time & Routines", hint: "Clock and daily routines" },
@@ -11408,14 +11408,14 @@
     "hobbies-at-home": { zhTitle: "\u5728\u5BB6\u7231\u597D", enTitle: "Hobbies at Home", hint: "Television, piano, games, movies" },
     "hobbies-leisure": { zhTitle: "\u4F11\u95F2\u65F6\u95F4", enTitle: "Leisure Time", hint: "Running, soccer, biking, sand" },
     toys: { zhTitle: "\u73A9\u5177", enTitle: "Toys", hint: "Doll, toy train, airplane, bear" },
-    clothes: { zhTitle: "\u8863\u670D", enTitle: "Clothes", hint: "Dress for the day" },
+    clothes: { zhTitle: "\u8863\u670D", enTitle: "Clothes", hint: "Clothes, colours, and getting dressed" },
     comparisons: { zhTitle: "\u63CF\u8FF0\u548C\u6BD4\u8F83", enTitle: "Descriptions & Comparisons", hint: "Big, small, long, short" },
-    positions: { zhTitle: "\u4F4D\u7F6E\u548C\u65B9\u5411", enTitle: "Positions & Directions", hint: "Up, down, inside, outside" },
+    positions: { zhTitle: "\u4F4D\u7F6E\u548C\u65B9\u5411", enTitle: "Positions & Directions", hint: "Where things are and directions" },
     transport: { zhTitle: "\u4EA4\u901A", enTitle: "Transportation", hint: "Walk, bike, bus, train" },
-    "daily-life": { zhTitle: "\u6211\u7684\u623F\u95F4", enTitle: "My Room", hint: "Rooms and furniture" },
+    "daily-life": { zhTitle: "\u6211\u7684\u623F\u95F4", enTitle: "My Room", hint: "Rooms and familiar things at home" },
     "everyday-actions": { zhTitle: "\u65E5\u5E38\u52A8\u4F5C", enTitle: "Everyday Actions", hint: "Walk, run, sit, stand, climb, lie down" },
     nature: { zhTitle: "\u81EA\u7136", enTitle: "Nature", hint: "Sky, ground, trees, flowers" },
-    weather: { zhTitle: "\u5929\u6C14", enTitle: "Weather", hint: "Sun, rain, snow, wind" }
+    weather: { zhTitle: "\u5929\u6C14", enTitle: "Weather", hint: "Weather and what to wear" }
   };
   var learningHomeCategories = [
     {
@@ -11466,7 +11466,7 @@
     {
       id: "world",
       zhTitle: "\u81EA\u7136\u548C\u989C\u8272",
-      enTitle: "World Around Us",
+      enTitle: "Nature & Colors",
       hint: "Nature, weather, pets, zoo animals, colours",
       accent: "#6f7fa4",
       iconSrc: "assets/navigation-icons/panda-bamboo-icon.webp",

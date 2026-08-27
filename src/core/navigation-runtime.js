@@ -478,7 +478,6 @@ function renderTopics() {
         <span class="topic-copy">
           <span class="topic-zh-title">${category.zhTitle}</span>
           <span class="topic-row-title">${category.enTitle}</span>
-          <span class="topic-row-meta">${category.hint}</span>
         </span>
       </button>
     `;
@@ -501,10 +500,10 @@ function renderTopics() {
     section.innerHTML = `
       <div class="learning-category-head">
         <span class="learning-category-head-icon" aria-hidden="true">${categoryIconMarkup(category)}</span>
-        <div>
+        <div class="learning-category-title">
           <h3>${category.zhTitle}</h3>
+          <span class="learning-category-title-separator" aria-hidden="true">·</span>
           <h4>${category.enTitle}</h4>
-          <p>${category.hint}</p>
         </div>
       </div>
       <div class="category-topic-grid">
@@ -515,8 +514,11 @@ function renderTopics() {
             const meta = topicCardMeta[topic.id] ?? {};
             return `
               <a class="category-topic-card${topic.id === state.selectedTopicId ? " is-selected" : ""}" href="${topicPageUrl(window.location, topic.id)}" data-topic-id="${topic.id}">
-                <span class="category-topic-zh">${meta.zhTitle ?? topic.iconText}</span>
-                <span class="category-topic-en">${meta.enTitle ?? topic.title}</span>
+                <span class="category-topic-title">
+                  <span class="category-topic-zh">${meta.zhTitle ?? topic.iconText}</span>
+                  <span class="category-topic-separator" aria-hidden="true">·</span>
+                  <span class="category-topic-en">${meta.enTitle ?? topic.title}</span>
+                </span>
                 <span class="category-topic-hint">${meta.hint ?? topic.progressLabel}</span>
               </a>
             `;
@@ -568,10 +570,6 @@ function renderBooks() {
     <div class="learning-home-board book-library-grid" aria-label="Chinese textbooks">
       ${books
         .map((entry, index) => {
-          const topicLabels = [...new Set(entry.lessons.map((lesson) => topicCardMeta[lesson.topicId]?.enTitle ?? topicById(lesson.topicId)?.title))]
-            .filter(Boolean)
-            .slice(0, 3)
-            .join(" · ");
           const isSelectedBook = entry.id === book.id;
           return `
             <article class="learning-home-card book-library-card${isSelectedBook ? " is-selected" : ""}" style="--category-accent: ${bookAccent(index)};">
@@ -581,7 +579,6 @@ function renderBooks() {
                 <span class="topic-copy">
                   <span class="topic-zh-title">课本 ${entry.id.toUpperCase()}</span>
                   <span class="topic-row-title">${entry.label}</span>
-                  <span class="topic-row-meta">${topicLabels}</span>
                 </span>
               </button>
             </article>

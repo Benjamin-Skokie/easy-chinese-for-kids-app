@@ -344,7 +344,24 @@ test("Learn by Books shows each textbook directly and links lessons to topic pra
   assert.match(navigationSource, /<span class="book-lesson-meta">\$\{entry\.label\.toUpperCase\(\)\} LESSON \$\{lesson\.lesson\}<\/span>/);
   assert.match(navigationSource, /<strong>\$\{cardTitle\}<\/strong>/);
   assert.doesNotMatch(navigationSource, /主题练习：/);
+  assert.doesNotMatch(navigationSource, /topicLabels/);
+  assert.doesNotMatch(navigationSource, /topic-row-meta">\$\{category\.hint\}/);
   assert.doesNotMatch(navigationSource, /data-book-category-card/);
+});
+
+test("topic cards keep their bilingual title together above the description", () => {
+  const navigationSource = readFileSync("src/core/navigation-runtime.js", "utf8");
+  const stylesSource = readFileSync("styles.css", "utf8");
+  assert.match(navigationSource, /class="category-topic-title"/);
+  assert.match(navigationSource, /class="category-topic-separator" aria-hidden="true">·<\/span>/);
+  assert.match(stylesSource, /\.category-topic-title \{\s*display: flex;/);
+  assert.match(stylesSource, /\.category-topic-hint \{[\s\S]*font-size: 0\.98rem/);
+});
+
+test("category home cards stack their Chinese and English titles", () => {
+  const stylesSource = readFileSync("styles.css", "utf8");
+  assert.match(stylesSource, /\.learning-home-card:not\(\.book-library-card\) \.topic-zh-title,/);
+  assert.match(stylesSource, /\.learning-home-card:not\(\.book-library-card\) \.topic-row-title::before \{\s*content: none;/);
 });
 
 test("sticky category navigation highlights the final item at the bottom of the page", () => {

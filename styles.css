@@ -8104,27 +8104,32 @@ h4 {
 }
 
 .learning-category-head h3 {
-  margin-top: 4px;
+  margin: 4px 0 0;
   color: var(--category-accent, var(--berry));
   font-family: var(--hanzi-font);
   font-size: clamp(1.8rem, 2.4vw, 2.2rem);
   line-height: 1.08;
 }
 
-.learning-category-head h4 {
-  margin-top: 2px;
-  color: var(--muted);
-  font-size: clamp(0.98rem, 1.6vw, 1.2rem);
-  font-weight: 800;
-  line-height: 1.2;
+.learning-category-title {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.42rem;
 }
 
-.learning-category-head p {
-  margin-top: 8px;
-  max-width: 46ch;
-  color: var(--muted);
-  font-size: 0.92rem;
-  line-height: 1.45;
+.learning-category-title-separator {
+  color: var(--category-accent, var(--berry));
+  font-size: clamp(1.25rem, 1.8vw, 1.55rem);
+  font-weight: 700;
+}
+
+.learning-category-head h4 {
+  margin: 0;
+  color: var(--category-accent, var(--berry));
+  font-size: clamp(1.8rem, 2.4vw, 2.2rem);
+  font-weight: 800;
+  line-height: 1.08;
 }
 
 .category-topic-grid {
@@ -8138,7 +8143,7 @@ h4 {
   display: flex;
   min-height: 96px;
   flex-direction: column;
-  gap: 4px;
+  gap: 8px;
   padding: 18px 46px 18px 22px;
   border: 1px solid rgba(240, 168, 48, 0.25);
   border-radius: 16px;
@@ -8178,26 +8183,40 @@ h4 {
   opacity: 1;
 }
 
+.category-topic-title {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  align-items: baseline;
+}
+
 .category-topic-zh {
   color: var(--category-accent, var(--ink));
   font-family: var(--hanzi-font);
-  font-size: 1rem;
-  font-weight: 600;
-  line-height: 1.45;
+  font-size: 1.2rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.category-topic-separator {
+  color: var(--category-accent, var(--sun));
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1;
 }
 
 .category-topic-en {
   color: var(--category-accent, var(--sun));
-  font-size: 0.85rem;
-  font-weight: 500;
-  line-height: 1.45;
+  font-size: 1.1rem;
+  font-weight: 600;
+  line-height: 1.3;
 }
 
 .category-topic-hint {
   color: var(--muted);
-  font-size: 0.78rem;
+  font-size: 0.98rem;
   font-weight: 400;
-  line-height: 1.3;
+  line-height: 1.35;
 }
 
 .topic-library-card {
@@ -8288,6 +8307,22 @@ h4 {
 .learning-home-card .topic-row-title::before {
   content: " · ";
   color: #ccc5b8;
+}
+
+/* Category cards use a deliberate bilingual heading. Topic cards keep their
+   compact inline Chinese · English title. */
+.learning-home-card:not(.book-library-card) .topic-zh-title,
+.learning-home-card:not(.book-library-card) .topic-row-title {
+  display: block;
+  line-height: 1.12;
+}
+
+.learning-home-card:not(.book-library-card) .topic-row-title {
+  margin-top: 0.4rem;
+}
+
+.learning-home-card:not(.book-library-card) .topic-row-title::before {
+  content: none;
 }
 
 .learning-home-card .topic-row-meta {
