@@ -2309,6 +2309,8 @@ h4 {
 }
 
 .stroke-level-tabs button small { color: var(--muted); font-weight: 600; }
+.stroke-level-tabs button { font-size: 1.16rem; }
+.stroke-level-tabs button span { color: inherit; font-family: inherit; font-size: inherit; font-weight: inherit; }
 .stroke-level-tabs button.is-active { border-color: #316a75; background: #dff1ed; }
 
 .stroke-tian-card,
@@ -2385,7 +2387,7 @@ h4 {
 .stroke-reveal {
   fill: none;
   stroke: #fff;
-  stroke-width: 92;
+  stroke-width: 164;
   stroke-linecap: round;
   stroke-linejoin: round;
   stroke-dasharray: 100;
@@ -2454,6 +2456,21 @@ h4 {
   background: #eaf6f4;
 }
 
+.stroke-picker-button {
+  display: grid;
+  grid-template-columns: 46px 1fr;
+  align-items: center;
+  gap: 8px;
+  text-align: left;
+}
+.stroke-picker-button svg { width: 44px; height: 44px; }
+.stroke-picker-button svg path { fill: #316a75; }
+.stroke-picker-button > span { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0 6px; }
+.stroke-picker-button > span strong { font-size: 1.48rem; }
+.stroke-picker-button em { color: #7d7162; font-size: 1.08rem; font-style: normal; }
+.stroke-picker-button em::before { content: "· "; }
+.stroke-picker-button > span small { width: 100%; margin-top: 2px; font-size: 1.03rem; }
+
 .stroke-rules {
   display: grid;
   gap: 10px;
@@ -2500,15 +2517,27 @@ h4 {
   gap: 8px;
 }
 
-.stroke-compound-grid article {
+.stroke-compound-choice {
   display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 2px 7px;
+  grid-template-columns: 62px 1fr;
+  align-items: center;
+  gap: 10px;
   min-height: 72px;
   padding: 10px;
   border-radius: 12px;
+  border: 1px solid transparent;
+  text-align: left;
   background: rgba(226, 242, 242, 0.74);
+  cursor: pointer;
 }
+
+.stroke-compound-choice.is-selected { border-color: #316a75; background: #d5eeee; }
+.stroke-compound-choice svg { width: 58px; height: 58px; }
+.stroke-compound-choice svg path { fill: #316a75; }
+.stroke-compound-choice div { display: grid; gap: 1px; }
+.stroke-compound-choice strong { color: #316a75; }
+.stroke-compound-choice em { color: #7d7162; font-size: .76rem; font-style: normal; }
+.stroke-compound-choice small { color: var(--muted); font-size: .73rem; }
 
 .stroke-compound-grid strong { color: #316a75; }
 .stroke-compound-grid span { font-family: var(--hanzi-font); font-size: 1.45rem; line-height: 1; }
@@ -2647,6 +2676,19 @@ h4 {
 .stroke-order-slots button svg path,
 .stroke-piece-bank > button svg path { fill: #316a75; }
 .stroke-order-slots button.is-filled { border-style: solid; }
+.stroke-order-slots button.is-last-correct { border: 2px solid #3d965d; background: #edf8ef; }
+.stroke-order-slots button.is-last-wrong { border: 2px solid #cf594d; background: #fff0ed; }
+.stroke-piece-bank button.is-last-wrong { border: 2px solid #cf594d; background: #fff0ed; }
+.stroke-order-slots button i,
+.stroke-piece-bank button i { position: absolute; z-index: 2; right: 7px; bottom: 6px; display: grid; width: 25px; height: 25px; place-items: center; border-radius: 50%; color: #fff; font-family: var(--body-font); font-size: 1rem; font-style: normal; font-weight: 800; }
+.stroke-order-slots button.is-last-correct i { background: #3d965d; }
+.stroke-order-slots button.is-last-wrong i,
+.stroke-piece-bank button.is-last-wrong i { background: #cf594d; }
+
+.stroke-build-preview { display: grid; grid-template-columns: 116px 1fr; align-items: center; gap: 12px; margin-top: 14px; padding: 10px 14px; border-radius: 16px; background: #f7fbfa; }
+.stroke-build-preview p { margin: 0; color: #7d7162; font-size: .85rem; font-weight: 700; }
+.stroke-build-preview svg { width: 104px; height: 94px; grid-column: 2; }
+.stroke-build-preview path { fill: #316a75; }
 .stroke-piece-bank button { display: grid; min-height: 0; aspect-ratio: 1; padding: 0; border: 0; border-radius: 0; background: transparent; }
 .stroke-piece-placeholder { display: block; aspect-ratio: 1; }
 .stroke-piece-bank svg { height: auto; aspect-ratio: 1; padding: 4px; border: 1px solid rgba(71, 124, 134, .28); }
@@ -2656,6 +2698,9 @@ h4 {
 .stroke-piece-animation-slot { display: grid; min-height: 184px; place-items: center; }
 .stroke-piece-animation-slot .stroke-practice-animation { width: min(100%, 176px); }
 .stroke-order-feedback { display: grid; gap: 10px; justify-items: center; color: #347d4d; text-align: center; }
+.stroke-step-feedback { display: inline-flex; align-items: center; justify-content: center; min-height: 38px; padding: 7px 13px; border: 1px solid transparent; border-radius: 999px; font-size: 1rem; line-height: 1.25; }
+.stroke-step-feedback.is-correct { color: #226b42; border-color: #abd9bb; background: #e8f6ea; }
+.stroke-step-feedback.is-wrong { color: #aa3e35; border-color: #efbbb3; background: #fff0ed; }
 .stroke-practice-animation { width: min(100%, 280px); aspect-ratio: 1; border: 1px solid rgba(71, 124, 134, .3); background-color: #fffdf8; background-image: linear-gradient(rgba(71, 124, 134, .1) 1px, transparent 1px), linear-gradient(90deg, rgba(71, 124, 134, .1) 1px, transparent 1px); background-size: 25% 25%; }
 .stroke-practice-ghost { fill: #d7e5e4; }
 .stroke-practice-ink { fill: #316a75; opacity: 0; }
@@ -2673,6 +2718,7 @@ h4 {
 .stroke-practice-animation .stroke-reveal,
 .stroke-practice-animation .stroke-practice-ink { animation: none; }
 .stroke-practice-animation.is-playing .stroke-reveal { animation: stroke-draw 1100ms linear forwards; }
+.stroke-practice-animation.is-playing .stroke-practice-ink { animation: stroke-practice-appear 1ms linear forwards; }
 .stroke-practice-animation.is-playing .practice-reveal-0 { animation-delay: 0ms; }
 .stroke-practice-animation.is-playing .practice-reveal-1 { animation-delay: 1050ms; }
 .stroke-practice-animation.is-playing .practice-reveal-2 { animation-delay: 2100ms; }

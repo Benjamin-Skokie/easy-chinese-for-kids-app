@@ -1,0 +1,35 @@
+// CSL cross-book writing practice. `primaryStroke` is the teaching focus shown
+// on the card; `strokeIds` keeps additional legitimate practice entrances.
+// Radical-only examples are intentionally excluded for this phase.
+export const strokePracticeMap = [
+  { word: "一", meaning: "one", primaryStroke: "heng", strokeIds: ["heng"] },
+  { word: "二", meaning: "two", primaryStroke: "heng", strokeIds: ["heng"] },
+  { word: "三", meaning: "three", primaryStroke: "heng", strokeIds: ["heng"] },
+  { word: "五", meaning: "five", primaryStroke: "heng", strokeIds: ["heng", "zhe"] },
+  { word: "六", meaning: "six", primaryStroke: "dian", strokeIds: ["dian", "heng", "pie", "na"] },
+  { word: "人", meaning: "person", primaryStroke: "pie", strokeIds: ["pie", "na"] },
+  { word: "大", meaning: "big", primaryStroke: "na", strokeIds: ["heng", "pie", "na"] },
+  { word: "天", meaning: "sky", primaryStroke: "heng", strokeIds: ["heng", "pie", "na"] },
+  { word: "田", meaning: "field", primaryStroke: "zhe", strokeIds: ["heng", "shu", "zhe"] },
+  { word: "口", meaning: "mouth", primaryStroke: "zhe", strokeIds: ["heng", "shu", "zhe"] },
+  { word: "日", meaning: "sun", primaryStroke: "zhe", strokeIds: ["heng", "shu", "zhe"] },
+  { word: "月", meaning: "moon", primaryStroke: "zhe", strokeIds: ["pie", "heng", "shu", "zhe"] },
+  { word: "上", meaning: "up", primaryStroke: "shu", strokeIds: ["heng", "shu"] },
+  { word: "下", meaning: "down", primaryStroke: "shu", strokeIds: ["heng", "shu"] },
+  { word: "水", meaning: "water", primaryStroke: "na", strokeIds: ["shu", "heng", "pie", "na"] },
+  { word: "小", meaning: "small", primaryStroke: "gou", strokeIds: ["gou", "dian", "pie"] },
+  { word: "丁", meaning: "fourth", primaryStroke: "gou", strokeIds: ["heng", "gou"] },
+  { word: "中", meaning: "middle", primaryStroke: "shu", strokeIds: ["heng", "shu", "zhe"] },
+  { word: "字", meaning: "character", primaryStroke: "wan-gou", strokeIds: ["wan-gou"] },
+  { word: "么", meaning: "question ending", primaryStroke: "pie-zhe", strokeIds: ["pie-zhe"] },
+  { word: "姐", meaning: "older sister", primaryStroke: "pie-dian", strokeIds: ["pie-dian"] },
+  { word: "名", meaning: "name", primaryStroke: "heng-pie", strokeIds: ["heng-pie"] },
+  { word: "您", meaning: "you (polite)", primaryStroke: "wo-gou", strokeIds: ["wo-gou"] },
+  { word: "眼", meaning: "eye", primaryStroke: "shu-ti", strokeIds: ["shu-ti"] },
+  { word: "你", meaning: "you", primaryStroke: "heng-gou", strokeIds: ["heng-gou"] },
+  { word: "级", meaning: "level", primaryStroke: "heng-zhe-zhe-pie", strokeIds: ["heng-zhe-zhe-pie"] },
+  { word: "四", meaning: "four", primaryStroke: "shu-wan", strokeIds: ["shu-wan"] },
+  { word: "九", meaning: "nine", primaryStroke: "heng-zhe-wan-gou", strokeIds: ["heng-zhe-wan-gou"] },
+  { word: "七", meaning: "seven", primaryStroke: "shu-wan-gou", strokeIds: ["shu-wan-gou"] },
+  { word: "有", meaning: "have", primaryStroke: "heng-zhe-gou", strokeIds: ["heng-zhe-gou"] }
+];
