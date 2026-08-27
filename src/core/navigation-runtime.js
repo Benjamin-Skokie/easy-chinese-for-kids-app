@@ -91,8 +91,9 @@ function currentLesson() {
 
 function syncBookSelectionFromTopic() {
   const topic = currentTopic();
+  const steps = topic.steps ?? [];
   const firstMatch = books.find((book) =>
-    book.lessons.some((lesson) => topic.steps.some((step) => book.id === step.book.toLowerCase() && step.lesson === lesson.lesson))
+    book.lessons.some((lesson) => steps.some((step) => book.id === step.book.toLowerCase() && step.lesson === lesson.lesson))
   );
 
   if (firstMatch) {

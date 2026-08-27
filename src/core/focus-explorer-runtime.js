@@ -23,6 +23,8 @@ export function createFocusExplorerRuntime(context) {
     renderSchoolExplorer,
     renderVisualTopicExplorer,
     renderMultiplicationExplorer,
+    renderPinyinExplorer,
+    renderStrokeExplorer,
     renderWorldExplorer,
     renderHobbiesExplorer
   } = context;
@@ -42,7 +44,9 @@ export function createFocusExplorerRuntime(context) {
   function renderFocusExplorer() {
     const topic = currentTopic();
     let renderer = renderDefaultExplorer;
-    if (topic.interactiveScene === "body-face") renderer = renderBodyExplorer;
+    if (topic.interactiveScene === "pinyin-lab") renderer = renderPinyinExplorer;
+    else if (topic.interactiveScene === "stroke-lab") renderer = renderStrokeExplorer;
+    else if (topic.interactiveScene === "body-face") renderer = renderBodyExplorer;
     else if (topic.id === "numbers") renderer = renderNumbersExplorer;
     else if (topic.interactiveScene === "telephone-numbers") renderer = renderTelephoneExplorer;
     else if (topic.interactiveScene === "polite-phrases") renderer = renderPoliteWordsExplorer;

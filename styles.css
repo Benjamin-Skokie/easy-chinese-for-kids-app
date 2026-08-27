@@ -1946,6 +1946,780 @@ h4 {
   margin-top: 18px;
 }
 
+.pinyin-lab {
+  display: grid;
+  gap: 16px;
+  padding: clamp(16px, 3vw, 28px);
+  border: 1px solid rgba(184, 95, 117, 0.18);
+  border-radius: 24px;
+  background: linear-gradient(135deg, #fff9ef 0%, #fff2f5 52%, #f3f7ff 100%);
+}
+
+.pinyin-lab-header,
+.pinyin-listen-card,
+.pinyin-tone-card,
+.pinyin-blend-card,
+.pinyin-use-card,
+.pinyin-tone-result,
+.pinyin-practice-card .numbers-game-top {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.pinyin-lab-header h3,
+.pinyin-lab h4 {
+  margin-top: 3px;
+}
+
+.pinyin-lab-header > div > p:last-child,
+.pinyin-lab p:not(.body-match-kicker) {
+  color: var(--muted);
+}
+
+.pinyin-lab-badge {
+  flex: 0 0 auto;
+  padding: 8px 11px;
+  border-radius: 999px;
+  color: #8f3d5a;
+  background: rgba(255, 255, 255, 0.68);
+  font-weight: 800;
+}
+
+.pinyin-course-nav {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 7px;
+  padding: 5px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.52);
+}
+
+.pinyin-course-step {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+  min-height: 58px;
+  padding: 6px 3px;
+  border: 1px solid transparent;
+  border-radius: 11px;
+  color: #725d64;
+  background: transparent;
+  cursor: pointer;
+}
+
+.pinyin-course-step span {
+  color: #a34363;
+  font-size: 0.72rem;
+  font-weight: 800;
+}
+
+.pinyin-course-step small {
+  overflow: hidden;
+  color: inherit;
+  font-size: 0.67rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.pinyin-course-step:hover,
+.pinyin-course-step:focus-visible,
+.pinyin-course-step.is-selected {
+  border-color: rgba(184, 95, 117, 0.28);
+  color: #8f3d5a;
+  background: #fff;
+}
+
+.pinyin-ready-card {
+  display: grid;
+  gap: 10px;
+  padding: clamp(18px, 3vw, 30px);
+  border: 1px dashed rgba(184, 95, 117, 0.38);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.pinyin-ready-sounds {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+}
+
+.pinyin-ready-sounds span {
+  min-width: 52px;
+  padding: 11px;
+  border-radius: 13px;
+  color: #a34363;
+  background: #fff1f4;
+  font-size: 1.35rem;
+  font-weight: 800;
+  text-align: center;
+}
+
+.pinyin-ready-rule {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  color: #8f3d5a;
+}
+
+.pinyin-ready-rule strong {
+  padding: 7px 10px;
+  border-radius: 10px;
+  background: #fff1f4;
+}
+
+.pinyin-sound-tabs,
+.pinyin-tone-options,
+.pinyin-practice-options {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.pinyin-sound-tab,
+.pinyin-tone-button,
+.pinyin-practice-option {
+  display: grid;
+  place-items: center;
+  gap: 3px;
+  min-height: 74px;
+  border: 1px solid rgba(184, 95, 117, 0.16);
+  border-radius: 18px;
+  color: var(--ink);
+  background: rgba(255, 255, 255, 0.72);
+  cursor: pointer;
+  transition: transform 150ms ease, border-color 150ms ease, background 150ms ease;
+}
+
+.pinyin-sound-tab > span {
+  color: #a34363;
+  font-size: 1.65rem;
+  font-weight: 800;
+}
+
+.pinyin-sound-tab small,
+.pinyin-tone-button small,
+.pinyin-practice-option small {
+  color: var(--muted);
+  font-size: 0.76rem;
+}
+
+.pinyin-sound-tab:hover,
+.pinyin-sound-tab:focus-visible,
+.pinyin-sound-tab.is-selected,
+.pinyin-tone-button:hover,
+.pinyin-tone-button:focus-visible,
+.pinyin-tone-button.is-selected,
+.pinyin-practice-option:hover,
+.pinyin-practice-option:focus-visible {
+  border-color: rgba(184, 95, 117, 0.5);
+  background: #fff;
+  transform: translateY(-2px);
+}
+
+.pinyin-listen-card,
+.pinyin-tone-card,
+.pinyin-blend-card,
+.pinyin-use-card,
+.pinyin-practice-card {
+  padding: clamp(16px, 2.8vw, 24px);
+  border: 1px solid rgba(45, 34, 24, 0.07);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.pinyin-listen-card {
+  justify-content: flex-start;
+}
+
+.pinyin-letter-stage {
+  display: grid;
+  flex: 0 0 auto;
+  width: 104px;
+  height: 104px;
+  place-items: center;
+  border-radius: 50%;
+  color: #fff;
+  background: linear-gradient(145deg, #d9788d, #a34363);
+  box-shadow: inset 0 2px 0 rgba(255, 255, 255, 0.28), 0 10px 22px rgba(163, 67, 99, 0.24);
+  font-size: 4.4rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.pinyin-listen-copy {
+  display: grid;
+  gap: 5px;
+}
+
+.pinyin-tone-card,
+.pinyin-blend-card,
+.pinyin-use-card {
+  display: grid;
+  gap: 14px;
+}
+
+.pinyin-tone-options,
+.pinyin-practice-options {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.pinyin-tone-button {
+  min-height: 110px;
+}
+
+.pinyin-tone-mark {
+  color: #a34363;
+  font-size: 2.1rem;
+  font-weight: 800;
+}
+
+.pinyin-tone-arrow,
+.pinyin-practice-option > span {
+  color: #6a6fb3;
+  font-size: 1.55rem;
+  font-weight: 800;
+}
+
+.pinyin-tone-result {
+  justify-content: flex-start;
+  padding: 12px 14px;
+  border-radius: 14px;
+  background: #fff8e9;
+}
+
+.pinyin-tone-result strong {
+  color: #a34363;
+  font-size: 1.45rem;
+}
+
+.text-play-button {
+  margin-left: auto;
+  border: 0;
+  color: #8f3d5a;
+  background: transparent;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 800;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.pinyin-blend-equation {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #a34363;
+  font-size: clamp(1.7rem, 4vw, 2.5rem);
+  font-weight: 800;
+}
+
+.pinyin-blend-equation strong {
+  display: grid;
+  min-width: 58px;
+  min-height: 48px;
+  place-items: center;
+  border-radius: 12px;
+  color: #a3a0a0;
+  background: #f2edf0;
+}
+
+.pinyin-blend-equation strong.is-revealed {
+  color: #347d4d;
+  background: #e8f5e5;
+}
+
+.pinyin-use-card h4 {
+  font-family: var(--hanzi-font);
+  font-size: 2.55rem;
+}
+
+.pinyin-use-reading {
+  color: #8f3d5a !important;
+  font-weight: 800;
+}
+
+.pinyin-practice-card {
+  display: grid;
+  gap: 16px;
+}
+
+.pinyin-practice-option {
+  min-height: 88px;
+}
+
+.pinyin-practice-option.is-correct {
+  border-color: rgba(52, 125, 77, 0.55);
+  background: #e8f5e5;
+}
+
+.pinyin-practice-option.is-wrong {
+  border-color: rgba(190, 71, 59, 0.52);
+  background: #ffebe6;
+}
+
+.pinyin-practice-feedback {
+  min-height: 24px;
+  color: #347d4d;
+  font-weight: 700;
+}
+
+.stroke-lab {
+  display: grid;
+  gap: 16px;
+  padding: clamp(16px, 3vw, 28px);
+  border: 1px solid rgba(71, 124, 134, 0.2);
+  border-radius: 24px;
+  background: linear-gradient(135deg, #f4fbfb, #f9f7ef 58%, #fff4e9);
+}
+
+.stroke-lab-header,
+.stroke-tian-card {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.stroke-lab-header > span {
+  padding: 8px 11px;
+  border-radius: 999px;
+  color: #316a75;
+  background: #e2f2f2;
+  font-weight: 800;
+}
+
+.stroke-level-tabs {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.stroke-level-tabs button {
+  padding: 10px;
+  border: 1px solid rgba(71, 124, 134, 0.22);
+  border-radius: 12px;
+  color: #316a75;
+  background: rgba(255, 255, 255, 0.68);
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.stroke-level-tabs button small { color: var(--muted); font-weight: 600; }
+.stroke-level-tabs button.is-active { border-color: #316a75; background: #dff1ed; }
+
+.stroke-tian-card,
+.stroke-book-card,
+.stroke-compound-card,
+.stroke-practice-card {
+  padding: clamp(16px, 2.8vw, 24px);
+  border: 1px solid rgba(45, 34, 24, 0.07);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.stroke-player {
+  width: 100%;
+  aspect-ratio: 1;
+  padding: 0;
+  border: 1.5px solid rgba(71, 124, 134, 0.3);
+  border-radius: 0;
+  background-color: #fffdf8;
+  background-image: linear-gradient(rgba(71, 124, 134, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(71, 124, 134, 0.1) 1px, transparent 1px);
+  background-size: 25% 25%;
+}
+
+.stroke-teaching-frames {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.stroke-single-frame,
+.stroke-character-frame,
+.stroke-explanation-frame {
+  display: grid;
+  align-content: start;
+  gap: 9px;
+  min-height: 230px;
+  padding: 14px;
+  border: 1px solid rgba(45, 34, 24, 0.07);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.stroke-character-frame svg {
+  width: 100%;
+  aspect-ratio: 1;
+  border: 1px solid rgba(71, 124, 134, 0.3);
+  background-color: #fffdf8;
+  background-image: linear-gradient(rgba(71, 124, 134, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(71, 124, 134, 0.1) 1px, transparent 1px);
+  background-size: 25% 25%;
+}
+
+.stroke-character-frame > strong {
+  justify-self: center;
+  color: #316a75;
+  font-family: var(--hanzi-font);
+  font-size: 1.45rem;
+}
+
+.stroke-character-path { fill: #b9c6c4; }
+.stroke-character-path.is-highlighted { fill: #be5b49; }
+.stroke-explanation-frame h4 { margin: 0; color: #316a75; font-family: var(--hanzi-font); font-size: 2.1rem; }
+.stroke-explanation-frame h4 span { font-family: var(--body-font); font-size: 1.05rem; font-weight: 700; }
+.stroke-explanation-frame p { margin: 0; }
+.stroke-explanation-frame small { color: var(--muted); }
+
+.stroke-guide {
+  fill: #d7e5e4;
+}
+
+.stroke-demo-fill {
+  fill: #316a75;
+}
+
+.stroke-reveal {
+  fill: none;
+  stroke: #fff;
+  stroke-width: 92;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+  animation: stroke-draw 1100ms linear forwards;
+}
+
+.stroke-motion {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.86);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 9;
+  stroke-dasharray: 100;
+  stroke-dashoffset: 0;
+  opacity: 0;
+  animation: stroke-direction-show 260ms ease-out 1120ms forwards;
+}
+
+.stroke-arrowhead { fill: rgba(255, 255, 255, 0.92); }
+
+@keyframes stroke-draw {
+  from { stroke-dashoffset: 100; }
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes stroke-direction-show {
+  to { opacity: 0.92; }
+}
+
+.stroke-picker {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 9px;
+}
+
+.stroke-picker-button,
+.stroke-practice-options button {
+  display: grid;
+  gap: 3px;
+  min-height: 70px;
+  padding: 8px;
+  border: 1px solid rgba(71, 124, 134, 0.2);
+  border-radius: 14px;
+  color: var(--ink);
+  background: rgba(255, 255, 255, 0.72);
+  cursor: pointer;
+}
+
+.stroke-picker-button strong {
+  color: #316a75;
+  font-family: var(--hanzi-font);
+  font-size: 1.48rem;
+}
+
+.stroke-picker-button small,
+.stroke-rules small,
+.stroke-practice-options small {
+  color: var(--muted);
+}
+
+.stroke-picker-button:hover,
+.stroke-picker-button:focus-visible,
+.stroke-picker-button.is-selected {
+  border-color: rgba(49, 106, 117, 0.56);
+  background: #eaf6f4;
+}
+
+.stroke-rules {
+  display: grid;
+  gap: 10px;
+}
+
+.stroke-rules > div {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.stroke-rules span {
+  display: grid;
+  gap: 3px;
+  padding: 10px;
+  border-radius: 12px;
+  background: rgba(226, 242, 242, 0.74);
+}
+
+.stroke-rules strong { color: #316a75; }
+
+.stroke-csl-anchor {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 2px 8px;
+  align-items: center;
+  margin: 12px 0;
+  padding: 8px 10px;
+  border-left: 3px solid #8ab9af;
+  border-radius: 0 10px 10px 0;
+  background: rgba(226, 242, 242, 0.66);
+}
+
+.stroke-csl-anchor span,
+.stroke-csl-anchor em { color: var(--muted); font-size: 0.78rem; font-style: normal; }
+.stroke-csl-anchor strong { color: #316a75; font-family: var(--hanzi-font); font-size: 1.7rem; line-height: 1; }
+.stroke-csl-anchor em { grid-column: 1 / -1; }
+
+.stroke-compound-card { display: grid; gap: 16px; }
+
+.stroke-compound-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.stroke-compound-grid article {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 2px 7px;
+  min-height: 72px;
+  padding: 10px;
+  border-radius: 12px;
+  background: rgba(226, 242, 242, 0.74);
+}
+
+.stroke-compound-grid strong { color: #316a75; }
+.stroke-compound-grid span { font-family: var(--hanzi-font); font-size: 1.45rem; line-height: 1; }
+.stroke-compound-grid small { grid-column: 1 / -1; color: var(--muted); font-size: 0.73rem; }
+
+.stroke-book-card {
+  display: grid;
+  gap: 10px;
+}
+
+.stroke-book-card > .body-match-kicker { margin: 0; }
+
+.stroke-book-frames {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 9px;
+}
+
+.stroke-book-frames figure {
+  position: relative;
+  margin: 0;
+  border: 1px solid rgba(71, 124, 134, 0.28);
+  background: #fffdf8;
+}
+
+.stroke-book-frames figcaption {
+  position: absolute;
+  z-index: 1;
+  top: 5px;
+  left: 6px;
+  display: grid;
+  width: 22px;
+  height: 22px;
+  place-items: center;
+  border-radius: 50%;
+  color: #fff;
+  background: #316a75;
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+.stroke-book-frames svg {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1;
+  padding: 4px;
+  background-color: #fffdf8;
+  background-image: linear-gradient(rgba(71, 124, 134, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(71, 124, 134, 0.1) 1px, transparent 1px);
+  background-size: 25% 25%;
+}
+
+.stroke-book-frame-ink {
+  fill: #316a75;
+}
+
+
+.stroke-tian-card { align-items: flex-start; }
+
+.stroke-tian-steps {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  max-width: 250px;
+}
+
+.stroke-tian-steps span {
+  display: grid;
+  width: 34px;
+  height: 34px;
+  place-items: center;
+  border-radius: 9px;
+  color: #a9b3b2;
+  background: #edf1ee;
+  font-weight: 800;
+}
+
+.stroke-tian-steps span.is-visible {
+  color: #316a75;
+  background: #dff1ed;
+}
+
+.stroke-practice-card {
+  display: grid;
+  gap: 14px;
+}
+
+.stroke-practice-library { display: grid; gap: 9px; padding: 2px 0 8px; }
+.stroke-practice-library .body-match-kicker { margin: 0; }
+.stroke-practice-stroke-picker,
+.stroke-practice-character-picker { display: flex; flex-wrap: wrap; gap: 7px; }
+.stroke-practice-stroke-picker button,
+.stroke-practice-character-picker button { min-width: 48px; min-height: 42px; padding: 6px 10px; border: 1px solid rgba(71, 124, 134, .24); border-radius: 11px; color: #316a75; background: rgba(255,255,255,.76); cursor: pointer; }
+.stroke-practice-stroke-picker button { display: grid; width: 88px; height: 68px; place-items: center; padding: 7px; }
+.stroke-practice-stroke-picker svg { width: 100%; height: 100%; }
+.stroke-practice-stroke-picker path { fill: #316a75; }
+.stroke-practice-character-picker button { display: grid; grid-template-columns: auto auto; min-width: 88px; min-height: 64px; gap: 7px; align-items: center; padding: 9px 13px; }
+.stroke-practice-character-picker strong { font-family: var(--hanzi-font); font-size: 2.05rem; line-height: 1; }
+.stroke-practice-character-picker small { color: var(--muted); }
+.stroke-practice-stroke-picker button:hover,
+.stroke-practice-stroke-picker button:focus-visible,
+.stroke-practice-stroke-picker button.is-selected,
+.stroke-practice-character-picker button:hover,
+.stroke-practice-character-picker button:focus-visible,
+.stroke-practice-character-picker button.is-selected { border-color: #316a75; background: #eaf6f4; }
+
+.stroke-practice-character {
+  color: #316a75;
+  font-family: var(--hanzi-font);
+  font-size: 5rem;
+  line-height: 1;
+  text-align: center;
+}
+
+.stroke-practice-options {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.stroke-practice-options button.is-correct { border-color: #347d4d; background: #e8f5e5; }
+.stroke-practice-options button.is-wrong { border-color: #be473b; background: #ffebe6; }
+
+.stroke-order-practice { gap: 18px; }
+.stroke-order-practice header { display: flex; gap: 18px; align-items: center; }
+.stroke-order-practice h4 { margin: 0; color: #316a75; font-family: var(--hanzi-font); font-size: 2rem; }
+.stroke-order-practice h4 span { font-family: var(--body-font); font-size: 1rem; }
+.stroke-order-practice header p:last-child { margin: 4px 0 0; color: var(--muted); }
+.stroke-order-slots,
+.stroke-piece-bank { display: grid; grid-template-columns: repeat(auto-fit, minmax(110px, 146px)); justify-content: start; gap: 9px; }
+.stroke-order-slots button,
+.stroke-piece-bank button { position: relative; min-height: 88px; border: 1px dashed rgba(71, 124, 134, 0.42); border-radius: 12px; background: #fffdf8; cursor: pointer; }
+.stroke-order-slots button:disabled { cursor: default; color: #a9b3b2; }
+.stroke-order-slots button b { position: absolute; z-index: 1; top: 6px; left: 7px; display: grid; width: 22px; height: 22px; place-items: center; border-radius: 50%; color: #fff; background: #316a75; font-size: .75rem; }
+.stroke-order-slots button svg,
+.stroke-piece-bank svg { width: 100%; height: 70px; padding: 6px; background-color: #fffdf8; background-image: linear-gradient(rgba(71, 124, 134, .1) 1px, transparent 1px), linear-gradient(90deg, rgba(71, 124, 134, .1) 1px, transparent 1px); background-size: 25% 25%; }
+.stroke-order-slots button svg path,
+.stroke-piece-bank > button svg path { fill: #316a75; }
+.stroke-order-slots button.is-filled { border-style: solid; }
+.stroke-piece-bank button { display: grid; min-height: 0; aspect-ratio: 1; padding: 0; border: 0; border-radius: 0; background: transparent; }
+.stroke-piece-placeholder { display: block; aspect-ratio: 1; }
+.stroke-piece-bank svg { height: auto; aspect-ratio: 1; padding: 4px; border: 1px solid rgba(71, 124, 134, .28); }
+.stroke-piece-bank button:hover,
+.stroke-piece-bank button:focus-visible { border-color: #316a75; background: #eaf6f4; }
+.stroke-piece-bank.is-animation { display: grid; grid-template-columns: 1fr; min-height: 184px; }
+.stroke-piece-animation-slot { display: grid; min-height: 184px; place-items: center; }
+.stroke-piece-animation-slot .stroke-practice-animation { width: min(100%, 176px); }
+.stroke-order-feedback { display: grid; gap: 10px; justify-items: center; color: #347d4d; text-align: center; }
+.stroke-practice-animation { width: min(100%, 280px); aspect-ratio: 1; border: 1px solid rgba(71, 124, 134, .3); background-color: #fffdf8; background-image: linear-gradient(rgba(71, 124, 134, .1) 1px, transparent 1px), linear-gradient(90deg, rgba(71, 124, 134, .1) 1px, transparent 1px); background-size: 25% 25%; }
+.stroke-practice-ghost { fill: #d7e5e4; }
+.stroke-practice-ink { fill: #316a75; opacity: 0; }
+.stroke-practice-ink-0 { animation: stroke-practice-appear 1ms linear 0ms forwards; }
+.stroke-practice-ink-1 { animation: stroke-practice-appear 1ms linear 1050ms forwards; }
+.stroke-practice-ink-2 { animation: stroke-practice-appear 1ms linear 2100ms forwards; }
+.stroke-practice-ink-3 { animation: stroke-practice-appear 1ms linear 3150ms forwards; }
+.stroke-practice-ink-4 { animation: stroke-practice-appear 1ms linear 4200ms forwards; }
+.practice-reveal-0 { animation-delay: 0ms; }
+.practice-reveal-1 { animation-delay: 1050ms; }
+.practice-reveal-2 { animation-delay: 2100ms; }
+ .practice-reveal-3 { animation-delay: 3150ms; }
+.practice-reveal-4 { animation-delay: 4200ms; }
+@keyframes stroke-practice-appear { to { opacity: 1; } }
+.stroke-practice-animation .stroke-reveal,
+.stroke-practice-animation .stroke-practice-ink { animation: none; }
+.stroke-practice-animation.is-playing .stroke-reveal { animation: stroke-draw 1100ms linear forwards; }
+.stroke-practice-animation.is-playing .practice-reveal-0 { animation-delay: 0ms; }
+.stroke-practice-animation.is-playing .practice-reveal-1 { animation-delay: 1050ms; }
+.stroke-practice-animation.is-playing .practice-reveal-2 { animation-delay: 2100ms; }
+.stroke-practice-animation.is-playing .practice-reveal-3 { animation-delay: 3150ms; }
+.stroke-practice-animation.is-playing .practice-reveal-4 { animation-delay: 4200ms; }
+.stroke-practice-animation.is-playing .stroke-practice-ink-0 { animation: stroke-practice-appear 1ms linear 0ms forwards; }
+.stroke-practice-animation.is-playing .stroke-practice-ink-1 { animation: stroke-practice-appear 1ms linear 1050ms forwards; }
+.stroke-practice-animation.is-playing .stroke-practice-ink-2 { animation: stroke-practice-appear 1ms linear 2100ms forwards; }
+.stroke-practice-animation.is-playing .stroke-practice-ink-3 { animation: stroke-practice-appear 1ms linear 3150ms forwards; }
+.stroke-practice-animation.is-playing .stroke-practice-ink-4 { animation: stroke-practice-appear 1ms linear 4200ms forwards; }
+.stroke-order-practice footer { display: flex; justify-content: space-between; gap: 10px; }
+
+@media (max-width: 620px) {
+  .stroke-lab-header,
+  .stroke-tian-card { align-items: flex-start; flex-direction: column; }
+  .stroke-teaching-frames { grid-template-columns: 1fr; }
+  .stroke-book-frames { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .stroke-compound-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .stroke-picker { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .stroke-order-slots { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .stroke-piece-bank { grid-template-columns: repeat(auto-fit, minmax(98px, 126px)); }
+  .stroke-rules > div { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 620px) {
+  .pinyin-lab-header,
+  .pinyin-listen-card,
+  .pinyin-practice-card .numbers-game-top {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .pinyin-tone-options,
+  .pinyin-practice-options {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .pinyin-course-nav {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .pinyin-lab-badge,
+  .pinyin-practice-card .small-button {
+    align-self: flex-start;
+  }
+}
+
 .focus-status {
   min-height: 28px;
   margin-top: 14px;

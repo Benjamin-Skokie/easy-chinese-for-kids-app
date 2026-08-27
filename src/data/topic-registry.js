@@ -27,6 +27,8 @@ import { bodyTopic } from "../features/foundations/body.js";
 import { multiplicationRhymeTopic, numbersTopic } from "../features/foundations/numbers.js";
 import { telephoneNumbersTopic } from "../features/foundations/telephone-numbers.js";
 import { isItTopic } from "../features/foundations/is-it.js";
+import { pinyinTopic } from "../features/foundations/pinyin.js";
+import { strokesTopic } from "../features/foundations/strokes.js";
 
 export const visualTopicItems = {
   comparisons: comparisonVisualItems,
@@ -56,6 +58,8 @@ export const schoolSentenceBuilds = {
 };
 
 export const topicData = [
+  pinyinTopic,
+  strokesTopic,
   numbersTopic,
   telephoneNumbersTopic,
   multiplicationRhymeTopic,

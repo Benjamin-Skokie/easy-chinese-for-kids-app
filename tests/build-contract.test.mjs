@@ -1544,7 +1544,10 @@ test("the shared curriculum retains its books and learning navigation", () => {
   assert.equal(books.length, 8);
   assert.equal(bookHomeCategories.length, 4);
   assert.equal(topicGroups.length, 4);
-  assert.equal(learningHomeCategories.length, 7);
+  assert.equal(learningHomeCategories.length, 8);
+  assert.deepEqual(learningHomeCategories[0].topicIds, ["pinyin", "strokes"]);
+  assert.equal(topicCardMeta.pinyin.zhTitle, "拼音");
+  assert.equal(topicCardMeta.strokes.zhTitle, "笔画");
   assert.equal(topicCardMeta["school-subjects"].zhTitle, "学校学科");
 });
 
