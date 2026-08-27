@@ -1,6 +1,6 @@
 import { colourLessons } from "./colours.js";
 import { animalLessons } from "./animals.js";
-import { natureLesson, weatherLesson } from "./weather.js";
+import { natureLesson, weatherLesson, weatherOutfitScenes } from "./weather.js";
 import { imageLoadingAttrs } from "../../core/image-loading.js";
 import { advanceShuffledOrder, nextRandomCycleId } from "../../core/random-cycle.js";
 
@@ -59,51 +59,60 @@ function natureIconMarkup(id) {
   return `${start}<path d="M12 60h72" stroke="#9bc774" stroke-width="4" stroke-linecap="round"/><path d="M26 60V31m0 18-10-12m10 7 9-13M48 60V23m0 24-11-14m11 8 10-15M69 60V34m0 15-8-10m8 6 9-12" stroke="#4c8b49" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>${end}`;
 }
 
-const weatherDressRounds = [
+const weatherClothesRounds = [
   {
-    id: "rain",
-    prompt: "下雨了。带什么？",
-    promptPinyin: "xià yǔ le. dài shén me?",
-    promptEnglish: "It is raining. What should we take?",
-    answerId: "umbrella",
-    answerSentence: "下雨了。带雨伞。",
-    answerAudio: "带雨伞",
-    answerPinyin: "xià yǔ le. dài yǔ sǎn.",
-    answerEnglish: "It is raining. Take an umbrella."
+    id: "rainy-lele",
+    imagePath: "assets/illustrated-clothes/weather-outfits/rainy-lele.webp",
+    imageAlt: "Lele wearing a raincoat and rain boots in the rain",
+    subject: "乐乐",
+    subjectPinyin: "lè le",
+    sentenceEnglish: "Lele wears a raincoat and rain boots.",
+    audio: "乐乐穿雨衣和雨鞋",
+    slots: [{ id: "wear", verb: "穿", answer: "雨衣和雨鞋", pinyin: "chuān yǔ yī hé yǔ xié", options: ["雨衣和雨鞋", "T恤和短裤", "外套和长裤", "大衣和帽子"] }]
   },
   {
-    id: "snow",
-    prompt: "下雪了。今天很冷。穿什么？",
-    promptPinyin: "xià xuě le. jīn tiān hěn lěng. chuān shén me?",
-    promptEnglish: "It is snowing. Today is cold. What should we wear?",
-    answerId: "knit-hat",
-    answerSentence: "下雪了。今天很冷。戴帽子。",
-    answerAudio: "戴帽子",
-    answerPinyin: "xià xuě le. jīn tiān hěn lěng. dài mào zi.",
-    answerEnglish: "It is snowing. Today is cold. Wear a hat."
+    id: "sunny-luna",
+    imagePath: "assets/illustrated-clothes/weather-outfits/sunny-luna.webp",
+    imageAlt: "Luna wearing a T-shirt and shorts on a sunny day",
+    subject: "露娜",
+    subjectPinyin: "lù nà",
+    sentenceEnglish: "Luna wears a T-shirt and shorts.",
+    audio: "露娜穿T恤和短裤",
+    slots: [{ id: "wear", verb: "穿", answer: "T恤和短裤", pinyin: "chuān T xù hé duǎn kù", options: ["T恤和短裤", "雨衣和雨鞋", "外套和长裤", "大衣和帽子"] }]
   },
   {
-    id: "sunny",
-    prompt: "今天是晴天。今天很热。穿什么？",
-    promptPinyin: "jīn tiān shì qíng tiān. jīn tiān hěn rè. chuān shén me?",
-    promptEnglish: "Today is sunny. Today is hot. What should we wear?",
-    answerId: "shorts",
-    answerSentence: "今天是晴天。今天很热。穿短裤。",
-    answerAudio: "穿短裤",
-    answerPinyin: "jīn tiān shì qíng tiān. jīn tiān hěn rè. chuān duǎn kù.",
-    answerEnglish: "Today is sunny. Today is hot. Wear shorts."
+    id: "snowy-noah",
+    imagePath: "assets/illustrated-clothes/weather-outfits/snowy-noah-winter-gear.webp",
+    imageAlt: "Noah wearing a jacket, long pants, hat, scarf, and gloves in the snow",
+    subject: "诺亚",
+    subjectPinyin: "nuò yà",
+    sentenceEnglish: "Noah wears a coat and long pants, with a hat, scarf, and gloves.",
+    audio: "诺亚穿外套和长裤，戴帽子围巾和手套",
+    slots: [
+      { id: "wear", verb: "穿", answer: "外套和长裤", pinyin: "chuān wài tào hé cháng kù", options: ["外套和长裤", "T恤和短裤", "雨衣和雨鞋", "大衣和帽子"] },
+      { id: "wear-on-head", verb: "戴", answer: "帽子、围巾和手套", pinyin: "dài mào zi, wéi jīn hé shǒu tào", options: ["帽子、围巾和手套", "帽子", "雨伞", "皮鞋"] }
+    ]
   },
   {
-    id: "windy",
-    prompt: "今天刮大风。穿什么？",
-    promptPinyin: "jīn tiān guā dà fēng. chuān shén me?",
-    promptEnglish: "It is very windy today. What should we wear?",
-    answerId: "jacket",
-    answerSentence: "今天刮大风。穿外套。",
-    answerAudio: "穿外套",
-    answerPinyin: "jīn tiān guā dà fēng. chuān wài tào.",
-    answerEnglish: "It is very windy today. Wear a jacket."
+    id: "windy-sophie",
+    imagePath: "assets/illustrated-clothes/weather-outfits/windy-sophie.webp",
+    imageAlt: "Sophie wearing a coat, long pants, and knit hat on a windy day",
+    subject: "苏菲",
+    subjectPinyin: "sū fēi",
+    sentenceEnglish: "Sophie wears long pants and a coat, with a hat.",
+    audio: "苏菲穿长裤和大衣，戴帽子",
+    slots: [
+      { id: "wear", verb: "穿", answer: "长裤和大衣", pinyin: "chuān cháng kù hé dà yī", options: ["长裤和大衣", "T恤和短裤", "雨衣和雨鞋", "外套和长裤"] },
+      { id: "wear-on-head", verb: "戴", answer: "帽子", pinyin: "dài mào zi", options: ["帽子", "围巾", "雨伞", "皮鞋"] }
+    ]
   }
+];
+
+const weatherDressRounds = [
+  { id: "rain", prompt: "下雨了。带什么？", promptPinyin: "xià yǔ le. dài shén me?", promptEnglish: "It is raining. What should we take?", answerId: "umbrella", answerSentence: "下雨了。带雨伞。", answerAudio: "带雨伞", answerPinyin: "xià yǔ le. dài yǔ sǎn.", answerEnglish: "It is raining. Take an umbrella." },
+  { id: "snow", prompt: "下雪了。今天很冷。穿什么？", promptPinyin: "xià xuě le. jīn tiān hěn lěng. chuān shén me?", promptEnglish: "It is snowing. Today is cold. What should we wear?", answerId: "knit-hat", answerSentence: "下雪了。今天很冷。戴帽子。", answerAudio: "戴帽子", answerPinyin: "xià xuě le. jīn tiān hěn lěng. dài mào zi.", answerEnglish: "It is snowing. Today is cold. Wear a hat." },
+  { id: "sunny", prompt: "今天是晴天。今天很热。穿什么？", promptPinyin: "jīn tiān shì qíng tiān. jīn tiān hěn rè. chuān shén me?", promptEnglish: "Today is sunny. Today is hot. What should we wear?", answerId: "shorts", answerSentence: "今天是晴天。今天很热。穿短裤。", answerAudio: "穿短裤", answerPinyin: "jīn tiān shì qíng tiān. jīn tiān hěn rè. chuān duǎn kù.", answerEnglish: "Today is sunny. Today is hot. Wear shorts." },
+  { id: "windy", prompt: "今天刮大风。穿什么？", promptPinyin: "jīn tiān guā dà fēng. chuān shén me?", promptEnglish: "It is very windy today. What should we wear?", answerId: "jacket", answerSentence: "今天刮大风。穿外套。", answerAudio: "穿外套", answerPinyin: "jīn tiān guā dà fēng. chuān wài tào.", answerEnglish: "It is very windy today. Wear a jacket." }
 ];
 
 const weatherDressChoices = [
@@ -116,65 +125,62 @@ const weatherDressChoices = [
 const weatherFillRounds = [
   {
     id: "rain",
-    imagePath: "assets/illustrated-weather/umbrella.png",
-    imageAlt: "A blue umbrella",
-    clothing: "带雨伞",
-    clothingPinyin: "dài yǔ sǎn",
-    clothingEnglish: "Take an umbrella.",
-    weather: "下雨了",
-    weatherPinyin: "xià yǔ le",
-    weatherEnglish: "it is raining",
-    temperatures: ["冷", "热"]
+    imagePath: "assets/illustrated-clothes/weather-outfits/rainy-lele.webp",
+    imageAlt: "Lele wearing a raincoat and rain boots in the rain",
+    slots: () => [
+      { id: "weather", label: "天气怎么样？", answer: "下雨了", pinyin: "xià yǔ le", choices: ["下雨了", "下雪了", "是晴天", "刮大风"] },
+      { id: "rainboots", label: "穿什么？", answer: "雨鞋", pinyin: "yǔ xié", choices: ["雨鞋", "雨衣", "帽子", "外套"] }
+    ],
+    sentence: (word) => `${word("weather")}。乐乐穿雨衣和${word("rainboots")}。`,
+    pinyin: "xià yǔ le. lè le chuān yǔ yī hé yǔ xié.",
+    english: "It is raining. Lele wears a raincoat and rain boots."
   },
   {
-    id: "hot",
-    imagePath: "assets/illustrated-weather/shorts.png",
-    imageAlt: "A pair of orange shorts",
-    clothing: "穿短裤",
-    clothingPinyin: "chuān duǎn kù",
-    clothingEnglish: "Wear shorts.",
-    weather: "是晴天",
-    weatherPinyin: "shì qíng tiān",
-    weatherEnglish: "is sunny",
-    temperature: "热",
-    temperaturePinyin: "rè",
-    temperatureEnglish: "hot"
+    id: "sunny",
+    imagePath: "assets/illustrated-clothes/weather-outfits/sunny-luna.webp",
+    imageAlt: "Luna wearing a T-shirt and shorts on a sunny day",
+    slots: () => [
+      { id: "temperature", label: "天气怎么样？", answer: "热", pinyin: "rè", choices: ["热", "冷", "下雨", "下雪"] },
+      { id: "tshirt", label: "穿什么？", answer: "T恤", pinyin: "T xù", choices: ["T恤", "短裤", "外套", "雨衣"] }
+    ],
+    sentence: (word) => `今天是晴天，天气很${word("temperature")}。露娜穿${word("tshirt")}和短裤。`,
+    pinyin: "jīn tiān shì qíng tiān, tiān qì hěn rè. lù nà chuān T xù hé duǎn kù.",
+    english: "Today is sunny and hot. Luna wears a T-shirt and shorts."
   },
   {
-    id: "cold",
-    imagePath: "assets/illustrated-weather/knit-hat.png",
-    imageAlt: "A muted red knit hat",
-    clothing: "戴帽子",
-    clothingPinyin: "dài mào zi",
-    clothingEnglish: "Wear a hat.",
-    weather: "下雪了",
-    weatherPinyin: "xià xuě le",
-    weatherEnglish: "is snowing",
-    temperature: "冷",
-    temperaturePinyin: "lěng",
-    temperatureEnglish: "cold"
+    id: "snow",
+    imagePath: "assets/illustrated-clothes/weather-outfits/snowy-noah-winter-gear.webp",
+    imageAlt: "Noah in a hat, scarf, gloves, coat, and long pants in the snow",
+    slots: (shuffle) => {
+      const accessory = shuffle([
+        { answer: "帽子", pinyin: "mào zi", english: "hat" },
+        { answer: "围巾", pinyin: "wéi jīn", english: "scarf" },
+        { answer: "手套", pinyin: "shǒu tào", english: "gloves" }
+      ])[0];
+      return [
+        { id: "weather", label: "天气怎么样？", answer: "下雪了", pinyin: "xià xuě le", choices: ["下雪了", "下雨了", "是晴天", "刮大风"] },
+        { id: "temperature", label: "冷 / 热", answer: "冷", pinyin: "lěng", choices: ["冷", "热"] },
+        { id: "accessory", label: "戴什么？", ...accessory, choices: [accessory.answer, "雨伞", "雨衣", "短裤"] },
+        { id: "coat", label: "穿什么？", answer: "外套", pinyin: "wài tào", choices: ["外套", "雨衣", "T恤", "短裤"] }
+      ];
+    },
+    sentence: (word) => `${word("weather")}，天气很${word("temperature")}。诺亚戴${word("accessory")}，穿${word("coat")}。`,
+    pinyin: (slot) => `xià xuě le, tiān qì hěn lěng. nuò yà dài ${slot("accessory").pinyin}, chuān ${slot("coat").pinyin}.`,
+    english: (slot) => `It is snowing and cold. Noah wears a ${slot("accessory").english} and a coat.`
   },
   {
     id: "windy",
-    imagePath: "assets/illustrated-weather/windbreaker.png",
-    imageAlt: "A lightweight green windbreaker",
-    clothing: "穿外套",
-    clothingPinyin: "chuān wài tào",
-    clothingEnglish: "Wear a jacket.",
-    weather: "刮大风",
-    weatherPinyin: "guā dà fēng",
-    weatherEnglish: "is very windy",
-    temperature: "冷",
-    temperaturePinyin: "lěng",
-    temperatureEnglish: "cold"
+    imagePath: "assets/illustrated-clothes/weather-outfits/windy-sophie.webp",
+    imageAlt: "Sophie wearing a coat, long pants, and a hat on a windy day",
+    slots: () => [
+      { id: "weather", label: "天气怎么样？", answer: "刮大风", pinyin: "guā dà fēng", choices: ["刮大风", "下雨了", "下雪了", "是晴天"] },
+      { id: "coat", label: "穿什么？", answer: "大衣", pinyin: "dà yī", choices: ["大衣", "雨衣", "T恤", "围巾"] }
+    ],
+    sentence: (word) => `今天${word("weather")}。苏菲穿长裤和${word("coat")}，戴帽子。`,
+    pinyin: "jīn tiān guā dà fēng. sū fēi chuān cháng kù hé dà yī, dài mào zi.",
+    english: "It is very windy today. Sophie wears long pants and a coat, with a hat."
   }
 ];
-
-const weatherFillWeatherChoices = ["下雨了", "下雪了", "是晴天", "刮大风"];
-const weatherFillTemperatureData = {
-  冷: { pinyin: "lěng", english: "cold" },
-  热: { pinyin: "rè", english: "hot" }
-};
 
 export function createWorldRuntime({ state, currentTopic, currentBook, currentLesson, focusExplorer, speak, selectFocusItem, activityPanelTitle, activityPanelSummary, activityList, renderActivityPanel }) {
   function colourItems() {
@@ -249,6 +255,7 @@ export function createWorldRuntime({ state, currentTopic, currentBook, currentLe
 
   function renderWeatherExplorer() {
     const scenes = weatherLesson.scenes;
+    const outfitScenes = weatherOutfitScenes;
     focusExplorer.innerHTML = `
       <div class="time-date-board school-topic-board">
         <div class="numbers-stage-card"><p class="body-match-kicker">${currentBook().label} Lesson ${currentLesson().lesson}</p><h4>${weatherLesson.title}</h4><p>${weatherLesson.summary}</p></div>
@@ -260,11 +267,19 @@ export function createWorldRuntime({ state, currentTopic, currentBook, currentLe
             <article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">今天是 + 天气</p>${state.showPinyin ? '<p class="visual-topic-note-pinyin">jīn tiān shì + tiān qì</p>' : ""}${state.showEnglish ? '<p class="visual-topic-note-english">Use 今天是 to name today’s kind of weather.</p>' : ""}<p class="visual-topic-note-example">今天是晴天。</p>${state.showPinyin ? '<p class="visual-topic-note-pinyin">jīn tiān shì qíng tiān.</p>' : ""}${state.showEnglish ? '<p class="visual-topic-note-english">Today is sunny.</p>' : ""}</article>
           </div>
         </section>
+        <section class="school-lesson-section is-weather weather-outfit-section">
+          <div class="time-months-heading"><p class="body-match-kicker">Weather and clothes</p></div>
+          <div class="school-scene-grid weather-scene-grid">${outfitScenes.map((scene, index) => worldSceneCardMarkup(scene, { playAttribute: "data-weather-outfit-scene", index })).join("")}</div>
+        </section>
       </div>
     `;
     focusExplorer.querySelectorAll("[data-world-item]").forEach((button) => button.addEventListener("click", () => selectFocusItem(button.dataset.worldItem, { playAudio: true })));
     focusExplorer.querySelectorAll("[data-weather-scene]").forEach((button) => button.addEventListener("click", () => {
       const scene = scenes[Number(button.dataset.weatherScene)];
+      if (scene && state.tapAudioEnabled) speak(scene.lines.map((line) => line.audio).join("，"), 0.74);
+    }));
+    focusExplorer.querySelectorAll("[data-weather-outfit-scene]").forEach((button) => button.addEventListener("click", () => {
+      const scene = outfitScenes[Number(button.dataset.weatherOutfitScene)];
       if (scene && state.tapAudioEnabled) speak(scene.lines.map((line) => line.audio).join("，"), 0.74);
     }));
   }
@@ -615,98 +630,93 @@ export function createWorldRuntime({ state, currentTopic, currentBook, currentLe
       state.worldWeatherDressPickedId = "";
       state.worldWeatherDressResult = "";
     }
-  }
-
-  function currentWeatherDressRound() {
-    ensureWeatherDressPractice();
-    const id = state.worldWeatherDressRoundIds[state.worldWeatherDressRoundIndex];
-    return weatherDressRounds.find((round) => round.id === id) ?? weatherDressRounds[0];
+    if (!state.worldWeatherDressChoiceIds?.length || state.worldWeatherDressChoiceIds.length !== weatherDressChoices.length) {
+      state.worldWeatherDressChoiceIds = shuffled(weatherDressChoices.map((choice) => choice.id));
+    }
   }
 
   function ensureWeatherFillPractice() {
     if (!state.worldWeatherFillRoundIds?.length || state.worldWeatherFillRoundIds.length !== weatherFillRounds.length) {
       state.worldWeatherFillRoundIds = shuffled(weatherFillRounds.map((round) => round.id));
       state.worldWeatherFillRoundIndex = 0;
-      state.worldWeatherFillWeatherPicked = "";
-      state.worldWeatherFillTemperaturePicked = "";
-      state.worldWeatherFillWeatherResult = "";
-      state.worldWeatherFillTemperatureResult = "";
+      resetWeatherFillAnswers();
+      return;
     }
+    if (!state.worldWeatherFillSlots?.length) resetWeatherFillAnswers();
   }
 
   function currentWeatherFillRound() {
-    ensureWeatherFillPractice();
-    const id = state.worldWeatherFillRoundIds[state.worldWeatherFillRoundIndex];
-    return weatherFillRounds.find((round) => round.id === id) ?? weatherFillRounds[0];
+    return weatherFillRounds.find((entry) => entry.id === state.worldWeatherFillRoundIds[state.worldWeatherFillRoundIndex]) ?? weatherFillRounds[0];
+  }
+
+  function resetWeatherFillAnswers() {
+    const round = currentWeatherFillRound();
+    state.worldWeatherFillSlots = round.slots(shuffled).map((slot) => ({ ...slot, choices: shuffled(slot.choices) }));
+    state.worldWeatherFillPicked = {};
+    state.worldWeatherFillResults = {};
   }
 
   function renderWeatherPractice() {
-    const round = currentWeatherDressRound();
-    const choices = shuffled(weatherDressChoices);
+    ensureWeatherDressPractice();
+    ensureWeatherFillPractice();
+    const round = weatherDressRounds.find((entry) => entry.id === state.worldWeatherDressRoundIds[state.worldWeatherDressRoundIndex]) ?? weatherDressRounds[0];
+    const choices = state.worldWeatherDressChoiceIds
+      .map((choiceId) => weatherDressChoices.find((choice) => choice.id === choiceId))
+      .filter(Boolean);
     const selectedChoice = weatherDressChoices.find((choice) => choice.id === state.worldWeatherDressPickedId);
     const fillRound = currentWeatherFillRound();
-    const weatherChoices = shuffled(weatherFillWeatherChoices);
-    const temperatureChoices = shuffled(["冷", "热"]);
-    const fillComplete = state.worldWeatherFillWeatherResult === "correct" && state.worldWeatherFillTemperatureResult === "correct";
-    const chosenTemperature = weatherFillTemperatureData[state.worldWeatherFillTemperaturePicked] ?? weatherFillTemperatureData[fillRound.temperature];
+    const fillSlots = state.worldWeatherFillSlots;
+    const fillComplete = fillSlots.every((slot) => state.worldWeatherFillResults[slot.id] === "correct");
+    const fillBlank = (slotId) => {
+      const picked = state.worldWeatherFillPicked[slotId];
+      const result = state.worldWeatherFillResults[slotId];
+      return `<span class="weather-fill-blank${result ? ` is-${result}` : ""}">${picked || "____"}</span>`;
+    };
+    const fillSlot = (slotId) => fillSlots.find((entry) => entry.id === slotId);
+    const fillPicked = (slotId) => state.worldWeatherFillPicked[slotId] ?? fillSlot(slotId).answer;
+    const fillPinyin = typeof fillRound.pinyin === "function" ? fillRound.pinyin(fillSlot, fillPicked) : fillRound.pinyin;
+    const fillEnglish = typeof fillRound.english === "function" ? fillRound.english(fillSlot) : fillRound.english;
+    const fillSentence = fillRound.sentence(fillBlank, fillSlot);
     activityPanelTitle.textContent = "Let's practice";
     activityPanelSummary.textContent = "Listen to today’s weather, then choose the one thing that helps the child get ready.";
     activityList.className = "support-list";
     activityList.innerHTML = `
       <section class="practice-split-card weather-dress-practice">
         <div class="numbers-game-top"><div><p class="body-match-kicker">Get ready for the weather</p><h4>${round.prompt}</h4>${state.showPinyin ? `<p class="numbers-game-pinyin">${round.promptPinyin}</p>` : ""}${state.showEnglish ? `<p class="numbers-game-english">${round.promptEnglish}</p>` : ""}</div><button class="small-button is-play-button" type="button" data-weather-dress-play>Play</button></div>
-        <div class="weather-dress-options">${choices.map((choice) => { const selected = selectedChoice?.id === choice.id; const stateClass = selected ? ` is-${state.worldWeatherDressResult}` : ""; return `<button class="weather-dress-option${stateClass}" type="button" data-weather-dress-choice="${choice.id}" aria-label="${choice.hanzi}"><img src="${choice.imagePath}" alt="${choice.imageAlt}" />${selected ? `<span class="answer-result-mark" aria-hidden="true">${state.worldWeatherDressResult === "correct" ? "✓" : "×"}</span>` : ""}</button>`; }).join("")}</div>
-        ${state.worldWeatherDressPickedId ? `<div class="weather-dress-feedback ${state.worldWeatherDressResult === "correct" ? "is-correct" : "is-wrong"}"><p>${state.worldWeatherDressResult === "correct" ? round.answerSentence : "再听一听，想想天气和用品。"}</p>${state.worldWeatherDressResult === "correct" && state.showPinyin ? `<p class="numbers-game-pinyin">${round.answerPinyin}</p>` : ""}${state.worldWeatherDressResult === "correct" && state.showEnglish ? `<p>${round.answerEnglish}</p>` : ""}</div>` : ""}
+        <div class="weather-dress-options">${choices.map((choice) => { const selected = selectedChoice?.id === choice.id; const stateClass = selected ? ` is-${state.worldWeatherDressResult}` : ""; return `<button class="weather-dress-option${stateClass}" type="button" data-weather-dress-choice="${choice.id}"><img src="${choice.imagePath}" alt="${choice.imageAlt}" />${selected ? `<span class="answer-result-mark" aria-hidden="true">${state.worldWeatherDressResult === "correct" ? "✓" : "×"}</span>` : ""}</button>`; }).join("")}</div>
       </section>
       <section class="practice-split-card weather-fill-practice">
-        <div class="numbers-game-top"><div><p class="body-match-kicker">Fill in the weather</p><h4>看一看，填一填。</h4>${state.showEnglish ? '<p class="numbers-game-english">Choose a weather phrase and cold or hot.</p>' : ""}</div><button class="small-button is-play-button" type="button" data-weather-fill-play>Play</button></div>
-        <div><p class="weather-fill-sentence">今天<span class="weather-fill-blank${state.worldWeatherFillWeatherResult ? ` is-${state.worldWeatherFillWeatherResult}` : ""}">${state.worldWeatherFillWeatherPicked || "____"}</span>，很<span class="weather-fill-blank${state.worldWeatherFillTemperatureResult ? ` is-${state.worldWeatherFillTemperatureResult}` : ""}">${state.worldWeatherFillTemperaturePicked || "____"}</span>，${fillRound.clothing}<span class="weather-fill-icon"><img src="${fillRound.imagePath}" alt="${fillRound.imageAlt}" /></span>。</p>${state.showPinyin && fillComplete ? `<p class="numbers-game-pinyin">jīn tiān ${fillRound.weatherPinyin}, hěn ${chosenTemperature.pinyin}, ${fillRound.clothingPinyin}.</p>` : ""}${state.showEnglish && fillComplete ? `<p class="numbers-game-english">Today ${fillRound.weatherEnglish}, very ${chosenTemperature.english}. ${fillRound.clothingEnglish}</p>` : ""}</div>
-        <div class="weather-fill-choice-groups"><div><p class="weather-fill-choice-label">天气</p><div class="weather-fill-options weather-fill-weather-options">${weatherChoices.map((choice) => { const selected = state.worldWeatherFillWeatherPicked === choice; const stateClass = selected ? ` is-${state.worldWeatherFillWeatherResult}` : ""; return `<button class="weather-fill-option${stateClass}" type="button" data-weather-fill-weather="${choice}">${choice}${selected ? `<span class="answer-result-mark" aria-hidden="true">${state.worldWeatherFillWeatherResult === "correct" ? "✓" : "×"}</span>` : ""}</button>`; }).join("")}</div></div><div><p class="weather-fill-choice-label">冷 / 热</p><div class="weather-fill-options">${temperatureChoices.map((choice) => { const selected = state.worldWeatherFillTemperaturePicked === choice; const stateClass = selected ? ` is-${state.worldWeatherFillTemperatureResult}` : ""; return `<button class="weather-fill-option${stateClass}" type="button" data-weather-fill-temperature="${choice}">${choice}${selected ? `<span class="answer-result-mark" aria-hidden="true">${state.worldWeatherFillTemperatureResult === "correct" ? "✓" : "×"}</span>` : ""}</button>`; }).join("")}</div></div></div>
-        ${state.worldWeatherFillWeatherResult === "wrong" || state.worldWeatherFillTemperatureResult === "wrong" ? '<p class="weather-fill-feedback">再看一看衣服，想想天气和冷 / 热。</p>' : ""}
+        <div class="numbers-game-top"><div><p class="body-match-kicker">Finish the sentence</p><p class="numbers-game-note">Look at the picture, then choose the words that complete the sentence.</p></div><button class="small-button is-play-button" type="button" data-weather-fill-play>Play</button></div>
+        <figure class="weather-fill-visual"><img src="${fillRound.imagePath}" alt="${fillRound.imageAlt}" /></figure>
+        <p class="weather-fill-sentence">${fillSentence}</p>
+        ${fillComplete && state.showPinyin ? `<p class="numbers-game-pinyin">${fillPinyin}</p>` : ""}${fillComplete && state.showEnglish ? `<p class="numbers-game-english">${fillEnglish}</p>` : ""}
+        <div class="weather-fill-choice-groups is-many-slots">${fillSlots.map((slot) => `<div><p class="weather-fill-choice-label">${slot.label}</p><div class="weather-fill-options">${slot.choices.map((choice) => `<button class="weather-fill-option${state.worldWeatherFillPicked[slot.id] === choice ? ` is-${state.worldWeatherFillResults[slot.id]}` : ""}" type="button" data-weather-fill-choice="${slot.id}:${choice}">${choice}</button>`).join("")}</div></div>`).join("")}</div>
       </section>
     `;
     activityList.querySelector("[data-weather-dress-play]")?.addEventListener("click", () => {
-      if (state.worldWeatherDressResult === "correct") {
-        advanceShuffledOrder(state, "worldWeatherDressRoundIds", "worldWeatherDressRoundIndex", shuffled);
-        state.worldWeatherDressPickedId = "";
-        state.worldWeatherDressResult = "";
-        renderActivityPanel(currentTopic());
-        const nextRound = currentWeatherDressRound();
-        if (state.tapAudioEnabled) speak(nextRound.prompt, 0.76);
-        return;
-      }
-      if (state.tapAudioEnabled) speak(round.prompt, 0.76);
+      advanceShuffledOrder(state, "worldWeatherDressRoundIds", "worldWeatherDressRoundIndex", shuffled);
+      state.worldWeatherDressChoiceIds = shuffled(weatherDressChoices.map((choice) => choice.id));
+      state.worldWeatherDressPickedId = "";
+      state.worldWeatherDressResult = "";
+      renderActivityPanel(currentTopic());
     });
     activityList.querySelectorAll("[data-weather-dress-choice]").forEach((button) => button.addEventListener("click", () => {
       state.worldWeatherDressPickedId = button.dataset.weatherDressChoice;
       state.worldWeatherDressResult = state.worldWeatherDressPickedId === round.answerId ? "correct" : "wrong";
-      if (state.worldWeatherDressResult === "correct") {
-        if (state.tapAudioEnabled) speak(round.answerAudio, 0.76);
-      }
+      if (state.worldWeatherDressResult === "correct" && state.tapAudioEnabled) speak(round.answerAudio, 0.76);
       renderActivityPanel(currentTopic());
     }));
     activityList.querySelector("[data-weather-fill-play]")?.addEventListener("click", () => {
-      if (fillComplete) {
-        advanceShuffledOrder(state, "worldWeatherFillRoundIds", "worldWeatherFillRoundIndex", shuffled);
-        state.worldWeatherFillWeatherPicked = "";
-        state.worldWeatherFillTemperaturePicked = "";
-        state.worldWeatherFillWeatherResult = "";
-        state.worldWeatherFillTemperatureResult = "";
-        renderActivityPanel(currentTopic());
-        const nextRound = currentWeatherFillRound();
-        return;
-      }
-    });
-    activityList.querySelectorAll("[data-weather-fill-weather]").forEach((button) => button.addEventListener("click", () => {
-      state.worldWeatherFillWeatherPicked = button.dataset.weatherFillWeather;
-      state.worldWeatherFillWeatherResult = state.worldWeatherFillWeatherPicked === fillRound.weather ? "correct" : "wrong";
-      if (state.worldWeatherFillWeatherResult === "correct" && state.tapAudioEnabled) speak(fillRound.weather, 0.76);
+      advanceShuffledOrder(state, "worldWeatherFillRoundIds", "worldWeatherFillRoundIndex", shuffled);
+      resetWeatherFillAnswers();
       renderActivityPanel(currentTopic());
-    }));
-    activityList.querySelectorAll("[data-weather-fill-temperature]").forEach((button) => button.addEventListener("click", () => {
-      state.worldWeatherFillTemperaturePicked = button.dataset.weatherFillTemperature;
-      state.worldWeatherFillTemperatureResult = (fillRound.temperatures ?? [fillRound.temperature]).includes(state.worldWeatherFillTemperaturePicked) ? "correct" : "wrong";
-      if (state.worldWeatherFillTemperatureResult === "correct" && state.tapAudioEnabled) speak(fillRound.temperature, 0.76);
+    });
+    activityList.querySelectorAll("[data-weather-fill-choice]").forEach((button) => button.addEventListener("click", () => {
+      const [slotId, choice] = button.dataset.weatherFillChoice.split(":");
+      const slot = fillSlots.find((entry) => entry.id === slotId);
+      state.worldWeatherFillPicked[slotId] = choice;
+      state.worldWeatherFillResults[slotId] = (slot.answers ?? [slot.answer]).includes(choice) ? "correct" : "wrong";
+      if (fillSlots.every((entry) => state.worldWeatherFillResults[entry.id] === "correct") && state.tapAudioEnabled) speak(fillRound.sentence(fillPicked, fillSlot), 0.76);
       renderActivityPanel(currentTopic());
     }));
   }

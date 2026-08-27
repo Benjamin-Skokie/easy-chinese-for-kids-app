@@ -4078,6 +4078,20 @@ h4 {
 
 .weather-fill-practice { display: grid; gap: 1rem; }
 
+.weather-fill-visual {
+  margin: 0;
+}
+
+.weather-fill-visual img {
+  display: block;
+  width: min(100%, 42rem);
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  margin: 0 auto;
+  border: 1px solid rgba(221, 207, 187, 0.72);
+  border-radius: 12px;
+}
+
 .weather-fill-icon {
   display: inline-block;
   width: 2.25rem;

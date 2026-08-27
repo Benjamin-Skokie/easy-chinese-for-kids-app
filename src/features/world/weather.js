@@ -17,6 +17,16 @@ export const weatherLesson = {
   ]
 };
 
+// Book 4B Lesson 1 ends by connecting today's weather to what a child wears.
+// These application scenes keep that bridge on the Weather page; Lesson 2 stays
+// focused on naming and describing clothes themselves.
+export const weatherOutfitScenes = [
+  { id: "rainy-outfit", title: "Rainy day", imagePath: "assets/illustrated-clothes/weather-outfits/rainy-lele.webp", imageAlt: "Lele wearing a yellow raincoat and rain boots in the rain", lines: [{ hanzi: "下雨了。", pinyin: "xià yǔ le.", english: "It is raining.", audio: "下雨了" }, { hanzi: "乐乐穿雨衣和雨鞋。", pinyin: "lè le chuān yǔ yī hé yǔ xié.", english: "Lele wears a raincoat and rain boots.", audio: "乐乐穿雨衣和雨鞋" }] },
+  { id: "sunny-outfit", title: "Sunny day", imagePath: "assets/illustrated-clothes/weather-outfits/sunny-luna.webp", imageAlt: "Luna wearing a T-shirt and shorts on a sunny day", lines: [{ hanzi: "今天是晴天，天气很热。", pinyin: "jīn tiān shì qíng tiān, tiān qì hěn rè.", english: "Today is sunny and hot.", audio: "今天是晴天天气很热" }, { hanzi: "露娜穿T恤和短裤。", pinyin: "lù nà chuān T xù hé duǎn kù.", english: "Luna wears a T-shirt and shorts.", audio: "露娜穿T恤和短裤" }] },
+  { id: "snowy-outfit", title: "Snowy day", imagePath: "assets/illustrated-clothes/weather-outfits/snowy-noah-winter-gear.webp", imageAlt: "Noah wearing a coat, hat, scarf, gloves, and long pants in the snow", lines: [{ hanzi: "下雪了，天气很冷。", pinyin: "xià xuě le, tiān qì hěn lěng.", english: "It is snowing and cold.", audio: "下雪了天气很冷" }, { hanzi: "诺亚戴帽子、围巾和手套，穿外套和长裤。", pinyin: "nuò yà dài mào zi, wéi jīn hé shǒu tào, chuān wài tào hé cháng kù.", english: "Noah wears a hat, scarf, and gloves, with a coat and long pants.", audio: "诺亚戴帽子围巾和手套穿外套和长裤" }] },
+  { id: "windy-outfit", title: "Windy day", imagePath: "assets/illustrated-clothes/weather-outfits/windy-sophie.webp", imageAlt: "Sophie wearing a coat, long pants, and knit hat on a windy day", lines: [{ hanzi: "今天刮大风。", pinyin: "jīn tiān guā dà fēng.", english: "It is very windy today.", audio: "今天刮大风" }, { hanzi: "苏菲穿长裤和大衣，戴帽子。", pinyin: "sū fēi chuān cháng kù hé dà yī, dài mào zi.", english: "Sophie wears long pants and a coat, with a hat.", audio: "苏菲穿长裤和大衣戴帽子" }] }
+];
+
 export const natureLesson = {
   title: "Nature",
   summary: "Describe what is in the sky and on the ground using 天上有… and 地上有….",

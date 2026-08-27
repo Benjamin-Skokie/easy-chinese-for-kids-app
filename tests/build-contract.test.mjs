@@ -1141,14 +1141,10 @@ test("Weather practice connects a weather sentence to getting ready", () => {
   assert.match(activityList.innerHTML, /data-weather-dress-choice="knit-hat"/);
   assert.match(activityList.innerHTML, /data-weather-dress-choice="shorts"/);
   assert.match(activityList.innerHTML, /data-weather-dress-choice="jacket"/);
-  assert.match(activityList.innerHTML, /Fill in the weather/);
-  assert.match(activityList.innerHTML, /今天<span class="weather-fill-blank">____<\/span>，很<span class="weather-fill-blank">____<\/span>，/);
-  assert.match(activityList.innerHTML, /data-weather-fill-weather="下雨了"/);
-  assert.match(activityList.innerHTML, /data-weather-fill-weather="下雪了"/);
-  assert.match(activityList.innerHTML, /data-weather-fill-weather="是晴天"/);
-  assert.match(activityList.innerHTML, /data-weather-fill-weather="刮大风"/);
-  assert.match(activityList.innerHTML, /data-weather-fill-temperature="冷"/);
-  assert.match(activityList.innerHTML, /data-weather-fill-temperature="热"/);
+  assert.match(activityList.innerHTML, /Finish the sentence/);
+  assert.match(activityList.innerHTML, /weather-outfits\/(rainy-lele|sunny-luna|snowy-noah-winter-gear|windy-sophie)\.webp/);
+  assert.match(activityList.innerHTML, /class="weather-fill-blank">____<\/span>/);
+  assert.match(activityList.innerHTML, /data-weather-fill-choice="[^"]+:(雨衣|热|下雪了|帽子|大衣)"/);
 });
 
 test("Pets and Zoo Animals are distinct topic pages", () => {

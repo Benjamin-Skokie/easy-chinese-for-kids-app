@@ -63,9 +63,9 @@
     {
       "id": "snowy-noah-winter-gear",
       "label": "Noah in winter gear",
-      "hanzi": "诺亚戴帽子、围巾和手套，穿夹克和长裤",
-      "pinyin": "nuo ya dai mao zi wei jin he shou tao chuan jia ke he chang ku",
-      "theme": "Noah wears a zipped jacket, hat, scarf, gloves, and long pants on a snowy day",
+      "hanzi": "诺亚戴帽子、围巾和手套，穿外套和长裤",
+      "pinyin": "nuo ya dai mao zi wei jin he shou tao chuan wai tao he chang ku",
+      "theme": "Noah wears a coat, hat, scarf, gloves, and long pants on a snowy day",
       "lessonHints": ["4B Lesson 1 It is raining"],
       "file": "weather-outfits/snowy-noah-winter-gear.webp"
     },
