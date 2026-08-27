@@ -1,6 +1,6 @@
 > Difficulty: Medium
 
-# Tofu, Peanuts, and Two Chopsticks
+# How Do Two Chopsticks Work Together?
 
 ## Tofu First, or a Peanut?
 

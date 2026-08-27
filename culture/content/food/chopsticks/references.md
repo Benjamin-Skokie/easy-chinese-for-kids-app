@@ -1,4 +1,4 @@
-# References for “Tofu, Peanuts, and Two Chopsticks”
+# References for “How Do Two Chopsticks Work Together?”
 
 This file is for editorial research and does not render on the website.
 

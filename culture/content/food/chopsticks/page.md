@@ -1,6 +1,6 @@
 ---
-title_zh: 豆腐、花生和两根筷子
-title_en: Tofu, Peanuts, and Two Chopsticks
+title_zh: 两根筷子，怎么夹得稳？
+title_en: How Do Two Chopsticks Work Together?
 slug: chopsticks
 category: food
 difficulty: 中等
@@ -9,8 +9,8 @@ style_notes: "用 --- 分隔 frontmatter；正文强调优先用 *斜体*；尽�
 ---
 
 [hero]
-title_zh: 豆腐、花生和两根筷子
-title_en: Tofu, Peanuts, and Two Chopsticks
+title_zh: 两根筷子，怎么夹得稳？
+title_en: How Do Two Chopsticks Work Together?
 [/hero]
 
 [section]
