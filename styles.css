@@ -3390,6 +3390,16 @@ h4 {
   gap: 14px;
 }
 
+/* Clothes Review follows the shared visual-first two-column scene pattern. */
+.clothes-scene-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.clothes-scene-grid .greetings-scene-layout {
+  grid-template-columns: minmax(0, 1fr);
+  gap: 10px;
+}
+
 .introductions-explorer-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
@@ -4139,6 +4149,88 @@ h4 {
 .weather-fill-option.is-wrong { border-color: var(--berry); background: #fff3f1; }
 .weather-fill-feedback { margin: 0; color: var(--berry-dark); }
 
+.weather-clothes-practice {
+  display: grid;
+  gap: 1rem;
+}
+
+.weather-clothes-visual {
+  margin: 0;
+}
+
+.weather-clothes-visual img {
+  display: block;
+  width: min(100%, 42rem);
+  max-height: 25rem;
+  margin: 0 auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border: 1px solid rgba(221, 207, 187, 0.72);
+  border-radius: 12px;
+}
+
+.weather-clothes-sentence {
+  margin: 0;
+  font-family: var(--hanzi-font);
+  font-size: var(--learner-hanzi-size);
+  line-height: 1.6;
+}
+
+.weather-clothes-blank {
+  display: inline-block;
+  min-width: 5.6em;
+  margin: 0 0.12em;
+  border-bottom: 3px solid #d8cbb7;
+  text-align: center;
+}
+
+.weather-clothes-blank.is-correct { border-color: #5a9b57; color: #456d32; }
+.weather-clothes-blank.is-wrong { border-color: var(--berry); color: var(--berry-dark); }
+
+.weather-clothes-choice-groups {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: 0.9rem;
+}
+
+.weather-clothes-choice-group {
+  padding: 0.85rem;
+  border: 1px solid #e5d7c1;
+  border-radius: 14px;
+  background: #fffaf4;
+}
+
+.clothes-colour-sentence {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.15rem;
+  font-family: var(--hanzi-font);
+  font-size: var(--learner-hanzi-size);
+}
+
+.clothes-colour-sentence .numbers-game-pinyin,
+.clothes-colour-sentence .numbers-game-english {
+  flex-basis: 100%;
+}
+
+.clothes-colour-choice-groups {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: 0.9rem;
+}
+
+.clothes-colour-choice-group {
+  padding: 0.85rem;
+  border: 1px solid #e5d7c1;
+  border-radius: 14px;
+  background: #fffaf4;
+}
+
+.clothes-colour-choice-group .clothes-quiz-options {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
 .time-routine-builder-options {
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1.25rem;
@@ -4376,6 +4468,15 @@ h4 {
   width: 5.25rem;
   height: 4.25rem;
   object-fit: contain;
+}
+
+.book-word-image-fallback {
+  display: grid;
+  place-items: center;
+  background: var(--cream, #fff7ec);
+  color: var(--ink, #2f241d);
+  font-family: var(--font-display, Georgia, serif);
+  font-size: clamp(2.2rem, 5vw, 3.6rem);
 }
 
 .book-word-copy {

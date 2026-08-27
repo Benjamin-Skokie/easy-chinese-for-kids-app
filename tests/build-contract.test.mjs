@@ -9,7 +9,7 @@ import { advanceShuffledOrder, nextRandomCycleId } from "../src/core/random-cycl
 import { lessonScopeFromLocation, topicIdFromLocation, topicPageUrl, viewFromLocation } from "../src/core/router.js";
 import { timeDateWeekItems } from "../src/features/time-daily-life/weekdays.js";
 import { timeDateClockItems, timeDateRoutineItems } from "../src/features/time-daily-life/time.js";
-import { datePracticeItems, timeDateMonthItems } from "../src/features/time-daily-life/dates.js";
+import { datePracticeItems, timeDateDateItems, timeDateMonthItems } from "../src/features/time-daily-life/dates.js";
 import { comparisonPracticeItems, comparisonsTopic, comparisonVisualItems } from "../src/features/time-daily-life/comparisons.js";
 import { positionPracticeItems, positionScenes, positionsTopic, positionVisualItems } from "../src/features/time-daily-life/positions.js";
 import { transportSentenceTokens, transportTopic, transportVisualItems } from "../src/features/time-daily-life/transport.js";
@@ -30,7 +30,7 @@ import { politeGameItemIds, politePractice, politeWordsTopic } from "../src/feat
 import { isItPracticeRounds, isItScene, isItTopic } from "../src/features/foundations/is-it.js";
 import { requestBuildPhrases, requestGameItemIds, requestPractice, requestsPermissionTopic } from "../src/features/daily-life/requests-permission.js";
 import { clothesBookWords, clothesMatchItems, clothesPractice, clothesSentenceItems, clothesTopic } from "../src/features/daily-life/clothes.js";
-import { natureLesson, natureTopic, weatherLesson, weatherTopic } from "../src/features/world/weather.js";
+import { natureLesson, natureTopic, weatherLesson, weatherOutfitScenes, weatherTopic } from "../src/features/world/weather.js";
 import { animalLessons, animalsTopic, petsTopic } from "../src/features/world/animals.js";
 import { colourLessons, coloursTopic } from "../src/features/world/colours.js";
 import { createWorldRuntime } from "../src/features/world/world-runtime.js";
@@ -51,7 +51,7 @@ import { familyGameItemIds, familyPractice, familyTopic, illustratedFamily } fro
 test("the local page loads a single bundled application script", () => {
   const html = readFileSync("index.html", "utf8");
   assert.match(html, /<link rel="stylesheet" href="styles\.css\?v=20260825-number-feedback-v3" \/>/);
-  assert.match(html, /<script src="app\.js\?v=20260825-lesson-scope-v1"><\/script>/);
+  assert.match(html, /<script src="app\.js\?v=20260825-lesson-scope-v2"><\/script>/);
   assert.doesNotMatch(html, /type="module"/);
   assert.doesNotMatch(html, /Tap a word to hear it and explore the picture\./);
   assert.doesNotMatch(html, /<h3>Review<\/h3>/);
@@ -126,6 +126,7 @@ test("Dates and months use standard scene cards", () => {
   assert.match(runtimeSource, /school-scene-grid month-scene-grid/);
   assert.match(runtimeSource, /data-month-scene/);
   assert.match(runtimeSource, /telephone-line-hanzi">\$\{item\.context\}/);
+  assert.match(runtimeSource, /function scopedDateContent\(items\) \{[\s\S]{0,220}state\.lessonScope/);
   assert.match(styles, /\.date-scene-grid \.school-scene-image \{\s+object-fit: contain;/);
   assert.match(styles, /\.month-scene-grid \.school-scene-image \{\s+object-fit: contain;/);
 });
@@ -242,6 +243,7 @@ test("lesson scope keeps all-topic content first and filters every My Family sec
   assert.match(detailSource, /const allContentCard = steps\.length > 1/);
   assert.match(detailSource, /<strong>\$\{topicLessonTitle\(topic, step\)\}<\/strong>/);
   assert.match(detailSource, /topicSummary\.textContent = scopedStep\?\.note \?\? topic\.summary/);
+  assert.match(detailSource, /event\.target\.closest\("\[data-topic-all-content\]"\)/);
   assert.match(detailSource, /state\.lessonScope = null;[\s\S]{0,100}syncBookSelectionFromTopic\(\)/);
   assert.match(foundationsSource, /familyBookWordItems\(\)[\s\S]{0,360}lessonSources\?\.includes\(source\)/);
   assert.match(foundationsSource, /familyPractice[\s\S]{0,800}lessonSources\?\.includes/);
@@ -349,9 +351,11 @@ test("sticky category navigation highlights the final item at the bottom of the 
 test("direct topic links immediately focus the topic detail for every topic", () => {
   const landingHtml = readFileSync("index.html", "utf8");
   const runtimeWiringSource = readFileSync("src/app/runtime-wiring.js", "utf8");
+  const navigationSource = readFileSync("src/core/navigation-runtime.js", "utf8");
   const stylesSource = readFileSync("styles.css", "utf8");
   assert.match(landingHtml, /href="#topics-panel" data-global-view="topics">← Back to Topics/);
   assert.match(runtimeWiringSource, /if \(initialTopicId\) \{\s*requestAnimationFrame\(\(\) => focusLearningPanel\(\)\);/);
+  assert.match(navigationSource, /state\.topicPageOpen = true;\s*syncBookSelectionFromTopic\(\);\s*renderTopics\(\);/);
   assert.match(stylesSource, /html \{\s*scroll-behavior: auto;/);
 });
 
@@ -461,6 +465,27 @@ test("lesson scoping keeps enrichment in all-topic content and filters grouped c
   assert.deepEqual(filterLessonContent(items, scope).map((item) => item.id), ["fruit"]);
   assert.deepEqual(filterLessonContent(items).map((item) => item.id), ["fruit", "enrichment", "snack"]);
   assert.deepEqual(filterLessonGroups([{ id: "fruit", items }, { id: "empty", items: [{ id: "snack", lessonSources: ["2b:7"] }] }], scope).map((group) => group.id), ["fruit"]);
+});
+
+test("the remaining multi-lesson topics tag their lesson-owned content", () => {
+  const navigationSource = readFileSync("src/core/navigation-runtime.js", "utf8");
+  const owned = (items, source) => filterLessonContent(items, { bookId: source.slice(0, 2), lessonNumber: Number(source.slice(3)) });
+  assert.ok(owned(bodyTopic.focusItems, "1b:3").length);
+  assert.ok(owned(bodyTopic.focusItems, "1b:4").length);
+  assert.ok(owned(introductionsTopic.focusItems, "1a:6").length && owned(introductionsPractice, "1a:6").length && owned(introductionsBuildPhrases, "1a:6").length);
+  assert.ok(owned(introductionsTopic.focusItems, "2a:3").length && owned(introductionsPractice, "2a:3").length && owned(introductionsBuildPhrases, "2a:3").length);
+  assert.ok(owned(ageTopic.focusItems, "1a:7").length && owned(agePractice, "1a:7").length && owned(ageBuildPhrases, "1a:7").length);
+  assert.ok(owned(ageTopic.focusItems, "3a:3").length && owned(agePractice, "3a:3").length && owned(ageBuildPhrases, "3a:3").length);
+  assert.ok(owned(timeDateDateItems, "3a:2").length && owned(timeDateMonthItems, "3a:2").length && owned(datePracticeItems, "3a:2").length);
+  assert.ok(owned(timeDateDateItems, "3a:3").length && owned(datePracticeItems, "3a:3").length);
+  const datesTopic = topicData.find((topic) => topic.id === "dates");
+  assert.ok(owned(datesTopic.focusItems, "3a:2").length && owned(datesTopic.focusItems, "3a:3").length);
+  assert.ok(owned(classroomTopicData.scenes, "2b:4").length && owned(classroomTopicData.words, "2b:4").length && owned(classroomTopicData.sentenceFrames, "2b:4").length && owned(classroomTopicData.review, "2b:4").length);
+  assert.ok(owned(classroomTopicData.scenes, "3b:2").length && owned(classroomTopicData.words, "3b:2").length && owned(classroomTopicData.sentenceFrames, "3b:2").length && owned(classroomTopicData.review, "3b:2").length);
+  assert.match(navigationSource, /const scopedItems = forSelectedLesson\(defaultItems\);[\s\S]{0,360}return scopedItems\.length \? scopedItems : defaultItems;/);
+  for (const source of ["2a:6", "3a:7", "4b:2"]) {
+    assert.ok(owned(clothesBookWords, source).length && owned(clothesPractice, source).length && owned(clothesMatchItems, source).length && owned(clothesSentenceItems, source).length);
+  }
 });
 
 test("shared lesson practice is provided by an explicit game factory", () => {
@@ -810,7 +835,7 @@ test("Food lesson cards describe and scope their matching food content", () => {
 
   assert.match(detailSource, /<strong>\$\{topicLessonTitle\(topic, step\)\}<\/strong>/);
   assert.match(foodRuntime, /foodCategoryByLessonSource[\s\S]{0,180}"1b:7": "fruit"[\s\S]{0,120}"2b:7": "snack"[\s\S]{0,120}"3b:6": "vegetable"/);
-  assert.match(foodRuntime, /const contentScope = topicId === "food" \? state\.lessonScope : null;[\s\S]{0,160}filteredSceneGroups = filterLessonGroups\(sceneGroups, contentScope\)/);
+  assert.match(foodRuntime, /\["food", "classroom", "meals-feelings"\]\.includes\(topicId\) \? state\.lessonScope : null;[\s\S]{0,160}filteredSceneGroups = filterLessonGroups\(sceneGroups, contentScope\)/);
   assert.match(foodRuntime, /function renderFoodPractice\(topic\) \{[\s\S]{0,180}ensureSchoolBuilder\(topic\.id\)[\s\S]{0,700}renderFoodHungerGame/);
   assert.match(foodData, /lessonSources: \["1b:7"\]/);
 });
@@ -846,6 +871,9 @@ test("meals and feelings owns its scenes and practice activities", () => {
   assert.equal(mealsFeelingsTopicData.conversationPairs.length, 6);
   assert.equal(mealsFeelingsTopicData.pictureChoices.length, 6);
   assert.equal(mealsFeelingsSentenceBuilds.length, 5);
+  assert.deepEqual(mealsFeelingsTopicData.sceneGroups[0].lessonSources, ["4a:5"]);
+  assert.deepEqual(mealsFeelingsTopicData.sceneGroups[1].lessonSources, ["4a:7"]);
+  assert.deepEqual(mealsFeelingsSentenceBuilds.filter((item) => item.lessonSources?.includes("4a:5")).map((item) => item.id), ["lunch"]);
 });
 
 test("introductions owns its scenes and practice activities", () => {
@@ -955,15 +983,18 @@ test("clothes owns its scenes and picture matching set", () => {
   assert.equal(clothesTopic.id, "clothes");
   assert.equal(clothesTopic.interactiveScene, "clothes-scenes");
   assert.equal(clothesTopic.ownsExplorerContent, true);
-  assert.equal(clothesPractice.length, 3);
-  assert.deepEqual(clothesBookWords.map((item) => item.id), ["shirt", "pants", "dress", "shoes", "hat", "jacket", "gloves", "school-uniform"]);
-  assert.equal(clothesBookWords[0]?.hanzi, "衬衫");
-  assert.equal(clothesPractice[2]?.lines[0]?.hanzi, "我穿校服。");
-  assert.deepEqual(clothesMatchItems.map((item) => item.id), clothesBookWords.map((item) => item.id));
-  assert.deepEqual(clothesSentenceItems.map((item) => item.id), ["shoes", "socks", "jacket", "hat", "school-uniform"]);
-  assert.ok(clothesBookWords.every((item) => existsSync(item.imagePath)));
+  assert.equal(clothesPractice.length, 6);
+  assert.deepEqual(clothesBookWords.filter((item) => item.lessonSources?.includes("2a:6")).map((item) => item.hanzi), ["衣服", "鞋子"]);
+  assert.deepEqual(clothesBookWords.filter((item) => item.lessonSources?.includes("3a:7")).map((item) => item.hanzi), ["校服", "衬衫", "裤子", "裙子", "皮鞋"]);
+  assert.deepEqual(clothesBookWords.filter((item) => item.lessonSources?.includes("4b:2")).map((item) => item.hanzi), ["T恤", "短裤", "毛衣", "长裤", "大衣", "帽子"]);
+  assert.equal(clothesPractice[1]?.lines[0]?.hanzi, "我穿校服。");
+  assert.equal(clothesPractice.filter((item) => item.lessonSources?.includes("4b:2")).length, 4);
+  assert.ok(clothesMatchItems.every((item) => item.imagePath));
+  assert.ok(clothesSentenceItems.every((item) => item.lessonSources?.length));
+  assert.ok(clothesBookWords.filter((item) => item.imagePath).every((item) => existsSync(item.imagePath)));
   assert.ok(clothesSentenceItems.every((item) => existsSync(item.imagePath)));
   assert.match(runtimeSource, /time-asset-card book-word-card/);
+  assert.match(runtimeSource, /function scopedClothesContent\(items\) \{[\s\S]{0,220}state\.lessonScope/);
   assert.doesNotMatch(runtimeSource, /clothes-book-board/);
 });
 
@@ -992,7 +1023,7 @@ test("Nature and Weather remain separate book topics", () => {
   assert.match(topicDetailSource, /topic\.ownsExplorerContent/);
   assert.match(focusRuntimeSource, /currentTopic\(\)\.ownsExplorerContent/);
   assert.match(worldRuntimeSource, /function worldSceneCardMarkup/);
-  assert.equal((worldRuntimeSource.match(/worldSceneCardMarkup\(/g) ?? []).length, 4);
+  assert.equal((worldRuntimeSource.match(/worldSceneCardMarkup\(/g) ?? []).length, 5);
 });
 
 test("Weather groups repeated scene artwork into a two-by-two scene grid", () => {
@@ -1009,7 +1040,8 @@ test("Weather groups repeated scene artwork into a two-by-two scene grid", () =>
 
   runtime.renderWorldExplorer();
   assert.equal(weatherLesson.scenes.length, 4);
-  assert.equal((focusExplorer.innerHTML.match(/school-scene-card/g) ?? []).length, 4);
+  assert.equal(weatherOutfitScenes.length, 4);
+  assert.equal((focusExplorer.innerHTML.match(/school-scene-card/g) ?? []).length, 8);
   assert.match(focusExplorer.innerHTML, /weather-scene-grid/);
   assert.doesNotMatch(focusExplorer.innerHTML, />Scenes</);
   assert.match(focusExplorer.innerHTML, /Rainy day/);
@@ -1458,10 +1490,13 @@ test("every displayed book lesson source resolves to the exact curriculum lesson
   const topicDetailSource = readFileSync("src/core/topic-detail-runtime.js", "utf8");
   assert.match(topicDetailSource, /function linkInlineBookLessonBadges\(\)/);
   assert.match(topicDetailSource, /data-topic-lesson-source/);
-  assert.match(topicDetailSource, /state\.lessonScope = \{ bookId: book\.id, lessonNumber: lesson\.lesson \}/);
+  assert.match(topicDetailSource, /const lessonUrl = topicPageUrl\(window\.location, lesson\.topicId, \{ bookId: book\.id, lessonNumber: lesson\.lesson \}\)/);
+  assert.match(topicDetailSource, /window\.history\.pushState\(null, "", lessonUrl\)/);
+  assert.match(topicDetailSource, /state\.lessonScope = lessonScopeFromLocation\(window\.location, books, lesson\.topicId\)/);
+  assert.match(topicDetailSource, /topicLessonStrip\.addEventListener\("click", \(event\) =>/);
   assert.match(topicDetailSource, /selectBookLesson\(bookId, Number\(lessonText\)\)/);
   assert.match(topicDetailSource, /data-topic-all-content/);
-  assert.match(topicDetailSource, /state\.lessonScope = null;/);
+  assert.match(topicDetailSource, /event\.target\.closest\("\[data-topic-all-content\]"\)/);
   assert.match(topicDetailSource, /topicLessonStrip\.innerHTML = allContentCard \+ steps/);
   assert.match(topicDetailSource, /topicSummary\.textContent = scopedStep\?\.note \?\? topic\.summary/);
   assert.match(topicDetailSource, /if \(step\.cardLabel\) \{/);

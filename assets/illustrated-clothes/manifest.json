@@ -26,7 +26,7 @@
       "pinyin": "chuan yi fu",
       "theme": "A child wears and chooses common clothing items in a bedroom",
       "lessonHints": [
-        "3A Lesson 7 Clothes"
+        "2A Lesson 6 I can dress myself"
       ],
       "file": "wearing-clothes-scene.webp"
     },
@@ -43,13 +43,76 @@
       "file": "weather-linked-clothing-scene.webp"
     },
     {
+      "id": "rainy-lele",
+      "label": "Lele in rain gear",
+      "hanzi": "乐乐穿雨衣和雨鞋",
+      "pinyin": "le le chuan yu yi he yu xie",
+      "theme": "Lele wears a raincoat and rain boots on a rainy day",
+      "lessonHints": ["4B Lesson 1 It is raining"],
+      "file": "weather-outfits/rainy-lele.webp"
+    },
+    {
+      "id": "sunny-luna",
+      "label": "Luna in summer clothes",
+      "hanzi": "露娜穿T恤和短裤",
+      "pinyin": "lu na chuan T xu he duan ku",
+      "theme": "Luna wears a T-shirt and shorts on a hot sunny day",
+      "lessonHints": ["4B Lesson 1 It is raining"],
+      "file": "weather-outfits/sunny-luna.webp"
+    },
+    {
+      "id": "snowy-noah-winter-gear",
+      "label": "Noah in winter gear",
+      "hanzi": "诺亚戴帽子、围巾和手套，穿夹克和长裤",
+      "pinyin": "nuo ya dai mao zi wei jin he shou tao chuan jia ke he chang ku",
+      "theme": "Noah wears a zipped jacket, hat, scarf, gloves, and long pants on a snowy day",
+      "lessonHints": ["4B Lesson 1 It is raining"],
+      "file": "weather-outfits/snowy-noah-winter-gear.webp"
+    },
+    {
+      "id": "windy-sophie",
+      "label": "Sophie in a coat and hat",
+      "hanzi": "苏菲穿长裤和大衣，戴帽子",
+      "pinyin": "su fei chuan chang ku he da yi dai mao zi",
+      "theme": "Sophie wears long pants, a coat, and a hat on a windy day",
+      "lessonHints": ["4B Lesson 1 It is raining"],
+      "file": "weather-outfits/windy-sophie.webp"
+    },
+    {
+      "id": "luna-tshirt-shorts",
+      "label": "Luna in a T-shirt and shorts",
+      "hanzi": "露娜穿黄色的T恤和蓝色的短裤",
+      "pinyin": "lu na chuan huang se de T xu he lan se de duan ku",
+      "theme": "Luna wears a yellow T-shirt and blue shorts indoors",
+      "lessonHints": ["4B Lesson 2 Clothes"],
+      "file": "book-4b-lesson-2/luna-tshirt-shorts.webp"
+    },
+    {
+      "id": "lele-noah-outdoor-coats-hats",
+      "label": "Lele and Noah outside in coats and hats",
+      "hanzi": "他们穿大衣，戴帽子",
+      "pinyin": "ta men chuan da yi dai mao zi",
+      "theme": "Lele and Noah, classmates, wear coats, long pants, and knit hats outside school",
+      "lessonHints": ["4B Lesson 2 Clothes"],
+      "file": "book-4b-lesson-2/lele-noah-outdoor-coats-hats.webp"
+    },
+    {
+      "id": "sophie-sweater-pants",
+      "label": "Sophie in a sweater and long pants",
+      "hanzi": "苏菲穿毛衣和长裤",
+      "pinyin": "su fei chuan mao yi he chang ku",
+      "theme": "Sophie wears a sweater and long pants indoors",
+      "lessonHints": ["4B Lesson 2 Clothes"],
+      "file": "book-4b-lesson-2/sophie-sweater-pants.webp"
+    },
+    {
       "id": "school-morning-uniform",
       "label": "School morning uniform",
       "hanzi": "我穿校服",
       "pinyin": "wo chuan xiao fu",
       "theme": "Luna wears her complete school uniform and backpack by a closed front door before school",
       "lessonHints": [
-        "4B Lesson 2 Clothes"
+        "3A Lesson 7 Clothes"
       ],
       "file": "school-morning-uniform.webp"
     }
