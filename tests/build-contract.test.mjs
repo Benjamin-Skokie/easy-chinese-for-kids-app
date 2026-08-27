@@ -51,7 +51,7 @@ import { familyGameItemIds, familyPractice, familyTopic, illustratedFamily } fro
 test("the local page loads a single bundled application script", () => {
   const html = readFileSync("index.html", "utf8");
   assert.match(html, /<link rel="stylesheet" href="styles\.css\?v=20260825-number-feedback-v3" \/>/);
-  assert.match(html, /<script src="app\.js\?v=20260825-lesson-scope-v2"><\/script>/);
+  assert.match(html, /<script src="app\.js\?v=20260827-book-scope-v3"><\/script>/);
   assert.doesNotMatch(html, /type="module"/);
   assert.doesNotMatch(html, /Tap a word to hear it and explore the picture\./);
   assert.doesNotMatch(html, /<h3>Review<\/h3>/);
@@ -241,7 +241,9 @@ test("lesson scope keeps all-topic content first and filters every My Family sec
 
   assert.match(detailSource, /topicLessonStrip\.innerHTML = allContentCard \+ steps/);
   assert.match(detailSource, /const allContentCard = steps\.length > 1/);
-  assert.match(detailSource, /<strong>\$\{topicLessonTitle\(topic, step\)\}<\/strong>/);
+  assert.match(detailSource, /const lesson = books/);
+  assert.match(detailSource, /return \[lesson\?\.displayTitle\?\.zh, lesson\?\.displayTitle\?\.en\]\.filter\(Boolean\)\.join\(" · "\) \|\| step\.title/);
+  assert.match(detailSource, /<strong>\$\{topicLessonTitle\(step\)\}<\/strong>/);
   assert.match(detailSource, /topicSummary\.textContent = scopedStep\?\.note \?\? topic\.summary/);
   assert.match(detailSource, /event\.target\.closest\("\[data-topic-all-content\]"\)/);
   assert.match(detailSource, /state\.lessonScope = null;[\s\S]{0,100}syncBookSelectionFromTopic\(\)/);
@@ -337,7 +339,11 @@ test("Learn by Books shows each textbook directly and links lessons to topic pra
   assert.match(navigationSource, /class="learning-home-board book-library-grid"/);
   assert.match(navigationSource, /data-book-browser="\$\{entry\.id\}"/);
   assert.match(navigationSource, /data-book-lesson-section="\$\{entry\.id\}"/);
-  assert.match(navigationSource, /主题练习：\$\{topicMeta\?\.zhTitle/);
+  assert.match(navigationSource, /const cardTitle = \[lesson\.displayTitle\?\.zh, lesson\.displayTitle\?\.en\]\.filter\(Boolean\)\.join\(" · "\) \|\| lesson\.title/);
+  assert.ok(books.every((book) => book.lessons.every((lesson) => lesson.displayTitle?.zh && lesson.displayTitle?.en)));
+  assert.match(navigationSource, /<span class="book-lesson-meta">\$\{entry\.label\.toUpperCase\(\)\} LESSON \$\{lesson\.lesson\}<\/span>/);
+  assert.match(navigationSource, /<strong>\$\{cardTitle\}<\/strong>/);
+  assert.doesNotMatch(navigationSource, /主题练习：/);
   assert.doesNotMatch(navigationSource, /data-book-category-card/);
 });
 
@@ -346,6 +352,8 @@ test("sticky category navigation highlights the final item at the bottom of the 
   assert.match(navigationSource, /const atPageBottom = \(\) =>/);
   assert.match(navigationSource, /activeCategoryId = sections\[sections\.length - 1\]/);
   assert.match(navigationSource, /activeBookId = bookSections\[bookSections\.length - 1\]/);
+  assert.match(navigationSource, /if \(!state\.topicPageOpen\) \{/);
+  assert.match(navigationSource, /let activeBookId = state\.selectedBookId/);
 });
 
 test("direct topic links immediately focus the topic detail for every topic", () => {
@@ -353,7 +361,11 @@ test("direct topic links immediately focus the topic detail for every topic", ()
   const runtimeWiringSource = readFileSync("src/app/runtime-wiring.js", "utf8");
   const navigationSource = readFileSync("src/core/navigation-runtime.js", "utf8");
   const stylesSource = readFileSync("styles.css", "utf8");
-  assert.match(landingHtml, /href="#topics-panel" data-global-view="topics">← Back to Topics/);
+  assert.match(landingHtml, /class="detail-back-nav" aria-label="Return to learning paths"/);
+  assert.match(landingHtml, /href="#topics-panel" data-global-view="topics" data-return-target="topic">← Back to Topics/);
+  assert.match(landingHtml, /class="detail-back-link is-book" href="#books-panel" data-global-view="books" data-return-target="book">← Back to Books/);
+  assert.match(stylesSource, /\.detail-back-nav \{\s*display: flex;/);
+  assert.match(stylesSource, /\.detail-back-link\.is-book \{/);
   assert.match(runtimeWiringSource, /if \(initialTopicId\) \{\s*requestAnimationFrame\(\(\) => focusLearningPanel\(\)\);/);
   assert.match(navigationSource, /state\.topicPageOpen = true;\s*syncBookSelectionFromTopic\(\);\s*renderTopics\(\);/);
   assert.match(stylesSource, /html \{\s*scroll-behavior: auto;/);
@@ -456,6 +468,13 @@ test("router preserves the existing topic query and detail hash contract", () =>
   assert.deepEqual(lessonScopeFromLocation({ pathname: "/", search: "?topic=family&book=1b&lesson=2", hash: "#topic-detail" }, books, "family"), { bookId: "1b", lessonNumber: 2 });
   assert.equal(lessonScopeFromLocation({ pathname: "/", search: "?topic=family&book=1b&lesson=2", hash: "#topic-detail" }, books, "numbers"), null);
   assert.doesNotMatch(topicPageUrl({ pathname: "/", search: "", hash: "" }, "time-date"), /^undefined/);
+
+  const appSource = readFileSync("src/app/runtime-wiring.js", "utf8");
+  const topicDetailSource = readFileSync("src/core/topic-detail-runtime.js", "utf8");
+  assert.match(appSource, /category\.bookIds\.includes\(initialLessonScope\.bookId\)/);
+  assert.match(topicDetailSource, /state\.selectedBookCategoryId = bookCategoryForBook\(scope\.bookId\)\.id/);
+  assert.match(topicDetailSource, /const scopedBook = state\.lessonScope/);
+  assert.match(topicDetailSource, /state\.selectedBookId = scopedBook\.id/);
 });
 
 test("lesson scoping keeps enrichment in all-topic content and filters grouped content strictly", () => {
@@ -576,6 +595,8 @@ test("global view-event bindings stay outside the application composition root",
   assert.doesNotMatch(wiringSource, /document\.querySelectorAll\("\[data-global-view\]"\)/);
   assert.match(eventSource, /export function bindViewNavigationEvents/);
   assert.match(eventSource, /\[data-global-view\]/);
+  assert.match(eventSource, /book-lessons-\$\{state\.selectedBookId\}/);
+  assert.match(eventSource, /document\.getElementById\(returnTargetId\)/);
   assert.match(eventSource, /window\.history\.pushState\(null, "", `\$\{window\.location\.pathname\}\$\{viewHash\(link\.dataset\.globalView\)\}`\)/);
 });
 
@@ -833,7 +854,7 @@ test("Food lesson cards describe and scope their matching food content", () => {
   const foodRuntime = readFileSync("src/features/school-life/school-food-runtime.js", "utf8");
   const foodData = readFileSync("src/features/food/food.js", "utf8");
 
-  assert.match(detailSource, /<strong>\$\{topicLessonTitle\(topic, step\)\}<\/strong>/);
+  assert.match(detailSource, /<strong>\$\{topicLessonTitle\(step\)\}<\/strong>/);
   assert.match(foodRuntime, /foodCategoryByLessonSource[\s\S]{0,180}"1b:7": "fruit"[\s\S]{0,120}"2b:7": "snack"[\s\S]{0,120}"3b:6": "vegetable"/);
   assert.match(foodRuntime, /\["food", "classroom", "meals-feelings"\]\.includes\(topicId\) \? state\.lessonScope : null;[\s\S]{0,160}filteredSceneGroups = filterLessonGroups\(sceneGroups, contentScope\)/);
   assert.match(foodRuntime, /function renderFoodPractice\(topic\) \{[\s\S]{0,180}ensureSchoolBuilder\(topic\.id\)[\s\S]{0,700}renderFoodHungerGame/);
@@ -1181,11 +1202,8 @@ test("Animals renders book-aware scenes, word cards, and listening practice", ()
   oneB.renderWorldExplorer();
   assert.match(focusExplorer.innerHTML, /乐乐喜欢狗和金鱼。/);
   assert.match(focusExplorer.innerHTML, /book-word-card/);
-  assert.match(focusExplorer.innerHTML, /Pet story/);
-  assert.match(focusExplorer.innerHTML, /狗吃骨头。/);
-  assert.match(focusExplorer.innerHTML, /熊猫吃竹子。/);
-  assert.match(focusExplorer.innerHTML, /猴子吃香蕉。/);
-  assert.match(focusExplorer.innerHTML, /data-pet-food-story="dog-bone"/);
+  assert.doesNotMatch(focusExplorer.innerHTML, /Animal food/);
+  assert.doesNotMatch(focusExplorer.innerHTML, /狗吃骨头。/);
   assert.match(focusExplorer.innerHTML, /Useful note/);
   assert.match(focusExplorer.innerHTML, /我喜欢 \+ 名词。比如：我喜欢猫。/);
 
@@ -1207,11 +1225,17 @@ test("Animals renders book-aware scenes, word cards, and listening practice", ()
   twoB.renderWorldExplorer();
   assert.match(focusExplorer.innerHTML, /动物园里有一只老虎，两头大象，三只熊猫。/);
   assert.match(focusExplorer.innerHTML, /动物园里有很多猴子、金鱼和乌龟。/);
+  assert.match(focusExplorer.innerHTML, /Animal food/);
+  assert.match(focusExplorer.innerHTML, /狗吃骨头。/);
+  assert.match(focusExplorer.innerHTML, /熊猫吃竹子。/);
+  assert.match(focusExplorer.innerHTML, /猴子吃香蕉。/);
   assert.doesNotMatch(focusExplorer.innerHTML, /Useful note/);
   twoB.renderWorldPractice(animalsTopic);
   assert.match(activityList.innerHTML, /动物园有/);
   assert.match(activityList.innerHTML, /data-zoo-sentence-choice="tiger"/);
   assert.match(activityList.innerHTML, /一只老虎/);
+  assert.match(activityList.innerHTML, /data-pet-food-match-animal="dog-bone"/);
+  assert.match(activityList.innerHTML, /data-pet-food-match-food="dog-bone"/);
 
   const petsActivityList = { className: "", innerHTML: "", querySelector: () => null, querySelectorAll: () => [] };
   const petsRuntime = createWorldRuntime({
@@ -1230,9 +1254,8 @@ test("Animals renders book-aware scenes, word cards, and listening practice", ()
   petsRuntime.renderWorldPractice(petsTopic);
   assert.match(petsActivityList.innerHTML, /我喜欢/);
   assert.match(petsActivityList.innerHTML, /data-pets-preference-choice="dog"/);
-  assert.match(petsActivityList.innerHTML, /family-match-open-board/);
-  assert.match(petsActivityList.innerHTML, /data-pet-food-match-animal="dog-bone"/);
-  assert.match(petsActivityList.innerHTML, /data-pet-food-match-food="dog-bone"/);
+  assert.doesNotMatch(petsActivityList.innerHTML, /family-match-open-board/);
+  assert.doesNotMatch(petsActivityList.innerHTML, /data-pet-food-match-animal/);
 });
 
 test("colours covers both book colour sets with pictured examples", () => {
@@ -1495,7 +1518,8 @@ test("every displayed book lesson source resolves to the exact curriculum lesson
   assert.match(topicDetailSource, /event\.target\.closest\("\[data-topic-all-content\]"\)/);
   assert.match(topicDetailSource, /topicLessonStrip\.innerHTML = allContentCard \+ steps/);
   assert.match(topicDetailSource, /topicSummary\.textContent = scopedStep\?\.note \?\? topic\.summary/);
-  assert.match(topicDetailSource, /if \(step\.cardLabel\) \{/);
+  assert.match(topicDetailSource, /function topicLessonTitle\(step\)/);
+  assert.match(topicDetailSource, /lesson\?\.displayTitle\?\.zh/);
   assert.match(topicDetailSource, /link\.dataset\.topicLessonSource/);
 });
 

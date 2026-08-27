@@ -1,5 +1,5 @@
 export function createTimeDailyLifeRuntime(context) {
-  const { state, timeDateWeekItems, timeDateClockItems, timeDateExpressionItems, timeDateRoutineItems, timeAdvancedBookWords, timeRoutineBookWords, datePracticeItems, timeDateDateItems, timeDateMonthItems, comparisonPracticeItems, comparisonWordItems, positionPracticeItems, positionScenes, positionBookWords, clothesMatchItems, clothesSentenceItems, clothesBookWords, clothesPractice, roomScenes, roomSentenceTokens, transportSentenceTokens, transportBookWords, everydayActionItems, visualTopicItems, shuffleArray, speak, speakSceneLines, currentTopic, currentBook, currentLesson, renderActivityPanel, focusExplorer, focusStatus } = context;
+  const { state, timeDateWeekItems, timeDateClockItems, timeDateExpressionItems, timeDateRoutineItems, timeAdvancedBookWords, timeRoutineBookWords, datePracticeItems, timeDateDateItems, timeDateMonthItems, comparisonPracticeItems, comparisonWordItems, positionPracticeItems, positionScenes, positionBookWords, clothesMatchItems, clothesSentenceItems, clothesBookWords, clothesPractice, clothesUsefulNotes, roomScenes, roomSentenceTokens, transportSentenceTokens, transportBookWords, everydayActionItems, visualTopicItems, shuffleArray, speak, speakSceneLines, currentTopic, currentBook, currentLesson, renderActivityPanel, focusExplorer, focusStatus } = context;
 
 function resetWeekdayChallenge(options = {}) {
   const answerId = nextRandomCycleId(state, "weekdays-listen", timeDateWeekItems.map((item) => item.id));
@@ -79,7 +79,7 @@ function handleWeekdayMatchAttempt(targetId) {
 }
 
 function resetClothesQuiz() {
-  const ids = clothesMatchItems.map((item) => item.id);
+  const ids = scopedClothesContent(clothesMatchItems).map((item) => item.id);
   state.clothesQuizOrder = shuffleArray(ids);
   state.clothesQuizIndex = 0;
   prepareClothesQuizQuestion();
@@ -87,14 +87,15 @@ function resetClothesQuiz() {
 
 function prepareClothesQuizQuestion() {
   const answerId = state.clothesQuizOrder[state.clothesQuizIndex];
-  const distractorIds = shuffleArray(clothesMatchItems.filter((item) => item.id !== answerId).map((item) => item.id)).slice(0, 3);
+  const distractorIds = shuffleArray(scopedClothesContent(clothesMatchItems).filter((item) => item.id !== answerId).map((item) => item.id)).slice(0, 3);
   state.clothesQuizOptionIds = shuffleArray([answerId, ...distractorIds]);
   state.clothesQuizSelectedId = "";
   state.clothesQuizResult = "";
 }
 
 function ensureClothesQuiz() {
-  if (!state.clothesQuizOrder.length) {
+  const ids = new Set(scopedClothesContent(clothesMatchItems).map((item) => item.id));
+  if (!state.clothesQuizOrder.length || state.clothesQuizOrder.some((id) => !ids.has(id))) {
     resetClothesQuiz();
   }
 }
@@ -108,7 +109,7 @@ function handleClothesQuizPick(itemId) {
   state.clothesQuizSelectedId = itemId;
   state.clothesQuizResult = itemId === answerId ? "correct" : "wrong";
   if (state.clothesQuizResult === "correct" && state.tapAudioEnabled) {
-    const answer = clothesMatchItems.find((item) => item.id === answerId);
+    const answer = scopedClothesContent(clothesMatchItems).find((item) => item.id === answerId);
     speak(answer?.audio, 0.78);
   }
   renderActivityPanel(currentTopic());
@@ -121,21 +122,22 @@ function nextClothesQuizQuestion() {
 }
 
 function resetClothesSentenceQuiz() {
-  state.clothesSentenceOrder = shuffleArray(clothesSentenceItems.map((item) => item.id));
+  state.clothesSentenceOrder = shuffleArray(scopedClothesContent(clothesSentenceItems).map((item) => item.id));
   state.clothesSentenceIndex = 0;
   prepareClothesSentenceQuestion();
 }
 
 function prepareClothesSentenceQuestion() {
   const answerId = state.clothesSentenceOrder[state.clothesSentenceIndex];
-  const distractorIds = shuffleArray(clothesSentenceItems.filter((item) => item.id !== answerId).map((item) => item.id)).slice(0, 3);
+  const distractorIds = shuffleArray(scopedClothesContent(clothesSentenceItems).filter((item) => item.id !== answerId).map((item) => item.id)).slice(0, 3);
   state.clothesSentenceOptionIds = shuffleArray([answerId, ...distractorIds]);
   state.clothesSentenceSelectedId = "";
   state.clothesSentenceResult = "";
 }
 
 function ensureClothesSentenceQuiz() {
-  if (!state.clothesSentenceOrder.length) resetClothesSentenceQuiz();
+  const ids = new Set(scopedClothesContent(clothesSentenceItems).map((item) => item.id));
+  if (!state.clothesSentenceOrder.length || state.clothesSentenceOrder.some((id) => !ids.has(id))) resetClothesSentenceQuiz();
 }
 
 function handleClothesSentencePick(itemId) {
@@ -144,7 +146,7 @@ function handleClothesSentencePick(itemId) {
   state.clothesSentenceSelectedId = itemId;
   state.clothesSentenceResult = itemId === answerId ? "correct" : "wrong";
   if (state.clothesSentenceResult === "correct" && state.tapAudioEnabled) {
-    speak(clothesSentenceItems.find((item) => item.id === answerId)?.audio, 0.78);
+    speak(scopedClothesContent(clothesSentenceItems).find((item) => item.id === answerId)?.audio, 0.78);
   }
   renderActivityPanel(currentTopic());
 }
@@ -522,6 +524,20 @@ function clearComparisonBuilder() {
   renderActivityPanel(currentTopic());
 }
 
+function scopedDateContent(items) {
+  const source = currentTopic().id === "dates" && state.lessonScope
+    ? `${state.lessonScope.bookId}:${state.lessonScope.lessonNumber}`
+    : "";
+  return source ? items.filter((item) => item.lessonSources?.includes(source)) : items;
+}
+
+function scopedClothesContent(items) {
+  const source = currentTopic().id === "clothes" && state.lessonScope
+    ? `${state.lessonScope.bookId}:${state.lessonScope.lessonNumber}`
+    : "";
+  return source ? items.filter((item) => item.lessonSources?.includes(source)) : items;
+}
+
 function nextComparisonBuilder() {
   advanceShuffledOrder(state, "comparisonBuildOrder", "comparisonBuildIndex", shuffleArray);
   prepareComparisonBuilder();
@@ -529,7 +545,7 @@ function nextComparisonBuilder() {
 }
 
 function resetDateMatchGame() {
-  const roundIds = shuffleArray(timeDateMonthItems.map((item) => item.id)).slice(0, 6);
+  const roundIds = shuffleArray(scopedDateContent(timeDateMonthItems).map((item) => item.id)).slice(0, 6);
   state.dateSelectedPhraseId = null;
   state.dateMatchedIds = new Set();
   state.datePhraseOrder = shuffleArray(roundIds);
@@ -540,7 +556,7 @@ function resetDateMatchGame() {
 }
 
 function ensureDateMatchGame() {
-  const monthIds = new Set(timeDateMonthItems.map((item) => item.id));
+  const monthIds = new Set(scopedDateContent(timeDateMonthItems).map((item) => item.id));
   if (
     !state.datePhraseOrder.length ||
     !state.dateEventOrder.length ||
@@ -556,7 +572,7 @@ function ensureDateMatchGame() {
 function handleDateMatchPhrase(itemId) {
   if (state.dateMatchedIds.has(itemId)) return;
   state.dateSelectedPhraseId = itemId;
-  const item = timeDateMonthItems.find((entry) => entry.id === itemId);
+  const item = scopedDateContent(timeDateMonthItems).find((entry) => entry.id === itemId);
   if (item && state.tapAudioEnabled) speak(item.hanzi, 0.78);
   state.dateMatchFeedback = "";
   renderActivityPanel(currentTopic());
@@ -578,9 +594,10 @@ function handleDateMatchEvent(itemId) {
 }
 
 function resetDateChallenge(options = {}) {
-  const answerId = nextRandomCycleId(state, "dates-listen", datePracticeItems.map((item) => item.id));
-  const answer = datePracticeItems.find((item) => item.id === answerId) ?? datePracticeItems[0];
-  const distractors = shuffleArray(datePracticeItems.filter((item) => item.id !== answer.id)).slice(0, 3);
+  const items = scopedDateContent(datePracticeItems);
+  const answerId = nextRandomCycleId(state, "dates-listen", items.map((item) => item.id));
+  const answer = items.find((item) => item.id === answerId) ?? items[0];
+  const distractors = shuffleArray(items.filter((item) => item.id !== answer.id)).slice(0, 3);
   state.dateChallengeAnswerId = answer.id;
   state.dateChallengePromptId = answer.id;
   state.dateChallengeOptionIds = shuffleArray([answer.id, ...distractors.map((item) => item.id)]);
@@ -597,7 +614,7 @@ function ensureDateChallenge() {
 function handleDateChallengePlay() {
   const previousId = state.dateChallengePromptId;
   resetDateChallenge({ excludeId: previousId });
-  const item = datePracticeItems.find((entry) => entry.id === state.dateChallengePromptId);
+  const item = scopedDateContent(datePracticeItems).find((entry) => entry.id === state.dateChallengePromptId);
   if (item && state.tapAudioEnabled) speak(item.audio, 0.78);
   renderActivityPanel(currentTopic());
 }
@@ -608,7 +625,7 @@ function handleDateChallengeGuess(itemId) {
   state.dateChallengeResult = isCorrect ? "correct" : "wrong";
   if (isCorrect) {
     if (state.tapAudioEnabled) {
-      const item = datePracticeItems.find((entry) => entry.id === itemId);
+      const item = scopedDateContent(datePracticeItems).find((entry) => entry.id === itemId);
       speak(item?.hanzi, 0.78);
     }
   } else {
@@ -710,18 +727,19 @@ function renderWeekdaysExplorer() {
 }
 
 function renderDatesExplorer() {
-  focusExplorer.innerHTML = `
-    <div class="time-date-board">
-      <div class="numbers-stage-card">
-        <p class="body-match-kicker">${currentBook().label} Lesson ${currentLesson().lesson}</p>
-        <h4>Dates & Months</h4>
-      </div>
-      <section class="school-lesson-section">
-        <div class="time-months-heading"><p class="body-match-kicker">Scenes</p></div>
-        <div class="school-scene-grid date-scene-grid">
-          ${timeDateDateItems.map((item) => `<section class="greetings-exchange school-scene-card"><div class="greetings-exchange-top"><div><p class="body-match-kicker">${item.english}</p></div><button class="small-button is-play-button" type="button" data-date-scene="${item.id}">Play</button></div><div class="school-scene-layout"><img class="school-scene-image" src="${item.imagePath}" alt="${item.english}" /><div class="greetings-line-stack"><article class="greetings-line-card"><div class="telephone-bubble-copy"><p class="telephone-line-hanzi">${item.context}</p>${state.showPinyin ? `<p class="telephone-line-pinyin">${item.contextPinyin}</p>` : ""}${state.showEnglish ? `<p class="telephone-line-english">${item.contextEnglish}</p>` : ""}</div></article></div></div></section>`).join("")}
-        </div>
-      </section>
+  const dateItems = scopedDateContent(timeDateDateItems);
+  const monthItems = scopedDateContent(timeDateMonthItems);
+  const lessonScope = state.lessonScope;
+  const dateNotes = [
+    { hanzi: "今天几月几号？", pinyin: "jīn tiān jǐ yuè jǐ hào?", english: "What is the date today?", example: "今天五月二十号。", examplePinyin: "jīn tiān wǔ yuè èr shí hào.", exampleEnglish: "Today is May twentieth.", lessonSources: ["3a:2"] },
+    { hanzi: "号 / 日", pinyin: "hào / rì", english: "two ways to say the day of a date", example: "五月二十号 = 五月二十日。", examplePinyin: "wǔ yuè èr shí hào = wǔ yuè èr shí rì.", exampleEnglish: "Both mean May twentieth.", lessonSources: ["3a:2"] },
+    { hanzi: "祝你生日快乐！", pinyin: "zhù nǐ shēng rì kuài lè!", english: "Wish you a happy birthday!", lessonSources: ["3a:3"] },
+    { hanzi: "生日会 / 礼物", pinyin: "shēng rì huì / lǐ wù", english: "birthday party / present", example: "生日会上有礼物。", examplePinyin: "shēng rì huì shàng yǒu lǐ wù.", exampleEnglish: "There are presents at a birthday party.", lessonSources: ["3a:3"] }
+  ];
+  const visibleNotes = lessonScope
+    ? dateNotes.filter((note) => note.lessonSources.includes(`${lessonScope.bookId}:${lessonScope.lessonNumber}`))
+    : dateNotes;
+  const monthSection = monthItems.length ? `
       <section class="time-months-intro">
         <div>
           <p class="body-match-kicker">Months of the year</p>
@@ -733,16 +751,26 @@ function renderDatesExplorer() {
       </section>
       <section class="school-lesson-section">
         <div class="school-scene-grid month-scene-grid">
-          ${timeDateMonthItems.map((item) => `<section class="greetings-exchange school-scene-card"><div class="greetings-exchange-top"><div><p class="body-match-kicker">${item.english}</p></div><button class="small-button is-play-button" type="button" data-month-scene="${item.id}">Play</button></div><div class="school-scene-layout"><img class="school-scene-image" src="${item.imagePath}" alt="${item.english}" /><div class="greetings-line-stack"><article class="greetings-line-card"><div class="telephone-bubble-copy"><p class="telephone-line-hanzi">${item.context}</p>${state.showPinyin ? `<p class="telephone-line-pinyin">${item.contextPinyin}</p>` : ""}${state.showEnglish ? `<p class="telephone-line-english">${item.contextEnglish}</p>` : ""}</div></article></div></div></section>`).join("")}
+          ${monthItems.map((item) => `<section class="greetings-exchange school-scene-card"><div class="greetings-exchange-top"><div><p class="body-match-kicker">${item.english}</p></div><button class="small-button is-play-button" type="button" data-month-scene="${item.id}">Play</button></div><div class="school-scene-layout"><img class="school-scene-image" src="${item.imagePath}" alt="${item.english}" /><div class="greetings-line-stack"><article class="greetings-line-card"><div class="telephone-bubble-copy"><p class="telephone-line-hanzi">${item.context}</p>${state.showPinyin ? `<p class="telephone-line-pinyin">${item.contextPinyin}</p>` : ""}${state.showEnglish ? `<p class="telephone-line-english">${item.contextEnglish}</p>` : ""}</div></article></div></div></section>`).join("")}
+        </div>
+      </section>` : "";
+  focusExplorer.innerHTML = `
+    <div class="time-date-board">
+      ${lessonScope ? `<div class="numbers-stage-card">
+        <p class="body-match-kicker">${currentBook().label} Lesson ${currentLesson().lesson}</p>
+        <h4>Dates & Months</h4>
+      </div>` : ""}
+      <section class="school-lesson-section">
+        <div class="time-months-heading"><p class="body-match-kicker">Scenes</p></div>
+        <div class="school-scene-grid date-scene-grid">
+          ${dateItems.map((item) => `<section class="greetings-exchange school-scene-card"><div class="greetings-exchange-top"><div><p class="body-match-kicker">${item.english}</p></div><button class="small-button is-play-button" type="button" data-date-scene="${item.id}">Play</button></div><div class="school-scene-layout"><img class="school-scene-image" src="${item.imagePath}" alt="${item.english}" /><div class="greetings-line-stack"><article class="greetings-line-card"><div class="telephone-bubble-copy"><p class="telephone-line-hanzi">${item.context}</p>${state.showPinyin ? `<p class="telephone-line-pinyin">${item.contextPinyin}</p>` : ""}${state.showEnglish ? `<p class="telephone-line-english">${item.contextEnglish}</p>` : ""}</div></article></div></div></section>`).join("")}
         </div>
       </section>
+      ${monthSection}
       <section class="visual-topic-notes">
         <p class="body-match-kicker">Useful notes</p>
         <div class="visual-topic-note-grid">
-          <article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">今天几月几号？</p>${state.showPinyin ? '<p class="visual-topic-note-pinyin">jīn tiān jǐ yuè jǐ hào?</p>' : ""}${state.showEnglish ? '<p class="visual-topic-note-english">What is the date today?</p>' : ""}<p class="visual-topic-note-example">今天五月二十号。</p>${state.showPinyin ? '<p class="visual-topic-note-pinyin">jīn tiān wǔ yuè èr shí hào.</p>' : ""}${state.showEnglish ? '<p class="visual-topic-note-english">Today is May twentieth.</p>' : ""}</article>
-          <article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">号 / 日</p>${state.showPinyin ? '<p class="visual-topic-note-pinyin">hào / rì</p>' : ""}${state.showEnglish ? '<p class="visual-topic-note-english">two ways to say the day of a date</p>' : ""}<p class="visual-topic-note-example">五月二十号 = 五月二十日。</p>${state.showPinyin ? '<p class="visual-topic-note-pinyin">wǔ yuè èr shí hào = wǔ yuè èr shí rì.</p>' : ""}${state.showEnglish ? '<p class="visual-topic-note-english">Both mean May twentieth.</p>' : ""}</article>
-          <article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">祝你生日快乐！</p>${state.showPinyin ? '<p class="visual-topic-note-pinyin">zhù nǐ shēng rì kuài lè!</p>' : ""}${state.showEnglish ? '<p class="visual-topic-note-english">Wish you a happy birthday!</p>' : ""}</article>
-          <article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">生日会 / 礼物</p>${state.showPinyin ? '<p class="visual-topic-note-pinyin">shēng rì huì / lǐ wù</p>' : ""}${state.showEnglish ? '<p class="visual-topic-note-english">birthday party / present</p>' : ""}<p class="visual-topic-note-example">生日会上有礼物。</p>${state.showPinyin ? '<p class="visual-topic-note-pinyin">shēng rì huì shàng yǒu lǐ wù.</p>' : ""}${state.showEnglish ? '<p class="visual-topic-note-english">There are presents at a birthday party.</p>' : ""}</article>
+          ${visibleNotes.map((note) => `<article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">${note.hanzi}</p>${state.showPinyin ? `<p class="visual-topic-note-pinyin">${note.pinyin}</p>` : ""}${state.showEnglish ? `<p class="visual-topic-note-english">${note.english}</p>` : ""}${note.example ? `<p class="visual-topic-note-example">${note.example}</p>` : ""}${state.showPinyin && note.examplePinyin ? `<p class="visual-topic-note-pinyin">${note.examplePinyin}</p>` : ""}${state.showEnglish && note.exampleEnglish ? `<p class="visual-topic-note-english">${note.exampleEnglish}</p>` : ""}</article>`).join("")}
         </div>
       </section>
     </div>
@@ -750,13 +778,13 @@ function renderDatesExplorer() {
   bindTimeAssetAudio(focusExplorer);
   focusExplorer.querySelectorAll("[data-date-scene]").forEach((button) => {
     button.addEventListener("click", () => {
-      const item = timeDateDateItems.find((entry) => entry.id === button.dataset.dateScene);
+      const item = dateItems.find((entry) => entry.id === button.dataset.dateScene);
       if (item && state.tapAudioEnabled) speak(item.audio, 0.78);
     });
   });
   focusExplorer.querySelectorAll("[data-month-scene]").forEach((button) => {
     button.addEventListener("click", () => {
-      const item = timeDateMonthItems.find((entry) => entry.id === button.dataset.monthScene);
+      const item = monthItems.find((entry) => entry.id === button.dataset.monthScene);
       if (item && state.tapAudioEnabled) speak(item.audio, 0.78);
     });
   });
@@ -1055,15 +1083,19 @@ function renderTimeDateExplorer() {
 }
 
 function renderClothesExplorer() {
+  const scenes = scopedClothesContent(clothesPractice);
+  const words = scopedClothesContent(clothesBookWords);
+  const notes = scopedClothesContent(clothesUsefulNotes);
+  const lessonScope = state.lessonScope;
   focusExplorer.innerHTML = `
     <div class="numbers-board">
-      <div class="numbers-stage-card">
+      ${lessonScope ? `<div class="numbers-stage-card">
         <p class="body-match-kicker">${currentBook().label} Lesson ${currentLesson().lesson}</p>
         <h4>Book theme: getting dressed</h4>
         <p>Learn everyday clothes first, then choose what to wear for the weather.</p>
-      </div>
-      <div class="greetings-practice-grid">
-        ${clothesPractice
+      </div>` : ""}
+      <div class="greetings-practice-grid clothes-scene-grid">
+        ${scenes
           .map(
             (scene) => `
               <section class="greetings-exchange">
@@ -1099,15 +1131,16 @@ function renderClothesExplorer() {
       <section class="school-lesson-section clothes-book-words">
         <div class="time-months-heading"><p class="body-match-kicker">Book words</p></div>
         <div class="time-asset-grid clothes-word-grid">
-          ${clothesBookWords.map((word) => `<button class="time-asset-card book-word-card" type="button" data-clothes-word="${word.id}"><img class="book-word-image" src="${word.imagePath}" alt="${word.english}" /><span class="book-word-copy"><span class="time-asset-hanzi">${word.hanzi}</span>${state.showPinyin ? `<span class="time-asset-pinyin">${word.pinyin}</span>` : ""}${state.showEnglish ? `<span class="time-asset-english">${word.english}</span>` : ""}</span></button>`).join("")}
+          ${words.map((word) => `<button class="time-asset-card book-word-card" type="button" data-clothes-word="${word.id}">${word.imagePath ? `<img class="book-word-image" src="${word.imagePath}" alt="${word.english}" />` : `<span class="book-word-image book-word-image-fallback" aria-hidden="true">${word.hanzi}</span>`}<span class="book-word-copy"><span class="time-asset-hanzi">${word.hanzi}</span>${state.showPinyin ? `<span class="time-asset-pinyin">${word.pinyin}</span>` : ""}${state.showEnglish ? `<span class="time-asset-english">${word.english}</span>` : ""}</span></button>`).join("")}
         </div>
       </section>
+      ${notes.length ? `<section class="visual-topic-notes"><p class="body-match-kicker">Useful notes</p><div class="visual-topic-note-grid">${notes.map((note) => `<article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">${note.hanzi}</p>${state.showPinyin ? `<p class="visual-topic-note-pinyin">${note.pinyin}</p>` : ""}${state.showEnglish ? `<p class="visual-topic-note-english">${note.english}</p>` : ""}<p class="visual-topic-note-example">${note.example}</p>${state.showPinyin ? `<p class="visual-topic-note-pinyin">${note.examplePinyin}</p>` : ""}${state.showEnglish ? `<p class="visual-topic-note-english">${note.exampleEnglish}</p>` : ""}</article>`).join("")}</div></section>` : ""}
     </div>
   `;
 
   focusExplorer.querySelectorAll("[data-clothes-play-scene]").forEach((button) => {
     button.addEventListener("click", () => {
-      const scene = clothesPractice.find((entry) => entry.id === button.dataset.clothesPlayScene);
+      const scene = scenes.find((entry) => entry.id === button.dataset.clothesPlayScene);
       if (scene && state.tapAudioEnabled) {
         speakSceneLines(scene.lines);
       }
@@ -1115,7 +1148,7 @@ function renderClothesExplorer() {
   });
   focusExplorer.querySelectorAll("[data-clothes-word]").forEach((button) => {
     button.addEventListener("click", () => {
-      const word = clothesBookWords.find((entry) => entry.id === button.dataset.clothesWord);
+      const word = words.find((entry) => entry.id === button.dataset.clothesWord);
       if (word && state.tapAudioEnabled) speak(word.audio, 0.78);
     });
   });

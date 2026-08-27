@@ -1,15 +1,21 @@
 export function createTopicDetailRuntime(context) {
-  const { state, books, numberStages, schoolTopicData, topicPageUrl, topicIdFromLocation, lessonScopeFromLocation, viewFromLocation, bookSelect, lessonSelect, topicTitle, topicSummary, topicProgress, topicLessonStrip, subtopicShelf, focusDisplay, focusExplorer, currentTopic, currentNumberStage, focusItemsForTopic, currentFocusItem, currentBook, currentLesson, selectedTopicGroupId, bookCategoryForBook, categoryIdForTopic, narrowTopicBrowserTo, renderTopics, renderBooks, updateTopicPageVisibility, focusLearningPanel, renderFocusControls, renderFocusDisplay, renderFocusExplorer, renderFocusWordList, renderFocusStatus, renderActivityPanel, ensureBodyMatchGame, isFamilySentenceItemId, familyBookWordItems, usesLessonTemplate, syncBookSelectionFromTopic, switchView, updateLearningCultureNav } = context;
+  const { state, books, schoolTopicData, topicPageUrl, topicIdFromLocation, lessonScopeFromLocation, viewFromLocation, bookSelect, lessonSelect, topicTitle, topicSummary, topicProgress, topicLessonStrip, subtopicShelf, focusDisplay, focusExplorer, currentTopic, currentNumberStage, focusItemsForTopic, currentFocusItem, currentBook, currentLesson, selectedTopicGroupId, bookCategoryForBook, categoryIdForTopic, narrowTopicBrowserTo, renderTopics, renderBooks, updateTopicPageVisibility, focusLearningPanel, renderFocusControls, renderFocusDisplay, renderFocusExplorer, renderFocusWordList, renderFocusStatus, renderActivityPanel, ensureBodyMatchGame, isFamilySentenceItemId, familyBookWordItems, usesLessonTemplate, syncBookSelectionFromTopic, switchView, updateLearningCultureNav } = context;
 
 function selectBookLesson(bookId, lessonNumber) {
   const book = books.find((entry) => entry.id === bookId) ?? books[0];
   const lesson = book.lessons.find((entry) => entry.lesson === lessonNumber) ?? book.lessons[0];
+  const lessonUrl = topicPageUrl(window.location, lesson.topicId, { bookId: book.id, lessonNumber: lesson.lesson });
+
+  // Make the URL the source of truth before rendering. This keeps a lesson-card
+  // selection reliable even when this topic is re-rendered by another control.
+  window.history.pushState(null, "", lessonUrl);
 
   state.selectedBookCategoryId = bookCategoryForBook(book.id).id;
   state.selectedBookId = book.id;
   state.selectedLessonNumber = lesson.lesson;
-  state.lessonScope = { bookId: book.id, lessonNumber: lesson.lesson };
   state.selectedTopicId = lesson.topicId;
+  state.lessonScope = lessonScopeFromLocation(window.location, books, lesson.topicId)
+    ?? { bookId: book.id, lessonNumber: lesson.lesson };
   state.expandedCategoryId = categoryIdForTopic(lesson.topicId);
   state.topicPageOpen = true;
   narrowTopicBrowserTo(selectedTopicGroupId());
@@ -17,22 +23,14 @@ function selectBookLesson(bookId, lessonNumber) {
   renderBooks();
   renderTopicDetail();
   updateTopicPageVisibility();
-  window.history.pushState(null, "", topicPageUrl(window.location, lesson.topicId, state.lessonScope));
   focusLearningPanel();
 }
 
-function topicLessonTitle(topic, step) {
-  if (step.cardLabel) {
-    return step.cardLabel;
-  }
-  if (topic.id !== "numbers") {
-    return step.title;
-  }
-
-  const stage = numberStages.find(
-    (entry) => entry.bookId === step.book.toLowerCase() && entry.lesson === step.lesson
-  );
-  return stage?.title ?? step.title;
+function topicLessonTitle(step) {
+  const lesson = books
+    .find((book) => book.id === step.book.toLowerCase())
+    ?.lessons.find((entry) => entry.lesson === step.lesson);
+  return [lesson?.displayTitle?.zh, lesson?.displayTitle?.en].filter(Boolean).join(" · ") || step.title;
 }
 
 function renderTopicLessonStrip(topic) {
@@ -61,28 +59,13 @@ function renderTopicLessonStrip(topic) {
       const bookId = step.book.toLowerCase();
       const isActive = state.lessonScope?.bookId === bookId && state.lessonScope.lessonNumber === step.lesson;
       return `
-        <button class="topic-lesson-card${isActive ? " is-active" : ""}" type="button" data-topic-lesson-source="${bookId}:${step.lesson}" aria-label="Show only Book ${step.book} Lesson ${step.lesson}: ${topicLessonTitle(topic, step)}">
+        <button class="topic-lesson-card${isActive ? " is-active" : ""}" type="button" data-topic-lesson-source="${bookId}:${step.lesson}" aria-label="Show only Book ${step.book} Lesson ${step.lesson}: ${topicLessonTitle(step)}">
           <span class="topic-lesson-meta">Book ${step.book} Lesson ${step.lesson}</span>
-          <strong>${topicLessonTitle(topic, step)}</strong>
+          <strong>${topicLessonTitle(step)}</strong>
         </button>
       `;
     })
     .join("");
-
-  topicLessonStrip.querySelectorAll("[data-topic-lesson-source]").forEach((button) => {
-    button.addEventListener("click", () => {
-      const [bookId, lessonText] = button.dataset.topicLessonSource.split(":");
-      selectBookLesson(bookId, Number(lessonText));
-    });
-  });
-  topicLessonStrip.querySelector("[data-topic-all-content]")?.addEventListener("click", () => {
-    state.lessonScope = null;
-    syncBookSelectionFromTopic();
-    renderTopics();
-    renderBooks();
-    renderTopicDetail();
-    window.history.pushState(null, "", topicPageUrl(window.location, topic.id));
-  });
 }
 
 function linkInlineBookLessonBadges() {
@@ -124,6 +107,18 @@ function renderSubtopicShelf() {
 }
 
 function renderTopicDetail() {
+  // A scoped topic URL is the authoritative navigation state. Reapply it here
+  // because this renderer can run after either topic or book navigation has
+  // refreshed the shared controls.
+  const scopedBook = state.lessonScope
+    ? books.find((book) => book.id === state.lessonScope.bookId)
+    : null;
+  if (scopedBook) {
+    state.selectedBookId = scopedBook.id;
+    state.selectedBookCategoryId = bookCategoryForBook(scopedBook.id).id;
+    state.selectedLessonNumber = state.lessonScope.lessonNumber;
+  }
+
   const topic = currentTopic();
   const items = focusItemsForTopic(topic);
 
@@ -190,6 +185,24 @@ function renderTopicDetail() {
 }
 
 function bindTopicDetailEvents() {
+topicLessonStrip.addEventListener("click", (event) => {
+  const lessonCard = event.target.closest("[data-topic-lesson-source]");
+  if (lessonCard) {
+    const [bookId, lessonText] = lessonCard.dataset.topicLessonSource.split(":");
+    selectBookLesson(bookId, Number(lessonText));
+    return;
+  }
+
+  if (event.target.closest("[data-topic-all-content]")) {
+    state.lessonScope = null;
+    syncBookSelectionFromTopic();
+    renderTopics();
+    renderBooks();
+    renderTopicDetail();
+    window.history.pushState(null, "", topicPageUrl(window.location, currentTopic().id));
+  }
+});
+
 bookSelect.addEventListener("change", () => {
   const book = books.find((entry) => entry.id === bookSelect.value) ?? currentBook();
   selectBookLesson(book.id, book.lessons[0].lesson);
@@ -215,6 +228,7 @@ window.addEventListener("popstate", () => {
     state.lessonScope = scope;
     if (scope) {
       state.selectedBookId = scope.bookId;
+      state.selectedBookCategoryId = bookCategoryForBook(scope.bookId).id;
       state.selectedLessonNumber = scope.lessonNumber;
     } else {
       syncBookSelectionFromTopic();

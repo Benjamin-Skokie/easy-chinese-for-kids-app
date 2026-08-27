@@ -14,15 +14,15 @@ export const ageTopic = {
       audio: "我五岁"
     },
     focusItems: [
-      { id: "ask-age", hanzi: "你几岁？", pinyin: "nǐ jǐ suì?", english: "How old are you?", audio: "你几岁" },
-      { id: "age-five", hanzi: "我五岁。", pinyin: "wǒ wǔ suì.", english: "I am five years old.", audio: "我五岁" },
-      { id: "age-six", hanzi: "我六岁。", pinyin: "wǒ liù suì.", english: "I am six years old.", audio: "我六岁" },
-      { id: "age-seven", hanzi: "我七岁。", pinyin: "wǒ qī suì.", english: "I am seven years old.", audio: "我七岁" },
+      { id: "ask-age", hanzi: "你几岁？", pinyin: "nǐ jǐ suì?", english: "How old are you?", audio: "你几岁", lessonSources: ["1a:7", "3a:3"] },
+      { id: "age-five", hanzi: "我五岁。", pinyin: "wǒ wǔ suì.", english: "I am five years old.", audio: "我五岁", lessonSources: ["1a:7"] },
+      { id: "age-six", hanzi: "我六岁。", pinyin: "wǒ liù suì.", english: "I am six years old.", audio: "我六岁", lessonSources: ["1a:7"] },
+      { id: "age-seven", hanzi: "我七岁。", pinyin: "wǒ qī suì.", english: "I am seven years old.", audio: "我七岁", lessonSources: ["3a:3"] },
       { id: "ask-grade", hanzi: "你上几年级？", pinyin: "nǐ shàng jǐ nián jí?", english: "What grade are you in?", audio: "你上几年级" },
       { id: "grade-one", hanzi: "我上一年级。", pinyin: "wǒ shàng yì nián jí.", english: "I am in first grade.", audio: "我上一年级" },
-      { id: "me-age-word", hanzi: "我", pinyin: "wǒ", english: "I; me", audio: "我" },
-      { id: "how-many-age-word", hanzi: "几", pinyin: "jǐ", english: "how many", audio: "几" },
-      { id: "age-word", hanzi: "岁", pinyin: "suì", english: "years old", audio: "岁" },
+      { id: "me-age-word", hanzi: "我", pinyin: "wǒ", english: "I; me", audio: "我", lessonSources: ["1a:7", "3a:3"] },
+      { id: "how-many-age-word", hanzi: "几", pinyin: "jǐ", english: "how many", audio: "几", lessonSources: ["1a:7", "3a:3"] },
+      { id: "age-word", hanzi: "岁", pinyin: "suì", english: "years old", audio: "岁", lessonSources: ["1a:7", "3a:3"] },
       { id: "attend-word", hanzi: "上", pinyin: "shàng", english: "to attend; to be in", audio: "上" },
       { id: "grade-word", hanzi: "年级", pinyin: "nián jí", english: "grade; school year", audio: "年级" }
     ],
@@ -40,6 +40,7 @@ export const ageTopic = {
 export const agePractice = [
   {
     id: "age-scene-2",
+    lessonSources: ["1a:7"],
     title: "Age and grade",
     imagePath: "assets/age/age-scene-2.webp",
     imageAlt: "Lele and Noah inside a classroom asking age first and then what grade someone is in",
@@ -52,6 +53,7 @@ export const agePractice = [
   },
   {
     id: "age-scene-3",
+    lessonSources: ["3a:3"],
     title: "Birthday age",
     imagePath: "assets/age/age-scene-3.webp",
     imageAlt: "Sisi at a birthday party with seven candles on a cake and friends around the table",
@@ -70,6 +72,7 @@ export const ageBuildPhrases = [
     prompt: "Build: How old are you?",
     english: "How old are you?",
     audio: "你几岁",
+    lessonSources: ["1a:7", "3a:3"],
     tokens: ["你", "几", "岁"]
   },
   {
@@ -79,6 +82,7 @@ export const ageBuildPhrases = [
     prompt: "Build: I am five years old.",
     english: "I am five years old.",
     audio: "我五岁",
+    lessonSources: ["1a:7"],
     tokens: ["我", "五", "岁"]
   },
   {
@@ -88,6 +92,7 @@ export const ageBuildPhrases = [
     prompt: "Build: I am six years old.",
     english: "I am six years old.",
     audio: "我六岁",
+    lessonSources: ["1a:7"],
     tokens: ["我", "六", "岁"]
   },
   {
@@ -97,6 +102,7 @@ export const ageBuildPhrases = [
     prompt: "Build: I am seven years old.",
     english: "I am seven years old.",
     audio: "我七岁",
+    lessonSources: ["3a:3"],
     tokens: ["我", "七", "岁"]
   },
   {

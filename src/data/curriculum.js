@@ -3,104 +3,104 @@ export const books = [
     id: "1a",
     label: "Book 1A",
     lessons: [
-      { lesson: 1, title: "Numbers (1)", topicId: "numbers" },
-      { lesson: 2, title: "Numbers (2)", topicId: "numbers" },
-      { lesson: 3, title: "Numbers (3)", topicId: "numbers" },
-      { lesson: 4, title: "Hello!", topicId: "greetings" },
-      { lesson: 5, title: "Thank you!", topicId: "polite-words" },
-      { lesson: 6, title: "What's your name?", topicId: "introductions" },
-      { lesson: 7, title: "I'm 5 years old", topicId: "age" }
+      { lesson: 1, title: "Numbers (1)", topicId: "numbers", displayTitle: { zh: "数字 1–5", en: "Numbers 1–5" } },
+      { lesson: 2, title: "Numbers (2)", topicId: "numbers", displayTitle: { zh: "数字 6–10", en: "Numbers 6–10" } },
+      { lesson: 3, title: "Numbers (3)", topicId: "numbers", displayTitle: { zh: "数字 11–20", en: "Numbers 11–20" } },
+      { lesson: 4, title: "Hello!", topicId: "greetings", displayTitle: { zh: "你好", en: "Hello" } },
+      { lesson: 5, title: "Thank you!", topicId: "polite-words", displayTitle: { zh: "谢谢", en: "Thank You" } },
+      { lesson: 6, title: "What's your name?", topicId: "introductions", displayTitle: { zh: "你叫什么名字？", en: "What's Your Name?" } },
+      { lesson: 7, title: "I'm 5 years old", topicId: "age", displayTitle: { zh: "我五岁", en: "I'm Five Years Old" } }
     ]
   },
   {
     id: "1b",
     label: "Book 1B",
     lessons: [
-      { lesson: 1, title: "Mum and dad", topicId: "family" },
-      { lesson: 2, title: "Brothers and sisters", topicId: "family" },
-      { lesson: 3, title: "Parts of the body (1)", topicId: "body" },
-      { lesson: 4, title: "Parts of the body (2)", topicId: "body" },
-      { lesson: 5, title: "Pets", topicId: "pets" },
-      { lesson: 6, title: "Colours", topicId: "colours" },
-      { lesson: 7, title: "Fruit", topicId: "food" }
+      { lesson: 1, title: "Mum and dad", topicId: "family", displayTitle: { zh: "爸爸妈妈", en: "Mom and Dad" } },
+      { lesson: 2, title: "Brothers and sisters", topicId: "family", displayTitle: { zh: "兄弟姐妹", en: "Brothers and Sisters" } },
+      { lesson: 3, title: "Parts of the body (1)", topicId: "body", displayTitle: { zh: "身体部位", en: "Body Parts" } },
+      { lesson: 4, title: "Parts of the body (2)", topicId: "body", displayTitle: { zh: "更多身体部位", en: "More Body Parts" } },
+      { lesson: 5, title: "Pets", topicId: "pets", displayTitle: { zh: "宠物", en: "Pets" } },
+      { lesson: 6, title: "Colours", topicId: "colours", displayTitle: { zh: "颜色", en: "Colours" } },
+      { lesson: 7, title: "Fruit", topicId: "food", displayTitle: { zh: "水果", en: "Fruit" } }
     ]
   },
   {
     id: "2a",
     label: "Book 2A",
     lessons: [
-      { lesson: 1, title: "Numbers", topicId: "numbers" },
-      { lesson: 2, title: "Two younger brothers", topicId: "family" },
-      { lesson: 3, title: "Good friends", topicId: "introductions" },
-      { lesson: 4, title: "My toys", topicId: "toys" },
-      { lesson: 5, title: "I love reading", topicId: "hobbies" },
-      { lesson: 6, title: "I can dress myself", topicId: "clothes" },
-      { lesson: 7, title: "Colours", topicId: "colours" }
+      { lesson: 1, title: "Numbers", topicId: "numbers", displayTitle: { zh: "数字 21–40", en: "Numbers 21–40" } },
+      { lesson: 2, title: "Two younger brothers", topicId: "family", displayTitle: { zh: "两个弟弟", en: "Two Younger Brothers" } },
+      { lesson: 3, title: "Good friends", topicId: "introductions", displayTitle: { zh: "好朋友", en: "Good Friends" } },
+      { lesson: 4, title: "My toys", topicId: "toys", displayTitle: { zh: "我的玩具", en: "My Toys" } },
+      { lesson: 5, title: "I love reading", topicId: "hobbies", displayTitle: { zh: "我爱看书", en: "I Love Reading" } },
+      { lesson: 6, title: "I can dress myself", topicId: "clothes", displayTitle: { zh: "我会穿衣服", en: "I Can Dress Myself" } },
+      { lesson: 7, title: "Colours", topicId: "colours", displayTitle: { zh: "颜色", en: "Colours" } }
     ]
   },
   {
     id: "2b",
     label: "Book 2B",
     lessons: [
-      { lesson: 1, title: "Today is Monday", topicId: "weekdays" },
-      { lesson: 2, title: "What time is it?", topicId: "time-date" },
-      { lesson: 3, title: "Stationery", topicId: "stationery" },
-      { lesson: 4, title: "My classroom", topicId: "classroom" },
-      { lesson: 5, title: "Animals", topicId: "animals" },
-      { lesson: 6, title: "Big or small", topicId: "comparisons" },
-      { lesson: 7, title: "Snacks", topicId: "food" }
+      { lesson: 1, title: "Today is Monday", topicId: "weekdays", displayTitle: { zh: "今天星期一", en: "Today Is Monday" } },
+      { lesson: 2, title: "What time is it?", topicId: "time-date", displayTitle: { zh: "几点了？", en: "What Time Is It?" } },
+      { lesson: 3, title: "Stationery", topicId: "stationery", displayTitle: { zh: "文具", en: "Stationery" } },
+      { lesson: 4, title: "My classroom", topicId: "classroom", displayTitle: { zh: "我的教室", en: "My Classroom" } },
+      { lesson: 5, title: "Animals", topicId: "animals", displayTitle: { zh: "动物", en: "Animals" } },
+      { lesson: 6, title: "Big or small", topicId: "comparisons", displayTitle: { zh: "大还是小？", en: "Big or Small?" } },
+      { lesson: 7, title: "Snacks", topicId: "food", displayTitle: { zh: "零食", en: "Snacks" } }
     ]
   },
   {
     id: "3a",
     label: "Book 3A",
     lessons: [
-      { lesson: 1, title: "Numbers", topicId: "numbers" },
-      { lesson: 2, title: "Date", topicId: "dates" },
-      { lesson: 3, title: "Happy birthday!", topicId: "dates" },
-      { lesson: 4, title: "Family", topicId: "family" },
-      { lesson: 5, title: "Nationality", topicId: "identity" },
-      { lesson: 6, title: "Request", topicId: "requests-permission" },
-      { lesson: 7, title: "Clothes", topicId: "clothes" }
+      { lesson: 1, title: "Numbers", topicId: "numbers", displayTitle: { zh: "数字 41–100", en: "Numbers 41–100" } },
+      { lesson: 2, title: "Date", topicId: "dates", displayTitle: { zh: "日期", en: "Date" } },
+      { lesson: 3, title: "Happy birthday!", topicId: "dates", displayTitle: { zh: "生日快乐", en: "Happy Birthday!" } },
+      { lesson: 4, title: "Family", topicId: "family", displayTitle: { zh: "我的家人", en: "My Family" } },
+      { lesson: 5, title: "Nationality", topicId: "identity", displayTitle: { zh: "你是哪国人？", en: "What Nationality Are You?" } },
+      { lesson: 6, title: "Request", topicId: "requests-permission", displayTitle: { zh: "我可以……吗？", en: "May I…?" } },
+      { lesson: 7, title: "Clothes", topicId: "clothes", displayTitle: { zh: "衣服", en: "Clothes" } }
     ]
   },
   {
     id: "3b",
     label: "Book 3B",
     lessons: [
-      { lesson: 1, title: "My schoolbag", topicId: "school-supplies" },
-      { lesson: 2, title: "Our classroom", topicId: "classroom" },
-      { lesson: 3, title: "Positions", topicId: "positions" },
-      { lesson: 4, title: "Hobbies", topicId: "hobbies-3b" },
-      { lesson: 5, title: "Food and drink", topicId: "food-preferences" },
-      { lesson: 6, title: "Vegetables", topicId: "food" },
-      { lesson: 7, title: "Nature", topicId: "nature" }
+      { lesson: 1, title: "My schoolbag", topicId: "school-supplies", displayTitle: { zh: "我的书包", en: "My Schoolbag" } },
+      { lesson: 2, title: "Our classroom", topicId: "classroom", displayTitle: { zh: "我们的教室", en: "Our Classroom" } },
+      { lesson: 3, title: "Positions", topicId: "positions", displayTitle: { zh: "上下左右", en: "Positions" } },
+      { lesson: 4, title: "Hobbies", topicId: "hobbies-3b", displayTitle: { zh: "爱好", en: "Hobbies" } },
+      { lesson: 5, title: "Food and drink", topicId: "food-preferences", displayTitle: { zh: "食物和饮料", en: "Food and Drink" } },
+      { lesson: 6, title: "Vegetables", topicId: "food", displayTitle: { zh: "蔬菜", en: "Vegetables" } },
+      { lesson: 7, title: "Nature", topicId: "nature", displayTitle: { zh: "大自然", en: "Nature" } }
     ]
   },
   {
     id: "4a",
     label: "Book 4A",
     lessons: [
-      { lesson: 1, title: "Telephone numbers", topicId: "telephone-numbers" },
-      { lesson: 2, title: "Languages", topicId: "languages" },
-      { lesson: 3, title: "Tell the time", topicId: "time-date" },
-      { lesson: 4, title: "Daily routine", topicId: "time-date" },
-      { lesson: 5, title: "My lunch", topicId: "meals-feelings" },
-      { lesson: 6, title: "Means of transport", topicId: "transport" },
-      { lesson: 7, title: "I'm hungry", topicId: "meals-feelings" }
+      { lesson: 1, title: "Telephone numbers", topicId: "telephone-numbers", displayTitle: { zh: "电话号码", en: "Telephone Numbers" } },
+      { lesson: 2, title: "Languages", topicId: "languages", displayTitle: { zh: "语言", en: "Languages" } },
+      { lesson: 3, title: "Tell the time", topicId: "time-date", displayTitle: { zh: "说时间", en: "Tell the Time" } },
+      { lesson: 4, title: "Daily routine", topicId: "time-date", displayTitle: { zh: "日常作息", en: "Daily Routine" } },
+      { lesson: 5, title: "My lunch", topicId: "meals-feelings", displayTitle: { zh: "我的午饭", en: "My Lunch" } },
+      { lesson: 6, title: "Means of transport", topicId: "transport", displayTitle: { zh: "交通方式", en: "Means of Transport" } },
+      { lesson: 7, title: "I'm hungry", topicId: "meals-feelings", displayTitle: { zh: "我饿了", en: "I'm Hungry" } }
     ]
   },
   {
     id: "4b",
     label: "Book 4B",
     lessons: [
-      { lesson: 1, title: "It's raining", topicId: "weather" },
-      { lesson: 2, title: "Clothes", topicId: "clothes" },
-      { lesson: 3, title: "My room", topicId: "daily-life" },
-      { lesson: 4, title: "Hobbies", topicId: "hobbies-at-home" },
-      { lesson: 5, title: "Our school", topicId: "school" },
-      { lesson: 6, title: "School subjects", topicId: "school-subjects" },
-      { lesson: 7, title: "Leisure time", topicId: "hobbies-leisure" }
+      { lesson: 1, title: "It's raining", topicId: "weather", displayTitle: { zh: "下雨了", en: "It's Raining" } },
+      { lesson: 2, title: "Clothes", topicId: "clothes", displayTitle: { zh: "衣服", en: "Clothes" } },
+      { lesson: 3, title: "My room", topicId: "daily-life", displayTitle: { zh: "我的房间", en: "My Room" } },
+      { lesson: 4, title: "Hobbies", topicId: "hobbies-at-home", displayTitle: { zh: "爱好", en: "Hobbies" } },
+      { lesson: 5, title: "Our school", topicId: "school", displayTitle: { zh: "我们的学校", en: "Our School" } },
+      { lesson: 6, title: "School subjects", topicId: "school-subjects", displayTitle: { zh: "学校科目", en: "School Subjects" } },
+      { lesson: 7, title: "Leisure time", topicId: "hobbies-leisure", displayTitle: { zh: "休闲时光", en: "Leisure Time" } }
     ]
   }
 ];

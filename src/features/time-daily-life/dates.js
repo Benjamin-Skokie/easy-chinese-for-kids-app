@@ -1,9 +1,9 @@
 export const timeDateDateItems = [
-  { id: "date-board", hanzi: "几月几号？", pinyin: "jǐ yuè jǐ hào?", english: "What month and day?", context: "看日历，可以知道几月几号。", contextPinyin: "kàn rì lì, kě yǐ zhī dào jǐ yuè jǐ hào.", contextEnglish: "Look at a calendar to find the month and day.", audio: "几月几号", imagePath: "assets/illustrated-dates/calendar-example-dates-board.webp" },
-  { id: "new-year", hanzi: "一月一号", pinyin: "yī yuè yī hào", english: "January first", context: "一月一号是新年。", contextPinyin: "yī yuè yī hào shì xīn nián.", contextEnglish: "January first is New Year's Day.", audio: "一月一号是新年", imagePath: "assets/illustrated-dates/january-first-new-year-calendar.webp" },
-  { id: "field-trip", hanzi: "五月二十号", pinyin: "wǔ yuè èr shí hào", english: "May twentieth", context: "五月二十号，我们去春游。", contextPinyin: "wǔ yuè èr shí hào, wǒ men qù chūn yóu.", contextEnglish: "On May twentieth, we go on a spring outing.", audio: "五月二十号我们去春游", imagePath: "assets/illustrated-dates/may-twentieth-field-trip-calendar.webp" },
-  { id: "christmas", hanzi: "十二月二十五号", pinyin: "shí èr yuè èr shí wǔ hào", english: "December twenty-fifth", context: "十二月二十五号是圣诞节。", contextPinyin: "shí èr yuè èr shí wǔ hào shì shèng dàn jié.", contextEnglish: "December twenty-fifth is Christmas.", audio: "十二月二十五号是圣诞节", imagePath: "assets/illustrated-dates/december-twenty-fifth-christmas-calendar.webp" },
-  { id: "birthday", hanzi: "生日快乐！", pinyin: "shēng rì kuài lè!", english: "Happy birthday!", context: "今天是我的生日。生日快乐！", contextPinyin: "jīn tiān shì wǒ de shēng rì. shēng rì kuài lè!", contextEnglish: "Today is my birthday. Happy birthday!", audio: "今天是我的生日生日快乐", imagePath: "assets/illustrated-dates/birthday-party-scene.webp" }
+  { id: "date-board", hanzi: "几月几号？", pinyin: "jǐ yuè jǐ hào?", english: "What month and day?", context: "看日历，可以知道几月几号。", contextPinyin: "kàn rì lì, kě yǐ zhī dào jǐ yuè jǐ hào.", contextEnglish: "Look at a calendar to find the month and day.", audio: "几月几号", imagePath: "assets/illustrated-dates/calendar-example-dates-board.webp", lessonSources: ["3a:2"] },
+  { id: "new-year", hanzi: "一月一号", pinyin: "yī yuè yī hào", english: "January first", context: "一月一号是新年。", contextPinyin: "yī yuè yī hào shì xīn nián.", contextEnglish: "January first is New Year's Day.", audio: "一月一号是新年", imagePath: "assets/illustrated-dates/january-first-new-year-calendar.webp", lessonSources: ["3a:2"] },
+  { id: "field-trip", hanzi: "五月二十号", pinyin: "wǔ yuè èr shí hào", english: "May twentieth", context: "五月二十号，我们去春游。", contextPinyin: "wǔ yuè èr shí hào, wǒ men qù chūn yóu.", contextEnglish: "On May twentieth, we go on a spring outing.", audio: "五月二十号我们去春游", imagePath: "assets/illustrated-dates/may-twentieth-field-trip-calendar.webp", lessonSources: ["3a:2"] },
+  { id: "christmas", hanzi: "十二月二十五号", pinyin: "shí èr yuè èr shí wǔ hào", english: "December twenty-fifth", context: "十二月二十五号是圣诞节。", contextPinyin: "shí èr yuè èr shí wǔ hào shì shèng dàn jié.", contextEnglish: "December twenty-fifth is Christmas.", audio: "十二月二十五号是圣诞节", imagePath: "assets/illustrated-dates/december-twenty-fifth-christmas-calendar.webp", lessonSources: ["3a:2"] },
+  { id: "birthday", hanzi: "生日快乐！", pinyin: "shēng rì kuài lè!", english: "Happy birthday!", context: "今天是我的生日。生日快乐！", contextPinyin: "jīn tiān shì wǒ de shēng rì. shēng rì kuài lè!", contextEnglish: "Today is my birthday. Happy birthday!", audio: "今天是我的生日生日快乐", imagePath: "assets/illustrated-dates/birthday-party-scene.webp", lessonSources: ["3a:3"] }
 ];
 
 export const timeDateMonthItems = [
@@ -19,13 +19,21 @@ export const timeDateMonthItems = [
   ["October", "十月", "shí yuè", "十月，树叶变红了。", "shí yuè, shù yè biàn hóng le.", "In October, leaves turn red."],
   ["November", "十一月", "shí yī yuè", "十一月，感恩节。", "shí yī yuè, Gǎn ēn Jié.", "Thanksgiving is in November."],
   ["December", "十二月", "shí èr yuè", "十二月，去滑雪。", "shí èr yuè, qù huá xuě.", "In December, go skiing."]
-].map(([english, hanzi, pinyin, context, contextPinyin, contextEnglish]) => ({ id: english.toLowerCase(), hanzi, pinyin, english, context, contextPinyin, contextEnglish, hideLabelHanzi: true, hideLabelDetails: true, audio: context, imagePath: `assets/illustrated-months-of-year/${english}.webp` }));
+].map(([english, hanzi, pinyin, context, contextPinyin, contextEnglish]) => ({ id: english.toLowerCase(), hanzi, pinyin, english, context, contextPinyin, contextEnglish, hideLabelHanzi: true, hideLabelDetails: true, audio: context, imagePath: `assets/illustrated-months-of-year/${english}.webp`, lessonSources: ["3a:2"] }));
 
 export const datePracticeItems = [
-  { id: "date-new-year", hanzi: "一月一号", pinyin: "yī yuè yī hào", english: "January first", audio: "一月一号是新年", eventHanzi: "新年", eventPinyin: "xīn nián", eventEnglish: "New Year" },
-  { id: "date-chinese-new-year", hanzi: "二月", pinyin: "èr yuè", english: "February", audio: "二月中国新年", eventHanzi: "中国新年", eventPinyin: "Zhōng guó xīn nián", eventEnglish: "Chinese New Year" },
-  { id: "date-field-trip", hanzi: "五月二十号", pinyin: "wǔ yuè èr shí hào", english: "May twentieth", audio: "五月二十号我们去春游", eventHanzi: "春游", eventPinyin: "chūn yóu", eventEnglish: "Field trip" },
-  { id: "date-christmas", hanzi: "十二月二十五号", pinyin: "shí èr yuè èr shí wǔ hào", english: "December twenty-fifth", audio: "十二月二十五号是圣诞节", eventHanzi: "圣诞节", eventPinyin: "Shèng dàn Jié", eventEnglish: "Christmas" },
-  { id: "birthday-wish", hanzi: "祝你生日快乐！", pinyin: "zhù nǐ shēng rì kuài lè!", english: "Happy birthday!", audio: "祝你生日快乐" },
-  { id: "birthday-party", hanzi: "生日会上有礼物。", pinyin: "shēng rì huì shàng yǒu lǐ wù.", english: "There are presents at a birthday party.", audio: "生日会上有礼物" }
+  { id: "date-new-year", hanzi: "一月一号", pinyin: "yī yuè yī hào", english: "January first", audio: "一月一号是新年", eventHanzi: "新年", eventPinyin: "xīn nián", eventEnglish: "New Year", lessonSources: ["3a:2"] },
+  { id: "date-chinese-new-year", hanzi: "二月", pinyin: "èr yuè", english: "February", audio: "二月中国新年", eventHanzi: "中国新年", eventPinyin: "Zhōng guó xīn nián", eventEnglish: "Chinese New Year", lessonSources: ["3a:2"] },
+  { id: "date-field-trip", hanzi: "五月二十号", pinyin: "wǔ yuè èr shí hào", english: "May twentieth", audio: "五月二十号我们去春游", eventHanzi: "春游", eventPinyin: "chūn yóu", eventEnglish: "Field trip", lessonSources: ["3a:2"] },
+  { id: "date-christmas", hanzi: "十二月二十五号", pinyin: "shí èr yuè èr shí wǔ hào", english: "December twenty-fifth", audio: "十二月二十五号是圣诞节", eventHanzi: "圣诞节", eventPinyin: "Shèng dàn Jié", eventEnglish: "Christmas", lessonSources: ["3a:2"] },
+  { id: "birthday-wish", hanzi: "祝你生日快乐！", pinyin: "zhù nǐ shēng rì kuài lè!", english: "Happy birthday!", audio: "祝你生日快乐", lessonSources: ["3a:3"] },
+  { id: "birthday-party", hanzi: "生日会上有礼物。", pinyin: "shēng rì huì shàng yǒu lǐ wù.", english: "There are presents at a birthday party.", audio: "生日会上有礼物", lessonSources: ["3a:3"] }
+];
+
+// Book 3A, Lesson 3, page 33. Keep the dialogue together so practice mirrors
+// the birthday conversation in the book, rather than treating it as date vocabulary.
+export const birthdayConversationLines = [
+  { id: "birthday-date", hanzi: "今天三月五号。", pinyin: "jīn tiān sān yuè wǔ hào.", english: "Today is March fifth.", audio: "今天三月五号" },
+  { id: "birthday-announcement", hanzi: "今天是我的生日。", pinyin: "jīn tiān shì wǒ de shēng rì.", english: "Today is my birthday.", audio: "今天是我的生日" },
+  { id: "birthday-wish", hanzi: "祝你生日快乐！", pinyin: "zhù nǐ shēng rì kuài lè!", english: "Happy birthday!", audio: "祝你生日快乐" }
 ];

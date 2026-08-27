@@ -25,6 +25,8 @@ export const timeAdvancedBookWords = [
 
 export const timeRoutineBookWords = [
   { id: "wake-up", hanzi: "起床", pinyin: "qǐ chuáng", english: "get up", audio: "起床" },
+  { id: "comb-hair", hanzi: "梳头", pinyin: "shū tóu", english: "comb your hair", audio: "梳头" },
+  { id: "brush-teeth", hanzi: "刷牙", pinyin: "shuā yá", english: "brush your teeth", audio: "刷牙" },
   { id: "breakfast", hanzi: "吃早饭", pinyin: "chī zǎo fàn", english: "have breakfast", audio: "吃早饭" },
   { id: "go-to-school", hanzi: "去学校", pinyin: "qù xué xiào", english: "go to school", audio: "去学校" },
   { id: "school-ends", hanzi: "放学", pinyin: "fàng xué", english: "school ends", audio: "放学" },

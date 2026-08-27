@@ -5,8 +5,17 @@ export function createIntroductionsController({
 }) {
   const { focusExplorer, focusStatus } = elements;
 
+  function lessonKey() {
+    return state.lessonScope ? `${state.lessonScope.bookId}:${state.lessonScope.lessonNumber}` : "";
+  }
+
+  function scoped(items) {
+    const source = lessonKey();
+    return source ? items.filter((item) => item.lessonSources?.includes(source)) : items;
+  }
+
   function introductionsPromptById(promptId) {
-    return introductionsGamePrompts.find((entry) => entry.id === promptId) ?? null;
+    return scoped(introductionsGamePrompts).find((entry) => entry.id === promptId) ?? null;
   }
 
   function introductionsGameKids() {
@@ -20,8 +29,9 @@ export function createIntroductionsController({
   }
 
   function resetIntroductionsChallenge(options = {}) {
-    if (!introductionsGamePrompts.length || !introductionsGameSpeakerIds.length) return;
-    const promptId = nextRandomCycleId(state, "introductions-listen", introductionsGamePrompts.map((entry) => entry.id));
+    const prompts = scoped(introductionsGamePrompts);
+    if (!prompts.length || !introductionsGameSpeakerIds.length) return;
+    const promptId = nextRandomCycleId(state, "introductions-listen", prompts.map((entry) => entry.id));
     const prompt = introductionsPromptById(promptId);
     if (!prompt) return;
     state.introductionsChallengeAnswerId = prompt.speakerId;
@@ -69,12 +79,14 @@ export function createIntroductionsController({
   }
 
   function introductionsBuildTarget() {
-    return introductionsBuildPhrases.find((entry) => entry.id === state.introductionsBuildTargetId) ?? introductionsBuildPhrases[0];
+    const phrases = scoped(introductionsBuildPhrases);
+    return phrases.find((entry) => entry.id === state.introductionsBuildTargetId) ?? phrases[0];
   }
 
   function resetIntroductionsBuilder(options = {}) {
-    const targetId = nextRandomCycleId(state, "introductions-build", introductionsBuildPhrases.map((entry) => entry.id));
-    const target = introductionsBuildPhrases.find((entry) => entry.id === targetId);
+    const phrases = scoped(introductionsBuildPhrases);
+    const targetId = nextRandomCycleId(state, "introductions-build", phrases.map((entry) => entry.id));
+    const target = phrases.find((entry) => entry.id === targetId);
     if (!target) return;
     state.introductionsBuildTargetId = target.id;
     state.introductionsBuildAvailableTokens = shuffleArray(target.tokens);
@@ -123,10 +135,11 @@ export function createIntroductionsController({
   }
 
   function renderIntroductionsExplorer() {
-    focusExplorer.innerHTML = `<div class="numbers-board"><div class="numbers-stage-card"><p class="body-match-kicker">${currentBook().label} Lesson ${currentLesson().lesson}</p><h4>Book theme: names and good friends</h4><p>Say hello, ask a name, answer with 我叫…, then introduce a friend with 他是我的好朋友。</p></div><div class="greetings-practice-grid introductions-explorer-grid">${introductionsPractice.map((exchange) => `<section class="greetings-exchange"><div class="greetings-exchange-top"><div><p class="body-match-kicker">${exchange.title}</p></div><button class="small-button is-play-button" type="button" data-intro-play-all="${exchange.id}">Play</button></div><div class="greetings-scene-layout introductions-scene-layout"><div class="greetings-scene-visual"><img class="greetings-scene-image" src="${exchange.imagePath}" alt="${exchange.imageAlt}" /></div><div class="greetings-line-stack">${exchange.lines.map((line) => `<article class="greetings-line-card intro-line-card"><div class="telephone-bubble-copy"><p class="telephone-line-hanzi">${line.hanzi}</p>${state.showPinyin ? `<p class="telephone-line-pinyin">${line.pinyin}</p>` : ""}${state.showEnglish ? `<p class="telephone-line-english">${line.english}</p>` : ""}</div></article>`).join("")}</div></div></section>`).join("")}</div></div>`;
+    const scenes = scoped(introductionsPractice);
+    focusExplorer.innerHTML = `<div class="numbers-board"><div class="greetings-practice-grid introductions-explorer-grid">${scenes.map((exchange) => `<section class="greetings-exchange"><div class="greetings-exchange-top"><div><p class="body-match-kicker">${exchange.title}</p></div><button class="small-button is-play-button" type="button" data-intro-play-all="${exchange.id}">Play</button></div><div class="greetings-scene-layout introductions-scene-layout"><div class="greetings-scene-visual"><img class="greetings-scene-image" src="${exchange.imagePath}" alt="${exchange.imageAlt}" /></div><div class="greetings-line-stack">${exchange.lines.map((line) => `<article class="greetings-line-card intro-line-card"><div class="telephone-bubble-copy"><p class="telephone-line-hanzi">${line.hanzi}</p>${state.showPinyin ? `<p class="telephone-line-pinyin">${line.pinyin}</p>` : ""}${state.showEnglish ? `<p class="telephone-line-english">${line.english}</p>` : ""}</div></article>`).join("")}</div></div></section>`).join("")}</div></div>`;
     focusExplorer.querySelectorAll("[data-intro-play-all]").forEach((button) => {
       button.addEventListener("click", () => {
-        const exchange = introductionsPractice.find((entry) => entry.id === button.dataset.introPlayAll);
+        const exchange = scenes.find((entry) => entry.id === button.dataset.introPlayAll);
         if (!exchange || !state.tapAudioEnabled) return;
         speakSceneLines(exchange.lines);
         focusStatus.textContent = `Listen to the whole scene: ${exchange.lines.map((line) => line.hanzi).join(" ")}`;

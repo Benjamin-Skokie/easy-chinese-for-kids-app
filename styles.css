@@ -812,31 +812,21 @@ h4 {
 
 .book-lesson-card {
   position: relative;
-  min-height: 96px;
-  padding: 18px 46px 18px 22px;
+  gap: 6px;
+  min-height: 0;
+  padding: 18px;
+  border: 1px solid rgba(221, 207, 187, 0.76);
+  border-radius: 28px;
+  background: rgba(255, 253, 248, 0.84);
+  box-shadow: none;
 }
 
 .book-lesson-card::after {
-  content: "→";
-  position: absolute;
-  top: 50%;
-  right: 22px;
-  color: var(--book-accent, var(--sun));
-  font-size: 1.1rem;
-  opacity: 0;
-  transform: translateY(-50%);
-  transition: opacity 150ms ease, right 150ms ease;
-}
-
-.book-lesson-card:hover::after,
-.book-lesson-card:focus-visible::after,
-.book-lesson-card.is-selected::after {
-  right: 16px;
-  opacity: 1;
+  display: none;
 }
 
 .book-lesson-card strong {
-  font-size: 0.95rem;
+  font-size: 1.2rem;
   line-height: 1.25;
 }
 
@@ -1169,19 +1159,55 @@ h4 {
   gap: 8px;
 }
 
+.detail-back-nav {
+  display: flex;
+  flex-wrap: wrap;
+  width: fit-content;
+  gap: 2px;
+  padding: 4px;
+  border: 1px solid rgba(45, 34, 24, 0.08);
+  border-radius: 16px;
+  background: rgba(255, 253, 248, 0.88);
+  box-shadow: 0 4px 14px rgba(78, 55, 43, 0.07);
+}
+
 .detail-back-link {
   width: fit-content;
+  display: inline-flex;
+  align-items: center;
+  min-height: 2rem;
+  padding: 0.32rem 0.62rem;
+  border: 0;
+  border-radius: 12px;
+  background: transparent;
   color: var(--berry);
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   font-weight: 700;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.02em;
   text-decoration: none;
+  transition: transform 150ms ease, background 150ms ease, border-color 150ms ease;
+}
+
+.detail-back-link.is-book {
+  color: #9b6516;
 }
 
 .detail-back-link:hover,
 .detail-back-link:focus-visible {
   color: var(--berry-dark);
-  text-decoration: underline;
+  background: #fff0e8;
+  transform: translateY(-0.5px);
+  text-decoration: none;
+}
+
+.detail-back-link.is-book:hover,
+.detail-back-link.is-book:focus-visible {
+  background: #ffe9be;
+  color: #754608;
+}
+
+.is-topic-page .detail-layout {
+  padding-top: 18px;
 }
 
 .section-heading h2,
@@ -8403,11 +8429,6 @@ h4 {
   line-height: 1.45;
 }
 
-.book-lesson-card small {
-  color: var(--berry-dark);
-  font-size: 0.78rem;
-  font-weight: 700;
-}
 
 .subtopic-shelf {
   display: grid;
@@ -9096,4 +9117,13 @@ h4 {
   .everyday-actions-quiz-visual {
     min-height: 220px;
   }
+}
+.book-lesson-card .book-lesson-meta {
+  color: var(--book-accent, var(--berry));
+  font-family: var(--latin-font);
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  line-height: 1.2;
+  text-transform: uppercase;
 }

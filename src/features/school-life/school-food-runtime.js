@@ -139,7 +139,7 @@ function resetSchoolMatchGame() {
 }
 
 function mealsConversationItems() {
-  return schoolTopicData["meals-feelings"]?.conversationPairs ?? [];
+  return filterLessonContent(schoolTopicData["meals-feelings"]?.conversationPairs ?? [], state.lessonScope);
 }
 
 function resetMealsConversationMatch() {
@@ -190,7 +190,7 @@ function handleMealsConversationAttempt(itemId) {
 }
 
 function mealsPictureChoiceItems() {
-  return schoolTopicData["meals-feelings"]?.pictureChoices ?? [];
+  return filterLessonContent(schoolTopicData["meals-feelings"]?.pictureChoices ?? [], state.lessonScope);
 }
 
 function resetMealsPictureQuestion() {
@@ -337,19 +337,19 @@ function renderFoodPreferenceFillPractice() {
 }
 
 function classroomSentenceFrames() {
-  return schoolTopicData.classroom?.sentenceFrames ?? [];
+  return filterLessonContent(schoolTopicData.classroom?.sentenceFrames ?? [], currentTopic().id === "classroom" ? state.lessonScope : null);
 }
 
 function classroomSentenceWords() {
   return [
-    ...(schoolTopicData.classroom?.words ?? []).map((item) => item.id === "computer" ? { ...item, sentenceEnglish: "laptop" } : item),
-    { id: "textbook", hanzi: "课本", pinyin: "kè běn", english: "textbook", imagePath: "assets/illustrated-stationery/textbook.webp" },
-    { id: "workbook", hanzi: "练习本", pinyin: "liàn xí běn", english: "workbook", imagePath: "assets/illustrated-stationery/workbook.webp" },
-    { id: "pencil", hanzi: "铅笔", pinyin: "qiān bǐ", english: "pencil", imagePath: "assets/illustrated-stationery/pencil.webp" },
-    { id: "ruler", hanzi: "尺子", pinyin: "chǐ zi", english: "ruler", imagePath: "assets/illustrated-stationery/ruler.webp" },
-    { id: "eraser", hanzi: "橡皮", pinyin: "xiàng pí", english: "eraser", imagePath: "assets/illustrated-stationery/eraser.webp" },
-    { id: "colored-pencils", hanzi: "彩色铅笔", pinyin: "cǎi sè qiān bǐ", english: "colored pencils", imagePath: "assets/illustrated-stationery/colored-pencils.webp" }
-  ];
+    ...filterLessonContent(schoolTopicData.classroom?.words ?? [], currentTopic().id === "classroom" ? state.lessonScope : null).map((item) => item.id === "computer" ? { ...item, sentenceEnglish: "laptop" } : item),
+    { id: "textbook", hanzi: "课本", pinyin: "kè běn", english: "textbook", imagePath: "assets/illustrated-stationery/textbook.webp", lessonSources: ["2b:4", "3b:2"] },
+    { id: "workbook", hanzi: "练习本", pinyin: "liàn xí běn", english: "workbook", imagePath: "assets/illustrated-stationery/workbook.webp", lessonSources: ["3b:2"] },
+    { id: "pencil", hanzi: "铅笔", pinyin: "qiān bǐ", english: "pencil", imagePath: "assets/illustrated-stationery/pencil.webp", lessonSources: ["3b:2"] },
+    { id: "ruler", hanzi: "尺子", pinyin: "chǐ zi", english: "ruler", imagePath: "assets/illustrated-stationery/ruler.webp", lessonSources: ["3b:2"] },
+    { id: "eraser", hanzi: "橡皮", pinyin: "xiàng pí", english: "eraser", imagePath: "assets/illustrated-stationery/eraser.webp", lessonSources: ["3b:2"] },
+    { id: "colored-pencils", hanzi: "彩色铅笔", pinyin: "cǎi sè qiān bǐ", english: "colored pencils", imagePath: "assets/illustrated-stationery/colored-pencils.webp", lessonSources: ["3b:2"] }
+  ].filter((item) => currentTopic().id !== "classroom" || !state.lessonScope || item.lessonSources?.includes(lessonScopeKey()));
 }
 
 function selectedClassroomSentenceFrame() {
@@ -919,7 +919,12 @@ function renderMealsConversationPractice(topic) {
   ensureMealsPictureChoice();
   const items = mealsConversationItems();
   activityPanelTitle.textContent = "Let's practice";
-  activityPanelSummary.textContent = schoolTopicData[topic.id].practiceSummary;
+  const source = state.lessonScope ? `${state.lessonScope.bookId}:${state.lessonScope.lessonNumber}` : "";
+  activityPanelSummary.textContent = source === "4a:5"
+    ? "Match the lunch question and answer, then choose the sentence that fits the lunch picture."
+    : source === "4a:7"
+      ? "Match each feeling to what the child wants to eat or drink."
+      : schoolTopicData[topic.id].practiceSummary;
   activityList.className = "support-list";
   activityList.innerHTML = `
     <section class="family-practice-shell lesson-practice-shell">
@@ -999,17 +1004,18 @@ function renderSchoolExplorer(topicId) {
   const sceneGroups = data.sceneGroups ?? [{ id: "all", items: data.scenes ?? [] }];
   // Food is fully source-tagged. Other school-topic renderers opt in only after
   // their scene, word, note, and practice data have been migrated together.
-  const contentScope = topicId === "food" ? state.lessonScope : null;
+  const contentScope = ["food", "classroom", "meals-feelings"].includes(topicId) ? state.lessonScope : null;
   const filteredSceneGroups = filterLessonGroups(sceneGroups, contentScope);
   const wordGroups = schoolWordGroups(topicId);
-  if (topicId === "meals-feelings" && !wordGroups.some((group) => group.id === state.mealsWordGroupId)) {
-    state.mealsWordGroupId = wordGroups[0]?.id ?? "";
+  const visibleWordGroups = topicId === "meals-feelings" ? filterLessonContent(wordGroups, contentScope) : wordGroups;
+  if (topicId === "meals-feelings" && !visibleWordGroups.some((group) => group.id === state.mealsWordGroupId)) {
+    state.mealsWordGroupId = visibleWordGroups[0]?.id ?? "";
   }
   const visibleWords = topicId === "food"
     ? foodBookWordItems(data)
     : topicId === "meals-feelings"
-      ? wordGroups.find((group) => group.id === state.mealsWordGroupId)?.items ?? []
-      : data.words;
+      ? visibleWordGroups.find((group) => group.id === state.mealsWordGroupId)?.items ?? []
+    : filterLessonContent(data.words, contentScope);
 
   focusExplorer.innerHTML = `
     <div class="time-date-board school-topic-board">
@@ -1035,7 +1041,7 @@ function renderSchoolExplorer(topicId) {
       ${data.showWords !== false ? `
         <div class="time-months-heading"><p class="body-match-kicker">Book words</p></div>
         ${topicId === "food" && !scopedFoodCategoryId() ? `<div class="food-book-tabs" role="tablist" aria-label="Food word categories">${Object.entries(foodCategoryGroups).map(([id, group]) => `<button class="food-book-tab${state.foodBookCategoryId === id ? " is-active" : ""}" type="button" role="tab" aria-selected="${state.foodBookCategoryId === id}" data-food-book-category="${id}">${group.hanzi}${state.showEnglish ? `<small>${group.english}</small>` : ""}</button>`).join("")}</div>` : ""}
-        ${topicId === "meals-feelings" && wordGroups.length > 1 ? `<div class="food-book-tabs lesson-word-tabs" role="tablist" aria-label="Meals and feelings word categories">${wordGroups.map((group) => `<button class="food-book-tab${state.mealsWordGroupId === group.id ? " is-active" : ""}" type="button" role="tab" aria-selected="${state.mealsWordGroupId === group.id}" data-meals-word-group="${group.id}">${group.hanzi}${state.showEnglish ? `<small>${group.english}</small>` : ""}</button>`).join("")}</div>` : ""}
+        ${topicId === "meals-feelings" && visibleWordGroups.length > 1 ? `<div class="food-book-tabs lesson-word-tabs" role="tablist" aria-label="Meals and feelings word categories">${visibleWordGroups.map((group) => `<button class="food-book-tab${state.mealsWordGroupId === group.id ? " is-active" : ""}" type="button" role="tab" aria-selected="${state.mealsWordGroupId === group.id}" data-meals-word-group="${group.id}">${group.hanzi}${state.showEnglish ? `<small>${group.english}</small>` : ""}</button>`).join("")}</div>` : ""}
         <div class="school-word-grid${topicId === "school-subjects" ? " is-text-only" : ""}${topicId === "meals-feelings" ? " is-uniform-images" : ""}">
           ${visibleWords.map((item) => `
             <button class="school-word-card${item.imagePath ? " book-word-card" : ""}" type="button" data-school-word="${item.id}">

@@ -16,15 +16,15 @@ The page teaches the distinction through a zoo scene, six pictured Book words, a
 | --- | --- | --- |
 | Scene | Zoo Animals custom renderer | Count zoo animals with `只 / 头 / 条`. |
 | Book words | Zoo Animals custom renderer | Tiger, elephant, panda, and monkey. |
-| Practice | Zoo Animals custom renderer | Complete a phrase by choosing `只`, `条`, or `头`. |
+| Practice | Zoo Animals custom renderer | Complete a zoo counting phrase, then match each animal to the food it eats. |
 | Shared focus panels | Shared shell | Suppressed by `ownsExplorerContent` to avoid duplicates. |
 
 There is no Useful note: it would repeat the scene and practice.
 
 ## Lesson evidence
 
-+- **2B Lesson 5 — Animals:** Words: zoo-animal vocabulary. Task: identify animals; the implemented page confirms `老虎、大象、熊猫、猴子、金鱼、乌龟`.
+- **2B Lesson 5 — Animals:** Words: zoo-animal vocabulary. Tasks: identify/count animals and match animals with food; the implemented page confirms `老虎、大象、熊猫、猴子、金鱼、乌龟` and the book's animal-food matching.
 
 ## Remaining coverage
 
-The 2B source also has animal-food matching. That belongs to the separate Pets story contract, not this zoo measure-word page.
+The source's animal-food matching belongs here, not on the earlier Pets page.

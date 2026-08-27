@@ -1124,7 +1124,10 @@
         <section id="topic-detail" class="detail-layout is-hidden">
           <article class="detail-panel topic-detail">
             <div class="detail-heading">
-              <a class="detail-back-link" href="#topics-panel" data-global-view="topics">← Back to Topics</a>
+              <nav class="detail-back-nav" aria-label="Return to learning paths">
+                <a class="detail-back-link" href="#topics-panel" data-global-view="topics" data-return-target="topic">← Back to Topics</a>
+                <a class="detail-back-link is-book" href="#books-panel" data-global-view="books" data-return-target="book">← Back to Books</a>
+              </nav>
               <h2 id="topic-title">Numbers</h2>
             </div>
 
@@ -1171,6 +1174,6 @@
       </main>
     </div>
 
-    <script src="app.js?v=20260825-lesson-scope-v1"></script>
+    <script src="app.js?v=20260827-book-scope-v3"></script>
   </body>
 </html>

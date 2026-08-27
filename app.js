@@ -657,7 +657,61 @@
 
   // src/core/lesson-practice-runtime.js
   function createLessonPracticeRuntime(context) {
-    const { state: state2, schoolTopicData: schoolTopicData3, visualTopicItems: visualTopicItems2, positionPracticeItems: positionPracticeItems2, timeDateWeekItems: timeDateWeekItems2, timeDateClockItems: timeDateClockItems2, datePracticeItems: datePracticeItems2, timeDateMonthItems: timeDateMonthItems2, timeDateRoutineItems: timeDateRoutineItems2, timeRoutineSentenceBuilds: timeRoutineSentenceBuilds2, clothesMatchItems: clothesMatchItems2, clothesSentenceItems: clothesSentenceItems2, everydayActionItems: everydayActionItems2, requestBuildPhrases: requestBuildPhrases2, isItPracticeRounds: isItPracticeRounds2, illustratedKids: illustratedKids2, numberHanzi: numberHanzi2, buildNumberItem: buildNumberItem2, currentTopic: currentTopic2, currentNumberStage: currentNumberStage2, currentBook: currentBook2, currentLesson: currentLesson2, focusItemsForTopic: focusItemsForTopic2, shuffleArray: shuffleArray2, speak: speak2, renderFocusExplorer: renderFocusExplorer2, renderFocusStatus: renderFocusStatus2, renderSharedLessonPractice: renderSharedLessonPractice2, renderPracticeSayCards: renderPracticeSayCards2, bindPracticeSayCards: bindPracticeSayCards2, activityPanelTitle: activityPanelTitle2, activityPanelSummary: activityPanelSummary2, activityList: activityList2, topicColumns: topicColumns2, renderBodyPractice: renderBodyPractice2, renderWorldPractice, renderHobbiesPractice, activeTimeDateSection: activeTimeDateSection2, ensureWeekdayChallenge: ensureWeekdayChallenge2, ensureWeekdayMatchGame: ensureWeekdayMatchGame2, handleWeekdayChallengePlay: handleWeekdayChallengePlay2, handleWeekdayChallengeGuess: handleWeekdayChallengeGuess2, resetWeekdayMatchGame: resetWeekdayMatchGame2, handleWeekdayMatchPhrase: handleWeekdayMatchPhrase2, handleWeekdayMatchAttempt: handleWeekdayMatchAttempt2, ensureDateChallenge: ensureDateChallenge2, ensureDateMatchGame: ensureDateMatchGame2, handleDateChallengePlay: handleDateChallengePlay2, handleDateChallengeGuess: handleDateChallengeGuess2, resetDateMatchGame: resetDateMatchGame2, handleDateMatchPhrase: handleDateMatchPhrase2, handleDateMatchEvent: handleDateMatchEvent2, familyGameItems: familyGameItems2, familyListenItems: familyListenItems2, familyPersonForItemId: familyPersonForItemId2, familyHeadshotForItemId: familyHeadshotForItemId2, ensureFamilyChallenge: ensureFamilyChallenge2, ensureFamilyMatchGame: ensureFamilyMatchGame2, handleFamilyChallengePlay: handleFamilyChallengePlay2, handleFamilyChallengeGuess: handleFamilyChallengeGuess2, resetFamilyMatchGame: resetFamilyMatchGame2, handleFamilyMatchPhrase: handleFamilyMatchPhrase2, handleFamilyMatchAttempt: handleFamilyMatchAttempt2, greetingsGameItems: greetingsGameItems2, greetingsMeaningLabel: greetingsMeaningLabel2, ensureGreetingsChallenge: ensureGreetingsChallenge2, ensureGreetingsMatchGame: ensureGreetingsMatchGame2, handleGreetingsChallengePlay: handleGreetingsChallengePlay2, handleGreetingsChallengeGuess: handleGreetingsChallengeGuess2, resetGreetingsMatchGame: resetGreetingsMatchGame2, handleGreetingsMatchPhrase: handleGreetingsMatchPhrase2, handleGreetingsMatchAttempt: handleGreetingsMatchAttempt2, nationalityPracticeItems: nationalityPracticeItems2, ensureNationalityChallenge: ensureNationalityChallenge2, currentNationalityAnswer: currentNationalityAnswer2, handleNationalityChallengePlay: handleNationalityChallengePlay2, handleNationalityChallengeGuess: handleNationalityChallengeGuess2, ensureNationalityMatchGame: ensureNationalityMatchGame2, resetNationalityMatchGame: resetNationalityMatchGame2, handleNationalityMatchPhrase: handleNationalityMatchPhrase2, handleNationalityMatchAttempt: handleNationalityMatchAttempt2, languagePracticeItems: languagePracticeItems2, ensureLanguageChallenge: ensureLanguageChallenge2, currentLanguageAnswer: currentLanguageAnswer2, handleLanguageChallengePlay: handleLanguageChallengePlay2, handleLanguageChallengeGuess: handleLanguageChallengeGuess2, politeGameItems: politeGameItems2, politeMeaningLabel: politeMeaningLabel2, ensurePoliteChallenge: ensurePoliteChallenge2, ensurePoliteMatchGame: ensurePoliteMatchGame2, handlePoliteChallengePlay: handlePoliteChallengePlay2, handlePoliteChallengeGuess: handlePoliteChallengeGuess2, resetPoliteMatchGame: resetPoliteMatchGame2, handlePoliteMatchPhrase: handlePoliteMatchPhrase2, handlePoliteMatchAttempt: handlePoliteMatchAttempt2, ensureRoomBuilder: ensureRoomBuilder2, currentRoomBuildItem: currentRoomBuildItem2, handleRoomBuildToken: handleRoomBuildToken2, clearRoomBuilder: clearRoomBuilder2, nextRoomBuilder: nextRoomBuilder2, ensureClothesQuiz: ensureClothesQuiz2, handleClothesQuizPick: handleClothesQuizPick2, nextClothesQuizQuestion: nextClothesQuizQuestion2, ensureClothesSentenceQuiz: ensureClothesSentenceQuiz2, handleClothesSentencePick: handleClothesSentencePick2, nextClothesSentenceQuestion: nextClothesSentenceQuestion2, ensureTimeRoutineQuiz: ensureTimeRoutineQuiz2, handleTimeRoutineQuizPick: handleTimeRoutineQuizPick2, nextTimeRoutineQuizQuestion: nextTimeRoutineQuizQuestion2, ensureClockQuiz: ensureClockQuiz2, handleClockQuizPick: handleClockQuizPick2, nextClockQuizQuestion: nextClockQuizQuestion2, ensureComparisonBuilder: ensureComparisonBuilder2, currentComparisonBuildItem: currentComparisonBuildItem2, handleComparisonBuildToken: handleComparisonBuildToken2, clearComparisonBuilder: clearComparisonBuilder2, nextComparisonBuilder: nextComparisonBuilder2, ensurePositionQuiz: ensurePositionQuiz2, handlePositionQuizPlay: handlePositionQuizPlay2, handlePositionQuizPick: handlePositionQuizPick2, nextPositionQuizQuestion: nextPositionQuizQuestion2, ensureTransportBuilder: ensureTransportBuilder2, currentTransportBuildItem: currentTransportBuildItem2, handleTransportBuildToken: handleTransportBuildToken2, clearTransportBuilder: clearTransportBuilder2, nextTransportBuilder: nextTransportBuilder2, ensureEverydayActionsQuiz: ensureEverydayActionsQuiz2, currentEverydayAction: currentEverydayAction2, handleEverydayActionsPick: handleEverydayActionsPick2, nextEverydayActionsQuestion: nextEverydayActionsQuestion2, resetNumberChallenge: resetNumberChallenge2, ensureMathChallenge: ensureMathChallenge2, handleNumberChallengeGuess: handleNumberChallengeGuess2, resetMathChallenge: resetMathChallenge2, handleMathChallengeSubmit: handleMathChallengeSubmit2, renderNumberVisual: renderNumberVisual2, introductionsBuildTarget: introductionsBuildTarget2, ensureIntroductionsBuilder: ensureIntroductionsBuilder2, resetIntroductionsBuilder: resetIntroductionsBuilder2, handleIntroductionsBuildClear: handleIntroductionsBuildClear2, handleIntroductionsBuildToken: handleIntroductionsBuildToken2, ageGameItems: ageGameItems2, ensureAgeChallenge: ensureAgeChallenge2, ensureAgeBuilder: ensureAgeBuilder2, ageBuildTarget: ageBuildTarget2, handleAgeChallengePlay: handleAgeChallengePlay2, handleAgeChallengeGuess: handleAgeChallengeGuess2, resetAgeBuilder: resetAgeBuilder2, handleAgeBuildClear: handleAgeBuildClear2, handleAgeBuildToken: handleAgeBuildToken2, renderSchoolPractice: renderSchoolPractice2 } = context;
+    const { state: state2, schoolTopicData: schoolTopicData3, visualTopicItems: visualTopicItems2, positionPracticeItems: positionPracticeItems2, timeDateWeekItems: timeDateWeekItems2, timeDateClockItems: timeDateClockItems2, datePracticeItems: datePracticeItems2, birthdayConversationLines: birthdayConversationLines2, timeDateMonthItems: timeDateMonthItems2, timeDateRoutineItems: timeDateRoutineItems2, timeRoutineSentenceBuilds: timeRoutineSentenceBuilds2, clothesMatchItems: clothesMatchItems2, clothesSentenceItems: clothesSentenceItems2, everydayActionItems: everydayActionItems2, requestBuildPhrases: requestBuildPhrases2, isItPracticeRounds: isItPracticeRounds2, illustratedKids: illustratedKids2, numberHanzi: numberHanzi2, buildNumberItem: buildNumberItem2, currentTopic: currentTopic2, currentNumberStage: currentNumberStage2, currentBook: currentBook2, currentLesson: currentLesson2, focusItemsForTopic: focusItemsForTopic2, shuffleArray: shuffleArray2, speak: speak2, renderFocusExplorer: renderFocusExplorer2, renderFocusStatus: renderFocusStatus2, renderSharedLessonPractice: renderSharedLessonPractice2, renderPracticeSayCards: renderPracticeSayCards2, bindPracticeSayCards: bindPracticeSayCards2, activityPanelTitle: activityPanelTitle2, activityPanelSummary: activityPanelSummary2, activityList: activityList2, topicColumns: topicColumns2, renderBodyPractice: renderBodyPractice2, renderWorldPractice, renderHobbiesPractice, activeTimeDateSection: activeTimeDateSection2, ensureWeekdayChallenge: ensureWeekdayChallenge2, ensureWeekdayMatchGame: ensureWeekdayMatchGame2, handleWeekdayChallengePlay: handleWeekdayChallengePlay2, handleWeekdayChallengeGuess: handleWeekdayChallengeGuess2, resetWeekdayMatchGame: resetWeekdayMatchGame2, handleWeekdayMatchPhrase: handleWeekdayMatchPhrase2, handleWeekdayMatchAttempt: handleWeekdayMatchAttempt2, ensureDateChallenge: ensureDateChallenge2, ensureDateMatchGame: ensureDateMatchGame2, handleDateChallengePlay: handleDateChallengePlay2, handleDateChallengeGuess: handleDateChallengeGuess2, resetDateMatchGame: resetDateMatchGame2, handleDateMatchPhrase: handleDateMatchPhrase2, handleDateMatchEvent: handleDateMatchEvent2, familyGameItems: familyGameItems2, familyListenItems: familyListenItems2, familyPersonForItemId: familyPersonForItemId2, familyHeadshotForItemId: familyHeadshotForItemId2, ensureFamilyChallenge: ensureFamilyChallenge2, ensureFamilyMatchGame: ensureFamilyMatchGame2, handleFamilyChallengePlay: handleFamilyChallengePlay2, handleFamilyChallengeGuess: handleFamilyChallengeGuess2, resetFamilyMatchGame: resetFamilyMatchGame2, handleFamilyMatchPhrase: handleFamilyMatchPhrase2, handleFamilyMatchAttempt: handleFamilyMatchAttempt2, greetingsGameItems: greetingsGameItems2, greetingsMeaningLabel: greetingsMeaningLabel2, ensureGreetingsChallenge: ensureGreetingsChallenge2, ensureGreetingsMatchGame: ensureGreetingsMatchGame2, handleGreetingsChallengePlay: handleGreetingsChallengePlay2, handleGreetingsChallengeGuess: handleGreetingsChallengeGuess2, resetGreetingsMatchGame: resetGreetingsMatchGame2, handleGreetingsMatchPhrase: handleGreetingsMatchPhrase2, handleGreetingsMatchAttempt: handleGreetingsMatchAttempt2, nationalityPracticeItems: nationalityPracticeItems2, ensureNationalityChallenge: ensureNationalityChallenge2, currentNationalityAnswer: currentNationalityAnswer2, handleNationalityChallengePlay: handleNationalityChallengePlay2, handleNationalityChallengeGuess: handleNationalityChallengeGuess2, ensureNationalityMatchGame: ensureNationalityMatchGame2, resetNationalityMatchGame: resetNationalityMatchGame2, handleNationalityMatchPhrase: handleNationalityMatchPhrase2, handleNationalityMatchAttempt: handleNationalityMatchAttempt2, languagePracticeItems: languagePracticeItems2, ensureLanguageChallenge: ensureLanguageChallenge2, currentLanguageAnswer: currentLanguageAnswer2, handleLanguageChallengePlay: handleLanguageChallengePlay2, handleLanguageChallengeGuess: handleLanguageChallengeGuess2, politeGameItems: politeGameItems2, politeMeaningLabel: politeMeaningLabel2, ensurePoliteChallenge: ensurePoliteChallenge2, ensurePoliteMatchGame: ensurePoliteMatchGame2, handlePoliteChallengePlay: handlePoliteChallengePlay2, handlePoliteChallengeGuess: handlePoliteChallengeGuess2, resetPoliteMatchGame: resetPoliteMatchGame2, handlePoliteMatchPhrase: handlePoliteMatchPhrase2, handlePoliteMatchAttempt: handlePoliteMatchAttempt2, ensureRoomBuilder: ensureRoomBuilder2, currentRoomBuildItem: currentRoomBuildItem2, handleRoomBuildToken: handleRoomBuildToken2, clearRoomBuilder: clearRoomBuilder2, nextRoomBuilder: nextRoomBuilder2, ensureClothesQuiz: ensureClothesQuiz2, handleClothesQuizPick: handleClothesQuizPick2, nextClothesQuizQuestion: nextClothesQuizQuestion2, ensureClothesSentenceQuiz: ensureClothesSentenceQuiz2, handleClothesSentencePick: handleClothesSentencePick2, nextClothesSentenceQuestion: nextClothesSentenceQuestion2, ensureTimeRoutineQuiz: ensureTimeRoutineQuiz2, handleTimeRoutineQuizPick: handleTimeRoutineQuizPick2, nextTimeRoutineQuizQuestion: nextTimeRoutineQuizQuestion2, ensureClockQuiz: ensureClockQuiz2, handleClockQuizPick: handleClockQuizPick2, nextClockQuizQuestion: nextClockQuizQuestion2, ensureComparisonBuilder: ensureComparisonBuilder2, currentComparisonBuildItem: currentComparisonBuildItem2, handleComparisonBuildToken: handleComparisonBuildToken2, clearComparisonBuilder: clearComparisonBuilder2, nextComparisonBuilder: nextComparisonBuilder2, ensurePositionQuiz: ensurePositionQuiz2, handlePositionQuizPlay: handlePositionQuizPlay2, handlePositionQuizPick: handlePositionQuizPick2, nextPositionQuizQuestion: nextPositionQuizQuestion2, ensureTransportBuilder: ensureTransportBuilder2, currentTransportBuildItem: currentTransportBuildItem2, handleTransportBuildToken: handleTransportBuildToken2, clearTransportBuilder: clearTransportBuilder2, nextTransportBuilder: nextTransportBuilder2, ensureEverydayActionsQuiz: ensureEverydayActionsQuiz2, currentEverydayAction: currentEverydayAction2, handleEverydayActionsPick: handleEverydayActionsPick2, nextEverydayActionsQuestion: nextEverydayActionsQuestion2, resetNumberChallenge: resetNumberChallenge2, ensureMathChallenge: ensureMathChallenge2, handleNumberChallengeGuess: handleNumberChallengeGuess2, resetMathChallenge: resetMathChallenge2, handleMathChallengeSubmit: handleMathChallengeSubmit2, renderNumberVisual: renderNumberVisual2, introductionsBuildTarget: introductionsBuildTarget2, ensureIntroductionsBuilder: ensureIntroductionsBuilder2, resetIntroductionsBuilder: resetIntroductionsBuilder2, handleIntroductionsBuildClear: handleIntroductionsBuildClear2, handleIntroductionsBuildToken: handleIntroductionsBuildToken2, ageGameItems: ageGameItems2, ensureAgeChallenge: ensureAgeChallenge2, ensureAgeBuilder: ensureAgeBuilder2, ageBuildTarget: ageBuildTarget2, handleAgeChallengePlay: handleAgeChallengePlay2, handleAgeChallengeGuess: handleAgeChallengeGuess2, resetAgeBuilder: resetAgeBuilder2, handleAgeBuildClear: handleAgeBuildClear2, handleAgeBuildToken: handleAgeBuildToken2, renderSchoolPractice: renderSchoolPractice2 } = context;
+    function resetBirthdayConversation() {
+      const lines = birthdayConversationLines2 ?? [];
+      state2.birthdayConversationOrder = shuffleArray2(lines.map((line) => line.id));
+      state2.birthdayConversationSelectedIds = [];
+      state2.birthdayConversationWrongIds = /* @__PURE__ */ new Set();
+      state2.birthdayConversationResult = "";
+      state2.birthdayConversationFeedback = "";
+    }
+    function ensureBirthdayConversation() {
+      const lines = birthdayConversationLines2 ?? [];
+      const knownIds = new Set(lines.map((line) => line.id));
+      if (!state2.birthdayConversationOrder?.length || state2.birthdayConversationOrder.some((id) => !knownIds.has(id))) {
+        resetBirthdayConversation();
+      }
+    }
+    function chooseBirthdayConversationLine(id) {
+      const lines = birthdayConversationLines2 ?? [];
+      if (state2.birthdayConversationResult === "correct") return;
+      const expected = lines[state2.birthdayConversationSelectedIds.length];
+      if (!expected) return;
+      if (id !== expected.id) {
+        state2.birthdayConversationWrongIds = /* @__PURE__ */ new Set([...state2.birthdayConversationWrongIds, id]);
+        state2.birthdayConversationFeedback = "Not quite. Try the line that comes next.";
+        renderActivityPanel2(currentTopic2());
+        return;
+      }
+      state2.birthdayConversationSelectedIds = [...state2.birthdayConversationSelectedIds, id];
+      state2.birthdayConversationWrongIds = /* @__PURE__ */ new Set();
+      if (state2.birthdayConversationSelectedIds.length === lines.length) {
+        state2.birthdayConversationResult = "correct";
+        state2.birthdayConversationFeedback = "Correct! Listen to the whole birthday conversation.";
+        speak2(lines.map((line) => line.audio).join(""), 0.78);
+      } else {
+        state2.birthdayConversationFeedback = "Good! What comes next?";
+      }
+      renderActivityPanel2(currentTopic2());
+    }
+    function birthdayConversationBuilderMarkup() {
+      const lines = birthdayConversationLines2 ?? [];
+      const selectedIds = state2.birthdayConversationSelectedIds ?? [];
+      const selectedLines = selectedIds.map((id) => lines.find((line) => line.id === id)).filter(Boolean);
+      const availableLines = (state2.birthdayConversationOrder ?? []).map((id) => lines.find((line) => line.id === id)).filter((line) => line && !selectedIds.includes(line.id));
+      const complete = state2.birthdayConversationResult === "correct";
+      return `<section class="practice-split-card request-sentence-builder birthday-conversation-builder"><div class="numbers-game-top"><div><p class="body-match-kicker">Build a birthday conversation</p></div><button class="small-button is-play-button" type="button" data-birthday-conversation-play>Play</button></div><img class="request-builder-visual" src="assets/illustrated-dates/birthday-party-scene.webp" alt="Children celebrating a birthday party" ${imageLoadingAttrs({ width: 1200, height: 900 })} /><div class="intro-build-target"><div class="intro-build-selected">${selectedLines.length ? selectedLines.map((line) => `<span class="intro-build-chip is-selected">${line.hanzi}</span>`).join("") : '<span class="intro-build-placeholder">Your conversation will appear here.</span>'}</div></div><div class="intro-build-choices">${availableLines.map((line) => `<button class="intro-build-chip${state2.birthdayConversationWrongIds?.has(line.id) ? " is-wrong" : ""}" type="button" data-birthday-conversation-line="${line.id}">${line.hanzi}</button>`).join("")}</div>${state2.birthdayConversationFeedback ? `<p class="greetings-game-feedback${complete ? " is-correct" : state2.birthdayConversationWrongIds?.size ? " is-wrong" : ""}">${state2.birthdayConversationFeedback}</p>` : ""}${complete ? `<div class="family-sentence-preview">${lines.map((line) => `<p class="numbers-game-hanzi">${line.hanzi}</p>${state2.showPinyin ? `<p class="numbers-game-pinyin">${line.pinyin}</p>` : ""}${state2.showEnglish ? `<p class="numbers-game-english">${line.english}</p>` : ""}`).join("")}</div>` : ""}</section>`;
+    }
+    function bindBirthdayConversationBuilder(container) {
+      container.querySelector("[data-birthday-conversation-play]")?.addEventListener("click", () => {
+        resetBirthdayConversation();
+        renderActivityPanel2(currentTopic2());
+      });
+      container.querySelectorAll("[data-birthday-conversation-line]").forEach((button) => button.addEventListener("click", () => {
+        chooseBirthdayConversationLine(button.dataset.birthdayConversationLine);
+      }));
+    }
     function startIsItPracticeRound() {
       state2.isItPracticeRoundId = nextRandomCycleId(state2, "is-it-practice", isItPracticeRounds2.map((round) => round.id));
       state2.isItPracticePickedId = "";
@@ -1130,6 +1184,17 @@
         };
       }
       if (topic.id === "dates") {
+        const source = state2.lessonScope ? `${state2.lessonScope.bookId}:${state2.lessonScope.lessonNumber}` : "";
+        const scopedPracticeItems = source ? datePracticeItems2.filter((item) => item.lessonSources?.includes(source)) : datePracticeItems2;
+        const scopedMonthItems = source ? timeDateMonthItems2.filter((item) => item.lessonSources?.includes(source)) : timeDateMonthItems2;
+        if (source === "3a:3") {
+          return {
+            summary: "Tap the three lines in the order they are said.",
+            shellClass: "lesson-practice-shell",
+            ensure: ensureBirthdayConversation,
+            builder: { markup: birthdayConversationBuilderMarkup, bind: bindBirthdayConversationBuilder }
+          };
+        }
         return {
           summary: "Listen for a date or celebration, then match months to their English names.",
           shellClass: "lesson-practice-shell",
@@ -1143,7 +1208,7 @@
             ensureDateMatchGame2();
           },
           listen: {
-            items: () => datePracticeItems2,
+            items: () => scopedPracticeItems,
             optionIds: () => state2.dateChallengeOptionIds,
             pickedId: () => state2.dateChallengePickedId,
             result: () => state2.dateChallengeResult,
@@ -1152,10 +1217,10 @@
             onPlay: handleDateChallengePlay2,
             onGuess: handleDateChallengeGuess2
           },
-          match: {
+          match: scopedMonthItems.length ? {
             phraseHeading: "Chinese",
             meaningHeading: "English",
-            items: () => timeDateMonthItems2.filter((item) => state2.datePhraseOrder.includes(item.id)),
+            items: () => scopedMonthItems.filter((item) => state2.datePhraseOrder.includes(item.id)),
             phraseIds: () => state2.datePhraseOrder,
             meaningIds: () => state2.dateEventOrder,
             matchedIds: () => state2.dateMatchedIds,
@@ -1163,14 +1228,14 @@
             wrongPhraseIds: () => state2.dateMatchWrongPhraseIds,
             wrongMeaningIds: () => state2.dateMatchWrongMeaningIds,
             feedback: () => state2.dateMatchFeedback,
-            meaningLabel: (id) => timeDateMonthItems2.find((item) => item.id === id)?.english ?? "",
+            meaningLabel: (id) => scopedMonthItems.find((item) => item.id === id)?.english ?? "",
             onNew: () => {
               resetDateMatchGame2();
               renderActivityPanel2(topic);
             },
             onPhrase: handleDateMatchPhrase2,
             onMeaning: handleDateMatchEvent2
-          }
+          } : null
         };
       }
       return null;
@@ -1497,18 +1562,29 @@
         return;
       }
       if (topic.id === "clothes") {
+        const source = state2.lessonScope ? `${state2.lessonScope.bookId}:${state2.lessonScope.lessonNumber}` : "";
+        const scopedMatchItems = source ? clothesMatchItems2.filter((item) => item.lessonSources?.includes(source)) : clothesMatchItems2;
+        const scopedSentenceItems = source ? clothesSentenceItems2.filter((item) => item.lessonSources?.includes(source)) : clothesSentenceItems2;
         ensureClothesQuiz2();
         ensureClothesSentenceQuiz2();
         const answerId = state2.clothesQuizOrder[state2.clothesQuizIndex];
-        const prompt = clothesMatchItems2.find((item) => item.id === answerId);
+        const prompt = scopedMatchItems.find((item) => item.id === answerId);
         const sentenceAnswerId = state2.clothesSentenceOrder[state2.clothesSentenceIndex];
-        const sentencePrompt = clothesSentenceItems2.find((item) => item.id === sentenceAnswerId);
+        const sentencePrompt = scopedSentenceItems.find((item) => item.id === sentenceAnswerId);
         const sentenceComplete = state2.clothesSentenceResult === "correct";
+        const showClothesWordQuiz = Boolean(source) && source !== "4b:2";
+        const colourSentenceItems = clothesSentenceItems2.filter((item) => item.slots?.length);
+        const isClothesColourFill = !source || source === "4b:2";
+        const colourSentencePrompt = source === "4b:2" ? sentencePrompt : colourSentenceItems[state2.clothesColourIndex ?? 0] ?? colourSentenceItems[0];
+        const colourSlots = colourSentencePrompt?.slots ?? [];
+        const colourPicks = state2.clothesColourPicks ?? {};
+        const colourResults = state2.clothesColourResults ?? {};
+        const colourComplete = colourSlots.length > 0 && colourSlots.every((slot) => colourResults[slot.id] === "correct");
         activityPanelTitle2.textContent = "Let's practice";
-        activityPanelSummary2.textContent = "Look at the picture, then choose the matching Chinese word.";
+        activityPanelSummary2.textContent = showClothesWordQuiz ? "Look at the picture, then choose the matching Chinese word." : "Look at the picture, then choose the clothes words that complete the sentence.";
         activityList2.className = "support-list";
         activityList2.innerHTML = `
-      <section class="clothes-quiz-shell">
+      ${showClothesWordQuiz ? `<section class="clothes-quiz-shell">
         <div class="numbers-game-top">
           <div>
             <p class="body-match-kicker">Picture choice</p>
@@ -1521,15 +1597,37 @@
         </figure>
         <div class="clothes-quiz-options">
           ${state2.clothesQuizOptionIds.map((itemId) => {
-          const item = clothesMatchItems2.find((entry) => entry.id === itemId);
+          const item = scopedMatchItems.find((entry) => entry.id === itemId);
           const isSelected = state2.clothesQuizSelectedId === itemId;
           const resultClass = isSelected ? ` is-${state2.clothesQuizResult}` : "";
           const mark = isSelected ? `<span class="answer-result-mark" aria-hidden="true">${state2.clothesQuizResult === "correct" ? "\u2713" : "\xD7"}</span>` : "";
           return `<button class="clothes-quiz-option${resultClass}" type="button" data-clothes-quiz-pick="${item.id}">${mark}<span class="numbers-game-hanzi">${item.hanzi}</span>${state2.showPinyin ? `<span class="numbers-game-pinyin">${item.pinyin}</span>` : ""}${state2.showEnglish ? `<span class="numbers-game-english">${item.english}</span>` : ""}</button>`;
         }).join("")}
         </div>
-      </section>
-      <section class="clothes-quiz-shell">
+      </section>` : ""}
+      ${isClothesColourFill ? `<section class="clothes-quiz-shell clothes-colour-fill-shell">
+        <div class="numbers-game-top">
+          <div>
+            <p class="body-match-kicker">Complete the sentence</p>
+            <p class="numbers-game-note">Look at the picture, then choose the clothes words that complete the sentence.</p>
+          </div>
+          <button class="small-button is-practice-advance-button" type="button" data-clothes-colour-new aria-label="Start a new game">New game</button>
+        </div>
+        <figure class="clothes-quiz-visual">
+          <img class="clothes-quiz-image" src="${colourSentencePrompt.imagePath}" alt="${colourSentencePrompt.imageAlt}" ${imageLoadingAttrs({ primary: true })} />
+        </figure>
+        <div class="clothes-colour-sentence">
+          ${colourSentencePrompt.frame ? `<span class="numbers-game-hanzi">${colourSentencePrompt.frame}</span>` : ""}${colourSlots.map((slot, index) => `${index ? `<span class="numbers-game-hanzi">${slot.joiner ?? "\u548C"}</span>` : ""}<span class="numbers-game-hanzi">${slot.prefix}</span><span class="clothes-sentence-blank${colourResults[slot.id] ? ` is-${colourResults[slot.id]}` : ""}">${colourPicks[slot.id] || "____"}</span>${index === colourSlots.length - 1 ? '<span class="numbers-game-hanzi">\u3002</span>' : ""}`).join("")}
+          ${colourComplete && state2.showPinyin ? `<span class="numbers-game-pinyin">${colourSentencePrompt.fullPinyin}</span>` : ""}
+          ${colourComplete && state2.showEnglish ? `<span class="numbers-game-english">${colourSentencePrompt.sentenceEnglish}</span>` : ""}
+        </div>
+        <div class="clothes-colour-choice-groups">${colourSlots.map((slot) => `<div class="clothes-colour-choice-group"><p class="weather-fill-choice-label">${slot.prefix}</p><div class="clothes-quiz-options">${slot.options.map((choice) => {
+          const selected = colourPicks[slot.id] === choice;
+          const resultClass = selected ? ` is-${colourResults[slot.id]}` : "";
+          const mark = selected ? `<span class="answer-result-mark" aria-hidden="true">${colourResults[slot.id] === "correct" ? "\u2713" : "\xD7"}</span>` : "";
+          return `<button class="clothes-quiz-option${resultClass}" type="button" data-clothes-colour-slot="${slot.id}" data-clothes-colour-choice="${choice}" ${colourResults[slot.id] === "correct" ? "disabled" : ""}>${mark}<span class="numbers-game-hanzi">${choice}</span></button>`;
+        }).join("")}</div></div>`).join("")}</div>
+      </section>` : `<section class="clothes-quiz-shell">
         <div class="numbers-game-top">
           <div>
             <p class="body-match-kicker">Complete the sentence</p>
@@ -1544,18 +1642,18 @@
           <span class="numbers-game-hanzi">${sentencePrompt.frame}</span>
           <span class="clothes-sentence-blank">${sentenceComplete ? sentencePrompt.hanzi : "\u2026\u2026"}</span><span class="numbers-game-hanzi">\u3002</span>
           ${sentenceComplete && state2.showPinyin ? `<span class="numbers-game-pinyin">${sentencePrompt.framePinyin} ${sentencePrompt.pinyin}.</span>` : ""}
-          ${sentenceComplete && state2.showEnglish ? `<span class="numbers-game-english">I wear ${sentencePrompt.english}.</span>` : ""}
+          ${sentenceComplete && state2.showEnglish ? `<span class="numbers-game-english">${sentencePrompt.sentenceEnglish}</span>` : ""}
         </div>
         <div class="clothes-quiz-options">
           ${state2.clothesSentenceOptionIds.map((itemId) => {
-          const item = clothesSentenceItems2.find((entry) => entry.id === itemId);
+          const item = scopedSentenceItems.find((entry) => entry.id === itemId);
           const isSelected = state2.clothesSentenceSelectedId === itemId;
           const resultClass = isSelected ? ` is-${state2.clothesSentenceResult}` : "";
           const mark = isSelected ? `<span class="answer-result-mark" aria-hidden="true">${state2.clothesSentenceResult === "correct" ? "\u2713" : "\xD7"}</span>` : "";
           return `<button class="clothes-quiz-option${resultClass}" type="button" data-clothes-sentence-pick="${item.id}" ${sentenceComplete ? "disabled" : ""}>${mark}<span class="numbers-game-hanzi">${item.hanzi}</span>${state2.showPinyin ? `<span class="numbers-game-pinyin">${item.pinyin}</span>` : ""}${state2.showEnglish ? `<span class="numbers-game-english">${item.english}</span>` : ""}</button>`;
         }).join("")}
         </div>
-      </section>
+      </section>`}
     `;
         activityList2.querySelectorAll("[data-clothes-quiz-pick]").forEach((button) => {
           button.addEventListener("click", () => {
@@ -1569,6 +1667,28 @@
           });
         });
         activityList2.querySelector("[data-clothes-sentence-new]")?.addEventListener("click", nextClothesSentenceQuestion2);
+        activityList2.querySelector("[data-clothes-colour-new]")?.addEventListener("click", () => {
+          state2.clothesColourPicks = {};
+          state2.clothesColourResults = {};
+          if (source) {
+            nextClothesSentenceQuestion2();
+          } else {
+            state2.clothesColourIndex = ((state2.clothesColourIndex ?? 0) + 1) % colourSentenceItems.length;
+            renderActivityPanel2(currentTopic2());
+          }
+        });
+        activityList2.querySelectorAll("[data-clothes-colour-slot]").forEach((button) => {
+          button.addEventListener("click", () => {
+            const slot = colourSlots.find((entry) => entry.id === button.dataset.clothesColourSlot);
+            if (!slot) return;
+            const choice = button.dataset.clothesColourChoice;
+            state2.clothesColourPicks = { ...colourPicks, [slot.id]: choice };
+            state2.clothesColourResults = { ...colourResults, [slot.id]: choice === slot.answer ? "correct" : "wrong" };
+            const nowComplete = colourSlots.every((entry) => state2.clothesColourResults[entry.id] === "correct");
+            if (nowComplete && state2.tapAudioEnabled) speak2(colourSentencePrompt.audio, 0.78);
+            renderActivityPanel2(currentTopic2());
+          });
+        });
         return;
       }
       if (topic.id === "numbers") {
@@ -1865,15 +1985,17 @@
 
   // src/core/topic-detail-runtime.js
   function createTopicDetailRuntime(context) {
-    const { state: state2, books: books2, numberStages: numberStages2, schoolTopicData: schoolTopicData3, topicPageUrl: topicPageUrl2, topicIdFromLocation: topicIdFromLocation2, lessonScopeFromLocation: lessonScopeFromLocation2, viewFromLocation: viewFromLocation2, bookSelect: bookSelect2, lessonSelect: lessonSelect2, topicTitle: topicTitle2, topicSummary: topicSummary2, topicProgress: topicProgress2, topicLessonStrip: topicLessonStrip2, subtopicShelf: subtopicShelf2, focusDisplay: focusDisplay2, focusExplorer: focusExplorer2, currentTopic: currentTopic2, currentNumberStage: currentNumberStage2, focusItemsForTopic: focusItemsForTopic2, currentFocusItem: currentFocusItem2, currentBook: currentBook2, currentLesson: currentLesson2, selectedTopicGroupId: selectedTopicGroupId2, bookCategoryForBook: bookCategoryForBook2, categoryIdForTopic: categoryIdForTopic2, narrowTopicBrowserTo: narrowTopicBrowserTo2, renderTopics: renderTopics2, renderBooks: renderBooks2, updateTopicPageVisibility: updateTopicPageVisibility2, focusLearningPanel: focusLearningPanel2, renderFocusControls: renderFocusControls2, renderFocusDisplay: renderFocusDisplay2, renderFocusExplorer: renderFocusExplorer2, renderFocusWordList: renderFocusWordList3, renderFocusStatus: renderFocusStatus2, renderActivityPanel: renderActivityPanel2, ensureBodyMatchGame: ensureBodyMatchGame2, isFamilySentenceItemId: isFamilySentenceItemId2, familyBookWordItems: familyBookWordItems2, usesLessonTemplate: usesLessonTemplate2, syncBookSelectionFromTopic: syncBookSelectionFromTopic2, switchView: switchView2, updateLearningCultureNav: updateLearningCultureNav2 } = context;
+    const { state: state2, books: books2, schoolTopicData: schoolTopicData3, topicPageUrl: topicPageUrl2, topicIdFromLocation: topicIdFromLocation2, lessonScopeFromLocation: lessonScopeFromLocation2, viewFromLocation: viewFromLocation2, bookSelect: bookSelect2, lessonSelect: lessonSelect2, topicTitle: topicTitle2, topicSummary: topicSummary2, topicProgress: topicProgress2, topicLessonStrip: topicLessonStrip2, subtopicShelf: subtopicShelf2, focusDisplay: focusDisplay2, focusExplorer: focusExplorer2, currentTopic: currentTopic2, currentNumberStage: currentNumberStage2, focusItemsForTopic: focusItemsForTopic2, currentFocusItem: currentFocusItem2, currentBook: currentBook2, currentLesson: currentLesson2, selectedTopicGroupId: selectedTopicGroupId2, bookCategoryForBook: bookCategoryForBook2, categoryIdForTopic: categoryIdForTopic2, narrowTopicBrowserTo: narrowTopicBrowserTo2, renderTopics: renderTopics2, renderBooks: renderBooks2, updateTopicPageVisibility: updateTopicPageVisibility2, focusLearningPanel: focusLearningPanel2, renderFocusControls: renderFocusControls2, renderFocusDisplay: renderFocusDisplay2, renderFocusExplorer: renderFocusExplorer2, renderFocusWordList: renderFocusWordList3, renderFocusStatus: renderFocusStatus2, renderActivityPanel: renderActivityPanel2, ensureBodyMatchGame: ensureBodyMatchGame2, isFamilySentenceItemId: isFamilySentenceItemId2, familyBookWordItems: familyBookWordItems2, usesLessonTemplate: usesLessonTemplate2, syncBookSelectionFromTopic: syncBookSelectionFromTopic2, switchView: switchView2, updateLearningCultureNav: updateLearningCultureNav2 } = context;
     function selectBookLesson2(bookId, lessonNumber) {
       const book = books2.find((entry) => entry.id === bookId) ?? books2[0];
       const lesson = book.lessons.find((entry) => entry.lesson === lessonNumber) ?? book.lessons[0];
+      const lessonUrl = topicPageUrl2(window.location, lesson.topicId, { bookId: book.id, lessonNumber: lesson.lesson });
+      window.history.pushState(null, "", lessonUrl);
       state2.selectedBookCategoryId = bookCategoryForBook2(book.id).id;
       state2.selectedBookId = book.id;
       state2.selectedLessonNumber = lesson.lesson;
-      state2.lessonScope = { bookId: book.id, lessonNumber: lesson.lesson };
       state2.selectedTopicId = lesson.topicId;
+      state2.lessonScope = lessonScopeFromLocation2(window.location, books2, lesson.topicId) ?? { bookId: book.id, lessonNumber: lesson.lesson };
       state2.expandedCategoryId = categoryIdForTopic2(lesson.topicId);
       state2.topicPageOpen = true;
       narrowTopicBrowserTo2(selectedTopicGroupId2());
@@ -1881,20 +2003,11 @@
       renderBooks2();
       renderTopicDetail2();
       updateTopicPageVisibility2();
-      window.history.pushState(null, "", topicPageUrl2(window.location, lesson.topicId, state2.lessonScope));
       focusLearningPanel2();
     }
-    function topicLessonTitle(topic, step) {
-      if (step.cardLabel) {
-        return step.cardLabel;
-      }
-      if (topic.id !== "numbers") {
-        return step.title;
-      }
-      const stage = numberStages2.find(
-        (entry) => entry.bookId === step.book.toLowerCase() && entry.lesson === step.lesson
-      );
-      return stage?.title ?? step.title;
+    function topicLessonTitle(step) {
+      const lesson = books2.find((book) => book.id === step.book.toLowerCase())?.lessons.find((entry) => entry.lesson === step.lesson);
+      return [lesson?.displayTitle?.zh, lesson?.displayTitle?.en].filter(Boolean).join(" \xB7 ") || step.title;
     }
     function renderTopicLessonStrip(topic) {
       if (!topicLessonStrip2) {
@@ -1917,26 +2030,12 @@
         const bookId = step.book.toLowerCase();
         const isActive = state2.lessonScope?.bookId === bookId && state2.lessonScope.lessonNumber === step.lesson;
         return `
-        <button class="topic-lesson-card${isActive ? " is-active" : ""}" type="button" data-topic-lesson-source="${bookId}:${step.lesson}" aria-label="Show only Book ${step.book} Lesson ${step.lesson}: ${topicLessonTitle(topic, step)}">
+        <button class="topic-lesson-card${isActive ? " is-active" : ""}" type="button" data-topic-lesson-source="${bookId}:${step.lesson}" aria-label="Show only Book ${step.book} Lesson ${step.lesson}: ${topicLessonTitle(step)}">
           <span class="topic-lesson-meta">Book ${step.book} Lesson ${step.lesson}</span>
-          <strong>${topicLessonTitle(topic, step)}</strong>
+          <strong>${topicLessonTitle(step)}</strong>
         </button>
       `;
       }).join("");
-      topicLessonStrip2.querySelectorAll("[data-topic-lesson-source]").forEach((button) => {
-        button.addEventListener("click", () => {
-          const [bookId, lessonText] = button.dataset.topicLessonSource.split(":");
-          selectBookLesson2(bookId, Number(lessonText));
-        });
-      });
-      topicLessonStrip2.querySelector("[data-topic-all-content]")?.addEventListener("click", () => {
-        state2.lessonScope = null;
-        syncBookSelectionFromTopic2();
-        renderTopics2();
-        renderBooks2();
-        renderTopicDetail2();
-        window.history.pushState(null, "", topicPageUrl2(window.location, topic.id));
-      });
     }
     function linkInlineBookLessonBadges() {
       if (!focusExplorer2) {
@@ -1971,6 +2070,12 @@
       subtopicShelf2.classList.add("is-hidden");
     }
     function renderTopicDetail2() {
+      const scopedBook = state2.lessonScope ? books2.find((book) => book.id === state2.lessonScope.bookId) : null;
+      if (scopedBook) {
+        state2.selectedBookId = scopedBook.id;
+        state2.selectedBookCategoryId = bookCategoryForBook2(scopedBook.id).id;
+        state2.selectedLessonNumber = state2.lessonScope.lessonNumber;
+      }
       const topic = currentTopic2();
       const items = focusItemsForTopic2(topic);
       if (topic.id !== "body") {
@@ -2016,6 +2121,22 @@
       renderActivityPanel2(topic);
     }
     function bindTopicDetailEvents() {
+      topicLessonStrip2.addEventListener("click", (event) => {
+        const lessonCard = event.target.closest("[data-topic-lesson-source]");
+        if (lessonCard) {
+          const [bookId, lessonText] = lessonCard.dataset.topicLessonSource.split(":");
+          selectBookLesson2(bookId, Number(lessonText));
+          return;
+        }
+        if (event.target.closest("[data-topic-all-content]")) {
+          state2.lessonScope = null;
+          syncBookSelectionFromTopic2();
+          renderTopics2();
+          renderBooks2();
+          renderTopicDetail2();
+          window.history.pushState(null, "", topicPageUrl2(window.location, currentTopic2().id));
+        }
+      });
       bookSelect2.addEventListener("change", () => {
         const book = books2.find((entry) => entry.id === bookSelect2.value) ?? currentBook2();
         selectBookLesson2(book.id, book.lessons[0].lesson);
@@ -2038,6 +2159,7 @@
           state2.lessonScope = scope;
           if (scope) {
             state2.selectedBookId = scope.bookId;
+            state2.selectedBookCategoryId = bookCategoryForBook2(scope.bookId).id;
             state2.selectedLessonNumber = scope.lessonNumber;
           } else {
             syncBookSelectionFromTopic2();
@@ -2137,7 +2259,8 @@
     }
     function focusItemsForTopic2(topic = currentTopic2()) {
       const source = state2.lessonScope ? `${state2.lessonScope.bookId}:${state2.lessonScope.lessonNumber}` : "";
-      const forSelectedLesson = (items) => source ? items.filter((item) => !item.lessonSources || item.lessonSources.includes(source)) : items;
+      const strictLessonTopicIds = /* @__PURE__ */ new Set(["body", "introductions", "age", "dates", "classroom", "clothes", "food"]);
+      const forSelectedLesson = (items) => source ? items.filter((item) => strictLessonTopicIds.has(topic.id) ? item.lessonSources?.includes(source) : !item.lessonSources || item.lessonSources.includes(source)) : items;
       if (topic.id === "numbers") {
         return getNumberStageItems();
       }
@@ -2148,7 +2271,9 @@
       if (worldItems) {
         return forSelectedLesson(worldItems);
       }
-      return forSelectedLesson(topic.focusItems ?? [{ id: "focus", ...topic.focus }]);
+      const defaultItems = topic.focusItems ?? [{ id: "focus", ...topic.focus }];
+      const scopedItems = forSelectedLesson(defaultItems);
+      return scopedItems.length ? scopedItems : defaultItems;
     }
     function currentFocusItem2() {
       const items = focusItemsForTopic2();
@@ -2243,6 +2368,7 @@
       state2.lessonScope = null;
       state2.expandedCategoryId = categoryIdForTopic2(topic.id);
       state2.topicPageOpen = true;
+      syncBookSelectionFromTopic2();
       renderTopics2();
       renderBooks2();
       renderTopicDetail2();
@@ -2616,14 +2742,12 @@
           </div>
           <div class="book-lesson-grid">
             ${entry.lessons.map((lesson) => {
-          const lessonTopic = topicById3(lesson.topicId);
-          const topicMeta = topicCardMeta2[lesson.topicId];
+          const cardTitle = [lesson.displayTitle?.zh, lesson.displayTitle?.en].filter(Boolean).join(" \xB7 ") || lesson.title;
           const isSelectedLesson = isSelectedBook && lesson.lesson === activeLesson.lesson;
           return `
                   <button class="book-lesson-card${isSelectedLesson ? " is-selected" : ""}" type="button" data-book-lesson="${entry.id}:${lesson.lesson}">
-                    <span>Lesson ${lesson.lesson}</span>
-                    <strong>${lesson.title}</strong>
-                    <small>\u4E3B\u9898\u7EC3\u4E60\uFF1A${topicMeta?.zhTitle ?? lessonTopic?.title ?? "Topic practice"} \xB7 ${topicMeta?.enTitle ?? ""}</small>
+                    <span class="book-lesson-meta">${entry.label.toUpperCase()} LESSON ${lesson.lesson}</span>
+                    <strong>${cardTitle}</strong>
                   </button>
                 `;
         }).join("")}
@@ -2697,14 +2821,16 @@
           return;
         }
         let activeBookId = state2.selectedBookId;
-        const scrollY2 = window.scrollY + 120;
-        bookSections.forEach((section) => {
-          if (section.offsetTop <= scrollY2) {
-            activeBookId = section.dataset.bookLessonSection;
+        if (!state2.topicPageOpen) {
+          const scrollY2 = window.scrollY + 120;
+          bookSections.forEach((section) => {
+            if (section.offsetTop <= scrollY2) {
+              activeBookId = section.dataset.bookLessonSection;
+            }
+          });
+          if (atPageBottom()) {
+            activeBookId = bookSections[bookSections.length - 1]?.dataset.bookLessonSection ?? activeBookId;
           }
-        });
-        if (atPageBottom()) {
-          activeBookId = bookSections[bookSections.length - 1]?.dataset.bookLessonSection ?? activeBookId;
         }
         bookNavItems.forEach((item) => {
           const isActive = item.dataset.bookNavTarget === activeBookId;
@@ -2781,7 +2907,9 @@
         switchView2(link.dataset.globalView);
         updateTopicPageVisibility2();
         window.history.pushState(null, "", `${window.location.pathname}${viewHash(link.dataset.globalView)}`);
-        document.querySelector(".switcher-panel")?.scrollIntoView({
+        const returnTargetId = link.dataset.returnTarget === "topic" ? state2.expandedCategoryId : link.dataset.returnTarget === "book" ? `book-lessons-${state2.selectedBookId}` : "";
+        const returnTarget = returnTargetId ? document.getElementById(returnTargetId) : null;
+        (returnTarget ?? document.querySelector(".switcher-panel"))?.scrollIntoView({
           behavior: "smooth",
           block: "start"
         });
@@ -2883,6 +3011,8 @@
   ];
   var timeRoutineBookWords = [
     { id: "wake-up", hanzi: "\u8D77\u5E8A", pinyin: "q\u01D0 chu\xE1ng", english: "get up", audio: "\u8D77\u5E8A" },
+    { id: "comb-hair", hanzi: "\u68B3\u5934", pinyin: "sh\u016B t\xF3u", english: "comb your hair", audio: "\u68B3\u5934" },
+    { id: "brush-teeth", hanzi: "\u5237\u7259", pinyin: "shu\u0101 y\xE1", english: "brush your teeth", audio: "\u5237\u7259" },
     { id: "breakfast", hanzi: "\u5403\u65E9\u996D", pinyin: "ch\u012B z\u01CEo f\xE0n", english: "have breakfast", audio: "\u5403\u65E9\u996D" },
     { id: "go-to-school", hanzi: "\u53BB\u5B66\u6821", pinyin: "q\xF9 xu\xE9 xi\xE0o", english: "go to school", audio: "\u53BB\u5B66\u6821" },
     { id: "school-ends", hanzi: "\u653E\u5B66", pinyin: "f\xE0ng xu\xE9", english: "school ends", audio: "\u653E\u5B66" },
@@ -2914,11 +3044,11 @@
 
   // src/features/time-daily-life/dates.js
   var timeDateDateItems = [
-    { id: "date-board", hanzi: "\u51E0\u6708\u51E0\u53F7\uFF1F", pinyin: "j\u01D0 yu\xE8 j\u01D0 h\xE0o?", english: "What month and day?", context: "\u770B\u65E5\u5386\uFF0C\u53EF\u4EE5\u77E5\u9053\u51E0\u6708\u51E0\u53F7\u3002", contextPinyin: "k\xE0n r\xEC l\xEC, k\u011B y\u01D0 zh\u012B d\xE0o j\u01D0 yu\xE8 j\u01D0 h\xE0o.", contextEnglish: "Look at a calendar to find the month and day.", audio: "\u51E0\u6708\u51E0\u53F7", imagePath: "assets/illustrated-dates/calendar-example-dates-board.webp" },
-    { id: "new-year", hanzi: "\u4E00\u6708\u4E00\u53F7", pinyin: "y\u012B yu\xE8 y\u012B h\xE0o", english: "January first", context: "\u4E00\u6708\u4E00\u53F7\u662F\u65B0\u5E74\u3002", contextPinyin: "y\u012B yu\xE8 y\u012B h\xE0o sh\xEC x\u012Bn ni\xE1n.", contextEnglish: "January first is New Year's Day.", audio: "\u4E00\u6708\u4E00\u53F7\u662F\u65B0\u5E74", imagePath: "assets/illustrated-dates/january-first-new-year-calendar.webp" },
-    { id: "field-trip", hanzi: "\u4E94\u6708\u4E8C\u5341\u53F7", pinyin: "w\u01D4 yu\xE8 \xE8r sh\xED h\xE0o", english: "May twentieth", context: "\u4E94\u6708\u4E8C\u5341\u53F7\uFF0C\u6211\u4EEC\u53BB\u6625\u6E38\u3002", contextPinyin: "w\u01D4 yu\xE8 \xE8r sh\xED h\xE0o, w\u01D2 men q\xF9 ch\u016Bn y\xF3u.", contextEnglish: "On May twentieth, we go on a spring outing.", audio: "\u4E94\u6708\u4E8C\u5341\u53F7\u6211\u4EEC\u53BB\u6625\u6E38", imagePath: "assets/illustrated-dates/may-twentieth-field-trip-calendar.webp" },
-    { id: "christmas", hanzi: "\u5341\u4E8C\u6708\u4E8C\u5341\u4E94\u53F7", pinyin: "sh\xED \xE8r yu\xE8 \xE8r sh\xED w\u01D4 h\xE0o", english: "December twenty-fifth", context: "\u5341\u4E8C\u6708\u4E8C\u5341\u4E94\u53F7\u662F\u5723\u8BDE\u8282\u3002", contextPinyin: "sh\xED \xE8r yu\xE8 \xE8r sh\xED w\u01D4 h\xE0o sh\xEC sh\xE8ng d\xE0n ji\xE9.", contextEnglish: "December twenty-fifth is Christmas.", audio: "\u5341\u4E8C\u6708\u4E8C\u5341\u4E94\u53F7\u662F\u5723\u8BDE\u8282", imagePath: "assets/illustrated-dates/december-twenty-fifth-christmas-calendar.webp" },
-    { id: "birthday", hanzi: "\u751F\u65E5\u5FEB\u4E50\uFF01", pinyin: "sh\u0113ng r\xEC ku\xE0i l\xE8!", english: "Happy birthday!", context: "\u4ECA\u5929\u662F\u6211\u7684\u751F\u65E5\u3002\u751F\u65E5\u5FEB\u4E50\uFF01", contextPinyin: "j\u012Bn ti\u0101n sh\xEC w\u01D2 de sh\u0113ng r\xEC. sh\u0113ng r\xEC ku\xE0i l\xE8!", contextEnglish: "Today is my birthday. Happy birthday!", audio: "\u4ECA\u5929\u662F\u6211\u7684\u751F\u65E5\u751F\u65E5\u5FEB\u4E50", imagePath: "assets/illustrated-dates/birthday-party-scene.webp" }
+    { id: "date-board", hanzi: "\u51E0\u6708\u51E0\u53F7\uFF1F", pinyin: "j\u01D0 yu\xE8 j\u01D0 h\xE0o?", english: "What month and day?", context: "\u770B\u65E5\u5386\uFF0C\u53EF\u4EE5\u77E5\u9053\u51E0\u6708\u51E0\u53F7\u3002", contextPinyin: "k\xE0n r\xEC l\xEC, k\u011B y\u01D0 zh\u012B d\xE0o j\u01D0 yu\xE8 j\u01D0 h\xE0o.", contextEnglish: "Look at a calendar to find the month and day.", audio: "\u51E0\u6708\u51E0\u53F7", imagePath: "assets/illustrated-dates/calendar-example-dates-board.webp", lessonSources: ["3a:2"] },
+    { id: "new-year", hanzi: "\u4E00\u6708\u4E00\u53F7", pinyin: "y\u012B yu\xE8 y\u012B h\xE0o", english: "January first", context: "\u4E00\u6708\u4E00\u53F7\u662F\u65B0\u5E74\u3002", contextPinyin: "y\u012B yu\xE8 y\u012B h\xE0o sh\xEC x\u012Bn ni\xE1n.", contextEnglish: "January first is New Year's Day.", audio: "\u4E00\u6708\u4E00\u53F7\u662F\u65B0\u5E74", imagePath: "assets/illustrated-dates/january-first-new-year-calendar.webp", lessonSources: ["3a:2"] },
+    { id: "field-trip", hanzi: "\u4E94\u6708\u4E8C\u5341\u53F7", pinyin: "w\u01D4 yu\xE8 \xE8r sh\xED h\xE0o", english: "May twentieth", context: "\u4E94\u6708\u4E8C\u5341\u53F7\uFF0C\u6211\u4EEC\u53BB\u6625\u6E38\u3002", contextPinyin: "w\u01D4 yu\xE8 \xE8r sh\xED h\xE0o, w\u01D2 men q\xF9 ch\u016Bn y\xF3u.", contextEnglish: "On May twentieth, we go on a spring outing.", audio: "\u4E94\u6708\u4E8C\u5341\u53F7\u6211\u4EEC\u53BB\u6625\u6E38", imagePath: "assets/illustrated-dates/may-twentieth-field-trip-calendar.webp", lessonSources: ["3a:2"] },
+    { id: "christmas", hanzi: "\u5341\u4E8C\u6708\u4E8C\u5341\u4E94\u53F7", pinyin: "sh\xED \xE8r yu\xE8 \xE8r sh\xED w\u01D4 h\xE0o", english: "December twenty-fifth", context: "\u5341\u4E8C\u6708\u4E8C\u5341\u4E94\u53F7\u662F\u5723\u8BDE\u8282\u3002", contextPinyin: "sh\xED \xE8r yu\xE8 \xE8r sh\xED w\u01D4 h\xE0o sh\xEC sh\xE8ng d\xE0n ji\xE9.", contextEnglish: "December twenty-fifth is Christmas.", audio: "\u5341\u4E8C\u6708\u4E8C\u5341\u4E94\u53F7\u662F\u5723\u8BDE\u8282", imagePath: "assets/illustrated-dates/december-twenty-fifth-christmas-calendar.webp", lessonSources: ["3a:2"] },
+    { id: "birthday", hanzi: "\u751F\u65E5\u5FEB\u4E50\uFF01", pinyin: "sh\u0113ng r\xEC ku\xE0i l\xE8!", english: "Happy birthday!", context: "\u4ECA\u5929\u662F\u6211\u7684\u751F\u65E5\u3002\u751F\u65E5\u5FEB\u4E50\uFF01", contextPinyin: "j\u012Bn ti\u0101n sh\xEC w\u01D2 de sh\u0113ng r\xEC. sh\u0113ng r\xEC ku\xE0i l\xE8!", contextEnglish: "Today is my birthday. Happy birthday!", audio: "\u4ECA\u5929\u662F\u6211\u7684\u751F\u65E5\u751F\u65E5\u5FEB\u4E50", imagePath: "assets/illustrated-dates/birthday-party-scene.webp", lessonSources: ["3a:3"] }
   ];
   var timeDateMonthItems = [
     ["January", "\u4E00\u6708", "y\u012B yu\xE8", "\u4E00\u6708\uFF0C\u65B0\u5E74\u7684\u7B2C\u4E00\u4E2A\u6708\u3002", "y\u012B yu\xE8, x\u012Bn ni\xE1n de d\xEC y\u012B ge yu\xE8.", "January: the first month of the new year."],
@@ -2933,14 +3063,19 @@
     ["October", "\u5341\u6708", "sh\xED yu\xE8", "\u5341\u6708\uFF0C\u6811\u53F6\u53D8\u7EA2\u4E86\u3002", "sh\xED yu\xE8, sh\xF9 y\xE8 bi\xE0n h\xF3ng le.", "In October, leaves turn red."],
     ["November", "\u5341\u4E00\u6708", "sh\xED y\u012B yu\xE8", "\u5341\u4E00\u6708\uFF0C\u611F\u6069\u8282\u3002", "sh\xED y\u012B yu\xE8, G\u01CEn \u0113n Ji\xE9.", "Thanksgiving is in November."],
     ["December", "\u5341\u4E8C\u6708", "sh\xED \xE8r yu\xE8", "\u5341\u4E8C\u6708\uFF0C\u53BB\u6ED1\u96EA\u3002", "sh\xED \xE8r yu\xE8, q\xF9 hu\xE1 xu\u011B.", "In December, go skiing."]
-  ].map(([english, hanzi, pinyin, context, contextPinyin, contextEnglish]) => ({ id: english.toLowerCase(), hanzi, pinyin, english, context, contextPinyin, contextEnglish, hideLabelHanzi: true, hideLabelDetails: true, audio: context, imagePath: `assets/illustrated-months-of-year/${english}.webp` }));
+  ].map(([english, hanzi, pinyin, context, contextPinyin, contextEnglish]) => ({ id: english.toLowerCase(), hanzi, pinyin, english, context, contextPinyin, contextEnglish, hideLabelHanzi: true, hideLabelDetails: true, audio: context, imagePath: `assets/illustrated-months-of-year/${english}.webp`, lessonSources: ["3a:2"] }));
   var datePracticeItems = [
-    { id: "date-new-year", hanzi: "\u4E00\u6708\u4E00\u53F7", pinyin: "y\u012B yu\xE8 y\u012B h\xE0o", english: "January first", audio: "\u4E00\u6708\u4E00\u53F7\u662F\u65B0\u5E74", eventHanzi: "\u65B0\u5E74", eventPinyin: "x\u012Bn ni\xE1n", eventEnglish: "New Year" },
-    { id: "date-chinese-new-year", hanzi: "\u4E8C\u6708", pinyin: "\xE8r yu\xE8", english: "February", audio: "\u4E8C\u6708\u4E2D\u56FD\u65B0\u5E74", eventHanzi: "\u4E2D\u56FD\u65B0\u5E74", eventPinyin: "Zh\u014Dng gu\xF3 x\u012Bn ni\xE1n", eventEnglish: "Chinese New Year" },
-    { id: "date-field-trip", hanzi: "\u4E94\u6708\u4E8C\u5341\u53F7", pinyin: "w\u01D4 yu\xE8 \xE8r sh\xED h\xE0o", english: "May twentieth", audio: "\u4E94\u6708\u4E8C\u5341\u53F7\u6211\u4EEC\u53BB\u6625\u6E38", eventHanzi: "\u6625\u6E38", eventPinyin: "ch\u016Bn y\xF3u", eventEnglish: "Field trip" },
-    { id: "date-christmas", hanzi: "\u5341\u4E8C\u6708\u4E8C\u5341\u4E94\u53F7", pinyin: "sh\xED \xE8r yu\xE8 \xE8r sh\xED w\u01D4 h\xE0o", english: "December twenty-fifth", audio: "\u5341\u4E8C\u6708\u4E8C\u5341\u4E94\u53F7\u662F\u5723\u8BDE\u8282", eventHanzi: "\u5723\u8BDE\u8282", eventPinyin: "Sh\xE8ng d\xE0n Ji\xE9", eventEnglish: "Christmas" },
-    { id: "birthday-wish", hanzi: "\u795D\u4F60\u751F\u65E5\u5FEB\u4E50\uFF01", pinyin: "zh\xF9 n\u01D0 sh\u0113ng r\xEC ku\xE0i l\xE8!", english: "Happy birthday!", audio: "\u795D\u4F60\u751F\u65E5\u5FEB\u4E50" },
-    { id: "birthday-party", hanzi: "\u751F\u65E5\u4F1A\u4E0A\u6709\u793C\u7269\u3002", pinyin: "sh\u0113ng r\xEC hu\xEC sh\xE0ng y\u01D2u l\u01D0 w\xF9.", english: "There are presents at a birthday party.", audio: "\u751F\u65E5\u4F1A\u4E0A\u6709\u793C\u7269" }
+    { id: "date-new-year", hanzi: "\u4E00\u6708\u4E00\u53F7", pinyin: "y\u012B yu\xE8 y\u012B h\xE0o", english: "January first", audio: "\u4E00\u6708\u4E00\u53F7\u662F\u65B0\u5E74", eventHanzi: "\u65B0\u5E74", eventPinyin: "x\u012Bn ni\xE1n", eventEnglish: "New Year", lessonSources: ["3a:2"] },
+    { id: "date-chinese-new-year", hanzi: "\u4E8C\u6708", pinyin: "\xE8r yu\xE8", english: "February", audio: "\u4E8C\u6708\u4E2D\u56FD\u65B0\u5E74", eventHanzi: "\u4E2D\u56FD\u65B0\u5E74", eventPinyin: "Zh\u014Dng gu\xF3 x\u012Bn ni\xE1n", eventEnglish: "Chinese New Year", lessonSources: ["3a:2"] },
+    { id: "date-field-trip", hanzi: "\u4E94\u6708\u4E8C\u5341\u53F7", pinyin: "w\u01D4 yu\xE8 \xE8r sh\xED h\xE0o", english: "May twentieth", audio: "\u4E94\u6708\u4E8C\u5341\u53F7\u6211\u4EEC\u53BB\u6625\u6E38", eventHanzi: "\u6625\u6E38", eventPinyin: "ch\u016Bn y\xF3u", eventEnglish: "Field trip", lessonSources: ["3a:2"] },
+    { id: "date-christmas", hanzi: "\u5341\u4E8C\u6708\u4E8C\u5341\u4E94\u53F7", pinyin: "sh\xED \xE8r yu\xE8 \xE8r sh\xED w\u01D4 h\xE0o", english: "December twenty-fifth", audio: "\u5341\u4E8C\u6708\u4E8C\u5341\u4E94\u53F7\u662F\u5723\u8BDE\u8282", eventHanzi: "\u5723\u8BDE\u8282", eventPinyin: "Sh\xE8ng d\xE0n Ji\xE9", eventEnglish: "Christmas", lessonSources: ["3a:2"] },
+    { id: "birthday-wish", hanzi: "\u795D\u4F60\u751F\u65E5\u5FEB\u4E50\uFF01", pinyin: "zh\xF9 n\u01D0 sh\u0113ng r\xEC ku\xE0i l\xE8!", english: "Happy birthday!", audio: "\u795D\u4F60\u751F\u65E5\u5FEB\u4E50", lessonSources: ["3a:3"] },
+    { id: "birthday-party", hanzi: "\u751F\u65E5\u4F1A\u4E0A\u6709\u793C\u7269\u3002", pinyin: "sh\u0113ng r\xEC hu\xEC sh\xE0ng y\u01D2u l\u01D0 w\xF9.", english: "There are presents at a birthday party.", audio: "\u751F\u65E5\u4F1A\u4E0A\u6709\u793C\u7269", lessonSources: ["3a:3"] }
+  ];
+  var birthdayConversationLines = [
+    { id: "birthday-date", hanzi: "\u4ECA\u5929\u4E09\u6708\u4E94\u53F7\u3002", pinyin: "j\u012Bn ti\u0101n s\u0101n yu\xE8 w\u01D4 h\xE0o.", english: "Today is March fifth.", audio: "\u4ECA\u5929\u4E09\u6708\u4E94\u53F7" },
+    { id: "birthday-announcement", hanzi: "\u4ECA\u5929\u662F\u6211\u7684\u751F\u65E5\u3002", pinyin: "j\u012Bn ti\u0101n sh\xEC w\u01D2 de sh\u0113ng r\xEC.", english: "Today is my birthday.", audio: "\u4ECA\u5929\u662F\u6211\u7684\u751F\u65E5" },
+    { id: "birthday-wish", hanzi: "\u795D\u4F60\u751F\u65E5\u5FEB\u4E50\uFF01", pinyin: "zh\xF9 n\u01D0 sh\u0113ng r\xEC ku\xE0i l\xE8!", english: "Happy birthday!", audio: "\u795D\u4F60\u751F\u65E5\u5FEB\u4E50" }
   ];
 
   // src/features/time-daily-life/comparisons.js
@@ -3414,6 +3549,7 @@
     scenes: [
       {
         id: "classroom",
+        lessonSources: ["2b:4"],
         label: "Our classroom",
         hanzi: "\u8FD9\u662F\u6211\u4EEC\u7684\u6559\u5BA4\u3002\u6559\u5BA4\u91CC\u6709\u5F88\u591A\u684C\u5B50\u548C\u6905\u5B50\u3002",
         pinyin: "zh\xE8 sh\xEC w\u01D2 men de ji\xE0o sh\xEC. ji\xE0o sh\xEC l\u01D0 y\u01D2u h\u011Bn du\u014D zhu\u014D zi h\xE9 y\u01D0 zi.",
@@ -3423,6 +3559,7 @@
       },
       {
         id: "classroom-things",
+        lessonSources: ["2b:4"],
         label: "On the table",
         hanzi: "\u684C\u5B50\u4E0A\u6709\u94C5\u7B14\u548C\u7B14\u8BB0\u672C\u3002",
         pinyin: "zhu\u014D zi sh\xE0ng y\u01D2u qi\u0101n b\u01D0 h\xE9 b\u01D0 j\xEC b\u011Bn.",
@@ -3432,6 +3569,7 @@
       },
       {
         id: "classroom-computer-tv-bookshelf",
+        lessonSources: ["3b:2"],
         label: "More classroom things",
         hanzi: "\u6559\u5BA4\u91CC\u6709\u767D\u677F\u3001\u7535\u89C6\u3001\u7535\u8111\u548C\u4E66\u67B6\u3002",
         pinyin: "ji\xE0o sh\xEC l\u01D0 y\u01D2u b\xE1i b\u01CEn, di\xE0n sh\xEC, di\xE0n n\u01CEo h\xE9 sh\u016B ji\xE0.",
@@ -3441,24 +3579,24 @@
       }
     ],
     words: [
-      ["classroom", "\u6559\u5BA4", "ji\xE0o sh\xEC", "classroom", "assets/illustrated-school-anchors/classroom_anchor.webp"],
-      ["table", "\u684C\u5B50", "zhu\u014D zi", "table", "assets/illustrated-stationery/table.webp"],
-      ["chair", "\u6905\u5B50", "y\u01D0 zi", "chair", "assets/illustrated-stationery/chair.webp"],
-      ["whiteboard", "\u767D\u677F", "b\xE1i b\u01CEn", "whiteboard", "assets/illustrated-classrooms/whiteboard.webp"],
-      ["blackboard", "\u9ED1\u677F", "h\u0113i b\u01CEn", "blackboard", "assets/illustrated-classrooms/blackboard.png"],
-      ["computer", "\u7535\u8111", "di\xE0n n\u01CEo", "computer (laptop)", "assets/illustrated-classrooms/computer.webp"],
-      ["television", "\u7535\u89C6", "di\xE0n sh\xEC", "television", "assets/illustrated-classrooms/television.webp"],
-      ["bookshelf", "\u4E66\u67B6", "sh\u016B ji\xE0", "bookshelf", "assets/illustrated-classrooms/bookshelf.webp"]
-    ].map(([id, hanzi, pinyin, english, imagePath]) => ({ id, hanzi, pinyin, english, audio: hanzi, imagePath })),
+      ["classroom", "\u6559\u5BA4", "ji\xE0o sh\xEC", "classroom", "assets/illustrated-school-anchors/classroom_anchor.webp", ["2b:4", "3b:2"]],
+      ["table", "\u684C\u5B50", "zhu\u014D zi", "table", "assets/illustrated-stationery/table.webp", ["2b:4", "3b:2"]],
+      ["chair", "\u6905\u5B50", "y\u01D0 zi", "chair", "assets/illustrated-stationery/chair.webp", ["2b:4", "3b:2"]],
+      ["whiteboard", "\u767D\u677F", "b\xE1i b\u01CEn", "whiteboard", "assets/illustrated-classrooms/whiteboard.webp", ["3b:2"]],
+      ["blackboard", "\u9ED1\u677F", "h\u0113i b\u01CEn", "blackboard", "assets/illustrated-classrooms/blackboard.png", ["3b:2"]],
+      ["computer", "\u7535\u8111", "di\xE0n n\u01CEo", "computer (laptop)", "assets/illustrated-classrooms/computer.webp", ["3b:2"]],
+      ["television", "\u7535\u89C6", "di\xE0n sh\xEC", "television", "assets/illustrated-classrooms/television.webp", ["3b:2"]],
+      ["bookshelf", "\u4E66\u67B6", "sh\u016B ji\xE0", "bookshelf", "assets/illustrated-classrooms/bookshelf.webp", ["3b:2"]]
+    ].map(([id, hanzi, pinyin, english, imagePath, lessonSources]) => ({ id, hanzi, pinyin, english, audio: hanzi, imagePath, lessonSources })),
     sentenceFrames: [
-      { id: "in-classroom", hanzi: "\u6559\u5BA4\u91CC\u6709", pinyin: "ji\xE0o sh\xEC l\u01D0 y\u01D2u", english: "There is / are ... in the classroom", wordIds: ["table", "chair", "whiteboard", "blackboard", "computer", "television", "bookshelf"] },
-      { id: "many-in-classroom", hanzi: "\u6559\u5BA4\u91CC\u6709\u5F88\u591A", pinyin: "ji\xE0o sh\xEC l\u01D0 y\u01D2u h\u011Bn du\u014D", english: "There are many ... in the classroom", wordIds: ["table", "chair", "textbook"] },
-      { id: "on-table", hanzi: "\u684C\u5B50\u4E0A\u6709", pinyin: "zhu\u014D zi sh\xE0ng y\u01D2u", english: "There is / are ... on the table", wordIds: ["computer", "textbook", "workbook", "pencil", "ruler", "eraser", "colored-pencils"] }
+      { id: "in-classroom", hanzi: "\u6559\u5BA4\u91CC\u6709", pinyin: "ji\xE0o sh\xEC l\u01D0 y\u01D2u", english: "There is / are ... in the classroom", wordIds: ["table", "chair", "whiteboard", "blackboard", "computer", "television", "bookshelf"], lessonSources: ["3b:2"] },
+      { id: "many-in-classroom", hanzi: "\u6559\u5BA4\u91CC\u6709\u5F88\u591A", pinyin: "ji\xE0o sh\xEC l\u01D0 y\u01D2u", english: "There are many ... in the classroom", wordIds: ["table", "chair", "textbook"], lessonSources: ["2b:4"] },
+      { id: "on-table", hanzi: "\u684C\u5B50\u4E0A\u6709", pinyin: "zhu\u014D zi sh\xE0ng y\u01D2u", english: "There is / are ... on the table", wordIds: ["computer", "textbook", "workbook", "pencil", "ruler", "eraser", "colored-pencils"], lessonSources: ["3b:2"] }
     ],
     review: [
-      { pattern: "\u6559\u5BA4\u91CC\u6709\u2026\u2026", pinyin: "ji\xE0o sh\xEC l\u01D0 y\u01D2u...", english: "There is / are ... in the classroom.", example: "\u6559\u5BA4\u91CC\u6709\u684C\u5B50\u548C\u6905\u5B50\u3002" },
-      { pattern: "\u684C\u5B50\u4E0A\u6709\u2026\u2026", pinyin: "zhu\u014D zi sh\xE0ng y\u01D2u...", english: "There is / are ... on the table.", example: "\u684C\u5B50\u4E0A\u6709\u7535\u8111\u3002" },
-      { pattern: "\u5F88\u591A", pinyin: "h\u011Bn du\u014D", english: "many; much", example: "\u6559\u5BA4\u91CC\u6709\u5F88\u591A\u684C\u5B50\u548C\u6905\u5B50\u3002" }
+      { pattern: "\u6559\u5BA4\u91CC\u6709\u2026\u2026", pinyin: "ji\xE0o sh\xEC l\u01D0 y\u01D2u...", english: "There is / are ... in the classroom.", example: "\u6559\u5BA4\u91CC\u6709\u684C\u5B50\u548C\u6905\u5B50\u3002", lessonSources: ["2b:4", "3b:2"] },
+      { pattern: "\u684C\u5B50\u4E0A\u6709\u2026\u2026", pinyin: "zhu\u014D zi sh\xE0ng y\u01D2u...", english: "There is / are ... on the table.", example: "\u684C\u5B50\u4E0A\u6709\u7535\u8111\u3002", lessonSources: ["3b:2"] },
+      { pattern: "\u5F88\u591A", pinyin: "h\u011Bn du\u014D", english: "many; much", example: "\u6559\u5BA4\u91CC\u6709\u5F88\u591A\u684C\u5B50\u548C\u6905\u5B50\u3002", lessonSources: ["2b:4"] }
     ]
   };
 
@@ -3704,7 +3842,7 @@
       state2.schoolMatchFeedback = "";
     }
     function mealsConversationItems() {
-      return schoolTopicData3["meals-feelings"]?.conversationPairs ?? [];
+      return filterLessonContent(schoolTopicData3["meals-feelings"]?.conversationPairs ?? [], state2.lessonScope);
     }
     function resetMealsConversationMatch() {
       const ids = mealsConversationItems().map((item) => item.id);
@@ -3750,7 +3888,7 @@
       renderActivityPanel2(currentTopic2());
     }
     function mealsPictureChoiceItems() {
-      return schoolTopicData3["meals-feelings"]?.pictureChoices ?? [];
+      return filterLessonContent(schoolTopicData3["meals-feelings"]?.pictureChoices ?? [], state2.lessonScope);
     }
     function resetMealsPictureQuestion() {
       const prompt = mealsPictureChoiceItems().find((item) => item.id === state2.mealsPictureQuizOrder[state2.mealsPictureQuizIndex]);
@@ -3883,18 +4021,18 @@
   `;
     }
     function classroomSentenceFrames() {
-      return schoolTopicData3.classroom?.sentenceFrames ?? [];
+      return filterLessonContent(schoolTopicData3.classroom?.sentenceFrames ?? [], currentTopic2().id === "classroom" ? state2.lessonScope : null);
     }
     function classroomSentenceWords() {
       return [
-        ...(schoolTopicData3.classroom?.words ?? []).map((item) => item.id === "computer" ? { ...item, sentenceEnglish: "laptop" } : item),
-        { id: "textbook", hanzi: "\u8BFE\u672C", pinyin: "k\xE8 b\u011Bn", english: "textbook", imagePath: "assets/illustrated-stationery/textbook.webp" },
-        { id: "workbook", hanzi: "\u7EC3\u4E60\u672C", pinyin: "li\xE0n x\xED b\u011Bn", english: "workbook", imagePath: "assets/illustrated-stationery/workbook.webp" },
-        { id: "pencil", hanzi: "\u94C5\u7B14", pinyin: "qi\u0101n b\u01D0", english: "pencil", imagePath: "assets/illustrated-stationery/pencil.webp" },
-        { id: "ruler", hanzi: "\u5C3A\u5B50", pinyin: "ch\u01D0 zi", english: "ruler", imagePath: "assets/illustrated-stationery/ruler.webp" },
-        { id: "eraser", hanzi: "\u6A61\u76AE", pinyin: "xi\xE0ng p\xED", english: "eraser", imagePath: "assets/illustrated-stationery/eraser.webp" },
-        { id: "colored-pencils", hanzi: "\u5F69\u8272\u94C5\u7B14", pinyin: "c\u01CEi s\xE8 qi\u0101n b\u01D0", english: "colored pencils", imagePath: "assets/illustrated-stationery/colored-pencils.webp" }
-      ];
+        ...filterLessonContent(schoolTopicData3.classroom?.words ?? [], currentTopic2().id === "classroom" ? state2.lessonScope : null).map((item) => item.id === "computer" ? { ...item, sentenceEnglish: "laptop" } : item),
+        { id: "textbook", hanzi: "\u8BFE\u672C", pinyin: "k\xE8 b\u011Bn", english: "textbook", imagePath: "assets/illustrated-stationery/textbook.webp", lessonSources: ["2b:4", "3b:2"] },
+        { id: "workbook", hanzi: "\u7EC3\u4E60\u672C", pinyin: "li\xE0n x\xED b\u011Bn", english: "workbook", imagePath: "assets/illustrated-stationery/workbook.webp", lessonSources: ["3b:2"] },
+        { id: "pencil", hanzi: "\u94C5\u7B14", pinyin: "qi\u0101n b\u01D0", english: "pencil", imagePath: "assets/illustrated-stationery/pencil.webp", lessonSources: ["3b:2"] },
+        { id: "ruler", hanzi: "\u5C3A\u5B50", pinyin: "ch\u01D0 zi", english: "ruler", imagePath: "assets/illustrated-stationery/ruler.webp", lessonSources: ["3b:2"] },
+        { id: "eraser", hanzi: "\u6A61\u76AE", pinyin: "xi\xE0ng p\xED", english: "eraser", imagePath: "assets/illustrated-stationery/eraser.webp", lessonSources: ["3b:2"] },
+        { id: "colored-pencils", hanzi: "\u5F69\u8272\u94C5\u7B14", pinyin: "c\u01CEi s\xE8 qi\u0101n b\u01D0", english: "colored pencils", imagePath: "assets/illustrated-stationery/colored-pencils.webp", lessonSources: ["3b:2"] }
+      ].filter((item) => currentTopic2().id !== "classroom" || !state2.lessonScope || item.lessonSources?.includes(lessonScopeKey2()));
     }
     function selectedClassroomSentenceFrame() {
       return classroomSentenceFrames().find((frame) => frame.id === state2.classroomSentenceFrameId) ?? classroomSentenceFrames()[0];
@@ -4415,7 +4553,8 @@
       ensureMealsPictureChoice();
       const items = mealsConversationItems();
       activityPanelTitle2.textContent = "Let's practice";
-      activityPanelSummary2.textContent = schoolTopicData3[topic.id].practiceSummary;
+      const source = state2.lessonScope ? `${state2.lessonScope.bookId}:${state2.lessonScope.lessonNumber}` : "";
+      activityPanelSummary2.textContent = source === "4a:5" ? "Match the lunch question and answer, then choose the sentence that fits the lunch picture." : source === "4a:7" ? "Match each feeling to what the child wants to eat or drink." : schoolTopicData3[topic.id].practiceSummary;
       activityList2.className = "support-list";
       activityList2.innerHTML = `
     <section class="family-practice-shell lesson-practice-shell">
@@ -4488,13 +4627,14 @@
         return;
       }
       const sceneGroups = data.sceneGroups ?? [{ id: "all", items: data.scenes ?? [] }];
-      const contentScope = topicId === "food" ? state2.lessonScope : null;
+      const contentScope = ["food", "classroom", "meals-feelings"].includes(topicId) ? state2.lessonScope : null;
       const filteredSceneGroups = filterLessonGroups(sceneGroups, contentScope);
       const wordGroups = schoolWordGroups(topicId);
-      if (topicId === "meals-feelings" && !wordGroups.some((group) => group.id === state2.mealsWordGroupId)) {
-        state2.mealsWordGroupId = wordGroups[0]?.id ?? "";
+      const visibleWordGroups = topicId === "meals-feelings" ? filterLessonContent(wordGroups, contentScope) : wordGroups;
+      if (topicId === "meals-feelings" && !visibleWordGroups.some((group) => group.id === state2.mealsWordGroupId)) {
+        state2.mealsWordGroupId = visibleWordGroups[0]?.id ?? "";
       }
-      const visibleWords = topicId === "food" ? foodBookWordItems(data) : topicId === "meals-feelings" ? wordGroups.find((group) => group.id === state2.mealsWordGroupId)?.items ?? [] : data.words;
+      const visibleWords = topicId === "food" ? foodBookWordItems(data) : topicId === "meals-feelings" ? visibleWordGroups.find((group) => group.id === state2.mealsWordGroupId)?.items ?? [] : filterLessonContent(data.words, contentScope);
       focusExplorer2.innerHTML = `
     <div class="time-date-board school-topic-board">
       ${filteredSceneGroups.length ? '<div class="time-months-heading"><p class="body-match-kicker">Review</p></div>' : ""}
@@ -4519,7 +4659,7 @@
       ${data.showWords !== false ? `
         <div class="time-months-heading"><p class="body-match-kicker">Book words</p></div>
         ${topicId === "food" && !scopedFoodCategoryId() ? `<div class="food-book-tabs" role="tablist" aria-label="Food word categories">${Object.entries(foodCategoryGroups).map(([id, group]) => `<button class="food-book-tab${state2.foodBookCategoryId === id ? " is-active" : ""}" type="button" role="tab" aria-selected="${state2.foodBookCategoryId === id}" data-food-book-category="${id}">${group.hanzi}${state2.showEnglish ? `<small>${group.english}</small>` : ""}</button>`).join("")}</div>` : ""}
-        ${topicId === "meals-feelings" && wordGroups.length > 1 ? `<div class="food-book-tabs lesson-word-tabs" role="tablist" aria-label="Meals and feelings word categories">${wordGroups.map((group) => `<button class="food-book-tab${state2.mealsWordGroupId === group.id ? " is-active" : ""}" type="button" role="tab" aria-selected="${state2.mealsWordGroupId === group.id}" data-meals-word-group="${group.id}">${group.hanzi}${state2.showEnglish ? `<small>${group.english}</small>` : ""}</button>`).join("")}</div>` : ""}
+        ${topicId === "meals-feelings" && visibleWordGroups.length > 1 ? `<div class="food-book-tabs lesson-word-tabs" role="tablist" aria-label="Meals and feelings word categories">${visibleWordGroups.map((group) => `<button class="food-book-tab${state2.mealsWordGroupId === group.id ? " is-active" : ""}" type="button" role="tab" aria-selected="${state2.mealsWordGroupId === group.id}" data-meals-word-group="${group.id}">${group.hanzi}${state2.showEnglish ? `<small>${group.english}</small>` : ""}</button>`).join("")}</div>` : ""}
         <div class="school-word-grid${topicId === "school-subjects" ? " is-text-only" : ""}${topicId === "meals-feelings" ? " is-uniform-images" : ""}">
           ${visibleWords.map((item) => `
             <button class="school-word-card${item.imagePath ? " book-word-card" : ""}" type="button" data-school-word="${item.id}">
@@ -4742,6 +4882,7 @@
       {
         id: "lunch",
         label: "",
+        lessonSources: ["4a:5"],
         items: [
           {
             id: "lunch",
@@ -4750,7 +4891,8 @@
             pinyin: "w\u01D2 w\u01D4 f\xE0n h\u0113 le ni\xFA n\u01CEi, ch\u012B le p\u012B s\xE0.",
             english: "For lunch, I drank milk and ate pizza.",
             audio: "\u6211\u5348\u996D\u559D\u4E86\u725B\u5976\u5403\u4E86\u62AB\u8428",
-            imagePath: "assets/illustrated-meals/anan-eating-school-lunch.webp"
+            imagePath: "assets/illustrated-meals/anan-eating-school-lunch.webp",
+            lessonSources: ["4a:5"]
           },
           {
             id: "cola-water",
@@ -4766,16 +4908,18 @@
       {
         id: "feelings",
         label: "Food Feelings",
+        lessonSources: ["4a:7"],
         items: [
-          { id: "hungry", label: "Hungry", hanzi: "\u6211\u997F\u4E86\uFF0C\u6211\u8981\u5403\u7092\u996D\u3002", pinyin: "w\u01D2 \xE8 le, w\u01D2 y\xE0o ch\u012B ch\u01CEo f\xE0n.", english: "I am hungry. I want to eat fried rice.", audio: "\u6211\u997F\u4E86\u6211\u8981\u5403\u7092\u996D", imagePath: "assets/illustrated-food-feelings/hungry.webp" },
-          { id: "thirsty", label: "Thirsty", hanzi: "\u6211\u6E34\u4E86\uFF0C\u6211\u8981\u559D\u6C34\u3002", pinyin: "w\u01D2 k\u011B le, w\u01D2 y\xE0o h\u0113 shu\u01D0.", english: "I am thirsty. I want to drink water.", audio: "\u6211\u6E34\u4E86\u6211\u8981\u559D\u6C34", imagePath: "assets/illustrated-food-feelings/thirsty.webp" },
-          { id: "delicious", label: "Delicious", hanzi: "\u997A\u5B50\u597D\u5403\u3002", pinyin: "ji\u01CEo zi h\u01CEo ch\u012B.", english: "Dumplings are delicious.", audio: "\u997A\u5B50\u597D\u5403", imagePath: "assets/illustrated-food-feelings/delicious.webp" },
-          { id: "full", label: "Full", hanzi: "\u5988\u5988\uFF0C\u6211\u9971\u4E86\uFF0C\u4E0D\u5403\u4E86\u3002", pinyin: "m\u0101 ma, w\u01D2 b\u01CEo le, b\xF9 ch\u012B le.", english: "Mom, I am full. I do not want to eat any more.", audio: "\u5988\u5988\u6211\u9971\u4E86\u4E0D\u5403\u4E86", imagePath: "assets/illustrated-food-feelings/full.webp" }
+          { id: "hungry", label: "Hungry", hanzi: "\u6211\u997F\u4E86\uFF0C\u6211\u8981\u5403\u7092\u996D\u3002", pinyin: "w\u01D2 \xE8 le, w\u01D2 y\xE0o ch\u012B ch\u01CEo f\xE0n.", english: "I am hungry. I want to eat fried rice.", audio: "\u6211\u997F\u4E86\u6211\u8981\u5403\u7092\u996D", imagePath: "assets/illustrated-food-feelings/hungry.webp", lessonSources: ["4a:7"] },
+          { id: "thirsty", label: "Thirsty", hanzi: "\u6211\u6E34\u4E86\uFF0C\u6211\u8981\u559D\u6C34\u3002", pinyin: "w\u01D2 k\u011B le, w\u01D2 y\xE0o h\u0113 shu\u01D0.", english: "I am thirsty. I want to drink water.", audio: "\u6211\u6E34\u4E86\u6211\u8981\u559D\u6C34", imagePath: "assets/illustrated-food-feelings/thirsty.webp", lessonSources: ["4a:7"] },
+          { id: "delicious", label: "Delicious", hanzi: "\u7092\u996D\u597D\u5403\u3002", pinyin: "ch\u01CEo f\xE0n h\u01CEo ch\u012B.", english: "Fried rice is delicious.", audio: "\u7092\u996D\u597D\u5403", imagePath: "assets/illustrated-food-feelings/delicious.webp", lessonSources: ["4a:7"] },
+          { id: "full", label: "Full", hanzi: "\u5988\u5988\uFF0C\u6211\u9971\u4E86\uFF0C\u4E0D\u5403\u4E86\u3002", pinyin: "m\u0101 ma, w\u01D2 b\u01CEo le, b\xF9 ch\u012B le.", english: "Mom, I am full. I do not want to eat any more.", audio: "\u5988\u5988\u6211\u9971\u4E86\u4E0D\u5403\u4E86", imagePath: "assets/illustrated-food-feelings/full.webp", lessonSources: ["4a:7"] }
         ]
       }
     ],
     wordGroups: [
-      { id: "feelings", hanzi: "\u98DF\u7269\u611F\u89C9", english: "Food Feelings", items: [["hungry", "\u997F", "\xE8", "hungry", "assets/illustrated-food-feelings/hungry.webp"], ["thirsty", "\u6E34", "k\u011B", "thirsty", "assets/illustrated-food-feelings/thirsty.webp"], ["want", "\u8981", "y\xE0o", "want", "assets/illustrated-food-feelings/want-eat-fried-rice-landscape.webp"], ["delicious", "\u597D\u5403", "h\u01CEo ch\u012B", "delicious", "assets/illustrated-food-feelings/delicious.webp"], ["full", "\u9971", "b\u01CEo", "full", "assets/illustrated-food-feelings/full.webp"]] }
+      { id: "lunch", hanzi: "\u5348\u996D", english: "My Lunch", lessonSources: ["4a:5"], items: [["fried-noodles", "\u7092\u9762", "ch\u01CEo mi\xE0n", "fried noodles", "assets/illustrated-meals/anan-eating-school-lunch.webp"], ["fries", "\u85AF\u6761", "sh\u01D4 ti\xE1o", "French fries", "assets/illustrated-meals/anan-eating-school-lunch.webp"], ["hot-dog", "\u70ED\u72D7", "r\xE8 g\u01D2u", "hot dog", "assets/illustrated-meals/anan-eating-school-lunch.webp"], ["sandwich", "\u4E09\u660E\u6CBB", "s\u0101n m\xEDng zh\xEC", "sandwich", "assets/illustrated-meals/anan-eating-school-lunch.webp"], ["pizza", "\u62AB\u8428\u997C", "p\u012B s\xE0 b\u01D0ng", "pizza", "assets/illustrated-meals/anan-eating-school-lunch.webp"]] },
+      { id: "feelings", hanzi: "\u997F\u4E86\u548C\u6E34\u4E86", english: "Hungry & Thirsty", lessonSources: ["4a:7"], items: [["hungry", "\u997F", "\xE8", "hungry", "assets/illustrated-food-feelings/hungry.webp"], ["thirsty", "\u6E34", "k\u011B", "thirsty", "assets/illustrated-food-feelings/thirsty.webp"], ["want", "\u8981", "y\xE0o", "want", "assets/illustrated-food-feelings/want-eat-fried-rice-landscape.webp"], ["fried-rice", "\u7092\u996D", "ch\u01CEo f\xE0n", "fried rice", "assets/illustrated-food-feelings/hungry.webp"], ["coke", "\u53EF\u4E50", "k\u011B l\xE8", "Coke", "assets/illustrated-food-feelings/thirsty.webp"], ["delicious", "\u597D\u5403", "h\u01CEo ch\u012B", "delicious", "assets/illustrated-food-feelings/delicious.webp"], ["full", "\u9971", "b\u01CEo", "full", "assets/illustrated-food-feelings/full.webp"]] }
     ],
     practiceItems: [
       { id: "ask-lunch", hanzi: "\u4F60\u5348\u996D\u5403\u4EC0\u4E48\uFF1F", pinyin: "n\u01D0 w\u01D4 f\xE0n ch\u012B sh\xE9n me?", english: "What do you have for lunch?", audio: "\u4F60\u5348\u996D\u5403\u4EC0\u4E48" },
@@ -4786,10 +4930,10 @@
       { id: "no-cola-water", hanzi: "\u6CA1\u6709\u53EF\u4E50\uFF0C\u4F60\u53EF\u4EE5\u559D\u6C34\u3002", pinyin: "m\xE9i y\u01D2u k\u011B l\xE8, n\u01D0 k\u011B y\u01D0 h\u0113 shu\u01D0.", english: "There is no Coke. You can drink water.", audio: "\u6CA1\u6709\u53EF\u4E50\u4F60\u53EF\u4EE5\u559D\u6C34" }
     ],
     conversationPairs: [
-      { id: "thirsty-coke", hanzi: "\u6211\u6E34\u4E86\u3002", pinyin: "w\u01D2 k\u011B le.", reply: "\u6211\u8981\u559D\u53EF\u4E50\u3002", replyPinyin: "w\u01D2 y\xE0o h\u0113 k\u011B l\xE8.", audio: "\u6211\u6E34\u4E86" },
-      { id: "hungry-hotdog", hanzi: "\u6211\u997F\u4E86\u3002", pinyin: "w\u01D2 \xE8 le.", reply: "\u6211\u8981\u5403\u70ED\u72D7\u3002", replyPinyin: "w\u01D2 y\xE0o ch\u012B r\xE8 g\u01D2u.", audio: "\u6211\u997F\u4E86" },
-      { id: "full-stop", hanzi: "\u5988\u5988\uFF0C\u6211\u9971\u4E86\u3002", pinyin: "m\u0101 ma, w\u01D2 b\u01CEo le.", reply: "\u597D\uFF0C\u4E0D\u5403\u4E86\u3002", replyPinyin: "h\u01CEo, b\xF9 ch\u012B le.", audio: "\u5988\u5988\u6211\u9971\u4E86" },
-      { id: "lunch-sandwich", hanzi: "\u4F60\u5348\u996D\u5403\u4EC0\u4E48\uFF1F", pinyin: "n\u01D0 w\u01D4 f\xE0n ch\u012B sh\xE9n me?", reply: "\u4E09\u660E\u6CBB\u548C\u679C\u6C41\u3002", replyPinyin: "s\u0101n m\xEDng zh\xEC h\xE9 gu\u01D2 zh\u012B.", audio: "\u4F60\u5348\u996D\u5403\u4EC0\u4E48" },
+      { id: "thirsty-coke", hanzi: "\u6211\u6E34\u4E86\u3002", pinyin: "w\u01D2 k\u011B le.", reply: "\u6211\u8981\u559D\u53EF\u4E50\u3002", replyPinyin: "w\u01D2 y\xE0o h\u0113 k\u011B l\xE8.", audio: "\u6211\u6E34\u4E86", lessonSources: ["4a:7"] },
+      { id: "hungry-fried-rice", hanzi: "\u6211\u997F\u4E86\u3002", pinyin: "w\u01D2 \xE8 le.", reply: "\u6211\u8981\u5403\u7092\u996D\u3002", replyPinyin: "w\u01D2 y\xE0o ch\u012B ch\u01CEo f\xE0n.", audio: "\u6211\u997F\u4E86", lessonSources: ["4a:7"] },
+      { id: "full-stop", hanzi: "\u5988\u5988\uFF0C\u6211\u9971\u4E86\u3002", pinyin: "m\u0101 ma, w\u01D2 b\u01CEo le.", reply: "\u597D\uFF0C\u4E0D\u5403\u4E86\u3002", replyPinyin: "h\u01CEo, b\xF9 ch\u012B le.", audio: "\u5988\u5988\u6211\u9971\u4E86", lessonSources: ["4a:7"] },
+      { id: "lunch-sandwich", hanzi: "\u4F60\u5348\u996D\u5403\u4EC0\u4E48\uFF1F", pinyin: "n\u01D0 w\u01D4 f\xE0n ch\u012B sh\xE9n me?", reply: "\u4E09\u660E\u6CBB\u548C\u679C\u6C41\u3002", replyPinyin: "s\u0101n m\xEDng zh\xEC h\xE9 gu\u01D2 zh\u012B.", audio: "\u4F60\u5348\u996D\u5403\u4EC0\u4E48", lessonSources: ["4a:5"] },
       { id: "chocolate-mealtime", hanzi: "\u6211\u53EF\u4EE5\u5403\u5DE7\u514B\u529B\u5417\uFF1F", pinyin: "w\u01D2 k\u011B y\u01D0 ch\u012B qi\u01CEo k\xE8 l\xEC ma?", reply: "\u4E0D\u884C\uFF0C\u73B0\u5728\u5403\u996D\u3002", replyPinyin: "b\xF9 x\xEDng, xi\xE0n z\xE0i ch\u012B f\xE0n.", audio: "\u6211\u53EF\u4EE5\u5403\u5DE7\u514B\u529B\u5417" },
       { id: "no-coke-water", hanzi: "\u6CA1\u6709\u53EF\u4E50\u3002", pinyin: "m\xE9i y\u01D2u k\u011B l\xE8.", reply: "\u4F60\u53EF\u4EE5\u559D\u6C34\u3002", replyPinyin: "n\u01D0 k\u011B y\u01D0 h\u0113 shu\u01D0.", audio: "\u6CA1\u6709\u53EF\u4E50" }
     ],
@@ -4799,6 +4943,7 @@
         imagePath: "assets/illustrated-meals/anan-eating-school-lunch.webp",
         imageAlt: "Anan eating lunch.",
         correctId: "lunch-sentence",
+        lessonSources: ["4a:5"],
         options: [
           { id: "lunch-sentence", hanzi: "\u6211\u5348\u996D\u559D\u4E86\u725B\u5976\uFF0C\u5403\u4E86\u62AB\u8428\u3002", pinyin: "w\u01D2 w\u01D4 f\xE0n h\u0113 le ni\xFA n\u01CEi, ch\u012B le p\u012B s\xE0.", english: "For lunch, I drank milk and ate pizza." },
           { id: "lunch-coke", hanzi: "\u6211\u8981\u559D\u53EF\u4E50\u3002", pinyin: "w\u01D2 y\xE0o h\u0113 k\u011B l\xE8.", english: "I want to drink Coke." },
@@ -4823,6 +4968,7 @@
         imagePath: "assets/illustrated-food-feelings/hungry.webp",
         imageAlt: "A child who is hungry and wants fried rice.",
         correctId: "hungry-sentence",
+        lessonSources: ["4a:7"],
         options: [
           { id: "hungry-sentence", hanzi: "\u6211\u997F\u4E86\uFF0C\u6211\u8981\u5403\u7092\u996D\u3002", pinyin: "w\u01D2 \xE8 le, w\u01D2 y\xE0o ch\u012B ch\u01CEo f\xE0n.", english: "I am hungry. I want to eat fried rice." },
           { id: "hungry-thirsty", hanzi: "\u6211\u6E34\u4E86\uFF0C\u6211\u8981\u559D\u6C34\u3002", pinyin: "w\u01D2 k\u011B le, w\u01D2 y\xE0o h\u0113 shu\u01D0.", english: "I am thirsty. I want to drink water." },
@@ -4835,6 +4981,7 @@
         imagePath: "assets/illustrated-food-feelings/thirsty.webp",
         imageAlt: "A child who is thirsty and wants water.",
         correctId: "thirsty-sentence",
+        lessonSources: ["4a:7"],
         options: [
           { id: "thirsty-sentence", hanzi: "\u6211\u6E34\u4E86\uFF0C\u6211\u8981\u559D\u6C34\u3002", pinyin: "w\u01D2 k\u011B le, w\u01D2 y\xE0o h\u0113 shu\u01D0.", english: "I am thirsty. I want to drink water." },
           { id: "thirsty-hungry", hanzi: "\u6211\u997F\u4E86\uFF0C\u6211\u8981\u5403\u7092\u996D\u3002", pinyin: "w\u01D2 \xE8 le, w\u01D2 y\xE0o ch\u012B ch\u01CEo f\xE0n.", english: "I am hungry. I want to eat fried rice." },
@@ -4847,6 +4994,7 @@
         imagePath: "assets/illustrated-food-feelings/delicious.webp",
         imageAlt: "Dumplings that taste delicious.",
         correctId: "delicious-sentence",
+        lessonSources: ["4a:7"],
         options: [
           { id: "delicious-sentence", hanzi: "\u997A\u5B50\u597D\u5403\u3002", pinyin: "ji\u01CEo zi h\u01CEo ch\u012B.", english: "Dumplings are delicious." },
           { id: "delicious-thirsty", hanzi: "\u6211\u6E34\u4E86\uFF0C\u6211\u8981\u559D\u6C34\u3002", pinyin: "w\u01D2 k\u011B le, w\u01D2 y\xE0o h\u0113 shu\u01D0.", english: "I am thirsty. I want to drink water." },
@@ -4859,6 +5007,7 @@
         imagePath: "assets/illustrated-food-feelings/full.webp",
         imageAlt: "A child who is full after eating.",
         correctId: "full-sentence",
+        lessonSources: ["4a:7"],
         options: [
           { id: "full-sentence", hanzi: "\u5988\u5988\uFF0C\u6211\u9971\u4E86\uFF0C\u4E0D\u5403\u4E86\u3002", pinyin: "m\u0101 ma, w\u01D2 b\u01CEo le, b\xF9 ch\u012B le.", english: "Mom, I am full. I do not want to eat any more." },
           { id: "full-hungry", hanzi: "\u6211\u997F\u4E86\uFF0C\u6211\u8981\u5403\u7092\u996D\u3002", pinyin: "w\u01D2 \xE8 le, w\u01D2 y\xE0o ch\u012B ch\u01CEo f\xE0n.", english: "I am hungry. I want to eat fried rice." },
@@ -4868,19 +5017,19 @@
       }
     ],
     review: [
-      { pattern: "\u997F\u4E86 / \u6E34\u4E86", pinyin: "\xE8 le / k\u011B le", english: "hungry / thirsty", example: "\u6211\u997F\u4E86\uFF0C\u6211\u8981\u5403\u7092\u996D\u3002 \u6211\u6E34\u4E86\uFF0C\u6211\u8981\u559D\u6C34\u3002", examplePinyin: "w\u01D2 \xE8 le, w\u01D2 y\xE0o ch\u012B ch\u01CEo f\xE0n. w\u01D2 k\u011B le, w\u01D2 y\xE0o h\u0113 shu\u01D0.", exampleEnglish: "When you are hungry, eat. When you are thirsty, drink." },
-      { pattern: "\u4F60\u5348\u996D\u5403\u4EC0\u4E48\uFF1F", pinyin: "n\u01D0 w\u01D4 f\xE0n ch\u012B sh\xE9n me?", english: "What do you have for lunch?", example: "\u6211\u5348\u996D\u5403\u2026\u2026\uFF0C\u559D\u2026\u2026", examplePinyin: "w\u01D2 w\u01D4 f\xE0n ch\u012B..., h\u0113...", exampleEnglish: "For lunch, I eat ... and drink ..." },
-      { pattern: "\u8981 + \u5403 / \u559D + \u98DF\u7269", pinyin: "y\xE0o + ch\u012B / h\u0113 + sh\xED w\xF9", english: "want to eat / drink + food", example: "\u6211\u8981\u5403\u7092\u996D\u3002\u6211\u8981\u559D\u53EF\u4E50\u3002", examplePinyin: "w\u01D2 y\xE0o ch\u012B ch\u01CEo f\xE0n. w\u01D2 y\xE0o h\u0113 k\u011B l\xE8.", exampleEnglish: "I want to eat fried rice. I want to drink Coke." },
-      { pattern: "\u597D\u5403 / \u9971\u4E86", pinyin: "h\u01CEo ch\u012B / b\u01CEo le", english: "delicious / full", example: "\u997A\u5B50\u597D\u5403\u3002\u5988\u5988\uFF0C\u6211\u9971\u4E86\uFF0C\u4E0D\u5403\u4E86\u3002", examplePinyin: "ji\u01CEo zi h\u01CEo ch\u012B. m\u0101 ma, w\u01D2 b\u01CEo le, b\xF9 ch\u012B le.", exampleEnglish: "Dumplings are delicious. Mom, I am full. I do not want to eat any more." },
+      { pattern: "\u4F60\u5348\u996D\u5403\u4EC0\u4E48\uFF1F", pinyin: "n\u01D0 w\u01D4 f\xE0n ch\u012B sh\xE9n me?", english: "What do you have for lunch?", example: "\u6211\u5348\u996D\u5403\u2026\u2026\uFF0C\u559D\u2026\u2026", examplePinyin: "w\u01D2 w\u01D4 f\xE0n ch\u012B..., h\u0113...", exampleEnglish: "For lunch, I eat ... and drink ...", lessonSources: ["4a:5"] },
+      { pattern: "\u997F\u4E86 / \u6E34\u4E86", pinyin: "\xE8 le / k\u011B le", english: "hungry / thirsty", example: "\u6211\u997F\u4E86\uFF0C\u6211\u8981\u5403\u7092\u996D\u3002 \u6211\u6E34\u4E86\uFF0C\u6211\u8981\u559D\u6C34\u3002", examplePinyin: "w\u01D2 \xE8 le, w\u01D2 y\xE0o ch\u012B ch\u01CEo f\xE0n. w\u01D2 k\u011B le, w\u01D2 y\xE0o h\u0113 shu\u01D0.", exampleEnglish: "When you are hungry, eat. When you are thirsty, drink.", lessonSources: ["4a:7"] },
+      { pattern: "\u8981 + \u5403 / \u559D + \u98DF\u7269", pinyin: "y\xE0o + ch\u012B / h\u0113 + sh\xED w\xF9", english: "want to eat / drink + food", example: "\u6211\u8981\u5403\u7092\u996D\u3002\u6211\u8981\u559D\u53EF\u4E50\u3002", examplePinyin: "w\u01D2 y\xE0o ch\u012B ch\u01CEo f\xE0n. w\u01D2 y\xE0o h\u0113 k\u011B l\xE8.", exampleEnglish: "I want to eat fried rice. I want to drink Coke.", lessonSources: ["4a:7"] },
+      { pattern: "\u597D\u5403 / \u9971\u4E86", pinyin: "h\u01CEo ch\u012B / b\u01CEo le", english: "delicious / full", example: "\u7092\u996D\u597D\u5403\u3002\u5988\u5988\uFF0C\u6211\u9971\u4E86\uFF0C\u4E0D\u5403\u4E86\u3002", examplePinyin: "ch\u01CEo f\xE0n h\u01CEo ch\u012B. m\u0101 ma, w\u01D2 b\u01CEo le, b\xF9 ch\u012B le.", exampleEnglish: "Fried rice is delicious. Mom, I am full. I do not want to eat any more.", lessonSources: ["4a:7"] },
       { pattern: "\u6CA1\u6709\u2026\u2026\uFF0C\u4F60\u53EF\u4EE5\u2026\u2026", pinyin: "m\xE9i y\u01D2u..., n\u01D0 k\u011B y\u01D0...", english: "There is no ...; you can ...", example: "\u6CA1\u6709\u53EF\u4E50\u3002\u4F60\u53EF\u4EE5\u559D\u6C34\u3002", examplePinyin: "m\xE9i y\u01D2u k\u011B l\xE8. n\u01D0 k\u011B y\u01D0 h\u0113 shu\u01D0.", exampleEnglish: "There is no Coke. You can drink water." }
     ]
   };
   var mealsFeelingsSentenceBuilds = [
-    { id: "lunch", imagePath: "assets/illustrated-meals/anan-eating-school-lunch.webp", target: ["\u6211", "\u5348\u996D", "\u559D\u4E86", "\u725B\u5976", "\u5403\u4E86", "\u62AB\u8428"], distractors: ["\u8981", "\u6C34", "\u5B66\u6821"], pinyin: "w\u01D2 w\u01D4 f\xE0n h\u0113 le ni\xFA n\u01CEi, ch\u012B le p\u012B s\xE0.", english: "For lunch, I drank milk and ate pizza." },
-    { id: "hungry", imagePath: "assets/illustrated-food-feelings/hungry.webp", target: ["\u6211", "\u997F", "\u4E86", "\u6211", "\u8981", "\u5403", "\u7092\u996D"], distractors: ["\u559D", "\u6C34", "\u5B66\u6821"], pinyin: "w\u01D2 \xE8 le, w\u01D2 y\xE0o ch\u012B ch\u01CEo f\xE0n.", english: "I am hungry. I want to eat fried rice." },
-    { id: "thirsty", imagePath: "assets/illustrated-food-feelings/thirsty.webp", target: ["\u6211", "\u6E34", "\u4E86", "\u6211", "\u8981", "\u559D", "\u6C34"], distractors: ["\u5403", "\u7092\u996D", "\u5B66\u6821"], pinyin: "w\u01D2 k\u011B le, w\u01D2 y\xE0o h\u0113 shu\u01D0.", english: "I am thirsty. I want to drink water." },
-    { id: "delicious", imagePath: "assets/illustrated-food-feelings/delicious.webp", target: ["\u997A\u5B50", "\u597D\u5403"], distractors: ["\u53EF\u4E50", "\u5B66\u6821", "\u6559\u5BA4"], pinyin: "ji\u01CEo zi h\u01CEo ch\u012B.", english: "Dumplings are delicious." },
-    { id: "full", imagePath: "assets/illustrated-food-feelings/full.webp", target: ["\u5988\u5988", "\u6211", "\u9971", "\u4E86", "\u4E0D\u5403", "\u4E86"], distractors: ["\u6E34", "\u8981", "\u5B66\u6821"], pinyin: "m\u0101 ma, w\u01D2 b\u01CEo le, b\xF9 ch\u012B le.", english: "Mom, I am full. I do not want to eat any more." }
+    { id: "lunch", imagePath: "assets/illustrated-meals/anan-eating-school-lunch.webp", target: ["\u6211", "\u5348\u996D", "\u559D\u4E86", "\u725B\u5976", "\u5403\u4E86", "\u62AB\u8428"], distractors: ["\u8981", "\u6C34", "\u5B66\u6821"], pinyin: "w\u01D2 w\u01D4 f\xE0n h\u0113 le ni\xFA n\u01CEi, ch\u012B le p\u012B s\xE0.", english: "For lunch, I drank milk and ate pizza.", lessonSources: ["4a:5"] },
+    { id: "hungry", imagePath: "assets/illustrated-food-feelings/hungry.webp", target: ["\u6211", "\u997F", "\u4E86", "\u6211", "\u8981", "\u5403", "\u7092\u996D"], distractors: ["\u559D", "\u6C34", "\u5B66\u6821"], pinyin: "w\u01D2 \xE8 le, w\u01D2 y\xE0o ch\u012B ch\u01CEo f\xE0n.", english: "I am hungry. I want to eat fried rice.", lessonSources: ["4a:7"] },
+    { id: "thirsty", imagePath: "assets/illustrated-food-feelings/thirsty.webp", target: ["\u6211", "\u6E34", "\u4E86", "\u6211", "\u8981", "\u559D", "\u6C34"], distractors: ["\u5403", "\u7092\u996D", "\u5B66\u6821"], pinyin: "w\u01D2 k\u011B le, w\u01D2 y\xE0o h\u0113 shu\u01D0.", english: "I am thirsty. I want to drink water.", lessonSources: ["4a:7"] },
+    { id: "delicious", imagePath: "assets/illustrated-food-feelings/delicious.webp", target: ["\u7092\u996D", "\u597D\u5403"], distractors: ["\u53EF\u4E50", "\u5B66\u6821", "\u6559\u5BA4"], pinyin: "ch\u01CEo f\xE0n h\u01CEo ch\u012B.", english: "Fried rice is delicious.", lessonSources: ["4a:7"] },
+    { id: "full", imagePath: "assets/illustrated-food-feelings/full.webp", target: ["\u5988\u5988", "\u6211", "\u9971", "\u4E86", "\u4E0D\u5403", "\u4E86"], distractors: ["\u6E34", "\u8981", "\u5B66\u6821"], pinyin: "m\u0101 ma, w\u01D2 b\u01CEo le, b\xF9 ch\u012B le.", english: "Mom, I am full. I do not want to eat any more.", lessonSources: ["4a:7"] }
   ];
 
   // src/features/foundations/introductions.js
@@ -4900,13 +5049,13 @@
       audio: "\u6211\u53EB"
     },
     focusItems: [
-      { id: "ask-name", hanzi: "\u4F60\u53EB\u4EC0\u4E48\u540D\u5B57\uFF1F", pinyin: "n\u01D0 ji\xE0o sh\xE9n me m\xEDng zi?", english: "What is your name?", audio: "\u4F60\u53EB\u4EC0\u4E48\u540D\u5B57" },
-      { id: "my-name", hanzi: "\u6211\u53EB\u2026\u2026", pinyin: "w\u01D2 ji\xE0o...", english: "My name is...", audio: "\u6211\u53EB" },
-      { id: "me-word", hanzi: "\u6211", pinyin: "w\u01D2", english: "I; me", audio: "\u6211" },
-      { id: "call-word", hanzi: "\u53EB", pinyin: "ji\xE0o", english: "to be called", audio: "\u53EB" },
-      { id: "what-word", hanzi: "\u4EC0\u4E48", pinyin: "sh\xE9n me", english: "what", audio: "\u4EC0\u4E48" },
-      { id: "name-word", hanzi: "\u540D\u5B57", pinyin: "m\xEDng zi", english: "name", audio: "\u540D\u5B57" },
-      { id: "friend-word", hanzi: "\u670B\u53CB", pinyin: "p\xE9ng you", english: "friend", audio: "\u670B\u53CB" }
+      { id: "ask-name", hanzi: "\u4F60\u53EB\u4EC0\u4E48\u540D\u5B57\uFF1F", pinyin: "n\u01D0 ji\xE0o sh\xE9n me m\xEDng zi?", english: "What is your name?", audio: "\u4F60\u53EB\u4EC0\u4E48\u540D\u5B57", lessonSources: ["1a:6", "2a:3"] },
+      { id: "my-name", hanzi: "\u6211\u53EB\u2026\u2026", pinyin: "w\u01D2 ji\xE0o...", english: "My name is...", audio: "\u6211\u53EB", lessonSources: ["1a:6", "2a:3"] },
+      { id: "me-word", hanzi: "\u6211", pinyin: "w\u01D2", english: "I; me", audio: "\u6211", lessonSources: ["1a:6", "2a:3"] },
+      { id: "call-word", hanzi: "\u53EB", pinyin: "ji\xE0o", english: "to be called", audio: "\u53EB", lessonSources: ["1a:6", "2a:3"] },
+      { id: "what-word", hanzi: "\u4EC0\u4E48", pinyin: "sh\xE9n me", english: "what", audio: "\u4EC0\u4E48", lessonSources: ["1a:6"] },
+      { id: "name-word", hanzi: "\u540D\u5B57", pinyin: "m\xEDng zi", english: "name", audio: "\u540D\u5B57", lessonSources: ["1a:6"] },
+      { id: "friend-word", hanzi: "\u670B\u53CB", pinyin: "p\xE9ng you", english: "friend", audio: "\u670B\u53CB", lessonSources: ["2a:3"] }
     ],
     interactiveScene: "introductions-conversation",
     parentGuide: "Practice the whole mini-conversation first: \u4F60\u597D, \u4F60\u53EB\u4EC0\u4E48\u540D\u5B57? \u6211\u53EB... Then pause after \u6211\u53EB and let the child fill in their own name.",
@@ -4920,6 +5069,7 @@
   var introductionsPractice = [
     {
       id: "intro-scene-1",
+      lessonSources: ["1a:6"],
       title: "Meeting a friend",
       imagePath: "assets/introductions/introductions-scene-1.webp",
       imageAlt: "Two children meeting and introducing themselves",
@@ -4933,6 +5083,7 @@
     },
     {
       id: "intro-scene-2",
+      lessonSources: ["1a:6"],
       title: "Sharing a name",
       imagePath: "assets/introductions/introductions-scene-2.webp",
       imageAlt: "Two children talking in a classroom",
@@ -4945,6 +5096,7 @@
     },
     {
       id: "intro-scene-3",
+      lessonSources: ["1a:6"],
       title: "New friends",
       imagePath: "assets/introductions/introductions-scene-3.webp",
       imageAlt: "Two friends greeting each other",
@@ -4958,6 +5110,7 @@
     },
     {
       id: "good-friends",
+      lessonSources: ["2a:3"],
       title: "Good friends",
       imagePath: "assets/introductions/good-friends-scene.webp",
       imageAlt: "Luna introduces Noah as her good friend to Sisi in a classroom",
@@ -4976,11 +5129,12 @@
       hanzi: "\u6211\u53EB\u5B89\u5B89\u3002",
       pinyin: "w\u01D2 ji\xE0o \u0100n an.",
       english: "My name is Anan.",
-      audio: "\u6211\u53EB\u5B89\u5B89"
+      audio: "\u6211\u53EB\u5B89\u5B89",
+      lessonSources: ["1a:6"]
     },
-    { id: "intro-game-tiantian", speakerId: "tiantian", sourceItemId: "my-name", hanzi: "\u6211\u53EB\u5929\u5929\u3002", pinyin: "w\u01D2 ji\xE0o Ti\u0101n ti\u0101n.", english: "My name is Tiantian.", audio: "\u6211\u53EB\u5929\u5929" },
-    { id: "intro-game-sisi", speakerId: "sisi", sourceItemId: "my-name", hanzi: "\u6211\u53EB\u601D\u601D\u3002", pinyin: "w\u01D2 ji\xE0o S\u012B si.", english: "My name is Sisi.", audio: "\u6211\u53EB\u601D\u601D" },
-    { id: "intro-game-lele", speakerId: "lele", sourceItemId: "my-name", hanzi: "\u6211\u53EB\u4E50\u4E50\u3002", pinyin: "w\u01D2 ji\xE0o L\xE8 le.", english: "My name is Lele.", audio: "\u6211\u53EB\u4E50\u4E50" }
+    { id: "intro-game-tiantian", speakerId: "tiantian", sourceItemId: "my-name", hanzi: "\u6211\u53EB\u5929\u5929\u3002", pinyin: "w\u01D2 ji\xE0o Ti\u0101n ti\u0101n.", english: "My name is Tiantian.", audio: "\u6211\u53EB\u5929\u5929", lessonSources: ["1a:6"] },
+    { id: "intro-game-sisi", speakerId: "sisi", sourceItemId: "my-name", hanzi: "\u6211\u53EB\u601D\u601D\u3002", pinyin: "w\u01D2 ji\xE0o S\u012B si.", english: "My name is Sisi.", audio: "\u6211\u53EB\u601D\u601D", lessonSources: ["1a:6"] },
+    { id: "intro-game-lele", speakerId: "lele", sourceItemId: "my-name", hanzi: "\u6211\u53EB\u4E50\u4E50\u3002", pinyin: "w\u01D2 ji\xE0o L\xE8 le.", english: "My name is Lele.", audio: "\u6211\u53EB\u4E50\u4E50", lessonSources: ["1a:6"] }
   ];
   var introductionsBuildPhrases = [
     {
@@ -4991,6 +5145,7 @@
       prompt: "Build: What is your name?",
       english: "What is your name?",
       audio: "\u4F60\u53EB\u4EC0\u4E48\u540D\u5B57",
+      lessonSources: ["1a:6"],
       tokens: ["\u4F60", "\u53EB", "\u4EC0\u4E48", "\u540D\u5B57"]
     },
     {
@@ -5001,6 +5156,7 @@
       prompt: "Build: My name is...",
       english: "My name is...",
       audio: "\u6211\u53EB",
+      lessonSources: ["1a:6"],
       tokens: ["\u6211", "\u53EB"]
     },
     {
@@ -5011,6 +5167,7 @@
       prompt: "Build: He is my good friend.",
       english: "He is my good friend.",
       audio: "\u4ED6\u662F\u6211\u7684\u597D\u670B\u53CB",
+      lessonSources: ["2a:3"],
       tokens: ["\u4ED6", "\u662F", "\u6211\u7684", "\u597D\u670B\u53CB"]
     }
   ];
@@ -5038,8 +5195,15 @@
     elements
   }) {
     const { focusExplorer: focusExplorer2, focusStatus: focusStatus2 } = elements;
+    function lessonKey() {
+      return state2.lessonScope ? `${state2.lessonScope.bookId}:${state2.lessonScope.lessonNumber}` : "";
+    }
+    function scoped(items) {
+      const source = lessonKey();
+      return source ? items.filter((item) => item.lessonSources?.includes(source)) : items;
+    }
     function introductionsPromptById2(promptId) {
-      return introductionsGamePrompts2.find((entry) => entry.id === promptId) ?? null;
+      return scoped(introductionsGamePrompts2).find((entry) => entry.id === promptId) ?? null;
     }
     function introductionsGameKids2() {
       return introductionsGameSpeakerIds2.map((id) => illustratedKids2[id]).filter(Boolean);
@@ -5050,8 +5214,9 @@
       return introductionsTopic2?.focusItems.find((item) => item.id === itemIdByKidId[kidId]) ?? null;
     }
     function resetIntroductionsChallenge2(options = {}) {
-      if (!introductionsGamePrompts2.length || !introductionsGameSpeakerIds2.length) return;
-      const promptId = nextRandomCycleId(state2, "introductions-listen", introductionsGamePrompts2.map((entry) => entry.id));
+      const prompts = scoped(introductionsGamePrompts2);
+      if (!prompts.length || !introductionsGameSpeakerIds2.length) return;
+      const promptId = nextRandomCycleId(state2, "introductions-listen", prompts.map((entry) => entry.id));
       const prompt = introductionsPromptById2(promptId);
       if (!prompt) return;
       state2.introductionsChallengeAnswerId = prompt.speakerId;
@@ -5093,11 +5258,13 @@
       renderActivityPanel2(currentTopic2());
     }
     function introductionsBuildTarget2() {
-      return introductionsBuildPhrases2.find((entry) => entry.id === state2.introductionsBuildTargetId) ?? introductionsBuildPhrases2[0];
+      const phrases = scoped(introductionsBuildPhrases2);
+      return phrases.find((entry) => entry.id === state2.introductionsBuildTargetId) ?? phrases[0];
     }
     function resetIntroductionsBuilder2(options = {}) {
-      const targetId = nextRandomCycleId(state2, "introductions-build", introductionsBuildPhrases2.map((entry) => entry.id));
-      const target = introductionsBuildPhrases2.find((entry) => entry.id === targetId);
+      const phrases = scoped(introductionsBuildPhrases2);
+      const targetId = nextRandomCycleId(state2, "introductions-build", phrases.map((entry) => entry.id));
+      const target = phrases.find((entry) => entry.id === targetId);
       if (!target) return;
       state2.introductionsBuildTargetId = target.id;
       state2.introductionsBuildAvailableTokens = shuffleArray2(target.tokens);
@@ -5142,10 +5309,11 @@
       renderActivityPanel2(currentTopic2());
     }
     function renderIntroductionsExplorer2() {
-      focusExplorer2.innerHTML = `<div class="numbers-board"><div class="numbers-stage-card"><p class="body-match-kicker">${currentBook2().label} Lesson ${currentLesson2().lesson}</p><h4>Book theme: names and good friends</h4><p>Say hello, ask a name, answer with \u6211\u53EB\u2026, then introduce a friend with \u4ED6\u662F\u6211\u7684\u597D\u670B\u53CB\u3002</p></div><div class="greetings-practice-grid introductions-explorer-grid">${introductionsPractice2.map((exchange) => `<section class="greetings-exchange"><div class="greetings-exchange-top"><div><p class="body-match-kicker">${exchange.title}</p></div><button class="small-button is-play-button" type="button" data-intro-play-all="${exchange.id}">Play</button></div><div class="greetings-scene-layout introductions-scene-layout"><div class="greetings-scene-visual"><img class="greetings-scene-image" src="${exchange.imagePath}" alt="${exchange.imageAlt}" /></div><div class="greetings-line-stack">${exchange.lines.map((line) => `<article class="greetings-line-card intro-line-card"><div class="telephone-bubble-copy"><p class="telephone-line-hanzi">${line.hanzi}</p>${state2.showPinyin ? `<p class="telephone-line-pinyin">${line.pinyin}</p>` : ""}${state2.showEnglish ? `<p class="telephone-line-english">${line.english}</p>` : ""}</div></article>`).join("")}</div></div></section>`).join("")}</div></div>`;
+      const scenes = scoped(introductionsPractice2);
+      focusExplorer2.innerHTML = `<div class="numbers-board"><div class="greetings-practice-grid introductions-explorer-grid">${scenes.map((exchange) => `<section class="greetings-exchange"><div class="greetings-exchange-top"><div><p class="body-match-kicker">${exchange.title}</p></div><button class="small-button is-play-button" type="button" data-intro-play-all="${exchange.id}">Play</button></div><div class="greetings-scene-layout introductions-scene-layout"><div class="greetings-scene-visual"><img class="greetings-scene-image" src="${exchange.imagePath}" alt="${exchange.imageAlt}" /></div><div class="greetings-line-stack">${exchange.lines.map((line) => `<article class="greetings-line-card intro-line-card"><div class="telephone-bubble-copy"><p class="telephone-line-hanzi">${line.hanzi}</p>${state2.showPinyin ? `<p class="telephone-line-pinyin">${line.pinyin}</p>` : ""}${state2.showEnglish ? `<p class="telephone-line-english">${line.english}</p>` : ""}</div></article>`).join("")}</div></div></section>`).join("")}</div></div>`;
       focusExplorer2.querySelectorAll("[data-intro-play-all]").forEach((button) => {
         button.addEventListener("click", () => {
-          const exchange = introductionsPractice2.find((entry) => entry.id === button.dataset.introPlayAll);
+          const exchange = scenes.find((entry) => entry.id === button.dataset.introPlayAll);
           if (!exchange || !state2.tapAudioEnabled) return;
           speakSceneLines2(exchange.lines);
           focusStatus2.textContent = `Listen to the whole scene: ${exchange.lines.map((line) => line.hanzi).join(" ")}`;
@@ -5172,15 +5340,15 @@
       audio: "\u6211\u4E94\u5C81"
     },
     focusItems: [
-      { id: "ask-age", hanzi: "\u4F60\u51E0\u5C81\uFF1F", pinyin: "n\u01D0 j\u01D0 su\xEC?", english: "How old are you?", audio: "\u4F60\u51E0\u5C81" },
-      { id: "age-five", hanzi: "\u6211\u4E94\u5C81\u3002", pinyin: "w\u01D2 w\u01D4 su\xEC.", english: "I am five years old.", audio: "\u6211\u4E94\u5C81" },
-      { id: "age-six", hanzi: "\u6211\u516D\u5C81\u3002", pinyin: "w\u01D2 li\xF9 su\xEC.", english: "I am six years old.", audio: "\u6211\u516D\u5C81" },
-      { id: "age-seven", hanzi: "\u6211\u4E03\u5C81\u3002", pinyin: "w\u01D2 q\u012B su\xEC.", english: "I am seven years old.", audio: "\u6211\u4E03\u5C81" },
+      { id: "ask-age", hanzi: "\u4F60\u51E0\u5C81\uFF1F", pinyin: "n\u01D0 j\u01D0 su\xEC?", english: "How old are you?", audio: "\u4F60\u51E0\u5C81", lessonSources: ["1a:7", "3a:3"] },
+      { id: "age-five", hanzi: "\u6211\u4E94\u5C81\u3002", pinyin: "w\u01D2 w\u01D4 su\xEC.", english: "I am five years old.", audio: "\u6211\u4E94\u5C81", lessonSources: ["1a:7"] },
+      { id: "age-six", hanzi: "\u6211\u516D\u5C81\u3002", pinyin: "w\u01D2 li\xF9 su\xEC.", english: "I am six years old.", audio: "\u6211\u516D\u5C81", lessonSources: ["1a:7"] },
+      { id: "age-seven", hanzi: "\u6211\u4E03\u5C81\u3002", pinyin: "w\u01D2 q\u012B su\xEC.", english: "I am seven years old.", audio: "\u6211\u4E03\u5C81", lessonSources: ["3a:3"] },
       { id: "ask-grade", hanzi: "\u4F60\u4E0A\u51E0\u5E74\u7EA7\uFF1F", pinyin: "n\u01D0 sh\xE0ng j\u01D0 ni\xE1n j\xED?", english: "What grade are you in?", audio: "\u4F60\u4E0A\u51E0\u5E74\u7EA7" },
       { id: "grade-one", hanzi: "\u6211\u4E0A\u4E00\u5E74\u7EA7\u3002", pinyin: "w\u01D2 sh\xE0ng y\xEC ni\xE1n j\xED.", english: "I am in first grade.", audio: "\u6211\u4E0A\u4E00\u5E74\u7EA7" },
-      { id: "me-age-word", hanzi: "\u6211", pinyin: "w\u01D2", english: "I; me", audio: "\u6211" },
-      { id: "how-many-age-word", hanzi: "\u51E0", pinyin: "j\u01D0", english: "how many", audio: "\u51E0" },
-      { id: "age-word", hanzi: "\u5C81", pinyin: "su\xEC", english: "years old", audio: "\u5C81" },
+      { id: "me-age-word", hanzi: "\u6211", pinyin: "w\u01D2", english: "I; me", audio: "\u6211", lessonSources: ["1a:7", "3a:3"] },
+      { id: "how-many-age-word", hanzi: "\u51E0", pinyin: "j\u01D0", english: "how many", audio: "\u51E0", lessonSources: ["1a:7", "3a:3"] },
+      { id: "age-word", hanzi: "\u5C81", pinyin: "su\xEC", english: "years old", audio: "\u5C81", lessonSources: ["1a:7", "3a:3"] },
       { id: "attend-word", hanzi: "\u4E0A", pinyin: "sh\xE0ng", english: "to attend; to be in", audio: "\u4E0A" },
       { id: "grade-word", hanzi: "\u5E74\u7EA7", pinyin: "ni\xE1n j\xED", english: "grade; school year", audio: "\u5E74\u7EA7" }
     ],
@@ -5196,6 +5364,7 @@
   var agePractice = [
     {
       id: "age-scene-2",
+      lessonSources: ["1a:7"],
       title: "Age and grade",
       imagePath: "assets/age/age-scene-2.webp",
       imageAlt: "Lele and Noah inside a classroom asking age first and then what grade someone is in",
@@ -5208,6 +5377,7 @@
     },
     {
       id: "age-scene-3",
+      lessonSources: ["3a:3"],
       title: "Birthday age",
       imagePath: "assets/age/age-scene-3.webp",
       imageAlt: "Sisi at a birthday party with seven candles on a cake and friends around the table",
@@ -5225,6 +5395,7 @@
       prompt: "Build: How old are you?",
       english: "How old are you?",
       audio: "\u4F60\u51E0\u5C81",
+      lessonSources: ["1a:7", "3a:3"],
       tokens: ["\u4F60", "\u51E0", "\u5C81"]
     },
     {
@@ -5234,6 +5405,7 @@
       prompt: "Build: I am five years old.",
       english: "I am five years old.",
       audio: "\u6211\u4E94\u5C81",
+      lessonSources: ["1a:7"],
       tokens: ["\u6211", "\u4E94", "\u5C81"]
     },
     {
@@ -5243,6 +5415,7 @@
       prompt: "Build: I am six years old.",
       english: "I am six years old.",
       audio: "\u6211\u516D\u5C81",
+      lessonSources: ["1a:7"],
       tokens: ["\u6211", "\u516D", "\u5C81"]
     },
     {
@@ -5252,6 +5425,7 @@
       prompt: "Build: I am seven years old.",
       english: "I am seven years old.",
       audio: "\u6211\u4E03\u5C81",
+      lessonSources: ["3a:3"],
       tokens: ["\u6211", "\u4E03", "\u5C81"]
     },
     {
@@ -5277,8 +5451,15 @@
   // src/features/foundations/age-controller.js
   function createAgeController({ state: state2, ageGameItemIds: ageGameItemIds2, ageBuildPhrases: ageBuildPhrases2, agePractice: agePractice2, topicById: topicById3, shuffleArray: shuffleArray2, speak: speak2, speakSceneLines: speakSceneLines2, currentTopic: currentTopic2, currentFocusItem: currentFocusItem2, currentBook: currentBook2, currentLesson: currentLesson2, renderActivityPanel: renderActivityPanel2, renderFocusDisplay: renderFocusDisplay2, renderFocusExplorer: renderFocusExplorer2, renderFocusStatus: renderFocusStatus2, elements }) {
     const { focusExplorer: focusExplorer2, focusStatus: focusStatus2 } = elements;
+    function lessonKey() {
+      return state2.lessonScope ? `${state2.lessonScope.bookId}:${state2.lessonScope.lessonNumber}` : "";
+    }
+    function scoped(items) {
+      const source = lessonKey();
+      return source ? items.filter((item) => item.lessonSources?.includes(source)) : items;
+    }
     function ageGameItems2() {
-      return ageGameItemIds2.map((id) => topicById3("age")?.focusItems.find((item) => item.id === id)).filter(Boolean);
+      return scoped(ageGameItemIds2.map((id) => topicById3("age")?.focusItems.find((item) => item.id === id)).filter(Boolean));
     }
     function resetAgeChallenge2(options = {}) {
       const items = ageGameItems2();
@@ -5334,11 +5515,13 @@
       renderActivityPanel2(currentTopic2());
     }
     function ageBuildTarget2() {
-      return ageBuildPhrases2.find((entry) => entry.id === state2.ageBuildTargetId) ?? ageBuildPhrases2[0];
+      const phrases = scoped(ageBuildPhrases2);
+      return phrases.find((entry) => entry.id === state2.ageBuildTargetId) ?? phrases[0];
     }
     function resetAgeBuilder2(options = {}) {
-      const targetId = nextRandomCycleId(state2, "age-build", ageBuildPhrases2.map((entry) => entry.id));
-      const target = ageBuildPhrases2.find((entry) => entry.id === targetId);
+      const phrases = scoped(ageBuildPhrases2);
+      const targetId = nextRandomCycleId(state2, "age-build", phrases.map((entry) => entry.id));
+      const target = phrases.find((entry) => entry.id === targetId);
       if (!target) return;
       state2.ageBuildTargetId = target.id;
       state2.ageBuildAvailableTokens = shuffleArray2(target.tokens);
@@ -5379,9 +5562,10 @@
       renderActivityPanel2(currentTopic2());
     }
     function renderAgeExplorer2() {
-      focusExplorer2.innerHTML = `<div class="numbers-board"><div class="numbers-stage-card"><p class="body-match-kicker">${currentBook2().label} Lesson ${currentLesson2().lesson}</p><h4>Book theme: age and school year</h4><p>This lesson starts with <strong>\u4F60\u51E0\u5C81\uFF1F</strong> / <strong>\u6211...\u5C81\u3002</strong> and then adds <strong>\u4F60\u4E0A\u51E0\u5E74\u7EA7\uFF1F</strong> / <strong>\u6211\u4E0A\u4E00\u5E74\u7EA7\u3002</strong></p></div><div class="greetings-practice-grid">${agePractice2.map((exchange) => `<section class="greetings-exchange"><div class="greetings-exchange-top"><div><p class="body-match-kicker">${exchange.title}</p></div><button class="small-button is-play-button" type="button" data-age-play-all="${exchange.id}">Play</button></div><div class="greetings-scene-layout"><div class="greetings-scene-visual"><img class="greetings-scene-image" src="${exchange.imagePath}" alt="${exchange.imageAlt}" /></div><div class="greetings-line-stack">${exchange.lines.map((line) => `<article class="greetings-line-card"><div class="telephone-bubble-copy"><p class="telephone-line-hanzi">${line.hanzi}</p>${state2.showPinyin ? `<p class="telephone-line-pinyin">${line.pinyin}</p>` : ""}${state2.showEnglish ? `<p class="telephone-line-english">${line.english}</p>` : ""}</div></article>`).join("")}</div></div></section>`).join("")}</div></div>`;
+      const scenes = scoped(agePractice2);
+      focusExplorer2.innerHTML = `<div class="numbers-board"><div class="greetings-practice-grid">${scenes.map((exchange) => `<section class="greetings-exchange"><div class="greetings-exchange-top"><div><p class="body-match-kicker">${exchange.title}</p></div><button class="small-button is-play-button" type="button" data-age-play-all="${exchange.id}">Play</button></div><div class="greetings-scene-layout"><div class="greetings-scene-visual"><img class="greetings-scene-image" src="${exchange.imagePath}" alt="${exchange.imageAlt}" /></div><div class="greetings-line-stack">${exchange.lines.map((line) => `<article class="greetings-line-card"><div class="telephone-bubble-copy"><p class="telephone-line-hanzi">${line.hanzi}</p>${state2.showPinyin ? `<p class="telephone-line-pinyin">${line.pinyin}</p>` : ""}${state2.showEnglish ? `<p class="telephone-line-english">${line.english}</p>` : ""}</div></article>`).join("")}</div></div></section>`).join("")}</div></div>`;
       focusExplorer2.querySelectorAll("[data-age-play-all]").forEach((button) => button.addEventListener("click", () => {
-        const exchange = agePractice2.find((entry) => entry.id === button.dataset.agePlayAll);
+        const exchange = scenes.find((entry) => entry.id === button.dataset.agePlayAll);
         if (!exchange || !state2.tapAudioEnabled) return;
         speakSceneLines2(exchange.lines);
         focusStatus2.textContent = `Listen to the whole scene: ${exchange.lines.map((line) => line.hanzi).join(" ")}`;
@@ -6618,14 +6802,19 @@
 
   // src/features/daily-life/clothes.js
   var clothesBookWords = [
-    { id: "shirt", hanzi: "\u886C\u886B", pinyin: "ch\xE8n sh\u0101n", english: "shirt", audio: "\u886C\u886B", imagePath: "assets/illustrated-everyday-life/collared-shirt.webp" },
-    { id: "pants", hanzi: "\u88E4\u5B50", pinyin: "k\xF9 zi", english: "trousers; pants", audio: "\u88E4\u5B50", imagePath: "assets/illustrated-everyday-life/pants.webp" },
-    { id: "dress", hanzi: "\u88D9\u5B50", pinyin: "q\xFAn zi", english: "dress; skirt", audio: "\u88D9\u5B50", imagePath: "assets/illustrated-everyday-life/skirt.webp" },
-    { id: "shoes", hanzi: "\u978B\u5B50", pinyin: "xi\xE9 zi", english: "shoes", audio: "\u978B\u5B50", imagePath: "assets/illustrated-everyday-life/shoes.webp" },
-    { id: "hat", hanzi: "\u5E3D\u5B50", pinyin: "m\xE0o zi", english: "hat", audio: "\u5E3D\u5B50", imagePath: "assets/illustrated-everyday-life/hat.webp" },
-    { id: "jacket", hanzi: "\u5916\u5957", pinyin: "w\xE0i t\xE0o", english: "jacket; coat", audio: "\u5916\u5957", imagePath: "assets/illustrated-everyday-life/jacket.webp" },
-    { id: "gloves", hanzi: "\u624B\u5957", pinyin: "sh\u01D2u t\xE0o", english: "gloves", audio: "\u624B\u5957", imagePath: "assets/illustrated-everyday-life/gloves.webp" },
-    { id: "school-uniform", hanzi: "\u6821\u670D", pinyin: "xi\xE0o f\xFA", english: "school uniform", audio: "\u6821\u670D", imagePath: "assets/illustrated-everyday-life/school-uniform.webp" }
+    { id: "clothes", hanzi: "\u8863\u670D", pinyin: "y\u012B fu", english: "clothes", audio: "\u8863\u670D", imagePath: "assets/illustrated-everyday-life/clothes.webp", lessonSources: ["2a:6"] },
+    { id: "shoes", hanzi: "\u978B\u5B50", pinyin: "xi\xE9 zi", english: "shoes", audio: "\u978B\u5B50", imagePath: "assets/illustrated-everyday-life/shoes.webp", lessonSources: ["2a:6"] },
+    { id: "school-uniform", hanzi: "\u6821\u670D", pinyin: "xi\xE0o f\xFA", english: "school uniform", audio: "\u6821\u670D", imagePath: "assets/illustrated-everyday-life/school-uniform.webp", lessonSources: ["3a:7"] },
+    { id: "shirt", hanzi: "\u886C\u886B", pinyin: "ch\xE8n sh\u0101n", english: "shirt", audio: "\u886C\u886B", imagePath: "assets/illustrated-everyday-life/collared-shirt.webp", lessonSources: ["3a:7"] },
+    { id: "pants", hanzi: "\u88E4\u5B50", pinyin: "k\xF9 zi", english: "pants", audio: "\u88E4\u5B50", imagePath: "assets/illustrated-everyday-life/pants.webp", lessonSources: ["3a:7"] },
+    { id: "dress", hanzi: "\u88D9\u5B50", pinyin: "q\xFAn zi", english: "skirt", audio: "\u88D9\u5B50", imagePath: "assets/illustrated-everyday-life/skirt.webp", lessonSources: ["3a:7"] },
+    { id: "leather-shoes", hanzi: "\u76AE\u978B", pinyin: "p\xED xi\xE9", english: "leather shoes", audio: "\u76AE\u978B", imagePath: "assets/illustrated-everyday-life/leather-shoes.png", lessonSources: ["3a:7"] },
+    { id: "t-shirt", hanzi: "T\u6064", pinyin: "T x\xF9", english: "T-shirt", audio: "T\u6064", imagePath: "assets/illustrated-everyday-life/shirt.webp", lessonSources: ["4b:2"] },
+    { id: "shorts", hanzi: "\u77ED\u88E4", pinyin: "du\u01CEn k\xF9", english: "shorts", audio: "\u77ED\u88E4", imagePath: "assets/illustrated-everyday-life/pants.webp", lessonSources: ["4b:2"] },
+    { id: "sweater", hanzi: "\u6BDB\u8863", pinyin: "m\xE1o y\u012B", english: "sweater", audio: "\u6BDB\u8863", imagePath: "assets/illustrated-everyday-life/sweater.png", lessonSources: ["4b:2"] },
+    { id: "long-pants", hanzi: "\u957F\u88E4", pinyin: "ch\xE1ng k\xF9", english: "long pants", audio: "\u957F\u88E4", imagePath: "assets/illustrated-everyday-life/pants.webp", lessonSources: ["4b:2"] },
+    { id: "coat", hanzi: "\u5927\u8863", pinyin: "d\xE0 y\u012B", english: "coat", audio: "\u5927\u8863", imagePath: "assets/illustrated-everyday-life/jacket.webp", lessonSources: ["4b:2"] },
+    { id: "hat", hanzi: "\u5E3D\u5B50", pinyin: "m\xE0o zi", english: "hat", audio: "\u5E3D\u5B50", imagePath: "assets/illustrated-everyday-life/hat.webp", lessonSources: ["4b:2"] }
   ];
   var clothesTopic = {
     id: "clothes",
@@ -6643,22 +6832,38 @@
     activities: ["Tap to hear", "Match the clothing", "Dress for the weather", "Listen and choose"],
     steps: [
       { book: "2A", lesson: 6, title: "I can dress myself", cardLabel: "Get dressed", note: "Start with dressing language." },
-      { book: "3A", lesson: 7, title: "Clothes", cardLabel: "Name clothes", note: "Build a fuller clothing set." },
-      { book: "4B", lesson: 2, title: "Clothes", cardLabel: "Choose clothes for the weather", note: "Reconnect clothing with weather and daily life." }
+      { book: "3A", lesson: 7, title: "Clothes", cardLabel: "Wear school clothes", note: "Use \u6821\u670D, \u886C\u886B, \u88E4\u5B50, \u88D9\u5B50, and \u76AE\u978B in what-I-wear sentences." },
+      { book: "4B", lesson: 2, title: "Clothes", cardLabel: "Describe what you wear", note: "Use T\u6064, \u77ED\u88E4, \u6BDB\u8863, \u957F\u88E4, \u5927\u8863, \u5E3D\u5B50, and \u6234 in clothing sentences." }
     ]
   };
   var clothesPractice = [
-    { id: "clothes-scene-1", title: "Getting dressed", imagePath: "assets/illustrated-clothes/wearing-clothes-scene.webp", imageAlt: "A child putting on a jacket beside a clothes rack and mirror", lines: [{ hanzi: "\u6211\u4F1A\u7A7F\u8863\u670D\u3002", pinyin: "w\u01D2 hu\xEC chu\u0101n y\u012B fu.", english: "I can get dressed.", audio: "\u6211\u4F1A\u7A7F\u8863\u670D" }, { hanzi: "\u6211\u7A7F\u5916\u5957\u3002", pinyin: "w\u01D2 chu\u0101n w\xE0i t\xE0o.", english: "I wear a jacket.", audio: "\u6211\u7A7F\u5916\u5957" }] },
-    { id: "clothes-scene-2", title: "Rainy day clothes", imagePath: "assets/illustrated-clothes/weather-linked-clothing-scene.webp", imageAlt: "A child choosing a raincoat by a rainy window", lines: [{ hanzi: "\u4E0B\u96E8\u4E86\u3002", pinyin: "xi\xE0 y\u01D4 le.", english: "It is raining.", audio: "\u4E0B\u96E8\u4E86" }, { hanzi: "\u6211\u7A7F\u96E8\u8863\u548C\u96E8\u978B\u3002", pinyin: "w\u01D2 chu\u0101n y\u01D4 y\u012B h\xE9 y\u01D4 xi\xE9.", english: "I wear a raincoat and rain boots.", audio: "\u6211\u7A7F\u96E8\u8863\u548C\u96E8\u978B" }] },
-    { id: "school-morning-uniform", title: "School morning", imagePath: "assets/illustrated-clothes/school-morning-uniform.webp", imageAlt: "Luna wears her complete school uniform and backpack by a closed front door", lines: [{ hanzi: "\u6211\u7A7F\u6821\u670D\u3002", pinyin: "w\u01D2 chu\u0101n xi\xE0o f\xFA.", english: "I wear a school uniform.", audio: "\u6211\u7A7F\u6821\u670D" }] }
+    { id: "self-care-routine", lessonSources: ["2a:6"], title: "Getting ready", imagePath: "assets/illustrated-clothes/wearing-clothes-scene.webp", imageAlt: "Anan putting on a jacket and wearing a hat", lines: [{ hanzi: "\u6211\u4F1A\u7A7F\u8863\u670D\u3002", pinyin: "w\u01D2 hu\xEC chu\u0101n y\u012B fu.", english: "I can get dressed.", audio: "\u6211\u4F1A\u7A7F\u8863\u670D" }] },
+    { id: "school-uniform", lessonSources: ["3a:7"], title: "School clothes", imagePath: "assets/illustrated-clothes/school-morning-uniform.webp", imageAlt: "Luna in a school uniform with a skirt and leather shoes", lines: [{ hanzi: "\u6211\u7A7F\u6821\u670D\u3002", pinyin: "w\u01D2 chu\u0101n xi\xE0o f\xFA.", english: "I wear a school uniform.", audio: "\u6211\u7A7F\u6821\u670D" }, { hanzi: "\u6211\u7A7F\u886C\u886B\u3001\u88D9\u5B50\u548C\u76AE\u978B\u3002", pinyin: "w\u01D2 chu\u0101n ch\xE8n sh\u0101n, q\xFAn zi h\xE9 p\xED xi\xE9.", english: "I wear a shirt, a skirt, and leather shoes.", audio: "\u6211\u7A7F\u886C\u886B\u88D9\u5B50\u548C\u76AE\u978B" }] },
+    { id: "t-shirt-and-shorts", lessonSources: ["4b:2"], title: "T-shirt and shorts", imagePath: "assets/illustrated-clothes/book-4b-lesson-2/luna-tshirt-shorts.webp", imageAlt: "Luna wearing a yellow T-shirt and blue shorts indoors", lines: [{ hanzi: "\u9732\u5A1C\u7A7F\u9EC4\u8272\u7684T\u6064\u548C\u84DD\u8272\u7684\u77ED\u88E4\u3002", pinyin: "l\xF9 n\xE0 chu\u0101n hu\xE1ng s\xE8 de T x\xF9 h\xE9 l\xE1n s\xE8 de du\u01CEn k\xF9.", english: "Luna wears a yellow T-shirt and blue shorts.", audio: "\u9732\u5A1C\u7A7F\u9EC4\u8272\u7684T\u6064\u548C\u84DD\u8272\u7684\u77ED\u88E4" }] },
+    { id: "coats-and-hats", lessonSources: ["4b:2"], title: "Colorful coats", imagePath: "assets/illustrated-clothes/book-4b-lesson-2/lele-noah-outdoor-coats-hats.webp", imageAlt: "Lele in a green coat and Noah in a blue coat outside school", lines: [{ hanzi: "\u4E50\u4E50\u7A7F\u7EFF\u8272\u7684\u5927\u8863\uFF0C\u8BFA\u4E9A\u7A7F\u84DD\u8272\u7684\u5927\u8863\u3002", pinyin: "l\xE8 le chu\u0101n l\u01DC s\xE8 de d\xE0 y\u012B, nu\xF2 y\xE0 chu\u0101n l\xE1n s\xE8 de d\xE0 y\u012B.", english: "Lele wears a green coat, and Noah wears a blue coat.", audio: "\u4E50\u4E50\u7A7F\u7EFF\u8272\u7684\u5927\u8863\u8BFA\u4E9A\u7A7F\u84DD\u8272\u7684\u5927\u8863" }] },
+    { id: "sweater-and-pants", lessonSources: ["4b:2"], title: "Sweater and pants", imagePath: "assets/illustrated-clothes/book-4b-lesson-2/sophie-sweater-pants.webp", imageAlt: "Sophie wearing a purple sweater and blue long pants indoors", lines: [{ hanzi: "\u82CF\u83F2\u7A7F\u7D2B\u8272\u7684\u6BDB\u8863\u548C\u84DD\u8272\u7684\u957F\u88E4\u3002", pinyin: "s\u016B f\u0113i chu\u0101n z\u01D0 s\xE8 de m\xE1o y\u012B h\xE9 l\xE1n s\xE8 de ch\xE1ng k\xF9.", english: "Sophie wears a purple sweater and blue long pants.", audio: "\u82CF\u83F2\u7A7F\u7D2B\u8272\u7684\u6BDB\u8863\u548C\u84DD\u8272\u7684\u957F\u88E4" }] },
+    { id: "noah-blue-white", lessonSources: ["4b:2"], title: "Blue sweater", imagePath: "assets/illustrated-clothes/book-4b-lesson-2/noah-blue-sweater-white-shoes.webp", imageAlt: "Noah in a blue sweater and white shoes", lines: [{ hanzi: "\u8BFA\u4E9A\u7A7F\u84DD\u8272\u7684\u6BDB\u8863\u548C\u767D\u8272\u7684\u978B\u5B50\u3002", pinyin: "nu\xF2 y\xE0 chu\u0101n l\xE1n s\xE8 de m\xE1o y\u012B h\xE9 b\xE1i s\xE8 de xi\xE9 zi.", english: "Noah wears a blue sweater and white shoes.", audio: "\u8BFA\u4E9A\u7A7F\u84DD\u8272\u7684\u6BDB\u8863\u548C\u767D\u8272\u7684\u978B\u5B50" }] }
   ];
-  var clothesMatchItems = clothesBookWords;
+  var clothesUsefulNotes = [
+    { hanzi: "\u4F1A + \u52A8\u8BCD", pinyin: "hu\xEC + d\xF2ng c\xED", english: "can + an action word", example: "\u6211\u4F1A\u7A7F\u8863\u670D\u3002", examplePinyin: "w\u01D2 hu\xEC chu\u0101n y\u012B fu.", exampleEnglish: "I can get dressed.", lessonSources: ["2a:6"] },
+    { hanzi: "\u7A7F", pinyin: "chu\u0101n", english: "wear or put on clothes", example: "\u6211\u7A7F\u6821\u670D\u3002", examplePinyin: "w\u01D2 chu\u0101n xi\xE0o f\xFA.", exampleEnglish: "I wear a school uniform.", lessonSources: ["2a:6", "3a:7", "4b:2"] },
+    { hanzi: "\u6234", pinyin: "d\xE0i", english: "wear or put on something on your head", example: "\u6211\u6234\u5E3D\u5B50\u3002", examplePinyin: "w\u01D2 d\xE0i m\xE0o zi.", exampleEnglish: "I wear a hat.", lessonSources: ["4b:2"] }
+  ];
+  var clothesMatchItems = clothesBookWords.filter((item) => item.imagePath);
   var clothesSentenceItems = [
-    { id: "shoes", hanzi: "\u978B\u5B50", pinyin: "xi\xE9 zi", english: "shoes", frame: "\u6211\u7A7F", framePinyin: "w\u01D2 chu\u0101n", audio: "\u6211\u7A7F\u978B\u5B50", imagePath: "assets/illustrated-self-dressing/putting-on-shoes.webp", imageAlt: "A child putting on shoes" },
-    { id: "socks", hanzi: "\u889C\u5B50", pinyin: "w\xE0 zi", english: "socks", frame: "\u6211\u7A7F", framePinyin: "w\u01D2 chu\u0101n", audio: "\u6211\u7A7F\u889C\u5B50", imagePath: "assets/illustrated-self-dressing/putting-on-socks.webp", imageAlt: "A child putting on socks" },
-    { id: "jacket", hanzi: "\u5916\u5957", pinyin: "w\xE0i t\xE0o", english: "a jacket", frame: "\u6211\u7A7F", framePinyin: "w\u01D2 chu\u0101n", audio: "\u6211\u7A7F\u5916\u5957", imagePath: "assets/illustrated-self-dressing/putting-on-jacket.webp", imageAlt: "A child putting on a jacket" },
-    { id: "hat", hanzi: "\u5E3D\u5B50", pinyin: "m\xE0o zi", english: "a hat", frame: "\u6211\u6234", framePinyin: "w\u01D2 d\xE0i", audio: "\u6211\u6234\u5E3D\u5B50", imagePath: "assets/illustrated-self-dressing/putting-on-hat.webp", imageAlt: "A child putting on a hat" },
-    { id: "school-uniform", hanzi: "\u6821\u670D", pinyin: "xi\xE0o f\xFA", english: "a school uniform", frame: "\u6211\u7A7F", framePinyin: "w\u01D2 chu\u0101n", audio: "\u6211\u7A7F\u6821\u670D", imagePath: "assets/illustrated-self-dressing/putting-on-school-uniform.webp", imageAlt: "A child putting on a school uniform" }
+    { id: "wear-clothes", hanzi: "\u7A7F\u8863\u670D", pinyin: "chu\u0101n y\u012B fu", english: "get dressed", sentenceEnglish: "I can get dressed.", frame: "\u6211\u4F1A", framePinyin: "w\u01D2 hu\xEC", audio: "\u6211\u4F1A\u7A7F\u8863\u670D", imagePath: "assets/illustrated-clothes/wearing-clothes-scene.webp", imageAlt: "A child getting dressed", lessonSources: ["2a:6"] },
+    { id: "wear-shoes", hanzi: "\u7A7F\u978B\u5B50", pinyin: "chu\u0101n xi\xE9 zi", english: "put on shoes", sentenceEnglish: "I can put on shoes.", frame: "\u6211\u4F1A", framePinyin: "w\u01D2 hu\xEC", audio: "\u6211\u4F1A\u7A7F\u978B\u5B50", imagePath: "assets/illustrated-self-dressing/putting-on-shoes.webp", imageAlt: "A child putting on shoes", lessonSources: ["2a:6"] },
+    { id: "uniform", hanzi: "\u6821\u670D", pinyin: "xi\xE0o f\xFA", english: "school uniform", sentenceEnglish: "I wear a school uniform.", frame: "\u6211\u7A7F", framePinyin: "w\u01D2 chu\u0101n", audio: "\u6211\u7A7F\u6821\u670D", imagePath: "assets/illustrated-self-dressing/putting-on-school-uniform.webp", imageAlt: "A child putting on a school uniform", lessonSources: ["3a:7"] },
+    { id: "shirt", hanzi: "\u886C\u886B", pinyin: "ch\xE8n sh\u0101n", english: "shirt", sentenceEnglish: "I wear a shirt.", frame: "\u6211\u7A7F", framePinyin: "w\u01D2 chu\u0101n", audio: "\u6211\u7A7F\u886C\u886B", imagePath: "assets/illustrated-everyday-life/collared-shirt.webp", imageAlt: "A shirt", lessonSources: ["3a:7"] },
+    { id: "pants", hanzi: "\u88E4\u5B50", pinyin: "k\xF9 zi", english: "pants", sentenceEnglish: "I wear pants.", frame: "\u6211\u7A7F", framePinyin: "w\u01D2 chu\u0101n", audio: "\u6211\u7A7F\u88E4\u5B50", imagePath: "assets/illustrated-everyday-life/pants.webp", imageAlt: "Pants", lessonSources: ["3a:7"] },
+    { id: "skirt", hanzi: "\u88D9\u5B50", pinyin: "q\xFAn zi", english: "skirt", sentenceEnglish: "I wear a skirt.", frame: "\u6211\u7A7F", framePinyin: "w\u01D2 chu\u0101n", audio: "\u6211\u7A7F\u88D9\u5B50", imagePath: "assets/illustrated-everyday-life/skirt.webp", imageAlt: "A skirt", lessonSources: ["3a:7"] },
+    { id: "leather-shoes", hanzi: "\u76AE\u978B", pinyin: "p\xED xi\xE9", english: "leather shoes", sentenceEnglish: "I wear leather shoes.", frame: "\u6211\u7A7F", framePinyin: "w\u01D2 chu\u0101n", audio: "\u6211\u7A7F\u76AE\u978B", imagePath: "assets/illustrated-everyday-life/leather-shoes.png", imageAlt: "Leather shoes", lessonSources: ["3a:7"] },
+    { id: "t-shirt-and-shorts", hanzi: "\u7A7F\u9EC4\u8272\u7684T\u6064\u548C\u84DD\u8272\u7684\u77ED\u88E4", pinyin: "chu\u0101n hu\xE1ng s\xE8 de T x\xF9 h\xE9 l\xE1n s\xE8 de du\u01CEn k\xF9", fullPinyin: "l\xF9 n\xE0 chu\u0101n hu\xE1ng s\xE8 de T x\xF9 h\xE9 l\xE1n s\xE8 de du\u01CEn k\xF9.", english: "wear a yellow T-shirt and blue shorts", sentenceEnglish: "Luna wears a yellow T-shirt and blue shorts.", frame: "\u9732\u5A1C\u7A7F", framePinyin: "l\xF9 n\xE0 chu\u0101n", audio: "\u9732\u5A1C\u7A7F\u9EC4\u8272\u7684T\u6064\u548C\u84DD\u8272\u7684\u77ED\u88E4", imagePath: "assets/illustrated-clothes/book-4b-lesson-2/luna-tshirt-shorts.webp", imageAlt: "Luna in a yellow T-shirt and blue shorts", lessonSources: ["4b:2"], slots: [{ id: "first", prefix: "\u9EC4\u8272\u7684", answer: "T\u6064", options: ["T\u6064", "\u77ED\u88E4", "\u6BDB\u8863", "\u957F\u88E4"] }, { id: "second", prefix: "\u84DD\u8272\u7684", answer: "\u77ED\u88E4", options: ["\u77ED\u88E4", "T\u6064", "\u6BDB\u8863", "\u957F\u88E4"] }] },
+    { id: "coats-and-hats", hanzi: "\u4E50\u4E50\u7A7F\u7EFF\u8272\u7684\u5927\u8863\uFF0C\u8BFA\u4E9A\u7A7F\u84DD\u8272\u7684\u5927\u8863", pinyin: "l\xE8 le chu\u0101n l\u01DC s\xE8 de d\xE0 y\u012B, nu\xF2 y\xE0 chu\u0101n l\xE1n s\xE8 de d\xE0 y\u012B", fullPinyin: "l\xE8 le chu\u0101n l\u01DC s\xE8 de d\xE0 y\u012B, nu\xF2 y\xE0 chu\u0101n l\xE1n s\xE8 de d\xE0 y\u012B.", english: "Lele wears a green coat, and Noah wears a blue coat", sentenceEnglish: "Lele wears a green coat, and Noah wears a blue coat.", frame: "", framePinyin: "", audio: "\u4E50\u4E50\u7A7F\u7EFF\u8272\u7684\u5927\u8863\u8BFA\u4E9A\u7A7F\u84DD\u8272\u7684\u5927\u8863", imagePath: "assets/illustrated-clothes/book-4b-lesson-2/lele-noah-outdoor-coats-hats.webp", imageAlt: "Lele in a green coat and Noah in a blue coat outside school", lessonSources: ["4b:2"], slots: [{ id: "first", prefix: "\u4E50\u4E50\u7A7F\u7EFF\u8272\u7684", answer: "\u5927\u8863", options: ["\u5927\u8863", "\u5E3D\u5B50", "\u6BDB\u8863", "T\u6064"] }, { id: "second", joiner: "\uFF0C", prefix: "\u8BFA\u4E9A\u7A7F\u84DD\u8272\u7684", answer: "\u5927\u8863", options: ["\u5927\u8863", "\u5E3D\u5B50", "\u77ED\u88E4", "\u957F\u88E4"] }] },
+    { id: "orange-and-blue-hats", hanzi: "\u4E50\u4E50\u6234\u6A59\u8272\u7684\u5E3D\u5B50\uFF0C\u8BFA\u4E9A\u6234\u84DD\u8272\u7684\u5E3D\u5B50", pinyin: "l\xE8 le d\xE0i ch\xE9ng s\xE8 de m\xE0o zi, nu\xF2 y\xE0 d\xE0i l\xE1n s\xE8 de m\xE0o zi", fullPinyin: "l\xE8 le d\xE0i ch\xE9ng s\xE8 de m\xE0o zi, nu\xF2 y\xE0 d\xE0i l\xE1n s\xE8 de m\xE0o zi.", english: "Lele wears an orange hat, and Noah wears a blue hat", sentenceEnglish: "Lele wears an orange hat, and Noah wears a blue hat.", frame: "", audio: "\u4E50\u4E50\u6234\u6A59\u8272\u7684\u5E3D\u5B50\u8BFA\u4E9A\u6234\u84DD\u8272\u7684\u5E3D\u5B50", imagePath: "assets/illustrated-clothes/book-4b-lesson-2/lele-noah-outdoor-coats-hats.webp", imageAlt: "Lele in an orange hat and Noah in a blue hat outside school", lessonSources: ["4b:2"], slots: [{ id: "first", prefix: "\u4E50\u4E50\u6234\u6A59\u8272\u7684", answer: "\u5E3D\u5B50", options: ["\u5E3D\u5B50", "\u5927\u8863", "\u6BDB\u8863", "\u978B\u5B50"] }, { id: "second", joiner: "\uFF0C", prefix: "\u8BFA\u4E9A\u6234\u84DD\u8272\u7684", answer: "\u5E3D\u5B50", options: ["\u5E3D\u5B50", "\u5927\u8863", "\u6BDB\u8863", "\u978B\u5B50"] }] },
+    { id: "blue-and-white-shoes", hanzi: "\u4E50\u4E50\u7A7F\u84DD\u8272\u7684\u978B\uFF0C\u8BFA\u4E9A\u7A7F\u767D\u8272\u7684\u978B", pinyin: "l\xE8 le chu\u0101n l\xE1n s\xE8 de xi\xE9, nu\xF2 y\xE0 chu\u0101n b\xE1i s\xE8 de xi\xE9", fullPinyin: "l\xE8 le chu\u0101n l\xE1n s\xE8 de xi\xE9, nu\xF2 y\xE0 chu\u0101n b\xE1i s\xE8 de xi\xE9.", english: "Lele wears blue shoes, and Noah wears white shoes", sentenceEnglish: "Lele wears blue shoes, and Noah wears white shoes.", frame: "", audio: "\u4E50\u4E50\u7A7F\u84DD\u8272\u7684\u978B\u8BFA\u4E9A\u7A7F\u767D\u8272\u7684\u978B", imagePath: "assets/illustrated-clothes/book-4b-lesson-2/lele-noah-outdoor-coats-hats.webp", imageAlt: "Lele in blue shoes and Noah in white shoes outside school", lessonSources: ["4b:2"], slots: [{ id: "first", prefix: "\u4E50\u4E50\u7A7F\u84DD\u8272\u7684", answer: "\u978B", options: ["\u978B", "\u5E3D\u5B50", "\u5927\u8863", "\u6BDB\u8863"] }, { id: "second", joiner: "\uFF0C", prefix: "\u8BFA\u4E9A\u7A7F\u767D\u8272\u7684", answer: "\u978B", options: ["\u978B", "\u5E3D\u5B50", "\u5927\u8863", "\u6BDB\u8863"] }] },
+    { id: "sweater-and-pants", hanzi: "\u7A7F\u7D2B\u8272\u7684\u6BDB\u8863\u548C\u84DD\u8272\u7684\u957F\u88E4", pinyin: "chu\u0101n z\u01D0 s\xE8 de m\xE1o y\u012B h\xE9 l\xE1n s\xE8 de ch\xE1ng k\xF9", fullPinyin: "s\u016B f\u0113i chu\u0101n z\u01D0 s\xE8 de m\xE1o y\u012B h\xE9 l\xE1n s\xE8 de ch\xE1ng k\xF9.", english: "wear a purple sweater and blue long pants", sentenceEnglish: "Sophie wears a purple sweater and blue long pants.", frame: "\u82CF\u83F2\u7A7F", framePinyin: "s\u016B f\u0113i chu\u0101n", audio: "\u82CF\u83F2\u7A7F\u7D2B\u8272\u7684\u6BDB\u8863\u548C\u84DD\u8272\u7684\u957F\u88E4", imagePath: "assets/illustrated-clothes/book-4b-lesson-2/sophie-sweater-pants.webp", imageAlt: "Sophie in a purple sweater and blue long pants", lessonSources: ["4b:2"], slots: [{ id: "first", prefix: "\u7D2B\u8272\u7684", answer: "\u6BDB\u8863", options: ["\u6BDB\u8863", "\u957F\u88E4", "T\u6064", "\u5E3D\u5B50"] }, { id: "second", prefix: "\u84DD\u8272\u7684", answer: "\u957F\u88E4", options: ["\u957F\u88E4", "\u6BDB\u8863", "\u77ED\u88E4", "\u5927\u8863"] }] },
+    { id: "noah-blue-white", hanzi: "\u7A7F\u84DD\u8272\u7684\u6BDB\u8863\u548C\u767D\u8272\u7684\u978B\u5B50", pinyin: "chu\u0101n l\xE1n s\xE8 de m\xE1o y\u012B h\xE9 b\xE1i s\xE8 de xi\xE9 zi", fullPinyin: "nu\xF2 y\xE0 chu\u0101n l\xE1n s\xE8 de m\xE1o y\u012B h\xE9 b\xE1i s\xE8 de xi\xE9 zi.", sentenceEnglish: "Noah wears a blue sweater and white shoes.", frame: "\u8BFA\u4E9A\u7A7F", audio: "\u8BFA\u4E9A\u7A7F\u84DD\u8272\u7684\u6BDB\u8863\u548C\u767D\u8272\u7684\u978B\u5B50", imagePath: "assets/illustrated-clothes/book-4b-lesson-2/noah-blue-sweater-white-shoes.webp", imageAlt: "Noah in a blue sweater and white shoes", lessonSources: ["4b:2"], slots: [{ id: "first", prefix: "\u84DD\u8272\u7684", answer: "\u6BDB\u8863", options: ["\u6BDB\u8863", "\u978B\u5B50", "\u5E3D\u5B50", "\u77ED\u88E4"] }, { id: "second", prefix: "\u767D\u8272\u7684", answer: "\u978B\u5B50", options: ["\u978B\u5B50", "\u6BDB\u8863", "\u5E3D\u5B50", "\u77ED\u88E4"] }] }
   ];
 
   // src/features/daily-life/requests-permission.js
@@ -6956,18 +7161,18 @@
     iconColor: "#5f8f8a",
     focus: { hanzi: "\u5934\uFF0C\u989D\u5934\uFF0C\u5934\u53D1\uFF0C\u773C\u775B\uFF0C\u8033\u6735\uFF0C\u9F3B\u5B50\uFF0C\u5634\u5DF4\uFF0C\u8116\u5B50\uFF0C\u624B\u81C2\uFF0C\u624B\uFF0C\u817F\uFF0C\u811A", pinyin: "t\xF3u, \xE9 t\xF3u, t\xF3u fa, y\u01CEn jing, \u011Br duo, b\xED zi, zu\u01D0 ba, b\xF3 zi, sh\u01D2u b\xEC, sh\u01D2u, tu\u01D0, ji\u01CEo", english: "head, forehead, hair, eyes, ears, nose, mouth, neck, arm, hand, leg, foot", audio: "\u5934\uFF0C\u989D\u5934\uFF0C\u5934\u53D1\uFF0C\u773C\u775B\uFF0C\u8033\u6735\uFF0C\u9F3B\u5B50\uFF0C\u5634\u5DF4\uFF0C\u8116\u5B50\uFF0C\u624B\u81C2\uFF0C\u624B\uFF0C\u817F\uFF0C\u811A" },
     focusItems: [
-      { id: "head", hanzi: "\u5934", pinyin: "t\xF3u", english: "head", audio: "\u5934" },
-      { id: "forehead", hanzi: "\u989D\u5934", pinyin: "\xE9 t\xF3u", english: "forehead", audio: "\u989D\u5934" },
-      { id: "hair", hanzi: "\u5934\u53D1", pinyin: "t\xF3u fa", english: "hair", audio: "\u5934\u53D1" },
-      { id: "eyes", hanzi: "\u773C\u775B", pinyin: "y\u01CEn jing", english: "eyes", audio: "\u773C\u775B" },
-      { id: "ears", hanzi: "\u8033\u6735", pinyin: "\u011Br duo", english: "ears", audio: "\u8033\u6735" },
-      { id: "nose", hanzi: "\u9F3B\u5B50", pinyin: "b\xED zi", english: "nose", audio: "\u9F3B\u5B50" },
-      { id: "mouth", hanzi: "\u5634\u5DF4", pinyin: "zu\u01D0 ba", english: "mouth", audio: "\u5634\u5DF4" },
-      { id: "neck", hanzi: "\u8116\u5B50", pinyin: "b\xF3 zi", english: "neck", audio: "\u8116\u5B50" },
-      { id: "arm", hanzi: "\u624B\u81C2", pinyin: "sh\u01D2u b\xEC", english: "arm", audio: "\u624B\u81C2" },
-      { id: "hand", hanzi: "\u624B", pinyin: "sh\u01D2u", english: "hand", audio: "\u624B" },
-      { id: "leg", hanzi: "\u817F", pinyin: "tu\u01D0", english: "leg", audio: "\u817F" },
-      { id: "foot", hanzi: "\u811A", pinyin: "ji\u01CEo", english: "foot", audio: "\u811A" }
+      { id: "head", hanzi: "\u5934", pinyin: "t\xF3u", english: "head", audio: "\u5934", lessonSources: ["1b:3"] },
+      { id: "forehead", hanzi: "\u989D\u5934", pinyin: "\xE9 t\xF3u", english: "forehead", audio: "\u989D\u5934", lessonSources: ["1b:4"] },
+      { id: "hair", hanzi: "\u5934\u53D1", pinyin: "t\xF3u fa", english: "hair", audio: "\u5934\u53D1", lessonSources: ["1b:3"] },
+      { id: "eyes", hanzi: "\u773C\u775B", pinyin: "y\u01CEn jing", english: "eyes", audio: "\u773C\u775B", lessonSources: ["1b:3"] },
+      { id: "ears", hanzi: "\u8033\u6735", pinyin: "\u011Br duo", english: "ears", audio: "\u8033\u6735", lessonSources: ["1b:3"] },
+      { id: "nose", hanzi: "\u9F3B\u5B50", pinyin: "b\xED zi", english: "nose", audio: "\u9F3B\u5B50", lessonSources: ["1b:3"] },
+      { id: "mouth", hanzi: "\u5634\u5DF4", pinyin: "zu\u01D0 ba", english: "mouth", audio: "\u5634\u5DF4", lessonSources: ["1b:3"] },
+      { id: "neck", hanzi: "\u8116\u5B50", pinyin: "b\xF3 zi", english: "neck", audio: "\u8116\u5B50", lessonSources: ["1b:4"] },
+      { id: "arm", hanzi: "\u624B\u81C2", pinyin: "sh\u01D2u b\xEC", english: "arm", audio: "\u624B\u81C2", lessonSources: ["1b:4"] },
+      { id: "hand", hanzi: "\u624B", pinyin: "sh\u01D2u", english: "hand", audio: "\u624B", lessonSources: ["1b:3"] },
+      { id: "leg", hanzi: "\u817F", pinyin: "tu\u01D0", english: "leg", audio: "\u817F", lessonSources: ["1b:4"] },
+      { id: "foot", hanzi: "\u811A", pinyin: "ji\u01CEo", english: "foot", audio: "\u811A", lessonSources: ["1b:3"] }
     ],
     interactiveScene: "body-face",
     parentGuide: "Tap a body word, hear it together, then point to the same body part on yourself or on the character.",
@@ -7672,9 +7877,10 @@
       renderFocusStatus2();
     }
     function bodyMatchItems2() {
+      const source = state2.lessonScope ? `${state2.lessonScope.bookId}:${state2.lessonScope.lessonNumber}` : "";
       const ids = [...bodyCoreItemIds2, ...bodyBonusItemIds2];
       const bodyTopic2 = topicById3("body");
-      return ids.map((id) => bodyTopic2?.focusItems.find((item) => item.id === id)).filter(Boolean);
+      return ids.map((id) => bodyTopic2?.focusItems.find((item) => item.id === id)).filter((item) => !source || item?.lessonSources?.includes(source)).filter(Boolean);
     }
     function nextBodyRound2() {
       const allIds = bodyMatchItems2().map((item) => item.id);
@@ -7740,8 +7946,7 @@
       renderActivityPanel2(currentTopic2());
     }
     function bodySpotlightItems() {
-      const bodyTopic2 = topicById3("body");
-      return bodyCoreItemIds2.map((id) => bodyTopic2?.focusItems.find((item) => item.id === id)).filter(Boolean);
+      return bodyMatchItems2();
     }
     function nextBodySpotlightRound() {
       const items = bodySpotlightItems();
@@ -7985,7 +8190,7 @@
       <div class="body-practice-visual">
         <div class="body-diagram">
           <div class="body-label-column body-label-column-left">
-            ${bodyDiagramLayout2.left.map((id) => renderBodyLabelButton2(items[id], "left")).join("")}
+            ${bodyDiagramLayout2.left.filter((id) => items[id]).map((id) => renderBodyLabelButton2(items[id], "left")).join("")}
           </div>
           <div class="body-scene">
             <div class="body-scene-card">
@@ -7998,7 +8203,7 @@
             </div>
           </div>
           <div class="body-label-column body-label-column-right">
-            ${bodyDiagramLayout2.right.map((id) => renderBodyLabelButton2(items[id], "right")).join("")}
+            ${bodyDiagramLayout2.right.filter((id) => items[id]).map((id) => renderBodyLabelButton2(items[id], "right")).join("")}
           </div>
         </div>
       </div>
@@ -8823,7 +9028,7 @@
 
   // src/features/time-daily-life/time-daily-life-runtime.js
   function createTimeDailyLifeRuntime(context) {
-    const { state: state2, timeDateWeekItems: timeDateWeekItems2, timeDateClockItems: timeDateClockItems2, timeDateExpressionItems: timeDateExpressionItems2, timeDateRoutineItems: timeDateRoutineItems2, timeAdvancedBookWords: timeAdvancedBookWords2, timeRoutineBookWords: timeRoutineBookWords2, datePracticeItems: datePracticeItems2, timeDateDateItems: timeDateDateItems2, timeDateMonthItems: timeDateMonthItems2, comparisonPracticeItems: comparisonPracticeItems2, comparisonWordItems: comparisonWordItems2, positionPracticeItems: positionPracticeItems2, positionScenes: positionScenes2, positionBookWords: positionBookWords2, clothesMatchItems: clothesMatchItems2, clothesSentenceItems: clothesSentenceItems2, clothesBookWords: clothesBookWords2, clothesPractice: clothesPractice2, roomScenes: roomScenes2, roomSentenceTokens: roomSentenceTokens2, transportSentenceTokens: transportSentenceTokens2, transportBookWords: transportBookWords2, everydayActionItems: everydayActionItems2, visualTopicItems: visualTopicItems2, shuffleArray: shuffleArray2, speak: speak2, speakSceneLines: speakSceneLines2, currentTopic: currentTopic2, currentBook: currentBook2, currentLesson: currentLesson2, renderActivityPanel: renderActivityPanel2, focusExplorer: focusExplorer2, focusStatus: focusStatus2 } = context;
+    const { state: state2, timeDateWeekItems: timeDateWeekItems2, timeDateClockItems: timeDateClockItems2, timeDateExpressionItems: timeDateExpressionItems2, timeDateRoutineItems: timeDateRoutineItems2, timeAdvancedBookWords: timeAdvancedBookWords2, timeRoutineBookWords: timeRoutineBookWords2, datePracticeItems: datePracticeItems2, timeDateDateItems: timeDateDateItems2, timeDateMonthItems: timeDateMonthItems2, comparisonPracticeItems: comparisonPracticeItems2, comparisonWordItems: comparisonWordItems2, positionPracticeItems: positionPracticeItems2, positionScenes: positionScenes2, positionBookWords: positionBookWords2, clothesMatchItems: clothesMatchItems2, clothesSentenceItems: clothesSentenceItems2, clothesBookWords: clothesBookWords2, clothesPractice: clothesPractice2, clothesUsefulNotes: clothesUsefulNotes2, roomScenes: roomScenes2, roomSentenceTokens: roomSentenceTokens2, transportSentenceTokens: transportSentenceTokens2, transportBookWords: transportBookWords2, everydayActionItems: everydayActionItems2, visualTopicItems: visualTopicItems2, shuffleArray: shuffleArray2, speak: speak2, speakSceneLines: speakSceneLines2, currentTopic: currentTopic2, currentBook: currentBook2, currentLesson: currentLesson2, renderActivityPanel: renderActivityPanel2, focusExplorer: focusExplorer2, focusStatus: focusStatus2 } = context;
     function resetWeekdayChallenge2(options = {}) {
       const answerId = nextRandomCycleId(state2, "weekdays-listen", timeDateWeekItems2.map((item) => item.id));
       const answer = timeDateWeekItems2.find((item) => item.id === answerId);
@@ -8894,20 +9099,21 @@
       renderActivityPanel2(currentTopic2());
     }
     function resetClothesQuiz2() {
-      const ids = clothesMatchItems2.map((item) => item.id);
+      const ids = scopedClothesContent(clothesMatchItems2).map((item) => item.id);
       state2.clothesQuizOrder = shuffleArray2(ids);
       state2.clothesQuizIndex = 0;
       prepareClothesQuizQuestion2();
     }
     function prepareClothesQuizQuestion2() {
       const answerId = state2.clothesQuizOrder[state2.clothesQuizIndex];
-      const distractorIds = shuffleArray2(clothesMatchItems2.filter((item) => item.id !== answerId).map((item) => item.id)).slice(0, 3);
+      const distractorIds = shuffleArray2(scopedClothesContent(clothesMatchItems2).filter((item) => item.id !== answerId).map((item) => item.id)).slice(0, 3);
       state2.clothesQuizOptionIds = shuffleArray2([answerId, ...distractorIds]);
       state2.clothesQuizSelectedId = "";
       state2.clothesQuizResult = "";
     }
     function ensureClothesQuiz2() {
-      if (!state2.clothesQuizOrder.length) {
+      const ids = new Set(scopedClothesContent(clothesMatchItems2).map((item) => item.id));
+      if (!state2.clothesQuizOrder.length || state2.clothesQuizOrder.some((id) => !ids.has(id))) {
         resetClothesQuiz2();
       }
     }
@@ -8919,7 +9125,7 @@
       state2.clothesQuizSelectedId = itemId;
       state2.clothesQuizResult = itemId === answerId ? "correct" : "wrong";
       if (state2.clothesQuizResult === "correct" && state2.tapAudioEnabled) {
-        const answer = clothesMatchItems2.find((item) => item.id === answerId);
+        const answer = scopedClothesContent(clothesMatchItems2).find((item) => item.id === answerId);
         speak2(answer?.audio, 0.78);
       }
       renderActivityPanel2(currentTopic2());
@@ -8930,19 +9136,20 @@
       renderActivityPanel2(currentTopic2());
     }
     function resetClothesSentenceQuiz2() {
-      state2.clothesSentenceOrder = shuffleArray2(clothesSentenceItems2.map((item) => item.id));
+      state2.clothesSentenceOrder = shuffleArray2(scopedClothesContent(clothesSentenceItems2).map((item) => item.id));
       state2.clothesSentenceIndex = 0;
       prepareClothesSentenceQuestion2();
     }
     function prepareClothesSentenceQuestion2() {
       const answerId = state2.clothesSentenceOrder[state2.clothesSentenceIndex];
-      const distractorIds = shuffleArray2(clothesSentenceItems2.filter((item) => item.id !== answerId).map((item) => item.id)).slice(0, 3);
+      const distractorIds = shuffleArray2(scopedClothesContent(clothesSentenceItems2).filter((item) => item.id !== answerId).map((item) => item.id)).slice(0, 3);
       state2.clothesSentenceOptionIds = shuffleArray2([answerId, ...distractorIds]);
       state2.clothesSentenceSelectedId = "";
       state2.clothesSentenceResult = "";
     }
     function ensureClothesSentenceQuiz2() {
-      if (!state2.clothesSentenceOrder.length) resetClothesSentenceQuiz2();
+      const ids = new Set(scopedClothesContent(clothesSentenceItems2).map((item) => item.id));
+      if (!state2.clothesSentenceOrder.length || state2.clothesSentenceOrder.some((id) => !ids.has(id))) resetClothesSentenceQuiz2();
     }
     function handleClothesSentencePick2(itemId) {
       if (state2.clothesSentenceResult === "correct") return;
@@ -8950,7 +9157,7 @@
       state2.clothesSentenceSelectedId = itemId;
       state2.clothesSentenceResult = itemId === answerId ? "correct" : "wrong";
       if (state2.clothesSentenceResult === "correct" && state2.tapAudioEnabled) {
-        speak2(clothesSentenceItems2.find((item) => item.id === answerId)?.audio, 0.78);
+        speak2(scopedClothesContent(clothesSentenceItems2).find((item) => item.id === answerId)?.audio, 0.78);
       }
       renderActivityPanel2(currentTopic2());
     }
@@ -9274,13 +9481,21 @@
       prepareComparisonBuilder2();
       renderActivityPanel2(currentTopic2());
     }
+    function scopedDateContent(items) {
+      const source = currentTopic2().id === "dates" && state2.lessonScope ? `${state2.lessonScope.bookId}:${state2.lessonScope.lessonNumber}` : "";
+      return source ? items.filter((item) => item.lessonSources?.includes(source)) : items;
+    }
+    function scopedClothesContent(items) {
+      const source = currentTopic2().id === "clothes" && state2.lessonScope ? `${state2.lessonScope.bookId}:${state2.lessonScope.lessonNumber}` : "";
+      return source ? items.filter((item) => item.lessonSources?.includes(source)) : items;
+    }
     function nextComparisonBuilder2() {
       advanceShuffledOrder(state2, "comparisonBuildOrder", "comparisonBuildIndex", shuffleArray2);
       prepareComparisonBuilder2();
       renderActivityPanel2(currentTopic2());
     }
     function resetDateMatchGame2() {
-      const roundIds = shuffleArray2(timeDateMonthItems2.map((item) => item.id)).slice(0, 6);
+      const roundIds = shuffleArray2(scopedDateContent(timeDateMonthItems2).map((item) => item.id)).slice(0, 6);
       state2.dateSelectedPhraseId = null;
       state2.dateMatchedIds = /* @__PURE__ */ new Set();
       state2.datePhraseOrder = shuffleArray2(roundIds);
@@ -9290,7 +9505,7 @@
       state2.dateMatchFeedback = "";
     }
     function ensureDateMatchGame2() {
-      const monthIds = new Set(timeDateMonthItems2.map((item) => item.id));
+      const monthIds = new Set(scopedDateContent(timeDateMonthItems2).map((item) => item.id));
       if (!state2.datePhraseOrder.length || !state2.dateEventOrder.length || state2.datePhraseOrder.length !== 6 || state2.dateEventOrder.length !== 6 || state2.datePhraseOrder.some((id) => !monthIds.has(id)) || state2.dateEventOrder.some((id) => !monthIds.has(id))) {
         resetDateMatchGame2();
       }
@@ -9298,7 +9513,7 @@
     function handleDateMatchPhrase2(itemId) {
       if (state2.dateMatchedIds.has(itemId)) return;
       state2.dateSelectedPhraseId = itemId;
-      const item = timeDateMonthItems2.find((entry) => entry.id === itemId);
+      const item = scopedDateContent(timeDateMonthItems2).find((entry) => entry.id === itemId);
       if (item && state2.tapAudioEnabled) speak2(item.hanzi, 0.78);
       state2.dateMatchFeedback = "";
       renderActivityPanel2(currentTopic2());
@@ -9318,9 +9533,10 @@
       renderActivityPanel2(currentTopic2());
     }
     function resetDateChallenge2(options = {}) {
-      const answerId = nextRandomCycleId(state2, "dates-listen", datePracticeItems2.map((item) => item.id));
-      const answer = datePracticeItems2.find((item) => item.id === answerId) ?? datePracticeItems2[0];
-      const distractors = shuffleArray2(datePracticeItems2.filter((item) => item.id !== answer.id)).slice(0, 3);
+      const items = scopedDateContent(datePracticeItems2);
+      const answerId = nextRandomCycleId(state2, "dates-listen", items.map((item) => item.id));
+      const answer = items.find((item) => item.id === answerId) ?? items[0];
+      const distractors = shuffleArray2(items.filter((item) => item.id !== answer.id)).slice(0, 3);
       state2.dateChallengeAnswerId = answer.id;
       state2.dateChallengePromptId = answer.id;
       state2.dateChallengeOptionIds = shuffleArray2([answer.id, ...distractors.map((item) => item.id)]);
@@ -9335,7 +9551,7 @@
     function handleDateChallengePlay2() {
       const previousId = state2.dateChallengePromptId;
       resetDateChallenge2({ excludeId: previousId });
-      const item = datePracticeItems2.find((entry) => entry.id === state2.dateChallengePromptId);
+      const item = scopedDateContent(datePracticeItems2).find((entry) => entry.id === state2.dateChallengePromptId);
       if (item && state2.tapAudioEnabled) speak2(item.audio, 0.78);
       renderActivityPanel2(currentTopic2());
     }
@@ -9345,7 +9561,7 @@
       state2.dateChallengeResult = isCorrect ? "correct" : "wrong";
       if (isCorrect) {
         if (state2.tapAudioEnabled) {
-          const item = datePracticeItems2.find((entry) => entry.id === itemId);
+          const item = scopedDateContent(datePracticeItems2).find((entry) => entry.id === itemId);
           speak2(item?.hanzi, 0.78);
         }
       } else {
@@ -9438,18 +9654,17 @@
       });
     }
     function renderDatesExplorer2() {
-      focusExplorer2.innerHTML = `
-    <div class="time-date-board">
-      <div class="numbers-stage-card">
-        <p class="body-match-kicker">${currentBook2().label} Lesson ${currentLesson2().lesson}</p>
-        <h4>Dates & Months</h4>
-      </div>
-      <section class="school-lesson-section">
-        <div class="time-months-heading"><p class="body-match-kicker">Scenes</p></div>
-        <div class="school-scene-grid date-scene-grid">
-          ${timeDateDateItems2.map((item) => `<section class="greetings-exchange school-scene-card"><div class="greetings-exchange-top"><div><p class="body-match-kicker">${item.english}</p></div><button class="small-button is-play-button" type="button" data-date-scene="${item.id}">Play</button></div><div class="school-scene-layout"><img class="school-scene-image" src="${item.imagePath}" alt="${item.english}" /><div class="greetings-line-stack"><article class="greetings-line-card"><div class="telephone-bubble-copy"><p class="telephone-line-hanzi">${item.context}</p>${state2.showPinyin ? `<p class="telephone-line-pinyin">${item.contextPinyin}</p>` : ""}${state2.showEnglish ? `<p class="telephone-line-english">${item.contextEnglish}</p>` : ""}</div></article></div></div></section>`).join("")}
-        </div>
-      </section>
+      const dateItems = scopedDateContent(timeDateDateItems2);
+      const monthItems = scopedDateContent(timeDateMonthItems2);
+      const lessonScope = state2.lessonScope;
+      const dateNotes = [
+        { hanzi: "\u4ECA\u5929\u51E0\u6708\u51E0\u53F7\uFF1F", pinyin: "j\u012Bn ti\u0101n j\u01D0 yu\xE8 j\u01D0 h\xE0o?", english: "What is the date today?", example: "\u4ECA\u5929\u4E94\u6708\u4E8C\u5341\u53F7\u3002", examplePinyin: "j\u012Bn ti\u0101n w\u01D4 yu\xE8 \xE8r sh\xED h\xE0o.", exampleEnglish: "Today is May twentieth.", lessonSources: ["3a:2"] },
+        { hanzi: "\u53F7 / \u65E5", pinyin: "h\xE0o / r\xEC", english: "two ways to say the day of a date", example: "\u4E94\u6708\u4E8C\u5341\u53F7 = \u4E94\u6708\u4E8C\u5341\u65E5\u3002", examplePinyin: "w\u01D4 yu\xE8 \xE8r sh\xED h\xE0o = w\u01D4 yu\xE8 \xE8r sh\xED r\xEC.", exampleEnglish: "Both mean May twentieth.", lessonSources: ["3a:2"] },
+        { hanzi: "\u795D\u4F60\u751F\u65E5\u5FEB\u4E50\uFF01", pinyin: "zh\xF9 n\u01D0 sh\u0113ng r\xEC ku\xE0i l\xE8!", english: "Wish you a happy birthday!", lessonSources: ["3a:3"] },
+        { hanzi: "\u751F\u65E5\u4F1A / \u793C\u7269", pinyin: "sh\u0113ng r\xEC hu\xEC / l\u01D0 w\xF9", english: "birthday party / present", example: "\u751F\u65E5\u4F1A\u4E0A\u6709\u793C\u7269\u3002", examplePinyin: "sh\u0113ng r\xEC hu\xEC sh\xE0ng y\u01D2u l\u01D0 w\xF9.", exampleEnglish: "There are presents at a birthday party.", lessonSources: ["3a:3"] }
+      ];
+      const visibleNotes = lessonScope ? dateNotes.filter((note) => note.lessonSources.includes(`${lessonScope.bookId}:${lessonScope.lessonNumber}`)) : dateNotes;
+      const monthSection = monthItems.length ? `
       <section class="time-months-intro">
         <div>
           <p class="body-match-kicker">Months of the year</p>
@@ -9461,16 +9676,26 @@
       </section>
       <section class="school-lesson-section">
         <div class="school-scene-grid month-scene-grid">
-          ${timeDateMonthItems2.map((item) => `<section class="greetings-exchange school-scene-card"><div class="greetings-exchange-top"><div><p class="body-match-kicker">${item.english}</p></div><button class="small-button is-play-button" type="button" data-month-scene="${item.id}">Play</button></div><div class="school-scene-layout"><img class="school-scene-image" src="${item.imagePath}" alt="${item.english}" /><div class="greetings-line-stack"><article class="greetings-line-card"><div class="telephone-bubble-copy"><p class="telephone-line-hanzi">${item.context}</p>${state2.showPinyin ? `<p class="telephone-line-pinyin">${item.contextPinyin}</p>` : ""}${state2.showEnglish ? `<p class="telephone-line-english">${item.contextEnglish}</p>` : ""}</div></article></div></div></section>`).join("")}
+          ${monthItems.map((item) => `<section class="greetings-exchange school-scene-card"><div class="greetings-exchange-top"><div><p class="body-match-kicker">${item.english}</p></div><button class="small-button is-play-button" type="button" data-month-scene="${item.id}">Play</button></div><div class="school-scene-layout"><img class="school-scene-image" src="${item.imagePath}" alt="${item.english}" /><div class="greetings-line-stack"><article class="greetings-line-card"><div class="telephone-bubble-copy"><p class="telephone-line-hanzi">${item.context}</p>${state2.showPinyin ? `<p class="telephone-line-pinyin">${item.contextPinyin}</p>` : ""}${state2.showEnglish ? `<p class="telephone-line-english">${item.contextEnglish}</p>` : ""}</div></article></div></div></section>`).join("")}
+        </div>
+      </section>` : "";
+      focusExplorer2.innerHTML = `
+    <div class="time-date-board">
+      ${lessonScope ? `<div class="numbers-stage-card">
+        <p class="body-match-kicker">${currentBook2().label} Lesson ${currentLesson2().lesson}</p>
+        <h4>Dates & Months</h4>
+      </div>` : ""}
+      <section class="school-lesson-section">
+        <div class="time-months-heading"><p class="body-match-kicker">Scenes</p></div>
+        <div class="school-scene-grid date-scene-grid">
+          ${dateItems.map((item) => `<section class="greetings-exchange school-scene-card"><div class="greetings-exchange-top"><div><p class="body-match-kicker">${item.english}</p></div><button class="small-button is-play-button" type="button" data-date-scene="${item.id}">Play</button></div><div class="school-scene-layout"><img class="school-scene-image" src="${item.imagePath}" alt="${item.english}" /><div class="greetings-line-stack"><article class="greetings-line-card"><div class="telephone-bubble-copy"><p class="telephone-line-hanzi">${item.context}</p>${state2.showPinyin ? `<p class="telephone-line-pinyin">${item.contextPinyin}</p>` : ""}${state2.showEnglish ? `<p class="telephone-line-english">${item.contextEnglish}</p>` : ""}</div></article></div></div></section>`).join("")}
         </div>
       </section>
+      ${monthSection}
       <section class="visual-topic-notes">
         <p class="body-match-kicker">Useful notes</p>
         <div class="visual-topic-note-grid">
-          <article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">\u4ECA\u5929\u51E0\u6708\u51E0\u53F7\uFF1F</p>${state2.showPinyin ? '<p class="visual-topic-note-pinyin">j\u012Bn ti\u0101n j\u01D0 yu\xE8 j\u01D0 h\xE0o?</p>' : ""}${state2.showEnglish ? '<p class="visual-topic-note-english">What is the date today?</p>' : ""}<p class="visual-topic-note-example">\u4ECA\u5929\u4E94\u6708\u4E8C\u5341\u53F7\u3002</p>${state2.showPinyin ? '<p class="visual-topic-note-pinyin">j\u012Bn ti\u0101n w\u01D4 yu\xE8 \xE8r sh\xED h\xE0o.</p>' : ""}${state2.showEnglish ? '<p class="visual-topic-note-english">Today is May twentieth.</p>' : ""}</article>
-          <article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">\u53F7 / \u65E5</p>${state2.showPinyin ? '<p class="visual-topic-note-pinyin">h\xE0o / r\xEC</p>' : ""}${state2.showEnglish ? '<p class="visual-topic-note-english">two ways to say the day of a date</p>' : ""}<p class="visual-topic-note-example">\u4E94\u6708\u4E8C\u5341\u53F7 = \u4E94\u6708\u4E8C\u5341\u65E5\u3002</p>${state2.showPinyin ? '<p class="visual-topic-note-pinyin">w\u01D4 yu\xE8 \xE8r sh\xED h\xE0o = w\u01D4 yu\xE8 \xE8r sh\xED r\xEC.</p>' : ""}${state2.showEnglish ? '<p class="visual-topic-note-english">Both mean May twentieth.</p>' : ""}</article>
-          <article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">\u795D\u4F60\u751F\u65E5\u5FEB\u4E50\uFF01</p>${state2.showPinyin ? '<p class="visual-topic-note-pinyin">zh\xF9 n\u01D0 sh\u0113ng r\xEC ku\xE0i l\xE8!</p>' : ""}${state2.showEnglish ? '<p class="visual-topic-note-english">Wish you a happy birthday!</p>' : ""}</article>
-          <article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">\u751F\u65E5\u4F1A / \u793C\u7269</p>${state2.showPinyin ? '<p class="visual-topic-note-pinyin">sh\u0113ng r\xEC hu\xEC / l\u01D0 w\xF9</p>' : ""}${state2.showEnglish ? '<p class="visual-topic-note-english">birthday party / present</p>' : ""}<p class="visual-topic-note-example">\u751F\u65E5\u4F1A\u4E0A\u6709\u793C\u7269\u3002</p>${state2.showPinyin ? '<p class="visual-topic-note-pinyin">sh\u0113ng r\xEC hu\xEC sh\xE0ng y\u01D2u l\u01D0 w\xF9.</p>' : ""}${state2.showEnglish ? '<p class="visual-topic-note-english">There are presents at a birthday party.</p>' : ""}</article>
+          ${visibleNotes.map((note) => `<article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">${note.hanzi}</p>${state2.showPinyin ? `<p class="visual-topic-note-pinyin">${note.pinyin}</p>` : ""}${state2.showEnglish ? `<p class="visual-topic-note-english">${note.english}</p>` : ""}${note.example ? `<p class="visual-topic-note-example">${note.example}</p>` : ""}${state2.showPinyin && note.examplePinyin ? `<p class="visual-topic-note-pinyin">${note.examplePinyin}</p>` : ""}${state2.showEnglish && note.exampleEnglish ? `<p class="visual-topic-note-english">${note.exampleEnglish}</p>` : ""}</article>`).join("")}
         </div>
       </section>
     </div>
@@ -9478,13 +9703,13 @@
       bindTimeAssetAudio2(focusExplorer2);
       focusExplorer2.querySelectorAll("[data-date-scene]").forEach((button) => {
         button.addEventListener("click", () => {
-          const item = timeDateDateItems2.find((entry) => entry.id === button.dataset.dateScene);
+          const item = dateItems.find((entry) => entry.id === button.dataset.dateScene);
           if (item && state2.tapAudioEnabled) speak2(item.audio, 0.78);
         });
       });
       focusExplorer2.querySelectorAll("[data-month-scene]").forEach((button) => {
         button.addEventListener("click", () => {
-          const item = timeDateMonthItems2.find((entry) => entry.id === button.dataset.monthScene);
+          const item = monthItems.find((entry) => entry.id === button.dataset.monthScene);
           if (item && state2.tapAudioEnabled) speak2(item.audio, 0.78);
         });
       });
@@ -9756,15 +9981,19 @@
       });
     }
     function renderClothesExplorer2() {
+      const scenes = scopedClothesContent(clothesPractice2);
+      const words = scopedClothesContent(clothesBookWords2);
+      const notes = scopedClothesContent(clothesUsefulNotes2);
+      const lessonScope = state2.lessonScope;
       focusExplorer2.innerHTML = `
     <div class="numbers-board">
-      <div class="numbers-stage-card">
+      ${lessonScope ? `<div class="numbers-stage-card">
         <p class="body-match-kicker">${currentBook2().label} Lesson ${currentLesson2().lesson}</p>
         <h4>Book theme: getting dressed</h4>
         <p>Learn everyday clothes first, then choose what to wear for the weather.</p>
-      </div>
-      <div class="greetings-practice-grid">
-        ${clothesPractice2.map(
+      </div>` : ""}
+      <div class="greetings-practice-grid clothes-scene-grid">
+        ${scenes.map(
         (scene) => `
               <section class="greetings-exchange">
                 <div class="greetings-exchange-top">
@@ -9796,14 +10025,15 @@
       <section class="school-lesson-section clothes-book-words">
         <div class="time-months-heading"><p class="body-match-kicker">Book words</p></div>
         <div class="time-asset-grid clothes-word-grid">
-          ${clothesBookWords2.map((word) => `<button class="time-asset-card book-word-card" type="button" data-clothes-word="${word.id}"><img class="book-word-image" src="${word.imagePath}" alt="${word.english}" /><span class="book-word-copy"><span class="time-asset-hanzi">${word.hanzi}</span>${state2.showPinyin ? `<span class="time-asset-pinyin">${word.pinyin}</span>` : ""}${state2.showEnglish ? `<span class="time-asset-english">${word.english}</span>` : ""}</span></button>`).join("")}
+          ${words.map((word) => `<button class="time-asset-card book-word-card" type="button" data-clothes-word="${word.id}">${word.imagePath ? `<img class="book-word-image" src="${word.imagePath}" alt="${word.english}" />` : `<span class="book-word-image book-word-image-fallback" aria-hidden="true">${word.hanzi}</span>`}<span class="book-word-copy"><span class="time-asset-hanzi">${word.hanzi}</span>${state2.showPinyin ? `<span class="time-asset-pinyin">${word.pinyin}</span>` : ""}${state2.showEnglish ? `<span class="time-asset-english">${word.english}</span>` : ""}</span></button>`).join("")}
         </div>
       </section>
+      ${notes.length ? `<section class="visual-topic-notes"><p class="body-match-kicker">Useful notes</p><div class="visual-topic-note-grid">${notes.map((note) => `<article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">${note.hanzi}</p>${state2.showPinyin ? `<p class="visual-topic-note-pinyin">${note.pinyin}</p>` : ""}${state2.showEnglish ? `<p class="visual-topic-note-english">${note.english}</p>` : ""}<p class="visual-topic-note-example">${note.example}</p>${state2.showPinyin ? `<p class="visual-topic-note-pinyin">${note.examplePinyin}</p>` : ""}${state2.showEnglish ? `<p class="visual-topic-note-english">${note.exampleEnglish}</p>` : ""}</article>`).join("")}</div></section>` : ""}
     </div>
   `;
       focusExplorer2.querySelectorAll("[data-clothes-play-scene]").forEach((button) => {
         button.addEventListener("click", () => {
-          const scene = clothesPractice2.find((entry) => entry.id === button.dataset.clothesPlayScene);
+          const scene = scenes.find((entry) => entry.id === button.dataset.clothesPlayScene);
           if (scene && state2.tapAudioEnabled) {
             speakSceneLines2(scene.lines);
           }
@@ -9811,7 +10041,7 @@
       });
       focusExplorer2.querySelectorAll("[data-clothes-word]").forEach((button) => {
         button.addEventListener("click", () => {
-          const word = clothesBookWords2.find((entry) => entry.id === button.dataset.clothesWord);
+          const word = words.find((entry) => entry.id === button.dataset.clothesWord);
           if (word && state2.tapAudioEnabled) speak2(word.audio, 0.78);
         });
       });
@@ -9844,14 +10074,7 @@
         hanzi: "\u6211\u559C\u6B22 + \u540D\u8BCD\u3002\u6BD4\u5982\uFF1A\u6211\u559C\u6B22\u732B\u3002",
         pinyin: "W\u01D2 x\u01D0 huan + m\xEDng c\xED. B\u01D0 r\xFA: W\u01D2 x\u01D0 huan m\u0101o.",
         english: "\u6211\u559C\u6B22 means \u201CI like.\u201D Put an animal or thing after it."
-      },
-      foodStory: [
-        { id: "dog-bone", animalHanzi: "\u72D7", animalPinyin: "g\u01D2u", animalEnglish: "dog", foodHanzi: "\u9AA8\u5934", foodPinyin: "g\u01D4 tou", foodEnglish: "bones", animalImagePath: "assets/illustrated-animals/dog.webp", animalImageAlt: "A dog", foodImagePath: "assets/illustrated-food/bones.webp", foodImageAlt: "Bones", hanzi: "\u72D7\u5403\u9AA8\u5934\u3002", pinyin: "G\u01D2u ch\u012B g\u01D4 tou.", english: "Dogs eat bones.", audio: "\u72D7\u5403\u9AA8\u5934" },
-        { id: "cat-fish", animalHanzi: "\u732B", animalPinyin: "m\u0101o", animalEnglish: "cat", foodHanzi: "\u9C7C", foodPinyin: "y\xFA", foodEnglish: "fish", animalImagePath: "assets/illustrated-animals/cat.webp", animalImageAlt: "A cat", foodImagePath: "assets/illustrated-food/small-fish.webp", foodImageAlt: "Fish", hanzi: "\u732B\u5403\u9C7C\u3002", pinyin: "M\u0101o ch\u012B y\xFA.", english: "Cats eat fish.", audio: "\u732B\u5403\u9C7C" },
-        { id: "rabbit-carrot", animalHanzi: "\u5C0F\u5154\u5B50", animalPinyin: "xi\u01CEo t\xF9 zi", animalEnglish: "rabbit", foodHanzi: "\u80E1\u841D\u535C", foodPinyin: "h\xFA lu\xF3 bo", foodEnglish: "carrot", animalImagePath: "assets/illustrated-animals/bunny.webp", animalImageAlt: "A rabbit", foodImagePath: "assets/illustrated-food/carrot.webp", foodImageAlt: "A carrot", hanzi: "\u5C0F\u5154\u5B50\u5403\u80E1\u841D\u535C\u3002", pinyin: "Xi\u01CEo t\xF9 zi ch\u012B h\xFA lu\xF3 bo.", english: "The little rabbit eats carrots.", audio: "\u5C0F\u5154\u5B50\u5403\u80E1\u841D\u535C" },
-        { id: "panda-bamboo", animalHanzi: "\u718A\u732B", animalPinyin: "xi\xF3ng m\u0101o", animalEnglish: "panda", foodHanzi: "\u7AF9\u5B50", foodPinyin: "zh\xFA zi", foodEnglish: "bamboo", animalImagePath: "assets/illustrated-animals/panda.webp", animalImageAlt: "A panda", foodImagePath: "assets/illustrated-food/bamboo.webp", foodImageAlt: "Bamboo", hanzi: "\u718A\u732B\u5403\u7AF9\u5B50\u3002", pinyin: "Xi\xF3ng m\u0101o ch\u012B zh\xFA zi.", english: "Pandas eat bamboo.", audio: "\u718A\u732B\u5403\u7AF9\u5B50" },
-        { id: "monkey-banana", animalHanzi: "\u7334\u5B50", animalPinyin: "h\xF3u zi", animalEnglish: "monkey", foodHanzi: "\u9999\u8549", foodPinyin: "xi\u0101ng ji\u0101o", foodEnglish: "banana", animalImagePath: "assets/illustrated-animals/monkey.webp", animalImageAlt: "A monkey", foodImagePath: "assets/illustrated-food/banana.webp", foodImageAlt: "A banana", hanzi: "\u7334\u5B50\u5403\u9999\u8549\u3002", pinyin: "H\xF3u zi ch\u012B xi\u0101ng ji\u0101o.", english: "Monkeys eat bananas.", audio: "\u7334\u5B50\u5403\u9999\u8549" }
-      ]
+      }
     },
     "2b": {
       title: "Animals",
@@ -9874,13 +10097,20 @@
         { id: "monkey", hanzi: "\u7334\u5B50", pinyin: "h\xF3u zi", english: "monkey", audio: "\u7334\u5B50", imagePath: "assets/illustrated-animals/monkey.webp", imageAlt: "A monkey" },
         { id: "goldfish", hanzi: "\u91D1\u9C7C", pinyin: "j\u012Bn y\xFA", english: "goldfish", audio: "\u91D1\u9C7C", imagePath: "assets/illustrated-animals/goldfish.webp", imageAlt: "A goldfish" },
         { id: "turtle", hanzi: "\u4E4C\u9F9F", pinyin: "w\u016B gu\u012B", english: "turtle", audio: "\u4E4C\u9F9F", imagePath: "assets/illustrated-animals/turtle.webp", imageAlt: "A turtle" }
+      ],
+      foodStory: [
+        { id: "dog-bone", animalHanzi: "\u72D7", animalPinyin: "g\u01D2u", animalEnglish: "dog", foodHanzi: "\u9AA8\u5934", foodPinyin: "g\u01D4 tou", foodEnglish: "bones", animalImagePath: "assets/illustrated-animals/dog.webp", animalImageAlt: "A dog", foodImagePath: "assets/illustrated-food/bones.webp", foodImageAlt: "Bones", hanzi: "\u72D7\u5403\u9AA8\u5934\u3002", pinyin: "G\u01D2u ch\u012B g\u01D4 tou.", english: "Dogs eat bones.", audio: "\u72D7\u5403\u9AA8\u5934" },
+        { id: "cat-fish", animalHanzi: "\u732B", animalPinyin: "m\u0101o", animalEnglish: "cat", foodHanzi: "\u9C7C", foodPinyin: "y\xFA", foodEnglish: "fish", animalImagePath: "assets/illustrated-animals/cat.webp", animalImageAlt: "A cat", foodImagePath: "assets/illustrated-food/small-fish.webp", foodImageAlt: "Fish", hanzi: "\u732B\u5403\u9C7C\u3002", pinyin: "M\u0101o ch\u012B y\xFA.", english: "Cats eat fish.", audio: "\u732B\u5403\u9C7C" },
+        { id: "rabbit-carrot", animalHanzi: "\u5C0F\u5154\u5B50", animalPinyin: "xi\u01CEo t\xF9 zi", animalEnglish: "rabbit", foodHanzi: "\u80E1\u841D\u535C", foodPinyin: "h\xFA lu\xF3 bo", foodEnglish: "carrot", animalImagePath: "assets/illustrated-animals/bunny.webp", animalImageAlt: "A rabbit", foodImagePath: "assets/illustrated-food/carrot.webp", foodImageAlt: "A carrot", hanzi: "\u5C0F\u5154\u5B50\u5403\u80E1\u841D\u535C\u3002", pinyin: "Xi\u01CEo t\xF9 zi ch\u012B h\xFA lu\xF3 bo.", english: "The little rabbit eats carrots.", audio: "\u5C0F\u5154\u5B50\u5403\u80E1\u841D\u535C" },
+        { id: "panda-bamboo", animalHanzi: "\u718A\u732B", animalPinyin: "xi\xF3ng m\u0101o", animalEnglish: "panda", foodHanzi: "\u7AF9\u5B50", foodPinyin: "zh\xFA zi", foodEnglish: "bamboo", animalImagePath: "assets/illustrated-animals/panda.webp", animalImageAlt: "A panda", foodImagePath: "assets/illustrated-food/bamboo.webp", foodImageAlt: "Bamboo", hanzi: "\u718A\u732B\u5403\u7AF9\u5B50\u3002", pinyin: "Xi\xF3ng m\u0101o ch\u012B zh\xFA zi.", english: "Pandas eat bamboo.", audio: "\u718A\u732B\u5403\u7AF9\u5B50" },
+        { id: "monkey-banana", animalHanzi: "\u7334\u5B50", animalPinyin: "h\xF3u zi", animalEnglish: "monkey", foodHanzi: "\u9999\u8549", foodPinyin: "xi\u0101ng ji\u0101o", foodEnglish: "banana", animalImagePath: "assets/illustrated-animals/monkey.webp", animalImageAlt: "A monkey", foodImagePath: "assets/illustrated-food/banana.webp", foodImageAlt: "A banana", hanzi: "\u7334\u5B50\u5403\u9999\u8549\u3002", pinyin: "H\xF3u zi ch\u012B xi\u0101ng ji\u0101o.", english: "Monkeys eat bananas.", audio: "\u7334\u5B50\u5403\u9999\u8549" }
       ]
     }
   };
   var animalsTopic = {
     id: "animals",
     title: "Zoo Animals",
-    summary: "Count zoo animals with the right measure words.",
+    summary: "Count zoo animals and match animals with their food.",
     progressLabel: "2B",
     iconText: "\u52A8\u7269\u56ED",
     iconColor: "#6f7fa4",
@@ -9889,7 +10119,7 @@
     focusItems: animalLessons["2b"].items,
     parentGuide: "Use zoo animals to practise the measure words \u53EA, \u5934, and \u6761 in context.",
     cultureGuide: "Animals can later connect naturally to zodiac content and story-based culture lessons.",
-    activities: ["Tap to hear", "Choose the measure word"],
+    activities: ["Tap to hear", "Build a zoo sentence", "Match animal food"],
     steps: [
       { book: "2B", lesson: 5, title: "Animals", cardLabel: "Count zoo animals", note: "Count zoo animals with \u53EA, \u5934, and \u6761." }
     ]
@@ -9897,16 +10127,16 @@
   var petsTopic = {
     id: "pets",
     title: "Pets",
-    summary: "Meet familiar pets and hear a simple story about them.",
+    summary: "Meet familiar pets and say which ones you like.",
     progressLabel: "1B",
     iconText: "\u5BA0\u7269",
     iconColor: "#8e6f9b",
     ownsExplorerContent: true,
     focus: { hanzi: "\u72D7\uFF0C\u732B", pinyin: "g\u01D2u, m\u0101o", english: "dog, cat", audio: "\u72D7\uFF0C\u732B" },
     focusItems: animalLessons["1b"].items,
-    parentGuide: "Name familiar pets, then follow a short story about what pets eat.",
+    parentGuide: "Name familiar pets, then use \u6211\u559C\u6B22\u2026 to say which one you like.",
     cultureGuide: "Pets can later connect naturally to animal-care stories and everyday home life.",
-    activities: ["Tap to hear", "Complete a pet sentence", "Pet food story"],
+    activities: ["Tap to hear", "Complete a pet sentence"],
     steps: [
       { book: "1B", lesson: 5, title: "Pets", cardLabel: "Name pets", note: "Name familiar pets and hear a simple preference sentence." }
     ]
@@ -9931,6 +10161,12 @@
       { id: "windy", hanzi: "\u4ECA\u5929\u522E\u5927\u98CE", pinyin: "j\u012Bn ti\u0101n gu\u0101 d\xE0 f\u0113ng", english: "It is very windy today.", audio: "\u4ECA\u5929\u522E\u5927\u98CE", imagePath: "assets/illustrated-weather/windy-leaves.webp", imageAlt: "Leaves blowing on a windy day" }
     ]
   };
+  var weatherOutfitScenes = [
+    { id: "rainy-outfit", title: "Rainy day", imagePath: "assets/illustrated-clothes/weather-outfits/rainy-lele.webp", imageAlt: "Lele wearing a yellow raincoat and rain boots in the rain", lines: [{ hanzi: "\u4E0B\u96E8\u4E86\u3002", pinyin: "xi\xE0 y\u01D4 le.", english: "It is raining.", audio: "\u4E0B\u96E8\u4E86" }, { hanzi: "\u4E50\u4E50\u7A7F\u96E8\u8863\u548C\u96E8\u978B\u3002", pinyin: "l\xE8 le chu\u0101n y\u01D4 y\u012B h\xE9 y\u01D4 xi\xE9.", english: "Lele wears a raincoat and rain boots.", audio: "\u4E50\u4E50\u7A7F\u96E8\u8863\u548C\u96E8\u978B" }] },
+    { id: "sunny-outfit", title: "Sunny day", imagePath: "assets/illustrated-clothes/weather-outfits/sunny-luna.webp", imageAlt: "Luna wearing a T-shirt and shorts on a sunny day", lines: [{ hanzi: "\u4ECA\u5929\u662F\u6674\u5929\uFF0C\u5929\u6C14\u5F88\u70ED\u3002", pinyin: "j\u012Bn ti\u0101n sh\xEC q\xEDng ti\u0101n, ti\u0101n q\xEC h\u011Bn r\xE8.", english: "Today is sunny and hot.", audio: "\u4ECA\u5929\u662F\u6674\u5929\u5929\u6C14\u5F88\u70ED" }, { hanzi: "\u9732\u5A1C\u7A7FT\u6064\u548C\u77ED\u88E4\u3002", pinyin: "l\xF9 n\xE0 chu\u0101n T x\xF9 h\xE9 du\u01CEn k\xF9.", english: "Luna wears a T-shirt and shorts.", audio: "\u9732\u5A1C\u7A7FT\u6064\u548C\u77ED\u88E4" }] },
+    { id: "snowy-outfit", title: "Snowy day", imagePath: "assets/illustrated-clothes/weather-outfits/snowy-noah-winter-gear.webp", imageAlt: "Noah wearing a coat, hat, scarf, gloves, and long pants in the snow", lines: [{ hanzi: "\u4E0B\u96EA\u4E86\uFF0C\u5929\u6C14\u5F88\u51B7\u3002", pinyin: "xi\xE0 xu\u011B le, ti\u0101n q\xEC h\u011Bn l\u011Bng.", english: "It is snowing and cold.", audio: "\u4E0B\u96EA\u4E86\u5929\u6C14\u5F88\u51B7" }, { hanzi: "\u8BFA\u4E9A\u6234\u5E3D\u5B50\u3001\u56F4\u5DFE\u548C\u624B\u5957\uFF0C\u7A7F\u5916\u5957\u548C\u957F\u88E4\u3002", pinyin: "nu\xF2 y\xE0 d\xE0i m\xE0o zi, w\xE9i j\u012Bn h\xE9 sh\u01D2u t\xE0o, chu\u0101n w\xE0i t\xE0o h\xE9 ch\xE1ng k\xF9.", english: "Noah wears a hat, scarf, and gloves, with a coat and long pants.", audio: "\u8BFA\u4E9A\u6234\u5E3D\u5B50\u56F4\u5DFE\u548C\u624B\u5957\u7A7F\u5916\u5957\u548C\u957F\u88E4" }] },
+    { id: "windy-outfit", title: "Windy day", imagePath: "assets/illustrated-clothes/weather-outfits/windy-sophie.webp", imageAlt: "Sophie wearing a coat, long pants, and knit hat on a windy day", lines: [{ hanzi: "\u4ECA\u5929\u522E\u5927\u98CE\u3002", pinyin: "j\u012Bn ti\u0101n gu\u0101 d\xE0 f\u0113ng.", english: "It is very windy today.", audio: "\u4ECA\u5929\u522E\u5927\u98CE" }, { hanzi: "\u82CF\u83F2\u7A7F\u957F\u88E4\u548C\u5927\u8863\uFF0C\u6234\u5E3D\u5B50\u3002", pinyin: "s\u016B f\u0113i chu\u0101n ch\xE1ng k\xF9 h\xE9 d\xE0 y\u012B, d\xE0i m\xE0o zi.", english: "Sophie wears long pants and a coat, with a hat.", audio: "\u82CF\u83F2\u7A7F\u957F\u88E4\u548C\u5927\u8863\u6234\u5E3D\u5B50" }] }
+  ];
   var natureLesson = {
     title: "Nature",
     summary: "Describe what is in the sky and on the ground using \u5929\u4E0A\u6709\u2026 and \u5730\u4E0A\u6709\u2026.",
@@ -10066,50 +10302,10 @@
     return `${start}<path d="M12 60h72" stroke="#9bc774" stroke-width="4" stroke-linecap="round"/><path d="M26 60V31m0 18-10-12m10 7 9-13M48 60V23m0 24-11-14m11 8 10-15M69 60V34m0 15-8-10m8 6 9-12" stroke="#4c8b49" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>${end}`;
   }
   var weatherDressRounds = [
-    {
-      id: "rain",
-      prompt: "\u4E0B\u96E8\u4E86\u3002\u5E26\u4EC0\u4E48\uFF1F",
-      promptPinyin: "xi\xE0 y\u01D4 le. d\xE0i sh\xE9n me?",
-      promptEnglish: "It is raining. What should we take?",
-      answerId: "umbrella",
-      answerSentence: "\u4E0B\u96E8\u4E86\u3002\u5E26\u96E8\u4F1E\u3002",
-      answerAudio: "\u5E26\u96E8\u4F1E",
-      answerPinyin: "xi\xE0 y\u01D4 le. d\xE0i y\u01D4 s\u01CEn.",
-      answerEnglish: "It is raining. Take an umbrella."
-    },
-    {
-      id: "snow",
-      prompt: "\u4E0B\u96EA\u4E86\u3002\u4ECA\u5929\u5F88\u51B7\u3002\u7A7F\u4EC0\u4E48\uFF1F",
-      promptPinyin: "xi\xE0 xu\u011B le. j\u012Bn ti\u0101n h\u011Bn l\u011Bng. chu\u0101n sh\xE9n me?",
-      promptEnglish: "It is snowing. Today is cold. What should we wear?",
-      answerId: "knit-hat",
-      answerSentence: "\u4E0B\u96EA\u4E86\u3002\u4ECA\u5929\u5F88\u51B7\u3002\u6234\u5E3D\u5B50\u3002",
-      answerAudio: "\u6234\u5E3D\u5B50",
-      answerPinyin: "xi\xE0 xu\u011B le. j\u012Bn ti\u0101n h\u011Bn l\u011Bng. d\xE0i m\xE0o zi.",
-      answerEnglish: "It is snowing. Today is cold. Wear a hat."
-    },
-    {
-      id: "sunny",
-      prompt: "\u4ECA\u5929\u662F\u6674\u5929\u3002\u4ECA\u5929\u5F88\u70ED\u3002\u7A7F\u4EC0\u4E48\uFF1F",
-      promptPinyin: "j\u012Bn ti\u0101n sh\xEC q\xEDng ti\u0101n. j\u012Bn ti\u0101n h\u011Bn r\xE8. chu\u0101n sh\xE9n me?",
-      promptEnglish: "Today is sunny. Today is hot. What should we wear?",
-      answerId: "shorts",
-      answerSentence: "\u4ECA\u5929\u662F\u6674\u5929\u3002\u4ECA\u5929\u5F88\u70ED\u3002\u7A7F\u77ED\u88E4\u3002",
-      answerAudio: "\u7A7F\u77ED\u88E4",
-      answerPinyin: "j\u012Bn ti\u0101n sh\xEC q\xEDng ti\u0101n. j\u012Bn ti\u0101n h\u011Bn r\xE8. chu\u0101n du\u01CEn k\xF9.",
-      answerEnglish: "Today is sunny. Today is hot. Wear shorts."
-    },
-    {
-      id: "windy",
-      prompt: "\u4ECA\u5929\u522E\u5927\u98CE\u3002\u7A7F\u4EC0\u4E48\uFF1F",
-      promptPinyin: "j\u012Bn ti\u0101n gu\u0101 d\xE0 f\u0113ng. chu\u0101n sh\xE9n me?",
-      promptEnglish: "It is very windy today. What should we wear?",
-      answerId: "jacket",
-      answerSentence: "\u4ECA\u5929\u522E\u5927\u98CE\u3002\u7A7F\u5916\u5957\u3002",
-      answerAudio: "\u7A7F\u5916\u5957",
-      answerPinyin: "j\u012Bn ti\u0101n gu\u0101 d\xE0 f\u0113ng. chu\u0101n w\xE0i t\xE0o.",
-      answerEnglish: "It is very windy today. Wear a jacket."
-    }
+    { id: "rain", prompt: "\u4E0B\u96E8\u4E86\u3002\u5E26\u4EC0\u4E48\uFF1F", promptPinyin: "xi\xE0 y\u01D4 le. d\xE0i sh\xE9n me?", promptEnglish: "It is raining. What should we take?", answerId: "umbrella", answerSentence: "\u4E0B\u96E8\u4E86\u3002\u5E26\u96E8\u4F1E\u3002", answerAudio: "\u5E26\u96E8\u4F1E", answerPinyin: "xi\xE0 y\u01D4 le. d\xE0i y\u01D4 s\u01CEn.", answerEnglish: "It is raining. Take an umbrella." },
+    { id: "snow", prompt: "\u4E0B\u96EA\u4E86\u3002\u4ECA\u5929\u5F88\u51B7\u3002\u7A7F\u4EC0\u4E48\uFF1F", promptPinyin: "xi\xE0 xu\u011B le. j\u012Bn ti\u0101n h\u011Bn l\u011Bng. chu\u0101n sh\xE9n me?", promptEnglish: "It is snowing. Today is cold. What should we wear?", answerId: "knit-hat", answerSentence: "\u4E0B\u96EA\u4E86\u3002\u4ECA\u5929\u5F88\u51B7\u3002\u6234\u5E3D\u5B50\u3002", answerAudio: "\u6234\u5E3D\u5B50", answerPinyin: "xi\xE0 xu\u011B le. j\u012Bn ti\u0101n h\u011Bn l\u011Bng. d\xE0i m\xE0o zi.", answerEnglish: "It is snowing. Today is cold. Wear a hat." },
+    { id: "sunny", prompt: "\u4ECA\u5929\u662F\u6674\u5929\u3002\u4ECA\u5929\u5F88\u70ED\u3002\u7A7F\u4EC0\u4E48\uFF1F", promptPinyin: "j\u012Bn ti\u0101n sh\xEC q\xEDng ti\u0101n. j\u012Bn ti\u0101n h\u011Bn r\xE8. chu\u0101n sh\xE9n me?", promptEnglish: "Today is sunny. Today is hot. What should we wear?", answerId: "shorts", answerSentence: "\u4ECA\u5929\u662F\u6674\u5929\u3002\u4ECA\u5929\u5F88\u70ED\u3002\u7A7F\u77ED\u88E4\u3002", answerAudio: "\u7A7F\u77ED\u88E4", answerPinyin: "j\u012Bn ti\u0101n sh\xEC q\xEDng ti\u0101n. j\u012Bn ti\u0101n h\u011Bn r\xE8. chu\u0101n du\u01CEn k\xF9.", answerEnglish: "Today is sunny. Today is hot. Wear shorts." },
+    { id: "windy", prompt: "\u4ECA\u5929\u522E\u5927\u98CE\u3002\u7A7F\u4EC0\u4E48\uFF1F", promptPinyin: "j\u012Bn ti\u0101n gu\u0101 d\xE0 f\u0113ng. chu\u0101n sh\xE9n me?", promptEnglish: "It is very windy today. What should we wear?", answerId: "jacket", answerSentence: "\u4ECA\u5929\u522E\u5927\u98CE\u3002\u7A7F\u5916\u5957\u3002", answerAudio: "\u7A7F\u5916\u5957", answerPinyin: "j\u012Bn ti\u0101n gu\u0101 d\xE0 f\u0113ng. chu\u0101n w\xE0i t\xE0o.", answerEnglish: "It is very windy today. Wear a jacket." }
   ];
   var weatherDressChoices = [
     { id: "umbrella", hanzi: "\u96E8\u4F1E", imagePath: "assets/illustrated-weather/umbrella.png", imageAlt: "A blue umbrella" },
@@ -10120,64 +10316,62 @@
   var weatherFillRounds = [
     {
       id: "rain",
-      imagePath: "assets/illustrated-weather/umbrella.png",
-      imageAlt: "A blue umbrella",
-      clothing: "\u5E26\u96E8\u4F1E",
-      clothingPinyin: "d\xE0i y\u01D4 s\u01CEn",
-      clothingEnglish: "Take an umbrella.",
-      weather: "\u4E0B\u96E8\u4E86",
-      weatherPinyin: "xi\xE0 y\u01D4 le",
-      weatherEnglish: "it is raining",
-      temperatures: ["\u51B7", "\u70ED"]
+      imagePath: "assets/illustrated-clothes/weather-outfits/rainy-lele.webp",
+      imageAlt: "Lele wearing a raincoat and rain boots in the rain",
+      slots: () => [
+        { id: "weather", label: "\u5929\u6C14\u600E\u4E48\u6837\uFF1F", answer: "\u4E0B\u96E8\u4E86", pinyin: "xi\xE0 y\u01D4 le", choices: ["\u4E0B\u96E8\u4E86", "\u4E0B\u96EA\u4E86", "\u662F\u6674\u5929", "\u522E\u5927\u98CE"] },
+        { id: "rainboots", label: "\u7A7F\u4EC0\u4E48\uFF1F", answer: "\u96E8\u978B", pinyin: "y\u01D4 xi\xE9", choices: ["\u96E8\u978B", "\u96E8\u8863", "\u5E3D\u5B50", "\u5916\u5957"] }
+      ],
+      sentence: (word) => `${word("weather")}\u3002\u4E50\u4E50\u7A7F\u96E8\u8863\u548C${word("rainboots")}\u3002`,
+      pinyin: "xi\xE0 y\u01D4 le. l\xE8 le chu\u0101n y\u01D4 y\u012B h\xE9 y\u01D4 xi\xE9.",
+      english: "It is raining. Lele wears a raincoat and rain boots."
     },
     {
-      id: "hot",
-      imagePath: "assets/illustrated-weather/shorts.png",
-      imageAlt: "A pair of orange shorts",
-      clothing: "\u7A7F\u77ED\u88E4",
-      clothingPinyin: "chu\u0101n du\u01CEn k\xF9",
-      clothingEnglish: "Wear shorts.",
-      weather: "\u662F\u6674\u5929",
-      weatherPinyin: "sh\xEC q\xEDng ti\u0101n",
-      weatherEnglish: "is sunny",
-      temperature: "\u70ED",
-      temperaturePinyin: "r\xE8",
-      temperatureEnglish: "hot"
+      id: "sunny",
+      imagePath: "assets/illustrated-clothes/weather-outfits/sunny-luna.webp",
+      imageAlt: "Luna wearing a T-shirt and shorts on a sunny day",
+      slots: () => [
+        { id: "temperature", label: "\u5929\u6C14\u600E\u4E48\u6837\uFF1F", answer: "\u70ED", pinyin: "r\xE8", choices: ["\u70ED", "\u51B7", "\u4E0B\u96E8", "\u4E0B\u96EA"] },
+        { id: "tshirt", label: "\u7A7F\u4EC0\u4E48\uFF1F", answer: "T\u6064", pinyin: "T x\xF9", choices: ["T\u6064", "\u77ED\u88E4", "\u5916\u5957", "\u96E8\u8863"] }
+      ],
+      sentence: (word) => `\u4ECA\u5929\u662F\u6674\u5929\uFF0C\u5929\u6C14\u5F88${word("temperature")}\u3002\u9732\u5A1C\u7A7F${word("tshirt")}\u548C\u77ED\u88E4\u3002`,
+      pinyin: "j\u012Bn ti\u0101n sh\xEC q\xEDng ti\u0101n, ti\u0101n q\xEC h\u011Bn r\xE8. l\xF9 n\xE0 chu\u0101n T x\xF9 h\xE9 du\u01CEn k\xF9.",
+      english: "Today is sunny and hot. Luna wears a T-shirt and shorts."
     },
     {
-      id: "cold",
-      imagePath: "assets/illustrated-weather/knit-hat.png",
-      imageAlt: "A muted red knit hat",
-      clothing: "\u6234\u5E3D\u5B50",
-      clothingPinyin: "d\xE0i m\xE0o zi",
-      clothingEnglish: "Wear a hat.",
-      weather: "\u4E0B\u96EA\u4E86",
-      weatherPinyin: "xi\xE0 xu\u011B le",
-      weatherEnglish: "is snowing",
-      temperature: "\u51B7",
-      temperaturePinyin: "l\u011Bng",
-      temperatureEnglish: "cold"
+      id: "snow",
+      imagePath: "assets/illustrated-clothes/weather-outfits/snowy-noah-winter-gear.webp",
+      imageAlt: "Noah in a hat, scarf, gloves, coat, and long pants in the snow",
+      slots: (shuffle) => {
+        const accessory = shuffle([
+          { answer: "\u5E3D\u5B50", pinyin: "m\xE0o zi", english: "hat" },
+          { answer: "\u56F4\u5DFE", pinyin: "w\xE9i j\u012Bn", english: "scarf" },
+          { answer: "\u624B\u5957", pinyin: "sh\u01D2u t\xE0o", english: "gloves" }
+        ])[0];
+        return [
+          { id: "weather", label: "\u5929\u6C14\u600E\u4E48\u6837\uFF1F", answer: "\u4E0B\u96EA\u4E86", pinyin: "xi\xE0 xu\u011B le", choices: ["\u4E0B\u96EA\u4E86", "\u4E0B\u96E8\u4E86", "\u662F\u6674\u5929", "\u522E\u5927\u98CE"] },
+          { id: "temperature", label: "\u51B7 / \u70ED", answer: "\u51B7", pinyin: "l\u011Bng", choices: ["\u51B7", "\u70ED"] },
+          { id: "accessory", label: "\u6234\u4EC0\u4E48\uFF1F", ...accessory, choices: [accessory.answer, "\u96E8\u4F1E", "\u96E8\u8863", "\u77ED\u88E4"] },
+          { id: "coat", label: "\u7A7F\u4EC0\u4E48\uFF1F", answer: "\u5916\u5957", pinyin: "w\xE0i t\xE0o", choices: ["\u5916\u5957", "\u96E8\u8863", "T\u6064", "\u77ED\u88E4"] }
+        ];
+      },
+      sentence: (word) => `${word("weather")}\uFF0C\u5929\u6C14\u5F88${word("temperature")}\u3002\u8BFA\u4E9A\u6234${word("accessory")}\uFF0C\u7A7F${word("coat")}\u3002`,
+      pinyin: (slot) => `xi\xE0 xu\u011B le, ti\u0101n q\xEC h\u011Bn l\u011Bng. nu\xF2 y\xE0 d\xE0i ${slot("accessory").pinyin}, chu\u0101n ${slot("coat").pinyin}.`,
+      english: (slot) => `It is snowing and cold. Noah wears a ${slot("accessory").english} and a coat.`
     },
     {
       id: "windy",
-      imagePath: "assets/illustrated-weather/windbreaker.png",
-      imageAlt: "A lightweight green windbreaker",
-      clothing: "\u7A7F\u5916\u5957",
-      clothingPinyin: "chu\u0101n w\xE0i t\xE0o",
-      clothingEnglish: "Wear a jacket.",
-      weather: "\u522E\u5927\u98CE",
-      weatherPinyin: "gu\u0101 d\xE0 f\u0113ng",
-      weatherEnglish: "is very windy",
-      temperature: "\u51B7",
-      temperaturePinyin: "l\u011Bng",
-      temperatureEnglish: "cold"
+      imagePath: "assets/illustrated-clothes/weather-outfits/windy-sophie.webp",
+      imageAlt: "Sophie wearing a coat, long pants, and a hat on a windy day",
+      slots: () => [
+        { id: "weather", label: "\u5929\u6C14\u600E\u4E48\u6837\uFF1F", answer: "\u522E\u5927\u98CE", pinyin: "gu\u0101 d\xE0 f\u0113ng", choices: ["\u522E\u5927\u98CE", "\u4E0B\u96E8\u4E86", "\u4E0B\u96EA\u4E86", "\u662F\u6674\u5929"] },
+        { id: "coat", label: "\u7A7F\u4EC0\u4E48\uFF1F", answer: "\u5927\u8863", pinyin: "d\xE0 y\u012B", choices: ["\u5927\u8863", "\u96E8\u8863", "T\u6064", "\u56F4\u5DFE"] }
+      ],
+      sentence: (word) => `\u4ECA\u5929${word("weather")}\u3002\u82CF\u83F2\u7A7F\u957F\u88E4\u548C${word("coat")}\uFF0C\u6234\u5E3D\u5B50\u3002`,
+      pinyin: "j\u012Bn ti\u0101n gu\u0101 d\xE0 f\u0113ng. s\u016B f\u0113i chu\u0101n ch\xE1ng k\xF9 h\xE9 d\xE0 y\u012B, d\xE0i m\xE0o zi.",
+      english: "It is very windy today. Sophie wears long pants and a coat, with a hat."
     }
   ];
-  var weatherFillWeatherChoices = ["\u4E0B\u96E8\u4E86", "\u4E0B\u96EA\u4E86", "\u662F\u6674\u5929", "\u522E\u5927\u98CE"];
-  var weatherFillTemperatureData = {
-    \u51B7: { pinyin: "l\u011Bng", english: "cold" },
-    \u70ED: { pinyin: "r\xE8", english: "hot" }
-  };
   function createWorldRuntime({ state: state2, currentTopic: currentTopic2, currentBook: currentBook2, currentLesson: currentLesson2, focusExplorer: focusExplorer2, speak: speak2, selectFocusItem: selectFocusItem2, activityPanelTitle: activityPanelTitle2, activityPanelSummary: activityPanelSummary2, activityList: activityList2, renderActivityPanel: renderActivityPanel2 }) {
     function colourItems() {
       return state2.lessonScope?.bookId === "1b" ? colourLessons["1b"].items : colourLessons["2a"].items;
@@ -10226,7 +10420,7 @@
         <div class="numbers-stage-card"><p class="body-match-kicker">${currentBook2().label} Lesson ${currentLesson2().lesson}</p><h4>${lesson.title}</h4><p>${lesson.summary}</p></div>
         <section class="school-lesson-section is-animals"><div class="school-scene-grid is-single">${lesson.scenes.map((scene, index) => worldSceneCardMarkup(scene, { playAttribute: "data-animals-scene", index, compact: true, extraClass: "animals-scene-card" })).join("")}</div></section>
         <section class="school-lesson-section"><div class="time-months-heading"><p class="body-match-kicker">Book words</p></div><div class="time-asset-grid world-asset-grid animal-word-grid">${lesson.items.map((item) => `<button class="time-asset-card book-word-card" type="button" data-world-item="${item.id}" aria-label="${item.hanzi}\uFF0C${item.pinyin}\uFF0C${item.english}"><img class="book-word-image" src="${item.imagePath}" alt="${item.imageAlt}"><span class="book-word-copy"><span class="time-asset-hanzi">${item.hanzi}</span>${state2.showPinyin ? `<span class="time-asset-pinyin">${item.pinyin}</span>` : ""}${state2.showEnglish ? `<span class="time-asset-english">${item.english}</span>` : ""}</span></button>`).join("")}</div></section>
-        ${lesson.foodStory ? `<section class="school-lesson-section pet-food-story"><div class="time-months-heading"><p class="body-match-kicker">Pet story</p></div><div class="pet-food-story-grid">${lesson.foodStory.map((story) => `<button class="pet-food-story-card" type="button" data-pet-food-story="${story.id}"><span class="pet-food-story-pair"><img src="${story.animalImagePath}" alt="${story.animalImageAlt}"><span aria-hidden="true">\u2192</span><img src="${story.foodImagePath}" alt="${story.foodImageAlt}"></span><span class="pet-food-story-copy"><span class="time-asset-context">${story.hanzi}</span>${state2.showPinyin ? `<span class="time-asset-context-pinyin">${story.pinyin}</span>` : ""}${state2.showEnglish ? `<span class="time-asset-context-english">${story.english}</span>` : ""}</span></button>`).join("")}</div></section>` : ""}
+        ${lesson.foodStory ? `<section class="school-lesson-section pet-food-story"><div class="time-months-heading"><p class="body-match-kicker">Animal food</p></div><div class="pet-food-story-grid">${lesson.foodStory.map((story) => `<button class="pet-food-story-card" type="button" data-pet-food-story="${story.id}"><span class="pet-food-story-pair"><img src="${story.animalImagePath}" alt="${story.animalImageAlt}"><span aria-hidden="true">\u2192</span><img src="${story.foodImagePath}" alt="${story.foodImageAlt}"></span><span class="pet-food-story-copy"><span class="time-asset-context">${story.hanzi}</span>${state2.showPinyin ? `<span class="time-asset-context-pinyin">${story.pinyin}</span>` : ""}${state2.showEnglish ? `<span class="time-asset-context-english">${story.english}</span>` : ""}</span></button>`).join("")}</div></section>` : ""}
         ${lesson.usefulNote ? `<section class="visual-topic-notes school-review-notes"><p class="body-match-kicker">Useful note</p><div class="visual-topic-note-grid school-review-grid"><article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">${lesson.usefulNote.hanzi}</p>${state2.showPinyin ? `<p class="visual-topic-note-pinyin">${lesson.usefulNote.pinyin}</p>` : ""}${state2.showEnglish ? `<p class="visual-topic-note-english">${lesson.usefulNote.english}</p>` : ""}</article></div></section>` : ""}
       </div>
     `;
@@ -10242,6 +10436,7 @@
     }
     function renderWeatherExplorer() {
       const scenes = weatherLesson.scenes;
+      const outfitScenes = weatherOutfitScenes;
       focusExplorer2.innerHTML = `
       <div class="time-date-board school-topic-board">
         <div class="numbers-stage-card"><p class="body-match-kicker">${currentBook2().label} Lesson ${currentLesson2().lesson}</p><h4>${weatherLesson.title}</h4><p>${weatherLesson.summary}</p></div>
@@ -10253,11 +10448,19 @@
             <article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">\u4ECA\u5929\u662F + \u5929\u6C14</p>${state2.showPinyin ? '<p class="visual-topic-note-pinyin">j\u012Bn ti\u0101n sh\xEC + ti\u0101n q\xEC</p>' : ""}${state2.showEnglish ? '<p class="visual-topic-note-english">Use \u4ECA\u5929\u662F to name today\u2019s kind of weather.</p>' : ""}<p class="visual-topic-note-example">\u4ECA\u5929\u662F\u6674\u5929\u3002</p>${state2.showPinyin ? '<p class="visual-topic-note-pinyin">j\u012Bn ti\u0101n sh\xEC q\xEDng ti\u0101n.</p>' : ""}${state2.showEnglish ? '<p class="visual-topic-note-english">Today is sunny.</p>' : ""}</article>
           </div>
         </section>
+        <section class="school-lesson-section is-weather weather-outfit-section">
+          <div class="time-months-heading"><p class="body-match-kicker">Weather and clothes</p></div>
+          <div class="school-scene-grid weather-scene-grid">${outfitScenes.map((scene, index) => worldSceneCardMarkup(scene, { playAttribute: "data-weather-outfit-scene", index })).join("")}</div>
+        </section>
       </div>
     `;
       focusExplorer2.querySelectorAll("[data-world-item]").forEach((button) => button.addEventListener("click", () => selectFocusItem2(button.dataset.worldItem, { playAudio: true })));
       focusExplorer2.querySelectorAll("[data-weather-scene]").forEach((button) => button.addEventListener("click", () => {
         const scene = scenes[Number(button.dataset.weatherScene)];
+        if (scene && state2.tapAudioEnabled) speak2(scene.lines.map((line) => line.audio).join("\uFF0C"), 0.74);
+      }));
+      focusExplorer2.querySelectorAll("[data-weather-outfit-scene]").forEach((button) => button.addEventListener("click", () => {
+        const scene = outfitScenes[Number(button.dataset.weatherOutfitScene)];
         if (scene && state2.tapAudioEnabled) speak2(scene.lines.map((line) => line.audio).join("\uFF0C"), 0.74);
       }));
     }
@@ -10301,7 +10504,7 @@
       return `<div class="pets-practice-feedback"><p class="numbers-game-hanzi">${sentence.hanzi}</p>${state2.showPinyin ? `<p class="numbers-game-pinyin">${sentence.pinyin}</p>` : ""}${state2.showEnglish ? `<p class="numbers-game-english">${sentence.english}</p>` : ""}</div>`;
     }
     function ensurePetFoodMatch() {
-      const stories = animalLessons["1b"].foodStory;
+      const stories = animalLessons["2b"].foodStory;
       if (state2.petFoodMatchOrder?.length === stories.length) return;
       state2.petFoodMatchOrder = shuffled3(stories.map((story) => story.id));
       state2.petFoodFoodOrder = shuffledWithoutAlignedPairs(stories.map((story) => story.id), state2.petFoodMatchOrder);
@@ -10334,31 +10537,19 @@
         const story = storyFor(id);
         const wrong = state2.petFoodWrongFoodId === id;
         return `<button class="polite-match-card polite-match-card-meaning${wrong ? " is-wrong" : ""}" type="button" data-pet-food-match-food="${id}">${wrong ? '<span class="answer-result-mark" aria-hidden="true">\xD7</span>' : ""}${petFoodMatchCard(story, "food")}</button>`;
-      }).join("")}</div></div>` : ""}${solvedIds.length === stories.length ? '<button class="small-button is-play-button" type="button" data-pet-food-match-new>Play</button>' : ""}</section>`;
+      }).join("")}</div></div>` : ""}</section>`;
     }
     function renderPetsPractice() {
-      const stories = animalLessons["1b"].foodStory;
-      const preferenceChoices = [
-        ...animalLessons["1b"].items,
-        ...stories.filter((story) => !["dog-bone", "cat-fish"].includes(story.id)).map((story) => ({
-          id: story.id,
-          hanzi: story.animalHanzi,
-          pinyin: story.animalPinyin,
-          english: story.animalEnglish,
-          imagePath: story.animalImagePath,
-          imageAlt: story.animalImageAlt
-        }))
-      ];
+      const preferenceChoices = animalLessons["1b"].items;
       const selectedPet = preferenceChoices.find((choice) => choice.id === state2.petsPreferencePickedId);
       const preference = selectedPet ? { hanzi: `\u6211\u559C\u6B22${selectedPet.hanzi}\u3002`, pinyin: `W\u01D2 x\u01D0 huan ${selectedPet.pinyin}.`, english: `I like ${selectedPet.english}.`, audio: `\u6211\u559C\u6B22${selectedPet.hanzi}` } : null;
-      ensurePetFoodMatch();
       activityPanelTitle2.textContent = "Let's practice";
-      activityPanelSummary2.textContent = "Build a sentence about a pet you like, then match animals to their food.";
+      activityPanelSummary2.textContent = "Build a sentence about a pet you like.";
       activityList2.className = "support-list pets-practice-list";
-      activityList2.innerHTML = `<section class="practice-split-card pets-sentence-practice"><div class="numbers-game-top"><div><p class="body-match-kicker">Build a sentence</p><p class="numbers-game-note">Choose an animal to build a sentence. It will read itself aloud.</p></div><button class="small-button is-play-button" type="button" data-pets-preference-play>Play</button></div><p class="pets-sentence-prompt">\u6211\u559C\u6B22<span class="animals-measure-blank is-${selectedPet ? "correct" : "empty"}">${selectedPet?.hanzi || "____"}</span>\u3002</p><div class="numbers-game-options">${preferenceChoices.map((choice) => {
+      activityList2.innerHTML = `<section class="practice-split-card pets-sentence-practice"><div class="numbers-game-top"><div><p class="body-match-kicker">Build a sentence</p><p class="numbers-game-note">Choose a pet to complete the sentence.</p></div><button class="small-button is-play-button" type="button" data-pets-preference-play>Play</button></div><p class="pets-sentence-prompt">\u6211\u559C\u6B22<span class="animals-measure-blank is-${selectedPet ? "correct" : "empty"}">${selectedPet?.hanzi || "____"}</span>\u3002</p><div class="numbers-game-options">${preferenceChoices.map((choice) => {
         const selected = state2.petsPreferencePickedId === choice.id;
         return `<button class="numbers-game-option greetings-game-option family-listen-option pets-sentence-choice${selected ? " is-correct" : ""}" type="button" data-pets-preference-choice="${choice.id}"><img src="${choice.imagePath}" alt="${choice.imageAlt}"><span><span class="numbers-game-hanzi">${choice.hanzi}</span>${state2.showPinyin ? `<span class="numbers-game-pinyin">${choice.pinyin}</span>` : ""}${state2.showEnglish ? `<span class="numbers-game-english">${choice.english}</span>` : ""}</span>${selected ? '<span class="answer-result-mark" aria-hidden="true">\u2713</span>' : ""}</button>`;
-      }).join("")}</div>${preference ? petSentenceFeedback(preference) : ""}</section>${renderPetFoodMatch(stories)}`;
+      }).join("")}</div>${preference ? petSentenceFeedback(preference) : ""}</section>`;
       activityList2.querySelector("[data-pets-preference-play]")?.addEventListener("click", () => {
         state2.petsPreferencePickedId = "";
         renderActivityPanel2(currentTopic2());
@@ -10367,6 +10558,29 @@
         state2.petsPreferencePickedId = button.dataset.petsPreferenceChoice;
         const choice = preferenceChoices.find((entry) => entry.id === state2.petsPreferencePickedId);
         if (choice && state2.tapAudioEnabled) speak2(`\u6211\u559C\u6B22${choice.hanzi}`, 0.78);
+        renderActivityPanel2(currentTopic2());
+      }));
+    }
+    function renderZooSentencePractice() {
+      const stories = animalLessons["2b"].foodStory;
+      const selectedRound = animalMeasureRounds.find((round) => round.id === state2.zooSentencePickedId);
+      const sentence = selectedRound ? `\u52A8\u7269\u56ED\u6709${selectedRound.number}${selectedRound.measure}${selectedRound.animal}\u3002` : "";
+      activityPanelTitle2.textContent = "Let's practice";
+      activityPanelSummary2.textContent = "Build zoo sentences, then match each animal to the food it eats.";
+      activityList2.className = "support-list";
+      ensurePetFoodMatch();
+      activityList2.innerHTML = `<section class="practice-split-card zoo-sentence-practice"><div class="numbers-game-top"><div><p class="body-match-kicker">Build a sentence</p><p class="numbers-game-note">Choose an animal phrase to build a zoo sentence. It will read itself aloud.</p></div><button class="small-button is-play-button" type="button" data-zoo-sentence-new>Play</button></div><p class="animals-measure-prompt">\u52A8\u7269\u56ED\u6709<span class="animals-measure-blank is-${selectedRound ? "correct" : "empty"}">${selectedRound ? `${selectedRound.number}${selectedRound.measure}${selectedRound.animal}` : "____"}</span>\u3002</p><div class="numbers-game-options">${animalMeasureRounds.map((round) => {
+        const selected = selectedRound?.id === round.id;
+        return `<button class="numbers-game-option greetings-game-option family-listen-option zoo-sentence-choice${selected ? " is-correct" : ""}" type="button" data-zoo-sentence-choice="${round.id}"><img src="${round.imagePath}" alt="${round.imageAlt}"><span><span class="numbers-game-hanzi">${round.number}${round.measure}${round.animal}</span>${state2.showPinyin ? `<span class="numbers-game-pinyin">${round.pinyin}</span>` : ""}${state2.showEnglish ? `<span class="numbers-game-english">${round.english}</span>` : ""}</span>${selected ? '<span class="answer-result-mark" aria-hidden="true">\u2713</span>' : ""}</button>`;
+      }).join("")}</div>${selectedRound ? `<div class="animals-measure-feedback"><p class="numbers-game-hanzi">${sentence}</p>${state2.showPinyin ? `<p class="numbers-game-pinyin">D\xF2ng w\xF9 yu\xE1n y\u01D2u ${selectedRound.pinyin}.</p>` : ""}${state2.showEnglish ? `<p class="numbers-game-english">There are ${selectedRound.english} in the zoo.</p>` : ""}</div>` : ""}</section>${renderPetFoodMatch(stories)}`;
+      activityList2.querySelector("[data-zoo-sentence-new]")?.addEventListener("click", () => {
+        state2.zooSentencePickedId = "";
+        renderActivityPanel2(currentTopic2());
+      });
+      activityList2.querySelectorAll("[data-zoo-sentence-choice]").forEach((button) => button.addEventListener("click", () => {
+        state2.zooSentencePickedId = button.dataset.zooSentenceChoice;
+        const round = animalMeasureRounds.find((entry) => entry.id === state2.zooSentencePickedId);
+        if (round && state2.tapAudioEnabled) speak2(`\u52A8\u7269\u56ED\u6709${round.number}${round.measure}${round.animal}`, 0.78);
         renderActivityPanel2(currentTopic2());
       }));
       activityList2.querySelectorAll("[data-pet-food-match-animal]").forEach((button) => button.addEventListener("click", () => {
@@ -10394,27 +10608,6 @@
         state2.petFoodMatchOrder = [];
         state2.petFoodFoodOrder = [];
         ensurePetFoodMatch();
-        renderActivityPanel2(currentTopic2());
-      }));
-    }
-    function renderZooSentencePractice() {
-      const selectedRound = animalMeasureRounds.find((round) => round.id === state2.zooSentencePickedId);
-      const sentence = selectedRound ? `\u52A8\u7269\u56ED\u6709${selectedRound.number}${selectedRound.measure}${selectedRound.animal}\u3002` : "";
-      activityPanelTitle2.textContent = "Let's practice";
-      activityPanelSummary2.textContent = "Build zoo sentences with \u52A8\u7269\u56ED\u6709\u2026 and animal counting phrases.";
-      activityList2.className = "support-list";
-      activityList2.innerHTML = `<section class="practice-split-card zoo-sentence-practice"><div class="numbers-game-top"><div><p class="body-match-kicker">Build a sentence</p><p class="numbers-game-note">Choose an animal phrase to build a zoo sentence. It will read itself aloud.</p></div><button class="small-button is-play-button" type="button" data-zoo-sentence-new>Play</button></div><p class="animals-measure-prompt">\u52A8\u7269\u56ED\u6709<span class="animals-measure-blank is-${selectedRound ? "correct" : "empty"}">${selectedRound ? `${selectedRound.number}${selectedRound.measure}${selectedRound.animal}` : "____"}</span>\u3002</p><div class="numbers-game-options">${animalMeasureRounds.map((round) => {
-        const selected = selectedRound?.id === round.id;
-        return `<button class="numbers-game-option greetings-game-option family-listen-option zoo-sentence-choice${selected ? " is-correct" : ""}" type="button" data-zoo-sentence-choice="${round.id}"><img src="${round.imagePath}" alt="${round.imageAlt}"><span><span class="numbers-game-hanzi">${round.number}${round.measure}${round.animal}</span>${state2.showPinyin ? `<span class="numbers-game-pinyin">${round.pinyin}</span>` : ""}${state2.showEnglish ? `<span class="numbers-game-english">${round.english}</span>` : ""}</span>${selected ? '<span class="answer-result-mark" aria-hidden="true">\u2713</span>' : ""}</button>`;
-      }).join("")}</div>${selectedRound ? `<div class="animals-measure-feedback"><p class="numbers-game-hanzi">${sentence}</p>${state2.showPinyin ? `<p class="numbers-game-pinyin">D\xF2ng w\xF9 yu\xE1n y\u01D2u ${selectedRound.pinyin}.</p>` : ""}${state2.showEnglish ? `<p class="numbers-game-english">There are ${selectedRound.english} in the zoo.</p>` : ""}</div>` : ""}</section>`;
-      activityList2.querySelector("[data-zoo-sentence-new]")?.addEventListener("click", () => {
-        state2.zooSentencePickedId = "";
-        renderActivityPanel2(currentTopic2());
-      });
-      activityList2.querySelectorAll("[data-zoo-sentence-choice]").forEach((button) => button.addEventListener("click", () => {
-        state2.zooSentencePickedId = button.dataset.zooSentenceChoice;
-        const round = animalMeasureRounds.find((entry) => entry.id === state2.zooSentencePickedId);
-        if (round && state2.tapAudioEnabled) speak2(`\u52A8\u7269\u56ED\u6709${round.number}${round.measure}${round.animal}`, 0.78);
         renderActivityPanel2(currentTopic2());
       }));
     }
@@ -10610,36 +10803,47 @@
         state2.worldWeatherDressPickedId = "";
         state2.worldWeatherDressResult = "";
       }
-    }
-    function currentWeatherDressRound() {
-      ensureWeatherDressPractice();
-      const id = state2.worldWeatherDressRoundIds[state2.worldWeatherDressRoundIndex];
-      return weatherDressRounds.find((round) => round.id === id) ?? weatherDressRounds[0];
+      if (!state2.worldWeatherDressChoiceIds?.length || state2.worldWeatherDressChoiceIds.length !== weatherDressChoices.length) {
+        state2.worldWeatherDressChoiceIds = shuffled3(weatherDressChoices.map((choice) => choice.id));
+      }
     }
     function ensureWeatherFillPractice() {
       if (!state2.worldWeatherFillRoundIds?.length || state2.worldWeatherFillRoundIds.length !== weatherFillRounds.length) {
         state2.worldWeatherFillRoundIds = shuffled3(weatherFillRounds.map((round) => round.id));
         state2.worldWeatherFillRoundIndex = 0;
-        state2.worldWeatherFillWeatherPicked = "";
-        state2.worldWeatherFillTemperaturePicked = "";
-        state2.worldWeatherFillWeatherResult = "";
-        state2.worldWeatherFillTemperatureResult = "";
+        resetWeatherFillAnswers();
+        return;
       }
+      if (!state2.worldWeatherFillSlots?.length) resetWeatherFillAnswers();
     }
     function currentWeatherFillRound() {
-      ensureWeatherFillPractice();
-      const id = state2.worldWeatherFillRoundIds[state2.worldWeatherFillRoundIndex];
-      return weatherFillRounds.find((round) => round.id === id) ?? weatherFillRounds[0];
+      return weatherFillRounds.find((entry) => entry.id === state2.worldWeatherFillRoundIds[state2.worldWeatherFillRoundIndex]) ?? weatherFillRounds[0];
+    }
+    function resetWeatherFillAnswers() {
+      const round = currentWeatherFillRound();
+      state2.worldWeatherFillSlots = round.slots(shuffled3).map((slot) => ({ ...slot, choices: shuffled3(slot.choices) }));
+      state2.worldWeatherFillPicked = {};
+      state2.worldWeatherFillResults = {};
     }
     function renderWeatherPractice() {
-      const round = currentWeatherDressRound();
-      const choices = shuffled3(weatherDressChoices);
+      ensureWeatherDressPractice();
+      ensureWeatherFillPractice();
+      const round = weatherDressRounds.find((entry) => entry.id === state2.worldWeatherDressRoundIds[state2.worldWeatherDressRoundIndex]) ?? weatherDressRounds[0];
+      const choices = state2.worldWeatherDressChoiceIds.map((choiceId) => weatherDressChoices.find((choice) => choice.id === choiceId)).filter(Boolean);
       const selectedChoice = weatherDressChoices.find((choice) => choice.id === state2.worldWeatherDressPickedId);
       const fillRound = currentWeatherFillRound();
-      const weatherChoices = shuffled3(weatherFillWeatherChoices);
-      const temperatureChoices = shuffled3(["\u51B7", "\u70ED"]);
-      const fillComplete = state2.worldWeatherFillWeatherResult === "correct" && state2.worldWeatherFillTemperatureResult === "correct";
-      const chosenTemperature = weatherFillTemperatureData[state2.worldWeatherFillTemperaturePicked] ?? weatherFillTemperatureData[fillRound.temperature];
+      const fillSlots = state2.worldWeatherFillSlots;
+      const fillComplete = fillSlots.every((slot) => state2.worldWeatherFillResults[slot.id] === "correct");
+      const fillBlank = (slotId) => {
+        const picked = state2.worldWeatherFillPicked[slotId];
+        const result = state2.worldWeatherFillResults[slotId];
+        return `<span class="weather-fill-blank${result ? ` is-${result}` : ""}">${picked || "____"}</span>`;
+      };
+      const fillSlot = (slotId) => fillSlots.find((entry) => entry.id === slotId);
+      const fillPicked = (slotId) => state2.worldWeatherFillPicked[slotId] ?? fillSlot(slotId).answer;
+      const fillPinyin = typeof fillRound.pinyin === "function" ? fillRound.pinyin(fillSlot, fillPicked) : fillRound.pinyin;
+      const fillEnglish = typeof fillRound.english === "function" ? fillRound.english(fillSlot) : fillRound.english;
+      const fillSentence = fillRound.sentence(fillBlank, fillSlot);
       activityPanelTitle2.textContent = "Let's practice";
       activityPanelSummary2.textContent = "Listen to today\u2019s weather, then choose the one thing that helps the child get ready.";
       activityList2.className = "support-list";
@@ -10649,67 +10853,41 @@
         <div class="weather-dress-options">${choices.map((choice) => {
         const selected = selectedChoice?.id === choice.id;
         const stateClass = selected ? ` is-${state2.worldWeatherDressResult}` : "";
-        return `<button class="weather-dress-option${stateClass}" type="button" data-weather-dress-choice="${choice.id}" aria-label="${choice.hanzi}"><img src="${choice.imagePath}" alt="${choice.imageAlt}" />${selected ? `<span class="answer-result-mark" aria-hidden="true">${state2.worldWeatherDressResult === "correct" ? "\u2713" : "\xD7"}</span>` : ""}</button>`;
+        return `<button class="weather-dress-option${stateClass}" type="button" data-weather-dress-choice="${choice.id}"><img src="${choice.imagePath}" alt="${choice.imageAlt}" />${selected ? `<span class="answer-result-mark" aria-hidden="true">${state2.worldWeatherDressResult === "correct" ? "\u2713" : "\xD7"}</span>` : ""}</button>`;
       }).join("")}</div>
-        ${state2.worldWeatherDressPickedId ? `<div class="weather-dress-feedback ${state2.worldWeatherDressResult === "correct" ? "is-correct" : "is-wrong"}"><p>${state2.worldWeatherDressResult === "correct" ? round.answerSentence : "\u518D\u542C\u4E00\u542C\uFF0C\u60F3\u60F3\u5929\u6C14\u548C\u7528\u54C1\u3002"}</p>${state2.worldWeatherDressResult === "correct" && state2.showPinyin ? `<p class="numbers-game-pinyin">${round.answerPinyin}</p>` : ""}${state2.worldWeatherDressResult === "correct" && state2.showEnglish ? `<p>${round.answerEnglish}</p>` : ""}</div>` : ""}
       </section>
       <section class="practice-split-card weather-fill-practice">
-        <div class="numbers-game-top"><div><p class="body-match-kicker">Fill in the weather</p><h4>\u770B\u4E00\u770B\uFF0C\u586B\u4E00\u586B\u3002</h4>${state2.showEnglish ? '<p class="numbers-game-english">Choose a weather phrase and cold or hot.</p>' : ""}</div><button class="small-button is-play-button" type="button" data-weather-fill-play>Play</button></div>
-        <div><p class="weather-fill-sentence">\u4ECA\u5929<span class="weather-fill-blank${state2.worldWeatherFillWeatherResult ? ` is-${state2.worldWeatherFillWeatherResult}` : ""}">${state2.worldWeatherFillWeatherPicked || "____"}</span>\uFF0C\u5F88<span class="weather-fill-blank${state2.worldWeatherFillTemperatureResult ? ` is-${state2.worldWeatherFillTemperatureResult}` : ""}">${state2.worldWeatherFillTemperaturePicked || "____"}</span>\uFF0C${fillRound.clothing}<span class="weather-fill-icon"><img src="${fillRound.imagePath}" alt="${fillRound.imageAlt}" /></span>\u3002</p>${state2.showPinyin && fillComplete ? `<p class="numbers-game-pinyin">j\u012Bn ti\u0101n ${fillRound.weatherPinyin}, h\u011Bn ${chosenTemperature.pinyin}, ${fillRound.clothingPinyin}.</p>` : ""}${state2.showEnglish && fillComplete ? `<p class="numbers-game-english">Today ${fillRound.weatherEnglish}, very ${chosenTemperature.english}. ${fillRound.clothingEnglish}</p>` : ""}</div>
-        <div class="weather-fill-choice-groups"><div><p class="weather-fill-choice-label">\u5929\u6C14</p><div class="weather-fill-options weather-fill-weather-options">${weatherChoices.map((choice) => {
-        const selected = state2.worldWeatherFillWeatherPicked === choice;
-        const stateClass = selected ? ` is-${state2.worldWeatherFillWeatherResult}` : "";
-        return `<button class="weather-fill-option${stateClass}" type="button" data-weather-fill-weather="${choice}">${choice}${selected ? `<span class="answer-result-mark" aria-hidden="true">${state2.worldWeatherFillWeatherResult === "correct" ? "\u2713" : "\xD7"}</span>` : ""}</button>`;
-      }).join("")}</div></div><div><p class="weather-fill-choice-label">\u51B7 / \u70ED</p><div class="weather-fill-options">${temperatureChoices.map((choice) => {
-        const selected = state2.worldWeatherFillTemperaturePicked === choice;
-        const stateClass = selected ? ` is-${state2.worldWeatherFillTemperatureResult}` : "";
-        return `<button class="weather-fill-option${stateClass}" type="button" data-weather-fill-temperature="${choice}">${choice}${selected ? `<span class="answer-result-mark" aria-hidden="true">${state2.worldWeatherFillTemperatureResult === "correct" ? "\u2713" : "\xD7"}</span>` : ""}</button>`;
-      }).join("")}</div></div></div>
-        ${state2.worldWeatherFillWeatherResult === "wrong" || state2.worldWeatherFillTemperatureResult === "wrong" ? '<p class="weather-fill-feedback">\u518D\u770B\u4E00\u770B\u8863\u670D\uFF0C\u60F3\u60F3\u5929\u6C14\u548C\u51B7 / \u70ED\u3002</p>' : ""}
+        <div class="numbers-game-top"><div><p class="body-match-kicker">Finish the sentence</p><p class="numbers-game-note">Look at the picture, then choose the words that complete the sentence.</p></div><button class="small-button is-play-button" type="button" data-weather-fill-play>Play</button></div>
+        <figure class="weather-fill-visual"><img src="${fillRound.imagePath}" alt="${fillRound.imageAlt}" /></figure>
+        <p class="weather-fill-sentence">${fillSentence}</p>
+        ${fillComplete && state2.showPinyin ? `<p class="numbers-game-pinyin">${fillPinyin}</p>` : ""}${fillComplete && state2.showEnglish ? `<p class="numbers-game-english">${fillEnglish}</p>` : ""}
+        <div class="weather-fill-choice-groups is-many-slots">${fillSlots.map((slot) => `<div><p class="weather-fill-choice-label">${slot.label}</p><div class="weather-fill-options">${slot.choices.map((choice) => `<button class="weather-fill-option${state2.worldWeatherFillPicked[slot.id] === choice ? ` is-${state2.worldWeatherFillResults[slot.id]}` : ""}" type="button" data-weather-fill-choice="${slot.id}:${choice}">${choice}</button>`).join("")}</div></div>`).join("")}</div>
       </section>
     `;
       activityList2.querySelector("[data-weather-dress-play]")?.addEventListener("click", () => {
-        if (state2.worldWeatherDressResult === "correct") {
-          advanceShuffledOrder(state2, "worldWeatherDressRoundIds", "worldWeatherDressRoundIndex", shuffled3);
-          state2.worldWeatherDressPickedId = "";
-          state2.worldWeatherDressResult = "";
-          renderActivityPanel2(currentTopic2());
-          const nextRound = currentWeatherDressRound();
-          if (state2.tapAudioEnabled) speak2(nextRound.prompt, 0.76);
-          return;
-        }
-        if (state2.tapAudioEnabled) speak2(round.prompt, 0.76);
+        advanceShuffledOrder(state2, "worldWeatherDressRoundIds", "worldWeatherDressRoundIndex", shuffled3);
+        state2.worldWeatherDressChoiceIds = shuffled3(weatherDressChoices.map((choice) => choice.id));
+        state2.worldWeatherDressPickedId = "";
+        state2.worldWeatherDressResult = "";
+        renderActivityPanel2(currentTopic2());
       });
       activityList2.querySelectorAll("[data-weather-dress-choice]").forEach((button) => button.addEventListener("click", () => {
         state2.worldWeatherDressPickedId = button.dataset.weatherDressChoice;
         state2.worldWeatherDressResult = state2.worldWeatherDressPickedId === round.answerId ? "correct" : "wrong";
-        if (state2.worldWeatherDressResult === "correct") {
-          if (state2.tapAudioEnabled) speak2(round.answerAudio, 0.76);
-        }
+        if (state2.worldWeatherDressResult === "correct" && state2.tapAudioEnabled) speak2(round.answerAudio, 0.76);
         renderActivityPanel2(currentTopic2());
       }));
       activityList2.querySelector("[data-weather-fill-play]")?.addEventListener("click", () => {
-        if (fillComplete) {
-          advanceShuffledOrder(state2, "worldWeatherFillRoundIds", "worldWeatherFillRoundIndex", shuffled3);
-          state2.worldWeatherFillWeatherPicked = "";
-          state2.worldWeatherFillTemperaturePicked = "";
-          state2.worldWeatherFillWeatherResult = "";
-          state2.worldWeatherFillTemperatureResult = "";
-          renderActivityPanel2(currentTopic2());
-          const nextRound = currentWeatherFillRound();
-          return;
-        }
-      });
-      activityList2.querySelectorAll("[data-weather-fill-weather]").forEach((button) => button.addEventListener("click", () => {
-        state2.worldWeatherFillWeatherPicked = button.dataset.weatherFillWeather;
-        state2.worldWeatherFillWeatherResult = state2.worldWeatherFillWeatherPicked === fillRound.weather ? "correct" : "wrong";
-        if (state2.worldWeatherFillWeatherResult === "correct" && state2.tapAudioEnabled) speak2(fillRound.weather, 0.76);
+        advanceShuffledOrder(state2, "worldWeatherFillRoundIds", "worldWeatherFillRoundIndex", shuffled3);
+        resetWeatherFillAnswers();
         renderActivityPanel2(currentTopic2());
-      }));
-      activityList2.querySelectorAll("[data-weather-fill-temperature]").forEach((button) => button.addEventListener("click", () => {
-        state2.worldWeatherFillTemperaturePicked = button.dataset.weatherFillTemperature;
-        state2.worldWeatherFillTemperatureResult = (fillRound.temperatures ?? [fillRound.temperature]).includes(state2.worldWeatherFillTemperaturePicked) ? "correct" : "wrong";
-        if (state2.worldWeatherFillTemperatureResult === "correct" && state2.tapAudioEnabled) speak2(fillRound.temperature, 0.76);
+      });
+      activityList2.querySelectorAll("[data-weather-fill-choice]").forEach((button) => button.addEventListener("click", () => {
+        const [slotId, choice] = button.dataset.weatherFillChoice.split(":");
+        const slot = fillSlots.find((entry) => entry.id === slotId);
+        state2.worldWeatherFillPicked[slotId] = choice;
+        state2.worldWeatherFillResults[slotId] = (slot.answers ?? [slot.answer]).includes(choice) ? "correct" : "wrong";
+        if (fillSlots.every((entry) => state2.worldWeatherFillResults[entry.id] === "correct") && state2.tapAudioEnabled) speak2(fillRound.sentence(fillPicked, fillSlot), 0.76);
         renderActivityPanel2(currentTopic2());
       }));
     }
@@ -11032,104 +11210,104 @@
       id: "1a",
       label: "Book 1A",
       lessons: [
-        { lesson: 1, title: "Numbers (1)", topicId: "numbers" },
-        { lesson: 2, title: "Numbers (2)", topicId: "numbers" },
-        { lesson: 3, title: "Numbers (3)", topicId: "numbers" },
-        { lesson: 4, title: "Hello!", topicId: "greetings" },
-        { lesson: 5, title: "Thank you!", topicId: "polite-words" },
-        { lesson: 6, title: "What's your name?", topicId: "introductions" },
-        { lesson: 7, title: "I'm 5 years old", topicId: "age" }
+        { lesson: 1, title: "Numbers (1)", topicId: "numbers", displayTitle: { zh: "\u6570\u5B57 1\u20135", en: "Numbers 1\u20135" } },
+        { lesson: 2, title: "Numbers (2)", topicId: "numbers", displayTitle: { zh: "\u6570\u5B57 6\u201310", en: "Numbers 6\u201310" } },
+        { lesson: 3, title: "Numbers (3)", topicId: "numbers", displayTitle: { zh: "\u6570\u5B57 11\u201320", en: "Numbers 11\u201320" } },
+        { lesson: 4, title: "Hello!", topicId: "greetings", displayTitle: { zh: "\u4F60\u597D", en: "Hello" } },
+        { lesson: 5, title: "Thank you!", topicId: "polite-words", displayTitle: { zh: "\u8C22\u8C22", en: "Thank You" } },
+        { lesson: 6, title: "What's your name?", topicId: "introductions", displayTitle: { zh: "\u4F60\u53EB\u4EC0\u4E48\u540D\u5B57\uFF1F", en: "What's Your Name?" } },
+        { lesson: 7, title: "I'm 5 years old", topicId: "age", displayTitle: { zh: "\u6211\u4E94\u5C81", en: "I'm Five Years Old" } }
       ]
     },
     {
       id: "1b",
       label: "Book 1B",
       lessons: [
-        { lesson: 1, title: "Mum and dad", topicId: "family" },
-        { lesson: 2, title: "Brothers and sisters", topicId: "family" },
-        { lesson: 3, title: "Parts of the body (1)", topicId: "body" },
-        { lesson: 4, title: "Parts of the body (2)", topicId: "body" },
-        { lesson: 5, title: "Pets", topicId: "pets" },
-        { lesson: 6, title: "Colours", topicId: "colours" },
-        { lesson: 7, title: "Fruit", topicId: "food" }
+        { lesson: 1, title: "Mum and dad", topicId: "family", displayTitle: { zh: "\u7238\u7238\u5988\u5988", en: "Mom and Dad" } },
+        { lesson: 2, title: "Brothers and sisters", topicId: "family", displayTitle: { zh: "\u5144\u5F1F\u59D0\u59B9", en: "Brothers and Sisters" } },
+        { lesson: 3, title: "Parts of the body (1)", topicId: "body", displayTitle: { zh: "\u8EAB\u4F53\u90E8\u4F4D", en: "Body Parts" } },
+        { lesson: 4, title: "Parts of the body (2)", topicId: "body", displayTitle: { zh: "\u66F4\u591A\u8EAB\u4F53\u90E8\u4F4D", en: "More Body Parts" } },
+        { lesson: 5, title: "Pets", topicId: "pets", displayTitle: { zh: "\u5BA0\u7269", en: "Pets" } },
+        { lesson: 6, title: "Colours", topicId: "colours", displayTitle: { zh: "\u989C\u8272", en: "Colours" } },
+        { lesson: 7, title: "Fruit", topicId: "food", displayTitle: { zh: "\u6C34\u679C", en: "Fruit" } }
       ]
     },
     {
       id: "2a",
       label: "Book 2A",
       lessons: [
-        { lesson: 1, title: "Numbers", topicId: "numbers" },
-        { lesson: 2, title: "Two younger brothers", topicId: "family" },
-        { lesson: 3, title: "Good friends", topicId: "introductions" },
-        { lesson: 4, title: "My toys", topicId: "toys" },
-        { lesson: 5, title: "I love reading", topicId: "hobbies" },
-        { lesson: 6, title: "I can dress myself", topicId: "clothes" },
-        { lesson: 7, title: "Colours", topicId: "colours" }
+        { lesson: 1, title: "Numbers", topicId: "numbers", displayTitle: { zh: "\u6570\u5B57 21\u201340", en: "Numbers 21\u201340" } },
+        { lesson: 2, title: "Two younger brothers", topicId: "family", displayTitle: { zh: "\u4E24\u4E2A\u5F1F\u5F1F", en: "Two Younger Brothers" } },
+        { lesson: 3, title: "Good friends", topicId: "introductions", displayTitle: { zh: "\u597D\u670B\u53CB", en: "Good Friends" } },
+        { lesson: 4, title: "My toys", topicId: "toys", displayTitle: { zh: "\u6211\u7684\u73A9\u5177", en: "My Toys" } },
+        { lesson: 5, title: "I love reading", topicId: "hobbies", displayTitle: { zh: "\u6211\u7231\u770B\u4E66", en: "I Love Reading" } },
+        { lesson: 6, title: "I can dress myself", topicId: "clothes", displayTitle: { zh: "\u6211\u4F1A\u7A7F\u8863\u670D", en: "I Can Dress Myself" } },
+        { lesson: 7, title: "Colours", topicId: "colours", displayTitle: { zh: "\u989C\u8272", en: "Colours" } }
       ]
     },
     {
       id: "2b",
       label: "Book 2B",
       lessons: [
-        { lesson: 1, title: "Today is Monday", topicId: "weekdays" },
-        { lesson: 2, title: "What time is it?", topicId: "time-date" },
-        { lesson: 3, title: "Stationery", topicId: "stationery" },
-        { lesson: 4, title: "My classroom", topicId: "classroom" },
-        { lesson: 5, title: "Animals", topicId: "animals" },
-        { lesson: 6, title: "Big or small", topicId: "comparisons" },
-        { lesson: 7, title: "Snacks", topicId: "food" }
+        { lesson: 1, title: "Today is Monday", topicId: "weekdays", displayTitle: { zh: "\u4ECA\u5929\u661F\u671F\u4E00", en: "Today Is Monday" } },
+        { lesson: 2, title: "What time is it?", topicId: "time-date", displayTitle: { zh: "\u51E0\u70B9\u4E86\uFF1F", en: "What Time Is It?" } },
+        { lesson: 3, title: "Stationery", topicId: "stationery", displayTitle: { zh: "\u6587\u5177", en: "Stationery" } },
+        { lesson: 4, title: "My classroom", topicId: "classroom", displayTitle: { zh: "\u6211\u7684\u6559\u5BA4", en: "My Classroom" } },
+        { lesson: 5, title: "Animals", topicId: "animals", displayTitle: { zh: "\u52A8\u7269", en: "Animals" } },
+        { lesson: 6, title: "Big or small", topicId: "comparisons", displayTitle: { zh: "\u5927\u8FD8\u662F\u5C0F\uFF1F", en: "Big or Small?" } },
+        { lesson: 7, title: "Snacks", topicId: "food", displayTitle: { zh: "\u96F6\u98DF", en: "Snacks" } }
       ]
     },
     {
       id: "3a",
       label: "Book 3A",
       lessons: [
-        { lesson: 1, title: "Numbers", topicId: "numbers" },
-        { lesson: 2, title: "Date", topicId: "dates" },
-        { lesson: 3, title: "Happy birthday!", topicId: "dates" },
-        { lesson: 4, title: "Family", topicId: "family" },
-        { lesson: 5, title: "Nationality", topicId: "identity" },
-        { lesson: 6, title: "Request", topicId: "requests-permission" },
-        { lesson: 7, title: "Clothes", topicId: "clothes" }
+        { lesson: 1, title: "Numbers", topicId: "numbers", displayTitle: { zh: "\u6570\u5B57 41\u2013100", en: "Numbers 41\u2013100" } },
+        { lesson: 2, title: "Date", topicId: "dates", displayTitle: { zh: "\u65E5\u671F", en: "Date" } },
+        { lesson: 3, title: "Happy birthday!", topicId: "dates", displayTitle: { zh: "\u751F\u65E5\u5FEB\u4E50", en: "Happy Birthday!" } },
+        { lesson: 4, title: "Family", topicId: "family", displayTitle: { zh: "\u6211\u7684\u5BB6\u4EBA", en: "My Family" } },
+        { lesson: 5, title: "Nationality", topicId: "identity", displayTitle: { zh: "\u4F60\u662F\u54EA\u56FD\u4EBA\uFF1F", en: "What Nationality Are You?" } },
+        { lesson: 6, title: "Request", topicId: "requests-permission", displayTitle: { zh: "\u6211\u53EF\u4EE5\u2026\u2026\u5417\uFF1F", en: "May I\u2026?" } },
+        { lesson: 7, title: "Clothes", topicId: "clothes", displayTitle: { zh: "\u8863\u670D", en: "Clothes" } }
       ]
     },
     {
       id: "3b",
       label: "Book 3B",
       lessons: [
-        { lesson: 1, title: "My schoolbag", topicId: "school-supplies" },
-        { lesson: 2, title: "Our classroom", topicId: "classroom" },
-        { lesson: 3, title: "Positions", topicId: "positions" },
-        { lesson: 4, title: "Hobbies", topicId: "hobbies-3b" },
-        { lesson: 5, title: "Food and drink", topicId: "food-preferences" },
-        { lesson: 6, title: "Vegetables", topicId: "food" },
-        { lesson: 7, title: "Nature", topicId: "nature" }
+        { lesson: 1, title: "My schoolbag", topicId: "school-supplies", displayTitle: { zh: "\u6211\u7684\u4E66\u5305", en: "My Schoolbag" } },
+        { lesson: 2, title: "Our classroom", topicId: "classroom", displayTitle: { zh: "\u6211\u4EEC\u7684\u6559\u5BA4", en: "Our Classroom" } },
+        { lesson: 3, title: "Positions", topicId: "positions", displayTitle: { zh: "\u4E0A\u4E0B\u5DE6\u53F3", en: "Positions" } },
+        { lesson: 4, title: "Hobbies", topicId: "hobbies-3b", displayTitle: { zh: "\u7231\u597D", en: "Hobbies" } },
+        { lesson: 5, title: "Food and drink", topicId: "food-preferences", displayTitle: { zh: "\u98DF\u7269\u548C\u996E\u6599", en: "Food and Drink" } },
+        { lesson: 6, title: "Vegetables", topicId: "food", displayTitle: { zh: "\u852C\u83DC", en: "Vegetables" } },
+        { lesson: 7, title: "Nature", topicId: "nature", displayTitle: { zh: "\u5927\u81EA\u7136", en: "Nature" } }
       ]
     },
     {
       id: "4a",
       label: "Book 4A",
       lessons: [
-        { lesson: 1, title: "Telephone numbers", topicId: "telephone-numbers" },
-        { lesson: 2, title: "Languages", topicId: "languages" },
-        { lesson: 3, title: "Tell the time", topicId: "time-date" },
-        { lesson: 4, title: "Daily routine", topicId: "time-date" },
-        { lesson: 5, title: "My lunch", topicId: "meals-feelings" },
-        { lesson: 6, title: "Means of transport", topicId: "transport" },
-        { lesson: 7, title: "I'm hungry", topicId: "meals-feelings" }
+        { lesson: 1, title: "Telephone numbers", topicId: "telephone-numbers", displayTitle: { zh: "\u7535\u8BDD\u53F7\u7801", en: "Telephone Numbers" } },
+        { lesson: 2, title: "Languages", topicId: "languages", displayTitle: { zh: "\u8BED\u8A00", en: "Languages" } },
+        { lesson: 3, title: "Tell the time", topicId: "time-date", displayTitle: { zh: "\u8BF4\u65F6\u95F4", en: "Tell the Time" } },
+        { lesson: 4, title: "Daily routine", topicId: "time-date", displayTitle: { zh: "\u65E5\u5E38\u4F5C\u606F", en: "Daily Routine" } },
+        { lesson: 5, title: "My lunch", topicId: "meals-feelings", displayTitle: { zh: "\u6211\u7684\u5348\u996D", en: "My Lunch" } },
+        { lesson: 6, title: "Means of transport", topicId: "transport", displayTitle: { zh: "\u4EA4\u901A\u65B9\u5F0F", en: "Means of Transport" } },
+        { lesson: 7, title: "I'm hungry", topicId: "meals-feelings", displayTitle: { zh: "\u6211\u997F\u4E86", en: "I'm Hungry" } }
       ]
     },
     {
       id: "4b",
       label: "Book 4B",
       lessons: [
-        { lesson: 1, title: "It's raining", topicId: "weather" },
-        { lesson: 2, title: "Clothes", topicId: "clothes" },
-        { lesson: 3, title: "My room", topicId: "daily-life" },
-        { lesson: 4, title: "Hobbies", topicId: "hobbies-at-home" },
-        { lesson: 5, title: "Our school", topicId: "school" },
-        { lesson: 6, title: "School subjects", topicId: "school-subjects" },
-        { lesson: 7, title: "Leisure time", topicId: "hobbies-leisure" }
+        { lesson: 1, title: "It's raining", topicId: "weather", displayTitle: { zh: "\u4E0B\u96E8\u4E86", en: "It's Raining" } },
+        { lesson: 2, title: "Clothes", topicId: "clothes", displayTitle: { zh: "\u8863\u670D", en: "Clothes" } },
+        { lesson: 3, title: "My room", topicId: "daily-life", displayTitle: { zh: "\u6211\u7684\u623F\u95F4", en: "My Room" } },
+        { lesson: 4, title: "Hobbies", topicId: "hobbies-at-home", displayTitle: { zh: "\u7231\u597D", en: "Hobbies" } },
+        { lesson: 5, title: "Our school", topicId: "school", displayTitle: { zh: "\u6211\u4EEC\u7684\u5B66\u6821", en: "Our School" } },
+        { lesson: 6, title: "School subjects", topicId: "school-subjects", displayTitle: { zh: "\u5B66\u6821\u79D1\u76EE", en: "School Subjects" } },
+        { lesson: 7, title: "Leisure time", topicId: "hobbies-leisure", displayTitle: { zh: "\u4F11\u95F2\u65F6\u5149", en: "Leisure Time" } }
       ]
     }
   ];
@@ -11508,11 +11686,11 @@
         audio: "\u51E0\u6708\u51E0\u53F7"
       },
       focusItems: [
-        { id: "date-question", hanzi: "\u51E0\u6708\u51E0\u53F7\uFF1F", pinyin: "j\u01D0 yu\xE8 j\u01D0 h\xE0o?", english: "What month and day?", audio: "\u51E0\u6708\u51E0\u53F7" },
-        { id: "new-year", hanzi: "\u4E00\u6708\u4E00\u53F7", pinyin: "y\u012B yu\xE8 y\u012B h\xE0o", english: "January first", audio: "\u4E00\u6708\u4E00\u53F7" },
-        { id: "field-trip", hanzi: "\u4E94\u6708\u4E8C\u5341\u53F7", pinyin: "w\u01D4 yu\xE8 \xE8r sh\xED h\xE0o", english: "May twentieth", audio: "\u4E94\u6708\u4E8C\u5341\u53F7" },
-        { id: "christmas", hanzi: "\u5341\u4E8C\u6708\u4E8C\u5341\u4E94\u53F7", pinyin: "sh\xED \xE8r yu\xE8 \xE8r sh\xED w\u01D4 h\xE0o", english: "December twenty-fifth", audio: "\u5341\u4E8C\u6708\u4E8C\u5341\u4E94\u53F7" },
-        { id: "birthday", hanzi: "\u751F\u65E5\u5FEB\u4E50\uFF01", pinyin: "sh\u0113ng r\xEC ku\xE0i l\xE8!", english: "Happy birthday!", audio: "\u751F\u65E5\u5FEB\u4E50" }
+        { id: "date-question", hanzi: "\u51E0\u6708\u51E0\u53F7\uFF1F", pinyin: "j\u01D0 yu\xE8 j\u01D0 h\xE0o?", english: "What month and day?", audio: "\u51E0\u6708\u51E0\u53F7", lessonSources: ["3a:2"] },
+        { id: "new-year", hanzi: "\u4E00\u6708\u4E00\u53F7", pinyin: "y\u012B yu\xE8 y\u012B h\xE0o", english: "January first", audio: "\u4E00\u6708\u4E00\u53F7", lessonSources: ["3a:2"] },
+        { id: "field-trip", hanzi: "\u4E94\u6708\u4E8C\u5341\u53F7", pinyin: "w\u01D4 yu\xE8 \xE8r sh\xED h\xE0o", english: "May twentieth", audio: "\u4E94\u6708\u4E8C\u5341\u53F7", lessonSources: ["3a:2"] },
+        { id: "christmas", hanzi: "\u5341\u4E8C\u6708\u4E8C\u5341\u4E94\u53F7", pinyin: "sh\xED \xE8r yu\xE8 \xE8r sh\xED w\u01D4 h\xE0o", english: "December twenty-fifth", audio: "\u5341\u4E8C\u6708\u4E8C\u5341\u4E94\u53F7", lessonSources: ["3a:2"] },
+        { id: "birthday", hanzi: "\u751F\u65E5\u5FEB\u4E50\uFF01", pinyin: "sh\u0113ng r\xEC ku\xE0i l\xE8!", english: "Happy birthday!", audio: "\u751F\u65E5\u5FEB\u4E50", lessonSources: ["3a:3"] }
       ],
       interactiveScene: "dates",
       parentGuide: "Start with family birthdays or a coming event. Point to a calendar while saying the month and day together.",
@@ -12425,6 +12603,7 @@
     clothesSentenceItems,
     clothesBookWords,
     clothesPractice,
+    clothesUsefulNotes,
     roomScenes,
     roomSentenceTokens,
     transportSentenceTokens,
@@ -12495,6 +12674,7 @@
     timeDateWeekItems,
     timeDateClockItems,
     datePracticeItems,
+    birthdayConversationLines,
     timeDateMonthItems,
     timeDateRoutineItems,
     timeRoutineSentenceBuilds,
@@ -12676,6 +12856,9 @@
     state.lessonScope = initialLessonScope;
     if (initialLessonScope) {
       state.selectedBookId = initialLessonScope.bookId;
+      state.selectedBookCategoryId = bookHomeCategories.find(
+        (category) => category.bookIds.includes(initialLessonScope.bookId)
+      )?.id ?? state.selectedBookCategoryId;
       state.selectedLessonNumber = initialLessonScope.lessonNumber;
     } else {
       syncBookSelectionFromTopic();

@@ -15,8 +15,9 @@ function currentNumberStage() {
 
 function focusItemsForTopic(topic = currentTopic()) {
   const source = state.lessonScope ? `${state.lessonScope.bookId}:${state.lessonScope.lessonNumber}` : "";
+  const strictLessonTopicIds = new Set(["body", "introductions", "age", "dates", "classroom", "clothes", "food"]);
   const forSelectedLesson = (items) => source
-    ? items.filter((item) => !item.lessonSources || item.lessonSources.includes(source))
+    ? items.filter((item) => strictLessonTopicIds.has(topic.id) ? item.lessonSources?.includes(source) : !item.lessonSources || item.lessonSources.includes(source))
     : items;
 
   if (topic.id === "numbers") {
@@ -32,7 +33,12 @@ function focusItemsForTopic(topic = currentTopic()) {
     return forSelectedLesson(worldItems);
   }
 
-  return forSelectedLesson(topic.focusItems ?? [{ id: "focus", ...topic.focus }]);
+  const defaultItems = topic.focusItems ?? [{ id: "focus", ...topic.focus }];
+  const scopedItems = forSelectedLesson(defaultItems);
+  // Explorer-owned topics such as Classroom hide this legacy focus area. Keep
+  // its fallback item available so selecting a lesson never stops rendering
+  // before the scoped explorer content is reached.
+  return scopedItems.length ? scopedItems : defaultItems;
 }
 
 function currentFocusItem() {
@@ -154,6 +160,7 @@ function openTopicPage(topicId, options = {}) {
   state.lessonScope = null;
   state.expandedCategoryId = categoryIdForTopic(topic.id);
   state.topicPageOpen = true;
+  syncBookSelectionFromTopic();
   renderTopics();
   renderBooks();
   renderTopicDetail();
@@ -595,14 +602,12 @@ function renderBooks() {
           <div class="book-lesson-grid">
             ${entry.lessons
               .map((lesson) => {
-                const lessonTopic = topicById(lesson.topicId);
-                const topicMeta = topicCardMeta[lesson.topicId];
+                const cardTitle = [lesson.displayTitle?.zh, lesson.displayTitle?.en].filter(Boolean).join(" · ") || lesson.title;
                 const isSelectedLesson = isSelectedBook && lesson.lesson === activeLesson.lesson;
                 return `
                   <button class="book-lesson-card${isSelectedLesson ? " is-selected" : ""}" type="button" data-book-lesson="${entry.id}:${lesson.lesson}">
-                    <span>Lesson ${lesson.lesson}</span>
-                    <strong>${lesson.title}</strong>
-                    <small>主题练习：${topicMeta?.zhTitle ?? lessonTopic?.title ?? "Topic practice"} · ${topicMeta?.enTitle ?? ""}</small>
+                    <span class="book-lesson-meta">${entry.label.toUpperCase()} LESSON ${lesson.lesson}</span>
+                    <strong>${cardTitle}</strong>
                   </button>
                 `;
               })
@@ -688,15 +693,20 @@ function updateLearningCultureNav() {
       return;
     }
 
+    // Keep the source book selected while its lesson detail is open. That
+    // detail sits below the book sections, so using its page position would
+    // otherwise make the final book appear selected.
     let activeBookId = state.selectedBookId;
-    const scrollY = window.scrollY + 120;
-    bookSections.forEach((section) => {
-      if (section.offsetTop <= scrollY) {
-        activeBookId = section.dataset.bookLessonSection;
+    if (!state.topicPageOpen) {
+      const scrollY = window.scrollY + 120;
+      bookSections.forEach((section) => {
+        if (section.offsetTop <= scrollY) {
+          activeBookId = section.dataset.bookLessonSection;
+        }
+      });
+      if (atPageBottom()) {
+        activeBookId = bookSections[bookSections.length - 1]?.dataset.bookLessonSection ?? activeBookId;
       }
-    });
-    if (atPageBottom()) {
-      activeBookId = bookSections[bookSections.length - 1]?.dataset.bookLessonSection ?? activeBookId;
     }
 
     bookNavItems.forEach((item) => {

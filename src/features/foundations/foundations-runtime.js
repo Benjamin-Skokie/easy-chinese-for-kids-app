@@ -469,10 +469,12 @@ function handleNumberChallengeGuess(value) {
 
 
 function bodyMatchItems() {
+  const source = state.lessonScope ? `${state.lessonScope.bookId}:${state.lessonScope.lessonNumber}` : "";
   const ids = [...bodyCoreItemIds, ...bodyBonusItemIds];
   const bodyTopic = topicById("body");
   return ids
     .map((id) => bodyTopic?.focusItems.find((item) => item.id === id))
+    .filter((item) => !source || item?.lessonSources?.includes(source))
     .filter(Boolean);
 }
 
@@ -559,10 +561,7 @@ function handleBodyMatchAttempt(englishId, chineseId = state.bodySelectedChinese
 }
 
 function bodySpotlightItems() {
-  const bodyTopic = topicById("body");
-  return bodyCoreItemIds
-    .map((id) => bodyTopic?.focusItems.find((item) => item.id === id))
-    .filter(Boolean);
+  return bodyMatchItems();
 }
 
 function nextBodySpotlightRound() {
@@ -842,7 +841,7 @@ function renderBodyExplorer() {
       <div class="body-practice-visual">
         <div class="body-diagram">
           <div class="body-label-column body-label-column-left">
-            ${bodyDiagramLayout.left.map((id) => renderBodyLabelButton(items[id], "left")).join("")}
+            ${bodyDiagramLayout.left.filter((id) => items[id]).map((id) => renderBodyLabelButton(items[id], "left")).join("")}
           </div>
           <div class="body-scene">
             <div class="body-scene-card">
@@ -855,7 +854,7 @@ function renderBodyExplorer() {
             </div>
           </div>
           <div class="body-label-column body-label-column-right">
-            ${bodyDiagramLayout.right.map((id) => renderBodyLabelButton(items[id], "right")).join("")}
+            ${bodyDiagramLayout.right.filter((id) => items[id]).map((id) => renderBodyLabelButton(items[id], "right")).join("")}
           </div>
         </div>
       </div>

@@ -1,6 +1,8 @@
 export function createAgeController({ state, ageGameItemIds, ageBuildPhrases, agePractice, topicById, shuffleArray, speak, speakSceneLines, currentTopic, currentFocusItem, currentBook, currentLesson, renderActivityPanel, renderFocusDisplay, renderFocusExplorer, renderFocusStatus, elements }) {
   const { focusExplorer, focusStatus } = elements;
-  function ageGameItems() { return ageGameItemIds.map((id) => topicById("age")?.focusItems.find((item) => item.id === id)).filter(Boolean); }
+  function lessonKey() { return state.lessonScope ? `${state.lessonScope.bookId}:${state.lessonScope.lessonNumber}` : ""; }
+  function scoped(items) { const source = lessonKey(); return source ? items.filter((item) => item.lessonSources?.includes(source)) : items; }
+  function ageGameItems() { return scoped(ageGameItemIds.map((id) => topicById("age")?.focusItems.find((item) => item.id === id)).filter(Boolean)); }
   function resetAgeChallenge(options = {}) {
     const items = ageGameItems();
     if (!items.length) return;
@@ -46,10 +48,11 @@ export function createAgeController({ state, ageGameItemIds, ageBuildPhrases, ag
     state.lastAgeFeedback = `Try again. You picked ${picked.hanzi}, but the audio is ${answer.hanzi}.`;
     renderActivityPanel(currentTopic());
   }
-  function ageBuildTarget() { return ageBuildPhrases.find((entry) => entry.id === state.ageBuildTargetId) ?? ageBuildPhrases[0]; }
+  function ageBuildTarget() { const phrases = scoped(ageBuildPhrases); return phrases.find((entry) => entry.id === state.ageBuildTargetId) ?? phrases[0]; }
   function resetAgeBuilder(options = {}) {
-    const targetId = nextRandomCycleId(state, "age-build", ageBuildPhrases.map((entry) => entry.id));
-    const target = ageBuildPhrases.find((entry) => entry.id === targetId);
+    const phrases = scoped(ageBuildPhrases);
+    const targetId = nextRandomCycleId(state, "age-build", phrases.map((entry) => entry.id));
+    const target = phrases.find((entry) => entry.id === targetId);
     if (!target) return;
     state.ageBuildTargetId = target.id;
     state.ageBuildAvailableTokens = shuffleArray(target.tokens);
@@ -82,9 +85,10 @@ export function createAgeController({ state, ageGameItemIds, ageBuildPhrases, ag
     renderActivityPanel(currentTopic());
   }
   function renderAgeExplorer() {
-    focusExplorer.innerHTML = `<div class="numbers-board"><div class="numbers-stage-card"><p class="body-match-kicker">${currentBook().label} Lesson ${currentLesson().lesson}</p><h4>Book theme: age and school year</h4><p>This lesson starts with <strong>你几岁？</strong> / <strong>我...岁。</strong> and then adds <strong>你上几年级？</strong> / <strong>我上一年级。</strong></p></div><div class="greetings-practice-grid">${agePractice.map((exchange) => `<section class="greetings-exchange"><div class="greetings-exchange-top"><div><p class="body-match-kicker">${exchange.title}</p></div><button class="small-button is-play-button" type="button" data-age-play-all="${exchange.id}">Play</button></div><div class="greetings-scene-layout"><div class="greetings-scene-visual"><img class="greetings-scene-image" src="${exchange.imagePath}" alt="${exchange.imageAlt}" /></div><div class="greetings-line-stack">${exchange.lines.map((line) => `<article class="greetings-line-card"><div class="telephone-bubble-copy"><p class="telephone-line-hanzi">${line.hanzi}</p>${state.showPinyin ? `<p class="telephone-line-pinyin">${line.pinyin}</p>` : ""}${state.showEnglish ? `<p class="telephone-line-english">${line.english}</p>` : ""}</div></article>`).join("")}</div></div></section>`).join("")}</div></div>`;
+    const scenes = scoped(agePractice);
+    focusExplorer.innerHTML = `<div class="numbers-board"><div class="greetings-practice-grid">${scenes.map((exchange) => `<section class="greetings-exchange"><div class="greetings-exchange-top"><div><p class="body-match-kicker">${exchange.title}</p></div><button class="small-button is-play-button" type="button" data-age-play-all="${exchange.id}">Play</button></div><div class="greetings-scene-layout"><div class="greetings-scene-visual"><img class="greetings-scene-image" src="${exchange.imagePath}" alt="${exchange.imageAlt}" /></div><div class="greetings-line-stack">${exchange.lines.map((line) => `<article class="greetings-line-card"><div class="telephone-bubble-copy"><p class="telephone-line-hanzi">${line.hanzi}</p>${state.showPinyin ? `<p class="telephone-line-pinyin">${line.pinyin}</p>` : ""}${state.showEnglish ? `<p class="telephone-line-english">${line.english}</p>` : ""}</div></article>`).join("")}</div></div></section>`).join("")}</div></div>`;
     focusExplorer.querySelectorAll("[data-age-play-all]").forEach((button) => button.addEventListener("click", () => {
-      const exchange = agePractice.find((entry) => entry.id === button.dataset.agePlayAll);
+      const exchange = scenes.find((entry) => entry.id === button.dataset.agePlayAll);
       if (!exchange || !state.tapAudioEnabled) return;
       speakSceneLines(exchange.lines);
       focusStatus.textContent = `Listen to the whole scene: ${exchange.lines.map((line) => line.hanzi).join(" ")}`;

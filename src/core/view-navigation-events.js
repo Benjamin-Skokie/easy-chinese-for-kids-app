@@ -28,7 +28,13 @@ export function bindViewNavigationEvents({ state, switchView, updateTopicPageVis
       switchView(link.dataset.globalView);
       updateTopicPageVisibility();
       window.history.pushState(null, "", `${window.location.pathname}${viewHash(link.dataset.globalView)}`);
-      document.querySelector(".switcher-panel")?.scrollIntoView({
+      const returnTargetId = link.dataset.returnTarget === "topic"
+        ? state.expandedCategoryId
+        : link.dataset.returnTarget === "book"
+          ? `book-lessons-${state.selectedBookId}`
+          : "";
+      const returnTarget = returnTargetId ? document.getElementById(returnTargetId) : null;
+      (returnTarget ?? document.querySelector(".switcher-panel"))?.scrollIntoView({
         behavior: "smooth",
         block: "start"
       });

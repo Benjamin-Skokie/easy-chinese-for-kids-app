@@ -11,7 +11,7 @@ import { bindViewNavigationEvents } from "../core/view-navigation-events.js";
 import { lessonScopeFromLocation, topicIdFromLocation, topicPageUrl, viewFromLocation } from "../core/router.js";
 import { timeDateWeekItems } from "../features/time-daily-life/weekdays.js";
 import { timeAdvancedBookWords, timeDateClockItems, timeDateExpressionItems, timeDateRoutineItems, timeRoutineBookWords, timeRoutineSentenceBuilds } from "../features/time-daily-life/time.js";
-import { datePracticeItems, timeDateDateItems, timeDateMonthItems } from "../features/time-daily-life/dates.js";
+import { birthdayConversationLines, datePracticeItems, timeDateDateItems, timeDateMonthItems } from "../features/time-daily-life/dates.js";
 import { comparisonPracticeItems, comparisonsTopic, comparisonVisualItems, comparisonWordItems } from "../features/time-daily-life/comparisons.js";
 import { positionBookWords, positionPracticeItems, positionScenes, positionsTopic, positionVisualItems } from "../features/time-daily-life/positions.js";
 import { transportBookWords, transportSentenceTokens, transportTopic, transportVisualItems } from "../features/time-daily-life/transport.js";
@@ -39,7 +39,7 @@ import { createGreetingsController } from "../features/foundations/greetings-con
 import { createNationalityController } from "../features/foundations/nationality-controller.js";
 import { identityConversation, identityCountries, identityExploreCountries, identityLanguageQuestion, identityQuestion, nationalityConversation } from "../features/foundations/identity.js";
 import { familyGameItemIds, familyHeadshotsByItemId, familyPersonIdsByItemId, familyPossessionPractice, familyPractice, familyTopic, illustratedFamily } from "../features/family/family.js";
-import { clothesBookWords, clothesMatchItems, clothesPractice, clothesSentenceItems, clothesTopic } from "../features/daily-life/clothes.js";
+import { clothesBookWords, clothesMatchItems, clothesPractice, clothesSentenceItems, clothesTopic, clothesUsefulNotes } from "../features/daily-life/clothes.js";
 import { requestBuildPhrases, requestGameItemIds, requestPractice } from "../features/daily-life/requests-permission.js";
 import { coloursTopic } from "../features/world/colours.js";
 import { hobbiesTopic, toysTopic } from "../features/play-hobbies/play-hobbies.js";
@@ -700,6 +700,7 @@ clothesMatchItems,
 clothesSentenceItems,
 clothesBookWords,
 clothesPractice,
+clothesUsefulNotes,
 roomScenes,
 roomSentenceTokens,
 transportSentenceTokens,
@@ -773,6 +774,7 @@ lessonPracticeRuntime = createLessonPracticeRuntime({
   timeDateWeekItems,
   timeDateClockItems,
   datePracticeItems,
+  birthdayConversationLines,
   timeDateMonthItems,
   timeDateRoutineItems,
   timeRoutineSentenceBuilds,
@@ -957,6 +959,9 @@ if (initialTopicId) {
   state.lessonScope = initialLessonScope;
   if (initialLessonScope) {
     state.selectedBookId = initialLessonScope.bookId;
+    state.selectedBookCategoryId = bookHomeCategories.find((category) =>
+      category.bookIds.includes(initialLessonScope.bookId)
+    )?.id ?? state.selectedBookCategoryId;
     state.selectedLessonNumber = initialLessonScope.lessonNumber;
   } else {
     syncBookSelectionFromTopic();
