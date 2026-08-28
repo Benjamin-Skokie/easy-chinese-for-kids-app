@@ -50,8 +50,8 @@ import { familyGameItemIds, familyPractice, familyTopic, illustratedFamily } fro
 
 test("the local page loads a single bundled application script", () => {
   const html = readFileSync("index.html", "utf8");
-  assert.match(html, /<link rel="stylesheet" href="styles\.css\?v=20260825-number-feedback-v3" \/>/);
-  assert.match(html, /<script src="app\.js\?v=20260827-book-scope-v3"><\/script>/);
+  assert.match(html, /<link rel="stylesheet" href="styles\.css\?v=20260828-stroke-lab-v1" \/>/);
+  assert.match(html, /<script src="app\.js\?v=20260828-stroke-lab-v1"><\/script>/);
   assert.doesNotMatch(html, /type="module"/);
   assert.doesNotMatch(html, /Tap a word to hear it and explore the picture\./);
   assert.doesNotMatch(html, /<h3>Review<\/h3>/);
