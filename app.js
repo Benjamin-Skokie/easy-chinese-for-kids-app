@@ -630,36 +630,19 @@
   function imageLoadingAttrs({ primary = false } = {}) {
     return primary ? 'loading="eager" decoding="async"' : 'loading="lazy" decoding="async"';
   }
-  function applyImageLoading(container, { primary = false, eager = false, revealTogether = false } = {}) {
+  function applyImageLoading(container, { primary = false, eager = false } = {}) {
     if (!container) return;
     let firstImage = true;
     const images = [...container.querySelectorAll("img")];
     for (const image of images) {
       if (!image.hasAttribute("decoding")) image.decoding = "async";
-      if (!image.hasAttribute("loading")) {
+      if (eager) {
+        image.loading = "eager";
+      } else if (!image.hasAttribute("loading")) {
         image.loading = eager || primary && firstImage ? "eager" : "lazy";
       }
       firstImage = false;
     }
-    if (!revealTogether || !images.length) return;
-    const batch = String(Number(container.dataset.imageLoadBatch || "0") + 1);
-    container.dataset.imageLoadBatch = batch;
-    container.classList.remove("review-images-ready");
-    container.classList.add("review-images-loading");
-    Promise.all(images.map((image) => new Promise((resolve) => {
-      if (image.complete) {
-        resolve();
-      } else {
-        image.addEventListener("load", resolve, { once: true });
-        image.addEventListener("error", resolve, { once: true });
-      }
-    }))).then(() => {
-      requestAnimationFrame(() => {
-        if (container.dataset.imageLoadBatch !== batch) return;
-        container.classList.remove("review-images-loading");
-        container.classList.add("review-images-ready");
-      });
-    });
   }
 
   // src/core/random-cycle.js
@@ -12062,15 +12045,16 @@
     function earlyGlyphMarkup(item) {
       const source2 = oracleGlyphSources[item.hanzi];
       if (source2) {
-        return `<img class="pictograph-oracle-image${item.hanzi === "\u4EBA" ? " is-person" : ""}" src="${source2}" alt="Oracle-bone form of ${item.hanzi}" loading="lazy" />`;
+        return `<img class="pictograph-oracle-image${item.hanzi === "\u4EBA" ? " is-person" : ""}" src="${source2}" alt="Oracle-bone form of ${item.hanzi}" decoding="async" />`;
       }
       return earlyGlyphSvg(item);
     }
     function storyMarkup(item) {
-      return `<section class="pictograph-story-row" style="--pictograph-tone: ${item.theme}" aria-labelledby="pictograph-story-${item.id}"><header class="pictograph-story-header"><h3 id="pictograph-story-${item.id}">${item.hanzi} \xB7 ${item.english}</h3><button type="button" class="small-button is-play-button pictograph-frame-play" aria-label="Play ${item.hanzi}" data-pictograph-play="${item.hanzi}">Play</button></header><section class="pictograph-evolution-strip" aria-label="Four ways to understand ${item.hanzi}"><article class="pictograph-evolution-card"><div class="pictograph-stage-art"><img src="${item.scenePath}" alt="${item.sceneAlt}" loading="lazy" /></div><p class="pictograph-stage-label">Illustration</p></article><article class="pictograph-evolution-card"><div class="pictograph-stage-art pictograph-glyph-stage">${earlyGlyphMarkup(item)}</div><p class="pictograph-stage-label">Oracle</p></article><article class="pictograph-evolution-card"><div class="pictograph-stage-art pictograph-modern-stage">${characterSvg(item)}</div><p class="pictograph-stage-label">Modern Chinese</p></article><article class="pictograph-evolution-card"><div class="pictograph-stage-art pictograph-description-stage"><p>${item.notice}</p></div><p class="pictograph-stage-label">What to notice</p></article></section></section>`;
+      return `<section class="pictograph-story-row" style="--pictograph-tone: ${item.theme}" aria-labelledby="pictograph-story-${item.id}"><header class="pictograph-story-header"><h3 id="pictograph-story-${item.id}">${item.hanzi} \xB7 ${item.english}</h3><button type="button" class="small-button is-play-button pictograph-frame-play" aria-label="Play ${item.hanzi}" data-pictograph-play="${item.hanzi}">Play</button></header><section class="pictograph-evolution-strip" aria-label="Four ways to understand ${item.hanzi}"><article class="pictograph-evolution-card"><div class="pictograph-stage-art"><img src="${item.scenePath}" alt="${item.sceneAlt}" decoding="async" /></div><p class="pictograph-stage-label">Illustration</p></article><article class="pictograph-evolution-card"><div class="pictograph-stage-art pictograph-glyph-stage">${earlyGlyphMarkup(item)}</div><p class="pictograph-stage-label">Oracle</p></article><article class="pictograph-evolution-card"><div class="pictograph-stage-art pictograph-modern-stage">${characterSvg(item)}</div><p class="pictograph-stage-label">Modern Chinese</p></article><article class="pictograph-evolution-card"><div class="pictograph-stage-art pictograph-description-stage"><p>${item.notice}</p></div><p class="pictograph-stage-label">What to notice</p></article></section></section>`;
     }
     function renderPictographExplorer() {
       focusExplorer2.innerHTML = `<section class="pictograph-book pictograph-story-book"><header class="pictograph-book-header"><div><p class="body-match-kicker">From carved signs to characters</p><h3>How old writing changed</h3><p>More than 3,000 years ago, people in the Shang dynasty carved writing on animal bones and turtle shells. We call these carvings oracle-bone script. A few signs below began as pictures; as people wrote them again and again, their shapes gradually became the characters we use today. Most Chinese characters, though, are not simple pictures.</p></div></header>${pictographItems.map(storyMarkup).join("")}<p class="pictograph-book-footer">Reference for the historical form: \u6C49\u8BED\u591A\u529F\u80FD\u5B57\u5E93 \xB7 ${pictographItems[0].source}</p></section>`;
+      applyImageLoading(focusExplorer2, { eager: true });
       focusExplorer2.querySelectorAll("[data-pictograph-play]").forEach((button) => button.addEventListener("click", () => speak2(button.dataset.pictographPlay)));
     }
     function renderPictographPractice() {
@@ -13029,12 +13013,12 @@
   var focusExplorerRuntime;
   function renderDefaultExplorer() {
     const result = focusExplorerRuntime?.renderDefaultExplorer();
-    applyImageLoading(focusExplorer, { eager: true, revealTogether: true });
+    applyImageLoading(focusExplorer, { eager: true });
     return result;
   }
   function renderFocusExplorer() {
     const result = focusExplorerRuntime?.renderFocusExplorer();
-    applyImageLoading(focusExplorer, { eager: true, revealTogether: true });
+    applyImageLoading(focusExplorer, { eager: true });
     return result;
   }
   var foundationsRuntime;

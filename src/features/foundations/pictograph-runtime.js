@@ -1,5 +1,6 @@
 import { pictographItems } from "./pictographs.js";
 import { loadStrokeCharacter } from "../../data/stroke-data-loader.js";
+import { applyImageLoading } from "../../core/image-loading.js";
 
 // These are clean, transparent extractions of the historical forms in the teaching
 // references supplied for this project. The original illustration cards remain ours;
@@ -72,17 +73,18 @@ export function createPictographRuntime({ focusExplorer, speak }) {
   function earlyGlyphMarkup(item) {
     const source = oracleGlyphSources[item.hanzi];
     if (source) {
-      return `<img class="pictograph-oracle-image${item.hanzi === "人" ? " is-person" : ""}" src="${source}" alt="Oracle-bone form of ${item.hanzi}" loading="lazy" />`;
+      return `<img class="pictograph-oracle-image${item.hanzi === "人" ? " is-person" : ""}" src="${source}" alt="Oracle-bone form of ${item.hanzi}" decoding="async" />`;
     }
     return earlyGlyphSvg(item);
   }
 
   function storyMarkup(item) {
-    return `<section class="pictograph-story-row" style="--pictograph-tone: ${item.theme}" aria-labelledby="pictograph-story-${item.id}"><header class="pictograph-story-header"><h3 id="pictograph-story-${item.id}">${item.hanzi} · ${item.english}</h3><button type="button" class="small-button is-play-button pictograph-frame-play" aria-label="Play ${item.hanzi}" data-pictograph-play="${item.hanzi}">Play</button></header><section class="pictograph-evolution-strip" aria-label="Four ways to understand ${item.hanzi}"><article class="pictograph-evolution-card"><div class="pictograph-stage-art"><img src="${item.scenePath}" alt="${item.sceneAlt}" loading="lazy" /></div><p class="pictograph-stage-label">Illustration</p></article><article class="pictograph-evolution-card"><div class="pictograph-stage-art pictograph-glyph-stage">${earlyGlyphMarkup(item)}</div><p class="pictograph-stage-label">Oracle</p></article><article class="pictograph-evolution-card"><div class="pictograph-stage-art pictograph-modern-stage">${characterSvg(item)}</div><p class="pictograph-stage-label">Modern Chinese</p></article><article class="pictograph-evolution-card"><div class="pictograph-stage-art pictograph-description-stage"><p>${item.notice}</p></div><p class="pictograph-stage-label">What to notice</p></article></section></section>`;
+    return `<section class="pictograph-story-row" style="--pictograph-tone: ${item.theme}" aria-labelledby="pictograph-story-${item.id}"><header class="pictograph-story-header"><h3 id="pictograph-story-${item.id}">${item.hanzi} · ${item.english}</h3><button type="button" class="small-button is-play-button pictograph-frame-play" aria-label="Play ${item.hanzi}" data-pictograph-play="${item.hanzi}">Play</button></header><section class="pictograph-evolution-strip" aria-label="Four ways to understand ${item.hanzi}"><article class="pictograph-evolution-card"><div class="pictograph-stage-art"><img src="${item.scenePath}" alt="${item.sceneAlt}" decoding="async" /></div><p class="pictograph-stage-label">Illustration</p></article><article class="pictograph-evolution-card"><div class="pictograph-stage-art pictograph-glyph-stage">${earlyGlyphMarkup(item)}</div><p class="pictograph-stage-label">Oracle</p></article><article class="pictograph-evolution-card"><div class="pictograph-stage-art pictograph-modern-stage">${characterSvg(item)}</div><p class="pictograph-stage-label">Modern Chinese</p></article><article class="pictograph-evolution-card"><div class="pictograph-stage-art pictograph-description-stage"><p>${item.notice}</p></div><p class="pictograph-stage-label">What to notice</p></article></section></section>`;
   }
 
   function renderPictographExplorer() {
     focusExplorer.innerHTML = `<section class="pictograph-book pictograph-story-book"><header class="pictograph-book-header"><div><p class="body-match-kicker">From carved signs to characters</p><h3>How old writing changed</h3><p>More than 3,000 years ago, people in the Shang dynasty carved writing on animal bones and turtle shells. We call these carvings oracle-bone script. A few signs below began as pictures; as people wrote them again and again, their shapes gradually became the characters we use today. Most Chinese characters, though, are not simple pictures.</p></div></header>${pictographItems.map(storyMarkup).join("")}<p class="pictograph-book-footer">Reference for the historical form: 汉语多功能字库 · ${pictographItems[0].source}</p></section>`;
+    applyImageLoading(focusExplorer, { eager: true });
     focusExplorer.querySelectorAll("[data-pictograph-play]").forEach((button) => button.addEventListener("click", () => speak(button.dataset.pictographPlay)));
   }
 
