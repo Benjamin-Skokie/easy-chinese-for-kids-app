@@ -1972,6 +1972,13 @@ h4 {
   background: linear-gradient(135deg, #fff9ef 0%, #fff2f5 52%, #f3f7ff 100%);
 }
 
+.pinyin-course-lab {
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+}
+
 .pinyin-lab-header,
 .pinyin-listen-card,
 .pinyin-tone-card,
@@ -2002,57 +2009,598 @@ h4 {
   color: #8f3d5a;
   background: rgba(255, 255, 255, 0.68);
   font-weight: 800;
+  text-align: center;
+}
+
+.pinyin-lab-badge small {
+  display: block;
+  margin-top: 2px;
+  font-size: 0.68rem;
 }
 
 .pinyin-course-nav {
-  display: grid;
-  grid-template-columns: repeat(7, minmax(0, 1fr));
-  gap: 7px;
-  padding: 5px;
+  padding: 0;
   border-radius: 16px;
-  background: rgba(255, 255, 255, 0.52);
-}
-
-.pinyin-course-step {
-  display: grid;
-  gap: 2px;
-  min-width: 0;
-  min-height: 58px;
-  padding: 6px 3px;
-  border: 1px solid transparent;
-  border-radius: 11px;
-  color: #725d64;
   background: transparent;
-  cursor: pointer;
 }
 
-.pinyin-course-step span {
-  color: #a34363;
-  font-size: 0.72rem;
+.pinyin-course-books {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.pinyin-course-book {
+  display: grid;
+  min-height: 74px;
+  place-items: center;
+  gap: 3px;
+  padding: 10px;
+  border: 1px solid rgba(184, 95, 117, 0.22);
+  border-radius: 18px;
+  color: #8f3d5a;
+  background: #fff7f8;
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.88rem;
   font-weight: 800;
 }
 
-.pinyin-course-step small {
-  overflow: hidden;
-  color: inherit;
-  font-size: 0.67rem;
-  text-overflow: ellipsis;
+.pinyin-course-book small {
+  font-size: 0.66rem;
+  font-weight: 700;
+  opacity: 0.72;
+}
+
+.pinyin-course-book > span {
+  display: inline-flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 2px;
+  font-size: clamp(1rem, 1.7vw, 1.22rem);
+  line-height: 1.15;
+}
+
+.pinyin-course-book > span b {
+  color: currentColor;
+  font-weight: 500;
+  opacity: 0.58;
+}
+
+.pinyin-chapter-section {
+  gap: 14px;
+}
+
+.school-scene-grid.pinyin-chapter-grid {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.pinyin-chapter-section-note {
+  color: var(--muted);
+  font-size: 0.96rem;
+}
+
+.pinyin-chapter-card {
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.pinyin-basic-chapter-card {
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.pinyin-chapter-card h4 {
+  margin: 0;
+  color: var(--ink);
+  font-family: var(--body-font);
+  font-size: 1.08rem;
+  font-weight: 800;
+}
+
+.pinyin-chapter-english,
+.pinyin-chapter-helper {
+  color: var(--ink);
+  font-size: 1.08rem;
+  font-weight: 800;
+}
+
+.pinyin-chapter-heading {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 9px;
+}
+
+.pinyin-chapter-heading .body-match-kicker,
+.pinyin-chapter-heading .pinyin-chapter-english {
+  margin: 0;
+}
+
+.pinyin-chapter-heading .pinyin-play-all {
+  margin-left: auto;
+}
+
+.pinyin-chapter-heading .body-match-kicker {
+  color: #bd4335;
+  font-size: 1.2rem;
+}
+
+.pinyin-chapter-definition {
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-size: 1rem;
+}
+
+.pinyin-chapter-card-body {
+  display: grid;
+  gap: 12px;
+}
+
+.pinyin-chapter-card-body > section {
+  display: grid;
+  gap: 7px;
+  padding-top: 11px;
+  border-top: 1px solid rgba(45, 34, 24, 0.08);
+}
+
+.pinyin-chapter-card .pinyin-ready-sounds {
+  gap: 7px;
+}
+
+.pinyin-sound-chip {
+  min-width: 42px;
+  padding: 8px;
+  border: 0;
+  border-radius: 13px;
+  color: #a34363;
+  background: #fff1f4;
+  font-size: 1.08rem;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.pinyin-basic-sound-row {
+  display: grid !important;
+  grid-template-columns: repeat(6, minmax(62px, 1fr));
+  width: 100%;
+  gap: 14px !important;
+}
+
+.pinyin-chapter-sound-row.pinyin-sound-count-3 {
+  grid-template-columns: repeat(3, minmax(62px, 1fr));
+}
+
+.pinyin-chapter-sound-row.pinyin-sound-count-4 {
+  grid-template-columns: repeat(4, minmax(62px, 1fr));
+}
+
+.pinyin-chapter-sound-row.pinyin-sound-count-5 {
+  grid-template-columns: repeat(5, minmax(62px, 1fr));
+}
+
+.pinyin-chapter-card .pinyin-basic-sound-row .pinyin-sound-chip {
+  min-width: 62px;
+  padding: 18px 12px;
+  font-size: 2.6rem;
+  line-height: 1;
+}
+
+.pinyin-unit-blending-tones .pinyin-basic-sound-row .pinyin-sound-chip {
+  padding: 18px 10px;
+  font-size: 1.3rem;
+  line-height: 1.2;
+}
+
+.pinyin-unit-whole-yiwu .pinyin-basic-examples > div {
+  grid-template-columns: 42px repeat(4, minmax(0, 1fr));
+}
+
+.pinyin-unit-blending-tones .pinyin-basic-examples > div {
+  grid-template-columns: minmax(180px, 1.3fr) repeat(3, minmax(0, 1fr));
+}
+
+.pinyin-unit-blending-tones .pinyin-basic-examples strong {
   white-space: nowrap;
 }
 
-.pinyin-course-step:hover,
-.pinyin-course-step:focus-visible,
-.pinyin-course-step.is-selected {
-  border-color: rgba(184, 95, 117, 0.28);
+.pinyin-basic-examples {
+  grid-template-columns: 1fr;
+  gap: 0 !important;
+}
+
+.pinyin-basic-examples > div {
+  display: grid;
+  grid-template-columns: 42px repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  align-items: baseline;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(45, 34, 24, 0.08);
+}
+
+.pinyin-standard-chapter-card {
+  padding-bottom: 22px;
+  border-bottom: 1px solid rgba(45, 34, 24, 0.1);
+}
+
+.pinyin-chapter-practice {
+  display: grid;
+  gap: 12px;
+  margin-top: 16px;
+  padding: 16px;
+  border-radius: 18px;
+  background: #fff8ef;
+}
+
+.pinyin-chapter-practice-options {
+  display: grid;
+  gap: 9px;
+}
+
+.pinyin-chapter-practice-options.pinyin-sound-count-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.pinyin-chapter-practice-options.pinyin-sound-count-4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.pinyin-chapter-practice-options.pinyin-sound-count-5 {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.pinyin-chapter-practice-options.pinyin-sound-count-6 {
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+
+.pinyin-chapter-practice .answer-result-mark {
+  top: 6px;
+  right: 7px;
+  width: 20px;
+  height: 20px;
+  font-size: 0.85rem;
+}
+
+.pinyin-basic-examples > div:last-child {
+  border-bottom: 0;
+}
+
+.pinyin-basic-examples strong {
   color: #8f3d5a;
-  background: #fff;
+  font-size: 1.35rem;
+}
+
+.pinyin-word-audio {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  color: var(--ink);
+  background: transparent;
+  text-align: left;
+  color: var(--ink) !important;
+  font-size: 1.05rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.pinyin-word-audio b,
+.pinyin-word-audio span {
+  display: block;
+}
+
+.pinyin-basic-examples .pinyin-word-audio span {
+  margin-top: 2px;
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.pinyin-u-rule {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 7px;
+  align-items: start;
+  padding: 14px 16px;
+  border-radius: 15px;
+  color: #735967;
+  background: #fff4f6;
+}
+
+.pinyin-u-rule strong {
+  color: #8f3d5a;
+}
+
+.pinyin-u-rule p {
+  margin: 0;
+}
+
+.pinyin-tone-chapter-card {
+  padding-bottom: 22px;
+  border-bottom: 1px solid rgba(45, 34, 24, 0.1);
+}
+
+.pinyin-tone-row {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 16px;
+}
+
+.pinyin-tone-row > button {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: repeat(3, 1fr);
+  gap: 5px 10px;
+  align-items: center;
+  align-content: center;
+  min-height: 132px;
+  padding: 13px 15px;
+  border: 0;
+  border-radius: 14px;
+  color: inherit;
+  background: #fff4f6;
+  text-align: left;
+  cursor: pointer;
+}
+
+.pinyin-tone-row strong,
+.pinyin-tone-row .pinyin-tone-contour {
+  color: #8f3d5a;
+}
+
+.pinyin-tone-row strong {
+  font-size: 1.55rem;
+  line-height: 1;
+}
+
+.pinyin-tone-contour {
+  width: 64px;
+  height: 32px;
+  grid-column: 2;
+  grid-row: 1 / 4;
+  align-self: center;
+}
+
+.pinyin-tone-contour path {
+  fill: none;
+  stroke: #c34a3d;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 7;
+}
+
+.pinyin-tone-contour polygon {
+  fill: #c34a3d;
+}
+
+.pinyin-tone-row b {
+  grid-column: 1;
+  font-family: var(--hanzi-font);
+  font-size: 1.55rem;
+}
+
+.pinyin-tone-row small {
+  grid-column: 1;
+  color: var(--muted);
+  font-size: 1rem;
+}
+
+.pinyin-basics-practice {
+  display: grid;
+  gap: 0;
+  margin-top: 16px;
+}
+
+.pinyin-basics-practice-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+}
+
+.pinyin-basics-practice-tone .pinyin-ear-game:last-child,
+.pinyin-basics-practice-final .pinyin-ear-game:first-child {
+  display: none;
+}
+
+.pinyin-spelling-rules .pinyin-chapter-definition {
+  max-width: 760px;
+}
+
+.pinyin-rule-list {
+  display: grid;
+  gap: 10px;
+}
+
+.pinyin-rule-list section {
+  padding: 14px 16px;
+  border-radius: 14px;
+  background: #fff4f6;
+}
+
+.pinyin-rule-list strong {
+  color: #8f3d5a;
+}
+
+.pinyin-rule-list p {
+  margin: 5px 0 0;
+}
+
+.pinyin-ear-game {
+  padding: 20px;
+  border-radius: 20px;
+  background: #fff8ef;
+}
+
+.pinyin-ear-game-heading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.pinyin-ear-game-heading h4 {
+  flex: 1;
+}
+
+.pinyin-ear-game-heading h4,
+.pinyin-ear-game > p {
+  margin: 0;
+}
+
+.pinyin-tone-choice-row,
+.pinyin-final-choice-row {
+  display: grid;
+  gap: 9px;
+  margin-top: 16px;
+}
+
+.pinyin-tone-choice-row {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.pinyin-final-choice-row {
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+
+.pinyin-tone-choice,
+.pinyin-final-choice {
+  position: relative;
+  min-height: 66px;
+  border: 1px solid rgba(143, 61, 90, 0.22);
+  border-radius: 14px;
+  color: #8f3d5a;
+  background: #fff4f6;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.pinyin-final-choice {
+  font-size: 1.65rem;
+}
+
+.pinyin-tone-choice {
+  display: grid;
+  place-items: center;
+}
+
+.pinyin-tone-choice-contour {
+  width: min(86%, 88px);
+  height: 42px;
+}
+
+.pinyin-tone-choice-contour path {
+  fill: none;
+  stroke: #c34a3d;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 7;
+}
+
+.pinyin-tone-choice-contour polygon {
+  fill: #c34a3d;
+}
+
+.pinyin-tone-choice .answer-result-mark,
+.pinyin-final-choice .answer-result-mark {
+  top: 6px;
+  right: 7px;
+  width: 20px;
+  height: 20px;
+  font-size: 0.85rem;
+}
+
+.pinyin-tone-choice.is-correct,
+.pinyin-final-choice.is-correct {
+  border-color: #4d9b63;
+  color: #286b43;
+  background: #eaf7e8;
+}
+
+.pinyin-tone-choice.is-wrong,
+.pinyin-final-choice.is-wrong {
+  border-color: #c5514a;
+  color: #a83d36;
+  background: #fff0ee;
+}
+
+.pinyin-basics-feedback {
+  min-height: 25px;
+  margin: 13px 0 0 !important;
+  color: var(--muted);
+}
+
+@media (max-width: 980px) {
+  .pinyin-basics-practice-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 520px) {
+  .pinyin-ear-game {
+    padding: 16px;
+  }
+
+  .pinyin-final-choice-row {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.pinyin-chapter-use {
+  color: var(--muted);
+}
+
+.pinyin-chapter-word {
+  font-family: var(--hanzi-font);
+  color: var(--ink);
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.pinyin-practice-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+}
+
+.pinyin-course-book:hover,
+.pinyin-course-book:focus-visible,
+.pinyin-course-book.is-selected {
+  border-color: #a34363;
+  color: #fff;
+  background: #a34363;
+}
+
+.pinyin-course-select-label {
+  display: flex;
+  flex: 1 1 280px;
+  align-items: center;
+  gap: 8px;
+  color: var(--muted);
+  font-size: 0.88rem;
+  font-weight: 700;
+}
+
+.pinyin-course-select-label select {
+  min-width: 0;
+  flex: 1;
+  padding: 8px 10px;
+  border: 1px solid rgba(184, 95, 117, 0.24);
+  border-radius: 10px;
+  color: #8f3d5a;
+  background: #fffdfd;
+  font: inherit;
+  font-weight: 700;
 }
 
 .pinyin-ready-card {
   display: grid;
   gap: 10px;
-  padding: clamp(18px, 3vw, 30px);
-  border: 1px dashed rgba(184, 95, 117, 0.38);
+  padding: clamp(16px, 2.4vw, 22px);
+  border: 1px solid rgba(184, 95, 117, 0.2);
   border-radius: 20px;
   background: rgba(255, 255, 255, 0.6);
 }
@@ -2262,6 +2810,95 @@ h4 {
 .pinyin-practice-card {
   display: grid;
   gap: 16px;
+}
+
+.pinyin-practice-step {
+  display: grid;
+  gap: 10px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(45, 34, 24, 0.09);
+}
+
+.pinyin-practice-step:first-of-type {
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+}
+
+.pinyin-practice-step h4,
+.pinyin-practice-step p {
+  margin: 0;
+}
+
+.pinyin-practice-english-title {
+  margin: -9px 0 2px !important;
+  color: var(--muted) !important;
+  font-size: 0.96rem;
+  font-weight: 700;
+}
+
+.pinyin-practice-instruction {
+  display: grid;
+  gap: 2px;
+  color: var(--ink) !important;
+  font-size: 1.08rem;
+  font-weight: 800;
+}
+
+.pinyin-practice-instruction span {
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.pinyin-practice-word {
+  color: var(--ink) !important;
+  font-family: var(--hanzi-font);
+  font-size: 2.35rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.pinyin-practice-reading {
+  color: #8f3d5a !important;
+  font-size: 1.05rem;
+  font-weight: 800;
+}
+
+.pinyin-build-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.pinyin-build-piece {
+  min-width: 74px;
+  min-height: 58px;
+  padding: 10px 16px;
+  border: 1px solid rgba(184, 95, 117, 0.24);
+  border-radius: 16px;
+  color: #8f3d5a;
+  background: #fff1f4;
+  cursor: pointer;
+  font: inherit;
+  font-size: 1.3rem;
+  font-weight: 800;
+}
+
+.pinyin-build-piece:hover:not(:disabled),
+.pinyin-build-piece:focus-visible:not(:disabled) {
+  border-color: #a34363;
+  background: #fff;
+}
+
+.pinyin-build-piece:disabled {
+  cursor: default;
+}
+
+.pinyin-build-answer {
+  min-height: 26px;
+  color: #347d4d !important;
+  font-size: 1.1rem;
+  font-weight: 800;
 }
 
 .pinyin-practice-option {
@@ -2857,7 +3494,35 @@ h4 {
   }
 
   .pinyin-course-nav {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    align-items: stretch;
+  }
+
+  .pinyin-course-books,
+  .pinyin-practice-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .pinyin-basic-examples {
+    grid-template-columns: 1fr;
+  }
+
+  .pinyin-basic-sound-row {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .pinyin-chapter-practice-options.pinyin-sound-count-4,
+  .pinyin-chapter-practice-options.pinyin-sound-count-5,
+  .pinyin-chapter-practice-options.pinyin-sound-count-6 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .pinyin-tone-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .pinyin-basic-examples > div {
+    grid-template-columns: 30px repeat(3, minmax(0, 1fr));
+    gap: 7px;
   }
 
   .pinyin-lab-badge,

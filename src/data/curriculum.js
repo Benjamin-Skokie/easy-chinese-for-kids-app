@@ -172,7 +172,7 @@ export const topicGroups = [
 ];
 
 export const topicCardMeta = {
-  pinyin: { zhTitle: "拼音", enTitle: "Pinyin Sounds", hint: "Listen, say, blend, and read" },
+  pinyin: { zhTitle: "汉语拼音", enTitle: "Pinyin", hint: "Listen, say, blend, and read" },
   strokes: { zhTitle: "笔画", enTitle: "Chinese Strokes", hint: "Watch, trace, and write in order" },
   pictographs: { zhTitle: "象形文字", enTitle: "Pictographic Characters", hint: "See pictures become characters" },
   numbers: { zhTitle: "数字", enTitle: "Numbers", hint: "Count, hear, and use numbers" },
