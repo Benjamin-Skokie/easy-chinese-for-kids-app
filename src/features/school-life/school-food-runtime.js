@@ -173,6 +173,8 @@ function handleMealsConversationPhrase(itemId) {
 }
 
 function handleMealsConversationAttempt(itemId) {
+  const item = mealsConversationItems().find((entry) => entry.id === itemId);
+  if (item && state.tapAudioEnabled) speak(item.reply, 0.78);
   const selectedId = state.schoolSelectedPhraseId;
   if (!selectedId || state.schoolMatchedIds.has(itemId)) return;
   if (selectedId === itemId) {
@@ -216,6 +218,10 @@ function handleMealsPictureChoice(optionId) {
   if (!prompt || state.mealsPictureQuizResult === "correct") return;
   state.mealsPictureQuizSelectedId = optionId;
   state.mealsPictureQuizResult = optionId === prompt.correctId ? "correct" : "wrong";
+  const selectedOption = prompt.options.find((option) => option.id === optionId);
+  if (state.mealsPictureQuizResult === "correct" && selectedOption && state.tapAudioEnabled) {
+    speak(selectedOption.hanzi, 0.78);
+  }
   renderActivityPanel(currentTopic());
 }
 
@@ -250,16 +256,33 @@ function renderMealsPictureChoice() {
 
 function foodPreferenceFillItems() {
   return [
-    { id: "apple", hanzi: "苹果", pinyin: "píng guǒ", english: "apple" },
-    { id: "ice-cream", hanzi: "冰淇淋", pinyin: "bīng qí lín", english: "ice cream" },
-    { id: "pizza", hanzi: "披萨", pinyin: "pī sà", english: "pizza" },
-    { id: "broccoli", hanzi: "西兰花", pinyin: "xī lán huā", english: "broccoli" },
-    { id: "dumplings", hanzi: "饺子", pinyin: "jiǎo zi", english: "dumplings" },
-    { id: "fried-rice", hanzi: "炒饭", pinyin: "chǎo fàn", english: "fried rice" },
-    { id: "chow-mein", hanzi: "炒面", pinyin: "chǎo miàn", english: "chow mein" },
-    { id: "hamburger", hanzi: "汉堡", pinyin: "hàn bǎo", english: "hamburger" },
-    { id: "hot-dog", hanzi: "热狗", pinyin: "rè gǒu", english: "hot dog" },
-    { id: "sandwich", hanzi: "三明治", pinyin: "sān míng zhì", english: "sandwich" }
+    { id: "apple", hanzi: "苹果", pinyin: "píng guǒ", english: "apple", imagePath: "assets/illustrated-food/apple.webp", verb: "吃", verbPinyin: "chī", verbEnglish: "eat" },
+    { id: "ice-cream", hanzi: "冰淇淋", pinyin: "bīng qí lín", english: "ice cream", imagePath: "assets/illustrated-food/ice-cream.webp", verb: "吃", verbPinyin: "chī", verbEnglish: "eat" },
+    { id: "pizza", hanzi: "披萨", pinyin: "pī sà", english: "pizza", imagePath: "assets/illustrated-food/pizza.webp", verb: "吃", verbPinyin: "chī", verbEnglish: "eat" },
+    { id: "broccoli", hanzi: "西兰花", pinyin: "xī lán huā", english: "broccoli", imagePath: "assets/illustrated-food/broccoli.webp", verb: "吃", verbPinyin: "chī", verbEnglish: "eat" },
+    { id: "dumplings", hanzi: "饺子", pinyin: "jiǎo zi", english: "dumplings", imagePath: "assets/illustrated-food/dumplings.webp", verb: "吃", verbPinyin: "chī", verbEnglish: "eat" },
+    { id: "fried-rice", hanzi: "炒饭", pinyin: "chǎo fàn", english: "fried rice", imagePath: "assets/illustrated-food/fried-rice.webp", verb: "吃", verbPinyin: "chī", verbEnglish: "eat" },
+    { id: "chow-mein", hanzi: "炒面", pinyin: "chǎo miàn", english: "chow mein", imagePath: "assets/illustrated-food/chow-mein.webp", verb: "吃", verbPinyin: "chī", verbEnglish: "eat" },
+    { id: "hamburger", hanzi: "汉堡", pinyin: "hàn bǎo", english: "hamburger", imagePath: "assets/illustrated-food/hamburger.webp", verb: "吃", verbPinyin: "chī", verbEnglish: "eat" },
+    { id: "hot-dog", hanzi: "热狗", pinyin: "rè gǒu", english: "hot dog", imagePath: "assets/illustrated-food/hot-dog.webp", verb: "吃", verbPinyin: "chī", verbEnglish: "eat" },
+    { id: "sandwich", hanzi: "三明治", pinyin: "sān míng zhì", english: "sandwich", imagePath: "assets/illustrated-food/sandwich.webp", verb: "吃", verbPinyin: "chī", verbEnglish: "eat" },
+    { id: "cola", hanzi: "可乐", pinyin: "kě lè", english: "Coke", imagePath: "assets/illustrated-food/cola.webp", verb: "喝", verbPinyin: "hē", verbEnglish: "drink" },
+    { id: "juice", hanzi: "果汁", pinyin: "guǒ zhī", english: "juice", imagePath: "assets/illustrated-food/juice.webp", verb: "喝", verbPinyin: "hē", verbEnglish: "drink" },
+    { id: "milk", hanzi: "牛奶", pinyin: "niú nǎi", english: "milk", imagePath: "assets/illustrated-food/milk.webp", verb: "喝", verbPinyin: "hē", verbEnglish: "drink" }
+    , { id: "banana", hanzi: "香蕉", pinyin: "xiāng jiāo", english: "banana", imagePath: "assets/illustrated-food/banana.webp", verb: "吃", verbPinyin: "chī", verbEnglish: "eat" }
+    , { id: "grapes", hanzi: "葡萄", pinyin: "pú tao", english: "grapes", imagePath: "assets/illustrated-food/grapes.webp", verb: "吃", verbPinyin: "chī", verbEnglish: "eat" }
+    , { id: "orange", hanzi: "橙子", pinyin: "chéng zi", english: "orange", imagePath: "assets/illustrated-food/orange.webp", verb: "吃", verbPinyin: "chī", verbEnglish: "eat" }
+    , { id: "pear", hanzi: "梨", pinyin: "lí", english: "pear", imagePath: "assets/illustrated-food/pear.webp", verb: "吃", verbPinyin: "chī", verbEnglish: "eat" }
+    , { id: "peach", hanzi: "桃子", pinyin: "táo zi", english: "peach", imagePath: "assets/illustrated-food/peach.webp", verb: "吃", verbPinyin: "chī", verbEnglish: "eat" }
+    , { id: "watermelon", hanzi: "西瓜", pinyin: "xī guā", english: "watermelon", imagePath: "assets/illustrated-food/watermelon.webp", verb: "吃", verbPinyin: "chī", verbEnglish: "eat" }
+    , { id: "strawberry", hanzi: "草莓", pinyin: "cǎo méi", english: "strawberry", imagePath: "assets/illustrated-food/strawberry.webp", verb: "吃", verbPinyin: "chī", verbEnglish: "eat" }
+    , { id: "french-fries", hanzi: "薯条", pinyin: "shǔ tiáo", english: "French fries", imagePath: "assets/illustrated-food/french-fries.webp", verb: "吃", verbPinyin: "chī", verbEnglish: "eat" }
+    , { id: "cake", hanzi: "蛋糕", pinyin: "dàn gāo", english: "cake", imagePath: "assets/illustrated-food/cake.webp", verb: "吃", verbPinyin: "chī", verbEnglish: "eat" }
+    , { id: "bread", hanzi: "面包", pinyin: "miàn bāo", english: "bread", imagePath: "assets/illustrated-food/bread.webp", verb: "吃", verbPinyin: "chī", verbEnglish: "eat" }
+    , { id: "chocolate", hanzi: "巧克力", pinyin: "qiǎo kè lì", english: "chocolate", imagePath: "assets/illustrated-food/chocolate.webp", verb: "吃", verbPinyin: "chī", verbEnglish: "eat" }
+    , { id: "tomato", hanzi: "西红柿", pinyin: "xī hóng shì", english: "tomato", imagePath: "assets/illustrated-food/tomato.webp", verb: "吃", verbPinyin: "chī", verbEnglish: "eat" }
+    , { id: "carrot", hanzi: "胡萝卜", pinyin: "hú luó bo", english: "carrot", imagePath: "assets/illustrated-food/carrot.webp", verb: "吃", verbPinyin: "chī", verbEnglish: "eat" }
+    , { id: "cucumber", hanzi: "黄瓜", pinyin: "huáng guā", english: "cucumber", imagePath: "assets/illustrated-food/cucumber.webp", verb: "吃", verbPinyin: "chī", verbEnglish: "eat" }
   ];
 }
 
@@ -268,8 +291,6 @@ function foodPreferenceSubjects() {
     { id: "我", hanzi: "我", pinyin: "wǒ", english: "I" },
     { id: "爸爸", hanzi: "爸爸", pinyin: "bà ba", english: "Dad" },
     { id: "妈妈", hanzi: "妈妈", pinyin: "mā ma", english: "Mom" },
-    { id: "爷爷", hanzi: "爷爷", pinyin: "yé ye", english: "Grandpa" },
-    { id: "奶奶", hanzi: "奶奶", pinyin: "nǎi nai", english: "Grandma" },
     { id: "姐姐", hanzi: "姐姐", pinyin: "jiě jie", english: "Older sister" },
     { id: "妹妹", hanzi: "妹妹", pinyin: "mèi mei", english: "Younger sister" },
     { id: "弟弟", hanzi: "弟弟", pinyin: "dì di", english: "Younger brother" },
@@ -292,6 +313,22 @@ function selectedFoodPreferencePattern() {
   return foodPreferencePatterns().find((item) => item.id === state.foodPreferencePatternId) ?? foodPreferencePatterns()[0];
 }
 
+function foodPreferenceChoiceItems() {
+  const allItems = foodPreferenceFillItems();
+  const validIds = new Set(allItems.map((item) => item.id));
+  const choiceIds = state.foodPreferenceChoiceIds;
+  if (!Array.isArray(choiceIds) || choiceIds.length !== 7 || choiceIds.some((id) => !validIds.has(id))) {
+    state.foodPreferenceChoiceIds = shuffleArray(allItems.map((item) => item.id)).slice(0, 7);
+  }
+  return state.foodPreferenceChoiceIds.map((id) => allItems.find((item) => item.id === id)).filter(Boolean);
+}
+
+function nextFoodPreferenceChoices() {
+  state.foodPreferenceChoiceIds = shuffleArray(foodPreferenceFillItems().map((item) => item.id)).slice(0, 7);
+  state.foodPreferenceFoodId = "";
+  renderActivityPanel(currentTopic());
+}
+
 function handleFoodPreferenceSubject(subjectId) {
   state.foodPreferenceSubjectId = subjectId;
   renderActivityPanel(currentTopic());
@@ -308,30 +345,33 @@ function handleFoodPreferenceFill(foodId) {
   if (!item) return;
   const pattern = selectedFoodPreferencePattern();
   const subject = foodPreferenceSubjects().find((entry) => entry.id === state.foodPreferenceSubjectId) ?? foodPreferenceSubjects()[0];
-  const sentence = `${subject.hanzi}${pattern.hanzi}吃${item.hanzi}`;
+  const sentence = `${subject.hanzi}${pattern.hanzi}${item.verb}${item.hanzi}`;
   state.foodPreferenceFoodId = foodId;
   if (state.tapAudioEnabled) speak(sentence, 0.78);
   renderActivityPanel(currentTopic());
 }
 
 function renderFoodPreferenceFillPractice() {
-  const items = foodPreferenceFillItems();
+  const items = foodPreferenceChoiceItems();
+  const allItems = foodPreferenceFillItems();
   const pattern = selectedFoodPreferencePattern();
   const subjects = foodPreferenceSubjects();
   const subject = subjects.find((item) => item.id === state.foodPreferenceSubjectId) ?? subjects[0];
-  const selectedFood = items.find((item) => item.id === state.foodPreferenceFoodId);
-  const sentenceHanzi = `${subject.hanzi}${pattern.hanzi}吃${selectedFood?.hanzi ?? "____"}。`;
-  const sentencePinyin = `${subject.pinyin} ${pattern.pinyin} chī${selectedFood?.pinyin ? ` ${selectedFood.pinyin}` : ""}.`;
-  const sentenceEnglish = `${subject.english} ${subject.id === "我" ? pattern.firstPersonEnglish : pattern.english}${selectedFood?.english ? ` ${selectedFood.english}` : ""}.`;
+  const selectedFood = allItems.find((item) => item.id === state.foodPreferenceFoodId);
+  const sentenceHanzi = `${subject.hanzi}${pattern.hanzi}${selectedFood?.verb ?? "____"}${selectedFood?.hanzi ?? "____"}。`;
+  const sentencePinyin = `${subject.pinyin} ${pattern.pinyin}${selectedFood ? ` ${selectedFood.verbPinyin} ${selectedFood.pinyin}` : " ____ ____"}.`;
+  const verbEnglish = selectedFood?.verbEnglish ?? "eat or drink";
+  const patternEnglish = subject.id === "我" ? pattern.firstPersonEnglish : pattern.english;
+  const sentenceEnglish = `${subject.english} ${patternEnglish.replace("eat", verbEnglish)}${selectedFood?.english ? ` ${selectedFood.english}` : ""}.`;
   return `
     <section class="clothes-quiz-shell food-preference-fill-practice">
-      <div class="numbers-game-top"><div><p class="body-match-kicker">Make your sentence</p><p class="numbers-game-note">Choose one card in each column. There is no right or wrong answer.</p></div></div>
+      <div class="numbers-game-top"><div><p class="body-match-kicker">Make your sentence</p><p class="numbers-game-note">Choose one card in each column. New choices bring seven different foods or drinks.</p></div><button class="small-button is-practice-advance-button" type="button" data-food-preference-new aria-label="Show new food and drink choices">New choices</button></div>
       <div class="food-preference-builder-columns">
-        <div class="food-preference-builder-column"><p class="food-preference-choice-label">Subject</p><div class="food-preference-builder-list">${subjects.map((item) => `<button class="food-preference-subject-choice${subject.id === item.id ? " is-active" : ""}" type="button" data-food-preference-subject="${item.id}"><span class="numbers-game-hanzi">${item.hanzi}</span><span class="food-preference-card-meta">${state.showPinyin ? `<span class="numbers-game-pinyin">${item.pinyin}</span>` : ""}${state.showEnglish ? `<span class="numbers-game-english">${item.english}</span>` : ""}</span></button>`).join("")}</div></div>
-        <div class="food-preference-builder-column"><p class="food-preference-choice-label">Word</p><div class="food-preference-builder-list">${foodPreferencePatterns().map((item) => `<button class="food-preference-pattern-choice${pattern.id === item.id ? " is-active" : ""}" type="button" data-food-preference-pattern="${item.id}"><span class="numbers-game-hanzi">${item.hanzi}</span><span class="food-preference-card-meta">${state.showPinyin ? `<span class="numbers-game-pinyin">${item.pinyin}</span>` : ""}${state.showEnglish ? `<span class="numbers-game-english">${item.english}</span>` : ""}</span></button>`).join("")}</div></div>
-        <div class="food-preference-builder-column"><p class="food-preference-choice-label">Food</p><div class="food-preference-builder-list">${items.map((item) => `<button class="food-preference-fill-choice${selectedFood?.id === item.id ? " is-active" : ""}" type="button" data-food-preference-food="${item.id}"><span class="numbers-game-hanzi">${item.hanzi}</span><span class="food-preference-card-meta">${state.showPinyin ? `<span class="numbers-game-pinyin">${item.pinyin}</span>` : ""}${state.showEnglish ? `<span class="numbers-game-english">${item.english}</span>` : ""}</span></button>`).join("")}</div></div>
+        <div class="food-preference-builder-column"><p class="food-preference-choice-label">Subject</p><div class="food-preference-builder-list">${subjects.map((item) => `<button class="food-preference-subject-choice${subject.id === item.id ? " is-active" : ""}" type="button" data-food-preference-subject="${item.id}"><span class="food-preference-card-copy"><span class="numbers-game-hanzi">${item.hanzi}</span>${state.showPinyin ? `<span class="numbers-game-pinyin">${item.pinyin}</span>` : ""}</span>${state.showEnglish ? `<span class="numbers-game-english food-preference-card-meta">${item.english}</span>` : ""}</button>`).join("")}</div></div>
+        <div class="food-preference-builder-column food-preference-pattern-column"><p class="food-preference-choice-label">Word</p><div class="food-preference-builder-list">${foodPreferencePatterns().map((item) => `<button class="food-preference-pattern-choice${pattern.id === item.id ? " is-active" : ""}" type="button" data-food-preference-pattern="${item.id}"><span class="food-preference-card-copy"><span class="numbers-game-hanzi">${item.hanzi}</span>${state.showPinyin ? `<span class="numbers-game-pinyin">${item.pinyin}</span>` : ""}</span>${state.showEnglish ? `<span class="numbers-game-english food-preference-card-meta">${item.english}</span>` : ""}</button>`).join("")}</div></div>
+        <div class="food-preference-builder-column"><p class="food-preference-choice-label">Food or drink</p><div class="food-preference-builder-list food-preference-food-options">${items.map((item) => `<button class="food-preference-fill-choice${selectedFood?.id === item.id ? " is-active" : ""}" type="button" data-food-preference-food="${item.id}"><img class="food-preference-choice-image" src="${item.imagePath}" alt="${item.english}"><span class="food-preference-card-copy"><span class="numbers-game-hanzi">${item.hanzi}</span>${state.showPinyin ? `<span class="numbers-game-pinyin">${item.pinyin}</span>` : ""}</span>${state.showEnglish ? `<span class="numbers-game-english food-preference-card-meta">${item.english}</span>` : ""}</button>`).join("")}</div></div>
       </div>
-      <div class="food-preference-built-sentence"><span class="numbers-game-hanzi">${sentenceHanzi}</span>${state.showPinyin ? `<span class="numbers-game-pinyin">${sentencePinyin}</span>` : ""}${state.showEnglish ? `<span class="numbers-game-english">${sentenceEnglish}</span>` : ""}</div>
+      <div class="food-preference-built-sentence"><span class="food-preference-card-copy"><span class="numbers-game-hanzi">${sentenceHanzi}</span>${state.showPinyin ? `<span class="numbers-game-pinyin">${sentencePinyin}</span>` : ""}</span>${state.showEnglish ? `<span class="numbers-game-english food-preference-card-meta">${sentenceEnglish}</span>` : ""}</div>
     </section>
   `;
 }
@@ -939,10 +979,15 @@ function renderMealsConversationPractice(topic) {
         feedback: () => state.schoolMatchFeedback,
         wrongPhraseIds: () => state.mealsConversationWrongPhraseIds,
         wrongMeaningIds: () => state.mealsConversationWrongReplyIds,
+        phraseContent: (id) => {
+          const item = items.find((entry) => entry.id === id);
+          if (!item) return "";
+          return `<span class="meals-match-copy"><span class="numbers-game-hanzi">${item.hanzi}</span>${state.showPinyin ? `<span class="numbers-game-pinyin">${item.pinyin}</span>` : ""}</span>${state.showEnglish ? `<span class="numbers-game-english meals-match-english">${item.english}</span>` : ""}`;
+        },
         meaningContent: (id) => {
           const item = items.find((entry) => entry.id === id);
           if (!item) return "";
-          return `<span class="numbers-game-hanzi">${item.reply}</span>${state.showPinyin ? `<span class="numbers-game-pinyin">${item.replyPinyin}</span>` : ""}`;
+          return `<span class="meals-match-copy"><span class="numbers-game-hanzi">${item.reply}</span>${state.showPinyin ? `<span class="numbers-game-pinyin">${item.replyPinyin}</span>` : ""}</span>${state.showEnglish ? `<span class="numbers-game-english meals-match-english">${item.replyEnglish}</span>` : ""}`;
         }
       })}
       ${renderMealsPictureChoice()}
@@ -974,6 +1019,7 @@ function renderFoodPreferencesPractice(topic) {
   activityList.querySelectorAll("[data-food-preference-subject]").forEach((button) => button.addEventListener("click", () => handleFoodPreferenceSubject(button.dataset.foodPreferenceSubject)));
   activityList.querySelectorAll("[data-food-preference-pattern]").forEach((button) => button.addEventListener("click", () => handleFoodPreferencePattern(button.dataset.foodPreferencePattern)));
   activityList.querySelectorAll("[data-food-preference-food]").forEach((button) => button.addEventListener("click", () => handleFoodPreferenceFill(button.dataset.foodPreferenceFood)));
+  activityList.querySelector("[data-food-preference-new]")?.addEventListener("click", nextFoodPreferenceChoices);
 }
 
  function schoolWordGroups(topicId = currentTopic().id) {
@@ -1041,11 +1087,11 @@ function renderSchoolExplorer(topicId) {
       ${data.showWords !== false ? `
         <div class="time-months-heading"><p class="body-match-kicker">Book words</p></div>
         ${topicId === "food" && !scopedFoodCategoryId() ? `<div class="food-book-tabs" role="tablist" aria-label="Food word categories">${Object.entries(foodCategoryGroups).map(([id, group]) => `<button class="food-book-tab${state.foodBookCategoryId === id ? " is-active" : ""}" type="button" role="tab" aria-selected="${state.foodBookCategoryId === id}" data-food-book-category="${id}">${group.hanzi}${state.showEnglish ? `<small>${group.english}</small>` : ""}</button>`).join("")}</div>` : ""}
-        ${topicId === "meals-feelings" && visibleWordGroups.length > 1 ? `<div class="food-book-tabs lesson-word-tabs" role="tablist" aria-label="Meals and feelings word categories">${visibleWordGroups.map((group) => `<button class="food-book-tab${state.mealsWordGroupId === group.id ? " is-active" : ""}" type="button" role="tab" aria-selected="${state.mealsWordGroupId === group.id}" data-meals-word-group="${group.id}">${group.hanzi}${state.showEnglish ? `<small>${group.english}</small>` : ""}</button>`).join("")}</div>` : ""}
+        ${topicId === "meals-feelings" && visibleWordGroups.length > 1 ? `<div class="food-book-tabs lesson-word-tabs" role="tablist" aria-label="Meals and feelings word categories">${visibleWordGroups.map((group) => `<button class="food-book-tab${state.mealsWordGroupId === group.id ? " is-active" : ""}" type="button" role="tab" aria-selected="${state.mealsWordGroupId === group.id}" data-meals-word-group="${group.id}"><span>${group.hanzi}</span>${state.showEnglish ? `<span class="lesson-word-tab-divider" aria-hidden="true">·</span><small>${group.english}</small>` : ""}</button>`).join("")}</div>` : ""}
         <div class="school-word-grid${topicId === "school-subjects" ? " is-text-only" : ""}${topicId === "meals-feelings" ? " is-uniform-images" : ""}">
           ${visibleWords.map((item) => `
             <button class="school-word-card${item.imagePath ? " book-word-card" : ""}" type="button" data-school-word="${item.id}">
-              ${item.imagePath ? `<img class="school-word-image book-word-image" src="${item.imagePath}" alt="${item.english}" />` : ""}
+              ${item.imagePath ? `<img class="school-word-image book-word-image" src="${item.imagePath}" alt="${item.english}" loading="eager" decoding="async" fetchpriority="high" />` : ""}
               <span class="${item.imagePath ? "book-word-copy" : ""}"><span class="time-asset-hanzi">${item.hanzi}</span>
               ${state.showPinyin ? `<span class="time-asset-pinyin">${item.pinyin}</span>` : ""}
               ${state.showEnglish ? `<span class="time-asset-english">${item.english}</span>` : ""}</span>

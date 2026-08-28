@@ -37,7 +37,12 @@ jobs:
 
       - name: Verify pushed commit messages
         if: github.event_name == 'push' && github.event.before != '0000000000000000000000000000000000000000'
-        run: node scripts/check_relative_paths.mjs --commit-range "${{ github.event.before }}..${{ github.sha }}"
+        run: |
+          if git cat-file -e "${{ github.event.before }}^{commit}" 2>/dev/null && git merge-base --is-ancestor "${{ github.event.before }}" "${{ github.sha }}"; then
+            node scripts/check_relative_paths.mjs --commit-range "${{ github.event.before }}..${{ github.sha }}"
+          else
+            node scripts/check_relative_paths.mjs --commit-range "${{ github.sha }}^..${{ github.sha }}"
+          fi
 
       - name: Build website
         run: npm run build

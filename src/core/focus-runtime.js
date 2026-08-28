@@ -155,7 +155,7 @@ function renderFocusWordList() {
     const note = document.createElement("div");
     note.className = "greetings-note-card family-book-words-note";
     note.innerHTML = `
-      <p class="body-match-kicker">Useful note</p>
+      <p class="body-match-kicker">Notes</p>
       ${noteMarkup}
     `;
     focusWordList.appendChild(note);

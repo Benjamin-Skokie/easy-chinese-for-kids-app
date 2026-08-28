@@ -88,6 +88,22 @@ const renderMatchPractice = renderSharedLessonPractice.renderMatchPractice;
 const renderPracticeSayCards = renderSharedLessonPractice.renderPracticeSayCards;
 const bindPracticeSayCards = renderSharedLessonPractice.bindPracticeSayCards;
 
+function syncActivityPanelSummary() {
+  const isPracticePanel = activityPanelTitle.textContent.trim() === "Let's practice";
+  activityPanelSummary.hidden = isPracticePanel || !activityPanelSummary.textContent.trim();
+}
+
+if (typeof MutationObserver !== "undefined") {
+  const activityPanelSummaryObserver = new MutationObserver(syncActivityPanelSummary);
+  activityPanelSummaryObserver.observe(activityPanelTitle, { childList: true, characterData: true, subtree: true });
+  activityPanelSummaryObserver.observe(activityPanelSummary, {
+    childList: true,
+    characterData: true,
+    subtree: true
+  });
+}
+syncActivityPanelSummary();
+
 let greetingsGameItems;
 let resetGreetingsChallenge;
 let ensureGreetingsChallenge;

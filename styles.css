@@ -1724,7 +1724,7 @@ h4 {
 
 .topic-lesson-meta {
   color: #a5680b;
-  font-size: 0.72rem;
+  font-size: 0.9rem;
   font-weight: 800;
   letter-spacing: 0.04em;
   line-height: 1.2;
@@ -3208,6 +3208,7 @@ h4 {
 
 .numbers-game-note {
   color: var(--muted);
+  font-size: 1.3rem;
   margin-top: 2px;
 }
 
@@ -3569,6 +3570,22 @@ h4 {
 .lesson-practice-shell .polite-match-card {
   height: 92px;
   align-content: center;
+}
+
+.lesson-practice-shell .polite-match-card:has(.meals-match-copy) {
+  grid-template-columns: minmax(0, 1fr) minmax(5.5rem, 42%);
+  align-items: center;
+  column-gap: 12px;
+}
+
+.meals-match-copy {
+  display: grid;
+  gap: 3px;
+}
+
+.meals-match-english {
+  font-size: 1.32rem;
+  text-align: right;
 }
 
 .lesson-practice-shell .polite-match-card-meaning .match-answer-label,
@@ -3991,6 +4008,24 @@ h4 {
 
 .lesson-word-tabs {
   grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.lesson-word-tabs .food-book-tab {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+}
+
+.lesson-word-tabs .food-book-tab small {
+  color: #65715d;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.lesson-word-tabs .lesson-word-tab-divider {
+  color: currentColor;
+  font-weight: 700;
 }
 
 .school-lesson-section {
@@ -6798,7 +6833,7 @@ h4 {
 
 .food-preference-builder-columns {
   display: grid;
-  grid-template-columns: minmax(74px, 0.72fr) minmax(0, 1fr) minmax(0, 1.28fr);
+  grid-template-columns: minmax(74px, 0.72fr) minmax(0, 1fr) minmax(0, 1.5fr);
   gap: 12px;
 }
 
@@ -6808,20 +6843,50 @@ h4 {
   gap: 8px;
 }
 
+.food-preference-pattern-column {
+  grid-template-rows: auto minmax(0, 1fr);
+}
+
+.food-preference-pattern-column .food-preference-builder-list {
+  align-content: center;
+  gap: 16px;
+}
+
+.food-preference-food-options {
+  grid-template-columns: minmax(0, 1fr);
+}
+
 .food-preference-subject-choice,
 .food-preference-pattern-choice,
 .food-preference-fill-choice {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 5px;
-  min-height: 52px;
+  justify-content: space-between;
+  gap: 8px;
+  height: 68px;
+  min-height: 68px;
   padding: 8px 6px;
   border: 1px solid rgba(221, 207, 187, 0.84);
   border-radius: 8px;
   background: #fffdf8;
   color: var(--ink);
-  text-align: center;
+  text-align: left;
+}
+
+.food-preference-fill-choice {
+  min-width: 0;
+  justify-content: flex-start;
+  min-height: 68px;
+  padding: 4px 6px;
+}
+
+.food-preference-choice-image {
+  width: 2.52rem;
+  height: 2.52rem;
+  flex: 0 0 auto;
+  object-fit: contain;
+  border-radius: 5px;
+  background: rgba(248, 244, 235, 0.82);
 }
 
 .food-preference-subject-choice.is-active,
@@ -6853,13 +6918,18 @@ h4 {
 }
 
 .food-preference-card-meta {
-  display: flex;
-  flex-direction: column;
   flex: 0 1 auto;
-  justify-content: flex-start;
-  gap: 4px;
+  margin-left: auto;
   min-width: 0;
   white-space: normal;
+  text-align: right;
+}
+
+.food-preference-card-copy {
+  display: grid;
+  flex: 0 1 auto;
+  gap: 4px;
+  min-width: 0;
 }
 
 .food-preference-builder-list .numbers-game-pinyin {
@@ -6871,14 +6941,16 @@ h4 {
 }
 
 .food-preference-built-sentence {
-  display: grid;
-  gap: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
   min-height: 88px;
   padding: 14px;
   border: 1px solid rgba(221, 207, 187, 0.84);
   border-radius: 8px;
   background: #fffdf8;
-  text-align: center;
+  text-align: left;
 }
 
 .food-preference-fill-choice:hover,
@@ -7574,8 +7646,24 @@ h4 {
   text-transform: uppercase;
 }
 
-.practice-split-card .numbers-game-top .body-match-kicker {
+#activity-panel-title,
+.time-months-heading > .body-match-kicker,
+.visual-topic-notes > .body-match-kicker {
+  font-size: 1.4rem;
+}
+
+.visual-topic-notes > .body-match-kicker {
+  font-size: 0;
+}
+
+.visual-topic-notes > .body-match-kicker::after {
+  content: "Notes";
+  font-size: 1.4rem;
+}
+
+.numbers-game-top .body-match-kicker {
   font-family: var(--latin-font);
+  font-size: 1.3rem;
 }
 
 .body-match-actions {
@@ -9626,8 +9714,17 @@ h4 {
   .food-preference-subject-choice,
   .food-preference-pattern-choice,
   .food-preference-fill-choice {
-    min-height: 48px;
+    height: 62px;
+    min-height: 62px;
     padding: 6px 4px;
+  }
+
+  .food-preference-fill-choice {
+    padding-block: 2px;
+  }
+
+  .food-preference-fill-choice {
+    padding-block: 2px;
   }
 
   .topic-board {

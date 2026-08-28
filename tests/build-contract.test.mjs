@@ -535,6 +535,13 @@ test("shared lesson practice is provided by an explicit game factory", () => {
   assert.match(gameSource, /renderSharedLessonPractice\.renderPracticeSayCards = renderPracticeSayCards/);
 });
 
+test("Let's practice keeps instructions inside the game card", () => {
+  const wiringSource = readFileSync("src/app/runtime-wiring.js", "utf8");
+  assert.match(wiringSource, /function syncActivityPanelSummary\(\)[\s\S]*activityPanelTitle\.textContent\.trim\(\) === "Let's practice"/);
+  assert.match(wiringSource, /activityPanelSummary\.hidden = isPracticePanel \|\| !activityPanelSummary\.textContent\.trim\(\)/);
+  assert.match(wiringSource, /typeof MutationObserver !== "undefined"[\s\S]*activityPanelSummaryObserver\.observe\(activityPanelSummary/);
+});
+
 test("legacy bootstrap retains its shared data and audio bindings", () => {
   const legacySource = readFileSync("src/app/runtime-wiring.js", "utf8");
   const registrySource = readFileSync("src/data/topic-registry.js", "utf8");
@@ -912,6 +919,8 @@ test("meals and feelings owns its scenes and practice activities", () => {
   assert.deepEqual(mealsFeelingsTopicData.sceneGroups[0].lessonSources, ["4a:5"]);
   assert.deepEqual(mealsFeelingsTopicData.sceneGroups[1].lessonSources, ["4a:7"]);
   assert.deepEqual(mealsFeelingsSentenceBuilds.filter((item) => item.lessonSources?.includes("4a:5")).map((item) => item.id), ["lunch"]);
+  const lunchWords = mealsFeelingsTopicData.wordGroups.find((group) => group.id === "lunch").items;
+  assert.equal(new Set(lunchWords.map(([, , , , imagePath]) => imagePath)).size, lunchWords.length);
 });
 
 test("introductions owns its scenes and practice activities", () => {

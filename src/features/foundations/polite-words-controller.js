@@ -262,7 +262,7 @@ export function createPoliteWordsController({
           </div>
         </section>
         <section class="greetings-note-card polite-useful-note">
-          <p class="body-match-kicker">Useful note</p>
+          <p class="body-match-kicker">Notes</p>
           ${lesson.note}
         </section>
       </div>

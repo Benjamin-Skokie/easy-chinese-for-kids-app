@@ -116,10 +116,10 @@ const weatherDressRounds = [
 ];
 
 const weatherDressChoices = [
-  { id: "umbrella", hanzi: "雨伞", imagePath: "assets/illustrated-weather/umbrella.png", imageAlt: "A blue umbrella" },
-  { id: "knit-hat", hanzi: "帽子", imagePath: "assets/illustrated-weather/knit-hat.png", imageAlt: "A muted red knit hat" },
-  { id: "shorts", hanzi: "短裤", imagePath: "assets/illustrated-weather/shorts.png", imageAlt: "A pair of orange shorts" },
-  { id: "jacket", hanzi: "外套", imagePath: "assets/illustrated-weather/windbreaker.png", imageAlt: "A lightweight green windbreaker" }
+  { id: "umbrella", hanzi: "雨伞", imagePath: "assets/illustrated-weather/umbrella.webp", imageAlt: "A blue umbrella" },
+  { id: "knit-hat", hanzi: "帽子", imagePath: "assets/illustrated-weather/knit-hat.webp", imageAlt: "A muted red knit hat" },
+  { id: "shorts", hanzi: "短裤", imagePath: "assets/illustrated-weather/shorts.webp", imageAlt: "A pair of orange shorts" },
+  { id: "jacket", hanzi: "外套", imagePath: "assets/illustrated-weather/windbreaker.webp", imageAlt: "A lightweight green windbreaker" }
 ];
 
 const weatherFillRounds = [
