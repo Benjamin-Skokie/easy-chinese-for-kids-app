@@ -1572,6 +1572,12 @@ test("foundation state creates isolated challenge state", () => {
   assert.equal(second.greetingsChallengeOptionIds.length, 0);
 });
 
+test("advanced stroke cards wait for their local paths before rendering", () => {
+  const strokeRuntime = readFileSync("src/features/foundations/stroke-runtime.js", "utf8");
+  assert.match(strokeRuntime, /function prepareAllAdvancedStrokes\(\)/);
+  assert.match(strokeRuntime, /Preparing combination strokes[\s\S]{0,500}prepareAllAdvancedStrokes\(\)\.then\(\(\) => \{[\s\S]{0,160}renderStrokePractice\(\)/);
+});
+
 test("family owns its lesson metadata, scenes, and matching set", () => {
   assert.equal(familyTopic.id, "family");
   assert.equal(familyTopic.interactiveScene, "family-home");

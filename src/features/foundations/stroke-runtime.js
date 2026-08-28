@@ -54,6 +54,12 @@ async function prepareAdvancedStroke(stroke) {
   return stroke;
 }
 
+let advancedStrokePreparation;
+function prepareAllAdvancedStrokes() {
+  advancedStrokePreparation ??= Promise.all(advancedStrokes.map(prepareAdvancedStroke));
+  return advancedStrokePreparation;
+}
+
 const mappedPracticeRounds = new Map();
 async function prepareMappedPracticeRound(entry) {
   if (mappedPracticeRounds.has(entry.word)) return mappedPracticeRounds.get(entry.word);
@@ -62,6 +68,7 @@ async function prepareMappedPracticeRound(entry) {
     id: `csl-${entry.word}`,
     word: entry.word,
     meaning: entry.meaning,
+    meaningNote: entry.meaningNote,
     practiceStrokeIds: entry.strokeIds,
     strokes: data.paths.map((path, index) => ({ id: String(index + 1), name: `Stroke ${index + 1}`, path, median: data.medians[index] }))
   };
@@ -126,7 +133,7 @@ const basicPracticeRounds = [
     ]
   },
   {
-    id: "ding", word: "丁", meaning: "fourth", practiceStrokeIds: ["heng", "gou"],
+    id: "ding", word: "丁", meaning: "Fourth", meaningNote: "the fourth Heavenly Stem, used for traditional sequencing; also a common Chinese surname", practiceStrokeIds: ["heng", "gou"],
     strokes: [
       { id: "1", name: "横", path: "M 531 651 Q 736 675 868 663 Q 893 662 899 670 Q 906 683 894 696 Q 863 724 817 744 Q 801 750 775 740 Q 712 725 483 694 Q 185 660 168 657 Q 162 658 156 657 Q 141 657 141 645 Q 140 632 160 618 Q 178 605 211 594 Q 221 590 240 599 Q 348 629 470 644 L 531 651 Z", median: "M 153 645 L 177 634 L 219 628 L 416 663 L 794 706 L 823 702 L 887 679" },
       { id: "2", name: "竖钩", path: "M 435 100 Q 407 107 373 116 Q 360 120 361 112 Q 361 103 373 94 Q 445 39 491 -5 Q 503 -15 518 2 Q 560 60 553 141 Q 541 447 548 561 Q 548 579 550 596 Q 556 624 549 635 Q 545 642 531 651 C 509 671 457 671 470 644 Q 485 629 485 573 Q 488 443 488 148 Q 487 112 477 99 Q 464 92 435 100 Z", median: "M 478 644 L 518 610 L 518 101 L 495 55 L 450 68 L 369 110" }
@@ -224,6 +231,7 @@ export function createStrokeRuntime({ state, focusExplorer, activityPanelTitle, 
     basic: basicStrokes,
     advanced: advancedStrokes
   };
+  let announcedStrokeAnimationNonce = -1;
 
   function activeStroke(level) {
     const strokes = strokeGroups[level];
@@ -237,16 +245,19 @@ export function createStrokeRuntime({ state, focusExplorer, activityPanelTitle, 
     const isAdvanced = level === "advanced";
     const characterExample = isAdvanced ? stroke.characterExample : basicCharacterExamples[stroke.id];
     if (isAdvanced && advancedStrokes.some((item) => !item.outline)) {
-      Promise.all(advancedStrokes.map(prepareAdvancedStroke)).then(() => renderStrokeExplorer()).catch(() => {});
+      prepareAllAdvancedStrokes().then(() => {
+        renderStrokeExplorer();
+        renderStrokePractice();
+      }).catch(() => {});
     }
     const visibleTianStrokes = tianOrder.slice(0, state.strokeTianStep ?? 0);
     focusExplorer.innerHTML = `
       <section class="stroke-lab${isAdvanced ? " is-advanced" : ""}" aria-label="Chinese stroke lesson">
-        <header class="stroke-lab-header"><div><p class="body-match-kicker">Writing path</p><h3>${isAdvanced ? "组合笔画" : "基本笔画"}</h3><p>${isAdvanced ? "Learn a connected movement after the basic strokes are familiar." : "Start with the simple movements used throughout early CSL words."}</p></div><span>简体字笔顺</span></header>
+        <header class="stroke-lab-header"><div><h3>${isAdvanced ? "组合笔画" : "基本笔画"}<span class="stroke-lab-title-en"> · Writing path</span></h3><p>${isAdvanced ? "Learn a connected movement after the basic strokes are familiar." : "Start with the simple movements used throughout early CSL words."}</p></div><span>简体字笔顺</span></header>
         <nav class="stroke-level-tabs" aria-label="Stroke lesson level"><button type="button" class="${!isAdvanced ? "is-active" : ""}" data-stroke-level="basic">基本笔画<span> · Basic</span></button><button type="button" class="${isAdvanced ? "is-active" : ""}" data-stroke-level="advanced">进阶笔画<span> · Advanced</span></button></nav>
         <section class="stroke-teaching-frames"><article class="stroke-single-frame"><p class="body-match-kicker">1 · 笔画</p><svg class="stroke-player" viewBox="0 0 1024 900" aria-label="Animated ${stroke.zh} stroke"><defs><marker id="stroke-arrow-${state.strokeAnimationNonce}" viewBox="0 0 10 10" refX="8" refY="5" markerUnits="userSpaceOnUse" markerWidth="54" markerHeight="54" orient="auto-start-reverse"><path class="stroke-arrowhead" d="M 0 0 L 10 5 L 0 10 Z"/></marker><mask id="stroke-reveal-mask-${state.strokeAnimationNonce}" maskUnits="userSpaceOnUse" maskContentUnits="userSpaceOnUse" x="0" y="-80" width="1024" height="1000"><path class="stroke-reveal" d="${stroke.path}" pathLength="100"/></mask></defs><g transform="translate(0 900) scale(1 -1)"><path class="stroke-guide" d="${stroke.outline}"/><path class="stroke-demo-fill" d="${stroke.outline}" mask="url(#stroke-reveal-mask-${state.strokeAnimationNonce})" data-stroke-animation="${state.strokeAnimationNonce}"/><path class="stroke-motion" d="${stroke.path}" pathLength="100" marker-end="url(#stroke-arrow-${state.strokeAnimationNonce})"/></g></svg></article><article class="stroke-character-frame"><p class="body-match-kicker">2 · 汉字</p><svg viewBox="0 0 1024 900" aria-label="${characterExample.word}，${stroke.zh} 已高亮"><g transform="translate(0 900) scale(1 -1)">${characterExample.paths.filter((_, index) => index !== characterExample.target).map((path) => `<path class="stroke-character-path" d="${path}"/>`).join("")}<path class="stroke-character-path is-highlighted" d="${characterExample.paths[characterExample.target]}"/></g></svg><strong>${characterExample.word}</strong></article><article class="stroke-explanation-frame"><p class="body-match-kicker">3 · 怎么写</p><h4>${stroke.zh}<span> · ${stroke.en}</span></h4><p>Move <strong>${stroke.direction}</strong>.</p></article></section>
         <div class="stroke-picker" role="list" aria-label="Choose a ${isAdvanced ? "more advanced" : "basic"} stroke">${strokes.map((item) => `<button class="stroke-picker-button${item.id === stroke.id ? " is-selected" : ""}" type="button" data-stroke-id="${item.id}" aria-pressed="${item.id === stroke.id}"><svg viewBox="0 0 1024 900" aria-hidden="true"><g transform="translate(0 900) scale(1 -1)"><path d="${item.outline}"/></g></svg><span><strong>${item.zh}</strong><em>${item.pinyin}</em><small>${item.en}</small></span></button>`).join("")}</div>
-        ${!isAdvanced ? `<section class="stroke-rules"><p class="body-match-kicker">The rules children use most</p><div>${[["从上到下", "top before bottom"], ["从左到右", "left before right"], ["先横后竖", "horizontal before vertical"], ["先外后内", "outside before inside"], ["最后封口", "close the frame last"]].map(([zh, en]) => `<span><strong>${zh}</strong><small>${en}</small></span>`).join("")}</div></section>` : ""}
+        ${!isAdvanced ? `<section class="stroke-rules"><p class="body-match-kicker">The rules children use most</p><div>${[["从上到下", "top before bottom"], ["从左到右", "left before right"], ["先横后竖", "horizontal before vertical"], ["先外后内", "outside before inside"], ["最后封口", "close the frame last"]].map(([zh, en]) => `<button type="button" data-stroke-rule-audio="${zh}" aria-label="Play ${zh}"><strong>${zh}</strong><small>${en}</small></button>`).join("")}</div></section>` : ""}
       </section>
     `;
     const motionMarker = focusExplorer.querySelector(`[id^="stroke-arrow-"]`);
@@ -263,6 +274,9 @@ export function createStrokeRuntime({ state, focusExplorer, activityPanelTitle, 
       state.strokeAnimationNonce += 1;
       if (state.tapAudioEnabled) speak?.(activeStroke(level).zh, 0.7);
       renderStrokeExplorer();
+    }));
+    focusExplorer.querySelectorAll("[data-stroke-rule-audio]").forEach((button) => button.addEventListener("click", () => {
+      if (state.tapAudioEnabled) speak?.(button.dataset.strokeRuleAudio, 0.7);
     }));
     focusExplorer.querySelectorAll("[data-stroke-level]").forEach((button) => button.addEventListener("click", async () => {
       state.strokeLevel = button.dataset.strokeLevel;
@@ -283,6 +297,17 @@ export function createStrokeRuntime({ state, focusExplorer, activityPanelTitle, 
 
   function renderStrokePractice() {
     const isAdvanced = state.strokeLevel === "advanced";
+    if (isAdvanced && advancedStrokes.some((item) => !item.outline)) {
+      activityPanelTitle.textContent = "Preparing combination strokes";
+      activityPanelSummary.textContent = "Loading the local stroke paths…";
+      activityList.className = "support-list";
+      activityList.innerHTML = '<p class="empty-state">Preparing the stroke cards…</p>';
+      prepareAllAdvancedStrokes().then(() => {
+        renderStrokeExplorer();
+        renderStrokePractice();
+      }).catch(() => {});
+      return;
+    }
     const practiceRounds = isAdvanced ? advancedPracticeRounds : basicPracticeRounds;
     const mappedEntries = strokePracticeMap.filter((item) => item.strokeIds.some((id) => (isAdvanced ? advancedStrokes : basicStrokes).some((stroke) => stroke.id === id)));
     const practiceStrokeChoices = (isAdvanced ? advancedStrokes : basicStrokes).filter((stroke) => mappedEntries.some((item) => item.strokeIds.includes(stroke.id)) || practiceRounds.some((item) => item.practiceStrokeIds.includes(stroke.id)));
@@ -317,10 +342,10 @@ export function createStrokeRuntime({ state, focusExplorer, activityPanelTitle, 
       const feedbackMark = index === lastPlacedIndex ? `<i aria-label="${lastPlacementCorrect ? "Correct" : "Try again"}">${lastPlacementCorrect ? "✓" : "×"}</i>` : "";
       return `<button type="button" class="${piece ? "is-filled" : ""}${feedbackClass}" disabled><b>${index + 1}</b>${feedbackMark}${piece ? `<svg viewBox="0 0 1024 900" aria-label="${piece.name}"><g transform="translate(0 900) scale(1 -1)"><path d="${piece.path}"/></g></svg>` : "<span>?</span>"}</button>`;
     }).join("");
-    activityPanelTitle.textContent = isAdvanced ? "Choose a combination stroke, then a character" : "Choose a stroke, then a character";
-    activityPanelSummary.textContent = isAdvanced ? "Pick a connected stroke, then practise it inside a character." : "Pick the stroke you want to practise. Then choose a character containing it.";
+    activityPanelTitle.textContent = "Stroke Lab";
+    activityPanelSummary.textContent = isAdvanced ? "Choose a combination stroke, then a character." : "Choose a stroke, then a character.";
     activityList.className = "support-list";
-    activityList.innerHTML = `<section class="stroke-practice-library"><p class="body-match-kicker">1 · Choose a stroke</p><div class="stroke-practice-stroke-picker">${practiceStrokeChoices.map((stroke) => `<button type="button" class="${stroke.id === selectedStroke.id ? "is-selected" : ""}" data-practice-stroke="${stroke.id}" aria-label="${stroke.zh}"><svg viewBox="0 0 1024 900" aria-hidden="true"><g transform="translate(0 900) scale(1 -1)"><path d="${stroke.outline}"/></g></svg></button>`).join("")}</div><p class="body-match-kicker">2 · Choose a character</p><div class="stroke-practice-character-picker">${matchingRounds.map((item) => `<button type="button" class="${item.id === round.id ? "is-selected" : ""}" data-practice-character="${item.id}"><strong>${item.word}</strong><small>${item.meaning}</small></button>`).join("")}</div></section><section class="stroke-practice-card stroke-order-practice"><header><div class="stroke-practice-character">${round.word}</div><div><p class="body-match-kicker">Write this character</p><h4>${round.meaning}</h4><p>Click the stroke cards to place them in the writing order: 1, 2, 3 …</p></div></header><div class="stroke-piece-bank" aria-label="Available strokes">${availableStrokeCards}</div><div class="stroke-order-slots" aria-label="Your stroke order">${orderSlots}</div></section>`;
+    activityList.innerHTML = `<section class="stroke-practice-library"><p class="body-match-kicker">1 · Choose a stroke</p><div class="stroke-practice-stroke-picker">${practiceStrokeChoices.map((stroke) => `<button type="button" class="${stroke.id === selectedStroke.id ? "is-selected" : ""}" data-practice-stroke="${stroke.id}" aria-label="${stroke.zh}"><svg viewBox="0 0 1024 900" aria-hidden="true"><g transform="translate(0 900) scale(1 -1)"><path d="${stroke.outline}"/></g></svg></button>`).join("")}</div><p class="body-match-kicker">2 · Choose a character</p><div class="stroke-practice-character-picker">${matchingRounds.map((item) => `<button type="button" class="${item.id === round.id ? "is-selected" : ""}" data-practice-character="${item.id}" aria-label="${item.word}: ${item.meaning}"><strong>${item.word}</strong></button>`).join("")}</div></section><section class="stroke-practice-card stroke-order-practice"><header><div class="stroke-practice-character">${round.word}</div><div><p class="body-match-kicker">Write this character</p><h4>${round.meaning}${round.meaningNote ? `<span>${round.meaningNote}</span>` : ""}</h4><p>Click the stroke cards to place them in the writing order: 1, 2, 3 …</p></div></header><div class="stroke-piece-bank" aria-label="Available strokes">${availableStrokeCards}</div><div class="stroke-order-slots" aria-label="Your stroke order">${orderSlots}</div></section>`;
     const builtPieces = chosenIds.map((id) => round.strokes.find((piece) => piece.id === id)).filter(Boolean);
     activityList.querySelector(".stroke-order-slots")?.insertAdjacentHTML?.("afterend", `<section class="stroke-build-preview" aria-live="polite"><p>What you have written</p><svg viewBox="0 0 1024 900" aria-label="Current writing of ${round.word}"><g transform="translate(0 900) scale(1 -1)">${builtPieces.map((piece) => `<path d="${piece.path}"/>`).join("")}</g></svg></section>`);
     if (isCorrect) {
@@ -333,6 +358,17 @@ export function createStrokeRuntime({ state, focusExplorer, activityPanelTitle, 
         animationSlot.innerHTML = renderPracticeAnimation(round, state.strokeAnimationNonce);
         requestAnimationFrame(() => animationSlot.querySelector(".stroke-practice-animation")?.classList.add("is-playing"));
       });
+      if (announcedStrokeAnimationNonce !== state.strokeAnimationNonce) {
+        announcedStrokeAnimationNonce = state.strokeAnimationNonce;
+        const completedNonce = state.strokeAnimationNonce;
+        const animationDuration = round.strokes.length * 1050 + 50;
+        setTimeout(() => {
+          const stillComplete = state.strokePracticeChosenIds.length === round.strokes.length
+            && state.strokePracticeChosenIds.every((id, index) => id === round.strokes[index].id);
+          if (state.strokeAnimationNonce !== completedNonce || !stillComplete) return;
+          if (state.tapAudioEnabled) speak(round.word);
+        }, animationDuration);
+      }
     }
     activityList.querySelectorAll("[data-stroke-piece]").forEach((button) => button.addEventListener("click", () => {
       const isNextStroke = button.dataset.strokePiece === round.strokes[chosenIds.length]?.id;

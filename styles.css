@@ -1792,6 +1792,23 @@ h4 {
   display: none !important;
 }
 
+/* The strokes lesson supplies its English labels without the shared English classes. */
+.is-english-hidden #topic-detail .stroke-lab-header > div > p,
+.is-english-hidden #topic-detail .stroke-lab-title-en,
+.is-english-hidden #topic-detail .stroke-level-tabs button span,
+.is-english-hidden #topic-detail .stroke-explanation-frame h4 span,
+.is-english-hidden #topic-detail .stroke-explanation-frame > p:last-child,
+.is-english-hidden #topic-detail .stroke-picker-button > span small,
+.is-english-hidden #topic-detail .stroke-rules .body-match-kicker,
+.is-english-hidden #topic-detail .stroke-rules small,
+.is-english-hidden #topic-detail .stroke-practice-library .body-match-kicker,
+.is-english-hidden #topic-detail .stroke-order-practice .body-match-kicker,
+.is-english-hidden #topic-detail .stroke-order-practice h4 span,
+.is-english-hidden #topic-detail .stroke-order-practice header p:last-child,
+.is-english-hidden #topic-detail .stroke-build-preview p {
+  display: none !important;
+}
+
 .focus-card {
   margin-top: 18px;
   padding: 22px;
@@ -2323,6 +2340,14 @@ h4 {
   background: rgba(255, 255, 255, 0.72);
 }
 
+/* Keep English guidance comfortably readable throughout the strokes lesson. */
+.stroke-lab,
+.stroke-practice-library,
+.stroke-order-practice,
+.stroke-build-preview {
+  --stroke-english-min-size: 1.5rem;
+}
+
 .stroke-player {
   width: 100%;
   aspect-ratio: 1;
@@ -2372,8 +2397,8 @@ h4 {
 .stroke-character-path { fill: #b9c6c4; }
 .stroke-character-path.is-highlighted { fill: #be5b49; }
 .stroke-explanation-frame h4 { margin: 0; color: #316a75; font-family: var(--hanzi-font); font-size: 2.1rem; }
-.stroke-explanation-frame h4 span { font-family: var(--body-font); font-size: 1.05rem; font-weight: 700; }
-.stroke-explanation-frame p { margin: 0; }
+.stroke-explanation-frame h4 span { font-family: var(--body-font); font-size: var(--stroke-english-min-size); font-weight: 700; }
+.stroke-explanation-frame p { margin: 0; font-size: var(--stroke-english-min-size); }
 .stroke-explanation-frame small { color: var(--muted); }
 
 .stroke-guide {
@@ -2458,18 +2483,18 @@ h4 {
 
 .stroke-picker-button {
   display: grid;
-  grid-template-columns: 46px 1fr;
+  grid-template-columns: 58px 1fr;
   align-items: center;
   gap: 8px;
   text-align: left;
 }
-.stroke-picker-button svg { width: 44px; height: 44px; }
+.stroke-picker-button svg { width: 57px; height: 57px; }
 .stroke-picker-button svg path { fill: #316a75; }
 .stroke-picker-button > span { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0 6px; }
 .stroke-picker-button > span strong { font-size: 1.48rem; }
-.stroke-picker-button em { color: #7d7162; font-size: 1.08rem; font-style: normal; }
+.stroke-picker-button em { color: #7d7162; font-size: var(--stroke-english-min-size); font-style: normal; }
 .stroke-picker-button em::before { content: "· "; }
-.stroke-picker-button > span small { width: 100%; margin-top: 2px; font-size: 1.03rem; }
+.stroke-picker-button > span small { width: 100%; margin-top: 2px; font-size: var(--stroke-english-min-size); }
 
 .stroke-rules {
   display: grid;
@@ -2482,15 +2507,60 @@ h4 {
   gap: 8px;
 }
 
-.stroke-rules span {
+.stroke-rules button {
   display: grid;
   gap: 3px;
   padding: 10px;
+  border: 1px solid transparent;
   border-radius: 12px;
+  color: var(--ink);
   background: rgba(226, 242, 242, 0.74);
+  cursor: pointer;
+  text-align: left;
 }
 
-.stroke-rules strong { color: #316a75; }
+.stroke-rules button:hover,
+.stroke-rules button:focus-visible {
+  border-color: #316a75;
+  background: #dff1ed;
+}
+
+.stroke-rules strong { color: #316a75; font-family: var(--hanzi-font); font-size: 1.5rem; }
+.stroke-rules small { font-size: var(--stroke-english-min-size); }
+
+.stroke-lab .body-match-kicker,
+.stroke-practice-library .body-match-kicker,
+.stroke-order-practice .body-match-kicker {
+  font-size: var(--stroke-english-min-size);
+}
+
+.stroke-lab-header > div > p:last-child,
+.stroke-level-tabs button {
+  font-size: var(--stroke-english-min-size);
+}
+
+.stroke-lab-header h3 {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.35rem;
+  color: var(--berry-dark);
+  font-family: var(--hanzi-font);
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+
+.stroke-lab-title-en {
+  color: inherit;
+  font-family: var(--latin-font);
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+#topic-detail:has(.stroke-lab) #activity-panel-title,
+#topic-detail:has(.stroke-lab) #activity-panel-summary {
+  font-size: 1.5rem;
+}
 
 .stroke-csl-anchor {
   display: grid;
@@ -2633,7 +2703,7 @@ h4 {
 .stroke-practice-stroke-picker button { display: grid; width: 88px; height: 68px; place-items: center; padding: 7px; }
 .stroke-practice-stroke-picker svg { width: 100%; height: 100%; }
 .stroke-practice-stroke-picker path { fill: #316a75; }
-.stroke-practice-character-picker button { display: grid; grid-template-columns: auto auto; min-width: 88px; min-height: 64px; gap: 7px; align-items: center; padding: 9px 13px; }
+.stroke-practice-character-picker button { display: grid; grid-template-columns: 1fr; min-width: 76px; min-height: 64px; place-items: center; padding: 9px 13px; }
 .stroke-practice-character-picker strong { font-family: var(--hanzi-font); font-size: 2.05rem; line-height: 1; }
 .stroke-practice-character-picker small { color: var(--muted); }
 .stroke-practice-stroke-picker button:hover,
@@ -2662,9 +2732,9 @@ h4 {
 
 .stroke-order-practice { gap: 18px; }
 .stroke-order-practice header { display: flex; gap: 18px; align-items: center; }
-.stroke-order-practice h4 { margin: 0; color: #316a75; font-family: var(--hanzi-font); font-size: 2rem; }
-.stroke-order-practice h4 span { font-family: var(--body-font); font-size: 1rem; }
-.stroke-order-practice header p:last-child { margin: 4px 0 0; color: var(--muted); }
+.stroke-order-practice h4 { display: flex; flex-wrap: wrap; align-items: baseline; gap: 9px; margin: 0; color: #316a75; font-family: var(--body-font); font-size: 1.55rem; }
+.stroke-order-practice h4 span { color: var(--muted); font-family: var(--body-font); font-size: var(--stroke-english-min-size); font-weight: 500; }
+.stroke-order-practice header p:last-child { margin: 4px 0 0; color: var(--muted); font-size: var(--stroke-english-min-size); }
 .stroke-order-slots,
 .stroke-piece-bank { display: grid; grid-template-columns: repeat(auto-fit, minmax(110px, 146px)); justify-content: start; gap: 9px; }
 .stroke-order-slots button,
@@ -2686,7 +2756,7 @@ h4 {
 .stroke-piece-bank button.is-last-wrong i { background: #cf594d; }
 
 .stroke-build-preview { display: grid; grid-template-columns: 116px 1fr; align-items: center; gap: 12px; margin-top: 14px; padding: 10px 14px; border-radius: 16px; background: #f7fbfa; }
-.stroke-build-preview p { margin: 0; color: #7d7162; font-size: .85rem; font-weight: 700; }
+.stroke-build-preview p { margin: 0; color: #7d7162; font-size: var(--stroke-english-min-size); font-weight: 700; }
 .stroke-build-preview svg { width: 104px; height: 94px; grid-column: 2; }
 .stroke-build-preview path { fill: #316a75; }
 .stroke-piece-bank button { display: grid; min-height: 0; aspect-ratio: 1; padding: 0; border: 0; border-radius: 0; background: transparent; }

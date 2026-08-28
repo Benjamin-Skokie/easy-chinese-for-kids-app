@@ -11466,7 +11466,7 @@
     { word: "\u4E0B", meaning: "down", primaryStroke: "shu", strokeIds: ["heng", "shu"] },
     { word: "\u6C34", meaning: "water", primaryStroke: "na", strokeIds: ["shu", "heng", "pie", "na"] },
     { word: "\u5C0F", meaning: "small", primaryStroke: "gou", strokeIds: ["gou", "dian", "pie"] },
-    { word: "\u4E01", meaning: "fourth", primaryStroke: "gou", strokeIds: ["heng", "gou"] },
+    { word: "\u4E01", meaning: "Fourth", primaryStroke: "gou", strokeIds: ["heng", "gou"] },
     { word: "\u4E2D", meaning: "middle", primaryStroke: "shu", strokeIds: ["heng", "shu", "zhe"] },
     { word: "\u5B57", meaning: "character", primaryStroke: "wan-gou", strokeIds: ["wan-gou"] },
     { word: "\u4E48", meaning: "question ending", primaryStroke: "pie-zhe", strokeIds: ["pie-zhe"] },
@@ -11529,6 +11529,11 @@
     });
     return stroke;
   }
+  var advancedStrokePreparation;
+  function prepareAllAdvancedStrokes() {
+    advancedStrokePreparation ?? (advancedStrokePreparation = Promise.all(advancedStrokes.map(prepareAdvancedStroke)));
+    return advancedStrokePreparation;
+  }
   var mappedPracticeRounds = /* @__PURE__ */ new Map();
   async function prepareMappedPracticeRound(entry) {
     if (mappedPracticeRounds.has(entry.word)) return mappedPracticeRounds.get(entry.word);
@@ -11537,6 +11542,7 @@
       id: `csl-${entry.word}`,
       word: entry.word,
       meaning: entry.meaning,
+      meaningNote: entry.meaningNote,
       practiceStrokeIds: entry.strokeIds,
       strokes: data.paths.map((path, index) => ({ id: String(index + 1), name: `Stroke ${index + 1}`, path, median: data.medians[index] }))
     };
@@ -11585,7 +11591,8 @@
     {
       id: "ding",
       word: "\u4E01",
-      meaning: "fourth",
+      meaning: "Fourth",
+      meaningNote: "the fourth Heavenly Stem, used for traditional sequencing; also a common Chinese surname",
       practiceStrokeIds: ["heng", "gou"],
       strokes: [
         { id: "1", name: "\u6A2A", path: "M 531 651 Q 736 675 868 663 Q 893 662 899 670 Q 906 683 894 696 Q 863 724 817 744 Q 801 750 775 740 Q 712 725 483 694 Q 185 660 168 657 Q 162 658 156 657 Q 141 657 141 645 Q 140 632 160 618 Q 178 605 211 594 Q 221 590 240 599 Q 348 629 470 644 L 531 651 Z", median: "M 153 645 L 177 634 L 219 628 L 416 663 L 794 706 L 823 702 L 887 679" },
@@ -11705,6 +11712,7 @@
       basic: basicStrokes,
       advanced: advancedStrokes
     };
+    let announcedStrokeAnimationNonce = -1;
     function activeStroke(level) {
       const strokes = strokeGroups[level];
       return strokes.find((stroke) => stroke.id === state2.strokeId) ?? strokes[0];
@@ -11716,17 +11724,20 @@
       const isAdvanced = level === "advanced";
       const characterExample = isAdvanced ? stroke.characterExample : basicCharacterExamples[stroke.id];
       if (isAdvanced && advancedStrokes.some((item) => !item.outline)) {
-        Promise.all(advancedStrokes.map(prepareAdvancedStroke)).then(() => renderStrokeExplorer()).catch(() => {
+        prepareAllAdvancedStrokes().then(() => {
+          renderStrokeExplorer();
+          renderStrokePractice();
+        }).catch(() => {
         });
       }
       const visibleTianStrokes = tianOrder.slice(0, state2.strokeTianStep ?? 0);
       focusExplorer2.innerHTML = `
       <section class="stroke-lab${isAdvanced ? " is-advanced" : ""}" aria-label="Chinese stroke lesson">
-        <header class="stroke-lab-header"><div><p class="body-match-kicker">Writing path</p><h3>${isAdvanced ? "\u7EC4\u5408\u7B14\u753B" : "\u57FA\u672C\u7B14\u753B"}</h3><p>${isAdvanced ? "Learn a connected movement after the basic strokes are familiar." : "Start with the simple movements used throughout early CSL words."}</p></div><span>\u7B80\u4F53\u5B57\u7B14\u987A</span></header>
+        <header class="stroke-lab-header"><div><h3>${isAdvanced ? "\u7EC4\u5408\u7B14\u753B" : "\u57FA\u672C\u7B14\u753B"}<span class="stroke-lab-title-en"> \xB7 Writing path</span></h3><p>${isAdvanced ? "Learn a connected movement after the basic strokes are familiar." : "Start with the simple movements used throughout early CSL words."}</p></div><span>\u7B80\u4F53\u5B57\u7B14\u987A</span></header>
         <nav class="stroke-level-tabs" aria-label="Stroke lesson level"><button type="button" class="${!isAdvanced ? "is-active" : ""}" data-stroke-level="basic">\u57FA\u672C\u7B14\u753B<span> \xB7 Basic</span></button><button type="button" class="${isAdvanced ? "is-active" : ""}" data-stroke-level="advanced">\u8FDB\u9636\u7B14\u753B<span> \xB7 Advanced</span></button></nav>
         <section class="stroke-teaching-frames"><article class="stroke-single-frame"><p class="body-match-kicker">1 \xB7 \u7B14\u753B</p><svg class="stroke-player" viewBox="0 0 1024 900" aria-label="Animated ${stroke.zh} stroke"><defs><marker id="stroke-arrow-${state2.strokeAnimationNonce}" viewBox="0 0 10 10" refX="8" refY="5" markerUnits="userSpaceOnUse" markerWidth="54" markerHeight="54" orient="auto-start-reverse"><path class="stroke-arrowhead" d="M 0 0 L 10 5 L 0 10 Z"/></marker><mask id="stroke-reveal-mask-${state2.strokeAnimationNonce}" maskUnits="userSpaceOnUse" maskContentUnits="userSpaceOnUse" x="0" y="-80" width="1024" height="1000"><path class="stroke-reveal" d="${stroke.path}" pathLength="100"/></mask></defs><g transform="translate(0 900) scale(1 -1)"><path class="stroke-guide" d="${stroke.outline}"/><path class="stroke-demo-fill" d="${stroke.outline}" mask="url(#stroke-reveal-mask-${state2.strokeAnimationNonce})" data-stroke-animation="${state2.strokeAnimationNonce}"/><path class="stroke-motion" d="${stroke.path}" pathLength="100" marker-end="url(#stroke-arrow-${state2.strokeAnimationNonce})"/></g></svg></article><article class="stroke-character-frame"><p class="body-match-kicker">2 \xB7 \u6C49\u5B57</p><svg viewBox="0 0 1024 900" aria-label="${characterExample.word}\uFF0C${stroke.zh} \u5DF2\u9AD8\u4EAE"><g transform="translate(0 900) scale(1 -1)">${characterExample.paths.filter((_, index) => index !== characterExample.target).map((path) => `<path class="stroke-character-path" d="${path}"/>`).join("")}<path class="stroke-character-path is-highlighted" d="${characterExample.paths[characterExample.target]}"/></g></svg><strong>${characterExample.word}</strong></article><article class="stroke-explanation-frame"><p class="body-match-kicker">3 \xB7 \u600E\u4E48\u5199</p><h4>${stroke.zh}<span> \xB7 ${stroke.en}</span></h4><p>Move <strong>${stroke.direction}</strong>.</p></article></section>
         <div class="stroke-picker" role="list" aria-label="Choose a ${isAdvanced ? "more advanced" : "basic"} stroke">${strokes.map((item) => `<button class="stroke-picker-button${item.id === stroke.id ? " is-selected" : ""}" type="button" data-stroke-id="${item.id}" aria-pressed="${item.id === stroke.id}"><svg viewBox="0 0 1024 900" aria-hidden="true"><g transform="translate(0 900) scale(1 -1)"><path d="${item.outline}"/></g></svg><span><strong>${item.zh}</strong><em>${item.pinyin}</em><small>${item.en}</small></span></button>`).join("")}</div>
-        ${!isAdvanced ? `<section class="stroke-rules"><p class="body-match-kicker">The rules children use most</p><div>${[["\u4ECE\u4E0A\u5230\u4E0B", "top before bottom"], ["\u4ECE\u5DE6\u5230\u53F3", "left before right"], ["\u5148\u6A2A\u540E\u7AD6", "horizontal before vertical"], ["\u5148\u5916\u540E\u5185", "outside before inside"], ["\u6700\u540E\u5C01\u53E3", "close the frame last"]].map(([zh, en]) => `<span><strong>${zh}</strong><small>${en}</small></span>`).join("")}</div></section>` : ""}
+        ${!isAdvanced ? `<section class="stroke-rules"><p class="body-match-kicker">The rules children use most</p><div>${[["\u4ECE\u4E0A\u5230\u4E0B", "top before bottom"], ["\u4ECE\u5DE6\u5230\u53F3", "left before right"], ["\u5148\u6A2A\u540E\u7AD6", "horizontal before vertical"], ["\u5148\u5916\u540E\u5185", "outside before inside"], ["\u6700\u540E\u5C01\u53E3", "close the frame last"]].map(([zh, en]) => `<button type="button" data-stroke-rule-audio="${zh}" aria-label="Play ${zh}"><strong>${zh}</strong><small>${en}</small></button>`).join("")}</div></section>` : ""}
       </section>
     `;
       const motionMarker = focusExplorer2.querySelector(`[id^="stroke-arrow-"]`);
@@ -11750,6 +11761,9 @@
         if (state2.tapAudioEnabled) speak2?.(activeStroke(level).zh, 0.7);
         renderStrokeExplorer();
       }));
+      focusExplorer2.querySelectorAll("[data-stroke-rule-audio]").forEach((button) => button.addEventListener("click", () => {
+        if (state2.tapAudioEnabled) speak2?.(button.dataset.strokeRuleAudio, 0.7);
+      }));
       focusExplorer2.querySelectorAll("[data-stroke-level]").forEach((button) => button.addEventListener("click", async () => {
         state2.strokeLevel = button.dataset.strokeLevel;
         state2.strokeId = strokeGroups[state2.strokeLevel][0].id;
@@ -11768,6 +11782,18 @@
     }
     function renderStrokePractice() {
       const isAdvanced = state2.strokeLevel === "advanced";
+      if (isAdvanced && advancedStrokes.some((item) => !item.outline)) {
+        activityPanelTitle2.textContent = "Preparing combination strokes";
+        activityPanelSummary2.textContent = "Loading the local stroke paths\u2026";
+        activityList2.className = "support-list";
+        activityList2.innerHTML = '<p class="empty-state">Preparing the stroke cards\u2026</p>';
+        prepareAllAdvancedStrokes().then(() => {
+          renderStrokeExplorer();
+          renderStrokePractice();
+        }).catch(() => {
+        });
+        return;
+      }
       const practiceRounds = isAdvanced ? advancedPracticeRounds : basicPracticeRounds;
       const mappedEntries = strokePracticeMap.filter((item) => item.strokeIds.some((id) => (isAdvanced ? advancedStrokes : basicStrokes).some((stroke) => stroke.id === id)));
       const practiceStrokeChoices = (isAdvanced ? advancedStrokes : basicStrokes).filter((stroke) => mappedEntries.some((item) => item.strokeIds.includes(stroke.id)) || practiceRounds.some((item) => item.practiceStrokeIds.includes(stroke.id)));
@@ -11803,10 +11829,10 @@
         const feedbackMark = index === lastPlacedIndex ? `<i aria-label="${lastPlacementCorrect ? "Correct" : "Try again"}">${lastPlacementCorrect ? "\u2713" : "\xD7"}</i>` : "";
         return `<button type="button" class="${piece ? "is-filled" : ""}${feedbackClass}" disabled><b>${index + 1}</b>${feedbackMark}${piece ? `<svg viewBox="0 0 1024 900" aria-label="${piece.name}"><g transform="translate(0 900) scale(1 -1)"><path d="${piece.path}"/></g></svg>` : "<span>?</span>"}</button>`;
       }).join("");
-      activityPanelTitle2.textContent = isAdvanced ? "Choose a combination stroke, then a character" : "Choose a stroke, then a character";
-      activityPanelSummary2.textContent = isAdvanced ? "Pick a connected stroke, then practise it inside a character." : "Pick the stroke you want to practise. Then choose a character containing it.";
+      activityPanelTitle2.textContent = "Stroke Lab";
+      activityPanelSummary2.textContent = isAdvanced ? "Choose a combination stroke, then a character." : "Choose a stroke, then a character.";
       activityList2.className = "support-list";
-      activityList2.innerHTML = `<section class="stroke-practice-library"><p class="body-match-kicker">1 \xB7 Choose a stroke</p><div class="stroke-practice-stroke-picker">${practiceStrokeChoices.map((stroke) => `<button type="button" class="${stroke.id === selectedStroke.id ? "is-selected" : ""}" data-practice-stroke="${stroke.id}" aria-label="${stroke.zh}"><svg viewBox="0 0 1024 900" aria-hidden="true"><g transform="translate(0 900) scale(1 -1)"><path d="${stroke.outline}"/></g></svg></button>`).join("")}</div><p class="body-match-kicker">2 \xB7 Choose a character</p><div class="stroke-practice-character-picker">${matchingRounds.map((item) => `<button type="button" class="${item.id === round.id ? "is-selected" : ""}" data-practice-character="${item.id}"><strong>${item.word}</strong><small>${item.meaning}</small></button>`).join("")}</div></section><section class="stroke-practice-card stroke-order-practice"><header><div class="stroke-practice-character">${round.word}</div><div><p class="body-match-kicker">Write this character</p><h4>${round.meaning}</h4><p>Click the stroke cards to place them in the writing order: 1, 2, 3 \u2026</p></div></header><div class="stroke-piece-bank" aria-label="Available strokes">${availableStrokeCards}</div><div class="stroke-order-slots" aria-label="Your stroke order">${orderSlots}</div></section>`;
+      activityList2.innerHTML = `<section class="stroke-practice-library"><p class="body-match-kicker">1 \xB7 Choose a stroke</p><div class="stroke-practice-stroke-picker">${practiceStrokeChoices.map((stroke) => `<button type="button" class="${stroke.id === selectedStroke.id ? "is-selected" : ""}" data-practice-stroke="${stroke.id}" aria-label="${stroke.zh}"><svg viewBox="0 0 1024 900" aria-hidden="true"><g transform="translate(0 900) scale(1 -1)"><path d="${stroke.outline}"/></g></svg></button>`).join("")}</div><p class="body-match-kicker">2 \xB7 Choose a character</p><div class="stroke-practice-character-picker">${matchingRounds.map((item) => `<button type="button" class="${item.id === round.id ? "is-selected" : ""}" data-practice-character="${item.id}" aria-label="${item.word}: ${item.meaning}"><strong>${item.word}</strong></button>`).join("")}</div></section><section class="stroke-practice-card stroke-order-practice"><header><div class="stroke-practice-character">${round.word}</div><div><p class="body-match-kicker">Write this character</p><h4>${round.meaning}${round.meaningNote ? `<span>${round.meaningNote}</span>` : ""}</h4><p>Click the stroke cards to place them in the writing order: 1, 2, 3 \u2026</p></div></header><div class="stroke-piece-bank" aria-label="Available strokes">${availableStrokeCards}</div><div class="stroke-order-slots" aria-label="Your stroke order">${orderSlots}</div></section>`;
       const builtPieces = chosenIds.map((id) => round.strokes.find((piece) => piece.id === id)).filter(Boolean);
       activityList2.querySelector(".stroke-order-slots")?.insertAdjacentHTML?.("afterend", `<section class="stroke-build-preview" aria-live="polite"><p>What you have written</p><svg viewBox="0 0 1024 900" aria-label="Current writing of ${round.word}"><g transform="translate(0 900) scale(1 -1)">${builtPieces.map((piece) => `<path d="${piece.path}"/>`).join("")}</g></svg></section>`);
       if (isCorrect) {
@@ -11819,6 +11845,16 @@
           animationSlot.innerHTML = renderPracticeAnimation(round, state2.strokeAnimationNonce);
           requestAnimationFrame(() => animationSlot.querySelector(".stroke-practice-animation")?.classList.add("is-playing"));
         });
+        if (announcedStrokeAnimationNonce !== state2.strokeAnimationNonce) {
+          announcedStrokeAnimationNonce = state2.strokeAnimationNonce;
+          const completedNonce = state2.strokeAnimationNonce;
+          const animationDuration = round.strokes.length * 1050 + 50;
+          setTimeout(() => {
+            const stillComplete = state2.strokePracticeChosenIds.length === round.strokes.length && state2.strokePracticeChosenIds.every((id, index) => id === round.strokes[index].id);
+            if (state2.strokeAnimationNonce !== completedNonce || !stillComplete) return;
+            if (state2.tapAudioEnabled) speak2(round.word);
+          }, animationDuration);
+        }
       }
       activityList2.querySelectorAll("[data-stroke-piece]").forEach((button) => button.addEventListener("click", () => {
         const isNextStroke = button.dataset.strokePiece === round.strokes[chosenIds.length]?.id;

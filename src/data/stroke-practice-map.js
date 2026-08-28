@@ -18,7 +18,7 @@ export const strokePracticeMap = [
   { word: "下", meaning: "down", primaryStroke: "shu", strokeIds: ["heng", "shu"] },
   { word: "水", meaning: "water", primaryStroke: "na", strokeIds: ["shu", "heng", "pie", "na"] },
   { word: "小", meaning: "small", primaryStroke: "gou", strokeIds: ["gou", "dian", "pie"] },
-  { word: "丁", meaning: "fourth", primaryStroke: "gou", strokeIds: ["heng", "gou"] },
+  { word: "丁", meaning: "Fourth", primaryStroke: "gou", strokeIds: ["heng", "gou"] },
   { word: "中", meaning: "middle", primaryStroke: "shu", strokeIds: ["heng", "shu", "zhe"] },
   { word: "字", meaning: "character", primaryStroke: "wan-gou", strokeIds: ["wan-gou"] },
   { word: "么", meaning: "question ending", primaryStroke: "pie-zhe", strokeIds: ["pie-zhe"] },
