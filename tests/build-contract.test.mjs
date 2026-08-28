@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import { spawnSync } from "node:child_process";
-import { existsSync, readFileSync, readdirSync } from "node:fs";
+import { existsSync, readFileSync, readdirSync, statSync } from "node:fs";
 import { join, normalize } from "node:path";
 import test from "node:test";
 import { createAudioService } from "../src/core/audio.js";
@@ -295,6 +295,36 @@ test("Culture book image references are present and committed for GitHub Pages",
       const tracked = spawnSync("git", ["ls-files", "--error-unmatch", assetPath], { encoding: "utf8" });
       assert.equal(tracked.status, 0, `${pagePath} references an image not committed for GitHub Pages: ${assetUrl}`);
     }
+  }
+});
+
+test("deployed raster images stay within the site-wide asset budget", () => {
+  const tracked = spawnSync("git", ["ls-files", "--", "*.webp", "*.png"], { encoding: "utf8" });
+  assert.equal(tracked.status, 0);
+  const deployedImages = tracked.stdout
+    .split("\n")
+    .filter(Boolean)
+    .filter((file) => existsSync(file))
+    .filter((file) => (
+      (file.startsWith("assets/") && !file.startsWith("assets/_png-archive/"))
+      || (file.startsWith("culture/")
+        && !file.startsWith("culture/content/")
+        && !file.startsWith("culture/experiments/"))
+    ));
+
+  const pngs = deployedImages.filter((file) => file.endsWith(".png"));
+  assert.deepEqual(pngs, [], "PNG files belong in the excluded archive, not the deployed site");
+
+  for (const file of deployedImages.filter((item) => item.endsWith(".webp"))) {
+    assert.ok(statSync(file).size <= 120 * 1024, `${file} exceeds the 120 KB deployed image budget`);
+  }
+
+  const singleFoodItems = deployedImages.filter((file) => (
+    file.startsWith("assets/illustrated-food/")
+    && !["assets/illustrated-food/game-shopping-cart.webp", "assets/illustrated-food/fruit-group-1b-core.webp"].includes(file)
+  ));
+  for (const file of singleFoodItems) {
+    assert.ok(statSync(file).size <= 40 * 1024, `${file} exceeds the 40 KB single-item image budget`);
   }
 });
 
@@ -649,7 +679,8 @@ test("shared lesson practice dispatch is separated from the legacy bootstrap", (
   const runtimeSource = readFileSync("src/core/lesson-practice-runtime.js", "utf8");
   assert.match(legacySource, /createLessonPracticeRuntime\(\{/);
   assert.doesNotMatch(legacySource, /function sharedLessonPracticeConfig\(/);
-  assert.match(legacySource, /return lessonPracticeRuntime\?\.renderActivityPanel\(topic\)/);
+  assert.match(legacySource, /const result = lessonPracticeRuntime\?\.renderActivityPanel\(topic\);[\s\S]{0,120}applyImageLoading\(activityList\);[\s\S]{0,120}return result;/);
+  assert.match(legacySource, /applyImageLoading\(focusExplorer, \{ primary: true \}\)/);
   assert.match(runtimeSource, /export function createLessonPracticeRuntime/);
   assert.match(runtimeSource, /function sharedLessonPracticeConfig\(/);
   assert.match(runtimeSource, /function renderActivityPanel\(/);

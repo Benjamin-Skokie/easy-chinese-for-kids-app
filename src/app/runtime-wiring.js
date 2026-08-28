@@ -8,6 +8,7 @@ import { createTopicDetailRuntime } from "../core/topic-detail-runtime.js";
 import { createFocusExplorerRuntime } from "../core/focus-explorer-runtime.js";
 import { createNavigationRuntime } from "../core/navigation-runtime.js";
 import { bindViewNavigationEvents } from "../core/view-navigation-events.js";
+import { applyImageLoading } from "../core/image-loading.js";
 import { lessonScopeFromLocation, topicIdFromLocation, topicPageUrl, viewFromLocation } from "../core/router.js";
 import { timeDateWeekItems } from "../features/time-daily-life/weekdays.js";
 import { timeAdvancedBookWords, timeDateClockItems, timeDateExpressionItems, timeDateRoutineItems, timeRoutineBookWords, timeRoutineSentenceBuilds } from "../features/time-daily-life/time.js";
@@ -178,10 +179,14 @@ let renderSchoolExplorer;
 
 let focusExplorerRuntime;
 function renderDefaultExplorer() {
-  return focusExplorerRuntime?.renderDefaultExplorer();
+  const result = focusExplorerRuntime?.renderDefaultExplorer();
+  applyImageLoading(focusExplorer, { primary: true });
+  return result;
 }
 function renderFocusExplorer() {
-  return focusExplorerRuntime?.renderFocusExplorer();
+  const result = focusExplorerRuntime?.renderFocusExplorer();
+  applyImageLoading(focusExplorer, { primary: true });
+  return result;
 }
 
 let foundationsRuntime;
@@ -218,7 +223,9 @@ bindGlobalDisplayControls();
 
 let lessonPracticeRuntime;
 function renderActivityPanel(topic) {
-  return lessonPracticeRuntime?.renderActivityPanel(topic);
+  const result = lessonPracticeRuntime?.renderActivityPanel(topic);
+  applyImageLoading(activityList);
+  return result;
 }
 
 let topicDetailRuntime;

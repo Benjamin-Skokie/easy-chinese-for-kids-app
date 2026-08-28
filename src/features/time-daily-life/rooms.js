@@ -24,7 +24,7 @@ export const roomVisualItems = [
     ["钢琴", "gāng qín", "piano", "piano_anchor.webp", "assets/illustrated-school-anchors"],
     ["沙发", "shā fa", "sofa", "sofa.webp", "assets/illustrated-furniture"],
     ["电视柜", "diàn shì guì", "TV stand", "tv-stand.webp", "assets/illustrated-furniture"],
-    ["自行车", "zì xíng chē", "bicycle", "bicycle.png", "assets/illustrated-rooms"]
+    ["自行车", "zì xíng chē", "bicycle", "bicycle.webp", "assets/illustrated-rooms"]
   ].map(([hanzi, pinyin, english, file, folder]) => ({ id: hanzi, hanzi, pinyin, english, audio: hanzi, imagePath: `${folder}/${file}` }));
 
 export const roomScenes = [

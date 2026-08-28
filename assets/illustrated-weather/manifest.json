@@ -28,7 +28,7 @@
       "hanzi": "雨伞",
       "pinyin": "yǔ sǎn",
       "theme": "A standalone umbrella for weather-readiness practice",
-      "file": "umbrella.png"
+      "file": "umbrella.webp"
     },
     {
       "id": "knit-hat",
@@ -36,7 +36,7 @@
       "hanzi": "帽子",
       "pinyin": "mào zi",
       "theme": "A standalone muted red wool hat for cold-weather practice",
-      "file": "knit-hat.png"
+      "file": "knit-hat.webp"
     },
     {
       "id": "shorts",
@@ -44,7 +44,7 @@
       "hanzi": "短裤",
       "pinyin": "duǎn kù",
       "theme": "A standalone pair of shorts for hot-weather practice",
-      "file": "shorts.png"
+      "file": "shorts.webp"
     },
     {
       "id": "windbreaker",
@@ -52,7 +52,7 @@
       "hanzi": "外套",
       "pinyin": "wài tào",
       "theme": "A lightweight windbreaker for windy-weather practice, distinct from rain gear and a winter coat",
-      "file": "windbreaker.png"
+      "file": "windbreaker.webp"
     },
     {
       "id": "snowy-cold",

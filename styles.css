@@ -2815,7 +2815,7 @@ h4 {
 .pictograph-reveal-button { padding: 13px 16px; border: 0; border-radius: 14px; color: #fff; background: #e3704f; box-shadow: 0 4px 0 #bd563b; cursor: pointer; font: inherit; font-weight: 800; }.pictograph-character-reveal { display: grid; grid-template-columns: 72px 1fr auto; align-items: center; gap: 12px; padding: 13px; border-radius: 16px; background: #edf8fb; }.pictograph-character-svg { width: 66px; height: 66px; }.pictograph-character-svg path { fill: #276b78; }.pictograph-character-loading { width: 62px; height: 62px; border-radius: 14px; background: linear-gradient(90deg, #dbeef0, #f8fdfd, #dbeef0); background-size: 220% 100%; animation: pictograph-loading 1s linear infinite; }.pictograph-character-reveal p { margin: 0; color: #456b72; }.pictograph-book-footer { margin: 0; color: #597279; font-size: .95rem; text-align: center; }
 .pictograph-character-explainer { display: grid; grid-template-columns: minmax(180px, .9fr) minmax(0, 1.1fr); align-items: center; gap: 16px; }.pictograph-big-character { display: grid; min-height: 240px; place-items: center; border-radius: 18px; background: #e6f5f7; }.pictograph-big-character .pictograph-character-svg { width: min(250px, 82%); height: 250px; }.pictograph-big-character .pictograph-character-loading { width: 140px; height: 180px; }.pictograph-river-connection { display: grid; gap: 12px; padding: 18px; border-radius: 16px; background: #edf8fb; }.pictograph-river-connection p { margin: 0; color: #456b72; }
 .pictograph-evolution-strip { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }.pictograph-evolution-card { display: grid; align-content: start; gap: 7px; min-width: 0; }.pictograph-stage-art { position: relative; display: grid; aspect-ratio: 1; place-items: center; overflow: hidden; border: 1px solid #c6dde0; border-radius: 18px; background: #f7fcfd; }.pictograph-stage-art > img { width: 100%; height: 100%; object-fit: cover; }.pictograph-glyph-stage { color: #285b69; background: #edf8fb; }.pictograph-glyph-stage > .pictograph-oracle-image { width: 78%; height: 78%; object-fit: contain; }.pictograph-glyph-stage > .pictograph-oracle-image.is-person { transform: scale(1.23); }.pictograph-early-glyph { width: 67%; height: 67%; }.pictograph-modern-stage { background: #e1f1f5; }.pictograph-modern-stage .pictograph-character-svg { width: 70%; height: 70%; }.pictograph-modern-stage .pictograph-character-svg.is-person { transform: scale(1.1); }.pictograph-description-stage { padding: 18px; place-items: center; background: #f0f9f4; }.pictograph-description-stage p { margin: 0; color: #3f6970; font-size: clamp(1rem, 1.55vw, 1.24rem); line-height: 1.55; }.pictograph-description-stage strong { color: #276b78; }.pictograph-evolution-card p, .pictograph-evolution-card h4 { margin: 0; }.pictograph-evolution-card h4 { color: #276b78; font-size: clamp(1.02rem, 1.7vw, 1.28rem); line-height: 1.2; }.pictograph-evolution-card > p:not(.pictograph-stage-label) { color: #597279; font-size: .94rem; line-height: 1.35; }.pictograph-stage-label { color: #3c96a8; font-size: .78rem; font-weight: 800; letter-spacing: .05em; text-transform: uppercase; }.pictograph-evolution-card .small-button { justify-self: start; margin-top: 3px; }.pictograph-story-note { display: grid; grid-template-columns: auto 1fr; gap: 13px; align-items: start; padding: 15px 17px; border-radius: 16px; background: #edf8fb; color: #456b72; }.pictograph-story-note strong { color: #276b78; }.pictograph-story-note p { margin: 0; }
-.pictograph-frame-play { position: absolute; top: 10px; right: 10px; z-index: 1; margin: 0 !important; }
+.pictograph-frame-play { position: static; z-index: 1; margin: 0 !important; }
 .pictograph-story-book { gap: 34px; }.pictograph-story-row { display: grid; gap: 14px; padding-top: 30px; border-top: 2px solid color-mix(in srgb, var(--pictograph-tone) 35%, transparent); }.pictograph-story-row:first-of-type { padding-top: 0; border-top: 0; }.pictograph-story-header { display: flex; align-items: center; justify-content: space-between; gap: 12px; }.pictograph-story-header p { margin: 0; color: var(--pictograph-tone); font-size: .82rem; font-weight: 900; letter-spacing: .08em; text-transform: uppercase; }.pictograph-story-header h3 { margin: 0; color: #276b78; font-size: clamp(1.55rem, 2.6vw, 2.2rem); }.pictograph-story-header .pictograph-frame-play { flex: 0 0 auto; }.pictograph-story-row .pictograph-stage-art { border-color: color-mix(in srgb, var(--pictograph-tone) 44%, #c6dde0); }.pictograph-story-row .pictograph-glyph-stage, .pictograph-story-row .pictograph-modern-stage { color: var(--pictograph-tone); background: color-mix(in srgb, var(--pictograph-tone) 12%, white); }.pictograph-story-row .pictograph-character-svg path { fill: var(--pictograph-tone); }.pictograph-story-row .pictograph-stage-label { color: var(--pictograph-tone); }.pictograph-story-row .pictograph-description-stage { background: color-mix(in srgb, var(--pictograph-tone) 8%, white); }
 @keyframes pictograph-loading { to { background-position: -220% 0; } }
 @media (max-width: 720px) { .pictograph-book-header { align-items: flex-start; flex-direction: column; }.pictograph-picture-page { grid-template-columns: 1fr; }.pictograph-picture-page > img { min-height: 220px; max-height: 300px; }.pictograph-character-reveal { grid-template-columns: 58px 1fr; }.pictograph-character-reveal button { grid-column: 1 / -1; }.pictograph-character-explainer { grid-template-columns: 1fr; }.pictograph-big-character { min-height: 210px; }.pictograph-big-character .pictograph-character-svg { height: 220px; }.pictograph-evolution-strip { grid-template-columns: repeat(2, minmax(0, 1fr)); }.pictograph-story-note { grid-template-columns: 1fr; gap: 5px; } }
@@ -4067,6 +4067,27 @@ h4 {
   font-weight: 600;
 }
 
+.food-category-book-tab {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.42rem;
+}
+
+.food-category-book-tab > span {
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.food-category-tab-divider {
+  color: currentColor;
+}
+
+.food-category-book-tab-english {
+  color: #65715d;
+}
+
 .food-book-tab.is-active {
   border-color: #5f8f51;
   background: #5f8f51;
@@ -4074,6 +4095,10 @@ h4 {
 }
 
 .food-book-tab.is-active small {
+  color: #ffffff;
+}
+
+.food-category-book-tab.is-active .food-category-book-tab-english {
   color: #ffffff;
 }
 

@@ -37,7 +37,7 @@ export const classroomTopicData = {
       ["table", "桌子", "zhuō zi", "table", "assets/illustrated-stationery/table.webp", ["2b:4", "3b:2"]],
       ["chair", "椅子", "yǐ zi", "chair", "assets/illustrated-stationery/chair.webp", ["2b:4", "3b:2"]],
       ["whiteboard", "白板", "bái bǎn", "whiteboard", "assets/illustrated-classrooms/whiteboard.webp", ["3b:2"]],
-      ["blackboard", "黑板", "hēi bǎn", "blackboard", "assets/illustrated-classrooms/blackboard.png", ["3b:2"]],
+      ["blackboard", "黑板", "hēi bǎn", "blackboard", "assets/illustrated-classrooms/blackboard.webp", ["3b:2"]],
       ["computer", "电脑", "diàn nǎo", "computer (laptop)", "assets/illustrated-classrooms/computer.webp", ["3b:2"]],
       ["television", "电视", "diàn shì", "television", "assets/illustrated-classrooms/television.webp", ["3b:2"]],
       ["bookshelf", "书架", "shū jià", "bookshelf", "assets/illustrated-classrooms/bookshelf.webp", ["3b:2"]]

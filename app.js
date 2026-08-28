@@ -630,6 +630,17 @@
   function imageLoadingAttrs({ primary = false } = {}) {
     return primary ? 'loading="eager" decoding="async"' : 'loading="lazy" decoding="async"';
   }
+  function applyImageLoading(container, { primary = false } = {}) {
+    if (!container) return;
+    let firstImage = true;
+    for (const image of container.querySelectorAll("img")) {
+      if (!image.hasAttribute("decoding")) image.decoding = "async";
+      if (!image.hasAttribute("loading")) {
+        image.loading = primary && firstImage ? "eager" : "lazy";
+      }
+      firstImage = false;
+    }
+  }
 
   // src/core/random-cycle.js
   function shuffled(items, random = Math.random) {
@@ -3336,7 +3347,7 @@
     ["\u94A2\u7434", "g\u0101ng q\xEDn", "piano", "piano_anchor.webp", "assets/illustrated-school-anchors"],
     ["\u6C99\u53D1", "sh\u0101 fa", "sofa", "sofa.webp", "assets/illustrated-furniture"],
     ["\u7535\u89C6\u67DC", "di\xE0n sh\xEC gu\xEC", "TV stand", "tv-stand.webp", "assets/illustrated-furniture"],
-    ["\u81EA\u884C\u8F66", "z\xEC x\xEDng ch\u0113", "bicycle", "bicycle.png", "assets/illustrated-rooms"]
+    ["\u81EA\u884C\u8F66", "z\xEC x\xEDng ch\u0113", "bicycle", "bicycle.webp", "assets/illustrated-rooms"]
   ].map(([hanzi, pinyin, english, file, folder]) => ({ id: hanzi, hanzi, pinyin, english, audio: hanzi, imagePath: `${folder}/${file}` }));
   var roomScenes = [
     {
@@ -3621,7 +3632,7 @@
       ["table", "\u684C\u5B50", "zhu\u014D zi", "table", "assets/illustrated-stationery/table.webp", ["2b:4", "3b:2"]],
       ["chair", "\u6905\u5B50", "y\u01D0 zi", "chair", "assets/illustrated-stationery/chair.webp", ["2b:4", "3b:2"]],
       ["whiteboard", "\u767D\u677F", "b\xE1i b\u01CEn", "whiteboard", "assets/illustrated-classrooms/whiteboard.webp", ["3b:2"]],
-      ["blackboard", "\u9ED1\u677F", "h\u0113i b\u01CEn", "blackboard", "assets/illustrated-classrooms/blackboard.png", ["3b:2"]],
+      ["blackboard", "\u9ED1\u677F", "h\u0113i b\u01CEn", "blackboard", "assets/illustrated-classrooms/blackboard.webp", ["3b:2"]],
       ["computer", "\u7535\u8111", "di\xE0n n\u01CEo", "computer (laptop)", "assets/illustrated-classrooms/computer.webp", ["3b:2"]],
       ["television", "\u7535\u89C6", "di\xE0n sh\xEC", "television", "assets/illustrated-classrooms/television.webp", ["3b:2"]],
       ["bookshelf", "\u4E66\u67B6", "sh\u016B ji\xE0", "bookshelf", "assets/illustrated-classrooms/bookshelf.webp", ["3b:2"]]
@@ -4090,7 +4101,7 @@
       <div class="food-preference-builder-columns">
         <div class="food-preference-builder-column"><p class="food-preference-choice-label">Subject</p><div class="food-preference-builder-list">${subjects.map((item) => `<button class="food-preference-subject-choice${subject.id === item.id ? " is-active" : ""}" type="button" data-food-preference-subject="${item.id}"><span class="food-preference-card-copy"><span class="numbers-game-hanzi">${item.hanzi}</span>${state2.showPinyin ? `<span class="numbers-game-pinyin">${item.pinyin}</span>` : ""}</span>${state2.showEnglish ? `<span class="numbers-game-english food-preference-card-meta">${item.english}</span>` : ""}</button>`).join("")}</div></div>
         <div class="food-preference-builder-column food-preference-pattern-column"><p class="food-preference-choice-label">Word</p><div class="food-preference-builder-list">${foodPreferencePatterns().map((item) => `<button class="food-preference-pattern-choice${pattern.id === item.id ? " is-active" : ""}" type="button" data-food-preference-pattern="${item.id}"><span class="food-preference-card-copy"><span class="numbers-game-hanzi">${item.hanzi}</span>${state2.showPinyin ? `<span class="numbers-game-pinyin">${item.pinyin}</span>` : ""}</span>${state2.showEnglish ? `<span class="numbers-game-english food-preference-card-meta">${item.english}</span>` : ""}</button>`).join("")}</div></div>
-        <div class="food-preference-builder-column"><p class="food-preference-choice-label">Food or drink</p><div class="food-preference-builder-list food-preference-food-options">${items.map((item) => `<button class="food-preference-fill-choice${selectedFood?.id === item.id ? " is-active" : ""}" type="button" data-food-preference-food="${item.id}"><img class="food-preference-choice-image" src="${item.imagePath}" alt="${item.english}"><span class="food-preference-card-copy"><span class="numbers-game-hanzi">${item.hanzi}</span>${state2.showPinyin ? `<span class="numbers-game-pinyin">${item.pinyin}</span>` : ""}</span>${state2.showEnglish ? `<span class="numbers-game-english food-preference-card-meta">${item.english}</span>` : ""}</button>`).join("")}</div></div>
+        <div class="food-preference-builder-column"><p class="food-preference-choice-label">Food or drink</p><div class="food-preference-builder-list food-preference-food-options">${items.map((item) => `<button class="food-preference-fill-choice${selectedFood?.id === item.id ? " is-active" : ""}" type="button" data-food-preference-food="${item.id}"><img class="food-preference-choice-image" src="${item.imagePath}" alt="${item.english}" loading="lazy" decoding="async"><span class="food-preference-card-copy"><span class="numbers-game-hanzi">${item.hanzi}</span>${state2.showPinyin ? `<span class="numbers-game-pinyin">${item.pinyin}</span>` : ""}</span>${state2.showEnglish ? `<span class="numbers-game-english food-preference-card-meta">${item.english}</span>` : ""}</button>`).join("")}</div></div>
       </div>
       <div class="food-preference-built-sentence"><span class="food-preference-card-copy"><span class="numbers-game-hanzi">${sentenceHanzi}</span>${state2.showPinyin ? `<span class="numbers-game-pinyin">${sentencePinyin}</span>` : ""}</span>${state2.showEnglish ? `<span class="numbers-game-english food-preference-card-meta">${sentenceEnglish}</span>` : ""}</div>
     </section>
@@ -4728,7 +4739,7 @@
               <section class="greetings-exchange school-scene-card">
                 <div class="greetings-exchange-top"><div><p class="body-match-kicker">${scene.title ?? scene.label ?? "Look and listen"}</p></div><button class="small-button is-play-button" type="button" data-school-play-scene="${scene.id}">Play</button></div>
                 <div class="school-scene-layout${topicId === "food" ? " is-compact" : ""}">
-                  <img class="school-scene-image" src="${scene.imagePath}" alt="${scene.english ?? scene.lines?.[0]?.english ?? ""}" />
+                  <img class="school-scene-image" src="${scene.imagePath}" alt="${scene.english ?? scene.lines?.[0]?.english ?? ""}" decoding="async" />
                   <div class="greetings-line-stack${scene.compactLines ? " is-compact" : ""}">
                     ${(scene.lines ?? [scene]).map((line) => `<article class="greetings-line-card"><div class="telephone-bubble-copy"><p class="telephone-line-hanzi">${line.hanzi}</p>${state2.showPinyin ? `<p class="telephone-line-pinyin">${line.pinyin}</p>` : ""}${state2.showEnglish ? `<p class="telephone-line-english">${line.english}</p>` : ""}</div></article>`).join("")}
                   </div>
@@ -4740,12 +4751,12 @@
       `).join("")}
       ${data.showWords !== false ? `
         <div class="time-months-heading"><p class="body-match-kicker">Book words</p></div>
-        ${topicId === "food" && !scopedFoodCategoryId() ? `<div class="food-book-tabs" role="tablist" aria-label="Food word categories">${Object.entries(foodCategoryGroups).map(([id, group]) => `<button class="food-book-tab${state2.foodBookCategoryId === id ? " is-active" : ""}" type="button" role="tab" aria-selected="${state2.foodBookCategoryId === id}" data-food-book-category="${id}">${group.hanzi}${state2.showEnglish ? `<small>${group.english}</small>` : ""}</button>`).join("")}</div>` : ""}
+        ${topicId === "food" && !scopedFoodCategoryId() ? `<div class="food-book-tabs" role="tablist" aria-label="Food word categories">${Object.entries(foodCategoryGroups).map(([id, group]) => `<button class="food-book-tab food-category-book-tab${state2.foodBookCategoryId === id ? " is-active" : ""}" type="button" role="tab" aria-selected="${state2.foodBookCategoryId === id}" data-food-book-category="${id}"><span>${group.hanzi}</span>${state2.showEnglish ? `<span class="food-category-tab-divider" aria-hidden="true">\xB7</span><span class="food-category-book-tab-english">${group.english}</span>` : ""}</button>`).join("")}</div>` : ""}
         ${topicId === "meals-feelings" && visibleWordGroups.length > 1 ? `<div class="food-book-tabs lesson-word-tabs" role="tablist" aria-label="Meals and feelings word categories">${visibleWordGroups.map((group) => `<button class="food-book-tab${state2.mealsWordGroupId === group.id ? " is-active" : ""}" type="button" role="tab" aria-selected="${state2.mealsWordGroupId === group.id}" data-meals-word-group="${group.id}"><span>${group.hanzi}</span>${state2.showEnglish ? `<span class="lesson-word-tab-divider" aria-hidden="true">\xB7</span><small>${group.english}</small>` : ""}</button>`).join("")}</div>` : ""}
         <div class="school-word-grid${topicId === "school-subjects" ? " is-text-only" : ""}${topicId === "meals-feelings" ? " is-uniform-images" : ""}">
           ${visibleWords.map((item) => `
             <button class="school-word-card${item.imagePath ? " book-word-card" : ""}" type="button" data-school-word="${item.id}">
-              ${item.imagePath ? `<img class="school-word-image book-word-image" src="${item.imagePath}" alt="${item.english}" loading="eager" decoding="async" fetchpriority="high" />` : ""}
+              ${item.imagePath ? `<img class="school-word-image book-word-image" src="${item.imagePath}" alt="${item.english}" loading="lazy" decoding="async" />` : ""}
               <span class="${item.imagePath ? "book-word-copy" : ""}"><span class="time-asset-hanzi">${item.hanzi}</span>
               ${state2.showPinyin ? `<span class="time-asset-pinyin">${item.pinyin}</span>` : ""}
               ${state2.showEnglish ? `<span class="time-asset-english">${item.english}</span>` : ""}</span>
@@ -6890,10 +6901,10 @@
     { id: "shirt", hanzi: "\u886C\u886B", pinyin: "ch\xE8n sh\u0101n", english: "shirt", audio: "\u886C\u886B", imagePath: "assets/illustrated-everyday-life/collared-shirt.webp", lessonSources: ["3a:7"] },
     { id: "pants", hanzi: "\u88E4\u5B50", pinyin: "k\xF9 zi", english: "pants", audio: "\u88E4\u5B50", imagePath: "assets/illustrated-everyday-life/pants.webp", lessonSources: ["3a:7"] },
     { id: "dress", hanzi: "\u88D9\u5B50", pinyin: "q\xFAn zi", english: "skirt", audio: "\u88D9\u5B50", imagePath: "assets/illustrated-everyday-life/skirt.webp", lessonSources: ["3a:7"] },
-    { id: "leather-shoes", hanzi: "\u76AE\u978B", pinyin: "p\xED xi\xE9", english: "leather shoes", audio: "\u76AE\u978B", imagePath: "assets/illustrated-everyday-life/leather-shoes.png", lessonSources: ["3a:7"] },
+    { id: "leather-shoes", hanzi: "\u76AE\u978B", pinyin: "p\xED xi\xE9", english: "leather shoes", audio: "\u76AE\u978B", imagePath: "assets/illustrated-everyday-life/leather-shoes.webp", lessonSources: ["3a:7"] },
     { id: "t-shirt", hanzi: "T\u6064", pinyin: "T x\xF9", english: "T-shirt", audio: "T\u6064", imagePath: "assets/illustrated-everyday-life/shirt.webp", lessonSources: ["4b:2"] },
     { id: "shorts", hanzi: "\u77ED\u88E4", pinyin: "du\u01CEn k\xF9", english: "shorts", audio: "\u77ED\u88E4", imagePath: "assets/illustrated-everyday-life/pants.webp", lessonSources: ["4b:2"] },
-    { id: "sweater", hanzi: "\u6BDB\u8863", pinyin: "m\xE1o y\u012B", english: "sweater", audio: "\u6BDB\u8863", imagePath: "assets/illustrated-everyday-life/sweater.png", lessonSources: ["4b:2"] },
+    { id: "sweater", hanzi: "\u6BDB\u8863", pinyin: "m\xE1o y\u012B", english: "sweater", audio: "\u6BDB\u8863", imagePath: "assets/illustrated-everyday-life/sweater.webp", lessonSources: ["4b:2"] },
     { id: "long-pants", hanzi: "\u957F\u88E4", pinyin: "ch\xE1ng k\xF9", english: "long pants", audio: "\u957F\u88E4", imagePath: "assets/illustrated-everyday-life/pants.webp", lessonSources: ["4b:2"] },
     { id: "coat", hanzi: "\u5927\u8863", pinyin: "d\xE0 y\u012B", english: "coat", audio: "\u5927\u8863", imagePath: "assets/illustrated-everyday-life/jacket.webp", lessonSources: ["4b:2"] },
     { id: "hat", hanzi: "\u5E3D\u5B50", pinyin: "m\xE0o zi", english: "hat", audio: "\u5E3D\u5B50", imagePath: "assets/illustrated-everyday-life/hat.webp", lessonSources: ["4b:2"] }
@@ -6939,7 +6950,7 @@
     { id: "shirt", hanzi: "\u886C\u886B", pinyin: "ch\xE8n sh\u0101n", english: "shirt", sentenceEnglish: "I wear a shirt.", frame: "\u6211\u7A7F", framePinyin: "w\u01D2 chu\u0101n", audio: "\u6211\u7A7F\u886C\u886B", imagePath: "assets/illustrated-everyday-life/collared-shirt.webp", imageAlt: "A shirt", lessonSources: ["3a:7"] },
     { id: "pants", hanzi: "\u88E4\u5B50", pinyin: "k\xF9 zi", english: "pants", sentenceEnglish: "I wear pants.", frame: "\u6211\u7A7F", framePinyin: "w\u01D2 chu\u0101n", audio: "\u6211\u7A7F\u88E4\u5B50", imagePath: "assets/illustrated-everyday-life/pants.webp", imageAlt: "Pants", lessonSources: ["3a:7"] },
     { id: "skirt", hanzi: "\u88D9\u5B50", pinyin: "q\xFAn zi", english: "skirt", sentenceEnglish: "I wear a skirt.", frame: "\u6211\u7A7F", framePinyin: "w\u01D2 chu\u0101n", audio: "\u6211\u7A7F\u88D9\u5B50", imagePath: "assets/illustrated-everyday-life/skirt.webp", imageAlt: "A skirt", lessonSources: ["3a:7"] },
-    { id: "leather-shoes", hanzi: "\u76AE\u978B", pinyin: "p\xED xi\xE9", english: "leather shoes", sentenceEnglish: "I wear leather shoes.", frame: "\u6211\u7A7F", framePinyin: "w\u01D2 chu\u0101n", audio: "\u6211\u7A7F\u76AE\u978B", imagePath: "assets/illustrated-everyday-life/leather-shoes.png", imageAlt: "Leather shoes", lessonSources: ["3a:7"] },
+    { id: "leather-shoes", hanzi: "\u76AE\u978B", pinyin: "p\xED xi\xE9", english: "leather shoes", sentenceEnglish: "I wear leather shoes.", frame: "\u6211\u7A7F", framePinyin: "w\u01D2 chu\u0101n", audio: "\u6211\u7A7F\u76AE\u978B", imagePath: "assets/illustrated-everyday-life/leather-shoes.webp", imageAlt: "Leather shoes", lessonSources: ["3a:7"] },
     { id: "t-shirt-and-shorts", hanzi: "\u7A7F\u9EC4\u8272\u7684T\u6064\u548C\u84DD\u8272\u7684\u77ED\u88E4", pinyin: "chu\u0101n hu\xE1ng s\xE8 de T x\xF9 h\xE9 l\xE1n s\xE8 de du\u01CEn k\xF9", fullPinyin: "l\xF9 n\xE0 chu\u0101n hu\xE1ng s\xE8 de T x\xF9 h\xE9 l\xE1n s\xE8 de du\u01CEn k\xF9.", english: "wear a yellow T-shirt and blue shorts", sentenceEnglish: "Luna wears a yellow T-shirt and blue shorts.", frame: "\u9732\u5A1C\u7A7F", framePinyin: "l\xF9 n\xE0 chu\u0101n", audio: "\u9732\u5A1C\u7A7F\u9EC4\u8272\u7684T\u6064\u548C\u84DD\u8272\u7684\u77ED\u88E4", imagePath: "assets/illustrated-clothes/book-4b-lesson-2/luna-tshirt-shorts.webp", imageAlt: "Luna in a yellow T-shirt and blue shorts", lessonSources: ["4b:2"], slots: [{ id: "first", prefix: "\u9EC4\u8272\u7684", answer: "T\u6064", options: ["T\u6064", "\u77ED\u88E4", "\u6BDB\u8863", "\u957F\u88E4"] }, { id: "second", prefix: "\u84DD\u8272\u7684", answer: "\u77ED\u88E4", options: ["\u77ED\u88E4", "T\u6064", "\u6BDB\u8863", "\u957F\u88E4"] }] },
     { id: "coats-and-hats", hanzi: "\u4E50\u4E50\u7A7F\u7EFF\u8272\u7684\u5927\u8863\uFF0C\u8BFA\u4E9A\u7A7F\u84DD\u8272\u7684\u5927\u8863", pinyin: "l\xE8 le chu\u0101n l\u01DC s\xE8 de d\xE0 y\u012B, nu\xF2 y\xE0 chu\u0101n l\xE1n s\xE8 de d\xE0 y\u012B", fullPinyin: "l\xE8 le chu\u0101n l\u01DC s\xE8 de d\xE0 y\u012B, nu\xF2 y\xE0 chu\u0101n l\xE1n s\xE8 de d\xE0 y\u012B.", english: "Lele wears a green coat, and Noah wears a blue coat", sentenceEnglish: "Lele wears a green coat, and Noah wears a blue coat.", frame: "", framePinyin: "", audio: "\u4E50\u4E50\u7A7F\u7EFF\u8272\u7684\u5927\u8863\u8BFA\u4E9A\u7A7F\u84DD\u8272\u7684\u5927\u8863", imagePath: "assets/illustrated-clothes/book-4b-lesson-2/lele-noah-outdoor-coats-hats.webp", imageAlt: "Lele in a green coat and Noah in a blue coat outside school", lessonSources: ["4b:2"], slots: [{ id: "first", prefix: "\u4E50\u4E50\u7A7F\u7EFF\u8272\u7684", answer: "\u5927\u8863", options: ["\u5927\u8863", "\u5E3D\u5B50", "\u6BDB\u8863", "T\u6064"] }, { id: "second", joiner: "\uFF0C", prefix: "\u8BFA\u4E9A\u7A7F\u84DD\u8272\u7684", answer: "\u5927\u8863", options: ["\u5927\u8863", "\u5E3D\u5B50", "\u77ED\u88E4", "\u957F\u88E4"] }] },
     { id: "orange-and-blue-hats", hanzi: "\u4E50\u4E50\u6234\u6A59\u8272\u7684\u5E3D\u5B50\uFF0C\u8BFA\u4E9A\u6234\u84DD\u8272\u7684\u5E3D\u5B50", pinyin: "l\xE8 le d\xE0i ch\xE9ng s\xE8 de m\xE0o zi, nu\xF2 y\xE0 d\xE0i l\xE1n s\xE8 de m\xE0o zi", fullPinyin: "l\xE8 le d\xE0i ch\xE9ng s\xE8 de m\xE0o zi, nu\xF2 y\xE0 d\xE0i l\xE1n s\xE8 de m\xE0o zi.", english: "Lele wears an orange hat, and Noah wears a blue hat", sentenceEnglish: "Lele wears an orange hat, and Noah wears a blue hat.", frame: "", audio: "\u4E50\u4E50\u6234\u6A59\u8272\u7684\u5E3D\u5B50\u8BFA\u4E9A\u6234\u84DD\u8272\u7684\u5E3D\u5B50", imagePath: "assets/illustrated-clothes/book-4b-lesson-2/lele-noah-outdoor-coats-hats.webp", imageAlt: "Lele in an orange hat and Noah in a blue hat outside school", lessonSources: ["4b:2"], slots: [{ id: "first", prefix: "\u4E50\u4E50\u6234\u6A59\u8272\u7684", answer: "\u5E3D\u5B50", options: ["\u5E3D\u5B50", "\u5927\u8863", "\u6BDB\u8863", "\u978B\u5B50"] }, { id: "second", joiner: "\uFF0C", prefix: "\u8BFA\u4E9A\u6234\u84DD\u8272\u7684", answer: "\u5E3D\u5B50", options: ["\u5E3D\u5B50", "\u5927\u8863", "\u6BDB\u8863", "\u978B\u5B50"] }] },
@@ -12997,10 +13008,14 @@
   var renderSchoolExplorer;
   var focusExplorerRuntime;
   function renderDefaultExplorer() {
-    return focusExplorerRuntime?.renderDefaultExplorer();
+    const result = focusExplorerRuntime?.renderDefaultExplorer();
+    applyImageLoading(focusExplorer, { primary: true });
+    return result;
   }
   function renderFocusExplorer() {
-    return focusExplorerRuntime?.renderFocusExplorer();
+    const result = focusExplorerRuntime?.renderFocusExplorer();
+    applyImageLoading(focusExplorer, { primary: true });
+    return result;
   }
   var foundationsRuntime;
   var worldRuntime;
@@ -13035,7 +13050,9 @@
   bindGlobalDisplayControls();
   var lessonPracticeRuntime;
   function renderActivityPanel(topic) {
-    return lessonPracticeRuntime?.renderActivityPanel(topic);
+    const result = lessonPracticeRuntime?.renderActivityPanel(topic);
+    applyImageLoading(activityList);
+    return result;
   }
   var topicDetailRuntime;
   function selectBookLesson(...args) {

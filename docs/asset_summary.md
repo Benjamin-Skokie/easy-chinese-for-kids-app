@@ -131,7 +131,7 @@ Purpose: provide one searchable inventory of illustration assets, using each fol
 - `whiteboard`: `白板` (bái bǎn) | Whiteboard | theme: Standalone classroom whiteboard for the Book Words card | [file](../assets/illustrated-classrooms/whiteboard.webp)
 - `television`: `电视` (diàn shì) | Television | theme: Standalone wall-mounted classroom television for the Book Words card | [file](../assets/illustrated-classrooms/television.webp)
 - `bookshelf`: `书架` (shū jià) | Bookshelf | theme: Standalone classroom bookshelf for the Book Words card | [file](../assets/illustrated-classrooms/bookshelf.webp)
-- `blackboard`: `黑板` (hei ban) | Blackboard | theme: Standalone dark green classroom chalkboard for the Book Words card | [file](../assets/illustrated-classrooms/blackboard.png)
+- `blackboard`: `黑板` (hei ban) | Blackboard | theme: Standalone dark green classroom chalkboard for the Book Words card | [file](../assets/illustrated-classrooms/blackboard.webp)
 
 ### `illustrated-clock-routines`
 
@@ -611,7 +611,7 @@ Purpose: provide one searchable inventory of illustration assets, using each fol
 - `living-room`: `客厅` (ke ting) | Living Room | theme: Spacious three-sided living room with the TV facing the sofa | [file](../assets/illustrated-rooms/living-room.webp)
 - `bedroom`: `卧室` (wo shi) | Bedroom | [file](../assets/illustrated-rooms/bedroom.webp)
 - `garage`: `车库` (che ku) | Garage | theme: Open garage with a visible interior door into the house | [file](../assets/illustrated-rooms/garage.webp)
-- `bicycle`: `自行车` (zi xing che) | Bicycle | theme: A complete blue bicycle based on the bicycle in the garage scene | [file](../assets/illustrated-rooms/bicycle.png)
+- `bicycle`: `自行车` (zi xing che) | Bicycle | theme: A complete blue bicycle based on the bicycle in the garage scene | [file](../assets/illustrated-rooms/bicycle.webp)
 - `positions-up-down`: `上和下` (shang he xia) | Up and down positions | focus: 桌子 / 课本 / 书包 | [file](../assets/illustrated-rooms/positions-up-down.webp)
 - `positions-inside-outside`: `里和外` (li he wai) | Inside and outside positions | focus: 书包 / 课本 / 铅笔盒 | [file](../assets/illustrated-rooms/positions-inside-outside.webp)
 - `positions-all-directions`: `上、下、前、后、左、右` (shang, xia, qian, hou, zuo, you) | All directions board | focus: 上 / 下 / 前 / 后 / 左 / 右 | [file](../assets/illustrated-rooms/positions-all-directions.webp)
