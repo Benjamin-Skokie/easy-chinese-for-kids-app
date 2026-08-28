@@ -1,4 +1,5 @@
 import { pinyinBuildTasks, pinyinChapterGroups, pinyinUnits } from "./pinyin-course.js";
+import { pinyinBasicsAudioId, pinyinBasicsAudioPath } from "./pinyin-audio-manifest.js";
 import { nextRandomCycleId } from "../../core/random-cycle.js";
 
 const basicToneRounds = [
@@ -20,16 +21,80 @@ const basicFinalRounds = [
 ];
 
 export function createPinyinRuntime({ state, focusExplorer, activityPanelTitle, activityPanelSummary, activityList, speak }) {
-  function soundChipMarkup(label, audioText) {
-    return `<button class="pinyin-sound-chip" type="button" data-pinyin-audio="${audioText}" aria-label="Play ${label}">${label}</button>`;
+  let activeRecording = null;
+  let playbackSequence = 0;
+
+  function audioAttributes(text, pinyin = text, explicitId = "") {
+    const id = explicitId || pinyinBasicsAudioId(text, pinyin);
+    return `data-pinyin-audio="${text}"${id ? ` data-pinyin-audio-id="${id}"` : ""}`;
+  }
+
+  function soundChipMarkup(label, audioText, audioId = "") {
+    return `<button class="pinyin-sound-chip" type="button" ${audioAttributes(audioText, audioText, audioId)} aria-label="Play ${label}">${label}</button>`;
   }
 
   function wordAudioMarkup(hanzi, pinyin) {
-    return `<button class="pinyin-word-audio" type="button" data-pinyin-audio="${hanzi}" aria-label="Play ${hanzi}"><b>${hanzi}</b><span>${pinyin}</span></button>`;
+    return `<button class="pinyin-word-audio" type="button" ${audioAttributes(hanzi, pinyin)} aria-label="Play ${hanzi}"><b>${hanzi}</b><span>${pinyin}</span></button>`;
   }
 
-  function playAllButton(audioTexts) {
-    return `<button class="small-button is-play-button pinyin-play-all" type="button" data-pinyin-play-all="${audioTexts.join("|")}" aria-label="Play all">▶ <span>Play all</span></button>`;
+  function playAllButton(audioTexts, audioIds = []) {
+    return `<button class="small-button is-play-button pinyin-play-all" type="button" data-pinyin-play-all="${audioTexts.join("|")}"${audioIds.length ? ` data-pinyin-play-all-ids="${audioIds.join("|")}"` : ""} aria-label="Play all">▶ <span>Play all</span></button>`;
+  }
+
+  function stopRecording() {
+    if (!activeRecording) return;
+    const { audio, resolve } = activeRecording;
+    activeRecording = null;
+    audio.pause();
+    audio.removeAttribute("src");
+    audio.load();
+    resolve(false);
+  }
+
+  function playRecording(id, fallbackText, sequence = ++playbackSequence) {
+    const source = pinyinBasicsAudioPath(id);
+    if (!source || typeof Audio === "undefined") {
+      speak?.(fallbackText, 0.58);
+      return Promise.resolve(false);
+    }
+    stopRecording();
+    globalThis.speechSynthesis?.cancel?.();
+    return new Promise((resolve) => {
+      const audio = new Audio(source);
+      const recording = { audio, resolve, sequence };
+      activeRecording = recording;
+      audio.preload = "auto";
+      audio.addEventListener("ended", () => {
+        if (activeRecording !== recording) return;
+        activeRecording = null;
+        resolve(true);
+      }, { once: true });
+      audio.addEventListener("error", () => {
+        if (activeRecording !== recording) return;
+        activeRecording = null;
+        speak?.(fallbackText, 0.58);
+        resolve(false);
+      }, { once: true });
+      audio.play().catch(() => {
+        if (activeRecording !== recording) return;
+        activeRecording = null;
+        speak?.(fallbackText, 0.58);
+        resolve(false);
+      });
+    });
+  }
+
+  async function playRecordingSequence(ids, fallbackTexts) {
+    const sequence = ++playbackSequence;
+    stopRecording();
+    if (!ids.length) {
+      speak?.(fallbackTexts.join("，"), 0.46);
+      return;
+    }
+    for (let index = 0; index < ids.length; index += 1) {
+      if (sequence !== playbackSequence) return;
+      await playRecording(ids[index], fallbackTexts[index] ?? "", sequence);
+    }
   }
 
   function activeGroup() {
@@ -77,14 +142,15 @@ export function createPinyinRuntime({ state, focusExplorer, activityPanelTitle, 
   function basicChapterCardMarkup() {
     const examples = [
       { sound: "a", words: [["妈", "mā"], ["爸", "bà"], ["大", "dà"]] },
-      { sound: "o", words: [["我", "wǒ"], ["哦", "ó"], ["波", "bō"]] },
+      { sound: "o", words: [["我", "wǒ"], ["摸", "mō"], ["波", "bō"]] },
       { sound: "e", words: [["哥", "gē"], ["得", "dé"], ["和", "hé"]] },
       { sound: "i", words: [["你", "nǐ"], ["米", "mǐ"], ["弟", "dì"]] },
       { sound: "u", words: [["书", "shū"], ["土", "tǔ"], ["路", "lù"]] },
       { sound: "ü", words: [["女", "nǚ"], ["雨", "yǔ"], ["鱼", "yú"]] }
     ];
-    const singleFinalAudio = { a: "啊", o: "哦", e: "鹅", i: "衣", u: "乌", ü: "迂" };
-    return `<section class="pinyin-chapter-card pinyin-basic-chapter-card"><header class="pinyin-chapter-heading"><p class="body-match-kicker">第 2 章 · Chapter 2</p><h4>单韵母</h4><p class="pinyin-chapter-english">Single finals</p>${playAllButton(Object.values(singleFinalAudio))}</header><p class="pinyin-chapter-definition">A final is the vowel part at the end of a syllable. A single final has one vowel sound.</p><div class="pinyin-chapter-card-body"><section><div class="pinyin-ready-sounds pinyin-basic-sound-row">${["a", "o", "e", "i", "u", "ü"].map((sound) => soundChipMarkup(sound, singleFinalAudio[sound])).join("")}</div></section><section class="pinyin-basic-examples">${examples.map((item) => `<div><strong>${item.sound}</strong>${item.words.map(([hanzi, pinyin]) => wordAudioMarkup(hanzi, pinyin)).join("")}</div>`).join("")}</section><aside class="pinyin-u-rule"><strong>Why do ü’s dots sometimes disappear?</strong><p>Usually, the dots stay: <b>女 nǚ</b> is <b>n + ü</b>. Only after <b>j, q, x,</b> or <b>y</b> are the dots left off. Those letters are never followed by the plain <b>u</b> sound, so readers still know to say <b>ü</b>. We will practise those combinations later.</p></aside></div></section>`;
+    const singleFinalAudio = { a: ["ā", "final-a1"], o: ["ō", "final-o1"], e: ["ē", "final-e1"], i: ["ī", "final-i1"], u: ["ū", "final-u1"], ü: ["ǖ", "final-v1"] };
+    const finalSounds = ["a", "o", "e", "i", "u", "ü"];
+    return `<section class="pinyin-chapter-card pinyin-basic-chapter-card"><header class="pinyin-chapter-heading"><p class="body-match-kicker">第 2 章 · Chapter 2</p><h4>单韵母</h4><p class="pinyin-chapter-english">Single finals</p>${playAllButton(finalSounds.map((sound) => singleFinalAudio[sound][0]), finalSounds.map((sound) => singleFinalAudio[sound][1]))}</header><p class="pinyin-chapter-definition">A final is the vowel part at the end of a syllable. A single final has one vowel sound.</p><div class="pinyin-chapter-card-body"><section><div class="pinyin-ready-sounds pinyin-basic-sound-row">${finalSounds.map((sound) => soundChipMarkup(sound, singleFinalAudio[sound][0], singleFinalAudio[sound][1])).join("")}</div></section><section class="pinyin-basic-examples">${examples.map((item) => `<div><strong>${item.sound}</strong>${item.words.map(([hanzi, pinyin]) => wordAudioMarkup(hanzi, pinyin)).join("")}</div>`).join("")}</section><aside class="pinyin-u-rule"><strong>Why do ü’s dots sometimes disappear?</strong><p>Usually, the dots stay: <b>女 nǚ</b> is <b>n + ü</b>. Only after <b>j, q, x,</b> or <b>y</b> are the dots left off. Those letters are never followed by the plain <b>u</b> sound, so readers still know to say <b>ü</b>. We will practise those combinations later.</p></aside></div></section>`;
   }
 
   function toneChapterCardMarkup() {
@@ -94,7 +160,7 @@ export function createPinyinRuntime({ state, focusExplorer, activityPanelTitle, 
       ["mǎ", "马", "dip, then rise", "M6 9 L15 12 L40 34 L64 14", "57,9 76,3 69,21"],
       ["mà", "骂", "falling", "M6 6 L25 12 L44 20 L63 29", "59,36 76,36 67,22"]
     ];
-    return `<section class="pinyin-chapter-card pinyin-tone-chapter-card"><header class="pinyin-chapter-heading"><p class="body-match-kicker">第 1 章 · Chapter 1</p><h4>四声</h4><p class="pinyin-chapter-english">Four tones</p>${playAllButton(tones.map(([, hanzi]) => hanzi))}</header><p class="pinyin-chapter-definition">A tone is the pitch pattern of one syllable. With <b>ma</b>, changing that pattern makes four different words: <b>mā</b>, <b>má</b>, <b>mǎ</b>, and <b>mà</b>.</p><div class="pinyin-tone-row">${tones.map(([pinyin, hanzi, movement, line, head]) => `<button type="button" data-pinyin-audio="${hanzi}" aria-label="Play ${pinyin}, ${hanzi}"><strong>${pinyin}</strong><svg class="pinyin-tone-contour" viewBox="0 0 80 38" aria-hidden="true"><path d="${line}" /><polygon points="${head}" /></svg><b>${hanzi}</b><small>${movement}</small></button>`).join("")}</div></section>`;
+    return `<section class="pinyin-chapter-card pinyin-tone-chapter-card"><header class="pinyin-chapter-heading"><p class="body-match-kicker">第 1 章 · Chapter 1</p><h4>四声</h4><p class="pinyin-chapter-english">Four tones</p>${playAllButton(tones.map(([, hanzi]) => hanzi), tones.map(([pinyin, hanzi]) => pinyinBasicsAudioId(hanzi, pinyin)))}</header><p class="pinyin-chapter-definition">A tone is the pitch pattern of one syllable. With <b>ma</b>, changing that pattern makes four different words: <b>mā</b>, <b>má</b>, <b>mǎ</b>, and <b>mà</b>.</p><div class="pinyin-tone-row">${tones.map(([pinyin, hanzi, movement, line, head]) => `<button type="button" ${audioAttributes(hanzi, pinyin)} aria-label="Play ${pinyin}, ${hanzi}"><strong>${pinyin}</strong><svg class="pinyin-tone-contour" viewBox="0 0 80 38" aria-hidden="true"><path d="${line}" /><polygon points="${head}" /></svg><b>${hanzi}</b><small>${movement}</small></button>`).join("")}</div></section>`;
   }
 
   function basicPracticeMarkup(kind) {
@@ -115,10 +181,15 @@ export function createPinyinRuntime({ state, focusExplorer, activityPanelTitle, 
 
   function bindChapterNavigation() {
     focusExplorer.querySelectorAll("[data-pinyin-group]").forEach((button) => button.addEventListener("click", () => selectGroup(button.dataset.pinyinGroup)));
-    focusExplorer.querySelectorAll("[data-pinyin-audio]").forEach((button) => button.addEventListener("click", () => speak?.(button.dataset.pinyinAudio, 0.62)));
+    focusExplorer.querySelectorAll("[data-pinyin-audio]").forEach((button) => button.addEventListener("click", () => {
+      const id = button.dataset.pinyinAudioId;
+      if (id) playRecording(id, button.dataset.pinyinAudio);
+      else speak?.(button.dataset.pinyinAudio, 0.62);
+    }));
     focusExplorer.querySelectorAll("[data-pinyin-play-all]").forEach((button) => button.addEventListener("click", () => {
       const audioTexts = button.dataset.pinyinPlayAll.split("|").filter(Boolean);
-      speak?.(audioTexts.join("，"), 0.46);
+      const audioIds = button.dataset.pinyinPlayAllIds?.split("|").filter(Boolean) ?? [];
+      playRecordingSequence(audioIds, audioTexts);
     }));
     focusExplorer.querySelectorAll("[data-pinyin-basics-play]").forEach((button) => button.addEventListener("click", () => {
       const isTone = button.dataset.pinyinBasicsPlay === "tone";
@@ -135,7 +206,10 @@ export function createPinyinRuntime({ state, focusExplorer, activityPanelTitle, 
         state.pinyinBasicsFinalResult = "";
       }
       renderPinyinExplorer();
-      speak?.(rounds[nextIndex].audio, 0.52);
+      const round = rounds[nextIndex];
+      const id = pinyinBasicsAudioId(round.audio, round.pinyin);
+      if (id) playRecording(id, round.audio);
+      else speak?.(round.audio, 0.52);
     }));
     focusExplorer.querySelectorAll("[data-pinyin-basics-tone]").forEach((button) => button.addEventListener("click", () => {
       const correctTone = basicToneRounds[state.pinyinBasicsToneRoundIndex % basicToneRounds.length].tone;

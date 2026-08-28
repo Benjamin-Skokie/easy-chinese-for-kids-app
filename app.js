@@ -11348,6 +11348,52 @@
     { id: "spelling-rules", number: 18, groupId: "reading", title: "\u62FC\u5199\u89C4\u5219", englishTitle: "Spelling rules", sounds: [], listenTargets: [], example: "", reading: "", translation: "", note: "A short reference for the spelling patterns that make Pinyin consistent." }
   ];
 
+  // src/features/foundations/pinyin-audio-manifest.js
+  var pinyinBasicsAudioBase = "assets/audio/pinyin/basics";
+  var pinyinBasicsAudioVersion = "20260828-7";
+  var pinyinBasicsAudioClips = [
+    { id: "final-a1", text: "\u0101", pinyin: "\u0101", ttsInput: "\u0101", kind: "single-final", context: "the first-tone a sound in \u554A; hold the vowel naturally" },
+    { id: "final-o1", text: "\u014D", pinyin: "\u014D", kind: "single-final" },
+    { id: "final-e1", text: "\u0113", pinyin: "\u0113", kind: "single-final" },
+    { id: "final-i1", text: "\u012B", pinyin: "\u012B", kind: "single-final" },
+    { id: "final-u1", text: "\u016B", pinyin: "\u016B", ttsInput: "\u016B", kind: "single-final", context: "the first-tone u sound in \u5C4B (w\u016B); pronounce it unhurriedly" },
+    { id: "final-v1", text: "\u01D6", pinyin: "\u01D6", kind: "single-final" },
+    { id: "ma1-mum", text: "\u5988", pinyin: "m\u0101", kind: "word" },
+    { id: "ma2-hemp", text: "\u9EBB", pinyin: "m\xE1", kind: "word", context: "the second-tone \u9EBB in \u9EBB\u836F (m\xE1y\xE0o)" },
+    { id: "ma3-horse", text: "\u9A6C", pinyin: "m\u01CE", kind: "word" },
+    { id: "ma4-scold", text: "\u9A82", pinyin: "m\xE0", ttsInput: "m\xE0", kind: "word", context: "the fourth-tone \u9A82; use a clean, decisive falling tone" },
+    { id: "ba4-dad", text: "\u7238", pinyin: "b\xE0", kind: "word" },
+    { id: "da4-big", text: "\u5927", pinyin: "d\xE0", kind: "word" },
+    { id: "wo3-me", text: "\u6211", pinyin: "w\u01D2", kind: "word" },
+    { id: "mo1-touch", text: "\u6478", pinyin: "m\u014D", ttsInput: "m\u014D", kind: "word", context: "the first-tone \u6478 in \u6478\u4E00\u6478 (m\u014D yi m\u014D)" },
+    { id: "bo1-wave", text: "\u6CE2", pinyin: "b\u014D", kind: "word" },
+    { id: "ge1-brother", text: "\u54E5", pinyin: "g\u0113", kind: "word" },
+    { id: "de2-get", text: "\u5F97", pinyin: "d\xE9", ttsInput: "\u5F97", kind: "word", context: "\u5F97 pronounced d\xE9 with a clear rising second tone" },
+    { id: "he2-and", text: "\u548C", pinyin: "h\xE9", kind: "word" },
+    { id: "ni3-you", text: "\u4F60", pinyin: "n\u01D0", kind: "word" },
+    { id: "mi3-rice", text: "\u7C73", pinyin: "m\u01D0", kind: "word" },
+    { id: "di4-younger-brother", text: "\u5F1F", pinyin: "d\xEC", ttsInput: "d\xEC", kind: "word", context: "the fourth-tone \u5F1F in \u5F1F\u5F1F (d\xECdi)" },
+    { id: "shu1-book", text: "\u4E66", pinyin: "sh\u016B", kind: "word" },
+    { id: "tu3-earth", text: "\u571F", pinyin: "t\u01D4", kind: "word" },
+    { id: "lu4-road", text: "\u8DEF", pinyin: "l\xF9", kind: "word" },
+    { id: "nv3-woman", text: "\u5973", pinyin: "n\u01DA", kind: "word" },
+    { id: "yu3-rain", text: "\u96E8", pinyin: "y\u01D4", kind: "word", context: "the third-tone \u96E8 in \u4E0B\u96E8 (xi\xE0y\u01D4)" },
+    { id: "yu2-fish", text: "\u9C7C", pinyin: "y\xFA", kind: "word" },
+    { id: "shi2-ten", text: "\u5341", pinyin: "sh\xED", kind: "word" },
+    { id: "si4-four", text: "\u56DB", pinyin: "s\xEC", kind: "word" },
+    { id: "niu2-cow", text: "\u725B", pinyin: "ni\xFA", kind: "word" }
+  ];
+  var clipsById = new Map(pinyinBasicsAudioClips.map((clip) => [clip.id, clip]));
+  var clipsByReading = new Map(
+    pinyinBasicsAudioClips.map((clip) => [`${clip.text}\0${clip.pinyin}`, clip])
+  );
+  function pinyinBasicsAudioId(text, pinyin = text) {
+    return clipsByReading.get(`${text}\0${pinyin}`)?.id ?? "";
+  }
+  function pinyinBasicsAudioPath(id) {
+    return id && clipsById.has(id) ? `${pinyinBasicsAudioBase}/${id}.mp3?v=${pinyinBasicsAudioVersion}` : "";
+  }
+
   // src/features/foundations/pinyin-runtime.js
   var basicToneRounds = [
     { audio: "\u5988", pinyin: "m\u0101", tone: 1 },
@@ -11378,14 +11424,73 @@
     { audio: "\u9C7C", pinyin: "y\xFA", final: "\xFC" }
   ];
   function createPinyinRuntime({ state: state2, focusExplorer: focusExplorer2, activityPanelTitle: activityPanelTitle2, activityPanelSummary: activityPanelSummary2, activityList: activityList2, speak: speak2 }) {
-    function soundChipMarkup(label, audioText) {
-      return `<button class="pinyin-sound-chip" type="button" data-pinyin-audio="${audioText}" aria-label="Play ${label}">${label}</button>`;
+    let activeRecording = null;
+    let playbackSequence = 0;
+    function audioAttributes(text, pinyin = text, explicitId = "") {
+      const id = explicitId || pinyinBasicsAudioId(text, pinyin);
+      return `data-pinyin-audio="${text}"${id ? ` data-pinyin-audio-id="${id}"` : ""}`;
+    }
+    function soundChipMarkup(label, audioText, audioId = "") {
+      return `<button class="pinyin-sound-chip" type="button" ${audioAttributes(audioText, audioText, audioId)} aria-label="Play ${label}">${label}</button>`;
     }
     function wordAudioMarkup(hanzi, pinyin) {
-      return `<button class="pinyin-word-audio" type="button" data-pinyin-audio="${hanzi}" aria-label="Play ${hanzi}"><b>${hanzi}</b><span>${pinyin}</span></button>`;
+      return `<button class="pinyin-word-audio" type="button" ${audioAttributes(hanzi, pinyin)} aria-label="Play ${hanzi}"><b>${hanzi}</b><span>${pinyin}</span></button>`;
     }
-    function playAllButton(audioTexts) {
-      return `<button class="small-button is-play-button pinyin-play-all" type="button" data-pinyin-play-all="${audioTexts.join("|")}" aria-label="Play all">\u25B6 <span>Play all</span></button>`;
+    function playAllButton(audioTexts, audioIds = []) {
+      return `<button class="small-button is-play-button pinyin-play-all" type="button" data-pinyin-play-all="${audioTexts.join("|")}"${audioIds.length ? ` data-pinyin-play-all-ids="${audioIds.join("|")}"` : ""} aria-label="Play all">\u25B6 <span>Play all</span></button>`;
+    }
+    function stopRecording() {
+      if (!activeRecording) return;
+      const { audio, resolve } = activeRecording;
+      activeRecording = null;
+      audio.pause();
+      audio.removeAttribute("src");
+      audio.load();
+      resolve(false);
+    }
+    function playRecording(id, fallbackText, sequence = ++playbackSequence) {
+      const source2 = pinyinBasicsAudioPath(id);
+      if (!source2 || typeof Audio === "undefined") {
+        speak2?.(fallbackText, 0.58);
+        return Promise.resolve(false);
+      }
+      stopRecording();
+      globalThis.speechSynthesis?.cancel?.();
+      return new Promise((resolve) => {
+        const audio = new Audio(source2);
+        const recording = { audio, resolve, sequence };
+        activeRecording = recording;
+        audio.preload = "auto";
+        audio.addEventListener("ended", () => {
+          if (activeRecording !== recording) return;
+          activeRecording = null;
+          resolve(true);
+        }, { once: true });
+        audio.addEventListener("error", () => {
+          if (activeRecording !== recording) return;
+          activeRecording = null;
+          speak2?.(fallbackText, 0.58);
+          resolve(false);
+        }, { once: true });
+        audio.play().catch(() => {
+          if (activeRecording !== recording) return;
+          activeRecording = null;
+          speak2?.(fallbackText, 0.58);
+          resolve(false);
+        });
+      });
+    }
+    async function playRecordingSequence(ids, fallbackTexts) {
+      const sequence = ++playbackSequence;
+      stopRecording();
+      if (!ids.length) {
+        speak2?.(fallbackTexts.join("\uFF0C"), 0.46);
+        return;
+      }
+      for (let index = 0; index < ids.length; index += 1) {
+        if (sequence !== playbackSequence) return;
+        await playRecording(ids[index], fallbackTexts[index] ?? "", sequence);
+      }
     }
     function activeGroup() {
       return pinyinChapterGroups.find((group) => group.id === state2.pinyinGroupId) ?? pinyinChapterGroups[0];
@@ -11429,14 +11534,15 @@
     function basicChapterCardMarkup() {
       const examples = [
         { sound: "a", words: [["\u5988", "m\u0101"], ["\u7238", "b\xE0"], ["\u5927", "d\xE0"]] },
-        { sound: "o", words: [["\u6211", "w\u01D2"], ["\u54E6", "\xF3"], ["\u6CE2", "b\u014D"]] },
+        { sound: "o", words: [["\u6211", "w\u01D2"], ["\u6478", "m\u014D"], ["\u6CE2", "b\u014D"]] },
         { sound: "e", words: [["\u54E5", "g\u0113"], ["\u5F97", "d\xE9"], ["\u548C", "h\xE9"]] },
         { sound: "i", words: [["\u4F60", "n\u01D0"], ["\u7C73", "m\u01D0"], ["\u5F1F", "d\xEC"]] },
         { sound: "u", words: [["\u4E66", "sh\u016B"], ["\u571F", "t\u01D4"], ["\u8DEF", "l\xF9"]] },
         { sound: "\xFC", words: [["\u5973", "n\u01DA"], ["\u96E8", "y\u01D4"], ["\u9C7C", "y\xFA"]] }
       ];
-      const singleFinalAudio = { a: "\u554A", o: "\u54E6", e: "\u9E45", i: "\u8863", u: "\u4E4C", \u00FC: "\u8FC2" };
-      return `<section class="pinyin-chapter-card pinyin-basic-chapter-card"><header class="pinyin-chapter-heading"><p class="body-match-kicker">\u7B2C 2 \u7AE0 \xB7 Chapter 2</p><h4>\u5355\u97F5\u6BCD</h4><p class="pinyin-chapter-english">Single finals</p>${playAllButton(Object.values(singleFinalAudio))}</header><p class="pinyin-chapter-definition">A final is the vowel part at the end of a syllable. A single final has one vowel sound.</p><div class="pinyin-chapter-card-body"><section><div class="pinyin-ready-sounds pinyin-basic-sound-row">${["a", "o", "e", "i", "u", "\xFC"].map((sound) => soundChipMarkup(sound, singleFinalAudio[sound])).join("")}</div></section><section class="pinyin-basic-examples">${examples.map((item) => `<div><strong>${item.sound}</strong>${item.words.map(([hanzi, pinyin]) => wordAudioMarkup(hanzi, pinyin)).join("")}</div>`).join("")}</section><aside class="pinyin-u-rule"><strong>Why do \xFC\u2019s dots sometimes disappear?</strong><p>Usually, the dots stay: <b>\u5973 n\u01DA</b> is <b>n + \xFC</b>. Only after <b>j, q, x,</b> or <b>y</b> are the dots left off. Those letters are never followed by the plain <b>u</b> sound, so readers still know to say <b>\xFC</b>. We will practise those combinations later.</p></aside></div></section>`;
+      const singleFinalAudio = { a: ["\u0101", "final-a1"], o: ["\u014D", "final-o1"], e: ["\u0113", "final-e1"], i: ["\u012B", "final-i1"], u: ["\u016B", "final-u1"], \u00FC: ["\u01D6", "final-v1"] };
+      const finalSounds = ["a", "o", "e", "i", "u", "\xFC"];
+      return `<section class="pinyin-chapter-card pinyin-basic-chapter-card"><header class="pinyin-chapter-heading"><p class="body-match-kicker">\u7B2C 2 \u7AE0 \xB7 Chapter 2</p><h4>\u5355\u97F5\u6BCD</h4><p class="pinyin-chapter-english">Single finals</p>${playAllButton(finalSounds.map((sound) => singleFinalAudio[sound][0]), finalSounds.map((sound) => singleFinalAudio[sound][1]))}</header><p class="pinyin-chapter-definition">A final is the vowel part at the end of a syllable. A single final has one vowel sound.</p><div class="pinyin-chapter-card-body"><section><div class="pinyin-ready-sounds pinyin-basic-sound-row">${finalSounds.map((sound) => soundChipMarkup(sound, singleFinalAudio[sound][0], singleFinalAudio[sound][1])).join("")}</div></section><section class="pinyin-basic-examples">${examples.map((item) => `<div><strong>${item.sound}</strong>${item.words.map(([hanzi, pinyin]) => wordAudioMarkup(hanzi, pinyin)).join("")}</div>`).join("")}</section><aside class="pinyin-u-rule"><strong>Why do \xFC\u2019s dots sometimes disappear?</strong><p>Usually, the dots stay: <b>\u5973 n\u01DA</b> is <b>n + \xFC</b>. Only after <b>j, q, x,</b> or <b>y</b> are the dots left off. Those letters are never followed by the plain <b>u</b> sound, so readers still know to say <b>\xFC</b>. We will practise those combinations later.</p></aside></div></section>`;
     }
     function toneChapterCardMarkup() {
       const tones = [
@@ -11445,7 +11551,7 @@
         ["m\u01CE", "\u9A6C", "dip, then rise", "M6 9 L15 12 L40 34 L64 14", "57,9 76,3 69,21"],
         ["m\xE0", "\u9A82", "falling", "M6 6 L25 12 L44 20 L63 29", "59,36 76,36 67,22"]
       ];
-      return `<section class="pinyin-chapter-card pinyin-tone-chapter-card"><header class="pinyin-chapter-heading"><p class="body-match-kicker">\u7B2C 1 \u7AE0 \xB7 Chapter 1</p><h4>\u56DB\u58F0</h4><p class="pinyin-chapter-english">Four tones</p>${playAllButton(tones.map(([, hanzi]) => hanzi))}</header><p class="pinyin-chapter-definition">A tone is the pitch pattern of one syllable. With <b>ma</b>, changing that pattern makes four different words: <b>m\u0101</b>, <b>m\xE1</b>, <b>m\u01CE</b>, and <b>m\xE0</b>.</p><div class="pinyin-tone-row">${tones.map(([pinyin, hanzi, movement, line, head]) => `<button type="button" data-pinyin-audio="${hanzi}" aria-label="Play ${pinyin}, ${hanzi}"><strong>${pinyin}</strong><svg class="pinyin-tone-contour" viewBox="0 0 80 38" aria-hidden="true"><path d="${line}" /><polygon points="${head}" /></svg><b>${hanzi}</b><small>${movement}</small></button>`).join("")}</div></section>`;
+      return `<section class="pinyin-chapter-card pinyin-tone-chapter-card"><header class="pinyin-chapter-heading"><p class="body-match-kicker">\u7B2C 1 \u7AE0 \xB7 Chapter 1</p><h4>\u56DB\u58F0</h4><p class="pinyin-chapter-english">Four tones</p>${playAllButton(tones.map(([, hanzi]) => hanzi), tones.map(([pinyin, hanzi]) => pinyinBasicsAudioId(hanzi, pinyin)))}</header><p class="pinyin-chapter-definition">A tone is the pitch pattern of one syllable. With <b>ma</b>, changing that pattern makes four different words: <b>m\u0101</b>, <b>m\xE1</b>, <b>m\u01CE</b>, and <b>m\xE0</b>.</p><div class="pinyin-tone-row">${tones.map(([pinyin, hanzi, movement, line, head]) => `<button type="button" ${audioAttributes(hanzi, pinyin)} aria-label="Play ${pinyin}, ${hanzi}"><strong>${pinyin}</strong><svg class="pinyin-tone-contour" viewBox="0 0 80 38" aria-hidden="true"><path d="${line}" /><polygon points="${head}" /></svg><b>${hanzi}</b><small>${movement}</small></button>`).join("")}</div></section>`;
     }
     function basicPracticeMarkup(kind) {
       const toneRound = basicToneRounds[state2.pinyinBasicsToneRoundIndex % basicToneRounds.length];
@@ -11464,10 +11570,15 @@
     }
     function bindChapterNavigation() {
       focusExplorer2.querySelectorAll("[data-pinyin-group]").forEach((button) => button.addEventListener("click", () => selectGroup(button.dataset.pinyinGroup)));
-      focusExplorer2.querySelectorAll("[data-pinyin-audio]").forEach((button) => button.addEventListener("click", () => speak2?.(button.dataset.pinyinAudio, 0.62)));
+      focusExplorer2.querySelectorAll("[data-pinyin-audio]").forEach((button) => button.addEventListener("click", () => {
+        const id = button.dataset.pinyinAudioId;
+        if (id) playRecording(id, button.dataset.pinyinAudio);
+        else speak2?.(button.dataset.pinyinAudio, 0.62);
+      }));
       focusExplorer2.querySelectorAll("[data-pinyin-play-all]").forEach((button) => button.addEventListener("click", () => {
         const audioTexts = button.dataset.pinyinPlayAll.split("|").filter(Boolean);
-        speak2?.(audioTexts.join("\uFF0C"), 0.46);
+        const audioIds = button.dataset.pinyinPlayAllIds?.split("|").filter(Boolean) ?? [];
+        playRecordingSequence(audioIds, audioTexts);
       }));
       focusExplorer2.querySelectorAll("[data-pinyin-basics-play]").forEach((button) => button.addEventListener("click", () => {
         const isTone = button.dataset.pinyinBasicsPlay === "tone";
@@ -11484,7 +11595,10 @@
           state2.pinyinBasicsFinalResult = "";
         }
         renderPinyinExplorer();
-        speak2?.(rounds[nextIndex].audio, 0.52);
+        const round = rounds[nextIndex];
+        const id = pinyinBasicsAudioId(round.audio, round.pinyin);
+        if (id) playRecording(id, round.audio);
+        else speak2?.(round.audio, 0.52);
       }));
       focusExplorer2.querySelectorAll("[data-pinyin-basics-tone]").forEach((button) => button.addEventListener("click", () => {
         const correctTone = basicToneRounds[state2.pinyinBasicsToneRoundIndex % basicToneRounds.length].tone;
