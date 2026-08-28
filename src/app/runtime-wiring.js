@@ -180,12 +180,12 @@ let renderSchoolExplorer;
 let focusExplorerRuntime;
 function renderDefaultExplorer() {
   const result = focusExplorerRuntime?.renderDefaultExplorer();
-  applyImageLoading(focusExplorer, { primary: true });
+  applyImageLoading(focusExplorer, { eager: true });
   return result;
 }
 function renderFocusExplorer() {
   const result = focusExplorerRuntime?.renderFocusExplorer();
-  applyImageLoading(focusExplorer, { primary: true });
+  applyImageLoading(focusExplorer, { eager: true });
   return result;
 }
 

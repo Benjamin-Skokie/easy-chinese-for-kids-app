@@ -4,13 +4,13 @@ export function imageLoadingAttrs({ primary = false } = {}) {
     : 'loading="lazy" decoding="async"';
 }
 
-export function applyImageLoading(container, { primary = false } = {}) {
+export function applyImageLoading(container, { primary = false, eager = false } = {}) {
   if (!container) return;
   let firstImage = true;
   for (const image of container.querySelectorAll("img")) {
     if (!image.hasAttribute("decoding")) image.decoding = "async";
     if (!image.hasAttribute("loading")) {
-      image.loading = primary && firstImage ? "eager" : "lazy";
+      image.loading = eager || (primary && firstImage) ? "eager" : "lazy";
     }
     firstImage = false;
   }

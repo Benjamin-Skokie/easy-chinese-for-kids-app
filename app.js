@@ -630,13 +630,13 @@
   function imageLoadingAttrs({ primary = false } = {}) {
     return primary ? 'loading="eager" decoding="async"' : 'loading="lazy" decoding="async"';
   }
-  function applyImageLoading(container, { primary = false } = {}) {
+  function applyImageLoading(container, { primary = false, eager = false } = {}) {
     if (!container) return;
     let firstImage = true;
     for (const image of container.querySelectorAll("img")) {
       if (!image.hasAttribute("decoding")) image.decoding = "async";
       if (!image.hasAttribute("loading")) {
-        image.loading = primary && firstImage ? "eager" : "lazy";
+        image.loading = eager || primary && firstImage ? "eager" : "lazy";
       }
       firstImage = false;
     }
@@ -10483,7 +10483,7 @@
       return topic.focusItems;
     }
     function worldSceneCardMarkup(scene, { playAttribute, index, compact = false, extraClass = "" }) {
-      return `<section class="greetings-exchange school-scene-card${extraClass ? ` ${extraClass}` : ""}"><div class="greetings-exchange-top"><div><p class="body-match-kicker">${scene.title}</p></div><button class="small-button is-play-button" type="button" ${playAttribute}="${index}">Play</button></div><div class="school-scene-layout${compact ? " is-compact" : ""}"><img class="school-scene-image${scene.imageClass ? ` ${scene.imageClass}` : ""}" src="${scene.imagePath}" alt="${scene.imageAlt}" ${imageLoadingAttrs({ primary: index === 0 })} /><div class="greetings-line-stack">${scene.lines.map((line) => `<article class="greetings-line-card"><div class="telephone-bubble-copy"><p class="telephone-line-hanzi${line.className ? ` ${line.className}` : ""}">${line.hanzi}</p>${state2.showPinyin ? `<p class="telephone-line-pinyin">${line.pinyin}</p>` : ""}${state2.showEnglish ? `<p class="telephone-line-english">${line.english}</p>` : ""}</div></article>`).join("")}</div></div></section>`;
+      return `<section class="greetings-exchange school-scene-card${extraClass ? ` ${extraClass}` : ""}"><div class="greetings-exchange-top"><div><p class="body-match-kicker">${scene.title}</p></div><button class="small-button is-play-button" type="button" ${playAttribute}="${index}">Play</button></div><div class="school-scene-layout${compact ? " is-compact" : ""}"><img class="school-scene-image${scene.imageClass ? ` ${scene.imageClass}` : ""}" src="${scene.imagePath}" alt="${scene.imageAlt}" ${imageLoadingAttrs({ primary: true })} /><div class="greetings-line-stack">${scene.lines.map((line) => `<article class="greetings-line-card"><div class="telephone-bubble-copy"><p class="telephone-line-hanzi${line.className ? ` ${line.className}` : ""}">${line.hanzi}</p>${state2.showPinyin ? `<p class="telephone-line-pinyin">${line.pinyin}</p>` : ""}${state2.showEnglish ? `<p class="telephone-line-english">${line.english}</p>` : ""}</div></article>`).join("")}</div></div></section>`;
     }
     function renderWorldExplorer() {
       const lesson = lessonForCurrentBook();
@@ -13009,12 +13009,12 @@
   var focusExplorerRuntime;
   function renderDefaultExplorer() {
     const result = focusExplorerRuntime?.renderDefaultExplorer();
-    applyImageLoading(focusExplorer, { primary: true });
+    applyImageLoading(focusExplorer, { eager: true });
     return result;
   }
   function renderFocusExplorer() {
     const result = focusExplorerRuntime?.renderFocusExplorer();
-    applyImageLoading(focusExplorer, { primary: true });
+    applyImageLoading(focusExplorer, { eager: true });
     return result;
   }
   var foundationsRuntime;
