@@ -39,6 +39,13 @@
     },
     {
       "id": "clothes",
+      "label": "Clothes",
+      "hanzi": "衣服",
+      "pinyin": "yi fu",
+      "file": "clothes-stack.webp"
+    },
+    {
+      "id": "t-shirt",
       "label": "T-shirt",
       "hanzi": "T恤",
       "pinyin": "T xu",

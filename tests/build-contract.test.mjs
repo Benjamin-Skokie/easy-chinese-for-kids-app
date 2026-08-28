@@ -1110,8 +1110,8 @@ test("clothes owns its scenes and picture matching set", () => {
   assert.equal(clothesPractice.filter((item) => item.lessonSources?.includes("4b:2")).length, 4);
   assert.ok(clothesMatchItems.every((item) => item.imagePath));
   assert.ok(clothesSentenceItems.every((item) => item.lessonSources?.length));
-  assert.ok(clothesBookWords.filter((item) => item.imagePath).every((item) => existsSync(item.imagePath)));
-  assert.ok(clothesSentenceItems.every((item) => existsSync(item.imagePath)));
+  assert.ok(clothesBookWords.filter((item) => item.imagePath).every((item) => existsSync(item.imagePath.split("?")[0])));
+  assert.ok(clothesSentenceItems.every((item) => existsSync(item.imagePath.split("?")[0])));
   assert.match(runtimeSource, /time-asset-card book-word-card/);
   assert.match(runtimeSource, /function scopedClothesContent\(items\) \{[\s\S]{0,220}state\.lessonScope/);
   assert.doesNotMatch(runtimeSource, /clothes-book-board/);
