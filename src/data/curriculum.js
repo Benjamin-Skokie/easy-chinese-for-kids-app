@@ -220,8 +220,8 @@ export const topicCardMeta = {
 export const learningHomeCategories = [
   {
     id: "special-topics",
-    zhTitle: "特别主题",
-    enTitle: "Special Topics",
+    zhTitle: "汉语一零一",
+    enTitle: "Chinese 101",
     hint: "Build the skills that support every Chinese lesson",
     accent: "#b85f75",
     iconEmoji: "✨",

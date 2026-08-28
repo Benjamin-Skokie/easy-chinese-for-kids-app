@@ -2,7 +2,7 @@ export const strokesTopic = {
   id: "strokes",
   title: "Chinese Strokes",
   summary: "See how a character grows one stroke at a time, then practise the order.",
-  progressLabel: "Special topic · Basic strokes",
+  progressLabel: "汉语一零一 · Basic strokes",
   iconText: "笔画",
   iconColor: "#477c86",
   ownsExplorerContent: true,

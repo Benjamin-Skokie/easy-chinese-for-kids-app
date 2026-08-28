@@ -22,7 +22,7 @@ export const pictographsTopic = {
   id: "pictographs",
   title: "Pictographic Characters",
   summary: "See how a few everyday pictures became Chinese characters.",
-  progressLabel: "Special topic · Character origins",
+  progressLabel: "汉语一零一 · Character origins",
   iconText: "象形",
   iconColor: "#b46a47",
   ownsExplorerContent: true,

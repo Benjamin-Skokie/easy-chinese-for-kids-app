@@ -2,7 +2,7 @@ export const pinyinTopic = {
   id: "pinyin",
   title: "汉语拼音 · Pinyin",
   summary: "Learn how Pinyin writes the sounds of Mandarin and helps children connect speech, pronunciation, and Chinese characters.",
-  progressLabel: "Complete Pinyin · 15 chapters",
+  progressLabel: "汉语一零一 · Pinyin",
   iconText: "拼音",
   iconColor: "#b85f75",
   ownsExplorerContent: true,
