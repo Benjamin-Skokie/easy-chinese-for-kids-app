@@ -25,6 +25,7 @@ export function createFocusExplorerRuntime(context) {
     renderMultiplicationExplorer,
     renderPinyinExplorer,
     renderStrokeExplorer,
+    renderPictographExplorer,
     renderWorldExplorer,
     renderHobbiesExplorer
   } = context;
@@ -46,6 +47,7 @@ export function createFocusExplorerRuntime(context) {
     let renderer = renderDefaultExplorer;
     if (topic.interactiveScene === "pinyin-lab") renderer = renderPinyinExplorer;
     else if (topic.interactiveScene === "stroke-lab") renderer = renderStrokeExplorer;
+    else if (topic.interactiveScene === "pictograph-lab") renderer = renderPictographExplorer;
     else if (topic.interactiveScene === "body-face") renderer = renderBodyExplorer;
     else if (topic.id === "numbers") renderer = renderNumbersExplorer;
     else if (topic.interactiveScene === "telephone-numbers") renderer = renderTelephoneExplorer;

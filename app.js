@@ -276,6 +276,9 @@
       strokePracticeStrokeId: "heng",
       strokePracticeCharacterId: "\u4E00",
       strokePracticeChosenIds: [],
+      pictographId: "sun",
+      pictographPickedId: "",
+      pictographRevealed: "",
       randomPracticeCycles: {},
       ...createFoundationState(),
       ...createTimeDailyLifeState(),
@@ -672,7 +675,7 @@
 
   // src/core/lesson-practice-runtime.js
   function createLessonPracticeRuntime(context) {
-    const { state: state2, schoolTopicData: schoolTopicData3, visualTopicItems: visualTopicItems2, positionPracticeItems: positionPracticeItems2, timeDateWeekItems: timeDateWeekItems2, timeDateClockItems: timeDateClockItems2, datePracticeItems: datePracticeItems2, birthdayConversationLines: birthdayConversationLines2, timeDateMonthItems: timeDateMonthItems2, timeDateRoutineItems: timeDateRoutineItems2, timeRoutineSentenceBuilds: timeRoutineSentenceBuilds2, clothesMatchItems: clothesMatchItems2, clothesSentenceItems: clothesSentenceItems2, everydayActionItems: everydayActionItems2, requestBuildPhrases: requestBuildPhrases2, isItPracticeRounds: isItPracticeRounds2, illustratedKids: illustratedKids2, numberHanzi: numberHanzi2, buildNumberItem: buildNumberItem2, currentTopic: currentTopic2, currentNumberStage: currentNumberStage2, currentBook: currentBook2, currentLesson: currentLesson2, focusItemsForTopic: focusItemsForTopic2, shuffleArray: shuffleArray2, speak: speak2, renderFocusExplorer: renderFocusExplorer2, renderFocusStatus: renderFocusStatus2, renderSharedLessonPractice: renderSharedLessonPractice2, renderPracticeSayCards: renderPracticeSayCards2, bindPracticeSayCards: bindPracticeSayCards2, activityPanelTitle: activityPanelTitle2, activityPanelSummary: activityPanelSummary2, activityList: activityList2, topicColumns: topicColumns2, renderBodyPractice: renderBodyPractice2, renderWorldPractice, renderHobbiesPractice, renderPinyinPractice, renderStrokePractice, activeTimeDateSection: activeTimeDateSection2, ensureWeekdayChallenge: ensureWeekdayChallenge2, ensureWeekdayMatchGame: ensureWeekdayMatchGame2, handleWeekdayChallengePlay: handleWeekdayChallengePlay2, handleWeekdayChallengeGuess: handleWeekdayChallengeGuess2, resetWeekdayMatchGame: resetWeekdayMatchGame2, handleWeekdayMatchPhrase: handleWeekdayMatchPhrase2, handleWeekdayMatchAttempt: handleWeekdayMatchAttempt2, ensureDateChallenge: ensureDateChallenge2, ensureDateMatchGame: ensureDateMatchGame2, handleDateChallengePlay: handleDateChallengePlay2, handleDateChallengeGuess: handleDateChallengeGuess2, resetDateMatchGame: resetDateMatchGame2, handleDateMatchPhrase: handleDateMatchPhrase2, handleDateMatchEvent: handleDateMatchEvent2, familyGameItems: familyGameItems2, familyListenItems: familyListenItems2, familyPersonForItemId: familyPersonForItemId2, familyHeadshotForItemId: familyHeadshotForItemId2, ensureFamilyChallenge: ensureFamilyChallenge2, ensureFamilyMatchGame: ensureFamilyMatchGame2, handleFamilyChallengePlay: handleFamilyChallengePlay2, handleFamilyChallengeGuess: handleFamilyChallengeGuess2, resetFamilyMatchGame: resetFamilyMatchGame2, handleFamilyMatchPhrase: handleFamilyMatchPhrase2, handleFamilyMatchAttempt: handleFamilyMatchAttempt2, greetingsGameItems: greetingsGameItems2, greetingsMeaningLabel: greetingsMeaningLabel2, ensureGreetingsChallenge: ensureGreetingsChallenge2, ensureGreetingsMatchGame: ensureGreetingsMatchGame2, handleGreetingsChallengePlay: handleGreetingsChallengePlay2, handleGreetingsChallengeGuess: handleGreetingsChallengeGuess2, resetGreetingsMatchGame: resetGreetingsMatchGame2, handleGreetingsMatchPhrase: handleGreetingsMatchPhrase2, handleGreetingsMatchAttempt: handleGreetingsMatchAttempt2, nationalityPracticeItems: nationalityPracticeItems2, ensureNationalityChallenge: ensureNationalityChallenge2, currentNationalityAnswer: currentNationalityAnswer2, handleNationalityChallengePlay: handleNationalityChallengePlay2, handleNationalityChallengeGuess: handleNationalityChallengeGuess2, ensureNationalityMatchGame: ensureNationalityMatchGame2, resetNationalityMatchGame: resetNationalityMatchGame2, handleNationalityMatchPhrase: handleNationalityMatchPhrase2, handleNationalityMatchAttempt: handleNationalityMatchAttempt2, languagePracticeItems: languagePracticeItems2, ensureLanguageChallenge: ensureLanguageChallenge2, currentLanguageAnswer: currentLanguageAnswer2, handleLanguageChallengePlay: handleLanguageChallengePlay2, handleLanguageChallengeGuess: handleLanguageChallengeGuess2, politeGameItems: politeGameItems2, politeMeaningLabel: politeMeaningLabel2, ensurePoliteChallenge: ensurePoliteChallenge2, ensurePoliteMatchGame: ensurePoliteMatchGame2, handlePoliteChallengePlay: handlePoliteChallengePlay2, handlePoliteChallengeGuess: handlePoliteChallengeGuess2, resetPoliteMatchGame: resetPoliteMatchGame2, handlePoliteMatchPhrase: handlePoliteMatchPhrase2, handlePoliteMatchAttempt: handlePoliteMatchAttempt2, ensureRoomBuilder: ensureRoomBuilder2, currentRoomBuildItem: currentRoomBuildItem2, handleRoomBuildToken: handleRoomBuildToken2, clearRoomBuilder: clearRoomBuilder2, nextRoomBuilder: nextRoomBuilder2, ensureClothesQuiz: ensureClothesQuiz2, handleClothesQuizPick: handleClothesQuizPick2, nextClothesQuizQuestion: nextClothesQuizQuestion2, ensureClothesSentenceQuiz: ensureClothesSentenceQuiz2, handleClothesSentencePick: handleClothesSentencePick2, nextClothesSentenceQuestion: nextClothesSentenceQuestion2, ensureTimeRoutineQuiz: ensureTimeRoutineQuiz2, handleTimeRoutineQuizPick: handleTimeRoutineQuizPick2, nextTimeRoutineQuizQuestion: nextTimeRoutineQuizQuestion2, ensureClockQuiz: ensureClockQuiz2, handleClockQuizPick: handleClockQuizPick2, nextClockQuizQuestion: nextClockQuizQuestion2, ensureComparisonBuilder: ensureComparisonBuilder2, currentComparisonBuildItem: currentComparisonBuildItem2, handleComparisonBuildToken: handleComparisonBuildToken2, clearComparisonBuilder: clearComparisonBuilder2, nextComparisonBuilder: nextComparisonBuilder2, ensurePositionQuiz: ensurePositionQuiz2, handlePositionQuizPlay: handlePositionQuizPlay2, handlePositionQuizPick: handlePositionQuizPick2, nextPositionQuizQuestion: nextPositionQuizQuestion2, ensureTransportBuilder: ensureTransportBuilder2, currentTransportBuildItem: currentTransportBuildItem2, handleTransportBuildToken: handleTransportBuildToken2, clearTransportBuilder: clearTransportBuilder2, nextTransportBuilder: nextTransportBuilder2, ensureEverydayActionsQuiz: ensureEverydayActionsQuiz2, currentEverydayAction: currentEverydayAction2, handleEverydayActionsPick: handleEverydayActionsPick2, nextEverydayActionsQuestion: nextEverydayActionsQuestion2, resetNumberChallenge: resetNumberChallenge2, ensureMathChallenge: ensureMathChallenge2, handleNumberChallengeGuess: handleNumberChallengeGuess2, resetMathChallenge: resetMathChallenge2, handleMathChallengeSubmit: handleMathChallengeSubmit2, renderNumberVisual: renderNumberVisual2, introductionsBuildTarget: introductionsBuildTarget2, ensureIntroductionsBuilder: ensureIntroductionsBuilder2, resetIntroductionsBuilder: resetIntroductionsBuilder2, handleIntroductionsBuildClear: handleIntroductionsBuildClear2, handleIntroductionsBuildToken: handleIntroductionsBuildToken2, ageGameItems: ageGameItems2, ensureAgeChallenge: ensureAgeChallenge2, ensureAgeBuilder: ensureAgeBuilder2, ageBuildTarget: ageBuildTarget2, handleAgeChallengePlay: handleAgeChallengePlay2, handleAgeChallengeGuess: handleAgeChallengeGuess2, resetAgeBuilder: resetAgeBuilder2, handleAgeBuildClear: handleAgeBuildClear2, handleAgeBuildToken: handleAgeBuildToken2, renderSchoolPractice: renderSchoolPractice2 } = context;
+    const { state: state2, schoolTopicData: schoolTopicData3, visualTopicItems: visualTopicItems2, positionPracticeItems: positionPracticeItems2, timeDateWeekItems: timeDateWeekItems2, timeDateClockItems: timeDateClockItems2, datePracticeItems: datePracticeItems2, birthdayConversationLines: birthdayConversationLines2, timeDateMonthItems: timeDateMonthItems2, timeDateRoutineItems: timeDateRoutineItems2, timeRoutineSentenceBuilds: timeRoutineSentenceBuilds2, clothesMatchItems: clothesMatchItems2, clothesSentenceItems: clothesSentenceItems2, everydayActionItems: everydayActionItems2, requestBuildPhrases: requestBuildPhrases2, isItPracticeRounds: isItPracticeRounds2, illustratedKids: illustratedKids2, numberHanzi: numberHanzi2, buildNumberItem: buildNumberItem2, currentTopic: currentTopic2, currentNumberStage: currentNumberStage2, currentBook: currentBook2, currentLesson: currentLesson2, focusItemsForTopic: focusItemsForTopic2, shuffleArray: shuffleArray2, speak: speak2, renderFocusExplorer: renderFocusExplorer2, renderFocusStatus: renderFocusStatus2, renderSharedLessonPractice: renderSharedLessonPractice2, renderPracticeSayCards: renderPracticeSayCards2, bindPracticeSayCards: bindPracticeSayCards2, activityPanelTitle: activityPanelTitle2, activityPanelSummary: activityPanelSummary2, activityList: activityList2, topicColumns: topicColumns2, renderBodyPractice: renderBodyPractice2, renderWorldPractice, renderHobbiesPractice, renderPinyinPractice, renderStrokePractice, renderPictographPractice, activeTimeDateSection: activeTimeDateSection2, ensureWeekdayChallenge: ensureWeekdayChallenge2, ensureWeekdayMatchGame: ensureWeekdayMatchGame2, handleWeekdayChallengePlay: handleWeekdayChallengePlay2, handleWeekdayChallengeGuess: handleWeekdayChallengeGuess2, resetWeekdayMatchGame: resetWeekdayMatchGame2, handleWeekdayMatchPhrase: handleWeekdayMatchPhrase2, handleWeekdayMatchAttempt: handleWeekdayMatchAttempt2, ensureDateChallenge: ensureDateChallenge2, ensureDateMatchGame: ensureDateMatchGame2, handleDateChallengePlay: handleDateChallengePlay2, handleDateChallengeGuess: handleDateChallengeGuess2, resetDateMatchGame: resetDateMatchGame2, handleDateMatchPhrase: handleDateMatchPhrase2, handleDateMatchEvent: handleDateMatchEvent2, familyGameItems: familyGameItems2, familyListenItems: familyListenItems2, familyPersonForItemId: familyPersonForItemId2, familyHeadshotForItemId: familyHeadshotForItemId2, ensureFamilyChallenge: ensureFamilyChallenge2, ensureFamilyMatchGame: ensureFamilyMatchGame2, handleFamilyChallengePlay: handleFamilyChallengePlay2, handleFamilyChallengeGuess: handleFamilyChallengeGuess2, resetFamilyMatchGame: resetFamilyMatchGame2, handleFamilyMatchPhrase: handleFamilyMatchPhrase2, handleFamilyMatchAttempt: handleFamilyMatchAttempt2, greetingsGameItems: greetingsGameItems2, greetingsMeaningLabel: greetingsMeaningLabel2, ensureGreetingsChallenge: ensureGreetingsChallenge2, ensureGreetingsMatchGame: ensureGreetingsMatchGame2, handleGreetingsChallengePlay: handleGreetingsChallengePlay2, handleGreetingsChallengeGuess: handleGreetingsChallengeGuess2, resetGreetingsMatchGame: resetGreetingsMatchGame2, handleGreetingsMatchPhrase: handleGreetingsMatchPhrase2, handleGreetingsMatchAttempt: handleGreetingsMatchAttempt2, nationalityPracticeItems: nationalityPracticeItems2, ensureNationalityChallenge: ensureNationalityChallenge2, currentNationalityAnswer: currentNationalityAnswer2, handleNationalityChallengePlay: handleNationalityChallengePlay2, handleNationalityChallengeGuess: handleNationalityChallengeGuess2, ensureNationalityMatchGame: ensureNationalityMatchGame2, resetNationalityMatchGame: resetNationalityMatchGame2, handleNationalityMatchPhrase: handleNationalityMatchPhrase2, handleNationalityMatchAttempt: handleNationalityMatchAttempt2, languagePracticeItems: languagePracticeItems2, ensureLanguageChallenge: ensureLanguageChallenge2, currentLanguageAnswer: currentLanguageAnswer2, handleLanguageChallengePlay: handleLanguageChallengePlay2, handleLanguageChallengeGuess: handleLanguageChallengeGuess2, politeGameItems: politeGameItems2, politeMeaningLabel: politeMeaningLabel2, ensurePoliteChallenge: ensurePoliteChallenge2, ensurePoliteMatchGame: ensurePoliteMatchGame2, handlePoliteWordsExplorer, handlePoliteChallengePlay: handlePoliteChallengePlay2, handlePoliteChallengeGuess: handlePoliteChallengeGuess2, resetPoliteMatchGame: resetPoliteMatchGame2, handlePoliteMatchPhrase: handlePoliteMatchPhrase2, handlePoliteMatchAttempt: handlePoliteMatchAttempt2, ensureRoomBuilder: ensureRoomBuilder2, currentRoomBuildItem: currentRoomBuildItem2, handleRoomBuildToken: handleRoomBuildToken2, clearRoomBuilder: clearRoomBuilder2, nextRoomBuilder: nextRoomBuilder2, ensureClothesQuiz: ensureClothesQuiz2, handleClothesQuizPick: handleClothesQuizPick2, nextClothesQuizQuestion: nextClothesQuizQuestion2, ensureClothesSentenceQuiz: ensureClothesSentenceQuiz2, handleClothesSentencePick: handleClothesSentencePick2, nextClothesSentenceQuestion: nextClothesSentenceQuestion2, ensureTimeRoutineQuiz: ensureTimeRoutineQuiz2, handleTimeRoutineQuizPick: handleTimeRoutineQuizPick2, nextTimeRoutineQuizQuestion: nextTimeRoutineQuizQuestion2, ensureClockQuiz: ensureClockQuiz2, handleClockQuizPick: handleClockQuizPick2, nextClockQuizQuestion: nextClockQuizQuestion2, ensureComparisonBuilder: ensureComparisonBuilder2, currentComparisonBuildItem: currentComparisonBuildItem2, handleComparisonBuildToken: handleComparisonBuildToken2, clearComparisonBuilder: clearComparisonBuilder2, nextComparisonBuilder: nextComparisonBuilder2, ensurePositionQuiz: ensurePositionQuiz2, handlePositionQuizPlay: handlePositionQuizPlay2, handlePositionQuizPick: handlePositionQuizPick2, nextPositionQuizQuestion: nextPositionQuizQuestion2, ensureTransportBuilder: ensureTransportBuilder2, currentTransportBuildItem: currentTransportBuildItem2, handleTransportBuildToken: handleTransportBuildToken2, clearTransportBuilder: clearTransportBuilder2, nextTransportBuilder: nextTransportBuilder2, ensureEverydayActionsQuiz: ensureEverydayActionsQuiz2, currentEverydayAction: currentEverydayAction2, handleEverydayActionsPick: handleEverydayActionsPick2, nextEverydayActionsQuestion: nextEverydayActionsQuestion2, resetNumberChallenge: resetNumberChallenge2, ensureMathChallenge: ensureMathChallenge2, handleNumberChallengeGuess: handleNumberChallengeGuess2, resetMathChallenge: resetMathChallenge2, handleMathChallengeSubmit: handleMathChallengeSubmit2, renderNumberVisual: renderNumberVisual2, introductionsBuildTarget: introductionsBuildTarget2, ensureIntroductionsBuilder: ensureIntroductionsBuilder2, resetIntroductionsBuilder: resetIntroductionsBuilder2, handleIntroductionsBuildClear: handleIntroductionsBuildClear2, handleIntroductionsBuildToken: handleIntroductionsBuildToken2, ageGameItems: ageGameItems2, ensureAgeChallenge: ensureAgeChallenge2, ensureAgeBuilder: ensureAgeBuilder2, ageBuildTarget: ageBuildTarget2, handleAgeChallengePlay: handleAgeChallengePlay2, handleAgeChallengeGuess: handleAgeChallengeGuess2, resetAgeBuilder: resetAgeBuilder2, handleAgeBuildClear: handleAgeBuildClear2, handleAgeBuildToken: handleAgeBuildToken2, renderSchoolPractice: renderSchoolPractice2 } = context;
     function resetBirthdayConversation() {
       const lines = birthdayConversationLines2 ?? [];
       state2.birthdayConversationOrder = shuffleArray2(lines.map((line) => line.id));
@@ -1199,10 +1202,10 @@
         };
       }
       if (topic.id === "dates") {
-        const source = state2.lessonScope ? `${state2.lessonScope.bookId}:${state2.lessonScope.lessonNumber}` : "";
-        const scopedPracticeItems = source ? datePracticeItems2.filter((item) => item.lessonSources?.includes(source)) : datePracticeItems2;
-        const scopedMonthItems = source ? timeDateMonthItems2.filter((item) => item.lessonSources?.includes(source)) : timeDateMonthItems2;
-        if (source === "3a:3") {
+        const source2 = state2.lessonScope ? `${state2.lessonScope.bookId}:${state2.lessonScope.lessonNumber}` : "";
+        const scopedPracticeItems = source2 ? datePracticeItems2.filter((item) => item.lessonSources?.includes(source2)) : datePracticeItems2;
+        const scopedMonthItems = source2 ? timeDateMonthItems2.filter((item) => item.lessonSources?.includes(source2)) : timeDateMonthItems2;
+        if (source2 === "3a:3") {
           return {
             summary: "Tap the three lines in the order they are said.",
             shellClass: "lesson-practice-shell",
@@ -1266,6 +1269,11 @@
       }
       topicColumns2?.classList.remove("is-hidden");
       activityPanelSummary2.hidden = false;
+      if (topic.id === "pictographs") {
+        topicColumns2?.classList.add("is-hidden");
+        activityList2.innerHTML = "";
+        return;
+      }
       if (topic.id === "pinyin") {
         renderPinyinPractice();
         return;
@@ -1585,9 +1593,9 @@
         return;
       }
       if (topic.id === "clothes") {
-        const source = state2.lessonScope ? `${state2.lessonScope.bookId}:${state2.lessonScope.lessonNumber}` : "";
-        const scopedMatchItems = source ? clothesMatchItems2.filter((item) => item.lessonSources?.includes(source)) : clothesMatchItems2;
-        const scopedSentenceItems = source ? clothesSentenceItems2.filter((item) => item.lessonSources?.includes(source)) : clothesSentenceItems2;
+        const source2 = state2.lessonScope ? `${state2.lessonScope.bookId}:${state2.lessonScope.lessonNumber}` : "";
+        const scopedMatchItems = source2 ? clothesMatchItems2.filter((item) => item.lessonSources?.includes(source2)) : clothesMatchItems2;
+        const scopedSentenceItems = source2 ? clothesSentenceItems2.filter((item) => item.lessonSources?.includes(source2)) : clothesSentenceItems2;
         ensureClothesQuiz2();
         ensureClothesSentenceQuiz2();
         const answerId = state2.clothesQuizOrder[state2.clothesQuizIndex];
@@ -1595,10 +1603,10 @@
         const sentenceAnswerId = state2.clothesSentenceOrder[state2.clothesSentenceIndex];
         const sentencePrompt = scopedSentenceItems.find((item) => item.id === sentenceAnswerId);
         const sentenceComplete = state2.clothesSentenceResult === "correct";
-        const showClothesWordQuiz = Boolean(source) && source !== "4b:2";
+        const showClothesWordQuiz = Boolean(source2) && source2 !== "4b:2";
         const colourSentenceItems = clothesSentenceItems2.filter((item) => item.slots?.length);
-        const isClothesColourFill = !source || source === "4b:2";
-        const colourSentencePrompt = source === "4b:2" ? sentencePrompt : colourSentenceItems[state2.clothesColourIndex ?? 0] ?? colourSentenceItems[0];
+        const isClothesColourFill = !source2 || source2 === "4b:2";
+        const colourSentencePrompt = source2 === "4b:2" ? sentencePrompt : colourSentenceItems[state2.clothesColourIndex ?? 0] ?? colourSentenceItems[0];
         const colourSlots = colourSentencePrompt?.slots ?? [];
         const colourPicks = state2.clothesColourPicks ?? {};
         const colourResults = state2.clothesColourResults ?? {};
@@ -1693,7 +1701,7 @@
         activityList2.querySelector("[data-clothes-colour-new]")?.addEventListener("click", () => {
           state2.clothesColourPicks = {};
           state2.clothesColourResults = {};
-          if (source) {
+          if (source2) {
             nextClothesSentenceQuestion2();
           } else {
             state2.clothesColourIndex = ((state2.clothesColourIndex ?? 0) + 1) % colourSentenceItems.length;
@@ -2228,6 +2236,7 @@
       renderMultiplicationExplorer: renderMultiplicationExplorer2,
       renderPinyinExplorer,
       renderStrokeExplorer,
+      renderPictographExplorer,
       renderWorldExplorer,
       renderHobbiesExplorer
     } = context;
@@ -2246,6 +2255,7 @@
       let renderer = renderDefaultExplorer2;
       if (topic.interactiveScene === "pinyin-lab") renderer = renderPinyinExplorer;
       else if (topic.interactiveScene === "stroke-lab") renderer = renderStrokeExplorer;
+      else if (topic.interactiveScene === "pictograph-lab") renderer = renderPictographExplorer;
       else if (topic.interactiveScene === "body-face") renderer = renderBodyExplorer2;
       else if (topic.id === "numbers") renderer = renderNumbersExplorer2;
       else if (topic.interactiveScene === "telephone-numbers") renderer = renderTelephoneExplorer2;
@@ -2285,9 +2295,9 @@
       return numberStages2.find((stage) => stage.bookId === currentBook2().id && stage.lesson === lesson.lesson) ?? numberStages2[0];
     }
     function focusItemsForTopic2(topic = currentTopic2()) {
-      const source = state2.lessonScope ? `${state2.lessonScope.bookId}:${state2.lessonScope.lessonNumber}` : "";
+      const source2 = state2.lessonScope ? `${state2.lessonScope.bookId}:${state2.lessonScope.lessonNumber}` : "";
       const strictLessonTopicIds = /* @__PURE__ */ new Set(["body", "introductions", "age", "dates", "classroom", "clothes", "food"]);
-      const forSelectedLesson = (items) => source ? items.filter((item) => strictLessonTopicIds.has(topic.id) ? item.lessonSources?.includes(source) : !item.lessonSources || item.lessonSources.includes(source)) : items;
+      const forSelectedLesson = (items) => source2 ? items.filter((item) => strictLessonTopicIds.has(topic.id) ? item.lessonSources?.includes(source2) : !item.lessonSources || item.lessonSources.includes(source2)) : items;
       if (topic.id === "numbers") {
         return getNumberStageItems();
       }
@@ -3740,9 +3750,9 @@
     return scope ? `${scope.bookId}:${scope.lessonNumber}` : "";
   }
   function filterLessonContent(items = [], scope = null) {
-    const source = lessonScopeKey(scope);
-    if (!source) return items;
-    return items.filter((item) => item.lessonSources?.includes(source));
+    const source2 = lessonScopeKey(scope);
+    if (!source2) return items;
+    return items.filter((item) => item.lessonSources?.includes(source2));
   }
   function filterLessonGroups(groups = [], scope = null) {
     return groups.map((group) => ({ ...group, items: filterLessonContent(group.items, scope) })).filter((group) => group.items.length);
@@ -4170,8 +4180,8 @@
     }
     function schoolBuildItems(topicId = currentTopic2().id) {
       const items = schoolSentenceBuilds3[topicId] ?? [];
-      const source = lessonScopeKey2();
-      return topicId === "food" && source ? filterLessonContent(items, state2.lessonScope) : items;
+      const source2 = lessonScopeKey2();
+      return topicId === "food" && source2 ? filterLessonContent(items, state2.lessonScope) : items;
     }
     function currentSchoolBuildItem() {
       const items = schoolBuildItems();
@@ -4581,8 +4591,8 @@
       ensureMealsPictureChoice();
       const items = mealsConversationItems();
       activityPanelTitle2.textContent = "Let's practice";
-      const source = state2.lessonScope ? `${state2.lessonScope.bookId}:${state2.lessonScope.lessonNumber}` : "";
-      activityPanelSummary2.textContent = source === "4a:5" ? "Match the lunch question and answer, then choose the sentence that fits the lunch picture." : source === "4a:7" ? "Match each feeling to what the child wants to eat or drink." : schoolTopicData3[topic.id].practiceSummary;
+      const source2 = state2.lessonScope ? `${state2.lessonScope.bookId}:${state2.lessonScope.lessonNumber}` : "";
+      activityPanelSummary2.textContent = source2 === "4a:5" ? "Match the lunch question and answer, then choose the sentence that fits the lunch picture." : source2 === "4a:7" ? "Match each feeling to what the child wants to eat or drink." : schoolTopicData3[topic.id].practiceSummary;
       activityList2.className = "support-list";
       activityList2.innerHTML = `
     <section class="family-practice-shell lesson-practice-shell">
@@ -5227,8 +5237,8 @@
       return state2.lessonScope ? `${state2.lessonScope.bookId}:${state2.lessonScope.lessonNumber}` : "";
     }
     function scoped(items) {
-      const source = lessonKey();
-      return source ? items.filter((item) => item.lessonSources?.includes(source)) : items;
+      const source2 = lessonKey();
+      return source2 ? items.filter((item) => item.lessonSources?.includes(source2)) : items;
     }
     function introductionsPromptById2(promptId) {
       return scoped(introductionsGamePrompts2).find((entry) => entry.id === promptId) ?? null;
@@ -5483,8 +5493,8 @@
       return state2.lessonScope ? `${state2.lessonScope.bookId}:${state2.lessonScope.lessonNumber}` : "";
     }
     function scoped(items) {
-      const source = lessonKey();
-      return source ? items.filter((item) => item.lessonSources?.includes(source)) : items;
+      const source2 = lessonKey();
+      return source2 ? items.filter((item) => item.lessonSources?.includes(source2)) : items;
     }
     function ageGameItems2() {
       return scoped(ageGameItemIds2.map((id) => topicById3("age")?.focusItems.find((item) => item.id === id)).filter(Boolean));
@@ -7600,8 +7610,8 @@
       return ["parents-love-me", "i-love-dad", "i-love-mom"].includes(itemId);
     }
     function familyBookWordItems2() {
-      const source = state2.lessonScope ? `${state2.lessonScope.bookId}:${state2.lessonScope.lessonNumber}` : "";
-      return focusItemsForTopic2(topicById3("family")).filter((item) => !isFamilySentenceItemId2(item.id)).filter((item) => !source || item.lessonSources?.includes(source));
+      const source2 = state2.lessonScope ? `${state2.lessonScope.bookId}:${state2.lessonScope.lessonNumber}` : "";
+      return focusItemsForTopic2(topicById3("family")).filter((item) => !isFamilySentenceItemId2(item.id)).filter((item) => !source2 || item.lessonSources?.includes(source2));
     }
     const lessonTemplateTopicIds = /* @__PURE__ */ new Set(["greetings", "polite-words", "introductions", "is-it", "age", "family"]);
     function usesLessonTemplate2(topic) {
@@ -7905,10 +7915,10 @@
       renderFocusStatus2();
     }
     function bodyMatchItems2() {
-      const source = state2.lessonScope ? `${state2.lessonScope.bookId}:${state2.lessonScope.lessonNumber}` : "";
+      const source2 = state2.lessonScope ? `${state2.lessonScope.bookId}:${state2.lessonScope.lessonNumber}` : "";
       const ids = [...bodyCoreItemIds2, ...bodyBonusItemIds2];
       const bodyTopic2 = topicById3("body");
-      return ids.map((id) => bodyTopic2?.focusItems.find((item) => item.id === id)).filter((item) => !source || item?.lessonSources?.includes(source)).filter(Boolean);
+      return ids.map((id) => bodyTopic2?.focusItems.find((item) => item.id === id)).filter((item) => !source2 || item?.lessonSources?.includes(source2)).filter(Boolean);
     }
     function nextBodyRound2() {
       const allIds = bodyMatchItems2().map((item) => item.id);
@@ -9510,12 +9520,12 @@
       renderActivityPanel2(currentTopic2());
     }
     function scopedDateContent(items) {
-      const source = currentTopic2().id === "dates" && state2.lessonScope ? `${state2.lessonScope.bookId}:${state2.lessonScope.lessonNumber}` : "";
-      return source ? items.filter((item) => item.lessonSources?.includes(source)) : items;
+      const source2 = currentTopic2().id === "dates" && state2.lessonScope ? `${state2.lessonScope.bookId}:${state2.lessonScope.lessonNumber}` : "";
+      return source2 ? items.filter((item) => item.lessonSources?.includes(source2)) : items;
     }
     function scopedClothesContent(items) {
-      const source = currentTopic2().id === "clothes" && state2.lessonScope ? `${state2.lessonScope.bookId}:${state2.lessonScope.lessonNumber}` : "";
-      return source ? items.filter((item) => item.lessonSources?.includes(source)) : items;
+      const source2 = currentTopic2().id === "clothes" && state2.lessonScope ? `${state2.lessonScope.bookId}:${state2.lessonScope.lessonNumber}` : "";
+      return source2 ? items.filter((item) => item.lessonSources?.includes(source2)) : items;
     }
     function nextComparisonBuilder2() {
       advanceShuffledOrder(state2, "comparisonBuildOrder", "comparisonBuildIndex", shuffleArray2);
@@ -9604,9 +9614,9 @@
       return "routine";
     }
     function activeTimeDateSection2() {
-      const source = `${currentBook2().id}:${currentLesson2().lesson}`;
-      if (state2.timeDateSectionSource !== source) {
-        state2.timeDateSectionSource = source;
+      const source2 = `${currentBook2().id}:${currentLesson2().lesson}`;
+      if (state2.timeDateSectionSource !== source2) {
+        state2.timeDateSectionSource = source2;
         state2.timeDateSectionId = timeDateSectionForCurrentLesson2();
       }
       return state2.timeDateSectionId || "week";
@@ -11844,6 +11854,119 @@
     return { renderStrokeExplorer, renderStrokePractice };
   }
 
+  // src/features/foundations/pictographs.js
+  var source = "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/";
+  var pictographItems = [
+    { id: "water", hanzi: "\u6C34", pinyin: "shu\u01D0", english: "water", scenePath: "assets/pictographs/story-scenes/water-flow.webp", sceneAlt: "Abstract flowing water", story: "The story of \u6C34", world: "A flowing river", early: "A middle stream, with drops on each side.", notice: "The long middle line is the stream. The smaller marks are drops of water.", knownWord: "\u559D\u6C34", theme: "#3c96a8", source },
+    { id: "sun", hanzi: "\u65E5", pinyin: "r\xEC", english: "sun; day", scenePath: "assets/pictographs/story-scenes/sun-disc.webp", sceneAlt: "Abstract golden sun", story: "The story of \u65E5", world: "A bright sun", early: "A round sun with a mark in its centre.", notice: "The old form was round like the sun people could see in the sky.", knownWord: "\u4ECA\u5929", theme: "#d99231", source },
+    { id: "moon", hanzi: "\u6708", pinyin: "yu\xE8", english: "moon; month", scenePath: "assets/pictographs/story-scenes/moon-crescent-left.webp", sceneAlt: "Abstract crescent moon curving left", story: "The story of \u6708", world: "A crescent moon", early: "A curved moon shape with a line inside.", notice: "The old form remembers the curved shape of a moon in the night sky.", knownWord: "\u6708\u4EAE", theme: "#7869b2", source },
+    { id: "mountain", hanzi: "\u5C71", pinyin: "sh\u0101n", english: "mountain", scenePath: "assets/pictographs/story-scenes/mountain-peaks.webp", sceneAlt: "Abstract three mountain peaks", story: "The story of \u5C71", world: "Three mountain peaks", early: "Three peaks stand side by side.", notice: "The middle peak rises the highest, with two smaller peaks beside it.", knownWord: "\u5C71", theme: "#43816b", source },
+    { id: "tree", hanzi: "\u6728", pinyin: "m\xF9", english: "tree; wood", scenePath: "assets/pictographs/story-scenes/tree-branches.webp", sceneAlt: "Abstract tree with branches", story: "The story of \u6728", world: "A tree with branches", early: "A trunk, branches, and roots.", notice: "The old form is a picture of a tree: its trunk, branches, and roots.", knownWord: "\u6728\u5934", theme: "#4c8a52", source },
+    { id: "fire", hanzi: "\u706B", pinyin: "hu\u01D2", english: "fire", scenePath: "assets/pictographs/story-scenes/fire-flame.webp", sceneAlt: "Abstract flame", story: "The story of \u706B", world: "A dancing flame", early: "A flame with lively points at the top.", notice: "The old form catches the pointed, moving shape of a flame.", knownWord: "\u706B", theme: "#d55e47", source },
+    { id: "field", hanzi: "\u7530", pinyin: "ti\xE1n", english: "field", scenePath: "assets/pictographs/story-scenes/field-plots.webp", sceneAlt: "Abstract divided field plots", story: "The story of \u7530", world: "A field in small plots", early: "A field divided into sections.", notice: "The lines show the paths and edges that divide a field into plots.", knownWord: "\u7530", theme: "#9b8a3e", source },
+    { id: "person", hanzi: "\u4EBA", pinyin: "r\xE9n", english: "person", scenePath: "assets/pictographs/story-scenes/person-bowing.webp", sceneAlt: "Ancient child bowing in profile", story: "The story of \u4EBA", world: "A person seen from the side", early: "A person standing in profile.", notice: "The top is the head and the middle is the body. One extended stroke is an arm; the lower part shows the legs.", knownWord: "\u4EBA", theme: "#4d83a8", source },
+    { id: "home", hanzi: "\u5BB6", pinyin: "ji\u0101", english: "home; family", scenePath: "assets/pictographs/story-scenes/home-roof-v2.webp", sceneAlt: "Traditional home with a child upstairs and a pig below", story: "The story of \u5BB6", world: "A child upstairs; a pig below", early: "A roof above a pig.", notice: "The roof sits above a pig. Together they remember an old household: people above, with pigs kept below.", knownWord: "\u5BB6", theme: "#c27646", source },
+    { id: "gate", hanzi: "\u95E8", pinyin: "m\xE9n", english: "door; gate", scenePath: "assets/pictographs/story-scenes/gate-doors.webp", sceneAlt: "Abstract open double gate", story: "The story of \u95E8", world: "A pair of doors", early: "Two doors under one top beam.", notice: "The old form shows the two sides of a gate standing open.", knownWord: "\u95E8", theme: "#9a7050", source },
+    { id: "fish", hanzi: "\u9C7C", pinyin: "y\xFA", english: "fish", scenePath: "assets/pictographs/story-scenes/fish-swim.webp", sceneAlt: "Abstract fish swimming", story: "The story of \u9C7C", world: "A fish swimming", early: "A fish body with fins and tail.", notice: "In the early form, you can still spot a head, fins, and a tail.", knownWord: "\u9C7C", theme: "#397fa6", source },
+    { id: "bird", hanzi: "\u9E1F", pinyin: "ni\u01CEo", english: "bird", scenePath: "assets/pictographs/story-scenes/bird-perch.webp", sceneAlt: "Abstract bird on a branch", story: "The story of \u9E1F", world: "A bird on a branch", early: "A pointed beak, claws, and a body outline.", notice: "The old form pictures a bird\u2019s pointed beak, claws, and body outline.", knownWord: "\u5C0F\u9E1F", theme: "#9a6d9e", source },
+    { id: "sheep", hanzi: "\u7F8A", pinyin: "y\xE1ng", english: "sheep", scenePath: "assets/pictographs/story-scenes/sheep-horns.webp", sceneAlt: "Abstract sheep with curved horns", story: "The story of \u7F8A", world: "A sheep with horns", early: "A sheep\u2019s head with curved horns.", notice: "The old form pictures a sheep\u2019s head, with its curved horns standing out most clearly.", knownWord: "\u7F8A", theme: "#729777", source },
+    { id: "cow", hanzi: "\u725B", pinyin: "ni\xFA", english: "cow", scenePath: "assets/pictographs/story-scenes/cow-horns.webp", sceneAlt: "Abstract cow head with horns", story: "The story of \u725B", world: "A cow with horns", early: "A cow\u2019s head and horns.", notice: "The old form highlights the shape of a cow\u2019s head and horns.", knownWord: "\u725B", theme: "#9a743c", source },
+    { id: "bamboo", hanzi: "\u7AF9", pinyin: "zh\xFA", english: "bamboo", scenePath: "assets/pictographs/story-scenes/bamboo-stalks.webp", sceneAlt: "Abstract bamboo stalks", story: "The story of \u7AF9", world: "Two bamboo stalks", early: "Bamboo branches with paired leaves.", notice: "The old form looks like bamboo branches with balanced, matching leaves.", knownWord: "\u7AF9\u5B50", theme: "#548c65", source }
+  ];
+  var pictographsTopic = {
+    id: "pictographs",
+    title: "Pictographic Characters",
+    summary: "See how a few everyday pictures became Chinese characters.",
+    progressLabel: "Special topic \xB7 Character origins",
+    iconText: "\u8C61\u5F62",
+    iconColor: "#b46a47",
+    ownsExplorerContent: true,
+    interactiveScene: "pictograph-lab",
+    focus: { hanzi: "\u6C34", pinyin: "shu\u01D0", english: "water", audio: "\u6C34" },
+    focusItems: pictographItems.map(({ id, hanzi, pinyin, english }) => ({ id, hanzi, pinyin, english, audio: hanzi })),
+    parentGuide: "Ask, \u201CWhat do you notice?\u201D before naming the character. The goal is visual curiosity, then recognition\u2014not a history lecture.",
+    cultureGuide: "These are a few characters whose early forms were picture-like. Most modern characters need other tools too, including components and sound clues.",
+    activities: ["Look for the picture", "Follow the change", "Match picture to character"]
+  };
+
+  // src/features/foundations/pictograph-runtime.js
+  var oracleGlyphSources = {
+    \u6C34: "assets/pictographs/oracle-glyphs/shui-reference.webp",
+    \u65E5: "assets/pictographs/oracle-glyphs/ri-reference.webp",
+    \u6708: "assets/pictographs/oracle-glyphs/yue-reference.webp",
+    \u5C71: "assets/pictographs/oracle-glyphs/shan-reference.webp",
+    \u6728: "assets/pictographs/oracle-glyphs/mu-reference.webp",
+    \u706B: "assets/pictographs/oracle-glyphs/huo-reference.webp",
+    \u7530: "assets/pictographs/oracle-glyphs/tian-reference.webp",
+    \u4EBA: "assets/pictographs/oracle-glyphs/ren-v2.webp",
+    \u5BB6: "assets/pictographs/oracle-glyphs/jia-reference.webp",
+    \u95E8: "assets/pictographs/oracle-glyphs/men-reference.webp",
+    \u9C7C: "assets/pictographs/oracle-glyphs/yu-reference.webp",
+    \u9E1F: "assets/pictographs/oracle-glyphs/niao-reference.webp",
+    \u7F8A: "assets/pictographs/oracle-glyphs/yang-reference.webp",
+    \u725B: "assets/pictographs/oracle-glyphs/niu-reference.webp",
+    \u7AF9: "assets/pictographs/oracle-glyphs/zhu-reference.webp"
+  };
+  var earlyGlyphPaths = {
+    \u6C34: `<path d="M102 19 C93 38 83 53 99 72 C113 87 114 103 100 119 C89 133 91 153 105 181" stroke-width="8"/><path d="M46 51 C43 60 39 68 36 76 M50 123 C45 132 41 141 39 149 M154 51 C157 60 161 68 164 77 M150 124 C154 133 158 141 161 150" stroke-width="8"/>`,
+    \u65E5: `<path d="M50 43 C74 34 126 33 150 43 L148 155 C126 167 74 169 51 156 Z" stroke-width="8"/><path d="M80 99 C91 94 109 94 121 98 C111 105 91 105 80 99 Z" fill="currentColor" stroke="none"/>`,
+    \u6708: `<path d="M132 27 C99 35 76 62 75 99 C75 133 91 160 126 174 C113 150 111 126 113 101 C115 71 122 47 132 27 Z" stroke-width="8"/><path d="M100 59 C93 81 91 111 95 143" stroke-width="7"/>`,
+    \u5C71: `<path d="M35 156 L38 112 L62 146 L63 81 L94 119 L101 39 L129 118 L146 72 L148 156" stroke-width="8"/><path d="M36 156 C71 152 111 154 148 156" stroke-width="7"/>`,
+    \u6728: `<path d="M100 23 C97 58 100 101 98 179 M98 77 L50 49 M99 78 L150 47 M99 134 L59 165 M99 135 L142 167" stroke-width="8"/>`,
+    \u706B: `<path d="M100 27 C109 54 128 65 139 92 L151 121 L133 159 L101 178 L67 157 L50 121 L63 91 C76 65 89 54 100 27 Z" stroke-width="8"/><path d="M101 50 L101 148 M72 95 C83 98 91 106 98 117 M130 95 C120 100 111 107 103 118" stroke-width="7"/>`,
+    \u7530: `<path d="M43 42 C75 37 126 38 157 45 L155 155 C125 164 75 163 44 157 Z M99 41 C96 75 97 125 99 159 M45 99 C80 96 122 96 156 100" stroke-width="8"/>`,
+    \u4EBA: `<path fill="currentColor" d="M91 32 C83 32 79 41 80 55 C81 67 76 76 68 85 L46 110 C41 116 42 122 48 124 C53 126 58 122 64 116 L84 95 C90 89 97 86 105 87 C111 88 114 83 112 77 L105 54 C102 41 98 32 91 32 Z"/><path fill="currentColor" d="M111 76 C128 78 138 90 141 107 C145 128 141 151 131 174 C128 181 122 184 118 179 C115 175 118 168 121 162 C128 145 130 129 127 113 C124 98 119 90 108 87 Z"/>`,
+    \u5BB6: `<path d="M37 76 L98 29 L163 77 M50 77 L50 94 L150 94 L150 77 M64 113 C77 97 112 98 140 113 L133 137 L115 149 L96 142 L75 151 L62 133 Z M76 114 L70 130 M126 113 L133 130 M91 144 L87 164 M113 147 L119 164" stroke-width="8"/>`,
+    \u95E8: `<path d="M43 166 L43 40 L156 41 L157 165 M43 91 L74 91 L74 139 M157 92 L126 91 L126 140" stroke-width="8"/>`,
+    \u9C7C: `<path d="M101 28 C83 43 71 61 69 84 L48 102 L67 117 C69 143 83 164 100 181 C118 164 132 143 134 117 L153 102 L134 84 C131 61 119 43 101 28 Z M72 83 C86 77 115 77 130 84 M61 101 L141 101 M74 121 L128 121 M84 143 L118 143" stroke-width="8"/>`,
+    \u9E1F: `<path d="M56 50 C72 42 88 36 101 40 C115 44 122 54 122 67 L141 73 L122 80 C131 95 136 112 131 129 C127 143 118 154 108 165 L94 177 L96 143 C81 132 75 119 76 104 L61 92 L80 84 C68 75 62 63 56 50 Z" stroke-width="8"/><path d="M88 56 L92 56 M88 97 C98 103 107 110 115 118 M89 115 L112 137" stroke-width="7"/>`,
+    \u7F8A: `<path d="M59 58 L79 40 L98 63 L118 40 L141 58 M73 84 L99 73 L129 84 M100 62 L100 171 M69 115 L131 115 M77 139 L123 139" stroke-width="8"/>`,
+    \u725B: `<path d="M99 25 L99 175 M90 53 C79 61 80 77 91 84 C104 92 113 79 108 67 C105 59 99 55 90 53 Z M91 105 C79 114 81 130 92 137 C104 144 113 132 109 119 C106 111 100 106 91 105 Z" stroke-width="8"/>`,
+    \u7AF9: `<path d="M61 36 L83 72 L80 162 M83 72 L53 105 M82 73 L108 105 M140 36 L118 72 L121 162 M118 72 L92 105 M118 73 L147 105" stroke-width="8"/>`
+  };
+  function createPictographRuntime({ focusExplorer: focusExplorer2, speak: speak2 }) {
+    const characterOutlines = /* @__PURE__ */ new Map();
+    let outlineLoadingStarted = false;
+    function loadCharacterOutlines() {
+      if (outlineLoadingStarted) return;
+      outlineLoadingStarted = true;
+      Promise.all(pictographItems.map(async (item) => {
+        try {
+          characterOutlines.set(item.hanzi, await loadStrokeCharacter(item.hanzi));
+        } catch {
+        }
+      })).finally(() => renderPictographExplorer());
+    }
+    function characterSvg(item) {
+      const character = characterOutlines.get(item.hanzi);
+      if (!character) {
+        loadCharacterOutlines();
+        return `<div class="pictograph-character-loading" aria-label="Loading ${item.hanzi}"></div>`;
+      }
+      return `<svg class="pictograph-character-svg${item.hanzi === "\u4EBA" ? " is-person" : ""}" viewBox="0 0 1024 900" role="img" aria-label="${item.hanzi}"><g transform="translate(0 900) scale(1 -1)">${character.paths.map((path) => `<path d="${path}"/>`).join("")}</g></svg>`;
+    }
+    function earlyGlyphSvg(item) {
+      return `<svg class="pictograph-early-glyph" viewBox="0 0 200 200" role="img" aria-label="Learning reconstruction of the early form of ${item.hanzi}"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">${earlyGlyphPaths[item.hanzi]}</g></svg>`;
+    }
+    function earlyGlyphMarkup(item) {
+      const source2 = oracleGlyphSources[item.hanzi];
+      if (source2) {
+        return `<img class="pictograph-oracle-image${item.hanzi === "\u4EBA" ? " is-person" : ""}" src="${source2}" alt="Oracle-bone form of ${item.hanzi}" loading="lazy" />`;
+      }
+      return earlyGlyphSvg(item);
+    }
+    function storyMarkup(item) {
+      return `<section class="pictograph-story-row" style="--pictograph-tone: ${item.theme}" aria-labelledby="pictograph-story-${item.id}"><header class="pictograph-story-header"><h3 id="pictograph-story-${item.id}">${item.hanzi} \xB7 ${item.english}</h3><button type="button" class="small-button is-play-button pictograph-frame-play" aria-label="Play ${item.hanzi}" data-pictograph-play="${item.hanzi}">Play</button></header><section class="pictograph-evolution-strip" aria-label="Four ways to understand ${item.hanzi}"><article class="pictograph-evolution-card"><div class="pictograph-stage-art"><img src="${item.scenePath}" alt="${item.sceneAlt}" loading="lazy" /></div><p class="pictograph-stage-label">Illustration</p></article><article class="pictograph-evolution-card"><div class="pictograph-stage-art pictograph-glyph-stage">${earlyGlyphMarkup(item)}</div><p class="pictograph-stage-label">Oracle</p></article><article class="pictograph-evolution-card"><div class="pictograph-stage-art pictograph-modern-stage">${characterSvg(item)}</div><p class="pictograph-stage-label">Modern Chinese</p></article><article class="pictograph-evolution-card"><div class="pictograph-stage-art pictograph-description-stage"><p>${item.notice}</p></div><p class="pictograph-stage-label">What to notice</p></article></section></section>`;
+    }
+    function renderPictographExplorer() {
+      focusExplorer2.innerHTML = `<section class="pictograph-book pictograph-story-book"><header class="pictograph-book-header"><div><p class="body-match-kicker">From carved signs to characters</p><h3>How old writing changed</h3><p>More than 3,000 years ago, people in the Shang dynasty carved writing on animal bones and turtle shells. We call these carvings oracle-bone script. A few signs below began as pictures; as people wrote them again and again, their shapes gradually became the characters we use today. Most Chinese characters, though, are not simple pictures.</p></div></header>${pictographItems.map(storyMarkup).join("")}<p class="pictograph-book-footer">Reference for the historical form: \u6C49\u8BED\u591A\u529F\u80FD\u5B57\u5E93 \xB7 ${pictographItems[0].source}</p></section>`;
+      focusExplorer2.querySelectorAll("[data-pictograph-play]").forEach((button) => button.addEventListener("click", () => speak2(button.dataset.pictographPlay)));
+    }
+    function renderPictographPractice() {
+    }
+    return { renderPictographExplorer, renderPictographPractice };
+  }
+
   // src/data/characters.js
   var illustratedKids = {
     lele: { id: "lele", label: "Lele", hanziName: "\u4E50\u4E50", gender: "boy", ageGroup: "6-7", skinTone: "light", path: "assets/illustrated-kids/lele.webp" },
@@ -12032,6 +12155,7 @@
   var topicCardMeta = {
     pinyin: { zhTitle: "\u62FC\u97F3", enTitle: "Pinyin Sounds", hint: "Listen, say, blend, and read" },
     strokes: { zhTitle: "\u7B14\u753B", enTitle: "Chinese Strokes", hint: "Watch, trace, and write in order" },
+    pictographs: { zhTitle: "\u8C61\u5F62\u6587\u5B57", enTitle: "Pictographic Characters", hint: "See pictures become characters" },
     numbers: { zhTitle: "\u6570\u5B57", enTitle: "Numbers", hint: "Count, hear, and use numbers" },
     "telephone-numbers": { zhTitle: "\u6211\u7684\u5BB6\u4EBA\uFF08\u4E8C\uFF09", enTitle: "My Family 2", hint: "Introduce grandparents, where they live, and a telephone number" },
     "multiplication-rhyme": { zhTitle: "\u4E5D\u4E5D\u4E58\u6CD5", enTitle: "Multiplication Rhyme", hint: "Classic rhythm practice" },
@@ -12081,7 +12205,7 @@
       hint: "Build the skills that support every Chinese lesson",
       accent: "#b85f75",
       iconEmoji: "\u2728",
-      topicIds: ["pinyin", "strokes"]
+      topicIds: ["pinyin", "strokes", "pictographs"]
     },
     {
       id: "foundations",
@@ -12210,6 +12334,7 @@
   var topicData = [
     pinyinTopic,
     strokesTopic,
+    pictographsTopic,
     numbersTopic,
     telephoneNumbersTopic,
     multiplicationRhymeTopic,
@@ -12788,6 +12913,7 @@
   var playHobbiesRuntime;
   var pinyinRuntime;
   var strokeRuntime;
+  var pictographRuntime;
   var renderFocusDisplay;
   var { bodySentenceForItem, renderFocusStatus, renderFocusWordList: renderFocusWordList2, selectFocusItem } = createFocusRuntime({
     state,
@@ -13385,6 +13511,14 @@
     activityList,
     speak
   });
+  pictographRuntime = createPictographRuntime({
+    state,
+    focusExplorer,
+    activityPanelTitle,
+    activityPanelSummary,
+    activityList,
+    speak
+  });
   lessonPracticeRuntime = createLessonPracticeRuntime({
     state,
     schoolTopicData: schoolTopicData2,
@@ -13422,6 +13556,7 @@
     renderHobbiesPractice: playHobbiesRuntime.renderHobbiesPractice,
     renderPinyinPractice: pinyinRuntime.renderPinyinPractice,
     renderStrokePractice: strokeRuntime.renderStrokePractice,
+    renderPictographPractice: pictographRuntime.renderPictographPractice,
     activeTimeDateSection,
     activityPanelTitle,
     activityPanelSummary,
@@ -13567,6 +13702,7 @@
     renderMultiplicationExplorer,
     renderPinyinExplorer: pinyinRuntime.renderPinyinExplorer,
     renderStrokeExplorer: strokeRuntime.renderStrokeExplorer,
+    renderPictographExplorer: pictographRuntime.renderPictographExplorer,
     renderWorldExplorer: worldRuntime.renderWorldExplorer,
     renderHobbiesExplorer: playHobbiesRuntime.renderHobbiesExplorer
   });

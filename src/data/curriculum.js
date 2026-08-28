@@ -174,6 +174,7 @@ export const topicGroups = [
 export const topicCardMeta = {
   pinyin: { zhTitle: "拼音", enTitle: "Pinyin Sounds", hint: "Listen, say, blend, and read" },
   strokes: { zhTitle: "笔画", enTitle: "Chinese Strokes", hint: "Watch, trace, and write in order" },
+  pictographs: { zhTitle: "象形文字", enTitle: "Pictographic Characters", hint: "See pictures become characters" },
   numbers: { zhTitle: "数字", enTitle: "Numbers", hint: "Count, hear, and use numbers" },
   "telephone-numbers": { zhTitle: "我的家人（二）", enTitle: "My Family 2", hint: "Introduce grandparents, where they live, and a telephone number" },
   "multiplication-rhyme": { zhTitle: "九九乘法", enTitle: "Multiplication Rhyme", hint: "Classic rhythm practice" },
@@ -224,7 +225,7 @@ export const learningHomeCategories = [
     hint: "Build the skills that support every Chinese lesson",
     accent: "#b85f75",
     iconEmoji: "✨",
-    topicIds: ["pinyin", "strokes"]
+    topicIds: ["pinyin", "strokes", "pictographs"]
   },
   {
     id: "foundations",

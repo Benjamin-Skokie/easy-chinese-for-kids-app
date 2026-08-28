@@ -54,6 +54,7 @@ import { createWorldRuntime } from "../features/world/world-runtime.js";
 import { createPlayHobbiesRuntime } from "../features/play-hobbies/play-hobbies-runtime.js";
 import { createPinyinRuntime } from "../features/foundations/pinyin-runtime.js";
 import { createStrokeRuntime } from "../features/foundations/stroke-runtime.js";
+import { createPictographRuntime } from "../features/foundations/pictograph-runtime.js";
 import { illustratedKids } from "../data/characters.js";
 import { bookHomeCategories, books, learningHomeCategories, topicCardMeta, topicGroups } from "../data/curriculum.js";
 import { schoolSentenceBuilds, schoolTopicData, topicData, visualTopicItems } from "../data/topic-registry.js";
@@ -172,6 +173,7 @@ let worldRuntime;
 let playHobbiesRuntime;
 let pinyinRuntime;
 let strokeRuntime;
+let pictographRuntime;
 let renderFocusDisplay;
 const { bodySentenceForItem, renderFocusStatus, renderFocusWordList, selectFocusItem } = createFocusRuntime({
   state,
@@ -788,6 +790,15 @@ strokeRuntime = createStrokeRuntime({
   speak
 });
 
+pictographRuntime = createPictographRuntime({
+  state,
+  focusExplorer,
+  activityPanelTitle,
+  activityPanelSummary,
+  activityList,
+  speak
+});
+
 lessonPracticeRuntime = createLessonPracticeRuntime({
   state,
   schoolTopicData,
@@ -825,6 +836,7 @@ clothesSentenceItems,
   renderHobbiesPractice: playHobbiesRuntime.renderHobbiesPractice,
   renderPinyinPractice: pinyinRuntime.renderPinyinPractice,
   renderStrokePractice: strokeRuntime.renderStrokePractice,
+  renderPictographPractice: pictographRuntime.renderPictographPractice,
   activeTimeDateSection,
   activityPanelTitle,
   activityPanelSummary,
@@ -971,6 +983,7 @@ focusExplorerRuntime = createFocusExplorerRuntime({
   renderMultiplicationExplorer,
   renderPinyinExplorer: pinyinRuntime.renderPinyinExplorer,
   renderStrokeExplorer: strokeRuntime.renderStrokeExplorer,
+  renderPictographExplorer: pictographRuntime.renderPictographExplorer,
   renderWorldExplorer: worldRuntime.renderWorldExplorer,
   renderHobbiesExplorer: playHobbiesRuntime.renderHobbiesExplorer
 });
