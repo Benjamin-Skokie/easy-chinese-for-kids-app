@@ -738,7 +738,7 @@ function renderFoodHungerGame() {
   return `
     <section class="practice-split-card food-hunger-game-card">
       <div class="numbers-game-top"><div><p class="body-match-kicker">Hungry? What should we eat?</p><p class="numbers-game-note">Choose a food group or Mix. A food picture will appear. Tap the matching Chinese word to put it in your cart.</p></div></div>
-      ${state.foodHungerFeedback ? `<p class="greetings-game-feedback ${state.foodHungerFeedback.startsWith("Correct") ? "is-correct" : "is-wrong"}">${state.foodHungerFeedback}</p>` : ""}
+      ${state.foodHungerFeedback && !state.foodHungerFeedback.startsWith("Correct") ? `<p class="greetings-game-feedback is-wrong">${state.foodHungerFeedback}</p>` : ""}
       ${scopedCategoryId
         ? `<p class="body-match-kicker">${foodHungerModes[scopedCategoryId].hanzi}${state.showEnglish ? ` · ${foodHungerModes[scopedCategoryId].english}` : ""}</p>`
         : `<div class="food-category-tabs food-hunger-tabs">${Object.entries(foodHungerModes).map(([id, mode]) => `<button class="food-category-tab${state.foodHungerModeId === id ? " is-active" : ""}" type="button" data-food-hunger-mode="${id}">${mode.hanzi}${state.showEnglish ? `<small>${mode.english}</small>` : ""}</button>`).join("")}</div>`}
@@ -814,7 +814,7 @@ function renderBackpackGame() {
         <div><p class="body-match-kicker">Pack the backpack</p><p class="numbers-game-note">Look at the school thing, then tap its Chinese word.</p></div>
         <button class="small-button is-play-button" type="button" data-backpack-game-new>Play</button>
       </div>
-      ${state.backpackGameFeedback ? `<p class="greetings-game-feedback ${state.backpackGameFeedback.startsWith("Correct") ? "is-correct" : "is-wrong"}">${state.backpackGameFeedback}</p>` : ""}
+      ${state.backpackGameFeedback && !state.backpackGameFeedback.startsWith("Correct") ? `<p class="greetings-game-feedback is-wrong">${state.backpackGameFeedback}</p>` : ""}
       <div class="backpack-game-progress" aria-label="${state.backpackGamePlacedIds.length} of 3 items packed">
         ${[0, 1, 2].map((index) => `<span class="backpack-game-progress-dot${index < state.backpackGamePlacedIds.length ? " is-packed" : ""}">${index < state.backpackGamePlacedIds.length ? "✓" : ""}</span>`).join("")}
       </div>

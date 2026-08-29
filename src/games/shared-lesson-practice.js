@@ -4,12 +4,12 @@ export function createSharedLessonPractice({ state, speak, elements, documentRef
   function renderListenPractice(config) {
     const playLabel = typeof config.playLabel === "function" ? config.playLabel() : (config.playLabel ?? "Play");
     return `
-      <section class="practice-split-card">
+      <section class="practice-split-card${config.cardClass ? ` ${config.cardClass}` : ""}">
         <div class="numbers-game-top">
           <div>
             <p class="body-match-kicker">${config.kicker ?? "Listen and choose"}</p>
             ${config.title ? `<h4>${config.title}</h4>` : ""}
-            <p class="numbers-game-note">${config.instruction ?? "Play the audio, then tap the matching Chinese card."}</p>
+            ${config.instruction === "" ? "" : `<p class="numbers-game-note">${config.instruction ?? "Play the audio, then tap the matching Chinese card."}</p>`}
           </div>
           <button class="small-button is-play-button" type="button" data-template-listen-play>${playLabel}</button>
         </div>
@@ -148,7 +148,8 @@ export function createSharedLessonPractice({ state, speak, elements, documentRef
   function renderSharedLessonPractice(topic, config) {
     config.ensure();
     activityPanelTitle.textContent = "Let's practice";
-    activityPanelSummary.textContent = config.summary;
+    activityPanelSummary.textContent = config.summary ?? "";
+    activityPanelSummary.hidden = !config.summary;
     activityList.className = "support-list";
     activityList.innerHTML = "";
 

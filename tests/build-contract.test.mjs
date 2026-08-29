@@ -1772,7 +1772,7 @@ test("Requests & Permission uses the shared two-column scene grid, sentence buil
   assert.match(practiceSource, /function requestSentenceBuilderMarkup\(\)/);
   assert.match(practiceSource, /Build a complete request, then match each Chinese sentence to its English translation/);
   assert.match(practiceSource, /state\.requestBuildFeedback = "Not quite\. Try again\."/);
-  assert.match(practiceSource, /state\.requestBuildResult && state\.requestBuildFeedback/);
+  assert.match(practiceSource, /state\.requestBuildResult === "wrong" && state\.requestBuildFeedback/);
   assert.match(practiceSource, /speak\(target\.audio, 0\.78\)/);
   assert.match(stylesSource, /\.polite-scene-grid \{\s+grid-template-columns: repeat\(2, minmax\(0, 1fr\)\);/);
   assert.match(stylesSource, /\.polite-scene-grid \{\s+grid-template-columns: minmax\(0, 1fr\);/);

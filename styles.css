@@ -4289,6 +4289,17 @@ h4 {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
+/* Date sentences can be much longer than a single word or short phrase.
+   Keep each option on its own row so the complete Chinese, pinyin, and English
+   stay readable and share one clear left edge. */
+.dates-listen-practice .numbers-game-options {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.dates-listen-practice .family-listen-copy {
+  justify-items: start;
+}
+
 .practice-split-card [data-template-match-new] {
   width: 124px;
 }
