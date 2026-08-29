@@ -308,6 +308,7 @@ worldRuntime = createWorldRuntime({
   currentLesson,
   focusExplorer,
   speak,
+  speakSceneLines,
   selectFocusItem,
   activityPanelTitle,
   activityPanelSummary,

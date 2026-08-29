@@ -1,11 +1,16 @@
+import { recordedLearnAudioPath } from "./recorded-audio.js";
+
 export function createAudioService({
   synthesis = globalThis.speechSynthesis,
   createUtterance = (text) => new globalThis.SpeechSynthesisUtterance(text),
+  createAudio = (source) => typeof globalThis.Audio === "function" ? new globalThis.Audio(source) : null,
+  getRecordedAudioPath = typeof globalThis.document !== "undefined" ? recordedLearnAudioPath : () => "",
   getSceneRate,
   getSceneLinePauseMs,
   schedule = globalThis.setTimeout
 } = {}) {
   const preferredVoiceNames = ["tingting", "ting-ting"];
+  let activeRecording;
 
   function preferredChineseVoice(names = preferredVoiceNames) {
     const voices = synthesis?.getVoices?.() ?? [];
@@ -24,10 +29,49 @@ export function createAudioService({
     return utterance;
   }
 
-  function speak(text, rate = 0.8, voiceNames = preferredVoiceNames) {
+  function speakWithBrowser(text, rate = 0.8, voiceNames = preferredVoiceNames) {
     if (!synthesis || !text) return;
-    synthesis.cancel();
     synthesis.speak(chineseUtterance(text, rate, voiceNames));
+  }
+
+  function stopActiveRecording() {
+    if (!activeRecording) return;
+    activeRecording.pause?.();
+    activeRecording.currentTime = 0;
+    activeRecording = null;
+  }
+
+  function playRecording(text) {
+    const source = getRecordedAudioPath(text);
+    if (!source) return Promise.resolve(false);
+    const recording = createAudio(source);
+    if (!recording) return Promise.resolve(false);
+
+    activeRecording = recording;
+    recording.preload = "auto";
+    return new Promise((resolve) => {
+      const finish = (didPlay) => {
+        if (activeRecording === recording) activeRecording = null;
+        resolve(didPlay);
+      };
+      recording.onended = () => finish(true);
+      recording.onerror = () => finish(false);
+      const started = recording.play?.();
+      if (started?.catch) started.catch(() => finish(false));
+    });
+  }
+
+  function speak(text, rate = 0.8, voiceNames = preferredVoiceNames) {
+    if (!text) return;
+    synthesis?.cancel?.();
+    stopActiveRecording();
+    if (!getRecordedAudioPath(text)) {
+      speakWithBrowser(text, rate, voiceNames);
+      return;
+    }
+    playRecording(text).then((didPlay) => {
+      if (!didPlay) speakWithBrowser(text, rate, voiceNames);
+    });
   }
 
   function speakSceneLines(lines) {
@@ -35,13 +79,27 @@ export function createAudioService({
     const audioLines = lines.map((line) => line.audio).filter(Boolean);
     let index = 0;
     synthesis.cancel();
+    stopActiveRecording();
 
     const playNextLine = () => {
       if (index >= audioLines.length) return;
-      const utterance = chineseUtterance(audioLines[index], getSceneRate());
+      const text = audioLines[index];
       index += 1;
-      utterance.onend = () => schedule(playNextLine, getSceneLinePauseMs());
-      synthesis.speak(utterance);
+      if (!getRecordedAudioPath(text)) {
+        const utterance = chineseUtterance(text, getSceneRate());
+        utterance.onend = () => schedule(playNextLine, getSceneLinePauseMs());
+        synthesis.speak(utterance);
+        return;
+      }
+      playRecording(text).then((didPlay) => {
+        if (didPlay) {
+          schedule(playNextLine, getSceneLinePauseMs());
+          return;
+        }
+        const utterance = chineseUtterance(text, getSceneRate());
+        utterance.onend = () => schedule(playNextLine, getSceneLinePauseMs());
+        synthesis.speak(utterance);
+      });
     };
 
     playNextLine();

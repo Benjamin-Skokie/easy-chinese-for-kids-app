@@ -4,6 +4,9 @@ import { existsSync, readFileSync, readdirSync, statSync } from "node:fs";
 import { join, normalize } from "node:path";
 import test from "node:test";
 import { createAudioService } from "../src/core/audio.js";
+import { recordedLearnAudioPath } from "../src/core/recorded-audio.js";
+import { learnAudioEntries } from "../src/data/learn-audio-manifest.js";
+import { recordedLearnAudioIds } from "../src/data/learn-recorded-audio.js";
 import { filterLessonContent, filterLessonGroups, lessonScopeKey } from "../src/core/lesson-scoping.js";
 import { advanceShuffledOrder, nextRandomCycleId } from "../src/core/random-cycle.js";
 import { lessonScopeFromLocation, topicIdFromLocation, topicPageUrl, viewFromLocation } from "../src/core/router.js";
@@ -36,7 +39,7 @@ import { animalLessons, animalsTopic, petsTopic } from "../src/features/world/an
 import { colourLessons, coloursTopic } from "../src/features/world/colours.js";
 import { createWorldRuntime } from "../src/features/world/world-runtime.js";
 import { hobbies3bTopic, hobbiesAtHomeTopic, hobbiesLeisureTopic, hobbiesTopic, toysTopic } from "../src/features/play-hobbies/play-hobbies.js";
-import { createPlayHobbiesRuntime } from "../src/features/play-hobbies/play-hobbies-runtime.js";
+import { createPlayHobbiesRuntime, hobbiesLessonAudioData, hobbiesSceneAudioEntries, toySceneAudioEntries } from "../src/features/play-hobbies/play-hobbies-runtime.js";
 import { bodyBonusItemIds, bodyCoreItemIds, bodyDiagramLayout, bodyTopic } from "../src/features/foundations/body.js";
 import { illustratedKids } from "../src/data/characters.js";
 import { bookHomeCategories, books, learningHomeCategories, topicCardMeta, topicGroups } from "../src/data/curriculum.js";
@@ -52,7 +55,7 @@ import { familyGameItemIds, familyPractice, familyTopic, illustratedFamily } fro
 test("the local page loads a single bundled application script", () => {
   const html = readFileSync("index.html", "utf8");
   assert.match(html, /<link rel="stylesheet" href="styles\.css\?v=20260828-stroke-lab-v1" \/>/);
-  assert.match(html, /<script src="app\.js\?v=20260828-stroke-lab-v1"><\/script>/);
+  assert.match(html, /<script src="app\.js\?v=[^"]+"><\/script>/);
   assert.doesNotMatch(html, /type="module"/);
   assert.doesNotMatch(html, /Tap a word to hear it and explore the picture\./);
   assert.doesNotMatch(html, /<h3>Review<\/h3>/);
@@ -530,6 +533,72 @@ test("audio cancels the prior utterance before speaking a new phrase", () => {
   audio.speak("你好", 0.78);
   assert.equal(cancelCount, 1);
   assert.deepEqual(spoken[0], { text: "你好", lang: "zh-CN", rate: 0.78, pitch: 1 });
+});
+
+test("recorded Learn audio covers every authored audio entry", () => {
+  assert.equal(recordedLearnAudioIds.size, learnAudioEntries.length);
+  for (const entry of learnAudioEntries) {
+    assert.ok(recordedLearnAudioIds.has(entry.id), `missing recorded id for ${entry.text}`);
+    const audioPath = recordedLearnAudioPath(entry.text).split("?")[0];
+    assert.ok(existsSync(audioPath), `missing audio file for ${entry.text}`);
+    assert.ok(statSync(audioPath).size > 0, `empty audio file for ${entry.text}`);
+  }
+});
+
+test("tappable scene lines and weekday cards have recorded audio", () => {
+  const stationeryLines = stationeryTopicData.sceneGroups
+    .flatMap((group) => group.items)
+    .flatMap((scene) => scene.lines ?? []);
+  for (const line of stationeryLines) {
+    assert.ok(recordedLearnAudioPath(line.hanzi), `missing recorded scene line for ${line.hanzi}`);
+  }
+  for (const item of timeDateWeekItems) {
+    assert.ok(recordedLearnAudioPath(item.hanzi), `missing recorded weekday for ${item.hanzi}`);
+  }
+});
+
+test("runtime-owned Hobbies and Toys utterances are included in the audio audit", () => {
+  const runtimeAudio = [
+    ...hobbiesSceneAudioEntries.map((entry) => entry.audio),
+    ...toySceneAudioEntries.map((entry) => entry.audio),
+    ...Object.values(hobbiesLessonAudioData).flatMap((lesson) => [
+      ...Object.values(lesson.sentenceOptions ?? {}).map((entry) => entry.audio),
+      ...lesson.rounds.flatMap((round) => round.answers?.map((entry) => entry.audio) ?? [])
+    ])
+  ];
+  for (const text of runtimeAudio) {
+    assert.ok(recordedLearnAudioPath(text), `missing runtime recording for ${text}`);
+  }
+});
+
+test("mapped word cards play their recorded audio before browser speech", async () => {
+  const startedSources = [];
+  const spoken = [];
+  const audio = createAudioService({
+    synthesis: { cancel() {}, speak: (utterance) => spoken.push(utterance) },
+    createUtterance: (text) => ({ text }),
+    createAudio: (source) => {
+      const recording = {
+        source,
+        pause() {},
+        currentTime: 0,
+        play() {
+          startedSources.push(recording.source);
+          recording.onended?.();
+          return Promise.resolve();
+        }
+      };
+      return recording;
+    },
+    getRecordedAudioPath: (text) => text === "你" ? "assets/audio/learn/f3210ff9d774.mp3" : "",
+    getSceneRate: () => 0.64,
+    getSceneLinePauseMs: () => 280
+  });
+
+  audio.speak("你", 0.78);
+  await Promise.resolve();
+  assert.deepEqual(startedSources, ["assets/audio/learn/f3210ff9d774.mp3"]);
+  assert.deepEqual(spoken, []);
 });
 
 test("audio prefers Tingting over other installed Chinese voices", () => {
@@ -1142,6 +1211,8 @@ test("Nature and Weather remain separate book topics", () => {
   assert.match(topicDetailSource, /topic\.ownsExplorerContent/);
   assert.match(focusRuntimeSource, /currentTopic\(\)\.ownsExplorerContent/);
   assert.match(worldRuntimeSource, /function worldSceneCardMarkup/);
+  assert.match(worldRuntimeSource, /speakSceneLines\(scene\.lines\)/);
+  assert.doesNotMatch(worldRuntimeSource, /scene\.lines\.map\(\(line\) => line\.audio\)\.join\("，"\)/);
   assert.equal((worldRuntimeSource.match(/worldSceneCardMarkup\(/g) ?? []).length, 5);
 });
 

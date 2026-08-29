@@ -182,7 +182,7 @@ const weatherFillRounds = [
   }
 ];
 
-export function createWorldRuntime({ state, currentTopic, currentBook, currentLesson, focusExplorer, speak, selectFocusItem, activityPanelTitle, activityPanelSummary, activityList, renderActivityPanel }) {
+export function createWorldRuntime({ state, currentTopic, currentBook, currentLesson, focusExplorer, speak, speakSceneLines, selectFocusItem, activityPanelTitle, activityPanelSummary, activityList, renderActivityPanel }) {
   function colourItems() {
     return state.lessonScope?.bookId === "1b"
       ? colourLessons["1b"].items
@@ -245,7 +245,7 @@ export function createWorldRuntime({ state, currentTopic, currentBook, currentLe
     focusExplorer.querySelectorAll("[data-world-item]").forEach((button) => button.addEventListener("click", () => selectFocusItem(button.dataset.worldItem, { playAudio: true })));
     focusExplorer.querySelectorAll("[data-animals-scene]").forEach((button) => button.addEventListener("click", () => {
       const scene = lesson.scenes[Number(button.dataset.animalsScene)];
-      if (scene && state.tapAudioEnabled) speak(scene.lines.map((line) => line.audio).join("，"), 0.74);
+      if (scene && state.tapAudioEnabled) speakSceneLines(scene.lines);
     }));
     focusExplorer.querySelectorAll("[data-pet-food-story]").forEach((button) => button.addEventListener("click", () => {
       const story = lesson.foodStory?.find((entry) => entry.id === button.dataset.petFoodStory);
@@ -276,11 +276,11 @@ export function createWorldRuntime({ state, currentTopic, currentBook, currentLe
     focusExplorer.querySelectorAll("[data-world-item]").forEach((button) => button.addEventListener("click", () => selectFocusItem(button.dataset.worldItem, { playAudio: true })));
     focusExplorer.querySelectorAll("[data-weather-scene]").forEach((button) => button.addEventListener("click", () => {
       const scene = scenes[Number(button.dataset.weatherScene)];
-      if (scene && state.tapAudioEnabled) speak(scene.lines.map((line) => line.audio).join("，"), 0.74);
+      if (scene && state.tapAudioEnabled) speakSceneLines(scene.lines);
     }));
     focusExplorer.querySelectorAll("[data-weather-outfit-scene]").forEach((button) => button.addEventListener("click", () => {
       const scene = outfitScenes[Number(button.dataset.weatherOutfitScene)];
-      if (scene && state.tapAudioEnabled) speak(scene.lines.map((line) => line.audio).join("，"), 0.74);
+      if (scene && state.tapAudioEnabled) speakSceneLines(scene.lines);
     }));
   }
 
@@ -296,7 +296,7 @@ export function createWorldRuntime({ state, currentTopic, currentBook, currentLe
     focusExplorer.querySelectorAll("[data-world-item]").forEach((button) => button.addEventListener("click", () => selectFocusItem(button.dataset.worldItem, { playAudio: true })));
     focusExplorer.querySelectorAll("[data-nature-scene]").forEach((button) => button.addEventListener("click", () => {
       const scene = natureLesson.scenes[Number(button.dataset.natureScene)];
-      if (scene && state.tapAudioEnabled) speak(scene.lines.map((line) => line.audio).join("，"), 0.74);
+      if (scene && state.tapAudioEnabled) speakSceneLines(scene.lines);
     }));
   }
 

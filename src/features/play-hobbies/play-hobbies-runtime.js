@@ -81,6 +81,18 @@ const lessons = {
   }
 };
 
+// These authored scene and practice utterances are also a recording catalog.
+// Keep them exported so the audio-manifest audit can cover the text actually
+// passed to `speak()` by this runtime.
+export { lessons as hobbiesLessonAudioData };
+export const hobbiesSceneAudioEntries = Object.values(lessons).flatMap((lesson) => lesson.scenes.map(([, hanzi, pinyin, english, audio]) => ({ hanzi, pinyin, english, audio })));
+export const toySceneAudioEntries = [
+  { id: "doll", hanzi: "我有娃娃。", pinyin: "wǒ yǒu wá wa.", english: "I have a doll.", audio: "我有娃娃" },
+  { id: "toy-train", hanzi: "我有玩具火车。", pinyin: "wǒ yǒu wán jù huǒ chē.", english: "I have a toy train.", audio: "我有玩具火车" },
+  { id: "toy-airplane", hanzi: "我有玩具飞机。", pinyin: "wǒ yǒu wán jù fēi jī.", english: "I have a toy airplane.", audio: "我有玩具飞机" },
+  { id: "toy-bear", hanzi: "我有玩具熊。", pinyin: "wǒ yǒu wán jù xióng.", english: "I have a toy bear.", audio: "我有玩具熊" }
+];
+
 import { advanceShuffledOrder, nextRandomCycleId } from "../../core/random-cycle.js";
 
 function shuffled(items) { const copy = [...items]; for (let i = copy.length - 1; i > 0; i -= 1) { const j = Math.floor(Math.random() * (i + 1)); [copy[i], copy[j]] = [copy[j], copy[i]]; } return copy; }
@@ -134,12 +146,12 @@ export function createPlayHobbiesRuntime({ state, currentTopic, currentBook, cur
   }
   function renderToysExplorer() {
     const flashcards = currentTopic().flashcardItems;
-    const scenes = [
-      { id: "doll", title: "Doll tea party", imagePath: "assets/illustrated-toys/lele-playing-doll.webp", alt: "Lele playing with a doll", hanzi: "我有娃娃。", pinyin: "wǒ yǒu wá wa.", english: "I have a doll.", audio: "我有娃娃" },
-      { id: "toy-train", title: "Toy train", imagePath: "assets/illustrated-toys/lele-playing-toy-train.webp", alt: "Lele pushing a toy train", hanzi: "我有玩具火车。", pinyin: "wǒ yǒu wán jù huǒ chē.", english: "I have a toy train.", audio: "我有玩具火车" },
-      { id: "toy-airplane", title: "Toy airplane", imagePath: "assets/illustrated-toys/lele-playing-toy-airplane.webp", alt: "Lele flying a toy airplane", hanzi: "我有玩具飞机。", pinyin: "wǒ yǒu wán jù fēi jī.", english: "I have a toy airplane.", audio: "我有玩具飞机" },
-      { id: "toy-bear", title: "Toy bear", imagePath: "assets/illustrated-toys/lele-playing-toy-bear.webp", alt: "Lele high-fiving a toy bear", hanzi: "我有玩具熊。", pinyin: "wǒ yǒu wán jù xióng.", english: "I have a toy bear.", audio: "我有玩具熊" }
-    ];
+    const scenes = toySceneAudioEntries.map((scene) => ({
+      ...scene,
+      title: { doll: "Doll tea party", "toy-train": "Toy train", "toy-airplane": "Toy airplane", "toy-bear": "Toy bear" }[scene.id],
+      imagePath: { doll: "assets/illustrated-toys/lele-playing-doll.webp", "toy-train": "assets/illustrated-toys/lele-playing-toy-train.webp", "toy-airplane": "assets/illustrated-toys/lele-playing-toy-airplane.webp", "toy-bear": "assets/illustrated-toys/lele-playing-toy-bear.webp" }[scene.id],
+      alt: { doll: "Lele playing with a doll", "toy-train": "Lele pushing a toy train", "toy-airplane": "Lele flying a toy airplane", "toy-bear": "Lele high-fiving a toy bear" }[scene.id]
+    }));
     focusExplorer.innerHTML = `<div class="time-date-board school-topic-board hobbies-topic-board"><section class="school-lesson-section"><div class="time-months-heading"><p class="body-match-kicker">Review</p></div><div class="school-scene-grid toys-scene-grid">${scenes.map((scene) => `<section class="greetings-exchange school-scene-card"><div class="greetings-exchange-top"><div><p class="body-match-kicker">${scene.title}</p></div><button class="small-button is-play-button" type="button" data-toys-scene-play="${scene.id}">Play</button></div><div class="school-scene-layout"><img class="school-scene-image" src="${scene.imagePath}" alt="${scene.alt}"><div class="greetings-line-stack"><article class="greetings-line-card"><div class="telephone-bubble-copy"><p class="telephone-line-hanzi">${scene.hanzi}</p>${state.showPinyin ? `<p class="telephone-line-pinyin">${scene.pinyin}</p>` : ""}${state.showEnglish ? `<p class="telephone-line-english">${scene.english}</p>` : ""}</div></article></div></div></section>`).join("")}</div></section><section class="school-lesson-section"><div class="time-months-heading"><p class="body-match-kicker">Book words &amp; more</p></div><div class="school-word-grid toys-flashcard-grid">${flashcards.map((item) => `<button class="school-word-card book-word-card" type="button" data-toys-flashcard="${item.id}"><img class="school-word-image book-word-image" src="${item.imagePath}" alt="${item.imageAlt}"><span class="book-word-copy"><span class="time-asset-hanzi">${item.hanzi}</span>${state.showPinyin ? `<span class="time-asset-pinyin">${item.pinyin}</span>` : ""}${state.showEnglish ? `<span class="time-asset-english">${item.english}</span>` : ""}</span></button>`).join("")}</div></section></div>`;
     focusExplorer.querySelectorAll("[data-toys-scene-play]").forEach((button) => button.addEventListener("click", () => {
       const scene = scenes.find((entry) => entry.id === button.dataset.toysScenePlay);
