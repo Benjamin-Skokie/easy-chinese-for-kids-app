@@ -1,5 +1,10 @@
 import { recordedLearnAudioPath } from "./recorded-audio.js";
 
+export const audioSourcePolicies = Object.freeze({
+  recordedFirst: "recorded-first",
+  recordedOnly: "recorded-only"
+});
+
 export function createAudioService({
   synthesis = globalThis.speechSynthesis,
   createUtterance = (text) => new globalThis.SpeechSynthesisUtterance(text),
@@ -7,7 +12,8 @@ export function createAudioService({
   getRecordedAudioPath = typeof globalThis.document !== "undefined" ? recordedLearnAudioPath : () => "",
   getSceneRate,
   getSceneLinePauseMs,
-  schedule = globalThis.setTimeout
+  schedule = globalThis.setTimeout,
+  reportMissingRecordedAudio = (text) => globalThis.console?.warn?.(`Recorded audio unavailable: ${text}`)
 } = {}) {
   const preferredVoiceNames = ["tingting", "ting-ting"];
   let activeRecording;
@@ -98,15 +104,29 @@ export function createAudioService({
     });
   }
 
-  function speak(text, rate = 0.8, voiceNames = preferredVoiceNames) {
+  function speak(text, rate = 0.8, voiceNamesOrOptions = preferredVoiceNames) {
     if (!text) return;
+    const options = Array.isArray(voiceNamesOrOptions)
+      ? { voiceNames: voiceNamesOrOptions }
+      : (voiceNamesOrOptions && typeof voiceNamesOrOptions === "object" ? voiceNamesOrOptions : {});
+    const voiceNames = options.voiceNames ?? preferredVoiceNames;
+    const sourcePolicy = options.sourcePolicy ?? audioSourcePolicies.recordedFirst;
     const requestId = beginPlaybackRequest();
     if (!getRecordedAudioPath(text)) {
+      if (sourcePolicy === audioSourcePolicies.recordedOnly) {
+        reportMissingRecordedAudio(text);
+        return;
+      }
       speakWithBrowser(text, rate, voiceNames, requestId);
       return;
     }
     playRecording(text, requestId).then((didPlay) => {
-      if (!didPlay && isCurrentRequest(requestId)) speakWithBrowser(text, rate, voiceNames, requestId);
+      if (didPlay || !isCurrentRequest(requestId)) return;
+      if (sourcePolicy === audioSourcePolicies.recordedOnly) {
+        reportMissingRecordedAudio(text);
+        return;
+      }
+      speakWithBrowser(text, rate, voiceNames, requestId);
     });
   }
 

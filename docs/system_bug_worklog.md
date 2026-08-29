@@ -9,13 +9,13 @@ This is the living implementation record for cross-page bugs reported in `docs/b
 | Workstream | Status | Implementation |
 | --- | --- | --- |
 | SYS-01 Shared audio playback lifecycle | Implementation complete; device verification pending | Implemented in shared service |
-| SYS-02 Audio-source routing policy | Scoped | Not started |
-| SYS-03 Audio asset QA pipeline | Scoped | Not started |
+| SYS-02 Audio-source routing policy | In progress | Initial recorded-first/recorded-only policies and tests implemented; migration pending |
+| SYS-03 Audio asset QA pipeline | In progress | Pre-generation prompt guardrails implemented; waveform audit pending |
 | SYS-04 Shared game controls and completion behavior | Scoped | Not started |
 | SYS-05 Question/picture state synchronization | Scoped | Not started |
 | SYS-06 Shared responsive game layout | Scoped | Not started |
 
-**Overall:** classification and the first SYS-01 implementation pass are complete. SYS-01 is not marked fully fixed until it passes target iPad/Safari verification.
+**Overall:** classification and the first SYS-01 implementation pass are complete. SYS-02 routing and SYS-03 generation-quality work are in progress. SYS-01 is not marked fully fixed until it passes target iPad/Safari verification.
 
 ## What Has Been Done
 
@@ -114,6 +114,11 @@ Generated assets enter the app with consistent silence, loudness, clarity, and m
 
 ### Work
 
+- [x] Centralize the Learn TTS request prompt so it can be inspected and tested without calling the API.
+- [x] Tell the model exactly how to handle natural punctuation pauses, connected words, clean first-syllable onset, and a clean ending with no added tail.
+- [x] Define 儿化 as a light rhotic ending fused to the preceding syllable, while preserving lexical 儿 as in `儿子`.
+- [x] Add targeted input rewrites and pronunciation guidance for `画画儿`, `玩儿游戏`, `玩儿电脑游戏`, `玩儿沙子`, and `动画片儿`.
+- [x] Add a dry-run prompt preview and automated tests that make no API request.
 - [ ] Measure leading silence, trailing silence, peak level, and average loudness for every generated audio asset.
 - [ ] Define acceptable thresholds for short words, phrases, and full sentences.
 - [ ] Add a report-only audit before enabling any automated trimming or normalization.
@@ -221,3 +226,9 @@ Do not mark a workstream complete because its shared code changed. Completion re
 - Verified `npm test` (118/118), `node --check app.js`, and `git diff --check`.
 - The aggregate `npm run check` remains blocked by pre-existing learning-data validation failures, including missing clothing assets and incomplete lesson sets; the audio change introduces no new test failure.
 - Target iPad/Safari verification remains pending; SYS-01 is not yet marked fully fixed.
+- Began SYS-03 before requesting any new TTS generation: centralized the Learn audio prompt and added explicit pause, onset, ending, and 儿化 requirements.
+- Added phrase-level 儿化 handling plus a `--dry-run --show-prompt` inspection path; no TTS API request was made.
+- Added four prompt regression tests. Before generation, the full suite exposed 46 newly authored manifest entries with no recorded asset.
+- After explicit approval, generated all 46 previously missing Learn recordings with the revised prompt and synchronized the recorded-audio index to 953/953 coverage.
+- Force-regenerated 33 reported or related quality-sensitive clips, including the `玩儿…` / `…片儿` families, `披萨`, `西兰花`, `跳舞`, `学校有教室`, `音乐教室`, and the existing clip-specific pronunciation cases.
+- Verified the complete automated suite at 125/125 and `git diff --check`; human listening review and waveform-boundary measurement remain pending.

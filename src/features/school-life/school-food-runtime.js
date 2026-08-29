@@ -53,7 +53,7 @@ function handleStationeryPictureMatchPick(column, value) {
     [column]: new Set()
   };
   state.stationeryPictureMatchComplete = Object.entries(round.target).every(([key, target]) => state.stationeryPictureMatchSelections[key] === target);
-  if (state.stationeryPictureMatchComplete && state.tapAudioEnabled) speak(Object.values(round.target).join(""), 0.78);
+  if (state.stationeryPictureMatchComplete && state.tapAudioEnabled) speak(round.audio, 0.78, { sourcePolicy: "recorded-only" });
   renderActivityPanel(currentTopic());
 }
 
@@ -168,13 +168,13 @@ function handleMealsConversationPhrase(itemId) {
   state.mealsConversationWrongPhraseIds = new Set();
   state.mealsConversationWrongReplyIds = new Set();
   const item = mealsConversationItems().find((entry) => entry.id === itemId);
-  if (item && state.tapAudioEnabled) speak(item.audio, 0.78);
+  if (item && state.tapAudioEnabled) speak(item.audio, 0.78, { sourcePolicy: "recorded-only" });
   renderActivityPanel(currentTopic());
 }
 
 function handleMealsConversationAttempt(itemId) {
   const item = mealsConversationItems().find((entry) => entry.id === itemId);
-  if (item && state.tapAudioEnabled) speak(item.reply, 0.78);
+  if (item && state.tapAudioEnabled) speak(item.replyAudio ?? item.reply, 0.78, { sourcePolicy: "recorded-only" });
   const selectedId = state.schoolSelectedPhraseId;
   if (!selectedId || state.schoolMatchedIds.has(itemId)) return;
   if (selectedId === itemId) {
@@ -560,7 +560,7 @@ function handleSchoolBuildToken(index) {
   state.schoolBuildAvailableTokens = state.schoolBuildAvailableTokens.filter((_, tokenIndex) => tokenIndex !== index);
   if (selected.length === item.target.length) {
     state.schoolBuildResult = "correct";
-    if (state.tapAudioEnabled) speak(item.audio ?? selected.join(""), 0.78);
+    if (state.tapAudioEnabled) speak(item.audio ?? selected.join(""), 0.78, { sourcePolicy: "recorded-only" });
   }
   renderActivityPanel(currentTopic());
 }

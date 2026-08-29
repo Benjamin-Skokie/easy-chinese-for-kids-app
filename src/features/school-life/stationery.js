@@ -67,14 +67,14 @@ export const stationeryTopicData = {
 };
 
 export const stationerySentenceBuilds = [
-    { id: "my-pencil", imagePath: "assets/illustrated-stationery/pencil.webp", target: ["这", "是", "我的", "铅笔"], distractors: ["有", "书包", "里"], pinyin: "zhè shì wǒ de qiān bǐ.", english: "This is my pencil." },
-    { id: "my-chair", imagePath: "assets/illustrated-stationery/chair.webp", target: ["这", "是", "我的", "椅子"], distractors: ["有", "书包", "里"], pinyin: "zhè shì wǒ de yǐ zi.", english: "This is my chair." },
-    { id: "my-book", imagePath: "assets/illustrated-stationery/my-book-tiantian-landscape.webp", target: ["这", "是", "我的", "书"], distractors: ["有", "书包", "里"], pinyin: "zhè shì wǒ de shū.", english: "This is my book." },
-    { id: "anan-scissors", imagePath: "assets/illustrated-possession/this-is-my-scissors.webp", target: ["安安", "有", "剪刀"], distractors: ["这是", "我的", "书包"], pinyin: "ān ān yǒu jiǎn dāo.", english: "Anan has scissors." },
-    { id: "red-pencil", imagePath: "assets/illustrated-stationery/anan-three-red-pencils.webp", target: ["安安", "有", "三支", "红色的", "铅笔"], distractors: ["一把", "书包", "里"], pinyin: "ān ān yǒu sān zhī hóng sè de qiān bǐ.", english: "Anan has three red pencils." },
-    { id: "one-pencil", imagePath: "assets/illustrated-measure-words/one-pencil.webp", target: ["我", "有", "一支", "铅笔"], distractors: ["一把", "书包", "里"], pinyin: "wǒ yǒu yì zhī qiān bǐ.", english: "I have one pencil." },
-    { id: "one-scissors", imagePath: "assets/illustrated-measure-words/one-scissors.webp", target: ["我", "有", "一把", "剪刀"], distractors: ["一支", "书包", "里"], pinyin: "wǒ yǒu yì bǎ jiǎn dāo.", english: "I have one pair of scissors." },
-    { id: "one-eraser", imagePath: "assets/illustrated-measure-words/one-eraser.webp", target: ["我", "有", "一块", "橡皮"], distractors: ["一支", "书包", "里"], pinyin: "wǒ yǒu yí kuài xiàng pí.", english: "I have one eraser." }
+    { id: "my-pencil", imagePath: "assets/illustrated-stationery/pencil.webp", target: ["这", "是", "我的", "铅笔"], distractors: ["有", "书包", "里"], audio: "这是我的铅笔。", pinyin: "zhè shì wǒ de qiān bǐ.", english: "This is my pencil." },
+    { id: "my-chair", imagePath: "assets/illustrated-stationery/chair.webp", target: ["这", "是", "我的", "椅子"], distractors: ["有", "书包", "里"], audio: "这是我的椅子。", pinyin: "zhè shì wǒ de yǐ zi.", english: "This is my chair." },
+    { id: "my-book", imagePath: "assets/illustrated-stationery/my-book-tiantian-landscape.webp", target: ["这", "是", "我的", "书"], distractors: ["有", "书包", "里"], audio: "这是我的书。", pinyin: "zhè shì wǒ de shū.", english: "This is my book." },
+    { id: "anan-scissors", imagePath: "assets/illustrated-possession/this-is-my-scissors.webp", target: ["安安", "有", "剪刀"], distractors: ["这是", "我的", "书包"], audio: "安安有剪刀。", pinyin: "ān ān yǒu jiǎn dāo.", english: "Anan has scissors." },
+    { id: "red-pencil", imagePath: "assets/illustrated-stationery/anan-three-red-pencils.webp", target: ["安安", "有", "三支", "红色的", "铅笔"], distractors: ["一把", "书包", "里"], audio: "安安有三支红色的铅笔。", pinyin: "ān ān yǒu sān zhī hóng sè de qiān bǐ.", english: "Anan has three red pencils." },
+    { id: "one-pencil", imagePath: "assets/illustrated-measure-words/one-pencil.webp", target: ["我", "有", "一支", "铅笔"], distractors: ["一把", "书包", "里"], audio: "我有一支铅笔。", pinyin: "wǒ yǒu yì zhī qiān bǐ.", english: "I have one pencil." },
+    { id: "one-scissors", imagePath: "assets/illustrated-measure-words/one-scissors.webp", target: ["我", "有", "一把", "剪刀"], distractors: ["一支", "书包", "里"], audio: "我有一把剪刀。", pinyin: "wǒ yǒu yì bǎ jiǎn dāo.", english: "I have one pair of scissors." },
+    { id: "one-eraser", imagePath: "assets/illustrated-measure-words/one-eraser.webp", target: ["我", "有", "一块", "橡皮"], distractors: ["一支", "书包", "里"], audio: "我有一块橡皮。", pinyin: "wǒ yǒu yí kuài xiàng pí.", english: "I have one eraser." }
 ];
 
 export const stationeryPictureMatchRounds = [
@@ -83,6 +83,7 @@ export const stationeryPictureMatchRounds = [
     imagePath: "assets/illustrated-stationery/three-red-pencils.webp",
     alt: "three red pencils",
     target: { measure: "三支", color: "红色的", item: "铅笔" },
+    audio: "三支红色的铅笔。",
     pinyin: "sān zhī hóng sè de qiān bǐ.",
     english: "three red pencils"
   },
@@ -91,6 +92,7 @@ export const stationeryPictureMatchRounds = [
     imagePath: "assets/illustrated-stationery/scissors.webp",
     alt: "orange scissors",
     target: { measure: "一把", color: "橙色的", item: "剪刀" },
+    audio: "一把橙色的剪刀。",
     pinyin: "yì bǎ chéng sè de jiǎn dāo.",
     english: "one pair of orange scissors"
   },
@@ -99,6 +101,7 @@ export const stationeryPictureMatchRounds = [
     imagePath: "assets/illustrated-stationery/blue-eraser.webp",
     alt: "blue eraser",
     target: { measure: "一块", color: "蓝色的", item: "橡皮" },
+    audio: "一块蓝色的橡皮。",
     pinyin: "yí kuài lán sè de xiàng pí.",
     english: "one blue eraser"
   }

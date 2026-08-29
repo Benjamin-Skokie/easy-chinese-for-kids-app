@@ -3,7 +3,7 @@ import { spawnSync } from "node:child_process";
 import { existsSync, readFileSync, readdirSync, statSync } from "node:fs";
 import { join, normalize } from "node:path";
 import test from "node:test";
-import { createAudioService } from "../src/core/audio.js";
+import { audioSourcePolicies, createAudioService } from "../src/core/audio.js";
 import { recordedLearnAudioPath } from "../src/core/recorded-audio.js";
 import { learnAudioEntries } from "../src/data/learn-audio-manifest.js";
 import { recordedLearnAudioIds } from "../src/data/learn-recorded-audio.js";
@@ -552,6 +552,11 @@ test("recorded Learn audio covers every authored audio entry", () => {
   }
 });
 
+test("recorded Learn audio resolves punctuation-only text variants", () => {
+  assert.equal(recordedLearnAudioPath("学校有教室"), recordedLearnAudioPath("学校有教室。"));
+  assert.equal(recordedLearnAudioPath("书在书包里"), recordedLearnAudioPath("书在书包里。"));
+});
+
 test("tappable scene lines and weekday cards have recorded audio", () => {
   const stationeryLines = stationeryTopicData.sceneGroups
     .flatMap((group) => group.items)
@@ -667,6 +672,44 @@ test("a stale recorded-audio failure cannot start browser fallback", async () =>
   recordings[0].rejectPlay();
   await Promise.resolve();
   await Promise.resolve();
+  assert.deepEqual(spoken, []);
+});
+
+test("recorded-only policy reports missing audio without using browser speech", async () => {
+  const missing = [];
+  const spoken = [];
+  const audio = createAudioService({
+    synthesis: { cancel() {}, speak: (utterance) => spoken.push(utterance.text) },
+    createUtterance: (text) => ({ text }),
+    getRecordedAudioPath: () => "",
+    getSceneRate: () => 0.64,
+    getSceneLinePauseMs: () => 280,
+    reportMissingRecordedAudio: (text) => missing.push(text)
+  });
+
+  audio.speak("固定句子", 0.78, { sourcePolicy: audioSourcePolicies.recordedOnly });
+  await Promise.resolve();
+  assert.deepEqual(missing, ["固定句子"]);
+  assert.deepEqual(spoken, []);
+});
+
+test("recorded-only policy does not use browser speech after a recording failure", async () => {
+  const missing = [];
+  const spoken = [];
+  const audio = createAudioService({
+    synthesis: { cancel() {}, speak: (utterance) => spoken.push(utterance.text) },
+    createUtterance: (text) => ({ text }),
+    createAudio: () => ({ currentTime: 0, pause() {}, play: () => Promise.reject(new Error("failed")) }),
+    getRecordedAudioPath: () => "fixed.mp3",
+    getSceneRate: () => 0.64,
+    getSceneLinePauseMs: () => 280,
+    reportMissingRecordedAudio: (text) => missing.push(text)
+  });
+
+  audio.speak("固定句子", 0.78, { sourcePolicy: audioSourcePolicies.recordedOnly });
+  await Promise.resolve();
+  await Promise.resolve();
+  assert.deepEqual(missing, ["固定句子"]);
   assert.deepEqual(spoken, []);
 });
 

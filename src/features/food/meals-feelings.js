@@ -70,12 +70,12 @@ export const mealsFeelingsTopicData = {
       { id: "no-cola-water", hanzi: "没有可乐，你可以喝水。", pinyin: "méi yǒu kě lè, nǐ kě yǐ hē shuǐ.", english: "There is no Coke. You can drink water.", audio: "没有可乐你可以喝水" }
     ],
     conversationPairs: [
-      { id: "thirsty-coke", hanzi: "我渴了。", pinyin: "wǒ kě le.", english: "I am thirsty.", reply: "我要喝可乐。", replyPinyin: "wǒ yào hē kě lè.", replyEnglish: "I want to drink Coke.", audio: "我渴了", lessonSources: ["4a:7"] },
-      { id: "hungry-fried-rice", hanzi: "我饿了。", pinyin: "wǒ è le.", english: "I am hungry.", reply: "我要吃炒饭。", replyPinyin: "wǒ yào chī chǎo fàn.", replyEnglish: "I want to eat fried rice.", audio: "我饿了", lessonSources: ["4a:7"] },
-      { id: "full-stop", hanzi: "妈妈，我饱了。", pinyin: "mā ma, wǒ bǎo le.", english: "Mom, I am full.", reply: "好，不吃了。", replyPinyin: "hǎo, bù chī le.", replyEnglish: "Okay, stop eating.", audio: "妈妈我饱了", lessonSources: ["4a:7"] },
-      { id: "lunch-sandwich", hanzi: "你午饭吃什么？", pinyin: "nǐ wǔ fàn chī shén me?", english: "What do you eat for lunch?", reply: "三明治和果汁。", replyPinyin: "sān míng zhì hé guǒ zhī.", replyEnglish: "Sandwiches and juice.", audio: "你午饭吃什么", lessonSources: ["4a:5"] },
-      { id: "chocolate-mealtime", hanzi: "我可以吃巧克力吗？", pinyin: "wǒ kě yǐ chī qiǎo kè lì ma?", english: "May I eat chocolate?", reply: "不行，现在吃饭。", replyPinyin: "bù xíng, xiàn zài chī fàn.", replyEnglish: "No, it is time to eat now.", audio: "我可以吃巧克力吗" },
-      { id: "no-coke-water", hanzi: "没有可乐。", pinyin: "méi yǒu kě lè.", english: "There is no Coke.", reply: "你可以喝水。", replyPinyin: "nǐ kě yǐ hē shuǐ.", replyEnglish: "You can drink water.", audio: "没有可乐" }
+      { id: "thirsty-coke", hanzi: "我渴了。", pinyin: "wǒ kě le.", english: "I am thirsty.", reply: "我要喝可乐。", replyAudio: "我要喝可乐。", replyPinyin: "wǒ yào hē kě lè.", replyEnglish: "I want to drink Coke.", audio: "我渴了", lessonSources: ["4a:7"] },
+      { id: "hungry-fried-rice", hanzi: "我饿了。", pinyin: "wǒ è le.", english: "I am hungry.", reply: "我要吃炒饭。", replyAudio: "我要吃炒饭。", replyPinyin: "wǒ yào chī chǎo fàn.", replyEnglish: "I want to eat fried rice.", audio: "我饿了", lessonSources: ["4a:7"] },
+      { id: "full-stop", hanzi: "妈妈，我饱了。", pinyin: "mā ma, wǒ bǎo le.", english: "Mom, I am full.", reply: "好，不吃了。", replyAudio: "好，不吃了。", replyPinyin: "hǎo, bù chī le.", replyEnglish: "Okay, stop eating.", audio: "妈妈我饱了", lessonSources: ["4a:7"] },
+      { id: "lunch-sandwich", hanzi: "你午饭吃什么？", pinyin: "nǐ wǔ fàn chī shén me?", english: "What do you eat for lunch?", reply: "三明治和果汁。", replyAudio: "三明治和果汁。", replyPinyin: "sān míng zhì hé guǒ zhī.", replyEnglish: "Sandwiches and juice.", audio: "你午饭吃什么", lessonSources: ["4a:5"] },
+      { id: "chocolate-mealtime", hanzi: "我可以吃巧克力吗？", pinyin: "wǒ kě yǐ chī qiǎo kè lì ma?", english: "May I eat chocolate?", reply: "不行，现在吃饭。", replyAudio: "不行，现在吃饭。", replyPinyin: "bù xíng, xiàn zài chī fàn.", replyEnglish: "No, it is time to eat now.", audio: "我可以吃巧克力吗" },
+      { id: "no-coke-water", hanzi: "没有可乐。", pinyin: "méi yǒu kě lè.", english: "There is no Coke.", reply: "你可以喝水。", replyAudio: "你可以喝水。", replyPinyin: "nǐ kě yǐ hē shuǐ.", replyEnglish: "You can drink water.", audio: "没有可乐" }
     ],
     pictureChoices: [
       {

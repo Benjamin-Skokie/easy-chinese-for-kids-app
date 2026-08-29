@@ -11,7 +11,7 @@ function isDataModule(filePath) {
   const relative = path.relative(featuresRoot, filePath).replaceAll(path.sep, "/");
   return relative.endsWith(".js")
     && !relative.includes("/pinyin")
-    && (!relative.endsWith("-runtime.js") || relative === "play-hobbies/play-hobbies-runtime.js")
+    && (!relative.endsWith("-runtime.js") || ["play-hobbies/play-hobbies-runtime.js", "world/world-runtime.js"].includes(relative))
     && !relative.endsWith("-controller.js")
     && !relative.endsWith("/state.js");
 }
@@ -60,7 +60,19 @@ function addEntries(value, source, entries, visited = new WeakSet(), parentKey =
     value.forEach((item) => addEntries(item, source, entries, visited, parentKey));
     return;
   }
-  Object.entries(value).forEach(([key, item]) => addEntries(item, source, entries, visited, key));
+  Object.entries(value).forEach(([key, item]) => {
+    if (typeof item === "string" && /Audio$/.test(key) && item.trim()) {
+      entries.push({
+        text: item.trim(),
+        // Specialized audio fields often contain only part of the surrounding
+        // sentence, so a sibling `answerPinyin`/`replyPinyin` is not reliably
+        // the reading for this exact clip. The Chinese text is authoritative.
+        pinyin: "",
+        source
+      });
+    }
+    addEntries(item, source, entries, visited, key);
+  });
 }
 
 const modules = await featureModules(featuresRoot);

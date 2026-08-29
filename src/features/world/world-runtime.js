@@ -27,21 +27,21 @@ const colourMissionObjects = [
   { id: "toy-car", hanzi: "玩具汽车", pinyin: "wán jù qì chē", english: "toy car" }
 ];
 
-const natureFillRounds = [
-  { id: "sun", subject: "白天", word: "太阳", pinyin: "bái tiān yǒu tài yáng", english: "There is a sun in the daytime." },
-  { id: "moon", subject: "晚上", word: "月亮", pinyin: "wǎn shang yǒu yuè liang", english: "There is a moon at night." },
-  { id: "star", subject: "晚上", word: "星星", pinyin: "wǎn shang yǒu xīng xing", english: "There are stars at night." },
-  { id: "tree", subject: "地上", word: "树", pinyin: "dì shàng yǒu shù", english: "There is a tree on the ground." },
-  { id: "flower", subject: "地上", word: "花", pinyin: "dì shàng yǒu huā", english: "There are flowers on the ground." },
-  { id: "grass", subject: "地上", word: "草", pinyin: "dì shàng yǒu cǎo", english: "There is grass on the ground." }
+export const natureFillRounds = [
+  { id: "sun", subject: "白天", word: "太阳", audio: "白天有太阳。", pinyin: "bái tiān yǒu tài yáng.", english: "There is a sun in the daytime." },
+  { id: "moon", subject: "晚上", word: "月亮", audio: "晚上有月亮。", pinyin: "wǎn shang yǒu yuè liang.", english: "There is a moon at night." },
+  { id: "star", subject: "晚上", word: "星星", audio: "晚上有星星。", pinyin: "wǎn shang yǒu xīng xing.", english: "There are stars at night." },
+  { id: "tree", subject: "地上", word: "树", audio: "地上有树。", pinyin: "dì shàng yǒu shù.", english: "There is a tree on the ground." },
+  { id: "flower", subject: "地上", word: "花", audio: "地上有花。", pinyin: "dì shàng yǒu huā.", english: "There are flowers on the ground." },
+  { id: "grass", subject: "地上", word: "草", audio: "地上有草。", pinyin: "dì shàng yǒu cǎo.", english: "There is grass on the ground." }
 ];
 
-const animalMeasureRounds = [
-  { id: "tiger", number: "一", measure: "只", animal: "老虎", pinyin: "yì zhī lǎo hǔ", english: "one tiger", imagePath: "assets/illustrated-animals/tiger.webp", imageAlt: "A tiger" },
-  { id: "elephant", number: "两", measure: "头", animal: "大象", pinyin: "liǎng tóu dà xiàng", english: "two elephants", imagePath: "assets/illustrated-animals/elephant.webp", imageAlt: "An elephant" },
-  { id: "panda", number: "三", measure: "只", animal: "熊猫", pinyin: "sān zhī xióng māo", english: "three pandas", imagePath: "assets/illustrated-animals/panda.webp", imageAlt: "A panda" },
-  { id: "goldfish", number: "七", measure: "条", animal: "金鱼", pinyin: "qī tiáo jīn yú", english: "seven goldfish", imagePath: "assets/illustrated-animals/goldfish.webp", imageAlt: "A goldfish" },
-  { id: "turtle", number: "六", measure: "只", animal: "乌龟", pinyin: "liù zhī wū guī", english: "six turtles", imagePath: "assets/illustrated-animals/turtle.webp", imageAlt: "A turtle" }
+export const animalMeasureRounds = [
+  { id: "tiger", number: "一", measure: "只", animal: "老虎", sentenceAudio: "动物园有一只老虎。", sentencePinyin: "dòng wù yuán yǒu yì zhī lǎo hǔ.", pinyin: "yì zhī lǎo hǔ", english: "one tiger", imagePath: "assets/illustrated-animals/tiger.webp", imageAlt: "A tiger" },
+  { id: "elephant", number: "两", measure: "头", animal: "大象", sentenceAudio: "动物园有两头大象。", sentencePinyin: "dòng wù yuán yǒu liǎng tóu dà xiàng.", pinyin: "liǎng tóu dà xiàng", english: "two elephants", imagePath: "assets/illustrated-animals/elephant.webp", imageAlt: "An elephant" },
+  { id: "panda", number: "三", measure: "只", animal: "熊猫", sentenceAudio: "动物园有三只熊猫。", sentencePinyin: "dòng wù yuán yǒu sān zhī xióng māo.", pinyin: "sān zhī xióng māo", english: "three pandas", imagePath: "assets/illustrated-animals/panda.webp", imageAlt: "A panda" },
+  { id: "goldfish", number: "七", measure: "条", animal: "金鱼", sentenceAudio: "动物园有七条金鱼。", sentencePinyin: "dòng wù yuán yǒu qī tiáo jīn yú.", pinyin: "qī tiáo jīn yú", english: "seven goldfish", imagePath: "assets/illustrated-animals/goldfish.webp", imageAlt: "A goldfish" },
+  { id: "turtle", number: "六", measure: "只", animal: "乌龟", sentenceAudio: "动物园有六只乌龟。", sentencePinyin: "dòng wù yuán yǒu liù zhī wū guī.", pinyin: "liù zhī wū guī", english: "six turtles", imagePath: "assets/illustrated-animals/turtle.webp", imageAlt: "A turtle" }
 ];
 
 function natureIconMarkup(id) {
@@ -108,11 +108,11 @@ const weatherClothesRounds = [
   }
 ];
 
-const weatherDressRounds = [
-  { id: "rain", prompt: "下雨了。带什么？", promptPinyin: "xià yǔ le. dài shén me?", promptEnglish: "It is raining. What should we take?", answerId: "umbrella", answerSentence: "下雨了。带雨伞。", answerAudio: "带雨伞", answerPinyin: "xià yǔ le. dài yǔ sǎn.", answerEnglish: "It is raining. Take an umbrella." },
-  { id: "snow", prompt: "下雪了。今天很冷。穿什么？", promptPinyin: "xià xuě le. jīn tiān hěn lěng. chuān shén me?", promptEnglish: "It is snowing. Today is cold. What should we wear?", answerId: "knit-hat", answerSentence: "下雪了。今天很冷。戴帽子。", answerAudio: "戴帽子", answerPinyin: "xià xuě le. jīn tiān hěn lěng. dài mào zi.", answerEnglish: "It is snowing. Today is cold. Wear a hat." },
-  { id: "sunny", prompt: "今天是晴天。今天很热。穿什么？", promptPinyin: "jīn tiān shì qíng tiān. jīn tiān hěn rè. chuān shén me?", promptEnglish: "Today is sunny. Today is hot. What should we wear?", answerId: "shorts", answerSentence: "今天是晴天。今天很热。穿短裤。", answerAudio: "穿短裤", answerPinyin: "jīn tiān shì qíng tiān. jīn tiān hěn rè. chuān duǎn kù.", answerEnglish: "Today is sunny. Today is hot. Wear shorts." },
-  { id: "windy", prompt: "今天刮大风。穿什么？", promptPinyin: "jīn tiān guā dà fēng. chuān shén me?", promptEnglish: "It is very windy today. What should we wear?", answerId: "jacket", answerSentence: "今天刮大风。穿外套。", answerAudio: "穿外套", answerPinyin: "jīn tiān guā dà fēng. chuān wài tào.", answerEnglish: "It is very windy today. Wear a jacket." }
+export const weatherDressRounds = [
+  { id: "rain", prompt: "下雨了。带什么？", promptAudio: "下雨了。带什么？", promptPinyin: "xià yǔ le. dài shén me?", promptEnglish: "It is raining. What should we take?", answerId: "umbrella", answerSentence: "下雨了。带雨伞。", answerAudio: "带雨伞", answerPinyin: "xià yǔ le. dài yǔ sǎn.", answerEnglish: "It is raining. Take an umbrella." },
+  { id: "snow", prompt: "下雪了。今天很冷。穿什么？", promptAudio: "下雪了。今天很冷。穿什么？", promptPinyin: "xià xuě le. jīn tiān hěn lěng. chuān shén me?", promptEnglish: "It is snowing. Today is cold. What should we wear?", answerId: "knit-hat", answerSentence: "下雪了。今天很冷。戴帽子。", answerAudio: "戴帽子", answerPinyin: "xià xuě le. jīn tiān hěn lěng. dài mào zi.", answerEnglish: "It is snowing. Today is cold. Wear a hat." },
+  { id: "sunny", prompt: "今天是晴天。今天很热。穿什么？", promptAudio: "今天是晴天。今天很热。穿什么？", promptPinyin: "jīn tiān shì qíng tiān. jīn tiān hěn rè. chuān shén me?", promptEnglish: "Today is sunny. Today is hot. What should we wear?", answerId: "shorts", answerSentence: "今天是晴天。今天很热。穿短裤。", answerAudio: "穿短裤", answerPinyin: "jīn tiān shì qíng tiān. jīn tiān hěn rè. chuān duǎn kù.", answerEnglish: "Today is sunny. Today is hot. Wear shorts." },
+  { id: "windy", prompt: "今天刮大风。穿什么？", promptAudio: "今天刮大风。穿什么？", promptPinyin: "jīn tiān guā dà fēng. chuān shén me?", promptEnglish: "It is very windy today. What should we wear?", answerId: "jacket", answerSentence: "今天刮大风。穿外套。", answerAudio: "穿外套", answerPinyin: "jīn tiān guā dà fēng. chuān wài tào.", answerEnglish: "It is very windy today. Wear a jacket." }
 ];
 
 const weatherDressChoices = [
@@ -122,7 +122,7 @@ const weatherDressChoices = [
   { id: "jacket", hanzi: "外套", imagePath: "assets/illustrated-weather/windbreaker.webp", imageAlt: "A lightweight green windbreaker" }
 ];
 
-const weatherFillRounds = [
+export const weatherFillRounds = [
   {
     id: "rain",
     imagePath: "assets/illustrated-clothes/weather-outfits/rainy-lele.webp",
@@ -132,6 +132,7 @@ const weatherFillRounds = [
       { id: "rainboots", label: "穿什么？", answer: "雨鞋", pinyin: "yǔ xié", choices: ["雨鞋", "雨衣", "帽子", "外套"] }
     ],
     sentence: (word) => `${word("weather")}。乐乐穿雨衣和${word("rainboots")}。`,
+    audio: "下雨了。乐乐穿雨衣和雨鞋。",
     pinyin: "xià yǔ le. lè le chuān yǔ yī hé yǔ xié.",
     english: "It is raining. Lele wears a raincoat and rain boots."
   },
@@ -144,6 +145,7 @@ const weatherFillRounds = [
       { id: "tshirt", label: "穿什么？", answer: "T恤", pinyin: "T xù", choices: ["T恤", "短裤", "外套", "雨衣"] }
     ],
     sentence: (word) => `今天是晴天，天气很${word("temperature")}。露娜穿${word("tshirt")}和短裤。`,
+    audio: "今天是晴天，天气很热。露娜穿T恤和短裤。",
     pinyin: "jīn tiān shì qíng tiān, tiān qì hěn rè. lù nà chuān T xù hé duǎn kù.",
     english: "Today is sunny and hot. Luna wears a T-shirt and shorts."
   },
@@ -165,6 +167,11 @@ const weatherFillRounds = [
       ];
     },
     sentence: (word) => `${word("weather")}，天气很${word("temperature")}。诺亚戴${word("accessory")}，穿${word("coat")}。`,
+    audioByAccessory: {
+      "帽子": { audio: "下雪了，天气很冷。诺亚戴帽子，穿外套。" },
+      "围巾": { audio: "下雪了，天气很冷。诺亚戴围巾，穿外套。" },
+      "手套": { audio: "下雪了，天气很冷。诺亚戴手套，穿外套。" }
+    },
     pinyin: (slot) => `xià xuě le, tiān qì hěn lěng. nuò yà dài ${slot("accessory").pinyin}, chuān ${slot("coat").pinyin}.`,
     english: (slot) => `It is snowing and cold. Noah wears a ${slot("accessory").english} and a coat.`
   },
@@ -177,6 +184,7 @@ const weatherFillRounds = [
       { id: "coat", label: "穿什么？", answer: "大衣", pinyin: "dà yī", choices: ["大衣", "雨衣", "T恤", "围巾"] }
     ],
     sentence: (word) => `今天${word("weather")}。苏菲穿长裤和${word("coat")}，戴帽子。`,
+    audio: "今天刮大风。苏菲穿长裤和大衣，戴帽子。",
     pinyin: "jīn tiān guā dà fēng. sū fēi chuān cháng kù hé dà yī, dài mào zi.",
     english: "It is very windy today. Sophie wears long pants and a coat, with a hat."
   }
@@ -377,7 +385,7 @@ export function createWorldRuntime({ state, currentTopic, currentBook, currentLe
     activityList.querySelectorAll("[data-pets-preference-choice]").forEach((button) => button.addEventListener("click", () => {
       state.petsPreferencePickedId = button.dataset.petsPreferenceChoice;
       const choice = preferenceChoices.find((entry) => entry.id === state.petsPreferencePickedId);
-      if (choice && state.tapAudioEnabled) speak(`我喜欢${choice.hanzi}`, 0.78);
+      if (choice && state.tapAudioEnabled) speak(choice.preferenceAudio, 0.78, { sourcePolicy: "recorded-only" });
       renderActivityPanel(currentTopic());
     }));
   }
@@ -398,7 +406,7 @@ export function createWorldRuntime({ state, currentTopic, currentBook, currentLe
     activityList.querySelectorAll("[data-zoo-sentence-choice]").forEach((button) => button.addEventListener("click", () => {
       state.zooSentencePickedId = button.dataset.zooSentenceChoice;
       const round = animalMeasureRounds.find((entry) => entry.id === state.zooSentencePickedId);
-      if (round && state.tapAudioEnabled) speak(`动物园有${round.number}${round.measure}${round.animal}`, 0.78);
+      if (round && state.tapAudioEnabled) speak(round.sentenceAudio, 0.78, { sourcePolicy: "recorded-only" });
       renderActivityPanel(currentTopic());
     }));
     activityList.querySelectorAll("[data-pet-food-match-animal]").forEach((button) => button.addEventListener("click", () => {
@@ -608,7 +616,7 @@ export function createWorldRuntime({ state, currentTopic, currentBook, currentLe
       state.worldNatureFillWordPicked = button.dataset.natureFillWord;
       state.worldNatureFillWordResult = state.worldNatureFillWordPicked === round.word ? "correct" : "wrong";
       const nowComplete = state.worldNatureFillSubjectResult === "correct" && state.worldNatureFillWordResult === "correct";
-      if (nowComplete && state.tapAudioEnabled) speak(`${round.subject}有${round.word}`, 0.76);
+      if (nowComplete && state.tapAudioEnabled) speak(round.audio, 0.76, { sourcePolicy: "recorded-only" });
       renderActivityPanel(currentTopic());
     }));
   }
@@ -706,7 +714,10 @@ export function createWorldRuntime({ state, currentTopic, currentBook, currentLe
       const slot = fillSlots.find((entry) => entry.id === slotId);
       state.worldWeatherFillPicked[slotId] = choice;
       state.worldWeatherFillResults[slotId] = (slot.answers ?? [slot.answer]).includes(choice) ? "correct" : "wrong";
-      if (fillSlots.every((entry) => state.worldWeatherFillResults[entry.id] === "correct") && state.tapAudioEnabled) speak(fillRound.sentence(fillPicked, fillSlot), 0.76);
+      if (fillSlots.every((entry) => state.worldWeatherFillResults[entry.id] === "correct") && state.tapAudioEnabled) {
+        const completedAudio = fillRound.audio ?? fillRound.audioByAccessory?.[fillPicked("accessory")]?.audio;
+        speak(completedAudio, 0.76, { sourcePolicy: "recorded-only" });
+      }
       renderActivityPanel(currentTopic());
     }));
   }

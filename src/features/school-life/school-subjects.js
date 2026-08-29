@@ -66,7 +66,7 @@ export const schoolSubjectsTopicData = {
 };
 
 export const schoolSubjectsSentenceBuilds = [
-    { id: "ask-favorite", imagePath: "assets/illustrated-school-subjects/subjects-dialogue.webp", target: ["你", "喜欢", "什么", "课"], distractors: ["学校", "有", "图书馆"], pinyin: "nǐ xǐ huan shén me kè?", english: "What class do you like?" },
+    { id: "ask-favorite", imagePath: "assets/illustrated-school-subjects/subjects-dialogue.webp", target: ["你", "喜欢", "什么", "课"], distractors: ["学校", "有", "图书馆"], audio: "你喜欢什么课？", pinyin: "nǐ xǐ huan shén me kè?", english: "What class do you like?" },
     { id: "go-music", imagePath: "assets/illustrated-activities/anan_go_to_music_class.webp", target: ["我", "去", "上", "音乐课"], distractors: ["学校", "有", "图书馆"], pinyin: "wǒ qù shàng yīn yuè kè.", english: "I go to music class.", audio: "我去上音月课" },
     { id: "in-music", imagePath: "assets/illustrated-activities/anan_in_music_class.webp", target: ["我", "在", "上", "音乐课"], distractors: ["学校", "有", "图书馆"], pinyin: "wǒ zài shàng yīn yuè kè.", english: "I am in music class.", audio: "我在上音月课" },
     { id: "music", imagePath: "assets/illustrated-activities/anan_likes_music_class.webp", target: ["我", "喜欢", "音乐课"], distractors: ["学校", "有", "图书馆"], pinyin: "wǒ xǐ huan yīn yuè kè.", english: "I like music class.", audio: "我喜欢音月课" },

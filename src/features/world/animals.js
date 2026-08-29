@@ -13,10 +13,10 @@ export const animalLessons = {
       }
     ],
     items: [
-      { id: "dog", hanzi: "狗", pinyin: "gǒu", english: "dog", audio: "狗", imagePath: "assets/illustrated-animals/dog.webp", imageAlt: "A dog" },
-      { id: "cat", hanzi: "猫", pinyin: "māo", english: "cat", audio: "猫", imagePath: "assets/illustrated-animals/cat.webp", imageAlt: "A cat" },
-      { id: "turtle", hanzi: "乌龟", pinyin: "wū guī", english: "turtle", audio: "乌龟", imagePath: "assets/illustrated-animals/turtle.webp", imageAlt: "A turtle" },
-      { id: "goldfish", hanzi: "金鱼", pinyin: "jīn yú", english: "goldfish", audio: "金鱼", imagePath: "assets/illustrated-animals/goldfish.webp", imageAlt: "A goldfish" }
+      { id: "dog", hanzi: "狗", pinyin: "gǒu", english: "dog", audio: "狗", preferenceAudio: "我喜欢狗。", preferencePinyin: "wǒ xǐ huan gǒu.", imagePath: "assets/illustrated-animals/dog.webp", imageAlt: "A dog" },
+      { id: "cat", hanzi: "猫", pinyin: "māo", english: "cat", audio: "猫", preferenceAudio: "我喜欢猫。", preferencePinyin: "wǒ xǐ huan māo.", imagePath: "assets/illustrated-animals/cat.webp", imageAlt: "A cat" },
+      { id: "turtle", hanzi: "乌龟", pinyin: "wū guī", english: "turtle", audio: "乌龟", preferenceAudio: "我喜欢乌龟。", preferencePinyin: "wǒ xǐ huan wū guī.", imagePath: "assets/illustrated-animals/turtle.webp", imageAlt: "A turtle" },
+      { id: "goldfish", hanzi: "金鱼", pinyin: "jīn yú", english: "goldfish", audio: "金鱼", preferenceAudio: "我喜欢金鱼。", preferencePinyin: "wǒ xǐ huan jīn yú.", imagePath: "assets/illustrated-animals/goldfish.webp", imageAlt: "A goldfish" }
     ],
     usefulNote: {
       hanzi: "我喜欢 + 名词。比如：我喜欢猫。",

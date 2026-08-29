@@ -42,10 +42,10 @@ export const schoolSuppliesTopicData = {
 };
 
 export const schoolSuppliesSentenceBuilds = [
-    { id: "stationery", imagePath: "assets/illustrated-stationery/pencil-box.webp", target: ["文具盒", "里", "有", "铅笔"], distractors: ["学校", "喜欢", "图书馆"], pinyin: "wén jù hé lǐ yǒu qiān bǐ.", english: "There is a pencil in the pencil case." },
-    { id: "eraser", imagePath: "assets/illustrated-stationery/pencil-box.webp", target: ["文具盒", "里", "有", "橡皮"], distractors: ["学校", "喜欢", "图书馆"], pinyin: "wén jù hé lǐ yǒu xiàng pí.", english: "There is an eraser in the pencil case." },
-    { id: "colored-pencils", imagePath: "assets/illustrated-stationery/pencil-box.webp", target: ["文具盒", "里", "有", "彩色铅笔"], distractors: ["学校", "喜欢", "图书馆"], pinyin: "wén jù hé lǐ yǒu cǎi sè qiān bǐ.", english: "There are colored pencils in the pencil case." },
-    { id: "book-in-backpack", imagePath: "assets/illustrated-rooms/positions-inside-outside.webp", target: ["书", "在", "书包", "里"], distractors: ["教室", "喜欢", "椅子"], pinyin: "shū zài shū bāo lǐ.", english: "The book is in the backpack." },
-    { id: "backpack-has-book", imagePath: "assets/illustrated-rooms/positions-inside-outside.webp", target: ["书包", "里", "有", "书"], distractors: ["教室", "喜欢", "椅子"], pinyin: "shū bāo lǐ yǒu shū.", english: "There is a book in the backpack." },
-    { id: "pencil-case-outside", imagePath: "assets/illustrated-rooms/positions-inside-outside.webp", target: ["文具盒", "在", "书包", "外面"], distractors: ["教室", "喜欢", "椅子"], pinyin: "wén jù hé zài shū bāo wài miàn.", english: "The pencil case is outside the backpack." }
+    { id: "stationery", imagePath: "assets/illustrated-stationery/pencil-box.webp", target: ["文具盒", "里", "有", "铅笔"], distractors: ["学校", "喜欢", "图书馆"], audio: "文具盒里有铅笔。", pinyin: "wén jù hé lǐ yǒu qiān bǐ.", english: "There is a pencil in the pencil case." },
+    { id: "eraser", imagePath: "assets/illustrated-stationery/pencil-box.webp", target: ["文具盒", "里", "有", "橡皮"], distractors: ["学校", "喜欢", "图书馆"], audio: "文具盒里有橡皮。", pinyin: "wén jù hé lǐ yǒu xiàng pí.", english: "There is an eraser in the pencil case." },
+    { id: "colored-pencils", imagePath: "assets/illustrated-stationery/pencil-box.webp", target: ["文具盒", "里", "有", "彩色铅笔"], distractors: ["学校", "喜欢", "图书馆"], audio: "文具盒里有彩色铅笔。", pinyin: "wén jù hé lǐ yǒu cǎi sè qiān bǐ.", english: "There are colored pencils in the pencil case." },
+    { id: "book-in-backpack", imagePath: "assets/illustrated-rooms/positions-inside-outside.webp", target: ["书", "在", "书包", "里"], distractors: ["教室", "喜欢", "椅子"], audio: "书在书包里。", pinyin: "shū zài shū bāo lǐ.", english: "The book is in the backpack." },
+    { id: "backpack-has-book", imagePath: "assets/illustrated-rooms/positions-inside-outside.webp", target: ["书包", "里", "有", "书"], distractors: ["教室", "喜欢", "椅子"], audio: "书包里有书。", pinyin: "shū bāo lǐ yǒu shū.", english: "There is a book in the backpack." },
+    { id: "pencil-case-outside", imagePath: "assets/illustrated-rooms/positions-inside-outside.webp", target: ["文具盒", "在", "书包", "外面"], distractors: ["教室", "喜欢", "椅子"], audio: "文具盒在书包外面。", pinyin: "wén jù hé zài shū bāo wài miàn.", english: "The pencil case is outside the backpack." }
 ];
