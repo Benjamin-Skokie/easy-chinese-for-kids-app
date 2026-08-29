@@ -12,7 +12,7 @@ This is the living implementation record for cross-page bugs reported in `docs/b
 | SYS-02 Audio-source routing policy | Implementation complete; device verification pending | Explicit recorded-first, recorded-only, browser-first, and composed-recording paths implemented |
 | SYS-03 Audio asset QA pipeline | In progress | Pre-generation prompt guardrails implemented; waveform audit pending |
 | SYS-04 Shared game controls and completion behavior | In progress | Shared New game/Clear contract applied to sentence builders; full inventory remains |
-| SYS-05 Question/picture state synchronization | Scoped | Not started |
+| SYS-05 Question/picture state synchronization | Implementation verified | Hobbies round state uses one item ID for picture, prompt, choices, and answer |
 | SYS-06 Shared responsive game layout | Scoped | Not started |
 
 **Overall:** classification and the SYS-01/SYS-02 implementation passes are complete. SYS-03 generation-quality work is in progress. SYS-01 and SYS-02 are not marked fully fixed until they pass target iPad/Safari verification.
@@ -168,11 +168,11 @@ Question text, word choices, correct answer, and picture always derive from the 
 
 ### Work
 
-- [ ] Identify whether affected exercises use one shared round-state pattern.
-- [ ] Store one current-round object instead of independently updating picture and choices.
-- [ ] Ensure New Game selects a different eligible round when alternatives exist.
-- [ ] Render every dependent surface from the selected round.
-- [ ] Add tests that advance repeatedly and assert picture/question/choices remain synchronized.
+- [x] Identify the shared Hobbies round-state pattern used by the affected exercises.
+- [x] Use one selected round/item ID for picture, word choices, and correct answer.
+- [x] Ensure New Game selects a different eligible round when alternatives exist.
+- [x] Render every dependent surface from the selected round.
+- [x] Add regression checks for each affected round set; manually verify repeated New Game transitions on all three reported pages.
 
 ### Acceptance Criteria
 

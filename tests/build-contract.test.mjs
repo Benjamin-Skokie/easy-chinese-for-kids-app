@@ -554,6 +554,31 @@ test("Leisure Time sentence builder shows its word-order scaffold", () => {
   assert.match(runtimeSource, /hobbies-sentence-slot/);
 });
 
+test("Hobbies practice rounds keep their picture, prompt, and answer choices in one round state", () => {
+  const runtimeSource = readFileSync("src/features/play-hobbies/play-hobbies-runtime.js", "utf8");
+  const roundSets = [
+    ["3b:4", hobbies3bTopic.focusItems],
+    ["4b:4", hobbiesAtHomeTopic.focusItems],
+    ["4b:7", hobbiesLeisureTopic.focusItems]
+  ];
+
+  for (const [lessonKey, items] of roundSets) {
+    const rounds = hobbiesLessonAudioData[lessonKey].rounds;
+    assert.equal(new Set(rounds.map((round) => round.itemId)).size, rounds.length, `${lessonKey} has unique rounds`);
+    for (const round of rounds) {
+      assert.ok(items.some((item) => item.id === round.itemId && item.imagePath), `${lessonKey}:${round.itemId} has its own picture`);
+      assert.ok(round.answers?.length || round.optionIds?.length, `${lessonKey}:${round.itemId} has linked answer choices`);
+    }
+  }
+
+  assert.match(runtimeSource, /const round = \(\) => lesson\(\)\.rounds\.find\(\(entry\) => entry\.itemId === state\.hobbiesBuildOrder\[state\.hobbiesBuildRoundIndex\]\)/);
+  assert.match(runtimeSource, /if \(!sameLesson\) \{[\s\S]{0,420}state\.hobbiesBuildOrder = \[\];[\s\S]{0,180}state\.hobbiesBuildRoundIndex = 0;/);
+  assert.match(runtimeSource, /const item = topic\.focusItems\.find\(\(item\) => item\.id === entry\.itemId\)/);
+  assert.match(runtimeSource, /const item = topic\.focusItems\.find\(\(focusItem\) => focusItem\.id === entry\.itemId\)/);
+  assert.match(runtimeSource, /data-hobbies-build-new[\s\S]{0,180}resetRound\(true\)/);
+  assert.match(runtimeSource, /data-hobbies-choice-new[\s\S]{0,180}resetRound\(true\)/);
+});
+
 test("Leisure Time uses the shared site-wide Tingting preference", () => {
   const runtimeSource = readFileSync("src/features/play-hobbies/play-hobbies-runtime.js", "utf8");
   assert.match(runtimeSource, /const speakLesson = \(text, rate, options\) => speak\(text, rate, options\);/);

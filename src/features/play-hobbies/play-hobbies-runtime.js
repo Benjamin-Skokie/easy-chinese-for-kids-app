@@ -133,7 +133,16 @@ export function createPlayHobbiesRuntime({ state, currentTopic, currentBook, cur
   const validPrefix = (entry, tokens) => entry.answers.some((answer) => tokens.every((token, index) => token === answer.tokens[index]));
   function resetRound(newGame = false) {
     const sameLesson = state.hobbiesBuildLessonKey === lessonKey();
-    if (!sameLesson) { state.hobbiesBuildLessonKey = lessonKey(); newGame = true; }
+    if (!sameLesson) {
+      // A round order belongs to exactly one lesson. Keeping the previous
+      // lesson's IDs makes round() fall back to the first Leisure Time card,
+      // so the word-card shuffle can appear to work while its picture never
+      // leaves the running scene.
+      state.hobbiesBuildLessonKey = lessonKey();
+      state.hobbiesBuildOrder = [];
+      state.hobbiesBuildRoundIndex = 0;
+      newGame = true;
+    }
     if (!state.hobbiesBuildOrder.length) {
       const order = shuffled(lesson().rounds).map((entry) => entry.itemId);
       state.hobbiesBuildOrder = order; state.hobbiesBuildRoundIndex = 0;

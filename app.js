@@ -28150,6 +28150,8 @@
       const sameLesson = state2.hobbiesBuildLessonKey === lessonKey();
       if (!sameLesson) {
         state2.hobbiesBuildLessonKey = lessonKey();
+        state2.hobbiesBuildOrder = [];
+        state2.hobbiesBuildRoundIndex = 0;
         newGame = true;
       }
       if (!state2.hobbiesBuildOrder.length) {
