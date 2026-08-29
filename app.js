@@ -308,6 +308,17 @@
       ]
     },
     {
+      "id": "f47a3ad6ee90",
+      "text": "\u676F\u5B50",
+      "pinyin": "b\u0113i zi",
+      "pinyinOptions": [
+        "b\u0113i zi"
+      ],
+      "sources": [
+        "src/features/world/world-runtime.js"
+      ]
+    },
+    {
       "id": "8a59ff84b6e8",
       "text": "\u5317\u4EAC",
       "pinyin": "B\u011Bi j\u012Bng",
@@ -329,6 +340,17 @@
       "sources": [
         "src/data/topic-registry.js",
         "src/features/foundations/body.js"
+      ]
+    },
+    {
+      "id": "96d85456d70a",
+      "text": "\u7B14",
+      "pinyin": "b\u01D0",
+      "pinyinOptions": [
+        "b\u01D0"
+      ],
+      "sources": [
+        "src/features/world/world-runtime.js"
       ]
     },
     {
@@ -1721,6 +1743,17 @@
       ]
     },
     {
+      "id": "7c03546e586e",
+      "text": "\u98CE\u7B5D",
+      "pinyin": "f\u0113ng zheng",
+      "pinyinOptions": [
+        "f\u0113ng zheng"
+      ],
+      "sources": [
+        "src/features/world/world-runtime.js"
+      ]
+    },
+    {
       "id": "f78f9f2adea7",
       "text": "\u94A2\u7434",
       "pinyin": "g\u0101ng q\xEDn",
@@ -2228,6 +2261,17 @@
       ],
       "sources": [
         "src/features/time-daily-life/transport.js"
+      ]
+    },
+    {
+      "id": "6975a7f74b9a",
+      "text": "\u79EF\u6728",
+      "pinyin": "j\u012B m\xF9",
+      "pinyinOptions": [
+        "j\u012B m\xF9"
+      ],
+      "sources": [
+        "src/features/world/world-runtime.js"
       ]
     },
     {
@@ -3679,7 +3723,8 @@
       ],
       "sources": [
         "src/data/topic-registry.js",
-        "src/features/daily-life/clothes.js"
+        "src/features/daily-life/clothes.js",
+        "src/features/world/world-runtime.js"
       ]
     },
     {
@@ -4811,6 +4856,17 @@
       ]
     },
     {
+      "id": "5731ff38ac48",
+      "text": "\u6C14\u7403",
+      "pinyin": "q\xEC qi\xFA",
+      "pinyinOptions": [
+        "q\xEC qi\xFA"
+      ],
+      "sources": [
+        "src/features/world/world-runtime.js"
+      ]
+    },
+    {
       "id": "f26d4afdc9f4",
       "text": "\u6C7D\u8F66",
       "pinyin": "q\xEC ch\u0113",
@@ -5560,7 +5616,8 @@
       ],
       "sources": [
         "src/data/topic-registry.js",
-        "src/features/school-life/school-supplies.js"
+        "src/features/school-life/school-supplies.js",
+        "src/features/world/world-runtime.js"
       ]
     },
     {
@@ -6750,7 +6807,8 @@
       ],
       "sources": [
         "src/data/topic-registry.js",
-        "src/features/play-hobbies/play-hobbies.js"
+        "src/features/play-hobbies/play-hobbies.js",
+        "src/features/world/world-runtime.js"
       ]
     },
     {
@@ -10946,6 +11004,105 @@
       ]
     },
     {
+      "id": "d1be5e72a2e7",
+      "text": "\u627E\u4E00\u627E\uFF0C\u767D\u8272\u7684",
+      "pinyin": "zh\u01CEo yi zh\u01CEo, b\xE1i s\xE8 de",
+      "pinyinOptions": [
+        "zh\u01CEo yi zh\u01CEo, b\xE1i s\xE8 de"
+      ],
+      "sources": [
+        "src/features/world/world-runtime.js"
+      ]
+    },
+    {
+      "id": "ac1d86e77d9a",
+      "text": "\u627E\u4E00\u627E\uFF0C\u6A59\u8272\u7684",
+      "pinyin": "zh\u01CEo yi zh\u01CEo, ch\xE9ng s\xE8 de",
+      "pinyinOptions": [
+        "zh\u01CEo yi zh\u01CEo, ch\xE9ng s\xE8 de"
+      ],
+      "sources": [
+        "src/features/world/world-runtime.js"
+      ]
+    },
+    {
+      "id": "3ca16790d784",
+      "text": "\u627E\u4E00\u627E\uFF0C\u7C89\u7EA2\u8272\u7684",
+      "pinyin": "zh\u01CEo yi zh\u01CEo, f\u011Bn h\xF3ng s\xE8 de",
+      "pinyinOptions": [
+        "zh\u01CEo yi zh\u01CEo, f\u011Bn h\xF3ng s\xE8 de"
+      ],
+      "sources": [
+        "src/features/world/world-runtime.js"
+      ]
+    },
+    {
+      "id": "26d4ce26c34c",
+      "text": "\u627E\u4E00\u627E\uFF0C\u9ED1\u8272\u7684",
+      "pinyin": "zh\u01CEo yi zh\u01CEo, h\u0113i s\xE8 de",
+      "pinyinOptions": [
+        "zh\u01CEo yi zh\u01CEo, h\u0113i s\xE8 de"
+      ],
+      "sources": [
+        "src/features/world/world-runtime.js"
+      ]
+    },
+    {
+      "id": "d67d731ad3d8",
+      "text": "\u627E\u4E00\u627E\uFF0C\u7EA2\u8272\u7684",
+      "pinyin": "zh\u01CEo yi zh\u01CEo, h\xF3ng s\xE8 de",
+      "pinyinOptions": [
+        "zh\u01CEo yi zh\u01CEo, h\xF3ng s\xE8 de"
+      ],
+      "sources": [
+        "src/features/world/world-runtime.js"
+      ]
+    },
+    {
+      "id": "d3176d4f9a67",
+      "text": "\u627E\u4E00\u627E\uFF0C\u9EC4\u8272\u7684",
+      "pinyin": "zh\u01CEo yi zh\u01CEo, hu\xE1ng s\xE8 de",
+      "pinyinOptions": [
+        "zh\u01CEo yi zh\u01CEo, hu\xE1ng s\xE8 de"
+      ],
+      "sources": [
+        "src/features/world/world-runtime.js"
+      ]
+    },
+    {
+      "id": "b889b86036fd",
+      "text": "\u627E\u4E00\u627E\uFF0C\u84DD\u8272\u7684",
+      "pinyin": "zh\u01CEo yi zh\u01CEo, l\xE1n s\xE8 de",
+      "pinyinOptions": [
+        "zh\u01CEo yi zh\u01CEo, l\xE1n s\xE8 de"
+      ],
+      "sources": [
+        "src/features/world/world-runtime.js"
+      ]
+    },
+    {
+      "id": "5e3006be75c3",
+      "text": "\u627E\u4E00\u627E\uFF0C\u7EFF\u8272\u7684",
+      "pinyin": "zh\u01CEo yi zh\u01CEo, l\u01DC s\xE8 de",
+      "pinyinOptions": [
+        "zh\u01CEo yi zh\u01CEo, l\u01DC s\xE8 de"
+      ],
+      "sources": [
+        "src/features/world/world-runtime.js"
+      ]
+    },
+    {
+      "id": "20a7f6e15132",
+      "text": "\u627E\u4E00\u627E\uFF0C\u7D2B\u8272\u7684",
+      "pinyin": "zh\u01CEo yi zh\u01CEo, z\u01D0 s\xE8 de",
+      "pinyinOptions": [
+        "zh\u01CEo yi zh\u01CEo, z\u01D0 s\xE8 de"
+      ],
+      "sources": [
+        "src/features/world/world-runtime.js"
+      ]
+    },
+    {
       "id": "c81aef959bb6",
       "text": "\u8FD9\u8FB9\u7684\u80E1\u841D\u535C\u5F88\u591A\uFF0C\u90A3\u8FB9\u7684\u80E1\u841D\u535C\u5F88\u5C11\u3002",
       "pinyin": "Zh\xE8 bi\u0101n de h\xFA lu\xF3 bo h\u011Bn du\u014D, n\xE0 bi\u0101n de h\xFA lu\xF3 bo h\u011Bn sh\u01CEo.",
@@ -11418,7 +11575,7 @@
   ];
 
   // src/data/learn-recorded-audio.js
-  var recordedLearnAudioVersion = "21d64e1463ad";
+  var recordedLearnAudioVersion = "047a09246fff";
   var recordedLearnAudioIds = /* @__PURE__ */ new Set([
     "b2a608a56f62",
     "0201c407ca5a",
@@ -11447,8 +11604,10 @@
     "a1668411bd3a",
     "5f4ccd24bd4b",
     "037c6ea8808f",
+    "f47a3ad6ee90",
     "8a59ff84b6e8",
     "f4cf0a0f33f3",
+    "96d85456d70a",
     "2802d5c6d5a8",
     "d5cdd5cef0a5",
     "88e712a66eea",
@@ -11571,6 +11730,7 @@
     "6c12fce30d2a",
     "9ae699ccae9d",
     "d9aac6c4b228",
+    "7c03546e586e",
     "f78f9f2adea7",
     "55ebf519a524",
     "860edf269db0",
@@ -11615,6 +11775,7 @@
     "4c3cb84d7470",
     "533bd2993650",
     "8269921c65fc",
+    "6975a7f74b9a",
     "b869334312ee",
     "dd5e71d3e99b",
     "cb73b692ec34",
@@ -11838,6 +11999,7 @@
     "68e0cdbf18e8",
     "6c0243437ccf",
     "ba910a5b9877",
+    "5731ff38ac48",
     "f26d4afdc9f4",
     "6a30a16640cc",
     "76faef65b8cb",
@@ -12370,6 +12532,15 @@
     "057d581dc2d2",
     "2857d7d705ea",
     "726e7cebeacb",
+    "d1be5e72a2e7",
+    "ac1d86e77d9a",
+    "3ca16790d784",
+    "26d4ce26c34c",
+    "d67d731ad3d8",
+    "d3176d4f9a67",
+    "b889b86036fd",
+    "5e3006be75c3",
+    "20a7f6e15132",
     "c81aef959bb6",
     "5982014632bb",
     "19d666a51335",
@@ -12429,6 +12600,4074 @@
     return `assets/audio/learn/${entry.id}.mp3?v=${recordedLearnAudioVersion}`;
   }
 
+  // src/core/recorded-audio-boundaries.js
+  var measuredBoundarySilenceMsById = Object.freeze({
+    "00208b843718": {
+      "leading": 57,
+      "trailing": 100
+    },
+    "002c9029629c": {
+      "leading": 47,
+      "trailing": 100
+    },
+    "0114ceae67bc": {
+      "leading": 98,
+      "trailing": 105
+    },
+    "01d5ff8bb04a": {
+      "leading": 74,
+      "trailing": 100
+    },
+    "01db9920379f": {
+      "leading": 66,
+      "trailing": 100
+    },
+    "01fe57bb5283": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "0201c407ca5a": {
+      "leading": 48,
+      "trailing": 100
+    },
+    "020776e84bec": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "023f25fdbc22": {
+      "leading": 71,
+      "trailing": 100
+    },
+    "023f62beab4d": {
+      "leading": 59,
+      "trailing": 100
+    },
+    "02c46dfc4737": {
+      "leading": 100,
+      "trailing": 115
+    },
+    "030081d251dc": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "0362f2e3e18b": {
+      "leading": 94,
+      "trailing": 100
+    },
+    "037c6ea8808f": {
+      "leading": 50,
+      "trailing": 100
+    },
+    "03e2fcf48468": {
+      "leading": 58,
+      "trailing": 100
+    },
+    "04d834d43ca0": {
+      "leading": 59,
+      "trailing": 100
+    },
+    "0552ea50054c": {
+      "leading": 54,
+      "trailing": 104
+    },
+    "057d581dc2d2": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "05b62a322a18": {
+      "leading": 61,
+      "trailing": 100
+    },
+    "0602c08b0882": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "062fb3dbe7cc": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "067e8fc7c27c": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "06a6b9f1c3d7": {
+      "leading": 56,
+      "trailing": 100
+    },
+    "06ca78b5bde9": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "06f9dc46db55": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "070ae82d4753": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "079c84fccb9a": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "080ad07e70cb": {
+      "leading": 65,
+      "trailing": 100
+    },
+    "081b089a0361": {
+      "leading": 64,
+      "trailing": 100
+    },
+    "0862bbd6ba35": {
+      "leading": 65,
+      "trailing": 100
+    },
+    "0884cbe546be": {
+      "leading": 62,
+      "trailing": 100
+    },
+    "09130841c5a1": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "092bb1ad7a83": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "0961066dd9c1": {
+      "leading": 65,
+      "trailing": 100
+    },
+    "096a287fbe74": {
+      "leading": 66,
+      "trailing": 100
+    },
+    "09a27344136c": {
+      "leading": 65,
+      "trailing": 100
+    },
+    "0a116bc53a48": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "0a768c1da9e5": {
+      "leading": 55,
+      "trailing": 100
+    },
+    "0a7c80e24b33": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "0ad0edf468cb": {
+      "leading": 91,
+      "trailing": 100
+    },
+    "0ae564786ae6": {
+      "leading": 75,
+      "trailing": 100
+    },
+    "0b81a86aaa06": {
+      "leading": 62,
+      "trailing": 100
+    },
+    "0b89436bfcee": {
+      "leading": 63,
+      "trailing": 100
+    },
+    "0b89c87c1352": {
+      "leading": 57,
+      "trailing": 100
+    },
+    "0c32ddf79505": {
+      "leading": 61,
+      "trailing": 101
+    },
+    "0c3573dfbcda": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "0c6e64a56fd1": {
+      "leading": 66,
+      "trailing": 100
+    },
+    "0c82078f9df7": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "0ca86a8bc771": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "0cdb1af170de": {
+      "leading": 90,
+      "trailing": 100
+    },
+    "0ce5e4c83f84": {
+      "leading": 66,
+      "trailing": 100
+    },
+    "0d27b6a2b2e2": {
+      "leading": 66,
+      "trailing": 100
+    },
+    "0de321dfdc08": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "0e18a756a9ff": {
+      "leading": 100,
+      "trailing": 104
+    },
+    "0ecf7cda7a3e": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "0f92cd2078b8": {
+      "leading": 53,
+      "trailing": 100
+    },
+    "0fb05bc18f29": {
+      "leading": 68,
+      "trailing": 100
+    },
+    "0fb276f8d6b7": {
+      "leading": 50,
+      "trailing": 100
+    },
+    "101927147444": {
+      "leading": 47,
+      "trailing": 100
+    },
+    "103cc622dd16": {
+      "leading": 64,
+      "trailing": 100
+    },
+    "10bd2030ec07": {
+      "leading": 68,
+      "trailing": 100
+    },
+    "11099abaaa3b": {
+      "leading": 61,
+      "trailing": 100
+    },
+    "115d06c5b67e": {
+      "leading": 53,
+      "trailing": 100
+    },
+    "118eb51e8ded": {
+      "leading": 81,
+      "trailing": 100
+    },
+    "11edb145076c": {
+      "leading": 100,
+      "trailing": 102
+    },
+    "121102a62682": {
+      "leading": 80,
+      "trailing": 100
+    },
+    "1236e0362a32": {
+      "leading": 100,
+      "trailing": 109
+    },
+    "1295cd06e2e6": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "12ddcc982eff": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "13886376e39a": {
+      "leading": 54,
+      "trailing": 100
+    },
+    "1439f7b8cde6": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "145924a44c7f": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "146e509ecb44": {
+      "leading": 65,
+      "trailing": 100
+    },
+    "14d4d0b0b2b0": {
+      "leading": 86,
+      "trailing": 101
+    },
+    "14dff8610e0a": {
+      "leading": 100,
+      "trailing": 101
+    },
+    "1515c502c0a8": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "152b6c3096b8": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "15653bb3ca9e": {
+      "leading": 52,
+      "trailing": 100
+    },
+    "15b38771a6f8": {
+      "leading": 79,
+      "trailing": 100
+    },
+    "161d09d9e71c": {
+      "leading": 55,
+      "trailing": 100
+    },
+    "1646c818ef96": {
+      "leading": 65,
+      "trailing": 100
+    },
+    "169d76ee4282": {
+      "leading": 69,
+      "trailing": 100
+    },
+    "16b0928463c3": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "1702f693adb8": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "177436a5e535": {
+      "leading": 69,
+      "trailing": 100
+    },
+    "17c82ea14e67": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "17c9d63aca40": {
+      "leading": 67,
+      "trailing": 100
+    },
+    "183552912f7a": {
+      "leading": 52,
+      "trailing": 100
+    },
+    "18d603bdfcb4": {
+      "leading": 67,
+      "trailing": 100
+    },
+    "190390c7c71f": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "191154f667c7": {
+      "leading": 47,
+      "trailing": 100
+    },
+    "1922ab1d1f3c": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "195c2adbc219": {
+      "leading": 78,
+      "trailing": 101
+    },
+    "19c3e708e671": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "19d666a51335": {
+      "leading": 70,
+      "trailing": 100
+    },
+    "19dd058bbac1": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "19e7e0815d61": {
+      "leading": 63,
+      "trailing": 100
+    },
+    "1a9056c64304": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "1ab766e149de": {
+      "leading": 72,
+      "trailing": 103
+    },
+    "1af64b055f64": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "1b0c9b5ebb5f": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "1b1dc0904c49": {
+      "leading": 66,
+      "trailing": 100
+    },
+    "1b2c277c5140": {
+      "leading": 80,
+      "trailing": 100
+    },
+    "1b49c235975b": {
+      "leading": 74,
+      "trailing": 100
+    },
+    "1b50de1e4163": {
+      "leading": 71,
+      "trailing": 100
+    },
+    "1bcc59e0fe7d": {
+      "leading": 101,
+      "trailing": 100
+    },
+    "1bd5965613ea": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "1c212dffcc7c": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "1c7c719ea5b9": {
+      "leading": 100,
+      "trailing": 103
+    },
+    "1d25dd7ae330": {
+      "leading": 63,
+      "trailing": 100
+    },
+    "1d33af1ba1e4": {
+      "leading": 63,
+      "trailing": 100
+    },
+    "1dc7d482df6f": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "1ddcab94e29b": {
+      "leading": 73,
+      "trailing": 100
+    },
+    "1df5a5e06ea0": {
+      "leading": 100,
+      "trailing": 101
+    },
+    "1e03936419a6": {
+      "leading": 64,
+      "trailing": 100
+    },
+    "1e54525d2805": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "1e84a207c3a6": {
+      "leading": 52,
+      "trailing": 101
+    },
+    "1e91f7f28a5a": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "1eb17c88d509": {
+      "leading": 67,
+      "trailing": 100
+    },
+    "1f01bfff6ee6": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "1f11b9f9fc00": {
+      "leading": 65,
+      "trailing": 100
+    },
+    "1f1a7b0bed98": {
+      "leading": 49,
+      "trailing": 100
+    },
+    "1f9894ab62c2": {
+      "leading": 97,
+      "trailing": 100
+    },
+    "1fc5ea90fe09": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "1fc9135b0017": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "1fd53b17c0bf": {
+      "leading": 54,
+      "trailing": 100
+    },
+    "20a7f6e15132": {
+      "leading": 100,
+      "trailing": 101
+    },
+    "20aa2ca3d30d": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "20e18cc80841": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "217e23d62c4d": {
+      "leading": 20,
+      "trailing": 21
+    },
+    "21cd55a14afe": {
+      "leading": 55,
+      "trailing": 100
+    },
+    "221414ac760c": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "22147f3e7be5": {
+      "leading": 67,
+      "trailing": 100
+    },
+    "22b05ca62fcf": {
+      "leading": 70,
+      "trailing": 100
+    },
+    "22c15d362b25": {
+      "leading": 55,
+      "trailing": 100
+    },
+    "22e89327d58b": {
+      "leading": 65,
+      "trailing": 101
+    },
+    "230295a063ba": {
+      "leading": 77,
+      "trailing": 100
+    },
+    "23b0a6466cd3": {
+      "leading": 97,
+      "trailing": 100
+    },
+    "23e22e752799": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "240b337621ad": {
+      "leading": 63,
+      "trailing": 100
+    },
+    "24261bf0a44c": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "24330f79766c": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "24741954f8ad": {
+      "leading": 70,
+      "trailing": 100
+    },
+    "24801bdac3c1": {
+      "leading": 58,
+      "trailing": 100
+    },
+    "248c4a21b4c3": {
+      "leading": 100,
+      "trailing": 101
+    },
+    "24fabf9ca936": {
+      "leading": 56,
+      "trailing": 100
+    },
+    "2534273492a8": {
+      "leading": 74,
+      "trailing": 100
+    },
+    "25502c2ee487": {
+      "leading": 52,
+      "trailing": 100
+    },
+    "25721a70fa10": {
+      "leading": 66,
+      "trailing": 100
+    },
+    "258a0d05a183": {
+      "leading": 58,
+      "trailing": 100
+    },
+    "2627ad81b765": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "263e50ce57a5": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "2676c2f1d501": {
+      "leading": 55,
+      "trailing": 100
+    },
+    "26d4ce26c34c": {
+      "leading": 66,
+      "trailing": 105
+    },
+    "26e8b587a15f": {
+      "leading": 67,
+      "trailing": 100
+    },
+    "2726796f2828": {
+      "leading": 65,
+      "trailing": 100
+    },
+    "273879ef34cf": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "273ae0d9b412": {
+      "leading": 65,
+      "trailing": 100
+    },
+    "2797ff6908a2": {
+      "leading": 69,
+      "trailing": 100
+    },
+    "27abcca83cc9": {
+      "leading": 75,
+      "trailing": 100
+    },
+    "27d2ef508423": {
+      "leading": 46,
+      "trailing": 100
+    },
+    "27ead6bb5c10": {
+      "leading": 50,
+      "trailing": 100
+    },
+    "27f23cb06238": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "2802d5c6d5a8": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "282aefb21454": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "2857d7d705ea": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "287247d66435": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "28d671a188f9": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "291ed64b81af": {
+      "leading": 102,
+      "trailing": 100
+    },
+    "295a5429731a": {
+      "leading": 57,
+      "trailing": 101
+    },
+    "2978332599f5": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "29ab3cd5acc5": {
+      "leading": 67,
+      "trailing": 100
+    },
+    "2a92a27b12e6": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "2aa52dd44b5c": {
+      "leading": 98,
+      "trailing": 100
+    },
+    "2b60639c1b17": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "2c050ec43fd5": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "2c15f31fe659": {
+      "leading": 58,
+      "trailing": 103
+    },
+    "2c185fafb5fd": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "2cff55804636": {
+      "leading": 77,
+      "trailing": 100
+    },
+    "2d19df75d471": {
+      "leading": 100,
+      "trailing": 103
+    },
+    "2d1eee509192": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "2d3982e5826b": {
+      "leading": 53,
+      "trailing": 100
+    },
+    "2d77c08d71ba": {
+      "leading": 100,
+      "trailing": 102
+    },
+    "2d9fe78abbdc": {
+      "leading": 60,
+      "trailing": 100
+    },
+    "2dc53dcee2ba": {
+      "leading": 47,
+      "trailing": 100
+    },
+    "2e0a27bb61eb": {
+      "leading": 62,
+      "trailing": 100
+    },
+    "2e1bda243934": {
+      "leading": 93,
+      "trailing": 100
+    },
+    "2e73a07247a7": {
+      "leading": 83,
+      "trailing": 100
+    },
+    "2e8b24df9405": {
+      "leading": 52,
+      "trailing": 100
+    },
+    "2efd5be50cc2": {
+      "leading": 65,
+      "trailing": 100
+    },
+    "2f20b6afe55d": {
+      "leading": 54,
+      "trailing": 100
+    },
+    "2f23c9a3fec2": {
+      "leading": 55,
+      "trailing": 100
+    },
+    "2f7d52b6589d": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "2f89195af141": {
+      "leading": 62,
+      "trailing": 100
+    },
+    "301de18b78b2": {
+      "leading": 54,
+      "trailing": 100
+    },
+    "304c6455f1ce": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "30509bbb6a8a": {
+      "leading": 76,
+      "trailing": 100
+    },
+    "30c98e0832c2": {
+      "leading": 92,
+      "trailing": 100
+    },
+    "310c36f34b14": {
+      "leading": 57,
+      "trailing": 100
+    },
+    "3177fe9f69df": {
+      "leading": 56,
+      "trailing": 100
+    },
+    "3237a658a8b8": {
+      "leading": 62,
+      "trailing": 100
+    },
+    "32821925b065": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "32c60f44b6d8": {
+      "leading": 98,
+      "trailing": 100
+    },
+    "32f112a64f52": {
+      "leading": 50,
+      "trailing": 100
+    },
+    "32f84179ef59": {
+      "leading": 64,
+      "trailing": 105
+    },
+    "33278f09245f": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "338dbce6efe2": {
+      "leading": 81,
+      "trailing": 101
+    },
+    "33ef9d9c5b7b": {
+      "leading": 55,
+      "trailing": 100
+    },
+    "342bb996f00c": {
+      "leading": 73,
+      "trailing": 102
+    },
+    "3455ff6189d8": {
+      "leading": 54,
+      "trailing": 100
+    },
+    "3471f39cd8fa": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "348a47683ac9": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "34a8b4d8b530": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "34c2662526c8": {
+      "leading": 69,
+      "trailing": 101
+    },
+    "351cd660eace": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "35557b1d8972": {
+      "leading": 54,
+      "trailing": 100
+    },
+    "355971d21d16": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "359bf150878d": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "35b515926cdf": {
+      "leading": 79,
+      "trailing": 100
+    },
+    "363375f0ba42": {
+      "leading": 49,
+      "trailing": 100
+    },
+    "365df9514475": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "3667ebcb6d2b": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "368a431c8f5e": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "368d2192310e": {
+      "leading": 99,
+      "trailing": 100
+    },
+    "36c7c7bb5cc4": {
+      "leading": 64,
+      "trailing": 100
+    },
+    "377595686966": {
+      "leading": 101,
+      "trailing": 100
+    },
+    "37a689dcddd1": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "37cabe672ffb": {
+      "leading": 90,
+      "trailing": 100
+    },
+    "384b4501861f": {
+      "leading": 64,
+      "trailing": 100
+    },
+    "3867fb0ca9bf": {
+      "leading": 58,
+      "trailing": 101
+    },
+    "38bfc1fedd1b": {
+      "leading": 65,
+      "trailing": 102
+    },
+    "38e4f6cfa440": {
+      "leading": 48,
+      "trailing": 100
+    },
+    "392d94ff39cc": {
+      "leading": 91,
+      "trailing": 101
+    },
+    "396edaab6886": {
+      "leading": 87,
+      "trailing": 100
+    },
+    "39a52fcff182": {
+      "leading": 57,
+      "trailing": 100
+    },
+    "39b01ba099c9": {
+      "leading": 96,
+      "trailing": 100
+    },
+    "39b5554bdf84": {
+      "leading": 55,
+      "trailing": 100
+    },
+    "39c858e754b9": {
+      "leading": 100,
+      "trailing": 101
+    },
+    "3a10ace0498d": {
+      "leading": 65,
+      "trailing": 100
+    },
+    "3a2d51acdf13": {
+      "leading": 55,
+      "trailing": 100
+    },
+    "3a822dea1c18": {
+      "leading": 70,
+      "trailing": 100
+    },
+    "3acc498bb867": {
+      "leading": 56,
+      "trailing": 100
+    },
+    "3b5df9b21fe7": {
+      "leading": 81,
+      "trailing": 100
+    },
+    "3b82a08a9b0c": {
+      "leading": 64,
+      "trailing": 100
+    },
+    "3b8e4562f051": {
+      "leading": 51,
+      "trailing": 100
+    },
+    "3c2fb893a169": {
+      "leading": 65,
+      "trailing": 100
+    },
+    "3c6561193a4f": {
+      "leading": 68,
+      "trailing": 100
+    },
+    "3c7ab1efc6f4": {
+      "leading": 59,
+      "trailing": 100
+    },
+    "3ca16790d784": {
+      "leading": 64,
+      "trailing": 100
+    },
+    "3cffa96230e6": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "3d1d35e3cdd6": {
+      "leading": 100,
+      "trailing": 126
+    },
+    "3d2580a92e89": {
+      "leading": 77,
+      "trailing": 100
+    },
+    "3dd47f8edcc8": {
+      "leading": 91,
+      "trailing": 100
+    },
+    "3e4997dca485": {
+      "leading": 66,
+      "trailing": 100
+    },
+    "3e5f3b461d53": {
+      "leading": 64,
+      "trailing": 100
+    },
+    "3eb6063656ef": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "3eec3e320a06": {
+      "leading": 83,
+      "trailing": 101
+    },
+    "3efb9841f6b2": {
+      "leading": 66,
+      "trailing": 100
+    },
+    "3efe61b28171": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "3f3b33db56d7": {
+      "leading": 53,
+      "trailing": 100
+    },
+    "3f41e1bcfbf4": {
+      "leading": 72,
+      "trailing": 100
+    },
+    "3fa8dc832fbf": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "400c032036c7": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "4063e95b7883": {
+      "leading": 66,
+      "trailing": 101
+    },
+    "4073b10ebb3c": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "407fda70d910": {
+      "leading": 65,
+      "trailing": 100
+    },
+    "40ad871570b1": {
+      "leading": 53,
+      "trailing": 100
+    },
+    "40cf7ecdbd5a": {
+      "leading": 79,
+      "trailing": 101
+    },
+    "40d065dcb09a": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "41e364973caa": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "41ecb594f909": {
+      "leading": 100,
+      "trailing": 101
+    },
+    "4289bf665042": {
+      "leading": 67,
+      "trailing": 100
+    },
+    "42b108a4c7d1": {
+      "leading": 67,
+      "trailing": 100
+    },
+    "42ba0ae8ac72": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "431184944853": {
+      "leading": 58,
+      "trailing": 101
+    },
+    "432561d3a2c0": {
+      "leading": 59,
+      "trailing": 100
+    },
+    "43570c43e488": {
+      "leading": 86,
+      "trailing": 100
+    },
+    "44230f1763a5": {
+      "leading": 65,
+      "trailing": 100
+    },
+    "44309f5163ec": {
+      "leading": 65,
+      "trailing": 100
+    },
+    "446d581df65c": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "44cb5b791ab5": {
+      "leading": 80,
+      "trailing": 100
+    },
+    "4537dc065b65": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "4588998a1757": {
+      "leading": 54,
+      "trailing": 100
+    },
+    "45c1eaf6452e": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "45c60ba1a220": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "45d4d9755456": {
+      "leading": 55,
+      "trailing": 101
+    },
+    "464575b25ee8": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "479802a08dc5": {
+      "leading": 55,
+      "trailing": 100
+    },
+    "47d321746583": {
+      "leading": 68,
+      "trailing": 100
+    },
+    "48302c31b455": {
+      "leading": 70,
+      "trailing": 100
+    },
+    "484f3698463e": {
+      "leading": 55,
+      "trailing": 100
+    },
+    "485ae7310c1d": {
+      "leading": 79,
+      "trailing": 100
+    },
+    "487f0800ee9b": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "487f8278f25f": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "48a9b820bc91": {
+      "leading": 91,
+      "trailing": 100
+    },
+    "48c6089f84b3": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "48d28747928a": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "48d64e578b38": {
+      "leading": 94,
+      "trailing": 100
+    },
+    "4a1750f2ddc4": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "4a453fcaadaa": {
+      "leading": 82,
+      "trailing": 100
+    },
+    "4abc7d337312": {
+      "leading": 59,
+      "trailing": 100
+    },
+    "4ae9b25578d6": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "4b5b7e261d9c": {
+      "leading": 49,
+      "trailing": 100
+    },
+    "4b85dff4af04": {
+      "leading": 56,
+      "trailing": 100
+    },
+    "4bb89c6adeb8": {
+      "leading": 67,
+      "trailing": 100
+    },
+    "4be247c36c44": {
+      "leading": 58,
+      "trailing": 100
+    },
+    "4be2955f373d": {
+      "leading": 78,
+      "trailing": 100
+    },
+    "4c3cb84d7470": {
+      "leading": 65,
+      "trailing": 100
+    },
+    "4c457e5a04d2": {
+      "leading": 53,
+      "trailing": 100
+    },
+    "4c7625c3c1e7": {
+      "leading": 63,
+      "trailing": 100
+    },
+    "4c8ea33fa1ec": {
+      "leading": 97,
+      "trailing": 100
+    },
+    "4caf93ac38f7": {
+      "leading": 99,
+      "trailing": 100
+    },
+    "4cda2a0349f8": {
+      "leading": 63,
+      "trailing": 100
+    },
+    "4ecc5c242b0a": {
+      "leading": 86,
+      "trailing": 100
+    },
+    "4ecfeb46fed4": {
+      "leading": 74,
+      "trailing": 100
+    },
+    "4edf7d9adecf": {
+      "leading": 65,
+      "trailing": 100
+    },
+    "4f11c1a0ba90": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "4f646fe1f8db": {
+      "leading": 101,
+      "trailing": 100
+    },
+    "4f8e0b885245": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "500d6046afc5": {
+      "leading": 59,
+      "trailing": 100
+    },
+    "50752a5af206": {
+      "leading": 54,
+      "trailing": 100
+    },
+    "507f01323609": {
+      "leading": 75,
+      "trailing": 100
+    },
+    "50931276f853": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "5121f6b3fa57": {
+      "leading": 79,
+      "trailing": 100
+    },
+    "512c49b0b783": {
+      "leading": 98,
+      "trailing": 100
+    },
+    "5137474412ee": {
+      "leading": 62,
+      "trailing": 100
+    },
+    "515aacb5c3e4": {
+      "leading": 67,
+      "trailing": 100
+    },
+    "518e265b9110": {
+      "leading": 68,
+      "trailing": 100
+    },
+    "51afc820e0df": {
+      "leading": 86,
+      "trailing": 100
+    },
+    "523959bfae5f": {
+      "leading": 53,
+      "trailing": 100
+    },
+    "524e8bcb0da4": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "525ab768936a": {
+      "leading": 58,
+      "trailing": 100
+    },
+    "527dca1bbd4c": {
+      "leading": 55,
+      "trailing": 100
+    },
+    "52ac90b5e046": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "530cfc17c293": {
+      "leading": 100,
+      "trailing": 101
+    },
+    "533bd2993650": {
+      "leading": 77,
+      "trailing": 100
+    },
+    "5387cc3d0ceb": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "53c4bef9cf10": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "5459ebdb690a": {
+      "leading": 72,
+      "trailing": 100
+    },
+    "54ab069f39be": {
+      "leading": 79,
+      "trailing": 100
+    },
+    "54d18ef6f616": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "54fa1fe91d01": {
+      "leading": 57,
+      "trailing": 100
+    },
+    "5551161bca86": {
+      "leading": 49,
+      "trailing": 100
+    },
+    "557d6a934f56": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "55d1b3cf6974": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "55ebf519a524": {
+      "leading": 51,
+      "trailing": 100
+    },
+    "55eebf2d0e2f": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "560c1835807c": {
+      "leading": 58,
+      "trailing": 100
+    },
+    "5629ff39b95e": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "5651beaf9a3c": {
+      "leading": 47,
+      "trailing": 100
+    },
+    "56a31c2d2dca": {
+      "leading": 77,
+      "trailing": 100
+    },
+    "5731ff38ac48": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "573bb7caeb89": {
+      "leading": 67,
+      "trailing": 100
+    },
+    "574974b7d735": {
+      "leading": 101,
+      "trailing": 103
+    },
+    "57828060471c": {
+      "leading": 64,
+      "trailing": 100
+    },
+    "57c30985d3c7": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "57c36cd74d75": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "582b91602a03": {
+      "leading": 61,
+      "trailing": 100
+    },
+    "5834478080e9": {
+      "leading": 56,
+      "trailing": 100
+    },
+    "585eacfdb9ba": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "5896995ab7be": {
+      "leading": 98,
+      "trailing": 100
+    },
+    "58a9a64cc5b9": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "58d6ab8fa13c": {
+      "leading": 51,
+      "trailing": 100
+    },
+    "590451b9688c": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "593876ef8707": {
+      "leading": 51,
+      "trailing": 100
+    },
+    "593a601b5975": {
+      "leading": 84,
+      "trailing": 100
+    },
+    "5982014632bb": {
+      "leading": 61,
+      "trailing": 100
+    },
+    "59c326f22531": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "59c7654dd6c5": {
+      "leading": 77,
+      "trailing": 100
+    },
+    "59e4852bac36": {
+      "leading": 82,
+      "trailing": 100
+    },
+    "5a1f580b5fc7": {
+      "leading": 64,
+      "trailing": 100
+    },
+    "5a281d307a94": {
+      "leading": 56,
+      "trailing": 100
+    },
+    "5a2919770717": {
+      "leading": 65,
+      "trailing": 100
+    },
+    "5b14e273ff85": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "5b808404cf67": {
+      "leading": 53,
+      "trailing": 100
+    },
+    "5c175c3f3076": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "5c5cba5ac7dd": {
+      "leading": 75,
+      "trailing": 100
+    },
+    "5d7b3cd2c9e1": {
+      "leading": 101,
+      "trailing": 100
+    },
+    "5d8566765d03": {
+      "leading": 100,
+      "trailing": 106
+    },
+    "5da20386b41b": {
+      "leading": 100,
+      "trailing": 104
+    },
+    "5e002f1d806d": {
+      "leading": 58,
+      "trailing": 100
+    },
+    "5e3006be75c3": {
+      "leading": 64,
+      "trailing": 100
+    },
+    "5e39999c7755": {
+      "leading": 60,
+      "trailing": 100
+    },
+    "5e503d7bbf0b": {
+      "leading": 67,
+      "trailing": 100
+    },
+    "5ed0a5f5dfe1": {
+      "leading": 66,
+      "trailing": 100
+    },
+    "5f072017b59d": {
+      "leading": 72,
+      "trailing": 100
+    },
+    "5f22febe2cb3": {
+      "leading": 60,
+      "trailing": 100
+    },
+    "5f4ccd24bd4b": {
+      "leading": 102,
+      "trailing": 105
+    },
+    "5f68f4ef37fd": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "5f6efd54ee4a": {
+      "leading": 61,
+      "trailing": 100
+    },
+    "5f7adbc6b069": {
+      "leading": 65,
+      "trailing": 100
+    },
+    "5f8cadb172b0": {
+      "leading": 64,
+      "trailing": 100
+    },
+    "6018a382eaa4": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "601ca14f9b5b": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "602e2cea7633": {
+      "leading": 63,
+      "trailing": 100
+    },
+    "6072b249ac25": {
+      "leading": 102,
+      "trailing": 100
+    },
+    "60891b11c0c0": {
+      "leading": 56,
+      "trailing": 100
+    },
+    "60cf80ad6c8b": {
+      "leading": 64,
+      "trailing": 100
+    },
+    "60f2b8376417": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "60f93843fffb": {
+      "leading": 66,
+      "trailing": 101
+    },
+    "60fe097c8227": {
+      "leading": 64,
+      "trailing": 100
+    },
+    "611ca6a578a8": {
+      "leading": 67,
+      "trailing": 100
+    },
+    "61420f77f4c8": {
+      "leading": 101,
+      "trailing": 100
+    },
+    "6171b0b3b1e4": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "62193b6d323a": {
+      "leading": 66,
+      "trailing": 100
+    },
+    "6267a4627094": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "62a18f83df2d": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "63271ccbaa0e": {
+      "leading": 65,
+      "trailing": 101
+    },
+    "63344946411c": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "63515ec045a1": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "6363b1fafd23": {
+      "leading": 74,
+      "trailing": 100
+    },
+    "637128d76dac": {
+      "leading": 74,
+      "trailing": 100
+    },
+    "63a5fc9f3116": {
+      "leading": 100,
+      "trailing": 101
+    },
+    "63bad1b3f6c0": {
+      "leading": 65,
+      "trailing": 100
+    },
+    "63bb1de52f11": {
+      "leading": 52,
+      "trailing": 100
+    },
+    "64d796a633d2": {
+      "leading": 104,
+      "trailing": 100
+    },
+    "64da28829712": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "6592d66a82ef": {
+      "leading": 72,
+      "trailing": 100
+    },
+    "6674ab37d24d": {
+      "leading": 86,
+      "trailing": 100
+    },
+    "66a540508bb5": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "6738a03a2563": {
+      "leading": 67,
+      "trailing": 100
+    },
+    "6798d1c76c1a": {
+      "leading": 60,
+      "trailing": 100
+    },
+    "67a65e4fd4b7": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "67be1bda0829": {
+      "leading": 84,
+      "trailing": 100
+    },
+    "68b6322ea63b": {
+      "leading": 77,
+      "trailing": 100
+    },
+    "68e0cdbf18e8": {
+      "leading": 54,
+      "trailing": 100
+    },
+    "6975a7f74b9a": {
+      "leading": 79,
+      "trailing": 112
+    },
+    "699d816d7ac3": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "6a06a1a48933": {
+      "leading": 87,
+      "trailing": 100
+    },
+    "6a30a16640cc": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "6a7dd0a99816": {
+      "leading": 97,
+      "trailing": 100
+    },
+    "6aa1750c0ed3": {
+      "leading": 72,
+      "trailing": 100
+    },
+    "6ad6616cb77d": {
+      "leading": 100,
+      "trailing": 104
+    },
+    "6b23835df7a6": {
+      "leading": 56,
+      "trailing": 101
+    },
+    "6bb876a175b9": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "6c0243437ccf": {
+      "leading": 70,
+      "trailing": 100
+    },
+    "6c09c7316b7e": {
+      "leading": 48,
+      "trailing": 100
+    },
+    "6c0cb8d790c9": {
+      "leading": 55,
+      "trailing": 100
+    },
+    "6c0f8e891254": {
+      "leading": 89,
+      "trailing": 100
+    },
+    "6c12fce30d2a": {
+      "leading": 100,
+      "trailing": 101
+    },
+    "6c272c511084": {
+      "leading": 56,
+      "trailing": 100
+    },
+    "6c89493c2610": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "6ca7424d8304": {
+      "leading": 60,
+      "trailing": 100
+    },
+    "6d0c16c36034": {
+      "leading": 73,
+      "trailing": 100
+    },
+    "6d7dcc39cacf": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "6da5cb5761f3": {
+      "leading": 80,
+      "trailing": 100
+    },
+    "6dedf23e0c77": {
+      "leading": 55,
+      "trailing": 100
+    },
+    "6df4291ccc05": {
+      "leading": 46,
+      "trailing": 100
+    },
+    "6eb5fa435df1": {
+      "leading": 53,
+      "trailing": 100
+    },
+    "6ee06bda975e": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "6f0f457816c8": {
+      "leading": 55,
+      "trailing": 100
+    },
+    "6f1bae518053": {
+      "leading": 67,
+      "trailing": 100
+    },
+    "6fe649b50426": {
+      "leading": 62,
+      "trailing": 100
+    },
+    "6ffa7ba54df2": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "7052872c657f": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "70a3078b9550": {
+      "leading": 72,
+      "trailing": 100
+    },
+    "70ce841e7dfe": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "71321df1272e": {
+      "leading": 64,
+      "trailing": 100
+    },
+    "713d3a0c01a3": {
+      "leading": 100,
+      "trailing": 101
+    },
+    "71625eb1cb7a": {
+      "leading": 60,
+      "trailing": 100
+    },
+    "716bccb14b7d": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "717c90e2d27c": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "717f2c1e245f": {
+      "leading": 79,
+      "trailing": 100
+    },
+    "725d3a7c051e": {
+      "leading": 47,
+      "trailing": 100
+    },
+    "726e7cebeacb": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "7392b6becdc3": {
+      "leading": 63,
+      "trailing": 100
+    },
+    "73cfab6da844": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "741016a520e6": {
+      "leading": 64,
+      "trailing": 100
+    },
+    "74116b68b45b": {
+      "leading": 93,
+      "trailing": 100
+    },
+    "7424494128f6": {
+      "leading": 51,
+      "trailing": 101
+    },
+    "7477002d0ea7": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "749423c7d0ed": {
+      "leading": 65,
+      "trailing": 100
+    },
+    "74e7921e710c": {
+      "leading": 100,
+      "trailing": 0
+    },
+    "74e868862a29": {
+      "leading": 62,
+      "trailing": 100
+    },
+    "752a4f5cb961": {
+      "leading": 86,
+      "trailing": 101
+    },
+    "7546a68ea5e9": {
+      "leading": 56,
+      "trailing": 100
+    },
+    "754b3c435972": {
+      "leading": 65,
+      "trailing": 100
+    },
+    "75c9c5220d35": {
+      "leading": 100,
+      "trailing": 102
+    },
+    "767e0dce5dc8": {
+      "leading": 62,
+      "trailing": 100
+    },
+    "76aa2d333e35": {
+      "leading": 53,
+      "trailing": 100
+    },
+    "76ccb1468ef6": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "76cd29b434a9": {
+      "leading": 75,
+      "trailing": 100
+    },
+    "76e3a151ce5f": {
+      "leading": 60,
+      "trailing": 100
+    },
+    "76faef65b8cb": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "77179b6693e9": {
+      "leading": 59,
+      "trailing": 100
+    },
+    "773f1e9609d8": {
+      "leading": 55,
+      "trailing": 100
+    },
+    "779af920b294": {
+      "leading": 68,
+      "trailing": 100
+    },
+    "77aca86eb882": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "77b2590be4d1": {
+      "leading": 70,
+      "trailing": 100
+    },
+    "7899f3cd2ee3": {
+      "leading": 65,
+      "trailing": 104
+    },
+    "79deb8f839e4": {
+      "leading": 65,
+      "trailing": 100
+    },
+    "7a1c531cdd95": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "7a5c149718d5": {
+      "leading": 46,
+      "trailing": 100
+    },
+    "7a859cc3bf46": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "7a89e807e6e8": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "7ab321857f66": {
+      "leading": 64,
+      "trailing": 100
+    },
+    "7ae5f8e79725": {
+      "leading": 72,
+      "trailing": 100
+    },
+    "7b6cb5ae0a56": {
+      "leading": 55,
+      "trailing": 100
+    },
+    "7b80d0c86e9c": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "7b9d8193fa88": {
+      "leading": 82,
+      "trailing": 100
+    },
+    "7c0046c5ebb4": {
+      "leading": 76,
+      "trailing": 100
+    },
+    "7c03546e586e": {
+      "leading": 68,
+      "trailing": 100
+    },
+    "7c318e544d43": {
+      "leading": 60,
+      "trailing": 100
+    },
+    "7c92767faf64": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "7cc2581d60ef": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "7cc6528163a3": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "7ce4c4f6d753": {
+      "leading": 71,
+      "trailing": 100
+    },
+    "7d08b28116f8": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "7d94777d2c0c": {
+      "leading": 100,
+      "trailing": 101
+    },
+    "7da334ee4589": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "7e08c888d561": {
+      "leading": 67,
+      "trailing": 100
+    },
+    "7e1fdb5db87e": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "7e696d204db4": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "7e6f62f0956d": {
+      "leading": 58,
+      "trailing": 100
+    },
+    "7e916480ce54": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "7ee3a3158750": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "7efbfc0d97ef": {
+      "leading": 55,
+      "trailing": 100
+    },
+    "7fada135eb5e": {
+      "leading": 58,
+      "trailing": 100
+    },
+    "7fd845b2abb0": {
+      "leading": 66,
+      "trailing": 100
+    },
+    "8031b03bfe6e": {
+      "leading": 64,
+      "trailing": 100
+    },
+    "805b601af0ed": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "8062478a2a4e": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "807c916c34f5": {
+      "leading": 61,
+      "trailing": 100
+    },
+    "80c4c99562cb": {
+      "leading": 74,
+      "trailing": 100
+    },
+    "8133968cf160": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "8159fe2be517": {
+      "leading": 65,
+      "trailing": 100
+    },
+    "819943bb51c4": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "81ea88dace3a": {
+      "leading": 71,
+      "trailing": 100
+    },
+    "8269921c65fc": {
+      "leading": 88,
+      "trailing": 100
+    },
+    "8292c057e34a": {
+      "leading": 58,
+      "trailing": 100
+    },
+    "82c5b8c2aa51": {
+      "leading": 59,
+      "trailing": 100
+    },
+    "82dbd3444c12": {
+      "leading": 65,
+      "trailing": 100
+    },
+    "830f487ffac4": {
+      "leading": 66,
+      "trailing": 100
+    },
+    "843e9088f942": {
+      "leading": 84,
+      "trailing": 100
+    },
+    "8452a6999979": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "84b73cc50b4d": {
+      "leading": 46,
+      "trailing": 100
+    },
+    "84bc62052aa8": {
+      "leading": 72,
+      "trailing": 100
+    },
+    "85a69b1976da": {
+      "leading": 69,
+      "trailing": 100
+    },
+    "85e45f8c0e90": {
+      "leading": 64,
+      "trailing": 100
+    },
+    "860edf269db0": {
+      "leading": 49,
+      "trailing": 100
+    },
+    "862f91c1b253": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "86477d987cae": {
+      "leading": 66,
+      "trailing": 100
+    },
+    "86aabadf98c3": {
+      "leading": 70,
+      "trailing": 100
+    },
+    "8741d919fa86": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "87524ca8106e": {
+      "leading": 100,
+      "trailing": 0
+    },
+    "875ae4a919ea": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "875cb3767a2c": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "8760189eb8d9": {
+      "leading": 65,
+      "trailing": 100
+    },
+    "87b072bef005": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "87ce5e11854d": {
+      "leading": 100,
+      "trailing": 101
+    },
+    "8838c56d0368": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "88e16aae4c23": {
+      "leading": 59,
+      "trailing": 100
+    },
+    "88e712a66eea": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "890b6c05516f": {
+      "leading": 62,
+      "trailing": 101
+    },
+    "8926e5591649": {
+      "leading": 50,
+      "trailing": 100
+    },
+    "8957ac9b141f": {
+      "leading": 49,
+      "trailing": 100
+    },
+    "8972d39b8e2b": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "89fa4bb4b230": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "8a2245412089": {
+      "leading": 54,
+      "trailing": 100
+    },
+    "8a59ff84b6e8": {
+      "leading": 60,
+      "trailing": 100
+    },
+    "8a610ac86c66": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "8a999fd6396b": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "8ac42cfefc7c": {
+      "leading": 61,
+      "trailing": 100
+    },
+    "8aeaece6398f": {
+      "leading": 63,
+      "trailing": 100
+    },
+    "8af1ea6c9c0a": {
+      "leading": 65,
+      "trailing": 100
+    },
+    "8b3eacc6bb10": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "8b5d03a46cab": {
+      "leading": 62,
+      "trailing": 101
+    },
+    "8c5c0e94470c": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "8c72fc72e337": {
+      "leading": 77,
+      "trailing": 100
+    },
+    "8d06e8c94231": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "8d89e6671a98": {
+      "leading": 95,
+      "trailing": 103
+    },
+    "8d9c64a97a39": {
+      "leading": 80,
+      "trailing": 100
+    },
+    "8dc972371329": {
+      "leading": 60,
+      "trailing": 100
+    },
+    "8e0ead6a94c7": {
+      "leading": 69,
+      "trailing": 100
+    },
+    "8e3aa0669290": {
+      "leading": 63,
+      "trailing": 100
+    },
+    "8e520ae95f8e": {
+      "leading": 50,
+      "trailing": 100
+    },
+    "8e52ad9dcd53": {
+      "leading": 58,
+      "trailing": 100
+    },
+    "8e76715f1002": {
+      "leading": 52,
+      "trailing": 100
+    },
+    "8e8d6d16efdc": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "8f29a9bdef08": {
+      "leading": 78,
+      "trailing": 100
+    },
+    "8fb9ea0614af": {
+      "leading": 51,
+      "trailing": 100
+    },
+    "8fc3f639e387": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "900798a0f3d1": {
+      "leading": 48,
+      "trailing": 100
+    },
+    "902ced511757": {
+      "leading": 61,
+      "trailing": 100
+    },
+    "9038ceef0dd6": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "903a12033549": {
+      "leading": 51,
+      "trailing": 100
+    },
+    "90ab158548df": {
+      "leading": 65,
+      "trailing": 100
+    },
+    "91553392dfc3": {
+      "leading": 80,
+      "trailing": 100
+    },
+    "91f11bedc645": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "91f7c0a2c090": {
+      "leading": 63,
+      "trailing": 100
+    },
+    "9240a3a260d8": {
+      "leading": 51,
+      "trailing": 100
+    },
+    "9278779d3f32": {
+      "leading": 63,
+      "trailing": 100
+    },
+    "927a6a2c6497": {
+      "leading": 94,
+      "trailing": 100
+    },
+    "927e53529e27": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "92a450724b73": {
+      "leading": 68,
+      "trailing": 100
+    },
+    "933328b29170": {
+      "leading": 51,
+      "trailing": 100
+    },
+    "93b4eb62d39d": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "93bd0570bbfa": {
+      "leading": 58,
+      "trailing": 100
+    },
+    "93d9f9d5bd51": {
+      "leading": 71,
+      "trailing": 100
+    },
+    "93f01d0a4b6c": {
+      "leading": 57,
+      "trailing": 100
+    },
+    "9481454233c7": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "94b25b1777f1": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "950f2d3930d6": {
+      "leading": 60,
+      "trailing": 100
+    },
+    "95909e9755c4": {
+      "leading": 65,
+      "trailing": 100
+    },
+    "959d0038807f": {
+      "leading": 63,
+      "trailing": 100
+    },
+    "95bbda8caca0": {
+      "leading": 64,
+      "trailing": 100
+    },
+    "96b1130a80fb": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "96d85456d70a": {
+      "leading": 100,
+      "trailing": 101
+    },
+    "972a9856952e": {
+      "leading": 59,
+      "trailing": 100
+    },
+    "974bed4f64f1": {
+      "leading": 51,
+      "trailing": 100
+    },
+    "97bc5e344f7a": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "97e61f24258d": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "98062e41a53e": {
+      "leading": 71,
+      "trailing": 100
+    },
+    "98470839582d": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "984dc31fa052": {
+      "leading": 82,
+      "trailing": 100
+    },
+    "986403151a84": {
+      "leading": 63,
+      "trailing": 100
+    },
+    "987a9b7f2335": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "9882440abe0f": {
+      "leading": 69,
+      "trailing": 100
+    },
+    "98d7939b64e9": {
+      "leading": 101,
+      "trailing": 100
+    },
+    "98e53c9646e0": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "98f9ba4e5c95": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "990e5ad051a7": {
+      "leading": 69,
+      "trailing": 100
+    },
+    "9915f682995a": {
+      "leading": 65,
+      "trailing": 100
+    },
+    "993b1d573364": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "993d1f4bd9ad": {
+      "leading": 71,
+      "trailing": 101
+    },
+    "99c065b89371": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "9a71fdd279f4": {
+      "leading": 64,
+      "trailing": 100
+    },
+    "9aba218cc689": {
+      "leading": 101,
+      "trailing": 100
+    },
+    "9adb1fa7dd7c": {
+      "leading": 64,
+      "trailing": 100
+    },
+    "9ae5c56127d7": {
+      "leading": 74,
+      "trailing": 100
+    },
+    "9ae699ccae9d": {
+      "leading": 66,
+      "trailing": 100
+    },
+    "9b56d23ce0aa": {
+      "leading": 59,
+      "trailing": 100
+    },
+    "9b6d822ebb07": {
+      "leading": 62,
+      "trailing": 100
+    },
+    "9b7cf4f529e2": {
+      "leading": 87,
+      "trailing": 102
+    },
+    "9b8e5b25aaec": {
+      "leading": 64,
+      "trailing": 100
+    },
+    "9bdc004f9965": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "9ca2200df09d": {
+      "leading": 66,
+      "trailing": 100
+    },
+    "9d0360789337": {
+      "leading": 63,
+      "trailing": 100
+    },
+    "9e0884364848": {
+      "leading": 98,
+      "trailing": 100
+    },
+    "9e0c1db18506": {
+      "leading": 94,
+      "trailing": 100
+    },
+    "9e49c11bdf21": {
+      "leading": 81,
+      "trailing": 100
+    },
+    "9e6b1c99db73": {
+      "leading": 65,
+      "trailing": 100
+    },
+    "9e9fdfe34a35": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "9ebd18eab3c6": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "9f44965a6dc6": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "9fe198fa5905": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "9fe759a467bf": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "a02eaf84697a": {
+      "leading": 65,
+      "trailing": 100
+    },
+    "a04e5d438edb": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "a0a126cdbf21": {
+      "leading": 70,
+      "trailing": 100
+    },
+    "a117c052a47a": {
+      "leading": 67,
+      "trailing": 100
+    },
+    "a12f5449bb76": {
+      "leading": 56,
+      "trailing": 101
+    },
+    "a1668411bd3a": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "a1f2c06c5b5b": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "a1f30512b01e": {
+      "leading": 50,
+      "trailing": 101
+    },
+    "a21feb3c0289": {
+      "leading": 57,
+      "trailing": 100
+    },
+    "a25069c8e82d": {
+      "leading": 63,
+      "trailing": 100
+    },
+    "a274a2ccf181": {
+      "leading": 66,
+      "trailing": 101
+    },
+    "a277b8ffa13c": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "a2ddd538992a": {
+      "leading": 93,
+      "trailing": 106
+    },
+    "a2f0f1408ef2": {
+      "leading": 62,
+      "trailing": 100
+    },
+    "a3030dad1817": {
+      "leading": 52,
+      "trailing": 100
+    },
+    "a337720344aa": {
+      "leading": 66,
+      "trailing": 100
+    },
+    "a3bd9bf28dd9": {
+      "leading": 66,
+      "trailing": 100
+    },
+    "a434cd1252d7": {
+      "leading": 63,
+      "trailing": 100
+    },
+    "a44e7c1fdc70": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "a479d280d156": {
+      "leading": 60,
+      "trailing": 102
+    },
+    "a56fbeb9cbde": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "a6a772414888": {
+      "leading": 65,
+      "trailing": 100
+    },
+    "a6e8560e1a85": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "a74302883c50": {
+      "leading": 66,
+      "trailing": 100
+    },
+    "a82f98a9a1b8": {
+      "leading": 65,
+      "trailing": 100
+    },
+    "a8859a33fcbb": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "a8e0ef306506": {
+      "leading": 63,
+      "trailing": 100
+    },
+    "a92fa7c549a7": {
+      "leading": 99,
+      "trailing": 102
+    },
+    "aa0eb21a2c7f": {
+      "leading": 65,
+      "trailing": 100
+    },
+    "aa7b65b0b387": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "aa98aa47cfc0": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "aafec4be4001": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "ab2342280cc7": {
+      "leading": 66,
+      "trailing": 100
+    },
+    "ab68337a0855": {
+      "leading": 97,
+      "trailing": 101
+    },
+    "ab8af5faeae4": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "aba083fec407": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "aba8aa69754a": {
+      "leading": 68,
+      "trailing": 100
+    },
+    "ac1d86e77d9a": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "ac94f34f0fd0": {
+      "leading": 47,
+      "trailing": 101
+    },
+    "acb1b04aabae": {
+      "leading": 61,
+      "trailing": 100
+    },
+    "acd3daddd4cb": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "acf313d1d201": {
+      "leading": 63,
+      "trailing": 100
+    },
+    "ad00d708057d": {
+      "leading": 100,
+      "trailing": 120
+    },
+    "ad01f7f9a3f4": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "ad070171deba": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "ad1c5865a8fd": {
+      "leading": 57,
+      "trailing": 100
+    },
+    "ad238b66b832": {
+      "leading": 56,
+      "trailing": 100
+    },
+    "ad48d3c90cfc": {
+      "leading": 85,
+      "trailing": 100
+    },
+    "ae6272f5d971": {
+      "leading": 65,
+      "trailing": 100
+    },
+    "ae9ef46739ef": {
+      "leading": 64,
+      "trailing": 100
+    },
+    "aea77e503d9c": {
+      "leading": 48,
+      "trailing": 100
+    },
+    "aebef35e0ac8": {
+      "leading": 97,
+      "trailing": 108
+    },
+    "aed5fdb358c1": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "aef16b6222bc": {
+      "leading": 67,
+      "trailing": 100
+    },
+    "af1b5f748005": {
+      "leading": 65,
+      "trailing": 100
+    },
+    "af5b59c80789": {
+      "leading": 66,
+      "trailing": 100
+    },
+    "af723ffc59a3": {
+      "leading": 73,
+      "trailing": 100
+    },
+    "afafbb491db8": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "b019e3bbf4c6": {
+      "leading": 78,
+      "trailing": 100
+    },
+    "b082afb1975a": {
+      "leading": 54,
+      "trailing": 100
+    },
+    "b08b89222a6d": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "b09b5bc9c975": {
+      "leading": 73,
+      "trailing": 101
+    },
+    "b0ed97bf1c15": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "b10f18b47a10": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "b13b55f941e1": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "b1523077deff": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "b19eb5208d1a": {
+      "leading": 66,
+      "trailing": 100
+    },
+    "b1d3745b9352": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "b1e4229063a5": {
+      "leading": 67,
+      "trailing": 101
+    },
+    "b23278418086": {
+      "leading": 81,
+      "trailing": 100
+    },
+    "b2a608a56f62": {
+      "leading": 64,
+      "trailing": 100
+    },
+    "b2b2afdb4033": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "b4188518bbcf": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "b4e5b97f2289": {
+      "leading": 64,
+      "trailing": 100
+    },
+    "b4fa6204e82e": {
+      "leading": 83,
+      "trailing": 100
+    },
+    "b55cdfe740fe": {
+      "leading": 83,
+      "trailing": 100
+    },
+    "b5ff9e619df7": {
+      "leading": 47,
+      "trailing": 100
+    },
+    "b62fbfde1ee7": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "b69b0d566e3d": {
+      "leading": 61,
+      "trailing": 100
+    },
+    "b6ef1955df55": {
+      "leading": 63,
+      "trailing": 100
+    },
+    "b79b7663fb54": {
+      "leading": 70,
+      "trailing": 100
+    },
+    "b863593b6480": {
+      "leading": 68,
+      "trailing": 100
+    },
+    "b869334312ee": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "b889b86036fd": {
+      "leading": 64,
+      "trailing": 100
+    },
+    "b8a2fc9b2cde": {
+      "leading": 64,
+      "trailing": 100
+    },
+    "b8c1add1a352": {
+      "leading": 73,
+      "trailing": 100
+    },
+    "b9b816d95a95": {
+      "leading": 67,
+      "trailing": 100
+    },
+    "ba4330ccd639": {
+      "leading": 68,
+      "trailing": 100
+    },
+    "ba910a5b9877": {
+      "leading": 100,
+      "trailing": 101
+    },
+    "ba9e629e223b": {
+      "leading": 64,
+      "trailing": 100
+    },
+    "bb24b1b3cccd": {
+      "leading": 61,
+      "trailing": 100
+    },
+    "bb2cc7f03bec": {
+      "leading": 53,
+      "trailing": 100
+    },
+    "bb3b50c9ee3b": {
+      "leading": 58,
+      "trailing": 101
+    },
+    "bb9497129c10": {
+      "leading": 65,
+      "trailing": 100
+    },
+    "bbc53b0cc278": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "bc2591a70fc2": {
+      "leading": 60,
+      "trailing": 100
+    },
+    "bc7a4726d658": {
+      "leading": 56,
+      "trailing": 100
+    },
+    "bccc67a5b23b": {
+      "leading": 85,
+      "trailing": 100
+    },
+    "bce6d7181f43": {
+      "leading": 67,
+      "trailing": 100
+    },
+    "bcfb356c0cb6": {
+      "leading": 46,
+      "trailing": 100
+    },
+    "bcfca6dc7d79": {
+      "leading": 74,
+      "trailing": 100
+    },
+    "bd321fa5df5b": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "bd4d81ebca7b": {
+      "leading": 56,
+      "trailing": 100
+    },
+    "bd699a61636d": {
+      "leading": 57,
+      "trailing": 100
+    },
+    "bd77d6eb2574": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "bdb395251f25": {
+      "leading": 65,
+      "trailing": 100
+    },
+    "bdbba17a45c5": {
+      "leading": 99,
+      "trailing": 100
+    },
+    "bdbf716a99f6": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "bdc9e16f88c9": {
+      "leading": 79,
+      "trailing": 100
+    },
+    "be76704a4b5f": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "bebbba3f15b4": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "bee61f3f092c": {
+      "leading": 78,
+      "trailing": 100
+    },
+    "bf26f0f8192d": {
+      "leading": 100,
+      "trailing": 0
+    },
+    "bf4573fbbaf5": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "bf810c5c33dd": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "bfcfa6b7b763": {
+      "leading": 67,
+      "trailing": 101
+    },
+    "bff8a268856f": {
+      "leading": 57,
+      "trailing": 107
+    },
+    "c01ac50011df": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "c03f1b75fe5c": {
+      "leading": 55,
+      "trailing": 100
+    },
+    "c137011b2304": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "c16ef95ed139": {
+      "leading": 59,
+      "trailing": 100
+    },
+    "c17ff73e9029": {
+      "leading": 61,
+      "trailing": 100
+    },
+    "c19f65d92627": {
+      "leading": 63,
+      "trailing": 100
+    },
+    "c226c79db787": {
+      "leading": 72,
+      "trailing": 100
+    },
+    "c310f7ef290d": {
+      "leading": 66,
+      "trailing": 101
+    },
+    "c3383460ff6d": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "c33fabddc2e2": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "c4dc9c9544dc": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "c4dd1b35a694": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "c4f6771abb98": {
+      "leading": 71,
+      "trailing": 100
+    },
+    "c5b4b07bd439": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "c638243671bf": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "c6460caf0222": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "c657d75de93a": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "c667f592a929": {
+      "leading": 75,
+      "trailing": 100
+    },
+    "c66a39f340f8": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "c6dc6989c968": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "c6dfda7da3a8": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "c7237f5ab973": {
+      "leading": 71,
+      "trailing": 100
+    },
+    "c7429d669cff": {
+      "leading": 53,
+      "trailing": 100
+    },
+    "c7aa311bed0f": {
+      "leading": 106,
+      "trailing": 100
+    },
+    "c7d13cf922b4": {
+      "leading": 73,
+      "trailing": 100
+    },
+    "c81aef959bb6": {
+      "leading": 60,
+      "trailing": 100
+    },
+    "c829db1ee32d": {
+      "leading": 50,
+      "trailing": 100
+    },
+    "c82c19c5be88": {
+      "leading": 105,
+      "trailing": 100
+    },
+    "c8b57fddb70a": {
+      "leading": 53,
+      "trailing": 100
+    },
+    "c8c843b7b14e": {
+      "leading": 80,
+      "trailing": 100
+    },
+    "c8c965bfe250": {
+      "leading": 58,
+      "trailing": 100
+    },
+    "c8e17777fc59": {
+      "leading": 66,
+      "trailing": 100
+    },
+    "c8f8ee55c697": {
+      "leading": 57,
+      "trailing": 100
+    },
+    "c8faeba5fac6": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "c9d1311b30b3": {
+      "leading": 79,
+      "trailing": 100
+    },
+    "ca60e713fc65": {
+      "leading": 64,
+      "trailing": 100
+    },
+    "ca624f708b96": {
+      "leading": 60,
+      "trailing": 100
+    },
+    "ca7845202099": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "ca890bf978c9": {
+      "leading": 100,
+      "trailing": 101
+    },
+    "caa0ab12c286": {
+      "leading": 79,
+      "trailing": 100
+    },
+    "caa2a50bf920": {
+      "leading": 60,
+      "trailing": 100
+    },
+    "cae250062300": {
+      "leading": 66,
+      "trailing": 100
+    },
+    "cb55b8924bbb": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "cb73b692ec34": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "cbb35d556112": {
+      "leading": 59,
+      "trailing": 100
+    },
+    "cbf272f4f511": {
+      "leading": 83,
+      "trailing": 100
+    },
+    "cc77c9435a7c": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "cc830447950b": {
+      "leading": 68,
+      "trailing": 100
+    },
+    "cc895aa32f03": {
+      "leading": 65,
+      "trailing": 100
+    },
+    "cce7e85a80d7": {
+      "leading": 65,
+      "trailing": 100
+    },
+    "cd4ab6037389": {
+      "leading": 73,
+      "trailing": 100
+    },
+    "cd75fd2c0ac1": {
+      "leading": 106,
+      "trailing": 100
+    },
+    "cdb98dfb74dd": {
+      "leading": 83,
+      "trailing": 100
+    },
+    "cdf3bd41150c": {
+      "leading": 75,
+      "trailing": 100
+    },
+    "cdf681be9dfb": {
+      "leading": 66,
+      "trailing": 100
+    },
+    "ce26f9f15de2": {
+      "leading": 63,
+      "trailing": 100
+    },
+    "ce42798e583b": {
+      "leading": 66,
+      "trailing": 100
+    },
+    "ce4408c45855": {
+      "leading": 65,
+      "trailing": 100
+    },
+    "ce5678c663e1": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "ce8016679b49": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "cef87dc7b6bf": {
+      "leading": 47,
+      "trailing": 100
+    },
+    "cf74159e4371": {
+      "leading": 68,
+      "trailing": 100
+    },
+    "cfb875908fbc": {
+      "leading": 64,
+      "trailing": 100
+    },
+    "d0106c703ea4": {
+      "leading": 57,
+      "trailing": 100
+    },
+    "d050a633ff53": {
+      "leading": 62,
+      "trailing": 100
+    },
+    "d0729e83aeab": {
+      "leading": 64,
+      "trailing": 100
+    },
+    "d1258478a234": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "d13514ea7f04": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "d1730177abc5": {
+      "leading": 60,
+      "trailing": 100
+    },
+    "d1a3dd4682a1": {
+      "leading": 57,
+      "trailing": 100
+    },
+    "d1a72fbfd6b7": {
+      "leading": 61,
+      "trailing": 100
+    },
+    "d1be5e72a2e7": {
+      "leading": 100,
+      "trailing": 101
+    },
+    "d23765a63820": {
+      "leading": 103,
+      "trailing": 100
+    },
+    "d243b3b0dfda": {
+      "leading": 70,
+      "trailing": 100
+    },
+    "d2a2d51afbea": {
+      "leading": 66,
+      "trailing": 100
+    },
+    "d3176d4f9a67": {
+      "leading": 100,
+      "trailing": 106
+    },
+    "d32e555ba1d1": {
+      "leading": 67,
+      "trailing": 100
+    },
+    "d3429d40e406": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "d34536d77ac1": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "d39d31e3bcf0": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "d440bbd95f51": {
+      "leading": 62,
+      "trailing": 100
+    },
+    "d46eaace0057": {
+      "leading": 50,
+      "trailing": 100
+    },
+    "d473fc958045": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "d481fe7aba17": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "d4bd18c11612": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "d4c5cac4d505": {
+      "leading": 51,
+      "trailing": 101
+    },
+    "d4c7bd72ca64": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "d5619d1cfdd9": {
+      "leading": 101,
+      "trailing": 100
+    },
+    "d58e961c2bba": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "d5a2288487dc": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "d5cdd5cef0a5": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "d5fa028f3442": {
+      "leading": 63,
+      "trailing": 100
+    },
+    "d66ff267f743": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "d67d731ad3d8": {
+      "leading": 72,
+      "trailing": 100
+    },
+    "d7010de7e77a": {
+      "leading": 56,
+      "trailing": 100
+    },
+    "d72838bb98cd": {
+      "leading": 78,
+      "trailing": 100
+    },
+    "d7387c07e44f": {
+      "leading": 61,
+      "trailing": 100
+    },
+    "d7462baa1137": {
+      "leading": 99,
+      "trailing": 100
+    },
+    "d76c01e755c4": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "d7b2dc33b1b4": {
+      "leading": 62,
+      "trailing": 100
+    },
+    "d7f125732a77": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "d838ca20ea07": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "d8600185b69d": {
+      "leading": 101,
+      "trailing": 101
+    },
+    "d89bb34d637d": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "d89f116ee7dd": {
+      "leading": 47,
+      "trailing": 100
+    },
+    "d99df418c1c0": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "d9aac6c4b228": {
+      "leading": 55,
+      "trailing": 100
+    },
+    "da189c684778": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "da3750796a43": {
+      "leading": 63,
+      "trailing": 100
+    },
+    "da8daeec9e35": {
+      "leading": 89,
+      "trailing": 100
+    },
+    "dafdd7ca711e": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "db6e452f23b9": {
+      "leading": 78,
+      "trailing": 100
+    },
+    "dbb3755d9cbe": {
+      "leading": 54,
+      "trailing": 100
+    },
+    "dc32c79f256c": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "dc35c193b596": {
+      "leading": 71,
+      "trailing": 100
+    },
+    "dc493ccea9e5": {
+      "leading": 60,
+      "trailing": 100
+    },
+    "dc4aa305df1d": {
+      "leading": 64,
+      "trailing": 100
+    },
+    "dc7f9c4876d7": {
+      "leading": 81,
+      "trailing": 100
+    },
+    "dca9c0f241ba": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "dd12ce41c147": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "dd5e71d3e99b": {
+      "leading": 66,
+      "trailing": 100
+    },
+    "dd8e26c9bd71": {
+      "leading": 65,
+      "trailing": 100
+    },
+    "ddafd66b4f38": {
+      "leading": 46,
+      "trailing": 100
+    },
+    "de32c7fc7512": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "de8cb445f0d4": {
+      "leading": 60,
+      "trailing": 100
+    },
+    "de91497aacde": {
+      "leading": 64,
+      "trailing": 103
+    },
+    "dea1e05605e1": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "df63c633aa20": {
+      "leading": 60,
+      "trailing": 100
+    },
+    "e0cabe2627c6": {
+      "leading": 48,
+      "trailing": 105
+    },
+    "e129887a852b": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "e141ce192e30": {
+      "leading": 65,
+      "trailing": 112
+    },
+    "e14ac024905c": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "e150d3dd1edf": {
+      "leading": 66,
+      "trailing": 100
+    },
+    "e17d06c4880e": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "e1f7b86748f7": {
+      "leading": 88,
+      "trailing": 100
+    },
+    "e23fd4c9f709": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "e265f0ae5833": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "e3ac380cdcfc": {
+      "leading": 86,
+      "trailing": 100
+    },
+    "e3dc803b022d": {
+      "leading": 102,
+      "trailing": 100
+    },
+    "e4225d44f8f3": {
+      "leading": 74,
+      "trailing": 100
+    },
+    "e42c3e766cff": {
+      "leading": 65,
+      "trailing": 100
+    },
+    "e44665a10dd2": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "e451b55cdb65": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "e4a9ad413d4b": {
+      "leading": 52,
+      "trailing": 100
+    },
+    "e4ceb47f1835": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "e4cfa5367104": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "e4eee2452bdf": {
+      "leading": 73,
+      "trailing": 100
+    },
+    "e54dbe6e505a": {
+      "leading": 95,
+      "trailing": 100
+    },
+    "e5cf49238074": {
+      "leading": 65,
+      "trailing": 100
+    },
+    "e60c5c71a3ca": {
+      "leading": 65,
+      "trailing": 100
+    },
+    "e646214289be": {
+      "leading": 52,
+      "trailing": 100
+    },
+    "e68d792edb22": {
+      "leading": 89,
+      "trailing": 100
+    },
+    "e698a15cc9b7": {
+      "leading": 61,
+      "trailing": 100
+    },
+    "e6eea13c214c": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "e719f939b822": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "e72b0b416273": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "e7a3152854fa": {
+      "leading": 102,
+      "trailing": 103
+    },
+    "e888f1550d7c": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "e8e149dfad20": {
+      "leading": 100,
+      "trailing": 101
+    },
+    "e92937aa8eb3": {
+      "leading": 60,
+      "trailing": 100
+    },
+    "e951a555cd52": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "e9c22978f0aa": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "ebdcb09458db": {
+      "leading": 52,
+      "trailing": 100
+    },
+    "ec303613cb22": {
+      "leading": 80,
+      "trailing": 100
+    },
+    "ec32dadd8ea3": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "ecb05c54c3f8": {
+      "leading": 72,
+      "trailing": 100
+    },
+    "eccba92c8610": {
+      "leading": 61,
+      "trailing": 100
+    },
+    "ecf59115e362": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "ed4169a9d50a": {
+      "leading": 63,
+      "trailing": 100
+    },
+    "ed89b1527642": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "edabe8012b1b": {
+      "leading": 53,
+      "trailing": 100
+    },
+    "ee1933d38828": {
+      "leading": 65,
+      "trailing": 100
+    },
+    "ee3a8763b9fb": {
+      "leading": 57,
+      "trailing": 100
+    },
+    "eeba259db00e": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "eebd99b4c3cb": {
+      "leading": 61,
+      "trailing": 100
+    },
+    "eec963477916": {
+      "leading": 56,
+      "trailing": 100
+    },
+    "ef2303746f8d": {
+      "leading": 100,
+      "trailing": 104
+    },
+    "ef4b0d96ba44": {
+      "leading": 49,
+      "trailing": 100
+    },
+    "ef5739e8cccc": {
+      "leading": 83,
+      "trailing": 100
+    },
+    "ef78fab26a4e": {
+      "leading": 55,
+      "trailing": 100
+    },
+    "ef912a4f0739": {
+      "leading": 79,
+      "trailing": 100
+    },
+    "efbe4004d222": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "efda13eddba5": {
+      "leading": 46,
+      "trailing": 100
+    },
+    "efdad273ef61": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "effcebdcb72e": {
+      "leading": 102,
+      "trailing": 101
+    },
+    "f0186ca3dae0": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "f01c640f316e": {
+      "leading": 81,
+      "trailing": 101
+    },
+    "f0321ff94dd7": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "f07f831de483": {
+      "leading": 56,
+      "trailing": 100
+    },
+    "f0a9517f1857": {
+      "leading": 74,
+      "trailing": 100
+    },
+    "f10ff81e1c3f": {
+      "leading": 52,
+      "trailing": 100
+    },
+    "f11b2d4b0b92": {
+      "leading": 67,
+      "trailing": 100
+    },
+    "f1b329db574f": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "f1bb0eae895a": {
+      "leading": 67,
+      "trailing": 100
+    },
+    "f218069dab39": {
+      "leading": 99,
+      "trailing": 100
+    },
+    "f2190f45bacc": {
+      "leading": 88,
+      "trailing": 100
+    },
+    "f26d4afdc9f4": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "f29814e7bd81": {
+      "leading": 65,
+      "trailing": 100
+    },
+    "f31ebb782118": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "f3210ff9d774": {
+      "leading": 100,
+      "trailing": 0
+    },
+    "f36460b9cf68": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "f37451a7692b": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "f3ba99bc7148": {
+      "leading": 68,
+      "trailing": 100
+    },
+    "f428a4c2c61b": {
+      "leading": 57,
+      "trailing": 100
+    },
+    "f4354f185976": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "f450f97312be": {
+      "leading": 62,
+      "trailing": 100
+    },
+    "f47a3ad6ee90": {
+      "leading": 100,
+      "trailing": 101
+    },
+    "f4cf0a0f33f3": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "f56480535558": {
+      "leading": 65,
+      "trailing": 100
+    },
+    "f58a92287dc1": {
+      "leading": 47,
+      "trailing": 100
+    },
+    "f5ee79ba2f9d": {
+      "leading": 53,
+      "trailing": 100
+    },
+    "f67051872876": {
+      "leading": 67,
+      "trailing": 100
+    },
+    "f6975d845986": {
+      "leading": 100,
+      "trailing": 101
+    },
+    "f6b2f6a3ec41": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "f6ead6c954e4": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "f745952f6590": {
+      "leading": 77,
+      "trailing": 100
+    },
+    "f7463aba4052": {
+      "leading": 55,
+      "trailing": 100
+    },
+    "f78f9f2adea7": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "f7bd5a65ed21": {
+      "leading": 46,
+      "trailing": 100
+    },
+    "f7df3ba3a935": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "f813971c532d": {
+      "leading": 52,
+      "trailing": 100
+    },
+    "f8689db98f93": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "f87003e36db3": {
+      "leading": 60,
+      "trailing": 100
+    },
+    "f8887236144f": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "f88874158150": {
+      "leading": 64,
+      "trailing": 100
+    },
+    "f8d5915d06f0": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "f976721b79c6": {
+      "leading": 98,
+      "trailing": 100
+    },
+    "f9b406c87026": {
+      "leading": 63,
+      "trailing": 100
+    },
+    "f9d4154128ac": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "fa4307e2abc9": {
+      "leading": 65,
+      "trailing": 100
+    },
+    "fb03029305cd": {
+      "leading": 72,
+      "trailing": 101
+    },
+    "fb1839543761": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "fb2dda57b329": {
+      "leading": 57,
+      "trailing": 100
+    },
+    "fb353523978c": {
+      "leading": 71,
+      "trailing": 100
+    },
+    "fbc1d0ce91eb": {
+      "leading": 77,
+      "trailing": 100
+    },
+    "fbca8513df67": {
+      "leading": 65,
+      "trailing": 100
+    },
+    "fc489416207c": {
+      "leading": 100,
+      "trailing": 101
+    },
+    "fc78c6feb1ab": {
+      "leading": 98,
+      "trailing": 108
+    },
+    "fd7c5ca8f14a": {
+      "leading": 59,
+      "trailing": 100
+    },
+    "fda1b363f804": {
+      "leading": 73,
+      "trailing": 100
+    },
+    "fdbffaac36cb": {
+      "leading": 100,
+      "trailing": 108
+    },
+    "fdc3a31bafe7": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "fdd78b426e98": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "fe119b1cc6a3": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "fe15c3a6b4f2": {
+      "leading": 101,
+      "trailing": 100
+    },
+    "ff3f710d1d20": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "ff486300c0bf": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "ff96267900c9": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "ffa4e972ce55": {
+      "leading": 61,
+      "trailing": 100
+    }
+  });
+  var recordedAudioBoundaryIds = new Set(Object.keys(measuredBoundarySilenceMsById));
+  var standaloneBoundarySilenceMs = 100;
+  var sequenceBoundarySilenceMs = 60;
+  function recordedAudioPlaybackWindow(source2, retainedSilenceMs = standaloneBoundarySilenceMs) {
+    const id = /\/([a-f0-9]{12})\.mp3(?:$|[?])/u.exec(String(source2 ?? ""))?.[1];
+    const silence = measuredBoundarySilenceMsById[id];
+    if (!silence) return null;
+    return {
+      startOffsetMs: Math.max(0, silence.leading - retainedSilenceMs),
+      endOffsetMs: Math.max(0, silence.trailing - retainedSilenceMs)
+    };
+  }
+
   // src/core/audio.js
   var audioSourcePolicies = Object.freeze({
     recordedFirst: "recorded-first",
@@ -12444,6 +16683,8 @@
     getSceneLinePauseMs,
     isBrowserSpeechEnabled = () => true,
     schedule = globalThis.setTimeout,
+    clearScheduled = globalThis.clearTimeout,
+    getRecordedAudioPlaybackWindow = recordedAudioPlaybackWindow,
     reportMissingRecordedAudio = (text) => globalThis.console?.warn?.(`Recorded audio unavailable: ${text}`)
   } = {}) {
     const preferredVoiceNames = ["tingting", "ting-ting"];
@@ -12508,36 +16749,66 @@
       stopActiveRecording();
       return requestId;
     }
-    function playRecording(text, requestId) {
+    function playRecording(text, requestId, retainedBoundarySilenceMs = standaloneBoundarySilenceMs) {
       const source2 = getRecordedAudioPath(text);
       if (!source2) return Promise.resolve(false);
       const recording = createAudio(source2);
       if (!recording || !isCurrentRequest(requestId)) return Promise.resolve(false);
+      const playbackWindow = getRecordedAudioPlaybackWindow(source2, retainedBoundarySilenceMs);
       recording.preload = "auto";
       recording.volume = 1;
       return new Promise((resolve) => {
         let settled = false;
+        let started = false;
+        let cutoffTimer;
         const finish = (didPlay) => {
           if (settled) return;
           settled = true;
+          if (cutoffTimer !== void 0) clearScheduled?.(cutoffTimer);
           if (activeRecording?.audio === recording) activeRecording = null;
           resolve(didPlay);
         };
         activeRecording = { audio: recording, finish, requestId };
         recording.onended = () => finish(true);
         recording.onerror = () => finish(false);
-        try {
-          const started = recording.play?.();
-          if (started?.catch) started.catch(() => finish(false));
-        } catch {
-          finish(false);
+        const start = () => {
+          if (started || !isCurrentRequest(requestId)) return;
+          started = true;
+          const duration = Number(recording.duration);
+          const startOffsetSeconds = (playbackWindow?.startOffsetMs ?? 0) / 1e3;
+          const endOffsetSeconds = (playbackWindow?.endOffsetMs ?? 0) / 1e3;
+          if (Number.isFinite(duration) && startOffsetSeconds > 0) {
+            recording.currentTime = Math.min(startOffsetSeconds, Math.max(0, duration - 0.05));
+          }
+          if (Number.isFinite(duration) && endOffsetSeconds > 0) {
+            const cutoffAfterMs = Math.max(0, (duration - endOffsetSeconds - recording.currentTime) * 1e3);
+            cutoffTimer = schedule(() => {
+              recording.pause?.();
+              recording.currentTime = 0;
+              finish(true);
+            }, cutoffAfterMs);
+          }
+          try {
+            const playback = recording.play?.();
+            if (playback?.catch) playback.catch(() => finish(false));
+          } catch {
+            finish(false);
+          }
+        };
+        const canWaitForMetadata = typeof recording.addEventListener === "function" || "readyState" in recording;
+        if (playbackWindow && !Number.isFinite(Number(recording.duration)) && canWaitForMetadata) {
+          recording.onloadedmetadata = start;
+          if (recording.readyState >= 1) start();
+        } else {
+          start();
         }
       });
     }
-    async function playRecordingSequence(texts, requestId) {
+    async function playRecordingSequence(texts, requestId, retainedBoundarySilenceMs) {
       for (const text of texts) {
         if (!isCurrentRequest(requestId) || !getRecordedAudioPath(text)) return { didPlay: false, missingText: text };
-        const didPlay = await playRecording(text, requestId);
+        const retainedSilence = retainedBoundarySilenceMs ?? (texts.length > 1 ? sequenceBoundarySilenceMs : standaloneBoundarySilenceMs);
+        const didPlay = await playRecording(text, requestId, retainedSilence);
         if (!didPlay) return { didPlay: false, missingText: text };
       }
       return { didPlay: true, missingText: "" };
@@ -12547,13 +16818,14 @@
       const options = Array.isArray(voiceNamesOrOptions) ? { voiceNames: voiceNamesOrOptions } : voiceNamesOrOptions && typeof voiceNamesOrOptions === "object" ? voiceNamesOrOptions : {};
       const voiceNames = options.voiceNames ?? preferredVoiceNames;
       const sourcePolicy = options.sourcePolicy ?? audioSourcePolicies.recordedFirst;
+      const recordedBoundarySilenceMs = options.recordedBoundarySilenceMs;
       const requestId = beginPlaybackRequest();
       const recordedTexts = options.recordedTexts?.filter(Boolean) ?? [text];
       if (sourcePolicy === audioSourcePolicies.browserFirst) {
         const fallbackTexts = options.recordedFallbackTexts?.filter(Boolean) ?? [text];
         const playRecordedFallback = () => {
           if (!isCurrentRequest(requestId)) return;
-          playRecordingSequence(fallbackTexts, requestId).then(({ didPlay, missingText }) => {
+          playRecordingSequence(fallbackTexts, requestId, recordedBoundarySilenceMs).then(({ didPlay, missingText }) => {
             if (!didPlay && isCurrentRequest(requestId)) reportMissingRecordedAudio(missingText || text);
           });
         };
@@ -12562,7 +16834,7 @@
         return;
       }
       if (sourcePolicy === audioSourcePolicies.recordedOnly && recordedTexts.length > 1) {
-        playRecordingSequence(recordedTexts, requestId).then(({ didPlay, missingText }) => {
+        playRecordingSequence(recordedTexts, requestId, recordedBoundarySilenceMs).then(({ didPlay, missingText }) => {
           if (!didPlay && isCurrentRequest(requestId)) reportMissingRecordedAudio(missingText || text);
         });
         return;
@@ -23001,6 +27273,49 @@
   };
 
   // src/features/world/world-runtime.js
+  var colourSwatches = {
+    red: "#e85b50",
+    yellow: "#f2bd3c",
+    blue: "#4b91d3",
+    green: "#69a95a",
+    purple: "#9b70be",
+    orange: "#e98a38",
+    pink: "#e97aa9",
+    black: "#39404b",
+    white: "#f7f7f2"
+  };
+  var colourMissionObjects = [
+    { id: "balloon", hanzi: "\u6C14\u7403", pinyin: "q\xEC qi\xFA", english: "balloon" },
+    { id: "kite", hanzi: "\u98CE\u7B5D", pinyin: "f\u0113ng zheng", english: "kite" },
+    { id: "backpack", hanzi: "\u4E66\u5305", pinyin: "sh\u016B b\u0101o", english: "backpack" },
+    { id: "cup", hanzi: "\u676F\u5B50", pinyin: "b\u0113i zi", english: "cup" },
+    { id: "hat", hanzi: "\u5E3D\u5B50", pinyin: "m\xE0o zi", english: "hat" },
+    { id: "block", hanzi: "\u79EF\u6728", pinyin: "j\u012B m\xF9", english: "building block" },
+    { id: "pen", hanzi: "\u7B14", pinyin: "b\u01D0", english: "pen" },
+    { id: "toy-car", hanzi: "\u73A9\u5177\u6C7D\u8F66", pinyin: "w\xE1n j\xF9 q\xEC ch\u0113", english: "toy car" }
+  ];
+  var missionColours = [
+    { id: "red", hanzi: "\u7EA2\u8272", pinyin: "h\xF3ng s\xE8" },
+    { id: "yellow", hanzi: "\u9EC4\u8272", pinyin: "hu\xE1ng s\xE8" },
+    { id: "blue", hanzi: "\u84DD\u8272", pinyin: "l\xE1n s\xE8" },
+    { id: "green", hanzi: "\u7EFF\u8272", pinyin: "l\u01DC s\xE8" },
+    { id: "purple", hanzi: "\u7D2B\u8272", pinyin: "z\u01D0 s\xE8" },
+    { id: "orange", hanzi: "\u6A59\u8272", pinyin: "ch\xE9ng s\xE8" },
+    { id: "pink", hanzi: "\u7C89\u7EA2\u8272", pinyin: "f\u011Bn h\xF3ng s\xE8" },
+    { id: "black", hanzi: "\u9ED1\u8272", pinyin: "h\u0113i s\xE8" },
+    { id: "white", hanzi: "\u767D\u8272", pinyin: "b\xE1i s\xE8" }
+  ];
+  var colourMissionAudioSegments = [
+    ...missionColours.map((colour) => ({
+      id: `prompt-${colour.id}`,
+      audio: `\u627E\u4E00\u627E\uFF0C${colour.hanzi}\u7684`,
+      pinyin: `zh\u01CEo yi zh\u01CEo, ${colour.pinyin} de`
+    })),
+    ...colourMissionObjects.map((object) => ({ id: object.id, audio: object.hanzi, pinyin: object.pinyin }))
+  ];
+  var missionPromptPrefixByColour = new Map(
+    colourMissionAudioSegments.filter((clip) => clip.id.startsWith("prompt-")).map((clip) => [clip.id.slice("prompt-".length), clip.audio])
+  );
   var natureFillRounds = [
     { id: "sun", subject: "\u767D\u5929", word: "\u592A\u9633", audio: "\u767D\u5929\u6709\u592A\u9633\u3002", pinyin: "b\xE1i ti\u0101n y\u01D2u t\xE0i y\xE1ng.", english: "There is a sun in the daytime." },
     { id: "moon", subject: "\u665A\u4E0A", word: "\u6708\u4EAE", audio: "\u665A\u4E0A\u6709\u6708\u4EAE\u3002", pinyin: "w\u01CEn shang y\u01D2u yu\xE8 liang.", english: "There is a moon at night." },
@@ -23029,6 +27344,20 @@
     if (id === "tree") return `${start}<path d="M45 60h10l-3-23h-4Z" fill="#9a6a43" stroke="${stroke}" stroke-width="3"/><path d="M22 37c0-14 13-22 25-15 10-10 30-1 26 14 10 9 1 23-11 20H30c-11 0-16-12-8-19Z" fill="#72b65c" stroke="${stroke}" stroke-width="3"/>${end}`;
     if (id === "flower") return `${start}<path d="M48 60V38" stroke="#5b994f" stroke-width="4" stroke-linecap="round"/><path d="M48 50c-9-8-13-1-12 4 6 0 10-1 12-4Zm0-6c8-8 13-1 12 4-6 0-10-1-12-4Z" fill="#73b85e"/><circle cx="48" cy="29" r="7" fill="#f1bf43"/>${[0, 72, 144, 216, 288].map((angle) => `<ellipse cx="48" cy="19" rx="6" ry="10" fill="#e8786d" stroke="${stroke}" stroke-width="2" transform="rotate(${angle} 48 29)"/>`).join("")}${end}`;
     return `${start}<path d="M12 60h72" stroke="#9bc774" stroke-width="4" stroke-linecap="round"/><path d="M26 60V31m0 18-10-12m10 7 9-13M48 60V23m0 24-11-14m11 8 10-15M69 60V34m0 15-8-10m8 6 9-12" stroke="#4c8b49" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>${end}`;
+  }
+  function missionObjectMarkup(objectId, colour) {
+    const outline = "#43372c";
+    const shine = "rgba(255,255,255,.34)";
+    const start = '<svg viewBox="0 0 120 96" aria-hidden="true" focusable="false">';
+    const end = "</svg>";
+    if (objectId === "balloon") return `${start}<path d="M60 8C34 8 25 29 30 48c4 17 17 28 30 34 13-6 26-17 30-34C95 29 86 8 60 8Z" fill="${colour}" stroke="${outline}" stroke-width="3"/><path d="M60 82v11M54 89h12" stroke="${outline}" stroke-width="3" stroke-linecap="round"/><ellipse cx="48" cy="31" rx="7" ry="12" fill="${shine}"/></svg>`;
+    if (objectId === "kite") return `${start}<path d="M60 7 99 47 60 87 21 47Z" fill="${colour}" stroke="${outline}" stroke-width="3"/><path d="M21 47 99 47M60 7v80M60 87c15 1 18 9 8 11 12 1 15 7 5 10" fill="none" stroke="${outline}" stroke-width="3" stroke-linecap="round"/><path d="M48 22 60 12" stroke="${shine}" stroke-width="6" stroke-linecap="round"/></svg>`;
+    if (objectId === "backpack") return `${start}<path d="M38 34V24c0-15 44-15 44 0v10" fill="none" stroke="${outline}" stroke-width="6" stroke-linecap="round"/><path d="M28 34c0-8 8-12 16-12h32c8 0 16 4 16 12v49H28V34Z" fill="${colour}" stroke="${outline}" stroke-width="3"/><path d="M37 51h46v25H37z" fill="${shine}" stroke="${outline}" stroke-width="3"/><path d="M51 63h18" stroke="${outline}" stroke-width="3" stroke-linecap="round"/></svg>`;
+    if (objectId === "cup") return `${start}<path d="M28 24h55v47c0 16-14 18-27 18S28 87 28 71V24Z" fill="${colour}" stroke="${outline}" stroke-width="3"/><path d="M83 35h10c18 0 18 29 0 29H83" fill="none" stroke="${outline}" stroke-width="5"/><path d="M36 30h38" stroke="${shine}" stroke-width="6" stroke-linecap="round"/></svg>`;
+    if (objectId === "hat") return `${start}<path d="M35 49c0-26 50-26 50 0v12H35V49Z" fill="${colour}" stroke="${outline}" stroke-width="3"/><path d="M14 64c7-10 84-10 92 0 7 9-4 15-46 15S7 73 14 64Z" fill="${colour}" stroke="${outline}" stroke-width="3"/><path d="M45 45c9-7 20-7 29 0" fill="none" stroke="${shine}" stroke-width="5" stroke-linecap="round"/></svg>`;
+    if (objectId === "block") return `${start}<path d="M26 32 60 13l34 19v38L60 89 26 70V32Z" fill="${colour}" stroke="${outline}" stroke-width="3"/><path d="m26 32 34 19 34-19M60 51v38" fill="none" stroke="${outline}" stroke-width="3"/><path d="m38 35 18-10" stroke="${shine}" stroke-width="6" stroke-linecap="round"/></svg>`;
+    if (objectId === "pen") return `${start}<path d="M48 19h24l7 13-10 48H51L41 32l7-13Z" fill="${colour}" stroke="${outline}" stroke-width="3" stroke-linejoin="round"/><path d="M48 19 60 8l12 11" fill="${colour}" stroke="${outline}" stroke-width="3" stroke-linejoin="round"/><path d="M50 33h20" stroke="rgba(255,255,255,.58)" stroke-width="5" stroke-linecap="round"/><path d="M72 28h13l-7 24" fill="none" stroke="${outline}" stroke-width="3" stroke-linejoin="round"/><path d="m51 80 9 11 9-11Z" fill="#d9d9d3" stroke="${outline}" stroke-width="3" stroke-linejoin="round"/><path d="M60 91v3" stroke="${outline}" stroke-width="4" stroke-linecap="round"/></svg>`;
+    return `${start}<path d="M21 45h75v29H21z" fill="${colour}" stroke="${outline}" stroke-width="3"/><path d="M35 45 47 31h28l12 14" fill="${colour}" stroke="${outline}" stroke-width="3"/><circle cx="38" cy="76" r="10" fill="#f7f7f2" stroke="${outline}" stroke-width="3"/><circle cx="80" cy="76" r="10" fill="#f7f7f2" stroke="${outline}" stroke-width="3"/><path d="M51 38h18" stroke="${shine}" stroke-width="5" stroke-linecap="round"/></svg>${end}`;
   }
   var weatherDressRounds = [
     { id: "rain", prompt: "\u4E0B\u96E8\u4E86\u3002\u5E26\u4EC0\u4E48\uFF1F", promptAudio: "\u4E0B\u96E8\u4E86\u3002\u5E26\u4EC0\u4E48\uFF1F", promptPinyin: "xi\xE0 y\u01D4 le. d\xE0i sh\xE9n me?", promptEnglish: "It is raining. What should we take?", answerId: "umbrella", answerSentence: "\u4E0B\u96E8\u4E86\u3002\u5E26\u96E8\u4F1E\u3002", answerAudio: "\u5E26\u96E8\u4F1E", answerPinyin: "xi\xE0 y\u01D4 le. d\xE0i y\u01D4 s\u01CEn.", answerEnglish: "It is raining. Take an umbrella." },
@@ -23356,28 +27685,33 @@
         state2.worldColourRoundIndex = 0;
         state2.worldColourPickedId = "";
         state2.worldColourResult = "";
+        state2.worldColourChoiceIds = [];
         state2.worldFavouriteColourId = "purple";
         state2.worldUnfavouriteColourId = "black";
+      }
+      const targetId = state2.worldColourRoundIds[state2.worldColourRoundIndex];
+      const expectedChoiceCount = Math.min(4, items.length);
+      const hasMatchingChoices = state2.worldColourChoiceIds?.length === expectedChoiceCount && state2.worldColourChoiceIds.includes(targetId) && state2.worldColourChoiceIds.every((id) => items.some((item) => item.id === id));
+      if (!hasMatchingChoices) {
+        state2.worldColourChoiceIds = shuffled3([
+          targetId,
+          ...shuffled3(items.map((item) => item.id).filter((id) => id !== targetId)).slice(0, expectedChoiceCount - 1)
+        ]);
       }
     }
     function resetColourMission() {
       const items = colourItems();
-      const count = Math.min(6, items.length);
-      const targetItemId = nextRandomCycleId(state2, "colours-mission-target", items.map((item) => item.id));
-      const targetItem = items.find((item) => item.id === targetItemId);
-      const cards = shuffled3([
-        targetItem,
-        ...shuffled3(items.filter((item) => item.id !== targetItemId)).slice(0, count - 1)
-      ].filter(Boolean));
-      state2.worldColourMissionCards = cards.map((item) => ({ objectId: item.id, colourId: item.id }));
-      state2.worldColourMissionTargetObjectId = targetItemId;
+      const objects = shuffled3(colourMissionObjects).slice(0, 6);
+      const colours = shuffled3(items).slice(0, 6);
+      state2.worldColourMissionCards = shuffled3(objects.map((object, index) => ({ objectId: object.id, colourId: colours[index].id })));
+      state2.worldColourMissionTargetObjectId = state2.worldColourMissionCards[Math.floor(Math.random() * state2.worldColourMissionCards.length)].objectId;
       state2.worldColourMissionPickedObjectId = "";
       state2.worldColourMissionResult = "";
     }
     function ensureColourMission() {
       const items = colourItems();
-      const expectedCount = Math.min(6, items.length);
-      if (!state2.worldColourMissionCards?.length || state2.worldColourMissionCards.length !== expectedCount || state2.worldColourMissionCards.some((card) => !items.some((item) => item.id === card.colourId))) resetColourMission();
+      const hasValidCards = state2.worldColourMissionCards?.length === 6 && state2.worldColourMissionCards.every((card) => colourMissionObjects.some((object) => object.id === card.objectId) && items.some((item) => item.id === card.colourId));
+      if (!hasValidCards) resetColourMission();
     }
     function currentColourPracticeItem() {
       ensureColourPractice();
@@ -23389,31 +27723,53 @@
       ensureColourPractice();
       const items = colourItems();
       const target = currentColourPracticeItem();
-      const choices = shuffled3([target, ...shuffled3(items.filter((item) => item.id !== target.id)).slice(0, 3)]);
+      const choices = state2.worldColourChoiceIds.map((id) => items.find((item) => item.id === id)).filter(Boolean);
       const favourite = items.find((item) => item.id === state2.worldFavouriteColourId) ?? items[0];
       const unfavourite = items.find((item) => item.id === state2.worldUnfavouriteColourId) ?? items[0];
+      const answerFeedback = state2.worldColourPickedId && state2.worldColourResult === "correct" ? target.phrase : "&nbsp;";
       ensureColourMission();
       const missionCards = state2.worldColourMissionCards;
       const missionTargetCard = missionCards.find((card) => card.objectId === state2.worldColourMissionTargetObjectId) ?? missionCards[0];
-      const missionTargetItem = items.find((item) => item.id === missionTargetCard.objectId);
-      const missionPrompt = missionTargetItem.phraseAudio;
+      const missionTargetObject = colourMissionObjects.find((object) => object.id === missionTargetCard.objectId);
+      const missionTargetColour = items.find((item) => item.id === missionTargetCard.colourId);
+      const missionPrompt = `${missionTargetColour.hanzi}\u7684${missionTargetObject.hanzi}`;
+      const missionPromptPinyin = `${missionTargetColour.pinyin} de ${missionTargetObject.pinyin}.`;
+      const missionPickedCard = missionCards.find((card) => card.objectId === state2.worldColourMissionPickedObjectId);
+      const missionPickedObject = colourMissionObjects.find((object) => object.id === missionPickedCard?.objectId);
+      const missionPickedColour = items.find((item) => item.id === missionPickedCard?.colourId);
+      const missionPickedSentence = missionPickedColour && missionPickedObject ? `${missionPickedColour.hanzi}\u7684${missionPickedObject.hanzi}` : missionPrompt;
+      const missionPickedPinyin = missionPickedColour && missionPickedObject ? `${missionPickedColour.pinyin} de ${missionPickedObject.pinyin}.` : missionPromptPinyin;
+      const missionFeedback = !state2.worldColourMissionPickedObjectId ? "&nbsp;" : state2.worldColourMissionResult === "correct" ? `<span class="world-colour-mission-sentence">${missionPickedSentence}\u3002</span>${state2.showPinyin ? `<span class="world-colour-mission-pinyin">${missionPickedPinyin}</span>` : ""}` : "Not that one. Listen again and try another picture.";
+      const playMissionPrompt = (colour, object) => {
+        const promptPrefix = missionPromptPrefixByColour.get(colour.id);
+        if (state2.tapAudioEnabled && promptPrefix) {
+          speak2(`\u627E\u4E00\u627E\uFF0C${colour.hanzi}\u7684${object.hanzi}`, 0.78, {
+            sourcePolicy: "recorded-only",
+            recordedTexts: [promptPrefix, object.hanzi],
+            recordedBoundarySilenceMs: 0
+          });
+        }
+      };
       activityPanelTitle2.textContent = "Let's practice";
       activityPanelSummary2.textContent = "Listen carefully, find the right colour-and-object pair, then practise complete Chinese descriptions.";
       activityList2.className = "support-list";
       activityList2.innerHTML = `
       <section class="practice-split-card world-colour-mission">
         <div class="numbers-game-top"><div><p class="body-match-kicker">Colour mission</p><h4>Listen and find the object</h4></div><button class="small-button is-play-button" type="button" data-world-mission-play>Play</button></div>
-        ${state2.worldColourMissionPickedObjectId ? `<p class="greetings-game-feedback">${state2.worldColourMissionResult === "correct" ? `Great! ${missionPrompt}.` : "Not that one. Listen again and try another picture."}</p>` : ""}
+        <p class="greetings-game-feedback world-colour-mission-feedback${state2.worldColourMissionPickedObjectId ? "" : " is-placeholder"}">${missionFeedback}</p>
         <div class="world-colour-mission-grid">${missionCards.map((card) => {
-        const item = items.find((entry) => entry.id === card.objectId);
+        const object = colourMissionObjects.find((item) => item.id === card.objectId);
+        const colour = items.find((item) => item.id === card.colourId);
         const selected = state2.worldColourMissionPickedObjectId === card.objectId;
         const resultClass = selected ? ` is-${state2.worldColourMissionResult}` : "";
-        return `<button class="world-colour-mission-card${resultClass}" type="button" data-world-mission-pick="${card.objectId}"><span class="world-colour-mission-art"><img src="${item.imagePath}" alt="${item.imageAlt}" /></span><span class="world-colour-mission-label">${state2.showEnglish ? item.phraseEnglish : ""}</span></button>`;
+        const mark = selected ? `<span class="answer-result-mark" aria-hidden="true">${state2.worldColourMissionResult === "correct" ? "\u2713" : "\xD7"}</span>` : "";
+        return `<button class="world-colour-mission-card${resultClass}" type="button" data-world-mission-pick="${card.objectId}">${mark}<span class="world-colour-mission-art">${missionObjectMarkup(object.id, colourSwatches[colour.id])}</span><span class="world-colour-mission-label">${state2.showEnglish ? object.english : ""}</span></button>`;
       }).join("")}</div>
       </section>
       <section class="clothes-quiz-shell world-colour-picture-practice">
         <div class="numbers-game-top"><div><p class="body-match-kicker">Picture and phrase</p><p class="numbers-game-note">Look at the picture. Which complete Chinese phrase matches it?</p></div><button class="small-button is-practice-advance-button" type="button" data-world-colour-new aria-label="Start a new game">New game</button></div>
         <figure class="clothes-quiz-visual"><img class="clothes-quiz-image" src="${target.imagePath}" alt="${target.imageAlt}" /></figure>
+        <p class="world-colour-answer-feedback${state2.worldColourPickedId && state2.worldColourResult === "correct" ? "" : " is-placeholder"}">${answerFeedback}</p>
         <div class="clothes-quiz-options">${choices.map((item) => {
         const selected = state2.worldColourPickedId === item.id;
         const resultClass = selected ? ` is-${state2.worldColourResult}` : "";
@@ -23424,28 +27780,33 @@
       <section class="practice-split-card world-favourite-colour-practice"><div class="numbers-game-top"><div><p class="body-match-kicker">My favourite colour</p><p class="numbers-game-note">Choose your favourite colour, then listen and say the sentence.</p></div><button class="small-button is-play-button" type="button" data-world-favourite-play>Play</button></div><div class="world-favourite-colour-options">${items.map((item) => `<button class="small-button${item.id === favourite.id ? " is-action-button" : ""}" type="button" data-world-favourite="${item.id}">${item.hanzi}</button>`).join("")}</div><p class="world-favourite-sentence">\u6211\u559C\u6B22${favourite.hanzi}\u3002${state2.showPinyin ? `<span>w\u01D2 x\u01D0 huan ${favourite.pinyin}.</span>` : ""}${state2.showEnglish ? `<span>I like ${favourite.english}.</span>` : ""}</p></section>
       ${!state2.lessonScope || state2.lessonScope.bookId === "2a" ? `<section class="practice-split-card world-favourite-colour-practice"><div class="numbers-game-top"><div><p class="body-match-kicker">A colour I don't like</p><p class="numbers-game-note">Choose a colour, then listen and say the sentence.</p></div><button class="small-button is-play-button" type="button" data-world-unfavourite-play>Play</button></div><div class="world-favourite-colour-options">${items.map((item) => `<button class="small-button${item.id === unfavourite.id ? " is-action-button" : ""}" type="button" data-world-unfavourite="${item.id}">${item.hanzi}</button>`).join("")}</div><p class="world-favourite-sentence">\u6211\u4E0D\u559C\u6B22${unfavourite.hanzi}\u3002${state2.showPinyin ? `<span>w\u01D2 b\xF9 x\u01D0 huan ${unfavourite.pinyin}.</span>` : ""}${state2.showEnglish ? `<span>I do not like ${unfavourite.english}.</span>` : ""}</p></section>` : ""}
     `;
-      activityList2.querySelector("[data-world-mission-play]")?.addEventListener("click", () => {
-        if (state2.tapAudioEnabled) speak2(missionPrompt, 0.78, { sourcePolicy: "recorded-only" });
-      });
-      activityList2.querySelectorAll("[data-world-mission-pick]").forEach((button) => button.addEventListener("click", () => {
-        state2.worldColourMissionPickedObjectId = button.dataset.worldMissionPick;
-        state2.worldColourMissionResult = button.dataset.worldMissionPick === missionTargetObject.id ? "correct" : "wrong";
-        if (state2.worldColourMissionResult === "correct") {
-          if (state2.tapAudioEnabled) speak2(missionPrompt, 0.78, { sourcePolicy: "recorded-only" });
-          window.setTimeout(() => {
-            resetColourMission();
-            renderActivityPanel2(currentTopic2());
-          }, 1100);
-        }
-        renderActivityPanel2(currentTopic2());
-      }));
       activityList2.querySelector("[data-world-colour-new]")?.addEventListener("click", () => {
         advanceShuffledOrder(state2, "worldColourRoundIds", "worldColourRoundIndex", shuffled3);
         state2.worldColourPickedId = "";
         state2.worldColourResult = "";
+        state2.worldColourChoiceIds = [];
         renderActivityPanel2(currentTopic2());
       });
+      activityList2.querySelector("[data-world-mission-play]")?.addEventListener("click", () => {
+        if (state2.worldColourMissionPickedObjectId) {
+          resetColourMission();
+          renderActivityPanel2(currentTopic2());
+          const nextCard = state2.worldColourMissionCards.find((card) => card.objectId === state2.worldColourMissionTargetObjectId);
+          const nextObject = colourMissionObjects.find((object) => object.id === nextCard?.objectId);
+          const nextColour = items.find((item) => item.id === nextCard?.colourId);
+          if (nextObject && nextColour) playMissionPrompt(nextColour, nextObject);
+          return;
+        }
+        playMissionPrompt(missionTargetColour, missionTargetObject);
+      });
+      activityList2.querySelectorAll("[data-world-mission-pick]").forEach((button) => button.addEventListener("click", () => {
+        if (state2.worldColourMissionPickedObjectId) return;
+        state2.worldColourMissionPickedObjectId = button.dataset.worldMissionPick;
+        state2.worldColourMissionResult = button.dataset.worldMissionPick === missionTargetObject.id ? "correct" : "wrong";
+        renderActivityPanel2(currentTopic2());
+      }));
       activityList2.querySelectorAll("[data-world-colour-guess]").forEach((button) => button.addEventListener("click", () => {
+        if (state2.worldColourPickedId) return;
         state2.worldColourPickedId = button.dataset.worldColourGuess;
         state2.worldColourResult = button.dataset.worldColourGuess === target.id ? "correct" : "wrong";
         if (state2.worldColourResult === "correct" && state2.tapAudioEnabled) speak2(target.phraseAudio, 0.78, { sourcePolicy: "recorded-only" });

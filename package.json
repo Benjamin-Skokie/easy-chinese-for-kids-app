@@ -15,6 +15,8 @@
     "audio:learn:manifest": "node scripts/audio/build-learn-audio-manifest.mjs",
     "audio:learn": "node --env-file=.env.local scripts/audio/generate-learn-audio.mjs",
     "audio:learn:sync": "node scripts/audio/sync-learn-recorded-audio.mjs",
+    "audio:learn:boundaries": "node scripts/audio/analyze-learn-audio-boundaries.mjs",
+    "audio:learn:trim-boundaries": "node scripts/audio/trim-learn-audio-boundaries.mjs",
     "check:paths": "node scripts/check_relative_paths.mjs",
     "setup:hooks": "git config core.hooksPath .githooks",
     "check": "npm run check:paths && npm run validate:data && npm run build && npm test && node --check app.js && git diff --check"

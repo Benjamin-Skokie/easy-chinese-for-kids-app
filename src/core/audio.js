@@ -1,4 +1,5 @@
 import { recordedLearnAudioPath } from "./recorded-audio.js";
+import { recordedAudioPlaybackWindow, sequenceBoundarySilenceMs, standaloneBoundarySilenceMs } from "./recorded-audio-boundaries.js";
 
 export const audioSourcePolicies = Object.freeze({
   recordedFirst: "recorded-first",
@@ -15,6 +16,8 @@ export function createAudioService({
   getSceneLinePauseMs,
   isBrowserSpeechEnabled = () => true,
   schedule = globalThis.setTimeout,
+  clearScheduled = globalThis.clearTimeout,
+  getRecordedAudioPlaybackWindow = recordedAudioPlaybackWindow,
   reportMissingRecordedAudio = (text) => globalThis.console?.warn?.(`Recorded audio unavailable: ${text}`)
 } = {}) {
   const preferredVoiceNames = ["tingting", "ting-ting"];
@@ -89,38 +92,70 @@ export function createAudioService({
     return requestId;
   }
 
-  function playRecording(text, requestId) {
+  function playRecording(text, requestId, retainedBoundarySilenceMs = standaloneBoundarySilenceMs) {
     const source = getRecordedAudioPath(text);
     if (!source) return Promise.resolve(false);
     const recording = createAudio(source);
     if (!recording || !isCurrentRequest(requestId)) return Promise.resolve(false);
+    const playbackWindow = getRecordedAudioPlaybackWindow(source, retainedBoundarySilenceMs);
 
     recording.preload = "auto";
     recording.volume = 1;
     return new Promise((resolve) => {
       let settled = false;
+      let started = false;
+      let cutoffTimer;
       const finish = (didPlay) => {
         if (settled) return;
         settled = true;
+        if (cutoffTimer !== undefined) clearScheduled?.(cutoffTimer);
         if (activeRecording?.audio === recording) activeRecording = null;
         resolve(didPlay);
       };
       activeRecording = { audio: recording, finish, requestId };
       recording.onended = () => finish(true);
       recording.onerror = () => finish(false);
-      try {
-        const started = recording.play?.();
-        if (started?.catch) started.catch(() => finish(false));
-      } catch {
-        finish(false);
+
+      const start = () => {
+        if (started || !isCurrentRequest(requestId)) return;
+        started = true;
+        const duration = Number(recording.duration);
+        const startOffsetSeconds = (playbackWindow?.startOffsetMs ?? 0) / 1000;
+        const endOffsetSeconds = (playbackWindow?.endOffsetMs ?? 0) / 1000;
+        if (Number.isFinite(duration) && startOffsetSeconds > 0) {
+          recording.currentTime = Math.min(startOffsetSeconds, Math.max(0, duration - 0.05));
+        }
+        if (Number.isFinite(duration) && endOffsetSeconds > 0) {
+          const cutoffAfterMs = Math.max(0, (duration - endOffsetSeconds - recording.currentTime) * 1000);
+          cutoffTimer = schedule(() => {
+            recording.pause?.();
+            recording.currentTime = 0;
+            finish(true);
+          }, cutoffAfterMs);
+        }
+        try {
+          const playback = recording.play?.();
+          if (playback?.catch) playback.catch(() => finish(false));
+        } catch {
+          finish(false);
+        }
+      };
+
+      const canWaitForMetadata = typeof recording.addEventListener === "function" || "readyState" in recording;
+      if (playbackWindow && !Number.isFinite(Number(recording.duration)) && canWaitForMetadata) {
+        recording.onloadedmetadata = start;
+        if (recording.readyState >= 1) start();
+      } else {
+        start();
       }
     });
   }
 
-  async function playRecordingSequence(texts, requestId) {
+  async function playRecordingSequence(texts, requestId, retainedBoundarySilenceMs) {
     for (const text of texts) {
       if (!isCurrentRequest(requestId) || !getRecordedAudioPath(text)) return { didPlay: false, missingText: text };
-      const didPlay = await playRecording(text, requestId);
+      const retainedSilence = retainedBoundarySilenceMs ?? (texts.length > 1 ? sequenceBoundarySilenceMs : standaloneBoundarySilenceMs);
+      const didPlay = await playRecording(text, requestId, retainedSilence);
       if (!didPlay) return { didPlay: false, missingText: text };
     }
     return { didPlay: true, missingText: "" };
@@ -133,13 +168,14 @@ export function createAudioService({
       : (voiceNamesOrOptions && typeof voiceNamesOrOptions === "object" ? voiceNamesOrOptions : {});
     const voiceNames = options.voiceNames ?? preferredVoiceNames;
     const sourcePolicy = options.sourcePolicy ?? audioSourcePolicies.recordedFirst;
+    const recordedBoundarySilenceMs = options.recordedBoundarySilenceMs;
     const requestId = beginPlaybackRequest();
     const recordedTexts = options.recordedTexts?.filter(Boolean) ?? [text];
     if (sourcePolicy === audioSourcePolicies.browserFirst) {
       const fallbackTexts = options.recordedFallbackTexts?.filter(Boolean) ?? [text];
       const playRecordedFallback = () => {
         if (!isCurrentRequest(requestId)) return;
-        playRecordingSequence(fallbackTexts, requestId).then(({ didPlay, missingText }) => {
+        playRecordingSequence(fallbackTexts, requestId, recordedBoundarySilenceMs).then(({ didPlay, missingText }) => {
           if (!didPlay && isCurrentRequest(requestId)) reportMissingRecordedAudio(missingText || text);
         });
       };
@@ -148,7 +184,7 @@ export function createAudioService({
       return;
     }
     if (sourcePolicy === audioSourcePolicies.recordedOnly && recordedTexts.length > 1) {
-      playRecordingSequence(recordedTexts, requestId).then(({ didPlay, missingText }) => {
+      playRecordingSequence(recordedTexts, requestId, recordedBoundarySilenceMs).then(({ didPlay, missingText }) => {
         if (!didPlay && isCurrentRequest(requestId)) reportMissingRecordedAudio(missingText || text);
       });
       return;

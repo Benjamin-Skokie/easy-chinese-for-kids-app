@@ -5976,10 +5976,11 @@ h4 {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 0.7rem;
-  margin-top: 0.9rem;
+  margin-top: 0.45rem;
 }
 
 .world-colour-mission-card {
+  position: relative;
   display: grid;
   justify-items: center;
   gap: 0.25rem;
@@ -6000,10 +6001,14 @@ h4 {
 
 .world-colour-mission-card.is-correct { border-color: #5a9b57; background: #f1faed; }
 .world-colour-mission-card.is-wrong { border-color: var(--berry); background: #fff3f1; }
+.world-colour-mission-feedback { min-height: 2rem; margin: 0.35rem 0 0; }
+.world-colour-mission-feedback.is-placeholder { visibility: hidden; }
+.world-colour-mission-sentence { color: var(--muted); }
+.world-colour-mission-pinyin { margin-left: 0.45rem; font-family: var(--latin-font); font-size: 0.9rem; color: var(--muted); }
 
 .world-colour-mission-art { width: 100%; max-width: 8rem; }
 .world-colour-mission-art svg { display: block; width: 100%; height: auto; }
-.world-colour-mission-art img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 0.8rem; }
+.world-colour-mission-art img { display: block; width: 100%; aspect-ratio: 1; object-fit: contain; border-radius: 0.8rem; background: #fffdf8; }
 .world-colour-mission-label { min-height: 1.3rem; font-size: 0.82rem; color: var(--muted); }
 
 .world-favourite-sentence span {
@@ -7673,6 +7678,30 @@ h4 {
 .clothes-quiz-image.hobbies-3b-practice-image {
   object-fit: cover;
 }
+
+/* Colour objects are square illustrations, so keep their practice prompt
+   compact instead of inheriting the wider scene-sized quiz frame. */
+.world-colour-picture-practice .clothes-quiz-visual {
+  width: min(100%, 20rem);
+  aspect-ratio: 1;
+}
+
+.world-colour-picture-practice .clothes-quiz-image {
+  box-sizing: border-box;
+  padding: 1rem;
+}
+
+.world-colour-answer-feedback {
+  min-height: 2.7rem;
+  margin: 0;
+  color: #357331;
+  font-family: var(--hanzi-font);
+  font-size: var(--learner-hanzi-size);
+  font-weight: 700;
+  text-align: center;
+}
+
+.world-colour-answer-feedback.is-placeholder { visibility: hidden; }
 
 .toy-practice-frame {
   display: flex;

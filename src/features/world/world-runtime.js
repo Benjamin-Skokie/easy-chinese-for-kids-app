@@ -2,7 +2,48 @@ import { colourLessons } from "./colours.js";
 import { animalLessons } from "./animals.js";
 import { natureLesson, weatherLesson, weatherOutfitScenes } from "./weather.js";
 import { imageLoadingAttrs } from "../../core/image-loading.js";
-import { advanceShuffledOrder, nextRandomCycleId } from "../../core/random-cycle.js";
+import { advanceShuffledOrder } from "../../core/random-cycle.js";
+
+const colourSwatches = {
+  red: "#e85b50", yellow: "#f2bd3c", blue: "#4b91d3", green: "#69a95a", purple: "#9b70be",
+  orange: "#e98a38", pink: "#e97aa9", black: "#39404b", white: "#f7f7f2"
+};
+
+// This is deliberately separate from the pictured colour-and-phrase activity.
+// Colour Mission teaches the colour + familiar-object combination by listening.
+const colourMissionObjects = [
+  { id: "balloon", hanzi: "气球", pinyin: "qì qiú", english: "balloon" },
+  { id: "kite", hanzi: "风筝", pinyin: "fēng zheng", english: "kite" },
+  { id: "backpack", hanzi: "书包", pinyin: "shū bāo", english: "backpack" },
+  { id: "cup", hanzi: "杯子", pinyin: "bēi zi", english: "cup" },
+  { id: "hat", hanzi: "帽子", pinyin: "mào zi", english: "hat" },
+  { id: "block", hanzi: "积木", pinyin: "jī mù", english: "building block" },
+  { id: "pen", hanzi: "笔", pinyin: "bǐ", english: "pen" },
+  { id: "toy-car", hanzi: "玩具汽车", pinyin: "wán jù qì chē", english: "toy car" }
+];
+
+const missionColours = [
+  { id: "red", hanzi: "红色", pinyin: "hóng sè" }, { id: "yellow", hanzi: "黄色", pinyin: "huáng sè" },
+  { id: "blue", hanzi: "蓝色", pinyin: "lán sè" }, { id: "green", hanzi: "绿色", pinyin: "lǜ sè" },
+  { id: "purple", hanzi: "紫色", pinyin: "zǐ sè" }, { id: "orange", hanzi: "橙色", pinyin: "chéng sè" },
+  { id: "pink", hanzi: "粉红色", pinyin: "fěn hóng sè" }, { id: "black", hanzi: "黑色", pinyin: "hēi sè" },
+  { id: "white", hanzi: "白色", pinyin: "bái sè" }
+];
+
+// Mission prompts are two clips: a colour-specific prompt prefix, then the
+// object. This keeps one natural recorded voice without creating 72 full-sentence
+// recordings; the shared audio service retains just 60ms at the join.
+export const colourMissionAudioSegments = [
+  ...missionColours.map((colour) => ({
+    id: `prompt-${colour.id}`,
+    audio: `找一找，${colour.hanzi}的`,
+    pinyin: `zhǎo yi zhǎo, ${colour.pinyin} de`
+  })),
+  ...colourMissionObjects.map((object) => ({ id: object.id, audio: object.hanzi, pinyin: object.pinyin }))
+];
+const missionPromptPrefixByColour = new Map(
+  colourMissionAudioSegments.filter((clip) => clip.id.startsWith("prompt-")).map((clip) => [clip.id.slice("prompt-".length), clip.audio])
+);
 
 export const natureFillRounds = [
   { id: "sun", subject: "白天", word: "太阳", audio: "白天有太阳。", pinyin: "bái tiān yǒu tài yáng.", english: "There is a sun in the daytime." },
@@ -34,6 +75,21 @@ function natureIconMarkup(id) {
   if (id === "tree") return `${start}<path d="M45 60h10l-3-23h-4Z" fill="#9a6a43" stroke="${stroke}" stroke-width="3"/><path d="M22 37c0-14 13-22 25-15 10-10 30-1 26 14 10 9 1 23-11 20H30c-11 0-16-12-8-19Z" fill="#72b65c" stroke="${stroke}" stroke-width="3"/>${end}`;
   if (id === "flower") return `${start}<path d="M48 60V38" stroke="#5b994f" stroke-width="4" stroke-linecap="round"/><path d="M48 50c-9-8-13-1-12 4 6 0 10-1 12-4Zm0-6c8-8 13-1 12 4-6 0-10-1-12-4Z" fill="#73b85e"/><circle cx="48" cy="29" r="7" fill="#f1bf43"/>${[0,72,144,216,288].map((angle) => `<ellipse cx="48" cy="19" rx="6" ry="10" fill="#e8786d" stroke="${stroke}" stroke-width="2" transform="rotate(${angle} 48 29)"/>`).join("")}${end}`;
   return `${start}<path d="M12 60h72" stroke="#9bc774" stroke-width="4" stroke-linecap="round"/><path d="M26 60V31m0 18-10-12m10 7 9-13M48 60V23m0 24-11-14m11 8 10-15M69 60V34m0 15-8-10m8 6 9-12" stroke="#4c8b49" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>${end}`;
+}
+
+function missionObjectMarkup(objectId, colour) {
+  const outline = "#43372c";
+  const shine = "rgba(255,255,255,.34)";
+  const start = '<svg viewBox="0 0 120 96" aria-hidden="true" focusable="false">';
+  const end = "</svg>";
+  if (objectId === "balloon") return `${start}<path d="M60 8C34 8 25 29 30 48c4 17 17 28 30 34 13-6 26-17 30-34C95 29 86 8 60 8Z" fill="${colour}" stroke="${outline}" stroke-width="3"/><path d="M60 82v11M54 89h12" stroke="${outline}" stroke-width="3" stroke-linecap="round"/><ellipse cx="48" cy="31" rx="7" ry="12" fill="${shine}"/></svg>`;
+  if (objectId === "kite") return `${start}<path d="M60 7 99 47 60 87 21 47Z" fill="${colour}" stroke="${outline}" stroke-width="3"/><path d="M21 47 99 47M60 7v80M60 87c15 1 18 9 8 11 12 1 15 7 5 10" fill="none" stroke="${outline}" stroke-width="3" stroke-linecap="round"/><path d="M48 22 60 12" stroke="${shine}" stroke-width="6" stroke-linecap="round"/></svg>`;
+  if (objectId === "backpack") return `${start}<path d="M38 34V24c0-15 44-15 44 0v10" fill="none" stroke="${outline}" stroke-width="6" stroke-linecap="round"/><path d="M28 34c0-8 8-12 16-12h32c8 0 16 4 16 12v49H28V34Z" fill="${colour}" stroke="${outline}" stroke-width="3"/><path d="M37 51h46v25H37z" fill="${shine}" stroke="${outline}" stroke-width="3"/><path d="M51 63h18" stroke="${outline}" stroke-width="3" stroke-linecap="round"/></svg>`;
+  if (objectId === "cup") return `${start}<path d="M28 24h55v47c0 16-14 18-27 18S28 87 28 71V24Z" fill="${colour}" stroke="${outline}" stroke-width="3"/><path d="M83 35h10c18 0 18 29 0 29H83" fill="none" stroke="${outline}" stroke-width="5"/><path d="M36 30h38" stroke="${shine}" stroke-width="6" stroke-linecap="round"/></svg>`;
+  if (objectId === "hat") return `${start}<path d="M35 49c0-26 50-26 50 0v12H35V49Z" fill="${colour}" stroke="${outline}" stroke-width="3"/><path d="M14 64c7-10 84-10 92 0 7 9-4 15-46 15S7 73 14 64Z" fill="${colour}" stroke="${outline}" stroke-width="3"/><path d="M45 45c9-7 20-7 29 0" fill="none" stroke="${shine}" stroke-width="5" stroke-linecap="round"/></svg>`;
+  if (objectId === "block") return `${start}<path d="M26 32 60 13l34 19v38L60 89 26 70V32Z" fill="${colour}" stroke="${outline}" stroke-width="3"/><path d="m26 32 34 19 34-19M60 51v38" fill="none" stroke="${outline}" stroke-width="3"/><path d="m38 35 18-10" stroke="${shine}" stroke-width="6" stroke-linecap="round"/></svg>`;
+  if (objectId === "pen") return `${start}<path d="M48 19h24l7 13-10 48H51L41 32l7-13Z" fill="${colour}" stroke="${outline}" stroke-width="3" stroke-linejoin="round"/><path d="M48 19 60 8l12 11" fill="${colour}" stroke="${outline}" stroke-width="3" stroke-linejoin="round"/><path d="M50 33h20" stroke="rgba(255,255,255,.58)" stroke-width="5" stroke-linecap="round"/><path d="M72 28h13l-7 24" fill="none" stroke="${outline}" stroke-width="3" stroke-linejoin="round"/><path d="m51 80 9 11 9-11Z" fill="#d9d9d3" stroke="${outline}" stroke-width="3" stroke-linejoin="round"/><path d="M60 91v3" stroke="${outline}" stroke-width="4" stroke-linecap="round"/></svg>`;
+  return `${start}<path d="M21 45h75v29H21z" fill="${colour}" stroke="${outline}" stroke-width="3"/><path d="M35 45 47 31h28l12 14" fill="${colour}" stroke="${outline}" stroke-width="3"/><circle cx="38" cy="76" r="10" fill="#f7f7f2" stroke="${outline}" stroke-width="3"/><circle cx="80" cy="76" r="10" fill="#f7f7f2" stroke="${outline}" stroke-width="3"/><path d="M51 38h18" stroke="${shine}" stroke-width="5" stroke-linecap="round"/></svg>${end}`;
 }
 
 const weatherClothesRounds = [
@@ -425,30 +481,39 @@ export function createWorldRuntime({ state, currentTopic, currentBook, currentLe
       state.worldColourRoundIndex = 0;
       state.worldColourPickedId = "";
       state.worldColourResult = "";
+      state.worldColourChoiceIds = [];
       state.worldFavouriteColourId = "purple";
       state.worldUnfavouriteColourId = "black";
+    }
+    const targetId = state.worldColourRoundIds[state.worldColourRoundIndex];
+    const expectedChoiceCount = Math.min(4, items.length);
+    const hasMatchingChoices =
+      state.worldColourChoiceIds?.length === expectedChoiceCount &&
+      state.worldColourChoiceIds.includes(targetId) &&
+      state.worldColourChoiceIds.every((id) => items.some((item) => item.id === id));
+    if (!hasMatchingChoices) {
+      state.worldColourChoiceIds = shuffled([
+        targetId,
+        ...shuffled(items.map((item) => item.id).filter((id) => id !== targetId)).slice(0, expectedChoiceCount - 1)
+      ]);
     }
   }
 
   function resetColourMission() {
     const items = colourItems();
-    const count = Math.min(6, items.length);
-    const targetItemId = nextRandomCycleId(state, "colours-mission-target", items.map((item) => item.id));
-    const targetItem = items.find((item) => item.id === targetItemId);
-    const cards = shuffled([
-      targetItem,
-      ...shuffled(items.filter((item) => item.id !== targetItemId)).slice(0, count - 1)
-    ].filter(Boolean));
-    state.worldColourMissionCards = cards.map((item) => ({ objectId: item.id, colourId: item.id }));
-    state.worldColourMissionTargetObjectId = targetItemId;
+    const objects = shuffled(colourMissionObjects).slice(0, 6);
+    const colours = shuffled(items).slice(0, 6);
+    state.worldColourMissionCards = shuffled(objects.map((object, index) => ({ objectId: object.id, colourId: colours[index].id })));
+    state.worldColourMissionTargetObjectId = state.worldColourMissionCards[Math.floor(Math.random() * state.worldColourMissionCards.length)].objectId;
     state.worldColourMissionPickedObjectId = "";
     state.worldColourMissionResult = "";
   }
 
   function ensureColourMission() {
     const items = colourItems();
-    const expectedCount = Math.min(6, items.length);
-    if (!state.worldColourMissionCards?.length || state.worldColourMissionCards.length !== expectedCount || state.worldColourMissionCards.some((card) => !items.some((item) => item.id === card.colourId))) resetColourMission();
+    const hasValidCards = state.worldColourMissionCards?.length === 6 &&
+      state.worldColourMissionCards.every((card) => colourMissionObjects.some((object) => object.id === card.objectId) && items.some((item) => item.id === card.colourId));
+    if (!hasValidCards) resetColourMission();
   }
 
   function currentColourPracticeItem() {
@@ -462,50 +527,84 @@ export function createWorldRuntime({ state, currentTopic, currentBook, currentLe
     ensureColourPractice();
     const items = colourItems();
     const target = currentColourPracticeItem();
-    const choices = shuffled([target, ...shuffled(items.filter((item) => item.id !== target.id)).slice(0, 3)]);
+    const choices = state.worldColourChoiceIds
+      .map((id) => items.find((item) => item.id === id))
+      .filter(Boolean);
     const favourite = items.find((item) => item.id === state.worldFavouriteColourId) ?? items[0];
     const unfavourite = items.find((item) => item.id === state.worldUnfavouriteColourId) ?? items[0];
+    const answerFeedback = state.worldColourPickedId && state.worldColourResult === "correct" ? target.phrase : "&nbsp;";
     ensureColourMission();
     const missionCards = state.worldColourMissionCards;
     const missionTargetCard = missionCards.find((card) => card.objectId === state.worldColourMissionTargetObjectId) ?? missionCards[0];
-    const missionTargetItem = items.find((item) => item.id === missionTargetCard.objectId);
-    const missionPrompt = missionTargetItem.phraseAudio;
+    const missionTargetObject = colourMissionObjects.find((object) => object.id === missionTargetCard.objectId);
+    const missionTargetColour = items.find((item) => item.id === missionTargetCard.colourId);
+    const missionPrompt = `${missionTargetColour.hanzi}的${missionTargetObject.hanzi}`;
+    const missionPromptPinyin = `${missionTargetColour.pinyin} de ${missionTargetObject.pinyin}.`;
+    const missionPickedCard = missionCards.find((card) => card.objectId === state.worldColourMissionPickedObjectId);
+    const missionPickedObject = colourMissionObjects.find((object) => object.id === missionPickedCard?.objectId);
+    const missionPickedColour = items.find((item) => item.id === missionPickedCard?.colourId);
+    const missionPickedSentence = missionPickedColour && missionPickedObject ? `${missionPickedColour.hanzi}的${missionPickedObject.hanzi}` : missionPrompt;
+    const missionPickedPinyin = missionPickedColour && missionPickedObject ? `${missionPickedColour.pinyin} de ${missionPickedObject.pinyin}.` : missionPromptPinyin;
+    const missionFeedback = !state.worldColourMissionPickedObjectId
+      ? "&nbsp;"
+      : state.worldColourMissionResult === "correct"
+        ? `<span class="world-colour-mission-sentence">${missionPickedSentence}。</span>${state.showPinyin ? `<span class="world-colour-mission-pinyin">${missionPickedPinyin}</span>` : ""}`
+        : "Not that one. Listen again and try another picture.";
+    const playMissionPrompt = (colour, object) => {
+      const promptPrefix = missionPromptPrefixByColour.get(colour.id);
+      if (state.tapAudioEnabled && promptPrefix) {
+        speak(`找一找，${colour.hanzi}的${object.hanzi}`, 0.78, {
+          sourcePolicy: "recorded-only",
+          recordedTexts: [promptPrefix, object.hanzi],
+          recordedBoundarySilenceMs: 0
+        });
+      }
+    };
     activityPanelTitle.textContent = "Let's practice";
     activityPanelSummary.textContent = "Listen carefully, find the right colour-and-object pair, then practise complete Chinese descriptions.";
     activityList.className = "support-list";
     activityList.innerHTML = `
       <section class="practice-split-card world-colour-mission">
         <div class="numbers-game-top"><div><p class="body-match-kicker">Colour mission</p><h4>Listen and find the object</h4></div><button class="small-button is-play-button" type="button" data-world-mission-play>Play</button></div>
-        ${state.worldColourMissionPickedObjectId ? `<p class="greetings-game-feedback">${state.worldColourMissionResult === "correct" ? `Great! ${missionPrompt}.` : "Not that one. Listen again and try another picture."}</p>` : ""}
-        <div class="world-colour-mission-grid">${missionCards.map((card) => { const item = items.find((entry) => entry.id === card.objectId); const selected = state.worldColourMissionPickedObjectId === card.objectId; const resultClass = selected ? ` is-${state.worldColourMissionResult}` : ""; return `<button class="world-colour-mission-card${resultClass}" type="button" data-world-mission-pick="${card.objectId}"><span class="world-colour-mission-art"><img src="${item.imagePath}" alt="${item.imageAlt}" /></span><span class="world-colour-mission-label">${state.showEnglish ? item.phraseEnglish : ""}</span></button>`; }).join("")}</div>
+        <p class="greetings-game-feedback world-colour-mission-feedback${state.worldColourMissionPickedObjectId ? "" : " is-placeholder"}">${missionFeedback}</p>
+        <div class="world-colour-mission-grid">${missionCards.map((card) => { const object = colourMissionObjects.find((item) => item.id === card.objectId); const colour = items.find((item) => item.id === card.colourId); const selected = state.worldColourMissionPickedObjectId === card.objectId; const resultClass = selected ? ` is-${state.worldColourMissionResult}` : ""; const mark = selected ? `<span class="answer-result-mark" aria-hidden="true">${state.worldColourMissionResult === "correct" ? "✓" : "×"}</span>` : ""; return `<button class="world-colour-mission-card${resultClass}" type="button" data-world-mission-pick="${card.objectId}">${mark}<span class="world-colour-mission-art">${missionObjectMarkup(object.id, colourSwatches[colour.id])}</span><span class="world-colour-mission-label">${state.showEnglish ? object.english : ""}</span></button>`; }).join("")}</div>
       </section>
       <section class="clothes-quiz-shell world-colour-picture-practice">
         <div class="numbers-game-top"><div><p class="body-match-kicker">Picture and phrase</p><p class="numbers-game-note">Look at the picture. Which complete Chinese phrase matches it?</p></div><button class="small-button is-practice-advance-button" type="button" data-world-colour-new aria-label="Start a new game">New game</button></div>
         <figure class="clothes-quiz-visual"><img class="clothes-quiz-image" src="${target.imagePath}" alt="${target.imageAlt}" /></figure>
+        <p class="world-colour-answer-feedback${state.worldColourPickedId && state.worldColourResult === "correct" ? "" : " is-placeholder"}">${answerFeedback}</p>
         <div class="clothes-quiz-options">${choices.map((item) => { const selected = state.worldColourPickedId === item.id; const resultClass = selected ? ` is-${state.worldColourResult}` : ""; const mark = selected ? `<span class="answer-result-mark" aria-hidden="true">${state.worldColourResult === "correct" ? "✓" : "×"}</span>` : ""; return `<button class="clothes-quiz-option${resultClass}" type="button" data-world-colour-guess="${item.id}">${mark}<span class="numbers-game-hanzi">${item.phrase}</span>${state.showPinyin ? `<span class="numbers-game-pinyin">${item.phrasePinyin}</span>` : ""}${state.showEnglish ? `<span class="numbers-game-english">${item.phraseEnglish}</span>` : ""}</button>`; }).join("")}</div>
       </section>
       <section class="practice-split-card world-favourite-colour-practice"><div class="numbers-game-top"><div><p class="body-match-kicker">My favourite colour</p><p class="numbers-game-note">Choose your favourite colour, then listen and say the sentence.</p></div><button class="small-button is-play-button" type="button" data-world-favourite-play>Play</button></div><div class="world-favourite-colour-options">${items.map((item) => `<button class="small-button${item.id === favourite.id ? " is-action-button" : ""}" type="button" data-world-favourite="${item.id}">${item.hanzi}</button>`).join("")}</div><p class="world-favourite-sentence">我喜欢${favourite.hanzi}。${state.showPinyin ? `<span>wǒ xǐ huan ${favourite.pinyin}.</span>` : ""}${state.showEnglish ? `<span>I like ${favourite.english}.</span>` : ""}</p></section>
       ${!state.lessonScope || state.lessonScope.bookId === "2a" ? `<section class="practice-split-card world-favourite-colour-practice"><div class="numbers-game-top"><div><p class="body-match-kicker">A colour I don't like</p><p class="numbers-game-note">Choose a colour, then listen and say the sentence.</p></div><button class="small-button is-play-button" type="button" data-world-unfavourite-play>Play</button></div><div class="world-favourite-colour-options">${items.map((item) => `<button class="small-button${item.id === unfavourite.id ? " is-action-button" : ""}" type="button" data-world-unfavourite="${item.id}">${item.hanzi}</button>`).join("")}</div><p class="world-favourite-sentence">我不喜欢${unfavourite.hanzi}。${state.showPinyin ? `<span>wǒ bù xǐ huan ${unfavourite.pinyin}.</span>` : ""}${state.showEnglish ? `<span>I do not like ${unfavourite.english}.</span>` : ""}</p></section>` : ""}
     `;
-    activityList.querySelector("[data-world-mission-play]")?.addEventListener("click", () => {
-      if (state.tapAudioEnabled) speak(missionPrompt, 0.78, { sourcePolicy: "recorded-only" });
-    });
-    activityList.querySelectorAll("[data-world-mission-pick]").forEach((button) => button.addEventListener("click", () => {
-      state.worldColourMissionPickedObjectId = button.dataset.worldMissionPick;
-      state.worldColourMissionResult = button.dataset.worldMissionPick === missionTargetObject.id ? "correct" : "wrong";
-      if (state.worldColourMissionResult === "correct") {
-        if (state.tapAudioEnabled) speak(missionPrompt, 0.78, { sourcePolicy: "recorded-only" });
-        window.setTimeout(() => { resetColourMission(); renderActivityPanel(currentTopic()); }, 1100);
-      }
-      renderActivityPanel(currentTopic());
-    }));
     activityList.querySelector("[data-world-colour-new]")?.addEventListener("click", () => {
       advanceShuffledOrder(state, "worldColourRoundIds", "worldColourRoundIndex", shuffled);
       state.worldColourPickedId = "";
       state.worldColourResult = "";
+      state.worldColourChoiceIds = [];
       renderActivityPanel(currentTopic());
     });
+    activityList.querySelector("[data-world-mission-play]")?.addEventListener("click", () => {
+      if (state.worldColourMissionPickedObjectId) {
+        resetColourMission();
+        renderActivityPanel(currentTopic());
+        const nextCard = state.worldColourMissionCards.find((card) => card.objectId === state.worldColourMissionTargetObjectId);
+        const nextObject = colourMissionObjects.find((object) => object.id === nextCard?.objectId);
+        const nextColour = items.find((item) => item.id === nextCard?.colourId);
+        if (nextObject && nextColour) playMissionPrompt(nextColour, nextObject);
+        return;
+      }
+      playMissionPrompt(missionTargetColour, missionTargetObject);
+    });
+    activityList.querySelectorAll("[data-world-mission-pick]").forEach((button) => button.addEventListener("click", () => {
+      if (state.worldColourMissionPickedObjectId) return;
+      state.worldColourMissionPickedObjectId = button.dataset.worldMissionPick;
+      state.worldColourMissionResult = button.dataset.worldMissionPick === missionTargetObject.id ? "correct" : "wrong";
+      renderActivityPanel(currentTopic());
+    }));
     activityList.querySelectorAll("[data-world-colour-guess]").forEach((button) => button.addEventListener("click", () => {
+      if (state.worldColourPickedId) return;
       state.worldColourPickedId = button.dataset.worldColourGuess;
       state.worldColourResult = button.dataset.worldColourGuess === target.id ? "correct" : "wrong";
       if (state.worldColourResult === "correct" && state.tapAudioEnabled) speak(target.phraseAudio, 0.78, { sourcePolicy: "recorded-only" });

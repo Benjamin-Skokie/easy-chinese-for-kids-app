@@ -4,6 +4,7 @@ import { existsSync, readFileSync, readdirSync, statSync } from "node:fs";
 import { join, normalize } from "node:path";
 import test from "node:test";
 import { audioSourcePolicies, createAudioService } from "../src/core/audio.js";
+import { recordedAudioBoundaryIds, recordedAudioPlaybackWindow } from "../src/core/recorded-audio-boundaries.js";
 import { recordedLearnAudioPath } from "../src/core/recorded-audio.js";
 import { learnAudioEntries } from "../src/data/learn-audio-manifest.js";
 import { recordedLearnAudioIds } from "../src/data/learn-recorded-audio.js";
@@ -591,6 +592,21 @@ test("recorded Learn audio resolves punctuation-only text variants", () => {
   assert.equal(recordedLearnAudioPath("书在书包里"), recordedLearnAudioPath("书在书包里。"));
 });
 
+test("recorded Learn audio uses conservative single-clip and tighter sequence silence windows", () => {
+  const broccoli = "assets/audio/learn/cd75fd2c0ac1.mp3";
+  const standaloneWindow = recordedAudioPlaybackWindow(broccoli, 100);
+  const sequenceWindow = recordedAudioPlaybackWindow(broccoli, 60);
+  assert.ok(standaloneWindow.startOffsetMs >= 0 && standaloneWindow.endOffsetMs >= 0);
+  assert.ok(sequenceWindow.startOffsetMs > standaloneWindow.startOffsetMs);
+  assert.ok(sequenceWindow.endOffsetMs > standaloneWindow.endOffsetMs);
+  assert.equal(recordedAudioPlaybackWindow("assets/audio/learn/not-a-recording.mp3", 100), null);
+});
+
+test("every recorded Learn clip has a measured silence boundary", () => {
+  assert.ok(recordedAudioBoundaryIds.size >= recordedLearnAudioIds.size);
+  for (const id of recordedLearnAudioIds) assert.ok(recordedAudioBoundaryIds.has(id), `missing measured boundary for ${id}`);
+});
+
 test("tappable scene lines and weekday cards have recorded audio", () => {
   const stationeryLines = stationeryTopicData.sceneGroups
     .flatMap((group) => group.items)
@@ -836,6 +852,7 @@ test("browser-first policy uses recorded fallback when the developer system-voic
 test("recorded-only policy can compose an authored sequence without browser speech", async () => {
   const recordings = [];
   const spoken = [];
+  const boundaryWindows = [];
   const audio = createAudioService({
     synthesis: { cancel() {}, speak: (utterance) => spoken.push(utterance.text) },
     createUtterance: (text) => ({ text }),
@@ -851,13 +868,18 @@ test("recorded-only policy can compose an authored sequence without browser spee
       return recording;
     },
     getRecordedAudioPath: (text) => `${text}.mp3`,
+    getRecordedAudioPlaybackWindow: (source, retainedBoundarySilenceMs) => {
+      boundaryWindows.push({ source, retainedBoundarySilenceMs });
+      return null;
+    },
     getSceneRate: () => 0.64,
     getSceneLinePauseMs: () => 280
   });
 
   audio.speak("教室里有书架", 0.78, {
     sourcePolicy: audioSourcePolicies.recordedOnly,
-    recordedTexts: ["教室里有", "书架"]
+    recordedTexts: ["教室里有", "书架"],
+    recordedBoundarySilenceMs: 0
   });
   await Promise.resolve();
   assert.equal(recordings[0].source, "教室里有.mp3");
@@ -868,6 +890,10 @@ test("recorded-only policy can compose an authored sequence without browser spee
   recordings[1].recording.onended();
   await Promise.resolve();
   assert.deepEqual(spoken, []);
+  assert.deepEqual(boundaryWindows, [
+    { source: "教室里有.mp3", retainedBoundarySilenceMs: 0 },
+    { source: "书架.mp3", retainedBoundarySilenceMs: 0 }
+  ]);
 });
 
 test("reported deterministic and dynamic exercises declare their audio policies", () => {
@@ -1801,6 +1827,51 @@ test("colours covers both book colour sets with pictured examples", () => {
   assert(colourLessons["2a"].items.every((item) => item.imagePath));
 });
 
+test("Colour picture practice keeps its answer and feedback fixed until New game", () => {
+  const worldRuntimeSource = readFileSync("src/features/world/world-runtime.js", "utf8");
+  const stylesSource = readFileSync("styles.css", "utf8");
+  assert.match(worldRuntimeSource, /world-colour-answer-feedback\$\{state\.worldColourPickedId/);
+  assert.match(worldRuntimeSource, /if \(state\.worldColourPickedId\) return;/);
+  assert.match(worldRuntimeSource, /data-world-colour-new/);
+  assert.doesNotMatch(worldRuntimeSource, /data-world-mission-new/);
+  assert.match(stylesSource, /\.world-colour-answer-feedback \{[\s\S]*min-height: 2\.7rem;/);
+});
+
+test("Colours keeps answer positions fixed until its New game control advances the round", () => {
+  const worldRuntimeSource = readFileSync("src/features/world/world-runtime.js", "utf8");
+  assert.match(worldRuntimeSource, /state\.worldColourChoiceIds = shuffled/);
+  assert.match(worldRuntimeSource, /const choices = state\.worldColourChoiceIds/);
+  assert.match(worldRuntimeSource, /data-world-colour-new[\s\S]{0,500}state\.worldColourChoiceIds = \[\]/);
+  assert.doesNotMatch(worldRuntimeSource, /const choices = shuffled\(\[target/);
+});
+
+test("Colour Mission retains its original coloured everyday-object game", () => {
+  const worldRuntimeSource = readFileSync("src/features/world/world-runtime.js", "utf8");
+  assert.match(worldRuntimeSource, /const colourMissionObjects = \[/);
+  assert.match(worldRuntimeSource, /missionObjectMarkup\(objectId, colour\)/);
+  assert.match(worldRuntimeSource, /Listen and find the object/);
+  assert.match(worldRuntimeSource, /data-world-mission-play>Play</);
+  assert.match(worldRuntimeSource, /data-world-mission-pick/);
+  assert.doesNotMatch(worldRuntimeSource, /Every round mixes the object colours and their positions/);
+  assert.match(worldRuntimeSource, /world-colour-mission-sentence/);
+  assert.match(worldRuntimeSource, /world-colour-mission-pinyin/);
+  assert.match(worldRuntimeSource, /colourMissionAudioSegments = \[/);
+  assert.match(worldRuntimeSource, /playMissionPrompt[\s\S]{0,400}sourcePolicy: "recorded-only"/);
+  assert.match(worldRuntimeSource, /recordedTexts: \[promptPrefix, object\.hanzi\]/);
+  assert.match(worldRuntimeSource, /recordedBoundarySilenceMs: 0/);
+  for (const text of ["找一找，粉红色的", "找一找，黑色的", "气球", "风筝", "杯子", "积木", "笔"]) {
+    assert.ok(recordedLearnAudioPath(text), `missing Colour Mission recording: ${text}`);
+  }
+  assert.match(worldRuntimeSource, /if \(state\.worldColourMissionPickedObjectId\) return;/);
+  assert.doesNotMatch(worldRuntimeSource, /data-world-mission-new/);
+});
+
+test("Colours uses a compact contained square image for its picture-and-phrase prompt", () => {
+  const stylesSource = readFileSync("styles.css", "utf8");
+  assert.match(stylesSource, /\.world-colour-picture-practice \.clothes-quiz-visual \{[\s\S]*width: min\(100%, 20rem\);[\s\S]*aspect-ratio: 1;/);
+  assert.match(stylesSource, /\.world-colour-picture-practice \.clothes-quiz-image \{[\s\S]*padding: 1rem;/);
+});
+
 test("the Colours topic defaults to the complete nine-colour set", () => {
   const runtime = createWorldRuntime({
     state: {},
@@ -1854,10 +1925,12 @@ test("the Colours practice uses concise randomized authored phrase cards", () =>
   });
 
   runtime.renderWorldPractice(coloursTopic);
-  assert.match(activityList.innerHTML, /Colour mission/);
-  assert.match(activityList.innerHTML, /data-world-mission-pick/);
+  assert.match(activityList.innerHTML, /Picture and phrase/);
+  assert.match(activityList.innerHTML, /data-world-colour-guess/);
   assert.match(activityList.innerHTML, /assets\/illustrated-colors\//);
+  assert.match(activityList.innerHTML, /Colour mission/);
   assert.doesNotMatch(activityList.innerHTML, /Every round mixes the object colours and their positions/);
+  assert.match(activityList.innerHTML, /data-world-mission-pick/);
   assert.doesNotMatch(activityList.innerHTML, /Find something orange/);
   assert.doesNotMatch(activityList.innerHTML, /Next mission/);
 });
