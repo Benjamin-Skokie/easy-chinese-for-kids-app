@@ -1,5 +1,5 @@
 import { pinyinBuildTasks, pinyinChapterGroups, pinyinUnits } from "./pinyin-course.js";
-import { pinyinBasicsAudioId, pinyinBasicsAudioPath } from "./pinyin-audio-manifest.js";
+import { pinyinAudioId, pinyinAudioPath, pinyinCompoundFinalAudioClip, pinyinInitialAudioClip, pinyinNasalFinalAudioClip } from "./pinyin-audio-manifest.js";
 import { nextRandomCycleId } from "../../core/random-cycle.js";
 
 const basicToneRounds = [
@@ -25,7 +25,7 @@ export function createPinyinRuntime({ state, focusExplorer, activityPanelTitle, 
   let playbackSequence = 0;
 
   function audioAttributes(text, pinyin = text, explicitId = "") {
-    const id = explicitId || pinyinBasicsAudioId(text, pinyin);
+    const id = explicitId || pinyinAudioId(text, pinyin);
     return `data-pinyin-audio="${text}"${id ? ` data-pinyin-audio-id="${id}"` : ""}`;
   }
 
@@ -52,9 +52,9 @@ export function createPinyinRuntime({ state, focusExplorer, activityPanelTitle, 
   }
 
   function playRecording(id, fallbackText, sequence = ++playbackSequence) {
-    const source = pinyinBasicsAudioPath(id);
+    const source = pinyinAudioPath(id);
     if (!source || typeof Audio === "undefined") {
-      speak?.(fallbackText, 0.58);
+      console.warn(`Pinyin recording unavailable: ${id || fallbackText}`);
       return Promise.resolve(false);
     }
     stopRecording();
@@ -72,13 +72,13 @@ export function createPinyinRuntime({ state, focusExplorer, activityPanelTitle, 
       audio.addEventListener("error", () => {
         if (activeRecording !== recording) return;
         activeRecording = null;
-        speak?.(fallbackText, 0.58);
+        console.warn(`Pinyin recording failed to load: ${id}`);
         resolve(false);
       }, { once: true });
       audio.play().catch(() => {
         if (activeRecording !== recording) return;
         activeRecording = null;
-        speak?.(fallbackText, 0.58);
+        console.warn(`Pinyin recording could not play: ${id}`);
         resolve(false);
       });
     });
@@ -121,8 +121,18 @@ export function createPinyinRuntime({ state, focusExplorer, activityPanelTitle, 
     if (unit.id === "spelling-rules") return spellingRulesCardMarkup(unit);
     const examples = unit.examples ?? [{ sound: unit.sounds[0], words: [[unit.example, unit.reading]] }];
     const definition = ([3, 9, 11, 12].includes(unit.number) || unit.groupId === "reading") ? `<p class="pinyin-chapter-definition">${unit.note}</p>` : "";
-    const sounds = unit.id === "blending-tones" ? "" : `<section><div class="pinyin-ready-sounds pinyin-basic-sound-row pinyin-chapter-sound-row pinyin-sound-count-${unit.sounds.length}">${unit.sounds.map((sound, index) => soundChipMarkup(sound, unit.listenTargets[index] ?? sound)).join("")}</div></section>`;
-    return `<section class="pinyin-chapter-card pinyin-standard-chapter-card pinyin-unit-${unit.id}"><header class="pinyin-chapter-heading"><p class="body-match-kicker">第 ${unit.number} 章 · Chapter ${unit.number}</p><h4>${unit.title}</h4><p class="pinyin-chapter-english">${unit.englishTitle}</p>${playAllButton(unit.listenTargets)}</header>${definition}<div class="pinyin-chapter-card-body">${sounds}<section class="pinyin-basic-examples pinyin-chapter-examples">${examples.map((item) => `<div><strong>${item.sound}</strong>${item.words.map(([hanzi, pinyin]) => wordAudioMarkup(hanzi, pinyin)).join("")}</div>`).join("")}</section></div>${chapterPracticeMarkup(unit, examples)}</section>`;
+    const listenPairs = examples.map((example, index) => example.words[0] ?? [unit.listenTargets[index] ?? example.sound, example.sound]);
+    const lessonSoundClips = unit.groupId === "initials"
+      ? unit.sounds.map((sound) => pinyinInitialAudioClip(sound))
+      : unit.id === "compound-one" || unit.id === "compound-two"
+        ? unit.sounds.map((sound) => pinyinCompoundFinalAudioClip(sound))
+        : unit.id === "front-nasal" || unit.id === "back-nasal"
+          ? unit.sounds.map((sound) => pinyinNasalFinalAudioClip(sound))
+        : [];
+    const sounds = unit.id === "blending-tones" ? "" : `<section><div class="pinyin-ready-sounds pinyin-basic-sound-row pinyin-chapter-sound-row pinyin-sound-count-${unit.sounds.length}">${unit.sounds.map((sound, index) => { const lessonSoundClip = lessonSoundClips[index]; const [text, pinyin] = listenPairs[index] ?? [sound, sound]; return soundChipMarkup(sound, lessonSoundClip?.ttsInput ?? text, lessonSoundClip?.id ?? pinyinAudioId(text, pinyin)); }).join("")}</div></section>`;
+    const playAllTexts = lessonSoundClips.length ? lessonSoundClips.map((clip) => clip.ttsInput) : listenPairs.map(([text]) => text);
+    const playAllIds = lessonSoundClips.length ? lessonSoundClips.map((clip) => clip.id) : listenPairs.map(([text, pinyin]) => pinyinAudioId(text, pinyin));
+    return `<section class="pinyin-chapter-card pinyin-standard-chapter-card pinyin-unit-${unit.id}"><header class="pinyin-chapter-heading"><p class="body-match-kicker">第 ${unit.number} 章 · Chapter ${unit.number}</p><h4>${unit.title}</h4><p class="pinyin-chapter-english">${unit.englishTitle}</p>${playAllButton(playAllTexts, playAllIds)}</header>${definition}<div class="pinyin-chapter-card-body">${sounds}<section class="pinyin-basic-examples pinyin-chapter-examples">${examples.map((item) => `<div><strong>${item.sound}</strong>${item.words.map(([hanzi, pinyin]) => wordAudioMarkup(hanzi, pinyin)).join("")}</div>`).join("")}</section></div>${chapterPracticeMarkup(unit, examples)}</section>`;
   }
 
   function spellingRulesCardMarkup(unit) {
@@ -160,7 +170,7 @@ export function createPinyinRuntime({ state, focusExplorer, activityPanelTitle, 
       ["mǎ", "马", "dip, then rise", "M6 9 L15 12 L40 34 L64 14", "57,9 76,3 69,21"],
       ["mà", "骂", "falling", "M6 6 L25 12 L44 20 L63 29", "59,36 76,36 67,22"]
     ];
-    return `<section class="pinyin-chapter-card pinyin-tone-chapter-card"><header class="pinyin-chapter-heading"><p class="body-match-kicker">第 1 章 · Chapter 1</p><h4>四声</h4><p class="pinyin-chapter-english">Four tones</p>${playAllButton(tones.map(([, hanzi]) => hanzi), tones.map(([pinyin, hanzi]) => pinyinBasicsAudioId(hanzi, pinyin)))}</header><p class="pinyin-chapter-definition">A tone is the pitch pattern of one syllable. With <b>ma</b>, changing that pattern makes four different words: <b>mā</b>, <b>má</b>, <b>mǎ</b>, and <b>mà</b>.</p><div class="pinyin-tone-row">${tones.map(([pinyin, hanzi, movement, line, head]) => `<button type="button" ${audioAttributes(hanzi, pinyin)} aria-label="Play ${pinyin}, ${hanzi}"><strong>${pinyin}</strong><svg class="pinyin-tone-contour" viewBox="0 0 80 38" aria-hidden="true"><path d="${line}" /><polygon points="${head}" /></svg><b>${hanzi}</b><small>${movement}</small></button>`).join("")}</div></section>`;
+    return `<section class="pinyin-chapter-card pinyin-tone-chapter-card"><header class="pinyin-chapter-heading"><p class="body-match-kicker">第 1 章 · Chapter 1</p><h4>四声</h4><p class="pinyin-chapter-english">Four tones</p>${playAllButton(tones.map(([, hanzi]) => hanzi), tones.map(([pinyin, hanzi]) => pinyinAudioId(hanzi, pinyin)))}</header><p class="pinyin-chapter-definition">A tone is the pitch pattern of one syllable. With <b>ma</b>, changing that pattern makes four different words: <b>mā</b>, <b>má</b>, <b>mǎ</b>, and <b>mà</b>.</p><div class="pinyin-tone-row">${tones.map(([pinyin, hanzi, movement, line, head]) => `<button type="button" ${audioAttributes(hanzi, pinyin)} aria-label="Play ${pinyin}, ${hanzi}"><strong>${pinyin}</strong><svg class="pinyin-tone-contour" viewBox="0 0 80 38" aria-hidden="true"><path d="${line}" /><polygon points="${head}" /></svg><b>${hanzi}</b><small>${movement}</small></button>`).join("")}</div></section>`;
   }
 
   function basicPracticeMarkup(kind) {
@@ -207,7 +217,7 @@ export function createPinyinRuntime({ state, focusExplorer, activityPanelTitle, 
       }
       renderPinyinExplorer();
       const round = rounds[nextIndex];
-      const id = pinyinBasicsAudioId(round.audio, round.pinyin);
+      const id = pinyinAudioId(round.audio, round.pinyin);
       if (id) playRecording(id, round.audio);
       else speak?.(round.audio, 0.52);
     }));
@@ -232,7 +242,10 @@ export function createPinyinRuntime({ state, focusExplorer, activityPanelTitle, 
       state.pinyinChapterPracticeChoices = { ...(state.pinyinChapterPracticeChoices ?? {}), [unit.id]: "" };
       state.pinyinChapterPracticeResults = { ...(state.pinyinChapterPracticeResults ?? {}), [unit.id]: "" };
       renderPinyinExplorer();
-      speak?.(rounds[nextIndex].audio, 0.52);
+      const round = rounds[nextIndex];
+      const id = pinyinAudioId(round.audio, round.pinyin);
+      if (id) playRecording(id, round.audio);
+      else speak?.(round.audio, 0.52);
     }));
     focusExplorer.querySelectorAll("[data-pinyin-chapter-choice]").forEach((button) => button.addEventListener("click", () => {
       const unit = pinyinUnits.find((item) => item.id === button.dataset.pinyinChapterChoice);

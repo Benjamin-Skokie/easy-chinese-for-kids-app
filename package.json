@@ -9,7 +9,9 @@
     "audit:culture-rewrite": "node scripts/audit_culture_rewrite.mjs",
     "sync:culture-manuscripts": "node scripts/sync_culture_manuscripts.mjs",
     "validate:data": "node scripts/validate_learning_data.mjs",
-    "audio:pinyin-basics": "node --env-file=.env.local scripts/audio/generate-pinyin-basics.mjs",
+    "audio:pinyin": "node --env-file=.env.local scripts/audio/generate-pinyin-basics.mjs",
+    "audio:pinyin-basics": "node --env-file=.env.local scripts/audio/generate-pinyin-basics.mjs --chapters=1-2",
+    "audio:pinyin-initials": "node --env-file=.env.local scripts/audio/generate-pinyin-basics.mjs --chapters=3-8",
     "check:paths": "node scripts/check_relative_paths.mjs",
     "setup:hooks": "git config core.hooksPath .githooks",
     "check": "npm run check:paths && npm run validate:data && npm run build && npm test && node --check app.js && git diff --check"
