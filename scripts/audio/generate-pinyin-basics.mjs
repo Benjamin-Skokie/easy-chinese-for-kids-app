@@ -47,11 +47,13 @@ async function generate(clip) {
     return { status: "listed", bytes: 0 };
   }
 
-  const targetKind = clip.kind === "single-final" ? "single final" : clip.kind === "compound-final" ? "compound final" : clip.kind === "nasal-final" ? "nasal final" : clip.kind === "initial" ? "initial classroom call-sound" : "word";
+  const targetKind = clip.kind === "single-final" ? "single final" : clip.kind === "compound-final" ? "compound final" : clip.kind === "nasal-final" ? "nasal final" : clip.kind === "reading-syllable" ? "whole-syllable reading" : clip.kind === "initial" ? "initial classroom call-sound" : "word";
   const instructions = clip.kind === "initial"
     ? `Chinese Hanyu Pinyin lesson for young children. Use a gentle adult female teaching voice. The target initial is ${clip.text}. Its classroom call-sound is “${clip.pinyin}”. Say only “${clip.pinyin}” once in standard Mandarin: clear, crisp, steady first tone, with no held-out final vowel or trailing sound. Do not say the English letter name. Do not explain, spell, translate, or repeat it.`
     : clip.kind === "compound-final" || clip.kind === "nasal-final"
       ? `Chinese Hanyu Pinyin lesson for young children. Use a gentle adult female teaching voice. The target ${targetKind} is “${clip.text}”. Say only the final “${clip.pinyin}” once, clearly and smoothly in standard Mandarin, with a steady first-tone teaching contour. ${clip.context ? `Important: ${clip.context}. ` : ""}Do not say the anchor word, spell letters, explain, translate, or repeat it.`
+      : clip.kind === "reading-syllable"
+        ? `Chinese Hanyu Pinyin reading chart for young children. Use a gentle adult female teaching voice. Say only “${clip.pinyin}” once, clearly and smoothly in standard Mandarin. Keep a high, level first tone from start to finish. ${clip.context ? `Important: ${clip.context}. ` : ""}Do not say the anchor character, spell letters, explain, translate, or repeat it.`
     : `Chinese Pinyin lesson for children. Use a gentle adult female teaching voice. Say exactly one syllable: “${clip.pinyin}”, the ${targetKind} “${clip.text}”${clip.context ? `, ${clip.context}` : ""}. Say it once, clearly and slowly in standard Mandarin. Do not add words.`;
   const response = await fetch("https://api.openai.com/v1/audio/speech", {
     method: "POST",

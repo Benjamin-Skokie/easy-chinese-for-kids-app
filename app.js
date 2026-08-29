@@ -11350,7 +11350,7 @@
 
   // src/features/foundations/pinyin-audio-manifest.js
   var pinyinAudioBase = "assets/audio/pinyin";
-  var pinyinAudioVersion = "20260828-21";
+  var pinyinAudioVersion = "20260828-28";
   var reviewedBasicsClips = [
     { id: "final-a1", text: "\u0101", pinyin: "\u0101", ttsInput: "\u0101", kind: "single-final", context: "the first-tone a sound in \u554A; hold the vowel naturally" },
     { id: "final-o1", text: "\u014D", pinyin: "\u014D", kind: "single-final" },
@@ -11432,14 +11432,46 @@
     ["ing", "\u012Bng", "\u9E70"],
     ["ong", "\u014Dng", "\u014Dng"]
   ];
+  var readingSyllableAnchors = [
+    ["whole-zhchshr", "zhi", "zh\u012B", "\u77E5", 13],
+    ["whole-zhchshr", "chi", "ch\u012B", "ch\u012B", 13, "Use a firm, clean initial consonant and a steady tone; no wavering or vocal tremble."],
+    ["whole-zhchshr", "shi", "sh\u012B", "sh\u012B", 13, "Say only one clear, audible syllable with a steady first tone."],
+    ["whole-zhchshr", "ri", "r\u012B", "r\u012B", 13],
+    ["whole-zcs", "zi", "z\u012B", "\u8D44", 14],
+    ["whole-zcs", "ci", "c\u012B", "c\u012B", 14],
+    ["whole-zcs", "si", "s\u012B", "\u4E1D", 14],
+    ["whole-yiwu", "yi", "y\u012B", "\u4E00", 15],
+    ["whole-yiwu", "wu", "w\u016B", "\u5C4B", 15],
+    ["whole-yiwu", "yu", "y\u016B", "\u8FC2", 15],
+    ["whole-yiwu", "ye", "y\u0113", "\u8036", 15],
+    ["whole-yueyuan", "yue", "yu\u0113", "\u7EA6", 16],
+    ["whole-yueyuan", "yuan", "yu\u0101n", "\u51A4", 16],
+    ["whole-yueyuan", "yin", "y\u012Bn", "\u97F3", 16],
+    ["whole-yueyuan", "yun", "y\u016Bn", "y\u016Bn", 16],
+    ["whole-yueyuan", "ying", "y\u012Bng", "\u82F1", 16],
+    ["blending-tones", "b + a \u2192 ba", "b\u0101", "\u516B", 17],
+    ["blending-tones", "g + u + a \u2192 gua", "gu\u0101", "\u74DC", 17],
+    ["blending-tones", "x + i + ao \u2192 xiao", "xi\u0101o", "\u6D88", 17]
+  ];
   var wordPronunciationOverrides = /* @__PURE__ */ new Map([
     ["\u59B9\0m\xE8i", { ttsInput: "\u59D0\u59B9", context: "the single syllable \u59B9 m\xE8i, as in \u59D0\u59B9" }],
-    ["\u4F1A\0hu\xEC", { ttsInput: "\u5F00\u4F1A", context: "the single syllable \u4F1A hu\xEC, as in \u5F00\u4F1A" }],
-    ["\u522B\0bi\xE9", { ttsInput: "\u6C38\u522B", context: "the single syllable \u522B bi\xE9, as in \u6C38\u522B" }],
-    ["\u4ECA\0j\u012Bn", { ttsInput: "\u4ECA\u5929", context: "the single syllable \u4ECA j\u012Bn, as in \u4ECA\u5929" }],
-    ["\u95EE\0w\xE8n", { ttsInput: "\u63D0\u95EE", context: "the single syllable \u95EE w\xE8n, as in \u63D0\u95EE" }],
-    ["\u4E0A\0sh\xE0ng", { ttsInput: "\u4E0A\u6D77", context: "the single syllable \u4E0A sh\xE0ng, as in \u4E0A\u6D77" }],
-    ["\u4E1C\0d\u014Dng", { ttsInput: "\u4E1C\u5317", context: "the single syllable \u4E1C d\u014Dng, as in \u4E1C\u5317" }]
+    ["\u4F1A\0hu\xEC", { ttsInput: "\u4F1A", context: "the single syllable \u4F1A hu\xEC, as in \u5F00\u4F1A; say only hu\xEC" }],
+    ["\u522B\0bi\xE9", { ttsInput: "\u522B", context: "the single syllable \u522B bi\xE9, as in \u6C38\u522B; say only bi\xE9" }],
+    ["\u4ECA\0j\u012Bn", { ttsInput: "\u4ECA", context: "the single syllable \u4ECA j\u012Bn, as in \u4ECA\u5929; say only j\u012Bn" }],
+    ["\u95EE\0w\xE8n", { ttsInput: "\u95EE", context: "the single syllable \u95EE w\xE8n; say only w\xE8n, not the word \u63D0\u95EE" }],
+    ["\u4E0A\0sh\xE0ng", { ttsInput: "\u4E0A", context: "the single syllable \u4E0A sh\xE0ng, as in \u4E0A\u6D77; say only sh\xE0ng" }],
+    ["\u4E1C\0d\u014Dng", { ttsInput: "\u4E1C", context: "the single syllable \u4E1C d\u014Dng, as in \u4E1C\u5317; say only d\u014Dng" }],
+    ["\u5B50\0z\u01D0", { ttsInput: "\u5B50", context: "the single syllable \u5B50 z\u01D0, as in \u5B50\u5973; say only z\u01D0" }],
+    ["\u6905\0y\u01D0", { ttsInput: "\u6905", context: "the single syllable \u6905 y\u01D0, as in \u6905\u5B50; say only y\u01D0" }],
+    ["\u610F\0y\xEC", { ttsInput: "\u610F", context: "the single syllable \u610F y\xEC, as in \u60C5\u610F; say only y\xEC" }],
+    ["\u6708\0yu\xE8", { ttsInput: "\u6708", context: "the single syllable \u6708 yu\xE8, as in \u6708\u4EAE; say only yu\xE8 with a clear fourth tone" }],
+    ["\u8FDC\0yu\u01CEn", { ttsInput: "\u8FDC", context: "the single syllable \u8FDC yu\u01CEn; say only yu\u01CEn" }],
+    ["\u94F6\0y\xEDn", { ttsInput: "\u94F6", context: "the single syllable \u94F6 y\xEDn, as in \u91D1\u94F6; say only y\xEDn" }],
+    ["\u6655\0y\u016Bn", { ttsInput: "\u6655", context: "the single syllable \u6655 y\u016Bn, as in \u6655\u8F66; say only y\u016Bn" }],
+    ["\u5F71\0y\u01D0ng", { ttsInput: "\u5F71", context: "the single syllable \u5F71 y\u01D0ng, as in \u7535\u5F71; make the final -ing a clear back nasal sound; say only y\u01D0ng" }],
+    ["\u5C3A\0ch\u01D0", { ttsInput: "\u5C3A", context: "the single syllable \u5C3A ch\u01D0, as in \u5C3A\u5BF8; say only ch\u01D0" }],
+    ["\u8036\0y\u0113", { ttsInput: "\u8036", context: "the single syllable \u8036 y\u0113, as in \u8036\u7A23; say only y\u0113" }],
+    ["\u5BE1\0gu\u01CE", { ttsInput: "\u5BE1", context: "the single syllable \u5BE1 gu\u01CE, as in \u5BE1\u5987; use a complete third tone: dip low, then rise clearly before the sound ends; say only gu\u01CE" }]
   ]);
   var toneLetters = /* @__PURE__ */ new Map([
     ["\u0101", ["a", 1]],
@@ -11528,6 +11560,19 @@
       context: `say only the first-tone nasal final ${callSound}, clearly and without an initial consonant`
     });
   });
+  readingSyllableAnchors.forEach(([unitId, label, callSound, ttsInput, chapter, coaching]) => {
+    const id = `reading-${unitId}-${label.replace(/[^a-z]+/g, "-").replace(/^-|-$/g, "")}`;
+    clipMap.set(`reading\0${unitId}\0${label}`, {
+      id,
+      file: `reading/${id}.mp3`,
+      text: label,
+      pinyin: callSound,
+      ttsInput,
+      kind: "reading-syllable",
+      chapters: [chapter],
+      context: coaching ?? `the whole-syllable Pinyin reading ${callSound}; say it once in a high, level first tone`
+    });
+  });
   pinyinUnits.filter((unit) => unit.number >= 3 && unit.examples).forEach((unit) => {
     unit.examples.forEach((example) => {
       example.words.forEach(([text, pinyin]) => {
@@ -11571,6 +11616,9 @@
   }
   function pinyinNasalFinalAudioClip(final) {
     return clipsById.get(`nasal-final-${final.replace("\xFC", "v")}`);
+  }
+  function pinyinReadingSyllableAudioClip(unitId, label) {
+    return clipsById.get(`reading-${unitId}-${label.replace(/[^a-z]+/g, "-").replace(/^-|-$/g, "")}`);
   }
   function pinyinAudioPath(id) {
     const clip = clipsById.get(id);
@@ -11696,8 +11744,8 @@
       const examples = unit.examples ?? [{ sound: unit.sounds[0], words: [[unit.example, unit.reading]] }];
       const definition = [3, 9, 11, 12].includes(unit.number) || unit.groupId === "reading" ? `<p class="pinyin-chapter-definition">${unit.note}</p>` : "";
       const listenPairs = examples.map((example, index) => example.words[0] ?? [unit.listenTargets[index] ?? example.sound, example.sound]);
-      const lessonSoundClips = unit.groupId === "initials" ? unit.sounds.map((sound) => pinyinInitialAudioClip(sound)) : unit.id === "compound-one" || unit.id === "compound-two" ? unit.sounds.map((sound) => pinyinCompoundFinalAudioClip(sound)) : unit.id === "front-nasal" || unit.id === "back-nasal" ? unit.sounds.map((sound) => pinyinNasalFinalAudioClip(sound)) : [];
-      const sounds = unit.id === "blending-tones" ? "" : `<section><div class="pinyin-ready-sounds pinyin-basic-sound-row pinyin-chapter-sound-row pinyin-sound-count-${unit.sounds.length}">${unit.sounds.map((sound, index) => {
+      const lessonSoundClips = unit.groupId === "initials" ? unit.sounds.map((sound) => pinyinInitialAudioClip(sound)) : unit.id === "compound-one" || unit.id === "compound-two" ? unit.sounds.map((sound) => pinyinCompoundFinalAudioClip(sound)) : unit.id === "front-nasal" || unit.id === "back-nasal" ? unit.sounds.map((sound) => pinyinNasalFinalAudioClip(sound)) : unit.groupId === "reading" ? unit.sounds.map((sound) => pinyinReadingSyllableAudioClip(unit.id, sound)) : [];
+      const sounds = `<section><div class="pinyin-ready-sounds pinyin-basic-sound-row pinyin-chapter-sound-row pinyin-sound-count-${unit.sounds.length}">${unit.sounds.map((sound, index) => {
         const lessonSoundClip = lessonSoundClips[index];
         const [text, pinyin] = listenPairs[index] ?? [sound, sound];
         return soundChipMarkup(sound, lessonSoundClip?.ttsInput ?? text, lessonSoundClip?.id ?? pinyinAudioId(text, pinyin));

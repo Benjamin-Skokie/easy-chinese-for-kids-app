@@ -1,7 +1,7 @@
 import { pinyinUnits } from "./pinyin-course.js";
 
 export const pinyinAudioBase = "assets/audio/pinyin";
-export const pinyinAudioVersion = "20260828-21";
+export const pinyinAudioVersion = "20260828-28";
 
 const reviewedBasicsClips = [
   { id: "final-a1", text: "ā", pinyin: "ā", ttsInput: "ā", kind: "single-final", context: "the first-tone a sound in 啊; hold the vowel naturally" },
@@ -67,14 +67,36 @@ const nasalFinalAnchors = [
   ["ang", "āng", "肮"], ["eng", "ēng", "ēng"], ["ing", "īng", "鹰"], ["ong", "ōng", "ōng"]
 ];
 
+const readingSyllableAnchors = [
+  ["whole-zhchshr", "zhi", "zhī", "知", 13],
+  ["whole-zhchshr", "chi", "chī", "chī", 13, "Use a firm, clean initial consonant and a steady tone; no wavering or vocal tremble."],
+  ["whole-zhchshr", "shi", "shī", "shī", 13, "Say only one clear, audible syllable with a steady first tone."],
+  ["whole-zhchshr", "ri", "rī", "rī", 13],
+  ["whole-zcs", "zi", "zī", "资", 14], ["whole-zcs", "ci", "cī", "cī", 14], ["whole-zcs", "si", "sī", "丝", 14],
+  ["whole-yiwu", "yi", "yī", "一", 15], ["whole-yiwu", "wu", "wū", "屋", 15], ["whole-yiwu", "yu", "yū", "迂", 15], ["whole-yiwu", "ye", "yē", "耶", 15],
+  ["whole-yueyuan", "yue", "yuē", "约", 16], ["whole-yueyuan", "yuan", "yuān", "冤", 16], ["whole-yueyuan", "yin", "yīn", "音", 16], ["whole-yueyuan", "yun", "yūn", "yūn", 16], ["whole-yueyuan", "ying", "yīng", "英", 16],
+  ["blending-tones", "b + a → ba", "bā", "八", 17], ["blending-tones", "g + u + a → gua", "guā", "瓜", 17], ["blending-tones", "x + i + ao → xiao", "xiāo", "消", 17]
+];
+
 const wordPronunciationOverrides = new Map([
   ["妹\u0000mèi", { ttsInput: "姐妹", context: "the single syllable 妹 mèi, as in 姐妹" }],
-  ["会\u0000huì", { ttsInput: "开会", context: "the single syllable 会 huì, as in 开会" }],
-  ["别\u0000bié", { ttsInput: "永别", context: "the single syllable 别 bié, as in 永别" }],
-  ["今\u0000jīn", { ttsInput: "今天", context: "the single syllable 今 jīn, as in 今天" }],
-  ["问\u0000wèn", { ttsInput: "提问", context: "the single syllable 问 wèn, as in 提问" }],
-  ["上\u0000shàng", { ttsInput: "上海", context: "the single syllable 上 shàng, as in 上海" }],
-  ["东\u0000dōng", { ttsInput: "东北", context: "the single syllable 东 dōng, as in 东北" }]
+  ["会\u0000huì", { ttsInput: "会", context: "the single syllable 会 huì, as in 开会; say only huì" }],
+  ["别\u0000bié", { ttsInput: "别", context: "the single syllable 别 bié, as in 永别; say only bié" }],
+  ["今\u0000jīn", { ttsInput: "今", context: "the single syllable 今 jīn, as in 今天; say only jīn" }],
+  ["问\u0000wèn", { ttsInput: "问", context: "the single syllable 问 wèn; say only wèn, not the word 提问" }],
+  ["上\u0000shàng", { ttsInput: "上", context: "the single syllable 上 shàng, as in 上海; say only shàng" }],
+  ["东\u0000dōng", { ttsInput: "东", context: "the single syllable 东 dōng, as in 东北; say only dōng" }],
+  ["子\u0000zǐ", { ttsInput: "子", context: "the single syllable 子 zǐ, as in 子女; say only zǐ" }],
+  ["椅\u0000yǐ", { ttsInput: "椅", context: "the single syllable 椅 yǐ, as in 椅子; say only yǐ" }],
+  ["意\u0000yì", { ttsInput: "意", context: "the single syllable 意 yì, as in 情意; say only yì" }],
+  ["月\u0000yuè", { ttsInput: "月", context: "the single syllable 月 yuè, as in 月亮; say only yuè with a clear fourth tone" }],
+  ["远\u0000yuǎn", { ttsInput: "远", context: "the single syllable 远 yuǎn; say only yuǎn" }],
+  ["银\u0000yín", { ttsInput: "银", context: "the single syllable 银 yín, as in 金银; say only yín" }],
+  ["晕\u0000yūn", { ttsInput: "晕", context: "the single syllable 晕 yūn, as in 晕车; say only yūn" }],
+  ["影\u0000yǐng", { ttsInput: "影", context: "the single syllable 影 yǐng, as in 电影; make the final -ing a clear back nasal sound; say only yǐng" }],
+  ["尺\u0000chǐ", { ttsInput: "尺", context: "the single syllable 尺 chǐ, as in 尺寸; say only chǐ" }],
+  ["耶\u0000yē", { ttsInput: "耶", context: "the single syllable 耶 yē, as in 耶稣; say only yē" }],
+  ["寡\u0000guǎ", { ttsInput: "寡", context: "the single syllable 寡 guǎ, as in 寡妇; use a complete third tone: dip low, then rise clearly before the sound ends; say only guǎ" }]
 ]);
 
 const toneLetters = new Map([
@@ -154,6 +176,20 @@ nasalFinalAnchors.forEach(([final, callSound, ttsInput]) => {
   });
 });
 
+readingSyllableAnchors.forEach(([unitId, label, callSound, ttsInput, chapter, coaching]) => {
+  const id = `reading-${unitId}-${label.replace(/[^a-z]+/g, "-").replace(/^-|-$/g, "")}`;
+  clipMap.set(`reading\u0000${unitId}\u0000${label}`, {
+    id,
+    file: `reading/${id}.mp3`,
+    text: label,
+    pinyin: callSound,
+    ttsInput,
+    kind: "reading-syllable",
+    chapters: [chapter],
+    context: coaching ?? `the whole-syllable Pinyin reading ${callSound}; say it once in a high, level first tone`
+  });
+});
+
 pinyinUnits.filter((unit) => unit.number >= 3 && unit.examples).forEach((unit) => {
   unit.examples.forEach((example) => {
     example.words.forEach(([text, pinyin]) => {
@@ -207,6 +243,10 @@ export function pinyinCompoundFinalAudioClip(final) {
 
 export function pinyinNasalFinalAudioClip(final) {
   return clipsById.get(`nasal-final-${final.replace("ü", "v")}`);
+}
+
+export function pinyinReadingSyllableAudioClip(unitId, label) {
+  return clipsById.get(`reading-${unitId}-${label.replace(/[^a-z]+/g, "-").replace(/^-|-$/g, "")}`);
 }
 
 export function pinyinAudioPath(id) {

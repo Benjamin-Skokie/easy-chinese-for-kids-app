@@ -1,5 +1,5 @@
 import { pinyinBuildTasks, pinyinChapterGroups, pinyinUnits } from "./pinyin-course.js";
-import { pinyinAudioId, pinyinAudioPath, pinyinCompoundFinalAudioClip, pinyinInitialAudioClip, pinyinNasalFinalAudioClip } from "./pinyin-audio-manifest.js";
+import { pinyinAudioId, pinyinAudioPath, pinyinCompoundFinalAudioClip, pinyinInitialAudioClip, pinyinNasalFinalAudioClip, pinyinReadingSyllableAudioClip } from "./pinyin-audio-manifest.js";
 import { nextRandomCycleId } from "../../core/random-cycle.js";
 
 const basicToneRounds = [
@@ -128,8 +128,10 @@ export function createPinyinRuntime({ state, focusExplorer, activityPanelTitle, 
         ? unit.sounds.map((sound) => pinyinCompoundFinalAudioClip(sound))
         : unit.id === "front-nasal" || unit.id === "back-nasal"
           ? unit.sounds.map((sound) => pinyinNasalFinalAudioClip(sound))
+          : unit.groupId === "reading"
+            ? unit.sounds.map((sound) => pinyinReadingSyllableAudioClip(unit.id, sound))
         : [];
-    const sounds = unit.id === "blending-tones" ? "" : `<section><div class="pinyin-ready-sounds pinyin-basic-sound-row pinyin-chapter-sound-row pinyin-sound-count-${unit.sounds.length}">${unit.sounds.map((sound, index) => { const lessonSoundClip = lessonSoundClips[index]; const [text, pinyin] = listenPairs[index] ?? [sound, sound]; return soundChipMarkup(sound, lessonSoundClip?.ttsInput ?? text, lessonSoundClip?.id ?? pinyinAudioId(text, pinyin)); }).join("")}</div></section>`;
+    const sounds = `<section><div class="pinyin-ready-sounds pinyin-basic-sound-row pinyin-chapter-sound-row pinyin-sound-count-${unit.sounds.length}">${unit.sounds.map((sound, index) => { const lessonSoundClip = lessonSoundClips[index]; const [text, pinyin] = listenPairs[index] ?? [sound, sound]; return soundChipMarkup(sound, lessonSoundClip?.ttsInput ?? text, lessonSoundClip?.id ?? pinyinAudioId(text, pinyin)); }).join("")}</div></section>`;
     const playAllTexts = lessonSoundClips.length ? lessonSoundClips.map((clip) => clip.ttsInput) : listenPairs.map(([text]) => text);
     const playAllIds = lessonSoundClips.length ? lessonSoundClips.map((clip) => clip.id) : listenPairs.map(([text, pinyin]) => pinyinAudioId(text, pinyin));
     return `<section class="pinyin-chapter-card pinyin-standard-chapter-card pinyin-unit-${unit.id}"><header class="pinyin-chapter-heading"><p class="body-match-kicker">第 ${unit.number} 章 · Chapter ${unit.number}</p><h4>${unit.title}</h4><p class="pinyin-chapter-english">${unit.englishTitle}</p>${playAllButton(playAllTexts, playAllIds)}</header>${definition}<div class="pinyin-chapter-card-body">${sounds}<section class="pinyin-basic-examples pinyin-chapter-examples">${examples.map((item) => `<div><strong>${item.sound}</strong>${item.words.map(([hanzi, pinyin]) => wordAudioMarkup(hanzi, pinyin)).join("")}</div>`).join("")}</section></div>${chapterPracticeMarkup(unit, examples)}</section>`;
