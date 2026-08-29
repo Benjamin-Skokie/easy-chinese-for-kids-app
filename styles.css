@@ -6003,6 +6003,7 @@ h4 {
 
 .world-colour-mission-art { width: 100%; max-width: 8rem; }
 .world-colour-mission-art svg { display: block; width: 100%; height: auto; }
+.world-colour-mission-art img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 0.8rem; }
 .world-colour-mission-label { min-height: 1.3rem; font-size: 0.82rem; color: var(--muted); }
 
 .world-favourite-sentence span {

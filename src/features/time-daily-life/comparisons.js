@@ -31,7 +31,7 @@ export const comparisonPracticeItems = [
   { id: "tall-short-animals.webp", before: "长颈鹿很", between: "，兔子很", after: "。", target: ["高", "矮"], options: ["高", "矮", "新", "旧"], pinyin: "Cháng jǐng lù hěn gāo, tù zi hěn ǎi.", english: "The giraffe is tall and the rabbit is short." },
   { id: "cold-hot-foods.webp", before: "冰棒很", between: "，面包很", after: "。", target: ["冷", "热"], options: ["冷", "热", "多", "少"], pinyin: "Bīng bàng hěn lěng, miàn bāo hěn rè.", english: "The ice pop is cold and the bread is hot." },
   { id: "new-old-teddy-bears.webp", before: "这个泰迪熊很", between: "，那个泰迪熊很", after: "。", target: ["新", "旧"], options: ["新", "旧", "快", "慢"], pinyin: "Zhè ge tài dí xióng hěn xīn, nà ge tài dí xióng hěn jiù.", english: "This teddy bear is new and that teddy bear is old." }
-];
+].map((item) => ({ ...item, audio: `${item.before}${item.target[0]}${item.between}${item.target[1]}${item.after}` }));
 
 export const comparisonWordItems = [
   ["大", "dà", "big"], ["小", "xiǎo", "small"],

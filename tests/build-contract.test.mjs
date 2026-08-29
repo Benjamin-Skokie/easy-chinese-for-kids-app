@@ -23,7 +23,7 @@ import { classroomTopicData } from "../src/features/school-life/classroom.js";
 import { schoolSentenceBuilds, schoolTopicData } from "../src/features/school-life/school.js";
 import { schoolSubjectsSentenceBuilds, schoolSubjectsTopicData } from "../src/features/school-life/school-subjects.js";
 import { foodSentenceBuilds, foodTopic, foodTopicData } from "../src/features/food/food.js";
-import { foodPreferencesTopic, foodPreferencesTopicData } from "../src/features/food/food-preferences.js";
+import { foodPreferenceFallbackAudioEntries, foodPreferencesTopic, foodPreferencesTopicData } from "../src/features/food/food-preferences.js";
 import { mealsFeelingsSentenceBuilds, mealsFeelingsTopic, mealsFeelingsTopicData } from "../src/features/food/meals-feelings.js";
 import { introductionsBuildPhrases, introductionsGamePrompts, introductionsPractice, introductionsTopic } from "../src/features/foundations/introductions.js";
 import { ageBuildPhrases, agePractice, ageTopic } from "../src/features/foundations/age.js";
@@ -36,10 +36,10 @@ import { requestBuildPhrases, requestGameItemIds, requestPractice, requestsPermi
 import { clothesBookWords, clothesMatchItems, clothesPractice, clothesSentenceItems, clothesTopic } from "../src/features/daily-life/clothes.js";
 import { natureLesson, natureTopic, weatherLesson, weatherOutfitScenes, weatherTopic } from "../src/features/world/weather.js";
 import { animalLessons, animalsTopic, petsTopic } from "../src/features/world/animals.js";
-import { colourLessons, coloursTopic } from "../src/features/world/colours.js";
-import { createWorldRuntime } from "../src/features/world/world-runtime.js";
+import { colourLessons, colourPreferenceFallbackAudioEntries, coloursTopic } from "../src/features/world/colours.js";
+import { animalMeasureRounds, createWorldRuntime, natureFillRounds, weatherDressRounds, weatherFillRounds } from "../src/features/world/world-runtime.js";
 import { hobbies3bTopic, hobbiesAtHomeTopic, hobbiesLeisureTopic, hobbiesTopic, toysTopic } from "../src/features/play-hobbies/play-hobbies.js";
-import { createPlayHobbiesRuntime, hobbiesLessonAudioData, hobbiesSceneAudioEntries, toySceneAudioEntries } from "../src/features/play-hobbies/play-hobbies-runtime.js";
+import { createPlayHobbiesRuntime, hobbiesLessonAudioData, hobbiesSceneAudioEntries, toyPracticeAudioEntries, toySceneAudioEntries } from "../src/features/play-hobbies/play-hobbies-runtime.js";
 import { bodyBonusItemIds, bodyCoreItemIds, bodyDiagramLayout, bodyTopic } from "../src/features/foundations/body.js";
 import { illustratedKids } from "../src/data/characters.js";
 import { bookHomeCategories, books, learningHomeCategories, topicCardMeta, topicGroups } from "../src/data/curriculum.js";
@@ -516,7 +516,7 @@ test("Leisure Time sentence builder shows its word-order scaffold", () => {
 
 test("Leisure Time uses the shared site-wide Tingting preference", () => {
   const runtimeSource = readFileSync("src/features/play-hobbies/play-hobbies-runtime.js", "utf8");
-  assert.match(runtimeSource, /const speakLesson = \(text, rate\) => speak\(text, rate\);/);
+  assert.match(runtimeSource, /const speakLesson = \(text, rate, options\) => speak\(text, rate, options\);/);
   assert.doesNotMatch(runtimeSource, /const voiceNames/);
 });
 
@@ -549,6 +549,40 @@ test("recorded Learn audio covers every authored audio entry", () => {
     const audioPath = recordedLearnAudioPath(entry.text).split("?")[0];
     assert.ok(existsSync(audioPath), `missing audio file for ${entry.text}`);
     assert.ok(statSync(audioPath).size > 0, `empty audio file for ${entry.text}`);
+  }
+});
+
+test("SYS-02 deterministic and composed policies have every required recorded segment", () => {
+  const comparisonSentences = comparisonPracticeItems.map((item) => `${item.before}${item.target[0]}${item.between}${item.target[1]}${item.after}`);
+  const weatherFillAudio = weatherFillRounds.flatMap((round) => [
+    round.audio,
+    ...Object.values(round.audioByAccessory ?? {}).map((entry) => entry.audio)
+  ]).filter(Boolean);
+  const colourItems = colourLessons["2a"].items;
+  const requiredTexts = new Set([
+    ...comparisonSentences,
+    ...stationeryPictureMatchRounds.map((item) => item.audio),
+    ...stationerySentenceBuilds.map((item) => item.audio),
+    ...schoolSuppliesSentenceBuilds.map((item) => item.audio),
+    ...schoolSentenceBuilds.map((item) => item.audio),
+    ...schoolSubjectsSentenceBuilds.map((item) => item.audio),
+    ...mealsFeelingsSentenceBuilds.map((item) => item.audio),
+    ...natureFillRounds.map((item) => item.audio),
+    ...animalMeasureRounds.map((item) => item.sentenceAudio),
+    ...weatherDressRounds.map((item) => item.answerAudio),
+    ...weatherFillAudio,
+    ...classroomTopicData.sentenceFrames.map((item) => item.hanzi),
+    ...classroomTopicData.words.map((item) => item.hanzi),
+    "课本", "练习本", "铅笔", "尺子", "橡皮", "彩色铅笔",
+    ...colourItems.flatMap((item) => [item.audio, item.phraseAudio, item.hanzi]),
+    ...colourPreferenceFallbackAudioEntries.map((item) => item.audio),
+    ...foodPreferenceFallbackAudioEntries.map((item) => item.audio),
+    ...toySceneAudioEntries.map((item) => item.audio),
+    ...toyPracticeAudioEntries.map((item) => item.audio)
+  ].filter(Boolean));
+
+  for (const text of requiredTexts) {
+    assert.ok(recordedLearnAudioPath(text), `missing SYS-02 recording or segment for ${text}`);
   }
 });
 
@@ -711,6 +745,150 @@ test("recorded-only policy does not use browser speech after a recording failure
   await Promise.resolve();
   assert.deepEqual(missing, ["固定句子"]);
   assert.deepEqual(spoken, []);
+});
+
+test("browser-first policy uses system speech and falls back to a complete recording on error", async () => {
+  const spoken = [];
+  const recorded = [];
+  const audio = createAudioService({
+    synthesis: { cancel() {}, speak: (utterance) => spoken.push(utterance) },
+    createUtterance: (text) => ({ text }),
+    createAudio: (source) => {
+      const recording = {
+        source,
+        currentTime: 0,
+        pause() {},
+        play() {
+          recorded.push(source);
+          recording.onended?.();
+          return Promise.resolve();
+        }
+      };
+      return recording;
+    },
+    getRecordedAudioPath: () => "fallback.mp3",
+    getSceneRate: () => 0.64,
+    getSceneLinePauseMs: () => 280
+  });
+
+  audio.speak("动态句子", 0.78, { sourcePolicy: audioSourcePolicies.browserFirst });
+  assert.deepEqual(spoken.map((utterance) => utterance.text), ["动态句子"]);
+  assert.deepEqual(recorded, []);
+
+  spoken[0].onerror();
+  await Promise.resolve();
+  assert.deepEqual(recorded, ["fallback.mp3"]);
+});
+
+test("browser-first policy uses its recording immediately when system speech is unavailable", async () => {
+  const recorded = [];
+  const audio = createAudioService({
+    synthesis: null,
+    createAudio: (source) => {
+      const recording = {
+        currentTime: 0,
+        pause() {},
+        play() {
+          recorded.push(source);
+          recording.onended?.();
+          return Promise.resolve();
+        }
+      };
+      return recording;
+    },
+    getRecordedAudioPath: () => "fallback.mp3",
+    getSceneRate: () => 0.64,
+    getSceneLinePauseMs: () => 280
+  });
+
+  audio.speak("动态句子", 0.78, { sourcePolicy: audioSourcePolicies.browserFirst });
+  await Promise.resolve();
+  assert.deepEqual(recorded, ["fallback.mp3"]);
+});
+
+test("browser-first policy uses recorded fallback when the developer system-voice switch is off", async () => {
+  const recorded = [];
+  const spoken = [];
+  const audio = createAudioService({
+    synthesis: { cancel() {}, speak: (utterance) => spoken.push(utterance) },
+    createUtterance: (text) => ({ text }),
+    createAudio: (source) => ({
+      currentTime: 0,
+      pause() {},
+      play() {
+        recorded.push(source);
+        this.onended?.();
+        return Promise.resolve();
+      }
+    }),
+    getRecordedAudioPath: () => "fallback.mp3",
+    getSceneRate: () => 0.64,
+    getSceneLinePauseMs: () => 280,
+    isBrowserSpeechEnabled: () => false
+  });
+
+  audio.speak("动态句子", 0.78, { sourcePolicy: audioSourcePolicies.browserFirst });
+  await Promise.resolve();
+  assert.deepEqual(recorded, ["fallback.mp3"]);
+  assert.deepEqual(spoken, []);
+});
+
+test("recorded-only policy can compose an authored sequence without browser speech", async () => {
+  const recordings = [];
+  const spoken = [];
+  const audio = createAudioService({
+    synthesis: { cancel() {}, speak: (utterance) => spoken.push(utterance.text) },
+    createUtterance: (text) => ({ text }),
+    createAudio: (source) => {
+      const recording = {
+        currentTime: 0,
+        pause() {},
+        play() {
+          recordings.push({ source, recording });
+          return Promise.resolve();
+        }
+      };
+      return recording;
+    },
+    getRecordedAudioPath: (text) => `${text}.mp3`,
+    getSceneRate: () => 0.64,
+    getSceneLinePauseMs: () => 280
+  });
+
+  audio.speak("教室里有书架", 0.78, {
+    sourcePolicy: audioSourcePolicies.recordedOnly,
+    recordedTexts: ["教室里有", "书架"]
+  });
+  await Promise.resolve();
+  assert.equal(recordings[0].source, "教室里有.mp3");
+  recordings[0].recording.onended();
+  await Promise.resolve();
+  await Promise.resolve();
+  assert.equal(recordings[1].source, "书架.mp3");
+  recordings[1].recording.onended();
+  await Promise.resolve();
+  assert.deepEqual(spoken, []);
+});
+
+test("reported deterministic and dynamic exercises declare their audio policies", () => {
+  const schoolSource = readFileSync("src/features/school-life/school-food-runtime.js", "utf8");
+  const worldSource = readFileSync("src/features/world/world-runtime.js", "utf8");
+  const hobbiesSource = readFileSync("src/features/play-hobbies/play-hobbies-runtime.js", "utf8");
+  const timeSource = readFileSync("src/features/time-daily-life/time-daily-life-runtime.js", "utf8");
+
+  assert.match(schoolSource, /speak\(sentence, 0\.78, \{[\s\S]*sourcePolicy: "browser-first",[\s\S]*recordedFallbackTexts: \[subject\.hanzi, `\$\{pattern\.hanzi\}\$\{item\.verb\}`, item\.hanzi\]/);
+  assert.match(schoolSource, /speak\(`\$\{frame\.hanzi\}\$\{word\.hanzi\}`, 0\.78, \{[\s\S]*sourcePolicy: "recorded-only",[\s\S]*recordedTexts: \[frame\.hanzi, word\.hanzi\]/);
+  assert.match(worldSource, /speak\(`我喜欢\$\{favourite\.hanzi\}`, 0\.78, \{[\s\S]*sourcePolicy: "browser-first",[\s\S]*recordedFallbackTexts: \["我喜欢", favourite\.hanzi\]/);
+  assert.match(worldSource, /speak\(`我不喜欢\$\{unfavourite\.hanzi\}`, 0\.78, \{[\s\S]*sourcePolicy: "browser-first",[\s\S]*recordedFallbackTexts: \["我不喜欢", unfavourite\.hanzi\]/);
+  assert.match(hobbiesSource, /speakLesson\(`我有\$\{item\.hanzi\}`, 0\.78, \{[\s\S]*sourcePolicy: "browser-first",[\s\S]*recordedFallbackTexts: \["我有", item\.hanzi\]/);
+  assert.match(timeSource, /speak\(`\$\{item\.before\}\$\{selected\[0\]\}\$\{item\.between\}\$\{selected\[1\]\}\$\{item\.after\}`, 0\.78, \{ sourcePolicy: "recorded-only" \}\)/);
+});
+
+test("the developer system-voice switch is URL-only and not a learner-facing control", () => {
+  const runtimeSource = readFileSync("src/app/runtime-wiring.js", "utf8");
+  const navigationSource = readFileSync("src/core/navigation-runtime.js", "utf8");
+  assert.match(runtimeSource, /new URLSearchParams\(window\.location\.search\)\.get\("systemVoice"\) !== "off"/);
+  assert.doesNotMatch(navigationSource, /systemVoice/);
 });
 
 test("replacing recorded audio settles and rewinds the prior request", async () => {
@@ -1443,6 +1621,55 @@ test("Nature practice fills a complete sentence from one inline visual cue", () 
   assert.match(activityList.innerHTML, /地上/);
 });
 
+test("Nature practice waits for the complete sentence before speaking", () => {
+  const listeners = {};
+  const makeButton = (selector, dataset) => ({
+    dataset,
+    addEventListener: (event, listener) => { listeners[`${selector}:${event}`] = listener; }
+  });
+  const subjectButton = makeButton("subject", { natureFillSubject: "地上" });
+  const wordButton = makeButton("word", { natureFillWord: "花" });
+  const activityList = {
+    className: "",
+    innerHTML: "",
+    querySelector: () => null,
+    querySelectorAll: (selector) => selector === "[data-nature-fill-subject]" ? [subjectButton] : selector === "[data-nature-fill-word]" ? [wordButton] : []
+  };
+  const state = {
+    showEnglish: true,
+    showPinyin: true,
+    tapAudioEnabled: true,
+    worldNatureFillRoundIds: natureFillRounds.map((round) => round.id),
+    worldNatureFillRoundIndex: natureFillRounds.findIndex((round) => round.id === "flower"),
+    worldNatureFillSubjectChoices: ["白天", "晚上", "地上"],
+    worldNatureFillWordChoices: natureFillRounds.map((round) => round.word),
+    worldNatureFillSubjectPicked: "",
+    worldNatureFillWordPicked: "",
+    worldNatureFillSubjectResult: "",
+    worldNatureFillWordResult: ""
+  };
+  const spoken = [];
+  const runtime = createWorldRuntime({
+    state,
+    currentTopic: () => natureTopic,
+    currentBook: () => ({ id: "3b", label: "Book 3B" }),
+    currentLesson: () => ({ lesson: 7 }),
+    focusExplorer: { innerHTML: "", querySelectorAll: () => [] },
+    activityPanelTitle: { textContent: "" },
+    activityPanelSummary: { textContent: "" },
+    activityList,
+    speak: (...args) => spoken.push(args),
+    selectFocusItem: () => {},
+    renderActivityPanel: () => {}
+  });
+
+  runtime.renderWorldPractice(natureTopic);
+  listeners["subject:click"]();
+  assert.deepEqual(spoken, []);
+  listeners["word:click"]();
+  assert.deepEqual(spoken, [["地上有花。", 0.76, { sourcePolicy: "recorded-only" }]]);
+});
+
 test("Weather practice connects a weather sentence to getting ready", () => {
   const focusExplorer = { innerHTML: "", querySelectorAll: () => [] };
   const activityPanelTitle = { textContent: "" };
@@ -1605,7 +1832,7 @@ test("the Colours lesson filter keeps the 1B core set and hides the later senten
   assert.doesNotMatch(focusExplorer.innerHTML, /Book 1B Lesson 6/);
 });
 
-test("the Colours practice starts with a randomized colour-and-object mission", () => {
+test("the Colours practice uses concise randomized authored phrase cards", () => {
   const activityList = {
     className: "",
     innerHTML: "",
@@ -1629,7 +1856,8 @@ test("the Colours practice starts with a randomized colour-and-object mission", 
   runtime.renderWorldPractice(coloursTopic);
   assert.match(activityList.innerHTML, /Colour mission/);
   assert.match(activityList.innerHTML, /data-world-mission-pick/);
-  assert.match(activityList.innerHTML, /Every round mixes the object colours and their positions/);
+  assert.match(activityList.innerHTML, /assets\/illustrated-colors\//);
+  assert.doesNotMatch(activityList.innerHTML, /Every round mixes the object colours and their positions/);
   assert.doesNotMatch(activityList.innerHTML, /Find something orange/);
   assert.doesNotMatch(activityList.innerHTML, /Next mission/);
 });
@@ -1711,9 +1939,11 @@ test("Toys owns a 2 by 2 scene series and a no-repeat picture-choice practice", 
   assert.match(runtimeSource, /nextRandomCycleId\(state, "toys-picture-choice"/);
   assert.match(runtimeSource, /const toyItems = \(\) => currentTopic\(\)\.flashcardItems/);
   assert.match(runtimeSource, /data-toys-practice-new/);
-  assert.match(runtimeSource, /speakLesson\(`我有\$\{item\.hanzi\}`, 0\.78\)/);
+  assert.match(runtimeSource, /speakLesson\(`我有\$\{item\.hanzi\}`, 0\.78, \{/);
   assert.match(explorerSource, /\["toys", "hobbies", "hobbies-3b", "hobbies-at-home", "hobbies-leisure"\]/);
   assert.match(practiceSource, /\["toys", "hobbies", "hobbies-3b", "hobbies-at-home", "hobbies-leisure"\]/);
+  assert.deepEqual(toySceneAudioEntries.map((entry) => entry.id), ["doll", "toy-train", "toy-airplane", "toy-bear"]);
+  assert.ok(toySceneAudioEntries.every((entry) => entry.hanzi && entry.pinyin && entry.english && entry.audio));
 });
 
 test("Hobbies keeps separate 2A, 3B, and 4B lesson pages and practice", () => {

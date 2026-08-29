@@ -347,7 +347,10 @@ function handleFoodPreferenceFill(foodId) {
   const subject = foodPreferenceSubjects().find((entry) => entry.id === state.foodPreferenceSubjectId) ?? foodPreferenceSubjects()[0];
   const sentence = `${subject.hanzi}${pattern.hanzi}${item.verb}${item.hanzi}`;
   state.foodPreferenceFoodId = foodId;
-  if (state.tapAudioEnabled) speak(sentence, 0.78);
+  if (state.tapAudioEnabled) speak(sentence, 0.78, {
+    sourcePolicy: "browser-first",
+    recordedFallbackTexts: [subject.hanzi, `${pattern.hanzi}${item.verb}`, item.hanzi]
+  });
   renderActivityPanel(currentTopic());
 }
 
@@ -424,7 +427,10 @@ function handleClassroomSentenceWord(wordId) {
   const word = classroomSentenceWords().find((item) => item.id === wordId);
   if (!frame || !word || !frame.wordIds.includes(wordId)) return;
   state.classroomSentenceWordId = wordId;
-  if (state.tapAudioEnabled) speak(`${frame.hanzi}${word.hanzi}`, 0.78);
+  if (state.tapAudioEnabled) speak(`${frame.hanzi}${word.hanzi}`, 0.78, {
+    sourcePolicy: "recorded-only",
+    recordedTexts: [frame.hanzi, word.hanzi]
+  });
   renderActivityPanel(currentTopic());
 }
 

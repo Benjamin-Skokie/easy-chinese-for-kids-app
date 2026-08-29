@@ -514,7 +514,7 @@ function handleComparisonBuildToken(index) {
   state.comparisonBuildAvailableTokens = state.comparisonBuildAvailableTokens.filter((_, tokenIndex) => tokenIndex !== index);
   if (selected.length === item.target.length) {
     state.comparisonBuildResult = "correct";
-    if (state.tapAudioEnabled) speak(`${item.before}${selected[0]}${item.between}${selected[1]}${item.after}`, 0.78);
+    if (state.tapAudioEnabled) speak(`${item.before}${selected[0]}${item.between}${selected[1]}${item.after}`, 0.78, { sourcePolicy: "recorded-only" });
   }
   renderActivityPanel(currentTopic());
 }

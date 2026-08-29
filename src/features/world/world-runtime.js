@@ -4,29 +4,6 @@ import { natureLesson, weatherLesson, weatherOutfitScenes } from "./weather.js";
 import { imageLoadingAttrs } from "../../core/image-loading.js";
 import { advanceShuffledOrder, nextRandomCycleId } from "../../core/random-cycle.js";
 
-const colourSwatches = {
-  red: "#e85b50",
-  yellow: "#f2bd3c",
-  blue: "#4b91d3",
-  green: "#69a95a",
-  purple: "#9b70be",
-  orange: "#e98a38",
-  pink: "#e97aa9",
-  black: "#39404b",
-  white: "#f7f7f2"
-};
-
-const colourMissionObjects = [
-  { id: "balloon", hanzi: "气球", pinyin: "qì qiú", english: "balloon" },
-  { id: "kite", hanzi: "风筝", pinyin: "fēng zheng", english: "kite" },
-  { id: "backpack", hanzi: "书包", pinyin: "shū bāo", english: "backpack" },
-  { id: "cup", hanzi: "杯子", pinyin: "bēi zi", english: "cup" },
-  { id: "hat", hanzi: "帽子", pinyin: "mào zi", english: "hat" },
-  { id: "block", hanzi: "积木", pinyin: "jī mù", english: "building block" },
-  { id: "pen", hanzi: "笔", pinyin: "bǐ", english: "pen" },
-  { id: "toy-car", hanzi: "玩具汽车", pinyin: "wán jù qì chē", english: "toy car" }
-];
-
 export const natureFillRounds = [
   { id: "sun", subject: "白天", word: "太阳", audio: "白天有太阳。", pinyin: "bái tiān yǒu tài yáng.", english: "There is a sun in the daytime." },
   { id: "moon", subject: "晚上", word: "月亮", audio: "晚上有月亮。", pinyin: "wǎn shang yǒu yuè liang.", english: "There is a moon at night." },
@@ -453,33 +430,17 @@ export function createWorldRuntime({ state, currentTopic, currentBook, currentLe
     }
   }
 
-  function missionObjectMarkup(objectId, colour) {
-    const outline = "#43372c";
-    const shine = "rgba(255,255,255,.34)";
-    const svgStart = `<svg viewBox="0 0 120 96" aria-hidden="true" focusable="false">`;
-    const svgEnd = "";
-    if (objectId === "balloon") return `${svgStart}<path d="M60 8C34 8 25 29 30 48c4 17 17 28 30 34 13-6 26-17 30-34C95 29 86 8 60 8Z" fill="${colour}" stroke="${outline}" stroke-width="3"/><path d="M60 82v11M54 89h12" stroke="${outline}" stroke-width="3" stroke-linecap="round"/><ellipse cx="48" cy="31" rx="7" ry="12" fill="${shine}"/></svg>${svgEnd}`;
-    if (objectId === "kite") return `${svgStart}<path d="M60 7 99 47 60 87 21 47Z" fill="${colour}" stroke="${outline}" stroke-width="3"/><path d="M21 47 99 47M60 7v80M60 87c15 1 18 9 8 11 12 1 15 7 5 10" fill="none" stroke="${outline}" stroke-width="3" stroke-linecap="round"/><path d="M48 22 60 12" stroke="${shine}" stroke-width="6" stroke-linecap="round"/></svg>${svgEnd}`;
-    if (objectId === "backpack") return `${svgStart}<path d="M38 34V24c0-15 44-15 44 0v10" fill="none" stroke="${outline}" stroke-width="6" stroke-linecap="round"/><path d="M28 34c0-8 8-12 16-12h32c8 0 16 4 16 12v49H28V34Z" fill="${colour}" stroke="${outline}" stroke-width="3"/><path d="M37 51h46v25H37z" fill="${shine}" stroke="${outline}" stroke-width="3"/><path d="M51 63h18" stroke="${outline}" stroke-width="3" stroke-linecap="round"/></svg>${svgEnd}`;
-    if (objectId === "cup") return `${svgStart}<path d="M28 24h55v47c0 16-14 18-27 18S28 87 28 71V24Z" fill="${colour}" stroke="${outline}" stroke-width="3"/><path d="M83 35h10c18 0 18 29 0 29H83" fill="none" stroke="${outline}" stroke-width="5"/><path d="M36 30h38" stroke="${shine}" stroke-width="6" stroke-linecap="round"/></svg>${svgEnd}`;
-    if (objectId === "hat") return `${svgStart}<path d="M35 49c0-26 50-26 50 0v12H35V49Z" fill="${colour}" stroke="${outline}" stroke-width="3"/><path d="M14 64c7-10 84-10 92 0 7 9-4 15-46 15S7 73 14 64Z" fill="${colour}" stroke="${outline}" stroke-width="3"/><path d="M45 45c9-7 20-7 29 0" fill="none" stroke="${shine}" stroke-width="5" stroke-linecap="round"/></svg>${svgEnd}`;
-    if (objectId === "block") return `${svgStart}<path d="M26 32 60 13l34 19v38L60 89 26 70V32Z" fill="${colour}" stroke="${outline}" stroke-width="3"/><path d="m26 32 34 19 34-19M60 51v38" fill="none" stroke="${outline}" stroke-width="3"/><path d="m38 35 18-10" stroke="${shine}" stroke-width="6" stroke-linecap="round"/></svg>${svgEnd}`;
-    if (objectId === "pen") return `${svgStart}<path d="M48 19h24l7 13-10 48H51L41 32l7-13Z" fill="${colour}" stroke="${outline}" stroke-width="3" stroke-linejoin="round"/><path d="M48 19 60 8l12 11" fill="${colour}" stroke="${outline}" stroke-width="3" stroke-linejoin="round"/><path d="M50 33h20" stroke="rgba(255,255,255,.58)" stroke-width="5" stroke-linecap="round"/><path d="M72 28h13l-7 24" fill="none" stroke="${outline}" stroke-width="3" stroke-linejoin="round"/><path d="m51 80 9 11 9-11Z" fill="#d9d9d3" stroke="${outline}" stroke-width="3" stroke-linejoin="round"/><path d="M60 91v3" stroke="${outline}" stroke-width="4" stroke-linecap="round"/></svg>${svgEnd}`;
-    return `${svgStart}<path d="M21 45h75v29H21z" fill="${colour}" stroke="${outline}" stroke-width="3"/><path d="M35 45 47 31h28l12 14" fill="${colour}" stroke="${outline}" stroke-width="3"/><circle cx="38" cy="76" r="10" fill="#f7f7f2" stroke="${outline}" stroke-width="3"/><circle cx="80" cy="76" r="10" fill="#f7f7f2" stroke="${outline}" stroke-width="3"/><path d="M51 38h18" stroke="${shine}" stroke-width="5" stroke-linecap="round"/></svg>${svgEnd}`;
-  }
-
   function resetColourMission() {
     const items = colourItems();
     const count = Math.min(6, items.length);
-    const targetObjectId = nextRandomCycleId(state, "colours-mission-target", colourMissionObjects.map((object) => object.id));
-    const targetObject = colourMissionObjects.find((object) => object.id === targetObjectId);
-    const objects = shuffled([
-      targetObject,
-      ...shuffled(colourMissionObjects.filter((object) => object.id !== targetObjectId)).slice(0, count - 1)
+    const targetItemId = nextRandomCycleId(state, "colours-mission-target", items.map((item) => item.id));
+    const targetItem = items.find((item) => item.id === targetItemId);
+    const cards = shuffled([
+      targetItem,
+      ...shuffled(items.filter((item) => item.id !== targetItemId)).slice(0, count - 1)
     ].filter(Boolean));
-    const colours = shuffled(items).slice(0, count);
-    state.worldColourMissionCards = shuffled(objects.map((object, index) => ({ objectId: object.id, colourId: colours[index].id })));
-    state.worldColourMissionTargetObjectId = targetObjectId;
+    state.worldColourMissionCards = cards.map((item) => ({ objectId: item.id, colourId: item.id }));
+    state.worldColourMissionTargetObjectId = targetItemId;
     state.worldColourMissionPickedObjectId = "";
     state.worldColourMissionResult = "";
   }
@@ -507,17 +468,16 @@ export function createWorldRuntime({ state, currentTopic, currentBook, currentLe
     ensureColourMission();
     const missionCards = state.worldColourMissionCards;
     const missionTargetCard = missionCards.find((card) => card.objectId === state.worldColourMissionTargetObjectId) ?? missionCards[0];
-    const missionTargetObject = colourMissionObjects.find((item) => item.id === missionTargetCard.objectId);
-    const missionTargetColour = items.find((item) => item.id === missionTargetCard.colourId);
-    const missionPrompt = `${missionTargetColour.hanzi}的${missionTargetObject.hanzi}`;
+    const missionTargetItem = items.find((item) => item.id === missionTargetCard.objectId);
+    const missionPrompt = missionTargetItem.phraseAudio;
     activityPanelTitle.textContent = "Let's practice";
     activityPanelSummary.textContent = "Listen carefully, find the right colour-and-object pair, then practise complete Chinese descriptions.";
     activityList.className = "support-list";
     activityList.innerHTML = `
       <section class="practice-split-card world-colour-mission">
-        <div class="numbers-game-top"><div><p class="body-match-kicker">Colour mission</p><h4>Listen and find the object</h4><p class="numbers-game-note">Every round mixes the object colours and their positions. Listen for the complete phrase, then tap the matching picture.</p></div><button class="small-button is-play-button" type="button" data-world-mission-play>Play</button></div>
+        <div class="numbers-game-top"><div><p class="body-match-kicker">Colour mission</p><h4>Listen and find the object</h4></div><button class="small-button is-play-button" type="button" data-world-mission-play>Play</button></div>
         ${state.worldColourMissionPickedObjectId ? `<p class="greetings-game-feedback">${state.worldColourMissionResult === "correct" ? `Great! ${missionPrompt}.` : "Not that one. Listen again and try another picture."}</p>` : ""}
-        <div class="world-colour-mission-grid">${missionCards.map((card) => { const object = colourMissionObjects.find((item) => item.id === card.objectId); const colour = items.find((item) => item.id === card.colourId); const selected = state.worldColourMissionPickedObjectId === card.objectId; const resultClass = selected ? ` is-${state.worldColourMissionResult}` : ""; return `<button class="world-colour-mission-card${resultClass}" type="button" data-world-mission-pick="${card.objectId}"><span class="world-colour-mission-art">${missionObjectMarkup(object.id, colourSwatches[colour.id])}</span><span class="world-colour-mission-label">${state.showEnglish ? object.english : ""}</span></button>`; }).join("")}</div>
+        <div class="world-colour-mission-grid">${missionCards.map((card) => { const item = items.find((entry) => entry.id === card.objectId); const selected = state.worldColourMissionPickedObjectId === card.objectId; const resultClass = selected ? ` is-${state.worldColourMissionResult}` : ""; return `<button class="world-colour-mission-card${resultClass}" type="button" data-world-mission-pick="${card.objectId}"><span class="world-colour-mission-art"><img src="${item.imagePath}" alt="${item.imageAlt}" /></span><span class="world-colour-mission-label">${state.showEnglish ? item.phraseEnglish : ""}</span></button>`; }).join("")}</div>
       </section>
       <section class="clothes-quiz-shell world-colour-picture-practice">
         <div class="numbers-game-top"><div><p class="body-match-kicker">Picture and phrase</p><p class="numbers-game-note">Look at the picture. Which complete Chinese phrase matches it?</p></div><button class="small-button is-practice-advance-button" type="button" data-world-colour-new aria-label="Start a new game">New game</button></div>
@@ -528,13 +488,13 @@ export function createWorldRuntime({ state, currentTopic, currentBook, currentLe
       ${!state.lessonScope || state.lessonScope.bookId === "2a" ? `<section class="practice-split-card world-favourite-colour-practice"><div class="numbers-game-top"><div><p class="body-match-kicker">A colour I don't like</p><p class="numbers-game-note">Choose a colour, then listen and say the sentence.</p></div><button class="small-button is-play-button" type="button" data-world-unfavourite-play>Play</button></div><div class="world-favourite-colour-options">${items.map((item) => `<button class="small-button${item.id === unfavourite.id ? " is-action-button" : ""}" type="button" data-world-unfavourite="${item.id}">${item.hanzi}</button>`).join("")}</div><p class="world-favourite-sentence">我不喜欢${unfavourite.hanzi}。${state.showPinyin ? `<span>wǒ bù xǐ huan ${unfavourite.pinyin}.</span>` : ""}${state.showEnglish ? `<span>I do not like ${unfavourite.english}.</span>` : ""}</p></section>` : ""}
     `;
     activityList.querySelector("[data-world-mission-play]")?.addEventListener("click", () => {
-      if (state.tapAudioEnabled) speak(`找一找，${missionPrompt}`, 0.78);
+      if (state.tapAudioEnabled) speak(missionPrompt, 0.78, { sourcePolicy: "recorded-only" });
     });
     activityList.querySelectorAll("[data-world-mission-pick]").forEach((button) => button.addEventListener("click", () => {
       state.worldColourMissionPickedObjectId = button.dataset.worldMissionPick;
       state.worldColourMissionResult = button.dataset.worldMissionPick === missionTargetObject.id ? "correct" : "wrong";
       if (state.worldColourMissionResult === "correct") {
-        if (state.tapAudioEnabled) speak(missionPrompt, 0.78);
+        if (state.tapAudioEnabled) speak(missionPrompt, 0.78, { sourcePolicy: "recorded-only" });
         window.setTimeout(() => { resetColourMission(); renderActivityPanel(currentTopic()); }, 1100);
       }
       renderActivityPanel(currentTopic());
@@ -548,7 +508,7 @@ export function createWorldRuntime({ state, currentTopic, currentBook, currentLe
     activityList.querySelectorAll("[data-world-colour-guess]").forEach((button) => button.addEventListener("click", () => {
       state.worldColourPickedId = button.dataset.worldColourGuess;
       state.worldColourResult = button.dataset.worldColourGuess === target.id ? "correct" : "wrong";
-      if (state.worldColourResult === "correct" && state.tapAudioEnabled) speak(target.phrase, 0.78);
+      if (state.worldColourResult === "correct" && state.tapAudioEnabled) speak(target.phraseAudio, 0.78, { sourcePolicy: "recorded-only" });
       renderActivityPanel(currentTopic());
     }));
     activityList.querySelectorAll("[data-world-favourite]").forEach((button) => button.addEventListener("click", () => {
@@ -556,14 +516,20 @@ export function createWorldRuntime({ state, currentTopic, currentBook, currentLe
       renderActivityPanel(currentTopic());
     }));
     activityList.querySelector("[data-world-favourite-play]")?.addEventListener("click", () => {
-      if (state.tapAudioEnabled) speak(`我喜欢${favourite.hanzi}`, 0.78);
+      if (state.tapAudioEnabled) speak(`我喜欢${favourite.hanzi}`, 0.78, {
+        sourcePolicy: "browser-first",
+        recordedFallbackTexts: ["我喜欢", favourite.hanzi]
+      });
     });
     activityList.querySelectorAll("[data-world-unfavourite]").forEach((button) => button.addEventListener("click", () => {
       state.worldUnfavouriteColourId = button.dataset.worldUnfavourite;
       renderActivityPanel(currentTopic());
     }));
     activityList.querySelector("[data-world-unfavourite-play]")?.addEventListener("click", () => {
-      if (state.tapAudioEnabled) speak(`我不喜欢${unfavourite.hanzi}`, 0.78);
+      if (state.tapAudioEnabled) speak(`我不喜欢${unfavourite.hanzi}`, 0.78, {
+        sourcePolicy: "browser-first",
+        recordedFallbackTexts: ["我不喜欢", unfavourite.hanzi]
+      });
     });
   }
 
@@ -593,6 +559,10 @@ export function createWorldRuntime({ state, currentTopic, currentBook, currentLe
   function renderNaturePractice() {
     const round = currentNatureFillRound();
     const complete = state.worldNatureFillSubjectResult === "correct" && state.worldNatureFillWordResult === "correct";
+    const speakCompletedSentence = () => {
+      const nowComplete = state.worldNatureFillSubjectResult === "correct" && state.worldNatureFillWordResult === "correct";
+      if (!complete && nowComplete && state.tapAudioEnabled) speak(round.audio, 0.76, { sourcePolicy: "recorded-only" });
+    };
     activityPanelTitle.textContent = "Let's practice";
     activityPanelSummary.textContent = "Look at the picture and complete the sentence with the right words.";
     activityList.className = "support-list";
@@ -609,14 +579,13 @@ export function createWorldRuntime({ state, currentTopic, currentBook, currentLe
     activityList.querySelectorAll("[data-nature-fill-subject]").forEach((button) => button.addEventListener("click", () => {
       state.worldNatureFillSubjectPicked = button.dataset.natureFillSubject;
       state.worldNatureFillSubjectResult = state.worldNatureFillSubjectPicked === round.subject ? "correct" : "wrong";
-      if (state.worldNatureFillSubjectResult === "correct" && state.tapAudioEnabled) speak(round.subject, 0.76);
+      speakCompletedSentence();
       renderActivityPanel(currentTopic());
     }));
     activityList.querySelectorAll("[data-nature-fill-word]").forEach((button) => button.addEventListener("click", () => {
       state.worldNatureFillWordPicked = button.dataset.natureFillWord;
       state.worldNatureFillWordResult = state.worldNatureFillWordPicked === round.word ? "correct" : "wrong";
-      const nowComplete = state.worldNatureFillSubjectResult === "correct" && state.worldNatureFillWordResult === "correct";
-      if (nowComplete && state.tapAudioEnabled) speak(round.audio, 0.76, { sourcePolicy: "recorded-only" });
+      speakCompletedSentence();
       renderActivityPanel(currentTopic());
     }));
   }
@@ -701,7 +670,7 @@ export function createWorldRuntime({ state, currentTopic, currentBook, currentLe
     activityList.querySelectorAll("[data-weather-dress-choice]").forEach((button) => button.addEventListener("click", () => {
       state.worldWeatherDressPickedId = button.dataset.weatherDressChoice;
       state.worldWeatherDressResult = state.worldWeatherDressPickedId === round.answerId ? "correct" : "wrong";
-      if (state.worldWeatherDressResult === "correct" && state.tapAudioEnabled) speak(round.answerAudio, 0.76);
+      if (state.worldWeatherDressResult === "correct" && state.tapAudioEnabled) speak(round.answerAudio, 0.76, { sourcePolicy: "recorded-only" });
       renderActivityPanel(currentTopic());
     }));
     activityList.querySelector("[data-weather-fill-play]")?.addEventListener("click", () => {

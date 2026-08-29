@@ -64,3 +64,25 @@ export const foodPreferencesTopicData = {
       { pattern: "喜欢吃 / 不喜欢吃", pinyin: "xǐ huan chī / bù xǐ huan chī", english: "like to eat / do not like to eat", example: "我喜欢吃披萨。我不喜欢吃西兰花。" }
     ]
 };
+
+export const foodPreferenceFallbackAudioEntries = [
+  ["我", "wǒ"], ["爸爸", "bà ba"], ["妈妈", "mā ma"], ["姐姐", "jiě jie"],
+  ["妹妹", "mèi mei"], ["弟弟", "dì di"], ["哥哥", "gē ge"],
+  ["喜欢吃", "xǐ huan chī"], ["喜欢喝", "xǐ huan hē"],
+  ["不喜欢吃", "bù xǐ huan chī"], ["不喜欢喝", "bù xǐ huan hē"],
+  ["想吃", "xiǎng chī"], ["想喝", "xiǎng hē"],
+  ["不想吃", "bù xiǎng chī"], ["不想喝", "bù xiǎng hē"],
+  ["要吃", "yào chī"], ["要喝", "yào hē"],
+  ["不要吃", "bú yào chī"], ["不要喝", "bú yào hē"],
+  // The sentence builder can use any of these as its final recorded fallback
+  // segment when the developer system-voice switch is off.
+  ["苹果", "píng guǒ"], ["冰淇淋", "bīng qí lín"], ["披萨", "pī sà"],
+  ["西兰花", "xī lán huā"], ["饺子", "jiǎo zi"], ["炒饭", "chǎo fàn"],
+  ["炒面", "chǎo miàn"], ["汉堡", "hàn bǎo"], ["热狗", "rè gǒu"],
+  ["三明治", "sān míng zhì"], ["可乐", "kě lè"], ["果汁", "guǒ zhī"],
+  ["牛奶", "niú nǎi"], ["香蕉", "xiāng jiāo"], ["葡萄", "pú tao"],
+  ["橙子", "chéng zi"], ["梨", "lí"], ["桃子", "táo zi"],
+  ["西瓜", "xī guā"], ["草莓", "cǎo méi"], ["薯条", "shǔ tiáo"],
+  ["蛋糕", "dàn gāo"], ["面包", "miàn bāo"], ["巧克力", "qiǎo kè lì"],
+  ["西红柿", "xī hóng shì"], ["胡萝卜", "hú luó bo"], ["黄瓜", "huáng guā"]
+].map(([audio, pinyin]) => ({ audio, pinyin }));

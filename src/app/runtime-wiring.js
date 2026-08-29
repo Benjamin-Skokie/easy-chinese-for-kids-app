@@ -67,7 +67,9 @@ const sceneSpeechRate = 0.64;
 const sceneLinePauseMs = 280;
 const { chineseUtterance, speak, speakSceneLines } = createAudioService({
   getSceneRate: () => sceneSpeechRate,
-  getSceneLinePauseMs: () => sceneLinePauseMs
+  getSceneLinePauseMs: () => sceneLinePauseMs,
+  // Developer-only audio test switch. It is neither rendered nor persisted.
+  isBrowserSpeechEnabled: () => new URLSearchParams(window.location.search).get("systemVoice") !== "off"
 });
 
 const state = createAppState();

@@ -9,13 +9,13 @@ This is the living implementation record for cross-page bugs reported in `docs/b
 | Workstream | Status | Implementation |
 | --- | --- | --- |
 | SYS-01 Shared audio playback lifecycle | Implementation complete; device verification pending | Implemented in shared service |
-| SYS-02 Audio-source routing policy | In progress | Initial recorded-first/recorded-only policies and tests implemented; migration pending |
+| SYS-02 Audio-source routing policy | Implementation complete; device verification pending | Explicit recorded-first, recorded-only, browser-first, and composed-recording paths implemented |
 | SYS-03 Audio asset QA pipeline | In progress | Pre-generation prompt guardrails implemented; waveform audit pending |
 | SYS-04 Shared game controls and completion behavior | Scoped | Not started |
 | SYS-05 Question/picture state synchronization | Scoped | Not started |
 | SYS-06 Shared responsive game layout | Scoped | Not started |
 
-**Overall:** classification and the first SYS-01 implementation pass are complete. SYS-02 routing and SYS-03 generation-quality work are in progress. SYS-01 is not marked fully fixed until it passes target iPad/Safari verification.
+**Overall:** classification and the SYS-01/SYS-02 implementation passes are complete. SYS-03 generation-quality work is in progress. SYS-01 and SYS-02 are not marked fully fixed until they pass target iPad/Safari verification.
 
 ## What Has Been Done
 
@@ -90,12 +90,12 @@ The caller explicitly states how a sentence should be spoken; the shared audio s
 
 ### Work
 
-- [ ] Define explicit audio modes in the shared API instead of inferring policy from whether an asset happens to exist.
-- [ ] Keep deterministic and dynamic policies separate.
-- [ ] Add a manifest/configuration audit for required deterministic sentence assets.
-- [ ] Migrate shared exercise components before migrating individual pages.
-- [ ] Migrate the affected page configurations in batches.
-- [ ] Add tests proving that each mode selects only its permitted source and fallback.
+- [x] Define explicit audio modes in the shared API instead of inferring policy from whether an asset happens to exist.
+- [x] Keep deterministic and dynamic policies separate.
+- [x] Add a manifest/configuration audit for required deterministic sentence assets.
+- [x] Migrate shared exercise components before migrating individual pages.
+- [x] Migrate the affected page configurations in batches.
+- [x] Add tests proving that each mode selects only its permitted source and fallback.
 
 ### Acceptance Criteria
 
@@ -232,3 +232,8 @@ Do not mark a workstream complete because its shared code changed. Completion re
 - After explicit approval, generated all 46 previously missing Learn recordings with the revised prompt and synchronized the recorded-audio index to 953/953 coverage.
 - Force-regenerated 33 reported or related quality-sensitive clips, including the `玩儿…` / `…片儿` families, `披萨`, `西兰花`, `跳舞`, `学校有教室`, `音乐教室`, and the existing clip-specific pronunciation cases.
 - Verified the complete automated suite at 125/125 and `git diff --check`; human listening review and waveform-boundary measurement remain pending.
+- Completed the SYS-02 implementation pass with explicit `recorded-only`, `browser-first`, and composed recorded-sequence behavior in the shared audio service.
+- Migrated the reported deterministic exercises to recorded-only playback and preserved system-first behavior for Food Preference, My Favorite Color, and Toys with recorded fallback segments.
+- Reworked Color Mission to use authored colour-object phrases, concise instructions, and recorded-only playback; Book Words now read both the colour and its complete example phrase.
+- Generated 39 new fallback/phrase recordings and synchronized manifest coverage to 992/992.
+- Verified 130/130 automated tests, `node --check app.js`, and `git diff --check`. The aggregate `npm run check` still stops at the pre-existing learning-data validation failures listed above; target Safari/iPad audio verification remains pending.

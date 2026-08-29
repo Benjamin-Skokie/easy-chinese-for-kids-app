@@ -2,7 +2,8 @@ import { recordedLearnAudioPath } from "./recorded-audio.js";
 
 export const audioSourcePolicies = Object.freeze({
   recordedFirst: "recorded-first",
-  recordedOnly: "recorded-only"
+  recordedOnly: "recorded-only",
+  browserFirst: "browser-first"
 });
 
 export function createAudioService({
@@ -12,6 +13,7 @@ export function createAudioService({
   getRecordedAudioPath = typeof globalThis.document !== "undefined" ? recordedLearnAudioPath : () => "",
   getSceneRate,
   getSceneLinePauseMs,
+  isBrowserSpeechEnabled = () => true,
   schedule = globalThis.setTimeout,
   reportMissingRecordedAudio = (text) => globalThis.console?.warn?.(`Recorded audio unavailable: ${text}`)
 } = {}) {
@@ -41,17 +43,28 @@ export function createAudioService({
     return requestId === playbackRequestId;
   }
 
-  function speakWithBrowser(text, rate = 0.8, voiceNames = preferredVoiceNames, requestId = playbackRequestId, onEnd) {
-    if (!synthesis || !text || !isCurrentRequest(requestId)) return;
-    const utterance = chineseUtterance(text, rate, voiceNames);
+  function speakWithBrowser(text, rate = 0.8, voiceNames = preferredVoiceNames, requestId = playbackRequestId, onEnd, onError = onEnd) {
+    if (!isBrowserSpeechEnabled() || !synthesis || !text || !isCurrentRequest(requestId)) return false;
+    let utterance;
+    try {
+      utterance = chineseUtterance(text, rate, voiceNames);
+    } catch {
+      return false;
+    }
     activeBrowserUtterance = utterance;
-    const finish = () => {
+    const finish = (callback) => {
       if (activeBrowserUtterance === utterance) activeBrowserUtterance = null;
-      if (isCurrentRequest(requestId)) onEnd?.();
+      if (isCurrentRequest(requestId)) callback?.();
     };
-    utterance.onend = finish;
-    utterance.onerror = finish;
-    synthesis.speak(utterance);
+    utterance.onend = () => finish(onEnd);
+    utterance.onerror = () => finish(onError);
+    try {
+      synthesis.speak(utterance);
+      return true;
+    } catch {
+      if (activeBrowserUtterance === utterance) activeBrowserUtterance = null;
+      return false;
+    }
   }
 
   function stopActiveBrowserSpeech() {
@@ -104,6 +117,15 @@ export function createAudioService({
     });
   }
 
+  async function playRecordingSequence(texts, requestId) {
+    for (const text of texts) {
+      if (!isCurrentRequest(requestId) || !getRecordedAudioPath(text)) return { didPlay: false, missingText: text };
+      const didPlay = await playRecording(text, requestId);
+      if (!didPlay) return { didPlay: false, missingText: text };
+    }
+    return { didPlay: true, missingText: "" };
+  }
+
   function speak(text, rate = 0.8, voiceNamesOrOptions = preferredVoiceNames) {
     if (!text) return;
     const options = Array.isArray(voiceNamesOrOptions)
@@ -112,6 +134,25 @@ export function createAudioService({
     const voiceNames = options.voiceNames ?? preferredVoiceNames;
     const sourcePolicy = options.sourcePolicy ?? audioSourcePolicies.recordedFirst;
     const requestId = beginPlaybackRequest();
+    const recordedTexts = options.recordedTexts?.filter(Boolean) ?? [text];
+    if (sourcePolicy === audioSourcePolicies.browserFirst) {
+      const fallbackTexts = options.recordedFallbackTexts?.filter(Boolean) ?? [text];
+      const playRecordedFallback = () => {
+        if (!isCurrentRequest(requestId)) return;
+        playRecordingSequence(fallbackTexts, requestId).then(({ didPlay, missingText }) => {
+          if (!didPlay && isCurrentRequest(requestId)) reportMissingRecordedAudio(missingText || text);
+        });
+      };
+      const browserStarted = speakWithBrowser(text, rate, voiceNames, requestId, undefined, playRecordedFallback);
+      if (!browserStarted) playRecordedFallback();
+      return;
+    }
+    if (sourcePolicy === audioSourcePolicies.recordedOnly && recordedTexts.length > 1) {
+      playRecordingSequence(recordedTexts, requestId).then(({ didPlay, missingText }) => {
+        if (!didPlay && isCurrentRequest(requestId)) reportMissingRecordedAudio(missingText || text);
+      });
+      return;
+    }
     if (!getRecordedAudioPath(text)) {
       if (sourcePolicy === audioSourcePolicies.recordedOnly) {
         reportMissingRecordedAudio(text);

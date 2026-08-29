@@ -92,6 +92,13 @@ export const toySceneAudioEntries = [
   { id: "toy-airplane", hanzi: "我有玩具飞机。", pinyin: "wǒ yǒu wán jù fēi jī.", english: "I have a toy airplane.", audio: "我有玩具飞机" },
   { id: "toy-bear", hanzi: "我有玩具熊。", pinyin: "wǒ yǒu wán jù xióng.", english: "I have a toy bear.", audio: "我有玩具熊" }
 ];
+export const toyPracticeAudioEntries = [
+  { id: "toys", audio: "我有玩具" },
+  { id: "toy-car", audio: "我有玩具汽车" },
+  { id: "school-bus", audio: "我有玩具校车" },
+  { id: "bicycle", audio: "我有自行车" },
+  { id: "fallback-prefix", hanzi: "我有", pinyin: "wǒ yǒu", english: "I have", audio: "我有" }
+];
 
 import { advanceShuffledOrder, nextRandomCycleId } from "../../core/random-cycle.js";
 
@@ -120,7 +127,7 @@ export function createPlayHobbiesRuntime({ state, currentTopic, currentBook, cur
     "4b:4": { cartoons: "Watching cartoons", piano: "Playing piano", "computer-game": "Computer games", television: "Watching TV", movie: "Movie time" },
     "4b:7": { run: "Running", soccer: "Playing soccer", bike: "Riding a bike", sand: "Playing in sand" }
   }[lessonKey()]?.[id] ?? "Look and listen");
-  const speakLesson = (text, rate) => speak(text, rate);
+  const speakLesson = (text, rate, options) => speak(text, rate, options);
   const round = () => lesson().rounds.find((entry) => entry.itemId === state.hobbiesBuildOrder[state.hobbiesBuildRoundIndex]) ?? lesson().rounds[0];
   const answerFor = (entry, tokens = state.hobbiesBuildSelectedTokens) => entry.answers.find((answer) => answer.tokens.length === tokens.length && answer.tokens.every((token, index) => token === tokens[index]));
   const validPrefix = (entry, tokens) => entry.answers.some((answer) => tokens.every((token, index) => token === answer.tokens[index]));
@@ -178,7 +185,10 @@ export function createPlayHobbiesRuntime({ state, currentTopic, currentBook, cur
       state.toysPracticeSelectedId = pickedId;
       if (pickedId === item.id) {
         state.toysPracticeResult = "correct";
-        if (state.tapAudioEnabled) speakLesson(`我有${item.hanzi}`, 0.78);
+        if (state.tapAudioEnabled) speakLesson(`我有${item.hanzi}`, 0.78, {
+          sourcePolicy: "browser-first",
+          recordedFallbackTexts: ["我有", item.hanzi]
+        });
       } else {
         state.toysPracticeResult = "wrong";
         state.toysPracticeWrongIds = new Set([...state.toysPracticeWrongIds, pickedId]);
