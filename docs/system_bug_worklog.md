@@ -13,7 +13,7 @@ This is the living implementation record for cross-page bugs reported in `docs/b
 | SYS-03 Audio asset QA pipeline | In progress | Pre-generation prompt guardrails implemented; waveform audit pending |
 | SYS-04 Shared game controls and completion behavior | Implementation complete; cross-page verification pending | Shared New game/Clear contract and silent correct-answer behavior applied |
 | SYS-05 Question/picture state synchronization | Implementation verified | Hobbies round state uses one item ID for picture, prompt, choices, and answer |
-| SYS-06 Shared responsive game layout | Scoped | Not started |
+| SYS-06 Shared responsive game layout | Implementation complete; representative iPad verification complete | Shared compact prompt/choice layout and horizontal matching-card metadata applied |
 
 **Overall:** classification and the SYS-01/SYS-02 implementation passes are complete. SYS-03 generation-quality work is in progress. SYS-01 and SYS-02 are not marked fully fixed until they pass target iPad/Safari verification.
 
@@ -191,11 +191,11 @@ Common exercises use iPad space efficiently while retaining readable text and to
 
 ### Work
 
-- [ ] Define shared iPad layout tokens for titles, descriptions, gaps, media size, and answer controls.
-- [ ] Add a responsive left-picture/right-choices layout for suitable exercises.
-- [ ] Add a reusable horizontal Chinese → pinyin → English row, with optional icon.
-- [ ] Keep smaller-screen stacking as an intentional breakpoint behavior.
-- [ ] Run visual QA at the supported iPad viewport sizes.
+- [x] Define shared sizing for descriptions, gaps, media size, and answer controls.
+- [x] Add a responsive left-picture/right-choices layout for suitable exercises.
+- [x] Add a reusable horizontal Chinese → pinyin → English row for shared matching cards.
+- [x] Keep smaller-screen stacking as an intentional breakpoint behavior.
+- [x] Run representative visual QA at the desktop/iPad layout width.
 
 ### Acceptance Criteria
 
@@ -218,6 +218,8 @@ Do not mark a workstream complete because its shared code changed. Completion re
 ## Change Log
 
 ### 2026-08-29
+
+- SYS-06: added the shared `practice-compact-split` layout for Toys, Hobbies at Home / Leisure, and Ask, Is It; My Body now uses the same left-art/right-options principle at wider widths. Request & Permission remains single-column because its builder already sits inside a half-width practice panel. Matching cards in shared lesson practice render Chinese, pinyin, and English on one compact row where available. The game-description style is shared and reduced across practice pages.
 
 - Created the worklog from the 70-note Bug report and its classification.
 - Recorded the initial source-code findings for the shared audio service.

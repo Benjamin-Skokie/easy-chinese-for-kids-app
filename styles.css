@@ -3898,7 +3898,8 @@ h4 {
 
 .numbers-game-note {
   color: var(--muted);
-  font-size: 1.3rem;
+  font-size: 1.05rem;
+  line-height: 1.35;
   margin-top: 2px;
 }
 
@@ -4148,6 +4149,26 @@ h4 {
   margin-top: 16px;
 }
 
+.age-listen-options {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.age-listen-options .greetings-game-option {
+  grid-template-columns: minmax(0, 1fr);
+  justify-content: stretch;
+  justify-items: start;
+  align-content: center;
+  padding-inline: 20px;
+  text-align: left;
+}
+
+.age-listen-options .numbers-game-hanzi,
+.age-listen-options .numbers-game-pinyin,
+.age-listen-options .numbers-game-english {
+  justify-self: start;
+  text-align: left;
+}
+
 .greetings-game-audio-row {
   display: grid;
   gap: 12px;
@@ -4184,23 +4205,28 @@ h4 {
   grid-template-columns: minmax(0, 1fr);
   justify-content: stretch;
   justify-items: stretch;
-  text-align: center;
+  align-items: stretch;
+  text-align: left;
 }
 
 .family-listen-copy {
   display: grid;
-  grid-template-rows: minmax(2.1rem, auto) minmax(1.5rem, auto) minmax(2.5rem, auto);
+  grid-template-rows: 2.1rem 1.5rem 2.5rem;
   align-content: center;
   justify-items: center;
   width: 100%;
-  min-height: 6.1rem;
-  text-align: center;
+  height: 100%;
+  min-height: 0;
+  text-align: left;
 }
 
 .family-listen-copy .numbers-game-hanzi,
 .family-listen-copy .numbers-game-pinyin,
 .family-listen-copy .numbers-game-english {
   display: block;
+  align-self: center;
+  justify-self: stretch;
+  text-align: left;
 }
 
 .family-listen-option.is-correct {
@@ -4263,23 +4289,95 @@ h4 {
 
 .lesson-practice-shell .polite-match-card {
   height: 92px;
+  grid-template-columns: max-content max-content minmax(0, 1fr);
   align-content: center;
+  align-items: baseline;
+  column-gap: 8px;
 }
 
-.lesson-practice-shell .polite-match-card:has(.meals-match-copy) {
-  grid-template-columns: minmax(0, 1fr) minmax(5.5rem, 42%);
+.lesson-practice-shell .polite-match-card > .numbers-game-hanzi { grid-column: 1; }
+.lesson-practice-shell .polite-match-card > .numbers-game-pinyin { grid-column: 2; }
+.lesson-practice-shell .polite-match-card > .numbers-game-english { grid-column: 3; min-width: 0; text-align: right; }
+
+/* Greeting phrases need the full card width. Keep the Chinese and pinyin in
+   their original vertical stack so the two match columns never overlap. */
+.greetings-practice-shell .polite-match-card,
+.polite-words-practice-shell .polite-match-card,
+.weekdays-practice-shell .polite-match-card {
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: auto auto;
   align-items: center;
-  column-gap: 12px;
+}
+
+/* Greetings has short phrases beside longer situation descriptions. Give
+   every language line a shared left edge instead of centering each line by
+   itself, which keeps both columns easy to scan. */
+.greetings-practice-shell .polite-match-card {
+  justify-items: stretch;
+  text-align: left;
+}
+
+.greetings-practice-shell .polite-match-card > .numbers-game-hanzi,
+.greetings-practice-shell .polite-match-card > .numbers-game-pinyin,
+.greetings-practice-shell .polite-match-card > .numbers-game-english,
+.polite-words-practice-shell .polite-match-card > .numbers-game-hanzi,
+.polite-words-practice-shell .polite-match-card > .numbers-game-pinyin,
+.polite-words-practice-shell .polite-match-card > .numbers-game-english,
+.weekdays-practice-shell .polite-match-card > .numbers-game-hanzi,
+.weekdays-practice-shell .polite-match-card > .numbers-game-pinyin,
+.weekdays-practice-shell .polite-match-card > .numbers-game-english {
+  grid-column: 1;
+  text-align: left;
+}
+
+.greetings-practice-shell .polite-match-card > .numbers-game-hanzi,
+.greetings-practice-shell .polite-match-card > .numbers-game-pinyin,
+.greetings-practice-shell .polite-match-card > .numbers-game-english,
+.greetings-practice-shell .polite-match-card-meaning .match-answer-label {
+  text-align: left;
+}
+
+/* Requests & Permission already has a two-panel practice board. Keep its
+   matching phrases stacked so the narrow half-panel stays readable. */
+.requests-permission-practice-shell .polite-match-card {
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: auto auto;
+  align-items: center;
+}
+
+.requests-permission-practice-shell .polite-match-card > .numbers-game-hanzi,
+.requests-permission-practice-shell .polite-match-card > .numbers-game-pinyin,
+.requests-permission-practice-shell .polite-match-card > .numbers-game-english {
+  grid-column: 1;
+  text-align: left;
 }
 
 .meals-match-copy {
   display: grid;
   gap: 3px;
+  min-width: 0;
 }
 
-.meals-match-english {
-  font-size: 1.32rem;
-  text-align: right;
+/* Meals & Feelings contains full questions and replies. Each side already has
+   its own match column, so keep a card's Chinese, pinyin, and English stacked
+   rather than squeezing three languages into a single horizontal row. */
+.meals-feelings-practice-shell .polite-match-card:has(.meals-match-copy) {
+  min-height: 126px;
+  height: auto;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: auto auto;
+  align-content: center;
+  align-items: start;
+  gap: 5px;
+}
+
+.meals-feelings-practice-shell .meals-match-copy .numbers-game-hanzi {
+  white-space: nowrap;
+}
+
+.meals-feelings-practice-shell .meals-match-english {
+  font-size: var(--learner-english-size);
+  text-align: left;
 }
 
 .lesson-practice-shell .polite-match-card-meaning .match-answer-label,
@@ -4307,6 +4405,83 @@ h4 {
   margin: 14px 0;
   border-radius: 18px;
   object-fit: cover;
+}
+
+/* Shared compact practice layout: prompt and choices share an iPad screen,
+   while phone widths return to a simple one-column flow. */
+.practice-compact-split {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.82fr) minmax(0, 1.18fr);
+  column-gap: 18px;
+  row-gap: 12px;
+  align-items: start;
+}
+
+.practice-compact-split > .numbers-game-top { grid-column: 1 / -1; }
+
+.practice-compact-split > .practice-compact-visual {
+  grid-column: 1;
+  grid-row: 2;
+  width: 100%;
+  max-width: 360px;
+  margin: 0;
+  justify-self: center;
+}
+
+.practice-compact-content {
+  display: grid;
+  grid-column: 2;
+  grid-row: 2;
+  gap: 12px;
+  min-width: 0;
+  align-content: start;
+}
+
+.practice-compact-content > * { margin-top: 0; margin-bottom: 0; }
+
+.toys-practice-shell.practice-compact-split {
+  grid-template-columns: minmax(260px, 0.9fr) minmax(0, 1.1fr);
+  grid-template-rows: auto 332px;
+}
+
+.toys-practice-shell .practice-compact-content {
+  grid-template-rows: 4.8rem minmax(0, 1fr);
+  height: 100%;
+}
+
+.toys-practice-shell .clothes-quiz-options {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+  height: 100%;
+}
+
+.toys-practice-shell .clothes-quiz-option {
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: repeat(3, auto);
+  min-height: 0;
+  gap: 4px;
+  align-items: center;
+}
+
+.toys-practice-shell .clothes-quiz-option > .numbers-game-hanzi {
+  grid-column: 1;
+}
+
+.toys-practice-shell .clothes-quiz-option > .numbers-game-pinyin {
+  grid-column: 1;
+  text-align: center;
+}
+
+.toys-practice-shell .clothes-quiz-option > .numbers-game-english {
+  grid-column: 1;
+  text-align: center;
+}
+
+.toys-practice-shell > .practice-compact-visual {
+  align-self: stretch;
+  height: auto;
+  aspect-ratio: auto;
+  max-width: 420px;
 }
 
 .backpack-game-card {
@@ -5209,8 +5384,28 @@ h4 {
 }
 
 .is-it-practice-shell {
-  max-width: 760px;
-  margin: 0 auto;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+}
+
+.is-it-practice-board {
+  display: grid;
+  grid-template-columns: minmax(240px, 1fr) minmax(240px, 1fr);
+  gap: 18px;
+  align-items: start;
+}
+
+.is-it-practice-prompt {
+  display: grid;
+  gap: 12px;
+  min-width: 0;
+}
+
+.is-it-practice-board .is-it-practice-visual {
+  width: 100%;
+  max-width: none;
+  margin: 0;
 }
 
 .is-it-practice-visual {
@@ -5241,7 +5436,29 @@ h4 {
 }
 
 .is-it-practice-options {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: none;
+  height: auto;
+  margin-top: 0;
+}
+
+.is-it-practice-options .numbers-game-option {
+  min-height: 86px;
+}
+
+@media (max-width: 760px) {
+  .is-it-practice-board {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .is-it-practice-options {
+    grid-template-rows: none;
+    height: auto;
+  }
+
+  .is-it-practice-options .numbers-game-option {
+    min-height: 86px;
+  }
 }
 
 .time-routine-card {
@@ -7542,12 +7759,53 @@ h4 {
   margin-top: 16px;
 }
 
+/* Meals & Feelings uses four complete-sentence answers. Keep the picture and
+   the 2-by-2 answer board level on wider screens, without changing the
+   familiar one-column flow on phones. */
+.meals-picture-choice.practice-compact-split {
+  grid-template-columns: minmax(250px, 0.9fr) minmax(0, 1.1fr);
+  grid-template-rows: auto 400px;
+  align-items: stretch;
+}
+
+.meals-picture-choice > .practice-compact-visual {
+  width: 400px;
+  height: 400px;
+  max-width: 100%;
+  aspect-ratio: 1;
+}
+
+.meals-picture-choice .practice-compact-content {
+  height: 100%;
+}
+
+.meals-picture-choice .clothes-quiz-options {
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+  height: 400px;
+}
+
+.meals-picture-choice .clothes-quiz-option {
+  height: 100%;
+  min-height: 0;
+  text-align: center;
+}
+
+.meals-picture-choice .clothes-quiz-option > span:not(.answer-result-mark) {
+  max-width: 100%;
+}
+
 .sentence-choice-options {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .sentence-choice-options .clothes-quiz-option {
   min-height: 104px;
+}
+
+/* Home Hobbies has only two complete-sentence choices. Keep them stacked so
+   their Chinese, pinyin, and English remain easy to scan. */
+.hobbies-at-home-sentence-choice-options {
+  grid-template-columns: minmax(0, 1fr);
 }
 
 .food-preference-choice-label {
@@ -7742,6 +8000,36 @@ h4 {
   font-family: var(--hanzi-font);
   font-size: var(--learner-hanzi-size);
   font-weight: 800;
+}
+
+.toy-practice-answer {
+  display: grid;
+  gap: 2px;
+  min-height: 4.8rem;
+  justify-items: start;
+}
+
+.toy-practice-sentence-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: baseline;
+  gap: 6px 12px;
+}
+
+.toy-practice-answer-pinyin,
+.toy-practice-answer-english {
+  min-height: 1.5em;
+  margin: 0;
+  text-align: left;
+}
+
+.toy-practice-answer-english {
+  justify-self: start;
+}
+
+.toy-practice-answer .is-placeholder {
+  visibility: hidden;
 }
 
 .toy-practice-blank {
@@ -8139,6 +8427,24 @@ h4 {
 .body-listen-practice {
   display: grid;
   gap: 16px;
+}
+
+@media (min-width: 761px) {
+  .body-spotlight-desktop {
+    display: grid;
+    grid-template-columns: minmax(220px, 0.8fr) minmax(0, 1.2fr);
+    gap: 18px;
+    align-items: center;
+  }
+
+  .body-spotlight-desktop .body-listen-visual {
+    min-height: 420px;
+    margin: 0;
+  }
+
+  .body-spotlight-desktop .body-spotlight-options {
+    margin-top: 0;
+  }
 }
 
 .body-listen-visual {
@@ -10629,6 +10935,53 @@ h4 {
   .weather-scene-grid > .greetings-exchange,
   .greetings-practice-grid > .greetings-exchange {
     grid-template-rows: minmax(58px, auto) minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 760px) {
+  .practice-compact-split {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .toys-practice-shell.practice-compact-split {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto auto;
+  }
+
+  .toys-practice-shell .practice-compact-content,
+  .toys-practice-shell .clothes-quiz-options {
+    height: auto;
+  }
+
+  .toys-practice-shell .clothes-quiz-options {
+    grid-template-rows: none;
+  }
+
+  .toys-practice-shell .clothes-quiz-option {
+    min-height: 104px;
+  }
+
+  .practice-compact-split > .practice-compact-visual,
+  .practice-compact-content {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
+  .practice-compact-split > .practice-compact-visual {
+    width: min(100%, 24rem);
+  }
+
+  .meals-picture-choice.practice-compact-split {
+    grid-template-rows: auto;
+  }
+
+  .meals-picture-choice .practice-compact-content,
+  .meals-picture-choice .clothes-quiz-options {
+    height: auto;
+  }
+
+  .meals-picture-choice .clothes-quiz-option {
+    min-height: 104px;
   }
 }
 

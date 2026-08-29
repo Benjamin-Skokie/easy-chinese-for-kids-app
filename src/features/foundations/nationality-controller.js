@@ -36,7 +36,7 @@ export function createNationalityController({ state, countries, question, shuffl
     state.nationalityChallengePickedId = "";
     state.nationalityChallengeResult = "";
     state.nationalityChallengeWrongIds = new Set();
-    state.nationalityListenFeedback = options.feedback ?? "Press Play. Listen to the conversation, then choose the nationality you hear.";
+    state.nationalityListenFeedback = options.feedback ?? "";
   }
 
   function ensureNationalityChallenge() {
@@ -59,7 +59,7 @@ export function createNationalityController({ state, countries, question, shuffl
     }
     const answer = currentAnswer();
     playConversation(answer);
-    state.nationalityListenFeedback = "Listen carefully, then choose the nationality you hear.";
+    state.nationalityListenFeedback = "";
     renderActivityPanel(currentTopic());
   }
 
@@ -70,7 +70,7 @@ export function createNationalityController({ state, countries, question, shuffl
     state.nationalityChallengePickedId = itemId;
     if (itemId === answer.id) {
       state.nationalityChallengeResult = "correct";
-      state.nationalityListenFeedback = "Correct! Read the conversation below.";
+      state.nationalityListenFeedback = "";
     } else {
       state.nationalityChallengeResult = "wrong";
       state.nationalityChallengeWrongIds = new Set([...state.nationalityChallengeWrongIds, itemId]);
@@ -96,7 +96,7 @@ export function createNationalityController({ state, countries, question, shuffl
   function handleNationalityMatchPhrase(itemId) {
     if (state.nationalityMatchedIds.has(itemId)) return;
     state.nationalityMatchSelectedId = itemId;
-    state.nationalityMatchFeedback = "Now choose the matching country symbol.";
+    state.nationalityMatchFeedback = "";
     renderActivityPanel(currentTopic());
   }
 
@@ -106,7 +106,7 @@ export function createNationalityController({ state, countries, question, shuffl
     if (selectedId === itemId) {
       state.nationalityMatchedIds = new Set([...state.nationalityMatchedIds, itemId]);
       state.nationalityMatchSelectedId = null;
-      state.nationalityMatchFeedback = state.nationalityMatchedIds.size === practiceItems.length ? "Great job! You matched every country." : "Correct! Choose another flag and country name.";
+      state.nationalityMatchFeedback = "";
     } else {
       state.nationalityMatchFeedback = "Not that symbol. Try another one.";
       state.nationalityMatchWrongPhraseIds = new Set([...state.nationalityMatchWrongPhraseIds, selectedId]);
@@ -151,7 +151,7 @@ export function createNationalityController({ state, countries, question, shuffl
     state.languageChallengePickedId = itemId;
     if (itemId === answer.id) {
       state.languageChallengeResult = "correct";
-      state.languageListenFeedback = "Correct! Read the sentence below.";
+      state.languageListenFeedback = "";
     } else {
       state.languageChallengeResult = "wrong";
       state.languageChallengeWrongIds = new Set([...state.languageChallengeWrongIds, itemId]);

@@ -49,7 +49,7 @@ export function createIntroductionsController({
     const prompt = introductionsPromptById(state.introductionsChallengePromptId);
     if (!prompt) return;
     if (state.tapAudioEnabled) speak(prompt.audio, 0.78);
-    state.lastIntroductionsFeedback = "Listen again, then tap the child whose name you heard.";
+    state.lastIntroductionsFeedback = "";
     renderActivityPanel(currentTopic());
   }
 
@@ -62,7 +62,7 @@ export function createIntroductionsController({
 
     if (kidId === answerPrompt.speakerId) {
       state.selectedFocusItemId = answerPrompt.sourceItemId;
-      state.lastIntroductionsFeedback = `Correct! ${answerKid.hanziName} said ${answerPrompt.hanzi}`;
+      state.lastIntroductionsFeedback = "";
       renderFocusDisplay(currentFocusItem());
       renderFocusExplorer();
       renderFocusStatus();

@@ -193,10 +193,34 @@ test("listen-and-choose games show card-level correct or wrong feedback", () => 
   assert.match(ageControllerSource, /state\.ageChallengeWrongIds = new Set/);
 });
 
-test("listen-and-choose card copy stays centered within the whole answer card", () => {
+test("Age listening stays on a solved round until its green New game button is pressed", () => {
+  const practiceSource = readFileSync("src/core/lesson-practice-runtime.js", "utf8");
+  const ageSource = readFileSync("src/features/foundations/age-controller.js", "utf8");
+
+  assert.match(practiceSource, /data-age-game-play>\$\{state\.ageChallengeResult === "correct" \? "New game" : "Play"\}/);
+  assert.match(ageSource, /function handleAgeChallengePlay\(\) \{[\s\S]{0,260}state\.ageChallengeResult === "correct"[\s\S]{0,180}resetAgeChallenge\(\);[\s\S]{0,260}speak\(nextItem\.audio, 0\.78\)[\s\S]{0,160}return;/);
+  assert.doesNotMatch(ageSource, /window\.setTimeout\(\(\) => \{ resetAgeChallenge\(\)/);
+  assert.doesNotMatch(practiceSource, /<h4>Which line did you hear\?<\/h4>|<p class="body-match-kicker">Build the phrase<\/p>|<h4>\$\{buildTarget\.prompt\}<\/h4>/);
+  assert.match(ageSource, /state\.ageBuildFeedback = options\.feedback \?\? "";/);
+  assert.match(practiceSource, /state\.ageBuildFeedback \? `<p class="greetings-game-feedback">\$\{state\.ageBuildFeedback\}<\/p>` : ""/);
+  assert.match(practiceSource, /<p class="body-match-kicker">Listen and choose<\/p>\s*<p class="numbers-game-note">Play the audio, then tap the matching age or grade question or answer\.<\/p>/);
+  assert.match(practiceSource, /<p class="body-match-kicker">Build a sentence<\/p>\s*<p class="numbers-game-note">Tap the word pieces in order to build the sentence\.<\/p>/);
+  assert.doesNotMatch(ageSource, /Correct! \$\{target\.targetHanzi\}/);
+});
+
+test("Age Listen and Choose uses a stable two-by-two answer grid", () => {
+  const practiceSource = readFileSync("src/core/lesson-practice-runtime.js", "utf8");
   const styles = readFileSync("styles.css", "utf8");
-  assert.match(styles, /\.numbers-game-option\.family-listen-option \{[\s\S]{0,220}grid-template-columns: minmax\(0, 1fr\);[\s\S]{0,220}justify-items: stretch;/);
-  assert.match(styles, /\.family-listen-copy \{[\s\S]{0,280}width: 100%;/);
+  assert.match(practiceSource, /<div class="numbers-game-options age-listen-options">/);
+  assert.match(styles, /\.age-listen-options \{[\s\S]{0,120}grid-template-columns: repeat\(2, minmax\(0, 1fr\)\);/);
+  assert.match(styles, /\.age-listen-options \.greetings-game-option \{[\s\S]{0,180}justify-items: start;[\s\S]{0,180}padding-inline: 20px;[\s\S]{0,120}text-align: left;/);
+});
+
+test("listen-and-choose card copy uses one shared left edge", () => {
+  const styles = readFileSync("styles.css", "utf8");
+  assert.match(styles, /\.numbers-game-option\.family-listen-option \{[\s\S]{0,260}grid-template-columns: minmax\(0, 1fr\);[\s\S]{0,260}align-items: stretch;/);
+  assert.match(styles, /\.family-listen-copy \{[\s\S]{0,300}grid-template-rows: 2\.1rem 1\.5rem 2\.5rem;[\s\S]{0,300}height: 100%;/);
+  assert.match(styles, /\.family-listen-copy \.numbers-game-hanzi,[\s\S]{0,360}align-self: center;[\s\S]{0,120}justify-self: stretch;[\s\S]{0,120}text-align: left;/);
 });
 
 test("correct Listen and Choose answers show feedback without replaying the prompt", () => {
@@ -217,7 +241,7 @@ test("correct Listen and Choose answers show feedback without replaying the prom
   assert.doesNotMatch(sources.familyAndNumbers, /function handleNumberChallengeGuess[\s\S]{0,800}speak\(targetItem\.audio/);
   assert.doesNotMatch(sources.weekdaysAndDates, /function handleWeekdayChallengeGuess[\s\S]{0,700}speak\(/);
   assert.doesNotMatch(sources.weekdaysAndDates, /function handleDateChallengeGuess[\s\S]{0,700}speak\(/);
-  assert.doesNotMatch(sources.school, /function handleSchoolChallengeGuess[\s\S]{0,700}speak\(/);
+  assert.doesNotMatch(sources.school, /function handleSchoolChallengeGuess[\s\S]{0,420}speak\(/);
 });
 
 test("Everyday Actions keeps one silent new-game button in the practice header", () => {
@@ -238,6 +262,73 @@ test("Greetings starts a different listen-and-choose round after a correct answe
   assert.match(sharedPracticeSource, /const playLabel = typeof config\.playLabel === "function" \? config\.playLabel\(\) : \(config\.playLabel \?\? "Play"\)/);
   assert.match(controllerSource, /state\.greetingsChallengeResult === "correct"[\s\S]{0,300}resetGreetingsChallenge\(\{[\s\S]{0,360}speak\(nextItem\.audio, 0\.78\)/);
   assert.match(controllerSource, /nextRandomCycleId\(state, "greetings-listen", items\.map\(\(item\) => item\.id\)\)/);
+});
+
+test("Greetings matching keeps selection quiet until an answer is checked", () => {
+  const greetingsSource = readFileSync("src/features/foundations/greetings-controller.js", "utf8");
+  assert.doesNotMatch(greetingsSource, /Now find the situation/);
+  assert.match(greetingsSource, /state\.greetingsSelectedPhraseId = itemId;[\s\S]{0,260}state\.greetingsMatchFeedback = "";/);
+});
+
+test("Greetings matching uses a shared left edge inside both card columns", () => {
+  const styles = readFileSync("styles.css", "utf8");
+  assert.match(styles, /\.greetings-practice-shell \.polite-match-card \{[\s\S]{0,160}justify-items: stretch;[\s\S]{0,120}text-align: left;/);
+  assert.match(styles, /\.greetings-practice-shell \.polite-match-card-meaning \.match-answer-label \{[\s\S]{0,100}text-align: left;/);
+});
+
+test("Listen and choose plays audio without adding a redundant instruction", () => {
+  const greetingsSource = readFileSync("src/features/foundations/greetings-controller.js", "utf8");
+  const politeSource = readFileSync("src/features/foundations/polite-words-controller.js", "utf8");
+  const introductionsSource = readFileSync("src/features/foundations/introductions-controller.js", "utf8");
+  const ageSource = readFileSync("src/features/foundations/age-controller.js", "utf8");
+  const familySource = readFileSync("src/features/foundations/foundations-runtime.js", "utf8");
+  const nationalitySource = readFileSync("src/features/foundations/nationality-controller.js", "utf8");
+
+  assert.doesNotMatch(greetingsSource, /Listen again and find/);
+  assert.doesNotMatch(politeSource, /Listen carefully, then tap the matching card/);
+  assert.doesNotMatch(introductionsSource, /Listen again, then tap the child/);
+  assert.doesNotMatch(ageSource, /Listen again and find/);
+  assert.doesNotMatch(familySource, /Listen again and find/);
+  assert.doesNotMatch(nationalitySource, /Press Play\. Listen to the conversation|Listen carefully, then choose the nationality/);
+});
+
+test("Listen and choose uses card checks instead of correct-answer sentences", () => {
+  const sources = [
+    "src/features/foundations/greetings-controller.js",
+    "src/features/foundations/polite-words-controller.js",
+    "src/features/foundations/introductions-controller.js",
+    "src/features/foundations/age-controller.js",
+    "src/features/foundations/foundations-runtime.js",
+    "src/features/foundations/nationality-controller.js",
+    "src/features/school-life/school-food-runtime.js"
+  ].map((file) => readFileSync(file, "utf8")).join("\n");
+
+  assert.doesNotMatch(sources, /Correct!.*(?:matches the audio|said|Read the conversation|Read the sentence)/);
+  assert.doesNotMatch(sources, /Nice listening\.|schoolListenFeedback = "Correct!"/);
+});
+
+test("Polite Words matching keeps selection quiet until an answer is checked", () => {
+  const politeSource = readFileSync("src/features/foundations/polite-words-controller.js", "utf8");
+  assert.doesNotMatch(politeSource, /Now find the meaning/);
+  assert.match(politeSource, /state\.politeSelectedPhraseId = itemId;[\s\S]{0,260}state\.politeMatchFeedback = "";/);
+});
+
+test("Greeting and polite matching rely on card checks for successful feedback", () => {
+  const greetingsSource = readFileSync("src/features/foundations/greetings-controller.js", "utf8");
+  const politeSource = readFileSync("src/features/foundations/polite-words-controller.js", "utf8");
+  assert.doesNotMatch(greetingsSource, /Correct! .*matches that situation|Great job! You matched all the greetings/);
+  assert.doesNotMatch(politeSource, /Correct! .*matches that meaning|Great job! You matched all the polite phrases/);
+});
+
+test("matching games keep selection and success feedback on the cards", () => {
+  const foundationsSource = readFileSync("src/features/foundations/foundations-runtime.js", "utf8");
+  const nationalitySource = readFileSync("src/features/foundations/nationality-controller.js", "utf8");
+  const timeSource = readFileSync("src/features/time-daily-life/time-daily-life-runtime.js", "utf8");
+  const schoolSource = readFileSync("src/features/school-life/school-food-runtime.js", "utf8");
+  assert.doesNotMatch(foundationsSource, /Now find who matches|All family members matched|Now choose its answer|Grandparents profile complete|Matched\. Choose the next question/);
+  assert.doesNotMatch(nationalitySource, /Now choose the matching country symbol|Great job! You matched every country|Correct! Choose another flag and country name/);
+  assert.doesNotMatch(timeSource, /weekdayMatchFeedback = "Matched\."/);
+  assert.doesNotMatch(schoolSource, /schoolMatchFeedback = "Correct!"/);
 });
 
 test("evaluated practice choices keep visible correct or wrong feedback", () => {
@@ -563,6 +654,73 @@ test("picture-led practice cards keep their image centered", () => {
   assert.match(stylesSource, /\.clothes-quiz-image \{[\s\S]*object-fit: contain;/);
 });
 
+test("compact practice layout keeps pictures beside choices until phone width", () => {
+  const stylesSource = readFileSync("styles.css", "utf8");
+  const lessonRuntime = readFileSync("src/core/lesson-practice-runtime.js", "utf8");
+  const hobbiesRuntime = readFileSync("src/features/play-hobbies/play-hobbies-runtime.js", "utf8");
+  assert.match(stylesSource, /\.practice-compact-split \{[\s\S]{0,220}grid-template-columns: minmax\(220px, 0\.82fr\) minmax\(0, 1\.18fr\);/);
+  assert.match(stylesSource, /@media \(max-width: 760px\) \{[\s\S]{0,420}\.practice-compact-split \{[\s\S]{0,120}grid-template-columns: minmax\(0, 1fr\);/);
+  assert.doesNotMatch(lessonRuntime, /request-sentence-builder practice-compact-split/);
+  assert.match(lessonRuntime, /topic\.id === "greetings"[\s\S]{0,180}shellClass: "lesson-practice-shell greetings-practice-shell"/);
+  assert.match(stylesSource, /\.greetings-practice-shell \.polite-match-card,[\s\S]{0,160}\.polite-words-practice-shell \.polite-match-card,[\s\S]{0,160}\.weekdays-practice-shell \.polite-match-card \{[\s\S]{0,160}grid-template-columns: minmax\(0, 1fr\);/);
+  assert.match(lessonRuntime, /topic\.id === "polite-words"[\s\S]{0,180}shellClass: "lesson-practice-shell polite-words-practice-shell"/);
+  assert.match(lessonRuntime, /topic\.id === "weekdays"[\s\S]{0,180}shellClass: "lesson-practice-shell weekdays-practice-shell"/);
+  assert.match(lessonRuntime, /requests-permission-practice-shell/);
+  assert.match(stylesSource, /\.requests-permission-practice-shell \.polite-match-card \{[\s\S]{0,160}grid-template-columns: minmax\(0, 1fr\);/);
+  assert.doesNotMatch(lessonRuntime, /is-it-practice-shell practice-compact-split/);
+  assert.match(stylesSource, /\.is-it-practice-shell \{[\s\S]{0,120}width: 100%;[\s\S]{0,120}max-width: none;/);
+  assert.match(lessonRuntime, /is-it-practice-board/);
+  assert.match(stylesSource, /\.is-it-practice-board \{[\s\S]{0,160}grid-template-columns: minmax\(240px, 1fr\) minmax\(240px, 1fr\);/);
+  assert.match(stylesSource, /\.is-it-practice-options \{[\s\S]{0,180}grid-template-columns: minmax\(0, 1fr\);[\s\S]{0,120}height: auto;/);
+  assert.match(lessonRuntime, /function playIsItQuestion\(\)[\s\S]{0,160}speak\(round\.question, 0\.78\)/);
+  assert.match(lessonRuntime, /data-is-it-practice-new[\s\S]{0,220}playIsItQuestion\(\)/);
+  assert.doesNotMatch(lessonRuntime, /\$\{complete && answer \? `<div class="everyday-actions-answer"/);
+  assert.match(hobbiesRuntime, /toys-practice-shell practice-compact-split/);
+  assert.match(hobbiesRuntime, /clothes-quiz-shell practice-compact-split/);
+  assert.match(hobbiesRuntime, /const leisureShellClass = isLeisure \? " practice-compact-split hobbies-leisure-practice-shell"/);
+  assert.match(hobbiesRuntime, /const leisureVisualClass = isLeisure \? " practice-compact-visual"/);
+  assert.match(hobbiesRuntime, /const leisureContentStart = isLeisure \? '<div class="practice-compact-content hobbies-leisure-practice-content">'/);
+  assert.match(hobbiesRuntime, /topic\.id === "hobbies-at-home" \? " hobbies-at-home-sentence-choice-options"/);
+  assert.match(stylesSource, /\.hobbies-at-home-sentence-choice-options \{[\s\S]{0,100}grid-template-columns: minmax\(0, 1fr\);/);
+});
+
+test("Meals & Feelings matching stacks its complete sentence copy inside each card", () => {
+  const stylesSource = readFileSync("styles.css", "utf8");
+  const schoolSource = readFileSync("src/features/school-life/school-food-runtime.js", "utf8");
+  assert.match(schoolSource, /family-practice-shell lesson-practice-shell meals-feelings-practice-shell/);
+  assert.match(stylesSource, /\.meals-feelings-practice-shell \.polite-match-card:has\(\.meals-match-copy\) \{[\s\S]{0,200}min-height: 126px;[\s\S]{0,220}grid-template-columns: minmax\(0, 1fr\);/);
+  assert.match(stylesSource, /\.meals-feelings-practice-shell \.meals-match-copy \.numbers-game-hanzi \{[\s\S]{0,80}white-space: nowrap;/);
+});
+
+test("Meals & Feelings picture choice keeps its image beside a 2-by-2 answer board", () => {
+  const schoolSource = readFileSync("src/features/school-life/school-food-runtime.js", "utf8");
+  const stylesSource = readFileSync("styles.css", "utf8");
+
+  assert.match(schoolSource, /clothes-quiz-shell meals-picture-choice practice-compact-split/);
+  assert.match(schoolSource, /time-routine-quiz-visual practice-compact-visual/);
+  assert.match(schoolSource, /<div class="practice-compact-content">\s*<div class="clothes-quiz-options sentence-choice-options">/);
+  assert.match(stylesSource, /\.meals-picture-choice\.practice-compact-split \{[\s\S]{0,200}grid-template-rows: auto 400px;/);
+  assert.match(stylesSource, /\.meals-picture-choice \.clothes-quiz-options \{[\s\S]{0,160}grid-template-rows: repeat\(2, minmax\(0, 1fr\)\);[\s\S]{0,80}height: 400px;/);
+});
+
+test("Toys picture choice keeps four roomy options and a fixed answer area", () => {
+  const stylesSource = readFileSync("styles.css", "utf8");
+  const runtimeSource = readFileSync("src/features/play-hobbies/play-hobbies-runtime.js", "utf8");
+  assert.match(runtimeSource, /slice\(0, 3\)/);
+  assert.match(runtimeSource, /shuffled\(\[itemId, \.\.\.distractorIds\]\)/);
+  assert.match(runtimeSource, /toy-practice-answer-pinyin\$\{complete \? "" : " is-placeholder"\}/);
+  assert.match(runtimeSource, /toy-practice-answer-english\$\{complete \? "" : " is-placeholder"\}/);
+  assert.match(stylesSource, /\.toys-practice-shell \.clothes-quiz-options \{[\s\S]{0,120}repeat\(2, minmax\(0, 1fr\)\)/);
+  assert.match(stylesSource, /\.toy-practice-answer \{[\s\S]{0,120}min-height: 4\.8rem;/);
+  assert.match(stylesSource, /\.toys-practice-shell > \.practice-compact-visual \{[\s\S]{0,180}align-self: stretch;[\s\S]{0,120}aspect-ratio: auto;/);
+  assert.match(stylesSource, /\.toys-practice-shell \.clothes-quiz-option \{[\s\S]{0,180}grid-template-rows: repeat\(3, auto\);/);
+  assert.match(stylesSource, /\.toys-practice-shell \.clothes-quiz-option > \.numbers-game-pinyin \{[\s\S]{0,100}text-align: center;/);
+  assert.match(stylesSource, /\.toys-practice-shell \.clothes-quiz-option > \.numbers-game-english \{[\s\S]{0,100}text-align: center;/);
+  assert.match(stylesSource, /\.toys-practice-shell\.practice-compact-split \{[\s\S]{0,180}grid-template-rows: auto 332px;/);
+  assert.match(stylesSource, /\.toy-practice-sentence-row \{[\s\S]{0,140}justify-content: flex-start;/);
+  assert.match(stylesSource, /\.toy-practice-answer-english \{[\s\S]{0,80}justify-self: start;/);
+});
+
 test("Leisure Time uses Tiantian for the park soccer scene", () => {
   const runtimeSource = readFileSync("src/features/play-hobbies/play-hobbies-runtime.js", "utf8");
   assert.match(runtimeSource, /天天在公园踢足球/);
@@ -626,6 +784,30 @@ test("audio cancels an active browser utterance before speaking a new phrase", (
       { text: "再见", lang: "zh-CN", rate: 0.78, pitch: 1 }
     ]
   );
+});
+
+test("recorded scene lines play even when browser speech is unavailable", async () => {
+  const played = [];
+  const audio = createAudioService({
+    synthesis: undefined,
+    createAudio: (source) => ({
+      duration: 1,
+      play() {
+        played.push(source);
+        this.onended?.();
+        return Promise.resolve();
+      }
+    }),
+    getRecordedAudioPath: (text) => `recordings/${text}.mp3`,
+    getRecordedAudioPlaybackWindow: () => null,
+    getSceneRate: () => 0.64,
+    getSceneLinePauseMs: () => 0,
+    schedule: (callback) => { callback(); return 0; }
+  });
+
+  audio.speakSceneLines([{ audio: "你是哪国人" }]);
+  await new Promise((resolve) => setTimeout(resolve, 0));
+  assert.deepEqual(played, ["recordings/你是哪国人.mp3"]);
 });
 
 test("recorded Learn audio covers every authored audio entry", () => {
@@ -1581,6 +1763,7 @@ test("Requests & Permission uses the shared two-column scene grid, sentence buil
   assert.match(practiceSource, /function requestSentenceBuilderMarkup\(\)/);
   assert.match(practiceSource, /Build a complete request, then match each Chinese sentence to its English translation/);
   assert.match(practiceSource, /state\.requestBuildFeedback = "Not quite\. Try again\."/);
+  assert.match(practiceSource, /state\.requestBuildResult && state\.requestBuildFeedback/);
   assert.match(practiceSource, /speak\(target\.audio, 0\.78\)/);
   assert.match(stylesSource, /\.polite-scene-grid \{\s+grid-template-columns: repeat\(2, minmax\(0, 1fr\)\);/);
   assert.match(stylesSource, /\.polite-scene-grid \{\s+grid-template-columns: minmax\(0, 1fr\);/);
@@ -2151,6 +2334,11 @@ test("Body adds a no-repeat spotlight-and-choose practice without duplicating it
   assert.match(foundationsSource, /data-body-spotlight-new/);
   assert.match(foundationsSource, /data-body-spotlight-guess/);
   assert.match(foundationsSource, /bodySpotlightRegions/);
+  assert.match(foundationsSource, /function ensureBodySpotlightRound\(\)[\s\S]{0,240}bodySpotlightRegions\[prompt\.id\]/);
+  assert.match(foundationsSource, /forehead: \{ x: 50, y: 22, width: 22, height: 8 \}/);
+  assert.match(foundationsSource, /neck: \{ x: 50, y: 43, width: 15, height: 7 \}/);
+  assert.match(foundationsSource, /arm: \{ x: 73, y: 53, width: 16, height: 23 \}/);
+  assert.match(foundationsSource, /leg: \{ x: 43, y: 76, width: 18, height: 25 \}/);
   assert.match(foundationsSource, /ears: \{ x: 28, y: 31\.5, width: 13, height: 13 \}/);
   assert.doesNotMatch(foundationsSource, /body-listen-hotspot/);
   assert.match(foundationsSource, /\$\{renderBodyMatchPanel\(\)\}/);

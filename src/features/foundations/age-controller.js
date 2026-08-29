@@ -21,10 +21,17 @@ export function createAgeController({ state, ageGameItemIds, ageBuildPhrases, ag
   function ensureAgeChallenge() { if (!state.ageChallengeAnswerId || !state.ageChallengeOptionIds.length) resetAgeChallenge(); }
   function handleAgeChallengePlay() {
     ensureAgeChallenge();
+    if (state.ageChallengeResult === "correct") {
+      resetAgeChallenge();
+      const nextItem = ageGameItems().find((entry) => entry.id === state.ageChallengePromptId);
+      if (nextItem && state.tapAudioEnabled) speak(nextItem.audio, 0.78);
+      renderActivityPanel(currentTopic());
+      return;
+    }
     const item = ageGameItems().find((entry) => entry.id === state.ageChallengePromptId);
     if (!item) return;
     if (state.tapAudioEnabled) speak(item.audio, 0.78);
-    state.lastAgeFeedback = `Listen again and find ${item.hanzi}.`;
+    state.lastAgeFeedback = "";
     renderActivityPanel(currentTopic());
   }
   function handleAgeChallengeGuess(itemId) {
@@ -36,9 +43,8 @@ export function createAgeController({ state, ageGameItemIds, ageBuildPhrases, ag
       state.ageChallengePickedId = itemId;
       state.ageChallengeResult = "correct";
       state.selectedFocusItemId = answer.id;
-      state.lastAgeFeedback = `Correct! ${answer.hanzi} matches the audio.`;
+      state.lastAgeFeedback = "";
       renderFocusDisplay(currentFocusItem()); renderFocusExplorer(); renderFocusStatus(); renderActivityPanel(currentTopic());
-      window.setTimeout(() => { resetAgeChallenge(); renderActivityPanel(currentTopic()); }, 650);
       return;
     }
     state.ageChallengePickedId = itemId;
@@ -56,7 +62,7 @@ export function createAgeController({ state, ageGameItemIds, ageBuildPhrases, ag
     state.ageBuildTargetId = target.id;
     state.ageBuildAvailableTokens = shuffleArray(target.tokens);
     state.ageBuildSelectedTokens = [];
-    state.lastAgeFeedback = options.feedback ?? "Build the sentence by tapping the word pieces in order.";
+    state.ageBuildFeedback = options.feedback ?? "";
   }
   function ensureAgeBuilder() {
     const target = ageBuildTarget();
@@ -71,16 +77,16 @@ export function createAgeController({ state, ageGameItemIds, ageBuildPhrases, ag
       const correct = target.tokens.every((entry, index) => state.ageBuildSelectedTokens[index] === entry);
       if (correct) {
         if (state.tapAudioEnabled) speak(target.audio, 0.78);
-        state.lastAgeFeedback = `Correct! ${target.targetHanzi}`;
+        state.ageBuildFeedback = "";
         if (target.sourceItemId) { state.selectedFocusItemId = target.sourceItemId; renderFocusDisplay(currentFocusItem()); renderFocusExplorer(); renderFocusStatus(); }
-      } else state.lastAgeFeedback = "Not quite. Try building the sentence again.";
+      } else state.ageBuildFeedback = "Not quite. Try building the sentence again.";
     }
     renderActivityPanel(currentTopic());
   }
   function handleAgeBuildClear() {
     const target = ageBuildTarget(); if (!target) return;
     state.ageBuildAvailableTokens = shuffleArray([...state.ageBuildAvailableTokens, ...state.ageBuildSelectedTokens]);
-    state.ageBuildSelectedTokens = []; state.lastAgeFeedback = "Try building the sentence again.";
+    state.ageBuildSelectedTokens = []; state.ageBuildFeedback = "Try building the sentence again.";
     renderActivityPanel(currentTopic());
   }
   function renderAgeExplorer() {

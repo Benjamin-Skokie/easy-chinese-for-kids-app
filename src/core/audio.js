@@ -208,7 +208,6 @@ export function createAudioService({
   }
 
   function speakSceneLines(lines) {
-    if (!synthesis) return;
     const audioLines = lines.map((line) => line.audio).filter(Boolean);
     let index = 0;
     const requestId = beginPlaybackRequest();

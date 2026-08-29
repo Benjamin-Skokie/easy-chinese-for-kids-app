@@ -291,8 +291,8 @@ function handleFamilyChallengePlay() {
   if (state.tapAudioEnabled) {
     speak(item.audio, 0.78);
   }
-  state.familyListenFeedback = `Listen again and find ${item.hanzi}.`;
-  state.lastFamilyFeedback = state.familyListenFeedback;
+  state.familyListenFeedback = "";
+  state.lastFamilyFeedback = "";
   renderActivityPanel(currentTopic());
 }
 
@@ -307,8 +307,8 @@ function handleFamilyChallengeGuess(itemId) {
   if (itemId === answer.id) {
     state.familyChallengePickedId = itemId;
     state.familyChallengeResult = "correct";
-    state.familyListenFeedback = "Nice listening.";
-    state.lastFamilyFeedback = state.familyListenFeedback;
+    state.familyListenFeedback = "";
+    state.lastFamilyFeedback = "";
     renderActivityPanel(currentTopic());
     return;
   }
@@ -354,8 +354,8 @@ function handleFamilyMatchPhrase(itemId) {
   if (state.tapAudioEnabled) {
     speak(item.audio, 0.78);
   }
-  state.familyMatchFeedback = `Now find who matches ${item.hanzi}.`;
-  state.lastFamilyFeedback = state.familyMatchFeedback;
+  state.familyMatchFeedback = "";
+  state.lastFamilyFeedback = "";
   renderActivityPanel(currentTopic());
 }
 
@@ -373,17 +373,13 @@ function handleFamilyMatchAttempt(targetId) {
   if (selectedId === targetId) {
     state.familyMatchedIds = new Set([...state.familyMatchedIds, targetId]);
     state.familySelectedPhraseId = null;
-    state.familyMatchFeedback = "Matched.";
-    state.lastFamilyFeedback = state.familyMatchFeedback;
+    state.familyMatchFeedback = "";
+    state.lastFamilyFeedback = "";
     state.selectedFocusItemId = selectedItem.id;
     renderFocusDisplay(currentFocusItem());
     renderFocusExplorer();
     renderFocusStatus();
 
-    if (state.familyMatchedIds.size === familyGameItems().length) {
-      state.familyMatchFeedback = "All family members matched.";
-      state.lastFamilyFeedback = state.familyMatchFeedback;
-    }
     renderActivityPanel(currentTopic());
     return;
   }
@@ -575,6 +571,12 @@ function startBodySpotlightRound() {
   renderActivityPanel(currentTopic());
 }
 
+function ensureBodySpotlightRound() {
+  const items = bodySpotlightItems();
+  const prompt = items.find((item) => item.id === state.bodySpotlightPromptId);
+  if (!prompt || !bodySpotlightRegions[prompt.id] || !state.bodySpotlightOptionIds.length) nextBodySpotlightRound();
+}
+
 function handleBodySpotlightGuess(itemId) {
   const prompt = bodySpotlightItems().find((item) => item.id === state.bodySpotlightPromptId);
   if (!prompt || state.bodySpotlightResult === "correct") return;
@@ -591,16 +593,21 @@ function handleBodySpotlightGuess(itemId) {
 
 const bodySpotlightRegions = {
   head: { x: 50, y: 24, width: 46, height: 22 },
+  forehead: { x: 50, y: 22, width: 22, height: 8 },
   hair: { x: 50, y: 15, width: 31, height: 13 },
   eyes: { x: 41, y: 29, width: 15, height: 10 },
   ears: { x: 28, y: 31.5, width: 13, height: 13 },
   nose: { x: 50, y: 32, width: 12, height: 9 },
   mouth: { x: 50, y: 36.5, width: 17, height: 8 },
+  neck: { x: 50, y: 43, width: 15, height: 7 },
+  arm: { x: 73, y: 53, width: 16, height: 23 },
   hand: { x: 27, y: 61, width: 17, height: 13 },
+  leg: { x: 43, y: 76, width: 18, height: 25 },
   foot: { x: 36.5, y: 87.5, width: 18, height: 13 }
 };
 
 function renderBodyPractice() {
+  ensureBodySpotlightRound();
   const items = bodySpotlightItems();
   const prompt = items.find((item) => item.id === state.bodySpotlightPromptId);
   const complete = state.bodySpotlightResult === "correct";
@@ -999,7 +1006,7 @@ function renderTelephoneExplorer() {
     button.addEventListener("click", () => {
       const pair = profilePairs.find((entry) => entry.id === button.dataset.telephoneQuestion);
       telephoneMatchSelectedId = pair?.id ?? "";
-      telephoneMatchFeedback = "Now choose its answer.";
+      telephoneMatchFeedback = "";
       if (pair && state.tapAudioEnabled) speak(pair.question.audio, 0.78);
       renderTelephoneExplorer();
     });
@@ -1010,7 +1017,7 @@ function renderTelephoneExplorer() {
       if (telephoneMatchSelectedId === button.dataset.telephoneAnswer) {
         telephoneMatchedIds = new Set([...telephoneMatchedIds, telephoneMatchSelectedId]);
         const pair = profilePairs.find((entry) => entry.id === telephoneMatchSelectedId);
-        telephoneMatchFeedback = telephoneMatchedIds.size === profilePairs.length ? "Grandparents profile complete." : "Matched. Choose the next question.";
+        telephoneMatchFeedback = "";
         telephoneMatchSelectedId = "";
         if (pair && state.tapAudioEnabled) speak(pair.answer.audio, 0.78);
       } else {

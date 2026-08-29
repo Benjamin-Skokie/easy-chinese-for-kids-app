@@ -179,7 +179,7 @@ function handleMealsConversationAttempt(itemId) {
   if (!selectedId || state.schoolMatchedIds.has(itemId)) return;
   if (selectedId === itemId) {
     state.schoolMatchedIds = new Set([...state.schoolMatchedIds, itemId]);
-    state.schoolMatchFeedback = "Correct!";
+    state.schoolMatchFeedback = "";
     state.mealsConversationWrongPhraseIds = new Set();
     state.mealsConversationWrongReplyIds = new Set();
   } else {
@@ -237,9 +237,10 @@ function renderMealsPictureChoice() {
   const prompt = mealsPictureChoiceItems().find((item) => item.id === state.mealsPictureQuizOrder[state.mealsPictureQuizIndex]);
   if (!prompt) return "";
   return `
-    <section class="clothes-quiz-shell meals-picture-choice">
+    <section class="clothes-quiz-shell meals-picture-choice practice-compact-split">
       <div class="numbers-game-top"><div><p class="body-match-kicker">Look and Choose</p><p class="numbers-game-note">Look at the picture, then tap the Chinese sentence that matches it.</p></div><button class="small-button is-practice-advance-button" type="button" data-meals-picture-new aria-label="Start a new game">New game</button></div>
-      <figure class="clothes-quiz-visual time-routine-quiz-visual"><img class="clothes-quiz-image" src="${prompt.imagePath}" alt="${prompt.imageAlt}" /></figure>
+      <figure class="clothes-quiz-visual time-routine-quiz-visual practice-compact-visual"><img class="clothes-quiz-image" src="${prompt.imagePath}" alt="${prompt.imageAlt}" /></figure>
+      <div class="practice-compact-content">
       <div class="clothes-quiz-options sentence-choice-options">
         ${state.mealsPictureQuizOptionIds.map((optionId) => {
           const option = prompt.options.find((item) => item.id === optionId);
@@ -249,6 +250,7 @@ function renderMealsPictureChoice() {
           const mark = selected ? `<span class="answer-result-mark" aria-hidden="true">${state.mealsPictureQuizResult === "correct" ? "✓" : "×"}</span>` : "";
           return `<button class="clothes-quiz-option${resultClass}" type="button" data-meals-picture-pick="${option.id}">${mark}<span class="numbers-game-hanzi">${option.hanzi}</span>${state.showPinyin ? `<span class="numbers-game-pinyin">${option.pinyin}</span>` : ""}${state.showEnglish ? `<span class="numbers-game-english">${option.english}</span>` : ""}</button>`;
         }).join("")}
+      </div>
       </div>
     </section>
   `;
@@ -483,7 +485,7 @@ function handleSchoolChallengeGuess(itemId) {
   state.schoolChallengePickedId = itemId;
   state.schoolChallengeResult = correct ? "correct" : "wrong";
   if (correct) {
-    state.schoolListenFeedback = "Correct!";
+    state.schoolListenFeedback = "";
   } else {
     state.schoolChallengeWrongIds = new Set([...state.schoolChallengeWrongIds, itemId]);
     state.schoolListenFeedback = "Try again.";
@@ -504,7 +506,7 @@ function handleSchoolMatchAttempt(itemId) {
   if (!selectedId || state.schoolMatchedIds.has(itemId)) return;
   if (selectedId === itemId) {
     state.schoolMatchedIds = new Set([...state.schoolMatchedIds, itemId]);
-    state.schoolMatchFeedback = "Correct!";
+    state.schoolMatchFeedback = "";
   } else {
     state.schoolMatchFeedback = "Try again.";
   }
@@ -971,7 +973,7 @@ function renderMealsConversationPractice(topic) {
       : schoolTopicData[topic.id].practiceSummary;
   activityList.className = "support-list";
   activityList.innerHTML = `
-    <section class="family-practice-shell lesson-practice-shell">
+    <section class="family-practice-shell lesson-practice-shell meals-feelings-practice-shell">
       ${renderMatchPractice({
         phraseHeading: "First line",
         meaningHeading: "Reply",

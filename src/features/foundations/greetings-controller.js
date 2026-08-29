@@ -100,8 +100,8 @@ export function createGreetingsController({
     if (state.tapAudioEnabled) {
       speak(item.audio, 0.78);
     }
-    state.greetingsMatchFeedback = `Now find the situation for ${item.hanzi}.`;
-    state.lastGreetingsFeedback = state.greetingsMatchFeedback;
+    state.greetingsMatchFeedback = "";
+    state.lastGreetingsFeedback = "";
     renderActivityPanel(currentTopic());
   }
 
@@ -119,17 +119,13 @@ export function createGreetingsController({
     if (selectedId === targetId) {
       state.greetingsMatchedIds = new Set([...state.greetingsMatchedIds, targetId]);
       state.greetingsSelectedPhraseId = null;
-      state.greetingsMatchFeedback = `Correct! ${selectedItem.hanzi} matches that situation.`;
-      state.lastGreetingsFeedback = state.greetingsMatchFeedback;
+      state.greetingsMatchFeedback = "";
+      state.lastGreetingsFeedback = "";
       state.selectedFocusItemId = selectedItem.id;
       renderFocusDisplay(currentFocusItem());
       renderFocusExplorer();
       renderFocusStatus();
 
-      if (state.greetingsMatchedIds.size === greetingsGameItems().length) {
-        state.greetingsMatchFeedback = "Great job! You matched all the greetings.";
-        state.lastGreetingsFeedback = state.greetingsMatchFeedback;
-      }
       renderActivityPanel(currentTopic());
       return;
     }
@@ -144,10 +140,7 @@ export function createGreetingsController({
   function handleGreetingsChallengePlay() {
     ensureGreetingsChallenge();
     if (state.greetingsChallengeResult === "correct") {
-      resetGreetingsChallenge({
-        excludeId: state.greetingsChallengeAnswerId,
-        feedback: "Listen carefully, then tap the matching card."
-      });
+      resetGreetingsChallenge({ excludeId: state.greetingsChallengeAnswerId });
       const nextItem = greetingsGameItems().find((entry) => entry.id === state.greetingsChallengePromptId);
       if (nextItem && state.tapAudioEnabled) {
         speak(nextItem.audio, 0.78);
@@ -165,8 +158,8 @@ export function createGreetingsController({
     if (state.tapAudioEnabled) {
       speak(item.audio, 0.78);
     }
-    state.greetingsListenFeedback = `Listen again and find ${item.hanzi}.`;
-    state.lastGreetingsFeedback = state.greetingsListenFeedback;
+    state.greetingsListenFeedback = "";
+    state.lastGreetingsFeedback = "";
     renderActivityPanel(currentTopic());
   }
 
@@ -182,8 +175,8 @@ export function createGreetingsController({
       state.selectedFocusItemId = answer.id;
       state.greetingsChallengePickedId = itemId;
       state.greetingsChallengeResult = "correct";
-      state.greetingsListenFeedback = `Correct! ${answer.hanzi} matches the audio.`;
-      state.lastGreetingsFeedback = state.greetingsListenFeedback;
+      state.greetingsListenFeedback = "";
+      state.lastGreetingsFeedback = "";
       renderFocusDisplay(currentFocusItem());
       renderFocusExplorer();
       renderFocusStatus();

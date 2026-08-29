@@ -66,7 +66,7 @@ function handleWeekdayMatchAttempt(targetId) {
   if (state.weekdaySelectedPhraseId === targetId) {
     state.weekdayMatchedIds = new Set([...state.weekdayMatchedIds, targetId]);
     state.weekdaySelectedPhraseId = null;
-    state.weekdayMatchFeedback = "Matched.";
+    state.weekdayMatchFeedback = "";
   } else {
     state.weekdayMatchFeedback = "Try a different card.";
     state.weekdayMatchWrongPhraseIds = new Set([...state.weekdayMatchWrongPhraseIds, state.weekdaySelectedPhraseId]);

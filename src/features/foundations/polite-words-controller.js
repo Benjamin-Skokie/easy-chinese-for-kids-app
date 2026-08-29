@@ -98,8 +98,8 @@ export function createPoliteWordsController({
     if (state.tapAudioEnabled) {
       speak(item.audio, 0.78);
     }
-    state.politeMatchFeedback = `Now find the meaning for ${item.hanzi}.`;
-    state.lastPoliteFeedback = state.politeMatchFeedback;
+    state.politeMatchFeedback = "";
+    state.lastPoliteFeedback = "";
     renderActivityPanel(currentTopic());
   }
 
@@ -117,17 +117,13 @@ export function createPoliteWordsController({
     if (selectedId === targetId) {
       state.politeMatchedIds = new Set([...state.politeMatchedIds, targetId]);
       state.politeSelectedPhraseId = null;
-      state.politeMatchFeedback = `Correct! ${selectedItem.hanzi} matches that meaning.`;
-      state.lastPoliteFeedback = state.politeMatchFeedback;
+      state.politeMatchFeedback = "";
+      state.lastPoliteFeedback = "";
       state.selectedFocusItemId = selectedItem.id;
       renderFocusDisplay(currentFocusItem());
       renderFocusExplorer();
       renderFocusStatus();
 
-      if (state.politeMatchedIds.size === politeGameItems().length) {
-        state.politeMatchFeedback = "Great job! You matched all the polite phrases.";
-        state.lastPoliteFeedback = state.politeMatchFeedback;
-      }
       renderActivityPanel(currentTopic());
       return;
     }
@@ -180,8 +176,8 @@ export function createPoliteWordsController({
     if (state.tapAudioEnabled) {
       speak(item.audio, 0.78);
     }
-    state.politeListenFeedback = "Listen carefully, then tap the matching card.";
-    state.lastPoliteFeedback = state.politeListenFeedback;
+    state.politeListenFeedback = "";
+    state.lastPoliteFeedback = "";
     renderActivityPanel(currentTopic());
   }
 
@@ -197,8 +193,8 @@ export function createPoliteWordsController({
       state.selectedFocusItemId = answer.id;
       state.politeChallengePickedId = itemId;
       state.politeChallengeResult = "correct";
-      state.politeListenFeedback = `Correct! ${answer.hanzi} matches the audio.`;
-      state.lastPoliteFeedback = state.politeListenFeedback;
+      state.politeListenFeedback = "";
+      state.lastPoliteFeedback = "";
       renderFocusDisplay(currentFocusItem());
       renderFocusExplorer();
       renderFocusStatus();
