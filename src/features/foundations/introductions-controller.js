@@ -62,7 +62,6 @@ export function createIntroductionsController({
 
     if (kidId === answerPrompt.speakerId) {
       state.selectedFocusItemId = answerPrompt.sourceItemId;
-      if (state.tapAudioEnabled) speak(answerPrompt.audio, 0.78);
       state.lastIntroductionsFeedback = `Correct! ${answerKid.hanziName} said ${answerPrompt.hanzi}`;
       renderFocusDisplay(currentFocusItem());
       renderFocusExplorer();

@@ -199,6 +199,27 @@ test("listen-and-choose card copy stays centered within the whole answer card", 
   assert.match(styles, /\.family-listen-copy \{[\s\S]{0,280}width: 100%;/);
 });
 
+test("correct Listen and Choose answers show feedback without replaying the prompt", () => {
+  const sources = {
+    greetings: readFileSync("src/features/foundations/greetings-controller.js", "utf8"),
+    politeWords: readFileSync("src/features/foundations/polite-words-controller.js", "utf8"),
+    introductions: readFileSync("src/features/foundations/introductions-controller.js", "utf8"),
+    age: readFileSync("src/features/foundations/age-controller.js", "utf8"),
+    familyAndNumbers: readFileSync("src/features/foundations/foundations-runtime.js", "utf8"),
+    weekdaysAndDates: readFileSync("src/features/time-daily-life/time-daily-life-runtime.js", "utf8"),
+    school: readFileSync("src/features/school-life/school-food-runtime.js", "utf8")
+  };
+  assert.doesNotMatch(sources.greetings, /function handleGreetingsChallengeGuess[\s\S]{0,900}speak\(answer\.audio/);
+  assert.doesNotMatch(sources.politeWords, /function handlePoliteChallengeGuess[\s\S]{0,900}speak\(answer\.audio/);
+  assert.doesNotMatch(sources.introductions, /function handleIntroductionsChallengeGuess[\s\S]{0,800}speak\(answerPrompt\.audio/);
+  assert.doesNotMatch(sources.age, /function handleAgeChallengeGuess[\s\S]{0,800}speak\(answer\.audio/);
+  assert.doesNotMatch(sources.familyAndNumbers, /function handleFamilyChallengeGuess[\s\S]{0,800}speak\(answer\.audio/);
+  assert.doesNotMatch(sources.familyAndNumbers, /function handleNumberChallengeGuess[\s\S]{0,800}speak\(targetItem\.audio/);
+  assert.doesNotMatch(sources.weekdaysAndDates, /function handleWeekdayChallengeGuess[\s\S]{0,700}speak\(/);
+  assert.doesNotMatch(sources.weekdaysAndDates, /function handleDateChallengeGuess[\s\S]{0,700}speak\(/);
+  assert.doesNotMatch(sources.school, /function handleSchoolChallengeGuess[\s\S]{0,700}speak\(/);
+});
+
 test("Everyday Actions keeps one silent new-game button in the practice header", () => {
   const practiceSource = readFileSync("src/core/lesson-practice-runtime.js", "utf8");
   const timeRuntimeSource = readFileSync("src/features/time-daily-life/time-daily-life-runtime.js", "utf8");
@@ -2211,12 +2232,18 @@ test("the shared curriculum retains its books and learning navigation", () => {
 });
 
 test("numbers keeps its counting stages while My Family 2 owns 4A Lesson 1", () => {
+  const foundationsSource = readFileSync("src/features/foundations/foundations-runtime.js", "utf8");
   assert.equal(numbersTopic.id, "numbers");
   assert.equal(numberStages.length, 5);
   assert.equal(buildNumberItem(42).hanzi, "四十二");
   assert.equal(telephoneNumbersTopic.id, "telephone-numbers");
   assert.equal(telephoneNumbersTopic.title, "My Family 2");
   assert.equal(telephonePractice.residence.lines[1].hanzi, "他们住在北京。");
+  assert.match(foundationsSource, /data-telephone-practice-new aria-label="Start a new game">New game/);
+  assert.match(foundationsSource, /querySelectorAll\("\[data-telephone-question\]"\)[\s\S]{0,900}speak\(pair\.question\.audio, 0\.78\)/);
+  assert.match(foundationsSource, /telephoneMatchSelectedId === button\.dataset\.telephoneAnswer[\s\S]{0,700}speak\(pair\.answer\.audio, 0\.78\)/);
+  assert.doesNotMatch(foundationsSource, /data-telephone-practice-play/);
+  assert.doesNotMatch(foundationsSource, /data-telephone-practice-new[\s\S]{0,520}speakSceneLines\(profilePairs/);
   assert.equal(multiplicationRhymeTopic.focusItems.length, 45);
   assert.equal(buildMultiplicationRhymeItems().at(-1).hanzi, "九九八十一");
 });

@@ -35,9 +35,6 @@ function handleWeekdayChallengeGuess(itemId) {
   state.weekdayChallengeResult = isCorrect ? "correct" : "wrong";
   if (!isCorrect) {
     state.weekdayChallengeWrongIds = new Set([...state.weekdayChallengeWrongIds, itemId]);
-  } else if (state.tapAudioEnabled) {
-    const item = timeDateWeekItems.find((entry) => entry.id === itemId);
-    speak(item?.hanzi, 0.78);
   }
   renderActivityPanel(currentTopic());
 }
@@ -624,10 +621,6 @@ function handleDateChallengeGuess(itemId) {
   state.dateChallengePickedId = itemId;
   state.dateChallengeResult = isCorrect ? "correct" : "wrong";
   if (isCorrect) {
-    if (state.tapAudioEnabled) {
-      const item = scopedDateContent(datePracticeItems).find((entry) => entry.id === itemId);
-      speak(item?.hanzi, 0.78);
-    }
   } else {
     state.dateChallengeWrongIds = new Set([...state.dateChallengeWrongIds, itemId]);
   }

@@ -21100,8 +21100,6 @@
       state2.schoolChallengeResult = correct ? "correct" : "wrong";
       if (correct) {
         state2.schoolListenFeedback = "Correct!";
-        const item = schoolPracticeItems2().find((entry) => entry.id === itemId);
-        if (item && state2.tapAudioEnabled) speak2(item.audio, 0.78);
       } else {
         state2.schoolChallengeWrongIds = /* @__PURE__ */ new Set([...state2.schoolChallengeWrongIds, itemId]);
         state2.schoolListenFeedback = "Try again.";
@@ -22282,7 +22280,6 @@
       if (!answerPrompt || !pickedKid || !answerKid) return;
       if (kidId === answerPrompt.speakerId) {
         state2.selectedFocusItemId = answerPrompt.sourceItemId;
-        if (state2.tapAudioEnabled) speak2(answerPrompt.audio, 0.78);
         state2.lastIntroductionsFeedback = `Correct! ${answerKid.hanziName} said ${answerPrompt.hanzi}`;
         renderFocusDisplay2(currentFocusItem2());
         renderFocusExplorer2();
@@ -22535,7 +22532,6 @@
         state2.ageChallengePickedId = itemId;
         state2.ageChallengeResult = "correct";
         state2.selectedFocusItemId = answer.id;
-        if (state2.tapAudioEnabled) speak2(answer.audio, 0.78);
         state2.lastAgeFeedback = `Correct! ${answer.hanzi} matches the audio.`;
         renderFocusDisplay2(currentFocusItem2());
         renderFocusExplorer2();
@@ -22847,9 +22843,6 @@
         state2.selectedFocusItemId = answer.id;
         state2.politeChallengePickedId = itemId;
         state2.politeChallengeResult = "correct";
-        if (state2.tapAudioEnabled) {
-          speak2(answer.audio, 0.78);
-        }
         state2.politeListenFeedback = `Correct! ${answer.hanzi} matches the audio.`;
         state2.lastPoliteFeedback = state2.politeListenFeedback;
         renderFocusDisplay2(currentFocusItem2());
@@ -23265,9 +23258,6 @@
         state2.selectedFocusItemId = answer.id;
         state2.greetingsChallengePickedId = itemId;
         state2.greetingsChallengeResult = "correct";
-        if (state2.tapAudioEnabled) {
-          speak2(answer.audio, 0.78);
-        }
         state2.greetingsListenFeedback = `Correct! ${answer.hanzi} matches the audio.`;
         state2.lastGreetingsFeedback = state2.greetingsListenFeedback;
         renderFocusDisplay2(currentFocusItem2());
@@ -24782,9 +24772,6 @@
       if (itemId === answer.id) {
         state2.familyChallengePickedId = itemId;
         state2.familyChallengeResult = "correct";
-        if (state2.tapAudioEnabled) {
-          speak2(answer.audio, 0.78);
-        }
         state2.familyListenFeedback = "Nice listening.";
         state2.lastFamilyFeedback = state2.familyListenFeedback;
         renderActivityPanel2(currentTopic2());
@@ -24899,9 +24886,6 @@
       if (value === target) {
         state2.numberChallengeResult = "correct";
         state2.selectedFocusItemId = targetItem.id;
-        if (state2.tapAudioEnabled) {
-          speak2(targetItem.audio, 0.78);
-        }
         state2.lastNumberFeedback = `Correct! ${targetItem.hanzi} is right.`;
         renderFocusDisplay2(currentFocusItem2());
         renderFocusWordList();
@@ -25345,7 +25329,7 @@
         <div class="school-word-grid is-text-only">${currentTopic2().focusItems.map((item) => `<button class="school-word-card is-text-only" type="button" data-telephone-word="${item.id}"><span class="time-asset-hanzi">${item.hanzi}</span>${state2.showPinyin ? `<span class="time-asset-pinyin">${item.pinyin}</span>` : ""}${state2.showEnglish ? `<span class="time-asset-english">${item.english}</span>` : ""}</button>`).join("")}</div>
       </section>
       <section class="visual-topic-notes school-review-notes"><p class="body-match-kicker">Useful note</p><div class="visual-topic-note-grid school-review-grid"><article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">\u4ED6\u4EEC + \u4F4F\u5728 + \u5317\u4EAC</p><p class="visual-topic-note-copy"><strong>\u4ED6\u4EEC</strong> means \u201Cthey.\u201D <strong>\u4F4F\u5728</strong> means \u201Clive in,\u201D and the place comes last: <strong>\u4ED6\u4EEC\u4F4F\u5728\u5317\u4EAC\u3002</strong> To ask the place, replace <strong>\u5317\u4EAC</strong> with <strong>\u54EA\u513F</strong>: <strong>\u4ED6\u4EEC\u4F4F\u5728\u54EA\u513F\uFF1F</strong></p></article></div></section>
-      <section class="practice-split-card"><div class="numbers-game-top"><div><p class="body-match-kicker">Let's practice</p><p class="numbers-game-note">Tap a question on the left, then tap its matching answer on the right.</p></div><button class="small-button is-play-button" type="button" data-telephone-practice-play>Play</button></div>
+      <section class="practice-split-card"><div class="numbers-game-top"><div><p class="body-match-kicker">Let's practice</p><p class="numbers-game-note">Tap a question on the left to hear it, then tap its matching answer on the right.</p></div><button class="small-button is-practice-advance-button" type="button" data-telephone-practice-new aria-label="Start a new game">New game</button></div>
         ${telephoneMatchFeedback ? `<p class="greetings-game-feedback">${telephoneMatchFeedback}</p>` : ""}
         <div class="family-match-board-headings"><p class="body-match-kicker">Question</p><p class="body-match-kicker">Answer</p></div>
         <div class="polite-match-board family-match-open-board"><div class="polite-match-column">${profilePairs.filter((pair) => !telephoneMatchedIds.has(pair.id)).map((pair) => {
@@ -25369,13 +25353,12 @@
       focusExplorer2.querySelectorAll("[data-telephone-word]").forEach((button) => {
         button.addEventListener("click", () => selectFocusItem2(button.dataset.telephoneWord, { playAudio: true }));
       });
-      focusExplorer2.querySelector("[data-telephone-practice-play]")?.addEventListener("click", () => {
+      focusExplorer2.querySelector("[data-telephone-practice-new]")?.addEventListener("click", () => {
         telephoneMatchSelectedId = "";
         telephoneMatchedIds = /* @__PURE__ */ new Set();
         telephoneMatchFeedback = "";
         telephoneWrongQuestionIds = /* @__PURE__ */ new Set();
         telephoneWrongAnswerIds = /* @__PURE__ */ new Set();
-        if (state2.tapAudioEnabled) speakSceneLines2(profilePairs.flatMap((pair) => [pair.question, pair.answer]), 0.74);
         renderTelephoneExplorer2();
       });
       focusExplorer2.querySelectorAll("[data-telephone-question]").forEach((button) => {
@@ -26099,9 +26082,6 @@
       state2.weekdayChallengeResult = isCorrect ? "correct" : "wrong";
       if (!isCorrect) {
         state2.weekdayChallengeWrongIds = /* @__PURE__ */ new Set([...state2.weekdayChallengeWrongIds, itemId]);
-      } else if (state2.tapAudioEnabled) {
-        const item = timeDateWeekItems2.find((entry) => entry.id === itemId);
-        speak2(item?.hanzi, 0.78);
       }
       renderActivityPanel2(currentTopic2());
     }
@@ -26599,10 +26579,6 @@
       state2.dateChallengePickedId = itemId;
       state2.dateChallengeResult = isCorrect ? "correct" : "wrong";
       if (isCorrect) {
-        if (state2.tapAudioEnabled) {
-          const item = scopedDateContent(datePracticeItems2).find((entry) => entry.id === itemId);
-          speak2(item?.hanzi, 0.78);
-        }
       } else {
         state2.dateChallengeWrongIds = /* @__PURE__ */ new Set([...state2.dateChallengeWrongIds, itemId]);
       }

@@ -307,9 +307,6 @@ function handleFamilyChallengeGuess(itemId) {
   if (itemId === answer.id) {
     state.familyChallengePickedId = itemId;
     state.familyChallengeResult = "correct";
-    if (state.tapAudioEnabled) {
-      speak(answer.audio, 0.78);
-    }
     state.familyListenFeedback = "Nice listening.";
     state.lastFamilyFeedback = state.familyListenFeedback;
     renderActivityPanel(currentTopic());
@@ -448,9 +445,6 @@ function handleNumberChallengeGuess(value) {
   if (value === target) {
     state.numberChallengeResult = "correct";
     state.selectedFocusItemId = targetItem.id;
-    if (state.tapAudioEnabled) {
-      speak(targetItem.audio, 0.78);
-    }
     state.lastNumberFeedback = `Correct! ${targetItem.hanzi} is right.`;
     renderFocusDisplay(currentFocusItem());
     renderFocusWordList();
@@ -974,7 +968,7 @@ function renderTelephoneExplorer() {
         <div class="school-word-grid is-text-only">${currentTopic().focusItems.map((item) => `<button class="school-word-card is-text-only" type="button" data-telephone-word="${item.id}"><span class="time-asset-hanzi">${item.hanzi}</span>${state.showPinyin ? `<span class="time-asset-pinyin">${item.pinyin}</span>` : ""}${state.showEnglish ? `<span class="time-asset-english">${item.english}</span>` : ""}</button>`).join("")}</div>
       </section>
       <section class="visual-topic-notes school-review-notes"><p class="body-match-kicker">Useful note</p><div class="visual-topic-note-grid school-review-grid"><article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">他们 + 住在 + 北京</p><p class="visual-topic-note-copy"><strong>他们</strong> means “they.” <strong>住在</strong> means “live in,” and the place comes last: <strong>他们住在北京。</strong> To ask the place, replace <strong>北京</strong> with <strong>哪儿</strong>: <strong>他们住在哪儿？</strong></p></article></div></section>
-      <section class="practice-split-card"><div class="numbers-game-top"><div><p class="body-match-kicker">Let's practice</p><p class="numbers-game-note">Tap a question on the left, then tap its matching answer on the right.</p></div><button class="small-button is-play-button" type="button" data-telephone-practice-play>Play</button></div>
+      <section class="practice-split-card"><div class="numbers-game-top"><div><p class="body-match-kicker">Let's practice</p><p class="numbers-game-note">Tap a question on the left to hear it, then tap its matching answer on the right.</p></div><button class="small-button is-practice-advance-button" type="button" data-telephone-practice-new aria-label="Start a new game">New game</button></div>
         ${telephoneMatchFeedback ? `<p class="greetings-game-feedback">${telephoneMatchFeedback}</p>` : ""}
         <div class="family-match-board-headings"><p class="body-match-kicker">Question</p><p class="body-match-kicker">Answer</p></div>
         <div class="polite-match-board family-match-open-board"><div class="polite-match-column">${profilePairs.filter((pair) => !telephoneMatchedIds.has(pair.id)).map((pair) => { const wrong = telephoneWrongQuestionIds.has(pair.id); return `<button class="polite-match-card polite-match-card-phrase${telephoneMatchSelectedId === pair.id ? " is-selected" : ""}${wrong ? " is-wrong" : ""}" type="button" data-telephone-question="${pair.id}">${wrong ? '<span class="answer-result-mark" aria-hidden="true">×</span>' : ""}<span class="numbers-game-hanzi">${pair.question.hanzi}</span>${state.showPinyin ? `<span class="numbers-game-pinyin">${pair.question.pinyin}</span>` : ""}${state.showEnglish ? `<span class="numbers-game-english">${pair.question.english}</span>` : ""}</button>`; }).join("")}</div><div class="polite-match-column">${profilePairs.filter((pair) => !telephoneMatchedIds.has(pair.id)).slice().reverse().map((pair) => { const wrong = telephoneWrongAnswerIds.has(pair.id); return `<button class="polite-match-card polite-match-card-meaning${wrong ? " is-wrong" : ""}" type="button" data-telephone-answer="${pair.id}">${wrong ? '<span class="answer-result-mark" aria-hidden="true">×</span>' : ""}<span class="numbers-game-hanzi">${pair.answer.hanzi}</span>${state.showPinyin ? `<span class="numbers-game-pinyin">${pair.answer.pinyin}</span>` : ""}${state.showEnglish ? `<span class="numbers-game-english">${pair.answer.english}</span>` : ""}</button>`; }).join("")}</div></div>
@@ -993,13 +987,12 @@ function renderTelephoneExplorer() {
   focusExplorer.querySelectorAll("[data-telephone-word]").forEach((button) => {
     button.addEventListener("click", () => selectFocusItem(button.dataset.telephoneWord, { playAudio: true }));
   });
-  focusExplorer.querySelector("[data-telephone-practice-play]")?.addEventListener("click", () => {
+  focusExplorer.querySelector("[data-telephone-practice-new]")?.addEventListener("click", () => {
     telephoneMatchSelectedId = "";
     telephoneMatchedIds = new Set();
     telephoneMatchFeedback = "";
     telephoneWrongQuestionIds = new Set();
     telephoneWrongAnswerIds = new Set();
-    if (state.tapAudioEnabled) speakSceneLines(profilePairs.flatMap((pair) => [pair.question, pair.answer]), 0.74);
     renderTelephoneExplorer();
   });
   focusExplorer.querySelectorAll("[data-telephone-question]").forEach((button) => {

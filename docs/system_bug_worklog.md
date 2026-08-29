@@ -11,7 +11,7 @@ This is the living implementation record for cross-page bugs reported in `docs/b
 | SYS-01 Shared audio playback lifecycle | Implementation complete; device verification pending | Implemented in shared service |
 | SYS-02 Audio-source routing policy | Implementation complete; device verification pending | Explicit recorded-first, recorded-only, browser-first, and composed-recording paths implemented |
 | SYS-03 Audio asset QA pipeline | In progress | Pre-generation prompt guardrails implemented; waveform audit pending |
-| SYS-04 Shared game controls and completion behavior | In progress | Shared New game/Clear contract applied to sentence builders; full inventory remains |
+| SYS-04 Shared game controls and completion behavior | Implementation complete; cross-page verification pending | Shared New game/Clear contract and silent correct-answer behavior applied |
 | SYS-05 Question/picture state synchronization | Implementation verified | Hobbies round state uses one item ID for picture, prompt, choices, and answer |
 | SYS-06 Shared responsive game layout | Scoped | Not started |
 
@@ -147,9 +147,9 @@ Shared controls have one meaning and one placement across exercises.
 
 - [x] Define the arrow contract: upper-right, one per game, skip/new-question behavior.
 - [x] Separate “play prompt,” “submit answer,” and “next/skip” actions for sentence builders: the green control advances to a new round; Clear retains the existing round and resets only the learner's answer.
-- [ ] Inventory green-arrow implementations and identify duplicate local controls.
-- [ ] Remove automatic prompt replay after a correct Listen and Choose answer.
-- [ ] Add shared interaction tests for initial, incomplete, correct, and completed states.
+- [x] Inventory green-arrow implementations and remove duplicate completion controls.
+- [x] Remove automatic prompt replay after a correct Listen and Choose answer in Greetings, Polite Words, Family, Introductions, Age, Numbers, Weekdays, Dates, School, and School Subjects.
+- [x] Add shared regression checks for completion controls and silent correct-answer states.
 
 ### Acceptance Criteria
 

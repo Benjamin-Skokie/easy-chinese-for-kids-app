@@ -484,8 +484,6 @@ function handleSchoolChallengeGuess(itemId) {
   state.schoolChallengeResult = correct ? "correct" : "wrong";
   if (correct) {
     state.schoolListenFeedback = "Correct!";
-    const item = schoolPracticeItems().find((entry) => entry.id === itemId);
-    if (item && state.tapAudioEnabled) speak(item.audio, 0.78);
   } else {
     state.schoolChallengeWrongIds = new Set([...state.schoolChallengeWrongIds, itemId]);
     state.schoolListenFeedback = "Try again.";

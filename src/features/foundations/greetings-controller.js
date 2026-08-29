@@ -182,9 +182,6 @@ export function createGreetingsController({
       state.selectedFocusItemId = answer.id;
       state.greetingsChallengePickedId = itemId;
       state.greetingsChallengeResult = "correct";
-      if (state.tapAudioEnabled) {
-        speak(answer.audio, 0.78);
-      }
       state.greetingsListenFeedback = `Correct! ${answer.hanzi} matches the audio.`;
       state.lastGreetingsFeedback = state.greetingsListenFeedback;
       renderFocusDisplay(currentFocusItem());

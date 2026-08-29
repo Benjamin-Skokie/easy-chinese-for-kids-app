@@ -197,9 +197,6 @@ export function createPoliteWordsController({
       state.selectedFocusItemId = answer.id;
       state.politeChallengePickedId = itemId;
       state.politeChallengeResult = "correct";
-      if (state.tapAudioEnabled) {
-        speak(answer.audio, 0.78);
-      }
       state.politeListenFeedback = `Correct! ${answer.hanzi} matches the audio.`;
       state.lastPoliteFeedback = state.politeListenFeedback;
       renderFocusDisplay(currentFocusItem());

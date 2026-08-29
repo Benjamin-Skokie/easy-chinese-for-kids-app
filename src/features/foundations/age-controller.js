@@ -36,7 +36,6 @@ export function createAgeController({ state, ageGameItemIds, ageBuildPhrases, ag
       state.ageChallengePickedId = itemId;
       state.ageChallengeResult = "correct";
       state.selectedFocusItemId = answer.id;
-      if (state.tapAudioEnabled) speak(answer.audio, 0.78);
       state.lastAgeFeedback = `Correct! ${answer.hanzi} matches the audio.`;
       renderFocusDisplay(currentFocusItem()); renderFocusExplorer(); renderFocusStatus(); renderActivityPanel(currentTopic());
       window.setTimeout(() => { resetAgeChallenge(); renderActivityPanel(currentTopic()); }, 650);
