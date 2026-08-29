@@ -216,6 +216,15 @@ test("Age Listen and Choose uses a stable two-by-two answer grid", () => {
   assert.match(styles, /\.age-listen-options \.greetings-game-option \{[\s\S]{0,180}justify-items: start;[\s\S]{0,180}padding-inline: 20px;[\s\S]{0,120}text-align: left;/);
 });
 
+test("shared game headings use compact, consistent title and instruction spacing", () => {
+  const styles = readFileSync("styles.css", "utf8");
+  assert.match(styles, /\.numbers-game-top > div \{[\s\S]{0,80}gap: 4px;/);
+  assert.match(styles, /\.numbers-game-note \{[\s\S]{0,160}font-size: 0\.95rem;[\s\S]{0,120}margin: 0;/);
+  assert.match(styles, /\.numbers-game-top \.body-match-kicker \{[\s\S]{0,120}font-size: 1\.1rem;/);
+  assert.match(styles, /\.practice-split-card \{[\s\S]{0,80}gap: 10px;/);
+  assert.match(styles, /\.clothes-quiz-shell \{[\s\S]{0,80}gap: 10px;/);
+});
+
 test("listen-and-choose card copy uses one shared left edge", () => {
   const styles = readFileSync("styles.css", "utf8");
   assert.match(styles, /\.numbers-game-option\.family-listen-option \{[\s\S]{0,260}grid-template-columns: minmax\(0, 1fr\);[\s\S]{0,260}align-items: stretch;/);
