@@ -72,7 +72,7 @@ h4 {
 
 .global-view-menu {
   position: fixed;
-  top: 14px;
+  top: 4px;
   left: 16px;
   z-index: 160;
 }
@@ -92,8 +92,8 @@ h4 {
 
 .global-view-trigger {
   display: grid;
-  width: 44px;
-  height: 44px;
+  width: 56px;
+  height: 56px;
   place-items: center;
   border: 1px solid rgba(45, 34, 24, 0.08);
   border-radius: 14px;
@@ -113,8 +113,8 @@ h4 {
 .global-view-icon::before,
 .global-view-icon::after {
   display: block;
-  width: 18px;
-  height: 2px;
+  width: 27px;
+  height: 3px;
   border-radius: 999px;
   background: #a5680b;
 }
@@ -131,17 +131,17 @@ h4 {
 }
 
 .global-view-icon::before {
-  top: -6px;
+  top: -9px;
 }
 
 .global-view-icon::after {
-  top: 6px;
+  top: 9px;
 }
 
 .global-view-panel {
   position: absolute;
   top: 0;
-  left: 54px;
+  left: 66px;
   display: grid;
   width: 156px;
   gap: 8px;
@@ -9501,7 +9501,7 @@ h4 {
 .learning-culture-nav {
   position: fixed;
   top: 0;
-  left: 72px;
+  left: 84px;
   right: 0;
   z-index: 100;
   display: flex;
@@ -10310,16 +10310,16 @@ h4 {
   }
 
   .global-view-menu {
-    top: 10px;
+    top: 4px;
     left: 10px;
   }
 
   .global-view-panel {
-    left: 50px;
+    left: 66px;
   }
 
   .learning-culture-nav {
-    left: 62px;
+    left: 78px;
   }
 }
 
@@ -10672,7 +10672,7 @@ h4 {
   }
 
   .global-view-panel {
-    width: min(156px, calc(100vw - 72px));
+    width: min(156px, calc(100vw - 86px));
   }
 
   .view-switcher {

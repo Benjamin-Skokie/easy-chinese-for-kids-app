@@ -28,14 +28,15 @@ export function bindViewNavigationEvents({ state, switchView, updateTopicPageVis
       switchView(link.dataset.globalView);
       updateTopicPageVisibility();
       window.history.pushState(null, "", `${window.location.pathname}${viewHash(link.dataset.globalView)}`);
+      const returningToBooks = link.dataset.returnTarget === "book";
       const returnTargetId = link.dataset.returnTarget === "topic"
         ? state.expandedCategoryId
-        : link.dataset.returnTarget === "book"
+        : returningToBooks
           ? `book-lessons-${state.selectedBookId}`
           : "";
       const returnTarget = returnTargetId ? document.getElementById(returnTargetId) : null;
       (returnTarget ?? document.querySelector(".switcher-panel"))?.scrollIntoView({
-        behavior: "smooth",
+        behavior: returningToBooks ? "auto" : "smooth",
         block: "start"
       });
       link.closest(".global-view-menu")?.removeAttribute("open");

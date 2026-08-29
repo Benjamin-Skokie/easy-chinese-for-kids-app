@@ -14481,10 +14481,11 @@
         switchView2(link.dataset.globalView);
         updateTopicPageVisibility2();
         window.history.pushState(null, "", `${window.location.pathname}${viewHash(link.dataset.globalView)}`);
-        const returnTargetId = link.dataset.returnTarget === "topic" ? state2.expandedCategoryId : link.dataset.returnTarget === "book" ? `book-lessons-${state2.selectedBookId}` : "";
+        const returningToBooks = link.dataset.returnTarget === "book";
+        const returnTargetId = link.dataset.returnTarget === "topic" ? state2.expandedCategoryId : returningToBooks ? `book-lessons-${state2.selectedBookId}` : "";
         const returnTarget = returnTargetId ? document.getElementById(returnTargetId) : null;
         (returnTarget ?? document.querySelector(".switcher-panel"))?.scrollIntoView({
-          behavior: "smooth",
+          behavior: returningToBooks ? "auto" : "smooth",
           block: "start"
         });
         link.closest(".global-view-menu")?.removeAttribute("open");

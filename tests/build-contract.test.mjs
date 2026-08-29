@@ -759,7 +759,9 @@ test("global view-event bindings stay outside the application composition root",
   assert.doesNotMatch(wiringSource, /document\.querySelectorAll\("\[data-global-view\]"\)/);
   assert.match(eventSource, /export function bindViewNavigationEvents/);
   assert.match(eventSource, /\[data-global-view\]/);
+  assert.match(eventSource, /const returningToBooks = link\.dataset\.returnTarget === "book"/);
   assert.match(eventSource, /book-lessons-\$\{state\.selectedBookId\}/);
+  assert.match(eventSource, /behavior: returningToBooks \? "auto" : "smooth"/);
   assert.match(eventSource, /document\.getElementById\(returnTargetId\)/);
   assert.match(eventSource, /window\.history\.pushState\(null, "", `\$\{window\.location\.pathname\}\$\{viewHash\(link\.dataset\.globalView\)\}`\)/);
 });
