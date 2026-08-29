@@ -11467,6 +11467,8 @@
   } = {}) {
     const preferredVoiceNames = ["tingting", "ting-ting"];
     let activeRecording;
+    let activeBrowserUtterance;
+    let playbackRequestId = 0;
     function preferredChineseVoice(names = preferredVoiceNames) {
       const voices = synthesis?.getVoices?.() ?? [];
       return names.map((name) => voices.find((voice) => voice.name.toLowerCase() === name)).find(Boolean);
@@ -11480,70 +11482,109 @@
       if (voice) utterance.voice = voice;
       return utterance;
     }
-    function speakWithBrowser(text, rate = 0.8, voiceNames = preferredVoiceNames) {
-      if (!synthesis || !text) return;
-      synthesis.speak(chineseUtterance2(text, rate, voiceNames));
+    function isCurrentRequest(requestId) {
+      return requestId === playbackRequestId;
+    }
+    function speakWithBrowser(text, rate = 0.8, voiceNames = preferredVoiceNames, requestId = playbackRequestId, onEnd) {
+      if (!synthesis || !text || !isCurrentRequest(requestId)) return;
+      const utterance = chineseUtterance2(text, rate, voiceNames);
+      activeBrowserUtterance = utterance;
+      const finish = () => {
+        if (activeBrowserUtterance === utterance) activeBrowserUtterance = null;
+        if (isCurrentRequest(requestId)) onEnd?.();
+      };
+      utterance.onend = finish;
+      utterance.onerror = finish;
+      synthesis.speak(utterance);
+    }
+    function stopActiveBrowserSpeech() {
+      if (!activeBrowserUtterance) return;
+      activeBrowserUtterance = null;
+      synthesis?.cancel?.();
     }
     function stopActiveRecording() {
       if (!activeRecording) return;
-      activeRecording.pause?.();
-      activeRecording.currentTime = 0;
+      const recording = activeRecording;
       activeRecording = null;
+      recording.audio.pause?.();
+      recording.audio.currentTime = 0;
+      recording.finish(false);
     }
-    function playRecording(text) {
+    function beginPlaybackRequest() {
+      const requestId = ++playbackRequestId;
+      stopActiveBrowserSpeech();
+      stopActiveRecording();
+      return requestId;
+    }
+    function playRecording(text, requestId) {
       const source2 = getRecordedAudioPath(text);
       if (!source2) return Promise.resolve(false);
       const recording = createAudio(source2);
-      if (!recording) return Promise.resolve(false);
-      activeRecording = recording;
+      if (!recording || !isCurrentRequest(requestId)) return Promise.resolve(false);
       recording.preload = "auto";
+      recording.volume = 1;
       return new Promise((resolve) => {
+        let settled = false;
         const finish = (didPlay) => {
-          if (activeRecording === recording) activeRecording = null;
+          if (settled) return;
+          settled = true;
+          if (activeRecording?.audio === recording) activeRecording = null;
           resolve(didPlay);
         };
+        activeRecording = { audio: recording, finish, requestId };
         recording.onended = () => finish(true);
         recording.onerror = () => finish(false);
-        const started = recording.play?.();
-        if (started?.catch) started.catch(() => finish(false));
+        try {
+          const started = recording.play?.();
+          if (started?.catch) started.catch(() => finish(false));
+        } catch {
+          finish(false);
+        }
       });
     }
     function speak2(text, rate = 0.8, voiceNames = preferredVoiceNames) {
       if (!text) return;
-      synthesis?.cancel?.();
-      stopActiveRecording();
+      const requestId = beginPlaybackRequest();
       if (!getRecordedAudioPath(text)) {
-        speakWithBrowser(text, rate, voiceNames);
+        speakWithBrowser(text, rate, voiceNames, requestId);
         return;
       }
-      playRecording(text).then((didPlay) => {
-        if (!didPlay) speakWithBrowser(text, rate, voiceNames);
+      playRecording(text, requestId).then((didPlay) => {
+        if (!didPlay && isCurrentRequest(requestId)) speakWithBrowser(text, rate, voiceNames, requestId);
       });
     }
     function speakSceneLines2(lines) {
       if (!synthesis) return;
       const audioLines = lines.map((line) => line.audio).filter(Boolean);
       let index = 0;
-      synthesis.cancel();
-      stopActiveRecording();
+      const requestId = beginPlaybackRequest();
       const playNextLine = () => {
-        if (index >= audioLines.length) return;
+        if (!isCurrentRequest(requestId) || index >= audioLines.length) return;
         const text = audioLines[index];
         index += 1;
         if (!getRecordedAudioPath(text)) {
-          const utterance = chineseUtterance2(text, getSceneRate());
-          utterance.onend = () => schedule(playNextLine, getSceneLinePauseMs());
-          synthesis.speak(utterance);
+          speakWithBrowser(
+            text,
+            getSceneRate(),
+            preferredVoiceNames,
+            requestId,
+            () => schedule(playNextLine, getSceneLinePauseMs())
+          );
           return;
         }
-        playRecording(text).then((didPlay) => {
+        playRecording(text, requestId).then((didPlay) => {
+          if (!isCurrentRequest(requestId)) return;
           if (didPlay) {
             schedule(playNextLine, getSceneLinePauseMs());
             return;
           }
-          const utterance = chineseUtterance2(text, getSceneRate());
-          utterance.onend = () => schedule(playNextLine, getSceneLinePauseMs());
-          synthesis.speak(utterance);
+          speakWithBrowser(
+            text,
+            getSceneRate(),
+            preferredVoiceNames,
+            requestId,
+            () => schedule(playNextLine, getSceneLinePauseMs())
+          );
         });
       };
       playNextLine();

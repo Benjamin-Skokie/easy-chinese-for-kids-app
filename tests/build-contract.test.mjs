@@ -520,7 +520,7 @@ test("Leisure Time uses the shared site-wide Tingting preference", () => {
   assert.doesNotMatch(runtimeSource, /const voiceNames/);
 });
 
-test("audio cancels the prior utterance before speaking a new phrase", () => {
+test("audio cancels an active browser utterance before speaking a new phrase", () => {
   const spoken = [];
   let cancelCount = 0;
   const audio = createAudioService({
@@ -531,8 +531,15 @@ test("audio cancels the prior utterance before speaking a new phrase", () => {
   });
 
   audio.speak("你好", 0.78);
+  audio.speak("再见", 0.78);
   assert.equal(cancelCount, 1);
-  assert.deepEqual(spoken[0], { text: "你好", lang: "zh-CN", rate: 0.78, pitch: 1 });
+  assert.deepEqual(
+    spoken.map(({ text, lang, rate, pitch }) => ({ text, lang, rate, pitch })),
+    [
+      { text: "你好", lang: "zh-CN", rate: 0.78, pitch: 1 },
+      { text: "再见", lang: "zh-CN", rate: 0.78, pitch: 1 }
+    ]
+  );
 });
 
 test("recorded Learn audio covers every authored audio entry", () => {
@@ -599,6 +606,93 @@ test("mapped word cards play their recorded audio before browser speech", async 
   await Promise.resolve();
   assert.deepEqual(startedSources, ["assets/audio/learn/f3210ff9d774.mp3"]);
   assert.deepEqual(spoken, []);
+});
+
+test("recorded audio starts at full volume without initializing browser speech", async () => {
+  let cancelCount = 0;
+  let volumeAtPlay;
+  const audio = createAudioService({
+    synthesis: { cancel: () => { cancelCount += 1; }, speak() {} },
+    createAudio: () => {
+      const recording = {
+        volume: 0.2,
+        currentTime: 0,
+        pause() {},
+        play() {
+          volumeAtPlay = recording.volume;
+          recording.onended?.();
+          return Promise.resolve();
+        }
+      };
+      return recording;
+    },
+    getRecordedAudioPath: () => "recorded.mp3",
+    getSceneRate: () => 0.64,
+    getSceneLinePauseMs: () => 280
+  });
+
+  audio.speak("炒饭");
+  await Promise.resolve();
+  assert.equal(volumeAtPlay, 1);
+  assert.equal(cancelCount, 0);
+});
+
+test("a stale recorded-audio failure cannot start browser fallback", async () => {
+  const recordings = [];
+  const spoken = [];
+  const audio = createAudioService({
+    synthesis: { cancel() {}, speak: (utterance) => spoken.push(utterance.text) },
+    createUtterance: (text) => ({ text }),
+    createAudio: (source) => {
+      let rejectPlay;
+      const recording = {
+        source,
+        currentTime: 0,
+        pause() {},
+        play() {
+          return new Promise((resolve, reject) => { rejectPlay = reject; });
+        },
+        rejectPlay: () => rejectPlay?.(new Error("late failure"))
+      };
+      recordings.push(recording);
+      return recording;
+    },
+    getRecordedAudioPath: (text) => `${text}.mp3`,
+    getSceneRate: () => 0.64,
+    getSceneLinePauseMs: () => 280
+  });
+
+  audio.speak("第一句");
+  audio.speak("第二句");
+  recordings[0].rejectPlay();
+  await Promise.resolve();
+  await Promise.resolve();
+  assert.deepEqual(spoken, []);
+});
+
+test("replacing recorded audio settles and rewinds the prior request", async () => {
+  const recordings = [];
+  const audio = createAudioService({
+    synthesis: { cancel() {}, speak() {} },
+    createAudio: () => {
+      const recording = {
+        currentTime: 4,
+        pauseCount: 0,
+        pause() { recording.pauseCount += 1; },
+        play() { return new Promise(() => {}); }
+      };
+      recordings.push(recording);
+      return recording;
+    },
+    getRecordedAudioPath: (text) => `${text}.mp3`,
+    getSceneRate: () => 0.64,
+    getSceneLinePauseMs: () => 280
+  });
+
+  audio.speak("第一句");
+  audio.speak("第二句");
+  assert.equal(recordings[0].pauseCount, 1);
+  assert.equal(recordings[0].currentTime, 0);
 });
 
 test("audio prefers Tingting over other installed Chinese voices", () => {
