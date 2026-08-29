@@ -1233,7 +1233,9 @@ function renderLegacyIdentityExplorer() {
             ${state.showPinyin ? `<p class="telephone-line-pinyin">${identityQuestion.pinyin}</p>` : ""}
             ${state.showEnglish ? `<p class="telephone-line-english">${identityQuestion.english}</p>` : ""}
           </div>
-          <button class="small-button is-play-button" type="button" data-identity-play-question>Play</button>
+          ${state.identityPracticeFeedback.startsWith("Correct")
+            ? '<button class="small-button is-practice-advance-button" type="button" data-identity-next-practice aria-label="Start a new game">New game</button>'
+            : '<button class="small-button is-play-button" type="button" data-identity-play-question>Play</button>'}
         </div>
         <div class="identity-practice-card">
           <div class="identity-practice-visual">
@@ -1244,7 +1246,6 @@ function renderLegacyIdentityExplorer() {
             ${identityCountries.map((country) => `<button class="choice-button" type="button" data-identity-practice-country="${country.id}">${country.nationality}</button>`).join("")}
           </div>
           <p class="identity-practice-feedback" aria-live="polite">${state.identityPracticeFeedback || "Choose the answer that completes 我是…人。"}</p>
-          ${state.identityPracticeFeedback.startsWith("Correct") ? '<button class="small-button is-new-game-button" type="button" data-identity-next-practice>New round</button>' : ""}
         </div>
         ${
           selectedCountry
@@ -1478,25 +1479,28 @@ function renderLegacyNationalityExplorer() {
             ${state.showPinyin ? `<p class="telephone-line-pinyin">${identityQuestion.pinyin}</p>` : ""}
             ${state.showEnglish ? `<p class="telephone-line-english">${identityQuestion.english}</p>` : ""}
           </div>
-          <button class="small-button is-play-button" type="button" data-nationality-play-question>Play</button>
+          ${state.identityPracticeFeedback.startsWith("Correct")
+            ? '<button class="small-button is-practice-advance-button" type="button" data-nationality-next-round aria-label="Start a new game">New game</button>'
+            : '<button class="small-button is-play-button" type="button" data-nationality-play-question>Play</button>'}
         </div>
         <div class="identity-practice-card">
           <div class="identity-practice-visual"><p>Play the whole conversation, then choose what the speaker says.</p></div>
           <div class="identity-practice-options" aria-label="Choose a nationality answer">${practiceCountries.map((country) => `<button class="choice-button" type="button" data-nationality-answer="${country.id}">${country.nationality}</button>`).join("")}</div>
           <p class="identity-practice-feedback" aria-live="polite">${state.identityPracticeFeedback || "Choose the reply that completes 我是…人。"}</p>
-          ${state.identityPracticeFeedback.startsWith("Correct") ? '<button class="small-button is-new-game-button" type="button" data-nationality-next-round>New round</button>' : ""}
         </div>
       </section>
       <section class="identity-question-section">
-        <div>
-          <p class="body-match-kicker">Country flags</p>
-          <p class="greetings-exchange-prompt">Look at the flag. Choose the country name.</p>
+        <div class="identity-question-top">
+          <div>
+            <p class="body-match-kicker">Country flags</p>
+            <p class="greetings-exchange-prompt">Look at the flag. Choose the country name.</p>
+          </div>
+          <button class="small-button is-practice-advance-button" type="button" data-flag-next-round aria-label="Start a new game">New game</button>
         </div>
         <div class="identity-practice-card">
           <div class="identity-practice-visual"><img class="identity-flag" src="${flagTarget.asset}" alt="${flagTarget.label} flag" /><p class="numbers-game-hanzi">?</p></div>
           <div class="identity-practice-options" aria-label="Choose a country name">${flagCountries.map((country) => `<button class="choice-button" type="button" data-flag-country-answer="${country.id}">${country.hanzi}</button>`).join("")}</div>
           <p class="identity-practice-feedback" aria-live="polite">${state.identityFlagPracticeFeedback || "Choose the country name for this flag."}</p>
-          ${state.identityFlagPracticeFeedback.startsWith("Correct") ? '<button class="small-button is-new-game-button" type="button" data-flag-next-round>New round</button>' : ""}
         </div>
         ${selectedCountry ? `<article class="greetings-line-card identity-answer-card"><div class="telephone-bubble-copy"><p class="telephone-line-hanzi">${selectedCountry.hanzi}</p>${state.showPinyin ? `<p class="telephone-line-pinyin">${selectedCountry.hanzi === "中国" ? "Zhōngguó" : selectedCountry.pinyin.replace(" rén", "")}</p>` : ""}${state.showEnglish ? `<p class="telephone-line-english">${selectedCountry.label}</p>` : ""}</div><div class="identity-symbol-detail"><img src="${selectedCountry.symbolAsset}" alt="${selectedCountry.symbolCaption}" /><p>${selectedCountry.symbolCaption}</p></div></article>` : ""}
       </section>

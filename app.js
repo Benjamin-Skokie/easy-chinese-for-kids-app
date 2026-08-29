@@ -11575,7 +11575,7 @@
   ];
 
   // src/data/learn-recorded-audio.js
-  var recordedLearnAudioVersion = "047a09246fff";
+  var recordedLearnAudioVersion = "bf6a022d1452";
   var recordedLearnAudioIds = /* @__PURE__ */ new Set([
     "b2a608a56f62",
     "0201c407ca5a",
@@ -13059,8 +13059,8 @@
       "trailing": 101
     },
     "1e03936419a6": {
-      "leading": 64,
-      "trailing": 100
+      "leading": 52,
+      "trailing": 485
     },
     "1e54525d2805": {
       "leading": 100,
@@ -17748,6 +17748,14 @@
       state2.requestBuildFeedback = "Look at the picture, then tap the word pieces in order.";
       state2.requestBuildResult = "";
     }
+    function clearRequestBuilder() {
+      const target = requestBuildTarget();
+      if (!target) return;
+      state2.requestBuildAvailableTokens = shuffleArray2(target.tokens);
+      state2.requestBuildSelectedTokens = [];
+      state2.requestBuildFeedback = "Try building the same sentence again.";
+      state2.requestBuildResult = "";
+    }
     function ensureRequestBuilder() {
       const target = requestBuildTarget();
       if (!state2.requestBuildTargetId || !state2.requestBuildAvailableTokens.length && !state2.requestBuildSelectedTokens.length || !target) resetRequestBuilder();
@@ -17777,11 +17785,15 @@
       const target = requestBuildTarget();
       if (!target) return "";
       const complete = state2.requestBuildResult === "correct";
-      return `<section class="practice-split-card request-sentence-builder"><div class="numbers-game-top"><div><p class="body-match-kicker">Build a sentence</p><p class="numbers-game-note">Look at the picture, then tap the word pieces in order.</p></div><button class="small-button is-play-button" type="button" data-request-builder-play>Play</button></div><img class="request-builder-visual" src="${target.imagePath}" alt="${target.imageAlt}" ${imageLoadingAttrs({ width: 1200, height: 900 })} /><div class="intro-build-target"><p class="numbers-game-english">${target.english}</p><div class="intro-build-selected">${state2.requestBuildSelectedTokens.length ? state2.requestBuildSelectedTokens.map((token) => `<span class="intro-build-chip is-selected">${token}</span>`).join("") : '<span class="intro-build-placeholder">Tap the word pieces below.</span>'}</div>${complete ? `<p class="numbers-game-pinyin">${target.targetPinyin}</p>` : ""}</div><div class="intro-build-choices">${state2.requestBuildAvailableTokens.map((token, index) => `<button class="intro-build-chip" type="button" data-request-builder-token="${index}">${token}</button>`).join("")}</div>${state2.requestBuildFeedback ? `<p class="greetings-game-feedback${state2.requestBuildResult === "correct" ? " is-correct" : state2.requestBuildResult === "wrong" ? " is-wrong" : ""}">${state2.requestBuildFeedback}</p>` : ""}</section>`;
+      return `<section class="practice-split-card request-sentence-builder"><div class="numbers-game-top"><div><p class="body-match-kicker">Build a sentence</p><p class="numbers-game-note">Look at the picture, then tap the word pieces in order.</p></div><button class="small-button is-practice-advance-button" type="button" data-request-builder-new aria-label="Start a new game">New game</button></div><img class="request-builder-visual" src="${target.imagePath}" alt="${target.imageAlt}" ${imageLoadingAttrs({ width: 1200, height: 900 })} /><div class="intro-build-target"><p class="numbers-game-english">${target.english}</p><div class="intro-build-selected">${state2.requestBuildSelectedTokens.length ? state2.requestBuildSelectedTokens.map((token) => `<span class="intro-build-chip is-selected">${token}</span>`).join("") : '<span class="intro-build-placeholder">Tap the word pieces below.</span>'}</div>${complete ? `<p class="numbers-game-pinyin">${target.targetPinyin}</p>` : ""}</div><div class="intro-build-choices">${state2.requestBuildAvailableTokens.map((token, index) => `<button class="intro-build-chip" type="button" data-request-builder-token="${index}" ${complete ? "disabled" : ""}>${token}</button>`).join("")}</div>${complete ? "" : '<div class="intro-build-actions"><button class="small-button is-clear-button" type="button" data-request-builder-clear aria-label="Clear this answer and try the same question again">Clear</button></div>'}${state2.requestBuildFeedback ? `<p class="greetings-game-feedback${state2.requestBuildResult === "correct" ? " is-correct" : state2.requestBuildResult === "wrong" ? " is-wrong" : ""}">${state2.requestBuildFeedback}</p>` : ""}</section>`;
     }
     function bindRequestSentenceBuilder(container) {
-      container.querySelector("[data-request-builder-play]")?.addEventListener("click", () => {
+      container.querySelector("[data-request-builder-new]")?.addEventListener("click", () => {
         resetRequestBuilder();
+        renderActivityPanel2(currentTopic2());
+      });
+      container.querySelector("[data-request-builder-clear]")?.addEventListener("click", () => {
+        clearRequestBuilder();
         renderActivityPanel2(currentTopic2());
       });
       container.querySelectorAll("[data-request-builder-token]").forEach((button) => button.addEventListener("click", () => {
@@ -18247,7 +18259,7 @@
         <div class="intro-build-choices">
           ${state2.roomBuildAvailableTokens.map((token, index) => `<button class="intro-build-chip" type="button" data-room-build-token="${index}">${token}</button>`).join("")}
         </div>
-        <div class="intro-build-actions"><button class="small-button" type="button" data-room-build-clear>Clear</button></div>
+        <div class="intro-build-actions"><button class="small-button is-clear-button" type="button" data-room-build-clear aria-label="Clear this answer and try the same question again">Clear</button></div>
       </section>
     `;
         activityList2.querySelectorAll("[data-room-build-token]").forEach((button) => {
@@ -18283,7 +18295,7 @@
         <div class="intro-build-choices">
           ${state2.comparisonBuildAvailableTokens.map((token, index) => `<button class="intro-build-chip" type="button" data-comparison-build-token="${index}">${token}</button>`).join("")}
         </div>
-        <div class="intro-build-actions"><button class="small-button" type="button" data-comparison-build-clear>Clear</button></div>
+        <div class="intro-build-actions"><button class="small-button is-clear-button" type="button" data-comparison-build-clear aria-label="Clear this answer and try the same question again">Clear</button></div>
       </section>
     `;
         activityList2.querySelectorAll("[data-comparison-build-token]").forEach((button) => {
@@ -18376,7 +18388,7 @@
         <div class="intro-build-choices">
           ${state2.transportBuildAvailableTokens.map((token, index) => `<button class="intro-build-chip" type="button" data-transport-build-token="${index}">${token}</button>`).join("")}
         </div>
-        <div class="intro-build-actions"><button class="small-button" type="button" data-transport-build-clear>Clear</button></div>
+        <div class="intro-build-actions"><button class="small-button is-clear-button" type="button" data-transport-build-clear aria-label="Clear this answer and try the same question again">Clear</button></div>
       </section>
     `;
         activityList2.querySelectorAll("[data-transport-build-token]").forEach((button) => {
@@ -18445,7 +18457,7 @@
         </div>
       </section>
       <section class="clothes-quiz-shell time-routine-builder-shell">
-        <div class="numbers-game-top"><div><p class="body-match-kicker">Complete the sentence</p><p class="numbers-game-note">Choose an hour, minutes, and an action to make your own sentence.</p></div><button class="small-button is-play-button" type="button" data-time-routine-builder-new>Play</button></div>
+        <div class="numbers-game-top"><div><p class="body-match-kicker">Complete the sentence</p><p class="numbers-game-note">Choose an hour, minutes, and an action to make your own sentence.</p></div><button class="small-button is-practice-advance-button" type="button" data-time-routine-builder-new aria-label="Start a new game">New game</button></div>
         <div class="clothes-sentence-frame">
           ${state2.timeRoutineBuildComplete ? `<span class="numbers-game-hanzi">${timeRoutineBuildSentence()}\u3002</span>` : `<span class="clothes-sentence-blank">${state2.timeRoutineBuildHour ?? "__"}</span><span class="numbers-game-hanzi">\u70B9</span><span class="clothes-sentence-blank">${state2.timeRoutineBuildMinute ?? "__"}</span><span class="numbers-game-hanzi">\u5206</span><span class="clothes-sentence-blank is-action">${timeRoutineBuildAction()?.action ?? "__"}</span><span class="numbers-game-hanzi">\u3002</span>`}
           ${state2.timeRoutineBuildComplete && state2.showPinyin ? `<span class="numbers-game-pinyin">${timeRoutineBuildPinyin()}</span>` : ""}
@@ -18455,6 +18467,7 @@
           const action = timeRoutineSentenceBuilds2.find((item) => item.itemId === actionId);
           return `<button class="weather-fill-option${state2.timeRoutineBuildAction === actionId ? " is-selected" : ""}" type="button" data-time-routine-builder-action="${actionId}" ${state2.timeRoutineBuildComplete ? "disabled" : ""}>${action.action}</button>`;
         }).join("")}</div></div></div>
+        ${state2.timeRoutineBuildComplete ? "" : '<div class="intro-build-actions"><button class="small-button is-clear-button" type="button" data-time-routine-builder-clear aria-label="Clear this answer and try the same question again">Clear</button></div>'}
       </section>
     `;
         activityList2.querySelectorAll("[data-time-routine-quiz-pick]").forEach((button) => {
@@ -18465,6 +18478,10 @@
         activityList2.querySelector("[data-time-routine-quiz-new]")?.addEventListener("click", nextTimeRoutineQuizQuestion2);
         activityList2.querySelector("[data-time-routine-builder-new]")?.addEventListener("click", () => {
           resetTimeRoutineBuilder(true);
+          renderActivityPanel2(currentTopic2());
+        });
+        activityList2.querySelector("[data-time-routine-builder-clear]")?.addEventListener("click", () => {
+          resetTimeRoutineBuilder();
           renderActivityPanel2(currentTopic2());
         });
         activityList2.querySelectorAll("[data-time-routine-builder-hour]").forEach((button) => button.addEventListener("click", () => updateTimeRoutineBuilder("hour", button.dataset.timeRoutineBuilderHour)));
@@ -18744,7 +18761,7 @@
             <p class="body-match-kicker">Build the sentence</p>
             <p class="numbers-game-note">Tap the word pieces below to build the sentence.</p>
           </div>
-          <button class="small-button is-play-button" type="button" data-intro-build-new>Play</button>
+          <button class="small-button is-practice-advance-button" type="button" data-intro-build-new aria-label="Start a new game">New game</button>
         </div>
         ${state2.lastIntroductionsFeedback ? `<p class="greetings-game-feedback">${state2.lastIntroductionsFeedback}</p>` : ""}
         <div class="intro-build-target">
@@ -18756,6 +18773,7 @@
         <div class="intro-build-choices">
           ${state2.introductionsBuildAvailableTokens.map((token, index) => `<button class="intro-build-chip" type="button" data-intro-build-token="${index}">${token}</button>`).join("")}
         </div>
+        ${buildComplete ? "" : '<div class="intro-build-actions"><button class="small-button is-clear-button" type="button" data-intro-build-clear aria-label="Clear this answer and try the same question again">Clear</button></div>'}
         <div class="intro-character-grid" aria-label="Friends">
           ${Object.values(illustratedKids2).map(
           (kid) => `
@@ -18775,6 +18793,9 @@
         activityList2.querySelector("[data-intro-build-new]")?.addEventListener("click", () => {
           resetIntroductionsBuilder2();
           renderActivityPanel2(topic);
+        });
+        activityList2.querySelector("[data-intro-build-clear]")?.addEventListener("click", () => {
+          handleIntroductionsBuildClear2();
         });
         activityList2.querySelectorAll("[data-intro-build-token]").forEach((button) => {
           button.addEventListener("click", () => {
@@ -18858,7 +18879,7 @@
         ).join("")}
           </div>
           <div class="intro-build-actions">
-            <button class="small-button" type="button" data-age-build-clear>Clear</button>
+            <button class="small-button is-clear-button" type="button" data-age-build-clear aria-label="Clear this answer and try the same question again">Clear</button>
           </div>
         </section>
       </div>
@@ -21336,7 +21357,7 @@
           <div class="transport-build-hint">${state2.showPinyin ? `<p class="transport-build-hint-pinyin">${item.pinyin}</p>` : ""}${state2.showEnglish ? `<p class="transport-build-hint-english">${item.english}</p>` : ""}</div>
           <div class="transport-build-target is-${state2.schoolBuildResult}">${state2.schoolBuildResult ? `<span class="answer-result-mark" aria-hidden="true">${state2.schoolBuildResult === "correct" ? "\u2713" : "\xD7"}</span>` : ""}${state2.schoolBuildSelectedTokens.length ? state2.schoolBuildSelectedTokens.map((token) => `<span class="intro-build-chip is-selected">${token}</span>`).join("") : '<span class="intro-build-placeholder">Your sentence will appear here.</span>'}</div>
           <div class="intro-build-choices">${state2.schoolBuildAvailableTokens.map((token, index) => `<button class="intro-build-chip" type="button" data-school-build-token="${index}">${token}</button>`).join("")}</div>
-          <div class="intro-build-actions"><button class="small-button" type="button" data-school-build-clear>Clear</button></div>
+          <div class="intro-build-actions"><button class="small-button is-clear-button" type="button" data-school-build-clear aria-label="Clear this answer and try the same question again">Clear</button></div>
         </section>
       </div>
     </section>
@@ -21358,7 +21379,7 @@
       <div class="transport-build-hint">${state2.showPinyin ? `<p class="transport-build-hint-pinyin">${item.pinyin}</p>` : ""}${state2.showEnglish ? `<p class="transport-build-hint-english">${item.english}</p>` : ""}</div>
       <div class="transport-build-target is-${state2.schoolBuildResult}">${state2.schoolBuildResult ? `<span class="answer-result-mark" aria-hidden="true">${state2.schoolBuildResult === "correct" ? "\u2713" : "\xD7"}</span>` : ""}${state2.schoolBuildSelectedTokens.length ? state2.schoolBuildSelectedTokens.map((token) => `<span class="intro-build-chip is-selected">${token}</span>`).join("") : '<span class="intro-build-placeholder">Your sentence will appear here.</span>'}</div>
       <div class="intro-build-choices">${state2.schoolBuildAvailableTokens.map((token, index) => `<button class="intro-build-chip" type="button" data-school-build-token="${index}">${token}</button>`).join("")}</div>
-      <div class="intro-build-actions"><button class="small-button" type="button" data-school-build-clear>Clear</button></div>
+      <div class="intro-build-actions"><button class="small-button is-clear-button" type="button" data-school-build-clear aria-label="Clear this answer and try the same question again">Clear</button></div>
     </section>
   `;
     }
@@ -21550,10 +21571,6 @@
     </section>
   `;
       activityList2.querySelector("[data-template-match-new]")?.addEventListener("click", () => {
-        resetMealsConversationMatch();
-        renderActivityPanel2(topic);
-      });
-      activityList2.querySelector("[data-template-match-play-again]")?.addEventListener("click", () => {
         resetMealsConversationMatch();
         renderActivityPanel2(topic);
       });
@@ -25575,7 +25592,7 @@
             ${state2.showPinyin ? `<p class="telephone-line-pinyin">${identityQuestion2.pinyin}</p>` : ""}
             ${state2.showEnglish ? `<p class="telephone-line-english">${identityQuestion2.english}</p>` : ""}
           </div>
-          <button class="small-button is-play-button" type="button" data-identity-play-question>Play</button>
+          ${state2.identityPracticeFeedback.startsWith("Correct") ? '<button class="small-button is-practice-advance-button" type="button" data-identity-next-practice aria-label="Start a new game">New game</button>' : '<button class="small-button is-play-button" type="button" data-identity-play-question>Play</button>'}
         </div>
         <div class="identity-practice-card">
           <div class="identity-practice-visual">
@@ -25586,7 +25603,6 @@
             ${identityCountries2.map((country) => `<button class="choice-button" type="button" data-identity-practice-country="${country.id}">${country.nationality}</button>`).join("")}
           </div>
           <p class="identity-practice-feedback" aria-live="polite">${state2.identityPracticeFeedback || "Choose the answer that completes \u6211\u662F\u2026\u4EBA\u3002"}</p>
-          ${state2.identityPracticeFeedback.startsWith("Correct") ? '<button class="small-button is-new-game-button" type="button" data-identity-next-practice>New round</button>' : ""}
         </div>
         ${selectedCountry ? `
               <article class="greetings-line-card identity-answer-card">
@@ -25798,25 +25814,26 @@
             ${state2.showPinyin ? `<p class="telephone-line-pinyin">${identityQuestion2.pinyin}</p>` : ""}
             ${state2.showEnglish ? `<p class="telephone-line-english">${identityQuestion2.english}</p>` : ""}
           </div>
-          <button class="small-button is-play-button" type="button" data-nationality-play-question>Play</button>
+          ${state2.identityPracticeFeedback.startsWith("Correct") ? '<button class="small-button is-practice-advance-button" type="button" data-nationality-next-round aria-label="Start a new game">New game</button>' : '<button class="small-button is-play-button" type="button" data-nationality-play-question>Play</button>'}
         </div>
         <div class="identity-practice-card">
           <div class="identity-practice-visual"><p>Play the whole conversation, then choose what the speaker says.</p></div>
           <div class="identity-practice-options" aria-label="Choose a nationality answer">${practiceCountries.map((country) => `<button class="choice-button" type="button" data-nationality-answer="${country.id}">${country.nationality}</button>`).join("")}</div>
           <p class="identity-practice-feedback" aria-live="polite">${state2.identityPracticeFeedback || "Choose the reply that completes \u6211\u662F\u2026\u4EBA\u3002"}</p>
-          ${state2.identityPracticeFeedback.startsWith("Correct") ? '<button class="small-button is-new-game-button" type="button" data-nationality-next-round>New round</button>' : ""}
         </div>
       </section>
       <section class="identity-question-section">
-        <div>
-          <p class="body-match-kicker">Country flags</p>
-          <p class="greetings-exchange-prompt">Look at the flag. Choose the country name.</p>
+        <div class="identity-question-top">
+          <div>
+            <p class="body-match-kicker">Country flags</p>
+            <p class="greetings-exchange-prompt">Look at the flag. Choose the country name.</p>
+          </div>
+          <button class="small-button is-practice-advance-button" type="button" data-flag-next-round aria-label="Start a new game">New game</button>
         </div>
         <div class="identity-practice-card">
           <div class="identity-practice-visual"><img class="identity-flag" src="${flagTarget.asset}" alt="${flagTarget.label} flag" /><p class="numbers-game-hanzi">?</p></div>
           <div class="identity-practice-options" aria-label="Choose a country name">${flagCountries.map((country) => `<button class="choice-button" type="button" data-flag-country-answer="${country.id}">${country.hanzi}</button>`).join("")}</div>
           <p class="identity-practice-feedback" aria-live="polite">${state2.identityFlagPracticeFeedback || "Choose the country name for this flag."}</p>
-          ${state2.identityFlagPracticeFeedback.startsWith("Correct") ? '<button class="small-button is-new-game-button" type="button" data-flag-next-round>New round</button>' : ""}
         </div>
         ${selectedCountry ? `<article class="greetings-line-card identity-answer-card"><div class="telephone-bubble-copy"><p class="telephone-line-hanzi">${selectedCountry.hanzi}</p>${state2.showPinyin ? `<p class="telephone-line-pinyin">${selectedCountry.hanzi === "\u4E2D\u56FD" ? "Zh\u014Dnggu\xF3" : selectedCountry.pinyin.replace(" r\xE9n", "")}</p>` : ""}${state2.showEnglish ? `<p class="telephone-line-english">${selectedCountry.label}</p>` : ""}</div><div class="identity-symbol-detail"><img src="${selectedCountry.symbolAsset}" alt="${selectedCountry.symbolCaption}" /><p>${selectedCountry.symbolCaption}</p></div></article>` : ""}
       </section>
@@ -28235,8 +28252,8 @@
       const usesFourByThreeCover = isQuestion || isLeisure;
       const leisureSlots = ["Who", "\u5728", "Where", "What"];
       const targetContent = isLeisure ? `${state2.hobbiesBuildSelectedTokens.map((token) => `<span class="intro-build-chip is-selected">${token}</span>`).join("")}${leisureSlots.slice(state2.hobbiesBuildSelectedTokens.length).map((slot) => `<span class="intro-build-placeholder hobbies-sentence-slot">${slot}</span>`).join("")}` : state2.hobbiesBuildSelectedTokens.length ? state2.hobbiesBuildSelectedTokens.map((token) => `<span class="intro-build-chip is-selected">${token}</span>`).join("") : isQuestion ? '<span class="intro-build-placeholder">Build a question: \u2026\u5417</span>' : '<span class="intro-build-placeholder">Your sentence will appear here.</span>';
-      activityList2.innerHTML = `<section class="clothes-quiz-shell transport-builder-shell"><div class="numbers-game-top"><div><p class="body-match-kicker">Build the ${isQuestion ? "question" : "sentence"}</p><p class="numbers-game-note">${isQuestion ? "Make a question about the picture. Use \u5417 at the end." : isLeisure ? "Use the pale hints in the answer box: who \xB7 \u5728 \xB7 where \xB7 what." : "More than one answer can be correct. Tap the word cards in the right order to make any sentence that fits the picture."}</p></div><button class="small-button is-play-button" type="button" data-hobbies-build-play>${isQuestion || isLeisure ? "New game" : "Play"}</button></div><figure class="clothes-quiz-visual school-build-visual"><img class="clothes-quiz-image${usesFourByThreeCover ? " hobbies-3b-practice-image" : ""}" src="${item.imagePath}" alt="${item.imageAlt}"></figure><div class="transport-build-target is-${state2.hobbiesBuildResult}">${state2.hobbiesBuildResult ? `<span class="answer-result-mark" aria-hidden="true">${complete ? "\u2713" : "\xD7"}</span>` : ""}${targetContent}</div>${answer ? `<div class="transport-build-hint"><p class="numbers-game-hanzi">${answer.hanzi}</p><p class="transport-build-hint-pinyin">${answer.pinyin}</p><p class="transport-build-hint-english">${answer.english}</p></div>${reply}` : ""}${complete && (isQuestion || isLeisure) ? "" : `<div class="intro-build-choices">${state2.hobbiesBuildAvailableTokens.map((token, index) => `<button class="intro-build-chip" type="button" data-hobbies-build-token="${index}" ${complete ? "disabled" : ""}>${token}</button>`).join("")}</div>`}${isQuestion || isLeisure ? "" : '<div class="intro-build-actions"><button class="small-button" type="button" data-hobbies-build-clear>Clear</button></div>'}</section>`;
-      activityList2.querySelector("[data-hobbies-build-play]").addEventListener("click", () => {
+      activityList2.innerHTML = `<section class="clothes-quiz-shell transport-builder-shell"><div class="numbers-game-top"><div><p class="body-match-kicker">Build the ${isQuestion ? "question" : "sentence"}</p><p class="numbers-game-note">${isQuestion ? "Make a question about the picture. Use \u5417 at the end." : isLeisure ? "Use the pale hints in the answer box: who \xB7 \u5728 \xB7 where \xB7 what." : "More than one answer can be correct. Tap the word cards in the right order to make any sentence that fits the picture."}</p></div><button class="small-button is-practice-advance-button" type="button" data-hobbies-build-new aria-label="Start a new game">New game</button></div><figure class="clothes-quiz-visual school-build-visual"><img class="clothes-quiz-image${usesFourByThreeCover ? " hobbies-3b-practice-image" : ""}" src="${item.imagePath}" alt="${item.imageAlt}"></figure><div class="transport-build-target is-${state2.hobbiesBuildResult}">${state2.hobbiesBuildResult ? `<span class="answer-result-mark" aria-hidden="true">${complete ? "\u2713" : "\xD7"}</span>` : ""}${targetContent}</div>${answer ? `<div class="transport-build-hint"><p class="numbers-game-hanzi">${answer.hanzi}</p><p class="transport-build-hint-pinyin">${answer.pinyin}</p><p class="transport-build-hint-english">${answer.english}</p></div>${reply}` : ""}${complete && (isQuestion || isLeisure) ? "" : `<div class="intro-build-choices">${state2.hobbiesBuildAvailableTokens.map((token, index) => `<button class="intro-build-chip" type="button" data-hobbies-build-token="${index}" ${complete ? "disabled" : ""}>${token}</button>`).join("")}</div>`}${complete ? "" : '<div class="intro-build-actions"><button class="small-button is-clear-button" type="button" data-hobbies-build-clear aria-label="Clear this answer and try the same question again">Clear</button></div>'}</section>`;
+      activityList2.querySelector("[data-hobbies-build-new]").addEventListener("click", () => {
         resetRound(true);
         renderActivityPanel2(topic);
       });
@@ -30219,7 +30236,7 @@
             ${config.title ? `<h4>${config.title}</h4>` : ""}
             <p class="numbers-game-note">${config.instruction ?? "Tap a card on the left, then tap its matching card on the right."}</p>
           </div>
-          <button class="small-button is-play-button" type="button" data-template-match-new>Play</button>
+          <button class="small-button is-practice-advance-button" type="button" data-template-match-new aria-label="Start a new game">New game</button>
         </div>
         ${config.feedback() ? `<div class="greetings-game-feedback">${config.feedback()}</div>` : ""}
         <div class="family-match-board-headings">
@@ -30275,7 +30292,7 @@
             </div>
           </div>
         ` : ""}
-        ${config.showPlayAgain !== false && matchedIds.size === config.items().length ? '<button class="small-button is-play-button" type="button" data-template-match-play-again>Play</button>' : ""}
+        ${matchedIds.size > 0 && matchedIds.size < config.items().length ? '<div class="intro-build-actions"><button class="small-button is-clear-button" type="button" data-template-match-clear aria-label="Clear this matching board and try again">Clear</button></div>' : ""}
       </section>
     `;
     }
@@ -30311,7 +30328,7 @@
       activityList2.querySelectorAll("[data-template-listen-guess]").forEach((button) => button.addEventListener("click", () => config.listen?.onGuess(button.dataset.templateListenGuess)));
       if (config.match) {
         activityList2.querySelector("[data-template-match-new]")?.addEventListener("click", () => config.match.onNew());
-        activityList2.querySelector("[data-template-match-play-again]")?.addEventListener("click", () => config.match.onNew());
+        activityList2.querySelector("[data-template-match-clear]")?.addEventListener("click", () => config.match.onNew());
         activityList2.querySelectorAll("[data-template-match-phrase]").forEach((button) => button.addEventListener("click", () => config.match.onPhrase(button.dataset.templateMatchPhrase)));
         activityList2.querySelectorAll("[data-template-match-meaning]").forEach((button) => button.addEventListener("click", () => config.match.onMeaning(button.dataset.templateMatchMeaning)));
       }

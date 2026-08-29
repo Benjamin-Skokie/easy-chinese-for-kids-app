@@ -458,8 +458,8 @@ const measuredBoundarySilenceMsById = Object.freeze({
     "trailing": 101
   },
   "1e03936419a6": {
-    "leading": 64,
-    "trailing": 100
+    "leading": 52,
+    "trailing": 485
   },
   "1e54525d2805": {
     "leading": 100,

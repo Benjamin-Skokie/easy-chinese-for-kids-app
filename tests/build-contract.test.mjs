@@ -193,6 +193,12 @@ test("listen-and-choose games show card-level correct or wrong feedback", () => 
   assert.match(ageControllerSource, /state\.ageChallengeWrongIds = new Set/);
 });
 
+test("listen-and-choose card copy stays centered within the whole answer card", () => {
+  const styles = readFileSync("styles.css", "utf8");
+  assert.match(styles, /\.numbers-game-option\.family-listen-option \{[\s\S]{0,220}grid-template-columns: minmax\(0, 1fr\);[\s\S]{0,220}justify-items: stretch;/);
+  assert.match(styles, /\.family-listen-copy \{[\s\S]{0,280}width: 100%;/);
+});
+
 test("Everyday Actions keeps one silent new-game button in the practice header", () => {
   const practiceSource = readFileSync("src/core/lesson-practice-runtime.js", "utf8");
   const timeRuntimeSource = readFileSync("src/features/time-daily-life/time-daily-life-runtime.js", "utf8");
@@ -233,9 +239,13 @@ test("evaluated practice choices keep visible correct or wrong feedback", () => 
 
 test("My Family matching keeps paired cards aligned and one round-reset control", () => {
   const practiceSource = readFileSync("src/core/lesson-practice-runtime.js", "utf8");
+  const sharedPracticeSource = readFileSync("src/games/shared-lesson-practice.js", "utf8");
   const styles = readFileSync("styles.css", "utf8");
   assert.match(practiceSource, /const familyPracticeSummary = \{[\s\S]{0,700}shellClass: "family-lesson-practice-shell"/);
   assert.match(practiceSource, /feedback: \(\) => state\.familyMatchFeedback,[\s\S]{0,100}showPlayAgain: false/);
+  assert.match(sharedPracticeSource, /is-practice-advance-button" type="button" data-template-match-new aria-label="Start a new game">New game/);
+  assert.match(sharedPracticeSource, /matchedIds\.size > 0 && matchedIds\.size < config\.items\(\)\.length[\s\S]{0,240}data-template-match-clear/);
+  assert.doesNotMatch(sharedPracticeSource, /data-template-match-play-again/);
   assert.match(styles, /\.family-lesson-practice-shell \.family-match-open-board \.polite-match-card \{[\s\S]{0,120}height: 104px;/);
 });
 
@@ -495,6 +505,35 @@ test("randomized practice keeps its single green new-game control in the header"
   assert.doesNotMatch(schoolSource, /data-(school-build|stationery-picture-match|meals-picture)-next/);
   assert.doesNotMatch(worldSource, /data-world-colour-next/);
   assert.doesNotMatch(foundationsSource, /data-body-(next-round|play-again)/);
+});
+
+test("sentence builders keep New game and Clear as separate actions", () => {
+  const stylesSource = readFileSync("styles.css", "utf8");
+  const lessonSource = readFileSync("src/core/lesson-practice-runtime.js", "utf8");
+  const hobbiesSource = readFileSync("src/features/play-hobbies/play-hobbies-runtime.js", "utf8");
+  const schoolSource = readFileSync("src/features/school-life/school-food-runtime.js", "utf8");
+  assert.match(stylesSource, /Clear restarts only the learner's answer; it must never look like New game/);
+  for (const source of [lessonSource, hobbiesSource, schoolSource]) {
+    assert.match(source, /small-button is-clear-button" type="button" data-[a-z-]+-clear/);
+  }
+  assert.match(lessonSource, /data-request-builder-new aria-label="Start a new game">New game/);
+  assert.match(lessonSource, /function clearRequestBuilder/);
+  assert.match(lessonSource, /state\.requestBuildTargetId = target\.id/);
+  assert.match(lessonSource, /data-time-routine-builder-clear[\s\S]{0,250}resetTimeRoutineBuilder\(\)/);
+  assert.match(hobbiesSource, /data-hobbies-build-new aria-label="Start a new game">New game/);
+  assert.match(hobbiesSource, /data-hobbies-build-clear[\s\S]{0,160}resetRound\(\)/);
+  assert.doesNotMatch(hobbiesSource, /data-hobbies-build-clear[\s\S]{0,160}resetRound\(true\)/);
+});
+
+test("completed games never append a second green New game button below their board", () => {
+  const foundationsSource = readFileSync("src/features/foundations/foundations-runtime.js", "utf8");
+  const schoolSource = readFileSync("src/features/school-life/school-food-runtime.js", "utf8");
+  const sharedPracticeSource = readFileSync("src/games/shared-lesson-practice.js", "utf8");
+  assert.doesNotMatch(foundationsSource, /identity-practice-feedback[\s\S]{0,260}is-(?:new-game-button|practice-advance-button)/);
+  assert.match(foundationsSource, /data-nationality-next-round aria-label="Start a new game">New game/);
+  assert.match(foundationsSource, /data-flag-next-round aria-label="Start a new game">New game/);
+  assert.doesNotMatch(sharedPracticeSource, /data-template-match-play-again/);
+  assert.doesNotMatch(schoolSource, /data-template-match-play-again/);
 });
 
 test("picture-led practice cards keep their image centered", () => {

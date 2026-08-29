@@ -64,7 +64,7 @@ export function createSharedLessonPractice({ state, speak, elements, documentRef
             ${config.title ? `<h4>${config.title}</h4>` : ""}
             <p class="numbers-game-note">${config.instruction ?? "Tap a card on the left, then tap its matching card on the right."}</p>
           </div>
-          <button class="small-button is-play-button" type="button" data-template-match-new>Play</button>
+          <button class="small-button is-practice-advance-button" type="button" data-template-match-new aria-label="Start a new game">New game</button>
         </div>
         ${config.feedback() ? `<div class="greetings-game-feedback">${config.feedback()}</div>` : ""}
         <div class="family-match-board-headings">
@@ -120,7 +120,7 @@ export function createSharedLessonPractice({ state, speak, elements, documentRef
             </div>
           </div>
         ` : ""}
-        ${config.showPlayAgain !== false && matchedIds.size === config.items().length ? '<button class="small-button is-play-button" type="button" data-template-match-play-again>Play</button>' : ""}
+        ${matchedIds.size > 0 && matchedIds.size < config.items().length ? '<div class="intro-build-actions"><button class="small-button is-clear-button" type="button" data-template-match-clear aria-label="Clear this matching board and try again">Clear</button></div>' : ""}
       </section>
     `;
   }
@@ -161,7 +161,7 @@ export function createSharedLessonPractice({ state, speak, elements, documentRef
     activityList.querySelectorAll("[data-template-listen-guess]").forEach((button) => button.addEventListener("click", () => config.listen?.onGuess(button.dataset.templateListenGuess)));
     if (config.match) {
       activityList.querySelector("[data-template-match-new]")?.addEventListener("click", () => config.match.onNew());
-      activityList.querySelector("[data-template-match-play-again]")?.addEventListener("click", () => config.match.onNew());
+      activityList.querySelector("[data-template-match-clear]")?.addEventListener("click", () => config.match.onNew());
       activityList.querySelectorAll("[data-template-match-phrase]").forEach((button) => button.addEventListener("click", () => config.match.onPhrase(button.dataset.templateMatchPhrase)));
       activityList.querySelectorAll("[data-template-match-meaning]").forEach((button) => button.addEventListener("click", () => config.match.onMeaning(button.dataset.templateMatchMeaning)));
     }

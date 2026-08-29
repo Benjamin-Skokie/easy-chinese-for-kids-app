@@ -216,6 +216,15 @@ function resetRequestBuilder() {
   state.requestBuildResult = "";
 }
 
+function clearRequestBuilder() {
+  const target = requestBuildTarget();
+  if (!target) return;
+  state.requestBuildAvailableTokens = shuffleArray(target.tokens);
+  state.requestBuildSelectedTokens = [];
+  state.requestBuildFeedback = "Try building the same sentence again.";
+  state.requestBuildResult = "";
+}
+
 function ensureRequestBuilder() {
   const target = requestBuildTarget();
   if (!state.requestBuildTargetId || (!state.requestBuildAvailableTokens.length && !state.requestBuildSelectedTokens.length) || !target) resetRequestBuilder();
@@ -247,12 +256,16 @@ function requestSentenceBuilderMarkup() {
   const target = requestBuildTarget();
   if (!target) return "";
   const complete = state.requestBuildResult === "correct";
-  return `<section class="practice-split-card request-sentence-builder"><div class="numbers-game-top"><div><p class="body-match-kicker">Build a sentence</p><p class="numbers-game-note">Look at the picture, then tap the word pieces in order.</p></div><button class="small-button is-play-button" type="button" data-request-builder-play>Play</button></div><img class="request-builder-visual" src="${target.imagePath}" alt="${target.imageAlt}" ${imageLoadingAttrs({ width: 1200, height: 900 })} /><div class="intro-build-target"><p class="numbers-game-english">${target.english}</p><div class="intro-build-selected">${state.requestBuildSelectedTokens.length ? state.requestBuildSelectedTokens.map((token) => `<span class="intro-build-chip is-selected">${token}</span>`).join("") : '<span class="intro-build-placeholder">Tap the word pieces below.</span>'}</div>${complete ? `<p class="numbers-game-pinyin">${target.targetPinyin}</p>` : ""}</div><div class="intro-build-choices">${state.requestBuildAvailableTokens.map((token, index) => `<button class="intro-build-chip" type="button" data-request-builder-token="${index}">${token}</button>`).join("")}</div>${state.requestBuildFeedback ? `<p class="greetings-game-feedback${state.requestBuildResult === "correct" ? " is-correct" : state.requestBuildResult === "wrong" ? " is-wrong" : ""}">${state.requestBuildFeedback}</p>` : ""}</section>`;
+  return `<section class="practice-split-card request-sentence-builder"><div class="numbers-game-top"><div><p class="body-match-kicker">Build a sentence</p><p class="numbers-game-note">Look at the picture, then tap the word pieces in order.</p></div><button class="small-button is-practice-advance-button" type="button" data-request-builder-new aria-label="Start a new game">New game</button></div><img class="request-builder-visual" src="${target.imagePath}" alt="${target.imageAlt}" ${imageLoadingAttrs({ width: 1200, height: 900 })} /><div class="intro-build-target"><p class="numbers-game-english">${target.english}</p><div class="intro-build-selected">${state.requestBuildSelectedTokens.length ? state.requestBuildSelectedTokens.map((token) => `<span class="intro-build-chip is-selected">${token}</span>`).join("") : '<span class="intro-build-placeholder">Tap the word pieces below.</span>'}</div>${complete ? `<p class="numbers-game-pinyin">${target.targetPinyin}</p>` : ""}</div><div class="intro-build-choices">${state.requestBuildAvailableTokens.map((token, index) => `<button class="intro-build-chip" type="button" data-request-builder-token="${index}" ${complete ? "disabled" : ""}>${token}</button>`).join("")}</div>${complete ? "" : '<div class="intro-build-actions"><button class="small-button is-clear-button" type="button" data-request-builder-clear aria-label="Clear this answer and try the same question again">Clear</button></div>'}${state.requestBuildFeedback ? `<p class="greetings-game-feedback${state.requestBuildResult === "correct" ? " is-correct" : state.requestBuildResult === "wrong" ? " is-wrong" : ""}">${state.requestBuildFeedback}</p>` : ""}</section>`;
 }
 
 function bindRequestSentenceBuilder(container) {
-  container.querySelector("[data-request-builder-play]")?.addEventListener("click", () => {
+  container.querySelector("[data-request-builder-new]")?.addEventListener("click", () => {
     resetRequestBuilder();
+    renderActivityPanel(currentTopic());
+  });
+  container.querySelector("[data-request-builder-clear]")?.addEventListener("click", () => {
+    clearRequestBuilder();
     renderActivityPanel(currentTopic());
   });
   container.querySelectorAll("[data-request-builder-token]").forEach((button) => button.addEventListener("click", () => {
@@ -720,7 +733,7 @@ function renderActivityPanel(topic) {
         <div class="intro-build-choices">
           ${state.roomBuildAvailableTokens.map((token, index) => `<button class="intro-build-chip" type="button" data-room-build-token="${index}">${token}</button>`).join("")}
         </div>
-        <div class="intro-build-actions"><button class="small-button" type="button" data-room-build-clear>Clear</button></div>
+        <div class="intro-build-actions"><button class="small-button is-clear-button" type="button" data-room-build-clear aria-label="Clear this answer and try the same question again">Clear</button></div>
       </section>
     `;
     activityList.querySelectorAll("[data-room-build-token]").forEach((button) => {
@@ -757,7 +770,7 @@ function renderActivityPanel(topic) {
         <div class="intro-build-choices">
           ${state.comparisonBuildAvailableTokens.map((token, index) => `<button class="intro-build-chip" type="button" data-comparison-build-token="${index}">${token}</button>`).join("")}
         </div>
-        <div class="intro-build-actions"><button class="small-button" type="button" data-comparison-build-clear>Clear</button></div>
+        <div class="intro-build-actions"><button class="small-button is-clear-button" type="button" data-comparison-build-clear aria-label="Clear this answer and try the same question again">Clear</button></div>
       </section>
     `;
     activityList.querySelectorAll("[data-comparison-build-token]").forEach((button) => {
@@ -853,7 +866,7 @@ function renderActivityPanel(topic) {
         <div class="intro-build-choices">
           ${state.transportBuildAvailableTokens.map((token, index) => `<button class="intro-build-chip" type="button" data-transport-build-token="${index}">${token}</button>`).join("")}
         </div>
-        <div class="intro-build-actions"><button class="small-button" type="button" data-transport-build-clear>Clear</button></div>
+        <div class="intro-build-actions"><button class="small-button is-clear-button" type="button" data-transport-build-clear aria-label="Clear this answer and try the same question again">Clear</button></div>
       </section>
     `;
     activityList.querySelectorAll("[data-transport-build-token]").forEach((button) => {
@@ -928,13 +941,14 @@ function renderActivityPanel(topic) {
         </div>
       </section>
       <section class="clothes-quiz-shell time-routine-builder-shell">
-        <div class="numbers-game-top"><div><p class="body-match-kicker">Complete the sentence</p><p class="numbers-game-note">Choose an hour, minutes, and an action to make your own sentence.</p></div><button class="small-button is-play-button" type="button" data-time-routine-builder-new>Play</button></div>
+        <div class="numbers-game-top"><div><p class="body-match-kicker">Complete the sentence</p><p class="numbers-game-note">Choose an hour, minutes, and an action to make your own sentence.</p></div><button class="small-button is-practice-advance-button" type="button" data-time-routine-builder-new aria-label="Start a new game">New game</button></div>
         <div class="clothes-sentence-frame">
           ${state.timeRoutineBuildComplete ? `<span class="numbers-game-hanzi">${timeRoutineBuildSentence()}。</span>` : `<span class="clothes-sentence-blank">${state.timeRoutineBuildHour ?? "__"}</span><span class="numbers-game-hanzi">点</span><span class="clothes-sentence-blank">${state.timeRoutineBuildMinute ?? "__"}</span><span class="numbers-game-hanzi">分</span><span class="clothes-sentence-blank is-action">${timeRoutineBuildAction()?.action ?? "__"}</span><span class="numbers-game-hanzi">。</span>`}
           ${state.timeRoutineBuildComplete && state.showPinyin ? `<span class="numbers-game-pinyin">${timeRoutineBuildPinyin()}</span>` : ""}
           ${state.timeRoutineBuildComplete && state.showEnglish ? `<span class="numbers-game-english">${timeRoutineBuildEnglish()}</span>` : ""}
         </div>
         <div class="weather-fill-choice-groups time-routine-builder-options"><div class="time-routine-builder-group is-hour"><p class="weather-fill-choice-label">Hour</p><div class="weather-fill-options">${timeBuilder.build.hourChoices.map((hour) => `<button class="weather-fill-option${state.timeRoutineBuildHour === hour ? " is-selected" : ""}" type="button" data-time-routine-builder-hour="${hour}" ${state.timeRoutineBuildComplete ? "disabled" : ""}>${hour}</button>`).join("")}</div></div><div class="time-routine-builder-group is-minutes"><p class="weather-fill-choice-label">Minutes</p><div class="weather-fill-options">${[0, 15, 30, 45].map((minute) => `<button class="weather-fill-option${state.timeRoutineBuildMinute === minute ? " is-selected" : ""}" type="button" data-time-routine-builder-minute="${minute}" ${state.timeRoutineBuildComplete ? "disabled" : ""}>${minute}</button>`).join("")}</div></div><div class="time-routine-builder-group is-action"><p class="weather-fill-choice-label">Action</p><div class="weather-fill-options">${state.timeRoutineBuildActionChoices.map((actionId) => { const action = timeRoutineSentenceBuilds.find((item) => item.itemId === actionId); return `<button class="weather-fill-option${state.timeRoutineBuildAction === actionId ? " is-selected" : ""}" type="button" data-time-routine-builder-action="${actionId}" ${state.timeRoutineBuildComplete ? "disabled" : ""}>${action.action}</button>`; }).join("")}</div></div></div>
+        ${state.timeRoutineBuildComplete ? "" : '<div class="intro-build-actions"><button class="small-button is-clear-button" type="button" data-time-routine-builder-clear aria-label="Clear this answer and try the same question again">Clear</button></div>'}
       </section>
     `;
 
@@ -945,6 +959,7 @@ function renderActivityPanel(topic) {
     });
     activityList.querySelector("[data-time-routine-quiz-new]")?.addEventListener("click", nextTimeRoutineQuizQuestion);
     activityList.querySelector("[data-time-routine-builder-new]")?.addEventListener("click", () => { resetTimeRoutineBuilder(true); renderActivityPanel(currentTopic()); });
+    activityList.querySelector("[data-time-routine-builder-clear]")?.addEventListener("click", () => { resetTimeRoutineBuilder(); renderActivityPanel(currentTopic()); });
     activityList.querySelectorAll("[data-time-routine-builder-hour]").forEach((button) => button.addEventListener("click", () => updateTimeRoutineBuilder("hour", button.dataset.timeRoutineBuilderHour)));
     activityList.querySelectorAll("[data-time-routine-builder-minute]").forEach((button) => button.addEventListener("click", () => updateTimeRoutineBuilder("minute", button.dataset.timeRoutineBuilderMinute)));
     activityList.querySelectorAll("[data-time-routine-builder-action]").forEach((button) => button.addEventListener("click", () => updateTimeRoutineBuilder("action", button.dataset.timeRoutineBuilderAction)));
@@ -1244,7 +1259,7 @@ function renderActivityPanel(topic) {
             <p class="body-match-kicker">Build the sentence</p>
             <p class="numbers-game-note">Tap the word pieces below to build the sentence.</p>
           </div>
-          <button class="small-button is-play-button" type="button" data-intro-build-new>Play</button>
+          <button class="small-button is-practice-advance-button" type="button" data-intro-build-new aria-label="Start a new game">New game</button>
         </div>
         ${state.lastIntroductionsFeedback ? `<p class="greetings-game-feedback">${state.lastIntroductionsFeedback}</p>` : ""}
         <div class="intro-build-target">
@@ -1256,6 +1271,7 @@ function renderActivityPanel(topic) {
         <div class="intro-build-choices">
           ${state.introductionsBuildAvailableTokens.map((token, index) => `<button class="intro-build-chip" type="button" data-intro-build-token="${index}">${token}</button>`).join("")}
         </div>
+        ${buildComplete ? "" : '<div class="intro-build-actions"><button class="small-button is-clear-button" type="button" data-intro-build-clear aria-label="Clear this answer and try the same question again">Clear</button></div>'}
         <div class="intro-character-grid" aria-label="Friends">
           ${Object.values(illustratedKids)
             .map(
@@ -1278,6 +1294,9 @@ function renderActivityPanel(topic) {
     activityList.querySelector("[data-intro-build-new]")?.addEventListener("click", () => {
       resetIntroductionsBuilder();
       renderActivityPanel(topic);
+    });
+    activityList.querySelector("[data-intro-build-clear]")?.addEventListener("click", () => {
+      handleIntroductionsBuildClear();
     });
     activityList.querySelectorAll("[data-intro-build-token]").forEach((button) => {
       button.addEventListener("click", () => {
@@ -1374,7 +1393,7 @@ function renderActivityPanel(topic) {
               .join("")}
           </div>
           <div class="intro-build-actions">
-            <button class="small-button" type="button" data-age-build-clear>Clear</button>
+            <button class="small-button is-clear-button" type="button" data-age-build-clear aria-label="Clear this answer and try the same question again">Clear</button>
           </div>
         </section>
       </div>

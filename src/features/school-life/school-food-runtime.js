@@ -769,7 +769,7 @@ function renderFoodPractice(topic) {
           <div class="transport-build-hint">${state.showPinyin ? `<p class="transport-build-hint-pinyin">${item.pinyin}</p>` : ""}${state.showEnglish ? `<p class="transport-build-hint-english">${item.english}</p>` : ""}</div>
           <div class="transport-build-target is-${state.schoolBuildResult}">${state.schoolBuildResult ? `<span class="answer-result-mark" aria-hidden="true">${state.schoolBuildResult === "correct" ? "✓" : "×"}</span>` : ""}${state.schoolBuildSelectedTokens.length ? state.schoolBuildSelectedTokens.map((token) => `<span class="intro-build-chip is-selected">${token}</span>`).join("") : '<span class="intro-build-placeholder">Your sentence will appear here.</span>'}</div>
           <div class="intro-build-choices">${state.schoolBuildAvailableTokens.map((token, index) => `<button class="intro-build-chip" type="button" data-school-build-token="${index}">${token}</button>`).join("")}</div>
-          <div class="intro-build-actions"><button class="small-button" type="button" data-school-build-clear>Clear</button></div>
+          <div class="intro-build-actions"><button class="small-button is-clear-button" type="button" data-school-build-clear aria-label="Clear this answer and try the same question again">Clear</button></div>
         </section>
       </div>
     </section>
@@ -792,7 +792,7 @@ function renderSchoolSentenceBuilder(item) {
       <div class="transport-build-hint">${state.showPinyin ? `<p class="transport-build-hint-pinyin">${item.pinyin}</p>` : ""}${state.showEnglish ? `<p class="transport-build-hint-english">${item.english}</p>` : ""}</div>
       <div class="transport-build-target is-${state.schoolBuildResult}">${state.schoolBuildResult ? `<span class="answer-result-mark" aria-hidden="true">${state.schoolBuildResult === "correct" ? "✓" : "×"}</span>` : ""}${state.schoolBuildSelectedTokens.length ? state.schoolBuildSelectedTokens.map((token) => `<span class="intro-build-chip is-selected">${token}</span>`).join("") : '<span class="intro-build-placeholder">Your sentence will appear here.</span>'}</div>
       <div class="intro-build-choices">${state.schoolBuildAvailableTokens.map((token, index) => `<button class="intro-build-chip" type="button" data-school-build-token="${index}">${token}</button>`).join("")}</div>
-      <div class="intro-build-actions"><button class="small-button" type="button" data-school-build-clear>Clear</button></div>
+      <div class="intro-build-actions"><button class="small-button is-clear-button" type="button" data-school-build-clear aria-label="Clear this answer and try the same question again">Clear</button></div>
     </section>
   `;
 }
@@ -1000,10 +1000,6 @@ function renderMealsConversationPractice(topic) {
     </section>
   `;
   activityList.querySelector("[data-template-match-new]")?.addEventListener("click", () => {
-    resetMealsConversationMatch();
-    renderActivityPanel(topic);
-  });
-  activityList.querySelector("[data-template-match-play-again]")?.addEventListener("click", () => {
     resetMealsConversationMatch();
     renderActivityPanel(topic);
   });

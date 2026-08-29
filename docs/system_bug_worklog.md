@@ -11,7 +11,7 @@ This is the living implementation record for cross-page bugs reported in `docs/b
 | SYS-01 Shared audio playback lifecycle | Implementation complete; device verification pending | Implemented in shared service |
 | SYS-02 Audio-source routing policy | Implementation complete; device verification pending | Explicit recorded-first, recorded-only, browser-first, and composed-recording paths implemented |
 | SYS-03 Audio asset QA pipeline | In progress | Pre-generation prompt guardrails implemented; waveform audit pending |
-| SYS-04 Shared game controls and completion behavior | Scoped | Not started |
+| SYS-04 Shared game controls and completion behavior | In progress | Shared New game/Clear contract applied to sentence builders; full inventory remains |
 | SYS-05 Question/picture state synchronization | Scoped | Not started |
 | SYS-06 Shared responsive game layout | Scoped | Not started |
 
@@ -145,9 +145,9 @@ Shared controls have one meaning and one placement across exercises.
 
 ### Work
 
+- [x] Define the arrow contract: upper-right, one per game, skip/new-question behavior.
+- [x] Separate “play prompt,” “submit answer,” and “next/skip” actions for sentence builders: the green control advances to a new round; Clear retains the existing round and resets only the learner's answer.
 - [ ] Inventory green-arrow implementations and identify duplicate local controls.
-- [ ] Define the arrow contract: upper-right, one per game, skip/new-question behavior.
-- [ ] Separate “play prompt,” “submit answer,” and “next/skip” actions.
 - [ ] Remove automatic prompt replay after a correct Listen and Choose answer.
 - [ ] Add shared interaction tests for initial, incomplete, correct, and completed states.
 

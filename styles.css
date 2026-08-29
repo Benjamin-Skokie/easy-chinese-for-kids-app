@@ -1856,6 +1856,31 @@ h4 {
   box-shadow: 0 0 0 3px rgba(190, 91, 73, 0.16), 0 14px 28px rgba(190, 91, 73, 0.24);
 }
 
+/* Clear restarts only the learner's answer; it must never look like New game. */
+.intro-build-actions .small-button.is-clear-button {
+  color: var(--berry-dark);
+  background: #fffaf4;
+  border-color: rgba(148, 66, 48, 0.25);
+}
+
+.intro-build-actions .small-button.is-clear-button:hover,
+.intro-build-actions .small-button.is-clear-button:focus-visible {
+  background: #f8eadc;
+  box-shadow: 0 0 0 3px rgba(190, 91, 73, 0.14);
+}
+
+.numbers-game-top .small-button.is-clear-button {
+  color: var(--berry-dark);
+  background: #fffaf4;
+  border-color: rgba(148, 66, 48, 0.25);
+}
+
+.numbers-game-top .small-button.is-clear-button:hover,
+.numbers-game-top .small-button.is-clear-button:focus-visible {
+  background: #f8eadc;
+  box-shadow: 0 0 0 3px rgba(190, 91, 73, 0.14);
+}
+
 .small-button.is-play-button,
 .small-button.is-practice-advance-button,
 .small-button.is-playback-control-button {
@@ -4156,6 +4181,9 @@ h4 {
 
 .numbers-game-option.family-listen-option {
   position: relative;
+  grid-template-columns: minmax(0, 1fr);
+  justify-content: stretch;
+  justify-items: stretch;
   text-align: center;
 }
 
@@ -4164,6 +4192,7 @@ h4 {
   grid-template-rows: minmax(2.1rem, auto) minmax(1.5rem, auto) minmax(2.5rem, auto);
   align-content: center;
   justify-items: center;
+  width: 100%;
   min-height: 6.1rem;
   text-align: center;
 }
