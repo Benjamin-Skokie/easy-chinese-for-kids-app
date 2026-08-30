@@ -4,6 +4,7 @@ import { existsSync, readFileSync, readdirSync, statSync } from "node:fs";
 import { join, normalize } from "node:path";
 import test from "node:test";
 import { audioSourcePolicies, createAudioService } from "../src/core/audio.js";
+import { bindBookWordAudioFeedback, bindSceneLineAudio, prepareSceneLineAudioCards, sceneLineAudioText } from "../src/core/scene-line-audio.js";
 import { recordedAudioBoundaryIds, recordedAudioPlaybackWindow } from "../src/core/recorded-audio-boundaries.js";
 import { recordedLearnAudioPath } from "../src/core/recorded-audio.js";
 import { learnAudioEntries } from "../src/data/learn-audio-manifest.js";
@@ -60,6 +61,62 @@ test("the local page loads a single bundled application script", () => {
   assert.doesNotMatch(html, /type="module"/);
   assert.doesNotMatch(html, /Tap a word to hear it and explore the picture\./);
   assert.doesNotMatch(html, /<h3>Review<\/h3>/);
+});
+
+test("scene sentence cards support independent playback without changing scene playback", () => {
+  const attributes = new Map();
+  const classes = new Set();
+  const hanzi = { textContent: "文具盒里有铅笔。" };
+  const card = {
+    querySelector: (selector) => selector === ".telephone-line-hanzi" ? hanzi : null,
+    setAttribute: (name, value) => attributes.set(name, value),
+    classList: {
+      add: (name) => classes.add(name),
+      remove: (name) => classes.delete(name)
+    },
+    offsetWidth: 0
+  };
+  const listeners = new Map();
+  const root = {
+    querySelectorAll: (selector) => selector === ".greetings-line-card" ? [card] : [],
+    addEventListener: (type, listener) => listeners.set(type, listener),
+    contains: (element) => element === card
+  };
+  const target = { closest: (selector) => selector === ".greetings-line-card" ? card : null };
+  const spoken = [];
+
+  assert.equal(sceneLineAudioText(card), "文具盒里有铅笔。");
+  prepareSceneLineAudioCards(root);
+  assert.equal(card.tabIndex, 0);
+  assert.equal(attributes.get("role"), "button");
+  assert.equal(attributes.get("aria-label"), "Play: 文具盒里有铅笔。");
+
+  bindSceneLineAudio(root, { speak: (text, rate) => spoken.push([text, rate]), isEnabled: () => true });
+  listeners.get("click")({ target });
+  assert.deepEqual(spoken, [["文具盒里有铅笔。", 0.78]]);
+  assert.equal(classes.has("is-audio-playing"), true);
+});
+
+test("Book Word cards use the same brief audio feedback", async () => {
+  const classes = new Set();
+  const bookWord = {
+    classList: {
+      add: (name) => classes.add(name),
+      remove: (name) => classes.delete(name)
+    },
+    offsetWidth: 0
+  };
+  const listeners = new Map();
+  const root = {
+    addEventListener: (type, listener) => listeners.set(type, listener),
+    contains: (element) => element === bookWord
+  };
+  const target = { closest: (selector) => selector.includes(".school-word-card") ? bookWord : null };
+
+  bindBookWordAudioFeedback(root);
+  listeners.get("click")({ target });
+  await new Promise((resolve) => setTimeout(resolve, 0));
+  assert.equal(classes.has("is-audio-playing"), true);
 });
 
 test("absolute filesystem paths are rejected before commits and deployment", () => {

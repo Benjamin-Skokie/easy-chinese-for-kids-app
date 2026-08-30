@@ -6856,6 +6856,34 @@ h4 {
   border: 1px solid rgba(221, 207, 187, 0.68);
 }
 
+.greetings-line-card[role="button"] {
+  cursor: pointer;
+  transition: transform 140ms ease, border-color 140ms ease, background 140ms ease, box-shadow 140ms ease;
+}
+
+.greetings-line-card[role="button"]:active {
+  transform: scale(0.985);
+}
+
+.greetings-line-card[role="button"].is-audio-playing,
+.school-word-card.is-audio-playing,
+.book-word-card.is-audio-playing,
+.nature-word-card.is-audio-playing,
+.comparison-word-card.is-audio-playing,
+.time-asset-card.is-audio-playing,
+.visual-vocabulary-card.is-audio-playing,
+.focus-word-button.is-audio-playing,
+.pet-food-story-card.is-audio-playing {
+  border-color: rgba(190, 91, 73, 0.48);
+  background: linear-gradient(180deg, #fff9f3, #efe2cc);
+  box-shadow: 0 0 0 3px rgba(190, 91, 73, 0.12);
+}
+
+.greetings-line-card[role="button"]:focus-visible {
+  outline: 3px solid rgba(190, 91, 73, 0.3);
+  outline-offset: 3px;
+}
+
 .animals-scene-card .greetings-line-stack {
   gap: 7px;
 }

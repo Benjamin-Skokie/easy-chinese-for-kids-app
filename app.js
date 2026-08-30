@@ -19879,6 +19879,83 @@
     });
   }
 
+  // src/core/scene-line-audio.js
+  var sceneLineCardSelector = ".greetings-line-card";
+  var sceneLineTextSelector = ".telephone-line-hanzi";
+  var bookWordCardSelector = [
+    ".school-word-card",
+    ".book-word-card",
+    ".nature-word-card",
+    ".comparison-word-card",
+    ".time-asset-card",
+    ".visual-vocabulary-card",
+    ".focus-word-button",
+    ".pet-food-story-card"
+  ].join(", ");
+  var feedbackTimers = /* @__PURE__ */ new WeakMap();
+  var bookWordDataKeys = [
+    ["worldItem", "data-world-item"],
+    ["schoolWord", "data-school-word"],
+    ["hobbiesWord", "data-hobbies-word"],
+    ["toysFlashcard", "data-toys-flashcard"],
+    ["telephoneWord", "data-telephone-word"],
+    ["timeBookWord", "data-time-book-word"],
+    ["comparisonWord", "data-comparison-word"],
+    ["transportWord", "data-transport-word"]
+  ];
+  function sceneLineAudioText(card) {
+    return card?.querySelector?.(sceneLineTextSelector)?.textContent?.trim() ?? "";
+  }
+  function prepareSceneLineAudioCards(container) {
+    container?.querySelectorAll?.(sceneLineCardSelector).forEach((card) => {
+      const text = sceneLineAudioText(card);
+      if (!text) return;
+      card.tabIndex = 0;
+      card.setAttribute("role", "button");
+      card.setAttribute("aria-label", `Play: ${text}`);
+    });
+  }
+  function bindSceneLineAudio(container, { speak: speak2, isEnabled }) {
+    const playCard = (target) => {
+      const card = target?.closest?.(sceneLineCardSelector);
+      if (!card || !container?.contains(card) || !isEnabled()) return;
+      const text = sceneLineAudioText(card);
+      if (!text) return;
+      showAudioPlaybackFeedback(card);
+      speak2(text, 0.78);
+    };
+    container?.addEventListener("click", (event) => playCard(event.target));
+    container?.addEventListener("keydown", (event) => {
+      if (event.key !== "Enter" && event.key !== " ") return;
+      const card = event.target?.closest?.(sceneLineCardSelector);
+      if (!card || !container.contains(card)) return;
+      event.preventDefault();
+      playCard(card);
+    });
+  }
+  function showAudioPlaybackFeedback(card) {
+    const previousTimer = feedbackTimers.get(card);
+    if (previousTimer) globalThis.clearTimeout(previousTimer);
+    card.classList.remove("is-audio-playing");
+    void card.offsetWidth;
+    card.classList.add("is-audio-playing");
+    feedbackTimers.set(card, globalThis.setTimeout(() => {
+      card.classList.remove("is-audio-playing");
+      feedbackTimers.delete(card);
+    }, 900));
+  }
+  function bindBookWordAudioFeedback(container) {
+    container?.addEventListener("click", (event) => {
+      const card = event.target?.closest?.(bookWordCardSelector);
+      if (!card || !container.contains(card)) return;
+      const replacementKey = bookWordDataKeys.find(([key]) => card.dataset?.[key]);
+      globalThis.setTimeout(() => {
+        const liveCard = container.contains(card) ? card : replacementKey ? container.querySelector(`[${replacementKey[1]}="${card.dataset[replacementKey[0]]}"]`) : null;
+        if (liveCard) showAudioPlaybackFeedback(liveCard);
+      }, 0);
+    }, true);
+  }
+
   // src/core/router.js
   function viewFromLocation(location) {
     const params = new URLSearchParams(location.search);
@@ -30375,6 +30452,11 @@
     detailLayout,
     learningCultureNav
   } = getAppElements();
+  bindSceneLineAudio(focusExplorer, {
+    speak,
+    isEnabled: () => state.tapAudioEnabled
+  });
+  bindBookWordAudioFeedback(focusExplorer);
   var renderSharedLessonPractice = createSharedLessonPractice({
     state,
     speak,
@@ -30472,11 +30554,13 @@
   var focusExplorerRuntime;
   function renderDefaultExplorer() {
     const result = focusExplorerRuntime?.renderDefaultExplorer();
+    prepareSceneLineAudioCards(focusExplorer);
     applyImageLoading(focusExplorer, { eager: true });
     return result;
   }
   function renderFocusExplorer() {
     const result = focusExplorerRuntime?.renderFocusExplorer();
+    prepareSceneLineAudioCards(focusExplorer);
     applyImageLoading(focusExplorer, { eager: true });
     return result;
   }

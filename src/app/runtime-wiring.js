@@ -9,6 +9,7 @@ import { createFocusExplorerRuntime } from "../core/focus-explorer-runtime.js";
 import { createNavigationRuntime } from "../core/navigation-runtime.js";
 import { bindViewNavigationEvents } from "../core/view-navigation-events.js";
 import { applyImageLoading } from "../core/image-loading.js";
+import { bindBookWordAudioFeedback, bindSceneLineAudio, prepareSceneLineAudioCards } from "../core/scene-line-audio.js";
 import { lessonScopeFromLocation, topicIdFromLocation, topicPageUrl, viewFromLocation } from "../core/router.js";
 import { timeDateWeekItems } from "../features/time-daily-life/weekdays.js";
 import { timeAdvancedBookWords, timeDateClockItems, timeDateExpressionItems, timeDateRoutineItems, timeRoutineBookWords, timeRoutineSentenceBuilds } from "../features/time-daily-life/time.js";
@@ -81,6 +82,11 @@ const {
   toggleArabicButton, toggleEnglishButton, activityList, activityPanelTitle, activityPanelSummary,
   topicPanel, bookPanel, culturePanel, topicColumns, detailLayout, learningCultureNav
 } = getAppElements();
+bindSceneLineAudio(focusExplorer, {
+  speak,
+  isEnabled: () => state.tapAudioEnabled
+});
+bindBookWordAudioFeedback(focusExplorer);
 const renderSharedLessonPractice = createSharedLessonPractice({
   state,
   speak,
@@ -182,11 +188,13 @@ let renderSchoolExplorer;
 let focusExplorerRuntime;
 function renderDefaultExplorer() {
   const result = focusExplorerRuntime?.renderDefaultExplorer();
+  prepareSceneLineAudioCards(focusExplorer);
   applyImageLoading(focusExplorer, { eager: true });
   return result;
 }
 function renderFocusExplorer() {
   const result = focusExplorerRuntime?.renderFocusExplorer();
+  prepareSceneLineAudioCards(focusExplorer);
   applyImageLoading(focusExplorer, { eager: true });
   return result;
 }
