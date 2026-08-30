@@ -17,11 +17,11 @@ test("learn-audio instructions define pause, onset, ending, and erhua behavior",
   assert.match(instructions, /lexical 儿, such as the first syllable of 儿子/);
 });
 
-test("erhua spellings use a base-form input plus an explicit intended reading", () => {
+test("erhua spellings can use a base-form input without a separate 儿 syllable", () => {
   const examples = [
     ["我喜欢画画儿。", "我喜欢画画。", /huà huàr/],
-    ["我每天玩儿游戏。", "我每天玩游戏。", /wánr yóu xì/],
-    ["美美在海边玩儿沙子。", "美美在海边玩沙子。", /wánr shā zi/],
+    ["我每天玩儿游戏。", "我每天玩游戏。", /wán yóu xì/],
+    ["美美在海边玩儿沙子。", "美美在海边玩沙子。", /wán shā zi/],
     ["她喜欢看动画片儿。", "她喜欢看动画片。", /dòng huà piānr/]
   ];
 

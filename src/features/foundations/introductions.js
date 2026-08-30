@@ -22,6 +22,18 @@ export const introductionsTopic = {
       { id: "name-word", hanzi: "名字", pinyin: "míng zi", english: "name", audio: "名字", lessonSources: ["1a:6"] },
       { id: "friend-word", hanzi: "朋友", pinyin: "péng you", english: "friend", audio: "朋友", lessonSources: ["2a:3"] }
     ],
+    characterIntros: [
+      { id: "lele", audio: "我叫乐乐", pinyin: "wǒ jiào Lè le." },
+      { id: "meimei", audio: "我叫美美", pinyin: "wǒ jiào Měi mei." },
+      { id: "yangyang", audio: "我叫阳阳", pinyin: "wǒ jiào Yáng yáng." },
+      { id: "anan", audio: "我叫安安", pinyin: "wǒ jiào Ān an." },
+      { id: "tiantian", audio: "我叫天天", pinyin: "wǒ jiào Tiān tiān." },
+      { id: "sisi", audio: "我叫思思", pinyin: "wǒ jiào Sī si." },
+      { id: "luna", audio: "我叫露娜", pinyin: "wǒ jiào Lù nà." },
+      { id: "noah", audio: "我叫诺亚", pinyin: "wǒ jiào Nuò yà." },
+      { id: "sophie", audio: "我叫苏菲", pinyin: "wǒ jiào Sū fēi." },
+      { id: "jaden", audio: "我叫杰登", pinyin: "wǒ jiào Jié dēng." }
+    ],
     interactiveScene: "introductions-conversation",
     parentGuide:
       "Practice the whole mini-conversation first: 你好, 你叫什么名字? 我叫... Then pause after 我叫 and let the child fill in their own name.",

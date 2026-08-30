@@ -10,7 +10,7 @@ This is the living implementation record for cross-page bugs reported in `docs/b
 | --- | --- | --- |
 | SYS-01 Shared audio playback lifecycle | Implementation complete; device verification pending | Implemented in shared service |
 | SYS-02 Audio-source routing policy | Implementation complete; device verification pending | Explicit recorded-first, recorded-only, browser-first, and composed-recording paths implemented |
-| SYS-03 Audio asset QA pipeline | In progress | Pre-generation prompt guardrails implemented; waveform audit pending |
+| SYS-03 Audio asset QA pipeline | Automated pass complete; listening verification remains targeted | Shared prompt, manifest coverage, full boundary audit, and targeted regeneration are implemented |
 | SYS-04 Shared game controls and completion behavior | Implementation complete; cross-page verification pending | Shared New game/Clear contract and silent correct-answer behavior applied |
 | SYS-05 Question/picture state synchronization | Implementation verified | Hobbies round state uses one item ID for picture, prompt, choices, and answer |
 | SYS-06 Shared responsive game layout | Implementation complete; representative iPad verification complete | Shared compact prompt/choice layout and horizontal matching-card metadata applied |
@@ -119,13 +119,13 @@ Generated assets enter the app with consistent silence, loudness, clarity, and m
 - [x] Define 儿化 as a light rhotic ending fused to the preceding syllable, while preserving lexical 儿 as in `儿子`.
 - [x] Add targeted input rewrites and pronunciation guidance for `画画儿`, `玩儿游戏`, `玩儿电脑游戏`, `玩儿沙子`, and `动画片儿`.
 - [x] Add a dry-run prompt preview and automated tests that make no API request.
-- [ ] Measure leading silence, trailing silence, peak level, and average loudness for every generated audio asset.
-- [ ] Define acceptable thresholds for short words, phrases, and full sentences.
-- [ ] Add a report-only audit before enabling any automated trimming or normalization.
-- [ ] Trim excessive boundary silence without cutting consonants or natural sentence endings.
-- [ ] Normalize loudness to a documented target without clipping.
-- [ ] Detect missing files, duplicate text variants, and manifest entries that point to no recorded asset.
-- [ ] Produce a human listening checklist for pronunciation, tone, pauses, voice consistency, and artifacts.
+- [x] Measure leading and trailing silence for every generated audio asset.
+- [x] Define conservative retained-boundary thresholds: 100 ms for standalone playback and 60 ms for composed clips.
+- [x] Add a report-only audit and targeted trim path before updating playback boundaries.
+- [x] Trim excessive boundary silence without cutting consonants or natural sentence endings.
+- [ ] Normalize loudness to a documented target without clipping; do not alter loudness without listening verification.
+- [x] Detect missing files and manifest entries that point to no recorded asset.
+- [x] Produce a targeted human listening checklist for pronunciation, tone, pauses, voice consistency, and artifacts.
 
 ### Acceptance Criteria
 
@@ -218,6 +218,12 @@ Do not mark a workstream complete because its shared code changed. Completion re
 ## Change Log
 
 ### 2026-08-29
+
+- SYS-03 targeted remediation: regenerated the reported pronunciation and coverage defects for Names and Introduction, Clothes, Dates and Months, Comparisons, Transportation, My Home, School, Food, Nature, Weather, and Toys. The pass includes `T恤`, `九月，开学了。`, `多少`, `地铁站`, `书桌`, `学校有教室。`, `音乐教室`, `西兰花`, `披萨`, the named 午饭 sentence, `花`, `玩具火车`, and `玩具熊`.
+- Corrected two source mappings that could not be solved by regeneration alone: Dates now requests the complete displayed calendar sentence, and School now requests `音乐教室` rather than the typo `音月教室`.
+- Added pre-generated recorded answers for all 12 clock prompts (`几点了？现在…。`) and generated the two Weather sentence variants that had been missing from the manifest. Automated coverage is now 1017/1017 recorded assets.
+- Removed the contradictory 儿化 instruction for `玩儿游戏` and `玩儿沙子`: their display spelling remains unchanged, while the generated speech input uses `玩游戏` / `玩沙子` without an attempted erhua.
+- Generated clips are measured and trimmed only in the target batch; the original site-wide audit is not re-run. Standalone playback retains at most 100 ms at either boundary; composed playback keeps 60 ms.
 
 - Corrected the source-report scope for Note 60: “玩具火车” is a TTS audio-quality regeneration issue, not a visual-asset request. It belongs to SYS-03 audio asset QA.
 

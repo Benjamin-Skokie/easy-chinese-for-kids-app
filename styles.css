@@ -6535,24 +6535,25 @@ h4 {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
-.zoo-sentence-choice {
-  grid-template-columns: 3rem minmax(0, 1fr);
+.numbers-game-option.zoo-sentence-choice {
+  grid-template-columns: 3.7rem minmax(0, 1fr);
   align-items: center;
-  gap: 0.4rem;
-  min-height: 4.75rem;
-  padding: 0.5rem 0.6rem;
+  gap: 0.55rem;
+  min-height: 5.1rem;
+  padding: 0.38rem 0.62rem;
   text-align: left;
 }
 
-.zoo-sentence-choice img {
-  width: 2.75rem;
-  height: 2.75rem;
+.zoo-sentence-choice-image {
+  width: 3.4rem;
+  height: 3.4rem;
   object-fit: contain;
 }
 
-.zoo-sentence-choice > span {
+.zoo-sentence-choice-copy {
   display: grid;
-  gap: 0.05rem;
+  gap: 0.02rem;
+  align-content: center;
 }
 
 .animals-measure-feedback {
@@ -6581,26 +6582,27 @@ h4 {
 }
 
 .pets-sentence-practice .numbers-game-option {
-  min-height: 4.65rem;
+  min-height: 4.4rem;
 }
 
-.pets-sentence-choice {
-  grid-template-columns: 3rem minmax(0, 1fr);
+.numbers-game-option.pets-sentence-choice {
+  grid-template-columns: 3.7rem minmax(0, 1fr);
   align-items: center;
-  gap: 0.4rem;
-  padding: 0.5rem 0.6rem;
+  gap: 0.55rem;
+  padding: 0.38rem 0.62rem;
   text-align: left;
 }
 
-.pets-sentence-choice img {
-  width: 2.75rem;
-  height: 2.75rem;
+.pets-sentence-choice-image {
+  width: 3.4rem;
+  height: 3.4rem;
   object-fit: contain;
 }
 
-.pets-sentence-choice > span {
+.pets-sentence-choice-copy {
   display: grid;
-  gap: 0.05rem;
+  gap: 0.02rem;
+  align-content: center;
 }
 
 .pets-sentence-prompt {

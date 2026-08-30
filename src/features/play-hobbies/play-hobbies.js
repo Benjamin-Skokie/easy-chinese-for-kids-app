@@ -106,14 +106,14 @@ export const toysTopic = {
     { id: "toy-bear", hanzi: "玩具熊", pinyin: "wán jù xióng", english: "toy bear", audio: "玩具熊", imagePath: "assets/illustrated-toys/teddy-bear.webp", imageAlt: "A toy bear" }
   ],
   flashcardItems: [
-    { id: "toys", hanzi: "玩具", pinyin: "wán jù", english: "toys", audio: "玩具", imagePath: "assets/illustrated-toys/toys-collection.webp", imageAlt: "A collection of toys" },
-    { id: "toy-car", hanzi: "玩具汽车", pinyin: "wán jù qì chē", english: "toy car", audio: "玩具汽车", imagePath: "assets/illustrated-toys/toy-car.webp", imageAlt: "A toy car" },
-    { id: "toy-train", hanzi: "玩具火车", pinyin: "wán jù huǒ chē", english: "toy train", audio: "玩具火车", imagePath: "assets/illustrated-toys/train.webp", imageAlt: "A toy train" },
-    { id: "toy-airplane", hanzi: "玩具飞机", pinyin: "wán jù fēi jī", english: "toy airplane", audio: "玩具飞机", imagePath: "assets/illustrated-toys/airplane.webp", imageAlt: "A toy airplane" },
-    { id: "school-bus", hanzi: "玩具校车", pinyin: "wán jù xiào chē", english: "toy school bus", audio: "玩具校车", imagePath: "assets/illustrated-toys/school-bus.webp", imageAlt: "A toy school bus" },
-    { id: "doll", hanzi: "娃娃", pinyin: "wá wa", english: "doll", audio: "娃娃", imagePath: "assets/illustrated-toys/toy-doll.webp", imageAlt: "A doll" },
-    { id: "bicycle", hanzi: "自行车", pinyin: "zì xíng chē", english: "bicycle", audio: "自行车", imagePath: "assets/illustrated-toys/bicycle.webp", imageAlt: "A bicycle" },
-    { id: "toy-bear", hanzi: "玩具熊", pinyin: "wán jù xióng", english: "toy bear", audio: "玩具熊", imagePath: "assets/illustrated-toys/teddy-bear.webp", imageAlt: "A toy bear" }
+    { id: "toys", hanzi: "玩具", pinyin: "wán jù", english: "toys", sentenceEnglish: "I have toys.", audio: "玩具", imagePath: "assets/illustrated-toys/toys-collection.webp", imageAlt: "A collection of toys" },
+    { id: "toy-car", hanzi: "玩具汽车", pinyin: "wán jù qì chē", english: "toy car", sentenceEnglish: "I have a toy car.", audio: "玩具汽车", imagePath: "assets/illustrated-toys/toy-car.webp", imageAlt: "A toy car" },
+    { id: "toy-train", hanzi: "玩具火车", pinyin: "wán jù huǒ chē", english: "toy train", sentenceEnglish: "I have a toy train.", audio: "玩具火车", imagePath: "assets/illustrated-toys/train.webp", imageAlt: "A toy train" },
+    { id: "toy-airplane", hanzi: "玩具飞机", pinyin: "wán jù fēi jī", english: "toy airplane", sentenceEnglish: "I have a toy airplane.", audio: "玩具飞机", imagePath: "assets/illustrated-toys/airplane.webp", imageAlt: "A toy airplane" },
+    { id: "school-bus", hanzi: "玩具校车", pinyin: "wán jù xiào chē", english: "toy school bus", sentenceEnglish: "I have a toy school bus.", audio: "玩具校车", imagePath: "assets/illustrated-toys/school-bus.webp", imageAlt: "A toy school bus" },
+    { id: "doll", hanzi: "娃娃", pinyin: "wá wa", english: "doll", sentenceEnglish: "I have a doll.", audio: "娃娃", imagePath: "assets/illustrated-toys/toy-doll.webp", imageAlt: "A doll" },
+    { id: "bicycle", hanzi: "自行车", pinyin: "zì xíng chē", english: "bicycle", sentenceEnglish: "I have a bicycle.", audio: "自行车", imagePath: "assets/illustrated-toys/bicycle.webp", imageAlt: "A bicycle" },
+    { id: "toy-bear", hanzi: "玩具熊", pinyin: "wán jù xióng", english: "toy bear", sentenceEnglish: "I have a toy bear.", audio: "玩具熊", imagePath: "assets/illustrated-toys/teddy-bear.webp", imageAlt: "A toy bear" }
   ],
   parentGuide: "Point to a real toy at home and say 我有… together.",
   cultureGuide: "Keep this page with the Book 2A ownership frame; later requests to use someone else's toy belong in Requests.",

@@ -14,6 +14,20 @@ const pronunciationGuidance = new Map([
   ["我们是哥哥弟弟姐姐和妹妹", "Say every family word smoothly and clearly: gē ge, dì di, jiě jie, hé mèi mei. Keep every syllable fully voiced, with no crackle, clipped consonant, or broken sound."],
   ["我们是哥哥、弟弟、姐姐和妹妹。", "Say every family word smoothly and clearly: gē ge, dì di, jiě jie, hé mèi mei. Keep every syllable fully voiced, with no crackle, clipped consonant, or broken sound."],
   ["书桌", "Say shū zhuō clearly and deliberately as two full syllables. Do not rush, clip, or omit either syllable."],
+  ["T恤", "Say T恤 as tī xù, like the Chinese name for a T-shirt. Keep tī and xù clear and connected; do not spell the letter as English T or pause between the two syllables."],
+  ["九月，开学了。", "Say jiǔ yuè clearly and at normal strength. Keep jiǔ yuè connected, then make only a brief natural comma pause before kāi xué le."],
+  ["一年有十二个月", "Say yī nián yǒu shí èr ge yuè clearly and smoothly, with every word fully voiced and no unnecessary pauses."],
+  ["多少", "Say duō shao clearly as one connected two-syllable question word. Keep the neutral-tone shao fully audible."],
+  ["地铁站", "Say dì tiě zhàn as three clean, steady syllables with no vibrato, warble, or stretched final syllable."],
+  ["西兰花", "Say xī lán huā clearly as three distinct, connected syllables at an even pace."],
+  ["披萨", "Say pī sà with a clean, fully voiced pī onset and no click, pop, or clipped consonant."],
+  ["我午饭喝了牛奶，吃了披萨。", "Say wǒ wǔ fàn as a connected phrase with a clear wǔ. Keep the sentence flowing naturally, with only a brief comma pause before chī le pī sà."],
+  ["诺亚穿外套，戴帽子、围巾和手套。", "Say Nuò yà chuān wài tào as one smooth phrase. Use brief, natural list rhythm for mào zi, wéi jīn, hé shǒu tào, with no stretched gaps."],
+  ["诺亚穿外套戴帽子围巾和手套", "Say Nuò yà chuān wài tào as one smooth phrase. Use brief, natural list rhythm for mào zi, wéi jīn, hé shǒu tào, with no stretched gaps."],
+  ["玩具火车", "Say wán jù huǒ chē clearly and evenly, with a stable adult female teacher voice."],
+  ["玩具熊", "Say wán jù xióng clearly and evenly, with the same warm adult female teacher voice used for the other toy words."],
+  ["我叫苏菲", "Say wǒ jiào Sū fēi as one smooth short sentence. Do not pause between jiào and Sū fēi."],
+  ["我叫安安", "Say wǒ jiào Ān an as one smooth short sentence, with no pauses within the name."],
   ["我可以看电视吗", "Keep 可以看 as one connected phrase with no artificial pause between 可以 and 看."],
   ["我可以看电视吗？", "Keep 可以看 as one connected phrase with no artificial pause between 可以 and 看."]
 ]);
@@ -32,12 +46,12 @@ const erhuaRewrites = [
   {
     written: "玩儿游戏",
     spoken: "玩游戏",
-    guidance: "For 玩儿游戏, say wánr yóu xì: make wánr one compact syllable and flow directly into yóu, with no gap."
+    guidance: "For 玩儿游戏, use the spoken form wán yóu xì. Do not add a separate ér syllable or an artificial pause."
   },
   {
     written: "玩儿沙子",
     spoken: "玩沙子",
-    guidance: "For 玩儿沙子, say wánr shā zi: make wánr one compact syllable and flow directly into shā, with no gap."
+    guidance: "For 玩儿沙子, use the spoken form wán shā zi. Do not add a separate ér syllable or an artificial pause."
   },
   {
     written: "动画片儿",
@@ -73,4 +87,3 @@ export function buildLearnAudioRequest(entry) {
     instructions: `${baseInstructions}${reading}${weekdayGuidance}${erhuaGuidance}${clipGuidance}`
   };
 }
-

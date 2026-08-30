@@ -225,7 +225,7 @@ function handleClockQuizPick(itemId) {
   state.clockQuizResult = itemId === answerId ? "correct" : "wrong";
   if (state.clockQuizResult === "correct" && state.tapAudioEnabled) {
     const item = timeDateClockItems.find((entry) => entry.id === answerId);
-    if (item) speak(`几点了？现在${item.hanzi}。`, 0.78);
+    if (item) speak(item.answerAudio, 0.78);
   }
   renderActivityPanel(currentTopic());
 }

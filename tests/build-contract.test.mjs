@@ -774,7 +774,7 @@ test("Toys picture choice keeps four roomy options and a fixed answer area", () 
   const runtimeSource = readFileSync("src/features/play-hobbies/play-hobbies-runtime.js", "utf8");
   assert.match(runtimeSource, /slice\(0, 3\)/);
   assert.match(runtimeSource, /shuffled\(\[itemId, \.\.\.distractorIds\]\)/);
-  assert.match(runtimeSource, /toy-practice-answer-pinyin\$\{complete \? "" : " is-placeholder"\}/);
+  assert.doesNotMatch(runtimeSource, /toy-practice-answer-pinyin/);
   assert.match(runtimeSource, /toy-practice-answer-english\$\{complete \? "" : " is-placeholder"\}/);
   assert.match(stylesSource, /\.toys-practice-shell \.clothes-quiz-options \{[\s\S]{0,120}repeat\(2, minmax\(0, 1fr\)\)/);
   assert.match(stylesSource, /\.toy-practice-answer \{[\s\S]{0,120}min-height: 4\.8rem;/);
@@ -883,6 +883,16 @@ test("recorded Learn audio covers every authored audio entry", () => {
     const audioPath = recordedLearnAudioPath(entry.text).split("?")[0];
     assert.ok(existsSync(audioPath), `missing audio file for ${entry.text}`);
     assert.ok(statSync(audioPath).size > 0, `empty audio file for ${entry.text}`);
+  }
+});
+
+test("reported audio fixes use the intended recorded text", () => {
+  assert.equal(timeDateDateItems.find((item) => item.id === "date-board")?.audio, "看日历，可以知道几月几号。");
+  assert.equal(schoolTopicData.words.find((item) => item.id === "music-room")?.audio, "音乐教室");
+  assert.ok(!learnAudioEntries.some((entry) => entry.text === "音月教室"));
+  for (const item of timeDateClockItems) {
+    assert.equal(item.answerAudio, `几点了？现在${item.hanzi}。`);
+    assert.ok(recordedLearnAudioPath(item.answerAudio), `missing clock-answer recording for ${item.hanzi}`);
   }
 });
 
@@ -1239,7 +1249,7 @@ test("reported deterministic and dynamic exercises declare their audio policies"
   assert.match(schoolSource, /speak\(`\$\{frame\.hanzi\}\$\{word\.hanzi\}`, 0\.78, \{[\s\S]*sourcePolicy: "recorded-only",[\s\S]*recordedTexts: \[frame\.hanzi, word\.hanzi\]/);
   assert.match(worldSource, /speak\(`我喜欢\$\{favourite\.hanzi\}`, 0\.78, \{[\s\S]*sourcePolicy: "browser-first",[\s\S]*recordedFallbackTexts: \["我喜欢", favourite\.hanzi\]/);
   assert.match(worldSource, /speak\(`我不喜欢\$\{unfavourite\.hanzi\}`, 0\.78, \{[\s\S]*sourcePolicy: "browser-first",[\s\S]*recordedFallbackTexts: \["我不喜欢", unfavourite\.hanzi\]/);
-  assert.match(hobbiesSource, /speakLesson\(`我有\$\{item\.hanzi\}`, 0\.78, \{[\s\S]*sourcePolicy: "browser-first",[\s\S]*recordedFallbackTexts: \["我有", item\.hanzi\]/);
+  assert.match(hobbiesSource, /speakLesson\(`我有\$\{item\.hanzi\}`, 0\.78, \{ sourcePolicy: "recorded-only" \}\)/);
   assert.match(timeSource, /speak\(`\$\{item\.before\}\$\{selected\[0\]\}\$\{item\.between\}\$\{selected\[1\]\}\$\{item\.after\}`, 0\.78, \{ sourcePolicy: "recorded-only" \}\)/);
 });
 
@@ -1752,6 +1762,10 @@ test("introductions owns its scenes and practice activities", () => {
   assert.equal(introductionsTopic.steps.length, 2);
   assert.equal(introductionsPractice.length, 4);
   assert.ok(introductionsPractice.some((scene) => scene.id === "good-friends" && scene.lines.some((line) => line.hanzi === "他是我的好朋友。")));
+  assert.deepEqual(introductionsTopic.characterIntros.map((entry) => entry.id), ["lele", "meimei", "yangyang", "anan", "tiantian", "sisi", "luna", "noah", "sophie", "jaden"]);
+  assert.equal(introductionsTopic.characterIntros.find((entry) => entry.id === "meimei")?.audio, "我叫美美");
+  assert.equal(introductionsTopic.characterIntros.find((entry) => entry.id === "luna")?.audio, "我叫露娜");
+  assert.equal(introductionsTopic.characterIntros.find((entry) => entry.id === "noah")?.audio, "我叫诺亚");
   assert.equal(introductionsGamePrompts.length, 4);
   assert.ok(introductionsGamePrompts.every((prompt) => prompt.speakerId));
   assert.equal(introductionsBuildPhrases.length, 3);
@@ -2136,6 +2150,8 @@ test("Animals renders book-aware scenes, word cards, and listening practice", ()
   assert.match(activityList.innerHTML, /动物园有/);
   assert.match(activityList.innerHTML, /data-zoo-sentence-choice="tiger"/);
   assert.match(activityList.innerHTML, /一只老虎/);
+  assert.match(activityList.innerHTML, /zoo-sentence-choice-image/);
+  assert.match(activityList.innerHTML, /zoo-sentence-choice-copy/);
   assert.match(activityList.innerHTML, /data-pet-food-match-animal="dog-bone"/);
   assert.match(activityList.innerHTML, /data-pet-food-match-food="dog-bone"/);
 
@@ -2156,6 +2172,8 @@ test("Animals renders book-aware scenes, word cards, and listening practice", ()
   petsRuntime.renderWorldPractice(petsTopic);
   assert.match(petsActivityList.innerHTML, /我喜欢/);
   assert.match(petsActivityList.innerHTML, /data-pets-preference-choice="dog"/);
+  assert.match(petsActivityList.innerHTML, /pets-sentence-choice-image/);
+  assert.match(petsActivityList.innerHTML, /pets-sentence-choice-copy/);
   assert.doesNotMatch(petsActivityList.innerHTML, /family-match-open-board/);
   assert.doesNotMatch(petsActivityList.innerHTML, /data-pet-food-match-animal/);
 });
@@ -2345,6 +2363,8 @@ test("Toys owns a 2 by 2 scene series and a no-repeat picture-choice practice", 
   assert.doesNotMatch(runtimeSource, /data-toys-word/);
   assert.deepEqual(toysTopic.flashcardItems.map((item) => item.id), ["toys", "toy-car", "toy-train", "toy-airplane", "school-bus", "doll", "bicycle", "toy-bear"]);
   assert.equal(toysTopic.flashcardItems.find((item) => item.id === "toys")?.hanzi, "玩具");
+  assert.equal(toysTopic.flashcardItems.find((item) => item.id === "toys")?.sentenceEnglish, "I have toys.");
+  assert.ok(toysTopic.flashcardItems.every((item) => item.sentenceEnglish));
   assert.ok(existsSync("assets/illustrated-toys/toys-collection.webp"));
   assert.equal(toysTopic.flashcardItems.find((item) => item.id === "school-bus")?.hanzi, "玩具校车");
   assert.ok(toysTopic.flashcardItems.every((item) => item.imagePath.startsWith("assets/illustrated-toys/")));
@@ -2353,6 +2373,7 @@ test("Toys owns a 2 by 2 scene series and a no-repeat picture-choice practice", 
   assert.match(runtimeSource, /nextRandomCycleId\(state, "toys-picture-choice"/);
   assert.match(runtimeSource, /const toyItems = \(\) => currentTopic\(\)\.flashcardItems/);
   assert.match(runtimeSource, /data-toys-practice-new/);
+  assert.match(runtimeSource, /complete \? item\.sentenceEnglish : " "/);
   assert.match(runtimeSource, /speakLesson\(`我有\$\{item\.hanzi\}`, 0\.78, \{/);
   assert.match(explorerSource, /\["toys", "hobbies", "hobbies-3b", "hobbies-at-home", "hobbies-leisure"\]/);
   assert.match(practiceSource, /\["toys", "hobbies", "hobbies-3b", "hobbies-at-home", "hobbies-leisure"\]/);

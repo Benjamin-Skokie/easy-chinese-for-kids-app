@@ -1312,8 +1312,9 @@ function renderActivityPanel(topic) {
     activityList.querySelectorAll("[data-intro-character]").forEach((button) => {
       button.addEventListener("click", () => {
         const kid = illustratedKids[button.dataset.introCharacter];
+        const intro = currentTopic().characterIntros?.find((entry) => entry.id === kid?.id);
         if (kid && state.tapAudioEnabled) {
-          speak(`我叫${kid.hanziName}`, 0.78);
+          speak(intro?.audio ?? `我叫${kid.hanziName}`, 0.78, { sourcePolicy: "recorded-only" });
         }
       });
     });

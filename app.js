@@ -2287,6 +2287,114 @@
       ]
     },
     {
+      "id": "1089872408b9",
+      "text": "\u51E0\u70B9\u4E86\uFF1F\u73B0\u5728\u516B\u70B9\u3002",
+      "pinyin": "",
+      "pinyinOptions": [],
+      "sources": [
+        "src/features/time-daily-life/time.js"
+      ]
+    },
+    {
+      "id": "1ac2fae3da1c",
+      "text": "\u51E0\u70B9\u4E86\uFF1F\u73B0\u5728\u4E5D\u70B9\u3002",
+      "pinyin": "",
+      "pinyinOptions": [],
+      "sources": [
+        "src/features/time-daily-life/time.js"
+      ]
+    },
+    {
+      "id": "bdfdef0a70dc",
+      "text": "\u51E0\u70B9\u4E86\uFF1F\u73B0\u5728\u4E24\u70B9\u3002",
+      "pinyin": "",
+      "pinyinOptions": [],
+      "sources": [
+        "src/features/time-daily-life/time.js"
+      ]
+    },
+    {
+      "id": "638634df25d2",
+      "text": "\u51E0\u70B9\u4E86\uFF1F\u73B0\u5728\u516D\u70B9\u3002",
+      "pinyin": "",
+      "pinyinOptions": [],
+      "sources": [
+        "src/features/time-daily-life/time.js"
+      ]
+    },
+    {
+      "id": "f5578062293a",
+      "text": "\u51E0\u70B9\u4E86\uFF1F\u73B0\u5728\u4E03\u70B9\u3002",
+      "pinyin": "",
+      "pinyinOptions": [],
+      "sources": [
+        "src/features/time-daily-life/time.js"
+      ]
+    },
+    {
+      "id": "3d1423c148a5",
+      "text": "\u51E0\u70B9\u4E86\uFF1F\u73B0\u5728\u4E09\u70B9\u3002",
+      "pinyin": "",
+      "pinyinOptions": [],
+      "sources": [
+        "src/features/time-daily-life/time.js"
+      ]
+    },
+    {
+      "id": "a8a6f6708d29",
+      "text": "\u51E0\u70B9\u4E86\uFF1F\u73B0\u5728\u5341\u70B9\u3002",
+      "pinyin": "",
+      "pinyinOptions": [],
+      "sources": [
+        "src/features/time-daily-life/time.js"
+      ]
+    },
+    {
+      "id": "d47413f19298",
+      "text": "\u51E0\u70B9\u4E86\uFF1F\u73B0\u5728\u5341\u4E8C\u70B9\u3002",
+      "pinyin": "",
+      "pinyinOptions": [],
+      "sources": [
+        "src/features/time-daily-life/time.js"
+      ]
+    },
+    {
+      "id": "de14655a1fdd",
+      "text": "\u51E0\u70B9\u4E86\uFF1F\u73B0\u5728\u5341\u4E00\u70B9\u3002",
+      "pinyin": "",
+      "pinyinOptions": [],
+      "sources": [
+        "src/features/time-daily-life/time.js"
+      ]
+    },
+    {
+      "id": "66ee3376e687",
+      "text": "\u51E0\u70B9\u4E86\uFF1F\u73B0\u5728\u56DB\u70B9\u3002",
+      "pinyin": "",
+      "pinyinOptions": [],
+      "sources": [
+        "src/features/time-daily-life/time.js"
+      ]
+    },
+    {
+      "id": "d1666875026b",
+      "text": "\u51E0\u70B9\u4E86\uFF1F\u73B0\u5728\u4E94\u70B9\u3002",
+      "pinyin": "",
+      "pinyinOptions": [],
+      "sources": [
+        "src/features/time-daily-life/time.js"
+      ]
+    },
+    {
+      "id": "7c333d1d2937",
+      "text": "\u51E0\u70B9\u4E86\uFF1F\u73B0\u5728\u4E00\u70B9\u3002",
+      "pinyin": "",
+      "pinyinOptions": [],
+      "sources": [
+        "src/features/time-daily-life/time.js"
+      ]
+    },
+    {
       "id": "dd5e71d3e99b",
       "text": "\u51E0\u6708\u51E0\u53F7",
       "pinyin": "j\u01D0 yu\xE8 j\u01D0 h\xE0o?",
@@ -2294,8 +2402,7 @@
         "j\u01D0 yu\xE8 j\u01D0 h\xE0o?"
       ],
       "sources": [
-        "src/data/topic-registry.js",
-        "src/features/time-daily-life/dates.js"
+        "src/data/topic-registry.js"
       ]
     },
     {
@@ -2821,6 +2928,17 @@
       "sources": [
         "src/data/topic-registry.js",
         "src/features/play-hobbies/play-hobbies.js"
+      ]
+    },
+    {
+      "id": "19eda67f2c00",
+      "text": "\u770B\u65E5\u5386\uFF0C\u53EF\u4EE5\u77E5\u9053\u51E0\u6708\u51E0\u53F7\u3002",
+      "pinyin": "j\u01D0 yu\xE8 j\u01D0 h\xE0o?",
+      "pinyinOptions": [
+        "j\u01D0 yu\xE8 j\u01D0 h\xE0o?"
+      ],
+      "sources": [
+        "src/features/time-daily-life/dates.js"
       ]
     },
     {
@@ -3878,8 +3996,7 @@
       "sources": [
         "src/data/topic-registry.js",
         "src/features/family/family.js",
-        "src/features/food/food-preferences.js",
-        "src/features/foundations/is-it.js"
+        "src/features/food/food-preferences.js"
       ]
     },
     {
@@ -4511,22 +4628,22 @@
       ]
     },
     {
-      "id": "5459ebdb690a",
-      "text": "\u8BFA\u4E9A\u6234\u5E3D\u5B50\u3001\u56F4\u5DFE\u548C\u624B\u5957\uFF0C\u7A7F\u5916\u5957\u548C\u957F\u88E4\u3002",
-      "pinyin": "nu\xF2 y\xE0 d\xE0i m\xE0o zi, w\xE9i j\u012Bn h\xE9 sh\u01D2u t\xE0o, chu\u0101n w\xE0i t\xE0o h\xE9 ch\xE1ng k\xF9.",
+      "id": "2435a73b590f",
+      "text": "\u8BFA\u4E9A\u7A7F\u5916\u5957\uFF0C\u6234\u5E3D\u5B50\u3001\u56F4\u5DFE\u548C\u624B\u5957\u3002",
+      "pinyin": "nu\xF2 y\xE0 chu\u0101n w\xE0i t\xE0o, d\xE0i m\xE0o zi, w\xE9i j\u012Bn h\xE9 sh\u01D2u t\xE0o.",
       "pinyinOptions": [
-        "nu\xF2 y\xE0 d\xE0i m\xE0o zi, w\xE9i j\u012Bn h\xE9 sh\u01D2u t\xE0o, chu\u0101n w\xE0i t\xE0o h\xE9 ch\xE1ng k\xF9."
+        "nu\xF2 y\xE0 chu\u0101n w\xE0i t\xE0o, d\xE0i m\xE0o zi, w\xE9i j\u012Bn h\xE9 sh\u01D2u t\xE0o."
       ],
       "sources": [
         "src/features/world/weather.js"
       ]
     },
     {
-      "id": "4cda2a0349f8",
-      "text": "\u8BFA\u4E9A\u6234\u5E3D\u5B50\u56F4\u5DFE\u548C\u624B\u5957\u7A7F\u5916\u5957\u548C\u957F\u88E4",
-      "pinyin": "nu\xF2 y\xE0 d\xE0i m\xE0o zi, w\xE9i j\u012Bn h\xE9 sh\u01D2u t\xE0o, chu\u0101n w\xE0i t\xE0o h\xE9 ch\xE1ng k\xF9.",
+      "id": "42088b364fc9",
+      "text": "\u8BFA\u4E9A\u7A7F\u5916\u5957\u6234\u5E3D\u5B50\u56F4\u5DFE\u548C\u624B\u5957",
+      "pinyin": "nu\xF2 y\xE0 chu\u0101n w\xE0i t\xE0o, d\xE0i m\xE0o zi, w\xE9i j\u012Bn h\xE9 sh\u01D2u t\xE0o.",
       "pinyinOptions": [
-        "nu\xF2 y\xE0 d\xE0i m\xE0o zi, w\xE9i j\u012Bn h\xE9 sh\u01D2u t\xE0o, chu\u0101n w\xE0i t\xE0o h\xE9 ch\xE1ng k\xF9."
+        "nu\xF2 y\xE0 chu\u0101n w\xE0i t\xE0o, d\xE0i m\xE0o zi, w\xE9i j\u012Bn h\xE9 sh\u01D2u t\xE0o."
       ],
       "sources": [
         "src/features/world/weather.js"
@@ -7673,6 +7790,7 @@
         "w\u01D2 ji\xE0o \u0100n an."
       ],
       "sources": [
+        "src/data/topic-registry.js",
         "src/features/foundations/introductions.js"
       ]
     },
@@ -7695,6 +7813,7 @@
         "w\u01D2 ji\xE0o Ji\xE9 d\u0113ng."
       ],
       "sources": [
+        "src/data/topic-registry.js",
         "src/features/foundations/introductions.js"
       ]
     },
@@ -7717,6 +7836,7 @@
         "w\u01D2 ji\xE0o L\xE8 le."
       ],
       "sources": [
+        "src/data/topic-registry.js",
         "src/features/foundations/introductions.js"
       ]
     },
@@ -7732,6 +7852,42 @@
       ]
     },
     {
+      "id": "8c2f00b10cae",
+      "text": "\u6211\u53EB\u9732\u5A1C",
+      "pinyin": "w\u01D2 ji\xE0o L\xF9 n\xE0.",
+      "pinyinOptions": [
+        "w\u01D2 ji\xE0o L\xF9 n\xE0."
+      ],
+      "sources": [
+        "src/data/topic-registry.js",
+        "src/features/foundations/introductions.js"
+      ]
+    },
+    {
+      "id": "06f79111e9fb",
+      "text": "\u6211\u53EB\u7F8E\u7F8E",
+      "pinyin": "w\u01D2 ji\xE0o M\u011Bi mei.",
+      "pinyinOptions": [
+        "w\u01D2 ji\xE0o M\u011Bi mei."
+      ],
+      "sources": [
+        "src/data/topic-registry.js",
+        "src/features/foundations/introductions.js"
+      ]
+    },
+    {
+      "id": "e28ccb28dbbe",
+      "text": "\u6211\u53EB\u8BFA\u4E9A",
+      "pinyin": "w\u01D2 ji\xE0o Nu\xF2 y\xE0.",
+      "pinyinOptions": [
+        "w\u01D2 ji\xE0o Nu\xF2 y\xE0."
+      ],
+      "sources": [
+        "src/data/topic-registry.js",
+        "src/features/foundations/introductions.js"
+      ]
+    },
+    {
       "id": "24330f79766c",
       "text": "\u6211\u53EB\u601D\u601D",
       "pinyin": "w\u01D2 ji\xE0o S\u012B si.",
@@ -7739,6 +7895,7 @@
         "w\u01D2 ji\xE0o S\u012B si."
       ],
       "sources": [
+        "src/data/topic-registry.js",
         "src/features/foundations/introductions.js"
       ]
     },
@@ -7761,6 +7918,7 @@
         "w\u01D2 ji\xE0o S\u016B f\u0113i."
       ],
       "sources": [
+        "src/data/topic-registry.js",
         "src/features/foundations/introductions.js"
       ]
     },
@@ -7783,6 +7941,7 @@
         "w\u01D2 ji\xE0o Ti\u0101n ti\u0101n."
       ],
       "sources": [
+        "src/data/topic-registry.js",
         "src/features/foundations/introductions.js"
       ]
     },
@@ -7805,6 +7964,7 @@
         "w\u01D2 ji\xE0o Y\xE1ng y\xE1ng."
       ],
       "sources": [
+        "src/data/topic-registry.js",
         "src/features/foundations/introductions.js"
       ]
     },
@@ -10546,6 +10706,17 @@
       ]
     },
     {
+      "id": "c6748c82bdd7",
+      "text": "\u4E00\u5E74\u6709\u5341\u4E8C\u4E2A\u6708",
+      "pinyin": "y\u012B ni\xE1n y\u01D2u sh\xED \xE8r ge yu\xE8.",
+      "pinyinOptions": [
+        "y\u012B ni\xE1n y\u01D2u sh\xED \xE8r ge yu\xE8."
+      ],
+      "sources": [
+        "src/features/time-daily-life/dates.js"
+      ]
+    },
+    {
       "id": "b13b55f941e1",
       "text": "\u4E00\u4E03\u5F97\u4E03",
       "pinyin": "y\u012B q\u012B d\xE9 q\u012B",
@@ -10743,18 +10914,6 @@
       "sources": [
         "src/data/topic-registry.js",
         "src/features/school-life/school-subjects.js"
-      ]
-    },
-    {
-      "id": "c66a39f340f8",
-      "text": "\u97F3\u6708\u6559\u5BA4",
-      "pinyin": "y\u012Bn yu\xE8 ji\xE0o sh\xEC",
-      "pinyinOptions": [
-        "y\u012Bn yu\xE8 ji\xE0o sh\xEC"
-      ],
-      "sources": [
-        "src/data/topic-registry.js",
-        "src/features/school-life/school.js"
       ]
     },
     {
@@ -11575,7 +11734,7 @@
   ];
 
   // src/data/learn-recorded-audio.js
-  var recordedLearnAudioVersion = "bf6a022d1452";
+  var recordedLearnAudioVersion = "6552bd504199";
   var recordedLearnAudioIds = /* @__PURE__ */ new Set([
     "b2a608a56f62",
     "0201c407ca5a",
@@ -11777,6 +11936,18 @@
     "8269921c65fc",
     "6975a7f74b9a",
     "b869334312ee",
+    "1089872408b9",
+    "1ac2fae3da1c",
+    "bdfdef0a70dc",
+    "638634df25d2",
+    "f5578062293a",
+    "3d1423c148a5",
+    "a8a6f6708d29",
+    "d47413f19298",
+    "de14655a1fdd",
+    "66ee3376e687",
+    "d1666875026b",
+    "7c333d1d2937",
     "dd5e71d3e99b",
     "cb73b692ec34",
     "d1258478a234",
@@ -11824,6 +11995,7 @@
     "a3030dad1817",
     "f10ff81e1c3f",
     "7424494128f6",
+    "19eda67f2c00",
     "bb2cc7f03bec",
     "34a8b4d8b530",
     "e92937aa8eb3",
@@ -11969,8 +12141,8 @@
     "f813971c532d",
     "8b5d03a46cab",
     "1a9056c64304",
-    "5459ebdb690a",
-    "4cda2a0349f8",
+    "2435a73b590f",
+    "42088b364fc9",
     "93b4eb62d39d",
     "9e0c1db18506",
     "7a1c531cdd95",
@@ -12248,6 +12420,9 @@
     "8f29a9bdef08",
     "6674ab37d24d",
     "986403151a84",
+    "8c2f00b10cae",
+    "06f79111e9fb",
+    "e28ccb28dbbe",
     "24330f79766c",
     "8d89e6671a98",
     "0ad0edf468cb",
@@ -12493,6 +12668,7 @@
     "2dc53dcee2ba",
     "ac94f34f0fd0",
     "de32c7fc7512",
+    "c6748c82bdd7",
     "b13b55f941e1",
     "acd3daddd4cb",
     "6a7dd0a99816",
@@ -12510,7 +12686,6 @@
     "8926e5591649",
     "ce42798e583b",
     "98470839582d",
-    "c66a39f340f8",
     "377595686966",
     "14dff8610e0a",
     "67a65e4fd4b7",
@@ -12698,6 +12873,10 @@
       "leading": 100,
       "trailing": 100
     },
+    "06f79111e9fb": {
+      "leading": 54,
+      "trailing": 100
+    },
     "06f9dc46db55": {
       "leading": 100,
       "trailing": 100
@@ -12751,15 +12930,15 @@
       "trailing": 100
     },
     "0a768c1da9e5": {
-      "leading": 55,
-      "trailing": 100
+      "leading": 59,
+      "trailing": 104
     },
     "0a7c80e24b33": {
       "leading": 100,
       "trailing": 100
     },
     "0ad0edf468cb": {
-      "leading": 91,
+      "leading": 73,
       "trailing": 100
     },
     "0ae564786ae6": {
@@ -12842,6 +13021,10 @@
       "leading": 64,
       "trailing": 100
     },
+    "1089872408b9": {
+      "leading": 79,
+      "trailing": 100
+    },
     "10bd2030ec07": {
       "leading": 68,
       "trailing": 100
@@ -12895,8 +13078,8 @@
       "trailing": 100
     },
     "14d4d0b0b2b0": {
-      "leading": 86,
-      "trailing": 101
+      "leading": 67,
+      "trailing": 100
     },
     "14dff8610e0a": {
       "leading": 100,
@@ -12990,6 +13173,10 @@
       "leading": 63,
       "trailing": 100
     },
+    "19eda67f2c00": {
+      "leading": 100,
+      "trailing": 100
+    },
     "1a9056c64304": {
       "leading": 100,
       "trailing": 100
@@ -12997,6 +13184,10 @@
     "1ab766e149de": {
       "leading": 72,
       "trailing": 103
+    },
+    "1ac2fae3da1c": {
+      "leading": 100,
+      "trailing": 100
     },
     "1af64b055f64": {
       "leading": 100,
@@ -13023,8 +13214,8 @@
       "trailing": 100
     },
     "1bcc59e0fe7d": {
-      "leading": 101,
-      "trailing": 100
+      "leading": 100,
+      "trailing": 110
     },
     "1bd5965613ea": {
       "leading": 100,
@@ -13059,8 +13250,8 @@
       "trailing": 101
     },
     "1e03936419a6": {
-      "leading": 52,
-      "trailing": 485
+      "leading": 100,
+      "trailing": 100
     },
     "1e54525d2805": {
       "leading": 100,
@@ -13170,6 +13361,10 @@
       "leading": 100,
       "trailing": 100
     },
+    "2435a73b590f": {
+      "leading": 54,
+      "trailing": 100
+    },
     "24741954f8ad": {
       "leading": 70,
       "trailing": 100
@@ -13207,8 +13402,8 @@
       "trailing": 100
     },
     "263e50ce57a5": {
-      "leading": 100,
-      "trailing": 100
+      "leading": 70,
+      "trailing": 102
     },
     "2676c2f1d501": {
       "leading": 55,
@@ -13507,7 +13702,7 @@
       "trailing": 100
     },
     "37a689dcddd1": {
-      "leading": 100,
+      "leading": 101,
       "trailing": 100
     },
     "37cabe672ffb": {
@@ -13602,6 +13797,10 @@
       "leading": 100,
       "trailing": 100
     },
+    "3d1423c148a5": {
+      "leading": 58,
+      "trailing": 100
+    },
     "3d1d35e3cdd6": {
       "leading": 100,
       "trailing": 126
@@ -13685,6 +13884,10 @@
     "41ecb594f909": {
       "leading": 100,
       "trailing": 101
+    },
+    "42088b364fc9": {
+      "leading": 74,
+      "trailing": 100
     },
     "4289bf665042": {
       "leading": 67,
@@ -14250,6 +14453,10 @@
       "leading": 74,
       "trailing": 100
     },
+    "638634df25d2": {
+      "leading": 100,
+      "trailing": 101
+    },
     "63a5fc9f3116": {
       "leading": 100,
       "trailing": 101
@@ -14275,11 +14482,15 @@
       "trailing": 100
     },
     "6674ab37d24d": {
-      "leading": 86,
-      "trailing": 100
+      "leading": 65,
+      "trailing": 102
     },
     "66a540508bb5": {
       "leading": 100,
+      "trailing": 100
+    },
+    "66ee3376e687": {
+      "leading": 64,
       "trailing": 100
     },
     "6738a03a2563": {
@@ -14614,6 +14825,10 @@
       "leading": 60,
       "trailing": 100
     },
+    "7c333d1d2937": {
+      "leading": 65,
+      "trailing": 100
+    },
     "7c92767faf64": {
       "leading": 100,
       "trailing": 100
@@ -14779,8 +14994,8 @@
       "trailing": 100
     },
     "87524ca8106e": {
-      "leading": 100,
-      "trailing": 0
+      "leading": 104,
+      "trailing": 113
     },
     "875ae4a919ea": {
       "leading": 100,
@@ -14819,8 +15034,8 @@
       "trailing": 101
     },
     "8926e5591649": {
-      "leading": 50,
-      "trailing": 100
+      "leading": 56,
+      "trailing": 102
     },
     "8957ac9b141f": {
       "leading": 49,
@@ -14869,6 +15084,10 @@
     "8b5d03a46cab": {
       "leading": 62,
       "trailing": 101
+    },
+    "8c2f00b10cae": {
+      "leading": 56,
+      "trailing": 104
     },
     "8c5c0e94470c": {
       "leading": 100,
@@ -15294,6 +15513,10 @@
       "leading": 100,
       "trailing": 100
     },
+    "a8a6f6708d29": {
+      "leading": 99,
+      "trailing": 106
+    },
     "a8e0ef306506": {
       "leading": 63,
       "trailing": 100
@@ -15626,6 +15849,10 @@
       "leading": 79,
       "trailing": 100
     },
+    "bdfdef0a70dc": {
+      "leading": 100,
+      "trailing": 100
+    },
     "be76704a4b5f": {
       "leading": 100,
       "trailing": 100
@@ -15734,6 +15961,10 @@
       "leading": 100,
       "trailing": 100
     },
+    "c6748c82bdd7": {
+      "leading": 69,
+      "trailing": 100
+    },
     "c6dc6989c968": {
       "leading": 100,
       "trailing": 100
@@ -15812,7 +16043,7 @@
     },
     "ca890bf978c9": {
       "leading": 100,
-      "trailing": 101
+      "trailing": 100
     },
     "caa0ab12c286": {
       "leading": 79,
@@ -15863,7 +16094,7 @@
       "trailing": 100
     },
     "cd75fd2c0ac1": {
-      "leading": 106,
+      "leading": 100,
       "trailing": 100
     },
     "cdb98dfb74dd": {
@@ -15930,6 +16161,10 @@
       "leading": 100,
       "trailing": 100
     },
+    "d1666875026b": {
+      "leading": 100,
+      "trailing": 100
+    },
     "d1730177abc5": {
       "leading": 60,
       "trailing": 100
@@ -15990,8 +16225,12 @@
       "leading": 100,
       "trailing": 100
     },
-    "d481fe7aba17": {
+    "d47413f19298": {
       "leading": 100,
+      "trailing": 105
+    },
+    "d481fe7aba17": {
+      "leading": 81,
       "trailing": 100
     },
     "d4bd18c11612": {
@@ -16150,6 +16389,10 @@
       "leading": 46,
       "trailing": 100
     },
+    "de14655a1fdd": {
+      "leading": 100,
+      "trailing": 100
+    },
     "de32c7fc7512": {
       "leading": 100,
       "trailing": 100
@@ -16206,6 +16449,10 @@
       "leading": 100,
       "trailing": 100
     },
+    "e28ccb28dbbe": {
+      "leading": 60,
+      "trailing": 100
+    },
     "e3ac380cdcfc": {
       "leading": 86,
       "trailing": 100
@@ -16227,7 +16474,7 @@
       "trailing": 100
     },
     "e451b55cdb65": {
-      "leading": 100,
+      "leading": 57,
       "trailing": 100
     },
     "e4a9ad413d4b": {
@@ -16487,6 +16734,10 @@
       "trailing": 101
     },
     "f4cf0a0f33f3": {
+      "leading": 100,
+      "trailing": 100
+    },
+    "f5578062293a": {
       "leading": 100,
       "trailing": 100
     },
@@ -18810,8 +19061,9 @@
         activityList2.querySelectorAll("[data-intro-character]").forEach((button) => {
           button.addEventListener("click", () => {
             const kid = illustratedKids2[button.dataset.introCharacter];
+            const intro = currentTopic2().characterIntros?.find((entry) => entry.id === kid?.id);
             if (kid && state2.tapAudioEnabled) {
-              speak2(`\u6211\u53EB${kid.hanziName}`, 0.78);
+              speak2(intro?.audio ?? `\u6211\u53EB${kid.hanziName}`, 0.78, { sourcePolicy: "recorded-only" });
             }
           });
         });
@@ -20012,7 +20264,15 @@
     [10, "\u5341\u70B9", "sh\xED di\u01CEn"],
     [11, "\u5341\u4E00\u70B9", "sh\xED y\u012B di\u01CEn"],
     [12, "\u5341\u4E8C\u70B9", "sh\xED \xE8r di\u01CEn"]
-  ].map(([hour, hanzi, pinyin]) => ({ id: `clock-${hour}`, hanzi, pinyin, english: `${hour} o'clock`, audio: hanzi, imagePath: `assets/illustrated-clocks/${hour}oclock.svg` }));
+  ].map(([hour, hanzi, pinyin]) => ({
+    id: `clock-${hour}`,
+    hanzi,
+    pinyin,
+    english: `${hour} o'clock`,
+    audio: hanzi,
+    answerAudio: `\u51E0\u70B9\u4E86\uFF1F\u73B0\u5728${hanzi}\u3002`,
+    imagePath: `assets/illustrated-clocks/${hour}oclock.svg`
+  }));
   var timeDateExpressionItems = [
     { id: "seven-oclock", hanzi: "\u4E03\u70B9", pinyin: "q\u012B di\u01CEn", english: "7:00", audio: "\u4E03\u70B9" },
     { id: "quarter-past-seven", hanzi: "\u4E03\u70B9\u4E00\u523B", pinyin: "q\u012B di\u01CEn y\u012B k\xE8", english: "7:15", audio: "\u4E03\u70B9\u4E00\u523B" },
@@ -20065,7 +20325,7 @@
 
   // src/features/time-daily-life/dates.js
   var timeDateDateItems = [
-    { id: "date-board", hanzi: "\u51E0\u6708\u51E0\u53F7\uFF1F", pinyin: "j\u01D0 yu\xE8 j\u01D0 h\xE0o?", english: "What month and day?", context: "\u770B\u65E5\u5386\uFF0C\u53EF\u4EE5\u77E5\u9053\u51E0\u6708\u51E0\u53F7\u3002", contextPinyin: "k\xE0n r\xEC l\xEC, k\u011B y\u01D0 zh\u012B d\xE0o j\u01D0 yu\xE8 j\u01D0 h\xE0o.", contextEnglish: "Look at a calendar to find the month and day.", audio: "\u51E0\u6708\u51E0\u53F7", imagePath: "assets/illustrated-dates/calendar-example-dates-board.webp", lessonSources: ["3a:2"] },
+    { id: "date-board", hanzi: "\u51E0\u6708\u51E0\u53F7\uFF1F", pinyin: "j\u01D0 yu\xE8 j\u01D0 h\xE0o?", english: "What month and day?", context: "\u770B\u65E5\u5386\uFF0C\u53EF\u4EE5\u77E5\u9053\u51E0\u6708\u51E0\u53F7\u3002", contextPinyin: "k\xE0n r\xEC l\xEC, k\u011B y\u01D0 zh\u012B d\xE0o j\u01D0 yu\xE8 j\u01D0 h\xE0o.", contextEnglish: "Look at a calendar to find the month and day.", audio: "\u770B\u65E5\u5386\uFF0C\u53EF\u4EE5\u77E5\u9053\u51E0\u6708\u51E0\u53F7\u3002", imagePath: "assets/illustrated-dates/calendar-example-dates-board.webp", lessonSources: ["3a:2"] },
     { id: "new-year", hanzi: "\u4E00\u6708\u4E00\u53F7", pinyin: "y\u012B yu\xE8 y\u012B h\xE0o", english: "January first", context: "\u4E00\u6708\u4E00\u53F7\u662F\u65B0\u5E74\u3002", contextPinyin: "y\u012B yu\xE8 y\u012B h\xE0o sh\xEC x\u012Bn ni\xE1n.", contextEnglish: "January first is New Year's Day.", audio: "\u4E00\u6708\u4E00\u53F7\u662F\u65B0\u5E74", imagePath: "assets/illustrated-dates/january-first-new-year-calendar.webp", lessonSources: ["3a:2"] },
     { id: "field-trip", hanzi: "\u4E94\u6708\u4E8C\u5341\u53F7", pinyin: "w\u01D4 yu\xE8 \xE8r sh\xED h\xE0o", english: "May twentieth", context: "\u4E94\u6708\u4E8C\u5341\u53F7\uFF0C\u6211\u4EEC\u53BB\u6625\u6E38\u3002", contextPinyin: "w\u01D4 yu\xE8 \xE8r sh\xED h\xE0o, w\u01D2 men q\xF9 ch\u016Bn y\xF3u.", contextEnglish: "On May twentieth, we go on a spring outing.", audio: "\u4E94\u6708\u4E8C\u5341\u53F7\u6211\u4EEC\u53BB\u6625\u6E38", imagePath: "assets/illustrated-dates/may-twentieth-field-trip-calendar.webp", lessonSources: ["3a:2"] },
     { id: "christmas", hanzi: "\u5341\u4E8C\u6708\u4E8C\u5341\u4E94\u53F7", pinyin: "sh\xED \xE8r yu\xE8 \xE8r sh\xED w\u01D4 h\xE0o", english: "December twenty-fifth", context: "\u5341\u4E8C\u6708\u4E8C\u5341\u4E94\u53F7\u662F\u5723\u8BDE\u8282\u3002", contextPinyin: "sh\xED \xE8r yu\xE8 \xE8r sh\xED w\u01D4 h\xE0o sh\xEC sh\xE8ng d\xE0n ji\xE9.", contextEnglish: "December twenty-fifth is Christmas.", audio: "\u5341\u4E8C\u6708\u4E8C\u5341\u4E94\u53F7\u662F\u5723\u8BDE\u8282", imagePath: "assets/illustrated-dates/december-twenty-fifth-christmas-calendar.webp", lessonSources: ["3a:2"] },
@@ -20643,7 +20903,7 @@
       ["auditorium", "\u793C\u5802", "l\u01D0 t\xE1ng", "auditorium", "auditorium_anchor.webp"],
       ["music-room", "\u97F3\u4E50\u6559\u5BA4", "y\u012Bn yu\xE8 ji\xE0o sh\xEC", "music room", "music_classroom_anchor.webp"],
       ["piano", "\u94A2\u7434", "g\u0101ng q\xEDn", "piano", "piano_anchor.webp"]
-    ].map(([id, hanzi, pinyin, english, file]) => ({ id, hanzi, pinyin, english, audio: id === "music-room" ? "\u97F3\u6708\u6559\u5BA4" : hanzi, imagePath: `assets/illustrated-school-anchors/${file}` }))
+    ].map(([id, hanzi, pinyin, english, file]) => ({ id, hanzi, pinyin, english, audio: hanzi, imagePath: `assets/illustrated-school-anchors/${file}` }))
   };
   var schoolSentenceBuilds = [
     { id: "classroom", imagePath: "assets/illustrated-school-anchors/classroom_anchor.webp", target: ["\u5B66\u6821", "\u6709", "\u6559\u5BA4"], distractors: ["\u4E66\u5305", "\u91CC", "\u559C\u6B22"], audio: "\u5B66\u6821\u6709\u6559\u5BA4\u3002", pinyin: "xu\xE9 xi\xE0o y\u01D2u ji\xE0o sh\xEC.", english: "The school has classrooms." },
@@ -22176,6 +22436,18 @@
       { id: "what-word", hanzi: "\u4EC0\u4E48", pinyin: "sh\xE9n me", english: "what", audio: "\u4EC0\u4E48", lessonSources: ["1a:6"] },
       { id: "name-word", hanzi: "\u540D\u5B57", pinyin: "m\xEDng zi", english: "name", audio: "\u540D\u5B57", lessonSources: ["1a:6"] },
       { id: "friend-word", hanzi: "\u670B\u53CB", pinyin: "p\xE9ng you", english: "friend", audio: "\u670B\u53CB", lessonSources: ["2a:3"] }
+    ],
+    characterIntros: [
+      { id: "lele", audio: "\u6211\u53EB\u4E50\u4E50", pinyin: "w\u01D2 ji\xE0o L\xE8 le." },
+      { id: "meimei", audio: "\u6211\u53EB\u7F8E\u7F8E", pinyin: "w\u01D2 ji\xE0o M\u011Bi mei." },
+      { id: "yangyang", audio: "\u6211\u53EB\u9633\u9633", pinyin: "w\u01D2 ji\xE0o Y\xE1ng y\xE1ng." },
+      { id: "anan", audio: "\u6211\u53EB\u5B89\u5B89", pinyin: "w\u01D2 ji\xE0o \u0100n an." },
+      { id: "tiantian", audio: "\u6211\u53EB\u5929\u5929", pinyin: "w\u01D2 ji\xE0o Ti\u0101n ti\u0101n." },
+      { id: "sisi", audio: "\u6211\u53EB\u601D\u601D", pinyin: "w\u01D2 ji\xE0o S\u012B si." },
+      { id: "luna", audio: "\u6211\u53EB\u9732\u5A1C", pinyin: "w\u01D2 ji\xE0o L\xF9 n\xE0." },
+      { id: "noah", audio: "\u6211\u53EB\u8BFA\u4E9A", pinyin: "w\u01D2 ji\xE0o Nu\xF2 y\xE0." },
+      { id: "sophie", audio: "\u6211\u53EB\u82CF\u83F2", pinyin: "w\u01D2 ji\xE0o S\u016B f\u0113i." },
+      { id: "jaden", audio: "\u6211\u53EB\u6770\u767B", pinyin: "w\u01D2 ji\xE0o Ji\xE9 d\u0113ng." }
     ],
     interactiveScene: "introductions-conversation",
     parentGuide: "Practice the whole mini-conversation first: \u4F60\u597D, \u4F60\u53EB\u4EC0\u4E48\u540D\u5B57? \u6211\u53EB... Then pause after \u6211\u53EB and let the child fill in their own name.",
@@ -24239,14 +24511,14 @@
       { id: "toy-bear", hanzi: "\u73A9\u5177\u718A", pinyin: "w\xE1n j\xF9 xi\xF3ng", english: "toy bear", audio: "\u73A9\u5177\u718A", imagePath: "assets/illustrated-toys/teddy-bear.webp", imageAlt: "A toy bear" }
     ],
     flashcardItems: [
-      { id: "toys", hanzi: "\u73A9\u5177", pinyin: "w\xE1n j\xF9", english: "toys", audio: "\u73A9\u5177", imagePath: "assets/illustrated-toys/toys-collection.webp", imageAlt: "A collection of toys" },
-      { id: "toy-car", hanzi: "\u73A9\u5177\u6C7D\u8F66", pinyin: "w\xE1n j\xF9 q\xEC ch\u0113", english: "toy car", audio: "\u73A9\u5177\u6C7D\u8F66", imagePath: "assets/illustrated-toys/toy-car.webp", imageAlt: "A toy car" },
-      { id: "toy-train", hanzi: "\u73A9\u5177\u706B\u8F66", pinyin: "w\xE1n j\xF9 hu\u01D2 ch\u0113", english: "toy train", audio: "\u73A9\u5177\u706B\u8F66", imagePath: "assets/illustrated-toys/train.webp", imageAlt: "A toy train" },
-      { id: "toy-airplane", hanzi: "\u73A9\u5177\u98DE\u673A", pinyin: "w\xE1n j\xF9 f\u0113i j\u012B", english: "toy airplane", audio: "\u73A9\u5177\u98DE\u673A", imagePath: "assets/illustrated-toys/airplane.webp", imageAlt: "A toy airplane" },
-      { id: "school-bus", hanzi: "\u73A9\u5177\u6821\u8F66", pinyin: "w\xE1n j\xF9 xi\xE0o ch\u0113", english: "toy school bus", audio: "\u73A9\u5177\u6821\u8F66", imagePath: "assets/illustrated-toys/school-bus.webp", imageAlt: "A toy school bus" },
-      { id: "doll", hanzi: "\u5A03\u5A03", pinyin: "w\xE1 wa", english: "doll", audio: "\u5A03\u5A03", imagePath: "assets/illustrated-toys/toy-doll.webp", imageAlt: "A doll" },
-      { id: "bicycle", hanzi: "\u81EA\u884C\u8F66", pinyin: "z\xEC x\xEDng ch\u0113", english: "bicycle", audio: "\u81EA\u884C\u8F66", imagePath: "assets/illustrated-toys/bicycle.webp", imageAlt: "A bicycle" },
-      { id: "toy-bear", hanzi: "\u73A9\u5177\u718A", pinyin: "w\xE1n j\xF9 xi\xF3ng", english: "toy bear", audio: "\u73A9\u5177\u718A", imagePath: "assets/illustrated-toys/teddy-bear.webp", imageAlt: "A toy bear" }
+      { id: "toys", hanzi: "\u73A9\u5177", pinyin: "w\xE1n j\xF9", english: "toys", sentenceEnglish: "I have toys.", audio: "\u73A9\u5177", imagePath: "assets/illustrated-toys/toys-collection.webp", imageAlt: "A collection of toys" },
+      { id: "toy-car", hanzi: "\u73A9\u5177\u6C7D\u8F66", pinyin: "w\xE1n j\xF9 q\xEC ch\u0113", english: "toy car", sentenceEnglish: "I have a toy car.", audio: "\u73A9\u5177\u6C7D\u8F66", imagePath: "assets/illustrated-toys/toy-car.webp", imageAlt: "A toy car" },
+      { id: "toy-train", hanzi: "\u73A9\u5177\u706B\u8F66", pinyin: "w\xE1n j\xF9 hu\u01D2 ch\u0113", english: "toy train", sentenceEnglish: "I have a toy train.", audio: "\u73A9\u5177\u706B\u8F66", imagePath: "assets/illustrated-toys/train.webp", imageAlt: "A toy train" },
+      { id: "toy-airplane", hanzi: "\u73A9\u5177\u98DE\u673A", pinyin: "w\xE1n j\xF9 f\u0113i j\u012B", english: "toy airplane", sentenceEnglish: "I have a toy airplane.", audio: "\u73A9\u5177\u98DE\u673A", imagePath: "assets/illustrated-toys/airplane.webp", imageAlt: "A toy airplane" },
+      { id: "school-bus", hanzi: "\u73A9\u5177\u6821\u8F66", pinyin: "w\xE1n j\xF9 xi\xE0o ch\u0113", english: "toy school bus", sentenceEnglish: "I have a toy school bus.", audio: "\u73A9\u5177\u6821\u8F66", imagePath: "assets/illustrated-toys/school-bus.webp", imageAlt: "A toy school bus" },
+      { id: "doll", hanzi: "\u5A03\u5A03", pinyin: "w\xE1 wa", english: "doll", sentenceEnglish: "I have a doll.", audio: "\u5A03\u5A03", imagePath: "assets/illustrated-toys/toy-doll.webp", imageAlt: "A doll" },
+      { id: "bicycle", hanzi: "\u81EA\u884C\u8F66", pinyin: "z\xEC x\xEDng ch\u0113", english: "bicycle", sentenceEnglish: "I have a bicycle.", audio: "\u81EA\u884C\u8F66", imagePath: "assets/illustrated-toys/bicycle.webp", imageAlt: "A bicycle" },
+      { id: "toy-bear", hanzi: "\u73A9\u5177\u718A", pinyin: "w\xE1n j\xF9 xi\xF3ng", english: "toy bear", sentenceEnglish: "I have a toy bear.", audio: "\u73A9\u5177\u718A", imagePath: "assets/illustrated-toys/teddy-bear.webp", imageAlt: "A toy bear" }
     ],
     parentGuide: "Point to a real toy at home and say \u6211\u6709\u2026 together.",
     cultureGuide: "Keep this page with the Book 2A ownership frame; later requests to use someone else's toy belong in Requests.",
@@ -26326,7 +26598,7 @@
       state2.clockQuizResult = itemId === answerId ? "correct" : "wrong";
       if (state2.clockQuizResult === "correct" && state2.tapAudioEnabled) {
         const item = timeDateClockItems2.find((entry) => entry.id === answerId);
-        if (item) speak2(`\u51E0\u70B9\u4E86\uFF1F\u73B0\u5728${item.hanzi}\u3002`, 0.78);
+        if (item) speak2(item.answerAudio, 0.78);
       }
       renderActivityPanel2(currentTopic2());
     }
@@ -27687,7 +27959,7 @@
       activityList2.className = "support-list pets-practice-list";
       activityList2.innerHTML = `<section class="practice-split-card pets-sentence-practice"><div class="numbers-game-top"><div><p class="body-match-kicker">Build a sentence</p><p class="numbers-game-note">Choose a pet to complete the sentence.</p></div><button class="small-button is-play-button" type="button" data-pets-preference-play>Play</button></div><p class="pets-sentence-prompt">\u6211\u559C\u6B22<span class="animals-measure-blank is-${selectedPet ? "correct" : "empty"}">${selectedPet?.hanzi || "____"}</span>\u3002</p><div class="numbers-game-options">${preferenceChoices.map((choice) => {
         const selected = state2.petsPreferencePickedId === choice.id;
-        return `<button class="numbers-game-option greetings-game-option family-listen-option pets-sentence-choice${selected ? " is-correct" : ""}" type="button" data-pets-preference-choice="${choice.id}"><img src="${choice.imagePath}" alt="${choice.imageAlt}"><span><span class="numbers-game-hanzi">${choice.hanzi}</span>${state2.showPinyin ? `<span class="numbers-game-pinyin">${choice.pinyin}</span>` : ""}${state2.showEnglish ? `<span class="numbers-game-english">${choice.english}</span>` : ""}</span>${selected ? '<span class="answer-result-mark" aria-hidden="true">\u2713</span>' : ""}</button>`;
+        return `<button class="numbers-game-option greetings-game-option family-listen-option pets-sentence-choice${selected ? " is-correct" : ""}" type="button" data-pets-preference-choice="${choice.id}"><img class="pets-sentence-choice-image" src="${choice.imagePath}" alt="${choice.imageAlt}"><span class="pets-sentence-choice-copy"><span class="numbers-game-hanzi">${choice.hanzi}</span>${state2.showPinyin ? `<span class="numbers-game-pinyin">${choice.pinyin}</span>` : ""}${state2.showEnglish ? `<span class="numbers-game-english">${choice.english}</span>` : ""}</span>${selected ? '<span class="answer-result-mark" aria-hidden="true">\u2713</span>' : ""}</button>`;
       }).join("")}</div>${preference ? petSentenceFeedback(preference) : ""}</section>`;
       activityList2.querySelector("[data-pets-preference-play]")?.addEventListener("click", () => {
         state2.petsPreferencePickedId = "";
@@ -27710,7 +27982,7 @@
       ensurePetFoodMatch();
       activityList2.innerHTML = `<section class="practice-split-card zoo-sentence-practice"><div class="numbers-game-top"><div><p class="body-match-kicker">Build a sentence</p><p class="numbers-game-note">Choose an animal phrase to build a zoo sentence. It will read itself aloud.</p></div><button class="small-button is-play-button" type="button" data-zoo-sentence-new>Play</button></div><p class="animals-measure-prompt">\u52A8\u7269\u56ED\u6709<span class="animals-measure-blank is-${selectedRound ? "correct" : "empty"}">${selectedRound ? `${selectedRound.number}${selectedRound.measure}${selectedRound.animal}` : "____"}</span>\u3002</p><div class="numbers-game-options">${animalMeasureRounds.map((round) => {
         const selected = selectedRound?.id === round.id;
-        return `<button class="numbers-game-option greetings-game-option family-listen-option zoo-sentence-choice${selected ? " is-correct" : ""}" type="button" data-zoo-sentence-choice="${round.id}"><img src="${round.imagePath}" alt="${round.imageAlt}"><span><span class="numbers-game-hanzi">${round.number}${round.measure}${round.animal}</span>${state2.showPinyin ? `<span class="numbers-game-pinyin">${round.pinyin}</span>` : ""}${state2.showEnglish ? `<span class="numbers-game-english">${round.english}</span>` : ""}</span>${selected ? '<span class="answer-result-mark" aria-hidden="true">\u2713</span>' : ""}</button>`;
+        return `<button class="numbers-game-option greetings-game-option family-listen-option zoo-sentence-choice${selected ? " is-correct" : ""}" type="button" data-zoo-sentence-choice="${round.id}"><img class="zoo-sentence-choice-image" src="${round.imagePath}" alt="${round.imageAlt}"><span class="zoo-sentence-choice-copy"><span class="numbers-game-hanzi">${round.number}${round.measure}${round.animal}</span>${state2.showPinyin ? `<span class="numbers-game-pinyin">${round.pinyin}</span>` : ""}${state2.showEnglish ? `<span class="numbers-game-english">${round.english}</span>` : ""}</span>${selected ? '<span class="answer-result-mark" aria-hidden="true">\u2713</span>' : ""}</button>`;
       }).join("")}</div>${selectedRound ? `<div class="animals-measure-feedback"><p class="numbers-game-hanzi">${sentence}</p>${state2.showPinyin ? `<p class="numbers-game-pinyin">D\xF2ng w\xF9 yu\xE1n y\u01D2u ${selectedRound.pinyin}.</p>` : ""}${state2.showEnglish ? `<p class="numbers-game-english">There are ${selectedRound.english} in the zoo.</p>` : ""}</div>` : ""}</section>${renderPetFoodMatch(stories)}`;
       activityList2.querySelector("[data-zoo-sentence-new]")?.addEventListener("click", () => {
         state2.zooSentencePickedId = "";
@@ -28266,7 +28538,7 @@
       activityPanelTitle2.textContent = "Let's practice";
       activityPanelSummary2.textContent = "Look at the toy, then choose the word that completes \u6211\u6709\u2026";
       activityList2.className = "support-list";
-      activityList2.innerHTML = `<section class="clothes-quiz-shell toys-practice-shell practice-compact-split"><div class="numbers-game-top"><div><p class="body-match-kicker">Look and choose</p></div><button class="small-button is-practice-advance-button" type="button" data-toys-practice-new>New game</button></div><figure class="clothes-quiz-visual school-build-visual practice-compact-visual"><img class="clothes-quiz-image" src="${item.imagePath}" alt="${item.imageAlt}"></figure><div class="practice-compact-content"><div class="toy-practice-answer"><div class="toy-practice-sentence-row"><p class="toy-practice-frame">\u6211\u6709<span class="toy-practice-blank${complete ? " is-correct" : ""}">${complete ? item.hanzi : "\u2026"}</span>\u3002</p>${state2.showPinyin ? `<p class="numbers-game-pinyin toy-practice-answer-pinyin${complete ? "" : " is-placeholder"}"${complete ? "" : ' aria-hidden="true"'}>${complete ? `w\u01D2 y\u01D2u ${item.pinyin}.` : "\xA0"}</p>` : ""}</div>${state2.showEnglish ? `<p class="numbers-game-english toy-practice-answer-english${complete ? "" : " is-placeholder"}"${complete ? "" : ' aria-hidden="true"'}>${complete ? `I have a ${item.english}.` : "\xA0"}</p>` : ""}</div><div class="clothes-quiz-options">${state2.toysPracticeOptionIds.map((optionId) => {
+      activityList2.innerHTML = `<section class="clothes-quiz-shell toys-practice-shell practice-compact-split"><div class="numbers-game-top"><div><p class="body-match-kicker">Look and choose</p></div><button class="small-button is-practice-advance-button" type="button" data-toys-practice-new>New game</button></div><figure class="clothes-quiz-visual school-build-visual practice-compact-visual"><img class="clothes-quiz-image" src="${item.imagePath}" alt="${item.imageAlt}"></figure><div class="practice-compact-content"><div class="toy-practice-answer"><div class="toy-practice-sentence-row"><p class="toy-practice-frame">\u6211\u6709<span class="toy-practice-blank${complete ? " is-correct" : ""}">${complete ? item.hanzi : "\u2026"}</span>\u3002</p></div>${state2.showEnglish ? `<p class="numbers-game-english toy-practice-answer-english${complete ? "" : " is-placeholder"}"${complete ? "" : ' aria-hidden="true"'}>${complete ? item.sentenceEnglish : "\xA0"}</p>` : ""}</div><div class="clothes-quiz-options">${state2.toysPracticeOptionIds.map((optionId) => {
         const option = toyItems().find((entry) => entry.id === optionId);
         if (!option) return "";
         const isCorrect = complete && option.id === item.id;
@@ -28283,10 +28555,7 @@
         state2.toysPracticeSelectedId = pickedId;
         if (pickedId === item.id) {
           state2.toysPracticeResult = "correct";
-          if (state2.tapAudioEnabled) speakLesson(`\u6211\u6709${item.hanzi}`, 0.78, {
-            sourcePolicy: "browser-first",
-            recordedFallbackTexts: ["\u6211\u6709", item.hanzi]
-          });
+          if (state2.tapAudioEnabled) speakLesson(`\u6211\u6709${item.hanzi}`, 0.78, { sourcePolicy: "recorded-only" });
         } else {
           state2.toysPracticeResult = "wrong";
           state2.toysPracticeWrongIds = /* @__PURE__ */ new Set([...state2.toysPracticeWrongIds, pickedId]);

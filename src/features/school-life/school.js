@@ -16,7 +16,7 @@ export const schoolTopicData = {
       ["auditorium", "礼堂", "lǐ táng", "auditorium", "auditorium_anchor.webp"],
       ["music-room", "音乐教室", "yīn yuè jiào shì", "music room", "music_classroom_anchor.webp"],
       ["piano", "钢琴", "gāng qín", "piano", "piano_anchor.webp"]
-    ].map(([id, hanzi, pinyin, english, file]) => ({ id, hanzi, pinyin, english, audio: id === "music-room" ? "音月教室" : hanzi, imagePath: `assets/illustrated-school-anchors/${file}` }))
+    ].map(([id, hanzi, pinyin, english, file]) => ({ id, hanzi, pinyin, english, audio: hanzi, imagePath: `assets/illustrated-school-anchors/${file}` }))
 };
 
 export const schoolSentenceBuilds = [

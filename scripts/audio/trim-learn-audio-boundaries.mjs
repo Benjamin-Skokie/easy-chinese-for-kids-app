@@ -6,10 +6,12 @@ import { learnAudioEntries } from "../../src/data/learn-audio-manifest.js";
 
 const projectRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
 const audioDirectory = path.join(projectRoot, "assets/audio/learn");
-const reportPath = path.join(projectRoot, "docs/audio-boundary-trim-report.md");
 const retainedSilenceMs = 100;
 const thresholdDb = -45;
 const concurrency = 12;
+const onlyArgument = process.argv.find((argument) => argument.startsWith("--only="));
+const selectedIds = new Set(onlyArgument?.slice("--only=".length).split(",").filter(Boolean) ?? []);
+const reportPath = path.join(projectRoot, selectedIds.size ? "docs/audio-boundary-targeted-trim-report.md" : "docs/audio-boundary-trim-report.md");
 
 function run(command, args) {
   return new Promise((resolve, reject) => {
@@ -70,7 +72,14 @@ async function runWorkers(items, task) {
 }
 
 const entryById = new Map(learnAudioEntries.map((entry) => [entry.id, entry]));
-const files = (await readdir(audioDirectory)).filter((file) => /^[a-f0-9]{12}\.mp3$/u.test(file)).sort();
+const allFiles = (await readdir(audioDirectory)).filter((file) => /^[a-f0-9]{12}\.mp3$/u.test(file)).sort();
+const files = selectedIds.size
+  ? allFiles.filter((file) => selectedIds.has(file.slice(0, -4)))
+  : allFiles;
+if (selectedIds.size && files.length !== selectedIds.size) {
+  const presentIds = new Set(files.map((file) => file.slice(0, -4)));
+  throw new Error(`Unknown Learn recording id(s): ${[...selectedIds].filter((id) => !presentIds.has(id)).join(", ")}`);
+}
 const measurements = await runWorkers(files, inspectAudio);
 const results = await runWorkers(measurements, trimAudio);
 const largeTailCuts = results
@@ -81,7 +90,8 @@ const reportRows = largeTailCuts.map((item) => {
   const text = entryById.get(id)?.text ?? "(unregistered asset)";
   return `| \`${id}\` | ${text} | ${item.leading} | ${item.trailing} | ${item.startMs} | ${item.endMs} |`;
 });
-const report = `# Learn audio boundary trimming report\n\nAll ${files.length} Learn MP3 files were measured at ${thresholdDb} dBFS (15 ms minimum silence) and processed with ${concurrency} workers. The source files now retain at most ${retainedSilenceMs} ms at either end.\n\n${results.filter((item) => item.trimmed).length} files changed. The table below lists every recording with at least 1,000 ms removed from its tail.\n\n| ID | Text | Original leading (ms) | Original trailing (ms) | Leading removed (ms) | Trailing removed (ms) |\n| --- | --- | ---: | ---: | ---: | ---: |\n${reportRows.join("\n")}\n`;
+const scope = selectedIds.size ? `The selected ${files.length}` : `All ${files.length}`;
+const report = `# Learn audio boundary trimming report\n\n${scope} Learn MP3 files were measured at ${thresholdDb} dBFS (15 ms minimum silence) and processed with ${concurrency} workers. The source files now retain at most ${retainedSilenceMs} ms at either end.\n\n${results.filter((item) => item.trimmed).length} files changed. The table below lists every recording with at least 1,000 ms removed from its tail.\n\n| ID | Text | Original leading (ms) | Original trailing (ms) | Leading removed (ms) | Trailing removed (ms) |\n| --- | --- | ---: | ---: | ---: | ---: |\n${reportRows.join("\n")}\n`;
 await writeFile(reportPath, report);
 console.log(`Trimmed ${results.filter((item) => item.trimmed).length}/${files.length} Learn recordings with ${concurrency} workers.`);
 console.log(`Large trailing cuts (>= 1000 ms): ${largeTailCuts.length}. Report: ${path.relative(projectRoot, reportPath)}`);

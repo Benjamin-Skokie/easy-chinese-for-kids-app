@@ -1,10 +1,16 @@
 export const timeDateDateItems = [
-  { id: "date-board", hanzi: "几月几号？", pinyin: "jǐ yuè jǐ hào?", english: "What month and day?", context: "看日历，可以知道几月几号。", contextPinyin: "kàn rì lì, kě yǐ zhī dào jǐ yuè jǐ hào.", contextEnglish: "Look at a calendar to find the month and day.", audio: "几月几号", imagePath: "assets/illustrated-dates/calendar-example-dates-board.webp", lessonSources: ["3a:2"] },
+  { id: "date-board", hanzi: "几月几号？", pinyin: "jǐ yuè jǐ hào?", english: "What month and day?", context: "看日历，可以知道几月几号。", contextPinyin: "kàn rì lì, kě yǐ zhī dào jǐ yuè jǐ hào.", contextEnglish: "Look at a calendar to find the month and day.", audio: "看日历，可以知道几月几号。", imagePath: "assets/illustrated-dates/calendar-example-dates-board.webp", lessonSources: ["3a:2"] },
   { id: "new-year", hanzi: "一月一号", pinyin: "yī yuè yī hào", english: "January first", context: "一月一号是新年。", contextPinyin: "yī yuè yī hào shì xīn nián.", contextEnglish: "January first is New Year's Day.", audio: "一月一号是新年", imagePath: "assets/illustrated-dates/january-first-new-year-calendar.webp", lessonSources: ["3a:2"] },
   { id: "field-trip", hanzi: "五月二十号", pinyin: "wǔ yuè èr shí hào", english: "May twentieth", context: "五月二十号，我们去春游。", contextPinyin: "wǔ yuè èr shí hào, wǒ men qù chūn yóu.", contextEnglish: "On May twentieth, we go on a spring outing.", audio: "五月二十号我们去春游", imagePath: "assets/illustrated-dates/may-twentieth-field-trip-calendar.webp", lessonSources: ["3a:2"] },
   { id: "christmas", hanzi: "十二月二十五号", pinyin: "shí èr yuè èr shí wǔ hào", english: "December twenty-fifth", context: "十二月二十五号是圣诞节。", contextPinyin: "shí èr yuè èr shí wǔ hào shì shèng dàn jié.", contextEnglish: "December twenty-fifth is Christmas.", audio: "十二月二十五号是圣诞节", imagePath: "assets/illustrated-dates/december-twenty-fifth-christmas-calendar.webp", lessonSources: ["3a:2"] },
   { id: "birthday", hanzi: "生日快乐！", pinyin: "shēng rì kuài lè!", english: "Happy birthday!", context: "今天是我的生日。生日快乐！", contextPinyin: "jīn tiān shì wǒ de shēng rì. shēng rì kuài lè!", contextEnglish: "Today is my birthday. Happy birthday!", audio: "今天是我的生日生日快乐", imagePath: "assets/illustrated-dates/birthday-party-scene.webp", lessonSources: ["3a:3"] }
 ];
+
+// Kept as authored data so the Learn-audio manifest includes the Months play control.
+export const timeDateMonthsIntro = {
+  audio: "一年有十二个月",
+  pinyin: "yī nián yǒu shí èr ge yuè."
+};
 
 export const timeDateMonthItems = [
   ["January", "一月", "yī yuè", "一月，新年的第一个月。", "yī yuè, xīn nián de dì yī ge yuè.", "January: the first month of the new year."],
