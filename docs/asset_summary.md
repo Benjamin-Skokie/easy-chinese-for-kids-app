@@ -163,18 +163,18 @@ Purpose: provide one searchable inventory of illustration assets, using each fol
 
 **Items**
 
-- `1oclock`: `一点` (yi dian) | 1 o'clock | [file](../assets/illustrated-clocks/1oclock.webp)
-- `2oclock`: `两点` (liang dian) | 2 o'clock | [file](../assets/illustrated-clocks/2oclock.webp)
-- `3oclock`: `三点` (san dian) | 3 o'clock | [file](../assets/illustrated-clocks/3oclock.webp)
-- `4oclock`: `四点` (si dian) | 4 o'clock | [file](../assets/illustrated-clocks/4oclock.webp)
-- `5oclock`: `五点` (wu dian) | 5 o'clock | [file](../assets/illustrated-clocks/5oclock.webp)
-- `6oclock`: `六点` (liu dian) | 6 o'clock | [file](../assets/illustrated-clocks/6oclock.webp)
-- `7oclock`: `七点` (qi dian) | 7 o'clock | [file](../assets/illustrated-clocks/7oclock.webp)
-- `8oclock`: `八点` (ba dian) | 8 o'clock | [file](../assets/illustrated-clocks/8oclock.webp)
-- `9oclock`: `九点` (jiu dian) | 9 o'clock | [file](../assets/illustrated-clocks/9oclock.webp)
-- `10oclock`: `十点` (shi dian) | 10 o'clock | [file](../assets/illustrated-clocks/10oclock.webp)
-- `11oclock`: `十一点` (shi yi dian) | 11 o'clock | [file](../assets/illustrated-clocks/11oclock.webp)
-- `12oclock`: `十二点` (shi er dian) | 12 o'clock | [file](../assets/illustrated-clocks/12oclock.webp)
+- `1oclock`: `一点` (yi dian) | 1 o'clock | [file](../assets/illustrated-clocks/1oclock.svg)
+- `2oclock`: `两点` (liang dian) | 2 o'clock | [file](../assets/illustrated-clocks/2oclock.svg)
+- `3oclock`: `三点` (san dian) | 3 o'clock | [file](../assets/illustrated-clocks/3oclock.svg)
+- `4oclock`: `四点` (si dian) | 4 o'clock | [file](../assets/illustrated-clocks/4oclock.svg)
+- `5oclock`: `五点` (wu dian) | 5 o'clock | [file](../assets/illustrated-clocks/5oclock.svg)
+- `6oclock`: `六点` (liu dian) | 6 o'clock | [file](../assets/illustrated-clocks/6oclock.svg)
+- `7oclock`: `七点` (qi dian) | 7 o'clock | [file](../assets/illustrated-clocks/7oclock.svg)
+- `8oclock`: `八点` (ba dian) | 8 o'clock | [file](../assets/illustrated-clocks/8oclock.svg)
+- `9oclock`: `九点` (jiu dian) | 9 o'clock | [file](../assets/illustrated-clocks/9oclock.svg)
+- `10oclock`: `十点` (shi dian) | 10 o'clock | [file](../assets/illustrated-clocks/10oclock.svg)
+- `11oclock`: `十一点` (shi yi dian) | 11 o'clock | [file](../assets/illustrated-clocks/11oclock.svg)
+- `12oclock`: `十二点` (shi er dian) | 12 o'clock | [file](../assets/illustrated-clocks/12oclock.svg)
 
 ### `illustrated-clothes`
 

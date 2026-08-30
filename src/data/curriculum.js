@@ -251,7 +251,7 @@ export const learningHomeCategories = [
     enTitle: "Time & Daily Life",
     hint: "Week, time, dates, routines, home, actions, requests",
     accent: "#517b8d",
-    iconSrc: "assets/illustrated-clocks/10oclock.webp",
+    iconSrc: "assets/illustrated-clocks/10oclock.svg",
     topicIds: ["weekdays", "time-date", "dates", "comparisons", "positions", "transport", "daily-life", "everyday-actions", "requests-permission", "is-it"]
   },
   {

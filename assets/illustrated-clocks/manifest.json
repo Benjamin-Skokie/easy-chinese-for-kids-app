@@ -2,17 +2,17 @@
   "collection": "illustrated-clocks",
   "style": "clean educational analog clock icons for young Chinese learners",
   "items": [
-    { "id": "1oclock", "label": "1 o'clock", "hanzi": "一点", "pinyin": "yi dian", "file": "1oclock.webp" },
-    { "id": "2oclock", "label": "2 o'clock", "hanzi": "两点", "pinyin": "liang dian", "file": "2oclock.webp" },
-    { "id": "3oclock", "label": "3 o'clock", "hanzi": "三点", "pinyin": "san dian", "file": "3oclock.webp" },
-    { "id": "4oclock", "label": "4 o'clock", "hanzi": "四点", "pinyin": "si dian", "file": "4oclock.webp" },
-    { "id": "5oclock", "label": "5 o'clock", "hanzi": "五点", "pinyin": "wu dian", "file": "5oclock.webp" },
-    { "id": "6oclock", "label": "6 o'clock", "hanzi": "六点", "pinyin": "liu dian", "file": "6oclock.webp" },
-    { "id": "7oclock", "label": "7 o'clock", "hanzi": "七点", "pinyin": "qi dian", "file": "7oclock.webp" },
-    { "id": "8oclock", "label": "8 o'clock", "hanzi": "八点", "pinyin": "ba dian", "file": "8oclock.webp" },
-    { "id": "9oclock", "label": "9 o'clock", "hanzi": "九点", "pinyin": "jiu dian", "file": "9oclock.webp" },
-    { "id": "10oclock", "label": "10 o'clock", "hanzi": "十点", "pinyin": "shi dian", "file": "10oclock.webp" },
-    { "id": "11oclock", "label": "11 o'clock", "hanzi": "十一点", "pinyin": "shi yi dian", "file": "11oclock.webp" },
-    { "id": "12oclock", "label": "12 o'clock", "hanzi": "十二点", "pinyin": "shi er dian", "file": "12oclock.webp" }
+    { "id": "1oclock", "label": "1 o'clock", "hanzi": "一点", "pinyin": "yi dian", "file": "1oclock.svg" },
+    { "id": "2oclock", "label": "2 o'clock", "hanzi": "两点", "pinyin": "liang dian", "file": "2oclock.svg" },
+    { "id": "3oclock", "label": "3 o'clock", "hanzi": "三点", "pinyin": "san dian", "file": "3oclock.svg" },
+    { "id": "4oclock", "label": "4 o'clock", "hanzi": "四点", "pinyin": "si dian", "file": "4oclock.svg" },
+    { "id": "5oclock", "label": "5 o'clock", "hanzi": "五点", "pinyin": "wu dian", "file": "5oclock.svg" },
+    { "id": "6oclock", "label": "6 o'clock", "hanzi": "六点", "pinyin": "liu dian", "file": "6oclock.svg" },
+    { "id": "7oclock", "label": "7 o'clock", "hanzi": "七点", "pinyin": "qi dian", "file": "7oclock.svg" },
+    { "id": "8oclock", "label": "8 o'clock", "hanzi": "八点", "pinyin": "ba dian", "file": "8oclock.svg" },
+    { "id": "9oclock", "label": "9 o'clock", "hanzi": "九点", "pinyin": "jiu dian", "file": "9oclock.svg" },
+    { "id": "10oclock", "label": "10 o'clock", "hanzi": "十点", "pinyin": "shi dian", "file": "10oclock.svg" },
+    { "id": "11oclock", "label": "11 o'clock", "hanzi": "十一点", "pinyin": "shi yi dian", "file": "11oclock.svg" },
+    { "id": "12oclock", "label": "12 o'clock", "hanzi": "十二点", "pinyin": "shi er dian", "file": "12oclock.svg" }
   ]
 }

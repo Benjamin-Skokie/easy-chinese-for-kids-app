@@ -432,7 +432,7 @@
       "english": "1 o'clock",
       "collection": "illustrated-clocks",
       "id": "1oclock",
-      "file": "assets/illustrated-clocks/1oclock.webp"
+      "file": "assets/illustrated-clocks/1oclock.svg"
     },
     {
       "hanzi": "两点",
@@ -440,7 +440,7 @@
       "english": "2 o'clock",
       "collection": "illustrated-clocks",
       "id": "2oclock",
-      "file": "assets/illustrated-clocks/2oclock.webp"
+      "file": "assets/illustrated-clocks/2oclock.svg"
     },
     {
       "hanzi": "三点",
@@ -448,7 +448,7 @@
       "english": "3 o'clock",
       "collection": "illustrated-clocks",
       "id": "3oclock",
-      "file": "assets/illustrated-clocks/3oclock.webp"
+      "file": "assets/illustrated-clocks/3oclock.svg"
     },
     {
       "hanzi": "四点",
@@ -456,7 +456,7 @@
       "english": "4 o'clock",
       "collection": "illustrated-clocks",
       "id": "4oclock",
-      "file": "assets/illustrated-clocks/4oclock.webp"
+      "file": "assets/illustrated-clocks/4oclock.svg"
     },
     {
       "hanzi": "五点",
@@ -464,7 +464,7 @@
       "english": "5 o'clock",
       "collection": "illustrated-clocks",
       "id": "5oclock",
-      "file": "assets/illustrated-clocks/5oclock.webp"
+      "file": "assets/illustrated-clocks/5oclock.svg"
     },
     {
       "hanzi": "六点",
@@ -472,7 +472,7 @@
       "english": "6 o'clock",
       "collection": "illustrated-clocks",
       "id": "6oclock",
-      "file": "assets/illustrated-clocks/6oclock.webp"
+      "file": "assets/illustrated-clocks/6oclock.svg"
     },
     {
       "hanzi": "七点",
@@ -480,7 +480,7 @@
       "english": "7 o'clock",
       "collection": "illustrated-clocks",
       "id": "7oclock",
-      "file": "assets/illustrated-clocks/7oclock.webp"
+      "file": "assets/illustrated-clocks/7oclock.svg"
     },
     {
       "hanzi": "八点",
@@ -488,7 +488,7 @@
       "english": "8 o'clock",
       "collection": "illustrated-clocks",
       "id": "8oclock",
-      "file": "assets/illustrated-clocks/8oclock.webp"
+      "file": "assets/illustrated-clocks/8oclock.svg"
     },
     {
       "hanzi": "九点",
@@ -496,7 +496,7 @@
       "english": "9 o'clock",
       "collection": "illustrated-clocks",
       "id": "9oclock",
-      "file": "assets/illustrated-clocks/9oclock.webp"
+      "file": "assets/illustrated-clocks/9oclock.svg"
     },
     {
       "hanzi": "十点",
@@ -504,7 +504,7 @@
       "english": "10 o'clock",
       "collection": "illustrated-clocks",
       "id": "10oclock",
-      "file": "assets/illustrated-clocks/10oclock.webp"
+      "file": "assets/illustrated-clocks/10oclock.svg"
     },
     {
       "hanzi": "十一点",
@@ -512,7 +512,7 @@
       "english": "11 o'clock",
       "collection": "illustrated-clocks",
       "id": "11oclock",
-      "file": "assets/illustrated-clocks/11oclock.webp"
+      "file": "assets/illustrated-clocks/11oclock.svg"
     },
     {
       "hanzi": "十二点",
@@ -520,7 +520,7 @@
       "english": "12 o'clock",
       "collection": "illustrated-clocks",
       "id": "12oclock",
-      "file": "assets/illustrated-clocks/12oclock.webp"
+      "file": "assets/illustrated-clocks/12oclock.svg"
     },
     {
       "hanzi": "衣服",

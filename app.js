@@ -19935,7 +19935,7 @@
     [10, "\u5341\u70B9", "sh\xED di\u01CEn"],
     [11, "\u5341\u4E00\u70B9", "sh\xED y\u012B di\u01CEn"],
     [12, "\u5341\u4E8C\u70B9", "sh\xED \xE8r di\u01CEn"]
-  ].map(([hour, hanzi, pinyin]) => ({ id: `clock-${hour}`, hanzi, pinyin, english: `${hour} o'clock`, audio: hanzi, imagePath: `assets/illustrated-clocks/${hour}oclock.webp` }));
+  ].map(([hour, hanzi, pinyin]) => ({ id: `clock-${hour}`, hanzi, pinyin, english: `${hour} o'clock`, audio: hanzi, imagePath: `assets/illustrated-clocks/${hour}oclock.svg` }));
   var timeDateExpressionItems = [
     { id: "seven-oclock", hanzi: "\u4E03\u70B9", pinyin: "q\u012B di\u01CEn", english: "7:00", audio: "\u4E03\u70B9" },
     { id: "quarter-past-seven", hanzi: "\u4E03\u70B9\u4E00\u523B", pinyin: "q\u012B di\u01CEn y\u012B k\xE8", english: "7:15", audio: "\u4E03\u70B9\u4E00\u523B" },
@@ -29783,7 +29783,7 @@
       enTitle: "Time & Daily Life",
       hint: "Week, time, dates, routines, home, actions, requests",
       accent: "#517b8d",
-      iconSrc: "assets/illustrated-clocks/10oclock.webp",
+      iconSrc: "assets/illustrated-clocks/10oclock.svg",
       topicIds: ["weekdays", "time-date", "dates", "comparisons", "positions", "transport", "daily-life", "everyday-actions", "requests-permission", "is-it"]
     },
     {

@@ -219,6 +219,8 @@ Do not mark a workstream complete because its shared code changed. Completion re
 
 ### 2026-08-29
 
+- Corrected the source-report scope for Note 60: “玩具火车” is a TTS audio-quality regeneration issue, not a visual-asset request. It belongs to SYS-03 audio asset QA.
+
 - SYS-06: added the shared `practice-compact-split` layout for Toys, Hobbies at Home / Leisure, and Ask, Is It; My Body now uses the same left-art/right-options principle at wider widths. Request & Permission remains single-column because its builder already sits inside a half-width practice panel. Matching cards in shared lesson practice render Chinese, pinyin, and English on one compact row where available. The game-description style is shared and reduced across practice pages.
 
 - Created the worklog from the 70-note Bug report and its classification.

@@ -83,7 +83,6 @@ In that binary view, Notes 14 and 48 are counted as page-specific, and Note 31 a
 - **Note 35** — Classroom: replace the “电视” image.
 - **Note 39** — School Subject: make Review Session 2/3/4 titles reflect their different sentence patterns.
 - **Note 42** — Food and Drink → Build a Sentence: retain simple Chinese habit expressions and revise English translations to general-habit wording.
-- **Note 60** — Toys: regenerate the “玩具火车” visual asset.
 - **Note 63** — Toys → Look and Choose: use a left-picture/right-choices layout to reduce scrolling.
 - **Note 66** — Music and Movement → Build a Question: make the picture follow the current question.
 - **Note 67** — Hobbies at Home → Look and Choose: use the compact side-by-side layout and make picture/question shuffling work.
@@ -136,7 +135,7 @@ This should be treated as one reusable exercise-audio capability with page-level
 
 ### Audio quality and asset QA
 
-**Notes 3, 5, 11, 20, 23, 26, 27, 33, 37, 41, 44, 49, 51, 57, 58, 61, 64, 65, and 68** are local asset defects, but together suggest a common QA checklist for:
+**Notes 3, 5, 11, 20, 23, 26, 27, 33, 37, 41, 44, 49, 51, 57, 58, 60, 61, 64, 65, and 68** are local audio-asset defects, but together suggest a common QA checklist for:
 
 - leading and trailing silence;
 - word-internal pauses;
@@ -157,7 +156,7 @@ This should be treated as one reusable exercise-audio capability with page-level
 
 1. **Playback engine and shared game behavior** — Notes 2, 6, 14 (volume portion), 15, 21, 25, 45, 48 (volume portion), 50 (skip behavior).
 2. **Reusable deterministic-TTS support** — Notes 24, 30, 32, 34, 38, 40, 47, 50, 52–55; then evaluate Note 36 against the same audio architecture.
-3. **Page-level audio asset repairs** — Notes 1, 3–5, 7, 11, 17–20, 23, 26, 27, 33, 37, 41, 44, 46, 49, 51, 57, 58, 61, 64, 65, 68.
+3. **Page-level audio asset repairs** — Notes 1, 3–5, 7, 11, 17–20, 23, 26, 27, 33, 37, 41, 44, 46, 49, 51, 57, 58, 60, 61, 64, 65, 68.
 4. **Responsive layout and shared typography** — Notes 9, 10, 22, 28, 29, 31, 56, 63, 67, 70.
-5. **Page content and visual assets** — Notes 8, 12, 13, 16, 35, 39, 42, 60, 66, 69, 70.
+5. **Page content and visual assets** — Notes 8, 12, 13, 16, 35, 39, 42, 66, 69, 70.
 6. **Exercise-specific voice strategy** — Notes 36, 43, 59, and 62, which use dynamic sentence composition and should not automatically follow the deterministic full-sentence rule.
