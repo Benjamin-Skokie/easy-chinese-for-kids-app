@@ -2344,9 +2344,9 @@ test("Body adds a no-repeat spotlight-and-choose practice without duplicating it
   assert.match(foundationsSource, /data-body-spotlight-guess/);
   assert.match(foundationsSource, /bodySpotlightRegions/);
   assert.match(foundationsSource, /function ensureBodySpotlightRound\(\)[\s\S]{0,240}bodySpotlightRegions\[prompt\.id\]/);
-  assert.match(foundationsSource, /forehead: \{ x: 50, y: 22, width: 22, height: 8 \}/);
-  assert.match(foundationsSource, /neck: \{ x: 50, y: 43, width: 15, height: 7 \}/);
-  assert.match(foundationsSource, /arm: \{ x: 73, y: 53, width: 16, height: 23 \}/);
+  assert.match(foundationsSource, /forehead: \{ x: 50, y: 20, width: 22, height: 6 \}/);
+  assert.match(foundationsSource, /neck: \{ x: 50, y: 41, width: 15, height: 7 \}/);
+  assert.match(foundationsSource, /arm: \{ x: 70, y: 55, width: 16, height: 23, rotation: -30 \}/);
   assert.match(foundationsSource, /leg: \{ x: 43, y: 76, width: 18, height: 25 \}/);
   assert.match(foundationsSource, /ears: \{ x: 28, y: 31\.5, width: 13, height: 13 \}/);
   assert.doesNotMatch(foundationsSource, /body-listen-hotspot/);

@@ -24998,15 +24998,15 @@
       renderActivityPanel2(currentTopic2());
     }
     const bodySpotlightRegions = {
-      head: { x: 50, y: 24, width: 46, height: 22 },
-      forehead: { x: 50, y: 22, width: 22, height: 8 },
+      head: { x: 50, y: 24, width: 42.9, height: 28.6 },
+      forehead: { x: 50, y: 20, width: 22, height: 6 },
       hair: { x: 50, y: 15, width: 31, height: 13 },
       eyes: { x: 41, y: 29, width: 15, height: 10 },
       ears: { x: 28, y: 31.5, width: 13, height: 13 },
       nose: { x: 50, y: 32, width: 12, height: 9 },
       mouth: { x: 50, y: 36.5, width: 17, height: 8 },
-      neck: { x: 50, y: 43, width: 15, height: 7 },
-      arm: { x: 73, y: 53, width: 16, height: 23 },
+      neck: { x: 50, y: 41, width: 15, height: 7 },
+      arm: { x: 70, y: 55, width: 16, height: 23, rotation: -30 },
       hand: { x: 27, y: 61, width: 17, height: 13 },
       leg: { x: 43, y: 76, width: 18, height: 25 },
       foot: { x: 36.5, y: 87.5, width: 18, height: 13 }
@@ -25028,7 +25028,7 @@
     <figure class="body-listen-visual">
       <div class="body-listen-scene-card">
         <img class="body-listen-image" src="assets/body/body-topic-kid-largehead.webp" alt="Cartoon child for body parts practice">
-        ${region ? `<span class="body-spotlight-window" style="--body-spotlight-x: ${region.x}%; --body-spotlight-y: ${region.y}%; --body-spotlight-width: ${region.width}%; --body-spotlight-height: ${region.height}%;" aria-hidden="true"></span>` : ""}
+        ${region ? `<span class="body-spotlight-window" style="--body-spotlight-x: ${region.x}%; --body-spotlight-y: ${region.y}%; --body-spotlight-width: ${region.width}%; --body-spotlight-height: ${region.height}%; --body-indicator-rotation: ${region.rotation || 0}deg;" aria-hidden="true"></span>` : ""}
       </div>
     </figure>`;
       activityPanelTitle2.textContent = "Let's practice";

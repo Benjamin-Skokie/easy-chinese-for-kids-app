@@ -8496,7 +8496,7 @@ h4 {
   left: var(--body-spotlight-x);
   width: var(--body-spotlight-width);
   height: var(--body-spotlight-height);
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) rotate(var(--body-indicator-rotation, 0deg));
   border: 2px solid rgba(255, 255, 255, 0.92);
   border-radius: 50%;
   background: transparent;
@@ -8863,11 +8863,11 @@ h4 {
 @keyframes bodyPulse {
   0%,
   100% {
-    transform: translate(-50%, -50%) scale(1);
+    transform: translate(-50%, -50%) rotate(var(--body-indicator-rotation, 0deg)) scale(1);
   }
 
   50% {
-    transform: translate(-50%, -50%) scale(1.08);
+    transform: translate(-50%, -50%) rotate(var(--body-indicator-rotation, 0deg)) scale(1.08);
   }
 }
 
@@ -8879,7 +8879,7 @@ h4 {
 }
 
 .body-part-indicator-forehead {
-  top: 20.5%;
+  top: 18.5%;
   left: 50%;
   width: 116px;
   height: 44px;
@@ -8900,8 +8900,8 @@ h4 {
 }
 
 .body-part-indicator-ears {
-  top: 32.5%;
-  left: 27%;
+  top: 32%;
+  left: 29%;
 }
 
 .body-part-indicator-nose {
@@ -8917,7 +8917,7 @@ h4 {
 }
 
 .body-part-indicator-neck {
-  top: 40%;
+  top: 41%;
   left: 50%;
   width: 44px;
   height: 24px;
@@ -8931,22 +8931,23 @@ h4 {
 }
 
 .body-part-indicator-arm {
-  top: 56.3%;
-  left: 24.8%;
+  top: 58.3%;
+  left: 26.8%;
   width: 48px;
   height: 92px;
+  --body-indicator-rotation: 30deg;
 }
 
 .body-part-indicator-leg {
   top: 79%;
-  left: 45%;
+  left: 42%;
   width: 62px;
   height: 118px;
 }
 
 .body-part-indicator-foot {
   top: 88.8%;
-  left: 34.5%;
+  left: 36.5%;
   width: 76px;
   height: 46px;
 }
