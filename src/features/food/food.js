@@ -67,10 +67,10 @@ export const foodTopicData = {
 };
 
 export const foodSentenceBuilds = [
-    { id: "apple", imagePath: "assets/illustrated-food/apple.webp", target: ["我", "吃", "苹果"], distractors: ["喝", "学校", "教室"], pinyin: "wǒ chī píng guǒ.", english: "I eat an apple.", audio: "我吃苹果", lessonSources: ["1b:7"] },
-    { id: "banana", imagePath: "assets/illustrated-food/banana.webp", target: ["我", "吃", "香蕉"], distractors: ["喝", "学校", "教室"], pinyin: "wǒ chī xiāng jiāo.", english: "I eat a banana.", audio: "我吃香蕉", lessonSources: ["1b:7"] },
+    { id: "apple", imagePath: "assets/illustrated-food/apple.webp", target: ["我", "吃", "苹果"], distractors: ["喝", "学校", "教室"], pinyin: "wǒ chī píng guǒ.", english: "I eat apples.", audio: "我吃苹果", lessonSources: ["1b:7"] },
+    { id: "banana", imagePath: "assets/illustrated-food/banana.webp", target: ["我", "吃", "香蕉"], distractors: ["喝", "学校", "教室"], pinyin: "wǒ chī xiāng jiāo.", english: "I eat bananas.", audio: "我吃香蕉", lessonSources: ["1b:7"] },
     { id: "cake", imagePath: "assets/illustrated-food/cake.webp", target: ["我", "吃", "蛋糕"], distractors: ["喝", "学校", "教室"], pinyin: "wǒ chī dàn gāo.", english: "I eat cake.", audio: "我吃蛋糕", lessonSources: ["2b:7"] },
-    { id: "carrot", imagePath: "assets/illustrated-food/carrot.webp", target: ["我", "吃", "胡萝卜"], distractors: ["喝", "学校", "教室"], pinyin: "wǒ chī hú luó bo.", english: "I eat a carrot.", audio: "我吃胡萝卜", lessonSources: ["3b:6"] },
+    { id: "carrot", imagePath: "assets/illustrated-food/carrot.webp", target: ["我", "吃", "胡萝卜"], distractors: ["喝", "学校", "教室"], pinyin: "wǒ chī hú luó bo.", english: "I eat carrots.", audio: "我吃胡萝卜", lessonSources: ["3b:6"] },
     { id: "milk", imagePath: "assets/illustrated-food/milk.webp", target: ["我", "喝", "牛奶"], distractors: ["吃", "学校", "教室"], pinyin: "wǒ hē niú nǎi.", english: "I drink milk.", audio: "我喝牛奶" },
     { id: "juice", imagePath: "assets/illustrated-food/juice.webp", target: ["我", "喝", "果汁"], distractors: ["吃", "学校", "教室"], pinyin: "wǒ hē guǒ zhī.", english: "I drink juice.", audio: "我喝果汁" },
     { id: "cola", imagePath: "assets/illustrated-food/cola.webp", target: ["我", "喝", "可乐"], distractors: ["吃", "学校", "教室"], pinyin: "wǒ hē kě lè.", english: "I drink Coke.", audio: "我喝可乐" },

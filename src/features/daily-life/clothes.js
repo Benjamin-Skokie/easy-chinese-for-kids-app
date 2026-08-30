@@ -7,10 +7,10 @@ export const clothesBookWords = [
   { id: "dress", hanzi: "裙子", pinyin: "qún zi", english: "skirt", audio: "裙子", imagePath: "assets/illustrated-everyday-life/skirt.webp", lessonSources: ["3a:7"] },
   { id: "leather-shoes", hanzi: "皮鞋", pinyin: "pí xié", english: "leather shoes", audio: "皮鞋", imagePath: "assets/illustrated-everyday-life/leather-shoes.webp?v=5bfc063", lessonSources: ["3a:7"] },
   { id: "t-shirt", hanzi: "T恤", pinyin: "T xù", english: "T-shirt", audio: "T恤", imagePath: "assets/illustrated-everyday-life/clothes.webp", lessonSources: ["4b:2"] },
-  { id: "shorts", hanzi: "短裤", pinyin: "duǎn kù", english: "shorts", audio: "短裤", imagePath: "assets/illustrated-everyday-life/pants.webp", lessonSources: ["4b:2"] },
+  { id: "shorts", hanzi: "短裤", pinyin: "duǎn kù", english: "shorts", audio: "短裤", imagePath: "assets/illustrated-weather/shorts.webp", lessonSources: ["4b:2"] },
   { id: "sweater", hanzi: "毛衣", pinyin: "máo yī", english: "sweater", audio: "毛衣", imagePath: "assets/illustrated-everyday-life/sweater.webp?v=5bfc063", lessonSources: ["4b:2"] },
   { id: "long-pants", hanzi: "长裤", pinyin: "cháng kù", english: "long pants", audio: "长裤", imagePath: "assets/illustrated-everyday-life/pants.webp", lessonSources: ["4b:2"] },
-  { id: "coat", hanzi: "大衣", pinyin: "dà yī", english: "coat", audio: "大衣", imagePath: "assets/illustrated-everyday-life/jacket.webp", lessonSources: ["4b:2"] },
+  { id: "coat", hanzi: "大衣", pinyin: "dà yī", english: "coat", audio: "大衣", imagePath: "assets/illustrated-everyday-life/coat.webp", lessonSources: ["4b:2"] },
   { id: "hat", hanzi: "帽子", pinyin: "mào zi", english: "hat", audio: "帽子", imagePath: "assets/illustrated-everyday-life/hat.webp", lessonSources: ["4b:2"] }
 ];
 

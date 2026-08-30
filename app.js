@@ -20592,7 +20592,7 @@
       },
       {
         id: "go-to-music",
-        label: "Music class",
+        label: "Going to class",
         hanzi: "\u6211\u53BB\u4E0A\u97F3\u4E50\u8BFE\u3002",
         pinyin: "w\u01D2 q\xF9 sh\xE0ng y\u012Bn yu\xE8 k\xE8.",
         english: "I am going to music class.",
@@ -20601,7 +20601,7 @@
       },
       {
         id: "in-music",
-        label: "Music class",
+        label: "In class",
         hanzi: "\u6211\u5728\u4E0A\u97F3\u4E50\u8BFE\u3002",
         pinyin: "w\u01D2 z\xE0i sh\xE0ng y\u012Bn yu\xE8 k\xE8.",
         english: "I am in music class.",
@@ -20610,7 +20610,7 @@
       },
       {
         id: "likes-music",
-        label: "Music class",
+        label: "Liking a class",
         hanzi: "\u6211\u559C\u6B22\u97F3\u4E50\u8BFE\u3002",
         pinyin: "w\u01D2 x\u01D0 huan y\u012Bn yu\xE8 k\xE8.",
         english: "I like music class.",
@@ -21772,10 +21772,10 @@
     ]
   };
   var foodSentenceBuilds = [
-    { id: "apple", imagePath: "assets/illustrated-food/apple.webp", target: ["\u6211", "\u5403", "\u82F9\u679C"], distractors: ["\u559D", "\u5B66\u6821", "\u6559\u5BA4"], pinyin: "w\u01D2 ch\u012B p\xEDng gu\u01D2.", english: "I eat an apple.", audio: "\u6211\u5403\u82F9\u679C", lessonSources: ["1b:7"] },
-    { id: "banana", imagePath: "assets/illustrated-food/banana.webp", target: ["\u6211", "\u5403", "\u9999\u8549"], distractors: ["\u559D", "\u5B66\u6821", "\u6559\u5BA4"], pinyin: "w\u01D2 ch\u012B xi\u0101ng ji\u0101o.", english: "I eat a banana.", audio: "\u6211\u5403\u9999\u8549", lessonSources: ["1b:7"] },
+    { id: "apple", imagePath: "assets/illustrated-food/apple.webp", target: ["\u6211", "\u5403", "\u82F9\u679C"], distractors: ["\u559D", "\u5B66\u6821", "\u6559\u5BA4"], pinyin: "w\u01D2 ch\u012B p\xEDng gu\u01D2.", english: "I eat apples.", audio: "\u6211\u5403\u82F9\u679C", lessonSources: ["1b:7"] },
+    { id: "banana", imagePath: "assets/illustrated-food/banana.webp", target: ["\u6211", "\u5403", "\u9999\u8549"], distractors: ["\u559D", "\u5B66\u6821", "\u6559\u5BA4"], pinyin: "w\u01D2 ch\u012B xi\u0101ng ji\u0101o.", english: "I eat bananas.", audio: "\u6211\u5403\u9999\u8549", lessonSources: ["1b:7"] },
     { id: "cake", imagePath: "assets/illustrated-food/cake.webp", target: ["\u6211", "\u5403", "\u86CB\u7CD5"], distractors: ["\u559D", "\u5B66\u6821", "\u6559\u5BA4"], pinyin: "w\u01D2 ch\u012B d\xE0n g\u0101o.", english: "I eat cake.", audio: "\u6211\u5403\u86CB\u7CD5", lessonSources: ["2b:7"] },
-    { id: "carrot", imagePath: "assets/illustrated-food/carrot.webp", target: ["\u6211", "\u5403", "\u80E1\u841D\u535C"], distractors: ["\u559D", "\u5B66\u6821", "\u6559\u5BA4"], pinyin: "w\u01D2 ch\u012B h\xFA lu\xF3 bo.", english: "I eat a carrot.", audio: "\u6211\u5403\u80E1\u841D\u535C", lessonSources: ["3b:6"] },
+    { id: "carrot", imagePath: "assets/illustrated-food/carrot.webp", target: ["\u6211", "\u5403", "\u80E1\u841D\u535C"], distractors: ["\u559D", "\u5B66\u6821", "\u6559\u5BA4"], pinyin: "w\u01D2 ch\u012B h\xFA lu\xF3 bo.", english: "I eat carrots.", audio: "\u6211\u5403\u80E1\u841D\u535C", lessonSources: ["3b:6"] },
     { id: "milk", imagePath: "assets/illustrated-food/milk.webp", target: ["\u6211", "\u559D", "\u725B\u5976"], distractors: ["\u5403", "\u5B66\u6821", "\u6559\u5BA4"], pinyin: "w\u01D2 h\u0113 ni\xFA n\u01CEi.", english: "I drink milk.", audio: "\u6211\u559D\u725B\u5976" },
     { id: "juice", imagePath: "assets/illustrated-food/juice.webp", target: ["\u6211", "\u559D", "\u679C\u6C41"], distractors: ["\u5403", "\u5B66\u6821", "\u6559\u5BA4"], pinyin: "w\u01D2 h\u0113 gu\u01D2 zh\u012B.", english: "I drink juice.", audio: "\u6211\u559D\u679C\u6C41" },
     { id: "cola", imagePath: "assets/illustrated-food/cola.webp", target: ["\u6211", "\u559D", "\u53EF\u4E50"], distractors: ["\u5403", "\u5B66\u6821", "\u6559\u5BA4"], pinyin: "w\u01D2 h\u0113 k\u011B l\xE8.", english: "I drink Coke.", audio: "\u6211\u559D\u53EF\u4E50" },
@@ -21961,7 +21961,7 @@
       }
     ],
     wordGroups: [
-      { id: "lunch", hanzi: "\u5348\u996D", english: "My Lunch", lessonSources: ["4a:5"], items: [["fried-noodles", "\u7092\u9762", "ch\u01CEo mi\xE0n", "fried noodles", "assets/illustrated-food/chow-mein.webp"], ["fries", "\u85AF\u6761", "sh\u01D4 ti\xE1o", "French fries", "assets/illustrated-food/french-fries.webp"], ["hot-dog", "\u70ED\u72D7", "r\xE8 g\u01D2u", "hot dog", "assets/illustrated-food/hot-dog.webp"], ["sandwich", "\u4E09\u660E\u6CBB", "s\u0101n m\xEDng zh\xEC", "sandwich", "assets/illustrated-food/sandwich.webp"], ["pizza", "\u62AB\u8428\u997C", "p\u012B s\xE0 b\u01D0ng", "pizza", "assets/illustrated-food/pizza.webp"]] },
+      { id: "lunch", hanzi: "\u5348\u996D", english: "My Lunch", lessonSources: ["4a:5"], items: [["fried-noodles", "\u7092\u9762", "ch\u01CEo mi\xE0n", "fried noodles", "assets/illustrated-food/chow-mein.webp"], ["fries", "\u85AF\u6761", "sh\u01D4 ti\xE1o", "French fries", "assets/illustrated-food/french-fries.webp"], ["hot-dog", "\u70ED\u72D7", "r\xE8 g\u01D2u", "hot dog", "assets/illustrated-food/hot-dog.webp"], ["sandwich", "\u4E09\u660E\u6CBB", "s\u0101n m\xEDng zh\xEC", "sandwich", "assets/illustrated-food/sandwich.webp"], ["pizza", "\u62AB\u8428", "p\u012B s\xE0", "pizza", "assets/illustrated-food/pizza.webp"]] },
       { id: "feelings", hanzi: "\u997F\u4E86\u548C\u6E34\u4E86", english: "Hungry & Thirsty", lessonSources: ["4a:7"], items: [["hungry", "\u997F", "\xE8", "hungry", "assets/illustrated-food-feelings/hungry.webp"], ["thirsty", "\u6E34", "k\u011B", "thirsty", "assets/illustrated-food-feelings/thirsty.webp"], ["want", "\u8981", "y\xE0o", "want", "assets/illustrated-food-feelings/want-eat-fried-rice-landscape.webp"], ["fried-rice", "\u7092\u996D", "ch\u01CEo f\xE0n", "fried rice", "assets/illustrated-food/fried-rice.webp"], ["coke", "\u53EF\u4E50", "k\u011B l\xE8", "Coke", "assets/illustrated-food/cola.webp"], ["delicious", "\u597D\u5403", "h\u01CEo ch\u012B", "delicious", "assets/illustrated-food-feelings/delicious-fried-rice.webp"], ["full", "\u9971", "b\u01CEo", "full", "assets/illustrated-food-feelings/full.webp"]] }
     ],
     practiceItems: [
@@ -22964,8 +22964,7 @@
     focusItems: [
       { id: "is", hanzi: "\u662F", pinyin: "sh\xEC", english: "is; yes", audio: "\u662F" },
       { id: "is-not", hanzi: "\u4E0D\u662F", pinyin: "b\xFA sh\xEC", english: "is not; no", audio: "\u4E0D\u662F" },
-      { id: "package", hanzi: "\u5305\u88F9", pinyin: "b\u0101o gu\u01D2", english: "package", audio: "\u5305\u88F9" },
-      { id: "younger-sister", hanzi: "\u59B9\u59B9", pinyin: "m\xE8i mei", english: "younger sister", audio: "\u59B9\u59B9" }
+      { id: "package", hanzi: "\u5305\u88F9", pinyin: "b\u0101o gu\u01D2", english: "package", audio: "\u5305\u88F9" }
     ],
     interactiveScene: "is-it-contrast",
     parentGuide: "Point to a familiar object and ask \u8FD9\u662F\u4E0D\u662F\u2026\uFF1F Let the child answer \u662F or \u4E0D\u662F before naming what it really is.",
@@ -23837,10 +23836,10 @@
     { id: "dress", hanzi: "\u88D9\u5B50", pinyin: "q\xFAn zi", english: "skirt", audio: "\u88D9\u5B50", imagePath: "assets/illustrated-everyday-life/skirt.webp", lessonSources: ["3a:7"] },
     { id: "leather-shoes", hanzi: "\u76AE\u978B", pinyin: "p\xED xi\xE9", english: "leather shoes", audio: "\u76AE\u978B", imagePath: "assets/illustrated-everyday-life/leather-shoes.webp?v=5bfc063", lessonSources: ["3a:7"] },
     { id: "t-shirt", hanzi: "T\u6064", pinyin: "T x\xF9", english: "T-shirt", audio: "T\u6064", imagePath: "assets/illustrated-everyday-life/clothes.webp", lessonSources: ["4b:2"] },
-    { id: "shorts", hanzi: "\u77ED\u88E4", pinyin: "du\u01CEn k\xF9", english: "shorts", audio: "\u77ED\u88E4", imagePath: "assets/illustrated-everyday-life/pants.webp", lessonSources: ["4b:2"] },
+    { id: "shorts", hanzi: "\u77ED\u88E4", pinyin: "du\u01CEn k\xF9", english: "shorts", audio: "\u77ED\u88E4", imagePath: "assets/illustrated-weather/shorts.webp", lessonSources: ["4b:2"] },
     { id: "sweater", hanzi: "\u6BDB\u8863", pinyin: "m\xE1o y\u012B", english: "sweater", audio: "\u6BDB\u8863", imagePath: "assets/illustrated-everyday-life/sweater.webp?v=5bfc063", lessonSources: ["4b:2"] },
     { id: "long-pants", hanzi: "\u957F\u88E4", pinyin: "ch\xE1ng k\xF9", english: "long pants", audio: "\u957F\u88E4", imagePath: "assets/illustrated-everyday-life/pants.webp", lessonSources: ["4b:2"] },
-    { id: "coat", hanzi: "\u5927\u8863", pinyin: "d\xE0 y\u012B", english: "coat", audio: "\u5927\u8863", imagePath: "assets/illustrated-everyday-life/jacket.webp", lessonSources: ["4b:2"] },
+    { id: "coat", hanzi: "\u5927\u8863", pinyin: "d\xE0 y\u012B", english: "coat", audio: "\u5927\u8863", imagePath: "assets/illustrated-everyday-life/coat.webp", lessonSources: ["4b:2"] },
     { id: "hat", hanzi: "\u5E3D\u5B50", pinyin: "m\xE0o zi", english: "hat", audio: "\u5E3D\u5B50", imagePath: "assets/illustrated-everyday-life/hat.webp", lessonSources: ["4b:2"] }
   ];
   var clothesTopic = {
@@ -27183,7 +27182,7 @@
   var weatherOutfitScenes = [
     { id: "rainy-outfit", title: "Rainy day", imagePath: "assets/illustrated-clothes/weather-outfits/rainy-lele.webp", imageAlt: "Lele wearing a yellow raincoat and rain boots in the rain", lines: [{ hanzi: "\u4E0B\u96E8\u4E86\u3002", pinyin: "xi\xE0 y\u01D4 le.", english: "It is raining.", audio: "\u4E0B\u96E8\u4E86" }, { hanzi: "\u4E50\u4E50\u7A7F\u96E8\u8863\u548C\u96E8\u978B\u3002", pinyin: "l\xE8 le chu\u0101n y\u01D4 y\u012B h\xE9 y\u01D4 xi\xE9.", english: "Lele wears a raincoat and rain boots.", audio: "\u4E50\u4E50\u7A7F\u96E8\u8863\u548C\u96E8\u978B" }] },
     { id: "sunny-outfit", title: "Sunny day", imagePath: "assets/illustrated-clothes/weather-outfits/sunny-luna.webp", imageAlt: "Luna wearing a T-shirt and shorts on a sunny day", lines: [{ hanzi: "\u4ECA\u5929\u662F\u6674\u5929\uFF0C\u5929\u6C14\u5F88\u70ED\u3002", pinyin: "j\u012Bn ti\u0101n sh\xEC q\xEDng ti\u0101n, ti\u0101n q\xEC h\u011Bn r\xE8.", english: "Today is sunny and hot.", audio: "\u4ECA\u5929\u662F\u6674\u5929\u5929\u6C14\u5F88\u70ED" }, { hanzi: "\u9732\u5A1C\u7A7FT\u6064\u548C\u77ED\u88E4\u3002", pinyin: "l\xF9 n\xE0 chu\u0101n T x\xF9 h\xE9 du\u01CEn k\xF9.", english: "Luna wears a T-shirt and shorts.", audio: "\u9732\u5A1C\u7A7FT\u6064\u548C\u77ED\u88E4" }] },
-    { id: "snowy-outfit", title: "Snowy day", imagePath: "assets/illustrated-clothes/weather-outfits/snowy-noah-winter-gear.webp", imageAlt: "Noah wearing a coat, hat, scarf, gloves, and long pants in the snow", lines: [{ hanzi: "\u4E0B\u96EA\u4E86\uFF0C\u5929\u6C14\u5F88\u51B7\u3002", pinyin: "xi\xE0 xu\u011B le, ti\u0101n q\xEC h\u011Bn l\u011Bng.", english: "It is snowing and cold.", audio: "\u4E0B\u96EA\u4E86\u5929\u6C14\u5F88\u51B7" }, { hanzi: "\u8BFA\u4E9A\u6234\u5E3D\u5B50\u3001\u56F4\u5DFE\u548C\u624B\u5957\uFF0C\u7A7F\u5916\u5957\u548C\u957F\u88E4\u3002", pinyin: "nu\xF2 y\xE0 d\xE0i m\xE0o zi, w\xE9i j\u012Bn h\xE9 sh\u01D2u t\xE0o, chu\u0101n w\xE0i t\xE0o h\xE9 ch\xE1ng k\xF9.", english: "Noah wears a hat, scarf, and gloves, with a coat and long pants.", audio: "\u8BFA\u4E9A\u6234\u5E3D\u5B50\u56F4\u5DFE\u548C\u624B\u5957\u7A7F\u5916\u5957\u548C\u957F\u88E4" }] },
+    { id: "snowy-outfit", title: "Snowy day", imagePath: "assets/illustrated-clothes/weather-outfits/snowy-noah-winter-gear.webp", imageAlt: "Noah wearing a coat, hat, scarf, and gloves in the snow", lines: [{ hanzi: "\u4E0B\u96EA\u4E86\uFF0C\u5929\u6C14\u5F88\u51B7\u3002", pinyin: "xi\xE0 xu\u011B le, ti\u0101n q\xEC h\u011Bn l\u011Bng.", english: "It is snowing and cold.", audio: "\u4E0B\u96EA\u4E86\u5929\u6C14\u5F88\u51B7" }, { hanzi: "\u8BFA\u4E9A\u7A7F\u5916\u5957\uFF0C\u6234\u5E3D\u5B50\u3001\u56F4\u5DFE\u548C\u624B\u5957\u3002", pinyin: "nu\xF2 y\xE0 chu\u0101n w\xE0i t\xE0o, d\xE0i m\xE0o zi, w\xE9i j\u012Bn h\xE9 sh\u01D2u t\xE0o.", english: "Noah wears a coat, hat, scarf, and gloves.", audio: "\u8BFA\u4E9A\u7A7F\u5916\u5957\u6234\u5E3D\u5B50\u56F4\u5DFE\u548C\u624B\u5957" }] },
     { id: "windy-outfit", title: "Windy day", imagePath: "assets/illustrated-clothes/weather-outfits/windy-sophie.webp", imageAlt: "Sophie wearing a coat, long pants, and knit hat on a windy day", lines: [{ hanzi: "\u4ECA\u5929\u522E\u5927\u98CE\u3002", pinyin: "j\u012Bn ti\u0101n gu\u0101 d\xE0 f\u0113ng.", english: "It is very windy today.", audio: "\u4ECA\u5929\u522E\u5927\u98CE" }, { hanzi: "\u82CF\u83F2\u7A7F\u957F\u88E4\u548C\u5927\u8863\uFF0C\u6234\u5E3D\u5B50\u3002", pinyin: "s\u016B f\u0113i chu\u0101n ch\xE1ng k\xF9 h\xE9 d\xE0 y\u012B, d\xE0i m\xE0o zi.", english: "Sophie wears long pants and a coat, with a hat.", audio: "\u82CF\u83F2\u7A7F\u957F\u88E4\u548C\u5927\u8863\u6234\u5E3D\u5B50" }] }
   ];
   var natureLesson = {

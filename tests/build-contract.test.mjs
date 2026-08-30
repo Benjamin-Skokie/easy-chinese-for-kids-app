@@ -1619,6 +1619,9 @@ test("school subjects owns its scenes, words, and sentence practice", () => {
   assert.equal(schoolSubjectsTopicData.scenes.length, 6);
   assert.equal(schoolSubjectsTopicData.words.length, 6);
   assert.equal(schoolSubjectsSentenceBuilds.length, 6);
+  assert.equal(schoolSubjectsTopicData.scenes.find((scene) => scene.id === "go-to-music")?.label, "Going to class");
+  assert.equal(schoolSubjectsTopicData.scenes.find((scene) => scene.id === "in-music")?.label, "In class");
+  assert.equal(schoolSubjectsTopicData.scenes.find((scene) => scene.id === "likes-music")?.label, "Liking a class");
 });
 
 test("food owns its scenes, words, and sentence practice", () => {
@@ -1650,6 +1653,9 @@ test("Food enrichment builds eat and drink sentences from individual pictures", 
   assert.match(foodData, /id: "apple", imagePath: "assets\/illustrated-food\/apple\.webp"/);
   assert.match(foodData, /id: "banana", imagePath: "assets\/illustrated-food\/banana\.webp"/);
   assert.match(foodData, /id: "carrot", imagePath: "assets\/illustrated-food\/carrot\.webp"/);
+  assert.match(foodData, /id: "apple"[\s\S]{0,240}english: "I eat apples\."/);
+  assert.match(foodData, /id: "banana"[\s\S]{0,240}english: "I eat bananas\."/);
+  assert.match(foodData, /id: "carrot"[\s\S]{0,240}english: "I eat carrots\."/);
   assert.match(foodData, /id: "cola", imagePath: "assets\/illustrated-food\/cola\.webp"[\s\S]{0,180}我喝可乐/);
   assert.doesNotMatch(foodData, /id: "cola"[\s\S]{0,260}lessonSources/);
   const foodRuntime = readFileSync("src/features/school-life/school-food-runtime.js", "utf8");
@@ -1734,6 +1740,7 @@ test("Is It is an explicit enrichment topic with visual yes-or-no practice", () 
   assert.equal(isItTopic.interactiveScene, "is-it-contrast");
   assert.equal(isItScene.imagePath, "assets/illustrated-grammar/shi-bu-shi-meimei-package.webp");
   assert.deepEqual(isItPracticeRounds.map((round) => round.panel), ["left", "right"]);
+  assert.ok(!isItTopic.focusItems.some((word) => word.hanzi === "妹妹"));
   assert.ok(topicData.includes(isItTopic));
   assert.ok(topicGroups.find((group) => group.id === "daily-world")?.topicIds.includes("is-it"));
   assert.ok(learningHomeCategories.find((category) => category.id === "time-daily")?.topicIds.includes("is-it"));

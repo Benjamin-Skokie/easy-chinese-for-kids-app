@@ -11,7 +11,7 @@ export const schoolSubjectsTopicData = {
       },
       {
         id: "go-to-music",
-        label: "Music class",
+        label: "Going to class",
         hanzi: "我去上音乐课。",
         pinyin: "wǒ qù shàng yīn yuè kè.",
         english: "I am going to music class.",
@@ -20,7 +20,7 @@ export const schoolSubjectsTopicData = {
       },
       {
         id: "in-music",
-        label: "Music class",
+        label: "In class",
         hanzi: "我在上音乐课。",
         pinyin: "wǒ zài shàng yīn yuè kè.",
         english: "I am in music class.",
@@ -29,7 +29,7 @@ export const schoolSubjectsTopicData = {
       },
       {
         id: "likes-music",
-        label: "Music class",
+        label: "Liking a class",
         hanzi: "我喜欢音乐课。",
         pinyin: "wǒ xǐ huan yīn yuè kè.",
         english: "I like music class.",

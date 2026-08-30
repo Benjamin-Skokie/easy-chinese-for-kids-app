@@ -16,8 +16,7 @@ export const isItTopic = {
   focusItems: [
     { id: "is", hanzi: "是", pinyin: "shì", english: "is; yes", audio: "是" },
     { id: "is-not", hanzi: "不是", pinyin: "bú shì", english: "is not; no", audio: "不是" },
-    { id: "package", hanzi: "包裹", pinyin: "bāo guǒ", english: "package", audio: "包裹" },
-    { id: "younger-sister", hanzi: "妹妹", pinyin: "mèi mei", english: "younger sister", audio: "妹妹" }
+    { id: "package", hanzi: "包裹", pinyin: "bāo guǒ", english: "package", audio: "包裹" }
   ],
   interactiveScene: "is-it-contrast",
   parentGuide: "Point to a familiar object and ask 这是不是…？ Let the child answer 是 or 不是 before naming what it really is.",
