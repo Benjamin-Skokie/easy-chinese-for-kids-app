@@ -669,6 +669,13 @@ test("culture is an in-page landing view with category cards and no duplicate cu
   assert.equal(bookIdFromLocation({ search: "?book=9z", hash: "#book-lessons-9z" }, books), null);
 });
 
+test("Culture category headers stay compact on phones", () => {
+  const stylesSource = readFileSync("styles.css", "utf8");
+  assert.match(stylesSource, /@media \(max-width: 520px\) \{[\s\S]*?\.culture-category-section \.cat-head \{[\s\S]{0,220}grid-template-columns: 56px minmax\(0, 1fr\);[\s\S]{0,220}flex-wrap: nowrap;/);
+  assert.match(stylesSource, /\.culture-category-section \.cat-head > div:not\(\.culture-level-picker\) \{[\s\S]{0,100}flex: none;/);
+  assert.match(stylesSource, /\.culture-level-picker \{[\s\S]{0,180}grid-column: 1 \/ -1;[\s\S]{0,180}min-width: 0;[\s\S]{0,120}flex: none;/);
+});
+
 test("Mulan offers complete Early Reader, Story, and Advanced readings with one saved Culture preference", () => {
   const earlySource = readFileSync("culture/content/figures/mulan/page.early.md", "utf8");
   const storySource = readFileSync("culture/content/figures/mulan/page.story.md", "utf8");

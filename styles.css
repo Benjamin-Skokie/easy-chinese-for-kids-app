@@ -10351,13 +10351,29 @@ h4 {
   }
 
   .culture-category-section .cat-head {
-    flex-direction: column;
-    gap: 8px;
+    display: grid;
+    grid-template-columns: 56px minmax(0, 1fr);
+    gap: 12px;
+    align-items: center;
+    flex-wrap: nowrap;
+  }
+
+  .culture-category-section .cat-head > div:not(.culture-level-picker) {
+    width: auto;
+    flex: none;
   }
 
   .culture-level-picker {
-    align-self: flex-end;
-    margin-left: auto;
+    grid-column: 1 / -1;
+    width: 100%;
+    min-width: 0;
+    flex: none;
+    align-self: stretch;
+    margin: 0;
+  }
+
+  .culture-level-label {
+    text-align: left;
   }
 }
 
