@@ -35,7 +35,7 @@ caption_en: This artwork places brightness and shade on one mountain. It is an i
 [en]
 Imagine climbing a mountain early in the morning. On one side of the trail, sunlight has already warmed the rocks. Around the bend, the ground is still damp and cool. Drops of dew may still cling to the grass.
 
-How can one mountain seem to have two kinds of weather?
+How can one mountain feel warm on one side and cool on the other?
 
 This is a good place to begin understanding *yin* and *yang*. In early China, *yang* could describe the sunny side of a hill. *Yin* could describe the shaded side. An ancient poem in the *Book of Songs* tells of people examining a hillside’s light and shade while also looking at its flowing springs. At first, these words were not names for mysterious powers. They described a difference that eyes could see and skin could feel.
 
@@ -111,7 +111,7 @@ Today, many people think first of a black-and-white circle. It is usually called
 
 People often read it as a picture of change. Black and white are not frozen behind a straight dividing line. They seem to turn. The dots can remind us that the beginning of one state may already be present inside another. That is a useful modern reading of the symbol.
 
-However, the idea of yin and yang is much older than the familiar swirling design. Early Chinese thinkers did not see this logo and then invent the philosophy. The order was the other way around. People thought with yin and yang for many centuries, and later scholars and artists drew different diagrams to show those relationships.
+However, the idea of yin and yang is much older than the familiar swirling design. Early Chinese thinkers did not see this logo and then invent the philosophy. The order was the other way around. For centuries, people used yin and yang to think about the world. Only later did scholars and artists draw diagrams to represent those relationships.
 
 The symbol is not a magic key that unlocks every question. Finding two colors, two temperatures, or two people who disagree does not mean we have explained anything yet. The picture should lead to better questions: How are the two sides connected? When do they change? How does each affect the other?
 [/en]
@@ -134,7 +134,7 @@ heading_en: Balance Does Not Always Mean Fifty-Fifty
 [en]
 Yin and yang are often explained with the word *balance*. That can be helpful, but balance does not mean everything must be divided into perfectly equal halves.
 
-Think about one day. After running for ten minutes, you may need to rest. After sleeping all night, you may need to get up and move. The right amounts of movement and rest do not have to contain the same number of minutes. Wearing a thick coat in winter and a T-shirt in summer does not mean dividing cold and heat equally.
+Think about one day. After running for ten minutes, you may need to rest. After sleeping all night, you may need to get up and move. The right amounts of movement and rest do not have to be equal. Wearing a thick coat in winter and a T-shirt in summer does not mean dividing cold and heat equally.
 
 In yin-yang thinking, timing and relationship matter. What is too much right now? What is missing? When is it time to act, and when is it time to pause and observe? An arrangement that works today may need to change tomorrow.
 

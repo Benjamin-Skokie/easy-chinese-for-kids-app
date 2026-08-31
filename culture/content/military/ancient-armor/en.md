@@ -16,6 +16,8 @@ An old-fashioned story lines armor up like this: first animal hide, then bronze,
 
 Why not replace every suit with the “newest” material? Armor makers had to balance raw materials, labor, weight, movement, weather, and repair. Shaped and lacquered hard leather could form relatively light plates. Metal resisted cutting well, but it required mining, smelting, and forging, and it could rust. A surviving suit from the Dali Kingdom in twelfth- or thirteenth-century Yunnan still used rigid leather panels coated with red and black lacquer, together with leather laces, copper alloy, and iron. This late leather armor proves that an older material did not vanish when iron became available.
 
+The first illustration helps us picture the actions of cutting, piercing, and joining leather, but it is not a reconstruction of a Shang workshop. Its complete vest, stitching pattern, clothes, tools, and camp are modern inventions. It cannot prove that Shang or Zhou soldiers wore one standard design like this.
+
 ---
 
 ## How Small Plates Became a Suit
@@ -23,8 +25,6 @@ Why not replace every suit with the “newest” material? Armor makers had to b
 Much ancient Chinese armor was not one solid shell. It was built from small, perforated plates. Researchers often call armor made by lacing plates directly to one another in horizontal and vertical rows *lamellar armor*, or *zhajia* in Chinese. A related construction, often called scale armor, arranges overlapping plates like roof tiles or fish scales and fastens them to a leather or textile backing. Ancient names and modern categories do not always match perfectly, so the sight of overlapping plates does not prove that only one method was used.
 
 Holes, creases, and traces of cord can be as valuable as the plates themselves. They help conservators work out which end pointed upward, how neighboring plates overlapped, and whether the shoulders and waist required different shapes. Small plates allowed rows to shift as the wearer bent and sometimes allowed a damaged section to be replaced. The cost was labor: punching holes, applying lacquer, and threading cords took time, and the cords themselves could wear out.
-
-The first illustration helps us picture the actions of cutting, piercing, and joining leather, but it is not a reconstruction of a Shang workshop. Its complete vest, stitching pattern, clothes, tools, and camp are modern inventions. It cannot prove that Shang or Zhou soldiers wore one standard design like this.
 
 ---
 
@@ -58,6 +58,6 @@ A dynasty name cannot replace information about place, military role, and purpos
 
 ## In Summary: Ask About Structure Before Building a Timeline
 
-When you see ancient armor, try asking questions like a conservator. Is this an excavated object, an image, a written description, or a modern reconstruction? What were the plates made from, how were they connected, and which parts of the body did they cover? What region, period, and kind of wearer did it belong to? Which details are supported by evidence, and which are the best current reconstruction?
+When you see ancient armor, try asking questions like a conservator. Is this an excavated object, an image, a written description, or a modern reconstruction? What were the plates made from, how were they connected, and which parts of the body did they cover? What region, period, and kind of wearer did it belong to? Which details are supported by evidence, and which belong to the best reconstruction we can make for now?
 
-Ancient armor did not advance through game levels from hide to bronze, iron, and steel. Its real history lies in the many ways craftspeople adjusted structures using the materials available to them. It also lies in the work of archaeologists who recover different answers, one decayed scrap, rusted plate, lacing hole, and sculpture at a time.
+Ancient armor did not advance through game levels from hide to bronze, iron, and steel. Its real history lies in the many ways craftspeople adjusted structures using the materials available to them. It also lies in the patient work of archaeologists, who recover the story one decayed scrap, rusted plate, lacing hole, and sculpture at a time.

@@ -60,9 +60,15 @@ export const stationeryTopicData = {
       ["table", "桌子", "zhuō zi", "table", "table.webp"]
     ].map(([id, hanzi, pinyin, english, file]) => ({ id, hanzi, pinyin, english, audio: hanzi, imagePath: `assets/illustrated-stationery/${file}` })),
     review: [
-      { pattern: "这是我的……", pinyin: "zhè shì wǒ de...", english: "This is my ...", example: "这是我的铅笔。", examplePinyin: "zhè shì wǒ de qiān bǐ.", exampleEnglish: "This is my pencil." },
-      { pattern: "有 + 数量 + 颜色 + 文具", pinyin: "yǒu + shù liàng + yán sè + wén jù", english: "has + number + color + school thing", example: "安安有三支红色的铅笔。", examplePinyin: "ān ān yǒu sān zhī hóng sè de qiān bǐ.", exampleEnglish: "Anan has three red pencils." },
-      { pattern: "一支 / 一把 / 一块", pinyin: "yì zhī / yì bǎ / yí kuài", english: "measure words for pens, scissors, and erasers", example: "一支铅笔。一把剪刀。一块橡皮。", examplePinyin: "yì zhī qiān bǐ. yì bǎ jiǎn dāo. yí kuài xiàng pí.", exampleEnglish: "one pencil, one pair of scissors, one eraser" }
+      {
+        pattern: "三支红色的铅笔",
+        english: "Chinese orders this phrase as number + measure word + color + 的 + object.",
+        examples: [{ hanzi: "安安有三支红色的铅笔。", english: "Anan has three red pencils." }]
+      },
+      {
+        pattern: "一支铅笔 / 一把剪刀 / 一块橡皮",
+        english: "Chinese needs a measure word after the number: 支 for long thin objects, 把 for handled objects, and 块 for small pieces."
+      }
     ]
 };
 

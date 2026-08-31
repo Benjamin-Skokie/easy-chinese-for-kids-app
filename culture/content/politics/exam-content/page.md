@@ -17,7 +17,7 @@ title_en: What Did the Imperial Exams Test? A Thousand Years of Changing Questio
 page: 1
 layout: text-wrap-image
 heading_zh: 唐代：进士科有诗，也不只有诗
-heading_en: [[Tang dynasty|Tang]]: The *Jinshi* Exam Included Poetry, but Not Only Poetry
+heading_en: [[Tang|Tang dynasty]]: The *Jinshi* Exam Included Poetry, but Not Only Poetry
 image: 1-tang-poetry-exam.webp
 caption_zh: 现代想象图：灯下练习写作的少年。它不是一位真实唐代考生的生活记录。
 caption_en: A modern imagined scene of a boy practicing writing by lamplight, not a record of a real Tang candidate.
@@ -31,7 +31,7 @@ caption_en: A modern imagined scene of a boy practicing writing by lamplight, no
 考试诗也不是随心写一首喜欢的诗。它有题目、韵脚和格式等限制，要让考官看见考生熟悉文学传统，也能在压力下组织语言。一首合格的诗需要文采、记忆、判断和技术；策问同样需要写作功夫。把两者说成“诗只考漂亮，策只考思考”，反而看不见两种写作有多难。
 [/zh]
 [en]
-Imagine placing four exam papers on a table, one each from the Tang, Song, Ming, and Qing dynasties. One asks for poetry. Another asks the student to explain a classic. A third discusses government, while a fourth demands a tightly controlled essay. They may look like four different tests, yet all could belong to the imperial examination system. The system was not one ancient test that stayed the same forever; its questions depended on the dynasty, exam level, and subject category.
+Imagine placing four exam papers on a table, one each from the Tang, Song, Ming, and Qing dynasties. One asks for poetry. Another asks the student to explain a classic. A third discusses government, while a fourth demands a tightly controlled essay. They may look like four different tests, yet every one could have belonged to China’s imperial examination system. The system was not one ancient test that stayed the same forever; its questions depended on the dynasty, exam level, and subject category.
 
 Look at the boy in the picture. This is a modern artist’s imagined study scene, not a record of one real candidate. We do not know that a particular poor boy was supported by a sewing mother, and we cannot say that the first question he saw in Chang’an was always “Write a poem.”
 
@@ -45,7 +45,7 @@ An examination poem was not a chance to write anything you pleased. Its topic, r
 page: 2
 layout: text-wrap-image
 heading_zh: 宋代：换题型，也是在争论怎样选人
-heading_en: [[Song dynasty|Song]]: Changing the Question Meant Changing the Kind of Official
+heading_en: [[Song|Song dynasty]]: Changing the Question Meant Changing the Kind of Official
 image: 2-song-policy-questions.webp
 caption_zh: 现代想象图：考生思考治理问题。图中的官员、地图和题目都不是某场宋代考试的复原。
 caption_en: A modern imagined candidate considering a government problem; the officials, map, and question do not reconstruct a documented Song exam.
@@ -69,7 +69,7 @@ The Song story is not a simple march from “pretty poems” to “real problem-
 page: 3
 layout: text-only
 heading_zh: 明清：严格的文章，只是三场考试的一部分
-heading_en: [[Ming dynasty|Ming]] and [[Qing dynasty|Qing]]: The Strict Essay Was Only Part of the Test
+heading_en: [[Ming|Ming dynasty]] and [[Qing|Qing dynasty]]: The Strict Essay Was Only Part of the Test
 [zh]
 明清科举常让人想到八股文。它从《四书》《五经》中出题，后来形成开头、展开、成对论说等严格规则。考生要熟记经典和注释，扣紧题意，在有限篇幅中安排结构与对偶。这种文章限制很多，也受到不少批评；可是把它说成“只要背范文就行”也不准确。写好它需要长期训练、精细阅读和很强的语言控制，只是这些能力被放进了一个非常窄的框架。
 
@@ -123,7 +123,7 @@ Now look again at the papers on the table. When Tang examiners valued poetry and
 
 The examination system made performance on written tests a major road into government. It also developed methods such as hiding candidates’ names and having copies made of papers to reduce favoritism and cheating. Even so, the exams never gave everyone an equal starting point, and no paper could measure a whole person. A test might find people skilled in certain kinds of reading and writing. It could not fully reveal who was kindest, bravest, or best able to handle a problem that no examiner had imagined.
 
-That is why “What did the imperial exams test?” is more than a history question. Every exam quietly answers another question too: Which knowledge do we value most, and which people do we allow to move toward the next door?
+That is why “What did the imperial exams test?” is more than a history question. Every exam quietly answers another question too: Which kinds of knowledge do we value most, and who gets to pass through the next door?
 [/en]
 [/section]
 

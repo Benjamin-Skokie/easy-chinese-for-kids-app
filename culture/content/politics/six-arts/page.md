@@ -50,7 +50,7 @@ heading_en: Where Did the List Come From?
 因此，比较准确的说法是：六艺是古代礼制文献保存下来的一种教育分类和理想。它影响深远，却没有告诉我们“十三岁学生每天几点射箭、几点弹琴”。
 [/zh]
 [en]
-The six-part list—ritual, music, archery, chariot driving, writing, and calculation—appears clearly in the *Rites of Zhou*. This ancient book lays out offices and institutions. It says that an official called the *Baoshi* should educate the “sons of the state” and teach them the Six Arts: five groups of rites, six of music, five of archery, five of chariot driving, six of writing, and nine of calculation. Another part of the book also places the same six arts inside a plan for educating the people.
+The six-part list—ritual, music, archery, chariot driving, writing, and calculation—appears clearly in the *Rites of Zhou*. This ancient book describes an ideal system of offices and institutions. It says that an official called the *Baoshi* should educate the “sons of the state” and teach them the Six Arts: five groups of rites, six of music, five of archery, five of chariot driving, six of writing, and nine of calculation. Another part of the book also places the same six arts inside a plan for educating the people.
 
 This is important evidence, but it is not a school schedule saved from the Western Zhou or Spring and Autumn period. The *Rites of Zhou* has a complicated history. Many scholars think much of its system reflects ideas from the Warring States period and was organized later. The word *Zhou* in the title does not prove that every office and lesson worked exactly this way in an early Zhou school.
 
@@ -71,11 +71,11 @@ heading_en: The Six Arts Were Not Six Textbooks
 “射”是射箭，“御”是驾驭马车，不是现代意义的骑马课。弓箭和马车既能用于礼仪活动，也和贵族的军事生活有关。“书”和“数”则把读写、文字知识与计算放进这套教育里。六艺把仪式、音乐、身体训练、交通与战争技能、文字和数量放在一起，和今天把语文、数学、体育、音乐分开的方式很不一样。
 [/zh]
 [en]
-Here, an “art” means a skill or practice that must be learned. Each label covers a large field. The *Rites of Zhou* itself speaks of groups within every art, so this was not a modern day with six classes lasting forty-five minutes each.
+Here, an “art” means a skill or practice that must be learned. Each label covers a large field. The *Rites of Zhou* itself lists several parts within each art, so this was nothing like a modern school day with six forty-five-minute classes.
 
 Ritual meant much more than saying “please” and “thank you.” It included ceremonies and rules for worship, guests, mourning, military events, and other parts of public life. Music was broader than one person playing a qin. It could include singing, instruments, dance, and group performance within ritual. These arts taught people how to act together, but they also supported rank and order in an unequal society. Calling them simply “manners class” and “music class” would hide too much.
 
-Archery meant using a bow. Chariot driving meant controlling a horse-drawn vehicle, not taking a modern riding lesson. Both could be used in ceremonies and in the military life of the elite. Writing and calculation brought literacy, knowledge of written forms, numbers, and reckoning into the same educational picture. The Six Arts joined ritual, music, physical training, military and travel skills, writing, and math in a way that looks very different from school subjects today.
+Archery meant using a bow. Chariot driving meant controlling a horse-drawn vehicle, not taking a modern riding lesson. Both could be used in ceremonies and in the military life of the elite. Writing and calculation brought literacy, knowledge of written forms, numbers, and reckoning into the same educational picture. The Six Arts brought ritual, music, physical training, military and travel skills, writing, and math into one educational vision—one very different from a modern school schedule.
 [/en]
 [/section]
 

@@ -157,11 +157,27 @@ export const mealsFeelingsTopicData = {
       }
     ],
     review: [
-      { pattern: "你午饭吃什么？", pinyin: "nǐ wǔ fàn chī shén me?", english: "What do you have for lunch?", example: "我午饭吃……，喝……", examplePinyin: "wǒ wǔ fàn chī..., hē...", exampleEnglish: "For lunch, I eat ... and drink ...", lessonSources: ["4a:5"] },
-      { pattern: "饿了 / 渴了", pinyin: "è le / kě le", english: "hungry / thirsty", example: "我饿了，我要吃炒饭。 我渴了，我要喝水。", examplePinyin: "wǒ è le, wǒ yào chī chǎo fàn. wǒ kě le, wǒ yào hē shuǐ.", exampleEnglish: "When you are hungry, eat. When you are thirsty, drink.", lessonSources: ["4a:7"] },
-      { pattern: "要 + 吃 / 喝 + 食物", pinyin: "yào + chī / hē + shí wù", english: "want to eat / drink + food", example: "我要吃炒饭。我要喝可乐。", examplePinyin: "wǒ yào chī chǎo fàn. wǒ yào hē kě lè.", exampleEnglish: "I want to eat fried rice. I want to drink Coke.", lessonSources: ["4a:7"] },
-      { pattern: "好吃 / 饱了", pinyin: "hǎo chī / bǎo le", english: "delicious / full", example: "炒饭好吃。妈妈，我饱了，不吃了。", examplePinyin: "chǎo fàn hǎo chī. mā ma, wǒ bǎo le, bù chī le.", exampleEnglish: "Fried rice is delicious. Mom, I am full. I do not want to eat any more.", lessonSources: ["4a:7"] },
-      { pattern: "没有……，你可以……", pinyin: "méi yǒu..., nǐ kě yǐ...", english: "There is no ...; you can ...", example: "没有可乐。你可以喝水。", examplePinyin: "méi yǒu kě lè. nǐ kě yǐ hē shuǐ.", exampleEnglish: "There is no Coke. You can drink water." }
+      {
+        pattern: "我午饭吃披萨，喝牛奶。",
+        english: "Chinese normally puts the meal or time before the action. English often begins with “For lunch.”",
+        examples: [{ hanzi: "你午饭吃什么？", english: "What do you have for lunch?" }],
+        lessonSources: ["4a:5"]
+      },
+      {
+        pattern: "我饿了。 / 我渴了。",
+        english: "了 shows that a new state has begun. English uses “am,” but Chinese does not need a separate verb here.",
+        examples: [
+          { hanzi: "我饿了。", english: "I am hungry now." },
+          { hanzi: "我渴了。", english: "I am thirsty now." }
+        ],
+        lessonSources: ["4a:7"]
+      },
+      {
+        pattern: "没有可乐。",
+        english: "English begins with “There is no.” Chinese can begin directly with 没有 and the missing thing.",
+        examples: [{ hanzi: "没有可乐。你可以喝水。", english: "There is no Coke. You can drink water." }],
+        lessonSources: ["4a:7"]
+      }
     ]
 };
 

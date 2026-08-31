@@ -20,7 +20,7 @@ export const telephoneNumbersTopic = {
   ],
   parentGuide: "Use a made-up telephone number only. This lesson practises the language pattern, not sharing personal contact details.",
   cultureGuide: "This later family lesson extends an introduction with where grandparents live and a made-up family telephone number.",
-  activities: ["Scene", "Book words", "Useful note", "Practice"],
+  activities: ["Scene", "Book words", "Notes", "Practice"],
   steps: [{ book: "4A", lesson: 1, title: "Telephone numbers", cardLabel: "Say where family lives", note: "Ask where family lives and exchange a telephone number." }]
 };
 

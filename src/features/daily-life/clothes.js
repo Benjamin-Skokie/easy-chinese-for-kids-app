@@ -45,13 +45,19 @@ export const clothesPractice = [
 ];
 
 export const clothesUsefulNotes = [
-  { hanzi: "会 + 动词", pinyin: "huì + dòng cí", english: "can + an action word", example: "我会穿衣服。", examplePinyin: "wǒ huì chuān yī fu.", exampleEnglish: "I can get dressed.", lessonSources: ["2a:6"] },
-  { hanzi: "穿", pinyin: "chuān", english: "wear or put on clothes", example: "我穿校服。", examplePinyin: "wǒ chuān xiào fú.", exampleEnglish: "I wear a school uniform.", lessonSources: ["2a:6", "3a:7", "4b:2"] },
-  { hanzi: "戴", pinyin: "dài", english: "wear or put on something on your head", example: "我戴帽子。", examplePinyin: "wǒ dài mào zi.", exampleEnglish: "I wear a hat.", lessonSources: ["4b:2"] }
+  {
+    hanzi: "穿大衣 / 戴帽子",
+    explanation: "English uses “wear” for both. Chinese uses 穿 for clothes and shoes, and 戴 for hats and many accessories.",
+    examples: [
+      { hanzi: "我穿大衣。", english: "I wear a coat." },
+      { hanzi: "我戴帽子。", english: "I wear a hat." }
+    ],
+    lessonSources: ["4b:2"]
+  }
 ];
 
 // The picture-choice game only uses concrete clothes. Grammar and action words
-// such as 会、穿、戴 belong in Useful notes rather than picture cards.
+// such as 会、穿、戴 belong in Notes rather than picture cards.
 export const clothesMatchItems = clothesBookWords.filter((item) => item.imagePath);
 
 export const clothesSentenceItems = [

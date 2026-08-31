@@ -1,4 +1,4 @@
-import { createReadStream, existsSync, readFileSync, watch } from "node:fs";
+import { createReadStream, existsSync, readFileSync, statSync, watch } from "node:fs";
 import { createServer } from "node:http";
 import { extname, resolve, sep } from "node:path";
 import { context } from "esbuild";
@@ -32,8 +32,12 @@ function developmentReloadScript() {
 
 function filePathForRequest(pathname) {
   const relativePath = pathname === "/" ? "index.html" : pathname.replace(/^\/+/, "");
-  const filePath = resolve(root, relativePath);
-  return filePath === root || filePath.startsWith(`${root}${sep}`) ? filePath : null;
+  const candidatePath = resolve(root, relativePath);
+  if (candidatePath !== root && !candidatePath.startsWith(`${root}${sep}`)) return null;
+  if (existsSync(candidatePath) && statSync(candidatePath).isDirectory()) {
+    return resolve(candidatePath, "index.html");
+  }
+  return candidatePath;
 }
 
 const buildContext = await context({

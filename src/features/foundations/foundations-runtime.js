@@ -1,3 +1,5 @@
+import { renderLessonNotes } from "../../core/lesson-notes.js";
+
 export function createFoundationsRuntime(context) {
   const { state, numberHanzi, numberPinyin, buildNumberItem, numberStages, telephonePractice, familyGameItemIds, familyPossessionPractice, familyPersonIdsByItemId, familyHeadshotsByItemId, familyPractice, illustratedFamily, illustratedKids, bodyBonusItemIds, bodyCoreItemIds, bodyDiagramLayout, identityConversation, nationalityConversation, identityCountries, identityExploreCountries, identityLanguageQuestion, identityQuestion, topicById, focusItemsForTopic, currentTopic, currentNumberStage, currentFocusItem, currentBook, currentLesson, shuffleArray, chineseUtterance, speak, speakSceneLines, renderActivityPanel, renderFocusDisplay, renderFocusExplorer, renderFocusStatus, selectFocusItem, bodySentenceForItem, focusExplorer, focusStatus, activityPanelTitle, activityPanelSummary, activityList } = context;
   let telephoneMatchSelectedId = "";
@@ -34,7 +36,7 @@ function resetNumberChallenge(options = {}) {
   state.numberChallengeWrongValues = new Set();
   state.lastNumberFeedback =
     options.feedback ??
-    "Look carefully. Pick the number without counting from one every time.";
+    "";
 }
 
 function ensureNumberChallenge() {
@@ -143,94 +145,75 @@ function bookWordItemsForTopic(topic) {
 
 function usefulNoteForTopic(topic) {
   const notes = {
-    greetings: `
-      <p class="greetings-note-hanzi">你 and 您</p>
-      <p class="greetings-note-copy">
-        <strong>你</strong> is the everyday word for “you.” <strong>您</strong> is the polite form, often used for teachers and other adults to show respect.
-      </p>
-      <p class="greetings-note-copy">
-        <strong>老师</strong> means “teacher,” so <strong>李老师，您好！</strong> sounds warm and respectful.
-      </p>
-    `,
-    "polite-words": `
-      <p class="greetings-note-hanzi">谢谢 / 不客气 / 对不起 / 没关系</p>
-      <p class="greetings-note-copy">
-        <strong>谢谢你</strong> means “thank you,” and <strong>不客气</strong> is the kind reply: “you’re welcome.”
-      </p>
-      <p class="greetings-note-copy">
-        <strong>对不起</strong> means “I’m sorry,” and <strong>没关系</strong> is the calm reply: “never mind” or “that’s okay.”
-      </p>
-      <p class="greetings-note-copy">
-        <strong>请</strong> helps children sound polite in requests and classroom directions, for example:
-        <strong>请安静。</strong>
-      </p>
-    `,
-    introductions: `
-      <p class="greetings-note-hanzi">我 / 叫 / 什么 / 名字 / 朋友</p>
-      <p class="greetings-note-copy">
-        <strong>我</strong> means “I” or “me,” and <strong>叫</strong> is used in beginner Chinese to say what someone is called.
-      </p>
-      <p class="greetings-note-copy">
-        <strong>你叫什么名字？</strong> means “What is your name?” and <strong>我叫……</strong> gives the answer pattern: “My name is…”
-      </p>
-      <p class="greetings-note-copy">
-        Let children pause after <strong>我叫</strong> and say their own name out loud.
-      </p>
-      <p class="greetings-note-copy">
-        In <strong>他是我的好朋友。</strong>, <strong>他</strong> points to a boy already in the scene, and <strong>我的好朋友</strong> means “my good friend.”
-      </p>
-    `,
-    "is-it": `
-      <p class="greetings-note-hanzi">是不是……？ / 是 / 不是</p>
-      <p class="greetings-note-copy">
-        Put <strong>是不是</strong> around the thing you are asking about: <strong>这是不是包裹？</strong> means “Is this a package?”
-      </p>
-      <p class="greetings-note-copy">
-        Answer with <strong>是。</strong> for yes or <strong>不是。</strong> for no. Then say what it really is: <strong>不是，这是美美。</strong>
-      </p>
-    `,
-    age: `
-      <p class="greetings-note-hanzi">你几岁？ / 我...岁。 / 你上几年级？ / 我上一年级。</p>
-      <p class="greetings-note-copy">
-        <strong>你几岁？</strong> literally means “you how-many years old?” Here, <strong>几</strong> asks for a small number, and <strong>岁</strong> is the common word for a child's age.
-      </p>
-      <p class="greetings-note-copy">
-        The answer pattern stays simple: <strong>我 + number + 岁</strong>. So <strong>我五岁</strong> is “I am five years old,” <strong>我六岁</strong> is “I am six years old,” and <strong>我七岁</strong> is “I am seven years old.”
-      </p>
-      <p class="greetings-note-copy">
-        <strong>你上几年级？</strong> asks what school year someone is in, and <strong>我上一年级。</strong> means “I am in first grade.” This topic links naturally with earlier self-introduction language: <strong>你好！你叫什么名字？我叫…… 你几岁？我五岁。你上几年级？我上一年级。</strong>
-      </p>
-    `,
-    family: state.lessonScope && `${state.lessonScope.bookId}:${state.lessonScope.lessonNumber}` === "1b:1" ? `
-      <p class="greetings-note-hanzi">爸爸 / 妈妈</p>
-      <p class="greetings-note-copy"><strong>爸爸</strong> means “dad” and <strong>妈妈</strong> means “mom.” Use <strong>我的</strong> to say “my”: <strong>这是我的爸爸。</strong></p>
-    ` : state.lessonScope && `${state.lessonScope.bookId}:${state.lessonScope.lessonNumber}` === "1b:2" ? `
-      <p class="greetings-note-hanzi">哥哥 / 弟弟 / 姐姐 / 妹妹</p>
-      <p class="greetings-note-copy">These words show both gender and age order: <strong>哥哥、姐姐</strong> are older; <strong>弟弟、妹妹</strong> are younger.</p>
-    ` : `
-      <p class="greetings-note-hanzi">有 / 一个 / 两个</p>
-      <p class="greetings-note-copy">
-        <strong>有</strong> means “have.” Put the family members after it: <strong>我有一个姐姐和一个弟弟。</strong>
-      </p>
-      <p class="greetings-note-copy">
-        Use <strong>一个</strong> for one and <strong>两个</strong> for two before a family member: <strong>一个姐姐</strong>, <strong>两个弟弟</strong>.
-      </p>
-      <p class="greetings-note-copy">
-        In <strong>我家有五口人</strong>, <strong>口</strong> is the measure word used to count people in a family. Children can use the same frame with their own family photo.
-      </p>
-    `,
-    languages: `
-      <p class="greetings-note-hanzi">国家 / 国籍 / 语言</p>
-      <p class="greetings-note-copy">
-        <strong>国家</strong> names a country, <strong>国籍</strong> names a nationality, and <strong>语言</strong> names a language. In this lesson, listen for the language word after <strong>说</strong>.
-      </p>
-      <p class="greetings-note-copy">
-        People can speak one language or more than one language. The sentence pattern helps us practise words; it does not describe every person from a country.
-      </p>
-    `
+    greetings: [{
+      hanzi: "你 / 您",
+      explanation: "English uses “you” for both. Chinese can use 您 to show extra respect, especially with teachers or older adults.",
+      examples: [{ hanzi: "李老师，您好！", english: "Hello, Teacher Li!" }]
+    }],
+    "polite-words": [
+      { hanzi: "谢谢你。 / 不客气。", explanation: "These form a natural pair: one person gives thanks and the other replies politely." },
+      { hanzi: "对不起。 / 没关系。", explanation: "These also form a pair: an apology followed by a gentle response." }
+    ],
+    introductions: [
+      {
+        hanzi: "我叫乐乐。",
+        explanation: "English says “My name is Lele.” Chinese uses 我 + 叫 + name, closer to “I am called Lele.”",
+        examples: [{ hanzi: "我叫乐乐。", english: "My name is Lele." }]
+      },
+      {
+        hanzi: "你叫什么名字？",
+        explanation: "English moves “what” to the front. Chinese keeps 什么名字 where the name answer would go."
+      }
+    ],
+    "is-it": [{
+      hanzi: "这是包裹。 / 这是不是包裹？",
+      explanation: "English moves “is” to the front to make a question. Chinese keeps 这 first and changes 是 to 是不是. Answer with 是 or 不是.",
+      examples: [
+        { hanzi: "这是包裹。", english: "This is a package." },
+        { hanzi: "这是不是包裹？", english: "Is this a package?" }
+      ]
+    }],
+    age: [
+      {
+        hanzi: "我五岁。",
+        explanation: "English needs “am” and “years old.” Chinese simply uses person + number + 岁.",
+        examples: [{ hanzi: "我五岁。", english: "I am five years old." }]
+      },
+      {
+        hanzi: "你上几年级？",
+        explanation: "Chinese uses 上 before the grade level. 几 replaces the grade number being asked for.",
+        examples: [{ hanzi: "我上一年级。", english: "I am in first grade." }]
+      }
+    ],
+    languages: [{
+      hanzi: "中国 / 中国人 / 汉语",
+      explanation: "A country, a nationality, and a language are different words. Chinese often adds 人 to the country name for nationality; the language has its own name.",
+      examples: [{ hanzi: "我是中国人。我说汉语。", english: "I am Chinese. I speak Chinese." }]
+    }]
   };
+  const familyScope = state.lessonScope && `${state.lessonScope.bookId}:${state.lessonScope.lessonNumber}`;
+  if (topic.id === "family") {
+    if (familyScope === "1b:1") return "";
+    if (familyScope === "1b:2") {
+      return renderLessonNotes([{
+        hanzi: "哥哥 / 弟弟 / 姐姐 / 妹妹",
+        explanation: "English can simply say “brother” or “sister.” Chinese family words also show whether the sibling is older or younger."
+      }], { sectionClass: "family-book-words-note" });
+    }
+    return renderLessonNotes([
+      {
+        hanzi: "一个姐姐 / 两个弟弟",
+        explanation: "Chinese places a measure word between the number and the family member. Use 两, not 二, before 个."
+      },
+      {
+        hanzi: "我家有五口人。",
+        explanation: "口 is the measure word traditionally used to count people in a family.",
+        examples: [{ hanzi: "我家有五口人。", english: "There are five people in my family." }]
+      }
+    ], { sectionClass: "family-book-words-note" });
+  }
 
-  return notes[topic.id] ?? "";
+  return renderLessonNotes(notes[topic.id] ?? [], { sectionClass: "family-book-words-note" });
 }
 
 function familyWordForPersonId(personId) {
@@ -491,6 +474,22 @@ function resetBodyMatchGame() {
   state.lastBodyFeedback = "Match the Chinese words with the English words.";
 }
 
+/* A body-match round shows only three cards at a time. Advancing should keep
+   the completed words so the learner works through the whole set once before
+   a fresh cycle begins. */
+function advanceBodyMatchGame() {
+  const total = bodyMatchItems().length;
+  if (state.bodyMatchedIds.size >= total) {
+    resetBodyMatchGame();
+    return;
+  }
+
+  state.bodyMatchWrongChineseIds = new Set();
+  state.bodyMatchWrongEnglishIds = new Set();
+  nextBodyRound();
+  state.lastBodyFeedback = `Keep going! ${state.bodyMatchedIds.size} of ${total} words are complete.`;
+}
+
 function ensureBodyMatchGame() {
   const ids = bodyMatchItems()
     .map((item) => item.id)
@@ -714,6 +713,8 @@ function renderBodyLabelButton(item, align) {
 function renderBodyMatchPanel() {
   ensureBodyMatchGame();
   const matchItems = Object.fromEntries(bodyMatchItems().map((entry) => [entry.id, entry]));
+  const totalMatchItems = bodyMatchItems().length;
+  const hasCompletedSome = state.bodyMatchedIds.size > 0 && state.bodyMatchedIds.size < totalMatchItems;
   const solvedMatchIds = state.bodyChineseOrder.filter((id) => state.bodyMatchedIds.has(id));
   const remainingChineseIds = state.bodyChineseOrder.filter((id) => !state.bodyMatchedIds.has(id));
   const remainingEnglishIds = state.bodyEnglishOrder.filter((id) => !state.bodyMatchedIds.has(id));
@@ -725,14 +726,14 @@ function renderBodyMatchPanel() {
               <h4>Chinese to English</h4>
             </div>
             <div class="body-match-actions">
-              <button class="small-button is-practice-advance-button" type="button" data-body-reset-match aria-label="Start a new game">
-                New game
+              <button class="small-button is-practice-advance-button" type="button" data-body-advance-match aria-label="${hasCompletedSome ? "Show the next set" : "Start a new game"}" title="${hasCompletedSome ? "Next set" : "New game"}">
+                ${hasCompletedSome ? "Next set" : "New game"}
               </button>
             </div>
           </div>
           <p class="body-match-helper">Tap a Chinese card, then tap the matching English card.</p>
           <div class="body-match-progress">
-            Matched ${state.bodyMatchedIds.size} of ${bodyMatchItems().length}
+            Matched ${state.bodyMatchedIds.size} of ${totalMatchItems}
           </div>
           <div class="body-match-board-headings">
             <p class="body-match-kicker">Chinese</p>
@@ -820,8 +821,8 @@ function renderBodyMatchPanel() {
 }
 
 function bindBodyMatchPanel(root) {
-  root.querySelector("[data-body-reset-match]")?.addEventListener("click", () => {
-    resetBodyMatchGame();
+  root.querySelector("[data-body-advance-match]")?.addEventListener("click", () => {
+    advanceBodyMatchGame();
     renderActivityPanel(currentTopic());
   });
 
@@ -920,7 +921,7 @@ function renderNumberVisual(value, stage) {
     ${
       ones
         ? `
-          <div class="numbers-object-group">
+          <div class="numbers-object-group numbers-ones-group">
             ${objectMarkup(ones)}
           </div>
         `
@@ -974,7 +975,17 @@ function renderTelephoneExplorer() {
       <section class="school-lesson-section"><div class="time-months-heading"><p class="body-match-kicker">Book words</p></div>
         <div class="school-word-grid is-text-only">${currentTopic().focusItems.map((item) => `<button class="school-word-card is-text-only" type="button" data-telephone-word="${item.id}"><span class="time-asset-hanzi">${item.hanzi}</span>${state.showPinyin ? `<span class="time-asset-pinyin">${item.pinyin}</span>` : ""}${state.showEnglish ? `<span class="time-asset-english">${item.english}</span>` : ""}</button>`).join("")}</div>
       </section>
-      <section class="visual-topic-notes school-review-notes"><p class="body-match-kicker">Useful note</p><div class="visual-topic-note-grid school-review-grid"><article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">他们 + 住在 + 北京</p><p class="visual-topic-note-copy"><strong>他们</strong> means “they.” <strong>住在</strong> means “live in,” and the place comes last: <strong>他们住在北京。</strong> To ask the place, replace <strong>北京</strong> with <strong>哪儿</strong>: <strong>他们住在哪儿？</strong></p></article></div></section>
+      ${renderLessonNotes([{
+        hanzi: "他们住在北京。 / 他们住在哪儿？",
+        explanation: "English moves “where” to the front. Chinese keeps 哪儿 where the place answer would go.",
+        examples: [
+          { hanzi: "他们住在北京。", english: "They live in Beijing." },
+          { hanzi: "他们住在哪儿？", english: "Where do they live?" }
+        ]
+      }, {
+        hanzi: "电话号码：一位一位读",
+        explanation: "Read a phone number one digit at a time. In phone numbers, 一 is often pronounced yāo so it is easier to hear clearly."
+      }], { sectionClass: "school-review-notes" })}
       <section class="practice-split-card"><div class="numbers-game-top"><div><p class="body-match-kicker">Let's practice</p><p class="numbers-game-note">Tap a question on the left to hear it, then tap its matching answer on the right.</p></div><button class="small-button is-practice-advance-button" type="button" data-telephone-practice-new aria-label="Start a new game">New game</button></div>
         ${telephoneMatchFeedback ? `<p class="greetings-game-feedback">${telephoneMatchFeedback}</p>` : ""}
         <div class="family-match-board-headings"><p class="body-match-kicker">Question</p><p class="body-match-kicker">Answer</p></div>
@@ -1417,6 +1428,11 @@ function renderNationalityScene() {
           <div class="greetings-line-stack">${nationalityConversation.lines.map((line) => `<article class="greetings-line-card"><div class="telephone-bubble-copy"><p class="telephone-line-hanzi">${line.hanzi}</p>${state.showPinyin ? `<p class="telephone-line-pinyin">${line.pinyin}</p>` : ""}${state.showEnglish ? `<p class="telephone-line-english">${line.english}</p>` : ""}</div></article>`).join("")}</div>
         </div>
       </section>
+      ${renderLessonNotes([{
+        hanzi: "中国 / 中国人",
+        explanation: "Chinese often forms a nationality by adding 人 to the country name. English may use a different word.",
+        examples: [{ hanzi: "我是中国人。", english: "I am Chinese." }]
+      }])}
     </div>
   `;
   focusExplorer.querySelector("[data-nationality-play-scene]")?.addEventListener("click", () => {
@@ -1747,6 +1763,6 @@ function updateMultiplicationPlaybackControls(container) {
 }
 
 
-  return { numberStageItems, resetNumberChallenge, ensureNumberChallenge, resetMathChallenge, ensureMathChallenge, familyGameItems, familyListenItems, familyPersonForItemId, familyHeadshotForItemId, isFamilySentenceItemId, familyBookWordItems, usesLessonTemplate, bookWordItemsForTopic, usefulNoteForTopic, familyWordForPersonId, resetFamilyChallenge, ensureFamilyChallenge, resetListenChallengeResult, handleFamilyChallengePlay, handleFamilyChallengeGuess, resetFamilyMatchGame, ensureFamilyMatchGame, handleFamilyMatchPhrase, handleFamilyMatchAttempt, mathChallengeAudioText, handleMathChallengeSubmit, handleNumberChallengeGuess, bodyMatchItems, nextBodyRound, resetBodyMatchGame, ensureBodyMatchGame, handleBodyMatchChinese, handleBodyMatchAttempt, nextBodySpotlightRound, startBodySpotlightRound, handleBodySpotlightGuess, renderBodyPractice, numberWordListItems, renderBodyLabelButton, renderBodyExplorer, renderNumberVisual, renderNumbersExplorer, renderTelephoneExplorer, renderFamilyHomeVisual, renderFamilyExplorer, renderIdentityExplorer, renderMultiplicationExplorer };
+  return { numberStageItems, resetNumberChallenge, ensureNumberChallenge, resetMathChallenge, ensureMathChallenge, familyGameItems, familyListenItems, familyPersonForItemId, familyHeadshotForItemId, isFamilySentenceItemId, familyBookWordItems, usesLessonTemplate, bookWordItemsForTopic, usefulNoteForTopic, familyWordForPersonId, resetFamilyChallenge, ensureFamilyChallenge, resetListenChallengeResult, handleFamilyChallengePlay, handleFamilyChallengeGuess, resetFamilyMatchGame, ensureFamilyMatchGame, handleFamilyMatchPhrase, handleFamilyMatchAttempt, mathChallengeAudioText, handleMathChallengeSubmit, handleNumberChallengeGuess, bodyMatchItems, nextBodyRound, resetBodyMatchGame, advanceBodyMatchGame, ensureBodyMatchGame, handleBodyMatchChinese, handleBodyMatchAttempt, nextBodySpotlightRound, startBodySpotlightRound, handleBodySpotlightGuess, renderBodyPractice, numberWordListItems, renderBodyLabelButton, renderBodyExplorer, renderNumberVisual, renderNumbersExplorer, renderTelephoneExplorer, renderFamilyHomeVisual, renderFamilyExplorer, renderIdentityExplorer, renderMultiplicationExplorer };
 }
 import { nextRandomCycleId } from "../../core/random-cycle.js";

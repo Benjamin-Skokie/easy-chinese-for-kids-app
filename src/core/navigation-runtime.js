@@ -388,7 +388,7 @@ function renderBookStickyNav() {
       renderBooks();
       updateTopicPageVisibility();
       document.getElementById(`book-lessons-${selectedBook.id}`)?.scrollIntoView({
-        behavior: "smooth",
+        behavior: "auto",
         block: "start"
       });
     });
@@ -418,7 +418,7 @@ function renderCultureStickyNav() {
       const target = document.getElementById(`culture-${button.dataset.cultureNavTarget}`);
       if (target) {
         window.history.pushState(null, "", `#culture-${button.dataset.cultureNavTarget}`);
-        target.scrollIntoView({ behavior: "smooth", block: "start" });
+        target.scrollIntoView({ behavior: "auto", block: "start" });
       }
     });
   });
@@ -629,7 +629,7 @@ function renderBooks() {
       state.selectedTopicId = selectedBook.lessons[0].topicId;
       renderBooks();
       document.getElementById(`book-lessons-${selectedBook.id}`)?.scrollIntoView({
-        behavior: "smooth",
+        behavior: "auto",
         block: "start"
       });
     });

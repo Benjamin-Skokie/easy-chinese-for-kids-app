@@ -55,6 +55,27 @@ export function createSharedLessonPractice({ state, speak, elements, documentRef
     const solvedIds = phraseIds.filter((id) => matchedIds.has(id));
     const remainingPhraseIds = phraseIds.filter((id) => !matchedIds.has(id));
     const remainingMeaningIds = meaningIds.filter((id) => !matchedIds.has(id));
+    const renderPhraseCard = (id) => {
+      const item = config.items().find((entry) => entry.id === id);
+      if (!item) return "";
+      const selected = config.selectedId() === id;
+      const wrong = config.wrongPhraseIds?.().has(id);
+      return `
+        <button class="polite-match-card polite-match-card-phrase${config.phraseCardClass ? ` ${config.phraseCardClass}` : ""}${selected ? " is-selected" : ""}${wrong ? " is-wrong" : ""}" type="button" data-template-match-phrase="${id}">
+          ${wrong ? '<span class="answer-result-mark" aria-hidden="true">×</span>' : ""}
+          ${config.phraseContent ? config.phraseContent(id) : `<span class="numbers-game-hanzi">${item.hanzi}</span>${state.showPinyin ? `<span class="numbers-game-pinyin">${item.pinyin}</span>` : ""}`}
+        </button>
+      `;
+    };
+    const renderMeaningCard = (id) => {
+      const wrong = config.wrongMeaningIds?.().has(id);
+      return `
+        <button class="polite-match-card ${config.meaningCardClass ?? "polite-match-card-meaning"}${wrong ? " is-wrong" : ""}" type="button" data-template-match-meaning="${id}">
+          ${wrong ? '<span class="answer-result-mark" aria-hidden="true">×</span>' : ""}
+          ${renderMatchMeaningContent(config, id)}
+        </button>
+      `;
+    };
 
     return `
       <section class="practice-split-card">
@@ -78,7 +99,7 @@ export function createSharedLessonPractice({ state, speak, elements, documentRef
               if (!item) return "";
               return `
                 <article class="family-match-solved-row">
-                  <div class="polite-match-card polite-match-card-phrase family-match-pair-card is-solved">
+                  <div class="polite-match-card polite-match-card-phrase${config.phraseCardClass ? ` ${config.phraseCardClass}` : ""} family-match-pair-card is-solved">
                     <span class="answer-result-mark" aria-hidden="true">✓</span>
                     ${config.phraseContent ? config.phraseContent(id) : `<span class="numbers-game-hanzi">${item.hanzi}</span>${state.showPinyin ? `<span class="numbers-game-pinyin">${item.pinyin}</span>` : ""}`}
                   </div>
@@ -92,33 +113,9 @@ export function createSharedLessonPractice({ state, speak, elements, documentRef
           </div>
         ` : ""}
         ${remainingPhraseIds.length ? `
-          <div class="polite-match-board family-match-open-board">
-            <div class="polite-match-column">
-              ${remainingPhraseIds.map((id) => {
-                const item = config.items().find((entry) => entry.id === id);
-                if (!item) return "";
-                const selected = config.selectedId() === id;
-                const wrong = config.wrongPhraseIds?.().has(id);
-                return `
-                  <button class="polite-match-card polite-match-card-phrase${selected ? " is-selected" : ""}${wrong ? " is-wrong" : ""}" type="button" data-template-match-phrase="${id}">
-                    ${wrong ? '<span class="answer-result-mark" aria-hidden="true">×</span>' : ""}
-                    ${config.phraseContent ? config.phraseContent(id) : `<span class="numbers-game-hanzi">${item.hanzi}</span>${state.showPinyin ? `<span class="numbers-game-pinyin">${item.pinyin}</span>` : ""}`}
-                  </button>
-                `;
-              }).join("")}
-            </div>
-            <div class="polite-match-column">
-              ${remainingMeaningIds.map((id) => {
-                const wrong = config.wrongMeaningIds?.().has(id);
-                return `
-                  <button class="polite-match-card ${config.meaningCardClass ?? "polite-match-card-meaning"}${wrong ? " is-wrong" : ""}" type="button" data-template-match-meaning="${id}">
-                    ${wrong ? '<span class="answer-result-mark" aria-hidden="true">×</span>' : ""}
-                    ${renderMatchMeaningContent(config, id)}
-                  </button>
-                `;
-              }).join("")}
-            </div>
-          </div>
+          ${config.pairedRows
+            ? `<div class="paired-match-board">${remainingPhraseIds.map((id, index) => `<div class="paired-match-row">${renderPhraseCard(id)}${renderMeaningCard(remainingMeaningIds[index])}</div>`).join("")}</div>`
+            : `<div class="polite-match-board family-match-open-board"><div class="polite-match-column">${remainingPhraseIds.map(renderPhraseCard).join("")}</div><div class="polite-match-column">${remainingMeaningIds.map(renderMeaningCard).join("")}</div></div>`}
         ` : ""}
         ${matchedIds.size > 0 && matchedIds.size < config.items().length ? '<div class="intro-build-actions"><button class="small-button is-clear-button" type="button" data-template-match-clear aria-label="Clear this matching board and try again">Clear</button></div>' : ""}
       </section>

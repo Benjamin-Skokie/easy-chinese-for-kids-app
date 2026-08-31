@@ -10,7 +10,7 @@ import { createNavigationRuntime } from "../core/navigation-runtime.js";
 import { bindViewNavigationEvents } from "../core/view-navigation-events.js";
 import { applyImageLoading } from "../core/image-loading.js";
 import { bindBookWordAudioFeedback, bindSceneLineAudio, prepareSceneLineAudioCards } from "../core/scene-line-audio.js";
-import { lessonScopeFromLocation, topicIdFromLocation, topicPageUrl, viewFromLocation } from "../core/router.js";
+import { bookIdFromLocation, lessonScopeFromLocation, topicIdFromLocation, topicPageUrl, viewFromLocation } from "../core/router.js";
 import { timeDateWeekItems } from "../features/time-daily-life/weekdays.js";
 import { timeAdvancedBookWords, timeDateClockItems, timeDateExpressionItems, timeDateRoutineItems, timeRoutineBookWords, timeRoutineSentenceBuilds } from "../features/time-daily-life/time.js";
 import { birthdayConversationLines, datePracticeItems, timeDateDateItems, timeDateMonthItems } from "../features/time-daily-life/dates.js";
@@ -1023,6 +1023,17 @@ focusExplorerRuntime = createFocusExplorerRuntime({
 });
 
 
+const initialBookId = bookIdFromLocation(window.location, books);
+if (initialBookId) {
+  const initialBook = books.find((book) => book.id === initialBookId);
+  state.selectedBookId = initialBook.id;
+  state.selectedBookCategoryId = bookHomeCategories.find((category) =>
+    category.bookIds.includes(initialBook.id)
+  )?.id ?? state.selectedBookCategoryId;
+  state.selectedLessonNumber = initialBook.lessons[0].lesson;
+  state.selectedTopicId = initialBook.lessons[0].topicId;
+}
+
 const initialTopicId = topicIdFromLocation(window.location, topicById);
 if (initialTopicId) {
   state.selectedTopicId = initialTopicId;
@@ -1049,6 +1060,8 @@ updateTopicPageVisibility();
 
 if (initialTopicId) {
   requestAnimationFrame(() => focusLearningPanel());
+} else if (initialBookId && viewFromLocation(window.location) === "books") {
+  requestAnimationFrame(() => document.getElementById(`book-lessons-${initialBookId}`)?.scrollIntoView({ block: "start" }));
 } else if (window.location.hash.startsWith("#culture-")) {
   requestAnimationFrame(() => document.querySelector(window.location.hash)?.scrollIntoView({ block: "start" }));
 }

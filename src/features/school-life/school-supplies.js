@@ -36,8 +36,16 @@ export const schoolSuppliesTopicData = {
       ["schoolbag", "书包", "shū bāo", "backpack", "backpack.webp"]
     ].map(([id, hanzi, pinyin, english, file]) => ({ id, hanzi, pinyin, english, audio: hanzi, imagePath: `assets/illustrated-stationery/${file}` })),
     review: [
-      { pattern: "……里有……", pinyin: "... lǐ yǒu...", english: "There is / are ... in ...", example: "文具盒里有铅笔。书包里有书。" },
-      { pattern: "里 / 外面", pinyin: "lǐ / wài miàn", english: "inside / outside", example: "书在书包里。文具盒在书包外面。" }
+      {
+        pattern: "书包里有书。",
+        english: "English begins with “There is” or “There are.” Chinese begins with the place, then 有, then the thing.",
+        examples: [{ hanzi: "文具盒里有铅笔。", english: "There is a pencil in the pencil case." }]
+      },
+      {
+        pattern: "书在书包里。",
+        english: "To say where something is, Chinese uses object + 在 + place + position word.",
+        examples: [{ hanzi: "文具盒在书包外面。", english: "The pencil case is outside the backpack." }]
+      }
     ]
 };
 

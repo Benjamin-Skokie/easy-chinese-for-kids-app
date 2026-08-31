@@ -341,6 +341,7 @@ function sharedLessonPracticeConfig(topic) {
         wrongPhraseIds: () => state.nationalityMatchWrongPhraseIds,
         wrongMeaningIds: () => state.nationalityMatchWrongMeaningIds,
         feedback: () => state.nationalityMatchFeedback,
+        pairedRows: true,
         phraseContent: (id) => { const item = nationalityPracticeItems().find((entry) => entry.id === id); return item ? `<span class="nationality-match-country"><img class="nationality-match-flag" src="${item.flagAsset}" alt="${item.flagAlt}" /><span class="nationality-match-copy"><span class="numbers-game-hanzi">${item.countryHanzi}</span><span class="numbers-game-english">${item.flagAlt.replace(" flag", "")}</span></span></span>` : ""; },
         meaningContent: (id) => { const item = nationalityPracticeItems().find((entry) => entry.id === id); return item ? `<span class="nationality-match-symbol-card"><img class="nationality-match-symbol" src="${item.symbolAsset}" alt="${item.symbolCaption}" /><span class="numbers-game-english">${item.symbolCaption}</span></span>` : ""; },
         onNew: () => { resetNationalityMatchGame(); renderActivityPanel(topic); },
@@ -475,6 +476,7 @@ function sharedLessonPracticeConfig(topic) {
         wrongPhraseIds: () => state.greetingsMatchWrongPhraseIds,
         wrongMeaningIds: () => state.greetingsMatchWrongMeaningIds,
         feedback: () => state.greetingsMatchFeedback,
+        pairedRows: true,
         meaningLabel: greetingsMeaningLabel,
         onNew: () => {
           resetGreetingsMatchGame();
@@ -1134,11 +1136,11 @@ function renderActivityPanel(topic) {
         </div>
         <button class="small-button is-practice-advance-button" type="button" data-number-game-refresh>Try another</button>
       </div>
-      <p class="numbers-game-note">The quantity changes each round, so kids do not always count in order from one.</p>
+      <p class="numbers-game-note">Count the objects, then choose the matching number.</p>
       <div class="numbers-game-visual">
         ${renderNumberVisual(challengeItem.value, stage)}
       </div>
-      <div class="numbers-game-options">
+      <div class="numbers-game-options numbers-number-options numbers-option-count-${state.numberChallengeOptionValues.length}">
         ${state.numberChallengeOptionValues
           .map((value) => {
             const option = buildNumberItem(value);

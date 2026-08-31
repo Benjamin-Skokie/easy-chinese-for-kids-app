@@ -4,8 +4,13 @@ node_modules/
 .env
 tmp/
 *.png
+*.jpeg
+*.txt
 !assets/illustrated-rooms/bicycle.png
 !assets/illustrated-classrooms/blackboard.png
+!assets/forms/nihao-world-report-problem-header.png
+!assets/forms/nihao-world-share-feedback-header.png
+!assets/forms/nihao-world-google-forms-header.png
 assets_archive/
 books_pdf/
 generated/easy_chinese_book_sheets_6page/

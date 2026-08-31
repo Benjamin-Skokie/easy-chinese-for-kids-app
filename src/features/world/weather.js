@@ -14,6 +14,17 @@ export const weatherLesson = {
     { id: "cold", hanzi: "今天很冷", pinyin: "jīn tiān hěn lěng", english: "Today is very cold.", audio: "今天很冷", imagePath: "assets/illustrated-weather/snowy-cold.webp", imageAlt: "A snowy winter scene" },
     { id: "hot", hanzi: "今天很热", pinyin: "jīn tiān hěn rè", english: "Today is very hot.", audio: "今天很热", imagePath: "assets/illustrated-weather/sunny-hot.webp", imageAlt: "A bright sunny day" },
     { id: "windy", hanzi: "今天刮大风", pinyin: "jīn tiān guā dà fēng", english: "It is very windy today.", audio: "今天刮大风", imagePath: "assets/illustrated-weather/windy-leaves.webp", imageAlt: "Leaves blowing on a windy day" }
+  ],
+  notes: [
+    {
+      hanzi: "今天很冷。",
+      explanation: "English uses “is” before an adjective. Chinese usually places 很 directly before the adjective.",
+      examples: [{ hanzi: "今天很热。", english: "Today is hot." }]
+    },
+    {
+      hanzi: "下雨了。 / 下雪了。",
+      explanation: "Chinese names the weather event directly. It does not need the English subject “it.”"
+    }
   ]
 };
 
@@ -31,11 +42,10 @@ export const natureLesson = {
   title: "Nature",
   summary: "Describe what is in the sky and on the ground using 天上有… and 地上有….",
   imagePath: "assets/illustrated-nature/day-night-nature.webp",
-  usefulNote: {
-    hanzi: "抬头看天上，低头看地上。",
-    pinyin: "tái tóu kàn tiān shàng, dī tóu kàn dì shàng.",
-    english: "Look up for the sky; look down for the ground."
-  },
+  notes: [{
+    hanzi: "天上有太阳。 / 地上有树。",
+    explanation: "English begins these sentences with “There is” or “There are.” Chinese begins with the place, then 有, then the thing."
+  }],
   scenes: [
     {
       id: "look-up",

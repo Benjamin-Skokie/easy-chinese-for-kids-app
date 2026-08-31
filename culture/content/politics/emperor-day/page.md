@@ -1,16 +1,16 @@
 ---
-title_zh: 皇帝的一天：朱元璋的书桌有多忙？
-title_en: A Day at the Emperor’s Desk: How Busy Was Zhu Yuanzhang?
+title_zh: 朱元璋为什么成了一个特别忙的皇帝？
+title_en: Why Did Zhu Yuanzhang Become Such a Busy Emperor?
 slug: emperor-day
 category: politics
-difficulty: 中等
+difficulty: 困难
 back_href: ../../../../index.html#culture-politics
 style_notes: "用 --- 分隔 frontmatter；正文强调优先用 *斜体*；尽量不用 **粗体**。"
 ---
 
 [hero]
-title_zh: 皇帝的一天：朱元璋的书桌有多忙？
-title_en: A Day at the Emperor’s Desk: How Busy Was Zhu Yuanzhang?
+title_zh: 朱元璋为什么成了一个特别忙的皇帝？
+title_en: Why Did Zhu Yuanzhang Become Such a Busy Emperor?
 [/hero]
 
 [section]
@@ -26,11 +26,11 @@ heading_en: Do We Really Know When He Woke Up?
 这篇文章只看一位皇帝和一个时期：朱元璋，又称洪武皇帝。他从1368年统治到1398年，是明朝的第一位皇帝，当时的首都在今天的南京。
 [/zh]
 [en]
-The easiest way to describe “a day in the life of an emperor” is to draw a schedule: wake at three, hold court at five, meet officials all day, and read reports late into the night. The problem is that schedules like this often mix customs from different dynasties and different rulers. We do not have trustworthy evidence that Zhu Yuanzhang, the first Ming emperor, followed one exact timetable every day.
+The easiest way to describe “a day in the life of an emperor” is to draw a schedule: wake at three, hold court at five, meet officials all day, and read reports late into the night. The problem is that schedules like this often mix customs from different dynasties and different emperors. We do not have trustworthy evidence that Zhu Yuanzhang, the first Ming emperor, followed one exact timetable every day.
 
-History is not completely silent, though. Official records preserve court meetings, government orders, and the movement of paperwork. They cannot show us what Zhu ate for breakfast or when he went to bed each night. They can answer a better question: *What work actually reached him as emperor?*
+History is not completely silent, though. Official records preserve court meetings, government orders, and the flow of paperwork. They cannot show us what Zhu ate for breakfast or when he went to bed each night. They can answer a better question: *What work actually reached him as emperor?*
 
-This article follows one ruler in one period. Zhu Yuanzhang, also called the Hongwu emperor, ruled from 1368 to 1398. He founded the Ming dynasty, and his capital was in the city now called Nanjing.
+This article follows one emperor in one period. Zhu Yuanzhang, also called the Hongwu Emperor, ruled from 1368 to 1398. He founded the Ming dynasty, and his capital was in the city now called Nanjing.
 [/en]
 [/section]
 
@@ -91,11 +91,11 @@ heading_en: In 1380, He Removed an Important Desk
 这个改变让皇权更加集中，也让更多政务更直接地来到皇帝面前。它不是一个“朱元璋喜欢亲自做作业”的小习惯，而是一项影响后来明朝政府结构的重大政治选择。
 [/zh]
 [en]
-At the beginning of the Ming dynasty, the Central Secretariat helped run the government. Its chancellor stood between the emperor and many parts of the administration. The office could review reports before the emperor saw them and help send orders back out. You might picture it as an important desk between the ruler and six major ministries.
+At the beginning of the Ming dynasty, the Central Secretariat helped run the government. Its chancellor stood between the emperor and many parts of the administration. The office could review reports before the emperor saw them and help send orders back out. You might picture it as an important desk between the emperor and six major ministries.
 
 In 1380, after the case against Chancellor Hu Weiyong, Zhu abolished the Central Secretariat and stopped appointing a chancellor. The Six Ministries then answered more directly to the emperor. Together, they handled officials, taxes and population records, ceremonies, the military, law, and public works.
 
-This change pulled more power toward the emperor. It also brought more government business closer to his desk. It was not simply a personal habit of a ruler who liked to “do all his own homework.” It was a major political choice that shaped the Ming government for generations.
+This change pulled more power toward the emperor. It also brought more government business closer to his desk. It was not simply a personal habit of an emperor who liked to “do all his own homework.” It was a major political choice that shaped the Ming government for generations.
 [/en]
 [/section]
 
@@ -119,7 +119,7 @@ The *Veritable Records of Ming Taizu*, an official chronicle compiled after Zhu'
 
 Now slow down. The record counts what government offices submitted. It does not say that Zhu read every character alone or wrote a long answer to every item with his own brush. One memorial could hold several matters. The numbers also cannot tell us exactly when he lit a lamp or put down his brush on those nights.
 
-Even with those limits, the count teaches us something important. After the chancellorship disappeared, the emperor stood at the end of more decision-making paths. The crowded desk belonged to Zhu, but it also belonged to a whole government organized around imperial power.
+Even with those limits, the count teaches us something important. After the chancellorship disappeared, the emperor stood at the end of more decision-making paths. The crowded desk reflected Zhu’s workload, but it also revealed an entire government organized around imperial power.
 [/en]
 [/section]
 
@@ -138,9 +138,9 @@ heading_en: The Emperor Did Not Truly Work Alone
 [en]
 Officials in the Six Ministries handled matters in their own areas. Other offices received and organized reports. Scholars serving near the emperor could help review documents, record decisions, or draft words that followed his instructions. Zhu removed the chancellor, but he did not remove the rest of government.
 
-Over time, the Ming developed grand secretaries and then a Grand Secretariat to help manage complicated paperwork. Zhu's early assistants did not yet have all the influence that later grand secretaries gained, and they were not simply chancellors with a new name. The system pulled final authority toward one ruler while also searching for new ways to keep the paperwork moving.
+Over time, the Ming developed grand secretaries and then a Grand Secretariat to help manage complicated paperwork. Zhu's early assistants did not yet have all the influence that later grand secretaries gained, and they were not simply chancellors with a new name. The system pulled final authority toward the emperor while also searching for new ways to keep the paperwork moving.
 
-That is the puzzle at the center of this story. Removing a powerful helper can give the emperor more control. But when more roads lead to one person, that point can also become the biggest traffic jam.
+That is the puzzle at the center of this story. Removing a powerful helper can give the emperor more control. But when more roads lead to one person, that person can also become the government’s biggest bottleneck.
 [/en]
 [/section]
 
@@ -157,7 +157,7 @@ heading_en: Busy Does Not Mean Every Decision Was Good
 [en]
 Zhu spent great energy rebuilding government in the early Ming, and he controlled officials with severe rules. Yet a large pile of documents shows workload, not wisdom. It does not prove that every choice was fair or effective. In the later part of his reign, his rule became increasingly harsh, and many officials were imprisoned or killed during major political purges.
 
-This is not a story saying that the busiest emperor must be the best emperor. When power is concentrated, a ruler's choices are harder to avoid. His mistakes and suspicions can also cause greater harm. Studying the papers on one desk also shows us how a government shared power, moved information, and handled risk.
+This is not a story saying that the busiest emperor must be the best emperor. When so much power rests with one person, the emperor's choices are harder to escape. His mistakes and suspicions can also cause greater harm. Studying the papers on one desk also shows us how a government shared power, moved information, and handled risk.
 [/en]
 [/section]
 

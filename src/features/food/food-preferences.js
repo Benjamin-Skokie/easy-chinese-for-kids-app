@@ -60,8 +60,22 @@ export const foodPreferencesTopicData = {
       ["dumplings", "饺子", "jiǎo zi", "dumplings", "dumplings.webp"],
     ].map(([id, hanzi, pinyin, english, file]) => ({ id, hanzi, pinyin, english, audio: hanzi, imagePath: `assets/illustrated-food/${file}` })),
     review: [
-      { pattern: "你喜欢吃什么？", pinyin: "nǐ xǐ huan chī shén me?", english: "What do you like to eat?", example: "Use this question to ask about a favorite food." },
-      { pattern: "喜欢吃 / 不喜欢吃", pinyin: "xǐ huan chī / bù xǐ huan chī", english: "like to eat / do not like to eat", example: "我喜欢吃披萨。我不喜欢吃西兰花。" }
+      {
+        pattern: "你喜欢吃什么？",
+        english: "English moves “what” to the front. Chinese keeps 什么 where the food answer would go.",
+        examples: [
+          { hanzi: "你喜欢吃披萨。", english: "You like to eat pizza." },
+          { hanzi: "你喜欢吃什么？", english: "What do you like to eat?" }
+        ]
+      },
+      {
+        pattern: "我不喜欢吃西兰花。",
+        english: "To make the sentence negative, put 不 directly before 喜欢. Chinese does not need a separate word like “do.”",
+        examples: [
+          { hanzi: "我喜欢吃披萨。", english: "I like to eat pizza." },
+          { hanzi: "我不喜欢吃西兰花。", english: "I do not like to eat broccoli." }
+        ]
+      }
     ]
 };
 

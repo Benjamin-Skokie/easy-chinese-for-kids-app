@@ -11,7 +11,8 @@ import { learnAudioEntries } from "../src/data/learn-audio-manifest.js";
 import { recordedLearnAudioIds } from "../src/data/learn-recorded-audio.js";
 import { filterLessonContent, filterLessonGroups, lessonScopeKey } from "../src/core/lesson-scoping.js";
 import { advanceShuffledOrder, nextRandomCycleId } from "../src/core/random-cycle.js";
-import { lessonScopeFromLocation, topicIdFromLocation, topicPageUrl, viewFromLocation } from "../src/core/router.js";
+import { renderLessonNotes } from "../src/core/lesson-notes.js";
+import { bookIdFromLocation, lessonScopeFromLocation, topicIdFromLocation, topicPageUrl, viewFromLocation } from "../src/core/router.js";
 import { timeDateWeekItems } from "../src/features/time-daily-life/weekdays.js";
 import { timeDateClockItems, timeDateRoutineItems } from "../src/features/time-daily-life/time.js";
 import { datePracticeItems, timeDateDateItems, timeDateMonthItems } from "../src/features/time-daily-life/dates.js";
@@ -54,13 +55,112 @@ import { createPoliteWordsController } from "../src/features/foundations/polite-
 import { createIntroductionsController } from "../src/features/foundations/introductions-controller.js";
 import { familyGameItemIds, familyPractice, familyTopic, illustratedFamily } from "../src/features/family/family.js";
 
+test("shared lesson Notes stay concise, bilingual, and free of pinyin markup", () => {
+  const markup = renderLessonNotes([{
+    hanzi: "我喜欢猫。",
+    explanation: "喜欢 works much like “like” in English.",
+    examples: [{ hanzi: "我喜欢猫。", english: "I like cats." }]
+  }]);
+
+  assert.match(markup, /data-lesson-notes/);
+  assert.match(markup, />Notes</);
+  assert.match(markup, /喜欢 works much like/);
+  assert.match(markup, /I like cats/);
+  assert.match(markup, /visual-topic-note-example-separator[^>]*[^<]*>-/);
+  assert.doesNotMatch(markup, /pinyin/i);
+  assert.doesNotMatch(markup, /[—–]/);
+});
+
 test("the local page loads a single bundled application script", () => {
   const html = readFileSync("index.html", "utf8");
-  assert.match(html, /<link rel="stylesheet" href="styles\.css\?v=20260828-stroke-lab-v1" \/>/);
+  assert.match(html, /<title>Nihao World \| Learn Chinese Through Language and Culture<\/title>/);
+  assert.match(html, /name="description"\s+content="Nihao World helps children learn Chinese as a second language through interactive Mandarin practice and explore rich Chinese culture from the very beginning\."/);
+  assert.match(html, /<link rel="canonical" href="https:\/\/nihaoworld\.org\/" \/>/);
+  assert.doesNotMatch(html, /No Stress Learning Chinese/);
+  assert.match(html, /<link rel="stylesheet" href="styles\.css\?v=[^"]+" \/>/);
   assert.match(html, /<script src="app\.js\?v=[^"]+"><\/script>/);
   assert.doesNotMatch(html, /type="module"/);
   assert.doesNotMatch(html, /Tap a word to hear it and explore the picture\./);
   assert.doesNotMatch(html, /<h3>Review<\/h3>/);
+});
+
+test("Privacy and Safety opens a plain-language family page", () => {
+  const html = readFileSync("index.html", "utf8");
+  const privacyPage = readFileSync("about/privacy-safety/index.html", "utf8");
+  const feedbackPage = readFileSync("about/feedback-problems/index.html", "utf8");
+  const sourcesPage = readFileSync("about/sources-research/index.html", "utf8");
+  const authorPage = readFileSync("about/author-project/index.html", "utf8");
+  const aboutPages = [privacyPage, feedbackPage, sourcesPage, authorPage];
+  const cultureSources = readFileSync("about/sources-research/culture-sources.js", "utf8");
+  assert.match(html, /href="about\/privacy-safety\/"/);
+  assert.match(html, /href="about\/feedback-problems\/"/);
+  assert.match(feedbackPage, /https:\/\/forms\.gle\/ksfMPko89fj6PpzJ9/);
+  assert.match(feedbackPage, /https:\/\/forms\.gle\/mrJ71Hfo5zXwmpDL6/);
+  assert.match(feedbackPage, /Report a Problem/);
+  assert.match(feedbackPage, /Share Feedback/);
+  assert.match(html, /href="about\/sources-research\/"/);
+  assert.match(sourcesPage, /Chinese Learning References/);
+  assert.match(sourcesPage, /Culture Story Sources/);
+  assert.match(sourcesPage, /Easy Steps to Chinese for Kids/);
+  assert.match(sourcesPage, /Character writing technology &amp; data/);
+  assert.match(sourcesPage, /https:\/\/github\.com\/chanind\/hanzi-writer"/);
+  assert.match(sourcesPage, /https:\/\/github\.com\/chanind\/hanzi-writer-data"/);
+  assert.match(sourcesPage, /selected, locally stored stroke outlines and median paths/);
+  assert.match(sourcesPage, /Arphic Public License/);
+  assert.match(cultureSources, /window\.NIHAO_CULTURE_SOURCES/);
+  assert.match(cultureSources, /culture\/books\/figures\/mulan/);
+  assert.match(html, /href="about\/author-project\/"/);
+  assert.match(authorPage, /Benjamin Sun/);
+  assert.match(authorPage, /Livingston High School/);
+  assert.equal((authorPage.match(/assets\/photos\/benjamin-sun-portrait\.webp\?v=20260830-square-v1/g) ?? []).length, 1);
+  assert.equal((authorPage.match(/width="582" height="582"/g) ?? []).length, 1);
+  assert.match(authorPage, /gpt-4o-mini-tts/);
+  assert.match(authorPage, /1,244/);
+  assert.match(privacyPage, /No accounts/);
+  assert.match(privacyPage, /the site is publicly available/);
+  assert.doesNotMatch(privacyPage, /not yet publicly deployed/);
+  assert.match(privacyPage, /Aggregate analytics only/);
+  assert.match(privacyPage, /Cloudflare hosting and aggregate analytics/);
+  assert.match(privacyPage, /do not use them to identify children/);
+  assert.match(privacyPage, /do not require a Google sign-in/);
+  assert.match(privacyPage, /contact email is optional/);
+  assert.match(privacyPage, /© 2026 Nihao World\. All rights reserved\./);
+  assert.match(privacyPage, /local storage to remember the selected Culture reading level/);
+  assert.match(privacyPage, /No gore, blood, graphic injury, or frightening harm/);
+  assert.match(privacyPage, /does not request microphone access/);
+  for (const aboutPage of aboutPages) {
+    assert.match(aboutPage, /zongzi-guide\.webp/);
+    assert.match(aboutPage, /Made with curiosity, care, and technology\./);
+    assert.match(aboutPage, /© 2026 Nihao World\. All rights reserved\./);
+  }
+});
+
+test("the mobile menu exposes About and production pages show site copyright", () => {
+  const homePage = readFileSync("index.html", "utf8");
+  const footerSource = readFileSync("site-footer.js", "utf8");
+  const cultureTemplate = readFileSync("culture/shared/template.html", "utf8");
+  const culturePages = [];
+  const collectCulturePages = (directory) => {
+    for (const entry of readdirSync(directory, { withFileTypes: true })) {
+      const filePath = join(directory, entry.name);
+      if (entry.isDirectory()) collectCulturePages(filePath);
+      if (entry.isFile() && entry.name === "index.html") culturePages.push(filePath);
+    }
+  };
+  collectCulturePages("culture/books");
+
+  assert.match(homePage, /class="global-view-item" href="about\/author-project\/"/);
+  assert.match(homePage, /<span class="global-view-zh">关于<\/span>/);
+  assert.match(homePage, /<span class="global-view-en">About<\/span>/);
+  assert.match(homePage, /site-footer\.js/);
+  assert.match(footerSource, /zongzi-guide\.webp/);
+  assert.match(footerSource, /Made with curiosity, care, and technology\./);
+  assert.match(footerSource, /© 2026 Nihao World\. All rights reserved\./);
+  assert.match(cultureTemplate, /site-footer\.js/);
+  assert.equal(culturePages.length, 103);
+  for (const pagePath of culturePages) {
+    assert.match(readFileSync(pagePath, "utf8"), /site-footer\.js/, `${pagePath} is missing the site footer`);
+  }
 });
 
 test("scene sentence cards support independent playback without changing scene playback", () => {
@@ -442,7 +542,8 @@ test("lesson scope keeps all-topic content first and filters every My Family sec
   assert.match(detailSource, /state\.lessonScope = null;[\s\S]{0,100}syncBookSelectionFromTopic\(\)/);
   assert.match(foundationsSource, /familyBookWordItems\(\)[\s\S]{0,360}lessonSources\?\.includes\(source\)/);
   assert.match(foundationsSource, /familyPractice[\s\S]{0,800}lessonSources\?\.includes/);
-  assert.match(foundationsSource, /family: state\.lessonScope[\s\S]{0,800}"1b:2"/);
+  assert.match(foundationsSource, /const familyScope = state\.lessonScope[\s\S]{0,180}if \(topic\.id === "family"\)/);
+  assert.match(foundationsSource, /familyScope === "1b:2"[\s\S]{0,500}哥哥 \/ 弟弟 \/ 姐姐 \/ 妹妹/);
   assert.match(foundationsSource, /familyLessonTheme[\s\S]{0,1500}"2a:2"/);
   assert.match(practiceSource, /familyPracticeSummary[\s\S]{0,700}"3a:4"/);
   assert.match(practiceSource, /items: familyGameItems,/);
@@ -540,8 +641,8 @@ test("the landing hero features six scrollable culture-story highlights", () => 
   assert.match(html, /<section class="story-highlights" data-story-highlights/);
   assert.equal((html.match(/data-story-highlight-dot=/g) ?? []).length, 6);
   assert.match(html, /culture\/books\/folk-tales\/monkey-king\/index\.html/);
-  assert.match(html, /culture\/books\/figures\/mulan\/index\.html/);
-  assert.match(html, /culture\/books\/politics\/emperor-day\/index\.html/);
+  assert.match(html, /culture\/books\/figures\/mulan\/index\.html\?reading=story/);
+  assert.match(html, /culture\/books\/politics\/emperor-day\/index\.html\?reading=story/);
   assert.match(carouselSource, /viewport\.scrollTo/);
 });
 
@@ -562,6 +663,126 @@ test("culture is an in-page landing view with category cards and no duplicate cu
   assert.doesNotMatch(cultureHtml, /发现中国文化/);
   assert.equal(viewFromLocation({ search: "", hash: "#culture-panel" }), "culture");
   assert.equal(viewFromLocation({ search: "", hash: "#culture-philosophy" }), "culture");
+  assert.equal(viewFromLocation({ search: "?view=books&book=2a", hash: "#book-lessons-2a" }), "books");
+  assert.equal(bookIdFromLocation({ search: "?view=books&book=2a", hash: "#book-lessons-2a" }, books), "2a");
+  assert.equal(bookIdFromLocation({ search: "", hash: "#book-lessons-4b" }, books), "4b");
+  assert.equal(bookIdFromLocation({ search: "?book=9z", hash: "#book-lessons-9z" }, books), null);
+});
+
+test("Mulan offers complete Early Reader, Story, and Advanced readings with one saved Culture preference", () => {
+  const earlySource = readFileSync("culture/content/figures/mulan/page.early.md", "utf8");
+  const storySource = readFileSync("culture/content/figures/mulan/page.story.md", "utf8");
+  const advancedSource = readFileSync("culture/content/figures/mulan/page.md", "utf8");
+  const bookHtml = readFileSync("culture/books/figures/mulan/index.html", "utf8");
+  const experimentHtml = readFileSync("culture/experiments/figures/mulan/index.html", "utf8");
+  const catalogScript = readFileSync("culture-reading-level.js", "utf8");
+
+  assert.match(earlySource, /^difficulty: 简单$/m);
+  assert.match(earlySource, /notice came from the \[\[army\]\]/);
+  assert.match(earlySource, /reached the \[\[Yellow River\]\]/);
+  assert.match(earlySource, /The emperor thanked Mulan/);
+  assert.doesNotMatch(earlySource, /\b(?:feast|hares)\b/i);
+  assert.match(storySource, /^difficulty: 中等$/m);
+  assert.match(advancedSource, /^difficulty: 困难$/m);
+  assert.equal((earlySource.match(/^\[section\]$/gm) ?? []).length, 6);
+  assert.equal((storySource.match(/^\[section\]$/gm) ?? []).length, 6);
+  assert.equal((advancedSource.match(/^\[section\]$/gm) ?? []).length, 6);
+  assert.ok(existsSync("culture/content/figures/mulan/zh.early.md"));
+  assert.ok(existsSync("culture/content/figures/mulan/en.early.md"));
+  assert.ok(existsSync("culture/content/figures/mulan/zh.story.md"));
+  assert.ok(existsSync("culture/content/figures/mulan/en.story.md"));
+  assert.match(bookHtml, /class="reading-level-quick-switch"/);
+  assert.doesNotMatch(bookHtml, /class="reading-level-label">Reading level<\/span>/);
+  assert.match(bookHtml, /<div class="hero-copy">[\s\S]*?class="reading-level-quick-switch"/);
+  assert.match(bookHtml, /data-reading-level-button="early"[^>]*>Easy<\/button>/);
+  assert.match(bookHtml, /data-reading-level-button="story"[^>]*>Medium<\/button>/);
+  assert.match(bookHtml, /data-reading-level-button="advanced"[^>]*>Advanced<\/button>/);
+  assert.match(bookHtml, /data-reading-version="early"/);
+  assert.match(bookHtml, /data-reading-version="story" hidden/);
+  assert.match(bookHtml, /data-reading-version="advanced" hidden/);
+  assert.match(bookHtml, /const defaultLevel = supportedLevels\.has\("story"\) \? "story"/);
+  assert.match(bookHtml, /const initialLevel = supportedLevels\.has\(requestedLevel\) \? requestedLevel : defaultLevel/);
+  assert.doesNotMatch(bookHtml, /initialLevel = supportedLevels\.has\(requestedLevel\) \? requestedLevel : savedLevel/);
+  assert.match(bookHtml, /href="\.\.\/\.\.\/\.\.\/\.\.\/index\.html\?view=culture#culture-figures"/);
+  assert.match(bookHtml, /easyChineseCultureReadingLevel/);
+  assert.match(bookHtml, /URLSearchParams\(window\.location\.search\)/);
+  assert.match(bookHtml, /木兰的勇敢旅程/);
+  assert.match(bookHtml, /class="glossary-term"[^>]*>army<\/button>/);
+  assert.match(bookHtml, /class="glossary-term"[^>]*>Yellow River<\/button>/);
+  assert.match(bookHtml, /class="glossary-term"[^>]*>khan<\/button>/);
+  assert.match(bookHtml, /木兰：替父出征的女儿/);
+  assert.match(bookHtml, /木兰：一首诗怎样长成一千年的传奇？/);
+  assert.match(experimentHtml, /data-reading-version="early"/);
+  assert.match(catalogScript, /"figures\/mulan"/);
+  assert.match(catalogScript, /Mulan's Brave Journey/);
+  assert.match(catalogScript, /Mulan: The Daughter Who Rode to War/);
+  assert.match(catalogScript, /Mulan: How a Poem Became a Thousand-Year Legend/);
+});
+
+test("the twelve-article Culture pilot provides all three reading levels", () => {
+  const pilotArticles = [
+    ["philosophy", "confucius"],
+    ["philosophy", "laozi"],
+    ["philosophy", "seed-dao"],
+    ["philosophy", "yin-yang"],
+    ["politics", "emperor-day"],
+    ["politics", "exam-content"],
+    ["politics", "imperial-exam-history"],
+    ["politics", "six-arts"],
+    ["politics", "yu-the-great"],
+    ["military", "ancient-armor"],
+    ["military", "art-of-war"],
+    ["military", "great-wall"]
+  ];
+
+  for (const [category, slug] of pilotArticles) {
+    const contentDir = `culture/content/${category}/${slug}`;
+    const earlySource = readFileSync(`${contentDir}/page.early.md`, "utf8");
+    const storySource = readFileSync(`${contentDir}/page.story.md`, "utf8");
+    const advancedSource = readFileSync(`${contentDir}/page.md`, "utf8");
+    const bookHtml = readFileSync(`culture/books/${category}/${slug}/index.html`, "utf8");
+
+    assert.match(earlySource, /^difficulty: 简单$/m, `${slug} Early Reader difficulty`);
+    assert.match(storySource, /^difficulty: 中等$/m, `${slug} Story difficulty`);
+    assert.match(advancedSource, /^difficulty: 困难$/m, `${slug} Advanced difficulty`);
+    assert.ok(existsSync(`${contentDir}/story-brief.md`), `${slug} story brief`);
+    for (const suffix of ["early", "story"]) {
+      assert.ok(existsSync(`${contentDir}/zh.${suffix}.md`), `${slug} zh.${suffix}.md`);
+      assert.ok(existsSync(`${contentDir}/en.${suffix}.md`), `${slug} en.${suffix}.md`);
+    }
+    assert.match(bookHtml, /class="reading-level-quick-switch"/, `${slug} has a compact per-story picker`);
+    assert.doesNotMatch(bookHtml, /class="reading-level-label">Reading level<\/span>/, `${slug} does not repeat the level label`);
+    assert.match(bookHtml, /data-reading-level-button="early"[^>]*>Easy<\/button>/, `${slug} Easy button`);
+    assert.match(bookHtml, /data-reading-level-button="story"[^>]*>Medium<\/button>/, `${slug} Medium button`);
+    assert.match(bookHtml, /data-reading-level-button="advanced"[^>]*>Advanced<\/button>/, `${slug} Advanced button`);
+    assert.match(bookHtml, /data-reading-version="early"/, `${slug} Early content`);
+    assert.match(bookHtml, /data-reading-version="story" hidden/, `${slug} Story content`);
+    assert.match(bookHtml, /data-reading-version="advanced" hidden/, `${slug} Advanced content`);
+    assert.match(bookHtml, /const defaultLevel = supportedLevels\.has\("story"\) \? "story"/, `${slug} defaults to Medium`);
+    assert.match(bookHtml, new RegExp(`index\\.html\\?view=culture#culture-${category}`), `${slug} returns to its Culture category`);
+  }
+
+  const catalogHtml = readFileSync("index.html", "utf8");
+  const catalogScript = readFileSync("culture-reading-level.js", "utf8");
+  const stylesSource = readFileSync("styles.css", "utf8");
+  assert.equal((catalogHtml.match(/data-culture-reading-picker/g) ?? []).length, 5);
+  assert.match(catalogHtml, /culture-level-picker--placeholder/);
+  assert.match(catalogHtml, /<span class="culture-level-label">Reading level<\/span>/);
+  assert.match(catalogHtml, /data-culture-reading-level="early"[^>]*>Easy<\/button>/);
+  assert.match(catalogHtml, /data-culture-reading-level="story"[^>]*>Medium<\/button>/);
+  assert.match(catalogHtml, /data-culture-reading-level="advanced"[^>]*>Advanced<\/button>/);
+  assert.match(catalogHtml, /culture-reading-level\.js/);
+  assert.match(catalogScript, /url\.searchParams\.set\("reading", level\)/);
+  assert.match(catalogScript, /link\.matches\("\.story-highlight-slide"\)/);
+  assert.match(catalogScript, /levels\.has\(level\) \? level : "story"/);
+  assert.match(catalogScript, /window\.localStorage\.setItem\(storageKey, nextLevel\)/);
+  assert.match(stylesSource, /\.culture-category-section \.culture-difficulty \{[\s\S]*?display: none;/);
+  assert.match(stylesSource, /\.culture-category-section \.cat-head \{[\s\S]*?flex-wrap: wrap;/);
+  assert.match(stylesSource, /\.culture-level-picker \{[\s\S]*?flex: 0 0 230px;/);
+  assert.match(stylesSource, /\.culture-level-label \{[\s\S]*?font-weight: 500;/);
+  for (const [category, slug] of pilotArticles) {
+    assert.match(catalogScript, new RegExp(`"${category}/${slug}"`), `${slug} has level-specific catalog titles`);
+  }
 });
 
 test("Learn by Books shows each textbook directly and links lessons to topic practice", () => {
@@ -678,7 +899,7 @@ test("randomized practice keeps its single green new-game control in the header"
   assert.match(lessonSource, /numbers-game-top[\s\S]*data-clothes-quiz-new[\s\S]*clothes-quiz-visual/);
   assert.match(schoolSource, /is-practice-advance-button" type="button" data-stationery-picture-match-new/);
   assert.match(worldSource, /is-practice-advance-button" type="button" data-world-colour-new/);
-  assert.match(foundationsSource, /is-practice-advance-button" type="button" data-body-reset-match/);
+  assert.match(foundationsSource, /is-practice-advance-button" type="button" data-body-advance-match/);
   assert.doesNotMatch(lessonSource, /data-(room-build|comparison-build|position-quiz|transport-build|clock-quiz|time-routine-quiz|clothes-quiz)-next/);
   assert.doesNotMatch(schoolSource, /data-(school-build|stationery-picture-match|meals-picture)-next/);
   assert.doesNotMatch(worldSource, /data-world-colour-next/);
@@ -754,8 +975,8 @@ test("Meals & Feelings matching stacks its complete sentence copy inside each ca
   const stylesSource = readFileSync("styles.css", "utf8");
   const schoolSource = readFileSync("src/features/school-life/school-food-runtime.js", "utf8");
   assert.match(schoolSource, /family-practice-shell lesson-practice-shell meals-feelings-practice-shell/);
-  assert.match(stylesSource, /\.meals-feelings-practice-shell \.polite-match-card:has\(\.meals-match-copy\) \{[\s\S]{0,200}min-height: 126px;[\s\S]{0,220}grid-template-columns: minmax\(0, 1fr\);/);
-  assert.match(stylesSource, /\.meals-feelings-practice-shell \.meals-match-copy \.numbers-game-hanzi \{[\s\S]{0,80}white-space: nowrap;/);
+  assert.match(stylesSource, /\.lesson-practice-shell\.meals-feelings-practice-shell \.polite-match-card\.meals-match-card \{[\s\S]{0,200}min-height: 126px;[\s\S]{0,220}grid-template-columns: minmax\(0, 1fr\);/);
+  assert.doesNotMatch(stylesSource, /\.meals-feelings-practice-shell \.meals-match-copy \.numbers-game-hanzi \{[^}]*white-space: nowrap;/);
 });
 
 test("Meals & Feelings picture choice keeps its image beside a 2-by-2 answer board", () => {
@@ -1445,7 +1666,8 @@ test("global view-event bindings stay outside the application composition root",
   assert.match(eventSource, /\[data-global-view\]/);
   assert.match(eventSource, /const returningToBooks = link\.dataset\.returnTarget === "book"/);
   assert.match(eventSource, /book-lessons-\$\{state\.selectedBookId\}/);
-  assert.match(eventSource, /behavior: returningToBooks \? "auto" : "smooth"/);
+  assert.match(eventSource, /\(returnTarget \?\? document\.querySelector\("\.switcher-panel"\)\)\?\.scrollIntoView\(\{\s*behavior: "auto"/);
+  assert.doesNotMatch(eventSource, /behavior: "smooth"/);
   assert.match(eventSource, /document\.getElementById\(returnTargetId\)/);
   assert.match(eventSource, /window\.history\.pushState\(null, "", `\$\{window\.location\.pathname\}\$\{viewHash\(link\.dataset\.globalView\)\}`\)/);
 });
@@ -1903,7 +2125,7 @@ test("Nature and Weather remain separate book topics", () => {
   assert.match(natureLesson.scenes[0].imagePath, /daytime-nature\.webp/);
   assert.match(natureLesson.scenes[1].imagePath, /nighttime-nature\.webp/);
   assert.match(natureLesson.scenes.flatMap((scene) => scene.lines).map((line) => line.hanzi).join(" "), /地上有树、花和草/);
-  assert.equal(natureLesson.usefulNote.hanzi, "抬头看天上，低头看地上。");
+  assert.equal(natureLesson.notes[0].hanzi, "天上有太阳。 / 地上有树。");
   assert.equal(weatherLesson.items.length, 6);
   assert.match(natureLesson.imagePath, /illustrated-nature\/day-night-nature\.webp/);
   assert.match(topicDetailSource, /topic\.ownsExplorerContent/);
@@ -1935,10 +2157,10 @@ test("Weather groups repeated scene artwork into a two-by-two scene grid", () =>
   assert.match(focusExplorer.innerHTML, /Rainy day/);
   assert.match(focusExplorer.innerHTML, /Snowy day/);
   assert.doesNotMatch(focusExplorer.innerHTML, /Book words/);
-  assert.match(focusExplorer.innerHTML, /Useful notes/);
-  assert.doesNotMatch(focusExplorer.innerHTML, /下 \+ weather \+ 了/);
-  assert.match(focusExplorer.innerHTML, /今天很 \+ 冷 \/ 热/);
-  assert.match(focusExplorer.innerHTML, /今天是 \+ 天气/);
+  assert.match(focusExplorer.innerHTML, />Notes</);
+  assert.doesNotMatch(focusExplorer.innerHTML, /visual-topic-note-pinyin/);
+  assert.match(focusExplorer.innerHTML, /English uses “is” before an adjective/);
+  assert.match(focusExplorer.innerHTML, /does not need the English subject “it/);
   assert.match(focusExplorer.innerHTML, /今天是晴天/);
   assert.match(focusExplorer.innerHTML, /今天很热/);
   assert.match(focusExplorer.innerHTML, /下雪了/);
@@ -1967,7 +2189,7 @@ test("Nature keeps its vocabulary inside the two scene cards", () => {
   assert.match(focusExplorer.innerHTML, /地上有树、花和草。/);
   assert.match(focusExplorer.innerHTML, />白天</);
   assert.match(focusExplorer.innerHTML, />晚上</);
-  assert.match(focusExplorer.innerHTML, /抬头看天上，低头看地上。/);
+  assert.match(focusExplorer.innerHTML, /English begins these sentences with “There is” or “There are/);
   assert.match(focusExplorer.innerHTML, /nature-word-icon/);
   assert.match(focusExplorer.innerHTML, /nature-word-copy/);
   assert.match(focusExplorer.innerHTML, /nature-word-row/);
@@ -2097,7 +2319,7 @@ test("Pets and Zoo Animals are distinct topic pages", () => {
   assert.equal(animalLessons["1b"].items.length, 4);
   assert.equal(animalLessons["2b"].items.length, 6);
   assert.equal(animalLessons["1b"].scenes[0].lines[0].hanzi, "乐乐喜欢狗和金鱼。");
-  assert.equal(animalLessons["2b"].usefulNote, undefined);
+  assert.equal(animalLessons["2b"].notes.length, 1);
   assert.match(focusRuntimeSource, /\["pets", "animals", "colours", "nature", "weather"\]/);
   assert.match(practiceRuntimeSource, /\["pets", "animals", "colours", "nature", "weather"\]/);
   assert.match(readFileSync("src/features/world/world-runtime.js", "utf8"), /topic\.id === "pets"\) return renderAnimalsPractice/);
@@ -2120,8 +2342,9 @@ test("Animals renders book-aware scenes, word cards, and listening practice", ()
   assert.match(focusExplorer.innerHTML, /book-word-card/);
   assert.doesNotMatch(focusExplorer.innerHTML, /Animal food/);
   assert.doesNotMatch(focusExplorer.innerHTML, /狗吃骨头。/);
-  assert.match(focusExplorer.innerHTML, /Useful note/);
-  assert.match(focusExplorer.innerHTML, /我喜欢 \+ 名词。比如：我喜欢猫。/);
+  assert.match(focusExplorer.innerHTML, />Notes</);
+  assert.match(focusExplorer.innerHTML, /喜欢 works much like “like” in English/);
+  assert.match(focusExplorer.innerHTML, /我喜欢猫。/);
 
   const activityList = { className: "", innerHTML: "", querySelector: () => null, querySelectorAll: () => [] };
   const twoB = createWorldRuntime({
@@ -2145,7 +2368,8 @@ test("Animals renders book-aware scenes, word cards, and listening practice", ()
   assert.match(focusExplorer.innerHTML, /狗吃骨头。/);
   assert.match(focusExplorer.innerHTML, /熊猫吃竹子。/);
   assert.match(focusExplorer.innerHTML, /猴子吃香蕉。/);
-  assert.doesNotMatch(focusExplorer.innerHTML, /Useful note/);
+  assert.match(focusExplorer.innerHTML, />Notes</);
+  assert.match(focusExplorer.innerHTML, /measure word between a number and an animal/);
   twoB.renderWorldPractice(animalsTopic);
   assert.match(activityList.innerHTML, /动物园有/);
   assert.match(activityList.innerHTML, /data-zoo-sentence-choice="tiger"/);

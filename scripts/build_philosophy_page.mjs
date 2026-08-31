@@ -1,4 +1,5 @@
 import fs from "node:fs/promises";
+import { constants as fsConstants } from "node:fs";
 import path from "node:path";
 import {
   createGlossaryFormatter,
@@ -182,7 +183,7 @@ function formatDifficulty(value) {
   return levels[normalized] || { zh: value || "未标注", en: value || "Not rated" };
 }
 
-function buildBody(blocks, availableImages = new Set(), difficulty = "") {
+function buildBody(blocks, availableImages = new Set(), difficulty = "", readingLevels = []) {
   const output = [];
   const difficultyLabel = formatDifficulty(difficulty);
 
@@ -192,7 +193,9 @@ function buildBody(blocks, availableImages = new Set(), difficulty = "") {
         <div class="hero-copy">
           <h1>${formatInline(parseField(block.raw, "title_zh"))}</h1>
           <h2>${formatInline(parseField(block.raw, "title_en"))}</h2>
-          <p class="difficulty-badge"><span class="zh">阅读难度 · ${escapeHtml(difficultyLabel.zh)}</span><span class="en">Reading level · ${escapeHtml(difficultyLabel.en)}</span></p>
+          ${readingLevels.length
+            ? readingLevelQuickSwitcherHtml(readingLevels)
+            : `<p class="difficulty-badge"><span class="zh">阅读难度 · ${escapeHtml(difficultyLabel.zh)}</span><span class="en">Reading level · ${escapeHtml(difficultyLabel.en)}</span></p>`}
         </div>
       </section>`);
       continue;
@@ -222,9 +225,72 @@ function buildBody(blocks, availableImages = new Set(), difficulty = "") {
   return output.join("\n\n");
 }
 
+function readingLevelQuickSwitcherHtml(levels) {
+  const labels = { early: "Easy", story: "Medium", advanced: "Advanced" };
+  const buttons = levels
+    .map((level) => `          <button type="button" data-reading-level-button="${level}" aria-pressed="false">${labels[level]}</button>`)
+    .join("\n");
+
+  return `<div class="reading-level-quick-switch" role="group" aria-label="Reading level">
+        <div class="reading-level-quick-options">
+${buttons}
+        </div>
+      </div>`;
+}
+
+const readingLevelScriptHtml = `  <script>
+    (() => {
+      const storageKey = "easyChineseCultureReadingLevel";
+      const buttons = [...document.querySelectorAll("[data-reading-level-button]")];
+      const versions = [...document.querySelectorAll("[data-reading-version]")];
+      if (!versions.length) return;
+
+      const supportedLevels = new Set(versions.map((version) => version.dataset.readingVersion));
+      const defaultLevel = supportedLevels.has("story") ? "story" : versions[0].dataset.readingVersion;
+      const requestedLevel = new URLSearchParams(window.location.search).get("reading") || "";
+
+      const setLevel = (level) => {
+        const nextLevel = supportedLevels.has(level) ? level : defaultLevel;
+        document.documentElement.dataset.readingLevel = nextLevel;
+        for (const version of versions) {
+          version.hidden = version.dataset.readingVersion !== nextLevel;
+        }
+        for (const button of buttons) {
+          button.setAttribute("aria-pressed", String(button.dataset.readingLevelButton === nextLevel));
+        }
+        const selectedTitle = versions.find((version) => version.dataset.readingVersion === nextLevel)
+          ?.querySelector("h1")?.textContent?.trim();
+        if (selectedTitle) document.title = selectedTitle;
+      };
+
+      for (const button of buttons) {
+        button.addEventListener("click", () => {
+          const level = button.dataset.readingLevelButton;
+          setLevel(level);
+          try {
+            window.localStorage.setItem(storageKey, level);
+          } catch {}
+          const url = new URL(window.location.href);
+          url.searchParams.set("reading", level);
+          window.history.replaceState(null, "", url);
+        });
+      }
+
+      const initialLevel = supportedLevels.has(requestedLevel) ? requestedLevel : defaultLevel;
+      setLevel(initialLevel);
+      if (supportedLevels.has(requestedLevel)) {
+        try {
+          window.localStorage.setItem(storageKey, requestedLevel);
+        } catch {}
+      }
+    })();
+  </script>`;
+
 export async function buildPhilosophyPage({ category = "philosophy", slug, target }) {
   const root = process.cwd();
   const pagePath = path.join(root, "culture/content", category, slug, "page.md");
+  const earlyPagePath = path.join(root, "culture/content", category, slug, "page.early.md");
+  const storyPagePath = path.join(root, "culture/content", category, slug, "page.story.md");
   const templatePath = path.join(root, "culture/shared/template.html");
   const sharedStylesPath = path.join(root, "culture/shared/styles.css");
   const sourceImagesDir = path.join(root, "culture/content", category, slug, "images");
@@ -240,6 +306,16 @@ export async function buildPhilosophyPage({ category = "philosophy", slug, targe
   formatGlossaryTerms = createGlossaryFormatter(glossary);
   const { data: frontmatter, body } = parseFrontmatter(markdown);
   const blocks = parseBlocks(body);
+  const readOptional = async (filePath) => {
+    try {
+      return await fs.readFile(filePath, "utf8");
+    } catch (error) {
+      if (!error || error.code !== "ENOENT") throw error;
+      return "";
+    }
+  };
+  const earlyMarkdown = await readOptional(earlyPagePath);
+  const storyMarkdown = await readOptional(storyPagePath);
   let sourceFiles = [];
   try {
     sourceFiles = await fs.readdir(sourceImagesDir);
@@ -249,14 +325,37 @@ export async function buildPhilosophyPage({ category = "philosophy", slug, targe
     }
   }
   const availableImages = new Set(sourceFiles);
-  const builtBody = buildBody(blocks, availableImages, frontmatter.difficulty);
+  const advancedBody = buildBody(blocks, availableImages, frontmatter.difficulty);
+  let builtBody = advancedBody;
+  let pageScripts = glossaryScriptHtml;
+  let documentTitle = frontmatter.title_zh;
+
+  if (earlyMarkdown || storyMarkdown) {
+    const variants = [];
+    if (earlyMarkdown) {
+      const { data, body: variantBody } = parseFrontmatter(earlyMarkdown);
+      variants.push({ level: "early", frontmatter: data, blocks: parseBlocks(variantBody) });
+    }
+    if (storyMarkdown) {
+      const { data, body: variantBody } = parseFrontmatter(storyMarkdown);
+      variants.push({ level: "story", frontmatter: data, blocks: parseBlocks(variantBody) });
+    }
+    variants.push({ level: "advanced", frontmatter, blocks });
+    documentTitle = variants[0].frontmatter.title_zh;
+    const variantLevels = variants.map((variant) => variant.level);
+    const variantBodies = variants
+      .map((variant, index) => `      <div class="reading-version" data-reading-version="${variant.level}"${index ? " hidden" : ""}>\n${buildBody(variant.blocks, availableImages, variant.frontmatter.difficulty, variantLevels)}\n      </div>`)
+      .join("\n");
+    builtBody = variantBodies;
+    pageScripts = `${glossaryScriptHtml}\n${readingLevelScriptHtml}`;
+  }
 
   const html = template
-    .replace("{{TITLE}}", frontmatter.title_zh)
+    .replace("{{TITLE}}", documentTitle)
     .replace("{{STYLESHEET_HREF}}", "./styles.css")
-    .replace("{{BACK_HREF}}", `../../../../index.html#culture-${category}`)
+    .replace("{{BACK_HREF}}", `../../../../index.html?view=culture#culture-${category}`)
     .replace("{{BODY}}", builtBody)
-    .replace("</body>", `${glossaryScriptHtml}\n  </body>`);
+    .replace("</body>", `${pageScripts}\n  </body>`);
 
   await fs.mkdir(outputDir, { recursive: true });
   await fs.writeFile(outputPath, html, "utf8");
@@ -265,7 +364,15 @@ export async function buildPhilosophyPage({ category = "philosophy", slug, targe
   if (sourceFiles.length) {
     await fs.mkdir(outputImagesDir, { recursive: true });
     for (const file of sourceFiles) {
-      await fs.copyFile(path.join(sourceImagesDir, file), path.join(outputImagesDir, file));
+      try {
+        await fs.copyFile(
+          path.join(sourceImagesDir, file),
+          path.join(outputImagesDir, file),
+          fsConstants.COPYFILE_EXCL
+        );
+      } catch (error) {
+        if (!error || error.code !== "EEXIST") throw error;
+      }
     }
   }
 }

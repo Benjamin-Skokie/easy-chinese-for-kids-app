@@ -1,3 +1,5 @@
+import { renderLessonNotes } from "../../core/lesson-notes.js";
+
 export function createPoliteWordsController({
   state,
   politeGameItemIds,
@@ -28,9 +30,25 @@ export function createPoliteWordsController({
       practice: isRequestLesson ? requestPractice : politePractice,
       title: isRequestLesson ? "Book theme: asking permission" : "Book theme: kind classroom language",
       introduction: isRequestLesson ? "Ask with 我可以…吗？, then listen for 可以 or 不行." : "Use thank you, sorry, and please in kind everyday classroom moments.",
-      note: isRequestLesson
-        ? `<p class="greetings-note-hanzi">我可以……吗？ / 可以 / 不行</p><p class="greetings-note-copy"><strong>我可以…吗？</strong> asks permission and ends with <strong>吗</strong>.</p><p class="greetings-note-copy"><strong>可以。</strong> means yes; <strong>不行。</strong> means no. The book practises this with actions such as <strong>喝水</strong>, <strong>吃饭</strong>, and <strong>去厕所</strong>.</p>`
-        : `<p class="greetings-note-hanzi">谢谢 / 不客气 / 对不起 / 没关系</p><p class="greetings-note-copy"><strong>谢谢你</strong> means “thank you,” and <strong>不客气</strong> is the kind reply: “you’re welcome.”</p><p class="greetings-note-copy"><strong>对不起</strong> is an apology; <strong>没关系</strong> is a gentle response.</p>`
+      notes: isRequestLesson
+        ? [{
+            hanzi: "我可以喝水吗？",
+            explanation: "English moves “can” to the front. Chinese keeps statement order and adds 吗 at the end to make a yes-or-no question.",
+            examples: [
+              { hanzi: "我可以喝水。", english: "I can drink water." },
+              { hanzi: "我可以喝水吗？", english: "May I drink water?" }
+            ]
+          }, {
+            hanzi: "可以。 / 不行。",
+            explanation: "These are short permission answers: 可以 allows the action; 不行 does not."
+          }]
+        : [{
+            hanzi: "谢谢你。 / 不客气。",
+            explanation: "These form a natural pair: one person gives thanks and the other replies politely."
+          }, {
+            hanzi: "对不起。 / 没关系。",
+            explanation: "These also form a pair: an apology followed by a gentle response."
+          }]
     };
   }
 
@@ -254,10 +272,7 @@ export function createPoliteWordsController({
             ${words.map((word) => `<button class="school-word-card is-text-only" type="button" data-polite-word="${word.id}"><span class="time-asset-hanzi">${word.hanzi}</span>${state.showPinyin ? `<span class="time-asset-pinyin">${word.pinyin}</span>` : ""}${state.showEnglish ? `<span class="time-asset-english">${word.english}</span>` : ""}</button>`).join("")}
           </div>
         </section>
-        <section class="greetings-note-card polite-useful-note">
-          <p class="body-match-kicker">Notes</p>
-          ${lesson.note}
-        </section>
+        ${renderLessonNotes(lesson.notes, { sectionClass: "polite-useful-note" })}
       </div>
     `;
 

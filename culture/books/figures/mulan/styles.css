@@ -30,6 +30,148 @@ body {
   gap: 28px;
 }
 
+.reading-version[hidden] {
+  display: none;
+}
+
+.reading-version {
+  display: grid;
+  gap: 28px;
+}
+
+.reading-level-quick-switch {
+  display: inline-grid;
+  width: 230px;
+  max-width: 100%;
+  margin: 20px auto 0;
+  vertical-align: top;
+}
+
+.reading-level-quick-options {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 3px;
+  padding: 4px;
+  border: 1px solid rgba(44, 62, 107, 0.1);
+  border-radius: 12px;
+  background: rgba(44, 62, 107, 0.06);
+}
+
+.reading-level-quick-options button {
+  min-width: 0;
+  padding: 7px 8px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.76rem;
+  font-weight: 800;
+}
+
+.reading-level-quick-options button[aria-pressed="true"] {
+  border-color: rgba(44, 62, 107, 0.16);
+  background: var(--cream);
+  color: var(--primary-deep);
+  box-shadow: 0 3px 10px rgba(30, 24, 12, 0.08);
+}
+
+.reading-level-quick-options button:focus-visible {
+  outline: 3px solid rgba(200, 164, 92, 0.45);
+  outline-offset: 2px;
+}
+
+.reading-level-panel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 18px 20px;
+  border: 1px solid rgba(44, 62, 107, 0.12);
+  border-radius: 22px;
+  background: rgba(255, 250, 241, 0.92);
+  box-shadow: var(--shadow-sm);
+}
+
+.reading-level-copy p {
+  margin: 0;
+}
+
+.reading-level-copy #reading-level-title {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px 10px;
+  color: var(--primary-deep);
+  font-weight: 800;
+}
+
+.reading-level-note {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 8px;
+  margin-top: 4px !important;
+  color: var(--muted);
+  font-size: 0.86rem;
+}
+
+.reading-level-switch {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 6px;
+  min-width: min(100%, 300px);
+  padding: 5px;
+  border-radius: 16px;
+  background: rgba(44, 62, 107, 0.08);
+}
+
+.reading-level-switch--3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  min-width: min(100%, 470px);
+}
+
+.reading-level-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2px 7px;
+  min-height: 46px;
+  padding: 8px 14px;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  background: transparent;
+  color: var(--muted);
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 750;
+  cursor: pointer;
+}
+
+.reading-level-button[aria-pressed="true"] {
+  border-color: rgba(44, 62, 107, 0.16);
+  background: var(--cream);
+  color: var(--primary-deep);
+  box-shadow: 0 4px 12px rgba(30, 24, 12, 0.08);
+}
+
+.reading-level-button:focus-visible {
+  outline: 3px solid rgba(200, 164, 92, 0.5);
+  outline-offset: 2px;
+}
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
 .page {
   background: rgba(255, 250, 241, 0.88);
   border: 1px solid rgba(44, 62, 107, 0.1);
@@ -358,6 +500,18 @@ h1, h2, h3, h4 {
 }
 
 @media (max-width: 900px) {
+  .reading-level-panel {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .reading-level-switch {
+    width: 100%;
+  }
+  .reading-level-switch--3 .reading-level-button {
+    padding: 7px 8px;
+    font-size: 0.82rem;
+  }
   .cover-copy {
     width: 100%;
     justify-content: end;

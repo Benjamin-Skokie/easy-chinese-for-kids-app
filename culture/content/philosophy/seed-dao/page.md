@@ -44,7 +44,7 @@ The pot looks quiet. Under the soil, however, the seed may already be taking in 
 
 Different seeds have different needs, but water, oxygen, and a suitable temperature all matter. Light also affects some kinds of seeds. Too little water can stop germination. Too much water can block oxygen and cause a seed to rot.
 
-Ann cannot make the bean hurry. She can keep the soil damp but not swampy and give the pot air and warmth. Then she waits. She has not given up. She has provided care and left the living seed time to grow.
+Ann cannot make the bean hurry. She can keep the soil damp but not swampy and give the pot air and warmth. Then she waits. She has not given up. She has cared for the living seed and given it time to grow.
 [/en]
 [/section]
 
@@ -72,7 +72,7 @@ Chapter 64 of the *Dao De Jing* says, *“A tree large enough to fill your arms 
 
 These lines are not a science lesson. They use a great tree and a long journey to show that enormous changes often build from very small beginnings. A first step does not become meaningless just because it is small.
 
-Near the end of the chapter is another line: *“Assist the natural unfolding of all things, and do not dare to force.”* The exact meaning can be translated in different ways, but it connects help with restraint. This relates to *wuwei*. *Wuwei* does not mean lying around and doing nothing. It also does not promise that waiting will magically make every wish come true. It points toward action with less forcing, grasping, and needless control.
+Near the end of the chapter is another line: *“Assist the natural unfolding of all things, and do not dare to force.”* The exact meaning can be translated in different ways, but it connects help with restraint. This relates to *wuwei*. *Wuwei* does not mean lying around and doing nothing. It also does not promise that waiting will magically make every wish come true. It points toward acting without force, grasping, or needless control.
 
 Another Chinese story tells of a man from the ancient state of Song—not the later Song dynasty—who pulled his field’s shoots upward because they were growing too slowly. The shoots withered. This story comes from the *Mencius*, not the *Dao De Jing*. Mencius used it while discussing moral development: ignoring growth is like failing to weed, but forcing growth destroys it.
 
@@ -104,7 +104,7 @@ There are many bamboo species, and they do not all grow on one schedule. Bamboo 
 
 The real bamboo story is already astonishing. Above ground, we see separate culms. Below ground, they may be connected. Fast spring growth depends on an established plant, stored energy, and the right season.
 
-Bamboo can remind us that unseen preparation matters. We should simply be honest: that is a modern reflection using a plant, not a bamboo lesson recorded in the *Dao De Jing*.
+Bamboo can remind us that unseen preparation matters. We should simply be honest about the connection: this is a modern reflection inspired by a plant, not a teaching about bamboo recorded in the *Dao De Jing*.
 
 Patience does not mean “I don’t care.” Farmers still plant, water, weed, and watch for pests. Patience means accepting that some processes can be supported but cannot be ordered to skip their steps.
 [/en]

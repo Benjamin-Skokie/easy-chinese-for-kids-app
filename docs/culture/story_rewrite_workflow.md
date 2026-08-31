@@ -275,6 +275,28 @@ difficulty: 困难
 > Difficulty: Hard
 ```
 
+### Multi-level story variants
+
+Difficulty changes language and concept load, not the amount of care or the basic expectation that a story should feel complete. An Early Reader version can still use several scenes and a satisfying ending; its short sentences and controlled vocabulary should not turn it into a plot summary.
+
+When one topic serves both beginning readers and readers ready for deeper historical interpretation:
+
+- keep the advanced combined manuscript in `page.md`, with `zh.md` and `en.md` as its standalone companions;
+- add the K–1 listening and supported-reading manuscript as `page.early.md`, with `zh.early.md` and `en.early.md` as its standalone companions;
+- add the full elementary story manuscript as `page.story.md`, with `zh.story.md` and `en.story.md` as its standalone companions;
+- use the same researched factual boundaries and `references.md` for both versions;
+- write both versions as engaging children's nonfiction rather than treating the advanced version as an academic paper;
+- let the Early Reader version tell the core story directly through short sentences, familiar words, helpful repetition, and immediate explanations of unavoidable cultural terms;
+- let the Story version keep a fuller elementary-school narrative with concrete language and modest historical context;
+- let the Advanced version follow the same subject more deeply through evidence, disagreement, historical layers, and interpretation;
+- adapt the English independently for native English-speaking children instead of translating Chinese sentence by sentence;
+- reuse accepted images across levels unless an image is inaccurate, misleading, or unable to support an essential story beat;
+- do not add a fictional grandparent, child visitor, museum guide, or other framing character merely to make exposition feel like a story.
+
+The shared page builder adds a reading-version switch automatically when `page.early.md` or `page.story.md` exists. The selection is saved as a site-wide Culture reading preference, so later multi-level stories can reuse it without inventing a new control.
+
+Ordinary story builds copy image files only when the generated target does not already contain them. This prevents a text-only rebuild from replacing an accepted, deployment-optimized image with a larger source file. When an image truly needs to change, update it deliberately through the article image workflow instead of relying on a manuscript build to overwrite it.
+
 ### Phase H: Tooltips and glossary
 
 Tooltip markers use `[[term]]` and draw from `culture/content/glossary.json`.

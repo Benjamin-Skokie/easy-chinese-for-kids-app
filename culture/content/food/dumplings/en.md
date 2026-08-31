@@ -1,6 +1,6 @@
 > Difficulty: Medium
 
-# The Dumpling That Wouldn't Stay Closed
+# Were Ancient Dumplings Like the Ones We Eat Today?
 
 ## Why Did It Open in the Pot?
 

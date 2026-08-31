@@ -1,6 +1,6 @@
 ---
-title_zh: 一只漏馅的饺子
-title_en: The Dumpling That Wouldn't Stay Closed
+title_zh: 古时候的饺子和今天一样吗？
+title_en: Were Ancient Dumplings Like the Ones We Eat Today?
 slug: dumplings
 category: food
 difficulty: 中等
@@ -9,8 +9,8 @@ style_notes: "用 --- 分隔 frontmatter；正文强调优先用 *斜体*；尽�
 ---
 
 [hero]
-title_zh: 一只漏馅的饺子
-title_en: The Dumpling That Wouldn't Stay Closed
+title_zh: 古时候的饺子和今天一样吗？
+title_en: Were Ancient Dumplings Like the Ones We Eat Today?
 [/hero]
 
 [section]

@@ -19,7 +19,7 @@ heading_zh: 一个动荡时代里的老师
 heading_en: A Teacher in a Troubled Time
 image: 2-1-confucius-teaching.webp
 caption_zh: 后人常把孔子想象成一位和学生一起读书、讨论的老师
-caption_en: Later generations remembered Confucius as a teacher who learned and talked with his students.
+caption_en: Later generations often pictured Confucius reading and discussing ideas with his students.
 [zh]
 两千五百多年前，孔子出生在鲁国——那是当时许多小国中的一个，位置在今天[[山东]]的曲阜一带。那时的中国还没有统一，许多小国彼此来往、争夺，也常常打仗。大人们讨论的是怎样让国家变强；孔子却总在追问另一个问题：*人怎样才能把日子过好，也和别人相处得好？*
 
@@ -30,15 +30,13 @@ caption_en: Later generations remembered Confucius as a teacher who learned and 
 他常说的一个重要字是 *仁*。这个字很难用一个英文词完全说清，可以把它先理解成：心里装着别人，愿意用善意和责任去对待人。孔子觉得，这不是背会一句漂亮话就行，而是一辈子慢慢练出来的本领。
 [/zh]
 [en]
-More than 2,500 years ago, Confucius was born in Lu, one of the many small states that existed before China became one united country. Lu was near today’s city of Qufu in [[Shandong]]. The rulers of these states made plans, formed alliances, and sometimes fought wars.
+More than 2,500 years ago, Confucius was born in Lu, one of many states that existed before China was united. Lu lay near present-day Qufu in [[Shandong]]. Its rulers formed alliances, competed for power, and sometimes went to war.
 
-While grown-ups argued about how to make a state powerful, Confucius kept returning to a different question: *How can people live well and get along well with one another?*
+In a time when leaders worried about making their states stronger, Confucius kept asking a different kind of question: *How can people live well and live well with one another?*
 
-He studied poems, old books, music, and rules for important ceremonies. He also taught students. This was not a school with a bell and rows of desks. Students learned by reading, asking questions, and sometimes disagreeing with their teacher.
+He studied poetry, music, old texts, and the rules for important ceremonies. He also taught. This was not a modern school with bells and rows of desks. Students read, asked questions, and sometimes disagreed with their teacher.
 
-Confucius cared about more than how much a person knew. He cared whether someone kept a promise, learned carefully, and remembered other people even when feeling angry, excited, or proud.
-
-One of his important ideas was *ren* (say “run”). No single English word captures it perfectly. You can begin by thinking of it as a caring, responsible way of treating other people. Confucius believed it took a lifetime of practice.
+To Confucius, learning was about more than collecting facts. Would a person keep a promise? Think carefully? Remember other people even while angry or proud? One idea that helped him explore these questions was *ren* (say “run”). No single English word captures it. A good starting point is “caring for other people and taking responsibility for how you treat them.” Confucius saw this as a lifelong practice, not a definition to memorize.
 [/en]
 [/section]
 
@@ -62,13 +60,11 @@ caption_en: Try switching places in your mind: if you would not like it, do not 
 又比如，朋友讲了一件不想让大家知道的事。你当然也不喜欢自己的秘密被人到处说。那就先停一停，不把它当成好笑的新闻传出去。
 [/zh]
 [en]
-*The Analects* collects many sayings and conversations connected with Confucius and his students. In one of them, a student named Zigong asked a huge question: “Is there one word, or one idea, that I can use all my life?” Confucius answered: *“What you do not want done to yourself, do not do to others.”*
+*The Analects* preserves a brief exchange between Confucius and a student named Zigong. Zigong asks an enormous question: Is there one word—or one idea—that a person can practice for an entire life? Confucius answers with *shu* and the teaching, *“What you do not want done to yourself, do not do to others.”*
 
-The key Chinese word here is *shu*. It is about making an effort to imagine another person’s feelings. Start with your own experience, then use it to understand someone else.
+Here, *shu* is not simply the kind of forgiveness suggested by the English word “excuse.” It asks you to begin with your own experience and use it to imagine another person's.
 
-Imagine that you spent a long time building a block castle. Someone comes by and knocks it down just for fun. You might feel angry and sad. The next time you see someone else’s creation, that memory can remind you not to wreck it.
-
-Or perhaps a friend tells you something private. You would not want your own secret turned into playground news. So you pause before passing it along.
+Suppose you spend a long time building a block castle, and someone knocks it down for fun. The anger and disappointment you feel can teach you something the next time you see another person's work. Or suppose a friend tells you something private. Remembering how you would feel if your own secret became playground news may help you stop before passing it along.
 [/en]
 [/section]
 
@@ -87,13 +83,13 @@ heading_en: Easy to Say, Hard to Practice
 你可以说：“我也在等，请你排到后面。”这既是在保护自己，也是在尊重别人。这样做有时比大声吵回去更需要勇气。孔子还很看重学习和反省：今天做得不好，可以想一想；明天再试一次。像练写字、练投篮一样，学着体谅别人，也要一次一次地练。
 [/zh]
 [en]
-Confucius was not only saying, “Don’t be mean.” He was asking people to take one extra step. Before saying something sharp, grabbing the best chance, or pushing a problem onto someone else, ask: *If I were them, would this feel fair?*
+Confucius was asking for more than “Do not be mean.” Before you say something cruel, grab an opportunity, or push a problem onto someone else, take one extra step: *If I were in that person's place, would this feel fair?*
 
-That sounds simple. Doing it is harder. When we are rushing, we mostly see our own homework. When we are upset, our own hurt can feel biggest. When we win a game, we may not even notice the person who lost.
+The question is simple. Using it is hard. When we are in a hurry, our own task can seem like the only one that matters. When we are hurt, our pain feels largest. When we win, we may not notice the person who lost.
 
-That is why *shu* is not the same as agreeing with everyone or having no rules. If someone cuts in line or picks on another child, it is right to stop them and ask an adult for help. The point is not to answer unfairness with more unfairness.
+*Shu* does not mean agreeing with everyone or living without rules. If someone cuts in line or bullies another child, you can object and ask an adult for help. The lesson is not to answer one unfair act with another.
 
-You might say, “I’ve been waiting too. Please go to the back of the line.” You are standing up for yourself while still respecting the other person. Sometimes that takes more courage than shouting back. Confucius also cared about looking back at your choices: if you handled something badly today, learn from it and try again tomorrow.
+You might say, “I have been waiting too. Please go to the back of the line.” That protects your place without attacking the other person. Sometimes it takes more courage than shouting. Confucius also valued reflection: if you respond badly today, study your choice and try again tomorrow.
 [/en]
 [/section]
 
@@ -113,13 +109,13 @@ caption_en: *The Analects* gathered many conversations and questions connected w
 我们能够确定的是：孔子后来被人们看作中国历史上最重要的老师之一，而《论语》也成了影响很深的一部经典。许多世纪里，读书人读它，老师讲它，家庭里的大人也会用里面的话提醒孩子。它影响过教育、家庭关系和人们对“好老师、好学生、好官员”的想象。不过，中国历史上还有许多别的思想家和书；《论语》很重要，却不是唯一的声音。
 [/zh]
 [en]
-Confucius did not sit down and write a book called *The Analects*. After his death, conversations, questions, and stories connected with him were passed from person to person. Over time, people who followed his ideas gathered many of them into *The Analects*.
+Confucius did not sit down and write a book called *The Analects*. After his death, sayings, questions, and stories connected with him continued to circulate. The collection took shape over time as people who followed his teachings gathered and passed on this material.
 
-It is not a biography written day by day. It is more like a room full of voices: a teacher answering, students asking, and later readers thinking hard about what those answers meant.
+That makes *The Analects* unlike a biography that follows one life from day to day. It is closer to a room filled with voices: a teacher answering, students questioning, and later generations thinking about what those answers might mean.
 
-Tradition says that Confucius taught 3,000 students and that 72 were especially famous. Those numbers have been repeated for a very long time, but they are not a precise class list that historians can check today.
+Tradition says that Confucius taught 3,000 students and that 72 were especially accomplished. The numbers are famous, but they come through later traditions. Historians cannot treat them as an attendance sheet from Confucius's own classroom.
 
-What we do know is that later generations remembered Confucius as one of China’s most important teachers, and *The Analects* became a deeply influential classic. For centuries, students read it, teachers explained it, and families repeated its sayings. It was not the only important book or the only voice in Chinese thought—but it was one of the most lasting.
+What is clear is the influence that followed. Later generations remembered Confucius as one of China's most important teachers, while *The Analects* became a classic read by students, explained by teachers, and quoted in families for centuries. It was never the only book or the only voice in Chinese thought. It was one of the most enduring.
 [/en]
 [/section]
 
@@ -134,10 +130,10 @@ heading_en: Can One Old Sentence Still Help Us?
 两千多年过去了，教室变了，玩具变了，孩子会遇到的新问题也变了。可每当有人愿意停下来想：“如果我是他，会有什么感觉？”孔子那句短短的话，就又在今天活了一次。
 [/zh]
 [en]
-Confucius’s line does not solve every problem by itself. If two friends both want the same toy, saying “I don’t like being told no” is only the beginning. They still need to take turns, make a plan, or invent a new game together.
+Confucius's line does not solve every problem by itself. If two friends want the same toy, “I do not like being told no” is only the beginning. They still have to take turns, negotiate, or invent a new way to play.
 
-But the line gives us a strong place to start: do not look at a problem only from where you are standing. Try stepping into the other person’s shoes before you decide what to do next.
+The line gives them a place to start: do not view the problem only from where you stand. Try the other person's position before deciding what to do next.
 
-More than two thousand years have passed. Schools have changed. Toys have changed. Children have brand-new problems to solve. But whenever someone stops and wonders, “How would I feel if that happened to me?” Confucius’s short sentence comes alive again.
+More than two thousand years have passed. Schools, toys, and the problems children face have changed. Yet whenever someone pauses to ask, “How would I feel if that happened to me?” Confucius's short answer comes alive again.
 [/en]
 [/ending]

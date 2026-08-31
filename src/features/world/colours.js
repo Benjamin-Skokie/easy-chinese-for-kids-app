@@ -7,7 +7,12 @@ export const colourLessons = {
       { id: "yellow", hanzi: "黄色", pinyin: "huáng sè", english: "yellow", audio: "黄色，黄色的香蕉", phraseAudio: "黄色的香蕉", imagePath: "assets/illustrated-colors/yellow-banana.webp", imageAlt: "A yellow banana", phrase: "黄色的香蕉", phrasePinyin: "huáng sè de xiāng jiāo", phraseEnglish: "a yellow banana" },
       { id: "blue", hanzi: "蓝色", pinyin: "lán sè", english: "blue", audio: "蓝色，蓝色的书包", phraseAudio: "蓝色的书包", imagePath: "assets/illustrated-colors/blue-backpack.webp", imageAlt: "A blue backpack", phrase: "蓝色的书包", phrasePinyin: "lán sè de shū bāo", phraseEnglish: "a blue schoolbag" },
       { id: "green", hanzi: "绿色", pinyin: "lǜ sè", english: "green", audio: "绿色，绿色的黄瓜", phraseAudio: "绿色的黄瓜", imagePath: "assets/illustrated-colors/green-cucumber.webp", imageAlt: "A green cucumber", phrase: "绿色的黄瓜", phrasePinyin: "lǜ sè de huáng guā", phraseEnglish: "a green cucumber" }
-    ]
+    ],
+    notes: [{
+      hanzi: "红色的苹果",
+      explanation: "Like English, Chinese puts the color before the object. Chinese commonly uses 的 between a color word and the noun.",
+      examples: [{ hanzi: "蓝色的书包", english: "a blue backpack" }]
+    }]
   },
   "2a": {
     title: "Colours",
@@ -22,7 +27,12 @@ export const colourLessons = {
       { id: "yellow", hanzi: "黄色", pinyin: "huáng sè", english: "yellow", audio: "黄色，黄色的香蕉", phraseAudio: "黄色的香蕉", imagePath: "assets/illustrated-colors/yellow-banana.webp", imageAlt: "A yellow banana", phrase: "黄色的香蕉", phrasePinyin: "huáng sè de xiāng jiāo", phraseEnglish: "a yellow banana" },
       { id: "blue", hanzi: "蓝色", pinyin: "lán sè", english: "blue", audio: "蓝色，蓝色的书包", phraseAudio: "蓝色的书包", imagePath: "assets/illustrated-colors/blue-backpack.webp", imageAlt: "A blue backpack", phrase: "蓝色的书包", phrasePinyin: "lán sè de shū bāo", phraseEnglish: "a blue schoolbag" },
       { id: "green", hanzi: "绿色", pinyin: "lǜ sè", english: "green", audio: "绿色，绿色的黄瓜", phraseAudio: "绿色的黄瓜", imagePath: "assets/illustrated-colors/green-cucumber.webp", imageAlt: "A green cucumber", phrase: "绿色的黄瓜", phrasePinyin: "lǜ sè de huáng guā", phraseEnglish: "a green cucumber" }
-    ]
+    ],
+    notes: [{
+      hanzi: "红色的苹果",
+      explanation: "Like English, Chinese puts the color before the object. Chinese commonly uses 的 between a color word and the noun.",
+      examples: [{ hanzi: "蓝色的书包", english: "a blue backpack" }]
+    }]
   }
 };
 

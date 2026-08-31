@@ -48,8 +48,11 @@ export const classroomTopicData = {
       { id: "on-table", hanzi: "桌子上有", pinyin: "zhuō zi shàng yǒu", english: "There is / are ... on the table", wordIds: ["computer", "textbook", "workbook", "pencil", "ruler", "eraser", "colored-pencils"], lessonSources: ["3b:2"] }
     ],
     review: [
-      { pattern: "教室里有……", pinyin: "jiào shì lǐ yǒu...", english: "There is / are ... in the classroom.", example: "教室里有桌子和椅子。", lessonSources: ["2b:4", "3b:2"] },
-      { pattern: "桌子上有……", pinyin: "zhuō zi shàng yǒu...", english: "There is / are ... on the table.", example: "桌子上有电脑。", lessonSources: ["3b:2"] },
-      { pattern: "很多", pinyin: "hěn duō", english: "many; much", example: "教室里有很多桌子和椅子。", lessonSources: ["2b:4"] }
+      {
+        pattern: "教室里有桌子和椅子。",
+        english: "English begins with “There is” or “There are.” Chinese begins with the place, then 有, then what is there.",
+        examples: [{ hanzi: "桌子上有电脑。", english: "There is a computer on the table." }],
+        lessonSources: ["2b:4", "3b:2"]
+      }
     ]
 };

@@ -1,6 +1,6 @@
 ---
 title_zh: 一张考卷能打开多大的门？——中国古代怎样选官
-title_en: How Wide Could an Exam Open the Door? Choosing Officials in Imperial China
+title_en: How Far Could an Exam Open the Door? Choosing Officials in Imperial China
 slug: imperial-exam-history
 category: politics
 difficulty: 困难
@@ -10,7 +10,7 @@ style_notes: "用 --- 分隔 frontmatter；正文强调优先用 *斜体*；尽�
 
 [hero]
 title_zh: 一张考卷能打开多大的门？——中国古代怎样选官
-title_en: How Wide Could an Exam Open the Door? Choosing Officials in Imperial China
+title_en: How Far Could an Exam Open the Door? Choosing Officials in Imperial China
 [/hero]
 
 [section]

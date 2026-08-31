@@ -11,7 +11,7 @@ export function bindViewNavigationEvents({ state, switchView, updateTopicPageVis
     button.addEventListener("click", () => {
       switchView(button.dataset.viewTarget);
       document.querySelector(".switcher-panel")?.scrollIntoView({
-        behavior: "smooth",
+        behavior: "auto",
         block: "start"
       });
     });
@@ -36,7 +36,7 @@ export function bindViewNavigationEvents({ state, switchView, updateTopicPageVis
           : "";
       const returnTarget = returnTargetId ? document.getElementById(returnTargetId) : null;
       (returnTarget ?? document.querySelector(".switcher-panel"))?.scrollIntoView({
-        behavior: returningToBooks ? "auto" : "smooth",
+        behavior: "auto",
         block: "start"
       });
       link.closest(".global-view-menu")?.removeAttribute("open");
@@ -59,7 +59,7 @@ export function bindViewNavigationEvents({ state, switchView, updateTopicPageVis
         card.classList.toggle("is-selected", card === link);
       });
       window.history.pushState(null, "", link.getAttribute("href"));
-      target.scrollIntoView({ behavior: "smooth", block: "start" });
+      target.scrollIntoView({ behavior: "auto", block: "start" });
     });
   });
 }

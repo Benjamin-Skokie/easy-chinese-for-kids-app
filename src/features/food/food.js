@@ -61,8 +61,15 @@ export const foodTopicData = {
       ["potatoes", "土豆", "tǔ dòu", "potatoes", "potatoes.webp"]
     ].map(([id, hanzi, pinyin, english, file]) => ({ id, hanzi, pinyin, english, audio: hanzi, imagePath: `assets/illustrated-food/${file}` })),
     review: [
-      { pattern: "吃", pinyin: "chī", english: "eat solid food", example: "Use 吃 for food you chew: 吃苹果、披萨、炒饭。", lessonSources: ["1b:7", "2b:7", "3b:6"] },
-      { pattern: "喝", pinyin: "hē", english: "drink liquids", example: "Use 喝 for drinks: 喝水、牛奶、果汁。" }
+      {
+        pattern: "吃苹果 / 喝牛奶",
+        english: "吃 and 喝 work much like “eat” and “drink” in English: use 吃 for food and 喝 for drinks.",
+        examples: [
+          { hanzi: "我吃苹果。", english: "I eat apples." },
+          { hanzi: "我喝牛奶。", english: "I drink milk." }
+        ],
+        lessonSources: ["1b:7", "2b:7", "3b:6"]
+      }
     ]
 };
 

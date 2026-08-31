@@ -147,8 +147,8 @@ heading_en: In Summary: Ask About Structure Before Building a Timeline
 古代铠甲没有从皮到铜、铁、钢一路通关。它真正的历史，是工匠在有限材料中不断调整结构，也是考古学家从朽皮、锈块、孔洞和雕塑中，一片一片找回那些不同的答案。
 [/zh]
 [en]
-When you see ancient armor, try asking questions like a conservator. Is this an excavated object, an image, a written description, or a modern reconstruction? What were the plates made from, how were they connected, and which parts of the body did they cover? What region, period, and kind of wearer did it belong to? Which details are supported by evidence, and which are the best current reconstruction?
+When you see ancient armor, try asking questions like a conservator. Is this an excavated object, an image, a written description, or a modern reconstruction? What were the plates made from, how were they connected, and which parts of the body did they cover? What region, period, and kind of wearer did it belong to? Which details are supported by evidence, and which belong to the best reconstruction we can make for now?
 
-Ancient armor did not advance through game levels from hide to bronze, iron, and steel. Its real history lies in the many ways craftspeople adjusted structures using the materials available to them. It also lies in the work of archaeologists who recover different answers, one decayed scrap, rusted plate, lacing hole, and sculpture at a time.
+Ancient armor did not advance through game levels from hide to bronze, iron, and steel. Its real history lies in the many ways craftspeople adjusted structures using the materials available to them. It also lies in the patient work of archaeologists, who recover the story one decayed scrap, rusted plate, lacing hole, and sculpture at a time.
 [/en]
 [/ending]

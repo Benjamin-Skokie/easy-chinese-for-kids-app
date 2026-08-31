@@ -8,7 +8,11 @@ const lessons = {
       ["write", "我喜欢写字。", "wǒ xǐ huan xiě zì.", "I like writing.", "我喜欢写字"],
       ["play", "我每天玩儿游戏。", "wǒ měi tiān wánr yóu xì.", "I play games every day.", "我每天玩儿游戏"]
     ],
-    note: ["我喜欢… / 我每天…", "wǒ xǐ huan… / wǒ měi tiān…", "Use 我喜欢… to say what you like. Use 我每天… to say what you do every day.", "我喜欢画画。 我每天玩儿游戏。"],
+    notes: [{
+      hanzi: "我每天玩儿游戏。",
+      explanation: "Chinese usually puts time words such as 每天 before the action. English often puts “every day” after it.",
+      examples: [{ hanzi: "我每天画画。", english: "I draw every day." }]
+    }],
     rounds: [
       ["read", "看书", "kàn shū", "reading", ["写字"]], ["draw", "画画", "huà huà", "drawing", ["玩儿游戏"]],
       ["write", "写字", "xiě zì", "writing", ["画画"]], ["play", "玩儿游戏", "wánr yóu xì", "playing games", ["看书"]]
@@ -30,7 +34,11 @@ const lessons = {
       ["skate", "我喜欢滑冰。", "wǒ xǐ huan huá bīng.", "I like skating.", "我喜欢滑冰"],
       ["ski", "我喜欢滑雪。", "wǒ xǐ huan huá xuě.", "I like skiing.", "我喜欢滑雪"]
     ],
-    note: ["你喜欢…吗？ / 我喜欢…", "nǐ xǐ huan… ma? / wǒ xǐ huan…", "Use 你喜欢…吗？ to ask if someone likes an activity. Answer: 我喜欢…。", "你喜欢游泳吗？ 我喜欢游泳。"],
+    notes: [{
+      hanzi: "你喜欢游泳吗？",
+      explanation: "English adds “do” and moves it to the front. Chinese keeps the statement order and adds 吗 at the end.",
+      examples: [{ hanzi: "我喜欢游泳。", english: "I like swimming." }]
+    }],
     rounds: [["sing", "唱歌", "chàng gē", "singing"], ["dance", "跳舞", "tiào wǔ", "dancing"], ["swim", "游泳", "yóu yǒng", "swimming"], ["skate", "滑冰", "huá bīng", "skating"], ["ski", "滑雪", "huá xuě", "skiing"]].map(([itemId, action, actionPinyin, actionEnglish]) => ({ itemId, action, actionPinyin, actionEnglish, distractors: ["看书"], answers: [
       { tokens: ["你", "喜欢", action, "吗"], hanzi: `你喜欢${action}吗？`, pinyin: `nǐ xǐ huan ${actionPinyin} ma?`, english: `Do you like ${actionEnglish}?`, audio: `你喜欢${action}吗？我喜欢${action}。` }
     ] }))
@@ -45,7 +53,11 @@ const lessons = {
       ["television", "她喜欢看电视。", "tā xǐ huan kàn diàn shì.", "She likes watching television.", "她喜欢看电视"],
       ["movie", "他爱看电影。", "tā ài kàn diàn yǐng.", "He loves watching movies.", "他爱看电影"]
     ],
-    note: ["喜欢 / 爱 …；在 + 活动", "xǐ huan / ài …; zài + huó dòng", "喜欢 and 爱 say what someone generally likes. 在 + activity says what someone is doing now.", "她喜欢看电视。 她在弹钢琴。"],
+    notes: [{
+      hanzi: "她在弹钢琴。",
+      explanation: "在 before an action shows that it is happening now. English usually marks this with “is” and an -ing verb.",
+      examples: [{ hanzi: "她喜欢看电视。", english: "She likes watching TV in general." }]
+    }],
     practiceType: "sentence-choice",
     sentenceOptions: {
       cartoons: { hanzi: "她喜欢看动画片儿。", pinyin: "tā xǐ huan kàn dòng huà piānr.", english: "She likes watching cartoons.", audio: "她喜欢看动画片儿" },
@@ -71,7 +83,11 @@ const lessons = {
       ["bike", "思思在公园骑自行车。", "sī si zài gōng yuán qí zì xíng chē.", "Sisi is riding a bike in the park.", "思思在公园骑自行车"],
       ["sand", "美美在海边玩儿沙子。", "měi mei zài hǎi biān wánr shā zi.", "Meimei is playing with sand at the beach.", "美美在海边玩儿沙子"]
     ],
-    note: ["在 + 地点 + 活动", "zài + dì diǎn + huó dòng", "Use 在 + place + activity to say where someone is doing something.", "思思在公园骑自行车。"],
+    notes: [{
+      hanzi: "思思在公园骑自行车。",
+      explanation: "Chinese normally places 在 + place before the action. English usually puts the action before the place.",
+      examples: [{ hanzi: "天天在公园踢足球。", english: "Tiantian plays soccer in the park." }]
+    }],
     rounds: [
       { itemId: "run", distractors: ["公园", "踢足球"], answers: [{ tokens: ["孩子们", "在", "学校操场上", "跑步"], hanzi: "孩子们在学校操场上跑步。", pinyin: "hái zi men zài xué xiào cāo chǎng shàng pǎo bù.", english: "The children are running on the school playground.", audio: "孩子们在学校操场上跑步" }] },
       { itemId: "soccer", distractors: ["海边", "骑自行车"], answers: [{ tokens: ["天天", "在", "公园", "踢足球"], hanzi: "天天在公园踢足球。", pinyin: "tiān tiān zài gōng yuán tī zú qiú.", english: "Tiantian is playing soccer in the park.", audio: "天天在公园踢足球" }] },
@@ -101,6 +117,7 @@ export const toyPracticeAudioEntries = [
 ];
 
 import { advanceShuffledOrder, nextRandomCycleId } from "../../core/random-cycle.js";
+import { renderLessonNotes } from "../../core/lesson-notes.js";
 
 function shuffled(items) { const copy = [...items]; for (let i = copy.length - 1; i > 0; i -= 1) { const j = Math.floor(Math.random() * (i + 1)); [copy[i], copy[j]] = [copy[j], copy[i]]; } return copy; }
 
@@ -157,7 +174,7 @@ export function createPlayHobbiesRuntime({ state, currentTopic, currentBook, cur
     if (!["hobbies", "hobbies-3b", "hobbies-at-home", "hobbies-leisure"].includes(currentTopic().id)) return;
     const page = lesson(); const items = currentTopic().focusItems; const itemFor = (id) => items.find((item) => item.id === id);
     const imageClass = "school-scene-image";
-    focusExplorer.innerHTML = `<div class="time-date-board school-topic-board hobbies-topic-board"><section class="school-lesson-section"><div class="time-months-heading"><p class="body-match-kicker">Review</p></div><div class="school-scene-grid hobbies-scene-grid">${page.scenes.map(([id, hanzi, pinyin, english, audio]) => { const item = itemFor(id); return `<section class="greetings-exchange school-scene-card"><div class="greetings-exchange-top"><div><p class="body-match-kicker">${sceneTitle(id)}</p></div><button class="small-button is-play-button" type="button" data-hobbies-scene="${audio}">Play</button></div><div class="school-scene-layout"><img class="${imageClass}" src="${item.imagePath}" alt="${item.imageAlt}"><div class="greetings-line-stack"><article class="greetings-line-card"><div class="telephone-bubble-copy"><p class="telephone-line-hanzi">${hanzi}</p>${state.showPinyin ? `<p class="telephone-line-pinyin">${pinyin}</p>` : ""}${state.showEnglish ? `<p class="telephone-line-english">${english}</p>` : ""}</div></article></div></div></section>`; }).join("")}</div></section><section class="school-lesson-section"><div class="time-months-heading"><p class="body-match-kicker">Book words</p></div><div class="school-word-grid is-text-only hobbies-word-grid">${page.itemIds.map((id) => { const item = itemFor(id); return `<button class="school-word-card is-text-only" type="button" data-hobbies-word="${id}"><span class="time-asset-hanzi">${item.hanzi}</span>${state.showPinyin ? `<span class="time-asset-pinyin">${item.pinyin}</span>` : ""}${state.showEnglish ? `<span class="time-asset-english">${item.english}</span>` : ""}</button>`; }).join("")}</div></section><section class="visual-topic-notes school-review-notes"><p class="body-match-kicker">Useful notes</p><div class="visual-topic-note-grid school-review-grid"><article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">${page.note[0]}</p>${state.showPinyin ? `<p class="visual-topic-note-pinyin">${page.note[1]}</p>` : ""}${state.showEnglish ? `<p class="visual-topic-note-english">${page.note[2]}</p>` : ""}<p class="visual-topic-note-example">${page.note[3]}</p></article></div></section></div>`;
+    focusExplorer.innerHTML = `<div class="time-date-board school-topic-board hobbies-topic-board"><section class="school-lesson-section"><div class="time-months-heading"><p class="body-match-kicker">Review</p></div><div class="school-scene-grid hobbies-scene-grid">${page.scenes.map(([id, hanzi, pinyin, english, audio]) => { const item = itemFor(id); return `<section class="greetings-exchange school-scene-card"><div class="greetings-exchange-top"><div><p class="body-match-kicker">${sceneTitle(id)}</p></div><button class="small-button is-play-button" type="button" data-hobbies-scene="${audio}">Play</button></div><div class="school-scene-layout"><img class="${imageClass}" src="${item.imagePath}" alt="${item.imageAlt}"><div class="greetings-line-stack"><article class="greetings-line-card"><div class="telephone-bubble-copy"><p class="telephone-line-hanzi">${hanzi}</p>${state.showPinyin ? `<p class="telephone-line-pinyin">${pinyin}</p>` : ""}${state.showEnglish ? `<p class="telephone-line-english">${english}</p>` : ""}</div></article></div></div></section>`; }).join("")}</div></section><section class="school-lesson-section"><div class="time-months-heading"><p class="body-match-kicker">Book words</p></div><div class="school-word-grid is-text-only hobbies-word-grid">${page.itemIds.map((id) => { const item = itemFor(id); return `<button class="school-word-card is-text-only" type="button" data-hobbies-word="${id}"><span class="time-asset-hanzi">${item.hanzi}</span>${state.showPinyin ? `<span class="time-asset-pinyin">${item.pinyin}</span>` : ""}${state.showEnglish ? `<span class="time-asset-english">${item.english}</span>` : ""}</button>`; }).join("")}</div></section>${renderLessonNotes(page.notes, { sectionClass: "school-review-notes", gridClass: "school-review-grid" })}</div>`;
     focusExplorer.querySelectorAll("[data-hobbies-word]").forEach((button) => button.addEventListener("click", () => selectFocusItem(button.dataset.hobbiesWord, { playAudio: true })));
     focusExplorer.querySelectorAll("[data-hobbies-scene]").forEach((button) => button.addEventListener("click", () => state.tapAudioEnabled && speakLesson(button.dataset.hobbiesScene, 0.74)));
   }
@@ -169,7 +186,11 @@ export function createPlayHobbiesRuntime({ state, currentTopic, currentBook, cur
       imagePath: { doll: "assets/illustrated-toys/lele-playing-doll.webp", "toy-train": "assets/illustrated-toys/lele-playing-toy-train.webp", "toy-airplane": "assets/illustrated-toys/lele-playing-toy-airplane.webp", "toy-bear": "assets/illustrated-toys/lele-playing-toy-bear.webp" }[scene.id],
       alt: { doll: "Lele playing with a doll", "toy-train": "Lele pushing a toy train", "toy-airplane": "Lele flying a toy airplane", "toy-bear": "Lele high-fiving a toy bear" }[scene.id]
     }));
-    focusExplorer.innerHTML = `<div class="time-date-board school-topic-board hobbies-topic-board"><section class="school-lesson-section"><div class="time-months-heading"><p class="body-match-kicker">Review</p></div><div class="school-scene-grid toys-scene-grid">${scenes.map((scene) => `<section class="greetings-exchange school-scene-card"><div class="greetings-exchange-top"><div><p class="body-match-kicker">${scene.title}</p></div><button class="small-button is-play-button" type="button" data-toys-scene-play="${scene.id}">Play</button></div><div class="school-scene-layout"><img class="school-scene-image" src="${scene.imagePath}" alt="${scene.alt}"><div class="greetings-line-stack"><article class="greetings-line-card"><div class="telephone-bubble-copy"><p class="telephone-line-hanzi">${scene.hanzi}</p>${state.showPinyin ? `<p class="telephone-line-pinyin">${scene.pinyin}</p>` : ""}${state.showEnglish ? `<p class="telephone-line-english">${scene.english}</p>` : ""}</div></article></div></div></section>`).join("")}</div></section><section class="school-lesson-section"><div class="time-months-heading"><p class="body-match-kicker">Book words &amp; more</p></div><div class="school-word-grid toys-flashcard-grid">${flashcards.map((item) => `<button class="school-word-card book-word-card" type="button" data-toys-flashcard="${item.id}"><img class="school-word-image book-word-image" src="${item.imagePath}" alt="${item.imageAlt}"><span class="book-word-copy"><span class="time-asset-hanzi">${item.hanzi}</span>${state.showPinyin ? `<span class="time-asset-pinyin">${item.pinyin}</span>` : ""}${state.showEnglish ? `<span class="time-asset-english">${item.english}</span>` : ""}</span></button>`).join("")}</div></section></div>`;
+    focusExplorer.innerHTML = `<div class="time-date-board school-topic-board hobbies-topic-board"><section class="school-lesson-section"><div class="time-months-heading"><p class="body-match-kicker">Review</p></div><div class="school-scene-grid toys-scene-grid">${scenes.map((scene) => `<section class="greetings-exchange school-scene-card"><div class="greetings-exchange-top"><div><p class="body-match-kicker">${scene.title}</p></div><button class="small-button is-play-button" type="button" data-toys-scene-play="${scene.id}">Play</button></div><div class="school-scene-layout"><img class="school-scene-image" src="${scene.imagePath}" alt="${scene.alt}"><div class="greetings-line-stack"><article class="greetings-line-card"><div class="telephone-bubble-copy"><p class="telephone-line-hanzi">${scene.hanzi}</p>${state.showPinyin ? `<p class="telephone-line-pinyin">${scene.pinyin}</p>` : ""}${state.showEnglish ? `<p class="telephone-line-english">${scene.english}</p>` : ""}</div></article></div></div></section>`).join("")}</div></section><section class="school-lesson-section"><div class="time-months-heading"><p class="body-match-kicker">Book words &amp; more</p></div><div class="school-word-grid toys-flashcard-grid">${flashcards.map((item) => `<button class="school-word-card book-word-card" type="button" data-toys-flashcard="${item.id}"><img class="school-word-image book-word-image" src="${item.imagePath}" alt="${item.imageAlt}"><span class="book-word-copy"><span class="time-asset-hanzi">${item.hanzi}</span>${state.showPinyin ? `<span class="time-asset-pinyin">${item.pinyin}</span>` : ""}${state.showEnglish ? `<span class="time-asset-english">${item.english}</span>` : ""}</span></button>`).join("")}</div></section>${renderLessonNotes([{
+      hanzi: "我有一个玩具熊。",
+      explanation: "English uses “a” before one toy. Chinese uses a number and measure word when the quantity matters.",
+      examples: [{ hanzi: "我有一个玩具熊。", english: "I have a toy bear." }]
+    }])}</div>`;
     focusExplorer.querySelectorAll("[data-toys-scene-play]").forEach((button) => button.addEventListener("click", () => {
       const scene = scenes.find((entry) => entry.id === button.dataset.toysScenePlay);
       if (scene && state.tapAudioEnabled) speakLesson(scene.audio, 0.74);

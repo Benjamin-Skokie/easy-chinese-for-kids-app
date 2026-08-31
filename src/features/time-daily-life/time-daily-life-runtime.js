@@ -1,3 +1,5 @@
+import { renderLessonNotes } from "../../core/lesson-notes.js";
+
 export function createTimeDailyLifeRuntime(context) {
   const { state, timeDateWeekItems, timeDateClockItems, timeDateExpressionItems, timeDateRoutineItems, timeAdvancedBookWords, timeRoutineBookWords, datePracticeItems, timeDateDateItems, timeDateMonthItems, comparisonPracticeItems, comparisonWordItems, positionPracticeItems, positionScenes, positionBookWords, clothesMatchItems, clothesSentenceItems, clothesBookWords, clothesPractice, clothesUsefulNotes, roomScenes, roomSentenceTokens, transportSentenceTokens, transportBookWords, everydayActionItems, visualTopicItems, shuffleArray, speak, speakSceneLines, currentTopic, currentBook, currentLesson, renderActivityPanel, focusExplorer, focusStatus } = context;
 
@@ -703,12 +705,11 @@ function renderWeekdaysExplorer() {
           </section>
         `).join("")}
       </div>
-      <section class="visual-topic-notes">
-        <p class="body-match-kicker">Useful notes</p>
-        <div class="visual-topic-note-grid">
-          <article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">今天星期几？</p>${state.showPinyin ? '<p class="visual-topic-note-pinyin">jīn tiān xīng qī jǐ?</p>' : ""}${state.showEnglish ? '<p class="visual-topic-note-english">What day is it today?</p>' : ""}<p class="visual-topic-note-example">今天星期一。</p>${state.showPinyin ? '<p class="visual-topic-note-pinyin">jīn tiān xīng qī yī.</p>' : ""}${state.showEnglish ? '<p class="visual-topic-note-english">Today is Monday.</p>' : ""}</article>
-        </div>
-      </section>
+      ${renderLessonNotes([{
+        hanzi: "今天星期几？",
+        explanation: "Chinese keeps the answer position and replaces the day number with 几. English moves “what day” to the front.",
+        examples: [{ hanzi: "今天星期一。", english: "Today is Monday." }]
+      }])}
     </div>
   `;
   focusExplorer.querySelectorAll("[data-weekday-play-scene]").forEach((button) => {
@@ -724,10 +725,17 @@ function renderDatesExplorer() {
   const monthItems = scopedDateContent(timeDateMonthItems);
   const lessonScope = state.lessonScope;
   const dateNotes = [
-    { hanzi: "今天几月几号？", pinyin: "jīn tiān jǐ yuè jǐ hào?", english: "What is the date today?", example: "今天五月二十号。", examplePinyin: "jīn tiān wǔ yuè èr shí hào.", exampleEnglish: "Today is May twentieth.", lessonSources: ["3a:2"] },
-    { hanzi: "号 / 日", pinyin: "hào / rì", english: "two ways to say the day of a date", example: "五月二十号 = 五月二十日。", examplePinyin: "wǔ yuè èr shí hào = wǔ yuè èr shí rì.", exampleEnglish: "Both mean May twentieth.", lessonSources: ["3a:2"] },
-    { hanzi: "祝你生日快乐！", pinyin: "zhù nǐ shēng rì kuài lè!", english: "Wish you a happy birthday!", lessonSources: ["3a:3"] },
-    { hanzi: "生日会 / 礼物", pinyin: "shēng rì huì / lǐ wù", english: "birthday party / present", example: "生日会上有礼物。", examplePinyin: "shēng rì huì shàng yǒu lǐ wù.", exampleEnglish: "There are presents at a birthday party.", lessonSources: ["3a:3"] }
+    {
+      hanzi: "今天几月几号？",
+      explanation: "Chinese gives dates from larger unit to smaller unit: month, then day. 几 stays where the unknown number belongs.",
+      examples: [{ hanzi: "今天五月二十号。", english: "Today is May 20." }],
+      lessonSources: ["3a:2"]
+    },
+    {
+      hanzi: "五月二十号 / 五月二十日",
+      explanation: "号 is common in speech. 日 is more formal and common in written dates. Both mean May 20.",
+      lessonSources: ["3a:2"]
+    }
   ];
   const visibleNotes = lessonScope
     ? dateNotes.filter((note) => note.lessonSources.includes(`${lessonScope.bookId}:${lessonScope.lessonNumber}`))
@@ -760,12 +768,7 @@ function renderDatesExplorer() {
         </div>
       </section>
       ${monthSection}
-      <section class="visual-topic-notes">
-        <p class="body-match-kicker">Useful notes</p>
-        <div class="visual-topic-note-grid">
-          ${visibleNotes.map((note) => `<article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">${note.hanzi}</p>${state.showPinyin ? `<p class="visual-topic-note-pinyin">${note.pinyin}</p>` : ""}${state.showEnglish ? `<p class="visual-topic-note-english">${note.english}</p>` : ""}${note.example ? `<p class="visual-topic-note-example">${note.example}</p>` : ""}${state.showPinyin && note.examplePinyin ? `<p class="visual-topic-note-pinyin">${note.examplePinyin}</p>` : ""}${state.showEnglish && note.exampleEnglish ? `<p class="visual-topic-note-english">${note.exampleEnglish}</p>` : ""}</article>`).join("")}
-        </div>
-      </section>
+      ${renderLessonNotes(visibleNotes)}
     </div>
   `;
   bindTimeAssetAudio(focusExplorer);
@@ -803,33 +806,24 @@ function renderVisualTopicExplorer(sceneId) {
   const transportWords = sceneId === "transport"
     ? `<section class="school-lesson-section"><div class="time-months-heading"><p class="body-match-kicker">Book words</p></div><div class="comparison-word-grid">${transportBookWords.map((item) => `<button class="comparison-word-card" type="button" data-transport-word="${item.hanzi}"><span class="comparison-word-hanzi">${item.hanzi}</span>${state.showPinyin ? `<span class="comparison-word-pinyin">${item.pinyin}</span>` : ""}${state.showEnglish ? `<span class="comparison-word-english">${item.english}</span>` : ""}</button>`).join("")}</div></section>`
     : "";
-  const usefulNotes =
-    sceneId === "transport"
-      ? `
-        <section class="visual-topic-notes">
-          <p class="body-match-kicker">Useful notes</p>
-          <div class="visual-topic-note-grid">
-            <article class="visual-topic-note-card">
-              <p class="visual-topic-note-hanzi">坐车</p>
-              ${state.showPinyin ? '<p class="visual-topic-note-pinyin">zuò chē</p>' : ""}
-              ${state.showEnglish ? '<p class="visual-topic-note-english">travel by vehicle; take a ride</p>' : ""}
-              <p class="visual-topic-note-example">坐校车，坐公共汽车，坐出租车。</p>
-            </article>
-            <article class="visual-topic-note-card">
-              <p class="visual-topic-note-hanzi">去</p>
-              ${state.showPinyin ? '<p class="visual-topic-note-pinyin">qù</p>' : ""}
-              ${state.showEnglish ? '<p class="visual-topic-note-english">to go to</p>' : ""}
-              <p class="visual-topic-note-example">去学校，去地铁站，去北京。</p>
-            </article>
-            <article class="visual-topic-note-card">
-              <p class="visual-topic-note-hanzi">骑</p>
-              ${state.showPinyin ? '<p class="visual-topic-note-pinyin">qí</p>' : ""}
-              ${state.showEnglish ? '<p class="visual-topic-note-english">to ride</p>' : ""}
-              <p class="visual-topic-note-example">骑自行车。</p>
-            </article>
-          </div>
-        </section>
-      `
+  const usefulNotes = sceneId === "transport"
+    ? renderLessonNotes([
+        {
+          hanzi: "坐校车 / 骑自行车",
+          explanation: "English may use “take” or “ride.” Chinese uses 坐 for travelling in a vehicle and 骑 for a bicycle or something you straddle."
+        },
+        {
+          hanzi: "我坐校车去学校。",
+          explanation: "Chinese uses 去 + place without a separate word for English “to.”",
+          examples: [{ hanzi: "我骑自行车去公园。", english: "I ride a bicycle to the park." }]
+        }
+      ])
+    : sceneId === "comparisons"
+      ? renderLessonNotes([{
+          hanzi: "A 比 B + 形容词",
+          explanation: "Chinese places 比 and the comparison item before the adjective. English puts “than” after the adjective.",
+          examples: [{ hanzi: "哥哥比弟弟高。", english: "The older brother is taller than the younger brother." }]
+        }])
       : "";
   focusExplorer.innerHTML = `
     <div class="time-date-board">
@@ -914,14 +908,17 @@ function renderRoomsExplorer() {
       </div>
       <div class="time-months-heading"><p class="body-match-kicker">Book words</p></div>
       ${renderTimeAssetGrid(visualTopicItems.rooms, "visual visual-rooms", "visual")}
-      <section class="visual-topic-notes">
-        <p class="body-match-kicker">Useful notes</p>
-        <div class="visual-topic-note-grid room-useful-note-grid">
-          <article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">房间里有……</p>${state.showPinyin ? '<p class="visual-topic-note-pinyin">fáng jiān lǐ yǒu...</p>' : ""}${state.showEnglish ? '<p class="visual-topic-note-english">There is / are ... in the room.</p>' : ""}<p class="visual-topic-note-example">里 means “in”; 有 means “there is / are.”</p></article>
-          <article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">地上有……</p>${state.showPinyin ? '<p class="visual-topic-note-pinyin">dì shàng yǒu...</p>' : ""}${state.showEnglish ? '<p class="visual-topic-note-english">There is / are ... on the floor.</p>' : ""}<p class="visual-topic-note-example">地上有书。</p>${state.showPinyin ? '<p class="visual-topic-note-pinyin">dì shàng yǒu shū.</p>' : ""}${state.showEnglish ? '<p class="visual-topic-note-english">There is a book on the floor.</p>' : ""}</article>
-          <article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">有 / 没有</p>${state.showPinyin ? '<p class="visual-topic-note-pinyin">yǒu / méi yǒu</p>' : ""}${state.showEnglish ? '<p class="visual-topic-note-english">there is / there is not</p>' : ""}<p class="visual-topic-note-example">房间里有钢琴。房间里没有钢琴。</p></article>
-        </div>
-      </section>
+      ${renderLessonNotes([
+        {
+          hanzi: "房间里有钢琴。",
+          explanation: "English begins with “There is” or “There are.” Chinese begins with the place, then 有, then the thing.",
+          examples: [{ hanzi: "地上有书。", english: "There is a book on the floor." }]
+        },
+        {
+          hanzi: "房间里没有钢琴。",
+          explanation: "The negative form of 有 is 没有, not 不有."
+        }
+      ], { gridClass: "room-useful-note-grid" })}
     </div>
   `;
   bindTimeAssetAudio(focusExplorer);
@@ -964,12 +961,11 @@ function renderPositionsExplorer() {
           ${positionBookWords.map((word) => `<button class="comparison-word-card" type="button" data-position-word="${word.hanzi}"><span class="comparison-word-hanzi">${word.hanzi}</span>${state.showPinyin ? `<span class="comparison-word-pinyin">${word.pinyin}</span>` : ""}${state.showEnglish ? `<span class="comparison-word-english">${word.english}</span>` : ""}</button>`).join("")}
         </div>
       </section>
-      <section class="visual-topic-notes">
-        <p class="body-match-kicker">Useful notes</p>
-        <div class="visual-topic-note-grid position-note-grid">
-          <article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">A 在 B + 位置</p>${state.showPinyin ? '<p class="visual-topic-note-pinyin">A zài B + wèi zhì</p>' : ""}${state.showEnglish ? '<p class="visual-topic-note-english">A is in / on / beside B.</p>' : ""}<p class="visual-topic-note-example">书架在桌子左边。</p>${state.showPinyin ? '<p class="visual-topic-note-pinyin">shū jià zài zhuō zi zuǒ biān.</p>' : ""}${state.showEnglish ? '<p class="visual-topic-note-english">The bookshelf is to the left of the desk.</p>' : ""}</article>
-        </div>
-      </section>
+      ${renderLessonNotes([{
+        hanzi: "A 在 B + 位置",
+        explanation: "Chinese puts the position word after the reference object. English usually puts the position phrase before it.",
+        examples: [{ hanzi: "书架在桌子左边。", english: "The bookshelf is to the left of the desk." }]
+      }], { gridClass: "position-note-grid" })}
     </div>
   `;
   focusExplorer.querySelectorAll("[data-position-play-scene]").forEach((button) => {
@@ -992,8 +988,23 @@ function renderTimeDateExplorer() {
     { id: "routine", hanzi: "作息", english: "Routine" }
   ];
   const wordGrid = (words) => `<section class="school-lesson-section time-book-word-section"><div class="time-months-heading"><p class="body-match-kicker">Book words</p></div><div class="comparison-word-grid time-text-word-grid">${words.map((word) => `<button class="comparison-word-card" type="button" data-time-book-word="${word.id}"><span class="comparison-word-hanzi">${word.hanzi}</span>${state.showPinyin ? `<span class="comparison-word-pinyin">${word.pinyin}</span>` : ""}${state.showEnglish ? `<span class="comparison-word-english">${word.english}</span>` : ""}</button>`).join("")}</div></section>`;
-  const clockNotes = `<section class="visual-topic-notes time-useful-notes"><p class="body-match-kicker">Useful notes</p><div class="visual-topic-note-grid"><article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">几点了？</p>${state.showPinyin ? '<p class="visual-topic-note-pinyin">jǐ diǎn le?</p>' : ""}${state.showEnglish ? '<p class="visual-topic-note-english">What time is it?</p>' : ""}<p class="visual-topic-note-example">现在七点。</p>${state.showPinyin ? '<p class="visual-topic-note-pinyin">xiàn zài qī diǎn.</p>' : ""}${state.showEnglish ? '<p class="visual-topic-note-english">It is seven o\'clock now.</p>' : ""}</article></div></section>`;
-  const routineNotes = `<section class="visual-topic-notes time-useful-notes"><p class="body-match-kicker">Useful notes</p><div class="visual-topic-note-grid"><article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">现在几点了？</p>${state.showPinyin ? '<p class="visual-topic-note-pinyin">xiàn zài jǐ diǎn le?</p>' : ""}${state.showEnglish ? '<p class="visual-topic-note-english">What time is it now?</p>' : ""}<p class="visual-topic-note-example">现在七点零五分。</p>${state.showPinyin ? '<p class="visual-topic-note-pinyin">xiàn zài qī diǎn líng wǔ fēn.</p>' : ""}${state.showEnglish ? '<p class="visual-topic-note-english">It is 7:05 now.</p>' : ""}</article><article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">一刻 = 十五分 · 半 = 三十分 · 三刻 = 四十五分</p>${state.showPinyin ? '<p class="visual-topic-note-pinyin">yī kè = shí wǔ fēn · bàn = sān shí fēn · sān kè = sì shí wǔ fēn</p>' : ""}${state.showEnglish ? '<p class="visual-topic-note-english">a quarter = 15 minutes · half = 30 minutes · three quarters = 45 minutes</p>' : ""}<p class="visual-topic-note-example">两点一刻 = 两点十五分。</p>${state.showPinyin ? '<p class="visual-topic-note-pinyin">liǎng diǎn yī kè = liǎng diǎn shí wǔ fēn.</p>' : ""}${state.showEnglish ? '<p class="visual-topic-note-english">2:15.</p>' : ""}</article><article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">时间放在动作前面</p>${state.showPinyin ? '<p class="visual-topic-note-pinyin">shí jiān fàng zài dòng zuò qián miàn</p>' : ""}${state.showEnglish ? '<p class="visual-topic-note-english">Put the time before the action.</p>' : ""}<p class="visual-topic-note-example">七点起床。两点半放学。</p>${state.showPinyin ? '<p class="visual-topic-note-pinyin">qī diǎn qǐ chuáng. liǎng diǎn bàn fàng xué.</p>' : ""}${state.showEnglish ? '<p class="visual-topic-note-english">Get up at seven. School ends at 2:30.</p>' : ""}</article></div></section>`;
+  const clockNotes = renderLessonNotes([{
+    hanzi: "几点了？",
+    explanation: "Chinese replaces the hour number with 几. Compare 七点 and 几点.",
+    examples: [{ hanzi: "现在七点。", english: "It is seven o’clock now." }]
+  }], { sectionClass: "time-useful-notes" });
+  const routineNotes = renderLessonNotes([
+    {
+      hanzi: "两点一刻 / 两点半",
+      explanation: "Chinese starts with the hour, then adds 一刻 for 15 minutes or 半 for 30 minutes.",
+      examples: [{ hanzi: "两点一刻。", english: "A quarter past two." }]
+    },
+    {
+      hanzi: "七点起床。",
+      explanation: "Chinese normally puts the time before the action. English often puts it after the action.",
+      examples: [{ hanzi: "两点半放学。", english: "School ends at 2:30." }]
+    }
+  ], { sectionClass: "time-useful-notes" });
   let content = "";
   let notes = "";
 
@@ -1127,7 +1138,7 @@ function renderClothesExplorer() {
           ${words.map((word) => `<button class="time-asset-card book-word-card" type="button" data-clothes-word="${word.id}">${word.imagePath ? `<img class="book-word-image" src="${word.imagePath}" alt="${word.english}" />` : `<span class="book-word-image book-word-image-fallback" aria-hidden="true">${word.hanzi}</span>`}<span class="book-word-copy"><span class="time-asset-hanzi">${word.hanzi}</span>${state.showPinyin ? `<span class="time-asset-pinyin">${word.pinyin}</span>` : ""}${state.showEnglish ? `<span class="time-asset-english">${word.english}</span>` : ""}</span></button>`).join("")}
         </div>
       </section>
-      ${notes.length ? `<section class="visual-topic-notes"><p class="body-match-kicker">Useful notes</p><div class="visual-topic-note-grid">${notes.map((note) => `<article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">${note.hanzi}</p>${state.showPinyin ? `<p class="visual-topic-note-pinyin">${note.pinyin}</p>` : ""}${state.showEnglish ? `<p class="visual-topic-note-english">${note.english}</p>` : ""}<p class="visual-topic-note-example">${note.example}</p>${state.showPinyin ? `<p class="visual-topic-note-pinyin">${note.examplePinyin}</p>` : ""}${state.showEnglish ? `<p class="visual-topic-note-english">${note.exampleEnglish}</p>` : ""}</article>`).join("")}</div></section>` : ""}
+      ${renderLessonNotes(notes)}
     </div>
   `;
 

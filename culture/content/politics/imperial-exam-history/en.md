@@ -1,6 +1,6 @@
 > Difficulty: Hard
 
-# How Wide Could an Exam Open the Door? Choosing Officials in Imperial China
+# How Far Could an Exam Open the Door? Choosing Officials in Imperial China
 
 ## The First Lock: Family Background
 
@@ -10,6 +10,8 @@ Early China did not have one unchanging system for choosing officials. In eras s
 
 The palace gate in the first picture is therefore a symbol, not a scene from one exact dynasty. The child outside faces more than one locked door. Family status, education, and connections all stand between him and a government post.
 
+---
+
 ## Han Recommendations: First, Someone Had to Notice You
 
 After the Han built a large empire, the government needed a steady supply of officials. One important method was *chaju*, in which local officials observed men in their districts and nominated promising candidates to the central government. A famous category called *xiaolian* looked especially for men known as filial and incorrupt—respectful toward parents and honest enough for public service. Some nominees were then questioned or examined at the capital. Imperial schools and promotion from lower government work created other paths as well.
@@ -17,6 +19,8 @@ After the Han built a large empire, the government needed a steady supply of off
 This was different from simply handing offices down by birth, but it was not an open test that anyone could sign up for. A candidate first had to enter the view of officials and influential people in his community. Learning and reputation mattered, but so did local relationships. If a recommender favored friends or judged badly, a capable person might never be nominated.
 
 The second picture can help us imagine local observation, but it is not a snapshot of *chaju* at work. An official did not see a child help an older neighbor and immediately give him a government job. Selection involved a longer reputation, an official nomination, and often another stage of evaluation.
+
+---
 
 ## Nine Ranks: Rating a Person—and His Family
 
@@ -26,6 +30,8 @@ Yet rectifiers often came from powerful local clans. Over time, a candidate's fa
 
 The third picture turns this complicated process into a line of people. It illustrates the idea that family status could shape a ranking; it is not a record of officials lining up children and scoring them in a street.
 
+---
+
 ## Sui and Tang Exams: A New Road, Not the Only Road
 
 The imperial examination system did not suddenly appear with a brand-new test paper on one day in the Sui dynasty. Han officials had already examined nominated candidates, and later governments kept changing recruitment practices. Sui orders and examinations grew out of those older methods, and candidates still needed official nomination. During the Tang, exam categories and schedules became more regular, and more men could, in principle, enter the competition through government schools or nomination from their home areas.
@@ -33,6 +39,8 @@ The imperial examination system did not suddenly appear with a brand-new test pa
 “Allowed in principle” did not mean “equally able to compete.” Preparing required years of education, along with books, teachers, time, and money for travel. In the Tang, a candidate's reputation, writing circulated before the test, and introductions from officials or famous scholars could also affect his chances. Passing the examination administered by the Ministry of Rites did not always bring an immediate post; another selection or a long wait might follow. Hereditary privilege, government schools, military service, and jobs on regional staffs continued to offer other routes into government.
 
 The fourth picture is therefore not evidence that a poor Tang student and an official's son took an anonymous, perfectly equal test. It represents a new idea that was becoming increasingly important: alongside family background, the court could compare at least some candidates through written work.
+
+---
 
 ## After the Song: Let the Paper Speak—but Notice the Stairs
 
@@ -42,11 +50,15 @@ Expansion did not erase family advantage. Song officials could still use heredit
 
 During the Ming and Qing, local qualifying tests, provincial exams, metropolitan exams, and the palace exam formed a more tightly organized ladder. Quotas reserved places for different areas, but competition was fierce. Candidates studied Confucian classics and wrote in required forms. The famous “eight-legged essay” was not produced by memorization alone, but its strict structure forced writers to display knowledge and skill within narrow boundaries. Success could bring status and opportunity, while years of failure could consume a family's resources. Local elites still held advantages through schools, books, money, and educated relatives.
 
+---
+
 ## After 1905: A New Door, the Same Questions
 
 By the late nineteenth century, China faced wars, foreign pressure, and new fields of knowledge. More reformers argued that the old examinations did not train the experts the country now needed. In 1905, as part of a broader education reform, the Qing government ended the civil service examinations and turned toward a new school system. A centuries-old institution stopped, but the question of how to choose people fairly did not.
 
 Looking back at the four pictures, we no longer need a straight-line tale that says, “First family, then recommendation, then scores—and everything became fairer.” A more accurate story is that different dynasties combined family status, reputation, education, tests, and imperial power in changing ways. The examinations widened competition and changed which kinds of learning brought honor, but they never removed the effects of wealth, gender, region, personal networks, or family resources.
+
+---
 
 ## The Same Paper Is Not the Same Starting Point
 

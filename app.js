@@ -17649,7 +17649,7 @@
       }
       if (topic.id === "numbers") {
         const stage = currentNumberStage2();
-        focusStatus2.textContent = stage.telephoneMode ? "Listen to the question, then the answer. Telephone numbers are for speaking and listening, not counting objects." : state2.lastNumberFeedback || `Now learning ${stage.title}. ${stage.summary}`;
+        focusStatus2.textContent = stage.telephoneMode ? "Listen to the question, then the answer. Telephone numbers are for speaking and listening, not counting objects." : "Click a number below to see it above and hear its pronunciation.";
         return;
       }
       if (usesLessonTemplate2(topic)) {
@@ -17686,6 +17686,7 @@
       if (currentTopic2().ownsExplorerContent || ["body", "time-date", "dates", "comparisons", "positions", "transport", "daily-life", "multiplication-rhyme", "identity", "stationery", "school-supplies", "classroom", "school", "school-subjects", "food", "food-preferences", "meals-feelings"].includes(currentTopic2().id) || currentTopic2().id === "numbers" && currentNumberStage2().telephoneMode) {
         focusWordList2.innerHTML = "";
         focusWordList2.classList.add("is-hidden");
+        focusWordList2.classList.remove("is-number-word-list");
         return;
       }
       focusWordList2.classList.remove("is-hidden");
@@ -17694,6 +17695,7 @@
       const isLessonTemplate = usesLessonTemplate2(topic);
       const showBookWordsHeading = isLessonTemplate || topic.id === "clothes" || topic.id === "time-date" || topic.id === "weekdays" || topic.id === "languages";
       focusWordList2.classList.toggle("is-family-book-words", showBookWordsHeading);
+      focusWordList2.classList.toggle("is-number-word-list", topic.id === "numbers");
       const visibleItems = topic.id === "numbers" ? numberWordListItems2(items, currentFocusItem2(), currentNumberStage2()) : topic.id === "time-date" ? timeDateExpressionItems2 : isLessonTemplate || topic.id === "languages" ? bookWordItemsForTopic2(topic) : items;
       focusWordList2.innerHTML = "";
       if (showBookWordsHeading) {
@@ -17731,13 +17733,11 @@
       });
       const noteMarkup = usefulNoteForTopic2(topic);
       if (noteMarkup) {
-        const note = document.createElement("div");
-        note.className = "greetings-note-card family-book-words-note";
-        note.innerHTML = `
-      <p class="body-match-kicker">Notes</p>
-      ${noteMarkup}
-    `;
-        focusWordList2.appendChild(note);
+        if (typeof focusWordList2.insertAdjacentHTML === "function") {
+          focusWordList2.insertAdjacentHTML("beforeend", noteMarkup);
+        } else {
+          focusWordList2.innerHTML = `${focusWordList2.innerHTML ?? ""}${noteMarkup}`;
+        }
       }
     }
     return { bodySentenceForItem: bodySentenceForItem2, renderFocusStatus: renderFocusStatus2, renderFocusWordList: renderFocusWordList3, selectFocusItem: selectFocusItem2 };
@@ -18127,6 +18127,7 @@
             wrongPhraseIds: () => state2.nationalityMatchWrongPhraseIds,
             wrongMeaningIds: () => state2.nationalityMatchWrongMeaningIds,
             feedback: () => state2.nationalityMatchFeedback,
+            pairedRows: true,
             phraseContent: (id) => {
               const item = nationalityPracticeItems2().find((entry) => entry.id === id);
               return item ? `<span class="nationality-match-country"><img class="nationality-match-flag" src="${item.flagAsset}" alt="${item.flagAlt}" /><span class="nationality-match-copy"><span class="numbers-game-hanzi">${item.countryHanzi}</span><span class="numbers-game-english">${item.flagAlt.replace(" flag", "")}</span></span></span>` : "";
@@ -18267,6 +18268,7 @@
             wrongPhraseIds: () => state2.greetingsMatchWrongPhraseIds,
             wrongMeaningIds: () => state2.greetingsMatchWrongMeaningIds,
             feedback: () => state2.greetingsMatchFeedback,
+            pairedRows: true,
             meaningLabel: greetingsMeaningLabel2,
             onNew: () => {
               resetGreetingsMatchGame2();
@@ -18901,11 +18903,11 @@
         </div>
         <button class="small-button is-practice-advance-button" type="button" data-number-game-refresh>Try another</button>
       </div>
-      <p class="numbers-game-note">The quantity changes each round, so kids do not always count in order from one.</p>
+      <p class="numbers-game-note">Count the objects, then choose the matching number.</p>
       <div class="numbers-game-visual">
         ${renderNumberVisual2(challengeItem.value, stage)}
       </div>
-      <div class="numbers-game-options">
+      <div class="numbers-game-options numbers-number-options numbers-option-count-${state2.numberChallengeOptionValues.length}">
         ${state2.numberChallengeOptionValues.map((value) => {
           const option = buildNumberItem2(value);
           const isCorrect = state2.numberChallengeResult === "correct" && value === state2.numberChallengeTargetValue;
@@ -19762,7 +19764,7 @@
           renderBooks2();
           updateTopicPageVisibility2();
           document.getElementById(`book-lessons-${selectedBook.id}`)?.scrollIntoView({
-            behavior: "smooth",
+            behavior: "auto",
             block: "start"
           });
         });
@@ -19788,7 +19790,7 @@
           const target = document.getElementById(`culture-${button.dataset.cultureNavTarget}`);
           if (target) {
             window.history.pushState(null, "", `#culture-${button.dataset.cultureNavTarget}`);
-            target.scrollIntoView({ behavior: "smooth", block: "start" });
+            target.scrollIntoView({ behavior: "auto", block: "start" });
           }
         });
       });
@@ -19962,7 +19964,7 @@
           state2.selectedTopicId = selectedBook.lessons[0].topicId;
           renderBooks2();
           document.getElementById(`book-lessons-${selectedBook.id}`)?.scrollIntoView({
-            behavior: "smooth",
+            behavior: "auto",
             block: "start"
           });
         });
@@ -20087,7 +20089,7 @@
       button.addEventListener("click", () => {
         switchView2(button.dataset.viewTarget);
         document.querySelector(".switcher-panel")?.scrollIntoView({
-          behavior: "smooth",
+          behavior: "auto",
           block: "start"
         });
       });
@@ -20106,7 +20108,7 @@
         const returnTargetId = link.dataset.returnTarget === "topic" ? state2.expandedCategoryId : returningToBooks ? `book-lessons-${state2.selectedBookId}` : "";
         const returnTarget = returnTargetId ? document.getElementById(returnTargetId) : null;
         (returnTarget ?? document.querySelector(".switcher-panel"))?.scrollIntoView({
-          behavior: returningToBooks ? "auto" : "smooth",
+          behavior: "auto",
           block: "start"
         });
         link.closest(".global-view-menu")?.removeAttribute("open");
@@ -20126,7 +20128,7 @@
           card.classList.toggle("is-selected", card === link);
         });
         window.history.pushState(null, "", link.getAttribute("href"));
-        target.scrollIntoView({ behavior: "smooth", block: "start" });
+        target.scrollIntoView({ behavior: "auto", block: "start" });
       });
     });
   }
@@ -20216,7 +20218,13 @@
     if (requestedView === "culture" || hash === "culture" || hash === "culture-panel" || hash.startsWith("culture-")) {
       return "culture";
     }
-    return requestedView === "books" || hash === "books" || hash === "books-panel" ? "books" : "topics";
+    return requestedView === "books" || hash === "books" || hash === "books-panel" || hash.startsWith("book-lessons-") ? "books" : "topics";
+  }
+  function bookIdFromLocation(location, books2) {
+    const params = new URLSearchParams(location.search);
+    const hashBookId = location.hash.replace(/^#book-lessons-/, "").toLowerCase();
+    const requestedBookId = params.get("book")?.toLowerCase() || hashBookId;
+    return books2.some((book) => book.id === requestedBookId) ? requestedBookId : null;
   }
   function topicIdFromLocation(location, hasTopic) {
     const topicId = new URLSearchParams(location.search).get("topic");
@@ -20714,9 +20722,15 @@
       ["table", "\u684C\u5B50", "zhu\u014D zi", "table", "table.webp"]
     ].map(([id, hanzi, pinyin, english, file]) => ({ id, hanzi, pinyin, english, audio: hanzi, imagePath: `assets/illustrated-stationery/${file}` })),
     review: [
-      { pattern: "\u8FD9\u662F\u6211\u7684\u2026\u2026", pinyin: "zh\xE8 sh\xEC w\u01D2 de...", english: "This is my ...", example: "\u8FD9\u662F\u6211\u7684\u94C5\u7B14\u3002", examplePinyin: "zh\xE8 sh\xEC w\u01D2 de qi\u0101n b\u01D0.", exampleEnglish: "This is my pencil." },
-      { pattern: "\u6709 + \u6570\u91CF + \u989C\u8272 + \u6587\u5177", pinyin: "y\u01D2u + sh\xF9 li\xE0ng + y\xE1n s\xE8 + w\xE9n j\xF9", english: "has + number + color + school thing", example: "\u5B89\u5B89\u6709\u4E09\u652F\u7EA2\u8272\u7684\u94C5\u7B14\u3002", examplePinyin: "\u0101n \u0101n y\u01D2u s\u0101n zh\u012B h\xF3ng s\xE8 de qi\u0101n b\u01D0.", exampleEnglish: "Anan has three red pencils." },
-      { pattern: "\u4E00\u652F / \u4E00\u628A / \u4E00\u5757", pinyin: "y\xEC zh\u012B / y\xEC b\u01CE / y\xED ku\xE0i", english: "measure words for pens, scissors, and erasers", example: "\u4E00\u652F\u94C5\u7B14\u3002\u4E00\u628A\u526A\u5200\u3002\u4E00\u5757\u6A61\u76AE\u3002", examplePinyin: "y\xEC zh\u012B qi\u0101n b\u01D0. y\xEC b\u01CE ji\u01CEn d\u0101o. y\xED ku\xE0i xi\xE0ng p\xED.", exampleEnglish: "one pencil, one pair of scissors, one eraser" }
+      {
+        pattern: "\u4E09\u652F\u7EA2\u8272\u7684\u94C5\u7B14",
+        english: "Chinese orders this phrase as number + measure word + color + \u7684 + object.",
+        examples: [{ hanzi: "\u5B89\u5B89\u6709\u4E09\u652F\u7EA2\u8272\u7684\u94C5\u7B14\u3002", english: "Anan has three red pencils." }]
+      },
+      {
+        pattern: "\u4E00\u652F\u94C5\u7B14 / \u4E00\u628A\u526A\u5200 / \u4E00\u5757\u6A61\u76AE",
+        english: "Chinese needs a measure word after the number: \u652F for long thin objects, \u628A for handled objects, and \u5757 for small pieces."
+      }
     ]
   };
   var stationerySentenceBuilds = [
@@ -20814,8 +20828,16 @@
       ["schoolbag", "\u4E66\u5305", "sh\u016B b\u0101o", "backpack", "backpack.webp"]
     ].map(([id, hanzi, pinyin, english, file]) => ({ id, hanzi, pinyin, english, audio: hanzi, imagePath: `assets/illustrated-stationery/${file}` })),
     review: [
-      { pattern: "\u2026\u2026\u91CC\u6709\u2026\u2026", pinyin: "... l\u01D0 y\u01D2u...", english: "There is / are ... in ...", example: "\u6587\u5177\u76D2\u91CC\u6709\u94C5\u7B14\u3002\u4E66\u5305\u91CC\u6709\u4E66\u3002" },
-      { pattern: "\u91CC / \u5916\u9762", pinyin: "l\u01D0 / w\xE0i mi\xE0n", english: "inside / outside", example: "\u4E66\u5728\u4E66\u5305\u91CC\u3002\u6587\u5177\u76D2\u5728\u4E66\u5305\u5916\u9762\u3002" }
+      {
+        pattern: "\u4E66\u5305\u91CC\u6709\u4E66\u3002",
+        english: "English begins with \u201CThere is\u201D or \u201CThere are.\u201D Chinese begins with the place, then \u6709, then the thing.",
+        examples: [{ hanzi: "\u6587\u5177\u76D2\u91CC\u6709\u94C5\u7B14\u3002", english: "There is a pencil in the pencil case." }]
+      },
+      {
+        pattern: "\u4E66\u5728\u4E66\u5305\u91CC\u3002",
+        english: "To say where something is, Chinese uses object + \u5728 + place + position word.",
+        examples: [{ hanzi: "\u6587\u5177\u76D2\u5728\u4E66\u5305\u5916\u9762\u3002", english: "The pencil case is outside the backpack." }]
+      }
     ]
   };
   var schoolSuppliesSentenceBuilds = [
@@ -20878,9 +20900,12 @@
       { id: "on-table", hanzi: "\u684C\u5B50\u4E0A\u6709", pinyin: "zhu\u014D zi sh\xE0ng y\u01D2u", english: "There is / are ... on the table", wordIds: ["computer", "textbook", "workbook", "pencil", "ruler", "eraser", "colored-pencils"], lessonSources: ["3b:2"] }
     ],
     review: [
-      { pattern: "\u6559\u5BA4\u91CC\u6709\u2026\u2026", pinyin: "ji\xE0o sh\xEC l\u01D0 y\u01D2u...", english: "There is / are ... in the classroom.", example: "\u6559\u5BA4\u91CC\u6709\u684C\u5B50\u548C\u6905\u5B50\u3002", lessonSources: ["2b:4", "3b:2"] },
-      { pattern: "\u684C\u5B50\u4E0A\u6709\u2026\u2026", pinyin: "zhu\u014D zi sh\xE0ng y\u01D2u...", english: "There is / are ... on the table.", example: "\u684C\u5B50\u4E0A\u6709\u7535\u8111\u3002", lessonSources: ["3b:2"] },
-      { pattern: "\u5F88\u591A", pinyin: "h\u011Bn du\u014D", english: "many; much", example: "\u6559\u5BA4\u91CC\u6709\u5F88\u591A\u684C\u5B50\u548C\u6905\u5B50\u3002", lessonSources: ["2b:4"] }
+      {
+        pattern: "\u6559\u5BA4\u91CC\u6709\u684C\u5B50\u548C\u6905\u5B50\u3002",
+        english: "English begins with \u201CThere is\u201D or \u201CThere are.\u201D Chinese begins with the place, then \u6709, then what is there.",
+        examples: [{ hanzi: "\u684C\u5B50\u4E0A\u6709\u7535\u8111\u3002", english: "There is a computer on the table." }],
+        lessonSources: ["2b:4", "3b:2"]
+      }
     ]
   };
 
@@ -20903,7 +20928,15 @@
       ["auditorium", "\u793C\u5802", "l\u01D0 t\xE1ng", "auditorium", "auditorium_anchor.webp"],
       ["music-room", "\u97F3\u4E50\u6559\u5BA4", "y\u012Bn yu\xE8 ji\xE0o sh\xEC", "music room", "music_classroom_anchor.webp"],
       ["piano", "\u94A2\u7434", "g\u0101ng q\xEDn", "piano", "piano_anchor.webp"]
-    ].map(([id, hanzi, pinyin, english, file]) => ({ id, hanzi, pinyin, english, audio: hanzi, imagePath: `assets/illustrated-school-anchors/${file}` }))
+    ].map(([id, hanzi, pinyin, english, file]) => ({ id, hanzi, pinyin, english, audio: hanzi, imagePath: `assets/illustrated-school-anchors/${file}` })),
+    review: [{
+      pattern: "\u5B66\u6821\u6709\u56FE\u4E66\u9986\u3002",
+      english: "\u6709 works like \u201Chas\u201D here. Chinese nouns do not need \u201Ca,\u201D \u201Can,\u201D or a plural ending.",
+      examples: [
+        { hanzi: "\u5B66\u6821\u6709\u56FE\u4E66\u9986\u3002", english: "The school has a library." },
+        { hanzi: "\u5B66\u6821\u6709\u6559\u5BA4\u3002", english: "The school has classrooms." }
+      ]
+    }]
   };
   var schoolSentenceBuilds = [
     { id: "classroom", imagePath: "assets/illustrated-school-anchors/classroom_anchor.webp", target: ["\u5B66\u6821", "\u6709", "\u6559\u5BA4"], distractors: ["\u4E66\u5305", "\u91CC", "\u559C\u6B22"], audio: "\u5B66\u6821\u6709\u6559\u5BA4\u3002", pinyin: "xu\xE9 xi\xE0o y\u01D2u ji\xE0o sh\xEC.", english: "The school has classrooms." },
@@ -20990,6 +21023,41 @@
     { id: "pe", imagePath: "assets/illustrated-activities/yangyang_likes_pe_class.webp", target: ["\u6211", "\u559C\u6B22", "\u4F53\u80B2\u8BFE"], distractors: ["\u5B66\u6821", "\u6709", "\u6587\u5177\u76D2"], pinyin: "w\u01D2 x\u01D0 huan t\u01D0 y\xF9 k\xE8.", english: "I like PE class." },
     { id: "dislikes-math", imagePath: "assets/illustrated-activities/lele_dislikes_math_class.webp", target: ["\u6211", "\u4E0D\u559C\u6B22", "\u6570\u5B66\u8BFE"], distractors: ["\u5B66\u6821", "\u6709", "\u6587\u5177\u76D2"], pinyin: "w\u01D2 b\xF9 x\u01D0 huan sh\xF9 xu\xE9 k\xE8.", english: "I do not like math class." }
   ];
+
+  // src/core/lesson-notes.js
+  function noteExampleMarkup(example) {
+    if (!example?.hanzi && !example?.english) return "";
+    if (!example?.english) {
+      return `<p class="visual-topic-note-example-pair"><span class="visual-topic-note-example-hanzi">${example.hanzi}</span></p>`;
+    }
+    return `<p class="visual-topic-note-example-pair"><span class="visual-topic-note-example-hanzi">${example.hanzi}</span><span class="visual-topic-note-example-separator" aria-hidden="true">-</span><span class="visual-topic-note-example-english">${example.english}</span></p>`;
+  }
+  function noteCardMarkup(note) {
+    const hanzi = note.hanzi ?? note.pattern ?? "";
+    const explanation = note.explanation ?? note.english ?? "";
+    const examples = note.examples ?? [];
+    return `
+    <article class="visual-topic-note-card is-explanation-note">
+      ${hanzi ? `<p class="visual-topic-note-hanzi">${hanzi}</p>` : ""}
+      ${explanation ? `<p class="visual-topic-note-english">${explanation}</p>` : ""}
+      ${examples.map(noteExampleMarkup).join("")}
+    </article>
+  `;
+  }
+  function renderLessonNotes(notes, options = {}) {
+    const visibleNotes = (notes ?? []).filter(Boolean);
+    if (!visibleNotes.length) return "";
+    const sectionClass = options.sectionClass ? ` ${options.sectionClass}` : "";
+    const gridClass = options.gridClass ? ` ${options.gridClass}` : "";
+    return `
+    <section class="visual-topic-notes lesson-notes${sectionClass}" data-lesson-notes>
+      <p class="body-match-kicker">Notes</p>
+      <div class="visual-topic-note-grid lesson-notes-grid${gridClass}">
+        ${visibleNotes.map(noteCardMarkup).join("")}
+      </div>
+    </section>
+  `;
+  }
 
   // src/core/lesson-scoping.js
   function lessonScopeKey(scope) {
@@ -21897,6 +21965,9 @@
         feedback: () => state2.schoolMatchFeedback,
         wrongPhraseIds: () => state2.mealsConversationWrongPhraseIds,
         wrongMeaningIds: () => state2.mealsConversationWrongReplyIds,
+        phraseCardClass: "meals-match-card",
+        meaningCardClass: "meals-match-card",
+        pairedRows: true,
         phraseContent: (id) => {
           const item = items.find((entry) => entry.id === id);
           if (!item) return "";
@@ -22003,9 +22074,22 @@
       ` : ""}
       ${(() => {
         const visibleNotes = filterLessonContent(data.review, contentScope);
-        return visibleNotes.length ? `<section class="visual-topic-notes school-review-notes"><p class="body-match-kicker">Useful notes</p><div class="visual-topic-note-grid school-review-grid">${visibleNotes.map((item) => `<article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">${item.pattern}</p>${state2.showPinyin ? `<p class="visual-topic-note-pinyin">${item.pinyin}</p>` : ""}${state2.showEnglish ? `<p class="visual-topic-note-english">${item.english}</p>` : ""}<p class="visual-topic-note-example">${item.example}</p>${state2.showPinyin && item.examplePinyin ? `<p class="visual-topic-note-pinyin">${item.examplePinyin}</p>` : ""}${state2.showEnglish && item.exampleEnglish ? `<p class="visual-topic-note-english">${item.exampleEnglish}</p>` : ""}</article>`).join("")}</div></section>` : "";
+        return renderLessonNotes(visibleNotes, { sectionClass: "school-review-notes", gridClass: "school-review-grid" });
       })()}
-      ${topicId === "school-subjects" ? `<section class="visual-topic-notes"><p class="body-match-kicker">Useful note</p><div class="visual-topic-note-grid school-subject-note"><article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">\u53BB</p>${state2.showPinyin ? '<p class="visual-topic-note-pinyin">q\xF9</p>' : ""}${state2.showEnglish ? '<p class="visual-topic-note-english">to go</p>' : ""}<p class="visual-topic-note-example">\u6211\u53BB\u4E0A\u97F3\u4E50\u8BFE\u3002</p></article><article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">\u5728</p>${state2.showPinyin ? '<p class="visual-topic-note-pinyin">z\xE0i</p>' : ""}${state2.showEnglish ? '<p class="visual-topic-note-english">at / in; marks an action happening now</p>' : ""}<p class="visual-topic-note-example">\u6211\u5728\u4E0A\u97F3\u4E50\u8BFE\u3002</p></article><article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">\u559C\u6B22</p>${state2.showPinyin ? '<p class="visual-topic-note-pinyin">x\u01D0 huan</p>' : ""}${state2.showEnglish ? '<p class="visual-topic-note-english">to like</p>' : ""}<p class="visual-topic-note-example">\u6211\u559C\u6B22\u97F3\u4E50\u8BFE\u3002</p></article><article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">\u4E0D\u559C\u6B22</p>${state2.showPinyin ? '<p class="visual-topic-note-pinyin">b\xF9 x\u01D0 huan</p>' : ""}${state2.showEnglish ? '<p class="visual-topic-note-english">to not like</p>' : ""}<p class="visual-topic-note-example">\u6211\u4E0D\u559C\u6B22\u6570\u5B66\u8BFE\u3002</p></article></div></section>` : ""}
+      ${topicId === "school-subjects" ? renderLessonNotes([
+        {
+          hanzi: "\u6211\u53BB\u4E0A\u97F3\u4E50\u8BFE\u3002 / \u6211\u5728\u4E0A\u97F3\u4E50\u8BFE\u3002",
+          explanation: "\u53BB says you go to the class. \u5728 before \u4E0A says the class is happening now.",
+          examples: [
+            { hanzi: "\u6211\u53BB\u4E0A\u97F3\u4E50\u8BFE\u3002", english: "I go to music class." },
+            { hanzi: "\u6211\u5728\u4E0A\u97F3\u4E50\u8BFE\u3002", english: "I am in music class now." }
+          ]
+        },
+        {
+          hanzi: "\u6211\u4E0D\u559C\u6B22\u6570\u5B66\u8BFE\u3002",
+          explanation: "Chinese puts \u4E0D directly before \u559C\u6B22. English uses \u201Cdo not like.\u201D"
+        }
+      ], { gridClass: "school-subject-note" }) : ""}
     </div>
   `;
       focusExplorer2.querySelectorAll("[data-school-play-scene]").forEach((button) => {
@@ -22104,8 +22188,15 @@
       ["potatoes", "\u571F\u8C46", "t\u01D4 d\xF2u", "potatoes", "potatoes.webp"]
     ].map(([id, hanzi, pinyin, english, file]) => ({ id, hanzi, pinyin, english, audio: hanzi, imagePath: `assets/illustrated-food/${file}` })),
     review: [
-      { pattern: "\u5403", pinyin: "ch\u012B", english: "eat solid food", example: "Use \u5403 for food you chew: \u5403\u82F9\u679C\u3001\u62AB\u8428\u3001\u7092\u996D\u3002", lessonSources: ["1b:7", "2b:7", "3b:6"] },
-      { pattern: "\u559D", pinyin: "h\u0113", english: "drink liquids", example: "Use \u559D for drinks: \u559D\u6C34\u3001\u725B\u5976\u3001\u679C\u6C41\u3002" }
+      {
+        pattern: "\u5403\u82F9\u679C / \u559D\u725B\u5976",
+        english: "\u5403 and \u559D work much like \u201Ceat\u201D and \u201Cdrink\u201D in English: use \u5403 for food and \u559D for drinks.",
+        examples: [
+          { hanzi: "\u6211\u5403\u82F9\u679C\u3002", english: "I eat apples." },
+          { hanzi: "\u6211\u559D\u725B\u5976\u3002", english: "I drink milk." }
+        ],
+        lessonSources: ["1b:7", "2b:7", "3b:6"]
+      }
     ]
   };
   var foodSentenceBuilds = [
@@ -22183,8 +22274,22 @@
       ["dumplings", "\u997A\u5B50", "ji\u01CEo zi", "dumplings", "dumplings.webp"]
     ].map(([id, hanzi, pinyin, english, file]) => ({ id, hanzi, pinyin, english, audio: hanzi, imagePath: `assets/illustrated-food/${file}` })),
     review: [
-      { pattern: "\u4F60\u559C\u6B22\u5403\u4EC0\u4E48\uFF1F", pinyin: "n\u01D0 x\u01D0 huan ch\u012B sh\xE9n me?", english: "What do you like to eat?", example: "Use this question to ask about a favorite food." },
-      { pattern: "\u559C\u6B22\u5403 / \u4E0D\u559C\u6B22\u5403", pinyin: "x\u01D0 huan ch\u012B / b\xF9 x\u01D0 huan ch\u012B", english: "like to eat / do not like to eat", example: "\u6211\u559C\u6B22\u5403\u62AB\u8428\u3002\u6211\u4E0D\u559C\u6B22\u5403\u897F\u5170\u82B1\u3002" }
+      {
+        pattern: "\u4F60\u559C\u6B22\u5403\u4EC0\u4E48\uFF1F",
+        english: "English moves \u201Cwhat\u201D to the front. Chinese keeps \u4EC0\u4E48 where the food answer would go.",
+        examples: [
+          { hanzi: "\u4F60\u559C\u6B22\u5403\u62AB\u8428\u3002", english: "You like to eat pizza." },
+          { hanzi: "\u4F60\u559C\u6B22\u5403\u4EC0\u4E48\uFF1F", english: "What do you like to eat?" }
+        ]
+      },
+      {
+        pattern: "\u6211\u4E0D\u559C\u6B22\u5403\u897F\u5170\u82B1\u3002",
+        english: "To make the sentence negative, put \u4E0D directly before \u559C\u6B22. Chinese does not need a separate word like \u201Cdo.\u201D",
+        examples: [
+          { hanzi: "\u6211\u559C\u6B22\u5403\u62AB\u8428\u3002", english: "I like to eat pizza." },
+          { hanzi: "\u6211\u4E0D\u559C\u6B22\u5403\u897F\u5170\u82B1\u3002", english: "I do not like to eat broccoli." }
+        ]
+      }
     ]
   };
   var foodPreferenceFallbackAudioEntries = [
@@ -22397,11 +22502,27 @@
       }
     ],
     review: [
-      { pattern: "\u4F60\u5348\u996D\u5403\u4EC0\u4E48\uFF1F", pinyin: "n\u01D0 w\u01D4 f\xE0n ch\u012B sh\xE9n me?", english: "What do you have for lunch?", example: "\u6211\u5348\u996D\u5403\u2026\u2026\uFF0C\u559D\u2026\u2026", examplePinyin: "w\u01D2 w\u01D4 f\xE0n ch\u012B..., h\u0113...", exampleEnglish: "For lunch, I eat ... and drink ...", lessonSources: ["4a:5"] },
-      { pattern: "\u997F\u4E86 / \u6E34\u4E86", pinyin: "\xE8 le / k\u011B le", english: "hungry / thirsty", example: "\u6211\u997F\u4E86\uFF0C\u6211\u8981\u5403\u7092\u996D\u3002 \u6211\u6E34\u4E86\uFF0C\u6211\u8981\u559D\u6C34\u3002", examplePinyin: "w\u01D2 \xE8 le, w\u01D2 y\xE0o ch\u012B ch\u01CEo f\xE0n. w\u01D2 k\u011B le, w\u01D2 y\xE0o h\u0113 shu\u01D0.", exampleEnglish: "When you are hungry, eat. When you are thirsty, drink.", lessonSources: ["4a:7"] },
-      { pattern: "\u8981 + \u5403 / \u559D + \u98DF\u7269", pinyin: "y\xE0o + ch\u012B / h\u0113 + sh\xED w\xF9", english: "want to eat / drink + food", example: "\u6211\u8981\u5403\u7092\u996D\u3002\u6211\u8981\u559D\u53EF\u4E50\u3002", examplePinyin: "w\u01D2 y\xE0o ch\u012B ch\u01CEo f\xE0n. w\u01D2 y\xE0o h\u0113 k\u011B l\xE8.", exampleEnglish: "I want to eat fried rice. I want to drink Coke.", lessonSources: ["4a:7"] },
-      { pattern: "\u597D\u5403 / \u9971\u4E86", pinyin: "h\u01CEo ch\u012B / b\u01CEo le", english: "delicious / full", example: "\u7092\u996D\u597D\u5403\u3002\u5988\u5988\uFF0C\u6211\u9971\u4E86\uFF0C\u4E0D\u5403\u4E86\u3002", examplePinyin: "ch\u01CEo f\xE0n h\u01CEo ch\u012B. m\u0101 ma, w\u01D2 b\u01CEo le, b\xF9 ch\u012B le.", exampleEnglish: "Fried rice is delicious. Mom, I am full. I do not want to eat any more.", lessonSources: ["4a:7"] },
-      { pattern: "\u6CA1\u6709\u2026\u2026\uFF0C\u4F60\u53EF\u4EE5\u2026\u2026", pinyin: "m\xE9i y\u01D2u..., n\u01D0 k\u011B y\u01D0...", english: "There is no ...; you can ...", example: "\u6CA1\u6709\u53EF\u4E50\u3002\u4F60\u53EF\u4EE5\u559D\u6C34\u3002", examplePinyin: "m\xE9i y\u01D2u k\u011B l\xE8. n\u01D0 k\u011B y\u01D0 h\u0113 shu\u01D0.", exampleEnglish: "There is no Coke. You can drink water." }
+      {
+        pattern: "\u6211\u5348\u996D\u5403\u62AB\u8428\uFF0C\u559D\u725B\u5976\u3002",
+        english: "Chinese normally puts the meal or time before the action. English often begins with \u201CFor lunch.\u201D",
+        examples: [{ hanzi: "\u4F60\u5348\u996D\u5403\u4EC0\u4E48\uFF1F", english: "What do you have for lunch?" }],
+        lessonSources: ["4a:5"]
+      },
+      {
+        pattern: "\u6211\u997F\u4E86\u3002 / \u6211\u6E34\u4E86\u3002",
+        english: "\u4E86 shows that a new state has begun. English uses \u201Cam,\u201D but Chinese does not need a separate verb here.",
+        examples: [
+          { hanzi: "\u6211\u997F\u4E86\u3002", english: "I am hungry now." },
+          { hanzi: "\u6211\u6E34\u4E86\u3002", english: "I am thirsty now." }
+        ],
+        lessonSources: ["4a:7"]
+      },
+      {
+        pattern: "\u6CA1\u6709\u53EF\u4E50\u3002",
+        english: "English begins with \u201CThere is no.\u201D Chinese can begin directly with \u6CA1\u6709 and the missing thing.",
+        examples: [{ hanzi: "\u6CA1\u6709\u53EF\u4E50\u3002\u4F60\u53EF\u4EE5\u559D\u6C34\u3002", english: "There is no Coke. You can drink water." }],
+        lessonSources: ["4a:7"]
+      }
     ]
   };
   var mealsFeelingsSentenceBuilds = [
@@ -23061,7 +23182,23 @@
         practice: isRequestLesson ? requestPractice2 : politePractice2,
         title: isRequestLesson ? "Book theme: asking permission" : "Book theme: kind classroom language",
         introduction: isRequestLesson ? "Ask with \u6211\u53EF\u4EE5\u2026\u5417\uFF1F, then listen for \u53EF\u4EE5 or \u4E0D\u884C." : "Use thank you, sorry, and please in kind everyday classroom moments.",
-        note: isRequestLesson ? `<p class="greetings-note-hanzi">\u6211\u53EF\u4EE5\u2026\u2026\u5417\uFF1F / \u53EF\u4EE5 / \u4E0D\u884C</p><p class="greetings-note-copy"><strong>\u6211\u53EF\u4EE5\u2026\u5417\uFF1F</strong> asks permission and ends with <strong>\u5417</strong>.</p><p class="greetings-note-copy"><strong>\u53EF\u4EE5\u3002</strong> means yes; <strong>\u4E0D\u884C\u3002</strong> means no. The book practises this with actions such as <strong>\u559D\u6C34</strong>, <strong>\u5403\u996D</strong>, and <strong>\u53BB\u5395\u6240</strong>.</p>` : `<p class="greetings-note-hanzi">\u8C22\u8C22 / \u4E0D\u5BA2\u6C14 / \u5BF9\u4E0D\u8D77 / \u6CA1\u5173\u7CFB</p><p class="greetings-note-copy"><strong>\u8C22\u8C22\u4F60</strong> means \u201Cthank you,\u201D and <strong>\u4E0D\u5BA2\u6C14</strong> is the kind reply: \u201Cyou\u2019re welcome.\u201D</p><p class="greetings-note-copy"><strong>\u5BF9\u4E0D\u8D77</strong> is an apology; <strong>\u6CA1\u5173\u7CFB</strong> is a gentle response.</p>`
+        notes: isRequestLesson ? [{
+          hanzi: "\u6211\u53EF\u4EE5\u559D\u6C34\u5417\uFF1F",
+          explanation: "English moves \u201Ccan\u201D to the front. Chinese keeps statement order and adds \u5417 at the end to make a yes-or-no question.",
+          examples: [
+            { hanzi: "\u6211\u53EF\u4EE5\u559D\u6C34\u3002", english: "I can drink water." },
+            { hanzi: "\u6211\u53EF\u4EE5\u559D\u6C34\u5417\uFF1F", english: "May I drink water?" }
+          ]
+        }, {
+          hanzi: "\u53EF\u4EE5\u3002 / \u4E0D\u884C\u3002",
+          explanation: "These are short permission answers: \u53EF\u4EE5 allows the action; \u4E0D\u884C does not."
+        }] : [{
+          hanzi: "\u8C22\u8C22\u4F60\u3002 / \u4E0D\u5BA2\u6C14\u3002",
+          explanation: "These form a natural pair: one person gives thanks and the other replies politely."
+        }, {
+          hanzi: "\u5BF9\u4E0D\u8D77\u3002 / \u6CA1\u5173\u7CFB\u3002",
+          explanation: "These also form a pair: an apology followed by a gentle response."
+        }]
       };
     }
     function politeGameItems2() {
@@ -23256,10 +23393,7 @@
             ${words.map((word) => `<button class="school-word-card is-text-only" type="button" data-polite-word="${word.id}"><span class="time-asset-hanzi">${word.hanzi}</span>${state2.showPinyin ? `<span class="time-asset-pinyin">${word.pinyin}</span>` : ""}${state2.showEnglish ? `<span class="time-asset-english">${word.english}</span>` : ""}</button>`).join("")}
           </div>
         </section>
-        <section class="greetings-note-card polite-useful-note">
-          <p class="body-match-kicker">Notes</p>
-          ${lesson.note}
-        </section>
+        ${renderLessonNotes(lesson.notes, { sectionClass: "polite-useful-note" })}
       </div>
     `;
       focusExplorer2.querySelectorAll("[data-polite-play-all]").forEach((button) => {
@@ -24220,9 +24354,15 @@
     { id: "noah-blue-white", lessonSources: ["4b:2"], title: "Blue sweater", imagePath: "assets/illustrated-clothes/book-4b-lesson-2/noah-blue-sweater-white-shoes.webp", imageAlt: "Noah in a blue sweater and white shoes", lines: [{ hanzi: "\u8BFA\u4E9A\u7A7F\u84DD\u8272\u7684\u6BDB\u8863\u548C\u767D\u8272\u7684\u978B\u5B50\u3002", pinyin: "nu\xF2 y\xE0 chu\u0101n l\xE1n s\xE8 de m\xE1o y\u012B h\xE9 b\xE1i s\xE8 de xi\xE9 zi.", english: "Noah wears a blue sweater and white shoes.", audio: "\u8BFA\u4E9A\u7A7F\u84DD\u8272\u7684\u6BDB\u8863\u548C\u767D\u8272\u7684\u978B\u5B50" }] }
   ];
   var clothesUsefulNotes = [
-    { hanzi: "\u4F1A + \u52A8\u8BCD", pinyin: "hu\xEC + d\xF2ng c\xED", english: "can + an action word", example: "\u6211\u4F1A\u7A7F\u8863\u670D\u3002", examplePinyin: "w\u01D2 hu\xEC chu\u0101n y\u012B fu.", exampleEnglish: "I can get dressed.", lessonSources: ["2a:6"] },
-    { hanzi: "\u7A7F", pinyin: "chu\u0101n", english: "wear or put on clothes", example: "\u6211\u7A7F\u6821\u670D\u3002", examplePinyin: "w\u01D2 chu\u0101n xi\xE0o f\xFA.", exampleEnglish: "I wear a school uniform.", lessonSources: ["2a:6", "3a:7", "4b:2"] },
-    { hanzi: "\u6234", pinyin: "d\xE0i", english: "wear or put on something on your head", example: "\u6211\u6234\u5E3D\u5B50\u3002", examplePinyin: "w\u01D2 d\xE0i m\xE0o zi.", exampleEnglish: "I wear a hat.", lessonSources: ["4b:2"] }
+    {
+      hanzi: "\u7A7F\u5927\u8863 / \u6234\u5E3D\u5B50",
+      explanation: "English uses \u201Cwear\u201D for both. Chinese uses \u7A7F for clothes and shoes, and \u6234 for hats and many accessories.",
+      examples: [
+        { hanzi: "\u6211\u7A7F\u5927\u8863\u3002", english: "I wear a coat." },
+        { hanzi: "\u6211\u6234\u5E3D\u5B50\u3002", english: "I wear a hat." }
+      ],
+      lessonSources: ["4b:2"]
+    }
   ];
   var clothesMatchItems = clothesBookWords.filter((item) => item.imagePath);
   var clothesSentenceItems = [
@@ -24369,7 +24509,12 @@
         { id: "yellow", hanzi: "\u9EC4\u8272", pinyin: "hu\xE1ng s\xE8", english: "yellow", audio: "\u9EC4\u8272\uFF0C\u9EC4\u8272\u7684\u9999\u8549", phraseAudio: "\u9EC4\u8272\u7684\u9999\u8549", imagePath: "assets/illustrated-colors/yellow-banana.webp", imageAlt: "A yellow banana", phrase: "\u9EC4\u8272\u7684\u9999\u8549", phrasePinyin: "hu\xE1ng s\xE8 de xi\u0101ng ji\u0101o", phraseEnglish: "a yellow banana" },
         { id: "blue", hanzi: "\u84DD\u8272", pinyin: "l\xE1n s\xE8", english: "blue", audio: "\u84DD\u8272\uFF0C\u84DD\u8272\u7684\u4E66\u5305", phraseAudio: "\u84DD\u8272\u7684\u4E66\u5305", imagePath: "assets/illustrated-colors/blue-backpack.webp", imageAlt: "A blue backpack", phrase: "\u84DD\u8272\u7684\u4E66\u5305", phrasePinyin: "l\xE1n s\xE8 de sh\u016B b\u0101o", phraseEnglish: "a blue schoolbag" },
         { id: "green", hanzi: "\u7EFF\u8272", pinyin: "l\u01DC s\xE8", english: "green", audio: "\u7EFF\u8272\uFF0C\u7EFF\u8272\u7684\u9EC4\u74DC", phraseAudio: "\u7EFF\u8272\u7684\u9EC4\u74DC", imagePath: "assets/illustrated-colors/green-cucumber.webp", imageAlt: "A green cucumber", phrase: "\u7EFF\u8272\u7684\u9EC4\u74DC", phrasePinyin: "l\u01DC s\xE8 de hu\xE1ng gu\u0101", phraseEnglish: "a green cucumber" }
-      ]
+      ],
+      notes: [{
+        hanzi: "\u7EA2\u8272\u7684\u82F9\u679C",
+        explanation: "Like English, Chinese puts the color before the object. Chinese commonly uses \u7684 between a color word and the noun.",
+        examples: [{ hanzi: "\u84DD\u8272\u7684\u4E66\u5305", english: "a blue backpack" }]
+      }]
     },
     "2a": {
       title: "Colours",
@@ -24384,7 +24529,12 @@
         { id: "yellow", hanzi: "\u9EC4\u8272", pinyin: "hu\xE1ng s\xE8", english: "yellow", audio: "\u9EC4\u8272\uFF0C\u9EC4\u8272\u7684\u9999\u8549", phraseAudio: "\u9EC4\u8272\u7684\u9999\u8549", imagePath: "assets/illustrated-colors/yellow-banana.webp", imageAlt: "A yellow banana", phrase: "\u9EC4\u8272\u7684\u9999\u8549", phrasePinyin: "hu\xE1ng s\xE8 de xi\u0101ng ji\u0101o", phraseEnglish: "a yellow banana" },
         { id: "blue", hanzi: "\u84DD\u8272", pinyin: "l\xE1n s\xE8", english: "blue", audio: "\u84DD\u8272\uFF0C\u84DD\u8272\u7684\u4E66\u5305", phraseAudio: "\u84DD\u8272\u7684\u4E66\u5305", imagePath: "assets/illustrated-colors/blue-backpack.webp", imageAlt: "A blue backpack", phrase: "\u84DD\u8272\u7684\u4E66\u5305", phrasePinyin: "l\xE1n s\xE8 de sh\u016B b\u0101o", phraseEnglish: "a blue schoolbag" },
         { id: "green", hanzi: "\u7EFF\u8272", pinyin: "l\u01DC s\xE8", english: "green", audio: "\u7EFF\u8272\uFF0C\u7EFF\u8272\u7684\u9EC4\u74DC", phraseAudio: "\u7EFF\u8272\u7684\u9EC4\u74DC", imagePath: "assets/illustrated-colors/green-cucumber.webp", imageAlt: "A green cucumber", phrase: "\u7EFF\u8272\u7684\u9EC4\u74DC", phrasePinyin: "l\u01DC s\xE8 de hu\xE1ng gu\u0101", phraseEnglish: "a green cucumber" }
-      ]
+      ],
+      notes: [{
+        hanzi: "\u7EA2\u8272\u7684\u82F9\u679C",
+        explanation: "Like English, Chinese puts the color before the object. Chinese commonly uses \u7684 between a color word and the noun.",
+        examples: [{ hanzi: "\u84DD\u8272\u7684\u4E66\u5305", english: "a blue backpack" }]
+      }]
     }
   };
   var coloursTopic = {
@@ -24818,7 +24968,7 @@
     ],
     parentGuide: "Use a made-up telephone number only. This lesson practises the language pattern, not sharing personal contact details.",
     cultureGuide: "This later family lesson extends an introduction with where grandparents live and a made-up family telephone number.",
-    activities: ["Scene", "Book words", "Useful note", "Practice"],
+    activities: ["Scene", "Book words", "Notes", "Practice"],
     steps: [{ book: "4A", lesson: 1, title: "Telephone numbers", cardLabel: "Say where family lives", note: "Ask where family lives and exchange a telephone number." }]
   };
   var telephonePractice = {
@@ -24879,7 +25029,7 @@
       state2.numberChallengePickedValue = null;
       state2.numberChallengeResult = "";
       state2.numberChallengeWrongValues = /* @__PURE__ */ new Set();
-      state2.lastNumberFeedback = options.feedback ?? "Look carefully. Pick the number without counting from one every time.";
+      state2.lastNumberFeedback = options.feedback ?? "";
     }
     function ensureNumberChallenge2() {
       const stage = currentNumberStage2();
@@ -24965,93 +25115,74 @@
     }
     function usefulNoteForTopic2(topic) {
       const notes = {
-        greetings: `
-      <p class="greetings-note-hanzi">\u4F60 and \u60A8</p>
-      <p class="greetings-note-copy">
-        <strong>\u4F60</strong> is the everyday word for \u201Cyou.\u201D <strong>\u60A8</strong> is the polite form, often used for teachers and other adults to show respect.
-      </p>
-      <p class="greetings-note-copy">
-        <strong>\u8001\u5E08</strong> means \u201Cteacher,\u201D so <strong>\u674E\u8001\u5E08\uFF0C\u60A8\u597D\uFF01</strong> sounds warm and respectful.
-      </p>
-    `,
-        "polite-words": `
-      <p class="greetings-note-hanzi">\u8C22\u8C22 / \u4E0D\u5BA2\u6C14 / \u5BF9\u4E0D\u8D77 / \u6CA1\u5173\u7CFB</p>
-      <p class="greetings-note-copy">
-        <strong>\u8C22\u8C22\u4F60</strong> means \u201Cthank you,\u201D and <strong>\u4E0D\u5BA2\u6C14</strong> is the kind reply: \u201Cyou\u2019re welcome.\u201D
-      </p>
-      <p class="greetings-note-copy">
-        <strong>\u5BF9\u4E0D\u8D77</strong> means \u201CI\u2019m sorry,\u201D and <strong>\u6CA1\u5173\u7CFB</strong> is the calm reply: \u201Cnever mind\u201D or \u201Cthat\u2019s okay.\u201D
-      </p>
-      <p class="greetings-note-copy">
-        <strong>\u8BF7</strong> helps children sound polite in requests and classroom directions, for example:
-        <strong>\u8BF7\u5B89\u9759\u3002</strong>
-      </p>
-    `,
-        introductions: `
-      <p class="greetings-note-hanzi">\u6211 / \u53EB / \u4EC0\u4E48 / \u540D\u5B57 / \u670B\u53CB</p>
-      <p class="greetings-note-copy">
-        <strong>\u6211</strong> means \u201CI\u201D or \u201Cme,\u201D and <strong>\u53EB</strong> is used in beginner Chinese to say what someone is called.
-      </p>
-      <p class="greetings-note-copy">
-        <strong>\u4F60\u53EB\u4EC0\u4E48\u540D\u5B57\uFF1F</strong> means \u201CWhat is your name?\u201D and <strong>\u6211\u53EB\u2026\u2026</strong> gives the answer pattern: \u201CMy name is\u2026\u201D
-      </p>
-      <p class="greetings-note-copy">
-        Let children pause after <strong>\u6211\u53EB</strong> and say their own name out loud.
-      </p>
-      <p class="greetings-note-copy">
-        In <strong>\u4ED6\u662F\u6211\u7684\u597D\u670B\u53CB\u3002</strong>, <strong>\u4ED6</strong> points to a boy already in the scene, and <strong>\u6211\u7684\u597D\u670B\u53CB</strong> means \u201Cmy good friend.\u201D
-      </p>
-    `,
-        "is-it": `
-      <p class="greetings-note-hanzi">\u662F\u4E0D\u662F\u2026\u2026\uFF1F / \u662F / \u4E0D\u662F</p>
-      <p class="greetings-note-copy">
-        Put <strong>\u662F\u4E0D\u662F</strong> around the thing you are asking about: <strong>\u8FD9\u662F\u4E0D\u662F\u5305\u88F9\uFF1F</strong> means \u201CIs this a package?\u201D
-      </p>
-      <p class="greetings-note-copy">
-        Answer with <strong>\u662F\u3002</strong> for yes or <strong>\u4E0D\u662F\u3002</strong> for no. Then say what it really is: <strong>\u4E0D\u662F\uFF0C\u8FD9\u662F\u7F8E\u7F8E\u3002</strong>
-      </p>
-    `,
-        age: `
-      <p class="greetings-note-hanzi">\u4F60\u51E0\u5C81\uFF1F / \u6211...\u5C81\u3002 / \u4F60\u4E0A\u51E0\u5E74\u7EA7\uFF1F / \u6211\u4E0A\u4E00\u5E74\u7EA7\u3002</p>
-      <p class="greetings-note-copy">
-        <strong>\u4F60\u51E0\u5C81\uFF1F</strong> literally means \u201Cyou how-many years old?\u201D Here, <strong>\u51E0</strong> asks for a small number, and <strong>\u5C81</strong> is the common word for a child's age.
-      </p>
-      <p class="greetings-note-copy">
-        The answer pattern stays simple: <strong>\u6211 + number + \u5C81</strong>. So <strong>\u6211\u4E94\u5C81</strong> is \u201CI am five years old,\u201D <strong>\u6211\u516D\u5C81</strong> is \u201CI am six years old,\u201D and <strong>\u6211\u4E03\u5C81</strong> is \u201CI am seven years old.\u201D
-      </p>
-      <p class="greetings-note-copy">
-        <strong>\u4F60\u4E0A\u51E0\u5E74\u7EA7\uFF1F</strong> asks what school year someone is in, and <strong>\u6211\u4E0A\u4E00\u5E74\u7EA7\u3002</strong> means \u201CI am in first grade.\u201D This topic links naturally with earlier self-introduction language: <strong>\u4F60\u597D\uFF01\u4F60\u53EB\u4EC0\u4E48\u540D\u5B57\uFF1F\u6211\u53EB\u2026\u2026 \u4F60\u51E0\u5C81\uFF1F\u6211\u4E94\u5C81\u3002\u4F60\u4E0A\u51E0\u5E74\u7EA7\uFF1F\u6211\u4E0A\u4E00\u5E74\u7EA7\u3002</strong>
-      </p>
-    `,
-        family: state2.lessonScope && `${state2.lessonScope.bookId}:${state2.lessonScope.lessonNumber}` === "1b:1" ? `
-      <p class="greetings-note-hanzi">\u7238\u7238 / \u5988\u5988</p>
-      <p class="greetings-note-copy"><strong>\u7238\u7238</strong> means \u201Cdad\u201D and <strong>\u5988\u5988</strong> means \u201Cmom.\u201D Use <strong>\u6211\u7684</strong> to say \u201Cmy\u201D: <strong>\u8FD9\u662F\u6211\u7684\u7238\u7238\u3002</strong></p>
-    ` : state2.lessonScope && `${state2.lessonScope.bookId}:${state2.lessonScope.lessonNumber}` === "1b:2" ? `
-      <p class="greetings-note-hanzi">\u54E5\u54E5 / \u5F1F\u5F1F / \u59D0\u59D0 / \u59B9\u59B9</p>
-      <p class="greetings-note-copy">These words show both gender and age order: <strong>\u54E5\u54E5\u3001\u59D0\u59D0</strong> are older; <strong>\u5F1F\u5F1F\u3001\u59B9\u59B9</strong> are younger.</p>
-    ` : `
-      <p class="greetings-note-hanzi">\u6709 / \u4E00\u4E2A / \u4E24\u4E2A</p>
-      <p class="greetings-note-copy">
-        <strong>\u6709</strong> means \u201Chave.\u201D Put the family members after it: <strong>\u6211\u6709\u4E00\u4E2A\u59D0\u59D0\u548C\u4E00\u4E2A\u5F1F\u5F1F\u3002</strong>
-      </p>
-      <p class="greetings-note-copy">
-        Use <strong>\u4E00\u4E2A</strong> for one and <strong>\u4E24\u4E2A</strong> for two before a family member: <strong>\u4E00\u4E2A\u59D0\u59D0</strong>, <strong>\u4E24\u4E2A\u5F1F\u5F1F</strong>.
-      </p>
-      <p class="greetings-note-copy">
-        In <strong>\u6211\u5BB6\u6709\u4E94\u53E3\u4EBA</strong>, <strong>\u53E3</strong> is the measure word used to count people in a family. Children can use the same frame with their own family photo.
-      </p>
-    `,
-        languages: `
-      <p class="greetings-note-hanzi">\u56FD\u5BB6 / \u56FD\u7C4D / \u8BED\u8A00</p>
-      <p class="greetings-note-copy">
-        <strong>\u56FD\u5BB6</strong> names a country, <strong>\u56FD\u7C4D</strong> names a nationality, and <strong>\u8BED\u8A00</strong> names a language. In this lesson, listen for the language word after <strong>\u8BF4</strong>.
-      </p>
-      <p class="greetings-note-copy">
-        People can speak one language or more than one language. The sentence pattern helps us practise words; it does not describe every person from a country.
-      </p>
-    `
+        greetings: [{
+          hanzi: "\u4F60 / \u60A8",
+          explanation: "English uses \u201Cyou\u201D for both. Chinese can use \u60A8 to show extra respect, especially with teachers or older adults.",
+          examples: [{ hanzi: "\u674E\u8001\u5E08\uFF0C\u60A8\u597D\uFF01", english: "Hello, Teacher Li!" }]
+        }],
+        "polite-words": [
+          { hanzi: "\u8C22\u8C22\u4F60\u3002 / \u4E0D\u5BA2\u6C14\u3002", explanation: "These form a natural pair: one person gives thanks and the other replies politely." },
+          { hanzi: "\u5BF9\u4E0D\u8D77\u3002 / \u6CA1\u5173\u7CFB\u3002", explanation: "These also form a pair: an apology followed by a gentle response." }
+        ],
+        introductions: [
+          {
+            hanzi: "\u6211\u53EB\u4E50\u4E50\u3002",
+            explanation: "English says \u201CMy name is Lele.\u201D Chinese uses \u6211 + \u53EB + name, closer to \u201CI am called Lele.\u201D",
+            examples: [{ hanzi: "\u6211\u53EB\u4E50\u4E50\u3002", english: "My name is Lele." }]
+          },
+          {
+            hanzi: "\u4F60\u53EB\u4EC0\u4E48\u540D\u5B57\uFF1F",
+            explanation: "English moves \u201Cwhat\u201D to the front. Chinese keeps \u4EC0\u4E48\u540D\u5B57 where the name answer would go."
+          }
+        ],
+        "is-it": [{
+          hanzi: "\u8FD9\u662F\u5305\u88F9\u3002 / \u8FD9\u662F\u4E0D\u662F\u5305\u88F9\uFF1F",
+          explanation: "English moves \u201Cis\u201D to the front to make a question. Chinese keeps \u8FD9 first and changes \u662F to \u662F\u4E0D\u662F. Answer with \u662F or \u4E0D\u662F.",
+          examples: [
+            { hanzi: "\u8FD9\u662F\u5305\u88F9\u3002", english: "This is a package." },
+            { hanzi: "\u8FD9\u662F\u4E0D\u662F\u5305\u88F9\uFF1F", english: "Is this a package?" }
+          ]
+        }],
+        age: [
+          {
+            hanzi: "\u6211\u4E94\u5C81\u3002",
+            explanation: "English needs \u201Cam\u201D and \u201Cyears old.\u201D Chinese simply uses person + number + \u5C81.",
+            examples: [{ hanzi: "\u6211\u4E94\u5C81\u3002", english: "I am five years old." }]
+          },
+          {
+            hanzi: "\u4F60\u4E0A\u51E0\u5E74\u7EA7\uFF1F",
+            explanation: "Chinese uses \u4E0A before the grade level. \u51E0 replaces the grade number being asked for.",
+            examples: [{ hanzi: "\u6211\u4E0A\u4E00\u5E74\u7EA7\u3002", english: "I am in first grade." }]
+          }
+        ],
+        languages: [{
+          hanzi: "\u4E2D\u56FD / \u4E2D\u56FD\u4EBA / \u6C49\u8BED",
+          explanation: "A country, a nationality, and a language are different words. Chinese often adds \u4EBA to the country name for nationality; the language has its own name.",
+          examples: [{ hanzi: "\u6211\u662F\u4E2D\u56FD\u4EBA\u3002\u6211\u8BF4\u6C49\u8BED\u3002", english: "I am Chinese. I speak Chinese." }]
+        }]
       };
-      return notes[topic.id] ?? "";
+      const familyScope = state2.lessonScope && `${state2.lessonScope.bookId}:${state2.lessonScope.lessonNumber}`;
+      if (topic.id === "family") {
+        if (familyScope === "1b:1") return "";
+        if (familyScope === "1b:2") {
+          return renderLessonNotes([{
+            hanzi: "\u54E5\u54E5 / \u5F1F\u5F1F / \u59D0\u59D0 / \u59B9\u59B9",
+            explanation: "English can simply say \u201Cbrother\u201D or \u201Csister.\u201D Chinese family words also show whether the sibling is older or younger."
+          }], { sectionClass: "family-book-words-note" });
+        }
+        return renderLessonNotes([
+          {
+            hanzi: "\u4E00\u4E2A\u59D0\u59D0 / \u4E24\u4E2A\u5F1F\u5F1F",
+            explanation: "Chinese places a measure word between the number and the family member. Use \u4E24, not \u4E8C, before \u4E2A."
+          },
+          {
+            hanzi: "\u6211\u5BB6\u6709\u4E94\u53E3\u4EBA\u3002",
+            explanation: "\u53E3 is the measure word traditionally used to count people in a family.",
+            examples: [{ hanzi: "\u6211\u5BB6\u6709\u4E94\u53E3\u4EBA\u3002", english: "There are five people in my family." }]
+          }
+        ], { sectionClass: "family-book-words-note" });
+      }
+      return renderLessonNotes(notes[topic.id] ?? [], { sectionClass: "family-book-words-note" });
     }
     function familyWordForPersonId2(personId) {
       return {
@@ -25264,6 +25395,17 @@
       nextBodyRound2();
       state2.lastBodyFeedback = "Match the Chinese words with the English words.";
     }
+    function advanceBodyMatchGame() {
+      const total = bodyMatchItems2().length;
+      if (state2.bodyMatchedIds.size >= total) {
+        resetBodyMatchGame2();
+        return;
+      }
+      state2.bodyMatchWrongChineseIds = /* @__PURE__ */ new Set();
+      state2.bodyMatchWrongEnglishIds = /* @__PURE__ */ new Set();
+      nextBodyRound2();
+      state2.lastBodyFeedback = `Keep going! ${state2.bodyMatchedIds.size} of ${total} words are complete.`;
+    }
     function ensureBodyMatchGame2() {
       const ids = bodyMatchItems2().map((item) => item.id).sort().join("|");
       if (!state2.bodyRoundIds.length || state2.bodyMatchUniverseKey !== ids) {
@@ -25455,6 +25597,8 @@
     function renderBodyMatchPanel() {
       ensureBodyMatchGame2();
       const matchItems = Object.fromEntries(bodyMatchItems2().map((entry) => [entry.id, entry]));
+      const totalMatchItems = bodyMatchItems2().length;
+      const hasCompletedSome = state2.bodyMatchedIds.size > 0 && state2.bodyMatchedIds.size < totalMatchItems;
       const solvedMatchIds = state2.bodyChineseOrder.filter((id) => state2.bodyMatchedIds.has(id));
       const remainingChineseIds = state2.bodyChineseOrder.filter((id) => !state2.bodyMatchedIds.has(id));
       const remainingEnglishIds = state2.bodyEnglishOrder.filter((id) => !state2.bodyMatchedIds.has(id));
@@ -25466,14 +25610,14 @@
               <h4>Chinese to English</h4>
             </div>
             <div class="body-match-actions">
-              <button class="small-button is-practice-advance-button" type="button" data-body-reset-match aria-label="Start a new game">
-                New game
+              <button class="small-button is-practice-advance-button" type="button" data-body-advance-match aria-label="${hasCompletedSome ? "Show the next set" : "Start a new game"}" title="${hasCompletedSome ? "Next set" : "New game"}">
+                ${hasCompletedSome ? "Next set" : "New game"}
               </button>
             </div>
           </div>
           <p class="body-match-helper">Tap a Chinese card, then tap the matching English card.</p>
           <div class="body-match-progress">
-            Matched ${state2.bodyMatchedIds.size} of ${bodyMatchItems2().length}
+            Matched ${state2.bodyMatchedIds.size} of ${totalMatchItems}
           </div>
           <div class="body-match-board-headings">
             <p class="body-match-kicker">Chinese</p>
@@ -25546,8 +25690,8 @@
   `;
     }
     function bindBodyMatchPanel(root) {
-      root.querySelector("[data-body-reset-match]")?.addEventListener("click", () => {
-        resetBodyMatchGame2();
+      root.querySelector("[data-body-advance-match]")?.addEventListener("click", () => {
+        advanceBodyMatchGame();
         renderActivityPanel2(currentTopic2());
       });
       root.querySelectorAll("[data-body-match-chinese]").forEach((button) => {
@@ -25630,7 +25774,7 @@
       ).join("")}
     </div>
     ${ones ? `
-          <div class="numbers-object-group">
+          <div class="numbers-object-group numbers-ones-group">
             ${objectMarkup(ones)}
           </div>
         ` : ""}
@@ -25680,7 +25824,17 @@
       <section class="school-lesson-section"><div class="time-months-heading"><p class="body-match-kicker">Book words</p></div>
         <div class="school-word-grid is-text-only">${currentTopic2().focusItems.map((item) => `<button class="school-word-card is-text-only" type="button" data-telephone-word="${item.id}"><span class="time-asset-hanzi">${item.hanzi}</span>${state2.showPinyin ? `<span class="time-asset-pinyin">${item.pinyin}</span>` : ""}${state2.showEnglish ? `<span class="time-asset-english">${item.english}</span>` : ""}</button>`).join("")}</div>
       </section>
-      <section class="visual-topic-notes school-review-notes"><p class="body-match-kicker">Useful note</p><div class="visual-topic-note-grid school-review-grid"><article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">\u4ED6\u4EEC + \u4F4F\u5728 + \u5317\u4EAC</p><p class="visual-topic-note-copy"><strong>\u4ED6\u4EEC</strong> means \u201Cthey.\u201D <strong>\u4F4F\u5728</strong> means \u201Clive in,\u201D and the place comes last: <strong>\u4ED6\u4EEC\u4F4F\u5728\u5317\u4EAC\u3002</strong> To ask the place, replace <strong>\u5317\u4EAC</strong> with <strong>\u54EA\u513F</strong>: <strong>\u4ED6\u4EEC\u4F4F\u5728\u54EA\u513F\uFF1F</strong></p></article></div></section>
+      ${renderLessonNotes([{
+        hanzi: "\u4ED6\u4EEC\u4F4F\u5728\u5317\u4EAC\u3002 / \u4ED6\u4EEC\u4F4F\u5728\u54EA\u513F\uFF1F",
+        explanation: "English moves \u201Cwhere\u201D to the front. Chinese keeps \u54EA\u513F where the place answer would go.",
+        examples: [
+          { hanzi: "\u4ED6\u4EEC\u4F4F\u5728\u5317\u4EAC\u3002", english: "They live in Beijing." },
+          { hanzi: "\u4ED6\u4EEC\u4F4F\u5728\u54EA\u513F\uFF1F", english: "Where do they live?" }
+        ]
+      }, {
+        hanzi: "\u7535\u8BDD\u53F7\u7801\uFF1A\u4E00\u4F4D\u4E00\u4F4D\u8BFB",
+        explanation: "Read a phone number one digit at a time. In phone numbers, \u4E00 is often pronounced y\u0101o so it is easier to hear clearly."
+      }], { sectionClass: "school-review-notes" })}
       <section class="practice-split-card"><div class="numbers-game-top"><div><p class="body-match-kicker">Let's practice</p><p class="numbers-game-note">Tap a question on the left to hear it, then tap its matching answer on the right.</p></div><button class="small-button is-practice-advance-button" type="button" data-telephone-practice-new aria-label="Start a new game">New game</button></div>
         ${telephoneMatchFeedback ? `<p class="greetings-game-feedback">${telephoneMatchFeedback}</p>` : ""}
         <div class="family-match-board-headings"><p class="body-match-kicker">Question</p><p class="body-match-kicker">Answer</p></div>
@@ -26093,6 +26247,11 @@
           <div class="greetings-line-stack">${nationalityConversation2.lines.map((line) => `<article class="greetings-line-card"><div class="telephone-bubble-copy"><p class="telephone-line-hanzi">${line.hanzi}</p>${state2.showPinyin ? `<p class="telephone-line-pinyin">${line.pinyin}</p>` : ""}${state2.showEnglish ? `<p class="telephone-line-english">${line.english}</p>` : ""}</div></article>`).join("")}</div>
         </div>
       </section>
+      ${renderLessonNotes([{
+        hanzi: "\u4E2D\u56FD / \u4E2D\u56FD\u4EBA",
+        explanation: "Chinese often forms a nationality by adding \u4EBA to the country name. English may use a different word.",
+        examples: [{ hanzi: "\u6211\u662F\u4E2D\u56FD\u4EBA\u3002", english: "I am Chinese." }]
+      }])}
     </div>
   `;
       focusExplorer2.querySelector("[data-nationality-play-scene]")?.addEventListener("click", () => {
@@ -26397,7 +26556,7 @@
       }
       if (stopButton) stopButton.disabled = !isPlaying;
     }
-    return { numberStageItems: numberStageItems2, resetNumberChallenge: resetNumberChallenge2, ensureNumberChallenge: ensureNumberChallenge2, resetMathChallenge: resetMathChallenge2, ensureMathChallenge: ensureMathChallenge2, familyGameItems: familyGameItems2, familyListenItems: familyListenItems2, familyPersonForItemId: familyPersonForItemId2, familyHeadshotForItemId: familyHeadshotForItemId2, isFamilySentenceItemId: isFamilySentenceItemId2, familyBookWordItems: familyBookWordItems2, usesLessonTemplate: usesLessonTemplate2, bookWordItemsForTopic: bookWordItemsForTopic2, usefulNoteForTopic: usefulNoteForTopic2, familyWordForPersonId: familyWordForPersonId2, resetFamilyChallenge: resetFamilyChallenge2, ensureFamilyChallenge: ensureFamilyChallenge2, resetListenChallengeResult: resetListenChallengeResult2, handleFamilyChallengePlay: handleFamilyChallengePlay2, handleFamilyChallengeGuess: handleFamilyChallengeGuess2, resetFamilyMatchGame: resetFamilyMatchGame2, ensureFamilyMatchGame: ensureFamilyMatchGame2, handleFamilyMatchPhrase: handleFamilyMatchPhrase2, handleFamilyMatchAttempt: handleFamilyMatchAttempt2, mathChallengeAudioText: mathChallengeAudioText2, handleMathChallengeSubmit: handleMathChallengeSubmit2, handleNumberChallengeGuess: handleNumberChallengeGuess2, bodyMatchItems: bodyMatchItems2, nextBodyRound: nextBodyRound2, resetBodyMatchGame: resetBodyMatchGame2, ensureBodyMatchGame: ensureBodyMatchGame2, handleBodyMatchChinese: handleBodyMatchChinese2, handleBodyMatchAttempt: handleBodyMatchAttempt2, nextBodySpotlightRound, startBodySpotlightRound, handleBodySpotlightGuess, renderBodyPractice: renderBodyPractice2, numberWordListItems: numberWordListItems2, renderBodyLabelButton: renderBodyLabelButton2, renderBodyExplorer: renderBodyExplorer2, renderNumberVisual: renderNumberVisual2, renderNumbersExplorer: renderNumbersExplorer2, renderTelephoneExplorer: renderTelephoneExplorer2, renderFamilyHomeVisual: renderFamilyHomeVisual2, renderFamilyExplorer: renderFamilyExplorer2, renderIdentityExplorer: renderIdentityExplorer2, renderMultiplicationExplorer: renderMultiplicationExplorer2 };
+    return { numberStageItems: numberStageItems2, resetNumberChallenge: resetNumberChallenge2, ensureNumberChallenge: ensureNumberChallenge2, resetMathChallenge: resetMathChallenge2, ensureMathChallenge: ensureMathChallenge2, familyGameItems: familyGameItems2, familyListenItems: familyListenItems2, familyPersonForItemId: familyPersonForItemId2, familyHeadshotForItemId: familyHeadshotForItemId2, isFamilySentenceItemId: isFamilySentenceItemId2, familyBookWordItems: familyBookWordItems2, usesLessonTemplate: usesLessonTemplate2, bookWordItemsForTopic: bookWordItemsForTopic2, usefulNoteForTopic: usefulNoteForTopic2, familyWordForPersonId: familyWordForPersonId2, resetFamilyChallenge: resetFamilyChallenge2, ensureFamilyChallenge: ensureFamilyChallenge2, resetListenChallengeResult: resetListenChallengeResult2, handleFamilyChallengePlay: handleFamilyChallengePlay2, handleFamilyChallengeGuess: handleFamilyChallengeGuess2, resetFamilyMatchGame: resetFamilyMatchGame2, ensureFamilyMatchGame: ensureFamilyMatchGame2, handleFamilyMatchPhrase: handleFamilyMatchPhrase2, handleFamilyMatchAttempt: handleFamilyMatchAttempt2, mathChallengeAudioText: mathChallengeAudioText2, handleMathChallengeSubmit: handleMathChallengeSubmit2, handleNumberChallengeGuess: handleNumberChallengeGuess2, bodyMatchItems: bodyMatchItems2, nextBodyRound: nextBodyRound2, resetBodyMatchGame: resetBodyMatchGame2, advanceBodyMatchGame, ensureBodyMatchGame: ensureBodyMatchGame2, handleBodyMatchChinese: handleBodyMatchChinese2, handleBodyMatchAttempt: handleBodyMatchAttempt2, nextBodySpotlightRound, startBodySpotlightRound, handleBodySpotlightGuess, renderBodyPractice: renderBodyPractice2, numberWordListItems: numberWordListItems2, renderBodyLabelButton: renderBodyLabelButton2, renderBodyExplorer: renderBodyExplorer2, renderNumberVisual: renderNumberVisual2, renderNumbersExplorer: renderNumbersExplorer2, renderTelephoneExplorer: renderTelephoneExplorer2, renderFamilyHomeVisual: renderFamilyHomeVisual2, renderFamilyExplorer: renderFamilyExplorer2, renderIdentityExplorer: renderIdentityExplorer2, renderMultiplicationExplorer: renderMultiplicationExplorer2 };
   }
 
   // src/features/time-daily-life/time-daily-life-runtime.js
@@ -27005,12 +27164,11 @@
           </section>
         `).join("")}
       </div>
-      <section class="visual-topic-notes">
-        <p class="body-match-kicker">Useful notes</p>
-        <div class="visual-topic-note-grid">
-          <article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">\u4ECA\u5929\u661F\u671F\u51E0\uFF1F</p>${state2.showPinyin ? '<p class="visual-topic-note-pinyin">j\u012Bn ti\u0101n x\u012Bng q\u012B j\u01D0?</p>' : ""}${state2.showEnglish ? '<p class="visual-topic-note-english">What day is it today?</p>' : ""}<p class="visual-topic-note-example">\u4ECA\u5929\u661F\u671F\u4E00\u3002</p>${state2.showPinyin ? '<p class="visual-topic-note-pinyin">j\u012Bn ti\u0101n x\u012Bng q\u012B y\u012B.</p>' : ""}${state2.showEnglish ? '<p class="visual-topic-note-english">Today is Monday.</p>' : ""}</article>
-        </div>
-      </section>
+      ${renderLessonNotes([{
+        hanzi: "\u4ECA\u5929\u661F\u671F\u51E0\uFF1F",
+        explanation: "Chinese keeps the answer position and replaces the day number with \u51E0. English moves \u201Cwhat day\u201D to the front.",
+        examples: [{ hanzi: "\u4ECA\u5929\u661F\u671F\u4E00\u3002", english: "Today is Monday." }]
+      }])}
     </div>
   `;
       focusExplorer2.querySelectorAll("[data-weekday-play-scene]").forEach((button) => {
@@ -27025,10 +27183,17 @@
       const monthItems = scopedDateContent(timeDateMonthItems2);
       const lessonScope = state2.lessonScope;
       const dateNotes = [
-        { hanzi: "\u4ECA\u5929\u51E0\u6708\u51E0\u53F7\uFF1F", pinyin: "j\u012Bn ti\u0101n j\u01D0 yu\xE8 j\u01D0 h\xE0o?", english: "What is the date today?", example: "\u4ECA\u5929\u4E94\u6708\u4E8C\u5341\u53F7\u3002", examplePinyin: "j\u012Bn ti\u0101n w\u01D4 yu\xE8 \xE8r sh\xED h\xE0o.", exampleEnglish: "Today is May twentieth.", lessonSources: ["3a:2"] },
-        { hanzi: "\u53F7 / \u65E5", pinyin: "h\xE0o / r\xEC", english: "two ways to say the day of a date", example: "\u4E94\u6708\u4E8C\u5341\u53F7 = \u4E94\u6708\u4E8C\u5341\u65E5\u3002", examplePinyin: "w\u01D4 yu\xE8 \xE8r sh\xED h\xE0o = w\u01D4 yu\xE8 \xE8r sh\xED r\xEC.", exampleEnglish: "Both mean May twentieth.", lessonSources: ["3a:2"] },
-        { hanzi: "\u795D\u4F60\u751F\u65E5\u5FEB\u4E50\uFF01", pinyin: "zh\xF9 n\u01D0 sh\u0113ng r\xEC ku\xE0i l\xE8!", english: "Wish you a happy birthday!", lessonSources: ["3a:3"] },
-        { hanzi: "\u751F\u65E5\u4F1A / \u793C\u7269", pinyin: "sh\u0113ng r\xEC hu\xEC / l\u01D0 w\xF9", english: "birthday party / present", example: "\u751F\u65E5\u4F1A\u4E0A\u6709\u793C\u7269\u3002", examplePinyin: "sh\u0113ng r\xEC hu\xEC sh\xE0ng y\u01D2u l\u01D0 w\xF9.", exampleEnglish: "There are presents at a birthday party.", lessonSources: ["3a:3"] }
+        {
+          hanzi: "\u4ECA\u5929\u51E0\u6708\u51E0\u53F7\uFF1F",
+          explanation: "Chinese gives dates from larger unit to smaller unit: month, then day. \u51E0 stays where the unknown number belongs.",
+          examples: [{ hanzi: "\u4ECA\u5929\u4E94\u6708\u4E8C\u5341\u53F7\u3002", english: "Today is May 20." }],
+          lessonSources: ["3a:2"]
+        },
+        {
+          hanzi: "\u4E94\u6708\u4E8C\u5341\u53F7 / \u4E94\u6708\u4E8C\u5341\u65E5",
+          explanation: "\u53F7 is common in speech. \u65E5 is more formal and common in written dates. Both mean May 20.",
+          lessonSources: ["3a:2"]
+        }
       ];
       const visibleNotes = lessonScope ? dateNotes.filter((note) => note.lessonSources.includes(`${lessonScope.bookId}:${lessonScope.lessonNumber}`)) : dateNotes;
       const monthSection = monthItems.length ? `
@@ -27059,12 +27224,7 @@
         </div>
       </section>
       ${monthSection}
-      <section class="visual-topic-notes">
-        <p class="body-match-kicker">Useful notes</p>
-        <div class="visual-topic-note-grid">
-          ${visibleNotes.map((note) => `<article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">${note.hanzi}</p>${state2.showPinyin ? `<p class="visual-topic-note-pinyin">${note.pinyin}</p>` : ""}${state2.showEnglish ? `<p class="visual-topic-note-english">${note.english}</p>` : ""}${note.example ? `<p class="visual-topic-note-example">${note.example}</p>` : ""}${state2.showPinyin && note.examplePinyin ? `<p class="visual-topic-note-pinyin">${note.examplePinyin}</p>` : ""}${state2.showEnglish && note.exampleEnglish ? `<p class="visual-topic-note-english">${note.exampleEnglish}</p>` : ""}</article>`).join("")}
-        </div>
-      </section>
+      ${renderLessonNotes(visibleNotes)}
     </div>
   `;
       bindTimeAssetAudio2(focusExplorer2);
@@ -27093,31 +27253,21 @@
       const transportScenes = sceneId === "transport" ? `<section class="school-lesson-section"><div class="time-months-heading"><p class="body-match-kicker">Scenes</p></div><div class="school-scene-grid transport-scene-grid">${items.map((item) => `<section class="greetings-exchange school-scene-card"><div class="greetings-exchange-top"><div><p class="body-match-kicker">${item.sceneTitle}</p></div><button class="small-button is-play-button" type="button" data-transport-scene="${item.audio}">Play</button></div><div class="school-scene-layout"><img class="school-scene-image" src="${item.imagePath}" alt="${item.english}" /><div class="greetings-line-stack"><article class="greetings-line-card"><div class="telephone-bubble-copy"><p class="telephone-line-hanzi">${item.hanzi}</p>${state2.showPinyin ? `<p class="telephone-line-pinyin">${item.pinyin}</p>` : ""}${state2.showEnglish ? `<p class="telephone-line-english">${item.english}</p>` : ""}</div></article></div></div></section>`).join("")}</div></section>` : "";
       const comparisonWords = sceneId === "comparisons" ? `<section class="school-lesson-section"><div class="time-months-heading"><p class="body-match-kicker">Book words</p></div><div class="comparison-word-grid">${comparisonWordItems2.map((item) => `<button class="comparison-word-card" type="button" data-comparison-word="${item.hanzi}"><span class="comparison-word-hanzi">${item.hanzi}</span>${state2.showPinyin ? `<span class="comparison-word-pinyin">${item.pinyin}</span>` : ""}${state2.showEnglish ? `<span class="comparison-word-english">${item.english}</span>` : ""}</button>`).join("")}</div></section>` : "";
       const transportWords = sceneId === "transport" ? `<section class="school-lesson-section"><div class="time-months-heading"><p class="body-match-kicker">Book words</p></div><div class="comparison-word-grid">${transportBookWords2.map((item) => `<button class="comparison-word-card" type="button" data-transport-word="${item.hanzi}"><span class="comparison-word-hanzi">${item.hanzi}</span>${state2.showPinyin ? `<span class="comparison-word-pinyin">${item.pinyin}</span>` : ""}${state2.showEnglish ? `<span class="comparison-word-english">${item.english}</span>` : ""}</button>`).join("")}</div></section>` : "";
-      const usefulNotes = sceneId === "transport" ? `
-        <section class="visual-topic-notes">
-          <p class="body-match-kicker">Useful notes</p>
-          <div class="visual-topic-note-grid">
-            <article class="visual-topic-note-card">
-              <p class="visual-topic-note-hanzi">\u5750\u8F66</p>
-              ${state2.showPinyin ? '<p class="visual-topic-note-pinyin">zu\xF2 ch\u0113</p>' : ""}
-              ${state2.showEnglish ? '<p class="visual-topic-note-english">travel by vehicle; take a ride</p>' : ""}
-              <p class="visual-topic-note-example">\u5750\u6821\u8F66\uFF0C\u5750\u516C\u5171\u6C7D\u8F66\uFF0C\u5750\u51FA\u79DF\u8F66\u3002</p>
-            </article>
-            <article class="visual-topic-note-card">
-              <p class="visual-topic-note-hanzi">\u53BB</p>
-              ${state2.showPinyin ? '<p class="visual-topic-note-pinyin">q\xF9</p>' : ""}
-              ${state2.showEnglish ? '<p class="visual-topic-note-english">to go to</p>' : ""}
-              <p class="visual-topic-note-example">\u53BB\u5B66\u6821\uFF0C\u53BB\u5730\u94C1\u7AD9\uFF0C\u53BB\u5317\u4EAC\u3002</p>
-            </article>
-            <article class="visual-topic-note-card">
-              <p class="visual-topic-note-hanzi">\u9A91</p>
-              ${state2.showPinyin ? '<p class="visual-topic-note-pinyin">q\xED</p>' : ""}
-              ${state2.showEnglish ? '<p class="visual-topic-note-english">to ride</p>' : ""}
-              <p class="visual-topic-note-example">\u9A91\u81EA\u884C\u8F66\u3002</p>
-            </article>
-          </div>
-        </section>
-      ` : "";
+      const usefulNotes = sceneId === "transport" ? renderLessonNotes([
+        {
+          hanzi: "\u5750\u6821\u8F66 / \u9A91\u81EA\u884C\u8F66",
+          explanation: "English may use \u201Ctake\u201D or \u201Cride.\u201D Chinese uses \u5750 for travelling in a vehicle and \u9A91 for a bicycle or something you straddle."
+        },
+        {
+          hanzi: "\u6211\u5750\u6821\u8F66\u53BB\u5B66\u6821\u3002",
+          explanation: "Chinese uses \u53BB + place without a separate word for English \u201Cto.\u201D",
+          examples: [{ hanzi: "\u6211\u9A91\u81EA\u884C\u8F66\u53BB\u516C\u56ED\u3002", english: "I ride a bicycle to the park." }]
+        }
+      ]) : sceneId === "comparisons" ? renderLessonNotes([{
+        hanzi: "A \u6BD4 B + \u5F62\u5BB9\u8BCD",
+        explanation: "Chinese places \u6BD4 and the comparison item before the adjective. English puts \u201Cthan\u201D after the adjective.",
+        examples: [{ hanzi: "\u54E5\u54E5\u6BD4\u5F1F\u5F1F\u9AD8\u3002", english: "The older brother is taller than the younger brother." }]
+      }]) : "";
       focusExplorer2.innerHTML = `
     <div class="time-date-board">
       <div class="numbers-stage-card">
@@ -27199,14 +27349,17 @@
       </div>
       <div class="time-months-heading"><p class="body-match-kicker">Book words</p></div>
       ${renderTimeAssetGrid2(visualTopicItems2.rooms, "visual visual-rooms", "visual")}
-      <section class="visual-topic-notes">
-        <p class="body-match-kicker">Useful notes</p>
-        <div class="visual-topic-note-grid room-useful-note-grid">
-          <article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">\u623F\u95F4\u91CC\u6709\u2026\u2026</p>${state2.showPinyin ? '<p class="visual-topic-note-pinyin">f\xE1ng ji\u0101n l\u01D0 y\u01D2u...</p>' : ""}${state2.showEnglish ? '<p class="visual-topic-note-english">There is / are ... in the room.</p>' : ""}<p class="visual-topic-note-example">\u91CC means \u201Cin\u201D; \u6709 means \u201Cthere is / are.\u201D</p></article>
-          <article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">\u5730\u4E0A\u6709\u2026\u2026</p>${state2.showPinyin ? '<p class="visual-topic-note-pinyin">d\xEC sh\xE0ng y\u01D2u...</p>' : ""}${state2.showEnglish ? '<p class="visual-topic-note-english">There is / are ... on the floor.</p>' : ""}<p class="visual-topic-note-example">\u5730\u4E0A\u6709\u4E66\u3002</p>${state2.showPinyin ? '<p class="visual-topic-note-pinyin">d\xEC sh\xE0ng y\u01D2u sh\u016B.</p>' : ""}${state2.showEnglish ? '<p class="visual-topic-note-english">There is a book on the floor.</p>' : ""}</article>
-          <article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">\u6709 / \u6CA1\u6709</p>${state2.showPinyin ? '<p class="visual-topic-note-pinyin">y\u01D2u / m\xE9i y\u01D2u</p>' : ""}${state2.showEnglish ? '<p class="visual-topic-note-english">there is / there is not</p>' : ""}<p class="visual-topic-note-example">\u623F\u95F4\u91CC\u6709\u94A2\u7434\u3002\u623F\u95F4\u91CC\u6CA1\u6709\u94A2\u7434\u3002</p></article>
-        </div>
-      </section>
+      ${renderLessonNotes([
+        {
+          hanzi: "\u623F\u95F4\u91CC\u6709\u94A2\u7434\u3002",
+          explanation: "English begins with \u201CThere is\u201D or \u201CThere are.\u201D Chinese begins with the place, then \u6709, then the thing.",
+          examples: [{ hanzi: "\u5730\u4E0A\u6709\u4E66\u3002", english: "There is a book on the floor." }]
+        },
+        {
+          hanzi: "\u623F\u95F4\u91CC\u6CA1\u6709\u94A2\u7434\u3002",
+          explanation: "The negative form of \u6709 is \u6CA1\u6709, not \u4E0D\u6709."
+        }
+      ], { gridClass: "room-useful-note-grid" })}
     </div>
   `;
       bindTimeAssetAudio2(focusExplorer2);
@@ -27245,12 +27398,11 @@
           ${positionBookWords2.map((word) => `<button class="comparison-word-card" type="button" data-position-word="${word.hanzi}"><span class="comparison-word-hanzi">${word.hanzi}</span>${state2.showPinyin ? `<span class="comparison-word-pinyin">${word.pinyin}</span>` : ""}${state2.showEnglish ? `<span class="comparison-word-english">${word.english}</span>` : ""}</button>`).join("")}
         </div>
       </section>
-      <section class="visual-topic-notes">
-        <p class="body-match-kicker">Useful notes</p>
-        <div class="visual-topic-note-grid position-note-grid">
-          <article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">A \u5728 B + \u4F4D\u7F6E</p>${state2.showPinyin ? '<p class="visual-topic-note-pinyin">A z\xE0i B + w\xE8i zh\xEC</p>' : ""}${state2.showEnglish ? '<p class="visual-topic-note-english">A is in / on / beside B.</p>' : ""}<p class="visual-topic-note-example">\u4E66\u67B6\u5728\u684C\u5B50\u5DE6\u8FB9\u3002</p>${state2.showPinyin ? '<p class="visual-topic-note-pinyin">sh\u016B ji\xE0 z\xE0i zhu\u014D zi zu\u01D2 bi\u0101n.</p>' : ""}${state2.showEnglish ? '<p class="visual-topic-note-english">The bookshelf is to the left of the desk.</p>' : ""}</article>
-        </div>
-      </section>
+      ${renderLessonNotes([{
+        hanzi: "A \u5728 B + \u4F4D\u7F6E",
+        explanation: "Chinese puts the position word after the reference object. English usually puts the position phrase before it.",
+        examples: [{ hanzi: "\u4E66\u67B6\u5728\u684C\u5B50\u5DE6\u8FB9\u3002", english: "The bookshelf is to the left of the desk." }]
+      }], { gridClass: "position-note-grid" })}
     </div>
   `;
       focusExplorer2.querySelectorAll("[data-position-play-scene]").forEach((button) => {
@@ -27272,8 +27424,23 @@
         { id: "routine", hanzi: "\u4F5C\u606F", english: "Routine" }
       ];
       const wordGrid = (words) => `<section class="school-lesson-section time-book-word-section"><div class="time-months-heading"><p class="body-match-kicker">Book words</p></div><div class="comparison-word-grid time-text-word-grid">${words.map((word) => `<button class="comparison-word-card" type="button" data-time-book-word="${word.id}"><span class="comparison-word-hanzi">${word.hanzi}</span>${state2.showPinyin ? `<span class="comparison-word-pinyin">${word.pinyin}</span>` : ""}${state2.showEnglish ? `<span class="comparison-word-english">${word.english}</span>` : ""}</button>`).join("")}</div></section>`;
-      const clockNotes = `<section class="visual-topic-notes time-useful-notes"><p class="body-match-kicker">Useful notes</p><div class="visual-topic-note-grid"><article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">\u51E0\u70B9\u4E86\uFF1F</p>${state2.showPinyin ? '<p class="visual-topic-note-pinyin">j\u01D0 di\u01CEn le?</p>' : ""}${state2.showEnglish ? '<p class="visual-topic-note-english">What time is it?</p>' : ""}<p class="visual-topic-note-example">\u73B0\u5728\u4E03\u70B9\u3002</p>${state2.showPinyin ? '<p class="visual-topic-note-pinyin">xi\xE0n z\xE0i q\u012B di\u01CEn.</p>' : ""}${state2.showEnglish ? `<p class="visual-topic-note-english">It is seven o'clock now.</p>` : ""}</article></div></section>`;
-      const routineNotes = `<section class="visual-topic-notes time-useful-notes"><p class="body-match-kicker">Useful notes</p><div class="visual-topic-note-grid"><article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">\u73B0\u5728\u51E0\u70B9\u4E86\uFF1F</p>${state2.showPinyin ? '<p class="visual-topic-note-pinyin">xi\xE0n z\xE0i j\u01D0 di\u01CEn le?</p>' : ""}${state2.showEnglish ? '<p class="visual-topic-note-english">What time is it now?</p>' : ""}<p class="visual-topic-note-example">\u73B0\u5728\u4E03\u70B9\u96F6\u4E94\u5206\u3002</p>${state2.showPinyin ? '<p class="visual-topic-note-pinyin">xi\xE0n z\xE0i q\u012B di\u01CEn l\xEDng w\u01D4 f\u0113n.</p>' : ""}${state2.showEnglish ? '<p class="visual-topic-note-english">It is 7:05 now.</p>' : ""}</article><article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">\u4E00\u523B = \u5341\u4E94\u5206 \xB7 \u534A = \u4E09\u5341\u5206 \xB7 \u4E09\u523B = \u56DB\u5341\u4E94\u5206</p>${state2.showPinyin ? '<p class="visual-topic-note-pinyin">y\u012B k\xE8 = sh\xED w\u01D4 f\u0113n \xB7 b\xE0n = s\u0101n sh\xED f\u0113n \xB7 s\u0101n k\xE8 = s\xEC sh\xED w\u01D4 f\u0113n</p>' : ""}${state2.showEnglish ? '<p class="visual-topic-note-english">a quarter = 15 minutes \xB7 half = 30 minutes \xB7 three quarters = 45 minutes</p>' : ""}<p class="visual-topic-note-example">\u4E24\u70B9\u4E00\u523B = \u4E24\u70B9\u5341\u4E94\u5206\u3002</p>${state2.showPinyin ? '<p class="visual-topic-note-pinyin">li\u01CEng di\u01CEn y\u012B k\xE8 = li\u01CEng di\u01CEn sh\xED w\u01D4 f\u0113n.</p>' : ""}${state2.showEnglish ? '<p class="visual-topic-note-english">2:15.</p>' : ""}</article><article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">\u65F6\u95F4\u653E\u5728\u52A8\u4F5C\u524D\u9762</p>${state2.showPinyin ? '<p class="visual-topic-note-pinyin">sh\xED ji\u0101n f\xE0ng z\xE0i d\xF2ng zu\xF2 qi\xE1n mi\xE0n</p>' : ""}${state2.showEnglish ? '<p class="visual-topic-note-english">Put the time before the action.</p>' : ""}<p class="visual-topic-note-example">\u4E03\u70B9\u8D77\u5E8A\u3002\u4E24\u70B9\u534A\u653E\u5B66\u3002</p>${state2.showPinyin ? '<p class="visual-topic-note-pinyin">q\u012B di\u01CEn q\u01D0 chu\xE1ng. li\u01CEng di\u01CEn b\xE0n f\xE0ng xu\xE9.</p>' : ""}${state2.showEnglish ? '<p class="visual-topic-note-english">Get up at seven. School ends at 2:30.</p>' : ""}</article></div></section>`;
+      const clockNotes = renderLessonNotes([{
+        hanzi: "\u51E0\u70B9\u4E86\uFF1F",
+        explanation: "Chinese replaces the hour number with \u51E0. Compare \u4E03\u70B9 and \u51E0\u70B9.",
+        examples: [{ hanzi: "\u73B0\u5728\u4E03\u70B9\u3002", english: "It is seven o\u2019clock now." }]
+      }], { sectionClass: "time-useful-notes" });
+      const routineNotes = renderLessonNotes([
+        {
+          hanzi: "\u4E24\u70B9\u4E00\u523B / \u4E24\u70B9\u534A",
+          explanation: "Chinese starts with the hour, then adds \u4E00\u523B for 15 minutes or \u534A for 30 minutes.",
+          examples: [{ hanzi: "\u4E24\u70B9\u4E00\u523B\u3002", english: "A quarter past two." }]
+        },
+        {
+          hanzi: "\u4E03\u70B9\u8D77\u5E8A\u3002",
+          explanation: "Chinese normally puts the time before the action. English often puts it after the action.",
+          examples: [{ hanzi: "\u4E24\u70B9\u534A\u653E\u5B66\u3002", english: "School ends at 2:30." }]
+        }
+      ], { sectionClass: "time-useful-notes" });
       let content = "";
       let notes = "";
       if (activeSection === "clock") {
@@ -27395,7 +27562,7 @@
           ${words.map((word) => `<button class="time-asset-card book-word-card" type="button" data-clothes-word="${word.id}">${word.imagePath ? `<img class="book-word-image" src="${word.imagePath}" alt="${word.english}" />` : `<span class="book-word-image book-word-image-fallback" aria-hidden="true">${word.hanzi}</span>`}<span class="book-word-copy"><span class="time-asset-hanzi">${word.hanzi}</span>${state2.showPinyin ? `<span class="time-asset-pinyin">${word.pinyin}</span>` : ""}${state2.showEnglish ? `<span class="time-asset-english">${word.english}</span>` : ""}</span></button>`).join("")}
         </div>
       </section>
-      ${notes.length ? `<section class="visual-topic-notes"><p class="body-match-kicker">Useful notes</p><div class="visual-topic-note-grid">${notes.map((note) => `<article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">${note.hanzi}</p>${state2.showPinyin ? `<p class="visual-topic-note-pinyin">${note.pinyin}</p>` : ""}${state2.showEnglish ? `<p class="visual-topic-note-english">${note.english}</p>` : ""}<p class="visual-topic-note-example">${note.example}</p>${state2.showPinyin ? `<p class="visual-topic-note-pinyin">${note.examplePinyin}</p>` : ""}${state2.showEnglish ? `<p class="visual-topic-note-english">${note.exampleEnglish}</p>` : ""}</article>`).join("")}</div></section>` : ""}
+      ${renderLessonNotes(notes)}
     </div>
   `;
       focusExplorer2.querySelectorAll("[data-clothes-play-scene]").forEach((button) => {
@@ -27437,11 +27604,12 @@
         { id: "turtle", hanzi: "\u4E4C\u9F9F", pinyin: "w\u016B gu\u012B", english: "turtle", audio: "\u4E4C\u9F9F", preferenceAudio: "\u6211\u559C\u6B22\u4E4C\u9F9F\u3002", preferencePinyin: "w\u01D2 x\u01D0 huan w\u016B gu\u012B.", imagePath: "assets/illustrated-animals/turtle.webp", imageAlt: "A turtle" },
         { id: "goldfish", hanzi: "\u91D1\u9C7C", pinyin: "j\u012Bn y\xFA", english: "goldfish", audio: "\u91D1\u9C7C", preferenceAudio: "\u6211\u559C\u6B22\u91D1\u9C7C\u3002", preferencePinyin: "w\u01D2 x\u01D0 huan j\u012Bn y\xFA.", imagePath: "assets/illustrated-animals/goldfish.webp", imageAlt: "A goldfish" }
       ],
-      usefulNote: {
-        hanzi: "\u6211\u559C\u6B22 + \u540D\u8BCD\u3002\u6BD4\u5982\uFF1A\u6211\u559C\u6B22\u732B\u3002",
-        pinyin: "W\u01D2 x\u01D0 huan + m\xEDng c\xED. B\u01D0 r\xFA: W\u01D2 x\u01D0 huan m\u0101o.",
-        english: "\u6211\u559C\u6B22 means \u201CI like.\u201D Put an animal or thing after it."
-      }
+      notes: [{
+        explanation: "\u559C\u6B22 works much like \u201Clike\u201D in English.",
+        examples: [
+          { hanzi: "\u6211\u559C\u6B22\u732B\u3002", english: "I like cats." }
+        ]
+      }]
     },
     "2b": {
       title: "Animals",
@@ -27465,6 +27633,10 @@
         { id: "goldfish", hanzi: "\u91D1\u9C7C", pinyin: "j\u012Bn y\xFA", english: "goldfish", audio: "\u91D1\u9C7C", imagePath: "assets/illustrated-animals/goldfish.webp", imageAlt: "A goldfish" },
         { id: "turtle", hanzi: "\u4E4C\u9F9F", pinyin: "w\u016B gu\u012B", english: "turtle", audio: "\u4E4C\u9F9F", imagePath: "assets/illustrated-animals/turtle.webp", imageAlt: "A turtle" }
       ],
+      notes: [{
+        hanzi: "\u4E00\u53EA\u8001\u864E / \u4E24\u5934\u5927\u8C61 / \u4E03\u6761\u91D1\u9C7C",
+        explanation: "Chinese puts a measure word between a number and an animal. Use \u53EA for many animals, \u5934 for large animals, and \u6761 for fish and long animals."
+      }],
       foodStory: [
         { id: "dog-bone", animalHanzi: "\u72D7", animalPinyin: "g\u01D2u", animalEnglish: "dog", foodHanzi: "\u9AA8\u5934", foodPinyin: "g\u01D4 tou", foodEnglish: "bones", animalImagePath: "assets/illustrated-animals/dog.webp", animalImageAlt: "A dog", foodImagePath: "assets/illustrated-food/bones.webp", foodImageAlt: "Bones", hanzi: "\u72D7\u5403\u9AA8\u5934\u3002", pinyin: "G\u01D2u ch\u012B g\u01D4 tou.", english: "Dogs eat bones.", audio: "\u72D7\u5403\u9AA8\u5934" },
         { id: "cat-fish", animalHanzi: "\u732B", animalPinyin: "m\u0101o", animalEnglish: "cat", foodHanzi: "\u9C7C", foodPinyin: "y\xFA", foodEnglish: "fish", animalImagePath: "assets/illustrated-animals/cat.webp", animalImageAlt: "A cat", foodImagePath: "assets/illustrated-food/small-fish.webp", foodImageAlt: "Fish", hanzi: "\u732B\u5403\u9C7C\u3002", pinyin: "M\u0101o ch\u012B y\xFA.", english: "Cats eat fish.", audio: "\u732B\u5403\u9C7C" },
@@ -27526,6 +27698,17 @@
       { id: "cold", hanzi: "\u4ECA\u5929\u5F88\u51B7", pinyin: "j\u012Bn ti\u0101n h\u011Bn l\u011Bng", english: "Today is very cold.", audio: "\u4ECA\u5929\u5F88\u51B7", imagePath: "assets/illustrated-weather/snowy-cold.webp", imageAlt: "A snowy winter scene" },
       { id: "hot", hanzi: "\u4ECA\u5929\u5F88\u70ED", pinyin: "j\u012Bn ti\u0101n h\u011Bn r\xE8", english: "Today is very hot.", audio: "\u4ECA\u5929\u5F88\u70ED", imagePath: "assets/illustrated-weather/sunny-hot.webp", imageAlt: "A bright sunny day" },
       { id: "windy", hanzi: "\u4ECA\u5929\u522E\u5927\u98CE", pinyin: "j\u012Bn ti\u0101n gu\u0101 d\xE0 f\u0113ng", english: "It is very windy today.", audio: "\u4ECA\u5929\u522E\u5927\u98CE", imagePath: "assets/illustrated-weather/windy-leaves.webp", imageAlt: "Leaves blowing on a windy day" }
+    ],
+    notes: [
+      {
+        hanzi: "\u4ECA\u5929\u5F88\u51B7\u3002",
+        explanation: "English uses \u201Cis\u201D before an adjective. Chinese usually places \u5F88 directly before the adjective.",
+        examples: [{ hanzi: "\u4ECA\u5929\u5F88\u70ED\u3002", english: "Today is hot." }]
+      },
+      {
+        hanzi: "\u4E0B\u96E8\u4E86\u3002 / \u4E0B\u96EA\u4E86\u3002",
+        explanation: "Chinese names the weather event directly. It does not need the English subject \u201Cit.\u201D"
+      }
     ]
   };
   var weatherOutfitScenes = [
@@ -27538,11 +27721,10 @@
     title: "Nature",
     summary: "Describe what is in the sky and on the ground using \u5929\u4E0A\u6709\u2026 and \u5730\u4E0A\u6709\u2026.",
     imagePath: "assets/illustrated-nature/day-night-nature.webp",
-    usefulNote: {
-      hanzi: "\u62AC\u5934\u770B\u5929\u4E0A\uFF0C\u4F4E\u5934\u770B\u5730\u4E0A\u3002",
-      pinyin: "t\xE1i t\xF3u k\xE0n ti\u0101n sh\xE0ng, d\u012B t\xF3u k\xE0n d\xEC sh\xE0ng.",
-      english: "Look up for the sky; look down for the ground."
-    },
+    notes: [{
+      hanzi: "\u5929\u4E0A\u6709\u592A\u9633\u3002 / \u5730\u4E0A\u6709\u6811\u3002",
+      explanation: "English begins these sentences with \u201CThere is\u201D or \u201CThere are.\u201D Chinese begins with the place, then \u6709, then the thing."
+    }],
     scenes: [
       {
         id: "look-up",
@@ -27818,6 +28000,7 @@
         <div class="time-asset-grid world-asset-grid">
           ${lesson.items.map((item) => `<button class="time-asset-card book-word-card" type="button" data-world-item="${item.id}">${item.imagePath ? `<img class="book-word-image" src="${item.imagePath}" alt="${item.imageAlt}" />` : ""}<span class="book-word-copy"><span class="time-asset-hanzi">${item.hanzi}</span>${state2.showPinyin ? `<span class="time-asset-pinyin">${item.pinyin}</span>` : ""}${state2.showEnglish ? `<span class="time-asset-english">${item.english}</span>` : ""}${item.phrase ? `<span class="time-asset-context">${item.phrase}</span>` : ""}</span></button>`).join("")}
         </div>
+        ${renderLessonNotes(lesson.notes, { sectionClass: "school-review-notes", gridClass: "school-review-grid" })}
       </div>
     `;
       focusExplorer2.querySelectorAll("[data-world-item]").forEach((button) => button.addEventListener("click", () => selectFocusItem2(button.dataset.worldItem, { playAudio: true })));
@@ -27832,7 +28015,7 @@
         <section class="school-lesson-section is-animals"><div class="school-scene-grid is-single">${lesson.scenes.map((scene, index) => worldSceneCardMarkup(scene, { playAttribute: "data-animals-scene", index, compact: true, extraClass: "animals-scene-card" })).join("")}</div></section>
         <section class="school-lesson-section"><div class="time-months-heading"><p class="body-match-kicker">Book words</p></div><div class="time-asset-grid world-asset-grid animal-word-grid">${lesson.items.map((item) => `<button class="time-asset-card book-word-card" type="button" data-world-item="${item.id}" aria-label="${item.hanzi}\uFF0C${item.pinyin}\uFF0C${item.english}"><img class="book-word-image" src="${item.imagePath}" alt="${item.imageAlt}"><span class="book-word-copy"><span class="time-asset-hanzi">${item.hanzi}</span>${state2.showPinyin ? `<span class="time-asset-pinyin">${item.pinyin}</span>` : ""}${state2.showEnglish ? `<span class="time-asset-english">${item.english}</span>` : ""}</span></button>`).join("")}</div></section>
         ${lesson.foodStory ? `<section class="school-lesson-section pet-food-story"><div class="time-months-heading"><p class="body-match-kicker">Animal food</p></div><div class="pet-food-story-grid">${lesson.foodStory.map((story) => `<button class="pet-food-story-card" type="button" data-pet-food-story="${story.id}"><span class="pet-food-story-pair"><img src="${story.animalImagePath}" alt="${story.animalImageAlt}"><span aria-hidden="true">\u2192</span><img src="${story.foodImagePath}" alt="${story.foodImageAlt}"></span><span class="pet-food-story-copy"><span class="time-asset-context">${story.hanzi}</span>${state2.showPinyin ? `<span class="time-asset-context-pinyin">${story.pinyin}</span>` : ""}${state2.showEnglish ? `<span class="time-asset-context-english">${story.english}</span>` : ""}</span></button>`).join("")}</div></section>` : ""}
-        ${lesson.usefulNote ? `<section class="visual-topic-notes school-review-notes"><p class="body-match-kicker">Useful note</p><div class="visual-topic-note-grid school-review-grid"><article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">${lesson.usefulNote.hanzi}</p>${state2.showPinyin ? `<p class="visual-topic-note-pinyin">${lesson.usefulNote.pinyin}</p>` : ""}${state2.showEnglish ? `<p class="visual-topic-note-english">${lesson.usefulNote.english}</p>` : ""}</article></div></section>` : ""}
+        ${renderLessonNotes(lesson.notes, { sectionClass: "school-review-notes", gridClass: "school-review-grid" })}
       </div>
     `;
       focusExplorer2.querySelectorAll("[data-world-item]").forEach((button) => button.addEventListener("click", () => selectFocusItem2(button.dataset.worldItem, { playAudio: true })));
@@ -27852,13 +28035,7 @@
       <div class="time-date-board school-topic-board">
         <div class="numbers-stage-card"><p class="body-match-kicker">${currentBook2().label} Lesson ${currentLesson2().lesson}</p><h4>${weatherLesson.title}</h4><p>${weatherLesson.summary}</p></div>
         <section class="school-lesson-section is-weather"><div class="school-scene-grid weather-scene-grid">${scenes.map((scene, index) => worldSceneCardMarkup(scene, { playAttribute: "data-weather-scene", index })).join("")}</div></section>
-        <section class="visual-topic-notes school-review-notes">
-          <p class="body-match-kicker">Useful notes</p>
-          <div class="visual-topic-note-grid school-review-grid">
-            <article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">\u4ECA\u5929\u5F88 + \u51B7 / \u70ED</p>${state2.showPinyin ? '<p class="visual-topic-note-pinyin">j\u012Bn ti\u0101n h\u011Bn l\u011Bng / r\xE8</p>' : ""}${state2.showEnglish ? '<p class="visual-topic-note-english">Use \u5F88 + an adjective to say how the weather feels today.</p>' : ""}<p class="visual-topic-note-example">\u4ECA\u5929\u5F88\u51B7\u3002\u4ECA\u5929\u5F88\u70ED\u3002</p>${state2.showPinyin ? '<p class="visual-topic-note-pinyin">j\u012Bn ti\u0101n h\u011Bn l\u011Bng. j\u012Bn ti\u0101n h\u011Bn r\xE8.</p>' : ""}${state2.showEnglish ? '<p class="visual-topic-note-english">Today is cold. Today is hot.</p>' : ""}</article>
-            <article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">\u4ECA\u5929\u662F + \u5929\u6C14</p>${state2.showPinyin ? '<p class="visual-topic-note-pinyin">j\u012Bn ti\u0101n sh\xEC + ti\u0101n q\xEC</p>' : ""}${state2.showEnglish ? '<p class="visual-topic-note-english">Use \u4ECA\u5929\u662F to name today\u2019s kind of weather.</p>' : ""}<p class="visual-topic-note-example">\u4ECA\u5929\u662F\u6674\u5929\u3002</p>${state2.showPinyin ? '<p class="visual-topic-note-pinyin">j\u012Bn ti\u0101n sh\xEC q\xEDng ti\u0101n.</p>' : ""}${state2.showEnglish ? '<p class="visual-topic-note-english">Today is sunny.</p>' : ""}</article>
-          </div>
-        </section>
+        ${renderLessonNotes(weatherLesson.notes, { sectionClass: "school-review-notes", gridClass: "school-review-grid" })}
         <section class="school-lesson-section is-weather weather-outfit-section">
           <div class="time-months-heading"><p class="body-match-kicker">Weather and clothes</p></div>
           <div class="school-scene-grid weather-scene-grid">${outfitScenes.map((scene, index) => worldSceneCardMarkup(scene, { playAttribute: "data-weather-outfit-scene", index })).join("")}</div>
@@ -27881,7 +28058,7 @@
         <div class="numbers-stage-card"><p class="body-match-kicker">${currentBook2().label} Lesson ${currentLesson2().lesson}</p><h4>${natureLesson.title}</h4><p>${natureLesson.summary}</p></div>
         <section class="school-lesson-section is-nature"><div class="school-scene-grid is-single">${natureLesson.scenes.map((scene, index) => worldSceneCardMarkup({ ...scene, imageClass: "nature-scene-image" }, { playAttribute: "data-nature-scene", index, compact: true, extraClass: "nature-scene-card" }))}</div></section>
         <section class="school-lesson-section"><div class="time-months-heading"><p class="body-match-kicker">Book words</p></div><div class="time-asset-grid world-asset-grid nature-word-grid">${natureLesson.items.map((item) => `<button class="time-asset-card nature-word-card" type="button" data-world-item="${item.id}" aria-label="${item.hanzi}\uFF0C${item.pinyin}\uFF0C${item.english}"><span class="nature-word-row" style="display:flex; width:100%; align-items:center; gap:0.9rem; text-align:left;"><span class="nature-word-icon" style="flex:0 0 4.5rem;">${natureIconMarkup(item.id)}</span><span class="nature-word-copy" style="display:flex; flex:1 1 auto; flex-direction:column; align-items:flex-start; justify-content:center; gap:0.16rem;"><span class="time-asset-hanzi">${item.hanzi}</span>${state2.showPinyin ? `<span class="time-asset-pinyin">${item.pinyin}</span>` : ""}${state2.showEnglish ? `<span class="time-asset-english">${item.english}</span>` : ""}</span></span></button>`).join("")}</div></section>
-        <section class="visual-topic-notes school-review-notes"><p class="body-match-kicker">Useful notes</p><div class="visual-topic-note-grid school-review-grid"><article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">${natureLesson.usefulNote.hanzi}</p>${state2.showPinyin ? `<p class="visual-topic-note-pinyin">${natureLesson.usefulNote.pinyin}</p>` : ""}${state2.showEnglish ? `<p class="visual-topic-note-english">${natureLesson.usefulNote.english}</p>` : ""}</article></div></section>
+        ${renderLessonNotes(natureLesson.notes, { sectionClass: "school-review-notes", gridClass: "school-review-grid" })}
       </div>
     `;
       focusExplorer2.querySelectorAll("[data-world-item]").forEach((button) => button.addEventListener("click", () => selectFocusItem2(button.dataset.worldItem, { playAudio: true })));
@@ -27935,20 +28112,20 @@
       const remainingAnimalIds = state2.petFoodMatchOrder.filter((id) => !matchedIds.has(id));
       const remainingFoodIds = state2.petFoodFoodOrder.filter((id) => !matchedIds.has(id));
       const storyFor = (id) => stories.find((story) => story.id === id);
+      const remainingRows = remainingAnimalIds.map((animalId, index) => {
+        const foodId = remainingFoodIds[index];
+        const animal = storyFor(animalId);
+        const food = storyFor(foodId);
+        const selected = state2.petFoodMatchAnimalId === animalId;
+        const animalWrong = state2.petFoodWrongAnimalId === animalId;
+        const foodWrong = state2.petFoodWrongFoodId === foodId;
+        return `<article class="pet-food-match-row"><button class="polite-match-card polite-match-card-phrase${selected ? " is-selected" : ""}${animalWrong ? " is-wrong" : ""}" type="button" data-pet-food-match-animal="${animalId}">${animalWrong ? '<span class="answer-result-mark" aria-hidden="true">\xD7</span>' : ""}${petFoodMatchCard(animal, "animal")}</button><button class="polite-match-card polite-match-card-meaning${foodWrong ? " is-wrong" : ""}" type="button" data-pet-food-match-food="${foodId}">${foodWrong ? '<span class="answer-result-mark" aria-hidden="true">\xD7</span>' : ""}${petFoodMatchCard(food, "food")}</button></article>`;
+      }).join("");
       const feedback = state2.petFoodWrongFoodId ? "Try again. Which food does that animal eat?" : solvedIds.length === stories.length ? "\u90FD\u914D\u5BF9\u4E86\uFF01" : "";
       return `<section class="practice-split-card pet-food-match-practice"><div class="numbers-game-top"><div><p class="body-match-kicker">Match the pairs</p><p class="numbers-game-note">Tap an animal on the left, then tap the food it eats on the right.</p></div><button class="small-button is-play-button" type="button" data-pet-food-match-new>Play</button></div>${feedback ? `<div class="greetings-game-feedback">${feedback}</div>` : ""}<div class="family-match-board-headings"><p class="body-match-kicker">Animal</p><p class="body-match-kicker">Food</p></div>${solvedIds.length ? `<div class="family-match-solved-pairs">${solvedIds.map((id) => {
         const story = storyFor(id);
         return `<article class="family-match-solved-row"><div class="polite-match-card polite-match-card-phrase family-match-pair-card is-solved"><span class="answer-result-mark" aria-hidden="true">\u2713</span>${petFoodMatchCard(story, "animal")}</div><div class="polite-match-card polite-match-card-meaning family-match-pair-card is-solved"><span class="answer-result-mark" aria-hidden="true">\u2713</span>${petFoodMatchCard(story, "food")}</div></article>`;
-      }).join("")}</div>` : ""}${remainingAnimalIds.length ? `<div class="polite-match-board family-match-open-board"><div class="polite-match-column">${remainingAnimalIds.map((id) => {
-        const story = storyFor(id);
-        const selected = state2.petFoodMatchAnimalId === id;
-        const wrong = state2.petFoodWrongAnimalId === id;
-        return `<button class="polite-match-card polite-match-card-phrase${selected ? " is-selected" : ""}${wrong ? " is-wrong" : ""}" type="button" data-pet-food-match-animal="${id}">${wrong ? '<span class="answer-result-mark" aria-hidden="true">\xD7</span>' : ""}${petFoodMatchCard(story, "animal")}</button>`;
-      }).join("")}</div><div class="polite-match-column">${remainingFoodIds.map((id) => {
-        const story = storyFor(id);
-        const wrong = state2.petFoodWrongFoodId === id;
-        return `<button class="polite-match-card polite-match-card-meaning${wrong ? " is-wrong" : ""}" type="button" data-pet-food-match-food="${id}">${wrong ? '<span class="answer-result-mark" aria-hidden="true">\xD7</span>' : ""}${petFoodMatchCard(story, "food")}</button>`;
-      }).join("")}</div></div>` : ""}</section>`;
+      }).join("")}</div>` : ""}${remainingRows ? `<div class="pet-food-match-open-rows">${remainingRows}</div>` : ""}</section>`;
     }
     function renderPetsPractice() {
       const preferenceChoices = animalLessons["1b"].items;
@@ -28352,7 +28529,11 @@
         ["write", "\u6211\u559C\u6B22\u5199\u5B57\u3002", "w\u01D2 x\u01D0 huan xi\u011B z\xEC.", "I like writing.", "\u6211\u559C\u6B22\u5199\u5B57"],
         ["play", "\u6211\u6BCF\u5929\u73A9\u513F\u6E38\u620F\u3002", "w\u01D2 m\u011Bi ti\u0101n w\xE1nr y\xF3u x\xEC.", "I play games every day.", "\u6211\u6BCF\u5929\u73A9\u513F\u6E38\u620F"]
       ],
-      note: ["\u6211\u559C\u6B22\u2026 / \u6211\u6BCF\u5929\u2026", "w\u01D2 x\u01D0 huan\u2026 / w\u01D2 m\u011Bi ti\u0101n\u2026", "Use \u6211\u559C\u6B22\u2026 to say what you like. Use \u6211\u6BCF\u5929\u2026 to say what you do every day.", "\u6211\u559C\u6B22\u753B\u753B\u3002 \u6211\u6BCF\u5929\u73A9\u513F\u6E38\u620F\u3002"],
+      notes: [{
+        hanzi: "\u6211\u6BCF\u5929\u73A9\u513F\u6E38\u620F\u3002",
+        explanation: "Chinese usually puts time words such as \u6BCF\u5929 before the action. English often puts \u201Cevery day\u201D after it.",
+        examples: [{ hanzi: "\u6211\u6BCF\u5929\u753B\u753B\u3002", english: "I draw every day." }]
+      }],
       rounds: [
         ["read", "\u770B\u4E66", "k\xE0n sh\u016B", "reading", ["\u5199\u5B57"]],
         ["draw", "\u753B\u753B", "hu\xE0 hu\xE0", "drawing", ["\u73A9\u513F\u6E38\u620F"]],
@@ -28378,7 +28559,11 @@
         ["skate", "\u6211\u559C\u6B22\u6ED1\u51B0\u3002", "w\u01D2 x\u01D0 huan hu\xE1 b\u012Bng.", "I like skating.", "\u6211\u559C\u6B22\u6ED1\u51B0"],
         ["ski", "\u6211\u559C\u6B22\u6ED1\u96EA\u3002", "w\u01D2 x\u01D0 huan hu\xE1 xu\u011B.", "I like skiing.", "\u6211\u559C\u6B22\u6ED1\u96EA"]
       ],
-      note: ["\u4F60\u559C\u6B22\u2026\u5417\uFF1F / \u6211\u559C\u6B22\u2026", "n\u01D0 x\u01D0 huan\u2026 ma? / w\u01D2 x\u01D0 huan\u2026", "Use \u4F60\u559C\u6B22\u2026\u5417\uFF1F to ask if someone likes an activity. Answer: \u6211\u559C\u6B22\u2026\u3002", "\u4F60\u559C\u6B22\u6E38\u6CF3\u5417\uFF1F \u6211\u559C\u6B22\u6E38\u6CF3\u3002"],
+      notes: [{
+        hanzi: "\u4F60\u559C\u6B22\u6E38\u6CF3\u5417\uFF1F",
+        explanation: "English adds \u201Cdo\u201D and moves it to the front. Chinese keeps the statement order and adds \u5417 at the end.",
+        examples: [{ hanzi: "\u6211\u559C\u6B22\u6E38\u6CF3\u3002", english: "I like swimming." }]
+      }],
       rounds: [["sing", "\u5531\u6B4C", "ch\xE0ng g\u0113", "singing"], ["dance", "\u8DF3\u821E", "ti\xE0o w\u01D4", "dancing"], ["swim", "\u6E38\u6CF3", "y\xF3u y\u01D2ng", "swimming"], ["skate", "\u6ED1\u51B0", "hu\xE1 b\u012Bng", "skating"], ["ski", "\u6ED1\u96EA", "hu\xE1 xu\u011B", "skiing"]].map(([itemId, action, actionPinyin, actionEnglish]) => ({ itemId, action, actionPinyin, actionEnglish, distractors: ["\u770B\u4E66"], answers: [
         { tokens: ["\u4F60", "\u559C\u6B22", action, "\u5417"], hanzi: `\u4F60\u559C\u6B22${action}\u5417\uFF1F`, pinyin: `n\u01D0 x\u01D0 huan ${actionPinyin} ma?`, english: `Do you like ${actionEnglish}?`, audio: `\u4F60\u559C\u6B22${action}\u5417\uFF1F\u6211\u559C\u6B22${action}\u3002` }
       ] }))
@@ -28395,7 +28580,11 @@
         ["television", "\u5979\u559C\u6B22\u770B\u7535\u89C6\u3002", "t\u0101 x\u01D0 huan k\xE0n di\xE0n sh\xEC.", "She likes watching television.", "\u5979\u559C\u6B22\u770B\u7535\u89C6"],
         ["movie", "\u4ED6\u7231\u770B\u7535\u5F71\u3002", "t\u0101 \xE0i k\xE0n di\xE0n y\u01D0ng.", "He loves watching movies.", "\u4ED6\u7231\u770B\u7535\u5F71"]
       ],
-      note: ["\u559C\u6B22 / \u7231 \u2026\uFF1B\u5728 + \u6D3B\u52A8", "x\u01D0 huan / \xE0i \u2026; z\xE0i + hu\xF3 d\xF2ng", "\u559C\u6B22 and \u7231 say what someone generally likes. \u5728 + activity says what someone is doing now.", "\u5979\u559C\u6B22\u770B\u7535\u89C6\u3002 \u5979\u5728\u5F39\u94A2\u7434\u3002"],
+      notes: [{
+        hanzi: "\u5979\u5728\u5F39\u94A2\u7434\u3002",
+        explanation: "\u5728 before an action shows that it is happening now. English usually marks this with \u201Cis\u201D and an -ing verb.",
+        examples: [{ hanzi: "\u5979\u559C\u6B22\u770B\u7535\u89C6\u3002", english: "She likes watching TV in general." }]
+      }],
       practiceType: "sentence-choice",
       sentenceOptions: {
         cartoons: { hanzi: "\u5979\u559C\u6B22\u770B\u52A8\u753B\u7247\u513F\u3002", pinyin: "t\u0101 x\u01D0 huan k\xE0n d\xF2ng hu\xE0 pi\u0101nr.", english: "She likes watching cartoons.", audio: "\u5979\u559C\u6B22\u770B\u52A8\u753B\u7247\u513F" },
@@ -28423,7 +28612,11 @@
         ["bike", "\u601D\u601D\u5728\u516C\u56ED\u9A91\u81EA\u884C\u8F66\u3002", "s\u012B si z\xE0i g\u014Dng yu\xE1n q\xED z\xEC x\xEDng ch\u0113.", "Sisi is riding a bike in the park.", "\u601D\u601D\u5728\u516C\u56ED\u9A91\u81EA\u884C\u8F66"],
         ["sand", "\u7F8E\u7F8E\u5728\u6D77\u8FB9\u73A9\u513F\u6C99\u5B50\u3002", "m\u011Bi mei z\xE0i h\u01CEi bi\u0101n w\xE1nr sh\u0101 zi.", "Meimei is playing with sand at the beach.", "\u7F8E\u7F8E\u5728\u6D77\u8FB9\u73A9\u513F\u6C99\u5B50"]
       ],
-      note: ["\u5728 + \u5730\u70B9 + \u6D3B\u52A8", "z\xE0i + d\xEC di\u01CEn + hu\xF3 d\xF2ng", "Use \u5728 + place + activity to say where someone is doing something.", "\u601D\u601D\u5728\u516C\u56ED\u9A91\u81EA\u884C\u8F66\u3002"],
+      notes: [{
+        hanzi: "\u601D\u601D\u5728\u516C\u56ED\u9A91\u81EA\u884C\u8F66\u3002",
+        explanation: "Chinese normally places \u5728 + place before the action. English usually puts the action before the place.",
+        examples: [{ hanzi: "\u5929\u5929\u5728\u516C\u56ED\u8E22\u8DB3\u7403\u3002", english: "Tiantian plays soccer in the park." }]
+      }],
       rounds: [
         { itemId: "run", distractors: ["\u516C\u56ED", "\u8E22\u8DB3\u7403"], answers: [{ tokens: ["\u5B69\u5B50\u4EEC", "\u5728", "\u5B66\u6821\u64CD\u573A\u4E0A", "\u8DD1\u6B65"], hanzi: "\u5B69\u5B50\u4EEC\u5728\u5B66\u6821\u64CD\u573A\u4E0A\u8DD1\u6B65\u3002", pinyin: "h\xE1i zi men z\xE0i xu\xE9 xi\xE0o c\u0101o ch\u01CEng sh\xE0ng p\u01CEo b\xF9.", english: "The children are running on the school playground.", audio: "\u5B69\u5B50\u4EEC\u5728\u5B66\u6821\u64CD\u573A\u4E0A\u8DD1\u6B65" }] },
         { itemId: "soccer", distractors: ["\u6D77\u8FB9", "\u9A91\u81EA\u884C\u8F66"], answers: [{ tokens: ["\u5929\u5929", "\u5728", "\u516C\u56ED", "\u8E22\u8DB3\u7403"], hanzi: "\u5929\u5929\u5728\u516C\u56ED\u8E22\u8DB3\u7403\u3002", pinyin: "ti\u0101n ti\u0101n z\xE0i g\u014Dng yu\xE1n t\u012B z\xFA qi\xFA.", english: "Tiantian is playing soccer in the park.", audio: "\u5929\u5929\u5728\u516C\u56ED\u8E22\u8DB3\u7403" }] },
@@ -28508,7 +28701,7 @@
       }).join("")}</div></section><section class="school-lesson-section"><div class="time-months-heading"><p class="body-match-kicker">Book words</p></div><div class="school-word-grid is-text-only hobbies-word-grid">${page.itemIds.map((id) => {
         const item = itemFor(id);
         return `<button class="school-word-card is-text-only" type="button" data-hobbies-word="${id}"><span class="time-asset-hanzi">${item.hanzi}</span>${state2.showPinyin ? `<span class="time-asset-pinyin">${item.pinyin}</span>` : ""}${state2.showEnglish ? `<span class="time-asset-english">${item.english}</span>` : ""}</button>`;
-      }).join("")}</div></section><section class="visual-topic-notes school-review-notes"><p class="body-match-kicker">Useful notes</p><div class="visual-topic-note-grid school-review-grid"><article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">${page.note[0]}</p>${state2.showPinyin ? `<p class="visual-topic-note-pinyin">${page.note[1]}</p>` : ""}${state2.showEnglish ? `<p class="visual-topic-note-english">${page.note[2]}</p>` : ""}<p class="visual-topic-note-example">${page.note[3]}</p></article></div></section></div>`;
+      }).join("")}</div></section>${renderLessonNotes(page.notes, { sectionClass: "school-review-notes", gridClass: "school-review-grid" })}</div>`;
       focusExplorer2.querySelectorAll("[data-hobbies-word]").forEach((button) => button.addEventListener("click", () => selectFocusItem2(button.dataset.hobbiesWord, { playAudio: true })));
       focusExplorer2.querySelectorAll("[data-hobbies-scene]").forEach((button) => button.addEventListener("click", () => state2.tapAudioEnabled && speakLesson(button.dataset.hobbiesScene, 0.74)));
     }
@@ -28520,7 +28713,11 @@
         imagePath: { doll: "assets/illustrated-toys/lele-playing-doll.webp", "toy-train": "assets/illustrated-toys/lele-playing-toy-train.webp", "toy-airplane": "assets/illustrated-toys/lele-playing-toy-airplane.webp", "toy-bear": "assets/illustrated-toys/lele-playing-toy-bear.webp" }[scene.id],
         alt: { doll: "Lele playing with a doll", "toy-train": "Lele pushing a toy train", "toy-airplane": "Lele flying a toy airplane", "toy-bear": "Lele high-fiving a toy bear" }[scene.id]
       }));
-      focusExplorer2.innerHTML = `<div class="time-date-board school-topic-board hobbies-topic-board"><section class="school-lesson-section"><div class="time-months-heading"><p class="body-match-kicker">Review</p></div><div class="school-scene-grid toys-scene-grid">${scenes.map((scene) => `<section class="greetings-exchange school-scene-card"><div class="greetings-exchange-top"><div><p class="body-match-kicker">${scene.title}</p></div><button class="small-button is-play-button" type="button" data-toys-scene-play="${scene.id}">Play</button></div><div class="school-scene-layout"><img class="school-scene-image" src="${scene.imagePath}" alt="${scene.alt}"><div class="greetings-line-stack"><article class="greetings-line-card"><div class="telephone-bubble-copy"><p class="telephone-line-hanzi">${scene.hanzi}</p>${state2.showPinyin ? `<p class="telephone-line-pinyin">${scene.pinyin}</p>` : ""}${state2.showEnglish ? `<p class="telephone-line-english">${scene.english}</p>` : ""}</div></article></div></div></section>`).join("")}</div></section><section class="school-lesson-section"><div class="time-months-heading"><p class="body-match-kicker">Book words &amp; more</p></div><div class="school-word-grid toys-flashcard-grid">${flashcards.map((item) => `<button class="school-word-card book-word-card" type="button" data-toys-flashcard="${item.id}"><img class="school-word-image book-word-image" src="${item.imagePath}" alt="${item.imageAlt}"><span class="book-word-copy"><span class="time-asset-hanzi">${item.hanzi}</span>${state2.showPinyin ? `<span class="time-asset-pinyin">${item.pinyin}</span>` : ""}${state2.showEnglish ? `<span class="time-asset-english">${item.english}</span>` : ""}</span></button>`).join("")}</div></section></div>`;
+      focusExplorer2.innerHTML = `<div class="time-date-board school-topic-board hobbies-topic-board"><section class="school-lesson-section"><div class="time-months-heading"><p class="body-match-kicker">Review</p></div><div class="school-scene-grid toys-scene-grid">${scenes.map((scene) => `<section class="greetings-exchange school-scene-card"><div class="greetings-exchange-top"><div><p class="body-match-kicker">${scene.title}</p></div><button class="small-button is-play-button" type="button" data-toys-scene-play="${scene.id}">Play</button></div><div class="school-scene-layout"><img class="school-scene-image" src="${scene.imagePath}" alt="${scene.alt}"><div class="greetings-line-stack"><article class="greetings-line-card"><div class="telephone-bubble-copy"><p class="telephone-line-hanzi">${scene.hanzi}</p>${state2.showPinyin ? `<p class="telephone-line-pinyin">${scene.pinyin}</p>` : ""}${state2.showEnglish ? `<p class="telephone-line-english">${scene.english}</p>` : ""}</div></article></div></div></section>`).join("")}</div></section><section class="school-lesson-section"><div class="time-months-heading"><p class="body-match-kicker">Book words &amp; more</p></div><div class="school-word-grid toys-flashcard-grid">${flashcards.map((item) => `<button class="school-word-card book-word-card" type="button" data-toys-flashcard="${item.id}"><img class="school-word-image book-word-image" src="${item.imagePath}" alt="${item.imageAlt}"><span class="book-word-copy"><span class="time-asset-hanzi">${item.hanzi}</span>${state2.showPinyin ? `<span class="time-asset-pinyin">${item.pinyin}</span>` : ""}${state2.showEnglish ? `<span class="time-asset-english">${item.english}</span>` : ""}</span></button>`).join("")}</div></section>${renderLessonNotes([{
+        hanzi: "\u6211\u6709\u4E00\u4E2A\u73A9\u5177\u718A\u3002",
+        explanation: "English uses \u201Ca\u201D before one toy. Chinese uses a number and measure word when the quantity matters.",
+        examples: [{ hanzi: "\u6211\u6709\u4E00\u4E2A\u73A9\u5177\u718A\u3002", english: "I have a toy bear." }]
+      }])}</div>`;
       focusExplorer2.querySelectorAll("[data-toys-scene-play]").forEach((button) => button.addEventListener("click", () => {
         const scene = scenes.find((entry) => entry.id === button.dataset.toysScenePlay);
         if (scene && state2.tapAudioEnabled) speakLesson(scene.audio, 0.74);
@@ -30562,6 +30759,27 @@
       const solvedIds = phraseIds.filter((id) => matchedIds.has(id));
       const remainingPhraseIds = phraseIds.filter((id) => !matchedIds.has(id));
       const remainingMeaningIds = meaningIds.filter((id) => !matchedIds.has(id));
+      const renderPhraseCard = (id) => {
+        const item = config.items().find((entry) => entry.id === id);
+        if (!item) return "";
+        const selected = config.selectedId() === id;
+        const wrong = config.wrongPhraseIds?.().has(id);
+        return `
+        <button class="polite-match-card polite-match-card-phrase${config.phraseCardClass ? ` ${config.phraseCardClass}` : ""}${selected ? " is-selected" : ""}${wrong ? " is-wrong" : ""}" type="button" data-template-match-phrase="${id}">
+          ${wrong ? '<span class="answer-result-mark" aria-hidden="true">\xD7</span>' : ""}
+          ${config.phraseContent ? config.phraseContent(id) : `<span class="numbers-game-hanzi">${item.hanzi}</span>${state2.showPinyin ? `<span class="numbers-game-pinyin">${item.pinyin}</span>` : ""}`}
+        </button>
+      `;
+      };
+      const renderMeaningCard = (id) => {
+        const wrong = config.wrongMeaningIds?.().has(id);
+        return `
+        <button class="polite-match-card ${config.meaningCardClass ?? "polite-match-card-meaning"}${wrong ? " is-wrong" : ""}" type="button" data-template-match-meaning="${id}">
+          ${wrong ? '<span class="answer-result-mark" aria-hidden="true">\xD7</span>' : ""}
+          ${renderMatchMeaningContent(config, id)}
+        </button>
+      `;
+      };
       return `
       <section class="practice-split-card">
         <div class="numbers-game-top">
@@ -30584,7 +30802,7 @@
         if (!item) return "";
         return `
                 <article class="family-match-solved-row">
-                  <div class="polite-match-card polite-match-card-phrase family-match-pair-card is-solved">
+                  <div class="polite-match-card polite-match-card-phrase${config.phraseCardClass ? ` ${config.phraseCardClass}` : ""} family-match-pair-card is-solved">
                     <span class="answer-result-mark" aria-hidden="true">\u2713</span>
                     ${config.phraseContent ? config.phraseContent(id) : `<span class="numbers-game-hanzi">${item.hanzi}</span>${state2.showPinyin ? `<span class="numbers-game-pinyin">${item.pinyin}</span>` : ""}`}
                   </div>
@@ -30598,33 +30816,7 @@
           </div>
         ` : ""}
         ${remainingPhraseIds.length ? `
-          <div class="polite-match-board family-match-open-board">
-            <div class="polite-match-column">
-              ${remainingPhraseIds.map((id) => {
-        const item = config.items().find((entry) => entry.id === id);
-        if (!item) return "";
-        const selected = config.selectedId() === id;
-        const wrong = config.wrongPhraseIds?.().has(id);
-        return `
-                  <button class="polite-match-card polite-match-card-phrase${selected ? " is-selected" : ""}${wrong ? " is-wrong" : ""}" type="button" data-template-match-phrase="${id}">
-                    ${wrong ? '<span class="answer-result-mark" aria-hidden="true">\xD7</span>' : ""}
-                    ${config.phraseContent ? config.phraseContent(id) : `<span class="numbers-game-hanzi">${item.hanzi}</span>${state2.showPinyin ? `<span class="numbers-game-pinyin">${item.pinyin}</span>` : ""}`}
-                  </button>
-                `;
-      }).join("")}
-            </div>
-            <div class="polite-match-column">
-              ${remainingMeaningIds.map((id) => {
-        const wrong = config.wrongMeaningIds?.().has(id);
-        return `
-                  <button class="polite-match-card ${config.meaningCardClass ?? "polite-match-card-meaning"}${wrong ? " is-wrong" : ""}" type="button" data-template-match-meaning="${id}">
-                    ${wrong ? '<span class="answer-result-mark" aria-hidden="true">\xD7</span>' : ""}
-                    ${renderMatchMeaningContent(config, id)}
-                  </button>
-                `;
-      }).join("")}
-            </div>
-          </div>
+          ${config.pairedRows ? `<div class="paired-match-board">${remainingPhraseIds.map((id, index) => `<div class="paired-match-row">${renderPhraseCard(id)}${renderMeaningCard(remainingMeaningIds[index])}</div>`).join("")}</div>` : `<div class="polite-match-board family-match-open-board"><div class="polite-match-column">${remainingPhraseIds.map(renderPhraseCard).join("")}</div><div class="polite-match-column">${remainingMeaningIds.map(renderMeaningCard).join("")}</div></div>`}
         ` : ""}
         ${matchedIds.size > 0 && matchedIds.size < config.items().length ? '<div class="intro-build-actions"><button class="small-button is-clear-button" type="button" data-template-match-clear aria-label="Clear this matching board and try again">Clear</button></div>' : ""}
       </section>
@@ -31634,6 +31826,16 @@
     renderWorldExplorer: worldRuntime.renderWorldExplorer,
     renderHobbiesExplorer: playHobbiesRuntime.renderHobbiesExplorer
   });
+  var initialBookId = bookIdFromLocation(window.location, books);
+  if (initialBookId) {
+    const initialBook = books.find((book) => book.id === initialBookId);
+    state.selectedBookId = initialBook.id;
+    state.selectedBookCategoryId = bookHomeCategories.find(
+      (category) => category.bookIds.includes(initialBook.id)
+    )?.id ?? state.selectedBookCategoryId;
+    state.selectedLessonNumber = initialBook.lessons[0].lesson;
+    state.selectedTopicId = initialBook.lessons[0].topicId;
+  }
   var initialTopicId = topicIdFromLocation(window.location, topicById2);
   if (initialTopicId) {
     state.selectedTopicId = initialTopicId;
@@ -31658,6 +31860,8 @@
   updateTopicPageVisibility();
   if (initialTopicId) {
     requestAnimationFrame(() => focusLearningPanel());
+  } else if (initialBookId && viewFromLocation(window.location) === "books") {
+    requestAnimationFrame(() => document.getElementById(`book-lessons-${initialBookId}`)?.scrollIntoView({ block: "start" }));
   } else if (window.location.hash.startsWith("#culture-")) {
     requestAnimationFrame(() => document.querySelector(window.location.hash)?.scrollIntoView({ block: "start" }));
   }

@@ -32,7 +32,7 @@ Imagine a game of hide-and-seek. One seeker can run very fast, but does not know
 
 This game can help us understand one habit in *The Art of War*: before you act, gather information, compare the conditions, and watch for change. But hide-and-seek is a game that everyone agrees to play. War kills and injures people and can destroy their homes. The opening of *The Art of War* says that war is a matter of life, death, survival, and ruin, so it must be studied with great care.
 
-This book was not written to teach children how to “beat everyone.” It is an ancient work of military thought about how rulers and commanders prepared and made choices in dangerous situations. We can study its way of observing a problem while remembering that its original subject was war.
+This book was not written to teach children how to “beat everyone.” It is an ancient work of military thought about how political leaders and military commanders prepared and made choices in dangerous situations. We can study its way of observing a problem while remembering that its original subject was war.
 [/en]
 [/section]
 
@@ -77,7 +77,7 @@ Picture a table covered by a model of mountains, rivers, roads, and small flags.
 
 The first chapter of *The Art of War* says that war must be carefully examined. It then compares many conditions under five headings: the people’s unity, weather and timing, the shape and distance of the land, the commander’s ability, and the army’s rules and organization. Nowhere does the book say, “Courage is all you need.” Courage without information, preparation, or judgment can lead many people into danger.
 
-The model map in the picture is an imagined scene, not a photograph of Sunzi teaching a student. It helps us see the book’s order of thought: compare before deciding, and ask about the cost before asking whether something can be done.
+The model map in the picture is an imagined scene, not a photograph of Sunzi teaching a student. It helps us follow the book’s reasoning: compare before deciding, and ask about the cost before asking whether something can be done.
 [/en]
 [/section]
 
@@ -120,7 +120,7 @@ caption_en: Children studying the pieces are a modern symbol of thinking before 
 [en]
 The same chapter says that winning every battle is not the highest skill. “To make the enemy submit without fighting,” it says, is better. The chapter ranks breaking the enemy’s plans ahead of attacking its army. It puts a siege of a walled city last because a long siege can consume equipment, time, and soldiers’ lives.
 
-“Without fighting” is not a gentle promise that both sides will become friends. The goal is still to force an enemy to give in. The book is calculating how to avoid the cost of a direct clash, not teaching modern peacemaking. That difference matters. We can notice its concern with loss without dressing up ancient military pressure as friendly teamwork.
+“Without fighting” is not a gentle promise that both sides will become friends. The goal is still to force an enemy to give in. The book is weighing how to avoid the cost of a direct clash, not teaching modern peacemaking. That difference matters. We can notice its concern with loss without dressing up ancient military pressure as friendly teamwork.
 
 The picture of children studying wooden pieces is a modern symbol. It suggests that thinking before moving can prevent waste. It is not a scene from *The Art of War*, and it does not mean that tricking friends is a clever way to solve everyday problems.
 [/en]

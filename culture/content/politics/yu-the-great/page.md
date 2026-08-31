@@ -104,13 +104,13 @@ heading_en: How the Flood Hero Became a Founding King
 所以，比较稳妥的说法是：夏朝和禹在中国历史传统中非常重要；二里头证明那个时代确实出现了复杂的大型社会，但它还没有替我们确认传说中的每个人和每件事。
 [/zh]
 [en]
-Later historical tradition arranges the events in a clear line. Gun fails. Yu succeeds. Shun hands leadership to Yu. Yu then becomes the first ruler of the Xia dynasty, usually described as the first dynasty in traditional Chinese history.
+Later historical tradition arranges these events into a tidy sequence. Gun fails. Yu succeeds. Shun hands leadership to Yu. Yu then becomes the founder of the Xia dynasty, usually described as the first dynasty in traditional Chinese history.
 
 That whole chain was not fully joined together in every early source. Some scholars argue that the earlier Yu stories focus on ordering water and land so people can live. The control of one particular flood and the founding of the Xia became more tightly connected later. The *Records of the Grand Historian* preserves the complete version that shaped later memory, but it was written long after the age it describes.
 
-Archaeology makes the question more interesting—and harder. At Erlitou in Henan, archaeologists found a major early Bronze Age center with large buildings, roads, and finely made objects. Many researchers connect the Erlitou culture with the Xia. Others say the evidence does not settle the question. No writing from the site tells us, “This is Xia,” or names its ruler as Yu.
+Archaeology makes the question more interesting—and harder. At Erlitou in Henan, archaeologists found a major early Bronze Age center with large buildings, roads, and finely made objects. Many researchers connect the Erlitou culture with the Xia. Others say the evidence does not settle the question. No writing from the site tells us, “This is Xia,” or says that Yu ruled there.
 
-The careful conclusion is this: Yu and the Xia are deeply important in China's historical tradition. Erlitou proves that a large, complex society existed in roughly that ancient world. It does not confirm every person and event in the later stories.
+The careful conclusion is this: Yu and the Xia are deeply important in China's historical tradition. Erlitou proves that a large, complex society existed during roughly the period associated with the Xia. It does not confirm every person and event in the later stories.
 [/en]
 [/section]
 
@@ -157,6 +157,6 @@ The wall, the channels, the doorway, and the choice between blocking and guiding
 
 The story offers more than the neat lesson “guiding is better than blocking.” It asks a larger political question: What gives a leader the right to be trusted? Birth? Force? Or the ability to organize people and do work that everyone needs? When later storytellers turned a flood hero into a founding king, they offered an answer: *A person who makes life safer for the people has earned the right to lead.*
 
-This is not a fully proven life of Yu. It is a real cultural memory that has lasted for more than two thousand years. Separating evidence from legend does not shrink the story. It lets us see how the story grew, layer by layer.
+This is not a fully documented life of Yu. It is an enduring cultural memory, retold for more than two thousand years. Separating evidence from legend does not shrink the story. It lets us see how the story grew, layer by layer.
 [/en]
 [/ending]

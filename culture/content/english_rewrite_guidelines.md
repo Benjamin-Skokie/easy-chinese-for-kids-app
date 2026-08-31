@@ -8,6 +8,37 @@ Core standard:
 
 `Accurate idea, natural child voice, clear mental picture.`
 
+## Write English from the brief, not from Chinese sentences
+
+For a fully rewritten Culture article, research should first become a shared story-and-facts brief. The brief records:
+
+- the story spine and scene order;
+- factual claims that must remain;
+- uncertainty that must not disappear;
+- inventions and familiar retelling details that are not supported;
+- the intended reading level and emotional experience.
+
+Write the English from that brief as an original piece of children's writing. Do not keep the Chinese prose open and move through it sentence by sentence or paragraph by paragraph. Even careful nonliteral translation can inherit Chinese information order, emphasis, nouns, transitions, and explanatory habits.
+
+After the English draft is complete:
+
+1. Read it aloud without looking at the Chinese.
+2. Rewrite anything that an American parent would not naturally say to a child.
+3. Check the English against the shared brief for missing facts, added certainty, or invented scenes.
+4. Compare it with the Chinese only at the end, checking story beats and factual claims rather than sentence alignment.
+
+English and Chinese may use different sentence counts, paragraph breaks, transitions, and images. They must share the same trustworthy story, not the same syntax.
+
+## Calibrate for the selected reading level
+
+The existing general guidance below fits the Story level. Every manuscript must first apply the standard for its own version:
+
+- **Early Reader:** written for U.S. kindergarten and first-grade listeners and supported readers. Use familiar spoken words, short sentences, concrete actions, helpful repetition, and a warm read-aloud rhythm. Keep unavoidable cultural words inside the story without stopping for dictionary definitions. Do not mistake grammatically correct adult nonfiction for a young child's voice.
+- **Story:** written for elementary readers who can follow fuller scenes, modest historical background, and some unfamiliar vocabulary with context. Keep the prose lively, direct, and emotionally clear.
+- **Advanced:** written for older elementary readers, families, and teachers. Include evidence, disagreement, historical layers, and interpretation, but keep the story moving and avoid research-paper voice.
+
+Sentence length and readability scores are only warning lights. A short sentence can still sound translated, formal, or unnatural. Native read-aloud rhythm is a separate acceptance requirement.
+
 Use clear, simple, natural American English. Avoid hard words, formal phrasing, textbook-like sentences, and adult academic tone.
 
 Chinese culture already asks children to understand unfamiliar ideas, so the English language should not become another obstacle.
@@ -60,11 +91,31 @@ Keep sentences short enough to read aloud easily. When a sentence carries two id
 
 Simple words should still have polish. Do not make the English babyish, flat, or choppy just to make it easy.
 
+## Paragraph Integrity
+
+Short sentences do not each need their own paragraph. Group related sentences into a developed prose paragraph that carries one idea, scene, comparison, or chain of action forward.
+
+Do not insert a blank line after every sentence. In the article source, blank lines become separate rendered paragraphs, so sentence-by-sentence breaks make the story look like notes, captions, or free verse instead of a readable article. They also create unnecessary vertical scrolling.
+
+As a flexible default, a paragraph often contains two to five connected sentences. A single-sentence paragraph is appropriate only when it serves a deliberate purpose, such as an opening hook, a turning question, dialogue, a transition, or a moment of emphasis. If several one-sentence paragraphs appear in a row, combine them unless the changing speaker or scene truly requires separation.
+
+English paragraph boundaries do not need to copy the Chinese exactly. Rewrite them according to natural English thought and rhythm while preserving the same meaning and factual boundaries.
+
 ## Background Names and Glossary Support
 
 Dynasty names, country or people names, regions, book titles, and government titles can be hard for kids even when the sentence itself is smooth. Examples include `Han dynasty`, `Song dynasty`, `Qin`, `Qi`, `Xiongnu`, `Jiangnan`, `Central Plains`, and old job titles.
 
 Do not add long inline explanations everywhere, because that can interrupt the story.
+
+A tooltip must add information the sentence does not already give. Never use a tooltip merely to repeat or rephrase the surrounding sentence.
+
+Use this decision test:
+
+- If the child must know the explanation to understand the sentence, rewrite the explanation into the main text.
+- If the term is already explained in the same sentence or paragraph, do not add a tooltip.
+- Use a tooltip for optional orientation that gives the child a new anchor: where a place is on a map, roughly when a dynasty existed, what an unfamiliar title allowed someone to do, or how an ancient object was used.
+- For geography, prefer a concrete map relationship over circular wording. `A coastal province in eastern China, southeast of Beijing` is useful; `the province where this event happened` is not.
+- Mark the first useful occurrence, not every repetition of the term.
 
 Use this rule:
 

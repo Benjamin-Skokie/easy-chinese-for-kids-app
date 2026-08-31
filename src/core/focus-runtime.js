@@ -43,7 +43,7 @@ function renderFocusStatus() {
     focusStatus.textContent =
       stage.telephoneMode
         ? "Listen to the question, then the answer. Telephone numbers are for speaking and listening, not counting objects."
-        : state.lastNumberFeedback || `Now learning ${stage.title}. ${stage.summary}`;
+        : "Click a number below to see it above and hear its pronunciation.";
     return;
   }
 
@@ -93,6 +93,7 @@ function renderFocusWordList() {
   ) {
     focusWordList.innerHTML = "";
     focusWordList.classList.add("is-hidden");
+    focusWordList.classList.remove("is-number-word-list");
     return;
   }
 
@@ -102,6 +103,7 @@ function renderFocusWordList() {
   const isLessonTemplate = usesLessonTemplate(topic);
   const showBookWordsHeading = isLessonTemplate || topic.id === "clothes" || topic.id === "time-date" || topic.id === "weekdays" || topic.id === "languages";
   focusWordList.classList.toggle("is-family-book-words", showBookWordsHeading);
+  focusWordList.classList.toggle("is-number-word-list", topic.id === "numbers");
   const visibleItems =
     topic.id === "numbers"
       ? numberWordListItems(items, currentFocusItem(), currentNumberStage())
@@ -152,13 +154,11 @@ function renderFocusWordList() {
 
   const noteMarkup = usefulNoteForTopic(topic);
   if (noteMarkup) {
-    const note = document.createElement("div");
-    note.className = "greetings-note-card family-book-words-note";
-    note.innerHTML = `
-      <p class="body-match-kicker">Notes</p>
-      ${noteMarkup}
-    `;
-    focusWordList.appendChild(note);
+    if (typeof focusWordList.insertAdjacentHTML === "function") {
+      focusWordList.insertAdjacentHTML("beforeend", noteMarkup);
+    } else {
+      focusWordList.innerHTML = `${focusWordList.innerHTML ?? ""}${noteMarkup}`;
+    }
   }
 }
 

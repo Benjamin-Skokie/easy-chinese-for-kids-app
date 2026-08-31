@@ -35,7 +35,7 @@ WHAT TO AVOID:
 
 ---
 
-## ARTICLE 1: 阴和阳 — Yin and Yang: The Dance of the Sun and Moon
+## ARTICLE 1: 阴和阳 — Yin and Yang: How Can One Mountain Have Two Temperatures?
 ### 4 images
 
 ### Image 1.1: Sun and Moon Together
@@ -80,7 +80,7 @@ A quiet still life of a scholar's desk in ancient times. A bundle of bamboo slip
 
 ---
 
-## ARTICLE 3: 老子 — Laozi's Wisdom: The Highest Good Is Like Water
+## ARTICLE 3: 老子 — Laozi’s Wisdom: Why Doesn’t Water Compete?
 ### 4 images
 
 ### Image 3.1: Laozi Riding an Ox through Hangu Pass
@@ -105,7 +105,7 @@ A quiet ancient study. An elderly hand unrolls a simple scroll on a worn wooden 
 
 ---
 
-## ARTICLE 4: 一颗种子的耐心 — The Patience of a Seed: What Is the Dao?
+## ARTICLE 4: 一颗种子的耐心 — The Patience of a Seed: Care Without Forcing
 ### 3 images
 
 ### Image 4.1: Planting a Seed

@@ -1,4 +1,4 @@
-# Emperor’s Day — References and Editorial Notes
+# 朱元璋为什么成了一个特别忙的皇帝？ - References and Editorial Notes
 
 This file is for editorial research and does not render on the website.
 

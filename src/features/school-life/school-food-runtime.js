@@ -1,3 +1,5 @@
+import { renderLessonNotes } from "../../core/lesson-notes.js";
+
 export function createSchoolFoodRuntime(context) {
   const { state, schoolTopicData, schoolSentenceBuilds, stationeryPictureMatchRounds, stationeryPictureMatchChoices, stationeryPictureMatchEnglish, currentTopic, currentBook, currentLesson, shuffleArray, speak, speakSceneLines, renderActivityPanel, focusItemsForTopic, activityPanelTitle, activityPanelSummary, activityList, focusExplorer, renderDefaultExplorer, renderListenPractice, renderMatchPractice } = context;
 
@@ -985,6 +987,9 @@ function renderMealsConversationPractice(topic) {
         feedback: () => state.schoolMatchFeedback,
         wrongPhraseIds: () => state.mealsConversationWrongPhraseIds,
         wrongMeaningIds: () => state.mealsConversationWrongReplyIds,
+        phraseCardClass: "meals-match-card",
+        meaningCardClass: "meals-match-card",
+        pairedRows: true,
         phraseContent: (id) => {
           const item = items.find((entry) => entry.id === id);
           if (!item) return "";
@@ -1101,8 +1106,24 @@ function renderSchoolExplorer(topicId) {
           `).join("")}
         </div>
       ` : ""}
-      ${(() => { const visibleNotes = filterLessonContent(data.review, contentScope); return visibleNotes.length ? `<section class="visual-topic-notes school-review-notes"><p class="body-match-kicker">Useful notes</p><div class="visual-topic-note-grid school-review-grid">${visibleNotes.map((item) => `<article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">${item.pattern}</p>${state.showPinyin ? `<p class="visual-topic-note-pinyin">${item.pinyin}</p>` : ""}${state.showEnglish ? `<p class="visual-topic-note-english">${item.english}</p>` : ""}<p class="visual-topic-note-example">${item.example}</p>${state.showPinyin && item.examplePinyin ? `<p class="visual-topic-note-pinyin">${item.examplePinyin}</p>` : ""}${state.showEnglish && item.exampleEnglish ? `<p class="visual-topic-note-english">${item.exampleEnglish}</p>` : ""}</article>`).join("")}</div></section>` : ""; })()}
-      ${topicId === "school-subjects" ? `<section class="visual-topic-notes"><p class="body-match-kicker">Useful note</p><div class="visual-topic-note-grid school-subject-note"><article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">去</p>${state.showPinyin ? '<p class="visual-topic-note-pinyin">qù</p>' : ""}${state.showEnglish ? '<p class="visual-topic-note-english">to go</p>' : ""}<p class="visual-topic-note-example">我去上音乐课。</p></article><article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">在</p>${state.showPinyin ? '<p class="visual-topic-note-pinyin">zài</p>' : ""}${state.showEnglish ? '<p class="visual-topic-note-english">at / in; marks an action happening now</p>' : ""}<p class="visual-topic-note-example">我在上音乐课。</p></article><article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">喜欢</p>${state.showPinyin ? '<p class="visual-topic-note-pinyin">xǐ huan</p>' : ""}${state.showEnglish ? '<p class="visual-topic-note-english">to like</p>' : ""}<p class="visual-topic-note-example">我喜欢音乐课。</p></article><article class="visual-topic-note-card"><p class="visual-topic-note-hanzi">不喜欢</p>${state.showPinyin ? '<p class="visual-topic-note-pinyin">bù xǐ huan</p>' : ""}${state.showEnglish ? '<p class="visual-topic-note-english">to not like</p>' : ""}<p class="visual-topic-note-example">我不喜欢数学课。</p></article></div></section>` : ""}
+      ${(() => {
+        const visibleNotes = filterLessonContent(data.review, contentScope);
+        return renderLessonNotes(visibleNotes, { sectionClass: "school-review-notes", gridClass: "school-review-grid" });
+      })()}
+      ${topicId === "school-subjects" ? renderLessonNotes([
+        {
+          hanzi: "我去上音乐课。 / 我在上音乐课。",
+          explanation: "去 says you go to the class. 在 before 上 says the class is happening now.",
+          examples: [
+            { hanzi: "我去上音乐课。", english: "I go to music class." },
+            { hanzi: "我在上音乐课。", english: "I am in music class now." }
+          ]
+        },
+        {
+          hanzi: "我不喜欢数学课。",
+          explanation: "Chinese puts 不 directly before 喜欢. English uses “do not like.”"
+        }
+      ], { gridClass: "school-subject-note" }) : ""}
     </div>
   `;
 

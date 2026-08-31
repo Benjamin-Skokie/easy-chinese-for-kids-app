@@ -136,6 +136,22 @@ async function auditArticle(inputDir) {
       })
     )
   );
+  const variantFiles = {};
+  for (const variant of ["early", "story"]) {
+    const pageFilename = `page.${variant}.md`;
+    if (await exists(path.join(articleDir, pageFilename))) {
+      variantFiles[variant] = {};
+      for (const filename of [pageFilename, `zh.${variant}.md`, `en.${variant}.md`]) {
+        const filePath = path.join(articleDir, filename);
+        if (!(await exists(filePath))) {
+          failures.push(`missing ${filename}`);
+          variantFiles[variant][filename] = "";
+        } else {
+          variantFiles[variant][filename] = await fs.readFile(filePath, "utf8");
+        }
+      }
+    }
+  }
 
   if (!files["page.md"]) return { label, failures };
 
@@ -196,6 +212,87 @@ async function auditArticle(inputDir) {
       failures.push(
         `${filename} has ${runs.length} run(s) of 3+ consecutive one-sentence paragraphs (${language})`
       );
+    }
+  }
+
+  for (const [variant, expectedDifficulty] of [
+    ["early", "简单"],
+    ["story", "中等"]
+  ]) {
+    const variantSet = variantFiles[variant];
+    if (!variantSet) continue;
+    const pageFilename = `page.${variant}.md`;
+    const zhFilename = `zh.${variant}.md`;
+    const enFilename = `en.${variant}.md`;
+    const variantPage = variantSet[pageFilename];
+    if (!variantPage) continue;
+
+    const variantFrontmatter = parseFrontmatter(variantPage);
+    if (variantFrontmatter.difficulty !== expectedDifficulty) {
+      failures.push(
+        `${pageFilename} difficulty must be ${expectedDifficulty}, found ${variantFrontmatter.difficulty || "missing"}`
+      );
+    }
+
+    const variantHero = variantPage.match(/\[hero\]\n([\s\S]*?)\n\[\/hero\]/)?.[1] ?? "";
+    const variantHeroTitleZh = variantHero.match(/^title_zh:\s*(.+)$/m)?.[1]?.trim();
+    const variantHeroTitleEn = variantHero.match(/^title_en:\s*(.+)$/m)?.[1]?.trim();
+    if (variantFrontmatter.title_zh !== variantHeroTitleZh) {
+      failures.push(`${pageFilename} Chinese frontmatter and hero titles differ`);
+    }
+    if (variantFrontmatter.title_en !== variantHeroTitleEn) {
+      failures.push(`${pageFilename} English frontmatter and hero titles differ`);
+    }
+
+    const expectedEnglishDifficulty = difficultyEnglish.get(expectedDifficulty);
+    if (variantSet[zhFilename] && !variantSet[zhFilename].startsWith(`> 难度：${expectedDifficulty}\n`)) {
+      failures.push(`${zhFilename} difficulty does not match ${pageFilename}`);
+    }
+    if (
+      variantSet[enFilename] &&
+      !variantSet[enFilename].startsWith(`> Difficulty: ${expectedEnglishDifficulty}\n`)
+    ) {
+      failures.push(`${enFilename} difficulty does not match ${pageFilename}`);
+    }
+
+    for (const [filename, language, heroTitle] of [
+      [zhFilename, "zh", variantHeroTitleZh],
+      [enFilename, "en", variantHeroTitleEn]
+    ]) {
+      if (!variantSet[filename] || !heroTitle) continue;
+      const pageDocument = pageLanguageDocument(variantPage, language, heroTitle);
+      const standaloneDocument = standaloneLanguageDocument(variantSet[filename]);
+      const standaloneTitle = standaloneDocument.match(/^#\s+(.+)$/m)?.[1]?.trim();
+      if (normalizeTitle(standaloneTitle ?? "") !== normalizeTitle(heroTitle)) {
+        failures.push(`${filename} title does not match ${pageFilename}`);
+      }
+      const pageSectionCount = (pageDocument.match(/^##\s+/gm) ?? []).length;
+      const standaloneSectionCount = (standaloneDocument.match(/^##\s+/gm) ?? []).length;
+      if (pageSectionCount !== standaloneSectionCount) {
+        failures.push(`${filename} section count is not synchronized with ${pageFilename}`);
+      }
+    }
+
+    const variantImageNames = [...variantPage.matchAll(/^image:\s*(.+)$/gm)].map((match) => match[1].trim());
+    for (const imageName of variantImageNames) {
+      if (!(await exists(path.join(articleDir, "images", imageName)))) {
+        failures.push(`${pageFilename} missing image: images/${imageName}`);
+      }
+    }
+
+    for (const [filename, language, isPage] of [
+      [pageFilename, "zh", true],
+      [pageFilename, "en", true],
+      [zhFilename, "zh", false],
+      [enFilename, "en", false]
+    ]) {
+      if (!variantSet[filename]) continue;
+      const runs = findFragmentedRuns(variantSet[filename], language, isPage);
+      if (runs.length) {
+        failures.push(
+          `${filename} has ${runs.length} run(s) of 3+ consecutive one-sentence paragraphs (${language})`
+        );
+      }
     }
   }
 

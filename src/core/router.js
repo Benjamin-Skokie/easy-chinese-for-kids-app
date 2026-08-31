@@ -5,7 +5,14 @@ export function viewFromLocation(location) {
   if (requestedView === "culture" || hash === "culture" || hash === "culture-panel" || hash.startsWith("culture-")) {
     return "culture";
   }
-  return requestedView === "books" || hash === "books" || hash === "books-panel" ? "books" : "topics";
+  return requestedView === "books" || hash === "books" || hash === "books-panel" || hash.startsWith("book-lessons-") ? "books" : "topics";
+}
+
+export function bookIdFromLocation(location, books) {
+  const params = new URLSearchParams(location.search);
+  const hashBookId = location.hash.replace(/^#book-lessons-/, "").toLowerCase();
+  const requestedBookId = params.get("book")?.toLowerCase() || hashBookId;
+  return books.some((book) => book.id === requestedBookId) ? requestedBookId : null;
 }
 
 export function topicIdFromLocation(location, hasTopic) {

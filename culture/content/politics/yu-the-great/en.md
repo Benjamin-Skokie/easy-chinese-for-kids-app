@@ -18,7 +18,7 @@ Early writings describe water spreading across the land and making many places i
 
 These texts place much more than river digging inside Yu's work. They mention mapping mountains, arranging lakes and marshes, restoring fields, moving food, and organizing land. The job is far larger than cutting one channel beside the Yellow River. To the ancient storytellers, controlling the waters was also about turning a disorderly world into a place where people could farm, travel, and live.
 
-The neat channels in the second painting are not an exact reconstruction of Yu's project. We can treat the picture as an idea: many people study the land, clear paths, and work together to give water somewhere to go. The evidence cannot give us a complete list of the mountains Yu visited, the teams he led, or the tools they carried.
+The neat channels in the painting are not an exact reconstruction of Yu's project. We can treat the picture as an idea: many people study the land, clear paths, and work together to give water somewhere to go. The evidence cannot give us a complete list of the mountains Yu visited, the teams he led, or the tools they carried.
 
 This helps explain why the story became part of political culture. It connects the question “Who should lead?” with another question: “Who can make life possible for the people?” Yu's greatness is not mainly about defeating an enemy. In the tradition, he organizes difficult public work and brings order back to the land.
 
@@ -30,19 +30,19 @@ The most famous scene may be “passing his door three times without going insid
 
 Later storytellers joined different pieces and added Yu's wife giving birth, a crying baby, and a son calling for his father at different ages. Ancient texts do connect Yu's marriage, his son Qi, and his flood work, but that does not tell us exactly what happened at his door each time. The family in the painting is a modern artist's way of helping us feel that home was close behind him. It is not a proven moment.
 
-Why did people keep telling the scene? It turns an invisible quality into a picture: public duty can carry a private cost. A reader today can ask another question too. Does the praise of Yu leave out what his family may have felt? Must a good leader always harm himself or his family? The old story does not have to answer for us. It can place a hard question where we can see it.
+People kept telling the scene because it turns an invisible quality into a picture: public duty can carry a private cost. A reader today can ask another question too. Does the praise of Yu leave out what his family may have felt? Must a good leader always harm himself or his family? The old story does not have to answer for us. It can place a hard question where we can see it.
 
 ---
 
 ## How the Flood Hero Became a Founding King
 
-Later historical tradition arranges the events in a clear line. Gun fails. Yu succeeds. Shun hands leadership to Yu. Yu then becomes the first ruler of the [[Xia dynasty]], usually described as the first dynasty in traditional Chinese history.
+Later historical tradition arranges these events into a tidy sequence. Gun fails. Yu succeeds. Shun hands leadership to Yu. Yu then becomes the founder of the Xia dynasty, usually described as the first dynasty in traditional Chinese history.
 
 That whole chain was not fully joined together in every early source. Some scholars argue that the earlier Yu stories focus on ordering water and land so people can live. The control of one particular flood and the founding of the Xia became more tightly connected later. The *Records of the Grand Historian* preserves the complete version that shaped later memory, but it was written long after the age it describes.
 
-Archaeology makes the question more interesting—and harder. At Erlitou in Henan, archaeologists found a major early Bronze Age center with large buildings, roads, and finely made objects. Many researchers connect the Erlitou culture with the Xia. Others say the evidence does not settle the question. No writing from the site tells us, “This is Xia,” or names its ruler as Yu.
+Archaeology makes the question more interesting—and harder. At Erlitou in Henan, archaeologists found a major early Bronze Age center with large buildings, roads, and finely made objects. Many researchers connect the Erlitou culture with the Xia. Others say the evidence does not settle the question. No writing from the site tells us, “This is Xia,” or says that Yu ruled there.
 
-The careful conclusion is this: Yu and the Xia are deeply important in China's historical tradition. Erlitou proves that a large, complex society existed in roughly that ancient world. It does not confirm every person and event in the later stories.
+The careful conclusion is this: Yu and the Xia are deeply important in China's historical tradition. Erlitou proves that a large, complex society existed during roughly the period associated with the Xia. It does not confirm every person and event in the later stories.
 
 ---
 
@@ -60,8 +60,8 @@ Many parts of ancient China experienced floods. The Yu story may preserve memori
 
 ## Look at the Four Pictures Again
 
-Now return to the pictures: the wall, the channels, the doorway, and the choice between blocking and guiding. Each one can lead us into the story, but none is a photograph. We can let the legend show us the fear of floodwater, the strain of working together, and the cost of leaving home. At the same time, we can ask what kind of evidence supports each detail.
+The wall, the channels, the doorway, and the choice between blocking and guiding can all lead us into the story, but none is a photograph. We can let the legend show us the fear of floodwater, the strain of working together, and the cost of leaving home. At the same time, we can ask what kind of evidence supports each detail.
 
 The story offers more than the neat lesson “guiding is better than blocking.” It asks a larger political question: What gives a leader the right to be trusted? Birth? Force? Or the ability to organize people and do work that everyone needs? When later storytellers turned a flood hero into a founding king, they offered an answer: *A person who makes life safer for the people has earned the right to lead.*
 
-This is not a fully proven life of Yu. It is a real cultural memory that has lasted for more than two thousand years. Separating evidence from legend does not shrink the story. It lets us see how the story grew, layer by layer.
+This is not a fully documented life of Yu. It is an enduring cultural memory, retold for more than two thousand years. Separating evidence from legend does not shrink the story. It lets us see how the story grew, layer by layer.

@@ -3,8 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>No Stress Learning Chinese</title>
-    <link rel="stylesheet" href="styles.css?v=20260828-stroke-lab-v1" />
+    <title>Nihao World | Learn Chinese Through Language and Culture</title>
+    <meta
+      name="description"
+      content="Nihao World helps children learn Chinese as a second language through interactive Mandarin practice and explore rich Chinese culture from the very beginning."
+    />
+    <link rel="canonical" href="https://nihaoworld.org/" />
+    <link rel="stylesheet" href="styles.css?v=20260830-notes-audit-v25" />
   </head>
   <body>
     <nav class="learning-culture-nav" id="learningCultureNav" aria-label="Topic categories"></nav>
@@ -25,6 +30,10 @@
           <span class="global-view-zh">文化</span>
           <span class="global-view-en">Culture</span>
         </a>
+        <a class="global-view-item" href="about/author-project/">
+          <span class="global-view-zh">关于</span>
+          <span class="global-view-en">About</span>
+        </a>
       </nav>
     </details>
 
@@ -43,13 +52,13 @@
                 <img src="culture/books/economy/ancient-money/images/2-1-shell-money.webp" alt="An imagined exchange involving shell money and grain" loading="lazy" decoding="async" />
                 <span class="story-highlight-copy"><span class="story-highlight-kicker">Money story</span><strong>一只钱袋里，为什么装着四种钱？</strong><small>Why Were There Four Kinds of Money in One Bag?</small><em>Open story <span aria-hidden="true">→</span></em></span>
               </a>
-              <a class="story-highlight-slide" href="culture/books/politics/emperor-day/index.html">
+              <a class="story-highlight-slide" href="culture/books/politics/emperor-day/index.html?reading=story">
                 <img src="culture/books/politics/emperor-day/images/late-night-memorials-ming.webp" alt="A symbolic illustration of paperwork gathered at Zhu Yuanzhang's desk" loading="lazy" decoding="async" />
-                <span class="story-highlight-copy"><span class="story-highlight-kicker">History story</span><strong>皇帝的一天：朱元璋的书桌有多忙？</strong><small>A Day at the Emperor’s Desk: How Busy Was Zhu Yuanzhang?</small><em>Open story <span aria-hidden="true">→</span></em></span>
+                <span class="story-highlight-copy"><span class="story-highlight-kicker">History story</span><strong>朱元璋为什么成了一个特别忙的皇帝？</strong><small>Why Did Zhu Yuanzhang Become Such a Busy Emperor?</small><em>Open story <span aria-hidden="true">→</span></em></span>
               </a>
-              <a class="story-highlight-slide story-highlight-slide--mulan" href="culture/books/figures/mulan/index.html">
+              <a class="story-highlight-slide story-highlight-slide--mulan" href="culture/books/figures/mulan/index.html?reading=story">
                 <img src="culture/books/figures/mulan/images/army-camp.webp" alt="A modern imagined scene inspired by the Ballad of Mulan" loading="lazy" decoding="async" />
-                <span class="story-highlight-copy"><span class="story-highlight-kicker">Historical figure</span><strong>木兰：一首诗怎样长成一千年的传奇？</strong><small>How Did One Poem Grow into a Thousand-Year Legend?</small><em>Open story <span aria-hidden="true">→</span></em></span>
+                <span class="story-highlight-copy"><span class="story-highlight-kicker">Three reading levels</span><strong>木兰的勇敢旅程</strong><small>Mulan's Brave Journey</small><em>Open story <span aria-hidden="true">→</span></em></span>
               </a>
               <a class="story-highlight-slide" href="culture/books/folk-tales/ma-liang/index.html">
                 <img src="culture/books/folk-tales/ma-liang/images/2-magic-rooster.webp" alt="Ma Liang's magic brush brings a rooster to life" loading="lazy" decoding="async" />
@@ -57,7 +66,7 @@
               </a>
               <a class="story-highlight-slide" href="culture/books/food/dumplings/index.html">
                 <img src="culture/books/food/dumplings/images/family-making-dumplings.webp" alt="A family making dumplings together" loading="lazy" decoding="async" />
-                <span class="story-highlight-copy"><span class="story-highlight-kicker">Food story</span><strong>一只漏馅的饺子</strong><small>The Dumpling That Wouldn't Stay Closed</small><em>Open story <span aria-hidden="true">→</span></em></span>
+                <span class="story-highlight-copy"><span class="story-highlight-kicker">Food story</span><strong>古时候的饺子和今天一样吗？</strong><small>Were Ancient Dumplings Like the Ones We Eat Today?</small><em>Open story <span aria-hidden="true">→</span></em></span>
               </a>
             </div>
           </div>
@@ -70,28 +79,87 @@
             <button type="button" aria-label="Show 饺子" data-story-highlight-dot="5"></button>
           </div>
         </section>
-        <div class="library-hero-routes" aria-label="Learning paths">
-          <a class="library-hero-route is-active" href="#topics-panel" data-global-view="topics">
-            <span class="library-route-symbol">图</span>
-            <span class="library-route-copy">
-              <span class="library-route-zh">按主题学</span>
-              <span class="library-route-en">Learn by Topic</span>
-            </span>
-          </a>
-          <a class="library-hero-route" href="#books-panel" data-global-view="books">
-            <span class="library-route-symbol">书</span>
-            <span class="library-route-copy">
-              <span class="library-route-zh">按课本找</span>
-              <span class="library-route-en">Learn by Books</span>
-            </span>
-          </a>
-          <a class="library-hero-route" href="#culture-panel" data-global-view="culture">
-            <span class="library-route-symbol">文</span>
-            <span class="library-route-copy">
-              <span class="library-route-zh">文化故事</span>
-              <span class="library-route-en">Culture</span>
-            </span>
-          </a>
+        <div class="library-hero-actions">
+          <details class="site-info-dock">
+            <summary aria-label="Open information about this website">
+              <span class="site-info-launch-icon" aria-hidden="true">
+                <img src="assets/brand/zongzi-guide.webp?v=20260830-hq2" alt="" width="768" height="768" />
+              </span>
+              <span class="site-info-launch-copy">
+                <strong>关于本站</strong>
+                <small>About</small>
+              </span>
+              <span class="site-info-launch-plus" aria-hidden="true">+</span>
+            </summary>
+
+            <section class="site-info-tray" aria-label="About and support">
+              <header class="site-info-tray-head">
+                <strong>About &amp; Support</strong>
+                <span class="site-info-tray-spark" aria-hidden="true">✦</span>
+              </header>
+
+              <div class="site-info-options">
+                <a class="site-info-option site-info-option-link" href="about/author-project/">
+                  <span class="site-info-option-icon is-about" aria-hidden="true">
+                    <svg viewBox="0 0 24 24"><circle cx="10" cy="8" r="3"></circle><path d="M4.5 20a5.5 5.5 0 0 1 11 0"></path><path d="M18 4v5M15.5 6.5h5"></path></svg>
+                  </span>
+                  <span><strong>Author &amp; Project</strong></span>
+                  <span class="site-info-option-arrow" aria-hidden="true">→</span>
+                </a>
+                <a class="site-info-option site-info-option-link" href="about/sources-research/">
+                  <span class="site-info-option-icon is-sources" aria-hidden="true">
+                    <svg viewBox="0 0 24 24"><path d="M3.5 5.5A4.5 4.5 0 0 1 8 4h3v15H8a4.5 4.5 0 0 0-4.5 1.5z"></path><path d="M20.5 5.5A4.5 4.5 0 0 0 16 4h-3v15h3a4.5 4.5 0 0 1 4.5 1.5z"></path></svg>
+                  </span>
+                  <span><strong>Sources &amp; Research</strong></span>
+                  <span class="site-info-option-arrow" aria-hidden="true">→</span>
+                </a>
+                <a class="site-info-option site-info-option-link" href="about/feedback-problems/">
+                  <span class="site-info-option-icon is-feedback" aria-hidden="true">
+                    <svg viewBox="0 0 24 24"><path d="M14.5 6.5a4.5 4.5 0 0 0-6 5.7l-5.2 5.2a1.8 1.8 0 0 0 2.5 2.5l5.2-5.2a4.5 4.5 0 0 0 5.7-6l-2.8 2.8-2.5-.7-.7-2.5z"></path></svg>
+                  </span>
+                  <span><strong>Feedback &amp; Problems</strong></span>
+                  <span class="site-info-option-arrow" aria-hidden="true">→</span>
+                </a>
+                <a class="site-info-option site-info-option-link" href="about/privacy-safety/">
+                  <span class="site-info-option-icon is-privacy" aria-hidden="true">
+                    <svg viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 4.6-2.9 8.1-7 10-4.1-1.9-7-5.4-7-10V6z"></path><path d="m8.5 12 2.2 2.2 4.8-5"></path></svg>
+                  </span>
+                  <span><strong>Privacy &amp; Safety</strong></span>
+                  <span class="site-info-option-arrow" aria-hidden="true">→</span>
+                </a>
+              </div>
+            </section>
+          </details>
+
+          <div class="library-hero-routes" aria-label="Learning paths">
+            <a class="library-hero-route is-active" href="#topics-panel" data-global-view="topics">
+              <span class="library-route-symbol" aria-hidden="true">
+                <img src="assets/brand/learning-topic-map.webp?v=20260830-nav2" alt="" width="768" height="768" />
+              </span>
+              <span class="library-route-copy">
+                <span class="library-route-zh">按主题学</span>
+                <span class="library-route-en">Learn by Topic</span>
+              </span>
+            </a>
+            <a class="library-hero-route" href="#books-panel" data-global-view="books">
+              <span class="library-route-symbol" aria-hidden="true">
+                <img src="assets/brand/learning-books.webp?v=20260830-nav2" alt="" width="768" height="768" />
+              </span>
+              <span class="library-route-copy">
+                <span class="library-route-zh">按课本找</span>
+                <span class="library-route-en">Learn by Books</span>
+              </span>
+            </a>
+            <a class="library-hero-route" href="#culture-panel" data-global-view="culture">
+              <span class="library-route-symbol" aria-hidden="true">
+                <img src="assets/brand/learning-culture-coin.webp?v=20260830-nav2" alt="" width="768" height="768" />
+              </span>
+              <span class="library-route-copy">
+                <span class="library-route-zh">文化故事</span>
+                <span class="library-route-en">Culture</span>
+              </span>
+            </a>
+          </div>
         </div>
       </header>
 
@@ -228,32 +296,40 @@
             <p class="cat-desc zh">古人在安静的院子里仰望天空，思考自然和生命的道理。</p>
             <p class="cat-desc en">Long ago, people looked up at the sky from quiet courtyards, thinking about nature and the meaning of life.</p>
           </div>
+          <div class="culture-level-picker" data-culture-reading-picker role="group" aria-label="Reading level">
+            <span class="culture-level-label">Reading level</span>
+            <div class="culture-level-options">
+              <button type="button" data-culture-reading-level="early" aria-pressed="false">Easy</button>
+              <button type="button" data-culture-reading-level="story" aria-pressed="false">Medium</button>
+              <button type="button" data-culture-reading-level="advanced" aria-pressed="false">Advanced</button>
+            </div>
+          </div>
         </div>
         <ul class="topic-grid">
           <li class="topic done">
             <a href="culture/books/philosophy/yin-yang/index.html">
-              <span class="culture-difficulty"><span class="zh">困难</span><span class="en">Hard</span></span>
+              <span class="culture-difficulty"><span class="zh">简单 · 中等 · 困难</span><span class="en">Early · Story · Advanced</span></span>
               <span class="zh">阴和阳：一座山为什么有两种温度？</span>
               <span class="en">Yin and Yang: How Can One Mountain Have Two Temperatures?</span>
             </a>
           </li>
           <li class="topic done">
             <a href="culture/books/philosophy/confucius/index.html">
-              <span class="culture-difficulty"><span class="zh">困难</span><span class="en">Hard</span></span>
+              <span class="culture-difficulty"><span class="zh">简单 · 中等 · 困难</span><span class="en">Early · Story · Advanced</span></span>
               <span class="zh">孔子的一句话：先把自己放到别人心里</span>
               <span class="en">Confucius’s Big Question: How Would It Feel to Be Them?</span>
             </a>
           </li>
           <li class="topic done">
             <a href="culture/books/philosophy/laozi/index.html">
-              <span class="culture-difficulty"><span class="zh">困难</span><span class="en">Hard</span></span>
+              <span class="culture-difficulty"><span class="zh">简单 · 中等 · 困难</span><span class="en">Early · Story · Advanced</span></span>
               <span class="zh">老子的智慧：水为什么不争？</span>
               <span class="en">Laozi’s Wisdom: Why Doesn’t Water Compete?</span>
             </a>
           </li>
           <li class="topic done">
             <a href="culture/books/philosophy/seed-dao/index.html">
-              <span class="culture-difficulty"><span class="zh">困难</span><span class="en">Hard</span></span>
+              <span class="culture-difficulty"><span class="zh">简单 · 中等 · 困难</span><span class="en">Early · Story · Advanced</span></span>
               <span class="zh">一颗种子的耐心：照料，而不强迫</span>
               <span class="en">The Patience of a Seed: Care Without Forcing</span>
             </a>
@@ -319,18 +395,26 @@
             <p class="cat-desc zh">古代人用什么聪明的方法保护自己的家园？</p>
             <p class="cat-desc en">What clever ways did ancient people use to defend their homes?</p>
           </div>
+          <div class="culture-level-picker" data-culture-reading-picker role="group" aria-label="Reading level">
+            <span class="culture-level-label">Reading level</span>
+            <div class="culture-level-options">
+              <button type="button" data-culture-reading-level="early" aria-pressed="false">Easy</button>
+              <button type="button" data-culture-reading-level="story" aria-pressed="false">Medium</button>
+              <button type="button" data-culture-reading-level="advanced" aria-pressed="false">Advanced</button>
+            </div>
+          </div>
         </div>
         <ul class="topic-grid">
           <li class="topic done">
             <a href="culture/books/military/great-wall/index.html">
-              <span class="culture-difficulty"><span class="zh">中等</span><span class="en">Medium</span></span>
+              <span class="culture-difficulty"><span class="zh">简单 · 中等 · 困难</span><span class="en">Early · Story · Advanced</span></span>
               <span class="zh">长城不是一堵墙：读懂两千年的边疆</span>
               <span class="en">The Great Wall Is Not One Wall: Reading Two Thousand Years of Frontier History</span>
             </a>
           </li>
           <li class="topic done">
             <a href="culture/books/military/ancient-armor/index.html">
-              <span class="culture-difficulty"><span class="zh">困难</span><span class="en">Hard</span></span>
+              <span class="culture-difficulty"><span class="zh">简单 · 中等 · 困难</span><span class="en">Early · Story · Advanced</span></span>
               <span class="zh">一片甲，许多答案：中国古代铠甲怎样保护身体</span>
               <span class="en">One Armor Plate, Many Answers: Body Armor in Ancient China</span>
             </a>
@@ -351,7 +435,7 @@
           </li>
           <li class="topic done">
             <a href="culture/books/military/art-of-war/index.html">
-              <span class="culture-difficulty"><span class="zh">困难</span><span class="en">Hard</span></span>
+              <span class="culture-difficulty"><span class="zh">简单 · 中等 · 困难</span><span class="en">Early · Story · Advanced</span></span>
               <span class="zh">《孙子兵法》：行动之前，先看清局面</span>
               <span class="en">The Art of War: Look Before You Move</span>
             </a>
@@ -367,6 +451,14 @@
             <h4>Ancient Inventions &amp; Science</h4>
             <p class="cat-desc zh">从火药到造纸，从指南针到节气，看看古人怎么观察世界，也改变世界。</p>
             <p class="cat-desc en">From gunpowder to paper, from the compass to the solar terms, see how people long ago studied the world and changed it.</p>
+          </div>
+          <div class="culture-level-picker culture-level-picker--placeholder" data-culture-reading-picker role="group" aria-label="Reading level">
+            <span class="culture-level-label">Reading level</span>
+            <div class="culture-level-options">
+              <button type="button" data-culture-reading-level="early" aria-pressed="false">Easy</button>
+              <button type="button" data-culture-reading-level="story" aria-pressed="false">Medium</button>
+              <button type="button" data-culture-reading-level="advanced" aria-pressed="false">Advanced</button>
+            </div>
           </div>
         </div>
         <ul class="topic-grid">
@@ -430,39 +522,47 @@
             <p class="cat-desc zh">皇帝怎么管理国家？学生学什么？怎么才能做官？</p>
             <p class="cat-desc en">How did emperors rule? What did students learn? How did exams decide your future?</p>
           </div>
+          <div class="culture-level-picker" data-culture-reading-picker role="group" aria-label="Reading level">
+            <span class="culture-level-label">Reading level</span>
+            <div class="culture-level-options">
+              <button type="button" data-culture-reading-level="early" aria-pressed="false">Easy</button>
+              <button type="button" data-culture-reading-level="story" aria-pressed="false">Medium</button>
+              <button type="button" data-culture-reading-level="advanced" aria-pressed="false">Advanced</button>
+            </div>
+          </div>
         </div>
         <ul class="topic-grid">
           <li class="topic done">
             <a href="culture/books/politics/emperor-day/index.html">
-              <span class="culture-difficulty"><span class="zh">中等</span><span class="en">Medium</span></span>
-              <span class="zh">皇帝的一天：朱元璋的书桌有多忙？</span>
-              <span class="en">A Day at the Emperor’s Desk: How Busy Was Zhu Yuanzhang?</span>
+              <span class="culture-difficulty"><span class="zh">简单 · 中等 · 困难</span><span class="en">Early · Story · Advanced</span></span>
+              <span class="zh">朱元璋为什么成了一个特别忙的皇帝？</span>
+              <span class="en">Why Did Zhu Yuanzhang Become Such a Busy Emperor?</span>
             </a>
           </li>
           <li class="topic done">
             <a href="culture/books/politics/six-arts/index.html">
-              <span class="culture-difficulty"><span class="zh">困难</span><span class="en">Hard</span></span>
+              <span class="culture-difficulty"><span class="zh">简单 · 中等 · 困难</span><span class="en">Early · Story · Advanced</span></span>
               <span class="zh">六艺：古代学生真的一天学六门课吗？</span>
               <span class="en">The Six Arts: Did Ancient Students Really Study All Six in One Day?</span>
             </a>
           </li>
           <li class="topic done">
             <a href="culture/books/politics/imperial-exam-history/index.html">
-              <span class="culture-difficulty"><span class="zh">困难</span><span class="en">Hard</span></span>
+              <span class="culture-difficulty"><span class="zh">简单 · 中等 · 困难</span><span class="en">Early · Story · Advanced</span></span>
               <span class="zh">一张考卷能打开多大的门？中国古代怎样选官</span>
-              <span class="en">How Wide Could an Exam Open the Door? Choosing Officials in Imperial China</span>
+              <span class="en">How Far Could an Exam Open the Door? Choosing Officials in Imperial China</span>
             </a>
           </li>
           <li class="topic done">
             <a href="culture/books/politics/exam-content/index.html">
-              <span class="culture-difficulty"><span class="zh">困难</span><span class="en">Hard</span></span>
+              <span class="culture-difficulty"><span class="zh">简单 · 中等 · 困难</span><span class="en">Early · Story · Advanced</span></span>
               <span class="zh">科举到底考什么？一张考卷的千年变化</span>
               <span class="en">What Did the Imperial Exams Test? A Thousand Years of Changing Questions</span>
             </a>
           </li>
           <li class="topic done">
             <a href="culture/books/politics/yu-the-great/index.html">
-              <span class="culture-difficulty"><span class="zh">困难</span><span class="en">Hard</span></span>
+              <span class="culture-difficulty"><span class="zh">简单 · 中等 · 困难</span><span class="en">Early · Story · Advanced</span></span>
               <span class="zh">大禹治水：洪水、英雄与王朝的记忆</span>
               <span class="en">Yu the Great: A Flood, a Hero, and the Memory of a Dynasty</span>
             </a>
@@ -879,8 +979,8 @@
           <li class="topic done">
             <a href="culture/books/food/dumplings/index.html">
               <span class="culture-difficulty"><span class="zh">中等</span><span class="en">Medium</span></span>
-              <span class="zh">一只漏馅的饺子</span>
-              <span class="en">The Dumpling That Wouldn't Stay Closed</span>
+              <span class="zh">古时候的饺子和今天一样吗？</span>
+              <span class="en">Were Ancient Dumplings Like the Ones We Eat Today?</span>
             </a>
           </li>
           <li class="topic done">
@@ -902,6 +1002,14 @@
             <p class="cat-desc zh">有些人改变了中国，他们的故事今天还在流传。</p>
             <p class="cat-desc en">Some people changed China, and their stories are still told today.</p>
           </div>
+          <div class="culture-level-picker" data-culture-reading-picker role="group" aria-label="Reading level">
+            <span class="culture-level-label">Reading level</span>
+            <div class="culture-level-options">
+              <button type="button" data-culture-reading-level="early" aria-pressed="false">Easy</button>
+              <button type="button" data-culture-reading-level="story" aria-pressed="false">Medium</button>
+              <button type="button" data-culture-reading-level="advanced" aria-pressed="false">Advanced</button>
+            </div>
+          </div>
         </div>
         <ul class="topic-grid">
           <li class="topic done">
@@ -913,9 +1021,9 @@
           </li>
           <li class="topic done">
             <a href="culture/books/figures/mulan/index.html">
-              <span class="culture-difficulty"><span class="zh">困难</span><span class="en">Hard</span></span>
-              <span class="zh">木兰：一首诗怎样长成一千年的传奇？</span>
-              <span class="en">Mulan: How Did One Poem Grow into a Thousand-Year Legend?</span>
+              <span class="culture-difficulty"><span class="zh">简单 · 中等 · 困难</span><span class="en">Early · Story · Advanced</span></span>
+              <span class="zh">木兰的勇敢旅程</span>
+              <span class="en">Mulan's Brave Journey</span>
             </a>
           </li>
           <li class="topic done">
@@ -1174,6 +1282,8 @@
       </main>
     </div>
 
-    <script src="app.js?v=20260829-hobbies-round-state-v1"></script>
+    <script src="app.js?v=20260830-number-choice-grid-v2"></script>
+    <script src="culture-reading-level.js?v=20260830-catalog-picker-v2"></script>
+    <script src="site-footer.js?v=20260830-v1"></script>
   </body>
 </html>

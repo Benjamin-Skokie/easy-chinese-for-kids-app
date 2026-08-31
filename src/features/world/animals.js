@@ -18,11 +18,12 @@ export const animalLessons = {
       { id: "turtle", hanzi: "乌龟", pinyin: "wū guī", english: "turtle", audio: "乌龟", preferenceAudio: "我喜欢乌龟。", preferencePinyin: "wǒ xǐ huan wū guī.", imagePath: "assets/illustrated-animals/turtle.webp", imageAlt: "A turtle" },
       { id: "goldfish", hanzi: "金鱼", pinyin: "jīn yú", english: "goldfish", audio: "金鱼", preferenceAudio: "我喜欢金鱼。", preferencePinyin: "wǒ xǐ huan jīn yú.", imagePath: "assets/illustrated-animals/goldfish.webp", imageAlt: "A goldfish" }
     ],
-    usefulNote: {
-      hanzi: "我喜欢 + 名词。比如：我喜欢猫。",
-      pinyin: "Wǒ xǐ huan + míng cí. Bǐ rú: Wǒ xǐ huan māo.",
-      english: "我喜欢 means “I like.” Put an animal or thing after it."
-    },
+    notes: [{
+      explanation: "喜欢 works much like “like” in English.",
+      examples: [
+        { hanzi: "我喜欢猫。", english: "I like cats." }
+      ]
+    }],
   },
   "2b": {
     title: "Animals",
@@ -46,6 +47,10 @@ export const animalLessons = {
       { id: "goldfish", hanzi: "金鱼", pinyin: "jīn yú", english: "goldfish", audio: "金鱼", imagePath: "assets/illustrated-animals/goldfish.webp", imageAlt: "A goldfish" },
       { id: "turtle", hanzi: "乌龟", pinyin: "wū guī", english: "turtle", audio: "乌龟", imagePath: "assets/illustrated-animals/turtle.webp", imageAlt: "A turtle" }
     ],
+    notes: [{
+      hanzi: "一只老虎 / 两头大象 / 七条金鱼",
+      explanation: "Chinese puts a measure word between a number and an animal. Use 只 for many animals, 头 for large animals, and 条 for fish and long animals."
+    }],
     foodStory: [
       { id: "dog-bone", animalHanzi: "狗", animalPinyin: "gǒu", animalEnglish: "dog", foodHanzi: "骨头", foodPinyin: "gǔ tou", foodEnglish: "bones", animalImagePath: "assets/illustrated-animals/dog.webp", animalImageAlt: "A dog", foodImagePath: "assets/illustrated-food/bones.webp", foodImageAlt: "Bones", hanzi: "狗吃骨头。", pinyin: "Gǒu chī gǔ tou.", english: "Dogs eat bones.", audio: "狗吃骨头" },
       { id: "cat-fish", animalHanzi: "猫", animalPinyin: "māo", animalEnglish: "cat", foodHanzi: "鱼", foodPinyin: "yú", foodEnglish: "fish", animalImagePath: "assets/illustrated-animals/cat.webp", animalImageAlt: "A cat", foodImagePath: "assets/illustrated-food/small-fish.webp", foodImageAlt: "Fish", hanzi: "猫吃鱼。", pinyin: "Māo chī yú.", english: "Cats eat fish.", audio: "猫吃鱼" },
