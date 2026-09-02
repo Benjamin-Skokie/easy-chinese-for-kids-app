@@ -18,6 +18,7 @@ const categoryNames = {
   "folk-tales": "Folk Tales",
   geography: "Geography",
   inventions: "Inventions & Technology",
+  literature: "Literature",
   military: "Military History & Technology",
   philosophy: "Philosophy",
   politics: "Government & Society",

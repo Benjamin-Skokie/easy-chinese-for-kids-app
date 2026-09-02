@@ -1,167 +1,65 @@
-> Difficulty: Medium
+> Difficulty: Easy
 
-# Water Margin: The Story of 108 Heroes
+# Water Margin: Heroes of Mount Liang
 
-## A Stone Tablet Releases 108 Demon Stars
+## What Is Mount Liang?
 
-Near the end of the Northern Song dynasty, Marshal Hong was sent to Dragon-Tiger Mountain in Jiangxi.
+*Water Margin* is set more than 900 years ago, near the end of China's Northern Song dynasty. The emperor lives far away in the capital, while local officials judge cases, collect taxes, and make arrests. In the novel, some officials take money and protect powerful families. When an ordinary person is treated unfairly, there may be no honest official nearby who will listen.
 
-His job was to invite a Daoist master to pray for an end to a terrible sickness spreading among people.
+The original novel really does begin with magic. An official ignores a warning and opens a sealed room in a mountain temple. One hundred and eight lights rush out. The novel later connects the 108 leaders of Mount Liang with 36 Heavenly Spirits and 72 Earthly Spirits. This is a magical preview of the story, not real history.
 
-But Marshal Hong entered a hall covered with seals.
+So what is Liangshan? The name means Mount Liang. The mountain stands beside a broad marsh filled with reeds and twisting waterways. Government soldiers cannot easily march straight into it, so fugitives and people wanted by the law build a guarded camp there.
 
-It was called the Demon-Subduing Hall.
-
-The Daoist teachers tried to stop him, but he forced open the stone slab in the center.
-
-Under it was a stone tablet covered with strange writing.
-
-On the tablet were four words: "Open when Hong arrives."
-
-It meant that when someone named Hong came, the tablet would open.
-
-And Marshal Hong's family name was Hong.
-
-When the tablet opened, 108 streams of black air rushed out from underground and flew in every direction.
-
-These were 108 demon lords that Daoist masters had locked away through the ages.
-
-Now they were free and waiting to be born as humans.
-
-Marshal Hong was terrified.
-
-He ordered everyone to keep quiet.
-
-Decades later, those 108 spirits were reborn as people.
-
-They became the 108 heroes of Liangshan Marsh.
+The English title *Water Margin* points to this place at the water's edge. Another common title is *Outlaws of the Marsh*. Now let us see why so many people end up there.
 
 ---
 
-## Forced Up Liangshan
+## Lin Chong Loses His Home, His Job, and His Way Back
 
-The feeling of *Water Margin* is very different from *Journey to the West*.
+Lin Chong begins with a steady job in the capital, training soldiers to use spears. He also has a home and a wife. Then the adopted son of a powerful official named Gao Qiu decides that he wants to take Lin Chong's wife for himself. First, Lin Chong must be removed.
 
-It begins with magic, but what people remember most is not monsters.
+Gao Qiu's men sell Lin Chong a fine sword. Then they lead him into a military hall where he is not allowed to enter with a weapon. The moment Lin Chong steps inside, Gao Qiu appears and accuses him of coming to attack. Lin Chong loses his job, is locked in chains, and is sent to a prison camp far from home. On the road, his guards even try to kill him, but a friend arrives in time to save him.
 
-They remember people who are pushed step by step until they have nowhere else to go.
+Lin Chong's enemies follow him to the prison camp. They arrange for him to guard a hay depot and set it on fire during a snowy night. But the heavy snow has already crushed the little hut where Lin Chong was supposed to sleep. He has moved into a nearby temple and escapes the flames.
 
-Many characters in the book first want ordinary lives.
-
-But corrupt officials and a cruel world will not leave them alone.
-
-Lin Chong is an army instructor, handsome and highly skilled.
-
-He has a wife he loves and a life he wants to keep.
-
-But a powerful official's son wants his wife. A trap is set. Lin Chong is falsely accused and sent far away.
-
-On the road, two guards try to kill him, but Lu Zhishen saves him.
-
-Later, Lin Chong is sent to guard a hay field.
-
-On a snowy night, enemies lock the gate from outside and set the place on fire.
-
-Lin Chong hears them talking about finding his bones after the fire.
-
-At that moment, the life he wanted is gone.
-
-He breaks out, takes revenge on the attackers, kneels in the snow and fire for a long time, and then walks toward Liangshan, the mountain camp of outlaws he never wanted to join.
-
-Wu Song is another famous figure.
-
-After killing a tiger on Jingyang Ridge, he becomes a respected hero.
-
-But his brother is murdered, and the local officials refuse to help because they have been bribed.
-
-Wu Song takes revenge himself, then turns himself in.
-
-Again and again, traps and unfairness push him farther from ordinary life.
-
-Song Jiang is known as "Timely Rain" because he helps people in trouble.
-
-He thinks of himself as loyal to the government.
-
-Even after he gets into danger, he does not want to join Liangshan.
-
-But after being accused and almost put to death, Liangshan heroes rescue him.
-
-At last, he admits what he has been fighting against:
-
-it is not that he wanted to become an outlaw.
-
-It is that the world gave him no road left.
-
-That is what "forced up Liangshan" means.
-
-Not everyone in the novel has the same story.
-
-But the phrase catches the book's deepest feeling:
-
-many people do not fight back at first.
-
-They step back and step back until there is no ground behind them.
+Through the temple door, Lin Chong hears the men talking about their plan. Now he knows they will try again if he returns. He has no job to go back to and no safe road home. He runs into the snowy night and eventually reaches Mount Liang.
 
 ---
 
-## Gathering at Liangshan: 108 People Take Their Places
+## The Sign Says Three Bowls. Wu Song Drinks Eighteen.
 
-After all the heroes gather at Liangshan, the novel uses another stone tablet to arrange their ranks.
+One of the most famous stories in *Water Margin* takes place at Jingyang Ridge. Wu Song is walking home when he stops at an inn. A sign says, “After three bowls, do not cross the ridge.” The sign does not mean three bowls of rice or soup. It means three bowls of very strong wine, an alcoholic drink for adults. In the story, the wine is made from grain and served in small bowls.
 
-There are 36 Heavenly Spirits and 72 Earthly Fiends, making 108 in all.
+Wu Song drinks eighteen. The innkeeper warns him that a tiger has been attacking people on the ridge. Wu Song thinks this is only a trick to make him stay another night, so he picks up his wooden staff and leaves. Farther up the path, he sees an official warning and realizes that the tiger is real. But turning back now would be terribly embarrassing, so he keeps going.
 
-This gives the group a strong feeling of fate.
+As the sun goes down, a strong wind shakes the trees. The tiger bursts from the woods. Wu Song dodges its first leap, then jumps away from its twisting body and whipping tail. He swings his staff with all his strength—but the staff strikes a tree and breaks in two.
 
-Song Jiang cares a lot about the idea of Heaven's will.
-
-It helps make the gathering at Liangshan feel more rightful, not just like a group of outlaws hiding by a marsh.
+With no weapon left, Wu Song grabs the tiger and fights it with his bare hands until it can no longer hurt anyone. The next day, people crowd the road to see the man who stopped the tiger. The local government offers Wu Song a reward, but he gives the money to the hunters who had been punished for failing to catch it. From that day on, everyone nearby knows his name. After more trouble with the law, he too reaches Mount Liang.
 
 ---
 
-## Accepting the Emperor's Offer: The End of Liangshan
+## What Do the People at Mount Liang Actually Do?
 
-After Song Jiang becomes leader, he makes a decision that changes everyone's fate.
+The people at Mount Liang do not spend every day sitting around a feast. Their stronghold has lookout towers, food stores, horses, boats, and guarded gates. Some patrol the waterways. Some train fighters, guard supplies, or travel down the mountain to gather news.
 
-He accepts the court's offer of pardon and service.
+When a friend is arrested, they may break into a jail to rescue him. When government soldiers attack, they use the marsh and reeds to set traps. They also seize food and money stored by corrupt officials or rich bullies and carry some of it back to the stronghold.
 
-The Liangshan heroes go fight for the government.
+The Chinese book calls these people *haohan*. This is an old story word. *Hao* can mean “fine” or “worthy,” and *han* means “man.” Put together, *haohan* is close to “brave hero.” It sounds a little like a superhero, but the Mount Liang heroes are not Supermen who always do the right thing. Sometimes they help people who have been treated badly. At other times, they do frightening things. They are brave, but they are not perfect.
 
-They battle Liao forces and later the forces of Fang La, who has risen against the court.
+Eventually, 108 leaders gather at Mount Liang. Their main leader is Song Jiang. He once handled paperwork in a county office and secretly helped people who later fled to Mount Liang. One day, someone found a letter that could prove what he had done and threatened to report him. A serious quarrel followed. Song Jiang committed a terrible crime and had to run away. He eventually reached Mount Liang.
 
-One by one, many of the 108 die in war, sickness, traps, or poison.
-
-After the campaign against Fang La, fewer than thirty return alive.
-
-Wu Song survives many enemies, but after the final battles, he chooses to stay at Liuhe Temple in Hangzhou.
-
-He has lost an arm and no longer wants to be used as someone else's chess piece.
-
-Song Jiang himself is later poisoned by corrupt ministers.
-
-Before he dies, he calls Li Kui to him.
-
-He knows Li Kui will rise up to avenge him.
-
-So Song Jiang gives him the poisoned wine too.
-
-Li Kui drinks it because he trusts his elder brother.
-
-At the end, very few of the 108 are left.
-
-The loud, exciting story has slowly grown cold.
+Song Jiang hopes the court will one day forgive the whole group so they will no longer be outlaws. That hope changes the ending of the story.
 
 ---
 
-## Summary
+## Why Does Song Jiang Lead Everyone Away from Mount Liang?
 
-On the outside, *Water Margin* is full of tiger fights, outlaws, brotherhood, and battles.
+Later, the court sends Mount Liang an offer: lay down your weapons, and your old crimes will be forgiven. In return, you will become soldiers for the government. This offer is called *zhao'an*—a pardon and a new place in the emperor's army.
 
-But by the end, the heaviest part is not the noise.
+Not everyone on Mount Liang trusts the offer. Several outlaws remember that corrupt officials caused much of their trouble in the first place. Song Jiang, however, wants the group to clear their names, return home without being arrested, and serve the country openly. In the end, the Mount Liang heroes follow him and accept.
 
-It is the question of what happens when people with no road left hold on to one another.
+They leave the stronghold and fight one difficult war after another for the court. Some die in battle. Some become sick, and others leave after being badly hurt. The great hall that once held 108 leaders slowly empties.
 
-Lin Chong, Wu Song, Song Jiang, Li Kui: these names later became famous heroes.
+Song Jiang survives. The emperor sends him to help govern Chuzhou, a city, and to take charge of soldiers there. This is his new job as a government official. But several officials who hate him still fear that he may lead another rebellion. They secretly put poison into wine sent in the emperor's name. Song Jiang drinks it and dies.
 
-But at first, they were not shining figures standing on a mountaintop.
-
-They were people pushed by a hard world, step by step, until Liangshan was the only place left.
+In the novel's final scene, the emperor has a dream. He visits Mount Liang and sees Song Jiang and the other fallen heroes gathered once more in their old hall. After the emperor wakes, he learns how Song Jiang died and orders a temple to be built in their memory. This is the book's last picture of the 108 heroes: no longer scattered across distant battlefields, but together again at Mount Liang in a dream.
