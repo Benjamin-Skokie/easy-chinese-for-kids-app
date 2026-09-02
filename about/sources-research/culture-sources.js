@@ -4901,8 +4901,8 @@ window.NIHAO_CULTURE_SOURCES = [
     "category": "figures",
     "categoryName": "People",
     "slug": "li-shi-zhen",
-    "title": "一本伟大的书，也会有错误吗？李时珍与《本草纲目》",
-    "titleEn": "Can a Great Book Still Be Wrong? Li Shizhen and Bencao Gangmu",
+    "title": "李时珍和那本写了二十七年的大书",
+    "titleEn": "Li Shizhen and the Book That Took Twenty-Seven Years",
     "storyPath": "../../culture/books/figures/li-shi-zhen/",
     "groups": [
       {
@@ -4945,6 +4945,10 @@ window.NIHAO_CULTURE_SOURCES = [
           {
             "label": "PubMed, “Literature research of Compendium of Materia Medica quoted from Bencao Tujing”",
             "url": "https://pubmed.ncbi.nlm.nih.gov/33794582/"
+          },
+          {
+            "label": "National Archives Administration of China, General Catalog for Chinese Medical Classics entry",
+            "url": "https://www.saac.gov.cn/mowcn/cn/c100513/202104/156cc3110b0147a3bc6b426a7f7683d4/files/f6d2857b2caa4e629c2572c61cf41cfa.pdf"
           }
         ]
       },
@@ -4997,189 +5001,80 @@ window.NIHAO_CULTURE_SOURCES = [
     "category": "figures",
     "categoryName": "People",
     "slug": "cao-cao",
-    "title": "同一个曹操，为什么在史书和小说里像两个人？",
-    "titleEn": "Why Does Cao Cao Seem Like Two Different People in History and Fiction?",
+    "title": "曹操：带兵的诗人",
+    "titleEn": "Cao Cao: The Commander with a Poet's Brush",
     "storyPath": "../../culture/books/figures/cao-cao/",
     "groups": [
       {
-        "title": "Chen Shou, *Records of the Three Kingdoms*, “Annals of Emperor Wu,” with Pei Songzhi's annotations",
+        "title": "Cao Cao's life, Emperor Xian, and the title King of Wei",
         "sources": [
           {
-            "label": "ctext.org",
+            "label": "Records of the Three Kingdoms — Cao Cao's biography",
             "url": "https://ctext.org/text.pl?if=gb&node=601875&remap=gb"
           },
           {
-            "label": "zh.wikisource.org",
+            "label": "Records of the Three Kingdoms — annotated Chinese text",
             "url": "https://zh.wikisource.org/zh/%E4%B8%89%E5%9B%BD%E5%BF%97%EF%BC%88%E9%99%88%E5%AF%BF%E6%92%B0_%E8%A3%B4%E6%9D%BE%E4%B9%8B%E6%B3%A8_%E5%BB%BA%E9%98%B3%E5%88%8A%E6%9C%AC%EF%BC%89/%E9%AD%8F%E6%9B%B8/%E6%AD%A6%E5%B8%9D%E7%BA%AA%E7%AC%AC%E4%B8%80"
           },
           {
-            "label": "upload.wikimedia.org",
-            "url": "https://upload.wikimedia.org/wikipedia/commons/b/b1/SSID-12983472_%E4%B8%89%E5%9C%8B%E5%BF%97_%E5%8D%B71-23.pdf"
-          }
-        ]
-      },
-      {
-        "title": "*Book of the Later Han* and *Records of the Three Kingdoms* — Emperor Xian and political authority",
-        "sources": [
-          {
-            "label": "ctext.org",
+            "label": "Book of the Later Han",
             "url": "https://ctext.org/hou-han-shu/ens"
           },
           {
-            "label": "ctext.org",
-            "url": "https://ctext.org/text.pl?if=gb&node=601875&remap=gb"
-          },
-          {
-            "label": "gateway-ipfs.st",
-            "url": "https://gateway-ipfs.st/ipfs/bafykbzacecojov5y4uw5wahvv625hh6j75nxuepd5jkioxh2d4ivcbidtnhi4?filename=%E4%B8%AD%E5%9B%BD%E9%80%9A%E5%8F%B2+%E7%AC%AC%E4%BA%94%E5%8D%B7+%E4%B8%89%E5%9B%BD%E4%B8%A4%E6%99%8B%E5%8D%97%E5%8C%97%E6%9C%9D%E6%97%B6%E6%9C%9F+%EF%BC%88%E4%B8%8A%EF%BC%89_%E7%99%BD%E5%AF%BF%E5%BD%9D.pdf"
+            "label": "Metropolitan Museum of Art — Han dynasty dates",
+            "url": "https://www.metmuseum.org/TOAH/hd/hand/hd_hand.htm"
           }
         ]
       },
       {
-        "title": "Guandu: *Records of the Three Kingdoms*, biographies of Cao Cao and Yuan Shao, with Pei Songzhi's numerical critique",
+        "title": "The Battle of Guandu",
         "sources": [
           {
-            "label": "ctext.org",
+            "label": "Records of the Three Kingdoms — Guandu account",
             "url": "https://ctext.org/text.pl?if=gb&node=601875&remap=gb"
-          },
-          {
-            "label": "upload.wikimedia.org",
-            "url": "https://upload.wikimedia.org/wikipedia/commons/b/b1/SSID-12983472_%E4%B8%89%E5%9B%BD%E5%BF%97_%E5%8D%B71-23.pdf"
-          },
-          {
-            "label": "zzrvtc.edu.cn",
-            "url": "https://www.zzrvtc.edu.cn/_upload/article/files/65/a4/f7e77904478ea6afd1e4fa3e13db/379fe01f-3d80-4385-8a5f-cc862f429147.pdf"
           }
         ]
       },
       {
-        "title": "Farming colonies and recruitment edicts",
+        "title": "Farming, officials, and the cost of Cao Cao's wars",
         "sources": [
           {
-            "label": "ctext.org",
-            "url": "https://ctext.org/text.pl?if=gb&node=601875&remap=gb"
-          },
-          {
-            "label": "zh.wikisource.org",
+            "label": "Cao Cao's call for capable officials",
             "url": "https://zh.wikisource.org/zh-hans/%E6%B1%82%E8%B3%A2%E4%BB%A4"
           },
           {
-            "label": "mzj.xuchang.gov.cn",
+            "label": "Xuchang municipal history — farming colonies",
             "url": "https://mzj.xuchang.gov.cn/decqgdmpc/20230511/51edb2c4-ea74-4bd6-b741-fdf10b41bf2f.html"
           },
           {
-            "label": "journal.scu.edu.cn",
+            "label": "Sichuan University journal — farming colonies",
             "url": "https://journal.scu.edu.cn/info/1109/12295.htm"
           },
           {
-            "label": "cirs.tsinghua.edu.cn",
-            "url": "https://www.cirs.tsinghua.edu.cn/sannjcyc/424.jhtml"
-          }
-        ]
-      },
-      {
-        "title": "Violence in Xu Province: *Book of the Later Han* and *Records of the Three Kingdoms*",
-        "sources": [
-          {
-            "label": "ctext.org",
+            "label": "Book of the Later Han — violence in Xu Province",
             "url": "https://ctext.org/wiki.pl?chapter=274601&if=en"
-          },
-          {
-            "label": "ctext.org",
-            "url": "https://ctext.org/text.pl?if=gb&node=601875&remap=gb"
-          },
-          {
-            "label": "zzrvtc.edu.cn",
-            "url": "https://www.zzrvtc.edu.cn/_upload/article/files/65/a4/f7e77904478ea6afd1e4fa3e13db/379fe01f-3d80-4385-8a5f-cc862f429147.pdf"
           }
         ]
       },
       {
-        "title": "National Museum of China and Cao Cao's surviving writings — Jian'an literature",
+        "title": "Cao Cao's poetry",
         "sources": [
           {
-            "label": "en.chnmuseum.cn",
+            "label": "National Museum of China — Jian'an literature",
             "url": "https://en.chnmuseum.cn/Portals/0/web/exhibition/exhibitions/161120Chines-Epic/"
           },
           {
-            "label": "zh.wikisource.org",
+            "label": "Cao Cao's surviving poems",
             "url": "https://zh.wikisource.org/wiki/Author:%E6%9B%B9%E6%93%8D"
-          },
-          {
-            "label": "clajc.ouc.edu.cn",
-            "url": "https://clajc.ouc.edu.cn/ctwhyjzx/2019/1129/c16711a277391/page.psp"
           }
         ]
       },
       {
-        "title": "Lü Boshe accounts and the famous saying",
+        "title": "The white face in Peking opera",
         "sources": [
           {
-            "label": "zh.wikisource.org",
-            "url": "https://zh.wikisource.org/zh/%E4%B8%89%E5%9B%BD%E5%BF%97%EF%BC%88%E9%99%88%E5%AF%BF%E6%92%B0_%E8%A3%B4%E6%9D%BE%E4%B9%8B%E6%B3%A8_%E5%BB%BA%E9%98%B3%E5%88%8A%E6%9C%AC%EF%BC%89/%E9%AD%8F%E6%9B%B8/%E6%AD%A6%E5%B8%9D%E7%BA%AA%E7%AC%AC%E4%B8%80"
-          },
-          {
-            "label": "ctext.org",
-            "url": "https://ctext.org/sanguo-yanyi/ch4/ens"
-          },
-          {
-            "label": "chiculture.org.hk",
-            "url": "https://chiculture.org.hk/sc/china-five-thousand-years/4277"
-          }
-        ]
-      },
-      {
-        "title": "Historical kernels and novel episodes: Huarong, the dagger, and the cut beard",
-        "sources": [
-          {
-            "label": "upload.wikimedia.org",
-            "url": "https://upload.wikimedia.org/wikipedia/commons/b/b1/SSID-12983472_%E4%B8%89%E5%9B%BD%E5%BF%97_%E5%8D%B71-23.pdf"
-          },
-          {
-            "label": "ctext.org",
-            "url": "https://ctext.org/sanguo-yanyi/ch4/ens"
-          },
-          {
-            "label": "ctext.org",
-            "url": "https://ctext.org/sanguo-yanyi/ch50/zh"
-          },
-          {
-            "label": "ctext.org",
-            "url": "https://ctext.org/sanguo-yanyi/ch58/ens"
-          }
-        ]
-      },
-      {
-        "title": "National Centre for the Performing Arts — Peking opera face paint",
-        "sources": [
-          {
-            "label": "chncpa.org",
+            "label": "National Centre for the Performing Arts — opera face paint",
             "url": "https://www.chncpa.org/cgyl_278/yszl/wqzl/201704/t20170408_168389.shtml"
-          },
-          {
-            "label": "m.chncpa.org",
-            "url": "https://m.chncpa.org/zxdt/rdjjx/202008/t20200814_218509.shtml"
-          }
-        ]
-      },
-      {
-        "title": "Henan Provincial Institute of Cultural Heritage and Archaeology — Cao Cao's Gaoling mausoleum",
-        "sources": [
-          {
-            "label": "hnswwkgyjy.cn",
-            "url": "https://www.hnswwkgyjy.cn/NewsView.php?News_ID=113"
-          },
-          {
-            "label": "hnswwkgyjy.cn",
-            "url": "https://www.hnswwkgyjy.cn/NewsView.php?News_ID=1993"
-          },
-          {
-            "label": "hnswwkgyjy.cn",
-            "url": "https://www.hnswwkgyjy.cn/NewsView.php?News_ID=3"
-          },
-          {
-            "label": "chinamuseum.org.cn",
-            "url": "https://www.chinamuseum.org.cn/detail.html?contentId=4258&id=13"
           }
         ]
       }
@@ -5189,8 +5084,8 @@ window.NIHAO_CULTURE_SOURCES = [
     "category": "figures",
     "categoryName": "People",
     "slug": "wu-zetian",
-    "title": "同一个武则天，为什么让史书既佩服又害怕？",
-    "titleEn": "Why Do the Histories Show Both Skill and Fear in Wu Zetian?",
+    "title": "武则天：从宫中少女到皇帝",
+    "titleEn": "Wu Zetian: The Girl Who Became Emperor",
     "storyPath": "../../culture/books/figures/wu-zetian/",
     "groups": [
       {
@@ -5199,10 +5094,6 @@ window.NIHAO_CULTURE_SOURCES = [
           {
             "label": "Smithsonian National Museum of Asian Art, “Timeline of Chinese History, Art, and Culture”",
             "url": "https://asia-archive.si.edu/learn/for-educators/teaching-china-with-the-smithsonian/interactives/timelines/timeline-of-chinese-history-art-and-culture/"
-          },
-          {
-            "label": "British Museum, “Who were the Sogdians?”",
-            "url": "https://www.britishmuseum.org/blog/who-were-sogdians"
           }
         ]
       },
@@ -5212,19 +5103,6 @@ window.NIHAO_CULTURE_SOURCES = [
           {
             "label": "Old Book of Tang, juan 6, “Annals of Empress Zetian,” digitized by Wikisource",
             "url": "https://zh.wikisource.org/zh-hant/%E8%88%8A%E5%94%90%E6%9B%B8/%E5%8D%B76"
-          },
-          {
-            "label": "New Book of Tang, Gaozong and Wu-related annals and biographies, digitized by Wikisource",
-            "url": "https://zh.wikisource.org/zh-hant/%E6%96%B0%E5%94%90%E6%9B%B8"
-          }
-        ]
-      },
-      {
-        "title": "The infant daughter's death and limits of palace evidence",
-        "sources": [
-          {
-            "label": "Chinese Text Project, “Wu Zhou Zetian Huanghou” data page and source discussion",
-            "url": "https://ctext.org/datawiki.pl?if=en&res=636060"
           }
         ]
       },
@@ -5247,40 +5125,6 @@ window.NIHAO_CULTURE_SOURCES = [
           {
             "label": "Institute of History and Philology, Academia Sinica, Huang Ting-Shuo, Wang Chi-Shen, and Shih Hou-Yu, “A New Investigation of ‘the Politics of Cruel Officials’ in the Era of Wu Zetian”",
             "url": "https://www1.ihp.sinica.edu.tw/en/Publications/LegalHistoryStudy/1180/Article/507"
-          },
-          {
-            "label": "Luoyang municipal historical chronology, “大事记”",
-            "url": "https://oss.ly.gov.cn/upload-file/files/20241218/4bf4f3e74241441c9b6f9dc5f46ace8f.pdf"
-          }
-        ]
-      },
-      {
-        "title": "Buddhist legitimation and the Great Cloud Sutra",
-        "sources": [
-          {
-            "label": "Columbia University Press, N. Harry Rothschild, Emperor Wu Zhao and Her Pantheon of Devis, Divinities, and Dynastic Mothers",
-            "url": "https://cup.columbia.edu/book/emperor-wu-zhao-and-her-pantheon-of-devis-divinities-and-dynastic-mothers/9780231539180/"
-          },
-          {
-            "label": "Old Book of Tang, juan 6, 690 entry for the Great Cloud Sutra",
-            "url": "https://zh.wikisource.org/zh-hant/%E8%88%8A%E5%94%90%E6%9B%B8/%E5%8D%B76"
-          }
-        ]
-      },
-      {
-        "title": "Luoyang, Mingtang, and Longmen",
-        "sources": [
-          {
-            "label": "UNESCO World Heritage Centre, “Longmen Grottoes”",
-            "url": "https://whc.unesco.org/en/list/1003"
-          },
-          {
-            "label": "Smarthistory, “Longmen caves, Luoyang”",
-            "url": "https://smarthistory.org/longmen-caves-luoyang/"
-          },
-          {
-            "label": "Old Book of Tang, juan 6, entries on the Mingtang and Luoyang",
-            "url": "https://zh.wikisource.org/zh-hant/%E8%88%8A%E5%94%90%E6%9B%B8/%E5%8D%B76"
           }
         ]
       },
@@ -5294,10 +5138,6 @@ window.NIHAO_CULTURE_SOURCES = [
           {
             "label": "China Heritage Quarterly, “Qianling”",
             "url": "https://www.chinaheritagequarterly.org/articles.php?issue=008&searchterm=008_qianling.inc"
-          },
-          {
-            "label": "Xihua University journal, “An Interpretation of the First Chinese Empress's Wordless Gravestone”",
-            "url": "https://aj.xhu.edu.cn/xhdxxbzskb/article/id/f24decdc-cf80-4b1a-bda2-b029430e1545"
           }
         ]
       }
@@ -5307,12 +5147,12 @@ window.NIHAO_CULTURE_SOURCES = [
     "category": "figures",
     "categoryName": "People",
     "slug": "shang-yang",
-    "title": "商鞅：国家变强时，谁付出了代价？",
-    "titleEn": "Shang Yang: Who Paid the Price When the State Grew Stronger?",
+    "title": "商鞅和那根没人敢搬的木头",
+    "titleEn": "Shang Yang and the Log No One Wanted to Move",
     "storyPath": "../../culture/books/figures/shang-yang/",
     "groups": [
       {
-        "title": "Biography, log story, reforms, and death narrative",
+        "title": "The log, the reforms, the failed escape, and Shang Yang's death",
         "sources": [
           {
             "label": "Chinese Text Project, Sima Qian, Records of the Grand Historian, “Biography of Lord Shang”",
@@ -5321,7 +5161,7 @@ window.NIHAO_CULTURE_SOURCES = [
         ]
       },
       {
-        "title": "Institutional changes and their tradeoffs",
+        "title": "How the reforms made Qin stronger and increased control",
         "sources": [
           {
             "label": "Yuri Pines, “Institutional Reforms and Reformers during the Warring States Period,” The Oxford Handbook of Early China",
@@ -5330,32 +5170,6 @@ window.NIHAO_CULTURE_SOURCES = [
           {
             "label": "Andrew Chittick et al., “Imperial expansion, public investment, and the long path of history: China's initial political unification and its aftermath,” Social Science History",
             "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4522747/"
-          }
-        ]
-      },
-      {
-        "title": "The composite *Book of Lord Shang*",
-        "sources": [
-          {
-            "label": "Yuri Pines, “Dating a Pre-Imperial Text: The Case Study of the Book of Lord Shang,” Early China 39 (2016)",
-            "url": "https://www.cambridge.org/core/journals/early-china/article/dating-a-preimperial-text-the-case-study-of-the-book-of-lord-shang/199B57467F51A62EBD492DE47DA3360A"
-          }
-        ]
-      },
-      {
-        "title": "Excavated Qin law and administration",
-        "sources": [
-          {
-            "label": "Robin D. S. Yates, “The State of Research in Early Chinese Legal History,” Bamboo and Silk 6 (2023)",
-            "url": "https://doi.org/10.1163/24689246-20230031"
-          },
-          {
-            "label": "Charles Sanft, “The Promulgation of Law in Qin and Western Han China,” Early China 44 (2021)",
-            "url": "https://www.cambridge.org/core/journals/early-china/article/abs/promulgation-of-law-in-qin-and-western-han-china/D5EE31803D74CDE3E0B8746E714155EC"
-          },
-          {
-            "label": "Maxim Korolkov, “State Control of Bureaucrats under the Qin: Techniques and Procedures,” Early China 39 (2016)",
-            "url": "https://www.cambridge.org/core/journals/early-china/article/abs/state-control-of-bureaucrats-under-the-qin-techniques-and-procedures/26F23940F6B99404572C42C18A98A46B"
           }
         ]
       }
@@ -5414,20 +5228,16 @@ window.NIHAO_CULTURE_SOURCES = [
     "category": "figures",
     "categoryName": "People",
     "slug": "li-bai",
-    "title": "李白：诗人走进了传说",
-    "titleEn": "Li Bai: When a Poet Becomes a Legend",
+    "title": "李白：诗仙",
+    "titleEn": "Li Bai: The Poet Immortal",
     "storyPath": "../../culture/books/figures/li-bai/",
     "groups": [
       {
-        "title": "Core biography, disputed origins, court service, and exile",
+        "title": "Life, palace service, imprisonment, and exile",
         "sources": [
           {
             "label": "Academy of Chinese Studies, “Li Bai”",
             "url": "https://chiculture.org.hk/en/china-five-thousand-years/1937"
-          },
-          {
-            "label": "Poetry Foundation, “Li Po”",
-            "url": "https://www.poetryfoundation.org/poets/li-po"
           },
           {
             "label": "Chinese Text Project, Li Hanlin Ji biographical materials",
@@ -5436,50 +5246,36 @@ window.NIHAO_CULTURE_SOURCES = [
         ]
       },
       {
-        "title": "Poems and textual transmission",
+        "title": "The three poems and the Mount Lu setting",
         "sources": [
           {
             "label": "Chinese Text Project, Li Taibai Quanji, volume 6, including “Quiet Night Thought”",
             "url": "https://ctext.org/wiki.pl?chapter=810697&if=gb"
           },
           {
-            "label": "China Writers Association, “李白《静夜思》的文本奥秘”",
-            "url": "https://www.chinawriter.com.cn/n1/2020/1116/c404064-31932366.html"
-          },
-          {
             "label": "Chinese Text Project, Quan Tang Shi, “Viewing the Waterfall at Mount Lu, Two Poems”",
             "url": "https://ctext.org/text.pl?if=gb&node=139483"
-          }
-        ]
-      },
-      {
-        "title": "Li Bai and Du Fu",
-        "sources": [
-          {
-            "label": "Poetry Foundation, “A Bird Translates Silence”",
-            "url": "https://www.poetryfoundation.org/articles/158883/a-bird-translates-silence"
-          }
-        ]
-      },
-      {
-        "title": "Iron pestle and court legends",
-        "sources": [
-          {
-            "label": "Zhu Mu, Southern Song dynasty, Fangyu Shenglan, “Grinding an Iron Pestle into a Needle” (public-domain text presentation)",
-            "url": "https://www.gushiwen.cn/shiwenv_0251658e318b.aspx"
           },
           {
-            "label": "Gujin Shiwen Leiju, “Gao Lishi Removes the Boots” tradition (public-domain text presentation)",
-            "url": "https://www.shidianguji.com/zh/book/SK1970a/chapter/1leppqama9gyr"
+            "label": "Chinese Text Project, Quan Tang Shi, “Leaving Baidi City in the Morning”",
+            "url": "https://ctext.org/text.pl?if=gb&node=139621"
+          },
+          {
+            "label": "Hong Kong Education Bureau teaching guide to “Leaving Baidi City in the Morning”",
+            "url": "https://www.edb.gov.hk/attachment/tc/curriculum-development/kla/chi-edu/resources/primary/lang/pdp/20250110_PDF.pdf"
+          },
+          {
+            "label": "UNESCO World Heritage Centre, “Lushan National Park”",
+            "url": "https://whc.unesco.org/en/list/778/"
           }
         ]
       },
       {
-        "title": "Death and the moon-catching legend",
+        "title": "Surviving poems and literary importance",
         "sources": [
           {
-            "label": "Peking University journal archive, “关于李白‘捉月’传说——兼及临终传说的传记意义”",
-            "url": "https://ccj.pku.edu.cn/article/info?id=271014461"
+            "label": "University of Toronto, Representative Poetry Online, “Li Bai”",
+            "url": "https://rpo.library.utoronto.ca/poets/li-bai"
           }
         ]
       }
@@ -5489,8 +5285,8 @@ window.NIHAO_CULTURE_SOURCES = [
     "category": "figures",
     "categoryName": "People",
     "slug": "qin-shi-huang",
-    "title": "秦始皇的统一：道路变通了，谁付出了代价？",
-    "titleEn": "Qin Shi Huang's Unification: What Did It Build, and What Did It Cost?",
+    "title": "秦始皇：想让所有规则都一样的皇帝",
+    "titleEn": "Qin Shi Huang: The Emperor Who Wanted Everything to Match",
     "storyPath": "../../culture/books/figures/qin-shi-huang/",
     "groups": [
       {
@@ -5523,39 +5319,17 @@ window.NIHAO_CULTURE_SOURCES = [
         "title": "Qin chronology, title, administration, and standardization — Metropolitan Museum of Art",
         "sources": [
           {
-            "label": "metmuseum.org",
-            "url": "https://www.metmuseum.org/exhibitions/listings/2017/age-of-empires/exhibition-galleries"
-          },
-          {
-            "label": "metmuseum.org",
+            "label": "The Metropolitan Museum of Art, “Qin Dynasty (221–206 B.C.)”",
             "url": "https://www.metmuseum.org/essays/qin-dynasty-221-206-b-c"
           },
           {
-            "label": "resources.metmuseum.org",
-            "url": "https://resources.metmuseum.org/resources/metpublications/pdf/The_Arts_of_Ancient_China_The_Metropolitan_Museum_of_Art_Bulletin_v_32_no_2_1973_1974.pdf"
+            "label": "The Metropolitan Museum of Art, “Age of Empires”",
+            "url": "https://www.metmuseum.org/exhibitions/listings/2017/age-of-empires/exhibition-galleries"
           }
         ]
       },
       {
-        "title": "Thies Staack, “The Pragmatics of Standardization: Document Standards and Their Implementation in Qin Administration”",
-        "sources": [
-          {
-            "label": "doi.org",
-            "url": "https://doi.org/10.1017/S0041977X23000228"
-          }
-        ]
-      },
-      {
-        "title": "Imre Galambos, “The Myth of the Qin Unification of Writing in Han Sources”",
-        "sources": [
-          {
-            "label": "real.mtak.hu",
-            "url": "https://real.mtak.hu/46320/"
-          }
-        ]
-      },
-      {
-        "title": "Qin frontier walls, state extraction, and labor",
+        "title": "Qin frontier walls and forced labor",
         "sources": [
           {
             "label": "pmc.ncbi.nlm.nih.gov",
@@ -5572,45 +5346,11 @@ window.NIHAO_CULTURE_SOURCES = [
         ]
       },
       {
-        "title": "Wilt L. Idema, *Meng Jiangnü Brings Down the Great Wall: Ten Versions of a Chinese Legend*",
-        "sources": [
-          {
-            "label": "jstor.org",
-            "url": "https://www.jstor.org/stable/j.ctvcwnjwg"
-          },
-          {
-            "label": "api.pageplace.de",
-            "url": "https://api.pageplace.de/preview/DT0400.9780295800127_A26577239/preview-9780295800127_A26577239.pdf"
-          }
-        ]
-      },
-      {
         "title": "Mausoleum of the First Qin Emperor — UNESCO World Heritage Centre",
         "sources": [
           {
-            "label": "whc.unesco.org",
+            "label": "UNESCO World Heritage Centre",
             "url": "https://whc.unesco.org/en/list/441/"
-          },
-          {
-            "label": "whc.unesco.org",
-            "url": "https://whc.unesco.org/en/decisions/5928"
-          },
-          {
-            "label": "whc.unesco.org",
-            "url": "https://whc.unesco.org/archive/2013/whc13-37com-8e-en.pdf"
-          }
-        ]
-      },
-      {
-        "title": "Mercury surveys at the burial mound",
-        "sources": [
-          {
-            "label": "sciencedirect.com",
-            "url": "https://www.sciencedirect.com/science/article/abs/pii/0375674285900160"
-          },
-          {
-            "label": "doi.org",
-            "url": "https://doi.org/10.1038/s41598-020-67305-x"
           }
         ]
       }
@@ -5730,59 +5470,34 @@ window.NIHAO_CULTURE_SOURCES = [
     "category": "figures",
     "categoryName": "People",
     "slug": "luban",
-    "title": "鲁班：他真的发明了所有木工工具吗？",
-    "titleEn": "Lu Ban: Did He Really Invent Every Carpenter's Tool?",
+    "title": "鲁班和长着小齿的草叶",
+    "titleEn": "Lu Ban and the Leaf with Tiny Teeth",
     "storyPath": "../../culture/books/figures/luban/",
     "groups": [
       {
-        "title": "Early textual figure and the Chu–Song story",
+        "title": "The complete saw legend",
         "sources": [
           {
-            "label": "Chinese Text Project, Mozi, “Gongshu”",
-            "url": "https://ctext.org/mozi/gong-shu/zhs"
-          },
-          {
-            "label": "Chinese Text Project, Mozi, book 13, “Questions of Lu”",
-            "url": "https://ctext.org/mozi/book-13/zhs"
+            "label": "Jining Municipal Bureau of Culture and Tourism, “济宁非遗记录之鲁班传说”",
+            "url": "https://whlyj.jining.gov.cn/art/2021/1/20/art_69979_2705967.html"
           }
         ]
       },
       {
-        "title": "Names, legend growth, and the craft-hero tradition",
+        "title": "Lu Ban legends and the great teacher of builders",
         "sources": [
           {
-            "label": "Chinese Social Sciences Net, “鲁班传说与中华民族共同体形成的三重逻辑”",
-            "url": "https://www.cssn.cn/wx/wx_zggdwx/202503/t20250304_5855623.shtml"
+            "label": "China Intangible Cultural Heritage Network and Digital Museum, “鲁班传说”",
+            "url": "https://www.ihchina.cn/art/detail/id/12270.html"
           }
         ]
       },
       {
-        "title": "Saws, planes, ink lines, and collective tool development",
+        "title": "Toothed tools before Lu Ban",
         "sources": [
           {
             "label": "Richard Fullagar et al., Archaeological Research in Asia, “A functional study of denticulate sickles and knives, ground stone tools from the early Neolithic Peiligang culture, China”",
             "url": "https://www.sciencedirect.com/science/article/pii/S235222672100012X"
-          },
-          {
-            "label": "Yukio Yamaguchi, Journal of Architecture, Planning and Environmental Engineering, “Chinese Carpenter's Planes: Carpenter's Tools in Jiangnan District, China, Part 2”",
-            "url": "https://www.jstage.jst.go.jp/article/aija/61/486/61_KJ00004221720/_article/-char/en"
-          },
-          {
-            "label": "Zhenjing Traditional Woodwork Museum, Google Arts & Culture, “Traditional Chinese Woodworking Tool: Ink Line”",
-            "url": "https://artsandculture.google.com/story/traditional-chinese-woodworking-tool-ink-line-zhenjing-woodworking-institute/mAUhO8AhKclOKQ?hl=en"
-          }
-        ]
-      },
-      {
-        "title": "The *Lu Ban Jing* and later workshop knowledge",
-        "sources": [
-          {
-            "label": "Palace Museum, “《鲁班经匠家镜》”",
-            "url": "https://www.dpm.org.cn/ancient/yuanmingqing/148044.html"
-          },
-          {
-            "label": "Wang Ermin, Academia Sinica, “中國民間市井營造工匠日用之《魯班經》”",
-            "url": "https://www.mh.sinica.edu.tw/MHDocument/Publication/Publication_622.pdf"
           }
         ]
       }

@@ -1,57 +1,61 @@
-> Difficulty: Hard
+> Difficulty: Medium
 
-# Li Bai: When a Poet Becomes a Legend
+# Li Bai: The Poet Immortal
 
-## Is the Li Bai We Know a Poet—or a Legend?
+## When Moonlight Became Frost
 
-“Moonlight before my bed—I think it might be frost upon the ground. I raise my head and look at the bright moon; I lower it, thinking of home.” Many children first meet Li Bai through these four lines from “Quiet Night Thought.” The poem links moonlight, a moment of confusion, and homesickness. It is short enough to say in one breath, yet it can stay with a reader for years.
+In *Quiet Night Thought*, Li Bai looked at moonlight on the ground and thought it looked like frost. He looked up at the moon, then thought of home far away.
 
-But the words everyone knows today are not exactly the same in every old copy. Some surviving editions from the Song dynasty say, “Before the bed, I look at moonlight,” and later, “I raise my head to see the mountain moon.” By the Ming dynasty, some collections already used the familiar combination “bright moonlight” and “look at the bright moon.” Later collections and schoolbooks helped that version become standard. This does not make the poem fake. It shows that a poem traveling for more than a thousand years passes through copying, printing, choosing, and editing. When we recite Li Bai, we are also reciting the history of a book on the move.
+The poem is short, but people have remembered it for more than a thousand years. Li Bai had a special gift: where someone else saw a patch of moonlight, he saw cold frost, a distant home, and a traveler who could not sleep.
 
----
+Li Bai lived long ago. As a young man, he loved books, swords, and the thought of faraway places. When he grew older, he did not stay in one town. He traveled by boat, on horseback, and on foot to see more of the world.
 
-## Even His Birthplace Is Hidden in Conflicting Records
-
-Li Bai was probably born in 701, but the surviving records do not all agree about his birthplace or family. From early prefaces and a later tomb inscription, many scholars think he was born near Suyab in Central Asia and moved with his family to Shu—today's Sichuan—when he was about five. Other Tang sources place his birth in Shu. Accounts also disagree about his ancestors and his father's work.
-
-We can say with more confidence that Li Bai grew up in Sichuan, where he read widely, practiced swordsmanship, and learned about Daoist thought. Saying “he was certainly born in Suyab” flattens complicated evidence. Turning his family into mysterious merchants, nobles, or outsiders goes beyond what can be proved. A biography is sometimes less like a straight line of dates and more like an old map, with clear roads in some places and blank spaces in others.
+Wherever Li Bai went, poems followed.
 
 ---
 
-## He Traveled—but He Also Wanted a Public Life
+## When the Milky Way Fell from the Sky
 
-In his twenties, Li Bai left Sichuan. Over the years he traveled along the Yangtze River, visited Chang'an, and passed through many towns and regions. He met friends, sought introductions to powerful people, and wrote letters explaining what he could do. He hoped for a chance to use his talents in public life. He did not spend his whole life drinking and writing alone in the mountains. Travel gave him landscapes and friendships, but it also helped him build connections and look for a way into politics.
+Once, Li Bai stood before a waterfall on Mount Lu. Mount Lu is a mountain area in southern China, filled with peaks, valleys, streams, and waterfalls. Sunlight shone through the mist as white water thundered over the high cliff.
 
-When Li Bai wrote about nature, he could suddenly make the world feel enormous. In “Viewing the Waterfall at Mount Lu,” he wrote, “The flying stream plunges three thousand feet—as if the Milky Way were falling from the sky.” The waterfall was not measured at exactly three thousand feet, and the Milky Way did not really fall. Exaggeration lets us feel the force of the water and the height of the cliff before we picture the poet looking up in wonder. A poem can show how Li Bai used language. It cannot automatically prove which rock he stood on, what the weather was like, or the one exact thought in his mind.
+In *Viewing the Waterfall at Mount Lu*, he wrote that the water plunged three thousand feet, as if the Milky Way had fallen from the sky. You can almost hear the crash, tip your head back, and feel the cold spray on your face.
 
----
+Li Bai knew how to make nature feel huge and alive. The Yellow River seemed to rush down from the sky. The moon became a friend beside him on the road. A waterfall became a river tumbling out of the stars.
 
-## His Palace Role Was Not a Modern Job—and Court Tales Are Not Video
-
-In 742, Emperor Xuanzong called Li Bai to Chang'an to serve as a Hanlin literary attendant. The title can sound like a modern government office, but his role was closer to being a talented writer on call for the emperor. He drafted writing and joined court activities; he did not help run the whole government. About two years later, he left the court. People often summarize this part of his life by saying, “The palace could not hold a free poet.” Yet Li Bai truly wanted a political chance, and leaving included disappointment, not just a carefree escape.
-
-Later tales made those two years much more dramatic. In them, a drunken Li Bai writes poems while the emperor's favorite consort, Yang Guifei, grinds his ink and the powerful palace attendant Gao Lishi removes his boots. These scenes survive in later notes and stories, not in evidence strong enough to treat them like video from the room. Another tale says that, as a boy, Li Bai saw an old woman grinding an iron bar into a needle and returned to his studies after learning not to give up. That story appears in sources written centuries after his death. One kind of tale celebrates his pride; the other teaches persistence. Both reveal the Li Bai later readers wanted, but neither can replace a biography.
+In his poems, mountains, rivers, and moonlight did not sit still. They rushed, flashed, and sang.
 
 ---
 
-## Du Fu Really Knew Him, but They Did Not Travel Together for Years
+## The Poet Entered the Palace
 
-After leaving Chang'an, Li Bai met Du Fu, a poet eleven years younger, around 744. Their poems are evidence that the friendship was real. Du Fu later wrote several poems remembering and worrying about Li Bai, and Li Bai also addressed poems to Du Fu. But they met only a limited number of times. They were not a poetry team traveling together every day for years. Their poems made a short time together last much longer than the meetings themselves.
+By the time Li Bai was in his forties, his poems were famous. Even the emperor of the Tang dynasty had read them. The emperor invited Li Bai to the capital city and gave him a place among the palace writers.
 
-A far greater change soon arrived. In 755, the An Lushan Rebellion tore apart Tang cities, roads, and the imperial court. Li Bai later joined the forces of Prince Li Lin, also called the Prince of Yong. During a struggle inside the royal family, the prince was defeated. Li Bai was arrested, imprisoned, and eventually sentenced to exile in Yelang, far to the southwest. Sources do not agree completely about why he joined or how much he understood. What is clear is that this choice pulled him into dangerous real politics, far beyond the romantic picture of moonlight, wine, and mountains.
+Li Bai was thrilled. He hoped the emperor would let him help with important matters. But the emperor mostly wanted his poems and beautiful words, not his advice.
 
----
+The palace was grand, but the work was not what Li Bai had hoped for. After about two years, he left the capital and returned to mountains, friends, and the open road.
 
-## Pardoned on the Road—and No, He Did Not Die Catching the Moon
-
-In 759, Li Bai received a pardon while traveling toward Yelang, so he did not have to complete his exile. He wrote poems looking back on the disaster and kept searching for a way to serve. Late in life, he even tried to join a military campaign, but illness forced him to turn back. He died in Dangtu, in today's Anhui Province, in 762. Sources close to his lifetime describe him dying after becoming ill, though the exact illness remains uncertain.
-
-Over the centuries, a different ending became famous. In the story, Li Bai is drunk on a boat. He sees the moon in the water, reaches down to catch it, falls in, and drowns. No strong historical evidence supports this “catching the moon” tale, but it joins wine, river, moonlight, and death in a scene that feels like a poem. It lasted not because its evidence was better, but because it perfectly fit the image of the “Immortal Poet.” A careful reader can understand two things at once: a legend can be powerful, and it can still be a legend.
+Li Bai had made it inside the palace. Yet many of the poems people remember came from the life he lived beyond its gates.
 
 ---
 
-## Let the Poems and Legends Stand on Their Own
+## A Light Boat Raced Down the River
 
-The Li Bai we recite comes from both a real person and more than a thousand years of growing imagination. The real Li Bai traveled, sought a public role, served at court, made friends, and chose a side during a war—with serious results. The legendary Li Bai made powerful people remove his boots, learned persistence from an iron bar, and finally chased the moon out of this world.
+When Li Bai was in his fifties, a great war broke out. The Tang emperor fled the capital, and princes in the royal family fought for power. Li Bai joined one prince's group, but that prince soon lost.
 
-We do not have to destroy the legends to see the poet clearly. We only need the right labels. Poems are surviving works. A life story must be tested against early records. Legends show how later people chose to remember him. Then, when we look up at the moon, we see more than an endlessly carefree man. We see a poet who knew ambition, disappointment, friendship, war, and illness—and still made language shine.
+Li Bai was put in prison. Then he was ordered to travel to a faraway place as punishment. Before he reached it, the government announced a pardon—an order that allowed some prisoners, including Li Bai, to go free.
+
+After his pardon, Li Bai traveled down the Yangtze River by boat. In *Leaving Baidi City in the Morning*, he wrote of a light boat racing past mountain after mountain. Monkeys were still calling from both riverbanks, and already the boat had swept past ten thousand peaks.
+
+The poem feels quick and light, like a boat that is finally free to fly.
+
+---
+
+## More Than a Thousand Years Later
+
+Li Bai died in 762. About one thousand of his poems have survived. He and Du Fu are often remembered as the two greatest poets of the Tang dynasty.
+
+People gave Li Bai a nickname: the Poet Immortal. It does not mean that he had magic powers. It means that his imagination seemed to have no limits. A waterfall could fall from the Milky Way. The Yellow River could pour out of the sky. The moon could keep a lonely traveler company.
+
+More than a thousand years later, many children in China still learn *Quiet Night Thought*. They also read *Viewing the Waterfall at Mount Lu* and *Leaving Baidi City in the Morning*, following Li Bai as he watches the moon, stands before rushing water, and sails between high mountains.
+
+Li Bai's world is long gone, but his poems still help people see the moon, mountains, and rivers with fresh eyes.

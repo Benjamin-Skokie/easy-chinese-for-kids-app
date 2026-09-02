@@ -1,140 +1,142 @@
 ---
-title_zh: 鲁班：他真的发明了所有木工工具吗？
-title_en: Lu Ban: Did He Really Invent Every Carpenter's Tool?
+title_zh: 鲁班和长着小齿的草叶
+title_en: Lu Ban and the Leaf with Tiny Teeth
 slug: luban
 category: figures
 difficulty: 中等
 back_href: ../../../../index.html#culture-figures
-style_notes: "用 --- 分隔 frontmatter；正文强调优先用 *斜体*；尽量不用 **粗体**。"
+style_notes: "面向 6–10 岁儿童的单一故事版本；英文为主要阅读文本，中文为自然、简明的参考稿。"
 ---
 
 [hero]
-title_zh: 鲁班：他真的发明了所有木工工具吗？
-title_en: Lu Ban: Did He Really Invent Every Carpenter's Tool?
+title_zh: 鲁班和长着小齿的草叶
+title_en: Lu Ban and the Leaf with Tiny Teeth
 [/hero]
 
 [section]
 page: 1
 layout: text-wrap-image
-heading_zh: 一片草叶，真的变成了第一把锯吗？
-heading_en: Did One Leaf Really Become the First Saw?
+heading_zh: 一座宫殿需要多少木头？
+heading_en: How Much Wood Does a Palace Need?
 image: leaf-inspired-saw.webp
-caption_zh: 现代传说插图，不是历史现场。草叶划手、启发鲁班造锯的故事出现很晚，不能证明锯子的真实发明过程。
-caption_en: Modern illustration of a legend, not a historical scene. The tale of a leaf cutting Lu Ban's hand and inspiring a saw appeared much later and does not prove how saws began.
+caption_zh: 鲁班在山路上仔细观察刚刚划伤手指的锯齿草叶。
+caption_en: On a mountain path, Lu Ban studies the serrated leaf that has just cut his finger.
 [zh]
-一个人上山，手被带齿的草叶划破。他没有只喊疼，而是盯着叶边想：如果铁片也有一排尖齿，会不会更容易割开木头？于是，第一把锯诞生了。这个故事常被安在鲁班身上，听起来像一次漂亮的“发现时刻”。
+一个古老传说讲到，鲁班接到了一件大工程：建造一座宫殿。屋顶需要横梁，大门需要木板，房间还需要一根根柱子。工人们要准备的木头多得吓人。
 
-问题是，早期文献没有记录这片叶子，也没有证据说明锯由鲁班一人突然发明。考古发现中，早在鲁班所处时代以前几千年，中国一些新石器时代遗址已经有带齿的石制切割工具。它们不等于后来的木工铁锯，却说明“用一排齿切割”的知识早已在发展。发明史通常不像灯泡一亮，更像许多人把一个办法反复试验、改进，再交给下一代。
+从早到晚，山上都是斧头砍树的声音。木屑四处飞，工人们的胳膊越来越酸，可木料堆还是不够大。
+
+鲁班决定亲自上山看看。山路又窄又陡，他一脚踩空，连忙伸手抓住旁边的草。
+
+“哎哟！”
+
+鲁班马上松开手。一片草叶竟然把他的手指划破了。
 [/zh]
 [en]
-A man climbs a mountain and cuts his hand on a leaf with tiny teeth. Instead of only crying out, he studies the edge and wonders, “What if a piece of iron had teeth like these? Would it cut wood more easily?” Then he invents the first saw. This story is often told about Lu Ban, and it sounds like a perfect discovery moment.
+One old legend says that Lu Ban was once given a huge job: build a palace. The roof needed beams. The doors needed boards. The rooms needed row after row of wooden columns. His workers needed more wood than they could cut.
 
-The problem is that early texts say nothing about this leaf, and no evidence shows that Lu Ban suddenly invented the saw by himself. Archaeologists have found toothed stone cutting tools at Chinese Neolithic sites thousands of years before Lu Ban's time. Those tools were not the same as a later iron carpenter's saw, but they show that people had long been developing the idea of cutting with a row of teeth. Invention usually looks less like one light switching on and more like many people testing an idea, improving it, and passing it on.
+From morning until night, axes thudded against trees. Chips flew. Arms grew sore. Still, the pile of logs was not nearly big enough.
+
+Lu Ban decided to climb the mountain and see the work for himself. The path was steep and narrow. His foot slipped, and he grabbed a handful of grass.
+
+“Ouch!”
+
+Lu Ban quickly let go. One of the leaves had sliced his finger.
 [/en]
 [/section]
 
 [section]
 page: 2
-layout: text-only
-heading_zh: 早期书里的名字是公输般、公输盘，也叫公输子
-heading_en: Early Books Call Him Gongshu Ban, Gongshu Pan, or Master Gongshu
+layout: text-wrap-image
+heading_zh: 叶子边上的小齿
+heading_en: The Tiny Teeth on the Leaf
+image: workshop-problem-solver.webp
+caption_zh: 回到工坊以后，鲁班对照草叶，在铁片边上做出一排小齿。
+caption_en: Back in his workshop, Lu Ban copies the leaf's tiny teeth onto a strip of iron.
 [zh]
-鲁班并不完全是后人凭空创造的人物。战国时期形成的《墨子》等文献写到一位以技巧出名的人，名字写作公输般、公输盘，也尊称公输子。因为古书在长期抄写中会出现通用字和不同写法，后人又把他和鲁国联系起来，“鲁班”这个名字才越来越常见。
+鲁班差一点就把草叶扔掉了。可是，他停下来，把它拿近了一点。
 
-这些早期文字让我们看到的是一位擅长器械和工程的巧匠，却没有给出完整的出生证明、学徒日记和发明清单。连他的确切生卒年和籍贯，后世说法也不完全一致。因此，我们可以说公输般是鲁班传统的早期核心，却不该把所有后来的故事倒放回他的童年，仿佛那里有一台摄像机。
+叶子边上不是光滑的，而是长着一排细小的齿。鲁班小心地碰了碰。一颗小齿勾住了他的皮肤。
+
+这么软的叶子，靠着一排小齿都能划破手。要是把一排小齿做在更硬的东西上，会怎么样？
+
+鲁班把草叶带回工坊。他找来一条薄薄的铁片，在一边做出一排小齿，然后把铁片放到木头上，前后拉动。
+
+第一次，只留下了几道浅浅的划痕。鲁班把小齿修得更整齐，又试了一次。铁齿咬进木头，一道细细的木屑落了下来。
 [/zh]
 [en]
-Lu Ban was not simply invented out of nothing. Texts formed during the Warring States period, including the *Mozi*, describe a maker famous for his skill. His name appears as Gongshu Ban or Gongshu Pan, and he is also called Master Gongshu. Ancient books were copied for centuries, and related characters could be written in different ways. Later readers also connected him with the state of Lu, and the name “Lu Ban” became common.
+Lu Ban almost tossed the leaf away. Then he stopped and held it closer.
 
-These early writings show a clever maker of machines and large structures. They do not give us a complete birth record, an apprentice's diary, or a list of inventions. Later accounts do not even fully agree about his exact dates and birthplace. We can say that Gongshu Ban stands at the early center of the Lu Ban tradition. We cannot run every later tale backward into his childhood as if a camera had recorded it.
+The edge was not smooth. It was lined with tiny teeth. Lu Ban touched one carefully. The little tooth caught against his skin.
+
+If a soft leaf could cut him with such tiny teeth, what could a row of teeth do on something harder?
+
+Lu Ban carried the leaf back to his workshop. He found a thin strip of iron, shaped a row of teeth along one edge, and pulled it back and forth across a piece of wood.
+
+The first try left only a few scratches. Lu Ban made the teeth more even and tried again. This time, the iron teeth bit into the wood, and a thin curl of sawdust fell to the floor.
 [/en]
 [/section]
 
 [section]
 page: 3
 layout: text-only
-heading_zh: 一场用腰带和木片进行的攻城比赛
-heading_en: A Siege Contest Played with a Belt and Wooden Pieces
+heading_zh: 山上响起一种新声音
+heading_en: A New Sound on the Mountain
 [zh]
-《墨子·公输》讲了一个紧张的故事：公输盘为楚国造攻宋用的云梯，墨子赶到楚国劝阻。他解下腰带围成一座小城，又用木片代表守城器械。公输盘九次变换攻法，墨子九次挡住；楚王最后答应不攻宋。
+鲁班带着新工具回到山上，把它放在一根木头上，前后来回拉动。
 
-我们读到的是一篇战国文本精心组织的叙事，不是两人谈话的逐字录音。它告诉我们，当时的人已经把公输盘和攻城技术连在一起，也借两位技术高手的对决追问：会制造厉害机器，就等于做了正确的事吗？故事把技术和选择放在同一张桌上。一个工具怎样使用、为谁服务，也会改变人们怎样评价它。
+沙沙，沙沙，沙沙。
+
+一颗铁齿只能咬下一点点木头。可是，一整排铁齿不停地来回移动，很快就把浅浅的划痕变成了一道深口子。
+
+工人们也试了起来。山上仍然有斧头的咚咚声，现在又多了锯子来回拉动的沙沙声。木料一根根准备好了，那堆怎么看都不够用的木头，终于越堆越高。
+
+这就是人们讲述的“鲁班发明锯子”的传说。后来，一代又一代的木匠继续讲着它。一个巨大的难题，最后竟然从一片小小的草叶那里找到了答案。
 [/zh]
 [en]
-The “Gongshu” chapter of the *Mozi* tells a tense story. Gongshu Pan builds cloud ladders for the state of Chu to attack the smaller state of Song. Mozi rushes to Chu to stop the war. He takes off his belt and lays it in a circle to stand for a city, then uses small wooden pieces as defenses. Gongshu Pan tries nine kinds of attack, and Mozi blocks all nine. At last, the king of Chu agrees not to attack Song.
+Lu Ban carried the new tool back up the mountain. He set it against a log and moved it back and forth.
 
-What we have is a carefully shaped story in a Warring States text, not a word-for-word recording of the meeting. It shows that people already linked Gongshu Pan with siege technology. It also uses a contest between two technical experts to ask a larger question: Does knowing how to build a powerful machine mean it is right to build it? The story places skill and choice on the same table. How a tool is used—and whom it serves—changes how people judge it.
+Scrape, scrape, scrape.
+
+One iron tooth could take only a tiny bite of wood. But a whole row of teeth, moving again and again, soon turned a shallow scratch into a deep cut.
+
+The workers tried it too. Axes still thudded on the mountain, but now a new sound joined them: the steady scrape of saws moving back and forth. One log after another was ready to use. At last, the pile that had looked far too small began to grow.
+
+That is the legend people told about Lu Ban and the first saw. Woodworkers passed it down for generations: a huge problem had found its answer in one tiny leaf.
 [/en]
 [/section]
 
 [section]
 page: 4
 layout: text-wrap-image
-heading_zh: 锯、刨和墨斗后面，其实站着许多双手
-heading_en: Many Hands Stand Behind the Saw, Plane, and Ink Line
-image: workshop-problem-solver.webp
-caption_zh: 现代综合想象图，不是战国作坊复原。画中的大锯、刨、角尺和榫接工具来自不同时期的木工传统，不能全部认作鲁班本人使用或发明的器物。
-caption_en: Modern composite scene, not a reconstruction of a Warring States workshop. The saw, plane, square, and joinery tools reflect woodworking traditions from different periods and cannot all be treated as Lu Ban's own tools or inventions.
-[zh]
-后来，锯、刨、钻、曲尺、墨斗等许多工具都被说成鲁班发明。墨斗把沾墨的细线绷紧，再在木头上轻轻一弹，就能留下笔直的线；这样的工具确实显示出木匠怎样把经验变成准确的做法。可是，“后来叫鲁班尺”不能证明尺最早由鲁班制造，“木匠尊敬鲁班”也不能替代工具本身的年代证据。
-
-工具会随着材料、任务和使用者改变。一个木匠调整锯齿，另一个改进握柄；师傅把画线的方法教给徒弟，徒弟又为新的木料修改工具。许多改进者没有把名字写进书里。把一大串发明放到鲁班一个人名下，容易记，却会把无数无名工匠从画面中擦掉。更准确的故事是：也许有杰出的个人，但一门手艺的知识通常属于长时间合作的群体。
-[/zh]
-[en]
-Later generations credited Lu Ban with the saw, plane, drill, square, ink line, and many other tools. An ink line stretches an inked string tight and snaps it against wood, leaving a straight mark. It is a wonderful example of carpenters turning experience into a precise method. But calling a measuring tool a “Lu Ban ruler” in later times does not prove that he made the first one. Carpenters honoring Lu Ban is not a substitute for dating the tools themselves.
-
-Tools change with materials, jobs, and users. One carpenter adjusts the teeth of a saw. Another improves the handle. A master teaches an apprentice how to snap a straight line, and the apprentice changes the tool for a new kind of wood. Many of these makers never put their names in a book. Giving a long list of inventions to one Lu Ban is easy to remember, but it can erase thousands of unnamed craftspeople. A more accurate story allows room for outstanding individuals while recognizing that the knowledge of a craft usually belongs to a community working across time.
-[/en]
-[/section]
-
-[section]
-page: 5
-layout: text-only
-heading_zh: 木鸟飞三天：是古代飞机，还是会飞的故事？
-heading_en: A Wooden Bird Flies for Three Days: Aircraft or Story?
-[zh]
-《墨子·鲁问》还说，公输子用竹木削成一只鸟，飞了三天没有落下。墨子在故事里却不赞美它，反而说，一个小小的车轴零件能承担很重的车，更有实际用处。这里的重点不是宣布世界上第一架飞机诞生，而是讨论“巧”：只让人惊讶的东西，和真正帮助人的东西，哪一种更值得称赞？
-
-没有留下来的实物、图纸或制造说明，我们无法知道“飞”指什么，也不能重造这只木鸟。云梯也是如此：《墨子》确实说公输盘已经为楚国造了云梯，却没有证明云梯从来没有更早形式，更不能证明后来两千年的攻城梯都照搬同一设计。古书可以证明一个故事在当时已经流传；它不一定能证明故事里的每个机械细节。
-[/zh]
-[en]
-The “Questions of Lu” chapter of the *Mozi* also says that Master Gongshu carved a bird from bamboo and wood and made it fly for three days. Yet Mozi does not praise the bird. He says that a tiny wooden part holding a heavily loaded cart is more useful. The point is not to announce the world's first airplane. The story is asking what “skill” really means: Is a surprising object more admirable than one that helps people?
-
-With no surviving object, plan, or building instructions, we cannot know exactly what “flew” meant or rebuild the wooden bird. The cloud ladder needs the same care. The *Mozi* does say that Gongshu Pan had built cloud ladders for Chu. It does not prove that no earlier form existed, or that siege ladders stayed unchanged for the next two thousand years. An old text can prove that a story was being told. It cannot always prove every mechanical detail inside the story.
-[/en]
-[/section]
-
-[section]
-page: 6
-layout: text-wrap-image
-heading_zh: 当一个巧匠变成整个行业的祖师
-heading_en: How One Maker Became the Ancestor of a Craft
+heading_zh: 一代代木匠的大老师
+heading_en: A Teacher for Generations
 image: remembered-by-woodworkers.webp
-caption_zh: 现代想象的祖师祭拜场景，不对应某一地点或年代的仪式。真实的鲁班信仰因行业、地区和时代不同而有变化。
-caption_en: Modern imagined scene of honoring a craft ancestor, not one documented ceremony at a known place and date. Real Lu Ban traditions varied by trade, region, and period.
+caption_zh: 鲁班在木工作坊里向年轻木匠示范，两根木料怎样牢牢接在一起。
+caption_en: In a working carpenter's yard, Lu Ban shows young builders how two wooden beams fit together.
 [zh]
-唐代以后的材料已经显示工匠敬奉鲁班；到了明清时期，木匠、建筑匠和其他行业更广泛地把他当作祖师。祖师不一定是每件工具的第一位发明者。他可以是一个共同名字，让分散在不同作坊、很少被史书记录的人拥有行业记忆、规矩和自豪感。
+许多年过去了，又过去了许多个世纪。传说里的宫殿消失了，鲁班和草叶的故事却从一个工坊传到了另一个工坊。
 
-一本著名的木工营造书叫《鲁班经》，书名很容易让人以为是鲁班亲笔写的。可是现存版本形成于明代，离战国时代已经约两千年；故宫所藏万历刻本还清楚写着明代工匠官员午荣汇编、章严同集、周言校正。书中保存了房屋、家具尺寸和工匠经验，也混合了吉凶、风水等时代观念。它是研究明代工匠世界的重要资料，却不是鲁班留下的笔记本。
+中国的木匠渐渐把鲁班尊为祖师爷，也就是这门手艺最早的大老师。学徒学习怎样量木板、磨刀刃、把两块木头接牢时，也会听到鲁班的名字。
+
+工具当然不是鲁班一个人全都发明的。无数工匠一代代把它们改得更好。可是，鲁班的名字慢慢代表了好木匠都需要的本领：仔细的眼睛、灵巧的双手，还有一次不成就再试一次的耐心。
 [/zh]
 [en]
-Sources after the Tang dynasty show craftspeople honoring Lu Ban. By the Ming and Qing dynasties, carpenters, builders, and workers in other trades widely treated him as a craft ancestor. An ancestor of a craft does not have to be the first inventor of every tool. He can be a shared name that gives people in scattered workshops—people rarely noticed by history books—a common memory, rules, and pride.
+Years passed. Then centuries. The palace in the legend disappeared, but the story of Lu Ban and the leaf traveled from one workshop to the next.
 
-A famous building and woodworking manual is called the *Lu Ban Jing*, or “Lu Ban Classic.” The title makes it sound as if Lu Ban wrote it himself. But the surviving book took shape in the Ming dynasty, about two thousand years after the Warring States period. A Ming edition in the Palace Museum even names the men who compiled, collected, and checked it. The book preserves house plans, furniture measurements, and craft knowledge, along with ideas about lucky and unlucky building. It is valuable evidence for the world of Ming craftspeople, but it is not Lu Ban's personal notebook.
+Chinese woodworkers came to honor Lu Ban as the first great teacher of their craft. Apprentices heard his name as they learned to measure boards, sharpen blades, and fit pieces of wood together.
+
+Lu Ban did not invent every tool by himself. Countless builders improved their tools over many generations. But his name came to stand for the things every good builder needs: careful eyes, skillful hands, and the patience to try again when something does not work.
 [/en]
 [/section]
 
 [ending]
-heading_zh: 那么，鲁班到底发明了什么？
-heading_en: So What Did Lu Ban Actually Invent?
+heading_zh: 人们为什么记得鲁班
+heading_en: Why People Remember Lu Ban
 [zh]
-现有证据不能给鲁班一张可靠的个人发明清单。早期文献记住了公输般的技巧、攻城器械和关于木鸟的奇谈；后来的行业传统又把更多工具、建筑和故事聚到他身上。历史人物和文化英雄，就这样一层一层合在了一起。
-
-这不是把鲁班“变小”，而是把工匠世界看得更大。他的名字可以继续代表观察、计算和动手解决问题；同时，我们也能看见每一件成熟工具背后，那些反复试错、互相教学、没有留下姓名的手。鲁班真正代表的，也许不是“一个人发明了一切”，而是“一门手艺从来由很多人一起完成”。
+这就是鲁班为什么有名。他不只是草叶传说里的那个人，也成了中国木匠一代代共同尊敬的大老师。
 [/zh]
 [en]
-The evidence cannot give Lu Ban a trustworthy personal list of inventions. Early texts remember Gongshu Ban's skill, siege machines, and the strange tale of a wooden bird. Later craft traditions gathered more tools, buildings, and stories around his name. A historical maker and a cultural hero slowly became one figure.
-
-That does not make Lu Ban smaller. It makes the world of craft larger. His name can still stand for close observation, careful measuring, and solving problems with one's hands. At the same time, we can see the unnamed hands behind every mature tool—testing, failing, improving, and teaching. Perhaps Lu Ban's deepest meaning is not “one person invented everything,” but “a craft is always made by many people.”
+That is why Lu Ban is still famous. He became more than the man in the story of the leaf. He became the great teacher honored by generations of Chinese woodworkers.
 [/en]
 [/ending]
