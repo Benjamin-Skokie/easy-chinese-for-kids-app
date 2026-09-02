@@ -35,7 +35,7 @@ Required order:
 1. Generate or prepare the source image.
 2. Convert it to the final repo asset, usually with `cwebp`.
 3. Verify the output file exists and is not `0 bytes`.
-4. Only then run the build script that copies images into `books/` and `experiments/`.
+4. Only then run the build script that copies images into `books/`.
 
 Reason:
 
