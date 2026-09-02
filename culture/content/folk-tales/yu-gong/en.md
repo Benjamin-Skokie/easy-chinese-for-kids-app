@@ -1,103 +1,47 @@
 > Difficulty: Easy
 
-# Yu Gong Moves the Mountains: One Old Man's Impossible Job
+# Yu Gong Moves the Mountains
 
-## A Mountain Blocks the Door
+## Every Trip Began with Two Mountains
 
-Long, long ago, there was an old man named Yu Gong.
+Long ago, an old man of almost ninety lived at the foot of two enormous mountains. His name was Yu Gong, which means something like “the Foolish Old Man.”
 
-In the story, two huge mountains stood right in front of his home: Taihang Mountain and Wangwu Mountain.
+Mount Taihang and Mount Wangwu stood directly in front of his home. Every trip began with a long walk around them. Visit a friend? Walk around the mountains. Bring something home? Walk around them again. By the time the family returned, their baskets felt light and their legs felt as heavy as rocks.
 
-Every time his family wanted to go out, they had to walk a long way around.
-
-Visiting others was hard.
-
-Traveling anywhere was hard.
-
-One day, Yu Gong gathered his whole family and said, "These mountains have blocked us long enough. Let us dig them flat together."
-
-Everyone stared for a moment.
-
-Then they said, "All right."
+One day, Yu Gong stared at the mountains and said, “No more walking around. Let us dig a road straight through!” The family went quiet. His wife asked one very good question: “Where will we put all the dirt and stones?” The family thought for a moment. Then they chose a place far from home where they could leave it all.
 
 ---
 
-## The Whole Family Starts Digging
+## Thud! Scrape! The First Basket Is Full.
 
-The next morning, before the sky was bright, Yu Gong took his sons and grandsons up the mountain.
+Early the next morning, Yu Gong came to the mountain with his sons and grandchildren. Thud! His hoe hit a rock. Scrape! A shovel dug into the dirt. A young boy from the next house saw them and came running to help.
 
-They carried hoes and poles for carrying baskets.
+One swing moved only a little dirt. One basket held only a few stones. But whenever a basket was full, they carried it away. Whenever a small piece came loose, they started on the piece behind it.
 
-One swing of the hoe scraped out only a little dirt.
-
-Then they had to carry that dirt, basket by basket, all the way to a river bend.
-
-When the dirt fell into the river, the river hardly seemed to change.
-
-Day after day, year after year, Yu Gong's family dug from morning until dark.
-
-When a hoe wore short, they used a new one.
-
-When a shoulder pole broke, they cut bamboo and made another.
-
-People from nearby villages stood on the hillside to watch.
-
-They watched and laughed.
+In summer, sweat dripped from their noses. In winter, their fingers turned red with cold. When they were tired, they sat down for water. Then they stood up and began again. The mountain still reached into the clouds, but a small notch had appeared at its foot.
 
 ---
 
-## A Smart Man Laughs at Him
+## “How Could You Ever Finish?”
 
-By the Yellow River lived another old man named Zhi Sou, the Wise Old Man.
+Another old man saw them digging and laughed until his beard shook. People called him Zhi Sou, which means “the Wise Old Man.” The story puts the “wise” man and the “foolish” man face to face on purpose.
 
-He came with his walking stick and saw Yu Gong's whole family sweating on the mountain.
+Zhi Sou pointed at Yu Gong. “You are already so old! You cannot even remove one small corner of this mountain. How could you possibly move two?”
 
-He laughed and could hardly stop.
-
-"Yu Gong, Yu Gong," he said. "You are already so old. Do you really think you can dig away a mountain? Is this not a dream?"
-
-Yu Gong put down his hoe and looked at him.
-
-"You are the foolish one," he said.
-
-"When you die, your son will still be here, but you have left him nothing. When I die, my son will keep digging. When my son dies, my grandson will keep digging. After my grandson, there will be more grandchildren after him.
-
-"Our children and grandchildren will not end. But these two mountains will not grow any taller.
-
-"Dig away one inch, and there is one inch less. Dig away one foot, and there is one foot less.
-
-"One day, they will be flat."
-
-Zhi Sou opened his mouth for a long time.
-
-He could not say a word.
+Yu Gong rested his hands on his hoe and waited until the laughter stopped. “If I cannot finish, my children will continue. Then their children will continue. My family will keep growing, but the mountains will not. If we never stop, why should the road stay closed forever?” This time, Zhi Sou opened his mouth but had nothing to say.
 
 ---
 
-## The Lord of Heaven Sends Help
+## Morning Sunlight Reaches the Door
 
-Later, in the story, the Lord of Heaven is moved by Yu Gong's stubborn heart.
+In this old fable, gods and spirits lived in the sky. Day after day, a mountain spirit watched Yu Gong's family dig. They really were not going to stop. He flew to the Lord of Heaven and told him what was happening. Impressed by the family's determination, the Lord sent two mighty spirits. Each one was strong enough to carry a mountain.
 
-He sends two mighty spirits down to earth.
+That night, each spirit bent down, lifted one mountain onto his back, and carried it far away. The next morning, Yu Gong opened his door and froze. No dark wall of rock. No twisting path. Golden sunlight reached all the way to his home, and a wide, straight road stretched ahead.
 
-They carry Taihang Mountain and Wangwu Mountain away.
-
-From then on, the road in front of Yu Gong's home is open.
+Yu Gong never thought he could move both mountains by himself. He believed his children and grandchildren would keep going, one generation after another. That determination moved the Lord of Heaven to help.
 
 ---
 
-## Summary
+## The Mountains Were Huge. He Kept Going.
 
-"Yu Gong Moves the Mountains" is not a real history record.
-
-It is a story with a lesson.
-
-The most important part is not that spirits from Heaven come to help at the end.
-
-The part people remember is Yu Gong's answer:
-
-If I cannot finish, my son will continue. If my son cannot finish, my grandson will continue.
-
-The mountains are high, but they will not keep growing higher.
-
-This story is about a kind of strength that refuses to back down.
+Yu Gong knew he might never see the road finished. Still, he kept digging, and his family kept digging beside him. That is why people remember this story: the mountains were enormous, but Yu Gong refused to give up.

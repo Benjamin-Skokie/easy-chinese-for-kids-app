@@ -2836,6 +2836,238 @@ window.NIHAO_CULTURE_SOURCES = [
     ]
   },
   {
+    "category": "folk-tales",
+    "categoryName": "Folk Tales",
+    "slug": "chang-e-moon",
+    "title": "嫦娥奔月",
+    "titleEn": "Chang'e Flies to the Moon",
+    "storyPath": "../../culture/books/folk-tales/chang-e-moon/",
+    "groups": [
+      {
+        "title": "The ancient stories are much shorter",
+        "sources": [
+          {
+            "label": "Chinese Text Project, Huainanzi passages collected under “Heng'e”",
+            "url": "https://ctext.org/dictionary.pl?char=%E5%A7%AE%E5%A8%A5&if=gb"
+          },
+          {
+            "label": "Wikisource, Lu Xun, A Brief History of Chinese Fiction, Chapter 2",
+            "url": "https://zh.wikisource.org/zh-hans/%E4%B8%AD%E5%9C%8B%E5%B0%8F%E8%AA%AA%E5%8F%B2%E7%95%A5/%E7%AC%AC%E4%BA%8C%E7%AF%87"
+          }
+        ]
+      },
+      {
+        "title": "The popular Peng Meng version",
+        "sources": [
+          {
+            "label": "Hong Kong Education Bureau, “Mid-Autumn Festival: The Legend of Hou Yi and Chang'e”",
+            "url": "https://www.edb.gov.hk/attachment/en/curriculum-development/kla/eng-edu/Chi_Fest/Mid-AutumnFestival/PartA.html"
+          }
+        ]
+      },
+      {
+        "title": "Chang'e and the Jade Rabbit in moon imagery",
+        "sources": [
+          {
+            "label": "National Museum of China, “Moon Palace Bronze Mirror”",
+            "url": "https://www.chnmuseum.cn/zp/zpml/csp/202008/t20200826_247444.shtml"
+          }
+        ]
+      },
+      {
+        "title": "Mid-Autumn moon and reunion",
+        "sources": [
+          {
+            "label": "Smithsonian Center for Folklife and Cultural Heritage, “Hou Yi and the Ten Suns: A Chinese Folktale”",
+            "url": "https://www.si.edu/object/yt_5JEUEOmyduA"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "folk-tales",
+    "categoryName": "Folk Tales",
+    "slug": "yu-gong",
+    "title": "愚公移山",
+    "titleEn": "Yu Gong Moves the Mountains",
+    "storyPath": "../../culture/books/folk-tales/yu-gong/",
+    "groups": [
+      {
+        "title": "The story text",
+        "sources": [
+          {
+            "label": "Hong Kong Education Bureau, recommended classical passage, “Yu Gong Moves the Mountains” from Liezi",
+            "url": "https://www.edb.gov.hk/attachment/tc/curriculum-development/kla/chi-edu/recommended-passages/ks3_03_text.pdf"
+          }
+        ]
+      },
+      {
+        "title": "The fable and its common meaning",
+        "sources": [
+          {
+            "label": "State Council Information Office of the People's Republic of China, “Traditional Culture: Yu Gong Moves the Mountains”",
+            "url": "https://english.scio.gov.cn/featured/chinakeywords/2024-08/30/content_117397300.htm"
+          },
+          {
+            "label": "Jiyuan Municipal Government, “The Spirit of Yu Gong Moves the Mountains”",
+            "url": "https://rbj.jiyuan.gov.cn/rbj_xwzx/rbj_rsdt/t373200.html"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "folk-tales",
+    "categoryName": "Folk Tales",
+    "slug": "qixi-cowherd-weaver-girl",
+    "title": "牛郎织女",
+    "titleEn": "The Cowherd and the Weaver Girl",
+    "storyPath": "../../culture/books/folk-tales/qixi-cowherd-weaver-girl/",
+    "groups": [
+      {
+        "title": "The popular children's-story sequence",
+        "sources": [
+          {
+            "label": "Ministry of Culture and Tourism of the People's Republic of China, “Qixi: The Origin and Customs of the Traditional Qiqiao Festival”",
+            "url": "https://www.mct.gov.cn/whzx/whyw/201112/t20111201_707482.htm"
+          },
+          {
+            "label": "Fuzhou Municipal People's Government, “The Qixi Festival Grew from Star Worship and Qiqiao Customs”",
+            "url": "https://www.fuzhou.gov.cn/zgfzzt/zjrc/mdfc/msfq/202210/t20221026_4457393.htm"
+          }
+        ]
+      },
+      {
+        "title": "The tale grew over many centuries",
+        "sources": [
+          {
+            "label": "Beijing Civilization Office, “Qixi Scenes in Beijing”",
+            "url": "https://www.bjwmb.gov.cn/zxfw/wmwx/wskt/t20180817_877616.htm"
+          }
+        ]
+      },
+      {
+        "title": "Qixi means the evening of the seventh day",
+        "sources": [
+          {
+            "label": "Central Commission for Discipline Inspection, “The Character Xi: What Evening Is This?”",
+            "url": "https://m.ccdi.gov.cn/content/36/84/28914.html"
+          }
+        ]
+      },
+      {
+        "title": "The stars behind the story",
+        "sources": [
+          {
+            "label": "NASA Science, “The Next Full Moon Is a Supermoon; the Sturgeon Moon”",
+            "url": "https://moon.nasa.gov/news/196/the-next-full-moon-is-a-supermoon-the-sturgeon-moon/?unit=m"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "folk-tales",
+    "categoryName": "Folk Tales",
+    "slug": "white-snake",
+    "title": "白蛇传",
+    "titleEn": "The Legend of the White Snake",
+    "storyPath": "../../culture/books/folk-tales/white-snake/",
+    "groups": [
+      {
+        "title": "A story built over many centuries",
+        "sources": [
+          {
+            "label": "China Intangible Cultural Heritage, “The Legend of the White Snake”",
+            "url": "https://www.ihchina.cn/project_details/12185.html"
+          }
+        ]
+      },
+      {
+        "title": "Why Bai Suzhen comes to West Lake",
+        "sources": [
+          {
+            "label": "Hangzhou CPPCC News, “Do You Remember New Legend of Madame White Snake? The Classic Will Be Remade”",
+            "url": "https://www.hzzx.gov.cn/cshz/content/2016-05/12/content_6172784_0.htm"
+          },
+          {
+            "label": "Ministry of Culture and Tourism of the People's Republic of China, National Centre for the Performing Arts production of The Legend of the White Snake",
+            "url": "https://www.mct.gov.cn/ggfw/zyjzzt/yanchu/yanchuwqhg/202411/t20241107_956108.html"
+          },
+          {
+            "label": "Beijing Municipal Health Commission, Beijing Huairou Hospital of Traditional Chinese Medicine, “Do Not Drink Realgar Wine at Dragon Boat Festival”",
+            "url": "https://wjw.beijing.gov.cn/bmfw_20143/jkzs/jksh/202606/t20260618_4707065.html"
+          }
+        ]
+      },
+      {
+        "title": "Xiaoqing, Leifeng Pagoda, and the rescue ending",
+        "sources": [
+          {
+            "label": "Beijing Municipal Government, Chang'an Grand Theatre, Peking Opera The Legend of the White Snake",
+            "url": "https://www.beijing.gov.cn/gate/big5/www.beijing.gov.cn/renwen/whrl/rdtj/201905/t20190520_1871303.html"
+          }
+        ]
+      },
+      {
+        "title": "Place note",
+        "sources": [
+          {
+            "label": "Sichuan Provincial People's Congress, Xinhua report, “Savoring the Scenery beside West Lake”",
+            "url": "https://www.scspc.gov.cn/html/xxyl_66/lyyl_68/2010/0524/54378.html"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "folk-tales",
+    "categoryName": "Folk Tales",
+    "slug": "monkey-king",
+    "title": "美猴王大闹天宫",
+    "titleEn": "The Monkey King Makes Trouble in Heaven",
+    "storyPath": "../../culture/books/folk-tales/monkey-king/",
+    "groups": [
+      {
+        "title": "The staff and the Book of Life and Death",
+        "sources": [
+          {
+            "label": "Wikisource, Journey to the West, Chapter 3",
+            "url": "https://zh.wikisource.org/wiki/%E8%A5%BF%E9%81%8A%E8%A8%98/%E7%AC%AC003%E5%9B%9E"
+          }
+        ]
+      },
+      {
+        "title": "The heavenly job and the Great Sage",
+        "sources": [
+          {
+            "label": "Wikisource, Journey to the West, Chapter 4",
+            "url": "https://zh.wikisource.org/wiki/%E8%A5%BF%E9%81%8A%E8%A8%98/%E7%AC%AC004%E5%9B%9E"
+          }
+        ]
+      },
+      {
+        "title": "The Buddha's palm and Five Elements Mountain",
+        "sources": [
+          {
+            "label": "Wikisource, Journey to the West, Chapter 7",
+            "url": "https://zh.wikisource.org/wiki/%E8%A5%BF%E9%81%8A%E8%A8%98/%E7%AC%AC007%E5%9B%9E"
+          }
+        ]
+      },
+      {
+        "title": "Sun Wukong is released",
+        "sources": [
+          {
+            "label": "Wikisource, Journey to the West, Chapter 14",
+            "url": "https://zh.wikisource.org/wiki/%E8%A5%BF%E9%81%8A%E8%A8%98/%E7%AC%AC014%E5%9B%9E"
+          }
+        ]
+      }
+    ]
+  },
+  {
     "category": "food",
     "categoryName": "Food",
     "slug": "flavors",

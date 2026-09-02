@@ -1,5 +1,5 @@
 ---
-title_zh: 七夕
+title_zh: 牛郎织女
 title_en: The Cowherd and the Weaver Girl
 slug: qixi-cowherd-weaver-girl
 category: folk-tales
@@ -9,133 +9,117 @@ style_notes: "用 --- 分隔 frontmatter；正文强调优先用 *斜体*；尽�
 ---
 
 [hero]
-title_zh: 七夕
+title_zh: 牛郎织女
 title_en: The Cowherd and the Weaver Girl
 [/hero]
 
 [section]
 page: 1
 layout: text-wrap-image
-heading_zh: 天上的织女，地上的牛郎
-heading_en: The Weaver Girl in Heaven, the Cowherd on Earth
+heading_zh: 一个放牛，一个织云彩
+heading_en: He Cared for Cows. She Wove the Clouds.
 image: heaven-and-earth.webp
-caption_zh: 一个在天上织云彩，一个在地上放牛，他们本来住在两个不同的世界。
-caption_en: One weaves clouds in heaven, and one tends an ox on earth. At first, they live in different worlds.
+caption_zh: 牛郎住在人间，照顾一头老牛。织女住在天上，用织布机织出闪闪发亮的云彩。
+caption_en: The Cowherd lives in the human world with an old ox. The Weaver Girl lives in the sky and weaves shining clouds.
 [zh]
-传说里，织女是天上的仙女，她每天在天上织出美丽的云彩。
+很久以前，人间住着一个年轻人。他每天照顾家里的老牛，所以大家叫他牛郎。“牛郎”的意思，就是放牛、照顾牛的人。
 
-牛郎住在人间，是一个勤劳又善良的年轻人。
+高高的天空中，住着一位织女。“织女”的名字也和她的工作有关。她坐在织布机前，把一根根细线织成美丽的布。故事里还说，天上的彩云也是她织出来的。
 
-一个在天上，一个在地上，他们原本离得很远很远。
+织女坐在织布机前，常常低头看人间的青山、田野和河流。天上虽然美，她却很想亲眼看看人间的生活。她还注意到，牛郎总是独自和老牛一起干活。
 
-可是故事说，他们的命运后来还是走到了一起。
+一天，织女来到人间游玩。在河边，她终于遇见了牛郎。
 [/zh]
 [en]
-In the legend, the Weaver Girl is a fairy in heaven who weaves beautiful clouds.
+Long ago, a young man lived in the human world with an old ox—an animal that looks like a cow and helps with farm work. He cared for the ox every day, so people called him the Cowherd. A cowherd is simply someone who looks after cows.
 
-The Cowherd lives on earth and is a hardworking, kind young man.
+High above him lived the Weaver Girl. Her name came from her work too. She sat at a loom—a wooden frame for making cloth—and wove thread into beautiful cloth. The story says she also wove the colorful clouds in the sky.
 
-One is in heaven and one is on earth, so at first they are very far apart.
+From her loom, the Weaver Girl often looked down at the green hills, fields, and rivers below. Heaven was beautiful, but she wanted to see the human world for herself. She had also noticed the Cowherd working alone beside his old ox.
 
-But the story says their paths still moved toward each other in the end.
+One day, the Weaver Girl came down for a visit. Near a river, she finally met the Cowherd.
 [/en]
 [/section]
 
 [section]
 page: 2
 layout: text-wrap-image
-heading_zh: 他们相遇了
-heading_en: They Meet
+heading_zh: 星星出来了，他们还在说话
+heading_en: The Stars Came Out, and They Were Still Talking
 image: happy-family.webp
-caption_zh: 牛郎和织女慢慢喜欢上了彼此，还一起有了自己的家和孩子。
-caption_en: The Cowherd and the Weaver Girl slowly fall in love and build a home with children together.
+caption_zh: 牛郎和织女在人间有了自己的家。牛郎照顾田地和老牛，织女在院子里织布。
+caption_en: The Cowherd and the Weaver Girl make a home in the human world, where they work side by side and raise two children.
 [zh]
-有一天，织女来到人间，在河边遇见了牛郎。
+刚见面时，两个人都有一点害羞。可是很快，他们便聊了起来。牛郎讲地上的田野和那头陪着他的老牛。织女讲天上的云朵和她的织布机。
 
-牛郎真诚，织女温柔，两个人慢慢喜欢上了彼此。
+太阳下山了，星星出来了，他们还在说话。谁也不想这么快说再见。
 
-后来，他们留在人间生活，成了亲，还有了一儿一女。
-
-他们的日子平凡，可是很温暖，也很快乐。
+后来，他们结了婚，在人间安了家。牛郎种田、照顾老牛，织女坐在院子里织布。不久，他们又有了两个孩子。房子虽然不大，一家人在一起的日子却又热闹又快乐。
 [/zh]
 [en]
-One day, the Weaver Girl came down to earth and met the Cowherd by a river.
+At first, they were both a little shy. Soon they began to talk. The Cowherd told her about the fields and the old ox that kept him company. The Weaver Girl told him about the clouds and her loom.
 
-The Cowherd was sincere, and the Weaver Girl was gentle. Slowly, they fell in love.
+The sun went down. The stars came out. They were still talking, and neither one wanted to say goodbye.
 
-Later, they stayed on earth, married, and had a son and a daughter.
-
-Their life was simple, but it was warm and happy.
+They married and made a home in the human world. The Cowherd worked in the fields and cared for the ox. The Weaver Girl wove cloth in the yard. Before long, they had two children. Their house was small, but it was full of work, laughter, and love.
 [/en]
 [/section]
 
 [section]
 page: 3
 layout: text-wrap-image
-heading_zh: 他们被分开了
-heading_en: They Are Separated
+heading_zh: 天空中出现了一条河
+heading_en: A River Opens in the Sky
 image: queen-mother-separates.webp
-caption_zh: 天上的王母娘娘知道这件事以后，把织女带回天上，还划出一条天河。
-caption_en: When the Queen Mother of the West learns what happened, she takes the Weaver Girl back to heaven and draws a river of stars.
+caption_zh: 王母娘娘把织女带回天上，又用金簪划出一道亮闪闪的天河，把一家人隔开。
+caption_en: The Queen Mother takes the Weaver Girl back to heaven and draws a shining river of stars between the family.
 [zh]
-可是天上的规矩不愿意让织女一直留在人间。
+可是，天上有天上的规矩。在中国古代神话里，王母娘娘是一位很有力量的女神，管着天上的规矩。她知道织女私自离开天上，还和人间的牛郎成了亲，便来把织女带走。
 
-王母娘娘知道这件事以后，很生气，把织女带回了天上。
+牛郎紧紧抱住两个孩子。他不能眼看着一家人就这样分开。故事说，那头老牛不是普通的牛。在老牛的帮助下，牛郎带着孩子飞上天空，眼看就要追到织女了。
 
-牛郎带着两个孩子追上去，可是王母娘娘用金簪在天空一划，天河就出现了。
-
-从那以后，牛郎和织女只能站在天河两边，远远地看着对方。
+王母娘娘拔下头上的金簪，在他们中间用力一划。呼啦！一道亮闪闪的天河横在了天空中。它就是银河——天气晴朗、四周很暗时，我们有时能看见的那条淡淡的星光。
 [/zh]
 [en]
-But the rules of heaven did not allow the Weaver Girl to stay on earth forever.
+But heaven had rules of its own. In old Chinese stories, the Queen Mother of the West was a powerful goddess. She made sure everyone in heaven followed its rules. When she learned that the Weaver Girl had left heaven and married someone from the human world, she came to take her back.
 
-When the Queen Mother of the West learned what had happened, she became angry and took the Weaver Girl back to heaven.
+The Cowherd held the children close. He had to try to bring the Weaver Girl back. The story says his old ox was no ordinary animal. With the ox's magic, the Cowherd rose into the sky carrying their children. They almost reached the Weaver Girl.
 
-The Cowherd chased after her with their two children, but the Queen Mother drew a shining river across the sky.
-
-From then on, the Cowherd and the Weaver Girl could only look at each other from opposite sides of the heavenly river.
+Then the Queen Mother pulled a golden pin from her hair and swept it across the sky. Whoosh! A shining river of stars opened between them. It was the Milky Way, the pale band of stars we can sometimes see on a clear, dark night. In this story, it became the River of Heaven.
 [/en]
 [/section]
 
 [section]
 page: 4
 layout: text-wrap-image
-heading_zh: 喜鹊桥
-heading_en: The Magpie Bridge
+heading_zh: 喜鹊飞来搭桥
+heading_en: The Magpies Build a Bridge
 image: magpie-bridge.webp
-caption_zh: 每到农历七月初七，喜鹊会飞来搭成一座桥，让他们见上一面。
-caption_en: On the seventh day of the seventh lunar month, magpies fly together to form a bridge so they can meet once a year.
+caption_zh: 成百上千只喜鹊一只挨着一只，用翅膀和后背搭成一座横跨天河的桥。
+caption_en: Hundreds of magpies fly side by side, making a bridge across the River of Heaven with their wings and backs.
 [zh]
-他们的思念感动了天上的喜鹊。
+织女站在天河的一边。牛郎和两个孩子站在另一边。河水太宽，他们谁也过不去。
 
-每年农历七月初七，很多很多喜鹊会飞来，用翅膀搭成一座桥。
+这时，成百上千只喜鹊飞上天空。喜鹊是一种黑白相间、拖着长尾巴的鸟。它们一只挨着一只，用翅膀和后背搭成一座桥。一家人终于可以走过天河，再次拥抱在一起。
 
-在这一天，牛郎和织女终于能在桥上见一面，也能和孩子团聚。
-
-后来，人们把这一天叫作七夕，也会在夏天的夜晚抬头看星星，想起这个故事。
+王母娘娘看见他们隔着天河仍然在等着彼此，后来终于答应让一家人每年见一次面。见面的日子是中国传统历法里的七月初七。这一天的夜晚叫“七夕”——“七”是七月初七，“夕”就是夜晚。过去，女孩子还会在这一天穿针、做手工，希望自己也能像织女一样有一双巧手。
 [/zh]
 [en]
-Their longing touched the magpies in the sky.
+The Weaver Girl stood on one side of the River of Heaven. The Cowherd and the children stood on the other. The river was too wide to cross.
 
-Every year, on the seventh day of the seventh lunar month, countless magpies fly together and form a bridge with their wings.
+Then hundreds of magpies flew into the sky. Magpies are black-and-white birds with long tails. They lined up wing to wing and made a bridge with their backs. At last, the family could cross the river and hold one another again.
 
-On that day, the Cowherd and the Weaver Girl can meet once more and be together with their children.
-
-Later, people called this day Qixi and looked up at the summer stars while remembering the story.
+The Queen Mother saw that the family was still waiting for one another. At last, she allowed them to meet once each year, on the seventh day of the seventh month in the traditional Chinese calendar—an older way of counting days and months. That evening is called Qixi, which means “the evening of the seventh.” Long ago, girls also played games with thread and needles and made small crafts, hoping to become good at sewing and making things, just like the Weaver Girl.
 [/en]
 [/section]
 
 [ending]
-heading_zh: 写在星空里的思念
-heading_en: Longing Written in the Stars
+heading_zh: 今晚，喜鹊要去哪里？
+heading_en: Where Are the Magpies Going Tonight?
 [zh]
-七夕不只是一个节日，也是一段关于等待、爱和重逢希望的中国传说。
-
-所以很多人看到夏天夜空里的两颗亮星时，都会想起牛郎和织女。
+七夕的夜晚，如果你看见一只喜鹊从头顶飞过，可以想象它正急急忙忙赶去天河。桥的两边，还有一家人等着见面呢。
 [/zh]
 [en]
-Qixi is not only a festival. It is also a Chinese legend about waiting, love, and the hope of meeting again.
-
-That is why many people think of the Cowherd and the Weaver Girl when they see two bright stars in the summer night sky.
+On a Qixi night, if you see a magpie flying overhead, you can imagine it hurrying toward the River of Heaven. A family is waiting for its bridge.
 [/en]
 [/ending]
