@@ -635,13 +635,13 @@ test("the Chinese landing-page headline is slightly reduced while keeping its or
   assert.match(stylesSource, /\.library-hero h2 \{[\s\S]*font-size: clamp\(1\.3rem, 2\.2vw, 1\.7rem\)[\s\S]*color: var\(--sun\)/);
 });
 
-test("the landing hero features six scrollable culture-story highlights", () => {
+test("the landing hero features five scrollable culture-story highlights", () => {
   const html = readFileSync("index.html", "utf8");
   const carouselSource = readFileSync("src/core/story-highlights.js", "utf8");
   assert.match(html, /<section class="story-highlights" data-story-highlights/);
-  assert.equal((html.match(/data-story-highlight-dot=/g) ?? []).length, 6);
+  assert.equal((html.match(/data-story-highlight-dot=/g) ?? []).length, 5);
   assert.match(html, /culture\/books\/folk-tales\/monkey-king\/index\.html/);
-  assert.match(html, /culture\/books\/figures\/mulan\/index\.html\?reading=story/);
+  assert.match(html, /culture\/books\/figures\/mulan\/index\.html/);
   assert.match(html, /culture\/books\/politics\/emperor-day\/index\.html\?reading=story/);
   assert.match(carouselSource, /viewport\.scrollTo/);
 });
@@ -1881,7 +1881,7 @@ test("meals and feelings owns its scenes and practice activities", () => {
   assert.equal(mealsFeelingsTopicData.sceneGroups.length, 2);
   assert.equal(mealsFeelingsTopicData.conversationPairs.length, 6);
   assert.equal(mealsFeelingsTopicData.pictureChoices.length, 6);
-  assert.equal(mealsFeelingsSentenceBuilds.length, 6);
+  assert.equal(mealsFeelingsSentenceBuilds.length, 5);
   assert.deepEqual(mealsFeelingsTopicData.sceneGroups[0].lessonSources, ["4a:5"]);
   assert.deepEqual(mealsFeelingsTopicData.sceneGroups[1].lessonSources, ["4a:7"]);
   assert.deepEqual(mealsFeelingsSentenceBuilds.filter((item) => item.lessonSources?.includes("4a:5")).map((item) => item.id), ["lunch"]);
@@ -1920,7 +1920,7 @@ test("nationality and languages are separate book-aligned topics", () => {
   assert.equal(languagesTopic.id, "languages");
   assert.equal(languagesTopic.interactiveScene, "identity-scenes");
   assert.equal(languagesTopic.steps.length, 1);
-  assert.equal(identityCountries.length, 6);
+  assert.equal(identityCountries.length, 5);
   assert.deepEqual(identityCountries.map((country) => country.hanzi), ["中国", "美国", "英国", "德国", "法国"]);
   assert.deepEqual(identityExploreCountries.map((country) => country.hanzi), ["加拿大", "墨西哥", "澳大利亚"]);
   assert.ok(identityCountries.every((country) => country.symbolAsset && country.symbolCaption));
@@ -2044,7 +2044,7 @@ test("Nature and Weather remain separate book topics", () => {
   assert.match(worldRuntimeSource, /function worldSceneCardMarkup/);
   assert.match(worldRuntimeSource, /speakSceneLines\(scene\.lines\)/);
   assert.doesNotMatch(worldRuntimeSource, /scene\.lines\.map\(\(line\) => line\.audio\)\.join\("，"\)/);
-  assert.equal((worldRuntimeSource.match(/worldSceneCardMarkup\(/g) ?? []).length, 6);
+  assert.equal((worldRuntimeSource.match(/worldSceneCardMarkup\(/g) ?? []).length, 5);
 });
 
 test("Weather groups repeated scene artwork into a two-by-two scene grid", () => {
@@ -2469,7 +2469,7 @@ test("play owns separate activity pages for its Hobbies lessons", () => {
   assert.equal(hobbies3bTopic.progressLabel, "3B Lesson 4");
   assert.equal(hobbiesAtHomeTopic.title, "Hobbies at Home");
   assert.equal(hobbiesAtHomeTopic.progressLabel, "4B Lesson 4");
-  assert.equal(hobbiesAtHomeTopic.focusItems.length, 6);
+  assert.equal(hobbiesAtHomeTopic.focusItems.length, 5);
   assert.ok(hobbiesAtHomeTopic.focusItems.some((item) => item.imagePath === "assets/illustrated-activities/anan-playing-piano.webp"));
   assert.equal(hobbiesLeisureTopic.title, "Leisure Time");
   assert.equal(hobbiesLeisureTopic.progressLabel, "4B Lesson 7");
@@ -2651,7 +2651,7 @@ test("the shared curriculum retains its books and learning navigation", () => {
 test("numbers keeps its counting stages while My Family 2 owns 4A Lesson 1", () => {
   const foundationsSource = readFileSync("src/features/foundations/foundations-runtime.js", "utf8");
   assert.equal(numbersTopic.id, "numbers");
-  assert.equal(numberStages.length, 6);
+  assert.equal(numberStages.length, 5);
   assert.equal(buildNumberItem(42).hanzi, "四十二");
   assert.equal(telephoneNumbersTopic.id, "telephone-numbers");
   assert.equal(telephoneNumbersTopic.title, "My Family 2");
