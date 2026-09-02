@@ -1,6 +1,15 @@
-# “一口菜里有多少种感觉？”— References and Editorial Notes
+# References for “Why Does Food Have So Many Flavors?”
 
 This file is for editorial research and does not render on the website.
+
+## Current child-facing version
+
+Rewritten: 2026-09-02
+
+- The article now follows six pictured foods to explain taste, smell, texture, temperature, chili heat, and Sichuan-pepper tingle through concrete examples.
+- Traditional Chinese “five flavors” and the modern scientific list are explained as two different systems rather than forced into one chart.
+- Shanxi and Wuxi are identified as places before their foods are discussed. Wuxi ribs, bitter melon with eggs, and *yanduxian* are explained through ingredients and cooking rather than abstract flavor language.
+- Health claims, regional stereotypes, adult-level sensory terminology, and a reader-directed call-to-action ending are kept out of the child-facing text.
 
 ## Modern taste, smell, and oral sensation
 
@@ -139,10 +148,77 @@ Editorial boundary:
 
 - The story names several interacting forces and does not reduce regional preference to “south,” “north,” climate, or one supposedly fixed personality.
 
+## Pictured dishes
+
+Source: Ministry of Culture and Tourism of China, Shanxi food-culture overview
+URL: https://www.mct.gov.cn/whzx/qgwhxxlb/sx/202503/t20250313_958804.htm
+Accessed: 2026-09-02
+
+Supports:
+
+- Noodles and grain vinegar are strongly associated with Shanxi food culture.
+
+Editorial boundary:
+
+- The story does not turn this regional association into a claim that every person in Shanxi likes or uses vinegar.
+
+Source: Wuxi Municipal Archives, history of Wuxi sauced ribs
+URL: https://daj.wuxi.gov.cn/doc/2008/02/16/2426844.shtml
+Accessed: 2026-09-02
+
+Supports:
+
+- Wuxi-style sauced ribs are commonly described as glossy red, tender, fragrant, and sweet-salty.
+- Their characteristic preparation uses a reduced sauce and long, controlled cooking rather than soy sauce alone.
+
+Editorial boundary:
+
+- Recipes and levels of sweetness vary; the pictured dish is an example, not one required formula.
+
+Source: Ministry of Commerce, China Time-Honored Brand Digital Museum, Lu Gao Jian profile
+URL: https://lzhbwg.mofcom.gov.cn/edi_ecms_web_front/thb/detail/d9f5775a997742c190669cc7b4bfc18a
+Accessed: 2026-09-02
+
+Supports:
+
+- One documented traditional Wuxi sauced-rib method uses packed spices, carefully controlled heat, supporting ingredients, white sugar and rock sugar to reduce and thicken the sauce.
+
+Editorial boundary:
+
+- The child-facing text names common parts of the method without claiming that every Wuxi cook uses an identical recipe.
+
+Source: Beijing Municipal Health Commission, “立夏时节，北京妇产医院营养师和您话苦瓜”
+URL: https://wjw.beijing.gov.cn/bmfw_20143/jkzs/jksh/202505/t20250515_4089785.html
+Accessed: 2026-09-02
+
+Supports:
+
+- Bitter melon with eggs is an established home-style pairing.
+- Removing the pith, briefly blanching, or salting the slices are common ways to reduce bitterness; egg is cooked to stay mild and tender.
+
+Editorial boundary:
+
+- The article describes taste and cooking only. It does not repeat the source's medical or nutrition claims.
+
+Source: Hebei Administration for Market Regulation, “一口尝尽江南春” (reprinted from *China Discipline Inspection Daily*)
+URL: https://scjg.hebei.gov.cn/info/37984
+Accessed: 2026-09-02
+
+Supports:
+
+- *Yanduxian* is a spring dish associated with Shanghai, Jiangsu, and Zhejiang.
+- Common versions simmer salted meat, fresh pork, and bamboo shoots slowly.
+- Spring bamboo shoots are seasonal, taste fresh and gently sweet, and absorb the salty aroma of the cured meat while keeping the broth from feeling too oily.
+
+Editorial boundary:
+
+- The child-facing article explains the ingredients, the role of spring bamboo shoots, and slow cooking without presenting one name-origin story as certain fact.
+- “Less common outside its home region” is a practical, qualified description rather than a claim that the dish or fresh bamboo shoots are unavailable elsewhere.
+
 ## Image and safety notes
 
 - All six images are retained as modern illustrations, not documentary photographs or historical evidence.
 - The opening image visualizes a traditional five-item list but omits umami; its caption states this limitation explicitly.
 - The Sichuan/Hunan composite is not treated as a complete map of either cuisine.
 - Dish images show representative simplified examples, not universal recipes.
-- The tasting prompts require adult-approved familiar foods and allergy checks. They discourage tasting unknown plants or herbs, consuming spoonfuls of seasonings, touching eyes after chili handling, and treating intense spice as a challenge.
+- The child-facing prose does not ask children to taste unknown plants, consume spoonfuls of seasoning, or treat intense spice as a challenge.

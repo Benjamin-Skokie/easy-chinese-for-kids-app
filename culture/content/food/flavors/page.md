@@ -1,173 +1,173 @@
 ---
-title_zh: 一口菜里有多少种感觉？
-title_en: How Many Sensations Fit in One Bite?
+title_zh: 食物为什么有这么多味道？
+title_en: Why Does Food Have So Many Flavors?
 slug: flavors
 category: food
-difficulty: 中等
+difficulty: 简单
 back_href: ../../../../index.html#culture-food
 style_notes: "用 --- 分隔 frontmatter；正文强调优先用 *斜体*；尽量不用 **粗体**。"
 ---
 
 [hero]
-title_zh: 一口菜里有多少种感觉？
-title_en: How Many Sensations Fit in One Bite?
+title_zh: 食物为什么有这么多味道？
+title_en: Why Does Food Have So Many Flavors?
 [/hero]
 
 [section]
 page: 1
 layout: text-wrap-image
-heading_zh: 五张味道卡，够不够？
-heading_en: Are Five Flavor Cards Enough?
+heading_zh: 味道不只来自舌头
+heading_en: Flavor Is More Than Taste
 image: five-basic-flavors.webp
-caption_zh: 这幅现代插画用食物表示传统说法中的酸、甜、苦、辣、咸；它没有画出鲜味，也不是现代味觉科学的完整图表。
-caption_en: This modern illustration uses foods to represent the traditional list of sour, sweet, bitter, pungent, and salty. It leaves out umami and is not a complete chart of modern taste science.
+caption_zh: 酸、甜、苦、辣、咸是中国传统的“五味”。现代味觉科学会把“鲜”加入基本味觉，把“辣”看成灼热感。
+caption_en: Traditional Chinese “five flavors” are sour, sweet, bitter, pungent, and salty. Modern taste science includes umami as a basic taste and treats chili heat as a burning sensation.
 [zh]
-想象桌上放着五张卡：酸、甜、苦、辣、咸。旁边有几样大人准备好的熟悉食物，比如一小片水果、一小块不辣的咸饼干、一口番茄或蘑菇汤。先别急着把食物塞进五个格子里。你可以闭上眼睛闻一闻，再咬一小口，注意它是脆还是软、热还是凉，味道是立刻出现，还是咽下以后才留下来。
+咬一口苹果。舌头尝到甜和酸，鼻子闻到果香，牙齿咬下一声“咔嚓”，嘴巴感觉到苹果又脆又凉。这些感觉合在一起，才是我们吃到的完整味道。
 
-做这种观察时，只尝家长或老师确认安全的食物，先检查过敏原；不要直接吃大勺盐、糖或辣椒，也不要尝不认识的植物和调料。若你不喜欢某种味道，只闻、看或跳过都可以。感官探索不是勇敢比赛。
+现代科学常说舌头能尝到甜、酸、苦、咸和鲜。鼻子带来香气，嘴巴还会感觉温度和软硬。少了其中一个，同样的食物就可能变得不太一样。
 
-中国传统文献常用“酸、苦、甘、辛、咸”这五味来讨论食物、药物和世界怎样取得调和。“甘”常和甜有关，“辛”可以包括姜、葱、花椒等带来的刺激，不完全等于今天说的辣椒辣。这套五味是历史形成的文化与思考框架，不是一张永远不变的现代生理学表格。
+中国古人常用酸、甜、苦、辣、咸这“五味”来谈食物。“辣”在古代还可以包括姜、葱和花椒带来的刺激。这是一种流传很久的想法，和现代科学的分类不完全相同。
 [/zh]
 [en]
-Imagine five cards on a table: sour, sweet, bitter, spicy, and salty. Beside them are a few familiar foods prepared by an adult—perhaps a slice of fruit, a piece of mild salted cracker, and a spoonful of tomato or mushroom broth. Do not rush to drop each food into one box. Smell it with your eyes closed, take a small bite, and notice whether it is crisp or soft, hot or cool. Does a sensation arrive at once, or linger after you swallow?
+Take a bite of an apple. Your tongue tastes sweet and sour. Your nose catches the fruity smell. The apple crunches between your teeth, and it feels cool and crisp. All of these sensations help create its flavor.
 
-For this kind of observation, taste only familiar foods that a parent or teacher has checked, including for allergies. Never eat spoonfuls of salt, sugar, or chili, and never sample an unknown plant or seasoning. If you dislike a food, you can smell it, look at it, or skip it. Sensory exploration is not a bravery contest.
+Modern science often names five basic tastes: sweet, sour, bitter, salty, and umami, or savory. Smell adds aroma, while the mouth also feels temperature and texture. Take one part away and the same food may seem different.
 
-Traditional Chinese texts often use the “five flavors”—sour, bitter, sweet, pungent, and salty—to think about food, medicine, and harmony. The older word translated as “sweet” can also mean mild or pleasant, while “pungent” may include the stimulation of ginger, scallions, or Sichuan pepper. It does not mean only chili heat. This five-flavor system is a historical cultural framework, not a timeless chart of modern physiology.
+Long ago, Chinese writers often talked about five flavors: sour, sweet, bitter, salty, and a sharp, lively flavor called *la*. Ginger, scallions, and Sichuan pepper could all be *la*. It is an old way of thinking about food, not exactly the same as a modern science chart.
 [/en]
 [/section]
 
 [section]
 page: 2
 layout: text-wrap-image
-heading_zh: 一滴醋，改变的不只是酸度
-heading_en: A Drop of Vinegar Changes More Than Sourness
+heading_zh: 山西的醋面为什么这么香？
+heading_en: Why Do Shanxi Vinegar Noodles Smell So Good?
 image: shanxi-vinegar-noodles.webp
-caption_zh: 这幅现代插画表现热面拌深色醋的情景；它是一个用醋的例子，不代表所有山西面食或所有人的口味。
-caption_en: This modern illustration shows dark vinegar being added to hot noodles. It is one example of using vinegar, not a picture of every Shanxi noodle dish or every diner’s preference.
+caption_zh: 一点醋给热面条加上酸味，也带来鼻子能闻到的香气。
+caption_en: A little vinegar adds sourness to hot noodles, along with an aroma the nose can detect.
 [zh]
-先看一碗热面。成人把少量醋拌进去时，你也许还没入口，就先闻到粮食发酵后形成的香气。吃进嘴里，酸味才和面条的咸味、麦香、温度与弹性一起出现。鼻子暂时被捏住时，同一口面的香气可能变弱；松开鼻子，味道好像忽然“回来”了。
+山西是中国北方的一个省，那里有许多不同的面食，也以粮食酿成的醋闻名。一碗热面端上桌，有人会拌进一点深色的醋。
 
-这是因为“味道”和我们平常说的“风味”不完全相同。现代科学通常把甜、酸、苦、咸和鲜列为至少五种基本味觉。食物的完整风味还要加上鼻子闻到的香气、嘴里感觉到的温度和质地，有时甚至包括清凉、灼热或涩感。
+面条还没入口，酸香已经跟着热气飘了起来。吃上一口，舌头尝到酸和咸，鼻子闻到醋香，嘴巴感觉到面条又热又有嚼劲。醋带来的不只是一种酸味，它的香气也是这碗面的重要部分。
 
-山西以酿醋和面食闻名，因此醋拌面是很好的观察对象，但“山西人拿醋当水喝”只是夸张玩笑。有人喜欢浓酸，有人只加几滴，也有人不加。一个地方的招牌味道，不能替当地每个人作决定。
+有人爱多放一点醋，有人只加几滴，也有人完全不加。即使吃同一碗面，每个人喜欢的味道也可能不同。
 [/zh]
 [en]
-Begin with a bowl of hot noodles. When an adult mixes in a small amount of vinegar, you may smell the fermented-grain aroma before taking a bite. In your mouth, sourness arrives together with saltiness, the aroma of wheat, the noodles’ warmth, and their springy texture. If you briefly pinch your nose, the same bite may seem less aromatic. Release your nose, and part of the flavor appears to “come back.”
+Shanxi is a province in northern China. It is known for many kinds of noodles and for vinegar made from grain. When a hot bowl of noodles reaches the table, some people stir in a little dark vinegar.
 
-That happens because taste and what we casually call flavor are not identical. Modern science usually recognizes at least five basic tastes: sweet, sour, bitter, salty, and umami, or savory. The full flavor of food also includes aroma from the nose, temperature and texture in the mouth, and sometimes cooling, burning, or drying sensations.
+Before the first bite, a rich, sour smell rises with the steam. Then the tongue tastes sour and salty while the mouth feels the warm, chewy noodles. Vinegar brings more than sourness. Its aroma is an important part of the bowl.
 
-Shanxi is well known for grain vinegars and noodles, so vinegar noodles make a useful example. Still, “people in Shanxi drink vinegar like water” is only a joke. One person may like a strong sour taste, another may add a few drops, and another may add none. A region’s famous flavor cannot choose for every person who lives there.
+One person may love plenty of vinegar. Another may add only a few drops. Someone else may add none at all. Even at the same table, people can enjoy their noodles in different ways.
 [/en]
 [/section]
 
 [section]
 page: 3
 layout: text-wrap-image
-heading_zh: 甜和咸，会轮流出现吗？
-heading_en: Can Sweet and Salty Take Turns?
+heading_zh: 无锡排骨为什么是甜的？
+heading_en: Why Are Wuxi Ribs Sweet?
 image: wuxi-spare-ribs.webp
-caption_zh: 这幅现代插画表现一盘带有光亮酱汁的排骨；具体做法和甜度会随厨师、餐馆与家庭而变化。
-caption_en: This modern illustration shows ribs in a glossy sauce. Recipes and sweetness vary among cooks, restaurants, and families.
+caption_zh: 糖、酱油和香料慢慢煮成浓汁，让排骨又甜又咸，颜色油亮。
+caption_en: Sugar, soy sauce, and spices cook down into a glossy sauce that is both sweet and salty.
 [zh]
-再看一块裹着酱汁的无锡排骨。第一口也许先碰到表面的甜，接着尝到酱油和盐带来的咸，咀嚼时又闻到肉和香料的香气。甜与咸并没有真的排成队，它们同时存在；只是温度、浓度、咀嚼和注意力，会让你在不同时间注意到不同部分。
+无锡是中国东部的一座城市。当地有一道很有名的酱排骨，颜色红亮，肉炖得很软，味道里带着明显的甜。
 
-你可以请成人准备两小块同一种熟食，在其中一块上加一点平常会用的调味汁，然后比较：哪一块闻起来更强？哪一块的甜或咸更明显？这里要比的是感觉，不是“哪一个更高级”。糖和盐能改变风味，却不等于加得越多越好。
+做这道菜时，厨师会把糖、酱油和香料同排骨一起慢慢煮。有的做法还会加入黄酒。水分一点点减少以后，汤汁变得浓稠，包在排骨外面。糖让酱汁有甜味，也让它看起来亮晶晶的；酱油和盐带来咸味，香料则让它闻起来更香。
 
-过去的文章常把江南写成一个人人爱甜的地方，甚至说“苏州人放糖比放盐多”。这种话把复杂的日常饮食变成了漫画。当地食材、商业、宴席与家常菜、厨师选择和家庭记忆都会影响调味；同一道菜也会有很多版本。
+所以，无锡排骨的甜味不是不小心放进去的。甜和咸原本就是这道菜的搭配。
 [/zh]
 [en]
-Now look at a Wuxi-style rib coated in sauce. The first bite may draw your attention to sweetness on the surface. Then you notice salt from soy sauce or seasoning, followed by the aroma of meat and spices as you chew. Sweet and salty are not truly waiting in a line. They are present together, but temperature, concentration, chewing, and attention can make one part stand out before another.
+Wuxi is a city in eastern China. One of its well-known dishes is sauced pork ribs. The ribs are reddish brown, the meat is cooked until tender, and the sauce has a clear sweetness.
 
-With an adult, compare two tiny pieces of the same familiar cooked food, adding a little everyday sauce to one. Which smells stronger? Which seems sweeter or saltier? The goal is to compare sensations, not decide which version is “better.” Sugar and salt can reshape flavor, but more is not automatically better.
+To make the dish, cooks slowly simmer the ribs with sugar, soy sauce, and spices. Some versions also use Chinese rice wine. As the water cooks away, the sauce becomes thick and coats the ribs. Sugar makes the sauce sweet and glossy. Soy sauce and salt add saltiness, while the spices add aroma.
 
-Older descriptions sometimes turn Jiangnan into a place where everyone loves sweetness, even claiming that Suzhou cooks use more sugar than salt. That makes a complex food culture into a cartoon. Local ingredients, commerce, banquet cooking, home cooking, a chef’s choices, and family memories all affect seasoning. Even one named dish can have many versions.
+The sweetness is not an accident. Sweet and salty are meant to be tasted together in this dish.
 [/en]
 [/section]
 
 [section]
 page: 4
 layout: text-wrap-image
-heading_zh: 苦味一定是坏味道吗？
-heading_en: Is Bitter Always a Bad Taste?
+heading_zh: 苦瓜为什么和鸡蛋一起炒？
+heading_en: Why Cook Bitter Melon with Eggs?
 image: bitter-melon-and-egg.webp
-caption_zh: 这幅现代插画表现苦瓜炒蛋。苦瓜的苦度和菜的做法会变化，喜欢或不喜欢都很正常。
-caption_en: This modern illustration shows bitter melon with egg. Bitterness and preparation vary, and it is normal to like the dish—or not.
+caption_zh: 苦瓜有清脆的苦味，鸡蛋柔软温和。有人喜欢，也有人不喜欢。
+caption_en: Bitter melon is crisp and bitter, while egg is soft and mild. Some people enjoy it, and others do not.
 [zh]
-苦瓜炒蛋把两种很不一样的感觉放在一起：苦瓜脆中带苦，鸡蛋柔软，还有油脂的香气。有人第一次尝就皱眉，有人长大以后才喜欢，也有人一直不喜欢。味觉会受到经验和习惯影响，但没有一道菜是每个人“长大后就必须喜欢”的。
+苦瓜的表面凹凸不平，切开以后是淡绿色的。第一口可能很苦，让人马上皱起眉头。可是有人就是喜欢它清脆、微苦的味道，尤其是在天气热的时候。
 
-在中国历史上，食物与药物的界线有时会互相靠近，传统医药也用五味来整理药材的性质。因此，苦瓜、苦味草本饮品等常被放进“苦味也有用”的文化故事里。了解这种观念，可以帮助我们读懂历史，却不能把一道苦菜当成给所有人治病的处方。
+苦瓜常常和鸡蛋一起炒。鸡蛋柔软，味道温和；苦瓜清脆，味道鲜明。鸡蛋不会把苦味变没，但它让同一口里多了一种柔和的味道。有些厨师会挖掉苦瓜里面柔软的白瓤，再把切好的苦瓜放进开水里烫一小会儿。这样可以让苦味淡一些。
 
-如果要观察苦味，用成人确认安全、你以前吃过的一小块苦瓜就够了。不要因为“苦”就猜一种野草能吃，也不要把不明草药当饮料。苦味有时能提醒身体注意潜在危险；它也是一种可以被厨师搭配、减弱或保留的感受。
+很多人小时候不爱吃苦瓜，后来尝过几种做法，才发现自己开始喜欢它了。和鸡蛋或牛肉炒在一起时，苦味还在，但这一口里不再只有苦味。
 [/zh]
 [en]
-Bitter melon with egg brings together very different sensations. The melon is crisp and bitter; the egg is soft, with the aroma and mouthfeel of cooking oil. One person may frown at the first bite, another may learn to enjoy it later, and someone else may never like it. Experience can change taste preferences, but no food becomes something everyone “must like when they grow up.”
+Bitter melon has a bumpy green skin and pale green flesh. The first bite may make a new eater frown. Yet many people enjoy its crisp texture and bitter taste, especially in warm weather.
 
-In Chinese history, the boundaries between food and medicine have sometimes overlapped, and traditional medicine also used the five flavors to organize ideas about medicinal materials. That is why bitter melon and bitter herbal drinks often appear in cultural stories about bitterness having a purpose. Learning this helps us understand history, but it does not turn one bitter dish into a medical treatment for everyone.
+Bitter melon is often cooked with eggs. The egg is soft and mild, while the melon is crisp and bold. Egg does not make the bitterness disappear, but it gives the same bite a gentler flavor too. Some cooks scoop out the soft white part inside. They may also put the cut pieces in boiling water for a short time. Both steps can make the bitterness milder.
 
-To observe bitterness, a tiny piece of a familiar bitter melon dish checked by an adult is enough. Never assume that a wild plant is edible because it tastes bitter, and never drink an unknown herbal mixture. Bitterness can sometimes warn the body about possible danger. It is also a sensation that cooks may balance, soften, or deliberately keep.
+Many people dislike bitter melon when they are young. Later, after trying it a few different ways, they may begin to enjoy it. When it is cooked with eggs or beef, the bitter taste is still there, but it is no longer the only flavor in the bite.
 [/en]
 [/section]
 
 [section]
 page: 5
 layout: text-wrap-image
-heading_zh: 辣椒给神经出的“热题”
-heading_en: Chili Gives Your Nerves a “Heat Puzzle”
+heading_zh: 辣椒按响了“热”警报
+heading_en: Chili Rings the Heat Alarm
 image: sichuan-vs-hunan-spicy.webp
-caption_zh: 这幅现代组合插画用辣椒、花椒和不同菜肴表现两种常见联想，不是四川与湖南风味的完整分界图。
-caption_en: This modern composite uses chilies, Sichuan pepper, and different dishes to suggest two familiar flavor ideas. It is not a complete border map of Sichuan and Hunan cooking.
+caption_zh: 辣椒让嘴巴觉得灼热，花椒却带来麻麻的感觉。它们不是同一种刺激。
+caption_en: Chilies make the mouth feel hot, while Sichuan pepper brings a tingle. They are different sensations.
 [zh]
-辣椒入口时，舌头并没有真的被火烧到。辣椒素会启动与热和疼痛有关的感觉通路，其中包括三叉神经传递的信号，所以大脑收到“灼热”的消息。现代感官科学通常不把辣列作基本味觉。花椒带来的“麻”也不同于辣，它会产生刺麻、颤动一样的感觉；在麻辣菜里，辣、麻、咸、鲜、香和温度可以同时出现。
+吃辣椒时，舌头并没有真的着火。辣椒里有一种叫辣椒素的东西，会按响身体感受“热”和“痛”的警报。大脑收到消息，于是你觉得嘴里热辣辣的。现代科学通常不把辣当成基本味觉。
 
-更令人意外的是，古代中国很长时间没有辣椒。辣椒原产美洲，15世纪末以后才随着全球航路传到旧大陆；目前所知，中国文献在1591年已经记录它，后来它才逐渐进入不同地区的种植和烹饪。在这之前，人们也会用姜、芥、花椒等制造“辛”或刺激感，但那不是辣椒素带来的同一种感觉。
+花椒带来的“麻”又不一样。它会让嘴唇像有小气泡在跳。川菜里常常既有辣椒的辣，也有花椒的麻。菜里还可能有咸味和鲜味，但咸与鲜并不是同一种味道。
 
-今天四川与湖南都有许多辣菜，可是“川菜只麻嘴、湘菜只辣喉咙”仍然太简单。两地内部都有不辣或不同辣法的菜，厨师和食客也会调整辣度。若想观察辣感，可以看成人切开的辣椒、闻菜的香气，或尝自己已经熟悉的微辣食物；不要摸完辣椒再碰眼睛，也不必为了证明勇敢去挑战强辣。
+辣椒原来生长在美洲，四百多年前才来到中国。今天它已经走进许多中国厨房。尝辣不需要比赛；吃自己舒服的辣度就好，碰过辣椒也别揉眼睛。
 [/zh]
 [en]
-When chili touches your mouth, your tongue is not literally on fire. Capsaicin activates sensory pathways connected to heat and pain, including signals carried by the trigeminal nerve, so the brain receives a message of burning. Modern sensory science does not usually classify spicy heat as a basic taste. The *ma* of Sichuan pepper is different again, producing a prickling or buzzing sensation. In a *mala* dish, heat, tingling, saltiness, umami, aroma, and temperature can all arrive together.
+When you eat a chili, your tongue is not truly on fire. Chilies contain something called capsaicin. It rings the body's alarm for heat and pain, so the brain receives a message that says, “Hot!” Modern science does not usually count chili heat as a basic taste.
 
-More surprisingly, China went through most of its ancient history without chili peppers. Chilies are native to the Americas and reached the Old World through global trade after the late fifteenth century. The earliest known clear Chinese written record dates to 1591, and chilies only gradually entered farming and cooking in different regions. Earlier cooks could create pungency with ginger, mustard, and Sichuan pepper, but those ingredients do not produce the same capsaicin burn.
+The tingle of Sichuan pepper is different again. It can make the lips feel as if tiny bubbles are dancing on them. Sichuan dishes often combine chili heat with that special tingle. A dish may also taste salty and savory, but salty and savory are not the same taste.
 
-Many dishes in Sichuan and Hunan are spicy today, yet “Sichuan numbs the lips while Hunan burns the throat” is still too simple. Both places contain many dishes, degrees of heat, and individual choices. To observe chili safely, you can look at one cut open by an adult, smell a prepared dish, or taste a mildly spicy food you already know. Never touch your eyes after handling chili, and never treat extreme heat as a test of courage.
+Chilies first grew in the Americas and reached China a little more than four hundred years ago. Today they appear in many Chinese kitchens. Spicy food is not a bravery contest. Choose a level that feels comfortable, and never rub your eyes after touching a chili.
 [/en]
 [/section]
 
 [section]
 page: 6
 layout: text-wrap-image
-heading_zh: 鲜味在哪里？地图口诀可靠吗？
-heading_en: Where Is Umami—and Can a Food Rhyme Map China?
+heading_zh: 竹笋给腌笃鲜带来了什么？
+heading_en: What Do Bamboo Shoots Add to Yanduxian?
 image: yanduxian.webp
-caption_zh: 这幅现代插画表现一碗简化的腌笃鲜；不同家庭与季节的配料会变化，画面不能代替具体菜谱。
-caption_en: This modern illustration shows a simplified bowl of yanduxian. Ingredients vary by household and season, so the picture is not a recipe.
+caption_zh: 腌笃鲜用咸肉、鲜肉和春笋慢慢炖成，是江南春天里的一道时令菜。
+caption_en: Yanduxian slowly simmers salted pork, fresh pork, and spring bamboo shoots in a seasonal Jiangnan soup.
 [zh]
-最后尝一口成人准备的番茄汤、蘑菇汤，或像腌笃鲜这样用肉和笋炖出的汤。那种饱满、鲜香、像高汤一样的感觉，常被称为“鲜味”。现代味觉科学把鲜列为基本味觉之一，它与食物中的谷氨酸等物质有关。腌笃鲜里还可能同时有咸味、肉香、笋的脆嫩和热汤的温度，所以“鲜”仍然不是整碗汤的全部。
+鲜味和咸味不是一回事。盐带来咸味，肉汤、蘑菇和番茄一类的食物却能带来一种浓厚、鲜香的味道，这就是“鲜味”，英文叫 *umami*。
 
-有人用“南甜北咸东辣西酸”给中国画味觉地图。它顺口，却经不起认真追问：四川和湖南常被认为爱辣，却不在“东”；山西以醋闻名，却不在“西”的最边缘；同一座城里也有来自各地的餐馆和家庭。研究区域菜谱的学者发现，邻近地区的菜可能更相似，但气候并不能单独解释一切。
+图里是腌笃鲜，一种来自江南地区的春季汤菜。江南在中国东部，包括上海以及附近的江苏、浙江一带。做这道菜时，人们把咸肉、鲜肉和春笋放在一起，用小火慢慢炖。
 
-味道会跟着本地食材、保存方法、贸易路线和人口迁徙移动，也会受到价格、阶层、餐馆潮流与家庭选择影响。现在再看桌上的五张卡，你会发现一口菜根本放不进一个格子。传统五味帮助我们理解一种历史思路，现代科学帮助我们拆开感觉的来源，而真正的吃饭经验，还要把味觉、香气、温度、质地和记忆重新放在一起。
+春笋只在一年中的一段时间最鲜嫩，离开盛产竹笋的地方以后，也不一定容易买到特别新鲜的春笋，所以这道菜在别的地方没有那么常见。笋在汤里吸收咸肉的香味，也留下清甜和脆嫩的口感。咸肉带来咸味，肉汤带来鲜味，春笋让浓汤吃起来多了一点清爽。
 [/zh]
 [en]
-For the last sample, try a small spoonful of tomato or mushroom broth prepared by an adult, or a soup such as *yanduxian*, often simmered with fresh and salted pork and bamboo shoots. Its deep, broth-like savoriness is called umami. Modern taste science recognizes umami as a basic taste linked to substances such as glutamate. The soup may also be salty, meaty-smelling, hot, and full of crisp bamboo shoots, so umami is still not the whole experience.
+Umami and saltiness are not the same. Salt gives food a salty taste. Meat broth, mushrooms, and tomatoes can give food a deep, savory taste called *umami*.
 
-A popular rhyme draws a flavor map of China: “sweet in the south, salty in the north, spicy in the east, sour in the west.” It is catchy but falls apart under questions. Sichuan and Hunan are famous for many spicy dishes, yet neither fits neatly into “the east.” Shanxi is known for vinegar, but it is not at China’s far western edge. One city can also contain restaurants and families with roots in many places. Researchers comparing regional recipes found that neighboring cuisines can resemble one another, but climate alone does not explain everything.
+The picture shows *yanduxian*, a spring soup from Jiangnan. Jiangnan is a region in eastern China that includes Shanghai and nearby parts of Jiangsu and Zhejiang. To make the soup, cooks gently simmer salted pork, fresh pork, and spring bamboo shoots.
 
-Flavor travels with local ingredients, preservation methods, trade routes, and migration. It is also shaped by prices, social class, restaurant fashions, and family choices. Look at the five cards again and one bite will no longer fit into a single box. The traditional five flavors help us understand a historical way of thinking. Modern science helps us separate sources of sensation. Real eating brings taste, aroma, temperature, texture, and memory back together.
+Spring bamboo shoots are at their best for only part of the year. Very fresh shoots can also be harder to find far from places where they grow, so *yanduxian* is less common outside its home region. The shoots soak up the flavor of the salted pork while adding a fresh taste and a tender crunch. The salted pork brings saltiness, the broth brings umami, and the bamboo shoots keep the rich soup from feeling too heavy.
 [/en]
 [/section]
 
 [ending]
-heading_zh: 下一口，问得更仔细
-heading_en: Ask a Better Question with the Next Bite
+heading_zh: 不同的味道怎样配在一起？
+heading_en: How Do Different Flavors Work Together?
 [zh]
-“这是酸的还是甜的？”是一个好问题，却不是最后一个问题。下一口还可以问：我闻到了什么？它为什么发麻或发热？口感怎样？这种食材什么时候来到这里？谁教会了这家人这样做？
+每道菜都有一种最容易尝出来的味道。无锡排骨的甜味很明显，苦瓜的苦味也很明显。但这并不是一道菜的全部味道。
 
-一口菜不是地图上的一个颜色，也不是科学表格里的一个格子。它是身体的感觉、历史的移动和个人选择在同一刻相遇。会认真品尝，不是把所有味道说对，而是愿意慢下来，发现一个简单答案装不下的细节。
+酱油和香料让无锡排骨不只是甜；温和的鸡蛋和苦瓜放在一起，让苦味有了对比；腌笃鲜里的咸肉、鲜汤和清甜的春笋，则会同时出现在一勺汤里。正是这些浓淡不同的味道，让一道菜不只是“甜”“苦”或“咸”。
 [/zh]
 [en]
-“Is this sour or sweet?” is a good question, but it is not the last one. With the next bite, you can also ask: What do I smell? Why does this tingle or burn? What is the texture? When did this ingredient arrive here? Who taught this family to prepare it this way?
+Every dish has a flavor that stands out. Wuxi ribs are known for their sweetness, and bitter melon is known for being bitter. But that is not the whole taste of either dish.
 
-A bite of food is neither one color on a map nor one box in a science chart. It is a meeting of body sensations, moving history, and personal choice. Careful tasting does not mean naming every flavor correctly. It means slowing down long enough to notice the details that no simple answer can hold.
+Soy sauce and spices keep Wuxi ribs from tasting only sweet. Mild egg adds a softer taste to bitter melon. In *yanduxian*, salty pork, savory broth, and fresh bamboo shoots fill the same spoonful. That mix of strong and mild flavors makes each dish more than simply sweet, bitter, or salty.
 [/en]
 [/ending]

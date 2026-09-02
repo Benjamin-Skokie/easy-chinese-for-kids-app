@@ -3070,198 +3070,6 @@ window.NIHAO_CULTURE_SOURCES = [
   {
     "category": "food",
     "categoryName": "Food",
-    "slug": "flavors",
-    "title": "一口菜里有多少种感觉？",
-    "titleEn": "How Many Sensations Fit in One Bite?",
-    "storyPath": "../../culture/books/food/flavors/",
-    "groups": [
-      {
-        "title": "Modern taste, smell, and oral sensation",
-        "sources": [
-          {
-            "label": "National Institute on Deafness and Other Communication Disorders, “Taste Disorders”",
-            "url": "https://www.nidcd.nih.gov/health/taste-disorders"
-          },
-          {
-            "label": "InformedHealth.org / NCBI Bookshelf, “How does our sense of taste work?”",
-            "url": "https://www.ncbi.nlm.nih.gov/books/NBK279408/"
-          },
-          {
-            "label": "NCBI Bookshelf, “Trigeminal Chemoreception”",
-            "url": "https://www.ncbi.nlm.nih.gov/books/NBK11036/"
-          }
-        ]
-      },
-      {
-        "title": "Traditional five flavors as a historical framework",
-        "sources": [
-          {
-            "label": "Chinese Text Project, Huangdi Neijing, “Five Flavors”",
-            "url": "https://ctext.org/huangdi-neijing/wu-wei/ens"
-          },
-          {
-            "label": "Lili Lai and Judith Farquhar, “Food and Medicine: Qualities and Efficacies in Chinese Ethnic Medicines,” University of Chicago Knowledge",
-            "url": "https://knowledge.uchicago.edu/records/y7n7t-vh546"
-          }
-        ]
-      },
-      {
-        "title": "Chili pepper chronology",
-        "sources": [
-          {
-            "label": "Brian R. Dott, The Chile Pepper in China: A Cultural Biography (Columbia University Press, 2020), JSTOR record",
-            "url": "https://www.jstor.org/stable/10.7312/dott19532"
-          },
-          {
-            "label": "Renmin University of China Institute of Qing History, research overview on the chili pepper’s introduction and spread",
-            "url": "https://iqh.ruc.edu.cn/old/qdhjylyjzx/xszl/hwyj/edf0ccf894ff45d4a9e72a4ece82b41e.htm"
-          },
-          {
-            "label": "Jean Andrews, “Chilli Peppers,” The Cambridge World History of Food",
-            "url": "https://www.cambridge.org/core/books/abs/cambridge-world-history-of-food/chilli-peppers/F955AD34FB4A4E66722A15E5D7A7B4C3"
-          }
-        ]
-      },
-      {
-        "title": "Regional cuisine and the limits of flavor maps",
-        "sources": [
-          {
-            "label": "Yu-Xiao Zhu et al., “Geography and Similarity of Regional Cuisines in China,” PLOS ONE 8(11), 2013",
-            "url": "https://journals.plos.org/plosone/article?id=10.1371%2Fjournal.pone.0079161"
-          },
-          {
-            "label": "Thomas O. Höllmann, The Land of the Five Flavors: A Cultural History of Chinese Cuisine (Columbia University Press, 2013)",
-            "url": "https://academic.oup.com/columbia-scholarship-online/book/23371"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "category": "food",
-    "categoryName": "Food",
-    "slug": "chinese-cuisine",
-    "title": "一张地图为什么装不下中国菜？",
-    "titleEn": "Why Can't One Map Hold All of Chinese Food?",
-    "storyPath": "../../culture/books/food/chinese-cuisine/",
-    "groups": [
-      {
-        "title": "*Global Food History* — “Special Issue on Chinese Culinary Regionalism: Introduction”",
-        "sources": [
-          {
-            "label": "doi.org",
-            "url": "https://doi.org/10.1080/20549547.2020.1770490"
-          }
-        ]
-      },
-      {
-        "title": "Stanford University Press — scholarly introduction on Chinese food history and regional classification",
-        "sources": [
-          {
-            "label": "supress.sites-pro.stanford.edu",
-            "url": "https://supress.sites-pro.stanford.edu/sites/supress/files/media/file/11964_Excerpt_from_the_Introduction.pdf"
-          }
-        ]
-      },
-      {
-        "title": "Liu et al. — “The prehistoric roots of Chinese cuisines: Mapping staple food systems of China, 6000 BC–220 AD” (*PLOS ONE*)",
-        "sources": [
-          {
-            "label": "journals.plos.org",
-            "url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0240930"
-          }
-        ]
-      },
-      {
-        "title": "Brian R. Dott — *The Chile Pepper in China: A Cultural Biography* (Columbia University Press)",
-        "sources": [
-          {
-            "label": "cup.columbia.edu",
-            "url": "https://cup.columbia.edu/book/the-chile-pepper-in-china/9780231551304/"
-          }
-        ]
-      },
-      {
-        "title": "Yu Weijie — “无心插柳：论辣椒在中国的选择性传播” (*美食研究*, summary hosted by South China Agricultural University)",
-        "sources": [
-          {
-            "label": "yjs.scau.edu.cn",
-            "url": "https://yjs.scau.edu.cn/2019/0512/c3176a185425/page.htm"
-          }
-        ]
-      },
-      {
-        "title": "Hongjie Wang — “Hot Peppers, Sichuan Cuisine and the Revolutions in Modern China” (*World History Connected*)",
-        "sources": [
-          {
-            "label": "journals.gmu.edu",
-            "url": "https://journals.gmu.edu/whc/article/download/4424/2402?inline=1"
-          }
-        ]
-      },
-      {
-        "title": "China Daily / Chengdu local-history account — “Mapo tofu: Chen Mapo's tofu”",
-        "sources": [
-          {
-            "label": "chinadaily.com.cn",
-            "url": "https://www.chinadaily.com.cn/life/2012-03/09/content_15733317.htm"
-          }
-        ]
-      },
-      {
-        "title": "Academy of Chinese Studies — “中国有多少个菜系？” and “Chinese Culinary Culture and Eight Regional Cuisines”",
-        "sources": [
-          {
-            "label": "chiculture.org.hk",
-            "url": "https://chiculture.org.hk/en/node/2698"
-          },
-          {
-            "label": "chiculture.org.hk",
-            "url": "https://chiculture.org.hk/en/china-five-thousand-years/2699"
-          }
-        ]
-      },
-      {
-        "title": "Heather R. Lee — “The Untold Story of Chinese Restaurants in America” (Scholars Strategy Network)",
-        "sources": [
-          {
-            "label": "scholars.org",
-            "url": "https://scholars.org/brief/untold-story-chinese-restaurants-america"
-          }
-        ]
-      },
-      {
-        "title": "Gabriel J. Chin and John Ormonde — “The War Against Chinese Restaurants” (*Duke Law Journal*)",
-        "sources": [
-          {
-            "label": "dlj.law.duke.edu",
-            "url": "https://dlj.law.duke.edu/article/the-war-against-chinese-restaurants-chin-vol67-iss4/"
-          }
-        ]
-      },
-      {
-        "title": "Smithsonian National Museum of American History — “Sweet & Sour” exhibition overview",
-        "sources": [
-          {
-            "label": "americanhistory.si.edu",
-            "url": "https://americanhistory.si.edu/press/releases/national-museum-american-history-showcases-sweet-sour"
-          }
-        ]
-      },
-      {
-        "title": "Haiming Liu — *From Canton Restaurant to Panda Express: A History of Chinese Food in the United States* (Smithsonian catalog record)",
-        "sources": [
-          {
-            "label": "si.edu",
-            "url": "https://www.si.edu/object/canton-restaurant-panda-express-history-chinese-food-united-states-haiming-liu%3Asiris_sil_1065159"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "category": "food",
-    "categoryName": "Food",
     "slug": "chopsticks",
     "title": "两根筷子，怎么夹得稳？",
     "titleEn": "How Do Two Chopsticks Work Together?",
@@ -3323,9 +3131,203 @@ window.NIHAO_CULTURE_SOURCES = [
   {
     "category": "food",
     "categoryName": "Food",
+    "slug": "chinese-cuisine",
+    "title": "中国菜是什么味道？",
+    "titleEn": "What Does Chinese Food Taste Like?",
+    "storyPath": "../../culture/books/food/chinese-cuisine/",
+    "groups": [
+      {
+        "title": "*Global Food History* — “Special Issue on Chinese Culinary Regionalism: Introduction”",
+        "sources": [
+          {
+            "label": "doi.org",
+            "url": "https://doi.org/10.1080/20549547.2020.1770490"
+          }
+        ]
+      },
+      {
+        "title": "Stanford University Press — scholarly introduction on Chinese food history and regional classification",
+        "sources": [
+          {
+            "label": "supress.sites-pro.stanford.edu",
+            "url": "https://supress.sites-pro.stanford.edu/sites/supress/files/media/file/11964_Excerpt_from_the_Introduction.pdf"
+          }
+        ]
+      },
+      {
+        "title": "Liu et al. — “The prehistoric roots of Chinese cuisines: Mapping staple food systems of China, 6000 BC–220 AD” (*PLOS ONE*)",
+        "sources": [
+          {
+            "label": "journals.plos.org",
+            "url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0240930"
+          }
+        ]
+      },
+      {
+        "title": "Brian R. Dott — *The Chile Pepper in China: A Cultural Biography* (Columbia University Press)",
+        "sources": [
+          {
+            "label": "cup.columbia.edu",
+            "url": "https://cup.columbia.edu/book/the-chile-pepper-in-china/9780231551304/"
+          }
+        ]
+      },
+      {
+        "title": "Yu Weijie — “无心插柳：论辣椒在中国的选择性传播” (*美食研究*, summary hosted by South China Agricultural University)",
+        "sources": [
+          {
+            "label": "yjs.scau.edu.cn",
+            "url": "https://yjs.scau.edu.cn/2019/0512/c3176a185425/page.htm"
+          }
+        ]
+      },
+      {
+        "title": "Hongjie Wang — “Hot Peppers, Sichuan Cuisine and the Revolutions in Modern China” (*World History Connected*)",
+        "sources": [
+          {
+            "label": "journals.gmu.edu",
+            "url": "https://journals.gmu.edu/whc/article/download/4424/2402?inline=1"
+          }
+        ]
+      },
+      {
+        "title": "Ministry of Commerce “Time-Honored Brands” museum and China Daily — Chen Mapo tofu",
+        "sources": [
+          {
+            "label": "lzhbwg.mofcom.gov.cn",
+            "url": "https://lzhbwg.mofcom.gov.cn/edi_ecms_web_front/thb/detail/f7ab3a6e7ea0426d8fd104fc7c93df79"
+          },
+          {
+            "label": "chinadaily.com.cn",
+            "url": "https://www.chinadaily.com.cn/kindle/2015-09/06/content_21798522.htm"
+          }
+        ]
+      },
+      {
+        "title": "Academy of Chinese Studies — “中国有多少个菜系？” and “Chinese Culinary Culture and Eight Regional Cuisines”",
+        "sources": [
+          {
+            "label": "chiculture.org.hk",
+            "url": "https://chiculture.org.hk/en/node/2698"
+          },
+          {
+            "label": "chiculture.org.hk",
+            "url": "https://chiculture.org.hk/en/china-five-thousand-years/2699"
+          }
+        ]
+      },
+      {
+        "title": "Hangzhou CPPCC — overview of classic Hangzhou dishes",
+        "sources": [
+          {
+            "label": "hzzx.gov.cn",
+            "url": "https://www.hzzx.gov.cn/cshz/content/2022-09/28/content_8363764.htm"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "food",
+    "categoryName": "Food",
+    "slug": "flavors",
+    "title": "食物为什么有这么多味道？",
+    "titleEn": "Why Does Food Have So Many Flavors?",
+    "storyPath": "../../culture/books/food/flavors/",
+    "groups": [
+      {
+        "title": "Modern taste, smell, and oral sensation",
+        "sources": [
+          {
+            "label": "National Institute on Deafness and Other Communication Disorders, “Taste Disorders”",
+            "url": "https://www.nidcd.nih.gov/health/taste-disorders"
+          },
+          {
+            "label": "InformedHealth.org / NCBI Bookshelf, “How does our sense of taste work?”",
+            "url": "https://www.ncbi.nlm.nih.gov/books/NBK279408/"
+          },
+          {
+            "label": "NCBI Bookshelf, “Trigeminal Chemoreception”",
+            "url": "https://www.ncbi.nlm.nih.gov/books/NBK11036/"
+          }
+        ]
+      },
+      {
+        "title": "Traditional five flavors as a historical framework",
+        "sources": [
+          {
+            "label": "Chinese Text Project, Huangdi Neijing, “Five Flavors”",
+            "url": "https://ctext.org/huangdi-neijing/wu-wei/ens"
+          },
+          {
+            "label": "Lili Lai and Judith Farquhar, “Food and Medicine: Qualities and Efficacies in Chinese Ethnic Medicines,” University of Chicago Knowledge",
+            "url": "https://knowledge.uchicago.edu/records/y7n7t-vh546"
+          }
+        ]
+      },
+      {
+        "title": "Chili pepper chronology",
+        "sources": [
+          {
+            "label": "Brian R. Dott, The Chile Pepper in China: A Cultural Biography (Columbia University Press, 2020), JSTOR record",
+            "url": "https://www.jstor.org/stable/10.7312/dott19532"
+          },
+          {
+            "label": "Renmin University of China Institute of Qing History, research overview on the chili pepper’s introduction and spread",
+            "url": "https://iqh.ruc.edu.cn/old/qdhjylyjzx/xszl/hwyj/edf0ccf894ff45d4a9e72a4ece82b41e.htm"
+          },
+          {
+            "label": "Jean Andrews, “Chilli Peppers,” The Cambridge World History of Food",
+            "url": "https://www.cambridge.org/core/books/abs/cambridge-world-history-of-food/chilli-peppers/F955AD34FB4A4E66722A15E5D7A7B4C3"
+          }
+        ]
+      },
+      {
+        "title": "Regional cuisine and the limits of flavor maps",
+        "sources": [
+          {
+            "label": "Yu-Xiao Zhu et al., “Geography and Similarity of Regional Cuisines in China,” PLOS ONE 8(11), 2013",
+            "url": "https://journals.plos.org/plosone/article?id=10.1371%2Fjournal.pone.0079161"
+          },
+          {
+            "label": "Thomas O. Höllmann, The Land of the Five Flavors: A Cultural History of Chinese Cuisine (Columbia University Press, 2013)",
+            "url": "https://academic.oup.com/columbia-scholarship-online/book/23371"
+          }
+        ]
+      },
+      {
+        "title": "Pictured dishes",
+        "sources": [
+          {
+            "label": "Ministry of Culture and Tourism of China, Shanxi food-culture overview",
+            "url": "https://www.mct.gov.cn/whzx/qgwhxxlb/sx/202503/t20250313_958804.htm"
+          },
+          {
+            "label": "Wuxi Municipal Archives, history of Wuxi sauced ribs",
+            "url": "https://daj.wuxi.gov.cn/doc/2008/02/16/2426844.shtml"
+          },
+          {
+            "label": "Ministry of Commerce, China Time-Honored Brand Digital Museum, Lu Gao Jian profile",
+            "url": "https://lzhbwg.mofcom.gov.cn/edi_ecms_web_front/thb/detail/d9f5775a997742c190669cc7b4bfc18a"
+          },
+          {
+            "label": "Beijing Municipal Health Commission, “立夏时节，北京妇产医院营养师和您话苦瓜”",
+            "url": "https://wjw.beijing.gov.cn/bmfw_20143/jkzs/jksh/202505/t20250515_4089785.html"
+          },
+          {
+            "label": "Hebei Administration for Market Regulation, “一口尝尽江南春” (reprinted from China Discipline Inspection Daily)",
+            "url": "https://scjg.hebei.gov.cn/info/37984"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "food",
+    "categoryName": "Food",
     "slug": "dumplings",
-    "title": "古时候的饺子和今天一样吗？",
-    "titleEn": "Were Ancient Dumplings Like the Ones We Eat Today?",
+    "title": "饺子的故事",
+    "titleEn": "The Story of Dumplings",
     "storyPath": "../../culture/books/food/dumplings/",
     "groups": [
       {
@@ -3379,6 +3381,10 @@ window.NIHAO_CULTURE_SOURCES = [
           {
             "label": "浙江省社会科学界联合会，“食疗：辨体施膳 药食同源”",
             "url": "https://www.zjskw.gov.cn/art/2025/8/21/art_1229536556_64988.html"
+          },
+          {
+            "label": "北京市妇女干部学校学习平台转载，“《三国志》为何不提张仲景？”",
+            "url": "https://study.bjwomen.gov.cn/thought/knowledge/2022/05/20/3981.shtml"
           }
         ]
       },

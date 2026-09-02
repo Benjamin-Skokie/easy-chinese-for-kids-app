@@ -1,6 +1,14 @@
-# 古时候的饺子和今天一样吗？ - References and Editorial Notes
+# References for “The Story of Dumplings”
 
 This file is for editorial research and does not render on the website.
+
+## Current child-facing version
+
+Rewritten: 2026-09-02
+
+- The article now opens with a family learning to seal a dumpling, then asks where dumplings came from.
+- The Zhang Zhongjing account is clearly labeled a later legend, not a proven invention story.
+- Lunar New Year customs are not presented as universal. The child-facing version uses soft or ground edible fillings instead of coins, whole nuts, or hard candy.
 
 ## 唐代阿斯塔那墓葬中的面食实物
 
@@ -99,6 +107,20 @@ Editorial boundary:
 - “娇耳治冻耳”不作为医学史实或现代医疗建议；儿童受冻或冻伤应保暖并寻求合适的成人与医疗帮助。
 - 一些通俗版本写入辣椒，但辣椒传入中国远晚于东汉，正文不采用这一细节。
 
+Source: 北京市妇女干部学校学习平台转载，“《三国志》为何不提张仲景？”
+URL: https://study.bjwomen.gov.cn/thought/knowledge/2022/05/20/3981.shtml
+Accessed: 2026-09-02
+
+Supports:
+
+- 文章明确把“张仲景发明饺子、又称娇耳”归入后世民间传说，并指出其可靠性不足。
+- 宋代常见名称“角子”的读音和字形不能反过来证明东汉已有“娇耳”这个名称。
+
+Editorial boundary:
+
+- 正文保留“娇耳”（娇嫩的“娇”、耳朵的“耳”）作为后来故事里的常见写法，不把它说成张仲景时代留下的原始名称。
+- 张仲景是真实历史人物，不等于传说中的每个动作、配方和发明说都是真实记录。
+
 ## 春节饮食的地域差异
 
 Source: 上海市民政局，“春节传统食品溯源”
@@ -115,6 +137,25 @@ Editorial boundary:
 - 不写“所有中国人过年都吃饺子”；正文明确南北、家庭与时代之间存在差异。
 - 地域描述只写总体倾向，不把“北方饺子、南方年糕或汤圆”变成没有例外的分界线。
 
+## 新年幸运饺子的可食用味道
+
+Sources:
+
+- 文史广东，“饺子是怎么诞生的？” — https://www.gdwsw.gov.cn/wsbl/content/post_38639.html
+- 荣成市人民政府，“荣成民俗：春节” — https://www.rongcheng.gov.cn/art/2023/1/18/art_40558_1110024.html
+
+Accessed: 2026-09-02
+
+Supports:
+
+- 一些地方和家庭曾在少量新年饺子中加入糖、花生或红枣，并给吃到不同食物的人送上不同祝福。
+- 糖常与“生活甜美”的祝愿相连；花生可借“长生果”表达长寿；红枣在部分地方借“枣／早”的近音表达好事早来。
+
+Editorial boundary:
+
+- 这些含义是地方和家庭习俗，不是全国统一规则。
+- 儿童正文改用少量糖、柔软枣泥或磨碎的花生馅来介绍味道，不推荐硬币、整颗坚果或硬糖。
+
 ## 儿童食物中的硬币、硬糖和坚果风险
 
 Source: U.S. Centers for Disease Control and Prevention, “Nonfatal Choking-Related Episodes Among Children — United States, 2001”
@@ -129,7 +170,7 @@ Supports:
 Editorial boundary:
 
 - 不把洗净的硬币称为安全，也不建议儿童咬饺子寻找隐藏物。
-- 整颗坚果、硬糖或其他硬物不作为“安全替代品”；正文改用饺子外的可见食用色记号或盘子下的卡片。
+- 整颗坚果、硬糖或其他硬物不作为“安全替代品”；正文改用柔软枣泥、少量糖或磨碎的花生馅，并提醒成人先确认过敏风险。
 - 另需提前说明馅料，以照顾食物过敏；本文不提供个体医疗建议。
 
 ## 世界各地包馅面食与传播边界
