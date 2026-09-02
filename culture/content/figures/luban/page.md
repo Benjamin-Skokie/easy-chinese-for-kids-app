@@ -50,7 +50,7 @@ page: 2
 layout: text-wrap-image
 heading_zh: 叶子边上的小齿
 heading_en: The Tiny Teeth on the Leaf
-image: workshop-problem-solver.webp
+image: workshop-problem-solver-v2.webp
 caption_zh: 回到工坊以后，鲁班对照草叶，在铁片边上做出一排小齿。
 caption_en: Back in his workshop, Lu Ban copies the leaf's tiny teeth onto a strip of iron.
 [zh]
@@ -111,7 +111,7 @@ page: 4
 layout: text-wrap-image
 heading_zh: 一代代木匠的大老师
 heading_en: A Teacher for Generations
-image: remembered-by-woodworkers.webp
+image: remembered-by-woodworkers-v2.webp
 caption_zh: 鲁班在木工作坊里向年轻木匠示范，两根木料怎样牢牢接在一起。
 caption_en: In a working carpenter's yard, Lu Ban shows young builders how two wooden beams fit together.
 [zh]
