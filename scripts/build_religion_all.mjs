@@ -2,6 +2,7 @@ import { buildPhilosophyPage } from "./build_philosophy_page.mjs";
 
 const slugs = [
   "buddhism-comes-to-china",
+  "shaolin-kung-fu",
   "maitreya-buddha",
   "daoism",
   "lord-guan",

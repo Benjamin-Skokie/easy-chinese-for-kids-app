@@ -6314,98 +6314,115 @@ window.NIHAO_CULTURE_SOURCES = [
     "category": "religion",
     "categoryName": "Religion & Belief",
     "slug": "buddhism-comes-to-china",
-    "title": "不只一匹白马：佛教怎样来到中国",
-    "titleEn": "More Than One White Horse: How Buddhism Reached China",
+    "title": "佛教怎样来到中国？白马寺的传说",
+    "titleEn": "How Did Buddhism Come to China? The White Horse Story",
     "storyPath": "../../culture/books/religion/buddhism-comes-to-china/",
     "groups": [
       {
-        "title": "A Dated First-Century Record",
+        "title": "Emperor Ming, the white horse, and White Horse Temple",
         "sources": [
           {
-            "label": "Book of the Later Han, “Biography of Liu Ying, Prince of Chu,” text preserved through the Chinese Text Project",
-            "url": "https://ctext.org/wiki.pl?chapter=592401&if=en"
+            "label": "National Museum of China, “Mirror of the Mind: An Exhibition of Buddhist Sculpture from Bo'xing, Shandong Province”",
+            "url": "https://en.chnmuseum.cn/exhibition/past_exhibitions/202010/t20201028_247936.html"
           },
           {
-            "label": "“Chinese Religion: An Overview,” Encyclopedia of Religion",
-            "url": "https://www.encyclopedia.com/environment/encyclopedias-almanacs-transcripts-and-maps/chinese-religion-overview"
-          }
-        ]
-      },
-      {
-        "title": "Emperor Ming's Dream as a Received Tradition",
-        "sources": [
-          {
-            "label": "Book of the Later Han, “Treatise on the Western Regions,” Chinese Text Project",
-            "url": "https://ctext.org/hou-han-shu/xi-yu-zhuan/zh"
-          },
-          {
-            "label": "Duan Qingbo, “Sino-Western Cultural Exchange as Seen through the Archaeology of the First Emperor's Necropolis,” Journal of Chinese History",
-            "url": "https://www.cambridge.org/core/journals/journal-of-chinese-history/article/sinowestern-cultural-exchange-as-seen-through-the-archaeology-of-the-first-emperors-necropolis/3F6506262A9ED57C9DC3827EEAA6B230"
-          }
-        ]
-      },
-      {
-        "title": "White Horse Temple, the Two Monks, and the Date 68",
-        "sources": [
-          {
-            "label": "Eric Zürcher, The Buddhist Conquest of China: The Spread and Adaptation of Buddhism in Early Medieval China, revised edition, chapter on Han Buddhism",
+            "label": "Eric Zürcher, The Buddhist Conquest of China: The Spread and Adaptation of Buddhism in Early Medieval China, revised edition",
             "url": "https://brill.com/display/title/6495"
           },
           {
-            "label": "Tsukamoto Zenryu, A History of Early Chinese Buddhism, supplementary English text in the Kyoto University Research Information Repository",
-            "url": "https://repository.kulib.kyoto-u.ac.jp/bitstream/2433/139089/10/YunKang_v16_suppl_text.pdf"
+            "label": "Polina Shmushko, “The Modern White Horse Temple and Online Reconfiguring of a Buddhist Heritage Space”",
+            "url": "https://pure.uva.nl/ws/files/178085865/jdtrea-3-1-109.pdf"
           }
         ]
       },
       {
-        "title": "Central Asian Translators and Translation Teams",
+        "title": "Buddhism's long growth in China",
         "sources": [
           {
-            "label": "Haun Saussy, “The First Age of Translation,” in Translation as Citation: Zhuangzi Inside Out, Oxford University Press",
-            "url": "https://academic.oup.com/book/25502/chapter-abstract/192724579"
+            "label": "Pew Research Center, “Buddhism in China”",
+            "url": "https://www.pewresearch.org/religion/2023/08/30/buddhism/"
           },
           {
-            "label": "Christoph Anderl, Bart Dessein, and Ann Heirman, “Buddhism,” Oxford Bibliographies in Chinese Studies",
-            "url": "https://academic.oup.com/reference/62338/reference-article-abstract/554177590"
+            "label": "British Museum, “Ancient India: Living Traditions — Adaptations in China”",
+            "url": "https://www.britishmuseum.org/exhibitions/ancient-india-living-traditions/ancient-india-living-traditions-large-print-guide"
           },
           {
-            "label": "Paul Harrison, “An Shigao,” Encyclopedia of Buddhism",
-            "url": "https://www.encyclopedia.com/religion/encyclopedias-almanacs-transcripts-and-maps/shigao"
+            "label": "Smarthistory, “Buddhism in Chinese Art (2nd century through 907 C.E.)”",
+            "url": "https://smarthistory.org/reframing-art-history/buddhism-chinese-art/"
           }
         ]
       },
       {
-        "title": "Many Routes and Continuing Exchange",
+        "title": "Buddhism in China today",
         "sources": [
           {
-            "label": "UNESCO, “About the Silk Roads”",
-            "url": "https://www.unesco.org/en/silk-roads/about-silk-roads?hub=196704"
+            "label": "Pew Research Center, “6 Facts About Buddhism in China”",
+            "url": "https://www.pewresearch.org/short-reads/2023/09/21/6-facts-about-buddhism-in-china/"
           },
           {
-            "label": "UNESCO World Heritage Centre, “Silk Roads: the Routes Network of Chang'an–Tianshan Corridor”",
-            "url": "https://whc.unesco.org/en/list/1442/"
+            "label": "Pew Research Center, “Measuring Religion in China”",
+            "url": "https://www.pewresearch.org/religion/2023/08/30/measuring-religion-in-china/"
+          },
+          {
+            "label": "Asian Art Museum, “Bodhisattva Avalokiteshvara (Chinese: Guanyin)”",
+            "url": "https://education.asianart.org/resources/bodhisattva-avalokiteshvara-chinese-guanyin-618-906/"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "religion",
+    "categoryName": "Religion & Belief",
+    "slug": "daoism",
+    "title": "八仙是怎样过海的？",
+    "titleEn": "How Did the Eight Immortals Cross the Sea?",
+    "storyPath": "../../culture/books/religion/daoism/",
+    "groups": [
+      {
+        "title": "Daoism, the Dao, caring for life, and immortals",
+        "sources": [
+          {
+            "label": "Stanford Encyclopedia of Philosophy, “Religious Daoism”",
+            "url": "https://plato.stanford.edu/archives/spr2018/entries/daoism-religion/"
+          },
+          {
+            "label": "Columbia University, Asia for Educators, Stephen F. Teiser, “The Spirits of Chinese Religion”",
+            "url": "https://afe.easia.columbia.edu/cosmos/main/spirits_of_chinese_religion.pdf"
           }
         ]
       },
       {
-        "title": "Guanyin and Dunhuang: Change Without a Single “Chinese Shape”",
+        "title": "The Eight Immortals cross the sea",
         "sources": [
           {
-            "label": "Denise Patry Leidy, “Chinese Buddhist Sculpture,” Metropolitan Museum of Art",
-            "url": "https://www.metmuseum.org/essays/chinese-buddhist-sculpture"
+            "label": "Palace Museum, “八仙过海”",
+            "url": "https://www.dpm.org.cn/lemmas/244863.html"
           },
           {
-            "label": "Getty Research Institute, “Cave Temples of Dunhuang: Buddhist Art on China's Silk Road”",
-            "url": "https://www.getty.edu/research/exhibitions_events/exhibitions/cave_temples_dunhuang/gallery.html"
+            "label": "China Intangible Cultural Heritage Network and Digital Museum, “八仙传说”",
+            "url": "https://www.ihchina.cn/project_details/12271/"
+          },
+          {
+            "label": "zh.wikisource.org",
+            "url": "https://zh.wikisource.org/wiki/%E6%9D%B1%E9%81%8A%E8%A8%98/%E7%AC%AC56%E5%9B%9E"
           }
         ]
       },
       {
-        "title": "Present-Day White Horse Temple and Existing Images",
+        "title": "The Eight Immortals in art and culture",
         "sources": [
           {
-            "label": "Polina Shmushko, “The Modern White Horse Temple and Online Reconfiguring of a Buddhist Heritage Space,” Journal of Daesoon Thought and the Religions of East Asia 3.1",
-            "url": "https://www.accesson.kr/jdtrea/v.3/1/109/38840"
+            "label": "Palace Museum, “八仙过海”",
+            "url": "https://www.dpm.org.cn/lemmas/244863.html"
+          },
+          {
+            "label": "Metropolitan Museum of Art, “Cup with Eight Daoist Immortals”",
+            "url": "https://www.metmuseum.org/art/collection/search/41879"
+          },
+          {
+            "label": "British Museum, “Mountain group with Shoulao and the Eight Daoist Immortals”",
+            "url": "https://www.britishmuseum.org/collection/object/A_1988-0727-1"
           }
         ]
       }
@@ -6415,85 +6432,34 @@ window.NIHAO_CULTURE_SOURCES = [
     "category": "religion",
     "categoryName": "Religion & Belief",
     "slug": "lord-guan",
-    "title": "关公为什么会走进庙里？",
-    "titleEn": "How Did Guan Yu Become a Temple God?",
+    "title": "关羽没有忘记的承诺",
+    "titleEn": "The Promise Guan Yu Kept",
     "storyPath": "../../culture/books/religion/lord-guan/",
     "groups": [
       {
-        "title": "Historical Guan Yu",
+        "title": "The promise, repayment, and departure",
         "sources": [
           {
-            "label": "Chinese Text Project, Chen Shou, Records of the Three Kingdoms, “Book of Shu 6,” Biography of Guan Yu",
-            "url": "https://ctext.org/sanguozhi/36/zh"
-          },
-          {
-            "label": "Barend J. ter Haar, Guan Yu: The Religious Afterlife of a Failed Hero, Oxford University Press, preview of Chapter 1",
-            "url": "https://api.pageplace.de/preview/DT0400.9780192525420_A35502593/preview-9780192525420_A35502593.pdf"
+            "label": "Chen Shou, Records of the Three Kingdoms, “Book of Shu 6,” Biography of Guan Yu, Chinese Text Project",
+            "url": "https://ctext.org/sanguozhi/36/zhs"
           }
         ]
       },
       {
-        "title": "The Cult Predated *Romance of the Three Kingdoms*",
-        "sources": [
-          {
-            "label": "Barend J. ter Haar, Guan Yu: The Religious Afterlife of a Failed Hero, Oxford University Press, Chapter 1 preview and Chapter 2 abstract",
-            "url": "https://api.pageplace.de/preview/DT0400.9780192525420_A35502593/preview-9780192525420_A35502593.pdf"
-          },
-          {
-            "label": "academic.oup.com",
-            "url": "https://academic.oup.com/book/10303/chapter-abstract/158027186"
-          }
-        ]
-      },
-      {
-        "title": "Buddhist and Daoist Layers",
+        "title": "From Guan Yu to Lord Guan",
         "sources": [
           {
             "label": "Barend J. ter Haar, Guan Yu: The Religious Afterlife of a Failed Hero, Oxford University Press",
             "url": "https://api.pageplace.de/preview/DT0400.9780192525420_A35502593/preview-9780192525420_A35502593.pdf"
           },
           {
-            "label": "Cambridge University Press, “Knowledge and Ritual: The Dual Nature of the Scripture Illustrating the Holiness of Emperor Guan”",
-            "url": "https://www.cambridge.org/core/books/abs/chinese-popular-religion-in-text-and-acts/knowledge-and-ritual-the-dual-nature-of-the-scripture-illustrating-the-holiness-of-emperor-guan-guandi-mingsheng-jing/C8963AD9DE0DA767D0A2050E4B15D355"
-          },
-          {
-            "label": "doi.org",
-            "url": "https://doi.org/10.1017/9789048550364.007"
-          },
-          {
-            "label": "He Liqun, “Buddhist State Monasteries in Early Medieval China,” Heidelberg University",
-            "url": "https://archiv.ub.uni-heidelberg.de/volltextserver/17285/1/heliqun05082014.pdf"
-          }
-        ]
-      },
-      {
-        "title": "Imperial Titles and the Moral Deity",
-        "sources": [
-          {
-            "label": "Metropolitan Museum of Art, “Guan Yu,” painting ca. 1700",
+            "label": "Metropolitan Museum of Art, “Guan Yu,” painting, ca. 1700",
             "url": "https://www.metmuseum.org/art/collection/search/62002"
-          },
-          {
-            "label": "Cambridge University Press, “Knowledge and Ritual: The Dual Nature of the Scripture Illustrating the Holiness of Emperor Guan”",
-            "url": "https://www.cambridge.org/core/books/abs/chinese-popular-religion-in-text-and-acts/knowledge-and-ritual-the-dual-nature-of-the-scripture-illustrating-the-holiness-of-emperor-guan-guandi-mingsheng-jing/C8963AD9DE0DA767D0A2050E4B15D355"
           }
         ]
       },
       {
-        "title": "Merchants, Guildhalls, and Trust",
-        "sources": [
-          {
-            "label": "“Shanxi Merchant Guildhalls as Religious Sites for Theatrical Performances in Late Imperial China,” Religions 17.4",
-            "url": "https://www.mdpi.com/2077-1444/17/4/404"
-          },
-          {
-            "label": "British Museum, “Figure,” Guandi soapstone sculpture",
-            "url": "https://www.britishmuseum.org/collection/object/A_SLMisc-1174"
-          }
-        ]
-      },
-      {
-        "title": "Images and Terminology",
+        "title": "Red face, beard, robe, and blade",
         "sources": [
           {
             "label": "Smithsonian Institution, “Chinese Opera”",
@@ -6504,6 +6470,81 @@ window.NIHAO_CULTURE_SOURCES = [
             "url": "https://www.britishmuseum.org/collection/object/A_1990-1113-0-6"
           }
         ]
+      },
+      {
+        "title": "Merchants and trust",
+        "sources": [
+          {
+            "label": "British Museum, “Figure,” Guandi soapstone sculpture",
+            "url": "https://www.britishmuseum.org/collection/object/A_SLMisc-1174"
+          },
+          {
+            "label": "“Shanxi Merchant Guildhalls as Religious Sites for Theatrical Performances in Late Imperial China,” Religions 17.4",
+            "url": "https://www.mdpi.com/2077-1444/17/4/404"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "religion",
+    "categoryName": "Religion & Belief",
+    "slug": "shaolin-kung-fu",
+    "title": "少林寺为什么会有功夫？",
+    "titleEn": "How Did Kung Fu Come to Shaolin Temple?",
+    "storyPath": "../../culture/books/religion/shaolin-kung-fu/",
+    "groups": [
+      {
+        "title": "Shaolin as a Buddhist monastery",
+        "sources": [
+          {
+            "label": "People’s Government of Henan Province, “Shaolin Temple”",
+            "url": "https://english.henan.gov.cn/2019/10-16/988665.html"
+          },
+          {
+            "label": "UNESCO World Heritage Centre, “Historic Monuments of Dengfeng in ‘The Centre of Heaven and Earth’”",
+            "url": "https://whc.unesco.org/en/list/1305/"
+          }
+        ]
+      },
+      {
+        "title": "Li Shimin and the thirteen monks",
+        "sources": [
+          {
+            "label": "Meir Shahar, The Shaolin Monastery: History, Religion, and the Chinese Martial Arts, University of Hawai‘i Press",
+            "url": "https://uhpress.hawaii.edu/title/the-shaolin-monastery-history-religion-and-the-chinese-martial-arts/"
+          },
+          {
+            "label": "Tōnami Mamoru, The Shaolin Monastery Stele on Mount Song, summary and bibliographic record, Persée",
+            "url": "https://www.persee.fr/doc/befeo_0336-1519_1993_num_80_1_2226"
+          }
+        ]
+      },
+      {
+        "title": "Staff fighting and later boxing",
+        "sources": [
+          {
+            "label": "Meir Shahar, The Shaolin Monastery: History, Religion, and the Chinese Martial Arts, University of Hawai‘i Press",
+            "url": "https://uhpress.hawaii.edu/title/the-shaolin-monastery-history-religion-and-the-chinese-martial-arts/"
+          },
+          {
+            "label": "Meir Shahar, “Hand Combat,” Oxford Academic / Hawai‘i Scholarship Online",
+            "url": "https://academic.oup.com/hawaii-scholarship-online/book/19612/chapter-abstract/178357584"
+          },
+          {
+            "label": "Meir Shahar, “Epigraphy, Buddhist Historiography, and Fighting Monks: The Case of the Shaolin Monastery,” Academia Sinica",
+            "url": "https://www11.ihp.sinica.edu.tw/storage/w2_file/1508BgfeJrK.pdf"
+          }
+        ]
+      },
+      {
+        "title": "Stories, theater, and movies",
+        "sources": [
+          {
+            "label": "Meir Shahar, The Shaolin Monastery: History, Religion, and the Chinese Martial Arts, University of Hawai‘i Press",
+            "url": "https://uhpress.hawaii.edu/title/the-shaolin-monastery-history-religion-and-the-chinese-martial-arts/"
+          }
+        ]
       }
     ]
   },
@@ -6511,46 +6552,20 @@ window.NIHAO_CULTURE_SOURCES = [
     "category": "religion",
     "categoryName": "Religion & Belief",
     "slug": "maitreya-buddha",
-    "title": "同一个名字，两种模样：弥勒与布袋和尚",
-    "titleEn": "One Name, Two Faces: Maitreya and the Cloth-Bag Monk",
+    "title": "笑和尚和他的大布袋",
+    "titleEn": "The Smiling Monk and His Big Cloth Bag",
     "storyPath": "../../culture/books/religion/maitreya-buddha/",
     "groups": [
       {
-        "title": "Maitreya as the Future Buddha",
+        "title": "Qici, the monk known as Budai",
         "sources": [
           {
-            "label": "Smithsonian National Museum of Asian Art, “Rising to the Occasion”",
-            "url": "https://asia.si.edu/explore-art-culture/interactives/encountering-the-buddha-life-of-the-buddha/rising-to-the-occasion/"
+            "label": "cbetaonline.dila.edu.tw",
+            "url": "https://cbetaonline.dila.edu.tw/T50n2061_p0848b23"
           },
           {
-            "label": "Smithsonian National Museum of Asian Art, “The Bodhisattva Mile (Sanskrit Maitreya), seated in ‘Pensive Pose’”",
-            "url": "https://asia.si.edu/explore-art-culture/collections/search/edanmdm%3Afsg_F1911.411/"
-          },
-          {
-            "label": "Metropolitan Museum of Art, “Buddhism and Buddhist Art”",
-            "url": "https://www.metmuseum.org/zh/essays/buddhism-and-buddhist-art"
-          }
-        ]
-      },
-      {
-        "title": "A Dated Early Chinese Maitreya Image",
-        "sources": [
-          {
-            "label": "Metropolitan Museum of Art, “Buddha Maitreya (Mile),” dated 486",
-            "url": "https://www.metmuseum.org/art/collection/search/42733"
-          },
-          {
-            "label": "Metropolitan Museum of Art, Denise Patry Leidy, “Chinese Buddhist Sculpture”",
-            "url": "https://www.metmuseum.org/essays/chinese-buddhist-sculpture"
-          }
-        ]
-      },
-      {
-        "title": "Qici/Budai in the Early Buddhist Biography",
-        "sources": [
-          {
-            "label": "Zanning, Song Gaoseng Zhuan (Biographies of Eminent Monks Compiled in the Song), volume 21, “Tang Mingzhou Fenghua xian shi Qici,” text reproduced from CBETA",
-            "url": "https://deerpark.app/stories/5233"
+            "label": "Dharma Drum Institute of Liberal Arts, Buddhist Studies Authority Database, “契此”",
+            "url": "https://authority.dila.edu.tw/person/search.php?aid=A012858"
           },
           {
             "label": "British Museum, “Budai 布袋” biographical authority record",
@@ -6559,11 +6574,41 @@ window.NIHAO_CULTURE_SOURCES = [
         ]
       },
       {
-        "title": "The Development of Budai-Maitreya in China",
+        "title": "The weather and snow stories",
         "sources": [
           {
-            "label": "“The Extinction of Three Foreign Religions in the Mediaeval Times and the Path Choice in the Sinicization of Foreign Religions,” Journal of East China Normal University (Humanities and Social Sciences)",
-            "url": "https://xbzs.ecnu.edu.cn/CN/html/2019-1-117.htm"
+            "label": "cbetaonline.dila.edu.tw",
+            "url": "https://cbetaonline.dila.edu.tw/T50n2061_p0848b23"
+          }
+        ]
+      },
+      {
+        "title": "Maitreya as the Future Buddha",
+        "sources": [
+          {
+            "label": "Smithsonian National Museum of Asian Art, “Rising to the Occasion”",
+            "url": "https://asia.si.edu/explore-art-culture/interactives/encountering-the-buddha-life-of-the-buddha/rising-to-the-occasion/"
+          },
+          {
+            "label": "Smithsonian National Museum of Asian Art, Encountering the Buddha exhibition labels",
+            "url": "https://asia.si.edu/wp-content/uploads/2023/08/Encountering-the-Buddha-Large-Print-Labels.pdf"
+          },
+          {
+            "label": "Metropolitan Museum of Art, “Buddha Maitreya (Mile),” dated 486",
+            "url": "https://www.metmuseum.org/art/collection/search/42733"
+          }
+        ]
+      },
+      {
+        "title": "How Budai and Maitreya became connected",
+        "sources": [
+          {
+            "label": "cbetaonline.dila.edu.tw",
+            "url": "https://cbetaonline.dila.edu.tw/T50n2061_p0848b23"
+          },
+          {
+            "label": "Metropolitan Museum of Art, “Buddhist monk Budai”",
+            "url": "https://www.metmuseum.org/art/collection/search/42545"
           },
           {
             "label": "British Museum, “figure,” Budai sculpture dated 1484",
@@ -6572,103 +6617,15 @@ window.NIHAO_CULTURE_SOURCES = [
         ]
       },
       {
-        "title": "Placement in the Hall of the Heavenly Kings",
+        "title": "Temple placement and later meanings",
         "sources": [
           {
             "label": "Renmin University of China Institute for the Study of Buddhism and Religious Theory, “佛教仪轨制度”",
             "url": "https://isbrt.ruc.edu.cn/xszl/rucfojiaoallcmsZiyuan238.htm"
           },
           {
-            "label": "Beijing Xicheng District People’s Government, “广化寺”",
-            "url": "https://www.bjxch.gov.cn/xcfw/whfw/xxxq/pnidpv737621.html"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "category": "religion",
-    "categoryName": "Religion & Belief",
-    "slug": "daoism",
-    "title": "道教：不只神仙和仙丹",
-    "titleEn": "Daoism: More Than Immortals and Elixirs",
-    "storyPath": "../../culture/books/religion/daoism/",
-    "groups": [
-      {
-        "title": "Daoist Thought, Daoist Religion, and the Problem of a Single Origin",
-        "sources": [
-          {
-            "label": "Stanford Encyclopedia of Philosophy, “Religious Daoism”",
-            "url": "https://plato.stanford.edu/entries/daoism-religion/"
-          }
-        ]
-      },
-      {
-        "title": "The Celestial Masters and the Date 142 CE",
-        "sources": [
-          {
-            "label": "Columbia University, Asia for Educators, “Daoism”",
-            "url": "https://afe.easia.columbia.edu/cosmos/ort/daoism.htm"
-          },
-          {
-            "label": "Journal of Chinese History review of Terry F. Kleeman, Celestial Masters: History and Ritual in Early Daoist Communities",
-            "url": "https://www.cambridge.org/core/journals/journal-of-chinese-history/article/celestial-masters-history-and-ritual-in-early-daoist-communities-by-terry-f-kleeman-cambridge-mass-harvard-university-press-2016-446-pages-4995-4995-cloth/9F4DDD1189BEBA1C38A9E5D5F58A4D6C"
-          }
-        ]
-      },
-      {
-        "title": "Laozi as Ancient Teacher and Divine Lord",
-        "sources": [
-          {
-            "label": "Stanford Encyclopedia of Philosophy, “Laozi”",
-            "url": "https://plato.stanford.edu/entries/laozi/"
-          },
-          {
-            "label": "Stanford Encyclopedia of Philosophy, “Religious Daoism,” sections 1.1 and 2.5",
-            "url": "https://plato.stanford.edu/entries/daoism-religion/"
-          }
-        ]
-      },
-      {
-        "title": "Immortals and the Eight Immortals",
-        "sources": [
-          {
-            "label": "Metropolitan Museum of Art, “Cup with Eight Daoist Immortals”",
-            "url": "https://www.metmuseum.org/art/collection/search/41879"
-          },
-          {
-            "label": "British Museum, “Mountain group with Shoulao and the Eight Daoist Immortals”",
-            "url": "https://www.britishmuseum.org/collection/object/A_1988-0727-1"
-          },
-          {
-            "label": "Stanford Encyclopedia of Philosophy, “Religious Daoism,” section 6.1",
-            "url": "https://plato.stanford.edu/entries/daoism-religion/"
-          }
-        ]
-      },
-      {
-        "title": "External and Internal Alchemy",
-        "sources": [
-          {
-            "label": "Stanford Encyclopedia of Philosophy, “Religious Daoism,” section 10",
-            "url": "https://plato.stanford.edu/entries/daoism-religion/"
-          },
-          {
-            "label": "Yang et al., “Mercury and Mercury-Containing Preparations: History of Use, Clinical Applications, Pharmacology, Toxicology, and Pharmacokinetics in Traditional Chinese Medicine,” Frontiers in Pharmacology (via PubMed Central)",
-            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8924441/"
-          }
-        ]
-      },
-      {
-        "title": "Talismans and Ritual Writing",
-        "sources": [
-          {
-            "label": "Grégoire Espesset, “A case study on the evolution of Chinese religious symbols from talismanic paraphernalia to Taoist liturgy,” Bulletin of the School of Oriental and African Studies 78.3 (2015)",
-            "url": "https://www.cambridge.org/core/journals/bulletin-of-the-school-of-oriental-and-african-studies/article/abs/case-study-on-the-evolution-of-chinese-religious-symbols-from-talismanic-paraphernalia-to-taoist-liturgy/8F22DC531CEB02821CBE23BA0E265F6D"
-          },
-          {
-            "label": "Stanford Encyclopedia of Philosophy, “Religious Daoism,” sections 3 and 5",
-            "url": "https://plato.stanford.edu/entries/daoism-religion/"
+            "label": "British Museum, “Budai 布袋” biographical authority record",
+            "url": "https://www.britishmuseum.org/collection/term/BIOG1892"
           }
         ]
       }
