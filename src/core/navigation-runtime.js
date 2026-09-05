@@ -1,5 +1,44 @@
+export const cultureStoryRanking = Object.freeze([
+  { id: "folk-tales", score: 10 },
+  { id: "literature", score: 9 },
+  { id: "figures", score: 9 },
+  { id: "architecture", score: 8 },
+  { id: "clothing", score: 8 },
+  { id: "folk-customs", score: 7 },
+  { id: "culture", score: 7 },
+  { id: "food", score: 6 },
+  { id: "inventions", score: 6 },
+  { id: "military", score: 5 },
+  { id: "economy", score: 5 },
+  { id: "politics", score: 4 },
+  { id: "geography", score: 4 },
+  { id: "art", score: 3 },
+  { id: "religion", score: 2 },
+  { id: "philosophy", score: 1 }
+]);
+
 export function createNavigationRuntime(context) {
   const { state, topicData, books, topicGroups, learningHomeCategories, bookHomeCategories, topicCardMeta, topicPageUrl, topicGroupsRoot, bookSelect, lessonSelect, lookupCard, bookBrowser, topicPanel, bookPanel, culturePanel, detailLayout, learningCultureNav, numberStages, timeDateWeekItems, getNumberStageItems, getWorldFocusItems, renderFocusControls, renderFocusDisplay, renderFocusWordList, renderFocusExplorer, renderActivityPanel, renderTopicDetail, updateDisplayControls, selectBookLesson } = context;
+
+function orderCultureLandingByStory() {
+  if (!culturePanel) {
+    return;
+  }
+
+  const cardGrid = culturePanel.querySelector(".culture-card-grid");
+  cultureStoryRanking.forEach(({ id }) => {
+    const card = cardGrid?.querySelector(`[data-culture-target="${id}"]`);
+    const section = culturePanel.querySelector(`#culture-${id}`);
+    if (card) {
+      cardGrid.appendChild(card);
+    }
+    if (section) {
+      culturePanel.appendChild(section);
+    }
+  });
+}
+
+orderCultureLandingByStory();
 
 function currentTopic() {
   return topicData.find((topic) => topic.id === state.selectedTopicId) ?? topicData[0];

@@ -1,33 +1,47 @@
 > Difficulty: Easy
 
-# How Does Clay Become a Bowl That Rings?
+# How Does Clay Become a Bowl That Can Sing?
 
-## Both Begin with Clay—So Why Are They Different?
+## Why Does Clay Go “Ting”?
 
-Pottery and porcelain both begin with clay. Put two bowls side by side, however, and you may see a difference. Ordinary pottery can be thick and earth-colored. Porcelain is often whiter and thinner. Tap a safe modern sample very gently, and it may answer with a clear *ting*.
+Tap a lump of damp clay and you hear almost nothing. Tap the rim of a thin porcelain bowl, and you may hear a clear: *Ting!*
 
-No one mixed music into the clay. Porcelain uses carefully chosen and prepared materials. It receives a coating called glaze and then enters an extremely hot kiln. The heat makes the body hard and close-grained, while the glaze turns smooth and glassy. That bright ring is what the materials and fire leave behind.
+Porcelain begins with materials that come from clay and stone. Potters grind and mix them, shape the soft material into a bowl, and send it into an extremely hot kiln—a special oven used for firing ceramics. At temperatures above 1,000°C, the bowl shrinks and the minerals inside begin to change. The soft, porous body becomes hard and dense. With the right materials and firing, porcelain can become white, thin, and even slightly translucent.
 
----
-
-## The Most Nervous Hours in the Kiln
-
-To make a porcelain bowl, workers clean and knead the material, then shape it on a wheel or in a mold. When the bowl dries, a craftsperson trims the foot, paints a design, and adds glaze. Every step can go wrong. Clay that is too wet may slump. Clay that is too dry may crack. Thick glaze may run.
-
-Once the kiln is firing, no one can simply open the door for a peek. Workers control the fire and air, raise the kiln to a very high temperature, and let it cool slowly. Only when the door finally opens do they learn which bowls survived. A quiet bowl on a table has passed through heat far beyond any kitchen oven.
+Then the kiln door closes. From that point on, the fire takes over.
 
 ---
 
-## The Blue Came from Far Away
+## A Good Bowl Has to Survive the Kiln
 
-The blue in blue-and-white porcelain comes from a pigment containing cobalt. Some early cobalt traveled to China from West Asia along long trade routes. Chinese painters brushed it onto a white porcelain body and covered it with clear glaze. Before firing, the color could look dull and gray. After the kiln, it shone blue.
+Inside the kiln, clay shrinks, glaze melts, and colors change. A small difference in temperature or position can leave a piece cracked, warped, or the wrong color.
 
-The painter had to work with confidence. The porcelain body drank in the pigment, so a wrong stroke was hard to erase. Flowers, dragons, fish, and waves curved around each bowl. A blue material from far away met Chinese porcelain skills and became blue-and-white ware known around the world.
+At the imperial kilns in Jingdezhen (*Jǐngdézhèn*), a Chinese city famous for porcelain, porcelain was once made for the emperor’s court. Archaeologists have found large amounts of broken and discarded porcelain there. Pieces that did not meet the required standard could be rejected.
+
+One famous survivor is a tiny Chicken Cup, small enough to fit in your hand. Around it, a rooster, hen, and chicks wander among flowers and rocks. Cups like this were made more than five hundred years ago, and surviving examples are now treasured museum objects.
+
+The little cup looks delicate and quiet. Its first challenge was simply getting out of the kiln successfully.
 
 ---
 
-## A Whole City Helps Make One Bowl
+## Where Did the Blue Come From?
 
-Jingdezhen (*Jǐngdézhèn*) became famous for porcelain, but it did not depend on one magical kiln. People nearby gathered raw materials. Others cleaned the clay, shaped bowls, painted flowers, watched the fires, or carried packed porcelain to the river.
+One of the most recognizable sights in Chinese porcelain is blue painting on a white surface.
 
-Bowls, plates, and jars traveled downriver and across the sea to Asia, Africa, Europe, and the Americas. Faraway customers ordered shapes and designs they liked, while makers in other places learned from porcelain and changed it again. English even uses the lowercase word *china* to mean porcelain. A bowl began in the earth, passed through the hands of a city, and reached tables and cabinets around the world.
+The blue comes from cobalt. Potters painted with cobalt pigment, covered the design with a clear glaze, and fired the piece. Afterward, the blue appeared beneath the glassy surface.
+
+Some cobalt was found in China. Some traveled to China from West Asia and the Middle East. At the same time, finished Chinese blue-and-white porcelain traveled in the other direction. So a bowl made in Jingdezhen could already carry evidence of a journey stretching thousands of kilometers.
+
+---
+
+## How Did a Bowl Travel Around the World?
+
+Chinese porcelain eventually filled merchant ships alongside tea and silk. Porcelain was heavy and water would not ruin it, so crates could be stored low in a ship, where their weight also helped keep the vessel steady.
+
+When Chinese porcelain reached Europe, people became fascinated by its hard, white, sometimes translucent body. European potters experimented for years before successfully producing their own hard-paste porcelain in the early 1700s.
+
+Today, museums around the world hold Chinese porcelain: enormous blue-and-white jars, tiny cups made for emperors, and dishes or vessels created for customers far overseas.
+
+All of them began with surprisingly ordinary-looking materials. Hands shaped them. Fire changed them. Some crossed oceans and survived for centuries.
+
+Then tap the rim gently—*Ting.* The clay no longer behaves like clay.

@@ -1,135 +1,49 @@
 > Difficulty: Medium
 
-# Thousand-Year Wisdom in Black and White Stones: Weiqi
+# Weiqi: A Whole World in Black and White
 
-## Pa: One Stone Lands on the Board
+## How Hard Could That Be?
 
-*Pa.*
+A black stone lands on the wooden board. Across the table, the other player thinks for a moment and places down a white one. If you are watching *wéiqí* for the first time, you may wonder why it is supposed to be difficult. Nobody rolls dice. The stones do not run around the board. Once you put one down, it usually stays exactly where it is.
 
-One black stone lands on the wooden board.
+How hard could that be? Very hard, as it turns out.
 
-The person across the table looks for a moment, picks up a white stone, thinks, and places it beside the black one.
+*Wéiqí* began in China thousands of years ago. Two players take turns placing black and white stones on the intersections of a grid. If you completely surround an opponent’s stones, you can capture them. Players also try to surround empty areas as territory.
 
-*Pa.*
-
-Black again.
-
-*Pa.*
-
-White again.
-
-There are only a few stones on the board. But if you stand beside the two players, you notice something.
-
-They do not talk.
-
-They do not drink water.
-
-They do not look up.
-
-The room holds only the sound of stones landing, one after another, like rain on roof tiles.
-
-The player is doing something a bystander cannot fully see.
-
-He is not looking only at this stone and the few empty points around it.
-
-His eyes sweep across the upper board, the three white stones not yet connected in the lower right corner, and the thick black influence pressing out from the lower left.
-
-He is playing one whole game.
-
-From the moment the first black stone lands on a star point, countless possible futures hide under the stones not yet played.
+The rules are simple enough to learn quickly. The strange part is what happens after that.
 
 ---
 
-## Very Old, and Very Quiet
+## Why Over There?
 
-Weiqi is usually considered very old and deeply tied to China.
+Imagine you see a white stone near yours and decide to capture it. You add another black stone. White answers. You keep chasing—and suddenly your opponent plays far away on the other side of the board. Why over there? Later, you discover the answer. While you were busy winning one tiny fight, your opponent was building something much bigger somewhere else.
 
-The standard board has 19 lines across and 19 lines down, making 361 crossing points.
-
-Black plays first. White plays second.
-
-A stone is placed on a crossing point. Usually, once it is placed, it does not move.
-
-If you surround the other player's stones, you can capture them.
-
-At the end, players count who has surrounded more territory.
-
-The rules can be learned in a minute.
-
-But a real game can be decided by one *mu*, one point on the board.
-
-You may fight a world war in all four corners, then win or lose by a single crossing point.
+That is one of the great tricks of *wéiqí*. A move in one corner may matter far away. Sometimes a few stones are not worth saving. Sometimes an empty part of the board is more important than the crowded part everyone is staring at.
 
 ---
 
-## AlphaGo and Lee Sedol
+## Every Empty Place Is a Possibility
 
-In 2016, the artificial intelligence program AlphaGo challenged the top Korean player Lee Sedol.
+A standard board has 361 intersections. At the beginning, almost all of them are empty.
 
-The match made many people who did not usually play weiqi stare at the board.
-
-AlphaGo won four games to one.
-
-The most shocking moment came in the second game.
-
-AlphaGo played a move that looked very different from the usual moves professional players knew.
-
-Many people explaining the game froze.
-
-Later, people often treated that move as a symbol:
-
-machines could find paths in weiqi that humans were not used to seeing.
+But empty does not mean unimportant. Every empty place is a possibility.
 
 ---
 
-## Philosophy Inside Weiqi
+## Move 37
 
-Weiqi is about more than how many stones you capture.
+In 2016, that idea became famous in a very surprising way. An artificial-intelligence program called AlphaGo played a five-game match against Lee Sedol, one of the world’s strongest professional players. During the second game, AlphaGo made its 37th move in a place that surprised professional commentators.
 
-It is also about how much territory you finally build.
+It did not look like the kind of move a top human player would normally choose. At first, some wondered whether the computer had made a mistake. It had not.
 
-Sometimes you lose a little in one place but gain more across the whole board.
+Much later, the unusual move turned out to be important. AlphaGo won the game and eventually won the match four games to one.
 
-Many people like to read a Chinese way of thinking from this:
-
-do not stare only at one small spot right in front of you.
-
-Look at the larger situation.
-
-People also use words such as yin and yang, advance and retreat, thickness and thinness to describe the feel of the game.
-
-In weiqi, there is often no absolute good or absolute bad.
-
-There is change.
-
-Another special thing is this:
-
-once you play a move, you usually cannot take it back.
-
-You have to be responsible for your choice.
-
-If you lose, reviewing the game means looking back honestly:
-
-where did the problem begin?
-
-Weiqi is like a very quiet mirror.
-
-It does not shout.
-
-But it shows your hurry, your hesitation, and your patience.
+People had been studying *wéiqí* for thousands of years, and one little stone could still make experts ask, “Why there?”
 
 ---
 
-## Summary
+## What the Whole Board Might Become
 
-*Pa.*
+That may be the best way to understand the game. You are never looking only at the stone in front of you.
 
-One black stone lands.
-
-The board is quiet, but the changes are as many as invisible winds.
-
-Weiqi is old like an ancient story, but every game is new.
-
-It is not just a contest of cleverness.
-
-It is also a contest of calmness: who can stay steady, one move after another, and keep walking the path they have chosen?
+You are trying to imagine what the whole board might become. And sometimes the most important place on the board is still completely empty.

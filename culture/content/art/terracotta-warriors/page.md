@@ -1,6 +1,6 @@
 ---
-title_zh: 地下为什么站着一支泥土军队？
-title_en: Why Is an Army Made of Clay Standing Underground?
+title_zh: 兵马俑：八千张脸，八千幅肖像吗？
+title_en: Terracotta Warriors: Are 8,000 Faces 8,000 Portraits?
 slug: terracotta-warriors
 category: art
 difficulty: 简单
@@ -9,83 +9,130 @@ style_notes: "用 --- 分隔 frontmatter；正文强调优先用 *斜体*；尽�
 ---
 
 [hero]
-title_zh: 地下为什么站着一支泥土军队？
-title_en: Why Is an Army Made of Clay Standing Underground?
+title_zh: 兵马俑：八千张脸，八千幅肖像吗？
+title_en: Terracotta Warriors: Are 8,000 Faces 8,000 Portraits?
 [/hero]
 
 [section]
 page: 1
 layout: text-wrap-image
-heading_zh: 水井旁出现一块陶片
-heading_en: A Piece of Clay Beside a Well
-image: 1-farmer-finds-head.webp
-caption_zh: 一九七四年，农民打井时发现了陶俑碎片。
-caption_en: In 1974, farmers digging a well found pieces of a clay figure.
+heading_zh: 八千张脸
+heading_en: Eight Thousand Faces
+image: 2-pit-many-faces.webp
+caption_zh: 从远处看，陶俑组成一支军队；走近以后，不同的脸才一张张出现。
+caption_en: From far away, the figures form an army; up close, their different faces begin to appear.
 [zh]
-一九七四年，中国西安附近的农民正在打井。铲子碰到的不是水，而是坚硬的陶片。他们又发现了陶制的人头和身体碎块。消息传开后，考古人员赶来，小心地清理泥土。
+1974年，西安附近的农民打井时挖到了一些陶片。后来，考古人员顺着这些碎片，发现了巨大的俑坑：一排又一排和真人差不多高的陶俑站在地下，有步兵、弓弩手、军官，还有陶马。
 
-地下出现的不是一两个泥人，而是一排又一排士兵、战马和战车。许多已经破碎，有的只剩下一只手或半张脸。考古人员给碎片编号，再像拼巨大的立体拼图一样，把能够接上的部分慢慢找回来。
+这些兵马俑属于秦始皇庞大的陵园。关于秦始皇本人和这座还没有完全发掘的陵墓，我们在[《秦始皇》那篇故事](../../figures/qin-shi-huang/index.html)里讲得更多。
+
+三个主要俑坑里的陶俑，通常估计接近八千件。
+
+走近一点，最容易让人停下来的却是脸。有的脸圆，有的长；有人留胡须，有人没有；发髻、眉眼、嘴角也各不相同。
+
+于是一个问题自然冒出来：这些是不是八千名真实士兵的肖像？
+
+“肖像”的意思，是照着某一个真实的人，把他的样子留下来。如果兵马俑都是肖像，那么每一张陶土做的脸后面，都应该曾经有一张真实的脸。
+
+可是，现在的证据还不能这样告诉我们。
 [/zh]
 [en]
-In 1974, farmers near Xi'an, China, were digging a well. Their tools struck something hard—but it was not water. They found pieces of pottery, including parts of a clay head and body. Archaeologists soon arrived and began to clear the soil carefully.
+In 1974, farmers digging a well near Xi’an found broken pieces of clay. Archaeologists followed the clues and uncovered something much larger: pits filled with rows of life-size clay soldiers, along with horses and weapons.
 
-Underground were not one or two clay people, but row after row of soldiers, horses, and chariots. Many had broken. Some were only a hand or half a face. Archaeologists numbered the pieces and slowly matched what they could, like the largest 3-D puzzle anyone had ever opened.
+These warriors were made for the enormous mausoleum of Qin Shi Huang, China’s first emperor. We tell more of his story in our [article about Qin Shi Huang](../../figures/qin-shi-huang/index.html).
+
+The three main pits are estimated to contain thousands of figures—often rounded to about 8,000.
+
+Walk past the restored warriors and look at their faces. One is round, another long. Some have mustaches or beards. Their eyebrows, hairstyles, mouths, and expressions change from figure to figure.
+
+They look so individual that an obvious question appears: Were these portraits of 8,000 real soldiers?
+
+A portrait is made to look like one particular person. If the warriors were portraits, somewhere behind each clay face there would once have been a real face.
+
+But the evidence does not take us that far.
 [/en]
 [/section]
 
 [section]
 page: 2
-layout: text-wrap-image
-heading_zh: 为什么每张脸都不一样？
-heading_en: Why Does Every Face Look Different?
-image: 2-pit-many-faces.webp
-caption_zh: 不同的发式、胡须和表情，让陶俑看起来各有性格。
-caption_en: Different hair, beards, and expressions give the clay warriors individual character.
+layout: text-only
+heading_zh: 怎样做几千个人，又不让他们一模一样？
+heading_en: How Do You Make Thousands Without Making Them All the Same?
 [zh]
-考古人员估计，几个大坑里有近八千件士兵和军官陶俑。走近看，几乎找不到两张完全一样的脸：有的脸圆，有的脸长；有人留胡须，有人把头发梳成不同的发髻。
+兵马俑是用陶土做的，也就是把泥塑好，再经过烧制，让它变得坚硬。
 
-工匠并没有请八千名士兵坐下来做肖像。他们先用一些相似的方法制作头、手和身体，再把部件组合起来，然后用手改变眉眼、胡须、头发和表情。这样做既比从头做八千次更快，又让整支泥土军队看起来像由不同的人组成。
+至于陶俑究竟一步一步怎样制作，研究者还有不同看法。不过，有一点越来越清楚：工匠会使用可以重复的基本做法，然后再用手把细节做出来。
+
+头、手、身体等部分可以分步骤制作，表面再加上细泥，刻出头发、胡须、眼睛、嘴巴、衣褶和铠甲。
+
+这样就解决了一个大问题。工匠不用从一团泥开始，重新发明每一个人；可是到了最后，他们又可以让每张脸出现变化。
+
+研究人员甚至用三维扫描去比较陶俑的耳朵。耳朵确实长得很不一样，可“每只耳朵不同”仍然不能证明“每一个陶俑都有一个真人原型”。这些差别也可能来自不同模具、不同工匠，以及最后的手工修改。
 [/zh]
 [en]
-Archaeologists estimate that the great pits contain nearly 8,000 clay soldiers and officers. Step closer and it is hard to find two faces that look exactly alike. Some are round, others long. Some have beards. Hair is tied in different knots.
+The warriors are made of terracotta—clay that has been shaped and fired until it becomes hard.
 
-The makers did not ask 8,000 real soldiers to sit for clay portraits. They formed heads, hands, and bodies with several repeated methods, joined the parts, and then changed brows, beards, hair, and expressions by hand. That was faster than starting from nothing 8,000 times, but it still made the clay army look full of different people.
+Scholars still debate some details of exactly how the figures were built. But research shows that craftspeople could use repeated basic methods and forms, then work the surface by hand.
+
+Heads, hands, bodies, and other parts could be made in stages. Fine clay was added so workers could shape hair, beards, eyes, mouths, clothing folds, belts, and armor.
+
+This solved a huge problem. The workers did not have to invent every soldier from the beginning. They could repeat useful forms and then change the details.
+
+Researchers have even used 3-D scans to compare the warriors’ ears. The ears vary a great deal. But different ears alone cannot prove that each warrior copied one real person. The differences may also come from different molds, different workers, and hand finishing.
 [/en]
 [/section]
 
 [section]
 page: 3
-layout: text-only
-heading_zh: 秦始皇为什么需要地下军队？
-heading_en: Why Did Qin Shihuang Want an Underground Army?
+layout: text-wrap-image
+heading_zh: 它们原来不是灰色的
+heading_en: They Were Not Gray
+image: 3-colored-warrior-restoration.webp
+caption_zh: 这幅现代复原图想象陶俑原有的鲜艳彩绘，不是某一件陶俑的精确复原。
+caption_en: This modern illustration imagines the warriors’ bright original paint; it is not an exact reconstruction of one figure.
 [zh]
-这支军队属于秦始皇（*Qín Shǐhuáng*）的巨大陵园。他在两千两百多年前统一了中国，成为中国的第一位皇帝。他生前有士兵保护，死后也为自己准备了一个地下世界。陶俑站在主墓东边的大坑里，有步兵、弓箭手、骑兵和战车，就像一支守卫陵园的军队。
+今天看到的兵马俑大多是灰褐色，很容易让人觉得它们本来就是这样。其实不是。很多陶俑原来涂过漆和彩色颜料。红、绿、蓝、紫、黑、白等颜色，会出现在衣服、铠甲、脸和头发上。
 
-真正的主墓仍然没有打开。古书说里面有宫殿、宝物和用水银做成的江河，但谁也没有走进去看过全部。考古人员不急着开门，因为空气和光线可能伤害里面的东西。地下的秘密已经等了两千多年，也可以继续等到人们有更安全的保护办法。
+可是这些颜色也给考古人员出了一个难题。陶俑在潮湿的土里埋了两千多年，颜料下面的漆层已经非常脆弱。刚挖出来以后，水分迅速减少，漆层可能收缩、卷起、脱落，连上面的颜色一起掉下来。
+
+所以考古并不是“发现了就赶快挖”。有时候，最重要的动作反而是慢下来。
 [/zh]
 [en]
-The army belongs to the enormous burial grounds of Qin Shihuang (*Qín Shǐhuáng*). More than 2,200 years ago, he united China and became its first emperor. Soldiers protected him while he lived, and he prepared an underground world for after his death. East of his main tomb, clay foot soldiers, archers, horse riders, and chariots stand like an army guarding the area.
+Today, most Terracotta Warriors look gray-brown. That is not how the army originally looked. Many figures were once covered with lacquer and bright pigments. Traces show reds, greens, blues, purples, black, white, and other colors. Faces, clothing, armor, and hair could all have been painted.
 
-The emperor's main tomb has still not been opened. Ancient writing describes palaces, treasures, and rivers made with mercury, but no one has gone inside to see it all. Archaeologists are not rushing to open the door because new air and light could harm what waits inside. The secrets have rested for more than two thousand years. They can wait until people have safer ways to protect them.
+But the paint created a difficult problem for archaeologists. After more than two thousand years in damp soil, the lacquer beneath the color became extremely fragile. When a newly excavated figure began to dry, that layer could shrink, crack, curl, and pull the paint away with it.
+
+So finding a warrior was not simply a matter of digging faster. Sometimes the safest thing was to slow down.
 [/en]
 [/section]
 
 [section]
 page: 4
-layout: text-wrap-image
-heading_zh: 它们原来不是灰色的
-heading_en: They Were Not Always Gray
-image: 3-colored-warrior-restoration.webp
-caption_zh: 现代复原图展示陶俑可能拥有过的鲜艳颜色。
-caption_en: A modern reconstruction suggests the bright colors the warriors once wore.
+layout: text-only
+heading_zh: 这么大的军队，是谁做出来的？
+heading_en: A Giant Project Made by Many Hands
 [zh]
-今天的兵马俑大多是灰褐色，可它们刚完成时十分鲜艳。脸上有肤色，衣服和铠甲上有红、绿、蓝、紫、黑、白等颜色。站在坑里看见的，一定不是安静的灰色队伍，而是一支色彩醒目的军队。
+八千件真人大小的陶俑，不可能只是几个陶工在一间小作坊里慢慢完成的。
 
-这些颜色非常脆弱。陶俑离开潮湿的土壤后，表面的漆可能很快卷起，颜料也会跟着脱落。于是，考古人员有时宁愿慢一点挖，先想办法保护颜色。修复一名士兵，可能要从许多碎片开始；保护一小块颜料，也可能花去很长时间。这支泥土军队被大量制造出来，却要一件一件、慢慢地回到我们面前。
+陶俑和武器上留下的名字、印记和细小差异，让研究人员看到许多工匠和生产小组一起工作的痕迹。整个秦始皇陵本来就是一项巨大的工程，需要陶工、金属工、建筑工和许多其他劳动者共同完成。
+
+所以，那八千张不同的脸真的是八千幅真人肖像吗？现在还没有证据证明这一点。
+
+但陶俑已经告诉我们另一件很了不起的事：两千多年前的工匠已经能够用有组织、可以重复的方法制作成千上万件作品，同时又让人的手在最后留下变化。
+
+远远看过去，那是一支军队。走近以后，一张一张不同的脸才慢慢出现。
 [/zh]
 [en]
-Most Terracotta Warriors look gray-brown today, but they were once bright. Faces had skin color. Clothing and armor carried red, green, blue, purple, black, and white. The pits would not have held a quiet gray crowd. They held a colorful army.
+An army this large could not come from one small pottery shop.
 
-Those colors are extremely fragile. When a figure leaves the damp earth, its lacquer may curl and the paint can fall away with it. Archaeologists sometimes choose to dig more slowly while they find a way to protect the color. Rebuilding one soldier may begin with many broken pieces. Saving one patch of paint may take a long time. The army was made in great numbers, but it must return to us slowly, one figure at a time.
+Names, marks, small style differences, and patterns in the weapons and figures help researchers study how different groups of craftspeople worked. The entire mausoleum was an enormous project involving potters, metalworkers, builders, and many other laborers.
+
+That helps answer our first question. The warriors clearly have individual differences. But we cannot say that 8,000 soldiers stood still while artists copied 8,000 faces.
+
+What the clay does show is something just as remarkable. Ancient craftspeople found ways to make thousands of figures using organized, repeatable methods—while still leaving room for a hand to change a beard, an eye, a hairstyle, or the corner of a mouth.
+
+From far away, they form an army.
+
+Walk closer, and one face at a time begins to appear.
 [/en]
 [/section]

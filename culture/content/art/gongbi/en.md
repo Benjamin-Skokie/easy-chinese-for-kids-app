@@ -1,33 +1,49 @@
 > Difficulty: Easy
 
-# Why Paint One Petal Again and Again?
+# Gongbi Painting: Why Did an Emperor Care Which Foot a Peacock Lifted First?
 
-## Do Not Reach for Color Yet
+## The Peacock’s Foot
 
-A flower is waiting, but the artist does not reach for pink paint. First, she looks closely. Where does each petal begin? Which petal overlaps another? Where does an edge turn? Then a very fine brush slowly draws the outlines.
+A painter brings a picture of a peacock to the emperor. The feathers are beautiful. The colors are rich. The bird is stepping upward. But the emperor keeps looking at one tiny part: the foot.
 
-This style is called *gōngbǐ*, a name that suggests careful, detailed work. Its petals, feathers, and leaf veins look clear because the artist does not try to finish them in one quick stroke.
+A famous old story says that Emperor Huizong of the Song dynasty once criticized court painters because they had not noticed which foot a peacock lifted first when climbing. To Huizong, painting a peacock was not enough. A painter had to watch a real peacock.
 
----
+How did it step? How did it balance on one leg? What happened to the tail when the body moved?
 
-## Fine Lines Build the Picture's Frame
+We cannot know every detail of this old story for certain. But people kept telling it because it fit Huizong perfectly. This was an emperor who expected painters to look very closely. And that helps explain the kind of painting he loved.
 
-Outlining is more than drawing a black fence around everything. Lines can be thick or thin, light or strong, quick or slow. A soft flower stem should not look like an iron bar. A bird's claws gripping a branch need more strength.
+## What Does a Gongbi Painting Look Like?
 
-Some artists place a sketch under thin paper or silk and trace the important lines. Only after this frame is steady does color arrive. If the first line wanders badly, even beautiful paint may not save the shape.
+Look at a carefully painted bird from this tradition, then move closer. The picture does not fall apart. You begin to see more.
 
----
+A thin line separates one feather from another. The edge of a wing curves neatly around the body. On a flower, one petal slips behind the next instead of becoming a lump of color. Leaves have fronts and backs. A bird’s feet actually seem to grip the branch.
 
-## One Pale Layer, Then Another
+This careful style is called *gongbi* (工笔), which means meticulous or highly controlled brushwork. The lines are usually fine and deliberate. Color can be built up gradually in thin layers instead of being brushed on in one heavy coat. Darker and lighter areas help feathers overlap and petals turn. Even small shapes are carefully placed.
 
-The artist mixes a pale color and brushes on one thin layer. After it begins to dry, another layer follows. A petal may grow darker near its center and lighter at its edge. One side of a leaf may lean blue, the other green. Layer by layer, the flat petal begins to look gently rounded.
+That does not mean every gongbi painting must look exactly the same. But compared with a loose, quickly brushed painting, gongbi often feels as if the artist has slowed everything down. The brush moves carefully because the painter has already spent a long time looking.
 
-Gongbi paintings often show birds and flowers. Along with fine details, the artist chooses one lively movement: a bird turning, a leaf flipped by wind, or a tiny insect resting on a bud.
+Huizong loved this kind of close observation. At his court, a bird could not simply look “bird-like.” It had to feel like a particular bird that might move at any moment.
 
----
+## One Drop in a Bird’s Eye
 
-## Even an Emperor Painted Birds
+Huizong painted birds himself. In a work called *Finches and Bamboo*, two little birds perch among bamboo and branches. Their feathers are carefully shaped and shaded. Their bodies have weight; they do not look pasted onto the silk.
 
-Emperor Huizong (*Sòng Huīzōng*), who lived about nine hundred years ago, was also a painter. He loved looking at birds and flowers, and he encouraged artists at his court to paint nature with lively detail. Some works connected with his name were painted by him; others may have come from the court studio he led.
+But one of the smallest details is also one of the most memorable. Huizong added a tiny drop of dark lacquer to each bird’s eye. The lacquer catches the light. Suddenly, the eyes seem wet and bright, as if the birds have just noticed you.
 
-Whoever held the brush, gongbi asked the eyes and hand to slow down together: look, draw the lines, then add color layer by layer. The petal is not being painted over and over for no reason. Each pass adds a little more shape, light, and life.
+That tiny trick says a lot about gongbi painting. Many fine lines and layers of color may build the bird, but the painter is always asking a bigger question: What will make it feel alive?
+
+That was important at Huizong’s painting academy. He wanted artists to observe nature carefully, but he also gave them lines of poetry to turn into paintings. So accuracy was only part of the job. A painter needed sharp eyes—and imagination.
+
+## The Emperor Who Was Better at Art
+
+Huizong lived about nine hundred years ago. He was a talented painter, calligrapher, collector, and powerful supporter of court artists.
+
+As an emperor, however, his story ended badly. In 1127, enemies captured the Northern Song capital. Huizong was taken north as a prisoner and later died in captivity.
+
+His court disappeared. The careful kind of painting it encouraged did not. Painters in later dynasties continued using fine outlines, controlled colors, and close observation to paint flowers, birds, people, and animals. Gongbi is still practiced today.
+
+That is why the old story about the peacock’s foot is more than a funny tale about a picky emperor. It explains something about this kind of painting.
+
+From across the room, you see a bird. Come closer, and you notice the feathers. Closer still, you see how one foot grips the branch, how a leaf turns over, or how one tiny drop makes an eye shine.
+
+Gongbi rewards the person who keeps looking. Huizong certainly did.

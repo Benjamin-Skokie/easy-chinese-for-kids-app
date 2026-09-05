@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>掩耳盗铃</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <nav class="back-nav">
+      <a href="../../../../index.html?view=culture#culture-folk-tales">← 返回目录 Back to Catalog</a>
+    </nav>
+    <main class="book">
+      <section class="page hero">
+        <div class="hero-copy">
+          <h1>掩耳盗铃</h1>
+          <h2>The Man Who Covered His Ears to Steal a Bell</h2>
+        </div>
+      </section>
+
+      <section class="page story two-column text-wrap-image">
+        <div class="story-copy">
+          <figure class="floated-figure">
+            <img src="./images/1-covering-ears-by-bell.webp" alt="" class="floated-image" />
+            <figcaption class="caption floated-caption"><span class="zh">那个人捂住了自己的耳朵，可旁边的人还是能听见钟声。</span><br><span class="en">The man covers his own ears, but everyone nearby can still hear the bell.</span></figcaption>
+          </figure>
+          <p>很久以前，有一个人看见一口大青铜钟，想把它偷走。这可不是一只拿起来就能走的小铃铛。那口钟又大又重，他怎么也搬不动。那个人想了想，忽然有了一个办法。“如果把钟敲碎，”他想，“我就可以一块一块地搬走了。”于是，他找来一把锤子，高高举起，用力往钟上一敲。<strong>当&#8212;&#8212;！</strong>响亮的钟声一下子传了出去。那个人吓了一跳。要是别人听见钟声，跑过来怎么办？他想了一会儿，又想出了一个“好办法”。他用两只手紧紧捂住自己的耳朵。“好了，”他心想，“现在我听不见了。”于是，他又准备去敲那口钟。可是，捂住自己的耳朵，并不会让钟声消失。他听不见了，别人却还是听得清清楚楚。他骗过的，只有自己。这个故事最早讲的是偷一口大“钟”。后来，故事慢慢流传开来，变成了今天我们熟悉的成语“掩耳盗铃”。今天，如果一个人明明知道一件事情是真的，却假装不知道，以为不去面对，事情就会消失，我们就可以说他是在“掩耳盗铃”。捂住自己的耳朵，也许能让自己听不见。<strong>可是，钟还是会响。</strong></p>
+          <p>Long ago, a man saw a large bronze bell and wanted to steal it. This was not a little bell that he could pick up and carry away. It was big and heavy. The man tried to move it, but he could not. Then he had an idea. “I’ll break it into smaller pieces,” he thought. “Then I can carry them away one at a time.” He found a hammer, raised it high, and struck the bell. <strong>CLANG!</strong> The loud sound rang out. The man jumped. If other people heard the bell, they might come running! He thought for a moment. Then he came up with another idea. He covered his ears tightly with both hands. “There,” he thought. “Now I can’t hear it.” Then he tried to strike the bell again. Of course, covering his own ears did not make the sound disappear. Everyone else could still hear it. The man had fooled only himself. The earliest version of this old story was about stealing a large bell, or <strong>zhōng</strong>. Over time, the story became the expression <strong>yǎn ěr dào líng</strong>&#8212;“cover your ears while stealing a bell.” Today, people use the expression when someone tries to ignore an obvious truth, as if refusing to notice a problem could make it disappear. Covering your ears may keep <strong>you</strong> from hearing the bell. But the bell is still ringing.</p>
+        </div>
+      </section>
+    </main>
+    <script src="../../../../site-footer.js?v=20260830-v1"></script>
+      <script>
+      (() => {
+        const entries = Array.from(document.querySelectorAll(".glossary-entry"));
+        if (!entries.length) return;
+
+        const closeEntry = (entry) => {
+          entry.dataset.open = "false";
+          entry.style.removeProperty("--glossary-left");
+          entry.style.removeProperty("--glossary-top");
+          entry.style.removeProperty("--glossary-arrow-left");
+          const button = entry.querySelector(".glossary-term");
+          if (button) button.setAttribute("aria-expanded", "false");
+        };
+
+        const closeAll = (except = null) => {
+          for (const entry of entries) {
+            if (entry !== except) closeEntry(entry);
+          }
+        };
+
+        const placePopover = (entry) => {
+          requestAnimationFrame(() => {
+            const button = entry.querySelector(".glossary-term");
+            const popover = entry.querySelector(".glossary-popover");
+            if (!button || !popover) return;
+
+            const margin = 12;
+            const gap = 10;
+            const buttonRect = button.getBoundingClientRect();
+            const popoverRect = popover.getBoundingClientRect();
+            const halfWidth = popoverRect.width / 2;
+            const buttonCenter = buttonRect.left + buttonRect.width / 2;
+            const minCenter = margin + halfWidth;
+            const maxCenter = window.innerWidth - margin - halfWidth;
+            const left = Math.min(Math.max(buttonCenter, minCenter), maxCenter);
+
+            let side = "above";
+            let top = buttonRect.top - popoverRect.height - gap;
+
+            if (top < margin) {
+              side = "below";
+              top = buttonRect.bottom + gap;
+            }
+
+            if (side === "below" && top + popoverRect.height > window.innerHeight - margin) {
+              const fallbackTop = buttonRect.top - popoverRect.height - gap;
+              if (fallbackTop >= margin) {
+                side = "above";
+                top = fallbackTop;
+              } else {
+                top = Math.max(margin, window.innerHeight - margin - popoverRect.height);
+              }
+            }
+
+            const popoverLeft = left - halfWidth;
+            const arrowLeft = Math.min(
+              Math.max(buttonCenter - popoverLeft, 16),
+              Math.max(16, popoverRect.width - 16)
+            );
+
+            entry.dataset.side = side;
+            entry.style.setProperty("--glossary-left", left + "px");
+            entry.style.setProperty("--glossary-top", top + "px");
+            entry.style.setProperty("--glossary-arrow-left", arrowLeft + "px");
+          });
+        };
+
+        const toggleEntry = (entry) => {
+          const shouldOpen = entry.dataset.open !== "true";
+          closeAll(entry);
+          entry.dataset.open = shouldOpen ? "true" : "false";
+
+          const button = entry.querySelector(".glossary-term");
+          if (button) {
+            button.setAttribute("aria-expanded", shouldOpen ? "true" : "false");
+            if (!shouldOpen) button.blur();
+          }
+
+          if (shouldOpen) placePopover(entry);
+        };
+
+        document.addEventListener("click", (event) => {
+          const button = event.target.closest(".glossary-term");
+          if (button) {
+            event.preventDefault();
+            toggleEntry(button.closest(".glossary-entry"));
+            return;
+          }
+
+          if (!event.target.closest(".glossary-entry")) {
+            closeAll();
+            if (document.activeElement && document.activeElement.classList.contains("glossary-term")) {
+              document.activeElement.blur();
+            }
+          }
+        });
+
+        document.addEventListener("keydown", (event) => {
+          if (event.key === "Escape") {
+            closeAll();
+            if (document.activeElement && document.activeElement.classList.contains("glossary-term")) {
+              document.activeElement.blur();
+            }
+            return;
+          }
+
+          if ((event.key === "Enter" || event.key === " ") && event.target.classList.contains("glossary-term")) {
+            event.preventDefault();
+            toggleEntry(event.target.closest(".glossary-entry"));
+          }
+        });
+
+        for (const entry of entries) {
+          entry.addEventListener("mouseenter", () => placePopover(entry));
+        }
+
+        window.addEventListener("resize", () => closeAll());
+        window.addEventListener("scroll", () => closeAll(), { passive: true });
+      })();
+    </script>
+  </body>
+</html>

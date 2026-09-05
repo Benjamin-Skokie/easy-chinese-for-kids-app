@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>塞翁失马</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <nav class="back-nav">
+      <a href="../../../../index.html?view=culture#culture-folk-tales">← 返回目录 Back to Catalog</a>
+    </nav>
+    <main class="book">
+      <section class="page hero">
+        <div class="hero-copy">
+          <h1>塞翁失马</h1>
+          <h2>The Old Man Who Lost His Horse</h2>
+        </div>
+      </section>
+
+      <section class="page story two-column text-wrap-image">
+        <div class="story-copy">
+          <p class="page-label">Page 1</p>
+          <h3>马忽然跑丢了</h3>
+          <h4>The Horse Ran Away</h4>
+          <figure class="floated-figure">
+            <img src="./images/1-horse-runs-away.webp" alt="" class="floated-image" />
+            <figcaption class="caption floated-caption"><span class="zh">老人的马跑向远方。邻居们觉得这是坏运气，老人却说谁也不知道结果会怎样。</span><br><span class="en">The old man's horse runs away. His neighbors see bad luck, but he says no one knows what may happen next.</span></figcaption>
+          </figure>
+          <p>很久以前，在中国北方的边塞附近，住着一位老人和他的儿子。家里养着一匹马。有一天，这匹马忽然跑丢了。邻居们都来安慰老人。“真倒霉呀！”大家说。老人却没有太难过。“也许吧，”他说，“可是，谁知道呢？说不定这会变成一件好事。”</p>
+          <p>Long ago, an old man lived with his son near China’s northern border. The family owned a horse, and one day, it suddenly ran away. The neighbors came to comfort the old man. “What bad luck!” they said. But the old man did not seem too upset. “Perhaps,” he said. “But who knows? This may turn out to be something good.”</p>
+        </div>
+      </section>
+
+      <section class="page story two-column text-wrap-image">
+        <div class="story-copy">
+          <p class="page-label">Page 2</p>
+          <h3>马又带回来一匹马</h3>
+          <h4>The Horse Came Home with Another Horse</h4>
+          <figure class="floated-figure">
+            <img src="./images/2-horse-returns-with-another.webp" alt="" class="floated-image" />
+            <figcaption class="caption floated-caption"><span class="zh">跑丢的马回来了，还带回另一匹好马。可老人知道，现在还不能判断这是好事还是坏事。</span><br><span class="en">The missing horse returns with another fine horse, but the old man knows it is still too soon to call this good or bad luck.</span></figcaption>
+          </figure>
+          <p>几个月以后，那匹跑丢的马竟然回来了。而且，它不是自己回来的&#8212;&#8212;它还带回来了一匹好马。邻居们又赶来了。“这下可真是好运气！”老人只是笑了笑。“也许吧。可是，谁知道呢？说不定这会变成一件坏事。”没过多久，老人的儿子骑马时摔了下来，腿受了重伤。邻居们又来安慰他们。“这次可真是坏运气了！”老人还是说：“也许吧。可是，谁知道呢？说不定这会变成一件好事。”大约一年以后，边塞发生了战事。附近的年轻男子都要离开家去打仗。可是，老人的儿子因为腿伤还没有完全好，不能去。那件原来看起来很倒霉的事，却让他留在了家里。这就是“塞翁失马”这个成语背后的故事。它告诉我们，有些事情刚发生的时候，我们并不知道最后会变成什么样。丢掉一匹马，也许会带回来另一匹马。看起来的好运，也可能带来麻烦。而一件倒霉的事，也可能有我们还没有看到的另一面。有时候，我们只能再等等看。</p>
+          <p>A few months later, the missing horse came home. And it was not alone&#8212;it brought another fine horse with it. The neighbors hurried over again. “What wonderful luck!” But the old man only smiled. “Perhaps. But who knows? This may turn out to be something bad.” Not long afterward, the old man’s son was riding one of the horses when he fell and badly injured his leg. Once again, the neighbors came. “What terrible luck!” And once again, the old man said, “Perhaps. But who knows? This may turn out to be something good.” About a year later, fighting reached the border. Young men in the area were called away to fight. But the old man’s son could not go because his leg had not healed. The injury that had seemed like such bad luck kept him safely at home. This old story gave us the expression <strong>sài wēng shī mǎ</strong>. It reminds us that we cannot always tell right away whether something will turn out to be good or bad. A lost horse may come home with another horse. Good luck may bring trouble. And bad luck may lead somewhere we never expected. Sometimes, we simply have to wait and see.</p>
+        </div>
+      </section>
+    </main>
+    <script src="../../../../site-footer.js?v=20260830-v1"></script>
+      <script>
+      (() => {
+        const entries = Array.from(document.querySelectorAll(".glossary-entry"));
+        if (!entries.length) return;
+
+        const closeEntry = (entry) => {
+          entry.dataset.open = "false";
+          entry.style.removeProperty("--glossary-left");
+          entry.style.removeProperty("--glossary-top");
+          entry.style.removeProperty("--glossary-arrow-left");
+          const button = entry.querySelector(".glossary-term");
+          if (button) button.setAttribute("aria-expanded", "false");
+        };
+
+        const closeAll = (except = null) => {
+          for (const entry of entries) {
+            if (entry !== except) closeEntry(entry);
+          }
+        };
+
+        const placePopover = (entry) => {
+          requestAnimationFrame(() => {
+            const button = entry.querySelector(".glossary-term");
+            const popover = entry.querySelector(".glossary-popover");
+            if (!button || !popover) return;
+
+            const margin = 12;
+            const gap = 10;
+            const buttonRect = button.getBoundingClientRect();
+            const popoverRect = popover.getBoundingClientRect();
+            const halfWidth = popoverRect.width / 2;
+            const buttonCenter = buttonRect.left + buttonRect.width / 2;
+            const minCenter = margin + halfWidth;
+            const maxCenter = window.innerWidth - margin - halfWidth;
+            const left = Math.min(Math.max(buttonCenter, minCenter), maxCenter);
+
+            let side = "above";
+            let top = buttonRect.top - popoverRect.height - gap;
+
+            if (top < margin) {
+              side = "below";
+              top = buttonRect.bottom + gap;
+            }
+
+            if (side === "below" && top + popoverRect.height > window.innerHeight - margin) {
+              const fallbackTop = buttonRect.top - popoverRect.height - gap;
+              if (fallbackTop >= margin) {
+                side = "above";
+                top = fallbackTop;
+              } else {
+                top = Math.max(margin, window.innerHeight - margin - popoverRect.height);
+              }
+            }
+
+            const popoverLeft = left - halfWidth;
+            const arrowLeft = Math.min(
+              Math.max(buttonCenter - popoverLeft, 16),
+              Math.max(16, popoverRect.width - 16)
+            );
+
+            entry.dataset.side = side;
+            entry.style.setProperty("--glossary-left", left + "px");
+            entry.style.setProperty("--glossary-top", top + "px");
+            entry.style.setProperty("--glossary-arrow-left", arrowLeft + "px");
+          });
+        };
+
+        const toggleEntry = (entry) => {
+          const shouldOpen = entry.dataset.open !== "true";
+          closeAll(entry);
+          entry.dataset.open = shouldOpen ? "true" : "false";
+
+          const button = entry.querySelector(".glossary-term");
+          if (button) {
+            button.setAttribute("aria-expanded", shouldOpen ? "true" : "false");
+            if (!shouldOpen) button.blur();
+          }
+
+          if (shouldOpen) placePopover(entry);
+        };
+
+        document.addEventListener("click", (event) => {
+          const button = event.target.closest(".glossary-term");
+          if (button) {
+            event.preventDefault();
+            toggleEntry(button.closest(".glossary-entry"));
+            return;
+          }
+
+          if (!event.target.closest(".glossary-entry")) {
+            closeAll();
+            if (document.activeElement && document.activeElement.classList.contains("glossary-term")) {
+              document.activeElement.blur();
+            }
+          }
+        });
+
+        document.addEventListener("keydown", (event) => {
+          if (event.key === "Escape") {
+            closeAll();
+            if (document.activeElement && document.activeElement.classList.contains("glossary-term")) {
+              document.activeElement.blur();
+            }
+            return;
+          }
+
+          if ((event.key === "Enter" || event.key === " ") && event.target.classList.contains("glossary-term")) {
+            event.preventDefault();
+            toggleEntry(event.target.closest(".glossary-entry"));
+          }
+        });
+
+        for (const entry of entries) {
+          entry.addEventListener("mouseenter", () => placePopover(entry));
+        }
+
+        window.addEventListener("resize", () => closeAll());
+        window.addEventListener("scroll", () => closeAll(), { passive: true });
+      })();
+    </script>
+  </body>
+</html>

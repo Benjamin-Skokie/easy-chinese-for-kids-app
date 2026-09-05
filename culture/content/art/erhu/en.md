@@ -1,33 +1,45 @@
 > Difficulty: Easy
 
-# How Can Two Strings Sing So Many Sounds?
+# How Does an Erhu Find Notes Without a Fingerboard?
 
-## Nothing Under the Fingers
+## Where Do the Fingers Press?
 
-A violin has a wooden fingerboard under its strings. An erhu (*èrhú*) does not. When a player's fingers touch its strings, there is only air underneath.
+An erhu (*èrhú*) has only two strings. A player uses the fingers of the left hand to stop them. But look behind the strings: there is no fingerboard.
 
-That lets notes slide smoothly. Move a finger a little higher and the sound rises. Move it lower and the sound falls. A finger can also rock quickly, making a long note tremble. The erhu can sing like a person, sigh softly, or suddenly grow lively, like a little horse breaking into a run.
+The fingers touch the strings with empty space underneath. Move a finger even a little and the note changes. Slide it slowly along a string and the sound slides too. There are no frets telling the fingers, “This note goes exactly here.” The player has to learn those places by feel and use the ear to check them.
 
----
-
-## Why Is the Bow Trapped Between the Strings?
-
-The erhu has only two strings. Even more surprising, the bow hair passes between them and stays there while the musician plays. The bow moves back and forth. A small change in pressure and angle guides the hair against one string or the other.
-
-The vibrating string sends its movement into the small sound box below. A thin membrane covers one side like the head of a tiny drum. It vibrates too, pushing the sound into the air. Two thin strings would be quiet by themselves. The sound box helps everyone hear them.
+That is not easy. Yet the open space also gives the erhu something special. Its notes can bend and glide instead of only jumping from one to the next. Sometimes the instrument sounds almost like a person singing.
 
 ---
 
-## The Erhu Did Not Always Look This Way
+## Why Can't You Take the Bow Off?
 
-China has had many bowed instruments for a long time. They are often grouped into a large family called *húqín*. Instruments from different places use different sound boxes and strings and have different voices. The erhu we know today is one member of that family.
+Now look at the bow. Something else is strange: the bow hair passes between the erhu's two strings. It is threaded right through them, so the bow cannot simply be lifted away as a violin bow can. The player presses the bow hair inward or outward to rub one string or the other.
 
-In the early twentieth century, musician Liu Tianhua (*Liú Tiānhuá*) wrote new erhu pieces and helped bring the instrument into classrooms and concert halls. The erhu had often played beside singers in opera and storytelling. Now it also stepped to the center of the stage and told musical stories on its own.
+When a string vibrates, a small bridge carries the movement to the sound box below. A thin membrane covers the front of the box like the head of a tiny drum. It vibrates too, helping the sound grow louder. On many traditional erhus, this membrane is made of python skin.
+
+The main parts make a surprisingly short list: two strings, one bow caught between them, and a little sound box. Yet in the right hands, those two strings can do a great deal. One pair of hands became especially famous.
 
 ---
 
-## Six Pieces Saved Just in Time
+## A Musician Everyone Called Abing
 
-The folk musician Abing (*Ā Bǐng*) was blind, but he listened closely. He played on the streets of Wuxi (*Wúxī*), turning the sounds of the city, his life, and his feelings into music.
+About a hundred years ago, a musician lived in the city of Wuxi. His name was Hua Yanjun, but almost everyone knew him by his childhood name, Abing (*Ā Bǐng*). He learned music when he was young. Later he became blind, and for many years he performed in Wuxi.
 
-In 1950, musicians brought recording equipment to him and saved six pieces. The best known is *Moon Reflected on Second Spring*. The recording is short and far from perfect. But if no one had pressed the record button that day, we might never have heard Abing play in his own voice.
+Among the erhu pieces he left behind, one became especially famous: *Moon Reflected on the Second Spring*, or *Èrquán Yìngyuè*. Think again about the erhu. No frets fix every note in place. A finger can slide, a note can bend, and the bow can press harder or soften. Two people can play the same notes and still sound very different.
+
+A written score can show the notes, but it cannot hold every detail of one performance. For many years, if you wanted to hear how Abing played, you had to be there. Then, in 1950, researchers came to Wuxi with a remarkable machine. It could save sound.
+
+---
+
+## Music on a Steel Wire
+
+It was a wire recorder. It did not use the cassette tapes that would become familiar later. Instead, a thin steel wire moved past the recording head, which stored the sound as changing magnetic patterns along the wire.
+
+The music researchers Yang Yinliu and Cao Anhe found Abing. He had not played regularly for some time, so they helped him find an erhu and gave him several days to practice. On the evening of September 2, 1950, the wire spool began to turn. Abing began to play.
+
+That evening, they recorded three erhu pieces on the wire, including *Moon Reflected on the Second Spring*. The next day, the researchers recorded three pieces played on the pipa. A few months later, Abing died.
+
+A score can tell another musician which notes to play. The wire kept something more: how Abing moved from one note into another, how long he held a sound, and how his bow made those two strings speak.
+
+The wire is old now, and Abing is gone. But when the recording plays, we can still hear his erhu.
