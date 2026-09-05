@@ -1,125 +1,126 @@
 ---
-title_zh: 《山海经》：中国最古老的神怪百科全书
-title_en: Classic of Mountains and Seas: China's Ancient Book of Wonders
+title_zh: 《山海经》：山的那边住着什么？
+title_en: Shan Hai Jing: What Lives Beyond the Next Mountain?
 slug: shan-hai-jing
 category: literature
-difficulty: 中等
+difficulty: 简单
 back_href: ../../../../index.html#culture-literature
 style_notes: "用 --- 分隔 frontmatter；正文强调优先用 *斜体*；尽量不用 **粗体**。"
 ---
 
 [hero]
-title_zh: 《山海经》：中国最古老的神怪百科全书
-title_en: Classic of Mountains and Seas: China's Ancient Book of Wonders
+title_zh: 《山海经》：山的那边住着什么？
+title_en: Shan Hai Jing: What Lives Beyond the Next Mountain?
 [/hero]
 
 [section]
 page: 1
 layout: text-wrap-image
-heading_zh: 这本书不像普通故事书，更像一本奇怪的记录本
-heading_en: This Book Does Not Act Like a Normal Storybook
+heading_zh: 打开古卷，先选一条进山的路
+heading_en: Open the Old Scroll and Choose a Mountain Road
 image: 1-strange-ancient-book.webp
-caption_zh: 翻开《山海经》，你不会先遇见一条长故事，而会先遇见山、海、怪兽和很远很远的地方。
-caption_en: When you open *Shan Hai Jing*, you do not first find one long story. You find mountains, seas, strange creatures, and places far away.
+caption_zh: 一条路通向山，一条河流进海。古卷只告诉你往哪里走，却不保证前面遇见的是普通动物。
+caption_en: One road climbs toward a mountain and one river runs to the sea. The old scroll tells you where to go, but it does not promise an ordinary animal ahead.
 [zh]
-《山海经》是一本很奇怪的书。它不像《西游记》那样有一支队伍一路往前走，也不像《三国演义》那样有一群人物轮流上场。
+假如有人把一卷两千多年前的古书放到你手里，上面没有写“从前有一个英雄”。它先说：从这座山出发，向东再走一段路，会到达下一座山。山上长着什么树？河水往哪里流？石头下面藏着什么动物？
 
-翻开它，你更像是在看一本很古老的记录本：这座山在哪儿，那条河里有什么，那片海边住着什么样的人，某个地方又会出现什么奇怪的兽。
+这卷书就是《山海经》。它不是一个人坐下来一次写完的。许多人在很长的时间里，把山川、祭祀、传说和听来的怪事一层层放进去。最早写下这些话的人是谁，今天已经不知道了。
 
-更神奇的是，直到今天，大家也说不准这本书最早到底是谁写的。它像一只从很久很久以前漂下来的木箱，里面装满了碎片，可每一片都让人忍不住想再多看一眼。
+可是，名字不知道，路还在。你可以跟着书里的方向往前走。山顶可能有玉，山脚可能有铜，河里可能游着一条长翅膀的鱼。
+
+再翻一页，路边传来像唱歌一样的叫声。那不是人在唱。有什么东西正从树林后面走出来。
 [/zh]
 [en]
-*Shan Hai Jing*, or *Classic of Mountains and Seas*, is a very unusual book. It is not like *Journey to the West*, where one team keeps moving forward. It is not like *Romance of the Three Kingdoms*, where one group of characters keeps taking the stage.
+Imagine that someone places a scroll more than two thousand years old in your hands. It does not begin, “Once there was a hero.” Instead, it gives you a road: start at this mountain, travel east, and you will reach another mountain. What trees grow there? Where does the river go? What animal hides behind the rocks?
 
-When you open it, the book feels more like a very old notebook. One mountain is here. A certain river holds a strange fish. A faraway shore has unusual people. Another place has a beast no one has ever seen.
+This scroll is *Shan Hai Jing*, the *Classic of Mountains and Seas*. One person did not sit down and write it all at once. Over a long time, different people gathered descriptions of mountains, ceremonies, old tales, and strange reports. No one now knows the names of the first writers.
 
-The stranger thing is this: even today, no one can say for sure who first wrote it. It feels like a box drifting down from a very distant age, filled with pieces and fragments, each one making you want to keep looking.
+The names are lost, but the road remains. Follow the directions and you may find jade on a mountain, copper at its foot, or a fish with wings in the water.
+
+Turn one more page. A call rises from the trees. It sounds almost like singing—but no person is there. Something is stepping out of the forest.
 [/en]
 [/section]
 
 [section]
 page: 2
 layout: text-wrap-image
-heading_zh: 它一半像地图，一半像怪兽名册
-heading_en: It Feels Half Like a Map and Half Like a Creature List
+heading_zh: 往东走：会唱歌的鹿蜀、鸟头龟和九尾狐
+heading_en: Travel East: A Singing Beast, a Bird-Headed Turtle, and a Nine-Tailed Fox
 image: 2-mountains-rivers-scroll.webp
-caption_zh: 书里会认真记山和河，也会忽然冒出让人睁大眼睛的怪地方和怪动物。
-caption_en: The book carefully records mountains and rivers, then suddenly surprises you with strange lands and stranger animals.
+caption_zh: 《南山经》像一条奇怪的旅行路线：每翻过一座山，都可能遇见一种从没见过的动物。
+caption_en: The *Classic of the Southern Mountains* reads like a very strange travel route. Beyond each mountain may wait an animal you have never seen.
 [zh]
-《山海经》里有些地方认真得像地图。它会记下山连着山，河接着河，往东走多远，往西又会遇见什么。
+先从南边的山出发。走到杻阳山，树林里出现一只叫鹿蜀的兽。它的身体像马，头是白色的，身上有老虎一样的条纹，尾巴却是红色的。刚才像歌声一样的叫声，就是它发出来的。
 
-可读着读着，它又会忽然变得很不像地图。前面还在记路，后面就冒出各种奇怪国家、怪兽和神奇用处，好像一本地理书忽然和想象力撞在了一起。
+山里的怪水中还住着旋龟。它有乌龟的身体、鸟的脑袋和蛇一样的尾巴。它一开口，不像鸟叫，也不像乌龟叫，而像有人“咔嚓”一声劈开木头。
 
-所以很多人读《山海经》的感觉都差不多：你本来以为自己在认路，结果下一页已经走进了一个比路更奇怪的世界。
+继续向东，来到青丘山。树林里突然传出婴儿般的哭声。可千万别以为有人把宝宝丢在山上了。声音来自一只狐狸。它转过身来，一条、两条、三条……身后竟然摆着九条尾巴。
+
+《山海经》常常只用几句话说完一种动物，然后马上带你赶往下一座山。它没有告诉我们鹿蜀今天去了哪里，也没有解释九尾狐为什么长出九条尾巴。那一片空白，只好留给读者自己接着想。
 [/zh]
 [en]
-Some parts of *Shan Hai Jing* are almost as orderly as a map. The book records mountain after mountain and river after river. It tells you what lies east, what lies west, and what may come next.
+Begin among the southern mountains. At Niuyang Mountain, a creature called the *lushu* steps from the trees. Its body looks like a horse. Its head is white, its body has tiger stripes, and its tail is bright red. The singing sound you heard belongs to this creature.
 
-But while you are reading, the book can suddenly stop behaving like a map at all. One moment it is tracking the land. The next moment it is giving you strange countries, strange creatures, and surprising uses for them, as if geography had suddenly bumped into imagination.
+In the mountain river lives a *xuangui*, or whirling turtle. It has a turtle's body, a bird's head, and a tail like a snake. When it opens its mouth, it does not chirp like a bird. It sounds like a piece of wood splitting with a loud crack.
 
-That is why many readers feel the same surprise. You think you are learning the road, and then suddenly you are standing inside a world far stranger than the road itself.
+Keep traveling east until you reach Qingqiu Mountain. A baby's cry comes from the trees. Do not go looking for a lost baby. The sound belongs to a fox. It turns around, and behind it wave not one, not two, but nine long tails.
+
+*Shan Hai Jing* often gives a creature only a few lines before hurrying toward the next mountain. It never tells us where the lushu went or why the fox grew nine tails. The empty space is left for the reader to fill.
 [/en]
 [/section]
 
 [section]
 page: 3
 layout: text-wrap-image
-heading_zh: 中国很早很早的一些神话，也是靠它留了下来
-heading_en: Some of China's Oldest Myths Stayed Alive Because This Book Kept Them
+heading_zh: 发鸠山上的小鸟，为什么每天飞向大海？
+heading_en: Why Does the Little Bird of Fajiu Mountain Fly Toward the Sea?
 image: 3-jingwei-fills-the-sea.webp
-caption_zh: 精卫一趟一趟衔着小树枝和小石子去填海。海当然没有被填平，可这只小鸟一直没有停。
-caption_en: Jingwei carries twig after twig and pebble after pebble to fill the sea. The sea is still there, but the little bird never stops.
+caption_zh: 精卫从发鸠山衔起小石子和树枝，一次次飞向东海。她想把夺走自己生命的大海填平。
+caption_en: Jingwei carries stones and twigs from Fajiu Mountain to the Eastern Sea. She wants to fill the sea that took her life.
 [zh]
-《山海经》里还装着很多很老很老的神话。像夸父追日、[[精卫|Jingwei]]填海，这些名字后来一代一代被人讲下去，很大一部分线索都能在这里找到。
+在北方的发鸠山上，住着一只乌鸦大小的小鸟。她有带花纹的脑袋、白色的嘴和红色的脚。飞过山谷时，她会叫出自己的名字：“精卫！精卫！”
 
-这些故事为什么动人？因为它们常常不讲“能不能成功”，而是在讲“会不会一直做下去”。精卫那么小，海那么大，她当然填不平。可她还是一趟一趟飞。
+精卫以前不是鸟。她原来名叫“女娃”，是炎帝的小女儿。有一天，她到东海游玩，却淹死在海里，再也没有回家。后来，她变成了这只小鸟。
 
-所以《山海经》不只是怪。它里面还有一种很古老的力气。有些故事勇敢，有些故事倔强，有些故事让人觉得：原来很久以前的人，也会把不肯放弃写得这么亮。
+每天，[[精卫]]从西边的山上衔起一小段树枝，或者叼起一颗小石子，再飞到东海上空，把它丢进浪里。她想把夺走自己生命的大海一点点填平。第二天，她又飞回山中，再找一颗。石子那么小，东海那么大，她还是没有停。
+
+一颗石子落进浪里，马上看不见了。精卫转过身，再次飞向发鸠山。她的任务还没有完成，故事却在她一次又一次的飞行中停住了。
 [/zh]
 [en]
-*Shan Hai Jing* also carries many very old Chinese myths. Stories like [[Jingwei]] filling the sea and [[Kuafu]] chasing the sun were retold for generations, and many of their early clues can still be found here.
+On northern Fajiu Mountain lives a bird about the size of a crow. She has a patterned head, a white beak, and red feet. As she flies over the valley, her call sounds like her own name: “Jingwei! Jingwei!”
 
-Why do these stories move people so deeply? Often they are not really asking, "Will this succeed?" They are asking, "Will this continue?" Jingwei is tiny, and the sea is enormous. Of course she cannot fill it quickly. But she keeps flying back with twigs and stones anyway.
+[[Jingwei]] was not always a bird. She was once a young girl, the daughter of the Flame Emperor. One day she went to the Eastern Sea, drowned, and never returned home. Afterward, she became this little bird.
 
-That is why *Shan Hai Jing* is not only strange. It also contains an old kind of strength. Some stories are brave. Some are stubborn. Some make readers feel that long ago people already knew how to make perseverance shine.
+Every day, Jingwei picks up a twig or a small stone from the western mountains. Then she flies over the Eastern Sea and drops it into the waves. She means to fill the sea that took her life, one tiny piece at a time. The next day, she returns for one more. The stones are tiny and the sea is enormous, but she does not stop.
+
+One stone disappears beneath the waves. Jingwei turns around and flies back toward Fajiu Mountain. Her task is not finished, but the story ends while she is still making the journey again and again.
 [/en]
 [/section]
 
 [section]
 page: 4
 layout: text-wrap-image
-heading_zh: 两千多年以后，它还在点燃新的想象力
-heading_en: More Than Two Thousand Years Later, It Is Still Lighting New Imagination
+heading_zh: 如果下一座山由你来画，那里会住着什么？
+heading_en: If You Drew the Next Mountain, What Would Live There?
 image: 4-child-drawing-creatures.webp
-caption_zh: 今天的小读者翻开《山海经》，也可能一边看，一边马上想把那些奇怪生物画出来。
-caption_en: A young reader today may open *Shan Hai Jing* and immediately want to draw the strange creatures inside it.
+caption_zh: 一个孩子铺开纸，先画山和河，再让一种从来没有见过的动物从石头后面探出头来。
+caption_en: A child spreads out paper, draws a mountain and river, and lets a never-before-seen creature peek from behind a rock.
 [zh]
-今天很多动画、游戏、插画和小说，还是会从《山海经》里借名字和灵感。很多人先在新的作品里听见那些怪兽，再回头去找这本老书。
+读完九尾狐和精卫，一个孩子把纸铺在桌上。纸的左边画一座长满蓝草的山，右边画一条倒着流的河。接下来，该让谁住进去？
 
-这说明《山海经》最厉害的地方，不只是它很古老，而是它到现在还会继续长。每一代人翻开它，都会从里面挑出自己最想记住的东西。
+她先画一双猫头鹰的眼睛，再添上鹿的腿、鱼的尾巴和两只像树叶一样的耳朵。这个新家伙平常躲在石头后面，下雨时尾巴会发光，叫起来像三只杯子碰在一起。
 
-有的孩子会喜欢怪兽，有的孩子会喜欢神话，有的孩子会喜欢那种“世界原来还可以想得这么奇怪”的感觉。一本没有完全说明白自己是谁的书，就这样一直活到了今天。
+这只动物不在原来的《山海经》里。可它很像从那本书打开的门里走出来的。因为《山海经》里的怪兽常常也是这样出现：拿几种熟悉的东西拼在一起，再加上一种谁也没听过的声音和一件奇怪的本领。
+
+现在，地图还空着一大片。下一座山可以是红色的，也可以漂在云上。山后面会出现什么，要等你把路继续画下去才知道。
 [/zh]
 [en]
-Today, many cartoons, games, illustrations, and novels still borrow names and ideas from *Shan Hai Jing*. Quite often, readers meet the creatures in a new work first and only later go back to look for the old book.
+After reading about the nine-tailed fox and Jingwei, a child spreads paper across a table. On the left she draws a mountain covered with blue grass. On the right she adds a river that flows backward. Now who should live there?
 
-That shows the book's deepest power. Its greatness is not only that it is ancient. It is that it keeps growing inside new imaginations. Each generation opens it and chooses something different to carry away.
+She begins with an owl's eyes. Then she adds a deer's legs, a fish's tail, and two ears shaped like leaves. The new creature hides behind rocks. Its tail glows in the rain, and its call sounds like three cups tapping together.
 
-Some children love the creatures. Some love the myths. Some love the feeling that the world can be imagined in such a strange and wonderful way. A book that never fully explains itself has remained alive for more than two thousand years.
+This animal is not in the old *Shan Hai Jing*. Yet it seems able to step through the door that the book opened. Many creatures in the ancient text appear in a similar way: familiar animals are joined together, then given a sound no one expects and one very strange ability.
+
+A wide part of the map is still blank. The next mountain might be red, or it might float above the clouds. What waits behind it? You will not know until you keep drawing the road.
 [/en]
 [/section]
-
-[ending]
-heading_zh: 小结
-heading_en: In Summary
-[zh]
-《山海经》不像一条顺着走的长故事。它更像一只装满山、海、怪兽、神话和远方碎片的大箱子。
-
-也正因为它不整整齐齐，它反而特别会勾住人的想象力。你翻开它的时候，像在看一本很老的书；合上它的时候，脑子里却常常已经长出了新的画面。
-[/zh]
-[en]
-*Shan Hai Jing* is not a long story that moves in one straight line. It is more like a great box filled with mountains, seas, creatures, myths, and fragments of faraway places.
-
-And because it is not neat or simple, it keeps pulling at the imagination. When you open it, you are reading a very old book. When you close it, new pictures often keep growing in your mind.
-[/en]
-[/ending]

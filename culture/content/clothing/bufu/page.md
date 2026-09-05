@@ -1,118 +1,128 @@
 ---
-title_zh: 只看一只鸟，能认出官职吗？
-title_en: Can One Bird Reveal an Official's Rank?
+title_zh: 官服上的鸟和猛兽
+title_en: Birds and Beasts on Official Robes
 slug: bufu
 category: clothing
 difficulty: 中等
 back_href: ../../../../index.html#culture-clothing
-style_notes: "用 --- 分隔 frontmatter；正文强调优先用 *斜体*；尽量不用 **粗体**。"
+style_notes: "面向 6–10 岁儿童的单一故事版本；英文为主要阅读文本，中文为自然、简明的参考稿。"
 ---
 
 [hero]
-title_zh: 只看一只鸟，能认出官职吗？
-title_en: Can One Bird Reveal an Official's Rank?
+title_zh: 官服上的鸟和猛兽
+title_en: Birds and Beasts on Official Robes
 [/hero]
 
 [section]
 page: 1
 layout: text-wrap-image
-heading_zh: 服饰侦探的第一条线索
-heading_en: A Clothing Detective's First Clue
+heading_zh: 文官和武官做什么？
+heading_en: What Did Civil and Military Officials Do?
 image: civil-and-military-badges.webp
-caption_zh: 现代合成示意图，混合了清代风格的帽子、朝珠和补服元素。鹤常与文官相连，虎常与武官相连，但这不是一幅历史肖像。
-caption_en: A modern composite using Qing-style hats, court beads, and rank-badge clothing. Cranes were linked to civil rank and tigers to military rank, but this is not a historical portrait.
+caption_zh: 这是一幅现代想象图。白鹤常出现在文官补子上，老虎则出现在武官补子上。
+caption_en: This is a modern imagined scene. Cranes appeared on civil officials' badges, while tigers appeared on military officers' badges.
 [zh]
-假如博物馆桌上放着一块方形织物，中间有一只白鹤，四周是云、海水和山石。标签被遮住了。你能不能只看这只鸟，就说出原来的主人是谁？
+古代的“官员”，就是替国家和皇帝处理事情的人。到了明清时期，官员主要分成两大类。
 
-第一条线索是“补子”。明清两代，一些文武官员在规定的官服前胸和后背使用带动物纹样的方形标志，用来显示文武类别和品级。文官通常用飞禽，武官通常用走兽或神兽。因此，一只鹤会让侦探先往文官方向猜；一只虎则更可能指向武官。可是“鸟等于文官、兽等于武官”只是开头，不是完整答案。
+文官处理法律、税收、粮食和政府文书等事情。很多文官要读很多书，还要参加考试。武官负责军队、训练士兵，也可能守卫城市和边疆。“文”是处理政务，“武”是负责军队，并不是说文官只会写字，武官每天都在打仗。
 
-首先，并不是中国所有朝代的官员都这样穿，也不是所有方形刺绣都是官员补子。明代在十四世纪末建立了醒目的补服制度，清代继续使用，却改变了衣服形制和部分动物对应。其次，补子告诉人们的是品级，不是一个唯一职位。几个不同衙门里的官员可能同为三品；同一个人在任职、升降之后，补子也可能更换。所以，只凭一只鸟，你最多找到身份范围，还认不出姓名、具体工作，更看不出他是否有本事。
+为了让人一眼看出他们属于哪一类、官位有多高，官服的前胸和后背缝着一块方形图案。这块图案叫“补子”。文官补子上大多是鸟，武官补子上大多是四脚猛兽或传说中的神兽。
 [/zh]
 [en]
-Imagine that a museum places a square textile on a table. A white crane stands in the center, surrounded by clouds, waves, and rocks. The label is covered. Can you identify its original owner from that bird alone?
+In old China, an official was a person who worked for the emperor's government. During the Ming and Qing dynasties, officials belonged to two main groups.
 
-Your first clue is the *buzi*, or rank badge. During the Ming and Qing dynasties, some civil and military officials wore square animal badges on the front and back of regulated official clothing. The picture showed the branch of service and the wearer's rank. Civil officials usually had birds, while military officers usually had four-legged animals or mythical beasts. A crane therefore points the detective toward a civil official; a tiger points toward a military officer. But “birds for civil, beasts for military” is only the beginning of the answer.
+Civil officials worked with laws, taxes, food supplies, and government papers. Many studied for years and took difficult exams. Military officers worked with the army. They trained soldiers and helped guard cities and borders. This did not mean that civil officials only wrote all day or that military officers were always fighting.
 
-Not every Chinese dynasty used this system, and not every square embroidery was an official badge. The Ming court established a striking rank-badge system in the late fourteenth century. The Qing court continued it but changed the clothing and some of the animal assignments. A badge also showed rank, not one exact job. Officials in different offices could share the same rank, and a person's badge could change after a promotion or demotion. One bird might narrow the search, but it cannot reveal a name, a precise job, or whether the wearer was actually good at it.
+People needed a quick way to see which group an official belonged to and how high his rank was. A square picture was sewn onto the front and back of his robe. It was called a *buzi*, or rank badge. Civil officials usually wore birds. Military officers usually wore four-legged beasts or creatures from old stories.
 [/en]
 [/section]
 
 [section]
 page: 2
 layout: text-wrap-image
-heading_zh: 同一只老虎，两个答案
-heading_en: One Tiger, Two Answers
+heading_zh: 为什么一边是鸟，一边是猛兽？
+heading_en: Why Birds for One Group and Beasts for the Other?
 image: rank-badge-lineup.webp
-caption_zh: 现代概念图，不是一套真实的明清品级表。图中的鹤、锦鸡、孔雀、虎、狮、麒麟和獬豸曾用于不同补子，但朝代和官职不同，不能按画面顺序直接排级。
-caption_en: A modern concept image, not a real Ming or Qing rank chart. Cranes, pheasants, peacocks, tigers, lions, qilin, and xiezhi appeared on badges, but their dates and uses differed; this lineup is not a rank order.
+caption_zh: 这是一幅现代动物排列图，不是一张真正的官位表。补子上的动物和等级会随着朝代改变。
+caption_en: This is a modern lineup, not a real rank chart. The animals and their ranks changed over time.
 [zh]
-真正的难题藏在时间里。清代文官补子在制度逐渐固定以后，一品常用仙鹤，二品锦鸡，三品孔雀，四品云雁；再往下还有白鹇、鹭鸶、鸂鶒、鹌鹑和练雀等。清代武官的高品级常见一品麒麟、二品狮、三品豹、四品虎。动物不是官员挑自己最喜欢的来绣，而是朝廷用服饰规定把等级变成人人看得见的秩序。
+举行大典时，一排排官员站在一起。他们身上的衣服把朝廷的等级直接摆在了大家眼前。胸前和背后的大幅动物图案，隔着一段距离也能看见。它告诉别人：这个人是文官还是武官，官位大概有多高。
 
-可是，把这张清代对应表套回明代就会出错。纽约大都会艺术博物馆收藏的一件虎纹补子正好说明这一点：虎在明代制度中可表示三品武官，到了清代则表示四品武官。明初的某些规定还把两个品级放在同一组，可选的鸟兽并不像后来的表格那样一格只放一种。规定会修订，实际穿着也不总是整整齐齐地照着纸面执行。
+朝廷用两组很不一样的动物来分开文官和武官。文官用飞禽，让人想到文雅、祥瑞和学问；武官用走兽和神兽，让人想到力量、勇气和威严。两组一眼就能分开，然后每一种动物再表示一个等级。
 
-因此，服饰侦探不能先背一张九品表，再把答案贴到所有实物上。要先问：这是明代还是清代？是早期还是晚期？动物到底是什么？制作方法和周围纹样像哪个时期？博物馆有时也要把织物、出土地点、旧照片、肖像和文献放在一起，才能给一块补子判断年代。认错一只长尾鸟，就可能把官员连降好几级；认对了动物却用错朝代，答案还是会错。
+官员不能挑自己最喜欢的动物，图案由朝廷规定，而且这些规定也会改变。同一只老虎，在明朝和清朝可能代表不同的等级。这些鸟兽是一套由朝廷制定的标志，并不是永远不变的规矩。
 [/zh]
 [en]
-The real puzzle is hidden in time. After the Qing rules became more settled, civil badges commonly used a crane for first rank, a golden pheasant for second, a peacock for third, and a wild goose for fourth. Lower ranks used birds including the silver pheasant, egret, Mandarin duck, quail, and paradise flycatcher. Among high Qing military ranks, the first used a *qilin*, the second a lion, the third a leopard, and the fourth a tiger. Officials were not free to pick a favorite animal. Court dress rules turned rank into a visible order.
+At a grand ceremony, rows of officials stood together. Their clothing made the order of the court visible. A large animal on the chest and back could be seen from a distance. It showed whether someone was a civil or military official and roughly how high his rank was.
 
-But a Qing chart cannot simply be pasted onto the Ming dynasty. A tiger badge at the Metropolitan Museum of Art shows why: the tiger could mark a third-rank military officer in the Ming system but a fourth-rank officer in the Qing. Some early Ming regulations also grouped two ranks together, with choices that were not yet the neat one-animal-per-box list seen later. Rules changed, and real people did not always follow written regulations perfectly.
+The court used two very different groups of animals. Civil officials wore birds, which could suggest grace, good fortune, and learning. Military officers wore beasts and creatures from legends, which suggested strength, courage, and authority. The two groups were easy to tell apart, and each animal then showed a different rank.
 
-A clothing detective should not memorize one nine-rank chart and attach it to every textile. Ask first: Ming or Qing? Early or late? What species is the animal? Do the weaving method and surrounding designs fit the proposed date? Museums may compare the cloth with excavated objects, old portraits, photographs, and written rules before dating a badge. Mistake one long-tailed bird for another and the official may drop several ranks. Identify the animal correctly but use the wrong dynasty, and the answer can still be wrong.
+Officials did not choose their favorite animal. The court set the rules, and those rules changed over time. A tiger showed one rank in the Ming dynasty and another in the Qing. The birds and beasts formed a court-made code, not a rule that stayed the same forever.
 [/en]
 [/section]
 
 [section]
 page: 3
 layout: text-wrap-image
-heading_zh: 前面为什么裂成两半？
-heading_en: Why Is the Front Badge Split in Two?
+heading_zh: 衣服上为什么有不存在的动物？
+heading_en: Why Put Make-Believe Animals on Real Clothes?
 image: xiezhi-watchdog-official.webp
-caption_zh: 现代想象图中的獬豸补服借用了明代元素。真实的明代獬豸补圆领袍有出土实物；本图不能代替那件文物，也不能证明某位官员的长相。
-caption_en: This modern imagined xiezhi robe borrows Ming-style elements. Excavated Ming xiezhi robes do survive, but this picture is not one of those objects and does not show a known official's face.
+caption_zh: 画中的独角神兽是獬豸。这是一幅现代想象图，不是某位真实官员的肖像。
+caption_en: The one-horned creature is a xiezhi. This is a modern imagined scene, not a portrait of a real official.
 [zh]
-把补子翻过来，衣服本身也会说话。明代官员的常服可以是圆领大袍，前胸和后背各有补子。中国丝绸博物馆修复过一件明墓出土的獬豸补圆领袍：圆领、右衽、宽摆、大袖，前后都有金线做成的獬豸纹样。这是考古出土的衣服，不是画家根据故事补出来的“古装”。
+麒麟不是真实的鹿、马或龙。它是中国古代故事中的神兽，常常被画成长着蹄子、鳞片和角，有时身边还有火焰。这样神奇又有力量的动物，很适合出现在高等级武官的补子上。
 
-清代补服的外套多为前中开合的对襟褂。为了让衣襟打开，前胸补子通常也从中间分成左右两片；后背不需要开襟，仍是一整块。前后补子往往成对制作，图案相配。清代的补子一般也比许多明代实例小，纹样里常见一只动物朝向象征皇帝的日形圆盘。后期还出现了便于更换等级图案的做法。于是，一块从中间整齐分开的补子可能不是损坏，而是本来就缝在衣服正面。
+獬豸也是传说中的动物。故事说，它长着一只角，能分清谁对谁错。因此，一些负责监察官员、检查案件的人把獬豸穿在官服上。这个图案代表他们的工作应该公平，但一只獬豸当然不能保证穿衣服的人真的永远公正。
 
-这些衣服用于有规定的公务或礼仪场合，不等于官员从早到晚只穿这一套。明代的常服、公服，清代的朝服、吉服、常服等名称各有搭配和使用规则，不能全翻成同一种“formal robe”。看一幅肖像时，还要问画家画的是哪一种场合；看一件孤零零的补子时，也要记得它原来只是整套帽子、袍褂、腰带或朝珠中的一部分。
+这些神兽不是从森林里抓来画的。它们从古代故事和艺术中走上了衣服，把人们希望官员拥有的力量、勇气和公正变成人人看得见的图案。
 [/zh]
 [en]
-Turn the badge over, and the clothing itself begins to talk. A Ming official's regular official robe could be a wide, round-collared garment with a badge at the chest and another at the back. The China National Silk Museum helped conserve a xiezhi-badge robe excavated from a Ming tomb. It has a round collar, a closing that crosses to the right, broad sleeves, and gold-thread xiezhi designs on front and back. This is an excavated garment, not a costume that an artist invented from a legend.
+A *qilin* was not a real deer, horse, or dragon. It was a creature from old Chinese stories. Artists often gave it hooves, scales, a horn, and sometimes flames around its body. A creature that looked both magical and powerful became a fitting badge for a high-ranking military officer.
 
-In the Qing dynasty, the rank-badge surcoat usually opened down the center. To let the coat open, the front badge was commonly divided into left and right halves. The back badge could remain whole. Front and back badges were often made as a matching pair. Qing badges were also generally smaller than many Ming examples, and their designs often show one creature looking toward a sun disk that represented the emperor. Later makers even developed ways to replace a rank image more quickly. A badge neatly split down the center may not be damaged at all—it may have belonged on the front of a coat.
+The *xiezhi* came from old stories too. It was usually shown with one horn and was said to know right from wrong. Some officials who investigated wrongdoing and checked the work of other officials wore a xiezhi badge. The picture stood for fairness, although it could not make the person wearing it fair.
 
-These clothes were worn for regulated government or ceremonial occasions; an official did not necessarily wear the same outfit from morning to night. Ming categories such as *changfu* and *gongfu*, and Qing categories for court, festival, regular, travel, and other dress, each had their own combinations and rules. They should not all be flattened into one English phrase such as “formal robe.” In a portrait, ask what occasion the painter is showing. When you see a badge by itself, remember that it was once only one part of a complete outfit that might also include a hat, robe, belt, or court beads.
+No one found these creatures in a forest. They moved from old stories and art onto real robes, turning hopes for strength, courage, and fairness into pictures everyone could see.
 [/en]
 [/section]
 
 [section]
 page: 4
 layout: text-only
-heading_zh: 獬豸能证明一个人公正吗？
-heading_en: Could a Xiezhi Prove Someone Was Fair?
+heading_zh: 动物是怎样排进九个等级的？
+heading_en: How Did the Animals Fit Nine Ranks?
 [zh]
-獬豸让这个侦探游戏多了一道岔路。它是传说中能辨曲直的神兽，明清一些监察和司法系统的官员用它作补子。它不在普通文官九品鸟类表里，所以看见獬豸，侦探要改问：“这个人是否在都察院、按察系统或其他风宪职位任职？”不过，明代獬豸补服的适用范围在制度和实践中并非始终完全一致，清代也曾专门限制某些低级办事人员冒用。即使认出獬豸，也要继续查职位和年代。
+清代官员的品级大体从一品排到九品。一品最高，九品最低。每一级都需要一个容易认出的图案，于是朝廷把不同的鸟兽排进了一张等级表。
 
-更重要的是，獬豸只说明朝廷赋予某个职位的象征，不是对穿衣人的品德鉴定。鹤不会自动使文官有学问，虎不会证明武官勇敢，獬豸也不能保证监察官一定公正。补子让等级社会中的位置变得可见，却把真实的人压缩成一个制度符号。历史研究要同时看规则和现实：衣服说了什么，人又究竟做了什么？那是两种不同的证据。
+这个顺序不是按照真实动物谁最厉害来排的。安排文官补子时，朝廷看重飞禽带来的文雅、吉祥和珍贵之感；安排武官补子时，更看重神兽和猛兽表现出的威严与力量。后来固定下来的清代等级表中，一品文官用仙鹤，二品用锦鸡，三品用孔雀；一品武官用麒麟，二品用狮子，三品用豹子，四品用老虎。
+
+古代规定告诉了我们最后的顺序，却没有为每一格都留下完整的理由。豹子排在老虎前面，并不是说豹子一定比老虎厉害。这是朝廷规定的官位标志，不是一张真正的动物强弱表。
 [/zh]
 [en]
-The xiezhi adds a fork to the investigation. This mythical creature was said to recognize right from wrong, and some Ming and Qing officials in censorial or judicial systems used it on their badges. It does not belong to the ordinary nine-rank list of civil-service birds. When a detective sees a xiezhi, the next question becomes, “Did this person work in the Censorate, a provincial surveillance office, or another related post?” Even then, Ming rules and actual practice did not always define the group in exactly the same way. Qing officials also had to restrict some lower staff members from using the badge improperly. The animal is a lead, not a finished identification.
+Qing officials were divided into nine main ranks. The first was the highest, and the ninth was the lowest. Each rank needed a picture people could recognize, so the court placed different birds and beasts into an official list.
 
-More importantly, the xiezhi tells us what the government wanted an office to symbolize. It is not a character test for the person wearing it. A crane did not automatically make a civil official wise. A tiger did not prove that a military officer was brave. A xiezhi could not guarantee that a censor was fair. Rank badges made a person's place in a hierarchical government visible, but they reduced a complicated human being to an official symbol. Historians must ask two separate questions: What did the clothing claim, and what did the person actually do?
+This order did not measure which real animal was the strongest. For civil officials, the court chose birds that suggested grace, good fortune, or rarity. For military officers, legendary creatures and powerful beasts gave a feeling of strength and authority. In the later Qing list, the first three civil ranks wore a crane, a golden pheasant, and a peacock. The first four military ranks wore a *qilin*, a lion, a leopard, and a tiger.
+
+Old rules give us the final order, but they do not explain every choice. A leopard appearing above a tiger did not mean that a leopard would always win a fight. This was a court ranking system, not a scientific list of the strongest animals.
 [/en]
 [/section]
 
-[ending]
-heading_zh: 侦探的完整答案
-heading_en: The Detective's Full Answer
+[section]
+page: 5
+layout: text-only
+heading_zh: 地方小官也穿补子吗？
+heading_en: Did Local Officials Wear Rank Badges Too?
 [zh]
-回到桌上那只白鹤。现在你可以说：“它很可能与明清文官品级有关；如果能确认是清代定制中的仙鹤补子，才可以进一步判断一品。但我还需要看年代、前后结构、织绣方法和来源记录，不能只凭鸟下结论。”
+补子不只属于站在皇帝身边的大官。这套品级从京城一直用到各地的府和县。一个官员在哪里做事，和他的品级有多高，是两件不同的事。远在地方的官员，品级也可能高过京城里职位较低的官员。
 
-这听起来没有“一眼认出”那么神奇，却是真正厉害的观察。好的历史侦探不抢着猜，而是知道一块方布能告诉我们什么，也知道它不能告诉我们什么。
+清代的知县通常是七品文官。他不是朝廷里最高的大官，却是管理一个县的主要官员。百姓交税、地方粮食、政府命令和许多案件，都可能来到他的县衙里。
+
+按照后来固定的清代等级表，七品文官的补子上是鸂鶒，一种像鸳鸯的水鸟。县太爷胸前的这只水鸟，把他在地方上的工作，也放进了朝廷的官位等级里。
 [/zh]
 [en]
-Return to the white crane on the table. Now you can say, “It probably relates to a Ming or Qing civil rank. If the evidence shows that it is a crane badge from the settled Qing system, then it may indicate first rank. But I still need its date, construction, weaving or embroidery, and collection history. The bird alone is not enough.”
+Rank badges did not belong only to powerful officials standing beside the emperor. The same system reached from the capital to cities and counties across China. Where an official worked and how high he ranked were two different things. A local official could even outrank someone with a smaller post in the capital.
 
-That answer may sound less magical than instant recognition, but it shows much stronger observation. A good history detective does not rush to guess. The detective knows what one square of cloth can tell us—and what it cannot.
+During the Qing dynasty, the chief official of a county was usually a seventh-rank civil official. A county was a local area made up of towns and villages. He was not one of the court's most powerful men, but local taxes, grain, government orders, and many court cases could all reach his office.
+
+In the later Qing list, his rank badge showed a Mandarin duck. The water bird on his chest connected his local job to the same rank system used at the emperor's court.
 [/en]
-[/ending]
+[/section]

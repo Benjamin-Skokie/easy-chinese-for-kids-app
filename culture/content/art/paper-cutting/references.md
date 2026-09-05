@@ -165,3 +165,8 @@ Editorial boundary:
 
 - Yuxian is a specific local tradition and not a stand-in for all northern paper-cutting.
 - Named masters should not erase the many workshop, family, and community contributors around them.
+
+## 2026 child-facing revision
+
+- The main article now begins with the surprise of unfolding a butterfly, then explains festival windows, picture-word wishes, bold and fine cutting, and new subjects in a living craft.
+- It avoids treating one regional style, one color, or one motif meaning as a rule for all Chinese paper-cutting.

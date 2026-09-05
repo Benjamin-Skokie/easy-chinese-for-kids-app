@@ -290,3 +290,8 @@ Editorial boundary:
 
 - All three are labeled as modern illustrations or imagined scenes, not archaeological evidence, object photographs, or eyewitness records.
 - The comparison image is not presented as a laboratory test, the workshop is not assigned to a precise historical kiln, and the map-and-ship still life is not identified as one documented voyage.
+
+## 2026 child-facing revision
+
+- The main article now follows one bowl from prepared clay through glazing and firing, adds cobalt blue, then joins the many workers of Jingdezhen and the porcelain trade.
+- It keeps the long-development account rather than naming one inventor, and retains the documented West Asian cobalt connection and lowercase English *china* usage.

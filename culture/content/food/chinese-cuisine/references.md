@@ -1,6 +1,14 @@
-# Editorial References: Chinese Cuisines
+# References for “What Does Chinese Food Taste Like?”
 
 This file is for editorial research and does not render on the website.
+
+## Current child-facing version
+
+Rewritten: 2026-09-02
+
+- The article now follows five pictured meals rather than trying to survey every province or list every major cuisine.
+- The “Eight Great Cuisines” are introduced as a useful starting guide, not a complete or ancient official map.
+- Place names are kept only when a pictured food needs them. Detailed classification debates and Chinese American restaurant history were removed from the child-facing text.
 
 ## 1. *Global Food History* — “Special Issue on Chinese Culinary Regionalism: Introduction”
 
@@ -104,22 +112,26 @@ Editorial boundary:
 - Migration is one important force among many, not a claim that newcomers erased all earlier Sichuan food.
 - The article avoids the unsupported shortcut that damp weather automatically made Sichuan people eat chilies.
 
-## 7. China Daily / Chengdu local-history account — “Mapo tofu: Chen Mapo's tofu”
+## 7. Ministry of Commerce “Time-Honored Brands” museum and China Daily — Chen Mapo tofu
 
-URL: https://www.chinadaily.com.cn/life/2012-03/09/content_15733317.htm
+URLs:
 
-Accessed: 2026-08-21
+- https://lzhbwg.mofcom.gov.cn/edi_ecms_web_front/thb/detail/f7ab3a6e7ea0426d8fd104fc7c93df79
+- https://www.chinadaily.com.cn/kindle/2015-09/06/content_21798522.htm
+
+Accessed: 2026-09-02
 
 Supports:
 
-- Chengdu records recognized Chen Mapo tofu as a famous local food by the end of the Qing dynasty.
-- A widely repeated origin tradition connects the dish with a woman cook at a Chen family restaurant near Wanfu Bridge.
-- The source itself presents variant tellings of the story.
+- The Chen Mapo restaurant brand dates itself to 1862 and connects the dish with the wife of a restaurant owner near Wanfu Bridge in Chengdu.
+- The familiar name story explains *ma* through marks on Mrs. Chen's face and *po* as an older woman.
+- A Chengdu guide published in 1909 listed Chen Mapo tofu among the city's well-known foods.
 
 Editorial boundary:
 
-- The story states only the well-supported boundary that mapo tofu was famous in late Qing Chengdu.
-- Details about the cook, customers, exact year, and accidental invention are identified as local tradition rather than certain eyewitness fact.
+- The child-facing story calls this the best-known account rather than an eyewitness record.
+- The 1862 date, the customers, and the exact sequence of invention are not presented as independently proven in every detail.
+- The English story does not translate *po* as “old woman,” which sounds unnecessarily blunt in modern American English. It keeps *Mapo* as a nickname and explains only the part needed to understand the name story.
 
 ## 8. Academy of Chinese Studies — “中国有多少个菜系？” and “Chinese Culinary Culture and Eight Regional Cuisines”
 
@@ -141,72 +153,19 @@ Editorial boundary:
 - Broad flavor rhymes are mentioned only as slogans that hide variation, not as factual laws.
 - Regional summaries supply examples, not personality traits or fixed rules for every cook and household.
 
-## 9. Heather R. Lee — “The Untold Story of Chinese Restaurants in America” (Scholars Strategy Network)
+## 9. Hangzhou CPPCC — overview of classic Hangzhou dishes
 
-URL: https://scholars.org/brief/untold-story-chinese-restaurants-america
+URL: https://www.hzzx.gov.cn/cshz/content/2022-09/28/content_8363764.htm
 
-Accessed: 2026-08-21
-
-Supports:
-
-- Many early Chinese migrants to the United States came from a small cluster of counties in southern China.
-- The Chinese Exclusion Act of 1882 sharply restricted migration and mobility.
-- After a 1915 court decision helped some restaurant owners qualify for merchant status, Chinese restaurant businesses expanded rapidly; owners used partnerships and rotating management to navigate discriminatory rules.
-- Restaurant work, family obligation, remittances, and community ties connected kitchens in the United States with families in southern China.
-
-Editorial boundary:
-
-- Restaurants are not reduced to a clever immigration loophole; they were difficult workplaces, family enterprises, and cultural institutions.
-- Adaptation is described as creative survival within unequal conditions, not evidence that Chinese American food is “fake.”
-
-## 10. Gabriel J. Chin and John Ormonde — “The War Against Chinese Restaurants” (*Duke Law Journal*)
-
-URL: https://dlj.law.duke.edu/article/the-war-against-chinese-restaurants-chin-vol67-iss4/
-
-Accessed: 2026-08-21
+Accessed: 2026-09-02
 
 Supports:
 
-- Chinese restaurants faced organized campaigns using zoning, licensing, employment restrictions, policing, and racist stereotypes.
-- Restaurant history belongs inside the larger history of exclusion and Asian American labor, not only a story of recipes pleasing customers.
+- Longjing shrimp, made with shrimp and Dragon Well tea, is a recognized Hangzhou dish.
 
 Editorial boundary:
 
-- The child-facing account names exclusion and racial hostility without reproducing dehumanizing claims in detail.
-- Customers' tastes mattered, but the story does not imply that restaurant owners adapted under free or equal conditions.
-
-## 11. Smithsonian National Museum of American History — “Sweet & Sour” exhibition overview
-
-URL: https://americanhistory.si.edu/press/releases/national-museum-american-history-showcases-sweet-sour
-
-Accessed: 2026-08-21
-
-Supports:
-
-- Menus, signs, cooking tools, and restaurant objects document Chinese immigration, exclusion, adaptation, and perseverance from the nineteenth century to the present.
-- Chop suey became an important culinary trend within the history of Chinese food in the United States.
-
-Editorial boundary:
-
-- Chinese American dishes are treated as historical evidence and a living American food tradition, not as failed copies measured only against present-day food in China.
-- No single restaurant or dish is called the sole birthplace of Chinese American cuisine.
-
-## 12. Haiming Liu — *From Canton Restaurant to Panda Express: A History of Chinese Food in the United States* (Smithsonian catalog record)
-
-URL: https://www.si.edu/object/canton-restaurant-panda-express-history-chinese-food-united-states-haiming-liu%3Asiris_sil_1065159
-
-Accessed: 2026-08-21
-
-Supports:
-
-- Chinese food in the United States has more than 150 years of history shaped by migration, racial politics, business, and changing ideas of authenticity.
-- Immigration reforms after 1965 helped expand the regional range of Chinese restaurant food in the United States.
-- Dishes and restaurant forms continued changing as new migrants, ingredients, customers, and business models arrived.
-
-Editorial boundary:
-
-- “Authentic” is not used as a simple score separating China from America.
-- The article avoids claiming that post-1965 food replaced an unreal earlier cuisine; both older and newer traditions have their own histories.
+- The dish is one example from Hangzhou, not a summary of everything eaten in Zhejiang.
 
 ## Image audit
 

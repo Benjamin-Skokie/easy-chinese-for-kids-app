@@ -16,21 +16,17 @@ title_en: Why Did Zhu Yuanzhang Become Such a Busy Emperor?
 [section]
 page: 1
 layout: text-only
-heading_zh: 我们真的知道他几点起床吗？
-heading_en: Do We Really Know When He Woke Up?
+heading_zh: 为什么这么多事情来到他面前？
+heading_en: Why Did So Much Work Reach Him?
 [zh]
-写“皇帝的一天”，最诱人的办法就是先画一张时间表：凌晨三点起床，五点上朝，白天见大臣，晚上批奏章。可是，这样的时间表常常把不同朝代、不同皇帝的习惯拼在了一起。我们没有可靠材料，能证明明朝开国皇帝朱元璋每天都照着同一只钟过日子。
+朱元璋是明朝第一位皇帝。他做了皇帝以后，要处理的事情多得惊人。粮食、税收、河道、法律、官员和军队，许多大事最后都要等他决定。
 
-历史也不是完全沉默。官方记录留下了许多朝会、命令和文书，也记下了政府怎样把事情送到皇帝面前。它们不能让我们偷看朱元璋每一天的早餐和睡觉时间，却能回答一个更重要的问题：*他作为皇帝，到底要处理什么？*
-
-这篇文章只看一位皇帝和一个时期：朱元璋，又称洪武皇帝。他从1368年统治到1398年，是明朝的第一位皇帝，当时的首都在今天的南京。
+那时留下来的命令和政府文书，让我们看见这些事情怎样经过一层层官员，最后来到皇帝面前。它们也带来一个更有意思的问题：朱元璋为什么要改变政府，让越来越多的决定直接送到自己这里？
 [/zh]
 [en]
-The easiest way to describe “a day in the life of an emperor” is to draw a schedule: wake at three, hold court at five, meet officials all day, and read reports late into the night. The problem is that schedules like this often mix customs from different dynasties and different emperors. We do not have trustworthy evidence that Zhu Yuanzhang, the first Ming emperor, followed one exact timetable every day.
+Zhu Yuanzhang was the first emperor of the Ming dynasty. Once he became emperor, he faced an astonishing amount of work. Grain, taxes, rivers, laws, officials, and armies—major decisions in every area could end up before him.
 
-History is not completely silent, though. Official records preserve court meetings, government orders, and the flow of paperwork. They cannot show us what Zhu ate for breakfast or when he went to bed each night. They can answer a better question: *What work actually reached him as emperor?*
-
-This article follows one emperor in one period. Zhu Yuanzhang, also called the Hongwu Emperor, ruled from 1368 to 1398. He founded the Ming dynasty, and his capital was in the city now called Nanjing.
+Orders and government papers from his reign show how these problems passed through many officials before reaching the emperor. They also lead us to the puzzle at the center of this story: Why did Zhu change the government so that even more decisions came straight to him?
 [/en]
 [/section]
 
@@ -40,17 +36,17 @@ layout: two-column
 heading_zh: 从贫穷少年到新王朝的皇帝
 heading_en: From a Poor Childhood to a New Dynasty
 image: zhu-yuanzhang-herding-buffalo.webp
-caption_zh: 这是一幅现代想象图。生平资料记载朱元璋少年时家境贫困、曾替人放牧；牛的样子和这个瞬间不是可核对的历史现场。
-caption_en: This is a modern imagined scene. Accounts say Zhu grew up poor and herded animals, but this buffalo and this moment are not a documented event.
+caption_zh: 朱元璋小时候家里很穷，也曾替人放牧。画里的牛和这个瞬间是现代想象。
+caption_en: Zhu grew up poor and herded animals for others. The buffalo and this exact moment are imagined.
 [zh]
-朱元璋出生于1328年，家乡在今天的安徽凤阳一带。资料清楚说明他的家庭非常贫困；后来的生平记载还说，他少年时曾替人放牧，后来又进寺院做过和尚。元朝末年的灾荒、疾病和战争改变了他的人生，他参加起义军，经过多年战争，最终建立明朝。
+朱元璋小时候家里很穷。他曾替人放牧，后来又进寺院做了和尚。那时，灾荒、疾病和战争接连而来。后来，他参加了一支反抗元朝的起义军。打了很多年仗以后，他建立了明朝，自己成了皇帝。
 
-做了皇帝以后，朱元璋面对的不是一座已经运转顺利的国家。他要在战争之后重建政府、恢复制度，并让新的命令送到各地。接下来真正重要的不是猜他几点睁眼，而是跟着一份报告，看看它怎样来到皇帝的书桌。
+可是，他接手的不是一个安稳、完整的国家。长期战争让许多地方受到破坏，政府也需要重新建立。朱元璋要让命令送到各地，还要处理粮食、税收、河道和法律。他本来已经有很多事情要管，后来却又作了一个选择，让更多工作直接来到自己的书桌。
 [/zh]
 [en]
-Zhu Yuanzhang was born in 1328 near present-day Fengyang in Anhui Province. The evidence clearly shows that his family was extremely poor. Later biographical accounts also say that he herded animals for others as a boy and then became a monk. Famine, disease, and warfare shook the final years of the Yuan dynasty. Zhu joined a rebel army and, after years of fighting, founded a new dynasty.
+Zhu Yuanzhang grew up in a very poor family. As a boy, he herded animals for other people. Later, he went to live at a Buddhist temple and became a monk. Then famine, disease, and war swept across the country. Zhu joined a rebel army that was fighting the Yuan government. After years of war, he founded the Ming dynasty and became its first emperor.
 
-When Zhu became emperor, he did not inherit a government that was already running smoothly. He had to rebuild institutions after years of war and make new orders reach distant places. Instead of guessing what time he opened his eyes, let us follow a government report toward his desk.
+Yet Zhu did not take charge of a peaceful, well-run country. Years of fighting had left many places badly damaged, and the government had to be rebuilt. He needed to send orders across the country and deal with grain, taxes, rivers, and laws. His job was already enormous. Then he made a choice that sent even more work toward his own desk.
 [/en]
 [/section]
 
@@ -110,14 +106,14 @@ caption_en: Moonlight, a lamp, and paper stacks make the pressure visible. This 
 [zh]
 朱元璋去世后由朝廷编修的《明太祖实录》，保存了一项惊人的统计。洪武十七年，也就是1384年，有官员统计了连续八天送来的文书：内外各部门共有章奏1,660通，里面涉及3,391件事。平均下来，每天超过两百通文书、四百件事项。
 
-但这里要慢一点。这项统计说的是政府收到和上报的数量，并没有说朱元璋独自把每个字都读完，也没有说他亲手给每一件事写下长篇批语。“一通”章奏还可能包含不止一件事情。我们更不能拿这八天，编出他每天几点点灯、几点放下毛笔的时间表。
+但这里要慢一点。这项统计说的是政府收到和上报的数量，并没有说朱元璋独自把每个字都读完，也没有说他亲手给每一件事写下长篇批语。“一通”章奏还可能包含不止一件事情，这八天也不能代表他统治时期的每一天。
 
 即便加上这些限制，数字仍然告诉我们一件重要的事：废除丞相后，皇帝成为许多决定更集中的终点。那张书桌忙碌的，不只是朱元璋一个人，也是围绕皇权运转的一整套政府。
 [/zh]
 [en]
 The *Veritable Records of Ming Taizu*, an official chronicle compiled after Zhu's death, preserves an astonishing count. During one eight-day stretch in 1384, officials counted 1,660 memorials from offices inside and outside the capital. Those documents contained 3,391 separate matters. That averages more than two hundred documents and four hundred issues each day.
 
-Now slow down. The record counts what government offices submitted. It does not say that Zhu read every character alone or wrote a long answer to every item with his own brush. One memorial could hold several matters. The numbers also cannot tell us exactly when he lit a lamp or put down his brush on those nights.
+Now slow down. The record counts what government offices submitted. It does not say that Zhu read every character alone or wrote a long answer to every item with his own brush. One memorial could hold several matters, and these eight days cannot represent every day of his reign.
 
 Even with those limits, the count teaches us something important. After the chancellorship disappeared, the emperor stood at the end of more decision-making paths. The crowded desk reflected Zhu’s workload, but it also revealed an entire government organized around imperial power.
 [/en]
@@ -162,20 +158,20 @@ This is not a story saying that the busiest emperor must be the best emperor. Wh
 [/section]
 
 [ending]
-heading_zh: 再看那盏深夜的灯
-heading_en: Look Again at the Lamp
+heading_zh: 再看那张堆满文件的书桌
+heading_en: Look Again at the Crowded Desk
 [zh]
-画里的朱元璋坐在月光和灯火之间，四周堆满奏章。这幅图很适合表现“政务集中”的感觉，却不是历史记录的某一个夜晚。
+画里的朱元璋坐在一张堆满奏章的书桌前。纸堆让人一眼看见他的工作有多少，但这些文件讲的不只是一个皇帝很忙。
 
-我们不能确定朱元璋普通日子的每一个时辰，却能确定更有意义的事实：明初政府产生大量事务；1380年的制度改革让六部更直接地面对皇帝；皇帝仍依靠许多官员整理、起草和执行政务；而权力越集中，工作和风险也越集中。
+明朝刚刚建立时，整个政府不断产生新的问题。朱元璋后来取消丞相，让六部更直接地向自己负责。许多官员仍然帮助整理、起草和执行政务，可是最后的决定越来越集中在皇帝手里。
 
-“皇帝的一天”不是一张可以随便填满的作息表。更可靠的读法，是跟着一份文书走过政府，最后看看：为什么这么多道路，都通向了同一张书桌？
+现在，这张书桌背后的故事已经清楚了：朱元璋得到更多权力，也接住了更多工作。当越来越多道路通向同一个人时，权力、工作和犯错的风险都会在那里集中起来。
 [/zh]
 [en]
-In the picture, Zhu sits between moonlight and lamplight, surrounded by memorials. The scene is a useful symbol of concentrated government work, but it is not a record of one particular night.
+In the picture, Zhu sits at a desk crowded with reports. The piles of paper make his workload easy to see, but they tell us more than “this emperor was busy.”
 
-We cannot fill in every hour of Zhu's ordinary day. We can establish facts that matter more: the early Ming government produced a huge flow of business; the 1380 reform made the Six Ministries answer more directly to the emperor; many officials still helped sort, draft, and carry out decisions; and concentrated power brought concentrated work and danger.
+The new Ming government kept producing problems that needed answers. Zhu later removed the chancellor and made the Six Ministries report more directly to him. Many officials still sorted papers, drafted orders, and carried out decisions, but final authority gathered more tightly around the emperor.
 
-An emperor's day is not an empty schedule that we may fill with guesses. A more trustworthy story follows a document through the government and asks why so many paths ended at the same desk.
+Now the story behind the crowded desk is clear. Zhu gained more power, and he pulled more work toward himself. When more roads lead to one person, authority, workload, and the risk of costly mistakes all gather in the same place.
 [/en]
 [/ending]

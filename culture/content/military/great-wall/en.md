@@ -62,4 +62,4 @@ A legend is not the same as a fact, but it can preserve how people felt about re
 
 ## Look at the “Stone Dragon” Again
 
-When you next picture the brick Wall on a green ridge, add other images too: a low earthen line in the desert, wood that vanished long ago, a market beside an open gate, and many languages that can no longer be heard. The Great Wall is not a stone dragon cutting history in two. It is a frontier history written in earth, brick, warning fires, gates, and human movement.
+When you next picture the brick Wall on a green ridge, add a few other images. Think of a low earthen line in the desert, wood that vanished long ago, a market beside an open gate, and languages that can no longer be heard. The Great Wall is not a stone dragon cutting history in two. It is a frontier history written in earth, brick, warning fires, gates, and human movement.

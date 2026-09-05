@@ -4,5 +4,4 @@ const slugs = ["guilin", "highest-mountains", "panda-hometown", "yangtze-yellow-
 
 for (const slug of slugs) {
   await buildPhilosophyPage({ category: "geography", slug, target: "books" });
-  await buildPhilosophyPage({ category: "geography", slug, target: "experiments" });
 }

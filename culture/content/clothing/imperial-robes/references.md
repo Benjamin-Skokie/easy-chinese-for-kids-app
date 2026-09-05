@@ -1,8 +1,22 @@
-# “一件黄衣服能证明什么？”— References and Editorial Notes
+# “皇帝为什么穿黄色？”— References and Editorial Notes
 
 This file is for editorial research and does not render on the website.
 
 ## Yellow and changing dress rules
+
+Source: Palace Museum, article on the color system of Qing court clothing
+URL: https://www.dpm.org.cn/Uploads/pdf/6182/T00073_00.pdf
+Accessed: 2026-09-02
+
+Supports:
+
+- In the traditional Five Phases color system, earth occupied the center and was represented by yellow.
+- The court connected the emperor's central authority and rule over the land with the use of yellow in imperial clothing.
+- In Qing court dress, bright yellow held the highest rank and could be worn by the emperor, empress dowager, empress, and imperial noble consort.
+
+Editorial boundary:
+
+- The story presents this as the traditional symbolic explanation for yellow's imperial importance. It does not claim that visibility alone caused emperors to choose yellow or that one simple rule applied unchanged to every dynasty.
 
 Source: *New Book of Tang*, “Treatise on Chariots and Attire,” Chinese Text Project
 URL: https://ctext.org/wiki.pl?chapter=383137&if=en
@@ -45,6 +59,19 @@ Editorial boundary:
 - “The emperor wore yellow” is not treated as a complete description of Qing ceremonial clothing.
 
 ## Dragons, rank, and garment type
+
+Source: Palace Museum, “龙在故宫”
+URL: https://www.dpm.org.cn/architectural_art/246279.html
+Accessed: 2026-09-02
+
+Supports:
+
+- In Chinese tradition, the dragon was imagined as an extraordinarily powerful creature and, especially from the Han period onward, became closely associated with rulers.
+- Emperors were called “true dragon Sons of Heaven,” and dragon imagery throughout the palace made imperial authority visible.
+
+Editorial boundary:
+
+- The story explains the dragon as a political and cultural symbol. It does not present dragons as real animals or claim that dragon imagery belonged only to one emperor in every dynasty.
 
 Source: Metropolitan Museum of Art, “Peacocks and Dragons, Oh My!”
 URL: https://www.metmuseum.org/perspectives/peacocks-and-dragons

@@ -153,6 +153,6 @@ heading_en: Look at the “Stone Dragon” Again
 今天再看山脊上的砖墙，不妨也想象戈壁中的土垄、消失的木料、开放过的市场和早已听不见的多种语言。长城不是一条把历史切成两半的石龙，而是一部用土、砖、烽火、关门和人群往来共同写成的边疆史。
 [/zh]
 [en]
-When you next picture the brick Wall on a green ridge, add other images too: a low earthen line in the desert, wood that vanished long ago, a market beside an open gate, and many languages that can no longer be heard. The Great Wall is not a stone dragon cutting history in two. It is a frontier history written in earth, brick, warning fires, gates, and human movement.
+When you next picture the brick Wall on a green ridge, add a few other images. Think of a low earthen line in the desert, wood that vanished long ago, a market beside an open gate, and languages that can no longer be heard. The Great Wall is not a stone dragon cutting history in two. It is a frontier history written in earth, brick, warning fires, gates, and human movement.
 [/en]
 [/ending]

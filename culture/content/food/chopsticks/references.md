@@ -2,6 +2,15 @@
 
 This file is for editorial research and does not render on the website.
 
+## Current child-facing version
+
+Rewritten: 2026-09-02
+
+- The article now begins with a tofu-and-peanut practice scene, then explains one common grip and a few table manners.
+- The ending adds familiar kitchen uses such as beating eggs, separating noodles, mixing sauce, and turning small pieces of food; these are examples, not a claim that every household cooks the same way.
+- Uncertain invention stories and long archaeological arguments remain in this research file instead of the children's text.
+- The grip shown is one workable method, not a rule for every hand, and customs are described as common practices rather than universal laws.
+
 ## Archaeology, texts, and culinary history
 
 ### Q. Edward Wang, *Chopsticks: A Cultural and Culinary History* (Cambridge University Press, 2015)

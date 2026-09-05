@@ -1,6 +1,6 @@
 ---
-title_zh: 元宵节
-title_en: Lantern Festival
+title_zh: 元宵节：长安灯火的传说
+title_en: Lantern Festival: The Night Chang'an Glowed
 slug: lantern-festival
 category: folk-customs
 difficulty: 简单
@@ -9,142 +9,98 @@ style_notes: "用 --- 分隔 frontmatter；正文强调优先用 *斜体*；尽�
 ---
 
 [hero]
-title_zh: 元宵节
-title_en: Lantern Festival
+title_zh: 元宵节：长安灯火的传说
+title_en: Lantern Festival: The Night Chang'an Glowed
 [/hero]
 
 [section]
 page: 1
 layout: text-wrap-image
-heading_zh: 一碗圆圆的汤圆
-heading_en: A Bowl of Round Tangyuan
-image: tangyuan-closeup.webp
-caption_zh: 汤圆白白圆圆，里面可以包黑芝麻馅，也可以包红豆馅。
-caption_en: *Tangyuan* are white and round. Inside, they can hold black sesame filling or sweet red bean filling.
+heading_zh: 新年的第一个月圆之夜
+heading_en: The New Year's First Full Moon
+image: family-yuanxiao.webp
+caption_zh: 元宵节里，一家人常常一起吃圆圆的元宵或汤圆，分享团圆的时刻。
+caption_en: At Lantern Festival, families often share round yuanxiao or tangyuan and enjoy being together.
 [zh]
-元宵节在农历正月十五，是春节快要结束的时候。这一晚，也是一年里第一个圆圆的月亮夜晚。
+元宵节在农历正月十五。这是中国新年开始后的第一个月圆之夜，也是春节庆祝活动接近尾声的时候。
 
-这一天，很多人会吃元宵或汤圆。它们白白的、圆圆的，咬开以后，里面常常有香香的黑芝麻馅，或者甜甜的红豆馅。
+天黑以后，街道和公园被花灯照亮。人们和家人一起出门赏灯、猜灯谜，还会吃圆圆的元宵或汤圆。因为是圆形，元宵和汤圆常常象征着“团圆”，也就是一家人相聚在一起。
 
-北方常叫“元宵”，南方常叫“汤圆”。很久以前，人们还叫过它“浮圆子”。名字变过，可它们都在说同一件事: 团圆。
-
-它们做法也不太一样。有的像把馅轻轻包进小面团里，有的像让馅在糯米粉里滚来滚去，慢慢变成一个圆球。
-
-为什么要做成圆圆的呢？因为圆形常常会让人想到一家人围坐在一起，热热闹闹，不分开。
+花灯为什么会成为这个夜晚的重要部分？人们讲过不止一个故事。下面就是其中一个流传已久的民间传说。
 [/zh]
 [en]
-The Lantern Festival falls on the fifteenth day of the first lunar month, near the end of the Chinese New Year season. It is also the first full-moon night of the lunar new year.
+Lantern Festival falls on the fifteenth day of the first lunar month. It is the first full-moon night of the Chinese New Year and comes near the end of the holiday season.
 
-On this day, many people eat *yuanxiao* or *tangyuan*. They are white, round rice balls. When you bite one open, you may find fragrant black sesame filling or sweet red bean paste inside.
+After dark, streets and parks glow with lanterns. Families go out to see the lights, solve lantern riddles, and eat round treats called *yuanxiao* or *tangyuan*. Because they are round, *yuanxiao* and *tangyuan* have come to symbolize *tuanyuan*: family reunion and togetherness.
 
-In the north, people often say *yuanxiao*. In the south, people often say *tangyuan*. Long ago, there were other names too. The names changed, but the meaning stayed the same: being together.
-
-They are made a little differently too. Some are wrapped by putting the filling inside the dough. Some are rolled again and again in rice flour until they grow into a round ball.
-
-Why make them round? Because a round shape often makes people think of family sitting close together.
+Why did lanterns become such an important part of this night? People have told more than one story. Here is one old folk legend.
 [/en]
 [/section]
 
 [section]
 page: 2
 layout: text-wrap-image
-heading_zh: 灯亮起来了
-heading_en: The Lanterns Light Up
-image: lantern-fair.webp
-caption_zh: 到了晚上，街上常常会挂满灯笼，红的、金的、彩色的，把夜晚照得亮亮的。
-caption_en: At night, streets are often filled with lanterns in red, gold, and many other colors.
+heading_zh: 一个吓人的预言
+heading_en: A Frightening Prediction
+image: dongfang-shuo-fortune-teller.webp
+caption_zh: 东方朔在汉代都城长安，也就是今天的西安，摆起算命摊，并给每个来问的人同一个预言：城里将发生一场大火。
+caption_en: In Chang’an, the Han dynasty capital located in present-day Xi’an, Dongfang Shuo gives every visitor the same warning: a terrible fire is coming.
 [zh]
-吃完元宵，热闹的灯会就开始了。
+一个古老的元宵节民间传说，讲的是一位名叫元宵的年轻宫女。元宵很久没有见到父母了，她非常想念他们。可是，想离开皇宫并不容易。
 
-元宵节的晚上，很多地方都会挂起灯笼。有的像花，有的像兔子，有的连成一条长长的龙。
+宫里住着一位机智的艺人和谋士。他以玩笑、巧计和敏捷的头脑闻名，有点像宫廷里的弄臣。他叫**东方朔**。听说元宵的事以后，他决定帮助她。
 
-很久以前，人们过元宵节时，就喜欢一起出门看灯。后来灯越来越多，灯会也越来越热闹，有些地方还能一连热闹好几天。
+东方朔来到当时的都城长安，也就是今天的西安，摆起了算命摊。可是，每个来找他算命的人，都得到同一个吓人的预言：**长安将发生一场可怕的大火！** 很快，全城的人都在谈论这件事。
 
-所以元宵节也常常被叫作“灯节”。一到晚上，整条街亮起来，像把黑黑的夜晚变成了会发光的节日。
+忧心忡忡的皇帝问该怎么办，东方朔便提出了一个巧妙的办法。
 
-到了今天，灯会还是这个节日里最亮、最热闹的部分。
+“新年第一个月的十五晚上，”他说，“到处挂起红灯笼。点亮街道，再放焰火、制造响声。这样从远处看，整座城就像已经着火了。”
+
+皇帝答应了。
 [/zh]
 [en]
-After people eat *yuanxiao* or *tangyuan*, the lantern fair begins.
+One old Lantern Festival legend tells of a young palace maid named Yuanxiao. Yuanxiao had not seen her parents for a long time, and she missed them terribly. But leaving the emperor’s palace was not easy.
 
-On Lantern Festival night, many places hang up lanterns. Some look like flowers, some look like rabbits, and some join together to make a long dragon.
+At the palace lived a witty entertainer and adviser who was famous for his jokes, tricks, and quick thinking—something like a court jester. His name was **Dongfang Shuo**. When he heard about Yuanxiao, he decided to help.
 
-Long ago, people already loved going out to see the lights. Later, the fairs grew bigger and brighter, and in some places the celebration lasted for several days.
+Dongfang Shuo went into Chang’an—the Han dynasty capital, located in present-day Xi’an—and set up a fortune-telling stand. But everyone who came to him received the same frightening prediction: **A terrible fire was coming to Chang’an!** Soon the whole city was talking about it.
 
-That is why people also call it the Festival of Lanterns. When night comes, whole streets glow, and the dark evening feels full of light.
+When the worried emperor asked what could be done, Dongfang Shuo suggested a clever trick.
 
-Even today, the lantern fair is still the brightest and liveliest part of the festival.
+“On the fifteenth night of the new year,” he said, “hang red lanterns everywhere. Light up the streets and fill the night with fireworks and noise. From far away, it will look as if the city is already on fire.”
+
+The emperor agreed.
 [/en]
 [/section]
 
 [section]
 page: 3
 layout: text-wrap-image
-heading_zh: 猜灯谜
-heading_en: Guessing Lantern Riddles
-image: lantern-riddle.webp
-caption_zh: 有些灯笼下会挂着小纸条，上面写着谜语，等大家来猜。
-caption_en: Some lanterns have little slips of paper hanging below them, each with a riddle to solve.
+heading_zh: 人群中的呼喊
+heading_en: A Voice in the Crowd
+image: yuanxiao-family-reunion.webp
+caption_zh: 在传说中，灯笼照亮了拥挤的街道，元宵也在人群里听见了家人的呼唤。
+caption_en: In the legend, lanterns light the crowded streets as Yuanxiao hears her family calling.
 [zh]
-有些灯笼下面会挂着一张小纸条，上面写着一个谜语，这就叫“灯谜”。
+那天夜里，长安灯火通明。红灯笼挂满城门和屋顶，街道到处亮着灯。城里城外的人们都来到街上观看，其中就有元宵的父母。
 
-猜灯谜像玩脑筋急转弯。开始时你也许会觉得奇怪，可是想一想，答案一下子就跳出来了。
+元宵走过人群时，忽然听见熟悉的声音在叫她的名字：“元宵！” 她转过身——父母就在那里。在明亮的灯笼和热闹的街道中间，元宵终于和家人团聚了。
 
-很多灯会上，猜对灯谜的人还能拿到小奖品，比如小灯笼或小糖人。所以大人和孩子都很喜欢试一试。
+那么，那场可怕的大火呢？它根本没有发生。也许东方朔从一开始就知道这一点。
 
-你站在灯下，看看纸条，皱一皱眉，再忽然想到答案，这就是元宵节里最好玩的时刻之一。
+后来，人们把这个民间故事当作元宵节张灯、聚会和家人团圆的一种解释。元宵节就在农历正月十五。
+
+不管这个故事是否真的发生过，它的结尾仍然很符合今天的元宵节：**新年开始以后，一家人在满天灯火下一起团聚。**
 [/zh]
 [en]
-Some lanterns have a small slip of paper hanging below them. On it is a riddle. That is called a lantern riddle.
+That night, Chang’an glowed. Red lanterns hung from gates and rooftops. Lights filled the streets. Crowds came from inside and outside the city to watch. Among them were Yuanxiao’s parents.
 
-Guessing lantern riddles is a little like playing a word game. At first the riddle may sound strange, but after thinking for a moment, the answer suddenly pops into your head.
+As Yuanxiao moved through the crowd, she suddenly heard familiar voices calling her name. “Yuanxiao!” She turned—and there they were. In the middle of the bright lanterns and busy streets, Yuanxiao was finally reunited with her family.
 
-At many lantern fairs, people who solve a riddle can win a small prize, such as a little lantern or a sugar figure. That is why both children and adults like to give it a try.
+And the terrible fire? It never came. Perhaps Dongfang Shuo had known that all along.
 
-You stand under the lights, read the paper slip, think hard for a moment, and then suddenly smile when the answer appears. That is one of the most fun parts of the festival.
+People later told this folk story as one explanation for the lanterns, crowds, and family reunions of the **Lantern Festival**, celebrated on the fifteenth day of the first lunar month.
+
+Whether or not the story really happened, it ends with an idea that still fits the festival today: **After the New Year begins, families come together under a sky full of light.**
 [/en]
 [/section]
-
-[section]
-page: 4
-layout: text-only
-heading_zh: 一个关于灯火的老故事
-heading_en: An Old Story About Lantern Lights
-[zh]
-很久以前，人们说天上有一只神鸟，因为迷了路，落到了人间。可是猎人不知道它是谁，一不小心把它射伤了。天帝知道以后，非常生气，想在正月十五这天降下大火，惩罚人间。
-
-天帝的女儿心地善良，不忍心看到大家受苦，就偷偷把这个消息告诉了人们。大家吓坏了，不知道怎么办。后来，一位老人想出了一个办法。
-
-老人说: “那就提前把灯都点起来吧。家家户户挂上红灯笼，再放烟火和鞭炮。这样天上往下一看，就会以为人间已经是一片火光了。”
-
-大家照着做了。到了正月十五，整座城又红又亮，灯火通明。天帝从天上往下一看，以为人间已经着起了大火，就没有再降灾。
-
-后来，人们就把这个故事和元宵节记在了一起。每到这一天，大家挂灯、看灯，也把平安和团圆的愿望放进亮亮的灯火里。
-[/zh]
-[en]
-Long ago, people told a story about a magic bird from the sky. One day, it lost its way and came down to earth. A hunter did not know what it was and accidentally hurt it. When the Heavenly Emperor found out, he became very angry and wanted to send a great fire to the human world on the fifteenth day of the first lunar month.
-
-But the emperor's daughter was kind. She did not want people to suffer, so she secretly warned them. Everyone was frightened and did not know what to do. Then an old man thought of a plan.
-
-The old man said, "Let us light the town first. Every family can hang up red lanterns and set off fireworks and firecrackers. When the sky looks down, it will seem as if everything is already glowing with fire."
-
-So the people did exactly that. On the night of the festival, the whole town shone red and bright. When the Heavenly Emperor looked down, he thought the fire had already happened, so he did not send another disaster.
-
-Later, people remembered this old tale together with the Lantern Festival. On this day, they hang lanterns and look at lights, while also wishing for safety and togetherness.
-[/en]
-[/section]
-
-[ending]
-heading_zh: 灯火里的团圆
-heading_en: Together in the Lantern Light
-[zh]
-元宵节用一碗甜甜的汤圆、满街亮亮的灯笼，还有好玩的灯谜，给春节画上一个温暖的句号。
-
-当灯笼亮起来的时候，人们也把团圆、祝福，还有对新一年的开心盼望留在心里。
-[/zh]
-[en]
-With a sweet bowl of *tangyuan*, bright lanterns, and playful riddles, the Lantern Festival brings the Chinese New Year season to a warm close.
-
-When the lanterns glow, people also hold on to togetherness, good wishes, and happy hopes for the new year.
-[/en]
-[/ending]

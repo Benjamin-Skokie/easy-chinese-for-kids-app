@@ -1,122 +1,129 @@
 ---
-title_zh: 宋词：唱着歌的诗
-title_en: Song Ci: Poems That Were Sung
+title_zh: 宋词：给曲子配上新词
+title_en: Song Ci: New Words for a Tune
 slug: song-ci
 category: literature
-difficulty: 中等
+difficulty: 简单
 back_href: ../../../../index.html#culture-literature
 style_notes: "用 --- 分隔 frontmatter；正文强调优先用 *斜体*；尽量不用 **粗体**。"
 ---
 
 [hero]
-title_zh: 宋词：唱着歌的诗
-title_en: Song Ci: Poems That Were Sung
+title_zh: 宋词：给曲子配上新词
+title_en: Song Ci: New Words for a Tune
 [/hero]
 
 [section]
 page: 1
 layout: text-wrap-image
-heading_zh: 唐诗常常是念的，宋词本来更像唱的
-heading_en: Tang Poems Are Often Recited, but Song *ci* Began Closer to Singing
+heading_zh: 一支曲子，换上新的词
+heading_en: One Tune, New Words
 image: 1-singing-song-ci.webp
-caption_zh: 一支曲子可以让不同的人来填词。词和音乐，本来走得很近。
-caption_en: Different writers could fit new words into the same tune. Song ci and music originally stayed very close together.
+caption_zh: 这幅现代想象图里，乐师弹着琵琶，旁边的人正在为曲子写词。
+caption_en: In this modern imagined scene, a musician plays the pipa while a writer adds words to the tune.
 [zh]
-很多人第一次读宋词，会先觉得它和唐诗不太一样。唐诗常常像一句一句念出来，宋词却更像是顺着曲子流出来。
+大约一千年前的[[宋朝]]，人们也喜欢听音乐、唱歌。有时，乐师会弹起一支大家熟悉的曲子，写词的人则为这支曲子配上新的文字。
 
-很早的时候，词本来就是要配着曲调唱的。同一个调子，不同的人可以填进不同的词，于是有人写思念，有人写热闹，也有人写伤心。
+这种跟着曲子写出来的文字，就叫“词”。音乐可以不变，唱的词却可以换成新的。
 
-所以词虽然也写在纸上，可它身上常常还带着一点声音。你就算没有真的听到曲子，也会觉得句子像在轻轻往前走。
+因为文字要跟着音乐走，有的句子很短，有的句子比较长。很多宋朝的曲子后来失传了，可写在纸上的词留了下来。
+
+我们不需要背很多曲子的名字。先来看看苏轼怎样对着月亮想念弟弟，再看看李清照的小船怎样闯进荷花丛。
 [/zh]
 [en]
-When many people first read Song *ci*, they feel that it moves differently from Tang poetry. Tang poems are often spoken line by line, but Song *ci* seems to flow along with a tune.
+About 1,000 years ago, during China's [[Song dynasty]], people enjoyed music and songs. Sometimes a musician played a tune that everyone knew. A writer then gave the tune a new set of words.
 
-Long ago, *ci* was closely tied to music. Different writers could place different words into the same tune pattern. One person might write about longing, another about lively celebration, and another about sorrow.
+These words were called *ci*. The music could stay the same while the words changed.
 
-So even when a *ci* poem sits quietly on paper, it often still feels as if a little music remains inside it. You may not hear the melody, but the lines seem to move forward gently.
+Because the words had to fit the music, some lines were short and others were long. Many Song tunes were later lost, but the words on the page survived.
+
+We do not need to memorize a list of tune names. Let us meet Su Shi as he thinks of his brother under the moon. Then we will follow Li Qingzhao's boat into the lotus flowers.
 [/en]
 [/section]
 
 [section]
 page: 2
 layout: text-wrap-image
-heading_zh: 苏轼把想念挂在月亮上
-heading_en: [[Su Shi]] Hung His Missing Feeling on the Moon
+heading_zh: 一轮月亮，照着两兄弟
+heading_en: One Moon, Two Brothers
 image: 2-su-shi-moon.webp
-caption_zh: 中秋夜里，苏轼望着月亮，想着远方的弟弟。
-caption_en: On a Mid-Autumn night, Su Shi looks at the moon and thinks of his younger brother far away.
+caption_zh: 一个中秋夜，苏轼望着满月，想起了远方的弟弟。
+caption_en: On a Mid-Autumn night, Su Shi watches the full moon and thinks of his faraway brother.
 [zh]
-苏轼最有名的一首词之一，是中秋写给思念的。《水调歌头》里，他一边看月亮，一边想着远方的弟弟苏辙。
+一个中秋夜，苏轼抬头望着满月。中秋本来是家人团聚的日子，可他的弟弟正在很远的地方，他们已经很久没有见面了。
 
-最打动人的地方，是他没有只说“我很想你”。他把思念放到月亮上，说就算人离得很远，也还能共看一轮月亮。
+苏轼想了很多，也问了一个谁都答不出的问题：
 
-这样一来，想念就不只属于他一个人了。很多后来的人一读到这里，都会觉得：对啊，虽然不在一起，可也许还能望着同一片月光。
+*明月几时有？把酒问青天。*
+
+“这轮明亮的月亮，是什么时候出现的呢？”他举起酒杯，抬头问天。问着问着，他又想到：虽然弟弟不在身边，却也能看见同一轮月亮。
+
+于是，他在词的最后写下一个愿望：
+
+*但愿人长久，千里共婵娟。*
+
+他希望自己和弟弟都能平安长久。哪怕相隔千里，他们仍能一起望着月亮。月亮没有把弟弟送回家，却让遥远的两个人感觉近了一点。
 [/zh]
 [en]
-One of Su Shi's most famous *ci* poems is about missing someone at Mid-Autumn. In *Prelude to Water Melody*, he looks at the moon and thinks of his younger brother, Su Zhe, far away.
+One Mid-Autumn night, Su Shi looked up at the full moon. Mid-Autumn was a time for families to be together, but his younger brother was far away. They had not seen each other for a long time.
 
-What touches readers most is that he does not simply say, "I miss you." He places that feeling on the moon and says that even when people are far apart, they can still share the same bright round light.
+Su Shi had many thoughts. He began with a question that no one could answer:
 
-That is why the poem grew larger than one family's story. Many later readers felt the same thing: we may not be together, but perhaps we can still stand under the same moonlight.
+*When did the bright moon first appear? I lift my cup and ask the sky.*
+
+As he looked up, another thought came to him. His brother was not beside him, but perhaps he could see the same moon.
+
+So Su Shi ended with a wish:
+
+*May we both be safe and live long. Though far apart, may we share this beautiful moon.*
+
+The moon could not bring his brother home. But it made two people far apart feel a little closer.
 [/en]
 [/section]
 
 [section]
 page: 3
 layout: text-wrap-image
-heading_zh: 李清照把自己的一生，从亮处写到暗处
-heading_en: [[Li Qingzhao]] Wrote Her Life from Bright Days into Darker Ones
+heading_zh: 荷花丛里，快划！快划！
+heading_en: Lost in the Lotuses—Row! Row!
 image: 3-li-qingzhao-life.webp
-caption_zh: 年轻时，她的词像小船进了荷花深处；后来，句子慢慢变冷，也变重了。
-caption_en: In youth, her poems can feel like a boat drifting into lotus flowers. Later, the lines grow colder and heavier.
+caption_zh: 李清照曾写过热闹的荷塘，也写过后来安静而忧伤的日子。
+caption_en: Li Qingzhao wrote about a lively lotus pond—and, years later, about quiet and lonely days.
 [zh]
-李清照年轻时写的词，常常很轻快。你会看见小船、荷花、晚风，还有一个人玩得高兴，差点忘了回家。
+另一位宋朝词人李清照，写过一次好玩的小船历险。那天，她在水边玩到太阳落山。回家时，小船竟然划错了方向，一头闯进密密的荷花里：*兴尽晚回舟，误入藕花深处。*
 
-可后来，世道变了。她一路逃难，家里的珍藏散了，丈夫也去世了。她再写词的时候，声音就慢慢沉下来了。
+荷叶挤在船边，前面的路看不清了。船上的人赶紧用力划桨：*争渡，争渡，惊起一滩鸥鹭。*
 
-这也是宋词特别动人的地方。它不只会写一个景，还常常会把一个人的一生、她心里越来越重的感觉，也一起写进去。
+“快划！快划！”船桨拍着水，躲在岸边的水鸟呼啦一下全飞了起来。刚才还安静的荷塘，突然到处都是水声、翅膀和笑声。
+
+许多年后，李清照经历了战争和亲人的离去。那时，她写出的词安静了许多：*寻寻觅觅，冷冷清清。* 她找了又找，可四周冷冷清清。
+
+看看图里的上下两幅画。同一个人，既记住了荷花丛里的热闹，也写下了一个人安静难过的时候。
 [/zh]
 [en]
-Li Qingzhao's early *ci* poems often feel light and lively. You can see a little boat, lotus flowers, evening air, and someone having such a good time that she almost forgets the way home.
+Another Song writer, Li Qingzhao, wrote about a funny little boat adventure. One day, she stayed by the water until sunset. On the way home, the boat went the wrong way and slipped deep into the lotus flowers: *We started home late and rowed straight into the lotuses.*
 
-Later, the world around her changed. She fled from place to place, family treasures were scattered, and her husband died. When she wrote again, the sound of the poems slowly sank lower.
+Leaves crowded around the boat. The way out was hard to see. Everyone began to paddle: *Row! Row! A whole flock of water birds bursts into the air.*
 
-That is one reason Song *ci* can move people so deeply. It does not only paint one scene. It can also carry a whole life and the growing weight inside a person's heart.
-[/en]
-[/section]
+Oars splashed. Wings flapped. A quiet pond suddenly filled with noise and laughter.
 
-[section]
-page: 4
-layout: text-only
-heading_zh: 辛弃疾把上不了战场的力气，写进了词里
-heading_en: [[Xin Qiji]] Poured His Unused Battle Strength into His Poems
-[zh]
-辛弃疾年轻时真的带过兵，也真的想为国家打仗。可后来，他常常被放在后方，最想做的事做不成。
+Many years later, war and the loss of people she loved made Li Qingzhao's life much sadder. Her words became quiet too: *Searching and searching. Cold and empty.*
 
-于是，那股力气没有消失，而是进了词里。你读他的词，会感觉到灯光、剑、号角，还有一个人心里一直没有熄掉的火。
-
-所以宋词并不总是轻轻柔柔的。它也可以很壮，很急，很像有人把心里的话压了很久，终于一下写了出来。
-[/zh]
-[en]
-When Xin Qiji was young, he really did lead soldiers, and he truly wanted to fight for the country. Later, he was often kept away from the front, unable to do the thing he most wanted to do.
-
-So that force did not disappear. It went into his poems. When you read him, you can almost feel lamplight, a sword, a horn call, and a fire inside a person that never went out.
-
-That is another important thing about Song *ci*. It is not always soft and gentle. It can also be strong, urgent, and full of words that seem to have been held in the heart for a very long time.
+Look at the two parts of the picture. The same writer remembered the noisy lotus pond and also wrote about days when she felt quiet and alone.
 [/en]
 [/section]
 
 [ending]
-heading_zh: 小结
-heading_en: In Summary
+heading_zh: 你听见哪一种声音？
+heading_en: Which Sound Can You Hear?
 [zh]
-宋词本来和音乐很近，所以它常常特别贴着人的心走。苏轼借月亮写思念，李清照把人生的轻和重都写了进去，辛弃疾又把压在心里的力量写得很响。
+现在，你已经认识了宋词：它是为曲子写下的文字。苏轼把对弟弟的思念送进月光里，李清照把小船划进荷花丛，也把后来的安静和忧伤写了下来。
 
-词有时候不长，可它像会唱一样，所以感情也常常走得更深。
+那些古老的曲子也许听不到了，不过我们还可以把词读出来。月亮下面的句子，你想慢慢读吗？荷花丛里的“争渡，争渡”，你会不会越读越快？试一试吧。
 [/zh]
 [en]
-Song *ci* began close to music, so it often travels very near the heart. Su Shi used the moon to speak about missing someone. Li Qingzhao wrote both the light and heavy parts of a life. Xin Qiji turned hidden strength into ringing lines.
+Now you know what Song *ci* is: words written for a tune. Su Shi sent his love for his brother into the moonlight. Li Qingzhao rowed into the lotuses and later wrote about quiet, lonely days.
 
-These poems are not always long, but because they still feel close to singing, their feelings often reach very deeply.
+We may not be able to hear the old tunes, but we can still read the words aloud. Would you read the moon lines slowly? Would “Row! Row!” get faster? Try it.
 [/en]
 [/ending]

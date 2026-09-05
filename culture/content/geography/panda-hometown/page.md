@@ -1,155 +1,134 @@
 ---
-title_zh: 大熊猫的家：从育幼室到山林
-title_en: A Giant Panda's Home: From the Nursery to the Mountain Forests
+title_zh: 大熊猫真正的家在哪里？
+title_en: Where Is a Giant Panda's Real Home?
 slug: panda-hometown
 category: geography
-difficulty: 中等
+difficulty: 简单
 style_notes: "用 --- 分隔 frontmatter；正文强调优先用 *斜体*；尽量不用 **粗体**。"
 ---
 
 [hero]
-title_zh: 大熊猫的家：从育幼室到山林
-title_en: A Giant Panda's Home: From the Nursery to the Mountain Forests
+title_zh: 大熊猫真正的家在哪里？
+title_en: Where Is a Giant Panda's Real Home?
 [/hero]
 
 [section]
 page: 1
 layout: text-wrap-image
-heading_zh: 看见熊猫宝宝，就等于熊猫得救了吗？
-heading_en: Does a Nursery Full of Cubs Mean Pandas Are Safe?
+heading_zh: 一只粉红色的小熊猫
+heading_en: A Tiny Pink Panda
 image: panda-base-chengdu-cubs.webp
-caption_zh: 这幅现代想象图表现圈养环境中的幼年大熊猫和工作人员；真实基地有围栏与动物福利规则，游客不能走进场地触摸熊猫。
-caption_en: This modern imagined scene shows young captive pandas and staff. Real research bases use barriers and animal-welfare rules; visitors do not enter the enclosure to touch pandas.
+caption_zh: 熊猫宝宝在繁育基地得到照顾。刚出生的熊猫还没有黑白相间的厚毛。
+caption_en: Panda cubs receive careful help at breeding centers. Newborn pandas do not yet have thick black-and-white fur.
 [zh]
-在成都大熊猫繁育研究基地，幼年熊猫爬木架、滚草地的画面很容易让人停下来。它们黑白分明、动作笨拙可爱，背后还有饲养、兽医、繁殖研究和公众教育工作。刚出生的大熊猫更让人惊讶：通常只有大约 85 到 142 克，差不多是一小块黄油的重量；它粉红、眼睛未睁开，和母亲相比小得不可思议。
+刚出生的大熊猫一点儿也不像我们熟悉的样子。它只有一小块黄油那么重，粉红粉红的，眼睛还睁不开。它躺在妈妈身边，小得让人吃惊。
 
-看到幼崽平安长大当然是好消息，却还不能回答“大熊猫在自然界是否安全”。成都基地照顾的是圈养动物，也开展科研、救护和教育；野外保护面对的则是一整片森林能否继续生长、不同山地种群能否相遇等问题。一间成功的育幼室和一个恢复健康的野生物种有关，却不是同一件事。要寻找大熊猫真正的家，我们得把视线从成都移向更远的山林。
+在成都的大熊猫繁育基地，工作人员会照顾熊猫妈妈和幼崽。他们检查宝宝的身体，准备食物，也研究怎样帮助大熊猫健康长大。等幼崽长出黑耳朵和黑眼圈，它才慢慢变成我们认识的“熊猫宝宝”。
+
+不过，繁育基地更像一所特别的熊猫幼儿园。大熊猫真正的家，不在玻璃窗后面，也不在游乐木架上。要找到它的家，我们得离开城市，走进云雾中的高山森林。
 [/zh]
 [en]
-At the Chengdu Research Base of Giant Panda Breeding, young pandas climbing wooden frames and tumbling through grass can stop visitors in their tracks. Behind those charming scenes are animal care, veterinary work, breeding research, and public education. Newborns are even more surprising. They usually weigh only about 3 to 5 ounces (85 to 142 grams)—roughly the weight of a stick of butter. A cub is pink, its eyes are closed, and it is astonishingly tiny beside its mother.
+A newborn giant panda looks nothing like the panda in a picture book. It weighs about as much as a stick of butter. It is pink, nearly hairless, and unable to open its eyes. Beside its mother, it looks unbelievably small.
 
-Watching a cub grow safely is good news, but it does not answer whether giant pandas are secure in nature. The Chengdu base cares for captive animals and also conducts research, rescue work, and education. Wild conservation asks different questions: Can a whole forest remain healthy? Can pandas in separate mountain areas still reach one another? A successful nursery and the recovery of a wild species are connected, but they are not the same achievement. To find a giant panda’s true home, we must look beyond Chengdu toward the mountains.
+At the panda breeding center in Chengdu, people care for mothers and cubs. They check the babies, prepare food, and study how to help pandas grow. When a cub's black ears and dark eye patches appear, it slowly begins to look like the panda everyone knows.
+
+But a breeding center is a little like a special panda nursery. A giant panda's real home is not behind a viewing window or on a wooden climbing frame. To find it, we must leave the city and climb into the misty mountain forests.
 [/en]
 [/section]
 
 [section]
 page: 2
 layout: text-wrap-image
-heading_zh: 家乡不只在四川
-heading_en: Panda Country Extends Beyond Sichuan
+heading_zh: 云雾里的竹林
+heading_en: Bamboo Forests in the Mist
 image: panda-mountain-habitat.webp
-caption_zh: 这幅现代想象图表现云雾山林与竹子下层；真实野生大熊猫分布在四川、陕西和甘肃的六大山系，而不是一片连续森林。
-caption_en: This modern imagined landscape shows misty mountain forest with bamboo below. Wild giant pandas occupy six mountain ranges across Sichuan, Shaanxi, and Gansu—not one continuous forest.
+caption_zh: 野生大熊猫生活在中国中部凉爽湿润的山林里，林下长着大片竹子。
+caption_en: Wild giant pandas live in cool, damp mountain forests in central China, where bamboo grows beneath the trees.
 [zh]
-四川拥有最多的野生大熊猫，也因此常被叫作“熊猫故乡”。但野生大熊猫并不只住在四川。它们今天分布在四川、陕西和甘肃三省的六大山系，包括北面的秦岭和横跨四川、甘肃的岷山等地区。这里有凉爽湿润的阔叶林和针叶林，林下生长着大熊猫需要的竹子。
+野生大熊猫住在中国中部凉爽湿润的高山森林里。大多数生活在一个叫四川的地方，附近的山林里也住着一些。高大的树木撑起屋顶，下面长着大熊猫最需要的食物——竹子。
 
-地图上，这些山林并不是一大块连在一起的绿色。道路、城镇、农地和其他开发可能把合适的森林切成许多片。即使两片竹林各自都有食物，中间若没有安全通道，熊猫也可能难以移动、寻找配偶或在竹子发生变化时换到另一片山林。保护“家”因此不只是圈住熊猫被发现的地点，还要保住山与山之间的联系。
+四川有高山，也有大片竹林，生活着最多的野生大熊猫，因此常被称为“大熊猫的故乡”。但地图上的熊猫家园并不是一整片森林。有些竹林隔着山谷，有些被公路、农田或城镇分开。
+
+这对熊猫来说就像家里的房间忽然都失去了门。一间房里也许有食物，可是它去不了另一间，也很难遇到别的熊猫。保护熊猫，不只是保护一只动物，还要替这些“房间”重新接上安全的走廊。
 [/zh]
 [en]
-Sichuan holds the largest share of the wild giant panda population, so it is often called “panda country.” But wild giant pandas do not live only there. Their present range stretches across six mountain systems in Sichuan, Shaanxi, and Gansu provinces. These include the Qinling Mountains in the north and the Minshan Mountains across parts of Sichuan and Gansu. Cool, damp broadleaf and conifer forests grow there, with bamboo underneath the trees.
+Wild giant pandas live in cool, damp mountain forests in central China. Most live in a part of China called Sichuan, with smaller groups in nearby mountains. Tall trees form a roof, while bamboo—the panda's most important food—grows below.
 
-On a map, these forests do not form one unbroken green blanket. Roads, towns, farms, and other development can divide suitable forest into separate pieces. Two patches may each contain food, yet pandas can still have trouble moving between them, finding mates, or reaching another bamboo area when conditions change. Protecting a “home” therefore means more than drawing a boundary around the spot where a panda was seen. Connections between mountains matter too.
+Sichuan has high mountains, thick bamboo forests, and more wild pandas than anywhere else. That is why people often call it “the home of the giant panda.” Yet the panda's home is not one huge, unbroken forest. Some bamboo forests lie across deep valleys. Others have been separated by roads, farms, or towns.
+
+For a panda, that can be like living in a house where the rooms have lost their doors. One room may have food, but the panda cannot reach the next one or meet other pandas. Protecting pandas means caring for the animals and building safe forest paths between their mountain homes.
 [/en]
 [/section]
 
 [section]
 page: 3
 layout: text-wrap-image
-heading_zh: 一只熊为什么不停地嚼竹子？
-heading_en: Why Does a Bear Keep Chewing Bamboo?
+heading_zh: 为什么一天吃这么久？
+heading_en: Why Does a Panda Spend So Long Eating?
 image: panda-bamboo-forest.webp
-caption_zh: 这幅现代想象图突出大熊猫的竹食生活；它不能用来判断具体竹种、地点或这只熊猫来自野外还是圈养环境。
-caption_en: This modern imagined image emphasizes a panda's bamboo diet. It does not identify the bamboo species, location, or whether the animal is wild or captive.
+caption_zh: 大熊猫用前爪握住竹子，再用有力的牙齿和下巴把竹子咬碎。
+caption_en: A giant panda grips bamboo with its front paws and crushes it with powerful teeth and jaws.
 [zh]
-野生大熊猫的食物几乎全是竹子，但它不会一年到头只啃同一种、同一部位。竹笋、嫩叶和竹秆在不同季节提供的营养不同，大熊猫会随着地点和季节改变选择。网上常见“山里有两百种竹、熊猫只吃十几种”的整齐数字，很难代表所有山系与所有调查，因此更可靠的重点是：熊猫依赖当地可利用的竹种，也会挑选当季更合适的部位。
+大熊猫常常一屁股坐下来，两只前爪抱住竹子，咔嚓、咔嚓地吃个不停。它的前爪上还有一块特别的腕骨，像多出来的小拇指，可以帮它抓稳竹秆。
 
-大熊猫属于食肉目熊科，消化道仍然比较短而简单，不像牛那样拥有适合长时间发酵植物纤维的复杂胃肠。它能用强壮的牙齿和下颌压碎竹子，也能用像“第六指”一样的腕骨抓住竹秆，但对坚硬纤维的消化仍有限。因此，它靠花很长时间取食、吃进大量竹子，并挑选营养较高的部分来生活。这不是一只“设计失败”的熊，而是一种动物在特殊食物环境中形成的一组取舍。
+竹子很多，可是它能给熊猫的能量并不多。熊猫的肚子也不像牛的肚子那样善于消化植物。所以一只成年熊猫每天可能花十到十六个小时找竹子、吃竹子，还要吃下几十磅。嫩笋、叶子和竹秆，它会随着季节挑选。
+
+吃完一根，再拿一根。大熊猫要花这么长时间吃东西，才能从竹子里得到足够的能量。
 [/zh]
 [en]
-Nearly all of a wild giant panda’s diet is bamboo, but that does not mean it chews the same species and plant part all year. Shoots, leaves, and stems offer different nutrients in different seasons, so pandas change their choices with place and time. A tidy claim often repeated online says that a mountain has 200 bamboo species but pandas eat only a dozen. That number cannot describe every mountain range or field study. The safer lesson is that pandas depend on bamboo available in their own habitat and select useful parts as the seasons change.
+A giant panda often plops down, holds a bamboo stalk in both front paws, and begins to crunch. A special wrist bone works like an extra little thumb, helping the panda keep a firm grip on its lunch.
 
-Giant pandas belong to the bear family within the mammal order Carnivora. Their digestive tract remains short and simple, unlike the specialized systems that cows use to ferment plant fiber for a long time. Pandas can crush bamboo with powerful teeth and jaws, and a wrist bone that acts like a “sixth finger” helps them grip stems. Even so, they digest tough fiber only to a limited degree. They cope by eating large amounts for many hours and choosing more nutritious parts when available. This is not a “badly designed” bear. It is an animal living through a remarkable set of evolutionary trade-offs.
+Bamboo is plentiful, but it does not give a panda much energy. A panda's stomach is not built to digest plants as well as a cow's. An adult may spend 10 to 16 hours a day finding and eating bamboo and may eat dozens of pounds of it. As the seasons change, it chooses tender shoots, leaves, or stalks.
+
+One stalk is soon followed by another. Pandas spend so much time eating because they need a great deal of bamboo to get enough energy.
 [/en]
 [/section]
 
 [section]
 page: 4
 layout: text-only
-heading_zh: “易危”不等于“没危险”
-heading_en: “Vulnerable” Does Not Mean “Safe”
+heading_zh: 熊猫需要的不只是一片竹子
+heading_en: A Panda Needs More Than One Patch of Bamboo
 [zh]
-2016 年，国际自然保护联盟根据当时的资料，把大熊猫在《濒危物种红色名录》中的等级从“濒危”调整为“易危”。支撑这项变化的重要资料包括中国第四次全国大熊猫调查：这项 2011 至 2014 年间进行的调查估计，野外有 1,864 只大熊猫。森林保护、建立保护区和恢复植被确实带来了成果。
+竹子开花时，大熊猫有时仍会吃它。真正的麻烦在后面：同一种竹子可能在大片地方一起开花，然后枯死，而新竹长回来需要时间。
 
-可是，“易危”仍是受威胁等级，不能翻译成“已经得救”。那次调查也是一个特定时期的估计，不是每天跳动的精确计数器。栖息地破碎化、道路和其他建设带来的干扰，以及气候变化可能造成的竹林变化，都仍需要长期监测。保护取得进步的正确反应不是停止，而是弄清哪些办法有效，并继续修补最脆弱的地方。
+如果一只熊猫可以穿过森林去寻找别的竹林，它就更容易找到食物。年轻熊猫长大后，也需要离开妈妈，去寻找自己的活动范围和可能的伙伴。
+
+所以，保护人员会照看大片森林，也会想办法连接被公路和农田分开的地方。有时他们种回树木和竹子；有时他们为野生动物留下可以安全通过的山林通道。
+
+一条连接两片森林的走廊，也许在地图上只是一小条绿色。对熊猫来说，它却可能是一条通往食物、伙伴和新家的路。
 [/zh]
 [en]
-In 2016, the International Union for Conservation of Nature changed the giant panda’s category on its Red List from Endangered to Vulnerable, based on the evidence then available. One important source was China’s Fourth National Giant Panda Survey. Conducted from 2011 to 2014, it estimated 1,864 giant pandas in the wild. Forest protection, new reserves, and habitat restoration had produced real gains.
+Pandas may still eat bamboo while it is flowering. The real trouble comes next: large areas of the same kind of bamboo may flower and then die, and new bamboo needs time to grow.
 
-But Vulnerable is still a threatened category. It cannot be translated as “saved.” The survey number was also an estimate from a particular period, not a live counter that stays exact every day. Fragmented habitat, disturbance from roads and other construction, and climate-driven changes to bamboo all require long-term monitoring. The right response to conservation progress is not to stop. It is to learn what worked and keep repairing the weakest parts.
+If a panda can travel through the forest to another bamboo patch, it has a better chance of finding food. Young pandas also need room to leave their mothers, find their own home ranges, and perhaps meet a mate.
+
+That is why conservation workers care for large forests and try to reconnect places divided by roads and farms. They may help trees and bamboo grow back or leave protected forest paths for wild animals to cross.
+
+On a map, a path joining two forests may look like one small green strip. To a panda, it can be a road to food, another panda, and a new home.
 [/en]
 [/section]
 
 [section]
 page: 5
-layout: text-only
-heading_zh: 给熊猫搭的“伞”，能护住谁？
-heading_en: Who Fits Under the Panda's “Umbrella”?
-[zh]
-保护工作常把大熊猫称为“伞护物种”：如果保住它需要的大片森林，就像撑起一把伞，许多共享森林的植物和动物也可能得到帮助。这个比喻很有用，因为大熊猫能吸引公众注意，而保护竹林、树木和水源确实不只服务一种动物。
-
-但这把伞不能自动罩住所有生命。研究发现，以熊猫为中心的森林恢复和保护区对一些食草动物与中型食肉动物有帮助，对另一些需要不同空间和食物的大型食肉动物却不够。生态廊道也不是在地图上画一条绿线就完成了；它必须有适合的森林、竹子和较少的干扰，熊猫才可能真正通过。熊猫可以成为保护山林的入口，却不能代替对其他物种逐一调查。
-[/zh]
-[en]
-Conservationists often call the giant panda an umbrella species. The idea is that protecting the large forest area a panda needs opens an umbrella over many plants and animals sharing that habitat. It is a useful image. Pandas attract public attention, and protecting bamboo, trees, and water can certainly help more than one species.
-
-But the umbrella does not automatically cover every living thing. Studies have found that panda-centered forest recovery and reserves helped some herbivores and medium-sized carnivores, yet did less for certain large carnivores with different needs. A wildlife corridor is not finished when someone draws a green line on a map, either. It needs suitable forest, bamboo, and low disturbance before pandas can actually move through it. The panda can open a door to forest protection, but it cannot replace careful study of every other species.
-[/en]
-[/section]
-
-[section]
-page: 6
 layout: text-wrap-image
-heading_zh: 打开运输笼，不是故事结尾
-heading_en: Opening the Travel Crate Is Not the Ending
+heading_zh: 回到山林
+heading_en: Back to the Mountains
 image: panda-return-to-wild.webp
-caption_zh: 这是一幅现代放归想象图，不是一次真实行动的记录。真正放归会尽量减少熊猫与人的接触，并在放归前后进行评估与监测。
-caption_en: This is a modern imagined release, not a record of a real event. Actual programs try to limit human contact and assess and monitor pandas before and after release.
+caption_zh: 这幅想象图表现一只熊猫走进山林。只有少数经过挑选和训练的熊猫才会被尝试放归野外。
+caption_en: This imagined scene shows a panda entering the forest. Only a small number of carefully chosen and trained pandas are released into the wild.
 [zh]
-有些孤立的小种群数量很少，研究人员会考虑把合适的圈养繁育个体放归，增加当地数量或遗传交流。但放归不是把一只可爱的熊猫运到树林里便大功告成。候选个体的健康、遗传背景和原来山系都要考虑；放归地需要有足够竹子、适合活动的森林、可控制的疾病与人为风险，还要准备追踪和长期观察。
+有时，保护人员会训练一只在人工照顾下出生的熊猫，希望它以后能回到野外。它要学会自己寻找竹子，避开危险，也要习惯身边没有饲养员。只有少数合适的熊猫才会参加这样的计划。
 
-这项工作很少见，也可能失败。中国从 2003 年开始相关研究；成都基地 2024 年公布的资料说，当时累计尝试放归 12 只经过野化训练的圈养大熊猫，其中 10 只存活。同行评议研究也显示，即使经过训练，圈养出生个体仍需要重新适应野外取食和活动。数字说明人们学到了一些办法，却不表示以后每次都会成功。若山林仍被切碎，放进去一只熊猫也不能代替修复栖息地。
+运输笼打开后，工作也没有结束。研究人员会从远处了解熊猫去了哪里、吃得好不好、能不能适应新的生活。放归可能成功，也可能失败，因为山林不会像繁育基地一样准备好每一顿饭。
+
+熊猫走进树林，黑白色的背影很快就藏进绿色的竹叶里。看不见它，并不是一件坏事。那正说明它已经回到了一个可以自己找路、自己吃饭、自己生活的家。
 [/zh]
 [en]
-Some isolated wild populations are very small. Scientists may consider releasing a carefully selected captive-born panda to increase local numbers or genetic exchange. But reintroduction is not finished when someone opens a travel crate in the forest. Teams must consider a candidate’s health, genes, and mountain-range origin. The release site needs enough bamboo and suitable forest, manageable disease and human risks, and a plan for tracking the animal over time.
+Sometimes, people train a panda born in human care in the hope that it can return to the wild. The panda must learn to find bamboo, avoid danger, and live without keepers nearby. Only a small number of carefully chosen pandas enter such a program.
 
-This work is rare, difficult, and capable of failing. China began related research in 2003. In a statement published in 2024, the Chengdu base said that China had attempted to release 12 captive pandas after wild-training programs and that 10 had survived. Peer-reviewed studies also show that captive-born animals may still need to adjust their feeding and movement after release. Those results mean that researchers have learned useful methods, not that every future release will succeed. If the forest remains broken into pieces, adding one panda cannot replace repairing its habitat.
+The work does not end when the travel crate opens. Researchers follow from a distance to learn where the panda goes, whether it finds enough food, and how well it adjusts. A release may succeed or fail because a forest does not set out every meal the way a breeding center does.
+
+The panda steps among the trees, and its black-and-white back soon disappears behind green bamboo leaves. Losing sight of it is not a bad thing. It means the panda has returned to a home where it can find its own path, choose its own food, and live on its own.
 [/en]
 [/section]
-
-[section]
-page: 7
-layout: text-only
-heading_zh: 再看一次育幼室
-heading_en: Look at the Nursery Again
-[zh]
-现在再看那只粉红色小幼崽。饲养员让它活下来，研究人员记录它的健康和家谱，讲解员让游客理解这个物种，这些工作都很重要。但判断保护是否成功，不能只数一年出生了多少只幼崽，还要问：野外竹林是否连通？小种群能不能找到配偶？道路、旅游和气候变化带来的风险是否减小？放归后的熊猫能否长期生活和繁殖？
-
-大熊猫的家不是一张写着“四川”的明信片，也不只是一间洁净的育幼室。它是一系列横跨四川、陕西和甘肃的山地森林，是竹子、树木、水、其他动物与附近社区共同组成的环境。最有意义的熊猫故事，不是我们离幼崽有多近，而是野生熊猫能不能在人类不围观、不喂食、不触摸的地方，继续自己选择一片山林。
-[/zh]
-[en]
-Now look again at that tiny pink cub. Keeping it alive matters. So do researchers tracking its health and family history, and educators helping visitors understand the species. But conservation success cannot be measured only by counting how many cubs were born in one year. We must also ask: Are wild forests connected? Can small populations find mates? Are risks from roads, tourism, and climate change being reduced? Can released pandas survive and reproduce over the long term?
-
-A giant panda’s home is not a postcard labeled “Sichuan,” and it is not only a spotless nursery. It is a chain of mountain forests across Sichuan, Shaanxi, and Gansu, made from bamboo, trees, water, other animals, and nearby human communities. The most meaningful panda story is not about how close we can get to a cub. It is about whether wild pandas can keep choosing their own patch of forest, far from our cameras, food, and hands.
-[/en]
-[/section]
-
-[ending]
-heading_zh: 小结
-heading_en: In Summary
-[zh]
-成都基地的繁育、科研和教育能帮助大熊猫保护，但物种恢复的核心仍在野外。大熊猫依赖三省六大山系中相互连接的竹林，有限的消化能力让稳定食物尤其重要。2016 年的“易危”评级记录了一次进步，不是终点；真正的家园保护要连接森林、照顾多种生命，并对少量放归个体进行长期监测。
-[/zh]
-[en]
-Breeding, research, and education at the Chengdu base can support giant panda conservation, but recovery still depends on the wild. Pandas need connected bamboo forests across six mountain systems in three provinces, and their limited digestion makes a dependable food supply especially important. The 2016 Vulnerable listing marked progress, not an endpoint. Protecting a real home means reconnecting forests, considering many species, and monitoring the small number of released pandas for years.
-[/en]
-[/ending]

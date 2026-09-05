@@ -1,63 +1,53 @@
-> Difficulty: Medium
+> Difficulty: Easy
 
 # Tulou: Many Homes Behind One Gate
 
-## Is There Really a Village Inside the Circle?
+## Is It One House or a Village?
 
-Imagine following a mountain road in Fujian, a coastal province in southeastern China. You turn a corner and suddenly see a huge yellow-brown building below. Its tiled roof forms a ring around an open patch of sky. Is it one house, or a whole village? In a way, it is a little of both. Many tulou were large homes where several households from an extended family lived together, connected by a courtyard, walkways, and shared ceremonial spaces.
+Turn a corner on a mountain road in Fujian, a province in southeastern China, and you may see a huge yellow-brown ring. It has tall walls on the outside, rows of wooden walkways inside, and a wide courtyard in the middle. It looks like one house and a small village tucked inside that house at the same time.
 
-Aerial pictures can create three mistakes, however. Tulou are not all round; some are square, oval, or other shapes. They were not built and lived in only by Hakka communities; southern Fujian, or Minnan, communities developed their own tulou traditions too. And the World Heritage property called “Fujian Tulou” does not include every large earthen house in Fujian. The UNESCO property, added to the list in 2008, contains 46 selected buildings arranged as six clusters and four individual sites in Yongding, Nanjing, and Hua’an. Thousands of other tulou stand beyond that list.
+This kind of large home is called a *tulou*. The Chinese word *tǔ* means “earth,” and *lóu* means a building with more than one floor. That is why *tulou* is often explained in English as “earthen building.” Most English writing, however, simply keeps the name *tulou*.
 
----
+Many tulou housed several households from one big family. Grandparents, aunts, uncles, and cousins might all live close together. Each household had its own rooms, while everyone shared the courtyard, walkways, and some large halls. A very large tulou could hold hundreds of people behind one main gate.
 
-## Earth Walls and Timber Frames Work Together
-
-Up close, “earth” does not mean loose mud piled into a wall. Builders set up temporary forms, placed prepared earth inside, and pounded it down until it became dense. Only then did they add another layer. Builders in different places and periods used different soils and reinforcement methods, so one recipe involving sticky rice or egg whites cannot explain every tulou. Many buildings also have a stone base that lifts the earthen wall away from damp ground.
-
-A tulou was not carved from one giant lump of dirt. Thick rammed-earth outer walls worked with timber beams, columns, floors, galleries, and a tiled roof. This earthen-and-wooden system could last a very long time, but it was not indestructible, and no design guaranteed safety in every earthquake. Rain entering through a damaged roof, years without maintenance, fire, or careless alterations could all harm a building. A tulou survived through a combination of site choice, craft, materials, and continuing repair—not one magical ingredient.
+Tulou are not always round. Some are square, and others have different shapes. They do not belong to only one group of people, either. Communities in different parts of Fujian developed their own tulou. What they share is one big idea: many family homes joined together inside one building.
 
 ---
 
-## To Find the Bedroom, Start at the Kitchen
+## How Can Earth Become a Tall Wall?
 
-Suppose you enter a Hakka tulou with shared inner galleries and try to find “one family’s home.” You might not find all its rooms side by side on a single floor. In a common arrangement, cooking took place downstairs, grain was stored on the second level, and sleeping rooms were higher up. A household used a vertical group of rooms, while shared galleries and several stairways connected the building. Instead of one flat apartment, a home could feel like a strip rising from kitchen to bedroom.
+If you pile up loose soil, a hard rain may wash it away. The walls of a *tulou* were built differently. Workers first fixed two rows of wooden boards in place, leaving room for the wall between them. Local earth was the main material. Sand or lime might be mixed in, along with enough water to give the mixture the right amount of moisture. The exact mixture was not the same for every tulou.
 
-That is not a universal instruction book for every tulou. Some Minnan tulou used a unit plan: each household entered its own section from the courtyard and had a private staircase, somewhat like a row of connected multistory townhouses. Even within one type, rooms could be reassigned as families grew, divided into branches, or altered the building. Saying “every family had exactly the same space” sounds pleasantly fair, but it can hide real differences in family size, status, and history.
+Next, workers shoveled in a shallow layer of the earth mixture. They used long-handled wooden rammers with heavy ends to pound it tight. This method is called *rammed earth*. When one layer was firm, they added another and moved the boards higher. The wall slowly rose, one packed layer at a time. Many tulou also had a stone base that kept the earthen wall above damp ground.
 
----
-
-## The Courtyard Brought People Together—and Carried Every Sound
-
-The courtyard might be used for drawing water, drying crops or laundry, working, or meeting other children. A shared hall could host ancestor rites, festivals, weddings, and other family events. In such a place, a child could quickly sense what was happening around the building: footsteps climbing a wooden stair, cooking smells rising from below, and a greeting crossing the courtyard. A tulou did more than gather rooms behind a wall. It placed many parts of daily life within sight and hearing of other residents.
-
-That picture can feel warm, but shared life did not mean perfect harmony. Common courtyards, galleries, stairs, and ceremonial spaces created many chances to cooperate. They also meant less privacy, and noise, water, repairs, or shared decisions could lead to arguments. Scholars who study life in tulou describe both a strong sense of belonging and real differences in status and family relationships. Architecture can help people gather, but it cannot solve every human problem for them.
+A tulou was not one enormous clay pot. Inside the thick outer wall were wooden posts, beams, floors, stairs, and a tiled roof. Earth and wood each did a different job. The earth formed a strong outer ring, while the timber frame made rooms and walkways inside.
 
 ---
 
-## Thick Walls Protected More Than a Wartime Hideout
+## Why Did One Home Stretch Upward?
 
-Many large tulou did have defensive features. Thick outer walls, strong gates, and outside windows placed on higher levels made entry difficult. One or a few entrances were easier to guard than dozens of scattered houses. Some courtyards had wells, and grain could be stored inside, helping residents endure a period of danger.
+In many tulou, one household's rooms did not sit side by side on a single floor. They stretched from the bottom of the building to the top. The ground floor was often used for cooking, the second level for storing grain, and the higher rooms for sleeping.
 
-But “fortress” describes only part of a tulou, not its single purpose or the whole reason it existed. In ordinary times, residents farmed, cooked, stored food, raised children, honored ancestors, and managed family affairs. People also left and returned because of marriage, migration, or work. A thick wall does not justify a promise that everyone could lock the gate and live completely on their own for six months. Wells, storage, window levels, and fire precautions also varied from building to building. A better description is that tulou brought family organization, farming life, housing, and protection into one structure.
+That plan was practical. A kitchen needed water, so the ground floor was convenient. Grain stayed farther from damp earth and small animals when it was raised. Bedrooms higher up could be quieter. Family members climbed up and down the stairs each day, almost as if their home had been turned on its side.
 
----
-
-## A World Heritage Site Where People Still Live
-
-Today, some tulou still have residents. Some rooms have become shops, exhibits, or guesthouses, while many former residents have moved to newer homes with modern conveniences. Tourism can bring income and money for repairs. It can also turn a resident’s courtyard into a visitor’s photo backdrop, making a once partly private space feel more like an attraction. Protecting tulou cannot mean caring only for a handsome ring of walls. It must also consider how people living inside and nearby cook, use electricity and water, sleep, and work.
-
-Wooden floors and roof frames also make fire a serious concern. Recent preservation work has included checking wiring, open flames, hydrants, extinguishers, and fire lanes. Leaking roofs, empty buildings, and missing everyday maintenance create other dangers. Sometimes preservation calls for careful restoration, while continued life requires safer equipment or new uses. Those goals do not always fit together easily. Tulou are “living heritage” because they are not empty models. They remain homes negotiated among residents, craftspeople, officials, and visitors.
+Rooms were not arranged exactly the same way in every tulou. Some families shared wooden walkways and stairs. Others had more private entrances. People adjusted the rooms to fit the family, local customs, and the shape of the building.
 
 ---
 
-## Look Again at the Gate
+## A Busy Day in the Courtyard
 
-Return to that first view from the mountain road. A round tulou looks like one complete ring, but the gate does not open onto one simple way of life. Inside might be vertically divided family rooms with shared galleries and halls, or more separate household units. There was cooperation and conflict, protection and farming, migration and modern tourism. Square and round buildings, along with Hakka and Minnan traditions, mean that the word *tulou* holds more than one answer.
+Early in the morning, sounds woke the tulou courtyard. Wooden doors opened. Cooking fires began. Footsteps traveled along the wooden walkways. Later, people might dry clothing and food, repair tools, and carry out daily work while children ran from one side of the courtyard to the other.
 
-If we remember only “a round fortress made of dirt,” we remember a striking picture. If we keep asking who built it, who lived there, how rooms were shared, and who maintains it now, we find the more interesting achievement. A tulou did not turn many people into one identical family. It used earth walls, timber frames, and common spaces to organize many connected homes, each with a life of its own.
+Living close together could be useful. When someone needed help, relatives were only a few steps away. Festivals and family ceremonies could fill the shared hall or courtyard. But hundreds of people could not be quiet all day. The smell of cooking, a baby's cry, and a neighbor's voice could all cross the open space.
+
+The clever part of a tulou was not making everyone live exactly the same way. It found room for both private and shared life. Close a door, and one household had its own small world. Step outside, and the whole courtyard was there.
 
 ---
 
-## In Summary
+## What Were the Tall Walls Meant to Stop?
 
-Fujian tulou are large communal homes built with rammed earth and timber. They come in round, square, and other forms, and belong to the histories of both Hakka and Minnan communities. Thick walls and strong gates offered protection, but tulou were also homes for cooking, storing food, ceremonies, arguments, and growing up. Preserving them today means caring for the buildings and respecting the people whose lives remain connected to them.
+The mountains of Fujian were not always safe in the past. Bandits or fighting could threaten a village. Some tulou were built with very thick outer walls, few windows near the ground, and only one or two entrances. When the main gate closed, the whole building was easier to defend together.
+
+Thick walls also blocked wind and helped protect the rooms from weather outside. But a tulou was not an unbeatable fortress. Wood could burn, and rain from a broken roof could damage earthen walls. Even the strongest home would suffer if nobody repaired it for many years.
+
+People still live in some tulou today, while others receive many visitors. In one courtyard, you may see laundry, a resident's scooter, and tourists holding cameras. A tulou is not just an empty shell from long ago. For many people, it is still home.

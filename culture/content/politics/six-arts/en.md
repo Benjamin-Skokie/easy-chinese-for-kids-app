@@ -14,7 +14,7 @@ That gives us a good method for studying the Six Arts. First, set the dramatic s
 
 ## Where Did the List Come From?
 
-The six-part list—ritual, music, archery, chariot driving, writing, and calculation—appears clearly in the *Rites of Zhou*. This ancient book describes an ideal system of offices and institutions. It says that an official called the *Baoshi* should educate the “sons of the state” and teach them the Six Arts: five groups of rites, six of music, five of archery, five of chariot driving, six of writing, and nine of calculation. Another part of the book also places the same six arts inside a plan for educating the people.
+The six-part list—ritual, music, archery, chariot driving, writing, and calculation—appears clearly in the *Rites of Zhou*. This ancient book describes an ideal system of offices and institutions. One passage assigns an official called the *Baoshi* to educate the “sons of the state.” It then divides each of the Six Arts into smaller groups. Another passage places the same six arts inside a wider plan for educating the people.
 
 This is important evidence, but it is not a school schedule saved from the Western Zhou or Spring and Autumn period. The *Rites of Zhou* has a complicated history. Many scholars think much of its system reflects ideas from the Warring States period and was organized later. The word *Zhou* in the title does not prove that every office and lesson worked exactly this way in an early Zhou school.
 

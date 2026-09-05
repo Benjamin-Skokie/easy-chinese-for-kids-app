@@ -1,6 +1,38 @@
-# 只看一只鸟，能认出官职吗？ — References and Editorial Notes
+# 官服上的鸟和猛兽 — References and Editorial Notes
 
 This file is for editorial research and does not render on the website.
+
+## 麒麟补子与神兽形象
+
+Source: The Metropolitan Museum of Art, “Rank Badge with Qilin”
+URL: https://www.metmuseum.org/art/collection/search/69079
+Accessed: 2026-09-02
+
+Supports:
+
+- 麒麟是传说中的动物；馆藏补子把它画成具有超自然力量的神兽，身体周围带有火焰。
+- 1662年以后，麒麟成为清代一品武官的补子图案；此前也曾用于贵族服饰。
+
+Editorial boundary:
+
+- 正文只用蹄、鳞、角和火焰帮助孩子读懂常见麒麟形象，不把某一件馆藏补子的造型说成所有时代唯一正确的画法。
+- “神奇又有力量”是对图像效果的儿童化说明，不把麒麟当作真实动物。
+
+## 补子的用途与等级
+
+Source: Cleveland Museum of Art, “Rank Badge (buzi)”
+URL: https://www.clevelandart.org/art/1948.69
+Accessed: 2026-09-02
+
+Supports:
+
+- 明清补子用鸟表示文官、用兽表示武官，并以不同动物显示等级。
+- 清代鹤补可表示一品文官。
+
+Editorial boundary:
+
+- 正文不把一个清代实例当成明清两代都不改变的规则。
+- 鸟兽形成清楚视觉对比，但现有资料没有给每一种动物留下一个简单、统一的选择原因；正文不虚构完整起源故事。
 
 ## 明代补服制度与早期实物
 
@@ -53,6 +85,19 @@ Editorial boundary:
 
 ## 清代文官九品鸟类定制
 
+Source: 故宫博物院，“缂丝锦鸡方补”
+URL: https://www.dpm.org.cn/collection/embroider/230161.html
+Accessed: 2026-09-02
+
+Supports:
+
+- 故宫藏品说明依《大清会典》列出清代固定后的文官九品鸟纹与武官九品兽纹。
+- 文官前三品依次为鹤、锦鸡、孔雀；武官前四品依次为麒麟、狮、豹、虎。
+
+Editorial boundary:
+
+- 这套顺序是清代制度后来固定下来的结果，不代表明代或清初每个时期都使用同一张表。
+
 Source: Kyoto National Museum, “Buzi (Rank Badges) for Civil Officials”
 URL: https://knmdb.kyohaku.go.jp/eng/21886.html
 Accessed: 2026-08-21
@@ -83,22 +128,33 @@ Editorial boundary:
 - 正文只列清代定制中最易辨认的前四级，并用“制度逐渐固定以后”“常见”限制，不把它当作明代或清初始终不变的表。
 - 古代图像中的麒麟、豹、虎未必像现代动物照片，仍需结合年代、构图与馆藏记录识别。
 
-## 清代补子的成对结构、前片开缝与制作变化
+## 地方官员与七品知县
 
-Source: Cleveland Museum of Art, “Rank Badge (buzi)”
-URL: https://www.clevelandart.org/art/1916.1330
-Accessed: 2026-08-21
+Source: 张掖市史志办公室，“清代甘州府县”
+URL: https://www.zhangye.gov.cn/szb/dzdt/gjzy/202002/t20200211_383581_ghb.html
+Accessed: 2026-09-02
 
 Supports:
 
-- 清代补子通常前后成对，前片为配合中间开襟而纵向分成两部分，后片完整。
-- 清代补子可用缂丝或刺绣等工艺，晚清也出现便于更换等级纹样的贴绣做法。
-- 清代构图中动物常朝向代表皇帝的日形圆盘。
+- 清代地方府县有从知府到知县、县丞、主簿等不同品级的官员。
+- 知县通常为正七品，县丞为正八品，主簿为正九品。
 
 Editorial boundary:
 
-- 前片开缝是清代常见结构线索，不是辨伪或定年的唯一标准。
-- 一件馆藏补子的尺寸、工艺和图案不能代表整个明清两代；正文只写总体趋势。
+- 正文用“通常”说明知县品级，因为具体时期、兼衔和特殊任命可能产生例外。
+- “地方小官”是相对于朝廷最高品级而言；知县在一县之内仍是主要官员，不能写成无权处理地方事务的小职员。
+
+Source: 北京文明网，“明清政府对基层社会管理的多样性”
+URL: https://www.bjwmb.gov.cn/zxfw/wmwx/wskt/t20180810_876715.htm
+Accessed: 2026-09-02
+
+Supports:
+
+- 明清知县为正七品，并负责一县内的教化、救济、治安、诉讼和其他地方政务。
+
+Editorial boundary:
+
+- 正文只选税粮、政府命令和案件等儿童容易理解的例子，不把复杂的明清基层行政制度写成现代县政府的直接对应物。
 
 ## 明墓出土獬豸补服实物
 
@@ -143,11 +199,13 @@ Supports:
 
 - 清代宫廷服饰分礼服、吉服、常服、行服、戎服、雨服、便服等不同用途和搭配类别。
 - 到乾隆时期，清代王公和文武官员的补服制度进一步定型，补子形状、纹样和数量与等级相关。
+- 服饰制度用醒目的质料、款式、颜色、纹样和饰物区分身份高低；飞禽和走兽又分别按当时看重的珍稀与威猛程度排列。
 
 Editorial boundary:
 
 - 不把 `朝服`、`吉服`、`常服` 全部翻译为同一个没有差别的 “formal robe”。
 - 补子是整套服饰制度的一部分；现代插图把帽子、朝珠、袍色或补子组合在一起时，不当作某一历史时期的精确复原。
+- 资料说明了整体排序原则，但没有为每一种鸟兽为何恰好对应某一品级留下一个简单、统一的原因；正文不虚构逐项解释。
 
 ## 獬豸补子的馆藏说明
 

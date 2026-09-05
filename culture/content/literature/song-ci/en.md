@@ -1,103 +1,53 @@
-> Difficulty: Medium
+> Difficulty: Easy
 
-# Song Ci: Poems That Were Sung
+# Song Ci: New Words for a Tune
 
-## Tang Poems Are Recited. Song Ci Were Sung.
+## One Tune, New Words
 
-Tang poems are often read aloud or chanted.
+About 1,000 years ago, during China's [[Song dynasty]], people enjoyed music and songs. Sometimes a musician played a tune that everyone knew. A writer then gave the tune a new set of words.
 
-Song *ci* are closer to music.
+These words were called *ci*. The music could stay the same while the words changed.
 
-They were originally words fitted into tunes and sung.
+Because the words had to fit the music, some lines were short and others were long. Many Song tunes were later lost, but the words on the page survived.
 
-At the top of each *ci* poem is a tune title, such as "Prelude to Water Melody," "Nian Nu Jiao," or "Slow, Slow Tune."
-
-Long ago, each tune title matched a melody.
-
-Different writers could use the same tune pattern and fill it with completely different feelings.
+We do not need to memorize a list of tune names. Let us meet Su Shi as he thinks of his brother under the moon. Then we will follow Li Qingzhao's boat into the lotus flowers.
 
 ---
 
-## Su Shi: Turning Missing Someone into Forever
+## One Moon, Two Brothers
 
-One of Su Shi's most famous *ci* poems is "Prelude to Water Melody."
+One Mid-Autumn night, Su Shi looked up at the full moon. Mid-Autumn was a time for families to be together, but his younger brother was far away. They had not seen each other for a long time.
 
-He wrote it at Mid-Autumn Festival while missing his younger brother, Su Zhe.
+Su Shi had many thoughts. He began with a question that no one could answer:
 
-First he asks the moon questions.
+*When did the bright moon first appear? I lift my cup and ask the sky.*
 
-Then he asks himself questions.
+As he looked up, another thought came to him. His brother was not beside him, but perhaps he could see the same moon.
 
-At last, he writes the line many Chinese people know:
+So Su Shi ended with a wish:
 
-May we live long, and though we are far apart, share the same beautiful moon.
+*May we both be safe and live long. Though far apart, may we share this beautiful moon.*
 
-They are not together.
-
-But they can still look at the same moon.
-
-Later, this poem became one of the poems people cannot avoid at Mid-Autumn Festival.
+The moon could not bring his brother home. But it made two people far apart feel a little closer.
 
 ---
 
-## Li Qingzhao: A Life Written from Sweet to Bitter
+## Lost in the Lotuses—Row! Row!
 
-Li Qingzhao is one of China's most famous women poets.
+Another Song writer, Li Qingzhao, wrote about a funny little boat adventure. One day, she stayed by the water until sunset. On the way home, the boat went the wrong way and slipped deep into the lotus flowers: *We started home late and rowed straight into the lotuses.*
 
-When she was young, her *ci* often felt light and lively.
+Leaves crowded around the boat. The way out was hard to see. Everyone began to paddle: *Row! Row! A whole flock of water birds bursts into the air.*
 
-In one poem, she remembers sunset at a small building by a stream. She is happily drunk and forgets the way home.
+Oars splashed. Wings flapped. A quiet pond suddenly filled with noise and laughter.
 
-The boat accidentally enters deep lotus flowers, and startled birds rise from the water.
+Many years later, war and the loss of people she loved made Li Qingzhao's life much sadder. Her words became quiet too: *Searching and searching. Cold and empty.*
 
-You can almost see the bright, playful scene.
-
-Later, the world around her changed.
-
-War came. She fled from place to place. Her husband died. Their precious books and art were scattered.
-
-Her later poems sound completely different.
-
-In one famous opening, she repeats words again and again: searching and searching, cold and lonely, sad and sorrowful.
-
-The sounds keep sinking lower.
-
-It feels as if the same person wrote her whole life, from the bright side down into the dark.
+Look at the two parts of the picture. The same writer remembered the noisy lotus pond and also wrote about days when she felt quiet and alone.
 
 ---
 
-## Xin Qiji: Poems for the Emperor, Battles for the Country
+## Which Sound Can You Hear?
 
-Xin Qiji was more than a poet.
+Now you know what Song *ci* is: words written for a tune. Su Shi sent his love for his brother into the moonlight. Li Qingzhao rowed into the lotuses and later wrote about quiet, lonely days.
 
-When he was young, he truly led soldiers and lived through war.
-
-But later, the court wanted peace more than battle.
-
-Xin Qiji spent a long time away from the front lines, unable to do the thing he most wanted to do.
-
-So some of his strongest poems grew out of that trapped feeling.
-
-In one famous line, he writes about lifting a lamp while drunk and looking at his sword, then dreaming of bugles in army camps.
-
-The battle is not in front of him anymore.
-
-It is burning inside his dream.
-
----
-
-## Summary
-
-Song *ci* are moving partly because they were made to be sung.
-
-Their feelings can stay very close to the heart.
-
-Su Shi hung his longing on the moon.
-
-Li Qingzhao wrote the rise and fall of her life into short lines.
-
-Xin Qiji pressed the fire of an unused soldier into dreams.
-
-The poems are short.
-
-But they can touch the chest more closely than a long story.
+We may not be able to hear the old tunes, but we can still read the words aloud. Would you read the moon lines slowly? Would “Row! Row!” get faster? Try it.

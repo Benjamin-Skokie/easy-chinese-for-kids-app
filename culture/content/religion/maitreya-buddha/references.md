@@ -1,6 +1,58 @@
-# Maitreya and Budai — References and Editorial Notes
+# References for “The Smiling Monk and His Big Cloth Bag”
 
 This file is for editorial research and does not render on the website.
+
+## Current child-facing version
+
+Rewritten: 2026-09-02
+
+- Page 1 begins with the friendly Budai figure that children may see in a Chinese Buddhist temple.
+- Pages 2–3 tell the light, vivid stories of Qici's cloth bag, wandering life, weather-predicting shoes, and snow that did not settle on him.
+- Page 4 briefly explains how the Chinese monk's image became joined to the older Buddhist figure Maitreya.
+- Page 5 answers why this wandering monk came to be honored near the entrance of many temples and connects his smile and bag with later hopes for happiness, welcome, generosity, and good fortune.
+- Dates, geography, doctrinal vocabulary, and source debates stay in this research file unless a child needs them to follow the story.
+
+## Qici, the monk known as Budai
+
+Primary source: Zanning, *Song Gaoseng Zhuan* (Biographies of Eminent Monks Compiled in the Song), volume 21, “Tang Mingzhou Fenghua xian shi Qici,” CBETA T50n2061_p0848b23
+URL: https://cbetaonline.dila.edu.tw/T50n2061_p0848b23
+Accessed: 2026-09-02
+
+Source: Dharma Drum Institute of Liberal Arts, Buddhist Studies Authority Database, “契此”
+URL: https://authority.dila.edu.tw/person/search.php?aid=A012858
+Accessed: 2026-09-02
+
+Source: British Museum, “Budai 布袋” biographical authority record
+URL: https://www.britishmuseum.org/collection/term/BIOG1892
+Accessed: 2026-09-02
+
+Supports:
+
+- Qici was a semi-legendary traveling monk associated with the Mingzhou area in tenth-century China.
+- The early Buddhist biography describes him as a large man who carried a cloth bag from a staff, entered marketplaces, asked for food, and rested wherever he happened to be.
+- “Budai” means “cloth bag” and became the name by which he was remembered.
+
+Editorial boundary:
+
+- The biography is a religious life written after Qici's time and includes miracle stories. It is not treated as a modern eyewitness report.
+- The image of Budai walking with children is a later artistic convention. The early biography does not record the children pictured in the illustration.
+- The article does not claim that children in Qici's own lifetime followed him or reacted to him in a particular way.
+
+## The weather and snow stories
+
+Primary source: Zanning, *Song Gaoseng Zhuan*, volume 21, CBETA T50n2061_p0848b23
+URL: https://cbetaonline.dila.edu.tw/T50n2061_p0848b23
+Accessed: 2026-09-02
+
+Supports:
+
+- The biography associates tall wooden clogs with hot, dry weather and wet straw sandals with wet weather; local people read these appearances as weather signs.
+- It also records the wonder that snow did not settle on him when he slept outside.
+
+Editorial boundary:
+
+- The children's article clearly calls these stories legends and does not present Budai's shoes as a real weather instrument.
+- Details unsupported by the reviewed early text, including invented conversations or constant laughter at every difficulty, are not added.
 
 ## Maitreya as the Future Buddha
 
@@ -8,124 +60,82 @@ Source: Smithsonian National Museum of Asian Art, “Rising to the Occasion”
 URL: https://asia.si.edu/explore-art-culture/interactives/encountering-the-buddha-life-of-the-buddha/rising-to-the-occasion/
 Accessed: 2026-08-20
 
-Source: Smithsonian National Museum of Asian Art, “The Bodhisattva Mile (Sanskrit Maitreya), seated in ‘Pensive Pose’”
-URL: https://asia.si.edu/explore-art-culture/collections/search/edanmdm%3Afsg_F1911.411/
-Accessed: 2026-08-20
-
-Source: Metropolitan Museum of Art, “Buddhism and Buddhist Art”
-URL: https://www.metmuseum.org/zh/essays/buddhism-and-buddhist-art
-Accessed: 2026-08-20
-
-Supports:
-
-- Buddhist tradition identifies Maitreya as the future Buddha, currently a bodhisattva awaiting birth in the human world.
-- Maitreya can appear in art as a princely bodhisattva or as a Buddha in monastic robes.
-- The feet-down or “pensive” pose can express Maitreya waiting and readying himself for his future birth.
-
-Editorial boundary:
-
-- The article presents these statements as Buddhist teachings and artistic conventions, not as scientifically testable predictions.
-- Do not say that every early Maitreya image was tall, thin, serious, jeweled, or seated in one pose.
-- The child-facing article explains “bodhisattva” and Tushita in the sentence instead of relying on a tooltip.
-
-## A Dated Early Chinese Maitreya Image
+Source: Smithsonian National Museum of Asian Art, *Encountering the Buddha* exhibition labels
+URL: https://asia.si.edu/wp-content/uploads/2023/08/Encountering-the-Buddha-Large-Print-Labels.pdf
+Accessed: 2026-09-02
 
 Source: Metropolitan Museum of Art, “Buddha Maitreya (Mile),” dated 486
 URL: https://www.metmuseum.org/art/collection/search/42733
 Accessed: 2026-08-20
 
-Source: Metropolitan Museum of Art, Denise Patry Leidy, “Chinese Buddhist Sculpture”
-URL: https://www.metmuseum.org/essays/chinese-buddhist-sculpture
-Accessed: 2026-08-20
-
 Supports:
 
-- An inscription identifies the Met’s large gilt-bronze Chinese sculpture as Maitreya and dates it to 486 in the Northern Wei dynasty.
-- Its broad shoulders, powerful body, and long legs draw on fifth-century Indian prototypes transmitted to China.
-- Early Chinese Buddhist sculpture reflects exchange between China and other Buddhist centers.
+- Buddhist tradition identifies Maitreya as a figure who will become a buddha in a future age.
+- Maitreya was represented in Indian and Chinese Buddhist art centuries before Budai lived.
+- Earlier Maitreya images can appear as a princely bodhisattva or a robed buddha and do not use Budai's cloth-bag appearance.
 
 Editorial boundary:
 
-- This one statue proves that a very different Maitreya image existed centuries before Budai. It does not define every Northern Wei Maitreya.
-- The article does not claim that the smiling, big-bellied Budai form replaced all older Maitreya forms.
+- The article presents the Future Buddha as a Buddhist belief, not a scientifically testable prediction.
+- The child-facing text does not add Tushita heaven, bodhisattva definitions, statue dates, or other details that would interrupt the main story.
 
-## Qici/Budai in the Early Buddhist Biography
+## How Budai and Maitreya became connected
 
-Source: Zanning, *Song Gaoseng Zhuan* (Biographies of Eminent Monks Compiled in the Song), volume 21, “Tang Mingzhou Fenghua xian shi Qici,” text reproduced from CBETA
-URL: https://deerpark.app/stories/5233
-Accessed: 2026-08-20
+Primary source: Zanning, *Song Gaoseng Zhuan*, volume 21, CBETA T50n2061_p0848b23
+URL: https://cbetaonline.dila.edu.tw/T50n2061_p0848b23
+Accessed: 2026-09-02
 
-Source: British Museum, “Budai 布袋” biographical authority record
-URL: https://www.britishmuseum.org/collection/term/BIOG1892
-Accessed: 2026-08-20
-
-Supports:
-
-- A tenth-century Buddhist biography describes Qici as a large-bellied monk associated with the Mingzhou/Fenghua area who carried a cloth bag into marketplaces and begged for food.
-- The biography includes wonders, a verse identifying him with Maitreya, a report of a posthumous sighting, and a statement that his image was widely painted in the Jiangsu-Zhejiang region.
-- The British Museum describes Budai as a semi-legendary itinerant monk of tenth-century China who later was regarded as an incarnation of Maitreya.
-
-Editorial boundary:
-
-- *Song Gaoseng Zhuan* is a religious biography compiled after Qici’s lifetime and includes miracle tales. The article attributes its claims to the text instead of presenting every detail as verified history.
-- The earliest text gives only part of the famous Maitreya verse. The article does not quote the later four-line form as Qici’s documented last words.
-- The old story’s scenes of constant laughing, barking dogs, dirty water, a bowl worn as a hat, and a witnessing monk are unsupported by the reviewed early source and are omitted.
-
-## The Development of Budai-Maitreya in China
-
-Source: “The Extinction of Three Foreign Religions in the Mediaeval Times and the Path Choice in the Sinicization of Foreign Religions,” *Journal of East China Normal University (Humanities and Social Sciences)*
-URL: https://xbzs.ecnu.edu.cn/CN/html/2019-1-117.htm
-Accessed: 2026-08-20
+Source: Metropolitan Museum of Art, “Buddhist monk Budai”
+URL: https://www.metmuseum.org/art/collection/search/42545
+Accessed: 2026-09-02
 
 Source: British Museum, “figure,” Budai sculpture dated 1484
 URL: https://www.britishmuseum.org/collection/object/A_1937-0113-1
-Accessed: 2026-08-20
+Accessed: 2026-09-02
 
 Supports:
 
-- Accounts linking Budai and Maitreya grew more numerous and detailed from the Song onward.
-- Religious communities, officials, artistic production, and later texts helped establish Budai as a Chinese manifestation of Maitreya.
-- Later Chinese art commonly shows Budai with a large belly, loose robes, cloth bag, and smiling face.
+- The early biography includes a verse identifying Qici with Maitreya and reports that pictures of him circulated in the region.
+- Later Chinese Buddhist tradition widely treated Budai as an appearance or incarnation of Maitreya.
+- Later art commonly gives Budai a bald head, loose robes, round belly, smile, and cloth bag.
 
 Editorial boundary:
 
-- The article describes a gradual identification, not one moment in which Maitreya literally “turned into” Budai.
-- “Incarnation” or “manifestation” describes a belief within Chinese Buddhist tradition, not an independently verified historical identity.
-- The article does not claim that the Budai form became the only valid Maitreya image.
+- The article describes a gradual joining of two traditions, not a claim that every Maitreya image changed into Budai at one moment.
+- Budai is distinguished from Siddhartha Gautama, the historical Buddha of ancient India.
+- “Maitreya in disguise” is child-facing language for the later belief that Budai was an appearance or incarnation of Maitreya.
 
-## Placement in the Hall of the Heavenly Kings
+## Temple placement and later meanings
 
 Source: Renmin University of China Institute for the Study of Buddhism and Religious Theory, “佛教仪轨制度”
 URL: https://isbrt.ruc.edu.cn/xszl/rucfojiaoallcmsZiyuan238.htm
 Accessed: 2026-08-20
 
-Source: Beijing Xicheng District People’s Government, “广化寺”
-URL: https://www.bjxch.gov.cn/xcfw/whfw/xxxq/pnidpv737621.html
-Accessed: 2026-08-20
+Source: British Museum, “Budai 布袋” biographical authority record
+URL: https://www.britishmuseum.org/collection/term/BIOG1892
+Accessed: 2026-09-02
 
 Supports:
 
-- In a common Chinese Buddhist temple arrangement, the Hall of the Heavenly Kings is on the central axis near the entrance.
-- Its central front image is often Budai-style Maitreya, with the Four Heavenly Kings at the sides and Weituo behind.
-- Temple arrangements vary; the RUC source specifically notes that Beijing’s Guangji Temple uses a crowned Maitreya bodhisattva image instead.
+- A Budai-style Maitreya is commonly placed in the Hall of the Heavenly Kings near the entrance of Chinese Buddhist temples.
+- Temple layouts and Maitreya images vary.
+- Later interpretation connects Budai with happiness, welcome, generosity, good fortune, and treasured objects.
 
 Editorial boundary:
 
-- Do not say that Maitreya is always the first statue seen, that he stands literally at every temple gate, or that all Chinese temples share one plan.
-- `1-smiling-maitreya-statue.webp` is a modern imagined temple interior. Its family, altar, architecture, offerings, and statue are not a reconstruction of a named temple.
+- The story says “many temples,” not “every temple.”
+- Meanings attached to the smile, belly, and bag are described as later interpretations rather than rules from early Buddhist scripture.
+- The early biography does not provide a complete inventory of the bag. The article does not call it a money bag or give it a fixed set of magical contents.
+- “A heart with room for many people and many troubles” is a child-facing explanation of later ideas about patience and tolerance, not a quotation from Qici.
 
-## Later Meanings of Belly, Bag, and Smile
+## Image notes
 
-Editorial synthesis based on the sources above.
+- `1-smiling-maitreya-statue.webp` is a modern imagined temple interior, not a copy of one named temple.
+- `2-cloth-bag-monk.webp` is a modern imagined scene. The children, street, buildings, clothing, and weather are not a documented event from Qici's life. The early biography says that he could hang the bag from a staff; this illustration instead shows him carrying it directly over his shoulder, so the child-facing passage does not describe a staff that is absent from the picture.
 
-Supports:
+## Page-to-source map
 
-- Later temple culture and popular interpretation often connect the Budai image with welcome, good cheer, generosity, patience, good fortune, or prosperity.
-- “Laughing Buddha” is a common English name for Budai, although it can hide the historical distinction between Budai and the earlier Maitreya tradition.
-
-Editorial boundary:
-
-- The reviewed early biography does not say Budai always laughed or calmly accepted every insult.
-- “A belly big enough to hold bad tempers” is a modern moral metaphor, not a doctrine established by early Buddhist scripture.
-- The bag begins as Qici/Budai’s identifying possession. Do not automatically define it as a money bag, a container of all worries, or proof of wealth.
-- `2-cloth-bag-monk.webp` is a modern imagined scene. The smiling monk, children, street, clothing, lanterns, and weather are not a documented event.
+- Pages 1–2: CBETA's *Song Gaoseng Zhuan*, the DILA authority record, and the Metropolitan Museum of Art support Qici's identity, cloth bag, appearance, wandering life, and later association with Maitreya.
+- Page 3: *Song Gaoseng Zhuan* supports the wooden-clog, wet-sandal, and snow stories; the page labels them as legends that cannot now be verified.
+- Page 4: Smithsonian and Metropolitan Museum records support Maitreya as the Future Buddha and the difference between earlier Maitreya images and the later Chinese Budai form; *Song Gaoseng Zhuan* supports the early verse linking Qici with Maitreya.
+- Page 5: the Renmin University overview supports common temple placement, while museum records support Budai's later smiling, round-bellied, cloth-bag image and its associations.

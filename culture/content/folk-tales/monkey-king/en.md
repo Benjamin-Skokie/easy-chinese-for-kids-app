@@ -2,134 +2,38 @@
 
 # The Monkey King Makes Trouble in Heaven
 
-## A Monkey Who Does Not Want to Follow Rules
+## A Monkey Who Refuses to Follow Rules
 
-In *Journey to the West*, Sun Wukong learns powerful skills from a teacher named Bodhi and returns home.
+In *Journey to the West*, Sun Wukong is a monkey with enormous powers. He does not want to stay only on Flower-Fruit Mountain. He wants to go to heaven and even hold an important post.
 
-But he does not want to be only the Handsome Monkey King of Flower-Fruit Mountain.
-
-He wants an important job in Heaven.
-
-First, he flies to the Dragon Palace of the Eastern Sea to choose a weapon.
-
-He lifts one weapon after another.
-
-Too light.
-
-Too light.
-
-Still too light.
-
-At last, the old Dragon King shows him the magic iron pillar that once helped calm the sea.
-
-It becomes Sun Wukong's famous weapon, the golden-hooped staff.
-
-Then Wukong goes to the King of Hell and crosses out his own name, and the names of his monkeys, from the book of life and death.
-
-He is making one thing very clear:
-
-he plans to fight the rules of Heaven.
-
-The Jade Emperor sends Taibai Jinxing to invite him to Heaven and gives him a job.
-
-Wukong becomes *Bimawen*, the keeper of the heavenly horses.
-
-After a few days, he learns that this job is not important at all.
-
-He becomes furious, kicks over the horse office, fights out through the Southern Heaven Gate, and returns to Flower-Fruit Mountain.
-
-There, he gives himself a new title:
-
-"Great Sage Equal to Heaven."
+First he takes the golden-hooped staff from the Dragon Palace, and then he crosses his own name and the names of his monkeys out of the book of life and death. All of this makes one thing clear: Sun Wukong has no wish to quietly obey the rules.
 
 ---
 
-## Ten Thousand Heavenly Soldiers Cannot Stop One Monkey
+## Even Heaven Cannot Stop Him
 
-The Jade Emperor sends Li Jing, Nezha, the Mighty Spirit God, and a huge army of heavenly soldiers to catch him.
+Heaven gives him a small official job, but when Sun Wukong learns it is not important, he becomes furious. He fights his way out of the Southern Heaven Gate, returns to Flower-Fruit Mountain, and gives himself the title "Great Sage Equal to Heaven."
 
-One by one, great fighters come against Wukong.
-
-The Mighty Spirit God.
-
-Nezha.
-
-Erlang Shen.
-
-But the story makes this monkey almost impossible to stop.
-
-Blades cannot cut him down.
-
-Thunder cannot break him.
-
-He is thrown into Laozi's furnace and burned for forty-nine days.
-
-When he comes out, he is not weaker.
-
-He has fiery golden eyes.
-
-The more Heaven tries to press him down with rules, the bigger his trouble becomes.
+Later, heavenly soldiers and famous warriors come to capture him, but one after another they fail. The more Heaven tries to press him down, the bigger his trouble becomes.
 
 ---
 
 ## In the Buddha's Palm
 
-At last, the Jade Emperor asks the Buddha for help.
+At last, the Jade Emperor asks the Buddha for help. The Buddha says to Sun Wukong, "If you are really that powerful, jump out of my palm."
 
-The Buddha smiles and makes a bet with Wukong.
-
-"If you are so powerful, can you jump out of my palm?"
-
-Wukong leaps onto the Buddha's open hand, crouches, and flips away.
-
-One somersault carries him an enormous distance, 108,000 *li*.
-
-He sees five giant pillars at the edge of the sky, dark red and standing high.
-
-He thinks he has reached the end of Heaven.
-
-So he pulls out one monkey hair, turns it into a writing brush, and writes on the middle pillar:
-
-"The Great Sage Equal to Heaven was here."
-
-Then, just to be rude, he pees at the bottom of the pillar.
-
-Wukong flips back proudly.
-
-"Old Buddha, I reached the end of Heaven and came back!"
-
-The Buddha turns over his hand and shows Wukong the tall finger in the middle.
-
-There are the words:
-
-"The Great Sage Equal to Heaven was here."
-
-Only then does Wukong understand.
-
-The five pillars were not pillars at the edge of the sky.
-
-They were the Buddha's fingers.
-
-The Buddha turns his hand again. His five fingers become Five Elements Mountain and press the monkey down.
-
-Five hundred years later, a monk traveling west to look for Buddhist holy books comes to the mountain and removes the seal.
-
-Sun Wukong finally comes out.
-
-The monkey no one could control now begins a different road.
+Sun Wukong somersaults an enormous distance and thinks he has reached the end of the sky, proudly leaving a mark behind. But when he returns, he discovers that he never left the Buddha's palm at all.
 
 ---
 
-## Summary
+## Under Five Elements Mountain
 
-The Monkey King making trouble in Heaven is one of the wildest parts of *Journey to the West*.
+The Buddha turns his hand over, and his five fingers become Five Elements Mountain, pressing Sun Wukong beneath it. The monkey no one could control is trapped there for a very long time.
 
-Sun Wukong dares to grab weapons, shout at Heaven, and fight gods and soldiers across the sky.
+Later, a monk traveling west for sacred books arrives and removes the seal, and only then is Sun Wukong free again. From that moment on, his story slowly begins to move in a different direction.
 
-That is why children often like him right away.
+---
 
-But the story does not let him keep making trouble forever.
+## A Monkey No One Forgets
 
-It puts him under Five Elements Mountain and waits for him to learn something harder:
-
-great power needs a steadier heart.
+Many children love Sun Wukong right away because he is bold, lively, and afraid of nothing. But the story also teaches something else: even great power needs a steadier heart.

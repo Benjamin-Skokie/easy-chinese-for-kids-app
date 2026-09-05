@@ -271,7 +271,7 @@ Character identity note:
 - Shared renderer/UI code lives in [scripts/culture_glossary.mjs](../scripts/culture_glossary.mjs).
 - Both article builders support the syntax:
   - [scripts/build_culture_articles.mjs](../scripts/build_culture_articles.mjs) for `zh.md` / `en.md` manifest articles
-  - [scripts/build_philosophy_page.mjs](../scripts/build_philosophy_page.mjs) for `page.md` culture book / experiment pages
+  - [scripts/build_philosophy_page.mjs](../scripts/build_philosophy_page.mjs) for `page.md` Culture book pages
 - Glossary CSS lives in both [culture/article-template.css](../culture/article-template.css) and [culture/shared/styles.css](../culture/shared/styles.css). Generated `page.md` pages copy `culture/shared/styles.css` into each output folder when rebuilt.
 - Older hand-authored static book pages under `culture/books/food`, `culture/books/figures`, `culture/books/folk-customs`, and `culture/books/folk-tales` link shared assets [culture/shared/glossary.css](../culture/shared/glossary.css) and [culture/shared/glossary.js](../culture/shared/glossary.js). If glossary terms are added directly to those HTML pages, use the same rendered structure as the builders: `.glossary-entry` wrapping a `.glossary-term` button and `.glossary-popover`.
 

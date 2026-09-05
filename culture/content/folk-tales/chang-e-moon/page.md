@@ -16,126 +16,122 @@ title_en: Chang'e Flies to the Moon
 [section]
 page: 1
 layout: text-wrap-image
-heading_zh: 天上有十个太阳
-heading_en: Ten Suns in the Sky
+heading_zh: 天空一下子多了九个太阳
+heading_en: The Day the Sky Had Nine Suns Too Many
 image: ten-suns.webp
-caption_zh: 很久以前，十个太阳一起照着大地，大家都热得受不了。
-caption_en: Long ago, ten suns shone down at once, and the world grew too hot to bear.
+caption_zh: 十个太阳把河水晒浅、把土地晒裂。后羿举起弓，因为大地只需要一个太阳。
+caption_en: Ten suns shrink the rivers and crack the ground. Hou Yi raises his bow because the world needs only one sun.
 [zh]
-传说里，很久很久以前，天上突然出现了十个太阳。
+这个古老故事有许多讲法。下面这一种，是今天很多孩子听过的版本。
 
-河水快干了，田地裂开了，人和动物都热得很难受。
+太阳原本应该轮流升上天空。可是有一天，十个太阳竟然一起出现了。树叶卷了起来，河水越变越浅，土地裂开一道道口子。人和动物躲来躲去，却怎么也躲不开热浪。
 
-这时候，有一位很厉害的英雄叫后羿。
+后羿是一位非常厉害的弓箭手。他爬上高处，站稳双脚，拉开长弓。一支箭、两支箭、三支箭……九个太阳接连从天空落下。
 
-他拉开神弓，射下了九个太阳，只留下一个照亮世界。
+后羿停下了。他把最后一个太阳留在天上，因为大地还需要光和温暖。风终于又吹过田野，人们也终于敢从阴影里走出来了。
 [/zh]
 [en]
-In the legend, ten suns suddenly appeared in the sky long, long ago.
+This old tale has been told in many ways. Here is one of the best-known versions.
 
-Rivers nearly dried up, fields cracked, and people and animals suffered in the heat.
+The suns were supposed to take turns crossing the sky. Then one day, all ten appeared at once. Leaves curled. Rivers shrank. Cracks opened across the fields. People and animals searched for shade, but there was nowhere cool to hide.
 
-At that time, there was a great hero named Hou Yi.
+Hou Yi was a famous archer. He climbed to a high place, planted his feet, and pulled back his bow. One arrow flew, then another, then another. Nine suns fell from the sky.
 
-He lifted his magic bow and shot down nine of the suns, leaving only one to light the world.
+Then Hou Yi stopped. The world still needed one sun for light and warmth. At last, a breeze moved across the fields, and people stepped out of the shadows.
 [/en]
 [/section]
 
 [section]
 page: 2
 layout: text-wrap-image
-heading_zh: 后羿和嫦娥
-heading_en: Hou Yi and Chang'e
+heading_zh: 木盒里装着一颗不死药
+heading_en: The Magic Medicine in the Wooden Box
 image: magic-medicine.webp
-caption_zh: 后羿把一颗神奇的仙药交给嫦娥保管，谁也不知道它会改变命运。
-caption_en: Hou Yi asks Chang'e to keep a magic medicine safe, not knowing it will change everything.
+caption_zh: 这颗仙药能让一个人永远活下去。后羿不想离开嫦娥，便请她把药收好。
+caption_en: The medicine could make one person live forever. Hou Yi asks Chang'e to guard it because he does not want to leave her.
 [zh]
-后羿的妻子叫嫦娥，她善良又温柔。
+后羿射下九个太阳以后，西王母送给他一颗不死药。西王母是中国古代故事里一位很有力量的女神。谁吃下这颗药，谁就能永远活下去，离开人间成为仙人。
 
-有一天，后羿得到了一颗仙药。听说谁吃了它，谁就能飞到天上去。
+可是，永远活着也有一个很大的代价。后羿爱他的妻子嫦娥，不愿意一个人飞走，把她留在地上。所以，他没有吃药。
 
-可是后羿不想离开嫦娥，所以把仙药交给她保管。
+后羿把仙药放进一个木盒，请嫦娥好好保管。嫦娥盖上盒盖，把它藏了起来。
 
-那时候，他们谁也不知道，这颗小小的仙药以后会带来多大的变化。
+可是，后羿的一名学生蓬蒙已经知道了仙药的秘密。他想要的不是一个普通人的一生。他想要永远活下去。
 [/zh]
 [en]
-Hou Yi's wife was named Chang'e. She was gentle and kind.
+After Hou Yi shot down the nine suns, the Queen Mother of the West gave him a magic medicine. She was a powerful goddess in old Chinese stories. Whoever swallowed the medicine would live forever and rise into the sky.
 
-One day, Hou Yi received a magic medicine. People said that whoever swallowed it could rise to the sky.
+But the medicine could help only one person. Hou Yi loved his wife, Chang'e. He did not want to fly away alone and leave her behind. So he did not take it.
 
-But Hou Yi did not want to leave Chang'e, so he asked her to keep it safe.
+Hou Yi placed it inside a wooden box and asked Chang'e to guard it. She closed the lid and hid the box away.
 
-At that moment, neither of them knew how much that tiny medicine would change their future.
+But one of Hou Yi's students knew their secret. His name was Peng Meng, and he wanted to live forever.
 [/en]
 [/section]
 
 [section]
 page: 3
 layout: text-wrap-image
-heading_zh: 贪心的蓬蒙
-heading_en: The Greedy Peng Meng
+heading_zh: 蓬蒙伸手去抢木盒
+heading_en: Peng Meng Reaches for the Box
 image: peng-meng.webp
-caption_zh: 蓬蒙想抢走仙药，嫦娥只好赶快做出选择。
-caption_en: Peng Meng wants to steal the medicine, and Chang'e must make a quick choice.
+caption_zh: 蓬蒙拿着刀逼近木盒。嫦娥挡在前面，必须赶在他之前拿到仙药。
+caption_en: Peng Meng approaches the box with a sword. Chang'e stands in his way and must reach the medicine first.
 [zh]
-后羿有一个弟子叫蓬蒙，他知道了仙药的事，也想把它抢走。
+一天，后羿离开了家。蓬蒙等到他走远，便拿着刀闯了进来。他径直走向藏着仙药的木盒，逼嫦娥把药交出来。
 
-有一天，后羿出门去了，蓬蒙闯进家里，逼嫦娥把仙药交出来。
+嫦娥挡在木盒前面。她打不过拿刀的蓬蒙，可是她也不能让他把仙药抢走。
 
-嫦娥心里明白，如果这样坏的人吃了仙药，一定会做更多坏事。
+蓬蒙向木盒伸出手。就在他快要碰到盒子时，嫦娥抢先取出仙药，一口吞了下去。
 
-所以她抢在前面，把仙药吞了下去。
+她的衣袖忽然飘了起来，双脚也慢慢离开地面。嫦娥保住了仙药，没有让蓬蒙抢走；可是仙药也正把她带离自己的家。
 [/zh]
 [en]
-Hou Yi had a student named Peng Meng, and he learned about the magic medicine.
+One day, Hou Yi left home. Peng Meng waited until he was gone, then burst inside with a sword. He went straight to the wooden box and demanded the medicine.
 
-One day, while Hou Yi was away, Peng Meng burst into the house and demanded it.
+Chang'e stood between him and the box. She could not fight a man holding a sword, but she could not let him steal the medicine.
 
-Chang'e understood that if such a greedy man gained that power, he could do terrible things.
+Peng Meng reached for the box. Before his hand touched it, Chang'e grabbed the medicine and swallowed it.
 
-So she acted first and swallowed the medicine herself.
+Her sleeves began to float. Her feet slowly lifted from the floor. Chang'e had kept the medicine away from Peng Meng, but now it was carrying her away from home.
 [/en]
 [/section]
 
 [section]
 page: 4
 layout: text-wrap-image
-heading_zh: 飞向月亮
-heading_en: Flying Toward the Moon
+heading_zh: 月亮看得见，却够不着
+heading_en: The Moon Is Bright—but Far Away
 image: hou-yi-looking-at-the-moon.webp
-caption_zh: 嫦娥飞向月亮以后，后羿只能在地上抬头想念她。
-caption_en: After Chang'e flies to the moon, Hou Yi can only look up and miss her from earth.
+caption_zh: 后羿和乡亲们把水果和饼摆在月光下。后来的故事还让玉兔住进月宫，陪在嫦娥身边。
+caption_en: Hou Yi and his neighbors set fruit and cakes under the moon. In later tales, the Jade Rabbit keeps Chang'e company.
 [zh]
-吃下仙药以后，嫦娥觉得身体越来越轻。
+嫦娥飘出窗外，飞过屋顶，又穿过云层。她越升越高，最后来到了月亮上。这个版本的故事里，她再也不能回到地面。
 
-她慢慢飞出窗外，飞向又高又远的月亮。
+后羿回家时，只看见打开的木盒，嫦娥却不见了。他跑到院子里。月亮又圆又亮，可是不管他怎样伸手，都碰不到它。
 
-后羿回家以后找不到她，只能站在地上望着夜空，一遍一遍叫她的名字。
+后羿把水果和饼摆在月光下，仿佛还能和嫦娥一起吃。乡亲们也来到院子里，陪他抬头望月。
 
-后来，人们每到八月十五就会赏月、吃月饼，也会想起嫦娥的故事。
+今天，人们常在中秋节讲这个故事。中秋节是农历八月十五，那一晚的月亮通常又圆又亮。家人会聚在一起赏月、吃月饼。后来的月宫故事还给嫦娥添了一位伙伴：一只在桂树下捣药的玉兔。
 [/zh]
 [en]
-After swallowing the medicine, Chang'e felt her body grow lighter and lighter.
+Chang'e floated through the window, over the rooftops, and past the clouds. Higher and higher she rose, until she reached the moon. In this version of the tale, she could never return to the ground.
 
-Slowly, she floated out the window and rose toward the faraway moon.
+When Hou Yi came home, he found the wooden box open and Chang'e gone. He ran outside. The moon was round and bright, but no matter how far he reached, he could not touch it.
 
-When Hou Yi came home, he could not find her. He could only stand below the night sky and call her name again and again.
+Hou Yi set fruit and cakes in the moonlight, as if he could still share them with her. His neighbors came and looked up with him.
 
-Later, people began to admire the moon and eat mooncakes on the fifteenth day of the eighth lunar month, remembering Chang'e's story.
+Today, people often tell this story during Mid-Autumn Festival, when families gather under the round autumn moon and share mooncakes. Later moon tales give Chang'e a companion too: the Jade Rabbit, who pounds magic medicine beneath a tree on the moon.
 [/en]
 [/section]
 
 [ending]
-heading_zh: 月亮上的故事
-heading_en: A Story in the Moonlight
+heading_zh: 十个太阳，一轮月亮
+heading_en: Ten Suns, One Moon
 [zh]
-所以很多人一讲到中秋节，就会想起嫦娥、后羿和月亮上的玉兔。
-
-这个故事让月亮不只是月亮，也变成了思念、爱和团圆的象征。
+这个故事从十个火辣辣的太阳开始，最后停在一轮清凉的月亮下。下次中秋节吃月饼或提灯笼时，不妨抬头看看：月亮上的影子，像不像一只正在捣药的兔子？
 [/zh]
 [en]
-That is why so many people think of Chang'e, Hou Yi, and the jade rabbit when Mid-Autumn Festival is mentioned.
-
-This story makes the moon more than a moon. It becomes a symbol of love, longing, and reunion.
+The tale begins with ten blazing suns and ends beneath one cool moon. The next time you carry a lantern or bite into a mooncake, look up. Do the moon's shadows look a little like a rabbit pounding medicine?
 [/en]
 [/ending]

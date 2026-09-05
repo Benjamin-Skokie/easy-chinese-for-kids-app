@@ -1,4 +1,4 @@
-# “没有指板，二胡怎样找到音？”— References and Editorial Notes
+# “两根弦，怎样唱出那么多声音？”— References and Editorial Notes
 
 This file is for editorial research and does not render on the website.
 
@@ -198,3 +198,8 @@ Editorial boundary:
 - `2-abing-moon-alley.webp` is retained only with a strong caption identifying it as modern imagination. Its moon, canal alley, solitary performance, clothes, and pose are not evidence for the composition of *Erquan Yingyue* or the 1950 recording session.
 - `3-erhu-parts-horsehair.webp` is retained as a parts illustration. The horse and hair close-up explain traditional bow material only; they do not prove a single origin story, emotional meaning, or the old manuscript’s unsupported “half the instrument is horse” claim.
 - Children are invited to observe a teacher or performer, not to dismantle an erhu, loosen strings, remove the bow, shift the bridge, touch museum objects, or test animal-skin materials.
+
+## 2026 child-facing revision
+
+- The main article now explains the fingerboard-free neck, bow hair between two strings, sound box and membrane, the huqin family, Liu Tianhua's role, and Abing's six 1950 recordings.
+- The separate modern animal-material discussion and technical cautions were removed from the children's narrative; source and image boundaries remain above.

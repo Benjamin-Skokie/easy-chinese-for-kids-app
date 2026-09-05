@@ -1,6 +1,6 @@
 ---
-title_zh: 唐诗：一句话就是一个世界
-title_en: Tang Poems: One Line Can Hold a Whole World
+title_zh: 唐诗：读一首诗，看见一幅画
+title_en: Tang Poems: Read a Poem, See a Picture
 slug: tang-poems
 category: literature
 difficulty: 中等
@@ -9,117 +9,151 @@ style_notes: "用 --- 分隔 frontmatter；正文强调优先用 *斜体*；尽�
 ---
 
 [hero]
-title_zh: 唐诗：一句话就是一个世界
-title_en: Tang Poems: One Line Can Hold a Whole World
+title_zh: 唐诗：读一首诗，看见一幅画
+title_en: Tang Poems: Read a Poem, See a Picture
 [/hero]
 
 [section]
 page: 1
 layout: text-wrap-image
-heading_zh: 唐诗很会用很少的字，画很大的画面
-heading_en: Tang Poems Use Very Few Words to Paint a Very Big Picture
+heading_zh: 第一幅画：雪地里，谁还在钓鱼？
+heading_en: Picture One: Who Is Still Fishing in the Snow?
 image: 1-fisherman-in-snow.webp
-caption_zh: 一只小船，一个老人，一条冷冷的江，就能让人一下看见整首诗。
-caption_en: One small boat, one old fisherman, and one cold river can let a whole poem appear at once.
+caption_zh: 山上没有飞鸟，路上没有行人，雪江上却还有一只小船。
+caption_en: No birds in the mountains. No travelers on the paths. Yet one small boat is still on the snowy river.
 [zh]
-唐诗最让人佩服的一点，就是字很少，画面却很大。
+一千多年前的[[唐朝]]，诗人会写雪、月亮、朋友、破掉的屋顶，还有离家很远的路。我们先从最安静的一幅画开始。
 
-像柳宗元写雪江独钓，只用了短短几句，就让你看到很多山、很多路、很冷的江水，还有一只小船上的老人。人不多，话也不多，可安静和寒冷一下就都出来了。
+唐朝诗人柳宗元只用二十个字，就写出了一整片冬日雪景。这首诗叫《江雪》。先别急着“分析”，看看它怎样把镜头一步一步拉近。
 
-这就是唐诗的本事。它不把每件事都讲满，却会给你一个很亮、很稳的画面，让你自己在心里把后面的感觉慢慢长出来。
+第一句：*千山鸟飞绝* - 一座座山上，看不见一只飞鸟。第二句：*万径人踪灭* - 一条条路上，看不见一个行人。
+
+第三句：*孤舟蓑笠翁* - 只有一只小船。船上坐着一个穿蓑衣、戴斗笠的老人。第四句：*独钓寒江雪* - 他独自在飘雪的冷江上钓鱼。
+
+“千山”和“万径”不是要我们真的数山和路。它们让眼前的空旷变得大极了。前两句把飞鸟和行人都移出画面，后两句才让小船和老人出现。他觉得孤单吗？他很平静吗？还是他偏偏不肯被一场大雪赶回家？诗没有替我们回答。这正是它好玩的地方。
 [/zh]
 [en]
-One of the most impressive things about Tang poems is how few words they use while still opening a huge picture.
+More than 1,000 years ago, during China's [[Tang dynasty]], poets wrote about snow, moonlight, friends, broken roofs, and roads far from home. Let us begin with the quietest picture of all.
 
-Take Liu Zongyuan's famous snow poem. In only a few short lines, you can see mountains, empty paths, cold river water, and an old fisherman alone in a small boat. There are not many words, and there is not much movement, but the quiet and the cold arrive all at once.
+One Tang poet, Liu Zongyuan, created an entire winter scene with only twenty Chinese characters. His poem is called *River Snow*. Watch how it begins far away, then moves closer.
 
-That is one gift of Tang poetry. It does not explain everything. Instead, it gives you one bright, steady picture and lets the feeling keep growing inside you.
+Line 1: *千山鸟飞绝* - Across the mountains, not a single bird is flying. Line 2: *万径人踪灭* - Along all the paths, not one traveler can be seen.
+
+Line 3: *孤舟蓑笠翁* - In one small boat sits an old man in a straw cape and hat. Line 4: *独钓寒江雪* - Alone, he fishes on the cold river as snow falls.
+
+The poem does not really ask us to count a thousand mountains or ten thousand paths. Those big numbers make the empty view feel enormous. First, every bird and traveler disappears. Then one boat and one fisherman come into view. Is the fisherman lonely? Peaceful? Or simply too stubborn to let a snowstorm send him home? The poem does not answer for us. That is part of the fun.
 [/en]
 [/section]
 
 [section]
 page: 2
 layout: text-wrap-image
-heading_zh: 为什么唐朝有那么多人写诗？
-heading_en: Why Did So Many People in the [[Tang dynasty]] Write Poems?
+heading_zh: 第二幅画：一场有诗的聚会
+heading_en: Picture Two: A Party with Poems
 image: 2-tang-poetry-gathering.webp
-caption_zh: 在唐朝，写诗不只是在书房里。有时朋友聚会、喝酒、送别，也会当场作诗。
-caption_en: In the Tang dynasty, poetry did not stay only in the study. Friends might write poems at a gathering, over wine, or when saying goodbye.
+caption_zh: 这幅现代想象图里，朋友们一边喝酒聊天，一边等着听下一句好诗。
+caption_en: In this modern imagined scene, friends talk over cups of wine and wait to hear the next good line.
 [zh]
-在[[唐朝]]，诗离很多人的日常生活并不远。想读书做官的人要学诗，朋友聚会时也可能写诗，送别的时候更常常写诗。
+这幅图看起来像一场聚会，因为它就是一场聚会。有酒有菜，有音乐和聊天。有些聚会上还会有人出题、选韵，大家当场作诗。一句写得特别妙，旁边的人可能会拍手叫好。
 
-所以诗不只是课本里的东西。它像一种很聪明、也很自然的说话办法。高兴的时候能写，舍不得的时候能写，看到风景的时候也能写。
+所以，唐朝人不是因为“不唱歌”才都去写诗。他们当然唱歌，有些诗后来也会配上曲子唱。对读书人来说，诗还有别的用处：从七世纪后期开始，进士考试会考作诗。诗写得好，也可能让朋友、主人和有名望的人记住你。
 
-后来留下来的《全唐诗》里，有几万首作品。这说明唐朝喜欢诗的人真的很多，诗也真的走进了很多人的生活里。
+不过，有些诗被写下来，只是因为一句平常的“再见”实在不够。有一次，诗人王维的一位朋友要去遥远的西方。王维写下了《送元二使安西》：*渭城朝雨浥轻尘，客舍青青柳色新。劝君更尽一杯酒，西出阳关无故人。*
+
+清晨的小雨打湿了路上的尘土，旅店旁的柳树变得青翠。朋友就要出发了，王维没有说一大篇话，只请他再喝一杯。后来，这首送别诗真的被人唱成了歌。诗和歌从来不是两支互不来往的队伍。
 [/zh]
 [en]
-In the [[Tang dynasty]], poetry was not far from everyday life. People who wanted to enter government had to study it. Friends could write it at gatherings. People often wrote it when saying goodbye.
+This picture looks like a party because it is one. There is food, wine, music, and conversation. At some gatherings, people also made poems on the spot. Someone might choose a rhyme. Someone else would pick up a brush. A wonderful line could make the whole table cheer.
 
-So poetry was not only a school subject. It was also a smart and natural way to speak. You could use it when you were happy, when you felt reluctant to part, or when a landscape suddenly touched you.
+So no, people in the Tang dynasty did not write poems because they had no songs. They sang plenty of songs, and some poems were set to music. Poetry had other uses too. From the late 600s onward, an important exam for men who hoped to work for the emperor included writing a poem. Writing poems also let educated people show their skill to one another.
 
-Later, huge collections preserved many tens of thousands of Tang poems. That tells us something simple and important: a great many people in the Tang world truly cared about poetry, and poetry lived close to ordinary life.
+But sometimes a poem was written because an ordinary goodbye did not feel like enough. The poet Wang Wei once had to say goodbye to a friend who was leaving for a distant place in the west. He wrote: *Morning rain settles the dust on the road. Beside the inn, the willows shine fresh and green. My friend, have one more cup with me. Beyond Yang Pass, you will find no old friends.*
+
+Wang Wei did not give his friend a long speech. He simply asked him to stay for one more cup. Later, people really did sing this farewell poem as a song. Poetry and music were never on opposite teams.
 [/en]
 [/section]
 
 [section]
 page: 3
 layout: text-wrap-image
-heading_zh: 李白往天上看，杜甫往人间深处看
-heading_en: [[Li Bai]] Looked Upward, and [[Du Fu]] Looked Deep into Human Life
+heading_zh: 第三幅画：月亮来了，屋顶飞了
+heading_en: Picture Three: The Moon Arrives, and the Roof Flies Away
 image: 3-li-bai-and-du-fu.webp
-caption_zh: 李白常让人想到月亮、瀑布和远方；杜甫常让人想到村庄、风雨和受苦的人。
-caption_en: Li Bai often brings to mind moonlight, waterfalls, and distance. Du Fu often brings to mind villages, wind and rain, and struggling people.
+caption_zh: 李白请月亮来喝酒；杜甫的茅草屋顶却被秋风吹走了。
+caption_en: Li Bai invites the moon for a drink, while an autumn wind tears the straw from Du Fu's roof.
 [zh]
-说到唐诗，很多人最先想到的，就是李白和杜甫。
+李白和杜甫是朋友，也是唐朝最有名的两位诗人。他们都写过许多种诗，不过下面这两个瞬间，刚好能让我们看见他们的诗有多么不同。
 
-这两个人都很会写，可他们常常看向不同的地方。李白喜欢看月亮、瀑布和高高的天空，写出来的诗常常很亮，很飞扬。杜甫更常看见人间的辛苦，看见战乱后的村庄，看见风把屋顶吹坏以后，一家人怎么发愁。
+李白一个人坐在月下喝酒，听起来有点冷清。可是他一抬杯，奇妙的事情发生了：
 
-一个像把眼睛抬高了，一个像把眼睛放低了。也正因为这样，他们放在一起的时候，刚好让孩子看见：原来诗可以写壮阔，也可以写心疼。
+*举杯邀明月，对影成三人。*
+
+他把月亮请来，又把自己的影子算进去。一眨眼，一个人的夜晚变成了三个人的聚会：一位诗人，一轮月亮，还有一个怎么赶也赶不走的影子。
+
+杜甫遇到的却不是安静的月夜。一个秋天，大风卷走了他茅屋上的草，雨又漏进屋里，全家冷得睡不着。他本来可以只说：“我真需要一间结实的屋子。”可他想到的却是所有挨冻的人：
+
+*安得广厦千万间，大庇天下寒士俱欢颜。*
+
+他盼望有千千万万间结实的屋子，让每个受冻的人都能住进去，露出笑脸。李白请月亮来陪自己，杜甫的屋顶飞了，却还在惦记别人的屋顶。诗可以跳进想象里，也可以把心伸向别人。
 [/zh]
 [en]
-When people talk about Tang poetry, the first two names they often mention are Li Bai and Du Fu.
+Li Bai and Du Fu were friends, and they became two of the most famous Tang poets. Both wrote many kinds of poems, but these two moments show just how different poems can feel.
 
-Both men wrote beautifully, but they often looked in different directions. Li Bai loved moonlight, waterfalls, and the high sky. His poems can feel bright and soaring. Du Fu more often noticed the hardship of human life. He saw villages after war and worried families under broken roofs after heavy wind.
+Li Bai is sitting alone under the moon with a cup of wine. That sounds quiet until he lifts his cup and something magical happens: *I lift my cup and invite the bright moon. With my shadow, now we are three.*
 
-One poet seems to lift his eyes upward, while the other lowers his eyes toward the world of ordinary people. Put them side by side, and a child can quickly see something important: poetry can write about grandeur, and it can also write about care and sorrow.
+Suddenly, one person's evening becomes the strangest little party: one poet, one moon, and one shadow that follows everywhere.
+
+Du Fu had a very different night. One autumn, a strong wind tore the straw from his roof. Then rain leaked inside. His family was cold and could not sleep. He could have ended his poem by saying, “I need a stronger house.” Instead, he thought of everyone who had no warm home:
+
+*If only there were thousands of strong houses, sheltering everyone who is cold and poor, and making them smile.*
+
+Li Bai invites the moon to keep him company. Du Fu loses his own roof and worries about other people's roofs. One poem leaps into imagination. The other reaches out with care.
 [/en]
 [/section]
 
 [section]
 page: 4
 layout: text-wrap-image
-heading_zh: 边塞诗会把最冷的地方，写得又远又亮
-heading_en: Borderland Poems Make Far Cold Places Feel Bright and Vast
+heading_zh: 第四幅画：大雪怎么变成了梨花？
+heading_en: Picture Four: How Did Snow Become Pear Blossoms?
 image: 4-borderland-poetry.webp
-caption_zh: 大漠、边关、风雪和远行的人，常常一起出现在边塞诗里。
-caption_en: Desert, frontier passes, wind, snow, and people traveling far from home often appear together in borderland poems.
+caption_zh: 在唐朝遥远的西北边地，风雪会把道路、城堡和骑马的人一起变成白色。
+caption_en: On the Tang frontier in the far northwest, snow could turn roads, forts, and riders white.
 [zh]
-唐诗里还有一类孩子很容易一下记住，就是边塞诗。它常写大漠、边关、风雪，还有很远很远的路。
+唐朝的西北边地离都城很远。那里有沙漠、高山、堡垒，也有刺骨的寒风。岑参就曾在这样的地方生活。他熟悉那里的风雪。一次，他送朋友回都城，朋友还没出发，大雪已经盖住了前面的路。
 
-有意思的是，边塞诗不只是写苦。它常常把最冷的雪、最远的地方，也写得很壮观。读的人会觉得那里很难走，但也很辽阔，很有力量。
+*北风卷地白草折，胡天八月即飞雪。*
 
-所以边塞诗像是在告诉你：诗不只能写花和月亮，也能写风沙、盔甲、远征和人心里的勇气。
+北风扫过地面，把干草都吹折了。秋天才到，雪已经从天上落了下来。
+
+接着，岑参再看了一眼眼前的大雪：
+
+*忽如一夜春风来，千树万树梨花开。*
+
+树上当然没有真的开出梨花。白雪盖满枝头，让寒冷的边地忽然像春天一样开满了花。风还在吹，前面的路也依旧被雪盖住。可在骑马的人头顶，每一棵树都像正在开花。
 [/zh]
 [en]
-There is another kind of Tang poem that many children remember quickly: borderland poetry. These poems often speak of deserts, frontier gates, wind, snow, and very long roads.
+The Tang frontier in the far northwest was a long way from the capital. It had deserts, mountains, forts, and fierce winds. Cen Shen spent time in this faraway land and knew its wild weather. Once, as he said goodbye to a friend who was leaving for the capital, snow buried the road ahead.
 
-What makes them special is this: they do not write only about hardship. They can make the coldest snow and the farthest places look grand and powerful too. A reader feels that the land is difficult, but also vast and full of force.
+*The north wind sweeps across the ground and snaps the dry grass. It is only fall, but snow is already coming down.*
 
-That is why borderland poems matter. They show that poetry does not belong only to flowers and moonlight. It can also hold sand, armor, long journeys, and courage inside the heart.
+Then Cen Shen looks at the storm again: *It seems as if a spring wind arrived overnight and covered thousands of trees with white pear blossoms.*
+
+There are no pear blossoms, of course. Snow has covered every branch, making the frozen land look as if spring arrived in a single night. The wind is still blowing, and the road is still buried. But above the riders, every snowy tree seems to be in bloom.
 [/en]
 [/section]
 
 [ending]
-heading_zh: 小结
-heading_en: In Summary
+heading_zh: 你记住了哪一幅画？
+heading_en: Which Picture Stayed with You?
 [zh]
-唐诗最会用少少的字，做大大的世界。它能写雪江上的一只小船，也能写酒席上的作诗，还能写月亮、村庄、大漠和风雪。
+合上这一页，看看哪些画面还留在脑海里：大雪中的一个渔翁，朋友出发前的最后一杯酒，被李白请来的月亮，被秋风吹走的屋顶，还有西北边地一夜“开满”的白色梨花。
 
-所以孩子读唐诗的时候，常会觉得像在一扇扇小窗前停下来。每一首都不长，可每一首后面都像还有很远的地方。
+唐诗并不都像一个样子。它可以安静、好笑、难过、温暖，也可以忽然变得很狂野。它的字很古老，最好的画面却还是会一下子跳到我们眼前。你最想走进哪一幅？哪一幅你只想躲在暖和的屋子里看？
 [/zh]
 [en]
-Tang poems are masters of making a big world out of very few words. They can show one small boat on a snowy river, a poem written at a gathering, moonlight, villages, deserts, and wind.
+Close the page and see what remains: one fisherman in the snow, a final cup before a friend leaves, the moon invited to Li Bai's party, a roof torn away by the wind, and a faraway land where snow “blooms” like white pear flowers.
 
-That is why reading Tang poetry can feel like stopping at a row of little windows. Each poem is short, but each one seems to open onto a much larger distance behind it.
+Tang poems do not all sound alike. They can be still, funny, sad, warm, or suddenly wild. Their words are old, but their best pictures still appear in a flash. Which picture would you step into? Which one would you rather watch from somewhere warm?
 [/en]
 [/ending]

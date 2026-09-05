@@ -1,67 +1,80 @@
-# Daoism — References and Editorial Notes
+# References for “How Did the Eight Immortals Cross the Sea?”
 
-This file is for editorial research and does not render on the website.
+This file is for editorial research and does not render on the website. The child-facing article gives a short introduction to Daoism, then tells the Eight Immortals story. It does not try to summarize all Daoist beliefs or practices.
 
-## Daoist Thought, Daoist Religion, and the Problem of a Single Origin
+## Current child-facing version
+
+Rewritten: 2026-09-02
+
+- Pages 1–2 explain that Daoism developed in China and connect the Dao, nature, caring for life, long-life practices, and stories of immortals.
+- Pages 3–4 tell the crossing as a continuous story, including the popular Dragon Palace conflict and Guanyin’s intervention.
+- Page 5 gives only a brief account of Daoism’s influence on Chinese art, stories, festivals, language, and ideas about caring for life.
+- The former textbook-like sections about all eight biographies and how the group formed have been removed.
+- Dangerous historical practices, ritual paperwork, talismans, and doctrinal detail remain outside the child-facing article.
+
+## Daoism, the Dao, caring for life, and immortals
 
 Source: Stanford Encyclopedia of Philosophy, “Religious Daoism”
-URL: https://plato.stanford.edu/entries/daoism-religion/
-Accessed: 2026-08-20
+URL: https://plato.stanford.edu/archives/spr2018/entries/daoism-religion/
+Accessed: 2026-09-02
+
+Source: Columbia University, Asia for Educators, Stephen F. Teiser, “The Spirits of Chinese Religion”
+URL: https://afe.easia.columbia.edu/cosmos/main/spirits_of_chinese_religion.pdf
+Accessed: 2026-09-02
 
 Supports:
 
-- Daoism includes both what modern readers call Daoist thought and organized religious traditions; the two cannot be separated into a simple “philosophy first, religion later” story.
-- Laozi and the *Dao De Jing* are central to Daoist identity, but Daoism did not develop exclusively or in a clearly traceable straight line from that text.
-- Other contributors included healing and protective practices, masters of methods, Huang-Lao traditions, the deification of Laozi, meditation, alchemy, and local religious traditions.
-- Daoism includes both individual cultivation and communal ritual.
+- Daoism is a complex Chinese tradition that developed over time rather than beginning in one simple event.
+- The Dao is the source and underlying way of the world in Daoist thought.
+- Daoist traditions include practices often grouped under “nourishing life,” such as breathing, movement, diet, meditation, and other forms of self-cultivation.
+- Long life and immortality are important recurring themes, but they are not presented as the only cause or purpose of Daoism.
+- Daoist stories often describe *xian* as people who move beyond ordinary human limits through cultivation, divine encounters, or marvelous events.
 
 Editorial boundary:
 
-- Do not say “Daoism first was only a philosophy” or use the tree metaphor “Laozi was the root; gods and rituals were later branches.”
-- “Many streams” and “a house with many rooms” are modern explanatory metaphors, not claims made by an ancient source.
+- The river, rock, tree, and wind images are child-facing illustrations of adapting to nature, not quotations from the sources.
+- The article says that some Daoists hoped for immortality; it does not claim that every Daoist had the same goal.
+- “Caring for life” is used instead of giving young readers a technical survey of *yangsheng* practices.
+- No health practice in the article is presented as medical advice or as a promise of long life.
 
-## The Celestial Masters and the Date 142 CE
+## The Eight Immortals cross the sea
 
-Source: Columbia University, Asia for Educators, “Daoism”
-URL: https://afe.easia.columbia.edu/cosmos/ort/daoism.htm
-Accessed: 2026-08-20
+Source: Palace Museum, “八仙过海”
+URL: https://www.dpm.org.cn/lemmas/244863.html
+Accessed: 2026-09-02
 
-Source: Journal of Chinese History review of Terry F. Kleeman, *Celestial Masters: History and Ritual in Early Daoist Communities*
-URL: https://www.cambridge.org/core/journals/journal-of-chinese-history/article/celestial-masters-history-and-ritual-in-early-daoist-communities-by-terry-f-kleeman-cambridge-mass-harvard-university-press-2016-446-pages-4995-4995-cloth/9F4DDD1189BEBA1C38A9E5D5F58A4D6C
-Accessed: 2026-08-20
+Source: China Intangible Cultural Heritage Network and Digital Museum, “八仙传说”
+URL: https://www.ihchina.cn/project_details/12271/
+Accessed: 2026-09-02
+
+Primary text consulted: Wu Yuantai, *Dongyou Ji* (*Journey to the East*), chapter 56, “观音和好朝天”
+URL: https://zh.wikisource.org/wiki/%E6%9D%B1%E9%81%8A%E8%A8%98/%E7%AC%AC56%E5%9B%9E
+Accessed: 2026-09-02
 
 Supports:
 
-- The Celestial Masters tradition dates Lord Lao's revelation to Zhang Daoling to 142 CE in the region of present-day Sichuan.
-- The oldest material evidence described in this research is the Zhang Pu stele of 173 CE, which records transmission of revealed texts to officials of a Celestial Masters ritual organization.
-- Early communities had ethical rules, healing through confession, written petitions, religious leaders, shared ritual, and communal meals.
+- The familiar Eight Immortals group is an important part of Chinese folk and Daoist legend.
+- In the best-known crossing story, they decide not to ride clouds and instead use their own treasures to cross the East Sea.
+- Different versions give the immortals somewhat different treasures and methods.
+- The story gave rise to “八仙过海，各显神通,” a saying about different people using their own abilities or methods.
+- One widely told continuation has a conflict with the Dragon King’s family, Lan Caihe being taken, and Guanyin bringing the two sides to peace.
+- In *Dongyou Ji*, the dispute begins with the Dragon King’s side taking Lan Caihe’s jade boards and holding Lan Caihe in the Dragon Palace. The quarrel grows into a much larger battle before Guanyin helps settle it.
 
 Editorial boundary:
 
-- Present the 142 revelation as the tradition's sacred account, not as an observed historical event.
-- Do not call 142 the uncontested “birthday of Daoism.” It is a traditional date attached to one foundational organized movement.
-- The article simplifies a complicated scholarly debate by saying organized Daoist communities appear in the late Eastern Han. It does not claim that no earlier religious ingredients existed.
+- The article clearly presents the crossing and Dragon Palace events as legend, not history.
+- The Palace Museum’s short entry ends with the crossing; the conflict and peaceful ending follow the broader version summarized by the national intangible-cultural-heritage source.
+- The article follows the national intangible-cultural-heritage summary for the story’s main shape and uses *Dongyou Ji* only to check the jade boards, Lan Caihe’s capture, and Guanyin’s mediation.
+- The old novel includes deaths, enormous armies, and several additional divine figures. Those details are deliberately omitted from the version for ages six to ten; the conflict is shortened to the rescue of a friend and a peaceful settlement.
+- Guanyin is identified as a Buddhist figure so children do not mistake her for one of the Daoist Eight Immortals. Her appearance also reflects the way figures from different traditions can meet in Chinese popular stories.
+- “Having so much fun,” the sounds reaching the palace, “Splash!” and other small physical details are child-facing story bridges, not quotations from an old text.
+- `4-tieguai-li-lu-dongbin-crossing.webp` follows a popular child-facing image of Tieguai Li’s crutch becoming a little wooden boat and Lü Dongbin riding his sword. The Palace Museum records variants in which Tieguai Li stands on the crutch itself and Lü Dongbin rides a flute. The article does not claim one fixed version.
 
-## Laozi as Ancient Teacher and Divine Lord
+## The Eight Immortals in art and culture
 
-Source: Stanford Encyclopedia of Philosophy, “Laozi”
-URL: https://plato.stanford.edu/entries/laozi/
-Accessed: 2026-08-20
-
-Source: Stanford Encyclopedia of Philosophy, “Religious Daoism,” sections 1.1 and 2.5
-URL: https://plato.stanford.edu/entries/daoism-religion/
-Accessed: 2026-08-20
-
-Supports:
-
-- The historical identity of Laozi and the authorship and formation of the *Dao De Jing* are uncertain.
-- In Daoist religion, Laozi is revered as Lord Lao, a divine teacher and manifestation associated with the Dao.
-
-Editorial boundary:
-
-- “Two roles” is a teaching device. It does not mean that Daoists themselves necessarily divide Laozi neatly into two unrelated identities.
-
-## Immortals and the Eight Immortals
+Source: Palace Museum, “八仙过海”
+URL: https://www.dpm.org.cn/lemmas/244863.html
+Accessed: 2026-09-02
 
 Source: Metropolitan Museum of Art, “Cup with Eight Daoist Immortals”
 URL: https://www.metmuseum.org/art/collection/search/41879
@@ -71,67 +84,26 @@ Source: British Museum, “Mountain group with Shoulao and the Eight Daoist Immo
 URL: https://www.britishmuseum.org/collection/object/A_1988-0727-1
 Accessed: 2026-08-20
 
-Source: Stanford Encyclopedia of Philosophy, “Religious Daoism,” section 6.1
-URL: https://plato.stanford.edu/entries/daoism-religion/
-Accessed: 2026-08-20
-
 Supports:
 
-- The familiar group of Eight Immortals had taken shape by the early thirteenth century; Yuan and early Ming drama further gathered and popularized the group.
-- Daoist immortal biographies include historical, semi-historical, and legendary figures, and stories often show people attaining extraordinary longevity or transformed existence through practice.
+- The Eight Immortals became popular subjects in traditional drama and decorative art.
+- Their different ages, clothing, faces, and objects help viewers recognize the group.
+- The saying connected with their crossing remains part of everyday Chinese language.
 
 Editorial boundary:
 
-- Present all Eight Immortals as legendary figures, not verified historical biographies.
-- Avoid unsupported mini-biographies such as “Zhongli Quan was a general” or “Lü Dongbin repeatedly failed the exams” unless a later article investigates the specific story traditions.
-- The existing illustration is a modern, cheerful interpretation. It should not be treated as a historically exact lineup or costume guide.
+- The last page gives examples rather than attempting a full history of Daoism’s influence.
+- `2-eight-immortals-v2.webp` is a modern illustration, not an authoritative portrait. It contains exactly eight adults and gives them clearly different ages, faces, clothes, and objects.
 
-## External and Internal Alchemy
+## Images
 
-Source: Stanford Encyclopedia of Philosophy, “Religious Daoism,” section 10
-URL: https://plato.stanford.edu/entries/daoism-religion/
-Accessed: 2026-08-20
+- `2-eight-immortals-v2.webp` shows exactly eight varied adult travelers. Tieguai Li has a bald crown, beard, gourd, and old crutch; Lü Dongbin is a middle-aged scholar with a sword; Han Xiangzi is a young man with a flute; He Xiangu carries a lotus; the other figures have distinct objects.
+- `4-tieguai-li-lu-dongbin-crossing.webp` focuses on two figures so children can immediately understand their different ways of crossing. The crutch’s transformation is complete, so no extra crutch appears beside the small boat, and Lü Dongbin has only the sword beneath his feet.
+- Other image files remain in the source folder but are not used by this version of the article.
 
-Source: Yang et al., “Mercury and Mercury-Containing Preparations: History of Use, Clinical Applications, Pharmacology, Toxicology, and Pharmacokinetics in Traditional Chinese Medicine,” *Frontiers in Pharmacology* (via PubMed Central)
-URL: https://pmc.ncbi.nlm.nih.gov/articles/PMC8924441/
-Accessed: 2026-08-20
+## Page-to-source map
 
-Supports:
-
-- External alchemy compounds elixirs by heating minerals and metals and is documented as a developed ritual tradition from about the third century CE.
-- Internal alchemy developed from the early eighth century onward and combines alchemical language with cosmology and earlier meditation practices.
-- Internal alchemy should not be explained as merely moving the external furnace into the body; its roots are multiple.
-- Cinnabar is mercury sulfide, and mercury exposure in preparation or ingestion can be toxic.
-
-Editorial boundary:
-
-- Do not state that all external elixirs used the same ingredients or that all alchemists were poisoned.
-- Do not state that internal alchemy simply replaced external alchemy after people discovered poisoning. The traditions overlapped.
-- Do not repeat a precise number of emperors allegedly killed by elixirs without a dedicated, source-based review.
-
-## Talismans and Ritual Writing
-
-Source: Grégoire Espesset, “A case study on the evolution of Chinese religious symbols from talismanic paraphernalia to Taoist liturgy,” *Bulletin of the School of Oriental and African Studies* 78.3 (2015)
-URL: https://www.cambridge.org/core/journals/bulletin-of-the-school-of-oriental-and-african-studies/article/abs/case-study-on-the-evolution-of-chinese-religious-symbols-from-talismanic-paraphernalia-to-taoist-liturgy/8F22DC531CEB02821CBE23BA0E265F6D
-Accessed: 2026-08-20
-
-Source: Stanford Encyclopedia of Philosophy, “Religious Daoism,” sections 3 and 5
-URL: https://plato.stanford.edu/entries/daoism-religion/
-Accessed: 2026-08-20
-
-Supports:
-
-- *Fu* is commonly translated as “talisman,” but talismans changed in form and function across time, from protective objects to multipurpose parts of Daoist liturgy.
-- Daoist ritual includes authorized specialists, ranks, registers, petitions, and other forms of writing that evoke administration and communication with a celestial bureaucracy.
-
-Editorial boundary:
-
-- Do not reduce all talismans to “commands for ghosts and spirits.” Their uses and meanings vary by lineage, period, and ritual setting.
-- The description of talismans as documents “addressed to the world of the gods” is a child-friendly simplification, not a universal technical definition.
-- Do not teach children to copy, burn, ingest, or otherwise reenact talisman practices.
-
-## Image Notes
-
-- `1-mountain-daoist-furnace.webp`: modern imagined scene; useful for introducing external alchemy, but not a portrait of a known person or documented night.
-- `2-eight-immortals.webp`: modern imagined group scene; useful for discussing the later legendary group, not for verifying each figure's standard attribute.
-- `3-daoist-talisman-writing.webp`: modern imagined scene; useful for explaining ritual writing, but the design on the paper should not be presented as an authenticated historical talisman.
+- Pages 1–2: Stanford Encyclopedia of Philosophy and Columbia University support the short introduction to Daoism, caring for life, long-life practices, and *xian*.
+- Page 3: the Palace Museum and the national intangible-cultural-heritage entry support the sea crossing, individual treasures, and the saying “八仙过海，各显神通.”
+- Page 4: the national intangible-cultural-heritage entry supports the Dragon Palace conflict and Guanyin’s mediation; *Dongyou Ji* chapter 56 supplies the older literary version checked during editing.
+- Page 5: the Palace Museum, Metropolitan Museum of Art, and British Museum support the Eight Immortals’ long life in drama and decorative art.

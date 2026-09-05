@@ -1,39 +1,27 @@
-# 木兰：一首诗怎样长成一千年的传奇？ — References and Editorial Notes
+# 花木兰 — References
 
 This file is for editorial research and does not render on the website.
 
-## Earliest surviving poem and its narrative limits
+## The story told in the old poem
 
-Source: Wikisource, “木兰诗,” text transmitted in *Yuefu Shiji*, volume 25
+Source: Wikisource, “木兰诗,” preserved in *Yuefu Shiji*, volume 25
 URL: https://zh.wikisource.org/zh-hans/%E6%9C%A8%E5%85%B0
 Accessed: 2026-08-21
 
 Supports:
 
-- The surviving ballad calls the heroine only “木兰,” not “花木兰,” and supplies no hometown or firm date.
-- The father appears on the conscription rolls; the household has no adult son and Mulan has no older brother. The poem does not say that the father is sick.
-- The ruler is called both “可汗” and “天子.” The poem compresses the campaign, later mentions both ten and twelve years, does not name a battle, and gives no training or promotion scene.
-- Mulan refuses an official post, returns home, changes clothes, surprises her comrades, and ends with the two-hares comparison.
+- Mulan's father is named on the conscription rolls. Her younger brother is still a child, and there is no adult son to go in her father's place.
+- Mulan gets a horse and riding gear, leaves home, crosses the Yellow River, travels north, and spends many years at war.
+- After the war, she refuses an official post and asks to return home.
+- She changes clothes at home, surprises the soldiers who fought beside her, and the poem ends with the image of two rabbits running together.
 
 Editorial boundary:
 
-- The public article paraphrases or briefly quotes this public-domain poem; it does not turn its poetic numbers, markets, place-names, or dialogue into a day-by-day military record.
-- It does not invent Mulan's thoughts, camp conversations, named friends, battle tactics, rank, or a punishment for discovery.
+- The poem compresses the war and does not describe named battles, training scenes, military rank, or a romance. The story does not add those details.
+- Dialogue and small reactions in the children's version are story-like paraphrases, not quotations or documented private conversations.
+- The ruler is called both *khan* and “Son of Heaven” in the poem. The children's version uses “emperor” for clarity.
 
-Source: Chinese Text Project, *Yuefu Shiji*, volume 25
-URL: https://ctext.org/wiki.pl?if=gb&chapter=574911
-Accessed: 2026-08-21
-
-Supports:
-
-- *Yuefu Shiji* preserves the ballad under the northern “drum-and-horn cross-blown songs” grouping and cites the lost *Gujin Yuelu* tradition.
-- The extant anthology is much later than the period often proposed for the song, so the surviving wording should not be described as an autograph or untouched sixth-century manuscript.
-
-Editorial boundary:
-
-- The article says the song may preserve Northern Dynasties memories, not that every line can be fixed to one reign or campaign.
-
-## Dating, geography, and uncertainty about a historical Mulan
+## When and where the story began
 
 Source: Renmin University of China Institute of Qing History, “《木兰诗》的时代和地域”
 URL: https://iqh.ruc.edu.cn/old/zglsdlyj/lsdl_dmxyd/dmyj/df2a90095331483db5ea12ca386cc2cf.htm
@@ -41,29 +29,14 @@ Accessed: 2026-08-21
 
 Supports:
 
-- Scholars have long debated the poem's date, geography, and whether a historical Mulan can be identified.
-- Northern Dynasties and Tang-layer arguments draw on titles, institutions, place-names, and textual transmission, but the evidence does not yield one uncontested biography or birthplace.
+- Scholars debate the poem's date, geography, and whether Mulan can be identified as one historical person.
+- The language of the poem may preserve memories of northern China, but it does not provide a complete biography.
 
 Editorial boundary:
 
-- The article does not select one modern hometown claim or ethnic identity as proven fact.
-- “Northern Wei” is presented as a common scholarly context suggested by the text, not a precisely dated service record.
+- The story does not give Mulan a proven birthplace, an exact year, an ethnic identity, or a documented military career.
 
-Source: TIME, “Is Mulan Based on a True Story? Here's the Real History”
-URL: https://time.com/5881064/mulan-real-history/
-Accessed: 2026-08-21
-
-Supports:
-
-- The earliest complete printed text now surviving is many centuries later than the likely early circulation of the song.
-- Specialists find no corroborating evidence that confirms Mulan as one identifiable historical person.
-- The ballad gives neither the later talking-dragon story nor many familiar modern plot details; later adaptations repeatedly reshaped the figure.
-
-Editorial boundary:
-
-- This journalistic overview is used for expert synthesis and checked against the primary poem and academic studies, not treated as a primary historical record.
-
-## Later surnames, footbinding, and changing adaptations
+## The familiar name “Hua Mulan”
 
 Source: Hongmei Yu, “Cultural ‘Authenticity’ as a Conflict-Ridden Hypotext: Mulan (1998), Mulan Joins the Army (1939), and a Millennium-Long Intertextual Metamorphosis,” *Arts* 9, no. 3 (2020)
 URL: https://www.mdpi.com/2076-0752/9/3/78
@@ -71,28 +44,14 @@ Accessed: 2026-08-21
 
 Supports:
 
-- Yuan, Ming, and Qing versions variously gave Mulan the surnames Wei, Zhu, and Hua.
-- Xu Wei's sixteenth-century play uses the surname Hua and adds bound feet; this is anachronistic for the Northern Wei setting and reflects Ming gender conventions.
-- Later theater, fiction, and film repeatedly reframed Mulan around changing ideas of loyalty, ethnicity, gender, and nation.
+- The oldest surviving ballad calls the heroine only Mulan. Later versions gave her different surnames, including Hua.
+- Theater, fiction, opera, and film repeatedly reshaped the story for new audiences.
 
 Editorial boundary:
 
-- Bound feet, a fixed Han identity, modern nationalism, romances, and twentieth-century film plots are labeled as later adaptation layers.
-- The article does not claim that one later version is the single “true” Mulan or that adaptation itself is a historical error.
-
-Source: Shiamin Kwa and Wilt L. Idema, *Mulan: Five Versions of a Classic Chinese Legend* (Hackett Publishing overview)
-URL: https://hackettpublishing.com/mulan-five-versions-of-a-classic-chinese-legend
-Accessed: 2026-08-21
-
-Supports:
-
-- Mulan is best understood through multiple textual versions rather than a single stable biography.
-- The ballad, Ming play, later novel, opera, and modern film make meaning for different audiences.
-
-Editorial boundary:
-
-- The public story compares layers in child-readable terms and avoids reproducing copyrighted translations from the book.
+- The Chinese title uses the familiar modern name “花木兰,” but the story does not present “Hua” as a securely documented historical surname.
+- Details from modern films, including a talking dragon and romantic subplots, are not treated as part of the old poem.
 
 ## Image boundaries
 
-All four retained images are modern illustrations already in the project. They are not treated as portraits, archaeological evidence, or reliable reconstructions of Northern Dynasties clothing, architecture, weapons, camps, or geography. Captions identify them as story illustrations or imagined scenes.
+The retained images are modern story illustrations. They are not portraits or reliable reconstructions of Mulan's clothing, weapons, home, army camp, or historical period.

@@ -16,131 +16,116 @@ title_en: The Chinese Zodiac
 [section]
 page: 1
 layout: text-wrap-image
-heading_zh: 什么是十二生肖？
-heading_en: What Is the Chinese Zodiac?
+heading_zh: 为什么要给年份配动物？
+heading_en: Why Give Years Animal Names?
 image: storytime-wheel.webp
-caption_zh: 大人给孩子讲十二生肖的故事时，常常会提到十二种动物和它们的顺序。
-caption_en: When adults tell the zodiac story, they often talk about the twelve animals and the order they came in.
+caption_zh: 十二种生肖动物排成一圈，每过一年，就轮到下一种动物。
+caption_en: The twelve zodiac animals form a circle, with a new animal taking its turn each year.
 [zh]
-在中国，人们常常会说自己属什么。
+很久以前，中国人已经在用十二个符号给时间排次序。这十二个符号叫“地支”，可以用来记录年、月、日和一天里的时辰。后来，人们又给每个地支配上一种动物。一串符号变成了老鼠、牛、老虎和兔子，当然更容易想象和记住。
 
-有人属鼠，有人属牛，有人属虎。这里说的“属什么”，就是十二生肖。
+十二生肖就是这套动物年份。它们的顺序是：鼠、牛、虎、兔、龙、蛇、马、羊、猴、鸡、狗、猪。每年轮到一种动物，猪年以后又回到鼠年。新的生肖年从中国新年开始，不是从一月一日开始。如果一个孩子出生在兔年，兔就是这个孩子的生肖。
 
-十二生肖一共有十二种动物，每一年轮到一种，十二年转一圈。
+“生肖”读作 *shēngxiào*。英文把它叫作 *Chinese zodiac*，容易让人想到西方星座，但它们不是同一套东西。从地球上看，太阳一年里会经过不同的星空。西方星座把这条天空中的路线分成十二份，通常根据出生的月份和日期来找星座；中国生肖主要根据出生的年份来找动物。两套系统都分成十二份，也都和出生时间有关，所以英文用了同一个 *zodiac*。但是白羊座并不等于鼠，金牛座也不等于牛。
 [/zh]
 [en]
-In China, people often talk about which zodiac animal they are.
+Long ago, people in China used twelve signs to keep time in order. These signs are called the Earthly Branches. They could mark years, months, days, and even parts of a day. Later, people paired each sign with an animal. A rat, an ox, or a tiger was much easier to picture and remember than a list of plain signs.
 
-Some people are born in the Year of the Rat, some in the Year of the Ox, and some in the Year of the Tiger. This is called the Chinese zodiac.
+The Chinese zodiac is this system of animal years. The order is Rat, Ox, Tiger, Rabbit, Dragon, Snake, Horse, Goat, Monkey, Rooster, Dog, and Pig. Each animal gets one year. After the Pig comes the Rat again. A new animal year begins at Chinese New Year, not on January 1. If a child is born in the Year of the Rabbit, the Rabbit is that child's zodiac animal.
 
-There are twelve animals in all. Each year belongs to one animal, and the cycle starts over every twelve years.
+In Chinese, this animal-year system is called *shēngxiào*. The English name *Chinese zodiac* may remind you of the Western zodiac, but they are not the same system. From Earth, the Sun seems to move past different groups of stars during the year. The Western zodiac divides that path into twelve signs, and people usually find their sign from the month and day of their birth. The Chinese zodiac mainly uses the year of birth. Both systems have twelve signs and connect a sign with a person's birth, so English uses the word *zodiac* for both. But Aries does not match the Rat, and Taurus does not match the Ox.
 [/en]
 [/section]
 
 [section]
 page: 2
-layout: text-wrap-image
-heading_zh: 天上的比赛
-heading_en: The Race in the Sky
-image: jade-emperor-race.webp
-caption_zh: 传说里，玉皇大帝请动物们来比赛，先到的十二位可以成为生肖。
-caption_en: In the legend, the Jade Emperor invites the animals to a race. The first twelve to arrive become the zodiac animals.
+layout: text-only
+heading_zh: 十二年，为什么又有六十年？
+heading_en: Twelve Years—or Sixty?
 [zh]
-中国有一个很有名的传说，专门解释十二生肖的顺序。
+生肖每十二年转一圈，可是中国古代的完整年份还有另一半。除了十二地支，古人还使用十个“天干”。你可以把它们想成两只并排转动的轮子：一只轮子有十格，另一只有十二格，每过一年，两只轮子都向前走一格。
 
-故事里，天上的玉皇大帝想选出十二种动物，来代表不同的年份。
+十二年以后，生肖动物回到了原位，可是十格的轮子还没有和它一起回到开头。两只轮子要转到第六十年，才会再次同时回到最初的组合“甲子”（Jiǎzǐ）。所以十二年后会再次遇到同一种生肖；完整的年份名称，却要六十年才重复一次。六十年也就叫“一甲子”。
 
-于是他告诉动物们，要办一场比赛。先到终点的十二位，就能进入生肖名单。
+这些日历符号说明生肖怎样运转，却没有告诉我们为什么老鼠排第一。老虎比老鼠强壮，龙还能飞，小小的老鼠怎么跑到了最前面？民间把答案讲成了一场热闹的比赛。
 [/zh]
 [en]
-China has a famous legend that explains the order of the zodiac animals.
+The animal cycle turns every twelve years, but an old Chinese year name has another half. Along with the twelve Earthly Branches, people used ten signs called the Heavenly Stems. Imagine two wheels turning side by side. One has ten spaces, and the other has twelve. Each year, both wheels move forward one space.
 
-In the story, the Jade Emperor, a ruler in heaven, wanted to choose twelve animals to stand for the years.
+After twelve years, the animal wheel is back at the beginning, but the ten-space wheel is not. The two wheels do not return to their starting places together until year sixty. Their first pair is called *Jiǎzǐ*. This is why the same animal returns after twelve years, while the complete year name takes sixty years to return. A sixty-year cycle is also called one *jiǎzǐ*.
 
-So he announced a race. The first twelve animals to reach the finish line would become the zodiac animals.
+These calendar signs explain how the zodiac turns, but not why the Rat comes first. A tiger is stronger than a rat, and a dragon can fly. How did the tiny rat reach the front? A popular legend turns the answer into a lively race.
 [/en]
 [/section]
 
 [section]
 page: 3
 layout: text-wrap-image
-heading_zh: 聪明的老鼠和稳稳的牛
-heading_en: The Clever Rat and the Steady Ox
-image: rat-and-ox.webp
-caption_zh: 老鼠个子小，就悄悄坐在牛背上过河，最后抢先一步跳到了岸上。
-caption_en: The rat was small, so it rode on the ox's back across the river and jumped to shore at the very end.
+heading_zh: 玉皇大帝发出邀请
+heading_en: The Jade Emperor Sends an Invitation
+image: jade-emperor-race.webp
+caption_zh: 动物们原本生活在地上，接到玉皇大帝的邀请后才来到天庭。
+caption_en: The animals originally lived in the world below. They came to the Heavenly Court only after receiving the Jade Emperor’s invitation.
 [zh]
-比赛开始以后，牛一步一步稳稳地往前走。它力气大，也很会过河。
+中国神话里，云层上有一座天宫，神仙们在那里开会、办事。这个地方叫天庭，玉皇大帝是管理天庭的神仙。他不是历史上真正的皇帝，而是神话人物。
 
-老鼠知道自己个子小，就悄悄爬到牛背上，请牛带它一起过河。
+一个流传很广的故事说，玉皇大帝想选十二种动物来代表年份。他便把邀请送到地上的动物那里。动物们原本不住在天庭；它们赶来，是因为最先到达天门的十二种动物，可以进入生肖。
 
-快到终点的时候，老鼠一下子跳到岸上，得了第一名，牛得了第二名。
+比赛那天，动物们要赶很长的路，中间还有一条河。牛很早就出发了。它不着急，也不乱跑，只是一步一步向前走。可是老鼠站在河边犯了难：水太深，它怎么过去呢？
 [/zh]
 [en]
-When the race began, the ox moved forward one steady step at a time. It was strong and good at crossing the river.
+In Chinese mythology, there is a great palace above the clouds where the gods meet and work. It is called the Heavenly Court, and the Jade Emperor is the god who rules there. He is not an emperor from history. He is a character from Chinese mythology.
 
-The rat knew it was small, so it quietly climbed onto the ox's back and let the ox carry it across.
+One popular story says that the Jade Emperor wanted twelve animals to represent the years. He sent an invitation to the animals living in the world below. When they heard the news, they set out for the heavenly gate. The first twelve to arrive would join the zodiac.
 
-Right before the finish line, the rat jumped onto the shore first. That is how the rat came in first and the ox came in second.
+On race day, the animals had a long journey ahead, with a river in the middle. The ox started early. It did not rush or wander. It simply kept moving, one steady step at a time. But the rat stopped at the riverbank. The water was deep. How could such a small animal cross?
 [/en]
 [/section]
 
 [section]
 page: 4
-layout: text-only
-heading_zh: 其他动物怎么到的？
-heading_en: How Did the Others Arrive?
+layout: text-wrap-image
+heading_zh: 老鼠的小算盘
+heading_en: The Rat Has a Plan
+image: rat-and-ox.webp
+caption_zh: 老鼠坐在牛背上渡过河，却在快到终点时抢先跳上了岸。
+caption_en: The rat crosses the river on the ox's back, then jumps ashore just before the finish.
 [zh]
-老虎很勇敢，所以得了第三名。兔子很机灵，想办法过了河，得了第四名。
+老鼠问牛：“你能带我过河吗？”好心的牛答应了。老鼠跳上牛背，牛便带着这个小乘客走进水里，稳稳地游向对岸。
 
-龙本来飞得很快，可是它在路上停下来帮助别人，所以得了第五名。蛇跟在马后面，最后拿到了第六名，马是第七名。
+眼看终点就要到了，老鼠忽然从牛头上一跃而下，抢先落在岸边。玉皇大帝看见老鼠先到，就让它排第一；辛苦了一路的牛排在第二。
 
-羊、猴、鸡一起合作，分别得了第八、第九和第十名。狗本来会游泳，可是它玩了一会儿水，只得了第十一名。猪跑得最慢，最后得了第十二名。
+有些版本里，比赛前还出现了一只猫。老鼠答应叫醒贪睡的猫，却自己悄悄出发了。猫错过比赛，也没能进入生肖。于是故事开玩笑说，猫从此见到老鼠就追。
 [/zh]
 [en]
-The tiger was brave, so it came in third. The rabbit was clever and found a way across the river, so it came in fourth.
+“Will you carry me across?” the rat asked the ox. The kind ox agreed. The rat climbed onto its back, and the ox swam steadily toward the other side.
 
-The dragon could fly fast, but it stopped to help others on the way, so it came in fifth. The snake followed behind the horse and took sixth place, while the horse came in seventh.
+Just before the finish, the rat leaped over the ox's head and landed first. The Jade Emperor saw the rat arrive ahead of the ox, so the rat took first place and the hardworking ox took second.
 
-The goat, monkey, and rooster worked together and came in eighth, ninth, and tenth. The dog could swim well, but it stopped to play in the water and came in eleventh. The pig moved the slowest and came in twelfth.
+Some versions add a cat to the story. The rat promises to wake the sleepy cat before the race, then quietly leaves without it. The cat misses the race and has no place in the zodiac. The tale jokes that this is why cats still chase rats.
 [/en]
 [/section]
 
 [section]
 page: 5
 layout: text-wrap-image
-heading_zh: 生肖的顺序排好了
-heading_en: The Zodiac Order Is Set
+heading_zh: 河边越来越热闹
+heading_en: A Very Busy Riverbank
 image: final-order.webp
-caption_zh: 比赛结束以后，十二种动物就按到达的顺序，成了今天大家熟悉的十二生肖。
-caption_en: When the race was over, the twelve animals kept the order in which they arrived and became today's zodiac animals.
+caption_zh: 十二种动物终于到齐了，玉皇大帝按照它们到达的先后排好了顺序。
+caption_en: All twelve animals have arrived, and the Jade Emperor puts them in finishing order.
 [zh]
-比赛结束以后，十二生肖的顺序就排好了。
+老虎浑身湿透地爬上岸，得了第三。兔子踩着石头和漂来的木头过河，得了第四。
 
-顺序是：鼠、牛、虎、兔、龙、蛇、马、羊、猴、鸡、狗、猪。
+龙明明会飞，却在路上停下来给需要雨水的人降雨，所以第五个到。马快到终点时，藏在它身边的蛇突然滑了出来。马吓得往后一跳，蛇便抢先得了第六，马得了第七。
 
-从那以后，人们就用这十二种动物来代表不同的年份。
+羊、猴和鸡找到一只木筏，合力过了河。狗游泳很好，却玩水玩得太久。最后，猪慢吞吞地赶到——有的版本说，它中途吃了一顿，还睡了一觉。十二个位置就这样排满了。
 [/zh]
 [en]
-When the race was over, the order of the zodiac was set.
+The tiger climbed out of the river dripping wet and took third place. The rabbit crossed by hopping over stones and a floating log, coming in fourth.
 
-The order is: rat, ox, tiger, rabbit, dragon, snake, horse, goat, monkey, rooster, dog, and pig.
+The dragon could fly, but it stopped to bring rain to people who needed water, so it arrived fifth. As the horse neared the finish, a snake hiding beside it suddenly slipped out. The startled horse jumped back, letting the snake take sixth place. The horse came seventh.
 
-From then on, people used these twelve animals to represent different years.
+The goat, monkey, and rooster found a raft and worked together. The dog was a fine swimmer, but it played in the water too long. The pig arrived last—some versions say it stopped for a meal and a nap. All twelve places were now filled.
 [/en]
 [/section]
-
-[ending]
-heading_zh: 一个聪明又热闹的故事
-heading_en: A Clever Story to Remember
-[zh]
-所以，十二生肖不只是十二种动物的名字。
-
-它也是一个关于比赛、聪明、勇敢和合作的中国故事。
-[/zh]
-[en]
-So the Chinese zodiac is not only the names of twelve animals.
-
-It is also a Chinese story about racing, clever thinking, courage, and working together.
-[/en]
-[/ending]

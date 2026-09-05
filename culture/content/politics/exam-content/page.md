@@ -33,7 +33,7 @@ caption_en: A modern imagined scene of a boy practicing writing by lamplight, no
 [en]
 Imagine placing four exam papers on a table, one each from the Tang, Song, Ming, and Qing dynasties. One asks for poetry. Another asks the student to explain a classic. A third discusses government, while a fourth demands a tightly controlled essay. They may look like four different tests, yet every one could have belonged to China’s imperial examination system. The system was not one ancient test that stayed the same forever; its questions depended on the dynasty, exam level, and subject category.
 
-Look at the boy in the picture. This is a modern artist’s imagined study scene, not a record of one real candidate. We do not know that a particular poor boy was supported by a sewing mother, and we cannot say that the first question he saw in Chang’an was always “Write a poem.”
+Look at the boy in the picture. This is a modern artist’s imagined study scene, not a record of one real candidate. No source tells us that this particular boy had a mother who sewed to pay for his studies. We also cannot assume that his first question in Chang’an was “Write a poem.”
 
 The Tang dynasty had several examination categories. The *mingjing* category emphasized the Confucian classics. Specialized categories tested subjects such as law and calculation. The admired *jinshi* exam changed over time. Policy questions were important early on. Poetry and rhyme-prose, called *fu*, grew more important later, but questions on the classics and government did not simply vanish.
 

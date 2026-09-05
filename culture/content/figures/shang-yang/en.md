@@ -1,47 +1,75 @@
-> Difficulty: Hard
+> Difficulty: Medium
 
-# Shang Yang: Who Paid the Price When the State Grew Stronger?
+# Shang Yang and the Log No One Wanted to Move
 
-## Could Moving One Log Make a State Trust Its New Laws?
+## Something Strange at the City Gate
 
-A log stands outside the southern gate of Qin's capital. A notice promises ten pieces of gold to anyone who carries it to the northern gate. People gather, but no one believes such an easy task will bring a great reward. The offer rises to fifty. At last, someone moves the log, and the government really pays. Then the new laws are announced.
+More than 2,300 years ago, China was not yet one united country. It was divided into several kingdoms that often fought one another. Qin was one of them. It would be more than a hundred years before Qin became the great empire ruled by Qin Shi Huang.
 
-This famous “moving the log to build trust” story comes from Sima Qian's *Records of the Grand Historian*, written more than two hundred years after Shang Yang's death. We have no original notice, winner's name, or recording from the gate, so its details are not checkable news. Yet the story captures a real problem of reform. Writing an order is easy; convincing thousands of families that officials will enforce it is hard. One question remains: if a government reliably carries out harsh punishments, what does that kind of “trust” mean for ordinary people?
+One day, a great wooden log appeared outside the south gate of Qin's main city.
 
-## Why Did Gongsun Yang Find His Chance in Qin?
+A notice beside it said, “Carry this log to the north gate, and you will receive ten pieces of gold.”
 
-Shang Yang was born Gongsun Yang and was also called Wei Yang because he came from the small state of Wey. During the Warring States period, states competed for land, people, and armies, while talented advisers crossed borders looking for rulers who would listen. In the mid-fourth century BCE, Duke Xiao of Qin called for people who could strengthen his western state. Wei Yang came to Qin and won support for reforms. Only after receiving the territory of Shang did he become known as Shang Yang.
+People gathered and stared. So much gold for moving one log? Something had to be wrong. Perhaps it was a joke. Perhaps the prize would disappear as soon as the work was done. Everyone whispered, but no one moved.
 
-Traditional accounts often divide his changes into two rounds, beginning around 356 and 350 BCE. Not every rule, date, or attribution is equally certain. His main biography, in the *Records of the Grand Historian*, was written later. The chapters gathered as the *Book of Lord Shang* accumulated over time rather than forming one policy manual written by Shang Yang all at once. Still, the direction is clear: Qin wanted to turn scattered people, land, taxes, and military service into resources the government could record, compare, and mobilize.
+Then the prize rose to fifty pieces of gold.
 
-## The New System Opened Some Doors and Locked Others
+At last, one man bent down, lifted the log, and carried it to the north gate. Shang Yang really paid him. The crowd suddenly became very quiet.
 
-Earlier aristocrats often inherited status from their ancestors. Qin's new ranks of merit allowed some ordinary men to gain rank, land, or other rewards through military achievement. They also weakened the idea that noble birth alone should protect privilege. The government promoted farming and cloth production because grain, textiles, taxes, and soldiers could support war. Counties, household registers, and standard measures helped the center manage local communities. For some people, the system opened a new path upward.
+The log had carried a simple message. New rules were coming to Qin, and Shang Yang meant what he said.
 
-But every open door had another side. Military merit was often tied to enemies killed, joining personal hopes to warfare. Families were organized into groups of five or ten households that watched one another; failure to report an offense could bring shared punishment. The government encouraged adult men to form separate households, making families easier to register and tax. Even family life entered the state's account books. Promoting agriculture did not simply give every farmer freedom. It aimed to produce the grain and labor the state needed.
+---
 
-So “Shang Yang made Qin more efficient” tells only half the truth. The fuller sentence is this: the institutions he promoted gave the government more power to reward, collect, and recruit—and more power to watch and punish.
+## Qin Wanted to Become Stronger
 
-## Why Was Qin's “Same Standards” Not Modern Rule of Law?
+The man behind the log was Shang Yang. He had come to Qin from another kingdom because Qin's ruler was looking for someone who could help make Qin stronger.
 
-The *Records of the Grand Historian* says that when the crown prince broke a new rule, Shang Yang argued that the law could not lose credibility. Because the heir could not be punished directly, his teachers and attendants were punished instead. This tale is often reduced to “princes and commoners were equal before the law.” Yet the story itself shows that rank still mattered: the prince did not receive the punishment an ordinary person would have faced. The message was that aristocratic circles could no longer block every state command, not that everyone had equal rights in a modern court.
+Qin often fought against other kingdoms. Its ruler needed more grain to feed the army. He also needed to know where people lived, who farmed each piece of land, and which men could be called to fight.
 
-Written standards can be more predictable than nobles deciding everything at will, but “having laws” is not automatically “rule of law.” Modern rule of law also requires limits on government power, fair procedures, and ways for an accused person to answer a charge. Shang Yang's politics first aimed to strengthen the ruler's state and make officials and subjects follow common commands. Rules might be clear while punishments remained extremely harsh. The state inspected its people; the people did not have equal power to inspect the highest ruler.
+Shang Yang said officials should record every household: who lived there and how much land the family farmed. These records made it easier for Qin to collect grain and money and to call men into the army.
 
-## Buried Bamboo Slips Show the System Entering Daily Life
+He also wanted to reward people who produced a great deal of grain and soldiers who did well in battle. Even someone without rich or powerful relatives might earn land or a higher rank through farming or fighting.
 
-Few government documents survive intact from Shang Yang's own time, but later Qin tombs and wells have yielded thousands of bamboo and wooden slips. The Shuihudi texts preserve statutes, investigation models, and administrative questions and answers. The Liye slips include everyday records about households, grain, couriers, and messages between offices. Most date after Shang Yang, so each rule cannot be called his personal reform. They do show that Qin later developed a dense government system built with writing.
+Qin's ruler agreed to let Shang Yang try. The log at the city gate was Shang Yang's first step in convincing people that the new rules were real.
 
-That machine did not run on Shang Yang alone. Scribes made copies, local officials collected forms, couriers traveled, storehouses checked numbers, and ordinary people entered household registers. Orders sent from the capital could still arrive late. Officials made mistakes, and life never fitted a statute perfectly. When we take the phrase “strong state” apart, we find no abstract giant. We find many people registering, carrying, farming, serving—and enduring punishment.
+---
 
-## An Inn Refused Him—but “His Own Law Killed Him” Is Too Simple
+## The New Rules Reached Every Home
 
-In 338 BCE, Duke Xiao—Shang Yang's protector—died. A new ruler took the throne, and old political enemies accused the reformer of rebellion. The *Records of the Grand Historian* says Shang Yang fled toward the frontier and tried to stay at an inn. Not knowing his identity, the innkeeper explained that Lord Shang's law forbade accepting a guest without proper papers; the inn would be punished too. Shang Yang supposedly sighed at what his laws had become. The scene is almost perfectly ironic, which makes it powerful history-writing—but not a word-for-word memory from the fugitive.
+Shang Yang's new rules soon affected every household in Qin. Officials came to villages and recorded the people who lived there and the land they farmed. The government rewarded families that harvested plenty of grain. It also rewarded soldiers who won battles.
 
-Shang Yang then failed to escape into Wei, returned to his own territory, resisted Qin forces, and was killed. King Huiwen of Qin had his corpse torn apart and displayed, and his family was destroyed. It is misleading to say that Shang Yang was simply “sentenced to death by his own law.” Political revenge, an accusation of rebellion, and armed resistance all shaped his end. More important, the new ruler killed the reformer without discarding all the major institutions. A political machine can destroy someone who helped enlarge it and still keep running.
+Shang Yang placed neighboring households into small groups. If someone was planning a crime, the neighbors had to report it. Neighbors who knew but said nothing could be punished too.
 
-## Qin's Strength Was Not a Report Card with Only One Side
+These rules made it easier for Qin to collect grain, gather soldiers, and carry out orders. More grain filled the storehouses, and the army grew stronger.
 
-Shang Yang's reforms helped Qin weaken hereditary privilege, reward military service, expand registration, and manage territory more directly. They also helped gather resources for long wars. Qin conquered all six rival states more than a century after his death, so unification was not one man's creation. Other reformers, rulers, officials, soldiers, farmers, geography, and the choices of Qin's rivals all mattered.
+But families were also watched more closely. The new system might reward one family, while a whole group of neighbors could be punished for one person's actions. Shang Yang's system gave new chances to some people and placed heavy pressure on many others.
 
-The difficult historical task is not choosing between two labels—“great reformer” or “cruel villain.” It is seeing capacity and cost at the same time. Who gained a new opportunity? Who came under tighter control? Can a state's success cancel the suffering of individuals? A log can be carried from one gate to another. Judging a reform cannot be moved so easily from one extreme to the other.
+---
+
+## Shang Yang Tried to Escape
+
+Many years later, the ruler who had protected Shang Yang died. The ruler's son took his place. When the new ruler was still a prince, he had broken one of Shang Yang's laws. Shang Yang could not punish the prince directly, so he punished two men who were responsible for teaching him. Shang Yang's reforms had also taken power away from important families, so he had many enemies at court.
+
+Soon, those enemies accused Shang Yang of planning to rebel. The new ruler ordered his arrest. Shang Yang did not choose to stay. He tried to escape, but he could not get away.
+
+Night fell, and he came to an inn. He asked for a room.
+
+“Where is your travel pass?” the innkeeper asked. A travel pass was an official paper showing who a traveler was.
+
+Shang Yang had no pass. The innkeeper shook his head. “Shang Yang's rule says I cannot take a guest without one. If I let you in, I will be punished too.”
+
+The innkeeper did not know that the man outside was Shang Yang himself.
+
+Shang Yang kept running, but a neighboring kingdom would not allow him to stay. He returned to his own land in Qin, gathered fighters, and rebelled. Qin's army quickly defeated and killed him.
+
+Shang Yang wanted to escape. He simply did not succeed.
+
+---
+
+## The Man Was Gone, but the Rules Stayed
+
+The new ruler killed Shang Yang but kept many of his ideas. Officials continued to record who lived in each household and what land each family farmed. Families that grew plenty of grain and soldiers who won battles could still earn rewards. People who broke the rules still faced strict punishments.
+
+More than a hundred years later, Qin defeated six other kingdoms, and Qin Shi Huang created China's first great empire. Shang Yang did not live to see that day, and he was not the only reason Qin won. But his system helped Qin collect more grain, call up more soldiers, and control its people more closely.
+
+At the beginning of the story, Shang Yang used a log to show everyone that the new rules would be enforced. Years later, an innkeeper closed the door on Shang Yang himself. His own rules now applied to him too.

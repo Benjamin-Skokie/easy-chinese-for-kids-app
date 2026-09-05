@@ -610,7 +610,7 @@ test("deployed raster images stay within the site-wide asset budget", () => {
       (file.startsWith("assets/") && !file.startsWith("assets/_png-archive/"))
       || (file.startsWith("culture/")
         && !file.startsWith("culture/content/")
-        && !file.startsWith("culture/experiments/"))
+        && !file.startsWith("culture/image-archive/"))
     ));
 
   const pngs = deployedImages.filter((file) => file.endsWith(".png"));
@@ -635,13 +635,13 @@ test("the Chinese landing-page headline is slightly reduced while keeping its or
   assert.match(stylesSource, /\.library-hero h2 \{[\s\S]*font-size: clamp\(1\.3rem, 2\.2vw, 1\.7rem\)[\s\S]*color: var\(--sun\)/);
 });
 
-test("the landing hero features six scrollable culture-story highlights", () => {
+test("the landing hero features five scrollable culture-story highlights", () => {
   const html = readFileSync("index.html", "utf8");
   const carouselSource = readFileSync("src/core/story-highlights.js", "utf8");
   assert.match(html, /<section class="story-highlights" data-story-highlights/);
-  assert.equal((html.match(/data-story-highlight-dot=/g) ?? []).length, 6);
+  assert.equal((html.match(/data-story-highlight-dot=/g) ?? []).length, 5);
   assert.match(html, /culture\/books\/folk-tales\/monkey-king\/index\.html/);
-  assert.match(html, /culture\/books\/figures\/mulan\/index\.html\?reading=story/);
+  assert.match(html, /culture\/books\/figures\/mulan\/index\.html/);
   assert.match(html, /culture\/books\/politics\/emperor-day\/index\.html\?reading=story/);
   assert.match(carouselSource, /viewport\.scrollTo/);
 });
@@ -672,124 +672,28 @@ test("culture is an in-page landing view with category cards and no duplicate cu
 test("Culture category headers stay compact on phones", () => {
   const stylesSource = readFileSync("styles.css", "utf8");
   assert.match(stylesSource, /@media \(max-width: 520px\) \{[\s\S]*?\.culture-category-section \.cat-head \{[\s\S]{0,220}grid-template-columns: 56px minmax\(0, 1fr\);[\s\S]{0,220}flex-wrap: nowrap;/);
-  assert.match(stylesSource, /\.culture-category-section \.cat-head > div:not\(\.culture-level-picker\) \{[\s\S]{0,100}flex: none;/);
-  assert.match(stylesSource, /\.culture-level-picker \{[\s\S]{0,180}grid-column: 1 \/ -1;[\s\S]{0,180}min-width: 0;[\s\S]{0,120}flex: none;/);
+  assert.match(stylesSource, /\.culture-category-section \.cat-head > div \{[\s\S]{0,100}flex: none;/);
 });
 
-test("Mulan offers complete Early Reader, Story, and Advanced readings with one saved Culture preference", () => {
-  const earlySource = readFileSync("culture/content/figures/mulan/page.early.md", "utf8");
-  const storySource = readFileSync("culture/content/figures/mulan/page.story.md", "utf8");
-  const advancedSource = readFileSync("culture/content/figures/mulan/page.md", "utf8");
+test("Culture stories render their single canonical page.md manuscript", () => {
+  const source = readFileSync("culture/content/figures/mulan/page.md", "utf8");
   const bookHtml = readFileSync("culture/books/figures/mulan/index.html", "utf8");
-  const experimentHtml = readFileSync("culture/experiments/figures/mulan/index.html", "utf8");
-  const catalogScript = readFileSync("culture-reading-level.js", "utf8");
-
-  assert.match(earlySource, /^difficulty: 简单$/m);
-  assert.match(earlySource, /notice came from the \[\[army\]\]/);
-  assert.match(earlySource, /reached the \[\[Yellow River\]\]/);
-  assert.match(earlySource, /The emperor thanked Mulan/);
-  assert.doesNotMatch(earlySource, /\b(?:feast|hares)\b/i);
-  assert.match(storySource, /^difficulty: 中等$/m);
-  assert.match(advancedSource, /^difficulty: 困难$/m);
-  assert.equal((earlySource.match(/^\[section\]$/gm) ?? []).length, 6);
-  assert.equal((storySource.match(/^\[section\]$/gm) ?? []).length, 6);
-  assert.equal((advancedSource.match(/^\[section\]$/gm) ?? []).length, 6);
-  assert.ok(existsSync("culture/content/figures/mulan/zh.early.md"));
-  assert.ok(existsSync("culture/content/figures/mulan/en.early.md"));
-  assert.ok(existsSync("culture/content/figures/mulan/zh.story.md"));
-  assert.ok(existsSync("culture/content/figures/mulan/en.story.md"));
-  assert.match(bookHtml, /class="reading-level-quick-switch"/);
-  assert.doesNotMatch(bookHtml, /class="reading-level-label">Reading level<\/span>/);
-  assert.match(bookHtml, /<div class="hero-copy">[\s\S]*?class="reading-level-quick-switch"/);
-  assert.match(bookHtml, /data-reading-level-button="early"[^>]*>Easy<\/button>/);
-  assert.match(bookHtml, /data-reading-level-button="story"[^>]*>Medium<\/button>/);
-  assert.match(bookHtml, /data-reading-level-button="advanced"[^>]*>Advanced<\/button>/);
-  assert.match(bookHtml, /data-reading-version="early"/);
-  assert.match(bookHtml, /data-reading-version="story" hidden/);
-  assert.match(bookHtml, /data-reading-version="advanced" hidden/);
-  assert.match(bookHtml, /const defaultLevel = supportedLevels\.has\("story"\) \? "story"/);
-  assert.match(bookHtml, /const initialLevel = supportedLevels\.has\(requestedLevel\) \? requestedLevel : defaultLevel/);
-  assert.doesNotMatch(bookHtml, /initialLevel = supportedLevels\.has\(requestedLevel\) \? requestedLevel : savedLevel/);
-  assert.match(bookHtml, /href="\.\.\/\.\.\/\.\.\/\.\.\/index\.html\?view=culture#culture-figures"/);
-  assert.match(bookHtml, /easyChineseCultureReadingLevel/);
-  assert.match(bookHtml, /URLSearchParams\(window\.location\.search\)/);
+  assert.match(source, /^title_zh: /m);
   assert.match(bookHtml, /木兰的勇敢旅程/);
-  assert.match(bookHtml, /class="glossary-term"[^>]*>army<\/button>/);
-  assert.match(bookHtml, /class="glossary-term"[^>]*>Yellow River<\/button>/);
-  assert.match(bookHtml, /class="glossary-term"[^>]*>khan<\/button>/);
-  assert.match(bookHtml, /木兰：替父出征的女儿/);
-  assert.match(bookHtml, /木兰：一首诗怎样长成一千年的传奇？/);
-  assert.match(experimentHtml, /data-reading-version="early"/);
-  assert.match(catalogScript, /"figures\/mulan"/);
-  assert.match(catalogScript, /Mulan's Brave Journey/);
-  assert.match(catalogScript, /Mulan: The Daughter Who Rode to War/);
-  assert.match(catalogScript, /Mulan: How a Poem Became a Thousand-Year Legend/);
+  assert.doesNotMatch(bookHtml, /data-reading-version|data-reading-level-button|easyChineseCultureReadingLevel|difficulty-badge/);
+  const catalogHtml = readFileSync("index.html", "utf8");
+  assert.doesNotMatch(catalogHtml, /culture-reading-level|culture-level-picker|culture-difficulty|data-culture-reading-level/);
+  assert.equal(existsSync("culture-reading-level.js"), false);
 });
 
-test("the twelve-article Culture pilot provides all three reading levels", () => {
-  const pilotArticles = [
-    ["philosophy", "confucius"],
-    ["philosophy", "laozi"],
-    ["philosophy", "seed-dao"],
-    ["philosophy", "yin-yang"],
-    ["politics", "emperor-day"],
-    ["politics", "exam-content"],
-    ["politics", "imperial-exam-history"],
-    ["politics", "six-arts"],
-    ["politics", "yu-the-great"],
-    ["military", "ancient-armor"],
-    ["military", "art-of-war"],
-    ["military", "great-wall"]
-  ];
-
-  for (const [category, slug] of pilotArticles) {
-    const contentDir = `culture/content/${category}/${slug}`;
-    const earlySource = readFileSync(`${contentDir}/page.early.md`, "utf8");
-    const storySource = readFileSync(`${contentDir}/page.story.md`, "utf8");
-    const advancedSource = readFileSync(`${contentDir}/page.md`, "utf8");
-    const bookHtml = readFileSync(`culture/books/${category}/${slug}/index.html`, "utf8");
-
-    assert.match(earlySource, /^difficulty: 简单$/m, `${slug} Early Reader difficulty`);
-    assert.match(storySource, /^difficulty: 中等$/m, `${slug} Story difficulty`);
-    assert.match(advancedSource, /^difficulty: 困难$/m, `${slug} Advanced difficulty`);
-    assert.ok(existsSync(`${contentDir}/story-brief.md`), `${slug} story brief`);
-    for (const suffix of ["early", "story"]) {
-      assert.ok(existsSync(`${contentDir}/zh.${suffix}.md`), `${slug} zh.${suffix}.md`);
-      assert.ok(existsSync(`${contentDir}/en.${suffix}.md`), `${slug} en.${suffix}.md`);
-    }
-    assert.match(bookHtml, /class="reading-level-quick-switch"/, `${slug} has a compact per-story picker`);
-    assert.doesNotMatch(bookHtml, /class="reading-level-label">Reading level<\/span>/, `${slug} does not repeat the level label`);
-    assert.match(bookHtml, /data-reading-level-button="early"[^>]*>Easy<\/button>/, `${slug} Easy button`);
-    assert.match(bookHtml, /data-reading-level-button="story"[^>]*>Medium<\/button>/, `${slug} Medium button`);
-    assert.match(bookHtml, /data-reading-level-button="advanced"[^>]*>Advanced<\/button>/, `${slug} Advanced button`);
-    assert.match(bookHtml, /data-reading-version="early"/, `${slug} Early content`);
-    assert.match(bookHtml, /data-reading-version="story" hidden/, `${slug} Story content`);
-    assert.match(bookHtml, /data-reading-version="advanced" hidden/, `${slug} Advanced content`);
-    assert.match(bookHtml, /const defaultLevel = supportedLevels\.has\("story"\) \? "story"/, `${slug} defaults to Medium`);
-    assert.match(bookHtml, new RegExp(`index\\.html\\?view=culture#culture-${category}`), `${slug} returns to its Culture category`);
+test("Culture generates one previewable output tree under books", () => {
+  assert.equal(existsSync("culture/experiments"), false);
+  const cultureBuildScripts = readdirSync("scripts")
+    .filter((file) => /^build_.+_all\.mjs$/.test(file));
+  for (const file of cultureBuildScripts) {
+    assert.doesNotMatch(readFileSync(join("scripts", file), "utf8"), /target:\s*["']experiments["']/);
   }
-
-  const catalogHtml = readFileSync("index.html", "utf8");
-  const catalogScript = readFileSync("culture-reading-level.js", "utf8");
-  const stylesSource = readFileSync("styles.css", "utf8");
-  assert.equal((catalogHtml.match(/data-culture-reading-picker/g) ?? []).length, 5);
-  assert.match(catalogHtml, /culture-level-picker--placeholder/);
-  assert.match(catalogHtml, /<span class="culture-level-label">Reading level<\/span>/);
-  assert.match(catalogHtml, /data-culture-reading-level="early"[^>]*>Easy<\/button>/);
-  assert.match(catalogHtml, /data-culture-reading-level="story"[^>]*>Medium<\/button>/);
-  assert.match(catalogHtml, /data-culture-reading-level="advanced"[^>]*>Advanced<\/button>/);
-  assert.match(catalogHtml, /culture-reading-level\.js/);
-  assert.match(catalogScript, /url\.searchParams\.set\("reading", level\)/);
-  assert.match(catalogScript, /link\.matches\("\.story-highlight-slide"\)/);
-  assert.match(catalogScript, /levels\.has\(level\) \? level : "story"/);
-  assert.match(catalogScript, /window\.localStorage\.setItem\(storageKey, nextLevel\)/);
-  assert.match(stylesSource, /\.culture-category-section \.culture-difficulty \{[\s\S]*?display: none;/);
-  assert.match(stylesSource, /\.culture-category-section \.cat-head \{[\s\S]*?flex-wrap: wrap;/);
-  assert.match(stylesSource, /\.culture-level-picker \{[\s\S]*?flex: 0 0 230px;/);
-  assert.match(stylesSource, /\.culture-level-label \{[\s\S]*?font-weight: 500;/);
-  for (const [category, slug] of pilotArticles) {
-    assert.match(catalogScript, new RegExp(`"${category}/${slug}"`), `${slug} has level-specific catalog titles`);
-  }
+  assert.doesNotMatch(readFileSync("scripts/build_philosophy_page.mjs", "utf8"), /books\|experiments/);
 });
 
 test("Learn by Books shows each textbook directly and links lessons to topic practice", () => {

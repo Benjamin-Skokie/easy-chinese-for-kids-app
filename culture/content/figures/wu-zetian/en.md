@@ -1,79 +1,71 @@
-> Difficulty: Hard
+> Difficulty: Medium
 
-# Why Do the Histories Show Both Skill and Fear in Wu Zetian?
+# Wu Zetian: The Girl Who Became Emperor
 
-## Do Not Rush to Choose “Capable Emperor” or “Cruel Monster”
+## Through the Palace Gates at Fourteen
 
-Suppose one book calls Wu Zetian intelligent and skilled at choosing officials, while another says she filled the court with fear. Which book is true? The answer may not be one or the other.
+Wu Zetian entered the palace when she was fourteen. She was not called “Wu Zetian” yet. She was simply one young woman among many in the palace.
 
-Wu lived from 624 to 705 and ruled the Zhou state she founded under the title of emperor from 690 to 705. Other women in Chinese history, including Empress Lü and Empress Dowager Cixi, held enormous power, and empress dowagers sometimes served as regents for young emperors. Wu's unique step was to change the dynastic name and formally reign as the supreme sovereign with the title *emperor*. Calling her “the only woman in Chinese history to rule formally with the title of emperor” is precise. Calling her “China's only woman ruler” is much too broad.
+The palace was huge and beautiful, but life inside was not simple. There were rules about who could speak, who had to wait, and who could stand near the emperor. Most girls could spend their whole lives there without making any important decisions.
 
-Today we know her through edicts, inscriptions, tombs, Buddhist sculptures, and later works such as the *Old Book of Tang*, *New Book of Tang*, and *Comprehensive Mirror for Aid in Government*. Those histories are essential, but all were compiled after Wu died. Their authors also cared deeply about who had the right to be emperor and where women belonged. We should not treat every palace story as camera footage. Yet we should not decide that every criticism is false simply because the histories contain gender bias.
+Wu watched closely and learned quickly. She remembered people and problems. Little by little, she learned who did what and who made the important decisions.
 
----
-
-## Firm Dates Do Not Make Every Palace Story Certain
-
-The *Old Book of Tang* says that the fourteen-year-old Lady Wu entered Emperor Taizong's palace as a *cairen*, a relatively low-ranking consort. Based on her approximate birth year of 624, this happened around 637 or 638. We do not know what she said at the gate, and no evidence shows that she spent those years secretly studying memorials and every official's duties. The records do not give her a major political role during Taizong's reign.
-
-After Taizong died in 649, she became a Buddhist nun at Ganye Temple. In the early 650s, she entered the household of Taizong's son, Emperor Gaozong. In 655, Empress Wang was removed and Lady Wu became empress. Chronological sources support these turns, but private palace events are far harder to recover. Later histories describe the sudden death of Wu's infant daughter and gradually develop the accusation that Wu killed the child herself to frame Empress Wang. Earlier records provide neither an eyewitness nor a cause of death that can now be tested, and Wang's formal removal involved more than this one accusation.
-
-We should therefore never stage the baby's death like a novel, with Wu's hands around her child. Nor can we casually declare the accusation impossible. What we can say is that the baby died, the political struggle soon intensified, and “the mother killed her own daughter” is a grave charge in later histories—not a case solved by forensic evidence.
+No one looking at the new girl could have guessed that she would one day sit at the very top.
 
 ---
 
-## When the Temple Gate Opened, She Did Not Leap Straight to the Throne
+## How Did She Return?
 
-After returning from the temple, Lady Wu first became Gaozong's consort and then his empress. Gaozong suffered recurring health problems from the 660s onward, and she became more deeply involved in reading memorials and managing state business. In 674 they adopted the titles “Heavenly Emperor” and “Heavenly Empress” and were sometimes called the “Two Sages.” This does not mean Gaozong had no power from then on. It shows that Empress Wu had become a major center of court decision-making.
+When the old emperor died, the palace women who had not had children with him had to leave. Wu was sent to a Buddhist temple, where she lived as a nun. Under the rules of the time, she might have stayed there for the rest of her life.
 
-Gaozong died in 683. Their son Zhongzong took the throne but was removed by his mother in 684. Another son, Ruizong, became emperor while Empress Dowager Wu ruled as regent. In 690, she had Ruizong yield the throne, replaced Tang with Zhou, and formally became emperor under the title “Sacred and Divine Emperor.” Her Zhou borrowed prestige from the ancient Zhou dynasty and from a claimed ancestral story for the Wu family. Usually called Wu Zhou, it lasted until 705. It was not the ancient Zhou dynasty of the first millennium BCE suddenly coming back to life.
+The new emperor was the old emperor's son, and he already knew Wu from the palace. When he saw her again during a visit to the temple, he wanted her to return. His wife, Empress Wang, also helped. She hoped Wu would become her ally against another powerful woman at court.
 
-In 705, while old and ill, Wu yielded the throne to Zhongzong after a palace coup, and the Tang name returned. She died later that year. She did not calmly “give the realm back to the Li family” as a free final choice; armed pressure forced her abdication. Even a highly capable ruler can lose control, and restoring the old dynastic name cannot erase her fifteen years as formal emperor or her long power before that.
+The plan did not work as Empress Wang expected. After Wu returned, she became more and more important to the emperor. In 655, Wu replaced Empress Wang and became the new empress.
 
----
-
-## She Widened Paths to Office but Did Not Invent the Exams
-
-Why did even some critical historians admit that Wu made important contributions while assisting government? One reason was her ability to find people who could do difficult work. The civil service examinations had roots in the Sui and were already used in the early Tang. Wu did not invent them. She continued to expand examinations, recommendations, and routes for officials to put themselves forward, allowing a wider range of candidates to become visible. Capable officials such as Di Renjie and Yao Chong held important posts under her, and she could dismiss and later recall someone who had displeased her.
-
-Yet “choosing by talent” did not suddenly give every commoner an equal chance. Preparing for examinations required education, time, and connections, and many Tang officials still came from families with substantial resources. Scholars continue to debate how deeply Wu changed the official class. She opened opportunities, but she also promoted members of the Wu clan, favorites, and cruel officials who served her political needs. A selection system can discover talent and build a team loyal to a new ruler at the same time.
-
-Luoyang held special importance in her politics. She called it the “Divine Capital” and built the Mingtang, using ritual, architecture, and new titles to display the center of Zhou rule. The great hall served both as a site for state ceremony and as a stage on which political order became visible. To judge administrative ability, we need concrete records of appointments, relief, warfare, and local government. One magnificent building cannot prove that everyone across the empire lived well.
+Wu now sat beside the emperor, read reports sent to the palace, and joined important discussions. As the emperor became ill more often, Wu took care of more of the government's work.
 
 ---
 
-## Sutras, Halls, and Buddhas Answered: How Could a Woman Be Emperor?
+## She Took the Title of Emperor
 
-An emperor needed more than control over armies and officials. People also had to believe that the ruler *ought* to rule. Confucian political custom tied the throne to male family succession, so Wu needed other languages of legitimacy. Around 690, monks composed and presented a commentary on the *Great Cloud Sutra*. They used its story of a female figure becoming a ruler in another life to explain that Wu had received a sacred mandate. The court distributed the text and ordered Great Cloud Temples established in the prefectures. Buddhist belief, state support, and political propaganda met here. The sutra was not a letter dropped from heaven appointing a woman emperor.
+After Wu's husband died, one of her sons became emperor. Less than two months later, Wu removed him when he tried to make decisions on his own. She put another son on the throne.
 
-Wu also strongly supported Buddhist buildings and images. The monumental Fengxian Temple group at Longmen near Luoyang was completed while Gaozong and Empress Wu shared power, and inscriptions and scholarship support their royal patronage. A popular story says the central Vairocana Buddha was carved to look exactly like Wu. No dependable contemporary text states that its facial features were modeled on hers. A more careful reading connects monumental Buddhist imagery, female sovereignty, and Luoyang politics while leaving “this is her stone portrait” as an interpretation.
+Her second son wore the emperor's crown, but the most important orders still came from Wu. For six years, she ruled in her son's name.
 
-None of this means Wu merely pretended to believe. A ruler can hold sincere faith and use religion to establish legitimacy at the same time. Instead of guessing how much belief was in her heart, we can examine what the court funded, distributed, built, and performed.
+In 690, Wu removed this son too and officially took the title of emperor for herself. She even gave her dynasty a new name: Zhou.
 
----
-
-## The Petition Boxes Could Hear Grievances—and Feed Fear
-
-In 686, Empress Dowager Wu placed bronze petition boxes at court so people could submit applications, advice, grievances, and secret reports. They were not only “snitch boxes.” At a time when ordinary people could rarely reach the highest ruler, a box might bypass local officials and carry a proposal or injustice upward. But the same route also received political accusations. The court rewarded some informers, while cruel officials such as Zhou Xing and Lai Junchen led interrogations. Torture, forced implication of others, and secret cases damaged established legal procedures.
-
-Early chronological sources record executions, exile, and punishment of relatives among the Tang royal clan, opponents, and suspected officials. After Prince Li Zhen and others rebelled in 688, suppression and purges became especially severe. Even senior officials once appointed by Wu could suddenly be killed. Later historians sometimes used gendered insults—such as comparing female rule to a hen announcing the dawn—and portrayed her as more monstrous than male emperors. Yet legal history, together with records of named victims and judgments, shows that cruel-official politics cannot be dismissed as nothing but misogynistic invention.
-
-Wu later executed or removed some cruel officials and sometimes accepted ministers' appeals in individual cases. That shows the officials were not always beyond control, but it does not cancel her earlier permission for the system to grow. One ruler can promote excellent ministers and use fear to secure power. Writing about the first is not whitewashing; writing about the second does not require inventing private crimes.
+Other women in Chinese history held great power, but Wu was the only woman who formally ruled China with the title of emperor. She was about sixty-six years old.
 
 ---
 
-## The Wordless Stele Does Not Give Us the Answer
+## Four Boxes Outside the Palace
 
-After Wu's death, she was buried with Gaozong at Qianling. Two great steles face each other near the tomb approach. Gaozong's bears a long inscription. The stele on Wu's side originally had no prepared tribute to her, although later visitors carved words onto it. People now say, “Her achievements and faults were too great, so she left judgment to the future,” or “She knew her crimes and could write nothing.” No contemporary evidence tells us that Wu personally ordered the blank, and no single explanation has been proved. Even this “wordless” stone has a later history of accumulating words.
+Wu wanted to find people with talent. She allowed more people to take the tests used to choose officials, and she let people recommend themselves. This gave some people without powerful relatives a chance to work for the government.
 
-The stele reminds Xiaohe that silence is not an empty space we may fill with anything. We can establish many events in Wu's life: formal enthronement, institutions, buildings, edicts, executions, and abdication. For deaths inside private rooms, personal motives, and the reason a stele began blank, we must identify layers of sources and uncertainty.
+Wu also placed four special boxes outside the palace to collect letters. Each one had a slot where ordinary people could leave ideas, complaints, or reports of wrongdoing. At that time, it was very unusual for an ordinary person to send a message straight to the ruler.
 
-Why, then, do the histories show both skill and fear? Wu broke the political boundary that reserved the formal title of emperor for men, and she demonstrated skill in selecting officials and managing a court. She also caused real harm through purges, informant systems, and cruel officials. Later ideas about gender magnified and reshaped parts of her story, but they did not invent every contradiction from nothing. She is neither an inspirational poster nor a monster from a horror tale. She is an emperor whose ability, violence, and evidence must be studied together.
+Some letters helped Wu find talented people or learn about real problems. Others accused people of plotting against her. Wu created a special group to investigate. Some investigators used threats and torture to force people to confess. Not every accusation was true, but people were still imprisoned, sent far away, or killed.
+
+The same four boxes could carry a useful idea—or a dangerous lie.
 
 ---
 
-## In Summary: Judgment Means Weighing Evidence
+## The Stone with No Words
 
-From entering the palace at fourteen, becoming a nun in 649 and empress in 655, through regency after 683, enthronement in 690, and forced abdication in 705, Wu built power over decades. She founded Wu Zhou and formally ruled as emperor, making her unique as China's woman emperor—but not the only woman ever to exercise rule.
+Wu ruled as emperor for fifteen years. In 705, when she was old and ill, a group inside the palace forced her to leave the throne. The son she had removed many years earlier became emperor again. Wu died later that year and was buried beside her husband.
 
-She expanded some routes into office but did not invent the examination system. She used Buddhism and Luoyang's architecture to shape legitimacy, but not every Buddha is her portrait. Later histories judged her through misogynistic assumptions, yet she also created political tools that caused real fear. Mature historical reading does not rush to clear or condemn her. It keeps asking: When was this claim written? What other evidence supports it? How much confidence does it deserve?
+Near their tomb stands a tall stone monument. Stones like this usually carried words praising the person who had died. Wu's stone had no writing at first, so people called it the “Stone with No Words.” Other people carved words on it later.
+
+Why did Wu leave the stone without words? No one knows for certain. She left no answer that can be proved.
+
+The stone still stands. Some visitors think of a smart and daring ruler. Others remember the people she punished. Both belong to the history of Wu Zetian.
+
+---
+
+## Why Is She Still Remembered?
+
+Think again of the fourteen-year-old girl entering the palace. Almost no one believed that a woman could become emperor. Many years later, Wu proved them wrong.
+
+But sitting on the throne did not make every choice she made right. Wu gave new chances to some people with talent. She also used cruel methods to remove people who stood against her.
+
+More than thirteen hundred years later, Wu is still the only woman emperor in Chinese history. She proved that a woman could rule an empire. Her life also left a warning: winning the throne and using its power wisely are not the same thing.

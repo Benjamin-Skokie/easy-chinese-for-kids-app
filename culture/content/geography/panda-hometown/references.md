@@ -2,6 +2,12 @@
 
 This file is for editorial research and does not render on the website.
 
+## Current Child-Facing Draft (2026-09-03)
+
+- Story path: meet a tiny pink cub, travel from the Chengdu nursery to misty mountain forests, watch a panda eat bamboo, see why connected habitat matters, and follow a carefully prepared return to the wild.
+- The draft retains newborn size, the Sichuan-Shaanxi-Gansu range, bamboo dependence, the wrist bone used like a thumb, long feeding hours, forest corridors, and the careful limits of reintroduction.
+- Conservation categories, population estimates, genetics, release statistics, and “umbrella species” research remain in these notes instead of the child-facing story.
+
 ## Present range, habitat, and corridors
 
 Source: WWF Australia, “Giant panda”
@@ -79,11 +85,33 @@ Supports:
 - A newborn giant panda commonly weighs about 3 to 5 ounces (85 to 142 grams), is pink, nearly hairless, blind, and extremely small relative to its mother.
 - The “stick of butter” comparison is an approximate child-friendly size comparison used by the Smithsonian.
 - A lengthened wrist bone acts as a pseudo-thumb for gripping bamboo, while powerful jaws and strong teeth crush fibrous stems.
+- Giant pandas spend about 10 to 16 hours a day foraging and eating; much of the remaining time is spent sleeping or resting.
 
 Editorial boundary:
 
 - Use a range rather than claiming every cub is born at exactly 100 grams.
 - Do not invent a universal bottle-feeding schedule or imply that human keepers routinely replace the mother. Captive neonatal care depends on the individual birth and veterinary decision.
+
+## What happens when bamboo flowers
+
+Source: Donald G. Reid et al., “Giant Panda *Ailuropoda melanoleuca* Behaviour and Carrying Capacity Following a Bamboo Die-off,” *Biological Conservation*
+URL: https://www.sciencedirect.com/science/article/pii/0006320789900815
+Accessed: 2026-09-03
+
+Source: Guochun Li et al., “Changes of Foraging Patch Selection and Utilization by a Giant Panda after Bamboo Flowering,” *Environmental Science and Pollution Research*
+URL: https://pubmed.ncbi.nlm.nih.gov/28551740/
+Accessed: 2026-09-03
+
+Supports:
+
+- Many plants of one bamboo species can flower across a broad area and then die, sharply reducing the panda's food supply.
+- Flowering bamboo is not instantly inedible: field evidence showed a panda still feeding on it, although its food quality was lower.
+- Pandas may change which bamboo they eat or move to another elevation or patch when a preferred bamboo dies back.
+
+Editorial boundary:
+
+- The child-facing story separates flowering from the later die-off instead of saying that a bamboo flower makes the plant poisonous or impossible to eat.
+- Connected habitat can help pandas reach other food, but it does not guarantee that enough bamboo will always be available.
 
 ## IUCN status and dated population evidence
 
