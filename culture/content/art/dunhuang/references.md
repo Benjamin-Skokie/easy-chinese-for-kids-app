@@ -1,4 +1,4 @@
-# Dunhuang — References and Editorial Notes
+# 沙漠山崖里，为什么藏着满墙故事？— References and Editorial Notes
 
 This file is for editorial research and does not render on the website.
 
@@ -206,3 +206,8 @@ Editorial boundary:
 
 - Digital recording expands access and preserves information, but it is not the same thing as permanently preserving the physical caves.
 - The article avoids a promise that scanning can make the site “immortal.”
+
+## 2026 child-facing revision
+
+- The main article now travels from the Dunhuang oasis into the Mogao Caves, follows flying musicians across a mural, opens the Library Cave, and ends with present-day conservation.
+- It keeps the fourth-century beginning, roughly thousand-year growth, 1900 discovery, mixed Library Cave contents, dispersal, and digital-recording limits supported by the sources above.

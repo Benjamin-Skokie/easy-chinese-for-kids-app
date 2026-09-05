@@ -1,118 +1,129 @@
 ---
-title_zh: 一张仕女图，能代表所有唐代女子吗？
-title_en: Can One Court-Lady Picture Represent Every Tang Woman?
+title_zh: 唐朝为什么有这么多时尚？
+title_en: Why Did Tang China Have So Many Fashions?
 slug: tang-women-hair
 category: clothing
 difficulty: 中等
 back_href: ../../../../index.html#culture-clothing
-style_notes: "用 --- 分隔 frontmatter；正文强调优先用 *斜体*；尽量不用 **粗体**。"
+style_notes: "面向6至10岁儿童；英文为主要阅读文本，中文为简明参考稿。先回答为什么总在讲唐朝，再用女子发髻、发饰和妆容说明时尚怎样变化。"
 ---
 
 [hero]
-title_zh: 一张仕女图，能代表所有唐代女子吗？
-title_en: Can One Court-Lady Picture Represent Every Tang Woman?
+title_zh: 唐朝为什么有这么多时尚？
+title_en: Why Did Tang China Have So Many Fashions?
 [/hero]
 
 [section]
 page: 1
 layout: text-wrap-image
-heading_zh: 先别急着叫她“唐朝女子”
-heading_en: Don't Call Her “the Tang Woman” Yet
+heading_zh: 为什么我们总在讲唐朝？
+heading_en: Why Do We Keep Talking About the Tang Dynasty?
 image: cloud-hair-bun.webp
-caption_zh: 现代想象图：高髻、金饰、妆容和庭院被组合成一个“古典美人”形象，不是有年代和身份记录的唐代肖像。
-caption_en: A modern imagined scene. It combines a high bun, gold ornaments, makeup, and a garden into one “classical beauty”; it is not a dated portrait of a known Tang woman.
+caption_zh: 高高的发髻把头发盘到头顶，金色发饰在发间闪光。
+caption_en: A tall bun lifts the hair high above the head, while gold ornaments shine between its folds.
 [zh]
-屏幕上出现一位女子：头发盘得高高的，金簪闪光，衣袖宽大，身后还有一座花园。有人马上说：“唐朝女子就是这样！”可是，证据侦探会先按下暂停键：她生活在唐代哪一年？住在皇宫、城市还是乡村？她是贵族、侍女、商人、艺人，还是正在做体力活的人？这幅图是墓室壁画、陶俑、传世绘画，还是今天画家的想象？
+翻开一本中国古代服装书，唐朝好像总有很多页。为什么我们总在讲唐朝？其他朝代的人难道不爱漂亮吗？
 
-唐朝从618年到907年，接近三百年。近三百年里，流行会变化；不同地区、身份和生活条件也不会只产生一种发式。初唐一些女俑的发髻较低小，八世纪前半叶的北方墓葬里已经能看见高而弯曲的髻，中晚唐又流行更高的髻和插梳等装饰。把其中一个时期的贵族样式叫作“所有唐代女子的日常”，就像拿今天一张电影节红毯照去代表全世界所有人的校服、工作服和家居服。
+当然不是。每个朝代都有自己的时尚。不过，唐朝延续了将近三百年。三百年很长，足够让裙子、帽子、发髻和妆容改变许多次。一位生活在唐朝早期的女子，和两百年后生活在唐朝晚期的女子，不一定打扮得一样。
 
-我们认识唐代妆发，常靠四类线索。墓室壁画能保留人物组合和颜色，却是为特定墓主人安排的图像；陶俑能让人从四周看发髻形状，却是随葬品，不是活人的快照；诗歌会写“云鬓”“金步摇”，重在声音和想象；出土的梳子、簪钗和假髻则能告诉我们真实材料，却常常离开了原来的完整穿戴场景。每一类证据都照亮一部分，也都留下一块阴影。
+唐朝的大城市里还有许多来来往往的人。商人、使者、艺人和旅行者带来了不同的布料、首饰和穿衣方法。唐朝人会试试新东西，也会把它们和原来的式样搭配在一起。今天，我们还能从壁画、陶俑和出土的首饰中看到不少唐代形象。
+
+图中的女子把头发盘得高高的，又插上了闪亮的发饰。这样大胆的造型，正是唐朝时尚常常让人记住的原因之一。
 [/zh]
 [en]
-A woman appears on a screen. Her hair rises in a tall bun, gold pins shine above it, broad sleeves frame her body, and a garden fills the background. Someone quickly announces, “This is what Tang women looked like!” An evidence detective presses pause. When in the Tang dynasty did she live? Was she in a palace, a city, or a farming village? Was she an aristocrat, attendant, merchant, entertainer, or laborer? Is this a tomb mural, a pottery figure, an old painting, or a modern artist's invention?
+Open a book about clothing in old China, and the Tang dynasty may seem to fill page after page. Why do we keep talking about the Tang? Did people in other dynasties not care about looking good?
 
-The Tang dynasty lasted from 618 to 907—almost three hundred years. Fashion changed across those centuries, and people of different regions, communities, jobs, and incomes did not share one hairstyle. Some early Tang figurines have smaller, lower buns. Northern tomb figures from the first half of the eighth century can show tall, curving chignons. In the middle and late Tang, still higher arrangements and decorative combs became fashionable in some circles. Calling one period's aristocratic look “every Tang woman's daily style” would be like using a film-festival photograph today to represent everyone's school clothes, work clothes, and pajamas.
+Of course they did. Every dynasty had its own fashions. The Tang dynasty, however, lasted for almost three hundred years. That was plenty of time for skirts, hats, hairstyles, and makeup to change again and again. A woman near the beginning of the Tang might not dress like a woman who lived two hundred years later.
 
-Four kinds of clues often teach us about Tang hair and makeup. Tomb murals preserve groups of people and painted color, but they were designed for particular tomb owners. Pottery figures let us examine a hairstyle from several sides, but they are burial objects, not snapshots of living people. Poetry gives us phrases such as “cloudlike hair” and “gold buyao,” but poets shape sound and imagination. Excavated combs, pins, and false chignons reveal real materials, yet they are often separated from the complete outfit once worn around them. Each kind of evidence lights one part of the picture and leaves another in shadow.
+People from many places came to Tang cities. Merchants, visitors, performers, and travelers brought different fabrics, ornaments, and ways of dressing. People tried new ideas and mixed them with styles they already knew. Many Tang murals, clay figures, and pieces of jewelry have also survived.
+
+The woman in the picture wears her hair high, with bright ornaments tucked into it. Bold looks like this are one reason Tang fashion is still easy to remember.
 [/en]
 [/section]
 
 [section]
 page: 2
 layout: text-wrap-image
-heading_zh: 高髻里面藏着什么？
-heading_en: What Was Hidden Inside a High Bun?
+heading_zh: 头发为什么越梳越高？
+heading_en: Why Did Hair Rise Higher and Higher?
 image: gold-buyao.webp
-caption_zh: 现代混搭图：夸张的成套垂链没有对应到本文某件唐代出土发饰。唐代确有金、银、玉、螺钿等发饰，也有会随动作颤动的装饰。
-caption_en: A modern fantasy combination. Its large set of dangling chains does not copy one excavated Tang ornament. Tang hair ornaments did use gold, silver, jade, and mother-of-pearl, and some could tremble with movement.
+caption_zh: 发髻越高，越能装下醒目的梳子和簪子；步摇上的小金片会在走路时轻轻闪动。
+caption_en: A taller bun made room for eye-catching combs and pins. Small gold pieces on a *bùyáo* moved and flashed as the wearer walked.
 [zh]
-假如一只陶俑的发髻比她的脸还高，侦探会问：全是真发吗？答案可能是否定的。唐代墓葬出土过假髻，也叫义髻。有的以麻布作衬，再固定真人头发；有的用薄木做成，涂黑并画上花纹。它们说明，至少有些有条件追逐高髻时尚的女子，会借助额外材料增加高度和体积。簪、钗和梳子既能固定，也能装饰；精美的金饰或螺钿梳背还要经过工匠制作。
+唐朝早期的一些女俑梳着低低的简单发髻。后来，宫廷和富裕人家开始流行更高、更大胆的造型。高发髻在人群里很醒目，也给梳子、簪子和花饰留出了位置。一种式样流行起来以后，梳头的人又想出更新奇的做法。
 
-这也让我们看见发式背后的劳动。一座复杂高髻需要梳理、分束、盘卷、固定，还可能要清洁和保存假髻，再挑选簪钗。做起来要时间、工具、材料，有时也需要另一双手。贵族或宫廷女子较可能拥有昂贵首饰和帮助她梳头的人；要赶路、种田、做买卖或搬东西的人，更可能先考虑头发是否牢固、是否妨碍工作。华丽形象保存得多，不等于它在人群中最普遍。
+这么高的发髻不一定全是真头发。有些女子会使用“义髻”（yìjì），也就是加在自己头发上的假发髻。出土的义髻有的把真人头发固定在麻布上，有的用薄木做成，再涂成黑色。这样就不用全靠自己的头发，一层一层堆上去。
 
-名字也可能骗人。诗中的“云鬓”可以是说头发乌黑蓬松、像云一样，并不是一张能照着施工的发型图。“半翻髻”“偏梳髻”“堕马髻”等名称出现在文献和后世研究里，但把一个词准确贴到某件陶俑上，常常仍是比较后的判断。故宫介绍一件高髻女俑时就用了“大概是文献中的偏梳髻”这样的谨慎说法。至于步摇，它的垂饰会随身体动作轻颤，名字很生动；可一件今天画得满头长链的首饰，不能只因“会摇”就自动变成唐代实物。
+步摇（bùyáo）为什么受欢迎？因为它让发型也会“动”。步摇像一支簪子插在头发里，金玉做成的小饰物从上面垂下来。人一走，它们就轻轻摇动，在光下闪一闪。精细的金玉发饰也能让别人看出，这家人有钱请手艺人做漂亮东西。
+
+假髻能帮忙撑起造型，却不会让所有重量消失。簪子、梳子和金属饰物还是会给头上增加重量。盛装打扮当然不会像梳一个低低的简单发髻那么轻松。
 [/zh]
 [en]
-If a pottery figure's bun rises higher than her face, a detective may ask, “Is all of that real hair?” Sometimes it was not. False chignons, also called *yiji*, have been excavated from Tang tombs. Some used cloth backing with human hair attached; others were shaped from thin wood, darkened, and painted. They show that at least some women with the means to follow high-bun fashion added material for height and volume. Pins, two-pronged hairpins, and combs could both secure and decorate the arrangement. Fine gold ornaments or mother-of-pearl comb tops also required skilled craftwork.
+Some clay figures from the early Tang have low, simple buns. Later, women at court and in wealthy homes tried taller, bolder shapes. A high bun stood out in a crowd and made room for combs, pins, and flowers. Once a style caught on, hairdressers found new ways to build it even higher.
 
-This evidence makes the labor behind the style visible. A complicated high bun had to be combed, divided, coiled, and fastened. A false chignon might need cleaning and storage, and ornaments still had to be selected and placed. The work required time, tools, materials, and sometimes another pair of hands. An aristocratic or palace woman was more likely to own costly ornaments and have help dressing her hair. Someone traveling, farming, selling goods, or carrying loads might first need hair that stayed secure and out of the way. Splendid images survive in large numbers, but that does not make them the most common experience.
+Was all of that real hair? Not always. Some women added a *yìjì* (义髻), or false bun, to their own hair. False buns found in Tang tombs were made in different ways. Some had real hair fastened to cloth. Others were shaped from thin wood and painted black. A false bun created height without piling up layer after layer of a woman's own hair.
 
-Names can trick us too. In poetry, “cloudlike hair” can describe dark, full hair and create a mood; it is not a construction diagram. Names such as “half-turned bun,” “side-combed bun,” and “falling-horse bun” appear in texts and later studies, but matching one name to one figurine is often an interpretation based on comparison. The Palace Museum cautiously says one high-bun figure is “probably” the side-combed style mentioned in writing. A *buyao* has hanging parts that tremble as the body moves, which gives it a wonderfully lively name. But a modern drawing covered in long gold chains does not become a Tang object simply because its ornaments sway.
+Why wear a *bùyáo* (步摇)? Because it made the hairstyle move. The ornament was tucked into the hair like a pin, with small pieces of gold or jade hanging from it. When the woman walked, they trembled and caught the light. Fine gold and jade also showed that her family could pay skilled workers to make beautiful things.
+
+A false bun helped hold up the style, but it did not make every bit of weight disappear. Pins, combs, and metal ornaments still added weight. Dressing for a grand occasion could not have felt as easy as wearing a low, simple bun.
 [/en]
 [/section]
 
 [section]
 page: 3
 layout: text-wrap-image
-heading_zh: 一张脸上需要多少种妆？
-heading_en: How Many Kinds of Makeup Belong on One Face?
+heading_zh: 额头上的小花是什么？
+heading_en: What Is the Little Flower on Her Forehead?
 image: huadian-forehead-decoration.webp
-caption_zh: 现代妆容示意图：眉心画了一枚花形花钿，但发式、眉形、唇妆与衣领是现代选择的组合，不能用来断定某年某地的标准妆容。
-caption_en: A modern makeup illustration with a flower-shaped huadian between the brows. Its hair, brows, lips, and collar are a modern combination, not a standard look for one proven Tang date and place.
+caption_zh: 眉心的小花叫花钿（huādiàn）。它可以画上去，也可以把剪好的小片贴在脸上。
+caption_en: The little flower between her eyebrows is called a *huādiàn* (花钿). It could be painted on or made from a tiny cutout placed on the skin.
 [zh]
-唐代图像和文字里出现过许多面部装饰。花钿是在额头、眉心或脸侧使用的小片或图案；额黄是在额部施黄色；斜红常画在太阳穴附近；面靥则是脸颊或嘴角附近的小点。白粉、胭脂、眉黛和唇脂也有各自的用法。这些名称告诉我们“装饰在哪里、用什么效果”，却不表示每个人每天都把整份清单涂在同一张脸上。
+唐代女子不只改变发型，也会尝试不同的妆容。她们可能使用白粉、胭脂、眉黛和唇脂，也可能在额头或眉心加上一枚小小的花形装饰。这种装饰叫“花钿”（huādiàn）。
 
-一件吐鲁番出土女俑可以同时保留高髻、花钿、斜红和面靥，证明这样的组合曾被表现过；另一幅公主墓里的宫女图，却可能显得清淡得多。差别可能来自年代、地点、人物角色、场合、画法，甚至颜料是否保存下来。我们不能看到褪色的脸就断定她没化妆，也不能把几件文物上的特色全部叠到一位现代模特脸上，再叫它“唐妆标准答案”。
+花钿不一定真是一朵花。它可以是圆点、叶片或别的形状，也可以有不同颜色。有的画在脸上，有的则用剪好的小片贴上去。一点小小的颜色，就能让整张脸看起来很不一样。
 
-流传很广的上官婉儿“用梅花妆遮伤痕”故事也应放在传说栏，而不是证据栏。花钿在上官婉儿之前已有发展，后人记载的版本又不完全相同。故事可以说明人们喜欢给流行妆容寻找一个难忘的起点，却不能证明她发明了花钿。美妆史很少由一个人、一天、一个意外突然开始。
+宫廷宴会上的妆容可以很精细，平常做事时则可以简单得多。白粉、胭脂、眉黛和花钿放在一起，就像一个装满颜色的小盒子；用哪几样，要看这一天要去哪里。
 [/zh]
 [en]
-Tang images and texts contain many kinds of facial decoration. A *huadian* was a small piece or painted shape placed on the forehead, between the brows, or sometimes elsewhere on the face. *Ehuang* added yellow to the forehead. *Xiehong* usually made red marks near the temples. *Mianye* created small dots near the cheeks or corners of the mouth. White powder, rouge, eyebrow pigment, and lip color had other jobs. These names tell us where an effect appeared; they do not mean that every person wore the entire list on one face every day.
+Tang women changed more than their hair. They also tried different kinds of makeup. A woman might use face powder, color for her eyebrows and lips, and blush on her cheeks. She might also place a tiny decoration on her forehead or between her eyebrows. It was called a *huādiàn* (花钿).
 
-One female figure excavated near Turpan preserves a high chignon together with huadian, xiehong, and mianye, showing that this combination was represented. A mural of palace attendants from a princess's tomb can look much plainer. The difference might come from date, place, role, occasion, artistic choice, or even which pigments survived. A faded face does not prove that its subject wore no makeup. Features gathered from several objects should not be stacked onto one modern model and called “the standard Tang face.”
+A *huādiàn* did not have to be a flower. It could be a dot, a leaf, or another small shape, and it could come in different colors. Some were painted on. Others were tiny cutouts placed on the skin. One small spot of color could change the look of the whole face.
 
-The popular tale that Shangguan Wan'er used plum-blossom makeup to hide a forehead injury belongs in the folklore file, not the evidence file. Forehead decoration had developed before her lifetime, and later accounts do not all tell the same story. The tale shows how people like to give a memorable beginning to a fashion. It does not prove that Shangguan invented huadian. Beauty history rarely begins with one person, on one day, after one accident.
+Makeup for a palace banquet could be very detailed, while an ordinary workday called for something simpler. A woman could choose powder, blush, eyebrow color, or a *huādiàn*, depending on where she was going that day.
 [/en]
 [/section]
 
 [section]
 page: 4
-layout: text-only
-heading_zh: 时尚沿着人走，不带“纯正”标签
-heading_en: Fashion Traveled with People, Not Purity Labels
+layout: text-wrap-image
+heading_zh: 普通女子怎么梳头？
+heading_en: What About Ordinary Women?
+image: ordinary-woman-sewing.webp
+caption_zh: 一位普通家庭的年轻女子把头发盘成低髻，用木簪固定，然后坐在院子里缝衣服。
+caption_en: A young woman from an ordinary family wears her hair in a low bun held by a wooden pin as she sews in the courtyard.
 [zh]
-唐代城市通过陆路和海路连接许多地方。商人、使者、僧人、艺人、工匠和迁居家庭带着材料、技艺和穿衣习惯移动。墓葬俑里可以看见适合骑马的窄袖袍、长裤和靴子；一些材料和纹样也显示与草原、中亚、西亚等地的交流。人们会借用、调整，再与本地做法组合。时尚不是一只贴着“外国”标签的箱子，被完整搬进长安；也不存在从不变化的“纯正唐人样式”。
+我们今天看到的许多华丽形象，来自贵族墓里的壁画和陶俑。它们很美，却更像宴会服和礼服，不是唐朝街上每位女子每天的打扮。
 
-同一个帝国里还有许多地区和族群。长安宫廷的流行不等于吐鲁番居民的全部生活，北方墓里的陶俑也不能替南方劳动者梳头。发式更不能让我们自动读出婚姻状态或性格：某些年龄、礼仪或社群可能有习惯，但没有具体制度和背景，就不能说“梳这种髻一定未婚”或“戴那种钗一定大胆”。外表是线索，不是读心术。
+一位要做饭、照顾孩子、摆摊或干活的女子，更需要先把头发收好。她可以把头发在脑后盘成较低的发髻，再用簪子、梳子或布带固定。这样头发不容易挡住眼睛，也不容易在忙碌时散开。
+
+普通女子也会爱漂亮。家里若有条件，她可以在节日或参加婚礼时插一朵花、戴一支簪子，或者擦一点胭脂。做不同事情的人也有自己的打扮。唐朝的时尚不只在宫殿里，也在每天梳头、出门和做事的生活里。
 [/zh]
 [en]
-Tang cities were connected to many places by land and sea. Merchants, envoys, monks, performers, craftspeople, and migrating families carried materials, skills, and clothing habits with them. Tomb figures show riding outfits with narrow sleeves, trousers, and boots. Some materials and designs also reveal contact with the steppe, Central Asia, West Asia, and other regions. People borrowed, adjusted, and combined ideas with local practices. Fashion was not a box labeled “foreign” that arrived in Chang'an unchanged. Nor was there one “pure Tang style” that never moved.
+Many of the grand Tang looks we see today come from paintings and clay figures found in wealthy tombs. They are beautiful, but they look more like clothes for banquets and important events than something every woman wore each morning.
 
-The empire itself contained many regions and communities. Court fashion in Chang'an cannot stand for all life in Turpan, and a tomb figure from northern China cannot style the hair of a laborer in the south. A hairstyle also cannot automatically reveal marriage status or personality. A particular age group, ceremony, or community might follow a custom, but without that specific context we cannot declare, “This bun always means unmarried,” or “That pin proves she was bold.” Appearance is evidence, not mind reading.
+A woman who cooked, cared for children, worked at a market, or labored outdoors first needed to keep her hair out of the way. She could twist it into a lower bun at the back of her head and hold it with a pin, comb, or cloth band. Her hair was then less likely to fall into her eyes or come loose while she worked.
+
+Ordinary women liked pretty things too. If her family could afford them, a woman might add a flower or a nice pin for a festival or wedding. She might add a little blush to her cheeks as well. Different kinds of work called for different ways of dressing. Tang fashion lived in ordinary homes and busy streets, not only inside palaces.
 [/en]
 [/section]
 
 [ending]
-heading_zh: 再看那张仕女图
-heading_en: Look at the Picture Again
+heading_zh: 华丽的，也有简单的
+heading_en: Grand Styles and Simple Ones
 [zh]
-现在再看开头那张图，我们不必说“它不是真的”，也不能说“唐朝女子全都这样”。更好的回答是：“这是一幅现代想象图，借用了几个唐代流行过的元素；要判断它靠近哪个时期、哪类人物，还得和有年代的壁画、陶俑、出土发饰和文献一项项比较。”
-
-一张图最有价值的时候，不是它替三百年里的所有女性说话，而是它让我们继续追问：谁被画下来了？谁没有？哪些细节有实物支持？哪些只是今天觉得好看的混搭？这些问题，才是打开唐代梳妆盒的钥匙。
+金光闪闪的步摇和高高的发髻最容易吸引我们的目光。可是唐朝的街道上，也有许多梳着简单发髻、忙着过日子的女子。华丽的盛装和方便做事的日常打扮，都是唐朝生活的一部分。
 [/zh]
 [en]
-Look again at the opening picture. We do not have to say, “None of this is real,” but we also cannot say, “Every Tang woman looked like this.” A better answer is: “This is a modern imagined scene that borrows several elements used at some points in the Tang dynasty. To decide which period and group it resembles, we must compare each detail with dated murals, pottery figures, excavated ornaments, and texts.”
-
-A picture becomes most useful when it does not speak for every woman across three hundred years. Instead, it makes us ask: Who was pictured? Who was left out? Which details have physical evidence? Which are combinations that look beautiful to people today? Those questions are the real keys to a Tang dressing box.
+Glittering *bùyáo* and towering buns are the easiest styles to notice. But Tang streets were also full of women wearing simple buns and getting on with a busy day. Grand clothes and practical everyday styles were both part of life in Tang China.
 [/en]
 [/ending]

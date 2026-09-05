@@ -2,6 +2,12 @@
 
 This file is for editorial research and does not render on the website.
 
+## Current Child-Facing Draft (2026-09-03)
+
+- The story now explains the name *Zǐjìnchéng*, then follows a visitor through gates, work spaces, an ice-road stone haul, the Imperial Garden, and the palace's change into a museum.
+- Dates and counts that do not help that journey were removed. The 1557 stone record remains clearly later than the palace's first construction.
+- The text does not claim that every present building is original to 1420 or that every part of the palace is open today.
+
 ## Construction, Scale, and the Meaning of the Site
 
 Source: Palace Museum, “The Forbidden City Is a Museum” (《故宫是座博物馆》)
@@ -32,6 +38,27 @@ Editorial boundary:
 - “Room” is explained as an architectural bay rather than treated as a bedroom count.
 - The popular “9,999 and a half rooms” claim is labeled as legend. It is not substituted for the museum's modern count.
 - “Largest” is qualified as a wooden palace complex. The article does not claim the site wins every possible worldwide palace comparison.
+
+## Why It Was Called Zǐjìnchéng
+
+Source: Palace Museum, “Modeling the Palace after the Heavens” (《象天立宫》)
+URL: https://www.dpm.org.cn/lemmas/243823.html
+Accessed: 2026-09-03
+
+Source: Palace Museum, “Walking toward the Hall of Supreme Harmony” (《角度——走向太和》)
+URL: https://www.dpm.org.cn/forum_detail/100138.html
+Accessed: 2026-09-03
+
+Supports:
+
+- In ancient Chinese astronomy, the Purple Forbidden Enclosure, or *Zǐwēiyuán*, was associated with the heavenly ruler and became a model for imagining the earthly emperor's palace.
+- The character 紫 (*zǐ*) literally means “purple,” but in this name it carries that older celestial and imperial association.
+- 禁 (*jìn*) refers to a restricted or closely guarded place, while 城 (*chéng*) refers to the walled palace city.
+
+Editorial boundary:
+
+- The children's text separates the three characters and explains that 城 (*chéng*) carried a stronger sense of an enclosed, walled place in older Chinese than “city” usually does today.
+- The explanation uses “a group of stars” instead of requiring young readers to learn the full structure of traditional Chinese constellations.
 
 ## A Palace Rebuilt Across Six Centuries
 

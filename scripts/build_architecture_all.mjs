@@ -11,5 +11,4 @@ const slugs = [
 
 for (const slug of slugs) {
   await buildPhilosophyPage({ category: "architecture", slug, target: "books" });
-  await buildPhilosophyPage({ category: "architecture", slug, target: "experiments" });
 }

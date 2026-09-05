@@ -1,4 +1,4 @@
-# “一口钟，为什么有两个音？”— References and Editorial Notes
+# “一口钟，为什么能敲出两个音？”— References and Editorial Notes
 
 This file is for editorial research and does not render on the website.
 
@@ -151,3 +151,8 @@ Editorial boundary:
 - The dual-tone image is a teaching diagram; children are explicitly told never to strike museum objects.
 - The inscription image contains invented-looking characters rather than a verified transcription, and its touching gesture conflicts with modern conservation practice; the caption states both limitations.
 - The household-bowl observation requires adult supervision, a stable metal bowl, and a wooden spoon. It excludes glass, pottery, unknown metals, and any attempt to reproduce ancient pitch claims.
+
+## 2026 child-facing revision
+
+- The main article now follows four concrete ideas: one bell can sound two notes; sixty-five bells were found in Marquis Yi's tomb; inscriptions give musical clues; modern performances use replicas.
+- The former household experiment, long title explanations, political interpretation, and repeated cautions were removed from the children's narrative. The evidence and image limits remain documented above.

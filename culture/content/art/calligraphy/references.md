@@ -241,3 +241,8 @@ Editorial boundary:
 - It is not an Eastern Jin painting, eyewitness record, or historically verified portrait of Wang Xizhi.
 - The musician, architecture, costumes, writing action, and floating pseudo-calligraphy are decorative inventions.
 - The image is not a version, copy, engraving, or rubbing of the *Orchid Pavilion Preface*.
+
+## 2026 child-facing revision
+
+- The main article now uses the character 福, five living script styles, the Orchid Pavilion gathering, and brush movement to explain calligraphy.
+- It states that the original *Orchid Pavilion Preface* is lost and that surviving versions are copies and rubbings. Detailed debates about attribution, examinations, and museum labels remain in this file rather than the children's story.

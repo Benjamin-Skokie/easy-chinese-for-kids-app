@@ -1,47 +1,51 @@
 > Difficulty: Medium
 
-# Can One Court-Lady Picture Represent Every Tang Woman?
+# Why Did Tang China Have So Many Fashions?
 
-## Don't Call Her “the Tang Woman” Yet
+## Why Do We Keep Talking About the Tang Dynasty?
 
-A woman appears on a screen. Her hair rises in a tall bun, gold pins shine above it, broad sleeves frame her body, and a garden fills the background. Someone quickly announces, “This is what Tang women looked like!” An evidence detective presses pause. When in the Tang dynasty did she live? Was she in a palace, a city, or a farming village? Was she an aristocrat, attendant, merchant, entertainer, or laborer? Is this a tomb mural, a pottery figure, an old painting, or a modern artist's invention?
+Open a book about clothing in old China, and the Tang dynasty may seem to fill page after page. Why do we keep talking about the Tang? Did people in other dynasties not care about looking good?
 
-The Tang dynasty lasted from 618 to 907—almost three hundred years. Fashion changed across those centuries, and people of different regions, communities, jobs, and incomes did not share one hairstyle. Some early Tang figurines have smaller, lower buns. Northern tomb figures from the first half of the eighth century can show tall, curving chignons. In the middle and late Tang, still higher arrangements and decorative combs became fashionable in some circles. Calling one period's aristocratic look “every Tang woman's daily style” would be like using a film-festival photograph today to represent everyone's school clothes, work clothes, and pajamas.
+Of course they did. Every dynasty had its own fashions. The Tang dynasty, however, lasted for almost three hundred years. That was plenty of time for skirts, hats, hairstyles, and makeup to change again and again. A woman near the beginning of the Tang might not dress like a woman who lived two hundred years later.
 
-Four kinds of clues often teach us about Tang hair and makeup. Tomb murals preserve groups of people and painted color, but they were designed for particular tomb owners. Pottery figures let us examine a hairstyle from several sides, but they are burial objects, not snapshots of living people. Poetry gives us phrases such as “cloudlike hair” and “gold buyao,” but poets shape sound and imagination. Excavated combs, pins, and false chignons reveal real materials, yet they are often separated from the complete outfit once worn around them. Each kind of evidence lights one part of the picture and leaves another in shadow.
+People from many places came to Tang cities. Merchants, visitors, performers, and travelers brought different fabrics, ornaments, and ways of dressing. People tried new ideas and mixed them with styles they already knew. Many Tang murals, clay figures, and pieces of jewelry have also survived.
 
----
-
-## What Was Hidden Inside a High Bun?
-
-If a pottery figure's bun rises higher than her face, a detective may ask, “Is all of that real hair?” Sometimes it was not. False chignons, also called *yiji*, have been excavated from Tang tombs. Some used cloth backing with human hair attached; others were shaped from thin wood, darkened, and painted. They show that at least some women with the means to follow high-bun fashion added material for height and volume. Pins, two-pronged hairpins, and combs could both secure and decorate the arrangement. Fine gold ornaments or mother-of-pearl comb tops also required skilled craftwork.
-
-This evidence makes the labor behind the style visible. A complicated high bun had to be combed, divided, coiled, and fastened. A false chignon might need cleaning and storage, and ornaments still had to be selected and placed. The work required time, tools, materials, and sometimes another pair of hands. An aristocratic or palace woman was more likely to own costly ornaments and have help dressing her hair. Someone traveling, farming, selling goods, or carrying loads might first need hair that stayed secure and out of the way. Splendid images survive in large numbers, but that does not make them the most common experience.
-
-Names can trick us too. In poetry, “cloudlike hair” can describe dark, full hair and create a mood; it is not a construction diagram. Names such as “half-turned bun,” “side-combed bun,” and “falling-horse bun” appear in texts and later studies, but matching one name to one figurine is often an interpretation based on comparison. The Palace Museum cautiously says one high-bun figure is “probably” the side-combed style mentioned in writing. A *buyao* has hanging parts that tremble as the body moves, which gives it a wonderfully lively name. But a modern drawing covered in long gold chains does not become a Tang object simply because its ornaments sway.
+The woman in the picture wears her hair high, with bright ornaments tucked into it. Bold looks like this are one reason Tang fashion is still easy to remember.
 
 ---
 
-## How Many Kinds of Makeup Belong on One Face?
+## Why Did Hair Rise Higher and Higher?
 
-Tang images and texts contain many kinds of facial decoration. A *huadian* was a small piece or painted shape placed on the forehead, between the brows, or sometimes elsewhere on the face. *Ehuang* added yellow to the forehead. *Xiehong* usually made red marks near the temples. *Mianye* created small dots near the cheeks or corners of the mouth. White powder, rouge, eyebrow pigment, and lip color had other jobs. These names tell us where an effect appeared; they do not mean that every person wore the entire list on one face every day.
+Some clay figures from the early Tang have low, simple buns. Later, women at court and in wealthy homes tried taller, bolder shapes. A high bun stood out in a crowd and made room for combs, pins, and flowers. Once a style caught on, hairdressers found new ways to build it even higher.
 
-One female figure excavated near Turpan preserves a high chignon together with huadian, xiehong, and mianye, showing that this combination was represented. A mural of palace attendants from a princess's tomb can look much plainer. The difference might come from date, place, role, occasion, artistic choice, or even which pigments survived. A faded face does not prove that its subject wore no makeup. Features gathered from several objects should not be stacked onto one modern model and called “the standard Tang face.”
+Was all of that real hair? Not always. Some women added a *yìjì* (义髻), or false bun, to their own hair. False buns found in Tang tombs were made in different ways. Some had real hair fastened to cloth. Others were shaped from thin wood and painted black. A false bun created height without piling up layer after layer of a woman's own hair.
 
-The popular tale that Shangguan Wan'er used plum-blossom makeup to hide a forehead injury belongs in the folklore file, not the evidence file. Forehead decoration had developed before her lifetime, and later accounts do not all tell the same story. The tale shows how people like to give a memorable beginning to a fashion. It does not prove that Shangguan invented huadian. Beauty history rarely begins with one person, on one day, after one accident.
+Why wear a *bùyáo* (步摇)? Because it made the hairstyle move. The ornament was tucked into the hair like a pin, with small pieces of gold or jade hanging from it. When the woman walked, they trembled and caught the light. Fine gold and jade also showed that her family could pay skilled workers to make beautiful things.
 
----
-
-## Fashion Traveled with People, Not Purity Labels
-
-Tang cities were connected to many places by land and sea. Merchants, envoys, monks, performers, craftspeople, and migrating families carried materials, skills, and clothing habits with them. Tomb figures show riding outfits with narrow sleeves, trousers, and boots. Some materials and designs also reveal contact with the steppe, Central Asia, West Asia, and other regions. People borrowed, adjusted, and combined ideas with local practices. Fashion was not a box labeled “foreign” that arrived in Chang'an unchanged. Nor was there one “pure Tang style” that never moved.
-
-The empire itself contained many regions and communities. Court fashion in Chang'an cannot stand for all life in Turpan, and a tomb figure from northern China cannot style the hair of a laborer in the south. A hairstyle also cannot automatically reveal marriage status or personality. A particular age group, ceremony, or community might follow a custom, but without that specific context we cannot declare, “This bun always means unmarried,” or “That pin proves she was bold.” Appearance is evidence, not mind reading.
+A false bun helped hold up the style, but it did not make every bit of weight disappear. Pins, combs, and metal ornaments still added weight. Dressing for a grand occasion could not have felt as easy as wearing a low, simple bun.
 
 ---
 
-## Look at the Picture Again
+## What Is the Little Flower on Her Forehead?
 
-Look again at the opening picture. We do not have to say, “None of this is real,” but we also cannot say, “Every Tang woman looked like this.” A better answer is: “This is a modern imagined scene that borrows several elements used at some points in the Tang dynasty. To decide which period and group it resembles, we must compare each detail with dated murals, pottery figures, excavated ornaments, and texts.”
+Tang women changed more than their hair. They also tried different kinds of makeup. A woman might use face powder, color for her eyebrows and lips, and blush on her cheeks. She might also place a tiny decoration on her forehead or between her eyebrows. It was called a *huādiàn* (花钿).
 
-A picture becomes most useful when it does not speak for every woman across three hundred years. Instead, it makes us ask: Who was pictured? Who was left out? Which details have physical evidence? Which are combinations that look beautiful to people today? Those questions are the real keys to a Tang dressing box.
+A *huādiàn* did not have to be a flower. It could be a dot, a leaf, or another small shape, and it could come in different colors. Some were painted on. Others were tiny cutouts placed on the skin. One small spot of color could change the look of the whole face.
+
+Makeup for a palace banquet could be very detailed, while an ordinary workday called for something simpler. A woman could choose powder, blush, eyebrow color, or a *huādiàn*, depending on where she was going that day.
+
+---
+
+## What About Ordinary Women?
+
+Many of the grand Tang looks we see today come from paintings and clay figures found in wealthy tombs. They are beautiful, but they look more like clothes for banquets and important events than something every woman wore each morning.
+
+A woman who cooked, cared for children, worked at a market, or labored outdoors first needed to keep her hair out of the way. She could twist it into a lower bun at the back of her head and hold it with a pin, comb, or cloth band. Her hair was then less likely to fall into her eyes or come loose while she worked.
+
+Ordinary women liked pretty things too. If her family could afford them, a woman might add a flower or a nice pin for a festival or wedding. She might add a little blush to her cheeks as well. Different kinds of work called for different ways of dressing. Tang fashion lived in ordinary homes and busy streets, not only inside palaces.
+
+---
+
+## Grand Styles and Simple Ones
+
+Glittering *bùyáo* and towering buns are the easiest styles to notice. But Tang streets were also full of women wearing simple buns and getting on with a busy day. Grand clothes and practical everyday styles were both part of life in Tang China.

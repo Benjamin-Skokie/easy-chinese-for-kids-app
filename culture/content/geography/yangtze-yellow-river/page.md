@@ -1,120 +1,132 @@
 ---
-title_zh: 长江与黄河：两条“母亲河”讲的不只一个故事
-title_en: The Yangtze and the Yellow River: More Than One Story
+title_zh: 长江和黄河：两条河为什么不一样？
+title_en: The Yangtze and Yellow Rivers: Why Are They So Different?
 slug: yangtze-yellow-river
 category: geography
-difficulty: 困难
+difficulty: 简单
 style_notes: "用 --- 分隔 frontmatter；正文强调优先用 *斜体*；尽量不用 **粗体**。"
 ---
 
 [hero]
-title_zh: 长江与黄河：两条“母亲河”讲的不只一个故事
-title_en: The Yangtze and the Yellow River: More Than One Story
+title_zh: 长江和黄河：两条河为什么不一样？
+title_en: The Yangtze and Yellow Rivers: Why Are They So Different?
 [/hero]
 
 [section]
 page: 1
 layout: text-wrap-image
-heading_zh: 地图上的两条线，真的能量得一清二楚吗？
-heading_en: Can Two Lines on a Map Really Be Measured Exactly?
+heading_zh: 两滴水向东走
+heading_en: Two Drops Begin a Journey East
 image: two-mother-rivers-map.webp
-caption_zh: 这是一张没有比例尺的简化示意图：黄色线表示较北的黄河，蓝色线表示较南的长江
-caption_en: This is a simplified map without a scale: yellow marks the more northerly Yellow River, and blue marks the more southerly Yangtze.
+caption_zh: 长江和黄河都从中国西部的高地出发，一路向东流入大海。
+caption_en: The Yangtze and Yellow Rivers both begin in the highlands of western China and flow east toward the sea.
 [zh]
-把手指放在中国西部的高原上，再一路向东移动，你可以追出两条长长的水路。长江从青藏高原的源区出发，干流流经许多省级地区，最后进入东海；官方资料常把它写成约六千四百公里。黄河发源于巴颜喀拉山北麓，绕出一个巨大的“几”字，最后从山东进入渤海，全长约五千四百六十四公里。
+想象两滴雪水落在中国西部的高山上。一滴加入长江，一滴加入黄河。它们都向东走，却开始了两段很不一样的旅程。
 
-可是，河流不像操场上的直跑道。测量者要先决定哪一条源头溪流算起点，再沿弯曲的主河道中心量到选定的河口。河流还会截弯、改道，在河口堆出新土地；地图精度和测量时间不同，结果也可能有差别。因此，“约六千四百公里”比假装每一米都永远不变更准确。
+长江是中国最长的河，长约 4,000 英里，最后流入东海。黄河是中国第二长河，长约 3,400 英里，最后流入渤海。两条河都要穿过大半个中国。
 
-人们常把长江和黄河称为“母亲河”，因为许多社区长期从河里取水、捕鱼、航行、灌溉，也在河边建起城镇。这个称呼表达感谢和亲近，却不是一张血缘证明：它不等于所有中国人的祖先都来自这两条河边，也不等于中国历史只有两条河的故事。
+千百年来，人们在河边取水、种田、捕鱼、坐船，也建起村庄和城市。长江和黄河因此常被称为中国的“母亲河”：它们的水养育了许许多多的人，也带着许许多多的故事流向大海。
 [/zh]
 [en]
-Place a finger on the high plateau in western China and move eastward, and you can trace two immense waterways. The Yangtze begins in the headwater region of the Tibetan Plateau, crosses many provincial-level regions, and enters the East China Sea. Official sources commonly give its length as about 6,400 kilometers. The Yellow River begins on the northern side of the Bayan Har Mountains, makes a huge looping bend, and enters the Bohai Sea in Shandong after about 5,464 kilometers.
+Imagine two drops of melting snow high in western China. One joins the Yangtze River. The other joins the Yellow River. Both travel east, but their journeys are very different.
 
-A river, however, is not a straight running track. Surveyors must choose which headwater counts as the beginning, then measure along the winding center of the main channel to a chosen mouth. Rivers cut across bends, change course, and build new land at their deltas. Different maps and measurement dates can therefore produce different answers. “About 6,400 kilometers” is more truthful than pretending that every meter will stay fixed forever.
+The Yangtze is China's longest river. It runs about 4,000 miles before reaching the East China Sea. The Yellow River is China's second longest. It travels about 3,400 miles to the Bohai Sea. Both cross a large part of China.
 
-People often call the Yangtze and Yellow River “mother rivers.” For many communities, the rivers have supplied water, fish, transport, irrigation, and places to build towns. The name expresses gratitude and belonging, but it is not a family certificate. It does not mean that every Chinese person's ancestors came from these two riverbanks, or that China's past contains only two river stories.
+For thousands of years, people beside these rivers have collected water, grown food, caught fish, traveled by boat, and built towns and cities. That is why the Yangtze and Yellow Rivers are often called China's “mother rivers.” Their water has supported many lives and carried many stories toward the sea.
 [/en]
 [/section]
 
 [section]
 page: 2
 layout: text-wrap-image
-heading_zh: 黄河为什么会变成“地上悬河”？
-heading_en: How Did Parts of the Yellow River Rise Above the Plain?
+heading_zh: 黄河为什么是黄色的？
+heading_en: Why Is the Yellow River Yellow?
 image: yellow-river-raised-bed.webp
-caption_zh: 夸张的剖面示意图，用来表现下游部分河床高于堤外地面；图中高度不能当作实测比例
-caption_en: This exaggerated cutaway illustrates parts of the lower channel above the land outside its levees; the height is not drawn to measured scale.
+caption_zh: 黄河带来的泥沙会沉到河底。两岸修起高高的土墙后，有些下游河床慢慢变得比附近的土地还高。
+caption_en: Mud carried by the Yellow River settles on the bottom. Between high earth walls, parts of the lower riverbed have slowly risen above the nearby land.
 [zh]
-黄河的黄色主要来自悬浮在水中的细小泥沙。中游许多支流经过黄土高原，暴雨很容易冲刷松散的黄土；坡地怎样被利用、植被保存得怎样，也会改变进入河里的泥沙量。水和沙来自不同区域、在不同季节到达，使黄河不只是“水多不多”的问题，还要同时计算“沙往哪里走”。
+黄河经过中国北方一大片松软的黄土地。下大雨时，泥土很容易被冲进河里。无数细小的泥沙跟着水向前走，把河水染成黄褐色。黄河的名字，就是从这种颜色来的。
 
-河水进入平坦的下游后，坡度减小、流速改变，一部分泥沙便沉到河道里。人们为了保护村庄和农田，长期修筑、加高堤防；堤防挡住洪水，也把许多水和沙限制在两堤之间。河床反复淤高后，黄河下游现有河床一般比堤外地面高约四到六米，局部更高，于是有了“地上悬河”的说法。
+到了平坦的下游，河水流得慢一些，泥沙也开始沉到河底。为了挡住洪水，人们在两岸修起高高的土墙。泥沙年年堆积，有些地方的河床竟然慢慢升到附近土地的上方，像一条被两堵墙托起来的河。
 
-这时若大洪水冲破堤坝，水可能沿较低的平原另找道路，造成决口和改道。不过，把黄河叫作“脾气暴躁”会藏起真正原因。强降雨、黄土侵蚀、泥沙沉积和河道本身是自然过程；在哪里筑堤、怎样利用坡地和滩区、如何调度水库，则是人的选择。今天的防洪包括堤防、水库、滞洪区、水土保持和调水调沙。它们大幅降低了风险，却不能让河流从此失去变化。
+黄河带来的泥土可以让农田变得肥沃，洪水却也可能冲进村庄。住在河边的人修土墙、种树护土，也使用水库控制一部分河水。这些工作一直要做，因为河水每年都会带来新的泥沙。
 [/zh]
 [en]
-The Yellow River's color comes mainly from fine sediment suspended in the water. Many middle-reach tributaries cross the Loess Plateau, where intense rain can wash loose soil from the land. The way slopes are farmed and the amount of vegetation left on them also affect how much sediment reaches the river. Because much of the water and sediment come from different places and arrive at different times, river managers must ask not only “How much water?” but also “Where will the sediment go?”
+The Yellow River crosses a wide part of northern China covered with soft, yellow-brown soil. During heavy rain, the soil washes easily into the river. Countless tiny bits of earth travel downstream and turn the water muddy yellow. That is how the Yellow River got its name.
 
-When the river reaches the flatter lower plain, its slope and speed change, and some of the sediment settles into the channel. For centuries, people built and raised levees to protect farms and settlements. Levees hold back floods, but they also keep much of the water and sediment between two walls. As the bed accumulated sediment, it rose. Today, the existing lower channel is generally about four to six meters above the land beyond the levees, and higher in some places. This is the “suspended river” or “river above ground.”
+When the river reaches flatter land, it slows down and drops some of its mud on the bottom. To hold back floods, people built high walls of packed earth along both banks. As mud piled up year after year, parts of the riverbed rose above the nearby land, almost like a river held up between two walls.
 
-If a large flood breaks a levee, the water may seek a lower route across the plain, causing a breach or even a change of course. Calling the river “angry” hides the real explanation. Heavy rain, erosion, sediment, and channel movement are natural processes. Where people build levees, how they use slopes and floodplains, and how they operate reservoirs are human choices. Modern protection combines levees, reservoirs, flood-storage areas, soil conservation, and controlled releases of water and sediment. These measures have greatly reduced risk, but they cannot make a living river stop changing.
+Soil carried by the Yellow River can make farmland rich, but floods can also rush into villages. People near the river maintain the earth walls, plant trees to keep soil in place, and use reservoirs to hold some of the water. The work must continue because the river brings fresh mud every year.
 [/en]
 [/section]
 
 [section]
 page: 3
 layout: text-wrap-image
-heading_zh: 长江不是从头到尾都“宽阔沉稳”
-heading_en: The Yangtze Is Not Wide and Steady Everywhere
+heading_zh: 长江穿过三道大峡谷
+heading_en: The Yangtze Passes Through Three Great Gorges
 image: yangtze-three-gorges.webp
-caption_zh: 浪漫化的三峡插图，更接近诗歌想象；它不是三峡水库形成后的纪实照片
-caption_en: This romanticized Three Gorges illustration is closer to a poetic image; it is not a documentary view after the reservoir was formed.
+caption_zh: 三峡是长江穿过群山的三段峡谷，两岸的山峰把江水夹在中间。
+caption_en: The Three Gorges are three narrow parts of the Yangtze, where steep mountains rise on both sides of the river.
 [zh]
-长江上游从高原和山地落下，有急流、峡谷和巨大的高差；到了中游，它穿过平原，与洞庭湖、鄱阳湖等湖泊交换水；下游接近海洋，又受到三角洲和潮汐影响。一条六千多公里的河不可能只有一种“性格”。雨季若许多支流同时涨水，中下游同样会发生严重洪水。与干流相连的湖泊和湿地能够暂时容纳一部分洪水，也给鱼、鸟和水生植物留下栖息地；围垦、筑堤和城市扩张缩小这些空间时，防洪与生态都会变得更复杂。
+长江刚从高原出发时，河道狭窄，水从山间飞快地冲下来。后来，它穿过三段相连的大峡谷。它们合在一起，就叫“三峡”。两岸山峰高高耸立，船走在中间，像从一扇扇巨大的石门下穿过。
 
-唐代诗人李白在《早发白帝城》中写“千里江陵一日还”，让船仿佛顺着急流飞过三峡。“千里”在诗里传出距离遥远，“一日还”传出轻快和惊喜，却不是今天用来计算航速的测量记录。诗保留的是一次旅行的感受，不是水文报告。
+一千多年前，诗人李白也曾乘船经过这里。他写道：“轻舟已过万重山。”小船顺水向前，两岸的山峰一座接一座退到身后。短短七个字，就让人感觉船快得像要飞起来。
 
-今天的三峡也已经不同。三峡工程在宜昌附近拦江，水库改变了上游水位和流速。它能发电、帮助储蓄洪水，并改善部分航运条件；与此同时，大量居民为水库搬迁，一些城镇、遗址和土地被淹没，水流与泥沙的变化也影响下游河床、湿地和鱼类。人们还在用生态调度等办法减轻影响。这样的工程不能只用“伟大”或“破坏”两个字总结：真正的问题是，谁得到好处、谁承担代价，又怎样长期照顾整条河。
+出了三峡，长江来到较平坦的地方，接上湖泊和许多支流。江面越来越宽，船也越来越多。等它穿过南京、上海附近，已经是一条繁忙的大河，载着货物和旅客奔向大海。
 [/zh]
 [en]
-In its upper reaches, the Yangtze drops from plateaus and mountains through rapids, gorges, and enormous changes in elevation. In the middle reaches, it crosses plains and exchanges water with lakes such as Dongting and Poyang. Near the sea, its lower reaches meet a delta and tides. A river more than 6,000 kilometers long cannot have just one “personality.” When many tributaries rise together in the rainy season, the middle and lower river can suffer disastrous floods. Connected lakes and wetlands temporarily hold some floodwater and provide habitat for fish, birds, and aquatic plants. Reclamation, levees, and urban growth have reduced some of that space, making both flood safety and ecology more difficult.
+Near its beginning, the Yangtze rushes down from high land through narrow mountain channels. Later, it enters three great gorges joined together. They are called the Three Gorges. Steep peaks rise on both sides, and a boat seems to pass through one enormous stone doorway after another.
 
-In the Tang dynasty, Li Bai wrote of leaving Baidi City and returning “a thousand *li* to Jiangling in one day.” The poem makes his boat seem to fly through the Three Gorges. “A thousand *li*” communicates a great distance, while “in one day” carries speed and delight. It is not a modern speed measurement. The poem preserves the feeling of a journey, not a hydrology report.
+More than 1,000 years ago, the poet Li Bai traveled through this area by boat. He wrote, “My light boat has passed ten thousand mountains.” Peak after peak slipped behind him as the current carried his boat forward. In just one short line, he made the boat feel as if it were flying.
 
-The Three Gorges of today have changed as well. The Three Gorges Project blocks the river near Yichang, and its reservoir altered upstream water levels and currents. It generates electricity, helps store floodwater, and improves some navigation. At the same time, large numbers of residents were resettled; towns, archaeological sites, and land were submerged; and changed flows and sediment have affected downstream channels, wetlands, and fish. Managers have also tested environmental releases to reduce some harm. A project this large cannot be summed up as simply “great” or “destructive.” The harder questions are who receives the benefits, who bears the costs, and how the whole river will be cared for over time.
+After leaving the gorges, the Yangtze reaches flatter land and joins lakes and many smaller rivers. The water grows wider, and more boats appear. By the time the river passes near Nanjing and Shanghai, it is a busy waterway carrying goods and passengers toward the sea.
 [/en]
 [/section]
 
 [section]
 page: 4
-layout: text-wrap-image
-heading_zh: “北麦南稻”是一条线，还是一团交错的线？
-heading_en: Is “Wheat North, Rice South” a Border—or a Tangle of Lines?
-image: north-south-river-life-split.webp
-caption_zh: 这幅概念插图故意把北方麦田和南方稻田分开；现实中的作物、交通与房屋并没有这样整齐的边界
-caption_en: This concept illustration deliberately separates northern wheat from southern rice; real crops, transport, and homes do not follow such a neat border.
+layout: text-only
+heading_zh: 三峡水电站到底有多大？
+heading_en: How Big Is the Three Gorges Power Station?
 [zh]
-考古学确实发现了一个大致趋势：北方许多早期农耕传统重视粟和黍，长江中下游许多社区发展了稻作。可是，作物很早就在移动。考古遗址显示，稻向北传播，粟也进入长江流域；南北过渡地带还出现过混合种植。后来小麦传入、灌溉扩展、市场和运输改变，农民的选择更不可能只由“住在哪条河边”决定。气温、雨量、生长期、土壤、水源、技术、价格和饮食习惯都在一起起作用。
+今天，三峡中有一座巨大的水坝横跨长江。江水从水坝里的机器旁流过，推动巨大的水轮旋转。这些机器把流水的力量变成电，再把电送往很远的地方。
 
-文明的故事也不能切成“黄河生出一个中国，长江补上另一半”。黄河流域有许多不同的新石器社区；长江下游的良渚人种稻、建城，还修筑复杂的水利系统。辽河流域等其他地区也发展出各有特点的文化，并通过物品、技术和观念彼此交流。今天所说的中华文明，更像许多河流不断汇合，而不是一粒种子在唯一地点发芽。
+三峡水电站是世界上最大的正在运行的水力发电站。这里的“最大”，是说它全部开动时，可以同时产生的电力比任何其他正在运行的水电站都多。每年真正发出多少电，还会受到当年水量的影响。
 
-所以，“北麦南稻”适合当作帮助记忆的大概图景，却不能当成规则；“母亲河”适合表达感情，也不能代替考古证据。读一条河，既要看它怎样影响人，也要看不同的人怎样种田、筑城、修堤、搬迁，又怎样反过来改变河流。
+水坝还能在雨季留下大量河水，帮助减轻下游洪水。不过，水坝两边的水面一高一低，船不能直接翻过这堵高墙。它要先开进旁边一个巨大的水池，后面的门关上。水池加水，船就跟着升高；水池放水，船就跟着降低。等水面和下一段河道一样高，前面的门才会打开。三峡的大船要这样连续通过几级水池，才能到达水坝的另一边。这就是船闸。
+
 [/zh]
 [en]
-Archaeology does show a broad pattern: many early northern farming traditions centered on foxtail and broomcorn millet, while many communities in the middle and lower Yangtze developed rice farming. Crops began moving early, however. Archaeological sites show rice spreading north and millet entering the Yangtze basin, with mixed farming in the transition zone. Later, imported wheat, expanded irrigation, transport, and markets made farmers' choices even less dependent on one river boundary. Temperature, rainfall, growing season, soil, water, technology, prices, and food traditions all work together.
+Today, a huge dam crosses the Yangtze at the Three Gorges. River water spins enormous machines inside the dam. The machines turn the force of the moving water into electricity, which can then travel far away.
 
-The story of civilization cannot be divided into “the Yellow River created China, and the Yangtze added the other half.” The Yellow River basin held many different Neolithic communities. At Liangzhu in the lower Yangtze, people farmed rice, built a city, and constructed a complex water-management system. The Liao River region and other areas also developed distinctive cultures that exchanged objects, skills, and ideas. What we now call Chinese civilization is more like many rivers joining than one seed sprouting in a single place.
+The Three Gorges station is the largest operating hydroelectric power station in the world. Here, “largest” means that it can make more electricity at one time than any other operating hydropower station. The amount it actually makes in a whole year still changes with the amount of water in the river.
 
-“Wheat in the north, rice in the south” is useful as a rough memory aid, not as a rule. “Mother river” can express feeling, but it cannot replace archaeological evidence. To read a river well, we must ask both how it changed people's lives and how different people farmed, built cities, raised levees, moved homes, and changed the river in return.
+The dam can also hold a great amount of water during the rainy season, helping to reduce floods downstream. But the water is much higher on one side of the dam than on the other, and a ship cannot sail over the wall. Instead, it enters a huge pool beside the dam, and a gate closes behind it. Water flows in to lift the ship or flows out to lower it. When the pool reaches the same height as the next part of the river, the front gate opens. At Three Gorges, large ships repeat these steps through several pools to reach the other side. This system is called a ship lock.
+
 [/en]
 [/section]
 
-[ending]
-heading_zh: 河流不是故事的背景，它也在故事里行动
-heading_en: A River Is Not Just the Background of a Story
+[section]
+page: 5
+layout: text-wrap-image
+heading_zh: 两条河，两种河边生活
+heading_en: Two Rivers, Two Kinds of Life
+image: north-south-river-life-split.webp
+caption_zh: 黄河流域许多地方比较干燥，常见麦田；长江流域许多地方温暖湿润，常见稻田和水上交通。
+caption_en: Many places in the Yellow River basin are dry and grow wheat. Much of the Yangtze basin is warm and wet, with rice fields and busy waterways.
 [zh]
-地图把长江和黄河画成两条清楚的线，真实的河却不断搬运水和沙、连接支流与湖泊，也穿过许多民族和地区的生活。人们依靠河流，又用堤坝、农田、城市和水库改变河流。“母亲河”最值得保留的意思，不是说一切都起源于同一个地方，而是提醒我们：接受一条河的赠予，也要认真面对照顾它的责任。
+在黄河流域的许多地方，雨水较少，冬天也更冷。农田里常见小麦。面条、馒头和饺子也成了许多北方家庭熟悉的食物。黄河带着大量泥沙，行船并不总是容易，过去人们常在陆地上用马车运送粮食。
+
+长江流域的许多地方温暖湿润，稻田需要的水比较充足。河流、湖泊和水渠连在一起，小船可以穿过村庄，大船则在宽阔的江面上运货。米饭、鱼和水乡生活常常出现在这里的故事里。
+
+今天，无论住在哪里，人们都可能吃米饭，也可能吃面条。不过，两条河流过不同的土地，带来了不同的农田、交通和生活方式。那两滴从高山出发的雪水，最后都到了大海，却一路看见了完全不同的中国。
 [/zh]
 [en]
-A map turns the Yangtze and Yellow River into two clean lines. Real rivers keep moving water and sediment, linking tributaries and lakes, and passing through the lives of many peoples and regions. People depend on rivers, then change them with levees, farms, cities, and reservoirs. The most useful meaning of “mother river” is not that everything began in one place. It is the reminder that receiving a river's gifts also brings a responsibility to care for it.
+Many places in the Yellow River basin receive less rain and have colder winters. Wheat is common in the fields. Noodles, steamed buns, and dumplings became familiar foods in many northern homes. Because the Yellow River carries so much mud, boat travel has not always been easy. In the past, people often moved grain over land in carts.
+
+Much of the Yangtze basin is warm and wet, with plenty of water for rice fields. Rivers, lakes, and canals connect with one another. Small boats can pass through villages, while large ships carry goods along the broad river. Rice, fish, and life beside the water often appear in stories from this region.
+
+Today, people everywhere may eat both rice and noodles. Still, the two rivers cross different lands and have shaped different farms, travel, and ways of life. The two drops of snowmelt both reach the sea, but along the way, they see two very different sides of China.
 [/en]
-[/ending]
+[/section]

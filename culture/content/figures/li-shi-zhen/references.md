@@ -52,8 +52,18 @@ Supports:
 Editorial boundary:
 
 - The book is not described as the unaided creation of one isolated man.
+- The earlier sentence claiming that family members “helped him find things and sort his notes” has been removed. The evidence supports family participation but does not establish those exact jobs.
 - “He investigated widely” is not expanded into a precise national travel route, a claim that he handled all 1,892 substances, or a claim that he personally tested every medicine.
 - Historical treatment claims and illness names do not map automatically onto modern diagnoses or proven therapies.
+
+Source: National Archives Administration of China, *General Catalog for Chinese Medical Classics in China* entry for *Ben Cao Gang Mu*
+URL: https://www.saac.gov.cn/mowcn/cn/c100513/202104/156cc3110b0147a3bc6b426a7f7683d4/files/f6d2857b2caa4e629c2572c61cf41cfa.pdf
+Accessed: 2026-09-01
+
+Supports:
+
+- The early edition credits Li Shizhen's descendants with revising the text and preparing its illustrations.
+- This gives a specific, documented form of family participation without inventing note-sorting or fieldwork roles.
 
 Source: Cambridge University Press, Federico Marcon, “The ‘book’ as fieldwork: ‘textual institutions’ and nature knowledge in early modern Japan”
 URL: https://www.cambridge.org/core/journals/bjhs-themes/article/book-as-fieldwork-textual-institutions-and-nature-knowledge-in-early-modern-japan/537F9296139E71D87DD189258E7D2C10
@@ -144,8 +154,9 @@ Supports:
 
 Editorial boundary:
 
-- Other authoritative catalogs and scholarship commonly give 1596 for the first Jinling publication. The article reports the 1593–1596 catalog difference instead of forcing false precision.
+- Some catalogs date the edition to 1593, when block cutting began, while current publication histories commonly give 1596 for the issued first edition.
 - Bibliographic dates alone cannot prove a detailed deathbed scene or exactly what Li saw before his death in 1593.
+- The children's story uses 1596 for the first issued edition and treats 1593 as the beginning of block cutting, not as proof that Li held a finished printed set.
 
 ## Transmission and transformation outside China
 

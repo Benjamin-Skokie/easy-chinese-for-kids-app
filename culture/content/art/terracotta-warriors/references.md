@@ -1,4 +1,4 @@
-# 兵马俑：八千张脸，八千幅肖像吗？— References and Editorial Notes
+# 地下为什么站着一支泥土军队？— References and Editorial Notes
 
 This file is for editorial research and does not render on the website.
 
@@ -159,3 +159,8 @@ Editorial boundary:
 
 - The article says mercury “may have been used” and does not claim that a large amount of liquid mercury is confirmed beneath the mound.
 - Sima Qian's rivers and mechanical crossbows remain a historical account, not excavated fact.
+
+## 2026 child-facing revision
+
+- The main article now moves from the 1974 well discovery to modular hand-finished faces, Qin Shihuang's underground army, the unopened main tomb, and the warriors' lost colors.
+- The chromium debate and detailed pit labels were removed from the children's narrative. The mercury rivers remain clearly identified as an ancient written account, not an opened-tomb observation.

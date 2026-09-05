@@ -1,47 +1,51 @@
-> Difficulty: Hard
+> Difficulty: Easy
 
-# The Yangtze and the Yellow River: More Than One Story
+# The Yangtze and Yellow Rivers: Why Are They So Different?
 
-## Can Two Lines on a Map Really Be Measured Exactly?
+## Two Drops Begin a Journey East
 
-Place a finger on the high plateau in western China and move eastward, and you can trace two immense waterways. The Yangtze begins in the headwater region of the Tibetan Plateau, crosses many provincial-level regions, and enters the East China Sea. Official sources commonly give its length as about 6,400 kilometers. The Yellow River begins on the northern side of the Bayan Har Mountains, makes a huge looping bend, and enters the Bohai Sea in Shandong after about 5,464 kilometers.
+Imagine two drops of melting snow high in western China. One joins the Yangtze River. The other joins the Yellow River. Both travel east, but their journeys are very different.
 
-A river, however, is not a straight running track. Surveyors must choose which headwater counts as the beginning, then measure along the winding center of the main channel to a chosen mouth. Rivers cut across bends, change course, and build new land at their deltas. Different maps and measurement dates can therefore produce different answers. “About 6,400 kilometers” is more truthful than pretending that every meter will stay fixed forever.
+The Yangtze is China's longest river. It runs about 4,000 miles before reaching the East China Sea. The Yellow River is China's second longest. It travels about 3,400 miles to the Bohai Sea. Both cross a large part of China.
 
-People often call the Yangtze and Yellow River “mother rivers.” For many communities, the rivers have supplied water, fish, transport, irrigation, and places to build towns. The name expresses gratitude and belonging, but it is not a family certificate. It does not mean that every Chinese person's ancestors came from these two riverbanks, or that China's past contains only two river stories.
-
----
-
-## How Did Parts of the Yellow River Rise Above the Plain?
-
-The Yellow River's color comes mainly from fine sediment suspended in the water. Many middle-reach tributaries cross the Loess Plateau, where intense rain can wash loose soil from the land. The way slopes are farmed and the amount of vegetation left on them also affect how much sediment reaches the river. Because much of the water and sediment come from different places and arrive at different times, river managers must ask not only “How much water?” but also “Where will the sediment go?”
-
-When the river reaches the flatter lower plain, its slope and speed change, and some of the sediment settles into the channel. For centuries, people built and raised levees to protect farms and settlements. Levees hold back floods, but they also keep much of the water and sediment between two walls. As the bed accumulated sediment, it rose. Today, the existing lower channel is generally about four to six meters above the land beyond the levees, and higher in some places. This is the “suspended river” or “river above ground.”
-
-If a large flood breaks a levee, the water may seek a lower route across the plain, causing a breach or even a change of course. Calling the river “angry” hides the real explanation. Heavy rain, erosion, sediment, and channel movement are natural processes. Where people build levees, how they use slopes and floodplains, and how they operate reservoirs are human choices. Modern protection combines levees, reservoirs, flood-storage areas, soil conservation, and controlled releases of water and sediment. These measures have greatly reduced risk, but they cannot make a living river stop changing.
+For thousands of years, people beside these rivers have collected water, grown food, caught fish, traveled by boat, and built towns and cities. That is why the Yangtze and Yellow Rivers are often called China's “mother rivers.” Their water has supported many lives and carried many stories toward the sea.
 
 ---
 
-## The Yangtze Is Not Wide and Steady Everywhere
+## Why Is the Yellow River Yellow?
 
-In its upper reaches, the Yangtze drops from plateaus and mountains through rapids, gorges, and enormous changes in elevation. In the middle reaches, it crosses plains and exchanges water with lakes such as Dongting and Poyang. Near the sea, its lower reaches meet a delta and tides. A river more than 6,000 kilometers long cannot have just one “personality.” When many tributaries rise together in the rainy season, the middle and lower river can suffer disastrous floods. Connected lakes and wetlands temporarily hold some floodwater and provide habitat for fish, birds, and aquatic plants. Reclamation, levees, and urban growth have reduced some of that space, making both flood safety and ecology more difficult.
+The Yellow River crosses a wide part of northern China covered with soft, yellow-brown soil. During heavy rain, the soil washes easily into the river. Countless tiny bits of earth travel downstream and turn the water muddy yellow. That is how the Yellow River got its name.
 
-In the Tang dynasty, Li Bai wrote of leaving Baidi City and returning “a thousand *li* to Jiangling in one day.” The poem makes his boat seem to fly through the Three Gorges. “A thousand *li*” communicates a great distance, while “in one day” carries speed and delight. It is not a modern speed measurement. The poem preserves the feeling of a journey, not a hydrology report.
+When the river reaches flatter land, it slows down and drops some of its mud on the bottom. To hold back floods, people built high walls of packed earth along both banks. As mud piled up year after year, parts of the riverbed rose above the nearby land, almost like a river held up between two walls.
 
-The Three Gorges of today have changed as well. The Three Gorges Project blocks the river near Yichang, and its reservoir altered upstream water levels and currents. It generates electricity, helps store floodwater, and improves some navigation. At the same time, large numbers of residents were resettled; towns, archaeological sites, and land were submerged; and changed flows and sediment have affected downstream channels, wetlands, and fish. Managers have also tested environmental releases to reduce some harm. A project this large cannot be summed up as simply “great” or “destructive.” The harder questions are who receives the benefits, who bears the costs, and how the whole river will be cared for over time.
-
----
-
-## Is “Wheat North, Rice South” a Border—or a Tangle of Lines?
-
-Archaeology does show a broad pattern: many early northern farming traditions centered on foxtail and broomcorn millet, while many communities in the middle and lower Yangtze developed rice farming. Crops began moving early, however. Archaeological sites show rice spreading north and millet entering the Yangtze basin, with mixed farming in the transition zone. Later, imported wheat, expanded irrigation, transport, and markets made farmers' choices even less dependent on one river boundary. Temperature, rainfall, growing season, soil, water, technology, prices, and food traditions all work together.
-
-The story of civilization cannot be divided into “the Yellow River created China, and the Yangtze added the other half.” The Yellow River basin held many different Neolithic communities. At Liangzhu in the lower Yangtze, people farmed rice, built a city, and constructed a complex water-management system. The Liao River region and other areas also developed distinctive cultures that exchanged objects, skills, and ideas. What we now call Chinese civilization is more like many rivers joining than one seed sprouting in a single place.
-
-“Wheat in the north, rice in the south” is useful as a rough memory aid, not as a rule. “Mother river” can express feeling, but it cannot replace archaeological evidence. To read a river well, we must ask both how it changed people's lives and how different people farmed, built cities, raised levees, moved homes, and changed the river in return.
+Soil carried by the Yellow River can make farmland rich, but floods can also rush into villages. People near the river maintain the earth walls, plant trees to keep soil in place, and use reservoirs to hold some of the water. The work must continue because the river brings fresh mud every year.
 
 ---
 
-## A River Is Not Just the Background of a Story
+## The Yangtze Passes Through Three Great Gorges
 
-A map turns the Yangtze and Yellow River into two clean lines. Real rivers keep moving water and sediment, linking tributaries and lakes, and passing through the lives of many peoples and regions. People depend on rivers, then change them with levees, farms, cities, and reservoirs. The most useful meaning of “mother river” is not that everything began in one place. It is the reminder that receiving a river's gifts also brings a responsibility to care for it.
+Near its beginning, the Yangtze rushes down from high land through narrow mountain channels. Later, it enters three great gorges joined together. They are called the Three Gorges. Steep peaks rise on both sides, and a boat seems to pass through one enormous stone doorway after another.
+
+More than 1,000 years ago, the poet Li Bai traveled through this area by boat. He wrote, “My light boat has passed ten thousand mountains.” Peak after peak slipped behind him as the current carried his boat forward. In just one short line, he made the boat feel as if it were flying.
+
+After leaving the gorges, the Yangtze reaches flatter land and joins lakes and many smaller rivers. The water grows wider, and more boats appear. By the time the river passes near Nanjing and Shanghai, it is a busy waterway carrying goods and passengers toward the sea.
+
+---
+
+## How Big Is the Three Gorges Power Station?
+
+Today, a huge dam crosses the Yangtze at the Three Gorges. River water spins enormous machines inside the dam. The machines turn the force of the moving water into electricity, which can then travel far away.
+
+The Three Gorges station is the largest operating hydroelectric power station in the world. Here, “largest” means that it can make more electricity at one time than any other operating hydropower station. The amount it actually makes in a whole year still changes with the amount of water in the river.
+
+The dam can also hold a great amount of water during the rainy season, helping to reduce floods downstream. But the water is much higher on one side of the dam than on the other, and a ship cannot sail over the wall. Instead, it enters a huge pool beside the dam, and a gate closes behind it. Water flows in to lift the ship or flows out to lower it. When the pool reaches the same height as the next part of the river, the front gate opens. At Three Gorges, large ships repeat these steps through several pools to reach the other side. This system is called a ship lock.
+
+---
+
+## Two Rivers, Two Kinds of Life
+
+Many places in the Yellow River basin receive less rain and have colder winters. Wheat is common in the fields. Noodles, steamed buns, and dumplings became familiar foods in many northern homes. Because the Yellow River carries so much mud, boat travel has not always been easy. In the past, people often moved grain over land in carts.
+
+Much of the Yangtze basin is warm and wet, with plenty of water for rice fields. Rivers, lakes, and canals connect with one another. Small boats can pass through villages, while large ships carry goods along the broad river. Rice, fish, and life beside the water often appear in stories from this region.
+
+Today, people everywhere may eat both rice and noodles. Still, the two rivers cross different lands and have shaped different farms, travel, and ways of life. The two drops of snowmelt both reach the sea, but along the way, they see two very different sides of China.

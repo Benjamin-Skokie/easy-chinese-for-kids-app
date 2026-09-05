@@ -232,3 +232,8 @@ Editorial boundary:
 - `2-pipa-boat-night.webp` is an imagined scene inspired by *The Song of the Pipa Player*. It is not a portrait, a photograph, or evidence for an event in 816; its instrument is modernized.
 - `3-pipa-fast-fingers.webp` is a stylized modern stage image; hand placement and instrument details cannot be used as technical instruction.
 - The listening activity requires only an authorized recording and paper. Children are told not to handle another person’s pipa, force steel strings, imitate aggressive sweeps, remove frets, or experiment with attached artificial nails without a teacher.
+
+## 2026 child-facing revision
+
+- The main article now lets children hear several sounds from four strings, see the Dunhuang backward-pipa pose, listen to Bai Juyi's river-night poem, and imagine the battle in *Ambush from Ten Sides*.
+- It does not treat the Dunhuang image as a technical playing guide, Bai Juyi's metaphors as a recording, or the modern battle piece as an unchanged ancient performance.

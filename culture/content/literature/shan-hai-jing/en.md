@@ -1,152 +1,49 @@
-> Difficulty: Medium
+> Difficulty: Easy
 
-# Classic of Mountains and Seas: China's Ancient Book of Strange Creatures
+# Shan Hai Jing: What Lives Beyond the Next Mountain?
 
-## A Strange Book, and No One Knows Who Wrote It
+## Open the Old Scroll and Choose a Mountain Road
 
-More than 2,000 years ago, someone wrote down a very strange book.
+Imagine that someone places a scroll more than two thousand years old in your hands. It does not begin, “Once there was a hero.” Instead, it gives you a road: start at this mountain, travel east, and you will reach another mountain. What trees grow there? Where does the river go? What animal hides behind the rocks?
 
-It does not tell one long story.
+This scroll is *Shan Hai Jing*, the *Classic of Mountains and Seas*. One person did not sit down and write it all at once. Over a long time, different people gathered descriptions of mountains, ceremonies, old tales, and strange reports. No one now knows the names of the first writers.
 
-It does not feel much like later novels.
+The names are lost, but the road remains. Follow the directions and you may find jade on a mountain, copper at its foot, or a fish with wings in the water.
 
-It is more like a book of odd notes:
-
-where a mountain is,
-what strange beast lives there,
-what unusual fish swims in a river,
-and what kind of strange people live far away.
-
-This book is called *Classic of Mountains and Seas*, or *Shan Hai Jing*.
-
-Who wrote it?
-
-No one knows.
-
-Some people think it is tied to ancient geography. Some think it mixes magic, ceremonies, and myths. Some think many people added to it over a long time.
-
-People still argue about it today.
-
-*Shan Hai Jing* is like an ancient tomb with no name carved on it.
-
-You can look at the pictures on the walls, but you cannot be sure who painted the first one.
+Turn one more page. A call rises from the trees. It sounds almost like singing—but no person is there. Something is stepping out of the forest.
 
 ---
 
-## Five Hundred Mountains, Three Hundred Rivers, and Too Many Monsters to Count
+## Travel East: A Singing Beast, a Bird-Headed Turtle, and a Nine-Tailed Fox
 
-*Shan Hai Jing* has three main parts: the Mountain Classic, the Sea Classic, and the Great Wilderness Classic.
+Begin among the southern mountains. At Niuyang Mountain, a creature called the *lushu* steps from the trees. Its body looks like a horse. Its head is white, its body has tiger stripes, and its tail is bright red. The singing sound you heard belongs to this creature.
 
-The Mountain Classic records more than 500 mountains and more than 300 rivers.
+In the mountain river lives a *xuangui*, or whirling turtle. It has a turtle's body, a bird's head, and a tail like a snake. When it opens its mouth, it does not chirp like a bird. It sounds like a piece of wood splitting with a loud crack.
 
-It is surprisingly orderly. It tells how far one mountain is from the next, and in which direction.
+Keep traveling east until you reach Qingqiu Mountain. A baby's cry comes from the trees. Do not go looking for a lost baby. The sound belongs to a fox. It turns around, and behind it wave not one, not two, but nine long tails.
 
-The Sea Classic is much wilder. It travels from the eastern sea to the western sea, from the southern sea to the northern sea.
-
-The Great Wilderness Classic is stranger still. It talks about faraway lands: a Women's Country, a Giant Country, a Little People Country, and a country where people's legs cross so they have to hop when they walk.
-
-The book has so many strange creatures that your eyes may spin.
-
-Many of them can also be used as medicine.
-
-One creature's meat may cure a skin problem.
-
-Another creature's feather may stop nightmares.
-
-Another sounds like a crying baby.
-
-As you read, you may wonder:
-
-Was the writer a careful nature observer?
-
-Was the writer a wildly imaginative magic worker?
-
-Or maybe both?
+*Shan Hai Jing* often gives a creature only a few lines before hurrying toward the next mountain. It never tells us where the lushu went or why the fox grew nine tails. The empty space is left for the reader to fill.
 
 ---
 
-## Chiyou, Xingtian, Kuafu, and Jingwei
+## Why Does the Little Bird of Fajiu Mountain Fly Toward the Sea?
 
-*Shan Hai Jing* saved many early Chinese myths.
+On northern Fajiu Mountain lives a bird about the size of a crow. She has a patterned head, a white beak, and red feet. As she flies over the valley, her call sounds like her own name: “Jingwei! Jingwei!”
 
-Without this book, we might not have some of these old story pieces today.
+[[Jingwei]] was not always a bird. She was once a young girl, the daughter of the Flame Emperor. One day she went to the Eastern Sea, drowned, and never returned home. Afterward, she became this little bird.
 
-Chiyou was a leader with a copper head, an iron forehead, and horns. He led his people in a great struggle against the Yellow Emperor.
+Every day, Jingwei picks up a twig or a small stone from the western mountains. Then she flies over the Eastern Sea and drops it into the waves. She means to fill the sea that took her life, one tiny piece at a time. The next day, she returns for one more. The stones are tiny and the sea is enormous, but she does not stop.
 
-After Chiyou lost, stories say the Yellow Emperor made a war drum from his hide. When the drum sounded, the ground shook for hundreds of *li*.
-
-Xingtian fought the Yellow Emperor too. The Yellow Emperor cut off his head.
-
-But Xingtian did not stop.
-
-With no head, he used his chest as eyes and his belly button as a mouth. He held a shield in one hand and an axe in the other, and kept fighting.
-
-Kuafu chased the sun by himself.
-
-He ran across countless mountains. He grew so thirsty that he drank from the Yellow River and the Wei River, but it was still not enough.
-
-He died along the way.
-
-The walking stick he threw down became a peach forest.
-
-Jingwei was the little daughter of Emperor Yan. She drowned in the Eastern Sea and became a small bird.
-
-Day after day, she carried tiny stones and twigs from the western mountains, trying to fill the sea.
-
-The sea laughed at her.
-
-"With just you?"
-
-Jingwei ignored it and kept flying.
-
-Thousands of years have passed. The Eastern Sea is still there.
-
-But the little bird is still flying too.
-
-Chinese people later added to, changed, and retold these stories again and again.
-
-Many early clues can still be found in *Shan Hai Jing*.
+One stone disappears beneath the waves. Jingwei turns around and flies back toward Fajiu Mountain. Her task is not finished, but the story ends while she is still making the journey again and again.
 
 ---
 
-## Myth Creatures, or Real Animals?
+## If You Drew the Next Mountain, What Would Live There?
 
-What are the strange creatures in *Shan Hai Jing*?
+After reading about the nine-tailed fox and Jingwei, a child spreads paper across a table. On the left she draws a mountain covered with blue grass. On the right she adds a river that flows backward. Now who should live there?
 
-Are they pure imagination?
+She begins with an owl's eyes. Then she adds a deer's legs, a fish's tail, and two ears shaped like leaves. The new creature hides behind rocks. Its tail glows in the rain, and its call sounds like three cups tapping together.
 
-Or are they stretched and twisted descriptions of real animals?
+This animal is not in the old *Shan Hai Jing*. Yet it seems able to step through the door that the book opened. Many creatures in the ancient text appear in a similar way: familiar animals are joined together, then given a sound no one expects and one very strange ability.
 
-When Sima Qian wrote *Records of the Grand Historian*, he had read *Shan Hai Jing*. He hesitated and finally said he did not dare make firm claims about all those strange creatures.
-
-Even Sima Qian could not decide.
-
-When you read about a fox with nine tails, you may wonder:
-
-Could someone have seen a fox with tall grass waving behind it?
-
-When you read about a one-legged ox, you may wonder:
-
-Could someone have seen a rhinoceros from an angle where one leg was hidden?
-
-Is *Shan Hai Jing* mythology?
-
-Is it an ancient nature report full of mistakes?
-
-This question may never have a final answer.
-
----
-
-## Shan Hai Jing Today
-
-Today, many cartoons, games, illustrations, and novels still borrow ideas from *Shan Hai Jing*.
-
-Names such as Qiongqi, Taotie, Hundun, and Taowu often reach modern readers through new stories first. Then readers go back to look for the old book.
-
-When Lu Xun was a child, he could not forget *Shan Hai Jing* either.
-
-The beasts with human faces, the snakes with nine heads, and the birds with three legs stayed in his memory until he grew up.
-
-A strange book with no known author is still lighting new imagination more than 2,000 years later.
-
-That may be the most powerful thing about *Shan Hai Jing*.
+A wide part of the map is still blank. The next mountain might be red, or it might float above the clouds. What waits behind it? You will not know until you keep drawing the road.

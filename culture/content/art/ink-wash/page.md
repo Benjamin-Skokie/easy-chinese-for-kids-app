@@ -1,164 +1,91 @@
 ---
-title_zh: 一滴墨，怎样画出远近和湿干？
-title_en: How Can One Drop of Ink Show Distance and Weather?
+title_zh: 一滴墨，怎样变成山、雨和雾？
+title_en: How Can One Drop of Ink Become Mountains, Rain, and Mist?
 slug: ink-wash
 category: art
-difficulty: 中等
+difficulty: 简单
 back_href: ../../../../index.html#culture-art
 style_notes: "用 --- 分隔 frontmatter；正文强调优先用 *斜体*；尽量不用 **粗体**。"
 ---
 
 [hero]
-title_zh: 一滴墨，怎样画出远近和湿干？
-title_en: How Can One Drop of Ink Show Distance and Weather?
+title_zh: 一滴墨，怎样变成山、雨和雾？
+title_en: How Can One Drop of Ink Become Mountains, Rain, and Mist?
 [/hero]
 
 [section]
 page: 1
 layout: text-wrap-image
-heading_zh: 同一滴墨，落在两张纸上会怎样？
-heading_en: What Happens When the Same Ink Touches Two Papers?
+heading_zh: 墨只有黑色吗？
+heading_en: Is Ink Only Black?
 image: 2-ink-shades-brush.webp
-caption_zh: 这是一幅现代水墨实验示意图，不是古代画室照片。图中的“色阶”方便比较浓淡，却不是“墨分五色”的唯一标准答案。
-caption_en: This is a modern illustration of an ink experiment, not a photograph of an old studio. Its row of shades helps us compare dark and light ink, but it is not the one correct chart for “five colors of ink.”
+caption_zh: 墨里加水，就能调出从深黑到浅灰的变化。
+caption_en: Adding water turns black ink into many shades of gray.
 [zh]
-准备两小张普通练习纸、一支水彩笔、清水和儿童用可水洗黑色颜料。请成人铺好桌面，在一张干纸和一张用清水轻轻刷湿的纸上，各点一滴同样的淡墨。不要甩笔，也不要使用古画、书法、旧纸、来历不明的墨或矿物颜料。
+砚里的墨看起来只有黑色。可画家让毛笔先喝一口清水，再蘸一点墨，纸上便出现了浅灰色。多加墨，颜色变深；多加水，颜色变淡。浓墨、淡墨碰在一起，黑色里就有了许多变化。
 
-干纸上的墨点也许边缘比较清楚；湿纸上的墨会跟着水跑，长出一圈圈柔软的边。有些纸迅速吸水，墨一下散开；有些纸经过施胶处理，水墨不容易渗，画家便能慢慢画细线、反复上色。真正的宣纸也有容易渗墨的生宣和较不容易渗的熟宣，绢还需要不同的准备。材料不是安静的背景，它会参加作画。
-
-等墨点干了，再比较中心和边缘。刚才那一滴墨没有自己变成山或云，但它已经给出几种选择：边缘清楚还是模糊，表面干涩还是湿润，墨层厚还是薄。画家会利用这些变化，让眼睛感觉岩石坚硬、雾气潮湿，或远山正在退入空气。
+毛笔里的水分也很重要。湿笔落下，墨会柔柔地散开，像雾和云。干一点的笔擦过纸面，会留下断断续续的纹理，正适合画粗糙的树皮和山石。画家没有换一盒彩色颜料，只是改变了墨、水和手的速度。
 [/zh]
 [en]
-Gather two small pieces of ordinary practice paper, a watercolor brush, clean water, and washable black paint made for children. Ask an adult to protect the table. Lightly dampen one paper and leave the other dry, then place one matching drop of pale “ink” on each. Do not flick the brush, and never test this on calligraphy, old paper, artwork, unknown ink, or mineral pigments.
+Ink in a stone dish looks simply black. But let the brush drink some clean water before it touches the ink, and pale gray appears on the paper. More ink makes a darker mark. More water makes a lighter one. When dark and pale ink meet, black suddenly has many shades.
 
-The drop on dry paper may keep a clearer edge. On damp paper, it may travel with the water and grow a soft, feathery ring. Some papers drink up liquid quickly, making ink spread at once. Other papers are treated with sizing, so water and ink stay closer to the surface. An artist can then build fine lines and color more slowly. Even xuan paper comes in more absorbent and more heavily sized forms, while silk needs its own preparation. The surface is not a silent background. It takes part in the painting.
-
-When the spots dry, compare their centers and edges. The drop did not turn itself into a mountain or cloud, but it already offered several choices: sharp or blurry, scratchy or moist, heavy or thin. Painters can use those choices to make rock feel hard, mist feel damp, or a far mountain seem to slip back into the air.
+The water inside the brush matters too. A wet brush lets ink spread softly, like mist or clouds. A drier brush skips across the paper and leaves broken textures—perfect for rough bark or rocky mountains. The artist did not open a box of colored paint. She changed the ink, the water, and the speed of her hand.
 [/en]
 [/section]
 
 [section]
 page: 2
-layout: text-only
-heading_zh: “墨分五色”不是说墨真的变成五种颜料
-heading_en: “Five Colors of Ink” Does Not Mean Five Different Paints
+layout: text-wrap-image
+heading_zh: 毛笔在纸上走过一座山
+heading_en: A Brush Walks Across a Mountain
+image: 1-ink-landscape.webp
+caption_zh: 深浅、干湿不同的笔触，让山石、树木和雾气各不相同。
+caption_en: Dark, pale, wet, and dry strokes give rocks, trees, and mist different textures.
 [zh]
-唐代画史家张彦远写过“运墨而五色具”。后人常把这个想法简称为“墨分五色”：只用墨的浓淡、干湿和层次，也能得到丰富效果。“五色”的具体名单并不统一，有人说焦、浓、重、淡、清，也有人用浓、淡、干、湿、黑来说明。因此，它更像一句提醒——墨的表现不止一种——而不是必须装进五只碗的科学分类。
+画一座山时，画家可能先用淡墨定下山的形状，再用较干的笔皴出石头表面，最后点上深墨的树木。远山画得淡，像被空气和雾遮住；近处的树画得深，仿佛就在眼前。
 
-浓墨不一定永远表示近，淡墨也不自动等于远。画家还要安排物体大小、遮挡关系、线条、位置和空白。近处可以淡，远处也可能突然出现深色树影；要看整幅画怎样组织。水墨的效果来自选择和配合，不是一张“深色等于近、浅色等于远”的万能密码表。
-
-“水墨画”也不等于“中国画不用颜色”。大量中国画是在纸或绢上使用“墨和色”完成的，矿物色、植物色以及后来传入的新颜料都曾进入画家的调色盘。青绿山水、人物、花鸟、寺院壁画和民间绘画常常色彩鲜明；即使以墨为主的画，也可能加一点淡青、赭石或朱色。墨能在少色时承担许多工作，但颜色从未从中国绘画里消失。
+墨画不一定只用墨。许多画家也会加一点蓝、绿、红或土黄色。不过，墨常常负责最重要的工作：让山有重量，让水有方向，让雨天和晴天有不同的空气。
 [/zh]
 [en]
-The Tang-dynasty art historian Zhang Yanyuan wrote that skillful use of ink could bring forth “all five colors.” Later readers often shortened the idea to “five colors of ink”: changes in darkness, wetness, dryness, and layering can create many effects. But people have not always agreed on one list of five. One list says burnt, dark, heavy, pale, and clear. Another says dark, pale, dry, wet, and black. It is better understood as a reminder that ink has rich possibilities—not a scientific chart requiring exactly five bowls.
+To paint a mountain, an artist may first set down its shape in pale ink. A drier brush adds rocky texture. Dark dots and strokes become trees. Distant mountains stay pale, as if air and mist lie between them and us. Nearby trees grow dark, as if we could reach out and touch them.
 
-Dark ink does not always mean “near,” and pale ink does not automatically mean “far.” Painters also arrange size, overlap, line, position, and open space. Something nearby may be pale, while a dark tree may appear in the distance. You have to see how the whole picture works. Ink effects come from choices working together, not from one code in which dark always equals close.
-
-Nor does ink painting mean that Chinese painters “did not use color.” Many Chinese paintings were made with ink and color on paper or silk. Mineral colors, plant-based colors, and later imported pigments all entered artists’ palettes. Blue-and-green landscapes, figure paintings, flowers and birds, temple murals, and popular paintings could be brilliant with color. Even a mostly ink painting might include pale blue, warm brown, or red. Ink can do a great deal when color is limited, but color never disappeared from Chinese painting.
+An ink painting does not always use ink alone. Artists may add touches of blue, green, red, or earthy yellow. Still, ink often does the biggest jobs: giving a mountain weight, showing water's direction, and making a rainy day feel different from a clear one.
 [/en]
 [/section]
 
 [section]
 page: 3
-layout: text-wrap-image
-heading_zh: 不是一种秘方，而是一整只工具箱
-heading_en: Not One Secret Recipe, but a Whole Toolbox
-image: 1-ink-landscape.webp
-caption_zh: 这幅无题山水是现代生成的水墨风格图像，不是古画、摹本或真实卷轴。它可用于观察浓淡、皴擦和雾气效果，不能用来判断某位古代画家的技法。
-caption_en: This untitled landscape is a modern generated image in an ink-painting style, not an old painting, copy, or real scroll. It can help us notice dark and pale ink, texture strokes, and mist effects, but it is not evidence of any historical artist’s technique.
+layout: text-only
+heading_zh: 一幅长卷，要边走边看
+heading_en: A Handscroll Opens Like a Journey
 [zh]
-山石表面为什么看起来粗糙、有裂纹或长着草木？画家常在轮廓里加上不同方向和节奏的笔触，这一大类方法叫皴法。皴法不是自然界给每座山盖的标准印章，也不是某一位大师一夜发明的固定花纹。不同地区、年代和画家发展出许多笔法，又在学习旧画时改变它们。
+有些山水画不是挂在墙上的大画，而是卷起来的长卷。看画的人坐在桌边，从右向左慢慢展开，每次只看一小段。前面刚走过一座桥，下一段也许出现村庄，再往前才看见高山。
 
-墨也能一层层积起来，称为积墨；可以趁一层未干，用浓淡不同的墨相互渗破，称为破墨；还可以借大片水墨的流动和晕染生出形象，常称泼墨。名称听起来像清楚分开的抽屉，实际作画时却可能互相配合。同一个词在不同年代的用法也会变化，今天的艺术家还会用大纸、喷洒、折叠、拓印或其他媒介继续试验。
-
-孩子做水墨观察时，不必假装复制一幅名画。你可以让一笔在干纸上走、一笔在湿纸上走，再等干后叠一层，记录每次边缘怎样变化。这样的实验能帮助你理解材料，却不能证明古代某幅画“就是这样画的”。研究真实作品还需要看纸绢、颜料、笔痕、装裱、题跋和科学检测。
+眼睛像一个小小的旅行者，在画里沿着河流和山路前进。因为整幅画不会同时出现，画家可以藏起转弯后的景色，让你一直想知道：这条路还会通到哪里？
 [/zh]
 [en]
-Why can a mountain surface look rough, cracked, or covered with plants? Painters often add strokes with different directions and rhythms inside its outlines. This broad family of methods is called *cun*, or texture strokes. A texture stroke is not a standard stamp that nature puts on every mountain, and it was not one pattern invented overnight by a single master. Artists in different places and periods developed many kinds, then changed them as they studied older work.
+Some landscape paintings are not large pictures hung on walls. They are long handscrolls kept rolled up. A viewer sits at a table and slowly opens the scroll from right to left, seeing only a short section at a time. First comes a bridge. A village may appear next. Farther on, a mountain rises.
 
-Ink can also be built in layers, a method called accumulated ink. Dark and pale ink can be added while another layer is still damp, breaking into each other in a method called broken ink. Larger flows and washes may be used to let forms appear through splashed ink. The names sound like separate drawers, but artists can combine the methods. Meanings have also shifted over time. Artists today keep experimenting with huge sheets, spraying, folding, printing, and other media.
-
-A child’s ink observation does not need to pretend that it copies a masterpiece. Let one brushstroke cross dry paper and another cross damp paper. After they dry, add one more layer and record what happens to the edges. This helps you understand materials, but it cannot prove that an old painting was made in exactly the same way. Studying a real work also requires attention to its paper or silk, pigments, brush marks, mounting, inscriptions, ownership history, and scientific tests.
+Your eyes become a tiny traveler following rivers and paths through the picture. Because the whole painting never appears at once, the artist can hide what waits around the bend. You keep wondering: where will this road go next?
 [/en]
 [/section]
 
 [section]
 page: 4
-layout: text-only
-heading_zh: 画中的路，可以让眼睛边走边看
-heading_en: A Painted Path Can Let Your Eyes Travel
-[zh]
-有些长卷不是一次全部展开，而是放在桌上，从右向左一次打开一段。上一段慢慢卷回去，下一段才出现，观看很像沿着河流或山路前进。画家可以让你这一刻俯看屋顶，下一刻平视桥梁，再抬头望山；不同视点被安排在一段连续旅程里。
-
-这种移动观看常被解释为散点或移动视点。它不是“不懂西方单点透视”造成的错误，而是为卷轴、叙事和游览经验服务的空间选择。远山变淡、前后遮挡、近大远小等方法，同样能制造深度。中国画家也会接触、使用或改造其他透视方法，特别是在不同文化交流频繁的时期。
-
-不过，不能把所有中国画都说成“移动视点”。一幅小小的册页、一张正面肖像、一面壁画和一卷几十尺的长卷，观看方式并不相同。与其背一句“东方这样、西方那样”，不如先问这件作品是什么形制、给谁看、怎样展开，以及画家希望眼睛停在哪里。
-[/zh]
-[en]
-Some handscrolls were not meant to be opened all at once. They rested on a table and were unrolled from right to left, one section at a time. As an earlier section disappeared, the next came into view. Looking became a journey along a river or mountain path. A painter might let you look down on roofs, face a bridge straight ahead, and then gaze upward toward a peak. Several viewpoints could become parts of one continuous trip.
-
-This way of building space is often called shifting or moving perspective. It is not a mistake caused by “failing” to understand Western one-point perspective. It is a choice suited to scrolls, stories, and the experience of traveling through a landscape. Pale distance, overlap, and changes in size can also create depth. Chinese painters also met, used, and reshaped other systems of perspective, especially during periods of strong cultural exchange.
-
-But not every Chinese painting uses a moving viewpoint. A small album leaf, a front-facing portrait, a wall mural, and a handscroll dozens of feet long are not viewed in the same way. Instead of memorizing “the East does this and the West does that,” first ask what kind of object you are seeing, who was meant to see it, how it was opened, and where the painter wants your eye to pause.
-[/en]
-[/section]
-
-[section]
-page: 5
-layout: text-only
-heading_zh: 画画的人，从来不只有一种
-heading_en: There Was Never Just One Kind of Chinese Painter
-[zh]
-今天介绍水墨画时，人们常把“文人画”讲得最大。文人画家重视书法式用笔、诗文交往和个人表达，这条传统确实影响深远，但它不是中国绘画的全部。宫廷画院里的画家为皇室制作精细作品；城市中的职业画家接受顾客委托；寺院、作坊与地方社区里的画工绘制壁画、神像、年画和实用图像。不同群体会竞争，也会互相学习、合作和依赖。
-
-唐代诗人王维后来被放进以文人水墨为中心的画史谱系，甚至被称为水墨山水的开创者。古代文献确实记载他画画，《辋川图》的题材也影响很久；可是原作没有流传下来，今天看到的是后世摹本、拓本或“仿王维”作品。所谓“水墨之祖”是后世建立传统时给他的地位，不是一张现存真迹能够证明的发明证书。
-
-一幅古画上的作者名也不总是最终答案。作品可能由学生协助，可能临摹旧本，后来又被改题、裁切、重装，甚至被错误归给名家。博物馆写“传某某笔”“仿某某”或“某某款”，正是在告诉观众证据有边界。临摹也不一定是假冒；在许多时代，它是学习、保存构图和与前代对话的重要方式。
-[/zh]
-[en]
-Introductions to ink painting often give the biggest role to the literati, or scholar-painter, tradition. Scholar-painters valued brushwork related to calligraphy, exchanges of poetry, and personal expression. Their influence was enormous, but they were not all of Chinese painting. Artists in court academies made finely detailed works for rulers. Urban professionals painted for paying clients. Artists in temples, workshops, and local communities made murals, sacred images, New Year prints, and useful designs. These groups competed, but they also learned from, worked with, and depended on one another.
-
-The Tang poet Wang Wei was later placed at the beginning of a history centered on literati ink landscape, and he has even been praised as a founder of ink painting. Old texts do say that he painted, and the subject of his Wangchuan estate influenced artists for centuries. But his original *Wangchuan Villa* does not survive. What remains are later copies, rubbings, and works “after Wang Wei.” Calling him an “ancestor of ink landscape” shows the place later writers gave him in their story. It is not an inventor’s certificate proved by a surviving original.
-
-Even an artist’s name on an old painting may not be the final answer. Assistants may have helped. The work may copy an older model, or it may have been retitled, cut, remounted, or wrongly credited to a famous master. When a museum says “attributed to,” “after,” or “bearing the name of” an artist, it is showing us the limit of the evidence. Copying was not always forgery. In many periods, it was an important way to learn, preserve a composition, and speak with artists from the past.
-[/en]
-[/section]
-
-[section]
-page: 6
 layout: text-wrap-image
-heading_zh: 空白可能是江面，也可能只是一块没有墨的绢
-heading_en: Blank Silk May Become a River—or Remain Simply Blank
+heading_zh: 没有画的地方，也能变成水
+heading_en: Empty Paper Can Become Water
 image: 3-blank-river-boat.webp
-caption_zh: 这是现代生成的水墨风格图像，不是马远《寒江独钓图》的复制品。它用小船、淡山和大片浅色制造水面感，不能当作宋画局部。
-caption_en: This is a modern generated ink-style image, not a copy of *Fishing Alone on a Cold River*. It uses a small boat, pale mountains, and a wide light area to suggest water, but it is not a detail from a Song painting.
+caption_zh: 小船周围的空白，让人看见宽阔的水面和安静的天空。
+caption_en: Open space around a small boat becomes wide water and quiet sky.
 [zh]
-看图中的小船。周围没有画满波浪，眼睛却把浅色区域读成宽阔水面。这就是留白可能做的工作：空处与小船、岸线、题诗和其他墨迹发生关系，于是水、雾、天空、距离或寂静被暗示出来。留白不是简单的“忘了画”，但也不是每一厘米空纸都藏着神秘哲理；有时它只是构图需要的呼吸、未着色的底面，或作品后来裁切和损伤的结果。
+画面上有一只小船，四周却没有画满蓝色波浪。大片空白仍然让你感觉到水，因为船的位置、远处的岸和几笔水纹已经给出了线索。另一块空白也许会变成雾、天空，或山间很深的距离。
 
-常被用来讲留白的《寒江独钓图》，东京国立博物馆标为“传马远笔”，也就是传统上归给马远，但作者身份仍需保留。馆方还指出，画绢在船上方有拼接，作品原来可能属于更大的画面。它确实巧妙利用余白突出小舟和钓者，可是“传”字和拼接痕迹提醒我们：欣赏效果与追问作品身世，可以同时进行。
-
-水墨也没有停在古代。20世纪以来，艺术家把传统笔墨与写生、抽象、摄影、装置、录像和新的颜料工具放在一起。有些仍在纸上画，有些把“墨”变成一种关于流动、痕迹和记忆的想法。回到开头那一滴墨：它最重要的本领不是遵守一张古老答案表，而是在材料、手、时间和观看之间，不断产生新的可能。
+空白不是画家忘了画。它给纸上的山和树留下呼吸的地方，也把一部分想象交给看画的人。墨画只放下几笔，小船却有了整条江，远山也有了藏进云里的空间。
 [/zh]
 [en]
-Look at the small boat in the picture. Waves do not fill the space around it, yet your eye reads the pale area as wide water. That is one job blank space can do. An open area works with the boat, shoreline, poem, and other marks, suggesting water, mist, sky, distance, or quiet. Blank space is not simply “the part the artist forgot,” but neither does every empty inch hide a mystical lesson. Sometimes it is breathing room in the design, an untouched surface, or even the result of later cutting and damage.
+A tiny boat sits on the page, but the artist has not filled the space around it with blue waves. The open paper still feels like water because the boat, a distant shore, and a few ripples give us clues. Elsewhere, open space may become mist, sky, or a great distance between mountains.
 
-One painting often used to explain blank space is *Fishing Alone on a Cold River*. The Tokyo National Museum labels it “attributed to Ma Yuan.” In other words, tradition connects it with Ma Yuan, but the artist’s identity is not completely secure. The museum also notes a join in the silk above the boat and says the work may once have been part of a larger picture. Its open space does make the boat and fisher stand out brilliantly. Yet the words “attributed to” and the joined silk remind us that enjoying an effect and asking about an object’s history can happen at the same time.
-
-Ink art did not stop in the past. Since the 1900s, artists have brought brush-and-ink traditions together with sketching from life, abstraction, photography, installation, video, and new paints and tools. Some still work on paper. Others turn “ink” into an idea about flow, marks, and memory. Return to our opening drop: its greatest power is not following an ancient answer sheet. It is the new possibilities that keep appearing between material, hand, time, and the act of looking.
+The artist did not forget to paint those places. Open space gives the mountains and trees room to breathe, and it gives part of the picture to our imagination. With only a few marks, the boat gains a whole river and the mountain gains room to disappear into clouds.
 [/en]
 [/section]
-
-[ending]
-heading_zh: 小结
-heading_en: In Summary
-[zh]
-一滴墨能变出清楚或模糊、干涩或湿润、厚重或透明的痕迹；画家再用线条、皴擦、层叠、位置、遮挡、颜色和空白组织它们，才让远近和天气出现。“墨分五色”赞美的是变化丰富，不是说中国画只有黑白，也不是一套永远不变的五格配方。
-
-水墨画的历史同样不是单线故事。文人、宫廷画家、职业画家、民间画工与现代艺术家都在其中；真迹、摹本、归属争议和新实验也都在其中。会看水墨，不只是会说“这里很空、那里很淡”，而是会继续问：谁画的？用什么画？作品怎样来到今天？我的眼睛又是怎样走进画里的？
-[/zh]
-[en]
-One drop of ink can leave edges that are sharp or soft, marks that are dry or wet, and layers that are heavy or transparent. Painters organize those effects with lines, texture strokes, layering, position, overlap, color, and open space. Only then do distance and weather appear. “Five colors of ink” celebrates variety. It does not mean that Chinese painting is only black and white, or that every artist follows one unchanging five-step recipe.
-
-The history of ink painting is not one straight line either. It includes scholar-painters, court artists, professionals, community workshop painters, and artists working today. It also includes originals, copies, uncertain attributions, and new experiments. Learning to see ink painting means more than saying, “This part is blank, and that part is pale.” It means continuing to ask: Who made this? What materials did they use? How did the object reach us? And how is my own eye traveling through it?
-[/en]
-[/ending]

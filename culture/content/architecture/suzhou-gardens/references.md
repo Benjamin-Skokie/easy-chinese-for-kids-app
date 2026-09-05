@@ -1,180 +1,123 @@
 # Suzhou Gardens — References and Editorial Notes
 
-This file is for editorial research and does not render on the website.
+This file supports fact-checking and does not render on the website.
 
-## The World Heritage Property and Distinct Garden Histories
+## Current Child-Facing Draft (2026-09-03)
+
+- Story path: enter a small city garden, watch a distant view appear inside a doorway, follow turning paths, learn where Taihu rocks come from, and watch the garden change through the seasons.
+- The article explains a few design ideas through things a child can see and feel. It does not ask young readers to memorize garden names, owners, dynasties, or conservation rules.
+- “Borrowed scenery” means carefully including an outside view in the garden experience. Nothing is literally borrowed or moved.
+
+## 1. A Small World of Nature Inside a City Home
 
 Source: UNESCO World Heritage Centre, “Classical Gardens of Suzhou”
 URL: https://whc.unesco.org/en/list/813/
-Accessed: 2026-08-21
+Accessed: 2026-09-03
 
-Supports:
-
-- The World Heritage property consists of nine named gardens, not every garden in Suzhou.
-- The representative gardens date from the eleventh through nineteenth centuries and use water, stones, plants, and buildings in individual designs adapted to limited residential sites.
-- The gardens combine craftsmanship, art, literature, and changing traditions; UNESCO identifies surviving records, maps, inscriptions, old trees, furnishings, surrounding streets, waterways, and views as parts of their heritage context.
-- Conservation guidance emphasizes documented traditional techniques, minimum intervention, buffer zones, and management of tourism and urban development.
-
-Source: Suzhou Municipal Garden and Landscape Administration Bureau, “Overview of Garden History” (园林概览)
+Source: Suzhou Municipal Garden and Landscape Administration Bureau, “Overview of Suzhou Gardens” (《园林概览》)
 URL: https://ylj.suzhou.gov.cn/szsylj/ylgk/nav_wztt.shtml
-Accessed: 2026-08-21
-
-Supports:
-
-- The Humble Administrator's Garden, Lingering Garden, Master-of-Nets Garden, and Mountain Villa with Embracing Beauty were inscribed in 1997.
-- Canglang Pavilion, Lion Grove Garden, Garden of Cultivation, Couple's Garden Retreat, and Retreat and Reflection Garden were added as an extension in 2000.
-- Several former private gardens were transferred or donated to public ownership, rescued, repaired, and opened beginning in the 1950s.
-- Local conservation has included laws, documentation, monitoring, repair, and protection of the gardens' surroundings.
-
-Editorial boundary:
-
-- “Suzhou gardens” is not treated as one site, one owner's work, or one fixed formula.
-- UNESCO inscription is one layer in a longer history. It did not create the gardens or freeze them in their original form.
-- The article does not claim that every historic garden in Suzhou is part of the nine-component World Heritage property.
-
-## Individuality, Ownership, and Change
-
-Source: Suzhou Municipal Garden and Landscape Administration Bureau, “Humble Administrator's Garden” (拙政园)
-URL: https://ylj.suzhou.gov.cn/szsylj/sjyc/201905/c1df393edc8745abb20e8a9bd5525782.shtml
-Accessed: 2026-08-21
-
-Source: Suzhou Municipal Garden and Landscape Administration Bureau, “Lingering Garden” (留园)
-URL: https://ylj.suzhou.gov.cn/szsylj/sjyc/201905/b7c0f2058c75498c9ecbacf234e25b08.shtml
-Accessed: 2026-08-21
-
-Source: Suzhou Municipal Garden and Landscape Administration Bureau, “Master-of-Nets Garden” (网师园)
-URL: https://ylj.suzhou.gov.cn/szsylj/sjyc/201905/8aaf3adcfdaf485dada9a071aac3867f.shtml
-Accessed: 2026-08-21
-
-Supports:
-
-- The Humble Administrator's Garden began around 1509, changed owners and divisions repeatedly, and today has water occupying about one third of its central section—not “more than half of the whole garden.”
-- Wen Zhengming's role in designing a blueprint is reported by the garden administration as a tradition (“据传”), while his later paintings of the garden are documented.
-- Lingering Garden began as a private garden in 1593, was rebuilt and renamed by later owners, became neglected in the twentieth century, and was repaired in 1953 with experts and skilled traditional building workers.
-- Master-of-Nets Garden passed through many owners; its present form layers several periods. It was donated to the state in 1950, repaired, and opened in 1958.
-- The gardens differ in scale, organization, architectural emphasis, use of water, and rockwork.
-
-Editorial boundary:
-
-- The article avoids assigning the present form of a garden to its first owner or to a single designer.
-- It removes the old unsupported claim that Wen Zhengming certainly designed the Humble Administrator's Garden from a complete blueprint.
-- It does not repeat the exaggerated claim that the Humble Administrator's Garden is half water.
-- Ownership changes, war, neglect, and restoration are treated as part of garden history rather than damage to a supposedly timeless original.
-
-## Elite and Literati Gardens, Art, and Labor
+Accessed: 2026-09-03
 
 Source: Metropolitan Museum of Art, “Chinese Gardens and Collectors' Rocks”
-URL: https://www.metmuseum.org/ko/essays/chinese-gardens-and-collectors-rocks
-Accessed: 2026-08-21
+URL: https://www.metmuseum.org/essays/chinese-gardens-and-collectors-rocks
+Accessed: 2026-09-03
 
-Source: Metropolitan Museum of Art, “Chinese Gardens: Pavilions, Studios, Retreats”
-URL: https://www.metmuseum.org/exhibitions/listings/2012/chinese-gardens
-Accessed: 2026-08-21
+Source: Metropolitan Museum of Art, *A Chinese Garden Court: The Astor Court at the Metropolitan Museum of Art*
+URL: https://resources.metmuseum.org/resources/metpublications/pdf/A_Chinese_Garden_Court.pdf
+Accessed: 2026-09-03
 
 Supports:
 
-- Private gardens around Suzhou grew especially after the twelfth century and were associated with wealthy upper-class and literati owners.
-- Gardens served as extensions of residences and settings for literary gatherings, performance, collecting, retreat, and displays of an owner's taste.
-- Garden and pictorial arts influenced one another, but paintings could idealize owners and spaces rather than record them exactly.
-- Wen Zhengming painted an album of the Humble Administrator's Garden in 1551; the surviving built garden should not be read directly from those idealized images.
+- Suzhou is a historic city whose private residential gardens developed over many centuries.
+- In the limited space beside a home, garden makers used water, stones, plants, and small buildings to suggest a much larger natural landscape.
+- Small ponds could stand for lakes or rivers, while arrangements of rocks could suggest mountains.
+- These were generally gardens of wealthy families rather than ordinary public parks when first built.
+
+Editorial boundary:
+
+- “Suzhou gardens” describes a tradition and a group of surviving gardens, not one property with one owner or one unchanging plan.
+- The child-facing story does not claim that every Suzhou garden contains all the same features.
+- The UNESCO World Heritage property contains nine gardens; that number is kept here because it is not needed for the walk in the story.
+
+## 2. Borrowed Scenery, Openings, and Turning Paths
+
+Source: Suzhou Local Chronicles Office, “The Art of Lattice Windows in Suzhou Classical Gardens” (《奇妙精巧的苏州古典园林的漏窗艺术》)
+URL: https://dfzb.suzhou.gov.cn/dfzb/fzxh/201002/4310c9b7dad442b99b209d301b8cdd82.shtml
+Accessed: 2026-09-03
+
+Source: Suzhou Municipal Garden and Landscape Administration Bureau, “Garden History” (《园林历史》)
+URL: https://ylj.suzhou.gov.cn/szsylj/ylwh/201903/90158495bbcb4c4fbbb201dfd537987a.shtml
+Accessed: 2026-09-03
+
+Source: Metropolitan Museum of Art, “Chinese Gardens and Collectors' Rocks”
+URL: https://www.metmuseum.org/essays/chinese-gardens-and-collectors-rocks
+Accessed: 2026-09-03
+
+Supports:
+
+- Garden windows and other openings can frame selected pieces of scenery and visually connect spaces on opposite sides of a wall.
+- “Borrowed scenery” can bring a view from beyond the garden wall into the composition seen from a chosen position.
+- Walls, corridors, plants, and turns can hide one view and reveal another as a visitor moves.
+- The Met describes the parts of a traditional Chinese garden as being revealed one at a time, with light and the seasons continually changing the experience.
+
+Editorial boundary:
+
+- The distant pagoda in the illustration is not identified as a real pagoda seen from a named garden.
+- The round opening serves as a simple child-facing example. Borrowed scenery can also use windows, corridors, branches, buildings, water, and views without a circular frame.
+- The comments about steady slabs, narrow bridges, and slower footsteps are observations about how surfaces can guide movement, not universal rules followed by every garden maker.
+
+## 3. Taihu Rocks and Miniature Mountains
+
+Source: Suzhou Municipal Garden and Landscape Administration Bureau, “Building Artificial Mountains” (《叠山》)
+URL: https://ylj.suzhou.gov.cn/szsylj/ylys/201903/0306817832f64a68bfd66c830d1ff994.shtml
+Accessed: 2026-09-03
+
+Source: Metropolitan Museum of Art, “Chinese Gardens and Collectors' Rocks”
+URL: https://www.metmuseum.org/essays/chinese-gardens-and-collectors-rocks
+Accessed: 2026-09-03
+
+Supports:
+
+- Lake Tai lies near Suzhou. Historically prized Taihu rocks were limestone associated with the lake and were shaped by water and sand; craftspeople sometimes altered stones as well.
+- Chinese garden rocks were valued for unusual shapes, holes, and textures and could suggest peaks or mountain ranges.
+- Skilled workers selected the stones' positions and combined stone, earth, paths, caves, plants, and water to make artificial mountains in limited spaces.
+- A rockery might divide the garden, create depth, offer a higher viewpoint, or form passages for visitors.
+
+Editorial boundary:
+
+- Not every rock or hole is entirely natural; stones may have been selected, moved, arranged, and sometimes altered by people.
+- Not every Suzhou rockery is made only from Taihu stone.
+- The story calls a rockery a three-dimensional landscape painting as a child-friendly comparison, not a technical definition.
+
+## 4. Seasons, Care, and Public Gardens
 
 Source: UNESCO World Heritage Centre, “Classical Gardens of Suzhou”
 URL: https://whc.unesco.org/en/list/813/
-Accessed: 2026-08-21
+Accessed: 2026-09-03
 
-Supports:
-
-- UNESCO repeatedly credits garden masters, traditional craftsmanship, construction techniques, and later maintenance as central to the gardens' value.
-
-Editorial boundary:
-
-- “Literati garden” is not used to erase wealth, property, servants, craftspeople, or laborers.
-- The list of workers in the child-facing text describes the kinds of skilled and physical labor required by the documented materials and techniques. It does not invent named workers for a particular construction scene.
-- These gardens were not ordinary homes available to all social classes, even though many are public heritage sites now.
-
-## Borrowed, Framed, and Sequential Views
-
-Source: Ji Cheng, *The Craft of Gardens* (*Yuan Ye*, 1631/1634), discussed in: Yiting Wang et al., “Concept and Technique of Rockery in Chinese Garden Book (Part 1): Concept and Technique of Rockery in Yuanye,” *Journal of Architecture and Planning* 87.802 (2022)
-URL: https://www.jstage.jst.go.jp/article/aija/87/802/87_2591/_article/-char/en
-Accessed: 2026-08-21
-
-Source: Asa Simon Mittman, Smarthistory, “The Garden of the Humble Administrator in Suzhou, China”
-URL: https://smarthistory.org/gardens-microcosms-spotlight-zhuozhengyuan/
-Accessed: 2026-08-21
-
-Source: Metropolitan Museum of Art, “Chinese Gardens: Pavilions, Studios, Retreats”
-URL: https://www.metmuseum.org/exhibitions/listings/2012/chinese-gardens
-Accessed: 2026-08-21
-
-Supports:
-
-- Openings crop and layer views of rocks, plants, buildings, sky, and sometimes scenery beyond the wall.
-- Paths, bridges, pavilions, walls, and corridors shape an experience that unfolds as the visitor moves.
-- Garden arts and landscape painting have long influenced one another; artists also made idealized garden images and garden owners used literary and pictorial references.
-
-Editorial boundary:
-
-- Borrowed scenery is explained as a designed relationship among viewpoint, frame, near scene, and farther setting. A garden does not literally pull a tower inside or gain ownership of it.
-- The pagoda in `borrowed-scenery-window.webp` is not identified as the North Temple Pagoda or as a verified view from a named garden.
-- Comparing a walk to unfolding a handscroll is labeled as an interpretation, not one universal intention, route, or construction rule.
-- “A changing view with every step” describes sequential experience, not a literal guarantee that each footstep produces a separate perfect composition.
-
-## Taihu Stone: Geology, Collecting, and Construction
+Source: Suzhou Municipal Garden and Landscape Administration Bureau, “Overview of Suzhou Gardens” (《园林概览》)
+URL: https://ylj.suzhou.gov.cn/szsylj/ylgk/nav_wztt.shtml
+Accessed: 2026-09-03
 
 Source: Metropolitan Museum of Art, “Chinese Gardens and Collectors' Rocks”
-URL: https://www.metmuseum.org/ko/essays/chinese-gardens-and-collectors-rocks
-Accessed: 2026-08-21
-
-Source: Ataru Sotomura, “The Taihu Rocks in Chinese Gardens before the 17th Century,” *Journal of the Japanese Institute of Landscape Architecture* 59.1 (1995), 24–36
-URL: https://www.jstage.jst.go.jp/article/jila1994/59/1/59_1_24/_article/-char/en
-DOI: https://doi.org/10.5632/jila.59.24
-Accessed: 2026-08-21
-
-Source: Nanjing Forestry University School of Landscape Architecture, “Taihu Stone” (太湖石), attributed to Sun Delong of the Nanjing Municipal Garden Bureau
-URL: https://www.sju.edu.cn/ylxy/68/44/c3308a26692/page.htm
-Accessed: 2026-08-21
+URL: https://www.metmuseum.org/essays/chinese-gardens-and-collectors-rocks
+Accessed: 2026-09-03
 
 Supports:
 
-- Taihu stones are limestone display rocks associated with the Lake Tai region; dissolution, weathering, and water action can create their cavities, channels, and textured surfaces.
-- Collectors valued qualities described with terms such as leanness, perforation/openness, and wrinkled texture.
-- Historical Taihu stones were scarce and their distant transport depended on wealth and social connections; garden makers selected, transported, oriented, displayed, or combined stone into artificial mountains.
-- Gardens also use dry stone, yellow stone, and other materials. Not every rockery is made entirely of Taihu stone.
-- Accounts describe merchants altering dry stones and submerging them to imitate more valued water stones; modern drilling and grinding also occur.
+- Plants, light, rain, and the seasons continually change a garden; maintenance therefore continues long after the first construction.
+- The surviving gardens contain many historical layers and have been repaired and cared for by later generations.
+- Gardens that began as private spaces are now protected heritage sites that the public can visit.
 
 Editorial boundary:
 
-- The article does not claim every hole in every displayed rock is purely natural or made only by waves.
-- It separates geological formation, provenance, later alteration, collecting, placement, and rockery construction.
-- The four terms “lean, perforated, open, wrinkled” are presented as later aesthetic vocabulary, not a timeless scientific test or a rule followed identically by every garden.
-- The old Emperor Huizong/Flower-and-Stone-Transport/Water Margin passage was removed because it distracted from the Suzhou gardens and bundled contested causal claims.
-
-## Conservation Is an Ongoing Layer
-
-Source: UNESCO World Heritage Centre, “Classical Gardens of Suzhou”
-URL: https://whc.unesco.org/en/list/813/
-Accessed: 2026-08-21
-
-Source: Suzhou Municipal Garden and Landscape Administration Bureau, “Chen Congzhou and Suzhou Gardens” (陈从周与苏州园林)
-URL: https://ylj.suzhou.gov.cn/szsylj/ylwh/201902/69c910491f284fd19e6dbc885c59f88f.shtml
-Accessed: 2026-08-21
-
-Supports:
-
-- Twentieth-century restoration depended on surveys, historical records, expert judgment, skilled workers, and choices about what could responsibly be repaired.
-- Preservation includes ongoing management of physical fabric, plants, setting, visitor pressure, and the effects of urbanization.
-- Restoration can itself become controversial when evidence is incomplete or work changes a site's appearance.
-
-Editorial boundary:
-
-- Present gardens are not described as untouched originals.
-- “Minimum intervention” does not mean no maintenance; it means avoiding unnecessary alteration while preserving documented historic fabric and practices.
-- Public access is a later use layered onto former private residential gardens.
+- The ending does not describe the gardens as untouched originals. Living plants grow and age, while walls, wood, paths, and water systems need care.
+- Public access varies by site and conservation needs; the story does not promise that every space is always open.
 
 ## Image Audit
 
-The three retained images are modern illustrations or reference images, not historical documents.
+The three page images are modern illustrations, not records of one historic garden.
 
-- `borrowed-scenery-window.webp`: retained to introduce framing and viewpoint. The person, clothing, doubled pagoda view, buildings, and garden layout are imaginative.
-- `garden-overview.webp`: retained as a composite of familiar garden elements. It does not reproduce the plan or planting of one named Suzhou garden.
-- `taihu-rock.webp`: retained as an example of a porous display rock. The image alone cannot establish the rock's source, age, natural-versus-worked surfaces, or connection to a historic garden.
+- `garden-overview.webp`: combines familiar garden elements but does not copy the plan of a named Suzhou garden.
+- `borrowed-scenery-window.webp`: illustrates framing and viewpoint; its person, doorway, pagoda, and layout are imaginative.
+- `taihu-rock.webp`: shows a porous display rock but cannot establish its source, age, natural shaping, or connection to a particular garden.

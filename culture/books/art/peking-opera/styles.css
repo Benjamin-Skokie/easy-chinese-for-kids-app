@@ -30,6 +30,18 @@ body {
   gap: 28px;
 }
 
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
 .page {
   background: rgba(255, 250, 241, 0.88);
   border: 1px solid rgba(44, 62, 107, 0.1);
@@ -69,26 +81,6 @@ h1, h2, h3, h4 {
   margin-top: 10px;
   font-size: clamp(1.3rem, 2.2vw, 1.7rem);
   color: var(--accent);
-}
-
-.difficulty-badge {
-  display: inline-flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 7px 14px;
-  margin: 20px 0 0;
-  padding: 8px 14px;
-  border: 1px solid rgba(44, 62, 107, 0.14);
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.7);
-  color: var(--muted);
-  font-size: 0.82rem;
-  font-weight: 700;
-  letter-spacing: 0.02em;
-}
-
-.difficulty-badge .zh {
-  color: var(--primary-deep);
 }
 
 .hero .lead {
@@ -171,6 +163,19 @@ h1, h2, h3, h4 {
   margin: 14px 0 0;
   line-height: 1.7;
   font-size: 1rem;
+}
+
+.story-link {
+  color: var(--primary);
+  font-weight: 700;
+  text-decoration-color: rgba(44, 62, 107, 0.4);
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 0.16em;
+}
+
+.story-link:hover {
+  color: var(--primary-deep);
+  text-decoration-color: currentColor;
 }
 
 .text-wrap-image {

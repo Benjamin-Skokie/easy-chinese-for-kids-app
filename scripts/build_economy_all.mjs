@@ -4,5 +4,4 @@ const slugs = ["ancient-market", "ancient-money", "silk-road", "tang-cosmopolita
 
 for (const slug of slugs) {
   await buildPhilosophyPage({ category: "economy", slug, target: "books" });
-  await buildPhilosophyPage({ category: "economy", slug, target: "experiments" });
 }

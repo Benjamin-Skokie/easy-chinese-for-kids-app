@@ -62,7 +62,7 @@ caption_en: Try switching places in your mind: if you would not like it, do not 
 [en]
 *The Analects* preserves a brief exchange between Confucius and a student named Zigong. Zigong asks an enormous question: Is there one word—or one idea—that a person can practice for an entire life? Confucius answers with *shu* and the teaching, *“What you do not want done to yourself, do not do to others.”*
 
-Here, *shu* is not simply the kind of forgiveness suggested by the English word “excuse.” It asks you to begin with your own experience and use it to imagine another person's.
+Here, *shu* is not simply the kind of forgiveness suggested by the English word “excuse.” It asks you to begin with your own experience, then imagine how the situation might feel to someone else.
 
 Suppose you spend a long time building a block castle, and someone knocks it down for fun. The anger and disappointment you feel can teach you something the next time you see another person's work. Or suppose a friend tells you something private. Remembering how you would feel if your own secret became playground news may help you stop before passing it along.
 [/en]

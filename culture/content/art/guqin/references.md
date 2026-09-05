@@ -191,3 +191,8 @@ Editorial boundary:
 
 - The textual phrases about mountains and water do not prove that Boya played the same notes, rhythm, or version heard today.
 - The story tradition and the histories of performable scores are connected but must not be collapsed into one unbroken recording.
+
+## 2026 child-facing revision
+
+- The main article now distinguishes guqin from guzheng, explains open, pressed, and harmonic sounds, shows how an instrument ages, and tells the Boya–Zhong Ziqi friendship legend.
+- It does not claim that Boya played the modern piece *Flowing Water* or that today's instrument remained unchanged for three thousand years.

@@ -1,6 +1,8 @@
 # English Rewrite Rule for Chinese Culture Articles
 
-The English version is for native English-speaking children in lower to middle elementary grades.
+Last updated: 2026-09-02
+
+The English version is for native English-speaking children, with a distinct audience contract for Easy, Medium, and Advanced. Do not apply one “children's English” voice to all three.
 
 The English should read like good children's nonfiction, not like a translated text.
 
@@ -18,7 +20,7 @@ For a fully rewritten Culture article, research should first become a shared sto
 - inventions and familiar retelling details that are not supported;
 - the intended reading level and emotional experience.
 
-Write the English from that brief as an original piece of children's writing. Do not keep the Chinese prose open and move through it sentence by sentence or paragraph by paragraph. Even careful nonliteral translation can inherit Chinese information order, emphasis, nouns, transitions, and explanatory habits.
+Write the English from that brief as an original piece of children's writing. Do not keep the Chinese prose open and move through it sentence by sentence or paragraph by paragraph. Even careful nonliteral translation can inherit Chinese information order, emphasis, nouns, transitions, and explanatory habits. Chinese must also be written independently from the same brief; neither language is the other's master draft.
 
 After the English draft is complete:
 
@@ -33,8 +35,8 @@ English and Chinese may use different sentence counts, paragraph breaks, transit
 
 The existing general guidance below fits the Story level. Every manuscript must first apply the standard for its own version:
 
-- **Early Reader:** written for U.S. kindergarten and first-grade listeners and supported readers. Use familiar spoken words, short sentences, concrete actions, helpful repetition, and a warm read-aloud rhythm. Keep unavoidable cultural words inside the story without stopping for dictionary definitions. Do not mistake grammatically correct adult nonfiction for a young child's voice.
-- **Story:** written for elementary readers who can follow fuller scenes, modest historical background, and some unfamiliar vocabulary with context. Keep the prose lively, direct, and emotionally clear.
+- **Early Reader:** written for U.S. kindergarten listeners and first-grade supported readers. The whole article has one main idea and normally only two to four concrete supporting facts. Use familiar spoken words, short idea units, concrete actions, helpful repetition, and a warm read-aloud rhythm. Do not mistake grammatically correct adult nonfiction—or a shortened Advanced article—for a young child's text.
+- **Story / Medium:** written for grades 2–4 independent readers with no assumed Chinese-history background. Use one driving question, problem, journey, decision, object, or documented sequence to create forward motion. Keep names and background under control. “Interesting enough to continue without an adult” is a required acceptance test.
 - **Advanced:** written for older elementary readers, families, and teachers. Include evidence, disagreement, historical layers, and interpretation, but keep the story moving and avoid research-paper voice.
 
 Sentence length and readability scores are only warning lights. A short sentence can still sound translated, formal, or unnatural. Native read-aloud rhythm is a separate acceptance requirement.
@@ -43,7 +45,7 @@ Use clear, simple, natural American English. Avoid hard words, formal phrasing, 
 
 Chinese culture already asks children to understand unfamiliar ideas, so the English language should not become another obstacle.
 
-First understand what the Chinese paragraph is trying to make the child feel, notice, or remember. Then rewrite that idea in natural English for native-speaking children. Do not preserve a phrase just because it is close to the Chinese.
+First understand what the accepted level design asks the child to feel, notice, follow, or remember. Then write that experience in natural English for native-speaking children. Do not preserve a phrase, paragraph, section, or information order merely because it appears in the Chinese.
 
 Translate the meaning, mood, and story energy of the Chinese source, not just the words. Keep the article accurate, natural, vivid, and fun to read.
 
@@ -55,11 +57,23 @@ For each paragraph, ask:
 
 - What is the main idea the child must understand?
 - What picture or feeling should stay in the child's mind?
-- Would a native English-speaking 3rd-5th grader understand this naturally?
+- Would a native English-speaking child at this version's stated level understand this naturally?
 - Is any word technically correct but emotionally misleading, too adult, or too abstract?
 - Is the sentence graceful, or just simplified?
 
-The goal is not merely "easy English." The goal is readable, vivid, trustworthy English for children.
+The goal is not merely "easy English." The goal is readable, vivid, trustworthy English for the specific level.
+
+For Easy, add these whole-article questions:
+
+- Is there exactly one main idea?
+- Could a kindergarten listener retell two concrete details with adult prompting?
+- Did the draft remove extra arguments rather than merely shorten their sentences?
+
+For Medium, add these whole-article questions:
+
+- What makes the child want to read the next section?
+- Does every section advance the same question or story engine?
+- Could a child with no knowledge of Chinese dynasties follow it without a preliminary lecture?
 
 ## Practical Style Rules
 
@@ -72,6 +86,8 @@ Prefer natural children's nonfiction phrasing over literal translation. For exam
 Avoid awkward literal images. If a sentence sounds strange in English, rewrite the idea. For example, use `The blade became part of how people picture Guan Yu`, not `The blade became part of Guan Yu`.
 
 Prefer concrete actors when they help children understand the scene. For example, `Officials watched almost everything he did` is clearer than `People watched almost everything he did`.
+
+Avoid generic historical category words when the person or title is known. `Ruler` is normal English when comparing unnamed leaders across places or periods, but it often sounds like a dictionary translation in a child-facing story. Prefer `the emperor`, `the king`, `the khan`, the person's name, or a pronoun when accurate. `Official` means a government worker and is not a synonym for `ruler`.
 
 Avoid words that are technically correct but may create the wrong picture. For example, in a ritual context, `ritual offerings` is safer than `sacrifices`, which may sound alarming or violent to children.
 
@@ -100,6 +116,26 @@ Do not insert a blank line after every sentence. In the article source, blank li
 As a flexible default, a paragraph often contains two to five connected sentences. A single-sentence paragraph is appropriate only when it serves a deliberate purpose, such as an opening hook, a turning question, dialogue, a transition, or a moment of emphasis. If several one-sentence paragraphs appear in a row, combine them unless the changing speaker or scene truly requires separation.
 
 English paragraph boundaries do not need to copy the Chinese exactly. Rewrite them according to natural English thought and rhythm while preserving the same meaning and factual boundaries.
+
+## Endings: Stop When the Article Is Finished
+
+Do not add a closing sentence merely to make the article sound like a children's story. If the final scene, fact, or explanation already completes the piece, stop there.
+
+As a default, do not end with manufactured reader prompts such as:
+
+- `The next time you...`
+- `Notice...`
+- `Ask yourself...`
+- `Now you can...`
+- `What will you discover?`
+
+Also avoid an unnecessary callback to an opening joke, object, or question. A callback is useful only when it completes the article's actual story or idea; it should not be attached as decoration.
+
+Do not repeat the introduction in summary form or add a large moral after the content has ended. Prefer finishing on the last concrete action, consequence, discovery, or useful new fact.
+
+A reader activity is allowed only when the article is genuinely designed around that activity. It must be specific, worthwhile, safe, and realistic. For example, do not tell a child to compare two families' recipes “at the next meal” when those families would not normally be sitting together.
+
+Final deletion test: remove the last paragraph and reread the article. If nothing important is lost—or if the ending becomes more natural—delete that paragraph.
 
 ## Background Names and Glossary Support
 

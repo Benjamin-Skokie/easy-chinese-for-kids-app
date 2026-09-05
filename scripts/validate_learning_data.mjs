@@ -20,6 +20,7 @@ import { ageBuildPhrases, agePractice } from "../src/features/foundations/age.js
 import { identityConversation, identityCountries } from "../src/features/foundations/identity.js";
 import { greetingsPractice } from "../src/features/foundations/greetings.js";
 import { politePractice } from "../src/features/foundations/polite-words.js";
+import { requestPractice } from "../src/features/daily-life/requests-permission.js";
 import { clothesMatchItems, clothesPractice, clothesSentenceItems } from "../src/features/daily-life/clothes.js";
 import { familyPractice, illustratedFamily } from "../src/features/family/family.js";
 import { illustratedKids } from "../src/data/characters.js";
@@ -36,7 +37,8 @@ function assert(condition, message) {
 
 function assertAsset(item, label) {
   assert(Boolean(item.imagePath), `${label} is missing imagePath`);
-  assert(existsSync(resolve(item.imagePath)), `${label} references a missing asset: ${item.imagePath}`);
+  const assetPath = String(item.imagePath || "").split(/[?#]/)[0];
+  assert(existsSync(resolve(assetPath)), `${label} references a missing asset: ${item.imagePath}`);
 }
 
 for (const [label, items] of [
@@ -121,6 +123,7 @@ identityCountries.forEach((item) => assertAsset({ id: item.id, imagePath: item.a
 assertAsset({ id: "conversation", imagePath: identityConversation.imagePath }, "identity conversation");
 greetingsPractice.forEach((item) => assertAsset(item, `greetings scene:${item.id}`));
 politePractice.forEach((item) => assertAsset(item, `polite scene:${item.id}`));
+requestPractice.forEach((item) => assertAsset(item, `request scene:${item.id}`));
 clothesPractice.forEach((item) => assertAsset(item, `clothes scene:${item.id}`));
 clothesMatchItems.forEach((item) => assertAsset(item, `clothes match:${item.id}`));
 clothesSentenceItems.forEach((item) => assertAsset(item, `clothes sentence:${item.id}`));
@@ -135,7 +138,9 @@ const transportIds = new Set(transportVisualItems.map((item) => item.id));
 Object.keys(transportSentenceTokens).forEach((id) => assert(transportIds.has(id), `transport token entry has no visual: ${id}`));
 transportIds.forEach((id) => assert(transportSentenceTokens[id], `transport visual has no sentence tokens: ${id}`));
 
-const positionLineCount = positionScenes.reduce((count, scene) => count + scene.lines.length, 0);
+const positionLineCount = positionScenes
+  .filter((scene) => scene.practice !== false)
+  .reduce((count, scene) => count + scene.lines.length, 0);
 assert(positionPracticeItems.length === positionLineCount, "position practice items do not match scene lines");
 assert(datePracticeItems.every((item) => item.id && item.hanzi && item.audio), "date practice has an incomplete item");
 assert(comparisonPracticeItems.every((item) => comparisonVisualItems.some((visual) => visual.id === item.id)), "comparison practice references an unknown visual");
@@ -146,21 +151,22 @@ assert(schoolSentenceBuilds.length === 7, "school sentence practice is incomplet
 assert(schoolSubjectsTopicData.words.length === 6, "school subjects word set is incomplete");
 assert(schoolSubjectsSentenceBuilds.length === 6, "school subjects sentence practice is incomplete");
 assert(foodTopicData.words.length === 27, "food word set is incomplete");
-assert(foodSentenceBuilds.length === 2, "food sentence practice is incomplete");
+assert(foodSentenceBuilds.length === 10, "food sentence practice is incomplete");
 assert(foodPreferencesTopicData.scenes.length === 4, "food preferences scenes are incomplete");
 assert(mealsFeelingsTopicData.conversationPairs.length === 6, "meals conversation practice is incomplete");
 assert(mealsFeelingsTopicData.pictureChoices.length === 6, "meals picture choices are incomplete");
 assert(mealsFeelingsSentenceBuilds.length === 5, "meals sentence practice is incomplete");
 assert(introductionsGamePrompts.length === 4, "introductions listening prompt is incomplete");
 assert(introductionsGamePrompts.every((prompt) => prompt.speakerId), "introductions listening prompts need speakers");
-assert(introductionsBuildPhrases.length === 2, "introductions sentence practice is incomplete");
+assert(introductionsBuildPhrases.length === 3, "introductions sentence practice is incomplete");
 assert(ageBuildPhrases.length === 6, "age sentence practice is incomplete");
-assert(identityCountries.length === 3, "identity country set is incomplete");
+assert(identityCountries.length === 5, "identity country set is incomplete");
 assert(greetingsPractice.length === 3, "greetings lesson scenes are incomplete");
-assert(politePractice.length === 4, "polite words lesson scenes are incomplete");
-assert(clothesMatchItems.length === 8, "clothes matching set is incomplete");
-assert(clothesSentenceItems.length === 5, "clothes sentence set is incomplete");
-assert(familyPractice.length === 2, "family lesson scenes are incomplete");
+assert(politePractice.length === 3, "polite words lesson scenes are incomplete");
+assert(requestPractice.length === 4, "requests and permission lesson scenes are incomplete");
+assert(clothesMatchItems.length === 13, "clothes matching set is incomplete");
+assert(clothesSentenceItems.length === 13, "clothes sentence set is incomplete");
+assert(familyPractice.length === 4, "family lesson scenes are incomplete");
 assert(colourLessons["1b"].items.length === 4, "1B colour word set is incomplete");
 assert(colourLessons["2a"].items.length === 9, "2A colour word set is incomplete");
 const natureRequiredWords = ["白天", "晚上", "天上", "太阳", "星星", "月亮", "地上", "树", "花", "草"];

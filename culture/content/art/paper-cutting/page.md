@@ -1,123 +1,91 @@
 ---
-title_zh: 剪一刀，为什么能变成一圈花？
-title_en: How Can One Cut Become a Ring of Flowers?
+title_zh: 一张纸里，藏着多少只蝴蝶？
+title_en: How Many Butterflies Are Hiding in One Sheet of Paper?
 slug: paper-cutting
 category: art
-difficulty: 中等
+difficulty: 简单
 back_href: ../../../../index.html#culture-art
 style_notes: "用 --- 分隔 frontmatter；正文强调优先用 *斜体*；尽量不用 **粗体**。"
 ---
 
 [hero]
-title_zh: 剪一刀，为什么能变成一圈花？
-title_en: How Can One Cut Become a Ring of Flowers?
+title_zh: 一张纸里，藏着多少只蝴蝶？
+title_en: How Many Butterflies Are Hiding in One Sheet of Paper?
 [/hero]
 
 [section]
 page: 1
 layout: text-wrap-image
-heading_zh: 展开以前，图案藏在哪里？
-heading_en: Where Does the Pattern Hide Before the Paper Opens?
+heading_zh: 剪开以前，什么也看不见
+heading_en: Before It Opens, the Pattern Is Invisible
 image: 1-grandmother-butterfly.webp
-caption_zh: 这是现代想象的家庭剪纸场景，不是某位传承人的照片。孩子应使用儿童安全剪刀，并由成年人陪同；刻刀只由受过指导的人操作。
-caption_en: This is a modern imagined family scene, not a photograph of a particular tradition bearer. Children should use child-safe scissors with adult supervision; craft knives are for trained users.
+caption_zh: 折起红纸再剪开，左右两边会出现相同的图案。
+caption_en: Fold and cut red paper, then open it to find a matching pattern on both sides.
 [zh]
-拿一张干净的新手工纸，对折一次，再用儿童安全剪刀在折边旁剪出半颗心。打开纸，两边竟然合成了一颗完整的心。秘密不是魔法，而是折痕像一面镜子：剪刀只走了一次，同样的边线却在纸的两半上同时出现。再把纸折成四层或八层，一个缺口就会重复成一圈花纹。不过，不能把连接各部分的“小桥”全剪断，不然展开时只会掉出许多碎片。
+一张红纸对折以后，剪刀只剪出几条弯线和几个小洞。它看起来一点也不像蝴蝶。可是纸一打开，两边的图案同时展开：翅膀、触角，还有一排细细的小花，全都出现了。
 
-这只是剪纸的一种办法。有些人拿着剪刀，一边剪一边转动纸张，可以做出不对称的人物、动物和生活场景；有些人把几层纸固定在软垫上，用刻刀沿画稿刻出细线，一次做出多张。还有人先刻出主要轮廓，再在背后贴上不同颜色的纸，叫套色；也有人在浅色纸上点染颜色。剪、刻、折、染和贴可以互相组合，所以“剪纸”并不一定只用剪刀，也不一定都是红色、对称的图案。
+剪纸（*jiǎnzhǐ*）最好玩的时刻，常常就是展开的那一秒。折一次，可以得到左右相同的图案；多折几次，一刀就能重复成一圈花。剪的人必须在纸还合着时，先在脑子里看见打开后的样子。
 [/zh]
 [en]
-Take a clean sheet of new craft paper, fold it once, and use child-safe scissors to cut half a heart beside the fold. Open the paper, and the two sides join into one complete heart. The secret is not magic. The fold works like a mirror: the scissors travel once, but the same edge appears on both halves. Fold the sheet into four or eight layers, and one notch can repeat into a ring. Just do not cut every little “bridge” that holds the parts together, or the design will open as a pile of scraps.
+A sheet of red paper is folded in half. The scissors make only a few curved cuts and tiny holes. It does not look anything like a butterfly. Then the paper opens. Two wings spread at once, complete with feelers and a row of little flowers.
 
-That is only one method. Some artists use scissors while turning the paper to create people, animals, or scenes that are not symmetrical. Others fasten several sheets on a soft cutting surface and follow a drawing with a knife, producing several detailed copies at once. An artist may cut a main outline and paste colored papers behind it, a method called color lining, or brush dyes onto pale paper. Cutting, carving, folding, dyeing, and layering can work together. “Paper-cut” does not always mean scissors, red paper, or a symmetrical design.
+The most exciting moment in paper-cutting (*jiǎnzhǐ*) is often the second the paper opens. One fold makes a matching pattern on both sides. Several folds can turn one cut into a ring of flowers. While the paper is still closed, the cutter has to imagine what will appear.
 [/en]
 [/section]
 
 [section]
 page: 2
-layout: text-only
-heading_zh: 纸以前有镂空，纸以后才有真正的剪纸
-heading_en: Cutout Traditions Came First; Paper-Cuts Required Paper
+layout: text-wrap-image
+heading_zh: 窗户上的红色愿望
+heading_en: Red Wishes on the Window
+image: 2-window-flowers-home.webp
+caption_zh: 节日里，人们会把红色剪纸贴在窗户上。
+caption_en: Families may place red paper-cuts on windows for a festival.
 [zh]
-纸出现以前，人们已经会在金属薄片、皮革、丝织物和树叶上剪、刻出镂空花纹。这些做法和后来的剪纸有亲缘关系，却不能直接叫“纸剪”。中国在西汉已经有植物纤维纸；到了东汉，蔡伦扩大原料来源、改进制作技术，使纸更实用。可是没有证据证明蔡伦改进造纸以后，某个人立刻“发明了剪纸”。材料、工具、价格、节日和日常需要一起变化，这门手艺才慢慢形成。
+过去，许多家庭会在春节或婚礼前剪新图案，贴在窗户、门和灯上。阳光穿过镂空的地方，红色的花纹便亮了起来。窗户一下子像换上了节日的新衣服。
 
-纸怕水、火、虫和反复触摸，早期作品很难保存。目前所知较早的一批真正纸剪，是新疆吐鲁番阿斯塔那墓地出土的北朝团花，距今约一千五百年。其中有花朵以及马、猴、蝴蝶等重复图案，说明当时的制作者已经会多次折纸，再剪出均衡的环形纹样。它们能保存下来，与当地干燥环境和墓葬条件有关。没有留下来的作品也许曾经很多，所以“目前发现最早”不等于“剪纸就是那一天开始的”。
+图案还会说话。鱼常让人想到“年年有余”，因为“鱼”和“余”读音相近；石榴里有许多籽，会让人想到一个热闹的大家庭；喜鹊和梅花常带来春天与喜事的感觉。看懂这些图案，就像读一张没有句子的祝福卡。
 [/zh]
 [en]
-Before paper existed, people already cut openwork patterns into thin metal, leather, silk, and leaves. Those practices are related to later paper-cutting, but they are not literally paper-cuts. Plant-fiber paper existed in China during the Western Han period. In the Eastern Han, Cai Lun expanded the range of raw materials and improved papermaking, helping make paper more useful. But no evidence shows that someone “invented paper-cutting” immediately after Cai Lun's work. Materials, tools, cost, celebrations, and daily needs changed together as the craft slowly took shape.
+In the past, many families cut new designs before Chinese New Year or a wedding. They placed them on windows, doors, and lanterns. Sunlight shone through the open spaces, making the red patterns glow. A plain window suddenly wore festival clothes.
 
-Paper is easily damaged by water, fire, insects, and handling, so early examples rarely survive. Some of the earliest known physical paper-cuts in China are Northern Dynasties rosettes excavated from tombs at Astana near Turpan in Xinjiang, dating from about 1,500 years ago. Their repeated designs include flowers, horses, monkeys, and butterflies. They show that makers already knew how to fold paper several times and cut a balanced circular pattern. The dry climate and sealed tombs helped them survive. Many earlier works may have disappeared, so “earliest yet found” does not mean “the craft began on that day.”
+The pictures could speak without words. Fish suggested having a little extra each year because the Chinese words for “fish” and “extra” sound alike. A pomegranate, packed with seeds, could suggest a large, lively family. Magpies and plum blossoms brought thoughts of spring and happy news. Reading the pictures is like reading a greeting card with no sentence on it.
 [/en]
 [/section]
 
 [section]
 page: 3
 layout: text-wrap-image
-heading_zh: 一张窗花，到底在说什么？
-heading_en: What Is a Window Paper-Cut Actually Saying?
-image: 2-window-flowers-home.webp
-caption_zh: 这是现代节庆想象图，混合了窗花、门饰和礼盒装饰，不代表某个地区家庭的固定摆法。图中的红色鱼纹只是一种可能的节庆设计。
-caption_en: This modern holiday scene mixes window, doorway, and gift decorations. It is not one region's required arrangement, and its red fish is only one possible festive design.
+heading_zh: 一把剪刀，也能画出故事
+heading_en: Scissors Can Draw a Story
+image: 3-bold-and-fine-cutouts.webp
+caption_zh: 剪纸可以有粗粗的大形状，也可以细得像花边。
+caption_en: Paper-cuts can use bold shapes or details as fine as lace.
 [zh]
-剪纸的名字常常来自用途。贴在窗上的可以叫窗花；婚礼或其他喜庆场合使用的有喜花；有些小花样不是最后的装饰，而是贴在鞋面、枕套或衣服上，给刺绣者当底样。还有灯花、礼花、门笺以及配合地方仪式使用的纸花。同一种图案换了颜色、位置或场合，意思可能就不一样，不能看见红纸便一律翻译成“春节好运”。
+有的剪纸只用几个大形状，一眼就能认出奔跑的马或抱鱼的娃娃。有的作品细得像花边，连鸟的羽毛和衣服上的花纹都剪了出来。不同地方、不同家庭和不同剪纸艺人，都有自己喜欢的办法。
 
-图案也不是一本全国通用的密码字典。在一些吉祥组合中，“鱼”和“余”同音，可以表示生活有富余；“蝠”和“福”声音相近，蝙蝠可以借来表示福气；莲和鱼放在一起，有时借“莲—连、鱼—余”的音表达“连年有余”；多籽的石榴也常和家族兴旺的愿望相连。可是鱼也可以只是河边生活的记忆，莲花可以与宗教、季节或地方审美有关。要读懂一幅剪纸，还得问是谁做的、给谁用、在哪里、什么日子使用，不能只查一个“图案寓意表”。
+剪刀就像一支特别的笔。普通的笔把线画在纸上，剪刀却把纸拿走，让剩下的部分变成图案。剪得太远，两个部分会断开；留下一条窄窄的纸桥，它们就还能连在一起。
 [/zh]
 [en]
-Paper-cuts are often named for their use. A design pasted on a window can be called a “window flower.” Weddings and other celebrations may use “happiness flowers.” Some small patterns are not final decorations at all. They are guides placed on shoes, pillowcases, or clothing for an embroiderer to follow. There are also lantern decorations, gift papers, doorway hangings, and paper forms used in local ceremonies. Change the color, location, or occasion, and the meaning may change. Red paper does not always translate as “good luck for Lunar New Year.”
+Some paper-cuts use only a few big shapes. You can spot a running horse or a child holding a fish at once. Others are as fine as lace, with tiny feathers and clothing patterns. Different regions, families, and artists all have favorite ways of working.
 
-Motifs are not a single codebook for all of China, either. In some lucky combinations, the word for fish, *yu*, sounds like a word for having extra, so a fish can suggest plenty. The word for bat, *fu*, sounds like the word for good fortune. Lotus and fish may work together through the sounds “lotus—continuous” and “fish—extra” to wish for plenty year after year. A pomegranate full of seeds may express hopes for a growing family. Yet a fish can also remember life beside a river, and a lotus may carry religious, seasonal, or local meanings. To understand one paper-cut, ask who made it, for whom, where, and for what occasion. A motif chart is not enough.
+Scissors are a very unusual drawing tool. A pencil adds a line to paper. Scissors take paper away and let what remains become the picture. Cut too far and two parts fall apart. Leave a narrow paper bridge, and the whole design stays connected.
 [/en]
 [/section]
 
 [section]
 page: 4
-layout: text-wrap-image
-heading_zh: “北方粗、南方细”为什么不够？
-heading_en: Why “Bold North, Delicate South” Is Not Enough
-image: 3-bold-and-fine-cutouts.webp
-caption_zh: 这是展示粗线与细线差别的现代想象作品，不是某一地区、民族或名家的真作。仅凭线条粗细，不能判断剪纸来自哪里。
-caption_en: These are modern imagined designs comparing broad and fine lines, not authentic works from a named region, community, or artist. Line width alone cannot identify where a paper-cut came from.
-[zh]
-人们有时说北方剪纸粗犷、南方剪纸细密。这可以帮助我们发现一些常见倾向，却不能当成规则。北方也有精细的刻纸：河北蔚县艺人把纸叠好，用小刻刀刻出戏曲人物的头发和衣纹，再点染鲜明颜色。南方各地也不只有一种细巧样式。气候、纸张、工具、用途、师承和个人选择都在影响作品；一位艺人还可能学习别处的方法，创造新的组合。
-
-传统乡村剪纸常由女性从小学习，再在家庭和邻里间传授。正是许多没有在作品上签名的农村女性，把婚礼、节日、刺绣和生活观察剪进了纸里。但故事不能停在“老奶奶”：历史上也有靠剪纸谋生的职业艺人，中国许多少数民族社区保存了各自的剪纸传统，今天还有男性和女性传承人、学校里的孩子、职业艺术家与平面设计师使用手剪、刻刀、激光切割或数字设计。承认新工具，不等于忘记老手艺；重要的是说明作品怎样做、向谁学习，又为今天的生活表达什么。
-[/zh]
-[en]
-People sometimes say northern paper-cuts are bold while southern ones are delicate. That can point to broad tendencies, but it is not a rule. Northern China has extremely fine knife-cut work, too. In Yuxian, Hebei, artists stack paper, carve hair and costume lines for opera figures with tiny knives, and then brush on brilliant colors. Southern traditions are not all one delicate style, either. Climate, paper, tools, purpose, teaching lineages, and personal choices all shape a work. An artist may also study methods from elsewhere and create a new combination.
-
-In many rural traditions, girls learned paper-cutting early and women passed it through families and neighborhoods. Countless rural women whose names were never signed onto their work cut weddings, festivals, embroidery, and daily observations into paper. But the story cannot end with “grandmothers.” Historical records also describe professional paper-cut artists. Many of China's ethnic minority communities maintain distinct traditions, and today's makers include women and men, schoolchildren, professional artists, and graphic designers. They may use scissors, knives, laser cutters, or digital design. New tools do not have to erase old skills. What matters is explaining how a work was made, who taught the maker, and what it expresses in life today.
-[/en]
-[/section]
-
-[section]
-page: 5
 layout: text-only
-heading_zh: 让纸活下去，不是把样式冻住
-heading_en: Keeping the Craft Alive Does Not Mean Freezing Its Style
+heading_zh: 老图案也会遇见新生活
+heading_en: Old Patterns Meet New Lives
 [zh]
-2009年，中国剪纸列入联合国教科文组织人类非物质文化遗产代表作名录。这里要保护的不只是几张老纸，更是人会设计、剪刻、染色、讲解和传授的能力。剪纸本来就在适应新房屋、新节日、新观众和新工具；如果只能复制旧花样，它反而会失去与生活的联系。保存老作品、记录地方知识和鼓励当代创作，可以同时进行。
+今天，人们仍然会剪生肖、花鸟和“福”字，也会剪校车、运动鞋、城市高楼，甚至航天员。电脑和机器可以帮助剪出非常复杂的图案，可许多人仍然喜欢用手折纸、转动剪刀。
 
-如果你也想试，先问成年人，使用儿童安全剪刀，从新的手工纸开始。刻刀、锋利剪刀和一次切多层纸的工作要交给受过指导的成年人。也不要顺手拿旧信、旧书页、家里不明来历的纸或博物馆物品来剪——它们可能保存着不能重新做出的信息。折一下，剪一刀，再打开：重复图案出现时，你不只完成了一个小魔术，也加入了一门仍在变化的活手艺。
+手剪的边不一定一模一样。也许一朵花大一点，一只蝴蝶的翅膀弯一点。正是这些小差别，让你知道这张纸曾经握在某个人手里，也让一个古老的手艺继续装下今天的故事。
 [/zh]
 [en]
-In 2009, Chinese paper-cut was placed on UNESCO's Representative List of the Intangible Cultural Heritage of Humanity. What needs safeguarding is not only a group of old sheets. It is people's ability to design, cut, carve, color, explain, and teach. Paper-cutting has always adjusted to new homes, celebrations, audiences, and tools. If makers could only copy old patterns, the craft would lose its connection to life. Preserving older work, recording local knowledge, and encouraging contemporary creation can happen together.
+People still cut zodiac animals, flowers, birds, and the character 福. They also cut school buses, sneakers, city buildings, and even astronauts. Computers and machines can help make very complicated designs, but many artists still love folding paper and turning scissors by hand.
 
-If you want to try, ask an adult first, use child-safe scissors, and begin with new craft paper. Knives, sharp scissors, and thick stacks of paper belong in the hands of trained adults. Do not grab an old letter, a book page, an unidentified sheet at home, or anything in a museum. It may hold information that can never be replaced. Fold, make one cut, and open the sheet. When a repeated pattern appears, you have done more than a small trick. You have joined a living craft that is still changing.
+Hand-cut edges are not always exactly alike. One flower may be bigger. One butterfly wing may curve a little more. Those small differences show that a real person held the paper—and they let an old craft keep carrying today's stories.
 [/en]
 [/section]
-
-[ending]
-heading_zh: 一刀会重复，意义却不会自动复制
-heading_en: A Cut Can Repeat; Meaning Does Not Copy Itself
-[zh]
-折纸能让一刀重复成一圈花，但图案的意义不会自动复制。它要和地方、场合、使用者与创作者放在一起，才开始说话。
-
-剪纸也因此不只是“一张红纸加一把剪刀”。它是容易损坏的历史证据，是许多普通人的手上知识，也是每一代人仍可以重新设计的视觉语言。
-[/zh]
-[en]
-A fold can repeat one cut into a ring, but meaning does not copy itself. A design begins to speak only when we place it with its region, occasion, user, and maker.
-
-That is why paper-cutting is more than “red paper plus scissors.” It is fragile historical evidence, knowledge held in many ordinary hands, and a visual language that each generation can keep designing anew.
-[/en]
-[/ending]

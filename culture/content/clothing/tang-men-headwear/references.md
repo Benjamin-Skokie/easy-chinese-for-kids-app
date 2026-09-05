@@ -1,6 +1,48 @@
-# Editorial References: Tang Men's Headwear
+# 唐朝男子为什么要戴幞头？ — References and Editorial Notes
 
 This file is for editorial research and does not render on the website.
+
+## 0. Long hair, care for the body, and variation
+
+Source: Peking University journal platform, Lin Yun, “髡发种种”
+
+URL: https://ccj.pku.edu.cn/article/info?id=286674275
+
+Accessed: 2026-09-02
+
+Supports:
+
+- Han Chinese men and women traditionally kept their hair long.
+- The teaching that body and hair came from one's parents encouraged people not to damage or remove the hair casually.
+- Cutting or shaving the hair could also carry meanings of punishment and shame in earlier Chinese history.
+
+Editorial boundary:
+
+- The article gives this as one important cultural reason, not a private motive shared by every Tang man.
+- Tang China included communities with different hair customs. The child-facing text explicitly avoids claiming that every man wore one identical hairstyle.
+- The teaching is not treated as a literal claim that nobody ever trimmed, cut, or shaved hair.
+
+Source: The Metropolitan Museum of Art, “Scissors” (Tang dynasty, 7th–9th century)
+
+URL: https://www.metmuseum.org/art/collection/search/42184
+
+Accessed: 2026-09-02
+
+Supports:
+
+- Tang China had scissors; the museum dates this surviving silver pair to the 7th–9th century.
+- Long hairstyles cannot be explained by a lack of cutting tools.
+
+Source: Alain Arrault, “Daily Activities in the Calendars of Medieval China (Ninth and Tenth Centuries): The Case of the Body Care Activities,” *The NCCU History Review* 45 (2016)
+
+URL: https://tci.ncl.edu.tw/cgi-bin/gs32/gsweb.cgi?o=dnclresource&s=id%3D%22A16020895%22.&searchmode=basic&tcihsspage=tcisearch_opt1_search
+
+Accessed: 2026-09-02
+
+Supports:
+
+- Ninth- and tenth-century calendars list washing hair, washing the head, removing white hairs, and shaving the head among body-care activities.
+- Medieval practice was more varied than the oversimplified claim that nobody ever cut or shaved hair.
 
 ## 1. Palace Museum — “幞头”
 
@@ -10,9 +52,9 @@ Accessed: 2026-08-21
 
 Supports:
 
-- Futou began as a wrapped headcloth before the Tang and was also called a soft wrap.
+- Futou began as cloth wrapped around the head and hair before the Tang, was also called a soft wrap, and was associated in early accounts with convenience during military activity.
 - In Tang forms, two cloth corners were tied while two decorative parts hung behind as the “feet”; some feet were later reinforced and raised.
-- By the late Tang, some futou used rigid framing, lining, and metal support and could be worn as a formed cap.
+- By the late Tang, some futou used rigid framing, lining, and metal support and could be put on as a formed cap without wrapping it again in front of a mirror.
 - Five Dynasties and Song futou developed upward, crossed, curled, and extended feet; headwear shape can help scholars date paintings.
 
 Editorial boundary:
@@ -47,6 +89,7 @@ Supports:
 
 - A Tang horse-handler figure wears a futou with a narrow-sleeved, turned-collar outfit.
 - Futou were widely used in Tang men's everyday dress and were not restricted to senior officials.
+- The museum notes that futou were so normal in Tang men's dress that even nearly unclothed wrestling performers were still shown wearing them.
 - The museum summarizes changes in the height and shape of the top, inner support, and feet across the Tang.
 
 Editorial boundary:
@@ -206,13 +249,13 @@ Accessed: 2026-08-21
 
 Supports:
 
-- A modern visual comparison among a soft wrapped form, a stiffer form, and a very long-winged later official-hat image.
+- A modern visual comparison between a softer earlier Tang form and a firmer framed form that appeared later in the Tang.
 
 Editorial boundary:
 
-- It is explicitly labeled a schematic comparison rather than three dated artifacts.
-- The right figure is framed as Song or later comparison, not a normal Tang official.
-- The three figures do not prove a universal, step-by-step evolution.
+- The two people are deliberately separated into different panels and have different faces, ages, and clothing so they do not read as clones or as one gathering.
+- Earlier and later styles could overlap; the image does not claim that every wearer changed hats on one date or followed one universal sequence.
+- The illustration does not use the very long horizontal wings strongly associated with later Song official hats.
 
 ### `general-futou-in-wind.webp`
 

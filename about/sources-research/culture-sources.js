@@ -3,9 +3,278 @@ window.NIHAO_CULTURE_SOURCES = [
   {
     "category": "architecture",
     "categoryName": "Architecture",
+    "slug": "tulou",
+    "title": "土楼（Tǔlóu）：一扇门后的许多家",
+    "titleEn": "Tulou: Many Homes Behind One Gate",
+    "storyPath": "../../culture/books/architecture/tulou/",
+    "groups": [
+      {
+        "title": "The UNESCO property, building forms, and broad functions",
+        "sources": [
+          {
+            "label": "UNESCO World Heritage Centre, “Fujian Tulou”",
+            "url": "https://whc.unesco.org/en/list/1113/"
+          }
+        ]
+      },
+      {
+        "title": "Hakka and Minnan traditions, construction, and layout types",
+        "sources": [
+          {
+            "label": "Fujian Provincial People’s Government, “老土楼新‘活’法：方圆之间找‘方圆’”",
+            "url": "https://fj.gov.cn/zwgk/ztzl/sxzygwzxsgzx/sdjj/wvjj/202502/t20250227_6768939.htm"
+          }
+        ]
+      },
+      {
+        "title": "Rammed-earth and timber construction",
+        "sources": [
+          {
+            "label": "UNESCO World Heritage Earthen Architecture Programme, Earthen Architecture in Today’s World",
+            "url": "https://whc.unesco.org/document/126549"
+          },
+          {
+            "label": "U.S. National Park Service, “2012 Auditorium Addition — Casa Grande Ruins National Monument”",
+            "url": "https://www.nps.gov/cagr/learn/management/auditorium.htm"
+          }
+        ]
+      },
+      {
+        "title": "Chengqi Lou in the Illustration",
+        "sources": [
+          {
+            "label": "Longyan Municipal Government, Yongding District, “Tulou Attractions” (《土楼景点》)",
+            "url": "https://www.yongding.gov.cn/yxyd/ydtl/200804/t20080420_1145764.htm"
+          }
+        ]
+      },
+      {
+        "title": "Architectural variation and household units",
+        "sources": [
+          {
+            "label": "Zhiwen Huang et al., “The Geo-Distribution and Spatial Characteristics of Tulou Dwellings in Chaozhou, Guangdong, China,” Buildings",
+            "url": "https://www.mdpi.com/2075-5309/13/9/2131"
+          }
+        ]
+      },
+      {
+        "title": "Communal life, lineage, privacy, and conflict",
+        "sources": [
+          {
+            "label": "Lijun Zhang, Living in Heritage: Tulou as Vernacular Architecture, Global Asset, and Tourist Destination in Contemporary China, Chapter 3, Indiana University Press",
+            "url": "https://publish.iupress.indiana.edu/read/living-in-heritage-tulou-as-vernacular-architecture-global-asset-and-tourist-destination-in-contemporary-china/section/98d7c305-fd7d-436a-999e-7717c37d188c"
+          }
+        ]
+      },
+      {
+        "title": "Rammed-earth durability and maintenance risk",
+        "sources": [
+          {
+            "label": "Fujian Provincial Department of Housing and Urban-Rural Development, “关于加强对有价值的非世遗土楼的维护和保护的建议”",
+            "url": "https://zjt.fj.gov.cn/xxgk/rdjyhzxtabl/rdjyblqk/202110/t20211009_5701743.htm"
+          }
+        ]
+      },
+      {
+        "title": "Living heritage, tourism, and fire protection",
+        "sources": [
+          {
+            "label": "Fujian Provincial People’s Government, “南靖土楼：要保下来更要活起来”",
+            "url": "https://www.fujian.gov.cn/zwgk/ztzl/sxzygwzxsgzx/sdjj/wvjj/202308/t20230817_6231276.htm"
+          },
+          {
+            "label": "Indiana University Press, Living in Heritage, Chapter 4",
+            "url": "https://publish.iupress.indiana.edu/read/living-in-heritage-tulou-as-vernacular-architecture-global-asset-and-tourist-destination-in-contemporary-china/section/ccb5a124-a753-498f-b3eb-ad4212eac721"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "architecture",
+    "categoryName": "Architecture",
+    "slug": "temple-of-heaven",
+    "title": "天坛：皇帝为什么向天祈祷？",
+    "titleEn": "The Temple of Heaven: Why Did the Emperor Pray to Heaven?",
+    "storyPath": "../../culture/books/architecture/temple-of-heaven/",
+    "groups": [
+      {
+        "title": "Overall purpose, layout, and historical development",
+        "sources": [
+          {
+            "label": "UNESCO World Heritage Centre, “Temple of Heaven: an Imperial Sacrificial Altar in Beijing”",
+            "url": "https://whc.unesco.org/en/list/881/"
+          }
+        ]
+      },
+      {
+        "title": "Site plan, building uses, and official symbolic explanations",
+        "sources": [
+          {
+            "label": "Beijing Municipal Government, “The Temple of Heaven: A Place for Worshipping Heaven”",
+            "url": "https://english.beijing.gov.cn/beijinginfo/culture/culturaltreasures/sevenculture/202401/t20240111_3532658.html"
+          },
+          {
+            "label": "Beijing Municipal Administration Center of Parks, “The Circular Mound, Main Structure of the Circular Mound Altar Complex” (《圜丘坛建筑群的主体之圜丘》)",
+            "url": "https://gygl.beijing.gov.cn/whgy/whgy_wsgc/201912/t20191206_885626.html"
+          }
+        ]
+      },
+      {
+        "title": "Winter Solstice and the Two Main Ceremonies",
+        "sources": [
+          {
+            "label": "Palace Museum, “Winter Solstice” (《冬至》)",
+            "url": "https://www.dpm.org.cn/lemmas/241569.html"
+          },
+          {
+            "label": "Palace Museum, “Worship of Heaven” (《祭天》)",
+            "url": "https://www.dpm.org.cn/court/system/236397.html"
+          },
+          {
+            "label": "UNESCO World Heritage Centre, Beijing Central Axis: A Building Ensemble Exhibiting the Ideal Order of the Chinese Capital nomination dossier",
+            "url": "https://whc.unesco.org/document/204904"
+          }
+        ]
+      },
+      {
+        "title": "Changes, reconstruction, and conservation history",
+        "sources": [
+          {
+            "label": "Dongcheng District People’s Government, “天坛”",
+            "url": "https://www.bjdch.gov.cn/mldc/bglj/whgj/202008/t20200827_2975730.html"
+          }
+        ]
+      },
+      {
+        "title": "Echo Wall and repeated echoes",
+        "sources": [
+          {
+            "label": "National Natural Science Foundation of China archive, Yu Wenguang, Lu Houjun, and Zhou Kechao, “天坛声学现象的新发现——对话石声学现象”",
+            "url": "https://www.nsfc.gov.cn/csc/20345/20348/pdf/1996/%E5%A4%A9%E5%9D%9B%E5%A3%B0%E5%AD%A6%E7%8E%B0%E8%B1%A1%E7%9A%84%E6%96%B0%E5%8F%91%E7%8E%B0%E2%80%94%E2%80%94%E5%AF%B9%E8%AF%9D%E7%9F%B3%E5%A3%B0%E5%AD%A6%E7%8E%B0%E8%B1%A1.pdf"
+          }
+        ]
+      },
+      {
+        "title": "Hall of Prayer Structure",
+        "sources": [
+          {
+            "label": "Beijing Municipal Government / Visit Beijing, “Must-visit Scenic Spots in Beijing — The Temple of Heaven”",
+            "url": "https://english.visitbeijing.com.cn/article/47OOiYHluPh"
+          },
+          {
+            "label": "Beijing Municipal Government / Visit Beijing, “Architecture of Temple of Heaven”",
+            "url": "https://english.visitbeijing.com.cn/article/47ONy6AX0b3"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "architecture",
+    "categoryName": "Architecture",
+    "slug": "pagodas",
+    "title": "宝塔为什么不是普通的高楼？",
+    "titleEn": "Why Isn't a Pagoda Just a Tall Building?",
+    "storyPath": "../../culture/books/architecture/pagodas/",
+    "groups": [
+      {
+        "title": "From South Asian stupas to Chinese pagodas",
+        "sources": [
+          {
+            "label": "Sichuan University Research Institute of Chinese Folk Culture, “汉文佛典中‘塔’相关音译形式及其汉化”",
+            "url": "https://zgswh.scu.edu.cn/info/1106/1858.htm"
+          },
+          {
+            "label": "Suzhou Local Chronicles Office, “苏州的古塔”",
+            "url": "https://dfzb.suzhou.gov.cn/dfzb/fzxh/200912/e8cdd1a6b75f4a6fa47fff8ac67d24b4.shtml"
+          },
+          {
+            "label": "Han Dian, dictionary entry for “寶”",
+            "url": "https://zdic.net/hans/%E5%AF%B6"
+          },
+          {
+            "label": "The Metropolitan Museum of Art, “Gandhara”",
+            "url": "https://www.metmuseum.org/essays/gandhara"
+          },
+          {
+            "label": "The Metropolitan Museum of Art, Functions of South Asian Art",
+            "url": "https://www.metmuseum.org/-/media/files/learn/for-educators/publications-for-educators/sseasia.pdf"
+          },
+          {
+            "label": "British Museum, “reliquary” collection term",
+            "url": "https://www.britishmuseum.org/collection/term/x8738"
+          },
+          {
+            "label": "Tracy Miller, “Performing Center in a Vertical Rise: Multilevel Pagodas in China's Middle Period,” Ars Orientalis",
+            "url": "https://quod.lib.umich.edu/a/ars/13441566.0046.005/--performing-center-in-a-vertical-rise-multilevel-pagodas?rgn=main&view=text"
+          }
+        ]
+      },
+      {
+        "title": "Yingxian Wooden Pagoda: date, height, and structure",
+        "sources": [
+          {
+            "label": "UNESCO World Heritage Centre, “Wooden Structures of Liao Dynasty—Wooden Pagoda of Yingxian County, Main Hall of Fengguo Monastery of Yixian County” (Tentative List)",
+            "url": "https://whc.unesco.org/en/tentativelists/5803/"
+          },
+          {
+            "label": "China Cultural Heritage Research Institute author, “960岁的应县木塔如何保护”",
+            "url": "https://www.lhlzw.gov.cn/sitesources/nysjwjw/page_pc/xcjd/s/article97f14dcf046340b59edfb8349905d693.html"
+          },
+          {
+            "label": "Xinhua Daily Telegraph, “别让‘病歪歪’的应县木塔在议而不决中倒掉”",
+            "url": "https://www.xinhuanet.com/politics/2020-10/19/c_1126627347.htm"
+          }
+        ]
+      },
+      {
+        "title": "Yingxian conservation and earthquake claims",
+        "sources": [
+          {
+            "label": "Li Yuhang et al., “Improving seismic performance for inclined historical building by using external protection structure: Case study of Yingxian wooden pagoda, China,” Journal of Building Engineering 96 (2024)",
+            "url": "https://www.sciencedirect.com/science/article/pii/S2352710224019491"
+          }
+        ]
+      },
+      {
+        "title": "Giant Wild Goose Pagoda and Xuanzang",
+        "sources": [
+          {
+            "label": "Shaanxi Provincial Local Records Office, “大雁塔”",
+            "url": "https://dfz.shaanxi.gov.cn/zslm/sxsq/msgj/201405/t20140513_2621734.html"
+          },
+          {
+            "label": "Xi'an Qujiang New District Administrative Committee, “玄奘广场”",
+            "url": "https://qjxq.xa.gov.cn/zjqj/gyqj/tsqj/5df21c54fd8508098d284dea.html"
+          },
+          {
+            "label": "Luoyang Municipal People's Congress, “河洛春秋：三藏法师唐玄奘”",
+            "url": "https://lysrd.henanrd.gov.cn/2008/05-07/114458.html"
+          },
+          {
+            "label": "State Council Information Office of China, “Journey to the West,” Traditional Culture / China Keywords",
+            "url": "https://english.scio.gov.cn/m/featured/chinakeywords/2024-08/30/content_117397291.htm"
+          }
+        ]
+      },
+      {
+        "title": "Odd-number interpretations",
+        "sources": [
+          {
+            "label": "Hugh D. R. Baker, “Pagoda,” in Ancestral Images: A Hong Kong Collection, Oxford University Press",
+            "url": "https://academic.oup.com/hong-kong-scholarship-online/book/13496/chapter/166998444"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "architecture",
+    "categoryName": "Architecture",
     "slug": "forbidden-city",
-    "title": "一座不断改变的城：从紫禁城到故宫博物院",
-    "titleEn": "A Palace That Kept Changing: From the Forbidden City to the Palace Museum",
+    "title": "故宫：一座城里的皇宫",
+    "titleEn": "The Forbidden City: A Palace Inside a City",
     "storyPath": "../../culture/books/architecture/forbidden-city/",
     "groups": [
       {
@@ -18,6 +287,19 @@ window.NIHAO_CULTURE_SOURCES = [
           {
             "label": "UNESCO World Heritage Centre, “Imperial Palaces of the Ming and Qing Dynasties in Beijing and Shenyang”",
             "url": "https://whc.unesco.org/en/list/439/"
+          }
+        ]
+      },
+      {
+        "title": "Why It Was Called Zǐjìnchéng",
+        "sources": [
+          {
+            "label": "Palace Museum, “Modeling the Palace after the Heavens” (《象天立宫》)",
+            "url": "https://www.dpm.org.cn/lemmas/243823.html"
+          },
+          {
+            "label": "Palace Museum, “Walking toward the Hall of Supreme Harmony” (《角度——走向太和》)",
+            "url": "https://www.dpm.org.cn/forum_detail/100138.html"
           }
         ]
       },
@@ -95,297 +377,76 @@ window.NIHAO_CULTURE_SOURCES = [
   {
     "category": "architecture",
     "categoryName": "Architecture",
-    "slug": "tulou",
-    "title": "土楼：一扇门后的许多家",
-    "titleEn": "Tulou: Many Homes Behind One Gate",
-    "storyPath": "../../culture/books/architecture/tulou/",
-    "groups": [
-      {
-        "title": "The UNESCO property, building forms, and broad functions",
-        "sources": [
-          {
-            "label": "UNESCO World Heritage Centre, “Fujian Tulou”",
-            "url": "https://whc.unesco.org/en/list/1113/"
-          }
-        ]
-      },
-      {
-        "title": "Hakka and Minnan traditions, construction, and layout types",
-        "sources": [
-          {
-            "label": "Fujian Provincial People’s Government, “老土楼新‘活’法：方圆之间找‘方圆’”",
-            "url": "https://fj.gov.cn/zwgk/ztzl/sxzygwzxsgzx/sdjj/wvjj/202502/t20250227_6768939.htm"
-          }
-        ]
-      },
-      {
-        "title": "Rammed-earth and timber construction",
-        "sources": [
-          {
-            "label": "UNESCO World Heritage Earthen Architecture Programme, Earthen Architecture in Today’s World",
-            "url": "https://whc.unesco.org/document/126549"
-          }
-        ]
-      },
-      {
-        "title": "Architectural variation and household units",
-        "sources": [
-          {
-            "label": "Zhiwen Huang et al., “The Geo-Distribution and Spatial Characteristics of Tulou Dwellings in Chaozhou, Guangdong, China,” Buildings",
-            "url": "https://www.mdpi.com/2075-5309/13/9/2131"
-          }
-        ]
-      },
-      {
-        "title": "Communal life, lineage, privacy, and conflict",
-        "sources": [
-          {
-            "label": "Lijun Zhang, Living in Heritage: Tulou as Vernacular Architecture, Global Asset, and Tourist Destination in Contemporary China, Chapter 3, Indiana University Press",
-            "url": "https://publish.iupress.indiana.edu/read/living-in-heritage-tulou-as-vernacular-architecture-global-asset-and-tourist-destination-in-contemporary-china/section/98d7c305-fd7d-436a-999e-7717c37d188c"
-          }
-        ]
-      },
-      {
-        "title": "Rammed-earth durability and maintenance risk",
-        "sources": [
-          {
-            "label": "Fujian Provincial Department of Housing and Urban-Rural Development, “关于加强对有价值的非世遗土楼的维护和保护的建议”",
-            "url": "https://zjt.fj.gov.cn/xxgk/rdjyhzxtabl/rdjyblqk/202110/t20211009_5701743.htm"
-          }
-        ]
-      },
-      {
-        "title": "Living heritage, tourism, and fire protection",
-        "sources": [
-          {
-            "label": "Fujian Provincial People’s Government, “南靖土楼：要保下来更要活起来”",
-            "url": "https://www.fujian.gov.cn/zwgk/ztzl/sxzygwzxsgzx/sdjj/wvjj/202308/t20230817_6231276.htm"
-          },
-          {
-            "label": "Indiana University Press, Living in Heritage, Chapter 4",
-            "url": "https://publish.iupress.indiana.edu/read/living-in-heritage-tulou-as-vernacular-architecture-global-asset-and-tourist-destination-in-contemporary-china/section/ccb5a124-a753-498f-b3eb-ad4212eac721"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "category": "architecture",
-    "categoryName": "Architecture",
-    "slug": "temple-of-heaven",
-    "title": "天坛：皇帝真的在和天空说话吗？",
-    "titleEn": "The Temple of Heaven: Was the Emperor Talking to the Sky?",
-    "storyPath": "../../culture/books/architecture/temple-of-heaven/",
-    "groups": [
-      {
-        "title": "Overall purpose, layout, and historical development",
-        "sources": [
-          {
-            "label": "UNESCO World Heritage Centre, “Temple of Heaven: an Imperial Sacrificial Altar in Beijing”",
-            "url": "https://whc.unesco.org/en/list/881/"
-          }
-        ]
-      },
-      {
-        "title": "Site plan, building uses, and official symbolic explanations",
-        "sources": [
-          {
-            "label": "Beijing Municipal Government, “The Temple of Heaven: A Place for Worshipping Heaven”",
-            "url": "https://english.beijing.gov.cn/beijinginfo/culture/culturaltreasures/sevenculture/202401/t20240111_3532658.html"
-          }
-        ]
-      },
-      {
-        "title": "Changes, reconstruction, and conservation history",
-        "sources": [
-          {
-            "label": "Dongcheng District People’s Government, “天坛”",
-            "url": "https://www.bjdch.gov.cn/mldc/bglj/whgj/202008/t20200827_2975730.html"
-          }
-        ]
-      },
-      {
-        "title": "Echo Wall and repeated echoes",
-        "sources": [
-          {
-            "label": "National Natural Science Foundation of China archive, Yu Wenguang, Lu Houjun, and Zhou Kechao, “天坛声学现象的新发现——对话石声学现象”",
-            "url": "https://www.nsfc.gov.cn/csc/20345/20348/pdf/1996/%E5%A4%A9%E5%9D%9B%E5%A3%B0%E5%AD%A6%E7%8E%B0%E8%B1%A1%E7%9A%84%E6%96%B0%E5%8F%91%E7%8E%B0%E2%80%94%E2%80%94%E5%AF%B9%E8%AF%9D%E7%9F%B3%E5%A3%B0%E5%AD%A6%E7%8E%B0%E8%B1%A1.pdf"
-          }
-        ]
-      },
-      {
-        "title": "Traditional timber joints and the limits of the “no nails” slogan",
-        "sources": [
-          {
-            "label": "Yue Zhi, “Traditional Chinese Wood Structure Joints with an Experiment Considering Regional Differences,” International Journal of Architectural Heritage",
-            "url": "https://www.tandfonline.com/doi/full/10.1080/15583058.2012.688179"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "category": "architecture",
-    "categoryName": "Architecture",
-    "slug": "pagodas",
-    "title": "宝塔：屋檐下面藏着什么",
-    "titleEn": "Pagodas: What Lies Beneath the Eaves?",
-    "storyPath": "../../culture/books/architecture/pagodas/",
-    "groups": [
-      {
-        "title": "From South Asian stupas to Chinese pagodas",
-        "sources": [
-          {
-            "label": "Tracy Miller, “Performing Center in a Vertical Rise: Multilevel Pagodas in China's Middle Period,” Ars Orientalis",
-            "url": "https://quod.lib.umich.edu/a/ars/13441566.0046.005/--performing-center-in-a-vertical-rise-multilevel-pagodas?rgn=main&view=text"
-          }
-        ]
-      },
-      {
-        "title": "Yingxian Wooden Pagoda: date, height, and structure",
-        "sources": [
-          {
-            "label": "UNESCO World Heritage Centre, “Wooden Structures of Liao Dynasty—Wooden Pagoda of Yingxian County, Main Hall of Fengguo Monastery of Yixian County” (Tentative List)",
-            "url": "https://whc.unesco.org/en/tentativelists/5803/"
-          },
-          {
-            "label": "China Cultural Heritage Research Institute author, “960岁的应县木塔如何保护”",
-            "url": "https://www.lhlzw.gov.cn/sitesources/nysjwjw/page_pc/xcjd/s/article97f14dcf046340b59edfb8349905d693.html"
-          }
-        ]
-      },
-      {
-        "title": "Yingxian conservation and earthquake claims",
-        "sources": [
-          {
-            "label": "Li Yuhang et al., “Improving seismic performance for inclined historical building by using external protection structure: Case study of Yingxian wooden pagoda, China,” Journal of Building Engineering 96 (2024)",
-            "url": "https://www.sciencedirect.com/science/article/pii/S2352710224019491"
-          }
-        ]
-      },
-      {
-        "title": "Giant Wild Goose Pagoda and Xuanzang",
-        "sources": [
-          {
-            "label": "Shaanxi Provincial Local Records Office, “大雁塔”",
-            "url": "https://dfz.shaanxi.gov.cn/zslm/sxsq/msgj/201405/t20140513_2621734.html"
-          }
-        ]
-      },
-      {
-        "title": "Odd-number interpretations",
-        "sources": [
-          {
-            "label": "Hugh D. R. Baker, “Pagoda,” in Ancestral Images: A Hong Kong Collection, Oxford University Press",
-            "url": "https://academic.oup.com/hong-kong-scholarship-online/book/13496/chapter/166998444"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "category": "architecture",
-    "categoryName": "Architecture",
     "slug": "suzhou-gardens",
-    "title": "苏州园林：一步一景是怎样做出来的？",
-    "titleEn": "Suzhou Gardens: How Does Each Step Reveal a New View?",
+    "title": "苏州园林：转个弯，又是一幅画",
+    "titleEn": "Suzhou Gardens: A New View Around Every Corner",
     "storyPath": "../../culture/books/architecture/suzhou-gardens/",
     "groups": [
       {
-        "title": "The World Heritage Property and Distinct Garden Histories",
+        "title": "A Small World of Nature Inside a City Home",
         "sources": [
           {
             "label": "UNESCO World Heritage Centre, “Classical Gardens of Suzhou”",
             "url": "https://whc.unesco.org/en/list/813/"
           },
           {
-            "label": "Suzhou Municipal Garden and Landscape Administration Bureau, “Overview of Garden History” (园林概览)",
+            "label": "Suzhou Municipal Garden and Landscape Administration Bureau, “Overview of Suzhou Gardens” (《园林概览》)",
             "url": "https://ylj.suzhou.gov.cn/szsylj/ylgk/nav_wztt.shtml"
-          }
-        ]
-      },
-      {
-        "title": "Individuality, Ownership, and Change",
-        "sources": [
-          {
-            "label": "Suzhou Municipal Garden and Landscape Administration Bureau, “Humble Administrator's Garden” (拙政园)",
-            "url": "https://ylj.suzhou.gov.cn/szsylj/sjyc/201905/c1df393edc8745abb20e8a9bd5525782.shtml"
           },
-          {
-            "label": "Suzhou Municipal Garden and Landscape Administration Bureau, “Lingering Garden” (留园)",
-            "url": "https://ylj.suzhou.gov.cn/szsylj/sjyc/201905/b7c0f2058c75498c9ecbacf234e25b08.shtml"
-          },
-          {
-            "label": "Suzhou Municipal Garden and Landscape Administration Bureau, “Master-of-Nets Garden” (网师园)",
-            "url": "https://ylj.suzhou.gov.cn/szsylj/sjyc/201905/8aaf3adcfdaf485dada9a071aac3867f.shtml"
-          }
-        ]
-      },
-      {
-        "title": "Elite and Literati Gardens, Art, and Labor",
-        "sources": [
           {
             "label": "Metropolitan Museum of Art, “Chinese Gardens and Collectors' Rocks”",
-            "url": "https://www.metmuseum.org/ko/essays/chinese-gardens-and-collectors-rocks"
+            "url": "https://www.metmuseum.org/essays/chinese-gardens-and-collectors-rocks"
           },
           {
-            "label": "Metropolitan Museum of Art, “Chinese Gardens: Pavilions, Studios, Retreats”",
-            "url": "https://www.metmuseum.org/exhibitions/listings/2012/chinese-gardens"
-          },
-          {
-            "label": "UNESCO World Heritage Centre, “Classical Gardens of Suzhou”",
-            "url": "https://whc.unesco.org/en/list/813/"
+            "label": "Metropolitan Museum of Art, A Chinese Garden Court: The Astor Court at the Metropolitan Museum of Art",
+            "url": "https://resources.metmuseum.org/resources/metpublications/pdf/A_Chinese_Garden_Court.pdf"
           }
         ]
       },
       {
-        "title": "Borrowed, Framed, and Sequential Views",
+        "title": "Borrowed Scenery, Openings, and Turning Paths",
         "sources": [
           {
-            "label": "Ji Cheng, The Craft of Gardens (Yuan Ye, 1631/1634), discussed in: Yiting Wang et al., “Concept and Technique of Rockery in Chinese Garden Book (Part 1): Concept and Technique of Rockery in Yuanye,” Journal of Architecture and Planning 87.802 (2022)",
-            "url": "https://www.jstage.jst.go.jp/article/aija/87/802/87_2591/_article/-char/en"
+            "label": "Suzhou Local Chronicles Office, “The Art of Lattice Windows in Suzhou Classical Gardens” (《奇妙精巧的苏州古典园林的漏窗艺术》)",
+            "url": "https://dfzb.suzhou.gov.cn/dfzb/fzxh/201002/4310c9b7dad442b99b209d301b8cdd82.shtml"
           },
           {
-            "label": "Asa Simon Mittman, Smarthistory, “The Garden of the Humble Administrator in Suzhou, China”",
-            "url": "https://smarthistory.org/gardens-microcosms-spotlight-zhuozhengyuan/"
+            "label": "Suzhou Municipal Garden and Landscape Administration Bureau, “Garden History” (《园林历史》)",
+            "url": "https://ylj.suzhou.gov.cn/szsylj/ylwh/201903/90158495bbcb4c4fbbb201dfd537987a.shtml"
           },
-          {
-            "label": "Metropolitan Museum of Art, “Chinese Gardens: Pavilions, Studios, Retreats”",
-            "url": "https://www.metmuseum.org/exhibitions/listings/2012/chinese-gardens"
-          }
-        ]
-      },
-      {
-        "title": "Taihu Stone: Geology, Collecting, and Construction",
-        "sources": [
           {
             "label": "Metropolitan Museum of Art, “Chinese Gardens and Collectors' Rocks”",
-            "url": "https://www.metmuseum.org/ko/essays/chinese-gardens-and-collectors-rocks"
-          },
-          {
-            "label": "Ataru Sotomura, “The Taihu Rocks in Chinese Gardens before the 17th Century,” Journal of the Japanese Institute of Landscape Architecture 59.1 (1995), 24–36",
-            "url": "https://www.jstage.jst.go.jp/article/jila1994/59/1/59_1_24/_article/-char/en"
-          },
-          {
-            "label": "doi.org",
-            "url": "https://doi.org/10.5632/jila.59.24"
-          },
-          {
-            "label": "Nanjing Forestry University School of Landscape Architecture, “Taihu Stone” (太湖石), attributed to Sun Delong of the Nanjing Municipal Garden Bureau",
-            "url": "https://www.sju.edu.cn/ylxy/68/44/c3308a26692/page.htm"
+            "url": "https://www.metmuseum.org/essays/chinese-gardens-and-collectors-rocks"
           }
         ]
       },
       {
-        "title": "Conservation Is an Ongoing Layer",
+        "title": "Taihu Rocks and Miniature Mountains",
+        "sources": [
+          {
+            "label": "Suzhou Municipal Garden and Landscape Administration Bureau, “Building Artificial Mountains” (《叠山》)",
+            "url": "https://ylj.suzhou.gov.cn/szsylj/ylys/201903/0306817832f64a68bfd66c830d1ff994.shtml"
+          },
+          {
+            "label": "Metropolitan Museum of Art, “Chinese Gardens and Collectors' Rocks”",
+            "url": "https://www.metmuseum.org/essays/chinese-gardens-and-collectors-rocks"
+          }
+        ]
+      },
+      {
+        "title": "Seasons, Care, and Public Gardens",
         "sources": [
           {
             "label": "UNESCO World Heritage Centre, “Classical Gardens of Suzhou”",
             "url": "https://whc.unesco.org/en/list/813/"
           },
           {
-            "label": "Suzhou Municipal Garden and Landscape Administration Bureau, “Chen Congzhou and Suzhou Gardens” (陈从周与苏州园林)",
-            "url": "https://ylj.suzhou.gov.cn/szsylj/ylwh/201902/69c910491f284fd19e6dbc885c59f88f.shtml"
+            "label": "Suzhou Municipal Garden and Landscape Administration Bureau, “Overview of Suzhou Gardens” (《园林概览》)",
+            "url": "https://ylj.suzhou.gov.cn/szsylj/ylgk/nav_wztt.shtml"
+          },
+          {
+            "label": "Metropolitan Museum of Art, “Chinese Gardens and Collectors' Rocks”",
+            "url": "https://www.metmuseum.org/essays/chinese-gardens-and-collectors-rocks"
           }
         ]
       }
@@ -395,8 +456,8 @@ window.NIHAO_CULTURE_SOURCES = [
     "category": "architecture",
     "categoryName": "Architecture",
     "slug": "zhaozhou-bridge",
-    "title": "赵州桥：传说与石拱的真相",
-    "titleEn": "Zhaozhou Bridge: Legends and the Stone Arch",
+    "title": "赵州桥和神仙的毛驴",
+    "titleEn": "Zhaozhou Bridge and the Immortal's Donkey",
     "storyPath": "../../culture/books/architecture/zhaozhou-bridge/",
     "groups": [
       {
@@ -441,6 +502,10 @@ window.NIHAO_CULTURE_SOURCES = [
           {
             "label": "Zhao County People's Government, “省级非物质文化遗产——赵州桥的传说”",
             "url": "https://www.zhaoxian.gov.cn/columns/1d7018c5-9c6d-4833-a55d-e7bd402b1d92/202306/25/5352361f-d69b-4775-bd9e-475c03b3ce7f.html"
+          },
+          {
+            "label": "National Ethnic Affairs Commission of China, “鲁班传说何以在中国西南广为流传？”",
+            "url": "https://www.neac.gov.cn/seac/c103391/202304/1162224.shtml"
           }
         ]
       },
@@ -459,8 +524,8 @@ window.NIHAO_CULTURE_SOURCES = [
     "category": "art",
     "categoryName": "Art",
     "slug": "bianzhong",
-    "title": "一口钟，为什么有两个音？",
-    "titleEn": "Why Can One Bell Play Two Notes?",
+    "title": "一口钟，为什么能敲出两个音？",
+    "titleEn": "How Can One Bell Play Two Notes?",
     "storyPath": "../../culture/books/art/bianzhong/",
     "groups": [
       {
@@ -528,110 +593,83 @@ window.NIHAO_CULTURE_SOURCES = [
   {
     "category": "art",
     "categoryName": "Art",
-    "slug": "porcelain",
-    "title": "一把泥土，怎样烧成会“唱歌”的碗？",
-    "titleEn": "How Does Earth Become a Bowl That Rings?",
-    "storyPath": "../../culture/books/art/porcelain/",
+    "slug": "paper-cutting",
+    "title": "一张纸里，藏着多少只蝴蝶？",
+    "titleEn": "How Many Butterflies Are Hiding in One Sheet of Paper?",
+    "storyPath": "../../culture/books/art/paper-cutting/",
     "groups": [
       {
-        "title": "Pottery, proto-porcelain, and the problem of a sharp boundary",
+        "title": "Living heritage, social groups, uses, and techniques",
         "sources": [
           {
-            "label": "National Museum of China, “原始瓷尊”",
-            "url": "https://www.chnmuseum.cn/zp/zpml/kgfjp/202107/t20210728_250886.shtml"
-          },
-          {
-            "label": "Palace Museum, “秦汉原始瓷略论”",
-            "url": "https://img.dpm.org.cn/Uploads/File/2021/12/21/u61c1424300fa9.pdf"
+            "label": "UNESCO Intangible Cultural Heritage, “Chinese paper-cut”",
+            "url": "https://ich.unesco.org/en/RL/chinese-paper-cut-00219"
           }
         ]
       },
       {
-        "title": "Eastern Han and the emergence of mature porcelain",
+        "title": "Paper before Cai Lun and the history of papermaking",
         "sources": [
           {
-            "label": "National Museum of China, “青瓷四系罐”",
-            "url": "https://www.chnmuseum.cn/zp/zpml/kgfjp/202110/t20211028_251938.shtml"
-          },
-          {
-            "label": "National Museum of China, “最早的瓷器品牌”",
-            "url": "https://www.chnmuseum.cn/yj/xscg/xslw/201812/t20181224_33107.shtml"
-          }
-        ]
-      },
-      {
-        "title": "Porcelain materials, firing, and the many kinds of Chinese ceramics",
-        "sources": [
-          {
-            "label": "National Museum of China, “中国古代瓷器艺术”",
-            "url": "https://www.chnmuseum.cn/zl/zlhg/201812/t20181220_32218.shtml"
-          },
-          {
-            "label": "National Museum of China, “科技的力量——中国古代陶瓷科技展”",
+            "label": "National Museum of China, “科技的力量 — 旱滩坡带字纸”",
             "url": "https://www.chnmuseum.cn/portals/0/web/zt/202012kxyjs/"
           }
         ]
       },
       {
-        "title": "Jingdezhen raw materials, organization, and labor",
+        "title": "Pre-paper openwork and earliest surviving paper-cuts",
         "sources": [
           {
-            "label": "UNESCO World Heritage Centre, “Jingdezhen Handicraft Porcelain Industry Sites”",
-            "url": "https://whc.unesco.org/en/list/1765/"
+            "label": "China Intangible Cultural Heritage Network and Digital Museum, “中国入选联合国教科文组织非物质文化遗产名录项目之中国剪纸”",
+            "url": "https://www.ihchina.cn/news_1_details/22117.html"
           },
           {
-            "label": "ICOMOS, “Evaluations of Nominations of Cultural and Mixed Properties,” Jingdezhen evaluation",
-            "url": "https://whc.unesco.org/document/226090"
-          },
-          {
-            "label": "National Museum of China, “窑火瓷珍转心瓶”",
-            "url": "https://www.chnmuseum.cn/yj/xscg/xslw/201812/t20181224_33277.shtml"
-          },
-          {
-            "label": "Palace Museum, “匣钵”",
-            "url": "https://www.dpm.org.cn/lemmas/239526.html"
+            "label": "China Intangible Cultural Heritage Network, Qiao Xiaoguang, “作为非物质文化遗产的剪纸艺术”",
+            "url": "https://www.ihchina.cn/luntan_details/18437.html"
           }
         ]
       },
       {
-        "title": "Blue-and-white porcelain and West Asian exchange",
+        "title": "Scissors, knives, folded repeats, and color methods",
         "sources": [
           {
-            "label": "Victoria and Albert Museum, “Chinese blue-and-white ceramics”",
-            "url": "https://www.vam.ac.uk/articles/chinese-blue-and-white-ceramics"
+            "label": "Pingliang Municipal Government, “崆峒剪纸”",
+            "url": "https://www.pingliang.gov.cn/zjpl/mycp/art/2022/art_cd580eb542b34240b73cf9e3314cf631.html"
           },
           {
-            "label": "British Museum, Islamic Gallery, “Jug”",
-            "url": "https://islamicworld.britishmuseum.org/collection/RRM13115"
-          },
-          {
-            "label": "Smithsonian National Museum of Asian Art, “Blue”",
-            "url": "https://asia.si.edu/explore-art-culture/art-stories/colors/blue/"
-          },
-          {
-            "label": "Metropolitan Museum of Art, “Plate with fish,” object 1984.296",
-            "url": "https://www.metmuseum.org/art/collection/search/39638"
+            "label": "Huining County Government, “会宁剪纸的色彩（二）”",
+            "url": "https://www.huining.gov.cn/mlhn/hnyx/hnjz/art/2017/art_d8fcede85c504f38bc322b6cf41bd8b0.html"
           }
         ]
       },
       {
-        "title": "Export wares, European competition, and local reinvention",
+        "title": "Uses are not fixed by one name or one color",
         "sources": [
           {
-            "label": "Metropolitan Museum of Art, “Ewer with the Royal Arms of Portugal,” object 202581",
-            "url": "https://www.metmuseum.org/art/collection/search/202581"
+            "label": "Gansu Culture and Tourism, “非遗撷英：剪纸，指尖上的诗和远方”",
+            "url": "https://www.gswbj.gov.cn/a/2023/07/21/17875.html"
+          }
+        ]
+      },
+      {
+        "title": "Motif language and contextual meanings",
+        "sources": [
+          {
+            "label": "China Intangible Cultural Heritage Network, Qiao Xiaoguang, “读懂剪纸的语言”",
+            "url": "https://www.ihchina.cn/Article/Index/detail?id=7481"
+          }
+        ]
+      },
+      {
+        "title": "Regional tendencies are not absolute",
+        "sources": [
+          {
+            "label": "China Intangible Cultural Heritage Network, “略谈中国民间剪纸的主要流派”",
+            "url": "https://www.ihchina.cn/luntan_details/8074.html"
           },
           {
-            "label": "Metropolitan Museum of Art, “German and Austrian Porcelain of the Eighteenth Century”",
-            "url": "https://www.metmuseum.org/it/essays/german-and-austrian-porcelain-in-the-eighteenth-century"
-          },
-          {
-            "label": "Victoria and Albert Museum, “Teapot design through time”",
-            "url": "https://www.vam.ac.uk/articles/teapots-through-time"
-          },
-          {
-            "label": "Victoria and Albert Museum, “The influence of East Asian lacquer on European furniture”",
-            "url": "https://www.vam.ac.uk/articles/east-asian-lacquer-influence"
+            "label": "Hebei Provincial Department of Culture and Tourism, “蔚县剪纸”",
+            "url": "https://whly.hebei.gov.cn/c/2012-12-21/558129.html"
           }
         ]
       }
@@ -744,8 +782,8 @@ window.NIHAO_CULTURE_SOURCES = [
     "category": "art",
     "categoryName": "Art",
     "slug": "ink-wash",
-    "title": "一滴墨，怎样画出远近和湿干？",
-    "titleEn": "How Can One Drop of Ink Show Distance and Weather?",
+    "title": "一滴墨，怎样变成山、雨和雾？",
+    "titleEn": "How Can One Drop of Ink Become Mountains, Rain, and Mist?",
     "storyPath": "../../culture/books/art/ink-wash/",
     "groups": [
       {
@@ -853,8 +891,8 @@ window.NIHAO_CULTURE_SOURCES = [
     "category": "art",
     "categoryName": "Art",
     "slug": "gongbi",
-    "title": "一片花瓣为什么要画很多遍？",
-    "titleEn": "Why Paint One Petal More Than Once?",
+    "title": "一片花瓣，为什么要画很多遍？",
+    "titleEn": "Why Paint One Petal Again and Again?",
     "storyPath": "../../culture/books/art/gongbi/",
     "groups": [
       {
@@ -992,275 +1030,85 @@ window.NIHAO_CULTURE_SOURCES = [
   {
     "category": "art",
     "categoryName": "Art",
-    "slug": "dunhuang",
-    "title": "一面墙是一千年前的照片吗？",
-    "titleEn": "Is a Wall a Photograph from 1,000 Years Ago?",
-    "storyPath": "../../culture/books/art/dunhuang/",
+    "slug": "erhu",
+    "title": "两根弦，怎样唱出那么多声音？",
+    "titleEn": "How Can Two Strings Sing So Many Sounds?",
+    "storyPath": "../../culture/books/art/erhu/",
     "groups": [
       {
-        "title": "Site chronology, scale, and changing periods",
+        "title": "Instrument structure and sound production",
         "sources": [
           {
-            "label": "UNESCO World Heritage Centre, “Mogao Caves”",
-            "url": "https://whc.unesco.org/en/list/440/"
-          }
-        ]
-      },
-      {
-        "title": "The 366 date and the Lezun tradition",
-        "sources": [
-          {
-            "label": "Dunhuang Academy, “莫高窟简介”",
-            "url": "https://www.dha.ac.cn/info/1425/3659.htm"
-          }
-        ]
-      },
-      {
-        "title": "Patrons, migrants, and unnamed craftspeople",
-        "sources": [
-          {
-            "label": "Dunhuang Academy, “挖掘敦煌文化遗产中蕴含的中华文明精神标识（学苑论衡）”",
-            "url": "https://www.dha.ac.cn/info/1018/5661.htm"
-          }
-        ]
-      },
-      {
-        "title": "Mural and sculpture materials",
-        "sources": [
-          {
-            "label": "Dunhuang Academy journal, Zhao Jinli et al., “莫高窟第55窟壁画制作材料和工艺分析”",
-            "url": "https://skytyz.dha.ac.cn/CN/Y2023/V2/I2/68"
+            "label": "Yale School of Music, “Erhu” (Musical Instrument Collection)",
+            "url": "https://music.yale.edu/browse-collection/erhu-45031973"
           },
           {
-            "label": "Dunhuang Academy, “莫高窟第259窟”",
-            "url": "https://www.dha.ac.cn/info/1425/3556.htm"
+            "label": "Grinnell College Musical Instrument Collection, “Erhu”",
+            "url": "https://omeka-s.grinnell.edu/s/MusicalInstruments/item/645"
           }
         ]
       },
       {
-        "title": "The Deer King story as visual narrative",
+        "title": "Huqin names, family relationships, and historical change",
         "sources": [
           {
-            "label": "Dunhuang Academy, “莫高窟第257窟”",
-            "url": "https://www.dha.ac.cn/info/1425/3548.htm"
-          }
-        ]
-      },
-      {
-        "title": "Feitian and the pipa pose",
-        "sources": [
-          {
-            "label": "Dunhuang Academy, “莫高窟第314窟”",
-            "url": "https://www.dha.ac.cn/info/1425/3552.htm"
+            "label": "李玫, “奚琴、嵇琴、胡琴名实考论,” 中央音乐学院学报 2002年第1期",
+            "url": "https://ygx.sxu.edu.cn/db/%E6%9C%9F%E5%88%8A/zyyy2002/0201pdf/020106.pdf"
           },
           {
-            "label": "Dunhuang Academy, “莫高窟第237窟”",
-            "url": "https://www.dha.ac.cn/info/1425/3641.htm"
-          }
-        ]
-      },
-      {
-        "title": "Cave 17 contents, discovery, and dispersal",
-        "sources": [
-          {
-            "label": "International Dunhuang Programme, “Cave 17: Discovering Cave 17”",
-            "url": "https://idp.bl.uk/discover/learning/dunhuang/dunhuang-articles/cave-17-the-library-cave/discovering-cave-17/"
+            "label": "Hong Kong Chinese Orchestra, “Bowed-string Instruments”",
+            "url": "https://www.hkco.org/en/Instrument-Rd/Chinese-Instruments/Bowed-String-Instruments.html"
           },
           {
-            "label": "International Dunhuang Programme, “Cave 17: What was stored in Cave 17?”",
-            "url": "https://idp.bl.uk/discover/learning/dunhuang/dunhuang-articles/cave-17-the-library-cave/what-was-stored-in-cave-17/"
+            "label": "郑筱筱, “胡琴名称考·近现代,” 华音网, 2023",
+            "url": "https://www.huain.com/article/erhu/2023/0605/1982.html"
+          }
+        ]
+      },
+      {
+        "title": "Liu Tianhua and modern erhu education",
+        "sources": [
+          {
+            "label": "Central Conservatory of Music, “纪念刘天华先生诞辰130周年”",
+            "url": "https://www.ccom.edu.cn/info/2621/28121.htm"
+          }
+        ]
+      },
+      {
+        "title": "Abing, the 1950 recordings, and notation",
+        "sources": [
+          {
+            "label": "China National Academy of Arts Library / Art and Literature Museum, “世纪绝响——阿炳传世乐曲（共6首）”",
+            "url": "https://lib.zgysyjy.org.cn/ting_detail/598530.html"
           },
           {
-            "label": "British Museum, “Exploring the Silk Roads: The Stein Collection”",
-            "url": "https://www.britishmuseum.org/collection/china/exploring-silk-roads"
-          }
-        ]
-      },
-      {
-        "title": "Pigment change and physical conservation",
-        "sources": [
-          {
-            "label": "Dunhuang Academy, “李最雄的岩壁丹心”",
-            "url": "https://www.dha.ac.cn/info/1021/7486.htm"
-          }
-        ]
-      },
-      {
-        "title": "Visitors, cave climate, and digital access",
-        "sources": [
-          {
-            "label": "UNESCO World Heritage Centre, “Submission Form: Mogao Caves visitor management and digital interpretation”",
-            "url": "https://whc.unesco.org/document/116508"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "category": "art",
-    "categoryName": "Art",
-    "slug": "terracotta-warriors",
-    "title": "兵马俑：八千张脸，八千幅肖像吗？",
-    "titleEn": "Terracotta Warriors: Are 8,000 Faces 8,000 Portraits?",
-    "storyPath": "../../culture/books/art/terracotta-warriors/",
-    "groups": [
-      {
-        "title": "Discovery, mausoleum context, and the limits of excavation",
-        "sources": [
-          {
-            "label": "UNESCO World Heritage Centre, “Mausoleum of the First Qin Emperor”",
-            "url": "https://whc.unesco.org/en/list/441/"
+            "label": "China National Academy of Arts Library / Art and Literature Museum, “我馆整理出版的古琴与阿炳音响档案入选2019年‘中华民族音乐传承出版工程精品出版项目’”",
+            "url": "https://lib.zgysyjy.org.cn/detail/609367.html"
           },
           {
-            "label": "Smithsonian Magazine, “Zhao Kangmin, the Archaeologist Who Pieced Together China’s Terracotta Warriors”",
-            "url": "https://www.smithsonianmag.com/smart-news/zhao-kangmin-archaeologist-who-pieced-together-chinas-terracotta-warriors-has-died-81-180969153/"
+            "label": "China National Academy of Arts Library, “中国传统音乐录音档案” overview",
+            "url": "https://lib.zgysyjy.org.cn/Uploads/File/2019/04/17/u5cb687f44c227.pdf"
           }
         ]
       },
       {
-        "title": "Pits and military interpretations",
+        "title": "Python-skin rules and modern alternatives",
         "sources": [
           {
-            "label": "Smarthistory, “The Tomb of the First Emperor”",
-            "url": "https://smarthistory.org/tomb-first-emperor-qin/"
-          }
-        ]
-      },
-      {
-        "title": "Making figures and weapons: workshops, variation, and organization",
-        "sources": [
-          {
-            "label": "University College London and Emperor Qin Shihuang's Mausoleum Site Museum, “Imperial Logistics: The Making of the Terracotta Army”",
-            "url": "https://www.ucl.ac.uk/terracotta-army/"
+            "label": "Zibo Municipal People’s Government, “深圳邮局海关在出口快件中查获蟒蛇皮二胡3把,” 2020",
+            "url": "https://www.zibo.gov.cn/art/2020/12/24/art_15259_2107654.html"
           },
           {
-            "label": "P. S. Quinn et al., “Building the Terracotta Army: ceramic craft technology and production at Qin Shihuang’s mausoleum”",
-            "url": "https://discovery.ucl.ac.uk/1570749/1/Quinn-P_building%20the%20Terracotta%20Army_.pdf"
-          }
-        ]
-      },
-      {
-        "title": "Original color and conservation",
-        "sources": [
-          {
-            "label": "Technical University of Munich, Chair of Conservation-Restoration, “Conservation of the Polychromy”",
-            "url": "https://www.arc.ed.tum.de/en/rkk/archive-emmerling/china-project-bmbf/subprojects-2007-2013/tomb-of-the-first-emporer/polychromy/"
-          }
-        ]
-      },
-      {
-        "title": "Chromium and the bronze-weapons myth",
-        "sources": [
-          {
-            "label": "Marcos Martinón-Torres et al., Scientific Reports, “Surface chromium on Terracotta Army bronze weapons is neither an ancient anti-rust treatment nor the reason for their good preservation”",
-            "url": "https://www.nature.com/articles/s41598-019-40613-7"
-          }
-        ]
-      },
-      {
-        "title": "Laborers, prisoners, and the cost of construction",
-        "sources": [
-          {
-            "label": "Tamsin C. O’Connell et al., Scientific Reports, “Tracing the locality of prisoners and workers at the Mausoleum of Qin Shi Huang”",
-            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4890548/"
-          }
-        ]
-      },
-      {
-        "title": "Mercury, Sima Qian, and the unopened chamber",
-        "sources": [
-          {
-            "label": "Chang Yong and Li Tong, Journal of Geochemical Exploration, “Application of mercury survey technique over the mausoleum of emperor Qin Shi Huang” (1985)",
-            "url": "https://www.sciencedirect.com/science/article/pii/0375674285900160"
+            "label": "Beijing Government Service, “濒危野生动植物允许进出口证明书核发”",
+            "url": "https://banshi.beijing.gov.cn/pubtask/task/1/110000000000/7a64a3ee-4af2-43c2-93c8-d7cc64ba6c63.html?locationCode=110000000000&serverType=1003"
           },
           {
-            "label": "Sune Svanberg et al., Scientific Reports, “Mercury as a Geophysical Tracer Gas—Emissions from the Emperor Qin Tomb in Xi'an Studied by Laser Radar”",
-            "url": "https://www.nature.com/articles/s41598-020-67305-x"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "category": "art",
-    "categoryName": "Art",
-    "slug": "paper-cutting",
-    "title": "剪一刀，为什么能变成一圈花？",
-    "titleEn": "How Can One Cut Become a Ring of Flowers?",
-    "storyPath": "../../culture/books/art/paper-cutting/",
-    "groups": [
-      {
-        "title": "Living heritage, social groups, uses, and techniques",
-        "sources": [
-          {
-            "label": "UNESCO Intangible Cultural Heritage, “Chinese paper-cut”",
-            "url": "https://ich.unesco.org/en/RL/chinese-paper-cut-00219"
-          }
-        ]
-      },
-      {
-        "title": "Paper before Cai Lun and the history of papermaking",
-        "sources": [
-          {
-            "label": "National Museum of China, “科技的力量 — 旱滩坡带字纸”",
-            "url": "https://www.chnmuseum.cn/portals/0/web/zt/202012kxyjs/"
-          }
-        ]
-      },
-      {
-        "title": "Pre-paper openwork and earliest surviving paper-cuts",
-        "sources": [
-          {
-            "label": "China Intangible Cultural Heritage Network and Digital Museum, “中国入选联合国教科文组织非物质文化遗产名录项目之中国剪纸”",
-            "url": "https://www.ihchina.cn/news_1_details/22117.html"
+            "label": "Hong Kong Chinese Orchestra, “Eco-Huqins”",
+            "url": "https://www.hkco.org/en/Instrument-Rd/Eco-Huqins.html"
           },
           {
-            "label": "China Intangible Cultural Heritage Network, Qiao Xiaoguang, “作为非物质文化遗产的剪纸艺术”",
-            "url": "https://www.ihchina.cn/luntan_details/18437.html"
-          }
-        ]
-      },
-      {
-        "title": "Scissors, knives, folded repeats, and color methods",
-        "sources": [
-          {
-            "label": "Pingliang Municipal Government, “崆峒剪纸”",
-            "url": "https://www.pingliang.gov.cn/zjpl/mycp/art/2022/art_cd580eb542b34240b73cf9e3314cf631.html"
-          },
-          {
-            "label": "Huining County Government, “会宁剪纸的色彩（二）”",
-            "url": "https://www.huining.gov.cn/mlhn/hnyx/hnjz/art/2017/art_d8fcede85c504f38bc322b6cf41bd8b0.html"
-          }
-        ]
-      },
-      {
-        "title": "Uses are not fixed by one name or one color",
-        "sources": [
-          {
-            "label": "Gansu Culture and Tourism, “非遗撷英：剪纸，指尖上的诗和远方”",
-            "url": "https://www.gswbj.gov.cn/a/2023/07/21/17875.html"
-          }
-        ]
-      },
-      {
-        "title": "Motif language and contextual meanings",
-        "sources": [
-          {
-            "label": "China Intangible Cultural Heritage Network, Qiao Xiaoguang, “读懂剪纸的语言”",
-            "url": "https://www.ihchina.cn/Article/Index/detail?id=7481"
-          }
-        ]
-      },
-      {
-        "title": "Regional tendencies are not absolute",
-        "sources": [
-          {
-            "label": "China Intangible Cultural Heritage Network, “略谈中国民间剪纸的主要流派”",
-            "url": "https://www.ihchina.cn/luntan_details/8074.html"
-          },
-          {
-            "label": "Hebei Provincial Department of Culture and Tourism, “蔚县剪纸”",
-            "url": "https://whly.hebei.gov.cn/c/2012-12-21/558129.html"
+            "label": "National Digital Library of Theses and Dissertations in Taiwan, “光學量測技術應用於人造皮二胡特性之量測”",
+            "url": "https://ndltd.ncl.edu.tw/cgi-bin/gs32/gsweb.cgi/login?o=dnclcdr&s=id%3D%22114NYPI0489003%22.&searchmode=basic"
           }
         ]
       }
@@ -1271,7 +1119,7 @@ window.NIHAO_CULTURE_SOURCES = [
     "categoryName": "Art",
     "slug": "peking-opera",
     "title": "台上没有马，观众为什么看见了马？",
-    "titleEn": "There Is No Horse on Stage - So Why Can We See One?",
+    "titleEn": "There Is No Horse on Stage—So Why Can We See One?",
     "storyPath": "../../culture/books/art/peking-opera/",
     "groups": [
       {
@@ -1435,7 +1283,7 @@ window.NIHAO_CULTURE_SOURCES = [
     "categoryName": "Art",
     "slug": "calligraphy",
     "title": "同一个字，为什么能写得完全不同？",
-    "titleEn": "How Can the Same Character Look Completely Different?",
+    "titleEn": "How Can the Same Character Look So Different?",
     "storyPath": "../../culture/books/art/calligraphy/",
     "groups": [
       {
@@ -1678,159 +1526,302 @@ window.NIHAO_CULTURE_SOURCES = [
   {
     "category": "art",
     "categoryName": "Art",
-    "slug": "erhu",
-    "title": "没有指板，二胡怎样找到音？",
-    "titleEn": "No Fingerboard - How Does an Erhu Find Its Notes?",
-    "storyPath": "../../culture/books/art/erhu/",
+    "slug": "terracotta-warriors",
+    "title": "地下为什么站着一支泥土军队？",
+    "titleEn": "Why Is an Army Made of Clay Standing Underground?",
+    "storyPath": "../../culture/books/art/terracotta-warriors/",
     "groups": [
       {
-        "title": "Instrument structure and sound production",
+        "title": "Discovery, mausoleum context, and the limits of excavation",
         "sources": [
           {
-            "label": "Yale School of Music, “Erhu” (Musical Instrument Collection)",
-            "url": "https://music.yale.edu/browse-collection/erhu-45031973"
+            "label": "UNESCO World Heritage Centre, “Mausoleum of the First Qin Emperor”",
+            "url": "https://whc.unesco.org/en/list/441/"
           },
           {
-            "label": "Grinnell College Musical Instrument Collection, “Erhu”",
-            "url": "https://omeka-s.grinnell.edu/s/MusicalInstruments/item/645"
+            "label": "Smithsonian Magazine, “Zhao Kangmin, the Archaeologist Who Pieced Together China’s Terracotta Warriors”",
+            "url": "https://www.smithsonianmag.com/smart-news/zhao-kangmin-archaeologist-who-pieced-together-chinas-terracotta-warriors-has-died-81-180969153/"
           }
         ]
       },
       {
-        "title": "Huqin names, family relationships, and historical change",
+        "title": "Pits and military interpretations",
         "sources": [
           {
-            "label": "李玫, “奚琴、嵇琴、胡琴名实考论,” 中央音乐学院学报 2002年第1期",
-            "url": "https://ygx.sxu.edu.cn/db/%E6%9C%9F%E5%88%8A/zyyy2002/0201pdf/020106.pdf"
-          },
-          {
-            "label": "Hong Kong Chinese Orchestra, “Bowed-string Instruments”",
-            "url": "https://www.hkco.org/en/Instrument-Rd/Chinese-Instruments/Bowed-String-Instruments.html"
-          },
-          {
-            "label": "郑筱筱, “胡琴名称考·近现代,” 华音网, 2023",
-            "url": "https://www.huain.com/article/erhu/2023/0605/1982.html"
+            "label": "Smarthistory, “The Tomb of the First Emperor”",
+            "url": "https://smarthistory.org/tomb-first-emperor-qin/"
           }
         ]
       },
       {
-        "title": "Liu Tianhua and modern erhu education",
+        "title": "Making figures and weapons: workshops, variation, and organization",
         "sources": [
           {
-            "label": "Central Conservatory of Music, “纪念刘天华先生诞辰130周年”",
-            "url": "https://www.ccom.edu.cn/info/2621/28121.htm"
+            "label": "University College London and Emperor Qin Shihuang's Mausoleum Site Museum, “Imperial Logistics: The Making of the Terracotta Army”",
+            "url": "https://www.ucl.ac.uk/terracotta-army/"
+          },
+          {
+            "label": "P. S. Quinn et al., “Building the Terracotta Army: ceramic craft technology and production at Qin Shihuang’s mausoleum”",
+            "url": "https://discovery.ucl.ac.uk/1570749/1/Quinn-P_building%20the%20Terracotta%20Army_.pdf"
           }
         ]
       },
       {
-        "title": "Abing, the 1950 recordings, and notation",
+        "title": "Original color and conservation",
         "sources": [
           {
-            "label": "China National Academy of Arts Library / Art and Literature Museum, “世纪绝响——阿炳传世乐曲（共6首）”",
-            "url": "https://lib.zgysyjy.org.cn/ting_detail/598530.html"
-          },
-          {
-            "label": "China National Academy of Arts Library / Art and Literature Museum, “我馆整理出版的古琴与阿炳音响档案入选2019年‘中华民族音乐传承出版工程精品出版项目’”",
-            "url": "https://lib.zgysyjy.org.cn/detail/609367.html"
-          },
-          {
-            "label": "China National Academy of Arts Library, “中国传统音乐录音档案” overview",
-            "url": "https://lib.zgysyjy.org.cn/Uploads/File/2019/04/17/u5cb687f44c227.pdf"
+            "label": "Technical University of Munich, Chair of Conservation-Restoration, “Conservation of the Polychromy”",
+            "url": "https://www.arc.ed.tum.de/en/rkk/archive-emmerling/china-project-bmbf/subprojects-2007-2013/tomb-of-the-first-emporer/polychromy/"
           }
         ]
       },
       {
-        "title": "Python-skin rules and modern alternatives",
+        "title": "Chromium and the bronze-weapons myth",
         "sources": [
           {
-            "label": "Zibo Municipal People’s Government, “深圳邮局海关在出口快件中查获蟒蛇皮二胡3把,” 2020",
-            "url": "https://www.zibo.gov.cn/art/2020/12/24/art_15259_2107654.html"
+            "label": "Marcos Martinón-Torres et al., Scientific Reports, “Surface chromium on Terracotta Army bronze weapons is neither an ancient anti-rust treatment nor the reason for their good preservation”",
+            "url": "https://www.nature.com/articles/s41598-019-40613-7"
+          }
+        ]
+      },
+      {
+        "title": "Laborers, prisoners, and the cost of construction",
+        "sources": [
+          {
+            "label": "Tamsin C. O’Connell et al., Scientific Reports, “Tracing the locality of prisoners and workers at the Mausoleum of Qin Shi Huang”",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4890548/"
+          }
+        ]
+      },
+      {
+        "title": "Mercury, Sima Qian, and the unopened chamber",
+        "sources": [
+          {
+            "label": "Chang Yong and Li Tong, Journal of Geochemical Exploration, “Application of mercury survey technique over the mausoleum of emperor Qin Shi Huang” (1985)",
+            "url": "https://www.sciencedirect.com/science/article/pii/0375674285900160"
           },
           {
-            "label": "Beijing Government Service, “濒危野生动植物允许进出口证明书核发”",
-            "url": "https://banshi.beijing.gov.cn/pubtask/task/1/110000000000/7a64a3ee-4af2-43c2-93c8-d7cc64ba6c63.html?locationCode=110000000000&serverType=1003"
-          },
-          {
-            "label": "Hong Kong Chinese Orchestra, “Eco-Huqins”",
-            "url": "https://www.hkco.org/en/Instrument-Rd/Eco-Huqins.html"
-          },
-          {
-            "label": "National Digital Library of Theses and Dissertations in Taiwan, “光學量測技術應用於人造皮二胡特性之量測”",
-            "url": "https://ndltd.ncl.edu.tw/cgi-bin/gs32/gsweb.cgi/login?o=dnclcdr&s=id%3D%22114NYPI0489003%22.&searchmode=basic"
+            "label": "Sune Svanberg et al., Scientific Reports, “Mercury as a Geophysical Tracer Gas—Emissions from the Emperor Qin Tomb in Xi'an Studied by Laser Radar”",
+            "url": "https://www.nature.com/articles/s41598-020-67305-x"
           }
         ]
       }
     ]
   },
   {
-    "category": "clothing",
-    "categoryName": "Clothing",
-    "slug": "imperial-robes",
-    "title": "一件黄衣服能证明什么？",
-    "titleEn": "What Can a Yellow Robe Prove?",
-    "storyPath": "../../culture/books/clothing/imperial-robes/",
+    "category": "art",
+    "categoryName": "Art",
+    "slug": "dunhuang",
+    "title": "沙漠山崖里，为什么藏着满墙故事？",
+    "titleEn": "Why Are Story-Filled Caves Hidden in the Desert?",
+    "storyPath": "../../culture/books/art/dunhuang/",
     "groups": [
       {
-        "title": "Yellow and changing dress rules",
+        "title": "Site chronology, scale, and changing periods",
         "sources": [
           {
-            "label": "New Book of Tang, “Treatise on Chariots and Attire,” Chinese Text Project",
-            "url": "https://ctext.org/wiki.pl?chapter=383137&if=en"
-          },
-          {
-            "label": "Palace Museum, “清代宫廷服饰制度及其文化内涵”",
-            "url": "https://www.dpm.org.cn/classify_detail/262014.html"
-          },
-          {
-            "label": "Palace Museum, “皇帝朝服”",
-            "url": "https://www.dpm.org.cn/lemmas/241579.html"
+            "label": "UNESCO World Heritage Centre, “Mogao Caves”",
+            "url": "https://whc.unesco.org/en/list/440/"
           }
         ]
       },
       {
-        "title": "Dragons, rank, and garment type",
+        "title": "The 366 date and the Lezun tradition",
         "sources": [
           {
-            "label": "Metropolitan Museum of Art, “Peacocks and Dragons, Oh My!”",
-            "url": "https://www.metmuseum.org/perspectives/peacocks-and-dragons"
-          },
-          {
-            "label": "Palace Museum, “吉服袍”",
-            "url": "https://www.dpm.org.cn/lemmas/241311.html"
-          },
-          {
-            "label": "Palace Museum, “月白色缎绣彩云金龙纹男夹朝袍”",
-            "url": "https://intl.dpm.org.cn/Textiles/85236.html"
+            "label": "Dunhuang Academy, “莫高窟简介”",
+            "url": "https://www.dha.ac.cn/info/1425/3659.htm"
           }
         ]
       },
       {
-        "title": "Twelve Symbols: texts, regulations, and objects",
+        "title": "Patrons, migrants, and unnamed craftspeople",
         "sources": [
           {
-            "label": "Palace Museum, “十二章”",
-            "url": "https://www.dpm.org.cn/lemmas/241316.html"
-          },
-          {
-            "label": "Palace Museum, “明清紫禁城的物质文化”",
-            "url": "https://www.dpm.org.cn/Uploads/File/2024/07/22/u669dd42b7fb7d.pdf"
-          },
-          {
-            "label": "Palace Museum, Fang Hongjun, “清代后妃礼、吉服为何装饰十二章纹？”",
-            "url": "https://www.dpm.org.cn/Uploads/File/2020/05/12/u5eba19a2e4895.pdf"
+            "label": "Dunhuang Academy, “挖掘敦煌文化遗产中蕴含的中华文明精神标识（学苑论衡）”",
+            "url": "https://www.dha.ac.cn/info/1018/5661.htm"
           }
         ]
       },
       {
-        "title": "Makers and textile labor",
+        "title": "Mural and sculpture materials",
         "sources": [
           {
-            "label": "Palace Museum, “清代宫廷服饰制度及其文化内涵”",
-            "url": "https://www.dpm.org.cn/classify_detail/262014.html"
+            "label": "Dunhuang Academy journal, Zhao Jinli et al., “莫高窟第55窟壁画制作材料和工艺分析”",
+            "url": "https://skytyz.dha.ac.cn/CN/Y2023/V2/I2/68"
           },
           {
-            "label": "Palace Museum, “江南织造”",
-            "url": "https://www.dpm.org.cn/lemmas/243105.html"
+            "label": "Dunhuang Academy, “莫高窟第259窟”",
+            "url": "https://www.dha.ac.cn/info/1425/3556.htm"
+          }
+        ]
+      },
+      {
+        "title": "The Deer King story as visual narrative",
+        "sources": [
+          {
+            "label": "Dunhuang Academy, “莫高窟第257窟”",
+            "url": "https://www.dha.ac.cn/info/1425/3548.htm"
+          }
+        ]
+      },
+      {
+        "title": "Feitian and the pipa pose",
+        "sources": [
+          {
+            "label": "Dunhuang Academy, “莫高窟第314窟”",
+            "url": "https://www.dha.ac.cn/info/1425/3552.htm"
+          },
+          {
+            "label": "Dunhuang Academy, “莫高窟第237窟”",
+            "url": "https://www.dha.ac.cn/info/1425/3641.htm"
+          }
+        ]
+      },
+      {
+        "title": "Cave 17 contents, discovery, and dispersal",
+        "sources": [
+          {
+            "label": "International Dunhuang Programme, “Cave 17: Discovering Cave 17”",
+            "url": "https://idp.bl.uk/discover/learning/dunhuang/dunhuang-articles/cave-17-the-library-cave/discovering-cave-17/"
+          },
+          {
+            "label": "International Dunhuang Programme, “Cave 17: What was stored in Cave 17?”",
+            "url": "https://idp.bl.uk/discover/learning/dunhuang/dunhuang-articles/cave-17-the-library-cave/what-was-stored-in-cave-17/"
+          },
+          {
+            "label": "British Museum, “Exploring the Silk Roads: The Stein Collection”",
+            "url": "https://www.britishmuseum.org/collection/china/exploring-silk-roads"
+          }
+        ]
+      },
+      {
+        "title": "Pigment change and physical conservation",
+        "sources": [
+          {
+            "label": "Dunhuang Academy, “李最雄的岩壁丹心”",
+            "url": "https://www.dha.ac.cn/info/1021/7486.htm"
+          }
+        ]
+      },
+      {
+        "title": "Visitors, cave climate, and digital access",
+        "sources": [
+          {
+            "label": "UNESCO World Heritage Centre, “Submission Form: Mogao Caves visitor management and digital interpretation”",
+            "url": "https://whc.unesco.org/document/116508"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "art",
+    "categoryName": "Art",
+    "slug": "porcelain",
+    "title": "泥土怎样变成会“唱歌”的碗？",
+    "titleEn": "How Does Clay Become a Bowl That Rings?",
+    "storyPath": "../../culture/books/art/porcelain/",
+    "groups": [
+      {
+        "title": "Pottery, proto-porcelain, and the problem of a sharp boundary",
+        "sources": [
+          {
+            "label": "National Museum of China, “原始瓷尊”",
+            "url": "https://www.chnmuseum.cn/zp/zpml/kgfjp/202107/t20210728_250886.shtml"
+          },
+          {
+            "label": "Palace Museum, “秦汉原始瓷略论”",
+            "url": "https://img.dpm.org.cn/Uploads/File/2021/12/21/u61c1424300fa9.pdf"
+          }
+        ]
+      },
+      {
+        "title": "Eastern Han and the emergence of mature porcelain",
+        "sources": [
+          {
+            "label": "National Museum of China, “青瓷四系罐”",
+            "url": "https://www.chnmuseum.cn/zp/zpml/kgfjp/202110/t20211028_251938.shtml"
+          },
+          {
+            "label": "National Museum of China, “最早的瓷器品牌”",
+            "url": "https://www.chnmuseum.cn/yj/xscg/xslw/201812/t20181224_33107.shtml"
+          }
+        ]
+      },
+      {
+        "title": "Porcelain materials, firing, and the many kinds of Chinese ceramics",
+        "sources": [
+          {
+            "label": "National Museum of China, “中国古代瓷器艺术”",
+            "url": "https://www.chnmuseum.cn/zl/zlhg/201812/t20181220_32218.shtml"
+          },
+          {
+            "label": "National Museum of China, “科技的力量——中国古代陶瓷科技展”",
+            "url": "https://www.chnmuseum.cn/portals/0/web/zt/202012kxyjs/"
+          }
+        ]
+      },
+      {
+        "title": "Jingdezhen raw materials, organization, and labor",
+        "sources": [
+          {
+            "label": "UNESCO World Heritage Centre, “Jingdezhen Handicraft Porcelain Industry Sites”",
+            "url": "https://whc.unesco.org/en/list/1765/"
+          },
+          {
+            "label": "ICOMOS, “Evaluations of Nominations of Cultural and Mixed Properties,” Jingdezhen evaluation",
+            "url": "https://whc.unesco.org/document/226090"
+          },
+          {
+            "label": "National Museum of China, “窑火瓷珍转心瓶”",
+            "url": "https://www.chnmuseum.cn/yj/xscg/xslw/201812/t20181224_33277.shtml"
+          },
+          {
+            "label": "Palace Museum, “匣钵”",
+            "url": "https://www.dpm.org.cn/lemmas/239526.html"
+          }
+        ]
+      },
+      {
+        "title": "Blue-and-white porcelain and West Asian exchange",
+        "sources": [
+          {
+            "label": "Victoria and Albert Museum, “Chinese blue-and-white ceramics”",
+            "url": "https://www.vam.ac.uk/articles/chinese-blue-and-white-ceramics"
+          },
+          {
+            "label": "British Museum, Islamic Gallery, “Jug”",
+            "url": "https://islamicworld.britishmuseum.org/collection/RRM13115"
+          },
+          {
+            "label": "Smithsonian National Museum of Asian Art, “Blue”",
+            "url": "https://asia.si.edu/explore-art-culture/art-stories/colors/blue/"
+          },
+          {
+            "label": "Metropolitan Museum of Art, “Plate with fish,” object 1984.296",
+            "url": "https://www.metmuseum.org/art/collection/search/39638"
+          }
+        ]
+      },
+      {
+        "title": "Export wares, European competition, and local reinvention",
+        "sources": [
+          {
+            "label": "Metropolitan Museum of Art, “Ewer with the Royal Arms of Portugal,” object 202581",
+            "url": "https://www.metmuseum.org/art/collection/search/202581"
+          },
+          {
+            "label": "Metropolitan Museum of Art, “German and Austrian Porcelain of the Eighteenth Century”",
+            "url": "https://www.metmuseum.org/it/essays/german-and-austrian-porcelain-in-the-eighteenth-century"
+          },
+          {
+            "label": "Victoria and Albert Museum, “Teapot design through time”",
+            "url": "https://www.vam.ac.uk/articles/teapots-through-time"
+          },
+          {
+            "label": "Victoria and Albert Museum, “The influence of East Asian lacquer on European furniture”",
+            "url": "https://www.vam.ac.uk/articles/east-asian-lacquer-influence"
           }
         ]
       }
@@ -1840,10 +1831,23 @@ window.NIHAO_CULTURE_SOURCES = [
     "category": "clothing",
     "categoryName": "Clothing",
     "slug": "tang-women-hair",
-    "title": "一张仕女图，能代表所有唐代女子吗？",
-    "titleEn": "Can One Court-Lady Picture Represent Every Tang Woman?",
+    "title": "唐朝为什么有这么多时尚？",
+    "titleEn": "Why Did Tang China Have So Many Fashions?",
     "storyPath": "../../culture/books/clothing/tang-women-hair/",
     "groups": [
+      {
+        "title": "为什么唐代时尚特别丰富、也特别常被看见",
+        "sources": [
+          {
+            "label": "The Metropolitan Museum of Art, “Internationalism in the Tang Dynasty (618–907)”",
+            "url": "https://www.metmuseum.org/essays/internationalism-in-the-tang-dynasty-618-906"
+          },
+          {
+            "label": "British Museum, “Silk Roads — Large Print Guide,” section “Horse-riding fashion”",
+            "url": "https://www.britishmuseum.org/exhibitions/silk-roads/silk-roads-large-print-guide"
+          }
+        ]
+      },
       {
         "title": "唐代发髻的时期变化与贵族假髻",
         "sources": [
@@ -1868,6 +1872,15 @@ window.NIHAO_CULTURE_SOURCES = [
           {
             "label": "陕西历史博物馆，“唐永泰公主墓壁画《宫女图》”",
             "url": "https://www.sxhm.com/collections/detail/510.html"
+          }
+        ]
+      },
+      {
+        "title": "华丽墓葬图像之外的日常打扮",
+        "sources": [
+          {
+            "label": "陕西历史博物馆，“瞧瞧唐代女子咋化妆”",
+            "url": "https://www.sxhm.com/info/industry/detail/14748.html"
           }
         ]
       },
@@ -1939,111 +1952,28 @@ window.NIHAO_CULTURE_SOURCES = [
   {
     "category": "clothing",
     "categoryName": "Clothing",
-    "slug": "bufu",
-    "title": "只看一只鸟，能认出官职吗？",
-    "titleEn": "Can One Bird Reveal an Official's Rank?",
-    "storyPath": "../../culture/books/clothing/bufu/",
-    "groups": [
-      {
-        "title": "明代补服制度与早期实物",
-        "sources": [
-          {
-            "label": "The Metropolitan Museum of Art, A Decade of Collecting, 1984–1993: Friends of Asian Art Gifts",
-            "url": "https://resources.metmuseum.org/resources/metpublications/pdf/A_Decade_of_Collecting_1984_1993_Friends_of_Asian_Art_Gifts.pdf"
-          }
-        ]
-      },
-      {
-        "title": "同一虎纹在明清代表不同等级",
-        "sources": [
-          {
-            "label": "The Metropolitan Museum of Art, “Rank badge with tiger”",
-            "url": "https://www.metmuseum.org/art/collection/search/69082"
-          }
-        ]
-      },
-      {
-        "title": "明初等级分组不是后期的一格一物",
-        "sources": [
-          {
-            "label": "Penn Museum Bulletin, Schuyler Cammann, “Chinese Mandarin Squares”",
-            "url": "https://www.penn.museum/sites/bulletin/3673/"
-          }
-        ]
-      },
-      {
-        "title": "清代文官九品鸟类定制",
-        "sources": [
-          {
-            "label": "Kyoto National Museum, “Buzi (Rank Badges) for Civil Officials”",
-            "url": "https://knmdb.kyohaku.go.jp/eng/21886.html"
-          }
-        ]
-      },
-      {
-        "title": "清代武官高品级兽纹",
-        "sources": [
-          {
-            "label": "故宫博物院，《清代补服的服用》资料表",
-            "url": "https://www.dpm.org.cn/Uploads/pdf/1952/T00035_00.pdf"
-          }
-        ]
-      },
-      {
-        "title": "清代补子的成对结构、前片开缝与制作变化",
-        "sources": [
-          {
-            "label": "Cleveland Museum of Art, “Rank Badge (buzi)”",
-            "url": "https://www.clevelandart.org/art/1916.1330"
-          }
-        ]
-      },
-      {
-        "title": "明墓出土獬豸补服实物",
-        "sources": [
-          {
-            "label": "中国丝绸博物馆，“风宪衣冠：桐乡濮院杨家桥明代墓葬出土纺织品修复成果展”",
-            "url": "https://www.chinasilkmuseum.com/yz/info_18.aspx?itemid=31329"
-          }
-        ]
-      },
-      {
-        "title": "明代常服、公服不可混为一类",
-        "sources": [
-          {
-            "label": "故宫博物院院刊，侯振龙，“象征、制度与实践：明代风宪官獬豸补服研究”",
-            "url": "https://img.dpm.org.cn/Uploads/file/2025/11/26/1764139190yfGOsMuIX218985.pdf"
-          }
-        ]
-      },
-      {
-        "title": "清代服装类别与补服定制",
-        "sources": [
-          {
-            "label": "故宫博物院，“清代宫廷服饰制度及其文化内涵——‘故宫学人讲故宫’系列讲座第五期第四讲”",
-            "url": "https://www.dpm.org.cn/classify_detail/262014.html"
-          }
-        ]
-      },
-      {
-        "title": "獬豸补子的馆藏说明",
-        "sources": [
-          {
-            "label": "清华大学艺术博物馆，“蓝地缂（刻）丝獬豸补子”",
-            "url": "https://www.artmuseum.tsinghua.edu.cn/cpsj/gndc/gcxy/201704/t20170414_2171.shtml"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "category": "clothing",
-    "categoryName": "Clothing",
     "slug": "tang-men-headwear",
-    "title": "只看帽子，能认出一个唐朝人吗？",
-    "titleEn": "Can a Hat Identify a Man from the Tang Dynasty?",
+    "title": "唐朝男子为什么要戴幞头？",
+    "titleEn": "Why Did Men in Tang China Wear Futou?",
     "storyPath": "../../culture/books/clothing/tang-men-headwear/",
     "groups": [
+      {
+        "title": "Long hair, care for the body, and variation",
+        "sources": [
+          {
+            "label": "Peking University journal platform, Lin Yun, “髡发种种”",
+            "url": "https://ccj.pku.edu.cn/article/info?id=286674275"
+          },
+          {
+            "label": "The Metropolitan Museum of Art, “Scissors” (Tang dynasty, 7th–9th century)",
+            "url": "https://www.metmuseum.org/art/collection/search/42184"
+          },
+          {
+            "label": "Alain Arrault, “Daily Activities in the Calendars of Medieval China (Ninth and Tenth Centuries): The Case of the Body Care Activities,” The NCCU History Review 45 (2016)",
+            "url": "https://tci.ncl.edu.tw/cgi-bin/gs32/gsweb.cgi?o=dnclresource&s=id%3D%22A16020895%22.&searchmode=basic&tcihsspage=tcisearch_opt1_search"
+          }
+        ]
+      },
       {
         "title": "Palace Museum — “幞头”",
         "sources": [
@@ -2143,128 +2073,324 @@ window.NIHAO_CULTURE_SOURCES = [
   {
     "category": "clothing",
     "categoryName": "Clothing",
+    "slug": "bufu",
+    "title": "官服上的鸟和猛兽",
+    "titleEn": "Birds and Beasts on Official Robes",
+    "storyPath": "../../culture/books/clothing/bufu/",
+    "groups": [
+      {
+        "title": "麒麟补子与神兽形象",
+        "sources": [
+          {
+            "label": "The Metropolitan Museum of Art, “Rank Badge with Qilin”",
+            "url": "https://www.metmuseum.org/art/collection/search/69079"
+          }
+        ]
+      },
+      {
+        "title": "补子的用途与等级",
+        "sources": [
+          {
+            "label": "Cleveland Museum of Art, “Rank Badge (buzi)”",
+            "url": "https://www.clevelandart.org/art/1948.69"
+          }
+        ]
+      },
+      {
+        "title": "明代补服制度与早期实物",
+        "sources": [
+          {
+            "label": "The Metropolitan Museum of Art, A Decade of Collecting, 1984–1993: Friends of Asian Art Gifts",
+            "url": "https://resources.metmuseum.org/resources/metpublications/pdf/A_Decade_of_Collecting_1984_1993_Friends_of_Asian_Art_Gifts.pdf"
+          }
+        ]
+      },
+      {
+        "title": "同一虎纹在明清代表不同等级",
+        "sources": [
+          {
+            "label": "The Metropolitan Museum of Art, “Rank badge with tiger”",
+            "url": "https://www.metmuseum.org/art/collection/search/69082"
+          }
+        ]
+      },
+      {
+        "title": "明初等级分组不是后期的一格一物",
+        "sources": [
+          {
+            "label": "Penn Museum Bulletin, Schuyler Cammann, “Chinese Mandarin Squares”",
+            "url": "https://www.penn.museum/sites/bulletin/3673/"
+          }
+        ]
+      },
+      {
+        "title": "清代文官九品鸟类定制",
+        "sources": [
+          {
+            "label": "故宫博物院，“缂丝锦鸡方补”",
+            "url": "https://www.dpm.org.cn/collection/embroider/230161.html"
+          },
+          {
+            "label": "Kyoto National Museum, “Buzi (Rank Badges) for Civil Officials”",
+            "url": "https://knmdb.kyohaku.go.jp/eng/21886.html"
+          }
+        ]
+      },
+      {
+        "title": "清代武官高品级兽纹",
+        "sources": [
+          {
+            "label": "故宫博物院，《清代补服的服用》资料表",
+            "url": "https://www.dpm.org.cn/Uploads/pdf/1952/T00035_00.pdf"
+          }
+        ]
+      },
+      {
+        "title": "地方官员与七品知县",
+        "sources": [
+          {
+            "label": "张掖市史志办公室，“清代甘州府县”",
+            "url": "https://www.zhangye.gov.cn/szb/dzdt/gjzy/202002/t20200211_383581_ghb.html"
+          },
+          {
+            "label": "北京文明网，“明清政府对基层社会管理的多样性”",
+            "url": "https://www.bjwmb.gov.cn/zxfw/wmwx/wskt/t20180810_876715.htm"
+          }
+        ]
+      },
+      {
+        "title": "明墓出土獬豸补服实物",
+        "sources": [
+          {
+            "label": "中国丝绸博物馆，“风宪衣冠：桐乡濮院杨家桥明代墓葬出土纺织品修复成果展”",
+            "url": "https://www.chinasilkmuseum.com/yz/info_18.aspx?itemid=31329"
+          }
+        ]
+      },
+      {
+        "title": "明代常服、公服不可混为一类",
+        "sources": [
+          {
+            "label": "故宫博物院院刊，侯振龙，“象征、制度与实践：明代风宪官獬豸补服研究”",
+            "url": "https://img.dpm.org.cn/Uploads/file/2025/11/26/1764139190yfGOsMuIX218985.pdf"
+          }
+        ]
+      },
+      {
+        "title": "清代服装类别与补服定制",
+        "sources": [
+          {
+            "label": "故宫博物院，“清代宫廷服饰制度及其文化内涵——‘故宫学人讲故宫’系列讲座第五期第四讲”",
+            "url": "https://www.dpm.org.cn/classify_detail/262014.html"
+          }
+        ]
+      },
+      {
+        "title": "獬豸补子的馆藏说明",
+        "sources": [
+          {
+            "label": "清华大学艺术博物馆，“蓝地缂（刻）丝獬豸补子”",
+            "url": "https://www.artmuseum.tsinghua.edu.cn/cpsj/gndc/gcxy/201704/t20170414_2171.shtml"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "clothing",
+    "categoryName": "Clothing",
     "slug": "hanfu",
-    "title": "衣柜里哪一件才算汉服？",
-    "titleEn": "Which Clothes in the Closet Count as Hanfu?",
+    "title": "汉服：布料、衣领和大袖子",
+    "titleEn": "Hànfú: Cloth, Collars, and Wide Sleeves",
     "storyPath": "../../culture/books/clothing/hanfu/",
     "groups": [
       {
-        "title": "Gaku Kuroda — “Hanfu Revival Inspired Activities and Their Venues in Shanghai, China” (*Geographical Sciences*)",
+        "title": "中国古代服装的平面结构与宽大外形",
         "sources": [
           {
-            "label": "jstage.jst.go.jp",
+            "label": "中国丝绸博物馆，“古代服饰结构”专题介绍",
+            "url": "https://www.chinasilkmuseum.com/jz/info_15.aspx?itemid=5367"
+          }
+        ]
+      },
+      {
+        "title": "为什么手工织成的布值得珍惜，以及“麻布”是什么",
+        "sources": [
+          {
+            "label": "UNESCO Silk Roads Programme, “Sericulture and silk craftsmanship of China”",
+            "url": "https://en.unesco.org/silkroad/silk-road-themes/intangible-cultural-heritage/sericulture-and-silk-craftsmanship-china"
+          },
+          {
+            "label": "中国丝绸博物馆，“丹漆纱与素麻：临淄齐故城出土纺织品解析”",
+            "url": "https://www.chinasilkmuseum.com/gskt/info_319.aspx?itemid=27767"
+          }
+        ]
+      },
+      {
+        "title": "直线布片并不等于没有复杂技术",
+        "sources": [
+          {
+            "label": "湖南博物院，“长沙马王堆汉墓陈列”",
+            "url": "https://web.hnmuseum.com/en/content/changsha-mawangdui-han-dynasty-tombs-exhibition"
+          }
+        ]
+      },
+      {
+        "title": "骑马生活为什么带来裤子、靴子和窄袖",
+        "sources": [
+          {
+            "label": "UNESCO Silk Roads Programme, “The Popularisation of Trousers in China and other Cross-Cultural Influences Reflected in Clothing”",
+            "url": "https://en.unesco.org/silkroad/node/11101"
+          }
+        ]
+      },
+      {
+        "title": "唐代城市中的跨文化时尚",
+        "sources": [
+          {
+            "label": "British Museum, “Silk Roads — Large Print Guide,” section “Horse-riding fashion”",
+            "url": "https://www.britishmuseum.org/exhibitions/silk-roads/silk-roads-large-print-guide"
+          }
+        ]
+      },
+      {
+        "title": "“汉服”作为现代大类名称",
+        "sources": [
+          {
+            "label": "国务院新闻办公室中国关键词，“汉服”",
+            "url": "https://english.scio.gov.cn/m/featured/chinakeywords/2024-08/30/content_117397260.htm"
+          },
+          {
+            "label": "国家民族事务委员会，“汉族—历史沿革”",
+            "url": "https://www.neac.gov.cn/seac/ztzl/hz/lsyg.shtml"
+          },
+          {
+            "label": "Gaku Kuroda, “Hanfu Revival Inspired Activities and Their Venues in Shanghai, China,” Geographical Sciences 77.1",
             "url": "https://www.jstage.jst.go.jp/article/chirikagaku/77/1/77_23/_article/-char/en"
           }
         ]
       },
       {
-        "title": "“Fashion and Society in China in the 2000s: New Developments and Sociocultural Complexities”",
+        "title": "宽袖、袖袋与不同场合的衣服",
         "sources": [
           {
-            "label": "researchgate.net",
-            "url": "https://www.researchgate.net/publication/316715897_Fashion_and_society_in_China_in_the_2000s_New_developments_and_sociocultural_complexities"
-          }
-        ]
-      },
-      {
-        "title": "“Chinese Women in Hanfu: A Gendered Subject Narrative in the Cultural Nationalist Movement” (*Women's Studies*)",
-        "sources": [
+            "label": "王梦凡、吴永红，《从袖子的造型看中国传统服饰文化》，《设计》2020年第2期",
+            "url": "https://pdf.hanspub.org/design20200200000_77869029.pdf"
+          },
           {
             "label": "doi.org",
-            "url": "https://doi.org/10.1080/00497878.2025.2483459"
-          }
-        ]
-      },
-      {
-        "title": "Zheng Huiwen and Lee Sang-Rye — “The Study of Contemporary Chinese Women's Hanfu Styles”",
-        "sources": [
-          {
-            "label": "kci.go.kr",
-            "url": "https://www.kci.go.kr/kciportal/ci/sereArticleSearch/ciSereArtiView.kci?sereArticleSearchBean.artiId=ART002549656"
-          }
-        ]
-      },
-      {
-        "title": "China National Museum — Tang official and everyday-dress figures",
-        "sources": [
-          {
-            "label": "chnmuseum.cn",
-            "url": "https://www.chnmuseum.cn/zp/zpml/kgfjp/202111/t20211116_252266.shtml"
+            "url": "https://doi.org/10.12677/design.2020.52003"
           },
           {
-            "label": "chnmuseum.cn",
-            "url": "https://www.chnmuseum.cn/zp/zpml/kgfjp/202111/t20211116_252268.shtml"
+            "label": "中国丝绸博物馆，“衣以载道：从服装结构看中华文明的传承与创新”",
+            "url": "https://chinasilkmuseum.com/gsjr/info_292.aspx?itemid=28191"
           },
           {
-            "label": "chnmuseum.cn",
-            "url": "https://www.chnmuseum.cn/portals/0/web/zt/gudai/detail6.html"
-          }
-        ]
-      },
-      {
-        "title": "Metropolitan Museum of Art — *When Silk Was Gold: Central Asian and Chinese Textiles*",
-        "sources": [
-          {
-            "label": "metmuseum.org",
-            "url": "https://www.metmuseum.org/zh/met-publications/when-silk-was-gold-central-asian-and-chinese-textiles"
-          }
-        ]
-      },
-      {
-        "title": "Rachel Silberstein — “Material Girls: Silk and Self-Fashioning in Tang China (618–907)” (*Fashion Theory*)",
-        "sources": [
-          {
-            "label": "doi.org",
-            "url": "https://doi.org/10.1080/1362704X.2016.1138679"
-          }
-        ]
-      },
-      {
-        "title": "Metropolitan Museum of Art — “Man's Audience Robe (Chaofu)”",
-        "sources": [
-          {
-            "label": "metmuseum.org",
-            "url": "https://www.metmuseum.org/art/collection/search/69062"
-          }
-        ]
-      },
-      {
-        "title": "University of Washington — *Manchus and Han: Ethnic Relations and Political Power in Late Qing and Early Republican China*, “Separate and Unequal”",
-        "sources": [
-          {
-            "label": "uw.manifoldapp.org",
-            "url": "https://uw.manifoldapp.org/read/6dc24326-22ee-4cdc-9f66-52376c2d4f10/section/3622c09f-14c9-41ab-92ce-43dbf65db15a"
-          }
-        ]
-      },
-      {
-        "title": "Antonia Finnane — *Changing Clothes in China: Fashion, History, Nation*",
-        "sources": [
-          {
-            "label": "studylib.net",
-            "url": "https://studylib.net/doc/26245913/changing-clothes-in-china--antonia-finnane-"
-          }
-        ]
-      },
-      {
-        "title": "Ashmolean Museum and Smithsonian National Museum of Asian Art — Qing court robes",
-        "sources": [
-          {
-            "label": "ashmolean.org",
-            "url": "https://www.ashmolean.org/mans-formal-robes"
+            "label": "国家大剧院，“10分钟了解中国古典舞水袖基本技法”",
+            "url": "https://www.chncpa.org/zwzt/spzt/jdysjtzt/videos/zwwd/202011/t20201130_223471.shtml"
           },
           {
-            "label": "asia-archive.si.edu",
-            "url": "https://asia-archive.si.edu/new-arrival-a-robe-for-royalty/"
+            "label": "河北省文化和旅游厅，“一场梆子腔尽显‘秦风程韵’”",
+            "url": "https://whly.hebei.gov.cn/c/2023-05-01/571839.html"
           }
         ]
       },
       {
-        "title": "S. A. Yatsenko — “Early Turks: Male Costume in Chinese Art”",
+        "title": "汉服传统延续了多久，又在清代发生了什么变化",
         "sources": [
           {
-            "label": "transoxiana.com.ar",
-            "url": "https://www.transoxiana.com.ar/14/yatsenko_turk_costume_chinese_art.html"
+            "label": "中国丝绸博物馆，“锦程：中国丝绸与丝绸之路”常设展介绍",
+            "url": "https://www.chinasilkmuseum.com/zz/info_17.aspx?itemid=26320"
+          },
+          {
+            "label": "故宫博物院，“满族服饰文化”讲座介绍",
+            "url": "https://www.dpm.org.cn/classify_detail/262014.html"
+          },
+          {
+            "label": "中国丝绸博物馆，“清代服饰”",
+            "url": "https://www.chinasilkmuseum.com/cs/info_164.aspx?itemid=28358&parent="
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "clothing",
+    "categoryName": "Clothing",
+    "slug": "imperial-robes",
+    "title": "皇帝为什么穿黄色？",
+    "titleEn": "Why Did Chinese Emperors Wear Yellow?",
+    "storyPath": "../../culture/books/clothing/imperial-robes/",
+    "groups": [
+      {
+        "title": "Yellow and changing dress rules",
+        "sources": [
+          {
+            "label": "Palace Museum, article on the color system of Qing court clothing",
+            "url": "https://www.dpm.org.cn/Uploads/pdf/6182/T00073_00.pdf"
+          },
+          {
+            "label": "New Book of Tang, “Treatise on Chariots and Attire,” Chinese Text Project",
+            "url": "https://ctext.org/wiki.pl?chapter=383137&if=en"
+          },
+          {
+            "label": "Palace Museum, “清代宫廷服饰制度及其文化内涵”",
+            "url": "https://www.dpm.org.cn/classify_detail/262014.html"
+          },
+          {
+            "label": "Palace Museum, “皇帝朝服”",
+            "url": "https://www.dpm.org.cn/lemmas/241579.html"
+          }
+        ]
+      },
+      {
+        "title": "Dragons, rank, and garment type",
+        "sources": [
+          {
+            "label": "Palace Museum, “龙在故宫”",
+            "url": "https://www.dpm.org.cn/architectural_art/246279.html"
+          },
+          {
+            "label": "Metropolitan Museum of Art, “Peacocks and Dragons, Oh My!”",
+            "url": "https://www.metmuseum.org/perspectives/peacocks-and-dragons"
+          },
+          {
+            "label": "Palace Museum, “吉服袍”",
+            "url": "https://www.dpm.org.cn/lemmas/241311.html"
+          },
+          {
+            "label": "Palace Museum, “月白色缎绣彩云金龙纹男夹朝袍”",
+            "url": "https://intl.dpm.org.cn/Textiles/85236.html"
+          }
+        ]
+      },
+      {
+        "title": "Twelve Symbols: texts, regulations, and objects",
+        "sources": [
+          {
+            "label": "Palace Museum, “十二章”",
+            "url": "https://www.dpm.org.cn/lemmas/241316.html"
+          },
+          {
+            "label": "Palace Museum, “明清紫禁城的物质文化”",
+            "url": "https://www.dpm.org.cn/Uploads/File/2024/07/22/u669dd42b7fb7d.pdf"
+          },
+          {
+            "label": "Palace Museum, Fang Hongjun, “清代后妃礼、吉服为何装饰十二章纹？”",
+            "url": "https://www.dpm.org.cn/Uploads/File/2020/05/12/u5eba19a2e4895.pdf"
+          }
+        ]
+      },
+      {
+        "title": "Makers and textile labor",
+        "sources": [
+          {
+            "label": "Palace Museum, “清代宫廷服饰制度及其文化内涵”",
+            "url": "https://www.dpm.org.cn/classify_detail/262014.html"
+          },
+          {
+            "label": "Palace Museum, “江南织造”",
+            "url": "https://www.dpm.org.cn/lemmas/243105.html"
           }
         ]
       }
@@ -2836,283 +2962,602 @@ window.NIHAO_CULTURE_SOURCES = [
     ]
   },
   {
-    "category": "food",
-    "categoryName": "Food",
-    "slug": "flavors",
-    "title": "一口菜里有多少种感觉？",
-    "titleEn": "How Many Sensations Fit in One Bite?",
-    "storyPath": "../../culture/books/food/flavors/",
+    "category": "folk-customs",
+    "categoryName": "Festivals & Customs",
+    "slug": "mid-autumn",
+    "title": "中秋节：月亮里的故事",
+    "titleEn": "Mid-Autumn Festival: Stories in the Moon",
+    "storyPath": "../../culture/books/folk-customs/mid-autumn/",
     "groups": [
       {
-        "title": "Modern taste, smell, and oral sensation",
+        "title": "Festival date, moon viewing, and reunion",
         "sources": [
           {
-            "label": "National Institute on Deafness and Other Communication Disorders, “Taste Disorders”",
-            "url": "https://www.nidcd.nih.gov/health/taste-disorders"
-          },
-          {
-            "label": "InformedHealth.org / NCBI Bookshelf, “How does our sense of taste work?”",
-            "url": "https://www.ncbi.nlm.nih.gov/books/NBK279408/"
-          },
-          {
-            "label": "NCBI Bookshelf, “Trigeminal Chemoreception”",
-            "url": "https://www.ncbi.nlm.nih.gov/books/NBK11036/"
+            "label": "State Council Information Office of China, “Zhongqiu Festival (The Mid-Autumn Festival)”",
+            "url": "https://english.scio.gov.cn/featured/chinakeywords/2024-08/30/content_117397245.htm"
           }
         ]
       },
       {
-        "title": "Traditional five flavors as a historical framework",
+        "title": "Wu Gang and the self-healing osmanthus tree",
         "sources": [
           {
-            "label": "Chinese Text Project, Huangdi Neijing, “Five Flavors”",
-            "url": "https://ctext.org/huangdi-neijing/wu-wei/ens"
+            "label": "Duan Chengshi, Youyang Zazu (《酉阳杂俎》), “Tianzhi” (《天咫》), via Chinese Text Project",
+            "url": "https://ctext.org/wiki.pl?chapter=565446&if=en&remap=gb"
           },
           {
-            "label": "Lili Lai and Judith Farquhar, “Food and Medicine: Qualities and Efficacies in Chinese Ethnic Medicines,” University of Chicago Knowledge",
-            "url": "https://knowledge.uchicago.edu/records/y7n7t-vh546"
+            "label": "Hong Kong Heritage Museum, Cups of Floral Delights, “Eighth Month — Osmanthus”",
+            "url": "https://hk.heritage.museum/documents/Exhibitions/Permanent/chineseart/cups_of_floral_delights_booklet.pdf"
           }
         ]
       },
       {
-        "title": "Chili pepper chronology",
+        "title": "Chang'e, the Jade Rabbit, and the lunar tree in Tang art",
         "sources": [
           {
-            "label": "Brian R. Dott, The Chile Pepper in China: A Cultural Biography (Columbia University Press, 2020), JSTOR record",
-            "url": "https://www.jstor.org/stable/10.7312/dott19532"
-          },
-          {
-            "label": "Renmin University of China Institute of Qing History, research overview on the chili pepper’s introduction and spread",
-            "url": "https://iqh.ruc.edu.cn/old/qdhjylyjzx/xszl/hwyj/edf0ccf894ff45d4a9e72a4ece82b41e.htm"
-          },
-          {
-            "label": "Jean Andrews, “Chilli Peppers,” The Cambridge World History of Food",
-            "url": "https://www.cambridge.org/core/books/abs/cambridge-world-history-of-food/chilli-peppers/F955AD34FB4A4E66722A15E5D7A7B4C3"
+            "label": "Palace Museum, “Bronze Mirror with Chang'e and the Jade Rabbit” (嫦娥玉兔菱花镜)",
+            "url": "https://www.dpm.org.cn/collection/bronze/233188.html"
           }
         ]
       },
       {
-        "title": "Regional cuisine and the limits of flavor maps",
+        "title": "The early medicine-pounding rabbit",
         "sources": [
           {
-            "label": "Yu-Xiao Zhu et al., “Geography and Similarity of Regional Cuisines in China,” PLOS ONE 8(11), 2013",
-            "url": "https://journals.plos.org/plosone/article?id=10.1371%2Fjournal.pone.0079161"
-          },
+            "label": "Xinhua, “如果文物会说话｜这个中秋和文物‘皮’一下！听它们讲传奇往事”",
+            "url": "https://www.xinhuanet.com/politics/2023-09/28/c_1212278162.htm"
+          }
+        ]
+      },
+      {
+        "title": "Moon legends associated with Mid-Autumn Festival",
+        "sources": [
           {
-            "label": "Thomas O. Höllmann, The Land of the Five Flavors: A Cultural History of Chinese Cuisine (Columbia University Press, 2013)",
-            "url": "https://academic.oup.com/columbia-scholarship-online/book/23371"
+            "label": "China Intangible Cultural Heritage Network, “承中秋韵 话节日情——中秋节的源流与文化意蕴”",
+            "url": "https://www.ihchina.cn/news_1_details/10423.html"
           }
         ]
       }
     ]
   },
   {
-    "category": "food",
-    "categoryName": "Food",
-    "slug": "dumplings",
-    "title": "古时候的饺子和今天一样吗？",
-    "titleEn": "Were Ancient Dumplings Like the Ones We Eat Today?",
-    "storyPath": "../../culture/books/food/dumplings/",
+    "category": "folk-customs",
+    "categoryName": "Festivals & Customs",
+    "slug": "lantern-festival",
+    "title": "元宵节：长安灯火的传说",
+    "titleEn": "Lantern Festival: The Night Chang'an Glowed",
+    "storyPath": "../../culture/books/folk-customs/lantern-festival/",
     "groups": [
       {
-        "title": "唐代阿斯塔那墓葬中的面食实物",
+        "title": "Festival date and customs",
         "sources": [
           {
-            "label": "新疆维吾尔自治区党委统战部，“吐鲁番烘焙师‘复刻’1400年前的唐代‘宝相花月饼’”",
-            "url": "https://www.xjtzb.gov.cn/static/content/st/2024-12-13/1317181797100167168.html"
+            "label": "Shanghai Municipal People's Government, “Lantern Festival”",
+            "url": "https://english.shanghai.gov.cn/en-KeyDatesAndCustoms/20260122/e6bf3e0801514c808f6b3d1545a88a3c.html"
           }
         ]
       },
       {
-        "title": "阿斯塔那的位置与保存环境",
+        "title": "Chang'an and present-day Xi'an",
         "sources": [
           {
-            "label": "吐鲁番市人民政府 / 吐鲁番地区文物局，“阿斯塔那古墓群”",
-            "url": "https://www.tlf.gov.cn/tlfs/c106449/201108/03e64c87d71f4bdfb26d19cb1c9d52bd.shtml"
+            "label": "Xi'an Municipal People's Government, “Xi'an, integrating historical and modern glory”",
+            "url": "https://en.xa.gov.cn/MediaCenter/News/1691691326091415553.html"
+          },
+          {
+            "label": "UNESCO World Heritage Centre, “Chinese Section of the Silk Road”",
+            "url": "https://whc.unesco.org/en/tentativelists/5335"
           }
         ]
       },
       {
-        "title": "阿斯塔那饺子的数量与随葬环境",
+        "title": "Dongfang Shuo and Yuanxiao legend",
         "sources": [
           {
-            "label": "上海外国语大学转载的中国新闻社专家采访，“从春秋到春节：饺子中包裹的中国故事”",
-            "url": "https://vie.shisu.edu.cn/resources/category2151/content14824"
-          }
-        ]
-      },
-      {
-        "title": "“馄饨”“角子”“扁食”与“饺子”的名称变化",
-        "sources": [
+            "label": "Beijing Tourism, “Discover the Myths and Legends Behind the Lantern Festival”",
+            "url": "https://english.visitbeijing.com.cn/article/47OOPkdR4E5"
+          },
           {
-            "label": "全国哲学社会科学工作办公室 / 《中国社会科学报》，张海媚，“会‘行走’的扁食”",
-            "url": "https://www.nopss.gov.cn/n1/2022/0127/c441752-32341298.html"
-          }
-        ]
-      },
-      {
-        "title": "“更岁交子”是后起解释",
-        "sources": [
-          {
-            "label": "上海师范大学转载《文汇报》，吴志雪、王弘治，“馒头沿丝路西传 皮塔饼沿丝路东传”",
-            "url": "https://xw.shnu.edu.cn/d8/99/c23266a841881/page.htm"
-          }
-        ]
-      },
-      {
-        "title": "张仲景“娇耳”故事",
-        "sources": [
-          {
-            "label": "浙江省社会科学界联合会，“食疗：辨体施膳 药食同源”",
-            "url": "https://www.zjskw.gov.cn/art/2025/8/21/art_1229536556_64988.html"
-          }
-        ]
-      },
-      {
-        "title": "春节饮食的地域差异",
-        "sources": [
-          {
-            "label": "上海市民政局，“春节传统食品溯源”",
-            "url": "https://mzj.sh.gov.cn/lnb-wsws/20240219/0fabcb012d7f420d97c6368fe1a6014d.html"
-          }
-        ]
-      },
-      {
-        "title": "儿童食物中的硬币、硬糖和坚果风险",
-        "sources": [
-          {
-            "label": "U.S. Centers for Disease Control and Prevention, “Nonfatal Choking-Related Episodes Among Children — United States, 2001”",
-            "url": "https://www.cdc.gov/mmwr/preview/mmwrhtml/mm5142a1.htm"
-          }
-        ]
-      },
-      {
-        "title": "世界各地包馅面食与传播边界",
-        "sources": [
-          {
-            "label": "Vazrick Nazari et al., Discover Food, “Evolution of the Italian pasta ripiena: the first steps toward a scientific classification”",
-            "url": "https://doi.org/10.1007/s44187-024-00136-1"
+            "label": "CGTN, “The Legendary Origin of the Lantern Festival”",
+            "url": "https://news.cgtn.com/news/2021-02-26/The-legendary-origin-of-the-Lantern-Festival-YbJbWuEvss/index.html"
           }
         ]
       }
     ]
   },
   {
-    "category": "food",
-    "categoryName": "Food",
-    "slug": "chinese-cuisine",
-    "title": "一张地图为什么装不下中国菜？",
-    "titleEn": "Why Can't One Map Hold All of Chinese Food?",
-    "storyPath": "../../culture/books/food/chinese-cuisine/",
+    "category": "folk-customs",
+    "categoryName": "Festivals & Customs",
+    "slug": "chinese-zodiac",
+    "title": "十二生肖",
+    "titleEn": "The Chinese Zodiac",
+    "storyPath": "../../culture/books/folk-customs/chinese-zodiac/",
     "groups": [
       {
-        "title": "*Global Food History* — “Special Issue on Chinese Culinary Regionalism: Introduction”",
+        "title": "Why twelve animals, why sixty years, and why English says “zodiac”",
         "sources": [
           {
-            "label": "doi.org",
-            "url": "https://doi.org/10.1080/20549547.2020.1770490"
-          }
-        ]
-      },
-      {
-        "title": "Stanford University Press — scholarly introduction on Chinese food history and regional classification",
-        "sources": [
-          {
-            "label": "supress.sites-pro.stanford.edu",
-            "url": "https://supress.sites-pro.stanford.edu/sites/supress/files/media/file/11964_Excerpt_from_the_Introduction.pdf"
-          }
-        ]
-      },
-      {
-        "title": "Liu et al. — “The prehistoric roots of Chinese cuisines: Mapping staple food systems of China, 6000 BC–220 AD” (*PLOS ONE*)",
-        "sources": [
-          {
-            "label": "journals.plos.org",
-            "url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0240930"
-          }
-        ]
-      },
-      {
-        "title": "Brian R. Dott — *The Chile Pepper in China: A Cultural Biography* (Columbia University Press)",
-        "sources": [
-          {
-            "label": "cup.columbia.edu",
-            "url": "https://cup.columbia.edu/book/the-chile-pepper-in-china/9780231551304/"
-          }
-        ]
-      },
-      {
-        "title": "Yu Weijie — “无心插柳：论辣椒在中国的选择性传播” (*美食研究*, summary hosted by South China Agricultural University)",
-        "sources": [
-          {
-            "label": "yjs.scau.edu.cn",
-            "url": "https://yjs.scau.edu.cn/2019/0512/c3176a185425/page.htm"
-          }
-        ]
-      },
-      {
-        "title": "Hongjie Wang — “Hot Peppers, Sichuan Cuisine and the Revolutions in Modern China” (*World History Connected*)",
-        "sources": [
-          {
-            "label": "journals.gmu.edu",
-            "url": "https://journals.gmu.edu/whc/article/download/4424/2402?inline=1"
-          }
-        ]
-      },
-      {
-        "title": "China Daily / Chengdu local-history account — “Mapo tofu: Chen Mapo's tofu”",
-        "sources": [
-          {
-            "label": "chinadaily.com.cn",
-            "url": "https://www.chinadaily.com.cn/life/2012-03/09/content_15733317.htm"
-          }
-        ]
-      },
-      {
-        "title": "Academy of Chinese Studies — “中国有多少个菜系？” and “Chinese Culinary Culture and Eight Regional Cuisines”",
-        "sources": [
-          {
-            "label": "chiculture.org.hk",
-            "url": "https://chiculture.org.hk/en/node/2698"
+            "label": "The Metropolitan Museum of Art, “Chinese Decorative Arts,” The Metropolitan Museum of Art Bulletin, vol. 55, no. 1",
+            "url": "https://resources.metmuseum.org/resources/metpublications/pdf/Chinese_Decorative_Arts_The_Metropolitan_Museum_of_Art_Bulletin_v_55_no_1_Summer_1997.pdf"
           },
           {
-            "label": "chiculture.org.hk",
-            "url": "https://chiculture.org.hk/en/china-five-thousand-years/2699"
+            "label": "Xinhua / Cyberspace Administration of Tibet, “为什么这个龙年叫‘甲辰龙年’？”",
+            "url": "https://wxb.xzdw.gov.cn/wlcb/cbgz/202402/t20240211_441760.html"
+          },
+          {
+            "label": "The Metropolitan Museum of Art, “Celebrating the Year of the Rooster”",
+            "url": "https://www.metmuseum.org/exhibitions/listings/2017/year-of-the-rooster"
+          },
+          {
+            "label": "NASA Ames Research Center, “Interesting Fact of the Month 2020”",
+            "url": "https://www.nasa.gov/space-science-and-astrobiology-at-ames/interesting-fact-of-the-month-current/interesting-fact-of-the-month-2020/"
           }
         ]
       },
       {
-        "title": "Heather R. Lee — “The Untold Story of Chinese Restaurants in America” (Scholars Strategy Network)",
+        "title": "Twelve-year cycle and animal order",
         "sources": [
           {
-            "label": "scholars.org",
-            "url": "https://scholars.org/brief/untold-story-chinese-restaurants-america"
+            "label": "Shanghai Municipal People's Government, “Chinese zodiac in Mandarin”",
+            "url": "https://english.shanghai.gov.cn/en-LearnChinese/20250124/5403598ce0624e5ab6ed2844c9fb7b3a.html"
+          },
+          {
+            "label": "State Council Information Office of China, “Traditional Culture”",
+            "url": "https://english.scio.gov.cn/featured/chinakeywords/2024-08/30/content_117397319.htm"
+          },
+          {
+            "label": "Hangzhou Municipal Government, “2021: Year of the Ox”",
+            "url": "https://www.ehangzhou.gov.cn/2021-02/18/c_276284.htm"
           }
         ]
       },
       {
-        "title": "Gabriel J. Chin and John Ormonde — “The War Against Chinese Restaurants” (*Duke Law Journal*)",
+        "title": "Race legend and historical boundary",
         "sources": [
           {
-            "label": "dlj.law.duke.edu",
-            "url": "https://dlj.law.duke.edu/article/the-war-against-chinese-restaurants-chin-vol67-iss4/"
+            "label": "Smithsonian Institution, Hirshhorn Museum, “Circle of Animals/Zodiac Heads — Rat”",
+            "url": "https://hirshhorn.si.edu/explore/zodiac-heads-rat/"
+          },
+          {
+            "label": "Smithsonian Asian Pacific American Center, “Cat and Rat: The Legend of the Chinese Zodiac by Ed Young”",
+            "url": "https://apa.si.edu/bookdragon/cat-and-rat-the-legend-of-the-chinese-zodiac-by-ed-young/"
+          },
+          {
+            "label": "East China Normal University, “专家解读十二生肖顺序排定法：大体按亲密程度”",
+            "url": "https://www.ecnu.edu.cn/info/1095/10598.htm"
+          },
+          {
+            "label": "Beijing Municipal Government, “The Dragon, One of 12 Chinese Zodiac Signs”",
+            "url": "https://english.beijing.gov.cn/specials/beijingmagazine/list/202402/P020240223364594855600.pdf"
+          },
+          {
+            "label": "Nanyang municipal cultural education resource, “十二生肖起源于何时？”",
+            "url": "https://www.nydi.gov.cn/sitesources/nysjwjw/page_pc/xcjd/wh/article65e5fdec03fa49378434df2c5bd36643.html"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "folk-customs",
+    "categoryName": "Festivals & Customs",
+    "slug": "qingming",
+    "title": "清明节：在春天思念祖先",
+    "titleEn": "Qingming Festival: Remembering Our Ancestors in Spring",
+    "storyPath": "../../culture/books/folk-customs/qingming/",
+    "groups": [
+      {
+        "title": "Festival and solar term",
+        "sources": [
+          {
+            "label": "UNESCO Intangible Cultural Heritage, “The Twenty-Four Solar Terms”",
+            "url": "https://ich.unesco.org/en/RL/the-twenty-four-solar-terms-knowledge-in-china-of-time-and-practices-developed-through-observation-of-the-sun-s-annual-motion-00647"
+          },
+          {
+            "label": "Shanghai Municipal People's Government, “Eight things you may not know about Clear and Bright”",
+            "url": "https://english.shanghai.gov.cn/en-LearnChinese/20250403/a487a8e438384e29af4b49a6d272d7cb.html"
+          },
+          {
+            "label": "East China Normal University, “扫墓祭祖与踏青赏春并举，清明节折射中国人怎样的生死观？”",
+            "url": "https://www.ecnu.edu.cn/info/1095/6278.htm"
+          },
+          {
+            "label": "Guangdong Literature and History, “清明：从节气到节日”",
+            "url": "https://www.gdwsw.gov.cn/qsws/content/post_41998.html"
           }
         ]
       },
       {
-        "title": "Smithsonian National Museum of American History — “Sweet & Sour” exhibition overview",
+        "title": "Tomb sweeping, spring outings, and kites",
         "sources": [
           {
-            "label": "americanhistory.si.edu",
-            "url": "https://americanhistory.si.edu/press/releases/national-museum-american-history-showcases-sweet-sour"
+            "label": "The State Council of the People's Republic of China, “Spring boosts travel demand during Qingming holiday”",
+            "url": "https://english.www.gov.cn/news/202504/07/content_WS67f36202c6d0868f4e8f1798.html"
+          },
+          {
+            "label": "Shanghai Municipal People's Government, “Eight things you may not know about Clear and Bright”",
+            "url": "https://english.shanghai.gov.cn/en-LearnChinese/20250403/a487a8e438384e29af4b49a6d272d7cb.html"
+          },
+          {
+            "label": "U.S. Fish and Wildlife Service, “Finding of Appropriateness — Beach Use (Sports, Kite Flying, Grilling, and Shade Tents)”",
+            "url": "https://www.fws.gov/sites/default/files/documents/16w_Appendix_Entire_Document%2810351KB%29.pdf"
           }
         ]
       },
       {
-        "title": "Haiming Liu — *From Canton Restaurant to Panda Express: A History of Chinese Food in the United States* (Smithsonian catalog record)",
+        "title": "Qingtuan",
         "sources": [
           {
-            "label": "si.edu",
-            "url": "https://www.si.edu/object/canton-restaurant-panda-express-history-chinese-food-united-states-haiming-liu%3Asiris_sil_1065159"
+            "label": "Shanghai Municipal People's Government, “‘Qingtuan’: A taste of spring in every bite”",
+            "url": "https://english.shanghai.gov.cn/en-GlobalTasteinShanghai2026-LocalFlavors/20260402/aa840c4f9bc742478a5e00f6e8203588.html"
+          },
+          {
+            "label": "Pingshan District People's Government, “Chinese and expat residents embrace Qingming traditions”",
+            "url": "https://www.szpsq.gov.cn/english/About%20Pingshan/ImageGallery/content/post_11230155.html"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "folk-customs",
+    "categoryName": "Festivals & Customs",
+    "slug": "dragon-boat",
+    "title": "端午节：赛龙舟与屈原",
+    "titleEn": "Dragon Boat Festival: Dragon Boats and Qu Yuan",
+    "storyPath": "../../culture/books/folk-customs/dragon-boat/",
+    "groups": [
+      {
+        "title": "Festival traditions and regional variation",
+        "sources": [
+          {
+            "label": "UNESCO Intangible Cultural Heritage, “Dragon Boat festival”",
+            "url": "https://ich.unesco.org/en/RL/dragon-boat-festival-00225"
+          }
+        ]
+      },
+      {
+        "title": "Qu Yuan and the rice-bundle legend",
+        "sources": [
+          {
+            "label": "International Dragon Boat Federation, “History & Culture”",
+            "url": "https://www.dragonboat.sport/about-us/history-culture/"
+          },
+          {
+            "label": "Encyclopaedia Britannica, “Qu Yuan”",
+            "url": "https://www.britannica.com/biography/Qu-Yuan"
+          }
+        ]
+      },
+      {
+        "title": "Modern dragon boat crews",
+        "sources": [
+          {
+            "label": "International Dragon Boat Federation, “History & Culture”",
+            "url": "https://www.dragonboat.sport/about-us/history-culture/"
+          },
+          {
+            "label": "International Dragon Boat Federation, “Key Definitions”",
+            "url": "https://www.dragonboat.sport/wp-content/uploads/2024/01/IDBF-Key-Definitions.pdf"
+          }
+        ]
+      },
+      {
+        "title": "Zòngzi leaves, fillings, and shapes",
+        "sources": [
+          {
+            "label": "Chongqing Municipal Administration for Market Regulation, “如何选购粽叶”",
+            "url": "https://scjgj.cq.gov.cn/bkzs/xfts/202406/t20240606_13274800.html"
+          },
+          {
+            "label": "Beijing Municipal Health Commission / Guang'anmen Hospital, “粽子好吃莫贪多”",
+            "url": "https://wjw.beijing.gov.cn/bmfw_20143/jkzs/jksh/202306/t20230627_3147634.html"
+          },
+          {
+            "label": "Hainan Administration for Market Regulation, “端午节食用粽子消费提示”",
+            "url": "https://amr.hainan.gov.cn/zw/xfts/202406/t20240605_3675594.html"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "folk-customs",
+    "categoryName": "Festivals & Customs",
+    "slug": "chinese-new-year",
+    "title": "过年：年兽的故事",
+    "titleEn": "Guo Nian: The Story of Nian",
+    "storyPath": "../../culture/books/folk-customs/chinese-new-year/",
+    "groups": [
+      {
+        "title": "Names and the traditional Chinese calendar",
+        "sources": [
+          {
+            "label": "Smithsonian Institution, “Lunar New Year Celebration”",
+            "url": "https://www.si.edu/events/lunar-new-year"
+          },
+          {
+            "label": "Library of Congress, “Celebrating Lunar New Year with the Library of Congress’s Collections”",
+            "url": "https://blogs.loc.gov/international-collections/2024/02/celebrating-lunar-new-year-with-the-library-of-congresss-collections/"
+          },
+          {
+            "label": "University of California, Berkeley, “Chinese New Year”",
+            "url": "https://multiverse.ssl.berkeley.edu/Calendar-in-the-Sky/Articles/chinese-new-year"
+          }
+        ]
+      },
+      {
+        "title": "Why the holiday is also called Spring Festival",
+        "sources": [
+          {
+            "label": "Nanjing University Institute for Advanced Studies in Social Sciences, “纪念我国农历春节100年”",
+            "url": "https://jsas.nju.edu.cn/0a/17/c21381a330263/pagem.htm"
+          },
+          {
+            "label": "Shenzhen Municipal Archives, “一锤定音！汉代如何奠定我们两千多年的春节格局”",
+            "url": "https://www.szdag.gov.cn/gzdt/gzdt/content/post_1656812.html"
+          }
+        ]
+      },
+      {
+        "title": "Festival customs",
+        "sources": [
+          {
+            "label": "UNESCO, “Spring festival, social practices of the Chinese people in celebration of traditional new year”",
+            "url": "https://ich.unesco.org/en/RL/spring-festival-social-practices-of-the-chinese-people-in-celebration-of-traditional-new-year-02126"
+          },
+          {
+            "label": "The State Council of the People's Republic of China, “How do Chinese people celebrate Spring Festival?”",
+            "url": "https://english.www.gov.cn/news/202501/28/content_WS6798c6bbc6d0868f4e8ef3f8.html"
+          }
+        ]
+      },
+      {
+        "title": "Nian and the colors and sounds of New Year",
+        "sources": [
+          {
+            "label": "Shanghai Municipal People's Government, “Chinese New Year's Day”",
+            "url": "https://english.shanghai.gov.cn/en-KeyDatesAndCustoms/20260122/0f8629ce52fc4a1d824e0421b9b4b392.html"
+          },
+          {
+            "label": "Embassy of the People's Republic of China in Nepal, “Guo Nian — Celebrating the Lunar New Year”",
+            "url": "https://np.china-embassy.gov.cn/eng/Culture/Feature/200410/t20041027_1997783.htm"
+          },
+          {
+            "label": "China.org.cn / Shanghai Daily, “A Spring Festival myth lives on”",
+            "url": "https://www.china.org.cn/english/LivinginChina/Spring-festival-2008/241859.htm"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "folk-tales",
+    "categoryName": "Folk Tales",
+    "slug": "chang-e-moon",
+    "title": "嫦娥奔月",
+    "titleEn": "Chang'e Flies to the Moon",
+    "storyPath": "../../culture/books/folk-tales/chang-e-moon/",
+    "groups": [
+      {
+        "title": "The ancient stories are much shorter",
+        "sources": [
+          {
+            "label": "Chinese Text Project, Huainanzi passages collected under “Heng'e”",
+            "url": "https://ctext.org/dictionary.pl?char=%E5%A7%AE%E5%A8%A5&if=gb"
+          },
+          {
+            "label": "Wikisource, Lu Xun, A Brief History of Chinese Fiction, Chapter 2",
+            "url": "https://zh.wikisource.org/zh-hans/%E4%B8%AD%E5%9C%8B%E5%B0%8F%E8%AA%AA%E5%8F%B2%E7%95%A5/%E7%AC%AC%E4%BA%8C%E7%AF%87"
+          }
+        ]
+      },
+      {
+        "title": "The popular Peng Meng version",
+        "sources": [
+          {
+            "label": "Hong Kong Education Bureau, “Mid-Autumn Festival: The Legend of Hou Yi and Chang'e”",
+            "url": "https://www.edb.gov.hk/attachment/en/curriculum-development/kla/eng-edu/Chi_Fest/Mid-AutumnFestival/PartA.html"
+          }
+        ]
+      },
+      {
+        "title": "Chang'e and the Jade Rabbit in moon imagery",
+        "sources": [
+          {
+            "label": "National Museum of China, “Moon Palace Bronze Mirror”",
+            "url": "https://www.chnmuseum.cn/zp/zpml/csp/202008/t20200826_247444.shtml"
+          }
+        ]
+      },
+      {
+        "title": "Mid-Autumn moon and reunion",
+        "sources": [
+          {
+            "label": "Smithsonian Center for Folklife and Cultural Heritage, “Hou Yi and the Ten Suns: A Chinese Folktale”",
+            "url": "https://www.si.edu/object/yt_5JEUEOmyduA"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "folk-tales",
+    "categoryName": "Folk Tales",
+    "slug": "yu-gong",
+    "title": "愚公移山",
+    "titleEn": "Yu Gong Moves the Mountains",
+    "storyPath": "../../culture/books/folk-tales/yu-gong/",
+    "groups": [
+      {
+        "title": "The story text",
+        "sources": [
+          {
+            "label": "Hong Kong Education Bureau, recommended classical passage, “Yu Gong Moves the Mountains” from Liezi",
+            "url": "https://www.edb.gov.hk/attachment/tc/curriculum-development/kla/chi-edu/recommended-passages/ks3_03_text.pdf"
+          }
+        ]
+      },
+      {
+        "title": "The fable and its common meaning",
+        "sources": [
+          {
+            "label": "State Council Information Office of the People's Republic of China, “Traditional Culture: Yu Gong Moves the Mountains”",
+            "url": "https://english.scio.gov.cn/featured/chinakeywords/2024-08/30/content_117397300.htm"
+          },
+          {
+            "label": "Jiyuan Municipal Government, “The Spirit of Yu Gong Moves the Mountains”",
+            "url": "https://rbj.jiyuan.gov.cn/rbj_xwzx/rbj_rsdt/t373200.html"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "folk-tales",
+    "categoryName": "Folk Tales",
+    "slug": "qixi-cowherd-weaver-girl",
+    "title": "牛郎织女",
+    "titleEn": "The Cowherd and the Weaver Girl",
+    "storyPath": "../../culture/books/folk-tales/qixi-cowherd-weaver-girl/",
+    "groups": [
+      {
+        "title": "The popular children's-story sequence",
+        "sources": [
+          {
+            "label": "Ministry of Culture and Tourism of the People's Republic of China, “Qixi: The Origin and Customs of the Traditional Qiqiao Festival”",
+            "url": "https://www.mct.gov.cn/whzx/whyw/201112/t20111201_707482.htm"
+          },
+          {
+            "label": "Fuzhou Municipal People's Government, “The Qixi Festival Grew from Star Worship and Qiqiao Customs”",
+            "url": "https://www.fuzhou.gov.cn/zgfzzt/zjrc/mdfc/msfq/202210/t20221026_4457393.htm"
+          }
+        ]
+      },
+      {
+        "title": "The tale grew over many centuries",
+        "sources": [
+          {
+            "label": "Beijing Civilization Office, “Qixi Scenes in Beijing”",
+            "url": "https://www.bjwmb.gov.cn/zxfw/wmwx/wskt/t20180817_877616.htm"
+          }
+        ]
+      },
+      {
+        "title": "Qixi means the evening of the seventh day",
+        "sources": [
+          {
+            "label": "Central Commission for Discipline Inspection, “The Character Xi: What Evening Is This?”",
+            "url": "https://m.ccdi.gov.cn/content/36/84/28914.html"
+          }
+        ]
+      },
+      {
+        "title": "The stars behind the story",
+        "sources": [
+          {
+            "label": "NASA Science, “The Next Full Moon Is a Supermoon; the Sturgeon Moon”",
+            "url": "https://moon.nasa.gov/news/196/the-next-full-moon-is-a-supermoon-the-sturgeon-moon/?unit=m"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "folk-tales",
+    "categoryName": "Folk Tales",
+    "slug": "white-snake",
+    "title": "白蛇传",
+    "titleEn": "The Legend of the White Snake",
+    "storyPath": "../../culture/books/folk-tales/white-snake/",
+    "groups": [
+      {
+        "title": "A story built over many centuries",
+        "sources": [
+          {
+            "label": "China Intangible Cultural Heritage, “The Legend of the White Snake”",
+            "url": "https://www.ihchina.cn/project_details/12185.html"
+          }
+        ]
+      },
+      {
+        "title": "Why Bai Suzhen comes to West Lake",
+        "sources": [
+          {
+            "label": "Hangzhou CPPCC News, “Do You Remember New Legend of Madame White Snake? The Classic Will Be Remade”",
+            "url": "https://www.hzzx.gov.cn/cshz/content/2016-05/12/content_6172784_0.htm"
+          },
+          {
+            "label": "Ministry of Culture and Tourism of the People's Republic of China, National Centre for the Performing Arts production of The Legend of the White Snake",
+            "url": "https://www.mct.gov.cn/ggfw/zyjzzt/yanchu/yanchuwqhg/202411/t20241107_956108.html"
+          },
+          {
+            "label": "Beijing Municipal Health Commission, Beijing Huairou Hospital of Traditional Chinese Medicine, “Do Not Drink Realgar Wine at Dragon Boat Festival”",
+            "url": "https://wjw.beijing.gov.cn/bmfw_20143/jkzs/jksh/202606/t20260618_4707065.html"
+          }
+        ]
+      },
+      {
+        "title": "Xiaoqing, Leifeng Pagoda, and the rescue ending",
+        "sources": [
+          {
+            "label": "Beijing Municipal Government, Chang'an Grand Theatre, Peking Opera The Legend of the White Snake",
+            "url": "https://www.beijing.gov.cn/gate/big5/www.beijing.gov.cn/renwen/whrl/rdtj/201905/t20190520_1871303.html"
+          }
+        ]
+      },
+      {
+        "title": "Place note",
+        "sources": [
+          {
+            "label": "Sichuan Provincial People's Congress, Xinhua report, “Savoring the Scenery beside West Lake”",
+            "url": "https://www.scspc.gov.cn/html/xxyl_66/lyyl_68/2010/0524/54378.html"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "folk-tales",
+    "categoryName": "Folk Tales",
+    "slug": "monkey-king",
+    "title": "美猴王大闹天宫",
+    "titleEn": "The Monkey King Makes Trouble in Heaven",
+    "storyPath": "../../culture/books/folk-tales/monkey-king/",
+    "groups": [
+      {
+        "title": "The staff and the Book of Life and Death",
+        "sources": [
+          {
+            "label": "Wikisource, Journey to the West, Chapter 3",
+            "url": "https://zh.wikisource.org/wiki/%E8%A5%BF%E9%81%8A%E8%A8%98/%E7%AC%AC003%E5%9B%9E"
+          }
+        ]
+      },
+      {
+        "title": "The heavenly job and the Great Sage",
+        "sources": [
+          {
+            "label": "Wikisource, Journey to the West, Chapter 4",
+            "url": "https://zh.wikisource.org/wiki/%E8%A5%BF%E9%81%8A%E8%A8%98/%E7%AC%AC004%E5%9B%9E"
+          }
+        ]
+      },
+      {
+        "title": "The Buddha's palm and Five Elements Mountain",
+        "sources": [
+          {
+            "label": "Wikisource, Journey to the West, Chapter 7",
+            "url": "https://zh.wikisource.org/wiki/%E8%A5%BF%E9%81%8A%E8%A8%98/%E7%AC%AC007%E5%9B%9E"
+          }
+        ]
+      },
+      {
+        "title": "Sun Wukong is released",
+        "sources": [
+          {
+            "label": "Wikisource, Journey to the West, Chapter 14",
+            "url": "https://zh.wikisource.org/wiki/%E8%A5%BF%E9%81%8A%E8%A8%98/%E7%AC%AC014%E5%9B%9E"
           }
         ]
       }
@@ -3180,158 +3625,289 @@ window.NIHAO_CULTURE_SOURCES = [
     ]
   },
   {
-    "category": "geography",
-    "categoryName": "Geography",
-    "slug": "highest-mountains",
-    "title": "最高的山峰：一把尺子，三个答案",
-    "titleEn": "The Highest Mountain: One Question, Three Answers",
-    "storyPath": "../../culture/books/geography/highest-mountains/",
+    "category": "food",
+    "categoryName": "Food",
+    "slug": "chinese-cuisine",
+    "title": "中国菜是什么味道？",
+    "titleEn": "What Does Chinese Food Taste Like?",
+    "storyPath": "../../culture/books/food/chinese-cuisine/",
     "groups": [
       {
-        "title": "The 2020 Joint Height and What It Measures",
+        "title": "*Global Food History* — “Special Issue on Chinese Culinary Regionalism: Introduction”",
         "sources": [
-          {
-            "label": "Ministry of Foreign Affairs of the People's Republic of China, “President Xi Jinping and Nepalese President Bidya Devi Bhandari Exchange Letters to Jointly Announce New Height of Mount Qomolangma,” December 8, 2020",
-            "url": "https://www.mfa.gov.cn/zyxw/202012/t20201208_348872.shtml"
-          },
-          {
-            "label": "Ministry of Foreign Affairs of Nepal, “Press Release on the Joint Announcement of the Height of Mount Sagarmatha/Zhumulangma,” December 8, 2020",
-            "url": "https://old.mofa.gov.np/news-and-activities/page/91/"
-          }
-        ]
-      },
-      {
-        "title": "Different Meanings of “Highest”",
-        "sources": [
-          {
-            "label": "U.S. National Oceanic and Atmospheric Administration, National Ocean Service, “What is the highest point on Earth as measured from Earth's center?”",
-            "url": "https://oceanservice.noaa.gov/facts/highestpoint.html"
-          }
-        ]
-      },
-      {
-        "title": "Location and Names",
-        "sources": [
-          {
-            "label": "National Geographic Education, “Mount Everest”",
-            "url": "https://education.nationalgeographic.org/resource/mount-everest/"
-          },
-          {
-            "label": "Montana State University Everest Education Expedition, “The Naming of Mount Everest”",
-            "url": "https://www.montana.edu/everest/facts/naming.html"
-          }
-        ]
-      },
-      {
-        "title": "Himalayan Geology and Summit Limestone",
-        "sources": [
-          {
-            "label": "U.S. Geological Survey, This Dynamic Earth: The Story of Plate Tectonics",
-            "url": "https://pubs.usgs.gov/gip/dynamic/understanding.html"
-          },
-          {
-            "label": "U.S. Geological Survey, “Geology of the Southern Himalaya,” Professional Paper 716-C",
-            "url": "https://pubs.usgs.gov/pp/0716c/report.pdf"
-          },
-          {
-            "label": "Montana State University Everest Education Expedition, “Sea Floor to Summit”",
-            "url": "https://www.montana.edu/everest/resources/lessons.html"
-          },
-          {
-            "label": "Xu Han et al., “Recent uplift of Chomolungma enhanced by river drainage piracy,” Nature Geoscience 17 (2024) 1031–1037",
-            "url": "https://discovery.ucl.ac.uk/id/eprint/10198003/"
-          },
           {
             "label": "doi.org",
-            "url": "https://doi.org/10.1038/s41561-024-01535-w"
+            "url": "https://doi.org/10.1080/20549547.2020.1770490"
           }
         ]
       },
       {
-        "title": "Vertical Climate, Weather, and Communities",
+        "title": "Stanford University Press — scholarly introduction on Chinese food history and regional classification",
         "sources": [
           {
-            "label": "UNESCO World Heritage Centre, “Sagarmatha National Park”",
-            "url": "https://whc.unesco.org/en/list/120/"
-          },
-          {
-            "label": "Tom Matthews et al., “Weather Observations Reach the Summit of Mount Everest,” Bulletin of the American Meteorological Society 103.12 (2022)",
-            "url": "https://journals.ametsoc.org/view/journals/bams/103/12/BAMS-D-22-0120.1.xml"
+            "label": "supress.sites-pro.stanford.edu",
+            "url": "https://supress.sites-pro.stanford.edu/sites/supress/files/media/file/11964_Excerpt_from_the_Introduction.pdf"
           }
         ]
       },
       {
-        "title": "The 1924, 1953, and 1960 Ascents",
+        "title": "Liu et al. — “The prehistoric roots of Chinese cuisines: Mapping staple food systems of China, 6000 BC–220 AD” (*PLOS ONE*)",
         "sources": [
           {
-            "label": "British Mountaineering Council, “Everest: Facts and Figures”",
-            "url": "https://www.thebmc.co.uk/en/everest-facts-and-figures"
-          },
-          {
-            "label": "Associated Press, “George Mallory's last letter from Everest said odds of reaching the top were ‘50 to 1 against us,’” April 22, 2024",
-            "url": "https://apnews.com/article/c204f7f3348a413d39a84f1a1b93c8cd"
-          },
-          {
-            "label": "Associated Press, “Partial remains of British climber believed found 100 years after Everest ascent,” October 11, 2024",
-            "url": "https://apnews.com/article/2081dc55cb79316a1c90bce0eb1e5cba"
-          },
-          {
-            "label": "General Administration of Sport of China, “Commemorating the 60th Anniversary of Humanity's First Ascent of Everest”",
-            "url": "https://www.sport.gov.cn/n20001280/n20745751/n20767635/c21071101/content.html"
-          },
-          {
-            "label": "Himalayan Database, “Everest 1960, N Col–NE Ridge”",
-            "url": "https://himalayan-database.climbing-history.org/expedition/EVER60102/1960"
-          },
-          {
-            "label": "Walt Unsworth, “Problems of Accuracy in Reporting Mountaineering,” Himalayan Journal 44 (1988)",
-            "url": "https://himalayanclub.org/hj/44/24/problems-of-accuracy-in-reporting-mountaineering/"
+            "label": "journals.plos.org",
+            "url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0240930"
           }
         ]
       },
       {
-        "title": "The Fourteen Eight-Thousanders and Their Countries",
+        "title": "Brian R. Dott — *The Chile Pepper in China: A Cultural Biography* (Columbia University Press)",
         "sources": [
           {
-            "label": "NASA Earth Observatory, “The Eight-Thousanders”",
-            "url": "https://science.nasa.gov/earth/earth-observatory/the-eight-thousanders/"
-          },
-          {
-            "label": "Nepal Tourism Board, “Eight-Thousanders”",
-            "url": "https://ntb.gov.np/en/eight-thousanders"
-          },
-          {
-            "label": "Elizabeth Hawley and Richard Salisbury, The Himalayan Database, peak and expedition records",
-            "url": "https://www.himalayandatabase.com/"
+            "label": "cup.columbia.edu",
+            "url": "https://cup.columbia.edu/book/the-chile-pepper-in-china/9780231551304/"
           }
         ]
       },
       {
-        "title": "Risk, Waste, and Climate Change",
+        "title": "Yu Weijie — “无心插柳：论辣椒在中国的选择性传播” (*美食研究*, summary hosted by South China Agricultural University)",
         "sources": [
           {
-            "label": "Sagarmatha Pollution Control Committee, “About Us”",
-            "url": "https://www.spcc.org.np/about"
+            "label": "yjs.scau.edu.cn",
+            "url": "https://yjs.scau.edu.cn/2019/0512/c3176a185425/page.htm"
+          }
+        ]
+      },
+      {
+        "title": "Hongjie Wang — “Hot Peppers, Sichuan Cuisine and the Revolutions in Modern China” (*World History Connected*)",
+        "sources": [
+          {
+            "label": "journals.gmu.edu",
+            "url": "https://journals.gmu.edu/whc/article/download/4424/2402?inline=1"
+          }
+        ]
+      },
+      {
+        "title": "Ministry of Commerce “Time-Honored Brands” museum and China Daily — Chen Mapo tofu",
+        "sources": [
+          {
+            "label": "lzhbwg.mofcom.gov.cn",
+            "url": "https://lzhbwg.mofcom.gov.cn/edi_ecms_web_front/thb/detail/f7ab3a6e7ea0426d8fd104fc7c93df79"
           },
           {
-            "label": "M. Imhof et al., “Reaching New Heights in Plastic Pollution—Preliminary Findings of Microplastics on Mount Everest,” One Earth 3.5 (2020), 621–630",
-            "url": "https://www.sciencedirect.com/science/article/pii/S2590332220305509"
+            "label": "chinadaily.com.cn",
+            "url": "https://www.chinadaily.com.cn/kindle/2015-09/06/content_21798522.htm"
+          }
+        ]
+      },
+      {
+        "title": "Academy of Chinese Studies — “中国有多少个菜系？” and “Chinese Culinary Culture and Eight Regional Cuisines”",
+        "sources": [
+          {
+            "label": "chiculture.org.hk",
+            "url": "https://chiculture.org.hk/en/node/2698"
           },
           {
-            "label": "doi.org",
-            "url": "https://doi.org/10.1016/j.oneear.2020.10.020"
+            "label": "chiculture.org.hk",
+            "url": "https://chiculture.org.hk/en/china-five-thousand-years/2699"
+          }
+        ]
+      },
+      {
+        "title": "Hangzhou CPPCC — overview of classic Hangzhou dishes",
+        "sources": [
+          {
+            "label": "hzzx.gov.cn",
+            "url": "https://www.hzzx.gov.cn/cshz/content/2022-09/28/content_8363764.htm"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "food",
+    "categoryName": "Food",
+    "slug": "flavors",
+    "title": "食物为什么有这么多味道？",
+    "titleEn": "Why Does Food Have So Many Flavors?",
+    "storyPath": "../../culture/books/food/flavors/",
+    "groups": [
+      {
+        "title": "Modern taste, smell, and oral sensation",
+        "sources": [
+          {
+            "label": "National Institute on Deafness and Other Communication Disorders, “Taste Disorders”",
+            "url": "https://www.nidcd.nih.gov/health/taste-disorders"
           },
           {
-            "label": "Mariusz Potocki et al., “Mt. Everest's highest glacier is a sentinel for accelerating ice loss,” npj Climate and Atmospheric Science 5, 7 (2022)",
-            "url": "https://www.nature.com/articles/s41612-022-00230-0"
+            "label": "InformedHealth.org / NCBI Bookshelf, “How does our sense of taste work?”",
+            "url": "https://www.ncbi.nlm.nih.gov/books/NBK279408/"
           },
           {
-            "label": "doi.org",
-            "url": "https://doi.org/10.1038/s41612-022-00230-0"
+            "label": "NCBI Bookshelf, “Trigeminal Chemoreception”",
+            "url": "https://www.ncbi.nlm.nih.gov/books/NBK11036/"
+          }
+        ]
+      },
+      {
+        "title": "Traditional five flavors as a historical framework",
+        "sources": [
+          {
+            "label": "Chinese Text Project, Huangdi Neijing, “Five Flavors”",
+            "url": "https://ctext.org/huangdi-neijing/wu-wei/ens"
           },
           {
-            "label": "UNESCO World Heritage Centre, “Sagarmatha National Park”",
-            "url": "https://whc.unesco.org/en/list/120/"
+            "label": "Lili Lai and Judith Farquhar, “Food and Medicine: Qualities and Efficacies in Chinese Ethnic Medicines,” University of Chicago Knowledge",
+            "url": "https://knowledge.uchicago.edu/records/y7n7t-vh546"
+          }
+        ]
+      },
+      {
+        "title": "Chili pepper chronology",
+        "sources": [
+          {
+            "label": "Brian R. Dott, The Chile Pepper in China: A Cultural Biography (Columbia University Press, 2020), JSTOR record",
+            "url": "https://www.jstor.org/stable/10.7312/dott19532"
+          },
+          {
+            "label": "Renmin University of China Institute of Qing History, research overview on the chili pepper’s introduction and spread",
+            "url": "https://iqh.ruc.edu.cn/old/qdhjylyjzx/xszl/hwyj/edf0ccf894ff45d4a9e72a4ece82b41e.htm"
+          },
+          {
+            "label": "Jean Andrews, “Chilli Peppers,” The Cambridge World History of Food",
+            "url": "https://www.cambridge.org/core/books/abs/cambridge-world-history-of-food/chilli-peppers/F955AD34FB4A4E66722A15E5D7A7B4C3"
+          }
+        ]
+      },
+      {
+        "title": "Regional cuisine and the limits of flavor maps",
+        "sources": [
+          {
+            "label": "Yu-Xiao Zhu et al., “Geography and Similarity of Regional Cuisines in China,” PLOS ONE 8(11), 2013",
+            "url": "https://journals.plos.org/plosone/article?id=10.1371%2Fjournal.pone.0079161"
+          },
+          {
+            "label": "Thomas O. Höllmann, The Land of the Five Flavors: A Cultural History of Chinese Cuisine (Columbia University Press, 2013)",
+            "url": "https://academic.oup.com/columbia-scholarship-online/book/23371"
+          }
+        ]
+      },
+      {
+        "title": "Pictured dishes",
+        "sources": [
+          {
+            "label": "Ministry of Culture and Tourism of China, Shanxi food-culture overview",
+            "url": "https://www.mct.gov.cn/whzx/qgwhxxlb/sx/202503/t20250313_958804.htm"
+          },
+          {
+            "label": "Wuxi Municipal Archives, history of Wuxi sauced ribs",
+            "url": "https://daj.wuxi.gov.cn/doc/2008/02/16/2426844.shtml"
+          },
+          {
+            "label": "Ministry of Commerce, China Time-Honored Brand Digital Museum, Lu Gao Jian profile",
+            "url": "https://lzhbwg.mofcom.gov.cn/edi_ecms_web_front/thb/detail/d9f5775a997742c190669cc7b4bfc18a"
+          },
+          {
+            "label": "Beijing Municipal Health Commission, “立夏时节，北京妇产医院营养师和您话苦瓜”",
+            "url": "https://wjw.beijing.gov.cn/bmfw_20143/jkzs/jksh/202505/t20250515_4089785.html"
+          },
+          {
+            "label": "Hebei Administration for Market Regulation, “一口尝尽江南春” (reprinted from China Discipline Inspection Daily)",
+            "url": "https://scjg.hebei.gov.cn/info/37984"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "food",
+    "categoryName": "Food",
+    "slug": "dumplings",
+    "title": "饺子的故事",
+    "titleEn": "The Story of Dumplings",
+    "storyPath": "../../culture/books/food/dumplings/",
+    "groups": [
+      {
+        "title": "唐代阿斯塔那墓葬中的面食实物",
+        "sources": [
+          {
+            "label": "新疆维吾尔自治区党委统战部，“吐鲁番烘焙师‘复刻’1400年前的唐代‘宝相花月饼’”",
+            "url": "https://www.xjtzb.gov.cn/static/content/st/2024-12-13/1317181797100167168.html"
+          }
+        ]
+      },
+      {
+        "title": "阿斯塔那的位置与保存环境",
+        "sources": [
+          {
+            "label": "吐鲁番市人民政府 / 吐鲁番地区文物局，“阿斯塔那古墓群”",
+            "url": "https://www.tlf.gov.cn/tlfs/c106449/201108/03e64c87d71f4bdfb26d19cb1c9d52bd.shtml"
+          }
+        ]
+      },
+      {
+        "title": "阿斯塔那饺子的数量与随葬环境",
+        "sources": [
+          {
+            "label": "上海外国语大学转载的中国新闻社专家采访，“从春秋到春节：饺子中包裹的中国故事”",
+            "url": "https://vie.shisu.edu.cn/resources/category2151/content14824"
+          }
+        ]
+      },
+      {
+        "title": "“馄饨”“角子”“扁食”与“饺子”的名称变化",
+        "sources": [
+          {
+            "label": "全国哲学社会科学工作办公室 / 《中国社会科学报》，张海媚，“会‘行走’的扁食”",
+            "url": "https://www.nopss.gov.cn/n1/2022/0127/c441752-32341298.html"
+          }
+        ]
+      },
+      {
+        "title": "“更岁交子”是后起解释",
+        "sources": [
+          {
+            "label": "上海师范大学转载《文汇报》，吴志雪、王弘治，“馒头沿丝路西传 皮塔饼沿丝路东传”",
+            "url": "https://xw.shnu.edu.cn/d8/99/c23266a841881/page.htm"
+          }
+        ]
+      },
+      {
+        "title": "张仲景“娇耳”故事",
+        "sources": [
+          {
+            "label": "浙江省社会科学界联合会，“食疗：辨体施膳 药食同源”",
+            "url": "https://www.zjskw.gov.cn/art/2025/8/21/art_1229536556_64988.html"
+          },
+          {
+            "label": "北京市妇女干部学校学习平台转载，“《三国志》为何不提张仲景？”",
+            "url": "https://study.bjwomen.gov.cn/thought/knowledge/2022/05/20/3981.shtml"
+          }
+        ]
+      },
+      {
+        "title": "春节饮食的地域差异",
+        "sources": [
+          {
+            "label": "上海市民政局，“春节传统食品溯源”",
+            "url": "https://mzj.sh.gov.cn/lnb-wsws/20240219/0fabcb012d7f420d97c6368fe1a6014d.html"
+          }
+        ]
+      },
+      {
+        "title": "儿童食物中的硬币、硬糖和坚果风险",
+        "sources": [
+          {
+            "label": "U.S. Centers for Disease Control and Prevention, “Nonfatal Choking-Related Episodes Among Children — United States, 2001”",
+            "url": "https://www.cdc.gov/mmwr/preview/mmwrhtml/mm5142a1.htm"
+          }
+        ]
+      },
+      {
+        "title": "世界各地包馅面食与传播边界",
+        "sources": [
+          {
+            "label": "Vazrick Nazari et al., Discover Food, “Evolution of the Italian pasta ripiena: the first steps toward a scientific classification”",
+            "url": "https://doi.org/10.1007/s44187-024-00136-1"
           }
         ]
       }
@@ -3341,8 +3917,8 @@ window.NIHAO_CULTURE_SOURCES = [
     "category": "geography",
     "categoryName": "Geography",
     "slug": "panda-hometown",
-    "title": "大熊猫的家：从育幼室到山林",
-    "titleEn": "A Giant Panda's Home: From the Nursery to the Mountain Forests",
+    "title": "大熊猫真正的家在哪里？",
+    "titleEn": "Where Is a Giant Panda's Real Home?",
     "storyPath": "../../culture/books/geography/panda-hometown/",
     "groups": [
       {
@@ -3382,6 +3958,19 @@ window.NIHAO_CULTURE_SOURCES = [
           {
             "label": "Smithsonian's National Zoo and Conservation Biology Institute, “Giant panda”",
             "url": "https://nationalzoo.si.edu/animals/giant-panda"
+          }
+        ]
+      },
+      {
+        "title": "What happens when bamboo flowers",
+        "sources": [
+          {
+            "label": "Donald G. Reid et al., “Giant Panda Ailuropoda melanoleuca Behaviour and Carrying Capacity Following a Bamboo Die-off,” Biological Conservation",
+            "url": "https://www.sciencedirect.com/science/article/pii/0006320789900815"
+          },
+          {
+            "label": "Guochun Li et al., “Changes of Foraging Patch Selection and Utilization by a Giant Panda after Bamboo Flowering,” Environmental Science and Pollution Research",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/28551740/"
           }
         ]
       },
@@ -3426,39 +4015,12 @@ window.NIHAO_CULTURE_SOURCES = [
     "category": "geography",
     "categoryName": "Geography",
     "slug": "guilin",
-    "title": "桂林：二十元纸币里藏着怎样的山水？",
-    "titleEn": "Guilin: Reading the Landscape on a 20-Yuan Note",
+    "title": "桂林：坐船走进一幅山水画",
+    "titleEn": "Guilin: A Boat Ride into a Landscape Painting",
     "storyPath": "../../culture/books/geography/guilin/",
     "groups": [
       {
-        "title": "UNESCO World Heritage Centre — South China Karst",
-        "sources": [
-          {
-            "label": "whc.unesco.org",
-            "url": "https://whc.unesco.org/en/list/1248"
-          }
-        ]
-      },
-      {
-        "title": "Sweeting, M. M. et al. — “Surface sediment characteristics and tower karst dissolution, Guilin, southern China” (*Geomorphology*)",
-        "sources": [
-          {
-            "label": "sciencedirect.com",
-            "url": "https://www.sciencedirect.com/science/article/abs/pii/S0169555X02001885"
-          }
-        ]
-      },
-      {
-        "title": "Guilin Lijiang Scenic Area official site — Overview of the Li River",
-        "sources": [
-          {
-            "label": "lijiangriver.com.cn",
-            "url": "https://www.lijiangriver.com.cn/page/article/zjlj.ljjj"
-          }
-        ]
-      },
-      {
-        "title": "People's Bank of China — Guide to the Fifth Series of Renminbi",
+        "title": "The 20-Yuan Banknote",
         "sources": [
           {
             "label": "guiyang.pbc.gov.cn",
@@ -3467,16 +4029,46 @@ window.NIHAO_CULTURE_SOURCES = [
         ]
       },
       {
-        "title": "U.S. National Park Service — *Cave Geology* (Carlsbad Caverns)",
+        "title": "A Boat from Guilin toward Yangshuo",
         "sources": [
           {
-            "label": "nps.gov",
-            "url": "https://www.nps.gov/cave/planyourvisit/upload/cave_geology.pdf"
+            "label": "lijiangriver.com.cn",
+            "url": "https://www.lijiangriver.com.cn/page/article/zjlj.ljjj"
           }
         ]
       },
       {
-        "title": "Princeton University Art Museum — Chinese Landscape Painting teaching resource",
+        "title": "Why Guilin Has Stone Towers",
+        "sources": [
+          {
+            "label": "whc.unesco.org",
+            "url": "https://whc.unesco.org/en/list/1248"
+          },
+          {
+            "label": "sciencedirect.com",
+            "url": "https://www.sciencedirect.com/science/article/abs/pii/S0169555X02001885"
+          }
+        ]
+      },
+      {
+        "title": "The American Karst Comparison and Cave Formations",
+        "sources": [
+          {
+            "label": "home.nps.gov",
+            "url": "https://home.nps.gov/maca/planyourvisit/mammoth-cave-map-guide.htm"
+          },
+          {
+            "label": "home.nps.gov",
+            "url": "https://home.nps.gov/maca/learn/nature/how-mammoth-cave-formed.htm"
+          },
+          {
+            "label": "nps.gov",
+            "url": "https://www.nps.gov/maca/learn/nature/stalactites-stalagmites-and-cave-formations.htm"
+          }
+        ]
+      },
+      {
+        "title": "Why the Boat Ride Feels Like a Landscape Scroll",
         "sources": [
           {
             "label": "static.artmuseum.princeton.edu",
@@ -3489,13 +4081,92 @@ window.NIHAO_CULTURE_SOURCES = [
   {
     "category": "geography",
     "categoryName": "Geography",
+    "slug": "highest-mountains",
+    "title": "珠穆朗玛峰：怎样量出世界最高峰？",
+    "titleEn": "Mount Everest: How Do You Measure the World's Highest Mountain?",
+    "storyPath": "../../culture/books/geography/highest-mountains/",
+    "groups": [
+      {
+        "title": "Location and the 2020 Height",
+        "sources": [
+          {
+            "label": "Ministry of Foreign Affairs of the People's Republic of China, “President Xi Jinping and Nepalese President Bidya Devi Bhandari Exchange Letters to Jointly Announce New Height of Mount Qomolangma,” December 8, 2020",
+            "url": "https://www.mfa.gov.cn/zyxw/202012/t20201208_348872.shtml"
+          },
+          {
+            "label": "Ministry of Foreign Affairs of Nepal, “Press Release on the Joint Announcement of the Height of Mount Sagarmatha/Zhumulangma,” December 8, 2020",
+            "url": "https://old.mofa.gov.np/news-and-activities/page/91/"
+          },
+          {
+            "label": "National Geographic Education, “Mount Everest”",
+            "url": "https://education.nationalgeographic.org/resource/mount-everest/"
+          }
+        ]
+      },
+      {
+        "title": "How Surveyors Measure Height",
+        "sources": [
+          {
+            "label": "U.S. National Oceanic and Atmospheric Administration, National Geodetic Survey, “Geodetic Leveling”",
+            "url": "https://geodesy.noaa.gov/heightmod/Leveling/"
+          },
+          {
+            "label": "U.S. National Oceanic and Atmospheric Administration, National Geodetic Survey, “Elevation Above Sea Level”",
+            "url": "https://geodesy.noaa.gov/PUBS_LIB/basgeo.pdf"
+          }
+        ]
+      },
+      {
+        "title": "Three Meanings of “Highest”",
+        "sources": [
+          {
+            "label": "U.S. National Oceanic and Atmospheric Administration, National Ocean Service, “What is the highest point on Earth as measured from Earth's center?”",
+            "url": "https://oceanservice.noaa.gov/facts/highestpoint.html"
+          }
+        ]
+      },
+      {
+        "title": "Ancient Sea Rock and the Making of the Himalayas",
+        "sources": [
+          {
+            "label": "Montana State University Everest Education Expedition, “Sea Floor to Summit”",
+            "url": "https://www.montana.edu/everest/resources/documents/lesson03/Lesson03_Sea_Floor_to_Summit.pdf"
+          },
+          {
+            "label": "U.S. Geological Survey, This Dynamic Earth: The Story of Plate Tectonics",
+            "url": "https://pubs.usgs.gov/gip/dynamic/understanding.html"
+          }
+        ]
+      },
+      {
+        "title": "Climate with Height and the 1953 Climb",
+        "sources": [
+          {
+            "label": "UNESCO World Heritage Centre, “Sagarmatha National Park”",
+            "url": "https://whc.unesco.org/en/list/120/"
+          },
+          {
+            "label": "Royal Geographical Society, “Mount Everest”",
+            "url": "https://www.rgs.org/schools/resources-for-schools/mountains-volcanoes-and-earthquakes/mount-everest"
+          },
+          {
+            "label": "Royal Geographical Society, “Everest 1953 Limited Edition Platinum Prints”",
+            "url": "https://www.rgs.org/our-collections/buy-and-license-images/platinum-prints/everest-1953"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "geography",
+    "categoryName": "Geography",
     "slug": "yangtze-yellow-river",
-    "title": "长江与黄河：两条“母亲河”讲的不只一个故事",
-    "titleEn": "The Yangtze and the Yellow River: More Than One Story",
+    "title": "长江和黄河：两条河为什么不一样？",
+    "titleEn": "The Yangtze and Yellow Rivers: Why Are They So Different?",
     "storyPath": "../../culture/books/geography/yangtze-yellow-river/",
     "groups": [
       {
-        "title": "National Development and Reform Commission — “Where Is Qinghai?”",
+        "title": "River Lengths, Sources, and Destinations",
         "sources": [
           {
             "label": "ndrc.gov.cn",
@@ -3504,16 +4175,7 @@ window.NIHAO_CULTURE_SOURCES = [
         ]
       },
       {
-        "title": "U.S. National Park Service — “Measuring the Mississippi”",
-        "sources": [
-          {
-            "label": "nps.gov",
-            "url": "https://www.nps.gov/miss/learn/nature/measmiss.htm"
-          }
-        ]
-      },
-      {
-        "title": "Yellow River Conservancy Commission — “Analysis of Yellow River Flood Control”",
+        "title": "Yellow River Mud and the Raised Lower Riverbed",
         "sources": [
           {
             "label": "yrcc.gov.cn",
@@ -3522,43 +4184,28 @@ window.NIHAO_CULTURE_SOURCES = [
         ]
       },
       {
-        "title": "U.S. Geological Survey — *Geographical Overview of the Three Gorges Dam and Reservoir, China: Geologic Hazards and Environmental Impacts*",
+        "title": "The Three Gorges Power Station and Ship Locks",
         "sources": [
           {
-            "label": "pubs.usgs.gov",
-            "url": "https://pubs.usgs.gov/of/2008/1241/"
+            "label": "usgs.gov",
+            "url": "https://www.usgs.gov/water-science-school/science/three-gorges-dam-worlds-largest-hydroelectric-plant"
+          },
+          {
+            "label": "eia.gov",
+            "url": "https://www.eia.gov/todayinenergy/detail.php?id=28392"
+          },
+          {
+            "label": "ctg.com.cn",
+            "url": "https://www.ctg.com.cn/ctgenglish/news_media/media56/2024082017122577429/index.html"
+          },
+          {
+            "label": "ctg.com.cn",
+            "url": "https://www.ctg.com.cn/cypc/zxgg99/sxgc3/index.html"
           }
         ]
       },
       {
-        "title": "Liu et al. — “Impacts of Land-Use Changes on the Lakes across the Yangtze Floodplain in China” (*Environmental Science & Technology*)",
-        "sources": [
-          {
-            "label": "pubs.acs.org",
-            "url": "https://pubs.acs.org/doi/10.1021/acs.est.6b04260"
-          }
-        ]
-      },
-      {
-        "title": "UNESCO World Heritage Centre — Archaeological Ruins of Liangzhu City",
-        "sources": [
-          {
-            "label": "whc.unesco.org",
-            "url": "https://whc.unesco.org/en/list/1592/"
-          }
-        ]
-      },
-      {
-        "title": "UNESCO — “Archaeological discovery of the Hongshan culture jade dragons”",
-        "sources": [
-          {
-            "label": "unesco.org",
-            "url": "https://www.unesco.org/en/articles/archaeological-discovery-hongshan-culture-jade-dragons"
-          }
-        ]
-      },
-      {
-        "title": "Deng et al. — “From Early Domesticated Rice of the Middle Yangtze Basin to Millet, Rice and Wheat Agriculture” (*PLOS ONE*)",
+        "title": "Broad Crop Patterns",
         "sources": [
           {
             "label": "pmc.ncbi.nlm.nih.gov",
@@ -3571,87 +4218,99 @@ window.NIHAO_CULTURE_SOURCES = [
   {
     "category": "politics",
     "categoryName": "Government & Society",
-    "slug": "emperor-day",
-    "title": "朱元璋为什么成了一个特别忙的皇帝？",
-    "titleEn": "Why Did Zhu Yuanzhang Become Such a Busy Emperor?",
-    "storyPath": "../../culture/books/politics/emperor-day/",
+    "slug": "imperial-exam-history",
+    "title": "一张考卷能打开多大的门？——中国古代怎样选官",
+    "titleEn": "How Far Could an Exam Open the Door? Choosing Officials in Imperial China",
+    "storyPath": "../../culture/books/politics/imperial-exam-history/",
     "groups": [
       {
-        "title": "Scope: One Emperor, Not a Composite Schedule",
+        "title": "Early Offices and the Growth of Bureaucracy",
         "sources": [
           {
-            "label": "Palace Museum, “洪武皇帝”",
-            "url": "https://www.dpm.org.cn/court/lineage/226244.html"
+            "label": "Li Feng, “Offices in Bronze Inscriptions and Western Zhou Government Administration,” Early China",
+            "url": "https://www.cambridge.org/core/journals/early-china/article/abs/offices-in-bronze-inscriptions-and-western-zhou-government-administration/55732DE5CD51B308243EC7233C630834"
           },
           {
-            "label": "Metropolitan Museum of Art, “The Yuan Revolution: Art and Dynastic Change”",
-            "url": "https://www.metmuseum.org/exhibitions/listings/2010/yuan-revolution"
+            "label": "Patricia Buckley Ebrey, “The Creation of the Bureaucratic Empire: The Qin and Han Dynasties,” The Cambridge Illustrated History of China",
+            "url": "https://www.cambridge.org/highereducation/books/the-cambridge-illustrated-history-of-china/B8415BCABB0218ABC80F4EFEEA9F5B2B/the-creation-of-the-bureaucratic-empire-the-qin-and-han-dynasties/CF561DCB42844178C1AECDB98E31B6FD"
           }
         ]
       },
       {
-        "title": "Childhood and the Buffalo Illustration",
+        "title": "Han Recruitment: Recommendation Plus Evaluation",
         "sources": [
           {
-            "label": "Palace Museum, “洪武皇帝”",
-            "url": "https://www.dpm.org.cn/court/lineage/226244.html"
+            "label": "Hans Bielenstein, “Civil Service Recruitment,” in The Bureaucracy of Han Times",
+            "url": "https://www.cambridge.org/core/books/abs/bureaucracy-of-han-times/civil-service-recruitment/9334C1BD771968D5690197868D38DF38"
           },
           {
-            "label": "Tian Shu, “严明以驭吏 宽裕以待民—朱元璋的为政之道,” published by Nankai University from Guangming Daily",
-            "url": "https://news.nankai.edu.cn/rwsd/system/2007/04/29/000006356.shtml"
+            "label": "Yuhua Wang, The Political Economy of China's Imperial Examination System, Cambridge University Press",
+            "url": "https://www.cambridge.org/core/elements/political-economy-of-chinas-imperial-examination-system/3DA0EC88AE5901AEE641FD5686C7F8B8"
           }
         ]
       },
       {
-        "title": "How Memorials Reached the Throne",
+        "title": "The Nine-Rank Rectifying System",
         "sources": [
           {
-            "label": "Palace Museum, “中书省”",
-            "url": "https://www.dpm.org.cn/court/system/236406.html"
+            "label": "Yuhua Wang, The Political Economy of China's Imperial Examination System, sections 1.4 and 2.2.2, Cambridge University Press",
+            "url": "https://www.cambridge.org/core/elements/political-economy-of-chinas-imperial-examination-system/3DA0EC88AE5901AEE641FD5686C7F8B8"
           }
         ]
       },
       {
-        "title": "Abolition of the Central Secretariat and Chancellorship",
+        "title": "Gradual Formation in the Sui and Tang",
         "sources": [
           {
-            "label": "Palace Museum, “中书省”",
-            "url": "https://www.dpm.org.cn/court/system/236406.html"
+            "label": "Yuhua Wang, The Political Economy of China's Imperial Examination System, sections 1.4 and 2.3, Cambridge University Press",
+            "url": "https://www.cambridge.org/core/elements/political-economy-of-chinas-imperial-examination-system/3DA0EC88AE5901AEE641FD5686C7F8B8"
           },
           {
-            "label": "Zhang Yu, “明初六部体制的确立与定型,” 史学月刊, hosted by Henan University",
-            "url": "https://sxyk.henu.edu.cn/info/1014/4333.htm"
-          }
-        ]
-      },
-      {
-        "title": "The Eight-Day Count in 1384",
-        "sources": [
-          {
-            "label": "Ming Taizu Shilu (Veritable Records of Ming Taizu), volume 165, Hongwu 17, ninth month, cited in Huang Chang-chien, “論皇明祖訓錄所記明初官制”",
-            "url": "https://www11.ihp.sinica.edu.tw/storage/w2_file/4116KmGGnQv.pdf"
+            "label": "Nicolas Tackett, “The Evolution of the Tang Political Elite and its Marriage Network,” Journal of Chinese History",
+            "url": "https://www.cambridge.org/core/journals/journal-of-chinese-history/article/evolution-of-the-tang-political-elite-and-its-marriage-network/6718E008F3DA2D235944DEBE6559B408"
           },
           {
-            "label": "Chinese Academy of Social Sciences Institute of History, “明初政治新探：以诏令为中心”",
-            "url": "https://lishisuo.cssn.cn/xsyj/ms/202001/t20200116_5078465.shtml"
+            "label": "Nicolas Tackett, “The Niu-Li Factional Strife: The Origins of a Historiographical Fiction,” Journal of Chinese History",
+            "url": "https://www.cambridge.org/core/journals/journal-of-chinese-history/article/niuli-factional-strife-the-origins-of-a-historiographical-fiction/1845DBAD83C09083145C816B8DE768E6"
           }
         ]
       },
       {
-        "title": "Assistants, Grand Secretaries, and the Later Cabinet",
+        "title": "Song Expansion, Anonymity, and Continuing Privilege",
         "sources": [
           {
-            "label": "Palace Museum, “内阁”",
-            "url": "https://www.dpm.org.cn/court/system/236394.html"
+            "label": "“Scholar-Officials and the Civil Service Examinations,” Columbia University, Asia for Educators",
+            "url": "https://afe.easia.columbia.edu/songdynasty-module/confucian-scholar.html"
+          },
+          {
+            "label": "Paul Jakov Smith, “Sung Government and Politics,” in The Cambridge History of China",
+            "url": "https://www.cambridge.org/core/books/cambridge-history-of-china/sung-government-and-politics/B360D3EB6D72ADEE74E46FD8570548EC"
+          },
+          {
+            "label": "History of Song, examination administration passages, Chinese Text Project",
+            "url": "https://ctext.org/wiki.pl?chapter=817325&if=en"
           }
         ]
       },
       {
-        "title": "Severity and the Limits of the “Hardworking Emperor” Frame",
+        "title": "Ming–Qing Examinations, Quotas, and Cultural Resources",
         "sources": [
           {
-            "label": "Metropolitan Museum of Art, “The Yuan Revolution: Art and Dynastic Change”",
-            "url": "https://www.metmuseum.org/exhibitions/listings/2010/yuan-revolution"
+            "label": "Benjamin A. Elman, A Cultural History of Civil Examinations in Late Imperial China, Princeton University Press",
+            "url": "https://www.princeton.edu/~elman/documents/Elman%2CA%20Cultural%20History%20of%20Civil%20Examinations%20in%20Late%20Imperial%20China.pdf"
+          },
+          {
+            "label": "Benjamin A. Elman, “Examination System, 1800–1905,” Encyclopedia of Modern China",
+            "url": "https://www.princeton.edu/~elman/documents/Examination%20System%2C%201800-1905.pdf"
+          }
+        ]
+      },
+      {
+        "title": "Abolition in 1905",
+        "sources": [
+          {
+            "label": "“China in the 19th Century,” Columbia University, Asia for Educators",
+            "url": "https://afe.easia.columbia.edu/cosmos/bgov/19th.htm"
           }
         ]
       }
@@ -3661,8 +4320,8 @@ window.NIHAO_CULTURE_SOURCES = [
     "category": "politics",
     "categoryName": "Government & Society",
     "slug": "six-arts",
-    "title": "古代的六种本领",
-    "titleEn": "Six Skills from Long Ago",
+    "title": "六艺：古代学生真的一天学六门课吗？",
+    "titleEn": "The Six Arts: Did Ancient Students Really Study All Six in One Day?",
     "storyPath": "../../culture/books/politics/six-arts/",
     "groups": [
       {
@@ -3762,100 +4421,9 @@ window.NIHAO_CULTURE_SOURCES = [
   {
     "category": "politics",
     "categoryName": "Government & Society",
-    "slug": "exam-content",
-    "title": "古代考试都考什么？",
-    "titleEn": "What Was on an Ancient Exam?",
-    "storyPath": "../../culture/books/politics/exam-content/",
-    "groups": [
-      {
-        "title": "Tang Examination Categories and the Changing *Jinshi* Exam",
-        "sources": [
-          {
-            "label": "Xin Tang Shu (New Book of Tang), “Selection System I,” Chinese Text Project",
-            "url": "https://ctext.org/wiki.pl?chapter=304555&if=en"
-          },
-          {
-            "label": "Nathan Vedal, “Never Taking a Shortcut: Examination Poetry of the Tang Dynasty,” Chinese Literature: Essays, Articles, Reviews",
-            "url": "https://www.tandfonline.com/doi/full/10.1179/0737503415Z.00000000014"
-          },
-          {
-            "label": "“论唐代进士科考试内容的嬗变,” 华东师范大学学报（哲学社会科学版）",
-            "url": "https://xbzs.ecnu.edu.cn/CN/10.16382/j.cnki.1000-5579.2001.03.011"
-          }
-        ]
-      },
-      {
-        "title": "Northern Song Subjects and the Wang Anshi Reforms",
-        "sources": [
-          {
-            "label": "Zhang Xiqing, “论王安石的贡举改革,” 北京大学学报（哲学社会科学版）",
-            "url": "https://ccj.pku.edu.cn/Article/DownLoad?id=271015516&type=ArticleFile"
-          },
-          {
-            "label": "Liu Pei, “北宋科场改革与律赋沉浮——以熙宁变法为中心,” Peking University journal platform",
-            "url": "https://ccj.pku.edu.cn/article/info?aid=113680099"
-          },
-          {
-            "label": "Zhuge Yibing, “北宋神宗朝科举制度之演变,” hosted by Henan University, originally summarized in 历史与社会",
-            "url": "https://sxyk.henu.edu.cn/info/1014/3069.htm"
-          }
-        ]
-      },
-      {
-        "title": "Ming Examination Sessions and the Eight-Legged Essay",
-        "sources": [
-          {
-            "label": "Ming Shi (History of Ming), “Selection System II,” Chinese Text Project",
-            "url": "https://ctext.org/wiki.pl?chapter=287810&if=en"
-          },
-          {
-            "label": "National Museum of China, “明万历三十二年余懋孳会试朱卷”",
-            "url": "https://www.chnmuseum.cn/zp/zpml/gjwxbt/202008/t20200824_247146.shtml"
-          }
-        ]
-      },
-      {
-        "title": "Qing Subjects and the Addition of Regulated Poetry",
-        "sources": [
-          {
-            "label": "Renmin University of China, Qing History Journal, article abstract on the 1757 addition of regulated verse to the examinations",
-            "url": "https://qsyj.ruc.edu.cn/CN/abstract/abstract2534.shtml"
-          },
-          {
-            "label": "Chen Shengzheng, “清代科场诗文的共通性探论,” 华东师范大学学报",
-            "url": "https://tsla.ecnu.edu.cn/CN/Y2023/V43/I5/62"
-          }
-        ]
-      },
-      {
-        "title": "Three Sessions, Timing, and Examination Cells",
-        "sources": [
-          {
-            "label": "National Museum of China, “光绪年间会试朱卷”",
-            "url": "https://www.chnmuseum.cn/zp/zpml/201812/t20181218_24853.shtml"
-          },
-          {
-            "label": "National Museum of China, “同治九年顺天府发给段溥源的乡试卷票”",
-            "url": "https://www.chnmuseum.cn/zp/zpml/gjwxbt/202008/t20200824_247151.shtml"
-          },
-          {
-            "label": "Henan University, “河南贡院：中国科举考试终结地,” reprinting Henan Daily",
-            "url": "https://xyh.henu.edu.cn/sjhd/mlws/show-2930.html"
-          },
-          {
-            "label": "Academia Sinica Museum of the Institute of History and Philology, “貢院號舍透視圖”",
-            "url": "https://museum.sinica.edu.tw/exhibition/132/item/1084/"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "category": "politics",
-    "categoryName": "Government & Society",
     "slug": "yu-the-great",
-    "title": "大禹怎样给洪水找路？",
-    "titleEn": "How Did Yu Make a Path for the Water?",
+    "title": "大禹治水：洪水、英雄与王朝的记忆",
+    "titleEn": "Yu the Great: A Flood, a Hero, and the Memory of a Dynasty",
     "storyPath": "../../culture/books/politics/yu-the-great/",
     "groups": [
       {
@@ -3956,99 +4524,178 @@ window.NIHAO_CULTURE_SOURCES = [
   {
     "category": "politics",
     "categoryName": "Government & Society",
-    "slug": "imperial-exam-history",
-    "title": "谁能走进当官的大门？",
-    "titleEn": "Who Could Walk Through the Government Door?",
-    "storyPath": "../../culture/books/politics/imperial-exam-history/",
+    "slug": "emperor-day",
+    "title": "朱元璋为什么成了一个特别忙的皇帝？",
+    "titleEn": "Why Did Zhu Yuanzhang Become Such a Busy Emperor?",
+    "storyPath": "../../culture/books/politics/emperor-day/",
     "groups": [
       {
-        "title": "Early Offices and the Growth of Bureaucracy",
+        "title": "Scope: One Emperor, Not a Composite Schedule",
         "sources": [
           {
-            "label": "Li Feng, “Offices in Bronze Inscriptions and Western Zhou Government Administration,” Early China",
-            "url": "https://www.cambridge.org/core/journals/early-china/article/abs/offices-in-bronze-inscriptions-and-western-zhou-government-administration/55732DE5CD51B308243EC7233C630834"
+            "label": "Palace Museum, “洪武皇帝”",
+            "url": "https://www.dpm.org.cn/court/lineage/226244.html"
           },
           {
-            "label": "Patricia Buckley Ebrey, “The Creation of the Bureaucratic Empire: The Qin and Han Dynasties,” The Cambridge Illustrated History of China",
-            "url": "https://www.cambridge.org/highereducation/books/the-cambridge-illustrated-history-of-china/B8415BCABB0218ABC80F4EFEEA9F5B2B/the-creation-of-the-bureaucratic-empire-the-qin-and-han-dynasties/CF561DCB42844178C1AECDB98E31B6FD"
+            "label": "Metropolitan Museum of Art, “The Yuan Revolution: Art and Dynastic Change”",
+            "url": "https://www.metmuseum.org/exhibitions/listings/2010/yuan-revolution"
           }
         ]
       },
       {
-        "title": "Han Recruitment: Recommendation Plus Evaluation",
+        "title": "Childhood and the Buffalo Illustration",
         "sources": [
           {
-            "label": "Hans Bielenstein, “Civil Service Recruitment,” in The Bureaucracy of Han Times",
-            "url": "https://www.cambridge.org/core/books/abs/bureaucracy-of-han-times/civil-service-recruitment/9334C1BD771968D5690197868D38DF38"
+            "label": "Palace Museum, “洪武皇帝”",
+            "url": "https://www.dpm.org.cn/court/lineage/226244.html"
           },
           {
-            "label": "Yuhua Wang, The Political Economy of China's Imperial Examination System, Cambridge University Press",
-            "url": "https://www.cambridge.org/core/elements/political-economy-of-chinas-imperial-examination-system/3DA0EC88AE5901AEE641FD5686C7F8B8"
+            "label": "Tian Shu, “严明以驭吏 宽裕以待民—朱元璋的为政之道,” published by Nankai University from Guangming Daily",
+            "url": "https://news.nankai.edu.cn/rwsd/system/2007/04/29/000006356.shtml"
           }
         ]
       },
       {
-        "title": "The Nine-Rank Rectifying System",
+        "title": "How Memorials Reached the Throne",
         "sources": [
           {
-            "label": "Yuhua Wang, The Political Economy of China's Imperial Examination System, sections 1.4 and 2.2.2, Cambridge University Press",
-            "url": "https://www.cambridge.org/core/elements/political-economy-of-chinas-imperial-examination-system/3DA0EC88AE5901AEE641FD5686C7F8B8"
+            "label": "Palace Museum, “中书省”",
+            "url": "https://www.dpm.org.cn/court/system/236406.html"
           }
         ]
       },
       {
-        "title": "Gradual Formation in the Sui and Tang",
+        "title": "Abolition of the Central Secretariat and Chancellorship",
         "sources": [
           {
-            "label": "Yuhua Wang, The Political Economy of China's Imperial Examination System, sections 1.4 and 2.3, Cambridge University Press",
-            "url": "https://www.cambridge.org/core/elements/political-economy-of-chinas-imperial-examination-system/3DA0EC88AE5901AEE641FD5686C7F8B8"
+            "label": "Palace Museum, “中书省”",
+            "url": "https://www.dpm.org.cn/court/system/236406.html"
           },
           {
-            "label": "Nicolas Tackett, “The Evolution of the Tang Political Elite and its Marriage Network,” Journal of Chinese History",
-            "url": "https://www.cambridge.org/core/journals/journal-of-chinese-history/article/evolution-of-the-tang-political-elite-and-its-marriage-network/6718E008F3DA2D235944DEBE6559B408"
-          },
-          {
-            "label": "Nicolas Tackett, “The Niu-Li Factional Strife: The Origins of a Historiographical Fiction,” Journal of Chinese History",
-            "url": "https://www.cambridge.org/core/journals/journal-of-chinese-history/article/niuli-factional-strife-the-origins-of-a-historiographical-fiction/1845DBAD83C09083145C816B8DE768E6"
+            "label": "Zhang Yu, “明初六部体制的确立与定型,” 史学月刊, hosted by Henan University",
+            "url": "https://sxyk.henu.edu.cn/info/1014/4333.htm"
           }
         ]
       },
       {
-        "title": "Song Expansion, Anonymity, and Continuing Privilege",
+        "title": "The Eight-Day Count in 1384",
         "sources": [
           {
-            "label": "“Scholar-Officials and the Civil Service Examinations,” Columbia University, Asia for Educators",
-            "url": "https://afe.easia.columbia.edu/songdynasty-module/confucian-scholar.html"
+            "label": "Ming Taizu Shilu (Veritable Records of Ming Taizu), volume 165, Hongwu 17, ninth month, cited in Huang Chang-chien, “論皇明祖訓錄所記明初官制”",
+            "url": "https://www11.ihp.sinica.edu.tw/storage/w2_file/4116KmGGnQv.pdf"
           },
           {
-            "label": "Paul Jakov Smith, “Sung Government and Politics,” in The Cambridge History of China",
-            "url": "https://www.cambridge.org/core/books/cambridge-history-of-china/sung-government-and-politics/B360D3EB6D72ADEE74E46FD8570548EC"
-          },
-          {
-            "label": "History of Song, examination administration passages, Chinese Text Project",
-            "url": "https://ctext.org/wiki.pl?chapter=817325&if=en"
+            "label": "Chinese Academy of Social Sciences Institute of History, “明初政治新探：以诏令为中心”",
+            "url": "https://lishisuo.cssn.cn/xsyj/ms/202001/t20200116_5078465.shtml"
           }
         ]
       },
       {
-        "title": "Ming–Qing Examinations, Quotas, and Cultural Resources",
+        "title": "Assistants, Grand Secretaries, and the Later Cabinet",
         "sources": [
           {
-            "label": "Benjamin A. Elman, A Cultural History of Civil Examinations in Late Imperial China, Princeton University Press",
-            "url": "https://www.princeton.edu/~elman/documents/Elman%2CA%20Cultural%20History%20of%20Civil%20Examinations%20in%20Late%20Imperial%20China.pdf"
-          },
-          {
-            "label": "Benjamin A. Elman, “Examination System, 1800–1905,” Encyclopedia of Modern China",
-            "url": "https://www.princeton.edu/~elman/documents/Examination%20System%2C%201800-1905.pdf"
+            "label": "Palace Museum, “内阁”",
+            "url": "https://www.dpm.org.cn/court/system/236394.html"
           }
         ]
       },
       {
-        "title": "Abolition in 1905",
+        "title": "Severity and the Limits of the “Hardworking Emperor” Frame",
         "sources": [
           {
-            "label": "“China in the 19th Century,” Columbia University, Asia for Educators",
-            "url": "https://afe.easia.columbia.edu/cosmos/bgov/19th.htm"
+            "label": "Metropolitan Museum of Art, “The Yuan Revolution: Art and Dynastic Change”",
+            "url": "https://www.metmuseum.org/exhibitions/listings/2010/yuan-revolution"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "politics",
+    "categoryName": "Government & Society",
+    "slug": "exam-content",
+    "title": "科举到底考什么？一张考卷的千年变化",
+    "titleEn": "What Did the Imperial Exams Test? A Thousand Years of Changing Questions",
+    "storyPath": "../../culture/books/politics/exam-content/",
+    "groups": [
+      {
+        "title": "Tang Examination Categories and the Changing *Jinshi* Exam",
+        "sources": [
+          {
+            "label": "Xin Tang Shu (New Book of Tang), “Selection System I,” Chinese Text Project",
+            "url": "https://ctext.org/wiki.pl?chapter=304555&if=en"
+          },
+          {
+            "label": "Nathan Vedal, “Never Taking a Shortcut: Examination Poetry of the Tang Dynasty,” Chinese Literature: Essays, Articles, Reviews",
+            "url": "https://www.tandfonline.com/doi/full/10.1179/0737503415Z.00000000014"
+          },
+          {
+            "label": "“论唐代进士科考试内容的嬗变,” 华东师范大学学报（哲学社会科学版）",
+            "url": "https://xbzs.ecnu.edu.cn/CN/10.16382/j.cnki.1000-5579.2001.03.011"
+          }
+        ]
+      },
+      {
+        "title": "Northern Song Subjects and the Wang Anshi Reforms",
+        "sources": [
+          {
+            "label": "Zhang Xiqing, “论王安石的贡举改革,” 北京大学学报（哲学社会科学版）",
+            "url": "https://ccj.pku.edu.cn/Article/DownLoad?id=271015516&type=ArticleFile"
+          },
+          {
+            "label": "Liu Pei, “北宋科场改革与律赋沉浮——以熙宁变法为中心,” Peking University journal platform",
+            "url": "https://ccj.pku.edu.cn/article/info?aid=113680099"
+          },
+          {
+            "label": "Zhuge Yibing, “北宋神宗朝科举制度之演变,” hosted by Henan University, originally summarized in 历史与社会",
+            "url": "https://sxyk.henu.edu.cn/info/1014/3069.htm"
+          }
+        ]
+      },
+      {
+        "title": "Ming Examination Sessions and the Eight-Legged Essay",
+        "sources": [
+          {
+            "label": "Ming Shi (History of Ming), “Selection System II,” Chinese Text Project",
+            "url": "https://ctext.org/wiki.pl?chapter=287810&if=en"
+          },
+          {
+            "label": "National Museum of China, “明万历三十二年余懋孳会试朱卷”",
+            "url": "https://www.chnmuseum.cn/zp/zpml/gjwxbt/202008/t20200824_247146.shtml"
+          }
+        ]
+      },
+      {
+        "title": "Qing Subjects and the Addition of Regulated Poetry",
+        "sources": [
+          {
+            "label": "Renmin University of China, Qing History Journal, article abstract on the 1757 addition of regulated verse to the examinations",
+            "url": "https://qsyj.ruc.edu.cn/CN/abstract/abstract2534.shtml"
+          },
+          {
+            "label": "Chen Shengzheng, “清代科场诗文的共通性探论,” 华东师范大学学报",
+            "url": "https://tsla.ecnu.edu.cn/CN/Y2023/V43/I5/62"
+          }
+        ]
+      },
+      {
+        "title": "Three Sessions, Timing, and Examination Cells",
+        "sources": [
+          {
+            "label": "National Museum of China, “光绪年间会试朱卷”",
+            "url": "https://www.chnmuseum.cn/zp/zpml/201812/t20181218_24853.shtml"
+          },
+          {
+            "label": "National Museum of China, “同治九年顺天府发给段溥源的乡试卷票”",
+            "url": "https://www.chnmuseum.cn/zp/zpml/gjwxbt/202008/t20200824_247151.shtml"
+          },
+          {
+            "label": "Henan University, “河南贡院：中国科举考试终结地,” reprinting Henan Daily",
+            "url": "https://xyh.henu.edu.cn/sjhd/mlws/show-2930.html"
+          },
+          {
+            "label": "Academia Sinica Museum of the Institute of History and Philology, “貢院號舍透視圖”",
+            "url": "https://museum.sinica.edu.tw/exhibition/132/item/1084/"
           }
         ]
       }
@@ -4058,8 +4705,8 @@ window.NIHAO_CULTURE_SOURCES = [
     "category": "inventions",
     "categoryName": "Inventions & Technology",
     "slug": "compass",
-    "title": "指南针为什么总能找到路？",
-    "titleEn": "Why Can a Compass Always Find the Way?",
+    "title": "一块会指方向的石头，怎样变成海上的工具？",
+    "titleEn": "How Did a Direction-Finding Stone Become a Tool for the Sea?",
     "storyPath": "../../culture/books/inventions/compass/",
     "groups": [
       {
@@ -4156,8 +4803,8 @@ window.NIHAO_CULTURE_SOURCES = [
     "category": "inventions",
     "categoryName": "Inventions & Technology",
     "slug": "gunpowder",
-    "title": "火药的发明：从炼丹炉到烟花",
-    "titleEn": "Gunpowder: From Alchemy to Fireworks",
+    "title": "寻找长生不老，为什么做出了会爆炸的东西？",
+    "titleEn": "How Did a Search for Immortality Lead to Something Explosive?",
     "storyPath": "../../culture/books/inventions/gunpowder/",
     "groups": [
       {
@@ -4308,8 +4955,8 @@ window.NIHAO_CULTURE_SOURCES = [
     "category": "inventions",
     "categoryName": "Inventions & Technology",
     "slug": "paper-making",
-    "title": "纸是怎么从树皮变出来的？",
-    "titleEn": "How Did Tree Bark Become Paper?",
+    "title": "蔡伦真的是第一个造纸的人吗？",
+    "titleEn": "Was Cai Lun Really the First Person to Make Paper?",
     "storyPath": "../../culture/books/inventions/paper-making/",
     "groups": [
       {
@@ -4435,10 +5082,404 @@ window.NIHAO_CULTURE_SOURCES = [
     ]
   },
   {
+    "category": "literature",
+    "categoryName": "Literature",
+    "slug": "shan-hai-jing",
+    "title": "《山海经》：山的那边住着什么？",
+    "titleEn": "Shan Hai Jing: What Lives Beyond the Next Mountain?",
+    "storyPath": "../../culture/books/literature/shan-hai-jing/",
+    "groups": [
+      {
+        "title": "When and how the book took shape",
+        "sources": [
+          {
+            "label": "Cambridge University Press, Time out of Joint, chapter excerpt",
+            "url": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/64EA64CE425951C77D90340A7F5AE534/9781108425728c1_20-74.pdf/time-out-of-joint.pdf"
+          }
+        ]
+      },
+      {
+        "title": "The route through the Southern Mountains",
+        "sources": [
+          {
+            "label": "Wikisource, Shan Hai Jing, “Classic of the Southern Mountains”",
+            "url": "https://zh.wikisource.org/wiki/%E5%B1%B1%E6%B5%B7%E7%B6%93/%E5%8D%97%E5%B1%B1%E7%B6%93"
+          }
+        ]
+      },
+      {
+        "title": "Jingwei carries stones to the sea",
+        "sources": [
+          {
+            "label": "Wikisource, Shan Hai Jing, “Classic of the Northern Mountains”",
+            "url": "https://zh.wikisource.org/wiki/%E5%B1%B1%E6%B5%B7%E7%B6%93/%E5%8C%97%E5%B1%B1%E7%B6%93"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "literature",
+    "categoryName": "Literature",
+    "slug": "water-margin",
+    "title": "《水浒传》：梁山好汉的故事",
+    "titleEn": "Water Margin: Heroes of Mount Liang",
+    "storyPath": "../../culture/books/literature/water-margin/",
+    "groups": [
+      {
+        "title": "Setting, Mount Liang, and the shape of the story",
+        "sources": [
+          {
+            "label": "Library of Congress, “The Story of Water Margin”",
+            "url": "https://blogs.loc.gov/international-collections/2017/07/the-story-of-water-margin-%E6%B0%B4%E6%BB%B8%E5%82%B3/"
+          }
+        ]
+      },
+      {
+        "title": "The 108 spirits",
+        "sources": [
+          {
+            "label": "Wikisource, Water Margin (100-chapter edition), Chapter 1",
+            "url": "https://zh.wikisource.org/wiki/%E6%B0%B4%E6%BB%B8%E5%82%B3_%28100%E5%9B%9E%E6%9C%AC%29/%E7%AC%AC001%E5%9B%9E"
+          }
+        ]
+      },
+      {
+        "title": "Lin Chong is driven to Mount Liang",
+        "sources": [
+          {
+            "label": "Wikisource, Water Margin (100-chapter edition), Chapter 7",
+            "url": "https://zh.wikisource.org/wiki/%E6%B0%B4%E6%BB%B8%E5%82%B3_%28100%E5%9B%9E%E6%9C%AC%29/%E7%AC%AC007%E5%9B%9E"
+          },
+          {
+            "label": "Wikisource, Water Margin (100-chapter edition), Chapter 10",
+            "url": "https://zh.wikisource.org/wiki/%E6%B0%B4%E6%BB%B8%E5%82%B3_%28100%E5%9B%9E%E6%9C%AC%29/%E7%AC%AC010%E5%9B%9E"
+          }
+        ]
+      },
+      {
+        "title": "Wu Song and the tiger at Jingyang Ridge",
+        "sources": [
+          {
+            "label": "Wikisource, Water Margin (100-chapter edition), Chapter 23",
+            "url": "https://zh.wikisource.org/wiki/%E6%B0%B4%E6%BB%B8%E5%82%B3_%28100%E5%9B%9E%E6%9C%AC%29/%E7%AC%AC023%E5%9B%9E"
+          }
+        ]
+      },
+      {
+        "title": "Life at the stronghold and Song Jiang's plan",
+        "sources": [
+          {
+            "label": "Wikisource, Water Margin (100-chapter edition), Chapter 21",
+            "url": "https://zh.wikisource.org/wiki/%E6%B0%B4%E6%BB%B8%E5%82%B3_%28100%E5%9B%9E%E6%9C%AC%29/%E7%AC%AC021%E5%9B%9E"
+          },
+          {
+            "label": "Wikisource, Water Margin (120-chapter edition), Chapter 71",
+            "url": "https://zh.wikisource.org/wiki/%E6%B0%B4%E6%BB%B8%E5%82%B3_%28120%E5%9B%9E%E6%9C%AC%29/%E7%AC%AC071%E5%9B%9E"
+          }
+        ]
+      },
+      {
+        "title": "Amnesty, campaigns, and the poisoned wine",
+        "sources": [
+          {
+            "label": "Wikisource, Water Margin (120-chapter edition), Chapter 82",
+            "url": "https://zh.wikisource.org/wiki/%E6%B0%B4%E6%BB%B8%E5%82%B3_%28120%E5%9B%9E%E6%9C%AC%29/%E7%AC%AC082%E5%9B%9E"
+          },
+          {
+            "label": "Wikisource, Water Margin (100-chapter edition), Chapter 100",
+            "url": "https://zh.wikisource.org/wiki/%E6%B0%B4%E6%BB%B8%E5%82%B3_%28100%E5%9B%9E%E6%9C%AC%29/%E7%AC%AC100%E5%9B%9E"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "literature",
+    "categoryName": "Literature",
+    "slug": "dream-red-chamber",
+    "title": "《红楼梦》：大观园里的世界",
+    "titleEn": "Dream of the Red Chamber: A World Inside Grand View Garden",
+    "storyPath": "../../culture/books/literature/dream-red-chamber/",
+    "groups": [
+      {
+        "title": "Qing background, the noble household, and the stone",
+        "sources": [
+          {
+            "label": "National Palace Museum, “The Splendor of Dream of the Red Chamber”",
+            "url": "https://www.npm.gov.tw/Publications-Content.aspx?l=2&sno=04013689"
+          },
+          {
+            "label": "Metropolitan Museum of Art, “Cultivated Landscapes”",
+            "url": "https://www.metmuseum.org/exhibitions/listings/2002/cultivated-landscapes"
+          },
+          {
+            "label": "Wikisource, Dream of the Red Chamber, Chapter 1",
+            "url": "https://zh.wikisource.org/wiki/%E7%B4%85%E6%A8%93%E5%A4%A2/%E7%AC%AC001%E5%9B%9E"
+          }
+        ]
+      },
+      {
+        "title": "Daiyu's arrival and the three cousins",
+        "sources": [
+          {
+            "label": "Wikisource, Dream of the Red Chamber, Chapter 3",
+            "url": "https://zh.wikisource.org/wiki/%E7%B4%85%E6%A8%93%E5%A4%A2/%E7%AC%AC003%E5%9B%9E"
+          },
+          {
+            "label": "University of Minnesota Libraries, “Cousins in the Garden”",
+            "url": "https://open.lib.umn.edu/redchamber/chapter/cousins-in-the-garden/"
+          },
+          {
+            "label": "University of Minnesota Libraries, “Jia Baoyu,” “Lin Daiyu,” and “Xue Baochai”",
+            "url": "https://open.lib.umn.edu/redchamber/chapter/jia-baoyu/"
+          },
+          {
+            "label": "open.lib.umn.edu",
+            "url": "https://open.lib.umn.edu/redchamber/chapter/lin-daiyu/"
+          },
+          {
+            "label": "open.lib.umn.edu",
+            "url": "https://open.lib.umn.edu/redchamber/chapter/xue-baochai/"
+          }
+        ]
+      },
+      {
+        "title": "Why Grand View Garden was built",
+        "sources": [
+          {
+            "label": "Wikisource, Dream of the Red Chamber, Chapter 16",
+            "url": "https://zh.wikisource.org/wiki/%E7%B4%85%E6%A8%93%E5%A4%A2/%E7%AC%AC016%E5%9B%9E"
+          },
+          {
+            "label": "National Palace Museum, “The Stately Elegance—The Splendor of Dream of the Red Chamber”",
+            "url": "https://theme.npm.edu.tw/NPMdreamredchamber/en/page-2"
+          },
+          {
+            "label": "Wikisource, Dream of the Red Chamber, Chapter 18",
+            "url": "https://zh.wikisource.org/wiki/%E7%B4%85%E6%A8%93%E5%A4%A2/%E7%AC%AC018%E5%9B%9E"
+          },
+          {
+            "label": "Wikisource, Dream of the Red Chamber, Chapter 23",
+            "url": "https://zh.wikisource.org/wiki/%E7%B4%85%E6%A8%93%E5%A4%A2/%E7%AC%AC023%E5%9B%9E"
+          }
+        ]
+      },
+      {
+        "title": "Daiyu buries the flowers",
+        "sources": [
+          {
+            "label": "Wikisource, Dream of the Red Chamber, Chapter 27",
+            "url": "https://zh.wikisource.org/wiki/%E7%B4%85%E6%A8%93%E5%A4%A2/%E7%AC%AC027%E5%9B%9E"
+          },
+          {
+            "label": "University of Minnesota Libraries, “Lin Daiyu”",
+            "url": "https://open.lib.umn.edu/redchamber/chapter/lin-daiyu/"
+          }
+        ]
+      },
+      {
+        "title": "The family falls, the marriage is arranged, and Baoyu leaves",
+        "sources": [
+          {
+            "label": "Wikisource, Dream of the Red Chamber, Chapter 97",
+            "url": "https://zh.wikisource.org/wiki/%E7%B4%85%E6%A8%93%E5%A4%A2/%E7%AC%AC097%E5%9B%9E"
+          },
+          {
+            "label": "Wikisource, Dream of the Red Chamber, Chapter 105",
+            "url": "https://zh.wikisource.org/wiki/%E7%B4%85%E6%A8%93%E5%A4%A2/%E7%AC%AC105%E5%9B%9E"
+          },
+          {
+            "label": "Wikisource, Dream of the Red Chamber, Chapter 120",
+            "url": "https://zh.wikisource.org/wiki/%E7%B4%85%E6%A8%93%E5%A4%A2/%E7%AC%AC120%E5%9B%9E"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "literature",
+    "categoryName": "Literature",
+    "slug": "journey-to-west",
+    "title": "《西游记》：跟着猴王去冒险",
+    "titleEn": "Journey to the West: Adventure with the Monkey King",
+    "storyPath": "../../culture/books/literature/journey-to-west/",
+    "groups": [
+      {
+        "title": "The stone monkey, Water Curtain Cave, and his teacher",
+        "sources": [
+          {
+            "label": "Wikisource, Journey to the West, Chapter 1",
+            "url": "https://zh.wikisource.org/wiki/%E8%A5%BF%E9%81%8A%E8%A8%98/%E7%AC%AC001%E5%9B%9E"
+          }
+        ]
+      },
+      {
+        "title": "The gold-banded staff, the underworld, and the heavenly stables",
+        "sources": [
+          {
+            "label": "Wikisource, Journey to the West, Chapter 3",
+            "url": "https://zh.wikisource.org/wiki/%E8%A5%BF%E9%81%8A%E8%A8%98/%E7%AC%AC003%E5%9B%9E"
+          },
+          {
+            "label": "Wikisource, Journey to the West, Chapter 4",
+            "url": "https://zh.wikisource.org/wiki/%E8%A5%BF%E9%81%8A%E8%A8%98/%E7%AC%AC004%E5%9B%9E"
+          }
+        ]
+      },
+      {
+        "title": "The Buddha's hand and Five Elements Mountain",
+        "sources": [
+          {
+            "label": "Wikisource, Journey to the West, Chapter 7",
+            "url": "https://zh.wikisource.org/wiki/%E8%A5%BF%E9%81%8A%E8%A8%98/%E7%AC%AC007%E5%9B%9E"
+          }
+        ]
+      },
+      {
+        "title": "Tang Monk, Xuanzang, scriptures, and the traveling team",
+        "sources": [
+          {
+            "label": "Asia for Educators, Columbia University, “The Origins of the Story”",
+            "url": "https://afe.easia.columbia.edu/cosmos/main/using_monkey.pdf"
+          },
+          {
+            "label": "Wikisource, Journey to the West, complete novel",
+            "url": "https://zh.wikisource.org/wiki/%E8%A5%BF%E9%81%8A%E8%A8%98"
+          }
+        ]
+      },
+      {
+        "title": "The White Bone Demon and Wukong's return",
+        "sources": [
+          {
+            "label": "Wikisource, Journey to the West, Chapter 27",
+            "url": "https://zh.wikisource.org/wiki/%E8%A5%BF%E9%81%8A%E8%A8%98/%E7%AC%AC027%E5%9B%9E"
+          }
+        ]
+      },
+      {
+        "title": "The eighty-one trials and the return to Chang'an",
+        "sources": [
+          {
+            "label": "Wikisource, Journey to the West, Chapter 99",
+            "url": "https://zh.wikisource.org/wiki/%E8%A5%BF%E9%81%8A%E8%A8%98/%E7%AC%AC099%E5%9B%9E"
+          },
+          {
+            "label": "Wikisource, Journey to the West, Chapter 100",
+            "url": "https://zh.wikisource.org/wiki/%E8%A5%BF%E9%81%8A%E8%A8%98/%E7%AC%AC100%E5%9B%9E"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "literature",
+    "categoryName": "Literature",
+    "slug": "tang-poems",
+    "title": "唐诗：读一首诗，看见一幅画",
+    "titleEn": "Tang Poems: Read a Poem, See a Picture",
+    "storyPath": "../../culture/books/literature/tang-poems/",
+    "groups": [
+      {
+        "title": "Poem texts and teaching notes",
+        "sources": [
+          {
+            "label": "Wikisource, Liu Zongyuan, “River Snow” (《江雪》)",
+            "url": "https://wikisource.org/wiki/%E6%B1%9F%E9%9B%AA"
+          },
+          {
+            "label": "Radio Television Hong Kong, “Classical Poem Appreciation: River Snow” (古诗诵赏：《江雪》)",
+            "url": "https://www.rthk.hk/chiculture/chipoem/poem22.htm"
+          },
+          {
+            "label": "Hong Kong Education Bureau, Wang Wei, “Farewell to Yuan Er on His Mission to Anxi” (《送元二使安西》)",
+            "url": "https://www.edb.gov.hk/attachment/tc/curriculum-development/kla/chi-edu/recommended-passages/KS2_08.pdf"
+          },
+          {
+            "label": "Wikisource, Li Bai, “Drinking Alone under the Moon” (《月下独酌》)",
+            "url": "https://zh.wikisource.org/wiki/%E6%9C%88%E4%B8%8B%E7%8D%A8%E9%85%8C"
+          },
+          {
+            "label": "Hong Kong Education Bureau, teaching resource for Du Fu's “My Thatched Roof Is Ruined by the Autumn Wind” (《茅屋为秋风所破歌》)",
+            "url": "https://www.edb.gov.hk/attachment/tc/curriculum-development/kla/chi-edu/resources/secondary-edu/lang/chi_chapter/P027.pdf"
+          },
+          {
+            "label": "Hong Kong Education Bureau, Cen Shen, “A Song of White Snow in Farewell to Secretary Wu Going Home” (《白雪歌送武判官归京》)",
+            "url": "https://www.edb.gov.hk/attachment/tc/curriculum-development/kla/chi-edu/resources/secondary-edu/lang/chi_chapter/P030.pdf"
+          }
+        ]
+      },
+      {
+        "title": "Why poetry was so common in Tang educated life",
+        "sources": [
+          {
+            "label": "Asia for Educators, Columbia University, “Introduction to Tang Poetry: Poetry and the Civil Service Examination”",
+            "url": "https://video.afe.easia.columbia.edu/playlist/intro-to-tang-poetry/intro/"
+          },
+          {
+            "label": "Nathan Vedal, “Never Taking a Shortcut: Examination Poetry of the Tang Dynasty,” Tang Studies 33 (2015)",
+            "url": "https://www.tandfonline.com/doi/abs/10.1179/0737503415Z.00000000014"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "literature",
+    "categoryName": "Literature",
+    "slug": "song-ci",
+    "title": "宋词：给曲子配上新词",
+    "titleEn": "Song Ci: New Words for a Tune",
+    "storyPath": "../../culture/books/literature/song-ci/",
+    "groups": [
+      {
+        "title": "What *ci* is and how it relates to music",
+        "sources": [
+          {
+            "label": "Stanford Global Medieval Sourcebook, “To the Tune ‘Still Wind and Waves’” introduction",
+            "url": "https://sourcebook.stanford.edu/text/liu_yong_since_spring_came/"
+          }
+        ]
+      },
+      {
+        "title": "Su Shi, *Shui Diao Ge Tou*",
+        "sources": [
+          {
+            "label": "Wikisource, Su Shi, Shui Diao Ge Tou (“When Did the Bright Moon First Appear?”)",
+            "url": "https://zh.wikisource.org/wiki/%E6%B0%B4%E8%AA%BF%E6%AD%8C%E9%A0%AD_%28%E6%98%8E%E6%9C%88%E5%B9%BE%E6%99%82%E6%9C%89%29"
+          }
+        ]
+      },
+      {
+        "title": "Li Qingzhao's two short excerpts",
+        "sources": [
+          {
+            "label": "Wikisource, Li Qingzhao, *Ru Meng Ling*",
+            "url": "https://zh.wikisource.org/zh-hant/%E5%A6%82%E5%A4%A2%E4%BB%A4_%28%E6%9D%8E%E6%B8%85%E7%85%A7%29/%E5%A6%82%E5%A4%A2%E4%BB%A4_%28%E5%B8%B8%E8%A8%98%E6%BA%AA%E4%BA%AD%E6%97%A5%E6%9A%AE%29"
+          },
+          {
+            "label": "Wikisource, Li Qingzhao, *Sheng Sheng Man*",
+            "url": "https://zh.wikisource.org/zh-hant/%E8%81%B2%E8%81%B2%E6%85%A2_%28%E6%9D%8E%E6%B8%85%E7%85%A7%29"
+          }
+        ]
+      },
+      {
+        "title": "Li Qingzhao's later life",
+        "sources": [
+          {
+            "label": "University of Liverpool, “Li Qingzhao and Her Ci (Lyric Poetry)”",
+            "url": "https://www.liverpool.ac.uk/languages-cultures-and-film/blog/2021/li-quingzhao/"
+          }
+        ]
+      }
+    ]
+  },
+  {
     "category": "military",
     "categoryName": "Military History & Technology",
     "slug": "art-of-war",
-    "title": "《孙子兵法》：行动以前先看看",
+    "title": "《孙子兵法》：行动之前，先看清局面",
     "titleEn": "The Art of War: Look Before You Move",
     "storyPath": "../../culture/books/military/art-of-war/",
     "groups": [
@@ -4513,81 +5554,9 @@ window.NIHAO_CULTURE_SOURCES = [
   {
     "category": "military",
     "categoryName": "Military History & Technology",
-    "slug": "warships",
-    "title": "古代战船：怎样从证据读懂一艘船",
-    "titleEn": "Ancient Warships: Reading the Evidence",
-    "storyPath": "../../culture/books/military/warships/",
-    "groups": [
-      {
-        "title": "Tower ships and the limits of models",
-        "sources": [
-          {
-            "label": "Chongqing University, “综述｜汉代的‘楼船’与江海航运”",
-            "url": "https://lac.cqu.edu.cn/info/1257/9915.htm"
-          }
-        ]
-      },
-      {
-        "title": "Stern rudder and watertight bulkheads",
-        "sources": [
-          {
-            "label": "C. Y. Tung Maritime Museum, Shanghai Jiao Tong University, “舵” and “水密隔舱”",
-            "url": "https://maritimemuseum.sjtu.edu.cn/info/1171/5601.htm"
-          },
-          {
-            "label": "maritimemuseum.sjtu.edu.cn",
-            "url": "https://maritimemuseum.sjtu.edu.cn/info/1171/5641.htm"
-          }
-        ]
-      },
-      {
-        "title": "A Yuan dynasty warship wreck",
-        "sources": [
-          {
-            "label": "Peking University School of Archaeology and Museology, lecture summary on ancient Chinese shipwreck archaeology",
-            "url": "https://archaeology.pku.edu.cn/info/1031/5219.htm"
-          }
-        ]
-      },
-      {
-        "title": "Red Cliffs in the early historical record",
-        "sources": [
-          {
-            "label": "Chen Shou, Records of the Three Kingdoms, fascicle 54, Zhou Yu biography, with Pei Songzhi's annotation quoting Jiangbiao Zhuan",
-            "url": "https://zh.wikisource.org/zh-hans/%E4%B8%89%E5%9C%8B%E5%BF%97/%E5%8D%B754"
-          }
-        ]
-      },
-      {
-        "title": "Zheng He's fleet roles and reach",
-        "sources": [
-          {
-            "label": "C. Y. Tung Maritime Museum, Shanghai Jiao Tong University, “郑和宝船”",
-            "url": "https://maritimemuseum.sjtu.edu.cn/info/1021/3201.htm"
-          }
-        ]
-      },
-      {
-        "title": "Treasure-ship dimensions and military action",
-        "sources": [
-          {
-            "label": "Southwest University, report on Sally K. Church's lecture, “郑和宝船尺度新探”",
-            "url": "https://his.swu.edu.cn/info/1220/3474.htm"
-          },
-          {
-            "label": "Cambridge University Press, “The Ming–Kotte War in Southeast Asia, 1410–11”",
-            "url": "https://www.cambridge.org/core/books/abs/making-of-the-modern-chinese-navy/mingkotte-war-in-southeast-asia-141011/22CC2980B942006F422B101BE962E6A6"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "category": "military",
-    "categoryName": "Military History & Technology",
     "slug": "ancient-armor",
-    "title": "古代铠甲是怎样拼起来的？",
-    "titleEn": "How Was Ancient Armor Put Together?",
+    "title": "一片甲，许多答案：中国古代铠甲怎样保护身体",
+    "titleEn": "One Armor Plate, Many Answers: Body Armor in Ancient China",
     "storyPath": "../../culture/books/military/ancient-armor/",
     "groups": [
       {
@@ -4695,6 +5664,78 @@ window.NIHAO_CULTURE_SOURCES = [
   {
     "category": "military",
     "categoryName": "Military History & Technology",
+    "slug": "warships",
+    "title": "古代战船：怎样从证据读懂一艘船",
+    "titleEn": "Ancient Warships: Reading the Evidence",
+    "storyPath": "../../culture/books/military/warships/",
+    "groups": [
+      {
+        "title": "Tower ships and the limits of models",
+        "sources": [
+          {
+            "label": "Chongqing University, “综述｜汉代的‘楼船’与江海航运”",
+            "url": "https://lac.cqu.edu.cn/info/1257/9915.htm"
+          }
+        ]
+      },
+      {
+        "title": "Stern rudder and watertight bulkheads",
+        "sources": [
+          {
+            "label": "C. Y. Tung Maritime Museum, Shanghai Jiao Tong University, “舵” and “水密隔舱”",
+            "url": "https://maritimemuseum.sjtu.edu.cn/info/1171/5601.htm"
+          },
+          {
+            "label": "maritimemuseum.sjtu.edu.cn",
+            "url": "https://maritimemuseum.sjtu.edu.cn/info/1171/5641.htm"
+          }
+        ]
+      },
+      {
+        "title": "A Yuan dynasty warship wreck",
+        "sources": [
+          {
+            "label": "Peking University School of Archaeology and Museology, lecture summary on ancient Chinese shipwreck archaeology",
+            "url": "https://archaeology.pku.edu.cn/info/1031/5219.htm"
+          }
+        ]
+      },
+      {
+        "title": "Red Cliffs in the early historical record",
+        "sources": [
+          {
+            "label": "Chen Shou, Records of the Three Kingdoms, fascicle 54, Zhou Yu biography, with Pei Songzhi's annotation quoting Jiangbiao Zhuan",
+            "url": "https://zh.wikisource.org/zh-hans/%E4%B8%89%E5%9C%8B%E5%BF%97/%E5%8D%B754"
+          }
+        ]
+      },
+      {
+        "title": "Zheng He's fleet roles and reach",
+        "sources": [
+          {
+            "label": "C. Y. Tung Maritime Museum, Shanghai Jiao Tong University, “郑和宝船”",
+            "url": "https://maritimemuseum.sjtu.edu.cn/info/1021/3201.htm"
+          }
+        ]
+      },
+      {
+        "title": "Treasure-ship dimensions and military action",
+        "sources": [
+          {
+            "label": "Southwest University, report on Sally K. Church's lecture, “郑和宝船尺度新探”",
+            "url": "https://his.swu.edu.cn/info/1220/3474.htm"
+          },
+          {
+            "label": "Cambridge University Press, “The Ming–Kotte War in Southeast Asia, 1410–11”",
+            "url": "https://www.cambridge.org/core/books/abs/making-of-the-modern-chinese-navy/mingkotte-war-in-southeast-asia-141011/22CC2980B942006F422B101BE962E6A6"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "military",
+    "categoryName": "Military History & Technology",
     "slug": "mingguang-armor",
     "title": "明光铠真的像镜子一样吗？",
     "titleEn": "Did Mingguang Armor Really Shine Like a Mirror?",
@@ -4767,8 +5808,8 @@ window.NIHAO_CULTURE_SOURCES = [
     "category": "military",
     "categoryName": "Military History & Technology",
     "slug": "great-wall",
-    "title": "长城不只是一堵墙",
-    "titleEn": "The Great Wall Is More Than One Wall",
+    "title": "长城不是一堵墙：读懂两千年的边疆",
+    "titleEn": "The Great Wall Is Not One Wall: Reading Two Thousand Years of Frontier History",
     "storyPath": "../../culture/books/military/great-wall/",
     "groups": [
       {
@@ -4900,9 +5941,161 @@ window.NIHAO_CULTURE_SOURCES = [
   {
     "category": "figures",
     "categoryName": "People",
+    "slug": "shang-yang",
+    "title": "商鞅和那根没人敢搬的木头",
+    "titleEn": "Shang Yang and the Log No One Wanted to Move",
+    "storyPath": "../../culture/books/figures/shang-yang/",
+    "groups": [
+      {
+        "title": "Sima Qian, *Records of the Grand Historian*, “Biography of Lord Shang”",
+        "sources": [
+          {
+            "label": "ctext.org",
+            "url": "https://ctext.org/shiji/shang-jun-lie-zhuan/zhs"
+          }
+        ]
+      },
+      {
+        "title": "Research on Shang Yang's reforms and Qin's growing power",
+        "sources": [
+          {
+            "label": "academic.oup.com",
+            "url": "https://academic.oup.com/edited-volume/34296/chapter-abstract/290749611"
+          },
+          {
+            "label": "pmc.ncbi.nlm.nih.gov",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4522747/"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "figures",
+    "categoryName": "People",
+    "slug": "cao-cao",
+    "title": "曹操：带兵的诗人",
+    "titleEn": "Cao Cao: The Commander with a Poet's Brush",
+    "storyPath": "../../culture/books/figures/cao-cao/",
+    "groups": [
+      {
+        "title": "*Records of the Three Kingdoms* and *Book of the Later Han*",
+        "sources": [
+          {
+            "label": "ctext.org",
+            "url": "https://ctext.org/text.pl?if=gb&node=601875&remap=gb"
+          },
+          {
+            "label": "ctext.org",
+            "url": "https://ctext.org/hou-han-shu/ens"
+          },
+          {
+            "label": "zh.wikisource.org",
+            "url": "https://zh.wikisource.org/zh/%E4%B8%89%E5%9B%BD%E5%BF%97%EF%BC%88%E9%99%88%E5%AF%BF%E6%92%B0_%E8%A3%B4%E6%9D%BE%E4%B9%8B%E6%B3%A8_%E5%BB%BA%E9%98%B3%E5%88%8A%E6%9C%AC%EF%BC%89/%E9%AD%8F%E6%9B%B8/%E6%AD%A6%E5%B8%9D%E7%BA%AA%E7%AC%AC%E4%B8%80"
+          },
+          {
+            "label": "metmuseum.org",
+            "url": "https://www.metmuseum.org/TOAH/hd/hand/hd_hand.htm"
+          }
+        ]
+      },
+      {
+        "title": "The Battle of Guandu",
+        "sources": [
+          {
+            "label": "ctext.org",
+            "url": "https://ctext.org/text.pl?if=gb&node=601875&remap=gb"
+          }
+        ]
+      },
+      {
+        "title": "Farming colonies, recruitment, and violence in Xu Province",
+        "sources": [
+          {
+            "label": "zh.wikisource.org",
+            "url": "https://zh.wikisource.org/zh-hans/%E6%B1%82%E8%B3%A2%E4%BB%A4"
+          },
+          {
+            "label": "mzj.xuchang.gov.cn",
+            "url": "https://mzj.xuchang.gov.cn/decqgdmpc/20230511/51edb2c4-ea74-4bd6-b741-fdf10b41bf2f.html"
+          },
+          {
+            "label": "journal.scu.edu.cn",
+            "url": "https://journal.scu.edu.cn/info/1109/12295.htm"
+          },
+          {
+            "label": "ctext.org",
+            "url": "https://ctext.org/wiki.pl?chapter=274601&if=en"
+          }
+        ]
+      },
+      {
+        "title": "Cao Cao's surviving poetry",
+        "sources": [
+          {
+            "label": "en.chnmuseum.cn",
+            "url": "https://en.chnmuseum.cn/Portals/0/web/exhibition/exhibitions/161120Chines-Epic/"
+          },
+          {
+            "label": "zh.wikisource.org",
+            "url": "https://zh.wikisource.org/wiki/Author:%E6%9B%B9%E6%93%8D"
+          }
+        ]
+      },
+      {
+        "title": "Peking opera face paint",
+        "sources": [
+          {
+            "label": "chncpa.org",
+            "url": "https://www.chncpa.org/cgyl_278/yszl/wqzl/201704/t20170408_168389.shtml"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "figures",
+    "categoryName": "People",
+    "slug": "mulan",
+    "title": "木兰的勇敢旅程",
+    "titleEn": "Mulan's Brave Journey",
+    "storyPath": "../../culture/books/figures/mulan/",
+    "groups": [
+      {
+        "title": "The story told in the old poem",
+        "sources": [
+          {
+            "label": "Wikisource, “木兰诗,” preserved in Yuefu Shiji, volume 25",
+            "url": "https://zh.wikisource.org/zh-hans/%E6%9C%A8%E5%85%B0"
+          }
+        ]
+      },
+      {
+        "title": "When and where the story began",
+        "sources": [
+          {
+            "label": "Renmin University of China Institute of Qing History, “《木兰诗》的时代和地域”",
+            "url": "https://iqh.ruc.edu.cn/old/zglsdlyj/lsdl_dmxyd/dmyj/df2a90095331483db5ea12ca386cc2cf.htm"
+          }
+        ]
+      },
+      {
+        "title": "The familiar name “Hua Mulan”",
+        "sources": [
+          {
+            "label": "Hongmei Yu, “Cultural ‘Authenticity’ as a Conflict-Ridden Hypotext: Mulan (1998), Mulan Joins the Army (1939), and a Millennium-Long Intertextual Metamorphosis,” Arts 9, no. 3 (2020)",
+            "url": "https://www.mdpi.com/2076-0752/9/3/78"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "figures",
+    "categoryName": "People",
     "slug": "li-shi-zhen",
-    "title": "一本伟大的书，也会有错误吗？李时珍与《本草纲目》",
-    "titleEn": "Can a Great Book Still Be Wrong? Li Shizhen and Bencao Gangmu",
+    "title": "李时珍和那本写了二十七年的大书",
+    "titleEn": "Li Shizhen and the Book That Took Twenty-Seven Years",
     "storyPath": "../../culture/books/figures/li-shi-zhen/",
     "groups": [
       {
@@ -4924,6 +6117,10 @@ window.NIHAO_CULTURE_SOURCES = [
           {
             "label": "Paul U. Unschuld and collaborators, introduction to the Ben cao gang mu Dictionary project, University of California Press",
             "url": "https://content.ucpress.edu/chapters/12851.ch01.pdf"
+          },
+          {
+            "label": "National Archives Administration of China, General Catalog for Chinese Medical Classics in China entry for Ben Cao Gang Mu",
+            "url": "https://www.saac.gov.cn/mowcn/cn/c100513/202104/156cc3110b0147a3bc6b426a7f7683d4/files/f6d2857b2caa4e629c2572c61cf41cfa.pdf"
           },
           {
             "label": "Cambridge University Press, Federico Marcon, “The ‘book’ as fieldwork: ‘textual institutions’ and nature knowledge in early modern Japan”",
@@ -4996,190 +6193,35 @@ window.NIHAO_CULTURE_SOURCES = [
   {
     "category": "figures",
     "categoryName": "People",
-    "slug": "cao-cao",
-    "title": "同一个曹操，为什么在史书和小说里像两个人？",
-    "titleEn": "Why Does Cao Cao Seem Like Two Different People in History and Fiction?",
-    "storyPath": "../../culture/books/figures/cao-cao/",
+    "slug": "li-bai",
+    "title": "李白：诗仙",
+    "titleEn": "Li Bai: The Poet Immortal",
+    "storyPath": "../../culture/books/figures/li-bai/",
     "groups": [
       {
-        "title": "Chen Shou, *Records of the Three Kingdoms*, “Annals of Emperor Wu,” with Pei Songzhi's annotations",
+        "title": "Academy of Chinese Studies, “Li Bai”",
         "sources": [
-          {
-            "label": "ctext.org",
-            "url": "https://ctext.org/text.pl?if=gb&node=601875&remap=gb"
-          },
-          {
-            "label": "zh.wikisource.org",
-            "url": "https://zh.wikisource.org/zh/%E4%B8%89%E5%9B%BD%E5%BF%97%EF%BC%88%E9%99%88%E5%AF%BF%E6%92%B0_%E8%A3%B4%E6%9D%BE%E4%B9%8B%E6%B3%A8_%E5%BB%BA%E9%98%B3%E5%88%8A%E6%9C%AC%EF%BC%89/%E9%AD%8F%E6%9B%B8/%E6%AD%A6%E5%B8%9D%E7%BA%AA%E7%AC%AC%E4%B8%80"
-          },
-          {
-            "label": "upload.wikimedia.org",
-            "url": "https://upload.wikimedia.org/wikipedia/commons/b/b1/SSID-12983472_%E4%B8%89%E5%9C%8B%E5%BF%97_%E5%8D%B71-23.pdf"
-          }
-        ]
-      },
-      {
-        "title": "*Book of the Later Han* and *Records of the Three Kingdoms* — Emperor Xian and political authority",
-        "sources": [
-          {
-            "label": "ctext.org",
-            "url": "https://ctext.org/hou-han-shu/ens"
-          },
-          {
-            "label": "ctext.org",
-            "url": "https://ctext.org/text.pl?if=gb&node=601875&remap=gb"
-          },
-          {
-            "label": "gateway-ipfs.st",
-            "url": "https://gateway-ipfs.st/ipfs/bafykbzacecojov5y4uw5wahvv625hh6j75nxuepd5jkioxh2d4ivcbidtnhi4?filename=%E4%B8%AD%E5%9B%BD%E9%80%9A%E5%8F%B2+%E7%AC%AC%E4%BA%94%E5%8D%B7+%E4%B8%89%E5%9B%BD%E4%B8%A4%E6%99%8B%E5%8D%97%E5%8C%97%E6%9C%9D%E6%97%B6%E6%9C%9F+%EF%BC%88%E4%B8%8A%EF%BC%89_%E7%99%BD%E5%AF%BF%E5%BD%9D.pdf"
-          }
-        ]
-      },
-      {
-        "title": "Guandu: *Records of the Three Kingdoms*, biographies of Cao Cao and Yuan Shao, with Pei Songzhi's numerical critique",
-        "sources": [
-          {
-            "label": "ctext.org",
-            "url": "https://ctext.org/text.pl?if=gb&node=601875&remap=gb"
-          },
-          {
-            "label": "upload.wikimedia.org",
-            "url": "https://upload.wikimedia.org/wikipedia/commons/b/b1/SSID-12983472_%E4%B8%89%E5%9B%BD%E5%BF%97_%E5%8D%B71-23.pdf"
-          },
-          {
-            "label": "zzrvtc.edu.cn",
-            "url": "https://www.zzrvtc.edu.cn/_upload/article/files/65/a4/f7e77904478ea6afd1e4fa3e13db/379fe01f-3d80-4385-8a5f-cc862f429147.pdf"
-          }
-        ]
-      },
-      {
-        "title": "Farming colonies and recruitment edicts",
-        "sources": [
-          {
-            "label": "ctext.org",
-            "url": "https://ctext.org/text.pl?if=gb&node=601875&remap=gb"
-          },
-          {
-            "label": "zh.wikisource.org",
-            "url": "https://zh.wikisource.org/zh-hans/%E6%B1%82%E8%B3%A2%E4%BB%A4"
-          },
-          {
-            "label": "mzj.xuchang.gov.cn",
-            "url": "https://mzj.xuchang.gov.cn/decqgdmpc/20230511/51edb2c4-ea74-4bd6-b741-fdf10b41bf2f.html"
-          },
-          {
-            "label": "journal.scu.edu.cn",
-            "url": "https://journal.scu.edu.cn/info/1109/12295.htm"
-          },
-          {
-            "label": "cirs.tsinghua.edu.cn",
-            "url": "https://www.cirs.tsinghua.edu.cn/sannjcyc/424.jhtml"
-          }
-        ]
-      },
-      {
-        "title": "Violence in Xu Province: *Book of the Later Han* and *Records of the Three Kingdoms*",
-        "sources": [
-          {
-            "label": "ctext.org",
-            "url": "https://ctext.org/wiki.pl?chapter=274601&if=en"
-          },
-          {
-            "label": "ctext.org",
-            "url": "https://ctext.org/text.pl?if=gb&node=601875&remap=gb"
-          },
-          {
-            "label": "zzrvtc.edu.cn",
-            "url": "https://www.zzrvtc.edu.cn/_upload/article/files/65/a4/f7e77904478ea6afd1e4fa3e13db/379fe01f-3d80-4385-8a5f-cc862f429147.pdf"
-          }
-        ]
-      },
-      {
-        "title": "National Museum of China and Cao Cao's surviving writings — Jian'an literature",
-        "sources": [
-          {
-            "label": "en.chnmuseum.cn",
-            "url": "https://en.chnmuseum.cn/Portals/0/web/exhibition/exhibitions/161120Chines-Epic/"
-          },
-          {
-            "label": "zh.wikisource.org",
-            "url": "https://zh.wikisource.org/wiki/Author:%E6%9B%B9%E6%93%8D"
-          },
-          {
-            "label": "clajc.ouc.edu.cn",
-            "url": "https://clajc.ouc.edu.cn/ctwhyjzx/2019/1129/c16711a277391/page.psp"
-          }
-        ]
-      },
-      {
-        "title": "Lü Boshe accounts and the famous saying",
-        "sources": [
-          {
-            "label": "zh.wikisource.org",
-            "url": "https://zh.wikisource.org/zh/%E4%B8%89%E5%9B%BD%E5%BF%97%EF%BC%88%E9%99%88%E5%AF%BF%E6%92%B0_%E8%A3%B4%E6%9D%BE%E4%B9%8B%E6%B3%A8_%E5%BB%BA%E9%98%B3%E5%88%8A%E6%9C%AC%EF%BC%89/%E9%AD%8F%E6%9B%B8/%E6%AD%A6%E5%B8%9D%E7%BA%AA%E7%AC%AC%E4%B8%80"
-          },
-          {
-            "label": "ctext.org",
-            "url": "https://ctext.org/sanguo-yanyi/ch4/ens"
-          },
           {
             "label": "chiculture.org.hk",
-            "url": "https://chiculture.org.hk/sc/china-five-thousand-years/4277"
+            "url": "https://chiculture.org.hk/en/china-five-thousand-years/1937"
           }
         ]
       },
       {
-        "title": "Historical kernels and novel episodes: Huarong, the dagger, and the cut beard",
+        "title": "Chinese Text Project, *Li Hanlin Ji* biographical materials",
         "sources": [
           {
-            "label": "upload.wikimedia.org",
-            "url": "https://upload.wikimedia.org/wikipedia/commons/b/b1/SSID-12983472_%E4%B8%89%E5%9B%BD%E5%BF%97_%E5%8D%B71-23.pdf"
-          },
-          {
             "label": "ctext.org",
-            "url": "https://ctext.org/sanguo-yanyi/ch4/ens"
-          },
-          {
-            "label": "ctext.org",
-            "url": "https://ctext.org/sanguo-yanyi/ch50/zh"
-          },
-          {
-            "label": "ctext.org",
-            "url": "https://ctext.org/sanguo-yanyi/ch58/ens"
+            "url": "https://ctext.org/wiki.pl?if=en&res=775723"
           }
         ]
       },
       {
-        "title": "National Centre for the Performing Arts — Peking opera face paint",
+        "title": "University of Toronto, Representative Poetry Online, “Li Bai”",
         "sources": [
           {
-            "label": "chncpa.org",
-            "url": "https://www.chncpa.org/cgyl_278/yszl/wqzl/201704/t20170408_168389.shtml"
-          },
-          {
-            "label": "m.chncpa.org",
-            "url": "https://m.chncpa.org/zxdt/rdjjx/202008/t20200814_218509.shtml"
-          }
-        ]
-      },
-      {
-        "title": "Henan Provincial Institute of Cultural Heritage and Archaeology — Cao Cao's Gaoling mausoleum",
-        "sources": [
-          {
-            "label": "hnswwkgyjy.cn",
-            "url": "https://www.hnswwkgyjy.cn/NewsView.php?News_ID=113"
-          },
-          {
-            "label": "hnswwkgyjy.cn",
-            "url": "https://www.hnswwkgyjy.cn/NewsView.php?News_ID=1993"
-          },
-          {
-            "label": "hnswwkgyjy.cn",
-            "url": "https://www.hnswwkgyjy.cn/NewsView.php?News_ID=3"
-          },
-          {
-            "label": "chinamuseum.org.cn",
-            "url": "https://www.chinamuseum.org.cn/detail.html?contentId=4258&id=13"
+            "label": "rpo.library.utoronto.ca",
+            "url": "https://rpo.library.utoronto.ca/poets/li-bai"
           }
         ]
       }
@@ -5189,297 +6231,56 @@ window.NIHAO_CULTURE_SOURCES = [
     "category": "figures",
     "categoryName": "People",
     "slug": "wu-zetian",
-    "title": "同一个武则天，为什么让史书既佩服又害怕？",
-    "titleEn": "Why Do the Histories Show Both Skill and Fear in Wu Zetian?",
+    "title": "武则天：从宫中少女到皇帝",
+    "titleEn": "Wu Zetian: The Girl Who Became Emperor",
     "storyPath": "../../culture/books/figures/wu-zetian/",
     "groups": [
       {
-        "title": "Core chronology and the meaning of “woman emperor”",
+        "title": "Smithsonian National Museum of Asian Art, Chinese history timeline",
         "sources": [
           {
-            "label": "Smithsonian National Museum of Asian Art, “Timeline of Chinese History, Art, and Culture”",
+            "label": "asia-archive.si.edu",
             "url": "https://asia-archive.si.edu/learn/for-educators/teaching-china-with-the-smithsonian/interactives/timelines/timeline-of-chinese-history-art-and-culture/"
-          },
-          {
-            "label": "British Museum, “Who were the Sogdians?”",
-            "url": "https://www.britishmuseum.org/blog/who-were-sogdians"
           }
         ]
       },
       {
-        "title": "The Old Book of Tang as an early narrative source",
+        "title": "*Old Book of Tang*, “Annals of Empress Zetian”",
         "sources": [
           {
-            "label": "Old Book of Tang, juan 6, “Annals of Empress Zetian,” digitized by Wikisource",
+            "label": "zh.wikisource.org",
             "url": "https://zh.wikisource.org/zh-hant/%E8%88%8A%E5%94%90%E6%9B%B8/%E5%8D%B76"
-          },
-          {
-            "label": "New Book of Tang, Gaozong and Wu-related annals and biographies, digitized by Wikisource",
-            "url": "https://zh.wikisource.org/zh-hant/%E6%96%B0%E5%94%90%E6%9B%B8"
           }
         ]
       },
       {
-        "title": "The infant daughter's death and limits of palace evidence",
+        "title": "Victor Xiong, Ohio State University Origins, “Wu Zetian: The Only Woman Emperor in Chinese History”",
         "sources": [
           {
-            "label": "Chinese Text Project, “Wu Zhou Zetian Huanghou” data page and source discussion",
-            "url": "https://ctext.org/datawiki.pl?if=en&res=636060"
-          }
-        ]
-      },
-      {
-        "title": "Political ability, appointments, kin, and the danger of a heroic-only story",
-        "sources": [
-          {
-            "label": "Victor Xiong, Ohio State University Origins, “Wu Zetian: The Only Woman Emperor in Chinese History”",
+            "label": "origins.osu.edu",
             "url": "https://origins.osu.edu/index.php/read/wu-zetian-woman-emperor-china"
-          },
+          }
+        ]
+      },
+      {
+        "title": "Research on appointments and the four petition boxes",
+        "sources": [
           {
-            "label": "Academic Monthly, “The Bureaucratic Class and Imperial Examination System during the Reign of Empress Wu Zetian”",
+            "label": "xsyk021.com",
             "url": "https://www.xsyk021.com/article/id/890d4542-aed3-47ce-bd9c-f75b35f9cfa8?pageType=en"
-          }
-        ]
-      },
-      {
-        "title": "Petition boxes, informers, cruel officials, and legal institutions",
-        "sources": [
+          },
           {
-            "label": "Institute of History and Philology, Academia Sinica, Huang Ting-Shuo, Wang Chi-Shen, and Shih Hou-Yu, “A New Investigation of ‘the Politics of Cruel Officials’ in the Era of Wu Zetian”",
+            "label": "www1.ihp.sinica.edu.tw",
             "url": "https://www1.ihp.sinica.edu.tw/en/Publications/LegalHistoryStudy/1180/Article/507"
-          },
-          {
-            "label": "Luoyang municipal historical chronology, “大事记”",
-            "url": "https://oss.ly.gov.cn/upload-file/files/20241218/4bf4f3e74241441c9b6f9dc5f46ace8f.pdf"
           }
         ]
       },
       {
-        "title": "Buddhist legitimation and the Great Cloud Sutra",
+        "title": "Qianling and the Stone with No Words",
         "sources": [
           {
-            "label": "Columbia University Press, N. Harry Rothschild, Emperor Wu Zhao and Her Pantheon of Devis, Divinities, and Dynastic Mothers",
-            "url": "https://cup.columbia.edu/book/emperor-wu-zhao-and-her-pantheon-of-devis-divinities-and-dynastic-mothers/9780231539180/"
-          },
-          {
-            "label": "Old Book of Tang, juan 6, 690 entry for the Great Cloud Sutra",
-            "url": "https://zh.wikisource.org/zh-hant/%E8%88%8A%E5%94%90%E6%9B%B8/%E5%8D%B76"
-          }
-        ]
-      },
-      {
-        "title": "Luoyang, Mingtang, and Longmen",
-        "sources": [
-          {
-            "label": "UNESCO World Heritage Centre, “Longmen Grottoes”",
-            "url": "https://whc.unesco.org/en/list/1003"
-          },
-          {
-            "label": "Smarthistory, “Longmen caves, Luoyang”",
-            "url": "https://smarthistory.org/longmen-caves-luoyang/"
-          },
-          {
-            "label": "Old Book of Tang, juan 6, entries on the Mingtang and Luoyang",
-            "url": "https://zh.wikisource.org/zh-hant/%E8%88%8A%E5%94%90%E6%9B%B8/%E5%8D%B76"
-          }
-        ]
-      },
-      {
-        "title": "Abdication, Qianling, and the “wordless” stele",
-        "sources": [
-          {
-            "label": "Old Book of Tang, juan 6, Shenlong first-year entries",
-            "url": "https://zh.wikisource.org/zh-hant/%E8%88%8A%E5%94%90%E6%9B%B8/%E5%8D%B76"
-          },
-          {
-            "label": "China Heritage Quarterly, “Qianling”",
+            "label": "chinaheritagequarterly.org",
             "url": "https://www.chinaheritagequarterly.org/articles.php?issue=008&searchterm=008_qianling.inc"
-          },
-          {
-            "label": "Xihua University journal, “An Interpretation of the First Chinese Empress's Wordless Gravestone”",
-            "url": "https://aj.xhu.edu.cn/xhdxxbzskb/article/id/f24decdc-cf80-4b1a-bda2-b029430e1545"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "category": "figures",
-    "categoryName": "People",
-    "slug": "shang-yang",
-    "title": "商鞅：国家变强时，谁付出了代价？",
-    "titleEn": "Shang Yang: Who Paid the Price When the State Grew Stronger?",
-    "storyPath": "../../culture/books/figures/shang-yang/",
-    "groups": [
-      {
-        "title": "Biography, log story, reforms, and death narrative",
-        "sources": [
-          {
-            "label": "Chinese Text Project, Sima Qian, Records of the Grand Historian, “Biography of Lord Shang”",
-            "url": "https://ctext.org/shiji/shang-jun-lie-zhuan/zhs"
-          }
-        ]
-      },
-      {
-        "title": "Institutional changes and their tradeoffs",
-        "sources": [
-          {
-            "label": "Yuri Pines, “Institutional Reforms and Reformers during the Warring States Period,” The Oxford Handbook of Early China",
-            "url": "https://academic.oup.com/edited-volume/34296/chapter-abstract/290749611"
-          },
-          {
-            "label": "Andrew Chittick et al., “Imperial expansion, public investment, and the long path of history: China's initial political unification and its aftermath,” Social Science History",
-            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4522747/"
-          }
-        ]
-      },
-      {
-        "title": "The composite *Book of Lord Shang*",
-        "sources": [
-          {
-            "label": "Yuri Pines, “Dating a Pre-Imperial Text: The Case Study of the Book of Lord Shang,” Early China 39 (2016)",
-            "url": "https://www.cambridge.org/core/journals/early-china/article/dating-a-preimperial-text-the-case-study-of-the-book-of-lord-shang/199B57467F51A62EBD492DE47DA3360A"
-          }
-        ]
-      },
-      {
-        "title": "Excavated Qin law and administration",
-        "sources": [
-          {
-            "label": "Robin D. S. Yates, “The State of Research in Early Chinese Legal History,” Bamboo and Silk 6 (2023)",
-            "url": "https://doi.org/10.1163/24689246-20230031"
-          },
-          {
-            "label": "Charles Sanft, “The Promulgation of Law in Qin and Western Han China,” Early China 44 (2021)",
-            "url": "https://www.cambridge.org/core/journals/early-china/article/abs/promulgation-of-law-in-qin-and-western-han-china/D5EE31803D74CDE3E0B8746E714155EC"
-          },
-          {
-            "label": "Maxim Korolkov, “State Control of Bureaucrats under the Qin: Techniques and Procedures,” Early China 39 (2016)",
-            "url": "https://www.cambridge.org/core/journals/early-china/article/abs/state-control-of-bureaucrats-under-the-qin-techniques-and-procedures/26F23940F6B99404572C42C18A98A46B"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "category": "figures",
-    "categoryName": "People",
-    "slug": "mulan",
-    "title": "木兰的勇敢旅程",
-    "titleEn": "Mulan's Brave Journey",
-    "storyPath": "../../culture/books/figures/mulan/",
-    "groups": [
-      {
-        "title": "Earliest surviving poem and its narrative limits",
-        "sources": [
-          {
-            "label": "Wikisource, “木兰诗,” text transmitted in Yuefu Shiji, volume 25",
-            "url": "https://zh.wikisource.org/zh-hans/%E6%9C%A8%E5%85%B0"
-          },
-          {
-            "label": "Chinese Text Project, Yuefu Shiji, volume 25",
-            "url": "https://ctext.org/wiki.pl?if=gb&chapter=574911"
-          }
-        ]
-      },
-      {
-        "title": "Dating, geography, and uncertainty about a historical Mulan",
-        "sources": [
-          {
-            "label": "Renmin University of China Institute of Qing History, “《木兰诗》的时代和地域”",
-            "url": "https://iqh.ruc.edu.cn/old/zglsdlyj/lsdl_dmxyd/dmyj/df2a90095331483db5ea12ca386cc2cf.htm"
-          },
-          {
-            "label": "TIME, “Is Mulan Based on a True Story? Here's the Real History”",
-            "url": "https://time.com/5881064/mulan-real-history/"
-          }
-        ]
-      },
-      {
-        "title": "Later surnames, footbinding, and changing adaptations",
-        "sources": [
-          {
-            "label": "Hongmei Yu, “Cultural ‘Authenticity’ as a Conflict-Ridden Hypotext: Mulan (1998), Mulan Joins the Army (1939), and a Millennium-Long Intertextual Metamorphosis,” Arts 9, no. 3 (2020)",
-            "url": "https://www.mdpi.com/2076-0752/9/3/78"
-          },
-          {
-            "label": "Shiamin Kwa and Wilt L. Idema, Mulan: Five Versions of a Classic Chinese Legend (Hackett Publishing overview)",
-            "url": "https://hackettpublishing.com/mulan-five-versions-of-a-classic-chinese-legend"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "category": "figures",
-    "categoryName": "People",
-    "slug": "li-bai",
-    "title": "李白：诗人走进了传说",
-    "titleEn": "Li Bai: When a Poet Becomes a Legend",
-    "storyPath": "../../culture/books/figures/li-bai/",
-    "groups": [
-      {
-        "title": "Core biography, disputed origins, court service, and exile",
-        "sources": [
-          {
-            "label": "Academy of Chinese Studies, “Li Bai”",
-            "url": "https://chiculture.org.hk/en/china-five-thousand-years/1937"
-          },
-          {
-            "label": "Poetry Foundation, “Li Po”",
-            "url": "https://www.poetryfoundation.org/poets/li-po"
-          },
-          {
-            "label": "Chinese Text Project, Li Hanlin Ji biographical materials",
-            "url": "https://ctext.org/wiki.pl?if=en&res=775723"
-          }
-        ]
-      },
-      {
-        "title": "Poems and textual transmission",
-        "sources": [
-          {
-            "label": "Chinese Text Project, Li Taibai Quanji, volume 6, including “Quiet Night Thought”",
-            "url": "https://ctext.org/wiki.pl?chapter=810697&if=gb"
-          },
-          {
-            "label": "China Writers Association, “李白《静夜思》的文本奥秘”",
-            "url": "https://www.chinawriter.com.cn/n1/2020/1116/c404064-31932366.html"
-          },
-          {
-            "label": "Chinese Text Project, Quan Tang Shi, “Viewing the Waterfall at Mount Lu, Two Poems”",
-            "url": "https://ctext.org/text.pl?if=gb&node=139483"
-          }
-        ]
-      },
-      {
-        "title": "Li Bai and Du Fu",
-        "sources": [
-          {
-            "label": "Poetry Foundation, “A Bird Translates Silence”",
-            "url": "https://www.poetryfoundation.org/articles/158883/a-bird-translates-silence"
-          }
-        ]
-      },
-      {
-        "title": "Iron pestle and court legends",
-        "sources": [
-          {
-            "label": "Zhu Mu, Southern Song dynasty, Fangyu Shenglan, “Grinding an Iron Pestle into a Needle” (public-domain text presentation)",
-            "url": "https://www.gushiwen.cn/shiwenv_0251658e318b.aspx"
-          },
-          {
-            "label": "Gujin Shiwen Leiju, “Gao Lishi Removes the Boots” tradition (public-domain text presentation)",
-            "url": "https://www.shidianguji.com/zh/book/SK1970a/chapter/1leppqama9gyr"
-          }
-        ]
-      },
-      {
-        "title": "Death and the moon-catching legend",
-        "sources": [
-          {
-            "label": "Peking University journal archive, “关于李白‘捉月’传说——兼及临终传说的传记意义”",
-            "url": "https://ccj.pku.edu.cn/article/info?id=271014461"
           }
         ]
       }
@@ -5489,8 +6290,8 @@ window.NIHAO_CULTURE_SOURCES = [
     "category": "figures",
     "categoryName": "People",
     "slug": "qin-shi-huang",
-    "title": "秦始皇的统一：道路变通了，谁付出了代价？",
-    "titleEn": "Qin Shi Huang's Unification: What Did It Build, and What Did It Cost?",
+    "title": "秦始皇：想让所有规则都一样的皇帝",
+    "titleEn": "Qin Shi Huang: The Emperor Who Wanted Everything to Match",
     "storyPath": "../../culture/books/figures/qin-shi-huang/",
     "groups": [
       {
@@ -5520,42 +6321,20 @@ window.NIHAO_CULTURE_SOURCES = [
         ]
       },
       {
-        "title": "Qin chronology, title, administration, and standardization — Metropolitan Museum of Art",
+        "title": "The Metropolitan Museum of Art, “Qin Dynasty (221–206 B.C.)” and “Age of Empires”",
         "sources": [
-          {
-            "label": "metmuseum.org",
-            "url": "https://www.metmuseum.org/exhibitions/listings/2017/age-of-empires/exhibition-galleries"
-          },
           {
             "label": "metmuseum.org",
             "url": "https://www.metmuseum.org/essays/qin-dynasty-221-206-b-c"
           },
           {
-            "label": "resources.metmuseum.org",
-            "url": "https://resources.metmuseum.org/resources/metpublications/pdf/The_Arts_of_Ancient_China_The_Metropolitan_Museum_of_Art_Bulletin_v_32_no_2_1973_1974.pdf"
+            "label": "metmuseum.org",
+            "url": "https://www.metmuseum.org/exhibitions/listings/2017/age-of-empires/exhibition-galleries"
           }
         ]
       },
       {
-        "title": "Thies Staack, “The Pragmatics of Standardization: Document Standards and Their Implementation in Qin Administration”",
-        "sources": [
-          {
-            "label": "doi.org",
-            "url": "https://doi.org/10.1017/S0041977X23000228"
-          }
-        ]
-      },
-      {
-        "title": "Imre Galambos, “The Myth of the Qin Unification of Writing in Han Sources”",
-        "sources": [
-          {
-            "label": "real.mtak.hu",
-            "url": "https://real.mtak.hu/46320/"
-          }
-        ]
-      },
-      {
-        "title": "Qin frontier walls, state extraction, and labor",
+        "title": "Research on Qin frontier walls and forced labor",
         "sources": [
           {
             "label": "pmc.ncbi.nlm.nih.gov",
@@ -5572,45 +6351,11 @@ window.NIHAO_CULTURE_SOURCES = [
         ]
       },
       {
-        "title": "Wilt L. Idema, *Meng Jiangnü Brings Down the Great Wall: Ten Versions of a Chinese Legend*",
-        "sources": [
-          {
-            "label": "jstor.org",
-            "url": "https://www.jstor.org/stable/j.ctvcwnjwg"
-          },
-          {
-            "label": "api.pageplace.de",
-            "url": "https://api.pageplace.de/preview/DT0400.9780295800127_A26577239/preview-9780295800127_A26577239.pdf"
-          }
-        ]
-      },
-      {
-        "title": "Mausoleum of the First Qin Emperor — UNESCO World Heritage Centre",
+        "title": "UNESCO World Heritage Centre, “Mausoleum of the First Qin Emperor”",
         "sources": [
           {
             "label": "whc.unesco.org",
             "url": "https://whc.unesco.org/en/list/441/"
-          },
-          {
-            "label": "whc.unesco.org",
-            "url": "https://whc.unesco.org/en/decisions/5928"
-          },
-          {
-            "label": "whc.unesco.org",
-            "url": "https://whc.unesco.org/archive/2013/whc13-37com-8e-en.pdf"
-          }
-        ]
-      },
-      {
-        "title": "Mercury surveys at the burial mound",
-        "sources": [
-          {
-            "label": "sciencedirect.com",
-            "url": "https://www.sciencedirect.com/science/article/abs/pii/0375674285900160"
-          },
-          {
-            "label": "doi.org",
-            "url": "https://doi.org/10.1038/s41598-020-67305-x"
           }
         ]
       }
@@ -5620,107 +6365,61 @@ window.NIHAO_CULTURE_SOURCES = [
     "category": "figures",
     "categoryName": "People",
     "slug": "zheng-he",
-    "title": "郑和：船队为什么出发，又为什么停下？",
-    "titleEn": "Zheng He: Why Did the Fleets Sail - and Why Did They Stop?",
+    "title": "郑和与七次远航",
+    "titleEn": "Zheng He and the Seven Great Voyages",
     "storyPath": "../../culture/books/figures/zheng-he/",
     "groups": [
       {
-        "title": "Voyage chronology, changing routes, and expedition scale",
+        "title": "Seven voyages and an ocean already busy with ships",
         "sources": [
           {
             "label": "Columbia University, Asia for Educators, “The Ming Voyages”",
             "url": "https://afe.easia.columbia.edu/special/china_1000ce_mingvoyages.htm"
-          },
-          {
-            "label": "Cambridge University Press, International Organization, “Defending Hierarchy from the Moon to the Indian Ocean”",
-            "url": "https://www.cambridge.org/core/journals/international-organization/article/defending-hierarchy-from-the-moon-to-the-indian-ocean-symbolic-capital-and-political-dominance-in-early-modern-china-and-the-cold-war/1A48863DA2EE573CA0899DF939CCEE1D"
           }
         ]
       },
       {
-        "title": "Treasure-ship size controversy",
+        "title": "Why Zheng He was chosen",
         "sources": [
           {
-            "label": "Sally K. Church, Monumenta Serica, “Zheng He: An Investigation into the Plausibility of 450-ft Treasure Ships”",
-            "url": "https://doi.org/10.2307/40727457"
-          },
-          {
-            "label": "University of Washington Press, Fir and Empire, “Wood and Water, Part II: Naval Timber”",
-            "url": "https://uw.manifoldapp.org/read/fir-and-empire/section/d1fdd798-02e0-439b-9282-73f1bfd0d269"
-          }
-        ]
-      },
-      {
-        "title": "Ma He, capture, eunuch service, and command",
-        "sources": [
-          {
-            "label": "University of Brunei Darussalam, Institute of Asian Studies, Lee Cheuk Yin, “Zheng He and his Maritime Expeditions”",
+            "label": "Lee Cheuk Yin, University of Brunei Darussalam, Institute of Asian Studies, “Zheng He and his Maritime Expeditions”",
             "url": "https://ias.ubd.edu.bn/wp-content/uploads/2024/09/WORKING_PAPER_SERIES_81.pdf"
           }
         ]
       },
       {
-        "title": "Navigation: monsoons, compass routes, and shared knowledge",
+        "title": "Navigation and teamwork at sea",
         "sources": [
           {
-            "label": "Shih-Shan Henry Tsai et al., The Journal of Navigation, “The Asian Monsoons and Zheng He's Voyages to the Western Ocean”",
-            "url": "https://www.cambridge.org/core/journals/journal-of-navigation/article/abs/asian-monsoons-and-zheng-hes-voyages-to-the-western-ocean/48751F740571B1F57772AB38BD9E2AA1"
-          },
-          {
-            "label": "Journal of Asian History, “An Open Knowledge System for Navigational Science: Zheng He's Maritime Expeditions and Sino-Foreign Overseas Exchange”",
+            "label": "“An Open Knowledge System for Navigational Science: Zheng He's Maritime Expeditions and Sino-Foreign Overseas Exchange,” Chinese Annals of History of Science and Technology",
             "url": "https://brill.com/view/journals/cahs/1/1/article-p50_50.xml"
-          },
-          {
-            "label": "Biran et al., eLife, “Red Lines in the Ocean: Sea Routes on Early Modern East Asian Maps”",
-            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11132550/"
           }
         ]
       },
       {
-        "title": "Tribute, giraffe–qilin translation, and imperial legitimacy",
+        "title": "The giraffe and the qilin",
         "sources": [
           {
-            "label": "Metropolitan Museum of Art, “Giraffe with Two Keepers”",
+            "label": "The Metropolitan Museum of Art, “Giraffe with Two Keepers”",
             "url": "https://www.metmuseum.org/art/collection/search/51649"
-          },
-          {
-            "label": "Oxford Academic / University of Hawai‘i Press, “How the Giraffe Became a Qilin: Intercultural Signification in Ming Dynasty Arts”",
-            "url": "https://doi.org/10.21313/hawaii/9780824846763.003.0010"
           }
         ]
       },
       {
-        "title": "Exchange, inscriptions, and armed conflict",
+        "title": "Armed conflict and prisoners",
         "sources": [
           {
-            "label": "Sri Lanka National Commission for UNESCO, “Trilingual Inscription”",
-            "url": "https://slncu.lk/partnerships-networks/mow/trilingual-inscription/"
-          },
-          {
-            "label": "Cambridge University Press, The Making of the Modern Chinese Navy, “Ming–Kotte War in Southeast Asia (1410–11)”",
+            "label": "Cambridge University Press, “Ming–Kotte War in Southeast Asia (1410–11),” in The Making of the Modern Chinese Navy",
             "url": "https://www.cambridge.org/core/books/abs/making-of-the-modern-chinese-navy/mingkotte-war-in-southeast-asia-141011/22CC2980B942006F422B101BE962E6A6"
           }
         ]
       },
       {
-        "title": "Why the state expeditions stopped—and why seafaring did not",
+        "title": "Why the official fleets stopped",
         "sources": [
           {
-            "label": "Xin Wen, Journal of Chinese History, “The Cessation of Zheng He's Voyages and the Beginning of Private Sailings”",
+            "label": "Xin Wen, “The Cessation of Zheng He's Voyages and the Beginning of Private Sailings,” Journal of Chinese History",
             "url": "https://www.cambridge.org/core/journals/journal-of-chinese-history/article/cessation-of-zheng-hes-voyages-and-the-beginning-of-private-sailings-fiscal-competition-between-emperors-and-bureaucrats/8FE45F3210A4DF174A4EC2B30868D433"
-          },
-          {
-            "label": "Xihua University / Sichuan University, “郑和下西洋档案并非刘大夏烧毁——明代刘大夏销毁郑和下西洋档案考辨”",
-            "url": "https://aj.xhu.edu.cn/xhdxxbzskb/article/id/c7f0d466-da90-4ec2-a1f7-e28ac8b5b729?viewType=HTML"
-          }
-        ]
-      },
-      {
-        "title": "Death and burial uncertainty",
-        "sources": [
-          {
-            "label": "Chen Pingping, Journal of Nanjing Xiaozhuang University, “‘Zheng He Died at Calicut in 1433’: Correction of an Error”",
-            "url": "https://sfzk.cbpt.cnki.net/portal/journal/portal/client/paper/4040e61ad42358a3dc495a275f566291"
           }
         ]
       }
@@ -5730,146 +6429,34 @@ window.NIHAO_CULTURE_SOURCES = [
     "category": "figures",
     "categoryName": "People",
     "slug": "luban",
-    "title": "鲁班：他真的发明了所有木工工具吗？",
-    "titleEn": "Lu Ban: Did He Really Invent Every Carpenter's Tool?",
+    "title": "鲁班和长着小齿的草叶",
+    "titleEn": "Lu Ban and the Leaf with Tiny Teeth",
     "storyPath": "../../culture/books/figures/luban/",
     "groups": [
       {
-        "title": "Early textual figure and the Chu–Song story",
+        "title": "The complete saw legend",
         "sources": [
           {
-            "label": "Chinese Text Project, Mozi, “Gongshu”",
-            "url": "https://ctext.org/mozi/gong-shu/zhs"
-          },
-          {
-            "label": "Chinese Text Project, Mozi, book 13, “Questions of Lu”",
-            "url": "https://ctext.org/mozi/book-13/zhs"
+            "label": "Jining Municipal Bureau of Culture and Tourism, “济宁非遗记录之鲁班传说”",
+            "url": "https://whlyj.jining.gov.cn/art/2021/1/20/art_69979_2705967.html"
           }
         ]
       },
       {
-        "title": "Names, legend growth, and the craft-hero tradition",
+        "title": "Why there are so many Lu Ban stories",
         "sources": [
           {
-            "label": "Chinese Social Sciences Net, “鲁班传说与中华民族共同体形成的三重逻辑”",
-            "url": "https://www.cssn.cn/wx/wx_zggdwx/202503/t20250304_5855623.shtml"
+            "label": "China Intangible Cultural Heritage Network and Digital Museum, “鲁班传说”",
+            "url": "https://www.ihchina.cn/art/detail/id/12270.html"
           }
         ]
       },
       {
-        "title": "Saws, planes, ink lines, and collective tool development",
+        "title": "Toothed tools before Lu Ban",
         "sources": [
           {
-            "label": "Richard Fullagar et al., Archaeological Research in Asia, “A functional study of denticulate sickles and knives, ground stone tools from the early Neolithic Peiligang culture, China”",
+            "label": "Richard Fullagar et al., “A functional study of denticulate sickles and knives, ground stone tools from the early Neolithic Peiligang culture, China,” Archaeological Research in Asia",
             "url": "https://www.sciencedirect.com/science/article/pii/S235222672100012X"
-          },
-          {
-            "label": "Yukio Yamaguchi, Journal of Architecture, Planning and Environmental Engineering, “Chinese Carpenter's Planes: Carpenter's Tools in Jiangnan District, China, Part 2”",
-            "url": "https://www.jstage.jst.go.jp/article/aija/61/486/61_KJ00004221720/_article/-char/en"
-          },
-          {
-            "label": "Zhenjing Traditional Woodwork Museum, Google Arts & Culture, “Traditional Chinese Woodworking Tool: Ink Line”",
-            "url": "https://artsandculture.google.com/story/traditional-chinese-woodworking-tool-ink-line-zhenjing-woodworking-institute/mAUhO8AhKclOKQ?hl=en"
-          }
-        ]
-      },
-      {
-        "title": "The *Lu Ban Jing* and later workshop knowledge",
-        "sources": [
-          {
-            "label": "Palace Museum, “《鲁班经匠家镜》”",
-            "url": "https://www.dpm.org.cn/ancient/yuanmingqing/148044.html"
-          },
-          {
-            "label": "Wang Ermin, Academia Sinica, “中國民間市井營造工匠日用之《魯班經》”",
-            "url": "https://www.mh.sinica.edu.tw/MHDocument/Publication/Publication_622.pdf"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "category": "philosophy",
-    "categoryName": "Philosophy",
-    "slug": "laozi",
-    "title": "像水一样找到路",
-    "titleEn": "Find a Way Like Water",
-    "storyPath": "../../culture/books/philosophy/laozi/",
-    "groups": [
-      {
-        "title": "The Pass Story and Laozi’s Uncertain Identity",
-        "sources": [
-          {
-            "label": "Sima Qian, Records of the Grand Historian, “Biography of Laozi and Han Fei”",
-            "url": "https://ctext.org/shiji/lao-zi-han-fei-lie-zhuan/zh"
-          }
-        ]
-      },
-      {
-        "title": "Laozi, the *Dao De Jing*, and Early Manuscripts",
-        "sources": [
-          {
-            "label": "Stanford Encyclopedia of Philosophy, “Laozi”",
-            "url": "https://plato.stanford.edu/entries/laozi/"
-          },
-          {
-            "label": "Stanford Encyclopedia of Philosophy, “Religious Daoism,” section on early Daoist texts",
-            "url": "https://plato.stanford.edu/entries/daoism-religion/"
-          }
-        ]
-      },
-      {
-        "title": "Water in Chapters 8 and 78",
-        "sources": [
-          {
-            "label": "Chinese Text Project, Dao De Jing",
-            "url": "https://ctext.org/dao-de-jing/zhs"
-          }
-        ]
-      },
-      {
-        "title": "Flowing Water and Rounded Stones",
-        "sources": [
-          {
-            "label": "U.S. National Park Service, “River Rocks” educational video description",
-            "url": "https://www.nps.gov/media/video/view.htm?id=27C873CB-155D-451F-6707380D4C1BBE6B"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "category": "philosophy",
-    "categoryName": "Philosophy",
-    "slug": "confucius",
-    "title": "孔子的大问题：如果是你呢？",
-    "titleEn": "Confucius's Big Question: What If It Were You?",
-    "storyPath": "../../culture/books/philosophy/confucius/",
-    "groups": [
-      {
-        "title": "The Analects, “Wei Ling Gong”",
-        "sources": [
-          {
-            "label": "Chinese Text Project",
-            "url": "https://ctext.org/analects/wei-ling-gong/zhs"
-          }
-        ]
-      },
-      {
-        "title": "Confucius and the Formation of *The Analects*",
-        "sources": [
-          {
-            "label": "Stanford Encyclopedia of Philosophy, “Confucius”",
-            "url": "https://plato.stanford.edu/entries/confucius/"
-          }
-        ]
-      },
-      {
-        "title": "Shandong Geographic Orientation",
-        "sources": [
-          {
-            "label": "Shandong Maritime Safety Administration, “Jurisdiction Area”",
-            "url": "https://www.sd.msa.gov.cn/col/col1869/index.html"
           }
         ]
       }
@@ -5879,8 +6466,8 @@ window.NIHAO_CULTURE_SOURCES = [
     "category": "philosophy",
     "categoryName": "Philosophy",
     "slug": "seed-dao",
-    "title": "等一颗种子发芽",
-    "titleEn": "Waiting for a Seed to Grow",
+    "title": "一颗种子的耐心：照料，而不强迫",
+    "titleEn": "The Patience of a Seed: Care Without Forcing",
     "storyPath": "../../culture/books/philosophy/seed-dao/",
     "groups": [
       {
@@ -5953,9 +6540,96 @@ window.NIHAO_CULTURE_SOURCES = [
   {
     "category": "philosophy",
     "categoryName": "Philosophy",
+    "slug": "confucius",
+    "title": "孔子的一句话：先把自己放到别人心里",
+    "titleEn": "Confucius’s Big Question: How Would It Feel to Be Them?",
+    "storyPath": "../../culture/books/philosophy/confucius/",
+    "groups": [
+      {
+        "title": "The Analects, “Wei Ling Gong”",
+        "sources": [
+          {
+            "label": "Chinese Text Project",
+            "url": "https://ctext.org/analects/wei-ling-gong/zhs"
+          }
+        ]
+      },
+      {
+        "title": "Confucius and the Formation of *The Analects*",
+        "sources": [
+          {
+            "label": "Stanford Encyclopedia of Philosophy, “Confucius”",
+            "url": "https://plato.stanford.edu/entries/confucius/"
+          }
+        ]
+      },
+      {
+        "title": "Shandong Geographic Orientation",
+        "sources": [
+          {
+            "label": "Shandong Maritime Safety Administration, “Jurisdiction Area”",
+            "url": "https://www.sd.msa.gov.cn/col/col1869/index.html"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "philosophy",
+    "categoryName": "Philosophy",
+    "slug": "laozi",
+    "title": "老子的智慧：水为什么不争？",
+    "titleEn": "Laozi’s Wisdom: Why Doesn’t Water Compete?",
+    "storyPath": "../../culture/books/philosophy/laozi/",
+    "groups": [
+      {
+        "title": "The Pass Story and Laozi’s Uncertain Identity",
+        "sources": [
+          {
+            "label": "Sima Qian, Records of the Grand Historian, “Biography of Laozi and Han Fei”",
+            "url": "https://ctext.org/shiji/lao-zi-han-fei-lie-zhuan/zh"
+          }
+        ]
+      },
+      {
+        "title": "Laozi, the *Dao De Jing*, and Early Manuscripts",
+        "sources": [
+          {
+            "label": "Stanford Encyclopedia of Philosophy, “Laozi”",
+            "url": "https://plato.stanford.edu/entries/laozi/"
+          },
+          {
+            "label": "Stanford Encyclopedia of Philosophy, “Religious Daoism,” section on early Daoist texts",
+            "url": "https://plato.stanford.edu/entries/daoism-religion/"
+          }
+        ]
+      },
+      {
+        "title": "Water in Chapters 8 and 78",
+        "sources": [
+          {
+            "label": "Chinese Text Project, Dao De Jing",
+            "url": "https://ctext.org/dao-de-jing/zhs"
+          }
+        ]
+      },
+      {
+        "title": "Flowing Water and Rounded Stones",
+        "sources": [
+          {
+            "label": "U.S. National Park Service, “River Rocks” educational video description",
+            "url": "https://www.nps.gov/media/video/view.htm?id=27C873CB-155D-451F-6707380D4C1BBE6B"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "philosophy",
+    "categoryName": "Philosophy",
     "slug": "yin-yang",
-    "title": "阴和阳：同一座山的两边",
-    "titleEn": "Yin and Yang: Two Sides of One Mountain",
+    "title": "阴和阳：一座山为什么有两种温度？",
+    "titleEn": "Yin and Yang: How Can One Mountain Have Two Temperatures?",
     "storyPath": "../../culture/books/philosophy/yin-yang/",
     "groups": [
       {
@@ -6055,98 +6729,115 @@ window.NIHAO_CULTURE_SOURCES = [
     "category": "religion",
     "categoryName": "Religion & Belief",
     "slug": "buddhism-comes-to-china",
-    "title": "不只一匹白马：佛教怎样来到中国",
-    "titleEn": "More Than One White Horse: How Buddhism Reached China",
+    "title": "佛教怎样来到中国？白马寺的传说",
+    "titleEn": "How Did Buddhism Come to China? The White Horse Story",
     "storyPath": "../../culture/books/religion/buddhism-comes-to-china/",
     "groups": [
       {
-        "title": "A Dated First-Century Record",
+        "title": "Emperor Ming, the white horse, and White Horse Temple",
         "sources": [
           {
-            "label": "Book of the Later Han, “Biography of Liu Ying, Prince of Chu,” text preserved through the Chinese Text Project",
-            "url": "https://ctext.org/wiki.pl?chapter=592401&if=en"
+            "label": "National Museum of China, “Mirror of the Mind: An Exhibition of Buddhist Sculpture from Bo'xing, Shandong Province”",
+            "url": "https://en.chnmuseum.cn/exhibition/past_exhibitions/202010/t20201028_247936.html"
           },
           {
-            "label": "“Chinese Religion: An Overview,” Encyclopedia of Religion",
-            "url": "https://www.encyclopedia.com/environment/encyclopedias-almanacs-transcripts-and-maps/chinese-religion-overview"
-          }
-        ]
-      },
-      {
-        "title": "Emperor Ming's Dream as a Received Tradition",
-        "sources": [
-          {
-            "label": "Book of the Later Han, “Treatise on the Western Regions,” Chinese Text Project",
-            "url": "https://ctext.org/hou-han-shu/xi-yu-zhuan/zh"
-          },
-          {
-            "label": "Duan Qingbo, “Sino-Western Cultural Exchange as Seen through the Archaeology of the First Emperor's Necropolis,” Journal of Chinese History",
-            "url": "https://www.cambridge.org/core/journals/journal-of-chinese-history/article/sinowestern-cultural-exchange-as-seen-through-the-archaeology-of-the-first-emperors-necropolis/3F6506262A9ED57C9DC3827EEAA6B230"
-          }
-        ]
-      },
-      {
-        "title": "White Horse Temple, the Two Monks, and the Date 68",
-        "sources": [
-          {
-            "label": "Eric Zürcher, The Buddhist Conquest of China: The Spread and Adaptation of Buddhism in Early Medieval China, revised edition, chapter on Han Buddhism",
+            "label": "Eric Zürcher, The Buddhist Conquest of China: The Spread and Adaptation of Buddhism in Early Medieval China, revised edition",
             "url": "https://brill.com/display/title/6495"
           },
           {
-            "label": "Tsukamoto Zenryu, A History of Early Chinese Buddhism, supplementary English text in the Kyoto University Research Information Repository",
-            "url": "https://repository.kulib.kyoto-u.ac.jp/bitstream/2433/139089/10/YunKang_v16_suppl_text.pdf"
+            "label": "Polina Shmushko, “The Modern White Horse Temple and Online Reconfiguring of a Buddhist Heritage Space”",
+            "url": "https://pure.uva.nl/ws/files/178085865/jdtrea-3-1-109.pdf"
           }
         ]
       },
       {
-        "title": "Central Asian Translators and Translation Teams",
+        "title": "Buddhism's long growth in China",
         "sources": [
           {
-            "label": "Haun Saussy, “The First Age of Translation,” in Translation as Citation: Zhuangzi Inside Out, Oxford University Press",
-            "url": "https://academic.oup.com/book/25502/chapter-abstract/192724579"
+            "label": "Pew Research Center, “Buddhism in China”",
+            "url": "https://www.pewresearch.org/religion/2023/08/30/buddhism/"
           },
           {
-            "label": "Christoph Anderl, Bart Dessein, and Ann Heirman, “Buddhism,” Oxford Bibliographies in Chinese Studies",
-            "url": "https://academic.oup.com/reference/62338/reference-article-abstract/554177590"
+            "label": "British Museum, “Ancient India: Living Traditions — Adaptations in China”",
+            "url": "https://www.britishmuseum.org/exhibitions/ancient-india-living-traditions/ancient-india-living-traditions-large-print-guide"
           },
           {
-            "label": "Paul Harrison, “An Shigao,” Encyclopedia of Buddhism",
-            "url": "https://www.encyclopedia.com/religion/encyclopedias-almanacs-transcripts-and-maps/shigao"
+            "label": "Smarthistory, “Buddhism in Chinese Art (2nd century through 907 C.E.)”",
+            "url": "https://smarthistory.org/reframing-art-history/buddhism-chinese-art/"
           }
         ]
       },
       {
-        "title": "Many Routes and Continuing Exchange",
+        "title": "Buddhism in China today",
         "sources": [
           {
-            "label": "UNESCO, “About the Silk Roads”",
-            "url": "https://www.unesco.org/en/silk-roads/about-silk-roads?hub=196704"
+            "label": "Pew Research Center, “6 Facts About Buddhism in China”",
+            "url": "https://www.pewresearch.org/short-reads/2023/09/21/6-facts-about-buddhism-in-china/"
           },
           {
-            "label": "UNESCO World Heritage Centre, “Silk Roads: the Routes Network of Chang'an–Tianshan Corridor”",
-            "url": "https://whc.unesco.org/en/list/1442/"
+            "label": "Pew Research Center, “Measuring Religion in China”",
+            "url": "https://www.pewresearch.org/religion/2023/08/30/measuring-religion-in-china/"
+          },
+          {
+            "label": "Asian Art Museum, “Bodhisattva Avalokiteshvara (Chinese: Guanyin)”",
+            "url": "https://education.asianart.org/resources/bodhisattva-avalokiteshvara-chinese-guanyin-618-906/"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "religion",
+    "categoryName": "Religion & Belief",
+    "slug": "daoism",
+    "title": "八仙是怎样过海的？",
+    "titleEn": "How Did the Eight Immortals Cross the Sea?",
+    "storyPath": "../../culture/books/religion/daoism/",
+    "groups": [
+      {
+        "title": "Daoism, the Dao, caring for life, and immortals",
+        "sources": [
+          {
+            "label": "Stanford Encyclopedia of Philosophy, “Religious Daoism”",
+            "url": "https://plato.stanford.edu/archives/spr2018/entries/daoism-religion/"
+          },
+          {
+            "label": "Columbia University, Asia for Educators, Stephen F. Teiser, “The Spirits of Chinese Religion”",
+            "url": "https://afe.easia.columbia.edu/cosmos/main/spirits_of_chinese_religion.pdf"
           }
         ]
       },
       {
-        "title": "Guanyin and Dunhuang: Change Without a Single “Chinese Shape”",
+        "title": "The Eight Immortals cross the sea",
         "sources": [
           {
-            "label": "Denise Patry Leidy, “Chinese Buddhist Sculpture,” Metropolitan Museum of Art",
-            "url": "https://www.metmuseum.org/essays/chinese-buddhist-sculpture"
+            "label": "Palace Museum, “八仙过海”",
+            "url": "https://www.dpm.org.cn/lemmas/244863.html"
           },
           {
-            "label": "Getty Research Institute, “Cave Temples of Dunhuang: Buddhist Art on China's Silk Road”",
-            "url": "https://www.getty.edu/research/exhibitions_events/exhibitions/cave_temples_dunhuang/gallery.html"
+            "label": "China Intangible Cultural Heritage Network and Digital Museum, “八仙传说”",
+            "url": "https://www.ihchina.cn/project_details/12271/"
+          },
+          {
+            "label": "zh.wikisource.org",
+            "url": "https://zh.wikisource.org/wiki/%E6%9D%B1%E9%81%8A%E8%A8%98/%E7%AC%AC56%E5%9B%9E"
           }
         ]
       },
       {
-        "title": "Present-Day White Horse Temple and Existing Images",
+        "title": "The Eight Immortals in art and culture",
         "sources": [
           {
-            "label": "Polina Shmushko, “The Modern White Horse Temple and Online Reconfiguring of a Buddhist Heritage Space,” Journal of Daesoon Thought and the Religions of East Asia 3.1",
-            "url": "https://www.accesson.kr/jdtrea/v.3/1/109/38840"
+            "label": "Palace Museum, “八仙过海”",
+            "url": "https://www.dpm.org.cn/lemmas/244863.html"
+          },
+          {
+            "label": "Metropolitan Museum of Art, “Cup with Eight Daoist Immortals”",
+            "url": "https://www.metmuseum.org/art/collection/search/41879"
+          },
+          {
+            "label": "British Museum, “Mountain group with Shoulao and the Eight Daoist Immortals”",
+            "url": "https://www.britishmuseum.org/collection/object/A_1988-0727-1"
           }
         ]
       }
@@ -6156,85 +6847,34 @@ window.NIHAO_CULTURE_SOURCES = [
     "category": "religion",
     "categoryName": "Religion & Belief",
     "slug": "lord-guan",
-    "title": "关公为什么会走进庙里？",
-    "titleEn": "How Did Guan Yu Become a Temple God?",
+    "title": "关羽没有忘记的承诺",
+    "titleEn": "The Promise Guan Yu Kept",
     "storyPath": "../../culture/books/religion/lord-guan/",
     "groups": [
       {
-        "title": "Historical Guan Yu",
+        "title": "The promise, repayment, and departure",
         "sources": [
           {
-            "label": "Chinese Text Project, Chen Shou, Records of the Three Kingdoms, “Book of Shu 6,” Biography of Guan Yu",
-            "url": "https://ctext.org/sanguozhi/36/zh"
-          },
-          {
-            "label": "Barend J. ter Haar, Guan Yu: The Religious Afterlife of a Failed Hero, Oxford University Press, preview of Chapter 1",
-            "url": "https://api.pageplace.de/preview/DT0400.9780192525420_A35502593/preview-9780192525420_A35502593.pdf"
+            "label": "Chen Shou, Records of the Three Kingdoms, “Book of Shu 6,” Biography of Guan Yu, Chinese Text Project",
+            "url": "https://ctext.org/sanguozhi/36/zhs"
           }
         ]
       },
       {
-        "title": "The Cult Predated *Romance of the Three Kingdoms*",
-        "sources": [
-          {
-            "label": "Barend J. ter Haar, Guan Yu: The Religious Afterlife of a Failed Hero, Oxford University Press, Chapter 1 preview and Chapter 2 abstract",
-            "url": "https://api.pageplace.de/preview/DT0400.9780192525420_A35502593/preview-9780192525420_A35502593.pdf"
-          },
-          {
-            "label": "academic.oup.com",
-            "url": "https://academic.oup.com/book/10303/chapter-abstract/158027186"
-          }
-        ]
-      },
-      {
-        "title": "Buddhist and Daoist Layers",
+        "title": "From Guan Yu to Lord Guan",
         "sources": [
           {
             "label": "Barend J. ter Haar, Guan Yu: The Religious Afterlife of a Failed Hero, Oxford University Press",
             "url": "https://api.pageplace.de/preview/DT0400.9780192525420_A35502593/preview-9780192525420_A35502593.pdf"
           },
           {
-            "label": "Cambridge University Press, “Knowledge and Ritual: The Dual Nature of the Scripture Illustrating the Holiness of Emperor Guan”",
-            "url": "https://www.cambridge.org/core/books/abs/chinese-popular-religion-in-text-and-acts/knowledge-and-ritual-the-dual-nature-of-the-scripture-illustrating-the-holiness-of-emperor-guan-guandi-mingsheng-jing/C8963AD9DE0DA767D0A2050E4B15D355"
-          },
-          {
-            "label": "doi.org",
-            "url": "https://doi.org/10.1017/9789048550364.007"
-          },
-          {
-            "label": "He Liqun, “Buddhist State Monasteries in Early Medieval China,” Heidelberg University",
-            "url": "https://archiv.ub.uni-heidelberg.de/volltextserver/17285/1/heliqun05082014.pdf"
-          }
-        ]
-      },
-      {
-        "title": "Imperial Titles and the Moral Deity",
-        "sources": [
-          {
-            "label": "Metropolitan Museum of Art, “Guan Yu,” painting ca. 1700",
+            "label": "Metropolitan Museum of Art, “Guan Yu,” painting, ca. 1700",
             "url": "https://www.metmuseum.org/art/collection/search/62002"
-          },
-          {
-            "label": "Cambridge University Press, “Knowledge and Ritual: The Dual Nature of the Scripture Illustrating the Holiness of Emperor Guan”",
-            "url": "https://www.cambridge.org/core/books/abs/chinese-popular-religion-in-text-and-acts/knowledge-and-ritual-the-dual-nature-of-the-scripture-illustrating-the-holiness-of-emperor-guan-guandi-mingsheng-jing/C8963AD9DE0DA767D0A2050E4B15D355"
           }
         ]
       },
       {
-        "title": "Merchants, Guildhalls, and Trust",
-        "sources": [
-          {
-            "label": "“Shanxi Merchant Guildhalls as Religious Sites for Theatrical Performances in Late Imperial China,” Religions 17.4",
-            "url": "https://www.mdpi.com/2077-1444/17/4/404"
-          },
-          {
-            "label": "British Museum, “Figure,” Guandi soapstone sculpture",
-            "url": "https://www.britishmuseum.org/collection/object/A_SLMisc-1174"
-          }
-        ]
-      },
-      {
-        "title": "Images and Terminology",
+        "title": "Red face, beard, robe, and blade",
         "sources": [
           {
             "label": "Smithsonian Institution, “Chinese Opera”",
@@ -6245,6 +6885,81 @@ window.NIHAO_CULTURE_SOURCES = [
             "url": "https://www.britishmuseum.org/collection/object/A_1990-1113-0-6"
           }
         ]
+      },
+      {
+        "title": "Merchants and trust",
+        "sources": [
+          {
+            "label": "British Museum, “Figure,” Guandi soapstone sculpture",
+            "url": "https://www.britishmuseum.org/collection/object/A_SLMisc-1174"
+          },
+          {
+            "label": "“Shanxi Merchant Guildhalls as Religious Sites for Theatrical Performances in Late Imperial China,” Religions 17.4",
+            "url": "https://www.mdpi.com/2077-1444/17/4/404"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "religion",
+    "categoryName": "Religion & Belief",
+    "slug": "shaolin-kung-fu",
+    "title": "少林寺为什么会有功夫？",
+    "titleEn": "How Did Kung Fu Come to Shaolin Temple?",
+    "storyPath": "../../culture/books/religion/shaolin-kung-fu/",
+    "groups": [
+      {
+        "title": "Shaolin as a Buddhist monastery",
+        "sources": [
+          {
+            "label": "People’s Government of Henan Province, “Shaolin Temple”",
+            "url": "https://english.henan.gov.cn/2019/10-16/988665.html"
+          },
+          {
+            "label": "UNESCO World Heritage Centre, “Historic Monuments of Dengfeng in ‘The Centre of Heaven and Earth’”",
+            "url": "https://whc.unesco.org/en/list/1305/"
+          }
+        ]
+      },
+      {
+        "title": "Li Shimin and the thirteen monks",
+        "sources": [
+          {
+            "label": "Meir Shahar, The Shaolin Monastery: History, Religion, and the Chinese Martial Arts, University of Hawai‘i Press",
+            "url": "https://uhpress.hawaii.edu/title/the-shaolin-monastery-history-religion-and-the-chinese-martial-arts/"
+          },
+          {
+            "label": "Tōnami Mamoru, The Shaolin Monastery Stele on Mount Song, summary and bibliographic record, Persée",
+            "url": "https://www.persee.fr/doc/befeo_0336-1519_1993_num_80_1_2226"
+          }
+        ]
+      },
+      {
+        "title": "Staff fighting and later boxing",
+        "sources": [
+          {
+            "label": "Meir Shahar, The Shaolin Monastery: History, Religion, and the Chinese Martial Arts, University of Hawai‘i Press",
+            "url": "https://uhpress.hawaii.edu/title/the-shaolin-monastery-history-religion-and-the-chinese-martial-arts/"
+          },
+          {
+            "label": "Meir Shahar, “Hand Combat,” Oxford Academic / Hawai‘i Scholarship Online",
+            "url": "https://academic.oup.com/hawaii-scholarship-online/book/19612/chapter-abstract/178357584"
+          },
+          {
+            "label": "Meir Shahar, “Epigraphy, Buddhist Historiography, and Fighting Monks: The Case of the Shaolin Monastery,” Academia Sinica",
+            "url": "https://www11.ihp.sinica.edu.tw/storage/w2_file/1508BgfeJrK.pdf"
+          }
+        ]
+      },
+      {
+        "title": "Stories, theater, and movies",
+        "sources": [
+          {
+            "label": "Meir Shahar, The Shaolin Monastery: History, Religion, and the Chinese Martial Arts, University of Hawai‘i Press",
+            "url": "https://uhpress.hawaii.edu/title/the-shaolin-monastery-history-religion-and-the-chinese-martial-arts/"
+          }
+        ]
       }
     ]
   },
@@ -6252,46 +6967,20 @@ window.NIHAO_CULTURE_SOURCES = [
     "category": "religion",
     "categoryName": "Religion & Belief",
     "slug": "maitreya-buddha",
-    "title": "同一个名字，两种模样：弥勒与布袋和尚",
-    "titleEn": "One Name, Two Faces: Maitreya and the Cloth-Bag Monk",
+    "title": "笑和尚和他的大布袋",
+    "titleEn": "The Smiling Monk and His Big Cloth Bag",
     "storyPath": "../../culture/books/religion/maitreya-buddha/",
     "groups": [
       {
-        "title": "Maitreya as the Future Buddha",
+        "title": "Qici, the monk known as Budai",
         "sources": [
           {
-            "label": "Smithsonian National Museum of Asian Art, “Rising to the Occasion”",
-            "url": "https://asia.si.edu/explore-art-culture/interactives/encountering-the-buddha-life-of-the-buddha/rising-to-the-occasion/"
+            "label": "cbetaonline.dila.edu.tw",
+            "url": "https://cbetaonline.dila.edu.tw/T50n2061_p0848b23"
           },
           {
-            "label": "Smithsonian National Museum of Asian Art, “The Bodhisattva Mile (Sanskrit Maitreya), seated in ‘Pensive Pose’”",
-            "url": "https://asia.si.edu/explore-art-culture/collections/search/edanmdm%3Afsg_F1911.411/"
-          },
-          {
-            "label": "Metropolitan Museum of Art, “Buddhism and Buddhist Art”",
-            "url": "https://www.metmuseum.org/zh/essays/buddhism-and-buddhist-art"
-          }
-        ]
-      },
-      {
-        "title": "A Dated Early Chinese Maitreya Image",
-        "sources": [
-          {
-            "label": "Metropolitan Museum of Art, “Buddha Maitreya (Mile),” dated 486",
-            "url": "https://www.metmuseum.org/art/collection/search/42733"
-          },
-          {
-            "label": "Metropolitan Museum of Art, Denise Patry Leidy, “Chinese Buddhist Sculpture”",
-            "url": "https://www.metmuseum.org/essays/chinese-buddhist-sculpture"
-          }
-        ]
-      },
-      {
-        "title": "Qici/Budai in the Early Buddhist Biography",
-        "sources": [
-          {
-            "label": "Zanning, Song Gaoseng Zhuan (Biographies of Eminent Monks Compiled in the Song), volume 21, “Tang Mingzhou Fenghua xian shi Qici,” text reproduced from CBETA",
-            "url": "https://deerpark.app/stories/5233"
+            "label": "Dharma Drum Institute of Liberal Arts, Buddhist Studies Authority Database, “契此”",
+            "url": "https://authority.dila.edu.tw/person/search.php?aid=A012858"
           },
           {
             "label": "British Museum, “Budai 布袋” biographical authority record",
@@ -6300,11 +6989,41 @@ window.NIHAO_CULTURE_SOURCES = [
         ]
       },
       {
-        "title": "The Development of Budai-Maitreya in China",
+        "title": "The weather and snow stories",
         "sources": [
           {
-            "label": "“The Extinction of Three Foreign Religions in the Mediaeval Times and the Path Choice in the Sinicization of Foreign Religions,” Journal of East China Normal University (Humanities and Social Sciences)",
-            "url": "https://xbzs.ecnu.edu.cn/CN/html/2019-1-117.htm"
+            "label": "cbetaonline.dila.edu.tw",
+            "url": "https://cbetaonline.dila.edu.tw/T50n2061_p0848b23"
+          }
+        ]
+      },
+      {
+        "title": "Maitreya as the Future Buddha",
+        "sources": [
+          {
+            "label": "Smithsonian National Museum of Asian Art, “Rising to the Occasion”",
+            "url": "https://asia.si.edu/explore-art-culture/interactives/encountering-the-buddha-life-of-the-buddha/rising-to-the-occasion/"
+          },
+          {
+            "label": "Smithsonian National Museum of Asian Art, Encountering the Buddha exhibition labels",
+            "url": "https://asia.si.edu/wp-content/uploads/2023/08/Encountering-the-Buddha-Large-Print-Labels.pdf"
+          },
+          {
+            "label": "Metropolitan Museum of Art, “Buddha Maitreya (Mile),” dated 486",
+            "url": "https://www.metmuseum.org/art/collection/search/42733"
+          }
+        ]
+      },
+      {
+        "title": "How Budai and Maitreya became connected",
+        "sources": [
+          {
+            "label": "cbetaonline.dila.edu.tw",
+            "url": "https://cbetaonline.dila.edu.tw/T50n2061_p0848b23"
+          },
+          {
+            "label": "Metropolitan Museum of Art, “Buddhist monk Budai”",
+            "url": "https://www.metmuseum.org/art/collection/search/42545"
           },
           {
             "label": "British Museum, “figure,” Budai sculpture dated 1484",
@@ -6313,103 +7032,15 @@ window.NIHAO_CULTURE_SOURCES = [
         ]
       },
       {
-        "title": "Placement in the Hall of the Heavenly Kings",
+        "title": "Temple placement and later meanings",
         "sources": [
           {
             "label": "Renmin University of China Institute for the Study of Buddhism and Religious Theory, “佛教仪轨制度”",
             "url": "https://isbrt.ruc.edu.cn/xszl/rucfojiaoallcmsZiyuan238.htm"
           },
           {
-            "label": "Beijing Xicheng District People’s Government, “广化寺”",
-            "url": "https://www.bjxch.gov.cn/xcfw/whfw/xxxq/pnidpv737621.html"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "category": "religion",
-    "categoryName": "Religion & Belief",
-    "slug": "daoism",
-    "title": "道教：不只神仙和仙丹",
-    "titleEn": "Daoism: More Than Immortals and Elixirs",
-    "storyPath": "../../culture/books/religion/daoism/",
-    "groups": [
-      {
-        "title": "Daoist Thought, Daoist Religion, and the Problem of a Single Origin",
-        "sources": [
-          {
-            "label": "Stanford Encyclopedia of Philosophy, “Religious Daoism”",
-            "url": "https://plato.stanford.edu/entries/daoism-religion/"
-          }
-        ]
-      },
-      {
-        "title": "The Celestial Masters and the Date 142 CE",
-        "sources": [
-          {
-            "label": "Columbia University, Asia for Educators, “Daoism”",
-            "url": "https://afe.easia.columbia.edu/cosmos/ort/daoism.htm"
-          },
-          {
-            "label": "Journal of Chinese History review of Terry F. Kleeman, Celestial Masters: History and Ritual in Early Daoist Communities",
-            "url": "https://www.cambridge.org/core/journals/journal-of-chinese-history/article/celestial-masters-history-and-ritual-in-early-daoist-communities-by-terry-f-kleeman-cambridge-mass-harvard-university-press-2016-446-pages-4995-4995-cloth/9F4DDD1189BEBA1C38A9E5D5F58A4D6C"
-          }
-        ]
-      },
-      {
-        "title": "Laozi as Ancient Teacher and Divine Lord",
-        "sources": [
-          {
-            "label": "Stanford Encyclopedia of Philosophy, “Laozi”",
-            "url": "https://plato.stanford.edu/entries/laozi/"
-          },
-          {
-            "label": "Stanford Encyclopedia of Philosophy, “Religious Daoism,” sections 1.1 and 2.5",
-            "url": "https://plato.stanford.edu/entries/daoism-religion/"
-          }
-        ]
-      },
-      {
-        "title": "Immortals and the Eight Immortals",
-        "sources": [
-          {
-            "label": "Metropolitan Museum of Art, “Cup with Eight Daoist Immortals”",
-            "url": "https://www.metmuseum.org/art/collection/search/41879"
-          },
-          {
-            "label": "British Museum, “Mountain group with Shoulao and the Eight Daoist Immortals”",
-            "url": "https://www.britishmuseum.org/collection/object/A_1988-0727-1"
-          },
-          {
-            "label": "Stanford Encyclopedia of Philosophy, “Religious Daoism,” section 6.1",
-            "url": "https://plato.stanford.edu/entries/daoism-religion/"
-          }
-        ]
-      },
-      {
-        "title": "External and Internal Alchemy",
-        "sources": [
-          {
-            "label": "Stanford Encyclopedia of Philosophy, “Religious Daoism,” section 10",
-            "url": "https://plato.stanford.edu/entries/daoism-religion/"
-          },
-          {
-            "label": "Yang et al., “Mercury and Mercury-Containing Preparations: History of Use, Clinical Applications, Pharmacology, Toxicology, and Pharmacokinetics in Traditional Chinese Medicine,” Frontiers in Pharmacology (via PubMed Central)",
-            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8924441/"
-          }
-        ]
-      },
-      {
-        "title": "Talismans and Ritual Writing",
-        "sources": [
-          {
-            "label": "Grégoire Espesset, “A case study on the evolution of Chinese religious symbols from talismanic paraphernalia to Taoist liturgy,” Bulletin of the School of Oriental and African Studies 78.3 (2015)",
-            "url": "https://www.cambridge.org/core/journals/bulletin-of-the-school-of-oriental-and-african-studies/article/abs/case-study-on-the-evolution-of-chinese-religious-symbols-from-talismanic-paraphernalia-to-taoist-liturgy/8F22DC531CEB02821CBE23BA0E265F6D"
-          },
-          {
-            "label": "Stanford Encyclopedia of Philosophy, “Religious Daoism,” sections 3 and 5",
-            "url": "https://plato.stanford.edu/entries/daoism-religion/"
+            "label": "British Museum, “Budai 布袋” biographical authority record",
+            "url": "https://www.britishmuseum.org/collection/term/BIOG1892"
           }
         ]
       }
