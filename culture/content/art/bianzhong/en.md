@@ -1,33 +1,65 @@
 > Difficulty: Easy
 
-# How Can One Bell Play Two Notes?
+# Why Can One Bell Play Two Notes?
 
-## One Bell, Two Notes
+## One Bell, Two Sounds
 
-A wooden mallet strikes the front of a bronze bell—*dong!* Then it strikes the side—*ding!* The second note is a little higher. Both notes come from the very same bell.
+A wooden mallet strikes the front of a bronze bell. *Dong!* Now it strikes a spot near the side. *Ding!*
 
-The secret is its shape. The bell is not perfectly round. It is slightly flat, like two curved roof tiles joined together. A strike on the front makes it vibrate one way. A strike on the side makes it vibrate another way. Ancient makers carefully matched the shape, thickness, and striking spots so one bell could sing two notes.
+The second note is higher. But nothing has been changed—same bell, same metal, same mallet. How can one bell have two different notes?
 
----
+The clue is in its shape. Many ancient Chinese music bells were not round like the bells you might see in a church tower. Look at one from below and it is flatter, almost like two curved roof tiles joined together. Because of that unusual shape, the bell can vibrate in different ways when it is struck in different places. Strike the center area and you hear one pitch; strike the right spot near the side and you hear another.
 
-## An Orchestra Asleep Underground
+The two notes were not hiding inside like two tiny bells. They came from two different ways the same bronze bell could shake.
 
-In 1978, archaeologists opened an ancient tomb in central China and found a whole set of bells. Sixty-five bells, large and small, hung on a huge frame in three rows. The biggest needed a heavy mallet. The smallest made bright, high notes. It was like finding an orchestra that had been sleeping underground for more than 2,400 years.
-
-The tomb belonged to Marquis Yi of Zeng, a ruler who lived in the fifth century BCE. Music must have mattered greatly to him. His tomb held drums and stringed instruments as well as bells. Together, they show that ancient China already had large bands with a wonderful range of sounds.
+And if one bell can do that, what happens when you hang sixty-five of them together?
 
 ---
 
-## Musical Clues Written on the Bells
+## A Whole Wall of Bells
 
-Look closely and you will find ancient writing on many of the bells. Some words name a bell or a note. Others mark where a musician should strike. A few even explain how one state's note names matched those used in another state. The bronze bells carry their own musical clues.
+In 1978, archaeologists working in Hubei Province uncovered an ancient tomb. Inside stood something enormous: rows and rows of bronze bells hanging from a three-level wooden-and-bronze frame.
 
-Several musicians had to work together. One played high notes with small mallets while another struck the great low bells. Bright notes and deep notes answered one another across the frame. A set of *biānzhōng* did much more than make a grand “doooong.” It could play a real melody.
+There were sixty-five bells altogether.
+
+They had belonged to a ruler remembered as Marquis Yi of Zeng, who lived more than 2,400 years ago. Some bells were small enough to make high, bright notes. Others were huge—the largest weighs more than 200 kilograms. Together, the bells could play notes across a range of more than five octaves.
+
+Now the first mystery becomes a much bigger one. If every bell can make two pitches, a musician does not simply have to choose the right bell. The musician also has to strike the right part of that bell.
+
+With so many bells and so many possible sounds, how could anyone keep track?
+
+Part of the answer is written right on the bells.
 
 ---
 
-## The Bells Ring Again
+## The Bells Have Labels
 
-The original bells of Marquis Yi are far too precious to play every day. Instead, makers and musicians measure their shapes, study their inscriptions, and build playable copies.
+Look closely at the bronze and you will see tiny Chinese characters. Across the bells, their frame, and the hooks that hold them, there are 3,755 inscribed characters.
 
-When all sixty-five copied bells ring, the room fills with sound. Bronze workers gave the metal its notes. Musicians learned where to find each one. Many people's work finally makes the heavy bronze sing.
+Some record events. Some identify sounds and pitch names. Some explain ideas about how musical pitches are related. On the bells, the writing helped preserve information about the notes that different striking places could produce.
+
+But these inscriptions are not a song written from beginning to end. They do not say, “Hit this bell first, then that one.” They are closer to labels and musical notes about the instrument itself—a way of recording what these bells could do.
+
+That is especially useful to us now. More than two thousand years later, researchers can compare the words carved into the bronze with the sounds the bells actually make.
+
+There is only one problem.
+
+You cannot keep hitting a 2,400-year-old treasure every day just because you want to hear it sing.
+
+---
+
+## So What Are We Hearing Today?
+
+The original bells are protected museum objects. Repeated playing could risk damaging them, so researchers studied their size, shape, bronze, structure, and sound and worked with craftspeople to make a complete set of replicas.
+
+Those replicas can be played.
+
+Today, musicians at the Hubei Provincial Museum perform on replica bells, letting visitors hear something the silent originals behind the display case cannot safely do every day. The copies are not the ancient bells themselves, but they were made by studying the originals closely.
+
+And that brings us back to the first *dong* and *ding*.
+
+One bell can make two notes because its unusual shape allows it to vibrate differently when struck in two carefully chosen places. Put many such bells together, tune them, label their sounds, hang them in the right order, and suddenly a row of heavy bronze objects becomes an instrument capable of melody.
+
+A bell looks still and solid. But strike the right place, and all that bronze begins to move.
+
+That is where the second note was hiding.

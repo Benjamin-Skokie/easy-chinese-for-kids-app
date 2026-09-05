@@ -1,205 +1,126 @@
-# “两根弦，怎样唱出那么多声音？”— References and Editorial Notes
+# “没有指板，二胡怎样找到音？”— References and Editorial Notes
 
 This file is for editorial research and does not render on the website.
 
-## Instrument structure and sound production
+## Two strings, no fingerboard, and the bow between the strings
 
-Source: Yale School of Music, “Erhu” (Musical Instrument Collection)
+Source: Yale School of Music, “Erhu” (Yale Collection of Musical Instruments)
 URL: https://music.yale.edu/browse-collection/erhu-45031973
-Accessed: 2026-08-21
+Accessed: 2026-09-05
 
 Supports:
 
-- The cataloged early-20th-century erhu has two strings, a hexagonal sound box with a python-skin table, and no fingerboard; the strings are stopped in midair.
-- The instrument is played upright on the lap, with the bow passing behind/between the strings.
+- The cataloged early-twentieth-century erhu has two strings, no fingerboard, and strings that are stopped in midair.
+- The instrument is played upright on the lap, with the bow passing behind the strings.
+- The cataloged instrument has a hexagonal sound box with a python-skin table.
 
 Editorial boundary:
 
-- This catalog entry documents one museum instrument, not every erhu ever built.
-- The story explains the absence of a fingerboard without claiming that children should handle or dismantle an instrument.
+- This page describes one museum instrument. The child-facing story therefore says that many traditional erhus use python skin rather than presenting every historical and modern erhu as identical.
+- The story does not ask children to remove the bow, loosen strings, shift the bridge, or dismantle an instrument.
 
 Source: Grinnell College Musical Instrument Collection, “Erhu”
 URL: https://omeka-s.grinnell.edu/s/MusicalInstruments/item/645
-Accessed: 2026-08-21
+Accessed: 2026-09-05
 
 Supports:
 
-- Bow hair runs between two strings of different gauges; the strings are stopped freely rather than pressed to a neck or fingerboard.
-- Vibration travels through a small bridge to the skin-covered resonator; a sliding nut defines the upper end of the vibrating string length.
+- The left hand free-stops the strings instead of pressing them against a neck or fingerboard.
+- Bow hair runs between the two strings; inward and outward bow pressure sound the inner and outer strings.
+- A small bridge stands on the membrane soundboard, and free stopping allows effects including glissando and vibrato.
 
 Editorial boundary:
 
-- The article simplifies the full acoustical system for children and does not turn one collection object’s precise materials or measurements into a universal specification.
-- The image of a horse is treated only as a clue to traditional bow-hair material, not as proof of geographical origin or emotional character.
+- The story explains note-finding as a combination of practiced hand placement and listening, without claiming that no written fingering systems or teaching methods exist.
+- “Almost like a person singing” is a child-facing description of sliding and bending sounds, not a scientific claim about timbre.
 
-## Huqin names, family relationships, and historical change
+## Abing's name, musical training, and death
 
-Source: 李玫, “奚琴、嵇琴、胡琴名实考论,” *中央音乐学院学报* 2002年第1期
-URL: https://ygx.sxu.edu.cn/db/%E6%9C%9F%E5%88%8A/zyyy2002/0201pdf/020106.pdf
-Accessed: 2026-08-21
+Source: Yang Yinliu, “瞎子阿炳小传,” reproduced in the China National Academy of Arts Library overview of the Chinese Traditional Music Recording Archive
+URL: https://lib.zgysyjy.org.cn/Uploads/File/2019/04/17/u5cb687f44c227.pdf
+Accessed: 2026-09-05
 
 Supports:
 
-- Historical terms such as *xiqin*, *jiqin*, and *huqin* changed in meaning and referred to instruments whose names and forms developed over time.
-- Old textual descriptions are evidence for historical relationships but do not make every named object identical to the modern erhu.
+- Abing's original name was Hua Yanjun, and Abing was his childhood name.
+- He was from Wuxi, learned music from childhood, and later worked as a street musician.
+- He died on December 4, 1950, only a few months after the September recordings.
 
 Editorial boundary:
 
-- The article does not claim that the modern erhu existed unchanged in the Tang, Song, or Yuan dynasty.
-- “Ancestor” is avoided when it would suggest a simple, proven one-line descent; the bicycle comparison is a modern explanatory analogy.
+- The child-facing story does not repeat disputed or stigmatizing claims about the cause of his blindness.
+- It does not invent Abing's thoughts, dialogue, or a moonlit composition scene.
 
-Source: Hong Kong Chinese Orchestra, “Bowed-string Instruments”
-URL: https://www.hkco.org/en/Instrument-Rd/Chinese-Instruments/Bowed-String-Instruments.html
-Accessed: 2026-08-21
+## The 1950 wire recordings
+
+Source: China National Academy of Arts Library / Art and Literature Museum, “构建中国传统音乐录音档案学术资源数字平台”
+URL: https://lib.zgysyjy.org.cn/detail/634555.html
+Accessed: 2026-09-05
 
 Supports:
 
-- *Huqin* is a generic term for a large family of Chinese bowed-string instruments.
-- Erhu, gaohu, zhonghu, gehu, bass gehu, banhu, jinghu, yehu, and leiqin are distinct members used according to repertory.
+- In 1950, Yang Yinliu brought a rare wire recorder to Wuxi, and he and Cao Anhe recorded Abing.
+- They preserved three erhu pieces, including *Erquan Yingyue*, followed the next day by three pipa pieces.
+- Abing died later that year, making the six recordings his surviving recorded works.
 
 Editorial boundary:
 
-- Regional genres and huqin types are not collapsed into one instrument or one sound.
-- The article names only a few familiar associations and does not imply that any instrument belongs exclusively to one genre.
+- This source says an instrument was newly bought, while the later Wuxi account below says an erhu was borrowed. The story avoids choosing between them and says only that the researchers helped Abing find an erhu.
+- The story distinguishes the three erhu pieces recorded that evening from the total of six erhu and pipa pieces preserved across the sessions.
 
-Source: 郑筱筱, “胡琴名称考·近现代,” 华音网, 2023
-URL: https://www.huain.com/article/erhu/2023/0605/1982.html
-Accessed: 2026-08-21
+Source: Wuxi Liangxi District People's Government, “《二泉映月》抢录背后的传奇故事”
+URL: https://www.wxlx.gov.cn/doc/2025/05/30/4583886.shtml
+Accessed: 2026-09-05
 
 Supports:
 
-- A 1923 guide described the two-stringed, bow-between-strings instrument as *huqin*, also called erhu.
-- In 1928 Liu Tianhua wrote that erhu, also called *nanhu*, was one type of huqin, and described its broad use across folk, opera, and ensemble traditions.
+- Yang Yinliu and Cao Anhe arranged the recording in Wuxi, and Abing practiced for several days beforehand.
+- The erhu recording session took place on the evening of September 2, 1950.
+- The account identifies the machine as a Webster wire recorder and describes the recording wire turning.
 
 Editorial boundary:
 
-- The story says the modern name and concert identity stabilized gradually; it does not assign one exact “birthday” to the erhu.
-- Liu Tianhua is not described as the person who coined the word or invented the instrument.
-
-## Liu Tianhua and modern erhu education
-
-Source: Central Conservatory of Music, “纪念刘天华先生诞辰130周年”
-URL: https://www.ccom.edu.cn/info/2621/28121.htm
-Accessed: 2026-08-21
-
-Supports:
-
-- Liu Tianhua (1895–1932) was a composer, performer, educator, and important figure in the modernization of erhu performance and education.
-- He taught at Peking University’s music institution from 1922, founded the Society for the Improvement of National Music, edited a music journal, and composed ten erhu solos and forty-seven exercises.
-- His teaching and works helped the erhu enter professional and higher music education as a subject of systematic study.
-
-Editorial boundary:
-
-- Liu’s role is described as pivotal but not solitary. Existing folk, opera, craft, performance, and teaching traditions are explicitly retained.
-- The article does not claim that he invented the erhu, every modern technique, or its final physical form.
-
-## Abing, the 1950 recordings, and notation
+- The article is a later retelling containing reconstructed dialogue and dramatic detail. The child-facing story uses only the date, participants, equipment, practice period, and other points corroborated by archival sources.
+- The story does not reuse the article's quoted dialogue or claims about the private reactions of people in the room.
 
 Source: China National Academy of Arts Library / Art and Literature Museum, “世纪绝响——阿炳传世乐曲（共6首）”
 URL: https://lib.zgysyjy.org.cn/ting_detail/598530.html
-Accessed: 2026-08-21
+Accessed: 2026-09-05
 
 Supports:
 
-- Yang Yinliu recorded Abing in Wuxi in September 1950, and the original wire recordings are held as audio archives.
-- Six pieces survive from the session: three erhu works and three pipa works, including *Erquan Yingyue*, *Ting Song*, and *Han Chun Feng Qu*.
-- Later archival work transferred and preserved the original wire-recorded sound.
+- The archive holds and has replayed the original wire recordings.
+- The six surviving tracks are three erhu solos and three pipa solos.
+- The archive later transferred and digitally preserved the sound from the original wire.
 
 Editorial boundary:
 
-- The archival source supports the recording and six titles, not a moonlit-alley composition scene, private thoughts, begged-for performance, broken instrument, or invented dialogue.
-- The article does not say that these six pieces were the only music Abing ever knew or performed; they are the works preserved in this recording archive.
+- “We can still hear his erhu” refers to preserved playback from the original wire recording and its later transfers, not to an untouched digital file created in 1950.
+- A score and a sound recording preserve different information; the story does not claim that notation is incapable of marking slides, timing, dynamics, or other performance instructions.
 
-Source: China National Academy of Arts Library / Art and Literature Museum, “我馆整理出版的古琴与阿炳音响档案入选2019年‘中华民族音乐传承出版工程精品出版项目’”
-URL: https://lib.zgysyjy.org.cn/detail/609367.html
-Accessed: 2026-08-21
+## How a wire recorder stores sound
+
+Source: Library of Congress, “Guide to Vintage Audio Formats”
+URL: https://www.loc.gov/programs/national-recording-preservation-plan/tools-and-resources/vintage-audio-formats-and-equiment-information/guide-to-vintage-audio-formats/
+Accessed: 2026-09-05
 
 Supports:
 
-- Yang Yinliu and Cao Anhe used a wire recorder in Wuxi in 1950 to preserve Abing’s three erhu and three pipa pieces.
-- The publication combines audio archives with accompanying written records as first-hand research materials.
+- Wire recordings store sound magnetically on very thin steel or stainless-steel wire.
+- Small-spool Webster-Chicago recorders and wire recordings were in use around 1950.
 
 Editorial boundary:
 
-- The article names both researchers but avoids dramatizing who said what during the sessions.
-- Later memoirs differ on some sequencing and title details; those disputed details are not presented as a single certain scene.
+- The child-facing story names the recording head and magnetic pattern but does not attempt to teach the full electromagnetic process.
 
-Source: China National Academy of Arts Library, “中国传统音乐录音档案” overview
-URL: https://lib.zgysyjy.org.cn/Uploads/File/2019/04/17/u5cb687f44c227.pdf
-Accessed: 2026-08-21
+## Image boundaries
 
-Supports:
+- `1-erhu-player-closeup.webp` is a modern illustration of playing position. It is not a named musician or a documented performance, and it may simplify fine hand and bow details.
+- `3-erhu-parts-horsehair.webp` is an exploded parts illustration. It separates the bow from the instrument so the parts can be seen; the caption explicitly explains that, while playing, the bow hair passes between the strings.
+- `2-abing-moon-alley.webp` is modern storybook art. Its moon, canal alley, clothes, and pose are not evidence for the composition of *Erquan Yingyue* or the 1950 recording session, and the on-page caption says so.
 
-- The 1950 recordings became the surviving sound record of Abing’s six pieces.
-- Yang Yinliu, Cao Anhe, and Chu Shizhu contributed biography, explanatory notes, score organization, and performance-technique analysis.
+## 2026-09-05 child-facing revision
 
-Editorial boundary:
-
-- Recording, notation, editing, and later performance are described as related but different forms of preservation.
-- Disability and poverty are treated as barriers in Abing’s life, not as mystical causes of artistic ability.
-
-## Python-skin rules and modern alternatives
-
-Source: Zibo Municipal People’s Government, “深圳邮局海关在出口快件中查获蟒蛇皮二胡3把,” 2020
-URL: https://www.zibo.gov.cn/art/2020/12/24/art_15259_2107654.html
-Accessed: 2026-08-21
-
-Supports:
-
-- Customs identified python-family skin on three exported erhus.
-- Python species are covered by CITES appendices, and cross-border trade or transport of their products requires appropriate legal documents.
-
-Editorial boundary:
-
-- This is an example of enforcement, not individualized legal advice. Rules can depend on species, origin, destination, and date.
-- The child-facing article advises families to avoid unknown animal-skin products and to check current official requirements rather than promising that one certificate works everywhere.
-
-Source: Beijing Government Service, “濒危野生动植物允许进出口证明书核发”
-URL: https://banshi.beijing.gov.cn/pubtask/task/1/110000000000/7a64a3ee-4af2-43c2-93c8-d7cc64ba6c63.html?locationCode=110000000000&serverType=1003
-Accessed: 2026-08-21
-
-Supports:
-
-- Applications involving erhu may require proof of legal source such as an erhu collection certificate, wildlife-management identification card, or approval document.
-
-Editorial boundary:
-
-- Requirements are summarized only as “may require proof and permits”; the article does not provide a complete import/export procedure.
-
-Source: Hong Kong Chinese Orchestra, “Eco-Huqins”
-URL: https://www.hkco.org/en/Instrument-Rd/Eco-Huqins.html
-Accessed: 2026-08-21
-
-Supports:
-
-- The orchestra developed an Eco-Huqin series using renewable PET membranes to replace python skin.
-- The project treats environmental protection, preservation of musical heritage, and acoustic redesign as linked goals.
-
-Editorial boundary:
-
-- Synthetic membrane is presented as an active design alternative, not as an acoustically identical drop-in replacement for every traditional instrument.
-
-Source: National Digital Library of Theses and Dissertations in Taiwan, “光學量測技術應用於人造皮二胡特性之量測”
-URL: https://ndltd.ncl.edu.tw/cgi-bin/gs32/gsweb.cgi/login?o=dnclcdr&s=id%3D%22114NYPI0489003%22.&searchmode=basic
-Accessed: 2026-08-21
-
-Supports:
-
-- Current research compares the mechanical and acoustic behavior of natural python skin and synthetic erhu membranes.
-- Alternative materials require measurement of flexibility, deformation, resonance, and sound rather than assumption.
-
-Editorial boundary:
-
-- The study is recent and does not establish one universally best material. The story says research is continuing.
-
-## Image and activity boundaries
-
-- `1-erhu-player-closeup.webp` is retained as a modern illustration of playing position, not a named musician or documented performance. The image may simplify hand and bow details.
-- `2-abing-moon-alley.webp` is retained only with a strong caption identifying it as modern imagination. Its moon, canal alley, solitary performance, clothes, and pose are not evidence for the composition of *Erquan Yingyue* or the 1950 recording session.
-- `3-erhu-parts-horsehair.webp` is retained as a parts illustration. The horse and hair close-up explain traditional bow material only; they do not prove a single origin story, emotional meaning, or the old manuscript’s unsupported “half the instrument is horse” claim.
-- Children are invited to observe a teacher or performer, not to dismantle an erhu, loosen strings, remove the bow, shift the bridge, touch museum objects, or test animal-skin materials.
-
-## 2026 child-facing revision
-
-- The main article now explains the fingerboard-free neck, bow hair between two strings, sound box and membrane, the huqin family, Liu Tianhua's role, and Abing's six 1950 recordings.
-- The separate modern animal-material discussion and technical cautions were removed from the children's narrative; source and image boundaries remain above.
+- The article now follows one question from the erhu's fingerboard-free strings to the exact performance details preserved in Abing's wire recording.
+- The bilingual drafts use normal prose paragraphs rather than the pasted draft's temporary line-by-line formatting.
+- Broken conversation-only citation markers were not copied into the site. Direct, reviewed URLs and claim boundaries are recorded above and mirrored on the public Sources & Research page.

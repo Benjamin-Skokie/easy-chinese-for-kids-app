@@ -12,7 +12,6 @@ let formatGlossaryTerms = (text) => text;
 
 function normalizeDisplayDashes(value) {
   return value
-    .replace(/\s*[—–]+\s*/g, " - ")
     .replace(/\s*--+\s*/g, " - ");
 }
 

@@ -1,33 +1,59 @@
 > Difficulty: Easy
 
-# Why Is an Army Made of Clay Standing Underground?
+# Terracotta Warriors: Are 8,000 Faces 8,000 Portraits?
 
-## A Piece of Clay Beside a Well
+## Eight Thousand Faces
 
-In 1974, farmers near Xi'an, China, were digging a well. Their tools struck something hard—but it was not water. They found pieces of pottery, including parts of a clay head and body. Archaeologists soon arrived and began to clear the soil carefully.
+In 1974, farmers digging a well near Xi’an found broken pieces of clay. Archaeologists followed the clues and uncovered something much larger: pits filled with rows of life-size clay soldiers, along with horses and weapons.
 
-Underground were not one or two clay people, but row after row of soldiers, horses, and chariots. Many had broken. Some were only a hand or half a face. Archaeologists numbered the pieces and slowly matched what they could, like the largest 3-D puzzle anyone had ever opened.
+These warriors were made for the enormous mausoleum of Qin Shi Huang, China’s first emperor. We tell more of his story in our [article about Qin Shi Huang](../../figures/qin-shi-huang/index.html).
 
----
+The three main pits are estimated to contain thousands of figures—often rounded to about 8,000.
 
-## Why Does Every Face Look Different?
+Walk past the restored warriors and look at their faces. One is round, another long. Some have mustaches or beards. Their eyebrows, hairstyles, mouths, and expressions change from figure to figure.
 
-Archaeologists estimate that the great pits contain nearly 8,000 clay soldiers and officers. Step closer and it is hard to find two faces that look exactly alike. Some are round, others long. Some have beards. Hair is tied in different knots.
+They look so individual that an obvious question appears: Were these portraits of 8,000 real soldiers?
 
-The makers did not ask 8,000 real soldiers to sit for clay portraits. They formed heads, hands, and bodies with several repeated methods, joined the parts, and then changed brows, beards, hair, and expressions by hand. That was faster than starting from nothing 8,000 times, but it still made the clay army look full of different people.
+A portrait is made to look like one particular person. If the warriors were portraits, somewhere behind each clay face there would once have been a real face.
 
----
-
-## Why Did Qin Shihuang Want an Underground Army?
-
-The army belongs to the enormous burial grounds of Qin Shihuang (*Qín Shǐhuáng*). More than 2,200 years ago, he united China and became its first emperor. Soldiers protected him while he lived, and he prepared an underground world for after his death. East of his main tomb, clay foot soldiers, archers, horse riders, and chariots stand like an army guarding the area.
-
-The emperor's main tomb has still not been opened. Ancient writing describes palaces, treasures, and rivers made with mercury, but no one has gone inside to see it all. Archaeologists are not rushing to open the door because new air and light could harm what waits inside. The secrets have rested for more than two thousand years. They can wait until people have safer ways to protect them.
+But the evidence does not take us that far.
 
 ---
 
-## They Were Not Always Gray
+## How Do You Make Thousands Without Making Them All the Same?
 
-Most Terracotta Warriors look gray-brown today, but they were once bright. Faces had skin color. Clothing and armor carried red, green, blue, purple, black, and white. The pits would not have held a quiet gray crowd. They held a colorful army.
+The warriors are made of terracotta—clay that has been shaped and fired until it becomes hard.
 
-Those colors are extremely fragile. When a figure leaves the damp earth, its lacquer may curl and the paint can fall away with it. Archaeologists sometimes choose to dig more slowly while they find a way to protect the color. Rebuilding one soldier may begin with many broken pieces. Saving one patch of paint may take a long time. The army was made in great numbers, but it must return to us slowly, one figure at a time.
+Scholars still debate some details of exactly how the figures were built. But research shows that craftspeople could use repeated basic methods and forms, then work the surface by hand.
+
+Heads, hands, bodies, and other parts could be made in stages. Fine clay was added so workers could shape hair, beards, eyes, mouths, clothing folds, belts, and armor.
+
+This solved a huge problem. The workers did not have to invent every soldier from the beginning. They could repeat useful forms and then change the details.
+
+Researchers have even used 3-D scans to compare the warriors’ ears. The ears vary a great deal. But different ears alone cannot prove that each warrior copied one real person. The differences may also come from different molds, different workers, and hand finishing.
+
+---
+
+## They Were Not Gray
+
+Today, most Terracotta Warriors look gray-brown. That is not how the army originally looked. Many figures were once covered with lacquer and bright pigments. Traces show reds, greens, blues, purples, black, white, and other colors. Faces, clothing, armor, and hair could all have been painted.
+
+But the paint created a difficult problem for archaeologists. After more than two thousand years in damp soil, the lacquer beneath the color became extremely fragile. When a newly excavated figure began to dry, that layer could shrink, crack, curl, and pull the paint away with it.
+
+So finding a warrior was not simply a matter of digging faster. Sometimes the safest thing was to slow down.
+
+---
+
+## A Giant Project Made by Many Hands
+
+An army this large could not come from one small pottery shop.
+
+Names, marks, small style differences, and patterns in the weapons and figures help researchers study how different groups of craftspeople worked. The entire mausoleum was an enormous project involving potters, metalworkers, builders, and many other laborers.
+
+That helps answer our first question. The warriors clearly have individual differences. But we cannot say that 8,000 soldiers stood still while artists copied 8,000 faces.
+
+What the clay does show is something just as remarkable. Ancient craftspeople found ways to make thousands of figures using organized, repeatable methods—while still leaving room for a hand to change a beard, an eye, a hairstyle, or the corner of a mouth.
+
+From far away, they form an army.
+
+Walk closer, and one face at a time begins to appear.

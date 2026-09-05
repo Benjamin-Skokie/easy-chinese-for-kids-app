@@ -1,251 +1,116 @@
-# Editorial References: Gongbi Painting
+# Editorial References: Gongbi Painting and Emperor Huizong
 
 This file is for editorial research and does not render on the website.
 
-## 1. Palace Museum — “院体画”
+## 1. The Metropolitan Museum of Art — “Peahen and Hibiscus”
 
-URL: https://minghuaji.dpm.org.cn/paintType/detail?id=80
+URL: https://www.metmuseum.org/art/collection/search/36459
 
-Accessed: 2026-08-21
-
-Supports:
-
-- “Academy style” often refers to meticulous painting associated with the Song imperial painting academy and later court traditions.
-- Court painters worked in bird-and-flower, landscape, figure, court-life, and religious subjects.
-- Academy works varied according to period, taste, painter, and function rather than following one unchanging style.
-
-Editorial boundary:
-
-- Academy painting and gongbi are related but not treated as exact synonyms.
-- “Meticulous” is not reduced to photographic copying or a single imperial formula.
-
-## 2. Metropolitan Museum of Art — “Mastering the Art of Chinese Painting: Xie Zhiliu”
-
-URL: https://www.metmuseum.org/exhibitions/listings/2010/xie-zhiliu
-
-Accessed: 2026-08-21
+Accessed: 2026-09-05
 
 Supports:
 
-- Chinese painters used preparatory drawings and tracing copies to transfer established compositions.
-- Dunhuang mural workshops used pouncing to transfer designs onto cave walls.
-- Meticulous bird-and-flower painting could use fine lines and brilliant color, while “boneless” painting used translucent color without ink outlines.
+- The famous anecdote that Emperor Huizong criticized court painters for failing to observe which leg a peacock lifted first when climbing.
+- The polished Song court tradition of carefully rendered plumage, leaves, and blossoms.
 
 Editorial boundary:
 
-- Outlining is presented as a common method, not a required first step for every gongbi-related work.
-- Copying and transferring designs are understood as skilled workshop practices, not evidence of fraud by themselves.
+- The peacock story is introduced as a famous old anecdote, not as fully verified eyewitness history.
+- The work on this museum page is not reproduced or claimed as a local illustration.
 
-## 3. National Palace Museum and Palace Museum — gongbi color processes
+## 2. The Metropolitan Museum of Art — “Finches and Bamboo” and “Anatomy of a Masterpiece”
+
+URLs:
+
+- https://www.metmuseum.org/art/collection/search/39936
+- https://www.metmuseum.org/exhibitions/listings/2008/anatomy-of-a-masterpiece/photo-gallery
+
+Accessed: 2026-09-05
+
+Supports:
+
+- *Finches and Bamboo* is an early-twelfth-century handscroll attributed to Emperor Huizong and exemplifies close observation in the flower-and-bird tradition associated with his academy.
+- Tiny drops of lacquer on the birds’ eyes catch the light and make the eyes appear bright and lifelike.
+- Huizong was an artist and major patron of painting; his capital fell in 1127, after which he was taken north and died in captivity.
+
+Editorial boundary:
+
+- The museum’s attribution wording is preserved: the work is described as attributed to Huizong, not treated as an uncontested autograph in the research record.
+- The local page does not show the museum work or imply that its modern illustration is *Finches and Bamboo*.
+
+## 3. National Palace Museum — “A Closer Look at Chinese Painting”
+
+URL: https://theme.npm.edu.tw/exh108/painting01/en/page-1.html
+
+Accessed: 2026-09-05
+
+Supports:
+
+- The Song court painting academy placed strong emphasis on observing nature.
+- Court painters also translated poetic ideas and literary feeling into images, so formal likeness was only part of the task.
+
+Editorial boundary:
+
+- Close observation is not described as photographic copying.
+- Not every work associated with Huizong’s court is assumed to have been painted by the emperor himself.
+
+## 4. National Palace Museum and Palace Museum — Gongbi color processes
 
 URLs:
 
 - https://www.npm.gov.tw/NewChineseArtDownload.ashx?bid=4650
 - https://img.dpm.org.cn/Uploads/File/2020/03/23/u5e7832fa86c69.pdf
 
-Accessed: 2026-08-21
+Accessed: 2026-09-05
 
 Supports:
 
-- A gongbi flower may involve line drawing, ground color, graded shading, glazing, highlights, and stamen details.
-- *Fenran* uses a color brush and water brush to create a dark-to-light transition; *zhaoran* adds a color layer over an already painted area.
-- Plant and mineral pigments have different transparency, covering power, fading, and flaking behavior and must be combined appropriately with binder and water.
-- Back coloring and repeated passes are possible parts of the process.
+- Meticulous flower-and-bird painting can use fine outlines, ground color, graded shading, glazing, highlights, and repeated thin applications of color.
+- Layered color and controlled changes from dark to light help describe overlapping feathers, petals, and turning forms.
 
 Editorial boundary:
 
-- No universal number of layers or single correct sequence is assigned to every work.
-- A modern technical reconstruction of a Song painting is not confused with direct documentation of the original artist's exact steps.
+- No single sequence or fixed number of layers is presented as a rule for every gongbi painting.
+- Gongbi is a broad and changing practice, not one unvarying technical formula.
 
-## 4. Metropolitan Museum of Art — ruled-line painting and white drawing
+## 5. The Metropolitan Museum of Art and contemporary official exhibitions — Continuity of meticulous painting
 
 URLs:
 
-- https://www.metmuseum.org/exhibitions/listings/2010/yuan-revolution
-- https://www.metmuseum.org/exhibitions/listings/2008/anatomy-of-a-masterpiece/photo-gallery
-
-Accessed: 2026-08-21
-
-Supports:
-
-- Ruled-line painting was a specialized, precisely executed mode for buildings, boats, and other structures and was practiced especially by professional painters.
-- The later term *baimiao* describes line drawing without shading, while older terminology and practices were not identical.
-- Meticulous and restrained work can appear in several genres and alongside other painting approaches.
-
-Editorial boundary:
-
-- Gongbi, baimiao, boneless painting, ruled-line painting, and academy painting are not collapsed into one category.
-- Chinese painting is not divided into two permanent camps of gongbi and xieyi.
-
-## 5. British Museum and Palace Museum — versions of the *Admonitions Scroll*
-
-URLs:
-
-- https://www.britishmuseum.org/exhibitions/admonitions-instructress-court-ladies
-- https://www.britishmuseum.org/collection/object/A_1903-0408-0-1
-- https://minghuaji.dpm.org.cn/paint/detail?id=9e7cbc5578c94945b93ff269a47ac374
-
-Accessed: 2026-08-21
-
-Supports:
-
-- The British Museum scroll is traditionally attributed to Gu Kaizhi but is dated broadly to about 400–700 and is understood as an early copy related to a lost model.
-- The Palace Museum holds a Song-period anonymous copy with additional scenes.
-- These copies are crucial evidence for the transmission of early figure painting and line traditions.
-
-Editorial boundary:
-
-- Neither surviving scroll is called a securely authenticated original by Gu Kaizhi.
-- A copy is not dismissed as worthless, but its maker and historical layer are not erased.
-
-## 6. Qingdao Art Museum and scholarship on works attributed to Wu Daozi
-
-URLs:
-
-- https://www.qdsmsg.cn/h-nd-172.html
-- https://www.boxesart.com/en/reserch/detail/355
-
-Accessed: 2026-08-21
-
-Supports:
-
-- Wu Daozi's fame is closely connected with figure painting and murals, most of which do not survive.
-- The *Presentation of the Buddha* is commonly described as a later copy, an attributed work, or a work carrying elements of the Wu-school tradition.
-- Scholars disagree about the work's precise date, authorship, and relation to earlier models.
-
-Editorial boundary:
-
-- The scroll is not presented as Wu Daozi's authenticated hand.
-- Later copies are used as evidence for reception and possible stylistic transmission, not as transparent photographs of a lost original.
-
-## 7. Palace Museum and National Palace Museum — Emperor Huizong attribution cautions
-
-URLs:
-
-- https://artsandculture.google.com/asset/listening-to-a-zither-zhao-ji-1082-1135/CQGd8MVjuyG4Zg
-- https://digitalarchive.npm.gov.tw/Painting/Content?Dept=P&pid=1177
-- https://www.dpm.org.cn/Uploads/pdf/6158/T00086_00.pdf
-
-Accessed: 2026-08-21
-
-Supports:
-
-- Huizong was an artist, collector, calligrapher, and major patron of the imperial painting academy.
-- *Listening to the Zither* bears Huizong's writing, but textual research attributes the painting itself to an academy artist.
-- A landscape bearing Huizong's cipher and an imperial seal is dated by the National Palace Museum to the Southern Song on stylistic grounds.
-- “Imperial painting,” imperial inscription, approval, and the emperor's own brush are not always the same category.
-
-Editorial boundary:
-
-- A Huizong inscription, cipher, seal, or old title does not by itself authenticate every brushstroke as his.
-- Court production is not reduced to the emperor working alone.
-
-## 8. Smithsonian Institution — “Women in Chinese Painting”
-
-URL: https://www.si.edu/exhibitions/women-chinese-painting-event-exhib-5124
-
-Accessed: 2026-08-21
-
-Supports:
-
-- Women played active cultural and economic roles despite major social restrictions.
-- Museum collections preserve works showing the accomplishments of women artists as well as images of women's labor and court life.
-
-Editorial boundary:
-
-- Women are not included only as painted subjects; their participation as makers is stated.
-- Surviving elite or court works are not used to claim that education and recognition were equally available to all women.
-
-## 9. Metropolitan Museum of Art and National Museum of China — professional and court workshops
-
-URLs:
-
-- https://www.metmuseum.org/ja/press-releases/brilliant-chinese-paintings-and-calligraphies-of-ming-dynasty-in-new-exhibition-at-metropolitan-museum-2009-exhibitions
-- https://en.chnmuseum.cn/exhibition/traveling_exhibitions/202012/t20201231_248781.html
-
-Accessed: 2026-08-21
-
-Supports:
-
-- Courts recruited and organized professional painters, and artists worked within changing institutional systems.
-- Court paintings could combine traditions, including mineral color, silk painting, perspective, and modeling.
-- Production depended on trained professionals rather than only named emperors and literati.
-
-Editorial boundary:
-
-- Every court project is not assumed to have the same division of labor.
-- Anonymous painters, assistants, mounters, and material makers are acknowledged without inventing names or exact jobs for undocumented works.
-
-## 10. Contemporary gongbi exhibitions
-
-URLs:
-
-- https://majo.hk/transcendingthegongbitradition/curatorial-statement.html
+- https://www.metmuseum.org/exhibitions/listings/2015/masterpieces-of-chinese-painting
 - https://www.sz.gov.cn/en_szgov/aboutsz/whatson/content/post_11084321.html
 - https://english.shanghai.gov.cn/en-ArtExhibitions/20260415/6c4352a42230465ba31b2784cec9967e.html
 
-Accessed: 2026-08-21
+Accessed: 2026-09-05
 
 Supports:
 
-- Contemporary gongbi artists combine traditional line, ink, paper, silk, and layered color with present-day objects, figures, architecture, and everyday life.
-- Recent exhibitions show technical experimentation and multiple generations of active painters.
-- Gongbi remains a changing contemporary practice rather than a frozen historical style.
+- Meticulous court painting continued beyond the Song dynasty as Chinese painting changed across later periods.
+- Contemporary exhibitions show that artists still practice and reinterpret gongbi today.
 
 Editorial boundary:
 
-- No one contemporary movement is declared the only future of gongbi.
-- New materials and planning tools do not automatically erase the work's relationship with historical methods.
+- Later and contemporary gongbi are not described as exact copies of Song court painting.
+- No single contemporary movement is treated as the only form of gongbi.
 
 ## Image audit
 
 ### `1-gongbi-bird-flower-detail.webp`
 
-URL: local project asset
-
-Accessed: 2026-08-21
+Source: local project asset
 
 Supports:
 
-- An AI-generated modern example of a gongbi-like bird, branch, leaves, and peonies with many fine visual details.
+- A modern gongbi-style example in which readers can look for fine outlines, layered color, feathers, petals, leaves, and a bird’s grip on a branch.
 
 Editorial boundary:
 
-- It is not an ancient original, museum object, authenticated detail, or scientific illustration.
-- The bird species, feather count, eye, feet, branches, and flower structures are not used as zoological or botanical evidence.
+- It is not an ancient painting, a museum object, *Finches and Bamboo*, or evidence for the peacock anecdote.
+- Its caption identifies it as a modern illustrative example.
 
-### `2-gongbi-outline-hand.webp`
+### Unused local images
 
-URL: local project asset
+- `2-gongbi-outline-hand.webp`
+- `3-gongbi-layers-pigments.webp`
 
-Accessed: 2026-08-21
-
-Supports:
-
-- An AI-generated visual prompt about outlining a bird-and-flower composition.
-
-Editorial boundary:
-
-- It is not a photograph of a historical or modern master at work.
-- The hand, grip, brush angle, bird anatomy, line sequence, and partly colored drawing are not presented as one correct teaching model.
-
-### `3-gongbi-layers-pigments.webp`
-
-URL: local project asset
-
-Accessed: 2026-08-21
-
-Supports:
-
-- An AI-generated diagram suggesting a move from pale drawing toward layered color.
-
-Editorial boundary:
-
-- The four inset stages were not photographed from one documented artwork and do not establish a fixed four-step process.
-- The bowls do not identify actual mineral or plant pigments, binder, concentration, or number of layers.
-- The brush, hand, paper, and color behavior are schematic rather than technical evidence.
-
-## 2026 child-facing revision
-
-- The main article now follows the making of one flower: observation, outline, thin color layers, and the choice of a lively detail.
-- Emperor Huizong appears briefly with a careful distinction between work by his hand and work connected with his court. Longer attribution debates remain in the references.
+These files remain in the source folder but are not used in the rebuilt article. Their step-by-step demonstration subjects no longer fit the new story’s peacock-to-Huizong narrative closely enough.

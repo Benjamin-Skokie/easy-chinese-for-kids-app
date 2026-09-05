@@ -1,6 +1,6 @@
 ---
-title_zh: 一片花瓣，为什么要画很多遍？
-title_en: Why Paint One Petal Again and Again?
+title_zh: 工笔画：皇帝为什么连孔雀先迈哪只脚都要管？
+title_en: Gongbi Painting: Why Did an Emperor Care Which Foot a Peacock Lifted First?
 slug: gongbi
 category: art
 difficulty: 简单
@@ -9,83 +9,121 @@ style_notes: "用 --- 分隔 frontmatter；正文强调优先用 *斜体*；尽�
 ---
 
 [hero]
-title_zh: 一片花瓣，为什么要画很多遍？
-title_en: Why Paint One Petal Again and Again?
+title_zh: 工笔画：皇帝为什么连孔雀先迈哪只脚都要管？
+title_en: Gongbi Painting: Why Did an Emperor Care Which Foot a Peacock Lifted First?
 [/hero]
 
 [section]
 page: 1
-layout: text-wrap-image
-heading_zh: 先别急着上颜色
-heading_en: Do Not Reach for Color Yet
-image: 1-gongbi-bird-flower-detail.webp
-caption_zh: 工笔画用细线和一层层颜色画出花鸟。
-caption_en: Gongbi painting builds birds and flowers with fine lines and layers of color.
+layout: text-only
+heading_zh: 孔雀的脚画错了？
+heading_en: The Peacock’s Foot
 [zh]
-一朵花就在面前，可画工没有马上涂上粉红色。他先看花瓣从哪里长出来，哪一片压着哪一片，边缘在哪里转弯。然后，他用一支很细的毛笔，慢慢勾出轮廓。
+一个画师把画好的孔雀送到皇帝面前。羽毛漂亮，颜色也漂亮，孔雀正抬脚往高处走。皇帝却一直盯着一个很小的地方：脚。
 
-这种画法叫工笔（*gōngbǐ*）。“工”在这里有细致、讲究的意思。画里的花瓣、羽毛和叶脉看起来清楚，不是因为画家一笔就画完了，而是因为每一步都没有着急。
+有一个流传很久的故事说，宋徽宗曾经批评宫廷画师，因为他们没有仔细观察孔雀往高处走时，究竟先迈哪只脚。对宋徽宗来说，会画一只“像孔雀的鸟”还不够。
+
+你得真的去看孔雀。它怎么迈步？只抬起一只脚的时候，身体怎么站稳？尾巴又会跟着怎样动？
+
+这个故事的每个细节到底是不是真的，我们今天已经无法确定。不过它一直被人讲下来，是因为它特别像宋徽宗。这个皇帝，看画真的看得很仔细，而他喜欢的画，也正好有这种特点。
 [/zh]
 [en]
-A flower is waiting, but the artist does not reach for pink paint. First, she looks closely. Where does each petal begin? Which petal overlaps another? Where does an edge turn? Then a very fine brush slowly draws the outlines.
+A painter brings a picture of a peacock to the emperor. The feathers are beautiful. The colors are rich. The bird is stepping upward. But the emperor keeps looking at one tiny part: the foot.
 
-This style is called *gōngbǐ*, a name that suggests careful, detailed work. Its petals, feathers, and leaf veins look clear because the artist does not try to finish them in one quick stroke.
+A famous old story says that Emperor Huizong of the Song dynasty once criticized court painters because they had not noticed which foot a peacock lifted first when climbing. To Huizong, painting a peacock was not enough. A painter had to watch a real peacock.
+
+How did it step? How did it balance on one leg? What happened to the tail when the body moved?
+
+We cannot know every detail of this old story for certain. But people kept telling it because it fit Huizong perfectly. This was an emperor who expected painters to look very closely. And that helps explain the kind of painting he loved.
 [/en]
 [/section]
 
 [section]
 page: 2
 layout: text-wrap-image
-heading_zh: 细线先搭好“骨架”
-heading_en: Fine Lines Build the Picture's Frame
-image: 2-gongbi-outline-hand.webp
-caption_zh: 稳稳的线条先确定花瓣和叶子的形状。
-caption_en: Steady outlines set the shapes of petals and leaves.
+heading_zh: 工笔画到底长什么样？
+heading_en: What Does a Gongbi Painting Look Like?
+image: 1-gongbi-bird-flower-detail.webp
+caption_zh: 这幅现代工笔风格示意图用细线和层层颜色表现羽毛、花瓣与鸟爪；它不是古代名画。
+caption_en: This modern gongbi-style illustration uses fine lines and layered color for feathers, petals, and claws; it is not a historical painting.
 [zh]
-勾线不是拿黑笔把东西圈起来那么简单。线条有粗细、轻重和快慢。一根柔软的花茎，不能画得像一根铁棍；鸟爪抓住树枝时，线条又要显得有力。
+看一幅精细的工笔花鸟画，然后慢慢走近。画面不会变得模糊，反而会冒出越来越多东西。
 
-有些画家先把草图放在薄纸或绢的下面，再把重要的线描下来。等“骨架”站稳了，颜色才登场。要是第一根线跑错了，后面再漂亮的颜色也很难把它救回来。
+鸟身上，一根根细线把不同的羽毛分开；翅膀的边缘顺着身体弯过去。花朵不是一团粉红色，前面的花瓣压住后面的花瓣。叶子有正面，也有翻过去的背面。连鸟爪抓住树枝的样子，都画得很清楚。
+
+这种细密、非常讲究控制的画法，就叫工笔。工笔画很重要的特点，是线条细而清楚。画家先把形状交代明白，再慢慢加颜色。颜色也常常不是浓浓地一下涂满，而是一层一层染上去，让羽毛有前后，让花瓣能转过去，让颜色从深到浅慢慢变化。
+
+所以工笔画有一种很特别的感觉：它好像把时间放慢了。画家的笔很慢，因为他的眼睛已经先看了很久。
+
+宋徽宗的宫廷画院特别看重这种观察。一只鸟不能只是“画得像鸟”。最好让你觉得：它下一秒真的可能会动。
 [/zh]
 [en]
-Outlining is more than drawing a black fence around everything. Lines can be thick or thin, light or strong, quick or slow. A soft flower stem should not look like an iron bar. A bird's claws gripping a branch need more strength.
+Look at a carefully painted bird from this tradition, then move closer. The picture does not fall apart. You begin to see more.
 
-Some artists place a sketch under thin paper or silk and trace the important lines. Only after this frame is steady does color arrive. If the first line wanders badly, even beautiful paint may not save the shape.
+A thin line separates one feather from another. The edge of a wing curves neatly around the body. On a flower, one petal slips behind the next instead of becoming a lump of color. Leaves have fronts and backs. A bird’s feet actually seem to grip the branch.
+
+This careful style is called *gongbi* (工笔), which means meticulous or highly controlled brushwork. The lines are usually fine and deliberate. Color can be built up gradually in thin layers instead of being brushed on in one heavy coat. Darker and lighter areas help feathers overlap and petals turn. Even small shapes are carefully placed.
+
+That does not mean every gongbi painting must look exactly the same. But compared with a loose, quickly brushed painting, gongbi often feels as if the artist has slowed everything down. The brush moves carefully because the painter has already spent a long time looking.
+
+Huizong loved this kind of close observation. At his court, a bird could not simply look “bird-like.” It had to feel like a particular bird that might move at any moment.
 [/en]
 [/section]
 
 [section]
 page: 3
-layout: text-wrap-image
-heading_zh: 很淡的一层，再来一层
-heading_en: One Pale Layer, Then Another
-image: 3-gongbi-layers-pigments.webp
-caption_zh: 淡色一层层加上去，花瓣便慢慢有了深浅。
-caption_en: Thin layers of color slowly give the petals light and shadow.
+layout: text-only
+heading_zh: 鸟眼睛里的一小滴漆
+heading_en: One Drop in a Bird’s Eye
 [zh]
-画家把颜色调得很淡，先上一层。等它干一点，再加第二层。花瓣靠近花心的地方深一些，边缘浅一些；叶子的一边偏蓝，另一边偏绿。几层薄薄的颜色叠起来，花瓣就像慢慢鼓起了。
+宋徽宗自己也画鸟。他的《翠竹双雀图》里，两只小鸟停在竹枝旁。羽毛一层压着一层，身体也不是平平地贴在绢上，而是有轻重、有方向。
 
-工笔画常画花鸟。画家不只追求细节，也会挑一个有生命的动作：一只鸟回头，一片叶子被风翻起，或一只小虫停在花苞上。
+可是里面最让人记得住的细节，可能只有这么一点：鸟的眼睛上，点了一小滴漆。漆会反光。小小的一点亮光，让鸟眼睛突然显得湿润、明亮，好像它刚刚发现有人正在看它。
+
+这也正是工笔有意思的地方。细线和颜色可以慢慢把一只鸟做出来，可画家真正想解决的问题不是：“我还能再多画几根羽毛吗？”而是：怎么让它活起来？
+
+宋徽宗的画院甚至会拿诗句来考画师。画家不但要认真观察真正的鸟和花，还得想办法把一句诗里的感觉变成一幅画。所以，眼睛要看得细，脑子也得会想。
 [/zh]
 [en]
-The artist mixes a pale color and brushes on one thin layer. After it begins to dry, another layer follows. A petal may grow darker near its center and lighter at its edge. One side of a leaf may lean blue, the other green. Layer by layer, the flat petal begins to look gently rounded.
+Huizong painted birds himself. In a work called *Finches and Bamboo*, two little birds perch among bamboo and branches. Their feathers are carefully shaped and shaded. Their bodies have weight; they do not look pasted onto the silk.
 
-Gongbi paintings often show birds and flowers. Along with fine details, the artist chooses one lively movement: a bird turning, a leaf flipped by wind, or a tiny insect resting on a bud.
+But one of the smallest details is also one of the most memorable. Huizong added a tiny drop of dark lacquer to each bird’s eye. The lacquer catches the light. Suddenly, the eyes seem wet and bright, as if the birds have just noticed you.
+
+That tiny trick says a lot about gongbi painting. Many fine lines and layers of color may build the bird, but the painter is always asking a bigger question: What will make it feel alive?
+
+That was important at Huizong’s painting academy. He wanted artists to observe nature carefully, but he also gave them lines of poetry to turn into paintings. So accuracy was only part of the job. A painter needed sharp eyes—and imagination.
 [/en]
 [/section]
 
 [section]
 page: 4
 layout: text-only
-heading_zh: 皇帝也会画一只鸟
-heading_en: Even an Emperor Painted Birds
+heading_zh: 一个画画很厉害的皇帝
+heading_en: The Emperor Who Was Better at Art
 [zh]
-宋徽宗（*Sòng Huīzōng*）是一位生活在大约九百年前的皇帝，也是一位画家。他喜欢观察花鸟，还鼓励宫廷里的画家把自然画得细致生动。今天有些作品和他的名字连在一起，有的由他亲手画，有的可能来自他领导的宫廷画院。
+宋徽宗生活在大约九百年前。他会画画、写书法、收藏艺术品，也非常重视宫廷里的画师。
 
-无论画家是谁，一幅工笔画都要求眼睛和手一起慢下来。先看，再勾线，再一层层上色。那片花瓣不是被画了许多次却没有进展；每一遍都给它增加一点形状、光线和生命。
+可是当皇帝，他的结局很糟。1127年，北宋都城被攻破，宋徽宗被俘到北方，后来死在囚禁之中。
+
+他的宫廷消失了，可这种细密的画法没有消失。后来的画家仍然用细线、层层颜色和仔细观察去画花、鸟、人物和动物。直到今天，还是有人画工笔。
+
+所以，“孔雀先迈哪只脚”的故事，不只是一个挑剔皇帝的趣事。它也很像工笔画本身。
+
+远远看，你看到一只鸟。走近一点，你看到羽毛。再靠近一点，也许才发现鸟爪怎么抓住树枝，一片叶子怎样翻过去，或者眼睛里那一小点亮光。
+
+工笔画很适合越走越近地看，而宋徽宗，大概就是那个总想再靠近一点的人。
 [/zh]
 [en]
-Emperor Huizong (*Sòng Huīzōng*), who lived about nine hundred years ago, was also a painter. He loved looking at birds and flowers, and he encouraged artists at his court to paint nature with lively detail. Some works connected with his name were painted by him; others may have come from the court studio he led.
+Huizong lived about nine hundred years ago. He was a talented painter, calligrapher, collector, and powerful supporter of court artists.
 
-Whoever held the brush, gongbi asked the eyes and hand to slow down together: look, draw the lines, then add color layer by layer. The petal is not being painted over and over for no reason. Each pass adds a little more shape, light, and life.
+As an emperor, however, his story ended badly. In 1127, enemies captured the Northern Song capital. Huizong was taken north as a prisoner and later died in captivity.
+
+His court disappeared. The careful kind of painting it encouraged did not. Painters in later dynasties continued using fine outlines, controlled colors, and close observation to paint flowers, birds, people, and animals. Gongbi is still practiced today.
+
+That is why the old story about the peacock’s foot is more than a funny tale about a picky emperor. It explains something about this kind of painting.
+
+From across the room, you see a bird. Come closer, and you notice the feathers. Closer still, you see how one foot grips the branch, how a leaf turns over, or how one tiny drop makes an eye shine.
+
+Gongbi rewards the person who keeps looking. Huizong certainly did.
 [/en]
 [/section]

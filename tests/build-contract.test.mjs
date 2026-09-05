@@ -157,7 +157,7 @@ test("the mobile menu exposes About and production pages show site copyright", (
   assert.match(footerSource, /Made with curiosity, care, and technology\./);
   assert.match(footerSource, /© 2026 Nihao World\. All rights reserved\./);
   assert.match(cultureTemplate, /site-footer\.js/);
-  assert.equal(culturePages.length, 103);
+  assert.equal(culturePages.length, 102);
   for (const pagePath of culturePages) {
     assert.match(readFileSync(pagePath, "utf8"), /site-footer\.js/, `${pagePath} is missing the site footer`);
   }
@@ -635,12 +635,13 @@ test("the Chinese landing-page headline is slightly reduced while keeping its or
   assert.match(stylesSource, /\.library-hero h2 \{[\s\S]*font-size: clamp\(1\.3rem, 2\.2vw, 1\.7rem\)[\s\S]*color: var\(--sun\)/);
 });
 
-test("the landing hero features five scrollable culture-story highlights", () => {
+test("the landing hero features six scrollable culture-story highlights", () => {
   const html = readFileSync("index.html", "utf8");
   const carouselSource = readFileSync("src/core/story-highlights.js", "utf8");
   assert.match(html, /<section class="story-highlights" data-story-highlights/);
-  assert.equal((html.match(/data-story-highlight-dot=/g) ?? []).length, 5);
+  assert.equal((html.match(/data-story-highlight-dot=/g) ?? []).length, 6);
   assert.match(html, /culture\/books\/folk-tales\/monkey-king\/index\.html/);
+  assert.match(html, /culture\/books\/geography\/rice-terraces\/index\.html/);
   assert.match(html, /culture\/books\/figures\/mulan\/index\.html/);
   assert.match(html, /culture\/books\/politics\/emperor-day\/index\.html\?reading=story/);
   assert.match(carouselSource, /viewport\.scrollTo/);
