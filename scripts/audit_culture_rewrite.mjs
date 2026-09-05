@@ -43,9 +43,10 @@ function pageLanguageDocument(markdown, language, heroTitle) {
   const sections = [...markdown.matchAll(/\[section\]\n([\s\S]*?)\n\[\/section\]/g)]
     .map((match) => match[1])
     .map((section) => {
-      const heading = section.match(new RegExp(`^${headingKey}:\\s*(.+)$`, "m"))?.[1]?.trim();
+      const heading = section.match(new RegExp(`^${headingKey}:[ \\t]*([^\\r\\n]*)$`, "m"))?.[1]?.trim();
       const body = parseTaggedBlock(section, language).trim();
-      return heading && body ? `## ${heading}\n\n${body}` : "";
+      if (!body) return "";
+      return heading ? `## ${heading}\n\n${body}` : body;
     })
     .filter(Boolean);
 

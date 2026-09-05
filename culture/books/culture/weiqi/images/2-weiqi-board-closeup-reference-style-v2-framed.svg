@@ -1,0 +1,25 @@
+<svg width="1200" height="900" viewBox="0 0 1200 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="900" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#F6E7C8"/>
+      <stop offset="1" stop-color="#EBD7B3"/>
+    </linearGradient>
+    <filter id="shadow" x="110" y="20" width="980" height="860" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="14" stdDeviation="18" flood-color="#916A34" flood-opacity="0.22"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="900" fill="url(#bg)"/>
+
+  <g filter="url(#shadow)">
+    <rect x="190" y="20" width="820" height="820" rx="28" fill="#EAD8B6"/>
+    <image
+      href="2-weiqi-board-closeup-reference-style-v2.png"
+      x="190"
+      y="20"
+      width="820"
+      height="820"
+      preserveAspectRatio="xMidYMid meet"
+    />
+  </g>
+</svg>

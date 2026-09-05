@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>铁杵磨成针</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <nav class="back-nav">
+      <a href="../../../../index.html?view=culture#culture-folk-tales">← 返回目录 Back to Catalog</a>
+    </nav>
+    <main class="book">
+      <section class="page hero">
+        <div class="hero-copy">
+          <h1>铁杵磨成针</h1>
+          <h2>Grind an Iron Rod into a Needle</h2>
+        </div>
+      </section>
+
+      <section class="page story two-column text-wrap-image">
+        <div class="story-copy">
+          <figure class="floated-figure">
+            <img src="./images/1-iron-rod-needle.webp" alt="" class="floated-image" />
+            <figcaption class="caption floated-caption"><span class="zh">一根又粗又硬的铁棒，看起来根本不可能变成针，可这个故事偏偏说：只要不停，就能慢慢变。</span><br><span class="en">A thick iron rod looks nothing like a needle, yet the story says steady effort can slowly change it.</span></figcaption>
+          </figure>
+          <p>有个很有名的故事，说李白小时候不想读书，跑出去玩。路上，他看见一位老奶奶坐在溪边，拿着一根铁棒在石头上磨。李白问她在做什么。老奶奶说：“我要把它磨成针。”这话听起来太夸张了，可也正因为夸张，大家一下就记住了。后来，人们常用“铁杵磨成针”这个故事来告诉人：你现在觉得太难的事，只要一直做下去，也可能真的慢慢做成。</p>
+          <p>One famous story says that when Li Bai was young, he did not want to study and ran off to play. On the way, he saw an old woman by a stream, grinding an iron rod against a stone. Li Bai asked what she was doing. She said, “I am grinding it into a needle.” The idea sounds impossible, and that is exactly why people remember it so well. Later, people used the story to say that even a task that seems far too hard right now may still be finished if you keep going long enough.</p>
+        </div>
+      </section>
+    </main>
+    <script src="../../../../site-footer.js?v=20260830-v1"></script>
+      <script>
+      (() => {
+        const entries = Array.from(document.querySelectorAll(".glossary-entry"));
+        if (!entries.length) return;
+
+        const closeEntry = (entry) => {
+          entry.dataset.open = "false";
+          entry.style.removeProperty("--glossary-left");
+          entry.style.removeProperty("--glossary-top");
+          entry.style.removeProperty("--glossary-arrow-left");
+          const button = entry.querySelector(".glossary-term");
+          if (button) button.setAttribute("aria-expanded", "false");
+        };
+
+        const closeAll = (except = null) => {
+          for (const entry of entries) {
+            if (entry !== except) closeEntry(entry);
+          }
+        };
+
+        const placePopover = (entry) => {
+          requestAnimationFrame(() => {
+            const button = entry.querySelector(".glossary-term");
+            const popover = entry.querySelector(".glossary-popover");
+            if (!button || !popover) return;
+
+            const margin = 12;
+            const gap = 10;
+            const buttonRect = button.getBoundingClientRect();
+            const popoverRect = popover.getBoundingClientRect();
+            const halfWidth = popoverRect.width / 2;
+            const buttonCenter = buttonRect.left + buttonRect.width / 2;
+            const minCenter = margin + halfWidth;
+            const maxCenter = window.innerWidth - margin - halfWidth;
+            const left = Math.min(Math.max(buttonCenter, minCenter), maxCenter);
+
+            let side = "above";
+            let top = buttonRect.top - popoverRect.height - gap;
+
+            if (top < margin) {
+              side = "below";
+              top = buttonRect.bottom + gap;
+            }
+
+            if (side === "below" && top + popoverRect.height > window.innerHeight - margin) {
+              const fallbackTop = buttonRect.top - popoverRect.height - gap;
+              if (fallbackTop >= margin) {
+                side = "above";
+                top = fallbackTop;
+              } else {
+                top = Math.max(margin, window.innerHeight - margin - popoverRect.height);
+              }
+            }
+
+            const popoverLeft = left - halfWidth;
+            const arrowLeft = Math.min(
+              Math.max(buttonCenter - popoverLeft, 16),
+              Math.max(16, popoverRect.width - 16)
+            );
+
+            entry.dataset.side = side;
+            entry.style.setProperty("--glossary-left", left + "px");
+            entry.style.setProperty("--glossary-top", top + "px");
+            entry.style.setProperty("--glossary-arrow-left", arrowLeft + "px");
+          });
+        };
+
+        const toggleEntry = (entry) => {
+          const shouldOpen = entry.dataset.open !== "true";
+          closeAll(entry);
+          entry.dataset.open = shouldOpen ? "true" : "false";
+
+          const button = entry.querySelector(".glossary-term");
+          if (button) {
+            button.setAttribute("aria-expanded", shouldOpen ? "true" : "false");
+            if (!shouldOpen) button.blur();
+          }
+
+          if (shouldOpen) placePopover(entry);
+        };
+
+        document.addEventListener("click", (event) => {
+          const button = event.target.closest(".glossary-term");
+          if (button) {
+            event.preventDefault();
+            toggleEntry(button.closest(".glossary-entry"));
+            return;
+          }
+
+          if (!event.target.closest(".glossary-entry")) {
+            closeAll();
+            if (document.activeElement && document.activeElement.classList.contains("glossary-term")) {
+              document.activeElement.blur();
+            }
+          }
+        });
+
+        document.addEventListener("keydown", (event) => {
+          if (event.key === "Escape") {
+            closeAll();
+            if (document.activeElement && document.activeElement.classList.contains("glossary-term")) {
+              document.activeElement.blur();
+            }
+            return;
+          }
+
+          if ((event.key === "Enter" || event.key === " ") && event.target.classList.contains("glossary-term")) {
+            event.preventDefault();
+            toggleEntry(event.target.closest(".glossary-entry"));
+          }
+        });
+
+        for (const entry of entries) {
+          entry.addEventListener("mouseenter", () => placePopover(entry));
+        }
+
+        window.addEventListener("resize", () => closeAll());
+        window.addEventListener("scroll", () => closeAll(), { passive: true });
+      })();
+    </script>
+  </body>
+</html>

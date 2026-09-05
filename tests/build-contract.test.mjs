@@ -13,6 +13,7 @@ import { filterLessonContent, filterLessonGroups, lessonScopeKey } from "../src/
 import { advanceShuffledOrder, nextRandomCycleId } from "../src/core/random-cycle.js";
 import { renderLessonNotes } from "../src/core/lesson-notes.js";
 import { bookIdFromLocation, lessonScopeFromLocation, topicIdFromLocation, topicPageUrl, viewFromLocation } from "../src/core/router.js";
+import { cultureStoryRanking } from "../src/core/navigation-runtime.js";
 import { timeDateWeekItems } from "../src/features/time-daily-life/weekdays.js";
 import { timeDateClockItems, timeDateRoutineItems } from "../src/features/time-daily-life/time.js";
 import { datePracticeItems, timeDateDateItems, timeDateMonthItems } from "../src/features/time-daily-life/dates.js";
@@ -157,7 +158,7 @@ test("the mobile menu exposes About and production pages show site copyright", (
   assert.match(footerSource, /Made with curiosity, care, and technology\./);
   assert.match(footerSource, /© 2026 Nihao World\. All rights reserved\./);
   assert.match(cultureTemplate, /site-footer\.js/);
-  assert.equal(culturePages.length, 102);
+  assert.equal(culturePages.length, 109);
   for (const pagePath of culturePages) {
     assert.match(readFileSync(pagePath, "utf8"), /site-footer\.js/, `${pagePath} is missing the site footer`);
   }
@@ -640,7 +641,8 @@ test("the landing hero features six scrollable culture-story highlights", () => 
   const carouselSource = readFileSync("src/core/story-highlights.js", "utf8");
   assert.match(html, /<section class="story-highlights" data-story-highlights/);
   assert.equal((html.match(/data-story-highlight-dot=/g) ?? []).length, 6);
-  assert.match(html, /culture\/books\/folk-tales\/monkey-king\/index\.html/);
+  assert.match(html, /culture\/books\/literature\/journey-to-west\/index\.html/);
+  assert.match(html, /culture\/books\/literature\/journey-to-west\/images\/3-great-sage-at-heaven-gate\.webp/);
   assert.match(html, /culture\/books\/geography\/rice-terraces\/index\.html/);
   assert.match(html, /culture\/books\/figures\/mulan\/index\.html/);
   assert.match(html, /culture\/books\/politics\/emperor-day\/index\.html\?reading=story/);
@@ -670,6 +672,32 @@ test("culture is an in-page landing view with category cards and no duplicate cu
   assert.equal(bookIdFromLocation({ search: "?book=9z", hash: "#book-lessons-9z" }, books), null);
 });
 
+test("Culture categories prioritize story-rich material and leave philosophy last", () => {
+  assert.deepEqual(
+    cultureStoryRanking.map(({ id }) => id),
+    [
+      "folk-tales",
+      "literature",
+      "figures",
+      "architecture",
+      "clothing",
+      "folk-customs",
+      "culture",
+      "food",
+      "inventions",
+      "military",
+      "economy",
+      "politics",
+      "geography",
+      "art",
+      "religion",
+      "philosophy"
+    ]
+  );
+  assert.equal(cultureStoryRanking[0].score, 10);
+  assert.equal(cultureStoryRanking.at(-1).score, 1);
+});
+
 test("Culture category headers stay compact on phones", () => {
   const stylesSource = readFileSync("styles.css", "utf8");
   assert.match(stylesSource, /@media \(max-width: 520px\) \{[\s\S]*?\.culture-category-section \.cat-head \{[\s\S]{0,220}grid-template-columns: 56px minmax\(0, 1fr\);[\s\S]{0,220}flex-wrap: nowrap;/);
@@ -695,6 +723,22 @@ test("Culture generates one previewable output tree under books", () => {
     assert.doesNotMatch(readFileSync(join("scripts", file), "utf8"), /target:\s*["']experiments["']/);
   }
   assert.doesNotMatch(readFileSync("scripts/build_philosophy_page.mjs", "utf8"), /books\|experiments/);
+});
+
+test("single-page stories do not repeat their hero title above the body", () => {
+  const html = readFileSync("culture/books/folk-tales/the-spear-and-the-shield/index.html", "utf8");
+
+  assert.match(html, /<h1>自相矛盾<\/h1>/);
+  assert.match(html, /<h2>The Spear and the Shield<\/h2>/);
+  assert.doesNotMatch(html, /<p class="page-label">Page 1<\/p>/);
+  assert.doesNotMatch(html, /<h3>自相矛盾<\/h3>/);
+  assert.doesNotMatch(html, /<h4>The Spear and the Shield<\/h4>/);
+});
+
+test("culture continuation pages may omit repeated section headings", () => {
+  const html = readFileSync("culture/books/literature/journey-to-west/index.html", "utf8");
+  assert.match(html, /<p class="page-label">Page 2<\/p>\s*<div class="zh">/);
+  assert.doesNotMatch(html, /<h[34]>(?:heading_|image:|\[zh\])/);
 });
 
 test("Learn by Books shows each textbook directly and links lessons to topic practice", () => {

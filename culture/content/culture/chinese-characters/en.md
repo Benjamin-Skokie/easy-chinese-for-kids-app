@@ -2,154 +2,52 @@
 
 # Were Chinese Characters Drawn Like Pictures?
 
-## A Secret Found in a Chinese Medicine Shop
+## A Medicine Shop Was Hiding Very Old Writing
 
-In 1899, in Beijing, an official named Wang Yirong became sick.
+In the late 1800s, Chinese medicine shops sold something with a wonderful name: “dragon bones.” They were not really dragon bones, of course. Many were old animal bones dug out of the ground and ground into powder for medicine.
 
-The doctor gave him a Chinese medicine called "dragon bones." People said these were fossils from ancient animals. They were ground into powder and used as medicine.
+Then, in 1899, scholars in Beijing began paying attention to something strange about some of these bones: tiny marks had been carefully carved into them. A famous story tells how the scholar Wang Yirong noticed such markings on “dragon bones” from a pharmacy. He studied ancient writing and suspected that these were not scratches at all. They were characters.
 
-When the medicine came home, Wang Yirong opened the package and looked through the "dragon bones."
-
-Then he froze.
-
-One bone had marks carved on it.
-
-They were not cracks. They were not scratches.
-
-Someone had carved them on purpose.
-
-Wang studied ancient writing, so he recognized something right away:
-
-this was writing.
-
-Very, very old writing.
-
-He quickly sent people to buy all the "dragon bones" they could find in Beijing medicine shops. Piece by piece, he looked at them and tried to match them.
-
-On turtle shells and ox bones that had been treated like medicine, he recognized characters for sun, moon, mountain, and water.
-
-They were words carved by people of the Shang dynasty more than 3,000 years ago.
-
-Oracle bone writing was discovered in the drawers of medicine shops.
+Soon scholars traced more of the bones to Anyang in northern China. There they found thousands of pieces of ox shoulder blade and turtle shell carrying writing from more than 3,000 years ago. Today, we call this writing *jiǎgǔwén*—oracle-bone script. But why would anyone write on a bone? That is where the story gets much more interesting.
 
 ---
 
-## What Did the Earliest Chinese Characters Look Like?
+## Some of the Characters Really Did Look Like Pictures
 
-Many oracle bone characters are still possible to guess today.
+[Look closely at oracle-bone writing](../../../../index.html?topic=pictographs#topic-detail) and you may recognize a few shapes. The character for the sun once looked more like a round sun. The moon curved like a crescent. Mountain rose in pointed peaks. Some early characters began as simple pictures of things people could see.
 
-"Sun" looked like a circle with a dot inside. The circle was the sun. The dot may have shown a dark spot people saw on the sun.
-
-"Moon" looked like a crescent moon. If it were drawn round, it might look too much like the sun, so people long ago made it crescent-shaped.
-
-"Mountain" looked like three peaks joined together.
-
-"Water" looked like a winding line with small splashes beside it.
-
-"Person" looked like a person walking sideways, with arms and legs.
-
-"Tree" looked like a tree, with trunk, branches, and roots.
-
-This is called pictographic writing: drawing something by following its shape.
-
-Many ancient writing systems began with the shadow of pictures. Ancient Egyptian hieroglyphs and Mesopotamian cuneiform also show traces of this early picture-like stage.
-
-What makes Chinese characters special is that they walked step by step from those old pictures to the characters we use today.
-
-The old shadows are still hiding inside.
+That is called pictographic writing. But Chinese writing could never survive on pictures alone. After all, you can draw a mountain or a horse—but how do you draw a question like: **Will it rain tomorrow?** And that is exactly the sort of question people were asking.
 
 ---
 
-## What About Things You Cannot Draw?
+## What Did People Write on Oracle Bones?
 
-You can draw a mountain.
+The Shang kings used bones and turtle shells for divination. A diviner made small hollows in the bone or shell and touched them with a heated tool. The heat produced cracks. People believed those cracks could carry answers from powerful spirits and royal ancestors. Then a scribe carved a record beside them.
 
-You can draw a bird.
+Some of the questions sound grand and kingly. Should the army go into battle? Would a hunt succeed? Others sound surprisingly ordinary. **Will it rain?**
 
-But how do you draw "think"?
+A tortoiseshell now in the Smithsonian has inscriptions asking about rain. Another oracle bone asks whether the year will bring a good harvest. Those were serious questions. A bad harvest could mean real trouble for an entire kingdom. But the bones also preserve much more personal worries.
 
-How do you draw "angry"?
+King Wǔ Dīng had a wife named Fù Hǎo. One surviving inscription asks about her coming childbirth. The king studied the cracks and made a prediction. Later, someone added what actually happened: after thirty-one days, she gave birth to a girl. The bone kept both the question and the ending.
 
-How do you draw "fair"?
-
-Ancient people found smarter ways.
-
-They put parts together to make new meanings.
-
-"Rest" combines a person and a tree. A tired person leans on a tree to rest.
-
-"Look" shows a hand above an eye. The hand blocks the light so the eye can look carefully.
-
-"Bright" combines the sun and the moon. Both are shining, so the meaning is bright.
-
-"Good" shows a woman with a child.
-
-And the character for "endure"?
-
-A blade presses over the heart.
-
-It does not mean a real knife is on your chest. It means the heart feels cut by something, but you hold yourself together.
-
-One character can be a tiny movie.
+And then there was the king’s tooth. One inscription records that Wǔ Dīng had a sick tooth. The diviners wondered whether one of his dead ancestors was causing the trouble. They asked about one ancestor, then another. Imagine that: more than 3,000 years ago, the ruler of a kingdom was powerful enough to command armies—but still could not make his tooth stop hurting. Suddenly, the people behind the ancient writing do not seem quite so far away.
 
 ---
 
-## Sound-and-Meaning Characters: The Character Factory
+## Pictures Were Only the Beginning
 
-Those early methods were clever, but they could not make enough characters.
+The oracle bones show something else important. By the time these words were being carved, Chinese writing was already much more than a collection of little drawings. People could write names, dates, actions, questions, and ideas. Characters could work together to form complete records.
 
-There are too many things in the world. You cannot draw a little picture for every one of them.
+Over many centuries, their shapes changed. Curved pictures became straighter and more regular. New ways of building characters appeared. One part could give a clue to meaning, while another could suggest sound.
 
-So people long ago developed sound-and-meaning characters.
-
-One part gives a clue about the meaning.
-
-The other part gives a clue about the sound.
-
-Characters related to water often use the three-dot water side: river, lake, sea.
-
-Characters related to trees often use the wood side: pine, cypress, peach, plum.
-
-Characters related to metal often use the metal side: iron, copper, silver, steel.
-
-If you do not know the character for "jiang," a river, you may still notice the water part and guess it has something to do with water. Another part hints at how it may sound.
-
-Chinese used this method to build most of its characters.
-
-It was like a super factory for writing.
+The little pictures had grown into a writing system. So when you look at a modern Chinese character, you are not simply looking at a drawing. You are looking at the result of thousands of years of change.
 
 ---
 
-## Why Did Chinese Characters Not Become Pinyin?
+## A Message That Outlived the Person Who Wrote It
 
-People in Beijing say "mountain" one way.
+Later rulers standardized Chinese writing further, and the shapes continued to change. People in different parts of China might pronounce the same character differently, yet often recognize the same written form. That helped writing travel farther than any one person’s voice. And somehow, the oldest messages traveled farthest of all.
 
-People in Guangdong say it another way.
+A Shang scribe carved a question into bone. Will it rain? Will the harvest be good? Will the baby arrive safely? What is making the king’s tooth hurt?
 
-People in Shanghai say it another way too.
-
-If everyone wrote by sound, different places might write different words, and people might not understand one another.
-
-But no matter how people pronounce it, the written character for "mountain" is the same.
-
-Because of this, people who spoke different regional languages could still communicate through writing.
-
-When the Qin dynasty unified writing, it helped people across China read the same written forms, even if their tongues moved differently when they spoke.
-
-There was another reason too:
-
-people did not feel a strong need to replace the characters.
-
-Li Bai's line "Before my bed, bright moonlight" is still written with the same characters more than a thousand years later. A student today can copy *Quiet Night Thoughts* character by character.
-
----
-
-## Summary
-
-More than 3,000 years ago, people carved sun, moon, mountain, and water onto turtle shells and bones.
-
-For things that could not be drawn, they combined parts: a person leaning on a tree means rest; a blade pressing on the heart means endure.
-
-Later, sound-and-meaning characters helped create most Chinese characters.
-
-Chinese characters did not turn into pinyin because they let people who spoke different regional languages read the same books. They also let poems from the Tang dynasty and students today share the same written world.
+The people who asked those questions have been gone for thousands of years. We do not know what their voices sounded like. We do not know what they talked about over dinner. But we can still read some of the questions they left behind. Chinese characters began partly with pictures. Then they learned how to carry something much bigger: people’s thoughts across time.

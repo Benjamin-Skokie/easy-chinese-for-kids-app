@@ -19444,8 +19444,43 @@
   }
 
   // src/core/navigation-runtime.js
+  var cultureStoryRanking = Object.freeze([
+    { id: "folk-tales", score: 10 },
+    { id: "literature", score: 9 },
+    { id: "figures", score: 9 },
+    { id: "architecture", score: 8 },
+    { id: "clothing", score: 8 },
+    { id: "folk-customs", score: 7 },
+    { id: "culture", score: 7 },
+    { id: "food", score: 6 },
+    { id: "inventions", score: 6 },
+    { id: "military", score: 5 },
+    { id: "economy", score: 5 },
+    { id: "politics", score: 4 },
+    { id: "geography", score: 4 },
+    { id: "art", score: 3 },
+    { id: "religion", score: 2 },
+    { id: "philosophy", score: 1 }
+  ]);
   function createNavigationRuntime(context) {
     const { state: state2, topicData: topicData2, books: books2, topicGroups: topicGroups2, learningHomeCategories: learningHomeCategories2, bookHomeCategories: bookHomeCategories2, topicCardMeta: topicCardMeta2, topicPageUrl: topicPageUrl2, topicGroupsRoot: topicGroupsRoot2, bookSelect: bookSelect2, lessonSelect: lessonSelect2, lookupCard: lookupCard2, bookBrowser: bookBrowser2, topicPanel: topicPanel2, bookPanel: bookPanel2, culturePanel: culturePanel2, detailLayout: detailLayout2, learningCultureNav: learningCultureNav2, numberStages: numberStages2, timeDateWeekItems: timeDateWeekItems2, getNumberStageItems, getWorldFocusItems, renderFocusControls: renderFocusControls2, renderFocusDisplay: renderFocusDisplay2, renderFocusWordList: renderFocusWordList3, renderFocusExplorer: renderFocusExplorer2, renderActivityPanel: renderActivityPanel2, renderTopicDetail: renderTopicDetail2, updateDisplayControls: updateDisplayControls2, selectBookLesson: selectBookLesson2 } = context;
+    function orderCultureLandingByStory() {
+      if (!culturePanel2) {
+        return;
+      }
+      const cardGrid = culturePanel2.querySelector(".culture-card-grid");
+      cultureStoryRanking.forEach(({ id }) => {
+        const card = cardGrid?.querySelector(`[data-culture-target="${id}"]`);
+        const section = culturePanel2.querySelector(`#culture-${id}`);
+        if (card) {
+          cardGrid.appendChild(card);
+        }
+        if (section) {
+          culturePanel2.appendChild(section);
+        }
+      });
+    }
+    orderCultureLandingByStory();
     function currentTopic2() {
       return topicData2.find((topic) => topic.id === state2.selectedTopicId) ?? topicData2[0];
     }

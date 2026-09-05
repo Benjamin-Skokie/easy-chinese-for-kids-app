@@ -39,7 +39,7 @@ function parseFrontmatter(markdown) {
 }
 
 function parseField(block, name) {
-  const pattern = new RegExp(`^${name}:\\s*(.+)$`, "m");
+  const pattern = new RegExp(`^${name}:[ \\t]*([^\\r\\n]*)$`, "m");
   const match = block.match(pattern);
   return match ? normalizeDisplayDashes(match[1].trim()) : "";
 }
@@ -119,7 +119,7 @@ function shouldUseTextWrap(layout, zh, en, hasImage) {
   return paragraphCount >= 6 || textLength >= 850;
 }
 
-function renderSection(block, availableImages = new Set()) {
+function renderSection(block, availableImages = new Set(), { suppressRepeatedHeading = false } = {}) {
   const layout = parseField(block.raw, "layout");
   const page = parseField(block.raw, "page");
   const headingZh = parseField(block.raw, "heading_zh");
@@ -132,14 +132,20 @@ function renderSection(block, availableImages = new Set()) {
   const hasImage = Boolean(image) && availableImages.has(image);
   const imageSrc = hasImage ? `./images/${image}` : "";
   const resolvedLayout = shouldUseTextWrap(layout, zh, en, hasImage) ? "text-wrap-image" : layout;
+  const sectionHeadingMarkup = headingZh || headingEn
+    ? `
+          <h3>${formatInline(headingZh)}</h3>
+          <h4>${formatInline(headingEn)}</h4>`
+    : "";
+  const headingMarkup = suppressRepeatedHeading
+    ? ""
+    : `<p class="page-label">Page ${escapeHtml(page)}</p>${sectionHeadingMarkup}`;
+  const headingLine = headingMarkup ? `${headingMarkup}\n          ` : "";
 
   if (resolvedLayout === "text-only" || !hasImage) {
     return `      <section class="page story text-only">
         <div class="story-copy">
-          <p class="page-label">Page ${escapeHtml(page)}</p>
-          <h3>${formatInline(headingZh)}</h3>
-          <h4>${formatInline(headingEn)}</h4>
-          <div class="zh">
+          ${headingLine}<div class="zh">
             ${renderTextBlock(zh, "zh")}
           </div>
           <div class="en">
@@ -152,10 +158,7 @@ function renderSection(block, availableImages = new Set()) {
   if (resolvedLayout === "text-wrap-image") {
     return `      <section class="page story two-column text-wrap-image">
         <div class="story-copy">
-          <p class="page-label">Page ${escapeHtml(page)}</p>
-          <h3>${formatInline(headingZh)}</h3>
-          <h4>${formatInline(headingEn)}</h4>
-          <figure class="floated-figure">
+          ${headingLine}<figure class="floated-figure">
             <img src="${escapeHtml(imageSrc)}" alt="" class="floated-image" />
             <figcaption class="caption floated-caption"><span class="zh">${formatInline(captionZh)}</span><br><span class="en">${formatInline(captionEn)}</span></figcaption>
           </figure>
@@ -167,10 +170,7 @@ function renderSection(block, availableImages = new Set()) {
 
   return `      <section class="page story ${escapeHtml(resolvedLayout)}">
         <div class="story-copy">
-          <p class="page-label">Page ${escapeHtml(page)}</p>
-          <h3>${formatInline(headingZh)}</h3>
-          <h4>${formatInline(headingEn)}</h4>
-          <div class="zh">
+          ${headingLine}<div class="zh">
             ${renderTextBlock(zh, "zh")}
           </div>
           <div class="en">
@@ -186,6 +186,16 @@ function renderSection(block, availableImages = new Set()) {
 
 function buildBody(blocks, availableImages = new Set()) {
   const output = [];
+  const heroBlock = blocks.find((block) => block.type === "hero");
+  const sectionBlocks = blocks.filter((block) => block.type === "section");
+  const hasEnding = blocks.some((block) => block.type === "ending");
+  const singleSectionRepeatsHero = Boolean(
+    heroBlock &&
+    sectionBlocks.length === 1 &&
+    !hasEnding &&
+    parseField(sectionBlocks[0].raw, "heading_zh") === parseField(heroBlock.raw, "title_zh") &&
+    parseField(sectionBlocks[0].raw, "heading_en") === parseField(heroBlock.raw, "title_en")
+  );
 
   for (const block of blocks) {
     if (block.type === "hero") {
@@ -199,7 +209,7 @@ function buildBody(blocks, availableImages = new Set()) {
     }
 
     if (block.type === "section") {
-      output.push(renderSection(block, availableImages));
+      output.push(renderSection(block, availableImages, { suppressRepeatedHeading: singleSectionRepeatsHero }));
       continue;
     }
 

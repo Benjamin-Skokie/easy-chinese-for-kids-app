@@ -1,6 +1,6 @@
 ---
 title_zh: 龙和凤凰：中国最吉祥的伙伴
-title_en: Dragon and Phoenix: China's Luckiest Pair
+title_en: Dragon and Phoenix: China’s Luckiest Pair
 slug: dragon-phoenix
 category: culture
 difficulty: 中等
@@ -10,116 +10,142 @@ style_notes: "用 --- 分隔 frontmatter；正文强调优先用 *斜体*；尽�
 
 [hero]
 title_zh: 龙和凤凰：中国最吉祥的伙伴
-title_en: Dragon and Phoenix: China's Luckiest Pair
+title_en: Dragon and Phoenix: China’s Luckiest Pair
 [/hero]
 
 [section]
 page: 1
-layout: text-wrap-image
-heading_zh: 龙不是怪兽，更像管风雨的神兽
-heading_en: The Chinese Dragon Was Not a Monster
-image: 1-dragon-wall.webp
-caption_zh: 故宫九龙壁上的龙，不是在吓人，而是在告诉你：它和天、雨、水很有关系。
-caption_en: The dragon on a palace wall is not there to scare you. It points to power, weather, and water.
+layout: text-only
+heading_zh: 在一场中国婚礼上
+heading_en: At a Chinese Wedding
 [zh]
-如果你站在故宫的九龙壁前，一抬头，就会看见一条龙从彩色琉璃里盘旋出来。眼睛圆圆的，胡须往外飞，好像下一秒就要冲进云里。
+在一场中国婚礼上，龙和凤凰常常比客人还早到。它们可能盘在红色请帖上，绣在礼服上，也可能面对面出现在一只瓷碗里。龙长着鳞片、利爪、犄角和弯弯曲曲的长身体；凤凰展开华丽的羽毛，像刚刚从一场盛大的庆典里飞来。
 
-可中国的龙不是西方故事里那种住山洞、喷火、和骑士打架的怪兽。中国的龙更像一种管风、管雨、管水的神兽。古代中国很怕旱，也很怕大水，所以人们总把龙和天气、河流、收成连在一起想。
-
-它不是真实存在过的动物，却像一个大家都认识的老角色。你一提到龙，很多中国人脑子里想到的，不是危险，而是力量、雨水和好运。
+它们明明完全不像，为什么几百年来，中国人总喜欢把它们放在一起？要找到答案，我们先跟着龙走。
 [/zh]
 [en]
-If you stand in front of the Nine-Dragon Wall in the Forbidden City and look up, you see a dragon twisting out of bright glazed tiles. Its eyes are wide. Its whiskers fly outward. It looks ready to leap into the clouds.
+At a Chinese wedding, the dragon and phoenix may arrive before any of the guests. They curl across red invitations, gleam on embroidered cloth, or face each other on a porcelain bowl. The dragon has scales, claws, horns, and a long twisting body. The phoenix spreads a fan of elegant feathers. One looks as if it has just flown in from a thunderstorm. The other looks ready for a royal celebration.
 
-But the Chinese dragon was not like the cave dragons in many European stories. It was not mainly a fire-breathing monster that fought knights. In China, the dragon was more like a powerful creature linked to wind, rain, rivers, and harvests. Long ago, people feared drought and floods, so they often connected dragons with the natural world.
-
-The dragon was never a real animal. Even so, it became a very familiar one in people's minds. When many Chinese people hear the word dragon, they do not think first of danger. They think of strength, rain, and good luck.
+They are not even the same kind of creature. So why have Chinese artists kept putting them together for centuries? To find the answer, follow the dragon first.
 [/en]
 [/section]
 
 [section]
 page: 2
 layout: text-wrap-image
-heading_zh: 龙也和皇帝连在一起
-heading_en: The Dragon Also Became a Sign of Imperial Power
-image: 2-dragon-rain-emperor.webp
-caption_zh: 龙一边和雨水、收成连在一起，一边又成了皇帝最特别的符号。
-caption_en: The dragon was linked both to rain for the fields and to the emperor's special place.
+heading_zh: 云水之间的神兽
+heading_en: A Creature of Clouds and Water
+image: 1-dragon-wall.webp
+caption_zh: 这幅现代插图用宫墙、云纹和波浪表现中国龙与天空、水和皇权的联系；它不是历史照片。
+caption_en: This modern illustration uses a palace wall, clouds, and waves to show the Chinese dragon’s links with sky, water, and imperial power; it is not a historical photograph.
 [zh]
-龙不只管天上的雨，也慢慢走进了皇宫里。皇帝穿的叫龙袍，坐的叫龙椅，宫殿里到处都能看到龙的图案。
+很久以前，中国的龙常常出现在云、水和波浪之间。人们把它和江河、雨水联系在一起。对靠天吃饭的农民来说，一场及时雨可能关系到一年的收成。所以，龙虽然神秘而强大，却不只是让人害怕的怪兽，它还带着人们对风调雨顺的盼望。
 
-古代人会觉得这很合理。既然龙和风雨、水、收成有关，那么皇帝要管理天下，也像是借着龙的力量替老天办事。
-
-所以，龙一边是自然里的神兽，一边又是皇权的符号。它不是随便一只漂亮动物，而是一种很有分量的形象。
+这就是为什么中国画里的龙常常在云间翻腾，或者从浪花中跃起。它和许多西方故事里等着英雄来打败的喷火怪兽，很不一样。
 [/zh]
 [en]
-The dragon did not stay only in stories about the sky and rivers. It also moved into the palace. The emperor wore dragon robes, sat on a dragon throne, and lived among dragon designs.
+Long ago, Chinese dragons belonged to a world of clouds and water. They were linked with rivers, rain, and the forces that made fields grow. For farmers waiting under a dry sky, rain could mean the difference between a good harvest and an empty field. A creature connected with water was not simply frightening. It could be powerful, mysterious, and lucky.
 
-To people long ago, that made sense. If dragons were tied to rain, water, and the health of the harvest, then the ruler of the country could seem connected to that same power. The emperor was supposed to help keep the world in order, and the dragon became a sign of that role.
-
-So the dragon carried two jobs at once. It belonged to nature, and it belonged to imperial power. It was not just a pretty creature. It was a symbol with real weight.
+That is why Chinese dragons so often twist through clouds or rise above waves. Unlike many dragons in European tales, they were not mainly monsters waiting for a hero to defeat them.
 [/en]
 [/section]
 
 [section]
 page: 3
 layout: text-wrap-image
-heading_zh: 凤凰像一只只在好时代出现的神鸟
-heading_en: The Phoenix Was a Bird of Peace and Good Signs
-image: 3-phoenix-auspicious.webp
-caption_zh: 传说里的凤凰很美，也不是天天都能看见的鸟，它只会在太平的时候出现。
-caption_en: In legend, the phoenix was beautiful and rare. People said it appeared only in peaceful times.
+heading_zh: 龙走进了皇宫
+heading_en: The Dragon Enters the Palace
+image: 2-dragon-rain-emperor.webp
+caption_zh: 这幅现代分屏插图把龙与雨水、农田和皇帝的象征联系放在一起；它是概念示意，不代表某一位真实皇帝或某一次历史事件。
+caption_en: This modern split illustration connects the dragon with rain, fields, and imperial symbolism; it does not portray a specific emperor or historical event.
 [zh]
-凤凰常常和龙一起出现。龙让人想到力量和雨水，凤凰让人想到太平和好兆头。
+后来，龙又一路进了皇宫。
 
-古人想象里的凤凰，也是一只“拼”出来的神鸟。它不是你在树林里随便就能看到的鸟，而是一种只会在好时代出现的祥瑞。有人说它会停在梧桐树上，所以如果古人说“凤凰来了”，意思往往不是“飞来一只鸟”，而是“这一定是个好征兆”。
+皇帝的衣服上有龙，宫殿的墙上有龙，瓷器和家具上也有龙。尤其是五爪龙，渐渐成了皇帝的重要象征。一只能穿云入海、掌管雨水的神兽，用来代表天下最有权力的人，气势的确够大。
 
-后来，龙常常代表最强的男性符号，凤凰常常代表最美好的女性符号。它们放在一起，就是大家常说的“龙凤呈祥”。
+于是，龙带来了力量。可是，光有力量，还凑不成一对最吉祥的伙伴。
 [/zh]
 [en]
-The phoenix often appears beside the dragon. If the dragon suggests strength and rain, the phoenix suggests peace and a lucky sign.
+Over time, the dragon also moved into the imperial palace. It appeared on robes, walls, furniture, and porcelain. The five-clawed dragon became especially closely associated with the emperor. A creature that seemed to command clouds and water made a grand symbol for the ruler of an empire.
 
-In legend, the phoenix was also built from imagination. It was not an everyday bird that might land in a tree outside your house. People said it appeared only in good, peaceful times. That is why, when someone long ago claimed a phoenix had appeared, they were usually not saying only, "A bird flew by." They were saying, "This must mean something wonderful."
-
-Later, the dragon often stood for the strongest male symbol, while the phoenix often stood for the most honored female symbol. Put together, they became the famous pair people call dragon and phoenix bringing good fortune.
+So the dragon brought power. But power alone does not make a perfect pair.
 [/en]
 [/section]
 
 [section]
 page: 4
 layout: text-wrap-image
-heading_zh: 到今天，它们还住在日常生活里
-heading_en: Today, They Still Live in Everyday Life
-image: 4-dragon-phoenix-today.webp
-caption_zh: 新年街上的舞龙和新娘礼服上的凤凰，都在告诉人们：吉祥来了。
-caption_en: A dragon dance at New Year and a phoenix on a wedding dress both say the same thing: good fortune is here.
+heading_zh: 这时候，凤凰来了
+heading_en: Now the Phoenix Enters
+image: 3-phoenix-auspicious.webp
+caption_zh: 这幅现代插图想象了园林里的凤凰。凤凰是传说中的神鸟，画面并不是对真实动物的记录。
+caption_en: This modern illustration imagines a *fènghuáng* in a garden. The Chinese phoenix is a legendary bird, not a documented animal species.
 [zh]
-几千年过去了，龙和凤凰没有留在古书里睡着。过年的时候，长长的布龙还会在街上翻滚。结婚的时候，新娘礼服上常常绣着凤凰。灯笼、剪纸、摆件上，也到处能看到龙和凤。
+这时候，凤凰来了。中国的凤凰和西方传说里“浴火重生”的凤凰并不是同一种神鸟。在中国古人的想象里，凤凰是百鸟中最尊贵的神鸟。传说只有在天下太平、生活兴盛、出现贤明君主的时候，它才会出现。
 
-如果一对双胞胎刚好是一个男孩一个女孩，中国人有时还会高兴地叫他们“龙凤胎”。你看，龙和凤凰早就不只是高高在上的神兽了，它们已经走进了很多人的日常生活。
+所以，画家笔下的凤凰总是格外华丽：漂亮的羽冠，修长的身体，身后拖着长长的羽毛。如果说龙带着云雨翻滚的气势，凤凰带来的感觉就像雨后的花园——明亮、安静，又充满好兆头。
 
-两个从来没有真实存在过的动物，最后却成了那么多人最熟悉的吉祥符号。这就是想象力留下来的力量。
+在皇宫里，凤凰也常常和皇后联系在一起。这时候，再看那些龙凤图案，就明白了。
 [/zh]
 [en]
-Thousands of years have passed, and dragons and phoenixes did not fall asleep inside old books. At New Year, a long cloth dragon still dances through the street. At weddings, a bride's dress may still shine with phoenix embroidery. Lanterns, paper cuttings, and home decorations often show the same pair.
+Now the phoenix enters. The Chinese phoenix, or *fènghuáng*, is different from the phoenix that burns and rises again from its ashes in stories from other parts of the world. In Chinese tradition, the *fènghuáng* was imagined as the noblest of birds. It was said to appear in times of peace and prosperity, especially under a good ruler.
 
-If a pair of twins happens to be one boy and one girl, people may even smile and call them dragon-phoenix twins. That shows how far these two creatures have traveled. They are not only grand symbols from palaces and legends. They are part of ordinary life.
+Artists gave it a look to match: a graceful body, a splendid crest, and long flowing feathers. If the dragon seemed to bring the rumble of clouds, the phoenix brought the feeling of a garden after the storm—bright, calm, and full of promise.
 
-Two animals that never truly existed became two of the best-known lucky signs in China. That is what imagination can do when people carry it for a very long time.
+At the imperial court, the phoenix also became associated with the empress. And suddenly the old pictures make sense.
+[/en]
+[/section]
+
+[section]
+page: 5
+layout: text-only
+heading_zh: 两种力量，和谐相遇
+heading_en: Two Forces in Harmony
+[zh]
+龙和凤凰并不需要长得一样。恰恰因为不同，它们才成了一对。龙让人想到力量和皇权，凤凰让人想到太平、祥和与美好。一个威风，一个华丽；一个翻云覆雨，一个舒展长羽。放在一起，正好成了一幅和谐美满的画面。
+
+于是，龙和凤凰一起飞上丝绸，盘上瓷器，也走进了各种喜庆的装饰里。婚礼更欢迎它们，因为婚礼最需要的，正是对幸福、和睦和好运的祝愿。
+
+中国人把这样的好兆头叫作“龙凤呈祥”。这个说法流传开以后，龙和凤凰就越来越难分开了。
+[/zh]
+[en]
+The dragon and phoenix did not need to look alike. They worked because they were different. The dragon could suggest strength and imperial power. The phoenix could suggest peace, grace, and prosperity. Together, they became a picture of two forces in harmony.
+
+Artists loved the pairing. Dragons and phoenixes flew across silk, curled around porcelain, and appeared together in palace decorations. They were also welcomed into weddings, where wishes for harmony and good fortune mattered even more.
+
+There is a Chinese expression for this happy pairing: *lóngfèng chéngxiáng*. It describes the dragon and phoenix appearing together as an auspicious sign. Once that idea took hold, the pair was hard to separate.
+[/en]
+[/section]
+
+[section]
+page: 6
+layout: text-wrap-image
+heading_zh: 这对伙伴留了下来
+heading_en: The Pair Lives On
+image: 4-dragon-phoenix-today.webp
+caption_zh: 这幅现代组合插图展示舞龙和凤纹婚服，是龙凤进入当代庆典生活的概括示意，并非同一场活动的纪实画面。
+caption_en: This modern composite illustration shows a dragon dance and a phoenix wedding garment as two present-day uses of the symbols; it is not a documentary view of one event.
+[zh]
+许多年过去，皇帝和皇后的时代结束了，可龙和凤凰没有消失。今天的婚礼上，红色和金色的图案里仍然可能看见它们。它们甚至跑进了日常语言：如果一对双胞胎刚好是一个男孩、一个女孩，人们有时会高兴地叫他们“龙凤胎”。
+[/zh]
+[en]
+Centuries passed. Emperors and empresses disappeared from China, but the dragon and phoenix stayed. They moved from palace objects into decorations, clothing, jewelry, and family celebrations. At some Chinese weddings today, you can still find them facing each other among red and gold patterns.
+
+They even slipped into everyday language. A boy-and-girl pair of twins is sometimes affectionately called “dragon-phoenix twins”—one more place where the old lucky pair turns up together.
 [/en]
 [/section]
 
 [ending]
-heading_zh: 小结
-heading_en: In Summary
+heading_zh: 愿所有美好的事，都能相遇
+heading_en: May Good Things Come Together
 [zh]
-龙让人想到风、雨、力量和皇权，凤凰让人想到太平、吉兆和美好的祝福。它们一个像天上的老朋友，一个像传说里的神鸟，最后一起住进了中国人的节日、婚礼和日常装饰里。
+现在，再回到故事开头的那场婚礼。红色图案里，龙还在盘旋，凤凰还在展开长羽。它们从来没有真正生活在森林里，也没有谁真的看见它们飞过屋顶。可是几百年来，人们一次又一次把自己的愿望放进这两个想象中的神兽里。
 
-所以，龙和凤凰最有意思的地方，不是它们到底像什么动物，而是很多人一看见它们，就会想到：好运来了。
+力量与优雅，威严与祥和。两个完全不同的伙伴，最后带来了同一个祝福：愿所有美好的事，都能相遇。
 [/zh]
 [en]
-The dragon makes people think of weather, strength, and imperial power. The phoenix makes people think of peace, lucky signs, and good wishes. One feels like an old friend from the sky. The other feels like a magical bird from legend. Together, they moved into festivals, weddings, and everyday decorations.
+Now return to the wedding where we began. The dragon still curls through the red design. The phoenix still opens its long feathers beside it. Neither creature ever lived in a forest, splashed through a river, or landed on a palace roof. Yet generation after generation gave them meaning until everyone knew what it meant to see them side by side.
 
-That is why they matter so much. The most interesting question is not what animals they look like. It is why so many people see them and think right away: good luck has arrived.
+Strength and grace. Power and peace. Two very different creatures, carrying one shared wish. May good things come together.
 [/en]
 [/ending]

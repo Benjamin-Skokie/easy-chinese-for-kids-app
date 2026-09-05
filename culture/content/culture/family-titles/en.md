@@ -1,181 +1,43 @@
 > Difficulty: Easy
 
-# Jiujiu or Shushu? Chinese Family Titles
+# Which Uncle? A Chinese Family Map
 
-## That Pause at the New Year's Eve Dinner Table
+## The Most Dangerous Question at a Family Dinner
 
-On New Year's Eve, a boy of seven or eight sits at the dinner table.
+At a big family dinner, a child is reaching for a dumpling when Mom quietly asks, “Do you remember what to call him?” The chopsticks stop halfway to the plate.
 
-Grandma has just brought over a steaming plate of dumplings. The boy is about to reach out with his chopsticks when his mother whispers:
+The child looks across the table. He knows this man is an uncle. Easy. Except in Chinese, “uncle” is not enough. Is he Dad’s older brother? Dad’s younger brother? Mom’s brother? Suddenly, one uncle has turned into a small family-tree puzzle.
 
-"First give one to your second *jiugong*."
-
-The boy's chopsticks stop in the air.
-
-Second *jiugong*?
-
-He looks at the old man across the table and quickly counts in his head:
-
-Mom's mom's younger brother...
-
-Oh. Him.
-
-A little later, Dad's older brother walks in. The boy stands up right away.
-
-"Hello, *dabo*."
-
-His older cousin laughs. "You got it right this time."
-
-The boy feels relieved. But he is still a little confused.
-
-Why is Dad's older brother *bobo*?
-
-Why is Mom's brother *jiujiu*?
-
-Why is Dad's brother's child a *tang* cousin?
-
-Why is Mom's sister's child a *biao* cousin?
-
-They are all relatives. Why are the names so detailed?
+Many Chinese children know this feeling. At a big New Year gathering, there may be relatives everywhere, and someone is always saying, “Come say hello! Do you remember who this is?” Sometimes you do. Sometimes your brain needs a moment.
 
 ---
 
-## Why Do Chinese People Divide Relatives So Carefully?
+## Three Uncles Walk into a Family Tree
 
-Because in older Chinese family habits, relatives are not one blurry group of people.
+In English, Dad’s brother and Mom’s brother can both simply be “uncle.” Chinese often gives you more clues. Dad’s **older** brother is usually bóbo. Dad’s **younger** brother is shūshu. Mom’s brother is jiùjiu.
 
-Every title quietly tells you something:
+So if someone tells you, “My jiùjiu is coming,” you already know something about him. You do not need to ask, “Which side of the family?” The word has given away the answer. Aunts work in a similar way. Dad’s sister can be gūgu, while Mom’s sister may be āyí or yímā.
 
-how this person is connected to you.
-
-The moment you speak, the relationship becomes clear.
-
-Say *bobo*, and people know this is your father's older brother.
-
-Say *shushu*, and people know this is your father's younger brother.
-
-Say *jiujiu*, and people know this is your mother's brother.
-
-Say *gugu*, and that is your father's sister.
-
-Say *ayi* or *yima*, and that is your mother's sister.
-
-Chinese family titles are like an invisible relationship map.
-
-When you open your mouth, the road signs appear.
+It is almost as if every relative is carrying a tiny address. Dad’s side? Turn this way. Mom’s side? Turn that way. Older or younger? Another clue. No wonder a Chinese family tree can feel less like a list of names and more like a map.
 
 ---
 
-## Dad's Side and Mom's Side Are Different
+## And Then There Are the Cousins
 
-In Chinese tradition, relatives are often first divided into two big sides.
+Just when you think you have solved the puzzle, someone says, “What about cousins?” English gives us one wonderfully useful word: **cousin**. Boy? Girl? Older? Younger? Dad’s side? Mom’s side? Still cousin.
 
-One side is Dad's side.
+Chinese can be much more specific. Different words can tell whether a cousin comes through certain branches of Dad’s family or through other branches, and whether that cousin is older or younger than you. At this point, a beginner may reasonably want to hide under the dinner table.
 
-The other side is Mom's side.
-
-Relatives on Dad's side often share your family name.
-
-So:
-
-Dad's older brother is *bobo*.
-
-Dad's younger brother is *shushu*.
-
-Dad's sisters are *gugu*.
-
-Their children are *tangge*, *tangjie*, *tangdi*, or *tangmei*: older male cousin, older female cousin, younger male cousin, younger female cousin on Dad's side.
-
-The word *tang* feels connected to people under one ancestral roof.
-
-So when many Chinese people hear *tangge*, they quickly understand: this is a cousin from Dad's side.
-
-Mom's side is different.
-
-Mom's brothers are *jiujiu*.
-
-Mom's sisters are *ayi* or *yima*.
-
-Their children are *biaoge*, *biaojie*, *biaodi*, or *biaomei*.
-
-The word *biao* has a feeling of being one layer outward. It does not mean the person is not close. It simply reminds you that this line comes through Mom's side.
+Luckily, Chinese children do not usually learn every family title from a giant chart. They learn them one person at a time.
 
 ---
 
-## Why Can't Tang and Biao Be Mixed Up?
+## Nobody Hands You a Family Vocabulary Test
 
-Because if you mix them up, the family map in people's minds gets mixed up too.
+A child hears Mom say, “Go give this to your jiùjiu,” and slowly learns who jiùjiu is. During another visit, Dad says, “Say hello to gūgu.” At New Year, Grandma corrects somebody who has mixed up two relatives. Little by little, the family map fills itself in.
 
-If you call Dad's older brother's son *biaoge*, older relatives may immediately feel something is wrong.
+And family words can vary by region and by family. Not everyone uses exactly the same title in exactly the same way. That is another reason real children learn these words from the people around them, not from memorizing one enormous chart.
 
-It is not just because they like correcting children.
+So perhaps the child at our dinner table does not need to panic after all. The chopsticks can come back down. The dumpling can be rescued. And if the wrong family title comes out?
 
-To their ears, you have turned the relationship in the wrong direction.
-
-It is a little like an address.
-
-If you say Beijing, Chaoyang District, people picture one place.
-
-If you say Shanghai, Pudong New Area, they picture somewhere completely different.
-
-Family titles work the same way.
-
-Change one word, and the road bends.
-
----
-
-## Why Do Many Foreigners Think It Is Hard?
-
-Because many languages do not divide family titles this carefully.
-
-One English word, "uncle," can mean Dad's younger brother, Dad's older brother, Mom's brother, or an aunt's husband.
-
-But in Chinese, those are not the same.
-
-Chinese often wants to make the relationship clearer.
-
-Is this person from Dad's side or Mom's side?
-
-Older or younger?
-
-One generation above you, or the same generation?
-
-Much of that can be heard directly in the title.
-
-So when foreigners begin learning Chinese, they often feel dizzy:
-
-"Why is this uncle one word, and that uncle another word?"
-
-The simple answer is:
-
-Chinese is used to drawing the family map in more detail.
-
----
-
-## How Do Children Learn It?
-
-Not by memorizing definitions.
-
-They learn through meals, New Year visits, and tables full of relatives.
-
-Today Mom reminds you to say *er jiugong*.
-
-Tomorrow Grandma reminds you to say *san gu*.
-
-The next day someone laughs and says, "This is not your *tangjie*. This is your *biaojie*."
-
-Little by little, by calling people again and again, you remember.
-
-So these family titles are not cold facts in a book.
-
-They are things many Chinese children learn beside dinner tables, during Spring Festival, and inside the noise of a big family.
-
----
-
-## Summary
-
-Chinese family titles are detailed not because people wanted to make life difficult, but because they wanted relationships to be clear.
-
-Dad's side and Mom's side are different. Older and younger are different. Even English "cousin" may become *tang* or *biao* in Chinese.
-
-So when a child pauses at the New Year's Eve table, trying to remember who *er jiugong* is, he is really learning a Chinese family map.
+There is a very good chance that one of the adults at the table will correct it immediately. Probably several adults. That is how the map gets learned. One family meal at a time.

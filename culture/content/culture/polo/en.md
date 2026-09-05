@@ -1,107 +1,43 @@
 > Difficulty: Easy
 
-# Polo: The Wildest Sport of the Tang Dynasty
+# Polo: A Favorite Horseback Game in the Tang Dynasty
 
-## Field Hockey on Horseback
+## What If You Put a Ball Game on a Horse?
 
-Have you ever seen field hockey?
+Imagine trying to hit a small ball with a long stick. Now put yourself on a running horse. Suddenly, everything becomes harder. The ball is rolling. The horse is moving. You have to steer, stay balanced, watch the ball, and swing the mallet—all at the same time.
 
-Move field hockey onto horseback, and you get polo.
+Around 1,300 years ago, people in Tang China loved this fast horseback game. It was polo. The game had traveled into China from lands farther west in Asia. The Tang world was full of travelers, merchants, music, clothing, and new ideas arriving from different places. Games could travel too.
 
-Riders sit on galloping horses. In their hands are long mallets. They bend low and strike a ball rolling across the ground.
-
-The horse is racing.
-
-The ball is flying.
-
-The rider's upper body almost touches the ground.
-
-One swing, and the crowd cheers.
-
-How popular was polo in the Tang dynasty?
-
-Many emperors loved it.
-
-When Tang Xuanzong, Li Longji, was young, he formed a four-person polo team and challenged a ten-person team from Tibet.
-
-Everyone thought four against ten was impossible.
-
-But Li Longji's team won.
-
-After he became emperor, he even built special polo grounds inside the palace.
+And polo found plenty of fans.
 
 ---
 
-## Women Played Polo Too
+## Even the Women Joined the Game
 
-Tang women may have been among the boldest women in Chinese history when it came to games and riding.
+If you imagine an ancient sports field filled only with men, Tang polo has a surprise for you. Women played too. Small clay figures made more than a thousand years ago still show women riding at full speed, dressed for riding and raising their arms as if swinging polo mallets. These were not pictures made by someone today. They are objects that survived from the Tang period itself.
 
-They did not just play polo.
+That tells us something interesting about life at the time. Riding horses was fashionable among some Tang women, especially in wealthy families, and polo was one of the exciting activities they could take part in.
 
-They rode fierce horses.
-
-Tombs from the Tang dynasty have given us small clay figures of women playing polo. One woman rider leans sideways and swings her mallet. The horse's four hooves fly off the ground. Her skirt opens in the wind.
-
-This is not a noble lady quietly passing time in a backyard.
-
-This is full-speed competition.
-
-There was also donkey polo.
-
-Because horses were tall and fast, women who were not strong riders could play on donkeys instead.
-
-Donkeys are short and sturdy. They can run faster than you might think. They are also stubborn.
-
-If you swing and miss, the donkey may turn back and glare at you.
-
-Looking back more than a thousand years later, the freedom Tang women had in entertainment can feel surprising.
+So picture the field again: horses racing, riders turning, mallets swinging—and some of those riders are women.
 
 ---
 
-## A Deadly Match
+## The Royal Family Loved It Too
 
-Tang emperors loved polo so much that it could become dangerous.
+Polo became especially fashionable among the Tang royal family and wealthy families around the court. We know this partly because the game kept showing up in the things they left behind. Tomb walls were painted with galloping polo players. Clay riders were placed in tombs. Some pictures catch a player leaning from the saddle, eyes fixed on a tiny ball near the horse’s feet.
 
-Emperor Muzong, Li Heng, was deeply fond of the game and often played hard.
+It must have been thrilling to watch. It was also dangerous. A rider had to control a fast horse while reaching down toward a little ball on the ground. Miss the ball and you could try again. Lose your balance and you had a much bigger problem.
 
-During one polo match, he fell heavily from his horse and was badly injured. Later, he died from the injury.
-
-There were other warnings too.
-
-Emperor Jingzong, Li Zhan, was only 18 when he was killed by palace eunuchs at a polo ground.
-
-Polo was one of the most exciting and most dangerous sports of the Tang dynasty.
-
-Some emperors were willing to risk their lives for it.
+No wonder the game looked so exciting.
 
 ---
 
-## Polo Travels Across the World
+## Games Can Travel Too
 
-Polo did not belong to China alone.
+Polo did not begin in China, and it did not stay there. Long before airplanes and television, people carried games from place to place. Polo traveled across Asia, changed as different people played it, and much later became the international sport still called polo today.
 
-Persia, today's Iran, also had polo very early.
+The modern game does not look exactly like every Tang version, of course. More than a thousand years have passed. But look at an old Tang polo rider and the basic idea is instantly recognizable.
 
-Exchange along the Silk Road helped the sport spread across Central Asia, South Asia, and East Asia.
+A horse races forward. A rider leans down. A mallet swings toward a little ball. For one quick moment, a scene from 1,300 years ago looks surprisingly familiar. The clothes are different. The horses wore different gear. The people who watched that match are long gone.
 
-On polo fields in Tang Chang'an, visitors from Persia, Tibetan nobles, and Tang royal family members could play against one another.
-
-Later, polo traveled to India. The British learned the sport there and carried it to more places.
-
-The modern word "polo" is often linked to the Tibetan word *pulu*, meaning ball.
-
-As polo traveled, it mixed riding skills and playing styles from many lands.
-
----
-
-## Summary
-
-Tang polo was lively and dangerous.
-
-Emperors formed teams. Women rode fast horses onto the field. Emperor Muzong died after a polo injury, and Emperor Jingzong was killed at a polo ground.
-
-The sport was bright, exciting, and risky.
-
-Polo traveled from place to place and eventually became the game many people know today.
-
-When the mallet swings, it lifts dust from the ground and carries the wind of exchange across Eurasia too.
+But someone is still trying very hard to hit a tiny ball while riding a very fast horse. Some games, it seems, are too much fun to stay in one place.

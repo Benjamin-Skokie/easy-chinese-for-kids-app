@@ -1629,6 +1629,628 @@ window.NIHAO_CULTURE_SOURCES = [
     ]
   },
   {
+    "category": "culture",
+    "categoryName": "Culture & Daily Life",
+    "slug": "kung-fu",
+    "title": "功夫：像风一样快，像山一样稳",
+    "titleEn": "Kung Fu: Fast Like Wind, Steady Like a Mountain",
+    "storyPath": "../../culture/books/culture/kung-fu/",
+    "groups": [
+      {
+        "title": "City University of Hong Kong Press — *Kung Fu and Science*",
+        "sources": [
+          {
+            "label": "cityu.edu.hk",
+            "url": "https://www.cityu.edu.hk/upress/kung-fu-and-science"
+          }
+        ]
+      },
+      {
+        "title": "UNESCO Intangible Cultural Heritage — “Taijiquan”",
+        "sources": [
+          {
+            "label": "ich.unesco.org",
+            "url": "https://ich.unesco.org/en/RL/taijiquan-00424"
+          }
+        ]
+      },
+      {
+        "title": "中国文化和旅游部 — 第一批国家级非物质文化遗产名录",
+        "sources": [
+          {
+            "label": "zwgk.mct.gov.cn",
+            "url": "https://zwgk.mct.gov.cn/zfxxgkml/fwzwhyc/202012/t20201206_916788.html"
+          }
+        ]
+      },
+      {
+        "title": "Nihao World — “Chinese Kung Fu”",
+        "sources": [
+          {
+            "label": "nihaoworld.com",
+            "url": "https://www.nihaoworld.com/culture/chinese-kung-fu/"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "culture",
+    "categoryName": "Culture & Daily Life",
+    "slug": "weiqi",
+    "title": "围棋：黑白棋子里的一整个世界",
+    "titleEn": "Weiqi: A Whole World in Black and White",
+    "storyPath": "../../culture/books/culture/weiqi/",
+    "groups": [
+      {
+        "title": "International Go Federation — “About Go”",
+        "sources": [
+          {
+            "label": "intergofed.org",
+            "url": "https://intergofed.org/about-go/"
+          }
+        ]
+      },
+      {
+        "title": "American Go Association — overview of Go",
+        "sources": [
+          {
+            "label": "usgo.org",
+            "url": "https://www.usgo.org/evanstongoclub"
+          }
+        ]
+      },
+      {
+        "title": "Google DeepMind — “AlphaGo”",
+        "sources": [
+          {
+            "label": "deepmind.google",
+            "url": "https://deepmind.google/research/alphago/"
+          }
+        ]
+      },
+      {
+        "title": "Google DeepMind — “AlphaGo at 10”",
+        "sources": [
+          {
+            "label": "deepmind.google",
+            "url": "https://deepmind.google/blog/10-years-of-alphago/"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "culture",
+    "categoryName": "Culture & Daily Life",
+    "slug": "chinese-characters",
+    "title": "汉字是画出来的吗？",
+    "titleEn": "Were Chinese Characters Drawn Like Pictures?",
+    "storyPath": "../../culture/books/culture/chinese-characters/",
+    "groups": [
+      {
+        "title": "Smithsonian’s National Museum of Asian Art — “Making Sense of the Future: The Oracle Bone and Shang Dynasty Divination”",
+        "sources": [
+          {
+            "label": "asia-archive.si.edu",
+            "url": "https://asia-archive.si.edu/learn/for-educators/teaching-china-with-the-smithsonian/lesson-plans/making-sense-of-the-future-the-oracle-bone-and-shang-dynasty-divination/"
+          }
+        ]
+      },
+      {
+        "title": "Smithsonian’s National Museum of Asian Art — “Inscribed Tortoiseshell (Oracle Bone)”",
+        "sources": [
+          {
+            "label": "asia-archive.si.edu",
+            "url": "https://asia-archive.si.edu/object/S2012.9.445/"
+          }
+        ]
+      },
+      {
+        "title": "Smithsonian Institution — “Inscribed Turtle Plastron”",
+        "sources": [
+          {
+            "label": "3d.si.edu",
+            "url": "https://3d.si.edu/object/3d/inscribed-turtle-plastron%3A58be9e1e-9966-4f22-8eb8-b62a0205c697"
+          }
+        ]
+      },
+      {
+        "title": "Columbia University, Asia for Educators — “Oracle-Bone Inscriptions of the Late Shang Dynasty: On Childbearing”",
+        "sources": [
+          {
+            "label": "afe.easia.columbia.edu",
+            "url": "https://afe.easia.columbia.edu/main_pop/ps/ps_china-oracle-bone-childbearing.htm"
+          }
+        ]
+      },
+      {
+        "title": "Columbia University, Asia for Educators — “Oracle-Bone Inscriptions of the Late Shang Dynasty”",
+        "sources": [
+          {
+            "label": "afe.easia.columbia.edu",
+            "url": "https://afe.easia.columbia.edu/ps/cup/oracle_bone_general.pdf"
+          }
+        ]
+      },
+      {
+        "title": "Smithsonian’s National Museum of Asian Art — “Oracle Bone Script”",
+        "sources": [
+          {
+            "label": "asia-archive.si.edu",
+            "url": "https://asia-archive.si.edu/learn/chinas-calligraphic-arts/oracle-bone-script/"
+          }
+        ]
+      },
+      {
+        "title": "Herbert F. Johnson Museum of Art, Cornell University — “Oracle Bone with Inscription”",
+        "sources": [
+          {
+            "label": "emuseum.cornell.edu",
+            "url": "https://emuseum.cornell.edu/objects/24632/oracle-bone-with-inscription"
+          }
+        ]
+      },
+      {
+        "title": "University of California, Berkeley — Oral History with David N. Keightley",
+        "sources": [
+          {
+            "label": "digicoll.lib.berkeley.edu",
+            "url": "https://digicoll.lib.berkeley.edu/record/218134/files/keightley_david.pdf"
+          }
+        ]
+      },
+      {
+        "title": "Smithsonian’s National Museum of Asian Art — “Understanding Chinese Characters”",
+        "sources": [
+          {
+            "label": "asia-archive.si.edu",
+            "url": "https://asia-archive.si.edu/learn/for-educators/teaching-china-with-the-smithsonian/lesson-plans/understanding-chinese-characters/"
+          }
+        ]
+      },
+      {
+        "title": "Princeton University — “The 6 Formation of Characters”",
+        "sources": [
+          {
+            "label": "commons.princeton.edu",
+            "url": "https://commons.princeton.edu/chinesecharacters/the-6-formation-of-characters/"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "culture",
+    "categoryName": "Culture & Daily Life",
+    "slug": "chinese-knot",
+    "title": "红红的中国结，满满的祝福",
+    "titleEn": "Red Chinese Knots, Full of Good Wishes",
+    "storyPath": "../../culture/books/culture/chinese-knot/",
+    "groups": [
+      {
+        "title": "China Culture — “Chinese Knot”",
+        "sources": [
+          {
+            "label": "en.chinaculture.org",
+            "url": "https://en.chinaculture.org/focus/focus/2010spring/2009-01/20/content_367236.htm"
+          }
+        ]
+      },
+      {
+        "title": "China Culture — “Macrame / Chinese Knotting”",
+        "sources": [
+          {
+            "label": "en.chinaculture.org",
+            "url": "https://en.chinaculture.org/chineseway/2014-04/29/content_523804.htm"
+          }
+        ]
+      },
+      {
+        "title": "《周易·系辞下》 and 国家统计局 — 《结绳记事》",
+        "sources": [
+          {
+            "label": "stats.gov.cn",
+            "url": "https://www.stats.gov.cn/zs/tjlshi/gd/202301/t20230101_1903803.html"
+          }
+        ]
+      },
+      {
+        "title": "《悠悠古韵 千千情结》",
+        "sources": [
+          {
+            "label": "nydi.gov.cn",
+            "url": "https://www.nydi.gov.cn/sitesources/nysjwjw/page_pc/xcjd/s/article9bc0e1521e6a4d2eaa08faf0830d5c92.html"
+          }
+        ]
+      },
+      {
+        "title": "The Metropolitan Museum of Art — “Woman’s Informal Robe with Garden Roundels”",
+        "sources": [
+          {
+            "label": "metmuseum.org",
+            "url": "https://www.metmuseum.org/art/collection/search/70383"
+          }
+        ]
+      },
+      {
+        "title": "Smithsonian’s National Museum of Asian Art — “Chinese Red”",
+        "sources": [
+          {
+            "label": "asia-archive.si.edu",
+            "url": "https://asia-archive.si.edu/red/"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "culture",
+    "categoryName": "Culture & Daily Life",
+    "slug": "new-year-greeting",
+    "title": "给长辈拜年：双手抱拳的学问",
+    "titleEn": "Greeting Elders at New Year",
+    "storyPath": "../../culture/books/culture/new-year-greeting/",
+    "groups": [
+      {
+        "title": "中央纪委监察部网站 — 《春节民俗：正月初一——一岁之始，万象更新》",
+        "sources": [
+          {
+            "label": "m.ccdi.gov.cn",
+            "url": "https://m.ccdi.gov.cn/content/79/0f/14397.html"
+          }
+        ]
+      },
+      {
+        "title": "《人民日报海外版》— 《说说拱手礼》",
+        "sources": [
+          {
+            "label": "paper.people.com.cn",
+            "url": "https://paper.people.com.cn/rmrbhwb/html/2012-12/22/content_1163784.htm?div=-1"
+          }
+        ]
+      },
+      {
+        "title": "北京市疾病预防控制中心 — 《拱手为礼，健康过年》",
+        "sources": [
+          {
+            "label": "wjw.beijing.gov.cn",
+            "url": "https://wjw.beijing.gov.cn/wjwh/ztzl/xxgzbd/gzbdfkgz/202002/t20200223_1666509.html"
+          }
+        ]
+      },
+      {
+        "title": "新华网 — 《团圆年｜我们的文化中国年：压岁钱》",
+        "sources": [
+          {
+            "label": "news.cn",
+            "url": "https://www.news.cn/video/20240211/0f7c81874f1f49939378ede90c9c05d8/c.html"
+          }
+        ]
+      },
+      {
+        "title": "中华人民共和国教育部 — 《春节习俗》",
+        "sources": [
+          {
+            "label": "moe.gov.cn",
+            "url": "https://www.moe.gov.cn/jyb_xwfb/xw_zt/moe_357/jyzt_2015nztzl/2015_zt01/15zt01_xgxx/201502/t20150205_185672.html"
+          }
+        ]
+      },
+      {
+        "title": "The British Museum — “Money Envelope”",
+        "sources": [
+          {
+            "label": "britishmuseum.org",
+            "url": "https://www.britishmuseum.org/collection/object/C_2001-0303-24"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "culture",
+    "categoryName": "Culture & Daily Life",
+    "slug": "family-titles",
+    "title": "舅舅还是叔叔？中国人的亲戚地图",
+    "titleEn": "Which Uncle? A Chinese Family Map",
+    "storyPath": "../../culture/books/culture/family-titles/",
+    "groups": [
+      {
+        "title": "Yuen Ren Chao — “Chinese Terms of Address”",
+        "sources": [
+          {
+            "label": "cambridge.org",
+            "url": "https://www.cambridge.org/core/journals/language/article/abs/chinese-terms-of-address/C8D38C122B5C0AEB27CE703DA3A63DA2"
+          }
+        ]
+      },
+      {
+        "title": "Cambridge University Press — “When Your Coz Is Your Sis: Kinship Terms”",
+        "sources": [
+          {
+            "label": "cambridge.org",
+            "url": "https://www.cambridge.org/core/books/abs/tales-of-hi-and-bye/when-your-coz-is-your-sis-kinship-terms/FC440667081FB542A9EF3862DAA9C0EB"
+          }
+        ]
+      },
+      {
+        "title": "Susan D. Blum — “Naming Practices and the Power of Words in China”",
+        "sources": [
+          {
+            "label": "cambridge.org",
+            "url": "https://www.cambridge.org/core/journals/language-in-society/article/naming-practices-and-the-power-of-words-in-china/1E18D74BD7A6901674325713AD6A664A"
+          }
+        ]
+      },
+      {
+        "title": "Yizhong Xu and Meishu Wang — “Unveiling Cognitive Mechanisms in Kinship Terminology Usage in Introductory Contexts”",
+        "sources": [
+          {
+            "label": "cambridge.org",
+            "url": "https://www.cambridge.org/core/journals/language-and-cognition/article/unveiling-cognitive-mechanisms-in-kinship-terminology-usage-in-introductory-contexts-a-corpus-and-survey-study/DED3744471AE76BCD8A0F0BE86C74A1B"
+          }
+        ]
+      },
+      {
+        "title": "Nihao World — “舅舅还是叔叔？中国人的亲戚地图”",
+        "sources": [
+          {
+            "label": "nihaoworld.com",
+            "url": "https://www.nihaoworld.com/culture/family-titles/"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "culture",
+    "categoryName": "Culture & Daily Life",
+    "slug": "cuju",
+    "title": "蹴鞠：两千年前的踢球游戏",
+    "titleEn": "Cùjū: A Ball Game from Two Thousand Years Ago",
+    "storyPath": "../../culture/books/culture/cuju/",
+    "groups": [
+      {
+        "title": "FIFA Museum — “Origins: Cuju in China”",
+        "sources": [
+          {
+            "label": "editorial.fifamuseum.com",
+            "url": "https://editorial.fifamuseum.com/en/read/origins-cuju-in-china/"
+          }
+        ]
+      },
+      {
+        "title": "National Museum of China — “Bronze Mirror with Figures Playing Cu-ju”",
+        "sources": [
+          {
+            "label": "en.chnmuseum.cn",
+            "url": "https://en.chnmuseum.cn/collections_577/collection_highlights_608/artifacts_handed___down_from_ancient_times_612/202008/t20200827_247516.html"
+          }
+        ]
+      },
+      {
+        "title": "FIFA Museum — “Origins: Pre-Histories of Football”",
+        "sources": [
+          {
+            "label": "fifamuseum.com",
+            "url": "https://fifamuseum.com/fr/explore/fifamuseumplus/digital-exhibitions/origins-pre-histories-of-football"
+          }
+        ]
+      },
+      {
+        "title": "Nihao World — “蹴鞠：两千年前的踢球游戏”",
+        "sources": [
+          {
+            "label": "nihaoworld.com",
+            "url": "https://www.nihaoworld.com/culture/cuju/"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "culture",
+    "categoryName": "Culture & Daily Life",
+    "slug": "polo",
+    "title": "马球：唐朝人最爱的马上比赛",
+    "titleEn": "Polo: A Favorite Horseback Game in the Tang Dynasty",
+    "storyPath": "../../culture/books/culture/polo/",
+    "groups": [
+      {
+        "title": "The Metropolitan Museum of Art — “Internationalism in the Tang Dynasty (618–907)”",
+        "sources": [
+          {
+            "label": "metmuseum.org",
+            "url": "https://www.metmuseum.org/essays/internationalism-in-the-tang-dynasty-618-906"
+          }
+        ]
+      },
+      {
+        "title": "Cleveland Museum of Art — “Polo Player”",
+        "sources": [
+          {
+            "label": "clevelandart.org",
+            "url": "https://www.clevelandart.org/art/1964.181"
+          }
+        ]
+      },
+      {
+        "title": "The Metropolitan Museum of Art — *Spirit and Ritual: The Morse Collection of Ancient Chinese Art*",
+        "sources": [
+          {
+            "label": "metmuseum.org",
+            "url": "https://www.metmuseum.org/met-publications/spirit-and-ritual-the-morse-collection-of-ancient-chinese-art"
+          }
+        ]
+      },
+      {
+        "title": "Shaanxi Archaeology Museum — “Polo Scene” mural from the tomb of Li Yong",
+        "sources": [
+          {
+            "label": "govt.chinadaily.com.cn",
+            "url": "https://govt.chinadaily.com.cn/s/202606/17/WS6a33b5fe498e36855033d52d/em-polo-scene-em-mural.html"
+          }
+        ]
+      },
+      {
+        "title": "Shaanxi History Museum — “Mural: Polo Game”",
+        "sources": [
+          {
+            "label": "en.sxhm.com",
+            "url": "https://en.sxhm.com/en/new/treasure/detail/18044.html"
+          }
+        ]
+      },
+      {
+        "title": "The British Museum — “Figure: Horse and Rider Playing Polo”",
+        "sources": [
+          {
+            "label": "britishmuseum.org",
+            "url": "https://www.britishmuseum.org/collection/object/A_1938-0524-113"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "culture",
+    "categoryName": "Culture & Daily Life",
+    "slug": "mahjong",
+    "title": "麻将：在小方牌以前，它竟然是纸牌",
+    "titleEn": "Mahjong: Before the Tiles, There Were Cards",
+    "storyPath": "../../culture/books/culture/mahjong/",
+    "groups": [
+      {
+        "title": "Hsi-yüan Chen, Institute of History and Philology, Academia Sinica — “Madiao and Mahjong in Popular Culture and Elite Discourse”",
+        "sources": [
+          {
+            "label": "www1.ihp.sinica.edu.tw",
+            "url": "https://www1.ihp.sinica.edu.tw/en/Publications/Bulletin/59/Article/207"
+          }
+        ]
+      },
+      {
+        "title": "The British Museum — Mahjong set, As1908,0416.1.b",
+        "sources": [
+          {
+            "label": "britishmuseum.org",
+            "url": "https://www.britishmuseum.org/collection/object/A_As1908-0416-1-b"
+          }
+        ]
+      },
+      {
+        "title": "The British Museum — *China’s Hidden Century*",
+        "sources": [
+          {
+            "label": "britishmuseum.org",
+            "url": "https://www.britishmuseum.org/sites/default/files/2023-09/Chinas_hidden_century_large_print_guide.pdf"
+          }
+        ]
+      },
+      {
+        "title": "The British Museum — Mahjong set, OA+.7013",
+        "sources": [
+          {
+            "label": "britishmuseum.org",
+            "url": "https://www.britishmuseum.org/collection/object/A_OA-7013"
+          }
+        ]
+      },
+      {
+        "title": "The British Museum — “Top 10 Historical Board Games: Mahjong”",
+        "sources": [
+          {
+            "label": "britishmuseum.org",
+            "url": "https://www.britishmuseum.org/blog/top-10-historical-board-games"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "culture",
+    "categoryName": "Culture & Daily Life",
+    "slug": "dragon-phoenix",
+    "title": "龙和凤凰：中国最吉祥的伙伴",
+    "titleEn": "Dragon and Phoenix: China’s Luckiest Pair",
+    "storyPath": "../../culture/books/culture/dragon-phoenix/",
+    "groups": [
+      {
+        "title": "The British Museum — “Dish” (PDF.593)",
+        "sources": [
+          {
+            "label": "britishmuseum.org",
+            "url": "https://www.britishmuseum.org/collection/object/A_PDF-593"
+          }
+        ]
+      },
+      {
+        "title": "The Metropolitan Museum of Art — “Panel with Five Phoenixes in a Garden”",
+        "sources": [
+          {
+            "label": "metmuseum.org",
+            "url": "https://www.metmuseum.org/art/collection/search/42122"
+          }
+        ]
+      },
+      {
+        "title": "The Metropolitan Museum of Art — “Dish with Dragon and Phoenix”",
+        "sources": [
+          {
+            "label": "metmuseum.org",
+            "url": "https://www.metmuseum.org/art/collection/search/42543"
+          }
+        ]
+      },
+      {
+        "title": "The Metropolitan Museum of Art — “Panel with Dragon, Phoenix, and Peonies”",
+        "sources": [
+          {
+            "label": "metmuseum.org",
+            "url": "https://www.metmuseum.org/art/collection/search/62892"
+          }
+        ]
+      },
+      {
+        "title": "The Palace Museum — “龙凤呈祥——清代皇帝的婚姻”",
+        "sources": [
+          {
+            "label": "dpm.org.cn",
+            "url": "https://www.dpm.org.cn/topic/wedding_index.html"
+          }
+        ]
+      },
+      {
+        "title": "The British Museum — “Dragon and Phoenix Charm”",
+        "sources": [
+          {
+            "label": "britishmuseum.org",
+            "url": "https://www.britishmuseum.org/collection/object/C_1999-0802-377"
+          }
+        ]
+      },
+      {
+        "title": "The British Museum — “Money Envelope; Hongbao”",
+        "sources": [
+          {
+            "label": "britishmuseum.org",
+            "url": "https://www.britishmuseum.org/collection/object/C_2014-4133-11"
+          }
+        ]
+      },
+      {
+        "title": "Chengdu Research Base of Giant Panda Breeding — “The First Newborn ‘Dragon-Phoenix’ Twin Pandas in 2007 Named and Adopted”",
+        "sources": [
+          {
+            "label": "panda.org.cn",
+            "url": "https://www.panda.org.cn/en/news/news/2023-07-06/5721.html"
+          }
+        ]
+      }
+    ]
+  },
+  {
     "category": "economy",
     "categoryName": "Economy & Exchange",
     "slug": "ancient-money",
@@ -2566,6 +3188,101 @@ window.NIHAO_CULTURE_SOURCES = [
   {
     "category": "folk-tales",
     "categoryName": "Folk Tales",
+    "slug": "borrow-a-little-light-and-keep-learning",
+    "title": "凿壁偷光",
+    "titleEn": "Borrow a Little Light and Keep Learning",
+    "storyPath": "../../culture/books/folk-tales/borrow-a-little-light-and-keep-learning/",
+    "groups": [
+      {
+        "title": "《西京杂记》“匡衡勤学”",
+        "sources": [
+          {
+            "label": "Chinese Text Project, Xijing Zaji",
+            "url": "https://ctext.org/xijing-zaji/zhs"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "folk-tales",
+    "categoryName": "Folk Tales",
+    "slug": "marking-the-boat-to-find-a-lost-sword",
+    "title": "刻舟求剑",
+    "titleEn": "Marking the Boat to Find a Lost Sword",
+    "storyPath": "../../culture/books/folk-tales/marking-the-boat-to-find-a-lost-sword/",
+    "groups": [
+      {
+        "title": "《吕氏春秋·察今》",
+        "sources": [
+          {
+            "label": "Chinese Text Project, Lüshi Chunqiu, “Observing the Present”",
+            "url": "https://ctext.org/lv-shi-chun-qiu/cha-jin/zhs"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "folk-tales",
+    "categoryName": "Folk Tales",
+    "slug": "heading-north-to-go-south",
+    "title": "南辕北辙",
+    "titleEn": "Heading North to Go South",
+    "storyPath": "../../culture/books/folk-tales/heading-north-to-go-south/",
+    "groups": [
+      {
+        "title": "《战国策·魏策四》",
+        "sources": [
+          {
+            "label": "Chinese Text Project, Strategies of the Warring States, “King Wei Wanted to Attack Handan”",
+            "url": "https://ctext.org/zhan-guo-ce/wei-wang-yu-gong-han-dan/zhs"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "folk-tales",
+    "categoryName": "Folk Tales",
+    "slug": "the-old-man-who-lost-his-horse",
+    "title": "塞翁失马",
+    "titleEn": "The Old Man Who Lost His Horse",
+    "storyPath": "../../culture/books/folk-tales/the-old-man-who-lost-his-horse/",
+    "groups": [
+      {
+        "title": "《淮南子·人间训》",
+        "sources": [
+          {
+            "label": "Chinese Text Project, Huainanzi, “Human Conduct and Instruction”",
+            "url": "https://ctext.org/huainanzi/ren-xian-xun"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "folk-tales",
+    "categoryName": "Folk Tales",
+    "slug": "make-noise-here-move-there",
+    "title": "声东击西",
+    "titleEn": "Make Noise Here, Move There",
+    "storyPath": "../../culture/books/folk-tales/make-noise-here-move-there/",
+    "groups": [
+      {
+        "title": "《三十六计·胜战计》第六计“声东击西”",
+        "sources": [
+          {
+            "label": "Wikisource, Thirty-Six Stratagems, “Winning Stratagems”",
+            "url": "https://zh.wikisource.org/zh/%E4%B8%89%E5%8D%81%E5%85%AD%E8%A8%88/%E5%8B%9D%E6%88%B0%E8%A8%88"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "folk-tales",
+    "categoryName": "Folk Tales",
     "slug": "chang-e-moon",
     "title": "嫦娥奔月",
     "titleEn": "Chang'e Flies to the Moon",
@@ -2648,6 +3365,44 @@ window.NIHAO_CULTURE_SOURCES = [
   {
     "category": "folk-tales",
     "categoryName": "Folk Tales",
+    "slug": "covering-ears-to-steal-a-bell",
+    "title": "掩耳盗铃",
+    "titleEn": "The Man Who Covered His Ears to Steal a Bell",
+    "storyPath": "../../culture/books/folk-tales/covering-ears-to-steal-a-bell/",
+    "groups": [
+      {
+        "title": "《吕氏春秋·不苟论·自知》",
+        "sources": [
+          {
+            "label": "Chinese Text Project, Lüshi Chunqiu, “Knowing Oneself”",
+            "url": "https://ctext.org/lv-shi-chun-qiu/zi-zhi/zh"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "folk-tales",
+    "categoryName": "Folk Tales",
+    "slug": "the-man-who-pretended-to-play",
+    "title": "滥竽充数",
+    "titleEn": "The Man Who Pretended to Play",
+    "storyPath": "../../culture/books/folk-tales/the-man-who-pretended-to-play/",
+    "groups": [
+      {
+        "title": "《韩非子·内储说上七术》",
+        "sources": [
+          {
+            "label": "Chinese Text Project, Hanfeizi, “Inner Storage Explanation, Upper”",
+            "url": "https://ctext.org/hanfeizi/nei-chu-shuo-shang/zhs"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "folk-tales",
+    "categoryName": "Folk Tales",
     "slug": "qixi-cowherd-weaver-girl",
     "title": "牛郎织女",
     "titleEn": "The Cowherd and the Weaver Girl",
@@ -2690,6 +3445,25 @@ window.NIHAO_CULTURE_SOURCES = [
           {
             "label": "NASA Science, “The Next Full Moon Is a Supermoon; the Sturgeon Moon”",
             "url": "https://moon.nasa.gov/news/196/the-next-full-moon-is-a-supermoon-the-sturgeon-moon/?unit=m"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "folk-tales",
+    "categoryName": "Folk Tales",
+    "slug": "add-the-eyes-and-the-whole-thing-comes-alive",
+    "title": "画龙点睛",
+    "titleEn": "Add the Eyes, and the Whole Thing Comes Alive",
+    "storyPath": "../../culture/books/folk-tales/add-the-eyes-and-the-whole-thing-comes-alive/",
+    "groups": [
+      {
+        "title": "Zhang Sengyao and “Adding Eyes to the Dragon”",
+        "sources": [
+          {
+            "label": "Shanghai Municipal Government, “Idioms for the Year of the Dragon (II)”",
+            "url": "https://english.shanghai.gov.cn/en-LearnChinese/20240320/c217ac1db3824f1496c96f1a3863a248.html"
           }
         ]
       }
@@ -2752,44 +3526,36 @@ window.NIHAO_CULTURE_SOURCES = [
   {
     "category": "folk-tales",
     "categoryName": "Folk Tales",
-    "slug": "monkey-king",
-    "title": "美猴王大闹天宫",
-    "titleEn": "The Monkey King Makes Trouble in Heaven",
-    "storyPath": "../../culture/books/folk-tales/monkey-king/",
+    "slug": "the-spear-and-the-shield",
+    "title": "自相矛盾",
+    "titleEn": "The Spear and the Shield",
+    "storyPath": "../../culture/books/folk-tales/the-spear-and-the-shield/",
     "groups": [
       {
-        "title": "The staff and the Book of Life and Death",
+        "title": "《韩非子·难一》",
         "sources": [
           {
-            "label": "Wikisource, Journey to the West, Chapter 3",
-            "url": "https://zh.wikisource.org/wiki/%E8%A5%BF%E9%81%8A%E8%A8%98/%E7%AC%AC003%E5%9B%9E"
+            "label": "Chinese Text Project, Hanfeizi, “Difficulty One”",
+            "url": "https://ctext.org/hanfeizi/nan-yi/zhs"
           }
         ]
-      },
+      }
+    ]
+  },
+  {
+    "category": "folk-tales",
+    "categoryName": "Folk Tales",
+    "slug": "grind-an-iron-rod-into-a-needle",
+    "title": "铁杵磨成针",
+    "titleEn": "Grind an Iron Rod into a Needle",
+    "storyPath": "../../culture/books/folk-tales/grind-an-iron-rod-into-a-needle/",
+    "groups": [
       {
-        "title": "The heavenly job and the Great Sage",
+        "title": "《方舆胜览·眉州》“铁杵成针”",
         "sources": [
           {
-            "label": "Wikisource, Journey to the West, Chapter 4",
-            "url": "https://zh.wikisource.org/wiki/%E8%A5%BF%E9%81%8A%E8%A8%98/%E7%AC%AC004%E5%9B%9E"
-          }
-        ]
-      },
-      {
-        "title": "The Buddha's palm and Five Elements Mountain",
-        "sources": [
-          {
-            "label": "Wikisource, Journey to the West, Chapter 7",
-            "url": "https://zh.wikisource.org/wiki/%E8%A5%BF%E9%81%8A%E8%A8%98/%E7%AC%AC007%E5%9B%9E"
-          }
-        ]
-      },
-      {
-        "title": "Sun Wukong is released",
-        "sources": [
-          {
-            "label": "Wikisource, Journey to the West, Chapter 14",
-            "url": "https://zh.wikisource.org/wiki/%E8%A5%BF%E9%81%8A%E8%A8%98/%E7%AC%AC014%E5%9B%9E"
+            "label": "National Smart Education Platform for Primary and Secondary Schools, unified Chinese-language textbook",
+            "url": "https://v1.ykt.cbern.com.cn/65/document/63515014739442d39834a8dab7b02c2c/pdf.pdf"
           }
         ]
       }
@@ -4570,73 +5336,88 @@ window.NIHAO_CULTURE_SOURCES = [
     "category": "literature",
     "categoryName": "Literature",
     "slug": "journey-to-west",
-    "title": "《西游记》：跟着猴王去冒险",
-    "titleEn": "Journey to the West: Adventure with the Monkey King",
+    "title": "《西游记》：美猴王的冒险",
+    "titleEn": "Journey to the West: The Adventures of the Monkey King",
     "storyPath": "../../culture/books/literature/journey-to-west/",
     "groups": [
       {
-        "title": "The stone monkey, Water Curtain Cave, and his teacher",
+        "title": "The Stone Monkey and his magic",
         "sources": [
           {
-            "label": "Wikisource, Journey to the West, Chapter 1",
-            "url": "https://zh.wikisource.org/wiki/%E8%A5%BF%E9%81%8A%E8%A8%98/%E7%AC%AC001%E5%9B%9E"
+            "label": "Chinese Text Project, Journey to the West, Chapters 1–3",
+            "url": "https://ctext.org/xiyouji"
           }
         ]
       },
       {
-        "title": "The gold-banded staff, the underworld, and the heavenly stables",
+        "title": "Wùkōng becomes Bìmǎwēn",
         "sources": [
           {
-            "label": "Wikisource, Journey to the West, Chapter 3",
-            "url": "https://zh.wikisource.org/wiki/%E8%A5%BF%E9%81%8A%E8%A8%98/%E7%AC%AC003%E5%9B%9E"
-          },
-          {
-            "label": "Wikisource, Journey to the West, Chapter 4",
-            "url": "https://zh.wikisource.org/wiki/%E8%A5%BF%E9%81%8A%E8%A8%98/%E7%AC%AC004%E5%9B%9E"
+            "label": "Chinese Text Project, Journey to the West, Chapter 4",
+            "url": "https://ctext.org/xiyouji"
           }
         ]
       },
       {
-        "title": "The Buddha's hand and Five Elements Mountain",
+        "title": "The Peach Garden and banquet",
         "sources": [
           {
-            "label": "Wikisource, Journey to the West, Chapter 7",
-            "url": "https://zh.wikisource.org/wiki/%E8%A5%BF%E9%81%8A%E8%A8%98/%E7%AC%AC007%E5%9B%9E"
+            "label": "Chinese Text Project, Journey to the West, Chapter 5",
+            "url": "https://ctext.org/xiyouji"
           }
         ]
       },
       {
-        "title": "Tang Monk, Xuanzang, scriptures, and the traveling team",
+        "title": "Capture, furnace, and Five Elements Mountain",
         "sources": [
           {
-            "label": "Asia for Educators, Columbia University, “The Origins of the Story”",
-            "url": "https://afe.easia.columbia.edu/cosmos/main/using_monkey.pdf"
-          },
-          {
-            "label": "Wikisource, Journey to the West, complete novel",
-            "url": "https://zh.wikisource.org/wiki/%E8%A5%BF%E9%81%8A%E8%A8%98"
+            "label": "Chinese Text Project, Journey to the West, Chapters 6–7",
+            "url": "https://ctext.org/xiyouji"
           }
         ]
       },
       {
-        "title": "The White Bone Demon and Wukong's return",
+        "title": "The golden band and White Dragon Horse",
         "sources": [
           {
-            "label": "Wikisource, Journey to the West, Chapter 27",
-            "url": "https://zh.wikisource.org/wiki/%E8%A5%BF%E9%81%8A%E8%A8%98/%E7%AC%AC027%E5%9B%9E"
+            "label": "Chinese Text Project, Journey to the West, Chapters 14–15",
+            "url": "https://ctext.org/xiyouji"
           }
         ]
       },
       {
-        "title": "The eighty-one trials and the return to Chang'an",
+        "title": "The pilgrimage group",
         "sources": [
           {
-            "label": "Wikisource, Journey to the West, Chapter 99",
-            "url": "https://zh.wikisource.org/wiki/%E8%A5%BF%E9%81%8A%E8%A8%98/%E7%AC%AC099%E5%9B%9E"
-          },
+            "label": "Chinese Text Project, Journey to the West, Chapters 18–22",
+            "url": "https://ctext.org/xiyouji"
+          }
+        ]
+      },
+      {
+        "title": "The White Bone Demon",
+        "sources": [
           {
-            "label": "Wikisource, Journey to the West, Chapter 100",
-            "url": "https://zh.wikisource.org/wiki/%E8%A5%BF%E9%81%8A%E8%A8%98/%E7%AC%AC100%E5%9B%9E"
+            "label": "Chinese Text Project, Journey to the West, Chapters 27–31",
+            "url": "https://ctext.org/xiyouji"
+          }
+        ]
+      },
+      {
+        "title": "The end of the journey",
+        "sources": [
+          {
+            "label": "Chinese Text Project, Journey to the West, Chapter 100",
+            "url": "https://ctext.org/xiyouji"
+          }
+        ]
+      },
+      {
+        "title": "The historical Xuánzàng",
+        "sources": [
+          {
+            "label": "Smithsonian Institution, “Xuanzang”",
+            "url": "https://sogdians.si.edu/sidebars/xuanzang/"
           }
         ]
       }

@@ -15,7 +15,7 @@ const difficultyEnglish = new Map([
 ]);
 
 function parseValue(markdown, key) {
-  return markdown.match(new RegExp(`^${key}:\\s*(.+)$`, "m"))?.[1]?.trim();
+  return markdown.match(new RegExp(`^${key}:[ \\t]*([^\\r\\n]*)$`, "m"))?.[1]?.trim();
 }
 
 function parseTaggedBlock(block, tag) {
@@ -32,7 +32,8 @@ function renderManuscript(page, language, difficulty, sourceName = "page.md") {
     .map((block) => {
       const heading = parseValue(block, headingKey);
       const body = parseTaggedBlock(block, language);
-      return heading && body ? `## ${heading}\n\n${body}` : "";
+      if (!body) return "";
+      return heading ? `## ${heading}\n\n${body}` : body;
     })
     .filter(Boolean);
 

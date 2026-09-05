@@ -1,91 +1,43 @@
 > Difficulty: Easy
 
-# Greeting Elders at New Year: The Meaning of Two Hands
+# Greeting Elders at New Year
 
-## The Morning of New Year's Day
+## Wait—What Do I Do with My Hands?
 
-On the morning of New Year's Day, your mother pulls you out from under the blankets and helps you put on new clothes.
+It is New Year’s morning. You have new clothes on. Your grandparents are smiling. You have even remembered what to say. “Happy New Year!” There is just one small problem. What are your hands supposed to do?
 
-In the living room, Grandpa and Grandma are already sitting in their chairs.
+In many Chinese families, children greet older relatives first at New Year. Some simply say their good wishes. Some bow a little. Others bring both hands together in front of the chest in a traditional greeting called *gǒngshǒu lǐ*.
 
-Mom whispers in your ear:
-
-"Go greet Grandpa and Grandma for the New Year."
-
-You walk up to them, hold one fist inside the other hand, and bow.
-
-"Happy New Year, Grandpa! Happy New Year, Grandma!"
-
-Grandpa's eyes smile into thin lines. He takes a red envelope from his pocket.
-
-"Here, lucky money."
-
-You take it with both hands and bow again.
-
-Many Chinese families know this scene well during New Year.
-
-But have you ever noticed:
-
-when you make the greeting gesture, which hand goes outside?
+It looks simple—until you try it. One hand goes here. The other goes there. Do you make a fist? Which hand is outside? Are you supposed to bow too? Suddenly, saying “Happy New Year” seems like the easy part.
 
 ---
 
-## Left for Boys, Right for Girls: Care Inside Old Manners
+## Why Put Both Hands Together?
 
-One traditional saying is that boys often place the left hand outside, wrapping the right hand.
+The cupped-hands greeting is very old. People used forms of it to greet others, give thanks, offer congratulations, and show respect. There were even rules about the hands.
 
-Why not the other way around?
+In one traditional form, men placed the left hand outside the right, while women did the reverse. One old explanation says that because the right hand was often the hand used to hold a weapon, covering it showed peaceful intentions: I have come to greet you, not to fight you.
 
-One common explanation is that the right hand was often the hand used to hold a weapon. Wrapping the right hand inside is like saying:
+That makes the gesture sound rather dramatic. Luckily, Grandma is probably not worried that you have arrived for battle.
 
-I am here to greet you, not to show strength.
-
-For girls, people often say the right hand wraps the left.
-
-Habits were not exactly the same in every place. Today, many families do not worry about the difference so carefully.
-
-But in older customs, using the gesture the wrong way could be seen as unlucky.
-
-So when elders see a child carefully learning the greeting, they often feel especially happy.
+Today, families do not all follow the old hand positions exactly. The important part is easier to understand. You stop for a moment, face the person you are greeting, bring your hands together, and offer your good wishes with care. The movement is small, but it changes an ordinary “hello” into something more special. This is the first morning of a new year. I came to wish you well.
 
 ---
 
-## A Red Envelope Is Not Just "Money"
+## Then Comes the Red Envelope
 
-There are manners for receiving a red envelope too.
+Now the greeting is finished. Grandpa smiles. Grandma reaches for something red. Ah. Here comes the part many children have been waiting for.
 
-Take it with both hands, not one.
+A *hóngbāo* is a red envelope containing money. At New Year, older family members often give one to children. The money is also called *yāsuìqián*. There are old folk stories about the name. One connects the gift with protecting children from harmful spirits and keeping them safe through the year. Whatever story a family tells, the meaning today is easy to recognize: the money comes wrapped in wishes for health, safety, and good fortune.
 
-Say, "Thank you, Grandpa and Grandma," or "Thank you, Uncle and Auntie."
-
-In the past, there was another rule:
-
-do not open it and count the money in front of the elders.
-
-That was not polite.
-
-The money inside the red envelope is not just ordinary money.
-
-It has a special name: *yasuiqian*, New Year lucky money.
-
-In folk belief, *yasui* carries the idea of pressing down bad spirits and keeping a child safe.
-
-So it is not like change from buying something at a store.
-
-It is more like adults putting a blessing for the new year into a red envelope and handing it to you carefully.
+And look—your hands have another job. Instead of snatching the envelope with one hand and immediately peeking inside, children are often taught to receive it with both hands and say thank you. Two hands again. A few minutes ago, they were giving a greeting. Now they are receiving one.
 
 ---
 
-## Summary
+## The Part You Cannot Put in the Envelope
 
-On New Year's Day, a child makes a gentle greeting, says "Happy New Year," and receives a red envelope with both hands.
+Families celebrate New Year in many different ways today. One child may perform a perfect cupped-hands bow. Another may forget which hand goes where. A third may become so excited by the red envelope that every piece of etiquette vanishes from memory. The grandparents may laugh anyway.
 
-Not every family does the gesture in exactly the same way.
+Because the exact angle of the hands is not really the heart of the moment. The heart of it is this: at the beginning of a new year, the younger generation walks toward the older one. The child offers a wish—good health, happiness, a peaceful year. The elder answers with another wish, sometimes tucked inside a bright red envelope.
 
-But the meaning is easy to recognize:
-
-respect the elders,
-receive good wishes carefully,
-and begin the year with kindness.
-
-One small New Year greeting ties together the noise, warmth, and manners of the holiday.
+For a moment, the good wishes travel both ways. So yes, there is a little bit of learning hidden inside those folded hands. But perhaps the most important lesson is much simpler. Before racing into a brand-new year, stop. Look at the people who have been walking beside you. And wish them a good one.
