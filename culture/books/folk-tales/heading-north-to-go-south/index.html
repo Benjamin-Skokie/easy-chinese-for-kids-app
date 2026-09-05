@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>南辕北辙</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <nav class="back-nav">
+      <a href="../../../../index.html?view=culture#culture-folk-tales">← 返回目录 Back to Catalog</a>
+    </nav>
+    <main class="book">
+      <section class="page hero">
+        <div class="hero-copy">
+          <h1>南辕北辙</h1>
+          <h2>Heading North to Go South</h2>
+        </div>
+      </section>
+
+      <section class="page story two-column text-wrap-image">
+        <div class="story-copy">
+          <figure class="floated-figure">
+            <img src="./images/1-wrong-direction.webp" alt="" class="floated-image" />
+            <figcaption class="caption floated-caption"><span class="zh">路人指着楚国的方向，旅人的马车却继续向北。</span><br><span class="en">A man points toward Chu, but the traveler's carriage continues north.</span></figcaption>
+          </figure>
+          <p>很久以前，一个人坐着马车赶路。路边有人问他：“你要去哪里？”“我要去楚国。”那个人回答。路人赶紧指着相反的方向说：“可是楚国在那边呀！你现在正往北走！”那个人笑了笑。“没关系，我的马很好。”“可是你的马跑错方向了呀。”“我带了很多路费。”那个人又说。“可是方向错了，钱再多也没用呀。”那个人还是一点也不担心。“我的车夫技术可好了！”路人看着他，不知道还能说什么。好马当然很好。路费充足也很好。车夫技术好，更是好事。可是方向错了，这些优点只会让马车跑得更快，也离楚国越来越远。马车继续向前去了。这就是“南辕北辙”这个成语的故事。今天，如果一个人很努力，却一直朝着错误的方向前进，我们就可以说他“南辕北辙”。有时候，走得快并不重要。<strong>先要看看方向对不对。</strong></p>
+          <p>Long ago, a traveler was riding in a carriage when someone by the road called out, “Where are you going?” “To Chu,” the traveler replied. The man pointed behind him. “But Chu is the other way. You’re heading north!” The traveler smiled. “That’s all right. My horse is excellent.” “But your horse is running in the wrong direction.” “I have plenty of money for the journey,” said the traveler. “That won’t help if you’re going the wrong way.” The traveler was still not worried. “My driver is very skilled.” The man stared at him. A fast horse was useful. Plenty of money was useful. A skilled driver was useful. But the better they were, the faster they would carry the traveler away from Chu. The carriage rolled on. This old story gave us the expression <strong>nán yuán běi zhé</strong>&#8212;heading south in your plans but north on the road. Today, people use it when someone works hard toward a goal but goes in the wrong direction. Sometimes, going faster does not bring you closer. First, you have to make sure you are going the right way.</p>
+        </div>
+      </section>
+    </main>
+    <script src="../../../../site-footer.js?v=20260830-v1"></script>
+      <script>
+      (() => {
+        const entries = Array.from(document.querySelectorAll(".glossary-entry"));
+        if (!entries.length) return;
+
+        const closeEntry = (entry) => {
+          entry.dataset.open = "false";
+          entry.style.removeProperty("--glossary-left");
+          entry.style.removeProperty("--glossary-top");
+          entry.style.removeProperty("--glossary-arrow-left");
+          const button = entry.querySelector(".glossary-term");
+          if (button) button.setAttribute("aria-expanded", "false");
+        };
+
+        const closeAll = (except = null) => {
+          for (const entry of entries) {
+            if (entry !== except) closeEntry(entry);
+          }
+        };
+
+        const placePopover = (entry) => {
+          requestAnimationFrame(() => {
+            const button = entry.querySelector(".glossary-term");
+            const popover = entry.querySelector(".glossary-popover");
+            if (!button || !popover) return;
+
+            const margin = 12;
+            const gap = 10;
+            const buttonRect = button.getBoundingClientRect();
+            const popoverRect = popover.getBoundingClientRect();
+            const halfWidth = popoverRect.width / 2;
+            const buttonCenter = buttonRect.left + buttonRect.width / 2;
+            const minCenter = margin + halfWidth;
+            const maxCenter = window.innerWidth - margin - halfWidth;
+            const left = Math.min(Math.max(buttonCenter, minCenter), maxCenter);
+
+            let side = "above";
+            let top = buttonRect.top - popoverRect.height - gap;
+
+            if (top < margin) {
+              side = "below";
+              top = buttonRect.bottom + gap;
+            }
+
+            if (side === "below" && top + popoverRect.height > window.innerHeight - margin) {
+              const fallbackTop = buttonRect.top - popoverRect.height - gap;
+              if (fallbackTop >= margin) {
+                side = "above";
+                top = fallbackTop;
+              } else {
+                top = Math.max(margin, window.innerHeight - margin - popoverRect.height);
+              }
+            }
+
+            const popoverLeft = left - halfWidth;
+            const arrowLeft = Math.min(
+              Math.max(buttonCenter - popoverLeft, 16),
+              Math.max(16, popoverRect.width - 16)
+            );
+
+            entry.dataset.side = side;
+            entry.style.setProperty("--glossary-left", left + "px");
+            entry.style.setProperty("--glossary-top", top + "px");
+            entry.style.setProperty("--glossary-arrow-left", arrowLeft + "px");
+          });
+        };
+
+        const toggleEntry = (entry) => {
+          const shouldOpen = entry.dataset.open !== "true";
+          closeAll(entry);
+          entry.dataset.open = shouldOpen ? "true" : "false";
+
+          const button = entry.querySelector(".glossary-term");
+          if (button) {
+            button.setAttribute("aria-expanded", shouldOpen ? "true" : "false");
+            if (!shouldOpen) button.blur();
+          }
+
+          if (shouldOpen) placePopover(entry);
+        };
+
+        document.addEventListener("click", (event) => {
+          const button = event.target.closest(".glossary-term");
+          if (button) {
+            event.preventDefault();
+            toggleEntry(button.closest(".glossary-entry"));
+            return;
+          }
+
+          if (!event.target.closest(".glossary-entry")) {
+            closeAll();
+            if (document.activeElement && document.activeElement.classList.contains("glossary-term")) {
+              document.activeElement.blur();
+            }
+          }
+        });
+
+        document.addEventListener("keydown", (event) => {
+          if (event.key === "Escape") {
+            closeAll();
+            if (document.activeElement && document.activeElement.classList.contains("glossary-term")) {
+              document.activeElement.blur();
+            }
+            return;
+          }
+
+          if ((event.key === "Enter" || event.key === " ") && event.target.classList.contains("glossary-term")) {
+            event.preventDefault();
+            toggleEntry(event.target.closest(".glossary-entry"));
+          }
+        });
+
+        for (const entry of entries) {
+          entry.addEventListener("mouseenter", () => placePopover(entry));
+        }
+
+        window.addEventListener("resize", () => closeAll());
+        window.addEventListener("scroll", () => closeAll(), { passive: true });
+      })();
+    </script>
+  </body>
+</html>

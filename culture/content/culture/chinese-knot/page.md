@@ -16,131 +16,116 @@ title_en: Red Chinese Knots, Full of Good Wishes
 [section]
 page: 1
 layout: text-wrap-image
-heading_zh: 一根绳子，从头到尾
-heading_en: One Cord, from Beginning to End
+heading_zh: 一根绳子，变成一道谜题
+heading_en: One Cord, and a Puzzle
 image: 1-one-cord-one-knot.webp
-caption_zh: 一只漂亮的中国结，常常从头到尾只用一根红绳子编成。
-caption_en: A beautiful Chinese knot is often made from one red cord all the way through.
+caption_zh: 一根红绳从松散的绳圈一步步编成完整的中国结。
+caption_en: A red cord changes from loose loops into a complete Chinese knot.
 [zh]
-你见过中国结吗？它看起来像一朵红红的花，又像一条绳子在空中绕出了迷宫。
+拿起一个中国结，我们先玩一个小游戏：找一找，这根绳子从哪里开始？找到了吗？那它又在哪里结束？这下就没那么容易了。
 
-最神奇的地方是，很多中国结从头到尾只用一根绳子。没有剪断，没有另外接一段，绳子绕来绕去，最后把绳头藏进结里。你翻来翻去地看，常常找不到它从哪里开始，又在哪里结束。
+很多传统中国结，常常用一根连续的绳子编成。绳子向左绕，向右转，从上面跨过去，再从下面钻回来，一圈又一圈。等到整个结编好，图案变得整整齐齐，绳子的开头和结尾反而像藏起来了。刚才还只是一根普普通通的绳子，转眼就变成一朵红花、一座小迷宫，或者一个怎么看都走不到尽头的图案。
 
-这也是中国结让人着迷的地方。它不只是漂亮，还会让人忍不住想：这一根绳子，到底是怎么变成这样的？
+这就是中国结第一个有意思的地方。更有意思的是：这个结还可能“会说话”。
 [/zh]
 [en]
-Have you ever seen a Chinese knot? It can look a little like a red flower and a little like a maze made from cord.
+Pick up a Chinese knot and try a small challenge: find where the cord begins. Easy? Now find where it ends. Not so easy.
 
-The amazing part is that many Chinese knots are made from one cord all the way through. Nothing is cut. No extra piece is tied on. The cord loops and twists until the ends disappear inside the knot. You can turn it over and over and still wonder where it begins and where it ends.
+Many traditional Chinese knots are made from one continuous cord. The cord loops left, turns right, crosses over itself, slips underneath, and comes back again. When the knot is finished, the pattern can look so even and complete that the beginning and end seem to disappear. A plain piece of cord has somehow turned into a red flower, a little maze, or a pattern with no obvious way out.
 
-That is part of the magic. A Chinese knot is not only pretty. It also makes you want to ask, "How did one cord turn into this?"
+That is the first surprise of a Chinese knot. The second surprise is that the knot may be saying something.
 [/en]
 [/section]
 
 [section]
 page: 2
 layout: text-wrap-image
-heading_zh: 手快的人，绳子好像自己会走路
-heading_en: In Skilled Hands, the Cord Seems to Move by Itself
+heading_zh: 先别急着拉紧！
+heading_en: Don’t Pull Yet!
 image: 2-knot-maker-hands.webp
-caption_zh: 做了很多年以后，编绳人的手常常比眼睛还快。
-caption_en: After many years of practice, a knot maker's hands can seem faster than her eyes.
+caption_zh: 一位编结者正在调整手中的红绳和绳圈。
+caption_en: A knot maker adjusts the red cord and loops in her hands.
 [zh]
-想象一个会编中国结的人坐在小板凳上，手里捏着红绳的一头，绕过去，再拉回来，轻轻一收，一个结就紧在掌心里了。
+看一个熟练的人编中国结，有点像看一道谜题自己慢慢找到答案。刚开始，桌上的绳子一点也不好看。它松松地摊着，东一个圈，西一个圈。编结的人把这个圈压到那个圈上，让绳子从上面穿过去，再从下面绕回来。编到一半时，看起来甚至比刚才更乱。
 
-她也许已经做了十年、二十年。做得多了，手比眼睛还快。很多动作不用停下来想，手指自己就知道下一步要去哪儿。
+可是这时候千万不能一把拉紧。拉错一边，旁边的圈就会变小；用力太大，整个图案可能歪掉。编结的人要一点一点调整：这里松一点，那里拉一点，再把左右两边慢慢整理得一样大。
 
-所以中国结不只是一个成品，也是一门手上的功夫。你看到的是一只结，可里面其实藏着很多年练出来的耐心和熟练。
+最后，那团看起来乱糟糟的绳子，忽然变得又整齐又对称。所以，编中国结可不只是“把绳子打个结”。绳子很简单，真正难的是知道每一段该往哪里走，还要有耐心把它们慢慢送到正确的位置。
 [/zh]
 [en]
-Picture someone sitting on a small stool with a bright red cord in her hands. She loops one part over another, pulls gently, tightens, and suddenly a knot sits in her palm.
+Watching someone make a Chinese knot can feel a little like watching a puzzle solve itself. At first, the cord does not look impressive at all. It lies in loose loops on a table. The maker bends one loop across another, passes the cord over, then under, then through. For a while, the whole thing may look more tangled than beautiful.
 
-Maybe she has been doing this for ten years or twenty. After that much practice, the hands can seem faster than the eyes. She does not need to stop and think through every tiny move. Her fingers already know where the cord should go next.
+And here is the tricky part: you cannot simply yank everything tight. The loops have to be arranged carefully. One pull changes another part of the knot. Tug too hard in the wrong place, and the pattern may shrink or twist. So the maker adjusts one loop, then another, slowly bringing the shape into balance.
 
-That is why a Chinese knot is more than a finished object. It is also a hand skill built over time. You see one knot, but inside it are patience, practice, and a great deal of quiet control.
+Only at the end does the loose tangle become something neat and symmetrical. That is why knotting is a hand skill, not just “tying a string.” The cord is simple. Knowing where every part should go takes practice.
 [/en]
 [/section]
 
 [section]
 page: 3
 layout: text-only
-heading_zh: 它以前也许还帮人记过事
-heading_en: Long Ago, Knots May Have Helped People Remember
+heading_zh: 绳结也能帮人“记事”吗？
+heading_en: Could a Knot Remember Something?
 [zh]
-有一种说法认为，在文字还不够普及的时候，人们可能会靠打结来帮自己记事情。大事打个大结，小事打个小结。这听起来更像很早很早的传说画面，不一定能一路直接连到今天的中国结。
+在没有笔记本、没有手机的很久以前，人们怎么提醒自己别忘记重要的事情？中国古书里有“结绳而治”的记载。后来的解释还说，大事可以打一个大结，小事可以打一个小结。
 
-可这个说法还是很有意思，因为它让人看见一件事：绳结从很早以前起，就不只是“绑住东西”的工具。它也和记忆、心思、安排事情这些更细的感觉连在了一起。
+想象一下：你看到绳子上的那个大结，突然想起来——“糟了，这件事可不能忘！”当然，古代用来记事的绳结，和今天挂在家里的装饰中国结，并不能简单地说就是同一种东西一路传下来的。它们属于不同的时代，也有不同的用途。
 
-后来，文字越来越普遍，打结记事慢慢退出了日常生活。可绳结的手艺没有断，它只是换了一个工作。
+可是这个古老的说法告诉我们一件很有意思的事：绳结不只是把东西绑住，它还可以装进人的意思。后来，装饰性的绳结越来越擅长做这件事。
 [/zh]
 [en]
-One old idea says that before writing was common, people may sometimes have tied knots to help remember things. A big matter might get a big knot. A small matter might get a small knot. That picture belongs more to the world of early stories than to something we can prove step by step all the way to modern Chinese knots.
+Long before people carried notebooks or phones, how did they remember something important? One old Chinese text says that people in very ancient times once used tied cords. A later explanation describes a curious system: a big matter could be marked with a big knot, a small matter with a small knot.
 
-Still, the idea matters because it shows something important. From very early on, a knot was not only a tool for tying things shut. It was also connected with memory, planning, and human thought.
+Imagine looking at a cord and thinking, “Oh! That big knot—I must not forget that.” We cannot draw a straight line from those ancient record-keeping knots to the decorative Chinese knots hanging in homes today. They belonged to different times and uses.
 
-Later, writing became much more common, so knotting no longer needed to do that everyday job. But the skill itself did not disappear. It simply found a new purpose.
+Still, the old story gives us a wonderful idea: a knot does not have to be only a way to hold two things together. It can also carry meaning. And that is exactly what decorative knots later became very good at doing.
 [/en]
 [/section]
 
 [section]
 page: 4
 layout: text-wrap-image
-heading_zh: 每一种结，都像一句吉祥话
-heading_en: Different Knots Carry Different Good Wishes
+heading_zh: 一个结，就是一句祝福
+heading_en: A Knot Can Be a Wish
 image: 3-knot-varieties.webp
-caption_zh: 长久、平安、如意、同心……不同形状，装着不同祝福。
-caption_en: Long life, safety, hope, togetherness: different knot shapes can carry different wishes.
+caption_zh: 五只红色中国结有着不同的形状和编法。
+caption_en: Five red Chinese knots show different shapes and patterns.
 [zh]
-后来，中国结慢慢变成了礼物，变成了祝福。有人喜欢“盘长结”，因为它看上去像没有头尾，代表长久。有人喜欢“平安结”，因为一看名字就知道，是在祝你一路平安。还有“如意结”“同心结”，光听名字，心里就已经暖了一点。
+慢慢地，绳结的花样越来越多，也有了不同的名字和寓意。盘长结一圈套着一圈，看起来没有明显的开头和结尾，所以常让人想到长久。如意结的名字里，就带着“称心如意”的好愿望。同心结则让人想到两颗心在一起，常常用来表达亲近和相守。
 
-这也是中国结很特别的地方。它不靠很多文字解释，常常只靠形状、名字和颜色，大家就能明白里面装着的是好意。
+光听名字，就像听见了一句句小小的吉祥话。中国结有趣的地方也正在这里。你不需要在绳子上写：“祝你平安幸福，事事顺利。”结的名字和形状，本身就可以帮你把心意送出去。
 
-编好一个结，就像把一句祝福藏进了绳子里。它不说话，可很多人一看就知道，它是在为谁祝福。
+红色又特别常见，因为在中国文化里，红色常常和喜庆、欢乐、好运连在一起。于是，一根红绳编成的结，看起来不只漂亮，还很像一份没有写在纸上的祝福。
 [/zh]
 [en]
-Later, Chinese knots slowly changed into gifts and good wishes. Some people love the endless knot because it seems to have no beginning and no end, so it suggests lasting happiness. Some love the peace knot because the very name sounds like a wish for safety. Others choose a ruyi knot or a together-heart knot for the feeling inside the name.
+Over time, decorative knotting became more elaborate. Different knots gained different names, shapes, and meanings. The *páncháng jié* loops around and around in a pattern that seems to continue without an end, so it can suggest something lasting. A *rúyì jié* carries the idea of things going as you wish. A *tóngxīn jié*—“united hearts”—can express closeness and togetherness.
 
-That is one of the most special things about Chinese knots. They do not need a long explanation. Often the shape, the color, and the name are enough for people to feel the blessing.
+Even the names sound like tiny good wishes. That is part of the fun of Chinese knots. You do not need to write “I wish you happiness and good luck” across the cord. The shape itself can help carry the message.
 
-To make a knot is a little like hiding a wish inside a cord. The knot never speaks out loud, but many people can understand what it is quietly saying.
+Red became an especially popular color for these decorations because red is strongly connected with happiness, celebration, and good fortune in Chinese culture. So a knot could be beautiful and useful in another way: it could help someone give a wish without saying very much at all.
 [/en]
 [/section]
 
 [section]
 page: 5
 layout: text-wrap-image
-heading_zh: 它现在还挂在门上、车里、节日里
-heading_en: Today, Knots Still Hang in Everyday Life
+heading_zh: 红绳今天还在“说话”
+heading_en: The Red Cord Is Still Talking
 image: 4-knot-in-daily-life.webp
-caption_zh: 门边、节日里、车里、礼物上，到处都能看到中国结。
-caption_en: On doors, at festivals, in cars, and on gifts, Chinese knots are still easy to find.
+caption_zh: 门边挂着一只红色中国结，孩子抬头看着它。
+caption_en: A child looks up at a red Chinese knot hanging beside a doorway.
 [zh]
-今天，中国结常常挂在门边、窗边、车里，也会挂在节日装饰和礼物盒上。它红红的，亮亮的，一看就让人想到喜气。
+今天，中国结并没有只待在博物馆里。过节的时候，你可能在门边看见它；礼物上可能系着它；商店、房间里可能挂着它；有时候，车里、书包上也能找到一个小小的中国结。有的很大，花样复杂；有的只有手掌那么小。
 
-有时候它像在说“平安”，有时候像在说“长久”，有时候像在说“顺顺利利”。所以它虽然只是一根绳子编成的小挂饰，却常常能让一个地方一下子变得更有祝福的味道。
+可是它们做的事情，还是很简单。有人拿起一根绳子。绕过去，穿回来；从上面走，再从下面钻过。手指耐心地把一个个绳圈拉到合适的位置，慢慢地，一个图案出现了。然后，这个结被送到另一个人手里。
 
-中国结挂在那里，不必开口，很多人已经知道它在说什么了。
+它也许在说：“愿你平平安安。”也许在说：“愿美好的日子长长久久。”也许只是说：“我想着你呢。”这么多话，居然都能藏进一根绳子里。难怪中国结的开头和结尾总是那么难找。也许，祝福本来就不应该有尽头。
 [/zh]
 [en]
-Today, Chinese knots often hang by doors, in windows, inside cars, or on festival decorations and gift boxes. Their bright red color makes many people think right away of happy occasions.
+Today, Chinese knots have not disappeared into museums. You may see them beside a door during a festival, attached to a gift, hanging in a shop, decorating a room, or even inside a car. Some are large and complicated. Others are small enough to hang from a bag.
 
-Sometimes a knot seems to say "peace." Sometimes it seems to say "lasting happiness." Sometimes it feels like a wish that everything will go smoothly. So even though it is only a small decoration made from cord, it can change the feeling of a whole space.
+Their jobs have changed over time, but one thing has stayed wonderfully simple. Someone takes a cord. The cord passes over and under, around and through. Patient hands pull the loops into place. Slowly, a pattern appears. Then the finished knot goes to someone else.
 
-A Chinese knot hangs there without speaking, and still many people already know what it means.
+Perhaps it says, “Be safe.” Perhaps, “May good things last.” Perhaps simply, “I’m thinking of you.” All of that—from one piece of cord. No wonder it is hard to find where the knot begins and ends. Maybe the wish is not supposed to end either.
 [/en]
 [/section]
-
-[ending]
-heading_zh: 小结
-heading_en: In Summary
-[zh]
-中国结最神奇的地方，是一根绳子可以从头到尾绕出那么多变化。它以前也许和记事有关，后来更多变成了礼物和祝福。
-
-所以今天人们喜欢它，不只是因为它好看，也因为它像一条安安静静的红绳子，把平安、长久和好运编在了一起。
-[/zh]
-[en]
-The wonder of the Chinese knot is that one cord can twist into so many forms from beginning to end. Long ago, knots may have been linked with remembering things. Later, they became gifts and blessings.
-
-That is why people still love them today. They are beautiful, but they are also quiet red cords that seem to weave peace, lasting happiness, and good luck together.
-[/en]
-[/ending]

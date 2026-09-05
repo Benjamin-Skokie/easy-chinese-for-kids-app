@@ -88,7 +88,6 @@ These files use `华夏` or `华夏先民` in ways that should be reconsidered b
 
 - `culture/content/culture/kung-fu/zh.md`
 - `culture/content/culture/chinese-knot/zh.md`
-- `culture/content/culture/idiom-spirit/zh.md`
 - `culture/content/culture/new-year-greeting/zh.md`
 - `culture/content/culture/weiqi/zh.md`
 - `culture/content/culture/family-titles/zh.md`

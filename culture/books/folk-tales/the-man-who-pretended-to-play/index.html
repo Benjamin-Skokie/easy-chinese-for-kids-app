@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>滥竽充数</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <nav class="back-nav">
+      <a href="../../../../index.html?view=culture#culture-folk-tales">← 返回目录 Back to Catalog</a>
+    </nav>
+    <main class="book">
+      <section class="page hero">
+        <div class="hero-copy">
+          <h1>滥竽充数</h1>
+          <h2>The Man Who Pretended to Play</h2>
+        </div>
+      </section>
+
+      <section class="page story two-column text-wrap-image">
+        <div class="story-copy">
+          <figure class="floated-figure">
+            <img src="./images/1-pretending-in-the-orchestra.webp" alt="" class="floated-image" />
+            <figcaption class="caption floated-caption"><span class="zh">几百名乐师一起合奏时，根本不会吹竽的南郭先生混在中间装模作样。</span><br><span class="en">As hundreds of musicians perform together, Nanguo hides among them and pretends to play the yú.</span></figcaption>
+          </figure>
+          <p>很久以前，齐宣王很喜欢听人吹竽。竽是一种古代的吹奏乐器。不过，他不喜欢一个人单独吹，而是喜欢几百个人一起合奏。有一个叫南郭先生的人听说以后，也混进了乐队。可是，他有一个大问题：<strong>他根本不会吹竽。</strong>每次演奏时，南郭先生就坐在大家中间，拿着竽装作自己也在吹。几百个人一起演奏，谁也没有发现。这个办法一直很管用。后来，齐湣王做了新的国君。他也喜欢听竽，却偏偏喜欢让乐师<strong>一个一个单独演奏</strong>。南郭先生一听，知道麻烦来了。只要轮到他，大家马上就会发现：他根本不会吹。于是，还没等到自己的那一天，他就悄悄逃走了。这就是“滥竽充数”的故事。今天，如果一个人没有真正的本领，却混在别人中间假装自己会，我们就可以说他在“滥竽充数”。混在人群里，也许不容易被发现。<strong>直到轮到自己。</strong></p>
+          <p>Long ago, King Xuan of Qi loved listening to the <strong>yú</strong>, an ancient wind instrument made with bamboo pipes. But he did not like hearing just one musician. He wanted hundreds of musicians to play together. A man named Nanguo heard about this and joined the group. There was only one problem. <strong>He could not play the yú at all.</strong> Whenever the musicians performed, Nanguo sat among them, held up his instrument, and pretended to play. With so many people playing at once, no one noticed. For years, his trick worked. Then King Xuan died, and King Min became the new ruler. King Min liked the yú too&#8212;but he wanted to hear each musician play <strong>one at a time</strong>. Nanguo knew he was in trouble. The moment he played alone, everyone would discover that he could not play at all. So before his turn came, he quietly ran away. This story gave us the expression <strong>làn yú chōng shù</strong>. Today, it describes someone who does not really have the skill but hides among others and pretends that they do. It may be easy to disappear in a crowd. <strong>Until it is your turn.</strong></p>
+        </div>
+      </section>
+    </main>
+    <script src="../../../../site-footer.js?v=20260830-v1"></script>
+      <script>
+      (() => {
+        const entries = Array.from(document.querySelectorAll(".glossary-entry"));
+        if (!entries.length) return;
+
+        const closeEntry = (entry) => {
+          entry.dataset.open = "false";
+          entry.style.removeProperty("--glossary-left");
+          entry.style.removeProperty("--glossary-top");
+          entry.style.removeProperty("--glossary-arrow-left");
+          const button = entry.querySelector(".glossary-term");
+          if (button) button.setAttribute("aria-expanded", "false");
+        };
+
+        const closeAll = (except = null) => {
+          for (const entry of entries) {
+            if (entry !== except) closeEntry(entry);
+          }
+        };
+
+        const placePopover = (entry) => {
+          requestAnimationFrame(() => {
+            const button = entry.querySelector(".glossary-term");
+            const popover = entry.querySelector(".glossary-popover");
+            if (!button || !popover) return;
+
+            const margin = 12;
+            const gap = 10;
+            const buttonRect = button.getBoundingClientRect();
+            const popoverRect = popover.getBoundingClientRect();
+            const halfWidth = popoverRect.width / 2;
+            const buttonCenter = buttonRect.left + buttonRect.width / 2;
+            const minCenter = margin + halfWidth;
+            const maxCenter = window.innerWidth - margin - halfWidth;
+            const left = Math.min(Math.max(buttonCenter, minCenter), maxCenter);
+
+            let side = "above";
+            let top = buttonRect.top - popoverRect.height - gap;
+
+            if (top < margin) {
+              side = "below";
+              top = buttonRect.bottom + gap;
+            }
+
+            if (side === "below" && top + popoverRect.height > window.innerHeight - margin) {
+              const fallbackTop = buttonRect.top - popoverRect.height - gap;
+              if (fallbackTop >= margin) {
+                side = "above";
+                top = fallbackTop;
+              } else {
+                top = Math.max(margin, window.innerHeight - margin - popoverRect.height);
+              }
+            }
+
+            const popoverLeft = left - halfWidth;
+            const arrowLeft = Math.min(
+              Math.max(buttonCenter - popoverLeft, 16),
+              Math.max(16, popoverRect.width - 16)
+            );
+
+            entry.dataset.side = side;
+            entry.style.setProperty("--glossary-left", left + "px");
+            entry.style.setProperty("--glossary-top", top + "px");
+            entry.style.setProperty("--glossary-arrow-left", arrowLeft + "px");
+          });
+        };
+
+        const toggleEntry = (entry) => {
+          const shouldOpen = entry.dataset.open !== "true";
+          closeAll(entry);
+          entry.dataset.open = shouldOpen ? "true" : "false";
+
+          const button = entry.querySelector(".glossary-term");
+          if (button) {
+            button.setAttribute("aria-expanded", shouldOpen ? "true" : "false");
+            if (!shouldOpen) button.blur();
+          }
+
+          if (shouldOpen) placePopover(entry);
+        };
+
+        document.addEventListener("click", (event) => {
+          const button = event.target.closest(".glossary-term");
+          if (button) {
+            event.preventDefault();
+            toggleEntry(button.closest(".glossary-entry"));
+            return;
+          }
+
+          if (!event.target.closest(".glossary-entry")) {
+            closeAll();
+            if (document.activeElement && document.activeElement.classList.contains("glossary-term")) {
+              document.activeElement.blur();
+            }
+          }
+        });
+
+        document.addEventListener("keydown", (event) => {
+          if (event.key === "Escape") {
+            closeAll();
+            if (document.activeElement && document.activeElement.classList.contains("glossary-term")) {
+              document.activeElement.blur();
+            }
+            return;
+          }
+
+          if ((event.key === "Enter" || event.key === " ") && event.target.classList.contains("glossary-term")) {
+            event.preventDefault();
+            toggleEntry(event.target.closest(".glossary-entry"));
+          }
+        });
+
+        for (const entry of entries) {
+          entry.addEventListener("mouseenter", () => placePopover(entry));
+        }
+
+        window.addEventListener("resize", () => closeAll());
+        window.addEventListener("scroll", () => closeAll(), { passive: true });
+      })();
+    </script>
+  </body>
+</html>

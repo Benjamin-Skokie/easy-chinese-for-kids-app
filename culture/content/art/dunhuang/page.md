@@ -1,6 +1,6 @@
 ---
-title_zh: 沙漠山崖里，为什么藏着满墙故事？
-title_en: Why Are Story-Filled Caves Hidden in the Desert?
+title_zh: 一面墙是一千年前的照片吗？
+title_en: Is a Wall a Photograph from 1,000 Years Ago?
 slug: dunhuang
 category: art
 difficulty: 简单
@@ -9,83 +9,131 @@ style_notes: "用 --- 分隔 frontmatter；正文强调优先用 *斜体*；尽�
 ---
 
 [hero]
-title_zh: 沙漠山崖里，为什么藏着满墙故事？
-title_en: Why Are Story-Filled Caves Hidden in the Desert?
+title_zh: 一面墙是一千年前的照片吗？
+title_en: Is a Wall a Photograph from 1,000 Years Ago?
 [/hero]
 
 [section]
 page: 1
-layout: text-wrap-image
-heading_zh: 沙漠路边的一排洞窟
-heading_en: A Wall of Caves Beside a Desert Road
-image: 1-mogao-cliffs.webp
-caption_zh: 莫高窟位于敦煌附近的沙漠山崖上。
-caption_en: The Mogao Caves were cut into a desert cliff near Dunhuang.
+layout: text-only
+heading_zh: 沙漠里，怎么藏着这么多画？
+heading_en: A Painted World in the Desert
 [zh]
-很久以前，商人、僧人和旅行者骑着骆驼穿过亚洲。路上有沙漠、有高山，也有一座重要的绿洲城市：敦煌（*Dūnhuáng*）。绿洲有水，可以让疲惫的人和动物休息。
+往中国西北走，敦煌周围的景色常常很单调：沙地、戈壁、灰黄色的山崖，还有沙漠边的一片绿洲。古代从中国向西走的许多道路经过这里，商人、旅行者和僧人都曾在这一带来来往往。
 
-敦煌附近的山崖上，人们从公元四世纪起陆续开凿洞窟。有人出钱，有人挖洞，有人做泥塑，还有画工站在架子上，把佛教故事、神仙、乐队和旅行生活画满墙壁。这个地方就是莫高窟（*Mògāo Kū*）。它不是一天建成的，而是许多人用了大约一千年，才留下今天看到的样子。
+可是走到绿洲附近的一面崖壁前，你会发现山上密密麻麻全是洞口。
+
+莫高窟今天还保存着七百多个洞窟。有的小小的，有的里面能放下巨大的彩塑，其中将近五百个洞窟还保存着壁画——直接画在墙壁和洞顶上的大幅图画。这里的开窟、绘画和重修，前后延续了大约一千年。
+
+走进一个洞窟，外面的黄沙突然不见了。墙上有佛和菩萨，头顶有飘着长长彩带的飞天；还有乐队、马匹、骆驼和赶路的人。再仔细看——怎么还有人在田里耕地、坐下来吃饭？
+
+这里明明是佛教洞窟，为什么墙上会有这些普通人的生活？
 [/zh]
 [en]
-Long ago, merchants, monks, and travelers crossed Asia by camel. Their roads passed deserts and mountains—and an important oasis town called Dunhuang (*Dūnhuáng*). An oasis had water, so tired people and animals could rest there.
+Travel west across northwestern China, and the land around Dunhuang can look dry and almost empty. Sand, gravel, cliffs, and a patch of green oasis sit where old routes once connected China with Central Asia and places much farther west.
 
-Beginning in the fourth century, people cut caves into a cliff near Dunhuang. Some paid for the work. Others dug rooms, shaped clay statues, or stood on scaffolds to cover the walls with Buddhist stories, heavenly beings, musicians, and scenes of travel. This place became the Mogao Caves (*Mògāo Kū*). It was not made in a day. People kept adding to it for about a thousand years.
+Then you reach a cliff near the oasis. It is full of openings.
+
+The Mogao Caves have more than 700 surviving caves cut into the rock. Some are small. Others are large enough to hold giant painted statues. Nearly 500 caves still preserve murals—large pictures painted directly on the walls and ceilings. People kept making and remaking caves here for about a thousand years.
+
+Step inside one, and the desert seems to disappear. Buddhas sit beneath painted canopies. Flying figures sweep across ceilings with long ribbons. Musicians play instruments. People ride horses and camels. Farmers work in fields. Wait—farmers?
+
+Why are ordinary people working and eating on the walls of a Buddhist cave?
 [/en]
 [/section]
 
 [section]
 page: 2
-layout: text-wrap-image
-heading_zh: 飞天不用翅膀
-heading_en: Flying Without Wings
-image: 3-feitian-mural.webp
-caption_zh: 敦煌壁画中的飞天用飘带和姿势表现飞翔。
-caption_en: In Dunhuang murals, flowing scarves and lively poses make heavenly beings seem to fly.
+layout: text-only
+heading_zh: 这么大的洞窟，是谁画出来的？
+heading_en: Who Made All These Caves?
 [zh]
-抬头看壁画，空中飞过一群“飞天”（*fēitiān*）。她们是佛教艺术里的天上乐神。有的弹琵琶，有的吹笛子，有的撒下花朵。奇怪的是，她们没有鸟翅膀。
+莫高窟当然不是有人路过，觉得墙壁空空的，就顺手画几笔。建一座洞窟，首先要有人出钱。
 
-画工用了别的办法让她们飞起来：长长的飘带在身后转弯，衣裙向上扬，身体像在云中翻转。墙当然没有动，可你的眼睛一跟着飘带走，整座洞窟就像有了风，也有了音乐。
+几百年间，地方官员、僧人、富裕家庭、统治者和其他佛教信众都曾出资开窟。有些出资人的画像，连同家人的画像，就画在他们赞助的洞窟里。
+
+然后才轮到工匠上场。有人拿锤子和凿子把山崖挖进去；有人给粗糙的墙面抹上泥层，准备画画；画师先安排整面墙的大图，再把线稿画到墙上；其他工匠调颜料、填颜色、补细节，塑像也要在洞窟里一点点做出来。
+
+到了十世纪，敦煌甚至还有专门的画院和一批专业画工。所以，一个大洞窟更像一项工程，不是一幅一个人一天画完的画。
+
+那这些专业画师到底在画什么？主要是佛教的世界和佛经里的故事。可普通人的生活，恰恰就是这样跑进墙里的。
 [/zh]
 [en]
-Look up and you may see *fēitiān* flying across a painted sky. These heavenly musicians come from Buddhist art. Some play the pipa or a flute. Others scatter flowers. Strangely, they have no bird wings.
+A cave like this was not made by someone passing by with a paintbrush. Someone had to pay for it.
 
-The painters found other ways to make them fly. Long scarves curl behind them. Skirts lift. Bodies turn as if they are tumbling through clouds. The wall never moves, but when your eyes follow those ribbons, the whole cave seems to fill with wind and music.
+Over many centuries, officials, monks, wealthy families, rulers, and other Buddhist believers sponsored caves at Mogao. Some donors even had portraits of themselves and their families painted on the walls.
+
+Then the work began. Laborers used hammers and chisels to dig into the cliff. The rough walls were covered with layers of mud and plaster so they could be painted. Artists planned the composition. A skilled painter could transfer the main drawing to the wall, while other workers prepared pigments, filled in colors, and added details. Sculptors made statues inside the cave.
+
+By the tenth century, Dunhuang even had a painting academy with teams of specialists. So a large cave was closer to a building project than to one person making a picture.
+
+But what were all those professional artists painting? Mostly, Buddhist worlds and Buddhist stories. And that is exactly how everyday life slipped onto the walls.
 [/en]
 [/section]
 
 [section]
 page: 3
-layout: text-wrap-image
-heading_zh: 一扇藏了几百年的小门
-heading_en: A Small Door Hidden for Centuries
-image: 2-library-cave-scrolls.webp
-caption_zh: 藏经洞里曾存放成捆的手写书卷和画。
-caption_en: Bundles of handwritten scrolls and paintings were stored in the Library Cave.
+layout: text-only
+heading_zh: 佛经故事里，为什么有人在吃饭？
+heading_en: Why Is a Farmer in a Buddhist Story?
 [zh]
-一九〇〇年，照看洞窟的王圆箓发现一条裂缝。墙后竟有一间封住的小洞，里面塞满成捆的手写书卷、绘画和布幡。它后来被称为藏经洞。
+莫高窟第23窟里，有一幅画来自《法华经》。佛经把佛法比作雨水：雨落下来，让不同的草木都得到滋润。
 
-里面不只有佛经，还有信件、账单、历书、练字纸和不同语言的文件。一张旧纸也许只记着一袋粮食，却能告诉我们当时的人买什么、写什么、说什么语言。可惜，许多文物后来被带到世界各地。今天要研究这间小洞，常常得把散落在不同博物馆和图书馆的线索重新拼在一起。
+画师要把这个意思变成一幅画。于是，他画了雨。
+
+雨下面当然要有田地。田里，一个农夫正赶着牛耕地。旁边还有父亲和孩子捧着碗吃饭，一位妇人站在一旁看着他们。一个佛经里的比喻，就这样留下了一小块普通人的生活。
+
+莫高窟其他壁画里还能找到骆驼拉车、乐队和舞蹈、道路和商队、房屋、衣服、农具和赶路的人。第61窟甚至有一幅巨大的五台山图，山、河、寺庙、道路、城镇和旅行的人都画了进去。
+
+画师当然不是想给一千年后的孩子编一本“古代生活百科”。他们只是想把佛教故事画得让当时的人看得懂。
+
+要画田，就画自己熟悉的田；要画车，就画见过的车；要给人物穿衣服，也会从身边的世界寻找样子。结果，他们无意中给我们留下了很多线索。
 [/zh]
 [en]
-In 1900, Wang Yuanlu, a caretaker of the caves, noticed a crack. Behind a wall was a sealed room packed with bundles of handwritten scrolls, paintings, and banners. It became known as the Library Cave.
+In Cave 23, a Buddhist scripture compares the Buddha’s teaching to rain falling equally on plants. A painter had to turn that idea into a picture. So he painted rain.
 
-The room held much more than Buddhist writings. There were letters, calendars, accounts, handwriting practice, and documents in several languages. A scrap that records one bag of grain may tell us what people bought, wrote, and spoke. Many objects were later taken to collections around the world. Today, studying the little cave often means fitting together clues kept in many museums and libraries.
+Then he painted fields beneath the rain. A farmer drives an ox through the soil. Nearby, a father and child sit with bowls of food while a woman watches them. Suddenly, a religious idea also contains a tiny scene of ordinary family life.
+
+Elsewhere at Mogao, murals show a camel pulling a cart, musicians and dancers, roads and caravans, buildings, clothes, farm tools, and people traveling. One enormous mural in Cave 61 even shows mountains, rivers, temples, roads, towns, and travelers in a painted map of Mount Wutai.
+
+The artists were not trying to make a history textbook for children living a thousand years later. They were trying to make Buddhist stories understandable and vivid to people of their own time.
+
+To paint a field, they used fields they knew. To paint a cart, they used carts they had seen. To dress a person, they drew clothes that made sense in their world. Without planning to, they left us clues.
 [/en]
 [/section]
 
 [section]
 page: 4
-layout: text-only
-heading_zh: 怎样保护一面不能搬走的画？
-heading_en: How Do You Protect a Painting That Cannot Move?
+layout: text-wrap-image
+heading_zh: 那壁画能不能当照片看？
+heading_en: So Is the Wall a Photograph?
+image: 3-feitian-mural.webp
+caption_zh: 敦煌壁画把人间生活与佛教故事里的飞天等形象画在同一个世界里。
+caption_en: Dunhuang murals can place everyday life and flying figures from Buddhist stories within the same painted world.
 [zh]
-敦煌壁画画在洞窟的墙上，不能像普通画那样装进盒子。沙尘、潮气、游客带来的热和呼吸，都可能让脆弱的颜色慢慢改变。保护人员会检查裂缝、记录温度和湿度，也会限制有些洞窟每天进入的人数。
+不能完全这样看。照片把镜头前真的东西留下来；壁画留下的，却是画师选择画出来的世界。
 
-他们还用高清相机把壁画一小块一小块拍下来，再拼成数字图像。屏幕不能代替站在洞窟里的感觉，却能让更多人看清高处的小人物和乐器，也能留下今天的样子，帮助未来的人发现哪里发生了变化。
+敦煌的一面墙上，可以同时出现好几种东西。农具可能真的反映当时人怎样种田，供养人的画像可能保留了当时的衣服，骆驼和马车也可能让我们看到古代旅行的样子。
+
+可旁边又有飞在空中的飞天，还有佛经故事里的九色鹿和想象中的佛国。这些当然不能证明一千年前的敦煌真的有会飞的人和九种颜色的鹿。
+
+所以，研究敦煌壁画有点像找线索。历史学家会把墙上的东西和古代文书、出土的器物、建筑以及其他地方的图像放在一起比较。
+
+当初出钱建洞窟的人，想留下的是一个佛教的世界。画师为了把那个世界画出来，却不断从自己身边借东西。
+
+于是，他们生活里的车、碗、乐器、衣服、田地、道路，甚至人的脸，也一起留了下来。不是留在照片里，而是留在墙上。
 [/zh]
 [en]
-Dunhuang's murals are painted on cave walls. They cannot be packed into boxes like ordinary pictures. Sand, moisture, heat, and even the breath of many visitors can slowly change their fragile colors. Conservators check cracks, watch temperature and moisture, and limit how many people enter some caves each day.
+Not quite. A photograph records light from something that was in front of a camera. A mural records what an artist chose to paint.
 
-They also photograph the walls in thousands of small sections and join the pictures into detailed digital images. A screen cannot replace standing inside a cave, but it lets more people see tiny musicians and figures high above the floor. It also saves a record of how the paintings look today, so future caretakers can notice changes.
+At Mogao, the same wall can mix things from very different kinds of worlds. A farmer may show us a real kind of plow. A donor portrait may show real clothing. A camel cart may resemble vehicles used on the Silk Roads.
+
+But beside them, heavenly beings fly through the air. A nine-colored deer appears in a Buddhist story. Palaces may represent an imagined paradise. Those are not proof that people once saw flying beings or magical deer in the desert.
+
+That is why historians treat the murals more like clues than photographs. They compare what is painted with old documents, excavated objects, buildings, and other artworks. And the more carefully they look, the more the walls reveal.
+
+The people who paid for the caves wanted to create Buddhist spaces. The artists filled those spaces with sacred stories. But to paint those stories, they borrowed pieces of the world around them.
+
+So people who lived centuries ago ended up leaving behind their carts, bowls, instruments, clothes, farms, roads, and faces—not in a photograph, but on the walls.
 [/en]
 [/section]

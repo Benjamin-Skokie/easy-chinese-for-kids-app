@@ -1,33 +1,63 @@
 > Difficulty: Easy
 
-# How Can One Drop of Ink Become Mountains, Rain, and Mist?
+# How Can Black Ink Hold a Whole Journey?
 
-## Is Ink Only Black?
+## A Painting Opens Slowly
 
-Ink in a stone dish looks simply black. But let the brush drink some clean water before it touches the ink, and pale gray appears on the paper. More ink makes a darker mark. More water makes a lighter one. When dark and pale ink meet, black suddenly has many shades.
+Imagine someone places a long wooden box in front of you. Inside is not a book. It is not a framed painting, either.
 
-The water inside the brush matters too. A wet brush lets ink spread softly, like mist or clouds. A drier brush skips across the paper and leaves broken textures—perfect for rough bark or rocky mountains. The artist did not open a box of colored paint. She changed the ink, the water, and the speed of her hand.
+Wrapped carefully inside is a roll of paper or silk. You loosen the cord, place the roll on a table, and begin opening it from the right.
 
----
+At first, you can see only a small piece. A few trees appear beside a river. You open a little more. Now there is a bridge. Beyond the bridge, a path winds toward some houses. Farther on, mountains rise through the mist. You want to see the rest—but the rest is still rolled up.
 
-## A Brush Walks Across a Mountain
+This is a **handscroll**, one of the special ways Chinese paintings were made and viewed. A handscroll was not meant to hang on a wall where you could see everything at once. You opened it slowly, section by section.
 
-To paint a mountain, an artist may first set down its shape in pale ink. A drier brush adds rocky texture. Dark dots and strokes become trees. Distant mountains stay pale, as if air and mist lie between them and us. Nearby trees grow dark, as if we could reach out and touch them.
+Some were astonishingly long. One surviving Chinese landscape handscroll in the Metropolitan Museum of Art stretches for more than **seventy feet**.
 
-An ink painting does not always use ink alone. Artists may add touches of blue, green, red, or earthy yellow. Still, ink often does the biggest jobs: giving a mountain weight, showing water's direction, and making a rainy day feel different from a clear one.
-
----
-
-## A Handscroll Opens Like a Journey
-
-Some landscape paintings are not large pictures hung on walls. They are long handscrolls kept rolled up. A viewer sits at a table and slowly opens the scroll from right to left, seeing only a short section at a time. First comes a bridge. A village may appear next. Farther on, a mountain rises.
-
-Your eyes become a tiny traveler following rivers and paths through the picture. Because the whole painting never appears at once, the artist can hide what waits around the bend. You keep wondering: where will this road go next?
+So looking at it was not quite like standing in front of a picture. It was more like going somewhere.
 
 ---
 
-## Empty Paper Can Become Water
+## A Mountain Made of Black Ink
 
-A tiny boat sits on the page, but the artist has not filled the space around it with blue waves. The open paper still feels like water because the boat, a distant shore, and a few ripples give us clues. Elsewhere, open space may become mist, sky, or a great distance between mountains.
+As the scroll opens, you notice something else. Where are all the colors? The mountains may be gray and black. The trees are dark strokes. Mist seems to float between them. Yet the scene does not feel empty.
 
-The artist did not forget to paint those places. Open space gives the mountains and trees room to breathe, and it gives part of the picture to our imagination. With only a few marks, the boat gains a whole river and the mountain gains room to disappear into clouds.
+Chinese painters discovered that black ink did not have to look like one flat black color. A brush full of dark ink could make a heavy rock or a tree close to you. Add water, and the same ink could become pale and soft. A distant mountain might almost disappear into gray.
+
+A wet brush could make ink spread gently into the paper. A drier brush could skip across the surface, leaving rough marks that felt like cracked rock or old bark.
+
+Chinese artists even had an expression often translated as **“ink has five colors.”** The ink was still black. But in a painter’s hand, black could become dark, pale, wet, dry, soft, sharp, near, or far.
+
+It could even become weather.
+
+---
+
+## Wait—Where Is the River?
+
+You unroll another section. There is a tiny boat. There is a fisherman sitting inside it. There are reeds along the bank. But something is missing. **Where is the water?**
+
+Much of the river may be nothing more than blank paper. The painter has not forgotten it.
+
+The boat tells you there is water beneath it. The banks tell you where the river runs. Perhaps two or three thin ripples give one more clue. Your eyes do the rest.
+
+Chinese painters often used unpainted space to suggest water. Blank areas could also become sky, mist, snow, or a great distance between mountains.
+
+That means part of the painting exists only in your imagination. The artist paints the boat. **You find the river.**
+
+---
+
+## What Is Around the Next Bend?
+
+Now the scroll begins to feel different from an ordinary picture. You cannot jump ahead. A mountain blocks the path. Then you unroll farther, and the mountain slips behind you. A river bends out of sight.
+
+What is around the bend? More paper opens. Perhaps there is a village. Perhaps another mountain. Perhaps only mist.
+
+The person viewing the scroll controls how quickly this world appears. One part can be rolled away while another part is opened, so the landscape seems to change as you travel through it.
+
+And the painter does not have to show every leaf, every wave, or every stone. Sometimes a few dark strokes are enough. Sometimes the pale blur of a mountain is enough. Sometimes nothing at all is enough.
+
+That is one of the surprising pleasures of Chinese ink painting. The picture is not simply asking: **“Does this look exactly like a mountain?”**
+
+It is also asking: **“Can you feel how far away the mountain is?” “Can you imagine the mist?” “Do you want to know what is around the next bend?”**
+
+And suddenly, a roll of paper, a brush, some water, and black ink have become much bigger than they seemed. They have become an entire journey.

@@ -142,6 +142,8 @@ caption_en: Thousands of clay soldiers and horses were buried near Qin Shi Huang
 
 很多世纪以后，农民打井时挖到陶片，人们才发现了兵马俑。英文里的 *terracotta*，就是经过塑形、再用火烧硬的陶土，所以兵马俑也叫 *the Terracotta Army*。研究过去的人后来找到成千上万件陶土士兵、马和战车。许多士兵的脸看起来各不相同，好像一支真正的军队忽然停住了脚步。
 
+想仔细看看那几千张不同的脸到底是不是照着真人做的吗？可以继续读[《兵马俑：八千张脸，八千幅肖像吗？》](../../art/terracotta-warriors/index.html)
+
 兵马俑站在秦始皇主墓室附近的坑里，并不在墓室里面。考古人员还没有打开那间主墓室，所以没有人确切知道里面有什么。
 
 修建陵墓的人把一支陶土大军放在秦始皇身边。两千多年以后，这支军队让我们看见秦朝士兵的铠甲、武器和战车是什么样子。
@@ -152,6 +154,8 @@ Qin Shi Huang wanted to live forever, and he sent people to search for medicines
 Qin Shi Huang began preparing his tomb long before he died. Beside it, an army made of clay stood silently underground.
 
 Many centuries later, farmers digging a well found pieces of clay. *Terracotta* is clay that has been shaped and baked until it becomes hard. That is why the figures are called the Terracotta Army. People studying the past later uncovered thousands of clay soldiers, horses, and war chariots. Many faces look different, as if a real army had suddenly stopped in its tracks.
+
+Want to look more closely at those thousands of different faces? Read [“Terracotta Warriors: Are 8,000 Faces 8,000 Portraits?”](../../art/terracotta-warriors/index.html)
 
 The Terracotta Army stands in pits near the emperor's main burial room, not inside it. Experts who study the past have not opened that room, so no one knows exactly what is inside.
 

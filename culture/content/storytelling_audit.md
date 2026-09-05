@@ -32,7 +32,6 @@ Agree. These 64 articles are in good shape for translation.
 - **paper-cutting**: ✅ Fair. More performance, less craft explanation.
 - **peking-opera**: ✅ Fair. Open with a painted face appearing on stage.
 - **chinese-knot**: ✅ Fair. One knot being tied is more gripping than listing types.
-- **craftsmanship-spirit**: ⚠️ Partial. This is meant as a reflective essay, not a story. It works as-is for older kids (难度中等). Don't force a fake scene.
 - **dragon-phoenix**: ✅ Fair. Heavy on symbolism, light on momentum.
 - **new-year-greeting**: ✅ Fair. Good info, could use a child's POV on receiving red envelope.
 - **weiqi**: ✅ Fair. Philosophy-heavy. Lead with a stone clicking on the board.

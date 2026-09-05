@@ -11,8 +11,6 @@ const slugs = [
   "cuju",
   "polo",
   "family-titles",
-  "craftsmanship-spirit",
-  "idiom-spirit",
 ];
 
 for (const slug of slugs) {

@@ -7,8 +7,6 @@ const slugs = [
   "bianzhong",
   "calligraphy",
   "porcelain",
-  "guqin",
-  "pipa",
   "erhu",
   "dunhuang",
   "terracotta-warriors",

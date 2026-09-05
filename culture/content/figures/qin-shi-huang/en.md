@@ -62,6 +62,8 @@ Qin Shi Huang began preparing his tomb long before he died. Beside it, an army m
 
 Many centuries later, farmers digging a well found pieces of clay. *Terracotta* is clay that has been shaped and baked until it becomes hard. That is why the figures are called the Terracotta Army. People studying the past later uncovered thousands of clay soldiers, horses, and war chariots. Many faces look different, as if a real army had suddenly stopped in its tracks.
 
+Want to look more closely at those thousands of different faces? Read [“Terracotta Warriors: Are 8,000 Faces 8,000 Portraits?”](../../art/terracotta-warriors/index.html)
+
 The Terracotta Army stands in pits near the emperor's main burial room, not inside it. Experts who study the past have not opened that room, so no one knows exactly what is inside.
 
 The people who built the tomb placed a clay army beside Qin Shi Huang. More than two thousand years later, it helps us see the armor, weapons, and war chariots of his time.

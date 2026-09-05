@@ -1,33 +1,57 @@
 > Difficulty: Easy
 
-# There Is No Horse on Stage—So Why Can We See One?
+# There Is No Horse on Stage—So Why Can You See One?
 
-## One Whip Brings a Horse Onstage
+Imagine watching Peking opera for the first time. The stage looks surprisingly empty. There is no forest, no mountain road, and certainly no horse.
 
-There is no horse, no cart, and no real mountain road onstage. The actor holds only a decorated riding whip. He swings one leg over an invisible saddle, bounces with the horse's steps, and suddenly pulls back on the reins. The audience knows at once: the horse has stopped.
+Then an actor walks onstage holding a decorated riding whip. He lifts one leg as if stepping into a stirrup, takes hold of invisible reins, and begins to move. His body rises and falls. He leans forward as the pace quickens, then suddenly pulls back.
 
-Peking opera, or *jīngjù*, does not bring every object onto the stage. One table may become a desk, a restaurant table, or even a high tower. An actor can circle the stage to show that a long journey has passed. Movement, music, and the audience's imagination fill the open space.
+Somehow, you can see the horse. But there is still no horse onstage.
 
----
+## The Stage Gives You Clues
 
-## Face Colors Give Clues
+Peking opera does not always try to make the stage look like the real world. Instead, it gives the audience clues and lets imagination do the rest.
 
-Before the show, a performer sits at a mirror and paints red, black, and white shapes across his face. These bold designs, called *liǎnpǔ*, help people in the back row see a character's personality. Red often suggests courage and loyalty. Black may look firm and honest. Large areas of white can hint that a character is clever, tricky, or suspicious.
+A riding whip tells you that a character is on horseback. An oar can turn an empty stage into a river. An actor can walk in a circle and show that a long journey has passed. Even a simple table and two chairs can help suggest different places depending on how they are arranged.
 
-But face paint is not a simple code in which every red face is good and every white face is bad. A color can mean different things inside different designs. Experienced viewers also watch the slant of the brows, the lines around the eyes, and the small pictures on the forehead.
-
----
-
-## The Drums Sound—and the Action Speeds Up
-
-Peking opera is more than singing. Performers sing and speak, but they also act with their hands, eyes, and feet. Some tumble, spin weapons, or race through fast stage fights.
-
-The musicians beside the stage help every moment. String instruments carry the songs. Gongs, drums, and cymbals set the pace of the action. *Clang!* A general strikes a grand pose. *Boom-boom-boom!* Two characters begin a chase. The actors listen closely so their feet and weapons land exactly with the music.
+The audience learns to read these clues. Once you know the rules, an almost empty stage can become a road, a boat, a palace, or a battlefield.
 
 ---
 
-## Many Theater Traditions Met in Beijing
+## Faces Give Clues Too
 
-In the late 1700s, theater groups from Anhui came to perform in Beijing. Their music and acting met traditions from Hubei, Shaanxi, Kunqu opera, and other forms of theater. Over many years, performers, musicians, and audiences helped those sounds and movements grow into Peking opera.
+Then another performer enters, and before the character even speaks, you notice the face.
 
-Peking opera is still changing. Performers tell stories that are hundreds of years old, but they also create new shows. Some stages keep traditional scenery; others add new lighting or subtitles. Yet when an actor raises a riding whip and begins to bounce, the audience can still see that invisible horse run.
+Some Peking opera roles wear elaborate painted designs called **lianpu**, or facial makeup. Strong colors, lines, and patterns can give the audience clues about a character’s personality and identity. Costumes and headwear can offer clues too.
+
+But face paint is not a simple code where one color always means exactly one thing. The whole design matters, and many Peking opera characters do not wear painted faces at all.
+
+The point is the same as with the invisible horse: the stage gives you information before anyone has to explain it.
+
+---
+
+## Listen to the Horse
+
+Now the rider moves again, but this time listen.
+
+The percussion speeds up, and suddenly the invisible horse seems to run faster. A sharp beat marks a turn. The rider pulls back, the sound changes, and the horse seems to stop.
+
+Music in Peking opera is not simply something playing behind the actors. It helps set the pace, create the mood, and guide the action. The performers also use carefully practiced movements of the hands, eyes, body, and feet. Even a fast fight that looks wild has been rehearsed so that movement and music fit together.
+
+This is why a horse can appear without ever walking onto the stage. The whip gives you a clue. The actor gives the horse movement. The musicians give it speed. And your imagination finishes the animal.
+
+### Why Not Use a Real Horse?
+
+Of course, a theater could build a realistic road, bring out a model horse, or paint every mountain in the distance. Peking opera often chooses not to.
+
+With fewer objects onstage, one small prop can do a surprising amount of work. A whip can become a horse. An oar can create a boat. Empty space can stretch into a long road.
+
+The audience is not just watching. It is helping to build the world of the story. That is part of what makes Peking opera feel so different from theater that tries to make everything look real.
+
+---
+
+## How Did Peking Opera Begin?
+
+Peking opera grew slowly rather than being invented by one person. In 1790, several opera troupes from Anhui came to Beijing to perform. Over the following decades, their performances mixed with other Chinese opera traditions and local music. By the middle of the nineteenth century, the form we now call **Peking opera**, or **jingju**, had taken recognizable shape.
+
+More than two hundred years later, its stage can still perform the same little piece of magic. An actor raises a whip. The drums begin. There is no horse. And yet, somehow, you see one.

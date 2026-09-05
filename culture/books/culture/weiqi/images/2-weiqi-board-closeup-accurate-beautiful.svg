@@ -1,0 +1,194 @@
+<svg width="1260" height="1260" viewBox="0 0 1260 1260" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="bg" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(630 120) rotate(90) scale(1220 1320)">
+      <stop offset="0" stop-color="#FBF3E0"/>
+      <stop offset="1" stop-color="#E9D6B1"/>
+    </radialGradient>
+    <linearGradient id="boardTop" x1="220" y1="100" x2="1040" y2="1160" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#E4B86A"/>
+      <stop offset="0.5" stop-color="#D8A553"/>
+      <stop offset="1" stop-color="#C88E43"/>
+    </linearGradient>
+    <linearGradient id="boardEdge" x1="190" y1="90" x2="1040" y2="1170" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#B67834"/>
+      <stop offset="1" stop-color="#8F5B22"/>
+    </linearGradient>
+    <radialGradient id="blackStone" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(0.3 -0.35) scale(1.2)">
+      <stop offset="0" stop-color="#6D7780"/>
+      <stop offset="0.38" stop-color="#2C3540"/>
+      <stop offset="1" stop-color="#131920"/>
+    </radialGradient>
+    <radialGradient id="whiteStone" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(0.25 -0.3) scale(1.1)">
+      <stop offset="0" stop-color="#FFFFFF"/>
+      <stop offset="0.55" stop-color="#F5F1E7"/>
+      <stop offset="1" stop-color="#D6D0C7"/>
+    </radialGradient>
+    <filter id="boardShadow" x="140" y="70" width="980" height="1100" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="18" stdDeviation="22" flood-color="#8B632D" flood-opacity="0.28"/>
+    </filter>
+    <filter id="stoneShadow" x="-40%" y="-40%" width="180%" height="200%" filterUnits="objectBoundingBox" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="7" stdDeviation="5" flood-color="#5F3D1A" flood-opacity="0.26"/>
+    </filter>
+  </defs>
+
+  <rect width="1260" height="1260" fill="url(#bg)"/>
+
+  <g opacity="0.12">
+    <circle cx="1130" cy="120" r="150" fill="#8FA84D"/>
+    <circle cx="160" cy="190" r="120" fill="#F6EAD0"/>
+  </g>
+
+  <g filter="url(#boardShadow)">
+    <rect x="165" y="115" width="930" height="1030" rx="38" fill="url(#boardEdge)"/>
+    <rect x="195" y="85" width="870" height="1030" rx="34" fill="url(#boardTop)"/>
+    <rect x="231" y="121" width="798" height="958" rx="10" fill="none" stroke="#7F5324" stroke-width="3.4"/>
+  </g>
+
+  <!-- soft wood grain -->
+  <g opacity="0.12" stroke="#A97233" stroke-width="3">
+    <path d="M250 170C470 146 780 198 1010 162"/>
+    <path d="M246 254C530 228 760 286 1011 248"/>
+    <path d="M245 346C540 324 760 374 1014 342"/>
+    <path d="M244 454C514 424 781 482 1012 448"/>
+    <path d="M243 563C520 532 780 596 1011 560"/>
+    <path d="M246 674C548 642 788 708 1014 672"/>
+    <path d="M245 785C524 754 782 815 1015 782"/>
+    <path d="M246 895C540 866 786 927 1011 892"/>
+    <path d="M248 1002C512 980 790 1024 1008 994"/>
+  </g>
+
+  <!-- Correct 19x19 grid -->
+  <g stroke="#533718" stroke-width="2.6" stroke-linecap="round">
+    <!-- vertical -->
+    <line x1="289" y1="179" x2="289" y2="1021"/>
+    <line x1="335.75" y1="179" x2="335.75" y2="1021"/>
+    <line x1="382.5" y1="179" x2="382.5" y2="1021"/>
+    <line x1="429.25" y1="179" x2="429.25" y2="1021"/>
+    <line x1="476" y1="179" x2="476" y2="1021"/>
+    <line x1="522.75" y1="179" x2="522.75" y2="1021"/>
+    <line x1="569.5" y1="179" x2="569.5" y2="1021"/>
+    <line x1="616.25" y1="179" x2="616.25" y2="1021"/>
+    <line x1="663" y1="179" x2="663" y2="1021"/>
+    <line x1="709.75" y1="179" x2="709.75" y2="1021"/>
+    <line x1="756.5" y1="179" x2="756.5" y2="1021"/>
+    <line x1="803.25" y1="179" x2="803.25" y2="1021"/>
+    <line x1="850" y1="179" x2="850" y2="1021"/>
+    <line x1="896.75" y1="179" x2="896.75" y2="1021"/>
+    <line x1="943.5" y1="179" x2="943.5" y2="1021"/>
+    <line x1="990.25" y1="179" x2="990.25" y2="1021"/>
+    <line x1="1037" y1="179" x2="1037" y2="1021"/>
+    <line x1="1083.75" y1="179" x2="1083.75" y2="1021"/>
+    <line x1="1130.5" y1="179" x2="1130.5" y2="1021"/>
+    <!-- horizontal -->
+    <line x1="289" y1="179" x2="1130.5" y2="179"/>
+    <line x1="289" y1="225.75" x2="1130.5" y2="225.75"/>
+    <line x1="289" y1="272.5" x2="1130.5" y2="272.5"/>
+    <line x1="289" y1="319.25" x2="1130.5" y2="319.25"/>
+    <line x1="289" y1="366" x2="1130.5" y2="366"/>
+    <line x1="289" y1="412.75" x2="1130.5" y2="412.75"/>
+    <line x1="289" y1="459.5" x2="1130.5" y2="459.5"/>
+    <line x1="289" y1="506.25" x2="1130.5" y2="506.25"/>
+    <line x1="289" y1="553" x2="1130.5" y2="553"/>
+    <line x1="289" y1="599.75" x2="1130.5" y2="599.75"/>
+    <line x1="289" y1="646.5" x2="1130.5" y2="646.5"/>
+    <line x1="289" y1="693.25" x2="1130.5" y2="693.25"/>
+    <line x1="289" y1="740" x2="1130.5" y2="740"/>
+    <line x1="289" y1="786.75" x2="1130.5" y2="786.75"/>
+    <line x1="289" y1="833.5" x2="1130.5" y2="833.5"/>
+    <line x1="289" y1="880.25" x2="1130.5" y2="880.25"/>
+    <line x1="289" y1="927" x2="1130.5" y2="927"/>
+    <line x1="289" y1="973.75" x2="1130.5" y2="973.75"/>
+    <line x1="289" y1="1020.5" x2="1130.5" y2="1020.5"/>
+  </g>
+
+  <!-- star points -->
+  <g fill="#533718">
+    <circle cx="476" cy="366" r="5.6"/>
+    <circle cx="709.75" cy="366" r="5.6"/>
+    <circle cx="943.5" cy="366" r="5.6"/>
+    <circle cx="476" cy="599.75" r="5.6"/>
+    <circle cx="709.75" cy="599.75" r="5.6"/>
+    <circle cx="943.5" cy="599.75" r="5.6"/>
+    <circle cx="476" cy="833.5" r="5.6"/>
+    <circle cx="709.75" cy="833.5" r="5.6"/>
+    <circle cx="943.5" cy="833.5" r="5.6"/>
+  </g>
+
+  <!-- stone bowls -->
+  <g>
+    <ellipse cx="138" cy="191" rx="96" ry="146" fill="#7E4D22"/>
+    <ellipse cx="139" cy="190" rx="84" ry="134" fill="#9A6530"/>
+    <ellipse cx="140" cy="195" rx="72" ry="120" fill="#6E451F"/>
+    <g fill="#F5F2EA" filter="url(#stoneShadow)">
+      <circle cx="92" cy="128" r="23"/>
+      <circle cx="136" cy="119" r="23"/>
+      <circle cx="181" cy="128" r="23"/>
+      <circle cx="104" cy="172" r="23"/>
+      <circle cx="148" cy="163" r="23"/>
+      <circle cx="192" cy="172" r="23"/>
+      <circle cx="115" cy="216" r="23"/>
+      <circle cx="161" cy="209" r="23"/>
+    </g>
+
+    <ellipse cx="145" cy="715" rx="96" ry="146" fill="#7E4D22"/>
+    <ellipse cx="146" cy="714" rx="84" ry="134" fill="#9A6530"/>
+    <ellipse cx="147" cy="719" rx="72" ry="120" fill="#6E451F"/>
+    <g fill="#1D242C" filter="url(#stoneShadow)">
+      <circle cx="95" cy="654" r="23"/>
+      <circle cx="139" cy="646" r="23"/>
+      <circle cx="184" cy="654" r="23"/>
+      <circle cx="108" cy="698" r="23"/>
+      <circle cx="152" cy="690" r="23"/>
+      <circle cx="196" cy="698" r="23"/>
+      <circle cx="119" cy="742" r="23"/>
+      <circle cx="165" cy="736" r="23"/>
+    </g>
+  </g>
+
+  <!-- decorative leaves -->
+  <g opacity="0.88">
+    <path d="M1089 70C1109 47 1144 45 1168 59C1148 82 1115 85 1089 70Z" fill="#8AA64C"/>
+    <path d="M1139 82C1157 57 1190 50 1213 64C1197 89 1166 96 1139 82Z" fill="#95AF59"/>
+    <path d="M1114 122C1128 95 1160 80 1189 87C1178 115 1150 132 1114 122Z" fill="#7B9841"/>
+    <path d="M1171 123C1185 96 1218 83 1244 93C1231 119 1206 136 1171 123Z" fill="#8AA64C"/>
+  </g>
+
+  <!-- stones on intersections -->
+  <g filter="url(#stoneShadow)">
+    <g fill="url(#blackStone)">
+      <circle cx="616.25" cy="459.5" r="22.5"/>
+      <circle cx="709.75" cy="459.5" r="22.5"/>
+      <circle cx="803.25" cy="459.5" r="22.5"/>
+      <circle cx="850" cy="459.5" r="22.5"/>
+
+      <circle cx="569.5" cy="506.25" r="22.5"/>
+      <circle cx="522.75" cy="553" r="22.5"/>
+      <circle cx="522.75" cy="646.5" r="22.5"/>
+      <circle cx="522.75" cy="693.25" r="22.5"/>
+      <circle cx="569.5" cy="740" r="22.5"/>
+
+      <circle cx="896.75" cy="553" r="22.5"/>
+      <circle cx="896.75" cy="599.75" r="22.5"/>
+      <circle cx="896.75" cy="646.5" r="22.5"/>
+      <circle cx="896.75" cy="693.25" r="22.5"/>
+      <circle cx="896.75" cy="740" r="22.5"/>
+
+      <circle cx="616.25" cy="786.75" r="22.5"/>
+      <circle cx="709.75" cy="786.75" r="22.5"/>
+      <circle cx="803.25" cy="786.75" r="22.5"/>
+      <circle cx="850" cy="786.75" r="22.5"/>
+    </g>
+    <g fill="url(#whiteStone)">
+      <circle cx="663" cy="599.75" r="22.5"/>
+      <circle cx="756.5" cy="599.75" r="22.5"/>
+      <circle cx="663" cy="693.25" r="22.5"/>
+      <circle cx="756.5" cy="693.25" r="22.5"/>
+      <circle cx="616.25" cy="646.5" r="22.5"/>
+      <circle cx="709.75" cy="646.5" r="22.5"/>
+      <circle cx="803.25" cy="646.5" r="22.5"/>
+      <circle cx="616.25" cy="740" r="22.5"/>
+      <circle cx="709.75" cy="740" r="22.5"/>
+      <circle cx="803.25" cy="740" r="22.5"/>
+    </g>
+  </g>
+</svg>

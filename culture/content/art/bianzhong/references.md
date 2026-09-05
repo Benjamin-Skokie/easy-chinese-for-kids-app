@@ -2,157 +2,87 @@
 
 This file is for editorial research and does not render on the website.
 
-## Excavation, date, arrangement, and inscriptions
+## 1. The complete bell set, excavation, scale, and inscriptions
 
-Source: Hubei Provincial Museum, “曾侯乙编钟”
+Source: Hubei Provincial Museum, “曾侯乙编钟” / “Chime-bells from the Tomb of Marquis Yi of Zeng”
 URL: https://m-www.hbww.org.cn/p/4695.html
-Accessed: 2026-08-21
+Accessed: 2026-09-04
 
 Supports:
 
-- The bells were excavated in 1978 from the early Warring States tomb of Marquis Yi of Zeng in Suizhou, Hubei.
-- The set has 65 bells in eight groups on three tiers: 19 *niuzhong*, 45 *yongzhong*, and one *bo* bell given by King Hui of Chu.
-- Bells, rack, and hooks carry 3,755 characters recording numbers, events, pitch labels, and music theory.
-- Each bell has two pitches separated by a major or minor third; the set spans about five and a half octaves.
+- The bells were excavated in 1978 from the tomb of Marquis Yi of Zeng in Suizhou, Hubei.
+- The ensemble contains sixty-five bells arranged in eight groups on a three-level wooden-and-bronze rack.
+- The bells, rack, and hooks carry 3,755 inscribed characters concerning numbering, events, pitch labels, and musical theory.
+- Each bell can produce two pitches; the complete set spans five and a half octaves.
 
 Editorial boundary:
 
-- The story uses the museum’s verified count and does not call the bells China’s only set, the world’s first orchestra, or a modern symphony orchestra.
-- Exact modern pitch equivalences and superlative claims are omitted because they require more qualification than this article can provide.
+- The child-facing story rounds “five and a half octaves” to “more than five octaves.”
+- The story calls the owner a ruler remembered as Marquis Yi of Zeng and does not invent a biography or an ancient performance scene.
 
-Source: Hubei Provincial Museum, “Introduction to Tomb of Marquis Yi of Zeng”
-URL: https://hbww.org.cn/permanentexhibition/p/5200.html
-Accessed: 2026-08-21
+## 2. Age, dual pitches, inscriptions, and early musical theory
+
+Source: UNESCO Memory of the World, “The Suizhou Bianzhong of Marquis Yi of Zeng”
+URL: https://www.unesco.org/en/memory-world/suizhou-bianzhong-marquis-yi-zeng
+Accessed: 2026-09-04
 
 Supports:
 
-- The tomb is at Leigudun in the former Sui County, present-day Suizhou.
-- Artifact inscriptions and skeletal study support identifying the owner as Marquis Yi of Zeng.
-- The Chu bell inscription names King Hui of Chu and his fifty-sixth regnal year, equivalent to 433 BCE.
+- The bells are approximately 2,400 years old and were discovered in 1978.
+- The set demonstrates a “one bell with two tones” system.
+- Its 3,755 characters preserve pitch information and early musical theory.
 
 Editorial boundary:
 
-- The inscription supports the date and political connection; it does not preserve a complete burial scene, delivery story, or dialogue.
+- The inscriptions are musical documents and labels, not a surviving song or a complete step-by-step performance score.
+- UNESCO registered the collection in the Memory of the World International Register in 2025; that modern registration date is not part of the ancient story.
 
-## Dual pitches and acoustics
+## 3. Bell shape, striking positions, and vibration
 
-Source: Hubei Provincial Department of Culture and Tourism, “曾侯乙编钟”
-URL: https://wlt.hubei.gov.cn/bmdt/ztzl/zshb/201912/t20191226_1799618.shtml
-Accessed: 2026-08-21
+Source: Smithsonian Music / National Museum of Asian Art, “In Sync: Ancient Chinese Bronze Bells at the Smithsonian”
+URL: https://music.si.edu/story/sync-ancient-chinese-bronze-bells-smithsonian
+Accessed: 2026-09-04
 
 Supports:
 
-- The lens-like “joined roof-tile” bell shape allows the center and side striking areas to produce two notes.
-- The inscriptions include pitch names, register information, and relationships among regional musical terms.
+- Some ancient Chinese music bells have a lens-shaped rather than circular cross-section.
+- A center strike near the rim produces one tone, while a side strike produces another.
+- The two strikes excite different vibration patterns, producing lower and higher tones.
 
 Editorial boundary:
 
-- “One bell, two tones” means two designed striking areas, not that every point on a bell yields a distinct usable note.
-- The inscriptions are not described as a modern score.
+- “Two notes” means two deliberately chosen striking areas, not that any two random places on a bell produce useful musical pitches.
+- The simplified “two curved roof tiles” comparison describes the cross-section for children; it is not a technical manufacturing diagram.
 
-Source: T. D. Rossing et al., “A theoretical study of the vibration and acoustics of ancient Chinese bells,” *Journal of the Acoustical Society of America* 114 (2003)
-URL: https://pubmed.ncbi.nlm.nih.gov/14514215/
-Accessed: 2026-08-21
-
-Supports:
-
-- A lens-shaped cross-section can support two separately excited pitches and faster decay than a circular bell.
-- The two pitches commonly form a major or minor third.
-
-Editorial boundary:
-
-- The paper uses a simplified theoretical model. The story therefore says shape is central but also names thickness, material, and striking point rather than reducing the behavior to shape alone.
-
-Source: Smithsonian National Museum of Asian Art, “Bells of Ancient China and Beyond”
-URL: https://music.si.edu/spotlight/fsg-bells
-Accessed: 2026-08-21
-
-Supports:
-
-- Musicians and foundry specialists worked together to produce tuned sets of oval bells with intentional dual pitches.
-
-Editorial boundary:
-
-- The source supports collaborative technical knowledge but does not provide the names or conversations of individual workers; none are invented.
-
-## Ritual, feasting, and actual musical use
-
-Source: Hubei Provincial Museum, “国君之礼 旷世之美——曾侯乙墓出土漆器述略”
-URL: https://www.hbww.org.cn/hhfz70n/p/9135.html
-Accessed: 2026-08-21
-
-Supports:
-
-- The central chamber held bells, stone chimes, drums, *se*, mouth organs, panpipes, and flutes and is interpreted as a large ensemble for rituals and banquets.
-- The eastern chamber contained another, smaller group of instruments near the main coffin.
-
-Editorial boundary:
-
-- Chamber layout supports interpretation of different musical settings, but it does not preserve the exact program of any ancient performance.
-- The article describes bells as both ritual/status objects and playable instruments, not as decoration only.
-
-Source: Adam Schwartz, “The Inscriptions of Two Zeng Bronze Bell Sets and the Utility of Inscriptional Narratives in the Chunqiu Period,” *Early China* (2026)
-URL: https://www.cambridge.org/core/journals/early-china/article/inscriptions-of-two-zeng-bronze-bell-sets-and-the-utility-of-inscriptional-narratives-in-the-chunqiu-period/7163E38513DB81C1FFEDB1B801565B0B
-Accessed: 2026-08-21
-
-Supports:
-
-- Inscribed Zeng bells were used in ancestral worship and feasting contexts, and the Marquis Yi set was produced for entertaining guests at feasts.
-- Bell inscriptions could make political statements as well as identify ritual use.
-
-Editorial boundary:
-
-- The article avoids turning “ritual” and “performance” into opposites and does not call the ensemble emperor-only music.
-
-## Casting, tuning, replicas, and conservation
-
-Source: Liu Yutang et al., “曾侯乙编钟与中国古代艺术和科技成就,” *Wuhan University Journal (Humanities)* 59.5 (2006)
-URL: https://www.wujhss.whu.edu.cn/d/file/rwb/dqml/2017-09-12/f3530bf9d2b96707f6bf8dc8f580e30a.pdf
-Accessed: 2026-08-21
-
-Supports:
-
-- Complex sectional clay-mold assembly, geometric planning, wall thickness, alloy, and inner bell structures contributed to acoustic performance.
-- The manufacture of a *yongzhong* required many coordinated mold and core pieces.
-
-Editorial boundary:
-
-- Ancient workshop speech and individual biographies are unknown. The story explains tasks and collaboration without inventing named masters or claiming that makers used modern frequency instruments.
-- Specific reconstruction hypotheses about every tuning step remain scholarly interpretations and are described cautiously.
+## 4. Replica research and modern performances
 
 Source: Hubei Provincial Museum, “薪火相传、攻坚克难，保护荆楚文物——湖北省博物馆文物保护七十年记”
 URL: https://www.hbww.org.cn/hhfz70n/p/9140.html
-Accessed: 2026-08-21
+Accessed: 2026-09-04
+
+Source: Hubei Provincial Museum, “Chime-bells Orchestra”
+URL: https://www.hbww.org.cn/chimebells/p/12214.html
+Accessed: 2026-09-04
 
 Supports:
 
-- A multi-institution project studied alloy, metallurgy, geometry, sound production, and frequency to produce a replica set in the early 1980s.
+- Researchers studied the original bells' casting process, alloy, metal structure, geometry, sound production, and frequencies while creating a replica set.
+- A full replica set was completed in the early 1980s.
+- The Hubei Provincial Museum's resident performances center on replica bells from the tomb of Marquis Yi of Zeng.
 
 Editorial boundary:
 
-- A replica is a research-based modern instrument, not the untouched ancient object and not a guarantee that modern arrangements reproduce a specific Warring States performance.
+- The replicas are research-based modern instruments, not the ancient originals.
+- A modern museum performance does not reproduce a known ancient composition merely because it uses replica bells.
 
-Source: Hubei Provincial Museum, “编钟乐团大事记”
-URL: https://m-www.hbww.org.cn/bzyt/p/9067.html
-Accessed: 2026-08-21
+## Image notes
 
-Supports:
+- `2-two-notes-bell-shape.webp` is a modern AI-generated teaching illustration of two striking positions. It is not a measured diagram of a specific original bell.
+- `1-tomb-bell-chamber.webp` is an imaginative reconstruction of the discovery. It is not an excavation photograph, and its arrangement and lighting should not be treated as archaeological documentation.
+- `3-bell-inscriptions-closeup.webp` is a modern AI-generated teaching illustration. Its characters are not an accurate transcription of the Marquis Yi inscriptions, and the depicted person touching the bell does not model museum conservation practice.
 
-- The museum’s public performances and touring concerts use replica bells.
+## 2026-09-04 child-facing revision
 
-Editorial boundary:
-
-- The article never tells readers that a contemporary concert is the sound of one preserved ancient composition or that the original bells are routinely played.
-
-## Image and activity boundaries
-
-- All three images are retained as modern illustrations, not excavation photographs, measured archaeological drawings, or photographs of original-bell performances.
-- The excavation scene artistically reconstructs the rack, workers, lighting, and water conditions.
-- The dual-tone image is a teaching diagram; children are explicitly told never to strike museum objects.
-- The inscription image contains invented-looking characters rather than a verified transcription, and its touching gesture conflicts with modern conservation practice; the caption states both limitations.
-- The household-bowl observation requires adult supervision, a stable metal bowl, and a wooden spoon. It excludes glass, pottery, unknown metals, and any attempt to reproduce ancient pitch claims.
-
-## 2026 child-facing revision
-
-- The main article now follows four concrete ideas: one bell can sound two notes; sixty-five bells were found in Marquis Yi's tomb; inscriptions give musical clues; modern performances use replicas.
-- The former household experiment, long title explanations, political interpretation, and repeated cautions were removed from the children's narrative. The evidence and image limits remain documented above.
+- The article now follows one connected mystery: how one bell makes two notes, how sixty-five bells expand that problem, how inscriptions help identify the sounds, and why modern listeners usually hear replicas.
+- The supplied bilingual wording is retained while unnecessary single-line breaks are combined for a more compact page.
+- All three existing illustrations remain because they match the revised sections; no new image was needed.

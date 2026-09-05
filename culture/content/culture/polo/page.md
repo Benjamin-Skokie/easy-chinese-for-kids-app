@@ -16,96 +16,93 @@ title_en: Polo: A Favorite Horseback Game in the Tang Dynasty
 [section]
 page: 1
 layout: text-wrap-image
-heading_zh: 把打球搬到马背上，速度一下子就上来了
-heading_en: Put Ball Play on Horseback, and Everything Speeds Up
+heading_zh: 如果把球赛搬到马背上呢？
+heading_en: What If You Put a Ball Game on a Horse?
 image: 1-tang-polo-match.webp
 caption_zh: 马球要一边控马，一边追球，一边挥杖，看上去又快又难。
 caption_en: Polo asks riders to guide a horse, chase a ball, and swing a mallet all at once.
 [zh]
-你可以把马球想成一种骑在马上打的球赛。骑手一边让马往前冲，一边低下身子去追地上的球，再用长长的球杖把球打出去。
+想象一下，你拿着一根长长的球杖，想把地上的小球打出去。现在，再给你加一匹正在奔跑的马。事情一下子就难多了。球在滚，马在跑。骑手既要控制马的方向，又要保持平衡，还得盯住地上的小球，找准机会挥出球杖。
 
-光是站在旁边看，就会觉得很快。马在跑，球在滚，骑手还得随时转向。比起在地上打球，放到马背上以后，难度一下子就高了很多。
+大约一千三百年前，唐朝人就特别喜欢这种又快又刺激的马上游戏——马球。马球并不是在中国最早出现的。它从中国西边的亚洲地区传来。那时候，各地的人来来往往，衣服、音乐、食物和各种新鲜玩意儿都会跟着旅行。
 
-在[[唐朝|Tang dynasty]]，马球特别受欢迎。很多人一看到这种比赛，就会觉得它又热闹、又勇敢、又有一点吓人。
+游戏当然也会。马球来到中国以后，很快就找到了很多喜欢它的人。
 [/zh]
 [en]
-You can think of polo as a ball game played on horseback. A rider sends the horse forward, bends down to follow the ball on the ground, and then swings a long mallet to knock it away.
+Imagine trying to hit a small ball with a long stick. Now put yourself on a running horse. Suddenly, everything becomes harder. The ball is rolling. The horse is moving. You have to steer, stay balanced, watch the ball, and swing the mallet—all at the same time.
 
-Even from the side, the game looks fast. The horses are running. The ball is rolling. The riders have to turn quickly and stay balanced at the same time. Once ball play moves onto a horse, it becomes much harder.
+Around 1,300 years ago, people in Tang China loved this fast horseback game. It was polo. The game had traveled into China from lands farther west in Asia. The Tang world was full of travelers, merchants, music, clothing, and new ideas arriving from different places. Games could travel too.
 
-In the [[Tang dynasty]], polo became especially popular. To many people, it looked lively, brave, and just a little frightening.
+And polo found plenty of fans.
 [/en]
 [/section]
 
 [section]
 page: 2
 layout: text-wrap-image
-heading_zh: 唐朝的女人，也会骑马上场
-heading_en: Women in the Tang Dynasty Played Too
+heading_zh: 女子也骑马上场
+heading_en: Even the Women Joined the Game
 image: 2-tang-women-polo.webp
-caption_zh: 唐朝留下来的文物里，能看到女子骑马打球的样子。
-caption_en: Objects from the Tang dynasty still show women riding and playing polo.
+caption_zh: 唐朝留下来的陶俑里，能看到女子穿着骑装、骑马打球的样子。
+caption_en: A surviving Tang clay figure shows a woman in riding clothes playing polo on horseback.
 [zh]
-很多人一想到古代比赛，会先以为只有男人上场。可马球不是这样。唐朝留下来的俑像和图画里，也能看到女子骑马挥杖。
+如果你以为古代的比赛场上只有男人，唐朝的马球会给你一个惊喜。女子也会打。一千多年前留下来的陶俑里，就有骑着快马的女子。她们穿着方便骑马的衣服，骑在马上，手臂扬起，看起来正准备挥动球杖。
 
-这件事很能说明唐朝的气氛。那时不少女性会骑马，也敢参加这种快节奏的活动。她们不是坐在旁边看看，而是真的上马、追球、比赛。
+这可不是现代人想象出来的画面，而是唐朝真正留下来的文物。当时，一些女子很喜欢骑马，尤其是在富裕家庭里，骑马还是一种很时髦的活动。有人甚至会直接骑马上场打马球。
 
-所以马球有意思的地方，不只是快，还在于它让我们看见：一千多年前的唐朝，比赛场上已经比很多人想的更热闹了。
+所以，再想象一次那片球场：马蹄飞奔，骑手转身，球杖挥下。其中有些骑手，就是女子。
 [/zh]
 [en]
-When people picture ancient sports, they often imagine only men on the field. But polo was different. Tang dynasty figures and paintings also show women riding horses and swinging mallets.
+If you imagine an ancient sports field filled only with men, Tang polo has a surprise for you. Women played too. Small clay figures made more than a thousand years ago still show women riding at full speed, dressed for riding and raising their arms as if swinging polo mallets. These were not pictures made by someone today. They are objects that survived from the Tang period itself.
 
-That tells us something important about the Tang world. At that time, many women rode horses and were willing to join fast-moving activities like this. They were not only sitting nearby and watching. They were really riding, chasing, and playing.
+That tells us something interesting about life at the time. Riding horses was fashionable among some Tang women, especially in wealthy families, and polo was one of the exciting activities they could take part in.
 
-That is one reason polo is so interesting. The game was not only fast. It also shows us that more than a thousand years ago, Tang sports life was livelier than many people expect.
+So picture the field again: horses racing, riders turning, mallets swinging—and some of those riders are women.
 [/en]
 [/section]
 
 [section]
 page: 3
 layout: text-only
-heading_zh: 皇帝喜欢看，也喜欢亲自上场
-heading_en: Emperors Loved Watching and Playing
+heading_zh: 皇宫里的人也迷上了
+heading_en: The Royal Family Loved It Too
 [zh]
-唐朝有些皇帝很喜欢马球，不但爱看，还会亲自上场打。有的皇宫里，甚至修了专门打马球的场地。
+唐朝的皇室和贵族也很喜欢马球。我们今天之所以知道这一点，是因为他们留下了很多线索。有些墓室的墙上画着正在比赛的马球手，有些墓里还放着骑马打球的陶俑。画中的骑手从马背上俯下身子，眼睛紧紧盯着马蹄旁边那个小小的球。
 
-这也说明马球不是一种慢慢悠悠的游戏。它很刺激，可也有风险。马跑得太快，骑手一分心，就可能摔下来。所以大家一边觉得它精彩，一边也知道它不是闹着玩的。
+光看画面，就能想象比赛有多快。当然，也有点危险。骑手要让飞奔的马听自己的指挥，还要低头追一个小球。球没打中，可以再追；要是自己没坐稳，麻烦可就大多了。
+
+难怪大家爱看。
 [/zh]
 [en]
-Some Tang emperors loved polo so much that they did not only watch. They played themselves. In some palaces, special grounds were even built for polo matches.
+Polo became especially fashionable among the Tang royal family and wealthy families around the court. We know this partly because the game kept showing up in the things they left behind. Tomb walls were painted with galloping polo players. Clay riders were placed in tombs. Some pictures catch a player leaning from the saddle, eyes fixed on a tiny ball near the horse’s feet.
 
-That also tells us polo was not a gentle, slow game. It was exciting, but it also carried risk. When horses move that fast, one moment of lost balance can lead to a hard fall. People admired the sport, but they also knew it was serious.
+It must have been thrilling to watch. It was also dangerous. A rider had to control a fast horse while reaching down toward a little ball on the ground. Miss the ball and you could try again. Lose your balance and you had a much bigger problem.
+
+No wonder the game looked so exciting.
 [/en]
 [/section]
 
 [section]
 page: 4
 layout: text-only
-heading_zh: 这项运动后来一路传到了很多地方
-heading_en: Later, the Game Traveled Far
+heading_zh: 原来游戏也会旅行
+heading_en: Games Can Travel Too
 [zh]
-马球不是只在中国玩过。很早以前，亚洲别的地方也有人玩这种运动。人来人往、商路相通，球赛也跟着一路传来传去。
+马球不是在中国开始的，也没有停在中国。很久以前，没有飞机，也没有电视，可人会从一个地方走到另一个地方。人走了，喜欢玩的游戏也会一起走。
 
-后来，它传到了印度，又被英国人学去，再传到更多地方。今天很多人听到 `polo` 这个词，想到的已经是世界上的一项运动了。
+马球就这样在亚洲许多地方流传，后来又继续变化，最后成了今天世界上仍然有人玩的 polo。当然，一千多年过去了，今天的马球不可能和唐朝的每一种玩法完全一样。
+
+可是看看唐朝留下来的马球图，最重要的东西一点也不难认。马向前飞奔，骑手低下身子，长长的球杖朝地上的小球挥过去。衣服变了，马具变了，看比赛的人也早已不在了。
+
+可是那个人还在努力做同一件很难的事：骑着一匹飞快的马，打中一个小小的球。看来，有些游戏实在太好玩了，很难乖乖待在一个地方。
 [/zh]
 [en]
-Polo was not played only in China. Long ago, people in other parts of Asia played it too. As travelers, traders, and riders moved from place to place, the game moved with them.
+Polo did not begin in China, and it did not stay there. Long before airplanes and television, people carried games from place to place. Polo traveled across Asia, changed as different people played it, and much later became the international sport still called polo today.
 
-Later, it spread to India, then was learned by the British, and after that traveled farther still. Today, when many people hear the word `polo`, they think of a sport known in many parts of the world.
+The modern game does not look exactly like every Tang version, of course. More than a thousand years have passed. But look at an old Tang polo rider and the basic idea is instantly recognizable.
+
+A horse races forward. A rider leans down. A mallet swings toward a little ball. For one quick moment, a scene from 1,300 years ago looks surprisingly familiar. The clothes are different. The horses wore different gear. The people who watched that match are long gone.
+
+But someone is still trying very hard to hit a tiny ball while riding a very fast horse. Some games, it seems, are too much fun to stay in one place.
 [/en]
 [/section]
-
-[ending]
-heading_zh: 小结
-heading_en: In Summary
-[zh]
-马球把骑马和打球放在了一起，所以看上去特别快。唐朝人很喜欢它，女人也会参加，连皇帝都常常看得着迷。
-
-它后来从一个地方传到另一个地方，变成了今天很多人都认识的 `polo`。一颗球、一匹马、一根球杖，就能带出一整场飞快的热闹。
-[/zh]
-[en]
-Polo brought horseback riding and ball play together, so it looked wonderfully fast. People in the Tang dynasty loved it, women took part in it, and even emperors could not look away.
-
-Later, it traveled from place to place and became the `polo` many people know today. One ball, one horse, and one mallet were enough to create a whole rushing scene.
-[/en]
-[/ending]

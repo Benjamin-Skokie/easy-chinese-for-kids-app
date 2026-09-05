@@ -1,180 +1,47 @@
 > Difficulty: Easy
 
-# Click-Clack Wisdom: Mahjong
+# Mahjong: Before the Tiles, There Were Cards
 
-## Something Many Chinese Families "Shuffle" at the Table
+## Before the Tiles, There Were Cards
 
-During Chinese New Year, there is a sound you may hear in many Chinese homes:
+If you have ever heard a mahjong game from the next room, you probably know the sound: dozens of hard tiles sliding and knocking together as four pairs of hands mix them across a table. It sounds so familiar—and so old—that you might imagine people making the same noise in China thousands of years ago.
 
-*hua-la, hua-la, hua-la.*
+But they were not.
 
-More than a hundred tiles are being mixed across the table.
-
-Then *pa!*
-
-One tile hits the table.
-
-"Chi!"
-
-"Peng!"
-
-"Gang!"
-
-"Hu!"
-
-Mahjong may be one of the noisiest and liveliest Chinese games.
+The mahjong we know today mainly took shape in China in the 1800s, during the late Qing period. And if you travel farther back through its family history, you find something surprising. Before there were mahjong tiles, there were **paper cards**.
 
 ---
 
-## How Was Mahjong Invented?
+## The Great-Great-Grandparents Were Thin
 
-The history of mahjong is hard to pin down.
+China had many card games long before modern mahjong appeared. One popular game in the late Ming period was called *mǎdiào*. Its cards were long, narrow pieces of paper, and many of their designs were connected with money: coins, strings of coins, and numbers.
 
-Some people say it grew from an older Ming dynasty card game. Some say Qing dynasty sailors invented it when they were bored on boats. Others connect it with still older card games.
+Modern mahjong did not simply appear from one pack of *mǎdiào* cards. Games change slowly and messily. Players borrow an idea from one game, change a rule from another, invent new combinations, and pass their favorite version to someone else.
 
-There are many stories, and no one has perfect proof.
+But historians have found a real connection between this older family of Chinese card games and mahjong. By the late Qing period, games descended partly from those paper-card traditions were developing into something much closer to the mahjong we recognize.
 
-But many people agree on one thing:
-
-mahjong has a strong smell of money in it.
-
-The *wan* tiles mean ten-thousands. The circle tiles look like copper coins. The bamboo tiles look like strings used to hold coins together.
-
-They all remind people of old money.
-
-As for east, south, west, and north winds, some people guess they may come from boat people and sailors, because wind direction mattered so much to them.
+Then one of the biggest changes happened. The cards became tiles.
 
 ---
 
-## How Do You Play Mahjong?
+## Bone on the Front, Bamboo on the Back
 
-Four people sit at one table.
+Those first familiar-looking mahjong tiles were not made of plastic. The British Museum owns a Chinese mahjong set from the nineteenth century whose tiles are made from **bone and bamboo**. A thin piece of bone forms the face, with the design carved and colored into it. Bamboo forms the thicker back.
 
-Each person usually holds 13 tiles.
+Other surviving Qing sets were even fancier. Some used ivory and bamboo.
 
-Draw one tile. Discard one tile.
+Place one of those old sets beside a modern set, and the family resemblance is easy to see. The characters and circle patterns already look familiar. What has changed most is the material.
 
-The goal is to make four groups and one pair.
-
-A group can be three identical tiles, called *peng*.
-
-Or it can be three numbers in a row, called *chi*.
-
-The final pair is called the pair of eyes.
-
-When your hand is complete, you call out *hu*, and you win.
-
-But what makes mahjong fun is more than making a complete hand.
-
-Different ways of winning have special names and extra points.
-
-"Pure one suit" means all your tiles are from the same suit. That scores much higher.
-
-"Flower after a kong" means you make a *gang*, then draw the winning tile right after. Even the name sounds lucky.
-
-"Heavenly win" means the dealer wins at the very beginning. It is so rare it feels like a story.
+Old tiles might be carved one by one from bone, bamboo, wood, or ivory. Modern tiles are usually made from manufactured materials such as plastic or acrylic. The game changed its clothes, but it still looked like itself.
 
 ---
 
-## Mahjong and Bridge Are Not the Same
+## A New Game That Quickly Went Everywhere
 
-When people outside China do not know mahjong, they sometimes compare it with bridge.
+Once mahjong appeared in its tile form, it spread remarkably quickly. Historical research describes it moving from towns and city neighborhoods into wealthy households and eventually even into the imperial court.
 
-Both are four-person table games. Both use combinations.
+By the 1920s, mahjong had also become a craze outside China. Sets were exported overseas, and different communities began developing their own versions of the game. That is why mahjong rules—and even the exact set of tiles used—can be different depending on where you play.
 
-But they are very different.
+But one thing has remained wonderfully easy to recognize. A pile of tiles is pushed into the middle of a table. Several hands reach in. The neat rows disappear, and the room fills with that unmistakable rattling sound. It is hard to believe that somewhere far back in the family tree of all those noisy little tiles were a handful of thin paper cards.
 
-Bridge is two people against two people. It depends on teamwork and signals between partners.
-
-Mahjong is everyone for themselves.
-
-This round, you are my friend. Next round, you may take the tile I needed.
-
-There are no forever friends and no forever enemies.
-
-In bridge, after the cards are dealt, you do not keep drawing new cards.
-
-In mahjong, every round you draw and discard. The tiles keep moving, so luck can change at any moment.
-
-One turn ago, your hand may look terrible.
-
-Then you draw one key tile, and suddenly you are waiting to win.
-
-It is a little like life:
-
-a bad hand does not mean you must lose.
-
-The next tile can change everything.
-
----
-
-## A Small Society Inside Mahjong
-
-Mahjong has three number suits: *wan*, circles, and bamboo. Each runs from one to nine, with four of each tile.
-
-There are four wind tiles and three dragon tiles: red, green, and white.
-
-One to nine, money, circles, bamboo, winds, dragons: it feels as if many kinds of people have gathered around one table.
-
-Every game also has a dealer.
-
-The dealer changes from round to round, often staying if the dealer wins. The dealer can win more, but also lose more.
-
-This creates a funny feeling:
-
-some people always want to be dealer,
-and some people feel nervous because the pressure is bigger.
-
-Mahjong also has a special table mood.
-
-Everyone is counting tiles, but everyone's mouth is busy too.
-
-Someone complains about bad luck.
-
-Someone complains that another player did not discard "properly."
-
-Someone says, "This hand is hopeless," then wins on the next draw.
-
-Mahjong is not a quiet game.
-
-People think, tease, argue, and laugh at the same time.
-
-That is why one table can become more and more lively.
-
----
-
-## Mahjong Goes Overseas
-
-In the late 1800s, mahjong traveled to the United States with Chinese immigrants.
-
-In the 1920s, it suddenly became wildly popular in America.
-
-Hollywood stars played it. Housewives played it. Mahjong instruction books sold in huge numbers. Department stores opened counters to sell mahjong sets.
-
-Later, the National Mah Jongg League was formed in the United States. It still publishes standard rules every year.
-
-American mahjong developed its own style, quite different from many Chinese ways of playing.
-
-Japan also became a major mahjong country.
-
-Professional Japanese mahjong leagues have television broadcasts. Top players can become famous.
-
-Japanese mahjong also has a gentle but tricky rule called *furiten*: if you once threw away a tile that could have won for you, later you cannot win from another player's same tile.
-
-That rule adds another memory test to the game.
-
----
-
-## Summary
-
-Mahjong means four people, more than a hundred tiles, and the sounds of *wan*, circles, bamboo, winds, and dragons on the table.
-
-Its invention may be linked to money, and its charm comes from the balance between luck and skill.
-
-A good hand does not always win.
-
-A bad hand does not always lose.
-
-From Chinese alleyways to living rooms across the ocean, mahjong has become one of the games many people think of first when they think of Chinese table games.
-
-A family mixing tiles around the table is still one of the liveliest New Year scenes.
+Mahjong did not stay the same for centuries. It changed from cards to tiles, from carved bone and bamboo to modern materials, and from one Chinese game tradition into many versions played around the world. Perhaps that is part of why it survived. The pieces changed. People kept gathering around the table.

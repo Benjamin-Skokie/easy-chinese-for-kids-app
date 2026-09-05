@@ -1,6 +1,6 @@
 ---
 title_zh: 泥土怎样变成会“唱歌”的碗？
-title_en: How Does Clay Become a Bowl That Rings?
+title_en: How Does Clay Become a Bowl That Can Sing?
 slug: porcelain
 category: art
 difficulty: 简单
@@ -10,82 +10,113 @@ style_notes: "用 --- 分隔 frontmatter；正文强调优先用 *斜体*；尽�
 
 [hero]
 title_zh: 泥土怎样变成会“唱歌”的碗？
-title_en: How Does Clay Become a Bowl That Rings?
+title_en: How Does Clay Become a Bowl That Can Sing?
 [/hero]
 
 [section]
 page: 1
 layout: text-wrap-image
-heading_zh: 同样是泥做的，为什么不一样？
-heading_en: Both Begin with Clay—So Why Are They Different?
+heading_zh: 泥土为什么会“叮”一声？
+heading_en: Why Does Clay Go “Ting”?
 image: 2-pottery-vs-porcelain.webp
-caption_zh: 瓷器通常比普通陶器更白、更薄，也经过更高温的烧制。
-caption_en: Porcelain is often whiter and thinner than ordinary pottery and is fired at a higher temperature.
+caption_zh: 湿泥几乎不会响，薄薄的瓷碗却可能发出清脆的“叮”。
+caption_en: Damp clay is almost silent, but a thin porcelain bowl may ring with a clear *ting*.
 [zh]
-陶碗和瓷碗都从泥土开始。可是把两只碗放在一起，常常能看出差别：普通陶器可能厚一些，颜色像泥土；瓷器通常更白、更薄，轻轻碰一下，还可能发出清亮的“叮”。
+轻轻敲一块湿泥，几乎没有声音。可是一只薄薄的瓷碗，碰一下碗边，却可能发出清脆的：*叮——*
 
-瓷器不是在泥里加了音乐。它用特别挑选和处理过的原料，外面还有一层釉，再送进非常热的窑里烧。高温让碗身变得坚硬紧密，也让釉变成光滑的表面。那声“叮”，就是材料和大火一起留下的结果。
+瓷器最开始的材料，明明也来自泥土和石料。陶工把它们磨细、混合、塑形成碗，再送进一座热得惊人的窑里。温度升到一千多摄氏度以后，泥坯会收缩，里面的矿物也开始发生变化，原本松软、吸水的材料慢慢变得坚硬、细密。如果配料和火候刚刚好，烧出来的瓷器可以又白又薄，有些甚至能透过一点光。
+
+可是窑门一关，陶工也不能再伸手进去帮忙了。
 [/zh]
 [en]
-Pottery and porcelain both begin with clay. Put two bowls side by side, however, and you may see a difference. Ordinary pottery can be thick and earth-colored. Porcelain is often whiter and thinner. Tap a safe modern sample very gently, and it may answer with a clear *ting*.
+Tap a lump of damp clay and you hear almost nothing. Tap the rim of a thin porcelain bowl, and you may hear a clear: *Ting!*
 
-No one mixed music into the clay. Porcelain uses carefully chosen and prepared materials. It receives a coating called glaze and then enters an extremely hot kiln. The heat makes the body hard and close-grained, while the glaze turns smooth and glassy. That bright ring is what the materials and fire leave behind.
+Porcelain begins with materials that come from clay and stone. Potters grind and mix them, shape the soft material into a bowl, and send it into an extremely hot kiln—a special oven used for firing ceramics. At temperatures above 1,000°C, the bowl shrinks and the minerals inside begin to change. The soft, porous body becomes hard and dense. With the right materials and firing, porcelain can become white, thin, and even slightly translucent.
+
+Then the kiln door closes. From that point on, the fire takes over.
 [/en]
 [/section]
 
 [section]
 page: 2
-layout: text-only
-heading_zh: 窑里最紧张的时刻
-heading_en: The Most Nervous Hours in the Kiln
+layout: text-wrap-image
+heading_zh: 一只好碗，要先闯过窑火
+heading_en: A Good Bowl Has to Survive the Kiln
+image: ming-gourd-kiln-firing-corrected.webp
+caption_zh: 十五世纪的景德镇使用葫芦窑烧制瓷器；烧窑时，窑工从前端火口不断添柴。
+caption_en: Fifteenth-century Jingdezhen used gourd-shaped kilns; during firing, kiln workers kept feeding wood into the firebox at the front.
 [zh]
-做一只瓷碗，要先淘洗和揉练原料，再拉坯或用模具做出形状。碗干了以后，工匠修平碗底，画上花纹，盖上釉。每一步都可能出问题：太湿会塌，太干会裂，釉太厚会流下来。
+窑里的瓷器会缩，会变形，釉会熔化，颜色也会改变。温度、位置或者火候差一点，成品就可能开裂、歪掉，或者出现不想要的颜色。
 
-进窑以后，更不能随便打开门看看。工匠要控制火和空气，让窑里的温度升到足够高，再慢慢冷却。几天后打开窑门，才知道哪些碗成功了。一个看起来安静的瓷碗，曾经在比家用烤箱热得多的火里经历了一场大变化。
+景德镇的御窑曾经专门为宫廷烧瓷。考古人员在那里发现过大量被打碎、丢弃的瓷片。能留下来的作品，往往已经经过很严格的挑选。
+
+有一种很有名的小瓷杯叫“鸡缸杯”，只有手掌那么大。杯子上画着公鸡、母鸡和小鸡，在花草之间走动。今天，这样的明代鸡缸杯成了博物馆里极珍贵的瓷器之一。
+
+它看起来轻巧安静，可它出生的时候，先要从一座不好控制的窑里平安出来。
 [/zh]
 [en]
-To make a porcelain bowl, workers clean and knead the material, then shape it on a wheel or in a mold. When the bowl dries, a craftsperson trims the foot, paints a design, and adds glaze. Every step can go wrong. Clay that is too wet may slump. Clay that is too dry may crack. Thick glaze may run.
+Inside the kiln, clay shrinks, glaze melts, and colors change. A small difference in temperature or position can leave a piece cracked, warped, or the wrong color.
 
-Once the kiln is firing, no one can simply open the door for a peek. Workers control the fire and air, raise the kiln to a very high temperature, and let it cool slowly. Only when the door finally opens do they learn which bowls survived. A quiet bowl on a table has passed through heat far beyond any kitchen oven.
+At the imperial kilns in Jingdezhen (*Jǐngdézhèn*), a Chinese city famous for porcelain, porcelain was once made for the emperor’s court. Archaeologists have found large amounts of broken and discarded porcelain there. Pieces that did not meet the required standard could be rejected.
+
+One famous survivor is a tiny Chicken Cup, small enough to fit in your hand. Around it, a rooster, hen, and chicks wander among flowers and rocks. Cups like this were made more than five hundred years ago, and surviving examples are now treasured museum objects.
+
+The little cup looks delicate and quiet. Its first challenge was simply getting out of the kiln successfully.
 [/en]
 [/section]
 
 [section]
 page: 3
 layout: text-wrap-image
-heading_zh: 蓝色从很远的地方来
-heading_en: The Blue Came from Far Away
+heading_zh: 青花的蓝色，从哪里来？
+heading_en: Where Did the Blue Come From?
 image: 3-blue-white-before-after.webp
-caption_zh: 含钴的颜料在釉下烧成鲜明的蓝色。
-caption_en: Cobalt pigment turns a strong blue when it is fired under the glaze.
+caption_zh: 含钴的颜料画在瓷胎上，罩上透明釉，烧成以后呈现蓝色。
+caption_en: Cobalt pigment is painted on the porcelain body, covered with clear glaze, and fired blue.
 [zh]
-青花瓷上的蓝色来自一种含钴的颜料。早期有些钴料从西亚经过很远的贸易路线来到中国。中国工匠把它画在白色瓷胎上，再盖上一层透明釉。进窑前，颜色可能灰暗不起眼；烧好以后，蓝色却变得鲜明。
+中国瓷器上最容易认出的颜色之一，就是青花的蓝。
 
-画工下笔必须果断。瓷胎会吸收颜料，画错了很难擦掉。花朵、龙、鱼和波浪沿着弯弯的碗身展开。来自远方的蓝色和中国的瓷器技术相遇，变成了世界各地都认识的青花瓷。
+画瓷的人先用含钴的颜料在瓷胎上画花、龙、海浪或人物，再罩上一层透明釉。烧过以后，蓝色留在釉下面，像被封进了一层玻璃。
+
+更有意思的是，钴料并不总来自中国。有些曾从西亚和中东地区远远运来；与此同时，中国烧好的青花瓷又坐船运往那些地方。所以，一只景德镇烧出来的碗，身上可能已经藏着一段跨越几千公里的旅行。
 [/zh]
 [en]
-The blue in blue-and-white porcelain comes from a pigment containing cobalt. Some early cobalt traveled to China from West Asia along long trade routes. Chinese painters brushed it onto a white porcelain body and covered it with clear glaze. Before firing, the color could look dull and gray. After the kiln, it shone blue.
+One of the most recognizable sights in Chinese porcelain is blue painting on a white surface.
 
-The painter had to work with confidence. The porcelain body drank in the pigment, so a wrong stroke was hard to erase. Flowers, dragons, fish, and waves curved around each bowl. A blue material from far away met Chinese porcelain skills and became blue-and-white ware known around the world.
+The blue comes from cobalt. Potters painted with cobalt pigment, covered the design with a clear glaze, and fired the piece. Afterward, the blue appeared beneath the glassy surface.
+
+Some cobalt was found in China. Some traveled to China from West Asia and the Middle East. At the same time, finished Chinese blue-and-white porcelain traveled in the other direction. So a bowl made in Jingdezhen could already carry evidence of a journey stretching thousands of kilometers.
 [/en]
 [/section]
 
 [section]
 page: 4
 layout: text-wrap-image
-heading_zh: 一座城市一起做一只碗
-heading_en: A Whole City Helps Make One Bowl
+heading_zh: 一个碗，怎么走到了全世界？
+heading_en: How Did a Bowl Travel Around the World?
 image: 1-porcelain-cup-and-map.webp
-caption_zh: 景德镇的瓷器经过许多双手，也乘船去了很远的地方。
-caption_en: Jingdezhen porcelain passed through many hands and traveled far by ship.
+caption_zh: 中国瓷器装进商船，和茶叶、丝绸一起漂洋过海。
+caption_en: Chinese porcelain crossed the seas in merchant ships alongside tea and silk.
 [zh]
-景德镇（*Jǐngdézhèn*）因瓷器闻名。它不是只有一座神奇的窑。附近有人采原料，有人把泥料处理干净，有人拉坯，有人画花，有人照看窑火，还有人把装箱的瓷器运到河边。
+中国瓷器后来装进商船，和茶叶、丝绸一起远行。瓷器很重，而且不怕水，商人有时会把成箱的瓷器放在船舱较低的位置，还能帮助船保持稳定。
 
-这些碗、盘和瓶子沿河入海，来到亚洲、非洲、欧洲和美洲。远方的顾客会订自己喜欢的形状和图案，各地工匠也开始学习和改变瓷器的做法。英语里甚至可以用小写的 *china* 表示瓷器。一只碗从泥土出发，经过一座城市的手，最后走进了全世界的餐桌和柜子。
+到了欧洲，这种又白、又硬、还能透一点光的材料让许多人着迷。欧洲工匠研究了很多年，才在十八世纪初成功烧出自己的硬质瓷器。
+
+今天，世界各地的博物馆里都能看到中国瓷器：巨大的青花瓶、给皇帝烧的小杯，也有专门为海外客人制作的盘子和壶。
+
+它们的故事都从很不起眼的材料开始。一团泥，经过人的手，再经过猛烈的火，最后变成一件可以漂洋过海、保存几百年，轻轻一敲还会发出“叮”声的东西。
+
+叮。泥土已经不再像泥土了。
 [/zh]
 [en]
-Jingdezhen (*Jǐngdézhèn*) became famous for porcelain, but it did not depend on one magical kiln. People nearby gathered raw materials. Others cleaned the clay, shaped bowls, painted flowers, watched the fires, or carried packed porcelain to the river.
+Chinese porcelain eventually filled merchant ships alongside tea and silk. Porcelain was heavy and water would not ruin it, so crates could be stored low in a ship, where their weight also helped keep the vessel steady.
 
-Bowls, plates, and jars traveled downriver and across the sea to Asia, Africa, Europe, and the Americas. Faraway customers ordered shapes and designs they liked, while makers in other places learned from porcelain and changed it again. English even uses the lowercase word *china* to mean porcelain. A bowl began in the earth, passed through the hands of a city, and reached tables and cabinets around the world.
+When Chinese porcelain reached Europe, people became fascinated by its hard, white, sometimes translucent body. European potters experimented for years before successfully producing their own hard-paste porcelain in the early 1700s.
+
+Today, museums around the world hold Chinese porcelain: enormous blue-and-white jars, tiny cups made for emperors, and dishes or vessels created for customers far overseas.
+
+All of them began with surprisingly ordinary-looking materials. Hands shaped them. Fire changed them. Some crossed oceans and survived for centuries.
+
+Then tap the rim gently—*Ting.* The clay no longer behaves like clay.
 [/en]
 [/section]

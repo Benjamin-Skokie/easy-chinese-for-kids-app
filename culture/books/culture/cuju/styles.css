@@ -165,6 +165,19 @@ h1, h2, h3, h4 {
   font-size: 1rem;
 }
 
+.story-link {
+  color: var(--primary);
+  font-weight: 700;
+  text-decoration-color: rgba(44, 62, 107, 0.4);
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 0.16em;
+}
+
+.story-link:hover {
+  color: var(--primary-deep);
+  text-decoration-color: currentColor;
+}
+
 .text-wrap-image {
   display: block;
 }

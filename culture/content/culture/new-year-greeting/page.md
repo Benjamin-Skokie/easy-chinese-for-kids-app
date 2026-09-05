@@ -16,103 +16,91 @@ title_en: Greeting Elders at New Year
 [section]
 page: 1
 layout: text-wrap-image
-heading_zh: 大年初一，一句“过年好”
-heading_en: New Year's Morning Begins with a Greeting
+heading_zh: 等一下，我的手该放哪儿？
+heading_en: Wait—What Do I Do with My Hands?
 image: 1-new-year-bow.webp
-caption_zh: 穿上新衣服，走到长辈面前，说一声“过年好”，很多家庭都很熟悉这个画面。
-caption_en: In many families, children put on new clothes, greet their elders, and begin the year with kind words.
+caption_zh: 这幅现代插图表现孩子向长辈拜年的家庭场景；手势经过艺术化处理，不是传统拱手礼的分步示范，也不代表所有家庭的做法。
+caption_en: This modern illustration shows a child greeting older relatives at New Year; its stylized gesture is not a step-by-step guide to formal *gǒngshǒu lǐ* or a picture of every family’s custom.
 [zh]
-大年初一早上，很多孩子会被早早叫起来，换上新衣服。客厅里，爷爷奶奶或者外公外婆已经坐好了，等着孩子过来拜年。
+大年初一早上。新衣服穿好了，爷爷奶奶正笑着看你，连要说的话也已经记住了：“新年好！”
 
-孩子走到长辈面前，双手抱拳，轻轻弯一弯腰，说一声“过年好”或者“新年好”。一句话不长，可一开口，过年的味道就出来了。
+可是突然有一个小问题。手该放哪儿？过年时，很多家庭都有晚辈先向长辈拜年的习惯。有的直接说祝福，有的轻轻鞠躬，还有的会双手合抱，在胸前行一个传统的拱手礼。
 
-这个动作不只是好看，它也是一种很安静的礼貌。你在告诉长辈：新的一年开始了，我先来给你送祝福。
+看别人做，好像很简单。轮到自己时，事情就复杂了：哪只手放外面？要不要握拳？身体要不要弯一点？突然觉得，“新年好”三个字反而最好办。
 [/zh]
 [en]
-On the morning of Lunar New Year, many children get up early and put on new clothes. In the living room, grandparents or other elders are already waiting for the first greetings of the year.
+It is New Year’s morning. You have new clothes on. Your grandparents are smiling. You have even remembered what to say. “Happy New Year!” There is just one small problem. What are your hands supposed to do?
 
-The child walks over, holds one fist inside the other hand, bends a little, and says, "Happy New Year." The words are short, but they carry a warm feeling right away.
+In many Chinese families, children greet older relatives first at New Year. Some simply say their good wishes. Some bow a little. Others bring both hands together in front of the chest in a traditional greeting called *gǒngshǒu lǐ*.
 
-The gesture is more than something that looks nice. It is a quiet way of showing respect. A child is saying, "The new year has started, and I want to bring my good wishes to you first."
+It looks simple—until you try it. One hand goes here. The other goes there. Do you make a fist? Which hand is outside? Are you supposed to bow too? Suddenly, saying “Happy New Year” seems like the easy part.
 [/en]
 [/section]
 
 [section]
 page: 2
-layout: text-wrap-image
-heading_zh: 为什么要双手抱拳？
-heading_en: Why Are Both Hands Used?
-image: 2-cupped-hands-closeup.webp
-caption_zh: 这个动作像是在把自己的力量收起来，换成礼貌和祝福。
-caption_en: The gesture gathers the hands together in a way that feels calm, respectful, and kind.
+layout: text-only
+heading_zh: 为什么要把两只手放在一起？
+heading_en: Why Put Both Hands Together?
 [zh]
-双手抱拳，看上去只是一个小动作，可里面有讲究。传统说法里，男生常常是左手包住右手，女生常常会反过来。不同地方不一定完全一样，现在很多家庭也不会分得那么细。
+拱手礼是一种很古老的礼节。过去，人们见面、道谢、祝贺或者表示尊敬时，都可能用到它。而且，两只手怎么放，还真有过讲究。
 
-不过这个动作背后的心意很清楚：不是来逞强的，是来行礼的。把两只手稳稳合在一起，像是在先把自己的劲儿收住，再把礼貌送出去。
+传统礼法中，男子行拱手礼时一般左手在外、右手在内，女子则相反。有一种古老的解释认为，人通常用右手拿兵器，所以用左手把右手包住，就像是在告诉对方：我来见你，是带着善意来的。
 
-所以老人家看到孩子认真学这个动作，常常会特别高兴。因为他们看见的，不只是姿势对不对，也是孩子有没有把尊重放进去。
+听起来忽然有点像武侠故事。不过放心，爷爷奶奶大概并没有担心你是来打架的。
+
+今天，各个家庭并不一定严格按照古代的手势来拜年。真正容易懂的，是动作背后的心意：停下来，面对长辈，把双手合在一起，认真送上一句祝福。动作很小，却让一句普通的“你好”变得不一样。新的一年开始了。我先来祝你平安顺利。
 [/zh]
 [en]
-The cupped-hands greeting may look small, but people have long paid attention to it. In older custom, boys often placed the left hand outside and girls often did the opposite. Different places did not always do it exactly the same way, and many families today do not worry about that detail too much.
+The cupped-hands greeting is very old. People used forms of it to greet others, give thanks, offer congratulations, and show respect. There were even rules about the hands.
 
-But the feeling behind the gesture is easy to understand. You are not stepping forward to show off strength. You are stepping forward to show respect. Bringing both hands together makes the body look calm and controlled.
+In one traditional form, men placed the left hand outside the right, while women did the reverse. One old explanation says that because the right hand was often the hand used to hold a weapon, covering it showed peaceful intentions: I have come to greet you, not to fight you.
 
-That is why elders are often happy to see a child learn it carefully. They are not only checking whether the pose looks correct. They are noticing whether real respect is inside it.
+That makes the gesture sound rather dramatic. Luckily, Grandma is probably not worried that you have arrived for battle.
+
+Today, families do not all follow the old hand positions exactly. The important part is easier to understand. You stop for a moment, face the person you are greeting, bring your hands together, and offer your good wishes with care. The movement is small, but it changes an ordinary “hello” into something more special. This is the first morning of a new year. I came to wish you well.
 [/en]
 [/section]
 
 [section]
 page: 3
 layout: text-wrap-image
-heading_zh: 红包里装的，不只是钱
-heading_en: A Red Envelope Holds More Than Money
+heading_zh: 然后，红包出现了
+heading_en: Then Comes the Red Envelope
 image: 3-red-envelope-two-hands.webp
-caption_zh: 双手接红包，也是在稳稳接住长辈送来的祝福。
-caption_en: Taking a red envelope with both hands means receiving the elder's blessing carefully.
+caption_zh: 这幅现代插图表现孩子双手接红包的家庭场景；它概括的是常见礼貌做法，不是所有家庭都必须遵守的固定仪式。
+caption_en: This modern illustration shows a child receiving a red envelope with both hands; it presents a commonly taught courtesy, not a fixed ritual followed by every family.
 [zh]
-拜完年，很多孩子最期待的，就是红包。长辈把红色的封套递过来，孩子要双手接，还要说“谢谢爷爷奶奶”或者“谢谢叔叔阿姨”。
+拜完年，爷爷笑了。奶奶伸手拿出一个红红的东西。啊。很多小朋友最期待的部分终于来了。
 
-红包里的钱，不只是普通的钱。中国人常常叫它“压岁钱”。按民间说法，它像是在替孩子压住不好的东西，保佑新一年平平安安。
+春节时，长辈常常会给晚辈红包，里面装着压岁钱。关于“压岁钱”的来历，民间有不少说法，其中一个古老的说法认为，它可以帮助孩子压住邪祟，平平安安过一年。今天，我们当然不会把红包当成真的“护身法宝”，可是里面的意思还在：长辈希望孩子健康、平安、好运。
 
-所以红包更像一份祝福装进了红封套里。过去还有一个规矩：不要当着长辈的面马上拆开数钱。因为真正重要的，不是里面有多少，而是这份心意。
+这时候，两只手又有任务了。很多孩子会被教着双手接过红包，再好好说一声“谢谢”。刚才，这双手是在送祝福。现在，它们又在接祝福。
 [/zh]
 [en]
-After the greeting comes the part many children wait for most: the red envelope. An elder hands it over, and the child is supposed to take it with both hands and say thank you.
+Now the greeting is finished. Grandpa smiles. Grandma reaches for something red. Ah. Here comes the part many children have been waiting for.
 
-The money inside is not treated as just ordinary money. People often call it lucky money for the new year. In folk belief, it helps press down bad luck and keep a child safe through the year ahead.
+A *hóngbāo* is a red envelope containing money. At New Year, older family members often give one to children. The money is also called *yāsuìqián*. There are old folk stories about the name. One connects the gift with protecting children from harmful spirits and keeping them safe through the year. Whatever story a family tells, the meaning today is easy to recognize: the money comes wrapped in wishes for health, safety, and good fortune.
 
-That is why the envelope feels more like a blessing wrapped around money. In the past, children were also taught not to tear it open and count the cash right in front of the elder. The important thing was not the number first. The important thing was the care behind it.
-[/en]
-[/section]
-
-[section]
-page: 4
-layout: text-only
-heading_zh: 小小动作，把热闹和礼貌系在一起
-heading_en: One Small Gesture Holds the Holiday Together
-[zh]
-现在，每个家庭拜年的动作不一定完全一样。有的会抱拳，有的会鞠躬，有的孩子一紧张，先笑了再说话。可很多人还是一眼就能认出那种感觉：新衣服、笑着的长辈、孩子轻轻走过去说一句“新年好”，家里一下子就暖了起来。
-
-这也是拜年动作好玩的地方。它不大，也不复杂，却把过年的热闹和礼貌系在了一起。你不是随便路过说句话，而是在认真告诉别人：新的一年，我先来祝你平安、开心、顺顺利利。
-[/zh]
-[en]
-Today, not every family greets elders in exactly the same way. Some still use the cupped-hands bow. Some simply bow a little. Some children get shy and smile before they remember the words. Even so, many people still recognize the same feeling right away: new clothes, smiling elders, and a child stepping forward to say, "Happy New Year."
-
-That is what makes the gesture special. It is small and simple, yet it ties holiday excitement and good manners together. A child is not just passing by with a quick hello. The child is carefully saying, "At the start of this new year, I want to wish you peace, happiness, and good luck."
+And look—your hands have another job. Instead of snatching the envelope with one hand and immediately peeking inside, children are often taught to receive it with both hands and say thank you. Two hands again. A few minutes ago, they were giving a greeting. Now they are receiving one.
 [/en]
 [/section]
 
 [ending]
-heading_zh: 小结
-heading_en: In Summary
+heading_zh: 红包里装不下的东西
+heading_en: The Part You Cannot Put in the Envelope
 [zh]
-拜年时，双手抱拳、轻轻弯腰、双手接过红包，这些动作看起来不大，却装着很多人都懂的心意：尊重长辈，也把祝福稳稳接住。
+今天，每个家庭拜年的方式都不完全一样。有的小朋友拱手拱得规规矩矩；有的突然忘了哪只手在外面；还有的眼睛一看见红包，刚刚学过的礼仪立刻全飞走了。爷爷奶奶可能还是会笑。
 
-所以过年最动人的地方，常常不只是热闹的鞭炮和好吃的饭菜，也是在这一声“新年好”里，家人把礼貌和温暖传给了下一代。
+因为拜年最重要的，本来就不是手抬得多高、弯腰弯得多标准。真正重要的是，新年的第一天，晚辈走到长辈面前，说一句祝福：愿你身体健康，天天开心，新的一年顺顺利利。长辈也把自己的祝福送回来，有时还装进一个红红的信封里。
+
+一来一回，祝福就在两代人之间走了一圈。所以，双手抱拳里确实藏着一点“学问”。不过最值得记住的，也许不是哪只手放在外面。而是新的一年刚刚开始时，先停一下。看看一直陪着你的家人。然后认真对他们说：**新年好。**
 [/zh]
 [en]
-At New Year, bringing the hands together, bowing a little, and receiving a red envelope with both hands may look small. But those small actions carry a meaning many people understand right away: respect your elders, and receive their blessing with care.
+Families celebrate New Year in many different ways today. One child may perform a perfect cupped-hands bow. Another may forget which hand goes where. A third may become so excited by the red envelope that every piece of etiquette vanishes from memory. The grandparents may laugh anyway.
 
-That is why one of the most moving parts of the holiday is not only the noise, the food, or the color. It is also the way families pass down warmth and manners in one simple New Year greeting.
+Because the exact angle of the hands is not really the heart of the moment. The heart of it is this: at the beginning of a new year, the younger generation walks toward the older one. The child offers a wish—good health, happiness, a peaceful year. The elder answers with another wish, sometimes tucked inside a bright red envelope.
+
+For a moment, the good wishes travel both ways. So yes, there is a little bit of learning hidden inside those folded hands. But perhaps the most important lesson is much simpler. Before racing into a brand-new year, stop. Look at the people who have been walking beside you. And wish them a good one.
 [/en]
 [/ending]
