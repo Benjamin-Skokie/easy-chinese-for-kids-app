@@ -2,6 +2,13 @@
 
 This file is for editorial research and does not render on the website.
 
+## Current Child-Facing Draft and Fact Check (2026-09-03)
+
+- The story now centers on why the emperor prayed for a good harvest and how the buildings made the ceremony feel important.
+- The winter-solstice ceremony at the Circular Mound Altar is distinguished from the spring prayer for grain at the Hall of Prayer for Good Harvests.
+- Child-useful architectural details include the round and blue forms, the Echo Wall's sound effect, and the 28-column structure of the Hall of Prayer for Good Harvests.
+- The text distinguishes Heaven in imperial belief from the visible sky and does not ask the reader to share that belief.
+
 ## Overall purpose, layout, and historical development
 
 Source: UNESCO World Heritage Centre, “Temple of Heaven: an Imperial Sacrificial Altar in Beijing”
@@ -26,16 +33,49 @@ Source: Beijing Municipal Government, “The Temple of Heaven: A Place for Worsh
 URL: https://english.beijing.gov.cn/beijinginfo/culture/culturaltreasures/sevenculture/202401/t20240111_3532658.html
 Accessed: 2026-08-20
 
+Source: Beijing Municipal Administration Center of Parks, “The Circular Mound, Main Structure of the Circular Mound Altar Complex” (《圜丘坛建筑群的主体之圜丘》)
+URL: https://gygl.beijing.gov.cn/whgy/whgy_wsgc/201912/t20191206_885626.html
+Accessed: 2026-09-03
+
 Supports:
 
 - The northern part of the enclosing wall is semicircular and the southern part is square, officially explained through the idea of round Heaven and square Earth.
 - The Imperial Vault of Heaven housed spirit tablets used for the Circular Mound ceremonies, and the Circular Mound was used for winter-solstice worship.
+- *Circular Mound Altar* is the official English name used by the Beijing Municipal Government. In the child-facing text, “mound” is explained simply as a raised place rather than left as unexplained vocabulary.
 - Stone slabs, steps, and balustrades on the Circular Mound use nine or multiples of nine; the official explanation connects them with the nine layers of Heaven and Heaven’s superior status.
+- On the top level, nine rings of fan-shaped floor slabs surround the central round stone. The innermost ring has nine slabs, and each ring adds nine more, reaching eighty-one in the outermost ring.
 
 Editorial boundary:
 
 - These official symbolic readings may be reported as documented interpretations, not as proof that every visitor in every period understood the forms identically.
 - Avoid popular numerology lists that assign one certain meaning to every color, column, and measurement. The article teaches children to distinguish repeated documented patterns from later tidy explanations.
+
+## Winter Solstice and the Two Main Ceremonies
+
+Source: Palace Museum, “Winter Solstice” (《冬至》)
+URL: https://www.dpm.org.cn/lemmas/241569.html
+Accessed: 2026-09-03
+
+Source: Palace Museum, “Worship of Heaven” (《祭天》)
+URL: https://www.dpm.org.cn/court/system/236397.html
+Accessed: 2026-09-03
+
+Source: UNESCO World Heritage Centre, *Beijing Central Axis: A Building Ensemble Exhibiting the Ideal Order of the Chinese Capital* nomination dossier
+URL: https://whc.unesco.org/document/204904
+Accessed: 2026-09-03
+
+Supports:
+
+- The winter solstice is the point after which daylight begins to lengthen again; ancient Chinese court culture treated it as an important yearly turning point.
+- Ming and Qing emperors worshipped Heaven at the Circular Mound Altar on the winter solstice.
+- The winter-solstice ceremony thanked Heaven, reported on the emperor's governance, and marked the turn of the year. A separate ceremony in the first lunar month prayed for favorable weather and a good harvest at the Altar of Prayer for Grain, whose main hall is now called the Hall of Prayer for Good Harvests.
+- Preparations included abstinence, bathing, clothing changes, arranging offerings, music, and a formal procession. The child-facing story compresses these details rather than listing the full ritual.
+
+Editorial boundary:
+
+- “The shortest day” means the day with the least daylight in the Northern Hemisphere, not a day with fewer than 24 hours.
+- The text does not merge the winter worship at the Circular Mound Altar with the spring prayer for grain at the Hall of Prayer for Good Harvests.
+- The child-facing phrase “reported on the country” compresses the nomination dossier's account of reporting on governance and reflecting on the emperor's actions.
 
 ## Changes, reconstruction, and conservation history
 
@@ -72,22 +112,28 @@ Editorial boundary:
 - Repeated echoes near the Three Echo Stones are real acoustic reflections, but avoid guaranteeing exactly one, two, and three clearly separated echoes in ordinary visiting conditions.
 - The physics does not prove that Ming builders possessed modern acoustic theory or deliberately calculated every later-named “sound wonder.”
 
-## Traditional timber joints and the limits of the “no nails” slogan
+## Hall of Prayer Structure
 
-Source: Yue Zhi, “Traditional Chinese Wood Structure Joints with an Experiment Considering Regional Differences,” International Journal of Architectural Heritage
-URL: https://www.tandfonline.com/doi/full/10.1080/15583058.2012.688179
-Accessed: 2026-08-20
+Source: Beijing Municipal Government / Visit Beijing, “Must-visit Scenic Spots in Beijing — The Temple of Heaven”
+URL: https://english.visitbeijing.com.cn/article/47OOiYHluPh
+Accessed: 2026-09-03
+
+Source: Beijing Municipal Government / Visit Beijing, “Architecture of Temple of Heaven”
+URL: https://english.visitbeijing.com.cn/article/47ONy6AX0b3
+Accessed: 2026-09-03
 
 Supports:
 
-- Mortise-and-tenon joints are a defining connection method in traditional Chinese timber structures.
-- Different joint forms transfer forces through the fitting, friction, and deformation of wooden members rather than behaving like perfectly rigid connections.
+- The Hall of Prayer for Good Harvests has 28 large wooden columns arranged in three groups: four central columns, a middle ring of twelve, and an outer ring of twelve.
+- The four central columns support the upper roof and symbolize the four seasons. The middle twelve support the second roof and symbolize the twelve months. The outer twelve support the lower roof.
+- The hall does not use a single huge beam or long purlin spanning its center.
+- Lightning caused the 1889 fire that destroyed the hall; it was then reconstructed in its earlier form.
 
 Editorial boundary:
 
-- It is safe to explain that mortise-and-tenon joinery is central to the main timber frame and lets connected members move and press against one another under force.
-- Do not turn a general description of traditional timber framing into the absolute claim that every component of the present, rebuilt, repeatedly restored Hall of Prayer contains no nails, metal fittings, bolts, or later reinforcement.
-- The educational focus is how the whole structural system works, not an uncheckable “not one nail anywhere” challenge.
+- The child-facing text explains the visible column system instead of repeating the sweeping tourist slogan that the entire building contains “not one nail.”
+- The symbolic meanings of the columns are presented as documented interpretations, not structural reasons why those exact numbers were required.
+- The article does not describe the current hall's wood as untouched material surviving from 1420.
 
 ## Image-use notes
 

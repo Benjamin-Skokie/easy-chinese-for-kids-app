@@ -1,109 +1,41 @@
 > Difficulty: Easy
 
-# Lantern Festival: A Thousand Lights in the Night Sky
+# Lantern Festival: The Night Chang'an Glowed
 
-## The Fifteenth Day: The Last Day of New Year
+## The New Year's First Full Moon
 
-Chinese New Year is not finished in one day.
+Lantern Festival falls on the fifteenth day of the first lunar month. It is the first full-moon night of the Chinese New Year and comes near the end of the holiday season.
 
-From New Year's Eve to the fifteenth day of the first lunar month, the celebration keeps going.
+After dark, streets and parks glow with lanterns. Families go out to see the lights, solve lantern riddles, and eat round treats called *yuanxiao* or *tangyuan*. Because they are round, *yuanxiao* and *tangyuan* have come to symbolize *tuanyuan*: family reunion and togetherness.
 
-The Lantern Festival comes on that fifteenth day. It is near the end of the long New Year celebration, and it may be the brightest night of all.
-
-On this day, people do not usually eat dumplings. They eat small round rice balls made from sticky rice flour.
-
-In the north, people often call them *yuanxiao*. In the south, people often call them *tangyuan*.
-
-They can be filled with sesame, peanuts, or sweet red bean paste.
-
-There is a small difference in how they are made. Northern *yuanxiao* are rolled. The filling is dipped in water, then rolled again and again in rice flour until it grows into a ball.
-
-Southern *tangyuan* are wrapped, more like dumplings. The filling goes inside a soft rice-flour dough.
-
-But whatever people call them, the meaning is similar: family togetherness.
-
-The whole family sits together and eats warm white balls that are sticky, sweet, and round.
+Why did lanterns become such an important part of this night? People have told more than one story. Here is one old folk legend.
 
 ---
 
-## Flower Lanterns: China's Festival of Lights
+## A Frightening Prediction
 
-After eating *yuanxiao* or *tangyuan*, the biggest part begins: looking at lanterns.
+One old Lantern Festival legend tells of a young palace maid named Yuanxiao. Yuanxiao had not seen her parents for a long time, and she missed them terribly. But leaving the emperor’s palace was not easy.
 
-On Lantern Festival night, many streets are filled with hanging lights.
+At the palace lived a witty entertainer and adviser who was famous for his jokes, tricks, and quick thinking—something like a court jester. His name was **Dongfang Shuo**. When he heard about Yuanxiao, he decided to help.
 
-Some are bright red. Some are golden. Some are many colors.
+Dongfang Shuo went into Chang’an—the Han dynasty capital, located in present-day Xi’an—and set up a fortune-telling stand. But everyone who came to him received the same frightening prediction: **A terrible fire was coming to Chang’an!** Soon the whole city was talking about it.
 
-Some are shaped like lotus flowers. Some look like rabbits. Some become long dragons, with dozens of lanterns joined together, winding through the dark.
+When the worried emperor asked what could be done, Dongfang Shuo suggested a clever trick.
 
-In the Song dynasty, lantern fairs were among the biggest city celebrations.
+“On the fifteenth night of the new year,” he said, “hang red lanterns everywhere. Light up the streets and fill the night with fireworks and noise. From far away, it will look as if the city is already on fire.”
 
-In the capital city Kaifeng, people built lantern mountains more than ten meters high. Thousands and thousands of lamps shone at once, and the city stayed awake late into the night.
-
-An old book, *Dreams of Splendor of the Eastern Capital*, described busy scenes like this.
-
-The poet Xin Qiji also wrote about Lantern Festival lights, comparing them to flowers blooming in the night and stars falling like rain.
-
-More than 800 years later, many Lantern Festival fairs still make people think of a sea of light.
+The emperor agreed.
 
 ---
 
-## Lantern Riddles: A Brain Game Under the Lights
+## A Voice in the Crowd
 
-Lanterns often have little slips of paper hanging from them.
+That night, Chang’an glowed. Red lanterns hung from gates and rooftops. Lights filled the streets. Crowds came from inside and outside the city to watch. Among them were Yuanxiao’s parents.
 
-On each slip is a riddle.
+As Yuanxiao moved through the crowd, she suddenly heard familiar voices calling her name. “Yuanxiao!” She turned—and there they were. In the middle of the bright lanterns and busy streets, Yuanxiao was finally reunited with her family.
 
-Here is one example:
+And the terrible fire? It never came. Perhaps Dongfang Shuo had known that all along.
 
-"A little black person wears a washbasin on his head. Ask him to take it off, and he says he wants to wear it a little longer."
+People later told this folk story as one explanation for the lanterns, crowds, and family reunions of the **Lantern Festival**, celebrated on the fifteenth day of the first lunar month.
 
-What is it?
-
-The answer is a black jujube, a dried date with a hard cap that looks like a tiny hat.
-
-A good lantern riddle should be clever.
-
-It should not be too hard, and it should not be too obvious.
-
-The best kind makes you feel confused at first. Then, after thinking for a while, you suddenly laugh and say, "Oh!"
-
-At many Lantern Festival fairs today, people can still win small prizes for solving riddles, such as little lanterns or sugar figures.
-
-Children and adults both rush to try.
-
-You can think of it as an ancient word-puzzle game.
-
----
-
-## An Ancient Night for Meeting?
-
-You may hear people call the Lantern Festival "ancient China's Valentine's Day."
-
-That is a little too simple, but it is not completely wrong.
-
-In some periods of ancient China, young women did not always have many chances to go out freely.
-
-But on Lantern Festival night, streets were busy, lights were bright, and many people came out to look at lanterns.
-
-Because of that, stories and operas often used this night as a time for people to meet.
-
-So today's Lantern Festival is more than a bowl of sweet rice balls and a street full of lanterns.
-
-It also carries the feeling of people meeting under lights long ago.
-
-Under the lanterns, there have never been only lanterns.
-
-There have always been people's stories.
-
----
-
-## Summary
-
-The Lantern Festival, on the fifteenth day of the first lunar month, is an important stop in Chinese New Year.
-
-People eat *tangyuan* or *yuanxiao*, look at lanterns, and solve lantern riddles.
-
-With sweet food and bright lights, people slowly close the New Year celebration.
-
-Under the lights, there is noise and joy, but also the warm feeling of people meeting, talking, and caring about one another.
+Whether or not the story really happened, it ends with an idea that still fits the festival today: **After the New Year begins, families come together under a sky full of light.**

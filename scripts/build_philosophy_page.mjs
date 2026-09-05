@@ -48,7 +48,7 @@ function parseField(block, name) {
 function parseTaggedBlock(block, tagName) {
   const pattern = new RegExp(`\\[${tagName}\\]\\n([\\s\\S]*?)\\n\\[\\/${tagName}\\]`);
   const match = block.match(pattern);
-  return match ? normalizeDisplayDashes(match[1].trim()) : "";
+  return match ? match[1].trim() : "";
 }
 
 function parseBlocks(body) {
@@ -62,11 +62,27 @@ function parseBlocks(body) {
 }
 
 function formatInline(text) {
-  const escapedText = escapeHtml(text)
+  const links = [];
+  const textWithLinkTokens = text.replace(/\[([^\]\n]+)\]\(([^)\s]+)\)/g, (match, label, href) => {
+    if (!/^(?:https?:\/\/|\/|#|\.\.?\/)/i.test(href)) return match;
+
+    const token = `@@CULTURE_LINK_${links.length}@@`;
+    links.push({
+      token,
+      html: `<a class="story-link" href="${escapeHtml(href)}">${escapeHtml(label)}</a>`
+    });
+    return token;
+  });
+
+  const escapedText = escapeHtml(textWithLinkTokens)
+    .replace(/—/g, "&#8212;")
+    .replace(/–/g, "&#8211;")
     .replace(/`([^`]+)`/g, (_match, code) => `<code>${code}</code>`)
+    .replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>")
     .replace(/\*([^*]+)\*/g, "<em>$1</em>");
 
-  return formatGlossaryTerms(escapedText);
+  const formattedText = formatGlossaryTerms(escapedText);
+  return links.reduce((result, link) => result.replace(link.token, link.html), formattedText);
 }
 
 function renderTextBlock(text, langClass = "") {

@@ -2,21 +2,19 @@
 
 # Why Did Zhu Yuanzhang Become Such a Busy Emperor?
 
-## Do We Really Know When He Woke Up?
+## Why Did So Much Work Reach Him?
 
-The easiest way to describe “a day in the life of an emperor” is to draw a schedule: wake at three, hold court at five, meet officials all day, and read reports late into the night. The problem is that schedules like this often mix customs from different dynasties and different emperors. We do not have trustworthy evidence that Zhu Yuanzhang, the first Ming emperor, followed one exact timetable every day.
+Zhu Yuanzhang was the first emperor of the Ming dynasty. Once he became emperor, he faced an astonishing amount of work. Grain, taxes, rivers, laws, officials, and armies—major decisions in every area could end up before him.
 
-History is not completely silent, though. Official records preserve court meetings, government orders, and the flow of paperwork. They cannot show us what Zhu ate for breakfast or when he went to bed each night. They can answer a better question: *What work actually reached him as emperor?*
-
-This article follows one emperor in one period. Zhu Yuanzhang, also called the Hongwu Emperor, ruled from 1368 to 1398. He founded the Ming dynasty, and his capital was in the city now called Nanjing.
+Orders and government papers from his reign show how these problems passed through many officials before reaching the emperor. They also lead us to the puzzle at the center of this story: Why did Zhu change the government so that even more decisions came straight to him?
 
 ---
 
 ## From a Poor Childhood to a New Dynasty
 
-Zhu Yuanzhang was born in 1328 near present-day Fengyang in Anhui Province. The evidence clearly shows that his family was extremely poor. Later biographical accounts also say that he herded animals for others as a boy and then became a monk. Famine, disease, and warfare shook the final years of the Yuan dynasty. Zhu joined a rebel army and, after years of fighting, founded a new dynasty.
+Zhu Yuanzhang grew up in a very poor family. As a boy, he herded animals for other people. Later, he went to live at a Buddhist temple and became a monk. Then famine, disease, and war swept across the country. Zhu joined a rebel army that was fighting the Yuan government. After years of war, he founded the Ming dynasty and became its first emperor.
 
-When Zhu became emperor, he did not inherit a government that was already running smoothly. He had to rebuild institutions after years of war and make new orders reach distant places. Instead of guessing what time he opened his eyes, let us follow a government report toward his desk.
+Yet Zhu did not take charge of a peaceful, well-run country. Years of fighting had left many places badly damaged, and the government had to be rebuilt. He needed to send orders across the country and deal with grain, taxes, rivers, and laws. His job was already enormous. Then he made a choice that sent even more work toward his own desk.
 
 ---
 
@@ -44,7 +42,7 @@ This change pulled more power toward the emperor. It also brought more governmen
 
 The *Veritable Records of Ming Taizu*, an official chronicle compiled after Zhu's death, preserves an astonishing count. During one eight-day stretch in 1384, officials counted 1,660 memorials from offices inside and outside the capital. Those documents contained 3,391 separate matters. That averages more than two hundred documents and four hundred issues each day.
 
-Now slow down. The record counts what government offices submitted. It does not say that Zhu read every character alone or wrote a long answer to every item with his own brush. One memorial could hold several matters. The numbers also cannot tell us exactly when he lit a lamp or put down his brush on those nights.
+Now slow down. The record counts what government offices submitted. It does not say that Zhu read every character alone or wrote a long answer to every item with his own brush. One memorial could hold several matters, and these eight days cannot represent every day of his reign.
 
 Even with those limits, the count teaches us something important. After the chancellorship disappeared, the emperor stood at the end of more decision-making paths. The crowded desk reflected Zhu’s workload, but it also revealed an entire government organized around imperial power.
 
@@ -68,10 +66,10 @@ This is not a story saying that the busiest emperor must be the best emperor. Wh
 
 ---
 
-## Look Again at the Lamp
+## Look Again at the Crowded Desk
 
-In the picture, Zhu sits between moonlight and lamplight, surrounded by memorials. The scene is a useful symbol of concentrated government work, but it is not a record of one particular night.
+In the picture, Zhu sits at a desk crowded with reports. The piles of paper make his workload easy to see, but they tell us more than “this emperor was busy.”
 
-We cannot fill in every hour of Zhu's ordinary day. We can establish facts that matter more: the early Ming government produced a huge flow of business; the 1380 reform made the Six Ministries answer more directly to the emperor; many officials still helped sort, draft, and carry out decisions; and concentrated power brought concentrated work and danger.
+The new Ming government kept producing problems that needed answers. Zhu later removed the chancellor and made the Six Ministries report more directly to him. Many officials still sorted papers, drafted orders, and carried out decisions, but final authority gathered more tightly around the emperor.
 
-An emperor's day is not an empty schedule that we may fill with guesses. A more trustworthy story follows a document through the government and asks why so many paths ended at the same desk.
+Now the story behind the crowded desk is clear. Zhu gained more power, and he pulled more work toward himself. When more roads lead to one person, authority, workload, and the risk of costly mistakes all gather in the same place.

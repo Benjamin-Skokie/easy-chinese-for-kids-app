@@ -2,6 +2,13 @@
 
 This file is for editorial research and does not render on the website.
 
+## Current Child-Facing Draft and Fact Check (2026-09-03)
+
+- The story now moves from the outside ring to rammed-earth walls, vertically arranged family rooms, the shared courtyard, and the guarded gate.
+- The title and the first use on each page give the core term as 土楼（tǔlóu）. The opening also explains that *tǔ* means earth and *lóu* means a multistory building.
+- It says “many” or “some” where layouts and uses vary, and it does not present all tulou as round or as belonging to only one community.
+- Defense remains one part of the story, while daily family life stays central.
+
 ## The UNESCO property, building forms, and broad functions
 
 Source: UNESCO World Heritage Centre, “Fujian Tulou”
@@ -11,6 +18,7 @@ Accessed: 2026-08-21
 Supports:
 
 - The World Heritage property contains 46 buildings constructed between the 15th and 20th centuries across roughly 120 kilometers in southwestern Fujian.
+- UNESCO translates *tulou* as “earthen houses” and otherwise preserves *tulou* as the name of this building tradition. The child-facing explanation uses “earthen building” to unpack the two Chinese syllables rather than replacing the name throughout the article.
 - The selected buildings include circular and square plans, rise several stories around central courtyards, and were organized as housing for large family communities.
 - Defensive features in the UNESCO examples include a limited entrance and exterior windows above lower levels; families received vertically divided sets of rooms.
 - Tulou combined defensive needs with long-term family residence and responded to the region’s economic and social history.
@@ -48,16 +56,37 @@ Source: UNESCO World Heritage Earthen Architecture Programme, *Earthen Architect
 URL: https://whc.unesco.org/document/126549
 Accessed: 2026-08-21
 
+Source: U.S. National Park Service, “2012 Auditorium Addition — Casa Grande Ruins National Monument”
+URL: https://www.nps.gov/cagr/learn/management/auditorium.htm
+Accessed: 2026-09-03
+
 Supports:
 
 - Most Fujian tulou combine an outer rammed-earth wall, an interior timber framework, and a base or foundation of stone, blocks, or cobbles.
 - Builders used local materials and constructed walls in compacted layers; exact earth mixtures and reinforcement practices varied, and special additives were sometimes rather than always used.
+- Rammed-earth construction places a damp earth mixture inside supported forms and compacts it layer by layer. Historically, workers could tamp it by hand with long, heavy-ended ramming tools.
 
 Editorial boundary:
 
 - Explain the load-bearing system as rammed earth working with timber, not as a building made from one solid mass of mud.
 - Stone bases are a common moisture-protecting construction feature, not a promise that every building uses the same height or stonework.
 - Stories about sticky rice, egg whites, sugar, bamboo, or branches may fit some recorded practices but must not be presented as one universal tulou recipe.
+
+## Chengqi Lou in the Illustration
+
+Source: Longyan Municipal Government, Yongding District, “Tulou Attractions” (《土楼景点》)
+URL: https://www.yongding.gov.cn/yxyd/ydtl/200804/t20080420_1145764.htm
+Accessed: 2026-09-03
+
+Supports:
+
+- Chengqi Lou (承启楼, Chéngqǐ Lóu) is a real round tulou in Gaobei Village, Yongding.
+- It was completed in 1708 and consists of four concentric rings, with a four-story outer ring.
+
+Editorial boundary:
+
+- `thick-wall-gate.webp` is a generated modern illustration, not a photograph or measured reconstruction of Chengqi Lou. Its inscription identifies a real building, but its visible architecture must not be used as evidence for that building's exact appearance.
+- The picture is retained only to show the general appearance of a thick earthen exterior wall, high windows, stone base, and wooden gate.
 
 ## Architectural variation and household units
 
@@ -153,7 +182,7 @@ Supports:
 
 - `tulou-from-above.webp` offers a clear imagined overview of a round earthen building with an open courtyard.
 - `tulou-courtyard.webp` illustrates inward-facing timber galleries and a courtyard.
-- `thick-wall-gate.webp` foregrounds an earthen wall, stone base, and wooden gate.
+- `thick-wall-gate.webp` foregrounds an earthen wall, stone base, and wooden gate, but the Chengqi Lou inscription does not make the image a documentary view of that building.
 
 Editorial boundary:
 

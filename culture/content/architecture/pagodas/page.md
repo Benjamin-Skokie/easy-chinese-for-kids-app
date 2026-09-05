@@ -1,118 +1,119 @@
 ---
-title_zh: 宝塔：屋檐下面藏着什么
-title_en: Pagodas: What Lies Beneath the Eaves?
+title_zh: 宝塔为什么不是普通的高楼？
+title_en: Why Isn't a Pagoda Just a Tall Building?
 slug: pagodas
 category: architecture
-difficulty: 中等
+difficulty: 简单
 back_href: ../../../../index.html#culture-architecture
 style_notes: "用 --- 分隔 frontmatter；正文强调优先用 *斜体*；尽量不用 **粗体**。"
 ---
 
 [hero]
-title_zh: 宝塔：屋檐下面藏着什么
-title_en: Pagodas: What Lies Beneath the Eaves?
+title_zh: 宝塔为什么不是普通的高楼？
+title_en: Why Isn't a Pagoda Just a Tall Building?
 [/hero]
 
 [section]
 page: 1
 layout: text-wrap-image
-heading_zh: 它看起来像楼，却不一定是楼
-heading_en: It Looks Like a Tower—but Is It?
+heading_zh: 为什么中文叫“宝塔”？
+heading_en: Why Is It Called Bǎotǎ in Chinese?
 image: pagoda-odd-levels.webp
-caption_zh: 这是一幅现代人画的楼阁式塔，并不代表所有中国塔；有些塔可以登临，有些内部很小，甚至近乎实心。
-caption_en: This modern picture shows one pavilion-style pagoda, not every Chinese pagoda. Some can be climbed; others have little interior space or are nearly solid.
+caption_zh: 中国宝塔有许多样子。有的能登上去，有的内部很小，还有的接近实心。
+caption_en: Chinese pagodas come in many forms. Some can be climbed, while others have little space inside or are nearly solid.
 [zh]
-站在一座塔前，你也许会抬起手指，一层一层数屋檐：“一、二、三、四……”然后自然地猜想，每道屋檐后面都有房间和楼梯。可是古塔最喜欢让眼睛猜错：有的外面看见许多檐，里面却没有同样多的楼层；有的可以登临，有的内部很窄，甚至近乎实心。它首先不是古代的观景楼，而是一种与佛教信仰有关的建筑。
+“宝塔”的“宝”，就是“宝贝”的“宝”。但它不是说每座塔里都堆满了金银珠宝。在古代佛教用语里，“宝”可以表示珍贵、神圣和尊敬。塔里常常保存舍利、佛像或经书，所以人们也把佛塔尊称为“宝塔”。
 
-塔的远祖，是起源于南亚的佛教*窣堵坡*。窣堵坡常用来安置与佛陀或高僧有关的舍利，也成为人们礼拜、绕行和纪念的中心。佛教经过中亚传向中国时，建筑形状没有在某一天突然从“圆碗”变成“高楼”。不同地区的工匠和信众经过许多代尝试，把窣堵坡的覆钵、层台、伞盖等象征，与中国已有的楼阁和木构技术不断重新组合，才出现了多种中国佛塔。
+英文用 *pagoda* 称呼这种亚洲建筑，不会把“宝”和“塔”一个字一个字翻译，所以它并不叫 *treasure tower*。
 
-因此，“塔”也不是只有一种样子。塔中可能安置舍利、佛像、经文或其他供奉物；木、砖、石、金属都可以成为材料。楼阁式塔的外观像多层楼，有些内部可以登临；密檐式塔把一层层短檐排得很近，许多并没有与屋檐一一对应的房间。以后再看到塔，先别急着问“能爬多高”，不妨先问：“人们为什么把它建在这里？它守护的是什么？”
+宝塔也不是中国独有的建筑。它的故事从古代印度开始。早期的*窣堵波*（stupa）通常是圆顶、接近实心的建筑，里面可能放着一个小盒子，保存舍利（shèlì）。舍利可能是佛陀或受人尊敬的僧人留下的骨灰、骨片或物品。就连中文的“塔”字，也来自 *stupa* 这个外来名称。
+
+佛教传到亚洲不同地方后，宝塔也长出了不同模样。中国工匠把它和自己熟悉的高楼、木屋顶放在一起。经过很长时间，圆圆的窣堵波发展出了许多一层层向上升起的中国宝塔。
 [/zh]
 [en]
-Stand in front of a pagoda and you may begin counting the eaves with your finger: “One, two, three, four...” It is easy to imagine a room and staircase behind every roof. Ancient pagodas often trick the eye, however. Some have more rows of eaves than usable floors. Some can be climbed, while others have very little space inside or are nearly solid. A pagoda was not simply an old-fashioned lookout tower. It began as a building connected with Buddhist belief and practice.
+One common Chinese name for a Buddhist pagoda is *bǎotǎ*. The first part, *bǎo*, is the same word used for “treasure.” But this does not mean that every pagoda was filled with gold and jewels. In older Buddhist language, *bǎo* could describe something precious, sacred, and worthy of respect. Pagodas often held relics, Buddhist images, or Buddhist texts, so people also called a Buddhist tower a *bǎotǎ*.
 
-The pagoda's distant ancestor is the Buddhist *stupa*, which began in South Asia. Stupas often enshrined relics connected with the Buddha or respected teachers. They also became places where people honored the Buddha, remembered his teachings, and walked around the sacred structure as an act of devotion. As Buddhism traveled through Central Asia into China, the stupa did not suddenly change from a rounded mound into a tall tower in one easy step. Over many generations, builders and worshippers reworked its domes, platforms, and umbrella-like finials together with Chinese traditions of multistory buildings and timber construction.
+English uses the word *pagoda* for this kind of Asian building. It does not translate the two Chinese characters one by one, so we do not normally call it a “treasure tower.”
 
-That long process produced many kinds of pagodas. A pagoda might hold relics, Buddhist images, sacred texts, or offerings, and it might be built from wood, brick, stone, or metal. Pavilion-style pagodas look more like multistory buildings, and some have stairs. Closely-eaved pagodas stack short rows of eaves tightly together, often without a usable room behind each one. So when you see a pagoda, do not ask only, “How high can I climb?” Ask, “Why was it built here, and what was it meant to protect?”
+Pagodas are not found only in China. Their story began in ancient India. An early *stupa* was usually a rounded, nearly solid building. A small box inside might hold a relic. A relic could be ashes, a piece of bone, or an object left by the Buddha or a respected monk. Even the Chinese word *tǎ* came from this foreign name.
+
+As Buddhism spread across Asia, pagodas took on different shapes. Chinese builders joined the older idea with the tall buildings and wooden roofs they already knew. Over many centuries, the rounded stupa developed into many kinds of Chinese pagodas with roofs rising layer by layer.
 [/en]
 [/section]
 
 [section]
 page: 2
-layout: text-wrap-image
-heading_zh: 应县木塔：外面五层，里面九层
-heading_en: Yingxian: Five Stories Outside, Nine Levels Inside
-image: yingxian-wooden-pagoda.webp
-caption_zh: 这幅现代插图表现了木塔的高大和木构外观，但不是精确复原；真实的应县木塔为八角形，外观五层六檐。
-caption_en: This modern illustration suggests the pagoda's height and timber exterior, but it is not an exact reconstruction. The real Yingxian Pagoda is octagonal, with five visible stories and six eaves.
+layout: text-only
+heading_zh: 每一道屋檐下面都是一层楼吗？
+heading_en: Does Every Eave Mark a Floor?
 [zh]
-山西应县佛宫寺的释迦塔建于辽代，通常称为*应县木塔*。它完成于1056年，高度的公布数字因测量方法略有不同，常见数据约为66至67米。它是中国现存最早的木塔，也是世界现存最高的古代木塔之一。可是，如果你只看正面照片，可能会数错它到底有几层。
+站在塔下，你可能会用手指数屋檐：“一、二、三、四……”屋檐就是屋顶伸出墙外的边。它能挡住一部分雨水和阳光。可是数完屋檐，不一定就知道塔里有几层。
 
-木塔外观是五层六檐，塔内却有四个藏在平座和屋檐之间的暗层，加起来共有九个内部层次。这些暗层不是为了偷偷多住几户人家，里面密集的柱、梁和斜撑参与连接整座塔。塔身为八角形，内外两圈柱子像两个套在一起的木筒，各层又用梁枋和斗栱连成整体。它让我们看见，“层”可以是外观的故事，也可以是内部结构的故事。
+有些楼阁式塔真的像多层楼，里面有楼梯，可以一层层登上去。有些密檐式塔把很多短屋檐排得很近，可屋檐后面并没有同样多的房间。还有一些塔内部很小，甚至接近实心。
 
-木塔从1056年保存到今天，确实经历了漫长岁月，但人们常把原因说得太简单：“榫卯一晃就吸收地震力量，所以千年不倒。”研究者认为，它的平面形状、双圈柱网、暗层斜撑、梁柱连接和斗栱等许多因素共同影响结构表现；历代维修和现代保护同样重要。今天木塔已经有倾斜、构件老化和累积损伤，专家仍在监测和寻找尽量少干预的加固方法。它不是永远不会倒的神奇积木，而是一件需要人继续照顾的古老实物。
+材料也不一样。工匠可以用木头建塔，也可以用砖、石头或金属。木塔能做出伸展的屋檐，砖塔不怕木头那样容易着火。不同地方的工匠会按照用途、材料和自己的本领，让宝塔长成不同模样。
 [/zh]
 [en]
-The Sakyamuni Pagoda at Fogong Temple stands in Yingxian County, Shanxi. Usually called the Yingxian Wooden Pagoda, it was completed during the Liao dynasty in 1056. Published measurements vary slightly depending on how the building is measured, but its total height is about 66 to 67 meters. It is China's oldest surviving wooden pagoda and one of the tallest ancient wooden pagodas in the world. Yet if you count only what you see in a photograph, you may get its number of floors wrong.
+Stand below a pagoda and you may count the rows of eaves: “One, two, three, four...” An *eave* is the edge of a roof that sticks out past the wall. It helps keep some rain and sunlight away from the wall. But counting eaves does not always tell you how many floors are inside.
 
-The exterior shows five stories and six eaves. Inside are four hidden structural levels tucked between the visible stories, making nine levels altogether. These hidden levels were not secret apartments. Their dense columns, beams, and diagonal braces help tie the tower together. The octagonal building also has inner and outer rings of columns, almost like two wooden tubes fitted inside each other. Here, “How many stories?” has two answers: one for the outside appearance and another for the interior structure.
+Some pagodas really are like tall buildings, with stairs that lead from floor to floor. Others stack many short eaves close together, but there is not a room behind every one. Some pagodas have very little space inside or are almost solid.
 
-The pagoda's survival since 1056 is remarkable, but it cannot be explained by one magical secret such as “flexible joints absorb every earthquake.” Researchers study many features working together: the octagonal plan, two rings of columns, braced hidden levels, beams, joints, and complex bracket sets. Repairs and continuing conservation have mattered too. Today the tower has leaning sections, aging pieces, and accumulated damage. Specialists monitor it and test ways to support it with as little disturbance as possible. It is not an indestructible wooden toy. It is an old building that still needs care.
+Builders also used different materials. A pagoda could be made of wood, brick, stone, or even metal. Timber made wide roofs possible. Brick did not catch fire as easily as wood. In each place, builders shaped the tower to fit its job, its materials, and the skills they knew.
 [/en]
 [/section]
 
 [section]
 page: 3
 layout: text-wrap-image
-heading_zh: 大雁塔：一本用砖写成的旅行记录
-heading_en: Giant Wild Goose Pagoda: A Journey Written in Brick
-image: giant-wild-goose-pagoda.webp
-caption_zh: 这幅现代插图抓住了大雁塔方正、逐层收分的轮廓；今天的七层砖塔经历过唐代重建和后世多次修缮。
-caption_en: This modern illustration captures the square, tapering outline of the Giant Wild Goose Pagoda. Today's seven-story brick tower reflects Tang rebuilding and many later repairs.
+heading_zh: 一座木塔怎么站了近一千年？
+heading_en: How Has a Wooden Pagoda Stood for Nearly 1,000 Years?
+image: yingxian-wooden-pagoda.webp
+caption_zh: 应县木塔外面有五层楼身、六道屋檐，里面还有四个看不见的结构层。
+caption_en: Yingxian Wooden Pagoda has five visible stories, six rows of eaves, and four hidden structural levels.
 [zh]
-另一座塔把我们的目光带到唐代长安，也就是今天的西安。玄奘从印度求法归来，带回数百部用梵文写成的佛教典籍，还有佛像等物品。他在大慈恩寺组织译经，也请求修建一座塔来安置这些重要物品。652年，最初五层的慈恩寺塔建成，后来才渐渐有了“大雁塔”这个名字。
+山西（Shānxī）是中国北部的一个省，有点像美国的一个州。应县（Yìngxiàn）是那里的一座县城。城里有一座建成于1056年的应县木塔。它大约有二十层楼那么高，主要结构用木头建成。站在塔下抬头看，层层屋檐像一把把大伞张开。
 
-说它“保存经书”没有错，但把它想成一座安静的大图书馆就不够了。对佛教信众来说，经文、佛像和舍利不仅是研究资料，也是值得供奉和礼敬的圣物；塔的建造本身带有宗教意义。玄奘也不是小说《西游记》里会遇见孙悟空的“唐僧”。他是真实的旅行者、僧人和翻译家，几个世纪后，他的旅程才成为小说奇遇的重要灵感。
+你可能会数出六道屋檐，可是木塔外面只有五层楼身。为什么多出一道？因为第一层有上下两道屋檐。塔里还有四个藏在可见楼层之间的结构层，所以内部一共能分出九层。这些暗层里有许多柱子、横梁和斜撑，帮助整座塔连成一个结实的木架。
 
-今天看见的七层砖塔，也不是652年的建筑原封不动保存至今。最初的五层塔使用砖表土心的做法，后来损坏；武则天时期曾重建，层数和高度又经过变化，后世还多次维修。明代1604年的大修又修补和加固了塔身砖面，但说今天只是“明代外壳包着完整唐代内芯”，还是把复杂历史讲成了简单夹心饼。更准确的看法是：这座塔像一本反复修补的旅行记录，唐代的起点仍在，今天的形状却由许多时代共同留下。
+木塔能保存到今天，不是只靠一种神奇的接头。八角形的塔身、里外两圈柱子、木梁和支撑都在一起工作。一代代人也不断检查和维修。今天有些部分已经倾斜或损坏，专家仍在监测和保护它，尽量不让问题继续加重。
 [/zh]
 [en]
-Another pagoda carries us to the Tang capital of Chang'an, now the city of Xi'an. The monk Xuanzang returned from India with hundreds of Buddhist texts written in Sanskrit, along with Buddhist images and other sacred objects. At Great Ci'en Temple, he led a major translation project and asked for a pagoda to protect important materials. The first five-story Ci'en Temple Pagoda was built in 652. The name “Giant Wild Goose Pagoda” became attached to it later.
+Shānxī is a province in northern China, a large area somewhat like a state. Yìngxiàn is a county there. Its famous wooden pagoda was completed in 1056. The tower is about as tall as a twenty-story building and is built mainly from wood. From below, its roofs spread outward like a stack of enormous umbrellas.
 
-It is true that the pagoda stored texts, but calling it a giant quiet library misses part of the story. For Buddhist worshippers, scriptures, images, and relics were not only materials to read or study. They could also be sacred objects worthy of protection and reverence, and building the pagoda was itself a religious act. Xuanzang was also not the “Tang Monk” who traveled with the Monkey King. He was a real traveler, Buddhist monk, and translator. Centuries later, memories of his journey helped inspire the adventures in the novel *Journey to the West*.
+You may count six rows of eaves, but only five main stories are visible outside. Why is there an extra row? The first story has two rows of eaves, one above the other. Four more structural levels are hidden between the visible stories, making nine levels inside. Posts, beams, and sloping braces in these hidden levels help tie the tower into one strong wooden frame.
 
-The seven-story brick pagoda we see today is not the untouched building of 652. The first five-story structure had an earthen core faced with brick and later deteriorated. It was rebuilt during the rule of Empress Wu Zetian, changed in height and number of stories, and repaired many more times. During a major Ming repair in 1604, workers repaired and reinforced the brick exterior. But it is still too simple to call the present tower “a Ming shell wrapped around a complete Tang core.” A better picture is a travel record repaired again and again: its story began in the Tang dynasty, while many periods helped create what survives now.
+The pagoda has not survived because of one magical joint. Its eight-sided shape, two rings of columns, beams, and braces all work together. People have also checked and repaired it for generations. Some parts now lean or show damage. Experts watch these areas and work to keep the problems from getting worse.
 [/en]
 [/section]
 
 [section]
 page: 4
-layout: text-only
-heading_zh: 奇数层不是一条万能公式
-heading_en: Odd Numbers Are Not a Magic Formula
+layout: text-wrap-image
+heading_zh: 大雁塔为什么和一次旅行有关？
+heading_en: Why Is the Giant Wild Goose Pagoda Part of a Travel Story?
+image: giant-wild-goose-pagoda.webp
+caption_zh: 大雁塔最初用来保存玄奘（Xuánzàng）从印度带回的佛教经书和其他重要物品。
+caption_en: The Giant Wild Goose Pagoda was first built to hold Buddhist texts and other important objects that Xuánzàng brought from India.
 [zh]
-最后，再来数一次屋檐。许多著名的中国塔确实使用三、五、七、九或十三这样的奇数。有人用传统的阴阳数字观念解释这种选择：奇数属“阳”，向上耸立的塔也被理解为偏阳的建筑。这是一种有影响的文化解释，却不能反过来变成“每座塔都必须是奇数层”的万能建筑法规。
+一千三百多年前，僧人玄奘（Xuánzàng）从长安（Cháng’ān）出发，去印度学习佛教。长安是唐朝的都城，就是今天的西安（Xī’ān）。玄奘走的是陆路，要穿过沙漠和高山，许多年后才回到中国。
 
-首先，我们数的东西可能不同。应县木塔外观五层、内部九层，却有六道屋檐；密檐式塔的一排排檐，常常只是塑造向上收束的外形，并不等于可以站人的楼板。其次，塔的用途、时代、地区、材料和修建者都不同，实际形式远比“三、五、七”丰富。甚至有些后来被称作“塔”的建筑，主要用途已经不再是安置佛教圣物。
+玄奘带回了数百部用梵文写成的佛教经书，还有佛像和舍利。他需要一个安全的地方保存它们，也组织许多人把经文翻译成中文。652年，一座五层砖塔在大慈恩寺（Dà Cí’ēn Sì）里建了起来，后来被叫作大雁塔。
 
-所以，读一座塔不能只套一个数字答案。我们要分清看得见的檐、走得到的层、藏在里面的结构层，还要问塔中曾供奉什么、后来修过什么。塔真正迷人的地方，不是每一座都遵守同一条秘密规则，而是一个来自远方的佛教建筑传统，怎样在不同地方一次又一次改变形状。
+最早的塔后来损坏了，后人曾重建、加高和多次修理。今天的大雁塔是一座七层砖塔。
+
+玄奘的旅行真的发生过。几百年后，讲故事的人把这段经历变成了一场神奇冒险。在小说《西游记》里，唐僧和孙悟空、猪八戒一起旅行，路上还遇到了许多妖怪。
+
+真实的玄奘没有这些神奇伙伴。在一部分路程中，他与向导和其他同行者一起走。马和其他驮东西的动物也帮忙运送行李和经书。他们一起把数百部佛教经书带回了中国。
 [/zh]
 [en]
-Now count the eaves one more time. Many famous Chinese pagodas do use odd numbers such as three, five, seven, nine, or thirteen. One traditional explanation connects those choices with ideas about *yin* and *yang*: odd numbers were classed as yang, and a tall, upward-reaching pagoda could also be understood as yang. This interpretation has influenced the way people explain pagodas, but it should not become a claim that every pagoda had to obey one universal number law.
+More than thirteen hundred years ago, a monk named Xuánzàng left Cháng’ān and traveled to India to study Buddhism. Cháng’ān was the capital of Tang China. Today, the city is called Xī’ān. Xuánzàng traveled over land, crossing deserts and high mountains, and did not return to China for many years.
 
-To begin with, people may be counting different things. Yingxian has five visible stories, nine interior levels, and six eaves. On a closely-eaved pagoda, rows of short roofs help create a soaring outline, but they do not necessarily mark floors where a person can stand. Pagodas also differed by period, region, purpose, material, and patron. Some buildings later called pagodas were no longer mainly used to enshrine Buddhist sacred objects.
+Xuánzàng brought back hundreds of Buddhist texts written in Sanskrit, along with Buddhist images and relics. He needed a safe place to keep them, and he led a large team that translated the writings into Chinese. In 652, a five-story brick tower was built at Great Ci’en Temple (Dà Cí’ēn Sì). It later became known as the Giant Wild Goose Pagoda.
 
-Reading a pagoda therefore takes more than applying a number rule. We must separate the eaves we can see, the floors people can enter, and the structural levels hidden inside. We should also ask what the tower once enshrined and how later builders changed it. The wonder of pagodas is not that they all obey one secret formula. It is that a Buddhist building tradition from far away could be reshaped, again and again, in so many places.
+The first tower was later damaged. People rebuilt it, made it taller, and repaired it many times. Today, the Giant Wild Goose Pagoda is a seven-story brick tower.
+
+Xuánzàng's journey really happened. Centuries later, storytellers turned it into a magical adventure. In the novel *Journey to the West*, the Tang Monk travels with the Monkey King and Pigsy and meets many monsters along the way.
+
+The real Xuánzàng had no magical companions. On some parts of the trip, he traveled with guides and other people. Horses and other animals also helped carry supplies and books. Together, they brought hundreds of Buddhist texts back to China.
 [/en]
 [/section]
-
-[ending]
-heading_zh: 小结
-heading_en: In Summary
-[zh]
-宝塔从佛教窣堵坡传统发展而来，在中国与本地材料、技术和建筑形式相遇，变成了木塔、砖塔、楼阁式塔、密檐式塔等许多样子。它可能守护舍利、佛像或经文，却不一定能登临；屋檐、外观层数和内部层次也不一定相同。下一次站在塔下，不妨少急着数一层，多问一个“为什么”。
-[/zh]
-[en]
-Chinese pagodas developed from the Buddhist stupa tradition as it met local materials, building skills, and architectural forms. The result included timber and brick pagodas, climbable pavilion types, and closely-eaved towers. A pagoda might protect relics, images, or sacred texts, but it was not always meant for climbing, and its eaves might not match its interior floors. The next time you stand beneath one, pause your counting and ask one more “why.”
-[/en]
-[/ending]

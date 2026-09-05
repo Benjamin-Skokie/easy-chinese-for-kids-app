@@ -1,4 +1,4 @@
-# “一滴墨，怎样画出远近和湿干？”— References and Editorial Notes
+# “一滴墨，怎样变成山、雨和雾？”— References and Editorial Notes
 
 This file is for editorial research and does not render on the website.
 
@@ -240,3 +240,8 @@ Editorial boundary:
 - `1-ink-landscape.webp` may help children notice tone, mist, and texture effects but cannot document a historical artist, school, dynasty, or exact method.
 - `3-blank-river-boat.webp` is not Ma Yuan’s (or the attributed Ma Yuan-school) *Fishing Alone on a Cold River* and is not labeled as a Song painting.
 - The activity uses washable children’s paint, ordinary disposable practice paper, an adult-protected table, and controlled drops or brushstrokes. It forbids old paper, calligraphy, art objects, museum objects, unknown ink, mineral pigments, splashing, and claims of reproducing an ancient work.
+
+## 2026 child-facing revision
+
+- The main article now moves from diluted ink to mountain textures, then through a handscroll and into the open water and sky made by blank paper.
+- The classroom experiment, specialized technique list, painter classifications, and attribution discussion were removed from the children's narrative. The article still notes that Chinese ink painting can include color.

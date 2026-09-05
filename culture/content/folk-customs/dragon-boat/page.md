@@ -1,6 +1,6 @@
 ---
-title_zh: 端午节
-title_en: Dragon Boat Festival
+title_zh: 端午节：赛龙舟与屈原
+title_en: Dragon Boat Festival: Dragon Boats and Qu Yuan
 slug: dragon-boat
 category: folk-customs
 difficulty: 简单
@@ -9,142 +9,106 @@ style_notes: "用 --- 分隔 frontmatter；正文强调优先用 *斜体*；尽�
 ---
 
 [hero]
-title_zh: 端午节
-title_en: Dragon Boat Festival
+title_zh: 端午节：赛龙舟与屈原
+title_en: Dragon Boat Festival: Dragon Boats and Qu Yuan
 [/hero]
 
 [section]
 page: 1
 layout: text-wrap-image
-heading_zh: 什么是端午节？
-heading_en: What Is the Dragon Boat Festival?
+heading_zh: 鼓声一响，龙舟出发
+heading_en: The Drum Sounds, and the Dragons Go
 image: festival-intro.webp
-caption_zh: 端午节到了，人们会吃粽子、看龙舟，有的地方还会挂香包。
-caption_en: During Dragon Boat Festival, people eat zongzi, watch dragon boats, and in some places carry little scented bags.
+caption_zh: 龙舟的船头做成龙的样子，鼓声一响，整队人一起落桨。
+caption_en: A dragon boat has a dragon-shaped head. When the drum sounds, the whole team dips its paddles together.
 [zh]
-端午节是中国很有名的传统节日。
+咚！咚！咚！鼓手坐在船头，二十多支桨几乎同时落进水里。长长的船像一条贴着水面飞奔的龙。
 
-每到初夏，很多人会吃粽子、看龙舟比赛，有些地方还会挂香包。
+这就是端午节最热闹的声音。端午节在农历五月初五，很多地方会赛龙舟、吃粽子。有些家庭还会挂上香草，或给孩子佩戴小香包。
 
-这个节日很热闹，也和一个古老的故事连在一起。
+鼓手为什么要一直敲鼓？因为这么多人挤在一条窄船上，光有力气还不够。桨手要跟着鼓点一起划，船尾的人还要用一支长桨掌握方向。只要几个人快了一点或慢了一点，船就可能摇晃。整条龙舟必须像一支队伍那样一起动。
+
+今天，赛龙舟已经是一项讲究速度和配合的比赛。可是，龙舟和粽子为什么会出现在同一个节日里？人们最常听到的解释，要从两千多年前的一位诗人说起。
 [/zh]
 [en]
-Dragon Boat Festival is a well-known traditional holiday in China.
+The drum goes boom, boom, boom! The drummer sits near the front, and more than twenty paddles dip into the water almost at once. The long boat races forward like a dragon skimming across the river.
 
-In early summer, many people eat zongzi and watch dragon boat races. In some places, people also carry little scented bags.
+This is the liveliest sound of Dragon Boat Festival. The holiday falls on the fifth day of the fifth lunar month. In many places, people race dragon boats and eat *zòngzi*. Some families also hang fragrant plants or give children small scented bags.
 
-It is a lively holiday, and it is also tied to an old story.
+Why does the drummer keep beating? With so many people in one narrow boat, strength is not enough. The paddlers must follow the drum and row together. At the back, one teammate uses a long oar to steer. If a few paddlers move too early or too late, the boat can wobble. The whole dragon boat has to move as one team.
+
+Today, dragon boat racing is a sport built on speed and teamwork. But why do dragon boats and *zòngzi* belong to the same festival? The best-known explanation begins with a poet who lived more than two thousand years ago.
 [/en]
 [/section]
 
 [section]
 page: 2
 layout: text-wrap-image
-heading_zh: 屈原是谁？
-heading_en: Who Was Qu Yuan?
+heading_zh: 屈原为什么来到江边？
+heading_en: Why Did Qu Yuan Go to the River?
 image: qu-yuan.webp
-caption_zh: 在故事里，屈原常常站在江边，想着国家和百姓。
-caption_en: In the story, Qu Yuan often stands by the river, thinking about his country and its people.
+caption_zh: 屈原是一位诗人，也曾在国王身边帮助他作决定。
+caption_en: Qū Yuán was a poet who also worked beside the king and helped him make decisions.
 [zh]
-很久以前，屈原是一个很关心国家和百姓的人。
+两千多年前，中国这片土地上有几个互相争斗的国家。屈原（Qū Yuán）住在其中的楚国（Chǔ）。他会写诗，也在国王身边帮助他作决定。
 
-他认真思考国家的事情，也常常给国王提建议，希望大家的生活能更安全一些。
+屈原很爱自己的家乡。他劝国王小心强大的敌人，也希望楚国变得更好。可是其他人说了他的坏话，国王渐渐不再相信他，还让他离开了。
 
-可是后来，国王没有听进去，国家也变得越来越危险，屈原心里非常难过。
+多年后，敌军攻下了楚国的都城。这个消息让屈原心碎。在最广为流传的故事里，他来到汨罗江（Mìluó Jiāng）边，走进江水，再也没有回来。消息很快传到了附近的村庄。
 [/zh]
 [en]
-Long ago, Qu Yuan was a man who cared deeply about his country and the people.
+More than two thousand years ago, several states were fighting for power in the land that is now China. Qū Yuán lived in one of them, called Chǔ. He wrote poems and worked beside the king, helping him make decisions.
 
-He thought hard about the future and gave advice to the king, hoping life could become safer for everyone.
+Qū Yuán loved his home. He warned the king about a powerful enemy and wanted Chǔ to become stronger. But other people spoke against him. The king stopped trusting Qū Yuán and sent him away.
 
-But later, the king did not listen, and the country fell into danger. Qu Yuan felt very sad.
+Years later, an enemy army captured the capital of Chǔ. The news broke Qū Yuán's heart. In the best-known story, he went to the Mìluó River and never returned. Word of what had happened soon reached the nearby villages.
 [/en]
 [/section]
 
 [section]
 page: 3
 layout: text-wrap-image
-heading_zh: 汨罗江边的故事
-heading_en: The Story by the Miluo River
+heading_zh: 村民们划船寻找屈原
+heading_en: The Search on the River
 image: miluo-river.webp
-caption_zh: 传说里，人们着急地划船去找屈原，一边划，一边叫着他的名字。
-caption_en: In the legend, villagers rowed out in a hurry to look for Qu Yuan, calling his name as they went.
+caption_zh: 传说里，人们急忙划船寻找屈原，一边敲鼓，一边呼喊。
+caption_en: In the legend, people hurry out in boats to search for Qu Yuan, beating drums and calling his name.
 [zh]
-传说里，到了五月初五这一天，屈原来到汨罗江边，投进了江中。
+村民们马上跳上小船。他们用力划桨，在江上一遍遍寻找屈原。有人敲鼓，有人大声呼喊，希望鱼和水里的生物不要靠近他。
 
-附近的人知道以后，非常着急，马上划着小船去找他。
+传说还说，人们把米团投入江中，希望鱼去吃米，而不要伤害屈原。
 
-大家一边划船，一边叫着他的名字。江面上满是担心，也满是敬重。
+这就是最常听到的传说怎样把端午节的两个习俗连在一起：村民划船寻找屈原，让人想到后来的龙舟竞渡；他们投入江中的米团，也和端午节的粽子联系了起来。
 [/zh]
 [en]
-In the legend, on the fifth day of the fifth lunar month, Qu Yuan came to the Miluo River and went into the water.
+The villagers immediately jumped into small boats. They paddled hard and searched the river again and again. Some beat drums and others called out, hoping to keep fish and other river creatures away.
 
-When the nearby villagers heard this, they hurried out in small boats to look for him.
+The legend also says that people threw bundles of rice into the water so the fish would eat the rice instead.
 
-As they rowed, they called his name again and again. The river was full of worry and respect.
+This is how the best-known legend connects two famous festival customs: the villagers’ search became associated with dragon boat racing, while the rice they threw into the river became associated with *zòngzi*.
 [/en]
 [/section]
 
 [section]
 page: 4
-layout: text-only
-heading_zh: 为什么要吃粽子、划龙舟？
-heading_en: Why Zongzi and Dragon Boats?
-[zh]
-人们担心江里的鱼会碰到屈原，就把米团和食物扔进江里，希望鱼去吃那些食物。
-
-后来，这些米团慢慢变成了今天的粽子。
-
-人们急着划船找屈原的样子，也慢慢变成了后来的龙舟比赛。
-
-所以一说到端午节，大家就会想到粽子和龙舟。
-[/zh]
-[en]
-People were afraid the fish in the river might touch Qu Yuan, so they threw rice bundles and food into the water.
-
-Over time, those rice bundles became the zongzi people eat today.
-
-The hurried rowing of the villagers also slowly turned into the dragon boat races of later years.
-
-That is why zongzi and dragon boats are the two things people remember most at Dragon Boat Festival.
-[/en]
-[/section]
-
-[section]
-page: 5
 layout: text-wrap-image
-heading_zh: 今天的龙舟比赛
-heading_en: Dragon Boat Racing Today
-image: modern-race.webp
-caption_zh: 今天的龙舟比赛鼓声很响，队员们一起用力划船，岸边的人大声加油。
-caption_en: In dragon boat races today, drums beat loudly, the teams paddle together, and people on shore cheer.
+heading_zh: 粽叶里藏着什么？
+heading_en: What Is Inside the Leaves?
+image: zongzi-texture-v2.webp
+caption_zh: 包好的粽子上能看见粽叶细长的叶脉；剥开以后，里面是煮熟的糯米。
+caption_en: Fine leaf veins show on the wrapped zongzi. Unwrapped, it reveals cooked sticky rice.
 [zh]
-今天，端午节还是一个很热闹的日子。
+传说讲完了，我们回到今天的端午餐桌。包粽子的叶子不只一种。北方常用长长的芦苇叶，南方常用宽大的箬竹叶。箬竹真的是竹子的一种，不过它的叶子比很多人想象中的竹叶宽得多，卷起来也不容易破。
 
-很多地方会举行龙舟比赛。鼓声咚咚响，队员们一起划船，动作又快又整齐。
+包粽子时，先把叶子折起来，装进泡过的糯米和馅料，再盖好、折紧，用细绳扎住。煮熟以后，叶子的清香也进到了糯米里。
 
-所以端午节里，既有古老的故事，也有今天大家一起参加的节日活动。
+剥开粽叶，里面不一定都是同一种味道。有的粽子甜甜的，里面有红枣或豆沙；有的粽子是咸的，里面有肉、豆子或咸蛋黄。它们也不全是同一个形状：有些像三角形，有些又长又窄，还有些像小枕头。不同地方、不同家庭，都有自己熟悉的包法。
 [/zh]
 [en]
-Today, Dragon Boat Festival is still a lively day of celebration.
+That is the legend. Now let us return to today’s Dragon Boat Festival table. The wrapper is not always the same kind of leaf. Long reed leaves are common in northern China. In the south, people often use the broad leaves of *ruò* bamboo. It really is a kind of bamboo, but its leaves are much wider than the narrow bamboo leaves you may picture. They bend without breaking easily.
 
-In many places, people hold dragon boat races. The drums boom, the teams paddle together, and every move is fast and strong.
+To make a *zòngzi*, a cook folds the leaves, adds soaked sticky rice and a filling, closes the bundle, and ties it with string. As it cooks, the leaves give the rice a fresh, grassy smell.
 
-So this holiday carries both an old story and a festival people still enjoy together today.
+Open the leaves, and you will not always find the same flavor inside. Some *zòngzi* are sweet, with red dates or red bean paste. Others are savory, with meat, beans, or salted egg yolk. They do not all share one shape either. Some are triangular, some are long and narrow, and some look like little pillows. Different places and families have their own ways of wrapping them.
 [/en]
 [/section]
-
-[ending]
-heading_zh: 端午安康
-heading_en: Peace and Health at Dragon Boat Festival
-[zh]
-说到端午节，人们会想到粽子、龙舟，也会想到屈原。
-
-这个节日告诉大家，有些很古老的故事，今天还活在我们的生活里。
-[/zh]
-[en]
-When people talk about Dragon Boat Festival, they think of zongzi, dragon boats, and Qu Yuan.
-
-This holiday reminds us that some very old stories still live in everyday life today.
-[/en]
-[/ending]

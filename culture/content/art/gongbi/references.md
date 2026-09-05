@@ -244,3 +244,8 @@ Editorial boundary:
 - The four inset stages were not photographed from one documented artwork and do not establish a fixed four-step process.
 - The bowls do not identify actual mineral or plant pigments, binder, concentration, or number of layers.
 - The brush, hand, paper, and color behavior are schematic rather than technical evidence.
+
+## 2026 child-facing revision
+
+- The main article now follows the making of one flower: observation, outline, thin color layers, and the choice of a lively detail.
+- Emperor Huizong appears briefly with a careful distinction between work by his hand and work connected with his court. Longer attribution debates remain in the references.

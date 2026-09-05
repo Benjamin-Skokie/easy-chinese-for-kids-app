@@ -259,3 +259,8 @@ Editorial boundary:
 
 - It is not evidence of old *keban* training or current academy practice.
 - The child's age, design, brush grip, materials, hygiene, teacher-student relationship, costume, and safety conditions cannot be inferred as factual.
+
+## 2026 child-facing revision
+
+- The main article now begins with an invisible stage horse, then introduces face-paint clues, music and movement, and the gradual formation of Peking opera after Anhui troupes reached Beijing in the late eighteenth century.
+- It explicitly avoids a rigid red-good/white-bad code and a single-inventor story. Detailed institutional and gender history remains in the references.

@@ -2,6 +2,13 @@
 
 This file is for editorial research and does not render on the website.
 
+## Current Child-Facing Draft (2026-09-03)
+
+- The story begins with the donkey-and-cart legend, then clearly separates Lu Ban's folklore role from Li Chun's historical attribution.
+- The arch and four smaller openings are explained with everyday language while keeping their weight and flood-control functions accurate.
+- The ending says that repairs helped the bridge survive; it does not claim that every stone has remained untouched since about 605.
+- First appearances now include tone-marked pinyin for Zhàozhōu Qiáo, Zhāng Guǒlǎo, Chái Wángyé, Lǔ Bān, Suí Cháo, Lǐ Chūn, and Xiáo Hé.
+
 ## Date, dimensions, stone ribs, and the precise “oldest” claim
 
 Source: American Society of Civil Engineers, “Zhaozhou Bridge”
@@ -77,14 +84,20 @@ Source: Zhao County People's Government, “省级非物质文化遗产——赵
 URL: https://www.zhaoxian.gov.cn/columns/1d7018c5-9c6d-4833-a55d-e7bd402b1d92/202306/25/5352361f-d69b-4775-bd9e-475c03b3ce7f.html
 Accessed: 2026-08-21
 
+Source: National Ethnic Affairs Commission of China, “鲁班传说何以在中国西南广为流传？”
+URL: https://www.neac.gov.cn/seac/c103391/202304/1162224.shtml
+Accessed: 2026-09-03
+
 Supports:
 
 - Stories of Lu Ban, Zhang Guolao, Lord Chai, the donkey, cart, and bridge marks form a long-lived local folklore tradition celebrated in *Little Cowherd*.
+- A separate official overview of Lu Ban folklore also records the Zhao-region story that Lu Ban built the bridge and Zhang Guolao tested it.
 - The legends use imagination and exaggeration to express admiration for the bridge and its builders.
 
 Editorial boundary:
 
 - Treat the supernatural crossing and Lu Ban's construction as folklore, not bridge history.
+- Details such as the sun, moon, and mountains vary among retellings; introduce them as one popular version rather than the only fixed text of the legend.
 - The cultural value and age of a story do not prove that a physical mark is ancient.
 
 ## The modern hoofprint and wheel rut

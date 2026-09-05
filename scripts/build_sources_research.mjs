@@ -44,7 +44,7 @@ function decodeHtml(text) {
     .trim();
 }
 
-function storyTitles(category, slug) {
+function renderedStoryTitles(category, slug) {
   const pagePath = join(repoRoot, "culture", "books", category, slug, "index.html");
   try {
     const html = readFileSync(pagePath, "utf8");
@@ -58,6 +58,23 @@ function storyTitles(category, slug) {
   } catch {
     return { zh: slug.split("-").map((word) => word[0]?.toUpperCase() + word.slice(1)).join(" "), en: "" };
   }
+}
+
+function storyTitles(category, slug) {
+  const pagePath = join(contentRoot, category, slug, "page.md");
+  try {
+    const markdown = readFileSync(pagePath, "utf8");
+    const frontmatter = markdown.match(/^---\s*\r?\n([\s\S]*?)\r?\n---(?:\r?\n|$)/)?.[1] ?? "";
+    const value = (key) => {
+      const raw = frontmatter.match(new RegExp(`^${key}:\\s*(.+)$`, "m"))?.[1]?.trim() ?? "";
+      return raw.replace(/^(?:"([\s\S]*)"|'([\s\S]*)')$/, (_, doubleQuoted, singleQuoted) => doubleQuoted ?? singleQuoted);
+    };
+    const zh = value("title_zh");
+    const en = value("title_en");
+    if (zh || en) return { zh, en };
+  } catch {}
+
+  return renderedStoryTitles(category, slug);
 }
 
 function sourceGroups(markdown) {
