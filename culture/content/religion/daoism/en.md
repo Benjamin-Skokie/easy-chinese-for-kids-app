@@ -18,7 +18,7 @@ Some Daoists practiced steady breathing, gentle movement, quiet sitting, and oth
 
 Many Daoist tales say that immortals began as ordinary people. After years of learning and practice—or one marvelous meeting—their lives changed.
 
-The Eight Immortals are one of the best-known groups of immortals in Chinese stories. Legends give each one a different look and personality. Some are old and some are young. One carries a sword, another a fan, and others carry a flower basket, a gourd, or other treasures. Because each one is different, their most famous journey is especially fun.
+The [[Eight Immortals|eight-immortals]] are one of the best-known groups of immortals in Chinese stories. Legends give each one a different look and personality. Some are old and some are young. One carries a sword, another a fan, and others carry a flower basket, a gourd, or other treasures. Because each one is different, their most famous journey is especially fun.
 
 ---
 
@@ -28,7 +28,7 @@ One day, the Eight Immortals reached the shore of the East Sea. There was no bri
 
 One immortal suggested a challenge. No clouds and no ordinary boat—each traveler would find a different way across. Everyone agreed.
 
-Tieguai Li tossed his iron crutch into the water. Splash! The old crutch turned into a little wooden boat. He jumped in and sped over the waves. Lü Dongbin laid his sword on the sea and stepped onto it. The sword carried him forward like a very narrow surfboard, and soon he caught up with the boat.
+[[Tieguai Li|tieguai-li]] tossed his iron crutch into the water. Splash! The old crutch turned into a little wooden boat. He jumped in and sped over the waves. [[Lü Dongbin|lu-dongbin]] laid his sword on the sea and stepped onto it. The sword carried him forward like a very narrow surfboard, and soon he caught up with the boat.
 
 The others set off too. A fan, a little paper donkey that sprang to life, a flower basket, a lotus, a flute, and a pair of clicking wooden boards bobbed across the water with their riders. Eight immortals faced the same sea and found eight different ways across. That is the story behind the saying, “The Eight Immortals cross the sea, each showing a special power.”
 
@@ -40,7 +40,7 @@ In one popular version of the tale, the immortals were having so much fun that t
 
 The Dragon King sent guards to the surface. A dragon prince spotted Lan Caihe’s shiny jade boards, grabbed them, and carried Lan Caihe down to the palace. The other seven immortals raced after their friend. Angry words soon became a battle of dragons and immortals. Wind roared, huge waves rose, and flashes of magic danced across the water.
 
-Before the fight grew even bigger, Guanyin arrived. She is a Buddhist figure known for kindness and mercy. She told everyone to stop and asked the Dragon King to free Lan Caihe. At last, the eight friends were together again, and the sea grew quiet.
+Before the fight grew even bigger, [[Guanyin|guanyin]] arrived. She is a Buddhist figure known for kindness and mercy. She told everyone to stop and asked the Dragon King to free Lan Caihe. At last, the eight friends were together again, and the sea grew quiet.
 
 ---
 
@@ -48,4 +48,4 @@ Before the fight grew even bigger, Guanyin arrived. She is a Buddhist figure kno
 
 Daoism has temples and teachings about caring for life, but it has also filled Chinese culture with flying treasures, immortals hidden in the mountains, and wonderful stories passed down through generations. Its ideas about living with nature have become part of Chinese life and language too.
 
-The Eight Immortals still appear in New Year pictures, on porcelain, and onstage. Their adventure also gave Chinese speakers a familiar saying about different people using different skills to solve the same problem. The story is old, but the Eight Immortals still turn up in Chinese art, stories, and everyday speech.
+The Eight Immortals still appear in New Year pictures, on [[porcelain|porcelain]], and onstage. Their adventure also gave Chinese speakers a familiar saying about different people using different skills to solve the same problem. The story is old, but the Eight Immortals still turn up in Chinese art, stories, and everyday speech.

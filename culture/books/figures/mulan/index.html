@@ -27,10 +27,10 @@
             <img src="./images/call-to-serve.webp" alt="" class="floated-image" />
             <figcaption class="caption floated-caption"><span class="zh">木兰安静地坐在织布机旁，父母陪在她身边。</span><br><span class="en">Mulan sits quietly at her loom with her parents nearby.</span></figcaption>
           </figure>
-          <p>一天早上，木兰坐在织布机旁，却没有织布。前一天晚上，一位送信的人带来了皇帝的命令：木兰的父亲必须参军，跟着军队去打仗。</p>
+          <p>一天早上，<span class="glossary-entry"><button type="button" class="glossary-term" aria-expanded="false" aria-controls="glossary-mulan-1">木兰</button><span id="glossary-mulan-1" class="glossary-popover" role="tooltip">Mùlán · 《木兰诗》中代父从军的女子。</span></span>坐在织布机旁，却没有织布。前一天晚上，一位送信的人带来了皇帝的命令：木兰的父亲必须参军，跟着军队去打仗。</p>
           <p>木兰的弟弟还是个孩子，家里也没有哥哥可以代替父亲。为了这件事，她想了整整一夜。最后，木兰开口了：“我去。我替父亲从军。”</p>
           <p>父母惊讶地看着她。前面的路一定很危险，谁也不知道战争会持续多久。可是木兰已经作出了决定。</p>
-          <p>One morning, Mulan sat at her loom, but she did not weave. The night before, a messenger had brought an order from the emperor: Mulan's father must join the army and go to war.</p>
+          <p>One morning, <span class="glossary-entry"><button type="button" class="glossary-term" aria-expanded="false" aria-controls="glossary-mulan-2">Mulan</button><span id="glossary-mulan-2" class="glossary-popover" role="tooltip">Mùlán · 木兰 · The young woman in the Ballad of Mulan who joins the army in her father's place.</span></span> sat at her loom, but she did not weave. The night before, a messenger had brought an order from the emperor: Mulan's father must join the army and go to war.</p>
           <p>Mulan's little brother was still a child, and she had no older brother who could go in her father's place. She had thought about the notice all night. At last, she spoke. “I will go,” Mulan said. “I will take Father's place.”</p>
           <p>Her parents stared at her. The journey would be dangerous, and no one knew how long the war might last. But Mulan had made up her mind.</p>
         </div>
@@ -47,12 +47,12 @@
           </figure>
           <p>第二天，木兰来到市场，买了一匹马，又准备好马鞍、垫子、缰绳和长鞭。到了晚上，一切都准备好了。</p>
           <p>太阳升起时，木兰告别家人，骑马离开。走出村庄以后，她最后回头望了一眼。家人、房屋，还有门边的织布机，全都留在了身后。</p>
-          <p>木兰骑了一整天，夜里停在黄河边。她再也听不见父母的声音，只听见河水在黑暗中不停地流。</p>
+          <p>木兰骑了一整天，夜里停在<span class="glossary-entry"><button type="button" class="glossary-term" aria-expanded="false" aria-controls="glossary-yellow-river-3">黄河</button><span id="glossary-yellow-river-3" class="glossary-popover" role="tooltip">Huáng Hé · 流经中国北方、携带大量泥沙的大河。</span></span>边。她再也听不见父母的声音，只听见河水在黑暗中不停地流。</p>
           <p>第二天早晨，她继续向北走。道路越过山坡，穿过一道道山口。又到了夜里，远处传来了战马的嘶鸣声。</p>
           <p>家从来没有这样遥远。</p>
           <p>The next day, Mulan went to the market. She bought a horse, a saddle and blanket, a bridle, and a riding whip. By evening, everything was ready.</p>
           <p>At sunrise, she said goodbye to her family and rode away. Outside the village, Mulan turned for one last look. Her family, her home, and the loom by the door were all behind her now.</p>
-          <p>She rode until nightfall and stopped beside the Yellow River. She could no longer hear her parents' voices. All she heard was the river rushing through the darkness.</p>
+          <p>She rode until nightfall and stopped beside the <span class="glossary-entry"><button type="button" class="glossary-term" aria-expanded="false" aria-controls="glossary-yellow-river-4">Yellow River</button><span id="glossary-yellow-river-4" class="glossary-popover" role="tooltip">Huáng Hé · 黄河 · The great northern Chinese river known for carrying large amounts of silt.</span></span>. She could no longer hear her parents' voices. All she heard was the river rushing through the darkness.</p>
           <p>The next morning, Mulan rode on. The road led north, across hills and through mountain passes. By the following night, she could hear the distant cries of warhorses.</p>
           <p>Home had never felt so far away.</p>
         </div>
@@ -165,7 +165,8 @@
             if (!button || !popover) return;
 
             const margin = 12;
-            const gap = 10;
+            const compactViewport = window.matchMedia("(max-width: 900px)").matches;
+            const gap = compactViewport ? 8 : 10;
             const buttonRect = button.getBoundingClientRect();
             const popoverRect = popover.getBoundingClientRect();
             const halfWidth = popoverRect.width / 2;
@@ -174,10 +175,12 @@
             const maxCenter = window.innerWidth - margin - halfWidth;
             const left = Math.min(Math.max(buttonCenter, minCenter), maxCenter);
 
-            let side = "above";
-            let top = buttonRect.top - popoverRect.height - gap;
+            let side = compactViewport ? "below" : "above";
+            let top = side === "below"
+              ? buttonRect.bottom + gap
+              : buttonRect.top - popoverRect.height - gap;
 
-            if (top < margin) {
+            if (side === "above" && top < margin) {
               side = "below";
               top = buttonRect.bottom + gap;
             }

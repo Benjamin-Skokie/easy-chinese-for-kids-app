@@ -22,7 +22,7 @@ image: girl-enters-palace.webp
 caption_zh: 十四岁的武则天第一次走进皇宫。
 caption_en: Fourteen-year-old Wu Zetian enters the palace for the first time.
 [zh]
-十四岁时，武则天走进了皇宫。那时，她还不叫“武则天”，只是许多年轻宫女中的一个。
+十四岁时，[[武则天|wu-zetian]]走进了皇宫。那时，她还不叫“武则天”，只是许多年轻宫女中的一个。
 
 皇宫又大又漂亮，里面的生活却一点也不简单。谁可以说话，谁必须等待，谁能站得离皇帝近一些，都有严格的规矩。大多数女孩即使在宫里生活一辈子，也很难作出重要的决定。
 
@@ -31,7 +31,7 @@ caption_en: Fourteen-year-old Wu Zetian enters the palace for the first time.
 当时没有人会想到，这个刚进宫的女孩，有一天会坐上最高的位置。
 [/zh]
 [en]
-Wu Zetian entered the palace when she was fourteen. She was not called “Wu Zetian” yet. She was simply one young woman among many in the palace.
+[[Wu Zetian|wu-zetian]] entered the palace when she was fourteen. She was not called “Wu Zetian” yet. She was simply one young woman among many in the palace.
 
 The palace was huge and beautiful, but life inside was not simple. There were rules about who could speak, who had to wait, and who could stand near the emperor. Most girls could spend their whole lives there without making any important decisions.
 

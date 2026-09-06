@@ -1,6 +1,6 @@
 ---
-title_zh: 一片茶叶，几种历史
-title_en: Tea: One Leaf, Many Histories
+title_zh: 从茶树到茶杯：中国茶的故事
+title_en: From Leaf to Cup: The Story of Chinese Tea
 slug: tea
 category: economy
 difficulty: 困难
@@ -8,125 +8,161 @@ style_notes: "用 --- 分隔 frontmatter；正文强调优先用 *斜体*；尽�
 ---
 
 [hero]
-title_zh: 一片茶叶，几种历史
-title_en: Tea: One Leaf, Many Histories
+title_zh: 从茶树到茶杯：中国茶的故事
+title_en: From Leaf to Cup: The Story of Chinese Tea
 [/hero]
 
 [section]
 page: 1
 layout: two-column
-heading_zh: 三张不同的“出生证明”
-heading_en: Three Clues to Tea's Beginnings
-image: 5-3-tea-leaves-basket.webp
-caption_zh: 现代想象图：采茶至今仍需要大量细致劳动；图中的人物、茶园和采摘情景不代表某个特定时代或民族
-caption_en: Modern illustration: tea picking still requires careful labor, but these people, plants, and clothes do not represent one documented period or community.
+heading_zh: 先看看杯子里面
+heading_en: Look Into the Glass
+image: 5-1-whisking-tea.webp
+caption_zh: 透明玻璃杯里，有些绿茶叶漂在水面，有些已经舒展开来，落向杯底。
+caption_en: In a clear glass, some green tea leaves float near the surface while others open and settle toward the bottom.
 [zh]
-把一片茶叶放在手心，它轻得几乎没有分量，却好像带着三张不同的“出生证明”。第一张来自传说：神农尝百草，中了毒，又被茶解救。这个故事把茶和治病、辨认植物的智慧连在一起，可神农是文化传说中的人物，我们不知道他是否真实存在，更不能给“发现茶”写下公元前某一年的日期。
+如果一个美国小朋友想到 tea，脑子里出现的是一个小小的茶包，那么第一次看到中国人泡绿茶，可能会觉得很不一样。杯子里没有茶包。茶叶就直接在水里。刚倒进热水时，有些叶子漂在上面。慢慢地，它们吸进水，舒展开来，在透明的玻璃杯里上下浮动，最后有些轻轻落到杯底。
 
-第二张来自地下。科学家在西汉景帝陵墓的陪葬坑中辨认出约两千一百年前的茶叶遗存，又在西藏西部一座稍晚的墓葬里发现茶的痕迹。它们是目前重要的早期实物证据，说明汉代皇室已经接触茶，茶也很早就向高原传播；但考古学找到的是“保存下来的最早证据之一”，不是“世界上第一杯茶”。第一杯早就喝完了，不会自己留下标签。
+像[[西湖龙井|longjing]]这样的细嫩绿茶，经常可以直接用透明玻璃杯冲泡。这样不但能喝茶，还能看着茶叶在水中慢慢舒展。有人把这样的过程叫作“茶舞”。看茶叶其实很有意思，因为不同的绿茶，叶子可以完全不一样。一种扁扁平平，一种卷成细细的小螺，可它们都是绿茶。
 
-第三张仍长在山上。中国西南及相邻地区有丰富的茶树和近缘植物，茶树被人驯化的过程可能不止一次，也不是一个人完成的。云南景迈山的古茶林由布朗族和傣族社区经营了一千多年，茶树生长在森林下层，村庄、树林和信仰一起保护着茶园。它提醒我们：茶的早期历史不只属于帝王和名人，也属于长期观察山林、选择茶树、采叶制茶的许多社区。
+中国人喝绿茶的传统已经延续了很多世纪，比红茶出现得早得多。直到今天，绿茶仍然是中国国内销量最大的茶类，许多最有名的春茶也都是绿茶。所以，我们先从两杯完全不同的绿茶开始。
 [/zh]
 [en]
-Place one tea leaf in your palm. It weighs almost nothing, yet it seems to carry three different birth certificates. The first comes from legend. Shennong tastes hundreds of plants, is poisoned, and is saved by tea. The story connects tea with healing and the wisdom to recognize plants. But Shennong belongs to cultural tradition, and we do not know whether he was a real person. We certainly cannot write an exact year for his “discovery” of tea.
+If your idea of tea begins with a little paper tea bag, a cup of Chinese green tea can look quite different. There may be no bag at all. The leaves are right there in the water, floating near the top at first, slowly opening, turning, and settling lower in the glass.
 
-The second certificate comes from underground. Scientists identified tea remains in burial pits at the tomb of a Western Han emperor. The leaves were about 2,100 years old. Traces of tea also appeared in a somewhat later tomb in western Tibet. These are important pieces of early physical evidence. They show that members of the Han royal court knew tea and that tea traveled toward the Tibetan Plateau at an early date. But “the oldest evidence that happened to survive” is not the same as “the world's first cup.” That first cup disappeared long ago without leaving a label.
+For fine green teas such as [[Xihu Longjing|longjing]], a clear glass is a common way to brew the tea because you can watch the leaves change as they soak. In China, people sometimes call this movement a **“tea dance.”** Looking at the leaves is part of the fun, because those leaves do not all look alike. One may be long and flat. Another may curl into a tiny spiral. Both can be green tea, made from the same kind of tea plant.
 
-The third certificate is still growing on mountainsides. Southwest China and nearby regions contain many tea plants and wild relatives. People may have domesticated different lines of tea plants in more than one place, over a long time. On Jingmai Mountain in Yunnan, Blang and Dai communities have cared for tea forests for more than a thousand years. Tea shrubs grow below taller forest trees, and villages, beliefs, and farming knowledge help protect the groves together. Jingmai reminds us that tea's early history belongs not only to emperors and famous writers. It also belongs to the many communities that watched forests, selected plants, picked leaves, and learned what to do with them.
+Green tea has been part of Chinese tea drinking for centuries, long before black tea appeared, and it is still the largest tea category sold inside China today. Many of China’s best-known spring teas are green teas. So let’s begin with two leaves in two glasses.
 [/en]
 [/section]
 
 [section]
 page: 2
 layout: two-column
-heading_zh: 一碗茶没有固定配方
-heading_en: One Bowl, Many Methods
-image: 5-1-whisking-tea.webp
-caption_zh: 现代综合想象图：宋代确有把末茶加水击拂出泡沫的点茶法，但图中的工具、服装和教学场景并非历史复原
-caption_en: Modern composite illustration: Song drinkers did whisk powdered tea with water to make foam, but these tools, clothes, and lesson are not a historical reconstruction.
+heading_zh: 扁扁的龙井，卷卷的碧螺春
+heading_en: Flat Like Longjing, Curled Like Biluochun
+image: 5-3-tea-leaves-basket.webp
+caption_zh: 一位制茶人用双手在大铁锅里翻压茶叶，旁边的竹匾里放着鲜叶和已经加工过的茶叶。
+caption_en: A tea maker presses and turns leaves by hand in a large wok beside bamboo trays holding fresh and processed leaves.
 [zh]
-把时间拨到唐朝，茶已经通过贡赋、市场和旅行进入更广阔的生活。有人把蒸过的茶叶压成饼，饮用前烤一烤、碾成末，再放入水中煮。公元八世纪，陆羽在《茶经》里记录茶树、产地、器具、制茶、煮水和品饮。他甚至为盐准备了一件专门的小器具，并主张在水初沸时加适量盐。正因为他写得具体，我们才看得见一套讲究的方法。
+春天到了[[杭州|hangzhou]][[西湖|west-lake]]边，采茶人开始采下嫩芽和嫩叶。传统的**西湖龙井**做好以前，这些鲜叶要进入热锅。炒茶人的手不停地翻动茶叶。抖、推、压、磨，不同的时候要用不同的动作，锅里的温度也要一直注意。
 
-可是，《茶经》不是“全体唐朝人的食谱”。陆羽提到有人把葱、姜、枣、橘皮、茱萸、薄荷等和茶反复熬煮，接着毫不客气地批评这种茶汤像沟渠里的废水。孩子也许不同意他的口味，但这句话证明当时喝法很多，连爱茶的人也会争论。我们可以说饼茶和煮茶在唐代很重要，却不能说每个人都把盐、葱、姜放进同一口锅。
+等茶叶从锅里出来，它已经和树上的鲜叶完全不同了。龙井最容易认的样子，就是一片片扁平、光滑、细长的叶子。这个形状不是茶树自己长出来的。是制茶人的手做出来的。
 
-到了宋代，一些宫廷、寺院和城市饮茶者喜欢把细茶末放入碗中，分次加水，再用工具快速击拂出泡沫。黑色建盏能衬出浅色茶沫，茶的颜色、泡沫和动作都成了欣赏与比赛的一部分。与此同时，别的喝法也没有从此消失。
+再往北走到[[苏州|suzhou]][[太湖|taihu]]边，又有一种特别有名的绿茶——[[碧螺春|biluochun]]。碧螺春从锅里出来，却一点也不像龙井。制茶人趁着茶叶还热，不停揉制，让它慢慢卷成细细的小螺，上面还带着一层浅色的茸毛。“碧”是青绿色，“螺”是螺蛳，“春”当然就是春天。这个名字放在它身上，刚刚好。碧螺春的茶园也很特别。传统上，洞庭山的茶树可以和枇杷、梅子、柑橘等果树一起生长，而不是孤零零地排成一大片。
 
-茶文化还跨海旅行。日本早在派遣使者和僧人到唐朝时就接触中国茶；后来，往来宋朝的僧人又带回种茶知识、末茶和搅拌饮用的方法。可是日本茶之汤并不是把一只宋代茶碗原封不动复制过去。寺院、武士、公家、商人和制陶者在几个世纪里不断改变仪式、空间、器物和审美，才形成日本自己的传统。这是一段交流与再创造的历史，不是一支“谁发明、谁照抄”的箭头。
+把龙井和碧螺春放在一起，一边扁扁直直，一边细细卷曲，很难相信它们都是绿茶。这就是茶很有意思的地方。**茶叶从树上摘下来以后，故事才真正开始。**
 [/zh]
 [en]
-Move forward to the Tang dynasty. Tea was reaching more people through taxes paid in goods, markets, gifts, and travel. One important method began with steamed leaves pressed into cakes. A drinker could toast a piece, grind it, and cook the powder in water. In the eighth century, Lu Yu wrote *The Classic of Tea*. He described the plant, growing regions, tools, processing, water, preparation, and tasting. He even included a special salt container and advised adding a proper amount of salt when the water first began to boil. Because he was so specific, we can see one carefully designed way to make tea.
+Spring is an important season for **Xihu Longjing**, or Dragon Well tea. After tender leaves are picked around [[West Lake|west-lake]] in [[Hangzhou|hangzhou]], traditional tea makers work them in a heated wok. Their hands keep moving across the warm surface, using different motions to toss, press, push, smooth, and shape the leaves.
 
-But *The Classic of Tea* was not a recipe followed by every Tang household. Lu Yu complained that some people boiled tea again and again with ingredients such as scallions, ginger, dates, orange peel, cornel, or mint. He compared the result to water from a ditch. You may or may not agree with his taste, but his grumbling proves that people prepared tea in different ways—and argued about them. Tea cakes and boiled tea mattered in the Tang. That does not mean everyone put salt, scallions, and ginger into the same pot.
+When the work is finished, Longjing is easy to recognize. The dried leaves are flat, smooth, and slender. That shape did not simply grow on the tea bush. The tea maker made it.
 
-By the Song dynasty, some drinkers at court, in monasteries, and in cities favored powdered tea. They placed fine tea powder in a bowl, added water in stages, and whisked until foam appeared. Dark Jian ware bowls made the pale foam stand out. Color, foam, and the skill of the person's hand became part of tea appreciation and competition. Other ways of drinking did not suddenly vanish.
+Now travel to the hills around [[Lake Tai|taihu]] near [[Suzhou|suzhou]]. Here another famous green tea, [[Biluochun|biluochun]], comes out of the wok looking completely different. Biluochun leaves are worked while they are warm, gradually curling into fine little spirals covered with pale hairs. Its name fits the shape beautifully: **bì** suggests jade-green, **luó** means snail, and **chūn** means spring. The finished tea looks a little like tiny green snail shells. Traditional Biluochun tea gardens are interesting too. Tea bushes can grow among fruit trees such as loquat, plum, and citrus, rather than standing alone in endless rows.
 
-Tea culture also traveled across the sea. Japan encountered Chinese tea through envoys and monks who visited Tang China. Later, monks traveling between Japan and Song China carried home tea-growing knowledge and methods for grinding and whisking powdered tea. Yet Japanese *chanoyu*, or the art of tea, was not a Song bowl copied without change. Over several centuries, temples, warriors, nobles, townspeople, merchants, and potters reshaped its rituals, rooms, tools, and ideals. This is a history of exchange and new creation, not a one-way arrow marked “invented here, copied there.”
+Put Longjing and Biluochun beside each other and you can already see something important about tea: **picking the leaf is only the beginning.** What happens next changes almost everything.
 [/en]
 [/section]
 
 [section]
 page: 3
-layout: two-column reverse
-heading_zh: 叶子为什么变色？
-heading_en: Why Does the Leaf Change Color?
-image: 5-4-tea-types-table.webp
-caption_zh: 现代概念图：绿茶、乌龙茶和红茶不是同一批叶子依次变成的三个阶段；茶类由原料、品种和完整加工过程共同决定
-caption_en: Modern concept image: green, oolong, and black tea are not three stages of one batch. Plant variety, growing place, and the full process all matter.
+layout: text-only
+heading_zh: 绿茶为什么还是绿的？
+heading_en: Why Does Green Tea Stay Green?
 [zh]
-现在撕开一片鲜叶。叶子里的物质接触空气和酶，就会慢慢发生氧化，好像切开的苹果逐渐变褐。制绿茶时，人们较早用热量让酶停止工作，尽量限制氧化；做乌龙茶时会控制一部分氧化；做红茶时则让氧化进行得更充分。茶业里常把这一步叫“发酵”，但从食品科学看，红茶变色主要是酶促氧化，并不像面包或酸奶那样主要靠微生物发酵。黑茶等后发酵茶才会明显利用微生物参与后期变化。
+鲜茶叶一离开茶树，就会慢慢发生变化。如果放得久一些，叶子的颜色会越来越深，有一点像苹果切开以后，原本浅色的果肉慢慢变黄、变褐。
 
-武夷山桐木村流传着一个著名故事：明清交替的战乱中，士兵占了茶厂，鲜叶被耽搁，茶农只好赶工揉制、用松木烘干，意外做出有烟香的正山小种。这个故事来自当地口述传统，没有同时代文字能证明那一天确实发生过。较稳妥的历史结论是：武夷红茶技术在明末清初逐渐形成，并与海外市场关系密切。技术通常经过许多人反复试做、调整和销售，很少只靠一次神奇事故完整诞生。
+做绿茶的人不会让这种变化一直继续下去。他们会比较早给茶叶加热。龙井是在热锅里完成这个重要步骤，不同绿茶还有不同的做法。经过加热以后，叶子里的变化很快慢下来，茶叶因此能保留更多绿色，也保留人们喜欢的清鲜味道。
 
-今天中国常把茶分成绿、白、黄、乌龙、红、黑六大类。这套“六大茶类”按照加工方法和品质特点整理，是现代茶学形成的分类框架，不是唐宋人早已使用的六个固定抽屉。它很有用，却不能包办茶的全部差别。真正的茶都来自茶树这个物种，但茶树有不同变种和许多栽培品种；海拔、土壤、季节、采摘部位和制茶人的选择也会改变香气与滋味。不是随手摘下“同一种叶子”，只按一个按钮，就能得到所有茶。
+这也是中国春茶很特别的地方之一。喝茶的人不只在意杯子里的味道，也会看叶子的颜色和形状，感受刚刚过去不久的春天。透明玻璃杯里的那些嫩叶，正好让人看见制茶人努力留下来的东西。
 
-中文“红茶”看茶汤的红亮，英文 *black tea* 常看干叶的深色；中文“黑茶”在英文里通常叫 *dark tea* 或 *post-fermented tea*。同一杯茶换一种语言，颜色名称都可能改变。分类不是大自然贴在叶子上的标签，而是人为了生产、交易和理解茶而设计的地图。
+可是后来，中国的制茶人还发现了另一条路。如果**不那么早把变化停下来**，会怎么样？
 [/zh]
 [en]
-Now tear a fresh leaf. Substances inside it meet oxygen and enzymes, and the leaf slowly changes, much as a cut apple turns brown. To make green tea, producers heat the leaves fairly early, stopping the enzymes and limiting oxidation. Oolong makers allow and control some oxidation. For black tea—the tea called *hongcha*, or “red tea,” in Chinese—oxidation goes much farther. Tea makers often call this stage “fermentation.” In food science, however, black tea changes mainly through oxidation driven by enzymes in the leaf. It is not like bread or yogurt, which depends mainly on microbes. Microbes do play a much larger part in the later changes of dark, or post-fermented, teas.
+Once a tea leaf is picked, it begins to change. Leave it alone long enough and the leaf gradually darkens, a little like the cut side of an apple changing color in the air.
 
-A famous story from Tongmu village in the Wuyi Mountains tells of soldiers taking over a tea workshop during the wars around the fall of the Ming dynasty. The leaves were delayed, so the farmers rushed to roll and dry them over pinewood. By accident, the story says, they created the smoky tea now called Lapsang Souchong. This is local oral tradition; no written record from the time proves that one dramatic day occurred exactly that way. A safer historical conclusion is that Wuyi black-tea methods took shape around the late Ming and early Qing periods and became closely tied to overseas buyers. New technology usually grows through many people's experiments, adjustments, and sales—not one perfect accident.
+Green-tea makers do not let that change continue very far. They heat the leaves fairly early in the process. With Longjing, that heat comes from the wok. With other green teas, the exact method may be different. The result is tea that keeps more of the fresh green color and flavors people expect from green tea.
 
-Today, Chinese tea is often grouped into six major categories: green, white, yellow, oolong, red, and dark. This six-part system organizes teas by their processing and finished qualities. It is a framework shaped by modern tea science, not six fixed drawers that shoppers in the Tang or Song would have recognized. The map is useful, but it does not explain every difference. True tea comes from the species *Camellia sinensis*, yet that species includes different varieties and many cultivated types. Elevation, soil, season, the leaves picked, and the producer's choices all change aroma and flavor. Tea is not one identical leaf that turns into every style when someone presses a single button.
+This is part of what makes spring green tea so special in China. People are interested not only in the finished drink, but also in the young leaves, their color and shape, and the fresh character of the new season. When those leaves open inside a glass, you can see much of what the tea maker worked to preserve.
 
-The color words can also switch between languages. Chinese “red tea” is usually *black tea* in English, where the name points to the dark dried leaves. Chinese “black tea” is usually called *dark tea* or *post-fermented tea* in English. Classification is not a label that nature prints on a leaf. It is a map people make to produce, sell, and understand tea.
+But Chinese tea makers eventually discovered something else. What if you **do not** stop the leaf so early?
 [/en]
 [/section]
 
 [section]
 page: 4
-layout: two-column reverse
-heading_zh: 山路、海船与一杯茶的代价
-heading_en: Mountain Roads, Ocean Ships, and the Cost of a Cup
-image: 5-2-tea-horse-road.webp
-caption_zh: 现代综合想象图：“茶马古道”是许多时期形成的路线网络，图中的悬崖、驮队、货包和服装不是某次真实商旅的记录
-caption_en: Modern composite illustration: the Tea Horse Road was a changing network of routes. This cliff, caravan, cargo, and clothing do not record one real journey.
+layout: text-only
+heading_zh: 绿色的叶子，后来变成了红茶
+heading_en: When Green Leaves Become Red Tea
 [zh]
-茶要远行，先得变得结实。压紧的茶砖方便堆放，也能经受驮运。今天人们说“茶马古道”，听起来像一条从起点直通终点的公路，其实它是四川、云南、青海、甘肃、康区和西藏高原之间许多山路、城镇与驿站组成的网络，而且路线会随战争、政策和市场改变。
+红茶在中国茶的历史里出现得比较晚。到了大约四百年前，中国的制茶人已经开始制作一种新的茶：鲜叶采下来以后，不急着像绿茶那样很早加热，而是让叶子萎凋、揉制，继续发生更多变化，再把它干燥。叶子的颜色越来越深，泡出来的茶汤也变成了更深的红褐色。
 
-茶换马确实是其中重要的一部分。尤其在一些宋、明时期，王朝设官署、控制边茶，希望用茶和其他物资取得军马。可是路上不只走“汉人茶商”和“藏族卖马人”。商人、赶马人、背夫、客栈主人、寺院和地方权势者都参与其中，货物也包括羊毛、盐、药材、皮毛等。后来朝廷不再大量需要高原马，贸易仍继续，只是货物组合改变。茶进入藏族等高原社区后，被当地人做成酥油茶等自己的饮食传统；说“藏族只吃油腻肉食，所以必须靠茶消化”，既不是可靠的医学解释，也把多样的高原生活压成了刻板印象。
+英文把这种茶叫 **black tea**。中文却叫它**红茶**。为什么一个说黑，一个说红？英文更注意干茶深黑的颜色，中国人看的则更多是泡出来以后红亮的茶汤。
 
-接着，茶登上海船。十七世纪，葡萄牙、荷兰和英国商人把亚洲茶叶带进欧洲市场。茶起初昂贵，贸易公司和高额税收让它更像少数富人的奢侈品；后来价格下降，才进入更多家庭。英国对中国茶的巨大需求也造成贸易矛盾。英国商人把在殖民地印度生产的鸦片非法卖进中国，用所得白银支持茶等商品的购买。清政府禁烟与英国坚持贸易特权的冲突，最终成为鸦片战争的重要背景。甜甜的茶桌背后，因此藏着毒品、强迫开放港口和战争。
+最有意思的是，绿茶和红茶并不需要来自两种完全不同的茶树。同样是茶树上的叶子，**摘下来以后怎么处理**，就可以让它们走向完全不同的结果。比较早加热，叶子能留下更多绿色；让它继续发生更多变化，再经过干燥，就可以做成红茶。
 
-十九世纪，英国殖民者又在印度阿萨姆和锡兰，也就是今天的斯里兰卡，扩张大茶园，以减少对中国茶的依赖。他们利用当地茶树和知识，也移走中国茶苗、种子并招募制茶工人。大种植园靠土地控制和大量劳动运转；阿萨姆许多工人被契约从印度其他地区迁来，工作与离开的自由受到严厉限制。茶后来也在非洲等地成为重要作物，各地生产者创造出自己的风味。于是，一杯世界饮料既有交流和创造，也有帝国、战争与被忽略的劳动。
+茶包和绿茶、红茶的区别其实没有关系。茶包只是一种装茶的方法。在中国，好的红茶也常常直接用散茶冲泡，和绿茶一样可以看到真正的茶叶。做好以后的茶，还有另一段旅程。这一次，它真的要上路了。
 [/zh]
 [en]
-To travel far, tea first had to become sturdy. Compressed bricks were easier to stack and could survive a rough caravan journey. Today the name “Tea Horse Road” sounds like one highway with a clear beginning and end. It was really a changing network of mountain paths, towns, and stopping places connecting Sichuan, Yunnan, Qinghai, Gansu, Kham, and the Tibetan Plateau. War, government policy, and markets could all shift the routes.
+Black tea came much later in Chinese tea history. By around the seventeenth century, Chinese tea makers were producing teas in which the leaves were allowed to wither and change much farther before they were dried. The leaves became darker, and the brewed tea took on deeper reddish-brown colors.
 
-The exchange of tea for horses was an important part of this history. During parts of the Song and Ming periods, governments created offices and controlled “border tea” because they hoped to obtain military horses. But the roads did not carry only “Han tea sellers” in one direction and “Tibetan horse sellers” in the other. Merchants, caravan leaders, porters, innkeepers, monasteries, and local leaders took part. Wool, salt, medicinal plants, hides, and other goods traveled too. When later governments no longer needed so many plateau horses, trade continued with a different mix of goods. Tibetan and other highland communities made tea part of their own food traditions, including butter tea. Saying that “Tibetans ate only greasy meat and needed tea to digest it” is neither a sound medical explanation nor a fair picture of varied highland lives.
+That created what English speakers call **black tea**. Chinese has a different name: **hóngchá**, or **red tea**. Why the two colors? English traditionally focuses on the dark dried leaves. Chinese focuses on the reddish color of the tea in the cup.
 
-Then tea boarded ocean-going ships. In the seventeenth century, Portuguese, Dutch, and British merchants carried Asian tea into European markets. At first it was expensive. Trading-company control and heavy taxes helped keep it a luxury for the wealthy. As prices fell, more households could buy it. Britain's enormous demand for Chinese tea also created a trade conflict. British merchants illegally sold opium produced in colonial India into China, then used the silver they received to help pay for tea and other Chinese goods. The Qing government's effort to stop opium and Britain's demand for trading rights became important causes of the Opium Wars. Behind a sweet cup on a British table stood an addictive drug, ports forced open, and war.
+The interesting part is that green tea and black tea do not need to come from two completely different tea plants. What happens **after the leaves are picked** can send them in very different directions. Heat the leaves early, and they can stay greener. Let them change much farther before drying, and they can become black tea.
 
-In the nineteenth century, British colonizers expanded large tea plantations in Assam, India, and Ceylon, now Sri Lanka, so the empire would depend less on Chinese tea. They drew on local tea plants and knowledge, while also moving tea seeds and plants from China and recruiting Chinese tea workers. Huge estates depended on control of land and human labor. In Assam, many workers were brought from other parts of India under contracts that sharply limited their freedom to work and leave. Tea later became an important crop in parts of Africa and elsewhere, where producers created their own styles. A world drink can carry exchange and invention—but also empire, war, and labor that often goes unseen.
+A tea bag has nothing to do with that difference. Tea bags are simply one way of packaging tea. In China, good black tea is also often brewed as loose leaves, just as green tea is. The leaves have changed. Now they are ready to go somewhere else.
 [/en]
 [/section]
 
-[ending]
-heading_zh: 喝之前，再看一眼叶子
-heading_en: Look Once More Before You Sip
+[section]
+page: 5
+layout: two-column reverse
+heading_zh: 茶开始爬山
+heading_en: Tea Climbs the Mountains
+image: 5-2-tea-horse-road.webp
+caption_zh: 马和骡子驮着包裹，沿狭窄陡峭的山路缓慢前进。
+caption_en: Horses and mules carry bundles along a narrow, steep mountain path.
 [zh]
-最诚实的茶故事没有单一主人公。神农传说、汉墓里的茶叶、陆羽的争论、宋代的泡沫、日本的再创造、山路上的驮队和种植园工人的双手，都在同一杯茶里留下痕迹。下一次端起茶，不妨先问：这是什么茶树，怎样加工，从哪里来，又是谁把它送到我面前？一片叶子不会回答，但历史会。
+不是所有茶都会留在茶山附近。很长时间里，中国西南产茶地区的茶会沿着一条又一条山路，向青藏高原运送。今天，人们常把这些古老道路合称为[[茶马古道|tea-horse-roads]]。
+
+它并不是地图上一条笔直的大路，而是一张很大的道路网络。山谷、河流、城镇和一个又一个高高的山口，把不同地方连接起来。路上走的不只有茶和马，还有盐、羊毛、药材、布匹和各种生活用品。
+
+这样远的路，松散的茶叶并不好带。人们可以把茶压成结实的茶饼、茶砖，包好以后，一块一块叠起来运输。有些路上可以用马和骡子驮茶。可到了特别陡、特别窄的山路，连牲畜都不好走，茶就只能靠人背。
+
+[[四川|sichuan]]一些古老的运茶道路上，背夫休息时会用一根木杖撑住背后的重担，这样不需要每次都把沉重的茶包卸下来。一代又一代的人从同样的地方经过，木杖一次又一次撑在路边的石头上。桌上一杯安安静静的茶，很难让人想到这样的山路。可是，有些茶在来到喝茶的人手里以前，真的走过很远。
 [/zh]
 [en]
-The most honest history of tea has no single hero. The Shennong legend, leaves in a Han tomb, Lu Yu's strong opinions, Song foam, Japanese reinvention, mountain caravans, and plantation workers' hands have all left traces in the same cup. The next time you lift a cup of tea, ask: What kind of plant grew these leaves? How were they processed? Where did they travel, and whose work brought them to me? The leaf cannot answer, but history can.
+Not every cup of tea was drunk near the place where the leaves grew. For centuries, tea traveled from the tea-growing regions of southwestern China toward the Tibetan Plateau. The old routes are now often called the [[Tea Horse Roads|tea-horse-roads]], the Tea Horse Roads.
+
+They were not one single road. They were a network of mountain paths running through towns, valleys, river crossings, and high passes. Tea was one of the most important things moving along them, along with horses, salt, wool, medicines, cloth, and many other goods.
+
+For a long journey like this, loose leaves were not always convenient. Tea could be pressed into firm cakes or bricks that were easier to stack, wrap, and carry. Sometimes horses or mules carried the loads. On steep sections where animals had trouble passing, people carried tea themselves.
+
+Along one old route in [[Sichuan|sichuan]], tea porters used wooden staffs to help support their heavy loads when they stopped to rest. They could lean the load onto the staff without taking everything off their backs. Again and again, the staffs struck the same resting stones as generations of porters passed through. A quiet cup of tea on a table does not look very adventurous. The tea that reached it sometimes had been.
 [/en]
-[/ending]
+[/section]
+
+[section]
+page: 6
+layout: text-only
+heading_zh: 路的另一头
+heading_en: At the Other End of the Road
+[zh]
+茶到了新的地方，也不会永远保持原来的喝法。在青藏高原，砖茶进入了当地人的饮食生活。茶可以煮得很浓，再加入酥油和盐，变成热腾腾的**酥油茶**。
+
+这时候，再回头看看开头那一杯绿茶，就会发现同一种植物已经走出了多少不同的样子。
+
+在杭州，制茶人的双手把叶子做成扁平的龙井；到了苏州太湖边，另一种手法又做出了卷卷的碧螺春；让鲜叶发生更多变化，可以做出红茶；把茶压成结实的茶砖，送过一条条山路，到了新的地方，人们又有了完全不同的喝法。
+
+最后，再看一眼透明玻璃杯。原本浮在上面的茶叶已经吸足了水，慢慢舒展开来，有些安静地落到了杯底。杯子里的叶子当然来自茶树。可是它们最后变成什么样，是人们一代又一代慢慢学会的。
+[/zh]
+[en]
+When tea reached the Tibetan Plateau, people did not have to drink it the same way it was drunk in Hangzhou or Suzhou. Tea became part of local food traditions. Brick tea could be boiled strong and combined with butter and salt to make **butter tea**, a warm drink suited to a very different place and way of life.
+
+So by the time tea reached the other end of the mountain road, people had changed it again. That is one of the most interesting things about Chinese tea.
+
+Start with a leaf growing on a tea bush. In Hangzhou, skilled hands can turn it into flat Longjing. Near Lake Tai, another method creates the curled leaves of Biluochun. Let the leaf change farther, and it can become red tea. Press tea into a brick and send it across mountain roads, and another community may make an entirely different drink from it.
+
+Now look back into that clear glass. The leaves are no longer floating near the top. They have absorbed the water and opened, and some are resting quietly near the bottom. You are not just looking at leaves that someone picked. You are looking at what people learned to make from them.
+[/en]
+[/section]

@@ -30,7 +30,7 @@ caption_en: The same character, 福, can take different shapes while keeping a r
 
 一个字到底可以变多少，还不会变成另外一个字？
 
-书法当然有规则。一个字里面的各个部分，不能想搬到哪里就搬到哪里；笔画也不能随便增加或消失。可是只要这些基本关系还在，同一个字仍然可以有很多不同的样子。
+[[书法|chinese-calligraphy]]当然有规则。一个字里面的各个部分，不能想搬到哪里就搬到哪里；笔画也不能随便增加或消失。可是只要这些基本关系还在，同一个字仍然可以有很多不同的样子。
 
 而且，它们不一样，还有另一个原因。汉字本来就不只有一种写法。
 [/zh]
@@ -43,7 +43,7 @@ One version stands straight and solid. Each stroke is easy to see. The other str
 
 How much can a character change before it stops being the same character?
 
-Chinese calligraphy has rules. The parts of a character have to stay in recognizable relationships, and strokes cannot simply be moved anywhere. But those rules leave plenty of room for variation.
+[[Chinese calligraphy|chinese-calligraphy]] has rules. The parts of a character have to stay in recognizable relationships, and strokes cannot simply be moved anywhere. But those rules leave plenty of room for variation.
 
 And there is another reason the same character can change so much. There is more than one way to write it.
 [/en]
@@ -57,9 +57,9 @@ heading_en: Different Ways of Writing
 [zh]
 在漫长的历史中，汉字形成了几种主要的**书体**。
 
-用**楷书**写，笔画通常比较清楚，字的结构也比较容易看出来。换成**行书**，毛笔走得更流畅，一笔好像会顺势带向下一笔。到了**草书**，有些笔画会缩短、连在一起，没有学过的人可能看了半天也认不出那个字。
+用[[楷书|regular-script]]写，笔画通常比较清楚，字的结构也比较容易看出来。换成[[行书|running-script]]，毛笔走得更流畅，一笔好像会顺势带向下一笔。到了[[草书|cursive-script]]，有些笔画会缩短、连在一起，没有学过的人可能看了半天也认不出那个字。
 
-另外，还有更早出现的**篆书**和**隶书**。
+另外，还有更早出现的[[篆书|seal-script]]和[[隶书|clerical-script]]。
 
 这些书体并不是给同一个字换上几套漂亮的“字体”。每一种书体都有自己的习惯：笔画怎么写，一个字里的各个部分怎么安排，毛笔又怎样从一处走到另一处。
 
@@ -72,9 +72,9 @@ heading_en: Different Ways of Writing
 [en]
 Over many centuries, Chinese writing developed several major **script types**.
 
-In **regular script (楷书, kǎishū)**, the strokes are clearly formed and the structure is relatively easy to see. In **running script (行书, xíngshū)**, the brush moves more freely, and one stroke may seem to flow toward the next. In **cursive script (草书, cǎoshū)**, strokes can be shortened or joined so much that a beginner may have trouble recognizing the character at all.
+In [[regular script|regular-script]], the strokes are clearly formed and the structure is relatively easy to see. In [[running script|running-script]], the brush moves more freely, and one stroke may seem to flow toward the next. In [[cursive script|cursive-script]], strokes can be shortened or joined so much that a beginner may have trouble recognizing the character at all.
 
-There are also older traditions such as **seal script (篆书, zhuànshū)** and **clerical script (隶书, lìshū)**.
+There are also older traditions such as [[seal script|seal-script]] and [[clerical script|clerical-script]].
 
 These are not simply five decorative fonts. Each script has its own habits: how strokes are shaped, how parts of a character fit together, and how the brush moves from one place to another.
 

@@ -26,14 +26,14 @@ caption_en: Tofu is soft and slippery, while a peanut likes to roll. Each one ne
 
 豆腐看起来比较大，可它又滑又软。夹得太松，它会溜走；夹得太紧，它就碎了。花生很硬，却会像一只小轮子一样滚来滚去。筷尖刚碰到它——咕噜！它又跑了。
 
-原来，用筷子不只是把食物“夹住”。手指还要知道什么时候轻一点，什么时候稳一点。第一次没成功也没关系。把逃跑的花生追回来，再试一次就好。
+原来，用[[筷子|chopsticks]]不只是把食物“夹住”。手指还要知道什么时候轻一点，什么时候稳一点。第一次没成功也没关系。把逃跑的花生追回来，再试一次就好。
 [/zh]
 [en]
 On the table sits a cube of soft tofu and one peanut. Which would you pick up first?
 
 The tofu looks easier because it is bigger, but it is soft and slippery. Hold it too loosely and it slides away. Squeeze too hard and—squish!—it breaks. The peanut is firm, but it rolls like a tiny wheel. The tips touch it, and away it goes.
 
-Using chopsticks is not only about “grabbing” food. Your fingers must learn when to be gentle and when to be steady. If the first try does not work, chase down that runaway peanut and try again.
+Using [[chopsticks|chopsticks]] is not only about “grabbing” food. Your fingers must learn when to be gentle and when to be steady. If the first try does not work, chase down that runaway peanut and try again.
 [/en]
 [/section]
 

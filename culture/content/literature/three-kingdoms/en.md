@@ -2,312 +2,58 @@
 
 # Romance of the Three Kingdoms: Three States, Many Heroes
 
-## One Chaotic Age, Three States, Countless Heroes
+## Before You Learn the Dates, You Meet the People
 
-About 1,800 years ago, the Han dynasty slowly fell apart.
+*Romance of the Three Kingdoms* takes place when the [[Han dynasty|han-dynasty]] is breaking apart. One place changes hands after another, and later people remember the best-known pattern as three rival states: Wei, Shu, and Wu.
 
-The land broke into many powers, large and small.
+But most children do not meet this story by learning dates first. They meet it through names: [[Liu Bei|liu-bei]], [[Guan Yu|guan-yu]], Zhang Fei, [[Zhuge Liang|zhuge-liang]], [[Cao Cao|cao-cao]], and Zhao Yun.
 
-Today one side attacked another. Tomorrow someone swallowed a neighbor.
-
-Everyone wanted to become master of the realm.
-
-Later, the best-known pattern became three powers facing one another: Wei, Shu, and Wu.
-
-In the Ming dynasty, Luo Guanzhong mixed this history with many legends and wrote the novel *Romance of the Three Kingdoms*.
-
-He wrote it so well that when many people think of the Three Kingdoms, they do not first think of dates.
-
-They think of people:
-
-Cao Cao, Liu Bei, Guan Yu, Zhuge Liang, Zhou Yu, and Sima Yi.
+That is one special thing about the novel. It takes a long, tangled stretch of history and turns it into a group of unforgettable people. Some make you admire them. Some make you nervous. Some seem to shine the moment they appear.
 
 ---
 
-## The Peach Garden Oath: China's Iron Friendship
+## Three Very Different Men First Become Brothers
 
-At the beginning of the story, we do not meet emperors and great generals.
+One of the most famous scenes in the Three Kingdoms story is the Peach Garden Oath. Liu Bei, Guan Yu, and Zhang Fei are not born into one family, and they do not come from the same kind of life. Still, they decide to become brothers who will stand together through danger.
 
-We meet three young men who are not rich at all.
+What moves readers here is not only the beautiful scene. It is the way the story suddenly makes loyalty glow. These men are not brothers because they share blood. They become brothers because they promise to stand together when life turns hard.
 
-Liu Bei makes and sells straw sandals. He says he comes from a royal family line, but his own family is poor.
-
-Guan Yu sells dates and is living under another name after fleeing his home.
-
-Zhang Fei is a butcher with some money and a small estate.
-
-These three very different men meet in Zhuo County.
-
-Then comes the famous Peach Garden Oath.
-
-It is important to remember: this scene is mainly a classic moment from the novel and later theater. It is not something official history can prove line by line.
-
-But it is powerful.
-
-Three men with no blood relation become brothers for life because of one promise.
-
-Many later readers loved the Three Kingdoms partly because of this shining idea of loyalty between friends.
+It is important to say one thing clearly: this moment is best known from the novel and later drama, not from a line-by-line official history record. But it is so powerful that for many readers, this is one of the first images that appears when they hear the word "Three Kingdoms."
 
 ---
 
-## Zhuge Liang Leaves His Thatched Cottage
+## Liu Bei Has to Visit Three Times Before Zhuge Liang Comes Out
 
-Liu Bei's land is small, and he does not have many soldiers.
+Later, Liu Bei wants help from someone truly brilliant, so he goes to invite Zhuge Liang. The first time he does not meet him. The second time he still does not meet him. Only on the third visit does Zhuge Liang finally come out.
 
-Someone tells him that a wise man named Zhuge Liang lives in Longzhong.
+Why has this story lasted so long? Because it is not only about finding a smart man. It also lets children see something important about Liu Bei. He is willing to lower himself and patiently seek out someone he truly respects.
 
-So begins the famous story of "three visits to the thatched cottage."
-
-The first time Liu Bei goes, Zhuge Liang is not home.
-
-The second time, Liu Bei goes again through snow. He still does not meet him.
-
-Guan Yu and Zhang Fei become annoyed.
-
-"Is this man hiding from us on purpose? Is one farmer worth visit after visit?"
-
-Liu Bei says nothing. He leaves gifts and a letter.
-
-The third time, he goes in spring.
-
-Zhuge Liang is sleeping inside.
-
-Liu Bei will not let anyone wake him.
-
-He stands outside the cottage and waits.
-
-The spring sun shines on his back.
-
-He waits for hours.
-
-When Zhuge Liang finally wakes, the two talk from afternoon until dark.
-
-In the novel, Zhuge Liang explains the whole shape of the future: how the land could be divided and how Liu Bei might survive.
-
-Liu Bei listens as if he has finally found the missing piece.
-
-He asks Zhuge Liang to come out and help him.
-
-This scene is strongly shaped by literature.
-
-But that is exactly why Zhuge Liang became, for many people, the person who sees the whole board the moment he appears.
-
-He was twenty-seven.
-
-He walked out of the thatched cottage with Liu Bei and never truly went back.
+And when Zhuge Liang appears, the novel presents him as the kind of person who can understand the whole board before the game has even fully begun. That is part literature, of course. But it is also why so many people think first of a quiet cottage, a long wait, and a deep calm intelligence when they think of Zhuge Liang.
 
 ---
 
-## Warming Wine and Talking of Heroes
+## The Three Kingdoms Is Not Only About Fighting. It Is Also About Thinking.
 
-Cao Cao is deeply suspicious.
+Many children enjoy the Three Kingdoms story not only because it has generals and horses, but also because it keeps producing scenes of clever thinking.
 
-When Liu Bei is staying with him, Liu Bei tries to hide his big plans by planting vegetables in the backyard every day.
+One of the best-known is the Empty Fort Trick. Zhuge Liang has very few people with him, and a huge enemy army is coming. Instead of shutting the gates, he opens them and sits calmly on the city wall playing the qin.
 
-One day, Cao Cao sends for him.
+The enemy looks at this and grows afraid to enter. Sometimes the most frightening thing is not when someone rushes at you. It is when someone stays calm in danger, as if every move has already been thought through.
 
-"The prime minister invites you to drink."
-
-Liu Bei is nervous, but he cannot refuse.
-
-Green plums are ripe, and Cao Cao has wine warmed with them.
-
-The two men sit facing each other in a small open building in the garden.
-
-Dark clouds gather. Thunder rumbles far away.
-
-Suddenly Cao Cao points to a bright shape in the clouds and asks with a smile:
-
-"Do you know who the heroes of today are?"
-
-Liu Bei quickly names many other warlords: Yuan Shao, Yuan Shu, Liu Biao, Sun Ce.
-
-Cao Cao shakes his head each time.
-
-"Not heroes."
-
-Then he points at Liu Bei and at himself.
-
-"The heroes of the world today are only you and me."
-
-Liu Bei is so startled that his chopsticks fall to the ground.
-
-At that exact moment, thunder cracks in the sky.
-
-Liu Bei bends down to pick up the chopsticks and says, "That thunder frightened me."
-
-Cao Cao laughs.
-
-"You are afraid of thunder?"
-
-He thinks Liu Bei is timid and lets him go.
-
-After Liu Bei leaves, his back is wet with cold sweat.
-
-In the story, that one thunderclap saves his life.
+That is one reason *Romance of the Three Kingdoms* keeps its power. It does not only ask who is strongest. It also keeps asking who understands the situation, who can read another person's mind, and who can keep thinking clearly when everyone else is frightened.
 
 ---
 
-## Guan Yu Passes Five Gates and Defeats Six Generals
+## So People Remember Not Only Three States, but Many Kinds of People
 
-Guan Yu wants to take Liu Bei's two wives safely back to Liu Bei.
+Of course, *Romance of the Three Kingdoms* includes war. But what truly stays behind is not only the battlefield. It is the many kinds of people inside the story: loyal people, patient people, suspicious people, deeply clever people, and people whose courage tightens your heart.
 
-But the gates controlled by Cao Cao's men will not let him pass.
-
-Guan Yu refuses to turn back.
-
-In the novel's famous story, he passes five gates and defeats six generals.
-
-At one gate, arrows block the bridge.
-
-Guan Yu swings his blade, pushes through, and strikes down the guard.
-
-At another gate, soldiers wait in hiding.
-
-At another, hidden fighters are ready inside a temple.
-
-Again and again, Guan Yu sees the danger and cuts his way through.
-
-At the Yellow River crossing, the last guard shouts that Guan Yu may have passed five gates, but he will not pass the sixth.
-
-Guan Yu urges on Red Hare, his famous horse.
-
-He breaks through the final block and crosses the river.
-
-Afterward, he sees a banner with the word "Liu" on a hill ahead.
-
-He cries out, "Elder brother!"
-
-Red Hare carries him forward.
-
-After a thousand hard *li*, five gates, and six defeated generals, Guan Yu finally returns to Liu Bei.
+That is why adults may forget the full order of events and still remember scenes like the Peach Garden Oath, the three visits to the cottage, and the Empty Fort Trick. Those scenes keep showing how different human beings can be from one another.
 
 ---
 
-## Changban Slope: Zhao Yun Saves Adou Alone
+## In Summary
 
-Inside one of the worst defeats is one of the bravest scenes.
+*Romance of the Three Kingdoms* turns a tangled period of history into a great crowd of memorable people. Some are loyal. Some are patient. Some are suspicious. Some are strategic. Much of its excitement comes not from weapons, but from character and thought.
 
-Cao Cao's army catches up at Changban Slope.
-
-Liu Bei's forces scatter. His family is trapped in the chaos.
-
-Zhao Yun turns his horse around and rides alone into the enemy lines.
-
-Banners shake in the wind across the hills.
-
-Zhao Yun's horse pounds through soldiers and dust as he searches for Liu Bei's family.
-
-He finds Lady Gan.
-
-Then he finds Lady Mi and the baby Adou.
-
-In the novel's dramatic version, Lady Mi gives the baby to Zhao Yun and chooses death so she will not slow him down.
-
-Zhao Yun wraps Adou against his chest and rides back into danger.
-
-Enemy soldiers chase him from every side.
-
-With one spear, he fights his way out.
-
-His white battle robe becomes dark with dust and blood.
-
-Cao Cao watches from high ground and asks, "Who is that young general?"
-
-Someone answers, "Zhao Zilong of Changshan."
-
-Cao Cao orders his men not to shoot arrows. He wants to capture such a brave fighter alive.
-
-Zhao Yun breaks through and brings Adou back to Liu Bei.
-
-In the story, Liu Bei is so upset that Zhao Yun nearly died for the baby that he throws Adou down and says, "For this child, I almost lost one of my great generals!"
-
-The scene is extreme.
-
-But it made Zhao Yun's loyalty and courage unforgettable.
-
----
-
-## The Empty Fort Trick: Qin Music Scares Away a Huge Army
-
-After the loss of Jieting, Zhuge Liang is trapped at Yangping.
-
-He has only old and weak soldiers and a few civil workers with him.
-
-Sima Yi's huge army is less than twenty *li* away.
-
-Everyone is pale with fear.
-
-Should they surrender?
-
-Should they die?
-
-Zhuge Liang walks up to the city wall.
-
-He does not close the gates.
-
-He opens them wide.
-
-Four old soldiers sweep the road at the gate.
-
-Dust rises.
-
-Then Zhuge Liang puts on a crane-feather cloak, lights incense, sits on the tower, and plays the qin.
-
-Sima Yi arrives below the city.
-
-He sees the open gates.
-
-He sees Zhuge Liang calmly playing music above.
-
-Behind Sima Yi stands his enormous army, so quiet that the sound of the qin seems to float down from the wall.
-
-The music is steady.
-
-Not one note seems nervous.
-
-One officer whispers, "This is an empty city. We should rush in."
-
-Sima Yi closes his eyes.
-
-He knows Zhuge Liang.
-
-Zhuge Liang does not usually take wild risks.
-
-If he is sitting there playing music, there must be soldiers hiding inside.
-
-Sima Yi orders the army to retreat.
-
-The huge army turns around and leaves the valley.
-
-Zhuge Liang keeps playing.
-
-Inside the city, there really are no hidden soldiers.
-
-Later people could never be completely sure what Sima Yi truly thought.
-
-Did he really believe there was a trap?
-
-Or did he leave Zhuge Liang alive because a strong enemy made Sima Yi more important to his own court?
-
-The Empty Fort Trick is like a play.
-
-The whole world is watching.
-
-And both actors may understand the stage.
-
----
-
-## Summary
-
-The power of *Romance of the Three Kingdoms* is that it turns history, legend, and strong personalities into a glowing story world.
-
-The Peach Garden Oath, the three visits to Zhuge Liang, warming wine and talking of heroes, Changban Slope, and the Empty Fort Trick are scenes many people remember.
-
-They may forget the exact years.
-
-But they remember the pictures.
-
-The Three Kingdoms is more than three states fighting.
-
-It is a huge storehouse of human nature, clever plans, loyalty, big dreams, mistakes, and courage.
+That is why the Three Kingdoms remains such a rich story world. Children often love the people first, and only later return to the history behind them.

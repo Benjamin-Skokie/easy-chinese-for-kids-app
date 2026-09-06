@@ -27,10 +27,10 @@
             <img src="./images/qomolangma-location-map.webp" alt="" class="floated-image" />
             <figcaption class="caption floated-caption"><span class="zh">珠穆朗玛峰位于喜马拉雅山脉，中国和尼泊尔的国界从峰顶经过。</span><br><span class="en">Mount Everest stands in the Himalayas. The border between China and Nepal crosses its summit.</span></figcaption>
           </figure>
-          <p>在亚洲南部，喜马拉雅山脉像一道巨大的皱褶横在地图上。那里有一座山高过地球上所有其他山峰的海拔。它就是珠穆朗玛峰。</p>
+          <p>在亚洲南部，喜马拉雅山脉像一道巨大的皱褶横在地图上。那里有一座山高过地球上所有其他山峰的海拔。它就是<span class="glossary-entry"><button type="button" class="glossary-term" aria-expanded="false" aria-controls="glossary-qomolangma-1">珠穆朗玛峰</button><span id="glossary-qomolangma-1" class="glossary-popover" role="tooltip">Zhūmùlǎngmǎ Fēng · 位于中国与尼泊尔边界、海拔世界最高的山峰，英语常称 Mount Everest。</span></span>。</p>
           <p>这座山正好站在中国和尼泊尔之间。中国使用“珠穆朗玛峰”这个名字，英语里常叫它 <em>Mount Everest</em>。无论从哪一边看，山顶都是同一个覆盖着冰雪的地方。</p>
           <p>2020 年，中国和尼泊尔共同宣布了一个测量结果：珠穆朗玛峰海拔 8,848.86 米，大约是 29,032 英尺。可是，谁也不可能拿着一卷那么长的尺子，从山脚一直爬到山顶。这个数字到底是怎么量出来的呢？</p>
-          <p>Across southern Asia, the Himalayas look like a giant wrinkle on a map. One peak there rises higher above sea level than any other mountain on Earth. It is called Qomolangma in China and Mount Everest in English.</p>
+          <p>Across southern Asia, the Himalayas look like a giant wrinkle on a map. One peak there rises higher above sea level than any other mountain on Earth. It is called <span class="glossary-entry"><button type="button" class="glossary-term" aria-expanded="false" aria-controls="glossary-qomolangma-2">Qomolangma</button><span id="glossary-qomolangma-2" class="glossary-popover" role="tooltip">Zhūmùlǎngmǎ Fēng · 珠穆朗玛峰 · The world's highest peak above sea level, called Mount Everest in English.</span></span> in China and Mount Everest in English.</p>
           <p>The mountain stands between China and Nepal, and the border crosses its snowy summit. Climbers can approach it from either country, but both sides lead toward the same icy peak.</p>
           <p>In 2020, China and Nepal announced a shared measurement: 8,848.86 meters, or about 29,032 feet, above sea level. But no one can unroll a tape measure that long and stretch it from the bottom to the top. So how did anyone measure it?</p>
         </div>
@@ -66,7 +66,7 @@
           <p>如果问题是“哪座山的海拔最高”，冠军就是珠穆朗玛峰。但换一种量法，答案会变得很有趣。</p>
           <p>夏威夷的冒纳凯阿山有很大一部分藏在海水下面。如果从海底的山脚量到峰顶，它比珠穆朗玛峰还高。厄瓜多尔的钦博拉索山靠近赤道。地球并不是一个完美的圆球，中间稍微鼓起来，所以钦博拉索的峰顶离地心最远。</p>
           <p>一座山可以赢得“海拔最高”，另一座可以赢得“从山脚到山顶最高”，还有一座可以赢得“离地心最远”。它们没有谁偷偷长高了，只是我们的尺子换了起点。</p>
-          <p>If the question is “Which mountain has the highest elevation?” Mount Everest wins. But a different way of measuring gives us a different - and surprising - answer.</p>
+          <p>If the question is “Which mountain has the highest elevation?” Mount Everest wins. But a different way of measuring gives us a different&#8212;and surprising&#8212;answer.</p>
           <p>Much of Hawaii's Mauna Kea is hidden below the ocean. Measured from its base on the seafloor to its summit, it is taller than Everest. Ecuador's Chimborazo stands near the equator. Earth is not a perfect ball; it bulges a little around the middle. That makes Chimborazo's summit the point on Earth's surface farthest from the planet's center.</p>
           <p>One mountain can be highest above sea level, another tallest from base to top, and another farthest from Earth's center. None of them suddenly grew. We simply moved the bottom of the ruler.</p>
         </div>
@@ -136,7 +136,8 @@
             if (!button || !popover) return;
 
             const margin = 12;
-            const gap = 10;
+            const compactViewport = window.matchMedia("(max-width: 900px)").matches;
+            const gap = compactViewport ? 8 : 10;
             const buttonRect = button.getBoundingClientRect();
             const popoverRect = popover.getBoundingClientRect();
             const halfWidth = popoverRect.width / 2;
@@ -145,10 +146,12 @@
             const maxCenter = window.innerWidth - margin - halfWidth;
             const left = Math.min(Math.max(buttonCenter, minCenter), maxCenter);
 
-            let side = "above";
-            let top = buttonRect.top - popoverRect.height - gap;
+            let side = compactViewport ? "below" : "above";
+            let top = side === "below"
+              ? buttonRect.bottom + gap
+              : buttonRect.top - popoverRect.height - gap;
 
-            if (top < margin) {
+            if (side === "above" && top < margin) {
               side = "below";
               top = buttonRect.bottom + gap;
             }

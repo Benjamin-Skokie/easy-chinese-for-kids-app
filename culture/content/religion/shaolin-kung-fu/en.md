@@ -4,7 +4,7 @@
 
 ## A Buddhist Temple in the Mountains
 
-Shaolin Temple stands at the foot of Mount Song in central China. It began as a Buddhist monastery, not a martial arts school. Long ago, a monk from India came there to teach Buddhism. Other monks lived at the temple, read Buddhist books, meditated, swept the courtyards, and cared for the temple’s land.
+[[Shaolin Temple|shaolin-temple]] stands at the foot of Mount Song in central China. It began as a Buddhist monastery, not a martial arts school. Long ago, a monk from India came there to teach Buddhism. Other monks lived at the temple, read Buddhist books, meditated, swept the courtyards, and cared for the temple’s land.
 
 But the world outside the temple was not always peaceful. Armies fought one another, and bandits sometimes attacked. Shaolin had buildings, grain, and fields. At times, the people who lived there had to protect them.
 
@@ -28,7 +28,7 @@ Li Shimin later became emperor, one of the most famous in Chinese history. He he
 
 Li Shimin did not forget the Shaolin monks. He thanked them and allowed the temple to keep its land. As the story spread, people remembered something unusual: monks from a quiet mountain temple had fought beside a future emperor.
 
-Shaolin had not yet become the “kung fu temple” people imagine today, but its reputation for brave fighters had begun.
+Shaolin had not yet become the “[[kung fu|gongfu]] temple” people imagine today, but its reputation for brave fighters had begun.
 
 ---
 

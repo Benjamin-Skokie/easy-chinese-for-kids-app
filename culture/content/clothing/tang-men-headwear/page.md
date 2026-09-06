@@ -22,20 +22,20 @@ image: soft-wrapped-futou.webp
 caption_zh: 黑色软布包住发髻，把长发整齐地收在头上。
 caption_en: Soft black cloth covered the hair knot and held long hair neatly in place.
 [zh]
-许多唐朝男子留着长发。是因为他们没有剪刀吗？当然不是。唐朝人已经会使用剪刀，今天的博物馆里还保存着唐朝的剪刀。
+许多[[唐朝|tang-dynasty]]男子留着长发。是因为他们没有剪刀吗？当然不是。唐朝人已经会使用剪刀，今天的博物馆里还保存着唐朝的剪刀。
 
 留长发主要是一种生活习惯和礼俗。古人常说，身体和头发来自父母，应该好好爱护，不能随意损伤。因此，对许多汉族男子来说，把头发剪得很短或全部剃掉，并不是平常的选择。不过，这不等于每个人一辈子都不修剪一根头发。人们会清洗、梳理和照料头发，也有人会剪发或剃发。唐朝生活着来自许多地方的人，不同人群的发式也不完全一样。
 
-长头发总要有地方安放。男子常常把头发梳起来，在头上盘成发髻，再用黑色的布帛或薄纱包住头和发髻。这样，走路、骑马或做事时，头发不会散下来，人也显得穿戴整齐。这种包头的巾帽叫作“幞头”，读作“福头”。
+长头发总要有地方安放。男子常常把头发梳起来，在头上盘成发髻，再用黑色的布帛或薄纱包住头和发髻。这样，走路、骑马或做事时，头发不会散下来，人也显得穿戴整齐。这种包头的巾帽叫作“[[幞头|futou]]”，读作“福头”。
 
 幞头在唐朝以前就已经出现。到了唐朝，它成了男子日常衣服中很常见的一部分。从皇帝到普通百姓，都可能戴幞头。不过，他们戴的形状、材料和场合不一定相同。
 [/zh]
 [en]
-Many men in Tang China kept their hair long. Was that because they had no scissors? Not at all. People in Tang China used scissors, and Tang scissors can still be seen in museums today.
+Many men in [[Tang China|tang-dynasty]] kept their hair long. Was that because they had no scissors? Not at all. People in Tang China used scissors, and Tang scissors can still be seen in museums today.
 
 Long hair was mainly a custom. Families taught that a person's body and hair came from their parents and should be treated with care. For many Han Chinese men, cutting the hair very short or shaving it all off was not an everyday choice. That does not mean every man went through life without trimming a single hair. People washed, combed, and cared for their hair, and some people cut or shaved it. Tang China was also home to many different communities, so not everyone wore the same hairstyle.
 
-Long hair had to go somewhere. Men often combed it up, tied it in a knot, and wrapped black cloth or thin gauze around the head and hair knot. The cloth kept the hair from falling loose while a man walked, rode a horse, or worked. It also made him look properly dressed. This head wrap was called a *futou*, pronounced “foo-toe.”
+Long hair had to go somewhere. Men often combed it up, tied it in a knot, and wrapped black cloth or thin gauze around the head and hair knot. The cloth kept the hair from falling loose while a man walked, rode a horse, or worked. It also made him look properly dressed. This head wrap was called a [[futou|futou]], pronounced “foo-toe.”
 
 Futou had appeared before the Tang dynasty. During the Tang, they became a common part of men's everyday clothing. Emperors and ordinary people could both wear them, although the shape, material, and occasion were not always the same.
 [/en]
@@ -99,14 +99,14 @@ caption_en: The long ribbons come from the futou's two soft “feet.” They are
 
 这张骑马图把软脚画成了长长飞舞的飘带，主要是为了让画面更有气势。真实的唐朝骑手不一定这样戴，长带也不是将军的标志。真正披甲作战时，保护头部的头盔通常比幞头更重要。
 
-到了唐朝以后，幞头的脚继续变化。宋朝的一些官帽有又硬又长、向两边平伸的帽翅。那是后来特别醒目的式样，不能倒过来说所有唐朝男子都这样戴。
+到了唐朝以后，幞头的脚继续变化。[[宋朝|song-dynasty]]的一些官帽有又硬又长、向两边平伸的帽翅。那是后来特别醒目的式样，不能倒过来说所有唐朝男子都这样戴。
 [/zh]
 [en]
 The two “feet” at the back of a futou began as cloth corners left after the head wrap was tied. Soft feet could hang down and move gently in the wind. Later, makers lengthened them or added silk cord and firmer supports. The feet could rise, cross, or stretch out to the sides.
 
 In this riding picture, the soft feet have become long, flying ribbons. The artist made them extra dramatic. A real Tang rider did not always wear them this way, and long ribbons were not a sign that someone was a general. In a real battle, a protective helmet usually mattered more than a futou.
 
-Futou feet continued to change after the Tang. Some official hats in the Song dynasty had long, stiff wings that reached out to both sides. That later style became famous, but it was not the hat of every Tang man.
+Futou feet continued to change after the Tang. Some official hats in the [[Song dynasty|song-dynasty]] had long, stiff wings that reached out to both sides. That later style became famous, but it was not the hat of every Tang man.
 [/en]
 [/section]
 

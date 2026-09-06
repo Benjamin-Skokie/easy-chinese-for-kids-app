@@ -6,7 +6,7 @@
 
 Imagine trying to hit a small ball with a long stick. Now put yourself on a running horse. Suddenly, everything becomes harder. The ball is rolling. The horse is moving. You have to steer, stay balanced, watch the ball, and swing the mallet—all at the same time.
 
-Around 1,300 years ago, people in Tang China loved this fast horseback game. It was polo. The game had traveled into China from lands farther west in Asia. The Tang world was full of travelers, merchants, music, clothing, and new ideas arriving from different places. Games could travel too.
+Around 1,300 years ago, people in [[Tang China|tang-dynasty]] loved this fast horseback game. It was polo. The game had traveled into China from lands farther west in Asia. The Tang world was full of travelers, merchants, music, clothing, and new ideas arriving from different places. Games could travel too.
 
 And polo found plenty of fans.
 

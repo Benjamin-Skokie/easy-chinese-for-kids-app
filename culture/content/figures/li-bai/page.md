@@ -22,7 +22,7 @@ image: moon-and-poems.webp
 caption_zh: 李白望着明月，手中拿着写诗的笔。
 caption_en: Li Bai looks at the moon with a writing brush in his hand.
 [zh]
-在《静夜思》里，李白看见月光照在地上，觉得它像一层白霜。他抬头望月，又想起了远方的家。
+在《静夜思》里，[[李白|li-bai]]看见月光照在地上，觉得它像一层白霜。他抬头望月，又想起了远方的家。
 
 这几句很短，却让许多人记了一千多年。因为李白有一种特别的本领：别人看见一片月光，他却能在里面看见寒冷的霜、遥远的故乡，还有一个睡不着的人。
 
@@ -31,7 +31,7 @@ caption_en: Li Bai looks at the moon with a writing brush in his hand.
 他走到哪里，诗就跟到哪里。
 [/zh]
 [en]
-In *Quiet Night Thought*, Li Bai looked at moonlight on the ground and thought it looked like frost. He looked up at the moon, then thought of home far away.
+In *Quiet Night Thought*, [[Li Bai|li-bai]] looked at moonlight on the ground and thought it looked like frost. He looked up at the moon, then thought of home far away.
 
 The poem is short, but people have remembered it for more than a thousand years. Li Bai had a special gift: where someone else saw a patch of moonlight, he saw cold frost, a distant home, and a traveler who could not sleep.
 
@@ -54,7 +54,7 @@ caption_en: Mountains and waterfalls gave Li Bai plenty to write about.
 
 在《望庐山瀑布》里，他写道，水从三千尺高的地方直落下来，仿佛天上的银河掉进了人间。读到这里，你几乎会抬起头，听见水声，再感觉冰凉的水珠扑到脸上。
 
-李白很会把眼前的景色写得又大又有生命。黄河好像从天上奔来，月亮像一位陪他赶路的朋友，一条瀑布也能变成从星空落下的银河。
+李白很会把眼前的景色写得又大又有生命。[[黄河|yellow-river]]好像从天上奔来，月亮像一位陪他赶路的朋友，一条瀑布也能变成从星空落下的银河。
 
 他看到的山河并不只停在纸上。它们会奔跑，会发亮，还会大声唱歌。
 [/zh]
@@ -63,7 +63,7 @@ Once, Li Bai stood before a waterfall on Mount Lu. Mount Lu is a mountain area i
 
 In *Viewing the Waterfall at Mount Lu*, he wrote that the water plunged three thousand feet, as if the Milky Way had fallen from the sky. You can almost hear the crash, tip your head back, and feel the cold spray on your face.
 
-Li Bai knew how to make nature feel huge and alive. The Yellow River seemed to rush down from the sky. The moon became a friend beside him on the road. A waterfall became a river tumbling out of the stars.
+Li Bai knew how to make nature feel huge and alive. The [[Yellow River|yellow-river]] seemed to rush down from the sky. The moon became a friend beside him on the road. A waterfall became a river tumbling out of the stars.
 
 In his poems, mountains, rivers, and moonlight did not sit still. They rushed, flashed, and sang.
 [/en]
@@ -78,7 +78,7 @@ image: palace-could-not-hold-him.webp
 caption_zh: 李白曾在皇宫里为皇帝写作，但他在那里停留的时间并不长。
 caption_en: Li Bai once wrote for the emperor at the palace, but he did not stay long.
 [zh]
-李白四十多岁的时候，他的诗已经非常有名，连唐朝的皇帝也读过。皇帝把他请到都城长安，让他在皇宫里写诗和文章。
+李白四十多岁的时候，他的诗已经非常有名，连[[唐朝|tang-dynasty]]的皇帝也读过。皇帝把他请到都城[[长安|changan]]，让他在皇宫里写诗和文章。
 
 李白非常高兴。他一直希望自己不只会写诗，还能帮助国家处理重要的事情。可是，皇帝喜欢的是他的诗才，并没有把重要的工作交给他。
 
@@ -87,7 +87,7 @@ caption_en: Li Bai once wrote for the emperor at the palace, but he did not stay
 李白曾经走进皇宫，却是在离开以后，写出了更多让人记住的诗。
 [/zh]
 [en]
-By the time Li Bai was in his forties, his poems were famous. Even the emperor of the Tang dynasty had read them. The emperor invited Li Bai to the capital city and gave him a place among the palace writers.
+By the time Li Bai was in his forties, his poems were famous. Even the emperor of the [[Tang dynasty|tang-dynasty]] had read them. The emperor invited Li Bai to the capital city and gave him a place among the palace writers.
 
 Li Bai was thrilled. He hoped the emperor would let him help with important matters. But the emperor mostly wanted his poems and beautiful words, not his advice.
 
@@ -107,7 +107,7 @@ heading_en: A Light Boat Raced Down the River
 
 李白因此被关进监牢，后来又被罚到很远的地方去。可是，他还没有走到终点，朝廷就宣布赦免，让包括李白在内的一些犯人恢复自由。
 
-重获自由以后，李白坐船顺着长江而下。在《早发白帝城》里，他写小船飞快地穿过一座又一座高山。两岸的猿猴还在啼叫，轻快的小船已经越过了万重山。
+重获自由以后，李白坐船顺着[[长江|yangtze-river]]而下。在《早发白帝城》里，他写小船飞快地穿过一座又一座高山。两岸的猿猴还在啼叫，轻快的小船已经越过了万重山。
 
 这首诗读起来又快又轻，像一艘终于不用回头的小船。
 [/zh]
@@ -116,7 +116,7 @@ When Li Bai was in his fifties, a great war broke out. The Tang emperor fled the
 
 Li Bai was put in prison. Then he was ordered to travel to a faraway place as punishment. Before he reached it, the government announced a pardon—an order that allowed some prisoners, including Li Bai, to go free.
 
-After his pardon, Li Bai traveled down the Yangtze River by boat. In *Leaving Baidi City in the Morning*, he wrote of a light boat racing past mountain after mountain. Monkeys were still calling from both riverbanks, and already the boat had swept past ten thousand peaks.
+After his pardon, Li Bai traveled down the [[Yangtze River|yangtze-river]] by boat. In *Leaving Baidi City in the Morning*, he wrote of a light boat racing past mountain after mountain. Monkeys were still calling from both riverbanks, and already the boat had swept past ten thousand peaks.
 
 The poem feels quick and light, like a boat that is finally free to fly.
 [/en]
@@ -126,7 +126,7 @@ The poem feels quick and light, like a boat that is finally free to fly.
 heading_zh: 一千年后，人们还在读李白
 heading_en: More Than a Thousand Years Later
 [zh]
-李白在公元762年去世。今天，大约有一千首被认为是他写的诗保存了下来。他和杜甫常常被人们称为唐朝最伟大的两位诗人。
+李白在公元762年去世。今天，大约有一千首被认为是他写的诗保存了下来。他和[[杜甫|du-fu]]常常被人们称为唐朝最伟大的两位诗人。
 
 人们还送给李白一个称号：“诗仙”。这不是说他真的会法术，而是因为他的想象力好像没有边界。瀑布可以落自银河，黄河可以奔下天空，月亮也能陪着一个想家的人。
 
@@ -135,7 +135,7 @@ heading_en: More Than a Thousand Years Later
 李白的时代已经很遥远了，可他的诗仍然能让人重新看见月亮、山和河。
 [/zh]
 [en]
-Li Bai died in 762. About one thousand of his poems have survived. He and Du Fu are often remembered as the two greatest poets of the Tang dynasty.
+Li Bai died in 762. About one thousand of his poems have survived. He and [[Du Fu|du-fu]] are often remembered as the two greatest poets of the Tang dynasty.
 
 People gave Li Bai a nickname: the Poet Immortal. It does not mean that he had magic powers. It means that his imagination seemed to have no limits. A waterfall could fall from the Milky Way. The Yellow River could pour out of the sky. The moon could keep a lonely traveler company.
 

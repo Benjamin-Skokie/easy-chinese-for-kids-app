@@ -8,7 +8,7 @@ This old tale has been told in many ways. Here is one of the best-known versions
 
 The suns were supposed to take turns crossing the sky. Then one day, all ten appeared at once. Leaves curled. Rivers shrank. Cracks opened across the fields. People and animals searched for shade, but there was nowhere cool to hide.
 
-Hou Yi was a famous archer. He climbed to a high place, planted his feet, and pulled back his bow. One arrow flew, then another, then another. Nine suns fell from the sky.
+[[Hou Yi|hou-yi]] was a famous archer. He climbed to a high place, planted his feet, and pulled back his bow. One arrow flew, then another, then another. Nine suns fell from the sky.
 
 Then Hou Yi stopped. The world still needed one sun for light and warmth. At last, a breeze moved across the fields, and people stepped out of the shadows.
 
@@ -16,9 +16,9 @@ Then Hou Yi stopped. The world still needed one sun for light and warmth. At las
 
 ## The Magic Medicine in the Wooden Box
 
-After Hou Yi shot down the nine suns, the Queen Mother of the West gave him a magic medicine. She was a powerful goddess in old Chinese stories. Whoever swallowed the medicine would live forever and rise into the sky.
+After Hou Yi shot down the nine suns, the [[Queen Mother of the West|queen-mother-west]] gave him a magic medicine. She was a powerful goddess in old Chinese stories. Whoever swallowed the medicine would live forever and rise into the sky.
 
-But the medicine could help only one person. Hou Yi loved his wife, Chang'e. He did not want to fly away alone and leave her behind. So he did not take it.
+But the medicine could help only one person. Hou Yi loved his wife, [[Chang'e|chang-e]]. He did not want to fly away alone and leave her behind. So he did not take it.
 
 Hou Yi placed it inside a wooden box and asked Chang'e to guard it. She closed the lid and hid the box away.
 
@@ -46,7 +46,7 @@ When Hou Yi came home, he found the wooden box open and Chang'e gone. He ran out
 
 Hou Yi set fruit and cakes in the moonlight, as if he could still share them with her. His neighbors came and looked up with him.
 
-Today, people often tell this story during Mid-Autumn Festival, when families gather under the round autumn moon and share mooncakes. Later moon tales give Chang'e a companion too: the Jade Rabbit, who pounds magic medicine beneath a tree on the moon.
+Today, people often tell this story during [[Mid-Autumn Festival|mid-autumn-festival]], when families gather under the round autumn moon and share mooncakes. Later moon tales give Chang'e a companion too: the Jade Rabbit, who pounds magic medicine beneath a tree on the moon.
 
 ---
 

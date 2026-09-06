@@ -19,25 +19,25 @@ layout: text-wrap-image
 heading_zh: 一支曲子，换上新的词
 heading_en: One Tune, New Words
 image: 1-singing-song-ci.webp
-caption_zh: 这幅现代想象图里，乐师弹着琵琶，旁边的人正在为曲子写词。
-caption_en: In this modern imagined scene, a musician plays the pipa while a writer adds words to the tune.
+caption_zh: 乐师弹着琵琶，旁边的人正在为曲子写词。
+caption_en: A musician plays the *pipa* while a writer adds words to the tune.
 [zh]
-大约一千年前的[[宋朝]]，人们也喜欢听音乐、唱歌。有时，乐师会弹起一支大家熟悉的曲子，写词的人则为这支曲子配上新的文字。
+大约一千年前的[[宋朝|song-dynasty]]，人们也喜欢听音乐、唱歌。有时，乐师会弹起一支大家熟悉的曲子，写词的人则为这支曲子配上新的文字。
 
 这种跟着曲子写出来的文字，就叫“词”。音乐可以不变，唱的词却可以换成新的。
 
 因为文字要跟着音乐走，有的句子很短，有的句子比较长。很多宋朝的曲子后来失传了，可写在纸上的词留了下来。
 
-我们不需要背很多曲子的名字。先来看看苏轼怎样对着月亮想念弟弟，再看看李清照的小船怎样闯进荷花丛。
+我们不需要背很多曲子的名字。先来看看[[苏轼|su-shi]]怎样对着月亮想念弟弟，再看看[[李清照|li-qingzhao]]的小船怎样闯进荷花丛。
 [/zh]
 [en]
-About 1,000 years ago, during China's [[Song dynasty]], people enjoyed music and songs. Sometimes a musician played a tune that everyone knew. A writer then gave the tune a new set of words.
+About 1,000 years ago, during China's [[Song dynasty|song-dynasty]], people enjoyed music and songs. Sometimes a musician played a tune that everyone knew. A writer then gave the tune a new set of words.
 
 These words were called *ci*. The music could stay the same while the words changed.
 
 Because the words had to fit the music, some lines were short and others were long. Many Song tunes were later lost, but the words on the page survived.
 
-We do not need to memorize a list of tune names. Let us meet Su Shi as he thinks of his brother under the moon. Then we will follow Li Qingzhao's boat into the lotus flowers.
+We do not need to memorize a list of tune names. Let us meet [[Su Shi|su-shi]] as he thinks of his brother under the moon. Then we will follow [[Li Qingzhao|li-qingzhao]]'s boat into the lotus flowers.
 [/en]
 [/section]
 
@@ -117,7 +117,7 @@ Look at the two parts of the picture. The same writer remembered the noisy lotus
 heading_zh: 你听见哪一种声音？
 heading_en: Which Sound Can You Hear?
 [zh]
-现在，你已经认识了宋词：它是为曲子写下的文字。苏轼把对弟弟的思念送进月光里，李清照把小船划进荷花丛，也把后来的安静和忧伤写了下来。
+现在，你已经认识了[[宋词|song-ci]]：它是为曲子写下的文字。苏轼把对弟弟的思念送进月光里，李清照把小船划进荷花丛，也把后来的安静和忧伤写了下来。
 
 那些古老的曲子也许听不到了，不过我们还可以把词读出来。月亮下面的句子，你想慢慢读吗？荷花丛里的“争渡，争渡”，你会不会越读越快？试一试吧。
 [/zh]

@@ -12,7 +12,7 @@ Ying Zheng was young, but Qin was already strong. It had a powerful army, strict
 
 When Ying Zheng grew older, he began making the big decisions himself. His armies defeated six other kingdoms and brought a great stretch of land under his rule.
 
-Each kingdom had once had its own king. Ying Zheng decided that “king” was no longer a big enough title. He chose a new one: emperor. We remember him as Qin Shi Huang, the First Emperor of Qin.
+Each kingdom had once had its own king. Ying Zheng decided that “king” was no longer a big enough title. He chose a new one: emperor. We remember him as [[Qin Shi Huang|qin-shi-huang]], the First Emperor of Qin.
 
 ---
 
@@ -60,7 +60,7 @@ Qin Shi Huang wanted to live forever, and he sent people to search for medicines
 
 Qin Shi Huang began preparing his tomb long before he died. Beside it, an army made of clay stood silently underground.
 
-Many centuries later, farmers digging a well found pieces of clay. *Terracotta* is clay that has been shaped and baked until it becomes hard. That is why the figures are called the Terracotta Army. People studying the past later uncovered thousands of clay soldiers, horses, and war chariots. Many faces look different, as if a real army had suddenly stopped in its tracks.
+Many centuries later, farmers digging a well found pieces of clay. [[Terracotta|terracotta]] is clay that has been shaped and baked until it becomes hard. That is why the figures are called the [[Terracotta Army|terracotta-warriors]]. People studying the past later uncovered thousands of clay soldiers, horses, and war chariots. Many faces look different, as if a real army had suddenly stopped in its tracks.
 
 Want to look more closely at those thousands of different faces? Read [“Terracotta Warriors: Are 8,000 Faces 8,000 Portraits?”](../../art/terracotta-warriors/index.html)
 

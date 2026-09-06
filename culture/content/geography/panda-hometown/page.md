@@ -23,14 +23,14 @@ caption_en: Panda cubs receive careful help at breeding centers. Newborn pandas 
 [zh]
 刚出生的大熊猫一点儿也不像我们熟悉的样子。它只有一小块黄油那么重，粉红粉红的，眼睛还睁不开。它躺在妈妈身边，小得让人吃惊。
 
-在成都的大熊猫繁育基地，工作人员会照顾熊猫妈妈和幼崽。他们检查宝宝的身体，准备食物，也研究怎样帮助大熊猫健康长大。等幼崽长出黑耳朵和黑眼圈，它才慢慢变成我们认识的“熊猫宝宝”。
+在[[成都|chengdu]]的大熊猫繁育基地，工作人员会照顾熊猫妈妈和幼崽。他们检查宝宝的身体，准备食物，也研究怎样帮助大熊猫健康长大。等幼崽长出黑耳朵和黑眼圈，它才慢慢变成我们认识的“熊猫宝宝”。
 
 不过，繁育基地更像一所特别的熊猫幼儿园。大熊猫真正的家，不在玻璃窗后面，也不在游乐木架上。要找到它的家，我们得离开城市，走进云雾中的高山森林。
 [/zh]
 [en]
 A newborn giant panda looks nothing like the panda in a picture book. It weighs about as much as a stick of butter. It is pink, nearly hairless, and unable to open its eyes. Beside its mother, it looks unbelievably small.
 
-At the panda breeding center in Chengdu, people care for mothers and cubs. They check the babies, prepare food, and study how to help pandas grow. When a cub's black ears and dark eye patches appear, it slowly begins to look like the panda everyone knows.
+At the panda breeding center in [[Chengdu|chengdu]], people care for mothers and cubs. They check the babies, prepare food, and study how to help pandas grow. When a cub's black ears and dark eye patches appear, it slowly begins to look like the panda everyone knows.
 
 But a breeding center is a little like a special panda nursery. A giant panda's real home is not behind a viewing window or on a wooden climbing frame. To find it, we must leave the city and climb into the misty mountain forests.
 [/en]
@@ -45,14 +45,14 @@ image: panda-mountain-habitat.webp
 caption_zh: 野生大熊猫生活在中国中部凉爽湿润的山林里，林下长着大片竹子。
 caption_en: Wild giant pandas live in cool, damp mountain forests in central China, where bamboo grows beneath the trees.
 [zh]
-野生大熊猫住在中国中部凉爽湿润的高山森林里。大多数生活在一个叫四川的地方，附近的山林里也住着一些。高大的树木撑起屋顶，下面长着大熊猫最需要的食物——竹子。
+野生大熊猫住在中国中部凉爽湿润的高山森林里。大多数生活在一个叫[[四川|sichuan]]的地方，附近的山林里也住着一些。高大的树木撑起屋顶，下面长着大熊猫最需要的食物——竹子。
 
 四川有高山，也有大片竹林，生活着最多的野生大熊猫，因此常被称为“大熊猫的故乡”。但地图上的熊猫家园并不是一整片森林。有些竹林隔着山谷，有些被公路、农田或城镇分开。
 
 这对熊猫来说就像家里的房间忽然都失去了门。一间房里也许有食物，可是它去不了另一间，也很难遇到别的熊猫。保护熊猫，不只是保护一只动物，还要替这些“房间”重新接上安全的走廊。
 [/zh]
 [en]
-Wild giant pandas live in cool, damp mountain forests in central China. Most live in a part of China called Sichuan, with smaller groups in nearby mountains. Tall trees form a roof, while bamboo—the panda's most important food—grows below.
+Wild giant pandas live in cool, damp mountain forests in central China. Most live in a part of China called [[Sichuan|sichuan]], with smaller groups in nearby mountains. Tall trees form a roof, while bamboo—the panda's most important food—grows below.
 
 Sichuan has high mountains, thick bamboo forests, and more wild pandas than anywhere else. That is why people often call it “the home of the giant panda.” Yet the panda's home is not one huge, unbroken forest. Some bamboo forests lie across deep valleys. Others have been separated by roads, farms, or towns.
 
@@ -115,8 +115,8 @@ layout: text-wrap-image
 heading_zh: 回到山林
 heading_en: Back to the Mountains
 image: panda-return-to-wild.webp
-caption_zh: 这幅想象图表现一只熊猫走进山林。只有少数经过挑选和训练的熊猫才会被尝试放归野外。
-caption_en: This imagined scene shows a panda entering the forest. Only a small number of carefully chosen and trained pandas are released into the wild.
+caption_zh: 一只熊猫走进山林；只有少数经过挑选和训练的熊猫才会被尝试放归野外。
+caption_en: A panda walks into the forest; only a small number of carefully chosen and trained pandas are released into the wild.
 [zh]
 有时，保护人员会训练一只在人工照顾下出生的熊猫，希望它以后能回到野外。它要学会自己寻找竹子，避开危险，也要习惯身边没有饲养员。只有少数合适的熊猫才会参加这样的计划。
 

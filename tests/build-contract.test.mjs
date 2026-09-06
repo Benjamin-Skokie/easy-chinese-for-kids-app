@@ -158,7 +158,7 @@ test("the mobile menu exposes About and production pages show site copyright", (
   assert.match(footerSource, /Made with curiosity, care, and technology\./);
   assert.match(footerSource, /© 2026 Nihao World\. All rights reserved\./);
   assert.match(cultureTemplate, /site-footer\.js/);
-  assert.equal(culturePages.length, 109);
+  assert.equal(culturePages.length, 108);
   for (const pagePath of culturePages) {
     assert.match(readFileSync(pagePath, "utf8"), /site-footer\.js/, `${pagePath} is missing the site footer`);
   }
@@ -644,7 +644,8 @@ test("the landing hero features six scrollable culture-story highlights", () => 
   assert.match(html, /culture\/books\/literature\/journey-to-west\/index\.html/);
   assert.match(html, /culture\/books\/literature\/journey-to-west\/images\/3-great-sage-at-heaven-gate\.webp/);
   assert.match(html, /culture\/books\/geography\/rice-terraces\/index\.html/);
-  assert.match(html, /culture\/books\/figures\/mulan\/index\.html/);
+  assert.match(html, /culture\/books\/economy\/tea\/index\.html/);
+  assert.match(html, /culture\/books\/economy\/tea\/images\/5-1-whisking-tea\.webp/);
   assert.match(html, /culture\/books\/politics\/emperor-day\/index\.html\?reading=story/);
   assert.match(carouselSource, /viewport\.scrollTo/);
 });

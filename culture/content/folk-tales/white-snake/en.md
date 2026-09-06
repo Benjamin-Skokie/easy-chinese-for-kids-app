@@ -4,9 +4,9 @@
 
 ## One Umbrella Brings Them Together
 
-Long ago, a kind boy saved a small white snake from being caught. Many years passed. The snake learned magic and took the shape of a woman named Bai Suzhen. She never forgot the boy and went to the human world to thank him. In this version of the tale, the boy had been born again and was now a young man named Xu Xian.
+Long ago, a kind boy saved a small white snake from being caught. Many years passed. The snake learned magic and took the shape of a woman named [[Bai Suzhen|bai-suzhen]]. She never forgot the boy and went to the human world to thank him. In this version of the tale, the boy had been born again and was now a young man named [[Xu Xian|xu-xian]].
 
-Bai Suzhen did not travel alone. Her friend Xiaoqing came with her. Xiaoqing was a green snake who could also take human form. She was brave, quick to speak, and sometimes quick to lose her temper. The two were as close as sisters, and their search brought them to West Lake in Hangzhou.
+Bai Suzhen did not travel alone. Her friend [[Xiaoqing|xiaoqing]] came with her. Xiaoqing was a green snake who could also take human form. She was brave, quick to speak, and sometimes quick to lose her temper. The two were as close as sisters, and their search brought them to [[West Lake|west-lake]] in [[Hangzhou|hangzhou]].
 
 Spring rain began to fall just as they reached a stone bridge called Broken Bridge. Despite its name, the bridge was not broken. The women had no umbrella, so Xu Xian held his over them. Bai Suzhen knew at once that he was the boy she had come to find. Xiaoqing looked at Xu Xian, then at Bai Suzhen, and hid a smile. The borrowed umbrella gave them a reason to meet again.
 
@@ -16,9 +16,9 @@ Spring rain began to fall just as they reached a stone bridge called Broken Brid
 
 When Xu Xian came to collect his umbrella, he and Bai Suzhen talked and soon fell in love. They married and opened a medicine shop. Bai Suzhen knew many healing herbs, Xu Xian carefully mixed the medicine, and Xiaoqing weighed herbs, helped customers, and called back anyone who stood in the wrong line.
 
-The three helped many sick people. But a monk named Fahai discovered Bai Suzhen's secret. A monk is a religious man who lives and studies at a temple. Fahai believed that a snake who had taken human form should not live as part of a human family, and he warned Xu Xian again and again.
+The three helped many sick people. But a monk named [[Fahai|fahai]] discovered Bai Suzhen's secret. A monk is a religious man who lives and studies at a temple. Fahai believed that a snake who had taken human form should not live as part of a human family, and he warned Xu Xian again and again.
 
-Then came Dragon Boat Festival. Long ago, people drank a special festival wine called realgar wine. They believed it could keep snakes and insects away. Fahai told Xu Xian to offer a cup to Bai Suzhen. She drank a little so he would not become suspicious. At once, she changed back into a great white snake. Xu Xian was so frightened that he fell to the floor and would not wake up.
+Then came [[Dragon Boat Festival|dragon-boat-festival]]. Long ago, people drank a special festival wine called realgar wine. They believed it could keep snakes and insects away. Fahai told Xu Xian to offer a cup to Bai Suzhen. She drank a little so he would not become suspicious. At once, she changed back into a great white snake. Xu Xian was so frightened that he fell to the floor and would not wake up.
 
 ---
 

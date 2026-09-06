@@ -33,7 +33,7 @@ Take a bite of an apple. Your tongue tastes sweet and sour. Your nose catches th
 
 Modern science often names five basic tastes: sweet, sour, bitter, salty, and umami, or savory. Smell adds aroma, while the mouth also feels temperature and texture. Take one part away and the same food may seem different.
 
-Long ago, Chinese writers often talked about five flavors: sour, sweet, bitter, salty, and a sharp, lively flavor called *la*. Ginger, scallions, and Sichuan pepper could all be *la*. It is an old way of thinking about food, not exactly the same as a modern science chart.
+Long ago, Chinese writers often talked about five flavors: sour, sweet, bitter, salty, and a sharp, lively flavor called *la*. Ginger, scallions, and [[Sichuan|sichuan]] pepper could all be *la*. It is an old way of thinking about food, not exactly the same as a modern science chart.
 [/en]
 [/section]
 
@@ -46,14 +46,14 @@ image: shanxi-vinegar-noodles.webp
 caption_zh: 一点醋给热面条加上酸味，也带来鼻子能闻到的香气。
 caption_en: A little vinegar adds sourness to hot noodles, along with an aroma the nose can detect.
 [zh]
-山西是中国北方的一个省，那里有许多不同的面食，也以粮食酿成的醋闻名。一碗热面端上桌，有人会拌进一点深色的醋。
+[[山西|shanxi]]是中国北方的一个省，那里有许多不同的面食，也以粮食酿成的醋闻名。一碗热面端上桌，有人会拌进一点深色的醋。
 
 面条还没入口，酸香已经跟着热气飘了起来。吃上一口，舌头尝到酸和咸，鼻子闻到醋香，嘴巴感觉到面条又热又有嚼劲。醋带来的不只是一种酸味，它的香气也是这碗面的重要部分。
 
 有人爱多放一点醋，有人只加几滴，也有人完全不加。即使吃同一碗面，每个人喜欢的味道也可能不同。
 [/zh]
 [en]
-Shanxi is a province in northern China. It is known for many kinds of noodles and for vinegar made from grain. When a hot bowl of noodles reaches the table, some people stir in a little dark vinegar.
+[[Shanxi|shanxi]] is a province in northern China. It is known for many kinds of noodles and for vinegar made from grain. When a hot bowl of noodles reaches the table, some people stir in a little dark vinegar.
 
 Before the first bite, a rich, sour smell rises with the steam. Then the tongue tastes sour and salty while the mouth feels the warm, chewy noodles. Vinegar brings more than sourness. Its aroma is an important part of the bowl.
 
@@ -70,14 +70,14 @@ image: wuxi-spare-ribs.webp
 caption_zh: 糖、酱油和香料慢慢煮成浓汁，让排骨又甜又咸，颜色油亮。
 caption_en: Sugar, soy sauce, and spices cook down into a glossy sauce that is both sweet and salty.
 [zh]
-无锡是中国东部的一座城市。当地有一道很有名的酱排骨，颜色红亮，肉炖得很软，味道里带着明显的甜。
+[[无锡|wuxi]]是中国东部的一座城市。当地有一道很有名的酱排骨，颜色红亮，肉炖得很软，味道里带着明显的甜。
 
 做这道菜时，厨师会把糖、酱油和香料同排骨一起慢慢煮。有的做法还会加入黄酒。水分一点点减少以后，汤汁变得浓稠，包在排骨外面。糖让酱汁有甜味，也让它看起来亮晶晶的；酱油和盐带来咸味，香料则让它闻起来更香。
 
 所以，无锡排骨的甜味不是不小心放进去的。甜和咸原本就是这道菜的搭配。
 [/zh]
 [en]
-Wuxi is a city in eastern China. One of its well-known dishes is sauced pork ribs. The ribs are reddish brown, the meat is cooked until tender, and the sauce has a clear sweetness.
+[[Wuxi|wuxi]] is a city in eastern China. One of its well-known dishes is sauced pork ribs. The ribs are reddish brown, the meat is cooked until tender, and the sauce has a clear sweetness.
 
 To make the dish, cooks slowly simmer the ribs with sugar, soy sauce, and spices. Some versions also use Chinese rice wine. As the water cooks away, the sauce becomes thick and coats the ribs. Sugar makes the sauce sweet and glossy. Soy sauce and salt add saltiness, while the spices add aroma.
 
@@ -144,14 +144,14 @@ caption_en: Yanduxian slowly simmers salted pork, fresh pork, and spring bamboo 
 [zh]
 鲜味和咸味不是一回事。盐带来咸味，肉汤、蘑菇和番茄一类的食物却能带来一种浓厚、鲜香的味道，这就是“鲜味”，英文叫 *umami*。
 
-图里是腌笃鲜，一种来自江南地区的春季汤菜。江南在中国东部，包括上海以及附近的江苏、浙江一带。做这道菜时，人们把咸肉、鲜肉和春笋放在一起，用小火慢慢炖。
+图里是腌笃鲜，一种来自[[江南|jiangnan]]地区的春季汤菜。江南在中国东部，包括[[上海|shanghai]]以及附近的江苏、浙江一带。做这道菜时，人们把咸肉、鲜肉和春笋放在一起，用小火慢慢炖。
 
 春笋只在一年中的一段时间最鲜嫩，离开盛产竹笋的地方以后，也不一定容易买到特别新鲜的春笋，所以这道菜在别的地方没有那么常见。笋在汤里吸收咸肉的香味，也留下清甜和脆嫩的口感。咸肉带来咸味，肉汤带来鲜味，春笋让浓汤吃起来多了一点清爽。
 [/zh]
 [en]
 Umami and saltiness are not the same. Salt gives food a salty taste. Meat broth, mushrooms, and tomatoes can give food a deep, savory taste called *umami*.
 
-The picture shows *yanduxian*, a spring soup from Jiangnan. Jiangnan is a region in eastern China that includes Shanghai and nearby parts of Jiangsu and Zhejiang. To make the soup, cooks gently simmer salted pork, fresh pork, and spring bamboo shoots.
+The picture shows *yanduxian*, a spring soup from [[Jiangnan|jiangnan]]. Jiangnan is a region in eastern China that includes [[Shanghai|shanghai]] and nearby parts of Jiangsu and Zhejiang. To make the soup, cooks gently simmer salted pork, fresh pork, and spring bamboo shoots.
 
 Spring bamboo shoots are at their best for only part of the year. Very fresh shoots can also be harder to find far from places where they grow, so *yanduxian* is less common outside its home region. The shoots soak up the flavor of the salted pork while adding a fresh taste and a tender crunch. The salted pork brings saltiness, the broth brings umami, and the bamboo shoots keep the rich soup from feeling too heavy.
 [/en]

@@ -1,6 +1,6 @@
 ---
-title_zh: 大禹治水：洪水、英雄与王朝的记忆
-title_en: Yu the Great: A Flood, a Hero, and the Memory of a Dynasty
+title_zh: 大禹治水：给洪水找一条路
+title_en: Yu the Great: Making a Path for the Water
 slug: yu-the-great
 category: politics
 difficulty: 困难
@@ -9,154 +9,111 @@ style_notes: "用 --- 分隔 frontmatter；正文强调优先用 *斜体*；尽�
 ---
 
 [hero]
-title_zh: 大禹治水：洪水、英雄与王朝的记忆
-title_en: Yu the Great: A Flood, a Hero, and the Memory of a Dynasty
+title_zh: 大禹治水：给洪水找一条路
+title_en: Yu the Great: Making a Path for the Water
 [/hero]
 
 [section]
 page: 1
 layout: text-wrap-image
-heading_zh: 一幅画，不是一张现场照片
-heading_en: A Painting Is Not a Photograph
+heading_zh: 当洪水铺满大地
+heading_en: When Water Covered the Land
 image: 1-block-the-flood.webp
-caption_zh: 这是一幅根据传统故事绘制的想象图，不是鲧治水工程的现场记录
-caption_en: This imagined scene comes from the traditional story. It is not a record of Gun's actual engineering.
+caption_zh: 洪水漫过田野，几个人站在长长的土堤上加固缺口。
+caption_en: Floodwater spreads across the fields as people reinforce breaks in a long earthen embankment.
 [zh]
-画面里，浑黄的水撞向土墙，几个人拿着简单的工具，想把洪水挡回去。我们常听到这样的讲法：禹的父亲鲧只知道“堵”，所以失败；禹改用“疏”，给水找路，于是成功。
+中国最古老的一些故事里，有一个故事从“水太多了”开始。古书记载，洪水漫过大地，包围山丘，许多地方无法正常生活。田地不能好好耕种，人们也不能只是坐着等水自己退下去。
 
-这个对比很容易记，但先要给它贴上标签：*这是后人整理出来的一种传统讲法，不是四千年前留下的工程记录。*《史记》确实说鲧治水九年没有成功，也说禹后来开通水道；可是“土墙今天堵住、明天从另一边冲破”这样的过程，古书没有为我们留下现场报告。学者也提醒，把父子成败简单解释成“堵错了、疏对了”，可能把复杂的传说讲得太整齐。
+最早接下治水任务的，是[[禹|yu-the-great]]的父亲[[**鲧**|gun]]。[[《史记》|records-grand-historian]]说，鲧治水九年，水患还是没有解决。后来，禹接过了父亲没有完成的工作。
 
-我们没有禹那个时代写下来的日记、地图或命令。今天读到的大禹故事，来自年代晚得多的青铜器铭文和古书。它们能告诉我们：至少两三千年前，人们已经怎样记住禹；它们却不能让我们直接看见传说所说的时代。
+到了禹这里，古书里的画面变了。[[《尚书》|book-of-documents]]写他疏通大河，让水流向大海，又挖通小的沟渠，让小水流进大河。他走过许多地方，处理河流、湖泽和田地，还要让百姓重新有粮食吃。所以，大禹治水并不是在黄河边挖一条沟那么简单。水的问题铺在一大片土地上。禹要做的，是让这些水找到可以去的地方。
 [/zh]
 [en]
-Muddy water slams against an earthen wall. People with simple tools struggle to hold the flood back. A familiar version of the story says that Gun, Yu's father, knew only how to block water, so he failed. Yu opened paths for the water instead, so he succeeded.
+One of China’s oldest stories begins with too much water. The ancient texts describe a flood spreading across the land, rising around hills and mountains and making ordinary life difficult. Fields could not be planted properly. People could not simply wait for the water to disappear.
 
-It is a memorable contrast, but it needs a label: *This is a traditional way of arranging the story, not an engineering report from 4,000 years ago.* The *Records of the Grand Historian* does say that Gun worked for nine years without success. Ancient texts also describe Yu opening waterways. They do not give us a witness's report of one wall holding today and breaking tomorrow. Some scholars warn that “Gun blocked, Yu guided” may make a complicated group of traditions look much neater than it really is.
+The first person given the enormous job of controlling it was [[**Gǔn**|gun]], [[Yǔ|yu-the-great]]’s father. The [[*Records of the Grand Historian*|records-grand-historian]] says that Gǔn worked for nine years, but the flood problem was still not solved. Later, Yǔ was asked to continue the work.
 
-We have no diary, map, or order written in Yu's own time. The Yu stories we can read come from bronze inscriptions and books created much later. They show us how people remembered Yu at least two or three thousand years ago. They do not give us a window straight into the age described by the legend.
+Yǔ’s part of the story looks different. The old texts describe him opening large waterways toward the seas and clearing smaller channels so water could reach the rivers. He traveled across the land, dealing with rivers, marshes, fields, and places where people needed food. This was much bigger than digging one ditch beside one river. The problem was water spread across an entire landscape. Yǔ’s task was to help it find places to go.
 [/en]
 [/section]
 
 [section]
 page: 2
 layout: text-wrap-image
-heading_zh: 古书里的工作，比一条河大得多
-heading_en: The Work in the Texts Was Bigger Than One River
+heading_zh: 给水找一条路
+heading_en: Give the Water a Way Through
 image: 2-guide-the-water.webp
-caption_zh: 这幅想象图表现许多人一起清理水道；具体河道、工具和人物姿态并无现场证据
-caption_en: This imagined scene shows people clearing waterways together. Its exact channels, tools, and poses are not documented.
+caption_zh: 禹站在高处查看水道，工人们在山谷中疏通一条条沟渠。
+caption_en: Yu watches from higher ground while workers clear channels through the valley.
 [zh]
-早期文献中的洪水铺满大地，漫过丘陵，让许多地方无法居住。《尚书》里的禹说，自己开通大河，使水通向四海；又挖通小沟，让小沟里的水流进大河。《孟子》也写禹疏通许多河道，让水流入海。
+下大雨的时候，可以看看地上的水。水总会往低处流。前面的路被堵住，它就积在那里；有了水沟，它又会顺着沟往前走。
 
-古书还把测量山川、整理湖泽、恢复农田、运送粮食和划分土地都放进禹的工作里。这个范围大得惊人，远远不只是在黄河某处挖一条沟。对古代讲故事的人来说，治水不只是把洪水赶走，更像是把一片混乱的世界整理得可以耕种、通行和生活。
+后来的人记住大禹，也常常记住这个画面。不要只想象他站在一个地方，对着洪水拼命挖土。古书里的禹一直在不同地方奔走，顺着山川和河道，把大水引向河流和大海，把小水沟和大河连接起来。
 
-因此，画中那些整齐的小水道不能当成大禹工程的准确复原图。我们可以把它看作一种想象：许多人观察高低和水流，一起清理通道，让水有地方去。至于禹走过哪一座山、指挥过哪一支队伍、使用过什么工具，现有证据无法画出完整清单。
+《尚书》还把恢复农田、运送粮食这些事情也放在他的治水故事里。这么大的事情，当然不可能靠一个人拿着工具独自完成。大禹的故事慢慢变成了一个组织巨大工程的故事：水要有地方流，田地要重新能种，住在这里的人也要重新生活下去。
 
-这个故事后来进入政治文化，是因为它把“谁应该做领袖”与“谁能让百姓重新生活”连在了一起。禹的力量不只是打败敌人；传统更强调他组织艰难的公共工作，让土地恢复秩序。
+可是，这项工作好像一直跟着禹。甚至跟到了他的家门口。
 [/zh]
 [en]
-Early writings describe water spreading across the land and making many places impossible to live in. In the *Book of Documents*, Yu says that he opened great rivers toward the seas and dug smaller ditches so their water could reach the rivers. The *Mencius* also tells of Yu clearing waterways and sending the water to the sea.
+Think about what happens when heavy rain falls on the ground. Water naturally searches for lower places. If its path is blocked, it gathers. If there is a channel, it can move.
 
-These texts place much more than river digging inside Yu's work. They mention mapping mountains, arranging lakes and marshes, restoring fields, moving food, and organizing land. The job is far larger than cutting one channel beside the Yellow River. To the ancient storytellers, controlling the waters was also about turning a disorderly world into a place where people could farm, travel, and live.
+That is the picture that later generations remembered about Yǔ. Instead of imagining him standing in one place fighting a wall of water, picture him moving from place to place, following rivers and valleys and working out how water could reach larger rivers and eventually the sea.
 
-The neat channels in the painting are not an exact reconstruction of Yu's project. We can treat the picture as an idea: many people study the land, clear paths, and work together to give water somewhere to go. The evidence cannot give us a complete list of the mountains Yu visited, the teams he led, or the tools they carried.
+The [[*Book of Documents*|book-of-documents]] describes him opening great rivers and digging smaller channels into them. It also connects his work with restoring farming and getting food to people. No one person could reshape a whole landscape with his own two hands. The Yǔ story became a story about organizing enormous work: water had to move, fields had to become usable again, and people had to be able to live on the land.
 
-This helps explain why the story became part of political culture. It connects the question “Who should lead?” with another question: “Who can make life possible for the people?” Yu's greatness is not mainly about defeating an enemy. In the tradition, he organizes difficult public work and brings order back to the land.
+And the work seemed to follow Yǔ everywhere—even past his own front door.
 [/en]
 [/section]
 
 [section]
 page: 3
 layout: text-wrap-image
-heading_zh: “三过家门”有不止一个版本
-heading_en: More Than One Version of the Doorway Story
+heading_zh: 三次经过自己的家门
+heading_en: The Door He Passed Three Times
 image: 3-three-times-past-home.webp
-caption_zh: 门边的家人是现代画家的想象；早期文本没有记录这一刻的完整人物和动作
-caption_en: The family at the door is a modern artist's imagining. Early texts do not record this complete scene.
+caption_zh: 禹背着行囊经过家门，家人站在门口望着他继续赶路。
+caption_en: Yu passes his doorway carrying his pack while his family watches him continue down the road.
 [zh]
-“三过家门而不入”是故事里最让人难忘的一幕，但古书并没有留下今天常讲的三段完整家庭剧情。《孟子》说，禹在外八年，三次经过家门都没有进去。《史记》写得更晚，说禹在外十三年，路过家门也不敢进去。一个说八年，一个说十三年；一个明确说三次，另一个没有在这句话里给出“三次”。
+[[《孟子》|mencius]]里留下了大禹故事中最有名的一幕。书里说，禹在外治水八年，**三次经过自己的家门，都没有进去。**
 
-后来的人把不同材料连在一起，又加入妻子生产、婴儿啼哭、孩子长大呼唤父亲等细节。古书的确把禹的婚姻、儿子启和治水放在同一组传统里，但我们不能因此断定每一次路过家门时发生了什么。画中站在门边的家人，是现代画家帮助我们感受“家就在身后”的想象场景，不是经过证实的一刻。
+和滔天洪水比起来，这其实是一个很小的画面。这里没有大河，没有高山，也没有浩大的工程。只有一扇家门。
 
-这一幕不断被讲，因为它把一个看不见的品质画了出来：公共责任会要求人付出私人代价。今天的读者也可以继续追问：故事在赞美禹时，有没有忽略家人的感受？一个好领袖是否只能靠牺牲自己和家人？古老故事不一定替我们回答，但它能把难题摆到眼前。
+禹已经走到了这么近的地方，只要拐进去，就可以回家。可是他还是继续往前走了。也正因为这个画面这么简单，人们一直记得它。“三过家门而不入”后来成了大禹身上最有名的故事之一。
+
+治水需要的不只是知道水应该往哪里流。还需要有人愿意把一件很难、很久的事情一直做下去。而在传统故事里，这件事最后还把禹带到了另一个完全不同的位置。
 [/zh]
 [en]
-The most famous scene may be “passing his door three times without going inside.” Yet the oldest texts do not give us the three complete family scenes often told today. The *Mencius* says Yu spent eight years away and passed his door three times without entering. The later *Records of the Grand Historian* says that he stayed away for thirteen years and did not dare enter when he passed home. One says eight years and three passes. The other says thirteen years but does not count three passes in that sentence.
+The [[*Mencius*|mencius]] preserves one of the most famous parts of the story. It says that Yǔ spent eight years away at work and **passed his own door three times without going inside**.
 
-Later storytellers joined different pieces and added Yu's wife giving birth, a crying baby, and a son calling for his father at different ages. Ancient texts do connect Yu's marriage, his son Qi, and his flood work, but that does not tell us exactly what happened at his door each time. The family in the painting is a modern artist's way of helping us feel that home was close behind him. It is not a proven moment.
+It is such a small scene compared with the enormous flood. There are no roaring rivers in it. No mountains. No great engineering work. There is only a doorway.
 
-People kept telling the scene because it turns an invisible quality into a picture: public duty can carry a private cost. A reader today can ask another question too. Does the praise of Yu leave out what his family may have felt? Must a good leader always harm himself or his family? The old story does not have to answer for us. It can place a hard question where we can see it.
+Yǔ is close enough to go home, but he keeps moving. That simple image became one of the main reasons people remembered him. The flood-control story was not only about knowing where water should flow. It was also about staying with a difficult job when many other people depended on it.
+
+For generations, the phrase “passing his door three times without entering” became a way of talking about Yǔ’s devotion to public work. And in the story, that work eventually changed much more than the rivers.
 [/en]
 [/section]
 
 [section]
 page: 4
 layout: text-only
-heading_zh: 治水英雄怎样成了开国君主
-heading_en: How the Flood Hero Became a Founding King
+heading_zh: 从治水的人到君王
+heading_en: From Flood Worker to Ruler
 [zh]
-后来的历史传统把故事排成一条清楚的路线：鲧失败，禹成功；舜把统治权交给禹；禹又成为夏朝的第一位君主。夏朝通常被称为中国传统历史中的第一个王朝。
+传统历史记载，禹治水成功以后，当时的统治者[[**舜**|shun]]越来越信任他，后来把治理天下的位置交给了禹。
 
-可是，这条路线不是所有早期材料一开始就完整讲好的。有学者指出，较早的禹故事主要关心他怎样整理水土、让世界适合生活；“控制一场特定洪水”与“建立夏朝”后来才被更紧密地接到一起。《史记》完成于禹传说时代之后很久，它保存了影响深远的完整版本，却不是同时代记录。
+禹也因此成为传统历史中和[[**夏朝**|xia-dynasty]]开始联系在一起的君王。夏通常被称为中国传统历史里的第一个王朝。禹去世以后，他的儿子[[启|qi-of-xia]]后来继承了王位，中国古代王朝的故事也进入了新的阶段。
 
-考古学让问题更有趣，也更难。河南发现的二里头遗址是一处重要的早期青铜时代中心，那里有大型建筑、道路和精美器物。许多研究者把二里头文化与夏朝联系起来，另一些研究者则认为证据还不能确定。遗址没有留下能让我们读出“这里就是夏”或“这位君主就是禹”的同时代文字。
+这是一位君王很特别的开场。人们最先记住的禹，不是坐在王座上的样子，而是在外面和洪水打交道的样子。他最有名的功劳也不是打败另一支军队，而是让水退到该去的地方，让田地重新能够耕种，让人们可以继续生活。
 
-所以，比较稳妥的说法是：夏朝和禹在中国历史传统中非常重要；二里头证明那个时代确实出现了复杂的大型社会，但它还没有替我们确认传说中的每个人和每件事。
+所以，后来的人讲起这位早期君王时，总要先讲治水。王宫以前，是河流和泥水；成为君王以前，是一段走了很多年的路。而大禹最让人记住的，始终是那件最开始的事情：**给水找一条可以走的路。**
 [/zh]
 [en]
-Later historical tradition arranges these events into a tidy sequence. Gun fails. Yu succeeds. Shun hands leadership to Yu. Yu then becomes the founder of the Xia dynasty, usually described as the first dynasty in traditional Chinese history.
+Traditional histories say that after Yǔ succeeded in bringing the waters under control, [[**Shùn**|shun]], the ruler, trusted him with more and more responsibility. Eventually, Shùn handed leadership to Yǔ.
 
-That whole chain was not fully joined together in every early source. Some scholars argue that the earlier Yu stories focus on ordering water and land so people can live. The control of one particular flood and the founding of the Xia became more tightly connected later. The *Records of the Grand Historian* preserves the complete version that shaped later memory, but it was written long after the age it describes.
+Yǔ then became the ruler associated with the beginning of the [[**Xià**|xia-dynasty]], remembered in traditional Chinese history as the first dynasty. After Yǔ’s death, his son [[Qǐ|qi-of-xia]] eventually took the throne, and the story of ruling families and dynasties began to take a new shape.
 
-Archaeology makes the question more interesting—and harder. At Erlitou in Henan, archaeologists found a major early Bronze Age center with large buildings, roads, and finely made objects. Many researchers connect the Erlitou culture with the Xia. Others say the evidence does not settle the question. No writing from the site tells us, “This is Xia,” or says that Yu ruled there.
+That is an unusual beginning for the story of a king. Yǔ is not first remembered sitting on a throne. He is remembered outside, dealing with muddy water. His most famous victory is not defeating another army. It is making land usable again so people can farm and live.
 
-The careful conclusion is this: Yu and the Xia are deeply important in China's historical tradition. Erlitou proves that a large, complex society existed during roughly the period associated with the Xia. It does not confirm every person and event in the later stories.
+That may be why the story of Yǔ lasted for so long. When later generations told the story of an early Chinese ruler, they began with the work he did before he became one. Before the palace came the rivers. Before the crown came the long journey across the land. And before Yǔ became a king, he was the man who kept trying to give the water somewhere to go.
 [/en]
 [/section]
-
-[section]
-page: 5
-layout: text-wrap-image
-heading_zh: 地层找到洪水，却找不到英雄的名字
-heading_en: Mud Can Reveal a Flood, but Not a Hero's Name
-image: 4-block-or-guide-comparison.webp
-caption_zh: 这幅图表现后人熟悉的“堵与疏”对比；它是概念图，不是考古证据
-caption_en: This picture shows the familiar “block or guide” contrast. It is a concept image, not archaeological evidence.
-[zh]
-2016年，一组研究者报告了黄河上游积石峡一次巨大的古代决口洪水。他们提出，大约公元前1920年，地震引起山体滑坡，堵成堰塞湖；天然堤坝后来决开，洪水奔涌而下。这项研究认为，这场灾难也许与大禹洪水传说有关。
-
-这个发现引起了很大兴趣，却没有让问题结束。其他研究者重新检查年代和沉积物，对那场决口洪水的时间、规模以及它与附近遗址灾难的关系提出了不同结论。研究古代文献的学者还指出，大禹故事中的水遍及许多地区，并不等于一场发生在黄河上游的单次洪水。
-
-地质学可以告诉我们某地曾有洪水、洪水大约何时发生、可能怎样形成；它不会在泥沙里写出“大禹到过这里”。即使某次真实灾害后来进入了传说，我们也仍要证明中间的联系。现在没有证据让我们把积石峡洪水直接宣布为“大禹治的那一场”。
-
-古代中国许多地方都经历过洪水。大禹故事可能保存了人们对长期水患、迁徙、合作和土地治理的记忆，也可能把许多经验集中到一个英雄身上。这是一种合理的思考方向，却不是已经证明的答案。
-[/zh]
-[en]
-In 2016, a research team reported evidence for a huge ancient flood at Jishi Gorge, high on the Yellow River. The team proposed that an earthquake caused a landslide around 1920 BCE. The fallen earth blocked the river and formed a lake. When that natural dam burst, an enormous rush of water swept downstream. The researchers suggested that this disaster might be connected to the Great Flood story.
-
-The study caused great excitement, but it did not end the debate. Other researchers checked dates and sediments again and reached different conclusions about the timing, size, and connection between the proposed flood and disasters at a nearby settlement. Scholars of ancient texts also pointed out that Yu's waters cover many regions in the stories. They are not simply one flood high on the Yellow River.
-
-Geology can show that a flood happened in a certain place, suggest when it happened, and explain what may have caused it. Mud does not contain a label saying, “Yu was here.” Even if a real disaster eventually became part of a legend, researchers still have to show the link. At present, the Jishi Gorge evidence cannot prove that scientists have found “Yu's flood.”
-
-Many parts of ancient China experienced floods. The Yu story may preserve memories of long struggles with water, movement from place to place, shared labor, and the work of making land usable. It may also gather many experiences around one hero. Those are thoughtful possibilities, not proven answers.
-[/en]
-[/section]
-
-[ending]
-heading_zh: 再看这四幅画
-heading_en: Look at the Four Pictures Again
-[zh]
-土坝、河道、家门和“堵或疏”的对比，都能帮助我们进入故事，但没有一幅是现场照片。读古老传说时，我们可以同时做两件事：让故事把洪水的恐惧、共同劳动的艰难和离家的代价带到眼前；也问清每个细节来自哪一种证据。
-
-大禹治水最值得记住的，也许不只是“硬堵不如疏导”这一句整齐的道理。故事还提出了更大的政治问题：一个领袖凭什么得到信任？是因为出身、武力，还是因为他能组织众人完成大家都需要的工作？当后人把治水英雄写成开国君主时，他们其实也在回答：*能够让百姓安居的人，才有资格领导。*
-
-这不是一份已经证实的大禹生平，却是一段真实存在了两千多年的文化记忆。认真区分证据与传说，不会让故事变小；它会让我们看见，这个故事是怎样一层一层长大的。
-[/zh]
-[en]
-The wall, the channels, the doorway, and the choice between blocking and guiding can all lead us into the story, but none is a photograph. We can let the legend show us the fear of floodwater, the strain of working together, and the cost of leaving home. At the same time, we can ask what kind of evidence supports each detail.
-
-The story offers more than the neat lesson “guiding is better than blocking.” It asks a larger political question: What gives a leader the right to be trusted? Birth? Force? Or the ability to organize people and do work that everyone needs? When later storytellers turned a flood hero into a founding king, they offered an answer: *A person who makes life safer for the people has earned the right to lead.*
-
-This is not a fully documented life of Yu. It is an enduring cultural memory, retold for more than two thousand years. Separating evidence from legend does not shrink the story. It lets us see how the story grew, layer by layer.
-[/en]
-[/ending]

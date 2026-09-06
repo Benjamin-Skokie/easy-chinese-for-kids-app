@@ -96,7 +96,7 @@
           <p>弯过去以后呢？继续打开。也许出现一个村庄。也许又是一座山。也许什么也没有，只有一片淡淡的雾。</p>
           <p>看画的人自己决定画面出现得有多快。右边看过的部分可以慢慢卷起来，左边新的风景再一点点出现。于是，你不是站在远处看一整片山水。你的眼睛好像真的走进了画里。</p>
           <p>而画家也不需要把每一片树叶、每一道水波、每一块石头都画出来。有时候，几笔浓墨已经够了。有时候，一座淡得快要消失的远山已经够了。有时候，什么都不画&#8212;&#8212;也已经够了。</p>
-          <p>这也许就是中国水墨画最好玩的地方之一。它不只是在问：<strong>“这座山画得像不像真的山？”</strong></p>
+          <p>这也许就是中国<span class="glossary-entry"><button type="button" class="glossary-term" aria-expanded="false" aria-controls="glossary-ink-wash-painting-1">水墨画</button><span id="glossary-ink-wash-painting-1" class="glossary-popover" role="tooltip">shuǐmò huà · 主要用墨和水的浓淡变化作画的中国画传统。</span></span>最好玩的地方之一。它不只是在问：<strong>“这座山画得像不像真的山？”</strong></p>
           <p>它还在问：<strong>“你觉得这座山离你有多远？”“你能感觉到山里的雾吗？”“你想不想知道，下一个转弯后面还有什么？”</strong></p>
           <p>就这样，一卷纸、一支毛笔、一点清水和黑墨，慢慢变成了一个比它们大得多的世界。变成了一整段旅程。</p>
           </div>
@@ -140,7 +140,8 @@
             if (!button || !popover) return;
 
             const margin = 12;
-            const gap = 10;
+            const compactViewport = window.matchMedia("(max-width: 900px)").matches;
+            const gap = compactViewport ? 8 : 10;
             const buttonRect = button.getBoundingClientRect();
             const popoverRect = popover.getBoundingClientRect();
             const halfWidth = popoverRect.width / 2;
@@ -149,10 +150,12 @@
             const maxCenter = window.innerWidth - margin - halfWidth;
             const left = Math.min(Math.max(buttonCenter, minCenter), maxCenter);
 
-            let side = "above";
-            let top = buttonRect.top - popoverRect.height - gap;
+            let side = compactViewport ? "below" : "above";
+            let top = side === "below"
+              ? buttonRect.bottom + gap
+              : buttonRect.top - popoverRect.height - gap;
 
-            if (top < margin) {
+            if (side === "above" && top < margin) {
               side = "below";
               top = buttonRect.bottom + gap;
             }

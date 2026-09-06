@@ -24,12 +24,12 @@ caption_en: Damp clay is almost silent, but a thin porcelain bowl may ring with 
 [zh]
 轻轻敲一块湿泥，几乎没有声音。可是一只薄薄的瓷碗，碰一下碗边，却可能发出清脆的：*叮——*
 
-瓷器最开始的材料，明明也来自泥土和石料。陶工把它们磨细、混合、塑形成碗，再送进一座热得惊人的窑里。温度升到一千多摄氏度以后，泥坯会收缩，里面的矿物也开始发生变化，原本松软、吸水的材料慢慢变得坚硬、细密。如果配料和火候刚刚好，烧出来的瓷器可以又白又薄，有些甚至能透过一点光。
+[[瓷器|porcelain]]最开始的材料，明明也来自泥土和石料。陶工把它们磨细、混合、塑形成碗，再送进一座热得惊人的窑里。温度升到一千多摄氏度以后，泥坯会收缩，里面的矿物也开始发生变化，原本松软、吸水的材料慢慢变得坚硬、细密。如果配料和火候刚刚好，烧出来的瓷器可以又白又薄，有些甚至能透过一点光。
 
 可是窑门一关，陶工也不能再伸手进去帮忙了。
 [/zh]
 [en]
-Tap a lump of damp clay and you hear almost nothing. Tap the rim of a thin porcelain bowl, and you may hear a clear: *Ting!*
+Tap a lump of damp clay and you hear almost nothing. Tap the rim of a thin [[porcelain|porcelain]] bowl, and you may hear a clear: *Ting!*
 
 Porcelain begins with materials that come from clay and stone. Potters grind and mix them, shape the soft material into a bowl, and send it into an extremely hot kiln—a special oven used for firing ceramics. At temperatures above 1,000°C, the bowl shrinks and the minerals inside begin to change. The soft, porous body becomes hard and dense. With the right materials and firing, porcelain can become white, thin, and even slightly translucent.
 
@@ -48,16 +48,16 @@ caption_en: Fifteenth-century Jingdezhen used gourd-shaped kilns; during firing,
 [zh]
 窑里的瓷器会缩，会变形，釉会熔化，颜色也会改变。温度、位置或者火候差一点，成品就可能开裂、歪掉，或者出现不想要的颜色。
 
-景德镇的御窑曾经专门为宫廷烧瓷。考古人员在那里发现过大量被打碎、丢弃的瓷片。能留下来的作品，往往已经经过很严格的挑选。
+[[景德镇|jingdezhen]]的御窑曾经专门为宫廷烧瓷。考古人员在那里发现过大量被打碎、丢弃的瓷片。能留下来的作品，往往已经经过很严格的挑选。
 
-有一种很有名的小瓷杯叫“鸡缸杯”，只有手掌那么大。杯子上画着公鸡、母鸡和小鸡，在花草之间走动。今天，这样的明代鸡缸杯成了博物馆里极珍贵的瓷器之一。
+有一种很有名的小瓷杯叫“鸡缸杯”，只有手掌那么大。杯子上画着公鸡、母鸡和小鸡，在花草之间走动。今天，这样的[[明代|ming-dynasty]]鸡缸杯成了博物馆里极珍贵的瓷器之一。
 
 它看起来轻巧安静，可它出生的时候，先要从一座不好控制的窑里平安出来。
 [/zh]
 [en]
 Inside the kiln, clay shrinks, glaze melts, and colors change. A small difference in temperature or position can leave a piece cracked, warped, or the wrong color.
 
-At the imperial kilns in Jingdezhen (*Jǐngdézhèn*), a Chinese city famous for porcelain, porcelain was once made for the emperor’s court. Archaeologists have found large amounts of broken and discarded porcelain there. Pieces that did not meet the required standard could be rejected.
+At the imperial kilns in [[Jingdezhen|jingdezhen]], a Chinese city famous for porcelain, porcelain was once made for the emperor’s court. Archaeologists have found large amounts of broken and discarded porcelain there. Pieces that did not meet the required standard could be rejected.
 
 One famous survivor is a tiny Chicken Cup, small enough to fit in your hand. Around it, a rooster, hen, and chicks wander among flowers and rocks. Cups like this were made more than five hundred years ago, and surviving examples are now treasured museum objects.
 

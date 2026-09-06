@@ -19,7 +19,7 @@ layout: text-only
 heading_zh: 沙漠里，怎么藏着这么多画？
 heading_en: A Painted World in the Desert
 [zh]
-往中国西北走，敦煌周围的景色常常很单调：沙地、戈壁、灰黄色的山崖，还有沙漠边的一片绿洲。古代从中国向西走的许多道路经过这里，商人、旅行者和僧人都曾在这一带来来往往。
+往中国西北走，[[敦煌|dunhuang]]周围的景色常常很单调：沙地、戈壁、灰黄色的山崖，还有沙漠边的一片绿洲。古代从中国向西走的许多道路经过这里，商人、旅行者和僧人都曾在这一带来来往往。
 
 可是走到绿洲附近的一面崖壁前，你会发现山上密密麻麻全是洞口。
 
@@ -30,7 +30,7 @@ heading_en: A Painted World in the Desert
 这里明明是佛教洞窟，为什么墙上会有这些普通人的生活？
 [/zh]
 [en]
-Travel west across northwestern China, and the land around Dunhuang can look dry and almost empty. Sand, gravel, cliffs, and a patch of green oasis sit where old routes once connected China with Central Asia and places much farther west.
+Travel west across northwestern China, and the land around [[Dunhuang|dunhuang]] can look dry and almost empty. Sand, gravel, cliffs, and a patch of green oasis sit where old routes once connected China with Central Asia and places much farther west.
 
 Then you reach a cliff near the oasis. It is full of openings.
 
@@ -126,7 +126,7 @@ caption_en: Dunhuang murals can place everyday life and flying figures from Budd
 [en]
 Not quite. A photograph records light from something that was in front of a camera. A mural records what an artist chose to paint.
 
-At Mogao, the same wall can mix things from very different kinds of worlds. A farmer may show us a real kind of plow. A donor portrait may show real clothing. A camel cart may resemble vehicles used on the Silk Roads.
+At Mogao, the same wall can mix things from very different kinds of worlds. A farmer may show us a real kind of plow. A donor portrait may show real clothing. A camel cart may resemble vehicles used on the [[Silk Roads|silk-road]].
 
 But beside them, heavenly beings fly through the air. A nine-colored deer appears in a Buddhist story. Palaces may represent an imagined paradise. Those are not proof that people once saw flying beings or magical deer in the desert.
 

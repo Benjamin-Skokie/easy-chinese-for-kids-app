@@ -22,16 +22,16 @@ image: li-river-20-yuan-note.webp
 caption_zh: 二十元人民币背面的图案取自真实的桂林山水，但它是为纸币设计和雕刻的图案。
 caption_en: The picture on China's 20-yuan note comes from real Guilin scenery, but it was designed and engraved for the banknote.
 [zh]
-把一张二十元人民币翻过来，背面有水、有小船，还有一座座尖尖的山。中国人民银行把这幅主景图案叫作“桂林山水”。
+把一张二十元人民币翻过来，背面有水、有小船，还有一座座尖尖的山。中国人民银行把这幅主景图案叫作“[[桂林|guilin]]山水”。
 
-桂林（Guìlín）是中国南方的一座城市。漓江（Lí Jiāng）从附近的山峰之间流过。纸币上的风景来自这里，但纸币不是直接印上去的一张照片。设计者把真实的山水变成了适合纸币的雕刻图案。
+桂林是中国南方的一座城市。[[漓江|li-river]]从附近的山峰之间流过。纸币上的风景来自这里，但纸币不是直接印上去的一张照片。设计者把真实的山水变成了适合纸币的雕刻图案。
 
 一张小小的纸币装不下整条江，却抓住了桂林最特别的样子：清清的水，窄窄的船，还有从平地突然升起来的山峰。
 [/zh]
 [en]
-Turn over a Chinese 20-yuan note. On the back, you will find water, a small boat, and a row of pointed mountains. China's central bank calls this main picture “Guilin scenery.”
+Turn over a Chinese 20-yuan note. On the back, you will find water, a small boat, and a row of pointed mountains. China's central bank calls this main picture “[[Guilin|guilin]] scenery.”
 
-Guilin (*Guìlín*) is a city in southern China. The Li River (*Lí Jiāng*) winds between the nearby peaks. The scene on the note comes from this real landscape, but it is not a photograph printed directly onto the money. Designers turned the scenery into a picture that could be engraved on a banknote.
+Guilin is a city in southern China. The [[Li River|li-river]] winds between the nearby peaks. The scene on the note comes from this real landscape, but it is not a photograph printed directly onto the money. Designers turned the scenery into a picture that could be engraved on a banknote.
 
 One small note cannot hold the whole river. It does capture Guilin's special look: clear water, a narrow boat, and peaks that seem to leap straight out of the ground.
 [/en]
@@ -50,14 +50,14 @@ caption_en: The Li River winds between the peaks. As the boat moves, the overlap
 
 人们还喜欢按照山峰的样子给它们起名字。一座山可能像把长鼻子伸进水里的大象，另一座可能像一支竖起来的毛笔。山还是山，好玩的地方就在于每个人都可能看见不同的形状。
 
-许多游船从桂林附近向南开往阳朔（Yángshuò）。阳朔是漓江边的一座小城，也被群山围绕。一路上，山、树、村庄和倒影不断重新排列。纸币只能留住一小幅画，坐船的人却能看着一幅长长的画慢慢展开。
+许多游船从桂林附近向南开往[[阳朔|yangshuo]]。阳朔是漓江边的一座小城，也被群山围绕。一路上，山、树、村庄和倒影不断重新排列。纸币只能留住一小幅画，坐船的人却能看着一幅长长的画慢慢展开。
 [/zh]
 [en]
 On a boat moving down the Li River, the view never stays inside one picture frame. One peak blocks the mountains behind it. Then the boat rounds a bend, and two or three more appear. Nearby hills look dark, while distant ones fade into soft blue-gray layers behind the mist.
 
 People also enjoy naming peaks after the shapes they see. One mountain may look like an elephant dipping its long trunk into the water. Another may look like a paintbrush standing upright. The mountains are still mountains. The fun is that every passenger may notice a different shape.
 
-Many sightseeing boats travel south from near Guilin to Yangshuo (*Yángshuò*), a small riverside town also surrounded by peaks. Mountains, trees, villages, and reflections rearrange themselves all along the way. A banknote can hold only one small picture. A passenger gets to watch a long picture slowly unfold.
+Many sightseeing boats travel south from near Guilin to [[Yangshuo|yangshuo]], a small riverside town also surrounded by peaks. Mountains, trees, villages, and reflections rearrange themselves all along the way. A banknote can hold only one small picture. A passenger gets to watch a long picture slowly unfold.
 [/en]
 [/section]
 
@@ -81,7 +81,7 @@ The Chinese word for landscape painting is *shānshuǐ* (山水). *Shān* (山) 
 
 An artist does not always copy one real place exactly. A mountain can be moved. Blank paper can become mist or water. Light and dark ink can make some peaks look near and others far away. Some landscape scrolls are opened slowly from one end. The viewer meets a small path, then a river, and only later discovers mountains hidden in the distance.
 
-A boat ride on the Lí River has the same rhythm. Before the boat reaches the next bend, you do not know whether a peak, a village, or a quiet stretch of water is waiting there. Each turn reveals a new scene, just as a long landscape scroll opens one section at a time.
+A boat ride on the Li River has the same rhythm. Before the boat reaches the next bend, you do not know whether a peak, a village, or a quiet stretch of water is waiting there. Each turn reveals a new scene, just as a long landscape scroll opens one section at a time.
 [/en]
 [/section]
 

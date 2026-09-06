@@ -24,14 +24,14 @@
           <h3>沙漠里，怎么藏着这么多画？</h3>
           <h4>A Painted World in the Desert</h4>
           <div class="zh">
-            <p>往中国西北走，敦煌周围的景色常常很单调：沙地、戈壁、灰黄色的山崖，还有沙漠边的一片绿洲。古代从中国向西走的许多道路经过这里，商人、旅行者和僧人都曾在这一带来来往往。</p>
+            <p>往中国西北走，<span class="glossary-entry"><button type="button" class="glossary-term" aria-expanded="false" aria-controls="glossary-dunhuang-1">敦煌</button><span id="glossary-dunhuang-1" class="glossary-popover" role="tooltip">Dūnhuáng · 中国西北以石窟壁画闻名的城市。</span></span>周围的景色常常很单调：沙地、戈壁、灰黄色的山崖，还有沙漠边的一片绿洲。古代从中国向西走的许多道路经过这里，商人、旅行者和僧人都曾在这一带来来往往。</p>
           <p>可是走到绿洲附近的一面崖壁前，你会发现山上密密麻麻全是洞口。</p>
           <p>莫高窟今天还保存着七百多个洞窟。有的小小的，有的里面能放下巨大的彩塑，其中将近五百个洞窟还保存着壁画&#8212;&#8212;直接画在墙壁和洞顶上的大幅图画。这里的开窟、绘画和重修，前后延续了大约一千年。</p>
           <p>走进一个洞窟，外面的黄沙突然不见了。墙上有佛和菩萨，头顶有飘着长长彩带的飞天；还有乐队、马匹、骆驼和赶路的人。再仔细看&#8212;&#8212;怎么还有人在田里耕地、坐下来吃饭？</p>
           <p>这里明明是佛教洞窟，为什么墙上会有这些普通人的生活？</p>
           </div>
           <div class="en">
-            <p>Travel west across northwestern China, and the land around Dunhuang can look dry and almost empty. Sand, gravel, cliffs, and a patch of green oasis sit where old routes once connected China with Central Asia and places much farther west.</p>
+            <p>Travel west across northwestern China, and the land around <span class="glossary-entry"><button type="button" class="glossary-term" aria-expanded="false" aria-controls="glossary-dunhuang-2">Dunhuang</button><span id="glossary-dunhuang-2" class="glossary-popover" role="tooltip">Dūnhuáng · 敦煌 · A northwestern Chinese city famous for its painted cave temples.</span></span> can look dry and almost empty. Sand, gravel, cliffs, and a patch of green oasis sit where old routes once connected China with Central Asia and places much farther west.</p>
           <p>Then you reach a cliff near the oasis. It is full of openings.</p>
           <p>The Mogao Caves have more than 700 surviving caves cut into the rock. Some are small. Others are large enough to hold giant painted statues. Nearly 500 caves still preserve murals&#8212;large pictures painted directly on the walls and ceilings. People kept making and remaking caves here for about a thousand years.</p>
           <p>Step inside one, and the desert seems to disappear. Buddhas sit beneath painted canopies. Flying figures sweep across ceilings with long ribbons. Musicians play instruments. People ride horses and camels. Farmers work in fields. Wait&#8212;farmers?</p>
@@ -101,7 +101,7 @@
           <p>当初出钱建洞窟的人，想留下的是一个佛教的世界。画师为了把那个世界画出来，却不断从自己身边借东西。</p>
           <p>于是，他们生活里的车、碗、乐器、衣服、田地、道路，甚至人的脸，也一起留了下来。不是留在照片里，而是留在墙上。</p>
           <p>Not quite. A photograph records light from something that was in front of a camera. A mural records what an artist chose to paint.</p>
-          <p>At Mogao, the same wall can mix things from very different kinds of worlds. A farmer may show us a real kind of plow. A donor portrait may show real clothing. A camel cart may resemble vehicles used on the Silk Roads.</p>
+          <p>At Mogao, the same wall can mix things from very different kinds of worlds. A farmer may show us a real kind of plow. A donor portrait may show real clothing. A camel cart may resemble vehicles used on the <span class="glossary-entry"><button type="button" class="glossary-term" aria-expanded="false" aria-controls="glossary-silk-road-3">Silk Roads</button><span id="glossary-silk-road-3" class="glossary-popover" role="tooltip">Sīchóu Zhī Lù · 丝绸之路 · A network of old routes linking China, Central Asia, and lands farther west.</span></span>.</p>
           <p>But beside them, heavenly beings fly through the air. A nine-colored deer appears in a Buddhist story. Palaces may represent an imagined paradise. Those are not proof that people once saw flying beings or magical deer in the desert.</p>
           <p>That is why historians treat the murals more like clues than photographs. They compare what is painted with old documents, excavated objects, buildings, and other artworks. And the more carefully they look, the more the walls reveal.</p>
           <p>The people who paid for the caves wanted to create Buddhist spaces. The artists filled those spaces with sacred stories. But to paint those stories, they borrowed pieces of the world around them.</p>
@@ -137,7 +137,8 @@
             if (!button || !popover) return;
 
             const margin = 12;
-            const gap = 10;
+            const compactViewport = window.matchMedia("(max-width: 900px)").matches;
+            const gap = compactViewport ? 8 : 10;
             const buttonRect = button.getBoundingClientRect();
             const popoverRect = popover.getBoundingClientRect();
             const halfWidth = popoverRect.width / 2;
@@ -146,10 +147,12 @@
             const maxCenter = window.innerWidth - margin - halfWidth;
             const left = Math.min(Math.max(buttonCenter, minCenter), maxCenter);
 
-            let side = "above";
-            let top = buttonRect.top - popoverRect.height - gap;
+            let side = compactViewport ? "below" : "above";
+            let top = side === "below"
+              ? buttonRect.bottom + gap
+              : buttonRect.top - popoverRect.height - gap;
 
-            if (top < margin) {
+            if (side === "above" && top < margin) {
               side = "below";
               top = buttonRect.bottom + gap;
             }

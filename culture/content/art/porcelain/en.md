@@ -4,7 +4,7 @@
 
 ## Why Does Clay Go “Ting”?
 
-Tap a lump of damp clay and you hear almost nothing. Tap the rim of a thin porcelain bowl, and you may hear a clear: *Ting!*
+Tap a lump of damp clay and you hear almost nothing. Tap the rim of a thin [[porcelain|porcelain]] bowl, and you may hear a clear: *Ting!*
 
 Porcelain begins with materials that come from clay and stone. Potters grind and mix them, shape the soft material into a bowl, and send it into an extremely hot kiln—a special oven used for firing ceramics. At temperatures above 1,000°C, the bowl shrinks and the minerals inside begin to change. The soft, porous body becomes hard and dense. With the right materials and firing, porcelain can become white, thin, and even slightly translucent.
 
@@ -16,7 +16,7 @@ Then the kiln door closes. From that point on, the fire takes over.
 
 Inside the kiln, clay shrinks, glaze melts, and colors change. A small difference in temperature or position can leave a piece cracked, warped, or the wrong color.
 
-At the imperial kilns in Jingdezhen (*Jǐngdézhèn*), a Chinese city famous for porcelain, porcelain was once made for the emperor’s court. Archaeologists have found large amounts of broken and discarded porcelain there. Pieces that did not meet the required standard could be rejected.
+At the imperial kilns in [[Jingdezhen|jingdezhen]], a Chinese city famous for porcelain, porcelain was once made for the emperor’s court. Archaeologists have found large amounts of broken and discarded porcelain there. Pieces that did not meet the required standard could be rejected.
 
 One famous survivor is a tiny Chicken Cup, small enough to fit in your hand. Around it, a rooster, hen, and chicks wander among flowers and rocks. Cups like this were made more than five hundred years ago, and surviving examples are now treasured museum objects.
 

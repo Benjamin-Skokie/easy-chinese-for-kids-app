@@ -22,7 +22,7 @@ image: log-at-city-gate.webp
 caption_zh: 一名男子搬起木头，围观的人都盯着他看。
 caption_en: A man moves the log while the crowd watches.
 [zh]
-两千三百多年前，中国还不是一个统一的国家，而是分成几个互相打仗的国家。秦国是其中一个。一百多年以后，秦国才会变成秦始皇统治的大帝国。
+两千三百多年前，中国还不是一个统一的国家，而是分成几个互相打仗的国家。秦国是其中一个。一百多年以后，秦国才会变成[[秦始皇|qin-shi-huang]]统治的大帝国。
 
 一天，秦国最大城市的南门外，出现了一根大木头。
 
@@ -32,12 +32,12 @@ caption_en: A man moves the log while the crowd watches.
 
 于是，给的钱涨到了五十块金子。
 
-终于，一个男子弯下腰，抱起木头，把它搬到了北门。商鞅真的把钱给了他。围观的人一下子安静了。
+终于，一个男子弯下腰，抱起木头，把它搬到了北门。[[商鞅|shang-yang]]真的把钱给了他。围观的人一下子安静了。
 
 这根木头送出的消息很简单：秦国很快会有新规矩，而商鞅说到就会做到。
 [/zh]
 [en]
-More than 2,300 years ago, China was not yet one united country. It was divided into several kingdoms that often fought one another. Qin was one of them. It would be more than a hundred years before Qin became the great empire ruled by Qin Shi Huang.
+More than 2,300 years ago, China was not yet one united country. It was divided into several kingdoms that often fought one another. Qin was one of them. It would be more than a hundred years before Qin became the great empire ruled by [[Qin Shi Huang|qin-shi-huang]].
 
 One day, a great wooden log appeared outside the south gate of Qin's main city.
 
@@ -47,7 +47,7 @@ People gathered and stared. So much gold for moving one log? Something had to be
 
 Then the prize rose to fifty pieces of gold.
 
-At last, one man bent down, lifted the log, and carried it to the north gate. Shang Yang really paid him. The crowd suddenly became very quiet.
+At last, one man bent down, lifted the log, and carried it to the north gate. [[Shang Yang|shang-yang]] really paid him. The crowd suddenly became very quiet.
 
 The log had carried a simple message. New rules were coming to Qin, and Shang Yang meant what he said.
 [/en]

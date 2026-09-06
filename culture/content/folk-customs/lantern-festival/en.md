@@ -18,7 +18,7 @@ One old Lantern Festival legend tells of a young palace maid named Yuanxiao. Yua
 
 At the palace lived a witty entertainer and adviser who was famous for his jokes, tricks, and quick thinking—something like a court jester. His name was **Dongfang Shuo**. When he heard about Yuanxiao, he decided to help.
 
-Dongfang Shuo went into Chang’an—the Han dynasty capital, located in present-day Xi’an—and set up a fortune-telling stand. But everyone who came to him received the same frightening prediction: **A terrible fire was coming to Chang’an!** Soon the whole city was talking about it.
+Dongfang Shuo went into [[Chang’an|changan]]—the [[Han dynasty|han-dynasty]] capital, located in present-day [[Xi’an|xian]]—and set up a fortune-telling stand. But everyone who came to him received the same frightening prediction: **A terrible fire was coming to Chang’an!** Soon the whole city was talking about it.
 
 When the worried emperor asked what could be done, Dongfang Shuo suggested a clever trick.
 

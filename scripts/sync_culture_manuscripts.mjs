@@ -1,10 +1,32 @@
 import fs from "node:fs/promises";
 import path from "node:path";
 
-const articleDirs = process.argv.slice(2);
+const requestedDirs = process.argv.slice(2);
+const contentRoot = path.resolve("culture/content");
+
+async function findArticleDirs(directory) {
+  const entries = await fs.readdir(directory, { withFileTypes: true });
+  const directories = [];
+  for (const entry of entries) {
+    if (!entry.isDirectory()) continue;
+    const fullPath = path.join(directory, entry.name);
+    try {
+      await fs.access(path.join(fullPath, "page.md"));
+      directories.push(fullPath);
+    } catch (error) {
+      if (!error || error.code !== "ENOENT") throw error;
+      directories.push(...await findArticleDirs(fullPath));
+    }
+  }
+  return directories;
+}
+
+const articleDirs = requestedDirs.length === 1 && requestedDirs[0] === "--all"
+  ? (await findArticleDirs(contentRoot)).sort()
+  : requestedDirs;
 
 if (!articleDirs.length) {
-  console.error("Usage: node scripts/sync_culture_manuscripts.mjs culture/content/<category>/<slug> [...]");
+  console.error("Usage: node scripts/sync_culture_manuscripts.mjs --all | culture/content/<category>/<slug> [...]");
   process.exit(2);
 }
 

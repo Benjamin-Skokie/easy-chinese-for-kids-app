@@ -19,16 +19,16 @@ layout: text-only
 heading_zh: 先别急着记年份，先记住这些会发光的人
 heading_en: Before You Learn the Dates, You Meet the People
 [zh]
-《三国演义》写的是汉朝末年天下大乱的时候。很多地方今天打、明天又换了主人，后来人们最熟悉的格局，变成了魏、蜀、吴三方对峙。
+《三国演义》写的是[[汉朝|han-dynasty]]末年天下大乱的时候。很多地方今天打、明天又换了主人，后来人们最熟悉的格局，变成了魏、蜀、吴三方对峙。
 
-不过，大多数孩子第一次听三国，不会先记住哪一年发生了什么，而是先记住一串名字：刘备、关羽、张飞、诸葛亮、曹操、赵云。
+不过，大多数孩子第一次听三国，不会先记住哪一年发生了什么，而是先记住一串名字：[[刘备|liu-bei]]、[[关羽|guan-yu]]、张飞、[[诸葛亮|zhuge-liang]]、[[曹操|cao-cao]]、赵云。
 
 这就是《三国演义》很特别的地方。它把一大段很乱、很长的历史，变成了一群特别鲜明的人。有人让你佩服，有人让你紧张，有人一出场就像在发光。
 [/zh]
 [en]
-*Romance of the Three Kingdoms* takes place when the Han dynasty is breaking apart. One place changes hands after another, and later people remember the best-known pattern as three rival states: Wei, Shu, and Wu.
+*Romance of the Three Kingdoms* takes place when the [[Han dynasty|han-dynasty]] is breaking apart. One place changes hands after another, and later people remember the best-known pattern as three rival states: Wei, Shu, and Wu.
 
-But most children do not meet this story by learning dates first. They meet it through names: [[Liu Bei]], [[Guan Yu]], Zhang Fei, [[Zhuge Liang]], [[Cao Cao]], and Zhao Yun.
+But most children do not meet this story by learning dates first. They meet it through names: [[Liu Bei|liu-bei]], [[Guan Yu|guan-yu]], Zhang Fei, [[Zhuge Liang|zhuge-liang]], [[Cao Cao|cao-cao]], and Zhao Yun.
 
 That is one special thing about the novel. It takes a long, tangled stretch of history and turns it into a group of unforgettable people. Some make you admire them. Some make you nervous. Some seem to shine the moment they appear.
 [/en]
@@ -50,7 +50,7 @@ caption_en: Liu Bei, Guan Yu, and Zhang Fei swear brotherhood in the peach garde
 要说明白一点：这一幕更像小说和戏曲里特别有名的经典场面，不是历史书里能一字一句证实的记录。可它太有力量了，所以后来很多人一说三国，脑子里就先冒出这一幕。
 [/zh]
 [en]
-One of the most famous scenes in the Three Kingdoms story is the Peach Garden Oath. [[Liu Bei]], [[Guan Yu]], and Zhang Fei are not born into one family, and they do not come from the same kind of life. Still, they decide to become brothers who will stand together through danger.
+One of the most famous scenes in the Three Kingdoms story is the Peach Garden Oath. Liu Bei, Guan Yu, and Zhang Fei are not born into one family, and they do not come from the same kind of life. Still, they decide to become brothers who will stand together through danger.
 
 What moves readers here is not only the beautiful scene. It is the way the story suddenly makes loyalty glow. These men are not brothers because they share blood. They become brothers because they promise to stand together when life turns hard.
 
@@ -62,7 +62,7 @@ It is important to say one thing clearly: this moment is best known from the nov
 page: 3
 layout: text-wrap-image
 heading_zh: 刘备跑了三次，才把诸葛亮请出茅庐
-heading_en: [[Liu Bei]] Has to Visit Three Times Before [[Zhuge Liang]] Comes Out
+heading_en: Liu Bei Has to Visit Three Times Before Zhuge Liang Comes Out
 image: 2-three-visits-cottage.webp
 caption_zh: 第三次去的时候，诸葛亮还在睡觉。刘备就站在门外等，没有催，也没有发火。
 caption_en: On the third visit, Zhuge Liang is still sleeping. Liu Bei waits outside instead of hurrying him or getting angry.
@@ -74,7 +74,7 @@ caption_en: On the third visit, Zhuge Liang is still sleeping. Liu Bei waits out
 而诸葛亮一出场，也被写得特别像“还没走进战场，就已经先看懂大局的人”。这当然有文学加工，可也正因为这样，很多人后来一想到诸葛亮，就会想到草堂、等待，还有那种安静但很深的聪明。
 [/zh]
 [en]
-Later, Liu Bei wants help from someone truly brilliant, so he goes to invite [[Zhuge Liang]]. The first time he does not meet him. The second time he still does not meet him. Only on the third visit does Zhuge Liang finally come out.
+Later, Liu Bei wants help from someone truly brilliant, so he goes to invite Zhuge Liang. The first time he does not meet him. The second time he still does not meet him. Only on the third visit does Zhuge Liang finally come out.
 
 Why has this story lasted so long? Because it is not only about finding a smart man. It also lets children see something important about Liu Bei. He is willing to lower himself and patiently seek out someone he truly respects.
 

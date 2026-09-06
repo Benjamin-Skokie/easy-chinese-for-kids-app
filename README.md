@@ -66,10 +66,12 @@ index.html
 | Book order, lesson-to-topic links, or home-page categories | `src/data/curriculum.js` |
 | Which topics the app knows about | `src/data/topic-registry.js` |
 | Shared audio, navigation, or game behaviour | `src/core/` or `src/games/` |
-| Culture articles | `culture/` |
+| Culture articles | `culture/` and the [Culture guide](./docs/culture/README.md) |
 | An illustration | `assets/` and the lesson file that references it |
 
 For a new or changed learning topic, edit the relevant `src/features/` file first, then make sure it is registered in `src/data/topic-registry.js` and linked from `src/data/curriculum.js` if it should appear in the book or topic navigation.
+
+For Culture work, begin with the [Culture guide](./docs/culture/README.md). It points to the current bilingual writing guidelines, research and rewrite workflow, fast story landing workflow, art direction, and Culture landing-page workflow. Superseded Culture documents are kept under `docs/archive/culture/` for historical reference and should not be used as active instructions.
 
 ## Everyday developer commands
 

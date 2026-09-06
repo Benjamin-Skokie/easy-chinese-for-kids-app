@@ -4,7 +4,7 @@
 
 ## What Do You See in the Moon?
 
-Mid-Autumn Festival falls on the fifteenth day of the eighth month in the traditional Chinese calendar. At night, many families sit together, look at the full moon, and share mooncakes. The round moon and round mooncakes both symbolize family reunion.
+[[Mid-Autumn Festival|mid-autumn-festival]] falls on the fifteenth day of the eighth month in the traditional Chinese calendar. At night, many families sit together, look at the full moon, and share mooncakes. The round moon and round mooncakes both symbolize family reunion.
 
 But this moon holds many stories, too. On a clear Mid-Autumn night, look closely at the full moon. Do you see the darker patches across its bright surface?
 
@@ -34,7 +34,7 @@ And what is the rabbit doing? **Thump. Thump. Thump.** It is pounding medicine w
 
 Ancient Chinese stories often told of magical medicines that could give someone an extraordinarily long life—or even help a person become an immortal. In one very old song, a white rabbit pounds such a medicine and offers it to the emperor.
 
-So was the Jade Rabbit making medicine especially for Chang’e? Not in the earliest stories we know.
+So was the Jade Rabbit making medicine especially for [[Chang’e|chang-e]]? Not in the earliest stories we know.
 
 ---
 

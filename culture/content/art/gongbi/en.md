@@ -6,11 +6,13 @@
 
 A painter brings a picture of a peacock to the emperor. The feathers are beautiful. The colors are rich. The bird is stepping upward. But the emperor keeps looking at one tiny part: the foot.
 
-A famous old story says that Emperor Huizong of the Song dynasty once criticized court painters because they had not noticed which foot a peacock lifted first when climbing. To Huizong, painting a peacock was not enough. A painter had to watch a real peacock.
+A famous old story says that Emperor Huizong of the [[Song dynasty|song-dynasty]] once criticized court painters because they had not noticed which foot a peacock lifted first when climbing. To Huizong, painting a peacock was not enough. A painter had to watch a real peacock.
 
 How did it step? How did it balance on one leg? What happened to the tail when the body moved?
 
 We cannot know every detail of this old story for certain. But people kept telling it because it fit Huizong perfectly. This was an emperor who expected painters to look very closely. And that helps explain the kind of painting he loved.
+
+---
 
 ## What Does a Gongbi Painting Look Like?
 
@@ -18,11 +20,13 @@ Look at a carefully painted bird from this tradition, then move closer. The pict
 
 A thin line separates one feather from another. The edge of a wing curves neatly around the body. On a flower, one petal slips behind the next instead of becoming a lump of color. Leaves have fronts and backs. A bird’s feet actually seem to grip the branch.
 
-This careful style is called *gongbi* (工笔), which means meticulous or highly controlled brushwork. The lines are usually fine and deliberate. Color can be built up gradually in thin layers instead of being brushed on in one heavy coat. Darker and lighter areas help feathers overlap and petals turn. Even small shapes are carefully placed.
+This careful style is called [[gongbi|gongbi]], which means meticulous or highly controlled brushwork. The lines are usually fine and deliberate. Color can be built up gradually in thin layers instead of being brushed on in one heavy coat. Darker and lighter areas help feathers overlap and petals turn. Even small shapes are carefully placed.
 
 That does not mean every gongbi painting must look exactly the same. But compared with a loose, quickly brushed painting, gongbi often feels as if the artist has slowed everything down. The brush moves carefully because the painter has already spent a long time looking.
 
 Huizong loved this kind of close observation. At his court, a bird could not simply look “bird-like.” It had to feel like a particular bird that might move at any moment.
+
+---
 
 ## One Drop in a Bird’s Eye
 
@@ -33,6 +37,8 @@ But one of the smallest details is also one of the most memorable. Huizong added
 That tiny trick says a lot about gongbi painting. Many fine lines and layers of color may build the bird, but the painter is always asking a bigger question: What will make it feel alive?
 
 That was important at Huizong’s painting academy. He wanted artists to observe nature carefully, but he also gave them lines of poetry to turn into paintings. So accuracy was only part of the job. A painter needed sharp eyes—and imagination.
+
+---
 
 ## The Emperor Who Was Better at Art
 

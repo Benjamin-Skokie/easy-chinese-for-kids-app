@@ -4,7 +4,7 @@
 
 ## At a Chinese Wedding
 
-At a Chinese wedding, the dragon and phoenix may arrive before any of the guests. They curl across red invitations, gleam on embroidered cloth, or face each other on a porcelain bowl. The dragon has scales, claws, horns, and a long twisting body. The phoenix spreads a fan of elegant feathers. One looks as if it has just flown in from a thunderstorm. The other looks ready for a royal celebration.
+At a Chinese wedding, the dragon and phoenix may arrive before any of the guests. They curl across red invitations, gleam on embroidered cloth, or face each other on a [[porcelain|porcelain]] bowl. The dragon has scales, claws, horns, and a long twisting body. The phoenix spreads a fan of elegant feathers. One looks as if it has just flown in from a thunderstorm. The other looks ready for a royal celebration.
 
 They are not even the same kind of creature. So why have Chinese artists kept putting them together for centuries? To find the answer, follow the dragon first.
 
@@ -28,7 +28,7 @@ So the dragon brought power. But power alone does not make a perfect pair.
 
 ## Now the Phoenix Enters
 
-Now the phoenix enters. The Chinese phoenix, or *fènghuáng*, is different from the phoenix that burns and rises again from its ashes in stories from other parts of the world. In Chinese tradition, the *fènghuáng* was imagined as the noblest of birds. It was said to appear in times of peace and prosperity, especially under a good ruler.
+Now the phoenix enters. The [[Chinese phoenix|fenghuang]] is different from the phoenix that burns and rises again from its ashes in stories from other parts of the world. In Chinese tradition, this legendary bird was imagined as the noblest of birds. It was said to appear in times of peace and prosperity, especially under a good ruler.
 
 Artists gave it a look to match: a graceful body, a splendid crest, and long flowing feathers. If the dragon seemed to bring the rumble of clouds, the phoenix brought the feeling of a garden after the storm—bright, calm, and full of promise.
 

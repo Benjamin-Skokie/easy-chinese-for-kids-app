@@ -4,9 +4,9 @@
 
 ## A Battle Separates Two Friends
 
-Nearly 1,800 years ago, China was in the middle of a long war. Different leaders were fighting for control. Guan Yu traveled and fought beside a leader named Liu Bei. They had faced many dangers together, and Guan Yu had promised to stand by him.
+Nearly 1,800 years ago, China was in the middle of a long war. Different leaders were fighting for control. [[Guan Yu|guan-yu]] traveled and fought beside a leader named [[Liu Bei|liu-bei]]. They had faced many dangers together, and Guan Yu had promised to stand by him.
 
-Then one battle separated them. Liu Bei escaped, but Guan Yu was captured by another army. Its leader was Cao Cao, one of Liu Bei’s enemies.
+Then one battle separated them. Liu Bei escaped, but Guan Yu was captured by another army. Its leader was [[Cao Cao|cao-cao]], one of Liu Bei’s enemies.
 
 Guan Yu did not know where Liu Bei had gone—or whether they would ever meet again.
 

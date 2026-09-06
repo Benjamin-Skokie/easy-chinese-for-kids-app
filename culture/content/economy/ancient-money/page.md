@@ -1,133 +1,146 @@
 ---
-title_zh: 一只钱袋里，为什么装着四种钱？
-title_en: Why Were There Four Kinds of Money in One Bag?
+title_zh: 古代的钱为什么有这么多样子？
+title_en: Why Did Ancient Chinese Money Have So Many Shapes?
 slug: ancient-money
 category: economy
-difficulty: 困难
+difficulty: 简单
 style_notes: "用 --- 分隔 frontmatter；正文强调优先用 *斜体*；尽量不用 **粗体**。"
 ---
 
 [hero]
-title_zh: 一只钱袋里，为什么装着四种钱？
-title_en: Why Were There Four Kinds of Money in One Bag?
+title_zh: 古代的钱为什么有这么多样子？
+title_en: Why Did Ancient Chinese Money Have So Many Shapes?
 [/hero]
 
 [section]
 page: 1
 layout: text-wrap-image
-heading_zh: 钱不一定只有一种样子
-heading_en: Money Did Not Have Just One Shape
+heading_zh: 贝壳也能当钱
+heading_en: When a Shell Could Be Valuable
 image: 2-1-shell-money.webp
-caption_zh: 现代想象图：贝壳能否换到粮食，要看时间、地点和双方是否接受；图中的交易不是一次有记录的历史事件
-caption_en: Modern imagined scene: Whether shells could buy grain depended on the time, place, and agreement between traders. This is not a recorded historical event.
+caption_zh: 一个孩子把几枚白色海贝递给捧着一碗粮食的商贩。
+caption_en: A child offers several white cowrie shells to a merchant holding a bowl of grain.
 [zh]
-想象一只从古代集市带回来的钱袋。里面没有整齐的一叠钞票，而是几枚贝壳、一串金属钱；袋子旁边还放着一匹布和一小袋粮食。哪一种才是钱？答案可能是：它们都有机会被当作钱，但不一定在同一个地方、同一件事里使用。
+如果把一枚中国古代的钱放进手里，你可能根本认不出它是“钱”。有的钱像一把小小的青铜铲子，有的像一把刀。再往前追，还有一种钱根本不是金属，而是一枚小小的白色贝壳。又过了许多许多年，中国人甚至开始拿一张轻轻的纸来付钱。
 
-钱不是只由某种材料决定的。一个东西要能帮助交换，人们得认得它，愿意收下它，还得大致相信以后别人也会接受它。中国古代地域辽阔，市场、税收、赏赐和远距离贸易的需要又不一样，所以贝、布帛、粮食、黄金和金属铸币曾以不同方式并存。历史不是“贝壳退休，刀币上班，铜钱再接班”的整齐队伍。
+钱为什么会从贝壳变成各种奇怪形状的铜钱，后来又变成纸呢？这个故事，要从海里的贝壳讲起。
+
+三千多年前，海贝在中国是一种很珍贵的东西。它小巧、光滑，容易一枚一枚地数，也可以保存很久。对生活在内陆的人来说，这种来自远方海洋的贝壳并不容易得到。
+
+古代青铜器上的铭文里，就有用“贝”计算赏赐和交换的记录。考古学家在商周遗址里发现过真正的海贝，也发现过用骨头、石头和青铜做成的仿贝。到了周代，贝已经被用作货币。
+
+贝壳还悄悄留在了汉字里面。繁体的“貝”原来就像一只贝壳。直到今天，“贝”还出现在许多和钱财、货物、价值有关的汉字里。
+
+可是，城镇和市场越来越多以后，人们需要的货币也越来越多。来自远方的海贝毕竟有限，金属却可以一次又一次铸造。于是，钱开始出现各种奇怪的形状。
 [/zh]
 [en]
-Imagine opening a money bag from an ancient market. Instead of a neat stack of bills, you find cowrie shells and a string of metal coins. Beside the bag sit a bolt of cloth and a sack of grain. Which one is money? The surprising answer is that all of them might serve as money—but not necessarily in the same place or for the same kind of payment.
+If someone dropped an ancient Chinese coin into your hand, you might not recognize it as money at all. One piece might look like a tiny bronze spade. Another might be shaped like a knife. An even older kind of money might not be metal at all, but a small white shell. Then, many centuries later, people in China began paying with something lighter than all of them: paper.
 
-Money is not defined by one material. People must recognize it, agree to accept it, and have some reason to think that others will accept it later. Ancient China covered an enormous area, and markets, taxes, rewards, and long-distance trade did not all work in the same way. Shells, cloth, grain, gold, and cast metal coins could exist side by side. History was not a tidy relay race in which shells retired, knife coins took over, and round coins came next.
+How did money change from a shell to a bronze knife, then to a round coin, and finally to a piece of paper? The story begins with something that came from the sea.
+
+More than three thousand years ago, cowrie shells were highly valued in ancient China. They were small, smooth, easy to count, and strong enough to be kept for a long time. They were also not easy to find in the inland regions where many people lived.
+
+Ancient bronze inscriptions record cowries being counted and given in payments and rewards. Archaeologists have found real cowrie shells in Shang and Zhou sites, along with copies made from bone, stone, and bronze. By the Zhou period, cowries were being used as money.
+
+The shells left a mark on Chinese writing too. The old form of **bèi**, 貝, was a picture of a shell. Even today, 贝 appears inside many Chinese characters connected with money, goods, and value.
+
+But a growing world of markets and kingdoms needed more money than distant seas could easily provide. Metal could be cast again and again, and soon Chinese money began taking some very unusual shapes.
 [/en]
 [/section]
 
 [section]
 page: 2
 layout: text-wrap-image
-heading_zh: 贝壳留下的线索
-heading_en: Clues Left by Cowrie Shells
+heading_zh: 像铲子，又像刀
+heading_en: Money That Looked Like a Spade
 image: 2-3-many-coin-shapes.webp
-caption_zh: 现代教学组合图：这些物件不按比例，右边所谓“早期圆钱”的文字和样式也不能当作战国钱币的准确复原
-caption_en: Modern teaching composite: The objects are not to scale, and the writing and designs on the “early round coins” are not accurate reconstructions of Warring States coins.
+caption_zh: 一个孩子看着海贝、刀币、布币和圆形钱币，发现古代的钱可以有完全不同的形状。
+caption_en: A child compares cowrie shells, knife money, spade money, and round coins, discovering how different ancient money could look.
 [zh]
-考古学家在商周遗址中发现过天然海贝，也发现过骨、石、陶和青铜制成的仿贝。甲骨文和青铜器铭文还记录了用“朋”来计算贝，贝有时被君主赏赐，也出现在土地、物品和劳务的交易记录里。这些证据说明贝与财富和交换关系密切；但贝在多大范围内、以什么方式流通，学者仍会讨论。墓里的一枚贝也可能是装饰或身份象征，不能一看见就叫它“硬币”。
+两千多年前，中国还分成许多不同的国家，各地的钱也不一样。有些地方铸造的青铜钱像一把小铲子，人们今天把它叫作**布币**；有些地方的钱细细长长，看起来像刀，被称为**刀币**。还有的地方已经使用圆形钱，也有做成贝壳形状的金属钱。
 
-汉字也保存了一条线索。繁体的“貝”本来像贝壳，后来成为许多与财货、买卖有关的字的组成部分，简化后写作“贝”。不过，“财、货、贵、买”等每个字都有自己的形成和变化过程。看见“贝”部，可以说它反映了贝与财富的古老联系，却不能凭这一点断定每个字都直接来自某一次“用贝买东西”的故事。
+不过，刀币并不是让人拿去切菜的小刀，布币也不是可以挖土的小铲子。它们本来就是专门铸出来当钱使用的，上面常常还有文字。所以，一个人如果从一个国家走到另一个国家，看到的钱可能也会跟着改变。
+
+公元前221年，[[秦始皇|qin-shi-huang]]统一六国以后，也统一了主要的货币制度。秦国原来使用的[[半两钱|banliang]]被推广开来。这种钱是圆形的，中间有一个方孔。这个样子后来一用，就是两千年左右。
 [/zh]
 [en]
-Archaeologists have found real cowries at Shang and Zhou sites, along with shell-shaped copies made from bone, stone, clay, and bronze. Writing on oracle bones and bronze vessels also counts cowries in units called *peng*. Some texts record rulers giving them as rewards; others connect them with purchases of land, objects, or labor. The evidence shows a strong link between cowries, value, and exchange, but scholars still debate how widely and in what ways they circulated. A shell found in a tomb might also have been jewelry or a sign of status, so it should not automatically be called a coin.
+More than two thousand years ago, China was divided into different states, and they did not all use the same coins. Some states cast bronze money shaped like small spades. Others used long knife-shaped coins. There were also round coins and small metal pieces shaped like cowrie shells.
 
-Chinese writing holds another clue. The traditional character 貝 began as a picture of a shell. It later became a part of many characters connected with goods, wealth, buying, and selling; its simplified form is 贝. Still, each complete character has its own long history. The shell component preserves an old connection with wealth, but it does not prove that every character grew from one simple story about buying things with shells.
+The little bronze “knives” were not meant for chopping vegetables, and the spade coins were not tiny gardening tools. They were made as money. Many even carried writing showing where they came from or how they were counted. That meant money could look quite different depending on where you traveled.
+
+Then, in 221 BCE, the First Emperor of Qin united the different states under one government. He also brought the empire’s coinage under one system. The Qin [[banliang coin|banliang]] became the main bronze coin: a round coin with a square hole in the middle. That shape would last for an astonishingly long time.
 [/en]
 [/section]
 
 [section]
 page: 3
 layout: text-wrap-image
-heading_zh: 一张地图，多套钱币
-heading_en: One Map, Many Coin Systems
+heading_zh: 钱中间为什么有一个洞？
+heading_en: Why Put a Hole in Money?
 image: 2-2-coins-and-paper-note.webp
-caption_zh: 现代想象图：画中的方孔钱和纸张来自不同时代的概念，不能当作一套真实出土的钱币与交子
-caption_en: Modern imagined scene: The square-holed coins and paper combine ideas from different eras. They are not a documented group of excavated coins and *jiaozi*.
+caption_zh: 方孔钱可以用绳子串起来；旁边轻薄的纸券，后来让携带大笔钱方便得多。
+caption_en: Square-holed coins could be threaded onto cords; the paper certificate beside them later made large payments much easier to carry.
 [zh]
-到了东周，特别是战国时期，各地出现了不同的青铜或铜合金铸币。北方和东北的一些国家铸刀形钱，中部一些地区常见铲形的布币，有些国家还铸带孔的圆钱。它们像工具，却已经是专门铸造、带有重量、地点或价值文字的钱币，并不是人们把真正的小刀和小铲拿去买菜。更重要的是，这些系统在同一时代并存，流通范围也会交叉。
+在钱中间挖一个方洞，看起来有点奇怪，其实非常实用。中国古代的钱常常是用模具铸出来的。刚铸好的钱边缘并不一定很光滑，需要继续整理。中间的孔可以帮助工匠把许多钱固定在一起加工。钱做好以后，还可以用绳子从孔里穿过去，把一枚一枚小钱串成一串，拿起来和计数都方便多了。
 
-公元前221年，秦统一六国。秦政府把原来秦国已经使用的圆形方孔“半两”推广为帝国的主要青铜钱，并用法律控制铸造。这让官方收费和跨地区交易有了更统一的标准，却不等于一道命令就让每个村庄的旧钱、布帛和粮食立刻消失。半两钱实际重量也不总是完全一样；秦以后，汉代又多次调整钱制，公元前118年开始铸五铢钱，公元前113年进一步把铸币权收归中央。
+买一点小东西，可以数几枚钱；数目多了，就可以一串串地拿。可是，金属钱有一个谁都躲不开的麻烦：**重。**
 
-我们常把这类钱统称为“铜钱”，但许多实物其实是以铜为主、混有锡或铅等金属的青铜或铜合金。中间的方孔方便在铸成后整理钱边，也能让人用绳穿成一串，便于携带和计数；一串究竟按多少枚计算，却会因时代和地方而不同。后人把外圆内方解释成“天圆地方”，这是有名的文化说法，却不能代替关于最初设计原因的证据。
+大约一千年前，在[[四川|sichuan]]，这个麻烦变得特别明显。
 [/zh]
 [en]
-During the Eastern Zhou period, especially the Warring States era, different regions cast different kinds of bronze or copper-alloy money. Some northern and northeastern states issued knife-shaped coins. Spade-shaped money was common in parts of the central plains, while several states made round coins with holes. These objects borrowed the shapes of tools, but they were made as money and often carried writing about weight, place, or value. People were not simply taking tiny working knives and shovels to the market. More important, these coin systems existed at the same time, and their areas of use could overlap.
+A square hole may seem like a strange thing to put in the middle of a coin, but it was useful. Chinese coins were cast in molds. After casting, workers needed to smooth their rough edges. The central hole allowed groups of coins to be held together while they were finished. Later, people could also thread coins onto cords, making many small coins much easier to carry and count. Round coins with square holes remained one of the most familiar forms of Chinese money for about two thousand years.
 
-In 221 BCE, Qin conquered the other major states. The Qin government promoted the round, square-holed *banliang*, which Qin had already used before unification, as the empire’s main bronze coin and placed coin production under law. A broader standard made official payments and trade across regions easier. It did not make every old coin, bolt of cloth, or grain payment vanish overnight. Actual *banliang* coins did not always match one perfect weight either. Later Han rulers changed the system several times. They first cast the influential *wuzhu* coin in 118 BCE, and in 113 BCE the central government tightened its control over coin production.
+A shopkeeper could count out individual coins for a small purchase or handle a whole string when more money was needed. But strings of metal had an obvious problem. They were heavy.
 
-English books often call these objects bronze coins, while Chinese speakers commonly call them *tongqian*, or “copper money.” Many were really copper-based alloys containing metals such as tin or lead. The square hole helped workers hold coins steady while smoothing their edges, and it also allowed people to carry and count them on cords. The number of coins counted as one string could vary by time and place. A famous later explanation says that the round coin and square hole represented round Heaven and square Earth. That is an interesting cultural interpretation, but it is not proof of why the earliest makers chose the design.
+And in one part of China, that problem became especially hard to ignore.
 [/en]
 [/section]
 
 [section]
 page: 4
 layout: text-wrap-image
-heading_zh: 四川商人的纸上承诺
-heading_en: A Promise on Paper in Sichuan
+heading_zh: 钱太重了怎么办？
+heading_en: What If Your Money Is Too Heavy to Carry?
 image: 2-4-heavy-iron-coins.webp
-caption_zh: 现代想象图：它夸张表现铁钱的重量；人物、店铺、钱串和空白纸都不是北宋交子发行现场的复原
-caption_en: Modern imagined scene: It exaggerates the burden of iron coins. The people, shop, coin strings, and blank paper do not reconstruct an actual Northern Song issue of *jiaozi*.
+caption_zh: 一串串沉重的铁钱压得商人直不起腰，一张纸券却可以轻轻拿在手里。
+caption_en: Heavy strings of iron coins weigh down one merchant, while a paper certificate can be held lightly in one hand.
 [zh]
-现在把钱袋带到大约一千年前的北宋四川。当地铜钱短缺，政府使用铁钱；铁钱价值相对低，大笔交易要搬很多枚。唐代已经有“飞钱”一类异地汇兑凭证，让商人不用一路背着金属钱，但那更像取款或汇款文件，并不是在市场上人人传递的普通钞票。四川商人面对铁钱的麻烦，又把纸的作用向前推了一步。
+北宋时期，四川常常使用铁钱。铁钱很沉，可一枚钱能够买到的东西并不很多。要做一笔比较大的生意，就可能要搬很多很多枚铁钱。
 
-起初，顾客把铁钱交给经营交子铺的商户，拿到写明数额、有印记和暗号的纸券。它首先是商户答应将来兑付金属钱的凭证，像存款收据或本票。可是，如果大家都信任发行的商户，纸券就可以不先换回铁钱，而是直接交给下一个人。一个“我欠你这些钱”的承诺，开始像钱一样在市场里走动。
+于是，商人想出了另一个办法。人们可以把金属钱存到一些可信的商户那里，再拿到一张写着数额、盖着印记的纸券。这种纸券叫作[[交子|jiaozi-currency]]。最开始，它很像一张存钱的凭证：这张纸证明，你有一笔钱存在这里。
 
-信任也会断裂。有的交子铺资金不足，不能兑现；伪造和争讼也出现了。政府先限制私人发行，后来在1023年于益州设交子务，由官方发行交子。早期官交子仍和铁钱储备、兑换、发行额度、使用期限及规定区域相联系。它常被称为现存文献所知最早的政府发行流通纸币；这个说法指的是可在一定地区转手支付的官方纸币，不是说此前世界上从来没有纸质收据、汇兑凭证或债务文书。
+可是，如果拿到纸的人也相信发行交子的商户，事情就方便了。他不一定非要先把纸换回沉重的铁钱，再去买东西。他可以直接把这张交子交给下一个人。这样，一张原本代表金属钱的纸，慢慢也开始像钱一样在市场里流通。
+
+到了十一世纪初，交子已经在四川使用。后来政府接管了交子的发行，并在1023年设立专门的交子务。交子也因此成为目前所知最早由政府发行、可以流通的纸币。原本要搬一大堆的金属钱，现在可以由一张轻轻的纸来代表。
 [/zh]
 [en]
-Now carry the money bag to Sichuan about a thousand years ago, during the Northern Song dynasty. Copper coins were scarce there, and the government used iron coins. Because an iron coin had low value compared with its weight, a large payment could require a great many coins. Earlier, Tang merchants had used documents called “flying cash” to move funds between places without hauling metal all the way. Those were closer to remittance or withdrawal papers than to everyday bills passed around a market. In Sichuan, merchants pushed paper into a new role.
+About a thousand years ago, people in [[Sichuan|sichuan]] often used iron coins. Iron was plentiful, but the coins were heavy compared with the amount they could buy. A merchant making a large payment might need to move a great many of them.
 
-At first, customers deposited iron coins with shops that issued *jiaozi*. In return, they received a marked paper certificate stating an amount. It began as a merchant’s promise to pay the metal coins later—something like a deposit receipt or promissory note. But if people trusted the shop, they did not have to redeem the paper before every purchase. They could hand it to the next person. A written promise that said, in effect, “this value can be paid,” began to travel like money.
+So merchants began trying something different. A customer could leave metal money with a trusted business and receive a printed paper certificate called [[jiaozi|jiaozi-currency]]. The paper recorded the value that had been deposited. At first, it worked much like a receipt: bring it back, and the issuer was supposed to give you the money.
 
-Trust could break. Some issuing shops did not keep enough funds to redeem their notes, and disputes and counterfeiting followed. The government restricted private issues and then established a *jiaozi* office at Yizhou in 1023 to issue official notes. Early government *jiaozi* were still connected to iron-coin reserves, redemption rules, issue limits, expiration periods, and a defined region of circulation. Historians often describe them as the earliest known circulating paper currency issued by a government. That careful claim does not mean that no one elsewhere had ever written a receipt, remittance order, or debt on paper before.
+But then something clever happened. If another person trusted the certificate too, there was no need to turn it back into metal first. The paper itself could be passed on in payment.
+
+By the early eleventh century, jiaozi was circulating in Sichuan. The government later took control of its issue, establishing an official jiaozi office in 1023. It became the earliest known government-issued circulating paper currency. A piece of paper now stood for a pile of much heavier coins.
 [/en]
 [/section]
 
 [section]
 page: 5
 layout: text-only
-heading_zh: 纸很轻，信任很重
-heading_en: Paper Was Light, but Trust Was Heavy
+heading_zh: 从贝壳到一张纸
+heading_en: From a Shell to a Sheet of Paper
 [zh]
-政府的印章能让纸券更难伪造，也能命令人们用它缴纳某些款项，但印章不能凭空创造信任。如果发行太多纸币，储备或政府收入却跟不上，人们会担心纸币换不回东西。同样一张纸能买到的米越来越少，就是物价上涨、货币购买力下降的一种表现。宋代以后不同政权继续试验纸币，有时扩大流通，有时也因过量发行、战争和财政困难而严重贬值。
+把海贝、布币、刀币、方孔圆钱和交子放在一起看，它们几乎不像是同一种东西。可是，它们都曾经做过同一件事：让人们可以拿它来交换东西。
 
-所以纸币没有简单地“淘汰”金属钱。小额买卖常适合用钱币，有些税和跨地区交易又用布帛、银、纸币或其他方式；一种纸币也可能只在规定地区和期限内有效。存款收据主要证明某处替你保管了价值，本票是发行者承诺付款，政府纸币则依靠国家规定、税收和信用流通。这些东西可以逐渐靠近“钱”，却不是从第一天起就完全相同。
+钱的样子不断变化，也是在解决一个又一个实际的问题。金属可以大量铸造；方孔可以让钱更方便整理和穿成串；到了铁钱太重的时候，纸又让人不用拖着一大堆金属到处走。
+
+一千年前的四川商人可以把沉重的铁钱留下，拿着一张轻轻的交子去做生意。那张纸本身没有多重。真正重要的是，拿到它的人相信它代表多少钱。
 [/zh]
 [en]
-A government seal could make a note harder to copy, and the state could accept it for certain payments. A seal, however, could not create endless trust from nothing. If officials printed far more notes while reserves and government income failed to keep up, people might fear that the paper could no longer be redeemed or spent at full value. When the same note bought less and less rice, prices were rising and the note’s purchasing power was falling. Later governments kept experimenting with paper currency. Some expanded it successfully for a time; others saw sharp loss of value during over-issue, war, and fiscal crisis.
+Put a cowrie shell, a bronze spade coin, a round square-holed coin, and a sheet of jiaozi beside one another. They hardly look as if they belong to the same story. Yet each could carry value because people knew what it meant and were willing to accept it.
 
-Paper therefore did not simply wipe out metal coins. Coins were often handy for small purchases, while taxes and larger or long-distance deals might involve cloth, silver, notes, or other forms of payment. A paper currency might also be valid only in a particular region and for a set period. A deposit receipt mainly records value held somewhere. A promissory note carries an issuer’s promise to pay. Government paper currency depends more directly on state rules, taxes, and public credit. These instruments could grow closer to what we call money, but they were not identical from their first day.
+The shapes changed because people’s needs changed. Metal coins could be cast in large numbers. Holes made coins easier to finish, string, and carry. Paper made it possible to move a large value without hauling a mountain of metal.
+
+A merchant in Sichuan could hand over a light sheet of paper and leave the heavy iron coins behind. The paper itself weighed almost nothing. What mattered was what everyone agreed it was worth.
 [/en]
 [/section]
-
-[ending]
-heading_zh: 再打开那只钱袋
-heading_en: Open the Money Bag Again
-[zh]
-再看看开头的钱袋：贝壳、铜合金钱、布、粮食和纸券，摸起来完全不同。真正把它们联系起来的，不是一条从“原始”走向“先进”的直线，而是一连串问题：谁保证它？怎样计数？在哪里能用？别人为什么愿意收？
-
-今天的钱可以是一张纸，也可以只是屏幕上的数字。古代钱袋留下的最重要线索仍然适用：钱能走多远，不只看它有多轻，更看人们对规则和承诺有多信任。
-[/zh]
-[en]
-Open the first money bag again. Cowries, copper-alloy coins, cloth, grain, and paper certificates feel completely different. What connects them is not a straight line from “primitive” to “advanced.” It is a chain of questions: Who stands behind this? How is it counted? Where can it be used? Why will the next person accept it?
-
-Money today may be a piece of paper or only a number on a screen. The ancient bag still leaves us an important clue: how far money can travel depends not only on how light it is, but also on how much people trust its rules and promises.
-[/en]
-[/ending]

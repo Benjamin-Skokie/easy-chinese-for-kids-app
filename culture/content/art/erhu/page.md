@@ -22,14 +22,14 @@ image: 1-erhu-player-closeup.webp
 caption_zh: 左手的手指轻轻抵住悬空的琴弦，下面没有指板。
 caption_en: The left-hand fingers touch the strings with no fingerboard underneath.
 [zh]
-二胡（*èrhú*）只有两根弦。演奏的时候，左手要用手指按弦。可是仔细看看琴弦后面，那里没有指板。
+[[二胡|erhu]]只有两根弦。演奏的时候，左手要用手指按弦。可是仔细看看琴弦后面，那里没有指板。
 
 手指轻轻抵住悬空的琴弦。稍微换一个位置，音就会变；沿着弦慢慢滑动，声音也会跟着滑过去。二胡也没有吉他那样一格一格的“品”，告诉手指某个音正好在哪里。演奏者要把位置慢慢练进手里，再用耳朵判断声音对不对。
 
 这当然不容易。可是，也正因为没有一格一格把音锁住，二胡的声音可以弯曲，也可以从一个音滑向另一个音。有时候听起来，真的有一点像人在唱歌。
 [/zh]
 [en]
-An erhu (*èrhú*) has only two strings. A player uses the fingers of the left hand to stop them. But look behind the strings: there is no fingerboard.
+An [[erhu|erhu]] has only two strings. A player uses the fingers of the left hand to stop them. But look behind the strings: there is no fingerboard.
 
 The fingers touch the strings with empty space underneath. Move a finger even a little and the note changes. Slide it slowly along a string and the sound slides too. There are no frets telling the fingers, “This note goes exactly here.” The player has to learn those places by feel and use the ear to check them.
 
@@ -43,8 +43,8 @@ layout: text-wrap-image
 heading_zh: 为什么二胡的弓拿不下来？
 heading_en: Why Can't You Take the Bow Off?
 image: 3-erhu-parts-horsehair.webp
-caption_zh: 这是把部件分开画出的示意图；真正演奏时，弓毛从两根弦中间穿过。
-caption_en: This diagram separates the parts for a closer look; while playing, the bow hair passes between the two strings.
+caption_zh: 琴筒、琴杆、琴弦和琴弓被分开画出；真正演奏时，弓毛从两根弦中间穿过。
+caption_en: The sound box, neck, strings, and bow are separated for a closer look; while playing, the bow hair passes between the two strings.
 [zh]
 再看看二胡的弓，还有一个奇怪的地方：弓毛是从两根弦中间穿过去的。所以它不像小提琴弓那样，放下琴以后随手就能拿开。演奏者把弓毛向里或向外压，就能擦响不同的弦。
 
@@ -67,19 +67,19 @@ layout: text-wrap-image
 heading_zh: 大家都叫他阿炳
 heading_en: A Musician Everyone Called Abing
 image: 2-abing-moon-alley.webp
-caption_zh: 这是现代故事插图中的阿炳，并不是《二泉映月》创作或录音现场的记录。
-caption_en: This is a modern storybook image of Abing, not a record of where the piece was composed or recorded.
+caption_zh: 阿炳抱着二胡走在月下水巷；《二泉映月》的创作和录音现场没有留下这样的画面记录。
+caption_en: Abing carries his erhu through a moonlit waterside lane; no such visual record survives of the piece's composition or recording.
 [zh]
-大约一百年前，无锡有一位音乐家，名字叫华彦钧。不过，大家更熟悉他的小名：阿炳（*Ā Bǐng*）。他从小学习音乐，后来双目失明，许多年里一直在无锡演奏。
+大约一百年前，[[无锡|wuxi]]有一位音乐家，名字叫华彦钧。不过，大家更熟悉他的小名：[[阿炳|abing]]。他从小学习音乐，后来双目失明，许多年里一直在无锡演奏。
 
-他留下的二胡曲里，有一首后来以《二泉映月》（*Èrquán Yìngyuè*）闻名。想想我们刚刚认识的二胡：没有“品”把每个音固定住，手指可以滑，声音可以弯，弓上的力气也可以轻一点或重一点。两个人拉同一串音符，听起来仍可能很不一样。
+他留下的二胡曲里，有一首后来以[[《二泉映月》|erquan-yingyue]]闻名。想想我们刚刚认识的二胡：没有“品”把每个音固定住，手指可以滑，声音可以弯，弓上的力气也可以轻一点或重一点。两个人拉同一串音符，听起来仍可能很不一样。
 
 乐谱能写下音符，却装不进一次演奏的每个细节。很长时间里，想听阿炳怎样拉琴，只能真的站在那里听。直到一九五〇年，有人带着一台当时很特别的机器来到无锡。那台机器，可以把声音留下来。
 [/zh]
 [en]
-About a hundred years ago, a musician lived in the city of Wuxi. His name was Hua Yanjun, but almost everyone knew him by his childhood name, Abing (*Ā Bǐng*). He learned music when he was young. Later he became blind, and for many years he performed in Wuxi.
+About a hundred years ago, a musician lived in the city of [[Wuxi|wuxi]]. His name was Hua Yanjun, but almost everyone knew him by his childhood name, [[Abing|abing]]. He learned music when he was young. Later he became blind, and for many years he performed in Wuxi.
 
-Among the erhu pieces he left behind, one became especially famous: *Moon Reflected on the Second Spring*, or *Èrquán Yìngyuè*. Think again about the erhu. No frets fix every note in place. A finger can slide, a note can bend, and the bow can press harder or soften. Two people can play the same notes and still sound very different.
+Among the erhu pieces he left behind, one became especially famous: [[Moon Reflected on the Second Spring|erquan-yingyue]]. Think again about the erhu. No frets fix every note in place. A finger can slide, a note can bend, and the bow can press harder or soften. Two people can play the same notes and still sound very different.
 
 A written score can show the notes, but it cannot hold every detail of one performance. For many years, if you wanted to hear how Abing played, you had to be there. Then, in 1950, researchers came to Wuxi with a remarkable machine. It could save sound.
 [/en]

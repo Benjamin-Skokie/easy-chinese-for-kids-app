@@ -6,7 +6,7 @@
 
 Walk into some Chinese Buddhist temples, and you may soon meet a huge smile. The figure is bald and wears a loose monk’s robe. His belly is round, and a bulging cloth bag often rests beside him.
 
-Some people call him the “Laughing Buddha.” Others call him Maitreya Buddha. Yet this friendly face came from a Chinese monk who lived about a thousand years ago. His name was Qici, but he carried a cloth bag so often that people remembered him as Budai—the Cloth-Bag Monk.
+Some people call him the “Laughing Buddha.” Others call him [[Maitreya|maitreya]] Buddha. Yet this friendly face came from a Chinese monk who lived about a thousand years ago. His name was Qici, but he carried a cloth bag so often that people remembered him as Budai—the Cloth-Bag Monk.
 
 How did one bag make a wandering monk famous for so long?
 

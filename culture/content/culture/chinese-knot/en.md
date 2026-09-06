@@ -4,7 +4,7 @@
 
 ## One Cord, and a Puzzle
 
-Pick up a Chinese knot and try a small challenge: find where the cord begins. Easy? Now find where it ends. Not so easy.
+Pick up a [[Chinese knot|chinese-knot]] and try a small challenge: find where the cord begins. Easy? Now find where it ends. Not so easy.
 
 Many traditional Chinese knots are made from one continuous cord. The cord loops left, turns right, crosses over itself, slips underneath, and comes back again. When the knot is finished, the pattern can look so even and complete that the beginning and end seem to disappear. A plain piece of cord has somehow turned into a red flower, a little maze, or a pattern with no obvious way out.
 

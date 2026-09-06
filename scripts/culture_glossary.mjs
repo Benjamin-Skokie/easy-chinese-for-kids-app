@@ -11,9 +11,20 @@ export function escapeHtml(value) {
 
 export async function loadCultureGlossary(root = process.cwd()) {
   const glossaryPath = path.join(root, "culture", "content", "glossary.json");
+  const terminologyPath = path.join(root, "culture", "content", "terminology.json");
 
   try {
-    return JSON.parse(await fs.readFile(glossaryPath, "utf8"));
+    const [glossarySource, terminologySource] = await Promise.all([
+      fs.readFile(glossaryPath, "utf8"),
+      fs.readFile(terminologyPath, "utf8").catch((error) => {
+        if (error && error.code === "ENOENT") return "{}";
+        throw error;
+      })
+    ]);
+    return {
+      ...JSON.parse(glossarySource),
+      ...JSON.parse(terminologySource)
+    };
   } catch (error) {
     if (error && error.code === "ENOENT") {
       return {};
@@ -33,6 +44,7 @@ function slugifyTerm(value) {
 
 export function createGlossaryFormatter(glossary) {
   let glossaryId = 0;
+  const seenTerms = new Set();
 
   return function formatGlossaryTerms(escapedText) {
     return escapedText.replace(/\[\[([^\]]+)\]\]/g, (match, rawTerm) => {
@@ -45,10 +57,29 @@ export function createGlossaryFormatter(glossary) {
         return label || key || match;
       }
 
+      const language = /[\u3400-\u9fff]/u.test(label) ? "zh" : "en";
+      const seenKey = `${language}:${key}`;
+      if (seenTerms.has(seenKey)) {
+        return label;
+      }
+      seenTerms.add(seenKey);
+
+      const tooltipText = typeof note === "string"
+        ? note
+        : [
+            note.pinyin,
+            language === "en" ? note.zh : "",
+            language === "zh" ? note.note_zh : note.note_en
+          ].filter(Boolean).join(" · ");
+
+      if (!tooltipText) {
+        return label;
+      }
+
       glossaryId += 1;
       const id = `glossary-${slugifyTerm(key)}-${glossaryId}`;
 
-      return `<span class="glossary-entry"><button type="button" class="glossary-term" aria-expanded="false" aria-controls="${id}">${label}</button><span id="${id}" class="glossary-popover" role="tooltip">${escapeHtml(note)}</span></span>`;
+      return `<span class="glossary-entry"><button type="button" class="glossary-term" aria-expanded="false" aria-controls="${id}">${label}</button><span id="${id}" class="glossary-popover" role="tooltip">${escapeHtml(tooltipText)}</span></span>`;
     });
   };
 }
@@ -80,7 +111,8 @@ export const glossaryScriptHtml = `    <script>
             if (!button || !popover) return;
 
             const margin = 12;
-            const gap = 10;
+            const compactViewport = window.matchMedia("(max-width: 900px)").matches;
+            const gap = compactViewport ? 8 : 10;
             const buttonRect = button.getBoundingClientRect();
             const popoverRect = popover.getBoundingClientRect();
             const halfWidth = popoverRect.width / 2;
@@ -89,10 +121,12 @@ export const glossaryScriptHtml = `    <script>
             const maxCenter = window.innerWidth - margin - halfWidth;
             const left = Math.min(Math.max(buttonCenter, minCenter), maxCenter);
 
-            let side = "above";
-            let top = buttonRect.top - popoverRect.height - gap;
+            let side = compactViewport ? "below" : "above";
+            let top = side === "below"
+              ? buttonRect.bottom + gap
+              : buttonRect.top - popoverRect.height - gap;
 
-            if (top < margin) {
+            if (side === "above" && top < margin) {
               side = "below";
               top = buttonRect.bottom + gap;
             }

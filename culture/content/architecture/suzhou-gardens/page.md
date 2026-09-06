@@ -22,14 +22,14 @@ image: garden-overview.webp
 caption_zh: 池塘、石头、树木和小屋被安排在一起，让不大的地方有许多景色。
 caption_en: Water, rocks, trees, and small buildings fill a limited space with many different views.
 [zh]
-苏州是中国东部的一座古城。城里有一些花园，面积并不大，却能让人走很久也不觉得无聊。你刚看见一片池塘，墙就把它藏住了；转过弯，一座小亭子又从树后露出来。
+[[苏州|suzhou]]是中国东部的一座古城。城里有一些花园，面积并不大，却能让人走很久也不觉得无聊。你刚看见一片池塘，墙就把它藏住了；转过弯，一座小亭子又从树后露出来。
 
 这些园林不是把所有漂亮东西都摆在眼前。它们故意让你一会儿看见，一会儿看不见。小路不直直地冲到终点，而是在石头、墙和花木之间绕来绕去。每次转身，眼前都像换了一幅画。
 
 许多苏州园林原来是私人住宅的一部分。主人不能把真正的湖泊和高山搬进城里，于是请工匠用池水、石头、植物和建筑，在小地方做出一个可以走进去的自然世界。
 [/zh]
 [en]
-Suzhou is an old city in eastern China. Some of its famous gardens are not very large, yet you can walk through them for a long time without getting bored. One moment you see a pond. Then a wall hides it. Turn a corner, and a small pavilion appears behind the trees.
+[[Suzhou|suzhou]] is an old city in eastern China. Some of its famous gardens are not very large, yet you can walk through them for a long time without getting bored. One moment you see a pond. Then a wall hides it. Turn a corner, and a small pavilion appears behind the trees.
 
 These gardens do not place every pretty thing in front of you at once. They let you see something, hide it, and then reveal it again. Paths do not rush straight to the end. They wind between rocks, walls, flowers, and trees. Each turn can feel like a new picture.
 
@@ -91,14 +91,14 @@ image: taihu-rock.webp
 caption_zh: 太湖是苏州附近的一个大湖。与太湖有关的奇石常被用来叠成园林里的假山。
 caption_en: Lake Tai is a large lake near Suzhou. Unusual rocks linked with the lake were often used to build garden rockeries.
 [zh]
-苏州附近有一个很大的湖，叫太湖（Tàihú）。从那里运来的石灰岩被称为太湖石。有的太湖石外形弯曲，有的满身是洞。湖水和沙子经过很长时间的冲刷，慢慢改变了石头的样子。
+苏州附近有一个很大的湖，叫[[太湖|taihu]]。从那里运来的石灰岩被称为太湖石。有的太湖石外形弯曲，有的满身是洞。湖水和沙子经过很长时间的冲刷，慢慢改变了石头的样子。
 
 造园的人不会把石头随便堆成一堆。他们要考虑哪一面朝外，哪里留一条小路，哪里做出一个可以穿过的石洞。石头也能挡住后面的景色，让人绕过去以后才看见新的地方。
 
 小假山可以放在池塘边，大一些的假山里还可以有台阶、小路和石洞。人绕着它走、从洞里穿过，或者登上几级台阶，池塘和屋顶就会换一个角度。
 [/zh]
 [en]
-Near Suzhou is a large lake called Taihu, or Lake Tai. Limestone brought from the area became known as Taihu rock. Some pieces twist and bend, while others are full of holes. Over a very long time, lake water and sand wore the stone into unusual shapes.
+Near Suzhou is a large lake called [[Taihu|taihu]], or Lake Tai. Limestone brought from the area became known as Taihu rock. Some pieces twist and bend, while others are full of holes. Over a very long time, lake water and sand wore the stone into unusual shapes.
 
 Garden makers did not simply dump the rocks into a pile. They chose which side should face the path, where to leave a passage, and where to make a stone opening that people could walk through. Rocks could also hide the view behind them, saving something new for the other side.
 

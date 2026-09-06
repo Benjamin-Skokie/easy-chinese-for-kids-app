@@ -4,13 +4,13 @@
 
 ## First Meet the Jia Family—and Then the Magical Jade
 
-*Dream of the Red Chamber* follows the Jia family, a rich and powerful household. Its author, Cao Xueqin, lived during the eighteenth-century [[Qing dynasty]]. The novel does not name the exact dynasty of its story, but the Jia household looks much like a great family of Cao's own time.
+[[Dream of the Red Chamber|red-chamber]] follows the Jia family, a rich and powerful household. Its author, [[Cao Xueqin|cao-xueqin]], lived during the eighteenth-century [[Qing dynasty|qing-dynasty]]. The novel does not name the exact dynasty of its story, but the Jia household looks much like a great family of Cao's own time.
 
 The Jia ancestors earned honor by serving the emperor, and later generations live in enormous homes built with the emperor's approval. The family compound is almost a little town. Grandparents, parents, aunts, uncles, brothers, sisters, and cousins live there, along with managers, teachers, cooks, maids, and many other servants. Gold-lettered signs hang above the gates. Storerooms hold silver, silk, and treasured objects. During a festival, lines of visitors arrive with gifts.
 
-The novel adds a myth to this family story. [[Nuwa]] is a goddess from an ancient Chinese myth. When the sky breaks, she makes stones to repair it, but one stone is left over. The stone comes alive and longs to visit the human world.
+The novel adds a myth to this family story. [[Nuwa|nuwa]] is a goddess from an ancient Chinese myth. When the sky breaks, she makes stones to repair it, but one stone is left over. The stone comes alive and longs to visit the human world.
 
-Then a boy is born into the Jia family with a piece of jade in his mouth. His name is Jia Baoyu. Baoyu means “precious jade,” so his name comes from the magical object he was born with. The stone's journey and the Jia family's story have now become one.
+Then a boy is born into the Jia family with a piece of jade in his mouth. His name is [[Jia Baoyu|jia-baoyu]]. Baoyu means “precious jade,” so his name comes from the magical object he was born with. The stone's journey and the Jia family's story have now become one.
 
 ---
 
@@ -66,7 +66,7 @@ Baoyu is very sick and confused. At the wedding, a red cloth covers the bride's 
 
 Baochai did not choose this marriage either. The adults chose for her, and she knew she was marrying someone who loved Daiyu. The wedding destroys Daiyu's hope, deceives Baoyu, and leaves Baochai in a lonely marriage.
 
-Later, Baoyu takes the imperial exam and then leaves home. On a snowy day, his father sees him beside a boat. Baoyu has a shaved head and a red cloak. He bows to his father, then follows a monk and a Daoist into the white snow. He never returns home.
+Later, Baoyu takes the [[imperial exam|keju]] and then leaves home. On a snowy day, his father sees him beside a boat. Baoyu has a shaved head and a red cloak. He bows to his father, then follows a monk and a Daoist into the white snow. He never returns home.
 
 ---
 

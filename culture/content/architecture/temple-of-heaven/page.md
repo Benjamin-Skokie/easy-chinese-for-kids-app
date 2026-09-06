@@ -22,14 +22,14 @@ image: hall-of-prayer.webp
 caption_zh: 祈年殿的蓝色屋顶让人想到天空。皇帝来这里祈求好收成，并不住在这里。
 caption_en: The blue roof of the Hall of Prayer recalls the sky. Emperors came here to pray for good harvests, not to live.
 [zh]
-北京有一座圆圆的大殿，盖着三层蓝色屋顶。它看起来像童话里的宫殿，却不是皇帝的家。这座建筑叫祈年殿，是天坛里最有名的一部分。
+北京有一座圆圆的大殿，盖着三层蓝色屋顶。它看起来像童话里的宫殿，却不是皇帝的家。这座建筑叫祈年殿，是[[天坛|temple-of-heaven]]里最有名的一部分。
 
 古代中国人大多靠种田生活。雨太少，庄稼会干死；雨太多，田地又会被淹。皇帝来到天坛，向“天”举行重要的礼仪，祈求风雨合适、粮食丰收。
 
 这里的“天”不只是抬头看见的蓝天。古人相信，天与季节、收成和国家过得好不好都有关系。皇帝认为自己有责任代表天下的人来祈祷。所以，天坛既是举行礼仪的地方，也是在告诉大家：皇帝应该关心来年的粮食。
 [/zh]
 [en]
-Beijing has a great round hall with three roofs of deep blue. It looks like a palace from a fairy tale, but no emperor lived there. This is the Hall of Prayer for Good Harvests, the best-known building at the Temple of Heaven.
+Beijing has a great round hall with three roofs of deep blue. It looks like a palace from a fairy tale, but no emperor lived there. This is the Hall of Prayer for Good Harvests, the best-known building at the [[Temple of Heaven|temple-of-heaven]].
 
 Most people in ancient China depended on farming. Too little rain could dry up the crops. Too much could flood the fields. At the Temple of Heaven, the emperor took part in important ceremonies and prayed for good weather and a strong harvest.
 
@@ -64,12 +64,12 @@ layout: text-wrap-image
 heading_zh: 为什么到处都是圆形和蓝色？
 heading_en: Why So Many Circles and Blue Roofs?
 image: circular-mound-altar.webp
-caption_zh: 圜丘坛（Huánqiūtán）是一座露天的圆形石台。冬至祭天时，皇帝在这里举行礼仪。
+caption_zh: 圜丘坛是一座露天的圆形石台。冬至祭天时，皇帝在这里举行礼仪。
 caption_en: The Circular Mound Altar is a round stone platform under the open sky. The emperor held the winter-solstice ceremony here.
 [zh]
 祈年殿的蓝色屋顶让人想到天空，圆形的大殿也和古人“天是圆的”这一想法有关。天坛的形状和颜色都在提醒来访者：这里是祭天的地方。
 
-从祈年殿向南走，会来到另一座圆形建筑：圜丘坛（Huánqiūtán），英文叫 *Circular Mound Altar*。这个名字的意思就是“用于重要礼仪的圆形高台”。它没有屋顶，而是由三层白色石台组成。人站在最上面，抬头就能看见整片天空。
+从祈年殿向南走，会来到另一座圆形建筑：[[圜丘坛|circular-mound-altar]]，英文叫 *Circular Mound Altar*。这个名字的意思就是“用于重要礼仪的圆形高台”。它没有屋顶，而是由三层白色石台组成。人站在最上面，抬头就能看见整片天空。
 
 皇帝在冬至这一天来到这里祭天。在北京，冬至是一年中白天最短、夜晚最长的一天。冬至以后，白天会一点点变长。古人把它看成一年中的重要转折。皇帝在这一天感谢“天”对过去一年的照顾，也报告国家的大事。到了春天，他还会在祈年殿举行另一场礼仪，祈求来年有好收成。
 
@@ -78,7 +78,7 @@ caption_en: The Circular Mound Altar is a round stone platform under the open sk
 [en]
 The blue roof of the Hall of Prayer recalls the sky. Its round shape also fits an old Chinese idea that Heaven was round. Throughout the Temple of Heaven, shapes and colors reminded visitors that this was a place for ceremonies honoring Heaven.
 
-Walk south from the hall, and you reach another round structure: the *Circular Mound Altar*. Its name means a round, raised place used for an important ceremony. It has no roof. Instead, three levels of white stone rise beneath the open sky.
+Walk south from the hall, and you reach another round structure: the [[Circular Mound Altar|circular-mound-altar]]. Its name means a round, raised place used for an important ceremony. It has no roof. Instead, three levels of white stone rise beneath the open sky.
 
 The emperor came here on the winter solstice. In Beijing, this is the day with the least daylight and the longest night of the year. After it, the days slowly begin to grow longer. People in ancient China saw this as an important turning point in the year. The emperor thanked Heaven for the year that had passed and reported on the country. In spring, he held a different ceremony at the Hall of Prayer for Good Harvests to ask for a good harvest.
 
@@ -120,13 +120,13 @@ heading_en: How Do 28 Wooden Columns Hold Up Three Roofs?
 
 这些柱子还把时间藏进了建筑里。中间4根代表春、夏、秋、冬，旁边12根代表一年中的12个月。人们抬头看屋顶时，也像在看一座用木头搭成的日历。
 
-1889年，雷电引起大火，祈年殿被烧毁。人们后来依照原来的样子把它重新建了起来。因此，今天的祈年殿保留了古老的设计，但里面的木料并不是从明代一直原封不动地留到现在。
+1889年，雷电引起大火，祈年殿被烧毁。人们后来依照原来的样子把它重新建了起来。因此，今天的祈年殿保留了古老的设计，但里面的木料并不是从[[明代|ming-dynasty]]一直原封不动地留到现在。
 [/zh]
 [en]
 Look up inside the Hall of Prayer, and you can see 28 large wooden columns. Four columns in the center support the highest roof. A ring of 12 supports the middle roof, and another ring of 12 supports the lowest roof. The weight moves down through the columns and into the stone base. The hall does not need one enormous beam stretching across its center to hold up the whole roof.
 
 The columns also turn time into part of the building. The four in the center stand for spring, summer, fall, and winter. The next 12 stand for the 12 months of the year. Looking up at the roof is a little like looking at a calendar built from wood.
 
-In 1889, lightning started a fire that destroyed the hall. It was later rebuilt in its earlier form. The Hall of Prayer we see today keeps the old design, but its wood has not remained untouched since the Ming dynasty.
+In 1889, lightning started a fire that destroyed the hall. It was later rebuilt in its earlier form. The Hall of Prayer we see today keeps the old design, but its wood has not remained untouched since the [[Ming dynasty|ming-dynasty]].
 [/en]
 [/section]

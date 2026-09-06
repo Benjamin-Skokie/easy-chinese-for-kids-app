@@ -1,65 +1,69 @@
 > Difficulty: Hard
 
-# How Far Could an Exam Open the Door? Choosing Officials in Imperial China
+# The Imperial Examination: How Far Could a Test Take You?
 
-## The First Lock: Family Background
+## A Tiny Room and a Very Big Exam
 
-Suppose a city needs people to manage its grain, record its laws, and carry out orders. What should matter most when choosing them: the family they were born into, the people who recommend them, or the answers they write on a test? For more than two thousand years, Chinese governments kept trying different combinations of all three.
+Rows of narrow little rooms stretch along a long lane. In each one sits a candidate with his writing tools, food, and examination papers. This is a [[**gòngyuàn**|gongyuan]], an imperial examination compound.
 
-Early China did not have one unchanging system for choosing officials. In eras such as the Western Zhou, noble birth and family ties often placed a person close to power, and some important duties stayed within the same families. Rulers appointed officials as well, and by the Warring States and Qin periods, growing governments needed people who could write, understand laws, and handle practical work. It would be too simple to say that every noble child automatically received an office while nobody else had a chance. Still, for most farmers and craftspeople, getting an education or attracting a ruler's attention was extremely difficult.
+During the [[Ming and Qing dynasties|ming-qing-period]], candidates taking the [[provincial examinations|provincial-examination]] spent long hours—and nights—inside these small [[cells|exam-cell]]. Two wooden boards could serve as a desk and seat during the day and be moved together for sleeping. A Ming painting of an examination hall shows the cells lined up in orderly rows, with guards watching the lanes between them.
 
-The palace gate in the first picture is therefore a symbol, not a scene from one exact dynasty. The child outside faces more than one locked door. Family status, education, and connections all stand between him and a government post.
+For the man sitting inside, the paper in front of him mattered enormously. Passing this exam would not make him a high official the next morning. It would open the next stage. Pass again, and another door opened. At the highest levels, successful candidates could eventually earn the prestigious [[**jìnshì** degree|jinshi]] and begin a government career.
 
----
-
-## Han Recommendations: First, Someone Had to Notice You
-
-After the Han built a large empire, the government needed a steady supply of officials. One important method was *chaju*, in which local officials observed men in their districts and nominated promising candidates to the central government. A famous category called *xiaolian* looked especially for men known as filial and incorrupt—respectful toward parents and honest enough for public service. Some nominees were then questioned or examined at the capital. Imperial schools and promotion from lower government work created other paths as well.
-
-This was different from simply handing offices down by birth, but it was not an open test that anyone could sign up for. A candidate first had to enter the view of officials and influential people in his community. Learning and reputation mattered, but so did local relationships. If a recommender favored friends or judged badly, a capable person might never be nominated.
-
-The second picture can help us imagine local observation, but it is not a snapshot of *chaju* at work. An official did not see a child help an older neighbor and immediately give him a government job. Selection involved a longer reputation, an official nomination, and often another stage of evaluation.
+But China had not always chosen officials this way.
 
 ---
 
-## Nine Ranks: Rating a Person—and His Family
+## Before the Exam Hall
 
-War and migration at the end of the Han disrupted communities and their old ways of judging people. During the Three Kingdoms period, the state of Wei introduced what became known as the nine-rank system. Officials called “rectifiers” investigated educated men from their home regions, placed them in ranked categories, and sent those ratings to the government. The grades helped determine where a new official could begin his career. At first, the system was an attempt to organize recruitment after years of disorder, not simply a plot designed to block poor people.
+Long before large examination compounds existed, rulers still needed people to collect taxes, keep records, judge cases, carry messages, and manage armies. How did they find them?
 
-Yet rectifiers often came from powerful local clans. Over time, a candidate's family reputation weighed more heavily, and members of great families were more likely to receive high ratings and good starting positions. This does not give us a neat story in which Han recommendations were fair and the Wei and Jin suddenly moved backward. Han recommenders could also be influenced by local power, while nine-rank officials did consider character and ability. Both systems left a hard question in the hands of a small group: who deserved to be noticed, and who had the authority to judge?
+Sometimes family background mattered greatly. Sometimes rulers appointed people they trusted. During the [[Han dynasty|han-dynasty]], local officials were also asked to recommend men known for learning, good conduct, or useful ability.
 
-The third picture turns this complicated process into a line of people. It illustrates the idea that family status could shape a ranking; it is not a record of officials lining up children and scoring them in a street.
+A talented person first had to be noticed. That created an obvious difficulty. What if the local official never noticed you? What if another family was better known? A recommendation could help the government find a good candidate, but it depended heavily on the people doing the recommending.
 
----
-
-## Sui and Tang Exams: A New Road, Not the Only Road
-
-The imperial examination system did not suddenly appear with a brand-new test paper on one day in the Sui dynasty. Han officials had already examined nominated candidates, and later governments kept changing recruitment practices. Sui orders and examinations grew out of those older methods, and candidates still needed official nomination. During the Tang, exam categories and schedules became more regular, and more men could, in principle, enter the competition through government schools or nomination from their home areas.
-
-“Allowed in principle” did not mean “equally able to compete.” Preparing required years of education, along with books, teachers, time, and money for travel. In the Tang, a candidate's reputation, writing circulated before the test, and introductions from officials or famous scholars could also affect his chances. Passing the examination administered by the Ministry of Rites did not always bring an immediate post; another selection or a long wait might follow. Hereditary privilege, government schools, military service, and jobs on regional staffs continued to offer other routes into government.
-
-The fourth picture is therefore not evidence that a poor Tang student and an official's son took an anonymous, perfectly equal test. It represents a new idea that was becoming increasingly important: alongside family background, the court could compare at least some candidates through written work.
+Over the centuries, Chinese governments kept experimenting with another idea: **What if candidates had to show what they knew by writing answers?**
 
 ---
 
-## After the Song: Let the Paper Speak—but Notice the Stairs
+## Let the Writing Matter
 
-The examinations grew much larger under the Song. More officials held the prestigious *jinshi* degree than in the Tang, and some came from families with little or no recent record of government service. To make favoritism harder, Song exam offices gradually sealed candidates' names, replaced names with numbers, and had clerks copy papers so examiners could not recognize the handwriting. A palace examination shaped the final ranking, and the testing system moved closer to the center of educated men's lives.
+During the [[Sui and especially the Tang dynasty|sui-tang-period]], examinations became a more regular route into government service. One of the most desired categories was the **jìnshì** examination.
 
-Expansion did not erase family advantage. Song officials could still use hereditary “protection privilege” to help relatives qualify for service. A household able to support years of study and repeated journeys to examinations had an advantage over one that needed every child to work. The formal route was mainly for males, and rules about status and regional quotas also shaped eligibility. Fairness did not begin inside the examination hall; being able to reach the hall was part of the question too.
+The questions changed over time. Candidates might be asked about the Confucian classics, government problems, or how they would respond to an issue facing the state. Tang examinations also came to value literary writing such as poetry and other compositions.
 
-During the Ming and Qing, local qualifying tests, provincial exams, metropolitan exams, and the palace exam formed a more tightly organized ladder. Quotas reserved places for different areas, but competition was fierce. Candidates studied Confucian classics and wrote in required forms. The famous “eight-legged essay” was not produced by memorization alone, but its strict structure forced writers to display knowledge and skill within narrow boundaries. Success could bring status and opportunity, while years of failure could consume a family's resources. Local elites still held advantages through schools, books, money, and educated relatives.
+This was something new and important. A candidate's family and reputation had not suddenly stopped mattering. Tang candidates still needed education, and personal reputation could help them. But now there was another thing the government could compare: **their written work.**
 
----
-
-## After 1905: A New Door, the Same Questions
-
-By the late nineteenth century, China faced wars, foreign pressure, and new fields of knowledge. More reformers argued that the old examinations did not train the experts the country now needed. In 1905, as part of a broader education reform, the Qing government ended the civil service examinations and turned toward a new school system. A centuries-old institution stopped, but the question of how to choose people fairly did not.
-
-Looking back at the four pictures, we can let go of a simple tale: “First family, then recommendation, then scores—and everything became fairer.” History did not move in that straight line. Different dynasties combined family status, reputation, education, tests, and imperial power in changing ways. The examinations widened competition and changed which kinds of learning brought honor. They never removed the effects of wealth, gender, region, personal networks, or family resources.
+Then the Song dynasty took that idea even farther.
 
 ---
 
-## The Same Paper Is Not the Same Starting Point
+## Hide the Name
 
-Giving candidates the same paper can make comparison more orderly. It does not automatically give them the same starting point. The deepest questions are not only “Should there be a test?” They are also: Who can reach it? What does it measure? Who judges it? And after the scores are counted, who actually receives a job?
+Suppose an examiner recognizes the name at the top of a paper. Perhaps the candidate comes from an important family. Perhaps the examiner knows his teacher. Perhaps he even recognizes the handwriting. How do you make the paper harder to recognize?
+
+[[Song dynasty|song-dynasty]] examination officials developed an elaborate answer. Candidates' names could be sealed so the graders could not see them. Papers were given numbers. In important examinations, clerks even copied the answers onto fresh sheets before the graders saw them, so a familiar style of handwriting could not reveal who had written the original. The idea was simple even though the work was enormous: **grade the answer, not the name.**
+
+Later dynasties continued using these methods. A Ming examination paper in the National Museum of China shows the process clearly: the candidate wrote his original paper in black ink, his name was sealed, and a clerk copied the answer in red ink before it was sent to the examiners.
+
+Imagine doing all that copying because someone thought even handwriting might give too much away.
+
+---
+
+## One Exam Leads to Another
+
+By the Ming and Qing dynasties, the examination road had become a long ladder. A student first had to qualify at lower levels. Those who reached the provincial examination could compete for the title of [[**jǔrén**|juren]]. Successful juren could later travel to the capital for the [[metropolitan examination|metropolitan-examination]]. Pass that, and they could enter the [[palace examination|palace-examination]].
+
+At the very end of the road stood the emperor. In the Qing dynasty, the palace examination was held under imperial authority. Officials read the papers and selected the best for the emperor to review. The top three received famous titles that are still remembered today: [[**zhuàngyuán, bǎngyǎn, and tànhuā**|exam-top-three]]. The first-place zhuangyuan stood at the very top of the examination list.
+
+That final result could come after many years of reading, writing, failing, trying again, and traveling to examinations. No wonder families waited so eagerly for the names on the list.
+
+---
+
+## The Paper on the Desk
+
+The [[imperial examinations|keju]] never meant that every child in China had the same chance. Years of study required books, teachers, time, and family support, and the formal examination path was overwhelmingly a male world. Still, the exam changed something important.
+
+Being born into the right family was no longer the only way the government could recognize a future official. A person who had studied for years could sit down, pick up a brush, and put his learning onto a sheet of paper.
+
+For more than a thousand years, that idea became one of the most important parts of Chinese government and education. In 1905, the Qing government finally ended the old imperial examination system as China began building a new school system. The tiny examination cells eventually emptied. But for centuries, a candidate had entered one of them carrying a brush and hoping that the words he wrote inside would open the next door.

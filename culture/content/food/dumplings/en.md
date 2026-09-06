@@ -32,7 +32,7 @@ Some families also make a few “lucky dumplings” with special fillings. A lit
 
 ## Dumplings Around the World
 
-Wrapping filling inside dough is a useful idea, and cooks around the world have used it in many ways. China has *jiaozi* and wontons. Korea has *mandu*, Japan has *gyoza*, Italy has *ravioli*, and Poland has *pierogi*. Some are curved, some square, and some round. They may be boiled, steamed, or fried until golden underneath.
+Wrapping filling inside dough is a useful idea, and cooks around the world have used it in many ways. China has [[jiaozi|jiaozi-currency]] and wontons. Korea has *mandu*, Japan has *gyoza*, Italy has *ravioli*, and Poland has *pierogi*. Some are curved, some square, and some round. They may be boiled, steamed, or fried until golden underneath.
 
 Why do some of them look alike? Recipes travel with traders, neighbors, and families moving to new homes, so some foods may have influenced others. People in faraway places may also have come up with similar ways to wrap filling in dough.
 

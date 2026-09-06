@@ -19,19 +19,19 @@ layout: text-wrap-image
 heading_zh: 等一下，我的手该放哪儿？
 heading_en: Wait—What Do I Do with My Hands?
 image: 1-new-year-bow.webp
-caption_zh: 这幅现代插图表现孩子向长辈拜年的家庭场景；手势经过艺术化处理，不是传统拱手礼的分步示范，也不代表所有家庭的做法。
-caption_en: This modern illustration shows a child greeting older relatives at New Year; its stylized gesture is not a step-by-step guide to formal *gǒngshǒu lǐ* or a picture of every family’s custom.
+caption_zh: 孩子向长辈拜年；画中的手势不是传统拱手礼的分步示范，也不代表所有家庭的做法。
+caption_en: A child greets older relatives at New Year; the gesture is not a step-by-step guide to formal *gongshou greeting* or a picture of every family's custom.
 [zh]
 大年初一早上。新衣服穿好了，爷爷奶奶正笑着看你，连要说的话也已经记住了：“新年好！”
 
-可是突然有一个小问题。手该放哪儿？过年时，很多家庭都有晚辈先向长辈拜年的习惯。有的直接说祝福，有的轻轻鞠躬，还有的会双手合抱，在胸前行一个传统的拱手礼。
+可是突然有一个小问题。手该放哪儿？过年时，很多家庭都有晚辈先向长辈拜年的习惯。有的直接说祝福，有的轻轻鞠躬，还有的会双手合抱，在胸前行一个传统的[[拱手礼|gongshou-li]]。
 
 看别人做，好像很简单。轮到自己时，事情就复杂了：哪只手放外面？要不要握拳？身体要不要弯一点？突然觉得，“新年好”三个字反而最好办。
 [/zh]
 [en]
 It is New Year’s morning. You have new clothes on. Your grandparents are smiling. You have even remembered what to say. “Happy New Year!” There is just one small problem. What are your hands supposed to do?
 
-In many Chinese families, children greet older relatives first at New Year. Some simply say their good wishes. Some bow a little. Others bring both hands together in front of the chest in a traditional greeting called *gǒngshǒu lǐ*.
+In many Chinese families, children greet older relatives first at New Year. Some simply say their good wishes. Some bow a little. Others bring both hands together in front of the chest in a traditional greeting called [[gongshou greeting|gongshou-li]].
 
 It looks simple—until you try it. One hand goes here. The other goes there. Do you make a fist? Which hand is outside? Are you supposed to bow too? Suddenly, saying “Happy New Year” seems like the easy part.
 [/en]
@@ -68,19 +68,19 @@ layout: text-wrap-image
 heading_zh: 然后，红包出现了
 heading_en: Then Comes the Red Envelope
 image: 3-red-envelope-two-hands.webp
-caption_zh: 这幅现代插图表现孩子双手接红包的家庭场景；它概括的是常见礼貌做法，不是所有家庭都必须遵守的固定仪式。
-caption_en: This modern illustration shows a child receiving a red envelope with both hands; it presents a commonly taught courtesy, not a fixed ritual followed by every family.
+caption_zh: 孩子双手接过红包，表现一种常见的礼貌做法，并不是所有家庭都必须遵守的固定仪式。
+caption_en: A child receives a red envelope with both hands, showing a commonly taught courtesy rather than a fixed ritual followed by every family.
 [zh]
 拜完年，爷爷笑了。奶奶伸手拿出一个红红的东西。啊。很多小朋友最期待的部分终于来了。
 
-春节时，长辈常常会给晚辈红包，里面装着压岁钱。关于“压岁钱”的来历，民间有不少说法，其中一个古老的说法认为，它可以帮助孩子压住邪祟，平平安安过一年。今天，我们当然不会把红包当成真的“护身法宝”，可是里面的意思还在：长辈希望孩子健康、平安、好运。
+春节时，长辈常常会给晚辈[[红包|hongbao]]，里面装着[[压岁钱|yasuiqian]]。关于“压岁钱”的来历，民间有不少说法，其中一个古老的说法认为，它可以帮助孩子压住邪祟，平平安安过一年。今天，我们当然不会把红包当成真的“护身法宝”，可是里面的意思还在：长辈希望孩子健康、平安、好运。
 
 这时候，两只手又有任务了。很多孩子会被教着双手接过红包，再好好说一声“谢谢”。刚才，这双手是在送祝福。现在，它们又在接祝福。
 [/zh]
 [en]
 Now the greeting is finished. Grandpa smiles. Grandma reaches for something red. Ah. Here comes the part many children have been waiting for.
 
-A *hóngbāo* is a red envelope containing money. At New Year, older family members often give one to children. The money is also called *yāsuìqián*. There are old folk stories about the name. One connects the gift with protecting children from harmful spirits and keeping them safe through the year. Whatever story a family tells, the meaning today is easy to recognize: the money comes wrapped in wishes for health, safety, and good fortune.
+A [[red envelope|hongbao]] contains money. At New Year, older family members often give one to children. The money is also called [[yasuiqian|yasuiqian]]. There are old folk stories about the name. One connects the gift with protecting children from harmful spirits and keeping them safe through the year. Whatever story a family tells, the meaning today is easy to recognize: the money comes wrapped in wishes for health, safety, and good fortune.
 
 And look—your hands have another job. Instead of snatching the envelope with one hand and immediately peeking inside, children are often taught to receive it with both hands and say thank you. Two hands again. A few minutes ago, they were giving a greeting. Now they are receiving one.
 [/en]

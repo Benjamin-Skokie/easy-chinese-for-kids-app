@@ -19,8 +19,8 @@ layout: text-wrap-image
 heading_zh: 文官和武官做什么？
 heading_en: What Did Civil and Military Officials Do?
 image: civil-and-military-badges.webp
-caption_zh: 这是一幅现代想象图。白鹤常出现在文官补子上，老虎则出现在武官补子上。
-caption_en: This is a modern imagined scene. Cranes appeared on civil officials' badges, while tigers appeared on military officers' badges.
+caption_zh: 白鹤常出现在文官补子上，老虎则出现在武官补子上。
+caption_en: Cranes appeared on civil officials' badges, while tigers appeared on military officers' badges.
 [zh]
 古代的“官员”，就是替国家和皇帝处理事情的人。到了明清时期，官员主要分成两大类。
 
@@ -43,21 +43,21 @@ layout: text-wrap-image
 heading_zh: 为什么一边是鸟，一边是猛兽？
 heading_en: Why Birds for One Group and Beasts for the Other?
 image: rank-badge-lineup.webp
-caption_zh: 这是一幅现代动物排列图，不是一张真正的官位表。补子上的动物和等级会随着朝代改变。
-caption_en: This is a modern lineup, not a real rank chart. The animals and their ranks changed over time.
+caption_zh: 不同动物被排成一列帮助比较；补子上的动物和等级会随着朝代改变。
+caption_en: The animals are lined up for comparison; the animals and their ranks changed over time.
 [zh]
 举行大典时，一排排官员站在一起。他们身上的衣服把朝廷的等级直接摆在了大家眼前。胸前和背后的大幅动物图案，隔着一段距离也能看见。它告诉别人：这个人是文官还是武官，官位大概有多高。
 
 朝廷用两组很不一样的动物来分开文官和武官。文官用飞禽，让人想到文雅、祥瑞和学问；武官用走兽和神兽，让人想到力量、勇气和威严。两组一眼就能分开，然后每一种动物再表示一个等级。
 
-官员不能挑自己最喜欢的动物，图案由朝廷规定，而且这些规定也会改变。同一只老虎，在明朝和清朝可能代表不同的等级。这些鸟兽是一套由朝廷制定的标志，并不是永远不变的规矩。
+官员不能挑自己最喜欢的动物，图案由朝廷规定，而且这些规定也会改变。同一只老虎，在[[明朝|ming-dynasty]]和[[清朝|qing-dynasty]]可能代表不同的等级。这些鸟兽是一套由朝廷制定的标志，并不是永远不变的规矩。
 [/zh]
 [en]
 At a grand ceremony, rows of officials stood together. Their clothing made the order of the court visible. A large animal on the chest and back could be seen from a distance. It showed whether someone was a civil or military official and roughly how high his rank was.
 
 The court used two very different groups of animals. Civil officials wore birds, which could suggest grace, good fortune, and learning. Military officers wore beasts and creatures from legends, which suggested strength, courage, and authority. The two groups were easy to tell apart, and each animal then showed a different rank.
 
-Officials did not choose their favorite animal. The court set the rules, and those rules changed over time. A tiger showed one rank in the Ming dynasty and another in the Qing. The birds and beasts formed a court-made code, not a rule that stayed the same forever.
+Officials did not choose their favorite animal. The court set the rules, and those rules changed over time. A tiger showed one rank in the [[Ming dynasty|ming-dynasty]] and another in the Qing. The birds and beasts formed a court-made code, not a rule that stayed the same forever.
 [/en]
 [/section]
 
@@ -67,8 +67,8 @@ layout: text-wrap-image
 heading_zh: 衣服上为什么有不存在的动物？
 heading_en: Why Put Make-Believe Animals on Real Clothes?
 image: xiezhi-watchdog-official.webp
-caption_zh: 画中的独角神兽是獬豸。这是一幅现代想象图，不是某位真实官员的肖像。
-caption_en: The one-horned creature is a xiezhi. This is a modern imagined scene, not a portrait of a real official.
+caption_zh: 画中的独角神兽是獬豸，它出现在监察官员的补子上。
+caption_en: The one-horned creature is a *xiezhi*, which appeared on the badges of certain inspecting officials.
 [zh]
 麒麟不是真实的鹿、马或龙。它是中国古代故事中的神兽，常常被画成长着蹄子、鳞片和角，有时身边还有火焰。这样神奇又有力量的动物，很适合出现在高等级武官的补子上。
 
@@ -121,7 +121,7 @@ heading_en: Did Local Officials Wear Rank Badges Too?
 [en]
 Rank badges did not belong only to powerful officials standing beside the emperor. The same system reached from the capital to cities and counties across China. Where an official worked and how high he ranked were two different things. A local official could even outrank someone with a smaller post in the capital.
 
-During the Qing dynasty, the chief official of a county was usually a seventh-rank civil official. A county was a local area made up of towns and villages. He was not one of the court's most powerful men, but local taxes, grain, government orders, and many court cases could all reach his office.
+During the [[Qing dynasty|qing-dynasty]], the chief official of a county was usually a seventh-rank civil official. A county was a local area made up of towns and villages. He was not one of the court's most powerful men, but local taxes, grain, government orders, and many court cases could all reach his office.
 
 In the later Qing list, his rank badge showed a Mandarin duck. The water bird on his chest connected his local job to the same rank system used at the emperor's court.
 [/en]

@@ -27,19 +27,19 @@
             <img src="./images/log-at-city-gate.webp" alt="" class="floated-image" />
             <figcaption class="caption floated-caption"><span class="zh">一名男子搬起木头，围观的人都盯着他看。</span><br><span class="en">A man moves the log while the crowd watches.</span></figcaption>
           </figure>
-          <p>两千三百多年前，中国还不是一个统一的国家，而是分成几个互相打仗的国家。秦国是其中一个。一百多年以后，秦国才会变成秦始皇统治的大帝国。</p>
+          <p>两千三百多年前，中国还不是一个统一的国家，而是分成几个互相打仗的国家。秦国是其中一个。一百多年以后，秦国才会变成<span class="glossary-entry"><button type="button" class="glossary-term" aria-expanded="false" aria-controls="glossary-qin-shi-huang-1">秦始皇</button><span id="glossary-qin-shi-huang-1" class="glossary-popover" role="tooltip">Qín Shǐhuáng · 建立秦朝、统一中国的第一位皇帝。</span></span>统治的大帝国。</p>
           <p>一天，秦国最大城市的南门外，出现了一根大木头。</p>
           <p>旁边的牌子上写着：谁把木头搬到北门，就能得到十块金子。</p>
           <p>人们围过来，盯着木头看。只是搬一根木头，就给这么多钱？一定有问题。也许这是个玩笑，也许搬完以后，根本拿不到钱。大家小声议论，却没有一个人动手。</p>
           <p>于是，给的钱涨到了五十块金子。</p>
-          <p>终于，一个男子弯下腰，抱起木头，把它搬到了北门。商鞅真的把钱给了他。围观的人一下子安静了。</p>
+          <p>终于，一个男子弯下腰，抱起木头，把它搬到了北门。<span class="glossary-entry"><button type="button" class="glossary-term" aria-expanded="false" aria-controls="glossary-shang-yang-2">商鞅</button><span id="glossary-shang-yang-2" class="glossary-popover" role="tooltip">Shāng Yāng · 战国时期在秦国推行变法的政治家。</span></span>真的把钱给了他。围观的人一下子安静了。</p>
           <p>这根木头送出的消息很简单：秦国很快会有新规矩，而商鞅说到就会做到。</p>
-          <p>More than 2,300 years ago, China was not yet one united country. It was divided into several kingdoms that often fought one another. Qin was one of them. It would be more than a hundred years before Qin became the great empire ruled by Qin Shi Huang.</p>
+          <p>More than 2,300 years ago, China was not yet one united country. It was divided into several kingdoms that often fought one another. Qin was one of them. It would be more than a hundred years before Qin became the great empire ruled by <span class="glossary-entry"><button type="button" class="glossary-term" aria-expanded="false" aria-controls="glossary-qin-shi-huang-3">Qin Shi Huang</button><span id="glossary-qin-shi-huang-3" class="glossary-popover" role="tooltip">Qín Shǐhuáng · 秦始皇 · The First Emperor, who founded the Qin dynasty and united China.</span></span>.</p>
           <p>One day, a great wooden log appeared outside the south gate of Qin's main city.</p>
           <p>A notice beside it said, “Carry this log to the north gate, and you will receive ten pieces of gold.”</p>
           <p>People gathered and stared. So much gold for moving one log? Something had to be wrong. Perhaps it was a joke. Perhaps the prize would disappear as soon as the work was done. Everyone whispered, but no one moved.</p>
           <p>Then the prize rose to fifty pieces of gold.</p>
-          <p>At last, one man bent down, lifted the log, and carried it to the north gate. Shang Yang really paid him. The crowd suddenly became very quiet.</p>
+          <p>At last, one man bent down, lifted the log, and carried it to the north gate. <span class="glossary-entry"><button type="button" class="glossary-term" aria-expanded="false" aria-controls="glossary-shang-yang-4">Shang Yang</button><span id="glossary-shang-yang-4" class="glossary-popover" role="tooltip">Shāng Yāng · 商鞅 · The Warring States reformer who changed laws and government in Qin.</span></span> really paid him. The crowd suddenly became very quiet.</p>
           <p>The log had carried a simple message. New rules were coming to Qin, and Shang Yang meant what he said.</p>
         </div>
       </section>
@@ -159,7 +159,8 @@
             if (!button || !popover) return;
 
             const margin = 12;
-            const gap = 10;
+            const compactViewport = window.matchMedia("(max-width: 900px)").matches;
+            const gap = compactViewport ? 8 : 10;
             const buttonRect = button.getBoundingClientRect();
             const popoverRect = popover.getBoundingClientRect();
             const halfWidth = popoverRect.width / 2;
@@ -168,10 +169,12 @@
             const maxCenter = window.innerWidth - margin - halfWidth;
             const left = Math.min(Math.max(buttonCenter, minCenter), maxCenter);
 
-            let side = "above";
-            let top = buttonRect.top - popoverRect.height - gap;
+            let side = compactViewport ? "below" : "above";
+            let top = side === "below"
+              ? buttonRect.bottom + gap
+              : buttonRect.top - popoverRect.height - gap;
 
-            if (top < margin) {
+            if (side === "above" && top < margin) {
               side = "below";
               top = buttonRect.bottom + gap;
             }

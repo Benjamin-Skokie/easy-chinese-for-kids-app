@@ -70,7 +70,7 @@
           <h4>The Bells Have Labels</h4>
           <figure class="floated-figure">
             <img src="./images/3-bell-inscriptions-closeup.webp" alt="" class="floated-image" />
-            <figcaption class="caption floated-caption"><span class="zh">这是一张表现钟上铭文的教学插画；画中文字并不是曾侯乙编钟铭文的准确摹本。</span><br><span class="en">This teaching illustration represents inscriptions on a bell; its characters are not an exact transcription of the Marquis Yi bells.</span></figcaption>
+            <figcaption class="caption floated-caption"><span class="zh">钟面上的文字表现编钟铭文；这些字并不是曾侯乙编钟铭文的准确摹本。</span><br><span class="en">The characters on the bell represent bell inscriptions; they are not an exact transcription of the Marquis Yi bells.</span></figcaption>
           </figure>
           <p>凑近看，青铜钟上刻着一行行古老的文字。钟、钟架和挂钟的部件上，一共留下了 3,755 个字。</p>
           <p>有些字记录事情，有些标出音名，还有一些讲声音之间的关系。在一些钟上，这些文字保存了不同敲击位置能够发出什么音的信息。</p>
@@ -93,7 +93,7 @@
           <h3>那我们今天听见的是什么？</h3>
           <h4>So What Are We Hearing Today?</h4>
           <div class="zh">
-            <p>真正的曾侯乙编钟现在是珍贵的博物馆文物。反复敲击会带来损伤的风险，所以研究人员仔细测量原钟的大小和形状，研究青铜材料、钟体结构和声音，再和工匠一起制作出一整套复制编钟。</p>
+            <p>真正的曾侯乙<span class="glossary-entry"><button type="button" class="glossary-term" aria-expanded="false" aria-controls="glossary-bianzhong-1">编钟</button><span id="glossary-bianzhong-1" class="glossary-popover" role="tooltip">biānzhōng · 成组悬挂、按音高排列演奏的古代青铜钟。</span></span>现在是珍贵的博物馆文物。反复敲击会带来损伤的风险，所以研究人员仔细测量原钟的大小和形状，研究青铜材料、钟体结构和声音，再和工匠一起制作出一整套复制编钟。</p>
           <p>复制品就可以真正演奏了。</p>
           <p>今天，在湖北省博物馆听到的日常编钟演出，使用的就是这样的复制品。它们不是两千多年前的原钟，却是研究人员一遍遍观察、测量和试验原钟以后做出来的。</p>
           <p>现在，再回到最开始的那两声：<em>当&#8212;&#8212;叮。</em></p>
@@ -141,7 +141,8 @@
             if (!button || !popover) return;
 
             const margin = 12;
-            const gap = 10;
+            const compactViewport = window.matchMedia("(max-width: 900px)").matches;
+            const gap = compactViewport ? 8 : 10;
             const buttonRect = button.getBoundingClientRect();
             const popoverRect = popover.getBoundingClientRect();
             const halfWidth = popoverRect.width / 2;
@@ -150,10 +151,12 @@
             const maxCenter = window.innerWidth - margin - halfWidth;
             const left = Math.min(Math.max(buttonCenter, minCenter), maxCenter);
 
-            let side = "above";
-            let top = buttonRect.top - popoverRect.height - gap;
+            let side = compactViewport ? "below" : "above";
+            let top = side === "below"
+              ? buttonRect.bottom + gap
+              : buttonRect.top - popoverRect.height - gap;
 
-            if (top < margin) {
+            if (side === "above" && top < margin) {
               side = "below";
               top = buttonRect.bottom + gap;
             }

@@ -4,7 +4,7 @@
 
 ## Through the Palace Gates at Fourteen
 
-Wu Zetian entered the palace when she was fourteen. She was not called “Wu Zetian” yet. She was simply one young woman among many in the palace.
+[[Wu Zetian|wu-zetian]] entered the palace when she was fourteen. She was not called “Wu Zetian” yet. She was simply one young woman among many in the palace.
 
 The palace was huge and beautiful, but life inside was not simple. There were rules about who could speak, who had to wait, and who could stand near the emperor. Most girls could spend their whole lives there without making any important decisions.
 

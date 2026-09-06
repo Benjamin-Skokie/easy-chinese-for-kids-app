@@ -30,7 +30,7 @@ caption_en: Ying Zheng became king of Qin when he was thirteen.
 
 嬴政长大以后，开始亲自作决定。他派军队打败六个别的国家，把大片土地放到一个人手中。
 
-过去，每个国家都有自己的国王。嬴政觉得“国王”这个称号已经不够了，于是给自己创造了一个新称号：皇帝。后人叫他秦始皇，也就是秦国的第一位皇帝。
+过去，每个国家都有自己的国王。嬴政觉得“国王”这个称号已经不够了，于是给自己创造了一个新称号：皇帝。后人叫他[[秦始皇|qin-shi-huang]]，也就是秦国的第一位皇帝。
 [/zh]
 [en]
 More than two thousand years ago, China was not yet one united country. Seven powerful kingdoms fought for land, and Qin was one of them.
@@ -41,7 +41,7 @@ Ying Zheng was young, but Qin was already strong. It had a powerful army, strict
 
 When Ying Zheng grew older, he began making the big decisions himself. His armies defeated six other kingdoms and brought a great stretch of land under his rule.
 
-Each kingdom had once had its own king. Ying Zheng decided that “king” was no longer a big enough title. He chose a new one: emperor. We remember him as Qin Shi Huang, the First Emperor of Qin.
+Each kingdom had once had its own king. Ying Zheng decided that “king” was no longer a big enough title. He chose a new one: emperor. We remember him as [[Qin Shi Huang|qin-shi-huang]], the First Emperor of Qin.
 [/en]
 [/section]
 
@@ -76,12 +76,9 @@ The attack failed, and Qin's armies continued fighting the other kingdoms. The k
 
 [section]
 page: 3
-layout: text-wrap-image
+layout: text-only
 heading_zh: 如果一杯米不是同样多
 heading_en: What If One Cup Was Not One Cup?
-image: making-rules-match.webp
-caption_zh: 秦始皇命令各地使用更统一的文字、钱币和量器。
-caption_en: Qin Shi Huang ordered people to use matching forms of writing, money, and ways of measuring.
 [zh]
 打下这么多地方以后，秦始皇遇到了一个大问题：每个地方的规矩不一样。
 
@@ -138,9 +135,9 @@ caption_en: Thousands of clay soldiers and horses were buried near Qin Shi Huang
 [zh]
 秦始皇希望自己能够永远活下去，还派人寻找让人长生的药。可是，成为皇帝大约十一年以后，他在巡视帝国的途中生病去世了。我们不知道他的确切死因。
 
-秦始皇很早就开始为自己地下的墓作准备。他去世以后，墓旁安静地站着一支用陶土做成的军队。
+秦始皇很早就开始为自己地下的墓作准备。他去世以后，墓旁安静地站着一支用[[陶土|terracotta]]做成的军队。
 
-很多世纪以后，农民打井时挖到陶片，人们才发现了兵马俑。英文里的 *terracotta*，就是经过塑形、再用火烧硬的陶土，所以兵马俑也叫 *the Terracotta Army*。研究过去的人后来找到成千上万件陶土士兵、马和战车。许多士兵的脸看起来各不相同，好像一支真正的军队忽然停住了脚步。
+很多世纪以后，农民打井时挖到陶片，人们才发现了[[兵马俑|terracotta-warriors]]。英文里的 *terracotta*，就是经过塑形、再用火烧硬的陶土，所以兵马俑也叫 *the Terracotta Army*。研究过去的人后来找到成千上万件陶土士兵、马和战车。许多士兵的脸看起来各不相同，好像一支真正的军队忽然停住了脚步。
 
 想仔细看看那几千张不同的脸到底是不是照着真人做的吗？可以继续读[《兵马俑：八千张脸，八千幅肖像吗？》](../../art/terracotta-warriors/index.html)
 
@@ -153,7 +150,7 @@ Qin Shi Huang wanted to live forever, and he sent people to search for medicines
 
 Qin Shi Huang began preparing his tomb long before he died. Beside it, an army made of clay stood silently underground.
 
-Many centuries later, farmers digging a well found pieces of clay. *Terracotta* is clay that has been shaped and baked until it becomes hard. That is why the figures are called the Terracotta Army. People studying the past later uncovered thousands of clay soldiers, horses, and war chariots. Many faces look different, as if a real army had suddenly stopped in its tracks.
+Many centuries later, farmers digging a well found pieces of clay. [[Terracotta|terracotta]] is clay that has been shaped and baked until it becomes hard. That is why the figures are called the [[Terracotta Army|terracotta-warriors]]. People studying the past later uncovered thousands of clay soldiers, horses, and war chariots. Many faces look different, as if a real army had suddenly stopped in its tracks.
 
 Want to look more closely at those thousands of different faces? Read [“Terracotta Warriors: Are 8,000 Faces 8,000 Portraits?”](../../art/terracotta-warriors/index.html)
 

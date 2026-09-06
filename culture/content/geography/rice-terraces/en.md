@@ -10,7 +10,7 @@ A whole mountain has been reshaped into thousands of giant steps. One level hold
 
 Except this mountain is real.
 
-In southern *Yúnnán*, China, *Hāní* communities have been building and caring for the Honghe *Hāní* Rice Terraces for about 1,300 years.
+In southern [[Yunnan|yunnan]], China, [[Hani|hani]] communities have been building and caring for the Honghe *Hani* [[Rice Terraces|rice-terraces]] for about 1,300 years.
 
 They had a very practical problem. Rice grows well in shallow, standing water—but mountains are steep. Water poured onto a slope simply runs downhill.
 
@@ -54,7 +54,7 @@ So the same patch of mountain can produce rice above the water and fish below it
 
 This is not a new experiment. Evidence for rice-fish farming in China reaches back about 2,000 years. A clay object from the Han period even shows a fish swimming from a pond toward a rice field.
 
-The *Hāní* terrace landscape has traditionally supported much more than rice. Fish, eels, ducks, cattle, and water buffalo have all been part of the larger farming system.
+The *Hani* terrace landscape has traditionally supported much more than rice. Fish, eels, ducks, cattle, and water buffalo have all been part of the larger farming system.
 
 A rice terrace, then, is not simply a wet step cut into a mountain. It can be a tiny living world.
 

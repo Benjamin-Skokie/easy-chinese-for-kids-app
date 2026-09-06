@@ -24,7 +24,7 @@ caption_en: One road climbs toward a mountain and one river runs to the sea. The
 [zh]
 假如有人把一卷两千多年前的古书放到你手里，上面没有写“从前有一个英雄”。它先说：从这座山出发，向东再走一段路，会到达下一座山。山上长着什么树？河水往哪里流？石头下面藏着什么动物？
 
-这卷书就是《山海经》。它不是一个人坐下来一次写完的。许多人在很长的时间里，把山川、祭祀、传说和听来的怪事一层层放进去。最早写下这些话的人是谁，今天已经不知道了。
+这卷书就是[[《山海经》|shan-hai-jing]]。它不是一个人坐下来一次写完的。许多人在很长的时间里，把山川、祭祀、传说和听来的怪事一层层放进去。最早写下这些话的人是谁，今天已经不知道了。
 
 可是，名字不知道，路还在。你可以跟着书里的方向往前走。山顶可能有玉，山脚可能有铜，河里可能游着一条长翅膀的鱼。
 
@@ -33,7 +33,7 @@ caption_en: One road climbs toward a mountain and one river runs to the sea. The
 [en]
 Imagine that someone places a scroll more than two thousand years old in your hands. It does not begin, “Once there was a hero.” Instead, it gives you a road: start at this mountain, travel east, and you will reach another mountain. What trees grow there? Where does the river go? What animal hides behind the rocks?
 
-This scroll is *Shan Hai Jing*, the *Classic of Mountains and Seas*. One person did not sit down and write it all at once. Over a long time, different people gathered descriptions of mountains, ceremonies, old tales, and strange reports. No one now knows the names of the first writers.
+This scroll is [[Shan Hai Jing|shan-hai-jing]], the *Classic of Mountains and Seas*. One person did not sit down and write it all at once. Over a long time, different people gathered descriptions of mountains, ceremonies, old tales, and strange reports. No one now knows the names of the first writers.
 
 The names are lost, but the road remains. Follow the directions and you may find jade on a mountain, copper at its foot, or a fish with wings in the water.
 
@@ -78,18 +78,18 @@ image: 3-jingwei-fills-the-sea.webp
 caption_zh: 精卫从发鸠山衔起小石子和树枝，一次次飞向东海。她想把夺走自己生命的大海填平。
 caption_en: Jingwei carries stones and twigs from Fajiu Mountain to the Eastern Sea. She wants to fill the sea that took her life.
 [zh]
-在北方的发鸠山上，住着一只乌鸦大小的小鸟。她有带花纹的脑袋、白色的嘴和红色的脚。飞过山谷时，她会叫出自己的名字：“精卫！精卫！”
+在北方的发鸠山上，住着一只乌鸦大小的小鸟。她有带花纹的脑袋、白色的嘴和红色的脚。飞过山谷时，她会叫出自己的名字：“[[精卫|jingwei]]！精卫！”
 
 精卫以前不是鸟。她原来名叫“女娃”，是炎帝的小女儿。有一天，她到东海游玩，却淹死在海里，再也没有回家。后来，她变成了这只小鸟。
 
-每天，[[精卫]]从西边的山上衔起一小段树枝，或者叼起一颗小石子，再飞到东海上空，把它丢进浪里。她想把夺走自己生命的大海一点点填平。第二天，她又飞回山中，再找一颗。石子那么小，东海那么大，她还是没有停。
+每天，精卫从西边的山上衔起一小段树枝，或者叼起一颗小石子，再飞到东海上空，把它丢进浪里。她想把夺走自己生命的大海一点点填平。第二天，她又飞回山中，再找一颗。石子那么小，东海那么大，她还是没有停。
 
 一颗石子落进浪里，马上看不见了。精卫转过身，再次飞向发鸠山。她的任务还没有完成，故事却在她一次又一次的飞行中停住了。
 [/zh]
 [en]
-On northern Fajiu Mountain lives a bird about the size of a crow. She has a patterned head, a white beak, and red feet. As she flies over the valley, her call sounds like her own name: “Jingwei! Jingwei!”
+On northern Fajiu Mountain lives a bird about the size of a crow. She has a patterned head, a white beak, and red feet. As she flies over the valley, her call sounds like her own name: “[[Jingwei|jingwei]]! Jingwei!”
 
-[[Jingwei]] was not always a bird. She was once a young girl, the daughter of the Flame Emperor. One day she went to the Eastern Sea, drowned, and never returned home. Afterward, she became this little bird.
+Jingwei was not always a bird. She was once a young girl, the daughter of the Flame Emperor. One day she went to the Eastern Sea, drowned, and never returned home. Afterward, she became this little bird.
 
 Every day, Jingwei picks up a twig or a small stone from the western mountains. Then she flies over the Eastern Sea and drops it into the waves. She means to fill the sea that took her life, one tiny piece at a time. The next day, she returns for one more. The stones are tiny and the sea is enormous, but she does not stop.
 
@@ -103,23 +103,23 @@ layout: text-wrap-image
 heading_zh: 如果下一座山由你来画，那里会住着什么？
 heading_en: If You Drew the Next Mountain, What Would Live There?
 image: 4-child-drawing-creatures.webp
-caption_zh: 一个孩子铺开纸，先画山和河，再让一种从来没有见过的动物从石头后面探出头来。
-caption_en: A child spreads out paper, draws a mountain and river, and lets a never-before-seen creature peek from behind a rock.
+caption_zh: 一个男孩翻看书里像龙一样的怪兽，又在自己的画本上画出新的模样。
+caption_en: A boy studies a dragon-like creature in an illustrated book and sketches his own version.
 [zh]
-读完九尾狐和精卫，一个孩子把纸铺在桌上。纸的左边画一座长满蓝草的山，右边画一条倒着流的河。接下来，该让谁住进去？
+读完九尾狐和精卫，一个男孩把《山海经》的图画书摊在桌上，又拿出自己的画本。书页上的群山之间，站着一只长角、有鳞片、四足和卷尾的怪兽，看起来有一点像龙。他仔细看了一会儿，也拿起笔来。
 
-她先画一双猫头鹰的眼睛，再添上鹿的腿、鱼的尾巴和两只像树叶一样的耳朵。这个新家伙平常躲在石头后面，下雨时尾巴会发光，叫起来像三只杯子碰在一起。
+他先画出长长的脸和尖角，再添上披着鳞片的身体、四只带爪的脚和一条卷起来的尾巴。画本里的怪兽和书上那只很像，又不完全一样——他正在画出属于自己的新家伙。
 
-这只动物不在原来的《山海经》里。可它很像从那本书打开的门里走出来的。因为《山海经》里的怪兽常常也是这样出现：拿几种熟悉的东西拼在一起，再加上一种谁也没听过的声音和一件奇怪的本领。
+这只怪兽不一定在原来的《山海经》里有名字。可它很像从那本书打开的门里走出来的。因为《山海经》里的怪兽常常也是这样出现：拿几种熟悉的东西拼在一起，再加上一种谁也没听过的声音和一件奇怪的本领。
 
 现在，地图还空着一大片。下一座山可以是红色的，也可以漂在云上。山后面会出现什么，要等你把路继续画下去才知道。
 [/zh]
 [en]
-After reading about the nine-tailed fox and Jingwei, a child spreads paper across a table. On the left she draws a mountain covered with blue grass. On the right she adds a river that flows backward. Now who should live there?
+After reading about the nine-tailed fox and Jingwei, a boy opens an illustrated book about *Shan Hai Jing* and places his own sketchbook beside it. Among the mountains on the open page stands a horned, scaly, four-legged creature with a curling tail. It looks a little like a dragon. He studies it for a moment and picks up his pencil.
 
-She begins with an owl's eyes. Then she adds a deer's legs, a fish's tail, and two ears shaped like leaves. The new creature hides behind rocks. Its tail glows in the rain, and its call sounds like three cups tapping together.
+He begins with a long face and pointed horns. Then he adds a scaled body, four clawed feet, and a curling tail. The creature in his sketchbook resembles the one in the book, but it is not exactly the same. He is giving his new creature a shape of its own.
 
-This animal is not in the old *Shan Hai Jing*. Yet it seems able to step through the door that the book opened. Many creatures in the ancient text appear in a similar way: familiar animals are joined together, then given a sound no one expects and one very strange ability.
+This creature may not have a name in the old *Shan Hai Jing*. Yet it seems able to step through the door that the book opened. Many creatures in the ancient text appear in a similar way: familiar animals are joined together, then given a sound no one expects and one very strange ability.
 
 A wide part of the map is still blank. The next mountain might be red, or it might float above the clouds. What waits behind it? You will not know until you keep drawing the road.
 [/en]

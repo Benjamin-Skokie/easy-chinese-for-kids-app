@@ -30,7 +30,7 @@ heading_en: The Peacock’s Foot
 [en]
 A painter brings a picture of a peacock to the emperor. The feathers are beautiful. The colors are rich. The bird is stepping upward. But the emperor keeps looking at one tiny part: the foot.
 
-A famous old story says that Emperor Huizong of the Song dynasty once criticized court painters because they had not noticed which foot a peacock lifted first when climbing. To Huizong, painting a peacock was not enough. A painter had to watch a real peacock.
+A famous old story says that Emperor Huizong of the [[Song dynasty|song-dynasty]] once criticized court painters because they had not noticed which foot a peacock lifted first when climbing. To Huizong, painting a peacock was not enough. A painter had to watch a real peacock.
 
 How did it step? How did it balance on one leg? What happened to the tail when the body moved?
 
@@ -44,10 +44,10 @@ layout: text-wrap-image
 heading_zh: 工笔画到底长什么样？
 heading_en: What Does a Gongbi Painting Look Like?
 image: 1-gongbi-bird-flower-detail.webp
-caption_zh: 这幅现代工笔风格示意图用细线和层层颜色表现羽毛、花瓣与鸟爪；它不是古代名画。
-caption_en: This modern gongbi-style illustration uses fine lines and layered color for feathers, petals, and claws; it is not a historical painting.
+caption_zh: 细线和层层颜色仔细表现出羽毛、花瓣与鸟爪，展示工笔画精细描绘的特点。
+caption_en: Fine lines and layered color carefully describe feathers, petals, and claws, showing the detailed approach of *gongbi* painting.
 [zh]
-看一幅精细的工笔花鸟画，然后慢慢走近。画面不会变得模糊，反而会冒出越来越多东西。
+看一幅精细的[[工笔|gongbi]]花鸟画，然后慢慢走近。画面不会变得模糊，反而会冒出越来越多东西。
 
 鸟身上，一根根细线把不同的羽毛分开；翅膀的边缘顺着身体弯过去。花朵不是一团粉红色，前面的花瓣压住后面的花瓣。叶子有正面，也有翻过去的背面。连鸟爪抓住树枝的样子，都画得很清楚。
 
@@ -62,7 +62,7 @@ Look at a carefully painted bird from this tradition, then move closer. The pict
 
 A thin line separates one feather from another. The edge of a wing curves neatly around the body. On a flower, one petal slips behind the next instead of becoming a lump of color. Leaves have fronts and backs. A bird’s feet actually seem to grip the branch.
 
-This careful style is called *gongbi* (工笔), which means meticulous or highly controlled brushwork. The lines are usually fine and deliberate. Color can be built up gradually in thin layers instead of being brushed on in one heavy coat. Darker and lighter areas help feathers overlap and petals turn. Even small shapes are carefully placed.
+This careful style is called [[gongbi|gongbi]], which means meticulous or highly controlled brushwork. The lines are usually fine and deliberate. Color can be built up gradually in thin layers instead of being brushed on in one heavy coat. Darker and lighter areas help feathers overlap and petals turn. Even small shapes are carefully placed.
 
 That does not mean every gongbi painting must look exactly the same. But compared with a loose, quickly brushed painting, gongbi often feels as if the artist has slowed everything down. The brush moves carefully because the painter has already spent a long time looking.
 
@@ -101,7 +101,7 @@ layout: text-only
 heading_zh: 一个画画很厉害的皇帝
 heading_en: The Emperor Who Was Better at Art
 [zh]
-宋徽宗生活在大约九百年前。他会画画、写书法、收藏艺术品，也非常重视宫廷里的画师。
+宋徽宗生活在大约九百年前。他会画画、写[[书法|chinese-calligraphy]]、收藏艺术品，也非常重视宫廷里的画师。
 
 可是当皇帝，他的结局很糟。1127年，北宋都城被攻破，宋徽宗被俘到北方，后来死在囚禁之中。
 

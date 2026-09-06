@@ -8,7 +8,7 @@ In the late 1800s, Chinese medicine shops sold something with a wonderful name: 
 
 Then, in 1899, scholars in Beijing began paying attention to something strange about some of these bones: tiny marks had been carefully carved into them. A famous story tells how the scholar Wang Yirong noticed such markings on “dragon bones” from a pharmacy. He studied ancient writing and suspected that these were not scratches at all. They were characters.
 
-Soon scholars traced more of the bones to Anyang in northern China. There they found thousands of pieces of ox shoulder blade and turtle shell carrying writing from more than 3,000 years ago. Today, we call this writing *jiǎgǔwén*—oracle-bone script. But why would anyone write on a bone? That is where the story gets much more interesting.
+Soon scholars traced more of the bones to [[Anyang|anyang]] in northern China. There they found thousands of pieces of ox shoulder blade and turtle shell carrying writing from more than 3,000 years ago. Today, we call this writing [[oracle-bone script|jiaguwen]]—oracle-bone script. But why would anyone write on a bone? That is where the story gets much more interesting.
 
 ---
 
@@ -28,9 +28,9 @@ Some of the questions sound grand and kingly. Should the army go into battle? Wo
 
 A tortoiseshell now in the Smithsonian has inscriptions asking about rain. Another oracle bone asks whether the year will bring a good harvest. Those were serious questions. A bad harvest could mean real trouble for an entire kingdom. But the bones also preserve much more personal worries.
 
-King Wǔ Dīng had a wife named Fù Hǎo. One surviving inscription asks about her coming childbirth. The king studied the cracks and made a prediction. Later, someone added what actually happened: after thirty-one days, she gave birth to a girl. The bone kept both the question and the ending.
+King [[Wu Ding|wu-ding]] had a wife named [[Fu Hao|fu-hao]]. One surviving inscription asks about her coming childbirth. The king studied the cracks and made a prediction. Later, someone added what actually happened: after thirty-one days, she gave birth to a girl. The bone kept both the question and the ending.
 
-And then there was the king’s tooth. One inscription records that Wǔ Dīng had a sick tooth. The diviners wondered whether one of his dead ancestors was causing the trouble. They asked about one ancestor, then another. Imagine that: more than 3,000 years ago, the ruler of a kingdom was powerful enough to command armies—but still could not make his tooth stop hurting. Suddenly, the people behind the ancient writing do not seem quite so far away.
+And then there was the king’s tooth. One inscription records that Wu Ding had a sick tooth. The diviners wondered whether one of his dead ancestors was causing the trouble. They asked about one ancestor, then another. Imagine that: more than 3,000 years ago, the ruler of a kingdom was powerful enough to command armies—but still could not make his tooth stop hurting. Suddenly, the people behind the ancient writing do not seem quite so far away.
 
 ---
 

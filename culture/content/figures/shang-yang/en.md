@@ -4,7 +4,7 @@
 
 ## Something Strange at the City Gate
 
-More than 2,300 years ago, China was not yet one united country. It was divided into several kingdoms that often fought one another. Qin was one of them. It would be more than a hundred years before Qin became the great empire ruled by Qin Shi Huang.
+More than 2,300 years ago, China was not yet one united country. It was divided into several kingdoms that often fought one another. Qin was one of them. It would be more than a hundred years before Qin became the great empire ruled by [[Qin Shi Huang|qin-shi-huang]].
 
 One day, a great wooden log appeared outside the south gate of Qin's main city.
 
@@ -14,7 +14,7 @@ People gathered and stared. So much gold for moving one log? Something had to be
 
 Then the prize rose to fifty pieces of gold.
 
-At last, one man bent down, lifted the log, and carried it to the north gate. Shang Yang really paid him. The crowd suddenly became very quiet.
+At last, one man bent down, lifted the log, and carried it to the north gate. [[Shang Yang|shang-yang]] really paid him. The crowd suddenly became very quiet.
 
 The log had carried a simple message. New rules were coming to Qin, and Shang Yang meant what he said.
 

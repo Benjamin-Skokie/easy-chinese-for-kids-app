@@ -22,14 +22,14 @@ image: 1-one-cord-one-knot.webp
 caption_zh: 一根红绳从松散的绳圈一步步编成完整的中国结。
 caption_en: A red cord changes from loose loops into a complete Chinese knot.
 [zh]
-拿起一个中国结，我们先玩一个小游戏：找一找，这根绳子从哪里开始？找到了吗？那它又在哪里结束？这下就没那么容易了。
+拿起一个[[中国结|chinese-knot]]，我们先玩一个小游戏：找一找，这根绳子从哪里开始？找到了吗？那它又在哪里结束？这下就没那么容易了。
 
 很多传统中国结，常常用一根连续的绳子编成。绳子向左绕，向右转，从上面跨过去，再从下面钻回来，一圈又一圈。等到整个结编好，图案变得整整齐齐，绳子的开头和结尾反而像藏起来了。刚才还只是一根普普通通的绳子，转眼就变成一朵红花、一座小迷宫，或者一个怎么看都走不到尽头的图案。
 
 这就是中国结第一个有意思的地方。更有意思的是：这个结还可能“会说话”。
 [/zh]
 [en]
-Pick up a Chinese knot and try a small challenge: find where the cord begins. Easy? Now find where it ends. Not so easy.
+Pick up a [[Chinese knot|chinese-knot]] and try a small challenge: find where the cord begins. Easy? Now find where it ends. Not so easy.
 
 Many traditional Chinese knots are made from one continuous cord. The cord loops left, turns right, crosses over itself, slips underneath, and comes back again. When the knot is finished, the pattern can look so even and complete that the beginning and end seem to disappear. A plain piece of cord has somehow turned into a red flower, a little maze, or a pattern with no obvious way out.
 

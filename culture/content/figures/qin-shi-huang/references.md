@@ -87,4 +87,4 @@ Editorial boundary:
 
 ## Image note
 
-The three pictures are modern illustrations. They are not photographs or exact reconstructions of Qin Shi Huang, his palace, his rules, or the Terracotta Army excavation.
+The two pictures are modern illustrations. They are not photographs or exact reconstructions of Qin Shi Huang, his palace, or the Terracotta Army excavation.

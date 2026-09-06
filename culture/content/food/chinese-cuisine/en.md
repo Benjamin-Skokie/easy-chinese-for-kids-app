@@ -14,9 +14,9 @@ People sometimes sort Chinese food into eight large cooking traditions, often ca
 
 ## Tingly Is Not the Same as Hot
 
-Look at this Sichuan meal. Red chilies make the mouth feel hot. Sichuan pepper brings a different feeling—a tingle that can make the lips seem to buzz. Sichuan cooks often put the two together in dishes such as mapo tofu. Still, not every Sichuan dish is spicy.
+Look at this [[Sichuan|sichuan]] meal. Red chilies make the mouth feel hot. Sichuan pepper brings a different feeling—a tingle that can make the lips seem to buzz. Sichuan cooks often put the two together in dishes such as mapo tofu. Still, not every Sichuan dish is spicy.
 
-People tell several stories about how mapo tofu got its name. The best-known one begins about 160 years ago, when a woman named Mrs. Chen ran a small food shop in Chengdu, a city in Sichuan. Customers gave her the nickname Chen Mapo because she had small marks on her face. Her tofu became so popular that people called it “Chen Mapo's tofu.” A Chengdu guide from the early 1900s lists the dish among the city's famous foods.
+People tell several stories about how mapo tofu got its name. The best-known one begins about 160 years ago, when a woman named Mrs. Chen ran a small food shop in [[Chengdu|chengdu]], a city in Sichuan. Customers gave her the nickname Chen Mapo because she had small marks on her face. Her tofu became so popular that people called it “Chen Mapo's tofu.” A Chengdu guide from the early 1900s lists the dish among the city's famous foods.
 
 Here is another surprise: a cook in Sichuan one thousand years ago had never seen a chili pepper. Chilies first grew in the Americas and reached China in the late 1500s, about 450 years ago. Before then, cooks made lively flavors with ginger, garlic, and Sichuan pepper.
 
@@ -36,7 +36,7 @@ One shrimp dumpling cannot explain all of Cantonese food. It is one tasty exampl
 
 ## The Sea on One Side, Wheat Fields on the Other
 
-Part of Shandong reaches into the sea, with water on three sides. Farther inland are wide, flat fields. Families near the coast can cook with fish, shrimp, and shellfish. Travel toward the wheat fields and you will also find noodles, steamed buns, and flatbreads on the table.
+Part of [[Shandong|shandong]] reaches into the sea, with water on three sides. Farther inland are wide, flat fields. Families near the coast can cook with fish, shrimp, and shellfish. Travel toward the wheat fields and you will also find noodles, steamed buns, and flatbreads on the table.
 
 The sweet-and-sour carp in the picture curves as if it might leap right off the plate. It may appear at a special meal, but it is not everyday food in every Shandong home. The tofu beside it looks simple, yet broth, heat, and careful cutting can make it taste quite different.
 
@@ -46,7 +46,7 @@ One place can hold the flavors of the sea, the wheat fields, and an ordinary fam
 
 ## Fish, Tea Leaves, and a Surprise
 
-Zhejiang has rivers, lakes, a coastline, and hills covered with tea plants. In Hangzhou, cooks pair tender shrimp with local Dragon Well green tea leaves. Elsewhere, a meal might feature sea fish, bamboo shoots, rice wine, or vegetables that have just come into season.
+Zhejiang has rivers, lakes, a coastline, and hills covered with tea plants. In [[Hangzhou|hangzhou]], cooks pair tender shrimp with local Dragon Well green tea leaves. Elsewhere, a meal might feature sea fish, bamboo shoots, rice wine, or vegetables that have just come into season.
 
 Zhejiang also holds a surprise. Some of China's earliest written records of chili peppers come from this coastal area. Yet Zhejiang food today is not famous for fiery heat. The first place to meet an ingredient does not always become the place that loves it most.
 

@@ -22,17 +22,17 @@
         <div class="story-copy">
           <p class="page-label">Page 1</p>
           <h3>豆腐，还是花生？</h3>
-          <h4>Tofu - or a Peanut?</h4>
+          <h4>Tofu&#8212;or a Peanut?</h4>
           <figure class="floated-figure">
             <img src="./images/first-try-with-tofu.webp" alt="" class="floated-image" />
             <figcaption class="caption floated-caption"><span class="zh">豆腐又滑又软，花生却会滚。两种食物，需要两种不同的力气。</span><br><span class="en">Tofu is soft and slippery, while a peanut likes to roll. Each one needs a different kind of pressure.</span></figcaption>
           </figure>
           <p>桌上放着一块嫩豆腐和一颗花生。你想先夹哪一个？</p>
-          <p>豆腐看起来比较大，可它又滑又软。夹得太松，它会溜走；夹得太紧，它就碎了。花生很硬，却会像一只小轮子一样滚来滚去。筷尖刚碰到它 - 咕噜！它又跑了。</p>
-          <p>原来，用筷子不只是把食物“夹住”。手指还要知道什么时候轻一点，什么时候稳一点。第一次没成功也没关系。把逃跑的花生追回来，再试一次就好。</p>
+          <p>豆腐看起来比较大，可它又滑又软。夹得太松，它会溜走；夹得太紧，它就碎了。花生很硬，却会像一只小轮子一样滚来滚去。筷尖刚碰到它&#8212;&#8212;咕噜！它又跑了。</p>
+          <p>原来，用<span class="glossary-entry"><button type="button" class="glossary-term" aria-expanded="false" aria-controls="glossary-chopsticks-1">筷子</button><span id="glossary-chopsticks-1" class="glossary-popover" role="tooltip">kuàizi · 成对使用、用来夹取食物的细长餐具。</span></span>不只是把食物“夹住”。手指还要知道什么时候轻一点，什么时候稳一点。第一次没成功也没关系。把逃跑的花生追回来，再试一次就好。</p>
           <p>On the table sits a cube of soft tofu and one peanut. Which would you pick up first?</p>
-          <p>The tofu looks easier because it is bigger, but it is soft and slippery. Hold it too loosely and it slides away. Squeeze too hard and - squish! - it breaks. The peanut is firm, but it rolls like a tiny wheel. The tips touch it, and away it goes.</p>
-          <p>Using chopsticks is not only about “grabbing” food. Your fingers must learn when to be gentle and when to be steady. If the first try does not work, chase down that runaway peanut and try again.</p>
+          <p>The tofu looks easier because it is bigger, but it is soft and slippery. Hold it too loosely and it slides away. Squeeze too hard and&#8212;squish!&#8212;it breaks. The peanut is firm, but it rolls like a tiny wheel. The tips touch it, and away it goes.</p>
+          <p>Using <span class="glossary-entry"><button type="button" class="glossary-term" aria-expanded="false" aria-controls="glossary-chopsticks-2">chopsticks</button><span id="glossary-chopsticks-2" class="glossary-popover" role="tooltip">kuàizi · 筷子 · A pair of slender eating utensils used together to lift food.</span></span> is not only about “grabbing” food. Your fingers must learn when to be gentle and when to be steady. If the first try does not work, chase down that runaway peanut and try again.</p>
         </div>
       </section>
 
@@ -113,7 +113,8 @@
             if (!button || !popover) return;
 
             const margin = 12;
-            const gap = 10;
+            const compactViewport = window.matchMedia("(max-width: 900px)").matches;
+            const gap = compactViewport ? 8 : 10;
             const buttonRect = button.getBoundingClientRect();
             const popoverRect = popover.getBoundingClientRect();
             const halfWidth = popoverRect.width / 2;
@@ -122,10 +123,12 @@
             const maxCenter = window.innerWidth - margin - halfWidth;
             const left = Math.min(Math.max(buttonCenter, minCenter), maxCenter);
 
-            let side = "above";
-            let top = buttonRect.top - popoverRect.height - gap;
+            let side = compactViewport ? "below" : "above";
+            let top = side === "below"
+              ? buttonRect.bottom + gap
+              : buttonRect.top - popoverRect.height - gap;
 
-            if (top < margin) {
+            if (side === "above" && top < margin) {
               side = "below";
               top = buttonRect.bottom + gap;
             }

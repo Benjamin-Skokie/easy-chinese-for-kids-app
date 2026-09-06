@@ -6,7 +6,7 @@
 
 Imagine that someone places a scroll more than two thousand years old in your hands. It does not begin, “Once there was a hero.” Instead, it gives you a road: start at this mountain, travel east, and you will reach another mountain. What trees grow there? Where does the river go? What animal hides behind the rocks?
 
-This scroll is *Shan Hai Jing*, the *Classic of Mountains and Seas*. One person did not sit down and write it all at once. Over a long time, different people gathered descriptions of mountains, ceremonies, old tales, and strange reports. No one now knows the names of the first writers.
+This scroll is [[Shan Hai Jing|shan-hai-jing]], the *Classic of Mountains and Seas*. One person did not sit down and write it all at once. Over a long time, different people gathered descriptions of mountains, ceremonies, old tales, and strange reports. No one now knows the names of the first writers.
 
 The names are lost, but the road remains. Follow the directions and you may find jade on a mountain, copper at its foot, or a fish with wings in the water.
 
@@ -28,9 +28,9 @@ Keep traveling east until you reach Qingqiu Mountain. A baby's cry comes from th
 
 ## Why Does the Little Bird of Fajiu Mountain Fly Toward the Sea?
 
-On northern Fajiu Mountain lives a bird about the size of a crow. She has a patterned head, a white beak, and red feet. As she flies over the valley, her call sounds like her own name: “Jingwei! Jingwei!”
+On northern Fajiu Mountain lives a bird about the size of a crow. She has a patterned head, a white beak, and red feet. As she flies over the valley, her call sounds like her own name: “[[Jingwei|jingwei]]! Jingwei!”
 
-[[Jingwei]] was not always a bird. She was once a young girl, the daughter of the Flame Emperor. One day she went to the Eastern Sea, drowned, and never returned home. Afterward, she became this little bird.
+Jingwei was not always a bird. She was once a young girl, the daughter of the Flame Emperor. One day she went to the Eastern Sea, drowned, and never returned home. Afterward, she became this little bird.
 
 Every day, Jingwei picks up a twig or a small stone from the western mountains. Then she flies over the Eastern Sea and drops it into the waves. She means to fill the sea that took her life, one tiny piece at a time. The next day, she returns for one more. The stones are tiny and the sea is enormous, but she does not stop.
 
@@ -40,10 +40,10 @@ One stone disappears beneath the waves. Jingwei turns around and flies back towa
 
 ## If You Drew the Next Mountain, What Would Live There?
 
-After reading about the nine-tailed fox and Jingwei, a child spreads paper across a table. On the left she draws a mountain covered with blue grass. On the right she adds a river that flows backward. Now who should live there?
+After reading about the nine-tailed fox and Jingwei, a boy opens an illustrated book about *Shan Hai Jing* and places his own sketchbook beside it. Among the mountains on the open page stands a horned, scaly, four-legged creature with a curling tail. It looks a little like a dragon. He studies it for a moment and picks up his pencil.
 
-She begins with an owl's eyes. Then she adds a deer's legs, a fish's tail, and two ears shaped like leaves. The new creature hides behind rocks. Its tail glows in the rain, and its call sounds like three cups tapping together.
+He begins with a long face and pointed horns. Then he adds a scaled body, four clawed feet, and a curling tail. The creature in his sketchbook resembles the one in the book, but it is not exactly the same. He is giving his new creature a shape of its own.
 
-This animal is not in the old *Shan Hai Jing*. Yet it seems able to step through the door that the book opened. Many creatures in the ancient text appear in a similar way: familiar animals are joined together, then given a sound no one expects and one very strange ability.
+This creature may not have a name in the old *Shan Hai Jing*. Yet it seems able to step through the door that the book opened. Many creatures in the ancient text appear in a similar way: familiar animals are joined together, then given a sound no one expects and one very strange ability.
 
 A wide part of the map is still blank. The next mountain might be red, or it might float above the clouds. What waits behind it? You will not know until you keep drawing the road.

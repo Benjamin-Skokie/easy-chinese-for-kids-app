@@ -8,13 +8,13 @@ Take a bite of an apple. Your tongue tastes sweet and sour. Your nose catches th
 
 Modern science often names five basic tastes: sweet, sour, bitter, salty, and umami, or savory. Smell adds aroma, while the mouth also feels temperature and texture. Take one part away and the same food may seem different.
 
-Long ago, Chinese writers often talked about five flavors: sour, sweet, bitter, salty, and a sharp, lively flavor called *la*. Ginger, scallions, and Sichuan pepper could all be *la*. It is an old way of thinking about food, not exactly the same as a modern science chart.
+Long ago, Chinese writers often talked about five flavors: sour, sweet, bitter, salty, and a sharp, lively flavor called *la*. Ginger, scallions, and [[Sichuan|sichuan]] pepper could all be *la*. It is an old way of thinking about food, not exactly the same as a modern science chart.
 
 ---
 
 ## Why Do Shanxi Vinegar Noodles Smell So Good?
 
-Shanxi is a province in northern China. It is known for many kinds of noodles and for vinegar made from grain. When a hot bowl of noodles reaches the table, some people stir in a little dark vinegar.
+[[Shanxi|shanxi]] is a province in northern China. It is known for many kinds of noodles and for vinegar made from grain. When a hot bowl of noodles reaches the table, some people stir in a little dark vinegar.
 
 Before the first bite, a rich, sour smell rises with the steam. Then the tongue tastes sour and salty while the mouth feels the warm, chewy noodles. Vinegar brings more than sourness. Its aroma is an important part of the bowl.
 
@@ -24,7 +24,7 @@ One person may love plenty of vinegar. Another may add only a few drops. Someone
 
 ## Why Are Wuxi Ribs Sweet?
 
-Wuxi is a city in eastern China. One of its well-known dishes is sauced pork ribs. The ribs are reddish brown, the meat is cooked until tender, and the sauce has a clear sweetness.
+[[Wuxi|wuxi]] is a city in eastern China. One of its well-known dishes is sauced pork ribs. The ribs are reddish brown, the meat is cooked until tender, and the sauce has a clear sweetness.
 
 To make the dish, cooks slowly simmer the ribs with sugar, soy sauce, and spices. Some versions also use Chinese rice wine. As the water cooks away, the sauce becomes thick and coats the ribs. Sugar makes the sauce sweet and glossy. Soy sauce and salt add saltiness, while the spices add aroma.
 
@@ -56,7 +56,7 @@ Chilies first grew in the Americas and reached China a little more than four hun
 
 Umami and saltiness are not the same. Salt gives food a salty taste. Meat broth, mushrooms, and tomatoes can give food a deep, savory taste called *umami*.
 
-The picture shows *yanduxian*, a spring soup from Jiangnan. Jiangnan is a region in eastern China that includes Shanghai and nearby parts of Jiangsu and Zhejiang. To make the soup, cooks gently simmer salted pork, fresh pork, and spring bamboo shoots.
+The picture shows *yanduxian*, a spring soup from [[Jiangnan|jiangnan]]. Jiangnan is a region in eastern China that includes [[Shanghai|shanghai]] and nearby parts of Jiangsu and Zhejiang. To make the soup, cooks gently simmer salted pork, fresh pork, and spring bamboo shoots.
 
 Spring bamboo shoots are at their best for only part of the year. Very fresh shoots can also be harder to find far from places where they grow, so *yanduxian* is less common outside its home region. The shoots soak up the flavor of the salted pork while adding a fresh taste and a tender crunch. The salted pork brings saltiness, the broth brings umami, and the bamboo shoots keep the rich soup from feeling too heavy.
 

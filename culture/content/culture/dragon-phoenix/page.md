@@ -19,12 +19,12 @@ layout: text-only
 heading_zh: 在一场中国婚礼上
 heading_en: At a Chinese Wedding
 [zh]
-在一场中国婚礼上，龙和凤凰常常比客人还早到。它们可能盘在红色请帖上，绣在礼服上，也可能面对面出现在一只瓷碗里。龙长着鳞片、利爪、犄角和弯弯曲曲的长身体；凤凰展开华丽的羽毛，像刚刚从一场盛大的庆典里飞来。
+在一场中国婚礼上，龙和[[凤凰|fenghuang]]常常比客人还早到。它们可能盘在红色请帖上，绣在礼服上，也可能面对面出现在一只瓷碗里。龙长着鳞片、利爪、犄角和弯弯曲曲的长身体；凤凰展开华丽的羽毛，像刚刚从一场盛大的庆典里飞来。
 
 它们明明完全不像，为什么几百年来，中国人总喜欢把它们放在一起？要找到答案，我们先跟着龙走。
 [/zh]
 [en]
-At a Chinese wedding, the dragon and phoenix may arrive before any of the guests. They curl across red invitations, gleam on embroidered cloth, or face each other on a porcelain bowl. The dragon has scales, claws, horns, and a long twisting body. The phoenix spreads a fan of elegant feathers. One looks as if it has just flown in from a thunderstorm. The other looks ready for a royal celebration.
+At a Chinese wedding, the dragon and phoenix may arrive before any of the guests. They curl across red invitations, gleam on embroidered cloth, or face each other on a [[porcelain|porcelain]] bowl. The dragon has scales, claws, horns, and a long twisting body. The phoenix spreads a fan of elegant feathers. One looks as if it has just flown in from a thunderstorm. The other looks ready for a royal celebration.
 
 They are not even the same kind of creature. So why have Chinese artists kept putting them together for centuries? To find the answer, follow the dragon first.
 [/en]
@@ -36,8 +36,8 @@ layout: text-wrap-image
 heading_zh: 云水之间的神兽
 heading_en: A Creature of Clouds and Water
 image: 1-dragon-wall.webp
-caption_zh: 这幅现代插图用宫墙、云纹和波浪表现中国龙与天空、水和皇权的联系；它不是历史照片。
-caption_en: This modern illustration uses a palace wall, clouds, and waves to show the Chinese dragon’s links with sky, water, and imperial power; it is not a historical photograph.
+caption_zh: 宫墙、云纹和波浪表现中国龙与天空、水和皇权的联系。
+caption_en: A palace wall, clouds, and waves show the Chinese dragon's links with sky, water, and imperial power.
 [zh]
 很久以前，中国的龙常常出现在云、水和波浪之间。人们把它和江河、雨水联系在一起。对靠天吃饭的农民来说，一场及时雨可能关系到一年的收成。所以，龙虽然神秘而强大，却不只是让人害怕的怪兽，它还带着人们对风调雨顺的盼望。
 
@@ -56,12 +56,12 @@ layout: text-wrap-image
 heading_zh: 龙走进了皇宫
 heading_en: The Dragon Enters the Palace
 image: 2-dragon-rain-emperor.webp
-caption_zh: 这幅现代分屏插图把龙与雨水、农田和皇帝的象征联系放在一起；它是概念示意，不代表某一位真实皇帝或某一次历史事件。
-caption_en: This modern split illustration connects the dragon with rain, fields, and imperial symbolism; it does not portray a specific emperor or historical event.
+caption_zh: 分屏画面把龙与雨水、农田和皇帝的象征联系放在一起，并不表现某一位具体皇帝或某一次历史事件。
+caption_en: The split scene connects the dragon with rain, fields, and imperial symbolism without portraying a specific emperor or historical event.
 [zh]
 后来，龙又一路进了皇宫。
 
-皇帝的衣服上有龙，宫殿的墙上有龙，瓷器和家具上也有龙。尤其是五爪龙，渐渐成了皇帝的重要象征。一只能穿云入海、掌管雨水的神兽，用来代表天下最有权力的人，气势的确够大。
+皇帝的衣服上有龙，宫殿的墙上有龙，[[瓷器|porcelain]]和家具上也有龙。尤其是五爪龙，渐渐成了皇帝的重要象征。一只能穿云入海、掌管雨水的神兽，用来代表天下最有权力的人，气势的确够大。
 
 于是，龙带来了力量。可是，光有力量，还凑不成一对最吉祥的伙伴。
 [/zh]
@@ -78,8 +78,8 @@ layout: text-wrap-image
 heading_zh: 这时候，凤凰来了
 heading_en: Now the Phoenix Enters
 image: 3-phoenix-auspicious.webp
-caption_zh: 这幅现代插图想象了园林里的凤凰。凤凰是传说中的神鸟，画面并不是对真实动物的记录。
-caption_en: This modern illustration imagines a *fènghuáng* in a garden. The Chinese phoenix is a legendary bird, not a documented animal species.
+caption_zh: 凤凰站在园林花木之间；它是传说中的神鸟，并不是真实动物。
+caption_en: A *fenghuang* stands among garden flowers and trees; the Chinese phoenix is a legendary bird, not a real animal species.
 [zh]
 这时候，凤凰来了。中国的凤凰和西方传说里“浴火重生”的凤凰并不是同一种神鸟。在中国古人的想象里，凤凰是百鸟中最尊贵的神鸟。传说只有在天下太平、生活兴盛、出现贤明君主的时候，它才会出现。
 
@@ -88,7 +88,7 @@ caption_en: This modern illustration imagines a *fènghuáng* in a garden. The C
 在皇宫里，凤凰也常常和皇后联系在一起。这时候，再看那些龙凤图案，就明白了。
 [/zh]
 [en]
-Now the phoenix enters. The Chinese phoenix, or *fènghuáng*, is different from the phoenix that burns and rises again from its ashes in stories from other parts of the world. In Chinese tradition, the *fènghuáng* was imagined as the noblest of birds. It was said to appear in times of peace and prosperity, especially under a good ruler.
+Now the phoenix enters. The [[Chinese phoenix|fenghuang]] is different from the phoenix that burns and rises again from its ashes in stories from other parts of the world. In Chinese tradition, this legendary bird was imagined as the noblest of birds. It was said to appear in times of peace and prosperity, especially under a good ruler.
 
 Artists gave it a look to match: a graceful body, a splendid crest, and long flowing feathers. If the dragon seemed to bring the rumble of clouds, the phoenix brought the feeling of a garden after the storm—bright, calm, and full of promise.
 
@@ -123,8 +123,8 @@ layout: text-wrap-image
 heading_zh: 这对伙伴留了下来
 heading_en: The Pair Lives On
 image: 4-dragon-phoenix-today.webp
-caption_zh: 这幅现代组合插图展示舞龙和凤纹婚服，是龙凤进入当代庆典生活的概括示意，并非同一场活动的纪实画面。
-caption_en: This modern composite illustration shows a dragon dance and a phoenix wedding garment as two present-day uses of the symbols; it is not a documentary view of one event.
+caption_zh: 舞龙和凤纹婚服并排出现，展示龙凤图案在当代庆典中的两种用法。
+caption_en: A dragon dance and a phoenix wedding garment show two present-day uses of these symbols.
 [zh]
 许多年过去，皇帝和皇后的时代结束了，可龙和凤凰没有消失。今天的婚礼上，红色和金色的图案里仍然可能看见它们。它们甚至跑进了日常语言：如果一对双胞胎刚好是一个男孩、一个女孩，人们有时会高兴地叫他们“龙凤胎”。
 [/zh]
