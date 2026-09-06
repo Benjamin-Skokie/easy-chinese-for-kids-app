@@ -22,7 +22,7 @@ image: 1-fisherman-in-snow.webp
 caption_zh: 山上没有飞鸟，路上没有行人，雪江上却还有一只小船。
 caption_en: No birds in the mountains. No travelers on the paths. Yet one small boat is still on the snowy river.
 [zh]
-一千多年前的[[唐朝]]，诗人会写雪、月亮、朋友、破掉的屋顶，还有离家很远的路。我们先从最安静的一幅画开始。
+一千多年前的[[唐朝|tang-dynasty]]，诗人会写雪、月亮、朋友、破掉的屋顶，还有离家很远的路。我们先从最安静的一幅画开始。
 
 唐朝诗人柳宗元只用二十个字，就写出了一整片冬日雪景。这首诗叫《江雪》。先别急着“分析”，看看它怎样把镜头一步一步拉近。
 
@@ -33,7 +33,7 @@ caption_en: No birds in the mountains. No travelers on the paths. Yet one small 
 “千山”和“万径”不是要我们真的数山和路。它们让眼前的空旷变得大极了。前两句把飞鸟和行人都移出画面，后两句才让小船和老人出现。他觉得孤单吗？他很平静吗？还是他偏偏不肯被一场大雪赶回家？诗没有替我们回答。这正是它好玩的地方。
 [/zh]
 [en]
-More than 1,000 years ago, during China's [[Tang dynasty]], poets wrote about snow, moonlight, friends, broken roofs, and roads far from home. Let us begin with the quietest picture of all.
+More than 1,000 years ago, during China's [[Tang dynasty|tang-dynasty]], poets wrote about snow, moonlight, friends, broken roofs, and roads far from home. Let us begin with the quietest picture of all.
 
 One Tang poet, Liu Zongyuan, created an entire winter scene with only twenty Chinese characters. His poem is called *River Snow*. Watch how it begins far away, then moves closer.
 
@@ -51,8 +51,8 @@ layout: text-wrap-image
 heading_zh: 第二幅画：一场有诗的聚会
 heading_en: Picture Two: A Party with Poems
 image: 2-tang-poetry-gathering.webp
-caption_zh: 这幅现代想象图里，朋友们一边喝酒聊天，一边等着听下一句好诗。
-caption_en: In this modern imagined scene, friends talk over cups of wine and wait to hear the next good line.
+caption_zh: 朋友们一边喝酒聊天，一边等着听下一句好诗。
+caption_en: Friends talk over cups of wine and wait to hear the next good line.
 [zh]
 这幅图看起来像一场聚会，因为它就是一场聚会。有酒有菜，有音乐和聊天。有些聚会上还会有人出题、选韵，大家当场作诗。一句写得特别妙，旁边的人可能会拍手叫好。
 
@@ -82,7 +82,7 @@ image: 3-li-bai-and-du-fu.webp
 caption_zh: 李白请月亮来喝酒；杜甫的茅草屋顶却被秋风吹走了。
 caption_en: Li Bai invites the moon for a drink, while an autumn wind tears the straw from Du Fu's roof.
 [zh]
-李白和杜甫是朋友，也是唐朝最有名的两位诗人。他们都写过许多种诗，不过下面这两个瞬间，刚好能让我们看见他们的诗有多么不同。
+[[李白|li-bai]]和[[杜甫|du-fu]]是朋友，也是唐朝最有名的两位诗人。他们都写过许多种诗，不过下面这两个瞬间，刚好能让我们看见他们的诗有多么不同。
 
 李白一个人坐在月下喝酒，听起来有点冷清。可是他一抬杯，奇妙的事情发生了：
 
@@ -97,7 +97,7 @@ caption_en: Li Bai invites the moon for a drink, while an autumn wind tears the 
 他盼望有千千万万间结实的屋子，让每个受冻的人都能住进去，露出笑脸。李白请月亮来陪自己，杜甫的屋顶飞了，却还在惦记别人的屋顶。诗可以跳进想象里，也可以把心伸向别人。
 [/zh]
 [en]
-Li Bai and Du Fu were friends, and they became two of the most famous Tang poets. Both wrote many kinds of poems, but these two moments show just how different poems can feel.
+[[Li Bai|li-bai]] and [[Du Fu|du-fu]] were friends, and they became two of the most famous Tang poets. Both wrote many kinds of poems, but these two moments show just how different poems can feel.
 
 Li Bai is sitting alone under the moon with a cup of wine. That sounds quiet until he lifts his cup and something magical happens: *I lift my cup and invite the bright moon. With my shadow, now we are three.*
 
@@ -149,11 +149,11 @@ heading_en: Which Picture Stayed with You?
 [zh]
 合上这一页，看看哪些画面还留在脑海里：大雪中的一个渔翁，朋友出发前的最后一杯酒，被李白请来的月亮，被秋风吹走的屋顶，还有西北边地一夜“开满”的白色梨花。
 
-唐诗并不都像一个样子。它可以安静、好笑、难过、温暖，也可以忽然变得很狂野。它的字很古老，最好的画面却还是会一下子跳到我们眼前。你最想走进哪一幅？哪一幅你只想躲在暖和的屋子里看？
+[[唐诗|tang-poetry]]并不都像一个样子。它可以安静、好笑、难过、温暖，也可以忽然变得很狂野。它的字很古老，最好的画面却还是会一下子跳到我们眼前。你最想走进哪一幅？哪一幅你只想躲在暖和的屋子里看？
 [/zh]
 [en]
 Close the page and see what remains: one fisherman in the snow, a final cup before a friend leaves, the moon invited to Li Bai's party, a roof torn away by the wind, and a faraway land where snow “blooms” like white pear flowers.
 
-Tang poems do not all sound alike. They can be still, funny, sad, warm, or suddenly wild. Their words are old, but their best pictures still appear in a flash. Which picture would you step into? Which one would you rather watch from somewhere warm?
+[[Tang poems|tang-poetry]] do not all sound alike. They can be still, funny, sad, warm, or suddenly wild. Their words are old, but their best pictures still appear in a flash. Which picture would you step into? Which one would you rather watch from somewhere warm?
 [/en]
 [/ending]

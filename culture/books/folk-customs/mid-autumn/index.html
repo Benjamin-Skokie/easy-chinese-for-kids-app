@@ -27,10 +27,10 @@
             <img src="./images/family-moon-viewing.webp" alt="" class="floated-image" />
             <figcaption class="caption floated-caption"><span class="zh">中秋夜，一家人分享月饼，也一起抬头看圆圆的月亮。</span><br><span class="en">On Mid-Autumn night, a family shares mooncakes and looks up at the round moon together.</span></figcaption>
           </figure>
-          <p>中秋节在中国传统历法的八月十五。到了晚上，很多家庭会坐在一起看圆月、吃月饼。圆月和圆圆的月饼都象征着“团圆”，也就是一家人相聚在一起。</p>
+          <p><span class="glossary-entry"><button type="button" class="glossary-term" aria-expanded="false" aria-controls="glossary-mid-autumn-festival-1">中秋节</button><span id="glossary-mid-autumn-festival-1" class="glossary-popover" role="tooltip">Zhōngqiū Jié · 农历八月十五赏月团聚的传统节日。</span></span>在中国传统历法的八月十五。到了晚上，很多家庭会坐在一起看圆月、吃月饼。圆月和圆圆的月饼都象征着“团圆”，也就是一家人相聚在一起。</p>
           <p>不过，这轮月亮还装着许多故事。中秋的晚上，如果天气晴朗，抬头仔细看看圆圆的月亮。明亮的月面上，是不是有一块一块深色的影子？</p>
           <p>很久以前，中国人望着这些月影，想象出了各种各样的形状。有人觉得，那里好像长着一棵巨大的树。树下还站着<strong>一个曾经学习成仙的人</strong>。他的名字叫<strong>吴刚</strong>。</p>
-          <p>Mid-Autumn Festival falls on the fifteenth day of the eighth month in the traditional Chinese calendar. At night, many families sit together, look at the full moon, and share mooncakes. The round moon and round mooncakes both symbolize family reunion.</p>
+          <p><span class="glossary-entry"><button type="button" class="glossary-term" aria-expanded="false" aria-controls="glossary-mid-autumn-festival-2">Mid-Autumn Festival</button><span id="glossary-mid-autumn-festival-2" class="glossary-popover" role="tooltip">Zhōngqiū Jié · 中秋节 · The traditional festival of family reunion and moon viewing on the fifteenth day of the eighth lunar month.</span></span> falls on the fifteenth day of the eighth month in the traditional Chinese calendar. At night, many families sit together, look at the full moon, and share mooncakes. The round moon and round mooncakes both symbolize family reunion.</p>
           <p>But this moon holds many stories, too. On a clear Mid-Autumn night, look closely at the full moon. Do you see the darker patches across its bright surface?</p>
           <p>Long ago, people in China looked at those shadows and imagined all kinds of shapes. Some thought they could see a giant tree. Beneath it stood <strong>a man who had once tried to learn the ways of the immortals</strong>. His name was <strong>Wu Gang</strong>.</p>
         </div>
@@ -64,7 +64,7 @@
           <h3>月亮上的“咚咚”声</h3>
           <h4>Thump, Thump, Thump</h4>
           <div class="zh">
-            <p>不过，人们想象中的月亮上，可不只有吴刚一个人在忙。如果你读过<a class="story-link" href="../../folk-tales/chang-e-moon/index.html">我们讲嫦娥奔月的那篇故事</a>，也许已经注意到嫦娥身边还有一只白兔。中国人叫它<strong>玉兔</strong>。</p>
+            <p>不过，人们想象中的月亮上，可不只有吴刚一个人在忙。如果你读过<a class="story-link" href="../../folk-tales/chang-e-moon/index.html">我们讲嫦娥奔月的那篇故事</a>，也许已经注意到<span class="glossary-entry"><button type="button" class="glossary-term" aria-expanded="false" aria-controls="glossary-chang-e-3">嫦娥</button><span id="glossary-chang-e-3" class="glossary-popover" role="tooltip">Cháng'é · 中国神话中飞到月亮上的人物。</span></span>身边还有一只白兔。中国人叫它<strong>玉兔</strong>。</p>
           <p>玉兔又在忙什么呢？<strong>咚。咚。咚。</strong> 它正拿着药杵捣药，而且不是普通的药。</p>
           <p>中国古代有许多关于仙药的故事。人们想象，有些神奇的药可以让人活得非常久，甚至帮助人成为仙人。一首很古老的歌里，就写到一只白兔正在捣这样的仙药，做好以后把药献给皇帝。</p>
           <p>那么，玉兔是在专门给嫦娥做药吗？在我们今天能找到的早期故事里，并不是这样。</p>
@@ -73,7 +73,7 @@
             <p>But he is not the only busy figure people imagined on the moon. If you have read <a class="story-link" href="../../folk-tales/chang-e-moon/index.html">our story about Chang’e</a>, you may already have noticed a white rabbit beside her. Chinese stories call it the <strong>Jade Rabbit</strong>.</p>
           <p>And what is the rabbit doing? <strong>Thump. Thump. Thump.</strong> It is pounding medicine with a pestle. Not ordinary medicine, either.</p>
           <p>Ancient Chinese stories often told of magical medicines that could give someone an extraordinarily long life&#8212;or even help a person become an immortal. In one very old song, a white rabbit pounds such a medicine and offers it to the emperor.</p>
-          <p>So was the Jade Rabbit making medicine especially for Chang’e? Not in the earliest stories we know.</p>
+          <p>So was the Jade Rabbit making medicine especially for <span class="glossary-entry"><button type="button" class="glossary-term" aria-expanded="false" aria-controls="glossary-chang-e-4">Chang’e</button><span id="glossary-chang-e-4" class="glossary-popover" role="tooltip">Cháng'é · 嫦娥 · The woman who flies to the moon in a famous Chinese legend.</span></span>? Not in the earliest stories we know.</p>
           </div>
         </div>
       </section>
@@ -124,7 +124,8 @@
             if (!button || !popover) return;
 
             const margin = 12;
-            const gap = 10;
+            const compactViewport = window.matchMedia("(max-width: 900px)").matches;
+            const gap = compactViewport ? 8 : 10;
             const buttonRect = button.getBoundingClientRect();
             const popoverRect = popover.getBoundingClientRect();
             const halfWidth = popoverRect.width / 2;
@@ -133,10 +134,12 @@
             const maxCenter = window.innerWidth - margin - halfWidth;
             const left = Math.min(Math.max(buttonCenter, minCenter), maxCenter);
 
-            let side = "above";
-            let top = buttonRect.top - popoverRect.height - gap;
+            let side = compactViewport ? "below" : "above";
+            let top = side === "below"
+              ? buttonRect.bottom + gap
+              : buttonRect.top - popoverRect.height - gap;
 
-            if (top < margin) {
+            if (side === "above" && top < margin) {
               side = "below";
               top = buttonRect.bottom + gap;
             }

@@ -22,16 +22,16 @@ image: 1-broken-bridge-umbrella.webp
 caption_zh: 西湖边忽然下起雨，许仙把伞举到白素贞头顶。站在一旁的小青悄悄笑了。
 caption_en: Rain falls by West Lake, and Xu Xian holds his umbrella over Bai Suzhen. Xiaoqing watches with a secret smile.
 [zh]
-很久以前，一条小白蛇差点被人捉走，一个善良的小男孩救了它。许多年过去，小白蛇学会法术，变成了一位穿白衣的女子，名叫白素贞。她一直记得那个孩子，想去人间找到他、谢谢他。故事说，小男孩后来重新出生，长大后成了许仙。
+很久以前，一条小白蛇差点被人捉走，一个善良的小男孩救了它。许多年过去，小白蛇学会法术，变成了一位穿白衣的女子，名叫[[白素贞|bai-suzhen]]。她一直记得那个孩子，想去人间找到他、谢谢他。故事说，小男孩后来重新出生，长大后成了[[许仙|xu-xian]]。
 
-陪白素贞来到人间的，还有小青。小青原本是一条青蛇，也能变成人。她勇敢、爽快，有时候脾气还有一点急。两个人像姐妹一样，一路来到杭州西湖寻找许仙。
+陪白素贞来到人间的，还有[[小青|xiaoqing]]。小青原本是一条青蛇，也能变成人。她勇敢、爽快，有时候脾气还有一点急。两个人像姐妹一样，一路来到[[杭州|hangzhou]][[西湖|west-lake]]寻找许仙。
 
 春雨忽然落下时，她们正走到一座名叫“断桥”的石桥上。桥其实好好的，并没有断。白素贞和小青没有带伞，许仙便把自己的伞举到她们头顶。白素贞认出了他。小青看看许仙，又看看白素贞，忍不住偷偷笑了起来。借来的伞，也给了他们第二次见面的理由。
 [/zh]
 [en]
-Long ago, a kind boy saved a small white snake from being caught. Many years passed. The snake learned magic and took the shape of a woman named Bai Suzhen. She never forgot the boy and went to the human world to thank him. In this version of the tale, the boy had been born again and was now a young man named Xu Xian.
+Long ago, a kind boy saved a small white snake from being caught. Many years passed. The snake learned magic and took the shape of a woman named [[Bai Suzhen|bai-suzhen]]. She never forgot the boy and went to the human world to thank him. In this version of the tale, the boy had been born again and was now a young man named [[Xu Xian|xu-xian]].
 
-Bai Suzhen did not travel alone. Her friend Xiaoqing came with her. Xiaoqing was a green snake who could also take human form. She was brave, quick to speak, and sometimes quick to lose her temper. The two were as close as sisters, and their search brought them to West Lake in Hangzhou.
+Bai Suzhen did not travel alone. Her friend [[Xiaoqing|xiaoqing]] came with her. Xiaoqing was a green snake who could also take human form. She was brave, quick to speak, and sometimes quick to lose her temper. The two were as close as sisters, and their search brought them to [[West Lake|west-lake]] in [[Hangzhou|hangzhou]].
 
 Spring rain began to fall just as they reached a stone bridge called Broken Bridge. Despite its name, the bridge was not broken. The women had no umbrella, so Xu Xian held his over them. Bai Suzhen knew at once that he was the boy she had come to find. Xiaoqing looked at Xu Xian, then at Bai Suzhen, and hid a smile. The borrowed umbrella gave them a reason to meet again.
 [/en]
@@ -48,16 +48,16 @@ caption_en: Bai Suzhen reads the recipes, Xu Xian mixes the medicine, and Xiaoqi
 [zh]
 许仙来取伞时，两个人越谈越喜欢彼此。后来，白素贞和许仙成了亲。他们开了一间药铺：白素贞熟悉各种草药，许仙认真配药，小青则忙着称药、拿药，还要把排错队的人叫回来。
 
-日子一天天过去，三个人帮助了许多生病的人。可是有一位名叫法海的和尚发现了白素贞的秘密。和尚是在寺庙里生活和修行的人。法海认为蛇变成的人不应该和普通人组成家庭，便一次又一次警告许仙。
+日子一天天过去，三个人帮助了许多生病的人。可是有一位名叫[[法海|fahai]]的和尚发现了白素贞的秘密。和尚是在寺庙里生活和修行的人。法海认为蛇变成的人不应该和普通人组成家庭，便一次又一次警告许仙。
 
-端午节到了。古时候，人们会在这一天喝一种叫作雄黄酒的特别节日酒，还以为它能赶走蛇虫。法海让许仙请白素贞喝一杯。白素贞不想让许仙怀疑，只好喝了一口。她立刻变回大白蛇。许仙吓得倒在地上，再也叫不醒了。
+[[端午节|dragon-boat-festival]]到了。古时候，人们会在这一天喝一种叫作雄黄酒的特别节日酒，还以为它能赶走蛇虫。法海让许仙请白素贞喝一杯。白素贞不想让许仙怀疑，只好喝了一口。她立刻变回大白蛇。许仙吓得倒在地上，再也叫不醒了。
 [/zh]
 [en]
 When Xu Xian came to collect his umbrella, he and Bai Suzhen talked and soon fell in love. They married and opened a medicine shop. Bai Suzhen knew many healing herbs, Xu Xian carefully mixed the medicine, and Xiaoqing weighed herbs, helped customers, and called back anyone who stood in the wrong line.
 
-The three helped many sick people. But a monk named Fahai discovered Bai Suzhen's secret. A monk is a religious man who lives and studies at a temple. Fahai believed that a snake who had taken human form should not live as part of a human family, and he warned Xu Xian again and again.
+The three helped many sick people. But a monk named [[Fahai|fahai]] discovered Bai Suzhen's secret. A monk is a religious man who lives and studies at a temple. Fahai believed that a snake who had taken human form should not live as part of a human family, and he warned Xu Xian again and again.
 
-Then came Dragon Boat Festival. Long ago, people drank a special festival wine called realgar wine. They believed it could keep snakes and insects away. Fahai told Xu Xian to offer a cup to Bai Suzhen. She drank a little so he would not become suspicious. At once, she changed back into a great white snake. Xu Xian was so frightened that he fell to the floor and would not wake up.
+Then came [[Dragon Boat Festival|dragon-boat-festival]]. Long ago, people drank a special festival wine called realgar wine. They believed it could keep snakes and insects away. Fahai told Xu Xian to offer a cup to Bai Suzhen. She drank a little so he would not become suspicious. At once, she changed back into a great white snake. Xu Xian was so frightened that he fell to the floor and would not wake up.
 [/en]
 [/section]
 

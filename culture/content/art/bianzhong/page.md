@@ -85,8 +85,8 @@ layout: text-wrap-image
 heading_zh: 钟上真的有字
 heading_en: The Bells Have Labels
 image: 3-bell-inscriptions-closeup.webp
-caption_zh: 这是一张表现钟上铭文的教学插画；画中文字并不是曾侯乙编钟铭文的准确摹本。
-caption_en: This teaching illustration represents inscriptions on a bell; its characters are not an exact transcription of the Marquis Yi bells.
+caption_zh: 钟面上的文字表现编钟铭文；这些字并不是曾侯乙编钟铭文的准确摹本。
+caption_en: The characters on the bell represent bell inscriptions; they are not an exact transcription of the Marquis Yi bells.
 [zh]
 凑近看，青铜钟上刻着一行行古老的文字。钟、钟架和挂钟的部件上，一共留下了 3,755 个字。
 
@@ -121,7 +121,7 @@ layout: text-only
 heading_zh: 那我们今天听见的是什么？
 heading_en: So What Are We Hearing Today?
 [zh]
-真正的曾侯乙编钟现在是珍贵的博物馆文物。反复敲击会带来损伤的风险，所以研究人员仔细测量原钟的大小和形状，研究青铜材料、钟体结构和声音，再和工匠一起制作出一整套复制编钟。
+真正的曾侯乙[[编钟|bianzhong]]现在是珍贵的博物馆文物。反复敲击会带来损伤的风险，所以研究人员仔细测量原钟的大小和形状，研究青铜材料、钟体结构和声音，再和工匠一起制作出一整套复制编钟。
 
 复制品就可以真正演奏了。
 

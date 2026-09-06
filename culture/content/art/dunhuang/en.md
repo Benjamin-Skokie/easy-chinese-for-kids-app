@@ -4,7 +4,7 @@
 
 ## A Painted World in the Desert
 
-Travel west across northwestern China, and the land around Dunhuang can look dry and almost empty. Sand, gravel, cliffs, and a patch of green oasis sit where old routes once connected China with Central Asia and places much farther west.
+Travel west across northwestern China, and the land around [[Dunhuang|dunhuang]] can look dry and almost empty. Sand, gravel, cliffs, and a patch of green oasis sit where old routes once connected China with Central Asia and places much farther west.
 
 Then you reach a cliff near the oasis. It is full of openings.
 
@@ -48,7 +48,7 @@ To paint a field, they used fields they knew. To paint a cart, they used carts t
 
 Not quite. A photograph records light from something that was in front of a camera. A mural records what an artist chose to paint.
 
-At Mogao, the same wall can mix things from very different kinds of worlds. A farmer may show us a real kind of plow. A donor portrait may show real clothing. A camel cart may resemble vehicles used on the Silk Roads.
+At Mogao, the same wall can mix things from very different kinds of worlds. A farmer may show us a real kind of plow. A donor portrait may show real clothing. A camel cart may resemble vehicles used on the [[Silk Roads|silk-road]].
 
 But beside them, heavenly beings fly through the air. A nine-colored deer appears in a Buddhist story. Palaces may represent an imagined paradise. Those are not proof that people once saw flying beings or magical deer in the desert.
 

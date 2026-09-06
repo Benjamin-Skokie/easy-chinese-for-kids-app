@@ -27,11 +27,11 @@
             <img src="./images/no-trees-outer-court.webp" alt="" class="floated-image" />
             <figcaption class="caption floated-caption"><span class="zh">宽阔的院子和一道道宫门，让皇宫看起来庄严又气派。</span><br><span class="en">Wide courtyards and one gate after another made the palace feel grand and important.</span></figcaption>
           </figure>
-          <p>在北京城中心，有一片红墙和金色屋顶。远远看去，它不太像一座房子，更像一座被围起来的小城。这就是故宫。六百多年前，它是皇帝居住和处理国家大事的皇宫。</p>
+          <p>在北京城中心，有一片红墙和金色屋顶。远远看去，它不太像一座房子，更像一座被围起来的小城。这就是<span class="glossary-entry"><button type="button" class="glossary-term" aria-expanded="false" aria-controls="glossary-forbidden-city-1">故宫</button><span id="glossary-forbidden-city-1" class="glossary-popover" role="tooltip">Gùgōng · 北京明清两代的皇宫建筑群。</span></span>。六百多年前，它是皇帝居住和处理国家大事的皇宫。</p>
           <p>故宫里不只有皇帝一家。侍卫守着宫门，厨师准备饭菜，工匠修屋顶，官员来到大殿办事。还有许多人照顾花园、马匹、衣服和书画。要让这样大的皇宫每天运转，需要许多人一起工作。</p>
           <p>过去，人们也叫这里紫禁城（Zǐjìnchéng）。“紫”是紫色的“紫”。古人把天空中与天帝有关的一组星星叫“紫微垣”，所以“紫”也让人想到皇帝的宫殿。“禁”说明普通人不能随便进去。在古汉语里，“城”指有城墙围住的地方；今天说“城市”时，我们通常不会再想到那堵墙。合起来，这个名字告诉人们：这里是皇帝居住、守卫森严的宫城。</p>
           <p>今天，这里是故宫博物院。普通游客也能走过从前守卫森严的宫门了。</p>
-          <p>In the center of Beijing stands a sea of red walls and golden roofs. From far away, it looks less like one house and more like a small city behind walls. This is the Forbidden City. More than six hundred years ago, it was a palace where emperors lived and ran the country.</p>
+          <p>In the center of Beijing stands a sea of red walls and golden roofs. From far away, it looks less like one house and more like a small city behind walls. This is the <span class="glossary-entry"><button type="button" class="glossary-term" aria-expanded="false" aria-controls="glossary-forbidden-city-2">Forbidden City</button><span id="glossary-forbidden-city-2" class="glossary-popover" role="tooltip">Gùgōng · 故宫 · The enormous imperial palace complex in Beijing used during the Ming and Qing dynasties.</span></span>. More than six hundred years ago, it was a palace where emperors lived and ran the country.</p>
           <p>The emperor's family was not alone there. Guards watched the gates. Cooks prepared meals. Craftspeople repaired roofs. Officials came to work in the great halls. Many other people cared for gardens, horses, clothing, books, and paintings. It took a great many people to keep such a huge palace running.</p>
           <p>In Chinese, its old name is 紫禁城 (<em>Zǐjìnchéng</em>). The first character, 紫 (<em>zǐ</em>), means “purple.” Ancient Chinese people connected it with a group of stars where they believed the ruler of heaven lived, so it also brought an emperor's palace to mind. 禁 (<em>jìn</em>) means “forbidden” or “closely guarded.” In older Chinese, 城 (<em>chéng</em>) meant a city or settlement surrounded by a wall. Today, the same character in 城市 (<em>chéngshì</em>) simply means “city.” Together, the old name tells us that this was the emperor's closely guarded palace city.</p>
           <p>Today, it is the Palace Museum. Ordinary visitors can walk through gates that were once closely guarded.</p>
@@ -81,7 +81,7 @@
           <h4>Even a Palace Needed Shade</h4>
           <figure class="floated-figure">
             <img src="./images/imperial-garden.webp" alt="" class="floated-image" />
-            <figcaption class="caption floated-caption"><span class="zh">御花园里有古树、假山和亭子，与前面开阔的大院子很不一样。</span><br><span class="en">The Imperial Garden has old trees, rocks, and pavilions - a sharp change from the wide courtyards in front.</span></figcaption>
+            <figcaption class="caption floated-caption"><span class="zh">御花园里有古树、假山和亭子，与前面开阔的大院子很不一样。</span><br><span class="en">The Imperial Garden has old trees, rocks, and pavilions&#8212;a sharp change from the wide courtyards in front.</span></figcaption>
           </figure>
           <p>故宫前面的大院子非常开阔。这里要站下许多人，还要举行庄严的仪式，所以地面不能被一排排树木挡住。站在院子里，你会觉得大殿很高，自己很小。</p>
           <p>可是一直向北走，景色会突然改变。御花园里有弯曲的小路、古树、奇石和小亭子。夏天有树荫，冬天能看见枝条和屋顶交错在一起。皇宫不只有公开的大仪式，也有人散步、休息和过日子的地方。</p>
@@ -138,7 +138,8 @@
             if (!button || !popover) return;
 
             const margin = 12;
-            const gap = 10;
+            const compactViewport = window.matchMedia("(max-width: 900px)").matches;
+            const gap = compactViewport ? 8 : 10;
             const buttonRect = button.getBoundingClientRect();
             const popoverRect = popover.getBoundingClientRect();
             const halfWidth = popoverRect.width / 2;
@@ -147,10 +148,12 @@
             const maxCenter = window.innerWidth - margin - halfWidth;
             const left = Math.min(Math.max(buttonCenter, minCenter), maxCenter);
 
-            let side = "above";
-            let top = buttonRect.top - popoverRect.height - gap;
+            let side = compactViewport ? "below" : "above";
+            let top = side === "below"
+              ? buttonRect.bottom + gap
+              : buttonRect.top - popoverRect.height - gap;
 
-            if (top < margin) {
+            if (side === "above" && top < margin) {
               side = "below";
               top = buttonRect.bottom + gap;
             }

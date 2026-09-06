@@ -4,17 +4,17 @@
 
 ## Why Does Qingming Always Come in Spring?
 
-Many Chinese holidays follow the moon, so their dates move widely on an everyday calendar. Qingming is different. It is both a festival and one of twenty-four dates that divide the year by season. It follows the sun, usually arriving in early April.
+Many Chinese holidays follow the moon, so their dates move widely on an everyday calendar. [[Qingming|qingming]] is different. It is both a festival and one of twenty-four dates that divide the year by season. It follows the sun, usually arriving in early April.
 
 By then, the air is warmer, more rain is falling, and new leaves and flowers are appearing. For farmers long ago, these changes meant that the busy spring growing season had arrived.
 
-The name *Qīngmíng* suggests something clear and bright. It sounds like spring just after the rain.
+The name *Qingming Festival* suggests something clear and bright. It sounds like spring just after the rain.
 
 ---
 
 ## Bringing Flowers to Remember Family
 
-Qingming began as a date that marked the arrival of spring. A day called the Cold Food Festival came just before it. Long ago, families were already visiting their ancestors' graves at that time of year. The two days were so close that people began to observe them together. More than 1,200 years ago, during the Tang dynasty, the emperor officially allowed families to visit graves during these spring holidays. Over time, the Cold Food Festival became less important on its own, and tomb sweeping became part of Qingming.
+Qingming began as a date that marked the arrival of spring. A day called the Cold Food Festival came just before it. Long ago, families were already visiting their ancestors' graves at that time of year. The two days were so close that people began to observe them together. More than 1,200 years ago, during the [[Tang dynasty|tang-dynasty]], the emperor officially allowed families to visit graves during these spring holidays. Over time, the Cold Food Festival became less important on its own, and tomb sweeping became part of Qingming.
 
 Today, many families visit the graves of loved ones at Qingming. They clear away leaves and weeds, wipe the gravestone, and leave flowers.
 
@@ -24,7 +24,7 @@ A child may never have met the family member buried there. So the adults share s
 
 ## After Remembering, a Spring Walk
 
-Qingming has another custom that may seem very different: *tàqīng*, a walk outdoors to enjoy spring.
+Qingming has another custom that may seem very different: [[taqing|taqing]], a walk outdoors to enjoy spring.
 
 Why take a spring outing on a day for remembering loved ones? Qingming arrives just as the world is growing again. After visiting a grave, families may walk through fields, look at new grass, willow trees, and flowers, and give children room to run and fly kites.
 
@@ -38,8 +38,8 @@ It is better to bring the kite safely home. On the walk back, the family can kee
 
 ## Why Is Qingtuan Green?
 
-After the spring outing, Qingming brings the season to the table, too. In parts of eastern China, a snack shaped like a little green ball appears around Qingming. It is called *qīngtuán*.
+After the spring outing, Qingming brings the season to the table, too. In parts of eastern China, a snack shaped like a little green ball appears around Qingming. It is called [[qingtuan|qingtuan]].
 
 Its soft wrapper is made with sticky rice flour. Juice from spring plants such as mugwort is mixed into the dough. The green is not painted on the outside—the whole wrapper carries the color and light herbal smell of spring.
 
-*Qīngtuán* may be filled with sweet red bean paste, salted egg yolk, savory meat, or other fillings. Long ago, it was also used as an offering to ancestors. Today, many people enjoy it as a treat that belongs especially to spring.
+*qingtuan* may be filled with sweet red bean paste, salted egg yolk, savory meat, or other fillings. Long ago, it was also used as an offering to ancestors. Today, many people enjoy it as a treat that belongs especially to spring.

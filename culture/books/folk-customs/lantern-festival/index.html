@@ -47,13 +47,13 @@
           </figure>
           <p>一个古老的元宵节民间传说，讲的是一位名叫元宵的年轻宫女。元宵很久没有见到父母了，她非常想念他们。可是，想离开皇宫并不容易。</p>
           <p>宫里住着一位机智的艺人和谋士。他以玩笑、巧计和敏捷的头脑闻名，有点像宫廷里的弄臣。他叫<strong>东方朔</strong>。听说元宵的事以后，他决定帮助她。</p>
-          <p>东方朔来到当时的都城长安，也就是今天的西安，摆起了算命摊。可是，每个来找他算命的人，都得到同一个吓人的预言：<strong>长安将发生一场可怕的大火！</strong> 很快，全城的人都在谈论这件事。</p>
+          <p>东方朔来到当时的都城<span class="glossary-entry"><button type="button" class="glossary-term" aria-expanded="false" aria-controls="glossary-changan-1">长安</button><span id="glossary-changan-1" class="glossary-popover" role="tooltip">Cháng'ān · 中国古代都城，位置在今天的西安。</span></span>，也就是今天的<span class="glossary-entry"><button type="button" class="glossary-term" aria-expanded="false" aria-controls="glossary-xian-2">西安</button><span id="glossary-xian-2" class="glossary-popover" role="tooltip">Xī'ān · 中国著名古都，古代长安所在地。</span></span>，摆起了算命摊。可是，每个来找他算命的人，都得到同一个吓人的预言：<strong>长安将发生一场可怕的大火！</strong> 很快，全城的人都在谈论这件事。</p>
           <p>忧心忡忡的皇帝问该怎么办，东方朔便提出了一个巧妙的办法。</p>
           <p>“新年第一个月的十五晚上，”他说，“到处挂起红灯笼。点亮街道，再放焰火、制造响声。这样从远处看，整座城就像已经着火了。”</p>
           <p>皇帝答应了。</p>
           <p>One old Lantern Festival legend tells of a young palace maid named Yuanxiao. Yuanxiao had not seen her parents for a long time, and she missed them terribly. But leaving the emperor’s palace was not easy.</p>
           <p>At the palace lived a witty entertainer and adviser who was famous for his jokes, tricks, and quick thinking&#8212;something like a court jester. His name was <strong>Dongfang Shuo</strong>. When he heard about Yuanxiao, he decided to help.</p>
-          <p>Dongfang Shuo went into Chang’an&#8212;the Han dynasty capital, located in present-day Xi’an&#8212;and set up a fortune-telling stand. But everyone who came to him received the same frightening prediction: <strong>A terrible fire was coming to Chang’an!</strong> Soon the whole city was talking about it.</p>
+          <p>Dongfang Shuo went into <span class="glossary-entry"><button type="button" class="glossary-term" aria-expanded="false" aria-controls="glossary-changan-3">Chang’an</button><span id="glossary-changan-3" class="glossary-popover" role="tooltip">Cháng'ān · 长安 · An ancient Chinese capital located in present-day Xi'an.</span></span>&#8212;the <span class="glossary-entry"><button type="button" class="glossary-term" aria-expanded="false" aria-controls="glossary-han-dynasty-4">Han dynasty</button><span id="glossary-han-dynasty-4" class="glossary-popover" role="tooltip">Hàn cháo · 汉朝 · A major Chinese dynasty that lasted from 206 BCE to 220 CE.</span></span> capital, located in present-day <span class="glossary-entry"><button type="button" class="glossary-term" aria-expanded="false" aria-controls="glossary-xian-5">Xi’an</button><span id="glossary-xian-5" class="glossary-popover" role="tooltip">Xī'ān · 西安 · A major historic city and the modern location of ancient Chang'an.</span></span>&#8212;and set up a fortune-telling stand. But everyone who came to him received the same frightening prediction: <strong>A terrible fire was coming to Chang’an!</strong> Soon the whole city was talking about it.</p>
           <p>When the worried emperor asked what could be done, Dongfang Shuo suggested a clever trick.</p>
           <p>“On the fifteenth night of the new year,” he said, “hang red lanterns everywhere. Light up the streets and fill the night with fireworks and noise. From far away, it will look as if the city is already on fire.”</p>
           <p>The emperor agreed.</p>
@@ -110,7 +110,8 @@
             if (!button || !popover) return;
 
             const margin = 12;
-            const gap = 10;
+            const compactViewport = window.matchMedia("(max-width: 900px)").matches;
+            const gap = compactViewport ? 8 : 10;
             const buttonRect = button.getBoundingClientRect();
             const popoverRect = popover.getBoundingClientRect();
             const halfWidth = popoverRect.width / 2;
@@ -119,10 +120,12 @@
             const maxCenter = window.innerWidth - margin - halfWidth;
             const left = Math.min(Math.max(buttonCenter, minCenter), maxCenter);
 
-            let side = "above";
-            let top = buttonRect.top - popoverRect.height - gap;
+            let side = compactViewport ? "below" : "above";
+            let top = side === "below"
+              ? buttonRect.bottom + gap
+              : buttonRect.top - popoverRect.height - gap;
 
-            if (top < margin) {
+            if (side === "above" && top < margin) {
               side = "below";
               top = buttonRect.bottom + gap;
             }

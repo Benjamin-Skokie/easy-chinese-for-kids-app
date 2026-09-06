@@ -1,88 +1,49 @@
 > Difficulty: Easy
 
-# Quiet Night Thoughts: A Poem Many Children Can Say
+# Quiet Night Thought: A Poem Many Children Know
 
-## The Magic of Twenty Words
+## Twenty Characters, and Many Children Remember Them Right Away
 
-Bright moonlight before my bed,
-I wonder if it is frost on the ground.
-I lift my head and look at the bright moon.
-I lower my head and think of home.
+*Quiet Night Thought* has only twenty Chinese characters:
 
-In Chinese, this poem has only twenty characters.
+Bright moonlight before my bed. I wonder if it is frost on the ground. I lift my head and look at the bright moon. I lower my head and think of home.
 
-No hard words.
+The words are not hard, and the picture is easy to see. Someone wakes in the night, notices a patch of white on the floor, thinks it might be frost, and then realizes it is moonlight.
 
-No difficult old stories hidden inside.
-
-Many children who have just begun to read Chinese can understand it.
-
-It has been passed down for more than 1,000 years.
-
-Even today, many Chinese children learn this poem very early. Many children outside China also meet it when they first study Chinese.
+That is why many Chinese children meet this poem very early. Many children outside China meet it early too when they begin learning Chinese.
 
 ---
 
-## When Li Bai Wrote This Poem
+## When Li Bai Woke Up, Moonlight Had Already Slipped into the Room
 
-When Li Bai was young, he left home and traveled from place to place.
+When [[Li Bai|li-bai]] wrote this poem, he was away from home and traveling. It was a quiet autumn night, and he was staying in a small inn when he suddenly woke up.
 
-One autumn night, he was staying in a small inn.
+Moonlight came through the window and landed right in front of his bed. When a person is half asleep, it is easy to mistake one thing for another, so at first he thought the white patch on the floor was frost.
 
-He woke up in the middle of the night.
-
-Moonlight came through the window and spread across the floor in front of his bed.
-
-Half asleep, he thought the white light was frost on the ground.
-
-Then his sleepy mind paused for a second.
-
-No, it was not frost.
-
-It was moonlight.
-
-He lifted his head and looked at the moon outside the window.
-
-Then he lowered his head.
-
-He missed home.
-
-When Li Bai wrote this poem, he could not have known what would happen later.
-
-Generation after generation, people would read it and lift their heads and lower their heads with him.
-
-For a moment, they too would quietly think of someone they missed.
+Then he looked up more carefully and saw the truth. It was not frost. It was the moon.
 
 ---
 
-## Moonlight Became a Way to Say "I Miss Home"
+## One Look Up at the Moon, and Home Comes Back
 
-After Li Bai, many Chinese people connected moonlight with missing someone far away.
+The special power of this poem is not that it tells many events. It catches one feeling that many people know.
 
-Su Shi wrote about hoping people would live long and share the same moon even when they were far apart.
+When you are far from home, the daytime can keep you busy. You travel, talk, and do what needs to be done. But at night, when everything grows quiet and the moon appears, your heart can suddenly soften.
 
-Zhang Jiuling wrote about the bright moon rising over the sea, while people at the ends of the earth share the same moment.
-
-Slowly, the moon and missing home became joined in many Chinese poems.
-
-And "Quiet Night Thoughts" became the most famous one.
-
-Later, many people wrote about missing home.
-
-Many people wrote about the moon.
-
-But when people think of missing home, Li Bai's twenty Chinese characters often come first.
+Li Bai uses only two simple actions: lift your head and lower your head. Yet many readers understand the whole feeling at once. A moment ago your eyes were on the sky. The next moment your thoughts are already back at home.
 
 ---
 
-## Summary
+## Later, the Moon Became a Language of Missing Someone
 
-"Bright moonlight before my bed."
+Later, many Chinese poems used the moon when they wanted to speak about missing someone. The moon hangs high above everyone, so people in different places can still look at the same round light.
 
-Twenty Chinese characters have traveled for more than 1,000 years.
+That is one reason this poem matters so much. It is short, but it opened a door for many later poems. When people read about moonlight, they often think of distance, and then of home.
 
-Many Chinese children read them after they learn to recognize characters. Many children learning Chinese meet them too.
+---
 
-Li Bai woke up at night in an inn, mistook moonlight for frost, and suddenly thought of home.
+## In Summary
 
-When you lift your head and look at the moon, you may understand why such a short poem can stay in so many hearts.
+*Quiet Night Thought* has only twenty characters, but it holds a very large feeling. Li Bai sees moonlight in an inn, mistakes it for frost, looks up at the moon, and then thinks of home.
+
+Because it is short, clear, and so close to a real human moment, people have remembered it for generation after generation.

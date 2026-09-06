@@ -4,7 +4,7 @@
 
 ## The Emperor Chose Zheng He
 
-More than six hundred years ago, during China's Ming dynasty, sailors and trading ships were already crossing the Indian Ocean. Zheng He was not the first person to sail those waters. He became famous because he led the emperor's great fleet on seven long voyages.
+More than six hundred years ago, during China's [[Ming dynasty|ming-dynasty]], sailors and trading ships were already crossing the Indian Ocean. [[Zheng He|zheng-he]] was not the first person to sail those waters. He became famous because he led the emperor's great fleet on seven long voyages.
 
 Before Zheng He ever stood on the deck of a great ship, the emperor had known him for years. He had watched Zheng He serve in the army, take on hard jobs, and stay calm in danger. He knew he could trust him.
 

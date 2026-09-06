@@ -4,7 +4,7 @@
 
 ## How Can a Small Garden Feel Bigger?
 
-Suzhou is an old city in eastern China. Some of its famous gardens are not very large, yet you can walk through them for a long time without getting bored. One moment you see a pond. Then a wall hides it. Turn a corner, and a small pavilion appears behind the trees.
+[[Suzhou|suzhou]] is an old city in eastern China. Some of its famous gardens are not very large, yet you can walk through them for a long time without getting bored. One moment you see a pond. Then a wall hides it. Turn a corner, and a small pavilion appears behind the trees.
 
 These gardens do not place every pretty thing in front of you at once. They let you see something, hide it, and then reveal it again. Paths do not rush straight to the end. They wind between rocks, walls, flowers, and trees. Each turn can feel like a new picture.
 
@@ -34,7 +34,7 @@ The ground changes your steps too. Large stone slabs feel steady. A narrow bridg
 
 ## When Rocks Become Mountains
 
-Near Suzhou is a large lake called Taihu, or Lake Tai. Limestone brought from the area became known as Taihu rock. Some pieces twist and bend, while others are full of holes. Over a very long time, lake water and sand wore the stone into unusual shapes.
+Near Suzhou is a large lake called [[Taihu|taihu]], or Lake Tai. Limestone brought from the area became known as Taihu rock. Some pieces twist and bend, while others are full of holes. Over a very long time, lake water and sand wore the stone into unusual shapes.
 
 Garden makers did not simply dump the rocks into a pile. They chose which side should face the path, where to leave a passage, and where to make a stone opening that people could walk through. Rocks could also hide the view behind them, saving something new for the other side.
 

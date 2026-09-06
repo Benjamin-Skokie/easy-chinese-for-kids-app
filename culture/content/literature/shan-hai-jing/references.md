@@ -49,7 +49,7 @@ Editorial boundary:
 
 ## 4. The child drawing a new creature
 
-The fourth section is openly presented as a modern child's invention, not as a creature from the ancient text. Its owl eyes, deer legs, fish tail, leaf-shaped ears, glowing tail, and cup-like call are original to this page.
+The fourth section is openly presented as a modern boy's imaginative response to an illustrated book, not as a claim that the dragon-like creature in his sketchbook appears in the ancient text. Its horns, scales, four clawed legs, and curling tail describe the existing illustration.
 
 Editorial boundary:
 

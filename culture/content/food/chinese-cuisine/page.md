@@ -46,18 +46,18 @@ image: sichuan.webp
 caption_zh: 辣椒带来火辣的感觉，花椒却会让嘴唇发麻、发颤。川菜常把两种感觉放在一起。
 caption_en: Chilies bring heat, while Sichuan pepper makes the lips tingle. Sichuan cooks often bring the two feelings together.
 [zh]
-看看这桌四川菜。红辣椒会让嘴里觉得热，花椒却带来一种麻麻的、像小气泡跳动的感觉。四川人把“麻”和“辣”配在一起，做出了麻婆豆腐等许多有名的菜。不过，川菜并不是每一道都辣。
+看看这桌[[四川|sichuan]]菜。红辣椒会让嘴里觉得热，花椒却带来一种麻麻的、像小气泡跳动的感觉。四川人把“麻”和“辣”配在一起，做出了麻婆豆腐等许多有名的菜。不过，川菜并不是每一道都辣。
 
-关于麻婆豆腐名字的来历，有几种不同的说法。流传最广的一种，要从大约一百六十年前讲起。成都一家小饭馆的陈老板娘做豆腐出了名。客人因为她脸上有小麻痕，给她起了“陈麻婆”这个外号，她做的豆腐也就有了“陈麻婆豆腐”这个名字。二十世纪初的一本成都指南，已经把这道菜列入当地名食。
+关于麻婆豆腐名字的来历，有几种不同的说法。流传最广的一种，要从大约一百六十年前讲起。[[成都|chengdu]]一家小饭馆的陈老板娘做豆腐出了名。客人因为她脸上有小麻痕，给她起了“陈麻婆”这个外号，她做的豆腐也就有了“陈麻婆豆腐”这个名字。二十世纪初的一本成都指南，已经把这道菜列入当地名食。
 
 还有一个惊喜：一千年前的四川厨师根本没有见过辣椒。辣椒原来生长在美洲，直到十六世纪后期，也就是大约四百五十年前，才来到中国。在那以前，厨师已经会用姜、蒜和花椒做出有刺激感的味道。
 
 辣椒来到以后，厨师慢慢学会了怎样把它和原来的调料搭配，也知道了不同的菜该放多少。经过许多年，这些做法才变成今天人们熟悉的一部分川味。
 [/zh]
 [en]
-Look at this Sichuan meal. Red chilies make the mouth feel hot. Sichuan pepper brings a different feeling—a tingle that can make the lips seem to buzz. Sichuan cooks often put the two together in dishes such as mapo tofu. Still, not every Sichuan dish is spicy.
+Look at this [[Sichuan|sichuan]] meal. Red chilies make the mouth feel hot. Sichuan pepper brings a different feeling—a tingle that can make the lips seem to buzz. Sichuan cooks often put the two together in dishes such as mapo tofu. Still, not every Sichuan dish is spicy.
 
-People tell several stories about how mapo tofu got its name. The best-known one begins about 160 years ago, when a woman named Mrs. Chen ran a small food shop in Chengdu, a city in Sichuan. Customers gave her the nickname Chen Mapo because she had small marks on her face. Her tofu became so popular that people called it “Chen Mapo's tofu.” A Chengdu guide from the early 1900s lists the dish among the city's famous foods.
+People tell several stories about how mapo tofu got its name. The best-known one begins about 160 years ago, when a woman named Mrs. Chen ran a small food shop in [[Chengdu|chengdu]], a city in Sichuan. Customers gave her the nickname Chen Mapo because she had small marks on her face. Her tofu became so popular that people called it “Chen Mapo's tofu.” A Chengdu guide from the early 1900s lists the dish among the city's famous foods.
 
 Here is another surprise: a cook in Sichuan one thousand years ago had never seen a chili pepper. Chilies first grew in the Americas and reached China in the late 1500s, about 450 years ago. Before then, cooks made lively flavors with ginger, garlic, and Sichuan pepper.
 
@@ -98,14 +98,14 @@ image: shandong.webp
 caption_zh: 山东靠海，也有大片农田。鱼、豆腐、面条和馒头，都能在这里找到自己的位置。
 caption_en: Shandong has a long coast and wide farmland, so fish, tofu, noodles, and steamed buns can all find a place at the table.
 [zh]
-山东有一大片土地伸进海里，也有宽阔的平原。住在海边的人容易买到鱼、虾和贝类；往内陆走，小麦田越来越多，面条、馒头和饼也常常上桌。
+[[山东|shandong]]有一大片土地伸进海里，也有宽阔的平原。住在海边的人容易买到鱼、虾和贝类；往内陆走，小麦田越来越多，面条、馒头和饼也常常上桌。
 
 图里的糖醋鲤鱼弯着身子，像要从盘子里跳起来。它很适合宴席，却不是每个山东家庭每天都吃的饭。旁边的豆腐看起来普通，厨师却能用汤、火候和刀工把它做出许多样子。
 
 一个地方可以同时有海的味道、麦田的味道和家常厨房的味道。只记住一道名菜，就像只读了一本书的封面。
 [/zh]
 [en]
-Part of Shandong reaches into the sea, with water on three sides. Farther inland are wide, flat fields. Families near the coast can cook with fish, shrimp, and shellfish. Travel toward the wheat fields and you will also find noodles, steamed buns, and flatbreads on the table.
+Part of [[Shandong|shandong]] reaches into the sea, with water on three sides. Farther inland are wide, flat fields. Families near the coast can cook with fish, shrimp, and shellfish. Travel toward the wheat fields and you will also find noodles, steamed buns, and flatbreads on the table.
 
 The sweet-and-sour carp in the picture curves as if it might leap right off the plate. It may appear at a special meal, but it is not everyday food in every Shandong home. The tofu beside it looks simple, yet broth, heat, and careful cutting can make it taste quite different.
 
@@ -122,14 +122,14 @@ image: zhejiang.webp
 caption_zh: 浙江有河流、湖泊、海岸和茶园。鱼虾与茶叶只是认识这里食物的几个线索。
 caption_en: Zhejiang has rivers, lakes, a coast, and tea fields. Fish, shrimp, and tea leaves are only a few clues to its food.
 [zh]
-浙江有河流、湖泊和海岸，也有一片片茶园。杭州的厨师会把嫩虾仁和当地的龙井绿茶叶放在一起；别的地方会用海鱼、竹笋、黄酒和当季蔬菜。春天和冬天的餐桌，也可能很不一样。
+浙江有河流、湖泊和海岸，也有一片片茶园。[[杭州|hangzhou]]的厨师会把嫩虾仁和当地的[[龙井|longjing]]绿茶叶放在一起；别的地方会用海鱼、竹笋、黄酒和当季蔬菜。春天和冬天的餐桌，也可能很不一样。
 
 这里还有一个小意外：中国很早的一些辣椒文字记录，就出现在浙江一带。可是今天说到浙江菜，人们通常不会先想到火辣。一个新食材最早在哪里出现，不代表那里一定会最爱吃它。
 
 浙江有河流、湖泊、大海和茶园，所以鱼虾、茶叶和竹笋比较容易来到当地的市场。不过，买什么、怎样做，还是由人决定。家里的习惯和当天市场里有什么，都会让每顿饭不太一样。
 [/zh]
 [en]
-Zhejiang has rivers, lakes, a coastline, and hills covered with tea plants. In Hangzhou, cooks pair tender shrimp with local Dragon Well green tea leaves. Elsewhere, a meal might feature sea fish, bamboo shoots, rice wine, or vegetables that have just come into season.
+Zhejiang has rivers, lakes, a coastline, and hills covered with tea plants. In [[Hangzhou|hangzhou]], cooks pair tender shrimp with local Dragon Well green tea leaves. Elsewhere, a meal might feature sea fish, bamboo shoots, rice wine, or vegetables that have just come into season.
 
 Zhejiang also holds a surprise. Some of China's earliest written records of chili peppers come from this coastal area. Yet Zhejiang food today is not famous for fiery heat. The first place to meet an ingredient does not always become the place that loves it most.
 

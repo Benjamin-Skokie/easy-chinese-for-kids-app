@@ -22,14 +22,14 @@ image: 3-shaolin-temple-mountain.webp
 caption_zh: 清晨，一位僧人在院中扫地。少林寺首先是一座坐落在嵩山脚下的佛教寺院。
 caption_en: Early in the morning, a monk sweeps the courtyard. Shaolin is first of all a Buddhist temple at the foot of Mount Song.
 [zh]
-少林寺坐落在中国中部的嵩山脚下。它首先是一座佛教寺院，不是一所武术学校。很久以前，一位来自印度的僧人来到这里讲解佛教。其他僧人也住进寺院，念经、打坐、打扫院子，还要照顾寺院周围的土地。
+[[少林寺|shaolin-temple]]坐落在中国中部的嵩山脚下。它首先是一座佛教寺院，不是一所武术学校。很久以前，一位来自印度的僧人来到这里讲解佛教。其他僧人也住进寺院，念经、打坐、打扫院子，还要照顾寺院周围的土地。
 
 可是，寺院外面的世界并不总是安静。军队四处交战，盗匪也可能闯进来。少林寺有房屋、粮食和田地，住在里面的人有时不得不想办法保护它们。
 
 这就是少林寺与武功发生关系的开始。
 [/zh]
 [en]
-Shaolin Temple stands at the foot of Mount Song in central China. It began as a Buddhist monastery, not a martial arts school. Long ago, a monk from India came there to teach Buddhism. Other monks lived at the temple, read Buddhist books, meditated, swept the courtyards, and cared for the temple’s land.
+[[Shaolin Temple|shaolin-temple]] stands at the foot of Mount Song in central China. It began as a Buddhist monastery, not a martial arts school. Long ago, a monk from India came there to teach Buddhism. Other monks lived at the temple, read Buddhist books, meditated, swept the courtyards, and cared for the temple’s land.
 
 But the world outside the temple was not always peaceful. Armies fought one another, and bandits sometimes attacked. Shaolin had buildings, grain, and fields. At times, the people who lived there had to protect them.
 
@@ -68,14 +68,14 @@ heading_en: Li Shimin Becomes Emperor
 
 李世民没有忘记少林僧人的帮助。他感谢了他们，也让少林寺继续保有自己的土地。消息传开以后，人们记住了这件不寻常的事：一群住在山中佛寺里的僧人，竟然在战场上帮助过后来的皇帝。
 
-少林寺还没有变成今天人们想象中的“功夫寺院”，不过它的勇武名声已经传开了。
+少林寺还没有变成今天人们想象中的“[[功夫|gongfu]]寺院”，不过它的勇武名声已经传开了。
 [/zh]
 [en]
 Li Shimin later became emperor, one of the most famous in Chinese history. He helped end years of war and bring peace back to the country.
 
 Li Shimin did not forget the Shaolin monks. He thanked them and allowed the temple to keep its land. As the story spread, people remembered something unusual: monks from a quiet mountain temple had fought beside a future emperor.
 
-Shaolin had not yet become the “kung fu temple” people imagine today, but its reputation for brave fighters had begun.
+Shaolin had not yet become the “[[kung fu|gongfu]] temple” people imagine today, but its reputation for brave fighters had begun.
 [/en]
 [/section]
 

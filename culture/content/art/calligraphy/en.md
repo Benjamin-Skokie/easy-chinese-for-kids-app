@@ -12,7 +12,7 @@ One version stands straight and solid. Each stroke is easy to see. The other str
 
 How much can a character change before it stops being the same character?
 
-Chinese calligraphy has rules. The parts of a character have to stay in recognizable relationships, and strokes cannot simply be moved anywhere. But those rules leave plenty of room for variation.
+[[Chinese calligraphy|chinese-calligraphy]] has rules. The parts of a character have to stay in recognizable relationships, and strokes cannot simply be moved anywhere. But those rules leave plenty of room for variation.
 
 And there is another reason the same character can change so much. There is more than one way to write it.
 
@@ -22,9 +22,9 @@ And there is another reason the same character can change so much. There is more
 
 Over many centuries, Chinese writing developed several major **script types**.
 
-In **regular script (楷书, kǎishū)**, the strokes are clearly formed and the structure is relatively easy to see. In **running script (行书, xíngshū)**, the brush moves more freely, and one stroke may seem to flow toward the next. In **cursive script (草书, cǎoshū)**, strokes can be shortened or joined so much that a beginner may have trouble recognizing the character at all.
+In [[regular script|regular-script]], the strokes are clearly formed and the structure is relatively easy to see. In [[running script|running-script]], the brush moves more freely, and one stroke may seem to flow toward the next. In [[cursive script|cursive-script]], strokes can be shortened or joined so much that a beginner may have trouble recognizing the character at all.
 
-There are also older traditions such as **seal script (篆书, zhuànshū)** and **clerical script (隶书, lìshū)**.
+There are also older traditions such as [[seal script|seal-script]] and [[clerical script|clerical-script]].
 
 These are not simply five decorative fonts. Each script has its own habits: how strokes are shaped, how parts of a character fit together, and how the brush moves from one place to another.
 

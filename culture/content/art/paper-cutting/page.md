@@ -24,16 +24,16 @@ caption_en: When the red paper opens, both matching wings of the butterfly appea
 [zh]
 一张红纸对折起来。咔嚓，咔嚓。剪刀从纸边剪进几条弯线，又挖出几个小洞。纸还合着的时候，这些剪口乱七八糟，怎么看也不像一只蝴蝶。
 
-可是，把纸轻轻打开——两边的翅膀一起展开了。触角出来了，翅膀里的小花纹也出来了，而且左右两边正好相对。奇怪的是，剪纸的人并没有先剪左翅膀，再剪右翅膀。纸折在一起时，剪刀一次穿过了两层；折痕打开，一道剪口也就同时出现在两边。
+可是，把纸轻轻打开——两边的翅膀一起展开了。触角出来了，翅膀里的小花纹也出来了，而且左右两边正好相对。奇怪的是，[[剪纸|jianzhǐ]]的人并没有先剪左翅膀，再剪右翅膀。纸折在一起时，剪刀一次穿过了两层；折痕打开，一道剪口也就同时出现在两边。
 
-这正是剪纸（jiǎnzhǐ）最好玩的地方之一。完整的图案最后才出现，可是拿着剪刀的人，早在纸打开以前，就得先在脑子里看见它。
+这正是剪纸最好玩的地方之一。完整的图案最后才出现，可是拿着剪刀的人，早在纸打开以前，就得先在脑子里看见它。
 [/zh]
 [en]
 A square of red paper is folded in half. Snip, snip. The scissors cut a few curves along the edge and make several tiny holes. With the paper still folded, the shapes do not look much like anything.
 
 Then the paper opens. Two wings spread out at the same time. There are feelers, little spaces inside the wings, and matching curves on both sides. A butterfly has appeared—but the cutter never cut one wing and then the other. The scissors passed through both layers of folded paper at once. When the fold opened, each cut appeared on both sides.
 
-That surprise is one of the delights of Chinese paper-cutting, or **jiǎnzhǐ (剪纸)**. The finished picture comes last. The person holding the scissors has to imagine it first.
+That surprise is one of the delights of [[Chinese paper-cutting|jianzhǐ]]. The finished picture comes last. The person holding the scissors has to imagine it first.
 [/en]
 [/section]
 
@@ -124,6 +124,6 @@ There were no finished butterflies printed inside it. What was hidden was the pl
 
 Only when the sheet opens can you see all those choices at once.
 
-That is the little magic trick of **jiǎnzhǐ**: the picture appears last, but someone had to see it before it was there.
+That is the little magic trick of **Chinese paper-cutting**: the picture appears last, but someone had to see it before it was there.
 [/en]
 [/section]

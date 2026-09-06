@@ -15,163 +15,114 @@ title_en: Why Did Zhu Yuanzhang Become Such a Busy Emperor?
 
 [section]
 page: 1
-layout: text-only
-heading_zh: 为什么这么多事情来到他面前？
-heading_en: Why Did So Much Work Reach Him?
+layout: text-wrap-image
+heading_zh: 八天里来了多少事情？
+heading_en: Eight Days of Paperwork
+image: late-night-memorials-ming.webp
+caption_zh: 朱元璋面对堆满书桌的奏札；八天里送来的文书涉及三千多件事情。
+caption_en: Zhu Yuanzhang faces a desk crowded with memorials; the documents sent during eight days contained more than three thousand matters.
 [zh]
-朱元璋是明朝第一位皇帝。他做了皇帝以后，要处理的事情多得惊人。粮食、税收、河道、法律、官员和军队，许多大事最后都要等他决定。
+1384年，一位官员向[[明朝|ming-dynasty]]皇帝[[朱元璋|zhu-yuanzhang]]报告了一个惊人的数字。短短八天里，朝廷内外各个官府一共送来了 **1660通[[奏札|memorial]]，里面有3291件事情**。所谓奏札，可以简单理解成官员送往朝廷的正式报告、请求和建议。一份里面有时还不只写一件事。
 
-那时留下来的命令和政府文书，让我们看见这些事情怎样经过一层层官员，最后来到皇帝面前。它们也带来一个更有意思的问题：朱元璋为什么要改变政府，让越来越多的决定直接送到自己这里？
+朱元璋看到这个数字以后，自己也觉得事情实在太多了。古书记载，他对大臣说，这么多事情都集中到自己一个人这里，怎么可能每一件都照顾周全？如果处理错了，受到影响的可能就不只是一个人。
+
+为什么会有这么多事情来到皇帝面前？原因之一，正是朱元璋自己在四年前作出的一个重大决定。
 [/zh]
 [en]
-Zhu Yuanzhang was the first emperor of the Ming dynasty. Once he became emperor, he faced an astonishing amount of work. Grain, taxes, rivers, laws, officials, and armies—major decisions in every area could end up before him.
+In 1384, an official came to the court of the Hongwu Emperor, [[Zhu Yuanzhang|zhu-yuanzhang]], with an astonishing count. During just eight days, government offices had sent in **1,660 [[memorials|memorial]] containing 3,291 different matters**. A memorial was an official report, request, or proposal sent toward the emperor. Some dealt with one problem; others contained several.
 
-Orders and government papers from his reign show how these problems passed through many officials before reaching the emperor. They also lead us to the puzzle at the center of this story: Why did Zhu change the government so that even more decisions came straight to him?
+Zhu Yuanzhang knew exactly what those numbers meant. According to an old record, he told his officials that with so many matters before him, how could one person possibly attend to everything carefully? A mistake, he worried, could hurt far more than one person.
+
+There was a reason so much government business was coming his way. Four years earlier, the emperor himself had changed the rules.
 [/en]
 [/section]
 
 [section]
 page: 2
 layout: two-column
-heading_zh: 从贫穷少年到新王朝的皇帝
-heading_en: From a Poor Childhood to a New Dynasty
+heading_zh: 从放牛少年到皇帝
+heading_en: From Herd Boy to Emperor
 image: zhu-yuanzhang-herding-buffalo.webp
-caption_zh: 朱元璋小时候家里很穷，也曾替人放牧。画里的牛和这个瞬间是现代想象。
-caption_en: Zhu grew up poor and herded animals for others. The buffalo and this exact moment are imagined.
+caption_zh: 少年朱元璋替人放牛；多年以后，他成为明朝的开国皇帝。
+caption_en: As a boy, Zhu Yuanzhang herded cattle; years later, he became the founding emperor of the Ming dynasty.
 [zh]
-朱元璋小时候家里很穷。他曾替人放牧，后来又进寺院做了和尚。那时，灾荒、疾病和战争接连而来。后来，他参加了一支反抗元朝的起义军。打了很多年仗以后，他建立了明朝，自己成了皇帝。
+朱元璋小时候并没有住在宫殿里。他1328年出生在今天[[安徽|anhui]]一带，家里非常贫穷。少年时，他替人放过牛。后来灾荒和疾病夺去了家中亲人，他进过寺院。[[元朝|yuan-dynasty]]末年天下动荡，他又参加了起义军。
 
-可是，他接手的不是一个安稳、完整的国家。长期战争让许多地方受到破坏，政府也需要重新建立。朱元璋要让命令送到各地，还要处理粮食、税收、河道和法律。他本来已经有很多事情要管，后来却又作了一个选择，让更多工作直接来到自己的书桌。
+多年战争以后，朱元璋打败一个又一个对手。1368年，他建立明朝，自己成了皇帝。一个曾经替人放牛的穷孩子，现在要管理一个巨大的国家。
+
+当然，皇帝不是一个人管理天下。朝廷里有成千上万的官员。有人管税收和户籍，有人管军队，有人管案件，有人修河道和道路，还有人负责官员任免和各种礼仪。这些部门上面，原来还有一个非常重要的职位：[[丞相|chancellor]]。
 [/zh]
 [en]
-Zhu Yuanzhang grew up in a very poor family. As a boy, he herded animals for other people. Later, he went to live at a Buddhist temple and became a monk. Then famine, disease, and war swept across the country. Zhu joined a rebel army that was fighting the Yuan government. After years of war, he founded the Ming dynasty and became its first emperor.
+Zhu Yuanzhang had not grown up in a palace. He was born into a very poor family in 1328, in what is now [[Anhui Province|anhui]]. As a boy he herded animals, and after famine and disease struck his family, he entered a Buddhist temple. Later he joined a rebel army during the troubled final years of the [[Yuan dynasty|yuan-dynasty]].
 
-Yet Zhu did not take charge of a peaceful, well-run country. Years of fighting had left many places badly damaged, and the government had to be rebuilt. He needed to send orders across the country and deal with grain, taxes, rivers, and laws. His job was already enormous. Then he made a choice that sent even more work toward his own desk.
+His life changed almost beyond recognition. He became a military leader, defeated his rivals, and in 1368 founded the [[Ming dynasty|ming-dynasty]]. The boy who had once tended animals was now the emperor of a huge country.
+
+Running that country required thousands of officials. They collected taxes, kept population records, repaired roads and waterways, judged court cases, appointed other officials, organized ceremonies, and managed armies. At the top of this government was the emperor. But at first, there was also another very powerful official close to the top: the [[chancellor|chancellor]].
 [/en]
 [/section]
 
 [section]
 page: 3
 layout: text-wrap-image
-heading_zh: 一份报告怎样来到御前？
-heading_en: How Did a Report Reach the Emperor?
+heading_zh: 一把重要的椅子空了
+heading_en: One Important Office Disappears
 image: morning-court-ming.webp
-caption_zh: 这幅现代插图表现官员向皇帝报告事务，不是洪武朝某次朝会的准确记录。
-caption_en: This modern illustration shows officials reporting to an emperor. It is not an exact record of a particular Hongwu court meeting.
+caption_zh: 官员把政务带到皇帝面前；撤掉丞相以后，六部更加直接地向皇帝负责。
+caption_en: Officials bring government business before the emperor; after the chancellorship was abolished, the Six Ministries answered more directly to him.
 [zh]
-假设某地遇到水灾，地方官需要报告受灾情况，并请求粮食或减免税收。他们会把事情写成给朝廷的正式文书。古代文书有不同种类，这里可以把“章奏”理解成官员送给皇帝的报告、请求或建议。
+明朝刚建立的时候，中央有一个叫[[中书省|central-secretariat]]的重要机构，丞相在这里帮助统领许多政务。吏、户、礼、兵、刑、工[[六部|six-ministries]]处理不同的国家事务，中书省则处在皇帝和这些部门之间，可以先接收、查看和处理许多报告。
 
-这些文件不是由送信人直接跑进皇帝的房间。明初设有接收和转送章奏的机构，也有官员登记、检查和整理。朱元璋还逐步改变了文件上报的道路，让一些重要报告不再先由最高行政机构中书省控制，而能更直接地送到御前。
+可是，朱元璋不愿意让丞相掌握这么大的权力。1380年，[[胡惟庸|hu-weiyong]]案发生以后，朱元璋干脆撤掉中书省，也不再设置丞相。原来的六部开始更加直接地向皇帝负责。
 
-一份章奏里可能不只写一件事。修河堤、调粮、任免官员、审理案件和边防消息，都可能需要不同部门研究，再等待皇帝的决定。皇帝桌上的“忙”，首先是一个庞大政府不断送来的信息和选择。
+这样一来，朱元璋掌握的权力更多了。来到他面前的事情，也更多了。
 [/zh]
 [en]
-Imagine that a flood struck a county. Local officials needed to describe the damage and ask for grain or a break from taxes. They would send a formal written document to the central government. Ancient China had several kinds of official documents. For this story, think of a memorial as a report, request, or piece of advice sent toward the emperor.
+Early in the Ming dynasty, a government office called the [[Central Secretariat|central-secretariat]] helped coordinate much of the empire's administration. Its chancellors stood between the emperor and the [[Six Ministries|six-ministries]], the major departments that handled officials, money and population records, ceremonies, the military, law, and public works. The Central Secretariat could receive reports and help deal with government business before everything reached the emperor.
 
-A messenger could not simply run into the emperor's room. Government offices received, registered, checked, and passed along documents. Zhu gradually changed this route so that some important reports no longer had to pass first through the Central Secretariat, the highest administrative office.
+Zhu Yuanzhang did not want so much power gathered in the hands of a chancellor. In 1380, after the case against Chancellor [[Hu Weiyong|hu-weiyong]], he abolished both the chancellor's post and the Central Secretariat. The Six Ministries now answered more directly to the emperor.
 
-One memorial could contain more than one issue. River repairs, grain shipments, appointments, court cases, and news from the borders might all require study by different offices and a decision from above. The emperor's workload began with a huge government sending him information and choices.
+That gave Zhu more control. It also gave him more work.
 [/en]
 [/section]
 
 [section]
 page: 4
 layout: text-only
-heading_zh: 1380年，他从政府中拿掉了一张重要的书桌
-heading_en: In 1380, He Removed an Important Desk
+heading_zh: 六个部门，一个皇帝
+heading_en: Six Ministries, One Emperor
 [zh]
-明朝刚建立时，中央有一个叫中书省的最高行政机构，丞相在这里帮助皇帝统领许多政务。中书省可以先看章奏，也负责把命令传下去。你可以把它想成皇帝与六个主要部门之间的一张重要书桌。
+想想六部每天可能遇到的事情。一个地方发了水灾，需要运粮救济；一段河堤坏了，要不要修；某个地方缺官员，需要任命新人；一件重要案件要怎样处理；边境又送来了新的军情。
 
-1380年，朱元璋在胡惟庸案后撤销中书省，不再设置丞相。原来由中书省统领的吏、户、礼、兵、刑、工六部，后来更直接地向皇帝负责。这六部大致分别管理官员、钱粮户籍、礼仪、军事、司法和工程。
+当然，这些事情不会原封不动全部扔给朱元璋。各级官员会先调查、整理、提出办法，再负责执行命令。皇帝也不会自己跑去修河、查粮仓。可是，撤掉丞相以后，越来越多重要决定的最后一步，离皇帝更近了。
 
-这个改变让皇权更加集中，也让更多政务更直接地来到皇帝面前。它不是一个“朱元璋喜欢亲自做作业”的小习惯，而是一项影响后来明朝政府结构的重大政治选择。
+所以到了1384年，才有了那组惊人的数字：八天，1660通奏札，3291件事情。朱元璋撤掉丞相，是因为他希望皇帝能够更直接地掌握国家大事。现在，他也看见了这个选择的另一面。
 [/zh]
 [en]
-At the beginning of the Ming dynasty, the Central Secretariat helped run the government. Its chancellor stood between the emperor and many parts of the administration. The office could review reports before the emperor saw them and help send orders back out. You might picture it as an important desk between the emperor and six major ministries.
+Imagine the kinds of problems moving through those ministries. A flood might damage farms and require grain relief. A bridge or canal might need repair. An official might need to be appointed. A criminal case could require review. News could arrive from an army guarding the frontier.
 
-In 1380, after the case against Chancellor Hu Weiyong, Zhu abolished the Central Secretariat and stopped appointing a chancellor. The Six Ministries then answered more directly to the emperor. Together, they handled officials, taxes and population records, ceremonies, the military, law, and public works.
+Most of the work was still done by officials. They gathered information, investigated problems, prepared documents, and carried out orders. The emperor did not personally ride out to repair every riverbank or count every bag of grain. But more important decisions now had a shorter road to the throne.
 
-This change pulled more power toward the emperor. It also brought more government business closer to his desk. It was not simply a personal habit of an emperor who liked to “do all his own homework.” It was a major political choice that shaped the Ming government for generations.
+That is why the numbers from 1384 are so striking. Only four years after the chancellorship was abolished, officials counted 1,660 memorials and 3,291 matters arriving during that eight-day stretch. Zhu had removed one powerful office because he wanted the emperor to hold tighter control over the government. Now he was seeing the other side of that choice.
 [/en]
 [/section]
 
 [section]
 page: 5
-layout: text-wrap-image
-heading_zh: 八天里来了多少事情？
-heading_en: How Much Business Arrived in Eight Days?
-image: late-night-memorials-ming.webp
-caption_zh: 画家用月亮、灯火和纸堆表现政务压力；它不是某个夜晚的记录，纸张样式和数量也不能当作历史证据。
-caption_en: Moonlight, a lamp, and paper stacks make the pressure visible. This is not a record of one night, and the papers are not evidence of an exact form or count.
-[zh]
-朱元璋去世后由朝廷编修的《明太祖实录》，保存了一项惊人的统计。洪武十七年，也就是1384年，有官员统计了连续八天送来的文书：内外各部门共有章奏1,660通，里面涉及3,391件事。平均下来，每天超过两百通文书、四百件事项。
-
-但这里要慢一点。这项统计说的是政府收到和上报的数量，并没有说朱元璋独自把每个字都读完，也没有说他亲手给每一件事写下长篇批语。“一通”章奏还可能包含不止一件事情，这八天也不能代表他统治时期的每一天。
-
-即便加上这些限制，数字仍然告诉我们一件重要的事：废除丞相后，皇帝成为许多决定更集中的终点。那张书桌忙碌的，不只是朱元璋一个人，也是围绕皇权运转的一整套政府。
-[/zh]
-[en]
-The *Veritable Records of Ming Taizu*, an official chronicle compiled after Zhu's death, preserves an astonishing count. During one eight-day stretch in 1384, officials counted 1,660 memorials from offices inside and outside the capital. Those documents contained 3,391 separate matters. That averages more than two hundred documents and four hundred issues each day.
-
-Now slow down. The record counts what government offices submitted. It does not say that Zhu read every character alone or wrote a long answer to every item with his own brush. One memorial could hold several matters, and these eight days cannot represent every day of his reign.
-
-Even with those limits, the count teaches us something important. After the chancellorship disappeared, the emperor stood at the end of more decision-making paths. The crowded desk reflected Zhu’s workload, but it also revealed an entire government organized around imperial power.
-[/en]
-[/section]
-
-[section]
-page: 6
 layout: text-only
-heading_zh: 皇帝并没有真的一个人工作
-heading_en: The Emperor Did Not Truly Work Alone
+heading_zh: 越来越多的路，通向同一个地方
+heading_en: Too Many Roads to One Desk
 [zh]
-六部官员先处理各自的事务，负责传递章奏的机构整理来文，翰林学士等文字官员也会帮助阅看文件、记录决定或按照皇帝的意思起草文字。朱元璋废除了丞相，却没有让整个政府消失。
+朱元璋后来并没有重新设置丞相。六部继续直接向皇帝负责。以后明朝的皇帝又慢慢发展出其他帮助处理文书和政务的办法。
 
-后来，明朝逐渐发展出大学士和内阁，帮助皇帝处理越来越复杂的文书。洪武时期的这些助手还没有后来内阁那样的地位，也不能简单当成换了名字的丞相。制度一边把决定权集中到皇帝，一边又不得不寻找新的办法，让数量巨大的政务能够流动。
+可是1384年的那八天，留下了一个特别清楚的画面。各地的报告不断送到中央，不同部门查看、讨论，再一层一层往前走。最后，许多重要问题都来到同一个地方：皇帝这里。
 
-这就是故事里的矛盾：拿掉一位权力很大的助手，可以让皇帝掌握更多决定；可是，当更多道路都通向同一个人时，那里也更容易变成最拥挤的地方。
+朱元璋花了很多力气，让国家的大事少经过一个权力很大的丞相，而更多由皇帝亲自决定。结果，越来越多的事情也开始向他涌来。他得到了更多权力。他的书桌，也越来越忙了。
 [/zh]
 [en]
-Officials in the Six Ministries handled matters in their own areas. Other offices received and organized reports. Scholars serving near the emperor could help review documents, record decisions, or draft words that followed his instructions. Zhu removed the chancellor, but he did not remove the rest of government.
+Zhu Yuanzhang did not bring back the chancellor. The Six Ministries continued to answer directly to the emperor, and later Ming rulers developed other groups of advisers and secretaries to help manage the enormous flow of government work.
 
-Over time, the Ming developed grand secretaries and then a Grand Secretariat to help manage complicated paperwork. Zhu's early assistants did not yet have all the influence that later grand secretaries gained, and they were not simply chancellors with a new name. The system pulled final authority toward the emperor while also searching for new ways to keep the paperwork moving.
+But that eight-day count gives us a rare glimpse of what Zhu's new system felt like from the center. Reports came from the capital and from faraway provinces. Different offices studied them. Officials carried them onward. Again and again, important questions ended at the same place: the emperor.
 
-That is the puzzle at the center of this story. Removing a powerful helper can give the emperor more control. But when more roads lead to one person, that person can also become the government’s biggest bottleneck.
+Zhu Yuanzhang had spent years building a government in which fewer powerful officials stood between him and the decisions of the empire. Then thousands of decisions began finding their way toward him. He had gained more control. And with it came a very crowded desk.
 [/en]
 [/section]
-
-[section]
-page: 7
-layout: text-only
-heading_zh: 忙碌不等于每个决定都正确
-heading_en: Busy Does Not Mean Every Decision Was Good
-[zh]
-朱元璋确实投入大量精力重建明初政府，也用很严的办法管理官员。不过，“文件很多”只能说明工作量大，不能证明每个决定都公平或有效。他统治后期的政治越来越严酷，不少官员在大案和清洗中被监禁或处死。
-
-所以，这不是一个“皇帝越忙就是越好的皇帝”的故事。权力集中以后，皇帝的决定更难绕开，他的错误和猜疑也可能产生更大的后果。研究一张书桌上的文件，也是在看一种政府怎样分配权力、传递信息和承担风险。
-[/zh]
-[en]
-Zhu spent great energy rebuilding government in the early Ming, and he controlled officials with severe rules. Yet a large pile of documents shows workload, not wisdom. It does not prove that every choice was fair or effective. In the later part of his reign, his rule became increasingly harsh, and many officials were imprisoned or killed during major political purges.
-
-This is not a story saying that the busiest emperor must be the best emperor. When so much power rests with one person, the emperor's choices are harder to escape. His mistakes and suspicions can also cause greater harm. Studying the papers on one desk also shows us how a government shared power, moved information, and handled risk.
-[/en]
-[/section]
-
-[ending]
-heading_zh: 再看那张堆满文件的书桌
-heading_en: Look Again at the Crowded Desk
-[zh]
-画里的朱元璋坐在一张堆满奏章的书桌前。纸堆让人一眼看见他的工作有多少，但这些文件讲的不只是一个皇帝很忙。
-
-明朝刚刚建立时，整个政府不断产生新的问题。朱元璋后来取消丞相，让六部更直接地向自己负责。许多官员仍然帮助整理、起草和执行政务，可是最后的决定越来越集中在皇帝手里。
-
-现在，这张书桌背后的故事已经清楚了：朱元璋得到更多权力，也接住了更多工作。当越来越多道路通向同一个人时，权力、工作和犯错的风险都会在那里集中起来。
-[/zh]
-[en]
-In the picture, Zhu sits at a desk crowded with reports. The piles of paper make his workload easy to see, but they tell us more than “this emperor was busy.”
-
-The new Ming government kept producing problems that needed answers. Zhu later removed the chancellor and made the Six Ministries report more directly to him. Many officials still sorted papers, drafted orders, and carried out decisions, but final authority gathered more tightly around the emperor.
-
-Now the story behind the crowded desk is clear. Zhu gained more power, and he pulled more work toward himself. When more roads lead to one person, authority, workload, and the risk of costly mistakes all gather in the same place.
-[/en]
-[/ending]

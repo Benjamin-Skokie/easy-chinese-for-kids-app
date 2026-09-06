@@ -27,11 +27,11 @@
             <img src="./images/checking-old-medicine-books.webp" alt="" class="floated-image" />
             <figcaption class="caption floated-caption"><span class="zh">李时珍把书里的图画和眼前的植物放在一起比较。</span><br><span class="en">Li Shizhen compares a plant with the pictures in his books.</span></figcaption>
           </figure>
-          <p>李时珍在医生家庭里长大。小时候，他常常看见父亲帮助生病的人，也读了许多讲药的书。</p>
+          <p><span class="glossary-entry"><button type="button" class="glossary-term" aria-expanded="false" aria-controls="glossary-li-shizhen-1">李时珍</button><span id="glossary-li-shizhen-1" class="glossary-popover" role="tooltip">Lǐ Shízhēn · 明代医药学家，《本草纲目》的作者。</span></span>在医生家庭里长大。小时候，他常常看见父亲帮助生病的人，也读了许多讲药的书。</p>
           <p>可是，书看得越多，他发现的问题也越多。同一种东西，有时在两本书里用了不同的名字；有些图画和文字对不上；还有一些说法，已经传了很久，却不一定正确。</p>
           <p>书上白纸黑字写着，难道也会错吗？</p>
           <p>李时珍的答案很简单：会。所以，他决定再查一遍。</p>
-          <p>Li Shizhen grew up in a family of doctors. As a boy, he watched his father help sick people. He also read many books about medicine.</p>
+          <p><span class="glossary-entry"><button type="button" class="glossary-term" aria-expanded="false" aria-controls="glossary-li-shizhen-2">Li Shizhen</button><span id="glossary-li-shizhen-2" class="glossary-popover" role="tooltip">Lǐ Shízhēn · 李时珍 · The Ming medical scholar who compiled the Bencao Gangmu.</span></span> grew up in a family of doctors. As a boy, he watched his father help sick people. He also read many books about medicine.</p>
           <p>The more Li read, the more problems he found. Two books might use different names for the same thing. A picture might not match the words beside it. Some ideas had been copied for years without anyone stopping to ask whether they were right.</p>
           <p>Could a book be wrong even when the words were written neatly in black ink?</p>
           <p>Li Shizhen's answer was simple: yes. So he decided to check again.</p>
@@ -85,10 +85,10 @@
           </figure>
           <p>大约二十七年以后，李时珍终于写完了这部大书的第一版。他把它叫作《本草纲目》。书名只有四个字，里面却有将近一千九百项内容。</p>
           <p>树根和叶子只是开头，后面还有动物、贝壳、石头、金属、食物和其他材料。每一项都要回答一长串问题：它叫什么？长什么样？以前的书怎么说？那些书有没有互相打架？</p>
-          <p>李时珍把找到的答案分门别类，写满了许多册。二十七年过去，书终于写完了 - 可是，想让别人读到它，还有一件很难的事没有完成。</p>
+          <p>李时珍把找到的答案分门别类，写满了许多册。二十七年过去，书终于写完了&#8212;&#8212;可是，想让别人读到它，还有一件很难的事没有完成。</p>
           <p>After about twenty-seven years, Li finally finished the first version of his enormous work. He called it <em>Bencao Gangmu</em>. The title was only four Chinese characters long, but inside were almost 1,900 entries.</p>
           <p>Roots and leaves were only the beginning. Its pages also held animals, shells, stones, metals, foods, and many other materials. Each entry tried to answer a long list of questions: What is it called? What does it look like? What did older books say? Did those books disagree?</p>
-          <p>Li sorted the answers into a whole set of books. After twenty-seven years, the writing was finally done - but one very difficult job still stood between the book and its readers.</p>
+          <p>Li sorted the answers into a whole set of books. After twenty-seven years, the writing was finally done&#8212;but one very difficult job still stood between the book and its readers.</p>
         </div>
       </section>
 
@@ -96,7 +96,7 @@
         <div class="story-copy">
           <p class="page-label">Page 5</p>
           <h3>写完了，还没有做完</h3>
-          <h4>Written - but Not Yet Printed</h4>
+          <h4>Written&#8212;but Not Yet Printed</h4>
           <div class="zh">
             <p>那时没有按一下按钮就能吐出书页的机器。工匠要把一页页文字刻在木板上，刷上墨，再把纸压上去。这样大的一套书，需要有人愿意花许多时间和钱来印。</p>
           <p>李时珍找了很多年，终于有一位南京的出版者开始刻印。可是书还没有印好，李时珍就在1593年去世了。他的家人继续完成这件事。他的几个儿子参与准备书里的图画，其中一个儿子后来把印好的书送到了朝廷。</p>
@@ -153,7 +153,8 @@
             if (!button || !popover) return;
 
             const margin = 12;
-            const gap = 10;
+            const compactViewport = window.matchMedia("(max-width: 900px)").matches;
+            const gap = compactViewport ? 8 : 10;
             const buttonRect = button.getBoundingClientRect();
             const popoverRect = popover.getBoundingClientRect();
             const halfWidth = popoverRect.width / 2;
@@ -162,10 +163,12 @@
             const maxCenter = window.innerWidth - margin - halfWidth;
             const left = Math.min(Math.max(buttonCenter, minCenter), maxCenter);
 
-            let side = "above";
-            let top = buttonRect.top - popoverRect.height - gap;
+            let side = compactViewport ? "below" : "above";
+            let top = side === "below"
+              ? buttonRect.bottom + gap
+              : buttonRect.top - popoverRect.height - gap;
 
-            if (top < margin) {
+            if (side === "above" && top < margin) {
               side = "below";
               top = buttonRect.bottom + gap;
             }

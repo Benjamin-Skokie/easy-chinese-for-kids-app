@@ -4,11 +4,11 @@
 
 ## Why Did Men Keep Their Hair Long?
 
-Many men in Tang China kept their hair long. Was that because they had no scissors? Not at all. People in Tang China used scissors, and Tang scissors can still be seen in museums today.
+Many men in [[Tang China|tang-dynasty]] kept their hair long. Was that because they had no scissors? Not at all. People in Tang China used scissors, and Tang scissors can still be seen in museums today.
 
 Long hair was mainly a custom. Families taught that a person's body and hair came from their parents and should be treated with care. For many Han Chinese men, cutting the hair very short or shaving it all off was not an everyday choice. That does not mean every man went through life without trimming a single hair. People washed, combed, and cared for their hair, and some people cut or shaved it. Tang China was also home to many different communities, so not everyone wore the same hairstyle.
 
-Long hair had to go somewhere. Men often combed it up, tied it in a knot, and wrapped black cloth or thin gauze around the head and hair knot. The cloth kept the hair from falling loose while a man walked, rode a horse, or worked. It also made him look properly dressed. This head wrap was called a *futou*, pronounced “foo-toe.”
+Long hair had to go somewhere. Men often combed it up, tied it in a knot, and wrapped black cloth or thin gauze around the head and hair knot. The cloth kept the hair from falling loose while a man walked, rode a horse, or worked. It also made him look properly dressed. This head wrap was called a [[futou|futou]], pronounced “foo-toe.”
 
 Futou had appeared before the Tang dynasty. During the Tang, they became a common part of men's everyday clothing. Emperors and ordinary people could both wear them, although the shape, material, and occasion were not always the same.
 
@@ -40,7 +40,7 @@ The two “feet” at the back of a futou began as cloth corners left after the 
 
 In this riding picture, the soft feet have become long, flying ribbons. The artist made them extra dramatic. A real Tang rider did not always wear them this way, and long ribbons were not a sign that someone was a general. In a real battle, a protective helmet usually mattered more than a futou.
 
-Futou feet continued to change after the Tang. Some official hats in the Song dynasty had long, stiff wings that reached out to both sides. That later style became famous, but it was not the hat of every Tang man.
+Futou feet continued to change after the Tang. Some official hats in the [[Song dynasty|song-dynasty]] had long, stiff wings that reached out to both sides. That later style became famous, but it was not the hat of every Tang man.
 
 ---
 

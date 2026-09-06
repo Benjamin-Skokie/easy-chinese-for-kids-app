@@ -139,7 +139,7 @@
       <h4>Dumplings Around the World</h4>
       <div class="summary-copy">
         
-        <p>Wrapping filling inside dough is a useful idea, and cooks around the world have used it in many ways. China has *jiaozi* and wontons. Korea has *mandu*, Japan has *gyoza*, Italy has *ravioli*, and Poland has *pierogi*. Some are curved, some square, and some round. They may be boiled, steamed, or fried until golden underneath.</p>
+        <p>Wrapping filling inside dough is a useful idea, and cooks around the world have used it in many ways. China has <span class="glossary-entry"><button type="button" class="glossary-term" aria-expanded="false" aria-controls="glossary-jiaozi-currency-1">jiaozi</button><span id="glossary-jiaozi-currency-1" class="glossary-popover" role="tooltip">jiāozǐ · 交子 · An early paper currency used in Sichuan and later issued by the Northern Song government.</span></span> and wontons. Korea has *mandu*, Japan has *gyoza*, Italy has *ravioli*, and Poland has *pierogi*. Some are curved, some square, and some round. They may be boiled, steamed, or fried until golden underneath.</p>
 <p>Why do some of them look alike? Recipes travel with traders, neighbors, and families moving to new homes, so some foods may have influenced others. People in faraway places may also have come up with similar ways to wrap filling in dough.</p>
 <p>People who study food history still do not know whether all these foods are connected. A similar shape alone does not prove that they came from one first recipe. Chinese *jiaozi*, Korean *mandu*, and Italian *ravioli* each have their own names, fillings, and ways of being made. They are not all the same food.</p>
       </div>
@@ -174,7 +174,8 @@
             if (!button || !popover) return;
 
             const margin = 12;
-            const gap = 10;
+            const compactViewport = window.matchMedia("(max-width: 900px)").matches;
+            const gap = compactViewport ? 8 : 10;
             const buttonRect = button.getBoundingClientRect();
             const popoverRect = popover.getBoundingClientRect();
             const halfWidth = popoverRect.width / 2;
@@ -183,10 +184,12 @@
             const maxCenter = window.innerWidth - margin - halfWidth;
             const left = Math.min(Math.max(buttonCenter, minCenter), maxCenter);
 
-            let side = "above";
-            let top = buttonRect.top - popoverRect.height - gap;
+            let side = compactViewport ? "below" : "above";
+            let top = side === "below"
+              ? buttonRect.bottom + gap
+              : buttonRect.top - popoverRect.height - gap;
 
-            if (top < margin) {
+            if (side === "above" && top < margin) {
               side = "below";
               top = buttonRect.bottom + gap;
             }

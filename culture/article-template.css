@@ -285,10 +285,10 @@ code {
   width: max-content;
   max-width: min(280px, calc(100vw - 32px));
   padding: 10px 12px;
-  border: 1px solid rgba(110, 48, 25, 0.18);
+  border: 2px solid rgba(110, 48, 25, 0.55);
   border-radius: 12px;
-  background: #fffaf1;
-  box-shadow: 0 14px 32px rgba(43, 31, 22, 0.16);
+  background: #fff2cf;
+  box-shadow: 0 12px 28px rgba(43, 31, 22, 0.24);
   color: var(--ink);
   font-size: 0.92rem;
   font-weight: 500;
@@ -307,9 +307,9 @@ code {
   bottom: -6px;
   width: 10px;
   height: 10px;
-  border-right: 1px solid rgba(110, 48, 25, 0.18);
-  border-bottom: 1px solid rgba(110, 48, 25, 0.18);
-  background: #fffaf1;
+  border-right: 2px solid rgba(110, 48, 25, 0.55);
+  border-bottom: 2px solid rgba(110, 48, 25, 0.55);
+  background: #fff2cf;
   transform: translateX(-50%) rotate(45deg);
 }
 
@@ -326,6 +326,11 @@ code {
   visibility: visible;
 }
 
+.glossary-entry[data-open="true"] .glossary-term {
+  background: rgba(201, 137, 67, 0.28);
+  box-shadow: inset 0 0 0 1px rgba(110, 48, 25, 0.25);
+}
+
 .glossary-entry[data-open="true"] .glossary-popover {
   position: fixed;
   left: var(--glossary-left, 50vw);
@@ -334,7 +339,7 @@ code {
   transform: translateX(-50%);
 }
 
-.glossary-entry[data-side="below"] .glossary-popover {
+.glossary-entry:not([data-open="true"]):not(:hover)[data-side="below"] .glossary-popover {
   top: calc(100% + 10px);
   bottom: auto;
 }
@@ -343,8 +348,18 @@ code {
   top: -6px;
   bottom: auto;
   border: 0;
-  border-left: 1px solid rgba(110, 48, 25, 0.18);
-  border-top: 1px solid rgba(110, 48, 25, 0.18);
+  border-left: 2px solid rgba(110, 48, 25, 0.55);
+  border-top: 2px solid rgba(110, 48, 25, 0.55);
+}
+
+@media (hover: hover) {
+  .glossary-entry:hover .glossary-popover {
+    position: fixed;
+    left: var(--glossary-left, 50vw);
+    top: var(--glossary-top, 16px);
+    bottom: auto;
+    transform: translateX(-50%);
+  }
 }
 
 .story-break {
@@ -428,20 +443,11 @@ code {
     border-top: 1px solid var(--line);
   }
 
-  .glossary-entry[data-open="true"] .glossary-popover,
-  .glossary-entry:focus-within .glossary-popover {
-    position: fixed;
-    right: 16px;
-    bottom: 16px;
-    left: 16px;
-    top: auto;
-    width: auto;
-    max-width: none;
-    transform: none;
-    font-size: 0.98rem;
-  }
-
-  .glossary-popover::after {
-    display: none;
+  .glossary-entry[data-open="true"] .glossary-popover {
+    width: min(320px, calc(100vw - 24px));
+    max-width: calc(100vw - 24px);
+    padding: 12px 14px;
+    font-size: 0.94rem;
+    line-height: 1.5;
   }
 }

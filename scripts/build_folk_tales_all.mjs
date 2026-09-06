@@ -15,6 +15,7 @@ const slugs = [
   "grind-an-iron-rod-into-a-needle",
   "borrow-a-little-light-and-keep-learning",
   "add-the-eyes-and-the-whole-thing-comes-alive",
+  "drawing-legs-on-a-snake",
 ];
 
 for (const slug of slugs) {

@@ -1,154 +1,141 @@
 ---
-title_zh: 一片甲，许多答案：中国古代铠甲怎样保护身体
-title_en: One Armor Plate, Many Answers: Body Armor in Ancient China
+title_zh: 一片一片，怎么变成一身铠甲？
+title_en: Hundreds of Little Plates: How Ancient Chinese Armor Worked
 slug: ancient-armor
 category: military
-difficulty: 困难
+difficulty: 简单
 style_notes: "用 --- 分隔 frontmatter；正文强调优先用 *斜体*；尽量不用 **粗体**。"
 ---
 
 [hero]
-title_zh: 一片甲，许多答案：中国古代铠甲怎样保护身体
-title_en: One Armor Plate, Many Answers: Body Armor in Ancient China
+title_zh: 一片一片，怎么变成一身铠甲？
+title_en: Hundreds of Little Plates: How Ancient Chinese Armor Worked
 [/hero]
 
 [section]
 page: 1
 layout: text-only
-heading_zh: 考古桌上的难题
-heading_en: A Puzzle on the Archaeologist's Table
 [zh]
-想象考古工作室里摆着三样东西：一小片发黑的皮革、一团锈结的铁片，还有一个身穿铠甲的陶俑。哪一件最能告诉我们古代士兵穿什么？答案是：三件都重要，却没有一件能单独给出完整答案。
+仔细看看[[兵马俑|terracotta-warriors]]身上的铠甲。站远一点，好像是一件厚厚的甲衣；走近以后，却会发现胸前和肩膀上排着一片又一片的小甲片。
 
-皮革和织物容易腐烂，铁会锈成硬块，绳带也常常消失。陶俑、壁画和文字比较容易让我们看见铠甲的外形，却未必告诉我们甲片究竟是皮、铜还是铁。研究古代铠甲就像拼一幅缺了许多块的图：先分清证据，再小心复原，不能把想象画得清楚，就当成历史也同样清楚。
+为什么要费这么大劲，用这么多小片拼成一件铠甲？为什么不直接做一块又大又硬的壳，把人保护起来？
+
+只要让士兵动一动，答案就出来了。
 [/zh]
 [en]
-Imagine three objects on a conservation table: a dark scrap of leather, a solid lump of rusted iron plates, and a clay soldier wearing carefully modeled armor. Which one tells us what ancient soldiers wore? All three matter, but none can give the complete answer alone.
+Look closely at the armor on a [[Terracotta|terracotta]] Warrior. From a few steps away, it may look like one heavy coat. Move closer, though, and you can see rows and rows of small plates covering the chest and shoulders.
 
-Leather and cloth decay. Iron plates rust together, while the cords that joined them often disappear. Tomb figures, paintings, and written descriptions can preserve an armor's shape, but they may not tell us whether its plates were made of hide, bronze, or iron. Studying ancient armor is like assembling a picture with many pieces missing. We have to identify each kind of clue before attempting a reconstruction. A modern picture can look perfectly clear even when the history is not.
+Why make armor out of so many little pieces? Why not simply put one large, hard shell around a soldier?
+
+The answer becomes clear as soon as the soldier starts to move.
 [/en]
 [/section]
 
 [section]
 page: 2
 layout: text-wrap-image
-heading_zh: 材料不是一级一级换掉的
-heading_en: Materials Did Not Replace One Another in a Neat Order
+heading_zh: 铠甲也得会“弯”
+heading_en: Armor Has to Bend
 image: 3-1-hide-armor-shang-zhou.webp
-caption_zh: 现代想象图只展示裁皮、打孔和连接；完整胸衣、缝法、服装、工具与营地并非商周考古复原。
-caption_en: This modern image shows cutting, piercing, and joining leather. Its vest, stitching, clothing, tools, and camp are not a Shang–Zhou reconstruction.
+caption_zh: 工匠正在裁皮、打孔，再把一片片甲片连接起来。
+caption_en: Craftspeople cut and pierce leather, then connect the armor plates one by one.
 [zh]
-旧故事常把铠甲排成一列：先有兽皮，再有青铜，接着是铁，最后升级成钢。考古发现并不支持这样整齐的台阶。商代墓葬发现过彩绘皮质甲片，西周有铜甲片，春秋战国又有成套的涂漆皮甲；铁甲片逐渐出现以后，皮革、织物和金属仍会在不同地区、不同部队和不同部位继续使用。
+士兵当然不会一直直挺挺地站着。他要抬手、转身、奔跑、拉弓，有时还要骑马。铠甲既要保护身体，又不能把人困得动弹不得。
 
-为什么不把所有甲都换成“最新材料”？因为工匠要同时考虑原料、制作时间、重量、活动方式、潮湿和维修。硬皮经过整形和涂漆，可以做成轻便的甲片；金属更耐切割，却要采矿、冶炼和锻打，也可能生锈。十二至十三世纪云南大理国的一件实物铠甲，仍以涂了红黑漆的硬皮板为主体，并同时使用皮绳、铜合金和铁。这件晚期皮甲证明，旧材料不会因为铁器出现就自动退出历史。
+中国古代很多铠甲就是用一片片小甲片解决这个问题的。工匠在甲片上打孔，把它们一排一排摆好，再用绳子编缀起来。有些甲片还会稍微重叠，看起来像屋瓦，也像一层层鱼鳞。
 
-第一幅图可以帮助我们看见“裁皮、打孔、连接”的动作，却不是商代工坊的复原图。画中的完整胸衣、缝法、衣服、工具和营地布置都属于现代想象，不能拿来证明商周士兵统一穿这种样式。
+人弯腰的时候，几排甲片可以跟着移动；肩膀抬起来时，甲片也能稍微改变位置。它不像一整块硬板那样，只能保持一个形状。这种铠甲可一点也不好做。每一片都要裁好、打孔，再一片片穿起来。一件铠甲可能需要几百片，有些精细的铠甲甚至更多。不过，这些小片连在一起以后，就能一边保护身体，一边给手臂和腰留下活动的空间。
+
+甲片也不一定都是铁做的。考古发现里有涂漆的皮甲片，也有铜片和铁片。不同的材料在很长时间里一直同时存在，并不是有了铁以后，皮甲就立刻全部消失了。
 [/zh]
 [en]
-An old-fashioned story lines armor up like this: first animal hide, then bronze, then iron, and finally steel. Archaeology does not show such a tidy staircase. Painted leather armor plates have been found in Shang tombs, bronze plates are known from the Western Zhou, and complete suits of lacquered leather armor survive from the Spring and Autumn and Warring States periods. After iron plates appeared, leather, textiles, and metals continued to serve different regions, units, and parts of the body.
+A soldier does much more than stand still. He has to raise his arms, turn his body, run, climb, pull a bow, or sit on a horse. Armor has to protect him without trapping him inside it.
 
-Why not replace every suit with the “newest” material? Armor makers had to balance raw materials, labor, weight, movement, weather, and repair. Shaped and lacquered hard leather could form relatively light plates. Metal resisted cutting well, but it required mining, smelting, and forging, and it could rust. A surviving suit from the Dali Kingdom in twelfth- or thirteenth-century Yunnan still used rigid leather panels coated with red and black lacquer, together with leather laces, copper alloy, and iron. This late leather armor proves that an older material did not vanish when iron became available.
+Many kinds of ancient Chinese armor solved this problem with small plates. Craftspeople punched holes into the plates, arranged them in rows, and joined them with cords. Some plates overlapped a little, like roof tiles or fish scales. When the wearer bent at the waist or moved a shoulder, the rows could shift with his body instead of behaving like one stiff board.
 
-The first illustration helps us picture the actions of cutting, piercing, and joining leather, but it is not a reconstruction of a Shang workshop. Its complete vest, stitching pattern, clothes, tools, and camp are modern inventions. It cannot prove that Shang or Zhou soldiers wore one standard design like this.
+Making armor this way took patience. Every plate had to be shaped, pierced, and connected. A suit might contain hundreds of pieces, and some especially fine examples contained far more. But all those little pieces could work together to make a protective covering that still allowed the wearer to move.
+
+The plates did not all have to be made from the same material. Archaeologists have found ancient Chinese armor pieces made from lacquered leather, bronze, and iron. Leather plates could be shaped and coated with lacquer; metal plates could be hammered and pierced for lacing. Different materials continued to be used for a very long time rather than neatly replacing one another.
 [/en]
 [/section]
 
 [section]
 page: 3
-layout: text-only
-heading_zh: 小甲片怎样变成一件甲
-heading_en: How Small Plates Became a Suit
+layout: text-wrap-image
+heading_zh: 每个士兵穿的也不一样
+heading_en: Not Every Soldier Needed the Same Armor
+image: 3-2-qin-armor-terracotta.webp
+caption_zh: 真人穿着根据陶俑甲片排列设计的服装，旁边的陶俑展示了不同的铠甲和军队角色。
+caption_en: A costumed figure follows the plate patterns modeled in clay, while the warriors beside him show different armor and military roles.
 [zh]
-许多古代中国铠甲不是一整块硬壳，而是由打孔的小片连接起来。研究者常把甲片彼此横向、纵向编缀成排的结构称为“札甲”；另一类像屋瓦或鱼鳞那样重叠、固定在皮革或织物衬底上的结构，可称为“鳞甲”。古人使用的名称和现代研究分类不总是一一对应，所以看到“小片重叠”，不能马上断定只有一种做法。
+兵马俑刚好让我们看到了很多不同的铠甲。两千两百多年前，[[秦始皇|qin-shi-huang]]陵里的工匠用[[陶土|terracotta]]塑出了成千上万名士兵。陶俑身上的铠甲当然也是泥土做的，可是甲片、腰带和肩部的样子都刻得十分仔细。
 
-甲片上的孔、折痕和绳迹非常重要。它们能帮助修复者判断哪一边朝上、相邻甲片怎样重叠、肩部与腰部是否需要不同形状。用许多小片的好处，是身体弯曲时，各排甲片还能相对移动，损坏后也可能只换一部分；代价则是钻孔、涂漆和编绳都很费工，绳带还是容易磨损的地方。
+再多看几个人，就会发现他们并不是穿着同一套“制服”。有些步兵的胸口和肩膀都有甲，有些人身上的甲很少，甚至没有甲。骑在马上的士兵穿得更短一些，方便骑马和活动；驾战车的人和其他士兵，保护身体的方式又可能不一样。
+
+这其实很好理解。骑马的人要抬腿、转身，步兵需要活动的地方又不完全一样。
+
+铠甲不能只想着“越多越好”。还得让穿它的人能做自己的工作。
 [/zh]
 [en]
-Much ancient Chinese armor was not one solid shell. It was built from small, perforated plates. Researchers often call armor made by lacing plates directly to one another in horizontal and vertical rows *lamellar armor*, or *zhajia* in Chinese. A related construction, often called scale armor, arranges overlapping plates like roof tiles or fish scales and fastens them to a leather or textile backing. Ancient names and modern categories do not always match perfectly, so the sight of overlapping plates does not prove that only one method was used.
+The [[Terracotta Army|terracotta-warriors]] gives us a wonderful place to look at this idea. The clay soldiers buried near China’s First Emperor were made more than 2,200 years ago. Their armor is sculpted from clay, but the artists carefully showed the rows of plates, belts, shoulder pieces, and different lengths of armor.
 
-Holes, creases, and traces of cord can be as valuable as the plates themselves. They help conservators work out which end pointed upward, how neighboring plates overlapped, and whether the shoulders and waist required different shapes. Small plates allowed rows to shift as the wearer bent and sometimes allowed a damaged section to be replaced. The cost was labor: punching holes, applying lacquer, and threading cords took time, and the cords themselves could wear out.
+And the soldiers do not all look the same. Some infantrymen have armor covering the body and shoulders. Some figures have little or no armor. Cavalrymen riding horses wear shorter armor that leaves them freer to ride, while chariot drivers and other soldiers can have different amounts of protection.
+
+That makes sense. A rider needs to move his legs and twist on horseback. A soldier standing on foot may want protection in different places. Armor was not simply a metal uniform that everyone put on in exactly the same way.
+
+It had to fit the job.
 [/en]
 [/section]
 
 [section]
 page: 4
-layout: text-wrap-image
-heading_zh: 兵马俑告诉我们外形，不直接告诉我们材料
-heading_en: The Terracotta Army Shows Shape, Not Material Directly
-image: 3-2-qin-armor-terracotta.webp
-caption_zh: 这幅图把现代真人复原与陶俑放进同一场景，只能说明“从雕塑想象实物”；它不是兵马俑坑的考古记录。
-caption_en: This image mixes a modern costumed figure with clay warriors. It suggests a reconstruction from sculpture, but it is not an archaeological record.
+layout: text-only
+heading_zh: 皮也能做铠甲
+heading_en: Leather Can Be Armor Too
 [zh]
-秦始皇陵的陶俑把三世纪前的衣领、腰带和甲片排列塑得很细。有些步兵俑的躯干和肩膀有甲，有些骑兵俑的防护较短，也有俑没有穿甲；军官形象的装饰和覆盖方式又不同。这些差异让我们研究军队分工和甲衣结构，却不能证明每个真实秦兵都得到同样装备。
+今天一想到铠甲，我们很容易想到亮闪闪的金属。可是中国古代的铠甲并不总是这个样子。
 
-陶俑的甲也是陶土塑出来的。根据战国涂漆皮甲实物和陶俑表面的表现，许多研究者把它们理解为涂漆皮甲的形象；但秦代已经有铁器，真实军队也可能使用不止一种材料。说“秦军主力一定都是皮甲”超出了陶俑能证明的范围。
+大英博物馆保存着一件中国古代皮甲片。它用厚皮制成，外面涂了好几层漆，边上还打着许多小孔，可以和别的甲片连起来。更早的考古发现里，也留下了涂漆皮甲的痕迹。
 
-秦始皇陵另一个坑还出土了用石灰岩片和铜丝编成的甲胄。它们制作精细，却太重、太脆，不适合直接上战场，更可能是陵墓中的礼仪模型。第二幅图把现代真人复原放进兵马俑坑，只能作为“根据陶俑想象真实铠甲”的示意，不能当作考古现场。
+而且，有了铁以后，皮甲也没有马上消失。许多世纪以后，[[云南|yunnan]]大理国的一件实物铠甲，主要部分仍然是涂着红黑漆的硬皮板，同时还用了皮绳和金属零件。
+
+工匠要考虑的不只是“哪一种材料最新”，还要想材料从哪里来、做出来有多重、穿上以后能不能活动，以及这些甲片要怎样连在一起。不同的选择，就会做出不同的铠甲。
 [/zh]
 [en]
-The Terracotta Army from the First Emperor's mausoleum models collars, belts, and armor patterns from the third century BCE in remarkable detail. Some infantry figures have protection over the torso and shoulders. Some cavalry figures wear shorter armor, other figures have no armor, and officer figures show different coverage and decoration. These differences help researchers study military roles and armor construction. They do not show that every living Qin soldier received the same equipment.
+Today, when we imagine armor, shiny metal often comes to mind. Ancient Chinese armor did not always look like that.
 
-The armor on each figure is clay. Based on surviving lacquered leather armor from the Warring States period and the modeled surfaces, many scholars interpret the figures as representations of lacquered leather armor. Yet iron was already used in Qin times, and a real army could use more than one material. The figures cannot support the blanket claim that the Qin army's “main armor” was certainly leather.
+One surviving armor plate in the British Museum is made from thick leather coated with layers of lacquer. Holes around its edges show how it could be connected to other pieces. Archaeologists have found evidence for lacquered leather armor going back much earlier as well.
 
-Another pit at the mausoleum contained armor made from limestone plates joined with copper wire. The pieces are finely made but too heavy and fragile for ordinary combat, so they were probably ceremonial models for the tomb. The second illustration places a modern costumed person inside a Terracotta Army excavation. It can only suggest how someone might imagine armor from the figures; it is not an archaeological scene.
+Leather did not disappear just because iron became available. Centuries later, an armor suit from [[Yunnan|yunnan]] was still made mostly from rigid leather panels coated in red and black lacquer, with leather laces and some metal parts.
+
+For an armor maker, the question was not simply, “What is the newest material?” It was also: What can I make here? How heavy will it be? Can the wearer move? How will the pieces be tied together? Those choices changed the armor that came out of the workshop.
 [/en]
 [/section]
 
 [section]
 page: 5
 layout: text-wrap-image
-heading_zh: 汉代铁甲：从锈块读回三千片
-heading_en: Han Iron Armor: Reading Three Thousand Plates from a Rusted Lump
+heading_zh: 一团铁锈里藏着一件铠甲
+heading_en: A Suit Hidden Inside a Lump of Rust
 image: 3-3-han-iron-armor.webp
-caption_zh: 现代组合图可解释铁甲片编缀，却不能证明汉军统一穿这种甲、护面盔或红缨。
-caption_en: This modern composite can explain laced iron plates. It does not prove that Han troops shared this suit, face guard, or red plume.
+caption_zh: 一排排编缀起来的小铁片组成一件可以随身体活动的铠甲。
+caption_en: Rows of laced iron plates form armor that can move with the wearer's body.
 [zh]
-铁甲在战国晚期至汉代越来越重要，但“汉代铁甲登场”仍会让人误以为此前没有铁、此后没有皮。西汉中山靖王刘胜墓中，一件锈结成团的铁甲经过整理，发现由将近三千片熟铁甲片连缀而成。徐州狮子山楚王陵则留下上万片铁甲残片，修复者根据孔位和形状，复原出札甲和不同大小的鳞甲。出土物告诉我们的不是一套统一制服，而是同一时期也有多种结构。
+有时候，考古学家找到铠甲时，它根本不像一件铠甲。河北满城汉墓出土过一件西汉铁甲。埋在地下两千多年以后，原来的铁片已经锈成了一大团。修复人员只能一层一层记录，再把甲片小心地分开。
 
-古代“铁”和“钢”也不是排在两级台阶上的简单名词。对秦汉铁器的科学分析已经发现熟铁、钢和不同种类的铸铁制品。工匠会通过冶炼、锻打和热处理得到不同性质的材料；一件装备还可能把铁片、皮绳、漆和织物组合在一起。因此，不能把唐宋说成钢甲突然替代铁甲的时刻，更不能说钢只供极少数将军使用而普通人全部停在“铁时代”。
+最后，他们从这团铁锈里重新拼出了一件由 **2859片铁甲片**组成的铠甲。它的袖子和下面一些部分还可以随着身体活动。
 
-第三幅图里的整套铁札甲、护面头盔和红色盔缨，是现代设计者组合出的汉军形象。它可以解释铁片编缀的概念，却没有证据说明汉军都穿这一套，也没有证据说明红缨是全军统一识别标志。
+想一想，一开始摆在考古工作者面前的，只是一团看不出形状的锈铁。可是在两千多年前的工匠手里，那曾经是几千片大小不同、各有位置的小甲片。
+
+单独拿起一片，看起来并没有多厉害。可是把一片接上一片，再接上一片，几百片、几千片一起围住身体，一件真正的铠甲就出现了。远远看过去，它好像是一整件。走近以后，才会发现它真正的秘密，就藏在一片又一片的小甲片里。
 [/zh]
 [en]
-Iron armor became increasingly important from the late Warring States through the Han, but saying “iron armor arrived in the Han” makes it sound as if iron had never appeared before and leather vanished afterward. In the Western Han tomb of Liu Sheng, Prince Jing of Zhongshan, conservators separated a corroded mass into a suit made from nearly three thousand wrought-iron plates. At the tomb of a King of Chu near Xuzhou, more than ten thousand iron fragments allowed researchers to reconstruct lamellar armor and several types of larger and smaller scale armor. The finds reveal variety within one period, not a single uniform.
+Sometimes archaeologists do not discover ancient armor looking like armor at all. When a Western Han iron suit was found in the tomb of [[Liu Sheng|liu-sheng]] in Hebei, more than two thousand years after it was buried, its iron plates had rusted together into a hard mass. Conservators slowly worked through the lump, recording and separating the pieces one by one.
 
-“Iron” and “steel” are not two simple levels on a timeline. Studies of Qin and Han objects have identified wrought iron, steel, and several kinds of cast iron. Craftspeople changed a material through smelting, forging, and heat treatment. One piece of equipment could combine iron plates, leather cords, lacquer, and cloth. Steel armor did not suddenly replace iron in the Tang or Song, and steel did not belong only to a tiny group of generals while everyone else remained in an “iron age.”
+Eventually, they were able to reconstruct a suit containing **2,859 small iron plates**. The sleeves and lower parts had been connected so that they could move as the wearer moved.
 
-The complete lamellar suit, face-covering helmet, and red plume in the third illustration are a modern designer's composite image of a Han soldier. It can demonstrate the idea of laced iron plates. It cannot show that Han troops all wore this set, and there is no evidence here for a standard red plume used to identify every formation.
+Think about how different those two views are. In the tomb, archaeologists first saw a lump of rust. In the workshop long ago, someone had once seen thousands of carefully shaped pieces, each with a particular place to go.
+
+One plate was not much protection. But tie one plate to another, then another, then hundreds more, and something new appeared: armor that could cover a human body and still move with it. From far away, the finished suit could look almost solid. Up close, its secret was all the little pieces.
 [/en]
 [/section]
-
-[section]
-page: 6
-layout: text-wrap-image
-heading_zh: 找出“材料进化图”里的陷阱
-heading_en: Spot the Trap in the “Evolution” Picture
-image: 3-4-armor-materials-evolution.webp
-caption_zh: 这是错误的线性比较图；其中多件整块胸甲更接近欧洲式轮廓，不能代表中国从皮、铜、铁到钢的朝代序列。
-caption_en: This misleading lineup uses several European-style solid breastplate shapes. It is not a Chinese dynasty sequence from hide to bronze, iron, and steel.
-[zh]
-再看第四幅图：四件胸甲从毛边皮衣排到光亮钢壳，很像电子游戏里的装备升级。可是它们的轮廓更接近现代人对欧洲整块胸甲的想象，并不能代表中国历代铠甲。真正的变化往往发生在甲片大小、开孔方式、重叠方向、覆盖部位和编缀材料上，未必一眼就能排成“越来越亮、越来越硬”的队伍。
-
-朝代名称也不能替代地点、兵种和用途。骑马的人需要肩臂活动，步兵可能更在意躯干和腿部覆盖，仪仗甲又可能重视颜色与装饰；边地和中原得到的原料与技术也不同。同一时代并存的差异，有时比两个朝代之间的差异还大。
-[/zh]
-[en]
-Now look at the fourth illustration. Four breastplates march from a fur-edged hide vest to a shining steel shell, like equipment upgrades in a video game. Their shapes are closer to modern ideas about European solid breastplates than to a reliable survey of Chinese armor through the dynasties. Many important changes in Chinese armor involved plate size, hole patterns, overlap direction, protected areas, and lacing materials. They cannot always be arranged visually from “duller and softer” to “shinier and harder.”
-
-A dynasty name cannot replace information about place, military role, and purpose. A rider needed free movement at the shoulders and arms. An infantry soldier might value more coverage over the torso or legs, while parade armor might emphasize color and decoration. Border regions and the central plains also had access to different materials and technical traditions. Differences within one time period could be greater than differences between two dynasties.
-[/en]
-[/section]
-
-[ending]
-heading_zh: 小结：先问结构，再问材料
-heading_en: In Summary: Ask About Structure Before Building a Timeline
-[zh]
-看到一件古代铠甲，不妨像修复者一样依次提问：这是实物、图像、文字，还是现代复原？甲片用什么做成，怎样连接，保护哪里？它属于哪个地区、什么年代、哪类使用者？哪些部分已经找到证据，哪些只是最合理的猜测？
-
-古代铠甲没有从皮到铜、铁、钢一路通关。它真正的历史，是工匠在有限材料中不断调整结构，也是考古学家从朽皮、锈块、孔洞和雕塑中，一片一片找回那些不同的答案。
-[/zh]
-[en]
-When you see ancient armor, try asking questions like a conservator. Is this an excavated object, an image, a written description, or a modern reconstruction? What were the plates made from, how were they connected, and which parts of the body did they cover? What region, period, and kind of wearer did it belong to? Which details are supported by evidence, and which belong to the best reconstruction we can make for now?
-
-Ancient armor did not advance through game levels from hide to bronze, iron, and steel. Its real history lies in the many ways craftspeople adjusted structures using the materials available to them. It also lies in the patient work of archaeologists, who recover the story one decayed scrap, rusted plate, lacing hole, and sculpture at a time.
-[/en]
-[/ending]

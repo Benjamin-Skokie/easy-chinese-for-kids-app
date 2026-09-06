@@ -4,7 +4,7 @@ window.NIHAO_CULTURE_SOURCES = [
     "category": "architecture",
     "categoryName": "Architecture",
     "slug": "tulou",
-    "title": "土楼（Tǔlóu）：一扇门后的许多家",
+    "title": "土楼：一扇门后的许多家",
     "titleEn": "Tulou: Many Homes Behind One Gate",
     "storyPath": "../../culture/books/architecture/tulou/",
     "groups": [
@@ -1433,7 +1433,7 @@ window.NIHAO_CULTURE_SOURCES = [
     "categoryName": "Clothing",
     "slug": "hanfu",
     "title": "汉服：布料、衣领和大袖子",
-    "titleEn": "Hànfú: Cloth, Collars, and Wide Sleeves",
+    "titleEn": "Hanfu: Cloth, Collars, and Wide Sleeves",
     "storyPath": "../../culture/books/clothing/hanfu/",
     "groups": [
       {
@@ -2008,7 +2008,7 @@ window.NIHAO_CULTURE_SOURCES = [
     "categoryName": "Culture & Daily Life",
     "slug": "cuju",
     "title": "蹴鞠：两千年前的踢球游戏",
-    "titleEn": "Cùjū: A Ball Game from Two Thousand Years Ago",
+    "titleEn": "Cuju: A Ball Game from Two Thousand Years Ago",
     "storyPath": "../../culture/books/culture/cuju/",
     "groups": [
       {
@@ -2253,118 +2253,53 @@ window.NIHAO_CULTURE_SOURCES = [
   {
     "category": "economy",
     "categoryName": "Economy & Exchange",
-    "slug": "ancient-money",
-    "title": "一只钱袋里，为什么装着四种钱？",
-    "titleEn": "Why Were There Four Kinds of Money in One Bag?",
-    "storyPath": "../../culture/books/economy/ancient-money/",
+    "slug": "silk-road",
+    "title": "一匹中国丝绸，怎么走了那么远？",
+    "titleEn": "How Did Chinese Silk Travel So Far?",
+    "storyPath": "../../culture/books/economy/silk-road/",
     "groups": [
       {
-        "title": "Cowries, Imitations, and the Limits of the Evidence",
+        "title": "The Silk Roads as a network",
         "sources": [
           {
-            "label": "Mikael Fauvelle, Shell Money, Cambridge University Press, 2024, section 4.2 “China”",
-            "url": "https://www.cambridge.org/core/elements/shell-money/59F5D361C6CA7C596A8C168C84A960D0"
-          },
-          {
-            "label": "National Museum of China, “Bronze shell coins”",
-            "url": "https://en.chnmuseum.cn/collections_577/collection_highlights_608/ancient_currencies_613/202008/t20200817_247008.html"
+            "label": "UNESCO, “About the Silk Roads”",
+            "url": "https://www.unesco.org/en/silk-roads/about-silk-roads?hub=196704"
           }
         ]
       },
       {
-        "title": "The Shell Component in Chinese Characters",
+        "title": "The Chang'an–Tianshan route network",
         "sources": [
           {
-            "label": "Ministry of Education, Taiwan, Stroke Order of Standard Chinese Characters, entry and radical note for 買",
-            "url": "https://stroke-order.learningweb.moe.edu.tw/dictMean.jsp?ID=36023&la=0"
-          },
-          {
-            "label": "MIT OpenCourseWare, Julian K. Wheatley, Learning Chinese: A Foundation Course in Mandarin, Character Lesson 2",
-            "url": "https://ocw.mit.edu/courses/res-21g-003-learning-chinese-a-foundation-course-in-mandarin-spring-2011/97915adbcca432319d8793d2530e5768_MITRES_21G_003S11_char02.pdf"
+            "label": "UNESCO World Heritage Centre, “Silk Roads: the Routes Network of Chang'an-Tianshan Corridor”",
+            "url": "https://whc.unesco.org/en/list/1442"
           }
         ]
       },
       {
-        "title": "Regional Coin Systems and Simultaneous Forms of Payment",
+        "title": "Zhang Qian's mission",
         "sources": [
           {
-            "label": "British Museum, “Money Gallery,” Room 68 large-print guide, section “The beginnings of coinage—China”",
-            "url": "https://www.britishmuseum.org/sites/default/files/2021-05/Money_Gallery_LPG_2020_Room_68.pdf"
-          },
-          {
-            "label": "British Museum, collection record, “coin; spade-money,” Warring States period",
-            "url": "https://www.britishmuseum.org/collection/object/C_1913-1011-17"
-          },
-          {
-            "label": "Armin Selbitschka, “Managing a Multicurrency System in Tang China: The View from the Centre,” Journal of the Royal Asiatic Society 24.2 (2014)",
-            "url": "https://www.cambridge.org/core/journals/journal-of-the-royal-asiatic-society/article/abs/managing-a-multicurrency-system-in-tang-china-the-view-from-the-centre/2FF20E5E8D46BAD698FE2C545C78DEDC"
-          },
-          {
-            "label": "Academy of Chinese Studies, “Currency in Ancient China”",
-            "url": "https://chiculture.org.hk/en/china-five-thousand-years/2041"
+            "label": "Sima Qian, Shiji (《史记·大宛列传》)",
+            "url": "https://ctext.org/shiji/da-wan-lie-zhuan/ens"
           }
         ]
       },
       {
-        "title": "Qin and Han Standardization",
+        "title": "Zhang Qian and later connections with Central Asia",
         "sources": [
           {
-            "label": "National Museum of China, “半两青铜钱及石钱范” (“Banliang bronze coins and stone coin mold”)",
-            "url": "https://www.chnmuseum.cn/zp/zpml/hb/202010/t20201013_247850.shtml"
-          },
-          {
-            "label": "National Museum of China, “中国古代钱币展” (“Ancient Chinese Currency Exhibition”)",
-            "url": "https://www.chnmuseum.cn/portals/0/web/zt/202102gdqianbi/"
+            "label": "UNESCO Silk Roads Programme, “Zhang Qian”",
+            "url": "https://en.unesco.org/silkroad/content/zhang-qian"
           }
         ]
       },
       {
-        "title": "From Iron Coins to Private Jiaozi",
+        "title": "Cities and stopping places",
         "sources": [
           {
-            "label": "National Office for Philosophy and Social Sciences, He Ping, “成都‘交子’产生的信任机制与‘官方交子’发行的历史意义” (“The Trust Mechanism Behind Chengdu Jiaozi and the Historical Significance of Official Jiaozi”), September 11, 2023",
-            "url": "https://www.nopss.gov.cn/n1/2023/0911/c219544-40075019.html"
-          },
-          {
-            "label": "Peking University Institute of Financial Law, “论‘交子’作为纸币的法律特征” (“On the Legal Characteristics of Jiaozi as Paper Currency”)",
-            "url": "https://www.finlaw.pku.edu.cn/jrfy/gk/2006_jrfy/2006nzd71j/37finlaw240178.htm"
-          },
-          {
-            "label": "Jón Steinsson, Money and Banking, University of California, Berkeley, historical discussion of Song money",
-            "url": "https://eml.berkeley.edu/~jsteinsson/teaching/moneybanking.pdf"
-          }
-        ]
-      },
-      {
-        "title": "Government Paper Money, Regional Limits, and Inflation",
-        "sources": [
-          {
-            "label": "Columbia University, Asia for Educators, “The Song Dynasty in China: The Commercial Revolution—Paper Money”",
-            "url": "https://afe.easia.columbia.edu/songdynasty-module/econ-rev-money.html"
-          },
-          {
-            "label": "Xueying Guan and Charles K. S. Ma, “The rise and fall of paper money in Yuan China, 1260–1368,” Economic History Review 77.3 (2024)",
-            "url": "https://onlinelibrary.wiley.com/doi/10.1111/ehr.13305"
-          },
-          {
-            "label": "doi.org",
-            "url": "https://doi.org/10.1111/ehr.13305"
-          },
-          {
-            "label": "Hans-Ulrich Vogel, “‘Mothers and children’: discourses on paper money during the Song period,” in Money as God?, Cambridge University Press, 2014",
-            "url": "https://www.cambridge.org/core/books/money-as-god/mothers-and-children-discourses-on-paper-money-during-the-song-period/2DEB0B622DC9531ACBEDDF146280690A"
-          },
-          {
-            "label": "doi.org",
-            "url": "https://doi.org/10.1017/CBO9781107337695.013"
-          },
-          {
-            "label": "Niv Horesh, “‘Cannot Be Fed on When Starving’: An Analysis of the Economic Thought Surrounding China’s Earlier Use of Paper Money,” Journal of the History of Economic Thought 35.3 (2013)",
-            "url": "https://www.cambridge.org/core/journals/journal-of-the-history-of-economic-thought/article/abs/cannot-be-fed-on-when-starving-an-analysis-of-the-economic-thought-surrounding-chinas-earlier-use-of-paper-money/BE2E64B5E9C8C341D1318683151AB5DD"
-          },
-          {
-            "label": "doi.org",
-            "url": "https://doi.org/10.1017/S1053837213000239"
+            "label": "UNESCO Silk Roads Programme, “Cities along the Silk Roads”",
+            "url": "https://en.unesco.org/silkroad/silk-road-themes/cities-silk-roads"
           }
         ]
       }
@@ -2374,207 +2309,88 @@ window.NIHAO_CULTURE_SOURCES = [
     "category": "economy",
     "categoryName": "Economy & Exchange",
     "slug": "tea",
-    "title": "一片茶叶，几种历史",
-    "titleEn": "Tea: One Leaf, Many Histories",
+    "title": "从茶树到茶杯：中国茶的故事",
+    "titleEn": "From Leaf to Cup: The Story of Chinese Tea",
     "storyPath": "../../culture/books/economy/tea/",
     "groups": [
       {
-        "title": "Early physical evidence and the limits of “first tea” claims",
+        "title": "Watching tea leaves in a glass",
         "sources": [
           {
-            "label": "Houyuan Lu et al., “Earliest tea as evidence for one branch of the Silk Road across the Tibetan Plateau,” Scientific Reports 6 (2016)",
-            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4704058/"
+            "label": "Ministry of Agriculture and Rural Affairs of China, “2022 International Tea Day — New Ways of Drinking Tea” (《2022“国际茶日”茶故事｜爱茶新生代 饮茶新方式》)",
+            "url": "https://gjcr.moa.gov.cn/czx/202205/t20220517_6399546.htm"
           }
         ]
       },
       {
-        "title": "Shennong and early-tea tradition",
+        "title": "Xihu Longjing processing and shape",
         "sources": [
           {
-            "label": "James A. Benn, “The Early History of Tea: Myth and Reality,” in Tea in China: A Religious and Cultural History, University of Hawai'i Press (2015)",
-            "url": "https://academic.oup.com/hawaii-scholarship-online/book/29980/chapter-abstract/255043105"
+            "label": "Zhejiang Administration for Market Regulation, Technical Specification for Hand Processing of Xihu Longjing Tea (《西湖龙井茶手工炒制技术规程》)",
+            "url": "https://zlzx.zjamr.zj.gov.cn/bzzx/rest/redirect/files/localFile/2023-07-03/62bfc1f2e5653c150985b14bdbc96b70.pdf"
           }
         ]
       },
       {
-        "title": "Southwest tea forests and community knowledge",
+        "title": "Biluochun processing and curled leaves",
         "sources": [
           {
-            "label": "UNESCO World Heritage Centre, “Cultural Landscape of Old Tea Forests of the Jingmai Mountain in Pu'er”",
-            "url": "https://whc.unesco.org/en/list/1665/"
-          },
-          {
-            "label": "Xia et al., “Domestication Origin and Breeding History of the Tea Plant (Camellia sinensis) in China and India,” Frontiers in Plant Science 8 (2017)",
-            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5788969/"
+            "label": "Suzhou Municipal Government, “Bi Luo Chun Tea in Suzhou”",
+            "url": "https://english.suzhou.gov.cn/szsenglish/sgy/201911/a43de9d366404c0bafd31bfc105c95f2.shtml"
           }
         ]
       },
       {
-        "title": "Lu Yu, Tang preparation, and diverse tastes",
+        "title": "Biluochun tea-and-fruit gardens",
         "sources": [
           {
-            "label": "Lu Yu, The Classic of Tea, English translation by Brother Anthony of Taizé",
-            "url": "https://anthony.sogang.ac.kr/ClassicofTeaLuYu.html"
+            "label": "Suzhou Municipal Government, Measures for the Protection and Management of Dongting Mountain Biluochun Tea Bases (《苏州市洞庭山碧螺春茶基地保护管理办法》)",
+            "url": "https://www.suzhou.gov.cn/szsrmzf/szfgfxwjk/202507/3ff398f1f51243b38806d8328f9b085b.shtml"
           }
         ]
       },
       {
-        "title": "Song powdered tea and Japanese transformation",
+        "title": "Green tea in China's domestic market",
         "sources": [
           {
-            "label": "Kyoto National Museum, “Special Exhibition Chanoyu: Tea in the Cultural Life of Kyoto”",
-            "url": "https://www.kyohaku.go.jp/eng/exhibitions/special/chanoyu_2022/"
-          },
-          {
-            "label": "Tokyo National Museum, “Chanoyu — The Arts of Tea Ceremony, The Essence of Japan”",
-            "url": "https://www.tnm.jp/modules/r_free_page/index.php?id=1828&lang=en"
+            "label": "China Tea Marketing Association, 2023 China Tea Production and Sales Report (《2023年度中国茶叶产销形势报告》)",
+            "url": "https://www.ctma.com.cn/zhuanyebaogao/77663.html"
           }
         ]
       },
       {
-        "title": "Six categories, plant diversity, oxidation, and fermentation",
+        "title": "Black tea developed later",
         "sources": [
           {
-            "label": "Chuan Chen, “Tea classification in theory and practice,” Journal d'agriculture traditionnelle et de botanique appliquée 28 (1981), translated from a 1979 Chinese article",
-            "url": "https://www.persee.fr/doc/jatba_0183-5173_1981_num_28_3_3850"
-          },
-          {
-            "label": "Zhou et al., “Tea Harvesting and Processing Techniques and Its Effect on Phytochemical Profile and Final Quality of Black Tea: A Review,” Foods 12 (2023)",
-            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10743253/"
+            "label": "Jianghua County Government, “Black Tea: China's Gift to the World” (《红茶：中国送给世界的礼物》)",
+            "url": "https://www.jh.gov.cn/jh/kpjh/202403/c253f5508bb0470981127abd80577afd.shtml"
           }
         ]
       },
       {
-        "title": "Wuyi black tea and the accident story",
+        "title": "Different processing paths from tea leaves",
         "sources": [
           {
-            "label": "Kunbing Xiao, “Shifting Wind, Eternal Earth: Lapsang Souchong, a Foreign Fengtu Comes Home,” book chapter based on fieldwork in Tongmu village",
-            "url": "https://www.researchgate.net/publication/403170715_Chapter_9_Shifting_Wind_Eternal_Earth_Lapsang_Souchong_a_Foreign_Fengtu_Comes_Home"
+            "label": "UNESCO, “Traditional Tea Processing Techniques and Associated Social Practices in China”",
+            "url": "https://ich.unesco.org/en/RL/traditional-tea-processing-techniques-and-associated-social-practices-in-china-01884"
           }
         ]
       },
       {
-        "title": "Tea-horse trade as a changing borderland network",
+        "title": "Loose-leaf brewing and tea vessels",
         "sources": [
           {
-            "label": "Yudru Tsomu, “The Sino-Tibetan Borderlands,” Oxford Research Encyclopedia of Asian History (2023)",
-            "url": "https://academic.oup.com/edited-volume/61799/chapter/546340776"
+            "label": "Beijing Party Member Education, “How to Brew Fine Teas” (《名贵绿茶最好用瓷杯泡饮》)",
+            "url": "https://www.bjcc.gov.cn/article/50178643.html"
           }
         ]
       },
       {
-        "title": "European tea, opium, plantations, and labor",
+        "title": "Tea Horse Roads and porters",
         "sources": [
           {
-            "label": "British Museum, “The tea-rific history of Victorian afternoon tea”",
-            "url": "https://www.britishmuseum.org/blog/tea-rific-history-victorian-afternoon-tea"
-          },
-          {
-            "label": "British Museum, “Opium and the British Empire,” collection context for an opium pipe",
-            "url": "https://www.britishmuseum.org/collection/object/A_1945-1017-243"
-          },
-          {
-            "label": "Rana P. Behal, “Labour Resistance in Indenture Plantations in the Assam Valley,” in Beyond Indenture, Cambridge University Press (2023)",
-            "url": "https://www.cambridge.org/core/books/beyond-indenture/labour-resistance-in-indenture-plantations-in-the-assam-valley/859E887CB54EF15079FBEBD21349E59B"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "category": "economy",
-    "categoryName": "Economy & Exchange",
-    "slug": "silk-road",
-    "title": "丝绸之路：谁把许多条路连成了一张网？",
-    "titleEn": "The Silk Roads: Who Wove Many Routes into a Network?",
-    "storyPath": "../../culture/books/economy/silk-road/",
-    "groups": [
-      {
-        "title": "UNESCO Silk Roads Programme — “About the Silk Roads”",
-        "sources": [
-          {
-            "label": "unesco.org",
-            "url": "https://www.unesco.org/en/silk-roads/about-silk-roads?hub=196704"
-          }
-        ]
-      },
-      {
-        "title": "UNESCO Silk Roads Programme — “Dunhuang”",
-        "sources": [
-          {
-            "label": "en.unesco.org",
-            "url": "https://en.unesco.org/silkroad/content/dunhuang"
-          }
-        ]
-      },
-      {
-        "title": "Sima Qian, *Shiji*, chapter 123 — Zhang Qian account, academic translation assembled by the University of Washington Silk Road project",
-        "sources": [
-          {
-            "label": "depts.washington.edu",
-            "url": "https://depts.washington.edu/silkroad/texts/hantxt1.html"
-          }
-        ]
-      },
-      {
-        "title": "Høisæter — “Polities and nomads: the emergence of the Silk Road exchange in the Tarim Basin region during late prehistory (2000–400 BCE)” (*Bulletin of SOAS*)",
-        "sources": [
-          {
-            "label": "cambridge.org",
-            "url": "https://www.cambridge.org/core/journals/bulletin-of-the-school-of-oriental-and-african-studies/article/polities-and-nomads-the-emergence-of-the-silk-road-exchange-in-the-tarim-basin-region-during-late-prehistory-2000400-bce/6311521432E4F0AFA783860A3C51C0BA"
-          }
-        ]
-      },
-      {
-        "title": "British Museum — *Silk Roads* large-print guide and Sogdian background",
-        "sources": [
-          {
-            "label": "britishmuseum.org",
-            "url": "https://www.britishmuseum.org/exhibitions/silk-roads/silk-roads-large-print-guide"
-          },
-          {
-            "label": "britishmuseum.org",
-            "url": "https://www.britishmuseum.org/blog/who-were-sogdians"
-          }
-        ]
-      },
-      {
-        "title": "Jason Neelis / University of Washington Silk Road project — Buddhism on the Silk Routes",
-        "sources": [
-          {
-            "label": "jstor.org",
-            "url": "https://www.jstor.org/stable/10.1163/j.ctt1w8h16r.12"
-          },
-          {
-            "label": "depts.washington.edu",
-            "url": "https://depts.washington.edu/silkroad/exhibit/religion/buddhism/buddhism_silkroad.html"
-          }
-        ]
-      },
-      {
-        "title": "Huili and Yancong, *A Biography of the Tripitaka Master of the Great Ci'en Monastery* (Li Rongxi translation)",
-        "sources": [
-          {
-            "label": "kinhsach.chuakhainguyen.com",
-            "url": "https://kinhsach.chuakhainguyen.com/Books/T50n2053/A%20Biography%20of%20the%20Tripitaka%20Master%20of%20the%20Great%20Cien%20Monastery%20of%20the%20Great%20Tang%20Dynasty.pdf"
-          }
-        ]
-      },
-      {
-        "title": "Encyclopaedia Iranica — “Paper and Papermaking”",
-        "sources": [
-          {
-            "label": "iranicaonline.org",
-            "url": "https://www.iranicaonline.org/articles/paper-and-papermaking/"
-          }
-        ]
-      },
-      {
-        "title": "Liu et al. — “Exchanges of economic plants along the land Silk Road” (*BMC Plant Biology*)",
-        "sources": [
-          {
-            "label": "link.springer.com",
-            "url": "https://link.springer.com/article/10.1186/s12870-022-04022-9"
+            "label": "Ya'an Municipal Government, “The Tea Horse Road: A Tea Leaf's Journey” (《茶马古道，一片茶叶的旅程》)",
+            "url": "https://www.yaan.gov.cn/xinwen/show/d86618b9-f9f9-4607-b56c-6fbcbe935404.html"
           }
         ]
       }
@@ -2584,100 +2400,116 @@ window.NIHAO_CULTURE_SOURCES = [
     "category": "economy",
     "categoryName": "Economy & Exchange",
     "slug": "ancient-market",
-    "title": "古代市场：赶集日、长安城与宋朝夜市",
-    "titleEn": "Ancient Markets: Market Days, Chang'an, and the City After Dark",
+    "title": "古代市场：从赶集日到夜市",
+    "titleEn": "Ancient Markets: From Market Day to Night Market",
     "storyPath": "../../culture/books/economy/ancient-market/",
     "groups": [
       {
-        "title": "Rural periodic markets and market schedules",
+        "title": "Periodic rural markets",
         "sources": [
           {
-            "label": "G. William Skinner, “Marketing and Social Structure in Rural China, Part I,” The Journal of Asian Studies 24, no. 1 (1964)",
-            "url": "https://www.cambridge.org/core/journals/journal-of-asian-studies/article/abs/marketing-and-social-structure-in-rural-china-part-i/20071250B7BC9B70B1C47DF11B608FCA"
+            "label": "Zhengying Liu, Qiyang Liu, Pengjun Zhao, Junqing Tang, and Zhaoya Gong, “Investigating Access to Periodic Markets in Rural China,” Transportation Research Part D: Transport and Environment 103 (2022), article 103162",
+            "url": "https://doi.org/10.1016/j.trd.2021.103162"
           }
         ]
       },
       {
-        "title": "Tang Chang'an's plan and commercial change",
+        "title": "Rural fairs and their names",
         "sources": [
           {
-            "label": "Victor Cunrui Xiong, Sui-Tang Chang'an (A.D. 582–904), Australian National University doctoral thesis (1988)",
-            "url": "https://openresearch-repository.anu.edu.au/items/5f37976b-3855-461d-a83f-f6908a991c67"
+            "label": "Fang Ren, “The Rural Market in Late Imperial China,” Asian Social Science 6, no. 6 (2010)",
+            "url": "https://www.ccsenet.org/journal/index.php/ass/article/view/6220"
           }
         ]
       },
       {
-        "title": "East and West Markets and social geography",
+        "title": "Tang Chang'an and its two markets",
         "sources": [
           {
-            "label": "Seo Tatsuhiko, “The Official Residences of Chang'an in the Tang Dynasty,” Tōyōshi Kenkyū 55, no. 2 (1996), abstract indexed by CiNii",
-            "url": "https://cir.nii.ac.jp/crid/1390572174787716224?lang=en"
+            "label": "National Museum of China, “Looking Back at Chang'an” (《回望长安》)",
+            "url": "https://www.chnmuseum.cn/yj/xscg/xslw/201812/t20181224_33181.shtml"
           }
         ]
       },
       {
-        "title": "Market measures and transaction rules",
+        "title": "Night markets in the Tang and Song eras",
         "sources": [
           {
-            "label": "Shaanxi Provincial Local Records Office, provincial commercial-history volume (section on Tang market administration and weights and measures)",
-            "url": "https://dfz.shaanxi.gov.cn/zslm/fzzlk/xbsxsz/szdylpdf/201404/P020240923630937181754.pdf"
-          },
-          {
-            "label": "Tsinghua China Law Review, “Tang Dynasty's Regulation of Contracts”",
-            "url": "https://www.tsinghuachinalawreview.law.tsinghua.edu.cn/UploadFiles/2022-11-18/vpnmy1k8vbb9ezft.pdf"
+            "label": "Takugo Shio, “The Night Market during the Tang and Song Eras,” Tōyōshi Kenkyū 73, no. 2 (2014)",
+            "url": "https://doi.org/10.14989/227432"
           }
         ]
       },
       {
-        "title": "Sogdian and other long-distance merchants",
+        "title": "Kaifeng night markets and the “ghost market”",
         "sources": [
           {
-            "label": "University of Washington, Silk Road Seattle, “Xi'an/Chang'an” and “Foreign Traders and Caravan Animals”",
-            "url": "https://depts.washington.edu/silkroad/cities/china/xian/xian.html"
-          },
+            "label": "Meng Yuanlao, Dongjing Menghua Lu (《东京梦华录》), volumes 2–3",
+            "url": "https://zh.wikisource.org/zh-hans/%E6%9D%B1%E4%BA%AC%E5%A4%A2%E8%8F%AF%E9%8C%84/%E5%8D%B7%E4%BA%8C"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "economy",
+    "categoryName": "Economy & Exchange",
+    "slug": "ancient-money",
+    "title": "古代的钱为什么有这么多样子？",
+    "titleEn": "Why Did Ancient Chinese Money Have So Many Shapes?",
+    "storyPath": "../../culture/books/economy/ancient-money/",
+    "groups": [
+      {
+        "title": "Cowrie shells in early China",
+        "sources": [
           {
-            "label": "depts.washington.edu",
-            "url": "https://depts.washington.edu/silkroad/exhibit/tang/camel_trader.html"
+            "label": "Mikael Fauvelle, Shell Money, Cambridge University Press, 2024",
+            "url": "https://www.cambridge.org/core/elements/shell-money/59F5D361C6CA7C596A8C168C84A960D0"
           }
         ]
       },
       {
-        "title": "Northern Song Kaifeng night markets",
+        "title": "The changing forms of ancient Chinese currency",
         "sources": [
           {
-            "label": "Meng Yuanlao, Dongjing Menghua Lu (Dreams of Splendor of the Eastern Capital), volume 3, modern English translation hosted by Deltoi",
-            "url": "https://deltoi.com/zh/meng-yuanlao/dongjing-menghua-lu/chapter-3"
+            "label": "National Museum of China, “Ancient Chinese Money”",
+            "url": "https://en.chnmuseum.cn/exhibition/exhibition_series/special_exhibitions/202102/t20210210_248989.html"
           }
         ]
       },
       {
-        "title": "Southern Song Hangzhou street trade and calls",
+        "title": "Qin coinage standardization",
         "sources": [
           {
-            "label": "Wu Zimu, Mengliang Lu, volume 13, Chinese text hosted by Wikisource",
-            "url": "https://zh.wikisource.org/zh-hans/%E5%A4%A2%E7%B2%B1%E9%8C%84/%E5%8D%B713"
+            "label": "National Museum of China, “‘Ban Liang’ Bronze Coin and Stone Coin Mold” (《半两青铜钱及石钱范》)",
+            "url": "https://www.chnmuseum.cn/zp/zpml/hb/202010/t20201013_247850.shtml"
           }
         ]
       },
       {
-        "title": "Commercial taxes and official involvement in Song trade",
+        "title": "Warring States money and the square-holed coin tradition",
         "sources": [
           {
-            "label": "History of the Song Dynasty, volume 139, “Commercial Taxes, Market Exchange, Equal Transport, Mutual Trade and Shipping Regulations,” Chinese Text Project",
-            "url": "https://ctext.org/wiki.pl?chapter=606585&if=en"
+            "label": "British Museum, Money Gallery Guide, “The Beginnings of Coinage—China”",
+            "url": "https://www.britishmuseum.org/sites/default/files/2021-05/Money_Gallery_LPG_2020_Room_68.pdf"
           }
         ]
       },
       {
-        "title": "*Along the River During the Qingming Festival* as visual evidence",
+        "title": "Song dynasty jiaozi",
         "sources": [
           {
-            "label": "National Palace Museum, “A Special Exhibition of Paintings on ‘Up the River During Qingming’ in the Museum Collection”",
-            "url": "https://www.npm.gov.tw/Exhibition-Content.aspx?l=2&sno=04007005"
-          },
+            "label": "National Museum of China, “Song Dynasty Jiaozi and the Issuance of Paper Currency” (《宋代交子与纸币发行》)",
+            "url": "https://en.chnmuseum.cn/Portals/0/web/exhibition/exhibitions/161120Chines-Epic/"
+          }
+        ]
+      },
+      {
+        "title": "Paper currency after jiaozi",
+        "sources": [
           {
-            "label": "Palace Museum journal article, “张择端《清明上河图》卷新探”",
-            "url": "https://img.dpm.org.cn/Uploads/File/2018/06/05/u5b167df5352f9.pdf"
+            "label": "National Museum of China, “Paper Money in Marco Polo's Eyes” (《马可·波罗眼中的点金术》)",
+            "url": "https://www.chnmuseum.cn/yj/xscg/xslw/201812/t20181224_33235.shtml"
           }
         ]
       }
@@ -2687,128 +2519,60 @@ window.NIHAO_CULTURE_SOURCES = [
     "category": "economy",
     "categoryName": "Economy & Exchange",
     "slug": "tang-cosmopolitan",
-    "title": "唐代长安：远方来了，城门却有规则",
-    "titleEn": "Tang Chang'an: Distant Worlds, City Rules",
+    "title": "唐代长安：远方的东西来到这里以后",
+    "titleEn": "Tang Chang'an: When New Ideas Came to Town",
     "storyPath": "../../culture/books/economy/tang-cosmopolitan/",
     "groups": [
       {
-        "title": "City Plan, Population, Zhuque Avenue, and Ward Counts",
+        "title": "Central Asian influences in Tang life",
         "sources": [
           {
-            "label": "Mitsuo Inoue, “Ancient Chinese capital models—Measurement system in urban planning,” Journal of Asian Architecture and Building Engineering 16.3 (2017)",
-            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5743849/"
-          },
-          {
-            "label": "Victor Cunrui Xiong, Sui-Tang Chang'an: A Study in the Urban History of Medieval China, University of Michigan Center for Chinese Studies, 2000; city and market evidence summarized in Yōhei Kakinuma, “Money, Markets, and Merchants,” The Cambridge Economic History of China",
-            "url": "https://yohey.w.waseda.jp/wp-content/uploads/2024/04/shizhao202211.pdf"
-          },
-          {
-            "label": "Heng Chye Kiang, “Visualizing Everyday Life in the City: A Categorization System for Residential Wards in Tang Chang’an,” Journal of the Society of Architectural Historians 73.1 (2014)",
-            "url": "https://online.ucpress.edu/jsah/article-abstract/73/1/91/60443/Visualizing-Everyday-Life-in-the-CityA"
-          }
-        ]
-      },
-      {
-        "title": "Wards, Markets, and Government Control",
-        "sources": [
-          {
-            "label": "Yōhei Kakinuma, “Money, Markets, and Merchants,” The Cambridge Economic History of China, 2022 author manuscript",
-            "url": "https://yohey.w.waseda.jp/wp-content/uploads/2024/04/shizhao202211.pdf"
-          },
-          {
-            "label": "Kim Young Hwan, “Markets and Everyday Life in Tang Chang'an,” Journal of Asian Historical Studies 130 (2015)",
-            "url": "https://www.kci.go.kr/kciportal/ci/sereArticleSearch.kci?sere_id=001261&arti_id=ART002022505"
-          },
-          {
-            "label": "Tang Huiyao 唐會要, juan 86, market regulations, Chinese Text Project",
-            "url": "https://ctext.org/wiki.pl?chapter=489197&if=gb&remap=gb"
-          }
-        ]
-      },
-      {
-        "title": "Sogdians, Persians, Other Communities, and Tang Categories",
-        "sources": [
-          {
-            "label": "Smithsonian Institution, “Historical Trade Routes of the Sogdians,” The Sogdians: Influencers on the Silk Roads",
-            "url": "https://sogdians.si.edu/historic-trade-routes-of-the-sogdians/"
-          },
-          {
-            "label": "Masaharu Arakawa, “Sogdians in the Tang Empire,” Tōyōshi Kenkyū 56.3 (1997)",
-            "url": "https://repository.kulib.kyoto-u.ac.jp/handle/2433/155150"
-          },
-          {
-            "label": "doi.org",
-            "url": "https://doi.org/10.14989/155150"
-          },
-          {
-            "label": "Victor Fong, “Law, Subjecthood, and State Control in Early Tang (618–755),” PhD thesis, Australian National University, 2022",
-            "url": "https://openresearch-repository.anu.edu.au/items/8ec42d23-1576-44c3-bb07-feb2b7bf5958"
-          },
-          {
-            "label": "doi.org",
-            "url": "https://doi.org/10.25911/32VB-VD35"
-          },
-          {
-            "label": "Shao-yun Yang, “Tang ‘cosmopolitanism’: Towards a critical and holistic approach,” Modern Asian Studies 58.4 (2024), 1069–1093",
-            "url": "https://www.cambridge.org/core/journals/modern-asian-studies/article/tang-cosmopolitanism-towards-a-critical-and-holistic-approach/16309DB09C12BB94DDEB656A0A8F7540"
-          },
-          {
-            "label": "doi.org",
-            "url": "https://doi.org/10.1017/S0026749X23000318"
-          },
-          {
-            "label": "Metropolitan Museum of Art, “Internationalism in the Tang Dynasty (618–907)”",
+            "label": "The Metropolitan Museum of Art, “Internationalism in the Tang Dynasty (618–907)”",
             "url": "https://www.metmuseum.org/essays/internationalism-in-the-tang-dynasty-618-906"
           }
         ]
       },
       {
-        "title": "Japanese Missions to Tang China",
+        "title": "Visitors in Chang'an",
         "sources": [
           {
-            "label": "Douglas Fuqua, “The Japanese Missions to Tang China, 7th–9th Centuries,” Japan Society, November 6, 2023",
-            "url": "https://japansociety.org/news/the-japanese-missions-to-tang-china-7th-9th-centuries/"
-          },
-          {
-            "label": "Japan Tourism Agency, “Japanese Missions to Tang China”",
-            "url": "https://www.mlit.go.jp/tagengo-db/en/R4-00662.html"
-          },
-          {
-            "label": "Saeki Arikiyo, translated by Joshua A. Fogel, The Last Japanese Embassy to Tang China, 836–839, Chinese University of Hong Kong Press, 2026",
-            "url": "https://cup.columbia.edu/book/the-last-japanese-embassy-to-tang-china-836-839/9789882373839/"
+            "label": "The Metropolitan Museum of Art, “Tang Dynasty (618–907)”",
+            "url": "https://www.metmuseum.org/essays/tang-dynasty-618-906"
           }
         ]
       },
       {
-        "title": "The Jingjiao / Xi'an Stele",
+        "title": "Sogdian traders, wine, entertainment, and vessels",
         "sources": [
           {
-            "label": "British Museum, Silk Roads exhibition large-print guide, section “The first Christian missionaries”",
+            "label": "British Museum, “Who Were the Sogdians?”",
+            "url": "https://www.britishmuseum.org/blog/who-were-sogdians"
+          }
+        ]
+      },
+      {
+        "title": "Chang'an and Japanese missions",
+        "sources": [
+          {
+            "label": "British Museum, Silk Roads Exhibition Guide",
             "url": "https://www.britishmuseum.org/exhibitions/silk-roads/large-print-guide"
-          },
-          {
-            "label": "British Museum, collection record, “Rubbing of the stele commemorating Christianity in China”",
-            "url": "https://www.britishmuseum.org/collection/object/A_1989-1004-0-1-4"
-          },
-          {
-            "label": "Michael Keevak, The Story of a Stele: China's Nestorian Monument and Its Reception in the West, 1625–1916, University of Hong Kong Press, 2008",
-            "url": "https://www.jstor.org/stable/j.ctt1xwfv5"
-          },
-          {
-            "label": "Asian Civilisations Museum, Singapore, “Rubbing of the stele commemorating Christianity in China”",
-            "url": "https://www.roots.gov.sg/Collection-Landing/listing/1388517"
           }
         ]
       },
       {
-        "title": "Policy Change and Religious Suppression",
+        "title": "The Jingjiao Stele",
         "sources": [
           {
-            "label": "Metropolitan Museum of Art, “Internationalism in the Tang Dynasty (618–907)”",
-            "url": "https://www.metmuseum.org/essays/internationalism-in-the-tang-dynasty-618-906"
-          },
+            "label": "Xi'an Beilin Museum, “大秦景教流行中国碑”",
+            "url": "https://www.beilin-museum.com/index.php?a=index&aid=2999&c=View&lang=en&m=home"
+          }
+        ]
+      },
+      {
+        "title": "The first recorded Church of the East mission",
+        "sources": [
           {
-            "label": "British Museum, Silk Roads exhibition large-print guide",
+            "label": "British Museum, “The First Christian Missionaries,” in the Silk Roads Exhibition Guide",
             "url": "https://www.britishmuseum.org/exhibitions/silk-roads/large-print-guide"
           }
         ]
@@ -3445,6 +3209,43 @@ window.NIHAO_CULTURE_SOURCES = [
           {
             "label": "NASA Science, “The Next Full Moon Is a Supermoon; the Sturgeon Moon”",
             "url": "https://moon.nasa.gov/news/196/the-next-full-moon-is-a-supermoon-the-sturgeon-moon/?unit=m"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "folk-tales",
+    "categoryName": "Folk Tales",
+    "slug": "drawing-legs-on-a-snake",
+    "title": "画蛇添足",
+    "titleEn": "Drawing Legs on a Snake",
+    "storyPath": "../../culture/books/folk-tales/drawing-legs-on-a-snake/",
+    "groups": [
+      {
+        "title": "《战国策·齐策二》",
+        "sources": [
+          {
+            "label": "Chinese Text Project, Strategies of the Warring States, “Strategies of Qi II”",
+            "url": "https://ctext.org/zhan-guo-ce/qi-er/zh"
+          }
+        ]
+      },
+      {
+        "title": "The larger Zhāo Yáng episode",
+        "sources": [
+          {
+            "label": "Chinese Text Project, parallel text for the Zhāo Yáng passage",
+            "url": "https://ctext.org/text.pl?if=gb&node=49761&show=parallel"
+          }
+        ]
+      },
+      {
+        "title": "《战国策（士礼居丛书本）·齐二》",
+        "sources": [
+          {
+            "label": "Chinese Wikisource",
+            "url": "https://zh.wikisource.org/zh-hans/%E6%88%B0%E5%9C%8B%E7%AD%96/%E5%8D%B709"
           }
         ]
       }
@@ -4253,157 +4054,53 @@ window.NIHAO_CULTURE_SOURCES = [
   {
     "category": "politics",
     "categoryName": "Government & Society",
-    "slug": "imperial-exam-history",
-    "title": "一张考卷能打开多大的门？——中国古代怎样选官",
-    "titleEn": "How Far Could an Exam Open the Door? Choosing Officials in Imperial China",
-    "storyPath": "../../culture/books/politics/imperial-exam-history/",
-    "groups": [
-      {
-        "title": "Early Offices and the Growth of Bureaucracy",
-        "sources": [
-          {
-            "label": "Li Feng, “Offices in Bronze Inscriptions and Western Zhou Government Administration,” Early China",
-            "url": "https://www.cambridge.org/core/journals/early-china/article/abs/offices-in-bronze-inscriptions-and-western-zhou-government-administration/55732DE5CD51B308243EC7233C630834"
-          },
-          {
-            "label": "Patricia Buckley Ebrey, “The Creation of the Bureaucratic Empire: The Qin and Han Dynasties,” The Cambridge Illustrated History of China",
-            "url": "https://www.cambridge.org/highereducation/books/the-cambridge-illustrated-history-of-china/B8415BCABB0218ABC80F4EFEEA9F5B2B/the-creation-of-the-bureaucratic-empire-the-qin-and-han-dynasties/CF561DCB42844178C1AECDB98E31B6FD"
-          }
-        ]
-      },
-      {
-        "title": "Han Recruitment: Recommendation Plus Evaluation",
-        "sources": [
-          {
-            "label": "Hans Bielenstein, “Civil Service Recruitment,” in The Bureaucracy of Han Times",
-            "url": "https://www.cambridge.org/core/books/abs/bureaucracy-of-han-times/civil-service-recruitment/9334C1BD771968D5690197868D38DF38"
-          },
-          {
-            "label": "Yuhua Wang, The Political Economy of China's Imperial Examination System, Cambridge University Press",
-            "url": "https://www.cambridge.org/core/elements/political-economy-of-chinas-imperial-examination-system/3DA0EC88AE5901AEE641FD5686C7F8B8"
-          }
-        ]
-      },
-      {
-        "title": "The Nine-Rank Rectifying System",
-        "sources": [
-          {
-            "label": "Yuhua Wang, The Political Economy of China's Imperial Examination System, sections 1.4 and 2.2.2, Cambridge University Press",
-            "url": "https://www.cambridge.org/core/elements/political-economy-of-chinas-imperial-examination-system/3DA0EC88AE5901AEE641FD5686C7F8B8"
-          }
-        ]
-      },
-      {
-        "title": "Gradual Formation in the Sui and Tang",
-        "sources": [
-          {
-            "label": "Yuhua Wang, The Political Economy of China's Imperial Examination System, sections 1.4 and 2.3, Cambridge University Press",
-            "url": "https://www.cambridge.org/core/elements/political-economy-of-chinas-imperial-examination-system/3DA0EC88AE5901AEE641FD5686C7F8B8"
-          },
-          {
-            "label": "Nicolas Tackett, “The Evolution of the Tang Political Elite and its Marriage Network,” Journal of Chinese History",
-            "url": "https://www.cambridge.org/core/journals/journal-of-chinese-history/article/evolution-of-the-tang-political-elite-and-its-marriage-network/6718E008F3DA2D235944DEBE6559B408"
-          },
-          {
-            "label": "Nicolas Tackett, “The Niu-Li Factional Strife: The Origins of a Historiographical Fiction,” Journal of Chinese History",
-            "url": "https://www.cambridge.org/core/journals/journal-of-chinese-history/article/niuli-factional-strife-the-origins-of-a-historiographical-fiction/1845DBAD83C09083145C816B8DE768E6"
-          }
-        ]
-      },
-      {
-        "title": "Song Expansion, Anonymity, and Continuing Privilege",
-        "sources": [
-          {
-            "label": "“Scholar-Officials and the Civil Service Examinations,” Columbia University, Asia for Educators",
-            "url": "https://afe.easia.columbia.edu/songdynasty-module/confucian-scholar.html"
-          },
-          {
-            "label": "Paul Jakov Smith, “Sung Government and Politics,” in The Cambridge History of China",
-            "url": "https://www.cambridge.org/core/books/cambridge-history-of-china/sung-government-and-politics/B360D3EB6D72ADEE74E46FD8570548EC"
-          },
-          {
-            "label": "History of Song, examination administration passages, Chinese Text Project",
-            "url": "https://ctext.org/wiki.pl?chapter=817325&if=en"
-          }
-        ]
-      },
-      {
-        "title": "Ming–Qing Examinations, Quotas, and Cultural Resources",
-        "sources": [
-          {
-            "label": "Benjamin A. Elman, A Cultural History of Civil Examinations in Late Imperial China, Princeton University Press",
-            "url": "https://www.princeton.edu/~elman/documents/Elman%2CA%20Cultural%20History%20of%20Civil%20Examinations%20in%20Late%20Imperial%20China.pdf"
-          },
-          {
-            "label": "Benjamin A. Elman, “Examination System, 1800–1905,” Encyclopedia of Modern China",
-            "url": "https://www.princeton.edu/~elman/documents/Examination%20System%2C%201800-1905.pdf"
-          }
-        ]
-      },
-      {
-        "title": "Abolition in 1905",
-        "sources": [
-          {
-            "label": "“China in the 19th Century,” Columbia University, Asia for Educators",
-            "url": "https://afe.easia.columbia.edu/cosmos/bgov/19th.htm"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "category": "politics",
-    "categoryName": "Government & Society",
     "slug": "six-arts",
-    "title": "六艺：古代学生真的一天学六门课吗？",
-    "titleEn": "The Six Arts: Did Ancient Students Really Study All Six in One Day?",
+    "title": "六艺：为什么射箭、音乐和算术要一起学？",
+    "titleEn": "The Six Arts: Why Learn Archery, Music, and Math Together?",
     "storyPath": "../../culture/books/politics/six-arts/",
     "groups": [
       {
-        "title": "The Six-Arts List in the *Rites of Zhou*",
+        "title": "The Six Arts and the *Guozi*",
         "sources": [
           {
-            "label": "Chinese Text Project, Rites of Zhou, “Local Offices of Education and Land”",
+            "label": "Chinese Text Project, Rites of Zhou, “Baoshi” (《周礼·地官司徒·保氏》)",
             "url": "https://ctext.org/rites-of-zhou/di-guan-si-tu/zh"
-          },
-          {
-            "label": "Chinese Text Project dictionary entry, “国子”",
-            "url": "https://ctext.org/dictionary.pl?char=%E5%9C%8B%E5%AD%90&if=en"
-          },
-          {
-            "label": "“Education and Social Selection in Ancient China: Semantics, Conceptual Transformation and Social Change,” Paedagogica Historica 51.3",
-            "url": "https://www.tandfonline.com/doi/full/10.1080/00309230.2014.934383"
           }
         ]
       },
       {
-        "title": "Dating and Nature of the *Rites of Zhou*",
+        "title": "The Broader Educational Program",
         "sources": [
           {
-            "label": "Michael Nylan, The Five “Confucian” Classics, Yale University Press, notes to Chapter 4",
-            "url": "https://drupal.yalebooks.yale.edu/sites/default/files/files/Media/9780300081855/9780300081855_nylan4notes.pdf"
+            "label": "Chinese Text Project, Rites of Zhou, “Ministry of Land and People” (《周礼·地官司徒》)",
+            "url": "https://ctext.org/rites-of-zhou/di-guan-si-tu/zh"
           }
         ]
       },
       {
-        "title": "Meanings of the Six Practical Arts",
+        "title": "Archery and Self-Examination",
         "sources": [
           {
-            "label": "National Central University research record, Yen Yi Lee, “Sojourning in the Arts: Considering the Implications of the Confucian ‘Six Arts’ in a Contemporary Educational Context”",
-            "url": "https://scholars.ncu.edu.tw/zh/publications/sojourning-in-the-arts-considering-the-implications-of-the-confuc/"
-          },
-          {
-            "label": "doi.org",
-            "url": "https://doi.org/10.4324/9781003301516-8"
+            "label": "Chinese Text Project, Book of Rites, “The Meaning of Archery” (《礼记·射义》)",
+            "url": "https://ctext.org/liji/she-yi/zh"
           }
         ]
       },
       {
-        "title": "Bamboo Writing, Ink, Brush, and Knife",
+        "title": "Chariots in the Shang and Zhou Worlds",
         "sources": [
           {
-            "label": "National Museum of China, “白首汉廷刀笔吏”",
-            "url": "https://www.chnmuseum.cn/yj/xscg/xslw/201812/t20181224_33082.shtml"
+            "label": "The Metropolitan Museum of Art, “Plaque in the Shape of a Horse-Drawn Chariot”",
+            "url": "https://www.metmuseum.org/art/collection/search/65256"
+          }
+        ]
+      },
+      {
+        "title": "Brushes and Bamboo Manuscripts",
+        "sources": [
+          {
+            "label": "Smithsonian National Museum of Asian Art, “Chinese Arts of the Brush”",
+            "url": "https://archive.asia.si.edu/exhibitions/online/ChineseArts/default.htm"
           },
           {
             "label": "Dartmouth College, “Tsinghua Bamboo Manuscripts Offer Clues About Early China”",
@@ -4412,42 +4109,43 @@ window.NIHAO_CULTURE_SOURCES = [
         ]
       },
       {
-        "title": "Archery, Ritual, and Self-Examination",
+        "title": "Counting Rods in Chinese Mathematics",
         "sources": [
           {
-            "label": "Chinese Text Project, Book of Rites, “The Meaning of Archery”",
-            "url": "https://ctext.org/liji/she-yi/zh"
+            "label": "Yiwen Zhu, “The Interplay between Textual Procedures and Material Operations from the Viewpoint of Chinese Mathematical Texts,” Science in Context",
+            "url": "https://www.cambridge.org/core/journals/science-in-context/article/interplay-between-textual-procedures-and-material-operations-from-the-viewpoint-of-chinese-mathematical-texts/7E654BC8863452F26F2E0C43892699F4"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "politics",
+    "categoryName": "Government & Society",
+    "slug": "shang-yang",
+    "title": "商鞅和那根没人敢搬的木头",
+    "titleEn": "Shang Yang and the Log No One Wanted to Move",
+    "storyPath": "../../culture/books/politics/shang-yang/",
+    "groups": [
+      {
+        "title": "Sima Qian, *Records of the Grand Historian*, “Biography of Lord Shang”",
+        "sources": [
+          {
+            "label": "ctext.org",
+            "url": "https://ctext.org/shiji/shang-jun-lie-zhuan/zhs"
           }
         ]
       },
       {
-        "title": "Counting Rods and Later Mathematical Context",
+        "title": "Research on Shang Yang's reforms and Qin's growing power",
         "sources": [
           {
-            "label": "Mathematical Association of America, “Illustrating the Nine Chapters on the Mathematical Art”",
-            "url": "https://old.maa.org/press/periodicals/convergence/illustrating-the-nine-chapters-on-the-mathematical-art-their-use-in-a-college-mathematics-history-1"
-          }
-        ]
-      },
-      {
-        "title": "Chariots, Warfare, and Elite Status",
-        "sources": [
-          {
-            "label": "Metropolitan Museum of Art, “Plaque in the Shape of a Horse-Drawn Chariot”",
-            "url": "https://www.metmuseum.org/art/collection/search/65256"
-          }
-        ]
-      },
-      {
-        "title": "“Six Arts” and the Six Classics",
-        "sources": [
-          {
-            "label": "The Oxford Handbook of Classical Chinese Literature, “Traditional Genre Spectrum”",
-            "url": "https://academic.oup.com/edited-volume/28107/chapter/514166256"
+            "label": "academic.oup.com",
+            "url": "https://academic.oup.com/edited-volume/34296/chapter-abstract/290749611"
           },
           {
-            "label": "Cambridge University Press, “Who Said There Was a Classic of Music?”, Early China",
-            "url": "https://www.cambridge.org/core/journals/early-china/article/abs/who-said-there-was-a-classic-of-music/A6D9D81606DBCF10101DC3E929E5DFB5"
+            "label": "pmc.ncbi.nlm.nih.gov",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4522747/"
           }
         ]
       }
@@ -4457,100 +4155,52 @@ window.NIHAO_CULTURE_SOURCES = [
     "category": "politics",
     "categoryName": "Government & Society",
     "slug": "yu-the-great",
-    "title": "大禹治水：洪水、英雄与王朝的记忆",
-    "titleEn": "Yu the Great: A Flood, a Hero, and the Memory of a Dynasty",
+    "title": "大禹治水：给洪水找一条路",
+    "titleEn": "Yu the Great: Making a Path for the Water",
     "storyPath": "../../culture/books/politics/yu-the-great/",
     "groups": [
       {
-        "title": "An Early Inscribed Yu Tradition",
+        "title": "Opening Waterways and Restoring the Land",
         "sources": [
           {
-            "label": "Toru Takahashi, “Suigongxu as Source Material,” Shigaku Zasshi 115.1 (2006)",
-            "url": "https://www.jstage.jst.go.jp/article/shigaku/115/1/115_KJ00004091863/_article/-char/en"
-          }
-        ]
-      },
-      {
-        "title": "Water Control in the *Book of Documents*",
-        "sources": [
-          {
-            "label": "Chinese Text Project, Book of Documents, “Yi and Ji”",
+            "label": "Book of Documents (《尚书·益稷》), “Yì and Jì,” Chinese Text Project",
             "url": "https://ctext.org/shang-shu/yi-and-ji/zh"
-          },
-          {
-            "label": "Chinese Text Project, Book of Documents, “Tribute of Yu”",
-            "url": "https://ctext.org/shang-shu/tribute-of-yu/zh"
           }
         ]
       },
       {
-        "title": "The *Mencius*: Waterways and Three Passes",
+        "title": "Gǔn, Yǔ, Shùn, and the Beginning of Xià",
         "sources": [
           {
-            "label": "Chinese Text Project, Mencius, “Teng Wengong I”",
-            "url": "https://ctext.org/mengzi/teng-wen-gong-i/zh"
-          }
-        ]
-      },
-      {
-        "title": "The *Records of the Grand Historian*: Gun, Yu, and Thirteen Years",
-        "sources": [
-          {
-            "label": "Chinese Text Project, Sima Qian, Records of the Grand Historian, “Basic Annals of Xia”",
+            "label": "Sima Qian, Records of the Grand Historian (《史记·夏本纪》), “Basic Annals of Xia,” Chinese Text Project",
             "url": "https://ctext.org/shiji/xia-ben-ji/zh"
           }
         ]
       },
       {
-        "title": "The “Block Versus Guide” Simplification",
+        "title": "Passing His Door Three Times",
         "sources": [
           {
-            "label": "Wang Hui, “A Re-exploration of Yu the Great's Thinking of Taming the Waters,” Journal of Shaanxi Normal University (Philosophy and Social Sciences Edition)",
-            "url": "https://www.xuebao.snnu.edu.cn/info/1072/7587.htm"
+            "label": "Mencius (《孟子·滕文公上》), “Teng Wengong I,” Chinese Text Project",
+            "url": "https://ctext.org/mengzi/teng-wen-gong-i/zh"
           }
         ]
       },
       {
-        "title": "Early Flood Tradition and the Later Xia Connection",
+        "title": "Rivers and Canals",
         "sources": [
           {
-            "label": "Sarah Allan, “The Jishi Outburst Flood of 1920 BCE and the Great Flood Legend in Ancient China: Preliminary Reflections,” Journal of Chinese Humanities 3.1 (2017)",
-            "url": "https://doi.org/10.1163/23521341-12340041"
+            "label": "Sima Qian, Records of the Grand Historian (《史记·河渠书》), “Treatise on Rivers and Canals,” Chinese Text Project",
+            "url": "https://ctext.org/shiji/he-qu-shu/zh"
           }
         ]
       },
       {
-        "title": "Erlitou and the Xia Debate",
+        "title": "Qǐ’s Succession",
         "sources": [
           {
-            "label": "Xu Hong, “Introduction to the Xia Period: Definitions, Themes, and Debate,” in The Oxford Handbook of Early China",
-            "url": "https://academic.oup.com/edited-volume/34296/chapter-abstract/290747467"
-          },
-          {
-            "label": "Robert L. Thorp, “Erlitou and the Search for the Xia,” Early China 16 (1991)",
-            "url": "https://doi.org/10.1017/S0362502800003825"
-          },
-          {
-            "label": "British Museum, “Knife,” curator's comments on the Erlitou culture",
-            "url": "https://www.britishmuseum.org/collection/object/A_1945-1017-144"
-          }
-        ]
-      },
-      {
-        "title": "The Proposed Jishi Gorge Outburst Flood",
-        "sources": [
-          {
-            "label": "Qinglong Wu et al., “Outburst flood at 1920 BCE supports historicity of China's Great Flood and the Xia dynasty,” Science 353.6299 (2016)",
-            "url": "https://pubmed.ncbi.nlm.nih.gov/27493183/"
-          }
-        ]
-      },
-      {
-        "title": "Scientific and Historical Challenges to the Jishi Link",
-        "sources": [
-          {
-            "label": "Fengwen Liu et al., “Multiple evidences indicate no relationship between prehistoric disasters in Lajia site and outburst flood in upper Yellow River valley, China,” Science China Earth Sciences 61 (2018), 441–449",
-            "url": "https://doi.org/10.1007/s11430-017-9079-3"
+            "label": "Sima Qian, Records of the Grand Historian (《史记·夏本纪》), account of Qǐ’s succession, Chinese Text Project",
+            "url": "https://ctext.org/shiji/xia-ben-ji/zh"
           }
         ]
       }
@@ -4565,81 +4215,110 @@ window.NIHAO_CULTURE_SOURCES = [
     "storyPath": "../../culture/books/politics/emperor-day/",
     "groups": [
       {
-        "title": "Scope: One Emperor, Not a Composite Schedule",
-        "sources": [
-          {
-            "label": "Palace Museum, “洪武皇帝”",
-            "url": "https://www.dpm.org.cn/court/lineage/226244.html"
-          },
-          {
-            "label": "Metropolitan Museum of Art, “The Yuan Revolution: Art and Dynastic Change”",
-            "url": "https://www.metmuseum.org/exhibitions/listings/2010/yuan-revolution"
-          }
-        ]
-      },
-      {
-        "title": "Childhood and the Buffalo Illustration",
-        "sources": [
-          {
-            "label": "Palace Museum, “洪武皇帝”",
-            "url": "https://www.dpm.org.cn/court/lineage/226244.html"
-          },
-          {
-            "label": "Tian Shu, “严明以驭吏 宽裕以待民—朱元璋的为政之道,” published by Nankai University from Guangming Daily",
-            "url": "https://news.nankai.edu.cn/rwsd/system/2007/04/29/000006356.shtml"
-          }
-        ]
-      },
-      {
-        "title": "How Memorials Reached the Throne",
-        "sources": [
-          {
-            "label": "Palace Museum, “中书省”",
-            "url": "https://www.dpm.org.cn/court/system/236406.html"
-          }
-        ]
-      },
-      {
-        "title": "Abolition of the Central Secretariat and Chancellorship",
-        "sources": [
-          {
-            "label": "Palace Museum, “中书省”",
-            "url": "https://www.dpm.org.cn/court/system/236406.html"
-          },
-          {
-            "label": "Zhang Yu, “明初六部体制的确立与定型,” 史学月刊, hosted by Henan University",
-            "url": "https://sxyk.henu.edu.cn/info/1014/4333.htm"
-          }
-        ]
-      },
-      {
         "title": "The Eight-Day Count in 1384",
         "sources": [
           {
-            "label": "Ming Taizu Shilu (Veritable Records of Ming Taizu), volume 165, Hongwu 17, ninth month, cited in Huang Chang-chien, “論皇明祖訓錄所記明初官制”",
-            "url": "https://www11.ihp.sinica.edu.tw/storage/w2_file/4116KmGGnQv.pdf"
+            "label": "《明太祖宝训》卷三 (Collected Instructions of Ming Taizu, juan 3)",
+            "url": "https://zh.wikisource.org/wiki/%E6%98%8E%E5%A4%AA%E7%A5%96%E5%AF%B6%E8%A8%93/%E5%8D%B73"
+          }
+        ]
+      },
+      {
+        "title": "The Central Secretariat",
+        "sources": [
+          {
+            "label": "Palace Museum, “中书省”",
+            "url": "https://www.dpm.org.cn/court/system/236406.html"
+          }
+        ]
+      },
+      {
+        "title": "The Chancellorship",
+        "sources": [
+          {
+            "label": "Palace Museum, “丞相”",
+            "url": "https://www.dpm.org.cn/court/system/236393.html"
+          }
+        ]
+      },
+      {
+        "title": "The Six Ministries",
+        "sources": [
+          {
+            "label": "Palace Museum, “六部”",
+            "url": "https://www.dpm.org.cn/court/system/236422.html"
+          }
+        ]
+      },
+      {
+        "title": "Zhu Yuanzhang's Early Life and Founding of the Ming",
+        "sources": [
+          {
+            "label": "Palace Museum, “洪武皇帝”",
+            "url": "https://www.dpm.org.cn/court/lineage/226244.html"
           },
           {
-            "label": "Chinese Academy of Social Sciences Institute of History, “明初政治新探：以诏令为中心”",
-            "url": "https://lishisuo.cssn.cn/xsyj/ms/202001/t20200116_5078465.shtml"
+            "label": "Palace Museum, “太祖开国”",
+            "url": "https://www.dpm.org.cn/court/event/166593.html"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "politics",
+    "categoryName": "Government & Society",
+    "slug": "wu-zetian",
+    "title": "武则天：从宫中少女到皇帝",
+    "titleEn": "Wu Zetian: The Girl Who Became Emperor",
+    "storyPath": "../../culture/books/politics/wu-zetian/",
+    "groups": [
+      {
+        "title": "Smithsonian National Museum of Asian Art, Chinese history timeline",
+        "sources": [
+          {
+            "label": "asia-archive.si.edu",
+            "url": "https://asia-archive.si.edu/learn/for-educators/teaching-china-with-the-smithsonian/interactives/timelines/timeline-of-chinese-history-art-and-culture/"
           }
         ]
       },
       {
-        "title": "Assistants, Grand Secretaries, and the Later Cabinet",
+        "title": "*Old Book of Tang*, “Annals of Empress Zetian”",
         "sources": [
           {
-            "label": "Palace Museum, “内阁”",
-            "url": "https://www.dpm.org.cn/court/system/236394.html"
+            "label": "zh.wikisource.org",
+            "url": "https://zh.wikisource.org/zh-hant/%E8%88%8A%E5%94%90%E6%9B%B8/%E5%8D%B76"
           }
         ]
       },
       {
-        "title": "Severity and the Limits of the “Hardworking Emperor” Frame",
+        "title": "Victor Xiong, Ohio State University Origins, “Wu Zetian: The Only Woman Emperor in Chinese History”",
         "sources": [
           {
-            "label": "Metropolitan Museum of Art, “The Yuan Revolution: Art and Dynastic Change”",
-            "url": "https://www.metmuseum.org/exhibitions/listings/2010/yuan-revolution"
+            "label": "origins.osu.edu",
+            "url": "https://origins.osu.edu/index.php/read/wu-zetian-woman-emperor-china"
+          }
+        ]
+      },
+      {
+        "title": "Research on appointments and the four petition boxes",
+        "sources": [
+          {
+            "label": "xsyk021.com",
+            "url": "https://www.xsyk021.com/article/id/890d4542-aed3-47ce-bd9c-f75b35f9cfa8?pageType=en"
+          },
+          {
+            "label": "www1.ihp.sinica.edu.tw",
+            "url": "https://www1.ihp.sinica.edu.tw/en/Publications/LegalHistoryStudy/1180/Article/507"
+          }
+        ]
+      },
+      {
+        "title": "Qianling and the Stone with No Words",
+        "sources": [
+          {
+            "label": "chinaheritagequarterly.org",
+            "url": "https://www.chinaheritagequarterly.org/articles.php?issue=008&searchterm=008_qianling.inc"
           }
         ]
       }
@@ -4649,51 +4328,58 @@ window.NIHAO_CULTURE_SOURCES = [
     "category": "politics",
     "categoryName": "Government & Society",
     "slug": "exam-content",
-    "title": "科举到底考什么？一张考卷的千年变化",
-    "titleEn": "What Did the Imperial Exams Test? A Thousand Years of Changing Questions",
+    "title": "科举到底考什么？",
+    "titleEn": "What Was on the Imperial Exam?",
     "storyPath": "../../culture/books/politics/exam-content/",
     "groups": [
       {
-        "title": "Tang Examination Categories and the Changing *Jinshi* Exam",
+        "title": "Tang Examination Poetry",
         "sources": [
           {
-            "label": "Xin Tang Shu (New Book of Tang), “Selection System I,” Chinese Text Project",
+            "label": "Nathan Vedal, “Never Taking a Shortcut: Examination Poetry of the Tang Dynasty,” Tang Studies",
+            "url": "https://muse.jhu.edu/article/766627"
+          }
+        ]
+      },
+      {
+        "title": "Tang Examination Categories",
+        "sources": [
+          {
+            "label": "Xin Tang Shu (《新唐书·选举志》), Chinese Text Project",
             "url": "https://ctext.org/wiki.pl?chapter=304555&if=en"
-          },
-          {
-            "label": "Nathan Vedal, “Never Taking a Shortcut: Examination Poetry of the Tang Dynasty,” Chinese Literature: Essays, Articles, Reviews",
-            "url": "https://www.tandfonline.com/doi/full/10.1179/0737503415Z.00000000014"
-          },
-          {
-            "label": "“论唐代进士科考试内容的嬗变,” 华东师范大学学报（哲学社会科学版）",
-            "url": "https://xbzs.ecnu.edu.cn/CN/10.16382/j.cnki.1000-5579.2001.03.011"
           }
         ]
       },
       {
-        "title": "Northern Song Subjects and the Wang Anshi Reforms",
+        "title": "Wang Anshi’s 1071 Examination Reform",
         "sources": [
           {
-            "label": "Zhang Xiqing, “论王安石的贡举改革,” 北京大学学报（哲学社会科学版）",
-            "url": "https://ccj.pku.edu.cn/Article/DownLoad?id=271015516&type=ArticleFile"
-          },
-          {
-            "label": "Liu Pei, “北宋科场改革与律赋沉浮——以熙宁变法为中心,” Peking University journal platform",
-            "url": "https://ccj.pku.edu.cn/article/info?aid=113680099"
-          },
-          {
-            "label": "Zhuge Yibing, “北宋神宗朝科举制度之演变,” hosted by Henan University, originally summarized in 历史与社会",
-            "url": "https://sxyk.henu.edu.cn/info/1014/3069.htm"
+            "label": "Kazunari Kondo, “Concerning the Examination Reforms of Wang An-shi,” Kyoto University Research Information Repository",
+            "url": "https://repository.kulib.kyoto-u.ac.jp/handle/2433/154215"
           }
         ]
       },
       {
-        "title": "Ming Examination Sessions and the Eight-Legged Essay",
+        "title": "The Eight-Legged Essay",
         "sources": [
           {
-            "label": "Ming Shi (History of Ming), “Selection System II,” Chinese Text Project",
-            "url": "https://ctext.org/wiki.pl?chapter=287810&if=en"
-          },
+            "label": "Gong Yanming and Gao Mingyang, “Evaluative Standard for the Eight-Legged Essay in the Imperial Examinations of the Qing Dynasty,” Frontiers of Literary Studies in China",
+            "url": "https://journal.hep.com.cn/flsc/EN/10.1007/s11702-007-0029-z"
+          }
+        ]
+      },
+      {
+        "title": "The Ming Provincial Examination",
+        "sources": [
+          {
+            "label": "National Museum of China, “明万历四年顾宪成试卷稿册”",
+            "url": "https://www.chnmuseum.cn/zp/zpml/201812/t20181218_24728.shtml"
+          }
+        ]
+      },
+      {
+        "title": "The Ming Metropolitan Examination",
+        "sources": [
           {
             "label": "National Museum of China, “明万历三十二年余懋孳会试朱卷”",
             "url": "https://www.chnmuseum.cn/zp/zpml/gjwxbt/202008/t20200824_247146.shtml"
@@ -4701,36 +4387,314 @@ window.NIHAO_CULTURE_SOURCES = [
         ]
       },
       {
-        "title": "Qing Subjects and the Addition of Regulated Poetry",
+        "title": "The Qing Provincial Examination",
         "sources": [
           {
-            "label": "Renmin University of China, Qing History Journal, article abstract on the 1757 addition of regulated verse to the examinations",
-            "url": "https://qsyj.ruc.edu.cn/CN/abstract/abstract2534.shtml"
-          },
+            "label": "Palace Museum, “乡试”",
+            "url": "https://www.dpm.org.cn/court/system/236410.html"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "politics",
+    "categoryName": "Government & Society",
+    "slug": "imperial-exam-history",
+    "title": "科举考试：一张考卷能带你走多远？",
+    "titleEn": "The Imperial Examination: How Far Could a Test Take You?",
+    "storyPath": "../../culture/books/politics/imperial-exam-history/",
+    "groups": [
+      {
+        "title": "Examination Cells in a Ming Painting",
+        "sources": [
           {
-            "label": "Chen Shengzheng, “清代科场诗文的共通性探论,” 华东师范大学学报",
-            "url": "https://tsla.ecnu.edu.cn/CN/Y2023/V43/I5/62"
+            "label": "Palace Museum, “明人考试图横轴”",
+            "url": "https://www.dpm.org.cn/collection/paint/259306.html"
           }
         ]
       },
       {
-        "title": "Three Sessions, Timing, and Examination Cells",
+        "title": "Life Inside an Examination Cell",
         "sources": [
+          {
+            "label": "Guangzhou Municipal People’s Government, “贡院记忆藏深巷 赓续文脉数百年”",
+            "url": "https://www.gz.gov.cn/zlgz/whgz/content/post_8393826.html"
+          }
+        ]
+      },
+      {
+        "title": "Tang Examination Categories and Writing",
+        "sources": [
+          {
+            "label": "Chinese Text Project, Tongdian, “Selections and Appointments 3” (《通典·选举三》)",
+            "url": "https://ctext.org/wiki.pl?chapter=953312&if=en"
+          }
+        ]
+      },
+      {
+        "title": "Concealing Names and Handwriting",
+        "sources": [
+          {
+            "label": "Yuhua Wang, The Political Economy of China’s Imperial Examination System, Cambridge University Press",
+            "url": "https://www.cambridge.org/core/elements/political-economy-of-chinas-imperial-examination-system/3DA0EC88AE5901AEE641FD5686C7F8B8"
+          }
+        ]
+      },
+      {
+        "title": "A Ming Red Examination Copy",
+        "sources": [
+          {
+            "label": "National Museum of China, “明万历三十二年余懋孳会试朱卷”",
+            "url": "https://www.chnmuseum.cn/zp/zpml/gjwxbt/202008/t20200824_247146.shtml"
+          }
+        ]
+      },
+      {
+        "title": "The Examination Ladder",
+        "sources": [
+          {
+            "label": "National Museum of China, “明万历四年顾宪成试卷稿册”",
+            "url": "https://www.chnmuseum.cn/zp/zpml/201812/t20181218_24728.shtml"
+          },
           {
             "label": "National Museum of China, “光绪年间会试朱卷”",
             "url": "https://www.chnmuseum.cn/zp/zpml/201812/t20181218_24853.shtml"
+          }
+        ]
+      },
+      {
+        "title": "The Palace Examination and Its Top Three",
+        "sources": [
+          {
+            "label": "Palace Museum, “清代殿试”",
+            "url": "https://www.dpm.org.cn/court/system/236363.html"
           },
           {
-            "label": "National Museum of China, “同治九年顺天府发给段溥源的乡试卷票”",
-            "url": "https://www.chnmuseum.cn/zp/zpml/gjwxbt/202008/t20200824_247151.shtml"
+            "label": "National Museum of China, “康熙五十四年黄鹤鸣殿试卷”",
+            "url": "https://www.chnmuseum.cn/zp/zpml/201812/t20181218_24849.shtml"
+          }
+        ]
+      },
+      {
+        "title": "The End of the Examination System",
+        "sources": [
+          {
+            "label": "National Museum of China, “宣统元年十八省选拔贡同年全录”",
+            "url": "https://www.chnmuseum.cn/zp/zpml/201812/t20181218_24856.shtml"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "politics",
+    "categoryName": "Government & Society",
+    "slug": "qin-shi-huang",
+    "title": "秦始皇：想让所有规则都一样的皇帝",
+    "titleEn": "Qin Shi Huang: The Emperor Who Wanted Everything to Match",
+    "storyPath": "../../culture/books/politics/qin-shi-huang/",
+    "groups": [
+      {
+        "title": "Sima Qian, *Records of the Grand Historian*, “Basic Annals of the First Emperor of Qin”",
+        "sources": [
+          {
+            "label": "ctext.org",
+            "url": "https://ctext.org/shiji/qin-shi-huang-ben-ji/zh"
           },
           {
-            "label": "Henan University, “河南贡院：中国科举考试终结地,” reprinting Henan Daily",
-            "url": "https://xyh.henu.edu.cn/sjhd/mlws/show-2930.html"
+            "label": "ctext.org",
+            "url": "https://ctext.org/shiji/qin-shi-huang-ben-ji/ens"
+          }
+        ]
+      },
+      {
+        "title": "Sima Qian, *Records of the Grand Historian*, “Biographies of the Assassins”",
+        "sources": [
+          {
+            "label": "ctext.org",
+            "url": "https://ctext.org/shiji/ci-ke-lie-zhuan/zh"
           },
           {
-            "label": "Academia Sinica Museum of the Institute of History and Philology, “貢院號舍透視圖”",
-            "url": "https://museum.sinica.edu.tw/exhibition/132/item/1084/"
+            "label": "ctext.org",
+            "url": "https://ctext.org/shiji/ci-ke-lie-zhuan/zhs"
+          }
+        ]
+      },
+      {
+        "title": "The Metropolitan Museum of Art, “Qin Dynasty (221–206 B.C.)” and “Age of Empires”",
+        "sources": [
+          {
+            "label": "metmuseum.org",
+            "url": "https://www.metmuseum.org/essays/qin-dynasty-221-206-b-c"
+          },
+          {
+            "label": "metmuseum.org",
+            "url": "https://www.metmuseum.org/exhibitions/listings/2017/age-of-empires/exhibition-galleries"
+          }
+        ]
+      },
+      {
+        "title": "Research on Qin frontier walls and forced labor",
+        "sources": [
+          {
+            "label": "pmc.ncbi.nlm.nih.gov",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4522747/"
+          },
+          {
+            "label": "cambridge.org",
+            "url": "https://www.cambridge.org/core/journals/journal-of-chinese-history/article/making-use-of-the-land-the-political-ecology-of-chinas-first-empire/5C80E8CC40548B2953F72246C49A6CF7"
+          },
+          {
+            "label": "discovery.ucl.ac.uk",
+            "url": "https://discovery.ucl.ac.uk/id/eprint/10216532"
+          }
+        ]
+      },
+      {
+        "title": "UNESCO World Heritage Centre, “Mausoleum of the First Qin Emperor”",
+        "sources": [
+          {
+            "label": "whc.unesco.org",
+            "url": "https://whc.unesco.org/en/list/441/"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "inventions",
+    "categoryName": "Inventions & Technology",
+    "slug": "solar-terms",
+    "title": "二十四节气：跟着太阳过一年",
+    "titleEn": "The 24 Solar Terms: Following the Sun Through the Year",
+    "storyPath": "../../culture/books/inventions/solar-terms/",
+    "groups": [
+      {
+        "title": "Structure, origin, and living tradition",
+        "sources": [
+          {
+            "label": "UNESCO, “The Twenty-Four Solar Terms, Knowledge in China of Time and Practices Developed through Observation of the Sun’s Annual Motion”",
+            "url": "https://ich.unesco.org/en/RL/the-twenty-four-solar-terms-knowledge-in-china-of-time-and-practices-developed-through-observation-of-the-suns-annual-motion-00647"
+          }
+        ]
+      },
+      {
+        "title": "Historical development",
+        "sources": [
+          {
+            "label": "China Agricultural Museum, “Origin of the Solar Terms”",
+            "url": "https://www.ciae.com.cn/detail/en/36075.html"
+          }
+        ]
+      },
+      {
+        "title": "Seasonal and agricultural meanings",
+        "sources": [
+          {
+            "label": "China Agricultural Museum, “Social Functions and Cultural Meanings”",
+            "url": "https://www.ciae.com.cn/detail/en/36077.html"
+          }
+        ]
+      },
+      {
+        "title": "The sun, equinoxes, and solstices",
+        "sources": [
+          {
+            "label": "Hong Kong Observatory, “The 24 Solar Terms”",
+            "url": "https://www.hko.gov.hk/en/gts/time/24solarterms.htm"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "inventions",
+    "categoryName": "Inventions & Technology",
+    "slug": "kites",
+    "title": "会飞的彩虹：中国的风筝",
+    "titleEn": "Flying Rainbows: Chinese Kites",
+    "storyPath": "../../culture/books/inventions/kites/",
+    "groups": [
+      {
+        "title": "《韩非子·外储说左上》 (*Hán Fēizǐ*, “Wài Chǔ Shuō Zuǒ”)",
+        "sources": [
+          {
+            "label": "ctext.org",
+            "url": "https://ctext.org/hanfeizi/wai-chu-shuo-zuo-shang/zh"
+          }
+        ]
+      },
+      {
+        "title": "National Air and Space Museum, “Conserving the Museum’s Chinese Kites”",
+        "sources": [
+          {
+            "label": "airandspace.si.edu",
+            "url": "https://airandspace.si.edu/stories/editorial/conserving-chinese-kites"
+          }
+        ]
+      },
+      {
+        "title": "Smithsonian Folklife Festival, “Kites, Beijing and Jiangsu Province”",
+        "sources": [
+          {
+            "label": "festival.si.edu",
+            "url": "https://festival.si.edu/2014/china/to-the-sky/kites/smithsonian"
+          }
+        ]
+      },
+      {
+        "title": "Smithsonian Institution, “Chinese Kite” collection record",
+        "sources": [
+          {
+            "label": "si.edu",
+            "url": "https://www.si.edu/object/chinese-kite%3Anmnhanthropology_8468439"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "inventions",
+    "categoryName": "Inventions & Technology",
+    "slug": "guan-yu-blade",
+    "title": "关羽真的用过青龙偃月刀吗？",
+    "titleEn": "Did Guan Yu Really Use the Green Dragon Crescent Blade?",
+    "storyPath": "../../culture/books/inventions/guan-yu-blade/",
+    "groups": [
+      {
+        "title": "Chen Shou, *Records of the Three Kingdoms*, “Biography of Guan Yu”",
+        "sources": [
+          {
+            "label": "ctext.org",
+            "url": "https://ctext.org/text.pl?if=gb&node=603534"
+          }
+        ]
+      },
+      {
+        "title": "Zeng Gongliang, Ding Du, et al., *Wujing Zongyao*",
+        "sources": [
+          {
+            "label": "zh.wikisource.org",
+            "url": "https://zh.wikisource.org/wiki/%E6%AD%A6%E7%B6%93%E7%B8%BD%E8%A6%81"
+          }
+        ]
+      },
+      {
+        "title": "Luo Guanzhong, *Romance of the Three Kingdoms*, Chapter 1",
+        "sources": [
+          {
+            "label": "china.org.cn",
+            "url": "https://www.china.org.cn/chinese/2020-07/20/content_76290725.htm"
+          }
+        ]
+      },
+      {
+        "title": "Peter Dekker, “Yǎnyuèdāo (偃月刀),” Mandarin Mansion",
+        "sources": [
+          {
+            "label": "mandarinmansion.com",
+            "url": "https://www.mandarinmansion.com/glossary/yanyuedao-yanyuedao"
           }
         ]
       }
@@ -4740,95 +4704,52 @@ window.NIHAO_CULTURE_SOURCES = [
     "category": "inventions",
     "categoryName": "Inventions & Technology",
     "slug": "compass",
-    "title": "一块会指方向的石头，怎样变成海上的工具？",
-    "titleEn": "How Did a Direction-Finding Stone Become a Tool for the Sea?",
+    "title": "指南针为什么总朝着同一个方向？",
+    "titleEn": "Why Does a Compass Needle Keep Pointing the Same Way?",
     "storyPath": "../../culture/books/inventions/compass/",
     "groups": [
       {
-        "title": "Overall chronology and unresolved questions",
+        "title": "Shěn Kuò and the magnetized needle",
         "sources": [
           {
-            "label": "Huang Xing, “中国指南针史研究文献综述” (Review of Research on the History of the Compass in China), Journal of Dialectics of Nature, University of Chinese Academy of Sciences",
-            "url": "https://jdn.ucas.ac.cn/home/journal/view/id/3164"
-          }
-        ]
-      },
-      {
-        "title": "Han *sinan* text and the disputed spoon reconstruction",
-        "sources": [
-          {
-            "label": "Wenren Jun, Fudan University Center for Research on Chinese Excavated Classics and Paleography, “王充论‘投之于地’及磁石勺说献疑”",
-            "url": "https://www.fdgwz.org.cn/Web/Show/4351"
-          },
-          {
-            "label": "Institute for the History of Natural Sciences, Chinese Academy of Sciences, publication record for “Experimental Research on the South-Pointing Loadstone Spoon (Sinan)”",
-            "url": "https://english.ihns.ac.cn/sourcedb/pbs/202311/t20231107_611549.html"
-          }
-        ]
-      },
-      {
-        "title": "The Northern Song south-pointing fish",
-        "sources": [
-          {
-            "label": "Wujing zongyao (Essential Military Methods), digitized text and scanned edition links at Chinese Text Project",
-            "url": "https://ctext.org/datawiki.pl?if=en&res=32116"
-          },
-          {
-            "label": "National Central Library scan of Wujing zongyao qianji, hosted by Wikimedia Commons",
-            "url": "https://commons.wikimedia.org/wiki/File:NCL-05717_%E6%AD%A6%E7%B6%93%E7%B8%BD%E8%A6%81%E5%89%8D%E9%9B%86.pdf"
-          }
-        ]
-      },
-      {
-        "title": "The magnetic needle and Shen Kuo's observation",
-        "sources": [
-          {
-            "label": "Shen Kuo, Mengxi bitan (Dream Pool Essays), magnetic-needle passage, digitized by Chinese Text Project",
+            "label": "Shěn Kuò, Mèng Xī Bǐ Tán (《梦溪笔谈》), juan 24, Chinese Text Project",
             "url": "https://ctext.org/datawiki.pl?if=gb&remap=gb&res=125489"
           }
         ]
       },
       {
-        "title": "Early evidence for use aboard seagoing ships",
+        "title": "Early compass use at sea",
         "sources": [
           {
-            "label": "Zhu Yu, Pingzhou ketan (Pingzhou Table Talks), digitized by Wikisource",
-            "url": "https://zh.wikisource.org/zh-hant/%E8%90%8D%E6%B4%B2%E5%8F%AF%E8%AB%87"
-          },
-          {
-            "label": "Cambridge University Press, Journal of Chinese History, “Sailing the Waters of East and Southeast Asia: Chinese Navigators and their Material and Mental Tools”",
+            "label": "Zhu Yu, Píngzhōu Kětán (《萍洲可谈》), discussed in “Sailing the Waters of East and Southeast Asia: Chinese Navigators and their Material and Mental Tools,” Cambridge University Press",
             "url": "https://www.cambridge.org/core/journals/journal-of-chinese-history/article/sailing-the-waters-of-east-and-southeast-asia-chinese-navigators-and-their-material-and-mental-tools/66D276749D2F189F292E52F29BD5DFEC"
           }
         ]
       },
       {
-        "title": "Magnetic north, true north, and changing declination",
+        "title": "Why a compass needle turns",
         "sources": [
           {
-            "label": "NOAA National Centers for Environmental Information, “Magnetic Declination (Variation)”",
-            "url": "https://www.ngdc.noaa.gov/geomag/declination.shtml"
-          },
-          {
-            "label": "NOAA National Centers for Environmental Information, “Geomagnetism Frequently Asked Questions”",
-            "url": "https://www.ncei.noaa.gov/products/geomagnetism-frequently-asked-questions"
+            "label": "U.S. Geological Survey, “How Does a Compass Work?”",
+            "url": "https://www.usgs.gov/media/audio/how-does-compass-work"
           }
         ]
       },
       {
-        "title": "The mechanical south-pointing carriage",
+        "title": "Magnetic declination",
         "sources": [
           {
-            "label": "H. D. Garner, “The Mechanism of China's South-Pointing Carriage,” NAVIGATION: Journal of the Institute of Navigation",
-            "url": "https://www.ion.org/publications/abstract.cfm?articleID=100137"
+            "label": "U.S. Geological Survey, “Introduction to Geomagnetism”",
+            "url": "https://www.usgs.gov/programs/geomagnetism/introduction-geomagnetism"
           }
         ]
       },
       {
-        "title": "Records outside China and transmission uncertainty",
+        "title": "Compass and maritime navigation",
         "sources": [
           {
-            "label": "Petra G. Schmidl, “Two Early Arabic Sources on the Magnetic Compass,” Journal of Arabic and Islamic Studies",
-            "url": "https://www.lancaster.ac.uk/jais/volume/docs/vol1/V1_4_Schmidl.htm"
+            "label": "Smithsonian Institution, “Time and Navigation: Magnetic Compass”",
+            "url": "https://timeandnavigation.si.edu/timeline2/1000"
           }
         ]
       }
@@ -4838,86 +4759,39 @@ window.NIHAO_CULTURE_SOURCES = [
     "category": "inventions",
     "categoryName": "Inventions & Technology",
     "slug": "gunpowder",
-    "title": "寻找长生不老，为什么做出了会爆炸的东西？",
-    "titleEn": "How Did a Search for Immortality Lead to Something Explosive?",
+    "title": "火药的发明：从炼丹炉到烟花",
+    "titleEn": "Gunpowder: From Alchemy to Fireworks",
     "storyPath": "../../culture/books/inventions/gunpowder/",
     "groups": [
       {
-        "title": "*Zhenyuan miaodao yaolüe* (真元妙道要略)",
+        "title": "Ho Peng Yoke, “Gunpowder”",
         "sources": [
           {
-            "label": "zh.wikisource.org",
-            "url": "https://zh.wikisource.org/wiki/%E7%9C%9F%E5%85%83%E5%A6%99%E9%81%93%E8%A6%81%E7%95%A5"
-          },
-          {
-            "label": "zh.wikisource.org",
-            "url": "https://zh.wikisource.org/zh-hans/%E7%9C%9F%E5%85%83%E5%A6%99%E9%81%93%E8%A6%81%E7%95%A5"
+            "label": "doi.org",
+            "url": "https://doi.org/10.1007/978-1-4020-4425-0_9774"
           }
         ]
       },
       {
-        "title": "*Wujing zongyao* (武经总要), completed in 1044",
-        "sources": [
-          {
-            "label": "ctext.org",
-            "url": "https://ctext.org/wiki.pl?if=en&remap=gb&res=817018"
-          },
-          {
-            "label": "zh.wikisource.org",
-            "url": "https://zh.wikisource.org/zh/File:%E6%AD%A6%E7%BB%8F%E6%80%BB%E8%A6%81_%E7%81%AB%E7%90%83%E5%9B%BE.jpg"
-          }
-        ]
-      },
-      {
-        "title": "Columbia University, Asia for Educators — “Gunpowder”",
-        "sources": [
-          {
-            "label": "afe.easia.columbia.edu",
-            "url": "https://afe.easia.columbia.edu/songdynasty-module/tech-gunpowder.html"
-          }
-        ]
-      },
-      {
-        "title": "Academy of Chinese Studies — “Gunpowder and Firearms in Ancient China”",
-        "sources": [
-          {
-            "label": "chiculture.org.hk",
-            "url": "https://chiculture.org.hk/en/china-five-thousand-years/2747"
-          }
-        ]
-      },
-      {
-        "title": "*Kaixi De'an shouyu lu* (开禧德安守御录)",
-        "sources": [
-          {
-            "label": "zh.wikisource.org",
-            "url": "https://zh.wikisource.org/zh-hans/%E9%96%8B%E7%A6%A7%E5%BE%B7%E5%AE%89%E5%AE%88%E5%9F%8E%E9%8C%84"
-          },
-          {
-            "label": "zh.wikipedia.org",
-            "url": "https://zh.wikipedia.org/wiki/%E5%AE%88%E5%9F%8E%E9%8C%84"
-          }
-        ]
-      },
-      {
-        "title": "Song-Jin explosive weapons and the gradual firearm transition",
+        "title": "Joseph Needham, “The Guns of Kaifêng-Fu: China's Development of Man's First Chemical Explosive”",
         "sources": [
           {
             "label": "read.uolpress.co.uk",
             "url": "https://read.uolpress.co.uk/read/the-creighton-century-1907-2007/section/9e1a027f-5c02-4d6a-9df6-3f687329092d"
-          },
-          {
-            "label": "tile.loc.gov",
-            "url": "https://tile.loc.gov/storage-services/master/gdc/gdcebookspublic/20/21/75/84/61/2021758461/2021758461.pdf"
-          },
-          {
-            "label": "zh.wikipedia.org",
-            "url": "https://zh.wikipedia.org/wiki/%E9%9C%87%E5%A4%A9%E9%9B%B7"
           }
         ]
       },
       {
-        "title": "Smithsonian National Air and Space Museum — “The First Fireworks: Origins of the Rocket”",
+        "title": "Peter A. Lorge, *The Asian Military Revolution: From Gunpowder to the Bomb*",
+        "sources": [
+          {
+            "label": "cambridge.org",
+            "url": "https://www.cambridge.org/core/books/asian-military-revolution/1F83478D541811809B78D03427E1226A"
+          }
+        ]
+      },
+      {
+        "title": "National Air and Space Museum, “The First Fireworks: Origins of the Rocket”",
         "sources": [
           {
             "label": "airandspace.si.edu",
@@ -4926,61 +4800,57 @@ window.NIHAO_CULTURE_SOURCES = [
         ]
       },
       {
-        "title": "Tonio Andrade, *The Gunpowder Age*",
+        "title": "*Wujing Zongyao* (《武经总要》), Chinese Text Project",
         "sources": [
           {
-            "label": "degruyterbrill.com",
-            "url": "https://www.degruyterbrill.com/document/doi/10.1515/9781400874446/html"
-          },
+            "label": "ctext.org",
+            "url": "https://ctext.org/wiki.pl?if=en&remap=gb&res=817018"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "inventions",
+    "categoryName": "Inventions & Technology",
+    "slug": "abacus",
+    "title": "算盘：噼里啪啦的计算器",
+    "titleEn": "The Abacus: A Click-Clack Calculator",
+    "storyPath": "../../culture/books/inventions/abacus/",
+    "groups": [
+      {
+        "title": "Chinese *zhūsuàn* and oral formulas",
+        "sources": [
           {
-            "label": "doi.org",
-            "url": "https://doi.org/10.2307/j.ctvc77j74.1"
-          },
-          {
-            "label": "tonioandrade.com",
-            "url": "https://www.tonioandrade.com/_files/ugd/88be10_6d1a981ca79946488ba646c3630d550a.pdf"
+            "label": "UNESCO, “Chinese Zhusuan, Knowledge and Practices of Mathematical Calculation through the Abacus”",
+            "url": "https://ich.unesco.org/en/RL/chinese-zhusuan-knowledge-and-practices-of-mathematical-calculation-through-the-abacus-00853"
           }
         ]
       },
       {
-        "title": "Comparative scholarship on Eurasian transmission",
+        "title": "Structure of the traditional Chinese abacus",
         "sources": [
           {
-            "label": "academic.oup.com",
-            "url": "https://academic.oup.com/book/756/chapter/135406976"
-          },
-          {
-            "label": "academic.oup.com",
-            "url": "https://academic.oup.com/reference/62399/reference-article-abstract/555375223"
-          },
-          {
-            "label": "journals.rcsi.science",
-            "url": "https://journals.rcsi.science/2308-152X/article/view/352766"
-          },
-          {
-            "label": "researchportal.northumbria.ac.uk",
-            "url": "https://researchportal.northumbria.ac.uk/files/89635254/ACCEPTED_VERSION_Firearms.pdf"
+            "label": "Smithsonian National Museum of American History, “The Chinese Abacus”",
+            "url": "https://americanhistory.si.edu/ne/collections/object-groups/the-abacus-the-numeral-frame-and-counters/the-chinese-abacus"
           }
         ]
       },
       {
-        "title": "Fireworks and later civilian blasting",
+        "title": "Rods and place value",
         "sources": [
           {
-            "label": "ssec.si.edu",
-            "url": "https://ssec.si.edu/node/205"
-          },
+            "label": "Science Museum Group, “Chinese Abacus”",
+            "url": "https://collection.sciencemuseumgroup.org.uk/objects/co59717/chinese-abacus-abacus"
+          }
+        ]
+      },
+      {
+        "title": "Ming-dynasty evidence and commercial use",
+        "sources": [
           {
-            "label": "pubs.acs.org",
-            "url": "https://pubs.acs.org/doi/10.1021/cen-09527-scitech3"
-          },
-          {
-            "label": "mininghistoryassociation.org",
-            "url": "https://www.mininghistoryassociation.org/Journal/MHJ-v15-2008-Siems.pdf"
-          },
-          {
-            "label": "en.wikisource.org",
-            "url": "https://en.wikisource.org/wiki/1911_Encyclop%C3%A6dia_Britannica/Blasting"
+            "label": "National Museum of China, “Ivory Abacus” (象牙算盘)",
+            "url": "https://www.chnmuseum.cn/zp/zpml/ysp/202012/t20201217_248554.shtml"
           }
         ]
       }
@@ -4990,127 +4860,111 @@ window.NIHAO_CULTURE_SOURCES = [
     "category": "inventions",
     "categoryName": "Inventions & Technology",
     "slug": "paper-making",
-    "title": "蔡伦真的是第一个造纸的人吗？",
-    "titleEn": "Was Cai Lun Really the First Person to Make Paper?",
+    "title": "纸是怎么从树皮变出来的？",
+    "titleEn": "How Did Tree Bark Become Paper?",
     "storyPath": "../../culture/books/inventions/paper-making/",
     "groups": [
       {
-        "title": "Fan Ye, *Book of the Later Han*, biography of Cai Lun",
+        "title": "《后汉书·宦者列传》 (*Book of the Later Han*, “Biographies of Eunuchs”)",
         "sources": [
           {
-            "label": "ctext.org",
-            "url": "https://ctext.org/"
+            "label": "zh.wikisource.org",
+            "url": "https://zh.wikisource.org/zh-hant/%E5%BE%8C%E6%BC%A2%E6%9B%B8/%E5%8D%B778"
           }
         ]
       },
       {
-        "title": "T. H. Barrett, “The Woman Who Invented Notepaper: Towards a Comparative Historiography of Paper and Print”",
+        "title": "University of Oxford, “Origins of Paper”",
         "sources": [
           {
-            "label": "Journal of the Royal Asiatic Society, Cambridge University Press",
-            "url": "https://www.cambridge.org/core/journals/journal-of-the-royal-asiatic-society/article/woman-who-invented-notepaper-towards-a-comparative-historiography-of-paper-and-print/F4EDF2184F186400C08920F227007F29"
+            "label": "cabinet.ox.ac.uk",
+            "url": "https://www.cabinet.ox.ac.uk/origins-paper"
           }
         ]
       },
       {
-        "title": "Smithsonian Museum Conservation Institute abstracts on early Chinese paper",
+        "title": "University of Oxford, “The Ancient Papermaking Process”",
         "sources": [
           {
-            "label": "Pan Jixing, “On the origin of papermaking in the light of scientific research on recent archaeological discoveries”",
-            "url": "https://mci.si.edu/node/1246765"
+            "label": "cabinet.ox.ac.uk",
+            "url": "https://www.cabinet.ox.ac.uk/ancient-papermaking-process"
+          }
+        ]
+      },
+      {
+        "title": "UNESCO, “Traditional Handicrafts of Making Xuan Paper”",
+        "sources": [
+          {
+            "label": "ich.unesco.org",
+            "url": "https://ich.unesco.org/en/RL/traditional-handicrafts-of-making-xuan-paper-00201"
+          }
+        ]
+      },
+      {
+        "title": "Academy of Chinese Studies, “Papermaking”",
+        "sources": [
+          {
+            "label": "chiculture.org.hk",
+            "url": "https://chiculture.org.hk/en/china-five-thousand-years/2746"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "literature",
+    "categoryName": "Literature",
+    "slug": "three-kingdoms",
+    "title": "《三国演义》：三个国家斗智斗勇",
+    "titleEn": "Romance of the Three Kingdoms: Three States, Many Heroes",
+    "storyPath": "../../culture/books/literature/three-kingdoms/",
+    "groups": [
+      {
+        "title": "The novel and its historical setting",
+        "sources": [
+          {
+            "label": "China.org.cn, “Romance of the Three Kingdoms”",
+            "url": "https://www.china.org.cn/english/china_key_words/2024-08/29/content_117393750.html"
+          }
+        ]
+      },
+      {
+        "title": "The Peach Garden Oath",
+        "sources": [
+          {
+            "label": "Romance of the Three Kingdoms, Chapter 1, Wikisource",
+            "url": "https://zh.wikisource.org/zh-hant/%E4%B8%89%E5%9C%8B%E6%BC%94%E7%BE%A9/%E7%AC%AC001%E5%9B%9E"
+          }
+        ]
+      },
+      {
+        "title": "The three visits to the cottage",
+        "sources": [
+          {
+            "label": "Romance of the Three Kingdoms, Chapters 37–38, Wikisource",
+            "url": "https://zh.wikisource.org/wiki/%E4%B8%89%E5%9C%8B%E6%BC%94%E7%BE%A9/%E7%AC%AC037%E5%9B%9E"
           },
           {
-            "label": "Wang Juhua and Li Yuhua, analysis of Han paper specimens",
-            "url": "https://mci.si.edu/node/1184995"
+            "label": "Romance of the Three Kingdoms, Chapter 38, Wikisource",
+            "url": "https://zh.wikisource.org/wiki/%E4%B8%89%E5%9C%8B%E6%BC%94%E7%BE%A9/%E7%AC%AC038%E5%9B%9E"
           }
         ]
       },
       {
-        "title": "Harumi Kubo, review of the scholarly debate on paper before Cai Lun",
+        "title": "The Empty Fort Trick",
         "sources": [
           {
-            "label": "History of Science Society of Japan, J-STAGE",
-            "url": "https://www.jstage.jst.go.jp/article/jhsj/47/247/47_150/_article/-char/ja/"
+            "label": "Romance of the Three Kingdoms, Chapter 95, Wikisource",
+            "url": "https://zh.wikisource.org/wiki/%E4%B8%89%E5%9C%8B%E6%BC%94%E7%BE%A9/%E7%AC%AC095%E5%9B%9E"
           }
         ]
       },
       {
-        "title": "Cornell University Library, Paper Preservation Tutorial",
+        "title": "History behind the story",
         "sources": [
           {
-            "label": "“Paper”",
-            "url": "https://chinapreservationtutorial.library.cornell.edu/content/paper/"
-          }
-        ]
-      },
-      {
-        "title": "Canadian Conservation Institute, “Caring for paper objects”",
-        "sources": [
-          {
-            "label": "Government of Canada",
-            "url": "https://www.canada.ca/en/conservation-institute/services/preventive-conservation/guidelines-collections/paper-objects.html"
-          }
-        ]
-      },
-      {
-        "title": "Metropolitan Museum of Art, “Papyrus-Making in Egypt”",
-        "sources": [
-          {
-            "label": "The Met",
-            "url": "https://www.metmuseum.org/pt/essays/papyrus-making-in-egypt"
-          }
-        ]
-      },
-      {
-        "title": "UNESCO Silk Roads Programme, paper and knowledge transfer",
-        "sources": [
-          {
-            "label": "“The Importance of Paper Making Technology in Cultural Exchange along the Silk Roads”",
-            "url": "https://fr.unesco.org/silkroad/node/11083"
-          },
-          {
-            "label": "“The Invention and Transfusion of Printing Technology in East Asia”",
-            "url": "https://en.unesco.org/silkroad/content/did-you-know-invention-and-transfusion-printing-technology-east-asia-and-its-implications"
-          }
-        ]
-      },
-      {
-        "title": "Encyclopaedia Iranica, “Paper ii. Paper and Papermaking”",
-        "sources": [
-          {
-            "label": "Encyclopaedia Iranica",
-            "url": "https://www.iranicaonline.org/articles/paper-and-papermaking/"
-          }
-        ]
-      },
-      {
-        "title": "Smithsonian Folklife Festival, “Paper”",
-        "sources": [
-          {
-            "label": "Smithsonian",
-            "url": "https://festival.si.edu/2002/the-silk-road/paper/smithsonian"
-          }
-        ]
-      },
-      {
-        "title": "UNESCO World Heritage Centre, European Paper Mills",
-        "sources": [
-          {
-            "label": "European Paper Mills tentative-list dossier",
-            "url": "https://whc.unesco.org/en/tentativelists/6767/"
-          }
-        ]
-      },
-      {
-        "title": "U.S. Environmental Protection Agency resources on paper life cycles",
-        "sources": [
-          {
-            "label": "Water footprint of paper, EPA HERO record",
-            "url": "https://hero.epa.gov/reference/3298587/"
-          },
-          {
-            "label": "Paper Task Force environmental comparison, EPA archive",
-            "url": "https://archive.epa.gov/epawaste/conserve/tools/warm/pdfs/EnvironmentalDefenseFund.pdf"
+            "label": "Chen Shou, Records of the Three Kingdoms (《三国志》), “Biography of Zhuge Liang,” Chinese Text Project",
+            "url": "https://ctext.org/text.pl?if=gb&node=603501&show=parallel"
           }
         ]
       }
@@ -5526,15 +5380,52 @@ window.NIHAO_CULTURE_SOURCES = [
     ]
   },
   {
+    "category": "literature",
+    "categoryName": "Literature",
+    "slug": "quiet-night-thought",
+    "title": "静夜思：很多小孩都会念",
+    "titleEn": "Quiet Night Thought: A Poem Many Children Know",
+    "storyPath": "../../culture/books/literature/quiet-night-thought/",
+    "groups": [
+      {
+        "title": "Poem text and textual variants",
+        "sources": [
+          {
+            "label": "Wikisource, Li Bai, “Quiet Night Thought” (《静夜思》)",
+            "url": "https://zh.wikisource.org/zh-hans/%E9%9D%99%E5%A4%9C%E6%80%9D"
+          }
+        ]
+      },
+      {
+        "title": "Child-facing interpretation and reception",
+        "sources": [
+          {
+            "label": "Hong Kong Education Bureau, Recommended Classical Chinese Passages for Primary Students, “Quiet Night Thought”",
+            "url": "https://www.edb.gov.hk/attachment/tc/curriculum-development/kla/chi-edu/recommended-passages/Booklet_KS1_uploadver2.pdf"
+          }
+        ]
+      },
+      {
+        "title": "Literary analysis",
+        "sources": [
+          {
+            "label": "Hong Kong Education Bureau, “Appreciating Classical Chinese Masterpieces (6)” (中國文言經典名篇賞析（六）)",
+            "url": "https://www.edb.gov.hk/attachment/tc/curriculum-development/kla/chi-edu/resources/primary/lang/pdp/20250308_PDF.pdf"
+          }
+        ]
+      }
+    ]
+  },
+  {
     "category": "military",
     "categoryName": "Military History & Technology",
     "slug": "art-of-war",
-    "title": "《孙子兵法》：行动之前，先看清局面",
-    "titleEn": "The Art of War: Look Before You Move",
+    "title": "《孙子兵法》：打仗以前，先看清楚",
+    "titleEn": "The Art of War: Look Before You Fight",
     "storyPath": "../../culture/books/military/art-of-war/",
     "groups": [
       {
-        "title": "The Received Text: War, Comparison, and Deception",
+        "title": "《孙子兵法·始计篇》 (*The Art of War*, “Laying Plans”)",
         "sources": [
           {
             "label": "Chinese Text Project, The Art of War, “Laying Plans”",
@@ -5543,7 +5434,7 @@ window.NIHAO_CULTURE_SOURCES = [
         ]
       },
       {
-        "title": "Knowing Both Sides and Avoiding Costly Battle",
+        "title": "《孙子兵法·谋攻篇》 (*The Art of War*, “Attack by Stratagem”)",
         "sources": [
           {
             "label": "Chinese Text Project, The Art of War, “Attack by Stratagem”",
@@ -5552,7 +5443,16 @@ window.NIHAO_CULTURE_SOURCES = [
         ]
       },
       {
-        "title": "Water and Adaptation",
+        "title": "“知彼知己，百战不殆”",
+        "sources": [
+          {
+            "label": "Chinese Text Project, The Art of War, “Attack by Stratagem”",
+            "url": "https://ctext.org/art-of-war/attack-by-stratagem/zh"
+          }
+        ]
+      },
+      {
+        "title": "《孙子兵法·虚实篇》 (*The Art of War*, “Weak Points and Strong”)",
         "sources": [
           {
             "label": "Chinese Text Project, The Art of War, “Weak Points and Strong”",
@@ -5561,41 +5461,20 @@ window.NIHAO_CULTURE_SOURCES = [
         ]
       },
       {
-        "title": "The Five Dangers of a Commander",
+        "title": "银雀山汉墓竹简",
         "sources": [
           {
-            "label": "Chinese Text Project, The Art of War, “Variation in Tactics”",
-            "url": "https://ctext.org/art-of-war/variation-in-tactics/zh"
-          }
-        ]
-      },
-      {
-        "title": "Traditional Biography and Modern Authorship Debate",
-        "sources": [
-          {
-            "label": "Sima Qian, Records of the Grand Historian, “Biographies of Sunzi and Wu Qi,” Chinese Text Project",
-            "url": "https://ctext.org/shiji/sun-zi-wu-qi-lie-zhuan/zh"
-          },
-          {
-            "label": "Peter Lorge, Sun Tzu in the West, introduction and Chapter 1, Cambridge University Press",
-            "url": "https://assets.cambridge.org/97811088/30652/excerpt/9781108830652_excerpt.pdf"
-          },
-          {
-            "label": "Scott Boorman, Three Faces of Sun Tzu, “Background: Historical and Textual,” Cambridge University Press",
-            "url": "https://www.cambridge.org/core/books/abs/three-faces-of-sun-tzu/background-historical-and-textual/9198C86AED57CA34F1BE7831683310DC"
-          }
-        ]
-      },
-      {
-        "title": "Yinqueshan Bamboo Manuscripts",
-        "sources": [
-          {
-            "label": "National Museum of China, “Yinqueshan Art of War Bamboo Slips”",
-            "url": "https://www.chnmuseum.cn/zp/zpml/kgfjp/202108/t20210806_250983.shtml"
-          },
-          {
-            "label": "National Archives Administration of China, “Yinqueshan Han Tomb Bamboo Slips” nomination dossier",
+            "label": "National Archives Administration of China / Shandong Museum, “Yinqueshan Han Tomb Bamboo Slips” nomination dossier",
             "url": "https://www.saac.gov.cn/mowcn/cn/6sbs/202512/d58b9dd7d61e4344a7a5c0a1699011f6.shtml"
+          }
+        ]
+      },
+      {
+        "title": "临沂市银雀山汉墓竹简博物馆",
+        "sources": [
+          {
+            "label": "Linyi Municipal Government, “Yinqueshan Han Tomb Bamboo Slips Museum”",
+            "url": "https://www.linyi.gov.cn/info/5389/209776.htm"
           }
         ]
       }
@@ -5605,107 +5484,52 @@ window.NIHAO_CULTURE_SOURCES = [
     "category": "military",
     "categoryName": "Military History & Technology",
     "slug": "ancient-armor",
-    "title": "一片甲，许多答案：中国古代铠甲怎样保护身体",
-    "titleEn": "One Armor Plate, Many Answers: Body Armor in Ancient China",
+    "title": "一片一片，怎么变成一身铠甲？",
+    "titleEn": "Hundreds of Little Plates: How Ancient Chinese Armor Worked",
     "storyPath": "../../culture/books/military/ancient-armor/",
     "groups": [
       {
-        "title": "Early Leather, Bronze, Iron, and the Problem of Preservation",
+        "title": "British Museum, “armour; 盔甲,” MAS.616",
         "sources": [
           {
-            "label": "British Museum, “armour; 盔甲,” collection object MAS.610",
-            "url": "https://www.britishmuseum.org/collection/object/A_MAS-610"
-          },
-          {
-            "label": "Mayke Wagner et al., “No Borders for Innovations: A ca. 2700-Year-Old Assyrian-Style Leather Scale Armour in Northwest China,” Quaternary International 623",
-            "url": "https://www.sciencedirect.com/science/article/pii/S1040618221005553"
+            "label": "British Museum, “armour; 盔甲,” MAS.616",
+            "url": "https://www.britishmuseum.org/collection/object/A_MAS-616"
           }
         ]
       },
       {
-        "title": "Lacquered Leather Armor in Eastern Zhou Archaeology",
-        "sources": [
-          {
-            "label": "Jiayi Zhang et al., “Identification of the Components of Lacquered Leather Armor from the Warring States Period,” Coatings 15.10",
-            "url": "https://www.mdpi.com/2079-6412/15/10/1127"
-          },
-          {
-            "label": "“曾侯乙墓发掘亲历记,” Chinese People's Political Consultative Conference",
-            "url": "https://www.cppcc.gov.cn/zxww/2018/09/21/ARTI1537491271568103.shtml"
-          }
-        ]
-      },
-      {
-        "title": "Lamellar and Scale Construction",
-        "sources": [
-          {
-            "label": "Metropolitan Museum of Art, “Lamellar Shoulder Defenses”",
-            "url": "https://www.metmuseum.org/art/collection/search/788894"
-          },
-          {
-            "label": "UCL Petrie Museum, “Hide of the Dragon: Achaemenid Scale Armour”",
-            "url": "https://blogs.ucl.ac.uk/museums/2020/03/06/specimen-of-the-week-392-hide-of-the-dragon-achaemenid-scale-armour/"
-          }
-        ]
-      },
-      {
-        "title": "What the Terracotta Army Can Show",
-        "sources": [
-          {
-            "label": "UNESCO World Heritage Centre, “Mausoleum of the First Qin Emperor”",
-            "url": "https://whc.unesco.org/en/list/441/"
-          },
-          {
-            "label": "M. C. Bishop, “The Articulated Cuirass in Qin Dynasty China,” Antiquity 63.241",
-            "url": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/4D63720D884E6C37D3BFB2852EA58B74/S0003598X00076833a.pdf/articulated_cuirass_in_qin_dynasty_china.pdf"
-          },
-          {
-            "label": "Metropolitan Museum of Art, “Making the Warrior: The Qin Terracotta Soldiers in Age of Empires”",
-            "url": "https://www.metmuseum.org/es/perspectives/terracotta-warriors-age-of-empires"
-          }
-        ]
-      },
-      {
-        "title": "Qin Stone Armor as a Funerary Model",
-        "sources": [
-          {
-            "label": "Neville Agnew, ed., Conservation of Ancient Sites on the Silk Road, Getty Conservation Institute, paper on stone armor from the Qin burial complex",
-            "url": "https://www.getty.edu/conservation/publications_resources/pdf_publications/pdf/2nd_silkroad5.pdf"
-          },
-          {
-            "label": "Shaanxi local-history compilation, section on the Qin stone armor pit",
-            "url": "https://dfz.shaanxi.gov.cn/zslm/fzzlk/dqcs/xas/201803/P020250630548327427771.pdf"
-          }
-        ]
-      },
-      {
-        "title": "Han Iron Armor and Reconstruction from Corrosion",
-        "sources": [
-          {
-            "label": "Beijing Municipal Government, “大汉玉衣——满城汉墓发掘始末（下）”",
-            "url": "https://www.beijing.gov.cn/renwen/pjsx/201801/t20180109_1874801.html"
-          },
-          {
-            "label": "Gansu Provincial Department of Culture and Tourism, “一生致力古代甲胄修复（薪火相传）”",
-            "url": "https://www.gswbj.gov.cn/a/2022/04/18/13269.html"
-          }
-        ]
-      },
-      {
-        "title": "Iron, Steel, and Cast Iron Coexisted",
-        "sources": [
-          {
-            "label": "Mengyi Zhang et al., “Iron Production and Trading in Lingnan during the Qin and Han Dynasties,” Antiquity 94.373",
-            "url": "https://www.cambridge.org/core/journals/antiquity/article/iron-production-and-trading-in-lingnan-during-the-qin-and-han-dynasties/9EB822B1E9CE3B15A1DB1B6AC54B7970"
-          }
-        ]
-      },
-      {
-        "title": "A Late Leather Armor from Dali",
+        "title": "Metropolitan Museum of Art, “Armor for the Torso and Hips,” Dali Kingdom",
         "sources": [
           {
             "label": "Metropolitan Museum of Art, “Armor for the Torso and Hips,” Dali Kingdom",
             "url": "https://www.metmuseum.org/art/collection/search/658575"
+          }
+        ]
+      },
+      {
+        "title": "Smarthistory, “The Terracotta Warriors”",
+        "sources": [
+          {
+            "label": "Smarthistory, “The Terracotta Warriors”",
+            "url": "https://smarthistory.org/the-terracotta-warriors/"
+          }
+        ]
+      },
+      {
+        "title": "American Journal of Archaeology, “The First Emperor: China’s Terracotta Army”",
+        "sources": [
+          {
+            "label": "Zhixin Jason Sun, “The First Emperor: China’s Terracotta Army,” American Journal of Archaeology",
+            "url": "https://ajaonline.org/online-museum-review/369/"
+          }
+        ]
+      },
+      {
+        "title": "China Social Sciences Network, “探寻千年甲胄里的奥秘”",
+        "sources": [
+          {
+            "label": "China Social Sciences Network, “探寻千年甲胄里的奥秘”",
+            "url": "https://www.cssn.cn/skgz/bwyc/202604/t20260417_5980783.shtml"
           }
         ]
       }
@@ -5715,69 +5539,52 @@ window.NIHAO_CULTURE_SOURCES = [
     "category": "military",
     "categoryName": "Military History & Technology",
     "slug": "warships",
-    "title": "古代战船：怎样从证据读懂一艘船",
-    "titleEn": "Ancient Warships: Reading the Evidence",
+    "title": "古代战船：当战场来到了水上",
+    "titleEn": "Ancient Warships: When the Battlefield Moved onto Water",
     "storyPath": "../../culture/books/military/warships/",
     "groups": [
       {
-        "title": "Tower ships and the limits of models",
+        "title": "《三国志·吴书·周瑜传》 (*Records of the Three Kingdoms*, Biography of Zhōu Yú)",
         "sources": [
           {
-            "label": "Chongqing University, “综述｜汉代的‘楼船’与江海航运”",
-            "url": "https://lac.cqu.edu.cn/info/1257/9915.htm"
-          }
-        ]
-      },
-      {
-        "title": "Stern rudder and watertight bulkheads",
-        "sources": [
-          {
-            "label": "C. Y. Tung Maritime Museum, Shanghai Jiao Tong University, “舵” and “水密隔舱”",
-            "url": "https://maritimemuseum.sjtu.edu.cn/info/1171/5601.htm"
-          },
-          {
-            "label": "maritimemuseum.sjtu.edu.cn",
-            "url": "https://maritimemuseum.sjtu.edu.cn/info/1171/5641.htm"
-          }
-        ]
-      },
-      {
-        "title": "A Yuan dynasty warship wreck",
-        "sources": [
-          {
-            "label": "Peking University School of Archaeology and Museology, lecture summary on ancient Chinese shipwreck archaeology",
-            "url": "https://archaeology.pku.edu.cn/info/1031/5219.htm"
-          }
-        ]
-      },
-      {
-        "title": "Red Cliffs in the early historical record",
-        "sources": [
-          {
-            "label": "Chen Shou, Records of the Three Kingdoms, fascicle 54, Zhou Yu biography, with Pei Songzhi's annotation quoting Jiangbiao Zhuan",
+            "label": "Wikisource transcription of Records of the Three Kingdoms, fascicle 54, “Biography of Zhōu Yú”",
             "url": "https://zh.wikisource.org/zh-hans/%E4%B8%89%E5%9C%8B%E5%BF%97/%E5%8D%B754"
           }
         ]
       },
       {
-        "title": "Zheng He's fleet roles and reach",
+        "title": "中国国家博物馆，“陶船”",
         "sources": [
           {
-            "label": "C. Y. Tung Maritime Museum, Shanghai Jiao Tong University, “郑和宝船”",
-            "url": "https://maritimemuseum.sjtu.edu.cn/info/1021/3201.htm"
+            "label": "National Museum of China, “Eastern Han Clay Ship”",
+            "url": "https://www.chnmuseum.cn/zp/zpml/kgfjp/202110/t20211028_251952.shtml"
           }
         ]
       },
       {
-        "title": "Treasure-ship dimensions and military action",
+        "title": "上海交通大学董浩云航运博物馆，“水密隔舱”",
         "sources": [
           {
-            "label": "Southwest University, report on Sally K. Church's lecture, “郑和宝船尺度新探”",
-            "url": "https://his.swu.edu.cn/info/1220/3474.htm"
-          },
+            "label": "C. Y. Tung Maritime Museum, Shanghai Jiao Tong University, “Watertight Bulkheads”",
+            "url": "https://maritimemuseum.sjtu.edu.cn/info/1171/5641.htm"
+          }
+        ]
+      },
+      {
+        "title": "UNESCO，“Watertight-bulkhead technology of Chinese junks”",
+        "sources": [
           {
-            "label": "Cambridge University Press, “The Ming–Kotte War in Southeast Asia, 1410–11”",
-            "url": "https://www.cambridge.org/core/books/abs/making-of-the-modern-chinese-navy/mingkotte-war-in-southeast-asia-141011/22CC2980B942006F422B101BE962E6A6"
+            "label": "UNESCO Intangible Cultural Heritage, “Watertight-bulkhead technology of Chinese junks”",
+            "url": "https://ich.unesco.org/en/USL/watertight-bulkhead-technology-of-chinese-junks-00321"
+          }
+        ]
+      },
+      {
+        "title": "蓬莱一号古船",
+        "sources": [
+          {
+            "label": "Peking University School of Archaeology and Museology, lecture summary on ancient Chinese shipwreck archaeology",
+            "url": "https://archaeology.pku.edu.cn/info/1031/5219.htm"
           }
         ]
       }
@@ -5787,68 +5594,52 @@ window.NIHAO_CULTURE_SOURCES = [
     "category": "military",
     "categoryName": "Military History & Technology",
     "slug": "mingguang-armor",
-    "title": "明光铠真的像镜子一样吗？",
-    "titleEn": "Did Mingguang Armor Really Shine Like a Mirror?",
+    "title": "明光铠：为什么叫“明光”？",
+    "titleEn": "Mingguang Armor: Why Was It Called “Bright Light”?",
     "storyPath": "../../culture/books/military/mingguang-armor/",
     "groups": [
       {
-        "title": "Early Textual Evidence and Military Use",
+        "title": "《周书·蔡祐传》 (*Book of Zhou*, Biography of Cài Yòu)",
         "sources": [
           {
-            "label": "Chinese Text Project, Gezhi Jingyuan, chapter 41, preserving quotations on armor",
-            "url": "https://ctext.org/wiki.pl?chapter=529361&if=en&remap=gb"
-          },
-          {
-            "label": "Chinese Text Project, Book of Zhou, chapter 27, Biography of Cai You",
+            "label": "Chinese Text Project, Book of Zhou, chapter 27, “Biography of Cài Yòu”",
             "url": "https://ctext.org/wiki.pl?chapter=196119&if=gb"
-          },
-          {
-            "label": "Chinese Text Project dictionary concordance for 青丝, quoting the Book of Sui",
-            "url": "https://ctext.org/dictionary.pl?char=%E9%9D%92%E7%B5%B2&if=en&remap=gb"
           }
         ]
       },
       {
-        "title": "Museum Identifications of Round-Guard Armor",
+        "title": "中国国家博物馆，“青瓷武士俑”",
         "sources": [
-          {
-            "label": "Palace Museum, “Painted Pottery Warrior Figure”",
-            "url": "https://www.dpm.org.cn/collection/sculpture/233388.html"
-          },
           {
             "label": "National Museum of China, “Celadon Warrior Figures”",
             "url": "https://www.chnmuseum.cn/zp/zpml/kgfjp/202111/t20211116_252167.shtml"
-          },
-          {
-            "label": "National Museum of China, “Sancai-Glazed Pottery Warrior Figure”",
-            "url": "https://www.chnmuseum.cn/zp/zpml/kgfjp/202111/t20211116_252265.shtml"
           }
         ]
       },
       {
-        "title": "Scholarly Debate over the Name and Shape",
+        "title": "中国国家博物馆，“彩绘武服陶俑”",
         "sources": [
           {
-            "label": "Xia Chaolun and Zhang Jianguang, “素甲日耀：中古时期明光甲的形制和应用,” originally published in Historical Review (Shilin), 2020.4",
-            "url": "https://www.aisixiang.com/data/123674.html"
+            "label": "National Museum of China, “Painted Pottery Warrior Figures”",
+            "url": "https://www.chnmuseum.cn/zp/zpml/kgfjp/202208/t20220810_256913.shtml"
           }
         ]
       },
       {
-        "title": "Quantity, Status, and Later Use",
+        "title": "《唐六典》卷十六 (*Six Statutes of the Tang Dynasty*, juan 16)",
         "sources": [
           {
-            "label": "Xia Chaolun and Zhang Jianguang, “素甲日耀：中古时期明光甲的形制和应用”",
-            "url": "https://www.aisixiang.com/data/123674.html"
+            "label": "Wikisource transcription of Six Statutes of the Tang Dynasty, juan 16",
+            "url": "https://zh.wikisource.org/wiki/%E5%94%90%E5%85%AD%E5%85%B8/%E5%8D%B716"
           }
         ]
       },
       {
-        "title": "Evidence Survival and Image Limits",
+        "title": "故宫博物院，“明光铠”",
         "sources": [
           {
-            "label": "“解读中国古代的铠甲,” Journal of Donghua University (Social Science) 20.3",
-            "url": "https://qkzx.dhu.edu.cn/_upload/article/files/60/0f/8126ba314fa59433f859e45f517a/53112926-3fb8-496e-a4f2-8b7da131dee2.pdf"
+            "label": "Palace Museum, “Míngguāng Armor”",
+            "url": "https://www.dpm.org.cn/lemmas/239742.html"
           }
         ]
       }
@@ -5858,17 +5649,13 @@ window.NIHAO_CULTURE_SOURCES = [
     "category": "military",
     "categoryName": "Military History & Technology",
     "slug": "great-wall",
-    "title": "长城不是一堵墙：读懂两千年的边疆",
-    "titleEn": "The Great Wall Is Not One Wall: Reading Two Thousand Years of Frontier History",
+    "title": "长城从来不只是一堵墙",
+    "titleEn": "The Great Wall Was Never Just One Wall",
     "storyPath": "../../culture/books/military/great-wall/",
     "groups": [
       {
-        "title": "What “the Great Wall” Includes and How Length Is Counted",
+        "title": "UNESCO World Heritage Centre, “The Great Wall”",
         "sources": [
-          {
-            "label": "Xinhua, “万里长城有多长？长度为何难测量？,” hosted by Tianjin Municipal Culture and Tourism Bureau",
-            "url": "https://whly.tj.gov.cn/tjswlzxw/sy1/rmzx/202312/t20231203_6471416.html"
-          },
           {
             "label": "UNESCO World Heritage Centre, “The Great Wall”",
             "url": "https://whc.unesco.org/en/list/438/"
@@ -5876,145 +5663,56 @@ window.NIHAO_CULTURE_SOURCES = [
         ]
       },
       {
-        "title": "The View from Space",
+        "title": "China Great Wall Heritage, “长城的构成 / Components of the Great Wall”",
         "sources": [
           {
-            "label": "NASA, “Great Wall”",
-            "url": "https://www.nasa.gov/image-article/great-wall/"
-          },
-          {
-            "label": "NASA, “China’s Wall Less Great in View from Space”",
-            "url": "https://www.nasa.gov/wp-content/uploads/static/history/PDFs/great_wall_less_great_from_space.pdf"
+            "label": "China Great Wall Heritage, “长城的构成 / Components of the Great Wall”",
+            "url": "https://greatwallheritage.cn/CCMCMS/html/1/54/652.html"
           }
         ]
       },
       {
-        "title": "Warring States and Qin Walls",
+        "title": "China Great Wall Heritage, “Great Wall Resource Survey and Identification”",
         "sources": [
           {
-            "label": "Zhengzhou Municipal Cultural Heritage Bureau, “魏长城”",
-            "url": "https://wwj.zhengzhou.gov.cn/country/3174937.jhtml"
-          },
-          {
-            "label": "Metropolitan Museum of Art, “Qin Dynasty (221–206 B.C.)”",
-            "url": "https://www.metmuseum.org/de/essays/qin-dynasty-221-206-b-c"
-          },
-          {
-            "label": "National Ethnic Affairs Commission, “你绝对想不到：中国最早的长城竟然在河南！”",
-            "url": "https://www.neac.gov.cn/seac/c103391/202301/1160021.shtml"
-          },
-          {
-            "label": "“Survey and Research of the Qin Great Wall of the Warring States Period,” China Cultural Heritage Scientific Research, hosted by Shaanxi Normal University",
-            "url": "https://lishiwenhua.snnu.edu.cn/__local/7/C0/99/6943304A4E70E00E236779B3EFF_088C40F9_144560.pdf?e=.pdf"
+            "label": "China Great Wall Heritage, “Great Wall Resource Survey and Identification”",
+            "url": "https://www.greatwallheritage.cn/CCMCMS/html/1/54/index.html"
           }
         ]
       },
       {
-        "title": "Han Frontier Systems, Materials, and Routes",
+        "title": "China Daily / Gansu, “The Great Wall of Man and Nature”",
         "sources": [
           {
-            "label": "Gansu Culture and Tourism, “源远流长的甘肃长城文化”",
-            "url": "https://www.gswbj.gov.cn/a/2024/02/01/19649.html"
-          },
-          {
-            "label": "Hong Kong and Macao Work Office of the CPC Central Committee, “世界文化遗产——长城”",
-            "url": "https://www.locpg.gov.cn/tp/2014-01/04/c_125957087.htm"
+            "label": "China Daily / Gansu, “The Great Wall of Man and Nature”",
+            "url": "https://subsites.chinadaily.com.cn/gansu/2025-03/31/c_1082091.htm"
           }
         ]
       },
       {
-        "title": "Ming Construction and the Familiar Tourist Image",
+        "title": "China Daily, “Guardians of the Great Wall”",
         "sources": [
           {
-            "label": "Beijing Mentougou District People’s Government, “军事遗址——京西长城”",
-            "url": "https://www.bjmtg.gov.cn/bjmtg/zwxx/qdaj/201702/1015759.shtml"
-          },
-          {
-            "label": "Beijing Municipal Cultural Heritage Bureau, Badaling Great Wall Conservation Plan",
-            "url": "https://wwj.beijing.gov.cn/bjww/resource/cms/article/bjww_482911/325986292/2023060116522338710.pdf"
+            "label": "China Daily, “Guardians of the Great Wall”",
+            "url": "https://epaper.chinadaily.com.cn/a/202308/03/WS64caf5faa310a478839f7686.html"
           }
         ]
       },
       {
-        "title": "Beacon Signals and Their Limits",
+        "title": "Gakusho Nakajima, “The Structure and Transformation of the Ming Tribute Trade System”",
         "sources": [
           {
-            "label": "Beijing Municipal Cultural Heritage Bureau, “中国古代信息传递方式”",
-            "url": "https://wwj.beijing.gov.cn/bjww/wwjzzcslm/1731063/1731073/1731074/1728054/index.html"
-          },
-          {
-            "label": "Beijing Civilization Office, “烽火台如何传递军情”",
-            "url": "https://www.bjwmb.gov.cn/zxfw/wmwx/wskt/t20181123_916550.htm"
-          },
-          {
-            "label": "Tianjin University News, “北京日报：19分钟可‘飞越’天津长城”",
-            "url": "https://news.tju.edu.cn/info/1005/301819.htm"
+            "label": "Gakusho Nakajima, “The Structure and Transformation of the Ming Tribute Trade System”",
+            "url": "https://link.springer.com/chapter/10.1007/978-981-10-4053-5_7"
           }
         ]
       },
       {
-        "title": "Border Trade and Multiethnic Interaction",
+        "title": "Qi Meiqin, “The Temporal Characteristics of Border Trading along the Great Wall during the Qing Dynasty”",
         "sources": [
           {
-            "label": "Renmin University of China Institute of Qing History, “长城边口贸易” research summary",
-            "url": "https://iqh.ruc.edu.cn/kxyj/kydt/1b3da8336fa04155b23cd3acc4eb9b52.htm"
-          },
-          {
-            "label": "National Ethnic Affairs Commission, “长城：世界语境的中国符号”",
-            "url": "https://www.neac.gov.cn/seac/c103391/202210/1158975.shtml"
-          },
-          {
-            "label": "UNESCO World Heritage Centre, “The Great Wall”",
-            "url": "https://whc.unesco.org/en/list/438/"
-          }
-        ]
-      },
-      {
-        "title": "Labor, Suffering, and the Meng Jiangnu Legend",
-        "sources": [
-          {
-            "label": "University of Science and Technology Beijing, “秦汉时期北方边境防御墙建设的劳动力投入研究” research summary",
-            "url": "https://ihmm.ustb.edu.cn/kxyj/kycg/xslw/yjycls/5dd00f9b523347ef9be8530ac3f3d2fb.htm"
-          },
-          {
-            "label": "Zhao Shiyu, “传说·历史·历史记忆——从20世纪的新史学到后现代史学,” East China Normal University",
-            "url": "https://www.clhm.ecnu.edu.cn/_upload/article/files/8c/2f/6b37fc1a49269e5f1fba947eaebc/65f5ac3f-f969-4e14-9bbd-668428845fc6.pdf"
-          },
-          {
-            "label": "Peking University journal platform, “孟姜女不姓孟——说古人称行第的习俗”",
-            "url": "https://ccj.pku.edu.cn/article/info?id=286658599"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "category": "figures",
-    "categoryName": "People",
-    "slug": "shang-yang",
-    "title": "商鞅和那根没人敢搬的木头",
-    "titleEn": "Shang Yang and the Log No One Wanted to Move",
-    "storyPath": "../../culture/books/figures/shang-yang/",
-    "groups": [
-      {
-        "title": "Sima Qian, *Records of the Grand Historian*, “Biography of Lord Shang”",
-        "sources": [
-          {
-            "label": "ctext.org",
-            "url": "https://ctext.org/shiji/shang-jun-lie-zhuan/zhs"
-          }
-        ]
-      },
-      {
-        "title": "Research on Shang Yang's reforms and Qin's growing power",
-        "sources": [
-          {
-            "label": "academic.oup.com",
-            "url": "https://academic.oup.com/edited-volume/34296/chapter-abstract/290749611"
-          },
-          {
-            "label": "pmc.ncbi.nlm.nih.gov",
-            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4522747/"
+            "label": "Qi Meiqin, “The Temporal Characteristics of Border Trading along the Great Wall during the Qing Dynasty”",
+            "url": "https://journal.hep.com.cn/fhc/EN/10.1007/s11462-008-0013-4"
           }
         ]
       }
@@ -6280,140 +5978,6 @@ window.NIHAO_CULTURE_SOURCES = [
   {
     "category": "figures",
     "categoryName": "People",
-    "slug": "wu-zetian",
-    "title": "武则天：从宫中少女到皇帝",
-    "titleEn": "Wu Zetian: The Girl Who Became Emperor",
-    "storyPath": "../../culture/books/figures/wu-zetian/",
-    "groups": [
-      {
-        "title": "Smithsonian National Museum of Asian Art, Chinese history timeline",
-        "sources": [
-          {
-            "label": "asia-archive.si.edu",
-            "url": "https://asia-archive.si.edu/learn/for-educators/teaching-china-with-the-smithsonian/interactives/timelines/timeline-of-chinese-history-art-and-culture/"
-          }
-        ]
-      },
-      {
-        "title": "*Old Book of Tang*, “Annals of Empress Zetian”",
-        "sources": [
-          {
-            "label": "zh.wikisource.org",
-            "url": "https://zh.wikisource.org/zh-hant/%E8%88%8A%E5%94%90%E6%9B%B8/%E5%8D%B76"
-          }
-        ]
-      },
-      {
-        "title": "Victor Xiong, Ohio State University Origins, “Wu Zetian: The Only Woman Emperor in Chinese History”",
-        "sources": [
-          {
-            "label": "origins.osu.edu",
-            "url": "https://origins.osu.edu/index.php/read/wu-zetian-woman-emperor-china"
-          }
-        ]
-      },
-      {
-        "title": "Research on appointments and the four petition boxes",
-        "sources": [
-          {
-            "label": "xsyk021.com",
-            "url": "https://www.xsyk021.com/article/id/890d4542-aed3-47ce-bd9c-f75b35f9cfa8?pageType=en"
-          },
-          {
-            "label": "www1.ihp.sinica.edu.tw",
-            "url": "https://www1.ihp.sinica.edu.tw/en/Publications/LegalHistoryStudy/1180/Article/507"
-          }
-        ]
-      },
-      {
-        "title": "Qianling and the Stone with No Words",
-        "sources": [
-          {
-            "label": "chinaheritagequarterly.org",
-            "url": "https://www.chinaheritagequarterly.org/articles.php?issue=008&searchterm=008_qianling.inc"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "category": "figures",
-    "categoryName": "People",
-    "slug": "qin-shi-huang",
-    "title": "秦始皇：想让所有规则都一样的皇帝",
-    "titleEn": "Qin Shi Huang: The Emperor Who Wanted Everything to Match",
-    "storyPath": "../../culture/books/figures/qin-shi-huang/",
-    "groups": [
-      {
-        "title": "Sima Qian, *Records of the Grand Historian*, “Basic Annals of the First Emperor of Qin”",
-        "sources": [
-          {
-            "label": "ctext.org",
-            "url": "https://ctext.org/shiji/qin-shi-huang-ben-ji/zh"
-          },
-          {
-            "label": "ctext.org",
-            "url": "https://ctext.org/shiji/qin-shi-huang-ben-ji/ens"
-          }
-        ]
-      },
-      {
-        "title": "Sima Qian, *Records of the Grand Historian*, “Biographies of the Assassins”",
-        "sources": [
-          {
-            "label": "ctext.org",
-            "url": "https://ctext.org/shiji/ci-ke-lie-zhuan/zh"
-          },
-          {
-            "label": "ctext.org",
-            "url": "https://ctext.org/shiji/ci-ke-lie-zhuan/zhs"
-          }
-        ]
-      },
-      {
-        "title": "The Metropolitan Museum of Art, “Qin Dynasty (221–206 B.C.)” and “Age of Empires”",
-        "sources": [
-          {
-            "label": "metmuseum.org",
-            "url": "https://www.metmuseum.org/essays/qin-dynasty-221-206-b-c"
-          },
-          {
-            "label": "metmuseum.org",
-            "url": "https://www.metmuseum.org/exhibitions/listings/2017/age-of-empires/exhibition-galleries"
-          }
-        ]
-      },
-      {
-        "title": "Research on Qin frontier walls and forced labor",
-        "sources": [
-          {
-            "label": "pmc.ncbi.nlm.nih.gov",
-            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4522747/"
-          },
-          {
-            "label": "cambridge.org",
-            "url": "https://www.cambridge.org/core/journals/journal-of-chinese-history/article/making-use-of-the-land-the-political-ecology-of-chinas-first-empire/5C80E8CC40548B2953F72246C49A6CF7"
-          },
-          {
-            "label": "discovery.ucl.ac.uk",
-            "url": "https://discovery.ucl.ac.uk/id/eprint/10216532"
-          }
-        ]
-      },
-      {
-        "title": "UNESCO World Heritage Centre, “Mausoleum of the First Qin Emperor”",
-        "sources": [
-          {
-            "label": "whc.unesco.org",
-            "url": "https://whc.unesco.org/en/list/441/"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "category": "figures",
-    "categoryName": "People",
     "slug": "zheng-he",
     "title": "郑和与七次远航",
     "titleEn": "Zheng He and the Seven Great Voyages",
@@ -6516,72 +6080,34 @@ window.NIHAO_CULTURE_SOURCES = [
     "category": "philosophy",
     "categoryName": "Philosophy",
     "slug": "seed-dao",
-    "title": "一颗种子的耐心：照料，而不强迫",
-    "titleEn": "The Patience of a Seed: Care Without Forcing",
+    "title": "大树也从很小的时候开始",
+    "titleEn": "A Great Tree Starts Small",
     "storyPath": "../../culture/books/philosophy/seed-dao/",
     "groups": [
       {
-        "title": "Plant Images in Chapter 64 of the *Dao De Jing*",
+        "title": "The Connected Images in Chapter 64",
         "sources": [
           {
-            "label": "Chinese Text Project, Dao De Jing, chapter 64",
-            "url": "https://ctext.org/dao-de-jing/zhs"
+            "label": "Dàodéjīng, chapter 64, Chinese Text Project",
+            "url": "https://ctext.org/text.pl?if=en&node=11655&show=parallel"
           }
         ]
       },
       {
-        "title": "*Wuwei* Does Not Mean Total Inactivity",
+        "title": "The Mawangdui Text",
+        "sources": [
+          {
+            "label": "Mawangdui Laozi A, Chinese Text Project",
+            "url": "https://ctext.org/text.pl?if=en&node=83015&remap=gb&show=parallel"
+          }
+        ]
+      },
+      {
+        "title": "Zìrán and Avoiding Excessive Force",
         "sources": [
           {
             "label": "Stanford Encyclopedia of Philosophy, “Laozi”",
             "url": "https://plato.stanford.edu/entries/laozi/"
-          }
-        ]
-      },
-      {
-        "title": "The Story of Pulling Up the Shoots",
-        "sources": [
-          {
-            "label": "Chinese Text Project, Mencius, “Gongsun Chou I,” section 2",
-            "url": "https://ctext.org/mengzi/gong-sun-chou-i/zh"
-          }
-        ]
-      },
-      {
-        "title": "What Happens During Seed Germination",
-        "sources": [
-          {
-            "label": "Virginia Cooperative Extension, Virginia Tech, “Plant Propagation from Seed”",
-            "url": "https://www.pubs.ext.vt.edu/content/pubs_ext_vt_edu/en/426/426-001/426-001.html"
-          },
-          {
-            "label": "Penn State Extension, “Seed and Seedling Biology”",
-            "url": "https://extension.psu.edu/seed-and-seedling-biology"
-          }
-        ]
-      },
-      {
-        "title": "Bamboo Rhizomes and Rapid Culm Growth",
-        "sources": [
-          {
-            "label": "University of Maryland Extension, “Containing and Removing Bamboo”",
-            "url": "https://extension.umd.edu/resource/containing-and-removing-bamboo"
-          },
-          {
-            "label": "University of Hawai‘i at Mānoa, Cooperative Extension Service, “Bamboo” (OF-18)",
-            "url": "https://www.ctahr.hawaii.edu/oc/freepubs/pdf/OF-18.pdf"
-          },
-          {
-            "label": "UBC Botanical Garden, “Bamboos”",
-            "url": "https://botanicalgarden.ubc.ca/our-collections/bamboos/"
-          },
-          {
-            "label": "Hong Kong Zoological and Botanical Gardens, “Bamboo Garden”",
-            "url": "https://www.hkzbg.gov.hk/en/plants/thematic/bamboo.html"
-          },
-          {
-            "label": "BioResources, “Anatomical characteristics of Gigantochloa scortechinii bamboo rhizome in relation with hydraulic conductance”",
-            "url": "https://bioresources.cnr.ncsu.edu/resources/anatomical-characteristics-of-gigantochloa-scortechinii-bamboo-rhizome-in-relation-with-hydraulic-conductance/"
           }
         ]
       }
@@ -6591,21 +6117,39 @@ window.NIHAO_CULTURE_SOURCES = [
     "category": "philosophy",
     "categoryName": "Philosophy",
     "slug": "confucius",
-    "title": "孔子的一句话：先把自己放到别人心里",
-    "titleEn": "Confucius’s Big Question: How Would It Feel to Be Them?",
+    "title": "孔子：一个可以问一辈子的问题",
+    "titleEn": "Confucius: One Question for a Lifetime",
     "storyPath": "../../culture/books/philosophy/confucius/",
     "groups": [
       {
-        "title": "The Analects, “Wei Ling Gong”",
+        "title": "Zǐgòng’s Question and Confucius’s Answer",
         "sources": [
           {
-            "label": "Chinese Text Project",
+            "label": "Analects, “Duke Ling of Wei,” Chinese Text Project",
             "url": "https://ctext.org/analects/wei-ling-gong/zhs"
           }
         ]
       },
       {
-        "title": "Confucius and the Formation of *The Analects*",
+        "title": "The Traditional Explanation of Shù",
+        "sources": [
+          {
+            "label": "Commentary and Subcommentary on the Analects, volume 15, Wikisource",
+            "url": "https://zh.wikisource.org/zh-hant/%E8%AB%96%E8%AA%9E%E8%A8%BB%E7%96%8F/%E5%8D%B715"
+          }
+        ]
+      },
+      {
+        "title": "Learning from Other People",
+        "sources": [
+          {
+            "label": "Analects, “Shu Er,” Chinese Text Project",
+            "url": "https://ctext.org/analects/shu-er"
+          }
+        ]
+      },
+      {
+        "title": "Confucius and His Teaching Context",
         "sources": [
           {
             "label": "Stanford Encyclopedia of Philosophy, “Confucius”",
@@ -6614,11 +6158,11 @@ window.NIHAO_CULTURE_SOURCES = [
         ]
       },
       {
-        "title": "Shandong Geographic Orientation",
+        "title": "The Formation of the *Analects*",
         "sources": [
           {
-            "label": "Shandong Maritime Safety Administration, “Jurisdiction Area”",
-            "url": "https://www.sd.msa.gov.cn/col/col1869/index.html"
+            "label": "Stanford Encyclopedia of Philosophy, “Translating and Interpreting Chinese Philosophy”",
+            "url": "https://plato.stanford.edu/entries/chinese-translate-interpret/"
           }
         ]
       }
@@ -6628,47 +6172,43 @@ window.NIHAO_CULTURE_SOURCES = [
     "category": "philosophy",
     "categoryName": "Philosophy",
     "slug": "laozi",
-    "title": "老子的智慧：水为什么不争？",
-    "titleEn": "Laozi’s Wisdom: Why Doesn’t Water Compete?",
+    "title": "老子的智慧：水为什么不一定要“赢”？",
+    "titleEn": "Laozi’s Wisdom: Why Does Water Never Need to Win?",
     "storyPath": "../../culture/books/philosophy/laozi/",
     "groups": [
       {
-        "title": "The Pass Story and Laozi’s Uncertain Identity",
+        "title": "Water, Lowliness, and Not Competing",
         "sources": [
           {
-            "label": "Sima Qian, Records of the Grand Historian, “Biography of Laozi and Han Fei”",
-            "url": "https://ctext.org/shiji/lao-zi-han-fei-lie-zhuan/zh"
+            "label": "Dàodéjīng, chapter 8, Chinese Text Project",
+            "url": "https://ctext.org/dao-de-jing/zh"
           }
         ]
       },
       {
-        "title": "Laozi, the *Dao De Jing*, and Early Manuscripts",
+        "title": "Water, Softness, and Strength",
+        "sources": [
+          {
+            "label": "Dàodéjīng, chapter 78, Chinese Text Project",
+            "url": "https://ctext.org/dao-de-jing/zh"
+          }
+        ]
+      },
+      {
+        "title": "Laozi and the *Dàodéjīng*",
         "sources": [
           {
             "label": "Stanford Encyclopedia of Philosophy, “Laozi”",
             "url": "https://plato.stanford.edu/entries/laozi/"
-          },
-          {
-            "label": "Stanford Encyclopedia of Philosophy, “Religious Daoism,” section on early Daoist texts",
-            "url": "https://plato.stanford.edu/entries/daoism-religion/"
           }
         ]
       },
       {
-        "title": "Water in Chapters 8 and 78",
+        "title": "Natural Images and Reversed Expectations",
         "sources": [
           {
-            "label": "Chinese Text Project, Dao De Jing",
-            "url": "https://ctext.org/dao-de-jing/zhs"
-          }
-        ]
-      },
-      {
-        "title": "Flowing Water and Rounded Stones",
-        "sources": [
-          {
-            "label": "U.S. National Park Service, “River Rocks” educational video description",
-            "url": "https://www.nps.gov/media/video/view.htm?id=27C873CB-155D-451F-6707380D4C1BBE6B"
+            "label": "Internet Encyclopedia of Philosophy, “Laozi”",
+            "url": "https://iep.utm.edu/laozi/"
           }
         ]
       }
@@ -6678,98 +6218,52 @@ window.NIHAO_CULTURE_SOURCES = [
     "category": "philosophy",
     "categoryName": "Philosophy",
     "slug": "yin-yang",
-    "title": "阴和阳：一座山为什么有两种温度？",
-    "titleEn": "Yin and Yang: How Can One Mountain Have Two Temperatures?",
+    "title": "阴和阳：同一座山的两边",
+    "titleEn": "Yin and Yang: Two Sides of One Mountain",
     "storyPath": "../../culture/books/philosophy/yin-yang/",
     "groups": [
       {
-        "title": "Early Meanings: Sunny and Shady Sides of a Hill",
+        "title": "Early Meanings: Light and Shade on a Mountain",
         "sources": [
           {
             "label": "Internet Encyclopedia of Philosophy, “Yinyang (Yin-yang)”",
             "url": "https://iep.utm.edu/yinyang/"
-          },
-          {
-            "label": "Book of Songs, “Gong Liu,” Chinese Text Project",
-            "url": "https://ctext.org/book-of-poetry/gong-liu"
           }
         ]
       },
       {
-        "title": "Yin and Yang as Relational Categories",
+        "title": "Relational Patterns and Change",
         "sources": [
           {
-            "label": "Stanford Encyclopedia of Philosophy, “Philosophy in Han Dynasty China”",
-            "url": "https://plato.stanford.edu/entries/han-dynasty/"
-          },
-          {
-            "label": "Internet Encyclopedia of Philosophy, “Gender in Chinese Philosophy”",
-            "url": "https://iep.utm.edu/gender-in-chinese-philosophy/"
+            "label": "Stanford Encyclopedia of Philosophy, “Metaphysics in Chinese Philosophy”",
+            "url": "https://plato.stanford.edu/entries/chinese-metaphysics/"
           }
         ]
       },
       {
-        "title": "The *Book of Changes* and Alternation",
+        "title": "“One Yīn and One Yáng”",
         "sources": [
           {
-            "label": "Book of Changes, “Xi Ci I,” section 5, Chinese Text Project",
+            "label": "Book of Changes, “Appended Statements,” Chinese Text Project",
             "url": "https://ctext.org/text.pl?if=en&node=46918&show=parallel"
-          },
-          {
-            "label": "Stanford Encyclopedia of Philosophy, “Chinese Philosophy of Change (Yijing)”",
-            "url": "https://plato.stanford.edu/entries/chinese-change/"
           }
         ]
       },
       {
-        "title": "Day, Night, Sun, and Moon",
+        "title": "The Later Yinyang Symbol",
         "sources": [
           {
-            "label": "NASA / Astronomical Society of the Pacific, “Does the Moon Rotate?” activity",
-            "url": "https://nightsky.jpl.nasa.gov/docs/MoonRotate.pdf"
-          },
-          {
-            "label": "NASA Science, “Top Moon Questions”",
-            "url": "https://science.nasa.gov/moon/top-moon-questions/"
-          },
-          {
-            "label": "NASA Science, “Moonlight”",
-            "url": "https://science.nasa.gov/moon/moonlight/"
+            "label": "Columbia University, Asia for Educators, “The Yinyang Symbol”",
+            "url": "https://afe.easia.columbia.edu/cosmos/bgov/cosmos.htm"
           }
         ]
       },
       {
-        "title": "The Familiar Taiji Diagram Is Later than the Idea",
+        "title": "The Taiji Diagram as an Image of Connection",
         "sources": [
           {
-            "label": "François Louis, “The Genesis of an Icon: The ‘Taiji’ Diagram’s Early History,” Harvard Journal of Asiatic Studies 63.1 (2003), pp. 145–196",
-            "url": "https://www.biroco.com/yijing/louis_taiji_diagram.pdf"
-          }
-        ]
-      },
-      {
-        "title": "Go as a Modern Analogy",
-        "sources": [
-          {
-            "label": "British Go Association, “Rules of Play”",
-            "url": "https://www.britgo.org/files/rules/rulesofplayfull.pdf"
-          },
-          {
-            "label": "British Go Association, “How to Play Go”",
-            "url": "https://www.britgo.org/howtoplay"
-          }
-        ]
-      },
-      {
-        "title": "Tai Chi and Shifting Weight",
-        "sources": [
-          {
-            "label": "U.S. National Center for Complementary and Integrative Health, “Tai Chi: What You Need To Know”",
-            "url": "https://www.nccih.nih.gov/health/tai-chi-what-you-need-to-know"
-          },
-          {
-            "label": "Harvard Health Publishing, “Best exercise for balance: Tai chi”",
-            "url": "https://www.health.harvard.edu/healthy-aging-and-longevity/best-exercise-for-balance-tai-chi"
+            "label": "Art Institute of Chicago, Taoism and the Arts of China, “Taiji”",
+            "url": "https://archive.artic.edu/taoism/glossary/taiji.php"
           }
         ]
       }

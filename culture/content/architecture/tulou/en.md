@@ -6,7 +6,7 @@
 
 Turn a corner on a mountain road in Fujian, a province in southeastern China, and you may see a huge yellow-brown ring. It has tall walls on the outside, rows of wooden walkways inside, and a wide courtyard in the middle. It looks like one house and a small village tucked inside that house at the same time.
 
-This kind of large home is called a *tulou*. The Chinese word *tǔ* means “earth,” and *lóu* means a building with more than one floor. That is why *tulou* is often explained in English as “earthen building.” Most English writing, however, simply keeps the name *tulou*.
+This kind of large home is called a [[tulou|tulou]]. The Chinese word *tǔ* means “earth,” and *lóu* means a building with more than one floor. That is why *tulou* is often explained in English as “earthen building.” Most English writing, however, simply keeps the name *tulou*.
 
 Many tulou housed several households from one big family. Grandparents, aunts, uncles, and cousins might all live close together. Each household had its own rooms, while everyone shared the courtyard, walkways, and some large halls. A very large tulou could hold hundreds of people behind one main gate.
 
@@ -18,7 +18,7 @@ Tulou are not always round. Some are square, and others have different shapes. T
 
 If you pile up loose soil, a hard rain may wash it away. The walls of a *tulou* were built differently. Workers first fixed two rows of wooden boards in place, leaving room for the wall between them. Local earth was the main material. Sand or lime might be mixed in, along with enough water to give the mixture the right amount of moisture. The exact mixture was not the same for every tulou.
 
-Next, workers shoveled in a shallow layer of the earth mixture. They used long-handled wooden rammers with heavy ends to pound it tight. This method is called *rammed earth*. When one layer was firm, they added another and moved the boards higher. The wall slowly rose, one packed layer at a time. Many tulou also had a stone base that kept the earthen wall above damp ground.
+Next, workers shoveled in a shallow layer of the earth mixture. They used long-handled wooden rammers with heavy ends to pound it tight. This method is called [[rammed earth|rammed-earth]]. When one layer was firm, they added another and moved the boards higher. The wall slowly rose, one packed layer at a time. Many tulou also had a stone base that kept the earthen wall above damp ground.
 
 A tulou was not one enormous clay pot. Inside the thick outer wall were wooden posts, beams, floors, stairs, and a tiled roof. Earth and wood each did a different job. The earth formed a strong outer ring, while the timber frame made rooms and walkways inside.
 

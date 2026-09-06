@@ -22,14 +22,14 @@ image: 1-dinner-table-pause.webp
 caption_zh: 大人一句亲戚称呼，常常就会让孩子在心里飞快算一遍“这到底是谁？”
 caption_en: One family title can make a child quickly count through the family tree in his head.
 [zh]
-一大家人吃饭时，一个孩子正准备夹饺子，妈妈忽然小声问：“你还记得该怎么叫他吗？”筷子停在半空中。
+一大家人吃饭时，一个孩子正准备夹饺子，妈妈忽然小声问：“你还记得该怎么叫他吗？”[[筷子|chopsticks]]停在半空中。
 
 孩子看看桌子对面的亲戚。知道啊，不就是 uncle 吗？可中文里的“叔叔”可没有这么简单。这是爸爸的哥哥，还是爸爸的弟弟？是妈妈的兄弟吗？刚才还只是一个“uncle”，一下子变成了一道家庭树小谜题。
 
 很多中国孩子都遇到过这种场面。过年聚会，屋子里全是亲戚，大人总会招手说：“快来叫人！还记得这是谁吗？”有时候记得。有时候，脑子要赶紧画一遍家庭地图。
 [/zh]
 [en]
-At a big family dinner, a child is reaching for a dumpling when Mom quietly asks, “Do you remember what to call him?” The chopsticks stop halfway to the plate.
+At a big family dinner, a child is reaching for a dumpling when Mom quietly asks, “Do you remember what to call him?” The [[chopsticks|chopsticks]] stop halfway to the plate.
 
 The child looks across the table. He knows this man is an uncle. Easy. Except in Chinese, “uncle” is not enough. Is he Dad’s older brother? Dad’s younger brother? Mom’s brother? Suddenly, one uncle has turned into a small family-tree puzzle.
 

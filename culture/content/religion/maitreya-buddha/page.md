@@ -24,14 +24,14 @@ caption_en: In many Chinese Buddhist temples, visitors see Budai-Maitreya smilin
 [zh]
 走进一些中国佛教寺院，你很快就会看到一张大大的笑脸。他光着头，穿着宽松的僧衣，肚子圆圆的，身边还常常放着一只鼓鼓的大布袋。
 
-有人叫他“笑佛”，也有人叫他“弥勒佛”。不过，这副亲切的模样来自大约一千年前的一位中国和尚。他叫契此，却因为总带着一只布袋，人们更喜欢叫他“布袋和尚”。
+有人叫他“笑佛”，也有人叫他“[[弥勒|maitreya]]佛”。不过，这副亲切的模样来自大约一千年前的一位中国和尚。他叫契此，却因为总带着一只布袋，人们更喜欢叫他“布袋和尚”。
 
 一个和尚为什么会因为一只袋子，被人记住这么久呢？
 [/zh]
 [en]
 Walk into some Chinese Buddhist temples, and you may soon meet a huge smile. The figure is bald and wears a loose monk’s robe. His belly is round, and a bulging cloth bag often rests beside him.
 
-Some people call him the “Laughing Buddha.” Others call him Maitreya Buddha. Yet this friendly face came from a Chinese monk who lived about a thousand years ago. His name was Qici, but he carried a cloth bag so often that people remembered him as Budai—the Cloth-Bag Monk.
+Some people call him the “Laughing Buddha.” Others call him [[Maitreya|maitreya]] Buddha. Yet this friendly face came from a Chinese monk who lived about a thousand years ago. His name was Qici, but he carried a cloth bag so often that people remembered him as Budai—the Cloth-Bag Monk.
 
 How did one bag make a wandering monk famous for so long?
 [/en]

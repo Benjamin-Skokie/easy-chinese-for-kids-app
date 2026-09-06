@@ -1,0 +1,10 @@
+> Difficulty: Easy
+
+# Drawing Legs on a Snake
+
+## Drawing Legs on a Snake
+
+After a ritual in the ancient state of [[Chǔ|chu-state]], several attendants were given one cup of wine. There was only one problem: one cup was not enough for everyone. “If we divide it among all of us,” someone said, “none of us will get much. But it would be plenty for one person.” So they came up with a contest. Each person would draw a snake on the ground. Whoever finished first would win the wine. Everyone began drawing.
+One man was especially fast. Before anyone else had finished, his snake was already complete. He reached for the cup of wine. He had won. But instead of drinking it, he looked around and saw that the others were still drawing. There was plenty of time, he thought. Holding the cup in one hand, he picked up his drawing tool with the other. “I’m so fast,” he said, “I can even give my snake some feet.” So he began adding them. One foot. Then another.
+Before he could finish, a second man completed his snake. He looked at the first drawing, then at the extra feet being added to it. “A snake doesn’t have feet,” he said. “How can you give it feet?” Then he took the cup away and drank the wine. The first man stared at his unfinished snake-with-feet. A moment earlier, the wine had already been his. His snake was finished. He did not need to make it fancier, longer, or more impressive. He only needed to stop.
+The story appears in an ancient Chinese book called the [[*Strategies of the Warring States*|zhan-guo-ce]]. In the original story, it was told as advice to a general who had already won a great victory but wanted to keep attacking. The message was easy to picture: when something is already complete, adding more does not always make it better. Sometimes the extra part is exactly what makes you lose what you already had. That is why Chinese still uses the expression **huà shé tiān zú**—“draw a snake and add feet.” The man lost the wine not because his snake was bad. He lost it because he did not know when to stop.

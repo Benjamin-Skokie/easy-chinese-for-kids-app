@@ -18,7 +18,7 @@ At a grand ceremony, rows of officials stood together. Their clothing made the o
 
 The court used two very different groups of animals. Civil officials wore birds, which could suggest grace, good fortune, and learning. Military officers wore beasts and creatures from legends, which suggested strength, courage, and authority. The two groups were easy to tell apart, and each animal then showed a different rank.
 
-Officials did not choose their favorite animal. The court set the rules, and those rules changed over time. A tiger showed one rank in the Ming dynasty and another in the Qing. The birds and beasts formed a court-made code, not a rule that stayed the same forever.
+Officials did not choose their favorite animal. The court set the rules, and those rules changed over time. A tiger showed one rank in the [[Ming dynasty|ming-dynasty]] and another in the Qing. The birds and beasts formed a court-made code, not a rule that stayed the same forever.
 
 ---
 
@@ -46,6 +46,6 @@ Old rules give us the final order, but they do not explain every choice. A leopa
 
 Rank badges did not belong only to powerful officials standing beside the emperor. The same system reached from the capital to cities and counties across China. Where an official worked and how high he ranked were two different things. A local official could even outrank someone with a smaller post in the capital.
 
-During the Qing dynasty, the chief official of a county was usually a seventh-rank civil official. A county was a local area made up of towns and villages. He was not one of the court's most powerful men, but local taxes, grain, government orders, and many court cases could all reach his office.
+During the [[Qing dynasty|qing-dynasty]], the chief official of a county was usually a seventh-rank civil official. A county was a local area made up of towns and villages. He was not one of the court's most powerful men, but local taxes, grain, government orders, and many court cases could all reach his office.
 
 In the later Qing list, his rank badge showed a Mandarin duck. The water bird on his chest connected his local job to the same rank system used at the emperor's court.

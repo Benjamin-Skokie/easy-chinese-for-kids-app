@@ -4,7 +4,7 @@
 
 ## When Moonlight Became Frost
 
-In *Quiet Night Thought*, Li Bai looked at moonlight on the ground and thought it looked like frost. He looked up at the moon, then thought of home far away.
+In *Quiet Night Thought*, [[Li Bai|li-bai]] looked at moonlight on the ground and thought it looked like frost. He looked up at the moon, then thought of home far away.
 
 The poem is short, but people have remembered it for more than a thousand years. Li Bai had a special gift: where someone else saw a patch of moonlight, he saw cold frost, a distant home, and a traveler who could not sleep.
 
@@ -20,7 +20,7 @@ Once, Li Bai stood before a waterfall on Mount Lu. Mount Lu is a mountain area i
 
 In *Viewing the Waterfall at Mount Lu*, he wrote that the water plunged three thousand feet, as if the Milky Way had fallen from the sky. You can almost hear the crash, tip your head back, and feel the cold spray on your face.
 
-Li Bai knew how to make nature feel huge and alive. The Yellow River seemed to rush down from the sky. The moon became a friend beside him on the road. A waterfall became a river tumbling out of the stars.
+Li Bai knew how to make nature feel huge and alive. The [[Yellow River|yellow-river]] seemed to rush down from the sky. The moon became a friend beside him on the road. A waterfall became a river tumbling out of the stars.
 
 In his poems, mountains, rivers, and moonlight did not sit still. They rushed, flashed, and sang.
 
@@ -28,7 +28,7 @@ In his poems, mountains, rivers, and moonlight did not sit still. They rushed, f
 
 ## The Poet Entered the Palace
 
-By the time Li Bai was in his forties, his poems were famous. Even the emperor of the Tang dynasty had read them. The emperor invited Li Bai to the capital city and gave him a place among the palace writers.
+By the time Li Bai was in his forties, his poems were famous. Even the emperor of the [[Tang dynasty|tang-dynasty]] had read them. The emperor invited Li Bai to the capital city and gave him a place among the palace writers.
 
 Li Bai was thrilled. He hoped the emperor would let him help with important matters. But the emperor mostly wanted his poems and beautiful words, not his advice.
 
@@ -44,7 +44,7 @@ When Li Bai was in his fifties, a great war broke out. The Tang emperor fled the
 
 Li Bai was put in prison. Then he was ordered to travel to a faraway place as punishment. Before he reached it, the government announced a pardon—an order that allowed some prisoners, including Li Bai, to go free.
 
-After his pardon, Li Bai traveled down the Yangtze River by boat. In *Leaving Baidi City in the Morning*, he wrote of a light boat racing past mountain after mountain. Monkeys were still calling from both riverbanks, and already the boat had swept past ten thousand peaks.
+After his pardon, Li Bai traveled down the [[Yangtze River|yangtze-river]] by boat. In *Leaving Baidi City in the Morning*, he wrote of a light boat racing past mountain after mountain. Monkeys were still calling from both riverbanks, and already the boat had swept past ten thousand peaks.
 
 The poem feels quick and light, like a boat that is finally free to fly.
 
@@ -52,7 +52,7 @@ The poem feels quick and light, like a boat that is finally free to fly.
 
 ## More Than a Thousand Years Later
 
-Li Bai died in 762. About one thousand of his poems have survived. He and Du Fu are often remembered as the two greatest poets of the Tang dynasty.
+Li Bai died in 762. About one thousand of his poems have survived. He and [[Du Fu|du-fu]] are often remembered as the two greatest poets of the Tang dynasty.
 
 People gave Li Bai a nickname: the Poet Immortal. It does not mean that he had magic powers. It means that his imagination seemed to have no limits. A waterfall could fall from the Milky Way. The Yellow River could pour out of the sky. The moon could keep a lonely traveler company.
 

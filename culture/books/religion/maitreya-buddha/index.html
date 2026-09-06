@@ -28,10 +28,10 @@
             <figcaption class="caption floated-caption"><span class="zh">在许多中国佛教寺院里，人们会看到笑容满面、身边放着布袋的布袋弥勒像。</span><br><span class="en">In many Chinese Buddhist temples, visitors see Budai-Maitreya smiling beside his cloth bag.</span></figcaption>
           </figure>
           <p>走进一些中国佛教寺院，你很快就会看到一张大大的笑脸。他光着头，穿着宽松的僧衣，肚子圆圆的，身边还常常放着一只鼓鼓的大布袋。</p>
-          <p>有人叫他“笑佛”，也有人叫他“弥勒佛”。不过，这副亲切的模样来自大约一千年前的一位中国和尚。他叫契此，却因为总带着一只布袋，人们更喜欢叫他“布袋和尚”。</p>
+          <p>有人叫他“笑佛”，也有人叫他“<span class="glossary-entry"><button type="button" class="glossary-term" aria-expanded="false" aria-controls="glossary-maitreya-1">弥勒</button><span id="glossary-maitreya-1" class="glossary-popover" role="tooltip">Mílè · 佛教中的未来佛，在中国常和笑口常开的布袋和尚形象联系起来。</span></span>佛”。不过，这副亲切的模样来自大约一千年前的一位中国和尚。他叫契此，却因为总带着一只布袋，人们更喜欢叫他“布袋和尚”。</p>
           <p>一个和尚为什么会因为一只袋子，被人记住这么久呢？</p>
           <p>Walk into some Chinese Buddhist temples, and you may soon meet a huge smile. The figure is bald and wears a loose monk’s robe. His belly is round, and a bulging cloth bag often rests beside him.</p>
-          <p>Some people call him the “Laughing Buddha.” Others call him Maitreya Buddha. Yet this friendly face came from a Chinese monk who lived about a thousand years ago. His name was Qici, but he carried a cloth bag so often that people remembered him as Budai - the Cloth-Bag Monk.</p>
+          <p>Some people call him the “Laughing Buddha.” Others call him <span class="glossary-entry"><button type="button" class="glossary-term" aria-expanded="false" aria-controls="glossary-maitreya-2">Maitreya</button><span id="glossary-maitreya-2" class="glossary-popover" role="tooltip">Mílè · 弥勒 · The future Buddha, often connected in China with the smiling Cloth-Bag Monk.</span></span> Buddha. Yet this friendly face came from a Chinese monk who lived about a thousand years ago. His name was Qici, but he carried a cloth bag so often that people remembered him as Budai&#8212;the Cloth-Bag Monk.</p>
           <p>How did one bag make a wandering monk famous for so long?</p>
         </div>
       </section>
@@ -136,7 +136,8 @@
             if (!button || !popover) return;
 
             const margin = 12;
-            const gap = 10;
+            const compactViewport = window.matchMedia("(max-width: 900px)").matches;
+            const gap = compactViewport ? 8 : 10;
             const buttonRect = button.getBoundingClientRect();
             const popoverRect = popover.getBoundingClientRect();
             const halfWidth = popoverRect.width / 2;
@@ -145,10 +146,12 @@
             const maxCenter = window.innerWidth - margin - halfWidth;
             const left = Math.min(Math.max(buttonCenter, minCenter), maxCenter);
 
-            let side = "above";
-            let top = buttonRect.top - popoverRect.height - gap;
+            let side = compactViewport ? "below" : "above";
+            let top = side === "below"
+              ? buttonRect.bottom + gap
+              : buttonRect.top - popoverRect.height - gap;
 
-            if (top < margin) {
+            if (side === "above" && top < margin) {
               side = "below";
               top = buttonRect.bottom + gap;
             }

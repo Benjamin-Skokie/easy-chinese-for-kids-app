@@ -2,6 +2,9 @@ import { buildPhilosophyPage } from "./build_philosophy_page.mjs";
 
 const slugs = [
   "emperor-day",
+  "qin-shi-huang",
+  "wu-zetian",
+  "shang-yang",
   "six-arts",
   "imperial-exam-history",
   "exam-content",

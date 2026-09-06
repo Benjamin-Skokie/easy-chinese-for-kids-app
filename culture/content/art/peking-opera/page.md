@@ -22,7 +22,7 @@ image: invisible-horse-rider.webp
 caption_zh: 舞台上没有马；演员用马鞭、脚步和身体动作，让观众看见一匹想象中的马。
 caption_en: There is no horse onstage; the whip and the performer's movements bring one to life in the audience's imagination.
 [zh]
-想象一下，你第一次去看京剧。舞台看起来空空的，没有树林，没有山路，当然也没有一匹马。
+想象一下，你第一次去看[[京剧|jingju]]。舞台看起来空空的，没有树林，没有山路，当然也没有一匹马。
 
 这时，一位演员走上台，手里拿着一根装饰漂亮的马鞭。他抬起一条腿，好像踩进马镫，两手拉住看不见的缰绳，身体随着脚步一起一伏。速度越来越快，他突然向后一勒。
 
@@ -35,7 +35,7 @@ caption_en: There is no horse onstage; the whip and the performer's movements br
 看得多了，观众就会读懂这些线索。于是，一个几乎空着的舞台，可以变成山路、河流、宫殿，也可以变成战场。
 [/zh]
 [en]
-Imagine watching Peking opera for the first time. The stage looks surprisingly empty. There is no forest, no mountain road, and certainly no horse.
+Imagine watching [[Peking opera|jingju]] for the first time. The stage looks surprisingly empty. There is no forest, no mountain road, and certainly no horse.
 
 Then an actor walks onstage holding a decorated riding whip. He lifts one leg as if stepping into a stirrup, takes hold of invisible reins, and begins to move. His body rises and falls. He leans forward as the pace quickens, then suddenly pulls back.
 
@@ -129,7 +129,7 @@ heading_en: How Did Peking Opera Begin?
 两百多年以后，舞台上的这个小魔法还在。演员举起马鞭，锣鼓响起来。明明没有马。可是你就是看见了。
 [/zh]
 [en]
-Peking opera grew slowly rather than being invented by one person. In 1790, several opera troupes from Anhui came to Beijing to perform. Over the following decades, their performances mixed with other Chinese opera traditions and local music. By the middle of the nineteenth century, the form we now call **Peking opera**, or **jingju**, had taken recognizable shape.
+Peking opera grew slowly rather than being invented by one person. In 1790, several opera troupes from Anhui came to Beijing to perform. Over the following decades, their performances mixed with other Chinese opera traditions and local music. By the middle of the nineteenth century, the form we now call **Peking opera** had taken recognizable shape.
 
 More than two hundred years later, its stage can still perform the same little piece of magic. An actor raises a whip. The drums begin. There is no horse. And yet, somehow, you see one.
 [/en]

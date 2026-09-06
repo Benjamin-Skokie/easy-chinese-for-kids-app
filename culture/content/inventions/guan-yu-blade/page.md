@@ -1,5 +1,5 @@
 ---
-title_zh: 关羽的青龙偃月刀是真的吗？
+title_zh: 关羽真的用过青龙偃月刀吗？
 title_en: Did Guan Yu Really Use the Green Dragon Crescent Blade?
 slug: guan-yu-blade
 category: inventions
@@ -8,121 +8,98 @@ style_notes: "用 --- 分隔 frontmatter；正文强调优先用 *斜体*；尽�
 ---
 
 [hero]
-title_zh: 关羽的青龙偃月刀是真的吗？
+title_zh: 关羽真的用过青龙偃月刀吗？
 title_en: Did Guan Yu Really Use the Green Dragon Crescent Blade?
 [/hero]
 
 [section]
 page: 1
 layout: text-wrap-image
-heading_zh: 一把八十二斤的大刀
-heading_en: A Huge Blade from a Story
 image: 2-1-guan-yu-opera-blade.webp
-caption_zh: 一看见这把大刀，很多人就知道关羽要出场了
-caption_en: When people see this huge blade, they know Guan Yu is coming.
+caption_zh: 戏曲里的关羽身穿绿袍、留着长须，手中举着醒目的青龙偃月刀。
+caption_en: On the opera stage, Guan Yu's green robe, long beard, and enormous curved blade make him instantly recognizable.
 [zh]
-在小说《三国演义》里，关羽的兵器是一把巨大的长刀 - 青龙偃月刀。"青龙"说的是刀上的龙纹，"偃月"说的是刀头像一弯月亮。小说里还给它配了一个夸张的重量：八十二斤。换成今天的单位，大约四十多公斤。你抱一袋这么重的大米都够呛，更别说上战场挥舞如飞了。
+长长的胡子，一身绿袍，再加上一把巨大的长柄弯刀——这几样东西放在一起，很多人一眼就能认出[[关羽|guan-yu]]。画里的关羽拿着它，戏台上的关羽也拿着它。时间久了，这把刀几乎和关羽本人一样有名。
 
-可就是这样一把刀，后来和关羽绑得特别紧。戏曲舞台上，你只要看见一把长柄大弯刀，差不多就知道关公要出场了。很多关帝庙里也会供着这样的刀，人们相信它能镇宅辟邪。它未必真是关羽手里的原物，却已经深深刻进了中国文化的想象里。
+《三国演义》给它起了一个威风凛凛的名字：[[青龙偃月刀|qinglong-yanyuedao]]。小说还说，这把刀重八十二斤。这个数字不用换算成今天的重量，光听就知道：这可不是一把小刀。看惯了这样的关羽，很难想象他手里没有青龙偃月刀。
+
+可是，翻开一本更早的史书，奇怪的事情出现了。这把大刀不见了。
 [/zh]
 [en]
-In the novel *Romance of the Three Kingdoms*, Guan Yu carries a huge weapon called the Green Dragon Crescent Blade.
+A long beard, a green robe, and an enormous curved blade. Put those three things together, and many people will recognize [[Guan Yu|guan-yu]] at once. In paintings, opera, and stories, the blade is almost as famous as the hero carrying it.
 
-"Green Dragon" points to the dragon design on the blade. "Crescent" means the blade curves like a thin moon. The novel even gives it a wild weight: 82 *jin*. In today's units, that is more than 90 pounds.
+In *Romance of the Three Kingdoms*, the weapon has a grand name: [[Green Dragon Crescent Blade|qinglong-yanyuedao]], the Green Dragon Crescent Blade. The novel even says it weighs eighty-two jīn. You do not need to turn that into pounds or kilograms to understand the point. This is supposed to be one enormous weapon. Once you have seen Guan Yu holding it, it is hard to imagine him without it.
 
-Try holding a bag of rice that heavy. Now imagine swinging it around on a battlefield.
-
-Still, this blade became very closely tied to Guan Yu. On the opera stage, if you see a giant curved blade on a long handle, you can almost guess that Lord Guan is about to walk on.
-
-Many [[Guan Di temples]] also show this kind of blade. Some people believe it can protect a home and push bad things away. It may not be the real weapon Guan Yu held in history, but it became very real in Chinese imagination.
+But open a much older book, and something strange happens. The famous blade disappears.
 [/en]
 [/section]
 
 [section]
 page: 2
 layout: text-wrap-image
-heading_zh: 史书里只写了一个字：刺
-heading_en: One Word in the History Book: A Thrust
 image: 2-2-yan-liang-thrust.webp
-caption_zh: 史书写关羽"刺"颜良，这更像矛或戟的动作
-caption_en: The history book says Guan Yu struck down Yan Liang with a thrust, which sounds more like a spear or halberd.
+caption_zh: 关羽骑马冲向敌军，手中画成了长矛；早期史书记载本身没有说明他拿着什么兵器。
+caption_en: Guan Yu charges on horseback carrying a spear, although the early history itself does not say what weapon he held.
 [zh]
-正史《三国志》记载了一次关羽杀敌的场面 - 他骑马冲进敌阵，刺死了敌军主将颜良。"刺"这个字就是全部。长刀是"砍"的，长矛、长戟是"刺"的。关羽用来刺死颜良的器械，很可能是一把长矛或长戟，而不是一把大砍刀。
+早期史书里记过关羽的一场战斗。他骑着马冲进敌军之中，打败了对方的主将。这本来是一个十分精彩的场面，可是史书从头到尾都没有提到“青龙偃月刀”。没有威风的刀名，也没有八十二斤的大刀。写完这一仗，史书就继续讲别的事情去了。
 
-考古发现告诉我们，汉末三国常见的兵器有矛、戟、短刀、环首刀，却没有发现过和小说里那种青龙偃月刀完全一样的大型长柄弯刀。类似形制的长柄刀，实物大多见于更晚的时代，常被认为到宋代以后才更成熟、更常见。所以，关羽本人真的用过这把刀的可能性并不大。
+那么，今天人人都认识的这把大刀，是从哪里来的呢？要找到它，我们得把书页一直往后翻——翻过好几百年。
+
+到了[[宋代|song-dynasty]]，一本军事书里已经出现了一种叫作偃月刀的长柄兵器。它有宽大的弯曲刀身，样子非常醒目。
 [/zh]
 [en]
-A history book called *Records of the Three Kingdoms* tells a famous story about Guan Yu and the enemy general [[Yan Liang]].
+One of the earliest histories of Guan Yu tells of a battle in which he charged on horseback into a crowd of enemy soldiers and defeated their commander. It is a dramatic moment—but the book never says that he was carrying the Green Dragon Crescent Blade. No grand weapon name. No eighty-two jīn blade. The story of the battle simply moves on.
 
-It says Guan Yu rode straight into the enemy army and struck down Yan Liang with a thrust. That word matters.
+So where did that unforgettable curved blade come from? To find it, we have to turn the pages forward—many centuries forward.
 
-A huge curved blade is mostly for chopping. A spear or [[halberd]] is better for thrusting. So this line makes many people think Guan Yu was probably using something more like a spear or halberd, not the giant curved blade people picture today.
-
-Old objects found by archaeologists give another clue. From Guan Yu's time, people have found weapons such as spears, halberds, short blades, and ring-handled sabers. But they have not found a huge curved pole blade exactly like the Green Dragon Crescent Blade in the novel.
-
-Blades with a similar shape became more common much later. Many scholars think this kind of big pole blade became more developed after the [[Song dynasty]]. So Guan Yu probably did not use this exact weapon in real life.
+By the [[Song dynasty|song-dynasty]], a Chinese military book showed a large curved weapon on a long handle called a yǎnyuèdāo. Its broad blade swept outward in a shape that was easy to recognize.
 [/en]
 [/section]
 
 [section]
 page: 3
 layout: text-wrap-image
-heading_zh: 一把小说里的刀，怎么变成了历史记忆？
-heading_en: How Did a Story Blade Become Guan Yu's Symbol?
 image: 2-3-opera-temple-cultural-memory.webp
-caption_zh: 小说、戏曲和庙宇一起，把这把刀变成了关羽的标志
-caption_en: Stories, opera, and temples helped turn the blade into Guan Yu's symbol.
+caption_zh: 小说、绘画和戏曲一次次重复关羽持刀的形象，让这把刀逐渐成了他的标志。
+caption_en: Novels, paintings, and opera repeated the image of Guan Yu with his blade until the weapon became his signature.
 [zh]
-关羽这把刀，更多像是小说和后世戏曲一起"配"给他的。《三国演义》里，英雄人物大多有一件一看就忘不了的招牌兵器。关羽既然被塑造成威风凛凛的武将，手里当然也得有一把足够霸气的大刀。
+后来，《三国演义》出现了。小说里的关羽当然不能随随便便拿一件普通兵器。他拿的是青龙偃月刀。名字好记，样子好认，就连那惊人的“八十二斤”也让人忘不了。
 
-小说太有画面感，后来画关羽、演关羽的人，也几乎都让他拿着这把刀。时间一久，真假反而没那么重要了。这把刀已经变成关羽形象的一部分。你问很多中国孩子关羽用什么兵器，他们多半都会脱口而出："青龙偃月刀。"
+这样的刀放在关羽手里，好像正合适。故事里的关羽是一位威风凛凛的大将，他的兵器当然也要一样威风。这个画面就这样留了下来。
+
+画家画关羽，把大刀放在他身边；戏台上演关羽，演员也拿着长柄大刀。一次又一次，人们看到的总是同一个组合：关羽和他的青龙偃月刀。时间久了，这把刀简直成了关羽的“名片”。
 [/zh]
 [en]
-Think of a hero in a story. Sometimes you remember the hero's special weapon almost as quickly as the hero.
+Then came *Romance of the Three Kingdoms*.
 
-In *Romance of the Three Kingdoms*, many heroes have weapons you can picture right away. Guan Yu is written as a brave and mighty general, so the story puts a mighty blade in his hands.
+In the novel, Guan Yu does not get an ordinary weapon. He gets the Green Dragon Crescent Blade. The name is memorable. The shape is memorable. Even its enormous weight is memorable. And it fits the Guan Yu of the story perfectly: a mighty warrior carrying a weapon that looks just as mighty as he does. The image stuck.
 
-The novel made that picture stick. Later, painters showed Guan Yu with the blade. Opera actors carried it on stage. Temples placed it beside him.
-
-After many years, people did not always ask first, "Did he really use that exact weapon?" They saw the blade and thought, "Guan Yu."
-
-That is why many Chinese children, if you ask what weapon Guan Yu used, answer at once: "The Green Dragon Crescent Blade."
+Artists painted the great blade beside him. Actors carried it when they played Guan Yu onstage. Again and again, people saw the same pair: Guan Yu and his long-handled curved blade. After a while, the weapon became almost like a name tag.
 [/en]
 [/section]
 
 [section]
 page: 4
 layout: text-wrap-image
-heading_zh: 真不真，也许已经不是最重要的问题
-heading_en: Maybe "Real" Is Not the Only Question
 image: 2-4-symbolic-blade-door-guardian.webp
-caption_zh: 它也许不是真兵器，却成了文化里极真的象征
-caption_en: It may not be the real battlefield weapon, but it became a real cultural symbol.
+caption_zh: 即使关羽本人没有出现，只要看到这把长柄弯刀，许多人也会立刻想到他。
+caption_en: Even without Guan Yu beside it, the long-handled curved blade can immediately call its famous owner to mind.
 [zh]
-关帝庙里那把偃月刀，也早就不只是兵器。对很多人来说，它更像一种象征：象征正气、威严，也象征有人在替你把坏东西挡在门外。
+想象一下，戏台上走出一位武将。你还没有看清他的脸，就先看见了那长长的刀柄和巨大的弯刀。你已经知道是谁来了。
 
-史书里的一个"刺"字，让很多人怀疑关羽当年更可能用的是矛或戟，不是后世熟悉的长柄大刀。青龙偃月刀也许不是历史现场里的真兵器，却是文化记忆里极真的一把刀。它从小说里走出来，走进戏台、庙宇和人们的脑海，最后变成了关羽最醒目的标志。
+这也许就是青龙偃月刀最有意思的地方。早期史书里的关羽身边没有它，可是经过一代又一代人的讲述、绘画和表演，它最后成了大家最熟悉的关羽形象之一。
 
-如果你想继续问：为什么后来庙里真的会供奉关公，把他当守护神？那就已经是另一篇关于宗教与信仰的故事了。这一篇先只讲刀。
+故事有时候就是这样。一个细节被讲了一次，又讲一次；被画了一次，又画一次。几百年过去，它好像一直都在那里。
+
+今天，如果把关羽手里的大刀拿走，反而让人觉得少了点什么。把青龙偃月刀放回去——大家一眼就知道：关羽来了。
 [/zh]
 [en]
-In [[Guan Di temples]], the crescent blade has long been more than a weapon. For many people, it stands for honor, strength, and a serious, upright spirit. It can also feel like a guard at the door, keeping bad things outside.
+Imagine an actor walking onto a stage. Before you have even looked closely at his face, you notice the long handle and the huge curved blade. You already know who has arrived.
 
-That one word, *thrust*, in the history book makes many people think Guan Yu probably used a spear or [[halberd]], not the later famous blade.
+That is what makes the Green Dragon Crescent Blade so interesting. It is missing from the early history of Guan Yu, yet it became one of the easiest ways to recognize him.
 
-So the Green Dragon Crescent Blade may not be real as a battlefield object from Guan Yu's own time. But it is very real as a cultural memory. It walked out of a novel, onto the opera stage, into temples, and into people's minds. In the end, it became Guan Yu's clearest symbol.
+Stories can do that. A detail is told again, painted again, and performed again. Hundreds of years pass, and the picture becomes so familiar that it feels as if it has always been there.
 
-If you want to keep asking why people later truly worshiped Lord Guan in temples, that belongs to a different story about religion and belief. This book stays with the blade.
+Today, take away Guan Yu's great blade and something seems to be missing. Put it back in his hands, and everyone knows exactly who he is.
 [/en]
 [/section]
-
-[ending]
-heading_zh: 小结
-heading_en: Summary
-[zh]
-青龙偃月刀很可能不是关羽在真实战场上的兵器，但它在中国文化里的地位非常真。历史和文学不总是一回事，可有时候，文学留下的形象会比史书更深地留在人们心里。
-[/zh]
-[en]
-The Green Dragon Crescent Blade was probably not Guan Yu's real battlefield weapon. But in Chinese culture, it is very real. History and stories are not always the same thing. Sometimes a picture from a story stays in people's hearts even longer than the words in a history book.
-[/en]
-[/ending]

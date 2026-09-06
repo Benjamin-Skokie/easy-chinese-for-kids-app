@@ -22,7 +22,7 @@ image: checking-old-medicine-books.webp
 caption_zh: 李时珍把书里的图画和眼前的植物放在一起比较。
 caption_en: Li Shizhen compares a plant with the pictures in his books.
 [zh]
-李时珍在医生家庭里长大。小时候，他常常看见父亲帮助生病的人，也读了许多讲药的书。
+[[李时珍|li-shizhen]]在医生家庭里长大。小时候，他常常看见父亲帮助生病的人，也读了许多讲药的书。
 
 可是，书看得越多，他发现的问题也越多。同一种东西，有时在两本书里用了不同的名字；有些图画和文字对不上；还有一些说法，已经传了很久，却不一定正确。
 
@@ -31,7 +31,7 @@ caption_en: Li Shizhen compares a plant with the pictures in his books.
 李时珍的答案很简单：会。所以，他决定再查一遍。
 [/zh]
 [en]
-Li Shizhen grew up in a family of doctors. As a boy, he watched his father help sick people. He also read many books about medicine.
+[[Li Shizhen|li-shizhen]] grew up in a family of doctors. As a boy, he watched his father help sick people. He also read many books about medicine.
 
 The more Li read, the more problems he found. Two books might use different names for the same thing. A picture might not match the words beside it. Some ideas had been copied for years without anyone stopping to ask whether they were right.
 

@@ -4,7 +4,7 @@
 
 ## What If the Book Was Wrong?
 
-Li Shizhen grew up in a family of doctors. As a boy, he watched his father help sick people. He also read many books about medicine.
+[[Li Shizhen|li-shizhen]] grew up in a family of doctors. As a boy, he watched his father help sick people. He also read many books about medicine.
 
 The more Li read, the more problems he found. Two books might use different names for the same thing. A picture might not match the words beside it. Some ideas had been copied for years without anyone stopping to ask whether they were right.
 

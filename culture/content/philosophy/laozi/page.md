@@ -1,6 +1,6 @@
 ---
-title_zh: 老子的智慧：水为什么不争？
-title_en: Laozi’s Wisdom: Why Doesn’t Water Compete?
+title_zh: 老子的智慧：水为什么不一定要“赢”？
+title_en: Laozi’s Wisdom: Why Does Water Never Need to Win?
 slug: laozi
 category: philosophy
 difficulty: 困难
@@ -8,201 +8,121 @@ style_notes: "用 --- 分隔 frontmatter；正文强调优先用 *斜体*；尽�
 ---
 
 [hero]
-title_zh: 老子的智慧：水为什么不争？
-title_en: Laozi’s Wisdom: Why Doesn’t Water Compete?
+title_zh: 老子的智慧：水为什么不一定要“赢”？
+title_en: Laozi’s Wisdom: Why Does Water Never Need to Win?
 [/hero]
 
 [section]
 page: 1
 layout: two-column
-heading_zh: 先从一个传说说起
-heading_en: Begin with a Legend
-image: 3-1-laozi-ox-hangu-pass.webp
-caption_zh: 骑青牛、伴着紫气的老子，是后来的画家很喜欢表现的传说形象
-caption_en: Laozi riding an ox through purple clouds is a famous image from later legend.
+heading_zh: 小溪里的一块石头
+heading_en: A Stone in the Stream
+image: 3-2-water-around-stones.webp
+caption_zh: 清澈的溪水分成两股绕过石头，又在下游继续向前。
+caption_en: Clear stream water divides around a stone and continues downstream.
 [zh]
-想象一条穿过群山的路。前面是一座关口，过了关，就要继续向西。一个老人来到这里，准备离开。
+把一块石头放进浅浅的小溪里，看看水会怎么走。水碰到石头以后，会分成两股，从两边绕过去，然后在下游重新合在一起。石头还在那里，水并没有把它推开。可是，水也没有停下来。
 
-几百年后，历史学家司马迁在一本叫《史记》的书里记下了这个故事：守关的人尹喜请老人把思想写下来。老人于是写了上下两篇、五千多字，讲自己对世界和人生的看法。写完后，他出了关，从此不知所终。这个老人就是传说中的老子，那部书后来被称为《道德经》。
+两千多年前，一本和[[老子|laozi]]思想联系在一起的中国古书，很喜欢用水来想事情。这本书就是[[《道德经》|dao-de-jing]]。里面有一句特别有名的话：**“上善若水。”**紧接着，书里又说，水“善利万物而不争”，还愿意待在人们往往不喜欢的低处。
 
-今天的图画常让老子骑着青牛，身后飘着紫色云气。这幅画很有名，也很美，不过青牛和“紫气东来”主要来自后来的传说，不是我们能够确认的历史细节。
-
-就连司马迁也没有把老子的身份说得很确定。他在书中列出了不止一种说法。今天的学者仍在讨论：老子是不是一位可以清楚确认的历史人物？《道德经》是不是一个人一次写完的？“老子”这个名字本来就有“老先生”或“年长的老师”的意思，也可能慢慢代表了一群古老思想的声音。
-
-所以，我们可以欣赏关口前的故事，但要记得在它旁边放一个小标签：*这是传统传说，不是一段能够完全证实的现场记录。*
+水看起来并不威风。也许，这正是老子觉得它有意思的地方。
 [/zh]
 [en]
-Imagine a road winding through the mountains. Ahead stands a guarded pass. Beyond it, the road continues west. An old man arrives, ready to leave.
+Put a stone in a shallow stream and watch what happens. The water reaches the stone, divides, slips around both sides, and joins together again farther downstream. The stone is still there. The water has not pushed it away. But the water has not stopped either.
 
-Several centuries later, the historian Sima Qian recorded this story. The guard, Yin Xi, asked the old man to write down his ideas before he left. The old man wrote a little more than 5,000 Chinese characters about the world and how to live. Then he passed through the gate, and no one knew where he went. The old man was Laozi, the story says, and his book later became known as the *Dao De Jing*.
+More than two thousand years ago, a short Chinese book traditionally connected with [[**Lǎozǐ**|laozi]] used water again and again to think about how people live. One of its most famous lines begins: **“The highest good is like water.”** Then the [[*Dàodéjīng*|dao-de-jing]] explains why. Water benefits many things, yet it does not compete with them. It also flows toward low places that people often avoid.
 
-Paintings often show Laozi riding an ox while purple clouds glow behind him. It is a beautiful and famous picture. But the ox and the purple glow belong mostly to later legend. They are not historical details we can check.
-
-Even Sima Qian did not give a single, certain account of Laozi’s identity. He recorded more than one possibility. Scholars still ask: Was Laozi one historical person we can clearly identify? Did one person write the entire *Dao De Jing* at one time? The name *Laozi* means something like “Old Master.” Over time, it may have come to stand for a much broader tradition of ancient thought.
-
-We can enjoy the story at the mountain pass. We just need to place a small label beside it: *This is a traditional story, not a scene that history can fully prove.*
+Water does not seem very impressive. That may be exactly why Lǎozǐ found it interesting.
 [/en]
 [/section]
 
 [section]
 page: 2
-layout: two-column reverse
-heading_zh: 一句只有四个字的话
-heading_en: Four Words and a Stream
-image: 3-2-water-around-stones.webp
-caption_zh: 水遇到石头时会分开、绕过，然后继续向前
-caption_en: Water divides around a stone, joins again, and keeps moving.
+layout: text-only
+heading_zh: 水总往低处走
+heading_en: Water Goes Low
 [zh]
-现在，把手伸进一条浅浅的小溪。水从手指旁边滑过去。前面有石头，它就分成两股，绕过去以后再合起来。它没有把石头推倒，也没有停下来生气。它只是在找路。
+人常常想往高处去。坐得高一点，好像比较重要；排在前面，好像比后面更好；被大家看见，也常常比没人注意更让人高兴。水却总往低处走。
 
-《道德经》第八章有一句很有名的话：*上善若水。水善利万物而不争。*
+雨从天上落下来，顺着坡往下流；小溪汇进山谷，河流继续向更低的地方前进。水不会专门爬到最高的石头上，让大家看看自己有多厉害。可是，植物需要水，动物要喝水，庄稼离不开水，人们也常常在有水的地方生活。
 
-“上善若水”的意思大致是：最好的善，就像水一样。紧接着的下一句告诉我们为什么——水帮助万物，却不忙着和万物争。
-
-雨落进土里，种子才能发芽；溪水流过，动物可以喝；人们也要靠水生活。水做了这么多，却不会举起一块牌子说：“快看，这全是我的功劳！”
-
-书里还说，水愿意停在大家不喜欢的低处。很多人想站得更高、被更多人看见；水却总往低处流。老子不是在给河流上科学课，而是借水问人：*如果一个人不总抢最高的位置，仍然可以带来帮助吗？*
+《道德经》看着这种很普通的事情，问出了一个不太普通的问题：**一样东西一定要抢到最高的位置，才算重要吗？**老子的答案不是这样。水待在低处，一样可以做很多事。
 [/zh]
 [en]
-Now put your hand into a shallow stream. Water slips between your fingers. When it reaches a stone, it divides, flows around both sides, and joins again. It does not knock the stone over. It does not stop in anger. It keeps finding a way.
+People often want to move up. A higher seat can seem better than a lower one. Being first can seem better than being last. Being noticed can feel better than being ignored. Water does the opposite.
 
-Chapter 8 of the *Dao De Jing* begins with a famous line: *“The highest good is like water. Water benefits all things and does not compete.”*
+Rain falls from the sky and runs downhill. Streams collect in valleys. Rivers keep moving toward lower ground. The water does not search for the highest rock so that everyone can see it. Yet plants need it. Animals drink it. Fields depend on it. People build their homes and towns near it.
 
-The first four Chinese characters are *shang shan ruo shui*: “The highest good is like water.” The next sentence explains why. Water helps living things, yet it does not rush to compete with them.
-
-Rain enters the soil, and seeds can sprout. Streams give animals a place to drink. People need water every day. Water does all this without holding up a sign that says, “Look! I deserve all the credit!”
-
-The book also says that water stays in low places that people tend to avoid. Many people want to stand high and be noticed. Water flows downward instead. Laozi was not teaching a science lesson about rivers. He was using water to ask a human question: *Can someone help greatly without always fighting for the highest place?*
+The *Dàodéjīng* looks at this ordinary habit of water and turns it into a question: **Does something have to fight for the highest place in order to be useful?** For Lǎozǐ, the answer was no. Water can stay low and still matter enormously.
 [/en]
 [/section]
 
 [section]
 page: 3
 layout: text-only
-heading_zh: “不争”不是认输
-heading_en: “Not Competing” Is Not Giving Up
+heading_zh: 绕过去，也是在往前走
+heading_en: Going Around Is Still Going Forward
 [zh]
-“不争”很容易被误会。它不是说比赛时不能努力，也不是说别人欺负你时只能沉默。它更不是“我什么都不在乎”。
+《道德经》还说，水“不争”。可是，“不争”并不等于什么也不做。再看看小溪里的那块石头。水推不动它，就换一个方向，从旁边绕过去，然后继续往前。
 
-这里的“争”，更接近一种总想压过别人、抢走功劳、证明自己最高明的冲动。一个人可以认真做事，也可以保护自己，却不必把每件事都变成“我一定要赢过你”。
+树枝掉进小溪里挡住了路，水也可能从下面钻过去，从缝里渗过去，或者慢慢找到另一边的出口。水并不需要证明：“我一定比这块石头更强。”它只需要继续走。
 
-比如，小组一起造一座纸桥。有人抢着拿走所有材料，大声命令别人，最后大家谁也没法工作。另一个人先看看纸会怎样弯，听听同伴的想法，再把不同办法接起来。第二个人并没有“什么都不做”；他只是没有用争抢来推动事情。
-
-这不是《道德经》里真的发生过的课堂故事，而是我们今天用来理解“不争”的例子。水绕过石头，也不是投降。它换了一条路，仍然继续向前。
+《道德经》里常常有这样的想法：有些事情不用每次都靠更大的力气解决。用力有时当然有用，可有时候越使劲，反而越容易和眼前的东西死死顶在一起。水不吵，也不炫耀。它只是一直寻找能走的地方。
 [/zh]
 [en]
-The phrase “not competing” is easy to misunderstand. It does not mean that you cannot try hard in a game. It does not mean you must stay silent when someone hurts you. It certainly does not mean, “I don’t care about anything.”
+The book also says that water “does not compete.” That does not mean water simply gives up. Go back to the stone in the stream. The water cannot push the stone aside, so it changes direction. It finds another opening and keeps going.
 
-Here, competing is closer to the urge to push everyone else down, grab all the credit, or prove that you are always the smartest person in the room. You can work hard and stand up for yourself without turning every moment into “I must defeat you.”
+A branch falls across a little creek. Water gathers behind it, slips under it, seeps through gaps, or finds a new edge to follow. It does not need to prove that it is stronger than every obstacle. It needs to keep moving.
 
-Imagine a group building a paper bridge. One child grabs all the supplies and shouts orders. Soon nobody can work. Another child first watches how the paper bends, listens to everyone’s ideas, and helps join the best ideas together. The second child is not “doing nothing.” That child is moving the project forward without fighting for control.
-
-This classroom scene is a modern example, not a story from the *Dao De Jing*. It helps us test the idea. Water going around a stone has not surrendered. It has changed direction and kept moving.
+This is close to an idea that appears throughout the *Dàodéjīng*: using less unnecessary force. Sometimes pushing harder helps. Sometimes pushing harder only creates a bigger struggle. Water seems to know the difference without making any noise about it.
 [/en]
 [/section]
 
 [section]
 page: 4
-layout: two-column
-heading_zh: 柔软为什么也能有力量？
+layout: two-column reverse
+heading_zh: 柔软也可以很有力量
 heading_en: How Can Something Soft Be Strong?
 image: 3-3-water-drop-stone.webp
-caption_zh: 一滴水推不动石头，长久流动的水却会改变石头
-caption_en: One drop cannot move a stone, but water flowing over time can change it.
+caption_zh: 一滴水从上方的岩石落下，下面的石面已经形成一个圆滑的凹槽。
+caption_en: A drop falls from one rock toward a smooth hollow in the stone below.
 [zh]
-《道德经》第七十八章又一次谈到水：“天下莫柔弱于水”，可是面对坚硬的东西，水又有一种难以替代的力量。
+用手碰一下水，它马上让开；握紧拳头去抓，它又会从指缝里流出去。石头看起来当然比水硬得多。可是，再看看一条河留下的山谷。
 
-一滴水当然推不动大石头。但是河水年年流过，沙粒和水流不断摩擦，尖利的石块会慢慢变得圆滑。水也可以汇成急流，力量大到让人必须认真对待。柔软和有力量，并不互相矛盾。
+软得抓不住的水，可以带走泥沙，推动石块，冲出河道，还能在很长很长的时间里改变山坡和土地。这些事情不是一滴水一下完成的。水只是一天又一天、一年又一年地继续流。
 
-老子喜欢把人们习惯的想法翻过来看。大家常觉得硬的一定胜过软的，站得高的一定比站得低的好，抢在前面一定比退一步厉害。水却提醒我们：事情不总是这样。
+《道德经》第七十八章也注意到了这个奇怪的地方：天下好像没有什么比水更柔弱，可面对坚硬的东西，水又有一种特别的力量。老子很喜欢这样的反差。
 
-柔软有时意味着能够改变方向，不会一碰就折断；退一步有时能让人看清全局；不抢着说话，有时反而能听见真正重要的声音。
-
-但这也不是一条万能公式。洪水会伤人，沉默也不一定总是正确。哲学不是把一句话套在所有事情上，而是用它帮助我们多看一种可能。
+柔软，不一定就是没有力量。待在低处，不一定就是不重要。绕开一步，也不一定就是输了。有时候，正因为可以改变方向，才更能一直走下去。
 [/zh]
 [en]
-Chapter 78 of the *Dao De Jing* returns to water. Nothing seems softer or weaker, it says, yet water has a power that hard things cannot easily replace.
+Touch water with your hand and it moves away. Close your fist around it and it slips through your fingers. A rock feels much stronger. But now look at a river valley.
 
-One drop cannot shove a boulder aside. But a river flows year after year. Moving water and sand rub against sharp stones until their edges slowly become smooth. Water can also gather into a rushing current powerful enough to demand respect. Softness and strength are not always opposites.
+Water that seems too soft to hold in your hand can move soil, carry stones, deepen channels, and reshape a landscape. A river does not do all of that in one dramatic moment. It keeps moving, day after day and year after year.
 
-Laozi liked to turn familiar ideas upside down. People often assume that hard must defeat soft, high must be better than low, and stepping forward must be braver than stepping back. Water asks us to look again.
+Chapter 78 of the *Dàodéjīng* points to this strange contrast: nothing seems softer and weaker than water, yet hard things cannot always defeat it. Lǎozǐ liked contrasts like this.
 
-Being soft can mean changing direction instead of snapping. Taking one step back can help you see the whole problem. Waiting to speak can help you hear what truly matters.
-
-But this is not a magic rule for every situation. Floods can harm people. Silence is not always right. Philosophy is not about forcing one sentence onto every problem. It gives us another possibility to consider.
+Soft does not always mean powerless. Low does not always mean unimportant. Stepping aside does not always mean losing. Sometimes what looks weak lasts because it can bend, change direction, and continue.
 [/en]
 [/section]
 
 [section]
 page: 5
-layout: two-column reverse
-heading_zh: “道”到底是什么？
-heading_en: What Is the Dao?
-image: 3-4-writing-dao-de-jing.webp
-caption_zh: 《道德经》常用水、山谷和空房间，引人思考说不尽的问题
-caption_en: The *Dao De Jing* uses water, valleys, and empty rooms to lead readers toward questions that resist easy answers.
-[zh]
-“道”原本可以指道路或行走的方向。在《道德经》里，它变成了一个更大的问题：万物怎样出现、变化，又怎样互相联系？世界为什么不需要一个人时时发号施令，春去秋来、草木生长仍然会发生？
-
-《道德经》一开头就提醒读者：“道可道，非常道。”大意是：如果你能用一句话把“道”完全说清，那句话说到的还不是完整、永远的“道”。
-
-所以，“道”不是藏在云后的一个神秘物体，也不只是“自然规律”的另一个名字。它更像《道德经》用来谈世界根源、变化方式和万物秩序的一个词。人可以从季节、水流和生命的变化中看见它的影子，却不能把它像石头一样抓在手里。
-
-这就是为什么这本书常常不用长篇定义，而是让我们看水、山谷、婴儿、木头和空房间。它用熟悉的东西，把读者带到一个不容易回答的问题旁边。
-[/zh]
-[en]
-The Chinese word *dao* can mean a road or a way to travel. In the *Dao De Jing*, it opens into a much larger question: How do things come into being, change, and connect? Why do seasons turn and plants grow without anyone giving orders every moment?
-
-The book begins by warning us that the Dao cannot be packed neatly into one definition. Its opening line, *“A dao that can be fully told is not the constant Dao,”* means that any sentence we use will capture only part of it.
-
-The Dao is not a mysterious object hiding behind a cloud. It is also more than another name for a scientific law. The *Dao De Jing* uses the word to think about the source of the world, the ways things change, and an order that cannot be held in your hand. We may notice its traces in seasons, flowing water, and living things, but we cannot point to it like a rock.
-
-That may be why the book often uses images instead of long definitions. It asks us to look at water, valleys, babies, uncarved wood, and empty rooms. Familiar things lead the reader toward questions that are hard to answer.
-[/en]
-[/section]
-
-[section]
-page: 6
 layout: text-only
-heading_zh: “无为”也不是什么都不做
-heading_en: *Wuwei* Does Not Mean Doing Nothing
+heading_zh: 再看看那条小溪
+heading_en: Look at the Stream Again
 [zh]
-老子思想中还有一个容易被误解的词：*无为*。它看起来像“不要行动”，但《道德经》并不是叫人整天躺着，等所有事情自己完成。它反对的更像是勉强、控制过度和被私心推着走的行动。
+《道德经》并不是一本很长的书，而且它常常不把一个道理解释得清清楚楚，再让读者背下来。它更喜欢给人看一些东西：水、山谷、门、空出来的地方、没有雕刻过的木头。然后让人自己想。
 
-可以用今天的一个小例子来想：鞋带打了死结时，如果只会拼命往两边拉，结会越来越紧。先停一下，看清绳子压在哪里，再轻轻把它松开，反而更快。这并不等于没有行动，而是少用蛮力，多看事情本来的结构。
+水特别适合这样做。不需要先学会一个很难的哲学名词，也能看懂小溪怎样绕过石头，怎样流向低处；也能用手摸到水有多软，却同时知道一条河可以有多大的力量。
 
-水的故事和“无为”在这里碰到了一起：真正有效的行动，有时看起来并不吵闹。它不急着证明自己，却知道什么时候流、什么时候停、什么时候转弯。
+两千多年以后，这个画面还是很容易看懂。石头留在原地。水从旁边绕过去。然后，它继续向前。
 [/zh]
 [en]
-Another idea connected with Laozi is *wuwei*. It is often translated as “non-action,” which can sound like lying around and waiting for every job to finish itself. That is not what the idea means.
+The *Dàodéjīng* is a very short book, but it rarely explains its ideas the way a textbook would. It gives readers images: water, valleys, doors, empty spaces, uncarved wood. Then it leaves us to think.
 
-*Wuwei* is closer to acting without needless force, too much control, or a selfish hunger to make everything obey you.
+That may be why water works so well. You do not need to understand a difficult philosophical word to watch a stream. You can see water move around a stone. You can see it gather in the lowest place. You can feel how soft it is and still know what a river can do.
 
-Try a modern example. Think about a shoelace pulled into a tight knot. If you yank both ends harder, the knot becomes tighter. If you stop, look carefully, and loosen the right loop, you may solve it faster. You still act. You simply use less force and pay more attention to how the knot is made.
-
-Here the image of water and the idea of *wuwei* meet. Effective action does not always look loud. It does not have to show off. It notices when to flow, when to wait, and when to turn.
+More than two thousand years after the *Dàodéjīng* was written, the stone-and-stream picture still makes sense. The stone stays where it is. The water goes around it. And the water keeps going.
 [/en]
 [/section]
-
-[ending]
-heading_zh: 再看一杯水
-heading_en: Look at a Glass of Water Again
-[zh]
-我们不知道历史上的老子究竟是谁，也不能确定《道德经》的每一句话是否都来自同一个人。考古发现的早期竹简版本和后来流传的版本并不完全一样，说明这本书也经历了形成和整理。
-
-但有一件事很清楚：两千多年来，人们不断回到这本很短的书，重新思考力量、欲望、领导、自然和生活。不同读者给出的答案并不总是一样。
-
-下一次看见水流过石头，可以试着问三个问题：我是在解决问题，还是只想赢过别人？我是不是用力太猛，反而把结拉得更紧？有没有一条更安静、却仍然能向前的路？
-
-水不会替你回答。但它会让问题留在眼前。
-[/zh]
-[en]
-We do not know exactly who the historical Laozi was. We also cannot be certain that every line of the *Dao De Jing* came from one person. Early bamboo manuscripts discovered by archaeologists are not exactly the same as the version passed down later. The book itself had a history of growth and change.
-
-One thing is clear: for more than two thousand years, readers have returned to this short book to think about power, desire, leadership, nature, and daily life. They have not always reached the same answers.
-
-The next time you watch water moving around a stone, try asking three questions. Am I solving this problem, or do I only want to beat someone? Am I pulling so hard that I am tightening the knot? Is there a quieter path that still moves forward?
-
-Water will not answer for you. But it may keep the questions in front of your eyes.
-[/en]
-[/ending]

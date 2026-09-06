@@ -19,16 +19,16 @@ layout: text-only
 heading_zh: 一场打散了朋友的战争
 heading_en: A Battle Separates Two Friends
 [zh]
-大约一千八百年前，中国正陷在一场很长的战争中。关羽跟随刘备四处征战。他们一起走过许多危险，关羽也答应会一直帮助刘备。
+大约一千八百年前，中国正陷在一场很长的战争中。[[关羽|guan-yu]]跟随[[刘备|liu-bei]]四处征战。他们一起走过许多危险，关羽也答应会一直帮助刘备。
 
-后来，一场战斗把他们冲散了。刘备逃走了，关羽却被另一支军队抓住。这支军队的首领叫曹操，他也是刘备的对手。
+后来，一场战斗把他们冲散了。刘备逃走了，关羽却被另一支军队抓住。这支军队的首领叫[[曹操|cao-cao]]，他也是刘备的对手。
 
 关羽不知道刘备去了哪里，也不知道他们还能不能再见面。
 [/zh]
 [en]
-Nearly 1,800 years ago, China was in the middle of a long war. Different leaders were fighting for control. Guan Yu traveled and fought beside a leader named Liu Bei. They had faced many dangers together, and Guan Yu had promised to stand by him.
+Nearly 1,800 years ago, China was in the middle of a long war. Different leaders were fighting for control. [[Guan Yu|guan-yu]] traveled and fought beside a leader named [[Liu Bei|liu-bei]]. They had faced many dangers together, and Guan Yu had promised to stand by him.
 
-Then one battle separated them. Liu Bei escaped, but Guan Yu was captured by another army. Its leader was Cao Cao, one of Liu Bei’s enemies.
+Then one battle separated them. Liu Bei escaped, but Guan Yu was captured by another army. Its leader was [[Cao Cao|cao-cao]], one of Liu Bei’s enemies.
 
 Guan Yu did not know where Liu Bei had gone—or whether they would ever meet again.
 [/en]
@@ -103,8 +103,8 @@ layout: text-wrap-image
 heading_zh: 故事里的关羽有了一张红脸
 heading_en: Guan Yu Gets His Famous Red Face
 image: 1-lord-guan-temple-statue.webp
-caption_zh: 今天人们熟悉的关公形象有红脸、长胡子、绿袍和大刀。这是一幅现代插画。
-caption_en: The Lord Guan people recognize today has a red face, a long beard, a green robe, and a great blade. This is a modern illustration.
+caption_zh: 今天人们熟悉的关公形象有红脸、长胡子、绿袍和大刀。
+caption_en: The Lord Guan people recognize today has a red face, a long beard, a green robe, and a great blade.
 [zh]
 许多年以后，人们在小说、说书场和戏台上讲起关羽。讲故事的人让他的冒险更长、更惊险；演员给他画上一张鲜红的脸，又配上长胡子、绿袍和一把大刀。观众一看就知道：“关羽来了！”
 
@@ -127,8 +127,8 @@ layout: text-wrap-image
 heading_zh: 为什么商店里也有关公？
 heading_en: Why Is Lord Guan in Some Shops?
 image: 2-lord-guan-shop-altar.webp
-caption_zh: 有些商铺会供奉关公，因为关公让人想到守信。这是一幅现代插画。
-caption_en: Some shops keep a small Lord Guan shrine because he is linked with keeping one’s word. This is a modern illustration.
+caption_zh: 有些商铺会供奉关公，因为关公让人想到守信。
+caption_en: Some shops keep a small Lord Guan shrine because he is linked with keeping one's word.
 [zh]
 后来，有些商人也开始供奉关公。做生意常常要靠约定：什么时候交货，要付多少钱，借走的东西什么时候归还。如果说话不算数，生意很快就做不下去了。
 

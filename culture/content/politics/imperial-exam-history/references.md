@@ -1,166 +1,141 @@
-# How Wide Could an Exam Open the Door? — References and Editorial Notes
+# The Imperial Examination — References and Editorial Notes
 
 This file is for editorial research and does not render on the website.
 
-## Early Offices and the Growth of Bureaucracy
+## Examination Cells in a Ming Painting
 
-Source: Li Feng, “Offices in Bronze Inscriptions and Western Zhou Government Administration,” *Early China*
-URL: https://www.cambridge.org/core/journals/early-china/article/abs/offices-in-bronze-inscriptions-and-western-zhou-government-administration/55732DE5CD51B308243EC7233C630834
-Accessed: 2026-08-20
-
-Source: Patricia Buckley Ebrey, “The Creation of the Bureaucratic Empire: The Qin and Han Dynasties,” *The Cambridge Illustrated History of China*
-URL: https://www.cambridge.org/highereducation/books/the-cambridge-illustrated-history-of-china/B8415BCABB0218ABC80F4EFEEA9F5B2B/the-creation-of-the-bureaucratic-empire-the-qin-and-han-dynasties/CF561DCB42844178C1AECDB98E31B6FD
-Accessed: 2026-08-20
+Source: Palace Museum, “明人考试图横轴”
+URL: https://www.dpm.org.cn/collection/paint/259306.html
+Accessed: 2026-09-06
 
 Supports:
 
-- Western Zhou inscriptions record formal appointment ceremonies and specialized administrative offices.
-- The Qin created, and the Han consolidated, a centralized bureaucratic monarchy.
-- Early official service cannot accurately be reduced to one timeless rule in which every office simply passed automatically from father to son.
+- Shows an imperial examination compound with candidates seated in rows of numbered examination cells and guards monitoring the lanes.
 
 Editorial boundary:
 
-- Noble status, kinship, appointment, service, and developing bureaucratic skills mattered differently across the long pre-imperial period.
-- Do not describe the first illustration's palace architecture, clothing, or children as a documented Western Zhou, Warring States, or Qin scene.
-- The article may say that family status often placed people closer to power and that education and access were extremely unequal; it should not claim that no non-noble ever entered service.
+- The painting supports the description of the organized examination setting; it does not identify one individual candidate or preserve his personal experience.
 
-## Han Recruitment: Recommendation Plus Evaluation
+## Life Inside an Examination Cell
 
-Source: Hans Bielenstein, “Civil Service Recruitment,” in *The Bureaucracy of Han Times*
-URL: https://www.cambridge.org/core/books/abs/bureaucracy-of-han-times/civil-service-recruitment/9334C1BD771968D5690197868D38DF38
-Accessed: 2026-08-20
+Source: Guangzhou Municipal People’s Government, “贡院记忆藏深巷 赓续文脉数百年”
+URL: https://www.gz.gov.cn/zlgz/whgz/content/post_8393826.html
+Accessed: 2026-09-06
 
-Source: Yuhua Wang, *The Political Economy of China's Imperial Examination System*, Cambridge University Press
+Supports:
+
+- Describes Qing examination cells and the long periods candidates spent inside during provincial examinations.
+- Explains how two movable wooden boards could serve as a desk, seat, and sleeping platform.
+
+Editorial boundary:
+
+- Details come from the late imperial examination compound in Guangzhou and are used to introduce the Ming–Qing examination experience, not every examination in every dynasty.
+
+## Tang Examination Categories and Writing
+
+Source: Chinese Text Project, *Tongdian*, “Selections and Appointments 3” (《通典·选举三》)
+URL: https://ctext.org/wiki.pl?chapter=953312&if=en
+Accessed: 2026-09-06
+
+Supports:
+
+- Records Tang examination categories including *jinshi* and testing in policy questions, classics, and literary composition.
+
+Editorial boundary:
+
+- Examination categories and questions changed over time; the article does not present one Tang syllabus as a permanent format for the entire imperial examination system.
+
+## Concealing Names and Handwriting
+
+Source: Yuhua Wang, *The Political Economy of China’s Imperial Examination System*, Cambridge University Press
 URL: https://www.cambridge.org/core/elements/political-economy-of-chinas-imperial-examination-system/3DA0EC88AE5901AEE641FD5686C7F8B8
-Accessed: 2026-08-20
+Accessed: 2026-09-06
 
 Supports:
 
-- Han civil-service recruitment was an important predecessor of the later examination system, but it was vulnerable to corruption.
-- Under *chaju*, officials nominated people known for morality or talent in their jurisdictions, and nominees could then face examination at the capital.
-- Imperial schools and lower-level service were also connected to recruitment; recommendation was not the only path.
+- Describes Song reforms that concealed candidates’ names and had examination papers recopied before grading so handwriting could not reveal identity.
+- Provides background on earlier recommendation practices and the gradual development of the examination route.
 
 Editorial boundary:
 
-- *Chaju* was not a modern open-registration exam and should not be called simply “fairer.”
-- “Filial and incorrupt” names a recommendation category; it does not mean a single witnessed act of helping an elder earned a post.
-- The second illustration is a symbolic modern scene, not evidence of how an actual nomination occurred.
+- Anonymization and recopying reduced opportunities for favoritism but did not erase unequal access to education, books, time, travel, or official connections.
 
-## The Nine-Rank Rectifying System
+## A Ming Red Examination Copy
 
-Source: Yuhua Wang, *The Political Economy of China's Imperial Examination System*, sections 1.4 and 2.2.2, Cambridge University Press
-URL: https://www.cambridge.org/core/elements/political-economy-of-chinas-imperial-examination-system/3DA0EC88AE5901AEE641FD5686C7F8B8
-Accessed: 2026-08-20
+Source: National Museum of China, “明万历三十二年余懋孳会试朱卷”
+URL: https://www.chnmuseum.cn/zp/zpml/gjwxbt/202008/t20200824_247146.shtml
+Accessed: 2026-09-06
 
 Supports:
 
-- The nine-rank system emerged amid political fragmentation, war, migration, and the breakdown of the Later Han recruitment environment.
-- Local rectifiers assigned educated men quality grades that helped determine their initial bureaucratic positions.
-- The institution was designed to address weaknesses in earlier recruitment but became highly vulnerable to capture by socially and politically privileged groups.
+- Explains the Ming process of sealing a candidate’s name and recopying the black-ink original into a red-ink examination copy before grading.
 
 Editorial boundary:
 
-- Do not present the system's original purpose as simply protecting aristocrats or excluding poor people.
-- Do not describe every rating as based only on pedigree; the system formally considered qualities as well, although family background became highly influential.
-- The third illustration compresses an administrative process into a symbolic queue and must not be read literally.
+- The surviving paper documents one Ming metropolitan examination; the article does not project this exact procedure backward onto Tang examinations.
 
-## Gradual Formation in the Sui and Tang
+## The Examination Ladder
 
-Source: Yuhua Wang, *The Political Economy of China's Imperial Examination System*, sections 1.4 and 2.3, Cambridge University Press
-URL: https://www.cambridge.org/core/elements/political-economy-of-chinas-imperial-examination-system/3DA0EC88AE5901AEE641FD5686C7F8B8
-Accessed: 2026-08-20
-
-Source: Nicolas Tackett, “The Evolution of the Tang Political Elite and its Marriage Network,” *Journal of Chinese History*
-URL: https://www.cambridge.org/core/journals/journal-of-chinese-history/article/evolution-of-the-tang-political-elite-and-its-marriage-network/6718E008F3DA2D235944DEBE6559B408
-Accessed: 2026-08-20
-
-Source: Nicolas Tackett, “The Niu-Li Factional Strife: The Origins of a Historiographical Fiction,” *Journal of Chinese History*
-URL: https://www.cambridge.org/core/journals/journal-of-chinese-history/article/niuli-factional-strife-the-origins-of-a-historiographical-fiction/1845DBAD83C09083145C816B8DE768E6
-Accessed: 2026-08-20
+Source: National Museum of China, “明万历四年顾宪成试卷稿册”
+URL: https://www.chnmuseum.cn/zp/zpml/201812/t20181218_24728.shtml
+Accessed: 2026-09-06
 
 Supports:
 
-- Sui examination orders continued earlier nomination-and-examination practices rather than creating a fully open system in one moment.
-- Tang changes expanded examination access and offered new routes into official life, but the political elite and its family networks remained important.
-- Tang examinations could rely heavily on patronage and recommendation; exam reputation was not limited to anonymous performance in a sealed room.
+- Describes the Ming sequence of provincial, metropolitan, and palace examinations and the title *juren* earned through the provincial examination.
 
 Editorial boundary:
 
-- Do not say “the Sui invented the imperial exam in 605” as a clean, settled fact.
-- Do not invent a modern sequence of village, county, province, and capital exams for a Tang child.
-- Do not imply that rich and poor Tang candidates anonymously faced an identical and self-sufficient test. The fourth illustration is an idealized concept image.
-- Formal permission for many men to compete did not equal practical access to books, teachers, time, travel, introductions, or office after passing.
+- This Ming example supports the late imperial ladder; arrangements in earlier periods were not identical.
 
-## Song Expansion, Anonymity, and Continuing Privilege
-
-Source: “Scholar-Officials and the Civil Service Examinations,” Columbia University, Asia for Educators
-URL: https://afe.easia.columbia.edu/songdynasty-module/confucian-scholar.html
-Accessed: 2026-08-20
-
-Source: Paul Jakov Smith, “Sung Government and Politics,” in *The Cambridge History of China*
-URL: https://www.cambridge.org/core/books/cambridge-history-of-china/sung-government-and-politics/B360D3EB6D72ADEE74E46FD8570548EC
-Accessed: 2026-08-20
-
-Source: *History of Song*, examination administration passages, Chinese Text Project
-URL: https://ctext.org/wiki.pl?chapter=817325&if=en
-Accessed: 2026-08-20
+Source: National Museum of China, “光绪年间会试朱卷”
+URL: https://www.chnmuseum.cn/zp/zpml/201812/t20181218_24853.shtml
+Accessed: 2026-09-06
 
 Supports:
 
-- Song procedures used numbers in place of names and clerical recopying to reduce recognition and favoritism.
-- Compared with the Tang, Song examinations recruited a broader-based bureaucracy and more men from families without recent officeholding records.
-- Examination entry coexisted with substantial hereditary *yin* privilege; in some periods, a large share of serving officials had entered through that route.
+- Describes the Qing metropolitan examination, the qualification required to enter it, and advancement to the palace examination.
 
 Editorial boundary:
 
-- Anonymity and recopying were safeguards, not proof that corruption, status, or family advantage disappeared.
-- Do not describe the Song bureaucracy as staffed only through exams.
-- “Broader” is a comparative claim, not a claim that most farmers' sons could realistically study and compete.
+- The article simplifies several lower qualifying stages so children can follow the main sequence without treating it as a complete procedural guide.
 
-## Ming–Qing Examinations, Quotas, and Cultural Resources
+## The Palace Examination and Its Top Three
 
-Source: Benjamin A. Elman, *A Cultural History of Civil Examinations in Late Imperial China*, Princeton University Press
-URL: https://www.princeton.edu/~elman/documents/Elman%2CA%20Cultural%20History%20of%20Civil%20Examinations%20in%20Late%20Imperial%20China.pdf
-Accessed: 2026-08-20
-
-Source: Benjamin A. Elman, “Examination System, 1800–1905,” *Encyclopedia of Modern China*
-URL: https://www.princeton.edu/~elman/documents/Examination%20System%2C%201800-1905.pdf
-Accessed: 2026-08-20
+Source: Palace Museum, “清代殿试”
+URL: https://www.dpm.org.cn/court/system/236363.html
+Accessed: 2026-09-06
 
 Supports:
 
-- Late imperial examinations used an empire-wide hierarchy of qualifying and higher examinations, with quotas at several levels.
-- The curriculum centered on a shared classical canon and required literary forms including the eight-legged essay.
-- Local elites had unequal access to the schools, books, time, family training, and other cultural resources needed to compete.
-- Degrees could bring status and privileges even when a candidate did not immediately receive office.
+- Describes the Qing palace examination under imperial authority and the process by which readers selected papers for the emperor’s final review.
 
 Editorial boundary:
 
-- Do not reduce the eight-legged essay to rote memorization alone; it required composition and command of a demanding formal structure.
-- Do not equate a formally standardized ladder with equal starting conditions.
-- Eligibility and experience varied by time, region, status, and gender; avoid the claim that “anyone could take the exam.”
+- “The emperor appeared at the end of the road” is a child-level description of imperial authority, not a claim that the emperor personally graded every paper from beginning to end.
 
-## Abolition in 1905
-
-Source: “China in the 19th Century,” Columbia University, Asia for Educators
-URL: https://afe.easia.columbia.edu/cosmos/bgov/19th.htm
-Accessed: 2026-08-20
+Source: National Museum of China, “康熙五十四年黄鹤鸣殿试卷”
+URL: https://www.chnmuseum.cn/zp/zpml/201812/t20181218_24849.shtml
+Accessed: 2026-09-06
 
 Supports:
 
-- The Qing reforms of the early 1900s included changes to education, the military, the economy, and government.
-- This reform process culminated in the elimination of the civil service examination system in 1905.
+- Explains the Qing palace-examination ranking and the titles *zhuangyuan*, *bangyan*, and *tanhua* for the top three candidates.
 
 Editorial boundary:
 
-- Abolition had multiple political and educational causes and should not be explained only as a reaction against the eight-legged essay.
-- The article may draw a clearly marked modern comparison about fair selection, but it should not claim that present-day tests directly continue one unchanged imperial institution.
+- The titles describe the first three places in the first rank; the article does not suggest that every successful candidate received one of them.
 
-## Existing Images
+## The End of the Examination System
 
-All four retained images are modern imaginative illustrations, not documentary or archaeological evidence.
+Source: National Museum of China, “宣统元年十八省选拔贡同年全录”
+URL: https://www.chnmuseum.cn/zp/zpml/201812/t20181218_24856.shtml
+Accessed: 2026-09-06
 
-- 1-family-first.webp: Retained as a metaphor for unequal access. Its palace, clothing, and children do not represent one verified early period.
-- 2-han-recommendation.webp: Retained as a visualization of local observation. The helpful act shown would not by itself produce a nomination or office.
-- 3-great-families-front.webp: Retained as a concept image for pedigree influencing ranking. The street queue is not a literal nine-rank procedure.
-- 4-first-exam-paper.webp: Retained only as a concept image for comparing written answers. It must not be used as proof of anonymous Tang testing, equal access, or identical outcomes for rich and poor candidates.
+Supports:
+
+- Records the Qing government’s 1905 decision to stop the imperial civil service examinations and the transitional arrangements that followed.
+
+Editorial boundary:
+
+- The article gives the end date and the turn toward a new school system without reducing the change to one cause or one decree.

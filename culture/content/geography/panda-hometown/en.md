@@ -6,7 +6,7 @@
 
 A newborn giant panda looks nothing like the panda in a picture book. It weighs about as much as a stick of butter. It is pink, nearly hairless, and unable to open its eyes. Beside its mother, it looks unbelievably small.
 
-At the panda breeding center in Chengdu, people care for mothers and cubs. They check the babies, prepare food, and study how to help pandas grow. When a cub's black ears and dark eye patches appear, it slowly begins to look like the panda everyone knows.
+At the panda breeding center in [[Chengdu|chengdu]], people care for mothers and cubs. They check the babies, prepare food, and study how to help pandas grow. When a cub's black ears and dark eye patches appear, it slowly begins to look like the panda everyone knows.
 
 But a breeding center is a little like a special panda nursery. A giant panda's real home is not behind a viewing window or on a wooden climbing frame. To find it, we must leave the city and climb into the misty mountain forests.
 
@@ -14,7 +14,7 @@ But a breeding center is a little like a special panda nursery. A giant panda's 
 
 ## Bamboo Forests in the Mist
 
-Wild giant pandas live in cool, damp mountain forests in central China. Most live in a part of China called Sichuan, with smaller groups in nearby mountains. Tall trees form a roof, while bamboo—the panda's most important food—grows below.
+Wild giant pandas live in cool, damp mountain forests in central China. Most live in a part of China called [[Sichuan|sichuan]], with smaller groups in nearby mountains. Tall trees form a roof, while bamboo—the panda's most important food—grows below.
 
 Sichuan has high mountains, thick bamboo forests, and more wild pandas than anywhere else. That is why people often call it “the home of the giant panda.” Yet the panda's home is not one huge, unbroken forest. Some bamboo forests lie across deep valleys. Others have been separated by roads, farms, or towns.
 

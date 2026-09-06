@@ -6,11 +6,11 @@
 
 One popular version of the legend begins like this:
 
-One day, Zhāng Guǒlǎo, one of the Eight Immortals, rode his donkey to Zhaozhou Bridge (Zhàozhōu Qiáo). The donkey looked ordinary, but its load was not. Inside two bags were the sun and the moon.
+One day, [[Zhang Guolao|zhang-guolao]], one of the [[Eight Immortals|eight-immortals]], rode his donkey to [[Zhaozhou Bridge|zhaozhou-bridge]]. The donkey looked ordinary, but its load was not. Inside two bags were the sun and the moon.
 
-Just then, Lord Chai (Chái Wángyé), a nobleman in the legend, came from the other side, pushing a small cart. The cart looked small, too, but it carried whole mountains! The donkey stepped onto the bridge. The cart rolled forward. The stones began to shake. Lǔ Bān leaped beneath the arch and pushed up with both hands. The bridge held.
+Just then, Lord Chai ([[Chai Wangye|chai-wangye]]), a nobleman in the legend, came from the other side, pushing a small cart. The cart looked small, too, but it carried whole mountains! The donkey stepped onto the bridge. The cart rolled forward. The stones began to shake. [[Lu Ban|lu-ban]] leaped beneath the arch and pushed up with both hands. The bridge held.
 
-People said that a hoof-shaped dent and a long wheel mark were left on the bridge that day. Families around Zhaozhou told the tale for generations, and it also appears in the folk song *Little Cowherd*. This Lǔ Bān is the famous builder from our other story. For centuries, Chinese carpenters and builders have honored him as their great master.
+People said that a hoof-shaped dent and a long wheel mark were left on the bridge that day. Families around [[Zhaozhou|zhaozhou-place]] told the tale for generations, and it also appears in the folk song *Little Cowherd*. This Lu Ban is the famous builder from our other story. For centuries, Chinese carpenters and builders have honored him as their great master.
 
 Could a donkey really carry the sun and moon? Could a small cart hold mountains? Of course not. The storytellers made the loads impossibly heavy. A normal load would make a very boring test for a bridge this strong!
 
@@ -18,11 +18,11 @@ Could a donkey really carry the sun and moon? Could a small cart hold mountains?
 
 ## Who Built the Real Bridge?
 
-The real Zhaozhou Bridge was completed around the year 605, more than fourteen hundred years ago. China was then ruled by the Sui dynasty (Suí Cháo), a short dynasty just before Tang. An old inscription says that a Sui builder named Lǐ Chūn built the bridge.
+The real Zhaozhou Bridge was completed around the year 605, more than fourteen hundred years ago. China was then ruled by the [[Sui dynasty|sui-dynasty]], a short dynasty just before Tang. An old inscription says that a Sui builder named [[Li Chun|li-chun]] built the bridge.
 
-We know very little about Lǐ Chūn's life. He left no diary and no complete set of plans. Lǔ Bān lived more than a thousand years earlier, so he could not have built Zhaozhou Bridge. People simply liked to add remarkable buildings to the stories told about him.
+We know very little about Li Chun's life. He left no diary and no complete set of plans. Lu Ban lived more than a thousand years earlier, so he could not have built Zhaozhou Bridge. People simply liked to add remarkable buildings to the stories told about him.
 
-The area was once called Zhaozhou (Zhàozhōu), which is how Zhaozhou Bridge got its name. It crosses the Xiáo River; *Xiáo Hé* is simply the river's name. The river flows through Hebei Province in northern China. Old writers compared the bridge to a moon rising from clouds or a rainbow in the sky. Its main arch spans about 37 meters, but it does not rise into a tall half circle. The low, gentle roadway made the crossing easier for people, horses, and carts.
+The area was once called Zhaozhou, which is how Zhaozhou Bridge got its name. It crosses the [[Xiao River|xiao-river]]; *Xiao River* is simply the river's name. The river flows through Hebei Province in northern China. Old writers compared the bridge to a moon rising from clouds or a rainbow in the sky. Its main arch spans about 37 meters, but it does not rise into a tall half circle. The low, gentle roadway made the crossing easier for people, horses, and carts.
 
 ---
 

@@ -42,19 +42,19 @@ That is why many Chinese children meet this poem very early. Many children outsi
 page: 2
 layout: text-wrap-image
 heading_zh: 李白醒来时，月光已经走进了房间
-heading_en: When [[Li Bai]] Woke Up, Moonlight Had Already Slipped into the Room
+heading_en: When Li Bai Woke Up, Moonlight Had Already Slipped into the Room
 image: 2-moonlight-in-the-inn.webp
 caption_zh: 小旅舍里很安静。月光从窗边照进来，落在床前的地板上。
 caption_en: The little inn is quiet. Moonlight comes through the window and falls on the floor beside the bed.
 [zh]
-传说李白写这首诗的时候，正在外面旅行。那是一个安静的秋夜，他住在一间小旅舍里，半夜忽然醒了。
+传说[[李白|li-bai]]写这首诗的时候，正在外面旅行。那是一个安静的秋夜，他住在一间小旅舍里，半夜忽然醒了。
 
 月光从窗户照进来，刚好落在床前。人在半梦半醒的时候，很容易看错，于是他先把那片白光当成了地上的霜。
 
 等他清醒一点，再抬头一看，才发现那不是霜，是月亮。
 [/zh]
 [en]
-When [[Li Bai]] wrote this poem, he was away from home and traveling. It was a quiet autumn night, and he was staying in a small inn when he suddenly woke up.
+When [[Li Bai|li-bai]] wrote this poem, he was away from home and traveling. It was a quiet autumn night, and he was staying in a small inn when he suddenly woke up.
 
 Moonlight came through the window and landed right in front of his bed. When a person is half asleep, it is easy to mistake one thing for another, so at first he thought the white patch on the floor was frost.
 

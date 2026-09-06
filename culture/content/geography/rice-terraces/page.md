@@ -28,7 +28,7 @@ caption_en: Water-filled terraces spread across a mountainside in Yunnan like a 
 
 可这不是电子游戏。
 
-在中国云南南部的红河山区，哈尼族人已经营建和维护这些梯田大约 1300 年了。
+在中国[[云南|yunnan]]南部的红河山区，[[哈尼族|hani]]人已经营建和维护这些[[梯田|rice-terraces]]大约 1300 年了。
 
 他们遇到的是一个非常实际的问题：水稻喜欢长在浅浅的水田里，可山坡是斜的。水往山上一倒，转眼就往下面跑。
 
@@ -47,7 +47,7 @@ A whole mountain has been reshaped into thousands of giant steps. One level hold
 
 Except this mountain is real.
 
-In southern *Yúnnán*, China, *Hāní* communities have been building and caring for the Honghe *Hāní* Rice Terraces for about 1,300 years.
+In southern [[Yunnan|yunnan]], China, [[Hani|hani]] communities have been building and caring for the Honghe *Hani* [[Rice Terraces|rice-terraces]] for about 1,300 years.
 
 They had a very practical problem. Rice grows well in shallow, standing water—but mountains are steep. Water poured onto a slope simply runs downhill.
 
@@ -67,8 +67,8 @@ layout: text-wrap-image
 heading_zh: 怎么给整座山送水？
 heading_en: How Do You Water a Whole Mountain?
 image: 2-terrace-water-system.webp
-caption_zh: 这幅插图把山上的森林、村寨、梯田和向下流动的水放在同一个画面里。
-caption_en: This illustration brings the mountain forest, village, terraces, and downhill-flowing water into one view.
+caption_zh: 山上的森林、村寨、梯田和向下流动的水连成一套完整的水路系统。
+caption_en: The mountain forest, village, terraces, and downhill-flowing water form one connected water system.
 [zh]
 答案要从稻田上面的森林开始。
 
@@ -111,8 +111,8 @@ layout: text-wrap-image
 heading_zh: 稻田里为什么会有鱼？
 heading_en: Why Is There a Fish in the Rice Field?
 image: 3-rice-fish-field.webp
-caption_zh: 在这幅近景插图里，稻秧长在浅水中，鱼从植株之间游过。
-caption_en: In this close-up illustration, rice grows in shallow water while fish swim between the plants.
+caption_zh: 稻秧长在浅水中，鱼从植株之间游过。
+caption_en: Rice grows in shallow water while fish swim between the plants.
 [zh]
 水稻田，本来就是一片浅浅的水。所以中国一些地方很早就开始在同一块田里既种水稻，又养鱼。
 
@@ -122,7 +122,7 @@ caption_en: In this close-up illustration, rice grows in shallow water while fis
 
 于是，同一块山地可以做两件事。水面上，长着稻子。水里面，养着鱼。
 
-这种稻鱼共生在中国已经有很长的历史。大约两千年前的汉代陶器上，甚至已经出现了鱼从池塘游向稻田的画面。
+这种稻鱼共生在中国已经有很长的历史。大约两千年前的[[汉代|han-dynasty]]陶器上，甚至已经出现了鱼从池塘游向稻田的画面。
 
 而哈尼梯田传统的农业系统里，也不只有水稻。鱼、鳝鱼、鸭子、水牛和牛，都曾经成为这个山地生活的一部分。
 
@@ -137,7 +137,7 @@ So the same patch of mountain can produce rice above the water and fish below it
 
 This is not a new experiment. Evidence for rice-fish farming in China reaches back about 2,000 years. A clay object from the Han period even shows a fish swimming from a pond toward a rice field.
 
-The *Hāní* terrace landscape has traditionally supported much more than rice. Fish, eels, ducks, cattle, and water buffalo have all been part of the larger farming system.
+The *Hani* terrace landscape has traditionally supported much more than rice. Fish, eels, ducks, cattle, and water buffalo have all been part of the larger farming system.
 
 A rice terrace, then, is not simply a wet step cut into a mountain. It can be a tiny living world.
 [/en]

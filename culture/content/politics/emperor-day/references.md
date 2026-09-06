@@ -2,150 +2,89 @@
 
 This file is for editorial research and does not render on the website.
 
-## Scope: One Emperor, Not a Composite Schedule
-
-Source: Palace Museum, “洪武皇帝”
-URL: https://www.dpm.org.cn/court/lineage/226244.html
-Accessed: 2026-08-20
-
-Source: Metropolitan Museum of Art, “The Yuan Revolution: Art and Dynastic Change”
-URL: https://www.metmuseum.org/exhibitions/listings/2010/yuan-revolution
-Accessed: 2026-08-20
-
-Supports:
-
-- Zhu Yuanzhang was born in 1328 and ruled as the Hongwu emperor from 1368 to 1398.
-- He founded the Ming dynasty; his capital was at Nanjing, before the capital moved to Beijing in the next reign.
-- His early government rebuilt central institutions after the fall of the Yuan and years of warfare.
-
-Editorial boundary:
-
-- The article is about government work under Zhu Yuanzhang, not a universal schedule for all Chinese emperors.
-- Do not import Qing palace routines, Yongzheng's memorial practices, Song court customs, or later Forbidden City spaces into Zhu's daily life.
-- No reliable source reviewed for this article supplies a normal daily clock showing that Zhu rose at 3 a.m., held court at 5 a.m., and worked until 10 p.m. Those claims are omitted.
-
-## Childhood and the Buffalo Illustration
-
-Source: Palace Museum, “洪武皇帝”
-URL: https://www.dpm.org.cn/court/lineage/226244.html
-Accessed: 2026-08-20
-
-Source: Tian Shu, “严明以驭吏 宽裕以待民—朱元璋的为政之道,” published by Nankai University from *Guangming Daily*
-URL: https://news.nankai.edu.cn/rwsd/system/2007/04/29/000006356.shtml
-Accessed: 2026-08-20
-
-Supports:
-
-- Zhu came from an extremely poor family in the region of present-day Fengyang, Anhui.
-- Biographical accounts say that he herded cattle or livestock for others and later entered a monastery.
-- Famine, disease, wandering, rebellion, and warfare formed part of his path before the founding of the Ming.
-
-Editorial boundary:
-
-- `zhu-yuanzhang-herding-buffalo.webp` is a modern imagined illustration, not a historical portrait or a documented scene.
-- The sources do not establish the buffalo's appearance, the exact field, the weather, Zhu's pose, or his private thoughts.
-- The article does not claim that childhood hardship caused one specific later policy or psychological fear.
-
-## How Memorials Reached the Throne
-
-Source: Palace Museum, “中书省”
-URL: https://www.dpm.org.cn/court/system/236406.html
-Accessed: 2026-08-20
-
-Supports:
-
-- The early Ming Central Secretariat received and initially processed court submissions, and its chancellors could review memorials before the emperor.
-- In 1377, sealed submissions were allowed to reach the emperor directly; the Transmission Office received submissions and presented them at morning court.
-- In 1378, the Six Ministries were told to report without first informing the Central Secretariat.
-- These changes preceded the complete abolition of the Central Secretariat in 1380.
-
-Editorial boundary:
-
-- “Follow one report toward the emperor's desk” is a modern explanatory frame, not a reconstruction of one surviving memorial's full journey.
-- *Zhangzou* is simplified as formal reports, requests, or advice. The article does not claim that all Ming documents had one identical form or route.
-- Do not describe a messenger entering the emperor's private room or invent dialogue at court.
-
-## Abolition of the Central Secretariat and Chancellorship
-
-Source: Palace Museum, “中书省”
-URL: https://www.dpm.org.cn/court/system/236406.html
-Accessed: 2026-08-20
-
-Source: Zhang Yu, “明初六部体制的确立与定型,” *史学月刊*, hosted by Henan University
-URL: https://sxyk.henu.edu.cn/info/1014/4333.htm
-Accessed: 2026-08-20
-
-Supports:
-
-- In 1380, following the Hu Weiyong case, Zhu abolished the Central Secretariat and the office of chancellor.
-- The Six Ministries became the highest central administrative departments and reported more directly to the emperor.
-- This was part of a longer institutional change rather than one isolated moment.
-
-Editorial boundary:
-
-- The article explains the administrative result without inventing Zhu's private motive, fear, or emotional state.
-- “Removing an important desk” is a child-friendly metaphor. The Central Secretariat was a large institution, not literally one person at one desk.
-- The abolition concentrated imperial authority, but it did not mean the emperor personally performed every administrative task.
-
 ## The Eight-Day Count in 1384
 
-Source: *Ming Taizu Shilu* (Veritable Records of Ming Taizu), volume 165, Hongwu 17, ninth month, cited in Huang Chang-chien, “論皇明祖訓錄所記明初官制”
-URL: https://www11.ihp.sinica.edu.tw/storage/w2_file/4116KmGGnQv.pdf
-Accessed: 2026-08-20
-
-Source: Chinese Academy of Social Sciences Institute of History, “明初政治新探：以诏令为中心”
-URL: https://lishisuo.cssn.cn/xsyj/ms/202001/t20200116_5078465.shtml
-Accessed: 2026-08-20
+Source: 《明太祖宝训》卷三 (*Collected Instructions of Ming Taizu*, juan 3)
+URL: https://zh.wikisource.org/wiki/%E6%98%8E%E5%A4%AA%E7%A5%96%E5%AF%B6%E8%A8%93/%E5%8D%B73
+Accessed: 2026-09-06
 
 Supports:
 
-- A report by Supervising Secretary Zhang Wenfu counted 1,660 submissions from central and outside offices over eight days, containing 3,391 matters.
-- The primary citation places this report in 1384, the seventeenth year of the Hongwu reign.
-- The original wording distinguishes the number of submissions from the larger number of matters contained within them.
+- The record states that during eight days in 1384, 1,660 memorials contained 3,291 matters.
+- It also records Zhu Yuanzhang's concern that one person could not attend carefully to so much business and that a mistake could harm more than one person.
 
 Editorial boundary:
 
-- This is a tally of documents and matters submitted by government offices. It does not explicitly say Zhu personally read every character or wrote a separate response to every matter.
-- Do not turn an eight-day sample into a claim about every day of Zhu's thirty-year reign.
-- Do not infer an exact daily wake time, bedtime, reading speed, candle count, or page total from these numbers.
-- The CASS web summary appears to contain a date-range typo in one rendering; the article therefore says only “one eight-day stretch in 1384.”
+- Keep the source's distinction between the number of memorials and the number of matters.
+- Do not change 3,291 to 3,391 or treat this eight-day count as an average for the whole reign.
 
-## Assistants, Grand Secretaries, and the Later Cabinet
+## The Central Secretariat
 
-Source: Palace Museum, “内阁”
-URL: https://www.dpm.org.cn/court/system/236394.html
-Accessed: 2026-08-20
+Source: Palace Museum, “中书省”
+URL: https://www.dpm.org.cn/court/system/236406.html
+Accessed: 2026-09-06
 
 Supports:
 
-- During the Hongwu reign, Hanlin scholars and other literary attendants helped the emperor review submissions, record or check decisions, and draft texts according to imperial instructions.
-- The Grand Secretariat developed in stages; its more established form and greater influence belong to later Ming reigns.
+- The Central Secretariat received and initially processed memorials in the early Ming.
+- Zhu Yuanzhang gradually reduced its control over reports and abolished it in 1380.
 
 Editorial boundary:
 
-- Zhu did not literally govern alone after abolishing the chancellor.
-- Early Hongwu assistants should not be described as possessing the full role of later grand secretaries.
-- The Grand Secretariat was not simply the old chancellorship renamed; its formal authority and historical development differed.
+- Describe the institution's coordinating role without implying that it handled every document in exactly the same way.
+- The article's “road” and “chair” language is a child-friendly explanation, not a literal reconstruction of one office.
 
-## Severity and the Limits of the “Hardworking Emperor” Frame
+## The Chancellorship
 
-Source: Metropolitan Museum of Art, “The Yuan Revolution: Art and Dynastic Change”
-URL: https://www.metmuseum.org/exhibitions/listings/2010/yuan-revolution
-Accessed: 2026-08-20
+Source: Palace Museum, “丞相”
+URL: https://www.dpm.org.cn/court/system/236393.html
+Accessed: 2026-09-06
 
 Supports:
 
-- Zhu rebuilt institutions and centralized government, but his later reign also became increasingly despotic.
-- Officials and scholar-artists faced imprisonment and execution, making government service dangerous.
+- Early Ming chancellors led the Central Secretariat and oversaw the Six Ministries.
+- After the Hu Weiyong case, Zhu Yuanzhang abolished the Central Secretariat and chancellorship.
 
 Editorial boundary:
 
-- A high document count proves neither fairness nor good government.
-- Do not romanticize concentrated imperial power as merely “heavy responsibility” or claim that the emperor was the least free person in the empire.
-- The article acknowledges both administrative labor and the danger created by concentrated, harsh rule.
+- The article explains the administrative result without inventing Zhu Yuanzhang's private thoughts beyond the supplied historical record.
+
+## The Six Ministries
+
+Source: Palace Museum, “六部”
+URL: https://www.dpm.org.cn/court/system/236422.html
+Accessed: 2026-09-06
+
+Supports:
+
+- The Six Ministries handled officials, revenue and population records, rites, military affairs, justice, and public works.
+- After the 1380 reform, the Six Ministries answered more directly to the emperor.
+
+Editorial boundary:
+
+- The emperor did not personally perform the ministries' daily administrative work; officials still investigated, prepared, and implemented government business.
+
+## Zhu Yuanzhang's Early Life and Founding of the Ming
+
+Source: Palace Museum, “洪武皇帝”
+URL: https://www.dpm.org.cn/court/lineage/226244.html
+Accessed: 2026-09-06
+
+Source: Palace Museum, “太祖开国”
+URL: https://www.dpm.org.cn/court/event/166593.html
+Accessed: 2026-09-06
+
+Supports:
+
+- Zhu Yuanzhang was born into poverty in 1328 in the area of present-day Anhui, herded livestock, entered a Buddhist temple, rose during the late Yuan rebellions, and founded the Ming dynasty in 1368.
+
+Editorial boundary:
+
+- The childhood illustration is representative rather than a reconstruction of one documented day.
+- Do not claim that one childhood event directly caused a later political decision.
 
 ## Image Notes
 
-- `zhu-yuanzhang-herding-buffalo.webp`: retain as a modern imagined childhood scene; caption must not call it an exact event or identify the animal as a documented landlord's buffalo.
-- `morning-court-ming.webp`: retain as a modern illustration of officials reporting to an emperor; it is not an exact reconstruction of a dated Hongwu audience, its hall, dress, or participants.
-- `late-night-memorials-ming.webp`: retain as a symbolic image of concentrated paperwork; it does not prove a particular night, timetable, document format, or number of papers.
+- `late-night-memorials-ming.webp`: illustrates Zhu Yuanzhang facing a crowded desk of memorials during the 1384 document count.
+- `zhu-yuanzhang-herding-buffalo.webp`: illustrates Zhu Yuanzhang's poor childhood and work herding animals.
+- `morning-court-ming.webp`: illustrates officials bringing government business before the emperor after the chancellorship was abolished.

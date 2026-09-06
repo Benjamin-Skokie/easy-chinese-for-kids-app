@@ -4,7 +4,7 @@
 
 ## The World Falls Apart
 
-Long before Cao Cao was born, Han emperors had ruled much of China. But by the time he was a young man, that huge country was coming apart. The emperor still wore a crown, but he could no longer make leaders across the country obey him.
+Long before [[Cao Cao|cao-cao]] was born, Han emperors had ruled much of China. But by the time he was a young man, that huge country was coming apart. The emperor still wore a crown, but he could no longer make leaders across the country obey him.
 
 Generals raised their own armies and fought over cities, land, and grain. A city might belong to one army in the spring and another by autumn. Farms burned, families fled their homes, and soldiers filled the roads.
 
@@ -14,13 +14,13 @@ Cao Cao grew up in this broken world. One day he would lead great armies and hol
 
 ## Before the Armies
 
-Before Cao Cao commanded great armies, he was a young officer in Luoyang, the capital city. He was responsible for keeping order in one part of town. After a certain hour at night, people were not allowed to wander through the streets.
+Before Cao Cao commanded great armies, he was a young officer in [[Luoyang|luoyang]], the capital city. He was responsible for keeping order in one part of town. After a certain hour at night, people were not allowed to wander through the streets.
 
 One night, the uncle of a powerful palace official broke the rule. Many young officers might have been afraid to punish someone with such an important relative. Cao Cao punished him anyway.
 
 Word spread quickly. Powerful connections would not help someone escape Cao Cao's punishment. Some people respected him for that. Others began to fear him.
 
-A few years later, the Han dynasty fell deeper into chaos. Cao Cao raised an army and became one of many commanders fighting for control.
+A few years later, the [[Han dynasty|han-dynasty]] fell deeper into chaos. Cao Cao raised an army and became one of many commanders fighting for control.
 
 He later brought the young emperor to a city he controlled. The government could once again send out orders in the emperor's name, but the soldiers protecting the emperor answered to Cao Cao. Some people said Cao Cao had rescued the emperor. Others said he was using the emperor's name to increase his own power. There was some truth in both views.
 
@@ -66,7 +66,7 @@ Armor and swords lay around the camp, and flags snapped in the wind. When the fi
 
 Before Cao Cao died, the Han emperor gave him the title King of Wei. An emperor was the highest ruler. A king could control a large region but was still supposed to serve the emperor. Cao Cao never used the title emperor while he was alive. After he died, his son Cao Pi ended the Han dynasty and became emperor of Wei.
 
-Hundreds of years later, novels and plays turned Cao Cao into a famous villain. In Peking opera, the actor playing Cao Cao often wears white face paint. The color tells the audience at once: this character is clever, dangerous, and difficult to trust.
+Hundreds of years later, novels and plays turned Cao Cao into a famous villain. In [[Peking opera|jingju]], the actor playing Cao Cao often wears white face paint. The color tells the audience at once: this character is clever, dangerous, and difficult to trust.
 
 The white face is a sign used onstage. It is not Cao Cao's real face. The Cao Cao of history helped some parts of northern China become stable again, searched for skilled officials, and left behind powerful poems. He also began wars, ordered executions, and caused the deaths of many innocent people.
 

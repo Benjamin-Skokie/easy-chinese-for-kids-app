@@ -19,7 +19,7 @@ layout: text-only
 heading_zh: 梁山到底是什么地方？
 heading_en: What Is Mount Liang?
 [zh]
-《水浒传》的故事发生在九百多年前的北宋末年。皇帝住在遥远的都城，各地官员负责断案、收税和抓人。在小说里，有些官员收了钱就偏袒有权有势的人。普通人如果被他们冤枉，常常连一个可以讲理的地方都找不到。
+[[《水浒传》|water-margin]]的故事发生在九百多年前的北宋末年。皇帝住在遥远的都城，各地官员负责断案、收税和抓人。在小说里，有些官员收了钱就偏袒有权有势的人。普通人如果被他们冤枉，常常连一个可以讲理的地方都找不到。
 
 原著第一回的确有一个奇幻开头。一位官员不听劝告，打开了道观里封闭已久的石室。一百零八道光从里面冲出来，后来变成了三十六位“天罡星”和七十二位“地煞星”。小说把梁山的一百零八位头领和这些星宿连在一起。这是故事的奇幻预告，不是真实历史。
 
@@ -28,7 +28,7 @@ heading_en: What Is Mount Liang?
 《水浒传》的英文名 *Water Margin*，意思接近“水边”。另一个常见译名是 *Outlaws of the Marsh*，也就是“水泊里的逃犯”。接下来，我们看看这些人为什么会一个个来到这里。
 [/zh]
 [en]
-*Water Margin* is set more than 900 years ago, near the end of China's Northern Song dynasty. The emperor lives far away in the capital, while local officials judge cases, collect taxes, and make arrests. In the novel, some officials take money and protect powerful families. When an ordinary person is treated unfairly, there may be no honest official nearby who will listen.
+[[Water Margin|water-margin]] is set more than 900 years ago, near the end of China's [[Northern Song|song-dynasty]] dynasty. The emperor lives far away in the capital, while local officials judge cases, collect taxes, and make arrests. In the novel, some officials take money and protect powerful families. When an ordinary person is treated unfairly, there may be no honest official nearby who will listen.
 
 The original novel really does begin with magic. An official ignores a warning and opens a sealed room in a mountain temple. One hundred and eight lights rush out. The novel later connects the 108 leaders of Mount Liang with 36 Heavenly Spirits and 72 Earthly Spirits. This is a magical preview of the story, not real history.
 

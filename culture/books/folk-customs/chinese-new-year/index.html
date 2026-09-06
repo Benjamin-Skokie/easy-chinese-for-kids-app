@@ -30,11 +30,11 @@
           <p>中国传统历法的新年从正月初一开始。这个历法用月亮安排月份，也会调整月份，让新年总在冬天快结束、春天快到来的时候出现。</p>
           <p>说起这个节日，中国人最自然的一句话常常是：“要过年了！”“年”就是一年中的“年”；“过年”是送走旧年、迎接新年，也就是庆祝中国新年。</p>
           <p>这个节日还有几个常见的名字。“春节”是今天正式、常用的中文名。“中国新年”直接说明这是中国的传统新年，英文常说 <em>Chinese New Year</em>。中文也有人说“农历新年”；英文里的 <em>Lunar New Year</em> 范围更大，还可以包括亚洲其他文化按照传统历法庆祝的新年。名字有重叠，但不同文化的过年方式并不完全一样。</p>
-          <p>可是，中文为什么偏偏说“过”年呢？一个古老的民间故事，把同一个“年”变成了一只怪兽。在故事里，“过年”听起来就像人们平平安安地躲过了年兽。</p>
+          <p>可是，中文为什么偏偏说“过”年呢？一个古老的民间故事，把同一个“年”变成了一只怪兽。在故事里，“过年”听起来就像人们平平安安地躲过了<span class="glossary-entry"><button type="button" class="glossary-term" aria-expanded="false" aria-controls="glossary-nian-monster-1">年兽</button><span id="glossary-nian-monster-1" class="glossary-popover" role="tooltip">Nián · 春节民间故事中害怕红色、火光和响声的怪兽。</span></span>。</p>
           <p>Chinese New Year begins on the first day of the first month in the traditional Chinese calendar. This calendar uses the moon to arrange its months and makes adjustments to keep the new year near the end of winter and the beginning of spring.</p>
           <p>When Chinese people talk about this holiday, they often say, “It is almost time to <em>guò nián</em>!” The word <em>nián</em> means “year.” <em>Guò nián</em> means celebrating the Chinese New Year&#8212;saying goodbye to the old year and welcoming the new one.</p>
           <p>The holiday has several common names. In Chinese, <em>Chūnjié</em> means “Spring Festival” and is the modern official name. <em>Chinese New Year</em> makes clear which tradition we mean. <em>Lunar New Year</em> is a broader English name that can include new-year celebrations in several Asian cultures. The names overlap, but each culture has its own traditions.</p>
-          <p>But why does Chinese say that people “pass through” the year? An old folk tale turns that same word&#8212;Nian&#8212;into a monster. In the story, <em>guò nián</em> sounds almost as if people have made it safely past the monster Nian.</p>
+          <p>But why does Chinese say that people “pass through” the year? An old folk tale turns that same word&#8212;<span class="glossary-entry"><button type="button" class="glossary-term" aria-expanded="false" aria-controls="glossary-nian-monster-2">Nian</button><span id="glossary-nian-monster-2" class="glossary-popover" role="tooltip">Nián · 年兽 · The New Year monster in a folk tale that fears red, firelight, and loud noises.</span></span>&#8212;into a monster. In the story, <em>guò nián</em> sounds almost as if people have made it safely past the monster Nian.</p>
         </div>
       </section>
 
@@ -126,7 +126,8 @@
             if (!button || !popover) return;
 
             const margin = 12;
-            const gap = 10;
+            const compactViewport = window.matchMedia("(max-width: 900px)").matches;
+            const gap = compactViewport ? 8 : 10;
             const buttonRect = button.getBoundingClientRect();
             const popoverRect = popover.getBoundingClientRect();
             const halfWidth = popoverRect.width / 2;
@@ -135,10 +136,12 @@
             const maxCenter = window.innerWidth - margin - halfWidth;
             const left = Math.min(Math.max(buttonCenter, minCenter), maxCenter);
 
-            let side = "above";
-            let top = buttonRect.top - popoverRect.height - gap;
+            let side = compactViewport ? "below" : "above";
+            let top = side === "below"
+              ? buttonRect.bottom + gap
+              : buttonRect.top - popoverRect.height - gap;
 
-            if (top < margin) {
+            if (side === "above" && top < margin) {
               side = "below";
               top = buttonRect.bottom + gap;
             }

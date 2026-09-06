@@ -4,7 +4,7 @@
 
 ## The Most Dangerous Question at a Family Dinner
 
-At a big family dinner, a child is reaching for a dumpling when Mom quietly asks, “Do you remember what to call him?” The chopsticks stop halfway to the plate.
+At a big family dinner, a child is reaching for a dumpling when Mom quietly asks, “Do you remember what to call him?” The [[chopsticks|chopsticks]] stop halfway to the plate.
 
 The child looks across the table. He knows this man is an uncle. Easy. Except in Chinese, “uncle” is not enough. Is he Dad’s older brother? Dad’s younger brother? Mom’s brother? Suddenly, one uncle has turned into a small family-tree puzzle.
 

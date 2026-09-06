@@ -22,14 +22,14 @@ image: call-to-serve.webp
 caption_zh: 木兰安静地坐在织布机旁，父母陪在她身边。
 caption_en: Mulan sits quietly at her loom with her parents nearby.
 [zh]
-一天早上，木兰坐在织布机旁，却没有织布。前一天晚上，一位送信的人带来了皇帝的命令：木兰的父亲必须参军，跟着军队去打仗。
+一天早上，[[木兰|mulan]]坐在织布机旁，却没有织布。前一天晚上，一位送信的人带来了皇帝的命令：木兰的父亲必须参军，跟着军队去打仗。
 
 木兰的弟弟还是个孩子，家里也没有哥哥可以代替父亲。为了这件事，她想了整整一夜。最后，木兰开口了：“我去。我替父亲从军。”
 
 父母惊讶地看着她。前面的路一定很危险，谁也不知道战争会持续多久。可是木兰已经作出了决定。
 [/zh]
 [en]
-One morning, Mulan sat at her loom, but she did not weave. The night before, a messenger had brought an order from the emperor: Mulan's father must join the army and go to war.
+One morning, [[Mulan|mulan]] sat at her loom, but she did not weave. The night before, a messenger had brought an order from the emperor: Mulan's father must join the army and go to war.
 
 Mulan's little brother was still a child, and she had no older brother who could go in her father's place. She had thought about the notice all night. At last, she spoke. “I will go,” Mulan said. “I will take Father's place.”
 
@@ -50,7 +50,7 @@ caption_en: Mulan looks back toward home as she begins her long ride north.
 
 太阳升起时，木兰告别家人，骑马离开。走出村庄以后，她最后回头望了一眼。家人、房屋，还有门边的织布机，全都留在了身后。
 
-木兰骑了一整天，夜里停在黄河边。她再也听不见父母的声音，只听见河水在黑暗中不停地流。
+木兰骑了一整天，夜里停在[[黄河|yellow-river]]边。她再也听不见父母的声音，只听见河水在黑暗中不停地流。
 
 第二天早晨，她继续向北走。道路越过山坡，穿过一道道山口。又到了夜里，远处传来了战马的嘶鸣声。
 
@@ -61,7 +61,7 @@ The next day, Mulan went to the market. She bought a horse, a saddle and blanket
 
 At sunrise, she said goodbye to her family and rode away. Outside the village, Mulan turned for one last look. Her family, her home, and the loom by the door were all behind her now.
 
-She rode until nightfall and stopped beside the Yellow River. She could no longer hear her parents' voices. All she heard was the river rushing through the darkness.
+She rode until nightfall and stopped beside the [[Yellow River|yellow-river]]. She could no longer hear her parents' voices. All she heard was the river rushing through the darkness.
 
 The next morning, Mulan rode on. The road led north, across hills and through mountain passes. By the following night, she could hear the distant cries of warhorses.
 

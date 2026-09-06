@@ -22,7 +22,7 @@ image: leaf-inspired-saw.webp
 caption_zh: 鲁班在山路上仔细观察刚刚划伤手指的锯齿草叶。
 caption_en: On a mountain path, Lu Ban studies the serrated leaf that has just cut his finger.
 [zh]
-一个古老传说讲到，鲁班接到了一件大工程：建造一座宫殿。屋顶需要横梁，大门需要木板，房间还需要一根根柱子。工人们要准备的木头多得吓人。
+一个古老传说讲到，[[鲁班|lu-ban]]接到了一件大工程：建造一座宫殿。屋顶需要横梁，大门需要木板，房间还需要一根根柱子。工人们要准备的木头多得吓人。
 
 从早到晚，山上都是斧头砍树的声音。木屑四处飞，工人们的胳膊越来越酸，可木料堆还是不够大。
 
@@ -33,7 +33,7 @@ caption_en: On a mountain path, Lu Ban studies the serrated leaf that has just c
 鲁班马上松开手。一片草叶竟然把他的手指划破了。
 [/zh]
 [en]
-One old legend says that Lu Ban was once given a huge job: build a palace. The roof needed beams. The doors needed boards. The rooms needed row after row of wooden columns. His workers needed more wood than they could cut.
+One old legend says that [[Lu Ban|lu-ban]] was once given a huge job: build a palace. The roof needed beams. The doors needed boards. The rooms needed row after row of wooden columns. His workers needed more wood than they could cut.
 
 From morning until night, axes thudded against trees. Chips flew. Arms grew sore. Still, the pile of logs was not nearly big enough.
 

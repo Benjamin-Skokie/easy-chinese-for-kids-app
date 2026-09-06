@@ -17,21 +17,21 @@ title_en: Why Isn't a Pagoda Just a Tall Building?
 page: 1
 layout: text-wrap-image
 heading_zh: 为什么中文叫“宝塔”？
-heading_en: Why Is It Called Bǎotǎ in Chinese?
+heading_en: Why Is It Called Baota in Chinese?
 image: pagoda-odd-levels.webp
 caption_zh: 中国宝塔有许多样子。有的能登上去，有的内部很小，还有的接近实心。
 caption_en: Chinese pagodas come in many forms. Some can be climbed, while others have little space inside or are nearly solid.
 [zh]
-“宝塔”的“宝”，就是“宝贝”的“宝”。但它不是说每座塔里都堆满了金银珠宝。在古代佛教用语里，“宝”可以表示珍贵、神圣和尊敬。塔里常常保存舍利、佛像或经书，所以人们也把佛塔尊称为“宝塔”。
+“宝塔”的“宝”，就是“宝贝”的“宝”。但它不是说每座塔里都堆满了金银珠宝。在古代佛教用语里，“宝”可以表示珍贵、神圣和尊敬。塔里常常保存[[舍利|relics]]、佛像或经书，所以人们也把佛塔尊称为“宝塔”。
 
 英文用 *pagoda* 称呼这种亚洲建筑，不会把“宝”和“塔”一个字一个字翻译，所以它并不叫 *treasure tower*。
 
-宝塔也不是中国独有的建筑。它的故事从古代印度开始。早期的*窣堵波*（stupa）通常是圆顶、接近实心的建筑，里面可能放着一个小盒子，保存舍利（shèlì）。舍利可能是佛陀或受人尊敬的僧人留下的骨灰、骨片或物品。就连中文的“塔”字，也来自 *stupa* 这个外来名称。
+宝塔也不是中国独有的建筑。它的故事从古代印度开始。早期的*窣堵波*（stupa）通常是圆顶、接近实心的建筑，里面可能放着一个小盒子，保存舍利。舍利可能是佛陀或受人尊敬的僧人留下的骨灰、骨片或物品。就连中文的“塔”字，也来自 *stupa* 这个外来名称。
 
 佛教传到亚洲不同地方后，宝塔也长出了不同模样。中国工匠把它和自己熟悉的高楼、木屋顶放在一起。经过很长时间，圆圆的窣堵波发展出了许多一层层向上升起的中国宝塔。
 [/zh]
 [en]
-One common Chinese name for a Buddhist pagoda is *bǎotǎ*. The first part, *bǎo*, is the same word used for “treasure.” But this does not mean that every pagoda was filled with gold and jewels. In older Buddhist language, *bǎo* could describe something precious, sacred, and worthy of respect. Pagodas often held relics, Buddhist images, or Buddhist texts, so people also called a Buddhist tower a *bǎotǎ*.
+One common Chinese name for a Buddhist pagoda is *bǎotǎ*. The first part, *bǎo*, is the same word used for “treasure.” But this does not mean that every pagoda was filled with gold and jewels. In older Buddhist language, *bǎo* could describe something precious, sacred, and worthy of respect. Pagodas often held [[relics|relics]], Buddhist images, or Buddhist texts, so people also called a Buddhist tower a *bǎotǎ*.
 
 English uses the word *pagoda* for this kind of Asian building. It does not translate the two Chinese characters one by one, so we do not normally call it a “treasure tower.”
 
@@ -71,14 +71,14 @@ image: yingxian-wooden-pagoda.webp
 caption_zh: 应县木塔外面有五层楼身、六道屋檐，里面还有四个看不见的结构层。
 caption_en: Yingxian Wooden Pagoda has five visible stories, six rows of eaves, and four hidden structural levels.
 [zh]
-山西（Shānxī）是中国北部的一个省，有点像美国的一个州。应县（Yìngxiàn）是那里的一座县城。城里有一座建成于1056年的应县木塔。它大约有二十层楼那么高，主要结构用木头建成。站在塔下抬头看，层层屋檐像一把把大伞张开。
+[[山西|shanxi]]是中国北部的一个省，有点像美国的一个州。[[应县|yingxian]]是那里的一座县城。城里有一座建成于1056年的应县木塔。它大约有二十层楼那么高，主要结构用木头建成。站在塔下抬头看，层层屋檐像一把把大伞张开。
 
 你可能会数出六道屋檐，可是木塔外面只有五层楼身。为什么多出一道？因为第一层有上下两道屋檐。塔里还有四个藏在可见楼层之间的结构层，所以内部一共能分出九层。这些暗层里有许多柱子、横梁和斜撑，帮助整座塔连成一个结实的木架。
 
 木塔能保存到今天，不是只靠一种神奇的接头。八角形的塔身、里外两圈柱子、木梁和支撑都在一起工作。一代代人也不断检查和维修。今天有些部分已经倾斜或损坏，专家仍在监测和保护它，尽量不让问题继续加重。
 [/zh]
 [en]
-Shānxī is a province in northern China, a large area somewhat like a state. Yìngxiàn is a county there. Its famous wooden pagoda was completed in 1056. The tower is about as tall as a twenty-story building and is built mainly from wood. From below, its roofs spread outward like a stack of enormous umbrellas.
+[[Shanxi|shanxi]] is a province in northern China, a large area somewhat like a state. [[Yingxian|yingxian]] is a county there. Its famous wooden pagoda was completed in 1056. The tower is about as tall as a twenty-story building and is built mainly from wood. From below, its roofs spread outward like a stack of enormous umbrellas.
 
 You may count six rows of eaves, but only five main stories are visible outside. Why is there an extra row? The first story has two rows of eaves, one above the other. Four more structural levels are hidden between the visible stories, making nine levels inside. Posts, beams, and sloping braces in these hidden levels help tie the tower into one strong wooden frame.
 
@@ -92,28 +92,28 @@ layout: text-wrap-image
 heading_zh: 大雁塔为什么和一次旅行有关？
 heading_en: Why Is the Giant Wild Goose Pagoda Part of a Travel Story?
 image: giant-wild-goose-pagoda.webp
-caption_zh: 大雁塔最初用来保存玄奘（Xuánzàng）从印度带回的佛教经书和其他重要物品。
-caption_en: The Giant Wild Goose Pagoda was first built to hold Buddhist texts and other important objects that Xuánzàng brought from India.
+caption_zh: 大雁塔最初用来保存玄奘从印度带回的佛教经书和其他重要物品。
+caption_en: The Giant Wild Goose Pagoda was first built to hold Buddhist texts and other important objects that Xuanzang brought from India.
 [zh]
-一千三百多年前，僧人玄奘（Xuánzàng）从长安（Cháng’ān）出发，去印度学习佛教。长安是唐朝的都城，就是今天的西安（Xī’ān）。玄奘走的是陆路，要穿过沙漠和高山，许多年后才回到中国。
+一千三百多年前，僧人[[玄奘|xuanzang]]从[[长安|changan]]出发，去印度学习佛教。长安是[[唐朝|tang-dynasty]]的都城，就是今天的[[西安|xian]]。玄奘走的是陆路，要穿过沙漠和高山，许多年后才回到中国。
 
-玄奘带回了数百部用梵文写成的佛教经书，还有佛像和舍利。他需要一个安全的地方保存它们，也组织许多人把经文翻译成中文。652年，一座五层砖塔在大慈恩寺（Dà Cí’ēn Sì）里建了起来，后来被叫作大雁塔。
+玄奘带回了数百部用梵文写成的佛教经书，还有佛像和舍利。他需要一个安全的地方保存它们，也组织许多人把经文翻译成中文。652年，一座五层砖塔在[[大慈恩寺|great-cien-temple]]里建了起来，后来被叫作大雁塔。
 
 最早的塔后来损坏了，后人曾重建、加高和多次修理。今天的大雁塔是一座七层砖塔。
 
-玄奘的旅行真的发生过。几百年后，讲故事的人把这段经历变成了一场神奇冒险。在小说《西游记》里，唐僧和孙悟空、猪八戒一起旅行，路上还遇到了许多妖怪。
+玄奘的旅行真的发生过。几百年后，讲故事的人把这段经历变成了一场神奇冒险。在小说[[《西游记》|journey-to-the-west]]里，[[唐僧|tang-monk]]和[[孙悟空|sun-wukong]]、[[猪八戒|zhu-bajie]]一起旅行，路上还遇到了许多妖怪。
 
 真实的玄奘没有这些神奇伙伴。在一部分路程中，他与向导和其他同行者一起走。马和其他驮东西的动物也帮忙运送行李和经书。他们一起把数百部佛教经书带回了中国。
 [/zh]
 [en]
-More than thirteen hundred years ago, a monk named Xuánzàng left Cháng’ān and traveled to India to study Buddhism. Cháng’ān was the capital of Tang China. Today, the city is called Xī’ān. Xuánzàng traveled over land, crossing deserts and high mountains, and did not return to China for many years.
+More than thirteen hundred years ago, a monk named [[Xuanzang|xuanzang]] left [[Chang'an|changan]] and traveled to India to study Buddhism. Chang'an was the capital of [[Tang China|tang-dynasty]]. Today, the city is called [[Xi'an|xian]]. Xuanzang traveled over land, crossing deserts and high mountains, and did not return to China for many years.
 
-Xuánzàng brought back hundreds of Buddhist texts written in Sanskrit, along with Buddhist images and relics. He needed a safe place to keep them, and he led a large team that translated the writings into Chinese. In 652, a five-story brick tower was built at Great Ci’en Temple (Dà Cí’ēn Sì). It later became known as the Giant Wild Goose Pagoda.
+Xuanzang brought back hundreds of Buddhist texts written in Sanskrit, along with Buddhist images and relics. He needed a safe place to keep them, and he led a large team that translated the writings into Chinese. In 652, a five-story brick tower was built at [[Great Ci’en Temple|great-cien-temple]]. It later became known as the Giant Wild Goose Pagoda.
 
 The first tower was later damaged. People rebuilt it, made it taller, and repaired it many times. Today, the Giant Wild Goose Pagoda is a seven-story brick tower.
 
-Xuánzàng's journey really happened. Centuries later, storytellers turned it into a magical adventure. In the novel *Journey to the West*, the Tang Monk travels with the Monkey King and Pigsy and meets many monsters along the way.
+Xuanzang's journey really happened. Centuries later, storytellers turned it into a magical adventure. In the novel [[Journey to the West|journey-to-the-west]], the [[Tang Monk|tang-monk]] travels with the Monkey King and Pigsy and meets many monsters along the way.
 
-The real Xuánzàng had no magical companions. On some parts of the trip, he traveled with guides and other people. Horses and other animals also helped carry supplies and books. Together, they brought hundreds of Buddhist texts back to China.
+The real Xuanzang had no magical companions. On some parts of the trip, he traveled with guides and other people. Horses and other animals also helped carry supplies and books. Together, they brought hundreds of Buddhist texts back to China.
 [/en]
 [/section]

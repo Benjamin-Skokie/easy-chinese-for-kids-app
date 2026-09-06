@@ -116,6 +116,10 @@ test("Privacy and Safety opens a plain-language family page", () => {
   assert.equal((authorPage.match(/assets\/photos\/benjamin-sun-portrait\.webp\?v=20260830-square-v1/g) ?? []).length, 1);
   assert.equal((authorPage.match(/width="582" height="582"/g) ?? []).length, 1);
   assert.match(authorPage, /gpt-4o-mini-tts/);
+  assert.match(authorPage, /<strong>43<\/strong><span>learning topics<\/span>/);
+  assert.match(authorPage, /<strong>56<\/strong><span>textbook lessons aligned<\/span>/);
+  assert.match(authorPage, /<strong>109<\/strong><span>culture stories<\/span>/);
+  assert.match(authorPage, /<strong>650\+<\/strong><span>referenced visual assets<\/span>/);
   assert.match(authorPage, /1,244/);
   assert.match(privacyPage, /No accounts/);
   assert.match(privacyPage, /the site is publicly available/);
@@ -644,8 +648,10 @@ test("the landing hero features six scrollable culture-story highlights", () => 
   assert.match(html, /culture\/books\/literature\/journey-to-west\/index\.html/);
   assert.match(html, /culture\/books\/literature\/journey-to-west\/images\/3-great-sage-at-heaven-gate\.webp/);
   assert.match(html, /culture\/books\/geography\/rice-terraces\/index\.html/);
-  assert.match(html, /culture\/books\/figures\/mulan\/index\.html/);
+  assert.match(html, /culture\/books\/economy\/tea\/index\.html/);
+  assert.match(html, /culture\/books\/economy\/tea\/images\/5-1-whisking-tea\.webp/);
   assert.match(html, /culture\/books\/politics\/emperor-day\/index\.html\?reading=story/);
+  assert.match(html, /culture\/books\/politics\/emperor-day\/images\/morning-court-ming\.webp/);
   assert.match(carouselSource, /viewport\.scrollTo/);
 });
 
