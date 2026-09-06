@@ -2,9 +2,9 @@
 title_zh: 秦始皇：想让所有规则都一样的皇帝
 title_en: Qin Shi Huang: The Emperor Who Wanted Everything to Match
 slug: qin-shi-huang
-category: figures
+category: politics
 difficulty: 中等
-back_href: ../../../../index.html#culture-figures
+back_href: ../../../../index.html#culture-politics
 style_notes: "面向 6–10 岁儿童的单一故事版本；英文为主要阅读文本，中文为自然、简明的参考稿。"
 ---
 

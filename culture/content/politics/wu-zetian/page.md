@@ -2,9 +2,9 @@
 title_zh: 武则天：从宫中少女到皇帝
 title_en: Wu Zetian: The Girl Who Became Emperor
 slug: wu-zetian
-category: figures
+category: politics
 difficulty: 中等
-back_href: ../../../../index.html#culture-figures
+back_href: ../../../../index.html#culture-politics
 style_notes: "面向 6–10 岁儿童的单一故事版本；英文为主要阅读文本，中文为自然、简明的参考稿。"
 ---
 

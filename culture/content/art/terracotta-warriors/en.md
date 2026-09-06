@@ -6,7 +6,7 @@
 
 In 1974, farmers digging a well near [[Xi’an|xian]] found broken pieces of clay. Archaeologists followed the clues and uncovered something much larger: pits filled with rows of life-size clay soldiers, along with horses and weapons.
 
-These warriors were made for the enormous mausoleum of [[Qin Shi Huang|qin-shi-huang]], China’s first emperor. We tell more of his story in our [article about Qin Shi Huang](../../figures/qin-shi-huang/index.html).
+These warriors were made for the enormous mausoleum of [[Qin Shi Huang|qin-shi-huang]], China’s first emperor. We tell more of his story in our [article about Qin Shi Huang](../../politics/qin-shi-huang/index.html).
 
 The three main pits are estimated to contain thousands of figures—often rounded to about 8,000.
 

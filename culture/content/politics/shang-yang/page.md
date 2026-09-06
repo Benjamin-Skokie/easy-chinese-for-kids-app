@@ -2,9 +2,9 @@
 title_zh: 商鞅和那根没人敢搬的木头
 title_en: Shang Yang and the Log No One Wanted to Move
 slug: shang-yang
-category: figures
+category: politics
 difficulty: 中等
-back_href: ../../../../index.html#culture-figures
+back_href: ../../../../index.html#culture-politics
 style_notes: "面向 6–10 岁儿童的单一故事版本；英文为主要阅读文本，中文为自然、简明的参考稿。"
 ---
 

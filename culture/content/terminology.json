@@ -2220,5 +2220,13 @@
     "note_zh": "孟元老回忆北宋开封城市生活的著作。",
     "note_en": "Meng Yuanlao's vivid account of urban life in Northern Song Kaifeng.",
     "replace_en": ["Dōngjīng Mèng Huá Lù", "Dōngjīng Meng Huá Lù"]
+  },
+  "zhan-guo-ce": {
+    "zh": "《战国策》",
+    "en": "Strategies of the Warring States",
+    "pinyin": "Zhànguó Cè",
+    "kind": "work",
+    "note_zh": "汇集战国时期各国谋略、游说和政治故事的一部古书。",
+    "note_en": "An ancient collection of political arguments, strategies, and stories from the Warring States period."
   }
 }

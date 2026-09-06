@@ -3217,6 +3217,43 @@ window.NIHAO_CULTURE_SOURCES = [
   {
     "category": "folk-tales",
     "categoryName": "Folk Tales",
+    "slug": "drawing-legs-on-a-snake",
+    "title": "画蛇添足",
+    "titleEn": "Drawing Legs on a Snake",
+    "storyPath": "../../culture/books/folk-tales/drawing-legs-on-a-snake/",
+    "groups": [
+      {
+        "title": "《战国策·齐策二》",
+        "sources": [
+          {
+            "label": "Chinese Text Project, Strategies of the Warring States, “Strategies of Qi II”",
+            "url": "https://ctext.org/zhan-guo-ce/qi-er/zh"
+          }
+        ]
+      },
+      {
+        "title": "The larger Zhāo Yáng episode",
+        "sources": [
+          {
+            "label": "Chinese Text Project, parallel text for the Zhāo Yáng passage",
+            "url": "https://ctext.org/text.pl?if=gb&node=49761&show=parallel"
+          }
+        ]
+      },
+      {
+        "title": "《战国策（士礼居丛书本）·齐二》",
+        "sources": [
+          {
+            "label": "Chinese Wikisource",
+            "url": "https://zh.wikisource.org/zh-hans/%E6%88%B0%E5%9C%8B%E7%AD%96/%E5%8D%B709"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "folk-tales",
+    "categoryName": "Folk Tales",
     "slug": "add-the-eyes-and-the-whole-thing-comes-alive",
     "title": "画龙点睛",
     "titleEn": "Add the Eyes, and the Whole Thing Comes Alive",
@@ -4085,6 +4122,38 @@ window.NIHAO_CULTURE_SOURCES = [
   {
     "category": "politics",
     "categoryName": "Government & Society",
+    "slug": "shang-yang",
+    "title": "商鞅和那根没人敢搬的木头",
+    "titleEn": "Shang Yang and the Log No One Wanted to Move",
+    "storyPath": "../../culture/books/politics/shang-yang/",
+    "groups": [
+      {
+        "title": "Sima Qian, *Records of the Grand Historian*, “Biography of Lord Shang”",
+        "sources": [
+          {
+            "label": "ctext.org",
+            "url": "https://ctext.org/shiji/shang-jun-lie-zhuan/zhs"
+          }
+        ]
+      },
+      {
+        "title": "Research on Shang Yang's reforms and Qin's growing power",
+        "sources": [
+          {
+            "label": "academic.oup.com",
+            "url": "https://academic.oup.com/edited-volume/34296/chapter-abstract/290749611"
+          },
+          {
+            "label": "pmc.ncbi.nlm.nih.gov",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4522747/"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "politics",
+    "categoryName": "Government & Society",
     "slug": "yu-the-great",
     "title": "大禹治水：给洪水找一条路",
     "titleEn": "Yu the Great: Making a Path for the Water",
@@ -4191,6 +4260,65 @@ window.NIHAO_CULTURE_SOURCES = [
           {
             "label": "Palace Museum, “太祖开国”",
             "url": "https://www.dpm.org.cn/court/event/166593.html"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "politics",
+    "categoryName": "Government & Society",
+    "slug": "wu-zetian",
+    "title": "武则天：从宫中少女到皇帝",
+    "titleEn": "Wu Zetian: The Girl Who Became Emperor",
+    "storyPath": "../../culture/books/politics/wu-zetian/",
+    "groups": [
+      {
+        "title": "Smithsonian National Museum of Asian Art, Chinese history timeline",
+        "sources": [
+          {
+            "label": "asia-archive.si.edu",
+            "url": "https://asia-archive.si.edu/learn/for-educators/teaching-china-with-the-smithsonian/interactives/timelines/timeline-of-chinese-history-art-and-culture/"
+          }
+        ]
+      },
+      {
+        "title": "*Old Book of Tang*, “Annals of Empress Zetian”",
+        "sources": [
+          {
+            "label": "zh.wikisource.org",
+            "url": "https://zh.wikisource.org/zh-hant/%E8%88%8A%E5%94%90%E6%9B%B8/%E5%8D%B76"
+          }
+        ]
+      },
+      {
+        "title": "Victor Xiong, Ohio State University Origins, “Wu Zetian: The Only Woman Emperor in Chinese History”",
+        "sources": [
+          {
+            "label": "origins.osu.edu",
+            "url": "https://origins.osu.edu/index.php/read/wu-zetian-woman-emperor-china"
+          }
+        ]
+      },
+      {
+        "title": "Research on appointments and the four petition boxes",
+        "sources": [
+          {
+            "label": "xsyk021.com",
+            "url": "https://www.xsyk021.com/article/id/890d4542-aed3-47ce-bd9c-f75b35f9cfa8?pageType=en"
+          },
+          {
+            "label": "www1.ihp.sinica.edu.tw",
+            "url": "https://www1.ihp.sinica.edu.tw/en/Publications/LegalHistoryStudy/1180/Article/507"
+          }
+        ]
+      },
+      {
+        "title": "Qianling and the Stone with No Words",
+        "sources": [
+          {
+            "label": "chinaheritagequarterly.org",
+            "url": "https://www.chinaheritagequarterly.org/articles.php?issue=008&searchterm=008_qianling.inc"
           }
         ]
       }
@@ -4354,6 +4482,81 @@ window.NIHAO_CULTURE_SOURCES = [
           {
             "label": "National Museum of China, “宣统元年十八省选拔贡同年全录”",
             "url": "https://www.chnmuseum.cn/zp/zpml/201812/t20181218_24856.shtml"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "politics",
+    "categoryName": "Government & Society",
+    "slug": "qin-shi-huang",
+    "title": "秦始皇：想让所有规则都一样的皇帝",
+    "titleEn": "Qin Shi Huang: The Emperor Who Wanted Everything to Match",
+    "storyPath": "../../culture/books/politics/qin-shi-huang/",
+    "groups": [
+      {
+        "title": "Sima Qian, *Records of the Grand Historian*, “Basic Annals of the First Emperor of Qin”",
+        "sources": [
+          {
+            "label": "ctext.org",
+            "url": "https://ctext.org/shiji/qin-shi-huang-ben-ji/zh"
+          },
+          {
+            "label": "ctext.org",
+            "url": "https://ctext.org/shiji/qin-shi-huang-ben-ji/ens"
+          }
+        ]
+      },
+      {
+        "title": "Sima Qian, *Records of the Grand Historian*, “Biographies of the Assassins”",
+        "sources": [
+          {
+            "label": "ctext.org",
+            "url": "https://ctext.org/shiji/ci-ke-lie-zhuan/zh"
+          },
+          {
+            "label": "ctext.org",
+            "url": "https://ctext.org/shiji/ci-ke-lie-zhuan/zhs"
+          }
+        ]
+      },
+      {
+        "title": "The Metropolitan Museum of Art, “Qin Dynasty (221–206 B.C.)” and “Age of Empires”",
+        "sources": [
+          {
+            "label": "metmuseum.org",
+            "url": "https://www.metmuseum.org/essays/qin-dynasty-221-206-b-c"
+          },
+          {
+            "label": "metmuseum.org",
+            "url": "https://www.metmuseum.org/exhibitions/listings/2017/age-of-empires/exhibition-galleries"
+          }
+        ]
+      },
+      {
+        "title": "Research on Qin frontier walls and forced labor",
+        "sources": [
+          {
+            "label": "pmc.ncbi.nlm.nih.gov",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4522747/"
+          },
+          {
+            "label": "cambridge.org",
+            "url": "https://www.cambridge.org/core/journals/journal-of-chinese-history/article/making-use-of-the-land-the-political-ecology-of-chinas-first-empire/5C80E8CC40548B2953F72246C49A6CF7"
+          },
+          {
+            "label": "discovery.ucl.ac.uk",
+            "url": "https://discovery.ucl.ac.uk/id/eprint/10216532"
+          }
+        ]
+      },
+      {
+        "title": "UNESCO World Heritage Centre, “Mausoleum of the First Qin Emperor”",
+        "sources": [
+          {
+            "label": "whc.unesco.org",
+            "url": "https://whc.unesco.org/en/list/441/"
           }
         ]
       }
@@ -5518,38 +5721,6 @@ window.NIHAO_CULTURE_SOURCES = [
   {
     "category": "figures",
     "categoryName": "People",
-    "slug": "shang-yang",
-    "title": "商鞅和那根没人敢搬的木头",
-    "titleEn": "Shang Yang and the Log No One Wanted to Move",
-    "storyPath": "../../culture/books/figures/shang-yang/",
-    "groups": [
-      {
-        "title": "Sima Qian, *Records of the Grand Historian*, “Biography of Lord Shang”",
-        "sources": [
-          {
-            "label": "ctext.org",
-            "url": "https://ctext.org/shiji/shang-jun-lie-zhuan/zhs"
-          }
-        ]
-      },
-      {
-        "title": "Research on Shang Yang's reforms and Qin's growing power",
-        "sources": [
-          {
-            "label": "academic.oup.com",
-            "url": "https://academic.oup.com/edited-volume/34296/chapter-abstract/290749611"
-          },
-          {
-            "label": "pmc.ncbi.nlm.nih.gov",
-            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4522747/"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "category": "figures",
-    "categoryName": "People",
     "slug": "cao-cao",
     "title": "曹操：带兵的诗人",
     "titleEn": "Cao Cao: The Commander with a Poet's Brush",
@@ -5799,140 +5970,6 @@ window.NIHAO_CULTURE_SOURCES = [
           {
             "label": "rpo.library.utoronto.ca",
             "url": "https://rpo.library.utoronto.ca/poets/li-bai"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "category": "figures",
-    "categoryName": "People",
-    "slug": "wu-zetian",
-    "title": "武则天：从宫中少女到皇帝",
-    "titleEn": "Wu Zetian: The Girl Who Became Emperor",
-    "storyPath": "../../culture/books/figures/wu-zetian/",
-    "groups": [
-      {
-        "title": "Smithsonian National Museum of Asian Art, Chinese history timeline",
-        "sources": [
-          {
-            "label": "asia-archive.si.edu",
-            "url": "https://asia-archive.si.edu/learn/for-educators/teaching-china-with-the-smithsonian/interactives/timelines/timeline-of-chinese-history-art-and-culture/"
-          }
-        ]
-      },
-      {
-        "title": "*Old Book of Tang*, “Annals of Empress Zetian”",
-        "sources": [
-          {
-            "label": "zh.wikisource.org",
-            "url": "https://zh.wikisource.org/zh-hant/%E8%88%8A%E5%94%90%E6%9B%B8/%E5%8D%B76"
-          }
-        ]
-      },
-      {
-        "title": "Victor Xiong, Ohio State University Origins, “Wu Zetian: The Only Woman Emperor in Chinese History”",
-        "sources": [
-          {
-            "label": "origins.osu.edu",
-            "url": "https://origins.osu.edu/index.php/read/wu-zetian-woman-emperor-china"
-          }
-        ]
-      },
-      {
-        "title": "Research on appointments and the four petition boxes",
-        "sources": [
-          {
-            "label": "xsyk021.com",
-            "url": "https://www.xsyk021.com/article/id/890d4542-aed3-47ce-bd9c-f75b35f9cfa8?pageType=en"
-          },
-          {
-            "label": "www1.ihp.sinica.edu.tw",
-            "url": "https://www1.ihp.sinica.edu.tw/en/Publications/LegalHistoryStudy/1180/Article/507"
-          }
-        ]
-      },
-      {
-        "title": "Qianling and the Stone with No Words",
-        "sources": [
-          {
-            "label": "chinaheritagequarterly.org",
-            "url": "https://www.chinaheritagequarterly.org/articles.php?issue=008&searchterm=008_qianling.inc"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "category": "figures",
-    "categoryName": "People",
-    "slug": "qin-shi-huang",
-    "title": "秦始皇：想让所有规则都一样的皇帝",
-    "titleEn": "Qin Shi Huang: The Emperor Who Wanted Everything to Match",
-    "storyPath": "../../culture/books/figures/qin-shi-huang/",
-    "groups": [
-      {
-        "title": "Sima Qian, *Records of the Grand Historian*, “Basic Annals of the First Emperor of Qin”",
-        "sources": [
-          {
-            "label": "ctext.org",
-            "url": "https://ctext.org/shiji/qin-shi-huang-ben-ji/zh"
-          },
-          {
-            "label": "ctext.org",
-            "url": "https://ctext.org/shiji/qin-shi-huang-ben-ji/ens"
-          }
-        ]
-      },
-      {
-        "title": "Sima Qian, *Records of the Grand Historian*, “Biographies of the Assassins”",
-        "sources": [
-          {
-            "label": "ctext.org",
-            "url": "https://ctext.org/shiji/ci-ke-lie-zhuan/zh"
-          },
-          {
-            "label": "ctext.org",
-            "url": "https://ctext.org/shiji/ci-ke-lie-zhuan/zhs"
-          }
-        ]
-      },
-      {
-        "title": "The Metropolitan Museum of Art, “Qin Dynasty (221–206 B.C.)” and “Age of Empires”",
-        "sources": [
-          {
-            "label": "metmuseum.org",
-            "url": "https://www.metmuseum.org/essays/qin-dynasty-221-206-b-c"
-          },
-          {
-            "label": "metmuseum.org",
-            "url": "https://www.metmuseum.org/exhibitions/listings/2017/age-of-empires/exhibition-galleries"
-          }
-        ]
-      },
-      {
-        "title": "Research on Qin frontier walls and forced labor",
-        "sources": [
-          {
-            "label": "pmc.ncbi.nlm.nih.gov",
-            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4522747/"
-          },
-          {
-            "label": "cambridge.org",
-            "url": "https://www.cambridge.org/core/journals/journal-of-chinese-history/article/making-use-of-the-land-the-political-ecology-of-chinas-first-empire/5C80E8CC40548B2953F72246C49A6CF7"
-          },
-          {
-            "label": "discovery.ucl.ac.uk",
-            "url": "https://discovery.ucl.ac.uk/id/eprint/10216532"
-          }
-        ]
-      },
-      {
-        "title": "UNESCO World Heritage Centre, “Mausoleum of the First Qin Emperor”",
-        "sources": [
-          {
-            "label": "whc.unesco.org",
-            "url": "https://whc.unesco.org/en/list/441/"
           }
         ]
       }
