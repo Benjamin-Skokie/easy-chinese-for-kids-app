@@ -8,7 +8,7 @@ A square of red paper is folded in half. Snip, snip. The scissors cut a few curv
 
 Then the paper opens. Two wings spread out at the same time. There are feelers, little spaces inside the wings, and matching curves on both sides. A butterfly has appeared—but the cutter never cut one wing and then the other. The scissors passed through both layers of folded paper at once. When the fold opened, each cut appeared on both sides.
 
-That surprise is one of the delights of Chinese paper-cutting, or **jiǎnzhǐ (剪纸)**. The finished picture comes last. The person holding the scissors has to imagine it first.
+That surprise is one of the delights of [[Chinese paper-cutting|jianzhǐ]]. The finished picture comes last. The person holding the scissors has to imagine it first.
 
 ---
 
@@ -48,4 +48,4 @@ There were no finished butterflies printed inside it. What was hidden was the pl
 
 Only when the sheet opens can you see all those choices at once.
 
-That is the little magic trick of **jiǎnzhǐ**: the picture appears last, but someone had to see it before it was there.
+That is the little magic trick of **Chinese paper-cutting**: the picture appears last, but someone had to see it before it was there.

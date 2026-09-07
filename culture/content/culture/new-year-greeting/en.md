@@ -6,7 +6,7 @@
 
 It is New Year’s morning. You have new clothes on. Your grandparents are smiling. You have even remembered what to say. “Happy New Year!” There is just one small problem. What are your hands supposed to do?
 
-In many Chinese families, children greet older relatives first at New Year. Some simply say their good wishes. Some bow a little. Others bring both hands together in front of the chest in a traditional greeting called *gǒngshǒu lǐ*.
+In many Chinese families, children greet older relatives first at New Year. Some simply say their good wishes. Some bow a little. Others bring both hands together in front of the chest in a traditional greeting called [[gongshou greeting|gongshou-li]].
 
 It looks simple—until you try it. One hand goes here. The other goes there. Do you make a fist? Which hand is outside? Are you supposed to bow too? Suddenly, saying “Happy New Year” seems like the easy part.
 
@@ -28,7 +28,7 @@ Today, families do not all follow the old hand positions exactly. The important 
 
 Now the greeting is finished. Grandpa smiles. Grandma reaches for something red. Ah. Here comes the part many children have been waiting for.
 
-A *hóngbāo* is a red envelope containing money. At New Year, older family members often give one to children. The money is also called *yāsuìqián*. There are old folk stories about the name. One connects the gift with protecting children from harmful spirits and keeping them safe through the year. Whatever story a family tells, the meaning today is easy to recognize: the money comes wrapped in wishes for health, safety, and good fortune.
+A [[red envelope|hongbao]] contains money. At New Year, older family members often give one to children. The money is also called [[yasuiqian|yasuiqian]]. There are old folk stories about the name. One connects the gift with protecting children from harmful spirits and keeping them safe through the year. Whatever story a family tells, the meaning today is easy to recognize: the money comes wrapped in wishes for health, safety, and good fortune.
 
 And look—your hands have another job. Instead of snatching the envelope with one hand and immediately peeking inside, children are often taught to receive it with both hands and say thank you. Two hands again. A few minutes ago, they were giving a greeting. Now they are receiving one.
 

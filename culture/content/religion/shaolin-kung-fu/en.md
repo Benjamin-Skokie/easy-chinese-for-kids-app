@@ -4,7 +4,7 @@
 
 ## A Buddhist Temple in the Mountains
 
-Shaolin Temple stands at the foot of Mount Song in central China. It began as a Buddhist monastery, not a martial arts school. Long ago, a monk from India came there to teach Buddhism. Other monks lived at the temple, read Buddhist books, meditated, swept the courtyards, and cared for the temple’s land.
+[[Shaolin Temple|shaolin-temple]] stands at the foot of Mount Song in central China. It began as a Buddhist monastery, not a martial arts school. Long ago, a monk from India came there to teach Buddhism. Other monks lived at the temple, read Buddhist books, meditated, swept the courtyards, and cared for the temple’s land.
 
 But the world outside the temple was not always peaceful. Armies fought one another, and bandits sometimes attacked. Shaolin had buildings, grain, and fields. At times, the people who lived there had to protect them.
 
@@ -14,7 +14,7 @@ That is where the connection between Shaolin and fighting began.
 
 ## Thirteen Monks Join a Battle
 
-During a time of war, a powerful leader took land that belonged to Shaolin Temple. Li Shimin was not emperor yet. He was one of the emperor’s sons and a young army commander leading troops against that ruler.
+During a time of war, a powerful leader took land that belonged to Shaolin Temple. [[Li Shimin|li-shimin]] was not emperor yet. He was one of the emperor’s sons and a young army commander leading troops against that ruler.
 
 Thirteen Shaolin monks decided to help Li Shimin’s side. They joined the fight and captured one of the other leader’s commanders. Li Shimin’s army won, and Shaolin recovered the land it had lost.
 
@@ -28,19 +28,19 @@ Li Shimin later became emperor, one of the most famous in Chinese history. He he
 
 Li Shimin did not forget the Shaolin monks. He thanked them and allowed the temple to keep its land. As the story spread, people remembered something unusual: monks from a quiet mountain temple had fought beside a future emperor.
 
-Shaolin had not yet become the “kung fu temple” people imagine today, but its reputation for brave fighters had begun.
+Shaolin had not yet become the “[[kung fu|gongfu]] temple” people imagine today, but its reputation for brave fighters had begun.
 
 ---
 
 ## The Staff Came First
 
-Hundreds of years after Li Shimin’s battle, some Shaolin monks became famous for using the staff—a long wooden stick used for practice and fighting.
+Hundreds of years after Li Shimin’s battle, some Shaolin monks became famous for [[staff fighting|staff-fighting]], using a long wooden stick for practice and combat.
 
 Why choose a staff? Buddhist monks were taught not to kill. A staff had no sharp edge like a sword. It could block a blade, push an attacker back, or knock a weapon aside. Instead of reaching for a sharp sword, a monk could use a staff to protect himself or someone else while trying not to take a life.
 
 But a staff was not harmless. Swung hard, it could badly hurt someone. Learning control mattered as much as learning speed. A monk practiced gripping, turning, blocking, and changing direction quickly. The staff could whoosh through the air until its two ends became a blur.
 
-Visitors saw this skill and carried stories of it elsewhere. Shaolin staff fighting was praised long before Shaolin boxing became famous.
+Visitors saw this skill and carried stories of it elsewhere. Shaolin staff fighting was praised long before [[Shaolin boxing|quanfa]] became famous.
 
 ---
 

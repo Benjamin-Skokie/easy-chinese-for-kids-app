@@ -108,31 +108,7 @@ A clear teaching scene that shows the step from a fire arrow to a true rocket. I
 
 ---
 
-## ARTICLE 4: 战车 - Chariots
-
-### Image 4.1: Chariot Team on the Plain
-```text
-An ancient Chinese war chariot crossing an open plain with three people aboard: driver in the middle, archer on one side, and fighter with a halberd on the other. The image should clearly show the teamwork of the vehicle.
-```
-
-### Image 4.2: Chariot Pressure
-```text
-A readable battlefield scene on flat ground where charging chariots create pressure on infantry, helping children understand why people compare them loosely to tanks. No gore, no messy collision, focus on movement and intimidation.
-```
-
-### Image 4.3: Cavalry Replaces Chariot
-```text
-A comparison scene showing cavalry riders moving more flexibly across uneven land while a heavy chariot struggles in rough terrain. The image should clearly explain why cavalry slowly took over many battlefield roles.
-```
-
-### Image 4.4: Chariots Across Civilizations
-```text
-A broad educational scene showing that many ancient civilizations used chariots, with child-friendly visual hints of different regions and styles. The main idea is that chariots rose in many places and later declined as warfare changed.
-```
-
----
-
-## ARTICLE 5: 风筝 - Kites
+## ARTICLE 4: 风筝 - Kites
 
 ### Image 5.1: Wooden Bird to Paper Kite
 ```text

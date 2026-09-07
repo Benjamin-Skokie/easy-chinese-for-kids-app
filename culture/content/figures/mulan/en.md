@@ -4,7 +4,7 @@
 
 ## The Silent Loom
 
-One morning, Mulan sat at her loom, but she did not weave. The night before, a messenger had brought an order from the emperor: Mulan's father must join the army and go to war.
+One morning, [[Mulan|mulan]] sat at her loom, but she did not weave. The night before, a messenger had brought an order from the emperor: Mulan's father must join the army and go to war.
 
 Mulan's little brother was still a child, and she had no older brother who could go in her father's place. She had thought about the notice all night. At last, she spoke. “I will go,” Mulan said. “I will take Father's place.”
 
@@ -18,7 +18,7 @@ The next day, Mulan went to the market. She bought a horse, a saddle and blanket
 
 At sunrise, she said goodbye to her family and rode away. Outside the village, Mulan turned for one last look. Her family, her home, and the loom by the door were all behind her now.
 
-She rode until nightfall and stopped beside the Yellow River. She could no longer hear her parents' voices. All she heard was the river rushing through the darkness.
+She rode until nightfall and stopped beside the [[Yellow River|yellow-river]]. She could no longer hear her parents' voices. All she heard was the river rushing through the darkness.
 
 The next morning, Mulan rode on. The road led north, across hills and through mountain passes. By the following night, she could hear the distant cries of warhorses.
 

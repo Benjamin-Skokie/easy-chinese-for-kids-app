@@ -50,7 +50,7 @@ caption_en: In Chang’an, the Han dynasty capital located in present-day Xi’a
 
 宫里住着一位机智的艺人和谋士。他以玩笑、巧计和敏捷的头脑闻名，有点像宫廷里的弄臣。他叫**东方朔**。听说元宵的事以后，他决定帮助她。
 
-东方朔来到当时的都城长安，也就是今天的西安，摆起了算命摊。可是，每个来找他算命的人，都得到同一个吓人的预言：**长安将发生一场可怕的大火！** 很快，全城的人都在谈论这件事。
+东方朔来到当时的都城[[长安|changan]]，也就是今天的[[西安|xian]]，摆起了算命摊。可是，每个来找他算命的人，都得到同一个吓人的预言：**长安将发生一场可怕的大火！** 很快，全城的人都在谈论这件事。
 
 忧心忡忡的皇帝问该怎么办，东方朔便提出了一个巧妙的办法。
 
@@ -63,7 +63,7 @@ One old Lantern Festival legend tells of a young palace maid named Yuanxiao. Yua
 
 At the palace lived a witty entertainer and adviser who was famous for his jokes, tricks, and quick thinking—something like a court jester. His name was **Dongfang Shuo**. When he heard about Yuanxiao, he decided to help.
 
-Dongfang Shuo went into Chang’an—the Han dynasty capital, located in present-day Xi’an—and set up a fortune-telling stand. But everyone who came to him received the same frightening prediction: **A terrible fire was coming to Chang’an!** Soon the whole city was talking about it.
+Dongfang Shuo went into [[Chang’an|changan]]—the [[Han dynasty|han-dynasty]] capital, located in present-day [[Xi’an|xian]]—and set up a fortune-telling stand. But everyone who came to him received the same frightening prediction: **A terrible fire was coming to Chang’an!** Soon the whole city was talking about it.
 
 When the worried emperor asked what could be done, Dongfang Shuo suggested a clever trick.
 

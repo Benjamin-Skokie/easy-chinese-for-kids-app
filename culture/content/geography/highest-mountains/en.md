@@ -4,7 +4,7 @@
 
 ## One Mountain, Two Countries
 
-Across southern Asia, the Himalayas look like a giant wrinkle on a map. One peak there rises higher above sea level than any other mountain on Earth. It is called Qomolangma in China and Mount Everest in English.
+Across southern Asia, the Himalayas look like a giant wrinkle on a map. One peak there rises higher above sea level than any other mountain on Earth. It is called [[Qomolangma|qomolangma]] in China and Mount Everest in English.
 
 The mountain stands between China and Nepal, and the border crosses its snowy summit. Climbers can approach it from either country, but both sides lead toward the same icy peak.
 

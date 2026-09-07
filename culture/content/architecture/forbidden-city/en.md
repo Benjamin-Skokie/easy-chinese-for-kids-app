@@ -4,7 +4,7 @@
 
 ## Why Does the Palace Feel Like a City?
 
-In the center of Beijing stands a sea of red walls and golden roofs. From far away, it looks less like one house and more like a small city behind walls. This is the Forbidden City. More than six hundred years ago, it was a palace where emperors lived and ran the country.
+In the center of Beijing stands a sea of red walls and golden roofs. From far away, it looks less like one house and more like a small city behind walls. This is the [[Forbidden City|forbidden-city]]. More than six hundred years ago, it was a palace where emperors lived and ran the country.
 
 The emperor's family was not alone there. Guards watched the gates. Cooks prepared meals. Craftspeople repaired roofs. Officials came to work in the great halls. Many other people cared for gardens, horses, clothing, books, and paintings. It took a great many people to keep such a huge palace running.
 

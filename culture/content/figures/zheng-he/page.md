@@ -19,7 +19,7 @@ layout: text-only
 heading_zh: 皇帝选中了郑和
 heading_en: The Emperor Chose Zheng He
 [zh]
-六百多年前，中国还在明朝的时候，许多水手和商船已经在印度洋上来来往往。郑和不是第一个驶过这片大海的人。他出名，是因为他带领皇帝的大船队，完成了七次漫长的海上旅行。
+六百多年前，中国还在[[明朝|ming-dynasty]]的时候，许多水手和商船已经在印度洋上来来往往。[[郑和|zheng-he]]不是第一个驶过这片大海的人。他出名，是因为他带领皇帝的大船队，完成了七次漫长的海上旅行。
 
 郑和站上大船的甲板以前，皇帝已经认识他很多年。皇帝看过他在军队里做事，也看过他接下难办的任务，在危险中保持冷静。他知道自己可以信任郑和。
 
@@ -28,7 +28,7 @@ heading_en: The Emperor Chose Zheng He
 前面的事情和郑和从前做过的都不一样。它会从一个铺满船帆的港口开始。
 [/zh]
 [en]
-More than six hundred years ago, during China's Ming dynasty, sailors and trading ships were already crossing the Indian Ocean. Zheng He was not the first person to sail those waters. He became famous because he led the emperor's great fleet on seven long voyages.
+More than six hundred years ago, during China's [[Ming dynasty|ming-dynasty]], sailors and trading ships were already crossing the Indian Ocean. [[Zheng He|zheng-he]] was not the first person to sail those waters. He became famous because he led the emperor's great fleet on seven long voyages.
 
 Before Zheng He ever stood on the deck of a great ship, the emperor had known him for years. He had watched Zheng He serve in the army, take on hard jobs, and stay calm in danger. He knew he could trust him.
 

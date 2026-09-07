@@ -4,7 +4,7 @@
 
 ## Where Do the Fingers Press?
 
-An erhu (*èrhú*) has only two strings. A player uses the fingers of the left hand to stop them. But look behind the strings: there is no fingerboard.
+An [[erhu|erhu]] has only two strings. A player uses the fingers of the left hand to stop them. But look behind the strings: there is no fingerboard.
 
 The fingers touch the strings with empty space underneath. Move a finger even a little and the note changes. Slide it slowly along a string and the sound slides too. There are no frets telling the fingers, “This note goes exactly here.” The player has to learn those places by feel and use the ear to check them.
 
@@ -24,9 +24,9 @@ The main parts make a surprisingly short list: two strings, one bow caught betwe
 
 ## A Musician Everyone Called Abing
 
-About a hundred years ago, a musician lived in the city of Wuxi. His name was Hua Yanjun, but almost everyone knew him by his childhood name, Abing (*Ā Bǐng*). He learned music when he was young. Later he became blind, and for many years he performed in Wuxi.
+About a hundred years ago, a musician lived in the city of [[Wuxi|wuxi]]. His name was Hua Yanjun, but almost everyone knew him by his childhood name, [[Abing|abing]]. He learned music when he was young. Later he became blind, and for many years he performed in Wuxi.
 
-Among the erhu pieces he left behind, one became especially famous: *Moon Reflected on the Second Spring*, or *Èrquán Yìngyuè*. Think again about the erhu. No frets fix every note in place. A finger can slide, a note can bend, and the bow can press harder or soften. Two people can play the same notes and still sound very different.
+Among the erhu pieces he left behind, one became especially famous: [[Moon Reflected on the Second Spring|erquan-yingyue]]. Think again about the erhu. No frets fix every note in place. A finger can slide, a note can bend, and the bow can press harder or soften. Two people can play the same notes and still sound very different.
 
 A written score can show the notes, but it cannot hold every detail of one performance. For many years, if you wanted to hear how Abing played, you had to be there. Then, in 1950, researchers came to Wuxi with a remarkable machine. It could save sound.
 

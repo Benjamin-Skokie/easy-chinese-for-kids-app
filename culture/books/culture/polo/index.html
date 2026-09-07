@@ -28,10 +28,10 @@
             <figcaption class="caption floated-caption"><span class="zh">马球要一边控马，一边追球，一边挥杖，看上去又快又难。</span><br><span class="en">Polo asks riders to guide a horse, chase a ball, and swing a mallet all at once.</span></figcaption>
           </figure>
           <p>想象一下，你拿着一根长长的球杖，想把地上的小球打出去。现在，再给你加一匹正在奔跑的马。事情一下子就难多了。球在滚，马在跑。骑手既要控制马的方向，又要保持平衡，还得盯住地上的小球，找准机会挥出球杖。</p>
-          <p>大约一千三百年前，唐朝人就特别喜欢这种又快又刺激的马上游戏&#8212;&#8212;马球。马球并不是在中国最早出现的。它从中国西边的亚洲地区传来。那时候，各地的人来来往往，衣服、音乐、食物和各种新鲜玩意儿都会跟着旅行。</p>
+          <p>大约一千三百年前，<span class="glossary-entry"><button type="button" class="glossary-term" aria-expanded="false" aria-controls="glossary-tang-dynasty-1">唐朝</button><span id="glossary-tang-dynasty-1" class="glossary-popover" role="tooltip">Táng cháo · 618年至907年的中国朝代。</span></span>人就特别喜欢这种又快又刺激的马上游戏&#8212;&#8212;马球。马球并不是在中国最早出现的。它从中国西边的亚洲地区传来。那时候，各地的人来来往往，衣服、音乐、食物和各种新鲜玩意儿都会跟着旅行。</p>
           <p>游戏当然也会。马球来到中国以后，很快就找到了很多喜欢它的人。</p>
           <p>Imagine trying to hit a small ball with a long stick. Now put yourself on a running horse. Suddenly, everything becomes harder. The ball is rolling. The horse is moving. You have to steer, stay balanced, watch the ball, and swing the mallet&#8212;all at the same time.</p>
-          <p>Around 1,300 years ago, people in Tang China loved this fast horseback game. It was polo. The game had traveled into China from lands farther west in Asia. The Tang world was full of travelers, merchants, music, clothing, and new ideas arriving from different places. Games could travel too.</p>
+          <p>Around 1,300 years ago, people in <span class="glossary-entry"><button type="button" class="glossary-term" aria-expanded="false" aria-controls="glossary-tang-dynasty-2">Tang China</button><span id="glossary-tang-dynasty-2" class="glossary-popover" role="tooltip">Táng cháo · 唐朝 · The Chinese dynasty that lasted from 618 to 907.</span></span> loved this fast horseback game. It was polo. The game had traveled into China from lands farther west in Asia. The Tang world was full of travelers, merchants, music, clothing, and new ideas arriving from different places. Games could travel too.</p>
           <p>And polo found plenty of fans.</p>
         </div>
       </section>
@@ -120,7 +120,8 @@
             if (!button || !popover) return;
 
             const margin = 12;
-            const gap = 10;
+            const compactViewport = window.matchMedia("(max-width: 900px)").matches;
+            const gap = compactViewport ? 8 : 10;
             const buttonRect = button.getBoundingClientRect();
             const popoverRect = popover.getBoundingClientRect();
             const halfWidth = popoverRect.width / 2;
@@ -129,10 +130,12 @@
             const maxCenter = window.innerWidth - margin - halfWidth;
             const left = Math.min(Math.max(buttonCenter, minCenter), maxCenter);
 
-            let side = "above";
-            let top = buttonRect.top - popoverRect.height - gap;
+            let side = compactViewport ? "below" : "above";
+            let top = side === "below"
+              ? buttonRect.bottom + gap
+              : buttonRect.top - popoverRect.height - gap;
 
-            if (top < margin) {
+            if (side === "above" && top < margin) {
               side = "below";
               top = buttonRect.bottom + gap;
             }

@@ -8,7 +8,7 @@ On the table sits a cube of soft tofu and one peanut. Which would you pick up fi
 
 The tofu looks easier because it is bigger, but it is soft and slippery. Hold it too loosely and it slides away. Squeeze too hard and—squish!—it breaks. The peanut is firm, but it rolls like a tiny wheel. The tips touch it, and away it goes.
 
-Using chopsticks is not only about “grabbing” food. Your fingers must learn when to be gentle and when to be steady. If the first try does not work, chase down that runaway peanut and try again.
+Using [[chopsticks|chopsticks]] is not only about “grabbing” food. Your fingers must learn when to be gentle and when to be steady. If the first try does not work, chase down that runaway peanut and try again.
 
 ---
 

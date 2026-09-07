@@ -1,0 +1,2428 @@
+{
+  "abing": {
+    "zh": "阿炳",
+    "en": "Abing",
+    "pinyin": "Ā Bǐng",
+    "kind": "person",
+    "note_zh": "原名华彦钧，以二胡曲《二泉映月》闻名。",
+    "note_en": "The musician Hua Yanjun, remembered especially for the erhu piece Moon Reflected on the Second Spring.",
+    "replace_en": ["Ā Bǐng"]
+  },
+  "anyang": {
+    "zh": "安阳",
+    "en": "Anyang",
+    "pinyin": "Ānyáng",
+    "kind": "place",
+    "note_zh": "河南北部的城市，殷墟和许多甲骨文在这里发现。",
+    "note_en": "A city in northern Henan where the Shang ruins and many oracle bones were found."
+  },
+  "analects": {
+    "zh": "《论语》",
+    "en": "Analects",
+    "pinyin": "Lúnyǔ",
+    "kind": "work",
+    "note_zh": "记录孔子及其弟子言论和问答的一部古代文集。",
+    "note_en": "An ancient collection of sayings and conversations connected with Confucius and his students."
+  },
+  "bai-suzhen": {
+    "zh": "白素贞",
+    "en": "Bai Suzhen",
+    "pinyin": "Bái Sùzhēn",
+    "kind": "person",
+    "note_zh": "《白蛇传》中由白蛇化成的女子。",
+    "note_en": "The woman who takes human form from a white snake in the Legend of the White Snake."
+  },
+  "bianzhong": {
+    "zh": "编钟",
+    "en": "bianzhong",
+    "pinyin": "biānzhōng",
+    "kind": "term",
+    "note_zh": "成组悬挂、按音高排列演奏的古代青铜钟。",
+    "note_en": "A tuned set of ancient Chinese bronze bells hung on a frame.",
+    "aliases_en": ["Bianzhong"]
+  },
+  "biluochun": {
+    "zh": "碧螺春",
+    "en": "Biluochun",
+    "pinyin": "Bìluóchūn",
+    "kind": "term",
+    "note_zh": "产自苏州太湖一带、叶片卷曲的著名绿茶。",
+    "note_en": "A famous curled green tea from the Lake Tai area near Suzhou.",
+    "replace_en": ["Bìluóchūn"]
+  },
+  "bo-ya": {
+    "zh": "伯牙",
+    "en": "Bo Ya",
+    "pinyin": "Bó Yá",
+    "kind": "person",
+    "note_zh": "古代知音故事中善于弹琴的人。",
+    "note_en": "The gifted qin player in the old Chinese story about a friend who truly understood his music."
+  },
+  "book-of-changes": {
+    "zh": "《易经》",
+    "en": "Book of Changes",
+    "pinyin": "Yìjīng",
+    "kind": "work",
+    "note_zh": "中国古代讨论卦象、变化和思想的一部经典，又称《周易》。",
+    "note_en": "An ancient Chinese classic about patterns, change, and interpretation, also called the Yijing."
+  },
+  "book-of-songs": {
+    "zh": "《诗经》",
+    "en": "Book of Songs",
+    "pinyin": "Shījīng",
+    "kind": "work",
+    "note_zh": "中国现存最早的诗歌总集，收录了三百多首古代诗歌。",
+    "note_en": "The oldest surviving collection of Chinese poetry, containing more than three hundred poems."
+  },
+  "cao-cao": {
+    "zh": "曹操",
+    "en": "Cao Cao",
+    "pinyin": "Cáo Cāo",
+    "kind": "person",
+    "note_zh": "东汉末年的政治家、军事家和诗人。",
+    "note_en": "A powerful leader, commander, and poet at the end of the Eastern Han dynasty.",
+    "replace_en": ["Cáo Cāo"]
+  },
+  "cao-xueqin": {
+    "zh": "曹雪芹",
+    "en": "Cao Xueqin",
+    "pinyin": "Cáo Xuěqín",
+    "kind": "person",
+    "note_zh": "《红楼梦》的作者。",
+    "note_en": "The author of Dream of the Red Chamber."
+  },
+  "chang-e": {
+    "zh": "嫦娥",
+    "en": "Chang'e",
+    "pinyin": "Cháng'é",
+    "kind": "person",
+    "note_zh": "中国神话中飞到月亮上的人物。",
+    "note_en": "The woman who flies to the moon in a famous Chinese legend.",
+    "aliases_en": ["Chang’e"]
+  },
+  "changan": {
+    "zh": "长安",
+    "en": "Chang'an",
+    "pinyin": "Cháng'ān",
+    "kind": "place",
+    "note_zh": "中国古代都城，位置在今天的西安。",
+    "note_en": "An ancient Chinese capital located in present-day Xi'an.",
+    "aliases_en": ["Chang’an"],
+    "replace_en": ["Cháng'ān", "Cháng’ān"]
+  },
+  "chengqi-building": {
+    "zh": "承启楼",
+    "en": "Chengqi Building",
+    "pinyin": "Chéngqǐ Lóu",
+    "kind": "place",
+    "note_zh": "福建永定一座规模很大的圆形土楼。",
+    "note_en": "A very large round tulou in Yongding, Fujian.",
+    "replace_en": ["Chéngqǐ Building"]
+  },
+  "chinese-calligraphy": {
+    "zh": "书法",
+    "en": "Chinese calligraphy",
+    "pinyin": "shūfǎ",
+    "kind": "term",
+    "note_zh": "用毛笔等工具书写汉字的艺术。",
+    "note_en": "The art of writing Chinese characters with expressive brushwork.",
+    "aliases_en": ["calligraphy"]
+  },
+  "chinese-knot": {
+    "zh": "中国结",
+    "en": "Chinese knot",
+    "pinyin": "Zhōngguó jié",
+    "kind": "term",
+    "note_zh": "用一根或多根绳子编成的装饰结。",
+    "note_en": "A decorative knot made by looping and tightening cord into a balanced pattern.",
+    "aliases_en": ["Chinese knots"]
+  },
+  "confucius": {
+    "zh": "孔子",
+    "en": "Confucius",
+    "pinyin": "Kǒngzǐ",
+    "kind": "person",
+    "note_zh": "生活在两千五百多年前、在鲁国教学生的中国思想家和老师。",
+    "note_en": "A Chinese thinker and teacher who lived more than 2,500 years ago and taught in the state of Lu."
+  },
+  "cuju": {
+    "zh": "蹴鞠",
+    "en": "cuju",
+    "pinyin": "cùjū",
+    "kind": "term",
+    "note_zh": "中国古代用脚踢球的一类游戏。",
+    "note_en": "An ancient Chinese family of ball games played mainly with the feet.",
+    "aliases_en": ["Cuju"],
+    "replace_en": ["Cùjū", "cùjū"]
+  },
+  "dao": {
+    "zh": "道",
+    "en": "Dao",
+    "pinyin": "dào",
+    "kind": "term",
+    "note_zh": "道家思想中万物运行所遵循的自然之道。",
+    "note_en": "The natural Way or underlying pattern of the world in Daoist thought.",
+    "auto_tag": false
+  },
+  "dao-de-jing": {
+    "zh": "《道德经》",
+    "en": "Dao De Jing",
+    "pinyin": "Dàodé Jīng",
+    "kind": "work",
+    "note_zh": "与老子和早期道家思想关系密切的经典。",
+    "note_en": "A short classic linked with Laozi and early Daoist thought."
+  },
+  "dragon-boat-festival": {
+    "zh": "端午节",
+    "en": "Dragon Boat Festival",
+    "pinyin": "Duānwǔ Jié",
+    "kind": "term",
+    "note_zh": "农历五月初五的传统节日。",
+    "note_en": "A traditional festival held on the fifth day of the fifth lunar month."
+  },
+  "dunhuang": {
+    "zh": "敦煌",
+    "en": "Dunhuang",
+    "pinyin": "Dūnhuáng",
+    "kind": "place",
+    "note_zh": "中国西北以石窟壁画闻名的城市。",
+    "note_en": "A northwestern Chinese city famous for its painted cave temples."
+  },
+  "eight-immortals": {
+    "zh": "八仙",
+    "en": "Eight Immortals",
+    "pinyin": "Bā Xiān",
+    "kind": "term",
+    "note_zh": "中国道教故事中性格和法宝各不相同的八位仙人。",
+    "note_en": "A famous group of eight Daoist immortals, each with a different personality and special object."
+  },
+  "erhu": {
+    "zh": "二胡",
+    "en": "erhu",
+    "pinyin": "èrhú",
+    "kind": "term",
+    "note_zh": "有两根弦、用弓拉奏的中国乐器。",
+    "note_en": "A two-stringed Chinese bowed instrument.",
+    "aliases_en": ["Erhu"],
+    "replace_en": ["èrhú"]
+  },
+  "erquan-yingyue": {
+    "zh": "《二泉映月》",
+    "en": "Moon Reflected on the Second Spring",
+    "pinyin": "Èrquán Yìngyuè",
+    "kind": "work",
+    "note_zh": "阿炳创作并演奏的一首著名二胡曲。",
+    "note_en": "A famous erhu composition associated with Abing.",
+    "replace_en": ["Èrquán Yìngyuè"]
+  },
+  "fahai": {
+    "zh": "法海",
+    "en": "Fahai",
+    "pinyin": "Fǎhǎi",
+    "kind": "person",
+    "note_zh": "《白蛇传》中阻止白素贞和许仙团聚的和尚。",
+    "note_en": "The monk who separates Bai Suzhen and Xu Xian in the Legend of the White Snake."
+  },
+  "fenghuang": {
+    "zh": "凤凰",
+    "en": "fenghuang",
+    "pinyin": "fènghuáng",
+    "kind": "term",
+    "note_zh": "中国传统文化中的吉祥神鸟。",
+    "note_en": "The auspicious legendary bird often called the Chinese phoenix.",
+    "aliases_en": ["Chinese phoenix"],
+    "replace_en": ["fènghuáng"]
+  },
+  "forbidden-city": {
+    "zh": "故宫",
+    "en": "Forbidden City",
+    "pinyin": "Gùgōng",
+    "kind": "place",
+    "note_zh": "北京明清两代的皇宫建筑群。",
+    "note_en": "The enormous imperial palace complex in Beijing used during the Ming and Qing dynasties."
+  },
+  "futou": {
+    "zh": "幞头",
+    "en": "futou",
+    "pinyin": "fútóu",
+    "kind": "term",
+    "note_zh": "中国古代男子使用的一类头巾和帽式。",
+    "note_en": "A form of men's headwear used in imperial China.",
+    "aliases_en": ["Futou"]
+  },
+  "gongbi": {
+    "zh": "工笔画",
+    "en": "gongbi painting",
+    "pinyin": "gōngbǐ huà",
+    "kind": "term",
+    "note_zh": "用细致线条和层层设色完成的中国画法。",
+    "note_en": "A detailed Chinese painting style built with precise lines and carefully layered color.",
+    "aliases_zh": ["工笔"],
+    "aliases_en": ["Gongbi Painting", "gongbi"]
+  },
+  "court-painting-academy": {
+    "zh": "宫廷画院",
+    "en": "court painting academy",
+    "pinyin": "gōngtíng huàyuàn",
+    "kind": "term",
+    "note_zh": "朝廷设立、由宫廷画师工作的绘画机构。",
+    "note_en": "An imperial institution where court painters worked and trained."
+  },
+  "lacquer": {
+    "zh": "漆",
+    "en": "lacquer",
+    "pinyin": "qī",
+    "kind": "term",
+    "note_zh": "一种可以涂在物体表面、干后变硬并产生光泽的材料。",
+    "note_en": "A coating material that hardens and can form a glossy surface."
+  },
+  "song-huizong": {
+    "zh": "宋徽宗",
+    "en": "Emperor Huizong",
+    "pinyin": "Sòng Huīzōng",
+    "kind": "person",
+    "note_zh": "北宋皇帝赵佶，擅长书画，也很重视宫廷画院。",
+    "note_en": "A Northern Song emperor known for painting, calligraphy, and support of the court painting academy."
+  },
+  "gongfu": {
+    "zh": "功夫",
+    "en": "kung fu",
+    "pinyin": "gōngfu",
+    "kind": "term",
+    "note_zh": "既可以指武术，也可以指长期练习形成的本领。",
+    "note_en": "A word that can mean martial arts or any skill developed through long practice.",
+    "aliases_en": ["Kung Fu", "gōngfu"],
+    "replace_en": ["gōngfu"]
+  },
+  "gongshou-li": {
+    "zh": "拱手礼",
+    "en": "gongshou greeting",
+    "pinyin": "gǒngshǒu lǐ",
+    "kind": "term",
+    "note_zh": "双手在身前相合的一种传统问候礼节。",
+    "note_en": "A traditional greeting made by bringing both hands together in front of the body.",
+    "aliases_en": ["gǒngshǒu lǐ"],
+    "replace_en": ["gǒngshǒu lǐ"]
+  },
+  "guan-yu": {
+    "zh": "关羽",
+    "en": "Guan Yu",
+    "pinyin": "Guān Yǔ",
+    "kind": "person",
+    "note_zh": "三国时期的将领，后来成为忠义的著名象征。",
+    "note_en": "A Three Kingdoms general later remembered as a powerful symbol of loyalty.",
+    "replace_en": ["Guān Yǔ"]
+  },
+  "guanyin": {
+    "zh": "观音",
+    "en": "Guanyin",
+    "pinyin": "Guānyīn",
+    "kind": "person",
+    "note_zh": "中国佛教中以慈悲、救助众生闻名的菩萨。",
+    "note_en": "A compassionate bodhisattva who hears and helps beings in distress.",
+    "replace_en": ["Guānyīn"]
+  },
+  "guilin": {
+    "zh": "桂林",
+    "en": "Guilin",
+    "pinyin": "Guìlín",
+    "kind": "place",
+    "note_zh": "中国南方以喀斯特山水闻名的城市。",
+    "note_en": "A southern Chinese city famous for its karst peaks and river scenery.",
+    "replace_en": ["Guìlín"]
+  },
+  "han-dynasty": {
+    "zh": "汉朝",
+    "en": "Han dynasty",
+    "pinyin": "Hàn cháo",
+    "kind": "period",
+    "note_zh": "从公元前206年延续到公元220年的中国重要朝代。",
+    "note_en": "A major Chinese dynasty that lasted from 206 BCE to 220 CE.",
+    "aliases_zh": ["汉代"],
+    "aliases_en": ["Han China", "Han empire", "Han court", "Han emperor"],
+    "normalize_en": false
+  },
+  "hanfu": {
+    "zh": "汉服",
+    "en": "hanfu",
+    "pinyin": "hànfú",
+    "kind": "term",
+    "note_zh": "中国历史上汉族服饰传统的统称。",
+    "note_en": "A broad modern name for historical Han Chinese clothing traditions.",
+    "aliases_en": ["Hanfu"],
+    "replace_en": ["Hànfú", "hànfú"]
+  },
+  "hangzhou": {
+    "zh": "杭州",
+    "en": "Hangzhou",
+    "pinyin": "Hángzhōu",
+    "kind": "place",
+    "note_zh": "浙江省省会，西湖和龙井茶都与这里关系密切。",
+    "note_en": "The capital of Zhejiang, closely associated with West Lake and Dragon Well tea.",
+    "replace_en": ["Hángzhōu"]
+  },
+  "hongbao": {
+    "zh": "红包",
+    "en": "red envelope",
+    "pinyin": "hóngbāo",
+    "kind": "term",
+    "note_zh": "节日或喜庆场合装钱赠送的红色封套。",
+    "note_en": "A red packet containing money, given during festivals and happy occasions.",
+    "aliases_en": ["red envelopes", "hóngbāo"],
+    "replace_en": ["hóngbāo"]
+  },
+  "honghe-hani-terraces": {
+    "zh": "红河哈尼梯田",
+    "en": "Honghe Hani Rice Terraces",
+    "pinyin": "Hónghé Hāní Tītián",
+    "kind": "place",
+    "note_zh": "云南南部哈尼族长期修建和维护的山地梯田。",
+    "note_en": "Mountain terraces in southern Yunnan built and maintained by Hani communities."
+  },
+  "hou-yi": {
+    "zh": "后羿",
+    "en": "Hou Yi",
+    "pinyin": "Hòu Yì",
+    "kind": "person",
+    "note_zh": "神话中射下九个太阳的神射手。",
+    "note_en": "The legendary archer who shoots down nine suns."
+  },
+  "huadian": {
+    "zh": "花钿",
+    "en": "huadian",
+    "pinyin": "huādiàn",
+    "kind": "term",
+    "note_zh": "古代女子贴或画在额头、眉心的小装饰。",
+    "note_en": "A small painted or applied decoration worn on the forehead.",
+    "replace_en": ["huādiàn"]
+  },
+  "huoyao": {
+    "zh": "火药",
+    "en": "gunpowder",
+    "pinyin": "huǒyào",
+    "kind": "term",
+    "note_zh": "由含硝石、硫黄和炭的混合物发展而来的火药技术。",
+    "note_en": "The explosive mixture whose Chinese name literally means fire medicine.",
+    "aliases_en": ["huǒyào", "Huǒyào"],
+    "replace_en": ["huǒyào", "Huǒyào"]
+  },
+  "jia-baoyu": {
+    "zh": "贾宝玉",
+    "en": "Jia Baoyu",
+    "pinyin": "Jiǎ Bǎoyù",
+    "kind": "person",
+    "note_zh": "《红楼梦》的主要人物之一。",
+    "note_en": "One of the central young characters in Dream of the Red Chamber."
+  },
+  "jiaguwen": {
+    "zh": "甲骨文",
+    "en": "oracle-bone script",
+    "pinyin": "jiǎgǔwén",
+    "kind": "term",
+    "note_zh": "刻在龟甲和兽骨上的商代文字。",
+    "note_en": "Shang-period writing carved on turtle shells and animal bones.",
+    "aliases_en": ["jiǎgǔwén"],
+    "replace_en": ["jiǎgǔwén"]
+  },
+  "jiangnan": {
+    "zh": "江南",
+    "en": "Jiangnan",
+    "pinyin": "Jiāngnán",
+    "kind": "place",
+    "note_zh": "长江下游以南、河湖密布的地区。",
+    "note_en": "The warm, watery region south of the lower Yangtze River."
+  },
+  "jiaozi-currency": {
+    "zh": "交子",
+    "en": "jiaozi",
+    "pinyin": "jiāozǐ",
+    "kind": "term",
+    "note_zh": "北宋四川出现并由政府发行的早期纸币。",
+    "note_en": "An early paper currency used in Sichuan and later issued by the Northern Song government.",
+    "replace_en": ["jiāozǐ"]
+  },
+  "jingdezhen": {
+    "zh": "景德镇",
+    "en": "Jingdezhen",
+    "pinyin": "Jǐngdézhèn",
+    "kind": "place",
+    "note_zh": "中国最有名的瓷器城市之一。",
+    "note_en": "A Chinese city famous for porcelain production.",
+    "replace_en": ["Jǐngdézhèn"]
+  },
+  "jingju": {
+    "zh": "京剧",
+    "en": "Peking opera",
+    "pinyin": "jīngjù",
+    "kind": "term",
+    "note_zh": "结合唱、念、做、打的中国戏曲形式。",
+    "note_en": "A form of Chinese opera combining song, speech, movement, and stylized combat."
+  },
+  "jingwei": {
+    "zh": "精卫",
+    "en": "Jingwei",
+    "pinyin": "Jīngwèi",
+    "kind": "person",
+    "note_zh": "神话中不停衔石填海的小鸟。",
+    "note_en": "The little mythic bird that keeps carrying stones and twigs to fill the sea."
+  },
+  "kaifeng": {
+    "zh": "开封",
+    "en": "Kaifeng",
+    "pinyin": "Kāifēng",
+    "kind": "place",
+    "note_zh": "北宋的都城，也是一座商业繁盛的城市。",
+    "note_en": "The Northern Song capital, famous for its busy streets and markets.",
+    "replace_en": ["Kāifēng"]
+  },
+  "keju": {
+    "zh": "科举",
+    "en": "imperial examination",
+    "pinyin": "kējǔ",
+    "kind": "term",
+    "note_zh": "中国古代通过考试选拔官员的制度。",
+    "note_en": "The examination system used in imperial China to select officials.",
+    "aliases_en": ["imperial examinations", "imperial exam", "imperial exams"]
+  },
+  "kuang-heng": {
+    "zh": "匡衡",
+    "en": "Kuang Heng",
+    "pinyin": "Kuāng Héng",
+    "kind": "person",
+    "note_zh": "凿壁借光故事中的读书人。",
+    "note_en": "The student associated with the story of borrowing light through a hole in the wall."
+  },
+  "laozi": {
+    "zh": "老子",
+    "en": "Laozi",
+    "pinyin": "Lǎozǐ",
+    "kind": "person",
+    "note_zh": "与《道德经》和早期道家思想密切相关的古代思想家。",
+    "note_en": "The ancient thinker linked with the Dao De Jing and early Daoist ideas."
+  },
+  "li-bai": {
+    "zh": "李白",
+    "en": "Li Bai",
+    "pinyin": "Lǐ Bái",
+    "kind": "person",
+    "note_zh": "唐代诗人，以豪放的想象和月亮、旅行等题材闻名。",
+    "note_en": "A Tang poet known for bold imagination, moonlight, and travel."
+  },
+  "li-distance": {
+    "zh": "里",
+    "en": "li",
+    "pinyin": "lǐ",
+    "kind": "term",
+    "note_zh": "中国古代使用的长度单位，不同时期的实际长度并不完全相同。",
+    "note_en": "An old Chinese unit of distance whose exact length varied across time."
+  },
+  "li-river": {
+    "zh": "漓江",
+    "en": "Li River",
+    "pinyin": "Lí Jiāng",
+    "kind": "place",
+    "note_zh": "流经桂林和阳朔喀斯特山峰之间的河流。",
+    "note_en": "The river that winds among the karst peaks near Guilin and Yangshuo.",
+    "replace_en": ["Lí River"]
+  },
+  "li-shizhen": {
+    "zh": "李时珍",
+    "en": "Li Shizhen",
+    "pinyin": "Lǐ Shízhēn",
+    "kind": "person",
+    "note_zh": "明代医药学家，《本草纲目》的作者。",
+    "note_en": "The Ming medical scholar who compiled the Bencao Gangmu."
+  },
+  "liu-bei": {
+    "zh": "刘备",
+    "en": "Liu Bei",
+    "pinyin": "Liú Bèi",
+    "kind": "person",
+    "note_zh": "三国时期蜀汉的建立者。",
+    "note_en": "The founder of the state of Shu Han during the Three Kingdoms period."
+  },
+  "longjing": {
+    "zh": "西湖龙井",
+    "en": "Xihu Longjing",
+    "pinyin": "Xīhú Lóngjǐng",
+    "kind": "term",
+    "note_zh": "杭州西湖一带以扁平叶形闻名的绿茶。",
+    "note_en": "The flat-leaf green tea closely associated with West Lake in Hangzhou.",
+    "aliases_zh": ["龙井"],
+    "aliases_en": ["Longjing", "Dragon Well tea"],
+    "replace_en": ["Lóngjǐng", "Xīhú Lóngjǐng", "Xīhú Longjing"]
+  },
+  "lu-ban": {
+    "zh": "鲁班",
+    "en": "Lu Ban",
+    "pinyin": "Lǔ Bān",
+    "kind": "person",
+    "note_zh": "中国传统故事中著名的木匠和工匠祖师。",
+    "note_en": "The legendary master carpenter and patron of craftspeople.",
+    "replace_en": ["Lǔ Bān"]
+  },
+  "lu-dongbin": {
+    "zh": "吕洞宾",
+    "en": "Lü Dongbin",
+    "pinyin": "Lǚ Dòngbīn",
+    "kind": "person",
+    "note_zh": "八仙之一，常被画成背剑的文士。",
+    "note_en": "One of the Eight Immortals, often shown as a scholar carrying a sword."
+  },
+  "luoyang": {
+    "zh": "洛阳",
+    "en": "Luoyang",
+    "pinyin": "Luòyáng",
+    "kind": "place",
+    "note_zh": "中国古都，白马寺位于这里。",
+    "note_en": "An ancient Chinese capital and the home of White Horse Temple."
+  },
+  "mahjong": {
+    "zh": "麻将",
+    "en": "mahjong",
+    "pinyin": "májiàng",
+    "kind": "term",
+    "note_zh": "使用牌张组合成牌型的中国传统游戏。",
+    "note_en": "A Chinese game in which players draw and discard tiles to build combinations.",
+    "aliases_en": ["Mahjong"]
+  },
+  "maitreya": {
+    "zh": "弥勒",
+    "en": "Maitreya",
+    "pinyin": "Mílè",
+    "kind": "person",
+    "note_zh": "佛教中的未来佛，在中国常和笑口常开的布袋和尚形象联系起来。",
+    "note_en": "The future Buddha, often connected in China with the smiling Cloth-Bag Monk."
+  },
+  "meng-yuanlao": {
+    "zh": "孟元老",
+    "en": "Meng Yuanlao",
+    "pinyin": "Mèng Yuánlǎo",
+    "kind": "person",
+    "note_zh": "记录北宋开封城市生活的《东京梦华录》作者。",
+    "note_en": "The writer who remembered Northern Song Kaifeng in the Dongjing Meng Hua Lu.",
+    "replace_en": ["Mèng Yuánlǎo"]
+  },
+  "mid-autumn-festival": {
+    "zh": "中秋节",
+    "en": "Mid-Autumn Festival",
+    "pinyin": "Zhōngqiū Jié",
+    "kind": "term",
+    "note_zh": "农历八月十五赏月团聚的传统节日。",
+    "note_en": "The traditional festival of family reunion and moon viewing on the fifteenth day of the eighth lunar month."
+  },
+  "ming-dynasty": {
+    "zh": "明朝",
+    "en": "Ming dynasty",
+    "pinyin": "Míng cháo",
+    "kind": "period",
+    "note_zh": "1368年至1644年的中国朝代。",
+    "note_en": "The Chinese dynasty that lasted from 1368 to 1644.",
+    "aliases_zh": ["明代"],
+    "aliases_en": ["Ming China", "Ming period"],
+    "normalize_en": false
+  },
+  "mingguang-armor": {
+    "zh": "明光铠",
+    "en": "Mingguang armor",
+    "pinyin": "míngguāng kǎi",
+    "kind": "term",
+    "note_zh": "名字与胸前明亮护片有关的一类古代铠甲。",
+    "note_en": "A type of ancient armor named for the bright plates on its chest.",
+    "aliases_en": ["Mingguang Armor"],
+    "replace_en": ["Míngguāng Armor", "Míngguāng armor"]
+  },
+  "mozi": {
+    "zh": "墨子",
+    "en": "Mozi",
+    "pinyin": "Mòzǐ",
+    "kind": "person",
+    "note_zh": "战国时期思想家，古书把木鸟故事与他联系起来。",
+    "note_en": "A Warring States thinker associated in old texts with a story about a wooden bird.",
+    "replace_en": ["Mòzǐ"]
+  },
+  "mulan": {
+    "zh": "木兰",
+    "en": "Mulan",
+    "pinyin": "Mùlán",
+    "kind": "person",
+    "note_zh": "《木兰诗》中代父从军的女子。",
+    "note_en": "The young woman in the Ballad of Mulan who joins the army in her father's place."
+  },
+  "nantong": {
+    "zh": "南通",
+    "en": "Nantong",
+    "pinyin": "Nántōng",
+    "kind": "place",
+    "note_zh": "江苏的城市，以精巧的板鹞风筝闻名。",
+    "note_en": "A city in Jiangsu known for elaborate banyao kites.",
+    "replace_en": ["Nántōng"]
+  },
+  "nuwa": {
+    "zh": "女娲",
+    "en": "Nuwa",
+    "pinyin": "Nǚwā",
+    "kind": "person",
+    "note_zh": "中国神话中炼石补天的女神。",
+    "note_en": "The goddess in Chinese myth who repairs the broken sky."
+  },
+  "porcelain": {
+    "zh": "瓷器",
+    "en": "porcelain",
+    "pinyin": "cíqì",
+    "kind": "term",
+    "note_zh": "用瓷土等材料高温烧成的坚硬陶瓷制品。",
+    "note_en": "A hard, high-fired ceramic material made from carefully prepared clay."
+  },
+  "qin-shi-huang": {
+    "zh": "秦始皇",
+    "en": "Qin Shi Huang",
+    "pinyin": "Qín Shǐhuáng",
+    "kind": "person",
+    "note_zh": "建立秦朝、统一中国的第一位皇帝。",
+    "note_en": "The First Emperor, who founded the Qin dynasty and united China."
+  },
+  "qing-dynasty": {
+    "zh": "清朝",
+    "en": "Qing dynasty",
+    "pinyin": "Qīng cháo",
+    "kind": "period",
+    "note_zh": "1644年至1912年的中国最后一个帝制王朝。",
+    "note_en": "China's last imperial dynasty, lasting from 1644 to 1912.",
+    "aliases_zh": ["清代"],
+    "aliases_en": ["Qing China", "Qing period"],
+    "normalize_en": false
+  },
+  "qinglong-yanyuedao": {
+    "zh": "青龙偃月刀",
+    "en": "Green Dragon Crescent Blade",
+    "pinyin": "Qīnglóng Yǎnyuèdāo",
+    "kind": "term",
+    "note_zh": "《三国演义》和后世艺术中与关羽联系在一起的长柄大刀。",
+    "note_en": "The great curved blade paired with Guan Yu in the novel and later art.",
+    "replace_en": ["Qīnglóng Yǎnyuèdāo"]
+  },
+  "qingming": {
+    "zh": "清明节",
+    "en": "Qingming Festival",
+    "pinyin": "Qīngmíng Jié",
+    "kind": "term",
+    "note_zh": "春天祭扫祖先、也会踏青的传统节日。",
+    "note_en": "A spring festival associated with visiting ancestors' graves and enjoying the outdoors.",
+    "aliases_zh": ["清明"],
+    "aliases_en": ["Qingming", "qingming"],
+    "replace_en": ["Qīngmíng"]
+  },
+  "qu-yuan": {
+    "zh": "屈原",
+    "en": "Qu Yuan",
+    "pinyin": "Qū Yuán",
+    "kind": "person",
+    "note_zh": "战国时期楚国诗人，后来许多端午故事都与他联系起来。",
+    "note_en": "A poet of the state of Chu later connected with many Dragon Boat Festival stories.",
+    "replace_en": ["Qū Yuán"]
+  },
+  "quanfa": {
+    "zh": "拳法",
+    "en": "Chinese boxing techniques",
+    "pinyin": "quánfǎ",
+    "kind": "term",
+    "note_zh": "以出拳、掌法、步法和身体动作进行攻防的武术技法。",
+    "note_en": "Chinese martial-arts techniques using punches, open-hand movements, footwork, and body control."
+  },
+  "red-chamber": {
+    "zh": "《红楼梦》",
+    "en": "Dream of the Red Chamber",
+    "pinyin": "Hónglóu Mèng",
+    "kind": "work",
+    "note_zh": "讲述贾府兴衰和一群年轻人生活的古典小说。",
+    "note_en": "A classic novel about the Jia household and the young people growing up within it."
+  },
+  "rice-terraces": {
+    "zh": "梯田",
+    "en": "rice terraces",
+    "pinyin": "tītián",
+    "kind": "term",
+    "note_zh": "沿山坡一层层开出的水田。",
+    "note_en": "Stepped fields built across mountain slopes to hold soil and water.",
+    "aliases_en": ["Rice Terraces"]
+  },
+  "ruyi-jingu-bang": {
+    "zh": "如意金箍棒",
+    "en": "gold-banded staff",
+    "pinyin": "Rúyì Jīngū Bàng",
+    "kind": "term",
+    "note_zh": "《西游记》中孙悟空能够随意变大变小的兵器。",
+    "note_en": "Sun Wukong's magic staff, which can grow, shrink, and change weight.",
+    "aliases_en": ["magic gold-banded staff"],
+    "replace_en": ["Rúyì Jīngū Bàng"]
+  },
+  "shan-hai-jing": {
+    "zh": "《山海经》",
+    "en": "Shan Hai Jing",
+    "pinyin": "Shānhǎi Jīng",
+    "kind": "work",
+    "note_zh": "记录古代山川、物产、神话人物和奇异动物的古书。",
+    "note_en": "An ancient book filled with mountains, places, gods, and strange creatures."
+  },
+  "shang-yang": {
+    "zh": "商鞅",
+    "en": "Shang Yang",
+    "pinyin": "Shāng Yāng",
+    "kind": "person",
+    "note_zh": "战国时期在秦国推行变法的政治家。",
+    "note_en": "The Warring States reformer who changed laws and government in Qin."
+  },
+  "shanghai": {
+    "zh": "上海",
+    "en": "Shanghai",
+    "pinyin": "Shànghǎi",
+    "kind": "place",
+    "note_zh": "中国东部沿海的大城市。",
+    "note_en": "A major city on China's eastern coast."
+  },
+  "shaolin-temple": {
+    "zh": "少林寺",
+    "en": "Shaolin Temple",
+    "pinyin": "Shàolín Sì",
+    "kind": "place",
+    "note_zh": "河南嵩山附近以佛教和武术传统闻名的寺院。",
+    "note_en": "A Buddhist monastery near Mount Song, famous for its martial-arts tradition."
+  },
+  "shen-kuo": {
+    "zh": "沈括",
+    "en": "Shen Kuo",
+    "pinyin": "Shěn Kuò",
+    "kind": "person",
+    "note_zh": "北宋学者，《梦溪笔谈》的作者。",
+    "note_en": "A Northern Song scholar and the author of the Dream Pool Essays.",
+    "replace_en": ["Shěn Kuò"]
+  },
+  "shengxiao": {
+    "zh": "生肖",
+    "en": "Chinese zodiac",
+    "pinyin": "shēngxiào",
+    "kind": "term",
+    "note_zh": "用十二种动物依次表示出生年份的传统系统。",
+    "note_en": "The twelve-animal cycle traditionally connected with years of birth.",
+    "aliases_en": ["shēngxiào"],
+    "replace_en": ["shēngxiào"]
+  },
+  "shu": {
+    "zh": "恕",
+    "en": "shu",
+    "pinyin": "shù",
+    "kind": "term",
+    "note_zh": "从自己的感受出发，想到别人，并不把自己不愿承受的事情加给别人。",
+    "note_en": "Beginning with your own experience, considering another person, and not imposing on others what you would reject for yourself."
+  },
+  "silk-road": {
+    "zh": "丝绸之路",
+    "en": "Silk Road",
+    "pinyin": "Sīchóu Zhī Lù",
+    "kind": "term",
+    "note_zh": "连接中国、中亚和更远地区的多条古代交通与贸易路线。",
+    "note_en": "A network of old routes linking China, Central Asia, and lands farther west.",
+    "aliases_en": ["Silk Roads"]
+  },
+  "song-ci": {
+    "zh": "宋词",
+    "en": "Song ci",
+    "pinyin": "Sòng cí",
+    "kind": "term",
+    "note_zh": "按照曲调格式填写、在宋代特别兴盛的文学形式。",
+    "note_en": "Song-dynasty lyrics written to established musical tune patterns.",
+    "aliases_en": ["Song Ci"]
+  },
+  "song-dynasty": {
+    "zh": "宋朝",
+    "en": "Song dynasty",
+    "pinyin": "Sòng cháo",
+    "kind": "period",
+    "note_zh": "中国历史上从960年延续到1279年的朝代。",
+    "note_en": "The Chinese dynasty that lasted from 960 to 1279.",
+    "aliases_zh": ["宋代"],
+    "aliases_en": ["Song China", "Song period", "Northern Song"],
+    "normalize_en": false
+  },
+  "staff-fighting": {
+    "zh": "棍法",
+    "en": "staff fighting",
+    "pinyin": "gùnfǎ",
+    "kind": "term",
+    "note_zh": "使用长棍进行格挡、进攻和控制的武术技法。",
+    "note_en": "Martial-arts techniques for controlling and using a long staff to block, strike, and redirect."
+  },
+  "state-of-lu": {
+    "zh": "鲁国",
+    "en": "state of Lu",
+    "pinyin": "Lǔ guó",
+    "kind": "place",
+    "note_zh": "周代的一个诸侯国，大致位于今天的山东一带，与孔子的生平密切相关。",
+    "note_en": "An ancient state centered in what is now Shandong and closely connected with Confucius."
+  },
+  "su-shi": {
+    "zh": "苏轼",
+    "en": "Su Shi",
+    "pinyin": "Sū Shì",
+    "kind": "person",
+    "note_zh": "宋代文学家和诗人，又叫苏东坡。",
+    "note_en": "A Song writer and poet also known as Su Dongpo."
+  },
+  "sun-wukong": {
+    "zh": "孙悟空",
+    "en": "Sun Wukong",
+    "pinyin": "Sūn Wùkōng",
+    "kind": "person",
+    "note_zh": "《西游记》中会七十二变、保护唐僧西行的美猴王。",
+    "note_en": "The Monkey King of Journey to the West, famous for magic transformations and his staff.",
+    "replace_en": ["Sūn Wùkōng"]
+  },
+  "suzhou": {
+    "zh": "苏州",
+    "en": "Suzhou",
+    "pinyin": "Sūzhōu",
+    "kind": "place",
+    "note_zh": "江苏的城市，以园林、运河和传统工艺闻名。",
+    "note_en": "A city in Jiangsu famous for gardens, canals, and traditional crafts.",
+    "replace_en": ["Sūzhōu"]
+  },
+  "suanpan": {
+    "zh": "算盘",
+    "en": "abacus",
+    "pinyin": "suànpán",
+    "kind": "term",
+    "note_zh": "用算珠在档杆上移动进行计算的工具。",
+    "note_en": "A calculating tool whose beads slide along rods toward or away from a central beam.",
+    "aliases_en": ["suanpan"],
+    "replace_en": ["suànpán"]
+  },
+  "taiji-diagram": {
+    "zh": "太极图",
+    "en": "taiji diagram",
+    "pinyin": "tàijítú",
+    "kind": "term",
+    "note_zh": "后来用来表现阴阳相连、相互变化关系的圆形图案。",
+    "note_en": "A later circular diagram used to show yin and yang as connected and changing."
+  },
+  "taijiquan": {
+    "zh": "太极拳",
+    "en": "taijiquan",
+    "pinyin": "tàijíquán",
+    "kind": "term",
+    "note_zh": "重视缓慢连贯动作、呼吸和身体控制的中国武术。",
+    "note_en": "A Chinese martial art known for slow connected movement, breathing, and control.",
+    "aliases_en": ["Taijiquan"],
+    "replace_en": ["tàijíquán", "Tàijíquán"]
+  },
+  "tang-dynasty": {
+    "zh": "唐朝",
+    "en": "Tang dynasty",
+    "pinyin": "Táng cháo",
+    "kind": "period",
+    "note_zh": "618年至907年的中国朝代。",
+    "note_en": "The Chinese dynasty that lasted from 618 to 907.",
+    "aliases_zh": ["唐代"],
+    "aliases_en": ["Tang China", "Tang period", "Tang capital", "Tang empire", "Tang emperor", "Tang women", "Tang men"],
+    "normalize_en": false
+  },
+  "tang-poetry": {
+    "zh": "唐诗",
+    "en": "Tang poetry",
+    "pinyin": "Táng shī",
+    "kind": "term",
+    "note_zh": "唐代创作并流传下来的诗歌。",
+    "note_en": "Poetry written during the Tang dynasty.",
+    "aliases_en": ["Tang poems", "Tang Poems"]
+  },
+  "tea-horse-roads": {
+    "zh": "茶马古道",
+    "en": "Tea Horse Roads",
+    "pinyin": "Chá Mǎ Gǔdào",
+    "kind": "term",
+    "note_zh": "把中国西南茶区与青藏高原连接起来的多条旧交通路线。",
+    "note_en": "Old routes that carried tea between southwestern China and the Tibetan Plateau.",
+    "replace_en": ["Chá Mǎ Gǔdào"]
+  },
+  "temple-of-heaven": {
+    "zh": "天坛",
+    "en": "Temple of Heaven",
+    "pinyin": "Tiāntán",
+    "kind": "place",
+    "note_zh": "北京供明清皇帝祭天祈谷的建筑群。",
+    "note_en": "The Beijing complex where Ming and Qing emperors held ceremonies for Heaven."
+  },
+  "terracotta": {
+    "zh": "陶土",
+    "en": "terracotta",
+    "pinyin": "táotǔ",
+    "kind": "term",
+    "note_zh": "经过塑形和烧制后变硬的陶土材料。",
+    "note_en": "Clay that is shaped and baked until it becomes hard.",
+    "aliases_en": ["Terracotta"]
+  },
+  "terracotta-warriors": {
+    "zh": "兵马俑",
+    "en": "Terracotta Warriors",
+    "pinyin": "Bīngmǎyǒng",
+    "kind": "term",
+    "note_zh": "秦始皇陵附近出土的大型陶制军阵。",
+    "note_en": "The life-size clay army found near the tomb of the First Emperor.",
+    "aliases_en": ["Terracotta Army"]
+  },
+  "tieguai-li": {
+    "zh": "铁拐李",
+    "en": "Tieguai Li",
+    "pinyin": "Tiěguǎi Lǐ",
+    "kind": "person",
+    "note_zh": "八仙之一，常带铁拐和大葫芦。",
+    "note_en": "One of the Eight Immortals, recognized by his iron crutch and large gourd."
+  },
+  "tulou": {
+    "zh": "土楼",
+    "en": "tulou",
+    "pinyin": "tǔlóu",
+    "kind": "term",
+    "note_zh": "中国东南一些地区以夯土建造、供许多家庭共同居住的大型建筑。",
+    "note_en": "A large rammed-earth building in southeastern China designed for many households.",
+    "aliases_en": ["Tulou"],
+    "replace_en": ["Tǔlóu", "tǔlóu"]
+  },
+  "wang-xizhi": {
+    "zh": "王羲之",
+    "en": "Wang Xizhi",
+    "pinyin": "Wáng Xīzhī",
+    "kind": "person",
+    "note_zh": "东晋著名书法家。",
+    "note_en": "A celebrated calligrapher of the Eastern Jin period."
+  },
+  "water-margin": {
+    "zh": "《水浒传》",
+    "en": "Water Margin",
+    "pinyin": "Shuǐhǔ Zhuàn",
+    "kind": "work",
+    "note_zh": "讲述梁山好汉聚义的古典小说。",
+    "note_en": "The classic novel about the outlaws who gather at Liangshan."
+  },
+  "weiqi": {
+    "zh": "围棋",
+    "en": "weiqi",
+    "pinyin": "wéiqí",
+    "kind": "term",
+    "note_zh": "双方轮流在棋盘交叉点放置黑白棋子的棋类游戏。",
+    "note_en": "The strategy game in which two players place black and white stones on a grid.",
+    "aliases_en": ["Weiqi"],
+    "replace_en": ["Wéiqí", "wéiqí"]
+  },
+  "white-horse-temple": {
+    "zh": "白马寺",
+    "en": "White Horse Temple",
+    "pinyin": "Báimǎ Sì",
+    "kind": "place",
+    "note_zh": "洛阳著名古寺，常与佛教早期传入中国的故事联系起来。",
+    "note_en": "A famous temple in Luoyang associated with stories of Buddhism's early arrival in China."
+  },
+  "wu-zetian": {
+    "zh": "武则天",
+    "en": "Wu Zetian",
+    "pinyin": "Wǔ Zétiān",
+    "kind": "person",
+    "note_zh": "中国历史上唯一正式称帝的女性。",
+    "note_en": "The only woman in Chinese history to rule with the formal title of emperor."
+  },
+  "wuxi": {
+    "zh": "无锡",
+    "en": "Wuxi",
+    "pinyin": "Wúxī",
+    "kind": "place",
+    "note_zh": "江苏南部的城市。",
+    "note_en": "A city in southern Jiangsu."
+  },
+  "xian": {
+    "zh": "西安",
+    "en": "Xi'an",
+    "pinyin": "Xī'ān",
+    "kind": "place",
+    "note_zh": "中国著名古都，古代长安所在地。",
+    "note_en": "A major historic city and the modern location of ancient Chang'an.",
+    "aliases_en": ["Xi’an"],
+    "replace_en": ["Xī'ān", "Xī’ān"]
+  },
+  "xiaoqing": {
+    "zh": "小青",
+    "en": "Xiaoqing",
+    "pinyin": "Xiǎoqīng",
+    "kind": "person",
+    "note_zh": "《白蛇传》中白素贞的伙伴，由青蛇化成人形。",
+    "note_en": "Bai Suzhen's companion in the Legend of the White Snake, transformed from a green snake."
+  },
+  "xiongnu": {
+    "zh": "匈奴",
+    "en": "Xiongnu",
+    "pinyin": "Xiōngnú",
+    "kind": "people",
+    "note_zh": "古代生活在中国北方草原及其周边的强大游牧联盟。",
+    "note_en": "A powerful confederation based in the northern grasslands in ancient times."
+  },
+  "xuanzang": {
+    "zh": "玄奘",
+    "en": "Xuanzang",
+    "pinyin": "Xuánzàng",
+    "kind": "person",
+    "note_zh": "唐代前往印度求取佛经的僧人。",
+    "note_en": "The Tang monk who traveled to India to study Buddhism and bring back scriptures.",
+    "replace_en": ["Xuánzàng"]
+  },
+  "xu-xian": {
+    "zh": "许仙",
+    "en": "Xu Xian",
+    "pinyin": "Xǔ Xiān",
+    "kind": "person",
+    "note_zh": "《白蛇传》中在西湖边遇见白素贞的男子。",
+    "note_en": "The young man who meets Bai Suzhen beside West Lake in the Legend of the White Snake."
+  },
+  "yangshuo": {
+    "zh": "阳朔",
+    "en": "Yangshuo",
+    "pinyin": "Yángshuò",
+    "kind": "place",
+    "note_zh": "桂林以南、漓江边被群山环绕的小城。",
+    "note_en": "A riverside town south of Guilin surrounded by karst peaks.",
+    "replace_en": ["Yángshuò"]
+  },
+  "yangtze-river": {
+    "zh": "长江",
+    "en": "Yangtze River",
+    "pinyin": "Cháng Jiāng",
+    "kind": "place",
+    "note_zh": "中国最长的河流。",
+    "note_en": "China's longest river."
+  },
+  "yellow-river": {
+    "zh": "黄河",
+    "en": "Yellow River",
+    "pinyin": "Huáng Hé",
+    "kind": "place",
+    "note_zh": "流经中国北方、携带大量泥沙的大河。",
+    "note_en": "The great northern Chinese river known for carrying large amounts of silt."
+  },
+  "yin-yang": {
+    "zh": "阴阳",
+    "en": "yin and yang",
+    "pinyin": "yīn yáng",
+    "kind": "term",
+    "note_zh": "用来理解相反、相连而又不断变化的关系的一组概念。",
+    "note_en": "A paired idea for understanding contrasts that remain connected and change over time.",
+    "aliases_zh": ["阴和阳"],
+    "aliases_en": ["Yin and Yang"]
+  },
+  "yu-the-great": {
+    "zh": "大禹",
+    "en": "Yu the Great",
+    "pinyin": "Dà Yǔ",
+    "kind": "person",
+    "note_zh": "中国古代传说中治理洪水的英雄。",
+    "note_en": "The legendary hero who controls a great flood."
+  },
+  "yunnan": {
+    "zh": "云南",
+    "en": "Yunnan",
+    "pinyin": "Yúnnán",
+    "kind": "place",
+    "note_zh": "中国西南部山地众多、民族文化丰富的省份。",
+    "note_en": "A mountainous province in southwestern China with many cultural communities.",
+    "replace_en": ["Yúnnán"]
+  },
+  "zhang-qian": {
+    "zh": "张骞",
+    "en": "Zhang Qian",
+    "pinyin": "Zhāng Qiān",
+    "kind": "person",
+    "note_zh": "汉代出使西域、带回中亚信息的使者。",
+    "note_en": "The Han envoy whose difficult journeys brought the court new information about Central Asia.",
+    "replace_en": ["Zhāng Qiān"]
+  },
+  "zhaozhou-bridge": {
+    "zh": "赵州桥",
+    "en": "Zhaozhou Bridge",
+    "pinyin": "Zhàozhōu Qiáo",
+    "kind": "place",
+    "note_zh": "隋代工匠李春主持建造的著名石拱桥。",
+    "note_en": "The famous Sui stone arch bridge traditionally credited to the builder Li Chun.",
+    "replace_en": ["Zhàozhōu Qiáo"]
+  },
+  "zheng-he": {
+    "zh": "郑和",
+    "en": "Zheng He",
+    "pinyin": "Zhèng Hé",
+    "kind": "person",
+    "note_zh": "明代率领船队七次远航的航海家。",
+    "note_en": "The Ming admiral who led seven great voyages across the Indian Ocean."
+  },
+  "zhong-ziqi": {
+    "zh": "钟子期",
+    "en": "Zhong Ziqi",
+    "pinyin": "Zhōng Zǐqī",
+    "kind": "person",
+    "note_zh": "伯牙知音故事中真正听懂琴声的人。",
+    "note_en": "The listener in the Bo Ya story who truly understood the music."
+  },
+  "zhu-bajie": {
+    "zh": "猪八戒",
+    "en": "Zhu Bajie",
+    "pinyin": "Zhū Bājiè",
+    "kind": "person",
+    "note_zh": "《西游记》中使用九齿钉耙的取经人之一。",
+    "note_en": "One of the Journey to the West pilgrims, recognized by his pig face and rake.",
+    "replace_en": ["Zhū Bājiè"]
+  },
+  "zhu-yuanzhang": {
+    "zh": "朱元璋",
+    "en": "Zhu Yuanzhang",
+    "pinyin": "Zhū Yuánzhāng",
+    "kind": "person",
+    "note_zh": "明朝的开国皇帝。",
+    "note_en": "The founding emperor of the Ming dynasty."
+  },
+  "anhui": {
+    "zh": "安徽",
+    "en": "Anhui",
+    "pinyin": "Ānhuī",
+    "kind": "place",
+    "note_zh": "中国东部的一个省，朱元璋出生在今天安徽凤阳一带。",
+    "note_en": "A province in eastern China; Zhu Yuanzhang was born in the area of present-day Fengyang, Anhui.",
+    "aliases_zh": ["安徽省"],
+    "aliases_en": ["Anhui Province"]
+  },
+  "yuan-dynasty": {
+    "zh": "元朝",
+    "en": "Yuan dynasty",
+    "pinyin": "Yuán cháo",
+    "kind": "period",
+    "note_zh": "1271年至1368年的中国朝代。",
+    "note_en": "The Chinese dynasty that lasted from 1271 to 1368.",
+    "aliases_zh": ["元代"],
+    "aliases_en": ["Yuan period", "Yuan government"],
+    "normalize_en": false
+  },
+  "memorial": {
+    "zh": "奏札",
+    "en": "memorial",
+    "pinyin": "zòuzhá",
+    "kind": "term",
+    "note_zh": "官员送往朝廷或皇帝的正式报告、请求或建议。",
+    "note_en": "An official report, request, or proposal sent toward the court or emperor.",
+    "aliases_en": ["memorials"]
+  },
+  "central-secretariat": {
+    "zh": "中书省",
+    "en": "Central Secretariat",
+    "pinyin": "Zhōngshū Shěng",
+    "kind": "term",
+    "note_zh": "明初协调中央政务、统领六部的重要机构，1380年被撤销。",
+    "note_en": "A major early Ming administrative office abolished by Zhu Yuanzhang in 1380."
+  },
+  "chancellor": {
+    "zh": "丞相",
+    "en": "chancellor",
+    "pinyin": "chéngxiàng",
+    "kind": "term",
+    "note_zh": "辅佐皇帝、统领许多中央政务的重要官职。",
+    "note_en": "A powerful official who helped coordinate the central government.",
+    "aliases_en": ["chancellors", "chancellorship"]
+  },
+  "ministry-of-personnel": {
+    "zh": "吏部",
+    "en": "Ministry of Personnel",
+    "pinyin": "Lì Bù",
+    "kind": "term",
+    "note_zh": "管理官员的选拔、任免、考核和升降。",
+    "note_en": "The ministry responsible for selecting, appointing, evaluating, and promoting officials."
+  },
+  "ministry-of-revenue": {
+    "zh": "户部",
+    "en": "Ministry of Revenue",
+    "pinyin": "Hù Bù",
+    "kind": "term",
+    "note_zh": "管理户籍、土地、税收和国家钱粮。",
+    "note_en": "The ministry responsible for population records, land, taxes, and state revenue."
+  },
+  "ministry-of-rites": {
+    "zh": "礼部",
+    "en": "Ministry of Rites",
+    "pinyin": "Lǐ Bù",
+    "kind": "term",
+    "note_zh": "管理国家礼仪、祭祀、学校、科举和外事接待。",
+    "note_en": "The ministry responsible for state ceremonies, rituals, education, examinations, and diplomatic receptions."
+  },
+  "ministry-of-war": {
+    "zh": "兵部",
+    "en": "Ministry of War",
+    "pinyin": "Bīng Bù",
+    "kind": "term",
+    "note_zh": "管理武官选任、军籍和军令等军事行政。",
+    "note_en": "The ministry responsible for military appointments, army records, orders, and administration."
+  },
+  "ministry-of-justice": {
+    "zh": "刑部",
+    "en": "Ministry of Justice",
+    "pinyin": "Xíng Bù",
+    "kind": "term",
+    "note_zh": "管理法律、审判和刑罚。",
+    "note_en": "The ministry responsible for laws, trials, and criminal punishments."
+  },
+  "ministry-of-works": {
+    "zh": "工部",
+    "en": "Ministry of Works",
+    "pinyin": "Gōng Bù",
+    "kind": "term",
+    "note_zh": "管理建筑、道路、水利和各种大型工程。",
+    "note_en": "The ministry responsible for construction, roads, waterworks, and other major public projects."
+  },
+  "six-ministries": {
+    "zh": "六部",
+    "en": "Six Ministries",
+    "pinyin": "Liù Bù",
+    "kind": "term",
+    "note_zh": "吏部管官员，户部管钱粮户籍，礼部管礼仪科举，兵部管军事行政，刑部管法律刑罚，工部管工程。",
+    "note_en": "The six central departments responsible for officials, revenue, rites, war, justice, and public works."
+  },
+  "hu-weiyong": {
+    "zh": "胡惟庸",
+    "en": "Hu Weiyong",
+    "pinyin": "Hú Wéiyōng",
+    "kind": "person",
+    "note_zh": "明初丞相；1380年胡惟庸案后，朱元璋撤销中书省和丞相。",
+    "note_en": "An early Ming chancellor whose 1380 case preceded Zhu Yuanzhang's abolition of the office."
+  },
+  "zhuge-liang": {
+    "zh": "诸葛亮",
+    "en": "Zhuge Liang",
+    "pinyin": "Zhūgě Liàng",
+    "kind": "person",
+    "note_zh": "三国时期蜀汉的政治家和军事家，后世以足智多谋闻名。",
+    "note_en": "The Shu Han statesman and strategist later remembered for extraordinary cleverness."
+  },
+  "bai-juyi": {
+    "zh": "白居易",
+    "en": "Bai Juyi",
+    "pinyin": "Bái Jūyì",
+    "kind": "person",
+    "note_zh": "唐代诗人，写过许多语言明白、感情真切的诗。",
+    "note_en": "A Tang poet known for clear, direct poems about both everyday life and public affairs."
+  },
+  "bimawen": {
+    "zh": "弼马温",
+    "en": "Bimawen",
+    "pinyin": "Bìmǎwēn",
+    "kind": "term",
+    "note_zh": "《西游记》中天庭给孙悟空安排的养马官职。",
+    "note_en": "The low-ranking heavenly stable post given to Sun Wukong in Journey to the West.",
+    "replace_en": ["Bìmǎwēn"]
+  },
+  "cai-lun": {
+    "zh": "蔡伦",
+    "en": "Cai Lun",
+    "pinyin": "Cài Lún",
+    "kind": "person",
+    "note_zh": "东汉官员，因改进并推广造纸方法而闻名。",
+    "note_en": "An Eastern Han official remembered for improving and reporting papermaking methods.",
+    "replace_en": ["Cài Lún"]
+  },
+  "cai-you": {
+    "zh": "蔡祐",
+    "en": "Cai You",
+    "pinyin": "Cài Yòu",
+    "kind": "person",
+    "note_zh": "北朝将领，因穿着明光铠作战而被敌军称为“铁猛兽”。",
+    "note_en": "A Northern Dynasties general whose bright armor helped earn him the nickname Iron Beast.",
+    "replace_en": ["Cài Yòu"]
+  },
+  "chai-wangye": {
+    "zh": "柴王爷",
+    "en": "Chai Wangye",
+    "pinyin": "Chái Wángyé",
+    "kind": "person",
+    "note_zh": "八仙故事中曹国舅在一些民间版本里的旧称。",
+    "note_en": "An older folk-story name associated in some versions with Cao Guojiu of the Eight Immortals.",
+    "replace_en": ["Chái Wángyé"]
+  },
+  "du-fu": {
+    "zh": "杜甫",
+    "en": "Du Fu",
+    "pinyin": "Dù Fǔ",
+    "kind": "person",
+    "note_zh": "唐代诗人，许多诗记录了战乱和普通人的生活。",
+    "note_en": "A Tang poet whose work records war, hardship, family, and everyday life."
+  },
+  "erlang-shen": {
+    "zh": "二郎神",
+    "en": "Erlang Shen",
+    "pinyin": "Èrláng Shén",
+    "kind": "person",
+    "note_zh": "中国神话中的神将，《西游记》中曾与孙悟空交战。",
+    "note_en": "A warrior deity who battles Sun Wukong in Journey to the West.",
+    "replace_en": ["Èrláng Shén"]
+  },
+  "fu-hao": {
+    "zh": "妇好",
+    "en": "Fu Hao",
+    "pinyin": "Fù Hǎo",
+    "kind": "person",
+    "note_zh": "商王武丁的妻子，也是一位领兵将领。",
+    "note_en": "A wife of the Shang king Wu Ding who also led military campaigns.",
+    "replace_en": ["Fù Hǎo"]
+  },
+  "great-sage-equal-heaven": {
+    "zh": "齐天大圣",
+    "en": "Great Sage Equal to Heaven",
+    "pinyin": "Qítiān Dàshèng",
+    "kind": "term",
+    "note_zh": "孙悟空不满天庭官职后给自己取的称号。",
+    "note_en": "The grand title Sun Wukong gives himself after rejecting Heaven's low-ranking job.",
+    "replace_en": ["Qítiān Dàshèng"]
+  },
+  "huang-gai": {
+    "zh": "黄盖",
+    "en": "Huang Gai",
+    "pinyin": "Huáng Gài",
+    "kind": "person",
+    "note_zh": "三国时期东吴将领，赤壁之战中率火船冲向曹军。",
+    "note_en": "The Eastern Wu commander who led fire ships toward Cao Cao's fleet at Red Cliffs.",
+    "replace_en": ["Huáng Gài"]
+  },
+  "jade-emperor": {
+    "zh": "玉皇大帝",
+    "en": "Jade Emperor",
+    "pinyin": "Yùhuáng Dàdì",
+    "kind": "person",
+    "note_zh": "中国民间信仰和道教故事中统领天庭的神。",
+    "note_en": "The ruler of Heaven in many Chinese folk and Daoist stories."
+  },
+  "journey-to-the-west": {
+    "zh": "《西游记》",
+    "en": "Journey to the West",
+    "pinyin": "Xīyóu Jì",
+    "kind": "work",
+    "note_zh": "讲述唐僧师徒西行取经和一路奇遇的古典小说。",
+    "note_en": "The classic novel about a scripture journey west with the Monkey King and his companions."
+  },
+  "li-chun": {
+    "zh": "李春",
+    "en": "Li Chun",
+    "pinyin": "Lǐ Chūn",
+    "kind": "person",
+    "note_zh": "隋代主持建造赵州桥的工匠。",
+    "note_en": "The Sui-era builder traditionally credited with designing Zhaozhou Bridge.",
+    "replace_en": ["Lǐ Chūn"]
+  },
+  "li-qingzhao": {
+    "zh": "李清照",
+    "en": "Li Qingzhao",
+    "pinyin": "Lǐ Qīngzhào",
+    "kind": "person",
+    "note_zh": "宋代著名词人。",
+    "note_en": "A celebrated Song dynasty poet especially known for ci poetry."
+  },
+  "li-shimin": {
+    "zh": "李世民",
+    "en": "Li Shimin",
+    "pinyin": "Lǐ Shìmín",
+    "kind": "person",
+    "note_zh": "唐朝第二位皇帝唐太宗，登基前曾率军作战。",
+    "note_en": "The future Emperor Taizong, second emperor of the Tang dynasty and a military commander before taking the throne."
+  },
+  "miluo-river": {
+    "zh": "汨罗江",
+    "en": "Miluo River",
+    "pinyin": "Mìluó Jiāng",
+    "kind": "place",
+    "note_zh": "湖南的一条河，与屈原的故事和端午习俗相连。",
+    "note_en": "A river in Hunan linked with the story of Qu Yuan and Dragon Boat Festival traditions.",
+    "replace_en": ["Mìluó Jiāng"]
+  },
+  "rammed-earth": {
+    "zh": "夯土",
+    "en": "rammed earth",
+    "pinyin": "hāngtǔ",
+    "kind": "term",
+    "note_zh": "把湿润的泥土分层放入模板，再反复夯实形成的建筑材料。",
+    "note_en": "Earth packed firmly in layers inside a frame to make strong walls.",
+    "replace_en": ["hāngtǔ"]
+  },
+  "shandong": {
+    "zh": "山东",
+    "en": "Shandong",
+    "pinyin": "Shāndōng",
+    "kind": "place",
+    "note_zh": "中国东部沿海省份。",
+    "note_en": "A coastal province in eastern China.",
+    "replace_en": ["Shāndōng"]
+  },
+  "shanxi": {
+    "zh": "山西",
+    "en": "Shanxi",
+    "pinyin": "Shānxī",
+    "kind": "place",
+    "note_zh": "中国北部省份，保存着许多重要古建筑。",
+    "note_en": "A northern Chinese province with many important historic buildings.",
+    "replace_en": ["Shānxī"]
+  },
+  "sha-wujing": {
+    "zh": "沙悟净",
+    "en": "Sha Wujing",
+    "pinyin": "Shā Wùjìng",
+    "kind": "person",
+    "note_zh": "《西游记》中保护唐僧西行的徒弟之一，也常被叫作沙僧。",
+    "note_en": "One of the Journey to the West pilgrims, also commonly called Sandy or Monk Sha.",
+    "replace_en": ["Shā Wùjìng"]
+  },
+  "taishang-laojun": {
+    "zh": "太上老君",
+    "en": "Taishang Laojun",
+    "pinyin": "Tàishàng Lǎojūn",
+    "kind": "person",
+    "note_zh": "道教尊神，《西游记》中掌管炼丹炉和仙丹。",
+    "note_en": "A high Daoist deity who keeps the alchemy furnace and magical pills in Journey to the West.",
+    "replace_en": ["Tàishàng Lǎojūn"]
+  },
+  "tang-monk": {
+    "zh": "唐僧",
+    "en": "Tang Monk",
+    "pinyin": "Táng Sēng",
+    "kind": "person",
+    "note_zh": "《西游记》中带领徒弟西行取经的僧人。",
+    "note_en": "The scripture-seeking monk protected by Sun Wukong and the other pilgrims in Journey to the West.",
+    "aliases_en": ["Tang Seng"],
+    "replace_en": ["Táng Sēng"]
+  },
+  "taihu": {
+    "zh": "太湖",
+    "en": "Lake Tai",
+    "pinyin": "Tàihú",
+    "kind": "place",
+    "note_zh": "位于江南的大型淡水湖，苏州和无锡都在湖边。",
+    "note_en": "A large freshwater lake in Jiangnan, bordered by cities including Suzhou and Wuxi.",
+    "aliases_en": ["Taihu"],
+    "replace_en": ["Tàihú"]
+  },
+  "white-bone-demon": {
+    "zh": "白骨精",
+    "en": "White Bone Demon",
+    "pinyin": "Báigǔ Jīng",
+    "kind": "person",
+    "note_zh": "《西游记》中多次变成人形欺骗唐僧的妖怪。",
+    "note_en": "A demon who repeatedly disguises herself as a human to deceive the Tang Monk.",
+    "replace_en": ["Báigǔ Jīng"]
+  },
+  "wu-ding": {
+    "zh": "武丁",
+    "en": "Wu Ding",
+    "pinyin": "Wǔ Dīng",
+    "kind": "person",
+    "note_zh": "商代国王，安阳甲骨文中保存了许多与他有关的记录。",
+    "note_en": "A Shang king whose questions and decisions appear in many oracle-bone inscriptions.",
+    "replace_en": ["Wǔ Dīng"]
+  },
+  "wukong-short": {
+    "zh": "悟空",
+    "en": "Wukong",
+    "pinyin": "Wùkōng",
+    "kind": "person",
+    "note_zh": "孙悟空名字的简称。",
+    "note_en": "The shortened form of Sun Wukong's name.",
+    "replace_en": ["Wùkōng"],
+    "tooltip": false
+  },
+  "yingxian": {
+    "zh": "应县",
+    "en": "Yingxian",
+    "pinyin": "Yìngxiàn",
+    "kind": "place",
+    "note_zh": "山西北部的县，以应县木塔闻名。",
+    "note_en": "A county in northern Shanxi famous for its tall wooden pagoda.",
+    "replace_en": ["Yìngxiàn"]
+  },
+  "west-lake": {
+    "zh": "西湖",
+    "en": "West Lake",
+    "pinyin": "Xī Hú",
+    "kind": "place",
+    "note_zh": "杭州著名的湖泊，也是许多传说和诗画的背景。",
+    "note_en": "The famous lake in Hangzhou that appears in many poems, paintings, and legends."
+  },
+  "yan-liang": {
+    "zh": "颜良",
+    "en": "Yan Liang",
+    "pinyin": "Yán Liáng",
+    "kind": "person",
+    "note_zh": "东汉末年将领，史书记载关羽在战阵中击败了他。",
+    "note_en": "A late Han commander defeated by Guan Yu in an early historical account."
+  },
+  "zhou-yu": {
+    "zh": "周瑜",
+    "en": "Zhou Yu",
+    "pinyin": "Zhōu Yú",
+    "kind": "person",
+    "note_zh": "东吴将领，赤壁之战中统领吴军。",
+    "note_en": "The Eastern Wu commander who directed Wu forces at the Battle of Red Cliffs.",
+    "replace_en": ["Zhōu Yú"]
+  },
+  "buyao": {
+    "zh": "步摇",
+    "en": "buyao",
+    "pinyin": "bùyáo",
+    "kind": "term",
+    "note_zh": "插在发髻上的垂饰，走路时会轻轻摇动。",
+    "note_en": "A hair ornament with hanging pieces that move as the wearer walks.",
+    "replace_en": ["bùyáo"]
+  },
+  "cao-zhi": {
+    "zh": "曹植",
+    "en": "Cao Zhi",
+    "pinyin": "Cáo Zhí",
+    "kind": "person",
+    "note_zh": "三国时期诗人，也是曹操的儿子。",
+    "note_en": "A Three Kingdoms poet and a son of Cao Cao.",
+    "replace_en": ["Cáo Zhí"]
+  },
+  "circular-mound-altar": {
+    "zh": "圜丘坛",
+    "en": "Circular Mound Altar",
+    "pinyin": "Huánqiūtán",
+    "kind": "place",
+    "note_zh": "天坛内用于冬至祭天的露天圆形石坛。",
+    "note_en": "The open-air circular stone altar at the Temple of Heaven used for the winter-solstice ceremony.",
+    "replace_en": ["Huánqiūtán"]
+  },
+  "great-cien-temple": {
+    "zh": "大慈恩寺",
+    "en": "Great Ci'en Temple",
+    "pinyin": "Dà Cí'ēn Sì",
+    "kind": "place",
+    "note_zh": "西安大雁塔所在的佛教寺院。",
+    "note_en": "The Buddhist temple in Xi'an where the Giant Wild Goose Pagoda was built.",
+    "aliases_en": ["Great Ci’en Temple"],
+    "replace_en": ["Dà Cí'ēn Sì", "Dà Cí’ēn Sì"]
+  },
+  "hani": {
+    "zh": "哈尼族",
+    "en": "Hani",
+    "pinyin": "Hāní",
+    "kind": "term",
+    "note_zh": "中国西南地区的民族之一，红河哈尼梯田由当地社区长期营造和维护。",
+    "note_en": "An ethnic group in southwestern China whose communities have long cared for the Honghe rice terraces.",
+    "aliases_zh": ["哈尼"],
+    "replace_en": ["Hāní"]
+  },
+  "jiaoling-youren": {
+    "zh": "交领右衽",
+    "en": "crossed collar closing to the right",
+    "pinyin": "jiāolǐng yòurèn",
+    "kind": "term",
+    "note_zh": "衣襟交叉、左襟盖住右襟的一种传统穿法。",
+    "note_en": "A traditional robe construction in which the left front crosses over the right.",
+    "aliases_en": ["jiaoling youren"],
+    "replace_en": ["jiāolǐng yòurèn"]
+  },
+  "liu-sheng": {
+    "zh": "刘胜",
+    "en": "Liu Sheng",
+    "pinyin": "Liú Shèng",
+    "kind": "person",
+    "note_zh": "西汉中山靖王，他的墓中出土了重要文物。",
+    "note_en": "A Western Han prince whose tomb contained important archaeological finds.",
+    "replace_en": ["Liú Shèng"]
+  },
+  "penglai": {
+    "zh": "蓬莱",
+    "en": "Penglai",
+    "pinyin": "Pénglái",
+    "kind": "place",
+    "note_zh": "山东沿海城市，古港遗址出土过木船。",
+    "note_en": "A coastal place in Shandong where wooden ships were excavated from an old harbor.",
+    "replace_en": ["Pénglái"]
+  },
+  "relics": {
+    "zh": "舍利",
+    "en": "Buddhist relic",
+    "pinyin": "shèlì",
+    "kind": "term",
+    "note_zh": "佛陀或受敬重僧人留下、被人珍重保存的遗骨、骨灰或物品。",
+    "note_en": "Ashes, bone fragments, or objects associated with the Buddha or a respected monk.",
+    "aliases_en": ["Buddhist relics", "relic", "relics"]
+  },
+  "shuixiu": {
+    "zh": "水袖",
+    "en": "water sleeves",
+    "pinyin": "shuǐxiù",
+    "kind": "term",
+    "note_zh": "戏曲服装袖口接出的长白绸，演员用它表现动作和情绪。",
+    "note_en": "Long white silk extensions on opera sleeves, moved by performers to express action and emotion.",
+    "replace_en": ["shuǐxiù"]
+  },
+  "sui-dynasty": {
+    "zh": "隋朝",
+    "en": "Sui dynasty",
+    "pinyin": "Suí Cháo",
+    "kind": "term",
+    "note_zh": "581年至618年的朝代，结束长期分裂并为唐朝奠定基础。",
+    "note_en": "The short dynasty from 581 to 618 that reunified China before the Tang.",
+    "aliases_zh": ["隋代"],
+    "aliases_en": ["Sui"],
+    "replace_en": ["Suí Cháo"]
+  },
+  "sunzi": {
+    "zh": "孙子",
+    "en": "Sunzi",
+    "pinyin": "Sūnzǐ",
+    "kind": "person",
+    "note_zh": "传统上被认为与《孙子兵法》有关的古代军事思想家。",
+    "note_en": "The ancient strategist traditionally associated with The Art of War.",
+    "replace_en": ["Sūnzǐ"]
+  },
+  "xiao-river": {
+    "zh": "洨河",
+    "en": "Xiao River",
+    "pinyin": "Xiáo Hé",
+    "kind": "place",
+    "note_zh": "河北的一条河，赵州桥横跨其上。",
+    "note_en": "The river in Hebei crossed by Zhaozhou Bridge.",
+    "replace_en": ["Xiáo River", "Xiáo Hé"]
+  },
+  "yiji": {
+    "zh": "义髻",
+    "en": "false bun",
+    "pinyin": "yìjì",
+    "kind": "term",
+    "note_zh": "加在真发上的假发髻，可用头发、麻布或薄木等材料制成。",
+    "note_en": "An added hair bun made from materials such as hair, cloth, or thin wood.",
+    "aliases_en": ["false buns", "yiji"],
+    "replace_en": ["yìjì"]
+  },
+  "yinqueshan": {
+    "zh": "银雀山",
+    "en": "Yinqueshan",
+    "pinyin": "Yínquèshān",
+    "kind": "place",
+    "note_zh": "山东临沂的汉墓遗址，出土了《孙子兵法》等竹简。",
+    "note_en": "A Han tomb site in Shandong where bamboo-strip texts including The Art of War were found.",
+    "replace_en": ["Yínquèshān"]
+  },
+  "zhang-guolao": {
+    "zh": "张果老",
+    "en": "Zhang Guolao",
+    "pinyin": "Zhāng Guǒlǎo",
+    "kind": "person",
+    "note_zh": "八仙之一，民间故事里常倒骑毛驴。",
+    "note_en": "One of the Eight Immortals, often shown riding a donkey backward.",
+    "replace_en": ["Zhāng Guǒlǎo"]
+  },
+  "zhaozhou-place": {
+    "zh": "赵州",
+    "en": "Zhaozhou",
+    "pinyin": "Zhàozhōu",
+    "kind": "place",
+    "note_zh": "赵州桥所在地过去使用的地名。",
+    "note_en": "The historical place name that gave Zhaozhou Bridge its name.",
+    "replace_en": ["Zhàozhōu"]
+  },
+  "banliang": {
+    "zh": "半两钱",
+    "en": "banliang coin",
+    "pinyin": "bànliǎng qián",
+    "kind": "term",
+    "note_zh": "秦统一后推行的圆形方孔铜钱。",
+    "note_en": "The round bronze coin with a square hole standardized under the Qin empire.",
+    "aliases_zh": ["半两"],
+    "aliases_en": ["banliang"],
+    "replace_en": ["bànliǎng"]
+  },
+  "banyao-kite": {
+    "zh": "板鹞",
+    "en": "banyao kite",
+    "pinyin": "bǎnyào",
+    "kind": "term",
+    "note_zh": "南通一带著名的板形风筝，常装有竹制或葫芦制的哨子。",
+    "note_en": "A flat Nantong kite that can carry bamboo or gourd whistles.",
+    "aliases_en": ["banyao"],
+    "replace_en": ["bǎnyào"]
+  },
+  "chu-state": {
+    "zh": "楚国",
+    "en": "Chu",
+    "pinyin": "Chǔ",
+    "kind": "place",
+    "note_zh": "战国时期的重要诸侯国之一。",
+    "note_en": "One of the major states of ancient China during the Warring States period.",
+    "replace_en": ["Chǔ"]
+  },
+  "erlang-short": {
+    "zh": "二郎",
+    "en": "Erlang",
+    "pinyin": "Èrláng",
+    "kind": "person",
+    "note_zh": "二郎神名字的简称。",
+    "note_en": "A shortened form of Erlang Shen's name.",
+    "replace_en": ["Èrláng"],
+    "tooltip": false
+  },
+  "jiazi": {
+    "zh": "甲子",
+    "en": "jiazi",
+    "pinyin": "jiǎzǐ",
+    "kind": "term",
+    "note_zh": "干支纪年六十种组合中的第一种，也可以指一个六十年周期。",
+    "note_en": "The first pairing in the sixty-year stem-and-branch cycle, and a name for the full cycle.",
+    "aliases_en": ["Jiazi"],
+    "replace_en": ["Jiǎzǐ", "jiǎzǐ"]
+  },
+  "jianzhǐ": {
+    "zh": "剪纸",
+    "en": "Chinese paper-cutting",
+    "pinyin": "jiǎnzhǐ",
+    "kind": "term",
+    "note_zh": "用剪刀或刻刀在纸上制作图案的传统艺术。",
+    "note_en": "The traditional art of cutting or carving patterns from paper.",
+    "aliases_en": ["jianzhi"],
+    "replace_en": ["jiǎnzhǐ"]
+  },
+  "jingjiao": {
+    "zh": "景教",
+    "en": "Jingjiao",
+    "pinyin": "Jǐngjiào",
+    "kind": "term",
+    "note_zh": "唐代中国对东方教会基督教传统的一种称呼。",
+    "note_en": "A Tang Chinese name for the Church of the East Christian tradition.",
+    "replace_en": ["Jǐngjiào"]
+  },
+  "madiao": {
+    "zh": "马吊",
+    "en": "madiao",
+    "pinyin": "mǎdiào",
+    "kind": "term",
+    "note_zh": "明代流行的一类长条纸牌游戏。",
+    "note_en": "A family of long, narrow paper-card games popular in Ming China.",
+    "replace_en": ["mǎdiào"]
+  },
+  "meng-short": {
+    "zh": "孟",
+    "en": "Meng",
+    "pinyin": "Mèng",
+    "kind": "person",
+    "note_zh": "孟元老的姓。",
+    "note_en": "Meng Yuanlao's family name.",
+    "replace_en": ["Mèng"],
+    "tooltip": false,
+    "auto_tag": false
+  },
+  "qingtuan": {
+    "zh": "青团",
+    "en": "qingtuan",
+    "pinyin": "qīngtuán",
+    "kind": "term",
+    "note_zh": "清明前后常见的绿色糯米点心。",
+    "note_en": "A green glutinous-rice treat often eaten around Qingming.",
+    "replace_en": ["Qīngtuán", "qīngtuán"]
+  },
+  "taqing": {
+    "zh": "踏青",
+    "en": "taqing",
+    "pinyin": "tàqīng",
+    "kind": "term",
+    "note_zh": "春天到郊外散步、游玩的传统活动。",
+    "note_en": "A spring outing or walk outdoors to enjoy the new season.",
+    "replace_en": ["tàqīng"]
+  },
+  "yasuiqian": {
+    "zh": "压岁钱",
+    "en": "yasuiqian",
+    "pinyin": "yāsuìqián",
+    "kind": "term",
+    "note_zh": "过年时长辈给孩子的钱，寄托平安和祝福。",
+    "note_en": "New Year money given to children with wishes for safety and good fortune.",
+    "replace_en": ["yāsuìqián"]
+  },
+  "zhusuan": {
+    "zh": "珠算",
+    "en": "zhusuan",
+    "pinyin": "zhūsuàn",
+    "kind": "term",
+    "note_zh": "使用算盘和口诀进行计算的中国传统计算方法。",
+    "note_en": "The Chinese tradition of calculating with an abacus and memorized oral formulas.",
+    "replace_en": ["zhūsuàn"]
+  },
+  "zongzi": {
+    "zh": "粽子",
+    "en": "zongzi",
+    "pinyin": "zòngzi",
+    "kind": "term",
+    "note_zh": "用叶子包裹糯米和馅料后煮熟的传统食物。",
+    "note_en": "A traditional food of glutinous rice and fillings wrapped in leaves and cooked.",
+    "replace_en": ["zòngzi"]
+  },
+  "chengdu": {
+    "zh": "成都",
+    "en": "Chengdu",
+    "pinyin": "Chéngdū",
+    "kind": "place",
+    "note_zh": "四川省省会，也是重要的大熊猫保护和研究中心。",
+    "note_en": "The capital of Sichuan and an important center for giant-panda conservation and research."
+  },
+  "chopsticks": {
+    "zh": "筷子",
+    "en": "chopsticks",
+    "pinyin": "kuàizi",
+    "kind": "term",
+    "note_zh": "成对使用、用来夹取食物的细长餐具。",
+    "note_en": "A pair of slender eating utensils used together to lift food."
+  },
+  "cowherd": {
+    "zh": "牛郎",
+    "en": "the Cowherd",
+    "pinyin": "Niúláng",
+    "kind": "person",
+    "note_zh": "牛郎织女传说中在人间放牛的年轻人。",
+    "note_en": "The young herder in the Cowherd and Weaver Girl legend.",
+    "aliases_en": ["The Cowherd"]
+  },
+  "ink-wash-painting": {
+    "zh": "水墨画",
+    "en": "ink-wash painting",
+    "pinyin": "shuǐmò huà",
+    "kind": "term",
+    "note_zh": "主要用墨和水的浓淡变化作画的中国画传统。",
+    "note_en": "A Chinese painting tradition that builds images through varied mixtures of ink and water.",
+    "aliases_en": ["Chinese ink-wash painting", "ink wash painting"]
+  },
+  "king-min-qi": {
+    "zh": "齐湣王",
+    "en": "King Min of Qi",
+    "pinyin": "Qí Mǐn Wáng",
+    "kind": "person",
+    "note_zh": "战国时期齐国国君，故事里喜欢听乐师独奏。",
+    "note_en": "A ruler of Qi who, in the story, wanted to hear each musician play alone.",
+    "aliases_en": ["King Min"]
+  },
+  "jiang-ziya": {
+    "zh": "姜子牙",
+    "en": "Jiang Ziya",
+    "pinyin": "Jiāng Zǐyá",
+    "kind": "person",
+    "note_zh": "商周之际的重要人物，又称吕尚、姜太公，后来辅佐周文王。",
+    "note_en": "An important figure near the end of the Shang period, also known as Lü Shang and Jiang Taigong, who later advised King Wen of Zhou.",
+    "auto_tag": false
+  },
+  "king-wen-zhou": {
+    "zh": "周文王",
+    "en": "King Wen of Zhou",
+    "pinyin": "Zhōu Wén Wáng",
+    "kind": "person",
+    "note_zh": "周朝建立前的重要领袖，传说中发现并重用姜子牙的人。",
+    "note_en": "A major leader before the Zhou dynasty was founded who, in the story, recognizes Jiang Ziya’s ability.",
+    "auto_tag": false
+  },
+  "king-xuan-qi": {
+    "zh": "齐宣王",
+    "en": "King Xuan of Qi",
+    "pinyin": "Qí Xuān Wáng",
+    "kind": "person",
+    "note_zh": "战国时期齐国国君，故事里喜欢听许多乐师合奏。",
+    "note_en": "A ruler of Qi who, in the story, enjoyed hearing a large ensemble play together."
+  },
+  "nanguo": {
+    "zh": "南郭先生",
+    "en": "Nanguo",
+    "pinyin": "Nánguō Xiānsheng",
+    "kind": "person",
+    "note_zh": "滥竽充数故事中不会吹竽却混进乐队的人。",
+    "note_en": "The man in the story who joins the orchestra even though he cannot play the yu."
+  },
+  "nian-monster": {
+    "zh": "年兽",
+    "en": "Nian",
+    "pinyin": "Nián",
+    "kind": "person",
+    "note_zh": "春节民间故事中害怕红色、火光和响声的怪兽。",
+    "note_en": "The New Year monster in a folk tale that fears red, firelight, and loud noises."
+  },
+  "qixi": {
+    "zh": "七夕",
+    "en": "Qixi",
+    "pinyin": "Qīxī",
+    "kind": "term",
+    "note_zh": "农历七月初七的传统节日，与牛郎织女传说相连。",
+    "note_en": "The traditional festival on the seventh day of the seventh lunar month, linked with the Cowherd and Weaver Girl."
+  },
+  "qomolangma": {
+    "zh": "珠穆朗玛峰",
+    "en": "Qomolangma",
+    "pinyin": "Zhūmùlǎngmǎ Fēng",
+    "kind": "place",
+    "note_zh": "位于中国与尼泊尔边界、海拔世界最高的山峰，英语常称 Mount Everest。",
+    "note_en": "The world's highest peak above sea level, called Mount Everest in English.",
+    "aliases_zh": ["珠峰"],
+    "aliases_en": ["Mount Everest", "Everest"]
+  },
+  "queen-mother-west": {
+    "zh": "王母娘娘",
+    "en": "Queen Mother of the West",
+    "pinyin": "Xīwángmǔ",
+    "kind": "person",
+    "note_zh": "中国神话中的重要女神，在牛郎织女故事中把两人隔在天河两边。",
+    "note_en": "A powerful goddess who separates the Cowherd and Weaver Girl in the legend.",
+    "aliases_en": ["Queen Mother"]
+  },
+  "bamboo-slips": {
+    "zh": "竹简",
+    "en": "bamboo slips",
+    "pinyin": "zhújiǎn",
+    "kind": "term",
+    "note_zh": "把文字写在竹片上，再用绳子编联起来的古代书写材料。",
+    "note_en": "Narrow bamboo strips written on and tied together as an ancient writing material.",
+    "aliases_en": ["strips of bamboo"]
+  },
+  "book-of-rites": {
+    "zh": "《礼记》",
+    "en": "Book of Rites",
+    "pinyin": "Lǐjì",
+    "kind": "work",
+    "note_zh": "记载古代礼仪、制度和思想的重要典籍。",
+    "note_en": "An important classical work about ancient ritual, institutions, and ideas."
+  },
+  "book-of-documents": {
+    "zh": "《尚书》",
+    "en": "Book of Documents",
+    "pinyin": "Shàngshū",
+    "kind": "work",
+    "note_zh": "保存上古政治、传说和治水叙述的重要经典。",
+    "note_en": "An ancient classic preserving political traditions and accounts of Yǔ's work with water."
+  },
+  "counting-rods": {
+    "zh": "算筹",
+    "en": "counting rods",
+    "pinyin": "suànchóu",
+    "kind": "term",
+    "note_zh": "古代用来表示数字和帮助计算的小棍。",
+    "note_en": "Small rods used to represent numbers and carry out calculations."
+  },
+  "guozi": {
+    "zh": "国子",
+    "en": "guozi",
+    "pinyin": "guózǐ",
+    "kind": "term",
+    "note_zh": "《周礼》中与统治阶层关系密切、接受教育的年轻人。",
+    "note_en": "Young people connected with the ruling elite who receive instruction in the Rites of Zhou.",
+    "replace_en": ["guózǐ"]
+  },
+  "chaju": {
+    "zh": "察举",
+    "en": "chaju",
+    "pinyin": "chájǔ",
+    "kind": "term",
+    "note_zh": "汉代等时期由地方官考察并向朝廷推荐人才的选官方式。",
+    "note_en": "A method in which local officials identified and recommended candidates for government service.",
+    "replace_en": ["chájǔ"]
+  },
+  "classical-interpretation": {
+    "zh": "经义",
+    "en": "classical interpretation",
+    "pinyin": "jīngyì",
+    "kind": "term",
+    "note_zh": "科举中根据题目解释儒家经典意义的文章。",
+    "note_en": "Examination writing that explained the meaning of a passage from the Confucian classics."
+  },
+  "eight-legged-essay": {
+    "zh": "八股文",
+    "en": "eight-legged essay",
+    "pinyin": "bāgǔwén",
+    "kind": "term",
+    "note_zh": "明清科举中结构严格、讲究对偶的经典论说文。",
+    "note_en": "A tightly structured examination essay based on the classics and known for balanced parallel sections.",
+    "aliases_en": ["bāgǔwén"]
+  },
+  "exam-cell": {
+    "zh": "号舍",
+    "en": "examination cells",
+    "pinyin": "hàoshè",
+    "kind": "term",
+    "note_zh": "贡院里供考生答题、休息的狭小隔间。",
+    "note_en": "Narrow compartments in an examination compound where candidates wrote and rested."
+  },
+  "exam-top-three": {
+    "zh": "状元、榜眼、探花",
+    "en": "zhuangyuan, bangyan, and tanhua",
+    "pinyin": "zhuàngyuán, bǎngyǎn, tànhuā",
+    "kind": "term",
+    "note_zh": "殿试第一甲前三名的称号，状元排在第一。",
+    "note_en": "The titles for the top three candidates in the first rank of the palace examination."
+  },
+  "gongyuan": {
+    "zh": "贡院",
+    "en": "gongyuan",
+    "pinyin": "gòngyuàn",
+    "kind": "place",
+    "note_zh": "古代举行科举考试的专门考场。",
+    "note_en": "A compound built for holding imperial examinations.",
+    "aliases_en": ["imperial examination compound"],
+    "replace_en": ["gòngyuàn"]
+  },
+  "four-books-five-classics": {
+    "zh": "《四书》《五经》",
+    "en": "Four Books and Five Classics",
+    "pinyin": "Sìshū, Wǔjīng",
+    "kind": "work",
+    "note_zh": "儒家教育与科举学习中长期重视的两组经典。",
+    "note_en": "Two groups of Confucian classics central to education and examination study in imperial China."
+  },
+  "fu": {
+    "zh": "赋",
+    "en": "fu",
+    "pinyin": "fù",
+    "kind": "term",
+    "note_zh": "中国古代一种铺陈描写、兼有韵文和散文特点的文体。",
+    "note_en": "An early Chinese literary form combining expansive description with features of prose and verse.",
+    "replace_en": ["fù"]
+  },
+  "gun": {
+    "zh": "鲧",
+    "en": "Gun",
+    "pinyin": "Gǔn",
+    "kind": "person",
+    "note_zh": "大禹的父亲，传统故事中先接受治水任务却没有成功。",
+    "note_en": "Yǔ's father, who is given the flood-control task first but does not succeed in the traditional account.",
+    "replace_en": ["Gǔn"]
+  },
+  "jinshi": {
+    "zh": "进士",
+    "en": "jinshi degree",
+    "pinyin": "jìnshì",
+    "kind": "term",
+    "note_zh": "科举最高层级考试中取得的功名，常成为进入仕途的重要起点。",
+    "note_en": "A prestigious degree earned through the highest levels of the imperial examination system.",
+    "aliases_zh": ["进士科"],
+    "aliases_en": ["jinshi examination"],
+    "replace_en": ["jìnshì degree", "jìnshì examination"]
+  },
+  "juren": {
+    "zh": "举人",
+    "en": "juren",
+    "pinyin": "jǔrén",
+    "kind": "term",
+    "note_zh": "明清时期通过乡试后获得的功名。",
+    "note_en": "A degree title earned by passing the provincial examination in the Ming and Qing periods.",
+    "replace_en": ["jǔrén"]
+  },
+  "metropolitan-examination": {
+    "zh": "会试",
+    "en": "metropolitan examination",
+    "pinyin": "huìshì",
+    "kind": "term",
+    "note_zh": "明清科举中举人到京城参加的中央一级考试。",
+    "note_en": "A central examination in the capital taken after the provincial level."
+  },
+  "mencius": {
+    "zh": "《孟子》",
+    "en": "Mencius",
+    "pinyin": "Mèngzǐ",
+    "kind": "work",
+    "note_zh": "记录孟子言论与思想的儒家经典，其中保存了大禹三过家门的故事。",
+    "note_en": "A Confucian classic that preserves the story of Yǔ passing his doorway three times."
+  },
+  "ming-qing-period": {
+    "zh": "明清时期",
+    "en": "Ming and Qing dynasties",
+    "pinyin": "Míng-Qīng shíqī",
+    "kind": "period",
+    "note_zh": "从明朝建立到清朝结束的历史时期，大致为1368年至1912年。",
+    "note_en": "The period spanning the Ming and Qing dynasties, from 1368 to 1912."
+  },
+  "palace-examination": {
+    "zh": "殿试",
+    "en": "palace examination",
+    "pinyin": "diànshì",
+    "kind": "term",
+    "note_zh": "科举最高一级考试，由皇帝主持名义下决定最终名次。",
+    "note_en": "The highest examination stage, held under imperial authority to determine final ranking."
+  },
+  "policy-response": {
+    "zh": "策问",
+    "en": "policy response",
+    "pinyin": "cèwèn",
+    "kind": "term",
+    "note_zh": "科举中让考生回答历史或治理问题的写作题。",
+    "note_en": "An examination response discussing a question about history or government policy.",
+    "aliases_en": ["policy responses"]
+  },
+  "provincial-examination": {
+    "zh": "乡试",
+    "en": "provincial examination",
+    "pinyin": "xiāngshì",
+    "kind": "term",
+    "note_zh": "明清科举中在各省举行的重要考试，考中者称举人。",
+    "note_en": "A major Ming and Qing examination held at the provincial level.",
+    "aliases_en": ["provincial examinations"]
+  },
+  "qi-of-xia": {
+    "zh": "启",
+    "en": "Qi",
+    "pinyin": "Qǐ",
+    "kind": "person",
+    "note_zh": "传统历史中大禹的儿子和夏朝的继任君王。",
+    "note_en": "Yǔ's son and successor as ruler of Xià in traditional history.",
+    "replace_en": ["Qǐ"]
+  },
+  "records-grand-historian": {
+    "zh": "《史记》",
+    "en": "Records of the Grand Historian",
+    "pinyin": "Shǐjì",
+    "kind": "work",
+    "note_zh": "司马迁撰写的纪传体史书，保存了鲧、禹和夏的传统叙述。",
+    "note_en": "Sima Qian's history, which preserves traditional accounts of Gǔn, Yǔ, and Xià."
+  },
+  "shun": {
+    "zh": "舜",
+    "en": "Shun",
+    "pinyin": "Shùn",
+    "kind": "person",
+    "note_zh": "中国上古传说中的统治者，传统记载中把治理天下的位置交给禹。",
+    "note_en": "A legendary early ruler who hands leadership to Yǔ in traditional histories.",
+    "replace_en": ["Shùn"]
+  },
+  "wang-anshi": {
+    "zh": "王安石",
+    "en": "Wang Anshi",
+    "pinyin": "Wáng Ānshí",
+    "kind": "person",
+    "note_zh": "北宋政治家与改革者，在1071年推动科举考试内容改革。",
+    "note_en": "A Northern Song statesman and reformer who helped change examination subjects in 1071.",
+    "replace_en": ["Wáng Ānshí"]
+  },
+  "xia-dynasty": {
+    "zh": "夏朝",
+    "en": "Xia dynasty",
+    "pinyin": "Xià cháo",
+    "kind": "period",
+    "note_zh": "传统中国历史中通常被称为第一个王朝，与大禹和启的故事相连。",
+    "note_en": "The dynasty traditionally remembered as China's first and linked with Yǔ and Qǐ.",
+    "aliases_zh": ["夏"],
+    "aliases_en": ["Xià"],
+    "replace_en": ["Xià dynasty"]
+  },
+  "rites-of-zhou": {
+    "zh": "《周礼》",
+    "en": "Rites of Zhou",
+    "pinyin": "Zhōulǐ",
+    "kind": "work",
+    "note_zh": "记述古代官制与礼制理想的经典文献。",
+    "note_en": "An ancient classical text describing an ideal system of offices, rituals, and education."
+  },
+  "shang-zhou-era": {
+    "zh": "商周时代",
+    "en": "Shang and Zhou",
+    "pinyin": "Shāng-Zhōu",
+    "kind": "period",
+    "note_zh": "商代和周代，战车在战争与贵族生活中都很重要。",
+    "note_en": "The Shang and Zhou periods, when chariots were important in warfare and elite life."
+  },
+  "sui-tang-period": {
+    "zh": "隋唐时期",
+    "en": "Sui and Tang periods",
+    "pinyin": "Suí-Táng shíqī",
+    "kind": "period",
+    "note_zh": "隋朝与唐朝延续的时期，大致为581年至907年。",
+    "note_en": "The period of the Sui and Tang dynasties, lasting from 581 to 907."
+  },
+  "sichuan": {
+    "zh": "四川",
+    "en": "Sichuan",
+    "pinyin": "Sìchuān",
+    "kind": "place",
+    "note_zh": "中国西南省份，拥有大面积的大熊猫山林栖息地。",
+    "note_en": "A southwestern Chinese province containing extensive mountain habitat for giant pandas."
+  },
+  "six-arts": {
+    "zh": "六艺",
+    "en": "Six Arts",
+    "pinyin": "liù yì",
+    "kind": "term",
+    "note_zh": "古代礼制文献中的教育分类：礼、乐、射、御、书、数。",
+    "note_en": "An ancient educational grouping of ritual, music, archery, chariot driving, writing, and calculation."
+  },
+  "weaver-girl": {
+    "zh": "织女",
+    "en": "Weaver Girl",
+    "pinyin": "Zhīnǚ",
+    "kind": "person",
+    "note_zh": "牛郎织女传说中住在天上、擅长织布的女子。",
+    "note_en": "The heavenly weaver in the Cowherd and Weaver Girl legend."
+  },
+  "ziran": {
+    "zh": "自然",
+    "en": "ziran",
+    "pinyin": "zìrán",
+    "kind": "term",
+    "note_zh": "《道德经》中接近“自己如此”的概念，强调事物按照自身情况发展。",
+    "note_en": "A Dao De Jing idea close to ‘so of itself’: things becoming according to what they are."
+  },
+  "zhu-jun": {
+    "zh": "朱儁",
+    "en": "Zhu Jun",
+    "pinyin": "Zhū Jùn",
+    "kind": "person",
+    "note_zh": "东汉将领，《三十六计》的按语用他的战事说明声东击西。",
+    "note_en": "An Eastern Han commander whose campaign is used to illustrate the stratagem Make Noise Here, Move There."
+  },
+  "zigong": {
+    "zh": "子贡",
+    "en": "Zigong",
+    "pinyin": "Zǐgòng",
+    "kind": "person",
+    "note_zh": "孔子的学生，《论语》中记录了他向孔子提出的许多问题。",
+    "note_en": "A student of Confucius whose questions appear repeatedly in the Analects."
+  },
+  "clerical-script": {
+    "zh": "隶书",
+    "en": "clerical script",
+    "pinyin": "lìshū",
+    "kind": "term",
+    "note_zh": "由早期篆书演变而来、笔画更加平直舒展的古代字体。",
+    "note_en": "An early script style with flatter, more sweeping strokes than seal script.",
+    "replace_en": ["lìshū"]
+  },
+  "cursive-script": {
+    "zh": "草书",
+    "en": "cursive script",
+    "pinyin": "cǎoshū",
+    "kind": "term",
+    "note_zh": "笔画常被连写或简化、书写速度很快的书法字体。",
+    "note_en": "A fast, flowing calligraphic script whose strokes may join or simplify.",
+    "replace_en": ["cǎoshū"]
+  },
+  "regular-script": {
+    "zh": "楷书",
+    "en": "regular script",
+    "pinyin": "kǎishū",
+    "kind": "term",
+    "note_zh": "笔画和结构清楚、今天仍很常见的汉字字体。",
+    "note_en": "A clear, structured Chinese script style still widely used today.",
+    "replace_en": ["kǎishū"]
+  },
+  "running-script": {
+    "zh": "行书",
+    "en": "running script",
+    "pinyin": "xíngshū",
+    "kind": "term",
+    "note_zh": "介于楷书和草书之间、笔势较连贯流动的字体。",
+    "note_en": "A flowing script style between the formality of regular script and the speed of cursive.",
+    "replace_en": ["xíngshū"]
+  },
+  "seal-script": {
+    "zh": "篆书",
+    "en": "seal script",
+    "pinyin": "zhuànshū",
+    "kind": "term",
+    "note_zh": "秦代统一文字时使用并规范的一类古老字体。",
+    "note_en": "An ancient script style standardized for official use under the Qin.",
+    "replace_en": ["zhuànshū"]
+  },
+  "dongjing-meng-hua-lu": {
+    "zh": "《东京梦华录》",
+    "en": "Dongjing Meng Hua Lu",
+    "pinyin": "Dōngjīng Mèng Huá Lù",
+    "kind": "work",
+    "note_zh": "孟元老回忆北宋开封城市生活的著作。",
+    "note_en": "Meng Yuanlao's vivid account of urban life in Northern Song Kaifeng.",
+    "replace_en": ["Dōngjīng Mèng Huá Lù", "Dōngjīng Meng Huá Lù"]
+  },
+  "archaeologist": {
+    "zh": "考古人员",
+    "en": "archaeologist",
+    "pinyin": "kǎogǔ rényuán",
+    "kind": "term",
+    "note_zh": "通过遗址和出土物研究过去的人。",
+    "note_en": "A person who studies the past through sites and objects people left behind."
+  },
+  "bronze": {
+    "zh": "青铜",
+    "en": "bronze",
+    "pinyin": "qīngtóng",
+    "kind": "term",
+    "note_zh": "主要由铜和锡熔合而成的合金，古人常用它铸造钟和器皿。",
+    "note_en": "An alloy made mainly from copper and tin, often used in ancient times to cast bells and vessels."
+  },
+  "inscription": {
+    "zh": "铭文",
+    "en": "inscription",
+    "pinyin": "míngwén",
+    "kind": "term",
+    "note_zh": "铸、刻或写在器物上的文字。",
+    "note_en": "Words cast, carved, or written on an object."
+  },
+  "marquis-yi-of-zeng": {
+    "zh": "曾侯乙",
+    "en": "Marquis Yi of Zeng",
+    "pinyin": "Zēng Hóu Yǐ",
+    "kind": "person",
+    "note_zh": "战国早期曾国的一位国君，他的墓中出土了著名的六十五口编钟。",
+    "note_en": "An early Warring States ruler of Zeng whose tomb held the famous set of sixty-five bells."
+  },
+  "octave": {
+    "zh": "八度",
+    "en": "octave",
+    "pinyin": "bādù",
+    "kind": "term",
+    "note_zh": "音乐中从一个音到更高或更低的同名音之间的距离。",
+    "note_en": "The musical distance from one note to the next higher or lower note with the same name."
+  },
+  "pitch": {
+    "zh": "音高",
+    "en": "pitch",
+    "pinyin": "yīngāo",
+    "kind": "term",
+    "note_zh": "声音听起来高或低的程度。",
+    "note_en": "How high or low a sound seems."
+  },
+  "replica": {
+    "zh": "复制品",
+    "en": "replica",
+    "pinyin": "fùzhìpǐn",
+    "kind": "term",
+    "note_zh": "根据原物制作的仿制品，可以用于研究、展示或演奏。",
+    "note_en": "A carefully made copy of an original object, used for study, display, or performance."
+  },
+  "vibration": {
+    "zh": "振动",
+    "en": "vibration",
+    "pinyin": "zhèndòng",
+    "kind": "term",
+    "note_zh": "物体快速来回运动；这种运动会推动空气，形成声音。",
+    "note_en": "A rapid back-and-forth movement that can push the air and create sound."
+  },
+  "wu-zhou": {
+    "zh": "武周",
+    "en": "Wu Zhou",
+    "pinyin": "Wǔ Zhōu",
+    "kind": "period",
+    "note_zh": "武则天称帝后建立的王朝，从公元690年延续到705年。",
+    "note_en": "The dynasty Wu Zetian established and ruled from 690 to 705.",
+    "auto_tag": false
+  },
+  "zhou-dynasty": {
+    "zh": "周朝",
+    "en": "Zhou dynasty",
+    "pinyin": "Zhōu cháo",
+    "kind": "period",
+    "note_zh": "武则天以前一千多年的古代王朝，不是她建立的武周。",
+    "note_en": "An ancient dynasty from more than a thousand years before Wu Zetian, not the Wu Zhou dynasty she established.",
+    "auto_tag": false
+  },
+  "zhan-guo-ce": {
+    "zh": "《战国策》",
+    "en": "Strategies of the Warring States",
+    "pinyin": "Zhànguó Cè",
+    "kind": "work",
+    "note_zh": "汇集战国时期各国谋略、游说和政治故事的一部古书。",
+    "note_en": "An ancient collection of political arguments, strategies, and stories from the Warring States period."
+  }
+}

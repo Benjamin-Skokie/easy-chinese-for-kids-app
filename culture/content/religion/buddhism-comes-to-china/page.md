@@ -19,7 +19,7 @@ layout: text-only
 heading_zh: 皇帝做了一个梦
 heading_en: The Emperor's Dream
 [zh]
-将近两千年前，中国正处在汉朝。一天早晨，汉明帝醒来后，还清楚地记得昨夜的梦。他梦见一位金光闪闪的人飞进宫殿，身边的光像太阳一样明亮。
+将近两千年前，中国正处在[[汉朝|han-dynasty]]。一天早晨，汉明帝醒来后，还清楚地记得昨夜的梦。他梦见一位金光闪闪的人飞进宫殿，身边的光像太阳一样明亮。
 
 “那是谁？”皇帝问大臣们。
 
@@ -30,7 +30,7 @@ heading_en: The Emperor's Dream
 一个著名传说说，汉明帝听完以后，便派人向西出发，寻找关于佛陀的更多消息。
 [/zh]
 [en]
-Nearly two thousand years ago, China was ruled by the Han dynasty. One morning, Emperor Ming woke with a strange dream still bright in his mind. A golden man had flown into the palace, shining like the sun.
+Nearly two thousand years ago, China was ruled by the [[Han dynasty|han-dynasty]]. One morning, Emperor Ming woke with a strange dream still bright in his mind. A golden man had flown into the palace, shining like the sun.
 
 “Who was he?” the emperor asked his advisers.
 
@@ -51,20 +51,20 @@ image: 1-white-horse-arrival-v2.webp
 caption_zh: 传说中，两位僧人与一匹驮着佛像和佛教书卷的白马来到了洛阳。
 caption_en: In the legend, two monks arrive in Luoyang with a white horse carrying a Buddhist image and rolled-up books.
 [zh]
-传说继续讲道，皇帝派出的人终于回来了。两位僧人和他们一起来到洛阳。这是汉朝的都城，也是皇帝居住和处理国家大事的地方。
+传说继续讲道，皇帝派出的人终于回来了。两位僧人和他们一起来到[[洛阳|luoyang]]。这是汉朝的都城，也是皇帝居住和处理国家大事的地方。
 
 走在队伍中间的是一匹白马。它背上驮着佛像和写满佛教教导的书卷。一路走来，它已经越过了遥远的山脉和荒野。
 
-皇帝欢迎了两位僧人，并让人为他们修建一座寺院。为了纪念那匹走了很远路的马，人们把寺院叫作白马寺。
+皇帝欢迎了两位僧人，并让人为他们修建一座寺院。为了纪念那匹走了很远路的马，人们把寺院叫作[[白马寺|white-horse-temple]]。
 
 这个传说不一定和当年发生的事情一模一样。不过，它让一匹安静的白马，成了人们讲述佛教来到中国时最难忘的形象。
 [/zh]
 [en]
-The legend continues with the travelers returning at last. Two Buddhist monks came with them to Luoyang, the Han capital where the emperor lived and ruled.
+The legend continues with the travelers returning at last. Two Buddhist monks came with them to [[Luoyang|luoyang]], the Han capital where the emperor lived and ruled.
 
 In the middle of the group walked a white horse. On its back were a picture of the Buddha and rolled-up books filled with Buddhist teachings. The horse had carried them across distant mountains and dry lands.
 
-The emperor welcomed the monks and had a temple built for them. To honor the animal that had made the long journey, people called it White Horse Temple.
+The emperor welcomed the monks and had a temple built for them. To honor the animal that had made the long journey, people called it [[White Horse Temple|white-horse-temple]].
 
 The legend may not match every detail of what really happened. Still, its quiet white horse became an unforgettable picture in the story of Buddhism's arrival in China.
 [/en]
@@ -78,17 +78,17 @@ heading_en: Buddhism Takes Root in China
 [zh]
 现实中，佛教并不是只靠一匹马、一次旅行就传进中国的。僧人、商人和旅行者从古代印度和中亚带来了佛教的教导。这样的旅程持续了许多年。
 
-刚开始，佛像、僧衣和佛教故事对许多中国人来说都很陌生。后来，人们建起有中国屋顶的佛寺，在山崖上雕刻佛像，还画出了观音——一位会倾听并帮助受苦之人的佛教人物。这个从远方来的宗教，渐渐有了人们熟悉的中国面貌。
+刚开始，佛像、僧衣和佛教故事对许多中国人来说都很陌生。后来，人们建起有中国屋顶的佛寺，在山崖上雕刻佛像，还画出了[[观音|guanyin]]——一位会倾听并帮助受苦之人的佛教人物。这个从远方来的宗教，渐渐有了人们熟悉的中国面貌。
 
-佛教也走进了中国的故事。《西游记》里的唐僧为什么要走那么远？他要去寻找佛教经书。少林寺为什么会有和尚？因为它在有武功以前，首先是一座佛教寺院。白马寺的传说是故事的开头，后来发生的事却远远超过了一匹马和一次旅行。
+佛教也走进了中国的故事。[[《西游记》|journey-to-the-west]]里的[[唐僧|tang-monk]]为什么要走那么远？他要去寻找佛教经书。[[少林寺|shaolin-temple]]为什么会有和尚？因为它在有武功以前，首先是一座佛教寺院。白马寺的传说是故事的开头，后来发生的事却远远超过了一匹马和一次旅行。
 
 [/zh]
 [en]
 In real life, Buddhism did not enter China on one horse in a single trip. Monks, merchants, and other travelers carried Buddhist teachings from ancient India and Central Asia. These journeys continued for many years.
 
-At first, Buddhist images, monks' robes, and stories seemed new to many people in China. Later, builders raised Buddhist temples with Chinese roofs. Artists carved Buddhas into cliffs and painted Guanyin, a Buddhist figure who hears and helps people in pain. A religion from far away began to look and feel at home in China.
+At first, Buddhist images, monks' robes, and stories seemed new to many people in China. Later, builders raised Buddhist temples with Chinese roofs. Artists carved Buddhas into cliffs and painted [[Guanyin|guanyin]], a Buddhist figure who hears and helps people in pain. A religion from far away began to look and feel at home in China.
 
-Buddhism also entered stories that children still know. Why does the Tang Monk travel so far in *Journey to the West*? He is searching for Buddhist writings. Why are there monks at Shaolin Temple? Because Shaolin was a Buddhist temple long before it became famous for kung fu. The White Horse legend tells the beginning, but the story soon grew much larger than one horse and one journey.
+Buddhism also entered stories that children still know. Why does the [[Tang Monk|tang-monk]] travel so far in [[Journey to the West|journey-to-the-west]]? He is searching for Buddhist writings. Why are there monks at [[Shaolin Temple|shaolin-temple]]? Because Shaolin was a Buddhist temple long before it became famous for [[kung fu|gongfu]]. The White Horse legend tells the beginning, but the story soon grew much larger than one horse and one journey.
 
 [/en]
 [/section]

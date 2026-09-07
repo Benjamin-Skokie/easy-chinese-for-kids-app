@@ -27,13 +27,13 @@
             <img src="./images/1-first-stones-board.webp" alt="" class="floated-image" />
             <figcaption class="caption floated-caption"><span class="zh">一颗黑子落下，对面的人想了一会儿，再放下一颗白子。</span><br><span class="en">A black stone lands, and the other player thinks for a moment before placing a white one.</span></figcaption>
           </figure>
-          <p>一颗黑子落在木棋盘上。对面的人想了一会儿，放下一颗白子。第一次看围棋，你可能会觉得奇怪：这到底有什么难的？没有骰子，棋子也不会在棋盘上跑来跑去。一颗棋放下以后，通常就待在那里不动了。</p>
+          <p>一颗黑子落在木棋盘上。对面的人想了一会儿，放下一颗白子。第一次看<span class="glossary-entry"><button type="button" class="glossary-term" aria-expanded="false" aria-controls="glossary-weiqi-1">围棋</button><span id="glossary-weiqi-1" class="glossary-popover" role="tooltip">wéiqí · 双方轮流在棋盘交叉点放置黑白棋子的棋类游戏。</span></span>，你可能会觉得奇怪：这到底有什么难的？没有骰子，棋子也不会在棋盘上跑来跑去。一颗棋放下以后，通常就待在那里不动了。</p>
           <p>能有多难呢？答案是：非常难。</p>
           <p>围棋在中国已经流传了几千年。两个人轮流把黑白棋子放在棋盘的交叉点上。如果把对方的一群棋完全围住，就可以把它们提掉；同时，双方还要想办法围出自己的地盘。</p>
           <p>规则并不难。真正奇怪的是，棋一下起来，事情马上就复杂了。</p>
-          <p>A black stone lands on the wooden board. Across the table, the other player thinks for a moment and places down a white one. If you are watching <em>wéiqí</em> for the first time, you may wonder why it is supposed to be difficult. Nobody rolls dice. The stones do not run around the board. Once you put one down, it usually stays exactly where it is.</p>
+          <p>A black stone lands on the wooden board. Across the table, the other player thinks for a moment and places down a white one. If you are watching <span class="glossary-entry"><button type="button" class="glossary-term" aria-expanded="false" aria-controls="glossary-weiqi-2">weiqi</button><span id="glossary-weiqi-2" class="glossary-popover" role="tooltip">wéiqí · 围棋 · The strategy game in which two players place black and white stones on a grid.</span></span> for the first time, you may wonder why it is supposed to be difficult. Nobody rolls dice. The stones do not run around the board. Once you put one down, it usually stays exactly where it is.</p>
           <p>How hard could that be? Very hard, as it turns out.</p>
-          <p><em>Wéiqí</em> began in China thousands of years ago. Two players take turns placing black and white stones on the intersections of a grid. If you completely surround an opponent’s stones, you can capture them. Players also try to surround empty areas as territory.</p>
+          <p><em>weiqi</em> began in China thousands of years ago. Two players take turns placing black and white stones on the intersections of a grid. If you completely surround an opponent’s stones, you can capture them. Players also try to surround empty areas as territory.</p>
           <p>The rules are simple enough to learn quickly. The strange part is what happens after that.</p>
         </div>
       </section>
@@ -50,7 +50,7 @@
           <p>比如，你看见一颗白棋靠近自己的黑棋，心想：“我要抓住它！”于是你追着它下一步，又下一步。可是对方忽然跑到棋盘另一边去了。为什么去那里？过了一会儿你才发现：你忙着赢眼前这一场小仗的时候，对方已经在远处悄悄占了一大片地方。</p>
           <p>这就是围棋最有意思的地方之一。一颗棋虽然只占一个小点，却可能影响很远。有时候，几颗棋根本不值得救；有时候，棋盘上空空的地方，反而比最热闹的地方重要。</p>
           <p>Imagine you see a white stone near yours and decide to capture it. You add another black stone. White answers. You keep chasing&#8212;and suddenly your opponent plays far away on the other side of the board. Why over there? Later, you discover the answer. While you were busy winning one tiny fight, your opponent was building something much bigger somewhere else.</p>
-          <p>That is one of the great tricks of <em>wéiqí</em>. A move in one corner may matter far away. Sometimes a few stones are not worth saving. Sometimes an empty part of the board is more important than the crowded part everyone is staring at.</p>
+          <p>That is one of the great tricks of <em>weiqi</em>. A move in one corner may matter far away. Sometimes a few stones are not worth saving. Sometimes an empty part of the board is more important than the crowded part everyone is staring at.</p>
         </div>
       </section>
 
@@ -85,7 +85,7 @@
             <p>In 2016, that idea became famous in a very surprising way. An artificial-intelligence program called AlphaGo played a five-game match against Lee Sedol, one of the world’s strongest professional players. During the second game, AlphaGo made its 37th move in a place that surprised professional commentators.</p>
           <p>It did not look like the kind of move a top human player would normally choose. At first, some wondered whether the computer had made a mistake. It had not.</p>
           <p>Much later, the unusual move turned out to be important. AlphaGo won the game and eventually won the match four games to one.</p>
-          <p>People had been studying <em>wéiqí</em> for thousands of years, and one little stone could still make experts ask, “Why there?”</p>
+          <p>People had been studying <em>weiqi</em> for thousands of years, and one little stone could still make experts ask, “Why there?”</p>
           </div>
         </div>
       </section>
@@ -133,7 +133,8 @@
             if (!button || !popover) return;
 
             const margin = 12;
-            const gap = 10;
+            const compactViewport = window.matchMedia("(max-width: 900px)").matches;
+            const gap = compactViewport ? 8 : 10;
             const buttonRect = button.getBoundingClientRect();
             const popoverRect = popover.getBoundingClientRect();
             const halfWidth = popoverRect.width / 2;
@@ -142,10 +143,12 @@
             const maxCenter = window.innerWidth - margin - halfWidth;
             const left = Math.min(Math.max(buttonCenter, minCenter), maxCenter);
 
-            let side = "above";
-            let top = buttonRect.top - popoverRect.height - gap;
+            let side = compactViewport ? "below" : "above";
+            let top = side === "below"
+              ? buttonRect.bottom + gap
+              : buttonRect.top - popoverRect.height - gap;
 
-            if (top < margin) {
+            if (side === "above" && top < margin) {
               side = "below";
               top = buttonRect.bottom + gap;
             }

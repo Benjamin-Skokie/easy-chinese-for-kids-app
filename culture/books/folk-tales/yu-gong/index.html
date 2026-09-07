@@ -45,7 +45,7 @@
             <img src="./images/2-family-digging.webp" alt="" class="floated-image" />
             <figcaption class="caption floated-caption"><span class="zh">一把锄头挖不了一座山，可是全家人一锄头接一锄头，第一筐石头很快就装满了。</span><br><span class="en">One hoe cannot move a mountain, but the whole family keeps digging until the first basket is full.</span></figcaption>
           </figure>
-          <p>第二天一早，愚公带着儿子、孙子来到山脚。咚！锄头敲在石头上。嚓！铲子挖进泥土里。一个邻居家的小男孩看见了，也跳着跑来帮忙。</p>
+          <p>第二天一早，愚公带着儿子、<span class="glossary-entry"><button type="button" class="glossary-term" aria-expanded="false" aria-controls="glossary-sunzi-1">孙子</button><span id="glossary-sunzi-1" class="glossary-popover" role="tooltip">Sūnzǐ · 传统上被认为与《孙子兵法》有关的古代军事思想家。</span></span>来到山脚。咚！锄头敲在石头上。嚓！铲子挖进泥土里。一个邻居家的小男孩看见了，也跳着跑来帮忙。</p>
           <p>一锄头挖不了多少，一只篮子也装不了多少。可篮子装满一筐，他们就运走一筐；山壁挖下一小块，他们就在原来的地方接着挖。</p>
           <p>夏天，汗水从他们的鼻尖往下滴。冬天，手指冻得发红。他们累了就坐下来喝水，喝完又站起来。山还是高得看不到顶，可山脚下已经出现了一块从前没有的小缺口。</p>
           <p>Early the next morning, Yu Gong came to the mountain with his sons and grandchildren. Thud! His hoe hit a rock. Scrape! A shovel dug into the dirt. A young boy from the next house saw them and came running to help.</p>
@@ -131,7 +131,8 @@
             if (!button || !popover) return;
 
             const margin = 12;
-            const gap = 10;
+            const compactViewport = window.matchMedia("(max-width: 900px)").matches;
+            const gap = compactViewport ? 8 : 10;
             const buttonRect = button.getBoundingClientRect();
             const popoverRect = popover.getBoundingClientRect();
             const halfWidth = popoverRect.width / 2;
@@ -140,10 +141,12 @@
             const maxCenter = window.innerWidth - margin - halfWidth;
             const left = Math.min(Math.max(buttonCenter, minCenter), maxCenter);
 
-            let side = "above";
-            let top = buttonRect.top - popoverRect.height - gap;
+            let side = compactViewport ? "below" : "above";
+            let top = side === "below"
+              ? buttonRect.bottom + gap
+              : buttonRect.top - popoverRect.height - gap;
 
-            if (top < margin) {
+            if (side === "above" && top < margin) {
               side = "below";
               top = buttonRect.bottom + gap;
             }

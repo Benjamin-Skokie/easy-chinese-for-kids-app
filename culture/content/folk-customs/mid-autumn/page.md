@@ -22,14 +22,14 @@ image: family-moon-viewing.webp
 caption_zh: 中秋夜，一家人分享月饼，也一起抬头看圆圆的月亮。
 caption_en: On Mid-Autumn night, a family shares mooncakes and looks up at the round moon together.
 [zh]
-中秋节在中国传统历法的八月十五。到了晚上，很多家庭会坐在一起看圆月、吃月饼。圆月和圆圆的月饼都象征着“团圆”，也就是一家人相聚在一起。
+[[中秋节|mid-autumn-festival]]在中国传统历法的八月十五。到了晚上，很多家庭会坐在一起看圆月、吃月饼。圆月和圆圆的月饼都象征着“团圆”，也就是一家人相聚在一起。
 
 不过，这轮月亮还装着许多故事。中秋的晚上，如果天气晴朗，抬头仔细看看圆圆的月亮。明亮的月面上，是不是有一块一块深色的影子？
 
 很久以前，中国人望着这些月影，想象出了各种各样的形状。有人觉得，那里好像长着一棵巨大的树。树下还站着**一个曾经学习成仙的人**。他的名字叫**吴刚**。
 [/zh]
 [en]
-Mid-Autumn Festival falls on the fifteenth day of the eighth month in the traditional Chinese calendar. At night, many families sit together, look at the full moon, and share mooncakes. The round moon and round mooncakes both symbolize family reunion.
+[[Mid-Autumn Festival|mid-autumn-festival]] falls on the fifteenth day of the eighth month in the traditional Chinese calendar. At night, many families sit together, look at the full moon, and share mooncakes. The round moon and round mooncakes both symbolize family reunion.
 
 But this moon holds many stories, too. On a clear Mid-Autumn night, look closely at the full moon. Do you see the darker patches across its bright surface?
 
@@ -75,7 +75,7 @@ layout: text-only
 heading_zh: 月亮上的“咚咚”声
 heading_en: Thump, Thump, Thump
 [zh]
-不过，人们想象中的月亮上，可不只有吴刚一个人在忙。如果你读过[我们讲嫦娥奔月的那篇故事](../../folk-tales/chang-e-moon/index.html)，也许已经注意到嫦娥身边还有一只白兔。中国人叫它**玉兔**。
+不过，人们想象中的月亮上，可不只有吴刚一个人在忙。如果你读过[我们讲嫦娥奔月的那篇故事](../../folk-tales/chang-e-moon/index.html)，也许已经注意到[[嫦娥|chang-e]]身边还有一只白兔。中国人叫它**玉兔**。
 
 玉兔又在忙什么呢？**咚。咚。咚。** 它正拿着药杵捣药，而且不是普通的药。
 
@@ -90,7 +90,7 @@ And what is the rabbit doing? **Thump. Thump. Thump.** It is pounding medicine w
 
 Ancient Chinese stories often told of magical medicines that could give someone an extraordinarily long life—or even help a person become an immortal. In one very old song, a white rabbit pounds such a medicine and offers it to the emperor.
 
-So was the Jade Rabbit making medicine especially for Chang’e? Not in the earliest stories we know.
+So was the Jade Rabbit making medicine especially for [[Chang’e|chang-e]]? Not in the earliest stories we know.
 [/en]
 [/section]
 

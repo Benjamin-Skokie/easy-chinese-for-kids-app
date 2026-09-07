@@ -4,7 +4,7 @@
 
 ## Picture One: Who Is Still Fishing in the Snow?
 
-More than 1,000 years ago, during China's [[Tang dynasty]], poets wrote about snow, moonlight, friends, broken roofs, and roads far from home. Let us begin with the quietest picture of all.
+More than 1,000 years ago, during China's [[Tang dynasty|tang-dynasty]], poets wrote about snow, moonlight, friends, broken roofs, and roads far from home. Let us begin with the quietest picture of all.
 
 One Tang poet, Liu Zongyuan, created an entire winter scene with only twenty Chinese characters. His poem is called *River Snow*. Watch how it begins far away, then moves closer.
 
@@ -30,7 +30,7 @@ Wang Wei did not give his friend a long speech. He simply asked him to stay for 
 
 ## Picture Three: The Moon Arrives, and the Roof Flies Away
 
-Li Bai and Du Fu were friends, and they became two of the most famous Tang poets. Both wrote many kinds of poems, but these two moments show just how different poems can feel.
+[[Li Bai|li-bai]] and [[Du Fu|du-fu]] were friends, and they became two of the most famous Tang poets. Both wrote many kinds of poems, but these two moments show just how different poems can feel.
 
 Li Bai is sitting alone under the moon with a cup of wine. That sounds quiet until he lifts his cup and something magical happens: *I lift my cup and invite the bright moon. With my shadow, now we are three.*
 
@@ -60,4 +60,4 @@ There are no pear blossoms, of course. Snow has covered every branch, making the
 
 Close the page and see what remains: one fisherman in the snow, a final cup before a friend leaves, the moon invited to Li Bai's party, a roof torn away by the wind, and a faraway land where snow “blooms” like white pear flowers.
 
-Tang poems do not all sound alike. They can be still, funny, sad, warm, or suddenly wild. Their words are old, but their best pictures still appear in a flash. Which picture would you step into? Which one would you rather watch from somewhere warm?
+[[Tang poems|tang-poetry]] do not all sound alike. They can be still, funny, sad, warm, or suddenly wild. Their words are old, but their best pictures still appear in a flash. Which picture would you step into? Which one would you rather watch from somewhere warm?

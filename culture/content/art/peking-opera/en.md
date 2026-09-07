@@ -1,14 +1,14 @@
 > Difficulty: Easy
 
-# There Is No Horse on Stage—So Why Can You See One?
+# Peking Opera: There Is No Horse on Stage—So Why Can You See One?
 
-Imagine watching Peking opera for the first time. The stage looks surprisingly empty. There is no forest, no mountain road, and certainly no horse.
+## The Stage Gives You Clues
+
+Imagine watching [[Peking opera|jingju]] for the first time. The stage looks surprisingly empty. There is no forest, no mountain road, and certainly no horse.
 
 Then an actor walks onstage holding a decorated riding whip. He lifts one leg as if stepping into a stirrup, takes hold of invisible reins, and begins to move. His body rises and falls. He leans forward as the pace quickens, then suddenly pulls back.
 
 Somehow, you can see the horse. But there is still no horse onstage.
-
-## The Stage Gives You Clues
 
 Peking opera does not always try to make the stage look like the real world. Instead, it gives the audience clues and lets imagination do the rest.
 
@@ -52,6 +52,6 @@ The audience is not just watching. It is helping to build the world of the story
 
 ## How Did Peking Opera Begin?
 
-Peking opera grew slowly rather than being invented by one person. In 1790, several opera troupes from Anhui came to Beijing to perform. Over the following decades, their performances mixed with other Chinese opera traditions and local music. By the middle of the nineteenth century, the form we now call **Peking opera**, or **jingju**, had taken recognizable shape.
+Peking opera grew slowly rather than being invented by one person. In 1790, several opera troupes from Anhui came to Beijing to perform. Over the following decades, their performances mixed with other Chinese opera traditions and local music. By the middle of the nineteenth century, the form we now call **Peking opera** had taken recognizable shape.
 
 More than two hundred years later, its stage can still perform the same little piece of magic. An actor raises a whip. The drums begin. There is no horse. And yet, somehow, you see one.

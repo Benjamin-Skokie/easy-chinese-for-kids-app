@@ -28,11 +28,11 @@
             <figcaption class="caption floated-caption"><span class="zh">红纸打开以后，一只左右相对的蝴蝶完整出现了。</span><br><span class="en">When the red paper opens, both matching wings of the butterfly appear together.</span></figcaption>
           </figure>
           <p>一张红纸对折起来。咔嚓，咔嚓。剪刀从纸边剪进几条弯线，又挖出几个小洞。纸还合着的时候，这些剪口乱七八糟，怎么看也不像一只蝴蝶。</p>
-          <p>可是，把纸轻轻打开&#8212;&#8212;两边的翅膀一起展开了。触角出来了，翅膀里的小花纹也出来了，而且左右两边正好相对。奇怪的是，剪纸的人并没有先剪左翅膀，再剪右翅膀。纸折在一起时，剪刀一次穿过了两层；折痕打开，一道剪口也就同时出现在两边。</p>
-          <p>这正是剪纸（jiǎnzhǐ）最好玩的地方之一。完整的图案最后才出现，可是拿着剪刀的人，早在纸打开以前，就得先在脑子里看见它。</p>
+          <p>可是，把纸轻轻打开&#8212;&#8212;两边的翅膀一起展开了。触角出来了，翅膀里的小花纹也出来了，而且左右两边正好相对。奇怪的是，<span class="glossary-entry"><button type="button" class="glossary-term" aria-expanded="false" aria-controls="glossary-jianzh-1">剪纸</button><span id="glossary-jianzh-1" class="glossary-popover" role="tooltip">jiǎnzhǐ · 用剪刀或刻刀在纸上制作图案的传统艺术。</span></span>的人并没有先剪左翅膀，再剪右翅膀。纸折在一起时，剪刀一次穿过了两层；折痕打开，一道剪口也就同时出现在两边。</p>
+          <p>这正是剪纸最好玩的地方之一。完整的图案最后才出现，可是拿着剪刀的人，早在纸打开以前，就得先在脑子里看见它。</p>
           <p>A square of red paper is folded in half. Snip, snip. The scissors cut a few curves along the edge and make several tiny holes. With the paper still folded, the shapes do not look much like anything.</p>
           <p>Then the paper opens. Two wings spread out at the same time. There are feelers, little spaces inside the wings, and matching curves on both sides. A butterfly has appeared&#8212;but the cutter never cut one wing and then the other. The scissors passed through both layers of folded paper at once. When the fold opened, each cut appeared on both sides.</p>
-          <p>That surprise is one of the delights of Chinese paper-cutting, or <strong>jiǎnzhǐ (剪纸)</strong>. The finished picture comes last. The person holding the scissors has to imagine it first.</p>
+          <p>That surprise is one of the delights of <span class="glossary-entry"><button type="button" class="glossary-term" aria-expanded="false" aria-controls="glossary-jianzh-2">Chinese paper-cutting</button><span id="glossary-jianzh-2" class="glossary-popover" role="tooltip">jiǎnzhǐ · 剪纸 · The traditional art of cutting or carving patterns from paper.</span></span>. The finished picture comes last. The person holding the scissors has to imagine it first.</p>
         </div>
       </section>
 
@@ -97,7 +97,7 @@
           <p>So how many butterflies were hiding inside that sheet?</p>
           <p>There were no finished butterflies printed inside it. What was hidden was the plan: folds that could repeat a cut, empty spaces waiting to become part of the picture, and narrow pieces of paper that would hold everything together.</p>
           <p>Only when the sheet opens can you see all those choices at once.</p>
-          <p>That is the little magic trick of <strong>jiǎnzhǐ</strong>: the picture appears last, but someone had to see it before it was there.</p>
+          <p>That is the little magic trick of <strong>Chinese paper-cutting</strong>: the picture appears last, but someone had to see it before it was there.</p>
         </div>
       </section>
     </main>
@@ -129,7 +129,8 @@
             if (!button || !popover) return;
 
             const margin = 12;
-            const gap = 10;
+            const compactViewport = window.matchMedia("(max-width: 900px)").matches;
+            const gap = compactViewport ? 8 : 10;
             const buttonRect = button.getBoundingClientRect();
             const popoverRect = popover.getBoundingClientRect();
             const halfWidth = popoverRect.width / 2;
@@ -138,10 +139,12 @@
             const maxCenter = window.innerWidth - margin - halfWidth;
             const left = Math.min(Math.max(buttonCenter, minCenter), maxCenter);
 
-            let side = "above";
-            let top = buttonRect.top - popoverRect.height - gap;
+            let side = compactViewport ? "below" : "above";
+            let top = side === "below"
+              ? buttonRect.bottom + gap
+              : buttonRect.top - popoverRect.height - gap;
 
-            if (top < margin) {
+            if (side === "above" && top < margin) {
               side = "below";
               top = buttonRect.bottom + gap;
             }

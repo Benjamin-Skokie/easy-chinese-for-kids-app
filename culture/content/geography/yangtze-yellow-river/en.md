@@ -4,7 +4,7 @@
 
 ## Two Drops Begin a Journey East
 
-Imagine two drops of melting snow high in western China. One joins the Yangtze River. The other joins the Yellow River. Both travel east, but their journeys are very different.
+Imagine two drops of melting snow high in western China. One joins the [[Yangtze River|yangtze-river]]. The other joins the [[Yellow River|yellow-river]]. Both travel east, but their journeys are very different.
 
 The Yangtze is China's longest river. It runs about 4,000 miles before reaching the East China Sea. The Yellow River is China's second longest. It travels about 3,400 miles to the Bohai Sea. Both cross a large part of China.
 
@@ -26,9 +26,9 @@ Soil carried by the Yellow River can make farmland rich, but floods can also rus
 
 Near its beginning, the Yangtze rushes down from high land through narrow mountain channels. Later, it enters three great gorges joined together. They are called the Three Gorges. Steep peaks rise on both sides, and a boat seems to pass through one enormous stone doorway after another.
 
-More than 1,000 years ago, the poet Li Bai traveled through this area by boat. He wrote, “My light boat has passed ten thousand mountains.” Peak after peak slipped behind him as the current carried his boat forward. In just one short line, he made the boat feel as if it were flying.
+More than 1,000 years ago, the poet [[Li Bai|li-bai]] traveled through this area by boat. He wrote, “My light boat has passed ten thousand mountains.” Peak after peak slipped behind him as the current carried his boat forward. In just one short line, he made the boat feel as if it were flying.
 
-After leaving the gorges, the Yangtze reaches flatter land and joins lakes and many smaller rivers. The water grows wider, and more boats appear. By the time the river passes near Nanjing and Shanghai, it is a busy waterway carrying goods and passengers toward the sea.
+After leaving the gorges, the Yangtze reaches flatter land and joins lakes and many smaller rivers. The water grows wider, and more boats appear. By the time the river passes near Nanjing and [[Shanghai|shanghai]], it is a busy waterway carrying goods and passengers toward the sea.
 
 ---
 

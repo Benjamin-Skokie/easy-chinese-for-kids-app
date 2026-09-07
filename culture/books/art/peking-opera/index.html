@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>台上没有马，为什么你却看见了马？</title>
+    <title>京剧：台上没有马，为什么你却看见了马？</title>
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
@@ -13,8 +13,8 @@
     <main class="book">
       <section class="page hero">
         <div class="hero-copy">
-          <h1>台上没有马，为什么你却看见了马？</h1>
-          <h2>There Is No Horse on Stage&#8212;So Why Can You See One?</h2>
+          <h1>京剧：台上没有马，为什么你却看见了马？</h1>
+          <h2>Peking Opera: There Is No Horse on Stage&#8212;So Why Can You See One?</h2>
         </div>
       </section>
 
@@ -24,16 +24,16 @@
           <h3>舞台会给你线索</h3>
           <h4>The Stage Gives You Clues</h4>
           <figure class="floated-figure">
-            <img src="./images/invisible-horse-rider.webp" alt="" class="floated-image" />
+            <img src="./images/peking-opera-riding-whip-illustration.webp" alt="" class="floated-image" />
             <figcaption class="caption floated-caption"><span class="zh">舞台上没有马；演员用马鞭、脚步和身体动作，让观众看见一匹想象中的马。</span><br><span class="en">There is no horse onstage; the whip and the performer's movements bring one to life in the audience's imagination.</span></figcaption>
           </figure>
-          <p>想象一下，你第一次去看京剧。舞台看起来空空的，没有树林，没有山路，当然也没有一匹马。</p>
+          <p>想象一下，你第一次去看<span class="glossary-entry"><button type="button" class="glossary-term" aria-expanded="false" aria-controls="glossary-jingju-1">京剧</button><span id="glossary-jingju-1" class="glossary-popover" role="tooltip">jīngjù · 结合唱、念、做、打的中国戏曲形式。</span></span>。舞台看起来空空的，没有树林，没有山路，当然也没有一匹马。</p>
           <p>这时，一位演员走上台，手里拿着一根装饰漂亮的马鞭。他抬起一条腿，好像踩进马镫，两手拉住看不见的缰绳，身体随着脚步一起一伏。速度越来越快，他突然向后一勒。</p>
           <p>奇怪的是，你居然看见了一匹马。可是舞台上明明还是没有马。</p>
           <p>京剧并不总是想把真实世界原样搬到舞台上。它更喜欢给观众一些线索，剩下的交给想象。</p>
           <p>一根马鞭告诉你，这个人正在骑马。一支船桨，可以让空空的舞台变成一条河。演员在舞台上绕上一圈，就可能表示已经赶了很远的路。甚至最简单的一张桌子和两把椅子，只要换一种摆法，也可以帮助表示不同的地方。</p>
           <p>看得多了，观众就会读懂这些线索。于是，一个几乎空着的舞台，可以变成山路、河流、宫殿，也可以变成战场。</p>
-          <p>Imagine watching Peking opera for the first time. The stage looks surprisingly empty. There is no forest, no mountain road, and certainly no horse.</p>
+          <p>Imagine watching <span class="glossary-entry"><button type="button" class="glossary-term" aria-expanded="false" aria-controls="glossary-jingju-2">Peking opera</button><span id="glossary-jingju-2" class="glossary-popover" role="tooltip">jīngjù · 京剧 · A form of Chinese opera combining song, speech, movement, and stylized combat.</span></span> for the first time. The stage looks surprisingly empty. There is no forest, no mountain road, and certainly no horse.</p>
           <p>Then an actor walks onstage holding a decorated riding whip. He lifts one leg as if stepping into a stirrup, takes hold of invisible reins, and begins to move. His body rises and falls. He leans forward as the pace quickens, then suddenly pulls back.</p>
           <p>Somehow, you can see the horse. But there is still no horse onstage.</p>
           <p>Peking opera does not always try to make the stage look like the real world. Instead, it gives the audience clues and lets imagination do the rest.</p>
@@ -100,7 +100,7 @@
           <p>两百多年以后，舞台上的这个小魔法还在。演员举起马鞭，锣鼓响起来。明明没有马。可是你就是看见了。</p>
           </div>
           <div class="en">
-            <p>Peking opera grew slowly rather than being invented by one person. In 1790, several opera troupes from Anhui came to Beijing to perform. Over the following decades, their performances mixed with other Chinese opera traditions and local music. By the middle of the nineteenth century, the form we now call <strong>Peking opera</strong>, or <strong>jingju</strong>, had taken recognizable shape.</p>
+            <p>Peking opera grew slowly rather than being invented by one person. In 1790, several opera troupes from Anhui came to Beijing to perform. Over the following decades, their performances mixed with other Chinese opera traditions and local music. By the middle of the nineteenth century, the form we now call <strong>Peking opera</strong> had taken recognizable shape.</p>
           <p>More than two hundred years later, its stage can still perform the same little piece of magic. An actor raises a whip. The drums begin. There is no horse. And yet, somehow, you see one.</p>
           </div>
         </div>
@@ -134,7 +134,8 @@
             if (!button || !popover) return;
 
             const margin = 12;
-            const gap = 10;
+            const compactViewport = window.matchMedia("(max-width: 900px)").matches;
+            const gap = compactViewport ? 8 : 10;
             const buttonRect = button.getBoundingClientRect();
             const popoverRect = popover.getBoundingClientRect();
             const halfWidth = popoverRect.width / 2;
@@ -143,10 +144,12 @@
             const maxCenter = window.innerWidth - margin - halfWidth;
             const left = Math.min(Math.max(buttonCenter, minCenter), maxCenter);
 
-            let side = "above";
-            let top = buttonRect.top - popoverRect.height - gap;
+            let side = compactViewport ? "below" : "above";
+            let top = side === "below"
+              ? buttonRect.bottom + gap
+              : buttonRect.top - popoverRect.height - gap;
 
-            if (top < margin) {
+            if (side === "above" && top < margin) {
               side = "below";
               top = buttonRect.bottom + gap;
             }

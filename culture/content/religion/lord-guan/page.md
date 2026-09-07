@@ -1,6 +1,6 @@
 ---
-title_zh: 关羽没有忘记的承诺
-title_en: The Promise Guan Yu Kept
+title_zh: 关羽为什么成了关公？
+title_en: How Did Guan Yu Become Lord Guan?
 slug: lord-guan
 category: religion
 difficulty: 简单
@@ -9,8 +9,8 @@ style_notes: "用 --- 分隔 frontmatter；正文强调优先用 *斜体*；尽�
 ---
 
 [hero]
-title_zh: 关羽没有忘记的承诺
-title_en: The Promise Guan Yu Kept
+title_zh: 关羽为什么成了关公？
+title_en: How Did Guan Yu Become Lord Guan?
 [/hero]
 
 [section]
@@ -19,16 +19,12 @@ layout: text-only
 heading_zh: 一场打散了朋友的战争
 heading_en: A Battle Separates Two Friends
 [zh]
-大约一千八百年前，中国正陷在一场很长的战争中。关羽跟随刘备四处征战。他们一起走过许多危险，关羽也答应会一直帮助刘备。
-
-后来，一场战斗把他们冲散了。刘备逃走了，关羽却被另一支军队抓住。这支军队的首领叫曹操，他也是刘备的对手。
+大约一千八百年前，中国正陷在一场很长的战争中。[[关羽|guan-yu]]跟随[[刘备|liu-bei]]四处征战。他们一起走过许多危险，关羽也答应会一直帮助刘备。后来，一场战斗把他们冲散了：刘备逃走，关羽却被另一支军队抓住。这支军队的首领叫[[曹操|cao-cao]]，他也是刘备的对手。关羽、刘备和曹操也都是[《三国演义》故事](../../literature/three-kingdoms/index.html)里的重要人物。
 
 关羽不知道刘备去了哪里，也不知道他们还能不能再见面。
 [/zh]
 [en]
-Nearly 1,800 years ago, China was in the middle of a long war. Different leaders were fighting for control. Guan Yu traveled and fought beside a leader named Liu Bei. They had faced many dangers together, and Guan Yu had promised to stand by him.
-
-Then one battle separated them. Liu Bei escaped, but Guan Yu was captured by another army. Its leader was Cao Cao, one of Liu Bei’s enemies.
+Nearly 1,800 years ago, China was in the middle of a long war, with different leaders fighting for control. [[Guan Yu|guan-yu]] traveled and fought beside [[Liu Bei|liu-bei]]. They had faced many dangers together, and Guan Yu had promised to stand by him. Then one battle separated them: Liu Bei escaped, but Guan Yu was captured by another army led by [[Cao Cao|cao-cao]], one of Liu Bei’s enemies. Guan Yu, Liu Bei, and Cao Cao are also central figures in [Romance of the Three Kingdoms](../../literature/three-kingdoms/index.html).
 
 Guan Yu did not know where Liu Bei had gone—or whether they would ever meet again.
 [/en]
@@ -40,16 +36,12 @@ layout: text-only
 heading_zh: 曹操希望关羽留下
 heading_en: Cao Cao Wants Guan Yu to Stay
 [zh]
-曹操知道关羽勇敢又能干，很想把他留下。他没有把关羽关进牢里，反而送给他礼物，还让他在自己的军队里做将军。
-
-可是，礼物越多，关羽心里的选择就越难。他感激曹操的好意，却没有忘记自己对刘备的承诺。
+曹操知道关羽勇敢又能干，很想把他留下。他没有把关羽关进牢里，反而送给他礼物，还让他在自己的军队里做将军。可是，礼物越多，关羽心里的选择就越难。他感激曹操的好意，却没有忘记自己对刘备的承诺。
 
 “曹操对我很好，”关羽解释说，“我一定会报答他。但是我答应过刘备，不能因为曹操送我很多礼物就不回去了。”
 [/zh]
 [en]
-Cao Cao knew that Guan Yu was brave and skilled, and he wanted Guan Yu to stay. He did not throw him into prison. Instead, he gave Guan Yu gifts and made him a general in his army.
-
-The more Cao Cao gave him, the harder Guan Yu’s choice became. He was thankful for Cao Cao’s kindness, but he had not forgotten his promise to Liu Bei.
+Cao Cao knew that Guan Yu was brave and skilled, and he wanted Guan Yu to stay. He did not throw him into prison. Instead, he gave Guan Yu gifts and made him a general in his army. The more Cao Cao gave him, the harder Guan Yu’s choice became. He was thankful for Cao Cao’s kindness, but he had not forgotten his promise to Liu Bei.
 
 “Cao Cao has treated me well,” Guan Yu explained. “I will repay his kindness. But I gave my word to Liu Bei, and I will not break it just because Cao Cao gave me many gifts.”
 [/en]
@@ -61,16 +53,12 @@ layout: text-only
 heading_zh: 先报恩，再出发
 heading_en: First Repay the Kindness, Then Go
 [zh]
-不久，曹操的军队遇到了一位厉害的敌将。关羽冲入战场，打败了对方，帮助曹操赢下了这场战斗。
-
-关羽觉得，自己已经报答了曹操。他把收到的礼物好好封起来，留下一封告别信，然后出发去找刘备。
+不久，曹操的军队遇到了一位厉害的敌将。关羽冲入战场，打败了对方，帮助曹操赢下了这场战斗。关羽觉得，自己已经报答了曹操。他把收到的礼物好好封起来，留下一封告别信，然后出发去找刘备。
 
 离开并不容易。关羽必须放下将军的职位和曹操送给他的一切，却不知道刘备究竟在哪里。
 [/zh]
 [en]
-Before long, Cao Cao’s army faced a powerful enemy general. Guan Yu charged into battle, defeated him, and helped Cao Cao win.
-
-Guan Yu believed he had now repaid Cao Cao’s kindness. He carefully sealed up the gifts he had received, left a farewell letter, and set out to find Liu Bei.
+Before long, Cao Cao’s army faced a powerful enemy general. Guan Yu charged into battle, defeated him, and helped Cao Cao win. Guan Yu believed he had now repaid Cao Cao’s kindness. He carefully sealed up the gifts he had received, left a farewell letter, and set out to find Liu Bei.
 
 Leaving was not easy. Guan Yu had to give up an important position and everything Cao Cao had given him. He did not even know exactly where Liu Bei was.
 [/en]
@@ -82,16 +70,12 @@ layout: text-only
 heading_zh: “不要追他”
 heading_en: “Do Not Chase Him”
 [zh]
-曹操的部下发现关羽走了，立刻准备去追。曹操却拦住了他们。
-
-“不要追他，”曹操说，“他只是选择了自己要跟随的人。”
+曹操的部下发现关羽走了，立刻准备去追。曹操却拦住了他们：“不要追他，他只是选择了自己要跟随的人。”
 
 曹操当然希望关羽留下。不过，他虽然失去了一位勇猛的将军，还是敬重关羽愿意守住承诺。最后，关羽找到了刘备，又和他并肩作战。
 [/zh]
 [en]
-When Cao Cao’s men discovered that Guan Yu had left, they prepared to chase him. Cao Cao stopped them.
-
-“Do not chase him,” Cao Cao said. “He has chosen the leader he will follow.”
+When Cao Cao’s men discovered that Guan Yu had left, they prepared to chase him. Cao Cao stopped them. “Do not chase him,” he said. “He has chosen the leader he will follow.”
 
 Cao Cao still wished Guan Yu had stayed. He was losing a brave general, but he respected Guan Yu for keeping his word. In the end, Guan Yu found Liu Bei and fought beside him again.
 [/en]
@@ -103,8 +87,8 @@ layout: text-wrap-image
 heading_zh: 故事里的关羽有了一张红脸
 heading_en: Guan Yu Gets His Famous Red Face
 image: 1-lord-guan-temple-statue.webp
-caption_zh: 今天人们熟悉的关公形象有红脸、长胡子、绿袍和大刀。这是一幅现代插画。
-caption_en: The Lord Guan people recognize today has a red face, a long beard, a green robe, and a great blade. This is a modern illustration.
+caption_zh: 今天人们熟悉的关公形象有红脸、长胡子、绿袍和大刀。
+caption_en: The Lord Guan people recognize today has a red face, a long beard, a green robe, and a great blade.
 [zh]
 许多年以后，人们在小说、说书场和戏台上讲起关羽。讲故事的人让他的冒险更长、更惊险；演员给他画上一张鲜红的脸，又配上长胡子、绿袍和一把大刀。观众一看就知道：“关羽来了！”
 
@@ -127,8 +111,8 @@ layout: text-wrap-image
 heading_zh: 为什么商店里也有关公？
 heading_en: Why Is Lord Guan in Some Shops?
 image: 2-lord-guan-shop-altar.webp
-caption_zh: 有些商铺会供奉关公，因为关公让人想到守信。这是一幅现代插画。
-caption_en: Some shops keep a small Lord Guan shrine because he is linked with keeping one’s word. This is a modern illustration.
+caption_zh: 有些商铺会供奉关公，因为关公让人想到守信。
+caption_en: Some shops keep a small Lord Guan shrine because he is linked with keeping one's word.
 [zh]
 后来，有些商人也开始供奉关公。做生意常常要靠约定：什么时候交货，要付多少钱，借走的东西什么时候归还。如果说话不算数，生意很快就做不下去了。
 

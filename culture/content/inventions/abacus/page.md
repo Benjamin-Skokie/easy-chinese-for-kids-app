@@ -16,90 +16,83 @@ title_en: The Abacus: A Click-Clack Calculator
 [section]
 page: 1
 layout: text-wrap-image
-heading_zh: 一个木框，也能算很多数
-heading_en: A Wooden Frame Can Do a Lot of Math
+heading_zh: 摸得到的数字
+heading_en: A Number You Can Touch
 image: abacus-only.webp
-caption_zh: 算盘中间有一根横梁，上面两颗珠子，下面五颗珠子。珠子拨到横梁边上，就表示这个数算进去了。
-caption_en: An abacus has a beam across the middle, with two beads above and five below. When a bead is pushed to the beam, it counts.
+caption_zh: 这把传统中国算盘每档有上二珠、下五珠；珠子拨到横梁旁边时才计数。
+caption_en: This traditional Chinese *abacus* has two upper beads and five lower beads on each rod; only beads moved toward the beam are counted.
 [zh]
-在电子计算器出现以前，很多中国人用算盘来算数。它是一个木框，里面有一根横梁和一串串珠子。
+看看一把[[算盘|suanpan]]。所有珠子都离开中间的横梁时，好像什么数字也没有。可是，只要把一颗珠子拨到横梁旁边，木框里就有了一个数。
 
-横梁把算盘分成上下两部分。下面的珠子常常一颗算一，上面的珠子常常一颗算五。珠子拨到横梁边上，就表示这个数正在被用。
+传统的中国算盘，横梁下面的珠子一颗通常表示“一”，上面的珠子一颗表示“五”。只有拨到横梁旁边的珠子才算数。比如，把上面的一颗珠子和下面的两颗珠子都拨过来，这一档表示的就是七。
 
-算盘看起来不大，可是很有本事。会用的人只要拨动珠子，就能做加法、减法，后来还可以做更难的计算。
+不过，算盘真正聪明的地方，还不只是这些珠子，而是**珠子在哪一档**。一档可以表示个位，旁边一档表示十位，再旁边一档表示百位。所以，同样是一颗表示“一”的珠子，放在百位上，它表示的就不是一，而是一百。
 
-所以算盘像一台不用电的小计算器。数字看不见，可是一拨珠子，它们就好像跑到了你的手指前面。
+其实，我们写数字的时候也在做同样的事情。325里面的3是三个百，2是两个十，5才是五个一。只不过写在纸上时，这些“位”看不见；到了算盘上，每一个位置都摆在眼前，手指也可以直接碰到它。
 [/zh]
 [en]
-Before electronic calculators existed, many people in China used the abacus for math. It was a wooden frame with a beam across the middle and rows of beads.
+Look at an [[abacus|suanpan]] when all the beads are resting away from the middle beam. It does not seem to be showing much of anything. Then one bead slides toward the beam, and suddenly the wooden frame is holding a number.
 
-The beam split the abacus into two parts. The lower beads often counted as ones, and the upper beads often counted as fives. When a bead was pushed to the beam, it meant that value was being used.
+On a traditional Chinese **abacus**, the beads below the beam are worth one each, while the beads above are worth five. Only the beads moved toward the beam are counted. Push one upper bead and two lower beads toward the middle, for example, and that rod shows seven.
 
-An abacus did not look very big, but it could do a lot. If you knew how to use it, you could add, subtract, and later even do harder kinds of calculation.
+But the really clever part is not the beads. It is the rods. One rod can stand for ones, the next for tens, and the next for hundreds. That means a bead worth one on the hundreds rod does not mean “one” at all—it means one hundred. The same little wooden bead can hold a completely different value simply because it has moved to a different place.
 
-So the abacus was like a little calculator that needed no electricity. You could not see numbers floating in the air, but once the beads moved, the numbers seemed to appear right under your fingers.
+That is something children already do when they write numbers. In 325, the 3 means three hundreds, the 2 means two tens, and the 5 means five ones. The abacus lets your fingers build that same idea.
 [/en]
 [/section]
 
 [section]
 page: 2
 layout: text-wrap-image
-heading_zh: 学算盘，像唱歌一样
-heading_en: Learning It Was Almost Like Singing
+heading_zh: 有节奏的数学
+heading_en: Math with a Rhythm
 image: abacus-classroom-v3.webp
-caption_zh: 孩子们一边听口诀，一边拨珠子。学算盘的时候，教室里常常很有节奏。
-caption_en: Children learned by listening to number chants and moving the beads. An abacus lesson often had a strong rhythm.
+caption_zh: 孩子们跟着老师念珠算口诀，同时在算盘上练习相应的拨珠动作。
+caption_en: Children recite abacus formulas with their teacher while practising the matching bead movements on their own frames.
 [zh]
-很多孩子学算盘的时候，不只是看珠子，也会背口诀。老师念一句，学生跟一句，手指也跟着一起动。
+看懂珠子只是第一步。要真正用算盘算得快，还要知道数字变化时，手指下一步该往哪里走。
 
-这样学久了，数字和手指就会慢慢配合起来。看到一个数，珠子很快就知道该往哪边走。
+如果一档里的数凑够了十，就不用想办法在这一档塞进十颗“一”。把这一档拨回去，再到旁边的十位拨进一个“一”，十个一就变成了一个十。我们在纸上算加法时会“进位”。在算盘上，手指真的把这个“进位”做了出来。
 
-所以算盘课有一种特别的节奏。你会听见啪嗒啪嗒的声音，好像一间教室在一起唱数字歌。
+中国传统的[[珠算|zhusuan]]还有一套很特别的学习方法：**口诀**。一代又一代学习算盘的人，会把运算规则编成简短、顺口的句子记下来。老师或者熟练的人念口诀，学习的人一边记，一边跟着拨珠子。练得久了，规则慢慢变成了熟悉的手指动作。今天，联合国教科文组织介绍中国珠算时，仍然特别提到这些代代相传的珠算口诀。
+
+所以，算盘课常常很有节奏。手指一动，珠子碰上横梁，教室里就响起一阵噼里啪啦的声音。每响一下，都表示算盘上的数字又变了。
 [/zh]
 [en]
-When many children learned the abacus, they did not only watch the beads. They also learned number chants. The teacher said a line, the students repeated it, and their fingers moved at the same time.
+Knowing what the beads mean is only the beginning. To calculate quickly, you also have to know what to do when the numbers change.
 
-After enough practice, numbers and fingers began to work together. Once a student saw a number, the beads seemed to know where to go.
+Suppose the beads on one rod add up to ten. There is no need to squeeze ten ones onto that rod. Instead, you clear them away and move one bead on the next rod. Ten ones have become one ten. On paper, we call that carrying. On an abacus, your fingers actually do it.
 
-That gave abacus class a special rhythm. You could hear click-clack sounds all around the room, almost like a whole class singing a math song together.
+For generations, people learning Chinese abacus calculation, or [[zhusuan|zhusuan]], memorized short rhyming formulas that told them which beads to move. A teacher or experienced user could recite a rule, and the learner’s fingers followed it across the frame. With enough practice, the movements became quick and familiar. UNESCO still describes these oral formulas as an important part of the Chinese abacus tradition.
+
+That is why an abacus lesson can have such a strong rhythm. A row of fingers moves, beads strike the beam, and the room fills with little clicks. The sound is not just noise. Each click means that a number has changed.
 [/en]
 [/section]
 
 [section]
 page: 3
 layout: text-wrap-image
-heading_zh: 为什么它这么快？
-heading_en: Why Is It So Fast?
+heading_zh: 柜台后面的算盘
+heading_en: Behind the Shop Counter
 image: shop-abacus-overhead-diagonal-v3.webp
-caption_zh: 在商店和账房里，会用算盘的人常常一边看账本，一边拨珠，动作又快又稳。
-caption_en: In shops and accounting rooms, skilled users often watched the ledger while moving the beads, fast and steady at the same time.
+caption_zh: 熟练的算盘手一边看账本里的数字，一边在算盘上快速拨珠核算账目。
+caption_en: A practised abacus user reads figures from a ledger while quickly moving beads to check the accounts.
 [zh]
-算盘厉害的地方，不只是会算，而是算得快。高手常常不用一直盯着算盘看，眼睛看着账本，手指已经先动起来了。
+现在，把算盘放到一家旧时商店的账本旁边。一天的买卖结束了，有价格要相加，有银钱要扣掉，还有一长串账目要核对。熟练的算盘手不需要每拨一颗珠子都停下来想一想。眼睛可以顺着账本往下看，手指已经在算盘上不停地移动。
 
-后来，算盘还传到了别的地方。日本人很喜欢它，也把它继续教给孩子。别的国家也做出了自己的样子。
+到了[[明代|ming-dynasty]]，我们已经能在数学书里清楚看到和后来十分相似的算盘，同时还有完整的珠算口诀。当时，算盘已经广泛用于商业和统计。珠算当然不只能做加法、减法；熟练以后，还可以做乘法、除法和更复杂的计算。
 
-可是不管样子怎么变，算盘的本领还是一样: 用一串串会响的珠子，把看不见的数字变得摸得到、看得见。
+算盘的木框里面并没有藏着什么机关。它算得快，靠的是很简单的几样东西：每一档代表不同的位置，一套清楚的运算规则，还有一双练习过很多很多次的手。
+
+账本上的数字一行一行往下走，手指也在珠子之间来回移动。噼啪声中，原本写在纸上的数字，变成了手指下面一个个清清楚楚的位置。
 [/zh]
 [en]
-What made the abacus special was not only that it could calculate. It was that it could calculate quickly. Skilled users did not always stare at the frame. Their eyes could stay on the ledger while their fingers moved first.
+Now put the abacus beside a ledger in a busy shop. There may be prices to add, payments to subtract, and long columns of numbers to check. A practiced user does not have to stop and puzzle over every bead. The eyes can move down the written numbers while the fingers work across the rods.
 
-Later, the abacus traveled to other places too. People in Japan liked it and kept teaching it to children. Other countries made their own versions as well.
+By the [[Ming dynasty|ming-dynasty]], the familiar Chinese abacus was clearly shown in arithmetic books, together with formulas for using it, and it had become an important tool in commerce and accounting. Chinese **zhusuan** could be used not only for addition and subtraction, but also for multiplication, division, and much harder calculations.
 
-But however the shape changed, the abacus kept the same gift: it turned invisible numbers into something you could touch, see, and hear.
+There was nothing magical inside the wooden frame. No gears were turning, and nothing was hidden underneath. Its speed came from something much simpler: place value, a set of rules, and fingers that had practiced those rules again and again.
+
+A merchant could look down at a page full of written numbers, move a few rows of beads, and hear the answer taking shape. Click. Clack. The numbers were no longer only marks on a page. They were right there under the fingertips.
 [/en]
 [/section]
-
-[ending]
-heading_zh: 会响的数学
-heading_en: Math You Can Hear
-[zh]
-算盘像一台不用电的老计算器，可它不只是工具，也是一种手、眼、脑一起合作的本领。
-
-当珠子啪嗒一响，数字好像也跟着跳出来了。
-[/zh]
-[en]
-The abacus was like an old calculator that needed no electricity, but it was more than a tool. It was a skill that brought hands, eyes, and mind together.
-
-When the beads clicked into place, the numbers seemed to jump out too.
-[/en]
-[/ending]

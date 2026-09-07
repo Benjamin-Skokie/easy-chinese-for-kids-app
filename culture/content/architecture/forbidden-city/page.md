@@ -22,7 +22,7 @@ image: no-trees-outer-court.webp
 caption_zh: 宽阔的院子和一道道宫门，让皇宫看起来庄严又气派。
 caption_en: Wide courtyards and one gate after another made the palace feel grand and important.
 [zh]
-在北京城中心，有一片红墙和金色屋顶。远远看去，它不太像一座房子，更像一座被围起来的小城。这就是故宫。六百多年前，它是皇帝居住和处理国家大事的皇宫。
+在北京城中心，有一片红墙和金色屋顶。远远看去，它不太像一座房子，更像一座被围起来的小城。这就是[[故宫|forbidden-city]]。六百多年前，它是皇帝居住和处理国家大事的皇宫。
 
 故宫里不只有皇帝一家。侍卫守着宫门，厨师准备饭菜，工匠修屋顶，官员来到大殿办事。还有许多人照顾花园、马匹、衣服和书画。要让这样大的皇宫每天运转，需要许多人一起工作。
 
@@ -31,7 +31,7 @@ caption_en: Wide courtyards and one gate after another made the palace feel gran
 今天，这里是故宫博物院。普通游客也能走过从前守卫森严的宫门了。
 [/zh]
 [en]
-In the center of Beijing stands a sea of red walls and golden roofs. From far away, it looks less like one house and more like a small city behind walls. This is the Forbidden City. More than six hundred years ago, it was a palace where emperors lived and ran the country.
+In the center of Beijing stands a sea of red walls and golden roofs. From far away, it looks less like one house and more like a small city behind walls. This is the [[Forbidden City|forbidden-city]]. More than six hundred years ago, it was a palace where emperors lived and ran the country.
 
 The emperor's family was not alone there. Guards watched the gates. Cooks prepared meals. Craftspeople repaired roofs. Officials came to work in the great halls. Many other people cared for gardens, horses, clothing, books, and paintings. It took a great many people to keep such a huge palace running.
 

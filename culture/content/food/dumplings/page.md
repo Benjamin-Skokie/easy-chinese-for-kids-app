@@ -43,8 +43,8 @@ layout: text-wrap-image
 heading_zh: 谁包了第一只饺子？
 heading_en: Who Made the First Dumpling?
 image: zhang-zhongjing-winter-story.webp
-caption_zh: 人们常讲张仲景在寒冬做“娇耳”的故事。这是一幅现代想象图，不是历史现场。
-caption_en: People often tell a winter tale about Zhang Zhongjing making “jiao'er.” This is a modern imagined scene, not a picture of a recorded event.
+caption_zh: 人们常讲张仲景在寒冬做“娇耳”的故事，画面表现的就是这个传说。
+caption_en: People often tell a winter tale about Zhang Zhongjing making *jiao'er*, and this scene shows that legend.
 [zh]
 这个问题没有一个确定答案。考古学家在中国西北部干燥的古墓里，找到过一千多年前的弯月形面食。它们看起来很像今天的饺子，说明那时已经有人把面皮和馅放在一起了。不过，它们不能告诉我们世界上的第一只饺子是谁包的。
 
@@ -97,7 +97,7 @@ caption_en: Filled dough foods appear around the world. They may look like cousi
 研究食物历史的人还不知道这些面食是不是全都有关系。只凭相似的形状，不能证明它们来自同一个最早的食谱。中国的水饺、韩国的 *mandu* 和意大利的 *ravioli* 都有自己的名字、馅料和做法，并不是同一道食物。
 [/zh]
 [en]
-Wrapping filling inside dough is a useful idea, and cooks around the world have used it in many ways. China has *jiaozi* and wontons. Korea has *mandu*, Japan has *gyoza*, Italy has *ravioli*, and Poland has *pierogi*. Some are curved, some square, and some round. They may be boiled, steamed, or fried until golden underneath.
+Wrapping filling inside dough is a useful idea, and cooks around the world have used it in many ways. China has [[jiaozi|jiaozi-currency]] and wontons. Korea has *mandu*, Japan has *gyoza*, Italy has *ravioli*, and Poland has *pierogi*. Some are curved, some square, and some round. They may be boiled, steamed, or fried until golden underneath.
 
 Why do some of them look alike? Recipes travel with traders, neighbors, and families moving to new homes, so some foods may have influenced others. People in faraway places may also have come up with similar ways to wrap filling in dough.
 

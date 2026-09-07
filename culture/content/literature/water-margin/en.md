@@ -4,7 +4,7 @@
 
 ## What Is Mount Liang?
 
-*Water Margin* is set more than 900 years ago, near the end of China's Northern Song dynasty. The emperor lives far away in the capital, while local officials judge cases, collect taxes, and make arrests. In the novel, some officials take money and protect powerful families. When an ordinary person is treated unfairly, there may be no honest official nearby who will listen.
+[[Water Margin|water-margin]] is set more than 900 years ago, near the end of China's [[Northern Song|song-dynasty]] dynasty. The emperor lives far away in the capital, while local officials judge cases, collect taxes, and make arrests. In the novel, some officials take money and protect powerful families. When an ordinary person is treated unfairly, there may be no honest official nearby who will listen.
 
 The original novel really does begin with magic. An official ignores a warning and opens a sealed room in a mountain temple. One hundred and eight lights rush out. The novel later connects the 108 leaders of Mount Liang with 36 Heavenly Spirits and 72 Earthly Spirits. This is a magical preview of the story, not real history.
 

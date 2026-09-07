@@ -46,7 +46,7 @@ image: 2-family-digging.webp
 caption_zh: 一把锄头挖不了一座山，可是全家人一锄头接一锄头，第一筐石头很快就装满了。
 caption_en: One hoe cannot move a mountain, but the whole family keeps digging until the first basket is full.
 [zh]
-第二天一早，愚公带着儿子、孙子来到山脚。咚！锄头敲在石头上。嚓！铲子挖进泥土里。一个邻居家的小男孩看见了，也跳着跑来帮忙。
+第二天一早，愚公带着儿子、[[孙子|sunzi]]来到山脚。咚！锄头敲在石头上。嚓！铲子挖进泥土里。一个邻居家的小男孩看见了，也跳着跑来帮忙。
 
 一锄头挖不了多少，一只篮子也装不了多少。可篮子装满一筐，他们就运走一筐；山壁挖下一小块，他们就在原来的地方接着挖。
 

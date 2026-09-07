@@ -4,13 +4,13 @@
 
 ## One Tune, New Words
 
-About 1,000 years ago, during China's [[Song dynasty]], people enjoyed music and songs. Sometimes a musician played a tune that everyone knew. A writer then gave the tune a new set of words.
+About 1,000 years ago, during China's [[Song dynasty|song-dynasty]], people enjoyed music and songs. Sometimes a musician played a tune that everyone knew. A writer then gave the tune a new set of words.
 
 These words were called *ci*. The music could stay the same while the words changed.
 
 Because the words had to fit the music, some lines were short and others were long. Many Song tunes were later lost, but the words on the page survived.
 
-We do not need to memorize a list of tune names. Let us meet Su Shi as he thinks of his brother under the moon. Then we will follow Li Qingzhao's boat into the lotus flowers.
+We do not need to memorize a list of tune names. Let us meet [[Su Shi|su-shi]] as he thinks of his brother under the moon. Then we will follow [[Li Qingzhao|li-qingzhao]]'s boat into the lotus flowers.
 
 ---
 

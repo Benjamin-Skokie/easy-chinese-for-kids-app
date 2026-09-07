@@ -4,7 +4,7 @@
 
 ## The Blue-Roofed Hall Was Not the Emperor's Home
 
-Beijing has a great round hall with three roofs of deep blue. It looks like a palace from a fairy tale, but no emperor lived there. This is the Hall of Prayer for Good Harvests, the best-known building at the Temple of Heaven.
+Beijing has a great round hall with three roofs of deep blue. It looks like a palace from a fairy tale, but no emperor lived there. This is the Hall of Prayer for Good Harvests, the best-known building at the [[Temple of Heaven|temple-of-heaven]].
 
 Most people in ancient China depended on farming. Too little rain could dry up the crops. Too much could flood the fields. At the Temple of Heaven, the emperor took part in important ceremonies and prayed for good weather and a strong harvest.
 
@@ -26,7 +26,7 @@ Why was everything so carefully planned? To people at the time, the harvest was 
 
 The blue roof of the Hall of Prayer recalls the sky. Its round shape also fits an old Chinese idea that Heaven was round. Throughout the Temple of Heaven, shapes and colors reminded visitors that this was a place for ceremonies honoring Heaven.
 
-Walk south from the hall, and you reach another round structure: the *Circular Mound Altar*. Its name means a round, raised place used for an important ceremony. It has no roof. Instead, three levels of white stone rise beneath the open sky.
+Walk south from the hall, and you reach another round structure: the [[Circular Mound Altar|circular-mound-altar]]. Its name means a round, raised place used for an important ceremony. It has no roof. Instead, three levels of white stone rise beneath the open sky.
 
 The emperor came here on the winter solstice. In Beijing, this is the day with the least daylight and the longest night of the year. After it, the days slowly begin to grow longer. People in ancient China saw this as an important turning point in the year. The emperor thanked Heaven for the year that had passed and reported on the country. In spring, he held a different ceremony at the Hall of Prayer for Good Harvests to ask for a good harvest.
 
@@ -50,4 +50,4 @@ Look up inside the Hall of Prayer, and you can see 28 large wooden columns. Four
 
 The columns also turn time into part of the building. The four in the center stand for spring, summer, fall, and winter. The next 12 stand for the 12 months of the year. Looking up at the roof is a little like looking at a calendar built from wood.
 
-In 1889, lightning started a fire that destroyed the hall. It was later rebuilt in its earlier form. The Hall of Prayer we see today keeps the old design, but its wood has not remained untouched since the Ming dynasty.
+In 1889, lightning started a fire that destroyed the hall. It was later rebuilt in its earlier form. The Hall of Prayer we see today keeps the old design, but its wood has not remained untouched since the [[Ming dynasty|ming-dynasty]].

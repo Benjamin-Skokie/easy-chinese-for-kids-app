@@ -2,62 +2,64 @@
 
 This file is for editorial research and does not render on the website.
 
-## The Pass Story and Laozi’s Uncertain Identity
+## Water, Lowliness, and Not Competing
 
-Source: Sima Qian, *Records of the Grand Historian*, “Biography of Laozi and Han Fei”
-URL: https://ctext.org/shiji/lao-zi-han-fei-lie-zhuan/zh
-Accessed: 2026-08-20
+Source: *Dàodéjīng*, chapter 8, Chinese Text Project
+URL: https://ctext.org/dao-de-jing/zh
+Accessed: 2026-09-06
 
 Supports:
 
-- The traditional account that Yin Xi asked Laozi to write before leaving through the pass.
-- The account of a text in two parts and more than 5,000 characters, followed by Laozi’s unknown destination.
-- Sima Qian himself records multiple possible identities and traditions connected with Laozi.
+- Chapter 8 contains the passage “上善若水。水善利萬物而不爭，處眾人之所惡,” comparing the highest good to water.
+- Water benefits other things, does not compete with them, and occupies low places that people often avoid.
 
 Editorial boundary:
 
-- Present the pass episode as a traditional account recorded centuries later, not as an eyewitness report.
-- Sima Qian’s account does not mention an ox or purple clouds. The statement that these are later legendary additions is an inference from comparing the early account with later Laozi imagery and hagiography.
-- Do not invent dialogue, weather, facial expressions, or Laozi’s private thoughts.
+- The examples involving plants, animals, fields, and settlements explain why water matters; they are not a line-by-line translation of the chapter.
+- The article keeps the focus on water rather than introducing “the Way” as a separate lesson.
 
-## Laozi, the *Dao De Jing*, and Early Manuscripts
+## Water, Softness, and Strength
+
+Source: *Dàodéjīng*, chapter 78, Chinese Text Project
+URL: https://ctext.org/dao-de-jing/zh
+Accessed: 2026-09-06
+
+Supports:
+
+- Chapter 78 contains the line “天下莫柔弱於水，而攻堅強者莫之能勝,” contrasting water’s apparent softness with its effect on what is hard.
+
+Editorial boundary:
+
+- The article does not claim that one drop instantly reshapes stone; it describes the cumulative action of flowing water, moving sediment, and time.
+- Softness is presented as a contrast worth considering, not a rule that force or firmness is always wrong.
+
+## Laozi and the *Dàodéjīng*
 
 Source: Stanford Encyclopedia of Philosophy, “Laozi”
 URL: https://plato.stanford.edu/entries/laozi/
-Accessed: 2026-08-20
-
-Source: Stanford Encyclopedia of Philosophy, “Religious Daoism,” section on early Daoist texts
-URL: https://plato.stanford.edu/entries/daoism-religion/
-Accessed: 2026-08-20
+Accessed: 2026-09-06
 
 Supports:
 
-- Laozi’s identity and the authorship and formation of the *Dao De Jing* remain historically uncertain.
-- Early Guodian and Mawangdui manuscript witnesses differ from one another and from later received versions.
-- *Wuwei* does not mean total inactivity; it contrasts with action driven by forceful, self-serving desire and excessive control.
-
-## Water in Chapters 8 and 78
-
-Source: Chinese Text Project, *Dao De Jing*
-URL: https://ctext.org/dao-de-jing/zhs
-Accessed: 2026-08-20
-
-Supports:
-
-- Chapter 8: “上善若水。水善利万物而不争，处众人之所恶，故几于道。”
-- Chapter 78: “天下莫柔弱于水，而攻坚强者莫之能胜……”
-- The article separates these textual claims from modern examples used to help children understand them.
-
-## Flowing Water and Rounded Stones
-
-Source: U.S. National Park Service, “River Rocks” educational video description
-URL: https://www.nps.gov/media/video/view.htm?id=27C873CB-155D-451F-6707380D4C1BBE6B
-Accessed: 2026-08-20
-
-Supports:
-
-- Tumbling and abrasion in a river can smooth jagged rocks into rounded stones.
+- Historical background on the *Dàodéjīng* and the tradition associated with Lǎozǐ.
+- The text repeatedly uses water, softness, lowliness, and action without excessive force to reverse ordinary assumptions about power.
 
 Editorial boundary:
 
-- Do not imply that water alone magically wears stone. Moving sediment, tumbling, weathering, flow strength, and time all matter.
+- The article calls the book “traditionally connected with Lǎozǐ” and does not claim that its complete received form was written at one moment by one securely identified person.
+- The article does not turn concepts such as Dao or wuwei into separate explanatory sections.
+
+## Natural Images and Reversed Expectations
+
+Source: Internet Encyclopedia of Philosophy, “Laozi”
+URL: https://iep.utm.edu/laozi/
+Accessed: 2026-09-06
+
+Supports:
+
+- The *Dàodéjīng* uses natural images, including water, to explore yielding, humility, effectiveness, and reversals in common ideas about strength.
+- Its brief, image-rich style invites readers to think rather than presenting a textbook-like chain of definitions.
+
+Editorial boundary:
+
+- The stone, branch, stream, and river-valley descriptions are child-facing ways to follow the text’s water image, not stories recorded in the *Dàodéjīng*.

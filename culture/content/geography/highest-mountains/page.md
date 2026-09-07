@@ -21,14 +21,14 @@ image: qomolangma-location-map.webp
 caption_zh: 珠穆朗玛峰位于喜马拉雅山脉，中国和尼泊尔的国界从峰顶经过。
 caption_en: Mount Everest stands in the Himalayas. The border between China and Nepal crosses its summit.
 [zh]
-在亚洲南部，喜马拉雅山脉像一道巨大的皱褶横在地图上。那里有一座山高过地球上所有其他山峰的海拔。它就是珠穆朗玛峰。
+在亚洲南部，喜马拉雅山脉像一道巨大的皱褶横在地图上。那里有一座山高过地球上所有其他山峰的海拔。它就是[[珠穆朗玛峰|qomolangma]]。
 
 这座山正好站在中国和尼泊尔之间。中国使用“珠穆朗玛峰”这个名字，英语里常叫它 *Mount Everest*。无论从哪一边看，山顶都是同一个覆盖着冰雪的地方。
 
 2020 年，中国和尼泊尔共同宣布了一个测量结果：珠穆朗玛峰海拔 8,848.86 米，大约是 29,032 英尺。可是，谁也不可能拿着一卷那么长的尺子，从山脚一直爬到山顶。这个数字到底是怎么量出来的呢？
 [/zh]
 [en]
-Across southern Asia, the Himalayas look like a giant wrinkle on a map. One peak there rises higher above sea level than any other mountain on Earth. It is called Qomolangma in China and Mount Everest in English.
+Across southern Asia, the Himalayas look like a giant wrinkle on a map. One peak there rises higher above sea level than any other mountain on Earth. It is called [[Qomolangma|qomolangma]] in China and Mount Everest in English.
 
 The mountain stands between China and Nepal, and the border crosses its snowy summit. Climbers can approach it from either country, but both sides lead toward the same icy peak.
 

@@ -28,7 +28,7 @@ caption_en: A family makes dumplings, hangs lanterns, and puts up red decoration
 
 这个节日还有几个常见的名字。“春节”是今天正式、常用的中文名。“中国新年”直接说明这是中国的传统新年，英文常说 *Chinese New Year*。中文也有人说“农历新年”；英文里的 *Lunar New Year* 范围更大，还可以包括亚洲其他文化按照传统历法庆祝的新年。名字有重叠，但不同文化的过年方式并不完全一样。
 
-可是，中文为什么偏偏说“过”年呢？一个古老的民间故事，把同一个“年”变成了一只怪兽。在故事里，“过年”听起来就像人们平平安安地躲过了年兽。
+可是，中文为什么偏偏说“过”年呢？一个古老的民间故事，把同一个“年”变成了一只怪兽。在故事里，“过年”听起来就像人们平平安安地躲过了[[年兽|nian-monster]]。
 [/zh]
 [en]
 Chinese New Year begins on the first day of the first month in the traditional Chinese calendar. This calendar uses the moon to arrange its months and makes adjustments to keep the new year near the end of winter and the beginning of spring.
@@ -37,7 +37,7 @@ When Chinese people talk about this holiday, they often say, “It is almost tim
 
 The holiday has several common names. In Chinese, *Chūnjié* means “Spring Festival” and is the modern official name. *Chinese New Year* makes clear which tradition we mean. *Lunar New Year* is a broader English name that can include new-year celebrations in several Asian cultures. The names overlap, but each culture has its own traditions.
 
-But why does Chinese say that people “pass through” the year? An old folk tale turns that same word—Nian—into a monster. In the story, *guò nián* sounds almost as if people have made it safely past the monster Nian.
+But why does Chinese say that people “pass through” the year? An old folk tale turns that same word—[[Nian|nian-monster]]—into a monster. In the story, *guò nián* sounds almost as if people have made it safely past the monster Nian.
 [/en]
 [/section]
 

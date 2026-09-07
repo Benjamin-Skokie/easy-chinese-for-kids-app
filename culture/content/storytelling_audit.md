@@ -39,7 +39,6 @@ Agree. These 64 articles are in good shape for translation.
 - **tang-cosmopolitan**: ⚠️ Partial. Some rich scenes exist (the market, the stele). Just needs tightening.
 - **chopsticks**: ✅ Fair. Clean but lacks emotional hook.
 - **bow-crossbow**: ✅ Fair. Mechanism-heavy.
-- **chariots**: ✅ Fair. Reads like a history explainer.
 - **guan-yu-blade**: ✅ Fair. Good concept but could use more tension.
 - **ancient-armor**: ✅ Fair. Too catalog-like by dynasty.
 - **warships**: ✅ Fair. Technical in places.

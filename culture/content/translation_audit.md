@@ -93,7 +93,7 @@ These files use `华夏` or `华夏先民` in ways that should be reconsidered b
 - `culture/content/culture/family-titles/zh.md`
 - `culture/content/culture/chinese-characters/zh.md`
 - `culture/content/culture/dragon-phoenix/zh.md`
-- `culture/content/economy/tea/zh.md`
+- `culture/content/food/tea/zh.md`
 - `culture/content/military/warships/zh.md`
 - `culture/content/politics/imperial-exam-history/zh.md`
 - `culture/content/religion/buddhism-comes-to-china/zh.md`
@@ -110,7 +110,7 @@ These files should be checked for places where a dynasty or narrower label would
 
 - `culture/content/religion/buddhism-comes-to-china/zh.md`
 - `culture/content/politics/imperial-exam-history/zh.md`
-- `culture/content/economy/tea/zh.md`
+- `culture/content/food/tea/zh.md`
 - `culture/content/military/warships/zh.md`
 - `culture/content/culture/chinese-characters/zh.md`
 

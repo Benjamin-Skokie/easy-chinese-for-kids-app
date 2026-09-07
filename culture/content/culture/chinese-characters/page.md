@@ -16,24 +16,24 @@ title_en: Were Chinese Characters Drawn Like Pictures?
 [section]
 page: 1
 layout: text-wrap-image
-heading_zh: 一家中药铺里，藏着三千多年前的字
-heading_en: A Medicine Shop Was Hiding Very Old Writing
+heading_zh: 书房里的奇怪刻痕
+heading_en: Strange Marks in a Scholar’s Study
 image: 1-medicine-shop-discovery-overhead-v2.webp
-caption_zh: 一位学者在中药铺查看刻有文字的“龙骨”。
-caption_en: A scholar examines inscribed “dragon bones” in a medicine shop.
+caption_zh: 清末学者在家中书房查看刻有符号的“龙骨”。
+caption_en: A late-Qing scholar examines inscribed “dragon bones” in his study at home.
 [zh]
 一百多年前，中国的中药铺里常常卖一种名字很神气的药材——“龙骨”。它当然不是真的龙骨。很多其实是从地下挖出来的古老兽骨，人们把它磨成粉入药。
 
 1899年前后，北京的学者开始注意到一件奇怪的事：有些“龙骨”上，竟然刻着一排排细小的符号。一个流传很广的故事说，研究古文字的王懿荣看到了这些刻痕，觉得它们绝不是普通的划痕。那是字。
 
-后来，学者们找到河南安阳一带，发现了大量刻着文字的牛肩胛骨和龟甲。这些文字来自三千多年前，我们今天叫它们“甲骨文”。可是，古人为什么要把字刻在骨头上呢？答案比“古老的文字”有意思得多。
+后来，学者们找到河南[[安阳|anyang]]一带，发现了大量刻着文字的牛肩胛骨和龟甲。这些文字来自三千多年前，我们今天叫它们“[[甲骨文|jiaguwen]]”。可是，古人为什么要把字刻在骨头上呢？答案比“古老的文字”有意思得多。
 [/zh]
 [en]
 In the late 1800s, Chinese medicine shops sold something with a wonderful name: “dragon bones.” They were not really dragon bones, of course. Many were old animal bones dug out of the ground and ground into powder for medicine.
 
 Then, in 1899, scholars in Beijing began paying attention to something strange about some of these bones: tiny marks had been carefully carved into them. A famous story tells how the scholar Wang Yirong noticed such markings on “dragon bones” from a pharmacy. He studied ancient writing and suspected that these were not scratches at all. They were characters.
 
-Soon scholars traced more of the bones to Anyang in northern China. There they found thousands of pieces of ox shoulder blade and turtle shell carrying writing from more than 3,000 years ago. Today, we call this writing *jiǎgǔwén*—oracle-bone script. But why would anyone write on a bone? That is where the story gets much more interesting.
+Soon scholars traced more of the bones to [[Anyang|anyang]] in northern China. There they found thousands of pieces of ox shoulder blade and turtle shell carrying writing from more than 3,000 years ago. Today, we call this writing [[oracle-bone script|jiaguwen]]—oracle-bone script. But why would anyone write on a bone? That is where the story gets much more interesting.
 [/en]
 [/section]
 
@@ -66,7 +66,7 @@ heading_en: What Did People Write on Oracle Bones?
 
 美国史密森尼博物馆收藏的一块龟甲上，就有两组关于雨的卜辞。另一块甲骨问的是：今年会不会有好收成？庄稼当然是大事。可是甲骨上还留下了一些非常私人的烦恼。
 
-商王武丁的妻子妇好快要生孩子了。人们为她占卜，想知道生产是否顺利。王看过裂纹以后作出了判断。后来，甲骨上竟然又补刻了真正的结果：三十一天以后，妇好生下了一个女孩。问题留下来了，结局也留下来了。
+商王[[武丁|wu-ding]]的妻子[[妇好|fu-hao]]快要生孩子了。人们为她占卜，想知道生产是否顺利。王看过裂纹以后作出了判断。后来，甲骨上竟然又补刻了真正的结果：三十一天以后，妇好生下了一个女孩。问题留下来了，结局也留下来了。
 
 还有一次，武丁牙疼。那时候没有牙医给他照X光。占卜的人怀疑，会不会是某位去世的祖先让王的牙齿不舒服，于是一个一个地问。是这位祖先吗？不是？那会不会是另一位？
 
@@ -79,9 +79,9 @@ Some of the questions sound grand and kingly. Should the army go into battle? Wo
 
 A tortoiseshell now in the Smithsonian has inscriptions asking about rain. Another oracle bone asks whether the year will bring a good harvest. Those were serious questions. A bad harvest could mean real trouble for an entire kingdom. But the bones also preserve much more personal worries.
 
-King Wǔ Dīng had a wife named Fù Hǎo. One surviving inscription asks about her coming childbirth. The king studied the cracks and made a prediction. Later, someone added what actually happened: after thirty-one days, she gave birth to a girl. The bone kept both the question and the ending.
+King [[Wu Ding|wu-ding]] had a wife named [[Fu Hao|fu-hao]]. One surviving inscription asks about her coming childbirth. The king studied the cracks and made a prediction. Later, someone added what actually happened: after thirty-one days, she gave birth to a girl. The bone kept both the question and the ending.
 
-And then there was the king’s tooth. One inscription records that Wǔ Dīng had a sick tooth. The diviners wondered whether one of his dead ancestors was causing the trouble. They asked about one ancestor, then another. Imagine that: more than 3,000 years ago, the ruler of a kingdom was powerful enough to command armies—but still could not make his tooth stop hurting. Suddenly, the people behind the ancient writing do not seem quite so far away.
+And then there was the king’s tooth. One inscription records that Wu Ding had a sick tooth. The diviners wondered whether one of his dead ancestors was causing the trouble. They asked about one ancestor, then another. Imagine that: more than 3,000 years ago, the ruler of a kingdom was powerful enough to command armies—but still could not make his tooth stop hurting. Suddenly, the people behind the ancient writing do not seem quite so far away.
 [/en]
 [/section]
 

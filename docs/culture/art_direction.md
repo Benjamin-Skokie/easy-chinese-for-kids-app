@@ -6,8 +6,9 @@ This file is the visual source of truth for `culture/` articles.
 
 Use other files for other jobs:
 
-- [article_image_workflow.md](./article_image_workflow.md): process and build steps
-- [culture/content/english_rewrite_guidelines.md](../../culture/content/english_rewrite_guidelines.md): child-facing English
+- [story_writing_guidelines.md](./story_writing_guidelines.md): editorial and child-facing writing standard
+- [story_research_and_rewrite_workflow.md](./story_research_and_rewrite_workflow.md): research and substantial rewriting
+- [story_landing_workflow.md](./story_landing_workflow.md): image review, page integration, build, and verification
 - [art_direction.md](../art_direction.md): broader house style
 
 ## Core Standard

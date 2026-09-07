@@ -1,12 +1,10 @@
 > Difficulty: Easy
 
-# The Promise Guan Yu Kept
+# How Did Guan Yu Become Lord Guan?
 
 ## A Battle Separates Two Friends
 
-Nearly 1,800 years ago, China was in the middle of a long war. Different leaders were fighting for control. Guan Yu traveled and fought beside a leader named Liu Bei. They had faced many dangers together, and Guan Yu had promised to stand by him.
-
-Then one battle separated them. Liu Bei escaped, but Guan Yu was captured by another army. Its leader was Cao Cao, one of Liu Bei’s enemies.
+Nearly 1,800 years ago, China was in the middle of a long war, with different leaders fighting for control. [[Guan Yu|guan-yu]] traveled and fought beside [[Liu Bei|liu-bei]]. They had faced many dangers together, and Guan Yu had promised to stand by him. Then one battle separated them: Liu Bei escaped, but Guan Yu was captured by another army led by [[Cao Cao|cao-cao]], one of Liu Bei’s enemies. Guan Yu, Liu Bei, and Cao Cao are also central figures in [Romance of the Three Kingdoms](../../literature/three-kingdoms/index.html).
 
 Guan Yu did not know where Liu Bei had gone—or whether they would ever meet again.
 
@@ -14,9 +12,7 @@ Guan Yu did not know where Liu Bei had gone—or whether they would ever meet ag
 
 ## Cao Cao Wants Guan Yu to Stay
 
-Cao Cao knew that Guan Yu was brave and skilled, and he wanted Guan Yu to stay. He did not throw him into prison. Instead, he gave Guan Yu gifts and made him a general in his army.
-
-The more Cao Cao gave him, the harder Guan Yu’s choice became. He was thankful for Cao Cao’s kindness, but he had not forgotten his promise to Liu Bei.
+Cao Cao knew that Guan Yu was brave and skilled, and he wanted Guan Yu to stay. He did not throw him into prison. Instead, he gave Guan Yu gifts and made him a general in his army. The more Cao Cao gave him, the harder Guan Yu’s choice became. He was thankful for Cao Cao’s kindness, but he had not forgotten his promise to Liu Bei.
 
 “Cao Cao has treated me well,” Guan Yu explained. “I will repay his kindness. But I gave my word to Liu Bei, and I will not break it just because Cao Cao gave me many gifts.”
 
@@ -24,9 +20,7 @@ The more Cao Cao gave him, the harder Guan Yu’s choice became. He was thankful
 
 ## First Repay the Kindness, Then Go
 
-Before long, Cao Cao’s army faced a powerful enemy general. Guan Yu charged into battle, defeated him, and helped Cao Cao win.
-
-Guan Yu believed he had now repaid Cao Cao’s kindness. He carefully sealed up the gifts he had received, left a farewell letter, and set out to find Liu Bei.
+Before long, Cao Cao’s army faced a powerful enemy general. Guan Yu charged into battle, defeated him, and helped Cao Cao win. Guan Yu believed he had now repaid Cao Cao’s kindness. He carefully sealed up the gifts he had received, left a farewell letter, and set out to find Liu Bei.
 
 Leaving was not easy. Guan Yu had to give up an important position and everything Cao Cao had given him. He did not even know exactly where Liu Bei was.
 
@@ -34,9 +28,7 @@ Leaving was not easy. Guan Yu had to give up an important position and everythin
 
 ## “Do Not Chase Him”
 
-When Cao Cao’s men discovered that Guan Yu had left, they prepared to chase him. Cao Cao stopped them.
-
-“Do not chase him,” Cao Cao said. “He has chosen the leader he will follow.”
+When Cao Cao’s men discovered that Guan Yu had left, they prepared to chase him. Cao Cao stopped them. “Do not chase him,” he said. “He has chosen the leader he will follow.”
 
 Cao Cao still wished Guan Yu had stayed. He was losing a brave general, but he respected Guan Yu for keeping his word. In the end, Guan Yu found Liu Bei and fought beside him again.
 

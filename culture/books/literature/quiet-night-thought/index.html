@@ -42,15 +42,15 @@
         <div class="story-copy">
           <p class="page-label">Page 2</p>
           <h3>李白醒来时，月光已经走进了房间</h3>
-          <h4>When <span class="glossary-entry"><button type="button" class="glossary-term" aria-expanded="false" aria-controls="glossary-li-bai-1">Li Bai</button><span id="glossary-li-bai-1" class="glossary-popover" role="tooltip">A famous Chinese poet known for moonlight, travel, and bold imagination.</span></span> Woke Up, Moonlight Had Already Slipped into the Room</h4>
+          <h4>When Li Bai Woke Up, Moonlight Had Already Slipped into the Room</h4>
           <figure class="floated-figure">
             <img src="./images/2-moonlight-in-the-inn.webp" alt="" class="floated-image" />
             <figcaption class="caption floated-caption"><span class="zh">小旅舍里很安静。月光从窗边照进来，落在床前的地板上。</span><br><span class="en">The little inn is quiet. Moonlight comes through the window and falls on the floor beside the bed.</span></figcaption>
           </figure>
-          <p>传说李白写这首诗的时候，正在外面旅行。那是一个安静的秋夜，他住在一间小旅舍里，半夜忽然醒了。</p>
+          <p>传说<span class="glossary-entry"><button type="button" class="glossary-term" aria-expanded="false" aria-controls="glossary-li-bai-1">李白</button><span id="glossary-li-bai-1" class="glossary-popover" role="tooltip">Lǐ Bái · 唐代诗人，以豪放的想象和月亮、旅行等题材闻名。</span></span>写这首诗的时候，正在外面旅行。那是一个安静的秋夜，他住在一间小旅舍里，半夜忽然醒了。</p>
           <p>月光从窗户照进来，刚好落在床前。人在半梦半醒的时候，很容易看错，于是他先把那片白光当成了地上的霜。</p>
           <p>等他清醒一点，再抬头一看，才发现那不是霜，是月亮。</p>
-          <p>When <span class="glossary-entry"><button type="button" class="glossary-term" aria-expanded="false" aria-controls="glossary-li-bai-2">Li Bai</button><span id="glossary-li-bai-2" class="glossary-popover" role="tooltip">A famous Chinese poet known for moonlight, travel, and bold imagination.</span></span> wrote this poem, he was away from home and traveling. It was a quiet autumn night, and he was staying in a small inn when he suddenly woke up.</p>
+          <p>When <span class="glossary-entry"><button type="button" class="glossary-term" aria-expanded="false" aria-controls="glossary-li-bai-2">Li Bai</button><span id="glossary-li-bai-2" class="glossary-popover" role="tooltip">Lǐ Bái · 李白 · A Tang poet known for bold imagination, moonlight, and travel.</span></span> wrote this poem, he was away from home and traveling. It was a quiet autumn night, and he was staying in a small inn when he suddenly woke up.</p>
           <p>Moonlight came through the window and landed right in front of his bed. When a person is half asleep, it is easy to mistake one thing for another, so at first he thought the white patch on the floor was frost.</p>
           <p>Then he looked up more carefully and saw the truth. It was not frost. It was the moon.</p>
         </div>
@@ -133,7 +133,8 @@
             if (!button || !popover) return;
 
             const margin = 12;
-            const gap = 10;
+            const compactViewport = window.matchMedia("(max-width: 900px)").matches;
+            const gap = compactViewport ? 8 : 10;
             const buttonRect = button.getBoundingClientRect();
             const popoverRect = popover.getBoundingClientRect();
             const halfWidth = popoverRect.width / 2;
@@ -142,10 +143,12 @@
             const maxCenter = window.innerWidth - margin - halfWidth;
             const left = Math.min(Math.max(buttonCenter, minCenter), maxCenter);
 
-            let side = "above";
-            let top = buttonRect.top - popoverRect.height - gap;
+            let side = compactViewport ? "below" : "above";
+            let top = side === "below"
+              ? buttonRect.bottom + gap
+              : buttonRect.top - popoverRect.height - gap;
 
-            if (top < margin) {
+            if (side === "above" && top < margin) {
               side = "below";
               top = buttonRect.bottom + gap;
             }

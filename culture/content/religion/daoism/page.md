@@ -47,14 +47,14 @@ caption_en: The Eight Immortals have different ages, faces, clothes, and magical
 
 在许多道教故事里，仙人原来也是普通人。他们经过长时间的学习和修炼，或者遇到一次奇妙的机会，才拥有法术和漫长的生命。
 
-八仙就是最有名的仙人组合之一。传说中的他们各有各的模样和脾气。有人年老，有人年轻；有人拿宝剑，有人拿扇子，还有人带着花篮或葫芦。正因为每个人都不一样，他们最出名的那次旅行才特别有趣。
+[[八仙|eight-immortals]]就是最有名的仙人组合之一。传说中的他们各有各的模样和脾气。有人年老，有人年轻；有人拿宝剑，有人拿扇子，还有人带着花篮或葫芦。正因为每个人都不一样，他们最出名的那次旅行才特别有趣。
 [/zh]
 [en]
 Some Daoists practiced steady breathing, gentle movement, quiet sitting, and other ways of caring for life. They hoped to stay strong and live longer. Some dreamed of never growing old at all. In stories, a person who gained an amazingly long life and magical powers might become a *xian*, or immortal.
 
 Many Daoist tales say that immortals began as ordinary people. After years of learning and practice—or one marvelous meeting—their lives changed.
 
-The Eight Immortals are one of the best-known groups of immortals in Chinese stories. Legends give each one a different look and personality. Some are old and some are young. One carries a sword, another a fan, and others carry a flower basket, a gourd, or other treasures. Because each one is different, their most famous journey is especially fun.
+The [[Eight Immortals|eight-immortals]] are one of the best-known groups of immortals in Chinese stories. Legends give each one a different look and personality. Some are old and some are young. One carries a sword, another a fan, and others carry a flower basket, a gourd, or other treasures. Because each one is different, their most famous journey is especially fun.
 [/en]
 [/section]
 
@@ -71,7 +71,7 @@ caption_en: Tieguai Li rides the little boat his crutch became, while Lü Dongbi
 
 一位仙人提议，今天大家不用云，也不坐船，各自想一个办法过海。其他人都同意了。
 
-铁拐李先把铁拐丢进海里。海水一碰，那根旧铁拐竟变成了一只小木船！他跳进船里，随着浪头向前冲去。吕洞宾把宝剑放在海面上，双脚稳稳地站了上去。宝剑像一块窄窄的冲浪板，带着他追上了小船。
+[[铁拐李|tieguai-li]]先把铁拐丢进海里。海水一碰，那根旧铁拐竟变成了一只小木船！他跳进船里，随着浪头向前冲去。[[吕洞宾|lu-dongbin]]把宝剑放在海面上，双脚稳稳地站了上去。宝剑像一块窄窄的冲浪板，带着他追上了小船。
 
 其他仙人也出发了。扇子、会动的小纸驴、花篮、荷花、笛子和一对能敲响的木板一起漂上水面，载着他们越过海浪。八个人遇到同一片海，却想出了八种办法。这就是“八仙过海，各显神通”。
 [/zh]
@@ -80,7 +80,7 @@ One day, the Eight Immortals reached the shore of the East Sea. There was no bri
 
 One immortal suggested a challenge. No clouds and no ordinary boat—each traveler would find a different way across. Everyone agreed.
 
-Tieguai Li tossed his iron crutch into the water. Splash! The old crutch turned into a little wooden boat. He jumped in and sped over the waves. Lü Dongbin laid his sword on the sea and stepped onto it. The sword carried him forward like a very narrow surfboard, and soon he caught up with the boat.
+[[Tieguai Li|tieguai-li]] tossed his iron crutch into the water. Splash! The old crutch turned into a little wooden boat. He jumped in and sped over the waves. [[Lü Dongbin|lu-dongbin]] laid his sword on the sea and stepped onto it. The sword carried him forward like a very narrow surfboard, and soon he caught up with the boat.
 
 The others set off too. A fan, a little paper donkey that sprang to life, a flower basket, a lotus, a flute, and a pair of clicking wooden boards bobbed across the water with their riders. Eight immortals faced the same sea and found eight different ways across. That is the story behind the saying, “The Eight Immortals cross the sea, each showing a special power.”
 [/en]
@@ -96,14 +96,14 @@ heading_en: Dragons Against Immortals
 
 龙王派人上来查看。龙王太子看中了蓝采和的玉板，竟把它抢走了，还把蓝采和带进龙宫。其他七位仙人立刻掉头去救朋友。双方越吵越凶，一场“龙仙大战”就在海上打了起来。狂风卷着巨浪，法术的光芒在水面上闪来闪去。
 
-就在争斗越闹越大的时候，佛教故事中以慈悲闻名的观音来了。她让双方停手，也请龙王放出蓝采和。八位朋友终于重新聚在一起，海面和龙宫都慢慢安静下来。
+就在争斗越闹越大的时候，佛教故事中以慈悲闻名的[[观音|guanyin]]来了。她让双方停手，也请龙王放出蓝采和。八位朋友终于重新聚在一起，海面和龙宫都慢慢安静下来。
 [/zh]
 [en]
 In one popular version of the tale, the immortals were having so much fun that they made quite a commotion. Their treasures flashed, the waves boomed, and the noise reached the Dragon Palace on the sea floor.
 
 The Dragon King sent guards to the surface. A dragon prince spotted Lan Caihe’s shiny jade boards, grabbed them, and carried Lan Caihe down to the palace. The other seven immortals raced after their friend. Angry words soon became a battle of dragons and immortals. Wind roared, huge waves rose, and flashes of magic danced across the water.
 
-Before the fight grew even bigger, Guanyin arrived. She is a Buddhist figure known for kindness and mercy. She told everyone to stop and asked the Dragon King to free Lan Caihe. At last, the eight friends were together again, and the sea grew quiet.
+Before the fight grew even bigger, [[Guanyin|guanyin]] arrived. She is a Buddhist figure known for kindness and mercy. She told everyone to stop and asked the Dragon King to free Lan Caihe. At last, the eight friends were together again, and the sea grew quiet.
 [/en]
 [/section]
 
@@ -115,11 +115,11 @@ heading_en: Daoism in Chinese Culture
 [zh]
 道教不仅有道观和养生的学问，也给中国文化留下了许多会飞的法宝、藏在山中的仙人和代代相传的精彩故事。它关于照顾生命、顺应自然的想法，也一直留在中国人的生活和语言里。
 
-八仙常常出现在年画、瓷器和舞台上。“八仙过海，各显神通”也成了一句常用的话，用来形容大家各自拿出本领，解决同一个难题。故事虽然古老，八位性格各不相同的仙人，今天仍然活跃在中国的艺术、故事和日常语言中。
+八仙常常出现在年画、[[瓷器|porcelain]]和舞台上。“八仙过海，各显神通”也成了一句常用的话，用来形容大家各自拿出本领，解决同一个难题。故事虽然古老，八位性格各不相同的仙人，今天仍然活跃在中国的艺术、故事和日常语言中。
 [/zh]
 [en]
 Daoism has temples and teachings about caring for life, but it has also filled Chinese culture with flying treasures, immortals hidden in the mountains, and wonderful stories passed down through generations. Its ideas about living with nature have become part of Chinese life and language too.
 
-The Eight Immortals still appear in New Year pictures, on porcelain, and onstage. Their adventure also gave Chinese speakers a familiar saying about different people using different skills to solve the same problem. The story is old, but the Eight Immortals still turn up in Chinese art, stories, and everyday speech.
+The Eight Immortals still appear in New Year pictures, on [[porcelain|porcelain]], and onstage. Their adventure also gave Chinese speakers a familiar saying about different people using different skills to solve the same problem. The story is old, but the Eight Immortals still turn up in Chinese art, stories, and everyday speech.
 [/en]
 [/section]

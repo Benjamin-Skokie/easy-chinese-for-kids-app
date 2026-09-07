@@ -26,7 +26,7 @@ caption_en: Ten suns shrink the rivers and crack the ground. Hou Yi raises his b
 
 太阳原本应该轮流升上天空。可是有一天，十个太阳竟然一起出现了。树叶卷了起来，河水越变越浅，土地裂开一道道口子。人和动物躲来躲去，却怎么也躲不开热浪。
 
-后羿是一位非常厉害的弓箭手。他爬上高处，站稳双脚，拉开长弓。一支箭、两支箭、三支箭……九个太阳接连从天空落下。
+[[后羿|hou-yi]]是一位非常厉害的弓箭手。他爬上高处，站稳双脚，拉开长弓。一支箭、两支箭、三支箭……九个太阳接连从天空落下。
 
 后羿停下了。他把最后一个太阳留在天上，因为大地还需要光和温暖。风终于又吹过田野，人们也终于敢从阴影里走出来了。
 [/zh]
@@ -35,7 +35,7 @@ This old tale has been told in many ways. Here is one of the best-known versions
 
 The suns were supposed to take turns crossing the sky. Then one day, all ten appeared at once. Leaves curled. Rivers shrank. Cracks opened across the fields. People and animals searched for shade, but there was nowhere cool to hide.
 
-Hou Yi was a famous archer. He climbed to a high place, planted his feet, and pulled back his bow. One arrow flew, then another, then another. Nine suns fell from the sky.
+[[Hou Yi|hou-yi]] was a famous archer. He climbed to a high place, planted his feet, and pulled back his bow. One arrow flew, then another, then another. Nine suns fell from the sky.
 
 Then Hou Yi stopped. The world still needed one sun for light and warmth. At last, a breeze moved across the fields, and people stepped out of the shadows.
 [/en]
@@ -52,16 +52,16 @@ caption_en: The medicine could make one person live forever. Hou Yi asks Chang'e
 [zh]
 后羿射下九个太阳以后，西王母送给他一颗不死药。西王母是中国古代故事里一位很有力量的女神。谁吃下这颗药，谁就能永远活下去，离开人间成为仙人。
 
-可是，永远活着也有一个很大的代价。后羿爱他的妻子嫦娥，不愿意一个人飞走，把她留在地上。所以，他没有吃药。
+可是，永远活着也有一个很大的代价。后羿爱他的妻子[[嫦娥|chang-e]]，不愿意一个人飞走，把她留在地上。所以，他没有吃药。
 
 后羿把仙药放进一个木盒，请嫦娥好好保管。嫦娥盖上盒盖，把它藏了起来。
 
 可是，后羿的一名学生蓬蒙已经知道了仙药的秘密。他想要的不是一个普通人的一生。他想要永远活下去。
 [/zh]
 [en]
-After Hou Yi shot down the nine suns, the Queen Mother of the West gave him a magic medicine. She was a powerful goddess in old Chinese stories. Whoever swallowed the medicine would live forever and rise into the sky.
+After Hou Yi shot down the nine suns, the [[Queen Mother of the West|queen-mother-west]] gave him a magic medicine. She was a powerful goddess in old Chinese stories. Whoever swallowed the medicine would live forever and rise into the sky.
 
-But the medicine could help only one person. Hou Yi loved his wife, Chang'e. He did not want to fly away alone and leave her behind. So he did not take it.
+But the medicine could help only one person. Hou Yi loved his wife, [[Chang'e|chang-e]]. He did not want to fly away alone and leave her behind. So he did not take it.
 
 Hou Yi placed it inside a wooden box and asked Chang'e to guard it. She closed the lid and hid the box away.
 
@@ -112,7 +112,7 @@ caption_en: Hou Yi and his neighbors set fruit and cakes under the moon. In late
 
 后羿把水果和饼摆在月光下，仿佛还能和嫦娥一起吃。乡亲们也来到院子里，陪他抬头望月。
 
-今天，人们常在中秋节讲这个故事。中秋节是农历八月十五，那一晚的月亮通常又圆又亮。家人会聚在一起赏月、吃月饼。后来的月宫故事还给嫦娥添了一位伙伴：一只在桂树下捣药的玉兔。
+今天，人们常在[[中秋节|mid-autumn-festival]]讲这个故事。中秋节是农历八月十五，那一晚的月亮通常又圆又亮。家人会聚在一起赏月、吃月饼。后来的月宫故事还给嫦娥添了一位伙伴：一只在桂树下捣药的玉兔。
 [/zh]
 [en]
 Chang'e floated through the window, over the rooftops, and past the clouds. Higher and higher she rose, until she reached the moon. In this version of the tale, she could never return to the ground.
@@ -121,7 +121,7 @@ When Hou Yi came home, he found the wooden box open and Chang'e gone. He ran out
 
 Hou Yi set fruit and cakes in the moonlight, as if he could still share them with her. His neighbors came and looked up with him.
 
-Today, people often tell this story during Mid-Autumn Festival, when families gather under the round autumn moon and share mooncakes. Later moon tales give Chang'e a companion too: the Jade Rabbit, who pounds magic medicine beneath a tree on the moon.
+Today, people often tell this story during [[Mid-Autumn Festival|mid-autumn-festival]], when families gather under the round autumn moon and share mooncakes. Later moon tales give Chang'e a companion too: the Jade Rabbit, who pounds magic medicine beneath a tree on the moon.
 [/en]
 [/section]
 

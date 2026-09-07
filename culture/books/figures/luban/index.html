@@ -27,12 +27,12 @@
             <img src="./images/leaf-inspired-saw.webp" alt="" class="floated-image" />
             <figcaption class="caption floated-caption"><span class="zh">鲁班在山路上仔细观察刚刚划伤手指的锯齿草叶。</span><br><span class="en">On a mountain path, Lu Ban studies the serrated leaf that has just cut his finger.</span></figcaption>
           </figure>
-          <p>一个古老传说讲到，鲁班接到了一件大工程：建造一座宫殿。屋顶需要横梁，大门需要木板，房间还需要一根根柱子。工人们要准备的木头多得吓人。</p>
+          <p>一个古老传说讲到，<span class="glossary-entry"><button type="button" class="glossary-term" aria-expanded="false" aria-controls="glossary-lu-ban-1">鲁班</button><span id="glossary-lu-ban-1" class="glossary-popover" role="tooltip">Lǔ Bān · 中国传统故事中著名的木匠和工匠祖师。</span></span>接到了一件大工程：建造一座宫殿。屋顶需要横梁，大门需要木板，房间还需要一根根柱子。工人们要准备的木头多得吓人。</p>
           <p>从早到晚，山上都是斧头砍树的声音。木屑四处飞，工人们的胳膊越来越酸，可木料堆还是不够大。</p>
           <p>鲁班决定亲自上山看看。山路又窄又陡，他一脚踩空，连忙伸手抓住旁边的草。</p>
           <p>“哎哟！”</p>
           <p>鲁班马上松开手。一片草叶竟然把他的手指划破了。</p>
-          <p>One old legend says that Lu Ban was once given a huge job: build a palace. The roof needed beams. The doors needed boards. The rooms needed row after row of wooden columns. His workers needed more wood than they could cut.</p>
+          <p>One old legend says that <span class="glossary-entry"><button type="button" class="glossary-term" aria-expanded="false" aria-controls="glossary-lu-ban-2">Lu Ban</button><span id="glossary-lu-ban-2" class="glossary-popover" role="tooltip">Lǔ Bān · 鲁班 · The legendary master carpenter and patron of craftspeople.</span></span> was once given a huge job: build a palace. The roof needed beams. The doors needed boards. The rooms needed row after row of wooden columns. His workers needed more wood than they could cut.</p>
           <p>From morning until night, axes thudded against trees. Chips flew. Arms grew sore. Still, the pile of logs was not nearly big enough.</p>
           <p>Lu Ban decided to climb the mountain and see the work for himself. The path was steep and narrow. His foot slipped, and he grabbed a handful of grass.</p>
           <p>“Ouch!”</p>
@@ -143,7 +143,8 @@
             if (!button || !popover) return;
 
             const margin = 12;
-            const gap = 10;
+            const compactViewport = window.matchMedia("(max-width: 900px)").matches;
+            const gap = compactViewport ? 8 : 10;
             const buttonRect = button.getBoundingClientRect();
             const popoverRect = popover.getBoundingClientRect();
             const halfWidth = popoverRect.width / 2;
@@ -152,10 +153,12 @@
             const maxCenter = window.innerWidth - margin - halfWidth;
             const left = Math.min(Math.max(buttonCenter, minCenter), maxCenter);
 
-            let side = "above";
-            let top = buttonRect.top - popoverRect.height - gap;
+            let side = compactViewport ? "below" : "above";
+            let top = side === "below"
+              ? buttonRect.bottom + gap
+              : buttonRect.top - popoverRect.height - gap;
 
-            if (top < margin) {
+            if (side === "above" && top < margin) {
               side = "below";
               top = buttonRect.bottom + gap;
             }

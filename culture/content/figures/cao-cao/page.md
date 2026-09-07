@@ -22,14 +22,14 @@ image: debated-figure.webp
 caption_zh: 曹操站在军营里，将士和帮他想办法的人围在身边。
 caption_en: Cao Cao stands in camp with soldiers and people who help him make plans.
 [zh]
-在曹操出生以前，汉朝的皇帝已经统治了很长时间。可是，等曹操长大时，这个庞大的国家开始裂开。皇帝还戴着皇冠，却已经没有力量让各地都听从命令。
+在[[曹操|cao-cao]]出生以前，[[汉朝|han-dynasty]]的皇帝已经统治了很长时间。可是，等曹操长大时，这个庞大的国家开始裂开。皇帝还戴着皇冠，却已经没有力量让各地都听从命令。
 
 各地的将领组建自己的军队，争抢城市、土地和粮食。一座城春天可能被一支军队占领，秋天又换了主人。农田被毁，许多家庭逃离家园，路上到处都是士兵。
 
 曹操就是在这样的世界里长大的。后来，他会带领大军，也会掌握汉朝大部分权力。可在那以前，他只是都城里一名刚刚得到工作的年轻官员。
 [/zh]
 [en]
-Long before Cao Cao was born, Han emperors had ruled much of China. But by the time he was a young man, that huge country was coming apart. The emperor still wore a crown, but he could no longer make leaders across the country obey him.
+Long before [[Cao Cao|cao-cao]] was born, Han emperors had ruled much of China. But by the time he was a young man, that huge country was coming apart. The emperor still wore a crown, but he could no longer make leaders across the country obey him.
 
 Generals raised their own armies and fought over cities, land, and grain. A city might belong to one army in the spring and another by autumn. Farms burned, families fled their homes, and soldiers filled the roads.
 
@@ -46,7 +46,7 @@ image: bold-young-officer.webp
 caption_zh: 年轻的曹操在城里拦住一个不守规矩的人。
 caption_en: A young Cao Cao stops someone who has broken a city rule.
 [zh]
-在曹操带领大军以前，他曾是都城洛阳的一名年轻官员，负责管理一片街区。城里规定，到了夜里某个时间，人们就不能随便在街上走动。
+在曹操带领大军以前，他曾是都城[[洛阳|luoyang]]的一名年轻官员，负责管理一片街区。城里规定，到了夜里某个时间，人们就不能随便在街上走动。
 
 一天，一位很有权势的宫廷官员的叔叔违反了夜间规定。很多年轻官员可能不敢得罪这样的人，曹操却照样处罚了他。
 
@@ -57,13 +57,13 @@ caption_en: A young Cao Cao stops someone who has broken a city rule.
 后来，他把年轻的皇帝接到一座自己控制的城市。朝廷又能用皇帝的名义发出命令，可保护皇帝的士兵听曹操指挥。有人说曹操救了皇帝，也有人说他利用皇帝的名义扩大自己的权力。这两句话都有一部分事实。
 [/zh]
 [en]
-Before Cao Cao commanded great armies, he was a young officer in Luoyang, the capital city. He was responsible for keeping order in one part of town. After a certain hour at night, people were not allowed to wander through the streets.
+Before Cao Cao commanded great armies, he was a young officer in [[Luoyang|luoyang]], the capital city. He was responsible for keeping order in one part of town. After a certain hour at night, people were not allowed to wander through the streets.
 
 One night, the uncle of a powerful palace official broke the rule. Many young officers might have been afraid to punish someone with such an important relative. Cao Cao punished him anyway.
 
 Word spread quickly. Powerful connections would not help someone escape Cao Cao's punishment. Some people respected him for that. Others began to fear him.
 
-A few years later, the Han dynasty fell deeper into chaos. Cao Cao raised an army and became one of many commanders fighting for control.
+A few years later, the [[Han dynasty|han-dynasty]] fell deeper into chaos. Cao Cao raised an army and became one of many commanders fighting for control.
 
 He later brought the young emperor to a city he controlled. The government could once again send out orders in the emperor's name, but the soldiers protecting the emperor answered to Cao Cao. Some people said Cao Cao had rescued the emperor. Others said he was using the emperor's name to increase his own power. There was some truth in both views.
 [/en]
@@ -153,7 +153,7 @@ heading_en: The White Face Belongs to the Stage
 [zh]
 曹操去世前，汉朝皇帝给了他“魏王”的称号。皇帝是最高的统治者；王可以管理很大的地方，却仍然应该听命于皇帝。曹操活着时没有使用“皇帝”这个称号。他去世以后，儿子曹丕才结束汉朝，成为魏国的皇帝。
 
-几百年以后，小说和戏曲把曹操写成了一个很有名的坏人。京剧演员扮演曹操时，常常画一张白脸，让观众一眼就知道：这个人物聪明、危险，而且很难猜。
+几百年以后，小说和戏曲把曹操写成了一个很有名的坏人。[[京剧|jingju]]演员扮演曹操时，常常画一张白脸，让观众一眼就知道：这个人物聪明、危险，而且很难猜。
 
 白脸是舞台上的记号，不是曹操真正的样子。历史里的曹操让北方一些地方重新安定，寻找有本领的官员，也留下了好诗。他同时发动战争、处死对手，并让许多无辜的人失去生命。
 
@@ -162,7 +162,7 @@ heading_en: The White Face Belongs to the Stage
 [en]
 Before Cao Cao died, the Han emperor gave him the title King of Wei. An emperor was the highest ruler. A king could control a large region but was still supposed to serve the emperor. Cao Cao never used the title emperor while he was alive. After he died, his son Cao Pi ended the Han dynasty and became emperor of Wei.
 
-Hundreds of years later, novels and plays turned Cao Cao into a famous villain. In Peking opera, the actor playing Cao Cao often wears white face paint. The color tells the audience at once: this character is clever, dangerous, and difficult to trust.
+Hundreds of years later, novels and plays turned Cao Cao into a famous villain. In [[Peking opera|jingju]], the actor playing Cao Cao often wears white face paint. The color tells the audience at once: this character is clever, dangerous, and difficult to trust.
 
 The white face is a sign used onstage. It is not Cao Cao's real face. The Cao Cao of history helped some parts of northern China become stable again, searched for skilled officials, and left behind powerful poems. He also began wars, ordered executions, and caused the deaths of many innocent people.
 

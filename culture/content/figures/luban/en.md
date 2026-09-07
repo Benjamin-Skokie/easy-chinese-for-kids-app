@@ -4,7 +4,7 @@
 
 ## How Much Wood Does a Palace Need?
 
-One old legend says that Lu Ban was once given a huge job: build a palace. The roof needed beams. The doors needed boards. The rooms needed row after row of wooden columns. His workers needed more wood than they could cut.
+One old legend says that [[Lu Ban|lu-ban]] was once given a huge job: build a palace. The roof needed beams. The doors needed boards. The rooms needed row after row of wooden columns. His workers needed more wood than they could cut.
 
 From morning until night, axes thudded against trees. Chips flew. Arms grew sore. Still, the pile of logs was not nearly big enough.
 

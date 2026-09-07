@@ -24,14 +24,14 @@ caption_en: Polo asks riders to guide a horse, chase a ball, and swing a mallet 
 [zh]
 想象一下，你拿着一根长长的球杖，想把地上的小球打出去。现在，再给你加一匹正在奔跑的马。事情一下子就难多了。球在滚，马在跑。骑手既要控制马的方向，又要保持平衡，还得盯住地上的小球，找准机会挥出球杖。
 
-大约一千三百年前，唐朝人就特别喜欢这种又快又刺激的马上游戏——马球。马球并不是在中国最早出现的。它从中国西边的亚洲地区传来。那时候，各地的人来来往往，衣服、音乐、食物和各种新鲜玩意儿都会跟着旅行。
+大约一千三百年前，[[唐朝|tang-dynasty]]人就特别喜欢这种又快又刺激的马上游戏——马球。马球并不是在中国最早出现的。它从中国西边的亚洲地区传来。那时候，各地的人来来往往，衣服、音乐、食物和各种新鲜玩意儿都会跟着旅行。
 
 游戏当然也会。马球来到中国以后，很快就找到了很多喜欢它的人。
 [/zh]
 [en]
 Imagine trying to hit a small ball with a long stick. Now put yourself on a running horse. Suddenly, everything becomes harder. The ball is rolling. The horse is moving. You have to steer, stay balanced, watch the ball, and swing the mallet—all at the same time.
 
-Around 1,300 years ago, people in Tang China loved this fast horseback game. It was polo. The game had traveled into China from lands farther west in Asia. The Tang world was full of travelers, merchants, music, clothing, and new ideas arriving from different places. Games could travel too.
+Around 1,300 years ago, people in [[Tang China|tang-dynasty]] loved this fast horseback game. It was polo. The game had traveled into China from lands farther west in Asia. The Tang world was full of travelers, merchants, music, clothing, and new ideas arriving from different places. Games could travel too.
 
 And polo found plenty of fans.
 [/en]

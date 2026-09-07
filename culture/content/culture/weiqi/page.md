@@ -22,7 +22,7 @@ image: 1-first-stones-board.webp
 caption_zh: 一颗黑子落下，对面的人想了一会儿，再放下一颗白子。
 caption_en: A black stone lands, and the other player thinks for a moment before placing a white one.
 [zh]
-一颗黑子落在木棋盘上。对面的人想了一会儿，放下一颗白子。第一次看围棋，你可能会觉得奇怪：这到底有什么难的？没有骰子，棋子也不会在棋盘上跑来跑去。一颗棋放下以后，通常就待在那里不动了。
+一颗黑子落在木棋盘上。对面的人想了一会儿，放下一颗白子。第一次看[[围棋|weiqi]]，你可能会觉得奇怪：这到底有什么难的？没有骰子，棋子也不会在棋盘上跑来跑去。一颗棋放下以后，通常就待在那里不动了。
 
 能有多难呢？答案是：非常难。
 
@@ -31,11 +31,11 @@ caption_en: A black stone lands, and the other player thinks for a moment before
 规则并不难。真正奇怪的是，棋一下起来，事情马上就复杂了。
 [/zh]
 [en]
-A black stone lands on the wooden board. Across the table, the other player thinks for a moment and places down a white one. If you are watching *wéiqí* for the first time, you may wonder why it is supposed to be difficult. Nobody rolls dice. The stones do not run around the board. Once you put one down, it usually stays exactly where it is.
+A black stone lands on the wooden board. Across the table, the other player thinks for a moment and places down a white one. If you are watching [[weiqi|weiqi]] for the first time, you may wonder why it is supposed to be difficult. Nobody rolls dice. The stones do not run around the board. Once you put one down, it usually stays exactly where it is.
 
 How hard could that be? Very hard, as it turns out.
 
-*Wéiqí* began in China thousands of years ago. Two players take turns placing black and white stones on the intersections of a grid. If you completely surround an opponent’s stones, you can capture them. Players also try to surround empty areas as territory.
+*weiqi* began in China thousands of years ago. Two players take turns placing black and white stones on the intersections of a grid. If you completely surround an opponent’s stones, you can capture them. Players also try to surround empty areas as territory.
 
 The rules are simple enough to learn quickly. The strange part is what happens after that.
 [/en]
@@ -57,7 +57,7 @@ caption_en: Stones crowd some parts of the board while large areas remain empty;
 [en]
 Imagine you see a white stone near yours and decide to capture it. You add another black stone. White answers. You keep chasing—and suddenly your opponent plays far away on the other side of the board. Why over there? Later, you discover the answer. While you were busy winning one tiny fight, your opponent was building something much bigger somewhere else.
 
-That is one of the great tricks of *wéiqí*. A move in one corner may matter far away. Sometimes a few stones are not worth saving. Sometimes an empty part of the board is more important than the crowded part everyone is staring at.
+That is one of the great tricks of *weiqi*. A move in one corner may matter far away. Sometimes a few stones are not worth saving. Sometimes an empty part of the board is more important than the crowded part everyone is staring at.
 [/en]
 [/section]
 
@@ -99,7 +99,7 @@ It did not look like the kind of move a top human player would normally choose. 
 
 Much later, the unusual move turned out to be important. AlphaGo won the game and eventually won the match four games to one.
 
-People had been studying *wéiqí* for thousands of years, and one little stone could still make experts ask, “Why there?”
+People had been studying *weiqi* for thousands of years, and one little stone could still make experts ask, “Why there?”
 [/en]
 [/section]
 

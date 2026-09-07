@@ -21,14 +21,14 @@ image: two-mother-rivers-map.webp
 caption_zh: 长江和黄河都从中国西部的高地出发，一路向东流入大海。
 caption_en: The Yangtze and Yellow Rivers both begin in the highlands of western China and flow east toward the sea.
 [zh]
-想象两滴雪水落在中国西部的高山上。一滴加入长江，一滴加入黄河。它们都向东走，却开始了两段很不一样的旅程。
+想象两滴雪水落在中国西部的高山上。一滴加入[[长江|yangtze-river]]，一滴加入[[黄河|yellow-river]]。它们都向东走，却开始了两段很不一样的旅程。
 
 长江是中国最长的河，长约 4,000 英里，最后流入东海。黄河是中国第二长河，长约 3,400 英里，最后流入渤海。两条河都要穿过大半个中国。
 
 千百年来，人们在河边取水、种田、捕鱼、坐船，也建起村庄和城市。长江和黄河因此常被称为中国的“母亲河”：它们的水养育了许许多多的人，也带着许许多多的故事流向大海。
 [/zh]
 [en]
-Imagine two drops of melting snow high in western China. One joins the Yangtze River. The other joins the Yellow River. Both travel east, but their journeys are very different.
+Imagine two drops of melting snow high in western China. One joins the [[Yangtze River|yangtze-river]]. The other joins the [[Yellow River|yellow-river]]. Both travel east, but their journeys are very different.
 
 The Yangtze is China's longest river. It runs about 4,000 miles before reaching the East China Sea. The Yellow River is China's second longest. It travels about 3,400 miles to the Bohai Sea. Both cross a large part of China.
 
@@ -71,16 +71,16 @@ caption_en: The Three Gorges are three narrow parts of the Yangtze, where steep 
 [zh]
 长江刚从高原出发时，河道狭窄，水从山间飞快地冲下来。后来，它穿过三段相连的大峡谷。它们合在一起，就叫“三峡”。两岸山峰高高耸立，船走在中间，像从一扇扇巨大的石门下穿过。
 
-一千多年前，诗人李白也曾乘船经过这里。他写道：“轻舟已过万重山。”小船顺水向前，两岸的山峰一座接一座退到身后。短短七个字，就让人感觉船快得像要飞起来。
+一千多年前，诗人[[李白|li-bai]]也曾乘船经过这里。他写道：“轻舟已过万重山。”小船顺水向前，两岸的山峰一座接一座退到身后。短短七个字，就让人感觉船快得像要飞起来。
 
-出了三峡，长江来到较平坦的地方，接上湖泊和许多支流。江面越来越宽，船也越来越多。等它穿过南京、上海附近，已经是一条繁忙的大河，载着货物和旅客奔向大海。
+出了三峡，长江来到较平坦的地方，接上湖泊和许多支流。江面越来越宽，船也越来越多。等它穿过南京、[[上海|shanghai]]附近，已经是一条繁忙的大河，载着货物和旅客奔向大海。
 [/zh]
 [en]
 Near its beginning, the Yangtze rushes down from high land through narrow mountain channels. Later, it enters three great gorges joined together. They are called the Three Gorges. Steep peaks rise on both sides, and a boat seems to pass through one enormous stone doorway after another.
 
-More than 1,000 years ago, the poet Li Bai traveled through this area by boat. He wrote, “My light boat has passed ten thousand mountains.” Peak after peak slipped behind him as the current carried his boat forward. In just one short line, he made the boat feel as if it were flying.
+More than 1,000 years ago, the poet [[Li Bai|li-bai]] traveled through this area by boat. He wrote, “My light boat has passed ten thousand mountains.” Peak after peak slipped behind him as the current carried his boat forward. In just one short line, he made the boat feel as if it were flying.
 
-After leaving the gorges, the Yangtze reaches flatter land and joins lakes and many smaller rivers. The water grows wider, and more boats appear. By the time the river passes near Nanjing and Shanghai, it is a busy waterway carrying goods and passengers toward the sea.
+After leaving the gorges, the Yangtze reaches flatter land and joins lakes and many smaller rivers. The water grows wider, and more boats appear. By the time the river passes near Nanjing and [[Shanghai|shanghai]], it is a busy waterway carrying goods and passengers toward the sea.
 [/en]
 [/section]
 

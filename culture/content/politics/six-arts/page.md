@@ -1,6 +1,6 @@
 ---
-title_zh: 六艺：古代学生真的一天学六门课吗？
-title_en: The Six Arts: Did Ancient Students Really Study All Six in One Day?
+title_zh: 六艺：为什么射箭、音乐和算术要一起学？
+title_en: The Six Arts: Why Learn Archery, Music, and Math Together?
 slug: six-arts
 category: politics
 difficulty: 困难
@@ -9,218 +9,120 @@ style_notes: "用 --- 分隔 frontmatter；正文强调优先用 *斜体*；尽�
 ---
 
 [hero]
-title_zh: 六艺：古代学生真的一天学六门课吗？
-title_en: The Six Arts: Did Ancient Students Really Study All Six in One Day?
+title_zh: 六艺：为什么射箭、音乐和算术要一起学？
+title_en: The Six Arts: Why Learn Archery, Music, and Math Together?
 [/hero]
 
 [section]
 page: 1
 layout: text-wrap-image
-heading_zh: 先问问这幅画
-heading_en: Start by Questioning the Picture
+heading_zh: 一张很不一样的学习清单
+heading_en: A Very Different School List
 image: 1-six-arts-archery-dawn.webp
-caption_zh: 清晨练箭的少年是现代想象形象；我们不知道他的姓名、年龄、老师或练习时间
-caption_en: The young archer is a modern imagined figure. We do not know his name, age, teacher, or practice time.
+caption_zh: 少年在清晨练习射箭。
+caption_en: A young archer practices at dawn.
 [zh]
-画里天刚亮，一个少年拉开弓，身后的大人安静地看着。我们很容易接着编下去：他十三岁，父亲天没亮就叫他起床，第一箭射偏了，第二箭正中靶心，父亲还说了一句让他终身难忘的话。
+音乐和算术放在一起，好像并不奇怪。再加上写字，也很容易理解。可是接下来，居然还有射箭和驾战车。
 
-可是，这些细节有出处吗？没有。我们不知道画中少年是谁，也没有古书记下这样一个清晨。它是一幅现代想象图，可以让我们看见弓箭和练习，却不能证明某个春秋时代学生的一天怎样开始。
+古书[[《周礼》|rites-of-zhou]]里列出了六种学习和练习的本领：**礼、乐、射、御、书、数**，合起来就是“[[六艺|six-arts]]”。而且每一项下面还分成不同内容，所以它们当然不是一天里排好的六节小课，而是需要长期练习的六个大领域。
 
-这正好给我们一个研究“六艺”的方法：先把好看的故事放在一边，看看古书真正写了什么，再问古书描绘的是日常生活、教育理想，还是后人整理出来的制度。
+今天再看这个名单，会觉得它把完全不同的东西放在了一起。音乐大概应该去音乐教室，算术坐在桌前学，射箭可以去运动场，可“驾战车”已经完全不会出现在今天的课程表里了。不过，六艺原本要培养的，是生活在另一个时代的人。
 [/zh]
 [en]
-The sun is rising in the picture. A boy draws his bow while an older man watches. It is easy to keep inventing: the boy is thirteen, his father woke him before dawn, his first arrow missed, and his second arrow struck the center. Then his father said something the boy remembered for the rest of his life.
+Music and math on the same list do not sound very strange. Writing makes sense too. Then come archery and chariot driving.
 
-But where did those details come from? They did not come from an ancient record. We do not know who the boy is, and no old book describes this morning. The picture is modern artwork. It can help us see a bow and a practice yard, but it cannot prove how one student’s day began during the Spring and Autumn period.
+An ancient Chinese book called the [[*Rites of Zhou*|rites-of-zhou]] lists six areas of learning: **ritual, music, archery, chariot driving, writing, and calculation**. Together they were called the [[Six Arts|six-arts]]. The book even divides each one into smaller groups, which tells us these were not six little lessons to squeeze into one school day. Each was a skill that took practice.
 
-That gives us a good method for studying the Six Arts. First, set the dramatic story aside. Look at what the old texts actually say. Then ask whether a passage describes everyday life, an educational ideal, or a system arranged by later writers.
+The list feels unusual today because it mixes things we now put in completely different places. Music might belong in an arts classroom, math at a desk, archery on a sports field, and chariot driving nowhere in school at all. But the Six Arts were trying to prepare a person for a very different world.
 [/en]
 [/section]
 
 [section]
 page: 2
-layout: text-only
-heading_zh: 六个字从哪里来？
-heading_en: Where Did the List Come From?
+layout: text-wrap-image
+heading_zh: 礼和乐：学会和别人一起行动
+heading_en: Ritual and Music: Learning to Act Together
+image: 2-six-arts-qin-lesson-soft.webp
+caption_zh: 少年跟着老师练习弹琴。
+caption_en: A young learner practices the qin with his teacher.
 [zh]
-“礼、乐、射、御、书、数”这六个字，清楚地列在《周礼》里。《周礼》是一部安排官职和制度的古代礼书。其中写到一位叫“保氏”的官员教养“国子”，并教他们六艺：“一曰五礼，二曰六乐，三曰五射，四曰五驭，五曰六书，六曰九数。”书中另一处也把礼、乐、射、御、书、数列为教化内容。
+第一项“**礼**”，并不只是今天说的“有礼貌”。古代很多重要场合都有自己的规矩。来了宾客应该怎样接待，参加仪式应该站在哪里，什么时候行礼，遇到丧事、朝会或者军事活动又应该怎样行动，都属于“礼”的世界。
 
-这条记载非常重要，但不能把它当成一张从西周或春秋时期保存下来的学校课程表。《周礼》的成书历史很复杂。许多学者认为，它的主要制度设计反映了战国时代的思想，后来又经过整理。书名里的“周”，不等于书中每一项制度都能证明西周学校每天真的这样上课。
+“**乐**”也不只是一个人坐下来弹一首曲子。它可以包括乐器、歌唱和舞蹈，而且常常和各种仪式连在一起。所以，礼和乐都不是只靠背书就能学会的。人要听、要看、要记住节奏和顺序，还要知道怎样和身边的人一起行动。
 
-因此，比较准确的说法是：六艺是古代礼制文献保存下来的一种教育分类和理想。它影响深远，却没有告诉我们“十三岁学生每天几点射箭、几点弹琴”。
+接下来，就轮到弓箭了。
 [/zh]
 [en]
-The six-part list—ritual, music, archery, chariot driving, writing, and calculation—appears clearly in the *Rites of Zhou*. This ancient book describes an ideal system of offices and institutions. One passage assigns an official called the *Baoshi* to educate the “sons of the state.” It then divides each of the Six Arts into smaller groups. Another passage places the same six arts inside a wider plan for educating the people.
+The first art, **lǐ**, is often translated as “ritual.” It was much more than being polite. Important occasions had their own ways of doing things. Guests had to be received properly. Ceremonies had an order. Mourning, court meetings, and military events all had expected forms of behavior. A person had to know where to stand, when to move, and how to behave around other people.
 
-This is important evidence, but it is not a school schedule saved from the Western Zhou or Spring and Autumn period. The *Rites of Zhou* has a complicated history. Many scholars think much of its system reflects ideas from the Warring States period and was organized later. The word *Zhou* in the title does not prove that every office and lesson worked exactly this way in an early Zhou school.
+Music belonged to this world too. **Yuè** could include instruments, singing, and dance. Ancient performances were often group activities connected with ceremonies rather than simply one person sitting alone and playing a beautiful tune. So the first two arts already asked for something beyond memorizing facts. A learner had to listen, move, remember patterns, and work with other people.
 
-A careful conclusion is that the Six Arts were an influential way of organizing educational skills and ideals. The text does not tell us that every thirteen-year-old practiced archery at sunrise and played music after dinner.
+Then the bow came out.
 [/en]
 [/section]
 
 [section]
 page: 3
-layout: text-only
-heading_zh: 六艺不是六本课本
-heading_en: The Six Arts Were Not Six Textbooks
+layout: text-wrap-image
+heading_zh: 弓箭和缰绳
+heading_en: The Bow and the Reins
+image: 3-six-arts-chariot-driving.webp
+caption_zh: 驾车者控制缰绳，让马匹、车轮、速度和方向配合起来。
+caption_en: A chariot driver controls the reins, coordinating horses, wheels, speed, and direction.
 [zh]
-“艺”在这里更接近需要学习和练习的本领。六个名称每一个都很大，《周礼》甚至说“五礼、六乐、五射、五驭、六书、九数”，说明它们下面还有不同项目，不是六节各四十五分钟的现代课堂。
+“**射**”就是射箭。拉得动弓当然需要力气，可光有力气还不行。身体要站稳，手要控制好弓弦，还要判断距离、瞄准目标，在合适的时候把箭放出去。
 
-“礼”不只是说“请”和“谢谢”，还包括祭祀、宾客往来、丧礼、军事等不同场合的仪式和秩序。“乐”也不只是独自弹一张琴，而可能包括歌唱、器乐、舞蹈和礼仪中的集体表演。礼和乐帮助人知道什么时候做什么、怎样与别人一起行动，但它们也维护了古代社会的身份和等级，不能只说成温柔的“礼貌课”和“音乐课”。
+后来[[《礼记》|book-of-rites]]讲射箭时，还用它来说一个很有意思的道理：如果箭没有射中，不要先怪那个比自己射得好的人，而是回过头来看看自己哪里需要调整。
 
-“射”是射箭，“御”是驾驭马车，不是现代意义的骑马课。弓箭和马车既能用于礼仪活动，也和贵族的军事生活有关。“书”和“数”则把读写、文字知识与计算放进这套教育里。六艺把仪式、音乐、身体训练、交通与战争技能、文字和数量放在一起，和今天把语文、数学、体育、音乐分开的方式很不一样。
+“**御**”则是驾驭马拉的战车。对今天的小朋友来说，这大概是六艺里最陌生的一项。不过在[[商周时代|shang-zhou-era]]，战车既用于战争，也和国君、贵族的身份密切相关。让马匹、缰绳、车轮和方向配合起来，本身就是一种复杂的本领。学习射和御的时候，人当然不可能安安静静坐在屋子里。身体也得跟着脑子一起学。
 [/zh]
 [en]
-Here, an “art” means a skill or practice that must be learned. Each label covers a large field. The *Rites of Zhou* itself lists several parts within each art, so this was nothing like a modern school day with six forty-five-minute classes.
+**Shè** meant archery. A good archer needed strength, but strength alone was not enough. The body had to be steady. The bow had to be drawn smoothly. The archer had to judge distance, aim, and release at the right moment.
 
-Ritual meant much more than saying “please” and “thank you.” It included ceremonies and rules for worship, guests, mourning, military events, and other parts of public life. Music was broader than one person playing a qin. It could include singing, instruments, dance, and group performance within ritual. These arts taught people how to act together, but they also supported rank and order in an unequal society. Calling them simply “manners class” and “music class” would hide too much.
+Later ritual writers even used archery to talk about how a person handled failure. The [[*Book of Rites*|book-of-rites]] says that when an archer misses, he should not blame the person who did better. He should look back at himself and think about what he could correct.
 
-Archery meant using a bow. Chariot driving meant controlling a horse-drawn vehicle, not taking a modern riding lesson. Both could be used in ceremonies and in the military life of the elite. Writing and calculation brought literacy, knowledge of written forms, numbers, and reckoning into the same educational picture. The Six Arts brought ritual, music, physical training, military and travel skills, writing, and math into one educational vision—one very different from a modern school schedule.
+Then there was **yù**: driving a horse-drawn chariot. This may be the strangest of the Six Arts to a child today, but chariots were important in the world of the [[Shang and Zhou|shang-zhou-era]]. They were used in warfare and were also closely connected with powerful rulers and nobles. Controlling horses while keeping a wheeled vehicle moving in the right direction was a serious practical skill. A learner practicing these two arts was not sitting quietly at a table. The body had to work along with the mind.
 [/en]
 [/section]
 
 [section]
 page: 4
-layout: text-wrap-image
-heading_zh: 竹简上的字是写上去的
-heading_en: Words on Bamboo Were Written in Ink
-image: 2-six-arts-bamboo-writing.webp
-caption_zh: 这幅想象图把书刀放在少年手中；古代竹简通常用笔墨书写，刀可用来削去错字
-caption_en: This imagined scene places a knife in the boy’s hand. Bamboo slips were usually written on in ink; a knife could shave away mistakes.
+layout: text-only
+heading_zh: 毛笔和数字
+heading_en: A Brush and Some Numbers
 [zh]
-第二幅图里，少年面对一排竹片，手里拿着一把小刀。旧故事说他用刀把《诗经》一字一字刻上去，这并不是古代竹简最常见的书写方式。考古发现的许多竹简是用毛笔蘸墨写成的，再用绳子编联起来。写错时，刀可以削去竹片表面的一层，然后重新书写；它更像古人的橡皮和修整工具。
+不过，有些本领确实要坐下来练。“**书**”和识字、书写有关。古代没有今天这样的练习本，人们可以用毛笔蘸墨，把文字写在一条条[[竹简|bamboo-slips]]上，再把竹简编在一起。毛笔本身在纸普遍使用以前就已经出现了。
 
-“书”也不能只缩小成“抄一首诗”。它与识字、书写和文字分类有关，是阅读命令、记录事情和处理政务的基础。我们并不知道一个少年是不是在这间屋里抄《诗经》，也不知道旁边的大人是谁，所以这幅画只能看作想象，不能看成古代课堂的真实记录。
+会写字不只是为了写一篇漂亮文章。官府要留下记录，要传递命令，要记下人名和各种事情，都离不开文字。
 
-一个小小的刀笔区别很重要。如果为了让故事有画面，就把“用笔写”改成“用刀刻”，画面虽然更有戏，孩子学到的历史却错了。
+“**数**”则和计算有关。量土地、数粮食、分东西、做工程，都要用到数字。后来中国数学里还长期使用一种叫[[算筹|counting-rods]]的小棍，把数字一根一根摆在桌面上来帮助计算。于是，六艺的一边有弓箭、马车、音乐和仪式，另一边却又放着毛笔和数字。古人并没有觉得这些一定属于完全不同的人。
 [/zh]
 [en]
-In the second picture, a boy sits before rows of bamboo slips with a small knife in his hand. The old article claimed that he was carving lines from the *Book of Songs* into the bamboo. That was not the usual way bamboo books were written. Many ancient bamboo manuscripts found by archaeologists carry ink brushed onto the surface. Their slips were then tied together with cords. A knife could shave away a mistaken character so the writer could write again. It worked more like an eraser and repair tool.
+Eventually, though, it was time to sit down. **Shū** was connected with writing and knowledge of written forms. In early China, texts could be written with brush and ink on narrow [[strips of bamboo|bamboo-slips]], which were then joined together. Ancient brushes had already been developed long before paper became common.
 
-Writing was also more than copying one poem. It included literacy, written forms, and the knowledge needed to read instructions, keep records, and help run a government. We do not know that a boy copied the *Book of Songs* in this room, or who the adult beside him might be. The scene must be treated as imagined, not as a true record of an ancient lesson.
+Writing mattered because governments ran on records. Names had to be written down. Messages had to be read. Decisions and supplies had to be recorded.
 
-This small difference between a knife and a brush matters. Carving sounds dramatic. But if a story changes “write with a brush” into “carve with a knife” just to make the scene exciting, the child remembers the wrong history.
+Then came **shù**, calculation. Numbers were needed whenever people measured, counted, divided, built, stored grain, or managed goods. In later Chinese mathematics, small [[counting rods|counting-rods]] became an important way to arrange numbers and carry out calculations on a flat surface. So one side of the Six Arts had bows, horses, music, and ceremony. Another had brushes and numbers. The ancient list did not see those things as belonging to completely separate kinds of people.
 [/en]
 [/section]
 
 [section]
 page: 5
-layout: text-wrap-image
-heading_zh: 琴和算筹只是两个窗口
-heading_en: A Qin and Counting Rods Are Only Two Windows
-image: 4-six-arts-qin-and-math.webp
-caption_zh: 琴、竹简和算筹被放在同一幅想象画里，不代表古代学生一定在同一个傍晚上这两门课
-caption_en: The qin, bamboo slips, and counting rods share one imagined picture. That does not prove both lessons happened on one evening.
-[zh]
-第四幅图把琴、竹简和一排算筹放在同一张桌上。算筹是古人用来表示数字和帮助计算的小棍。它们让“乐”和“数”变得容易看见，却不证明这两门一定安排在同一个傍晚。
-
-《周礼》写的是“六乐”和“九数”，说明两者都比“弹一首琴曲”和“做几道加法题”宽。音乐与礼仪、舞蹈和集体秩序相连；数则可以服务于测量、分配、工程和管理。后世保存下来的数学传统包含田地面积、粮食交换、工程和方程等问题，但不能把后世数学书的每一道题都倒推成早期六艺课堂的固定作业。
-
-这幅画最适合提出一个问题：为什么培养国家需要的人，既要练耳朵和节奏，也要练数量和计算？古代的回答不一定是今天的答案，但把艺术和数字放在同一种教育理想里，本身很值得注意。
-[/zh]
-[en]
-The fourth picture places a qin, bamboo slips, and rows of counting rods on one table. Counting rods were small sticks used to show numbers and help with calculations. The objects make music and math easy to see, but they do not prove that both lessons happened on the same evening.
-
-The *Rites of Zhou* speaks of several kinds of music and calculation. Music reached into dance, ceremony, and group order. Numbers could be useful for measuring, sharing goods, building, and managing supplies. Later Chinese mathematics included problems about fields, grain, construction, and equations, but we cannot move every problem from a later math book backward into an early Six Arts classroom.
-
-The picture is best used to ask a question: Why might someone preparing to serve a state need both rhythm and numbers? Ancient answers may not be our answers, but it is still interesting that artistic and mathematical practice belonged inside one educational ideal.
-[/en]
-[/section]
-
-[section]
-page: 6
-layout: text-wrap-image
-heading_zh: 为什么还要学驾车？
-heading_en: Why Learn to Drive a Chariot?
-image: 3-six-arts-chariot-driving.webp
-caption_zh: 这幅画帮助辨认“御”是驾车，但马匹数量、车辆样式和人物都是艺术想象，不是周代训练现场的准确复原
-caption_en: The image shows that *yu* means driving. Its horses, vehicle, and people are artistic choices, not an exact Zhou training scene.
-[zh]
-今天的学生不会把驾马车列进课程，所以“御”最容易让人感到陌生。在商周时代，马拉战车用于战争，也代表军事力量和精英身份。能够让马匹、车轮、方向和速度配合，是一种复杂的实用技能。
-
-第三幅图用两匹马和一辆车帮助我们辨认“驾车”，但它不是周代战车和训练场的准确复原。古代车马的数量、车形和用途会随时代与场合改变。画中老师的身份、话语和动作也都是想象，不能再让他讲一段古书里没有的“读懂马心”对话。
-
-射和御放在六艺里，还提醒我们：这套教育不是只在安静房间里读书。身体的协调、礼仪表现和军事能力，对某些古代统治阶层都很重要。
-[/zh]
-[en]
-Students today do not place chariot driving on their class schedules, so this art may feel the strangest. During the Shang and Zhou dynasties, horse-drawn chariots were used in war and represented military power and elite status. Coordinating horses, wheels, direction, and speed was a difficult practical skill.
-
-The third picture uses two horses and a vehicle to make chariot driving visible, but it is not an exact reconstruction of a Zhou chariot or training ground. The number of horses, shape of vehicles, and ways they were used changed by time and situation. The teacher’s identity, movements, and words are imagined too. We should not give him a speech about “reading a horse’s mind” and pretend an ancient source recorded it.
-
-Archery and chariot driving remind us that this educational ideal did not live only in a quiet reading room. Physical coordination, ritual display, and military ability all mattered to some members of the ancient ruling class.
-[/en]
-[/section]
-
-[section]
-page: 7
 layout: text-only
-heading_zh: 谁能学六艺？
-heading_en: Who Had the Chance to Learn?
+heading_zh: 为什么六样都要学？
+heading_en: Why Put All Six Together?
 [zh]
-《周礼》讲“保氏”时，明确说他教养“国子”。这个词通常指贵族或高级官员的子弟。另一段又把六艺放进教化“万民”的制度理想里。两处放在一起看，说明六艺既可以是一种广泛的教化语言，也有面向精英子弟的具体训练。
+《周礼》有一处说，负责教育的官员要把这些本领教给“[[国子|guozi]]”，也就是和当时统治阶层关系密切的年轻人；书中另一个地方，又把六艺放进了更广泛的教化理想里。这并不是说古代每一个孩子都进入同样的学校、拥有同样的老师和器材。光是学习驾车，就要有马、有车，也要有足够大的地方。
 
-但这仍然不能证明每个家庭的孩子都能进入同样的学校，得到同样的时间、器材和老师。射箭需要弓和场地，驾车需要马和车，礼乐训练也需要资源。古代教育受到身份、财富和性别限制；《礼记·射义》甚至直接把射箭说成男子之事。
+可是，这张古老的学习清单还是很有意思。一个准备承担重要事情的人，不只是要会读书写字。他还可能需要计算，会控制自己的身体，懂音乐和礼仪，能够使用弓箭，也知道怎样驾驭车马。
 
-所以，标题如果写“春秋时期的学生都学什么”，范围就太大了。更谨慎的说法是：古代礼书怎样设想某些国子和受教育者应该具备哪些本领。教育理想可以影响很多人，却不等于人人实际享有相同教育。
+所以，把六艺放在一起看，会出现一幅很特别的画面。一边是毛笔，一边是弓箭；这里放着乐器，那里牵着马；桌上还有数字。在今天，它们好像属于好几种完全不同的课程。在六艺里，它们却属于同一种教育。
 [/zh]
 [en]
-In the passage about the *Baoshi*, the *Rites of Zhou* says he taught the *guozi*, usually understood as sons of nobles or high officials. Another passage puts the Six Arts inside a broad plan to educate “all the people.” Together, these passages show that the Six Arts could be a wide language of education while also describing special training for elite sons.
+The *Rites of Zhou* says that one official was responsible for teaching these arts to [[*guózǐ*|guozi]], young people connected with the ruling elite. Another passage puts the same Six Arts into a wider plan for educating the population. This does not mean every child in ancient China went to the same school and learned all six. A chariot alone required horses, equipment, space, and people who knew how to teach it.
 
-They do not prove that every child entered the same school or received the same teachers, time, and equipment. Archery needed bows and space. Chariot driving needed horses and vehicles. Ritual and music also required resources. Education in ancient China was shaped by wealth, rank, and gender. The *Book of Rites* even describes ritual archery as a male activity.
+But the list tells us something interesting about what education could mean. A well-prepared person was not supposed to know only how to read. He might also need to calculate, control his body, listen to music, handle a bow, manage horses, and know how to behave when many people had to act together.
 
-That is why “what all students studied in the Spring and Autumn period” is too broad a title. A safer question is what ancient ritual texts thought certain students and future leaders should learn. An ideal can influence a culture without giving every person an equal chance to reach it.
+That is why the Six Arts still look so surprising. Put a brush beside a bow, a musical instrument beside a set of reins, and numbers beside a ceremony, and they seem to belong to completely different worlds. In the Six Arts, they belonged to the same education.
 [/en]
 [/section]
-
-[section]
-page: 8
-layout: text-only
-heading_zh: 射箭怎样和品格连起来？
-heading_en: How Did Archery Become a Lesson in Character?
-[zh]
-旧稿虚构了一位父亲说：“刚才是手在射，后来是心在射。”古书没有这句话。不过，后来的《礼记·射义》确实把射箭和自我检查联系在一起。它说射箭的人先要端正自己，箭没有射中，不去怨恨胜过自己的人，而是回来检查自己。
-
-这比虚构金句更有意思。射箭当然需要力量和技术，但在礼仪性的解释里，人们还观察姿态、节奏以及面对输赢的表现。技能被用来讨论品格，是后世理解六艺的重要方向。
-
-我们也要看见它的历史边界。《射义》描述的是带有等级、选拔和男性角色的礼制世界，不是一场人人平等的现代体育课。读古书时，可以理解它为什么重视自省，同时不必照搬其中所有社会规则。
-[/zh]
-[en]
-The old story invented a father saying, “First your hand was shooting; then your heart was shooting.” No ancient source preserves that line. However, a chapter on archery in the *Book of Rites* really does connect shooting with self-examination. It says that an archer should first correct himself. If his arrow misses, he should not blame the person who beat him. He should return and look at himself.
-
-That idea is more interesting than an invented slogan. Archery certainly required strength and technique, but ritual writers also watched posture, rhythm, and behavior after winning or losing. Using a skill to think about character became an important way later readers understood the Six Arts.
-
-The idea still has a historical boundary. The chapter describes a ritual world shaped by rank, selection, and male roles. It was not a modern gym class where everyone entered as an equal. We can understand why the text valued self-examination without copying every social rule around it.
-[/en]
-[/section]
-
-[section]
-page: 9
-layout: text-only
-heading_zh: “六艺”后来还有另一个意思
-heading_en: “Six Arts” Later Meant Something Else
-[zh]
-古书里的同一个词，走过很长时间以后会改变。“六艺”后来还可以指经典学习的六个门类，通常与《诗》《书》《礼》《乐》《易》《春秋》相联系，也常被称为“六经”。这时谈的是经典文本，不再只是礼、乐、射、御、书、数六种实践本领。
-
-所以，看见“六艺”不能马上认定只有一个答案。要先看文章在谈哪个时代、哪一种教育：是在讲《周礼》的六项本领，还是在讲后来的经典传统？把两种意思分开，许多历史问题才不会混在一起。
-[/zh]
-[en]
-Words change as they travel through history. In later writing, “Six Arts” could also refer to six areas of classical learning connected with Poetry, Documents, Rites, Music, Changes, and the Spring and Autumn Annals. These are often called the Six Classics. In that setting, the phrase points toward classical texts rather than only the six practical arts listed in the *Rites of Zhou*.
-
-When we see “Six Arts,” we should not assume it has one answer forever. We need to ask which period and which kind of education the writer means. Is the passage about ritual, music, archery, chariot driving, writing, and calculation? Or is it about the later classical tradition? Keeping the two meanings apart prevents a great deal of confusion.
-[/en]
-[/section]
-
-[ending]
-heading_zh: 重新设计一张课程表
-heading_en: Design a New Schedule
-[zh]
-现在再看开头的少年。他不再是一个有姓名、有年龄、有父亲台词的“历史人物”，而是画家用来帮助我们提问的想象角色。我们真正能从资料中看到的，是一套把礼仪、音乐、射箭、驾车、文字和计算放在一起的古代教育理想，以及这套理想背后的资源和身份限制。
-
-如果今天请你设计“新的六艺”，你会保留什么，又会加入什么？也许你会留下音乐、运动、读写和数学，再加入科学、合作、照顾环境或辨别网络信息。这个问题没有标准答案，但它延续了六艺最值得思考的一点：教育究竟要帮助一个人成为什么样的人，又要让谁有机会学习？
-[/zh]
-[en]
-Look at the archer from the opening again. He is no longer a historical boy with a known age, a daily schedule, and a father’s exact words. He is an imagined figure who helped us ask a question. The evidence gives us something different: an ancient educational ideal that joined ritual, music, archery, chariot driving, writing, and calculation, along with the limits of rank and resources around that ideal.
-
-If you had to design a new set of Six Arts today, what would you keep and what would you add? You might keep music, movement, literacy, and math, then add science, teamwork, care for the environment, or the ability to judge information online. There is no single right list. The question continues the most useful part of the Six Arts: What kind of person should education help someone become, and who should have the chance to learn?
-[/en]
-[/ending]

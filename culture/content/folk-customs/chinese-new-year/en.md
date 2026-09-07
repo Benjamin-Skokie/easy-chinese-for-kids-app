@@ -10,7 +10,7 @@ When Chinese people talk about this holiday, they often say, “It is almost tim
 
 The holiday has several common names. In Chinese, *Chūnjié* means “Spring Festival” and is the modern official name. *Chinese New Year* makes clear which tradition we mean. *Lunar New Year* is a broader English name that can include new-year celebrations in several Asian cultures. The names overlap, but each culture has its own traditions.
 
-But why does Chinese say that people “pass through” the year? An old folk tale turns that same word—Nian—into a monster. In the story, *guò nián* sounds almost as if people have made it safely past the monster Nian.
+But why does Chinese say that people “pass through” the year? An old folk tale turns that same word—[[Nian|nian-monster]]—into a monster. In the story, *guò nián* sounds almost as if people have made it safely past the monster Nian.
 
 ---
 
