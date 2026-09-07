@@ -179,12 +179,20 @@ function categoryIdForTopic(topicId) {
   return learningHomeCategories.find((category) => category.topicIds.includes(topicId))?.id ?? "foundations";
 }
 
+function catalogPathForTopic(topicId) {
+  const category =
+    learningHomeCategories.find((item) => item.topicIds.includes(topicId)) ??
+    learningHomeCategories[0];
+  const subcatalog = category.subcatalogs?.find((item) => item.topicIds.includes(topicId));
+  return subcatalog ? `${category.id}/${subcatalog.id}` : category.id;
+}
+
 function updateTopicPageVisibility() {
   detailLayout?.classList.toggle("is-hidden", !state.topicPageOpen);
   document.body.classList.toggle("is-topic-page", state.topicPageOpen);
   const catalogReturnLink = document.querySelector("[data-learning-catalog-return]");
   if (catalogReturnLink && state.topicPageOpen) {
-    catalogReturnLink.href = `learn-v2.html#${categoryIdForTopic(state.selectedTopicId)}`;
+    catalogReturnLink.href = `learn-v2.html#${catalogPathForTopic(state.selectedTopicId)}`;
   }
 }
 

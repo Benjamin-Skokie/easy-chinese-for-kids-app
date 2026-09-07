@@ -19583,12 +19583,17 @@
     function categoryIdForTopic2(topicId) {
       return learningHomeCategories2.find((category) => category.topicIds.includes(topicId))?.id ?? "foundations";
     }
+    function catalogPathForTopic(topicId) {
+      const category = learningHomeCategories2.find((item) => item.topicIds.includes(topicId)) ?? learningHomeCategories2[0];
+      const subcatalog = category.subcatalogs?.find((item) => item.topicIds.includes(topicId));
+      return subcatalog ? `${category.id}/${subcatalog.id}` : category.id;
+    }
     function updateTopicPageVisibility2() {
       detailLayout2?.classList.toggle("is-hidden", !state2.topicPageOpen);
       document.body.classList.toggle("is-topic-page", state2.topicPageOpen);
       const catalogReturnLink = document.querySelector("[data-learning-catalog-return]");
       if (catalogReturnLink && state2.topicPageOpen) {
-        catalogReturnLink.href = `learn-v2.html#${categoryIdForTopic2(state2.selectedTopicId)}`;
+        catalogReturnLink.href = `learn-v2.html#${catalogPathForTopic(state2.selectedTopicId)}`;
       }
     }
     function scrollCategorySectionIntoView2(categoryId) {
@@ -30351,7 +30356,27 @@
       hint: "Numbers, greetings, names, age, nationality, languages",
       accent: "#be5b49",
       iconSrc: "assets/navigation-icons/lele-wave-icon.webp",
-      topicIds: ["numbers", "greetings", "polite-words", "introductions", "age", "identity", "languages", "multiplication-rhyme"]
+      topicIds: ["numbers", "greetings", "polite-words", "introductions", "age", "identity", "languages", "multiplication-rhyme"],
+      subcatalogs: [
+        {
+          id: "numbers-rhyme",
+          zhTitle: "\u6570\u5B57\u4E0E\u53E3\u8BC0",
+          enTitle: "Numbers & Number Rhyme",
+          topicIds: ["numbers", "multiplication-rhyme"]
+        },
+        {
+          id: "everyday-conversation",
+          zhTitle: "\u65E5\u5E38\u4EA4\u6D41",
+          enTitle: "Everyday Conversation",
+          topicIds: ["greetings", "polite-words"]
+        },
+        {
+          id: "about-me",
+          zhTitle: "\u4ECB\u7ECD\u81EA\u5DF1",
+          enTitle: "About Me",
+          topicIds: ["introductions", "age", "identity", "languages"]
+        }
+      ]
     },
     {
       id: "me-family",
@@ -30360,7 +30385,21 @@
       hint: "Family, grandparents, body, clothes",
       accent: "#aa7051",
       iconEmoji: "\u{1F3E0}",
-      topicIds: ["family", "telephone-numbers", "body", "clothes"]
+      topicIds: ["family", "telephone-numbers", "body", "clothes"],
+      subcatalogs: [
+        {
+          id: "family-members",
+          zhTitle: "\u6211\u7684\u5BB6\u4EBA",
+          enTitle: "My Family",
+          topicIds: ["family", "telephone-numbers"]
+        },
+        {
+          id: "body-clothes",
+          zhTitle: "\u8EAB\u4F53\u4E0E\u8863\u670D",
+          enTitle: "Body & Clothes",
+          topicIds: ["body", "clothes"]
+        }
+      ]
     },
     {
       id: "time-daily",
@@ -30369,7 +30408,33 @@
       hint: "Week, time, dates, routines, home, actions, requests",
       accent: "#517b8d",
       iconSrc: "assets/illustrated-clocks/10oclock.svg",
-      topicIds: ["weekdays", "time-date", "dates", "comparisons", "positions", "transport", "daily-life", "everyday-actions", "requests-permission", "is-it"]
+      topicIds: ["weekdays", "time-date", "dates", "comparisons", "positions", "transport", "daily-life", "everyday-actions", "requests-permission", "is-it"],
+      subcatalogs: [
+        {
+          id: "calendar-time",
+          zhTitle: "\u661F\u671F\u3001\u65F6\u95F4\u4E0E\u65E5\u671F",
+          enTitle: "Week, Time & Dates",
+          topicIds: ["weekdays", "time-date", "dates"]
+        },
+        {
+          id: "descriptions-directions",
+          zhTitle: "\u63CF\u8FF0\u3001\u4F4D\u7F6E\u4E0E\u65B9\u5411",
+          enTitle: "Descriptions & Directions",
+          topicIds: ["comparisons", "positions"]
+        },
+        {
+          id: "daily-life-travel",
+          zhTitle: "\u65E5\u5E38\u751F\u6D3B\u4E0E\u51FA\u884C",
+          enTitle: "Daily Life & Getting Around",
+          topicIds: ["transport", "daily-life", "everyday-actions"]
+        },
+        {
+          id: "everyday-questions",
+          zhTitle: "\u65E5\u5E38\u95EE\u53E5",
+          enTitle: "Everyday Questions",
+          topicIds: ["requests-permission", "is-it"]
+        }
+      ]
     },
     {
       id: "school-life",
@@ -30378,7 +30443,21 @@
       hint: "Classroom, backpack, subjects",
       accent: "#6d8a4f",
       iconEmoji: "\u{1F3EB}",
-      topicIds: ["stationery", "school-supplies", "classroom", "school", "school-subjects"]
+      topicIds: ["stationery", "school-supplies", "classroom", "school", "school-subjects"],
+      subcatalogs: [
+        {
+          id: "school-things",
+          zhTitle: "\u6587\u5177\u4E0E\u4E66\u5305",
+          enTitle: "School Things",
+          topicIds: ["stationery", "school-supplies"]
+        },
+        {
+          id: "classroom-school",
+          zhTitle: "\u6559\u5BA4\u4E0E\u5B66\u6821",
+          enTitle: "Classroom & School",
+          topicIds: ["classroom", "school", "school-subjects"]
+        }
+      ]
     },
     {
       id: "food",
@@ -30396,7 +30475,21 @@
       hint: "Nature, weather, pets, zoo animals, colours",
       accent: "#6f7fa4",
       iconSrc: "assets/navigation-icons/panda-bamboo-icon.webp",
-      topicIds: ["nature", "weather", "pets", "animals", "colours"]
+      topicIds: ["nature", "weather", "pets", "animals", "colours"],
+      subcatalogs: [
+        {
+          id: "nature-weather-colours",
+          zhTitle: "\u81EA\u7136\u3001\u5929\u6C14\u4E0E\u989C\u8272",
+          enTitle: "Nature, Weather & Colours",
+          topicIds: ["nature", "weather", "colours"]
+        },
+        {
+          id: "pets-zoo-animals",
+          zhTitle: "\u5BA0\u7269\u4E0E\u52A8\u7269\u56ED",
+          enTitle: "Pets & Zoo Animals",
+          topicIds: ["pets", "animals"]
+        }
+      ]
     },
     {
       id: "play",
@@ -30405,7 +30498,21 @@
       hint: "Toys, reading, music, movement",
       accent: "#8f6988",
       iconSrc: "assets/navigation-icons/teddy-robot-icon.webp",
-      topicIds: ["toys", "hobbies", "hobbies-3b", "hobbies-at-home", "hobbies-leisure"]
+      topicIds: ["toys", "hobbies", "hobbies-3b", "hobbies-at-home", "hobbies-leisure"],
+      subcatalogs: [
+        {
+          id: "toys-home-fun",
+          zhTitle: "\u73A9\u5177\u4E0E\u5C45\u5BB6\u7231\u597D",
+          enTitle: "Toys & At-Home Fun",
+          topicIds: ["toys", "hobbies-at-home"]
+        },
+        {
+          id: "interests-activities",
+          zhTitle: "\u5174\u8DA3\u4E0E\u6D3B\u52A8",
+          enTitle: "Interests & Activities",
+          topicIds: ["hobbies", "hobbies-3b", "hobbies-leisure"]
+        }
+      ]
     }
   ];
 

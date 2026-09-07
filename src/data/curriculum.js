@@ -234,7 +234,27 @@ export const learningHomeCategories = [
     hint: "Numbers, greetings, names, age, nationality, languages",
     accent: "#be5b49",
     iconSrc: "assets/navigation-icons/lele-wave-icon.webp",
-    topicIds: ["numbers", "greetings", "polite-words", "introductions", "age", "identity", "languages", "multiplication-rhyme"]
+    topicIds: ["numbers", "greetings", "polite-words", "introductions", "age", "identity", "languages", "multiplication-rhyme"],
+    subcatalogs: [
+      {
+        id: "numbers-rhyme",
+        zhTitle: "数字与口诀",
+        enTitle: "Numbers & Number Rhyme",
+        topicIds: ["numbers", "multiplication-rhyme"]
+      },
+      {
+        id: "everyday-conversation",
+        zhTitle: "日常交流",
+        enTitle: "Everyday Conversation",
+        topicIds: ["greetings", "polite-words"]
+      },
+      {
+        id: "about-me",
+        zhTitle: "介绍自己",
+        enTitle: "About Me",
+        topicIds: ["introductions", "age", "identity", "languages"]
+      }
+    ]
   },
   {
     id: "me-family",
@@ -243,7 +263,21 @@ export const learningHomeCategories = [
     hint: "Family, grandparents, body, clothes",
     accent: "#aa7051",
     iconEmoji: "🏠",
-    topicIds: ["family", "telephone-numbers", "body", "clothes"]
+    topicIds: ["family", "telephone-numbers", "body", "clothes"],
+    subcatalogs: [
+      {
+        id: "family-members",
+        zhTitle: "我的家人",
+        enTitle: "My Family",
+        topicIds: ["family", "telephone-numbers"]
+      },
+      {
+        id: "body-clothes",
+        zhTitle: "身体与衣服",
+        enTitle: "Body & Clothes",
+        topicIds: ["body", "clothes"]
+      }
+    ]
   },
   {
     id: "time-daily",
@@ -252,7 +286,33 @@ export const learningHomeCategories = [
     hint: "Week, time, dates, routines, home, actions, requests",
     accent: "#517b8d",
     iconSrc: "assets/illustrated-clocks/10oclock.svg",
-    topicIds: ["weekdays", "time-date", "dates", "comparisons", "positions", "transport", "daily-life", "everyday-actions", "requests-permission", "is-it"]
+    topicIds: ["weekdays", "time-date", "dates", "comparisons", "positions", "transport", "daily-life", "everyday-actions", "requests-permission", "is-it"],
+    subcatalogs: [
+      {
+        id: "calendar-time",
+        zhTitle: "星期、时间与日期",
+        enTitle: "Week, Time & Dates",
+        topicIds: ["weekdays", "time-date", "dates"]
+      },
+      {
+        id: "descriptions-directions",
+        zhTitle: "描述、位置与方向",
+        enTitle: "Descriptions & Directions",
+        topicIds: ["comparisons", "positions"]
+      },
+      {
+        id: "daily-life-travel",
+        zhTitle: "日常生活与出行",
+        enTitle: "Daily Life & Getting Around",
+        topicIds: ["transport", "daily-life", "everyday-actions"]
+      },
+      {
+        id: "everyday-questions",
+        zhTitle: "日常问句",
+        enTitle: "Everyday Questions",
+        topicIds: ["requests-permission", "is-it"]
+      }
+    ]
   },
   {
     id: "school-life",
@@ -261,7 +321,21 @@ export const learningHomeCategories = [
     hint: "Classroom, backpack, subjects",
     accent: "#6d8a4f",
     iconEmoji: "🏫",
-    topicIds: ["stationery", "school-supplies", "classroom", "school", "school-subjects"]
+    topicIds: ["stationery", "school-supplies", "classroom", "school", "school-subjects"],
+    subcatalogs: [
+      {
+        id: "school-things",
+        zhTitle: "文具与书包",
+        enTitle: "School Things",
+        topicIds: ["stationery", "school-supplies"]
+      },
+      {
+        id: "classroom-school",
+        zhTitle: "教室与学校",
+        enTitle: "Classroom & School",
+        topicIds: ["classroom", "school", "school-subjects"]
+      }
+    ]
   },
   {
     id: "food",
@@ -279,7 +353,21 @@ export const learningHomeCategories = [
     hint: "Nature, weather, pets, zoo animals, colours",
     accent: "#6f7fa4",
     iconSrc: "assets/navigation-icons/panda-bamboo-icon.webp",
-    topicIds: ["nature", "weather", "pets", "animals", "colours"]
+    topicIds: ["nature", "weather", "pets", "animals", "colours"],
+    subcatalogs: [
+      {
+        id: "nature-weather-colours",
+        zhTitle: "自然、天气与颜色",
+        enTitle: "Nature, Weather & Colours",
+        topicIds: ["nature", "weather", "colours"]
+      },
+      {
+        id: "pets-zoo-animals",
+        zhTitle: "宠物与动物园",
+        enTitle: "Pets & Zoo Animals",
+        topicIds: ["pets", "animals"]
+      }
+    ]
   },
   {
     id: "play",
@@ -288,6 +376,20 @@ export const learningHomeCategories = [
     hint: "Toys, reading, music, movement",
     accent: "#8f6988",
     iconSrc: "assets/navigation-icons/teddy-robot-icon.webp",
-    topicIds: ["toys", "hobbies", "hobbies-3b", "hobbies-at-home", "hobbies-leisure"]
+    topicIds: ["toys", "hobbies", "hobbies-3b", "hobbies-at-home", "hobbies-leisure"],
+    subcatalogs: [
+      {
+        id: "toys-home-fun",
+        zhTitle: "玩具与居家爱好",
+        enTitle: "Toys & At-Home Fun",
+        topicIds: ["toys", "hobbies-at-home"]
+      },
+      {
+        id: "interests-activities",
+        zhTitle: "兴趣与活动",
+        enTitle: "Interests & Activities",
+        topicIds: ["hobbies", "hobbies-3b", "hobbies-leisure"]
+      }
+    ]
   }
 ];

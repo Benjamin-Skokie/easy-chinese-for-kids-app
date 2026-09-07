@@ -38,19 +38,24 @@ body {
   line-height: 1.5;
 }
 
-body::before {
+.homepage-intro {
+  position: relative;
+  isolation: isolate;
+}
+
+.homepage-intro::before {
   position: absolute;
-  z-index: 0;
-  top: 0;
-  right: 0;
-  left: 0;
+  z-index: -1;
+  top: -100px;
+  bottom: -18px;
+  left: 50%;
   width: 100vw;
-  height: 380px;
   content: "";
   pointer-events: none;
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.08)),
     url("assets/brand/homepage-landscape-west-lake-full-v1.webp") center bottom / cover no-repeat;
+  transform: translateX(-50%);
 }
 
 button,
@@ -747,19 +752,6 @@ button:focus-visible {
   line-height: 1.4;
 }
 
-@media (max-width: 1450px) {
-  body::before {
-    height: 560px;
-  }
-}
-
-@media (max-width: 1050px) {
-  body::before {
-    height: 760px;
-    background-position: 66% center;
-  }
-}
-
 @media (min-width: 651px) and (max-width: 1180px) {
   .pathways {
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -822,11 +814,6 @@ button:focus-visible {
 }
 
 @media (max-width: 900px) {
-  body::before {
-    height: 690px;
-    background-position: 66% center;
-  }
-
   .site-header {
     grid-template-columns: 1fr auto auto;
   }
@@ -872,11 +859,6 @@ button:focus-visible {
 }
 
 @media (max-width: 650px) {
-  body::before {
-    height: 620px;
-    background-position: 68% center;
-  }
-
   .page-shell,
   .site-footer {
     width: auto;
@@ -916,11 +898,12 @@ button:focus-visible {
 
   .hero h1 a {
     display: grid;
-    gap: 2px;
+    row-gap: clamp(8px, 2.3vw, 12px);
   }
 
   .hero h1 {
     font-size: clamp(1.85rem, 8.8vw, 2.35rem);
+    line-height: 1.12;
   }
 
   .pathways {

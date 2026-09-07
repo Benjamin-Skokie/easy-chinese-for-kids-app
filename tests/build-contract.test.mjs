@@ -110,6 +110,8 @@ test("Privacy and Safety opens a plain-language family page", () => {
   assert.match(sourcesPage, /Arphic Public License/);
   assert.match(cultureSources, /window\.NIHAO_CULTURE_SOURCES/);
   assert.match(cultureSources, /culture\/books\/figures\/mulan/);
+  assert.equal((cultureSources.match(/"storyPath":/g) ?? []).length, 111);
+  assert.match(sourcesPage, /data-source-count aria-live="polite">111 stories<\/p>/);
   assert.match(html, /href="about\/author-project\/"/);
   assert.match(authorPage, /Benjamin Sun/);
   assert.match(authorPage, /Livingston High School/);
@@ -118,7 +120,7 @@ test("Privacy and Safety opens a plain-language family page", () => {
   assert.match(authorPage, /gpt-4o-mini-tts/);
   assert.match(authorPage, /<strong>43<\/strong><span>learning topics<\/span>/);
   assert.match(authorPage, /<strong>56<\/strong><span>textbook lessons aligned<\/span>/);
-  assert.match(authorPage, /<strong>109<\/strong><span>culture stories<\/span>/);
+  assert.match(authorPage, /<strong>111<\/strong><span>culture stories<\/span>/);
   assert.match(authorPage, /<strong>650\+<\/strong><span>referenced visual assets<\/span>/);
   assert.match(authorPage, /1,244/);
   assert.match(privacyPage, /No accounts/);
@@ -639,6 +641,21 @@ test("the Chinese landing-page headline is slightly reduced while keeping its or
   assert.match(stylesSource, /\.library-hero h2 \{[\s\S]*font-size: clamp\(1\.3rem, 2\.2vw, 1\.7rem\)[\s\S]*color: var\(--sun\)/);
 });
 
+test("the new homepage keeps its two mobile headline lines visibly separated", () => {
+  const homepage = readFileSync("homepage-v2.html", "utf8");
+  const homepageStyles = readFileSync("homepage-v2.css", "utf8");
+  assert.match(homepage, /homepage-v2\.css\?v=20260907-intro-backdrop-v4/);
+  assert.match(homepageStyles, /@media \(max-width: 650px\) \{[\s\S]*\.hero h1 a \{[\s\S]*row-gap: clamp\(8px, 2\.3vw, 12px\);[\s\S]*\.hero h1 \{[\s\S]*line-height: 1\.12;/);
+});
+
+test("the homepage landscape keeps its artwork visible and ends at the featured-story boundary", () => {
+  const homepage = readFileSync("homepage-v2.html", "utf8");
+  const homepageStyles = readFileSync("homepage-v2.css", "utf8");
+  assert.match(homepage, /<div class="homepage-intro">[\s\S]*<section class="hero"[\s\S]*<nav class="pathways"[\s\S]*<\/nav>\s*<\/div>\s*<section class="featured"/);
+  assert.match(homepageStyles, /\.homepage-intro::before \{[\s\S]*bottom: -18px;[\s\S]*url\("assets\/brand\/homepage-landscape-west-lake-full-v1\.webp"\) center bottom \/ cover no-repeat;/);
+  assert.doesNotMatch(homepageStyles, /body::before/);
+});
+
 test("the landing hero features six scrollable culture-story highlights", () => {
   const html = readFileSync("index.html", "utf8");
   const carouselSource = readFileSync("src/core/story-highlights.js", "utf8");
@@ -796,10 +813,20 @@ test("direct topic links focus the detail and return to their new catalog catego
   assert.doesNotMatch(landingHtml, /← Back to Books/);
   assert.match(topicDetailStyles, /\.is-topic-page \.topic-site-header \{\s*display: grid;/);
   assert.match(topicDetailStyles, /\.is-topic-page \.global-view-menu,[\s\S]*\.is-topic-page \.learning-culture-nav \{\s*display: none;/);
-  assert.match(navigationSource, /catalogReturnLink\.href = `learn-v2\.html#\$\{categoryIdForTopic\(state\.selectedTopicId\)\}`/);
+  assert.match(navigationSource, /catalogReturnLink\.href = `learn-v2\.html#\$\{catalogPathForTopic\(state\.selectedTopicId\)\}`/);
   assert.match(runtimeWiringSource, /if \(initialTopicId\) \{\s*requestAnimationFrame\(\(\) => focusLearningPanel\(\)\);/);
   assert.match(navigationSource, /state\.topicPageOpen = true;\s*syncBookSelectionFromTopic\(\);\s*renderTopics\(\);/);
   assert.match(stylesSource, /html \{\s*scroll-behavior: auto;/);
+});
+
+test("Review, Book Words, and practice selections use the migrated teal highlight", () => {
+  const indexHtml = readFileSync("index.html", "utf8");
+  const topicDetailStyles = readFileSync("topic-detail-v2.css", "utf8");
+  assert.match(indexHtml, /topic-detail-v2\.css\?v=20260907-selected-state-v2/);
+  assert.match(topicDetailStyles, /\.is-topic-page \.focus-word-button\.is-selected \{[\s\S]*rgba\(37, 117, 114, 0\.2\)[\s\S]*#dcefeb/);
+  assert.match(topicDetailStyles, /\.is-topic-page \.greetings-line-card\[role="button"\]\.is-audio-playing/);
+  assert.match(topicDetailStyles, /\.is-topic-page \.polite-match-card\.is-selected:not\(\.is-correct\):not\(\.is-wrong\):not\(\.is-solved\)/);
+  assert.match(topicDetailStyles, /\.is-topic-page \.family-sentence-builder \.numbers-game-option\.is-selected:not\(\.is-correct\):not\(\.is-wrong\)/);
 });
 
 test("the generated bundle keeps its source-of-truth marker", () => {
@@ -2698,6 +2725,40 @@ test("the shared curriculum retains its books and learning navigation", () => {
   assert.equal(topicCardMeta.strokes.zhTitle, "笔画");
   assert.equal(topicCardMeta.pictographs.zhTitle, "象形文字");
   assert.equal(topicCardMeta["school-subjects"].zhTitle, "学校学科");
+});
+
+test("the Learn landing page adds second-level catalogs only where they clarify larger categories", () => {
+  const learnHtml = readFileSync("learn-v2.html", "utf8");
+  const learnSource = readFileSync("learn-v2.js", "utf8");
+  const allTopicIds = learningHomeCategories.flatMap((category) => category.topicIds);
+  const categoriesWithSubcatalogs = learningHomeCategories.filter(
+    (category) => category.subcatalogs?.length
+  );
+
+  assert.equal(allTopicIds.length, 43);
+  assert.equal(new Set(allTopicIds).size, allTopicIds.length);
+  assert.ok(allTopicIds.every((topicId) => topicCardMeta[topicId]));
+  assert.deepEqual(
+    categoriesWithSubcatalogs.map((category) => category.id),
+    ["foundations", "me-family", "time-daily", "school-life", "world", "play"]
+  );
+  categoriesWithSubcatalogs.forEach((category) => {
+    const groupedTopicIds = category.subcatalogs.flatMap((subcatalog) => {
+      assert.ok(subcatalog.topicIds.length >= 2);
+      return subcatalog.topicIds;
+    });
+    assert.deepEqual(new Set(groupedTopicIds), new Set(category.topicIds));
+    assert.equal(groupedTopicIds.length, category.topicIds.length);
+  });
+  assert.equal(learningHomeCategories.find((category) => category.id === "special-topics")?.subcatalogs, undefined);
+  assert.equal(learningHomeCategories.find((category) => category.id === "food")?.subcatalogs, undefined);
+  assert.match(learnHtml, /learn-v2\.css\?v=20260907-two-level-catalog-v2/);
+  assert.match(learnHtml, />Choose a subcatalog</);
+  assert.match(learnHtml, /data-subcatalogs/);
+  assert.match(learnSource, /const subcatalogForTopic =/);
+  assert.match(learnSource, /subcatalog\?\.topicIds \?\? category\.topicIds/);
+  assert.match(learnSource, /category\.subcatalogs\?\.\[0\]\?\.id \?\? ""/);
+  assert.doesNotMatch(learnSource, /scrollIntoView/);
 });
 
 test("numbers keeps its counting stages while My Family 2 owns 4A Lesson 1", () => {

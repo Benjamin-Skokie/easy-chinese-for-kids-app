@@ -183,6 +183,37 @@ body.is-topic-page {
   background: linear-gradient(180deg, rgba(244, 250, 248, 0.98), rgba(234, 245, 242, 0.82));
 }
 
+.is-topic-page .focus-word-button.is-selected {
+  outline: 3px solid rgba(37, 117, 114, 0.2);
+  background: linear-gradient(180deg, #f5fbf9, #dcefeb);
+  box-shadow: inset 0 -3px 0 rgba(37, 117, 114, 0.28);
+}
+
+/* One neutral teal selection language across Review, Book Words, and practice. */
+.is-topic-page .greetings-line-card[role="button"].is-audio-playing,
+.is-topic-page .school-word-card.is-audio-playing,
+.is-topic-page .book-word-card.is-audio-playing,
+.is-topic-page .nature-word-card.is-audio-playing,
+.is-topic-page .comparison-word-card.is-audio-playing,
+.is-topic-page .time-asset-card.is-audio-playing,
+.is-topic-page .visual-vocabulary-card.is-audio-playing,
+.is-topic-page .visual-vocabulary-card.is-selected,
+.is-topic-page .focus-word-button.is-audio-playing,
+.is-topic-page .pet-food-story-card.is-audio-playing,
+.is-topic-page .intro-build-chip.is-selected,
+.is-topic-page .polite-match-card.is-selected:not(.is-correct):not(.is-wrong):not(.is-solved),
+.is-topic-page .identity-country-card.is-selected,
+.is-topic-page .identity-language-card.is-selected,
+.is-topic-page .time-routine-builder-options .weather-fill-option.is-selected:not(.is-correct):not(.is-wrong),
+.is-topic-page .family-sentence-builder .numbers-game-option.is-selected:not(.is-correct):not(.is-wrong),
+.is-topic-page .telephone-digit-chip.is-selected,
+.is-topic-page .body-match-card.is-selected:not(.is-solved):not(.is-wrong) {
+  border-color: rgba(37, 117, 114, 0.48);
+  color: #185b5c;
+  background: linear-gradient(180deg, #f5fbf9, #dcefeb);
+  box-shadow: 0 0 0 3px rgba(37, 117, 114, 0.16);
+}
+
 .is-topic-page .focus-display,
 .is-topic-page .sub-panel,
 .is-topic-page .guide-card,

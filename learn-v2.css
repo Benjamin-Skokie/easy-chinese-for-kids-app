@@ -239,6 +239,83 @@ summary:focus-visible {
   font-weight: 700;
 }
 
+.subcatalogs {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 11px;
+}
+
+.subcatalog-button {
+  display: grid;
+  min-width: 0;
+  min-height: 78px;
+  padding: 13px 16px;
+  place-content: center;
+  gap: 2px;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  color: var(--teal-950);
+  background: rgba(255, 255, 255, 0.92);
+  cursor: pointer;
+  text-align: center;
+  transition: border-color 160ms ease, box-shadow 160ms ease, color 160ms ease,
+    background 160ms ease, transform 160ms ease;
+}
+
+.subcatalog-button strong {
+  font-family: var(--chinese-font);
+  font-size: 1rem;
+  line-height: 1.25;
+}
+
+.subcatalog-button span {
+  color: var(--ink-soft);
+  font-family: var(--editorial-font);
+  font-size: 0.96rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.subcatalog-button:hover,
+.subcatalog-button[aria-pressed="true"] {
+  border-color: var(--teal-700);
+  color: #fff;
+  background: var(--teal-700);
+  box-shadow: 0 10px 24px rgba(19, 66, 67, 0.12);
+  transform: translateY(-2px);
+}
+
+.subcatalog-button:hover span,
+.subcatalog-button[aria-pressed="true"] span {
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.topic-results-heading {
+  display: flex;
+  margin: 27px 0 13px;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.topic-results-heading > span {
+  color: var(--teal-700);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+}
+
+.topic-results-heading h3 {
+  margin: 0;
+  font-family: var(--editorial-font);
+  font-size: clamp(1.3rem, 2vw, 1.7rem);
+  font-weight: 600;
+  line-height: 1.15;
+}
+
+.topic-results-heading h3:empty {
+  display: none;
+}
+
 .topic-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -356,6 +433,7 @@ summary:focus-visible {
     padding-top: 28px;
   }
 
+  .subcatalogs,
   .topic-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -401,6 +479,10 @@ summary:focus-visible {
   .selected-icon {
     width: 54px;
     height: 54px;
+  }
+
+  .subcatalogs {
+    grid-template-columns: 1fr;
   }
 
   .topic-grid {
