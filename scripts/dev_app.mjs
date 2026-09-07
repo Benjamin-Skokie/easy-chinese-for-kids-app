@@ -63,7 +63,7 @@ const buildContext = await context({
 await buildContext.rebuild();
 await buildContext.watch();
 
-const staticReloadWatchers = ["index.html", "styles.css"].map((file) =>
+const staticReloadWatchers = ["index.html", "homepage.css", "lesson.html", "styles.css"].map((file) =>
   watch(resolve(root, file), () => reloadClients())
 );
 

@@ -241,7 +241,7 @@ summary:focus-visible {
 
 .subcatalogs {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  grid-template-columns: repeat(var(--selection-count, 1), minmax(0, 1fr));
   gap: 11px;
 }
 
@@ -433,7 +433,11 @@ summary:focus-visible {
     padding-top: 28px;
   }
 
-  .subcatalogs,
+  .subcatalogs[data-selection-count="4"],
+  .subcatalogs[data-selection-count="5"] {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
   .topic-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -481,8 +485,10 @@ summary:focus-visible {
     height: 54px;
   }
 
-  .subcatalogs {
-    grid-template-columns: 1fr;
+  .subcatalogs[data-selection-count="3"],
+  .subcatalogs[data-selection-count="4"],
+  .subcatalogs[data-selection-count="5"] {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .topic-grid {
@@ -491,6 +497,12 @@ summary:focus-visible {
 
   .topic-card {
     min-height: 124px;
+  }
+}
+
+@media (max-width: 460px) {
+  .subcatalogs {
+    grid-template-columns: 1fr;
   }
 }
 

@@ -1,7 +1,7 @@
 # Our School
 
-Status: `partial`  
-URL: `index.html?topic=school#topic-detail`  
+Status: `partial`
+URL: `lesson.html?topic=school`
 Mapped lesson: **4B Lesson 5 — Our school**
 
 ## Cross-book progression

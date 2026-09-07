@@ -1,7 +1,7 @@
 # Days of the Week
 
-Status: `partial`  
-URL: `index.html?topic=weekdays#topic-detail`  
+Status: `partial`
+URL: `lesson.html?topic=weekdays`
 Mapped lesson: **2B Lesson 1 — Today is Monday**
 
 ## Cross-book progression

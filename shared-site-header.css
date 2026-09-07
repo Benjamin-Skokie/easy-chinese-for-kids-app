@@ -4,6 +4,12 @@
  * use the same brand, navigation, About menu, and responsive ordering.
  */
 .site-header {
+  --teal-950: #123f43;
+  --teal-800: #185b5c;
+  --teal-100: #eaf5f2;
+  --teal-50: #f4faf8;
+  --ink-soft: #627879;
+  --line: rgba(25, 91, 92, 0.14);
   position: sticky;
   z-index: 20;
   top: 0;
@@ -135,7 +141,8 @@
   right: 0;
   left: auto;
   display: grid;
-  width: 270px;
+  width: 300px;
+  max-width: calc(100vw - 20px);
   padding: 7px;
   gap: 2px;
   border: 1px solid var(--line);
@@ -146,11 +153,48 @@
 
 .about-popover a {
   display: grid;
-  padding: 10px 11px;
-  gap: 1px;
+  grid-template-columns: 36px minmax(0, 1fr);
+  padding: 8px 9px;
+  column-gap: 10px;
+  row-gap: 1px;
   border-radius: 6px;
   color: var(--teal-950);
   text-decoration: none;
+}
+
+.about-popover a::before {
+  content: "";
+  display: grid;
+  grid-column: 1;
+  grid-row: 1 / span 2;
+  width: 36px;
+  height: 36px;
+  place-items: center;
+  align-self: center;
+  border-radius: 10px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 22px 22px;
+}
+
+.about-popover a:nth-child(1)::before {
+  background-color: #8b75aa;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='8' r='3'/%3E%3Cpath d='M5.5 20a6.5 6.5 0 0 1 13 0'/%3E%3C/svg%3E");
+}
+
+.about-popover a:nth-child(2)::before {
+  background-color: #6f91b4;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 3h9l4 4v5M5 3v18h7M14 3v5h4'/%3E%3Ccircle cx='16.5' cy='16.5' r='3.5'/%3E%3Cpath d='m19 19 2 2'/%3E%3C/svg%3E");
+}
+
+.about-popover a:nth-child(3)::before {
+  background-color: #d99832;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 5h16v11H9l-5 4zM8 9h8M8 12h5'/%3E%3C/svg%3E");
+}
+
+.about-popover a:nth-child(4)::before {
+  background-color: #568b72;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 3l7 3v5c0 4.6-2.9 8.1-7 10-4.1-1.9-7-5.4-7-10V6z'/%3E%3Cpath d='m8.5 12 2.2 2.2 4.8-5'/%3E%3C/svg%3E");
 }
 
 .about-popover a:hover {
@@ -159,12 +203,14 @@
 
 .about-popover strong {
   display: block;
+  grid-column: 2;
   font-size: 0.9rem;
   line-height: 1.25;
 }
 
 .about-popover small {
   display: block;
+  grid-column: 2;
   color: var(--ink-soft);
   font-size: 0.73rem;
   line-height: 1.35;
@@ -214,6 +260,10 @@
 
 .menu-toggle span:nth-child(3) {
   top: 29px;
+}
+
+.culture-mobile-return {
+  display: none;
 }
 
 .menu-toggle[aria-expanded="true"] span:nth-child(1) {
@@ -267,7 +317,37 @@
   }
 
   .primary-nav a {
-    padding: 14px 15px;
+    display: grid;
+    grid-template-columns: 52px minmax(0, 1fr);
+    min-height: 64px;
+    padding: 6px 12px;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .primary-nav a::before {
+    content: "";
+    display: block;
+    width: 52px;
+    height: 52px;
+    border: 1px solid rgba(25, 91, 92, 0.1);
+    border-radius: 10px;
+    background-color: #f8fbfa;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  .primary-nav a[href*="learn.html"]::before {
+    background-image: url("assets/brand/homepage-learn-chinese-card-v3.webp");
+  }
+
+  .primary-nav a[href*="books.html"]::before {
+    background-image: url("assets/brand/homepage-textbook-card-v4.webp");
+  }
+
+  .primary-nav a[href*="culture.html"]::before {
+    background-image: url("assets/brand/homepage-culture-card-v4.webp");
   }
 }
 
@@ -292,5 +372,80 @@
 
   .menu-toggle {
     grid-column: 3;
+  }
+}
+
+@media (max-width: 900px) {
+  .culture-story-header {
+    grid-template-columns: minmax(0, 1fr) auto auto auto;
+    column-gap: 10px;
+  }
+
+  .culture-story-header .culture-mobile-return {
+    display: inline-flex;
+    grid-column: 2;
+    grid-row: 1;
+    min-height: 44px;
+    padding: 0 3px;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    border-bottom: 1px solid rgba(37, 117, 114, 0.34);
+    border-radius: 0;
+    color: var(--teal-800);
+    background: transparent;
+    font-size: 0.875rem;
+    font-weight: 700;
+    line-height: 1;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  .culture-story-header .culture-mobile-return:hover,
+  .culture-story-header .culture-mobile-return:focus-visible {
+    border-color: var(--teal-800);
+    color: var(--teal-950);
+    background: transparent;
+  }
+
+  .culture-story-header .about-menu {
+    grid-column: 3;
+  }
+
+  .culture-story-header .menu-toggle {
+    grid-column: 4;
+  }
+}
+
+@media (max-width: 650px) {
+  .culture-story-header {
+    grid-template-columns: minmax(0, 1fr) auto auto;
+    grid-template-rows: auto auto;
+    column-gap: 8px;
+    row-gap: 2px;
+  }
+
+  .culture-story-header .culture-mobile-return {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    justify-self: start;
+    min-height: 38px;
+  }
+
+  .culture-story-header .about-menu {
+    grid-column: 2;
+    grid-row: 1;
+    margin-right: 0;
+  }
+
+  .culture-story-header .menu-toggle {
+    grid-column: 3;
+    grid-row: 1;
+  }
+}
+
+@media (max-width: 520px) {
+  .culture-story-header .brand-wordmark {
+    display: none;
   }
 }

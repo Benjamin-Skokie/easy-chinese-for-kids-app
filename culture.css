@@ -269,9 +269,9 @@ summary:focus-visible {
 }
 
 .subcatalogs {
-  display: flex;
+  display: grid;
   padding: 0 4px 24px;
-  flex-wrap: wrap;
+  grid-template-columns: repeat(var(--selection-count, 1), minmax(0, 1fr));
   gap: 12px;
 }
 
@@ -280,7 +280,6 @@ summary:focus-visible {
   min-width: 210px;
   min-height: 72px;
   padding: 11px 16px 12px;
-  flex: 1 1 220px;
   align-content: center;
   gap: 3px;
   border: 1px solid var(--line);
@@ -525,6 +524,15 @@ summary:focus-visible {
   .story-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
+  .subcatalogs[data-selection-count="4"],
+  .subcatalogs[data-selection-count="5"] {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .subcatalog-button {
+    min-width: 0;
+  }
 }
 
 @media (max-width: 680px) {
@@ -565,9 +573,10 @@ summary:focus-visible {
     gap: 2px;
   }
 
-  .subcatalog-button {
-    min-width: 0;
-    flex: 1 1 calc(50% - 10px);
+  .subcatalogs[data-selection-count="3"],
+  .subcatalogs[data-selection-count="4"],
+  .subcatalogs[data-selection-count="5"] {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .story-grid {
@@ -578,6 +587,12 @@ summary:focus-visible {
     min-height: 0;
   }
 
+}
+
+@media (max-width: 460px) {
+  .subcatalogs {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

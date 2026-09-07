@@ -1,7 +1,7 @@
 # Colours
 
 Status: `partial`  
-URL: `index.html?topic=colours#topic-detail`
+URL: `lesson.html?topic=colours`
 
 ## Cross-book progression
 

@@ -1,7 +1,7 @@
 # Dates & Months
 
 Status: `partial`  
-URL: `index.html?topic=dates#topic-detail`
+URL: `lesson.html?topic=dates`
 
 ## Cross-book progression
 

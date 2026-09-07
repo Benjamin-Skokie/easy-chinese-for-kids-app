@@ -28,6 +28,10 @@
   gap: 7px;
 }
 
+.topic-mobile-return {
+  display: none;
+}
+
 .topic-display-toggle {
   display: inline-grid;
   width: 48px;
@@ -173,14 +177,75 @@ body.is-topic-page {
   background: #eaf5f2;
 }
 
+/* A book-scoped lesson source is supporting context, not another content card. */
+.is-topic-page .topic-lesson-strip.is-book-scope {
+  gap: 8px;
+}
+
+@media (max-width: 920px) {
+  .is-topic-page .topic-lesson-strip[data-selection-count="4"],
+  .is-topic-page .topic-lesson-strip[data-selection-count="5"],
+  .is-topic-page .topic-lesson-strip[data-selection-count="6"],
+  .is-topic-page .topic-lesson-strip[data-selection-count="7"],
+  .is-topic-page .topic-lesson-strip[data-selection-count="8"] {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 680px) {
+  .is-topic-page .topic-lesson-strip[data-selection-count="3"],
+  .is-topic-page .topic-lesson-strip[data-selection-count="4"],
+  .is-topic-page .topic-lesson-strip[data-selection-count="5"],
+  .is-topic-page .topic-lesson-strip[data-selection-count="6"],
+  .is-topic-page .topic-lesson-strip[data-selection-count="7"],
+  .is-topic-page .topic-lesson-strip[data-selection-count="8"] {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 460px) {
+  .is-topic-page .topic-lesson-strip {
+    grid-template-columns: 1fr;
+  }
+}
+
+.is-topic-page .topic-lesson-strip.is-book-scope .topic-lesson-card {
+  min-height: 58px;
+  padding: 10px 14px;
+  border: 0;
+  border-radius: 8px;
+  background: rgba(234, 245, 242, 0.72);
+  box-shadow: inset 3px 0 0 rgba(37, 117, 114, 0.22);
+}
+
+.is-topic-page .topic-lesson-strip.is-book-scope .topic-lesson-card:hover,
+.is-topic-page .topic-lesson-strip.is-book-scope .topic-lesson-card:focus-visible,
+.is-topic-page .topic-lesson-strip.is-book-scope .topic-lesson-card.is-active {
+  transform: none;
+  background: #eaf5f2;
+  box-shadow: inset 3px 0 0 #257572;
+}
+
 .is-topic-page .topic-lesson-meta,
 .is-topic-page .inline-book-lesson-link {
   color: #257572;
 }
 
 .is-topic-page .focus-card {
-  border: 1px solid rgba(25, 91, 92, 0.12);
-  background: linear-gradient(180deg, rgba(244, 250, 248, 0.98), rgba(234, 245, 242, 0.82));
+  margin-top: 24px;
+  padding: 24px 0 0;
+  border: 0;
+  border-top: 1px solid rgba(25, 91, 92, 0.14);
+  border-radius: 0;
+  background: transparent;
+}
+
+/* The scene card supplies the visual grouping; its image does not need a
+   second outline inside that card. */
+.is-topic-page .school-scene-card .school-scene-image,
+.is-topic-page .greetings-exchange .greetings-scene-image {
+  border: 0;
+  background-color: transparent;
 }
 
 .is-topic-page .focus-word-button.is-selected {
@@ -228,6 +293,60 @@ body.is-topic-page {
 .is-topic-page .practice-pill {
   border-color: rgba(37, 117, 114, 0.3);
   background: #eaf5f2;
+}
+
+/* Numbers used to carry the old warm paper palette in several independently
+   rendered surfaces. Keep the whole lesson in the shared teal-and-white system. */
+.is-topic-page[data-topic-id="numbers"] .focus-controls .small-button.is-toggle-active {
+  border: 1px solid rgba(37, 117, 114, 0.24);
+  color: #185b5c;
+  background: #eaf5f2;
+  box-shadow: 0 8px 18px rgba(19, 66, 67, 0.08);
+}
+
+.is-topic-page[data-topic-id="numbers"] .focus-controls .small-button.is-toggle-inactive {
+  border: 1px solid rgba(37, 117, 114, 0.14);
+  color: #6c8383;
+  background: rgba(255, 255, 255, 0.78);
+}
+
+.is-topic-page[data-topic-id="numbers"] .numbers-stage-card,
+.is-topic-page[data-topic-id="numbers"] .numbers-practice-card,
+.is-topic-page[data-topic-id="numbers"] .numbers-game-card {
+  border-color: rgba(37, 117, 114, 0.16);
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.is-topic-page[data-topic-id="numbers"] .numbers-showcase-card,
+.is-topic-page[data-topic-id="numbers"] .numbers-game-visual {
+  border-color: rgba(37, 117, 114, 0.18);
+  background: linear-gradient(180deg, #f5fbf9, #e2f1ee);
+}
+
+.is-topic-page[data-topic-id="numbers"] .numbers-object,
+.is-topic-page[data-topic-id="numbers"] .numbers-bundle-card,
+.is-topic-page[data-topic-id="numbers"] .focus-word-list.is-number-word-list .focus-word-button,
+.is-topic-page[data-topic-id="numbers"] .numbers-game-option,
+.is-topic-page[data-topic-id="numbers"] .math-game-input {
+  border: 1px solid rgba(37, 117, 114, 0.16);
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 8px 20px rgba(19, 66, 67, 0.05);
+}
+
+.is-topic-page[data-topic-id="numbers"] .focus-word-list.is-number-word-list .focus-word-button:hover,
+.is-topic-page[data-topic-id="numbers"] .focus-word-list.is-number-word-list .focus-word-button:focus-visible,
+.is-topic-page[data-topic-id="numbers"] .numbers-game-option:hover,
+.is-topic-page[data-topic-id="numbers"] .numbers-game-option:focus-visible,
+.is-topic-page[data-topic-id="numbers"] .math-game-input:focus {
+  border-color: rgba(37, 117, 114, 0.46);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(37, 117, 114, 0.14);
+}
+
+.is-topic-page[data-topic-id="numbers"] .focus-word-list.is-number-word-list .focus-word-button.is-selected {
+  border-color: rgba(37, 117, 114, 0.5);
+  background: linear-gradient(180deg, #f5fbf9, #dcefeb);
+  box-shadow: inset 0 -3px 0 rgba(37, 117, 114, 0.24), 0 0 0 3px rgba(37, 117, 114, 0.14);
 }
 
 /* Keep the migrated Pinyin course inside the same teal-and-white visual system. */
@@ -330,6 +449,23 @@ body.is-topic-page {
   color: var(--pinyin-accent-dark);
 }
 
+.is-topic-page .pinyin-word-audio {
+  min-height: 58px;
+  padding: 7px 10px;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  transition: border-color 150ms ease, background 150ms ease, box-shadow 150ms ease;
+}
+
+.is-topic-page .pinyin-sound-chip.is-selected,
+.is-topic-page .pinyin-tone-row > button.is-selected,
+.is-topic-page .pinyin-word-audio.is-selected {
+  border-color: var(--pinyin-accent);
+  color: var(--pinyin-accent-dark) !important;
+  background: linear-gradient(180deg, #eaf7f4, #c8e5df);
+  box-shadow: inset 0 0 0 2px rgba(37, 117, 114, 0.34), 0 7px 16px rgba(24, 91, 92, 0.14);
+}
+
 .is-topic-page .pinyin-letter-stage {
   background: linear-gradient(145deg, #579995, var(--pinyin-accent-dark));
   box-shadow: inset 0 2px 0 rgba(255, 255, 255, 0.28), 0 10px 22px rgba(24, 91, 92, 0.22);
@@ -367,9 +503,22 @@ body.is-topic-page {
 .is-topic-page .pinyin-tone-choice.is-correct,
 .is-topic-page .pinyin-final-choice.is-correct,
 .is-topic-page .pinyin-practice-option.is-correct {
-  border-color: rgba(37, 117, 114, 0.52);
+  border-color: var(--pinyin-accent-dark);
   color: var(--pinyin-accent-dark);
-  background: var(--pinyin-soft);
+  background: linear-gradient(180deg, #def0ec, #c8e5df);
+  box-shadow: inset 0 0 0 2px rgba(24, 91, 92, 0.22), 0 7px 16px rgba(24, 91, 92, 0.14);
+}
+
+.is-topic-page .pinyin-tone-choice.is-selected,
+.is-topic-page .pinyin-final-choice.is-selected {
+  border-width: 2px;
+}
+
+.is-topic-page .pinyin-tone-choice.is-wrong,
+.is-topic-page .pinyin-final-choice.is-wrong {
+  border-color: #b74842;
+  background: #ffebe8;
+  box-shadow: inset 0 0 0 2px rgba(183, 72, 66, 0.16), 0 7px 16px rgba(183, 72, 66, 0.1);
 }
 
 .is-topic-page .pinyin-lab .small-button.is-play-button,
@@ -379,6 +528,15 @@ body.is-topic-page {
   color: #fff;
   background: linear-gradient(145deg, #579995, var(--pinyin-accent-dark));
   box-shadow: 0 9px 20px rgba(24, 91, 92, 0.24), inset 0 1px 0 rgba(255, 255, 255, 0.28);
+}
+
+/* The course canvas already frames the page; keep only the functional stroke cards. */
+.is-topic-page .stroke-lab {
+  gap: 18px;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
 }
 
 .is-topic-page .pinyin-lab .small-button.is-play-button:hover,
@@ -432,6 +590,29 @@ body.is-topic-page {
     grid-row: 2;
     padding: 6px 0 3px;
     justify-self: center;
+  }
+
+  .topic-mobile-return {
+    display: inline-flex;
+    min-height: 44px;
+    padding: 0 12px;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(37, 117, 114, 0.3);
+    border-radius: 8px;
+    color: #185b5c;
+    background: rgba(255, 255, 255, 0.78);
+    font-size: 0.875rem;
+    font-weight: 700;
+    line-height: 1;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  .topic-mobile-return:hover,
+  .topic-mobile-return:focus-visible {
+    border-color: rgba(37, 117, 114, 0.48);
+    background: #fff;
   }
 
   .topic-display-toggle {

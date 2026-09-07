@@ -19204,6 +19204,7 @@
       if (!topicLessonStrip2) {
         return;
       }
+      topicLessonStrip2.classList.toggle("is-book-scope", Boolean(state2.lessonScope));
       const steps = topic.steps ?? [];
       if (!steps.length) {
         topicLessonStrip2.innerHTML = "";
@@ -19211,6 +19212,9 @@
         return;
       }
       topicLessonStrip2.classList.remove("is-hidden");
+      const selectionCount = steps.length + (steps.length > 1 ? 1 : 0);
+      topicLessonStrip2.dataset.selectionCount = String(selectionCount);
+      topicLessonStrip2.style.setProperty("--selection-count", String(selectionCount));
       const allContentCard = steps.length > 1 ? `
       <button class="topic-lesson-card topic-lesson-card-all${state2.lessonScope ? "" : " is-active"}" type="button" data-topic-all-content aria-label="Show all ${topic.title} content across books">
         <span class="topic-lesson-meta">Learn by topic</span>
@@ -19563,16 +19567,21 @@
       if (!detailLayout2) {
         return;
       }
-      scrollToSectionTop2(detailLayout2);
+      scrollToSectionTop2(detailLayout2, { includeTopicHeader: true });
     }
-    function scrollToSectionTop2(element) {
+    function scrollToSectionTop2(element, options = {}) {
       if (!element) {
         return;
       }
       const root = document.documentElement;
       const previousScrollBehavior = root.style.scrollBehavior;
       const stickyNavHeight = learningCultureNav2?.getBoundingClientRect().height ?? 0;
-      const targetTop = Math.max(0, window.scrollY + element.getBoundingClientRect().top - stickyNavHeight);
+      const topicHeaderHeight = options.includeTopicHeader ? document.querySelector(".topic-site-header")?.getBoundingClientRect().height ?? 0 : 0;
+      const stickyOffset = Math.max(stickyNavHeight, topicHeaderHeight);
+      const targetTop = Math.max(
+        0,
+        window.scrollY + element.getBoundingClientRect().top - stickyOffset - (topicHeaderHeight ? 12 : 0)
+      );
       root.style.scrollBehavior = "auto";
       window.scrollTo(0, targetTop);
       root.style.scrollBehavior = previousScrollBehavior;
@@ -19591,10 +19600,24 @@
     function updateTopicPageVisibility2() {
       detailLayout2?.classList.toggle("is-hidden", !state2.topicPageOpen);
       document.body.classList.toggle("is-topic-page", state2.topicPageOpen);
-      const catalogReturnLink = document.querySelector("[data-learning-catalog-return]");
-      if (catalogReturnLink && state2.topicPageOpen) {
-        catalogReturnLink.href = `learn-v2.html#${catalogPathForTopic(state2.selectedTopicId)}`;
+      if (state2.topicPageOpen) {
+        document.body.dataset.topicId = state2.selectedTopicId;
+      } else {
+        delete document.body.dataset.topicId;
       }
+      const catalogReturnLinks = document.querySelectorAll("[data-learning-catalog-return]");
+      if (catalogReturnLinks.length && state2.topicPageOpen) {
+        const bookId = state2.lessonScope?.bookId;
+        const lessonNumber = state2.lessonScope?.lessonNumber;
+        catalogReturnLinks.forEach((catalogReturnLink) => {
+          catalogReturnLink.href = bookId ? `books.html#${bookId}/${lessonNumber}` : `learn.html#${catalogPathForTopic(state2.selectedTopicId)}`;
+          catalogReturnLink.textContent = catalogReturnLink.hasAttribute("data-mobile-learning-return") ? bookId ? `\u2190 Book ${bookId.toUpperCase()}` : "\u2190 Topics" : bookId ? "\u2190 Back to Book Lessons" : "\u2190 Back to Learn by Topic";
+        });
+      }
+      document.querySelectorAll("[data-topic-primary-nav]").forEach((link) => {
+        const destination = state2.lessonScope?.bookId ? "books" : "learn";
+        link.classList.toggle("is-current", link.dataset.topicPrimaryNav === destination);
+      });
     }
     function scrollCategorySectionIntoView2(categoryId) {
       requestAnimationFrame(() => {
@@ -20292,7 +20315,8 @@
       params.set("book", lessonScope.bookId);
       params.set("lesson", String(lessonScope.lessonNumber));
     }
-    return `${location.pathname}?${params.toString()}#topic-detail`;
+    const directory = location.pathname.replace(/[^/]*$/, "");
+    return `${directory}lesson.html?${params.toString()}`;
   }
 
   // src/features/time-daily-life/weekdays.js
@@ -29247,7 +29271,7 @@
     let playbackSequence = 0;
     function audioAttributes(text, pinyin = text, explicitId = "") {
       const id = explicitId || pinyinAudioId(text, pinyin);
-      return `data-pinyin-audio="${text}"${id ? ` data-pinyin-audio-id="${id}"` : ""}`;
+      return `data-pinyin-audio="${text}"${id ? ` data-pinyin-audio-id="${id}"` : ""} aria-pressed="false"`;
     }
     function soundChipMarkup(label, audioText, audioId = "") {
       return `<button class="pinyin-sound-chip" type="button" ${audioAttributes(audioText, audioText, audioId)} aria-label="Play ${label}">${label}</button>`;
@@ -29393,11 +29417,22 @@
         [3, "M6 9 L15 12 L40 34 L64 14", "57,9 76,3 69,21"],
         [4, "M6 6 L25 12 L44 20 L63 29", "59,36 76,36 67,22"]
       ];
-      return `<section class="pinyin-basics-practice pinyin-basics-practice-${kind}"><div class="pinyin-basics-practice-grid"><section class="pinyin-ear-game"><div class="pinyin-ear-game-heading"><h4>Which tone did you hear?</h4><button class="small-button is-play-button" type="button" data-pinyin-basics-play="tone" aria-label="Play a new sound">\u25B6</button></div><div class="pinyin-tone-choice-row">${toneChoices.map(([tone, line, head]) => `<button type="button" class="pinyin-tone-choice${toneResult && tone === state2.pinyinBasicsToneChoice ? toneResult === "correct" ? " is-correct" : " is-wrong" : ""}" data-pinyin-basics-tone="${tone}" aria-label="Tone ${tone}">${toneMark(tone)}<svg class="pinyin-tone-choice-contour" viewBox="0 0 80 38" aria-hidden="true"><path d="${line}" /><polygon points="${head}" /></svg></button>`).join("")}</div><p class="pinyin-basics-feedback" aria-live="polite">${toneResult === "correct" ? `<strong>${toneRound.pinyin}</strong> \xB7 ${toneRound.tone}${toneRound.tone === 1 ? "st" : toneRound.tone === 2 ? "nd" : toneRound.tone === 3 ? "rd" : "th"} tone` : ""}</p></section><section class="pinyin-ear-game"><div class="pinyin-ear-game-heading"><h4>Which final did you hear?</h4><button class="small-button is-play-button" type="button" data-pinyin-basics-play="final" aria-label="Play a new sound">\u25B6</button></div><div class="pinyin-final-choice-row">${["a", "o", "e", "i", "u", "\xFC"].map((final) => `<button type="button" class="pinyin-final-choice${finalResult && final === state2.pinyinBasicsFinalChoice ? finalResult === "correct" ? " is-correct" : " is-wrong" : ""}" data-pinyin-basics-final="${final}">${finalMark(final)}${final}</button>`).join("")}</div><p class="pinyin-basics-feedback" aria-live="polite">${finalResult === "correct" ? `<strong>${finalRound.pinyin}</strong> \xB7 ${finalRound.final}` : ""}</p></section></div></section>`;
+      return `<section class="pinyin-basics-practice pinyin-basics-practice-${kind}"><div class="pinyin-basics-practice-grid"><section class="pinyin-ear-game"><div class="pinyin-ear-game-heading"><h4>Which tone did you hear?</h4><button class="small-button is-play-button" type="button" data-pinyin-basics-play="tone" aria-label="Play a new sound">\u25B6</button></div><div class="pinyin-tone-choice-row">${toneChoices.map(([tone, line, head]) => {
+        const isSelected = toneResult && tone === state2.pinyinBasicsToneChoice;
+        return `<button type="button" class="pinyin-tone-choice${isSelected ? ` is-selected is-${toneResult}` : ""}" data-pinyin-basics-tone="${tone}" aria-label="Tone ${tone}" aria-pressed="${Boolean(isSelected)}">${toneMark(tone)}<svg class="pinyin-tone-choice-contour" viewBox="0 0 80 38" aria-hidden="true"><path d="${line}" /><polygon points="${head}" /></svg></button>`;
+      }).join("")}</div><p class="pinyin-basics-feedback" aria-live="polite">${toneResult === "correct" ? `<strong>${toneRound.pinyin}</strong> \xB7 ${toneRound.tone}${toneRound.tone === 1 ? "st" : toneRound.tone === 2 ? "nd" : toneRound.tone === 3 ? "rd" : "th"} tone` : ""}</p></section><section class="pinyin-ear-game"><div class="pinyin-ear-game-heading"><h4>Which final did you hear?</h4><button class="small-button is-play-button" type="button" data-pinyin-basics-play="final" aria-label="Play a new sound">\u25B6</button></div><div class="pinyin-final-choice-row">${["a", "o", "e", "i", "u", "\xFC"].map((final) => {
+        const isSelected = finalResult && final === state2.pinyinBasicsFinalChoice;
+        return `<button type="button" class="pinyin-final-choice${isSelected ? ` is-selected is-${finalResult}` : ""}" data-pinyin-basics-final="${final}" aria-pressed="${Boolean(isSelected)}">${finalMark(final)}${final}</button>`;
+      }).join("")}</div><p class="pinyin-basics-feedback" aria-live="polite">${finalResult === "correct" ? `<strong>${finalRound.pinyin}</strong> \xB7 ${finalRound.final}` : ""}</p></section></div></section>`;
     }
     function bindChapterNavigation() {
       focusExplorer2.querySelectorAll("[data-pinyin-group]").forEach((button) => button.addEventListener("click", () => selectGroup(button.dataset.pinyinGroup)));
       focusExplorer2.querySelectorAll("[data-pinyin-audio]").forEach((button) => button.addEventListener("click", () => {
+        focusExplorer2.querySelectorAll("[data-pinyin-audio]").forEach((audioButton) => {
+          const isSelected = audioButton === button;
+          audioButton.classList.toggle("is-selected", isSelected);
+          audioButton.setAttribute("aria-pressed", String(isSelected));
+        });
         const id = button.dataset.pinyinAudioId;
         if (id) playRecording(id, button.dataset.pinyinAudio);
         else speak2?.(button.dataset.pinyinAudio, 0.62);
@@ -32009,7 +32044,13 @@
   switchView(viewFromLocation(window.location));
   updateTopicPageVisibility();
   if (initialTopicId) {
-    requestAnimationFrame(() => focusLearningPanel());
+    requestAnimationFrame(() => {
+      const root = document.documentElement;
+      const previousScrollBehavior = root.style.scrollBehavior;
+      root.style.scrollBehavior = "auto";
+      window.scrollTo(0, 0);
+      root.style.scrollBehavior = previousScrollBehavior;
+    });
   } else if (initialBookId && viewFromLocation(window.location) === "books") {
     requestAnimationFrame(() => document.getElementById(`book-lessons-${initialBookId}`)?.scrollIntoView({ block: "start" }));
   } else if (window.location.hash.startsWith("#culture-")) {

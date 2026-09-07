@@ -1,7 +1,7 @@
 # My Stationery
 
-Status: `partial`  
-URL: `index.html?topic=stationery#topic-detail`  
+Status: `partial`
+URL: `lesson.html?topic=stationery`
 Mapped lesson: **2B Lesson 3 — Stationery**
 
 ## Cross-book progression

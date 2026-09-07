@@ -1,6 +1,6 @@
 # Learn Chinese Two-Level Catalog Mapping
 
-Status: implemented in `learn-v2.html`. The eight existing main catalogs, all 43 learning topics, and their page routes are preserved.
+Status: implemented in `learn.html`. The eight existing main catalogs, all 43 learning topics, and their page routes are preserved.
 
 ## Structure
 

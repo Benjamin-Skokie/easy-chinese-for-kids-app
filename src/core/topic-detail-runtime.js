@@ -38,6 +38,7 @@ function renderTopicLessonStrip(topic) {
     return;
   }
 
+  topicLessonStrip.classList.toggle("is-book-scope", Boolean(state.lessonScope));
   const steps = topic.steps ?? [];
   if (!steps.length) {
     topicLessonStrip.innerHTML = "";
@@ -46,6 +47,9 @@ function renderTopicLessonStrip(topic) {
   }
 
   topicLessonStrip.classList.remove("is-hidden");
+  const selectionCount = steps.length + (steps.length > 1 ? 1 : 0);
+  topicLessonStrip.dataset.selectionCount = String(selectionCount);
+  topicLessonStrip.style.setProperty("--selection-count", String(selectionCount));
   const allContentCard = steps.length > 1
     ? `
       <button class="topic-lesson-card topic-lesson-card-all${state.lessonScope ? "" : " is-active"}" type="button" data-topic-all-content aria-label="Show all ${topic.title} content across books">

@@ -1,7 +1,7 @@
 # Food & Drinks
 
 Status: `partial`  
-URL: `index.html?topic=food#topic-detail`
+URL: `lesson.html?topic=food`
 
 ## Cross-book progression
 

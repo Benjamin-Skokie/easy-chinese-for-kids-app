@@ -33,7 +33,7 @@ const categoryIconMarkup = (category) => {
 };
 
 const topicUrl = (topicId) =>
-  `index.html?topic=${encodeURIComponent(topicId)}#topic-detail`;
+  `lesson.html?topic=${encodeURIComponent(topicId)}`;
 
 const activeCategory = () =>
   learningHomeCategories.find((category) => category.id === selectedCategoryId) ??
@@ -107,6 +107,8 @@ const renderSubcatalogs = () => {
   const category = activeCategory();
   const subcatalogs = category.subcatalogs ?? [];
   subcatalogBrowser.hidden = subcatalogs.length === 0;
+  subcatalogsElement.dataset.selectionCount = String(subcatalogs.length);
+  subcatalogsElement.style.setProperty("--selection-count", String(subcatalogs.length || 1));
 
   if (!subcatalogs.length) {
     subcatalogsElement.innerHTML = "";

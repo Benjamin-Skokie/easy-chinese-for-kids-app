@@ -1,8 +1,8 @@
 # Nature — Lesson Contract and Content Plan
 
 Status: `content-complete; product visual review pending`
-Topic URL: `index.html?topic=nature#topic-detail`  
-Topic ID: `nature`  
+Topic URL: `lesson.html?topic=nature`
+Topic ID: `nature`
 Primary lesson: **Book 3B, Lesson 7 — Nature**
 
 This is the content contract for the implemented Nature page. It records the language, visual evidence, and practice design that the page must preserve.
@@ -41,7 +41,7 @@ The page adds `白天` and `晚上` as scene-title keywords because the approved
 
 ### Boundary decision
 
-**Nature answers “what is in the sky / on the ground?”**  
+**Nature answers “what is in the sky / on the ground?”**
 **Weather answers “what is today’s weather like?”**
 
 Clouds and wind are not required Nature vocabulary for 3B L7. They remain out of scope unless a later book source makes them part of a deliberate Nature expansion.

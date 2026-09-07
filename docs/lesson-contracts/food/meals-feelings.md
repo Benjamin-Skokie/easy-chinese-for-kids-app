@@ -1,7 +1,7 @@
 # Meals & Feelings
 
 Status: `partial`  
-URL: `index.html?topic=meals-feelings#topic-detail`
+URL: `lesson.html?topic=meals-feelings`
 
 ## Cross-book progression
 

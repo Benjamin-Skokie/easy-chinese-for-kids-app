@@ -35,5 +35,6 @@ export function topicPageUrl(location, topicId, lessonScope = null) {
     params.set("book", lessonScope.bookId);
     params.set("lesson", String(lessonScope.lessonNumber));
   }
-  return `${location.pathname}?${params.toString()}#topic-detail`;
+  const directory = location.pathname.replace(/[^/]*$/, "");
+  return `${directory}lesson.html?${params.toString()}`;
 }

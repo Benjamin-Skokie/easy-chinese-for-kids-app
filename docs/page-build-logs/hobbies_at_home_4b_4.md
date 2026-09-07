@@ -2,7 +2,7 @@
 
 Started: 2026-08-14  
 Completed: 2026-08-14  
-URL: `index.html?topic=hobbies-at-home#topic-detail`
+URL: `lesson.html?topic=hobbies-at-home`
 
 ## Evidence and scope
 

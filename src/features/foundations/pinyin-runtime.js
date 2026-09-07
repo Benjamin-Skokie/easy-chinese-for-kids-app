@@ -26,7 +26,7 @@ export function createPinyinRuntime({ state, focusExplorer, activityPanelTitle, 
 
   function audioAttributes(text, pinyin = text, explicitId = "") {
     const id = explicitId || pinyinAudioId(text, pinyin);
-    return `data-pinyin-audio="${text}"${id ? ` data-pinyin-audio-id="${id}"` : ""}`;
+    return `data-pinyin-audio="${text}"${id ? ` data-pinyin-audio-id="${id}"` : ""} aria-pressed="false"`;
   }
 
   function soundChipMarkup(label, audioText, audioId = "") {
@@ -188,12 +188,17 @@ export function createPinyinRuntime({ state, focusExplorer, activityPanelTitle, 
       [3, "M6 9 L15 12 L40 34 L64 14", "57,9 76,3 69,21"],
       [4, "M6 6 L25 12 L44 20 L63 29", "59,36 76,36 67,22"]
     ];
-    return `<section class="pinyin-basics-practice pinyin-basics-practice-${kind}"><div class="pinyin-basics-practice-grid"><section class="pinyin-ear-game"><div class="pinyin-ear-game-heading"><h4>Which tone did you hear?</h4><button class="small-button is-play-button" type="button" data-pinyin-basics-play="tone" aria-label="Play a new sound">▶</button></div><div class="pinyin-tone-choice-row">${toneChoices.map(([tone, line, head]) => `<button type="button" class="pinyin-tone-choice${toneResult && tone === state.pinyinBasicsToneChoice ? toneResult === "correct" ? " is-correct" : " is-wrong" : ""}" data-pinyin-basics-tone="${tone}" aria-label="Tone ${tone}">${toneMark(tone)}<svg class="pinyin-tone-choice-contour" viewBox="0 0 80 38" aria-hidden="true"><path d="${line}" /><polygon points="${head}" /></svg></button>`).join("")}</div><p class="pinyin-basics-feedback" aria-live="polite">${toneResult === "correct" ? `<strong>${toneRound.pinyin}</strong> · ${toneRound.tone}${toneRound.tone === 1 ? "st" : toneRound.tone === 2 ? "nd" : toneRound.tone === 3 ? "rd" : "th"} tone` : ""}</p></section><section class="pinyin-ear-game"><div class="pinyin-ear-game-heading"><h4>Which final did you hear?</h4><button class="small-button is-play-button" type="button" data-pinyin-basics-play="final" aria-label="Play a new sound">▶</button></div><div class="pinyin-final-choice-row">${["a", "o", "e", "i", "u", "ü"].map((final) => `<button type="button" class="pinyin-final-choice${finalResult && final === state.pinyinBasicsFinalChoice ? finalResult === "correct" ? " is-correct" : " is-wrong" : ""}" data-pinyin-basics-final="${final}">${finalMark(final)}${final}</button>`).join("")}</div><p class="pinyin-basics-feedback" aria-live="polite">${finalResult === "correct" ? `<strong>${finalRound.pinyin}</strong> · ${finalRound.final}` : ""}</p></section></div></section>`;
+    return `<section class="pinyin-basics-practice pinyin-basics-practice-${kind}"><div class="pinyin-basics-practice-grid"><section class="pinyin-ear-game"><div class="pinyin-ear-game-heading"><h4>Which tone did you hear?</h4><button class="small-button is-play-button" type="button" data-pinyin-basics-play="tone" aria-label="Play a new sound">▶</button></div><div class="pinyin-tone-choice-row">${toneChoices.map(([tone, line, head]) => { const isSelected = toneResult && tone === state.pinyinBasicsToneChoice; return `<button type="button" class="pinyin-tone-choice${isSelected ? ` is-selected is-${toneResult}` : ""}" data-pinyin-basics-tone="${tone}" aria-label="Tone ${tone}" aria-pressed="${Boolean(isSelected)}">${toneMark(tone)}<svg class="pinyin-tone-choice-contour" viewBox="0 0 80 38" aria-hidden="true"><path d="${line}" /><polygon points="${head}" /></svg></button>`; }).join("")}</div><p class="pinyin-basics-feedback" aria-live="polite">${toneResult === "correct" ? `<strong>${toneRound.pinyin}</strong> · ${toneRound.tone}${toneRound.tone === 1 ? "st" : toneRound.tone === 2 ? "nd" : toneRound.tone === 3 ? "rd" : "th"} tone` : ""}</p></section><section class="pinyin-ear-game"><div class="pinyin-ear-game-heading"><h4>Which final did you hear?</h4><button class="small-button is-play-button" type="button" data-pinyin-basics-play="final" aria-label="Play a new sound">▶</button></div><div class="pinyin-final-choice-row">${["a", "o", "e", "i", "u", "ü"].map((final) => { const isSelected = finalResult && final === state.pinyinBasicsFinalChoice; return `<button type="button" class="pinyin-final-choice${isSelected ? ` is-selected is-${finalResult}` : ""}" data-pinyin-basics-final="${final}" aria-pressed="${Boolean(isSelected)}">${finalMark(final)}${final}</button>`; }).join("")}</div><p class="pinyin-basics-feedback" aria-live="polite">${finalResult === "correct" ? `<strong>${finalRound.pinyin}</strong> · ${finalRound.final}` : ""}</p></section></div></section>`;
   }
 
   function bindChapterNavigation() {
     focusExplorer.querySelectorAll("[data-pinyin-group]").forEach((button) => button.addEventListener("click", () => selectGroup(button.dataset.pinyinGroup)));
     focusExplorer.querySelectorAll("[data-pinyin-audio]").forEach((button) => button.addEventListener("click", () => {
+      focusExplorer.querySelectorAll("[data-pinyin-audio]").forEach((audioButton) => {
+        const isSelected = audioButton === button;
+        audioButton.classList.toggle("is-selected", isSelected);
+        audioButton.setAttribute("aria-pressed", String(isSelected));
+      });
       const id = button.dataset.pinyinAudioId;
       if (id) playRecording(id, button.dataset.pinyinAudio);
       else speak?.(button.dataset.pinyinAudio, 0.62);

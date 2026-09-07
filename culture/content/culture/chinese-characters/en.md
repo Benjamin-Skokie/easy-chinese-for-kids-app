@@ -14,7 +14,7 @@ Soon scholars traced more of the bones to [[Anyang|anyang]] in northern China. T
 
 ## Some of the Characters Really Did Look Like Pictures
 
-[Look closely at oracle-bone writing](../../../../index.html?topic=pictographs#topic-detail) and you may recognize a few shapes. The character for the sun once looked more like a round sun. The moon curved like a crescent. Mountain rose in pointed peaks. Some early characters began as simple pictures of things people could see.
+[Look closely at oracle-bone writing](../../../../lesson.html?topic=pictographs) and you may recognize a few shapes. The character for the sun once looked more like a round sun. The moon curved like a crescent. Mountain rose in pointed peaks. Some early characters began as simple pictures of things people could see.
 
 That is called pictographic writing. But Chinese writing could never survive on pictures alone. After all, you can draw a mountain or a horse—but how do you draw a question like: **Will it rain tomorrow?** And that is exactly the sort of question people were asking.
 

@@ -1,7 +1,7 @@
 # Body
 
 Status: `complete`
-URL: `index.html?topic=body#topic-detail`
+URL: `lesson.html?topic=body`
 
 ## Cross-book progression
 

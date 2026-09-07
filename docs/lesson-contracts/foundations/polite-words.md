@@ -1,7 +1,7 @@
 # Polite Words
 
 Status: `implementation complete; visual QA pending`
-URL: `index.html?topic=polite-words#topic-detail`
+URL: `lesson.html?topic=polite-words`
 
 ## Cross-book progression
 

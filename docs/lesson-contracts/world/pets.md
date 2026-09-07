@@ -1,7 +1,7 @@
 # Pets
 
-Status: `partial`  
-URL: `index.html?topic=pets#topic-detail`  
+Status: `partial`
+URL: `lesson.html?topic=pets`
 Mapped lesson: **1B Lesson 5 — Pets**
 
 ## Confirmed language and scope

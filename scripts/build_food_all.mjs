@@ -5,6 +5,7 @@ const slugs = [
   "dumplings",
   "chopsticks",
   "flavors",
+  "tea",
 ];
 
 for (const slug of slugs) {

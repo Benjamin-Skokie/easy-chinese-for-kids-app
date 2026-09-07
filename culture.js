@@ -175,6 +175,12 @@
     const catalog = activeCatalog();
     if (!catalog) return;
 
+    subcatalogsElement.dataset.selectionCount = String(catalog.subcatalogs.length);
+    subcatalogsElement.style.setProperty(
+      "--selection-count",
+      String(catalog.subcatalogs.length || 1)
+    );
+
     subcatalogsElement.innerHTML = catalog.subcatalogs
       .map(
         (subcatalog) => `

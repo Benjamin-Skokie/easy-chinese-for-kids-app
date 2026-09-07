@@ -1,7 +1,7 @@
 # Hobbies
 
 Status: `implemented` — **What I Like (2A Lesson 5)**, **Music & Movement (3B Lesson 4)**, **Hobbies at Home (4B Lesson 4)**, and **Leisure Time (4B Lesson 7)** are live sibling pages.
-URL: `index.html?topic=hobbies#topic-detail`  
+URL: `lesson.html?topic=hobbies`
 Mapped lessons: **2A Lesson 5 — I Love Reading; 3B Lesson 4 — Hobbies; 4B Lesson 4 — Hobbies; 4B Lesson 7 — Leisure Time**
 
 ## Confirmed language and scope

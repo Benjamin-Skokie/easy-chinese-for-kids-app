@@ -1,7 +1,7 @@
 # My Home
 
 Status: `complete`
-URL: `index.html?topic=daily-life#topic-detail`  
+URL: `lesson.html?topic=daily-life`
 Mapped lesson: **4B Lesson 3 — My room**
 
 ## Cross-book progression

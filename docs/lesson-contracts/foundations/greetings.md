@@ -1,7 +1,7 @@
 # Greetings
 
-Status: `partial`  
-URL: `index.html?topic=greetings#topic-detail`  
+Status: `partial`
+URL: `lesson.html?topic=greetings`
 Mapped lesson: **1A Lesson 4 — Hello!**
 
 ## Cross-book progression

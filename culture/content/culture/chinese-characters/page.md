@@ -43,12 +43,12 @@ layout: text-only
 heading_zh: 最早的字，真的有点像画
 heading_en: Some of the Characters Really Did Look Like Pictures
 [zh]
-[仔细看甲骨文](../../../../index.html?topic=pictographs#topic-detail)，有些字今天的小朋友居然还能猜出来。“日”曾经像一个太阳，“月”像弯弯的月亮，“山”像几个连在一起的山峰。有些最早的汉字，的确是照着东西的样子画出来的。这就是“象形”。
+[仔细看甲骨文](../../../../lesson.html?topic=pictographs)，有些字今天的小朋友居然还能猜出来。“日”曾经像一个太阳，“月”像弯弯的月亮，“山”像几个连在一起的山峰。有些最早的汉字，的确是照着东西的样子画出来的。这就是“象形”。
 
 可是，只靠画画是不够的。山可以画，马也可以画。可是下面这个问题怎么画呢？**明天会下雨吗？** 偏偏三千多年前的人，真的问过这个问题。
 [/zh]
 [en]
-[Look closely at oracle-bone writing](../../../../index.html?topic=pictographs#topic-detail) and you may recognize a few shapes. The character for the sun once looked more like a round sun. The moon curved like a crescent. Mountain rose in pointed peaks. Some early characters began as simple pictures of things people could see.
+[Look closely at oracle-bone writing](../../../../lesson.html?topic=pictographs) and you may recognize a few shapes. The character for the sun once looked more like a round sun. The moon curved like a crescent. Mountain rose in pointed peaks. Some early characters began as simple pictures of things people could see.
 
 That is called pictographic writing. But Chinese writing could never survive on pictures alone. After all, you can draw a mountain or a horse—but how do you draw a question like: **Will it rain tomorrow?** And that is exactly the sort of question people were asking.
 [/en]

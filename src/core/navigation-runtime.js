@@ -154,10 +154,10 @@ function focusLearningPanel() {
     return;
   }
 
-  scrollToSectionTop(detailLayout);
+  scrollToSectionTop(detailLayout, { includeTopicHeader: true });
 }
 
-function scrollToSectionTop(element) {
+function scrollToSectionTop(element, options = {}) {
   if (!element) {
     return;
   }
@@ -165,7 +165,14 @@ function scrollToSectionTop(element) {
   const root = document.documentElement;
   const previousScrollBehavior = root.style.scrollBehavior;
   const stickyNavHeight = learningCultureNav?.getBoundingClientRect().height ?? 0;
-  const targetTop = Math.max(0, window.scrollY + element.getBoundingClientRect().top - stickyNavHeight);
+  const topicHeaderHeight = options.includeTopicHeader
+    ? document.querySelector(".topic-site-header")?.getBoundingClientRect().height ?? 0
+    : 0;
+  const stickyOffset = Math.max(stickyNavHeight, topicHeaderHeight);
+  const targetTop = Math.max(
+    0,
+    window.scrollY + element.getBoundingClientRect().top - stickyOffset - (topicHeaderHeight ? 12 : 0)
+  );
   root.style.scrollBehavior = "auto";
   window.scrollTo(0, targetTop);
   root.style.scrollBehavior = previousScrollBehavior;
@@ -190,10 +197,32 @@ function catalogPathForTopic(topicId) {
 function updateTopicPageVisibility() {
   detailLayout?.classList.toggle("is-hidden", !state.topicPageOpen);
   document.body.classList.toggle("is-topic-page", state.topicPageOpen);
-  const catalogReturnLink = document.querySelector("[data-learning-catalog-return]");
-  if (catalogReturnLink && state.topicPageOpen) {
-    catalogReturnLink.href = `learn-v2.html#${catalogPathForTopic(state.selectedTopicId)}`;
+  if (state.topicPageOpen) {
+    document.body.dataset.topicId = state.selectedTopicId;
+  } else {
+    delete document.body.dataset.topicId;
   }
+  const catalogReturnLinks = document.querySelectorAll("[data-learning-catalog-return]");
+  if (catalogReturnLinks.length && state.topicPageOpen) {
+    const bookId = state.lessonScope?.bookId;
+    const lessonNumber = state.lessonScope?.lessonNumber;
+    catalogReturnLinks.forEach((catalogReturnLink) => {
+      catalogReturnLink.href = bookId
+        ? `books.html#${bookId}/${lessonNumber}`
+        : `learn.html#${catalogPathForTopic(state.selectedTopicId)}`;
+      catalogReturnLink.textContent = catalogReturnLink.hasAttribute("data-mobile-learning-return")
+        ? bookId
+          ? `← Book ${bookId.toUpperCase()}`
+          : "← Topics"
+        : bookId
+          ? "← Back to Book Lessons"
+          : "← Back to Learn by Topic";
+    });
+  }
+  document.querySelectorAll("[data-topic-primary-nav]").forEach((link) => {
+    const destination = state.lessonScope?.bookId ? "books" : "learn";
+    link.classList.toggle("is-current", link.dataset.topicPrimaryNav === destination);
+  });
 }
 
 function scrollCategorySectionIntoView(categoryId) {

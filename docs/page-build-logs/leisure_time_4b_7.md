@@ -1,7 +1,7 @@
 # Leisure Time — 4B Lesson 7
 
 Started: 2026-08-14  
-URL: `index.html?topic=hobbies-leisure#topic-detail`
+URL: `lesson.html?topic=hobbies-leisure`
 Completed: 2026-08-14
 
 ## Evidence and scope
