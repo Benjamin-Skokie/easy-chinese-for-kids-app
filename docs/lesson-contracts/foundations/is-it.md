@@ -1,7 +1,7 @@
 # Is It?
 
 Status: `implemented` — optional Topic enrichment
-URL: `index.html?topic=is-it#topic-detail`
+URL: `lesson.html?topic=is-it`
 
 ## Scope and evidence
 

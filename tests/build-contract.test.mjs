@@ -51,6 +51,7 @@ import { topicData } from "../src/data/topic-registry.js";
 import { buildMultiplicationRhymeItems, buildNumberItem, multiplicationRhymeTopic, numberStages, numbersTopic } from "../src/features/foundations/numbers.js";
 import { telephoneNumbersTopic, telephonePractice } from "../src/features/foundations/telephone-numbers.js";
 import { createFoundationState } from "../src/features/foundations/state.js";
+import { loadCultureCatalogLocations } from "../scripts/culture_catalog_locations.mjs";
 import { createGreetingsController } from "../src/features/foundations/greetings-controller.js";
 import { createPoliteWordsController } from "../src/features/foundations/polite-words-controller.js";
 import { createIntroductionsController } from "../src/features/foundations/introductions-controller.js";
@@ -73,7 +74,7 @@ test("shared lesson Notes stay concise, bilingual, and free of pinyin markup", (
 });
 
 test("the local page loads a single bundled application script", () => {
-  const html = readFileSync("index.html", "utf8");
+  const html = readFileSync("lesson.html", "utf8");
   assert.match(html, /<title>Nihao World \| Learn Chinese Through Language and Culture<\/title>/);
   assert.match(html, /name="description"\s+content="Nihao World helps children learn Chinese as a second language through interactive Mandarin practice and explore rich Chinese culture from the very beginning\."/);
   assert.match(html, /<link rel="canonical" href="https:\/\/nihaoworld\.org\/" \/>/);
@@ -85,6 +86,22 @@ test("the local page loads a single bundled application script", () => {
   assert.doesNotMatch(html, /<h3>Review<\/h3>/);
 });
 
+test("the canonical root is the migrated homepage", () => {
+  const devServerSource = readFileSync("scripts/dev_app.mjs", "utf8");
+  const homepage = readFileSync("index.html", "utf8");
+  assert.match(devServerSource, /pathname === "\/" \? "index\.html"/);
+  assert.match(homepage, /homepage\.css\?v=20260907-canonical-home-v1/);
+  assert.match(homepage, /<script src="homepage\.js" defer><\/script>/);
+  assert.match(homepage, /params\.has\("topic"\)[\s\S]*lesson\.html/);
+  assert.equal(existsSync("homepage-v2.html"), false);
+});
+
+test("the lesson shell does not expose the retired homepage without a topic", () => {
+  const lessonPage = readFileSync("lesson.html", "utf8");
+  assert.match(lessonPage, /!lessonParams\.has\("topic"\)[\s\S]*window\.location\.replace/);
+  assert.match(lessonPage, /window\.location\.hash === "#topic-detail"[\s\S]*window\.history\.replaceState/);
+});
+
 test("Privacy and Safety opens a plain-language family page", () => {
   const html = readFileSync("index.html", "utf8");
   const privacyPage = readFileSync("about/privacy-safety/index.html", "utf8");
@@ -93,13 +110,13 @@ test("Privacy and Safety opens a plain-language family page", () => {
   const authorPage = readFileSync("about/author-project/index.html", "utf8");
   const aboutPages = [privacyPage, feedbackPage, sourcesPage, authorPage];
   const cultureSources = readFileSync("about/sources-research/culture-sources.js", "utf8");
-  assert.match(html, /href="about\/privacy-safety\/"/);
-  assert.match(html, /href="about\/feedback-problems\/"/);
+  assert.match(html, /href="about\/privacy-safety\/index\.html"/);
+  assert.match(html, /href="about\/feedback-problems\/index\.html"/);
   assert.match(feedbackPage, /https:\/\/forms\.gle\/ksfMPko89fj6PpzJ9/);
   assert.match(feedbackPage, /https:\/\/forms\.gle\/mrJ71Hfo5zXwmpDL6/);
   assert.match(feedbackPage, /Report a Problem/);
   assert.match(feedbackPage, /Share Feedback/);
-  assert.match(html, /href="about\/sources-research\/"/);
+  assert.match(html, /href="about\/sources-research\/index\.html"/);
   assert.match(sourcesPage, /Chinese Learning References/);
   assert.match(sourcesPage, /Culture Story Sources/);
   assert.match(sourcesPage, /Easy Steps to Chinese for Kids/);
@@ -110,7 +127,9 @@ test("Privacy and Safety opens a plain-language family page", () => {
   assert.match(sourcesPage, /Arphic Public License/);
   assert.match(cultureSources, /window\.NIHAO_CULTURE_SOURCES/);
   assert.match(cultureSources, /culture\/books\/figures\/mulan/);
-  assert.match(html, /href="about\/author-project\/"/);
+  assert.equal((cultureSources.match(/"storyPath":/g) ?? []).length, 111);
+  assert.match(sourcesPage, /data-source-count aria-live="polite">111 stories<\/p>/);
+  assert.match(html, /href="about\/author-project\/index\.html">[\s\S]*Creator &amp; the Project/);
   assert.match(authorPage, /Benjamin Sun/);
   assert.match(authorPage, /Livingston High School/);
   assert.equal((authorPage.match(/assets\/photos\/benjamin-sun-portrait\.webp\?v=20260830-square-v1/g) ?? []).length, 1);
@@ -118,7 +137,7 @@ test("Privacy and Safety opens a plain-language family page", () => {
   assert.match(authorPage, /gpt-4o-mini-tts/);
   assert.match(authorPage, /<strong>43<\/strong><span>learning topics<\/span>/);
   assert.match(authorPage, /<strong>56<\/strong><span>textbook lessons aligned<\/span>/);
-  assert.match(authorPage, /<strong>109<\/strong><span>culture stories<\/span>/);
+  assert.match(authorPage, /<strong>111<\/strong><span>culture stories<\/span>/);
   assert.match(authorPage, /<strong>650\+<\/strong><span>referenced visual assets<\/span>/);
   assert.match(authorPage, /1,244/);
   assert.match(privacyPage, /No accounts/);
@@ -140,8 +159,54 @@ test("Privacy and Safety opens a plain-language family page", () => {
   }
 });
 
+test("Creator and the Project presents the creator below the sticky header", () => {
+  const authorPage = readFileSync("about/author-project/index.html", "utf8");
+  const authorStyles = readFileSync("about/author-project/styles.css", "utf8");
+
+  assert.match(authorPage, /styles\.css\?v=20260907-anchor-offset-v1/);
+  assert.match(authorPage, /<h1>Creator &amp;<br \/>the Project<\/h1>/);
+  assert.match(authorPage, /<section class="author-section" id="author">[\s\S]*About the creator[\s\S]*Hi, I’m Benjamin Sun\./);
+  assert.match(authorStyles, /\.author-section\{[^}]*scroll-margin-top:112px/);
+  assert.match(authorStyles, /@media\(max-width:560px\)[\s\S]*\.story-section,\.author-section\{scroll-margin-top:92px\}/);
+});
+
+test("the shared About menu keeps four clean links with compact colorful icons", () => {
+  const sharedHeaderStyles = readFileSync("shared-site-header.css", "utf8");
+  const headerPages = [
+    readFileSync("index.html", "utf8"),
+    readFileSync("learn.html", "utf8"),
+    readFileSync("books.html", "utf8"),
+    readFileSync("culture.html", "utf8"),
+    readFileSync("lesson.html", "utf8"),
+    readFileSync("about/author-project/index.html", "utf8"),
+    readFileSync("about/sources-research/index.html", "utf8"),
+    readFileSync("about/feedback-problems/index.html", "utf8"),
+    readFileSync("about/privacy-safety/index.html", "utf8"),
+  ];
+
+  assert.match(sharedHeaderStyles, /\.about-popover a::before \{[\s\S]*grid-row: 1 \/ span 2;[\s\S]*border-radius: 10px/);
+  assert.match(sharedHeaderStyles, /\.about-popover a:nth-child\(1\)::before \{[\s\S]*#8b75aa[\s\S]*%3Ccircle cx='12' cy='8' r='3'/);
+  assert.match(sharedHeaderStyles, /\.about-popover a:nth-child\(2\)::before \{[\s\S]*#6f91b4[\s\S]*%3Ccircle cx='16\.5' cy='16\.5' r='3\.5'/);
+  assert.match(sharedHeaderStyles, /\.about-popover a:nth-child\(4\)::before \{[\s\S]*#568b72[\s\S]*M12 3l7 3v5/);
+  headerPages.forEach((html) => {
+    assert.match(html, /shared-site-header\.css\?v=20260907-transparent-pathway-art-v4/);
+    assert.match(html, /<nav class="about-popover" aria-label="About and support">[\s\S]*Creator &amp; the Project[\s\S]*Sources &amp; Research[\s\S]*Feedback[\s\S]*Privacy &amp; Safety[\s\S]*<\/nav>/);
+    assert.doesNotMatch(html, /About the Site|<strong>Meet the Creator<\/strong>/);
+  });
+});
+
+test("mobile primary navigation reuses the three homepage illustrations", () => {
+  const sharedHeaderStyles = readFileSync("shared-site-header.css", "utf8");
+
+  assert.match(sharedHeaderStyles, /@media \(max-width: 900px\) \{[\s\S]*\.primary-nav a \{[\s\S]*grid-template-columns: 52px minmax\(0, 1fr\)/);
+  assert.match(sharedHeaderStyles, /\.primary-nav a::before \{[\s\S]*width: 52px;[\s\S]*height: 52px;[\s\S]*background-size: contain/);
+  assert.match(sharedHeaderStyles, /a\[href\*="learn\.html"\]::before \{[\s\S]*homepage-learn-chinese-card-v3\.webp/);
+  assert.match(sharedHeaderStyles, /a\[href\*="books\.html"\]::before \{[\s\S]*homepage-textbook-card-v4\.webp/);
+  assert.match(sharedHeaderStyles, /a\[href\*="culture\.html"\]::before \{[\s\S]*homepage-culture-card-v4\.webp/);
+});
+
 test("the mobile menu exposes About and production pages show site copyright", () => {
-  const homePage = readFileSync("index.html", "utf8");
+  const homePage = readFileSync("lesson.html", "utf8");
   const footerSource = readFileSync("site-footer.js", "utf8");
   const cultureTemplate = readFileSync("culture/shared/template.html", "utf8");
   const culturePages = [];
@@ -639,8 +704,23 @@ test("the Chinese landing-page headline is slightly reduced while keeping its or
   assert.match(stylesSource, /\.library-hero h2 \{[\s\S]*font-size: clamp\(1\.3rem, 2\.2vw, 1\.7rem\)[\s\S]*color: var\(--sun\)/);
 });
 
+test("the new homepage keeps its two mobile headline lines visibly separated", () => {
+  const homepage = readFileSync("index.html", "utf8");
+  const homepageStyles = readFileSync("homepage.css", "utf8");
+  assert.match(homepage, /homepage\.css\?v=20260907-canonical-home-v1/);
+  assert.match(homepageStyles, /@media \(max-width: 650px\) \{[\s\S]*\.hero h1 a \{[\s\S]*row-gap: clamp\(8px, 2\.3vw, 12px\);[\s\S]*\.hero h1 \{[\s\S]*line-height: 1\.12;/);
+});
+
+test("the homepage landscape keeps its artwork visible and ends at the featured-story boundary", () => {
+  const homepage = readFileSync("index.html", "utf8");
+  const homepageStyles = readFileSync("homepage.css", "utf8");
+  assert.match(homepage, /<div class="homepage-intro">[\s\S]*<section class="hero"[\s\S]*<nav class="pathways"[\s\S]*<\/nav>\s*<\/div>\s*<section class="featured"/);
+  assert.match(homepageStyles, /\.homepage-intro::before \{[\s\S]*bottom: -18px;[\s\S]*url\("assets\/brand\/homepage-landscape-west-lake-full-v1\.webp"\) center bottom \/ cover no-repeat;/);
+  assert.doesNotMatch(homepageStyles, /body::before/);
+});
+
 test("the landing hero features six scrollable culture-story highlights", () => {
-  const html = readFileSync("index.html", "utf8");
+  const html = readFileSync("lesson.html", "utf8");
   const carouselSource = readFileSync("src/core/story-highlights.js", "utf8");
   assert.match(html, /<section class="story-highlights" data-story-highlights/);
   assert.equal((html.match(/data-story-highlight-dot=/g) ?? []).length, 6);
@@ -655,7 +735,7 @@ test("the landing hero features six scrollable culture-story highlights", () => 
 });
 
 test("culture is an in-page landing view with category cards and no duplicate culture hero", () => {
-  const landingHtml = readFileSync("index.html", "utf8");
+  const landingHtml = readFileSync("lesson.html", "utf8");
   const cultureHtml = readFileSync("culture/index.html", "utf8");
   const stylesSource = readFileSync("styles.css", "utf8");
   assert.match(landingHtml, /href="#culture-panel" data-global-view="culture"/);
@@ -715,9 +795,53 @@ test("Culture stories render their single canonical page.md manuscript", () => {
   assert.match(source, /^title_zh: /m);
   assert.match(bookHtml, /木兰的勇敢旅程/);
   assert.doesNotMatch(bookHtml, /data-reading-version|data-reading-level-button|easyChineseCultureReadingLevel|difficulty-badge/);
-  const catalogHtml = readFileSync("index.html", "utf8");
+  const catalogHtml = readFileSync("lesson.html", "utf8");
   assert.doesNotMatch(catalogHtml, /culture-reading-level|culture-level-picker|culture-difficulty|data-culture-reading-level/);
   assert.equal(existsSync("culture-reading-level.js"), false);
+});
+
+test("Culture story pages reuse the shared header and return to their exact catalog", async () => {
+  const template = readFileSync("culture/shared/template.html", "utf8");
+  const builder = readFileSync("scripts/build_philosophy_page.mjs", "utf8");
+  const catalogLocations = readFileSync("scripts/culture_catalog_locations.mjs", "utf8");
+  const cultureStyles = readFileSync("culture/shared/styles.css", "utf8");
+  const sharedHeaderScript = readFileSync("shared-site-header.js", "utf8");
+  const sharedHeaderStyles = readFileSync("shared-site-header.css", "utf8");
+
+  assert.match(template, /class="site-header culture-story-header"/);
+  assert.match(template, /class="is-current" href="\{\{BACK_HREF\}\}">Culture Stories<\/a>/);
+  assert.match(template, /class="culture-mobile-return" href="\{\{BACK_HREF\}\}">← Return to Catalog<\/a>/);
+  assert.match(template, /class="back-nav"[\s\S]*href="\{\{BACK_HREF\}\}">← Return to Catalog<\/a>/);
+  assert.match(template, /shared-site-header\.css\?v=20260907-transparent-pathway-art-v4/);
+  assert.match(template, /shared-site-header\.js\?v=20260907-culture-story-nav-v1/);
+  assert.match(builder, /loadCultureCatalogLocations/);
+  assert.match(builder, /replaceAll\("\{\{BACK_HREF\}\}", backHref\)/);
+  assert.match(catalogLocations, /storyLocations\.size !== 111/);
+  assert.match(cultureStyles, /@media \(max-width: 900px\) \{\s*\.back-nav \{\s*display: none;/);
+  assert.match(sharedHeaderScript, /siteHeader\?\.classList\.toggle\("is-scrolled"/);
+  assert.match(sharedHeaderStyles, /\.culture-story-header \.culture-mobile-return \{[\s\S]*display: inline-flex/);
+  assert.match(sharedHeaderStyles, /@media \(max-width: 650px\) \{[\s\S]*\.culture-story-header \.culture-mobile-return \{[\s\S]*grid-column: 1 \/ -1;[\s\S]*grid-row: 2;/);
+
+  const locations = await loadCultureCatalogLocations(process.cwd());
+  assert.equal(locations.size, 111);
+  for (const [storyId, location] of locations) {
+    const storyPage = readFileSync(join("culture/books", storyId, "index.html"), "utf8");
+    const catalogHref = `../../../../culture.html#${location}`;
+    assert.match(storyPage, /class="site-header culture-story-header"/, `${storyId} is missing the shared header`);
+    assert.ok(storyPage.includes(`<a class="is-current" href="${catalogHref}">Culture Stories</a>`), `${storyId} has the wrong Culture Stories return`);
+    assert.ok(storyPage.includes(`<a class="culture-mobile-return" href="${catalogHref}">← Return to Catalog</a>`), `${storyId} has the wrong mobile return`);
+    assert.ok(storyPage.includes(`<a href="${catalogHref}">← Return to Catalog</a>`), `${storyId} has the wrong content return`);
+  }
+});
+
+test("the tea story stays with Food and Clothing instead of the Economy builder", async () => {
+  const foodBuilder = readFileSync("scripts/build_food_all.mjs", "utf8");
+  const economyBuilder = readFileSync("scripts/build_economy_all.mjs", "utf8");
+  const locations = await loadCultureCatalogLocations(process.cwd());
+
+  assert.match(foodBuilder, /["']tea["']/);
+  assert.doesNotMatch(economyBuilder, /["']tea["']/);
+  assert.equal(locations.get("food/tea"), "food-clothing/tea-table");
 });
 
 test("Culture generates one previewable output tree under books", () => {
@@ -785,19 +909,80 @@ test("sticky category navigation highlights the final item at the bottom of the 
   assert.match(navigationSource, /let activeBookId = state\.selectedBookId/);
 });
 
-test("direct topic links immediately focus the topic detail for every topic", () => {
-  const landingHtml = readFileSync("index.html", "utf8");
+test("direct topics and book-scoped lessons return to the landing page that opened them", () => {
+  const landingHtml = readFileSync("lesson.html", "utf8");
   const runtimeWiringSource = readFileSync("src/app/runtime-wiring.js", "utf8");
   const navigationSource = readFileSync("src/core/navigation-runtime.js", "utf8");
   const stylesSource = readFileSync("styles.css", "utf8");
-  assert.match(landingHtml, /class="detail-back-nav" aria-label="Return to learning paths"/);
-  assert.match(landingHtml, /href="#topics-panel" data-global-view="topics" data-return-target="topic">← Back to Topics/);
-  assert.match(landingHtml, /class="detail-back-link is-book" href="#books-panel" data-global-view="books" data-return-target="book">← Back to Books/);
-  assert.match(stylesSource, /\.detail-back-nav \{\s*display: flex;/);
-  assert.match(stylesSource, /\.detail-back-link\.is-book \{/);
-  assert.match(runtimeWiringSource, /if \(initialTopicId\) \{\s*requestAnimationFrame\(\(\) => focusLearningPanel\(\)\);/);
+  const topicDetailStyles = readFileSync("topic-detail.css", "utf8");
+  assert.match(landingHtml, /class="site-header topic-site-header"/);
+  assert.match(landingHtml, /class="detail-catalog-return"[\s\S]*data-learning-catalog-return[\s\S]*← Back to Learn by Topic/);
+  assert.match(landingHtml, /class="topic-mobile-return"[\s\S]*data-mobile-learning-return[\s\S]*← Topics/);
+  assert.doesNotMatch(landingHtml, /← Back to Books/);
+  assert.match(landingHtml, /href="learn\.html" data-topic-primary-nav="learn"/);
+  assert.match(landingHtml, /href="books\.html" data-topic-primary-nav="books"/);
+  assert.match(topicDetailStyles, /\.is-topic-page \.topic-site-header \{\s*display: grid;/);
+  assert.match(topicDetailStyles, /\.is-topic-page \.global-view-menu,[\s\S]*\.is-topic-page \.learning-culture-nav \{\s*display: none;/);
+  assert.match(navigationSource, /const lessonNumber = state\.lessonScope\?\.lessonNumber/);
+  assert.match(navigationSource, /\? `books\.html#\$\{bookId\}\/\$\{lessonNumber\}`/);
+  assert.match(navigationSource, /: `learn\.html#\$\{catalogPathForTopic\(state\.selectedTopicId\)\}`/);
+  assert.match(navigationSource, /document\.querySelectorAll\("\[data-learning-catalog-return\]"\)/);
+  assert.match(navigationSource, /\? `← Book \$\{bookId\.toUpperCase\(\)\}`/);
+  assert.match(navigationSource, /\? "← Back to Book Lessons"/);
+  assert.match(navigationSource, /: "← Back to Learn by Topic"/);
+  assert.match(navigationSource, /scrollToSectionTop\(detailLayout, \{ includeTopicHeader: true \}\)/);
+  assert.match(navigationSource, /document\.querySelector\("\.topic-site-header"\)\?\.getBoundingClientRect\(\)\.height/);
+  assert.match(topicDetailStyles, /@media \(max-width: 900px\)[\s\S]*\.topic-mobile-return \{[\s\S]*display: inline-flex;/);
+  assert.match(runtimeWiringSource, /if \(initialTopicId\) \{[\s\S]*requestAnimationFrame\(\(\) => \{[\s\S]*window\.scrollTo\(0, 0\);/);
   assert.match(navigationSource, /state\.topicPageOpen = true;\s*syncBookSelectionFromTopic\(\);\s*renderTopics\(\);/);
   assert.match(stylesSource, /html \{\s*scroll-behavior: auto;/);
+});
+
+test("lesson pages keep only the course canvas and interactive content cards", () => {
+  const indexHtml = readFileSync("lesson.html", "utf8");
+  const runtimeSource = readFileSync("src/core/topic-detail-runtime.js", "utf8");
+  const topicDetailStyles = readFileSync("topic-detail.css", "utf8");
+  assert.match(indexHtml, /topic-detail\.css\?v=20260907-selection-grid-v1/);
+  assert.match(indexHtml, /app\.js\?v=20260907-selection-grid-v1/);
+  assert.match(runtimeSource, /topicLessonStrip\.classList\.toggle\("is-book-scope", Boolean\(state\.lessonScope\)\)/);
+  assert.match(topicDetailStyles, /\.is-topic-page \.topic-lesson-strip\.is-book-scope \.topic-lesson-card \{[\s\S]*border: 0;[\s\S]*background: rgba\(234, 245, 242, 0\.72\)/);
+  assert.match(topicDetailStyles, /\.is-topic-page \.focus-card \{[\s\S]*border-top: 1px solid rgba\(25, 91, 92, 0\.14\);[\s\S]*background: transparent;/);
+  assert.match(topicDetailStyles, /\.is-topic-page \.school-scene-card \.school-scene-image,[\s\S]*\.greetings-scene-image \{[\s\S]*border: 0;/);
+});
+
+test("Review, Book Words, and practice selections use the migrated teal highlight", () => {
+  const indexHtml = readFileSync("lesson.html", "utf8");
+  const topicDetailStyles = readFileSync("topic-detail.css", "utf8");
+  assert.match(indexHtml, /topic-detail\.css\?v=20260907-selection-grid-v1/);
+  assert.match(topicDetailStyles, /\.is-topic-page \.focus-word-button\.is-selected \{[\s\S]*rgba\(37, 117, 114, 0\.2\)[\s\S]*#dcefeb/);
+  assert.match(topicDetailStyles, /\.is-topic-page \.greetings-line-card\[role="button"\]\.is-audio-playing/);
+  assert.match(topicDetailStyles, /\.is-topic-page \.polite-match-card\.is-selected:not\(\.is-correct\):not\(\.is-wrong\):not\(\.is-solved\)/);
+  assert.match(topicDetailStyles, /\.is-topic-page \.family-sentence-builder \.numbers-game-option\.is-selected:not\(\.is-correct\):not\(\.is-wrong\)/);
+});
+
+test("Numbers uses the migrated teal-and-white surfaces throughout the lesson", () => {
+  const indexHtml = readFileSync("lesson.html", "utf8");
+  const navigationSource = readFileSync("src/core/navigation-runtime.js", "utf8");
+  const topicDetailStyles = readFileSync("topic-detail.css", "utf8");
+
+  assert.match(indexHtml, /topic-detail\.css\?v=20260907-selection-grid-v1/);
+  assert.match(navigationSource, /document\.body\.dataset\.topicId = state\.selectedTopicId/);
+  assert.match(topicDetailStyles, /\[data-topic-id="numbers"\] \.numbers-showcase-card/);
+  assert.match(topicDetailStyles, /\[data-topic-id="numbers"\] \.numbers-game-visual/);
+  assert.match(topicDetailStyles, /\[data-topic-id="numbers"\] \.focus-word-list\.is-number-word-list \.focus-word-button/);
+  assert.match(topicDetailStyles, /\[data-topic-id="numbers"\] \.numbers-game-option/);
+  assert.doesNotMatch(topicDetailStyles, /\[data-topic-id="numbers"\][\s\S]{0,180}(?:#fff8f1|#efe2cc|#fff9f3|#f2e7d5)/);
+});
+
+test("Book Words and their Food category tabs stay readable at half-width and tablet widths", () => {
+  const indexHtml = readFileSync("lesson.html", "utf8");
+  const styles = readFileSync("styles.css", "utf8");
+
+  assert.match(indexHtml, /styles\.css\?v=20260907-selection-grid-v1/);
+  assert.match(styles, /@media \(max-width: 1180px\)[\s\S]*\.school-word-grid:not\(\.is-text-only\)[\s\S]*grid-template-columns: repeat\(2, minmax\(0, 1fr\)\)/);
+  assert.match(styles, /@media \(max-width: 1180px\)[\s\S]*\.food-book-tabs:not\(\.lesson-word-tabs\) \{[\s\S]*grid-template-columns: repeat\(3, minmax\(0, 1fr\)\)/);
+  assert.match(styles, /@media \(max-width: 520px\)[\s\S]*\.food-book-tabs:not\(\.lesson-word-tabs\)[\s\S]*grid-template-columns: repeat\(2, minmax\(0, 1fr\)\)/);
+  assert.match(styles, /\.book-word-card \.time-asset-pinyin,[\s\S]*\.book-word-card \.time-asset-english \{[\s\S]*overflow-wrap: anywhere/);
 });
 
 test("the generated bundle keeps its source-of-truth marker", () => {
@@ -826,11 +1011,28 @@ test("Pinyin covers the complete primary-school sound and spelling path", () => 
 
 test("Pinyin keeps each chapter in a listen, choose, then build learning loop", () => {
   const runtimeSource = readFileSync("src/features/foundations/pinyin-runtime.js", "utf8");
+  const topicDetailCss = readFileSync("topic-detail.css", "utf8");
   assert.match(runtimeSource, /data-pinyin-listen/);
   assert.match(runtimeSource, /data-pinyin-practice-choice/);
   assert.match(runtimeSource, /data-pinyin-build-piece/);
   assert.match(runtimeSource, /data-pinyin-group/);
+  assert.match(runtimeSource, /is-selected is-\$\{toneResult\}/);
+  assert.match(runtimeSource, /aria-pressed="\$\{Boolean\(isSelected\)\}"/);
+  assert.match(topicDetailCss, /\.pinyin-tone-choice\.is-correct,[\s\S]*background: linear-gradient\(180deg, #def0ec, #c8e5df\)/);
+  assert.match(topicDetailCss, /\.pinyin-tone-choice\.is-selected,[\s\S]*border-width: 2px/);
+  assert.match(runtimeSource, /audioButton\.classList\.toggle\("is-selected", isSelected\)/);
+  assert.match(runtimeSource, /audioButton\.setAttribute\("aria-pressed", String\(isSelected\)\)/);
+  assert.match(topicDetailCss, /\.pinyin-sound-chip\.is-selected,[\s\S]*\.pinyin-tone-row > button\.is-selected,[\s\S]*\.pinyin-word-audio\.is-selected[\s\S]*#c8e5df/);
   assert.doesNotMatch(runtimeSource, /data-pinyin-unit-select/);
+});
+
+test("Chinese Strokes removes its redundant container while keeping the teaching cards", () => {
+  const indexHtml = readFileSync("lesson.html", "utf8");
+  const topicDetailStyles = readFileSync("topic-detail.css", "utf8");
+
+  assert.match(indexHtml, /topic-detail\.css\?v=20260907-selection-grid-v1/);
+  assert.match(topicDetailStyles, /\.is-topic-page \.stroke-lab \{[\s\S]*padding: 0;[\s\S]*border: 0;[\s\S]*border-radius: 0;[\s\S]*background: transparent;/);
+  assert.match(topicDetailStyles, /\.is-topic-page \.stroke-lab \{[\s\S]*?\}/);
 });
 
 test("Review images start together while game art stays lazy", () => {
@@ -1483,11 +1685,11 @@ test("audio prefers Tingting over other installed Chinese voices", () => {
 });
 
 test("router preserves the existing topic query and detail hash contract", () => {
-  const location = { pathname: "/index.html", search: "?topic=weekdays", hash: "#topic-detail" };
+  const location = { pathname: "/lesson.html", search: "?topic=weekdays", hash: "#topic-detail" };
   assert.equal(topicIdFromLocation(location, (id) => id === "weekdays"), "weekdays");
   assert.equal(viewFromLocation(location), "topics");
-  assert.equal(topicPageUrl(location, "time-date"), "/index.html?topic=time-date#topic-detail");
-  assert.equal(topicPageUrl(location, "family", { bookId: "1b", lessonNumber: 2 }), "/index.html?topic=family&book=1b&lesson=2#topic-detail");
+  assert.equal(topicPageUrl(location, "time-date"), "/lesson.html?topic=time-date");
+  assert.equal(topicPageUrl(location, "family", { bookId: "1b", lessonNumber: 2 }), "/lesson.html?topic=family&book=1b&lesson=2");
   assert.deepEqual(lessonScopeFromLocation({ pathname: "/", search: "?topic=family&book=1b&lesson=2", hash: "#topic-detail" }, books, "family"), { bookId: "1b", lessonNumber: 2 });
   assert.equal(lessonScopeFromLocation({ pathname: "/", search: "?topic=family&book=1b&lesson=2", hash: "#topic-detail" }, books, "numbers"), null);
   assert.doesNotMatch(topicPageUrl({ pathname: "/", search: "", hash: "" }, "time-date"), /^undefined/);
@@ -1703,7 +1905,7 @@ globalThis.document = {
   createElement: makeElement, body: makeElement(), documentElement: { style: { scrollBehavior: "" } }
 };
 globalThis.window = {
-  location: { pathname: "/index.html", search: \`?topic=\${process.env.TOPIC}\`, hash: "#topic-detail" },
+  location: { pathname: "/lesson.html", search: \`?topic=\${process.env.TOPIC}\`, hash: "#topic-detail" },
   history: { pushState() {}, replaceState() {} }, addEventListener() {}, setTimeout, clearTimeout,
   scrollY: 0, scrollTo() {}, speechSynthesis: { cancel() {}, speak() {}, getVoices() { return []; } }
 };
@@ -2498,14 +2700,14 @@ test("learner audio controls use the shared green Play button", () => {
   assert.match(styles, /\.multiplication-detail-card \.numbers-game-top \.small-button \{[\s\S]*position: absolute/);
 });
 
-test("navigation display toggles use the compact speaker, Pī, and ABC icon set", () => {
+test("navigation display toggles use the compact speaker, Pin, and En icon set", () => {
   const navigationSource = readFileSync("src/core/navigation-runtime.js", "utf8");
   const displaySource = readFileSync("src/core/display-controls-runtime.js", "utf8");
   const styles = readFileSync("styles.css", "utf8");
 
   assert.match(navigationSource, /aria-label="Sound on"/);
   assert.match(displaySource, /learning-display-sound-icon/);
-  assert.match(displaySource, /learning-display-pinyin-icon[\s\S]*>Pīn</);
+  assert.match(displaySource, /learning-display-pinyin-icon[\s\S]*>Pin</);
   assert.match(displaySource, /learning-display-english-icon[\s\S]*>En</);
   assert.match(styles, /\.learning-display-toggle \{[\s\S]*width: 56px/);
 });
@@ -2696,6 +2898,89 @@ test("the shared curriculum retains its books and learning navigation", () => {
   assert.equal(topicCardMeta.strokes.zhTitle, "笔画");
   assert.equal(topicCardMeta.pictographs.zhTitle, "象形文字");
   assert.equal(topicCardMeta["school-subjects"].zhTitle, "学校学科");
+});
+
+test("the Learn landing page adds second-level catalogs only where they clarify larger categories", () => {
+  const learnHtml = readFileSync("learn.html", "utf8");
+  const learnSource = readFileSync("learn.js", "utf8");
+  const allTopicIds = learningHomeCategories.flatMap((category) => category.topicIds);
+  const categoriesWithSubcatalogs = learningHomeCategories.filter(
+    (category) => category.subcatalogs?.length
+  );
+
+  assert.equal(allTopicIds.length, 43);
+  assert.equal(new Set(allTopicIds).size, allTopicIds.length);
+  assert.ok(allTopicIds.every((topicId) => topicCardMeta[topicId]));
+  assert.deepEqual(
+    categoriesWithSubcatalogs.map((category) => category.id),
+    ["foundations", "me-family", "time-daily", "school-life", "world", "play"]
+  );
+  categoriesWithSubcatalogs.forEach((category) => {
+    const groupedTopicIds = category.subcatalogs.flatMap((subcatalog) => {
+      assert.ok(subcatalog.topicIds.length >= 2);
+      return subcatalog.topicIds;
+    });
+    assert.deepEqual(new Set(groupedTopicIds), new Set(category.topicIds));
+    assert.equal(groupedTopicIds.length, category.topicIds.length);
+  });
+  assert.equal(learningHomeCategories.find((category) => category.id === "special-topics")?.subcatalogs, undefined);
+  assert.equal(learningHomeCategories.find((category) => category.id === "food")?.subcatalogs, undefined);
+  assert.match(learnHtml, /learn\.css\?v=20260907-selection-grid-v1/);
+  assert.match(learnHtml, />Choose a subcatalog</);
+  assert.match(learnHtml, /data-subcatalogs/);
+  assert.match(learnSource, /const subcatalogForTopic =/);
+  assert.match(learnSource, /subcatalog\?\.topicIds \?\? category\.topicIds/);
+  assert.match(learnSource, /category\.subcatalogs\?\.\[0\]\?\.id \?\? ""/);
+  assert.doesNotMatch(learnSource, /scrollIntoView/);
+});
+
+test("wrapped catalog and lesson selectors keep every option at the same column width", () => {
+  const learnSource = readFileSync("learn.js", "utf8");
+  const learnStyles = readFileSync("learn.css", "utf8");
+  const cultureSource = readFileSync("culture.js", "utf8");
+  const cultureStyles = readFileSync("culture.css", "utf8");
+  const topicSource = readFileSync("src/core/topic-detail-runtime.js", "utf8");
+  const topicStyles = readFileSync("topic-detail.css", "utf8");
+
+  assert.match(learnSource, /subcatalogsElement\.dataset\.selectionCount = String\(subcatalogs\.length\)/);
+  assert.match(cultureSource, /subcatalogsElement\.dataset\.selectionCount = String\(catalog\.subcatalogs\.length\)/);
+  assert.match(topicSource, /topicLessonStrip\.dataset\.selectionCount = String\(selectionCount\)/);
+  assert.match(learnStyles, /grid-template-columns: repeat\(var\(--selection-count, 1\), minmax\(0, 1fr\)\)/);
+  assert.match(cultureStyles, /grid-template-columns: repeat\(var\(--selection-count, 1\), minmax\(0, 1fr\)\)/);
+  assert.doesNotMatch(cultureStyles, /\.subcatalog-button \{[\s\S]{0,240}flex: 1 1/);
+  assert.match(topicStyles, /topic-lesson-strip\[data-selection-count="4"\][\s\S]*repeat\(3, minmax\(0, 1fr\)\)/);
+});
+
+test("the Book Lessons landing page exposes all eight books and their scoped lesson links", () => {
+  const booksHtml = readFileSync("books.html", "utf8");
+  const booksSource = readFileSync("books.js", "utf8");
+  const booksStyles = readFileSync("books.css", "utf8");
+  const navigationPages = [
+    readFileSync("index.html", "utf8"),
+    readFileSync("learn.html", "utf8"),
+    readFileSync("culture.html", "utf8"),
+  ];
+
+  assert.equal(books.length, 8);
+  assert.equal(books.reduce((total, book) => total + book.lessons.length, 0), 56);
+  assert.ok(books.every((book) => book.lessons.length === 7));
+  assert.ok(books.every((book) => book.lessons.every((lesson) => lesson.displayTitle?.zh && lesson.displayTitle?.en)));
+  assert.match(booksHtml, /<h1 id="books-heading">Book Lessons<\/h1>/);
+  assert.match(booksHtml, /data-book-catalogs/);
+  assert.match(booksHtml, /data-lesson-grid/);
+  assert.match(booksHtml, /class="is-current" href="books\.html">Book Lessons<\/a>/);
+  assert.match(booksSource, /new URLSearchParams\(\{[\s\S]*topic: lesson\.topicId,[\s\S]*book: book\.id,[\s\S]*lesson: String\(lesson\.lesson\)/);
+  assert.match(booksSource, /return `lesson\.html\?\$\{params\.toString\(\)\}`/);
+  assert.match(booksSource, /history\.replaceState\(null, "", `#\$\{book\.id\}`\)/);
+  assert.match(booksSource, /location\.hash\.slice\(1\)\.toLowerCase\(\)\.split\("\/"\)/);
+  assert.match(booksSource, /lesson\.lesson === selectedLessonNumber \? " is-selected"/);
+  assert.match(booksStyles, /\.book-lesson-card\.is-selected/);
+  assert.doesNotMatch(booksSource, /scrollIntoView/);
+  assert.match(booksStyles, /\.book-code,[\s\S]*\.selected-book-code/);
+  navigationPages.forEach((html) => {
+    assert.match(html, /href="books\.html">Book Lessons<\/a>/);
+    assert.doesNotMatch(html, /index\.html\?view=books#books-panel/);
+  });
 });
 
 test("numbers keeps its counting stages while My Family 2 owns 4A Lesson 1", () => {

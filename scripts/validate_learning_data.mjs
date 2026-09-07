@@ -199,6 +199,24 @@ for (const category of [...topicGroups, ...learningHomeCategories]) {
   assertUnique(category.topicIds, `topic reference in category ${category.id}`);
   category.topicIds.forEach((topicId) => assert(curriculumTopicIds.has(topicId), `category references an unknown topic: ${topicId}`));
 }
+for (const category of learningHomeCategories) {
+  if (!category.subcatalogs?.length) continue;
+  assertUnique(category.subcatalogs.map((subcatalog) => subcatalog.id), `subcatalog ID in category ${category.id}`);
+  const subcatalogTopicIds = category.subcatalogs.flatMap((subcatalog) => {
+    assert(
+      subcatalog.topicIds.length >= 2,
+      `subcatalog ${category.id}/${subcatalog.id} should group related topics instead of wrapping a single topic`
+    );
+    assertUnique(subcatalog.topicIds, `topic reference in subcatalog ${category.id}/${subcatalog.id}`);
+    return subcatalog.topicIds;
+  });
+  assertUnique(subcatalogTopicIds, `topic reference across subcatalogs in category ${category.id}`);
+  assert(
+    subcatalogTopicIds.length === category.topicIds.length &&
+      category.topicIds.every((topicId) => subcatalogTopicIds.includes(topicId)),
+    `subcatalogs in category ${category.id} must cover its topics exactly once`
+  );
+}
 
 if (errors.length) {
   console.error(errors.join("\n"));

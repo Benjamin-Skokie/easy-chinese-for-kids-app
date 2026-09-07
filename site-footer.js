@@ -1,9 +1,18 @@
 (() => {
+  const siteRoot = new URL(".", document.currentScript.src);
+
+  if (document.querySelector(".book") && !document.querySelector("[data-article-theme]")) {
+    const articleTheme = document.createElement("link");
+    articleTheme.rel = "stylesheet";
+    articleTheme.href = new URL("culture/shared/article-theme.css?v=20260907-v1", siteRoot);
+    articleTheme.dataset.articleTheme = "";
+    document.head.append(articleTheme);
+  }
+
   if (document.querySelector("[data-site-copyright]")) {
     return;
   }
 
-  const siteRoot = new URL(".", document.currentScript.src);
   const guideImage = new URL("assets/brand/zongzi-guide.webp?v=20260830-hq2", siteRoot);
   const footer = document.createElement("footer");
   footer.className = "site-copyright";
@@ -27,8 +36,8 @@
       width: min(1120px, calc(100vw - 40px));
       margin: 24px auto 0;
       padding: 22px 0 34px;
-      border-top: 1px solid rgba(45, 34, 24, 0.12);
-      color: #74695e;
+      border-top: 1px solid rgba(25, 91, 92, 0.14);
+      color: #627879;
       font-family: "Avenir Next", "Trebuchet MS", "Helvetica Neue", sans-serif;
       font-size: 0.78rem;
       line-height: 1.5;
@@ -48,7 +57,7 @@
       display: block;
     }
     .site-copyright strong {
-      color: #5f574f;
+      color: #274849;
       font-size: 0.78rem;
     }
     .site-copyright small {

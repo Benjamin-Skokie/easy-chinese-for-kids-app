@@ -1,7 +1,7 @@
 # Numbers
 
 Status: `partial`  
-URL: `index.html?topic=numbers#topic-detail`
+URL: `lesson.html?topic=numbers`
 
 ## Cross-book progression
 

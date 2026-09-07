@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Culture Stories — Nihao World</title>
+    <meta
+      name="description"
+      content="Browse 111 bilingual stories through eight clear catalogs of Chinese history and culture."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Lora:ital,wght@0,600;0,700;1,600;1,700&amp;family=Newsreader:opsz,wght@6..72,500;6..72,600&amp;family=Noto+Sans+SC:wght@500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="culture.css?v=20260907-selection-grid-v1" />
+    <link rel="stylesheet" href="shared-site-header.css?v=20260907-transparent-pathway-art-v4" />
+    <script src="culture.js?v=20260907-selection-grid-v1" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="Nihao World home">
+        <img src="assets/brand/zongzi-guide.webp" alt="" width="768" height="768" />
+        <span class="brand-wordmark">
+          <span class="brand-nihao">Nihao</span><span class="brand-world">World</span>
+        </span>
+      </a>
+
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="primary-navigation"
+        aria-label="Open navigation"
+      >
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="primary-nav" id="primary-navigation" aria-label="Primary navigation">
+        <a href="learn.html">Learn Chinese</a>
+        <a href="books.html">Book Lessons</a>
+        <a class="is-current" href="culture.html">Culture Stories</a>
+      </nav>
+
+      <details class="about-menu">
+        <summary>About</summary>
+        <nav class="about-popover" aria-label="About and support">
+          <a href="about/author-project/index.html">
+            <strong>Creator &amp; the Project</strong>
+            <small>The creator and story behind Nihao World</small>
+          </a>
+          <a href="about/sources-research/index.html">
+            <strong>Sources &amp; Research</strong>
+            <small>References behind the content</small>
+          </a>
+          <a href="about/feedback-problems/index.html">
+            <strong>Feedback</strong>
+            <small>Share an idea or report a problem</small>
+          </a>
+          <a href="about/privacy-safety/index.html">
+            <strong>Privacy &amp; Safety</strong>
+            <small>How the site protects learners</small>
+          </a>
+        </nav>
+      </details>
+    </header>
+
+    <main class="culture-shell">
+      <section class="catalog-intro" aria-labelledby="catalog-heading">
+        <div>
+          <h1 id="catalog-heading">Main Catalog</h1>
+          <p>Choose one to begin.</p>
+        </div>
+        <p class="collection-count"><strong data-total-stories>111</strong><span>stories</span></p>
+      </section>
+
+      <p class="loading-message" data-loading-message role="status">Loading the story catalogs…</p>
+
+      <nav class="main-catalogs" aria-label="Main story catalogs" data-main-catalogs></nav>
+
+      <section class="catalog-browser" data-catalog-browser hidden>
+        <header class="selected-catalog">
+          <span class="selected-icon" data-selected-icon aria-hidden="true"></span>
+          <div>
+            <h2><span data-selected-zh></span><span data-selected-en></span></h2>
+          </div>
+          <p class="selected-count"><strong data-selected-count></strong><span>stories</span></p>
+        </header>
+
+        <p class="subcatalog-prompt">Choose a subcatalog</p>
+        <nav class="subcatalogs" aria-label="Subcatalogs" data-subcatalogs></nav>
+
+        <section class="stories-section" aria-labelledby="stories-heading">
+          <header class="stories-heading">
+            <div>
+              <p class="eyebrow">Stories</p>
+              <h2 id="stories-heading" data-subcatalog-title></h2>
+            </div>
+            <p><strong data-story-count></strong><span> stories</span></p>
+          </header>
+          <div class="story-grid" data-story-grid></div>
+        </section>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <img src="assets/brand/zongzi-guide.webp" alt="" width="768" height="768" />
+      <div>
+        <strong>Made with curiosity, care, and technology.</strong>
+        <span>© 2026 Nihao World. All rights reserved.</span>
+      </div>
+    </footer>
+  </body>
+</html>

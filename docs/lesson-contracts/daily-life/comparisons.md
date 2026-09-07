@@ -1,7 +1,7 @@
 # Descriptions & Comparisons
 
-Status: `partial`  
-URL: `index.html?topic=comparisons#topic-detail`  
+Status: `partial`
+URL: `lesson.html?topic=comparisons`
 Mapped lesson: **2B Lesson 6 — Big or small**
 
 ## Cross-book progression

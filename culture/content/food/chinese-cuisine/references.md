@@ -235,7 +235,7 @@ Accessed: 2026-08-21
 
 Supports:
 
-- Modern composite using shrimp, fish, waterways, and a Zhejiang locator map.
+- Modern composite using shrimp with tea leaves, fish, and a lakeside landscape.
 
 Editorial boundary:
 

@@ -1,7 +1,7 @@
 # Time & Routines
 
 Status: `complete`
-URL: `index.html?topic=time-date#topic-detail`
+URL: `lesson.html?topic=time-date`
 
 ## Cross-book progression
 

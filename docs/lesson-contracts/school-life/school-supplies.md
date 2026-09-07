@@ -1,7 +1,7 @@
 # Stationery & Backpack
 
-Status: `partial`  
-URL: `index.html?topic=school-supplies#topic-detail`  
+Status: `partial`
+URL: `lesson.html?topic=school-supplies`
 Mapped lesson: **3B Lesson 1 — My schoolbag**
 
 ## Cross-book progression

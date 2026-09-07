@@ -1914,7 +1914,7 @@ h4 {
 
 .topic-lesson-strip {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(132px, 1fr));
+  grid-template-columns: repeat(var(--selection-count, 1), minmax(0, 1fr));
   gap: 10px;
   margin-top: 14px;
 }
@@ -7022,6 +7022,18 @@ h4 {
 
 .book-word-card .time-asset-hanzi,
 .book-word-card .time-asset-pinyin,
+.book-word-card .time-asset-english {
+  max-width: 100%;
+  white-space: normal;
+}
+
+.book-word-card .time-asset-pinyin,
+.book-word-card .time-asset-english {
+  overflow-wrap: anywhere;
+}
+
+.book-word-card .time-asset-hanzi,
+.book-word-card .time-asset-pinyin,
 .book-word-card .time-asset-english,
 .book-word-card .time-asset-context,
 .book-word-card .time-asset-context-pinyin,
@@ -11264,6 +11276,19 @@ h4 {
   .learning-home-board {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
+
+  /* Image-and-copy Book Words need more horizontal room than text-only cards.
+     Switch before an iPad or half-width desktop reaches the cramped state. */
+  .school-word-grid:not(.is-text-only),
+  .time-asset-grid:not(.time-asset-grid-date):not(.time-asset-grid-month):not(.time-asset-grid-week):not(.time-asset-grid-clock) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  /* The complete Food topic has five category tabs. Give each bilingual
+     label a real column at iPad and half-width desktop sizes. */
+  .food-book-tabs:not(.lesson-word-tabs) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 }
 
 @media (min-width: 901px) {
@@ -11810,7 +11835,8 @@ h4 {
     font-size: 1.2rem;
   }
 
-  .food-book-tabs {
+  .food-book-tabs,
+  .food-book-tabs:not(.lesson-word-tabs) {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 

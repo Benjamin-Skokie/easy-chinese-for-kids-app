@@ -45,14 +45,18 @@ export function createDisplayControlsRuntime(context) {
     });
 
     toggleArabicButton.classList.toggle("is-hidden", topic.id !== "numbers");
-    learningCultureNav?.querySelectorAll("[data-display-toggle]").forEach((button) => {
+    const displayToggles =
+      learningCultureNav?.ownerDocument?.querySelectorAll?.("[data-display-toggle]") ??
+      learningCultureNav?.querySelectorAll("[data-display-toggle]") ??
+      [];
+    displayToggles.forEach((button) => {
       const control = button.dataset.displayToggle;
       const enabled = control === "sound" ? state.tapAudioEnabled : control === "pinyin" ? state.showPinyin : state.showEnglish;
       const label = control === "sound" ? "Sound" : control === "pinyin" ? "Pinyin" : "English";
       const icon = control === "sound"
         ? '<svg class="learning-display-sound-icon" viewBox="0 0 32 32" aria-hidden="true"><path d="M5 13h6l8-6v18l-8-6H5z" fill="currentColor" stroke="currentColor" stroke-linejoin="round"/><path d="M23 12c2 2 2 6 0 8M26 9c4 4 4 10 0 14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>'
         : control === "pinyin"
-          ? '<span class="learning-display-letter-icon learning-display-pinyin-icon" aria-hidden="true">Pīn</span>'
+          ? '<span class="learning-display-letter-icon learning-display-pinyin-icon" aria-hidden="true">Pin</span>'
           : '<span class="learning-display-letter-icon learning-display-english-icon" aria-hidden="true">En</span>';
       button.classList.toggle("is-toggle-active", enabled);
       button.classList.toggle("is-toggle-inactive", !enabled);

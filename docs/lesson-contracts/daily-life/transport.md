@@ -1,7 +1,7 @@
 # Transportation
 
 Status: `complete`
-URL: `index.html?topic=transport#topic-detail`  
+URL: `lesson.html?topic=transport`
 Mapped lesson: **4A Lesson 6 — Means of transport**
 
 ## Cross-book progression

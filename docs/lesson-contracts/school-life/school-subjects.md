@@ -1,7 +1,7 @@
 # School Subjects
 
-Status: `partial`  
-URL: `index.html?topic=school-subjects#topic-detail`  
+Status: `partial`
+URL: `lesson.html?topic=school-subjects`
 Mapped lesson: **4B Lesson 6 — School subjects**
 
 ## Cross-book progression

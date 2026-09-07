@@ -1,7 +1,7 @@
 # Food Preferences
 
-Status: `partial`  
-URL: `index.html?topic=food-preferences#topic-detail`  
+Status: `partial`
+URL: `lesson.html?topic=food-preferences`
 Mapped lesson: **3B Lesson 5 — Food and drink**
 
 ## Cross-book progression

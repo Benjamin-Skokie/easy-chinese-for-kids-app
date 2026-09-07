@@ -1,7 +1,7 @@
 # Grammar Visuals
 
 Status: `implemented`
-URL: `index.html?topic=is-it#topic-detail` — the `是不是` visual has an optional Start Speaking owner; the other visuals remain shared supporting assets.
+URL: `lesson.html?topic=is-it` — the `是不是` visual has an optional Start Speaking owner; the other visuals remain shared supporting assets.
 
 ## Confirmed language and scope
 

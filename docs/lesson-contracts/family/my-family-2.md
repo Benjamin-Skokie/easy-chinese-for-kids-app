@@ -1,7 +1,7 @@
 # My Family 2
 
 Status: `implemented`
-URL: `index.html?topic=telephone-numbers#topic-detail`
+URL: `lesson.html?topic=telephone-numbers`
 Category: **Me & Family**
 Mapped lesson: **4A Lesson 1 — Telephone numbers**
 

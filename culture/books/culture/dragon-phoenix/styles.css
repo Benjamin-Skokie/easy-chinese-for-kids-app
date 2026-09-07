@@ -440,3 +440,9 @@ h1, h2, h3, h4 {
 .back-nav a:hover {
   background: rgba(200, 164, 92, 0.15);
 }
+
+@media (max-width: 900px) {
+  .back-nav {
+    display: none;
+  }
+}
