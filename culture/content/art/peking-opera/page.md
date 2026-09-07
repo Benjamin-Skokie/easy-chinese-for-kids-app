@@ -1,6 +1,6 @@
 ---
-title_zh: 台上没有马，为什么你却看见了马？
-title_en: There Is No Horse on Stage—So Why Can You See One?
+title_zh: 京剧：台上没有马，为什么你却看见了马？
+title_en: Peking Opera: There Is No Horse on Stage—So Why Can You See One?
 slug: peking-opera
 category: art
 difficulty: 简单
@@ -9,8 +9,8 @@ style_notes: "用 --- 分隔 frontmatter；正文强调优先用 *斜体*；尽�
 ---
 
 [hero]
-title_zh: 台上没有马，为什么你却看见了马？
-title_en: There Is No Horse on Stage—So Why Can You See One?
+title_zh: 京剧：台上没有马，为什么你却看见了马？
+title_en: Peking Opera: There Is No Horse on Stage—So Why Can You See One?
 [/hero]
 
 [section]
@@ -18,7 +18,7 @@ page: 1
 layout: text-wrap-image
 heading_zh: 舞台会给你线索
 heading_en: The Stage Gives You Clues
-image: invisible-horse-rider.webp
+image: peking-opera-riding-whip-illustration.webp
 caption_zh: 舞台上没有马；演员用马鞭、脚步和身体动作，让观众看见一匹想象中的马。
 caption_en: There is no horse onstage; the whip and the performer's movements bring one to life in the audience's imagination.
 [zh]

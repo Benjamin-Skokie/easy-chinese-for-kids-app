@@ -16,27 +16,39 @@ title_en: Ancient Warships: When the Battlefield Moved onto Water
 page: 1
 layout: text-wrap-image
 heading_zh: 一支“投降”的船队
-heading_en: A Ship Coming to Surrender
-image: 5-3-red-cliffs-fire-ships.webp
+heading_en: A Fleet Coming to Surrender
+image: 5-3-red-cliffs-connected-fleet.webp
 caption_zh: 赤壁火攻中，点燃的船只顺着强风冲向连在一起的船队。
 caption_en: At Red Cliffs, burning ships race with the strong wind toward the connected fleet.
 [zh]
-大约一千八百年前，两支军队隔着[[长江|yangtze-river]]对峙。[[曹操|cao-cao]]的船队停在北岸，另一边则是[[周瑜|zhou-yu]]等人带领的军队。这时候，几艘船朝曹操的船队开了过去。看起来，它们是来投降的。
+大约一千八百年前，[[曹操|cao-cao]]带着一支大军来到[[长江|yangtze-river]]边，准备继续向南。很多士兵来自北方。他们会在陆地上打仗，却不习惯在水上作战。一路行军后，军中还有很多人生病了。江对面，[[周瑜|zhou-yu]]和他的军队准备拦住他们。
 
-史书记载，一位叫[[黄盖|huang-gai]]的将领早已送去书信，假装要投降。他准备的船里却装满了干草和油料。船越来越近以后，黄盖下令点火。当时风势很猛。燃烧的船顺风冲向曹操的船队。史书说，曹操的船“首尾相接”，大火很快烧到了其他船只和岸边营地，曹军只好撤退。
+一本很早的史书说，曹操的许多船首尾相连，却没有说为什么。很久以后，小说《三国演义》说，北方士兵坐船容易晕，所以曹操把船用铁链连起来，让甲板更稳。不过，这是小说里的说法，不是那本早期史书记下的原因。
 
-这就是著名的赤壁之战。这个故事还有一个很有意思的地方：到了水上，船不只是把士兵送到战场的工具，**船自己就是战场的一部分。**
+[[黄盖|huang-gai]]发现了一个危险：如果一艘木船起火，旁边连着的船可能来不及逃开。
 
-它得对付脚下的水、四周的风，还要躲开敌人的攻击。
+黄盖给曹操送去一封信。他假装要投降，说自己愿意加入曹操的军队。可是，他准备的船里偷偷装满了干草、木柴和油。
+
+这些船靠近时，曹操的士兵以为黄盖真的来投降了。黄盖却下令点火。强风把燃烧的船吹向曹操的船队。大火从一艘船烧到另一艘船，还烧到了岸边的营地。曹操的军队只好撤退。
+
+这场战斗就是著名的赤壁之战。它告诉我们一件重要的事：水战中，船不只是把士兵送到战场，船自己也是战斗的一部分。
+
+船要在水和风中前进，还要躲开敌人的攻击。
 [/zh]
 [en]
-About 1,800 years ago, two armies faced each other across the [[Yangtze River|yangtze-river]]. One side belonged to [[Cao Cao|cao-cao]], whose ships were gathered along the northern bank. On the other side was a smaller force led by commanders including [[Zhou Yu|zhou-yu]]. Then several ships began moving toward Cao Cao’s fleet. They seemed to be coming to surrender.
+About 1,800 years ago, [[Cao Cao|cao-cao]] led a large army to the [[Yangtze River|yangtze-river]]. Many of his soldiers came from northern China. They knew how to fight on land, but they were not used to fighting on water. The long journey had also made many of them sick. Across the river, [[Zhou Yu|zhou-yu]] and his army were ready to stop them.
 
-An old history tells us that the commander [[Huang Gai|huang-gai]] had sent a letter first, pretending that he wanted to give up. His ships were loaded with dry grass and other fuel. As they drew close, the crews set them on fire. A strong wind was blowing. The burning ships rushed toward Cao Cao’s vessels, which the history says were joined bow to stern. Flames spread from the ships toward the camps on shore, and Cao Cao’s army retreated.
+An old history book says that many of Cao Cao’s ships were tied together from front to back. It does not tell us why. Much later, the novel *Romance of the Three Kingdoms* said the ships were chained together to make the decks steadier for soldiers who became sick on boats. But that explanation comes from the novel, not the older history book.
 
-This was the famous battle at Red Cliffs. The story is dramatic, but it also shows something easy to forget about ancient warships: a ship could carry soldiers and weapons into battle, but the ship itself was always part of the battle too.
+[[Huang Gai|huang-gai]] saw a weakness. If one wooden ship caught fire, the ships tied beside it might not be able to move away.
 
-It had to survive the water beneath it, the wind around it, and whatever the enemy sent toward it.
+Huang Gai sent Cao Cao a letter. He pretended that he wanted to give up and join Cao Cao’s side. But his ships were secretly filled with dry grass, firewood, and oil.
+
+When the ships came closer, Cao Cao’s soldiers thought Huang Gai was really coming to surrender. Then Huang Gai ordered his men to set the ships on fire. A strong wind pushed the burning ships toward Cao Cao’s fleet. The fire spread from ship to ship and reached the camp on shore. Cao Cao’s army had to retreat.
+
+This became known as the Battle of Red Cliffs. It shows us something important about fighting on water: ships did not just carry soldiers into battle. The ships were part of the battle.
+
+They had to move through water and wind. They also had to survive enemy attacks.
 [/en]
 [/section]
 
@@ -116,7 +128,7 @@ layout: text-only
 heading_zh: 木船上的战场
 heading_en: Fire, Water, and Wood
 [zh]
-再回到赤壁。黄盖并不是因为自己的船最大，才赢下那场著名的水战。他看到对方船只连接在一起，又碰上强风，于是利用了木船最怕的东西之一——火。
+再回到赤壁。黄盖的火攻之所以有效，不是因为他的船更大，而是因为他看出了曹军船只首尾相接的破绽。火船借着强风冲过去，大火一旦蔓延，连在一起的木船就更难躲开。
 
 到了水上，战争就和陆地不一样了。河水会推船，风会改变火势，木头会燃烧，一条船破了以后还可能进水。士兵当然重要，可造船的人、掌舵的人，还有船本身，也都决定着接下来会发生什么。
 
@@ -125,7 +137,7 @@ heading_en: Fire, Water, and Wood
 战船在开始打仗以前，首先得是一艘好船。
 [/zh]
 [en]
-Go back now to Red Cliffs. Huang Gai did not defeat Cao Cao’s ships by building a taller ship or putting more soldiers on one deck. He noticed something about the fleet in front of him and used the river, the wind, and fire against it.
+Go back now to Red Cliffs. Huang Gai’s attack did not work because his ships were larger. It worked because he recognized the weakness of a fleet joined bow to stern. Once the burning ships raced forward with the wind, the connected wooden vessels had less room to escape the spreading fire.
 
 That is what makes ancient naval warfare different from simply putting an army on boats. The water was part of the battlefield. So was the weather. And every wooden ship had strengths and weaknesses of its own.
 

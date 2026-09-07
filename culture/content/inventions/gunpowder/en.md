@@ -4,7 +4,7 @@
 
 ## A Warning from the Furnace
 
-A hot furnace glowed beside jars of powders and minerals. More than a thousand years ago, Chinese alchemists spent years heating, mixing, and testing all kinds of materials. They hoped to make powerful medicines. Some searched for elixirs that might help people live longer. Some even dreamed of immortality.
+Around A.D. 800, during the later years of the Tang dynasty, Chinese alchemists worked beside hot furnaces, heating, mixing, and testing all kinds of materials. They hoped to make powerful medicines. Some searched for elixirs that might help people live longer. Some even dreamed of immortality.
 
 But the furnace did not always give them what they wanted.
 
@@ -48,10 +48,10 @@ Gunpowder had started as something that burned fiercely. Now it could race throu
 
 ## Fire Flowers in the Sky
 
-Gunpowder also found a place in celebrations. It could make firecrackers crack and boom. It could send fireworks into the night, where they burst into flashes of light.
+Gunpowder entered celebrations before true rockets appeared. People packed it into bamboo or paper tubes to make early firecrackers that produced bangs, sparks, and flashes.
 
-What a long way the fire had traveled.
+Later, people learned that gas from burning gunpowder could push a tube forward. Once rockets appeared, the same kind of propulsion also helped carry fireworks higher into the sky, where they scattered into bright sparks.
 
-It began in the experiments of alchemists searching for medicines and elixirs. A dangerous mixture burned hands and set a building on fire. People kept experimenting. The mixture became **gunpowder**. gunpowder entered military books, traveled with arrows, powered rockets, and lit up the sky.
+Firecrackers therefore came before true rockets. Aerial fireworks developed later as rocket propulsion improved. Gunpowder did not follow one single path: it entered celebrations and military books, traveled with arrows, propelled rockets, and carried light into the night sky.
 
 The alchemists never found a medicine that could make people live forever. But their experiments opened the door to something nobody had been searching for. The elixir never appeared. The fire did—and it traveled far beyond the furnace.

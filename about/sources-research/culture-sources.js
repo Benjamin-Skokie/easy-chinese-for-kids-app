@@ -665,6 +665,52 @@ window.NIHAO_CULTURE_SOURCES = [
   {
     "category": "art",
     "categoryName": "Art",
+    "slug": "peking-opera",
+    "title": "京剧：台上没有马，为什么你却看见了马？",
+    "titleEn": "Peking Opera: There Is No Horse on Stage—So Why Can You See One?",
+    "storyPath": "../../culture/books/art/peking-opera/",
+    "groups": [
+      {
+        "title": "Symbolic performance, movement, and music",
+        "sources": [
+          {
+            "label": "UNESCO Intangible Cultural Heritage, “Peking Opera”",
+            "url": "https://ich.unesco.org/en/RL/peking-opera-00418"
+          }
+        ]
+      },
+      {
+        "title": "A small prop can create a larger world",
+        "sources": [
+          {
+            "label": "State Council Information Office / China.org.cn, “Peking Opera”",
+            "url": "https://www.china.org.cn/englishscio/chinafacts/2017-04/13/content_40612142.htm"
+          }
+        ]
+      },
+      {
+        "title": "Formation, costumes, makeup, and instruments",
+        "sources": [
+          {
+            "label": "Beijing Municipal Government, “Peking Opera: A Synthesis of Chinese Operas Combining Music, Vocal Performance, Mime, and Acrobatics”",
+            "url": "https://english.beijing.gov.cn/beijinginfo/culture/202005/t20200511_1894129.html"
+          }
+        ]
+      },
+      {
+        "title": "Facial makeup as a complete design",
+        "sources": [
+          {
+            "label": "Beijing Municipal Government, “Beijing Opera Facial Makeup”",
+            "url": "https://english.beijing.gov.cn/beijinginfo/culture/beijingdiscovery/handicrafts/202110/t20211018_2514857.html"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "art",
+    "categoryName": "Art",
     "slug": "terracotta-warriors",
     "title": "兵马俑：八千张脸，八千幅肖像吗？",
     "titleEn": "Terracotta Warriors: Are 8,000 Faces 8,000 Portraits?",
@@ -723,52 +769,6 @@ window.NIHAO_CULTURE_SOURCES = [
   {
     "category": "art",
     "categoryName": "Art",
-    "slug": "peking-opera",
-    "title": "台上没有马，为什么你却看见了马？",
-    "titleEn": "There Is No Horse on Stage—So Why Can You See One?",
-    "storyPath": "../../culture/books/art/peking-opera/",
-    "groups": [
-      {
-        "title": "Symbolic performance, movement, and music",
-        "sources": [
-          {
-            "label": "UNESCO Intangible Cultural Heritage, “Peking Opera”",
-            "url": "https://ich.unesco.org/en/RL/peking-opera-00418"
-          }
-        ]
-      },
-      {
-        "title": "A small prop can create a larger world",
-        "sources": [
-          {
-            "label": "State Council Information Office / China.org.cn, “Peking Opera”",
-            "url": "https://www.china.org.cn/englishscio/chinafacts/2017-04/13/content_40612142.htm"
-          }
-        ]
-      },
-      {
-        "title": "Formation, costumes, makeup, and instruments",
-        "sources": [
-          {
-            "label": "Beijing Municipal Government, “Peking Opera: A Synthesis of Chinese Operas Combining Music, Vocal Performance, Mime, and Acrobatics”",
-            "url": "https://english.beijing.gov.cn/beijinginfo/culture/202005/t20200511_1894129.html"
-          }
-        ]
-      },
-      {
-        "title": "Facial makeup as a complete design",
-        "sources": [
-          {
-            "label": "Beijing Municipal Government, “Beijing Opera Facial Makeup”",
-            "url": "https://english.beijing.gov.cn/beijinginfo/culture/beijingdiscovery/handicrafts/202110/t20211018_2514857.html"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "category": "art",
-    "categoryName": "Art",
     "slug": "calligraphy",
     "title": "同一个字，为什么能写得完全不同？",
     "titleEn": "How Can the Same Character Look So Different?",
@@ -807,8 +807,8 @@ window.NIHAO_CULTURE_SOURCES = [
     "category": "art",
     "categoryName": "Art",
     "slug": "gongbi",
-    "title": "工笔画：皇帝为什么连孔雀先迈哪只脚都要管？",
-    "titleEn": "Gongbi Painting: Why Did an Emperor Care Which Foot a Peacock Lifted First?",
+    "title": "工笔画是怎么把细节画出来的？",
+    "titleEn": "How Does Gongbi Painting Create So Much Detail?",
     "storyPath": "../../culture/books/art/gongbi/",
     "groups": [
       {
@@ -2308,97 +2308,6 @@ window.NIHAO_CULTURE_SOURCES = [
   {
     "category": "economy",
     "categoryName": "Economy & Exchange",
-    "slug": "tea",
-    "title": "从茶树到茶杯：中国茶的故事",
-    "titleEn": "From Leaf to Cup: The Story of Chinese Tea",
-    "storyPath": "../../culture/books/economy/tea/",
-    "groups": [
-      {
-        "title": "Watching tea leaves in a glass",
-        "sources": [
-          {
-            "label": "Ministry of Agriculture and Rural Affairs of China, “2022 International Tea Day — New Ways of Drinking Tea” (《2022“国际茶日”茶故事｜爱茶新生代 饮茶新方式》)",
-            "url": "https://gjcr.moa.gov.cn/czx/202205/t20220517_6399546.htm"
-          }
-        ]
-      },
-      {
-        "title": "Xihu Longjing processing and shape",
-        "sources": [
-          {
-            "label": "Zhejiang Administration for Market Regulation, Technical Specification for Hand Processing of Xihu Longjing Tea (《西湖龙井茶手工炒制技术规程》)",
-            "url": "https://zlzx.zjamr.zj.gov.cn/bzzx/rest/redirect/files/localFile/2023-07-03/62bfc1f2e5653c150985b14bdbc96b70.pdf"
-          }
-        ]
-      },
-      {
-        "title": "Biluochun processing and curled leaves",
-        "sources": [
-          {
-            "label": "Suzhou Municipal Government, “Bi Luo Chun Tea in Suzhou”",
-            "url": "https://english.suzhou.gov.cn/szsenglish/sgy/201911/a43de9d366404c0bafd31bfc105c95f2.shtml"
-          }
-        ]
-      },
-      {
-        "title": "Biluochun tea-and-fruit gardens",
-        "sources": [
-          {
-            "label": "Suzhou Municipal Government, Measures for the Protection and Management of Dongting Mountain Biluochun Tea Bases (《苏州市洞庭山碧螺春茶基地保护管理办法》)",
-            "url": "https://www.suzhou.gov.cn/szsrmzf/szfgfxwjk/202507/3ff398f1f51243b38806d8328f9b085b.shtml"
-          }
-        ]
-      },
-      {
-        "title": "Green tea in China's domestic market",
-        "sources": [
-          {
-            "label": "China Tea Marketing Association, 2023 China Tea Production and Sales Report (《2023年度中国茶叶产销形势报告》)",
-            "url": "https://www.ctma.com.cn/zhuanyebaogao/77663.html"
-          }
-        ]
-      },
-      {
-        "title": "Black tea developed later",
-        "sources": [
-          {
-            "label": "Jianghua County Government, “Black Tea: China's Gift to the World” (《红茶：中国送给世界的礼物》)",
-            "url": "https://www.jh.gov.cn/jh/kpjh/202403/c253f5508bb0470981127abd80577afd.shtml"
-          }
-        ]
-      },
-      {
-        "title": "Different processing paths from tea leaves",
-        "sources": [
-          {
-            "label": "UNESCO, “Traditional Tea Processing Techniques and Associated Social Practices in China”",
-            "url": "https://ich.unesco.org/en/RL/traditional-tea-processing-techniques-and-associated-social-practices-in-china-01884"
-          }
-        ]
-      },
-      {
-        "title": "Loose-leaf brewing and tea vessels",
-        "sources": [
-          {
-            "label": "Beijing Party Member Education, “How to Brew Fine Teas” (《名贵绿茶最好用瓷杯泡饮》)",
-            "url": "https://www.bjcc.gov.cn/article/50178643.html"
-          }
-        ]
-      },
-      {
-        "title": "Tea Horse Roads and porters",
-        "sources": [
-          {
-            "label": "Ya'an Municipal Government, “The Tea Horse Road: A Tea Leaf's Journey” (《茶马古道，一片茶叶的旅程》)",
-            "url": "https://www.yaan.gov.cn/xinwen/show/d86618b9-f9f9-4607-b56c-6fbcbe935404.html"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "category": "economy",
-    "categoryName": "Economy & Exchange",
     "slug": "ancient-market",
     "title": "古代市场：从赶集日到夜市",
     "titleEn": "Ancient Markets: From Market Day to Night Market",
@@ -3129,6 +3038,25 @@ window.NIHAO_CULTURE_SOURCES = [
   {
     "category": "folk-tales",
     "categoryName": "Folk Tales",
+    "slug": "the-fisherman-who-wasnt-fishing-for-fish",
+    "title": "愿者上钩",
+    "titleEn": "The Willing One Takes the Hook",
+    "storyPath": "../../culture/books/folk-tales/the-fisherman-who-wasnt-fishing-for-fish/",
+    "groups": [
+      {
+        "title": "《史记·齐太公世家》",
+        "sources": [
+          {
+            "label": "Chinese Text Project, Records of the Grand Historian, “Genealogy of Tai Gongwang of Qi”",
+            "url": "https://ctext.org/shiji/qi-tai-gong-shi-jia/zhs"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "folk-tales",
+    "categoryName": "Folk Tales",
     "slug": "covering-ears-to-steal-a-bell",
     "title": "掩耳盗铃",
     "titleEn": "The Man Who Covered His Ears to Steal a Bell",
@@ -3209,6 +3137,25 @@ window.NIHAO_CULTURE_SOURCES = [
           {
             "label": "NASA Science, “The Next Full Moon Is a Supermoon; the Sturgeon Moon”",
             "url": "https://moon.nasa.gov/news/196/the-next-full-moon-is-a-supermoon-the-sturgeon-moon/?unit=m"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "folk-tales",
+    "categoryName": "Folk Tales",
+    "slug": "the-fox-who-borrowed-the-tigers-power",
+    "title": "狐假虎威",
+    "titleEn": "The Fox Who Borrowed the Tiger’s Power",
+    "storyPath": "../../culture/books/folk-tales/the-fox-who-borrowed-the-tigers-power/",
+    "groups": [
+      {
+        "title": "《战国策·楚策一》“荆宣王问群臣”",
+        "sources": [
+          {
+            "label": "Chinese Text Project, Strategies of the Warring States, “King Xuan of Jing Asked His Ministers”",
+            "url": "https://ctext.org/zhan-guo-ce/jing-xuan-wang-wen-qun-chen/zhs"
           }
         ]
       }
@@ -3525,6 +3472,97 @@ window.NIHAO_CULTURE_SOURCES = [
   {
     "category": "food",
     "categoryName": "Food",
+    "slug": "tea",
+    "title": "从茶树到茶杯：中国茶的故事",
+    "titleEn": "From Leaf to Cup: The Story of Chinese Tea",
+    "storyPath": "../../culture/books/food/tea/",
+    "groups": [
+      {
+        "title": "Watching tea leaves in a glass",
+        "sources": [
+          {
+            "label": "Ministry of Agriculture and Rural Affairs of China, “2022 International Tea Day — New Ways of Drinking Tea” (《2022“国际茶日”茶故事｜爱茶新生代 饮茶新方式》)",
+            "url": "https://gjcr.moa.gov.cn/czx/202205/t20220517_6399546.htm"
+          }
+        ]
+      },
+      {
+        "title": "Xihu Longjing processing and shape",
+        "sources": [
+          {
+            "label": "Zhejiang Administration for Market Regulation, Technical Specification for Hand Processing of Xihu Longjing Tea (《西湖龙井茶手工炒制技术规程》)",
+            "url": "https://zlzx.zjamr.zj.gov.cn/bzzx/rest/redirect/files/localFile/2023-07-03/62bfc1f2e5653c150985b14bdbc96b70.pdf"
+          }
+        ]
+      },
+      {
+        "title": "Biluochun processing and curled leaves",
+        "sources": [
+          {
+            "label": "Suzhou Municipal Government, “Bi Luo Chun Tea in Suzhou”",
+            "url": "https://english.suzhou.gov.cn/szsenglish/sgy/201911/a43de9d366404c0bafd31bfc105c95f2.shtml"
+          }
+        ]
+      },
+      {
+        "title": "Biluochun tea-and-fruit gardens",
+        "sources": [
+          {
+            "label": "Suzhou Municipal Government, Measures for the Protection and Management of Dongting Mountain Biluochun Tea Bases (《苏州市洞庭山碧螺春茶基地保护管理办法》)",
+            "url": "https://www.suzhou.gov.cn/szsrmzf/szfgfxwjk/202507/3ff398f1f51243b38806d8328f9b085b.shtml"
+          }
+        ]
+      },
+      {
+        "title": "Green tea in China's domestic market",
+        "sources": [
+          {
+            "label": "China Tea Marketing Association, 2023 China Tea Production and Sales Report (《2023年度中国茶叶产销形势报告》)",
+            "url": "https://www.ctma.com.cn/zhuanyebaogao/77663.html"
+          }
+        ]
+      },
+      {
+        "title": "Black tea developed later",
+        "sources": [
+          {
+            "label": "Jianghua County Government, “Black Tea: China's Gift to the World” (《红茶：中国送给世界的礼物》)",
+            "url": "https://www.jh.gov.cn/jh/kpjh/202403/c253f5508bb0470981127abd80577afd.shtml"
+          }
+        ]
+      },
+      {
+        "title": "Different processing paths from tea leaves",
+        "sources": [
+          {
+            "label": "UNESCO, “Traditional Tea Processing Techniques and Associated Social Practices in China”",
+            "url": "https://ich.unesco.org/en/RL/traditional-tea-processing-techniques-and-associated-social-practices-in-china-01884"
+          }
+        ]
+      },
+      {
+        "title": "Loose-leaf brewing and tea vessels",
+        "sources": [
+          {
+            "label": "Beijing Party Member Education, “How to Brew Fine Teas” (《名贵绿茶最好用瓷杯泡饮》)",
+            "url": "https://www.bjcc.gov.cn/article/50178643.html"
+          }
+        ]
+      },
+      {
+        "title": "Tea Horse Roads and porters",
+        "sources": [
+          {
+            "label": "Ya'an Municipal Government, “The Tea Horse Road: A Tea Leaf's Journey” (《茶马古道，一片茶叶的旅程》)",
+            "url": "https://www.yaan.gov.cn/xinwen/show/d86618b9-f9f9-4607-b56c-6fbcbe935404.html"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "food",
+    "categoryName": "Food",
     "slug": "flavors",
     "title": "食物为什么有这么多味道？",
     "titleEn": "Why Does Food Have So Many Flavors?",
@@ -3716,8 +3754,8 @@ window.NIHAO_CULTURE_SOURCES = [
     "category": "geography",
     "categoryName": "Geography",
     "slug": "panda-hometown",
-    "title": "大熊猫真正的家在哪里？",
-    "titleEn": "Where Is a Giant Panda's Real Home?",
+    "title": "大熊猫的家乡",
+    "titleEn": "The Giant Panda's Homeland",
     "storyPath": "../../culture/books/geography/panda-hometown/",
     "groups": [
       {
@@ -4800,6 +4838,24 @@ window.NIHAO_CULTURE_SOURCES = [
         ]
       },
       {
+        "title": "Smithsonian Science Education Center, “The Evolution of Fireworks”",
+        "sources": [
+          {
+            "label": "ssec.si.edu",
+            "url": "https://ssec.si.edu/node/205"
+          }
+        ]
+      },
+      {
+        "title": "NASA, *A Pictorial History of Rockets*",
+        "sources": [
+          {
+            "label": "science.nasa.gov",
+            "url": "https://science.nasa.gov/wp-content/uploads/2026/02/153410main-rockets-history.pdf"
+          }
+        ]
+      },
+      {
         "title": "*Wujing Zongyao* (《武经总要》), Chinese Text Project",
         "sources": [
           {
@@ -5549,6 +5605,15 @@ window.NIHAO_CULTURE_SOURCES = [
           {
             "label": "Wikisource transcription of Records of the Three Kingdoms, fascicle 54, “Biography of Zhōu Yú”",
             "url": "https://zh.wikisource.org/zh-hans/%E4%B8%89%E5%9C%8B%E5%BF%97/%E5%8D%B754"
+          }
+        ]
+      },
+      {
+        "title": "《三国演义》第四十七回 (*Romance of the Three Kingdoms*, Chapter 47)",
+        "sources": [
+          {
+            "label": "Wikisource transcription of Romance of the Three Kingdoms, Chapter 47",
+            "url": "https://zh.wikisource.org/zh-hans/%E4%B8%89%E5%9C%8B%E6%BC%94%E7%BE%A9/%E7%AC%AC047%E5%9B%9E"
           }
         ]
       },
@@ -6391,8 +6456,8 @@ window.NIHAO_CULTURE_SOURCES = [
     "category": "religion",
     "categoryName": "Religion & Belief",
     "slug": "lord-guan",
-    "title": "关羽没有忘记的承诺",
-    "titleEn": "The Promise Guan Yu Kept",
+    "title": "关羽为什么成了关公？",
+    "titleEn": "How Did Guan Yu Become Lord Guan?",
     "storyPath": "../../culture/books/religion/lord-guan/",
     "groups": [
       {

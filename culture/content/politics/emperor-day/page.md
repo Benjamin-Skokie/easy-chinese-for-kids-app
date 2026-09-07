@@ -70,7 +70,7 @@ image: morning-court-ming.webp
 caption_zh: 官员把政务带到皇帝面前；撤掉丞相以后，六部更加直接地向皇帝负责。
 caption_en: Officials bring government business before the emperor; after the chancellorship was abolished, the Six Ministries answered more directly to him.
 [zh]
-明朝刚建立的时候，中央有一个叫[[中书省|central-secretariat]]的重要机构，丞相在这里帮助统领许多政务。吏、户、礼、兵、刑、工[[六部|six-ministries]]处理不同的国家事务，中书省则处在皇帝和这些部门之间，可以先接收、查看和处理许多报告。
+明朝刚建立的时候，中央有一个叫[[中书省|central-secretariat]]的重要机构，丞相在这里帮助统领许多政务。[[吏部|ministry-of-personnel]]、[[户部|ministry-of-revenue]]、[[礼部|ministry-of-rites]]、[[兵部|ministry-of-war]]、[[刑部|ministry-of-justice]]和[[工部|ministry-of-works]]合称[[六部|six-ministries]]，处理不同的国家事务。中书省则处在皇帝和这些部门之间，可以先接收、查看和处理许多报告。
 
 可是，朱元璋不愿意让丞相掌握这么大的权力。1380年，[[胡惟庸|hu-weiyong]]案发生以后，朱元璋干脆撤掉中书省，也不再设置丞相。原来的六部开始更加直接地向皇帝负责。
 

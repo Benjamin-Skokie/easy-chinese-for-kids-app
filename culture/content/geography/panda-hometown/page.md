@@ -1,6 +1,6 @@
 ---
-title_zh: 大熊猫真正的家在哪里？
-title_en: Where Is a Giant Panda's Real Home?
+title_zh: 大熊猫的家乡
+title_en: The Giant Panda's Homeland
 slug: panda-hometown
 category: geography
 difficulty: 简单
@@ -8,18 +8,18 @@ style_notes: "用 --- 分隔 frontmatter；正文强调优先用 *斜体*；尽�
 ---
 
 [hero]
-title_zh: 大熊猫真正的家在哪里？
-title_en: Where Is a Giant Panda's Real Home?
+title_zh: 大熊猫的家乡
+title_en: The Giant Panda's Homeland
 [/hero]
 
 [section]
 page: 1
 layout: text-wrap-image
-heading_zh: 一只粉红色的小熊猫
-heading_en: A Tiny Pink Panda
+heading_zh: 繁育基地里的熊猫幼儿园
+heading_en: A Panda Nursery at the Breeding Center
 image: panda-base-chengdu-cubs.webp
-caption_zh: 熊猫宝宝在繁育基地得到照顾。刚出生的熊猫还没有黑白相间的厚毛。
-caption_en: Panda cubs receive careful help at breeding centers. Newborn pandas do not yet have thick black-and-white fur.
+caption_zh: 大熊猫幼崽在繁育基地里得到照顾。
+caption_en: Giant panda cubs receive care at a breeding center.
 [zh]
 刚出生的大熊猫一点儿也不像我们熟悉的样子。它只有一小块黄油那么重，粉红粉红的，眼睛还睁不开。它躺在妈妈身边，小得让人吃惊。
 

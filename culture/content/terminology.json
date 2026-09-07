@@ -260,6 +260,30 @@
     "aliases_zh": ["工笔"],
     "aliases_en": ["Gongbi Painting", "gongbi"]
   },
+  "court-painting-academy": {
+    "zh": "宫廷画院",
+    "en": "court painting academy",
+    "pinyin": "gōngtíng huàyuàn",
+    "kind": "term",
+    "note_zh": "朝廷设立、由宫廷画师工作的绘画机构。",
+    "note_en": "An imperial institution where court painters worked and trained."
+  },
+  "lacquer": {
+    "zh": "漆",
+    "en": "lacquer",
+    "pinyin": "qī",
+    "kind": "term",
+    "note_zh": "一种可以涂在物体表面、干后变硬并产生光泽的材料。",
+    "note_en": "A coating material that hardens and can form a glossy surface."
+  },
+  "song-huizong": {
+    "zh": "宋徽宗",
+    "en": "Emperor Huizong",
+    "pinyin": "Sòng Huīzōng",
+    "kind": "person",
+    "note_zh": "北宋皇帝赵佶，擅长书画，也很重视宫廷画院。",
+    "note_en": "A Northern Song emperor known for painting, calligraphy, and support of the court painting academy."
+  },
   "gongfu": {
     "zh": "功夫",
     "en": "kung fu",
@@ -698,6 +722,14 @@
     "note_en": "A poet of the state of Chu later connected with many Dragon Boat Festival stories.",
     "replace_en": ["Qū Yuán"]
   },
+  "quanfa": {
+    "zh": "拳法",
+    "en": "Chinese boxing techniques",
+    "pinyin": "quánfǎ",
+    "kind": "term",
+    "note_zh": "以出拳、掌法、步法和身体动作进行攻防的武术技法。",
+    "note_en": "Chinese martial-arts techniques using punches, open-hand movements, footwork, and body control."
+  },
   "red-chamber": {
     "zh": "《红楼梦》",
     "en": "Dream of the Red Chamber",
@@ -812,6 +844,14 @@
     "aliases_zh": ["宋代"],
     "aliases_en": ["Song China", "Song period", "Northern Song"],
     "normalize_en": false
+  },
+  "staff-fighting": {
+    "zh": "棍法",
+    "en": "staff fighting",
+    "pinyin": "gùnfǎ",
+    "kind": "term",
+    "note_zh": "使用长棍进行格挡、进攻和控制的武术技法。",
+    "note_en": "Martial-arts techniques for controlling and using a long staff to block, strike, and redirect."
   },
   "state-of-lu": {
     "zh": "鲁国",
@@ -1191,12 +1231,60 @@
     "note_en": "A powerful official who helped coordinate the central government.",
     "aliases_en": ["chancellors", "chancellorship"]
   },
+  "ministry-of-personnel": {
+    "zh": "吏部",
+    "en": "Ministry of Personnel",
+    "pinyin": "Lì Bù",
+    "kind": "term",
+    "note_zh": "管理官员的选拔、任免、考核和升降。",
+    "note_en": "The ministry responsible for selecting, appointing, evaluating, and promoting officials."
+  },
+  "ministry-of-revenue": {
+    "zh": "户部",
+    "en": "Ministry of Revenue",
+    "pinyin": "Hù Bù",
+    "kind": "term",
+    "note_zh": "管理户籍、土地、税收和国家钱粮。",
+    "note_en": "The ministry responsible for population records, land, taxes, and state revenue."
+  },
+  "ministry-of-rites": {
+    "zh": "礼部",
+    "en": "Ministry of Rites",
+    "pinyin": "Lǐ Bù",
+    "kind": "term",
+    "note_zh": "管理国家礼仪、祭祀、学校、科举和外事接待。",
+    "note_en": "The ministry responsible for state ceremonies, rituals, education, examinations, and diplomatic receptions."
+  },
+  "ministry-of-war": {
+    "zh": "兵部",
+    "en": "Ministry of War",
+    "pinyin": "Bīng Bù",
+    "kind": "term",
+    "note_zh": "管理武官选任、军籍和军令等军事行政。",
+    "note_en": "The ministry responsible for military appointments, army records, orders, and administration."
+  },
+  "ministry-of-justice": {
+    "zh": "刑部",
+    "en": "Ministry of Justice",
+    "pinyin": "Xíng Bù",
+    "kind": "term",
+    "note_zh": "管理法律、审判和刑罚。",
+    "note_en": "The ministry responsible for laws, trials, and criminal punishments."
+  },
+  "ministry-of-works": {
+    "zh": "工部",
+    "en": "Ministry of Works",
+    "pinyin": "Gōng Bù",
+    "kind": "term",
+    "note_zh": "管理建筑、道路、水利和各种大型工程。",
+    "note_en": "The ministry responsible for construction, roads, waterworks, and other major public projects."
+  },
   "six-ministries": {
     "zh": "六部",
     "en": "Six Ministries",
     "pinyin": "Liù Bù",
     "kind": "term",
-    "note_zh": "吏、户、礼、兵、刑、工六个中央部门。",
+    "note_zh": "吏部管官员，户部管钱粮户籍，礼部管礼仪科举，兵部管军事行政，刑部管法律刑罚，工部管工程。",
     "note_en": "The six central departments responsible for officials, revenue, rites, war, justice, and public works."
   },
   "hu-weiyong": {
@@ -1335,6 +1423,14 @@
     "kind": "person",
     "note_zh": "宋代著名词人。",
     "note_en": "A celebrated Song dynasty poet especially known for ci poetry."
+  },
+  "li-shimin": {
+    "zh": "李世民",
+    "en": "Li Shimin",
+    "pinyin": "Lǐ Shìmín",
+    "kind": "person",
+    "note_zh": "唐朝第二位皇帝唐太宗，登基前曾率军作战。",
+    "note_en": "The future Emperor Taizong, second emperor of the Tang dynasty and a military commander before taking the throne."
   },
   "miluo-river": {
     "zh": "汨罗江",
@@ -1808,6 +1904,24 @@
     "note_en": "A ruler of Qi who, in the story, wanted to hear each musician play alone.",
     "aliases_en": ["King Min"]
   },
+  "jiang-ziya": {
+    "zh": "姜子牙",
+    "en": "Jiang Ziya",
+    "pinyin": "Jiāng Zǐyá",
+    "kind": "person",
+    "note_zh": "商周之际的重要人物，又称吕尚、姜太公，后来辅佐周文王。",
+    "note_en": "An important figure near the end of the Shang period, also known as Lü Shang and Jiang Taigong, who later advised King Wen of Zhou.",
+    "auto_tag": false
+  },
+  "king-wen-zhou": {
+    "zh": "周文王",
+    "en": "King Wen of Zhou",
+    "pinyin": "Zhōu Wén Wáng",
+    "kind": "person",
+    "note_zh": "周朝建立前的重要领袖，传说中发现并重用姜子牙的人。",
+    "note_en": "A major leader before the Zhou dynasty was founded who, in the story, recognizes Jiang Ziya’s ability.",
+    "auto_tag": false
+  },
   "king-xuan-qi": {
     "zh": "齐宣王",
     "en": "King Xuan of Qi",
@@ -2220,6 +2334,88 @@
     "note_zh": "孟元老回忆北宋开封城市生活的著作。",
     "note_en": "Meng Yuanlao's vivid account of urban life in Northern Song Kaifeng.",
     "replace_en": ["Dōngjīng Mèng Huá Lù", "Dōngjīng Meng Huá Lù"]
+  },
+  "archaeologist": {
+    "zh": "考古人员",
+    "en": "archaeologist",
+    "pinyin": "kǎogǔ rényuán",
+    "kind": "term",
+    "note_zh": "通过遗址和出土物研究过去的人。",
+    "note_en": "A person who studies the past through sites and objects people left behind."
+  },
+  "bronze": {
+    "zh": "青铜",
+    "en": "bronze",
+    "pinyin": "qīngtóng",
+    "kind": "term",
+    "note_zh": "主要由铜和锡熔合而成的合金，古人常用它铸造钟和器皿。",
+    "note_en": "An alloy made mainly from copper and tin, often used in ancient times to cast bells and vessels."
+  },
+  "inscription": {
+    "zh": "铭文",
+    "en": "inscription",
+    "pinyin": "míngwén",
+    "kind": "term",
+    "note_zh": "铸、刻或写在器物上的文字。",
+    "note_en": "Words cast, carved, or written on an object."
+  },
+  "marquis-yi-of-zeng": {
+    "zh": "曾侯乙",
+    "en": "Marquis Yi of Zeng",
+    "pinyin": "Zēng Hóu Yǐ",
+    "kind": "person",
+    "note_zh": "战国早期曾国的一位国君，他的墓中出土了著名的六十五口编钟。",
+    "note_en": "An early Warring States ruler of Zeng whose tomb held the famous set of sixty-five bells."
+  },
+  "octave": {
+    "zh": "八度",
+    "en": "octave",
+    "pinyin": "bādù",
+    "kind": "term",
+    "note_zh": "音乐中从一个音到更高或更低的同名音之间的距离。",
+    "note_en": "The musical distance from one note to the next higher or lower note with the same name."
+  },
+  "pitch": {
+    "zh": "音高",
+    "en": "pitch",
+    "pinyin": "yīngāo",
+    "kind": "term",
+    "note_zh": "声音听起来高或低的程度。",
+    "note_en": "How high or low a sound seems."
+  },
+  "replica": {
+    "zh": "复制品",
+    "en": "replica",
+    "pinyin": "fùzhìpǐn",
+    "kind": "term",
+    "note_zh": "根据原物制作的仿制品，可以用于研究、展示或演奏。",
+    "note_en": "A carefully made copy of an original object, used for study, display, or performance."
+  },
+  "vibration": {
+    "zh": "振动",
+    "en": "vibration",
+    "pinyin": "zhèndòng",
+    "kind": "term",
+    "note_zh": "物体快速来回运动；这种运动会推动空气，形成声音。",
+    "note_en": "A rapid back-and-forth movement that can push the air and create sound."
+  },
+  "wu-zhou": {
+    "zh": "武周",
+    "en": "Wu Zhou",
+    "pinyin": "Wǔ Zhōu",
+    "kind": "period",
+    "note_zh": "武则天称帝后建立的王朝，从公元690年延续到705年。",
+    "note_en": "The dynasty Wu Zetian established and ruled from 690 to 705.",
+    "auto_tag": false
+  },
+  "zhou-dynasty": {
+    "zh": "周朝",
+    "en": "Zhou dynasty",
+    "pinyin": "Zhōu cháo",
+    "kind": "period",
+    "note_zh": "武则天以前一千多年的古代王朝，不是她建立的武周。",
+    "note_en": "An ancient dynasty from more than a thousand years before Wu Zetian, not the Wu Zhou dynasty she established.",
+    "auto_tag": false
   },
   "zhan-guo-ce": {
     "zh": "《战国策》",

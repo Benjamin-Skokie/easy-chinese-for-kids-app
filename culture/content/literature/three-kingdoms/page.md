@@ -45,14 +45,14 @@ caption_en: Liu Bei, Guan Yu, and Zhang Fei swear brotherhood in the peach garde
 [zh]
 三国最有名的一幕之一，是“桃园结义”。刘备、关羽、张飞本来不是一家人，出身也完全不一样，可他们决定做同生共死的兄弟。
 
-这件事最打动人的地方，不只是场面好看，而是它把“义气”这件事一下写亮了。不是因为你们天生就有同样的血缘，而是因为你们愿意在最难的时候站在一起。
+这件事最打动人的地方，不只是场面好看，而是它把“义气”这件事一下写亮了。不是因为你们天生就有同样的血缘，而是因为你们愿意在最难的时候站在一起。关羽后来怎样守住对刘备的承诺，可以在[《关羽为什么成了关公？》](../../religion/lord-guan/index.html)里继续读。
 
 要说明白一点：这一幕更像小说和戏曲里特别有名的经典场面，不是历史书里能一字一句证实的记录。可它太有力量了，所以后来很多人一说三国，脑子里就先冒出这一幕。
 [/zh]
 [en]
 One of the most famous scenes in the Three Kingdoms story is the Peach Garden Oath. Liu Bei, Guan Yu, and Zhang Fei are not born into one family, and they do not come from the same kind of life. Still, they decide to become brothers who will stand together through danger.
 
-What moves readers here is not only the beautiful scene. It is the way the story suddenly makes loyalty glow. These men are not brothers because they share blood. They become brothers because they promise to stand together when life turns hard.
+What moves readers here is not only the beautiful scene. It is the way the story suddenly makes loyalty glow. These men are not brothers because they share blood. They become brothers because they promise to stand together when life turns hard. You can follow how Guan Yu later keeps his word to Liu Bei in [How Did Guan Yu Become Lord Guan?](../../religion/lord-guan/index.html).
 
 It is important to say one thing clearly: this moment is best known from the novel and later drama, not from a line-by-line official history record. But it is so powerful that for many readers, this is one of the first images that appears when they hear the word "Three Kingdoms."
 [/en]

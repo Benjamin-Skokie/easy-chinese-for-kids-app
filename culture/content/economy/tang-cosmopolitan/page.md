@@ -95,12 +95,9 @@ Think about what had happened. A belief that had traveled thousands of miles had
 
 [section]
 page: 4
-layout: text-wrap-image
+layout: text-only
 heading_zh: 有人又把东西带了出去
 heading_en: Some Visitors Took Ideas Home
-image: 4-3-japanese-envoys-study.webp
-caption_zh: 两位远道而来的学习者和一位老师一起查看桌上的图稿。
-caption_en: Two learners from afar examine drawings at a table with a teacher.
 [zh]
 长安并不只是一个“东西进来的地方”。从七世纪开始，日本朝廷多次派遣使团渡海来到唐朝。使团中有官员、僧人、学生和其他随行人员。他们来到中国学习制度、佛教、文字和艺术，再把学到的东西带回去。
 

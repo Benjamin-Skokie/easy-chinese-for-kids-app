@@ -15,12 +15,9 @@ title_en: What Was on the Imperial Exam?
 
 [section]
 page: 1
-layout: text-wrap-image
-heading_zh: 毛笔准备好了
-heading_en: The Brush Is Ready
-image: 3-ming-qing-exam-cell.webp
-caption_zh: 考生独自坐在狭窄的号舍里，面前摆着毛笔、墨和考卷。
-caption_en: A candidate sits alone in a narrow examination cell with his brush, ink, and papers ready.
+layout: text-only
+heading_zh: 考试开始了
+heading_en: The Exam Begins
 [zh]
 一个考生坐下来，面前摆着毛笔、墨和考卷。为了走到这一场考试，他可能已经读了很多年书。现在，最重要的时刻来了。**题目是什么？**
 
@@ -40,8 +37,8 @@ In the Tang dynasty, one important exam might even ask you to write a poem.
 [section]
 page: 2
 layout: text-wrap-image
-heading_zh: 唐代：写一首诗——可不能随便写
-heading_en: Tang: Write a Poem—But Follow the Rules
+heading_zh: 唐代：写诗可不能随便写
+heading_en: Tang: A Poem Had Rules
 image: 1-tang-poetry-exam.webp
 caption_zh: 少年在灯下练习写作，桌上放着毛笔和一卷卷书。
 caption_en: A boy practices writing by lamplight with a brush and rolled books spread across the table.
@@ -70,9 +67,9 @@ page: 3
 layout: text-wrap-image
 heading_zh: 宋代：把诗拿掉
 heading_en: Song: Take the Poetry Away
-image: 2-song-policy-questions.webp
-caption_zh: 考生伏案写作，后方的官员正在查看一幅河道地图。
-caption_en: A candidate writes at his desk while officials examine a river map behind him.
+image: 3-song-examiners-river-policy.webp
+caption_zh: 两位考官讨论朝廷应该怎样治理河流，准备把这个问题写进考卷。
+caption_en: Two examiners discuss how the government should manage a river as they prepare an exam question.
 [zh]
 1071年，[[北宋|song-dynasty]][[王安石|wang-anshi]]等人推动科举改革，进士科不再考诗[[赋|fu]]，而把更多分量放到了[[经义|classical-interpretation]]、论和策上。
 

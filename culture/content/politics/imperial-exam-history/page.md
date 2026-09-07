@@ -18,9 +18,9 @@ page: 1
 layout: text-wrap-image
 heading_zh: 一间很小的房子，一场很大的考试
 heading_en: A Tiny Room and a Very Big Exam
-image: 4-first-exam-paper.webp
-caption_zh: 考生坐在成排书案前答题，监考人员在他们之间收发卷纸。
-caption_en: Candidates work at rows of desks while examination officials collect and distribute papers.
+image: 1-ming-qing-exam-cell-front-view.webp
+caption_zh: 考生在号舍里认真答题。
+caption_en: A candidate works on his exam inside an examination cell.
 [zh]
 一条长长的巷子两边，排着一间又一间窄窄的小屋。每间里面坐着一个考生，身边放着笔墨、食物和准备答题的卷纸。这里就是古代的[[**贡院**|gongyuan]]。
 

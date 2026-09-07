@@ -21,7 +21,7 @@ image: 3-1-alchemy-workshop-sparks.webp
 caption_zh: 炼丹家在炉火旁加热和观察不同材料；火药是在长期试验中逐渐出现的，并没有一个这样的单独“发明时刻”。
 caption_en: Alchemists heat and observe different materials beside a furnace; gunpowder emerged through a long period of experiment, not one single moment of invention.
 [zh]
-一千多年前，一些中国炼丹家常常守在滚烫的炉子旁。他们把矿石和各种材料放在一起加热，一次又一次地试，希望炼出神奇的丹药。有些人想让身体更健康、寿命更长，还有人梦想着长生不老。
+大约在公元800年前后，也就是唐朝后期，一些中国炼丹家常常守在滚烫的炉子旁。他们把矿石和各种材料放在一起加热，一次又一次地试，希望炼出神奇的丹药。有些人想让身体更健康、寿命更长，还有人梦想着长生不老。
 
 可是，炼丹炉里出来的东西，并不总是他们想要的。
 
@@ -30,7 +30,7 @@ caption_en: Alchemists heat and observe different materials beside a furnace; gu
 这当然不是什么长生不老的仙丹。可是，这团火实在很难让人忘记。
 [/zh]
 [en]
-A hot furnace glowed beside jars of powders and minerals. More than a thousand years ago, Chinese alchemists spent years heating, mixing, and testing all kinds of materials. They hoped to make powerful medicines. Some searched for elixirs that might help people live longer. Some even dreamed of immortality.
+Around A.D. 800, during the later years of the Tang dynasty, Chinese alchemists worked beside hot furnaces, heating, mixing, and testing all kinds of materials. They hoped to make powerful medicines. Some searched for elixirs that might help people live longer. Some even dreamed of immortality.
 
 But the furnace did not always give them what they wanted.
 
@@ -70,12 +70,9 @@ It is a strange name for gunpowder, but it carries a clue from its past. The dis
 
 [section]
 page: 3
-layout: text-wrap-image
+layout: text-only
 heading_zh: 火走出了炼丹房
 heading_en: Fire Leaves the Alchemy Room
-image: 3-3-fire-lance-and-hand-cannon.webp
-caption_zh: 早期管状喷火器和后来出现的金属火器被放在一起比较；它们并不是同时出现的，也不是可以模仿的演示工具。
-caption_en: An early tube-shaped flame weapon and a later metal firearm appear side by side for comparison; they did not appear at the same time and are not devices to imitate.
 [zh]
 又过了大约两百年，中国的一本官方兵书里已经记下了几种火药配方。人们开始把火药的火、热和烟用在别的地方。
 
@@ -98,8 +95,8 @@ layout: text-wrap-image
 heading_zh: 火飞起来了
 heading_en: Fire Takes Off
 image: 3-4-fireworks-and-rocket-rack.webp
-caption_zh: 左边的箭仍要靠弓射出，右边的装置则表现火药推动物体前进；两者用来解释原理，并不复原某件古代实物。
-caption_en: The arrow on the left still needs a bow, while the device on the right shows gunpowder pushing an object forward; both explain the principle rather than reconstructing one ancient object.
+caption_zh: 一枚古代火箭架在木制支架上，筒形火药装置固定在长导杆前端。
+caption_en: An ancient rocket rests on a wooden stand, with a cylindrical gunpowder device fixed near the front of a long guide pole.
 [zh]
 最早的“火箭”，真的可以是一支带着火的箭。弓把箭射出去，箭上的火药带着火光和烟雾一起飞。
 
@@ -122,20 +119,20 @@ layout: text-only
 heading_zh: 夜空里的火花
 heading_en: Fire Flowers in the Sky
 [zh]
-火药还走进了节日。爆竹可以噼啪作响，烟花可以冲上夜空，再突然变成一片明亮的火花。
+火药走进节日，并不是等到火箭出现以后才开始。早在真正的火箭出现以前，人们已经把火药装进竹筒或纸筒，做成会发出响声和火光的爆竹。
 
-从炼丹炉旁到夜空，这团火已经走了很远很远。
+后来，人们学会利用燃烧产生的气体推动筒子前进。火箭出现以后，这种推进办法也让烟火飞得更高：它们冲上夜空，再散开成明亮的火花。
 
-一开始，炼丹家寻找的是丹药。他们的试验中出现了一种会猛烈燃烧的混合物。人们继续试验，它慢慢变成了火药。后来，火药走进兵书，跟着箭飞出去，推动火箭向前，又变成了夜空里的烟花。
+所以，爆竹比真正的火箭更早；会飞上天空的烟花则是在火箭推进技术发展以后逐渐出现的。火药的发展并不是只有一条路：它走进节日，也走进兵书，跟着箭飞出去，推动火箭向前，又把光送上夜空。
 
 炼丹家始终没有找到让人长生不老的仙丹。可是，他们那些一次又一次的试验，却打开了一扇谁也没有想到的门。仙丹没有出现。那团火却从炼丹炉里走了出来，而且一直走到了今天。
 [/zh]
 [en]
-Gunpowder also found a place in celebrations. It could make firecrackers crack and boom. It could send fireworks into the night, where they burst into flashes of light.
+Gunpowder entered celebrations before true rockets appeared. People packed it into bamboo or paper tubes to make early firecrackers that produced bangs, sparks, and flashes.
 
-What a long way the fire had traveled.
+Later, people learned that gas from burning gunpowder could push a tube forward. Once rockets appeared, the same kind of propulsion also helped carry fireworks higher into the sky, where they scattered into bright sparks.
 
-It began in the experiments of alchemists searching for medicines and elixirs. A dangerous mixture burned hands and set a building on fire. People kept experimenting. The mixture became **gunpowder**. gunpowder entered military books, traveled with arrows, powered rockets, and lit up the sky.
+Firecrackers therefore came before true rockets. Aerial fireworks developed later as rocket propulsion improved. Gunpowder did not follow one single path: it entered celebrations and military books, traveled with arrows, propelled rockets, and carried light into the night sky.
 
 The alchemists never found a medicine that could make people live forever. But their experiments opened the door to something nobody had been searching for. The elixir never appeared. The fire did—and it traveled far beyond the furnace.
 [/en]

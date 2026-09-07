@@ -9,10 +9,12 @@ Accessed: 2026-09-05
 
 Supports:
 - Chinese alchemists sought powerful medicines and elixirs, including preparations associated with longevity and immortality.
+- The *Zhenyuan miaodao yaolüe* is a late-Tang text, although it may preserve some earlier material.
 - The *Zhenyuan miaodao yaolüe* preserves a warning about burns and a building fire caused by heated materials including sulfur and saltpeter.
 - Gunpowder developed gradually from this alchemical setting.
 
 Editorial boundary:
+- The story uses “the ninth century, during the later years of the Tang dynasty” as a historical setting, not as a precise invention date.
 - The accident is paraphrased without quantities or operational preparation steps.
 - The story does not identify one inventor or treat the warning as a complete mature gunpowder formula.
 
@@ -51,11 +53,43 @@ Accessed: 2026-09-05
 Supports:
 - Chinese alchemical experimentation contributed to the development of gunpowder.
 - Fire arrows carrying burning material preceded clearer self-propelled rockets.
-- Gunpowder technology later contributed to rockets and fireworks.
+- The commonly cited 1232 description may not unambiguously identify a self-propelled rocket.
+- A self-propelled ground firework described in 1264 is clearer evidence of rocket-like propulsion and may reflect how the rocket principle emerged.
 
 Editorial boundary:
 - The story distinguishes bow-launched fire arrows from later gunpowder-powered rockets.
+- It does not assign one uncontested invention date to the true rocket.
 - It describes what the devices looked like without providing construction instructions.
+
+## Smithsonian Science Education Center, “The Evolution of Fireworks”
+
+URL: https://ssec.si.edu/node/205
+Accessed: 2026-09-06
+
+Supports:
+- Bamboo noisemakers existed long before gunpowder.
+- The article places a traditional account of an alchemist's accidental fiery mixture around A.D. 800.
+- Gunpowder-filled bamboo or paper fireworks appeared before true rockets.
+- Rocket technology later helped produce fireworks that could travel into the air.
+
+Editorial boundary:
+- The source introduces the single-alchemist account as a story; the children's article uses its approximate date but presents gunpowder as the result of continued experimentation rather than one documented invention moment.
+- The source gives broad milestone dates rather than one precise invention date.
+- The children's story uses it for the relative sequence—firecrackers, true rockets, then aerial fireworks—not for an exact year.
+
+## NASA, *A Pictorial History of Rockets*
+
+URL: https://science.nasa.gov/wp-content/uploads/2026/02/153410main-rockets-history.pdf
+Accessed: 2026-09-06
+
+Supports:
+- Gunpowder-filled tubes produced bangs and sparks before self-propelled rockets were clearly documented.
+- Escaping gases could make some firework tubes move, leading toward rocket propulsion.
+- The guide uses 1232 as a milestone for primitive rockets attached to arrows.
+
+Editorial boundary:
+- The 1232 date is treated as a commonly cited milestone, not as an uncontested exact invention date.
+- The story explains the sequence without giving construction details.
 
 ## *Wujing Zongyao* (《武经总要》), Chinese Text Project
 

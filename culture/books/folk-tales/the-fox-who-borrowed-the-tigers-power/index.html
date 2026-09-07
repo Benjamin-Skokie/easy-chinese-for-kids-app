@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>狐假虎威</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <nav class="back-nav">
+      <a href="../../../../index.html?view=culture#culture-folk-tales">← 返回目录 Back to Catalog</a>
+    </nav>
+    <main class="book">
+      <section class="page hero">
+        <div class="hero-copy">
+          <h1>狐假虎威</h1>
+          <h2>The Fox Who Borrowed the Tiger’s Power</h2>
+        </div>
+      </section>
+
+      <section class="page story two-column text-wrap-image">
+        <div class="story-copy">
+          <figure class="floated-figure">
+            <img src="./images/1-fox-walks-before-tiger.webp" alt="" class="floated-image" />
+            <figcaption class="caption floated-caption"><span class="zh">狐狸昂着头走在前面，动物们真正害怕的是它身后的老虎。</span><br><span class="en">The fox walks proudly in front, but the other animals are really afraid of the tiger behind him.</span></figcaption>
+          </figure>
+          <p>很久以前，一只老虎在森林里抓住了一只狐狸。老虎正准备把狐狸吃掉，狐狸忽然大声喊：“你不能吃我！”老虎停了下来。“为什么？”狐狸一本正经地说：“老天派我来管理所有动物。你要是吃了我，就是不听老天的话！”老虎听了，有点不相信。狐狸便说：“你跟在我后面走一趟，就知道了。”于是，狐狸昂着头走在前面，老虎紧紧跟在后面。一只鹿看见它们，转身就跑。兔子钻进草丛，鸟儿飞上天空。一路上，所有动物一见到它们，都赶紧逃开。狐狸更加得意了。“看见了吧？”它说，“大家都怕我！”老虎看看四周，竟然真的有点相信了。可是，那些动物根本不是害怕狐狸。它们害怕的是狐狸身后的老虎。这就是“狐假虎威”的故事。这里的“假”不是“假的”，而是<strong>借用</strong>的意思。“狐假虎威”，就是狐狸借着老虎的威风吓唬别人。今天，如果一个人自己并没有那么大的力量，却借着更有力量的人来吓唬别人，我们就可以说他是在“狐假虎威”。狐狸看起来很威风。<strong>可是，那份威风从来都不是它自己的。</strong></p>
+          <p>Long ago, a tiger caught a fox in the forest. Just as the tiger was about to eat him, the fox cried, “You can’t eat me!” The tiger stopped. “Why not?” “The ruler of Heaven sent me to lead all the animals,” said the fox. “If you eat me, you will be disobeying Heaven.” The tiger was not sure he believed him. So the fox said, “Follow me. You’ll see.” The fox walked proudly through the forest, with the tiger close behind. A deer saw them and ran. Rabbits dashed into the bushes. Birds flew from the trees. Everywhere they went, animals hurried away. The fox lifted his head. “See?” he said. “They’re all afraid of me.” The tiger looked around and began to believe him. But the animals were not afraid of the fox at all. They were afraid of the tiger walking behind him. This story gave us the expression <strong>hú jiǎ hǔ wēi</strong>&#8212;“the fox borrows the tiger’s power.” Today, people use it when someone seems powerful only because a stronger person is backing them up. The fox looked very impressive. <strong>But the power was never really his.</strong></p>
+        </div>
+      </section>
+    </main>
+    <script src="../../../../site-footer.js?v=20260830-v1"></script>
+      <script>
+      (() => {
+        const entries = Array.from(document.querySelectorAll(".glossary-entry"));
+        if (!entries.length) return;
+
+        const closeEntry = (entry) => {
+          entry.dataset.open = "false";
+          entry.style.removeProperty("--glossary-left");
+          entry.style.removeProperty("--glossary-top");
+          entry.style.removeProperty("--glossary-arrow-left");
+          const button = entry.querySelector(".glossary-term");
+          if (button) button.setAttribute("aria-expanded", "false");
+        };
+
+        const closeAll = (except = null) => {
+          for (const entry of entries) {
+            if (entry !== except) closeEntry(entry);
+          }
+        };
+
+        const placePopover = (entry) => {
+          requestAnimationFrame(() => {
+            const button = entry.querySelector(".glossary-term");
+            const popover = entry.querySelector(".glossary-popover");
+            if (!button || !popover) return;
+
+            const margin = 12;
+            const compactViewport = window.matchMedia("(max-width: 900px)").matches;
+            const gap = compactViewport ? 8 : 10;
+            const buttonRect = button.getBoundingClientRect();
+            const popoverRect = popover.getBoundingClientRect();
+            const halfWidth = popoverRect.width / 2;
+            const buttonCenter = buttonRect.left + buttonRect.width / 2;
+            const minCenter = margin + halfWidth;
+            const maxCenter = window.innerWidth - margin - halfWidth;
+            const left = Math.min(Math.max(buttonCenter, minCenter), maxCenter);
+
+            let side = compactViewport ? "below" : "above";
+            let top = side === "below"
+              ? buttonRect.bottom + gap
+              : buttonRect.top - popoverRect.height - gap;
+
+            if (side === "above" && top < margin) {
+              side = "below";
+              top = buttonRect.bottom + gap;
+            }
+
+            if (side === "below" && top + popoverRect.height > window.innerHeight - margin) {
+              const fallbackTop = buttonRect.top - popoverRect.height - gap;
+              if (fallbackTop >= margin) {
+                side = "above";
+                top = fallbackTop;
+              } else {
+                top = Math.max(margin, window.innerHeight - margin - popoverRect.height);
+              }
+            }
+
+            const popoverLeft = left - halfWidth;
+            const arrowLeft = Math.min(
+              Math.max(buttonCenter - popoverLeft, 16),
+              Math.max(16, popoverRect.width - 16)
+            );
+
+            entry.dataset.side = side;
+            entry.style.setProperty("--glossary-left", left + "px");
+            entry.style.setProperty("--glossary-top", top + "px");
+            entry.style.setProperty("--glossary-arrow-left", arrowLeft + "px");
+          });
+        };
+
+        const toggleEntry = (entry) => {
+          const shouldOpen = entry.dataset.open !== "true";
+          closeAll(entry);
+          entry.dataset.open = shouldOpen ? "true" : "false";
+
+          const button = entry.querySelector(".glossary-term");
+          if (button) {
+            button.setAttribute("aria-expanded", shouldOpen ? "true" : "false");
+            if (!shouldOpen) button.blur();
+          }
+
+          if (shouldOpen) placePopover(entry);
+        };
+
+        document.addEventListener("click", (event) => {
+          const button = event.target.closest(".glossary-term");
+          if (button) {
+            event.preventDefault();
+            toggleEntry(button.closest(".glossary-entry"));
+            return;
+          }
+
+          if (!event.target.closest(".glossary-entry")) {
+            closeAll();
+            if (document.activeElement && document.activeElement.classList.contains("glossary-term")) {
+              document.activeElement.blur();
+            }
+          }
+        });
+
+        document.addEventListener("keydown", (event) => {
+          if (event.key === "Escape") {
+            closeAll();
+            if (document.activeElement && document.activeElement.classList.contains("glossary-term")) {
+              document.activeElement.blur();
+            }
+            return;
+          }
+
+          if ((event.key === "Enter" || event.key === " ") && event.target.classList.contains("glossary-term")) {
+            event.preventDefault();
+            toggleEntry(event.target.closest(".glossary-entry"));
+          }
+        });
+
+        for (const entry of entries) {
+          entry.addEventListener("mouseenter", () => placePopover(entry));
+        }
+
+        window.addEventListener("resize", () => closeAll());
+        window.addEventListener("scroll", () => closeAll(), { passive: true });
+      })();
+    </script>
+  </body>
+</html>

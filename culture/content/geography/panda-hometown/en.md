@@ -1,8 +1,8 @@
 > Difficulty: Easy
 
-# Where Is a Giant Panda's Real Home?
+# The Giant Panda's Homeland
 
-## A Tiny Pink Panda
+## A Panda Nursery at the Breeding Center
 
 A newborn giant panda looks nothing like the panda in a picture book. It weighs about as much as a stick of butter. It is pink, nearly hairless, and unable to open its eyes. Beside its mother, it looks unbelievably small.
 

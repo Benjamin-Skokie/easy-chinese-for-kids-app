@@ -59,24 +59,16 @@ layout: text-only
 heading_zh: 怎样做几千个人，又不让他们一模一样？
 heading_en: How Do You Make Thousands Without Making Them All the Same?
 [zh]
-兵马俑是用陶土做的，也就是把泥塑好，再经过烧制，让它变得坚硬。
+兵马俑是用陶土做的，也就是把泥塑好，再经过烧制，让它变得坚硬。至于陶俑究竟一步一步怎样制作，研究者还有不同看法。不过，有一点越来越清楚：工匠会使用可以重复的基本做法，然后再用手把细节做出来。
 
-至于陶俑究竟一步一步怎样制作，研究者还有不同看法。不过，有一点越来越清楚：工匠会使用可以重复的基本做法，然后再用手把细节做出来。
-
-头、手、身体等部分可以分步骤制作，表面再加上细泥，刻出头发、胡须、眼睛、嘴巴、衣褶和铠甲。
-
-这样就解决了一个大问题。工匠不用从一团泥开始，重新发明每一个人；可是到了最后，他们又可以让每张脸出现变化。
+头、手、身体等部分可以分步骤制作，表面再加上细泥，刻出头发、胡须、眼睛、嘴巴、衣褶和铠甲。这样就解决了一个大问题。工匠不用从一团泥开始，重新发明每一个人；可是到了最后，他们又可以让每张脸出现变化。
 
 研究人员甚至用三维扫描去比较陶俑的耳朵。耳朵确实长得很不一样，可“每只耳朵不同”仍然不能证明“每一个陶俑都有一个真人原型”。这些差别也可能来自不同模具、不同工匠，以及最后的手工修改。
 [/zh]
 [en]
-The warriors are made of [[terracotta|terracotta]]—clay that has been shaped and fired until it becomes hard.
+The warriors are made of [[terracotta|terracotta]]—clay that has been shaped and fired until it becomes hard. Scholars still debate some details of exactly how the figures were built. But research shows that craftspeople could use repeated basic methods and forms, then work the surface by hand.
 
-Scholars still debate some details of exactly how the figures were built. But research shows that craftspeople could use repeated basic methods and forms, then work the surface by hand.
-
-Heads, hands, bodies, and other parts could be made in stages. Fine clay was added so workers could shape hair, beards, eyes, mouths, clothing folds, belts, and armor.
-
-This solved a huge problem. The workers did not have to invent every soldier from the beginning. They could repeat useful forms and then change the details.
+Heads, hands, bodies, and other parts could be made in stages. Fine clay was added so workers could shape hair, beards, eyes, mouths, clothing folds, belts, and armor. This solved a huge problem. The workers did not have to invent every soldier from the beginning. They could repeat useful forms and then change the details.
 
 Researchers have even used 3-D scans to compare the warriors’ ears. The ears vary a great deal. But different ears alone cannot prove that each warrior copied one real person. The differences may also come from different molds, different workers, and hand finishing.
 [/en]
@@ -112,27 +104,17 @@ layout: text-only
 heading_zh: 这么大的军队，是谁做出来的？
 heading_en: A Giant Project Made by Many Hands
 [zh]
-八千件真人大小的陶俑，不可能只是几个陶工在一间小作坊里慢慢完成的。
+八千件真人大小的陶俑，不可能只是几个陶工在一间小作坊里慢慢完成的。陶俑和武器上留下的名字、印记和细小差异，让研究人员看到许多工匠和生产小组一起工作的痕迹。整个秦始皇陵本来就是一项巨大的工程，需要陶工、金属工、建筑工和许多其他劳动者共同完成。
 
-陶俑和武器上留下的名字、印记和细小差异，让研究人员看到许多工匠和生产小组一起工作的痕迹。整个秦始皇陵本来就是一项巨大的工程，需要陶工、金属工、建筑工和许多其他劳动者共同完成。
-
-所以，那八千张不同的脸真的是八千幅真人肖像吗？现在还没有证据证明这一点。
-
-但陶俑已经告诉我们另一件很了不起的事：两千多年前的工匠已经能够用有组织、可以重复的方法制作成千上万件作品，同时又让人的手在最后留下变化。
+所以，那八千张不同的脸真的是八千幅真人肖像吗？现在还没有证据证明这一点。但陶俑已经告诉我们另一件很了不起的事：两千多年前的工匠已经能够用有组织、可以重复的方法制作成千上万件作品，同时又让人的手在最后留下变化。
 
 远远看过去，那是一支军队。走近以后，一张一张不同的脸才慢慢出现。
 [/zh]
 [en]
-An army this large could not come from one small pottery shop.
+An army this large could not come from one small pottery shop. Names, marks, small style differences, and patterns in the weapons and figures help researchers study how different groups of craftspeople worked. The entire mausoleum was an enormous project involving potters, metalworkers, builders, and many other laborers.
 
-Names, marks, small style differences, and patterns in the weapons and figures help researchers study how different groups of craftspeople worked. The entire mausoleum was an enormous project involving potters, metalworkers, builders, and many other laborers.
+That helps answer our first question. The warriors clearly have individual differences. But we cannot say that 8,000 soldiers stood still while artists copied 8,000 faces. What the clay does show is something just as remarkable. Ancient craftspeople found ways to make thousands of figures using organized, repeatable methods—while still leaving room for a hand to change a beard, an eye, a hairstyle, or the corner of a mouth.
 
-That helps answer our first question. The warriors clearly have individual differences. But we cannot say that 8,000 soldiers stood still while artists copied 8,000 faces.
-
-What the clay does show is something just as remarkable. Ancient craftspeople found ways to make thousands of figures using organized, repeatable methods—while still leaving room for a hand to change a beard, an eye, a hairstyle, or the corner of a mouth.
-
-From far away, they form an army.
-
-Walk closer, and one face at a time begins to appear.
+From far away, they form an army. Walk closer, and one face at a time begins to appear.
 [/en]
 [/section]

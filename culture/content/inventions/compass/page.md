@@ -15,7 +15,10 @@ title_en: Why Does a Compass Needle Keep Pointing the Same Way?
 
 [section]
 page: 1
-layout: text-only
+layout: text-wrap-image
+image: lost-at-sea.webp
+caption_zh: 乌云遮住太阳和星星时，海上的船员很难辨认方向。
+caption_en: When clouds hide the sun and stars, sailors at sea can struggle to tell which direction they are traveling.
 [zh]
 很久以前，对海上的船员来说，天空也是“地图”的一部分。白天可以看太阳，晚上可以看星星。可是，如果乌云把太阳和星星全都遮住了呢？
 
@@ -55,8 +58,8 @@ layout: text-wrap-image
 heading_zh: 地球周围看不见的力量
 heading_en: The Invisible Pull Around Earth
 image: floating-needle.webp
-caption_zh: 水盆里的磁针可以自由转动；画中的器物和航海场景并不精确复原《梦溪笔谈》的记载。
-caption_en: The magnetic needle can turn freely in the bowl; the instrument and voyage do not precisely reconstruct the account in the *Dream Pool Essays*.
+caption_zh: 磁针浮在水面上，可以自由转动，最后停在南北方向上。
+caption_en: A magnetic needle floating on water can turn freely and settle along a north-south line.
 [zh]
 钢针经过磁化以后，就变成了一个小小的磁体。只要让它自由转动，它就会受到地球磁场的影响。
 
@@ -96,12 +99,9 @@ By the early twelfth century, Chinese writers were clearly recording sailors usi
 
 [section]
 page: 5
-layout: text-wrap-image
+layout: text-only
 heading_zh: 当天空变成灰色
 heading_en: When the Sky Goes Gray
-image: lost-at-sea.webp
-caption_zh: 乌云遮住天空时，船员仍要辨认航向；画面并不表现某一次具体的宋代航行。
-caption_en: Sailors still need to hold their course when clouds hide the sky; the scene does not portray one specific Song voyage.
 [zh]
 想象一艘船已经驶离海岸。白天，船员一直在看太阳辨认方向，可厚厚的云慢慢盖住了天空。到了晚上，连星星也看不见了。
 

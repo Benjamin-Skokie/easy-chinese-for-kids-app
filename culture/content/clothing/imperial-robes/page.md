@@ -19,8 +19,8 @@ layout: text-wrap-image
 heading_zh: 为什么偏偏是黄色？
 heading_en: Why Yellow?
 image: mianfu-formal-robe.webp
-caption_zh: 皇帝穿着礼服站在宫殿前；不同朝代的皇帝，衣服和帽子并不一样。
-caption_en: An emperor stands before a palace in ceremonial clothing; emperors from different times did not all wear the same robes and crowns.
+caption_zh: 明代皇帝穿着明黄色龙袍坐在宫殿中。
+caption_en: A Ming emperor sits in the palace wearing a bright yellow dragon robe.
 [zh]
 一说到中国皇帝，很多人马上会想到一件金灿灿的黄袍。可是，古代皇帝并不是从早到晚都穿黄色，也不是每个朝代都有同样的规定。
 

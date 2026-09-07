@@ -2,15 +2,21 @@
 
 # Ancient Warships: When the Battlefield Moved onto Water
 
-## A Ship Coming to Surrender
+## A Fleet Coming to Surrender
 
-About 1,800 years ago, two armies faced each other across the [[Yangtze River|yangtze-river]]. One side belonged to [[Cao Cao|cao-cao]], whose ships were gathered along the northern bank. On the other side was a smaller force led by commanders including [[Zhou Yu|zhou-yu]]. Then several ships began moving toward Cao Cao’s fleet. They seemed to be coming to surrender.
+About 1,800 years ago, [[Cao Cao|cao-cao]] led a large army to the [[Yangtze River|yangtze-river]]. Many of his soldiers came from northern China. They knew how to fight on land, but they were not used to fighting on water. The long journey had also made many of them sick. Across the river, [[Zhou Yu|zhou-yu]] and his army were ready to stop them.
 
-An old history tells us that the commander [[Huang Gai|huang-gai]] had sent a letter first, pretending that he wanted to give up. His ships were loaded with dry grass and other fuel. As they drew close, the crews set them on fire. A strong wind was blowing. The burning ships rushed toward Cao Cao’s vessels, which the history says were joined bow to stern. Flames spread from the ships toward the camps on shore, and Cao Cao’s army retreated.
+An old history book says that many of Cao Cao’s ships were tied together from front to back. It does not tell us why. Much later, the novel *Romance of the Three Kingdoms* said the ships were chained together to make the decks steadier for soldiers who became sick on boats. But that explanation comes from the novel, not the older history book.
 
-This was the famous battle at Red Cliffs. The story is dramatic, but it also shows something easy to forget about ancient warships: a ship could carry soldiers and weapons into battle, but the ship itself was always part of the battle too.
+[[Huang Gai|huang-gai]] saw a weakness. If one wooden ship caught fire, the ships tied beside it might not be able to move away.
 
-It had to survive the water beneath it, the wind around it, and whatever the enemy sent toward it.
+Huang Gai sent Cao Cao a letter. He pretended that he wanted to give up and join Cao Cao’s side. But his ships were secretly filled with dry grass, firewood, and oil.
+
+When the ships came closer, Cao Cao’s soldiers thought Huang Gai was really coming to surrender. Then Huang Gai ordered his men to set the ships on fire. A strong wind pushed the burning ships toward Cao Cao’s fleet. The fire spread from ship to ship and reached the camp on shore. Cao Cao’s army had to retreat.
+
+This became known as the Battle of Red Cliffs. It shows us something important about fighting on water: ships did not just carry soldiers into battle. The ships were part of the battle.
+
+They had to move through water and wind. They also had to survive enemy attacks.
 
 ---
 
@@ -48,7 +54,7 @@ The upper decks, sails, and masts were gone. What remained was the part that had
 
 ## Fire, Water, and Wood
 
-Go back now to Red Cliffs. Huang Gai did not defeat Cao Cao’s ships by building a taller ship or putting more soldiers on one deck. He noticed something about the fleet in front of him and used the river, the wind, and fire against it.
+Go back now to Red Cliffs. Huang Gai’s attack did not work because his ships were larger. It worked because he recognized the weakness of a fleet joined bow to stern. Once the burning ships raced forward with the wind, the connected wooden vessels had less room to escape the spreading fire.
 
 That is what makes ancient naval warfare different from simply putting an army on boats. The water was part of the battlefield. So was the weather. And every wooden ship had strengths and weaknesses of its own.
 

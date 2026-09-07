@@ -108,12 +108,9 @@ Some versions add a cat to the story. The rat promises to wake the sleepy cat be
 
 [section]
 page: 5
-layout: text-wrap-image
+layout: text-only
 heading_zh: 河边越来越热闹
 heading_en: A Very Busy Riverbank
-image: final-order.webp
-caption_zh: 十二种动物终于到齐了，玉皇大帝按照它们到达的先后排好了顺序。
-caption_en: All twelve animals have arrived, and the Jade Emperor puts them in finishing order.
 [zh]
 老虎浑身湿透地爬上岸，得了第三。兔子踩着石头和漂来的木头过河，得了第四。
 

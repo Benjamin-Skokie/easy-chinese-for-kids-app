@@ -19,8 +19,8 @@ layout: text-wrap-image
 heading_zh: 一张很不一样的学习清单
 heading_en: A Very Different School List
 image: 1-six-arts-archery-dawn.webp
-caption_zh: 少年在清晨练习射箭，身体和眼睛都对准前方的目标。
-caption_en: A young archer practices at dawn, steadying his body and eyes on the target.
+caption_zh: 少年在清晨练习射箭。
+caption_en: A young archer practices at dawn.
 [zh]
 音乐和算术放在一起，好像并不奇怪。再加上写字，也很容易理解。可是接下来，居然还有射箭和驾战车。
 
@@ -39,9 +39,12 @@ The list feels unusual today because it mixes things we now put in completely di
 
 [section]
 page: 2
-layout: text-only
+layout: text-wrap-image
 heading_zh: 礼和乐：学会和别人一起行动
 heading_en: Ritual and Music: Learning to Act Together
+image: 2-six-arts-qin-lesson-soft.webp
+caption_zh: 少年跟着老师练习弹琴。
+caption_en: A young learner practices the qin with his teacher.
 [zh]
 第一项“**礼**”，并不只是今天说的“有礼貌”。古代很多重要场合都有自己的规矩。来了宾客应该怎样接待，参加仪式应该站在哪里，什么时候行礼，遇到丧事、朝会或者军事活动又应该怎样行动，都属于“礼”的世界。
 
@@ -84,12 +87,9 @@ Then there was **yù**: driving a horse-drawn chariot. This may be the strangest
 
 [section]
 page: 4
-layout: text-wrap-image
+layout: text-only
 heading_zh: 毛笔和数字
 heading_en: A Brush and Some Numbers
-image: 4-six-arts-qin-and-math.webp
-caption_zh: 琴、竹简和算筹放在同一处，让音乐、书写和计算同时进入画面。
-caption_en: A qin, bamboo slips, and counting rods bring music, writing, and calculation into one scene.
 [zh]
 不过，有些本领确实要坐下来练。“**书**”和识字、书写有关。古代没有今天这样的练习本，人们可以用毛笔蘸墨，把文字写在一条条[[竹简|bamboo-slips]]上，再把竹简编在一起。毛笔本身在纸普遍使用以前就已经出现了。
 
