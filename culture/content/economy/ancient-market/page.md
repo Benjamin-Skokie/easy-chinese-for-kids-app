@@ -101,9 +101,9 @@ page: 4
 layout: two-column
 heading_zh: “鬼市子”
 heading_en: The “Ghost Market”
-image: 1-4-street-sellers.webp
-caption_zh: 一位挑着两篮货物的小贩从店铺前走过，向街边的母子吆喝。
-caption_en: A peddler carrying two baskets calls out to a mother and child outside a shop.
+image: 1-4-ghost-market-before-dawn.webp
+caption_zh: 天刚蒙蒙亮，商贩正在收起衣服、图画和花饰，“鬼市子”很快就要散了。
+caption_en: As dawn begins, sellers pack away clothes, pictures, and flower ornaments before the “ghost market” disappears.
 [zh]
 有一种市场在天还黑着的时候就开了。商贩点起灯，卖衣服、图画、花饰和其他东西。等到天亮，这个市场也就散了。人们把它叫作**“鬼市子”**。
 

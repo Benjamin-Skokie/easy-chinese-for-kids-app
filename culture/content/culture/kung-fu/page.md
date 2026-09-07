@@ -50,12 +50,12 @@ image: 2-shaolin-training-yard.webp
 caption_zh: 几名少年在寺院庭院里练习棍法。
 caption_en: Several young students practice staff movements in a temple courtyard.
 [zh]
-中国武术从来不是一整套完全一样的动作。这么大的中国，不同地方、不同师傅，慢慢练出了许多不同的路子。少林是其中很有名的一支，却不是整棵大树。
+中国武术从来不是一整套完全一样的动作。这么大的中国，不同地方、不同师傅，慢慢练出了许多不同的路子。[少林](../../religion/shaolin-kung-fu/index.html)是其中很有名的一支，却不是整棵大树。
 
 有的拳法出手很快，有的腿法舒展开来；有人用棍、用剑，也有人空手练习。有的人突然向前冲出去，有的人先转身、绕开，再寻找机会。动作差得这么多，它们到底有什么共同的地方？其中一个答案，是“控制”。
 [/zh]
 [en]
-Chinese martial arts did not grow into one single set of movements. Over centuries, different places, teachers, and traditions developed different ways of training. Shaolin is one famous branch of that enormous tree—but only one branch.
+Chinese martial arts did not grow into one single set of movements. Over centuries, different places, teachers, and traditions developed different ways of training. [Shaolin](../../religion/shaolin-kung-fu/index.html) is one famous branch of that enormous tree—but only one branch.
 
 Elsewhere, you might see quick hand movements, wide kicks, low stances, staffs, swords, or empty hands. One person may move forward in a sudden burst. Another may turn away, circle, and wait. If all of that can be called Chinese martial arts, what do these very different movements have in common? One answer is control.
 [/en]

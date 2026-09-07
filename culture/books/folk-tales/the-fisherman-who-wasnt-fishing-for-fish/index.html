@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>愿者上钩</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <nav class="back-nav">
+      <a href="../../../../index.html?view=culture#culture-folk-tales">← 返回目录 Back to Catalog</a>
+    </nav>
+    <main class="book">
+      <section class="page hero">
+        <div class="hero-copy">
+          <h1>愿者上钩</h1>
+          <h2>The Willing One Takes the Hook</h2>
+        </div>
+      </section>
+
+      <section class="page story two-column text-wrap-image">
+        <div class="story-copy">
+          <figure class="floated-figure">
+            <img src="./images/1-jiang-ziya-straight-hook.webp" alt="" class="floated-image" />
+            <figcaption class="caption floated-caption"><span class="zh">姜子牙拿着没有鱼饵的直钩坐在河边，路人惊讶地看着他。</span><br><span class="en">Jiang Ziya sits by the river with a straight, baitless hook while surprised passersby watch him.</span></figcaption>
+          </figure>
+          <p>很久以前，有一位老人叫<span class="glossary-entry"><button type="button" class="glossary-term" aria-expanded="false" aria-controls="glossary-jiang-ziya-1">姜子牙</button><span id="glossary-jiang-ziya-1" class="glossary-popover" role="tooltip">Jiāng Zǐyá · 商周之际的重要人物，又称吕尚、姜太公，后来辅佐周文王。</span></span>。他常常坐在河边，手里拿着一根鱼竿。路过的人很快发现了一件奇怪的事。他的鱼钩上没有鱼饵。更奇怪的是，那根鱼钩还是直的。“你这样怎么可能钓得到鱼呢？”有人问。姜子牙却一点也不着急。因为他真正等的，本来就不是鱼。他是在等一个能够发现他的人。姜子牙花了很多年学习怎样治理国家、怎样帮助一位好的君主。可是，他并不想到处追着别人，求他们给自己一个位置。于是，他就在河边等。后来，<span class="glossary-entry"><button type="button" class="glossary-term" aria-expanded="false" aria-controls="glossary-king-wen-zhou-2">周文王</button><span id="glossary-king-wen-zhou-2" class="glossary-popover" role="tooltip">Zhōu Wén Wáng · 周朝建立前的重要领袖，传说中发现并重用姜子牙的人。</span></span>听说了这位奇怪的老人，特地来见他。两个人谈了很久。周文王很快发现，姜子牙懂的可不只是钓鱼。他请姜子牙做自己的谋士，帮助他处理国家大事。原来，这才是姜子牙一直在等的“鱼”。后来，人们讲这个故事时，又加入了一个很有名的说法：姜太公用直钩、不放鱼饵来钓鱼，愿意来的，自然会来。于是便有了：<strong>“姜太公钓鱼&#8212;&#8212;愿者上钩。”</strong>有时候，一个坐在河边钓鱼的人，<strong>等的根本不是鱼。</strong></p>
+          <p>Long ago, an old man named <span class="glossary-entry"><button type="button" class="glossary-term" aria-expanded="false" aria-controls="glossary-jiang-ziya-3">Jiang Ziya</button><span id="glossary-jiang-ziya-3" class="glossary-popover" role="tooltip">Jiāng Zǐyá · 姜子牙 · An important figure near the end of the Shang period, also known as Lü Shang and Jiang Taigong, who later advised King Wen of Zhou.</span></span> sat beside a river with a fishing rod. People passing by noticed something strange. His hook had no bait. Even stranger, the hook was straight. “How are you going to catch a fish like that?” someone asked. Jiang Ziya did not seem worried. He was not really waiting for a fish. He was waiting for the right person to notice him. Jiang Ziya had spent many years studying how rulers could govern wisely. He believed he could help a good ruler, but he did not want to chase after one asking for a job. So he waited by the river. One day, <span class="glossary-entry"><button type="button" class="glossary-term" aria-expanded="false" aria-controls="glossary-king-wen-zhou-4">King Wen of Zhou</button><span id="glossary-king-wen-zhou-4" class="glossary-popover" role="tooltip">Zhōu Wén Wáng · 周文王 · A major leader before the Zhou dynasty was founded who, in the story, recognizes Jiang Ziya’s ability.</span></span> heard about the unusual old fisherman and came to meet him. The two talked. King Wen quickly realized that Jiang Ziya knew far more about running a country than catching fish. He invited Jiang Ziya to become one of his advisers. And that was the catch Jiang Ziya had really been waiting for. Later, people told the story with an even more unusual detail: Jiang Ziya fished with a straight hook and no bait, saying that whoever was willing could come to him. That is where the saying <strong>“Jiang Taigong goes fishing&#8212;the willing one takes the hook”</strong> comes from. Sometimes, the person holding the fishing rod is not really waiting for a fish at all.</p>
+        </div>
+      </section>
+    </main>
+    <script src="../../../../site-footer.js?v=20260830-v1"></script>
+      <script>
+      (() => {
+        const entries = Array.from(document.querySelectorAll(".glossary-entry"));
+        if (!entries.length) return;
+
+        const closeEntry = (entry) => {
+          entry.dataset.open = "false";
+          entry.style.removeProperty("--glossary-left");
+          entry.style.removeProperty("--glossary-top");
+          entry.style.removeProperty("--glossary-arrow-left");
+          const button = entry.querySelector(".glossary-term");
+          if (button) button.setAttribute("aria-expanded", "false");
+        };
+
+        const closeAll = (except = null) => {
+          for (const entry of entries) {
+            if (entry !== except) closeEntry(entry);
+          }
+        };
+
+        const placePopover = (entry) => {
+          requestAnimationFrame(() => {
+            const button = entry.querySelector(".glossary-term");
+            const popover = entry.querySelector(".glossary-popover");
+            if (!button || !popover) return;
+
+            const margin = 12;
+            const compactViewport = window.matchMedia("(max-width: 900px)").matches;
+            const gap = compactViewport ? 8 : 10;
+            const buttonRect = button.getBoundingClientRect();
+            const popoverRect = popover.getBoundingClientRect();
+            const halfWidth = popoverRect.width / 2;
+            const buttonCenter = buttonRect.left + buttonRect.width / 2;
+            const minCenter = margin + halfWidth;
+            const maxCenter = window.innerWidth - margin - halfWidth;
+            const left = Math.min(Math.max(buttonCenter, minCenter), maxCenter);
+
+            let side = compactViewport ? "below" : "above";
+            let top = side === "below"
+              ? buttonRect.bottom + gap
+              : buttonRect.top - popoverRect.height - gap;
+
+            if (side === "above" && top < margin) {
+              side = "below";
+              top = buttonRect.bottom + gap;
+            }
+
+            if (side === "below" && top + popoverRect.height > window.innerHeight - margin) {
+              const fallbackTop = buttonRect.top - popoverRect.height - gap;
+              if (fallbackTop >= margin) {
+                side = "above";
+                top = fallbackTop;
+              } else {
+                top = Math.max(margin, window.innerHeight - margin - popoverRect.height);
+              }
+            }
+
+            const popoverLeft = left - halfWidth;
+            const arrowLeft = Math.min(
+              Math.max(buttonCenter - popoverLeft, 16),
+              Math.max(16, popoverRect.width - 16)
+            );
+
+            entry.dataset.side = side;
+            entry.style.setProperty("--glossary-left", left + "px");
+            entry.style.setProperty("--glossary-top", top + "px");
+            entry.style.setProperty("--glossary-arrow-left", arrowLeft + "px");
+          });
+        };
+
+        const toggleEntry = (entry) => {
+          const shouldOpen = entry.dataset.open !== "true";
+          closeAll(entry);
+          entry.dataset.open = shouldOpen ? "true" : "false";
+
+          const button = entry.querySelector(".glossary-term");
+          if (button) {
+            button.setAttribute("aria-expanded", shouldOpen ? "true" : "false");
+            if (!shouldOpen) button.blur();
+          }
+
+          if (shouldOpen) placePopover(entry);
+        };
+
+        document.addEventListener("click", (event) => {
+          const button = event.target.closest(".glossary-term");
+          if (button) {
+            event.preventDefault();
+            toggleEntry(button.closest(".glossary-entry"));
+            return;
+          }
+
+          if (!event.target.closest(".glossary-entry")) {
+            closeAll();
+            if (document.activeElement && document.activeElement.classList.contains("glossary-term")) {
+              document.activeElement.blur();
+            }
+          }
+        });
+
+        document.addEventListener("keydown", (event) => {
+          if (event.key === "Escape") {
+            closeAll();
+            if (document.activeElement && document.activeElement.classList.contains("glossary-term")) {
+              document.activeElement.blur();
+            }
+            return;
+          }
+
+          if ((event.key === "Enter" || event.key === " ") && event.target.classList.contains("glossary-term")) {
+            event.preventDefault();
+            toggleEntry(event.target.closest(".glossary-entry"));
+          }
+        });
+
+        for (const entry of entries) {
+          entry.addEventListener("mouseenter", () => placePopover(entry));
+        }
+
+        window.addEventListener("resize", () => closeAll());
+        window.addEventListener("scroll", () => closeAll(), { passive: true });
+      })();
+    </script>
+  </body>
+</html>

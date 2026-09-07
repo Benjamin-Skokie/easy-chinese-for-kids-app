@@ -32,7 +32,7 @@ After Wu's husband died, one of her sons became emperor. Less than two months la
 
 Her second son wore the emperor's crown, but the most important orders still came from Wu. For six years, she ruled in her son's name.
 
-In 690, Wu removed this son too and officially took the title of emperor for herself. She even gave her dynasty a new name: Zhou.
+In 690, Wu removed this son too and officially took the title of emperor for herself. She also changed the dynasty's name to Zhou. To distinguish it from the much earlier [[Zhou dynasty|zhou-dynasty]], people often call this period [[Wu Zhou|wu-zhou]].
 
 Other women in Chinese history held great power, but Wu was the only woman who formally ruled China with the title of emperor. She was about sixty-six years old.
 

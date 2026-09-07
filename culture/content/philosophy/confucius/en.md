@@ -6,9 +6,9 @@
 
 More than 2,500 years ago, [[Confucius|confucius]] taught students in the [[state of Lǔ|state-of-lu]] in ancient China. The conversations connected with him do not sound much like a modern textbook. A student asks a question. Confucius answers. Sometimes the answer is only a sentence or two.
 
-One day, a student named [[Zǐgòng|zigong]] asked an enormous question: **“Is there one word that a person could practice for an entire life?”** Imagine asking a teacher for one idea that could still be useful when you were ten, twenty, fifty, or eighty years old.
+One day, a student named [[Zǐgòng|zigong]] asked an enormous question: **“Is there one guiding principle that a person could practice for an entire life?”** Imagine asking a teacher for one idea that could still be useful when you were ten, twenty, fifty, or eighty years old.
 
-Confucius answered with one word: [[**shù**|shu]]. Then he explained what he meant: **“What you do not want done to yourself, do not do to others.”**
+Confucius answered with a guiding idea: [[**shù**|shu]]. Then he explained what he meant: **“What you do not want done to yourself, do not do to others.”**
 
 It sounds simple enough. Using it is harder.
 
@@ -44,9 +44,9 @@ Confucius himself did not sit down and write a book called *The Analects*. After
 
 The answers are not always the same because the questions are not always the same. That is part of what makes the book interesting. Confucius is usually responding to a particular person or problem rather than handing everyone the same page of instructions.
 
-But Zǐgòng’s question stands out because it asks for something very small that can travel very far.
+But Zǐgòng’s question stands out because it asks whether one guiding principle can last a lifetime.
 
-One word. One lifetime.
+One principle for a lifetime?
 
 ---
 

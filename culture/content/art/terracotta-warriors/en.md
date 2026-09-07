@@ -22,13 +22,9 @@ But the evidence does not take us that far.
 
 ## How Do You Make Thousands Without Making Them All the Same?
 
-The warriors are made of [[terracotta|terracotta]]—clay that has been shaped and fired until it becomes hard.
+The warriors are made of [[terracotta|terracotta]]—clay that has been shaped and fired until it becomes hard. Scholars still debate some details of exactly how the figures were built. But research shows that craftspeople could use repeated basic methods and forms, then work the surface by hand.
 
-Scholars still debate some details of exactly how the figures were built. But research shows that craftspeople could use repeated basic methods and forms, then work the surface by hand.
-
-Heads, hands, bodies, and other parts could be made in stages. Fine clay was added so workers could shape hair, beards, eyes, mouths, clothing folds, belts, and armor.
-
-This solved a huge problem. The workers did not have to invent every soldier from the beginning. They could repeat useful forms and then change the details.
+Heads, hands, bodies, and other parts could be made in stages. Fine clay was added so workers could shape hair, beards, eyes, mouths, clothing folds, belts, and armor. This solved a huge problem. The workers did not have to invent every soldier from the beginning. They could repeat useful forms and then change the details.
 
 Researchers have even used 3-D scans to compare the warriors’ ears. The ears vary a great deal. But different ears alone cannot prove that each warrior copied one real person. The differences may also come from different molds, different workers, and hand finishing.
 
@@ -46,14 +42,8 @@ So finding a warrior was not simply a matter of digging faster. Sometimes the sa
 
 ## A Giant Project Made by Many Hands
 
-An army this large could not come from one small pottery shop.
+An army this large could not come from one small pottery shop. Names, marks, small style differences, and patterns in the weapons and figures help researchers study how different groups of craftspeople worked. The entire mausoleum was an enormous project involving potters, metalworkers, builders, and many other laborers.
 
-Names, marks, small style differences, and patterns in the weapons and figures help researchers study how different groups of craftspeople worked. The entire mausoleum was an enormous project involving potters, metalworkers, builders, and many other laborers.
+That helps answer our first question. The warriors clearly have individual differences. But we cannot say that 8,000 soldiers stood still while artists copied 8,000 faces. What the clay does show is something just as remarkable. Ancient craftspeople found ways to make thousands of figures using organized, repeatable methods—while still leaving room for a hand to change a beard, an eye, a hairstyle, or the corner of a mouth.
 
-That helps answer our first question. The warriors clearly have individual differences. But we cannot say that 8,000 soldiers stood still while artists copied 8,000 faces.
-
-What the clay does show is something just as remarkable. Ancient craftspeople found ways to make thousands of figures using organized, repeatable methods—while still leaving room for a hand to change a beard, an eye, a hairstyle, or the corner of a mouth.
-
-From far away, they form an army.
-
-Walk closer, and one face at a time begins to appear.
+From far away, they form an army. Walk closer, and one face at a time begins to appear.

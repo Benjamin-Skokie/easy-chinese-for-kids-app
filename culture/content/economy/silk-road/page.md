@@ -53,9 +53,9 @@ page: 2
 layout: two-column reverse
 heading_zh: 张骞出发的时候，并不是去卖丝绸
 heading_en: A Traveler Who Wasn't Looking for Silk
-image: 3-3-zhang-qian-western-regions.webp
-caption_zh: 张骞拿着一张卷轴地图，与同行者一起望向远处的雪山。
-caption_en: Zhang Qian holds a scroll map while his companions look toward distant snow-covered mountains.
+image: 3-3-zhang-qian-map-expedition.webp
+caption_zh: 张骞和使团成员展开地图，一起辨认通往远方雪山的路线。
+caption_en: Zhang Qian and members of his mission study a map and trace their route toward distant snow-covered mountains.
 [zh]
 两千多年前，有一个叫[[张骞|zhang-qian]]的人从汉朝出发向西远行。皇帝交给他的任务并不是做生意，也不是让他去“开通丝绸之路”。他要去寻找大月氏，希望对方能够和汉朝结盟。
 

@@ -2,7 +2,7 @@
 
 # What Was on the Imperial Exam?
 
-## The Brush Is Ready
+## The Exam Begins
 
 A candidate sits down with a brush, ink, and sheets of paper. He has studied for years to reach this exam. Now comes the important moment. What is the question?
 
@@ -12,7 +12,7 @@ In the Tang dynasty, one important exam might even ask you to write a poem.
 
 ---
 
-## Tang: Write a Poem—But Follow the Rules
+## Tang: A Poem Had Rules
 
 By the later seventh century, poetry had become part of the Tang [[**jìnshì** examination|jinshi]], one of the most admired routes into government service. Candidates also faced other kinds of writing, including questions about government.
 

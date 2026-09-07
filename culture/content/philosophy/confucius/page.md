@@ -23,18 +23,18 @@ caption_en: Confucius speaks with students seated under a tree, some holding bam
 [zh]
 两千五百多年前，[[孔子|confucius]]在[[鲁国|state-of-lu]]教学生。今天留下来的许多孔子故事，并不像一本从头讲到尾的教科书。常常是一个学生提出问题，孔子回答，有时答案只有短短的一两句话。
 
-有一天，学生[[**子贡**|zigong]]问了一个很大的问题：**“有没有一个字，可以让人一辈子照着去做？”**想一想，这个问题可不小。十岁的时候能用，二十岁能用，到了五十岁、八十岁还要能用。
+有一天，学生[[**子贡**|zigong]]问了一个很大的问题：**“有没有一个原则，可以让人一辈子照着去做？”**想一想，这个问题可不小。十岁的时候能用，二十岁能用，到了五十岁、八十岁还要能用。
 
-孔子回答了一个字：“[[**恕**|shu]]。”接着他说：“**己所不欲，勿施于人。**”也就是，自己不希望别人怎样对待自己，也不要那样去对待别人。
+孔子给出了一个核心原则：“[[**恕**|shu]]。”接着他说：“**己所不欲，勿施于人。**”也就是，自己不希望别人怎样对待自己，也不要那样去对待别人。
 
 听起来并不难。真正做到，却没有那么容易。
 [/zh]
 [en]
 More than 2,500 years ago, [[Confucius|confucius]] taught students in the [[state of Lǔ|state-of-lu]] in ancient China. The conversations connected with him do not sound much like a modern textbook. A student asks a question. Confucius answers. Sometimes the answer is only a sentence or two.
 
-One day, a student named [[Zǐgòng|zigong]] asked an enormous question: **“Is there one word that a person could practice for an entire life?”** Imagine asking a teacher for one idea that could still be useful when you were ten, twenty, fifty, or eighty years old.
+One day, a student named [[Zǐgòng|zigong]] asked an enormous question: **“Is there one guiding principle that a person could practice for an entire life?”** Imagine asking a teacher for one idea that could still be useful when you were ten, twenty, fifty, or eighty years old.
 
-Confucius answered with one word: [[**shù**|shu]]. Then he explained what he meant: **“What you do not want done to yourself, do not do to others.”**
+Confucius answered with a guiding idea: [[**shù**|shu]]. Then he explained what he meant: **“What you do not want done to yourself, do not do to others.”**
 
 It sounds simple enough. Using it is harder.
 [/en]
@@ -92,29 +92,24 @@ For Confucius, learning was not finished when you could repeat the right words. 
 
 [section]
 page: 4
-layout: two-column reverse
+layout: text-only
 heading_zh: 一本装着许多问答的书
 heading_en: A Book Full of Questions
-image: 2-3-analects-bamboo-slips.webp
-caption_zh: 一卷竹简摊在案上，旁边放着灯、毛笔和砚台。
-caption_en: An open bamboo-slip manuscript rests on a desk beside a lamp, brush, and inkstone.
 [zh]
-孔子并没有亲手坐下来写一本叫《论语》的书。他去世以后，与他有关的谈话、回答和故事继续在人们之间流传。后来，这些材料逐渐被整理成了今天看到的《论语》。它读起来常常不像一篇长长的演讲，反而像走进了一间正在聊天的屋子：有学生问朋友，有人问做官，有人问学习，子贡则问了那个特别大的问题——有没有一句话，可以用一辈子？
+孔子并没有亲手坐下来写一本叫《论语》的书。他去世以后，与他有关的谈话、回答和故事继续在人们之间流传。后来，这些材料逐渐被整理成了今天看到的《论语》。它读起来常常不像一篇长长的演讲，反而像走进了一间正在聊天的屋子：有学生问朋友，有人问做官，有人问学习，子贡则问了那个特别大的问题：有没有一个原则，可以用一辈子？
 
 孔子的回答也不总是一样，因为学生问的问题本来就不一样。这正是《论语》很有意思的地方。很多时候，老师是在回答眼前这个人的问题，而不是把同一张“人生说明书”发给每一个人。
 
-可是，子贡的问题特别容易让人记住。
-
-一个字。一辈子。
+可是，子贡的问题特别容易让人记住：一个原则，可以用一辈子吗？
 [/zh]
 [en]
 Confucius himself did not sit down and write a book called *The Analects*. After his death, sayings and conversations connected with him continued to be passed down. Over time, these materials were gathered into the collection we now call the *Analects*. The book often feels less like a long speech and more like walking into a room where many conversations are already happening. One student asks about friendship. Another asks about government. Someone asks about learning. Zǐgòng asks for one idea that could last a lifetime.
 
 The answers are not always the same because the questions are not always the same. That is part of what makes the book interesting. Confucius is usually responding to a particular person or problem rather than handing everyone the same page of instructions.
 
-But Zǐgòng’s question stands out because it asks for something very small that can travel very far.
+But Zǐgòng’s question stands out because it asks whether one guiding principle can last a lifetime.
 
-One word. One lifetime.
+One principle for a lifetime?
 [/en]
 [/section]
 
@@ -130,7 +125,7 @@ heading_en: The Question Comes Back
 
 孔子的回答，就可以放在这里。先换一个位置想一想：**如果别人这样对我，我愿意吗？**
 
-子贡问的是一个能不能用一辈子的办法。孔子给他的，是一个可以问很多很多次的问题。
+子贡问的是有没有一个原则可以用一辈子。孔子给他的，是一个可以问很多很多次的问题。
 [/zh]
 [en]
 More than two thousand years have passed since that conversation was written down. The world around it has changed almost beyond recognition. But the moment before an action has not disappeared.

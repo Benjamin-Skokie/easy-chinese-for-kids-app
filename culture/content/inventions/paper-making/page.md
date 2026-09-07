@@ -110,12 +110,9 @@ So the story of paper was not one person suddenly inventing a perfect sheet. It 
 
 [section]
 page: 5
-layout: text-wrap-image
+layout: text-only
 heading_zh: 从一捆竹简到一张纸
 heading_en: From Heavy Bundles to Light Pages
-image: paper-travels-west.webp
-caption_zh: 竹简和轻便的纸张被放在一起比较，驼队表现纸张能够跟随旅行和交流去往远方。
-caption_en: Bamboo slips and lightweight paper appear side by side, while the caravan shows paper traveling through exchange over long distances.
 [zh]
 工匠越来越熟练以后，纸也可以做得更薄、更平、更结实。后来，中国人还用构树皮、麻、竹子、稻草等不同植物材料来造纸。
 

@@ -70,7 +70,7 @@ Editorial boundary:
 
 ## Image boundaries
 
-- `invisible-horse-rider.webp` is a new AI-generated teaching illustration. It shows a performer using a short, straight, tasselled Peking opera riding-whip prop and a stylized riding pose on an empty stage; it is not a photograph of a named actor, role, play, or historical performance.
+- `peking-opera-riding-whip-illustration.webp` is an AI-generated teaching illustration based on the supplied stage reference. It shows a performer using a long Peking opera riding-whip prop with white tassel clusters and a stylized riding pose on an open stage; it is not a photograph of a named actor, role, play, or historical performance.
 - `3-mirror-face-paint.webp` is a modern AI-generated illustration of facial makeup being applied. Its design, materials, clothing, setting, and teaching relationship are imaginative rather than documentary.
 - The earlier `1-red-face-stage.webp` was removed because it did not show the invisible-horse action described in the story.
 - The earlier `2-face-colors-meanings.webp` was removed because its three-color chart could imply the overly simple one-color, one-meaning code that the revised story explicitly rejects.

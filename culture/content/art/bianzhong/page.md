@@ -22,22 +22,22 @@ image: 2-two-notes-bell-shape.webp
 caption_zh: 同一口钟的正面和侧面是两个不同的敲击位置，可以发出两个不同的音。
 caption_en: Two carefully chosen striking places on the same bell can produce two different notes.
 [zh]
-木槌敲在青铜钟的正面。*当！* 再换一个位置，敲在钟的侧面。*叮！*
+木槌敲在[[青铜|bronze]]钟的正面。*当！* 再换一个位置，敲在钟的侧面。*叮！*
 
 第二个音高了一些。可是钟没有换，木槌也没有换。奇怪了——一口钟怎么会有两个不同的音？
 
-秘密藏在钟的形状里。中国古代的许多乐钟，并不像我们常见的钟那样圆圆的。从下面看，它们有点扁，像两片弯弯的瓦合在一起。正因为这个特别的形状，敲正面时，钟会用一种方式振动；敲侧面的特定位置时，它又会用另一种方式振动，于是耳朵就听见了两个不同的音高。
+秘密藏在钟的形状里。中国古代的许多乐钟，并不像我们常见的钟那样圆圆的。从下面看，它们有点扁，像两片弯弯的瓦合在一起。正因为这个特别的形状，敲正面时，钟会用一种方式[[振动|vibration]]；敲侧面的特定位置时，它又会用另一种方式振动，于是耳朵就听见了两个不同的[[音高|pitch]]。
 
 所以，钟里面并没有藏着两只小钟。藏在里面的，是同一块青铜振动的两种方式。
 
 可是，如果一口钟有两个音，把六十五口这样的钟挂在一起，又会怎么样？
 [/zh]
 [en]
-A wooden mallet strikes the front of a bronze bell. *Dong!* Now it strikes a spot near the side. *Ding!*
+A wooden mallet strikes the front of a [[bronze|bronze]] bell. *Dong!* Now it strikes a spot near the side. *Ding!*
 
 The second note is higher. But nothing has been changed—same bell, same metal, same mallet. How can one bell have two different notes?
 
-The clue is in its shape. Many ancient Chinese music bells were not round like the bells you might see in a church tower. Look at one from below and it is flatter, almost like two curved roof tiles joined together. Because of that unusual shape, the bell can vibrate in different ways when it is struck in different places. Strike the center area and you hear one pitch; strike the right spot near the side and you hear another.
+The clue is in its shape. Many ancient Chinese music bells were not round like the bells you might see in a church tower. Look at one from below and it is flatter, almost like two curved roof tiles joined together. Because of that unusual shape, the bell can [[vibrate|vibration]] in different ways when it is struck in different places. Strike the center area and you hear one [[pitch|pitch]]; strike the right spot near the side and you hear another.
 
 The two notes were not hiding inside like two tiny bells. They came from two different ways the same bronze bell could shake.
 
@@ -54,9 +54,9 @@ image: 1-tomb-bell-chamber.webp
 caption_zh: 1978 年，考古人员在湖北随州曾侯乙墓中发现了整套六十五口编钟。
 caption_en: In 1978, archaeologists found the complete sixty-five-bell ensemble in the tomb of Marquis Yi of Zeng in Suizhou, Hubei.
 [zh]
-1978 年，考古人员在湖北发掘一座古墓时，看见了一件惊人的东西：一排又一排青铜钟，整整齐齐地挂在三层高的巨大钟架上。一共有六十五口。
+1978 年，[[考古人员|archaeologist]]在湖北发掘一座古墓时，看见了一件惊人的东西：一排又一排[[青铜钟|bianzhong]]，整整齐齐地挂在三层高的巨大钟架上。一共有六十五口。
 
-这些钟属于两千四百多年前的一位国君，后人称他为曾侯乙。小钟可以发出明亮的高音，大钟则沉沉地低鸣。最大的一口钟重达两百多公斤。整套钟从低到高，可以奏出跨越五个多八度的声音。
+这些钟属于两千四百多年前的一位国君，后人称他为[[曾侯乙|marquis-yi-of-zeng]]。小钟可以发出明亮的高音，大钟则沉沉地低鸣。最大的一口钟重达两百多公斤。整套钟从低到高，可以奏出跨越五个多[[八度|octave]]的声音。
 
 可是问题也跟着变大了。
 
@@ -65,11 +65,11 @@ caption_en: In 1978, archaeologists found the complete sixty-five-bell ensemble 
 答案的一部分，就写在钟上。
 [/zh]
 [en]
-In 1978, archaeologists working in Hubei Province uncovered an ancient tomb. Inside stood something enormous: rows and rows of bronze bells hanging from a three-level wooden-and-bronze frame.
+In 1978, [[archaeologists|archaeologist]] working in Hubei Province uncovered an ancient tomb. Inside stood something enormous: rows and rows of [[bronze bells|bianzhong]] hanging from a three-level wooden-and-bronze frame.
 
 There were sixty-five bells altogether.
 
-They had belonged to a ruler remembered as Marquis Yi of Zeng, who lived more than 2,400 years ago. Some bells were small enough to make high, bright notes. Others were huge—the largest weighs more than 200 kilograms. Together, the bells could play notes across a range of more than five octaves.
+They had belonged to a ruler remembered as [[Marquis Yi of Zeng|marquis-yi-of-zeng]], who lived more than 2,400 years ago. Some bells were small enough to make high, bright notes. Others were huge—the largest weighs more than 200 kilograms. Together, the bells could play notes across a range of more than five [[octaves|octave]].
 
 Now the first mystery becomes a much bigger one. If every bell can make two pitches, a musician does not simply have to choose the right bell. The musician also has to strike the right part of that bell.
 
@@ -88,7 +88,7 @@ image: 3-bell-inscriptions-closeup.webp
 caption_zh: 钟面上的文字表现编钟铭文；这些字并不是曾侯乙编钟铭文的准确摹本。
 caption_en: The characters on the bell represent bell inscriptions; they are not an exact transcription of the Marquis Yi bells.
 [zh]
-凑近看，青铜钟上刻着一行行古老的文字。钟、钟架和挂钟的部件上，一共留下了 3,755 个字。
+凑近看，青铜钟上刻着一行行古老的[[铭文|inscription]]。钟、钟架和挂钟的部件上，一共留下了 3,755 个字。
 
 有些字记录事情，有些标出音名，还有一些讲声音之间的关系。在一些钟上，这些文字保存了不同敲击位置能够发出什么音的信息。
 
@@ -101,7 +101,7 @@ caption_en: The characters on the bell represent bell inscriptions; they are not
 两千四百多岁的文物，可不能为了让大家听音乐，就每天拿木槌去敲。
 [/zh]
 [en]
-Look closely at the bronze and you will see tiny Chinese characters. Across the bells, their frame, and the hooks that hold them, there are 3,755 inscribed characters.
+Look closely at the bronze and you will see tiny Chinese [[inscriptions|inscription]]. Across the bells, their frame, and the hooks that hold them, there are 3,755 inscribed characters.
 
 Some record events. Some identify sounds and pitch names. Some explain ideas about how musical pitches are related. On the bells, the writing helped preserve information about the notes that different striking places could produce.
 
@@ -121,7 +121,7 @@ layout: text-only
 heading_zh: 那我们今天听见的是什么？
 heading_en: So What Are We Hearing Today?
 [zh]
-真正的曾侯乙[[编钟|bianzhong]]现在是珍贵的博物馆文物。反复敲击会带来损伤的风险，所以研究人员仔细测量原钟的大小和形状，研究青铜材料、钟体结构和声音，再和工匠一起制作出一整套复制编钟。
+真正的曾侯乙编钟现在是珍贵的博物馆文物。反复敲击会带来损伤的风险，所以研究人员仔细测量原钟的大小和形状，研究青铜材料、钟体结构和声音，再和工匠一起制作出一整套[[复制编钟|replica]]。
 
 复制品就可以真正演奏了。
 
@@ -136,7 +136,7 @@ heading_en: So What Are We Hearing Today?
 原来，第二个声音就藏在那里。
 [/zh]
 [en]
-The original bells are protected museum objects. Repeated playing could risk damaging them, so researchers studied their size, shape, bronze, structure, and sound and worked with craftspeople to make a complete set of replicas.
+The original bells are protected museum objects. Repeated playing could risk damaging them, so researchers studied their size, shape, bronze, structure, and sound and worked with craftspeople to make a complete set of [[replicas|replica]].
 
 Those replicas can be played.
 

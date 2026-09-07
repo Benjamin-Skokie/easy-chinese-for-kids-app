@@ -6,7 +6,7 @@
 
 Stand beside a very old tree. Its trunk may be wider than your arms can reach, and its branches may spread high above your head. Looking at it now, it is hard to imagine that it was ever small.
 
-More than two thousand years ago, the [[*Dàodéjīng*|dao-de-jing]] asked people to imagine exactly that. Chapter 64 says that a tree large enough to fill your arms begins from something tiny. Then it gives two more pictures: a high terrace begins with small amounts of earth, and a journey of a thousand [[**lǐ**|li-distance]] begins beneath your feet.
+More than two thousand years ago, the [[*Dàodéjīng*|dao-de-jing]] asked people to imagine exactly that. It says that a tree large enough to fill your arms begins from something tiny. Then it gives two more pictures: a high terrace begins with small amounts of earth, and a journey of a thousand [[**lǐ**|li-distance]] begins beneath your feet.
 
 None of these things starts the way it ends. The great tree does not begin great. The high terrace does not appear all at once. A long journey does not begin somewhere far away. It begins here, with something small.
 
@@ -14,7 +14,7 @@ None of these things starts the way it ends. The great tree does not begin great
 
 ## While Things Are Still Small
 
-The same chapter asks us to notice something else. A problem is often easier to handle before it grows. A loose thread is easier to fix before a whole seam opens. A little disagreement is easier to settle before everyone is shouting. A messy pile is easier to sort before it spreads across the whole room.
+The *Dàodéjīng* also asks us to notice something else. A problem is often easier to handle before it grows. A loose thread is easier to fix before a whole seam opens. A little disagreement is easier to settle before everyone is shouting. A messy pile is easier to sort before it spreads across the whole room.
 
 The *Dàodéjīng* says to deal with things before they become difficult and bring order before disorder has fully begun.
 
@@ -38,7 +38,7 @@ So the beginning deserves attention.
 
 ## Almost Done Is Still Not Done
 
-Chapter 64 also notices a very human mistake: people sometimes become careless when a job is nearly finished. At the beginning, we may be careful because everything feels new. We check our work and pay attention. Then we get close to the end and think, “I’ve got this.”
+The *Dàodéjīng* also notices a very human mistake: people sometimes become careless when a job is nearly finished. At the beginning, we may be careful because everything feels new. We check our work and pay attention. Then we get close to the end and think, “I’ve got this.”
 
 That is exactly when mistakes can happen. The *Dàodéjīng* says, **“Be as careful at the end as at the beginning.”**
 
@@ -50,7 +50,7 @@ Beginning well matters. Finishing well matters too.
 
 ## Let the Tree Be a Tree
 
-Near the end of the chapter, the *Dàodéjīng* speaks about helping things follow their own [[**zìrán**|ziran]]—their own way of becoming what they are.
+The *Dàodéjīng* also speaks about helping things follow their own [[**zìrán**|ziran]]—their own way of becoming what they are.
 
 This does not mean ignoring everything and hoping for the best. A young tree may need water, good soil, and protection. But caring for it is different from trying to control every moment of its growth.
 

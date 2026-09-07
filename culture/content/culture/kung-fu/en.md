@@ -16,7 +16,7 @@ The impressive move is only the part everyone sees. The *kung fu* is how it got 
 
 ## One Big Tree, Many Branches
 
-Chinese martial arts did not grow into one single set of movements. Over centuries, different places, teachers, and traditions developed different ways of training. Shaolin is one famous branch of that enormous tree—but only one branch.
+Chinese martial arts did not grow into one single set of movements. Over centuries, different places, teachers, and traditions developed different ways of training. [Shaolin](../../religion/shaolin-kung-fu/index.html) is one famous branch of that enormous tree—but only one branch.
 
 Elsewhere, you might see quick hand movements, wide kicks, low stances, staffs, swords, or empty hands. One person may move forward in a sudden burst. Another may turn away, circle, and wait. If all of that can be called Chinese martial arts, what do these very different movements have in common? One answer is control.
 

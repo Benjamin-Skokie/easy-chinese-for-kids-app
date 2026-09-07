@@ -1,6 +1,6 @@
 > Difficulty: Easy
 
-# There Is No Horse on Stage—So Why Can You See One?
+# Peking Opera: There Is No Horse on Stage—So Why Can You See One?
 
 ## The Stage Gives You Clues
 

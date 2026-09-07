@@ -14,7 +14,7 @@ That is where the connection between Shaolin and fighting began.
 
 ## Thirteen Monks Join a Battle
 
-During a time of war, a powerful leader took land that belonged to Shaolin Temple. Li Shimin was not emperor yet. He was one of the emperor’s sons and a young army commander leading troops against that ruler.
+During a time of war, a powerful leader took land that belonged to Shaolin Temple. [[Li Shimin|li-shimin]] was not emperor yet. He was one of the emperor’s sons and a young army commander leading troops against that ruler.
 
 Thirteen Shaolin monks decided to help Li Shimin’s side. They joined the fight and captured one of the other leader’s commanders. Li Shimin’s army won, and Shaolin recovered the land it had lost.
 
@@ -34,13 +34,13 @@ Shaolin had not yet become the “[[kung fu|gongfu]] temple” people imagine to
 
 ## The Staff Came First
 
-Hundreds of years after Li Shimin’s battle, some Shaolin monks became famous for using the staff—a long wooden stick used for practice and fighting.
+Hundreds of years after Li Shimin’s battle, some Shaolin monks became famous for [[staff fighting|staff-fighting]], using a long wooden stick for practice and combat.
 
 Why choose a staff? Buddhist monks were taught not to kill. A staff had no sharp edge like a sword. It could block a blade, push an attacker back, or knock a weapon aside. Instead of reaching for a sharp sword, a monk could use a staff to protect himself or someone else while trying not to take a life.
 
 But a staff was not harmless. Swung hard, it could badly hurt someone. Learning control mattered as much as learning speed. A monk practiced gripping, turning, blocking, and changing direction quickly. The staff could whoosh through the air until its two ends became a blur.
 
-Visitors saw this skill and carried stories of it elsewhere. Shaolin staff fighting was praised long before Shaolin boxing became famous.
+Visitors saw this skill and carried stories of it elsewhere. Shaolin staff fighting was praised long before [[Shaolin boxing|quanfa]] became famous.
 
 ---
 

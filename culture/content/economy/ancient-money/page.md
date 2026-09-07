@@ -54,8 +54,8 @@ layout: text-wrap-image
 heading_zh: 像铲子，又像刀
 heading_en: Money That Looked Like a Spade
 image: 2-3-many-coin-shapes.webp
-caption_zh: 一个孩子看着海贝、刀币、布币和圆形钱币，发现古代的钱可以有完全不同的形状。
-caption_en: A child compares cowrie shells, knife money, spade money, and round coins, discovering how different ancient money could look.
+caption_zh: 海贝、刀币、布币和圆形钱币放在一起，可以看出古代的钱有各种不同的形状。
+caption_en: Placed side by side, cowrie shells, knife money, spade money, and round coins show the many shapes of ancient Chinese money.
 [zh]
 两千多年前，中国还分成许多不同的国家，各地的钱也不一样。有些地方铸造的青铜钱像一把小铲子，人们今天把它叫作**布币**；有些地方的钱细细长长，看起来像刀，被称为**刀币**。还有的地方已经使用圆形钱，也有做成贝壳形状的金属钱。
 
@@ -77,7 +77,7 @@ page: 3
 layout: text-wrap-image
 heading_zh: 钱中间为什么有一个洞？
 heading_en: Why Put a Hole in Money?
-image: 2-2-coins-and-paper-note.webp
+image: 2-2-child-compares-coin-and-paper.webp
 caption_zh: 方孔钱可以用绳子串起来；旁边轻薄的纸券，后来让携带大笔钱方便得多。
 caption_en: Square-holed coins could be threaded onto cords; the paper certificate beside them later made large payments much easier to carry.
 [zh]

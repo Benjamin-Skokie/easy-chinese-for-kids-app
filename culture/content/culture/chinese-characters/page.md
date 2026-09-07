@@ -16,11 +16,11 @@ title_en: Were Chinese Characters Drawn Like Pictures?
 [section]
 page: 1
 layout: text-wrap-image
-heading_zh: 一家中药铺里，藏着三千多年前的字
-heading_en: A Medicine Shop Was Hiding Very Old Writing
+heading_zh: 书房里的奇怪刻痕
+heading_en: Strange Marks in a Scholar’s Study
 image: 1-medicine-shop-discovery-overhead-v2.webp
-caption_zh: 一位学者在中药铺查看刻有文字的“龙骨”。
-caption_en: A scholar examines inscribed “dragon bones” in a medicine shop.
+caption_zh: 清末学者在家中书房查看刻有符号的“龙骨”。
+caption_en: A late-Qing scholar examines inscribed “dragon bones” in his study at home.
 [zh]
 一百多年前，中国的中药铺里常常卖一种名字很神气的药材——“龙骨”。它当然不是真的龙骨。很多其实是从地下挖出来的古老兽骨，人们把它磨成粉入药。
 

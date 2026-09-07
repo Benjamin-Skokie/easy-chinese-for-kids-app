@@ -56,8 +56,8 @@ layout: text-wrap-image
 heading_zh: 龙走进了皇宫
 heading_en: The Dragon Enters the Palace
 image: 2-dragon-rain-emperor.webp
-caption_zh: 分屏画面把龙与雨水、农田和皇帝的象征联系放在一起，并不表现某一位具体皇帝或某一次历史事件。
-caption_en: The split scene connects the dragon with rain, fields, and imperial symbolism without portraying a specific emperor or historical event.
+caption_zh: 上方，龙在农田上空带来雨水；下方，皇帝穿着绣有龙纹的龙袍。
+caption_en: Above, a dragon brings rain to the fields; below, an emperor wears a robe embroidered with dragons.
 [zh]
 后来，龙又一路进了皇宫。
 
@@ -123,8 +123,8 @@ layout: text-wrap-image
 heading_zh: 这对伙伴留了下来
 heading_en: The Pair Lives On
 image: 4-dragon-phoenix-today.webp
-caption_zh: 舞龙和凤纹婚服并排出现，展示龙凤图案在当代庆典中的两种用法。
-caption_en: A dragon dance and a phoenix wedding garment show two present-day uses of these symbols.
+caption_zh: 上方是舞龙表演；下方的新娘穿着绣有凤凰的红色婚服。
+caption_en: Above is a dragon dance; below, a bride wears a red wedding garment embroidered with a phoenix.
 [zh]
 许多年过去，皇帝和皇后的时代结束了，可龙和凤凰没有消失。今天的婚礼上，红色和金色的图案里仍然可能看见它们。它们甚至跑进了日常语言：如果一对双胞胎刚好是一个男孩、一个女孩，人们有时会高兴地叫他们“龙凤胎”。
 [/zh]

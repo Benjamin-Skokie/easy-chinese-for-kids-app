@@ -7,8 +7,24 @@ This file is for editorial research and does not render on the website.
 Source: Wikisource transcription of *Records of the Three Kingdoms*, fascicle 54, “Biography of Zhōu Yú”
 URL: https://zh.wikisource.org/zh-hans/%E4%B8%89%E5%9C%8B%E5%BF%97/%E5%8D%B754
 Accessed: 2026-09-05
-Supports: Records Huáng Gài observing that Cáo Cāo’s ships were joined bow to stern, preparing ships filled with dry grass and fuel, pretending to surrender, and launching the fire attack during a strong wind at Red Cliffs.
-Editorial boundary: The story uses the early historical account and does not add the later novel’s iron-chain scheme, Pang Tong plot, or Zhuge Liang “borrowing the east wind.”
+Supports: Records Zhōu Yú describing Cáo Cāo’s northern forces as unaccustomed to campaigning on rivers and lakes and suffering illness. It also records Huáng Gài observing that Cáo Cāo’s ships were joined bow to stern, preparing ships filled with dry grass and fuel, pretending to surrender, and launching the fire attack during a strong wind at Red Cliffs.
+Editorial boundary: The historical account says the ships were joined bow to stern but does not explain why. The article therefore identifies the seasickness and iron-chain explanation as a later novel’s version rather than established history.
+
+## 《三国演义》第四十七回 (*Romance of the Three Kingdoms*, Chapter 47)
+
+Source: Wikisource transcription of *Romance of the Three Kingdoms*, Chapter 47
+URL: https://zh.wikisource.org/zh-hans/%E4%B8%89%E5%9C%8B%E6%BC%94%E7%BE%A9/%E7%AC%AC047%E5%9B%9E
+Accessed: 2026-09-06
+
+Supports:
+
+- The novel says northern troops were unaccustomed to boats and became ill from the motion.
+- It presents Páng Tǒng proposing that large and small ships be linked with iron rings and covered with broad planks to make them steadier.
+
+Editorial boundary:
+
+- This is the novel’s explanation for the connected ships, not a reason stated in the earlier *Records of the Three Kingdoms*.
+- The children’s article distinguishes the later literary version from the early historical account.
 
 ## 中国国家博物馆，“陶船”
 

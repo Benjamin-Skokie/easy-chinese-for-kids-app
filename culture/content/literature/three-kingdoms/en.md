@@ -16,7 +16,7 @@ That is one special thing about the novel. It takes a long, tangled stretch of h
 
 One of the most famous scenes in the Three Kingdoms story is the Peach Garden Oath. Liu Bei, Guan Yu, and Zhang Fei are not born into one family, and they do not come from the same kind of life. Still, they decide to become brothers who will stand together through danger.
 
-What moves readers here is not only the beautiful scene. It is the way the story suddenly makes loyalty glow. These men are not brothers because they share blood. They become brothers because they promise to stand together when life turns hard.
+What moves readers here is not only the beautiful scene. It is the way the story suddenly makes loyalty glow. These men are not brothers because they share blood. They become brothers because they promise to stand together when life turns hard. You can follow how Guan Yu later keeps his word to Liu Bei in [How Did Guan Yu Become Lord Guan?](../../religion/lord-guan/index.html).
 
 It is important to say one thing clearly: this moment is best known from the novel and later drama, not from a line-by-line official history record. But it is so powerful that for many readers, this is one of the first images that appears when they hear the word "Three Kingdoms."
 

@@ -74,7 +74,7 @@ page: 3
 layout: text-wrap-image
 heading_zh: 她用了“皇帝”这个称号
 heading_en: She Took the Title of Emperor
-image: became-emperor.webp
+image: 3-wu-zhou-court-audience.webp
 caption_zh: 武则天后来正式用了“皇帝”这个称号。
 caption_en: Wu Zetian later ruled with the title of emperor.
 [zh]
@@ -82,7 +82,7 @@ caption_en: Wu Zetian later ruled with the title of emperor.
 
 第二个儿子戴着皇帝的皇冠，可最重要的命令仍然来自武则天。她用儿子的名义统治了六年。
 
-公元690年，武则天让这位儿子也离开皇位，自己正式使用“皇帝”这个称号。她还给自己的王朝取了一个新名字：周。
+公元690年，武则天让这位儿子也离开皇位，自己正式使用“皇帝”这个称号。她还把王朝的名字改成“周”。为了不和很早以前的[[周朝|zhou-dynasty]]混淆，后人常把这个时期叫作“[[武周|wu-zhou]]”。
 
 中国历史上有过其他掌握大权的女性，但武则天是唯一正式以“皇帝”身份统治中国的女人。那一年，她大约六十六岁。
 [/zh]
@@ -91,7 +91,7 @@ After Wu's husband died, one of her sons became emperor. Less than two months la
 
 Her second son wore the emperor's crown, but the most important orders still came from Wu. For six years, she ruled in her son's name.
 
-In 690, Wu removed this son too and officially took the title of emperor for herself. She even gave her dynasty a new name: Zhou.
+In 690, Wu removed this son too and officially took the title of emperor for herself. She also changed the dynasty's name to Zhou. To distinguish it from the much earlier [[Zhou dynasty|zhou-dynasty]], people often call this period [[Wu Zhou|wu-zhou]].
 
 Other women in Chinese history held great power, but Wu was the only woman who formally ruled China with the title of emperor. She was about sixty-six years old.
 [/en]

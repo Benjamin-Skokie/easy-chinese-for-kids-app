@@ -126,4 +126,4 @@ The four images used by the page are modern illustrations or schematic graphics.
 - `everest-snowline-vertical-climate.webp`: a simplified vertical-climate illustration, not one real mountain transect.
 - `everest-climbers-shared-summit.webp`: generic climbing art, not a picture of the 1953 expedition.
 
-The unused source images `qomolangma-highest-mountain.webp` and `everest-shared-summit.webp` remain in the content folder but are not cited by the page.
+The unused images `qomolangma-highest-mountain.webp` and `everest-shared-summit.webp`, along with the archived PNG sources `qomolangma-location-map.png` and `everest-climbers-shared-summit.png`, are preserved in `assets_archive/culture/geography/highest-mountains/`. The page continues to use the optimized WebP versions of the map and climbers illustrations.

@@ -17,8 +17,7 @@ const tracked = execFileSync('git', ['ls-files', '*.webp'], { encoding: 'utf8' }
   .filter((file) => (
     (file.startsWith('assets/') && !file.startsWith('assets/_png-archive/'))
     || (file.startsWith('culture/')
-      && !file.startsWith('culture/content/')
-      && !file.startsWith('culture/image-archive/'))
+      && !file.startsWith('culture/content/'))
   ))
   .filter(existsSync);
 
