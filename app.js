@@ -17564,11 +17564,12 @@
         button.textContent = `${label} ${enabled ? "on" : "off"}`;
       });
       toggleArabicButton2.classList.toggle("is-hidden", topic.id !== "numbers");
-      learningCultureNav2?.querySelectorAll("[data-display-toggle]").forEach((button) => {
+      const displayToggles = learningCultureNav2?.ownerDocument?.querySelectorAll?.("[data-display-toggle]") ?? learningCultureNav2?.querySelectorAll("[data-display-toggle]") ?? [];
+      displayToggles.forEach((button) => {
         const control = button.dataset.displayToggle;
         const enabled = control === "sound" ? state2.tapAudioEnabled : control === "pinyin" ? state2.showPinyin : state2.showEnglish;
         const label = control === "sound" ? "Sound" : control === "pinyin" ? "Pinyin" : "English";
-        const icon = control === "sound" ? '<svg class="learning-display-sound-icon" viewBox="0 0 32 32" aria-hidden="true"><path d="M5 13h6l8-6v18l-8-6H5z" fill="currentColor" stroke="currentColor" stroke-linejoin="round"/><path d="M23 12c2 2 2 6 0 8M26 9c4 4 4 10 0 14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>' : control === "pinyin" ? '<span class="learning-display-letter-icon learning-display-pinyin-icon" aria-hidden="true">P\u012Bn</span>' : '<span class="learning-display-letter-icon learning-display-english-icon" aria-hidden="true">En</span>';
+        const icon = control === "sound" ? '<svg class="learning-display-sound-icon" viewBox="0 0 32 32" aria-hidden="true"><path d="M5 13h6l8-6v18l-8-6H5z" fill="currentColor" stroke="currentColor" stroke-linejoin="round"/><path d="M23 12c2 2 2 6 0 8M26 9c4 4 4 10 0 14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>' : control === "pinyin" ? '<span class="learning-display-letter-icon learning-display-pinyin-icon" aria-hidden="true">Pin</span>' : '<span class="learning-display-letter-icon learning-display-english-icon" aria-hidden="true">En</span>';
         button.classList.toggle("is-toggle-active", enabled);
         button.classList.toggle("is-toggle-inactive", !enabled);
         button.innerHTML = icon;
@@ -19585,6 +19586,10 @@
     function updateTopicPageVisibility2() {
       detailLayout2?.classList.toggle("is-hidden", !state2.topicPageOpen);
       document.body.classList.toggle("is-topic-page", state2.topicPageOpen);
+      const catalogReturnLink = document.querySelector("[data-learning-catalog-return]");
+      if (catalogReturnLink && state2.topicPageOpen) {
+        catalogReturnLink.href = `learn-v2.html#${categoryIdForTopic2(state2.selectedTopicId)}`;
+      }
     }
     function scrollCategorySectionIntoView2(categoryId) {
       requestAnimationFrame(() => {
@@ -19716,7 +19721,10 @@
   `;
     }
     function bindDisplayControls2() {
-      learningCultureNav2.querySelectorAll("[data-display-toggle]").forEach((button) => {
+      const controls = learningCultureNav2?.ownerDocument?.querySelectorAll?.("[data-display-toggle]") ?? learningCultureNav2.querySelectorAll("[data-display-toggle]");
+      controls.forEach((button) => {
+        if (button.dataset.displayToggleBound === "true") return;
+        button.dataset.displayToggleBound = "true";
         button.addEventListener("click", () => {
           if (button.dataset.displayToggle === "sound") {
             state2.tapAudioEnabled = !state2.tapAudioEnabled;

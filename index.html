@@ -9,9 +9,95 @@
       content="Nihao World helps children learn Chinese as a second language through interactive Mandarin practice and explore rich Chinese culture from the very beginning."
     />
     <link rel="canonical" href="https://nihaoworld.org/" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Lora:ital,wght@0,600;0,700;1,600;1,700&amp;family=Newsreader:opsz,wght@6..72,500;6..72,600&amp;family=Noto+Sans+SC:wght@500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="styles.css?v=20260830-notes-audit-v25" />
+    <link rel="stylesheet" href="shared-site-header.css" />
+    <link rel="stylesheet" href="topic-detail-v2.css" />
+    <script src="topic-detail-v2.js" defer></script>
   </head>
   <body>
+    <header class="site-header topic-site-header">
+      <a class="brand" href="homepage-v2.html" aria-label="Nihao World home">
+        <img src="assets/brand/zongzi-guide.webp" alt="" width="768" height="768" />
+        <span class="brand-wordmark">
+          <span class="brand-nihao">Nihao</span><span class="brand-world">World</span>
+        </span>
+      </a>
+
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="topic-primary-navigation"
+        aria-label="Open navigation"
+      >
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="primary-nav" id="topic-primary-navigation" aria-label="Primary navigation">
+        <a class="is-current" href="learn-v2.html">Learn Chinese</a>
+        <a href="index.html?view=books#books-panel">Find My Textbook</a>
+        <a href="culture-v2.html">Culture Stories</a>
+      </nav>
+
+      <div class="topic-header-actions">
+        <span class="topic-display-controls" aria-label="Learning display options">
+          <button
+            class="topic-display-toggle"
+            type="button"
+            data-display-toggle="sound"
+            aria-label="Sound on"
+            title="Sound on"
+          ></button>
+          <button
+            class="topic-display-toggle"
+            type="button"
+            data-display-toggle="pinyin"
+            aria-label="Pinyin on"
+            title="Pinyin on"
+          ></button>
+          <button
+            class="topic-display-toggle"
+            type="button"
+            data-display-toggle="english"
+            aria-label="English on"
+            title="English on"
+          ></button>
+        </span>
+
+        <details class="about-menu">
+          <summary>About</summary>
+          <nav class="about-popover" aria-label="About and support">
+            <a href="about/author-project/index.html">
+              <strong>About the Site</strong>
+              <small>Why Nihao World was created</small>
+            </a>
+            <a href="about/author-project/index.html#author">
+              <strong>Meet the Creator</strong>
+              <small>The student behind the project</small>
+            </a>
+            <a href="about/sources-research/index.html">
+              <strong>Sources &amp; Research</strong>
+              <small>References behind the content</small>
+            </a>
+            <a href="about/feedback-problems/index.html">
+              <strong>Feedback</strong>
+              <small>Share an idea or report a problem</small>
+            </a>
+            <a href="about/privacy-safety/index.html">
+              <strong>Privacy &amp; Safety</strong>
+              <small>How the site protects learners</small>
+            </a>
+          </nav>
+        </details>
+      </div>
+    </header>
+
     <nav class="learning-culture-nav" id="learningCultureNav" aria-label="Topic categories"></nav>
     <details class="global-view-menu">
       <summary class="global-view-trigger" aria-label="Open learning area menu">
@@ -1246,10 +1332,11 @@
         <section id="topic-detail" class="detail-layout is-hidden">
           <article class="detail-panel topic-detail">
             <div class="detail-heading">
-              <nav class="detail-back-nav" aria-label="Return to learning paths">
-                <a class="detail-back-link" href="#topics-panel" data-global-view="topics" data-return-target="topic">← Back to Topics</a>
-                <a class="detail-back-link is-book" href="#books-panel" data-global-view="books" data-return-target="book">← Back to Books</a>
-              </nav>
+              <a
+                class="detail-catalog-return"
+                href="learn-v2.html"
+                data-learning-catalog-return
+              >← Back to Learn by Topic</a>
               <h2 id="topic-title">Numbers</h2>
             </div>
 

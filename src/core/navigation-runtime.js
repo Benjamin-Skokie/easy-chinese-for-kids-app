@@ -182,6 +182,10 @@ function categoryIdForTopic(topicId) {
 function updateTopicPageVisibility() {
   detailLayout?.classList.toggle("is-hidden", !state.topicPageOpen);
   document.body.classList.toggle("is-topic-page", state.topicPageOpen);
+  const catalogReturnLink = document.querySelector("[data-learning-catalog-return]");
+  if (catalogReturnLink && state.topicPageOpen) {
+    catalogReturnLink.href = `learn-v2.html#${categoryIdForTopic(state.selectedTopicId)}`;
+  }
 }
 
 function scrollCategorySectionIntoView(categoryId) {
@@ -332,7 +336,12 @@ function displayControlsMarkup() {
 }
 
 function bindDisplayControls() {
-  learningCultureNav.querySelectorAll("[data-display-toggle]").forEach((button) => {
+  const controls =
+    learningCultureNav?.ownerDocument?.querySelectorAll?.("[data-display-toggle]") ??
+    learningCultureNav.querySelectorAll("[data-display-toggle]");
+  controls.forEach((button) => {
+    if (button.dataset.displayToggleBound === "true") return;
+    button.dataset.displayToggleBound = "true";
     button.addEventListener("click", () => {
       if (button.dataset.displayToggle === "sound") {
         state.tapAudioEnabled = !state.tapAudioEnabled;

@@ -785,16 +785,18 @@ test("sticky category navigation highlights the final item at the bottom of the 
   assert.match(navigationSource, /let activeBookId = state\.selectedBookId/);
 });
 
-test("direct topic links immediately focus the topic detail for every topic", () => {
+test("direct topic links focus the detail and return to their new catalog category", () => {
   const landingHtml = readFileSync("index.html", "utf8");
   const runtimeWiringSource = readFileSync("src/app/runtime-wiring.js", "utf8");
   const navigationSource = readFileSync("src/core/navigation-runtime.js", "utf8");
   const stylesSource = readFileSync("styles.css", "utf8");
-  assert.match(landingHtml, /class="detail-back-nav" aria-label="Return to learning paths"/);
-  assert.match(landingHtml, /href="#topics-panel" data-global-view="topics" data-return-target="topic">← Back to Topics/);
-  assert.match(landingHtml, /class="detail-back-link is-book" href="#books-panel" data-global-view="books" data-return-target="book">← Back to Books/);
-  assert.match(stylesSource, /\.detail-back-nav \{\s*display: flex;/);
-  assert.match(stylesSource, /\.detail-back-link\.is-book \{/);
+  const topicDetailStyles = readFileSync("topic-detail-v2.css", "utf8");
+  assert.match(landingHtml, /class="site-header topic-site-header"/);
+  assert.match(landingHtml, /class="detail-catalog-return"[\s\S]*data-learning-catalog-return[\s\S]*← Back to Learn by Topic/);
+  assert.doesNotMatch(landingHtml, /← Back to Books/);
+  assert.match(topicDetailStyles, /\.is-topic-page \.topic-site-header \{\s*display: grid;/);
+  assert.match(topicDetailStyles, /\.is-topic-page \.global-view-menu,[\s\S]*\.is-topic-page \.learning-culture-nav \{\s*display: none;/);
+  assert.match(navigationSource, /catalogReturnLink\.href = `learn-v2\.html#\$\{categoryIdForTopic\(state\.selectedTopicId\)\}`/);
   assert.match(runtimeWiringSource, /if \(initialTopicId\) \{\s*requestAnimationFrame\(\(\) => focusLearningPanel\(\)\);/);
   assert.match(navigationSource, /state\.topicPageOpen = true;\s*syncBookSelectionFromTopic\(\);\s*renderTopics\(\);/);
   assert.match(stylesSource, /html \{\s*scroll-behavior: auto;/);
@@ -2498,14 +2500,14 @@ test("learner audio controls use the shared green Play button", () => {
   assert.match(styles, /\.multiplication-detail-card \.numbers-game-top \.small-button \{[\s\S]*position: absolute/);
 });
 
-test("navigation display toggles use the compact speaker, Pī, and ABC icon set", () => {
+test("navigation display toggles use the compact speaker, Pin, and En icon set", () => {
   const navigationSource = readFileSync("src/core/navigation-runtime.js", "utf8");
   const displaySource = readFileSync("src/core/display-controls-runtime.js", "utf8");
   const styles = readFileSync("styles.css", "utf8");
 
   assert.match(navigationSource, /aria-label="Sound on"/);
   assert.match(displaySource, /learning-display-sound-icon/);
-  assert.match(displaySource, /learning-display-pinyin-icon[\s\S]*>Pīn</);
+  assert.match(displaySource, /learning-display-pinyin-icon[\s\S]*>Pin</);
   assert.match(displaySource, /learning-display-english-icon[\s\S]*>En</);
   assert.match(styles, /\.learning-display-toggle \{[\s\S]*width: 56px/);
 });
