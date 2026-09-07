@@ -1,7 +1,7 @@
 # Nationality and Languages
 
 Status: `complete`
-URLs: `index.html?topic=identity#topic-detail`; `index.html?topic=languages#topic-detail`
+URLs: `lesson.html?topic=identity`; `lesson.html?topic=languages`
 Mapped lessons: **3A Lesson 5 — Nationality; 4A Lesson 2 — Languages**
 
 ## Confirmed language and scope

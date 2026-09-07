@@ -1,7 +1,7 @@
 # Positions & Directions
 
 Status: `implementation complete; visual QA pending`
-URL: `index.html?topic=positions#topic-detail`  
+URL: `lesson.html?topic=positions`
 Mapped lesson: **3B Lesson 3 — Positions**
 
 ## Cross-book progression

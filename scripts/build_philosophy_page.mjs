@@ -7,6 +7,7 @@ import {
   glossaryScriptHtml,
   loadCultureGlossary
 } from "./culture_glossary.mjs";
+import { loadCultureCatalogLocations } from "./culture_catalog_locations.mjs";
 
 let formatGlossaryTerms = (text) => text;
 
@@ -247,6 +248,7 @@ export async function buildPhilosophyPage({ category = "philosophy", slug, targe
   const template = await fs.readFile(templatePath, "utf8");
   const sharedStyles = await fs.readFile(sharedStylesPath, "utf8");
   const glossary = await loadCultureGlossary(root);
+  const catalogLocations = await loadCultureCatalogLocations(root);
   formatGlossaryTerms = createGlossaryFormatter(glossary);
   const { data: frontmatter, body } = parseFrontmatter(markdown);
   const blocks = parseBlocks(body);
@@ -260,11 +262,17 @@ export async function buildPhilosophyPage({ category = "philosophy", slug, targe
   }
   const availableImages = new Set(sourceFiles);
   const builtBody = buildBody(blocks, availableImages);
+  const storyId = `${category}/${slug}`;
+  const catalogLocation = catalogLocations.get(storyId);
+  if (!catalogLocation) {
+    throw new Error(`Missing Culture catalog location for ${storyId}.`);
+  }
+  const backHref = `../../../../culture.html#${catalogLocation}`;
 
   const html = template
     .replace("{{TITLE}}", frontmatter.title_zh)
     .replace("{{STYLESHEET_HREF}}", "./styles.css")
-    .replace("{{BACK_HREF}}", `../../../../index.html?view=culture#culture-${category}`)
+    .replaceAll("{{BACK_HREF}}", backHref)
     .replace("{{BODY}}", builtBody)
     .replace("</body>", `${glossaryScriptHtml}\n  </body>`);
 

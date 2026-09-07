@@ -17564,11 +17564,12 @@
         button.textContent = `${label} ${enabled ? "on" : "off"}`;
       });
       toggleArabicButton2.classList.toggle("is-hidden", topic.id !== "numbers");
-      learningCultureNav2?.querySelectorAll("[data-display-toggle]").forEach((button) => {
+      const displayToggles = learningCultureNav2?.ownerDocument?.querySelectorAll?.("[data-display-toggle]") ?? learningCultureNav2?.querySelectorAll("[data-display-toggle]") ?? [];
+      displayToggles.forEach((button) => {
         const control = button.dataset.displayToggle;
         const enabled = control === "sound" ? state2.tapAudioEnabled : control === "pinyin" ? state2.showPinyin : state2.showEnglish;
         const label = control === "sound" ? "Sound" : control === "pinyin" ? "Pinyin" : "English";
-        const icon = control === "sound" ? '<svg class="learning-display-sound-icon" viewBox="0 0 32 32" aria-hidden="true"><path d="M5 13h6l8-6v18l-8-6H5z" fill="currentColor" stroke="currentColor" stroke-linejoin="round"/><path d="M23 12c2 2 2 6 0 8M26 9c4 4 4 10 0 14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>' : control === "pinyin" ? '<span class="learning-display-letter-icon learning-display-pinyin-icon" aria-hidden="true">P\u012Bn</span>' : '<span class="learning-display-letter-icon learning-display-english-icon" aria-hidden="true">En</span>';
+        const icon = control === "sound" ? '<svg class="learning-display-sound-icon" viewBox="0 0 32 32" aria-hidden="true"><path d="M5 13h6l8-6v18l-8-6H5z" fill="currentColor" stroke="currentColor" stroke-linejoin="round"/><path d="M23 12c2 2 2 6 0 8M26 9c4 4 4 10 0 14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>' : control === "pinyin" ? '<span class="learning-display-letter-icon learning-display-pinyin-icon" aria-hidden="true">Pin</span>' : '<span class="learning-display-letter-icon learning-display-english-icon" aria-hidden="true">En</span>';
         button.classList.toggle("is-toggle-active", enabled);
         button.classList.toggle("is-toggle-inactive", !enabled);
         button.innerHTML = icon;
@@ -19203,6 +19204,7 @@
       if (!topicLessonStrip2) {
         return;
       }
+      topicLessonStrip2.classList.toggle("is-book-scope", Boolean(state2.lessonScope));
       const steps = topic.steps ?? [];
       if (!steps.length) {
         topicLessonStrip2.innerHTML = "";
@@ -19210,6 +19212,9 @@
         return;
       }
       topicLessonStrip2.classList.remove("is-hidden");
+      const selectionCount = steps.length + (steps.length > 1 ? 1 : 0);
+      topicLessonStrip2.dataset.selectionCount = String(selectionCount);
+      topicLessonStrip2.style.setProperty("--selection-count", String(selectionCount));
       const allContentCard = steps.length > 1 ? `
       <button class="topic-lesson-card topic-lesson-card-all${state2.lessonScope ? "" : " is-active"}" type="button" data-topic-all-content aria-label="Show all ${topic.title} content across books">
         <span class="topic-lesson-meta">Learn by topic</span>
@@ -19562,16 +19567,21 @@
       if (!detailLayout2) {
         return;
       }
-      scrollToSectionTop2(detailLayout2);
+      scrollToSectionTop2(detailLayout2, { includeTopicHeader: true });
     }
-    function scrollToSectionTop2(element) {
+    function scrollToSectionTop2(element, options = {}) {
       if (!element) {
         return;
       }
       const root = document.documentElement;
       const previousScrollBehavior = root.style.scrollBehavior;
       const stickyNavHeight = learningCultureNav2?.getBoundingClientRect().height ?? 0;
-      const targetTop = Math.max(0, window.scrollY + element.getBoundingClientRect().top - stickyNavHeight);
+      const topicHeaderHeight = options.includeTopicHeader ? document.querySelector(".topic-site-header")?.getBoundingClientRect().height ?? 0 : 0;
+      const stickyOffset = Math.max(stickyNavHeight, topicHeaderHeight);
+      const targetTop = Math.max(
+        0,
+        window.scrollY + element.getBoundingClientRect().top - stickyOffset - (topicHeaderHeight ? 12 : 0)
+      );
       root.style.scrollBehavior = "auto";
       window.scrollTo(0, targetTop);
       root.style.scrollBehavior = previousScrollBehavior;
@@ -19582,9 +19592,32 @@
     function categoryIdForTopic2(topicId) {
       return learningHomeCategories2.find((category) => category.topicIds.includes(topicId))?.id ?? "foundations";
     }
+    function catalogPathForTopic(topicId) {
+      const category = learningHomeCategories2.find((item) => item.topicIds.includes(topicId)) ?? learningHomeCategories2[0];
+      const subcatalog = category.subcatalogs?.find((item) => item.topicIds.includes(topicId));
+      return subcatalog ? `${category.id}/${subcatalog.id}` : category.id;
+    }
     function updateTopicPageVisibility2() {
       detailLayout2?.classList.toggle("is-hidden", !state2.topicPageOpen);
       document.body.classList.toggle("is-topic-page", state2.topicPageOpen);
+      if (state2.topicPageOpen) {
+        document.body.dataset.topicId = state2.selectedTopicId;
+      } else {
+        delete document.body.dataset.topicId;
+      }
+      const catalogReturnLinks = document.querySelectorAll("[data-learning-catalog-return]");
+      if (catalogReturnLinks.length && state2.topicPageOpen) {
+        const bookId = state2.lessonScope?.bookId;
+        const lessonNumber = state2.lessonScope?.lessonNumber;
+        catalogReturnLinks.forEach((catalogReturnLink) => {
+          catalogReturnLink.href = bookId ? `books.html#${bookId}/${lessonNumber}` : `learn.html#${catalogPathForTopic(state2.selectedTopicId)}`;
+          catalogReturnLink.textContent = catalogReturnLink.hasAttribute("data-mobile-learning-return") ? bookId ? `\u2190 Book ${bookId.toUpperCase()}` : "\u2190 Topics" : bookId ? "\u2190 Back to Book Lessons" : "\u2190 Back to Learn by Topic";
+        });
+      }
+      document.querySelectorAll("[data-topic-primary-nav]").forEach((link) => {
+        const destination = state2.lessonScope?.bookId ? "books" : "learn";
+        link.classList.toggle("is-current", link.dataset.topicPrimaryNav === destination);
+      });
     }
     function scrollCategorySectionIntoView2(categoryId) {
       requestAnimationFrame(() => {
@@ -19716,7 +19749,10 @@
   `;
     }
     function bindDisplayControls2() {
-      learningCultureNav2.querySelectorAll("[data-display-toggle]").forEach((button) => {
+      const controls = learningCultureNav2?.ownerDocument?.querySelectorAll?.("[data-display-toggle]") ?? learningCultureNav2.querySelectorAll("[data-display-toggle]");
+      controls.forEach((button) => {
+        if (button.dataset.displayToggleBound === "true") return;
+        button.dataset.displayToggleBound = "true";
         button.addEventListener("click", () => {
           if (button.dataset.displayToggle === "sound") {
             state2.tapAudioEnabled = !state2.tapAudioEnabled;
@@ -20279,7 +20315,8 @@
       params.set("book", lessonScope.bookId);
       params.set("lesson", String(lessonScope.lessonNumber));
     }
-    return `${location.pathname}?${params.toString()}#topic-detail`;
+    const directory = location.pathname.replace(/[^/]*$/, "");
+    return `${directory}lesson.html?${params.toString()}`;
   }
 
   // src/features/time-daily-life/weekdays.js
@@ -29234,7 +29271,7 @@
     let playbackSequence = 0;
     function audioAttributes(text, pinyin = text, explicitId = "") {
       const id = explicitId || pinyinAudioId(text, pinyin);
-      return `data-pinyin-audio="${text}"${id ? ` data-pinyin-audio-id="${id}"` : ""}`;
+      return `data-pinyin-audio="${text}"${id ? ` data-pinyin-audio-id="${id}"` : ""} aria-pressed="false"`;
     }
     function soundChipMarkup(label, audioText, audioId = "") {
       return `<button class="pinyin-sound-chip" type="button" ${audioAttributes(audioText, audioText, audioId)} aria-label="Play ${label}">${label}</button>`;
@@ -29380,11 +29417,22 @@
         [3, "M6 9 L15 12 L40 34 L64 14", "57,9 76,3 69,21"],
         [4, "M6 6 L25 12 L44 20 L63 29", "59,36 76,36 67,22"]
       ];
-      return `<section class="pinyin-basics-practice pinyin-basics-practice-${kind}"><div class="pinyin-basics-practice-grid"><section class="pinyin-ear-game"><div class="pinyin-ear-game-heading"><h4>Which tone did you hear?</h4><button class="small-button is-play-button" type="button" data-pinyin-basics-play="tone" aria-label="Play a new sound">\u25B6</button></div><div class="pinyin-tone-choice-row">${toneChoices.map(([tone, line, head]) => `<button type="button" class="pinyin-tone-choice${toneResult && tone === state2.pinyinBasicsToneChoice ? toneResult === "correct" ? " is-correct" : " is-wrong" : ""}" data-pinyin-basics-tone="${tone}" aria-label="Tone ${tone}">${toneMark(tone)}<svg class="pinyin-tone-choice-contour" viewBox="0 0 80 38" aria-hidden="true"><path d="${line}" /><polygon points="${head}" /></svg></button>`).join("")}</div><p class="pinyin-basics-feedback" aria-live="polite">${toneResult === "correct" ? `<strong>${toneRound.pinyin}</strong> \xB7 ${toneRound.tone}${toneRound.tone === 1 ? "st" : toneRound.tone === 2 ? "nd" : toneRound.tone === 3 ? "rd" : "th"} tone` : ""}</p></section><section class="pinyin-ear-game"><div class="pinyin-ear-game-heading"><h4>Which final did you hear?</h4><button class="small-button is-play-button" type="button" data-pinyin-basics-play="final" aria-label="Play a new sound">\u25B6</button></div><div class="pinyin-final-choice-row">${["a", "o", "e", "i", "u", "\xFC"].map((final) => `<button type="button" class="pinyin-final-choice${finalResult && final === state2.pinyinBasicsFinalChoice ? finalResult === "correct" ? " is-correct" : " is-wrong" : ""}" data-pinyin-basics-final="${final}">${finalMark(final)}${final}</button>`).join("")}</div><p class="pinyin-basics-feedback" aria-live="polite">${finalResult === "correct" ? `<strong>${finalRound.pinyin}</strong> \xB7 ${finalRound.final}` : ""}</p></section></div></section>`;
+      return `<section class="pinyin-basics-practice pinyin-basics-practice-${kind}"><div class="pinyin-basics-practice-grid"><section class="pinyin-ear-game"><div class="pinyin-ear-game-heading"><h4>Which tone did you hear?</h4><button class="small-button is-play-button" type="button" data-pinyin-basics-play="tone" aria-label="Play a new sound">\u25B6</button></div><div class="pinyin-tone-choice-row">${toneChoices.map(([tone, line, head]) => {
+        const isSelected = toneResult && tone === state2.pinyinBasicsToneChoice;
+        return `<button type="button" class="pinyin-tone-choice${isSelected ? ` is-selected is-${toneResult}` : ""}" data-pinyin-basics-tone="${tone}" aria-label="Tone ${tone}" aria-pressed="${Boolean(isSelected)}">${toneMark(tone)}<svg class="pinyin-tone-choice-contour" viewBox="0 0 80 38" aria-hidden="true"><path d="${line}" /><polygon points="${head}" /></svg></button>`;
+      }).join("")}</div><p class="pinyin-basics-feedback" aria-live="polite">${toneResult === "correct" ? `<strong>${toneRound.pinyin}</strong> \xB7 ${toneRound.tone}${toneRound.tone === 1 ? "st" : toneRound.tone === 2 ? "nd" : toneRound.tone === 3 ? "rd" : "th"} tone` : ""}</p></section><section class="pinyin-ear-game"><div class="pinyin-ear-game-heading"><h4>Which final did you hear?</h4><button class="small-button is-play-button" type="button" data-pinyin-basics-play="final" aria-label="Play a new sound">\u25B6</button></div><div class="pinyin-final-choice-row">${["a", "o", "e", "i", "u", "\xFC"].map((final) => {
+        const isSelected = finalResult && final === state2.pinyinBasicsFinalChoice;
+        return `<button type="button" class="pinyin-final-choice${isSelected ? ` is-selected is-${finalResult}` : ""}" data-pinyin-basics-final="${final}" aria-pressed="${Boolean(isSelected)}">${finalMark(final)}${final}</button>`;
+      }).join("")}</div><p class="pinyin-basics-feedback" aria-live="polite">${finalResult === "correct" ? `<strong>${finalRound.pinyin}</strong> \xB7 ${finalRound.final}` : ""}</p></section></div></section>`;
     }
     function bindChapterNavigation() {
       focusExplorer2.querySelectorAll("[data-pinyin-group]").forEach((button) => button.addEventListener("click", () => selectGroup(button.dataset.pinyinGroup)));
       focusExplorer2.querySelectorAll("[data-pinyin-audio]").forEach((button) => button.addEventListener("click", () => {
+        focusExplorer2.querySelectorAll("[data-pinyin-audio]").forEach((audioButton) => {
+          const isSelected = audioButton === button;
+          audioButton.classList.toggle("is-selected", isSelected);
+          audioButton.setAttribute("aria-pressed", String(isSelected));
+        });
         const id = button.dataset.pinyinAudioId;
         if (id) playRecording(id, button.dataset.pinyinAudio);
         else speak2?.(button.dataset.pinyinAudio, 0.62);
@@ -30343,7 +30391,27 @@
       hint: "Numbers, greetings, names, age, nationality, languages",
       accent: "#be5b49",
       iconSrc: "assets/navigation-icons/lele-wave-icon.webp",
-      topicIds: ["numbers", "greetings", "polite-words", "introductions", "age", "identity", "languages", "multiplication-rhyme"]
+      topicIds: ["numbers", "greetings", "polite-words", "introductions", "age", "identity", "languages", "multiplication-rhyme"],
+      subcatalogs: [
+        {
+          id: "numbers-rhyme",
+          zhTitle: "\u6570\u5B57\u4E0E\u53E3\u8BC0",
+          enTitle: "Numbers & Number Rhyme",
+          topicIds: ["numbers", "multiplication-rhyme"]
+        },
+        {
+          id: "everyday-conversation",
+          zhTitle: "\u65E5\u5E38\u4EA4\u6D41",
+          enTitle: "Everyday Conversation",
+          topicIds: ["greetings", "polite-words"]
+        },
+        {
+          id: "about-me",
+          zhTitle: "\u4ECB\u7ECD\u81EA\u5DF1",
+          enTitle: "About Me",
+          topicIds: ["introductions", "age", "identity", "languages"]
+        }
+      ]
     },
     {
       id: "me-family",
@@ -30352,7 +30420,21 @@
       hint: "Family, grandparents, body, clothes",
       accent: "#aa7051",
       iconEmoji: "\u{1F3E0}",
-      topicIds: ["family", "telephone-numbers", "body", "clothes"]
+      topicIds: ["family", "telephone-numbers", "body", "clothes"],
+      subcatalogs: [
+        {
+          id: "family-members",
+          zhTitle: "\u6211\u7684\u5BB6\u4EBA",
+          enTitle: "My Family",
+          topicIds: ["family", "telephone-numbers"]
+        },
+        {
+          id: "body-clothes",
+          zhTitle: "\u8EAB\u4F53\u4E0E\u8863\u670D",
+          enTitle: "Body & Clothes",
+          topicIds: ["body", "clothes"]
+        }
+      ]
     },
     {
       id: "time-daily",
@@ -30361,7 +30443,33 @@
       hint: "Week, time, dates, routines, home, actions, requests",
       accent: "#517b8d",
       iconSrc: "assets/illustrated-clocks/10oclock.svg",
-      topicIds: ["weekdays", "time-date", "dates", "comparisons", "positions", "transport", "daily-life", "everyday-actions", "requests-permission", "is-it"]
+      topicIds: ["weekdays", "time-date", "dates", "comparisons", "positions", "transport", "daily-life", "everyday-actions", "requests-permission", "is-it"],
+      subcatalogs: [
+        {
+          id: "calendar-time",
+          zhTitle: "\u661F\u671F\u3001\u65F6\u95F4\u4E0E\u65E5\u671F",
+          enTitle: "Week, Time & Dates",
+          topicIds: ["weekdays", "time-date", "dates"]
+        },
+        {
+          id: "descriptions-directions",
+          zhTitle: "\u63CF\u8FF0\u3001\u4F4D\u7F6E\u4E0E\u65B9\u5411",
+          enTitle: "Descriptions & Directions",
+          topicIds: ["comparisons", "positions"]
+        },
+        {
+          id: "daily-life-travel",
+          zhTitle: "\u65E5\u5E38\u751F\u6D3B\u4E0E\u51FA\u884C",
+          enTitle: "Daily Life & Getting Around",
+          topicIds: ["transport", "daily-life", "everyday-actions"]
+        },
+        {
+          id: "everyday-questions",
+          zhTitle: "\u65E5\u5E38\u95EE\u53E5",
+          enTitle: "Everyday Questions",
+          topicIds: ["requests-permission", "is-it"]
+        }
+      ]
     },
     {
       id: "school-life",
@@ -30370,7 +30478,21 @@
       hint: "Classroom, backpack, subjects",
       accent: "#6d8a4f",
       iconEmoji: "\u{1F3EB}",
-      topicIds: ["stationery", "school-supplies", "classroom", "school", "school-subjects"]
+      topicIds: ["stationery", "school-supplies", "classroom", "school", "school-subjects"],
+      subcatalogs: [
+        {
+          id: "school-things",
+          zhTitle: "\u6587\u5177\u4E0E\u4E66\u5305",
+          enTitle: "School Things",
+          topicIds: ["stationery", "school-supplies"]
+        },
+        {
+          id: "classroom-school",
+          zhTitle: "\u6559\u5BA4\u4E0E\u5B66\u6821",
+          enTitle: "Classroom & School",
+          topicIds: ["classroom", "school", "school-subjects"]
+        }
+      ]
     },
     {
       id: "food",
@@ -30388,7 +30510,21 @@
       hint: "Nature, weather, pets, zoo animals, colours",
       accent: "#6f7fa4",
       iconSrc: "assets/navigation-icons/panda-bamboo-icon.webp",
-      topicIds: ["nature", "weather", "pets", "animals", "colours"]
+      topicIds: ["nature", "weather", "pets", "animals", "colours"],
+      subcatalogs: [
+        {
+          id: "nature-weather-colours",
+          zhTitle: "\u81EA\u7136\u3001\u5929\u6C14\u4E0E\u989C\u8272",
+          enTitle: "Nature, Weather & Colours",
+          topicIds: ["nature", "weather", "colours"]
+        },
+        {
+          id: "pets-zoo-animals",
+          zhTitle: "\u5BA0\u7269\u4E0E\u52A8\u7269\u56ED",
+          enTitle: "Pets & Zoo Animals",
+          topicIds: ["pets", "animals"]
+        }
+      ]
     },
     {
       id: "play",
@@ -30397,7 +30533,21 @@
       hint: "Toys, reading, music, movement",
       accent: "#8f6988",
       iconSrc: "assets/navigation-icons/teddy-robot-icon.webp",
-      topicIds: ["toys", "hobbies", "hobbies-3b", "hobbies-at-home", "hobbies-leisure"]
+      topicIds: ["toys", "hobbies", "hobbies-3b", "hobbies-at-home", "hobbies-leisure"],
+      subcatalogs: [
+        {
+          id: "toys-home-fun",
+          zhTitle: "\u73A9\u5177\u4E0E\u5C45\u5BB6\u7231\u597D",
+          enTitle: "Toys & At-Home Fun",
+          topicIds: ["toys", "hobbies-at-home"]
+        },
+        {
+          id: "interests-activities",
+          zhTitle: "\u5174\u8DA3\u4E0E\u6D3B\u52A8",
+          enTitle: "Interests & Activities",
+          topicIds: ["hobbies", "hobbies-3b", "hobbies-leisure"]
+        }
+      ]
     }
   ];
 
@@ -31894,7 +32044,13 @@
   switchView(viewFromLocation(window.location));
   updateTopicPageVisibility();
   if (initialTopicId) {
-    requestAnimationFrame(() => focusLearningPanel());
+    requestAnimationFrame(() => {
+      const root = document.documentElement;
+      const previousScrollBehavior = root.style.scrollBehavior;
+      root.style.scrollBehavior = "auto";
+      window.scrollTo(0, 0);
+      root.style.scrollBehavior = previousScrollBehavior;
+    });
   } else if (initialBookId && viewFromLocation(window.location) === "books") {
     requestAnimationFrame(() => document.getElementById(`book-lessons-${initialBookId}`)?.scrollIntoView({ block: "start" }));
   } else if (window.location.hash.startsWith("#culture-")) {

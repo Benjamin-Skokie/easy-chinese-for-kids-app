@@ -1,7 +1,7 @@
 # Classroom
 
 Status: `partial`  
-URL: `index.html?topic=classroom#topic-detail`
+URL: `lesson.html?topic=classroom`
 
 ## Cross-book progression
 

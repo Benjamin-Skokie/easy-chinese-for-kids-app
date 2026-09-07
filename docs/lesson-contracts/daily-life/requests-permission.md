@@ -1,7 +1,7 @@
 # Requests & Permission
 
 Status: `partial` — book core added; source-alignment review remains
-URL: `index.html?topic=requests-permission#topic-detail`
+URL: `lesson.html?topic=requests-permission`
 
 ## Book evidence
 

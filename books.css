@@ -1,0 +1,155 @@
+.book-catalogs .category-button {
+  --category-accent: var(--teal-700);
+  min-height: 92px;
+  padding: 12px 14px;
+  grid-template-columns: 54px 54px;
+  align-items: center;
+  justify-content: center;
+  justify-items: start;
+  align-content: center;
+  gap: 24px;
+  text-align: left;
+}
+
+.book-catalogs .category-icon {
+  width: 54px;
+  height: 54px;
+  margin: 0;
+  grid-column: 2;
+  grid-row: 1;
+  justify-self: start;
+}
+
+.book-card-copy {
+  display: grid;
+  min-width: 0;
+  grid-column: 1;
+  grid-row: 1;
+  gap: 1px;
+  color: var(--teal-950);
+  font-family: var(--ui-font);
+  line-height: 1.15;
+}
+
+.book-catalogs .book-card-copy strong {
+  font-family: var(--ui-font);
+  font-size: 1rem;
+}
+
+.book-catalogs .book-card-copy .book-label {
+  color: var(--teal-700);
+  font-family: var(--editorial-font);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.book-code,
+.selected-book-code {
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--teal-200);
+  border-radius: 10px;
+  color: var(--teal-800);
+  background: var(--teal-100);
+  font-family: var(--editorial-font);
+  font-weight: 600;
+  line-height: 1;
+}
+
+.book-code {
+  width: 54px;
+  height: 54px;
+  font-size: 1.5rem;
+}
+
+.selected-book-code {
+  width: 48px;
+  height: 48px;
+  font-size: 1.35rem;
+}
+
+.book-catalogs .category-button[aria-pressed="true"] .book-code {
+  border-color: var(--teal-700);
+  color: #fff;
+  background: var(--teal-700);
+}
+
+.book-catalogs + .category-browser {
+  margin-top: 18px;
+  padding-top: 16px;
+}
+
+.book-catalogs + .category-browser .topic-results-heading {
+  margin-top: 18px;
+}
+
+.lesson-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.book-lesson-card {
+  align-items: stretch;
+}
+
+.book-lesson-card.is-selected {
+  border-color: var(--teal-600);
+  background: var(--teal-050);
+  box-shadow: inset 0 0 0 2px rgba(37, 117, 114, 0.16), 0 16px 32px rgba(17, 70, 68, 0.1);
+}
+
+.book-lesson-card .topic-copy {
+  align-content: center;
+}
+
+.book-lesson-label {
+  margin-bottom: 7px;
+  color: var(--teal-700);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  line-height: 1.2;
+}
+
+.book-lesson-card .topic-copy strong {
+  font-size: 1.2rem;
+}
+
+.book-lesson-card .topic-copy > span:not(.book-lesson-label) {
+  font-size: 1.1rem;
+}
+
+@media (max-width: 1340px) {
+  .lesson-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 920px) {
+  .lesson-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 680px) {
+  .book-catalogs .category-button {
+    min-height: 82px;
+    padding: 9px 10px;
+    grid-template-columns: 48px 48px;
+    gap: 12px;
+  }
+
+  .book-catalogs .category-icon {
+    width: 48px;
+    height: 48px;
+  }
+
+  .book-code {
+    width: 48px;
+    height: 48px;
+    font-size: 1.35rem;
+  }
+
+  .lesson-grid {
+    grid-template-columns: 1fr;
+  }
+}

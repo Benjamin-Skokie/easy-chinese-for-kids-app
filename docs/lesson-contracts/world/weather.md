@@ -1,7 +1,7 @@
 # Weather
 
-Status: `partial`  
-URL: `index.html?topic=weather#topic-detail`  
+Status: `partial`
+URL: `lesson.html?topic=weather`
 Mapped lesson: **4B Lesson 1 — It's raining**
 
 ## Cross-book progression

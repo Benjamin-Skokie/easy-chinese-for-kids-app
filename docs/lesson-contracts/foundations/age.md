@@ -1,7 +1,7 @@
 # Age
 
 Status: `partial`  
-URL: `index.html?topic=age#topic-detail`
+URL: `lesson.html?topic=age`
 
 ## Cross-book progression
 

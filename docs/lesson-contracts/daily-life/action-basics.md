@@ -1,7 +1,7 @@
 # Everyday Actions / 日常动作
 
 Status: `implemented; visual QA complete`<br>
-URL: `index.html?topic=everyday-actions#topic-detail`<br>
+URL: `lesson.html?topic=everyday-actions`<br>
 Topic group: **Time & Daily Life / 时间和日常**
 
 ## Scope

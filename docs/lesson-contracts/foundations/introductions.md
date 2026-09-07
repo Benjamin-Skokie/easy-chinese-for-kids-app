@@ -1,7 +1,7 @@
 # Names & Introductions
 
 Status: `complete — visual review pending`
-URL: `index.html?topic=introductions#topic-detail`
+URL: `lesson.html?topic=introductions`
 
 ## Cross-book progression
 

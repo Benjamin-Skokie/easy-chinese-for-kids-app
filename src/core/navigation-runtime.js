@@ -154,10 +154,10 @@ function focusLearningPanel() {
     return;
   }
 
-  scrollToSectionTop(detailLayout);
+  scrollToSectionTop(detailLayout, { includeTopicHeader: true });
 }
 
-function scrollToSectionTop(element) {
+function scrollToSectionTop(element, options = {}) {
   if (!element) {
     return;
   }
@@ -165,7 +165,14 @@ function scrollToSectionTop(element) {
   const root = document.documentElement;
   const previousScrollBehavior = root.style.scrollBehavior;
   const stickyNavHeight = learningCultureNav?.getBoundingClientRect().height ?? 0;
-  const targetTop = Math.max(0, window.scrollY + element.getBoundingClientRect().top - stickyNavHeight);
+  const topicHeaderHeight = options.includeTopicHeader
+    ? document.querySelector(".topic-site-header")?.getBoundingClientRect().height ?? 0
+    : 0;
+  const stickyOffset = Math.max(stickyNavHeight, topicHeaderHeight);
+  const targetTop = Math.max(
+    0,
+    window.scrollY + element.getBoundingClientRect().top - stickyOffset - (topicHeaderHeight ? 12 : 0)
+  );
   root.style.scrollBehavior = "auto";
   window.scrollTo(0, targetTop);
   root.style.scrollBehavior = previousScrollBehavior;
@@ -179,9 +186,43 @@ function categoryIdForTopic(topicId) {
   return learningHomeCategories.find((category) => category.topicIds.includes(topicId))?.id ?? "foundations";
 }
 
+function catalogPathForTopic(topicId) {
+  const category =
+    learningHomeCategories.find((item) => item.topicIds.includes(topicId)) ??
+    learningHomeCategories[0];
+  const subcatalog = category.subcatalogs?.find((item) => item.topicIds.includes(topicId));
+  return subcatalog ? `${category.id}/${subcatalog.id}` : category.id;
+}
+
 function updateTopicPageVisibility() {
   detailLayout?.classList.toggle("is-hidden", !state.topicPageOpen);
   document.body.classList.toggle("is-topic-page", state.topicPageOpen);
+  if (state.topicPageOpen) {
+    document.body.dataset.topicId = state.selectedTopicId;
+  } else {
+    delete document.body.dataset.topicId;
+  }
+  const catalogReturnLinks = document.querySelectorAll("[data-learning-catalog-return]");
+  if (catalogReturnLinks.length && state.topicPageOpen) {
+    const bookId = state.lessonScope?.bookId;
+    const lessonNumber = state.lessonScope?.lessonNumber;
+    catalogReturnLinks.forEach((catalogReturnLink) => {
+      catalogReturnLink.href = bookId
+        ? `books.html#${bookId}/${lessonNumber}`
+        : `learn.html#${catalogPathForTopic(state.selectedTopicId)}`;
+      catalogReturnLink.textContent = catalogReturnLink.hasAttribute("data-mobile-learning-return")
+        ? bookId
+          ? `← Book ${bookId.toUpperCase()}`
+          : "← Topics"
+        : bookId
+          ? "← Back to Book Lessons"
+          : "← Back to Learn by Topic";
+    });
+  }
+  document.querySelectorAll("[data-topic-primary-nav]").forEach((link) => {
+    const destination = state.lessonScope?.bookId ? "books" : "learn";
+    link.classList.toggle("is-current", link.dataset.topicPrimaryNav === destination);
+  });
 }
 
 function scrollCategorySectionIntoView(categoryId) {
@@ -332,7 +373,12 @@ function displayControlsMarkup() {
 }
 
 function bindDisplayControls() {
-  learningCultureNav.querySelectorAll("[data-display-toggle]").forEach((button) => {
+  const controls =
+    learningCultureNav?.ownerDocument?.querySelectorAll?.("[data-display-toggle]") ??
+    learningCultureNav.querySelectorAll("[data-display-toggle]");
+  controls.forEach((button) => {
+    if (button.dataset.displayToggleBound === "true") return;
+    button.dataset.displayToggleBound = "true";
     button.addEventListener("click", () => {
       if (button.dataset.displayToggle === "sound") {
         state.tapAudioEnabled = !state.tapAudioEnabled;

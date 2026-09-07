@@ -1,7 +1,7 @@
 # My Family 1
 
 Status: `implemented`
-URL: `index.html?topic=family#topic-detail`
+URL: `lesson.html?topic=family`
 
 ## Cross-book progression
 

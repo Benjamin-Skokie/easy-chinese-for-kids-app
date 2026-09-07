@@ -1,7 +1,7 @@
 # Clothes
 
 Status: `implementation complete; visual QA pending`
-URL: `index.html?topic=clothes#topic-detail`
+URL: `lesson.html?topic=clothes`
 
 ## Cross-book progression
 

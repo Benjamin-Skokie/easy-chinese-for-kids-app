@@ -1,7 +1,7 @@
 # 99 Multiplication Rhyme
 
 Status: `partial`  
-URL: `index.html?topic=multiplication-rhyme#topic-detail`
+URL: `lesson.html?topic=multiplication-rhyme`
 
 ## Cross-book progression
 

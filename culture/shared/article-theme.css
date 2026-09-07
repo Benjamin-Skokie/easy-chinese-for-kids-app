@@ -1,0 +1,69 @@
+:root {
+  --paper: #f4faf8;
+  --paper-deep: #dcece8;
+  --ink: #274849;
+  --muted: #627879;
+  --primary: #257572;
+  --primary-deep: #123f43;
+  --accent: #3f8985;
+  --accent-light: #eaf5f2;
+  --cream: #ffffff;
+  --shadow: 0 24px 58px rgba(19, 66, 67, 0.1);
+  --shadow-sm: 0 8px 24px rgba(19, 66, 67, 0.07);
+}
+
+body {
+  background:
+    radial-gradient(circle at 50% 0, rgba(190, 224, 215, 0.42), transparent 34rem),
+    linear-gradient(180deg, #fbfdfc 0%, #f1f8f6 100%);
+}
+
+.page {
+  border-color: rgba(25, 91, 92, 0.12);
+  background: rgba(255, 255, 255, 0.94);
+}
+
+.hero {
+  border-color: rgba(25, 91, 92, 0.1);
+  background:
+    radial-gradient(ellipse 60% 52% at 50% 0%, rgba(87, 153, 149, 0.11), transparent),
+    linear-gradient(180deg, rgba(234, 245, 242, 0.62), rgba(255, 255, 255, 0.94));
+}
+
+.ending {
+  background:
+    radial-gradient(circle at top right, rgba(87, 153, 149, 0.13), transparent 30%),
+    linear-gradient(180deg, rgba(234, 245, 242, 0.72), rgba(255, 255, 255, 0.96));
+}
+
+.back-nav a {
+  border-color: rgba(25, 91, 92, 0.14);
+  color: var(--primary-deep);
+  background: rgba(255, 255, 255, 0.88);
+  box-shadow: var(--shadow-sm);
+}
+
+.back-nav a:hover {
+  background: var(--accent-light);
+}
+
+.glossary-term {
+  border-bottom-color: rgba(37, 117, 114, 0.52);
+  background: rgba(201, 225, 220, 0.46);
+}
+
+.glossary-term:focus-visible {
+  outline-color: rgba(37, 117, 114, 0.45);
+}
+
+.glossary-popover {
+  border-color: rgba(25, 91, 92, 0.18);
+  color: var(--ink);
+  background: #ffffff;
+  box-shadow: 0 14px 32px rgba(19, 66, 67, 0.14);
+}
+
+.glossary-popover::after {
+  border-color: rgba(25, 91, 92, 0.18);
+  background: #ffffff;
+}

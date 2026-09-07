@@ -1059,7 +1059,13 @@ switchView(viewFromLocation(window.location));
 updateTopicPageVisibility();
 
 if (initialTopicId) {
-  requestAnimationFrame(() => focusLearningPanel());
+  requestAnimationFrame(() => {
+    const root = document.documentElement;
+    const previousScrollBehavior = root.style.scrollBehavior;
+    root.style.scrollBehavior = "auto";
+    window.scrollTo(0, 0);
+    root.style.scrollBehavior = previousScrollBehavior;
+  });
 } else if (initialBookId && viewFromLocation(window.location) === "books") {
   requestAnimationFrame(() => document.getElementById(`book-lessons-${initialBookId}`)?.scrollIntoView({ block: "start" }));
 } else if (window.location.hash.startsWith("#culture-")) {

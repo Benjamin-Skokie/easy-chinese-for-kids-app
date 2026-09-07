@@ -1,7 +1,7 @@
 # Toys
 
 Status: `visual QA complete`
-URL: `index.html?topic=toys#topic-detail`  
+URL: `lesson.html?topic=toys`
 Mapped lesson: **2A Lesson 4 — My toys**
 
 ## Confirmed language and scope

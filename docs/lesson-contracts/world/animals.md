@@ -1,7 +1,7 @@
 # Zoo Animals
 
-Status: `partial`  
-URL: `index.html?topic=animals#topic-detail`  
+Status: `partial`
+URL: `lesson.html?topic=animals`
 Mapped lesson: **2B Lesson 5 — Animals**
 
 ## Confirmed language and scope
