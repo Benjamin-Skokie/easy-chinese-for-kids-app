@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nihao World — New Homepage</title>
+    <meta
+      name="description"
+      content="Learn Chinese through language, textbooks, and stories from Chinese culture."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Lora:ital,wght@0,600;0,700;1,600;1,700&amp;family=Newsreader:opsz,wght@6..72,500;6..72,600&amp;family=Noto+Sans+SC:wght@500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="homepage-v2.css" />
+    <script src="homepage-v2.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="homepage-v2.html" aria-label="Nihao World home">
+        <img src="assets/brand/zongzi-guide.webp" alt="" width="768" height="768" />
+        <span class="brand-wordmark">
+          <span class="brand-nihao">Nihao</span><span class="brand-world">World</span>
+        </span>
+      </a>
+
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="primary-navigation"
+        aria-label="Open navigation"
+      >
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="primary-nav" id="primary-navigation" aria-label="Primary navigation">
+        <a class="is-current" href="index.html?view=topics#topics-panel">Learn Chinese</a>
+        <a href="index.html?view=books#books-panel">Find My Textbook</a>
+        <a href="index.html?view=culture#culture-panel">Culture Stories</a>
+      </nav>
+
+      <details class="about-menu">
+        <summary>About</summary>
+        <nav class="about-popover" aria-label="About and support">
+          <a href="about/author-project/index.html#why">
+            <strong>About the Site</strong>
+            <small>Why Nihao World was created</small>
+          </a>
+          <a href="about/author-project/index.html#author">
+            <strong>Meet the Creator</strong>
+            <small>The student behind the project</small>
+          </a>
+          <a href="about/sources-research/index.html">
+            <strong>Sources &amp; Research</strong>
+            <small>References behind the content</small>
+          </a>
+          <a href="about/feedback-problems/index.html">
+            <strong>Feedback</strong>
+            <small>Share an idea or report a problem</small>
+          </a>
+          <a href="about/privacy-safety/index.html">
+            <strong>Privacy &amp; Safety</strong>
+            <small>How the site protects learners</small>
+          </a>
+        </nav>
+      </details>
+    </header>
+
+    <main class="page-shell">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <h1 id="hero-title">
+            <span>Learn the language.</span>
+            <span>Discover the world behind it.</span>
+          </h1>
+        </div>
+      </section>
+
+      <nav class="pathways" aria-label="Choose where to begin">
+        <a class="pathway-card pathway-learn" href="index.html?view=topics#topics-panel">
+          <span class="pathway-visual" aria-hidden="true">
+            <img src="assets/brand/homepage-learn-chinese-card-v2.webp" alt="" />
+          </span>
+          <span class="pathway-copy">
+            <strong>Learn Chinese</strong>
+            <small>Learn step by step through pictures, sound, and play.</small>
+            <span>Lessons · Vocabulary · Games</span>
+          </span>
+          <span class="pathway-arrow" aria-hidden="true">→</span>
+        </a>
+
+        <a class="pathway-card pathway-books" href="index.html?view=books#books-panel">
+          <span class="pathway-visual" aria-hidden="true">
+            <img src="assets/brand/homepage-textbook-card-v3.webp" alt="" />
+          </span>
+          <span class="pathway-copy">
+            <strong>Find My Textbook</strong>
+            <small>Find the lesson in the textbook you already use.</small>
+            <span>Match your book · Find the lesson</span>
+          </span>
+          <span class="pathway-arrow" aria-hidden="true">→</span>
+        </a>
+
+        <a class="pathway-card pathway-culture" href="index.html?view=culture#culture-panel">
+          <span class="pathway-visual" aria-hidden="true">
+            <img src="assets/brand/homepage-culture-card-v3.webp" alt="" />
+          </span>
+          <span class="pathway-copy">
+              <strong>Culture Stories</strong>
+              <small>Stories from Chinese history and culture.</small>
+              <span>History · Traditions · Everyday life</span>
+          </span>
+          <span class="pathway-arrow" aria-hidden="true">→</span>
+        </a>
+      </nav>
+
+      <section class="featured" aria-label="Featured stories" data-featured-stories>
+        <div class="feature-window">
+          <div class="feature-track" data-story-track>
+            <article class="feature-slide" data-story-slide>
+              <div class="feature-copy">
+                <h3>Journey to the West: The Adventures of the Monkey King</h3>
+                <h4 lang="zh-Hans">《西游记》：美猴王的冒险</h4>
+                <span>A mischievous monkey, a magical journey, and a quest for wisdom.</span>
+                <a href="culture/books/literature/journey-to-west/index.html">Read the story <b aria-hidden="true">→</b></a>
+              </div>
+              <img
+                src="culture/books/literature/journey-to-west/images/3-great-sage-at-heaven-gate.webp"
+                alt="Sun Wukong at Heaven's gate"
+                loading="eager"
+                decoding="async"
+              />
+            </article>
+
+            <article class="feature-slide" data-story-slide>
+              <div class="feature-copy">
+                <h3>Why Did Ancient Chinese Money Have So Many Shapes?</h3>
+                <h4 lang="zh-Hans">古代的钱为什么有这么多样子？</h4>
+                <span>Follow money from shells and tools to the familiar round coin.</span>
+                <a href="culture/books/economy/ancient-money/index.html">Read the story <b aria-hidden="true">→</b></a>
+              </div>
+              <img
+                src="culture/books/economy/ancient-money/images/2-1-shell-money.webp"
+                alt="A child offers cowrie shells to a merchant"
+                loading="eager"
+                decoding="async"
+              />
+            </article>
+
+            <article class="feature-slide" data-story-slide>
+              <div class="feature-copy">
+                <h3>The Art of War: Look Before You Fight</h3>
+                <h4 lang="zh-Hans">《孙子兵法》：打仗以前，先看清楚</h4>
+                <span>See how observation and preparation can matter more than rushing into a fight.</span>
+                <a href="culture/books/military/art-of-war/index.html">Read the story <b aria-hidden="true">→</b></a>
+              </div>
+              <img
+                src="culture/books/military/art-of-war/images/2-2-know-yourself-map.webp"
+                alt="A teacher and child compare terrain and two armies on a tabletop map"
+                loading="eager"
+                decoding="async"
+              />
+            </article>
+
+            <article class="feature-slide" data-story-slide>
+              <div class="feature-copy">
+                <h3>Rice Terraces: Farming Up a Mountain</h3>
+                <h4 lang="zh-Hans">梯田：人们怎么把整座山变成农田？</h4>
+                <span>Discover how people and water reshaped mountains over centuries.</span>
+                <a href="culture/books/geography/rice-terraces/index.html">Read the story <b aria-hidden="true">→</b></a>
+              </div>
+              <img
+                src="culture/books/geography/rice-terraces/images/1-honghe-terraces-mountain.webp"
+                alt="Water-filled rice terraces wrapping around mountains"
+                loading="eager"
+                decoding="async"
+              />
+            </article>
+
+            <article class="feature-slide" data-story-slide>
+              <div class="feature-copy">
+                <h3>From Leaf to Cup: The Story of Chinese Tea</h3>
+                <h4 lang="zh-Hans">从茶树到茶杯：中国茶的故事</h4>
+                <span>Follow tea leaves from the plant to the cup—and see how different teas take shape.</span>
+                <a href="culture/books/food/tea/index.html">Read the story <b aria-hidden="true">→</b></a>
+              </div>
+              <img
+                src="culture/books/food/tea/images/5-1-whisking-tea.webp"
+                alt="Green tea leaves opening in a clear glass"
+                loading="eager"
+                decoding="async"
+              />
+            </article>
+
+            <article class="feature-slide" data-story-slide>
+              <div class="feature-copy">
+                <h3>The Story of Dumplings</h3>
+                <h4 lang="zh-Hans">饺子的故事</h4>
+                <span>A torn wrapper opens a story about family, tradition, and a familiar food.</span>
+                <a href="culture/books/food/dumplings/index.html">Read the story <b aria-hidden="true">→</b></a>
+              </div>
+              <img
+                src="culture/books/food/dumplings/images/family-making-dumplings.webp"
+                alt="A family making dumplings together"
+                loading="eager"
+                decoding="async"
+              />
+            </article>
+          </div>
+          <div class="feature-controls" aria-label="Featured story controls">
+            <button type="button" data-story-previous aria-label="Previous story">←</button>
+            <button type="button" data-story-next aria-label="Next story">→</button>
+          </div>
+        </div>
+
+        <div class="feature-dots" role="tablist" aria-label="Choose a featured story">
+          <button type="button" aria-label="Show Journey to the West" aria-current="true" data-story-dot="0"></button>
+          <button type="button" aria-label="Show Ancient Chinese Money" data-story-dot="1"></button>
+          <button type="button" aria-label="Show The Art of War" data-story-dot="2"></button>
+          <button type="button" aria-label="Show Rice Terraces" data-story-dot="3"></button>
+          <button type="button" aria-label="Show The Story of Chinese Tea" data-story-dot="4"></button>
+          <button type="button" aria-label="Show The Story of Dumplings" data-story-dot="5"></button>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="site-footer">
+      <img src="assets/brand/zongzi-guide.webp" alt="" width="768" height="768" />
+      <div class="footer-copy">
+        <strong>Made with curiosity, care, and technology.</strong>
+        <span>© 2026 Nihao World. All rights reserved.</span>
+      </div>
+    </footer>
+  </body>
+</html>
