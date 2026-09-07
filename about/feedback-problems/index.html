@@ -5,15 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Report a problem or share feedback to help improve Nihao World." />
     <title>Feedback &amp; Problems | Nihao World</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Lora:ital,wght@0,600;0,700;1,600;1,700&amp;display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css?v=20260830-feedback-v1" />
+    <link rel="stylesheet" href="../../shared-site-header.css" />
+    <link rel="stylesheet" href="../shared-about-shell.css" />
+    <script src="../shared-about-shell.js" defer></script>
   </head>
   <body>
-    <header class="page-header">
-      <a class="brand-link" href="../../index.html" aria-label="Return to the learning home page">
-        <img src="../../assets/brand/zongzi-guide.webp?v=20260830-hq2" alt="" width="768" height="768" />
-        <span><strong>Nihao World</strong><small>About &amp; Support</small></span>
+    <header class="site-header">
+      <a class="brand" href="../../homepage-v2.html" aria-label="Nihao World home">
+        <img src="../../assets/brand/zongzi-guide.webp" alt="" width="768" height="768" />
+        <span class="brand-wordmark">
+          <span class="brand-nihao">Nihao</span><span class="brand-world">World</span>
+        </span>
       </a>
-      <a class="home-link" href="../../index.html">Learning home <span aria-hidden="true">→</span></a>
+
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" aria-label="Open navigation">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="primary-nav" id="primary-navigation" aria-label="Primary navigation">
+        <a href="../../index.html?view=topics#topics-panel">Learn Chinese</a>
+        <a href="../../index.html?view=books#books-panel">Find My Textbook</a>
+        <a href="../../culture-v2.html">Culture Stories</a>
+      </nav>
+
+      <details class="about-menu">
+        <summary>About</summary>
+        <nav class="about-popover" aria-label="About and support">
+          <a href="../author-project/index.html#why"><strong>About the Site</strong><small>Why Nihao World was created</small></a>
+          <a href="../author-project/index.html#author"><strong>Meet the Creator</strong><small>The student behind the project</small></a>
+          <a href="../sources-research/index.html"><strong>Sources &amp; Research</strong><small>References behind the content</small></a>
+          <a href="../feedback-problems/index.html"><strong>Feedback</strong><small>Share an idea or report a problem</small></a>
+          <a href="../privacy-safety/index.html"><strong>Privacy &amp; Safety</strong><small>How the site protects learners</small></a>
+        </nav>
+      </details>
     </header>
 
     <main>
@@ -62,13 +90,15 @@
       </aside>
     </main>
 
-    <footer>
-      <img src="../../assets/brand/zongzi-guide.webp?v=20260830-hq2" alt="" width="768" height="768" />
-      <div class="footer-copy">
-        <p><strong>Made with curiosity, care, and technology.</strong></p>
-        <small>© 2026 Nihao World. All rights reserved.</small>
+    <footer class="about-footer">
+      <div class="footer-signature">
+        <img src="../../assets/brand/zongzi-guide.webp?v=20260830-hq2" alt="" width="768" height="768" />
+        <div class="footer-copy">
+          <p><strong>Made with curiosity, care, and technology.</strong></p>
+          <small>© 2026 Nihao World. All rights reserved.</small>
+        </div>
       </div>
-      <a href="../../index.html">Return to learning home</a>
+      <a href="../../homepage-v2.html">Return to home page</a>
     </footer>
   </body>
 </html>

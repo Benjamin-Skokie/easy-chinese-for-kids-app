@@ -15,6 +15,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="homepage-v2.css" />
+    <link rel="stylesheet" href="shared-site-header.css" />
     <script src="homepage-v2.js" defer></script>
   </head>
   <body>
@@ -39,7 +40,7 @@
       <nav class="primary-nav" id="primary-navigation" aria-label="Primary navigation">
         <a class="is-current" href="index.html?view=topics#topics-panel">Learn Chinese</a>
         <a href="index.html?view=books#books-panel">Find My Textbook</a>
-        <a href="index.html?view=culture#culture-panel">Culture Stories</a>
+        <a href="culture-v2.html">Culture Stories</a>
       </nav>
 
       <details class="about-menu">
@@ -73,8 +74,10 @@
       <section class="hero" aria-labelledby="hero-title">
         <div class="hero-copy">
           <h1 id="hero-title">
-            <span>Learn the language.</span>
-            <span>Discover the world behind it.</span>
+            <a href="about/author-project/index.html" aria-label="Learn more about Nihao World">
+              <span>Learn the language.</span>
+              <span>Discover the world behind it.</span>
+            </a>
           </h1>
         </div>
       </section>
@@ -104,7 +107,7 @@
           <span class="pathway-arrow" aria-hidden="true">→</span>
         </a>
 
-        <a class="pathway-card pathway-culture" href="index.html?view=culture#culture-panel">
+        <a class="pathway-card pathway-culture" href="culture-v2.html">
           <span class="pathway-visual" aria-hidden="true">
             <img src="assets/brand/homepage-culture-card-v3.webp" alt="" />
           </span>
@@ -119,8 +122,9 @@
 
       <section class="featured" aria-label="Featured stories" data-featured-stories>
         <div class="feature-window">
-          <div class="feature-track" data-story-track>
-            <article class="feature-slide" data-story-slide>
+          <div class="feature-viewport">
+            <div class="feature-track" data-story-track>
+            <article class="feature-slide is-active" data-story-slide>
               <div class="feature-copy">
                 <h3>Journey to the West: The Adventures of the Monkey King</h3>
                 <h4 lang="zh-Hans">《西游记》：美猴王的冒险</h4>
@@ -209,6 +213,7 @@
                 decoding="async"
               />
             </article>
+            </div>
           </div>
           <div class="feature-controls" aria-label="Featured story controls">
             <button type="button" data-story-previous aria-label="Previous story">←</button>

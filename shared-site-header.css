@@ -1,0 +1,296 @@
+/*
+ * Shared Nihao World header.
+ * Keep page-specific layout out of this file so every new top-level page can
+ * use the same brand, navigation, About menu, and responsive ordering.
+ */
+.site-header {
+  position: sticky;
+  z-index: 20;
+  top: 0;
+  display: grid;
+  grid-template-columns: minmax(200px, 1fr) auto minmax(200px, 1fr);
+  width: 100%;
+  min-height: 82px;
+  margin: 0;
+  padding: 9px clamp(20px, 4.5vw, 72px);
+  align-items: center;
+  border: 0;
+  border-bottom: 1px solid transparent;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  backdrop-filter: none;
+  transition: background-color 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.site-header.is-scrolled {
+  border-bottom-color: rgba(25, 91, 92, 0.12);
+  background: rgba(249, 252, 251, 0.92);
+  box-shadow: 0 8px 24px rgba(19, 66, 67, 0.06);
+  backdrop-filter: blur(18px);
+}
+
+.brand {
+  display: inline-flex;
+  width: max-content;
+  align-items: center;
+  gap: 10px;
+  color: var(--teal-950);
+  text-decoration: none;
+}
+
+.brand img {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+}
+
+.brand-wordmark {
+  display: inline-flex;
+  align-items: baseline;
+  white-space: nowrap;
+}
+
+.brand .brand-nihao,
+.brand .brand-world {
+  font-family: "Lora", Georgia, serif;
+  font-size: 1.86rem;
+  font-weight: 700;
+  letter-spacing: -0.045em;
+  line-height: 1;
+}
+
+.brand .brand-nihao {
+  color: var(--teal-800);
+  font-style: italic;
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  transform: scaleX(1.035);
+  transform-origin: left center;
+  -webkit-text-stroke: 0.32px currentColor;
+}
+
+.brand .brand-world {
+  margin-left: 0.1em;
+  color: #aa8247;
+  font-style: normal;
+}
+
+.primary-nav {
+  display: flex;
+  align-items: center;
+  justify-content: initial;
+  gap: 4px;
+}
+
+.primary-nav a,
+.about-menu > summary {
+  border-radius: 6px;
+  color: #335f60;
+  font-size: 1.12rem;
+  font-weight: 700;
+  line-height: 1;
+  text-decoration: none;
+  transition: color 160ms ease, background 160ms ease, transform 160ms ease;
+}
+
+.primary-nav a {
+  padding: 15px 22px;
+  letter-spacing: -0.015em;
+}
+
+.primary-nav a:hover,
+.primary-nav a.is-current {
+  color: var(--teal-800);
+  background: var(--teal-100);
+}
+
+.about-menu {
+  position: relative;
+  justify-self: end;
+}
+
+.about-menu > summary {
+  padding: 11px 5px;
+  border: 0;
+  border-bottom: 1px solid rgba(25, 91, 92, 0.28);
+  cursor: pointer;
+  list-style: none;
+}
+
+.about-menu > summary::-webkit-details-marker {
+  display: none;
+}
+
+.about-menu > summary:hover,
+.about-menu[open] > summary {
+  color: #fff;
+  background: var(--teal-800);
+  transform: translateY(-1px);
+}
+
+.about-popover {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  left: auto;
+  display: grid;
+  width: 270px;
+  padding: 7px;
+  gap: 2px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 18px 46px rgba(19, 66, 67, 0.14);
+}
+
+.about-popover a {
+  display: grid;
+  padding: 10px 11px;
+  gap: 1px;
+  border-radius: 6px;
+  color: var(--teal-950);
+  text-decoration: none;
+}
+
+.about-popover a:hover {
+  background: var(--teal-50);
+}
+
+.about-popover strong {
+  display: block;
+  font-size: 0.9rem;
+  line-height: 1.25;
+}
+
+.about-popover small {
+  display: block;
+  color: var(--ink-soft);
+  font-size: 0.73rem;
+  line-height: 1.35;
+}
+
+.menu-toggle {
+  position: relative;
+  display: none;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  cursor: pointer;
+  transition: background-color 160ms ease;
+}
+
+.menu-toggle:hover {
+  background: rgba(234, 245, 242, 0.72);
+}
+
+.menu-toggle:focus-visible {
+  outline: 2px solid rgba(37, 117, 114, 0.48);
+  outline-offset: 2px;
+}
+
+.menu-toggle span {
+  position: absolute;
+  left: 10px;
+  display: block;
+  width: 24px;
+  height: 2px;
+  margin: 0;
+  border-radius: 2px;
+  background: var(--teal-800);
+  transition: top 180ms ease, opacity 140ms ease, transform 180ms ease;
+}
+
+.menu-toggle span:nth-child(1) {
+  top: 13px;
+}
+
+.menu-toggle span:nth-child(2) {
+  top: 21px;
+}
+
+.menu-toggle span:nth-child(3) {
+  top: 29px;
+}
+
+.menu-toggle[aria-expanded="true"] span:nth-child(1) {
+  top: 21px;
+  transform: rotate(45deg);
+}
+
+.menu-toggle[aria-expanded="true"] span:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0.35);
+}
+
+.menu-toggle[aria-expanded="true"] span:nth-child(3) {
+  top: 21px;
+  transform: rotate(-45deg);
+}
+
+@media (max-width: 900px) {
+  .site-header {
+    grid-template-columns: 1fr auto auto;
+  }
+
+  .menu-toggle {
+    display: grid;
+    grid-column: 3;
+  }
+
+  .about-menu {
+    grid-column: 2;
+    grid-row: 1;
+    margin-right: 8px;
+  }
+
+  .primary-nav {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    display: none;
+    width: min(280px, calc(100vw - 32px));
+    padding: 8px;
+    align-items: stretch;
+    flex-direction: column;
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    background: #fff;
+    box-shadow: 0 20px 54px rgba(19, 66, 67, 0.09);
+  }
+
+  .primary-nav.is-open {
+    display: flex;
+  }
+
+  .primary-nav a {
+    padding: 14px 15px;
+  }
+}
+
+@media (max-width: 650px) {
+  .site-header {
+    width: 100%;
+    min-height: 68px;
+    margin: 0;
+    padding: 8px 10px;
+    border-radius: 0;
+  }
+
+  .brand img {
+    width: 46px;
+    height: 46px;
+  }
+
+  .brand .brand-nihao,
+  .brand .brand-world {
+    font-size: 1.48rem;
+  }
+
+  .menu-toggle {
+    grid-column: 3;
+  }
+}

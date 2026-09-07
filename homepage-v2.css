@@ -318,10 +318,6 @@ button:focus-visible {
 }
 
 .hero h1 {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 0 0.22em;
   margin: 0;
   color: var(--teal-800);
   font-family: var(--editorial-font);
@@ -331,8 +327,49 @@ button:focus-visible {
   line-height: 0.96;
 }
 
+.hero h1 a {
+  position: relative;
+  display: flex;
+  padding-bottom: 5px;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0 0.22em;
+  color: inherit;
+  text-decoration: none;
+}
+
+.hero h1 a::after {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 1px;
+  content: "";
+  background: rgba(37, 117, 114, 0.55);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 180ms ease;
+}
+
+.hero h1 a:hover::after,
+.hero h1 a:focus-visible::after {
+  transform: scaleX(1);
+}
+
+.hero h1 a:hover span {
+  color: var(--teal-800);
+}
+
 .hero h1 span:last-child {
   color: var(--teal-700);
+}
+
+.hero h1 a span {
+  transition: color 180ms ease;
+}
+
+.hero h1 a:hover span:last-child {
+  color: var(--teal-800);
 }
 
 .pathways {
@@ -386,7 +423,9 @@ button:focus-visible {
 
 .pathway-visual {
   position: relative;
-  align-self: stretch;
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  align-self: center;
   overflow: hidden;
   background: var(--card-bg);
 }
@@ -394,20 +433,31 @@ button:focus-visible {
 .pathway-visual::after {
   position: absolute;
   z-index: 1;
-  top: 0;
-  right: -1px;
-  bottom: 0;
-  width: 34px;
+  inset: 0;
   content: "";
   pointer-events: none;
-  background: linear-gradient(90deg, transparent, var(--card-bg));
+  background:
+    linear-gradient(
+      90deg,
+      var(--card-bg) 0%,
+      transparent 7%,
+      transparent 70%,
+      var(--card-bg) 100%
+    ),
+    linear-gradient(
+      180deg,
+      var(--card-bg) 0%,
+      transparent 12%,
+      transparent 88%,
+      var(--card-bg) 100%
+    );
 }
 
 .pathway-visual img {
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   mix-blend-mode: multiply;
 }
 
@@ -507,10 +557,21 @@ button:focus-visible {
   box-shadow: 0 16px 46px rgba(19, 66, 67, 0.08);
 }
 
+.feature-viewport {
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+  scroll-snap-type: inline mandatory;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.feature-viewport::-webkit-scrollbar {
+  display: none;
+}
+
 .feature-track {
   display: flex;
   width: 100%;
-  transition: transform 420ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .feature-slide {
@@ -518,11 +579,12 @@ button:focus-visible {
   position: relative;
   isolation: isolate;
   overflow: hidden;
-  min-width: 0;
+  min-width: 100%;
   flex: 0 0 100%;
   min-height: clamp(450px, 30vw, 500px);
   margin: 0;
   background: rgb(var(--feature-surface));
+  scroll-snap-align: start;
 }
 
 .feature-slide:nth-child(2) {
@@ -649,22 +711,17 @@ button:focus-visible {
 }
 
 .site-footer {
-  display: grid;
-  grid-template-columns: 52px minmax(0, 1fr) 52px;
+  display: flex;
   padding: 20px 4px 28px;
   align-items: center;
+  justify-content: center;
   gap: 12px;
   border-top: 1px solid rgba(25, 91, 92, 0.13);
   color: #746d68;
 }
 
-.site-footer::after {
-  width: 52px;
-  height: 1px;
-  content: "";
-}
-
 .site-footer img {
+  flex: 0 0 auto;
   width: 52px;
   height: 52px;
   object-fit: contain;
@@ -672,9 +729,10 @@ button:focus-visible {
 
 .footer-copy {
   display: grid;
+  min-width: 0;
   gap: 1px;
-  justify-items: center;
-  text-align: center;
+  justify-items: start;
+  text-align: left;
 }
 
 .footer-copy strong {
@@ -693,15 +751,6 @@ button:focus-visible {
   body::before {
     height: 560px;
   }
-
-  .pathways {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .pathway-culture {
-    grid-column: 1 / -1;
-    grid-template-columns: minmax(240px, 30%) minmax(0, 1fr) 34px;
-  }
 }
 
 @media (max-width: 1050px) {
@@ -709,15 +758,66 @@ button:focus-visible {
     height: 760px;
     background-position: 66% center;
   }
+}
 
+@media (min-width: 651px) and (max-width: 1180px) {
   .pathways {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: stretch;
   }
 
   .pathway-card,
   .pathway-culture {
     grid-column: auto;
-    grid-template-columns: minmax(220px, 32%) minmax(0, 1fr) 34px;
+    grid-template-columns: minmax(0, 1fr) 34px;
+    grid-template-rows: auto auto;
+    min-height: 0;
+    padding: 0 12px 15px;
+    align-content: start;
+    align-items: start;
+    gap: 10px 8px;
+  }
+
+  .pathway-visual {
+    grid-column: 1 / -1;
+    grid-row: 1;
+    width: calc(100% + 24px);
+    margin-left: -12px;
+    align-self: start;
+  }
+
+  .pathway-visual::after {
+    top: auto;
+    right: 0;
+    bottom: -1px;
+    left: 0;
+    width: auto;
+    height: 34px;
+    background: linear-gradient(180deg, transparent, var(--card-bg));
+  }
+
+  .pathway-copy {
+    grid-column: 1;
+    grid-row: 2;
+    align-self: start;
+  }
+
+  .pathway-copy strong {
+    font-size: clamp(1.25rem, 2.2vw, 1.45rem);
+  }
+
+  .pathway-copy small {
+    font-size: clamp(0.9rem, 1.7vw, 1rem);
+  }
+
+  .pathway-copy > span {
+    font-size: clamp(0.8rem, 1.45vw, 0.9rem);
+  }
+
+  .pathway-arrow {
+    grid-column: 2;
+    grid-row: 2;
+    align-self: end;
   }
 }
 
@@ -763,17 +863,6 @@ button:focus-visible {
 
   .primary-nav a {
     padding: 14px 15px;
-  }
-
-  .pathways {
-    grid-template-columns: 1fr;
-    width: 100%;
-    margin: 0;
-  }
-
-  .pathway-card {
-    grid-template-columns: minmax(180px, 38%) minmax(0, 1fr) 34px;
-    min-height: 150px;
   }
 
   .feature-copy {
@@ -825,13 +914,17 @@ button:focus-visible {
     padding: 12px 12px 20px;
   }
 
-  .hero h1 {
+  .hero h1 a {
     display: grid;
     gap: 2px;
+  }
+
+  .hero h1 {
     font-size: clamp(1.85rem, 8.8vw, 2.35rem);
   }
 
   .pathways {
+    grid-template-columns: 1fr;
     margin: 0;
   }
 
@@ -890,7 +983,6 @@ button:focus-visible {
   }
 
   .site-footer {
-    grid-template-columns: 44px minmax(0, 1fr) 44px;
     padding-top: 16px;
     padding-inline: 6px;
     gap: 8px;
@@ -899,10 +991,6 @@ button:focus-visible {
   .site-footer img {
     width: 44px;
     height: 44px;
-  }
-
-  .site-footer::after {
-    width: 44px;
   }
 
   .footer-copy strong {
