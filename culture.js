@@ -2,17 +2,17 @@
   // Catalog source of truth. Keep this path relative so the page works on any host.
   const catalogSource = "docs/culture/catalog_mapping_proposal.md";
   const catalogIcons = {
-    "stories-legends": "assets/brand/culture-catalog-icons/stories-legends-scroll.png",
+    "stories-legends": "assets/brand/culture-catalog-icons/stories-legends-scroll.webp",
     "people-history":
-      "assets/brand/culture-catalog-icons/people-history-transparent.png",
+      "assets/brand/culture-catalog-icons/people-history-transparent.webp",
     "festivals-everyday":
-      "assets/brand/culture-catalog-icons/festivals-everyday-life-lantern.png",
-    "arts-literature": "assets/brand/culture-catalog-icons/arts-literature-brush.png",
-    "food-clothing": "assets/brand/culture-catalog-icons/food-clothing-bowl.png",
+      "assets/brand/culture-catalog-icons/festivals-everyday-life-lantern.webp",
+    "arts-literature": "assets/brand/culture-catalog-icons/arts-literature-brush.webp",
+    "food-clothing": "assets/brand/culture-catalog-icons/food-clothing-bowl.webp",
     "places-buildings":
-      "assets/brand/culture-catalog-icons/places-buildings-transparent.png",
+      "assets/brand/culture-catalog-icons/places-buildings-transparent.webp",
     "science-inventions-trade": "assets/brand/learning-culture-coin.webp",
-    "ideas-beliefs": "assets/brand/culture-catalog-icons/ideas-beliefs-lotus.png",
+    "ideas-beliefs": "assets/brand/culture-catalog-icons/ideas-beliefs-lotus.webp",
   };
   // Keep the mapping memo intact while using shorter labels in compact controls.
   const subcatalogDisplayNames = {
@@ -146,6 +146,30 @@
   const updateLocation = () => {
     if (!selectedCatalogId || !selectedSubcatalogId) return;
     history.replaceState(null, "", `#${selectedCatalogId}/${selectedSubcatalogId}`);
+  };
+
+  const revealSubcatalogsIfNeeded = () => {
+    requestAnimationFrame(() => {
+      const browserRect = catalogBrowser.getBoundingClientRect();
+      const subcatalogsRect = subcatalogsElement.getBoundingClientRect();
+      const firstStoryRect = storyGrid.firstElementChild?.getBoundingClientRect();
+      const headerBottom = siteHeader?.getBoundingClientRect().bottom ?? 0;
+      const visibleTop = headerBottom + 12;
+      const viewportBottom = window.innerHeight - 16;
+      const startsBelowHeader = browserRect.top >= visibleTop;
+      const controlsVisible = subcatalogsRect.bottom <= viewportBottom;
+      const storyPreviewVisible = firstStoryRect
+        ? Math.min(firstStoryRect.bottom, firstStoryRect.top + 96) <= viewportBottom
+        : true;
+
+      if (startsBelowHeader && controlsVisible && storyPreviewVisible) return;
+      window.scrollTo({
+        top: Math.max(0, window.scrollY + browserRect.top - visibleTop),
+        behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches
+          ? "auto"
+          : "smooth",
+      });
+    });
   };
 
   const renderMainCatalogs = () => {
@@ -289,7 +313,10 @@
     selectedSubcatalogId = catalog.subcatalogs[0]?.id ?? "";
     renderMainCatalogs();
     renderSelectedCatalog();
-    if (shouldUpdateLocation) updateLocation();
+    if (shouldUpdateLocation) {
+      updateLocation();
+      revealSubcatalogsIfNeeded();
+    }
   };
 
   const selectSubcatalog = (subcatalogId, shouldUpdateLocation = false) => {

@@ -5,6 +5,7 @@ const lessonGrid = document.querySelector("[data-lesson-grid]");
 const selectedIcon = document.querySelector("[data-selected-icon]");
 const selectedZh = document.querySelector("[data-selected-zh]");
 const selectedEn = document.querySelector("[data-selected-en]");
+const selectedBookHeading = document.querySelector(".selected-category h2");
 const lessonListTitle = document.querySelector("[data-lesson-list-title]");
 const menuButton = document.querySelector(".menu-toggle");
 const primaryNavigation = document.querySelector(".primary-nav");
@@ -44,14 +45,17 @@ const renderBookCatalogs = () => {
           class="category-button"
           type="button"
           aria-pressed="${book.id === selectedBookId}"
+          aria-label="Book ${escapeHTML(bookCode(book))}, ${book.lessons.length} lessons"
           data-book-id="${escapeHTML(book.id)}"
           style="--category-accent: var(--teal-700)"
         >
           <span class="category-icon" aria-hidden="true">
             <span class="book-code">${escapeHTML(bookCode(book))}</span>
           </span>
-          <strong lang="zh-Hans">课本 ${escapeHTML(bookCode(book))}</strong>
-          <span>${escapeHTML(book.label)}</span>
+          <span class="book-card-copy">
+            <strong lang="zh-Hans">课本</strong>
+            <span class="book-label">Book</span>
+          </span>
         </button>
       `
     )
@@ -66,9 +70,10 @@ const renderLessons = () => {
   const book = activeBook();
   const code = bookCode(book);
   selectedIcon.innerHTML = `<span class="selected-book-code">${escapeHTML(code)}</span>`;
-  selectedZh.textContent = `课本 ${code}`;
-  selectedEn.textContent = book.label;
-  lessonListTitle.textContent = book.label;
+  selectedZh.textContent = "课本";
+  selectedEn.textContent = "· Book";
+  selectedBookHeading.setAttribute("aria-label", `课本 ${code}, Book ${code}`);
+  lessonListTitle.textContent = "";
 
   lessonGrid.innerHTML = book.lessons
     .map(

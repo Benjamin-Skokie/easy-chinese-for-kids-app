@@ -5,6 +5,7 @@ const topicGrid = document.querySelector("[data-topic-grid]");
 const selectedIcon = document.querySelector("[data-selected-icon]");
 const selectedZh = document.querySelector("[data-selected-zh]");
 const selectedEn = document.querySelector("[data-selected-en]");
+const categoryBrowser = document.querySelector("[data-category-browser]");
 const subcatalogBrowser = document.querySelector("[data-subcatalog-browser]");
 const subcatalogsElement = document.querySelector("[data-subcatalogs]");
 const topicListTitle = document.querySelector("[data-topic-list-title]");
@@ -142,6 +143,34 @@ const renderSubcatalogs = () => {
   });
 };
 
+const firstTopicRowBoundary = () => {
+  const cards = [...topicGrid.children];
+  if (!cards.length) return topicGrid;
+  const firstRowTop = cards[0].offsetTop;
+  return cards.filter((card) => card.offsetTop === firstRowTop).at(-1) ?? cards[0];
+};
+
+const revealLevelTwoIfNeeded = () => {
+  requestAnimationFrame(() => {
+    const boundary = firstTopicRowBoundary();
+    const browserRect = categoryBrowser.getBoundingClientRect();
+    const boundaryRect = boundary.getBoundingClientRect();
+    const headerBottom = siteHeader?.getBoundingClientRect().bottom ?? 0;
+    const visibleTop = headerBottom + 12;
+    const viewportBottom = window.innerHeight - 16;
+    const startsBelowHeader = browserRect.top >= visibleTop;
+    const controlsVisible = boundaryRect.bottom <= viewportBottom;
+
+    if (startsBelowHeader && controlsVisible) return;
+    window.scrollTo({
+      top: Math.max(0, window.scrollY + browserRect.top - visibleTop),
+      behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches
+        ? "auto"
+        : "smooth",
+    });
+  });
+};
+
 const selectCategory = (categoryId, updateLocation = false) => {
   const category =
     learningHomeCategories.find((item) => item.id === categoryId) ??
@@ -154,6 +183,7 @@ const selectCategory = (categoryId, updateLocation = false) => {
 
   if (updateLocation) {
     updateLocationHash();
+    revealLevelTwoIfNeeded();
   }
 };
 

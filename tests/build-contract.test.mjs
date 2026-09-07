@@ -2925,13 +2925,18 @@ test("the Learn landing page adds second-level catalogs only where they clarify 
   });
   assert.equal(learningHomeCategories.find((category) => category.id === "special-topics")?.subcatalogs, undefined);
   assert.equal(learningHomeCategories.find((category) => category.id === "food")?.subcatalogs, undefined);
-  assert.match(learnHtml, /learn\.css\?v=20260907-selection-grid-v1/);
+  assert.match(learnHtml, /learn\.css\?v=20260907-landing-spacing-v2/);
   assert.match(learnHtml, />Choose a subcatalog</);
   assert.match(learnHtml, /data-subcatalogs/);
   assert.match(learnSource, /const subcatalogForTopic =/);
   assert.match(learnSource, /subcatalog\?\.topicIds \?\? category\.topicIds/);
   assert.match(learnSource, /category\.subcatalogs\?\.\[0\]\?\.id \?\? ""/);
   assert.doesNotMatch(learnSource, /scrollIntoView/);
+  assert.match(learnSource, /const revealLevelTwoIfNeeded =/);
+  assert.match(learnSource, /const boundary = firstTopicRowBoundary\(\)/);
+  assert.match(learnSource, /const controlsVisible = boundaryRect\.bottom <= viewportBottom/);
+  assert.match(learnSource, /if \(startsBelowHeader && controlsVisible\) return/);
+  assert.match(learnSource, /updateLocationHash\(\);\s*revealLevelTwoIfNeeded\(\)/);
 });
 
 test("wrapped catalog and lesson selectors keep every option at the same column width", () => {
@@ -2948,7 +2953,57 @@ test("wrapped catalog and lesson selectors keep every option at the same column 
   assert.match(learnStyles, /grid-template-columns: repeat\(var\(--selection-count, 1\), minmax\(0, 1fr\)\)/);
   assert.match(cultureStyles, /grid-template-columns: repeat\(var\(--selection-count, 1\), minmax\(0, 1fr\)\)/);
   assert.doesNotMatch(cultureStyles, /\.subcatalog-button \{[\s\S]{0,240}flex: 1 1/);
+  assert.match(cultureStyles, /@media \(max-width: 1340px\)[\s\S]*\.subcatalogs\[data-selection-count="5"\][\s\S]{0,100}repeat\(3, minmax\(0, 1fr\)\)/);
   assert.match(topicStyles, /topic-lesson-strip\[data-selection-count="4"\][\s\S]*repeat\(3, minmax\(0, 1fr\)\)/);
+});
+
+test("top-level learning catalogs share the same compact header spacing", () => {
+  const learnStyles = readFileSync("learn.css", "utf8");
+  const cultureStyles = readFileSync("culture.css", "utf8");
+  const booksStyles = readFileSync("books.css", "utf8");
+
+  assert.match(learnStyles, /\.learn-shell \{[\s\S]{0,100}padding: 16px 0 48px/);
+  assert.match(learnStyles, /\.learn-intro \{[\s\S]{0,100}margin: 0 auto 16px/);
+  assert.match(cultureStyles, /\.culture-shell \{[\s\S]{0,100}padding: 16px 0 48px/);
+  assert.match(cultureStyles, /\.catalog-intro \{[\s\S]{0,100}margin: 0 auto 16px/);
+  assert.doesNotMatch(booksStyles, /\.learn-shell\s*\{/);
+  assert.doesNotMatch(booksStyles, /\.learn-intro\s*\{/);
+});
+
+test("learning and culture catalogs reveal clipped level-two choices without forced jumps", () => {
+  const learnSource = readFileSync("learn.js", "utf8");
+  const cultureSource = readFileSync("culture.js", "utf8");
+  const booksSource = readFileSync("books.js", "utf8");
+
+  assert.match(learnSource, /revealLevelTwoIfNeeded/);
+  assert.match(cultureSource, /revealSubcatalogsIfNeeded/);
+  assert.match(cultureSource, /const controlsVisible = subcatalogsRect\.bottom <= viewportBottom/);
+  assert.match(cultureSource, /firstStoryRect = storyGrid\.firstElementChild\?\.getBoundingClientRect\(\)/);
+  assert.match(cultureSource, /firstStoryRect\.top \+ 96/);
+  assert.match(
+    cultureSource,
+    /if \(startsBelowHeader && controlsVisible && storyPreviewVisible\) return/
+  );
+  assert.match(learnSource, /prefers-reduced-motion: reduce/);
+  assert.match(cultureSource, /prefers-reduced-motion: reduce/);
+  assert.doesNotMatch(booksSource, /revealLevelTwoIfNeeded|revealSubcatalogsIfNeeded/);
+});
+
+test("culture catalog icons are tracked, lightweight WebP assets", () => {
+  const cultureSource = readFileSync("culture.js", "utf8");
+  const iconPaths = [
+    ...cultureSource.matchAll(/"(assets\/brand\/culture-catalog-icons\/[^"\n]+\.webp)"/g),
+  ].map((match) => match[1]);
+  const coinPath = "assets/brand/learning-culture-coin.webp";
+
+  assert.equal(iconPaths.length, 7);
+  assert.equal(new Set(iconPaths).size, 7);
+  assert.match(cultureSource, /"science-inventions-trade": "assets\/brand\/learning-culture-coin\.webp"/);
+  assert.doesNotMatch(cultureSource, /culture-catalog-icons\/[^"\n]+\.png/);
+  [...iconPaths, coinPath].forEach((iconPath) => {
+    assert.ok(existsSync(iconPath), `${iconPath} is missing`);
+    assert.ok(statSync(iconPath).size < 120 * 1024, `${iconPath} exceeds 120 KB`);
+  });
 });
 
 test("the Book Lessons landing page exposes all eight books and their scoped lesson links", () => {
@@ -2977,6 +3032,14 @@ test("the Book Lessons landing page exposes all eight books and their scoped les
   assert.match(booksStyles, /\.book-lesson-card\.is-selected/);
   assert.doesNotMatch(booksSource, /scrollIntoView/);
   assert.match(booksStyles, /\.book-code,[\s\S]*\.selected-book-code/);
+  assert.match(booksSource, /class="book-card-copy"/);
+  assert.match(booksSource, /<strong lang="zh-Hans">课本<\/strong>[\s\S]{0,100}class="book-label">Book/);
+  assert.match(booksSource, /selectedZh\.textContent = "课本"/);
+  assert.match(booksSource, /selectedEn\.textContent = "· Book"/);
+  assert.doesNotMatch(booksSource, /课本 \$\{escapeHTML\(bookCode\(book\)\)\}/);
+  assert.match(booksStyles, /\.book-catalogs \.category-button \{[\s\S]{0,260}grid-template-columns: 54px 54px/);
+  assert.match(booksStyles, /\.book-catalogs \.category-button \{[\s\S]{0,360}justify-content: center/);
+  assert.match(booksStyles, /\.book-catalogs \.category-icon \{[\s\S]{0,180}grid-column: 2/);
   navigationPages.forEach((html) => {
     assert.match(html, /href="books\.html">Book Lessons<\/a>/);
     assert.doesNotMatch(html, /index\.html\?view=books#books-panel/);

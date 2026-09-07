@@ -68,13 +68,13 @@ summary:focus-visible {
 
 .learn-shell {
   min-height: calc(100vh - 180px);
-  padding: 36px 0 48px;
+  padding: 16px 0 48px;
 }
 
 .learn-intro {
   display: flex;
   max-width: 1580px;
-  margin: 0 auto 26px;
+  margin: 0 auto 16px;
   align-items: end;
   justify-content: space-between;
   gap: 28px;
@@ -420,7 +420,14 @@ summary:focus-visible {
   }
 
   .category-button {
-    min-height: 166px;
+    min-height: 150px;
+    padding: 12px 10px 13px;
+  }
+
+  .category-icon {
+    width: 68px;
+    height: 68px;
+    margin-bottom: 2px;
   }
 
   .topic-grid {
@@ -430,7 +437,7 @@ summary:focus-visible {
 
 @media (max-width: 920px) {
   .learn-shell {
-    padding-top: 28px;
+    padding-top: 16px;
   }
 
   .subcatalogs[data-selection-count="4"],
@@ -463,12 +470,12 @@ summary:focus-visible {
   }
 
   .category-button {
-    min-height: 164px;
+    min-height: 148px;
   }
 
   .category-icon {
-    width: 66px;
-    height: 66px;
+    width: 60px;
+    height: 60px;
   }
 
   .selected-category {
