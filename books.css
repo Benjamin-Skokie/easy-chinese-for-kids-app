@@ -1,5 +1,46 @@
 .book-catalogs .category-button {
   --category-accent: var(--teal-700);
+  min-height: 92px;
+  padding: 12px 14px;
+  grid-template-columns: 54px 54px;
+  align-items: center;
+  justify-content: center;
+  justify-items: start;
+  align-content: center;
+  gap: 24px;
+  text-align: left;
+}
+
+.book-catalogs .category-icon {
+  width: 54px;
+  height: 54px;
+  margin: 0;
+  grid-column: 2;
+  grid-row: 1;
+  justify-self: start;
+}
+
+.book-card-copy {
+  display: grid;
+  min-width: 0;
+  grid-column: 1;
+  grid-row: 1;
+  gap: 1px;
+  color: var(--teal-950);
+  font-family: var(--ui-font);
+  line-height: 1.15;
+}
+
+.book-catalogs .book-card-copy strong {
+  font-family: var(--ui-font);
+  font-size: 1rem;
+}
+
+.book-catalogs .book-card-copy .book-label {
+  color: var(--teal-700);
+  font-family: var(--editorial-font);
+  font-size: 0.9rem;
+  font-weight: 600;
 }
 
 .book-code,
@@ -16,21 +57,30 @@
 }
 
 .book-code {
-  width: 72px;
-  height: 72px;
-  font-size: 2rem;
+  width: 54px;
+  height: 54px;
+  font-size: 1.5rem;
 }
 
 .selected-book-code {
-  width: 58px;
-  height: 58px;
-  font-size: 1.55rem;
+  width: 48px;
+  height: 48px;
+  font-size: 1.35rem;
 }
 
 .book-catalogs .category-button[aria-pressed="true"] .book-code {
   border-color: var(--teal-700);
   color: #fff;
   background: var(--teal-700);
+}
+
+.book-catalogs + .category-browser {
+  margin-top: 18px;
+  padding-top: 16px;
+}
+
+.book-catalogs + .category-browser .topic-results-heading {
+  margin-top: 18px;
 }
 
 .lesson-grid {
@@ -81,10 +131,22 @@
 }
 
 @media (max-width: 680px) {
+  .book-catalogs .category-button {
+    min-height: 82px;
+    padding: 9px 10px;
+    grid-template-columns: 48px 48px;
+    gap: 12px;
+  }
+
+  .book-catalogs .category-icon {
+    width: 48px;
+    height: 48px;
+  }
+
   .book-code {
-    width: 62px;
-    height: 62px;
-    font-size: 1.75rem;
+    width: 48px;
+    height: 48px;
+    font-size: 1.35rem;
   }
 
   .lesson-grid {

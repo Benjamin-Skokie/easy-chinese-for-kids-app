@@ -72,13 +72,13 @@ summary:focus-visible {
 
 .culture-shell {
   min-height: calc(100vh - 180px);
-  padding: 36px 0 48px;
+  padding: 16px 0 48px;
 }
 
 .catalog-intro {
   display: flex;
   max-width: 1580px;
-  margin: 0 auto 26px;
+  margin: 0 auto 16px;
   align-items: end;
   justify-content: space-between;
   gap: 28px;
@@ -503,26 +503,50 @@ summary:focus-visible {
 }
 
 @media (max-width: 1340px) {
+  .culture-shell {
+    padding-top: 16px;
+  }
+
+  .catalog-intro {
+    margin-bottom: 16px;
+  }
+
+  .catalog-intro > div > p:last-child {
+    margin-top: 8px;
+  }
+
   .main-catalogs {
     grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 8px;
   }
 
   .catalog-button {
-    min-height: 164px;
+    min-height: 136px;
+    padding: 10px 10px 9px;
   }
 
-  .story-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-}
-
-@media (max-width: 920px) {
-  .culture-shell {
-    padding-top: 28px;
+  .catalog-icon {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 2px;
   }
 
-  .story-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+  .catalog-button .catalog-en {
+    min-height: 0;
+    margin-top: 2px;
+  }
+
+  .catalog-browser {
+    margin-top: 16px;
+  }
+
+  .selected-catalog {
+    padding: 16px 4px 10px;
+  }
+
+  .selected-icon {
+    width: 48px;
+    height: 48px;
   }
 
   .subcatalogs[data-selection-count="4"],
@@ -533,6 +557,21 @@ summary:focus-visible {
   .subcatalog-button {
     min-width: 0;
   }
+
+  .story-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 920px) {
+  .culture-shell {
+    padding-top: 16px;
+  }
+
+  .story-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
 }
 
 @media (max-width: 680px) {
@@ -557,7 +596,7 @@ summary:focus-visible {
   }
 
   .catalog-button {
-    min-height: 168px;
+    min-height: 140px;
   }
 
   .selected-catalog {
