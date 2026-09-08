@@ -805,6 +805,7 @@ test("Culture story pages reuse the shared header and return to their exact cata
   const builder = readFileSync("scripts/build_philosophy_page.mjs", "utf8");
   const catalogLocations = readFileSync("scripts/culture_catalog_locations.mjs", "utf8");
   const cultureStyles = readFileSync("culture/shared/styles.css", "utf8");
+  const articleTheme = readFileSync("culture/shared/article-theme.css", "utf8");
   const sharedHeaderScript = readFileSync("shared-site-header.js", "utf8");
   const sharedHeaderStyles = readFileSync("shared-site-header.css", "utf8");
 
@@ -814,10 +815,15 @@ test("Culture story pages reuse the shared header and return to their exact cata
   assert.match(template, /class="back-nav"[\s\S]*href="\{\{BACK_HREF\}\}">← Return to Catalog<\/a>/);
   assert.match(template, /shared-site-header\.css\?v=20260907-transparent-pathway-art-v4/);
   assert.match(template, /shared-site-header\.js\?v=20260907-culture-story-nav-v1/);
+  assert.match(template, /article-theme\.css\?v=20260907-teal-v2/);
+  assert.match(template, /data-article-theme/);
+  assert.match(template, /site-footer\.js\?v=20260907-teal-culture-v2/);
   assert.match(builder, /loadCultureCatalogLocations/);
   assert.match(builder, /replaceAll\("\{\{BACK_HREF\}\}", backHref\)/);
   assert.match(catalogLocations, /storyLocations\.size !== 111/);
   assert.match(cultureStyles, /@media \(max-width: 900px\) \{\s*\.back-nav \{\s*display: none;/);
+  assert.match(articleTheme, /--paper: #f4faf8/);
+  assert.match(articleTheme, /linear-gradient\(180deg, #fbfdfc 0%, #f1f8f6 100%\)/);
   assert.match(sharedHeaderScript, /siteHeader\?\.classList\.toggle\("is-scrolled"/);
   assert.match(sharedHeaderStyles, /\.culture-story-header \.culture-mobile-return \{[\s\S]*display: inline-flex/);
   assert.match(sharedHeaderStyles, /@media \(max-width: 650px\) \{[\s\S]*\.culture-story-header \.culture-mobile-return \{[\s\S]*grid-column: 1 \/ -1;[\s\S]*grid-row: 2;/);
@@ -828,6 +834,8 @@ test("Culture story pages reuse the shared header and return to their exact cata
     const storyPage = readFileSync(join("culture/books", storyId, "index.html"), "utf8");
     const catalogHref = `../../../../culture.html#${location}`;
     assert.match(storyPage, /class="site-header culture-story-header"/, `${storyId} is missing the shared header`);
+    assert.match(storyPage, /article-theme\.css\?v=20260907-teal-v2/, `${storyId} is missing the teal article theme`);
+    assert.match(storyPage, /data-article-theme/, `${storyId} does not load the article theme directly`);
     assert.ok(storyPage.includes(`<a class="is-current" href="${catalogHref}">Culture Stories</a>`), `${storyId} has the wrong Culture Stories return`);
     assert.ok(storyPage.includes(`<a class="culture-mobile-return" href="${catalogHref}">← Return to Catalog</a>`), `${storyId} has the wrong mobile return`);
     assert.ok(storyPage.includes(`<a href="${catalogHref}">← Return to Catalog</a>`), `${storyId} has the wrong content return`);

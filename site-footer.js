@@ -4,7 +4,7 @@
   if (document.querySelector(".book") && !document.querySelector("[data-article-theme]")) {
     const articleTheme = document.createElement("link");
     articleTheme.rel = "stylesheet";
-    articleTheme.href = new URL("culture/shared/article-theme.css?v=20260907-v1", siteRoot);
+    articleTheme.href = new URL("culture/shared/article-theme.css?v=20260907-teal-v2", siteRoot);
     articleTheme.dataset.articleTheme = "";
     document.head.append(articleTheme);
   }
