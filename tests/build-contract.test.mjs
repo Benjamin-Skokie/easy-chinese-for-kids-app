@@ -52,6 +52,7 @@ import { buildMultiplicationRhymeItems, buildNumberItem, multiplicationRhymeTopi
 import { telephoneNumbersTopic, telephonePractice } from "../src/features/foundations/telephone-numbers.js";
 import { createFoundationState } from "../src/features/foundations/state.js";
 import { loadCultureCatalogLocations } from "../scripts/culture_catalog_locations.mjs";
+import { buildSitemapUrls, creatorPortraitUrl, renderSitemapXml, sitemapSiteOrigin } from "../scripts/build_sitemap.mjs";
 import { createGreetingsController } from "../src/features/foundations/greetings-controller.js";
 import { createPoliteWordsController } from "../src/features/foundations/polite-words-controller.js";
 import { createIntroductionsController } from "../src/features/foundations/introductions-controller.js";
@@ -96,6 +97,89 @@ test("the canonical root is the migrated homepage", () => {
   assert.equal(existsSync("homepage-v2.html"), false);
 });
 
+test("the zongzi favicon is square and declared across production page types", () => {
+  const favicon = readFileSync("favicon.png");
+  const faviconPages = [
+    "index.html",
+    "lesson.html",
+    "learn.html",
+    "books.html",
+    "culture.html",
+    "about/author-project/index.html",
+    "about/sources-research/index.html",
+    "about/feedback-problems/index.html",
+    "about/privacy-safety/index.html",
+    "culture/shared/template.html",
+    "culture/books/figures/mulan/index.html"
+  ];
+
+  assert.deepEqual([...favicon.subarray(0, 8)], [137, 80, 78, 71, 13, 10, 26, 10]);
+  assert.equal(favicon.readUInt32BE(16), 96);
+  assert.equal(favicon.readUInt32BE(20), 96);
+  assert.ok([4, 6].includes(favicon[25]), "favicon.png must include an alpha channel");
+  assert.ok(existsSync("favicon.ico"));
+  assert.ok(statSync("favicon.png").size < 20_000);
+  for (const filePath of faviconPages) {
+    assert.match(
+      readFileSync(filePath, "utf8"),
+      /<link rel="icon" type="image\/png" sizes="96x96" href="\/favicon\.png\?v=20260910-transparent-mouth-v2" \/>/
+    );
+  }
+});
+
+test("search discovery metadata links the site, creator profile, and sitemap", async () => {
+  const homepage = readFileSync("index.html", "utf8");
+  const creatorPage = readFileSync("about/author-project/index.html", "utf8");
+  const packageJson = JSON.parse(readFileSync("package.json", "utf8"));
+  const extractJsonLd = (html) => [...html.matchAll(/<script type="application\/ld\+json">\s*([\s\S]*?)\s*<\/script>/g)]
+    .map((match) => JSON.parse(match[1]));
+  const website = extractJsonLd(homepage).find((entry) => entry["@type"] === "WebSite");
+  const profile = extractJsonLd(creatorPage).find((entry) => entry["@type"] === "ProfilePage");
+
+  assert.equal(website.name, "Nihao World");
+  assert.equal(website.url, `${sitemapSiteOrigin}/`);
+  assert.equal(website["@id"], `${sitemapSiteOrigin}/#website`);
+  assert.equal(website.creator.name, "Benjamin Sun");
+  assert.equal(profile.url, `${sitemapSiteOrigin}/about/author-project/`);
+  assert.equal(profile.mainEntity.name, "Benjamin Sun");
+  assert.equal(profile.mainEntity["@id"], website.creator["@id"]);
+  assert.equal(profile.primaryImageOfPage.contentUrl, creatorPortraitUrl);
+  assert.equal(profile.primaryImageOfPage.width, 582);
+  assert.equal(profile.primaryImageOfPage.height, 582);
+  assert.equal(profile.mainEntity.image["@id"], profile.primaryImageOfPage["@id"]);
+  assert.equal(profile.mainEntity.affiliation.name, "Livingston High School");
+  assert.deepEqual(profile.mainEntity.affiliation.address, {
+    "@type": "PostalAddress",
+    addressLocality: "Livingston",
+    addressRegion: "NJ",
+    addressCountry: "US"
+  });
+  assert.equal(profile.mainEntity.address, undefined);
+  assert.equal(profile.mainEntity.affiliation.address.streetAddress, undefined);
+  assert.match(creatorPage, /<link rel="canonical" href="https:\/\/nihaoworld\.org\/about\/author-project\/" \/>/);
+
+  const urls = await buildSitemapUrls(process.cwd());
+  const storyUrls = urls.filter((url) => url.includes("/culture/books/"));
+  assert.equal(urls.length, 121);
+  assert.equal(new Set(urls).size, urls.length);
+  assert.equal(storyUrls.length, 113);
+  assert.ok(urls.includes(`${sitemapSiteOrigin}/`));
+  assert.ok(urls.includes(`${sitemapSiteOrigin}/about/author-project/`));
+  assert.ok(urls.includes(`${sitemapSiteOrigin}/culture/books/figures/mulan/`));
+  assert.ok(urls.every((url) => url.startsWith(`${sitemapSiteOrigin}/`)));
+  assert.ok(urls.every((url) => !url.includes("lesson.html")));
+  assert.ok(urls.every((url) => !url.includes("food-dumplings")));
+  const sitemapXml = readFileSync("sitemap.xml", "utf8");
+  assert.equal(sitemapXml, renderSitemapXml(urls));
+  assert.match(sitemapXml, new RegExp(`<loc>${sitemapSiteOrigin}/about/author-project/</loc>[\\s\\S]*<image:loc>${creatorPortraitUrl}</image:loc>`));
+  assert.equal((sitemapXml.match(/<image:image>/g) ?? []).length, 1);
+  assert.equal(
+    readFileSync("robots.txt", "utf8"),
+    `User-agent: *\nAllow: /\n\nSitemap: ${sitemapSiteOrigin}/sitemap.xml\n`
+  );
+  assert.match(packageJson.scripts.build, /scripts\/build_sitemap\.mjs/);
+});
+
 test("the lesson shell does not expose the retired homepage without a topic", () => {
   const lessonPage = readFileSync("lesson.html", "utf8");
   assert.match(lessonPage, /!lessonParams\.has\("topic"\)[\s\S]*window\.location\.replace/);
@@ -105,12 +189,14 @@ test("the lesson shell does not expose the retired homepage without a topic", ()
 test("Privacy and Safety opens a plain-language family page", () => {
   const html = readFileSync("index.html", "utf8");
   const privacyPage = readFileSync("about/privacy-safety/index.html", "utf8");
+  const privacyStyles = readFileSync("about/privacy-safety/styles.css", "utf8");
   const feedbackPage = readFileSync("about/feedback-problems/index.html", "utf8");
   const sourcesPage = readFileSync("about/sources-research/index.html", "utf8");
   const authorPage = readFileSync("about/author-project/index.html", "utf8");
   const aboutPages = [privacyPage, feedbackPage, sourcesPage, authorPage];
   const cultureSources = readFileSync("about/sources-research/culture-sources.js", "utf8");
   assert.match(html, /href="about\/privacy-safety\/index\.html"/);
+  assert.match(privacyStyles, /\.status-note > span \{[\s\S]*flex: 0 0 9px;[\s\S]*aspect-ratio: 1;/);
   assert.match(html, /href="about\/feedback-problems\/index\.html"/);
   assert.match(feedbackPage, /https:\/\/forms\.gle\/ksfMPko89fj6PpzJ9/);
   assert.match(feedbackPage, /https:\/\/forms\.gle\/mrJ71Hfo5zXwmpDL6/);
@@ -127,17 +213,26 @@ test("Privacy and Safety opens a plain-language family page", () => {
   assert.match(sourcesPage, /Arphic Public License/);
   assert.match(cultureSources, /window\.NIHAO_CULTURE_SOURCES/);
   assert.match(cultureSources, /culture\/books\/figures\/mulan/);
-  assert.equal((cultureSources.match(/"storyPath":/g) ?? []).length, 111);
-  assert.match(sourcesPage, /data-source-count aria-live="polite">111 stories<\/p>/);
+  assert.equal((cultureSources.match(/"storyPath":/g) ?? []).length, 113);
+  assert.match(sourcesPage, /data-source-count aria-live="polite">113 stories<\/p>/);
   assert.match(html, /href="about\/author-project\/index\.html">[\s\S]*Creator &amp; the Project/);
   assert.match(authorPage, /Benjamin Sun/);
   assert.match(authorPage, /Livingston High School/);
+  assert.match(authorPage, /<title>Creator &amp; the Project \| Nihao World<\/title>/);
+  assert.match(authorPage, /<meta property="og:title" content="Creator &amp; the Project \| Nihao World"/);
+  assert.match(authorPage, new RegExp(`<meta property="og:image" content="${creatorPortraitUrl}"`));
+  assert.match(authorPage, /alt="Benjamin Sun, student creator of Nihao World"/);
   assert.equal((authorPage.match(/assets\/photos\/benjamin-sun-portrait\.webp\?v=20260830-square-v1/g) ?? []).length, 1);
   assert.equal((authorPage.match(/width="582" height="582"/g) ?? []).length, 1);
   assert.match(authorPage, /gpt-4o-mini-tts/);
+  assert.doesNotMatch(authorPage, /Benjamin-Skokie\/easy-chinese-for-kids-app|View source code on GitHub/);
+  assert.match(authorPage, /inventions, stories, idioms, geography, traditions, and everyday life/);
+  assert.match(authorPage, /Stories and idioms were some of my favorite parts of advanced Chinese classes/);
+  assert.equal((authorPage.match(/Why We Build It/g) ?? []).length, 2);
+  assert.doesNotMatch(authorPage, /Why I built it/i);
   assert.match(authorPage, /<strong>43<\/strong><span>learning topics<\/span>/);
   assert.match(authorPage, /<strong>56<\/strong><span>textbook lessons aligned<\/span>/);
-  assert.match(authorPage, /<strong>111<\/strong><span>culture stories<\/span>/);
+  assert.match(authorPage, /<strong>113<\/strong><span>culture stories<\/span>/);
   assert.match(authorPage, /<strong>650\+<\/strong><span>referenced visual assets<\/span>/);
   assert.match(authorPage, /1,244/);
   assert.match(privacyPage, /No accounts/);
@@ -163,11 +258,25 @@ test("Creator and the Project presents the creator below the sticky header", () 
   const authorPage = readFileSync("about/author-project/index.html", "utf8");
   const authorStyles = readFileSync("about/author-project/styles.css", "utf8");
 
-  assert.match(authorPage, /styles\.css\?v=20260907-anchor-offset-v1/);
+  assert.match(authorPage, /styles\.css\?v=20260910-compact-title-v1/);
   assert.match(authorPage, /<h1>Creator &amp;<br \/>the Project<\/h1>/);
   assert.match(authorPage, /<section class="author-section" id="author">[\s\S]*About the creator[\s\S]*Hi, I’m Benjamin Sun\./);
   assert.match(authorStyles, /\.author-section\{[^}]*scroll-margin-top:112px/);
   assert.match(authorStyles, /@media\(max-width:560px\)[\s\S]*\.story-section,\.author-section\{scroll-margin-top:92px\}/);
+});
+
+test("About page hero titles stay compact across desktop and phone layouts", () => {
+  const titleStyles = [
+    readFileSync("about/author-project/styles.css", "utf8"),
+    readFileSync("about/sources-research/styles.css", "utf8"),
+    readFileSync("about/feedback-problems/styles.css", "utf8"),
+    readFileSync("about/privacy-safety/styles.css", "utf8")
+  ];
+
+  for (const styles of titleStyles) {
+    assert.match(styles, /h1\s*\{[^}]*font-size:\s*clamp\([^)]*5\.6vw,[^)]*4\.1rem\)/);
+    assert.match(styles, /@media\s*\(max-width:\s*(?:520|560|620)px\)[\s\S]*h1\s*\{[^}]*font-size:\s*clamp\([^)]*(?:10\.4|11\.2)vw,[^)]*2\.9(?:5)?rem\)/);
+  }
 });
 
 test("the shared About menu keeps four clean links with compact colorful icons", () => {
@@ -227,7 +336,7 @@ test("the mobile menu exposes About and production pages show site copyright", (
   assert.match(footerSource, /Made with curiosity, care, and technology\./);
   assert.match(footerSource, /© 2026 Nihao World\. All rights reserved\./);
   assert.match(cultureTemplate, /site-footer\.js/);
-  assert.equal(culturePages.length, 112);
+  assert.equal(culturePages.length, 114);
   for (const pagePath of culturePages) {
     assert.match(readFileSync(pagePath, "utf8"), /site-footer\.js/, `${pagePath} is missing the site footer`);
   }
@@ -800,6 +909,54 @@ test("Culture stories render their single canonical page.md manuscript", () => {
   assert.equal(existsSync("culture-reading-level.js"), false);
 });
 
+test("The Frog in the Well joins Learning and Growth with its source-backed story page", async () => {
+  const source = readFileSync("culture/content/folk-tales/frog-in-the-well/page.md", "utf8");
+  const references = readFileSync("culture/content/folk-tales/frog-in-the-well/references.md", "utf8");
+  const storyPage = readFileSync("culture/books/folk-tales/frog-in-the-well/index.html", "utf8");
+  const catalogMemo = readFileSync("docs/culture/catalog_mapping_proposal.md", "utf8");
+  const folkTaleBuilder = readFileSync("scripts/build_folk_tales_all.mjs", "utf8");
+  const locations = await loadCultureCatalogLocations(process.cwd());
+
+  assert.equal(locations.get("folk-tales/frog-in-the-well"), "stories-legends/trying-learning");
+  assert.match(catalogMemo, /坚持、学习与成长 · Keep Trying, Learning & Growing \(`trying-learning`\) — 5/);
+  assert.match(catalogMemo, /A frog thinks his little well is the whole world until a giant turtle tells him about the enormous sea\./);
+  assert.match(folkTaleBuilder, /"frog-in-the-well"/);
+  assert.match(source, /井外还有一个大得无法想象的世界/);
+  assert.match(source, /Sometimes the world beyond what we know is much bigger than we think\./);
+  assert.match(references, /https:\/\/ctext\.org\/zhuangzi\/floods-of-autumn\/zh/);
+  assert.match(references, /https:\/\/zdic\.net\/hans\//);
+  assert.match(storyPage, /<h1>井底之蛙<\/h1>/);
+  assert.match(storyPage, /The Frog in the Well/);
+  assert.match(storyPage, /images\/1-frog-and-turtle-at-the-well\.webp/);
+  assert.match(storyPage, /culture\.html#stories-legends\/trying-learning/);
+  assert.ok(existsSync("culture/books/folk-tales/frog-in-the-well/images/1-frog-and-turtle-at-the-well.webp"));
+});
+
+test("The Archer and the Oil Seller reads naturally and belongs in Learning and Growth", async () => {
+  const source = readFileSync("culture/content/folk-tales/the-archer-and-the-oil-seller/page.md", "utf8");
+  const references = readFileSync("culture/content/folk-tales/the-archer-and-the-oil-seller/references.md", "utf8");
+  const storyPage = readFileSync("culture/books/folk-tales/the-archer-and-the-oil-seller/index.html", "utf8");
+  const catalogMemo = readFileSync("docs/culture/catalog_mapping_proposal.md", "utf8");
+  const folkTaleBuilder = readFileSync("scripts/build_folk_tales_all.mjs", "utf8");
+  const locations = await loadCultureCatalogLocations(process.cwd());
+  const englishStory = source.match(/\[en\]\n([\s\S]*?)\n\[\/en\]/)?.[1] ?? "";
+
+  assert.equal(locations.get("folk-tales/the-archer-and-the-oil-seller"), "stories-legends/trying-learning");
+  assert.match(catalogMemo, /坚持、学习与成长 · Keep Trying, Learning & Growing \(`trying-learning`\) — 5/);
+  assert.match(catalogMemo, /An old man pours oil through a tiny coin hole to show an archer what steady practice can do\./);
+  assert.match(folkTaleBuilder, /"the-archer-and-the-oil-seller"/);
+  assert.match(englishStory, /An old man who sold oil happened to stop nearby\./);
+  assert.doesNotMatch(englishStory, /\bthe oil seller\b/i);
+  assert.match(englishStory, /That is the idea behind \*\*shú néng shēng qiǎo\*\*/);
+  assert.match(references, /https:\/\/www\.ate\.gov\.hk\/tchinese\/doc\/aw_CLE_1819\/reference\/B_pdf\/Song_Mai%20you%20weng\.pdf/);
+  assert.match(references, /https:\/\/www\.gushiwen\.cn\/shiwenv_2e3bc3aa2f6b\.aspx/);
+  assert.match(storyPage, /<h1>卖油翁：熟能生巧<\/h1>/);
+  assert.match(storyPage, /The Archer and the Oil Seller/);
+  assert.match(storyPage, /images\/1-oil-through-the-coin\.webp/);
+  assert.match(storyPage, /culture\.html#stories-legends\/trying-learning/);
+  assert.ok(existsSync("culture/books/folk-tales/the-archer-and-the-oil-seller/images/1-oil-through-the-coin.webp"));
+});
+
 test("Culture story pages reuse the shared header and return to their exact catalog", async () => {
   const template = readFileSync("culture/shared/template.html", "utf8");
   const builder = readFileSync("scripts/build_philosophy_page.mjs", "utf8");
@@ -820,7 +977,7 @@ test("Culture story pages reuse the shared header and return to their exact cata
   assert.match(template, /site-footer\.js\?v=20260907-teal-culture-v2/);
   assert.match(builder, /loadCultureCatalogLocations/);
   assert.match(builder, /replaceAll\("\{\{BACK_HREF\}\}", backHref\)/);
-  assert.match(catalogLocations, /storyLocations\.size !== 111/);
+  assert.match(catalogLocations, /storyLocations\.size !== 113/);
   assert.match(cultureStyles, /@media \(max-width: 900px\) \{\s*\.back-nav \{\s*display: none;/);
   assert.match(articleTheme, /--paper: #f4faf8/);
   assert.match(articleTheme, /linear-gradient\(180deg, #fbfdfc 0%, #f1f8f6 100%\)/);
@@ -829,7 +986,7 @@ test("Culture story pages reuse the shared header and return to their exact cata
   assert.match(sharedHeaderStyles, /@media \(max-width: 650px\) \{[\s\S]*\.culture-story-header \.culture-mobile-return \{[\s\S]*grid-column: 1 \/ -1;[\s\S]*grid-row: 2;/);
 
   const locations = await loadCultureCatalogLocations(process.cwd());
-  assert.equal(locations.size, 111);
+  assert.equal(locations.size, 113);
   for (const [storyId, location] of locations) {
     const storyPage = readFileSync(join("culture/books", storyId, "index.html"), "utf8");
     const catalogHref = `../../../../culture.html#${location}`;

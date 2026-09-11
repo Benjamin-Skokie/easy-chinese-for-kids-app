@@ -3,7 +3,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "node scripts/build_app.mjs",
+    "build": "node scripts/build_app.mjs && node scripts/build_sitemap.mjs",
+    "build:sitemap": "node scripts/build_sitemap.mjs",
     "dev": "node scripts/dev_app.mjs",
     "test": "node --test tests/*.test.mjs",
     "audit:culture-rewrite": "node scripts/audit_culture_rewrite.mjs",

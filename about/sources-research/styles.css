@@ -30,7 +30,7 @@ h1, h2, h3 { font-family: var(--display-font); }
 
 .sources-hero { display: grid; grid-template-columns: minmax(0,1fr) 210px; gap: clamp(28px,7vw,90px); align-items: center; padding: clamp(42px,7vw,74px); border: 1px solid rgba(86,139,114,.18); border-radius: 32px; background: radial-gradient(circle at 85% 28%, rgba(233,161,58,.15), transparent 18rem), linear-gradient(135deg,#fff,#f4faf7); box-shadow: 0 18px 48px rgba(45,34,24,.07); }
 .eyebrow { color: var(--leaf-dark); font-size: .72rem; font-weight: 800; letter-spacing: .11em; text-transform: uppercase; }
-.sources-hero h1 { margin-top: 7px; font-size: clamp(2.7rem,7vw,5.1rem); line-height: .98; }
+.sources-hero h1 { margin-top: 7px; font-size: clamp(2.2rem,5.6vw,4.1rem); line-height: .98; }
 .hero-intro { max-width: 690px; margin-top: 22px; color: var(--muted); font-size: clamp(1rem,2vw,1.18rem); }
 .hero-icon { display: grid; width: 190px; height: 190px; place-items: center; border-radius: 50%; background: rgba(86,139,114,.1); }
 .hero-icon svg { width: 128px; fill: rgba(86,139,114,.08); stroke: var(--leaf); stroke-linecap: round; stroke-linejoin: round; stroke-width: 4; }
@@ -104,7 +104,7 @@ footer img { width: 46px; height: 46px; object-fit: contain; }.footer-copy { dis
 }
 @media (max-width: 520px) {
   .page-header { align-items: flex-start; }.brand-link strong { font-size: .78rem; }.home-link { padding: 8px 10px; font-size: .7rem; }
-  .sources-hero { grid-template-columns: 1fr; padding: 34px 24px; }.hero-icon { display: none; }.sources-hero h1 { font-size: clamp(2.6rem,14vw,3.6rem); }
+  .sources-hero { grid-template-columns: 1fr; padding: 34px 24px; }.hero-icon { display: none; }.sources-hero h1 { font-size: clamp(2.1rem,11.2vw,2.9rem); }
   .section-jump { display: grid; margin-bottom: 54px; }.section-heading { grid-template-columns: 1fr; gap: 12px; }.book-citation { grid-template-columns: 54px minmax(0,1fr); padding: 22px; }.book-mark { width: 52px; height: 52px; border-radius: 15px; font-size: 1.45rem; }
   .source-tools { align-items: stretch; flex-direction: column; gap: 8px; }.story-source-card summary { align-items: flex-start; padding: 16px; }.story-source-meta { max-width: 72px; text-align: right; }.story-source-body { padding: 18px 16px; }
   footer { align-items: flex-start; flex-wrap: wrap; }.footer-copy { flex-basis: calc(100% - 60px); }footer > a { margin-left: 60px; }

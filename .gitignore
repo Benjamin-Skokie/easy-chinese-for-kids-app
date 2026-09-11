@@ -4,8 +4,10 @@ node_modules/
 .env
 tmp/
 *.png
+!favicon.png
 *.jpeg
 *.txt
+!robots.txt
 !assets/illustrated-rooms/bicycle.png
 !assets/illustrated-classrooms/blackboard.png
 assets_archive/

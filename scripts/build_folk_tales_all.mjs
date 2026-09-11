@@ -16,6 +16,8 @@ const slugs = [
   "the-man-who-pretended-to-play",
   "grind-an-iron-rod-into-a-needle",
   "borrow-a-little-light-and-keep-learning",
+  "frog-in-the-well",
+  "the-archer-and-the-oil-seller",
   "add-the-eyes-and-the-whole-thing-comes-alive",
   "drawing-legs-on-a-snake",
 ];
