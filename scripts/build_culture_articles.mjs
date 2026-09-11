@@ -181,6 +181,7 @@ function buildArticleHtml(article, zhDoc, enDoc) {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon.png?v=20260910-white-teal-leaf-v1" />
     <title>${escapeHtml(article.titleEn)} | Discover Chinese Culture</title>
     <meta
       name="description"

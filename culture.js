@@ -17,6 +17,7 @@
   // Keep the mapping memo intact while using shorter labels in compact controls.
   const subcatalogDisplayNames = {
     "myths-great-legends": "Myths & Legends",
+    "trying-learning": "Learning & Growth",
     "mistakes-contradictions": "Mistakes & Contradictions",
     "plans-luck-surprises": "Plans, Luck & Surprises",
     "family-symbols-wishes": "Family, Symbols & Wishes",
@@ -375,7 +376,7 @@
     .then((markdown) => {
       catalogs = parseCatalogs(markdown);
       const totalStories = catalogs.reduce((sum, catalog) => sum + catalog.count, 0);
-      if (catalogs.length !== 8 || totalStories !== 111) {
+      if (catalogs.length !== 8 || totalStories !== 113) {
         throw new Error("The catalog memo is incomplete.");
       }
       document.querySelector("[data-total-stories]").textContent = totalStories;

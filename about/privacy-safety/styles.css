@@ -89,7 +89,7 @@ main { width: min(1120px, calc(100vw - 40px)); margin: 0 auto; }
   text-transform: uppercase;
 }
 
-.privacy-hero h1 { margin-top: 7px; font-size: clamp(2.5rem, 7vw, 5.1rem); line-height: 0.98; }
+.privacy-hero h1 { margin-top: 7px; font-size: clamp(2rem, 5.6vw, 4.1rem); line-height: 0.98; }
 .hero-intro { max-width: 690px; margin-top: 22px; color: var(--muted); font-size: clamp(1rem, 2vw, 1.18rem); }
 
 .status-note {
@@ -102,8 +102,10 @@ main { width: min(1120px, calc(100vw - 40px)); margin: 0 auto; }
 }
 
 .status-note > span {
+  flex: 0 0 9px;
   width: 9px;
   height: 9px;
+  aspect-ratio: 1;
   border-radius: 50%;
   background: var(--sun);
   box-shadow: 0 0 0 4px rgba(233, 161, 58, 0.14);
@@ -277,9 +279,9 @@ footer a { color: var(--leaf-dark); font-weight: 800; }
   .home-link { padding: 8px 10px; font-size: 0.7rem; }
   .privacy-hero { grid-template-columns: 1fr; padding: 34px 24px; }
   .privacy-hero-art { display: none; }
-  .privacy-hero h1 { font-size: clamp(2.45rem, 13vw, 3.7rem); }
+  .privacy-hero h1 { font-size: clamp(1.95rem, 10.4vw, 2.95rem); }
   .status-note { align-items: flex-start; }
-  .status-note > span { flex: 0 0 auto; margin-top: 6px; }
+  .status-note > span { margin-top: 6px; }
   .quick-facts { grid-template-columns: 1fr; margin-bottom: 38px; }
   .privacy-content > section { grid-template-columns: 1fr; gap: 12px; }
   .section-number { width: 34px; height: 34px; }

@@ -5,7 +5,7 @@ Status: proposed information architecture and card copy; no page routes or landi
 ## Scope and source of truth
 
 - The current Culture landing page has **16** category entrances, not 15.
-- There are **111 unique published stories** with a `culture/content/<category>/<slug>/page.md` source.
+- There are **113 unique published stories** with a `culture/content/<category>/<slug>/page.md` source.
 - The 117 story links found on the landing page include six repeated flagship links; those repeats are not separate stories.
 - Every story below appears once. The identifier in the first column is its current source location and gives the old category as well as the slug.
 - The proposed structure has **8 top-level catalogs** and **32 subcatalogs**.
@@ -15,7 +15,7 @@ Status: proposed information architecture and card copy; no page routes or landi
 
 | Order | Top-level catalog | ID | Stories | Subcatalogs |
 |---:|---|---|---:|---:|
-| 1 | 故事与传说 · Stories & Legends | `stories-legends` | 17 | 4 |
+| 1 | 故事与传说 · Stories & Legends | `stories-legends` | 19 | 4 |
 | 2 | 人物与历史 · People & History | `people-history` | 19 | 4 |
 | 3 | 节日与日常生活 · Festivals & Everyday Life | `festivals-everyday` | 15 | 4 |
 | 4 | 艺术与文学 · Arts & Literature | `arts-literature` | 19 | 5 |
@@ -23,7 +23,7 @@ Status: proposed information architecture and card copy; no page routes or landi
 | 6 | 山河与建筑 · Places & Buildings | `places-buildings` | 12 | 4 |
 | 7 | 科技、发明与贸易 · Science, Inventions & Trade | `science-inventions-trade` | 10 | 4 |
 | 8 | 思想与信仰 · Ideas & Beliefs | `ideas-beliefs` | 9 | 3 |
-|  | **Total** |  | **111** | **32** |
+|  | **Total** |  | **113** | **32** |
 
 The order begins with narrative and familiar everyday subjects, then moves toward places, systems, and abstract ideas. Philosophy stays last, matching the existing editorial principle that the most abstract material should not be the first doorway for a child.
 
@@ -31,7 +31,7 @@ The order begins with narrative and familiar everyday subjects, then moves towar
 
 | Proposed top-level catalog | Current catalogs and article-level moves |
 |---|---|
-| Stories & Legends | All 17 `folk-tales` stories |
+| Stories & Legends | All 19 `folk-tales` stories |
 | People & History | All 6 `figures`, all 8 `politics`, 4 of 5 `military`, plus `inventions/guan-yu-blade` |
 | Festivals & Everyday Life | All 6 `folk-customs` plus 9 of 10 `culture` stories |
 | Arts & Literature | All 10 `art`, all 8 `literature`, plus `culture/chinese-characters` |
@@ -42,7 +42,7 @@ The order begins with narrative and familiar everyday subjects, then moves towar
 
 ## Full article mapping and story-card copy
 
-### 1. 故事与传说 · Stories & Legends (`stories-legends`) — 17 stories
+### 1. 故事与传说 · Stories & Legends (`stories-legends`) — 19 stories
 
 #### 1.1 神话与传奇 · Myths & Great Legends (`myths-great-legends`) — 3
 
@@ -52,13 +52,15 @@ The order begins with narrative and familiar everyday subjects, then moves towar
 | `folk-tales/qixi-cowherd-weaver-girl` | 牛郎织女 · *The Cowherd and the Weaver Girl* | Two lovers separated by the Milky Way meet once a year on a bridge built by magpies. |
 | `folk-tales/white-snake` | 白蛇传 · *The Legend of the White Snake* | A white snake spirit becomes a woman, falls in love, and fights to return to her family. |
 
-#### 1.2 坚持与学习 · Keep Trying & Keep Learning (`trying-learning`) — 3
+#### 1.2 坚持、学习与成长 · Keep Trying, Learning & Growing (`trying-learning`) — 5
 
 | Current article ID | Article title | Compact English story-card description |
 |---|---|---|
 | `folk-tales/yu-gong` | 愚公移山 · *Yu Gong Moves the Mountains* | An old man keeps digging at two enormous mountains until his determination makes the impossible possible. |
 | `folk-tales/grind-an-iron-rod-into-a-needle` | 铁杵磨成针 · *Grind an Iron Rod into a Needle* | Young Li Bai learns that steady effort can turn even an iron bar into a tiny needle. |
 | `folk-tales/borrow-a-little-light-and-keep-learning` | 凿壁偷光 · *Borrow a Little Light and Keep Learning* | A poor boy makes a tiny hole in his wall so he can study by his neighbor's lamplight. |
+| `folk-tales/frog-in-the-well` | 井底之蛙 · *The Frog in the Well* | A frog thinks his little well is the whole world until a giant turtle tells him about the enormous sea. |
+| `folk-tales/the-archer-and-the-oil-seller` | 卖油翁：熟能生巧 · *The Archer and the Oil Seller* | An old man pours oil through a tiny coin hole to show an archer what steady practice can do. |
 
 #### 1.3 糊涂与矛盾 · Silly Mistakes & Contradictions (`mistakes-contradictions`) — 6
 
@@ -337,7 +339,7 @@ The order begins with narrative and familiar everyday subjects, then moves towar
 4. **Use the short English descriptions as card copy, not SEO summaries.** Each sentence favors a concrete action, image, discovery, or question a child can understand.
 5. **Keep difficulty, format, and age as filters or badges, not additional catalog levels.** The two catalog levels should answer “What kind of story is this?”
 6. **Recommended card hierarchy:** image → bilingual title → one-line English description → optional difficulty/time badge.
-7. **Recommended mobile behavior:** show the eight top-level cards first; opening one reveals only its subcatalogs and stories instead of rendering all 111 stories in one long page.
+7. **Recommended mobile behavior:** show the eight top-level cards first; opening one reveals only its subcatalogs and stories instead of rendering all 113 stories in one long page.
 
 ## Borderline placements to revisit during design review
 
