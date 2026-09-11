@@ -84,7 +84,7 @@ main { width: min(1120px, calc(100vw - 40px)); margin: 0 auto; }
   letter-spacing: 0.11em;
   text-transform: uppercase;
 }
-.feedback-hero h1 { margin-top: 7px; font-size: clamp(2.7rem, 7vw, 5.1rem); line-height: 0.98; }
+.feedback-hero h1 { margin-top: 7px; font-size: clamp(2.2rem, 5.6vw, 4.1rem); line-height: 0.98; }
 .hero-intro { max-width: 650px; margin-top: 22px; color: var(--muted); font-size: clamp(1rem, 2vw, 1.18rem); }
 
 .form-choices {
@@ -206,7 +206,7 @@ footer > a { color: var(--leaf-dark); font-weight: 800; }
   .home-link { padding: 8px 10px; font-size: 0.7rem; }
   .feedback-hero { grid-template-columns: 1fr; padding: 34px 24px; }
   .feedback-hero > img { display: none; }
-  .feedback-hero h1 { font-size: clamp(2.6rem, 14vw, 3.6rem); }
+  .feedback-hero h1 { font-size: clamp(2.1rem, 11.2vw, 2.9rem); }
   .form-card { min-height: 0; }
   .form-button { margin-top: 28px; }
   .privacy-note { grid-template-columns: 1fr; padding: 24px; }

@@ -2861,6 +2861,34 @@ window.NIHAO_CULTURE_SOURCES = [
   {
     "category": "folk-tales",
     "categoryName": "Folk Tales",
+    "slug": "frog-in-the-well",
+    "title": "井底之蛙",
+    "titleEn": "The Frog in the Well",
+    "storyPath": "../../culture/books/folk-tales/frog-in-the-well/",
+    "groups": [
+      {
+        "title": "《庄子·秋水》中的井蛙与东海之鳖",
+        "sources": [
+          {
+            "label": "Chinese Text Project, Zhuangzi, “The Floods of Autumn”",
+            "url": "https://ctext.org/zhuangzi/floods-of-autumn/zh"
+          }
+        ]
+      },
+      {
+        "title": "后来的成语“井底之蛙”",
+        "sources": [
+          {
+            "label": "汉典 (Zdic), “井底之蛙”",
+            "url": "https://zdic.net/hans/%E4%BA%95%E5%BA%95%E4%B9%8B%E8%9B%99"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "folk-tales",
+    "categoryName": "Folk Tales",
     "slug": "borrow-a-little-light-and-keep-learning",
     "title": "凿壁偷光",
     "titleEn": "Borrow a Little Light and Keep Learning",
@@ -2891,6 +2919,34 @@ window.NIHAO_CULTURE_SOURCES = [
           {
             "label": "Chinese Text Project, Lüshi Chunqiu, “Observing the Present”",
             "url": "https://ctext.org/lv-shi-chun-qiu/cha-jin/zhs"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "folk-tales",
+    "categoryName": "Folk Tales",
+    "slug": "the-archer-and-the-oil-seller",
+    "title": "卖油翁：熟能生巧",
+    "titleEn": "The Archer and the Oil Seller",
+    "storyPath": "../../culture/books/folk-tales/the-archer-and-the-oil-seller/",
+    "groups": [
+      {
+        "title": "欧阳修《卖油翁》原文",
+        "sources": [
+          {
+            "label": "Hong Kong Government, Assessment and Assessment for Learning, “賣油翁”",
+            "url": "https://www.ate.gov.hk/tchinese/doc/aw_CLE_1819/reference/B_pdf/Song_Mai%20you%20weng.pdf"
+          }
+        ]
+      },
+      {
+        "title": "Readable modern reference text",
+        "sources": [
+          {
+            "label": "古文岛（原古诗文网）, 欧阳修《卖油翁》",
+            "url": "https://www.gushiwen.cn/shiwenv_2e3bc3aa2f6b.aspx"
           }
         ]
       }
