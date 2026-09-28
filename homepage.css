@@ -592,11 +592,11 @@ button:focus-visible {
   scroll-snap-align: start;
 }
 
-.feature-slide:nth-child(2) {
+.feature-slide:nth-child(3) {
   --feature-surface: 248, 242, 226;
 }
 
-.feature-slide:nth-child(3) {
+.feature-slide:nth-child(4) {
   --feature-surface: 232, 244, 241;
 }
 
@@ -680,6 +680,36 @@ button:focus-visible {
   font-size: 1rem;
 }
 
+.feature-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 22px;
+}
+
+.feature-actions a {
+  min-height: 44px;
+  margin-top: 0;
+  border-radius: 16px;
+  font-size: 0.9rem;
+}
+
+.feature-actions a:focus-visible {
+  outline: 3px solid var(--teal-950);
+  outline-offset: 3px;
+}
+
+.feature-action-label {
+  display: grid;
+  gap: 3px;
+  line-height: 1.3;
+}
+
+.feature-action-label [lang="zh-Hans"] {
+  font-family: var(--chinese-font);
+  font-weight: 500;
+}
+
 .feature-slide img {
   position: absolute;
   z-index: 0;
@@ -690,6 +720,47 @@ button:focus-visible {
   height: 100%;
   object-fit: cover;
   object-position: center 42%;
+}
+
+/* Keep the subjects on the left clear of the story copy. */
+.feature-slide--spear-shield .feature-copy,
+.feature-slide--shanhaijing .feature-copy {
+  margin-left: auto;
+}
+
+.feature-slide--spear-shield img,
+.feature-slide--shanhaijing img {
+  left: 0;
+  right: auto;
+  object-position: center 68%;
+}
+
+.feature-slide--spear-shield img {
+  object-position: left top;
+}
+
+.feature-slide--shanhaijing::after {
+  background: linear-gradient(
+    270deg,
+    rgb(var(--feature-surface)) 0%,
+    rgb(var(--feature-surface)) 30%,
+    rgba(var(--feature-surface), 0.96) 34%,
+    rgba(var(--feature-surface), 0.52) 40%,
+    rgba(var(--feature-surface), 0.1) 47%,
+    transparent 53%
+  );
+}
+
+.feature-slide--spear-shield::after {
+  background: linear-gradient(
+    270deg,
+    rgb(var(--feature-surface)) 0%,
+    rgb(var(--feature-surface)) 40%,
+    rgba(var(--feature-surface), 0.98) 45%,
+    rgba(var(--feature-surface), 0.65) 49%,
+    rgba(var(--feature-surface), 0.18) 53%,
+    transparent 58%
+  );
 }
 
 .feature-dots {
@@ -963,6 +1034,32 @@ button:focus-visible {
   .feature-copy h4 {
     max-width: 20ch;
     font-size: clamp(1.55rem, 7vw, 2rem);
+  }
+
+  .feature-slide--spear-shield,
+  .feature-slide--shanhaijing {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .feature-slide--spear-shield img,
+  .feature-slide--shanhaijing img {
+    position: static;
+    order: -1;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3;
+    object-fit: contain;
+  }
+
+  .feature-slide--spear-shield::after,
+  .feature-slide--shanhaijing::after { display: none; }
+
+  .feature-slide--spear-shield .feature-copy,
+  .feature-slide--shanhaijing .feature-copy {
+    width: 100%;
+    min-height: 0;
+    padding: 24px;
   }
 
   .site-footer {

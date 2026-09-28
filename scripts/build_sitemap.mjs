@@ -14,6 +14,7 @@ const staticPaths = [
   "/learn.html",
   "/books.html",
   "/culture.html",
+  "/culture/books/literature/shan-hai-jing/map/",
   "/about/author-project/",
   "/about/sources-research/",
   "/about/feedback-problems/",

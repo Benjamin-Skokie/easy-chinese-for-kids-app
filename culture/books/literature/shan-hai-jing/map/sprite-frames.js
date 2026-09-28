@@ -1,0 +1,32 @@
+// Alpha bounds measured from the final WebP files; CSS trims transparent padding only.
+// Artwork is unchanged. These bounds align real feet, not the source canvas edge.
+export const spriteFrames = {
+  "lushu": {"width":900,"height":823,"left":68,"top":4,"artWidth":832,"artHeight":819},
+  "xuangui": {"width":900,"height":721,"left":34,"top":79,"artWidth":854,"artHeight":583},
+  "nine-tailed-fox": {"width":900,"height":823,"left":14,"top":0,"artWidth":876,"artHeight":792},
+  "wenyaoyu": {"width":900,"height":600,"left":44,"top":8,"artWidth":844,"artHeight":583},
+  "dijiang": {"width":900,"height":675,"left":46,"top":10,"artWidth":831,"artHeight":656},
+  "jingwei": {"width":900,"height":600,"left":94,"top":11,"artWidth":718,"artHeight":535},
+  "zheng": {"width":900,"height":675,"left":60,"top":7,"artWidth":830,"artHeight":632},
+  "bifang": {"width":900,"height":675,"left":112,"top":6,"artWidth":677,"artHeight":655},
+  "changyou": {"width":900,"height":675,"left":108,"top":6,"artWidth":765,"artHeight":663},
+  "feifei": {"width":900,"height":675,"left":52,"top":7,"artWidth":827,"artHeight":650},
+  "qitu": {"width":900,"height":675,"left":59,"top":20,"artWidth":810,"artHeight":636},
+  "gudiao": {"width":900,"height":675,"left":49,"top":0,"artWidth":819,"artHeight":669},
+  "fenghuang": {"width":900,"height":675,"left":24,"top":9,"artWidth":857,"artHeight":649},
+  "mengji": {"width":900,"height":675,"left":22,"top":63,"artWidth":836,"artHeight":541},
+  "zhuyan": {"width":900,"height":675,"left":94,"top":8,"artWidth":712,"artHeight":662},
+  "fuzhu": {"width":840,"height":840,"left":22,"top":7,"artWidth":802,"artHeight":824},
+  "dangkang": {"width":900,"height":675,"left":69,"top":22,"artWidth":761,"artHeight":630},
+  "kui": {"width":900,"height":675,"left":110,"top":20,"artWidth":781,"artHeight":627},
+  "jiao": {"width":900,"height":675,"left":117,"top":0,"artWidth":763,"artHeight":675},
+  "ershu": {"width":900,"height":675,"left":62,"top":6,"artWidth":806,"artHeight":622},
+  "yinglong": {"width":840,"height":840,"left":10,"top":9,"artWidth":822,"artHeight":823},
+  "qiongqi": {"width":840,"height":840,"left":46,"top":15,"artWidth":782,"artHeight":792},
+  "zouwu": {"width":840,"height":840,"left":21,"top":11,"artWidth":809,"artHeight":798},
+  "tiangou": {"width":900,"height":900,"left":0,"top":7,"artWidth":884,"artHeight":884},
+  "sanqingniao": {"width":840,"height":840,"left":53,"top":9,"artWidth":770,"artHeight":822},
+  "biyiniao": {"width":840,"height":840,"left":12,"top":50,"artWidth":817,"artHeight":659},
+  "tianma": {"width":900,"height":900,"left":0,"top":15,"artWidth":900,"artHeight":885},
+  "jiliang": {"width":900,"height":900,"left":0,"top":9,"artWidth":896,"artHeight":891}
+};

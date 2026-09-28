@@ -29,6 +29,8 @@
     "homes-gardens-engineering": "Homes, Gardens & Engineering",
   };
   const representativeImages = {
+    "literature/shan-hai-jing":
+      "culture/books/literature/shan-hai-jing/images/1-strange-ancient-book.webp",
     "figures/mulan": "culture/books/figures/mulan/images/farewell.webp",
     "figures/cao-cao": "culture/books/figures/cao-cao/images/warrior-and-poet.webp",
     "geography/highest-mountains":
@@ -43,7 +45,7 @@
     "religion/shaolin-kung-fu":
       "culture/books/religion/shaolin-kung-fu/images/4-shaolin-staff-practice.webp",
     "religion/lord-guan":
-      "culture/content/religion/lord-guan/images/2-lord-guan-shop-altar.webp",
+      "culture/books/religion/lord-guan/images/2-lord-guan-shop-altar.webp",
   };
   const imageCache = new Map();
 
@@ -278,7 +280,8 @@
     document.querySelector("[data-story-count]").textContent = subcatalog.stories.length;
     storyGrid.innerHTML = subcatalog.stories
       .map(
-        (story) => `
+        (story) => {
+          const storyCard = `
           <a class="story-card" href="${escapeHTML(story.href)}">
             <span class="story-image">
               <img data-story-image="${escapeHTML(story.id)}" alt="" decoding="async" />
@@ -290,7 +293,18 @@
               <span class="story-link-label">Read the story <b aria-hidden="true">→</b></span>
             </span>
           </a>
-        `
+          `;
+          if (story.id !== "literature/shan-hai-jing") return storyCard;
+          return `
+            <article class="story-card-bundle" data-story-experience="shan-hai-jing-map">
+              ${storyCard}
+              <a class="story-map-link" href="culture/books/literature/shan-hai-jing/map/index.html" data-creature-map-entry>
+                <span lang="zh-Hans">认识奇兽</span>
+                <span lang="en">Meet the Mythical Creatures <b aria-hidden="true">→</b></span>
+              </a>
+            </article>
+          `;
+        }
       )
       .join("");
     hydrateStoryImages(subcatalog.stories);
@@ -376,7 +390,7 @@
     .then((markdown) => {
       catalogs = parseCatalogs(markdown);
       const totalStories = catalogs.reduce((sum, catalog) => sum + catalog.count, 0);
-      if (catalogs.length !== 8 || totalStories !== 113) {
+      if (catalogs.length !== 8 || totalStories !== 114) {
         throw new Error("The catalog memo is incomplete.");
       }
       document.querySelector("[data-total-stories]").textContent = totalStories;

@@ -4,7 +4,20 @@ This file records notable, learner-facing changes to Nihao World. Small copy
 edits, routine maintenance, and internal refactors may remain in Git history
 without receiving their own release entry.
 
-## Unreleased
+## v1.2.0 — 2026-09-28
+
+### Added
+
+- Added an interactive Shan Hai Jing map with 28 kinds of mythical creatures, bilingual reading cards, and zoomable exploration.
+- Added the bilingual Culture Story about the Four Symbols: the Azure Dragon, White Tiger, Vermilion Bird, and Black Tortoise.
+- Added a direct homepage link to the creature map, alongside the Shan Hai Jing story.
+
+### Changed
+
+- Rewrote the Shan Hai Jing introduction and refreshed its illustrations, with clearer distinctions between the ancient text and imagined stories.
+- Updated homepage featured stories and made story titles consistent across their entry points.
+- Updated research references, creator search metadata, the sitemap, and project statistics.
+- Reduced ordinary displayed images to at most 120,000 bytes, keeping a separate allowance for the full map, and removed unused map drafts.
 
 ## v1.1.0 — 2026-09-10
 
@@ -33,7 +46,8 @@ without receiving their own release entry.
 
 ## Versioning policy
 
-- A small number of new stories or routine improvements remain under Unreleased.
+- Upcoming changes stay under Unreleased or a planned version until publication.
+- When a planned version is published, replace its planned label with the actual release date.
 - A meaningful group of new stories or a new learner-facing feature increments the
   minor version, such as v1.1.0.
 - A production bug fix increments the patch version, such as v1.0.1.

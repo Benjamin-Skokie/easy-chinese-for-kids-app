@@ -1,6 +1,6 @@
 # English Rewrite Rule for Chinese Culture Articles
 
-Last updated: 2026-09-02
+Last updated: 2026-09-27
 
 The English version is for native English-speaking children, with a distinct audience contract for Easy, Medium, and Advanced. Do not apply one “children's English” voice to all three.
 
@@ -76,6 +76,8 @@ For Medium, add these whole-article questions:
 - Could a child with no knowledge of Chinese dynasties follow it without a preliminary lecture?
 
 ## Practical Style Rules
+
+Avoid em dashes in child-facing titles, prose, and figure captions. Prefer commas, full stops, or a naturally rewritten sentence that is easy to read aloud. Apply the same preference to Chinese double dashes, whose long horizontal marks can resemble the character for one. Do not replace them mechanically with shorter dashes; ordinary compound-word hyphens and numeric ranges are unaffected.
 
 Use the familiar word first when a term may be hard for children. For example, prefer `leather or hide armor` before using `hide armor` alone. It is fine to teach the harder word in the article, but do not put an unclear word in a title if a smoother title is available.
 
