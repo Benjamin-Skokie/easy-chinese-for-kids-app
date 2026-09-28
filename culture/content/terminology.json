@@ -759,11 +759,12 @@
   },
   "shan-hai-jing": {
     "zh": "《山海经》",
-    "en": "Shan Hai Jing",
+    "en": "Classic of Mountains and Seas",
+    "aliases_en": ["Shan Hai Jing", "The Classic of Mountains and Seas"],
     "pinyin": "Shānhǎi Jīng",
     "kind": "work",
-    "note_zh": "记录古代山川、物产、神话人物和奇异动物的古书。",
-    "note_en": "An ancient book filled with mountains, places, gods, and strange creatures."
+    "note_zh": "全书共十八篇，其中五篇分别写南、西、北、东和中部的山。",
+    "note_en": "The book has eighteen sections. Five focus on mountains in different directions."
   },
   "shang-yang": {
     "zh": "商鞅",
@@ -2424,5 +2425,32 @@
     "kind": "work",
     "note_zh": "汇集战国时期各国谋略、游说和政治故事的一部古书。",
     "note_en": "An ancient collection of political arguments, strategies, and stories from the Warring States period."
+  },
+  "four-symbols": {
+    "zh": "四象",
+    "en": "Four Symbols",
+    "pinyin": "sì xiàng",
+    "kind": "term",
+    "note_zh": "古人用来表示天空东、南、西、北四方的青龙、朱雀、白虎和玄武。",
+    "note_en": "The Azure Dragon, Vermilion Bird, White Tiger, and Xuanwu used to represent four regions of the sky.",
+    "auto_tag": false
+  },
+  "twenty-eight-mansions": {
+    "zh": "二十八宿",
+    "en": "twenty-eight lunar mansions",
+    "pinyin": "èrshíbā xiù",
+    "kind": "term",
+    "note_zh": "中国古代观测太阳、月亮和行星时使用的二十八组星宿；这里的“宿”读 xiù。",
+    "note_en": "Twenty-eight groups of stars used in ancient Chinese sky-watching; xiù is pronounced with a falling tone.",
+    "auto_tag": false
+  },
+  "wadang": {
+    "zh": "瓦当",
+    "en": "roof-end tile",
+    "pinyin": "wǎdāng",
+    "kind": "term",
+    "note_zh": "屋顶筒瓦最前端的圆形或半圆形构件，常带有图案或文字。",
+    "note_en": "The round or semicircular end piece at the front of a traditional roof tile, often decorated with an image or inscription.",
+    "auto_tag": false
   }
 }

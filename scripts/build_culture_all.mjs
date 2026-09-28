@@ -2,6 +2,7 @@ import { buildPhilosophyPage } from "./build_philosophy_page.mjs";
 
 const slugs = [
   "dragon-phoenix",
+  "four-symbols",
   "chinese-characters",
   "chinese-knot",
   "new-year-greeting",

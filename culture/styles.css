@@ -470,6 +470,46 @@ a { text-decoration: none; color: inherit; }
 
 .topic.done:hover::after { opacity: 1; right: 14px; }
 
+.topic.done[data-experience="shan-hai-jing-map"] {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 18px;
+  cursor: default;
+  background:
+    linear-gradient(100deg, rgba(255, 247, 226, 0.96), rgba(233, 244, 238, 0.96));
+  border-color: rgba(57, 111, 103, 0.22);
+}
+
+.topic.done[data-experience="shan-hai-jing-map"]::after { display: none; }
+
+.topic.done[data-experience="shan-hai-jing-map"] > a:first-child {
+  min-width: 0;
+}
+
+.topic.done[data-experience="shan-hai-jing-map"] .topic-experience {
+  padding: 10px 15px;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1px;
+  border-radius: 12px;
+  background: #24545a;
+  box-shadow: 0 8px 18px rgba(36, 84, 90, 0.18);
+  text-decoration: none;
+}
+
+.topic.done[data-experience="shan-hai-jing-map"] .topic-experience .zh {
+  color: #fff9eb;
+  font-size: 0.9rem;
+}
+
+.topic.done[data-experience="shan-hai-jing-map"] .topic-experience .en {
+  color: #cce0dd;
+  font-size: 0.72rem;
+}
+
 .topic.upcoming {
   background: #f8f6f3;
   border: 1px solid rgba(0, 0, 0, 0.05);
@@ -552,6 +592,15 @@ a { text-decoration: none; color: inherit; }
   .topic-grid { grid-template-columns: 1fr; }
 
   .topic { padding: 14px 18px; }
+
+  .topic.done[data-experience="shan-hai-jing-map"] {
+    grid-template-columns: 1fr;
+    align-items: stretch;
+  }
+
+  .topic.done[data-experience="shan-hai-jing-map"] .topic-experience {
+    width: fit-content;
+  }
 
   .ending { padding: 40px 24px; }
 }

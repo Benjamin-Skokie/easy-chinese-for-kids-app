@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#183b43" />
+    <link rel="icon" type="image/png" sizes="96x96" href="../../../../../favicon.png" />
+    <title>《山海经》奇兽地图 | Nihao World</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Lora:ital,wght@0,600;0,700;1,600;1,700&amp;family=Newsreader:opsz,wght@6..72,500;6..72,600&amp;family=Noto+Sans+SC:wght@400;500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css?v=20260928-placement-audit-v1" />
+    <link rel="stylesheet" href="../../../../../shared-site-header.css?v=20260907-transparent-pathway-art-v4" />
+    <script src="../../../../../shared-site-header.js?v=20260907-culture-story-nav-v1" defer></script>
+  </head>
+  <body>
+    <header class="site-header culture-story-header">
+      <a class="brand" href="../../../../../index.html" aria-label="Nihao World home">
+        <img src="../../../../../assets/brand/zongzi-guide.webp" alt="" width="768" height="768" />
+        <span class="brand-wordmark">
+          <span class="brand-nihao">Nihao</span><span class="brand-world">World</span>
+        </span>
+      </a>
+
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" aria-label="Open navigation">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="primary-nav" id="primary-navigation" aria-label="Primary navigation">
+        <a href="../../../../../learn.html">Learn Chinese</a>
+        <a href="../../../../../books.html">Book Lessons</a>
+        <a class="is-current" href="../../../../../culture.html#arts-literature/poetry-imagined-worlds">Culture Stories</a>
+      </nav>
+
+      <a class="culture-mobile-return" href="../index.html">← 返回故事 / Story</a>
+
+      <details class="about-menu">
+        <summary>About</summary>
+        <nav class="about-popover" aria-label="About and support">
+          <a href="../../../../../about/author-project/index.html"><strong>Creator &amp; the Project</strong><small>The creator and story behind Nihao World</small></a>
+          <a href="../../../../../about/sources-research/index.html"><strong>Sources &amp; Research</strong><small>References behind the content</small></a>
+          <a href="../../../../../about/feedback-problems/index.html"><strong>Feedback</strong><small>Share an idea or report a problem</small></a>
+          <a href="../../../../../about/privacy-safety/index.html"><strong>Privacy &amp; Safety</strong><small>How the site protects learners</small></a>
+        </nav>
+      </details>
+    </header>
+
+    <main>
+      <section class="intro" aria-labelledby="page-title">
+        <h1 id="page-title">《山海经》奇兽地图</h1>
+        <h2 lang="en">The Classic of Mountains and Seas: Mythical Creature Map</h2>
+      </section>
+
+      <div class="map-intro" id="map-intro">
+        <div class="map-intro-copy">
+          <p class="zh">《山海经》里的二十八组奇兽藏在这片山水间。放大地图，点一点，认识它们。</p>
+          <p lang="en">Meet twenty-eight kinds of mythical creatures from the Classic of Mountains and Seas. Zoom in and see who you can find.</p>
+        </div>
+        <a class="story-link" href="../index.html"><span class="zh">读《山海经》的故事 <span aria-hidden="true">→</span></span><span lang="en">Read the story</span></a>
+      </div>
+
+      <button class="map-preview" type="button" data-open-map aria-label="放大《山海经》奇兽地图 / Zoom in to explore the Classic of Mountains and Seas mythical creature map">
+        <img src="./assets/map-world-preview.webp" srcset="./assets/map-world-preview.webp 880w, ./assets/map-world.webp 1448w" sizes="96vw" alt="一片连在一起的山海世界，奇兽藏在山谷、树林与水边 / A continuous world of mountains, forests, and seas with mythical creatures to discover" width="3072" height="2304" />
+        <span class="map-preview-creatures" data-preview-creatures aria-hidden="true"></span>
+        <span class="map-preview-regions" data-preview-regions aria-hidden="true"></span>
+        <span class="map-preview-action"><strong>放大奇兽地图</strong><small lang="en">Zoom in to explore</small></span>
+      </button>
+
+      <details class="map-source-note">
+        <summary>这张地图怎样画成？ <span lang="en">How we drew this world</span></summary>
+        <p>《南山经》《西山经》《北山经》《东山经》《中山经》都是《山海经》里的篇章。我们沿着这些方向，把书中的山名、奇兽的住处，以及写明的山水关系放进一张图。书里没有写清的地方，我们就想象那里的景色，以及它们怎样连在一起。图上的距离也是想象的。</p>
+        <p lang="en">The Southern, Western, Northern, Eastern, and Central Mountains are all parts of the Classic of Mountains and Seas. We followed those directions and the book's named homes and waterways. Where the book leaves gaps, we imagined the scenery and how the places fit together. The distances on this map are imagined too.</p>
+      </details>
+
+      <section class="creature-catalog" aria-labelledby="catalog-title">
+        <div class="catalog-heading">
+          <h2 id="catalog-title">认识奇兽</h2>
+          <p lang="en">Meet the Mythical Creatures</p>
+        </div>
+
+        <div class="catalog-filters" aria-label="奇兽分类">
+          <div class="catalog-filter-group">
+            <h3>书里的篇章 <span lang="en">Book section</span></h3>
+            <div class="filter-pills" data-chapter-filters></div>
+          </div>
+          <div class="catalog-filter-group">
+            <h3>奇兽种类 <span lang="en">Creature type</span></h3>
+            <div class="filter-pills" data-kind-filters></div>
+          </div>
+        </div>
+
+        <p class="catalog-count" data-catalog-count aria-live="polite"></p>
+        <div class="catalog-grid" data-creature-catalog></div>
+      </section>
+    </main>
+
+    <section class="map-experience" data-map-experience role="dialog" aria-label="《山海经》奇兽互动地图 / The Classic of Mountains and Seas mythical creature map" aria-modal="true" aria-hidden="true">
+      <header class="map-toolbar">
+        <button class="round-control close-map" type="button" data-close-map aria-label="关闭地图 / Close map"><span aria-hidden="true">←</span><small>返回 / Back</small></button>
+        <div class="map-title">
+          <strong>《山海经》奇兽地图</strong>
+          <span lang="en">Mythical Creature Map</span>
+        </div>
+        <div class="zoom-controls" aria-label="地图缩放控制">
+          <button class="round-control" type="button" data-zoom-out aria-label="缩小地图 / Zoom out"><span aria-hidden="true">−</span><small>缩小 / Out</small></button>
+          <button class="round-control reset-control" type="button" data-reset-map aria-label="回到整张地图 / Return to the whole map"><span>全图</span><small lang="en">Whole map</small></button>
+          <button class="round-control" type="button" data-zoom-in aria-label="放大地图 / Zoom in"><span aria-hidden="true">＋</span><small>放大 / In</small></button>
+        </div>
+      </header>
+
+      <div class="map-chapters">
+        <div class="region-switcher" data-region-switcher role="group" aria-label="放大地图的一处 / Zoom to a part of the same map"></div>
+      </div>
+
+      <div class="map-viewport" data-map-viewport>
+        <div class="map-world" data-map-world>
+          <img class="map-base" data-map-base src="./assets/map-world.webp" alt="" draggable="false" />
+          <div class="creature-layer" data-creature-layer></div>
+          <div class="annotation-layer" data-annotation-layer></div>
+        </div>
+        <div class="creature-name" data-creature-name aria-hidden="true" hidden>
+          <strong lang="zh-Hans"></strong><span lang="en"></span>
+        </div>
+        <div class="map-compass" aria-label="上北、下南、左西、右东 / North up, south down, west left, east right"><span>↑</span><strong>北 N</strong></div>
+      </div>
+
+      <div class="map-help">
+        <button type="button" data-hint>给我一个线索 · Give me a clue</button>
+        <p data-hint-text aria-live="polite">放大、拖动地图，再点一点奇兽。 · Zoom, drag, and tap a creature to meet it.</p>
+      </div>
+
+      <aside class="creature-sheet" data-creature-sheet aria-label="奇兽故事 / Creature story" aria-hidden="true" aria-live="polite">
+        <div class="sheet-header"><button class="sheet-close" type="button" data-close-sheet aria-label="关闭角色故事 / Close creature story"><span aria-hidden="true">×</span></button></div>
+        <div data-sheet-content></div>
+      </aside>
+      <button class="sheet-scrim" type="button" data-close-sheet aria-label="关闭角色故事 / Close creature story" tabindex="-1"></button>
+    </section>
+
+    <noscript>这个互动地图需要开启 JavaScript 才能放大并查看奇兽故事。</noscript>
+    <script src="../../../../../site-footer.js"></script>
+  <script type="module" src="./app.js?v=20260928-jingwei-sea-v1"></script>
+  </body>
+</html>

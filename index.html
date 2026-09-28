@@ -7,7 +7,7 @@
     <title>Nihao World | Learn Chinese Through Language and Culture</title>
     <meta
       name="description"
-      content="Nihao World helps children learn Chinese through interactive lessons and stories from Chinese culture."
+      content="Nihao World helps children learn Chinese through interactive lessons and cultural stories. Created by Benjamin Sun, a student at Livingston High School."
     />
     <link rel="canonical" href="https://nihaoworld.org/" />
     <script type="application/ld+json">
@@ -20,7 +20,8 @@
         "creator": {
           "@type": "Person",
           "@id": "https://nihaoworld.org/about/author-project/#benjamin-sun",
-          "name": "Benjamin Sun"
+          "name": "Benjamin Sun",
+          "url": "https://nihaoworld.org/about/author-project/"
         }
       }
     </script>
@@ -50,7 +51,7 @@
       href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Lora:ital,wght@0,600;0,700;1,600;1,700&amp;family=Newsreader:opsz,wght@6..72,500;6..72,600&amp;family=Noto+Sans+SC:wght@500;600;700&amp;display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="homepage.css?v=20260907-canonical-home-v1" />
+    <link rel="stylesheet" href="homepage.css?v=20260927-shanhaijing-map-link-v1" />
     <link rel="stylesheet" href="shared-site-header.css?v=20260907-transparent-pathway-art-v4" />
     <script src="homepage.js" defer></script>
   </head>
@@ -158,7 +159,33 @@
         <div class="feature-window">
           <div class="feature-viewport">
             <div class="feature-track" data-story-track>
-            <article class="feature-slide is-active" data-story-slide>
+            <article class="feature-slide feature-slide--shanhaijing is-active" data-story-slide>
+              <div class="feature-copy">
+                <h3>The Classic of Mountains and Seas: A World of Mythical Creatures</h3>
+                <h4 lang="zh-Hans">《山海经》：山海之间的奇兽</h4>
+                <span>A fish with wings, a fox with nine tails—what else is hiding beyond the next mountain?</span>
+                <div class="feature-actions">
+                  <a href="culture/books/literature/shan-hai-jing/index.html">
+                    <span class="feature-action-label">Read the story<span lang="zh-Hans">读故事</span></span>
+                    <b aria-hidden="true">→</b>
+                  </a>
+                  <a href="culture/books/literature/shan-hai-jing/map/index.html">
+                    <span class="feature-action-label">Meet the Mythical Creatures<span lang="zh-Hans">认识奇兽</span></span>
+                    <b aria-hidden="true">→</b>
+                  </a>
+                </div>
+              </div>
+              <img
+                src="culture/books/literature/shan-hai-jing/images/1-strange-ancient-book.webp"
+                alt="A turquoise, winged fish rising from a clear mountain pool"
+                width="1280"
+                height="960"
+                loading="eager"
+                decoding="async"
+              />
+            </article>
+
+            <article class="feature-slide" data-story-slide>
               <div class="feature-copy">
                 <h3>Journey to the West: The Adventures of the Monkey King</h3>
                 <h4 lang="zh-Hans">《西游记》：美猴王的冒险</h4>
@@ -205,8 +232,8 @@
 
             <article class="feature-slide" data-story-slide>
               <div class="feature-copy">
-                <h3>Rice Terraces: Farming Up a Mountain</h3>
-                <h4 lang="zh-Hans">梯田：人们怎么把整座山变成农田？</h4>
+                <h3>Rice Terraces: How Did People Turn a Mountain into Real-Life Minecraft 1,300 Years Ago?</h3>
+                <h4 lang="zh-Hans">梯田：1300年前，人们怎么把整座山变成现实版 Minecraft？</h4>
                 <span>Discover how people and water reshaped mountains over centuries.</span>
                 <a href="culture/books/geography/rice-terraces/index.html">Read the story <b aria-hidden="true">→</b></a>
               </div>
@@ -228,6 +255,23 @@
               <img
                 src="culture/books/food/tea/images/5-1-whisking-tea.webp"
                 alt="Green tea leaves opening in a clear glass"
+                loading="eager"
+                decoding="async"
+              />
+            </article>
+
+            <article class="feature-slide feature-slide--spear-shield" data-story-slide>
+              <div class="feature-copy">
+                <h3>The Spear and the Shield</h3>
+                <h4 lang="zh-Hans">自相矛盾</h4>
+                <span>Nothing can pierce his shield. His spear can pierce anything. Can both be true?</span>
+                <a href="culture/books/folk-tales/the-spear-and-the-shield/index.html">Read the story <b aria-hidden="true">→</b></a>
+              </div>
+              <img
+                src="culture/books/folk-tales/the-spear-and-the-shield/images/1-spear-and-shield.webp"
+                alt="A puzzled seller holding a spear and shield as a child asks him a question"
+                width="1448"
+                height="1086"
                 loading="eager"
                 decoding="async"
               />
@@ -256,12 +300,14 @@
         </div>
 
         <div class="feature-dots" role="tablist" aria-label="Choose a featured story">
-          <button type="button" aria-label="Show Journey to the West" aria-current="true" data-story-dot="0"></button>
-          <button type="button" aria-label="Show Ancient Chinese Money" data-story-dot="1"></button>
-          <button type="button" aria-label="Show The Art of War" data-story-dot="2"></button>
-          <button type="button" aria-label="Show Rice Terraces" data-story-dot="3"></button>
-          <button type="button" aria-label="Show The Story of Chinese Tea" data-story-dot="4"></button>
-          <button type="button" aria-label="Show The Story of Dumplings" data-story-dot="5"></button>
+          <button type="button" aria-label="Show The Classic of Mountains and Seas" aria-current="true" data-story-dot="0"></button>
+          <button type="button" aria-label="Show Journey to the West" data-story-dot="1"></button>
+          <button type="button" aria-label="Show Ancient Chinese Money" data-story-dot="2"></button>
+          <button type="button" aria-label="Show The Art of War" data-story-dot="3"></button>
+          <button type="button" aria-label="Show Rice Terraces" data-story-dot="4"></button>
+          <button type="button" aria-label="Show The Story of Chinese Tea" data-story-dot="5"></button>
+          <button type="button" aria-label="Show The Spear and the Shield" data-story-dot="6"></button>
+          <button type="button" aria-label="Show The Story of Dumplings" data-story-dot="7"></button>
         </div>
       </section>
 
@@ -271,6 +317,7 @@
       <img src="assets/brand/zongzi-guide.webp" alt="" width="768" height="768" />
       <div class="footer-copy">
         <strong>Made with curiosity, care, and technology.</strong>
+        <span>Created by <a href="about/author-project/">Benjamin Sun</a>.</span>
         <span>© 2026 Nihao World. All rights reserved.</span>
       </div>
     </footer>

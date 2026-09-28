@@ -365,7 +365,8 @@ summary:focus-visible {
   gap: 15px;
 }
 
-.story-card {
+.story-card,
+.story-card-bundle {
   display: grid;
   overflow: hidden;
   grid-template-rows: auto 1fr;
@@ -378,10 +379,44 @@ summary:focus-visible {
   transition: border-color 160ms ease, box-shadow 160ms ease, transform 160ms ease;
 }
 
-.story-card:hover {
+.story-card:hover,
+.story-card-bundle:hover {
   border-color: rgba(37, 117, 114, 0.38);
   box-shadow: 0 16px 34px rgba(19, 66, 67, 0.11);
   transform: translateY(-3px);
+}
+
+.story-card-bundle {
+  min-width: 0;
+  grid-template-rows: 1fr auto;
+}
+
+.story-card-bundle > .story-card {
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  transform: none;
+}
+
+.story-map-link {
+  display: grid;
+  gap: 3px;
+  margin: 0 18px 18px;
+  padding: 12px;
+  border: 1px solid var(--teal-200);
+  border-radius: 10px;
+  background: var(--teal-100);
+  color: var(--teal-800);
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.35;
+  text-decoration: none;
+}
+
+.story-map-link:hover {
+  border-color: var(--teal-700);
+  background: var(--teal-200);
 }
 
 .story-image {
@@ -411,6 +446,10 @@ summary:focus-visible {
 
 .story-image.is-ready img {
   opacity: 1;
+}
+
+.story-image img[data-story-image="literature/shan-hai-jing"] {
+  object-position: center 68%;
 }
 
 @keyframes image-loading {

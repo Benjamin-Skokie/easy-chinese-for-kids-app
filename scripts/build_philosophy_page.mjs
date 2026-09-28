@@ -126,12 +126,14 @@ function renderSection(block, availableImages = new Set(), { suppressRepeatedHea
   const headingZh = parseField(block.raw, "heading_zh");
   const headingEn = parseField(block.raw, "heading_en");
   const image = parseField(block.raw, "image");
+  const imageAspect = parseField(block.raw, "image_aspect");
   const captionZh = parseField(block.raw, "caption_zh");
   const captionEn = parseField(block.raw, "caption_en");
   const zh = parseTaggedBlock(block.raw, "zh");
   const en = parseTaggedBlock(block.raw, "en");
   const hasImage = Boolean(image) && availableImages.has(image);
   const imageSrc = hasImage ? `./images/${image}` : "";
+  const floatedImageStyle = imageAspect === "wide" ? ' style="aspect-ratio: 16 / 9"' : "";
   const resolvedLayout = shouldUseTextWrap(layout, zh, en, hasImage) ? "text-wrap-image" : layout;
   const sectionHeadingMarkup = headingZh || headingEn
     ? `
@@ -160,7 +162,7 @@ function renderSection(block, availableImages = new Set(), { suppressRepeatedHea
     return `      <section class="page story two-column text-wrap-image">
         <div class="story-copy">
           ${headingLine}<figure class="floated-figure">
-            <img src="${escapeHtml(imageSrc)}" alt="" class="floated-image" />
+            <img src="${escapeHtml(imageSrc)}" alt="" class="floated-image"${floatedImageStyle} />
             <figcaption class="caption floated-caption"><span class="zh">${formatInline(captionZh)}</span><br><span class="en">${formatInline(captionEn)}</span></figcaption>
           </figure>
           ${renderTextBlock(zh, "zh")}

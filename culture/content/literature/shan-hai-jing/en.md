@@ -1,49 +1,49 @@
 > Difficulty: Easy
 
-# Shan Hai Jing: What Lives Beyond the Next Mountain?
+# The Classic of Mountains and Seas: A World of Mythical Creatures
 
-## Open the Old Scroll and Choose a Mountain Road
+## What Is the Classic of Mountains and Seas?
 
-Imagine that someone places a scroll more than two thousand years old in your hands. It does not begin, “Once there was a hero.” Instead, it gives you a road: start at this mountain, travel east, and you will reach another mountain. What trees grow there? Where does the river go? What animal hides behind the rocks?
+The [[Classic of Mountains and Seas|shan-hai-jing]] is an ancient Chinese book about mountains, rivers, plants, animals, gods, and mythical creatures. It describes where things were said to live and what made them special. The *wényáoyú*, the fish in this picture, has wings and flies at night.
 
-This scroll is [[Shan Hai Jing|shan-hai-jing]], the *Classic of Mountains and Seas*. One person did not sit down and write it all at once. Over a long time, different people gathered descriptions of mountains, ceremonies, old tales, and strange reports. No one now knows the names of the first writers.
+The book began taking shape more than 2,000 years ago. Different people added to it over many generations. They gathered accounts of distant places, useful plants and minerals, stories about gods, and ways of honoring them. Reading it gives us a glimpse of how people understood the world around them.
 
-The names are lost, but the road remains. Follow the directions and you may find jade on a mountain, copper at its foot, or a fish with wings in the water.
+The version we read today has eighteen chapters. Five make up the Mountain Classic: Southern, Western, Northern, Eastern, and Central Mountains. These chapters move from mountain to mountain, naming rivers and describing what lives or grows nearby.
 
-Turn one more page. A call rises from the trees. It sounds almost like singing—but no person is there. Something is stepping out of the forest.
+The other thirteen are usually grouped as the Sea Classic. They include chapters called Within the Seas, Beyond the Seas, and the Great Wilderness. They explore much more than the sea: there are distant lands, the people said to live there, and stories about gods.
 
----
-
-## Travel East: A Singing Beast, a Bird-Headed Turtle, and a Nine-Tailed Fox
-
-Begin among the southern mountains. At Niuyang Mountain, a creature called the *lushu* steps from the trees. Its body looks like a horse. Its head is white, its body has tiger stripes, and its tail is bright red. The singing sound you heard belongs to this creature.
-
-In the mountain river lives a *xuangui*, or whirling turtle. It has a turtle's body, a bird's head, and a tail like a snake. When it opens its mouth, it does not chirp like a bird. It sounds like a piece of wood splitting with a loud crack.
-
-Keep traveling east until you reach Qingqiu Mountain. A baby's cry comes from the trees. Do not go looking for a lost baby. The sound belongs to a fox. It turns around, and behind it wave not one, not two, but nine long tails.
-
-*Shan Hai Jing* often gives a creature only a few lines before hurrying toward the next mountain. It never tells us where the lushu went or why the fox grew nine tails. The empty space is left for the reader to fill.
+Explore our [map of mythical creatures](./map/index.html). Choose a chapter to meet the creatures described in that part of the book. Their homes come from the text, but we've imagined how the landscape fits together.
 
 ---
 
-## Why Does the Little Bird of Fajiu Mountain Fly Toward the Sea?
+## Signs of Good Fortune and Trouble
 
-On northern Fajiu Mountain lives a bird about the size of a crow. She has a patterned head, a white beak, and red feet. As she flies over the valley, her call sounds like her own name: “[[Jingwei|jingwei]]! Jingwei!”
+The Southern Mountains chapter introduces the three creatures in this picture. The *lùshǔ* looks like a horse with tiger stripes and a red tail, but its call sounds like singing. The *xuánguī* has a turtle's body, a bird's head, and a snake-like tail. Its voice sounds like wood cracking. The nine-tailed fox cries like a baby.
 
-Jingwei was not always a bird. She was once a young girl, the daughter of the Flame Emperor. One day she went to the Eastern Sea, drowned, and never returned home. Afterward, she became this little bird.
+Yet a creature's appearance was only part of its description. The book also tells readers what seeing it could mean. A *fènghuáng*, or Chinese phoenix, is a sign of peace. The pig-like *dāngkāng*, with its tusks, signals a plentiful harvest. Both are signs of good fortune.
 
-Every day, Jingwei picks up a twig or a small stone from the western mountains. Then she flies over the Eastern Sea and drops it into the waves. She means to fill the sea that took her life, one tiny piece at a time. The next day, she returns for one more. The stones are tiny and the sea is enormous, but she does not stop.
+Other creatures warn of trouble. The *chángyòu*, which looks like a monkey with four ears, is linked to floods. In these accounts, seeing a creature can be a reason to hope or to worry.
 
-One stone disappears beneath the waves. Jingwei turns around and flies back toward Fajiu Mountain. Her task is not finished, but the story ends while she is still making the journey again and again.
+Why connect an animal with a harvest or a flood? For farming families, rain could make all the difference. Too little could leave crops dry; too much could wash them away. We do not know how every creature was first imagined. But these descriptions reveal familiar hopes and fears: enough food, a safe home, and peaceful days.
 
 ---
 
-## If You Drew the Next Mountain, What Would Live There?
+## Jīngwèi and the Sea
 
-After reading about the nine-tailed fox and Jingwei, a boy opens an illustrated book about *Shan Hai Jing* and places his own sketchbook beside it. Among the mountains on the open page stands a horned, scaly, four-legged creature with a curling tail. It looks a little like a dragon. He studies it for a moment and picks up his pencil.
+Some entries tell a story, too. One is about [[Jīngwèi|jingwei]], a bird that looks like a crow, with a patterned head, a white beak, and red feet. Her home is Fājiū Mountain, in the Northern Mountains chapter.
 
-He begins with a long face and pointed horns. Then he adds a scaled body, four clawed feet, and a curling tail. The creature in his sketchbook resembles the one in the book, but it is not exactly the same. He is giving his new creature a shape of its own.
+According to the story, Jīngwèi was once the youngest daughter of the Flame Emperor. She drowned while visiting the Eastern Sea and became a bird. Then she began carrying twigs and stones from the western mountains to the Eastern Sea, trying to fill it in.
 
-This creature may not have a name in the old *Shan Hai Jing*. Yet it seems able to step through the door that the book opened. Many creatures in the ancient text appear in a similar way: familiar animals are joined together, then given a sound no one expects and one very strange ability.
+A bird can carry only a little at a time. The sea is enormous. Still, Jīngwèi keeps returning with more. Her home is in the north, but her story reaches all the way to the Eastern Sea.
 
-A wide part of the map is still blank. The next mountain might be red, or it might float above the clouds. What waits behind it? You will not know until you keep drawing the road.
+---
+
+## The Dragon and the Rain
+
+Yìnglóng, the dragon in this picture, has a close connection with rain. In one passage, a drought follows when the dragon cannot return to the sky. People make a model of the dragon, and rain comes. The story connects a dragon's image with the hope of ending a drought.
+
+Rain means water in the rivers and food growing in the fields. A story about bringing back the rain is also a story about having enough to eat.
+
+A scholar named Guō Pú, who wrote notes explaining the book, described Yìnglóng as a dragon with wings. That detail helps us recognize it in the child's drawing.
+
+Readers have pictured these creatures for centuries. Illustrated copies of the book were printed more than 400 years ago. Today, the same winged dragon can appear in a picture book, on our map, or in a child's sketchbook.

@@ -1,108 +1,60 @@
-# Easy Chinese for Kids
+# Nihao World
 
-This is a small, static learning website for children studying Chinese. It has topic-based lessons, book-based lessons, practice games, illustrated assets, and a separate Culture reading area.
+A static website for children learning Chinese, with illustrated practice, textbook-linked lessons, and bilingual culture stories. Built with HTML, CSS, JavaScript, and esbuild.
 
-The sections below explain what the files do and where to make changes.
+[Visit nihaoworld.org](https://nihaoworld.org/)
 
-## The three web building blocks
+## Run locally
 
-Think of each screen as a house:
-
-- **HTML** is the structure: the rooms, headings, buttons, and empty spaces where lesson content appears. In this project, [index.html](./index.html) is the main page.
-- **CSS** is the appearance: colours, fonts, spacing, mobile layout, and animations. [styles.css](./styles.css) controls the main app’s appearance; Culture pages have their own CSS files.
-- **JavaScript** is the behaviour: it fills in lesson content, responds when a child presses a button, plays audio, runs games, and changes between topics. The editable JavaScript lives in `src/`.
-
-Images and other media live in `assets/`. A lesson’s JavaScript data points to the image it needs.
-
-## How the app starts
-
-```text
-index.html
-  ├─ loads styles.css              (how the app looks)
-  └─ loads app.js                  (how the app behaves)
-       └─ generated from src/main.js
-            └─ starts src/app/runtime-wiring.js
-                 ├─ core shared behaviour
-                 ├─ lesson/topic data
-                 └─ feature-specific games and displays
-```
-
-`app.js` is **automatically generated**. Do not edit it manually. It is kept in the repository so a fresh copy of the project can be opened directly from `index.html`, even without installing developer tools.
-
-## Important file structure
-
-```text
-.
-├── index.html                 Main page structure
-├── styles.css                 Main page styling
-├── app.js                     Generated browser file — do not edit
-├── src/                       Editable JavaScript source code
-│   ├── main.js                Build entry point
-│   ├── app/
-│   │   └── runtime-wiring.js  Connects the app’s parts at startup
-│   ├── core/                  Shared navigation, audio, state, and UI behaviour
-│   ├── data/                  Course, book, character, and topic registry data
-│   ├── features/              Lesson content and interactions, grouped by subject
-│   │   ├── foundations/       Numbers, greetings, introductions, family basics
-│   │   ├── food/              Food, preferences, and meals
-│   │   ├── school-life/       Stationery, classroom, and school lessons
-│   │   ├── time-daily-life/   Weekdays, time, dates, home, transport, and positions
-│   │   └── ...                Other topic groups
-│   └── games/                 Reusable practice-game behaviour
-├── assets/                    Lesson images and image manifests
-├── culture/                   Separate Culture reading pages and their images
-├── scripts/                   Build, development-server, and validation tools
-├── tests/                     Automated checks for lesson data and app structure
-└── docs/                      Planning notes and detailed project documentation
-```
-
-## Where to make common changes
-
-| If you want to change… | Start here |
-| --- | --- |
-| Text, buttons, or the overall page layout | `index.html` |
-| Colours, spacing, fonts, or layout | `styles.css` |
-| A topic’s words, sentences, scenes, or practice items | The matching file under `src/features/` |
-| Book order, lesson-to-topic links, or home-page categories | `src/data/curriculum.js` |
-| Which topics the app knows about | `src/data/topic-registry.js` |
-| Shared audio, navigation, or game behaviour | `src/core/` or `src/games/` |
-| Culture articles | `culture/` and the [Culture guide](./docs/culture/README.md) |
-| An illustration | `assets/` and the lesson file that references it |
-
-For a new or changed learning topic, edit the relevant `src/features/` file first, then make sure it is registered in `src/data/topic-registry.js` and linked from `src/data/curriculum.js` if it should appear in the book or topic navigation.
-
-For Culture work, begin with the [Culture guide](./docs/culture/README.md). It points to the current bilingual writing guidelines, research and rewrite workflow, fast story landing workflow, art direction, and Culture landing-page workflow. Superseded Culture documents are kept under `docs/archive/culture/` for historical reference and should not be used as active instructions.
-
-## Everyday developer commands
-
-Install the project’s development tool once:
+Use Node.js 24 and npm. From the repository folder:
 
 ```sh
-npm install
-```
-
-Start a local development site that automatically rebuilds after source changes:
-
-```sh
+npm ci
 npm run dev
 ```
 
-Then visit `http://127.0.0.1:4173` in a browser.
+Open [localhost:4173](http://127.0.0.1:4173). No database or API keys are needed for local development.
 
-Create the updated generated `app.js` after changing files in `src/`:
+## Project structure
 
-```sh
-npm run build
+```text
+.
+├── index.html          Homepage; uses homepage.css and homepage.js
+├── learn.html          Learn Chinese entrance
+├── books.html          Book Lessons entrance
+├── culture.html        Culture Stories catalog
+├── lesson.html         Learning activities; loads generated app.js
+├── src/                Editable learning-application source
+│   ├── features/       Topic content and activities
+│   ├── data/           Curriculum and topic registry
+│   ├── core/           Shared application behavior
+│   └── games/          Reusable practice interactions
+├── assets/             Images, audio, and asset manifests
+├── culture/
+│   ├── content/        Story manuscripts, references, and source art
+│   └── books/          Generated story pages and the interactive map
+├── scripts/            Build, preview, and validation tools
+├── tests/              Automated checks
+└── docs/               Project guides; archive/ holds historical notes
 ```
 
-Run the complete safety check before committing changes:
+## Editing
 
-```sh
-npm run check
-```
+- **Learning activities:** edit `src/`, not the generated `app.js`. Page styles and scripts sit alongside their HTML files.
+- **Culture stories:** edit `culture/content/<category>/<slug>/page.md`. The `zh.md` and `en.md` files are generated reading copies. Follow the [Culture guide](./docs/culture/README.md) to sync manuscripts and rebuild pages.
+- **Creature map:** edit `culture/books/literature/shan-hai-jing/map/` directly. Unlike the story pages, it is not generated by the Culture builder.
+- **Images:** use WebP within 120,000 bytes. Only the full creature map has a larger [documented budget](./docs/project-statistics.md#image-delivery-budget).
 
-That command validates lesson data, rebuilds `app.js`, runs the automated tests, checks JavaScript syntax, and checks for whitespace errors.
+## Build and check
 
-## A note on generated files
+| Command | Purpose |
+| --- | --- |
+| `npm run build` | Rebuild app.js, sitemap, and project counts; check image sizes. |
+| `npm run build:culture` | Generate Culture story pages from their manuscripts. |
+| `npm run check` | Run the build, data validation, tests, syntax, path, and whitespace checks. |
 
-Edit files in `src/`, not `app.js`. The build process combines the modular source files into one browser-ready script. This makes the project easier to maintain while keeping the finished site simple to open and share.
+The development server rebuilds learning-app JavaScript automatically; Culture manuscript changes need a separate build. Generated website files are checked in. Pushing to `main` triggers the [deployment workflow](./.github/workflows/deploy-pages.yml).
+
+## Further documentation
+
+[Documentation guide](./docs/README.md) · [Culture guide](./docs/culture/README.md) · [Project statistics](./docs/project-statistics.md) · [Changelog](./CHANGELOG.md)
