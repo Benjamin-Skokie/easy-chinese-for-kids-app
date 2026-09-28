@@ -91,7 +91,7 @@ test("the canonical root is the migrated homepage", () => {
   const devServerSource = readFileSync("scripts/dev_app.mjs", "utf8");
   const homepage = readFileSync("index.html", "utf8");
   assert.match(devServerSource, /pathname === "\/" \? "index\.html"/);
-  assert.match(homepage, /homepage\.css\?v=20260907-canonical-home-v1/);
+  assert.match(homepage, /homepage\.css\?v=20260927-shanhaijing-map-link-v1/);
   assert.match(homepage, /<script src="homepage\.js" defer><\/script>/);
   assert.match(homepage, /params\.has\("topic"\)[\s\S]*lesson\.html/);
   assert.equal(existsSync("homepage-v2.html"), false);
@@ -140,8 +140,10 @@ test("search discovery metadata links the site, creator profile, and sitemap", a
   assert.equal(website.url, `${sitemapSiteOrigin}/`);
   assert.equal(website["@id"], `${sitemapSiteOrigin}/#website`);
   assert.equal(website.creator.name, "Benjamin Sun");
+  assert.equal(website.creator.url, `${sitemapSiteOrigin}/about/author-project/`);
   assert.equal(profile.url, `${sitemapSiteOrigin}/about/author-project/`);
   assert.equal(profile.mainEntity.name, "Benjamin Sun");
+  assert.equal(profile.name, "Benjamin Sun | Creator of Nihao World");
   assert.equal(profile.mainEntity["@id"], website.creator["@id"]);
   assert.equal(profile.primaryImageOfPage.contentUrl, creatorPortraitUrl);
   assert.equal(profile.primaryImageOfPage.width, 582);
@@ -156,16 +158,24 @@ test("search discovery metadata links the site, creator profile, and sitemap", a
   });
   assert.equal(profile.mainEntity.address, undefined);
   assert.equal(profile.mainEntity.affiliation.address.streetAddress, undefined);
+  assert.match(homepage, /<span>Created by <a href="about\/author-project\/">Benjamin Sun<\/a>\.<\/span>/);
+  assert.match(homepage, /name="description"\s+content="[^"]*Benjamin Sun, a student at Livingston High School\./);
+  const portraitSrc = creatorPage.match(/<img src="([^"]*benjamin-sun-portrait[^\"]*)"/)?.[1];
+  assert.equal(new URL(portraitSrc, profile.url).href, creatorPortraitUrl, "use one portrait URL in HTML, structured data, and the image sitemap");
+  for (const html of [homepage, creatorPage]) {
+    assert.doesNotMatch(html, /<meta[^>]+name="(?:robots|googlebot|googlebot-image)"[^>]+content="[^"]*(?:noindex|noimageindex|none)[^"]*"/i);
+  }
   assert.match(creatorPage, /<link rel="canonical" href="https:\/\/nihaoworld\.org\/about\/author-project\/" \/>/);
 
   const urls = await buildSitemapUrls(process.cwd());
   const storyUrls = urls.filter((url) => url.includes("/culture/books/"));
-  assert.equal(urls.length, 121);
+  assert.equal(urls.length, 123);
   assert.equal(new Set(urls).size, urls.length);
-  assert.equal(storyUrls.length, 113);
+  assert.equal(storyUrls.length, 115);
   assert.ok(urls.includes(`${sitemapSiteOrigin}/`));
   assert.ok(urls.includes(`${sitemapSiteOrigin}/about/author-project/`));
   assert.ok(urls.includes(`${sitemapSiteOrigin}/culture/books/figures/mulan/`));
+  assert.ok(urls.includes(`${sitemapSiteOrigin}/culture/books/literature/shan-hai-jing/map/`));
   assert.ok(urls.every((url) => url.startsWith(`${sitemapSiteOrigin}/`)));
   assert.ok(urls.every((url) => !url.includes("lesson.html")));
   assert.ok(urls.every((url) => !url.includes("food-dumplings")));
@@ -213,16 +223,16 @@ test("Privacy and Safety opens a plain-language family page", () => {
   assert.match(sourcesPage, /Arphic Public License/);
   assert.match(cultureSources, /window\.NIHAO_CULTURE_SOURCES/);
   assert.match(cultureSources, /culture\/books\/figures\/mulan/);
-  assert.equal((cultureSources.match(/"storyPath":/g) ?? []).length, 113);
-  assert.match(sourcesPage, /data-source-count aria-live="polite">113 stories<\/p>/);
+  assert.equal((cultureSources.match(/"storyPath":/g) ?? []).length, 114);
+  assert.match(sourcesPage, /data-source-count aria-live="polite">114 stories<\/p>/);
   assert.match(html, /href="about\/author-project\/index\.html">[\s\S]*Creator &amp; the Project/);
   assert.match(authorPage, /Benjamin Sun/);
   assert.match(authorPage, /Livingston High School/);
-  assert.match(authorPage, /<title>Creator &amp; the Project \| Nihao World<\/title>/);
-  assert.match(authorPage, /<meta property="og:title" content="Creator &amp; the Project \| Nihao World"/);
+  assert.match(authorPage, /<title>Benjamin Sun \| Creator of Nihao World<\/title>/);
+  assert.match(authorPage, /<meta property="og:title" content="Benjamin Sun \| Creator of Nihao World"/);
   assert.match(authorPage, new RegExp(`<meta property="og:image" content="${creatorPortraitUrl}"`));
   assert.match(authorPage, /alt="Benjamin Sun, student creator of Nihao World"/);
-  assert.equal((authorPage.match(/assets\/photos\/benjamin-sun-portrait\.webp\?v=20260830-square-v1/g) ?? []).length, 1);
+  assert.equal((authorPage.match(/<img src="\.\.\/\.\.\/assets\/photos\/benjamin-sun-portrait\.webp"/g) ?? []).length, 1);
   assert.equal((authorPage.match(/width="582" height="582"/g) ?? []).length, 1);
   assert.match(authorPage, /gpt-4o-mini-tts/);
   assert.doesNotMatch(authorPage, /Benjamin-Skokie\/easy-chinese-for-kids-app|View source code on GitHub/);
@@ -232,8 +242,8 @@ test("Privacy and Safety opens a plain-language family page", () => {
   assert.doesNotMatch(authorPage, /Why I built it/i);
   assert.match(authorPage, /<strong>43<\/strong><span>learning topics<\/span>/);
   assert.match(authorPage, /<strong>56<\/strong><span>textbook lessons aligned<\/span>/);
-  assert.match(authorPage, /<strong>113<\/strong><span>culture stories<\/span>/);
-  assert.match(authorPage, /<strong>650\+<\/strong><span>referenced visual assets<\/span>/);
+  assert.match(authorPage, /<strong>114<\/strong><span>culture stories<\/span>/);
+  assert.match(authorPage, /<strong>\d+\+<\/strong><span>referenced visual assets<\/span>/);
   assert.match(authorPage, /1,244/);
   assert.match(privacyPage, /No accounts/);
   assert.match(privacyPage, /the site is publicly available/);
@@ -259,7 +269,7 @@ test("Creator and the Project presents the creator below the sticky header", () 
   const authorStyles = readFileSync("about/author-project/styles.css", "utf8");
 
   assert.match(authorPage, /styles\.css\?v=20260910-compact-title-v1/);
-  assert.match(authorPage, /<h1>Creator &amp;<br \/>the Project<\/h1>/);
+  assert.match(authorPage, /<h1>Benjamin Sun<br \/>&amp; Nihao World<\/h1>/);
   assert.match(authorPage, /<section class="author-section" id="author">[\s\S]*About the creator[\s\S]*Hi, I’m Benjamin Sun\./);
   assert.match(authorStyles, /\.author-section\{[^}]*scroll-margin-top:112px/);
   assert.match(authorStyles, /@media\(max-width:560px\)[\s\S]*\.story-section,\.author-section\{scroll-margin-top:92px\}/);
@@ -336,10 +346,508 @@ test("the mobile menu exposes About and production pages show site copyright", (
   assert.match(footerSource, /Made with curiosity, care, and technology\./);
   assert.match(footerSource, /© 2026 Nihao World\. All rights reserved\./);
   assert.match(cultureTemplate, /site-footer\.js/);
-  assert.equal(culturePages.length, 114);
+  assert.equal(culturePages.length, 116);
   for (const pagePath of culturePages) {
     assert.match(readFileSync(pagePath, "utf8"), /site-footer\.js/, `${pagePath} is missing the site footer`);
   }
+});
+
+test("Shan Hai Jing offers one source-backed, twenty-eight-creature world", async () => {
+  const mapDirectory = "culture/books/literature/shan-hai-jing/map";
+  const storyPage = readFileSync("culture/books/literature/shan-hai-jing/index.html", "utf8");
+  const culturePage = readFileSync("culture/index.html", "utf8");
+  const mapPage = readFileSync("culture/books/literature/shan-hai-jing/map/index.html", "utf8");
+  const mapApp = readFileSync("culture/books/literature/shan-hai-jing/map/app.js", "utf8");
+  const mapStyles = readFileSync("culture/books/literature/shan-hai-jing/map/styles.css", "utf8");
+  const creatureData = readFileSync("culture/books/literature/shan-hai-jing/map/creatures.js", "utf8");
+  const creatureStories = readFileSync("culture/books/literature/shan-hai-jing/map/stories.js", "utf8");
+  const { creatures } = await import("../culture/books/literature/shan-hai-jing/map/creatures.js");
+  const { creatureStories: allStories } = await import("../culture/books/literature/shan-hai-jing/map/stories.js");
+  const { worldMap, regions, places, annotations, geographyRelations: sourceGeographyRelations } = await import("../culture/books/literature/shan-hai-jing/map/map-regions.js");
+  const additions = ["yinglong", "qiongqi", "zouwu", "tiangou", "sanqingniao", "biyiniao", "tianma", "jiliang"];
+  const regionsById = new Map(regions.map((region) => [region.id, region]));
+  const placesById = new Map(places.map((place) => [place.id, place]));
+  const creaturesById = new Map(creatures.map((creature) => [creature.id, creature]));
+
+  assert.equal(creatures.length, 28);
+  assert.equal(creaturesById.size, 28);
+  assert.equal(Object.keys(allStories).length, 28);
+  assert.equal(regions.length, 6);
+  assert.equal(regionsById.size, 6);
+  assert.deepEqual(Object.fromEntries(regions.map((region) => [region.id, creatures.filter((creature) => creature.regionId === region.id).length])), {
+    western: 10,
+    northern: 6,
+    central: 2,
+    eastern: 1,
+    southern: 7,
+    "eastern-sea": 2
+  });
+  assert.equal(placesById.size, places.length, "a book location must have only one source record");
+  for (const place of places) {
+    assert.ok(regionsById.has(place.regionId), `${place.id} has an unknown world region`);
+    for (const key of ["nameZh", "pinyin", "nameEn"]) {
+      assert.ok(place[key]?.trim(), `${place.id} is missing ${key}`);
+    }
+    assert.ok(Number.isFinite(place.x) && place.x > 0 && place.x < 100, `${place.id} lies outside the map horizontally`);
+    assert.ok(Number.isFinite(place.y) && place.y > 0 && place.y < 100, `${place.id} lies outside the map vertically`);
+  }
+  for (const annotation of annotations) {
+    assert.ok(["region", "sea", "wilderness", "water"].includes(annotation.kind));
+    assert.ok(annotation.textZh?.trim() && annotation.textEn?.trim(), "map annotations must be bilingual");
+    assert.ok(Number.isFinite(annotation.x) && annotation.x > 0 && annotation.x < 100);
+    assert.ok(Number.isFinite(annotation.y) && annotation.y > 0 && annotation.y < 100);
+  }
+  for (const creature of creatures) {
+    for (const key of ["nameZh", "nameEn", "pinyin", "chapter", "locationZh", "locationEn", "locationPinyin", "clueZh", "clueEn", "regionId", "placeId"]) {
+      assert.ok(creature[key]?.trim(), `${creature.id} is missing ${key}`);
+    }
+    assert.ok(creature.kind?.key && creature.habitat?.key && creature.traits.length, `${creature.id} is missing catalog tags`);
+    assert.equal(creature.locationEn, creature.locationEn.normalize("NFD").replace(/[\u0300-\u036f]/g, ""), `${creature.id} place label should match the map's plain English formatting`);
+    assert.ok(creature.position.x > 0 && creature.position.x < 100 && creature.position.y > 0 && creature.position.y < 100);
+    assert.ok(creature.position.width > 0 && creature.position.x - creature.position.width / 2 >= 0 && creature.position.x + creature.position.width / 2 <= 100, `${creature.id} extends beyond the map edge`);
+    const place = placesById.get(creature.placeId);
+    assert.ok(place, `${creature.id} is missing its place`);
+    if (creature.id === "jingwei") {
+      // Her home stays inland; this map scene shows the journey over the sea.
+      assert.equal(place.id, "fajiu");
+      assert.equal(place.regionId, "northern");
+      assert.equal(creature.regionId, "eastern-sea");
+      assert.equal(creature.chapter, "《北山经》");
+    } else {
+      assert.equal(place.regionId, creature.regionId, `${creature.id} and its place are in different regions`);
+    }
+    assert.ok(allStories[creature.id], `${creature.id} is missing its reading card`);
+  }
+  for (const [first, second, placeId] of [["lushu", "xuangui", "niuyang"], ["zheng", "bifang", "zhange"]]) {
+    assert.equal(creaturesById.get(first).placeId, placeId);
+    assert.equal(creaturesById.get(second).placeId, placeId);
+    assert.equal(places.filter((place) => place.id === placeId).length, 1, `${first} and ${second} must share one book location`);
+  }
+  assert.ok(sourceGeographyRelations.some((relation) => relation.type === "east-of"));
+  assert.ok(sourceGeographyRelations.some((relation) => relation.type === "west-of"));
+  assert.ok(sourceGeographyRelations.some((relation) => relation.type === "north-of"));
+  for (const relation of sourceGeographyRelations) {
+    if (relation.type === "same-place") {
+      assert.ok(placesById.has(relation.placeId));
+      for (const id of relation.creatures) {
+        assert.equal(creaturesById.get(id)?.placeId, relation.placeId, `${id} lost its shared book location`);
+      }
+      continue;
+    }
+    const place = placesById.get(relation.place);
+    const reference = placesById.get(relation.reference);
+    assert.ok(place && reference, `missing place in ${relation.type} relation`);
+    const followsDirection = {
+      "east-of": place.x > reference.x,
+      "west-of": place.x < reference.x,
+      "north-of": place.y < reference.y
+    }[relation.type];
+    assert.equal(followsDirection, true, `${relation.place} must be ${relation.type} ${relation.reference}`);
+  }
+  for (const id of additions) {
+    const creature = creaturesById.get(id);
+    assert.ok(creature.sources.length > 0, `${id} is missing internal source references`);
+    assert.ok(creature.sources.every((source) => source.title && source.note && /^https:\/\//.test(source.url)));
+    assert.equal(allStories[id].kind, "source-reading");
+    assert.equal(allStories[id].zh.length, 3);
+    assert.equal(allStories[id].en.length, 3);
+  }
+
+  assert.match(storyPage, /href="\.\/map\/index\.html">打开《山海经》奇兽地图/);
+  assert.match(culturePage, /data-experience="shan-hai-jing-map"[\s\S]*href="\.\/books\/literature\/shan-hai-jing\/map\/index\.html"/);
+  assert.match(mapPage, /data-map-viewport/);
+  assert.match(mapPage, /data-hint/);
+  assert.match(mapPage, /《山海经》里的二十八组奇兽藏在这片山水间[\s\S]*Meet twenty-eight kinds of mythical creatures from the Classic of Mountains and Seas/);
+  const mapTitleBlock = mapPage.match(/<section class="intro"[^>]*>([\s\S]*?)<\/section>/)?.[1];
+  assert.ok(mapTitleBlock);
+  assert.doesNotMatch(mapTitleBlock, /<p\b|<a\b/, "keep instructions and links out of the title block");
+  assert.match(mapPage, /<\/section>\s*<div class="map-intro"[\s\S]*?<\/div>\s*<button class="map-preview"/);
+  assert.match(mapStyles, /\.intro \{[^}]*width: 100%;[^}]*max-width: none;/, "align the title panel with the full-width map");
+  assert.match(mapStyles, /\.map-source-note \{[^}]*width: 100%;[^}]*margin: 22px 0 0;/, "align the source note with the map, including on mobile");
+  assert.equal((mapStyles.match(/\.map-source-note \{/g) || []).length, 1, "do not introduce a narrower source-note breakpoint");
+  assert.match(mapStyles, /\.creature-catalog \{[^}]*width: 100%;[^}]*max-width: none;/, "let the filters and cards share the map's outer edges");
+  assert.match(mapStyles, /\.catalog-heading \{[^}]*text-align: left;/, "align the guide heading with its filters and cards");
+  assert.match(mapPage, /class="map-intro"[\s\S]*class="story-link" href="\.\.\/index\.html"[\s\S]*读《山海经》的故事[\s\S]*Read the story[\s\S]*class="map-preview"/, "keep the story link visible above the map");
+  const sourceNote = mapPage.match(/<details class="map-source-note">[\s\S]*?<\/details>/)?.[0];
+  assert.ok(sourceNote);
+  assert.doesNotMatch(sourceNote, /class="story-link"/, "do not hide the story entry inside the source disclosure");
+  assert.match(storyPage, /class="story-link" href="\.\/map\/index\.html"/, "the story must link back to the creature map");
+  assert.match(mapPage, /<h1 id="page-title">《山海经》奇兽地图<\/h1>[\s\S]*<h2 lang="en">The Classic of Mountains and Seas: Mythical Creature Map<\/h2>/);
+  assert.match(storyPage, /<h2>The Classic of Mountains and Seas: A World of Mythical Creatures<\/h2>/);
+  assert.match(culturePage, /The Classic of Mountains and Seas: A World of Mythical Creatures/);
+  for (const copy of [mapPage, mapApp, creatureStories, storyPage]) {
+    assert.doesNotMatch(copy, /\bShan Hai Jing\b/, "use the English book title in child-facing copy, not bare romanization");
+  }
+  assert.match(storyPage, /Shānhǎi Jīng/, "keep Chinese pronunciation available in the glossary");
+  assert.match(mapPage, /放大奇兽地图[\s\S]*Zoom in to explore/);
+  assert.match(mapPage, /data-reset-map[\s\S]*全图[\s\S]*Whole map/);
+  assert.match(mapPage, /<details class="map-source-note">[\s\S]*都是《山海经》里的篇章[\s\S]*图上的距离也是想象的[\s\S]*The distances on this map are imagined too/);
+  assert.doesNotMatch(mapPage, /our artists/i, "do not invent an artist team in the map explanation");
+  assert.match(mapPage, /data-region-switcher[\s\S]*data-map-viewport[\s\S]*data-annotation-layer/);
+  assert.doesNotMatch(mapPage, /data-place-layer/);
+  assert.match(mapPage, /data-creature-name aria-hidden="true" hidden/);
+  assert.match(mapPage, /class="map-preview"[\s\S]*src="\.\/assets\/map-world-preview\.webp"[\s\S]*data-preview-creatures/);
+  assert.match(mapPage, /map-compass[\s\S]*北 N/);
+  assert.doesNotMatch(mapPage, /shan-hai-map-base\.webp/);
+  assert.match(mapPage, /styles\.css\?v=20260928-placement-audit-v1/);
+  assert.match(mapPage, /app\.js\?v=20260928-jingwei-sea-v1/);
+  assert.doesNotMatch(mapPage, /reading aids|scientific classifications|阅读分类|Creature form/);
+  const catalogHeading = mapPage.match(/<div class="catalog-heading">([\s\S]*?)<\/div>/)?.[1];
+  assert.ok(catalogHeading);
+  assert.match(catalogHeading, /<h2 id="catalog-title">认识奇兽<\/h2>\s*<p lang="en">Meet the Mythical Creatures<\/p>/);
+  assert.doesNotMatch(catalogHeading, /eyebrow|catalog-intro/);
+  assert.doesNotMatch(mapPage, /Choose a group below|选一选下面的分类/);
+  assert.match(mapPage, /Book section[\s\S]*Creature type/);
+  assert.doesNotMatch(mapPage, /data-habitat-filters|Where it lives/);
+  assert.doesNotMatch(mapApp, /habitatFilters|habitatNames|catalogState\.habitat/);
+  assert.match(mapApp, /water: \{ zh: "水族", en: "Water creatures" \}/);
+  assert.match(mapApp, /spirit: \{ zh: "神异", en: "Spirits" \}/);
+  assert.match(mapStyles, /\.filter-pill span \{[^}]*font-size: 1rem;/, "keep the Chinese filter text readable");
+  assert.match(mapStyles, /\.filter-pill span\[lang="en"\] \{[^}]*font-size: 1\.125rem;/, "keep creature-type English labels prominent");
+  assert.match(mapStyles, /\[data-chapter-filters\] \.filter-pill \{[^}]*min-height: 52px;/, "compact chapter buttons must still be touch-friendly");
+  assert.match(mapStyles, /\[data-chapter-filters\] \.filter-pill span\[lang="en"\] \{[^}]*font-size: 0\.9rem;/, "long chapter names should take less room without truncation");
+  assert.match(mapApp, /<span lang="en">\$\{escapeHtml\(en\)\}<\/span><span lang="zh-Hans">\$\{escapeHtml\(zh\)\}<\/span>/, "put English above Chinese in the filter buttons");
+  assert.doesNotMatch(mapStyles, /\.filter-pill small/);
+  assert.match(mapPage, /srcset="\.\/assets\/map-world-preview\.webp 880w, \.\/assets\/map-world\.webp 1448w" sizes="96vw"/);
+  assert.match(mapPage, /data-preview-regions/);
+  assert.deepEqual(annotations.filter((item) => item.overview).map((item) => item.textZh), ["西山", "北山", "中山", "东山", "南山", "东海"]);
+  assert.match(mapApp, /previewRegions\.innerHTML = annotations\.filter\(\(item\) => item\.overview\)/);
+  assert.match(mapApp, /annotationLayer\.innerHTML = annotations\.filter\(\(item\) => item\.overview\)/, "zooming must not reveal local place names");
+  assert.doesNotMatch(mapStyles, /map-place|map-annotation--detail|map-world\.is-detail|map-world\.is-close/);
+  assert.match(mapStyles, /main \{\s*width: calc\(100% - clamp\(24px, 4vw, 80px\)\);/);
+  assert.match(mapStyles, /\.map-preview \{[^}]*max-width: none;/);
+  assert.match(mapPage, /data-chapter-filters[\s\S]*data-kind-filters[\s\S]*data-creature-catalog/);
+  assert.equal((mapPage.match(/data-open-map/g) || []).length, 1);
+  assert.match(mapApp, /pointerdown/);
+  assert.match(mapApp, /creature-card-art/);
+  assert.match(mapApp, /sheet\.scrollTop = 0/);
+  assert.match(mapApp, /const WORLD_WIDTH = worldMap.width/);
+  assert.match(mapApp, /const WORLD_HEIGHT = worldMap.height/);
+  assert.match(mapApp, /map-regions\.js\?v=20260928-jingwei-sea-v1/);
+  assert.match(mapApp, /mapBase\.src = worldMap\.image/);
+  assert.equal((mapApp.match(/mapBase\.src =/g) || []).length, 1, "the map image must not change during navigation");
+  assert.match(mapApp, /function focusRegion\(regionId\)[\s\S]*?cameraForBounds\(bounds, worldMap, region\.bounds\)/);
+  assert.match(mapApp, /layer\.innerHTML = creatures\.map/);
+  assert.match(mapApp, /previewLayer\.innerHTML = creatures\.map/);
+  assert.match(mapApp, /function revealHint\(\)[\s\S]*?creaturesInView\(creatures, state, viewport\.getBoundingClientRect\(\), worldMap\)/);
+  assert.match(mapApp, /const nearby = inRegion\.length \? inRegion : visible\.length \? visible : creatures;/);
+  assert.match(mapApp, /function openMap\(trigger, creature = null\)[\s\S]*?focusCreatureOnMap\(creature\)/);
+  assert.doesNotMatch(mapApp, /regionCreatures|setRegion\(/);
+  assert.match(mapApp, /function fitMap\(\)[\s\S]*?const containScale = Math\.min\(bounds\.width \/ WORLD_WIDTH, bounds\.height \/ WORLD_HEIGHT\);[\s\S]*?state\.scale = containScale;/);
+  assert.match(mapApp, /creature-card-art--\$\{escapeHtml\(creature\.id\)\}/);
+  assert.match(mapStyles, /\.creature-card-art img \{[\s\S]*?inset: 10%;[\s\S]*?width: 80%;[\s\S]*?height: 80%;[\s\S]*?object-fit: contain;/);
+  assert.match(mapStyles, /\.creature-card-art--nine-tailed-fox img \{[\s\S]*?inset: 6%;[\s\S]*?width: 88%;[\s\S]*?height: 88%;/);
+  assert.doesNotMatch(mapApp, /SpeechSynthesisUtterance|speechSynthesis|source-link|target="_blank"/);
+  assert.doesNotMatch(mapPage, /古书里怎么写|查看原文出处/);
+  assert.equal((creatureData.match(/^    id: "/gm) || []).length, 20);
+  assert.equal((creatureData.match(/^    locationPinyin: "/gm) || []).length, 20);
+  assert.match(creatureData, /locationEn: "Guai River at Niuyang Mountain"/);
+  assert.equal((creatureData.match(/^  (?:"[^"]+"|[a-z][a-z-]*): \{\n    kind:/gm) || []).length, 20);
+  assert.doesNotMatch(creatureData, /id: "(?:boyi|luwu|yingzhao|zhulong|kaiming)"/);
+  assert.doesNotMatch(creatureData, /人的脸|人面|human face|human-faced/);
+  assert.match(creatureData, /id: "feifei"[\s\S]*id: "fenghuang"[\s\S]*id: "mengji"/);
+  assert.match(creatureData, /id: "jiao"[\s\S]*id: "ershu"/);
+  assert.equal(creaturesById.get("bifang").locationPinyin, "zhāng é shān");
+  assert.equal(creaturesById.get("kui").locationZh, "流波山");
+  assert.match(mapApp, /书中地点[\s\S]*Place in the book/);
+  assert.match(mapApp, /来自《山海经》·[\s\S]*篇[\s\S]*From the Classic of Mountains and Seas ·/);
+  assert.doesNotMatch(mapApp, /creature\.locationPinyin|place\.pinyin/);
+  assert.match(mapApp, /escapeHtml\(creature\.pinyin\)/, "keep pronunciation help for creature names");
+  for (const place of places) {
+    assert.equal(place.nameEn, place.nameEn.normalize("NFD").replace(/[\u0300-\u036f]/g, ""), `${place.id} should use plain English romanization, not a second pinyin line`);
+  }
+  assert.match(mapApp, /function renderCatalogFilters\(\)/);
+  assert.match(mapApp, /function renderCatalog\(\)/);
+  assert.match(mapApp, /creature\.traits\.map/);
+  assert.match(mapApp, /creature\.chapter === catalogState\.chapter/);
+  assert.match(mapApp, /creature\.kind\.key === catalogState\.kind/);
+  assert.doesNotMatch(mapApp, /creature\.chapter\)} · \$\{escapeHtml\(creature\.locationZh/);
+  assert.doesNotMatch(mapApp, /showPlace|placeLayer|data-place=|activePlaceId|creature-map-place/);
+  assert.match(mapApp, /function showCreatureName\(creature, button\)[\s\S]*?textContent = creature\.nameZh;[\s\S]*?textContent = creature\.nameEn;/);
+  assert.match(mapApp, /event\.pointerType !== "touch"/);
+  assert.match(mapApp, /addEventListener\("pointerleave", hideCreatureName\)/);
+  assert.match(mapApp, /button\.matches\(":focus-visible"\)\) showCreatureName/);
+  assert.match(mapApp, /function openCreature\(creature, button\) \{[\s\S]*?hideCreatureName\(\)/);
+  assert.match(mapStyles, /\.creature-name \{[^}]*pointer-events: none;/);
+  assert.match(mapStyles, /\.annotation-layer \{[^}]*pointer-events: none;/);
+  assert.match(mapStyles, /\.map-experience \{[^}]*grid-template-rows: auto auto minmax\(0, 1fr\) auto;/);
+  assert.match(mapStyles, /\.map-experience \{[^}]*grid-template-columns: minmax\(0, 1fr\);/);
+  assert.match(mapStyles, /\.map-viewport \{\s*position: relative;/);
+  assert.match(mapStyles, /\.creature-figure \{[\s\S]*?width: 70%;/);
+  assert.match(mapStyles, /\.creature-hotspot \{[^}]*--anchor-y: -100%;/);
+  assert.match(mapStyles, /\.creature-layer \{[^}]*overflow: hidden;/);
+  assert.match(mapStyles, /\.catalog-card-art \{[^}]*overflow: hidden;/);
+  assert.match(mapStyles, /\.catalog-card-art img \{[^}]*inset: 8%;[^}]*width: 84%;[^}]*height: 84%;[^}]*object-fit: contain;/);
+  assert.match(creatureData, /storyTitleZh: "青丘山里的一声啼哭"/);
+  assert.match(creaturesById.get("nine-tailed-fox").factsZh, /危险/);
+  assert.doesNotMatch(creatureStories, /factsZh:|factsEn:/, "source facts must have one authoritative location, not a story override");
+  assert.doesNotMatch(creatureStories, /明确提醒读者：九尾狐会吃人|没有解释它为什么吃人|说蛊雕会吃人/);
+  assert.match(creatureStories, /警觉的眼睛和九条白色长尾巴/);
+  assert.match(creatureStories, /站在安全的地方安静观察/);
+  assert.equal((creatureStories.match(/^  (?:"[^"]+"|[a-z][a-z-]*): \{/gm) || []).length, 20);
+  assert.equal((creatureStories.match(/^    titleZh: "/gm) || []).length, 20);
+  assert.doesNotMatch(mapApp, /encounterStories|如果它们遇见了|What if they met|data-related-creature/);
+  assert.doesNotMatch(mapStyles, /creature-encounter|encounter-copy|connection-card/);
+  assert.match(mapApp, /书里写了什么/);
+  assert.match(mapApp, /What's in the book/);
+  assert.doesNotMatch(mapApp, /向下滑，先看看《山海经》怎么写/);
+  assert.doesNotMatch(mapApp, /《山海经》常常只用几句话介绍一种奇兽/);
+  assert.match(mapApp, /const \{ factsZh, factsEn \} = creature/);
+  assert.doesNotMatch(mapApp, /class="story-kind"|再认识它一点|A closer look|An imagined story/);
+  assert.match(mapApp, /story\.kind === "source-reading"/);
+  assert.match(mapApp, /escapeHtml\(story\.creationNoteZh\)/);
+  assert.match(mapApp, /escapeHtml\(story\.creationNoteEn\)/);
+  assert.doesNotMatch(mapApp, /This full story is not in|没有写下这一段完整情节|根据上面的记载/);
+  assert.match(mapStyles, /\.creature-sheet \{[\s\S]*overflow: auto;[\s\S]*overscroll-behavior: contain;/);
+  assert.match(mapPage, /class="sheet-header"[\s\S]*data-close-sheet[\s\S]*data-sheet-content/);
+  assert.match(mapStyles, /\.sheet-header \{[^}]*position: sticky;[^}]*top: 0;[^}]*z-index:/);
+
+  for (const creature of creatures) {
+    const assetPath = join(mapDirectory, creature.image);
+    assert.match(creature.image, /\.webp$/i, `${creature.id} must use WebP`);
+    assert.ok(existsSync(assetPath), `missing creature asset: ${creature.image}`);
+    assert.ok(statSync(assetPath).size <= 120 * 1024, `${creature.id} exceeds the 120 KB creature budget`);
+    const header = readFileSync(assetPath).subarray(0, 12);
+    assert.equal(header.toString("ascii", 0, 4), "RIFF");
+    assert.equal(header.toString("ascii", 8, 12), "WEBP");
+  }
+  assert.equal(creaturesById.get("zouwu").image, "./assets/zouwu-single-tail.webp");
+  assert.equal(creaturesById.get("kui").image, "./assets/kui.webp");
+  assert.equal(creaturesById.get("fuzhu").image, "./assets/fuzhu-pearl.webp");
+  assert.equal(creaturesById.get("dijiang").image, "./assets/dijiang-six-feet.webp");
+  assert.ok(statSync(join(mapDirectory, creaturesById.get("dijiang").image)).size < 120000, "the six-foot Dijiang exceeds 120 KB");
+  assert.match(creaturesById.get("dijiang").factsZh, /六只脚和四只翅膀/);
+  assert.ok(statSync(join(mapDirectory, creaturesById.get("zouwu").image)).size < 120000, "the corrected single-tail Zouwu exceeds 120 KB");
+  for (const region of regions) {
+    for (const key of ["nameZh", "nameEn"]) {
+      assert.ok(region[key]?.trim(), `${region.id} is missing ${key}`);
+    }
+    assert.equal(region.image, undefined, "a region must be a camera destination, not a separate image");
+    assert.ok(region.bounds.width > 0 && region.bounds.height > 0);
+  }
+  for (const [image, budget] of [[worldMap.image, worldMap.maxBytes], [worldMap.preview, 120000]]) {
+    const assetPath = join(mapDirectory, image);
+    assert.ok(existsSync(assetPath), `missing world image: ${image}`);
+    assert.ok(statSync(assetPath).size <= budget, `${image} exceeds its image budget`);
+    assert.equal(readFileSync(assetPath).toString("ascii", 8, 12), "WEBP");
+  }
+});
+
+test("the refreshed Shan Hai Jing story art stays in sync with its source assets", () => {
+  const article = readFileSync("culture/books/literature/shan-hai-jing/index.html", "utf8");
+  const manuscript = readFileSync("culture/content/literature/shan-hai-jing/page.md", "utf8");
+  for (const name of ["1-strange-ancient-book.webp", "2-mountains-rivers-scroll.webp", "3-jingwei-fills-the-sea.webp", "4-child-drawing-creatures.webp"]) {
+    const deployed = readFileSync(`culture/books/literature/shan-hai-jing/images/${name}`);
+    const source = readFileSync(`culture/content/literature/shan-hai-jing/images/${name}`);
+    assert.ok(article.includes(`src="./images/${name}"`));
+    assert.ok(manuscript.includes(`image: ${name}`));
+    assert.equal(deployed.subarray(8, 12).toString(), "WEBP");
+    assert.ok(deployed.length <= 120000, `${name} exceeds the 120 KB image budget`);
+    assert.deepEqual(deployed, source, `${name} must not revert to old character art on a rebuild`);
+  }
+});
+
+test("the Shan Hai Jing introduction explains the book directly and ends with Yinglong", () => {
+  const manuscript = readFileSync("culture/content/literature/shan-hai-jing/page.md", "utf8");
+  const article = readFileSync("culture/books/literature/shan-hai-jing/index.html", "utf8");
+  const sections = [...manuscript.matchAll(/\[section\]\n([\s\S]*?)\n\[\/section\]/g)].map((match) => match[1]);
+  assert.equal(sections.length, 4);
+  assert.match(sections[0], /\[zh\]\n\[\[《山海经》\|shan-hai-jing\]\]是一本/);
+  assert.match(sections[0], /\[en\]\nThe \[\[Classic of Mountains and Seas\|shan-hai-jing\]\] is an ancient Chinese book/);
+  assert.match(sections[0], /mythical creatures/);
+  assert.doesNotMatch(manuscript, /假如有人把一卷|Imagine that someone places a scroll|strange characters|imaginary creatures|奇怪角色/);
+  assert.match(sections[2], /from the western mountains to the Eastern Sea/);
+  assert.doesNotMatch(sections[2], /乌鸦大小|size of a crow|carries stones and twigs from Fajiu Mountain/);
+  assert.match(sections[3], /应龙[\s\S]*郭璞/);
+  assert.match(sections[3], /Yìnglóng[\s\S]*Guō Pú/);
+  assert.doesNotMatch(sections[3], /文鳐鱼|wényáoyú|horned, scaly, four-legged creature/);
+  assert.match(article, /is an ancient Chinese book about mountains/);
+  assert.match(article, /Guō Pú/);
+});
+
+test("the Shan Hai Jing story explains its chapters and the meanings of its creatures", () => {
+  const manuscript = readFileSync("culture/content/literature/shan-hai-jing/page.md", "utf8");
+  const article = readFileSync("culture/books/literature/shan-hai-jing/index.html", "utf8");
+  assert.match(manuscript, /共有十八篇[\s\S]*其中五篇合称《山经》[\s\S]*另外十三篇通常合称《海经》/);
+  assert.match(manuscript, /eighteen chapters[\s\S]*Five make up the Mountain Classic[\s\S]*other thirteen/);
+  for (const copy of [manuscript, article,
+    readFileSync("culture/content/literature/shan-hai-jing/en.md", "utf8")]) {
+    assert.match(copy, /Explore our[\s\S]*map of mythical creatures/);
+    assert.match(copy, /Choose a chapter to meet the creatures described in that part of the book\./);
+    assert.match(copy, /Their homes come from the text, but we(?:'|&#39;|’|&apos;)ve imagined how the landscape fits together\./);
+    assert.doesNotMatch(copy, /Those chapter names|The chapter filters show|imagined scenery joining the places together/);
+  }
+  for (const copy of [manuscript, article,
+    readFileSync("culture/content/literature/shan-hai-jing/zh.md", "utf8")]) {
+    assert.match(copy, /选一个篇章，看看里面记载了哪些奇兽。/);
+    assert.match(copy, /它们的住处来自书中，连接这些地方的山水是我们想象的。/);
+    assert.doesNotMatch(copy, /你会看到这些篇章的名字|按篇章筛选，就是找/);
+  }
+  assert.match(manuscript, /Chinese phoenix, is a sign of peace/);
+  assert.match(manuscript, /dāngkāng[\s\S]*plentiful harvest/);
+  assert.match(manuscript, /chángyòu[\s\S]*linked to floods/);
+  assert.match(manuscript, /We do not know how every creature was first imagined/);
+  assert.match(manuscript, /People make a model of the dragon, and rain comes/);
+  assert.equal((manuscript.match(/^caption_zh: /gm) || []).length, 4);
+  assert.equal((manuscript.match(/^caption_en: /gm) || []).length, 4);
+  for (const text of [manuscript, article]) {
+    assert.doesNotMatch(text, /一条路通向山|古卷[子]?只?告诉你往哪里走|不保证前面遇见的是普通动物/);
+    assert.doesNotMatch(text, /our artists/);
+    assert.doesNotMatch(text, /—/, "keep child-facing prose and captions free of long dashes");
+    assert.match(text, /小朋友正在画一条长着翅膀的龙，它叫应龙。/);
+  }
+  assert.match(article, /eighteen chapters/);
+  assert.match(article, /plentiful harvest/);
+  assert.match(article, /People make a model of the dragon, and rain comes/);
+});
+
+test("the creature map entry stays with its story in Poetry and Imagined Worlds", () => {
+  const homepage = readFileSync("index.html", "utf8");
+  const cultureLanding = readFileSync("culture.html", "utf8");
+  const cultureSource = readFileSync("culture.js", "utf8");
+  const cultureStyles = readFileSync("culture.css", "utf8");
+  const catalog = readFileSync("docs/culture/catalog_mapping_proposal.md", "utf8");
+  const entry = cultureSource.match(/<a class="story-map-link"[\s\S]*?<\/a>/)?.[0];
+
+  assert.match(homepage, /class="pathway-card pathway-culture" href="culture\.html"/);
+  assert.equal((homepage.match(/class="pathway-card /g) || []).length, 3, "keep the existing three homepage pathways");
+  assert.doesNotMatch(cultureLanding, /map-feature|data-creature-map-entry/, "do not put the map above the main catalogs");
+  assert.doesNotMatch(cultureStyles, /map-feature/);
+  assert.ok(entry, "the Shan Hai Jing story card needs its own map link");
+  assert.match(entry, /href="culture\/books\/literature\/shan-hai-jing\/map\/index\.html"/);
+  assert.match(entry, /认识奇兽[\s\S]*Meet the Mythical Creatures/);
+  assert.match(cultureSource, /if \(story\.id !== "literature\/shan-hai-jing"\) return storyCard;/);
+  assert.match(cultureSource, /<article class="story-card-bundle"[^>]*>\s*\$\{storyCard\}\s*<a class="story-map-link"/, "the story and map must be sibling links, not nested links");
+  const poetrySection = catalog.match(/#### 4\.4 [\s\S]*?(?=#### 4\.5)/)?.[0];
+  assert.match(poetrySection, /literature\/shan-hai-jing/);
+  assert.match(cultureStyles, /\.story-map-link \{[^}]*font-size: 1rem;/);
+});
+
+test("the winged-fish illustration is the shared Shan Hai Jing cover and first homepage feature", () => {
+  const homepage = readFileSync("index.html", "utf8");
+  const styles = readFileSync("homepage.css", "utf8");
+  const cultureSource = readFileSync("culture.js", "utf8");
+  const cultureStyles = readFileSync("culture.css", "utf8");
+  const slides = [...homepage.matchAll(/<article class="feature-slide\b[^>]*data-story-slide>[\s\S]*?<\/article>/g)].map((match) => match[0]);
+  const cover = "culture/books/literature/shan-hai-jing/images/1-strange-ancient-book.webp";
+  assert.equal(slides.length, 8, "keep the existing features alongside the new idiom story");
+  assert.ok(slides[0].includes(`src="${cover}"`));
+  assert.match(slides[0], /href="culture\/books\/literature\/shan-hai-jing\/index\.html"/);
+  assert.match(slides[0], /The Classic of Mountains and Seas[\s\S]*《山海经》/);
+  assert.ok(statSync(cover).size <= 120000);
+  assert.deepEqual([...homepage.matchAll(/data-story-dot="(\d+)"/g)].map((match) => Number(match[1])), slides.map((_, index) => index));
+  assert.match(homepage, /aria-label="Show The Classic of Mountains and Seas" aria-current="true" data-story-dot="0"/);
+  assert.match(cultureSource, /"literature\/shan-hai-jing":\s*"culture\/books\/literature\/shan-hai-jing\/images\/1-strange-ancient-book\.webp"/);
+  assert.match(cultureStyles, /data-story-image="literature\/shan-hai-jing"[^}]*object-position: center 68%;/);
+  assert.match(styles, /\.feature-slide--shanhaijing \.feature-copy \{\s*margin-left: auto;/, "keep copy away from the fish on the left");
+  assert.match(styles, /@media \(max-width: 650px\)[\s\S]*\.feature-slide--shanhaijing img \{[^}]*position: static;[^}]*aspect-ratio: 4 \/ 3;[^}]*object-fit: contain;/, "show the whole illustration above the copy on phones");
+});
+
+test("the first homepage feature links directly to both the Shan Hai Jing story and map", () => {
+  const homepage = readFileSync("index.html", "utf8");
+  const styles = readFileSync("homepage.css", "utf8");
+  const feature = homepage.match(/<article class="feature-slide feature-slide--shanhaijing\b[\s\S]*?<\/article>/)?.[0];
+  assert.ok(feature, "the map shortcut belongs on the existing featured story");
+  const links = [...feature.matchAll(/<a href="([^"]+)"[^>]*>([\s\S]*?)<\/a>/g)];
+  assert.deepEqual(links.map((link) => link[1]), [
+    "culture/books/literature/shan-hai-jing/index.html",
+    "culture/books/literature/shan-hai-jing/map/index.html"
+  ]);
+  assert.match(links[0][2], /Read the story[\s\S]*读故事/);
+  assert.match(links[1][2], /Meet the Mythical Creatures[\s\S]*认识奇兽/);
+  links.forEach((link) => assert.ok(existsSync(link[1]), `${link[1]} must exist`));
+  assert.match(styles, /\.feature-actions\s*\{[^}]*flex-wrap: wrap;/, "allow both links to wrap on small screens");
+  assert.match(styles, /\.feature-actions a\s*\{[^}]*min-height: 44px;/, "keep touch targets easy to tap");
+});
+
+test("mythical creature naming stays consistent across the map and its entry points", () => {
+  for (const file of ["index.html", "culture.js", "culture/index.html"]) {
+    const source = readFileSync(file, "utf8");
+    assert.match(source, /Meet the Mythical Creatures/);
+    assert.match(source, /认识奇兽/);
+    assert.doesNotMatch(source, /Explore the (?:creature )?map/);
+  }
+  const map = readFileSync("culture/books/literature/shan-hai-jing/map/index.html", "utf8");
+  assert.match(map, /The Classic of Mountains and Seas: Mythical Creature Map/);
+  assert.match(map, /<span lang="en">Mythical Creature Map<\/span>/);
+  assert.match(map, /<h2 id="catalog-title">认识奇兽<\/h2>\s*<p lang="en">Meet the Mythical Creatures<\/p>/);
+  assert.match(map, /Zoom in to explore/, "zoom controls still describe their action");
+  assert.match(map, /Creature type/, "short labels need not repeat the adjective in context");
+  for (const file of [
+    "culture/content/literature/shan-hai-jing/page.md",
+    "culture/content/literature/shan-hai-jing/en.md",
+    "culture/books/literature/shan-hai-jing/index.html"
+  ]) {
+    const source = readFileSync(file, "utf8");
+    assert.match(source, /map of mythical creatures/);
+    assert.doesNotMatch(source, /interactive creature map/);
+  }
+});
+
+test("the homepage features The Spear and the Shield immediately before Dumplings", () => {
+  const homepage = readFileSync("index.html", "utf8");
+  const styles = readFileSync("homepage.css", "utf8");
+  const slides = [...homepage.matchAll(/<article class="feature-slide\b[^>]*data-story-slide>[\s\S]*?<\/article>/g)].map((match) => match[0]);
+  const storyIds = slides.map((slide) => slide.match(/href="culture\/books\/([^/]+\/[^/]+)\/index\.html"/)?.[1]);
+  assert.deepEqual(storyIds, [
+    "literature/shan-hai-jing", "literature/journey-to-west", "economy/ancient-money",
+    "military/art-of-war", "geography/rice-terraces", "food/tea",
+    "folk-tales/the-spear-and-the-shield", "food/dumplings"
+  ]);
+  const cover = "culture/books/folk-tales/the-spear-and-the-shield/images/1-spear-and-shield.webp";
+  assert.ok(slides[6].includes(`src="${cover}"`), "reuse the story's existing illustration");
+  assert.match(slides[6], /class="feature-slide feature-slide--spear-shield"/);
+  assert.match(styles, /\.feature-slide--spear-shield \.feature-copy,\s*\.feature-slide--shanhaijing \.feature-copy\s*\{\s*margin-left: auto;/, "place the copy on the right, away from the spear and shield");
+  assert.match(styles, /\.feature-slide--spear-shield img\s*\{\s*object-position: left top;/, "keep the spear tip visible");
+  assert.match(styles, /\.feature-slide--spear-shield::after\s*\{\s*background: linear-gradient\(\s*270deg[\s\S]*?0\.98\) 45%/, "keep the text legible while leaving the spear and shield clear");
+  assert.match(styles, /@media \(max-width: 650px\)[\s\S]*\.feature-slide--spear-shield img,\s*\.feature-slide--shanhaijing img\s*\{[^}]*position: static;[^}]*object-fit: contain;/, "keep the complete illustration above the copy on phones");
+  assert.ok(statSync(cover).size <= 120000, "the feature cover must stay within the image budget");
+  assert.match(homepage, /aria-label="Show The Spear and the Shield" data-story-dot="6"/);
+  assert.match(homepage, /aria-label="Show The Story of Dumplings" data-story-dot="7"/);
+});
+
+test("featured story titles match their manuscripts, article headings, and catalog entries", () => {
+  const homepage = readFileSync("index.html", "utf8");
+  const catalog = readFileSync("docs/culture/catalog_mapping_proposal.md", "utf8");
+  const slides = [...homepage.matchAll(/<article class="feature-slide\b[^>]*data-story-slide>[\s\S]*?<\/article>/g)].map((match) => match[0]);
+  assert.ok(slides.length > 0, "inspect every featured story");
+  const text = (value) => value.replace(/<[^>]*>/g, "").replaceAll("&amp;", "&").replaceAll("&quot;", '"').replaceAll("&#39;", "'").replace(/\s+/g, " ").trim();
+  const heading = (html, tag) => text(html.match(new RegExp(`<${tag}\\b[^>]*>([\\s\\S]*?)<\\/${tag}>`))?.[1] ?? "");
+
+  for (const slide of slides) {
+    const href = slide.match(/<a href="(culture\/books\/([^/]+\/[^/]+)\/index\.html)"/);
+    assert.ok(href, "each featured story links to its article");
+    const [, articlePath, storyId] = href;
+    const manuscript = readFileSync(`culture/content/${storyId}/page.md`, "utf8");
+    const article = readFileSync(articlePath, "utf8");
+    const titleZh = manuscript.match(/^title_zh:\s*(.+)$/m)?.[1]?.replace(/^"|"$/g, "");
+    const titleEn = manuscript.match(/^title_en:\s*(.+)$/m)?.[1]?.replace(/^"|"$/g, "");
+    assert.ok(titleZh && titleEn, `${storyId}: both official titles must exist`);
+    assert.equal(heading(slide, "h3"), titleEn, `${storyId}: homepage English title drifted`);
+    assert.equal(heading(slide, "h4"), titleZh, `${storyId}: homepage Chinese title drifted`);
+    assert.equal(heading(article, "h1"), titleZh, `${storyId}: article Chinese title drifted`);
+    assert.equal(heading(article, "h2"), titleEn, `${storyId}: article English title drifted`);
+    const catalogRow = catalog.split("\n").find((line) => line.startsWith(`| \`${storyId}\` |`));
+    assert.ok(catalogRow?.includes(`| ${titleZh} · *${titleEn}* |`), `${storyId}: catalog titles drifted`);
+  }
+});
+
+test("the Shan Hai Jing title stays consistent in every story entry and source record", () => {
+  const titleZh = "《山海经》：山海之间的奇兽";
+  const titleEn = "The Classic of Mountains and Seas: A World of Mythical Creatures";
+  for (const file of [
+    "index.html", "lesson.html", "culture/index.html",
+    "docs/culture/catalog_mapping_proposal.md",
+    "about/sources-research/culture-sources.js",
+    "culture/content/literature/shan-hai-jing/page.md",
+    "culture/books/literature/shan-hai-jing/index.html"
+  ]) {
+    const source = readFileSync(file, "utf8");
+    assert.ok(source.includes(titleZh), `${file}: Chinese title drifted`);
+    assert.ok(source.includes(titleEn), `${file}: English title drifted`);
+  }
+  assert.ok(readFileSync("culture/content/literature/shan-hai-jing/zh.md", "utf8").includes(`# ${titleZh}`));
+  assert.ok(readFileSync("culture/content/literature/shan-hai-jing/en.md", "utf8").includes(`# ${titleEn}`));
 });
 
 test("scene sentence cards support independent playback without changing scene playback", () => {
@@ -794,8 +1302,15 @@ test("deployed raster images stay within the site-wide asset budget", () => {
   const pngs = deployedImages.filter((file) => file.endsWith(".png"));
   assert.deepEqual(pngs, [], "PNG files belong in the excluded archive, not the deployed site");
 
-  for (const file of deployedImages.filter((item) => item.endsWith(".webp"))) {
+  const largeIllustratedMaps = new Set([
+    "culture/books/literature/shan-hai-jing/map/assets/map-world.webp"
+  ]);
+  for (const file of deployedImages.filter((item) => item.endsWith(".webp") && !largeIllustratedMaps.has(item))) {
     assert.ok(statSync(file).size <= 120 * 1024, `${file} exceeds the 120 KB deployed image budget`);
+  }
+  for (const file of largeIllustratedMaps) {
+    const budget = 1500 * 1024;
+    assert.ok(statSync(file).size <= budget, `${file} exceeds its illustrated-map budget`);
   }
 
   const singleFoodItems = deployedImages.filter((file) => (
@@ -816,7 +1331,7 @@ test("the Chinese landing-page headline is slightly reduced while keeping its or
 test("the new homepage keeps its two mobile headline lines visibly separated", () => {
   const homepage = readFileSync("index.html", "utf8");
   const homepageStyles = readFileSync("homepage.css", "utf8");
-  assert.match(homepage, /homepage\.css\?v=20260907-canonical-home-v1/);
+  assert.match(homepage, /homepage\.css\?v=20260927-shanhaijing-map-link-v1/);
   assert.match(homepageStyles, /@media \(max-width: 650px\) \{[\s\S]*\.hero h1 a \{[\s\S]*row-gap: clamp\(8px, 2\.3vw, 12px\);[\s\S]*\.hero h1 \{[\s\S]*line-height: 1\.12;/);
 });
 
@@ -977,7 +1492,7 @@ test("Culture story pages reuse the shared header and return to their exact cata
   assert.match(template, /site-footer\.js\?v=20260907-teal-culture-v2/);
   assert.match(builder, /loadCultureCatalogLocations/);
   assert.match(builder, /replaceAll\("\{\{BACK_HREF\}\}", backHref\)/);
-  assert.match(catalogLocations, /storyLocations\.size !== 113/);
+  assert.match(catalogLocations, /storyLocations\.size !== 114/);
   assert.match(cultureStyles, /@media \(max-width: 900px\) \{\s*\.back-nav \{\s*display: none;/);
   assert.match(articleTheme, /--paper: #f4faf8/);
   assert.match(articleTheme, /linear-gradient\(180deg, #fbfdfc 0%, #f1f8f6 100%\)/);
@@ -986,7 +1501,7 @@ test("Culture story pages reuse the shared header and return to their exact cata
   assert.match(sharedHeaderStyles, /@media \(max-width: 650px\) \{[\s\S]*\.culture-story-header \.culture-mobile-return \{[\s\S]*grid-column: 1 \/ -1;[\s\S]*grid-row: 2;/);
 
   const locations = await loadCultureCatalogLocations(process.cwd());
-  assert.equal(locations.size, 113);
+  assert.equal(locations.size, 114);
   for (const [storyId, location] of locations) {
     const storyPage = readFileSync(join("culture/books", storyId, "index.html"), "utf8");
     const catalogHref = `../../../../culture.html#${location}`;

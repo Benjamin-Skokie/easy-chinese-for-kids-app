@@ -30,6 +30,8 @@
     主要任务是 rewrite the writing。原图能支持更好的故事，就尽量保留；确实无法配合时再换图。
 15. **避免和网站已有专题重复**
     每篇文章应该有自己的工作。其他专题已经详细讲过的内容，只在必要时一句带过，不要重新展开。
+16. **尽量不用长破折号**
+    中英文标题、正文和图注尽量不用 em dash 或中文双破折号。长横线容易与汉字“一”混淆，也不利于小朋友朗读。优先用逗号、句号，或自然改写句子；不要机械换成短横线。数字范围和英文复合词中的正常连字符不受影响。
 
 ---
 
@@ -65,3 +67,5 @@
     The main task is to improve the writing. Keep existing images and the approximate visual structure whenever they can support the stronger story. Replace images only when truly necessary.
 15. **Avoid Repeating Topics Already Covered Elsewhere**
     Every article should have its own job. If another Nihao World story already covers a topic in depth, mention it briefly only when necessary and return quickly to this story’s own center.
+16. **Prefer Clear Punctuation to Em Dashes**
+    Avoid em dashes and doubled Chinese dashes in child-facing titles, prose, and captions in either language. Long horizontal marks can resemble the Chinese character for one and make reading aloud harder. Prefer commas, full stops, or a naturally rewritten sentence, not a shorter dash as a workaround. Keep ordinary hyphens in compound words and range punctuation where appropriate.

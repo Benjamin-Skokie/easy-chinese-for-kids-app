@@ -32,8 +32,8 @@ export async function loadCultureCatalogLocations(projectRoot) {
     storyLocations.set(storyId, `${mainCatalogId}/${subcatalogId}`);
   }
 
-  if (storyLocations.size !== 113) {
-    throw new Error(`Expected 113 mapped stories, found ${storyLocations.size}.`);
+  if (storyLocations.size !== 114) {
+    throw new Error(`Expected 114 mapped stories, found ${storyLocations.size}.`);
   }
 
   return storyLocations;

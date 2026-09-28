@@ -13,6 +13,9 @@
     <loc>https://nihaoworld.org/culture.html</loc>
   </url>
   <url>
+    <loc>https://nihaoworld.org/culture/books/literature/shan-hai-jing/map/</loc>
+  </url>
+  <url>
     <loc>https://nihaoworld.org/about/author-project/</loc>
     <image:image>
       <image:loc>https://nihaoworld.org/assets/photos/benjamin-sun-portrait.webp</image:loc>
@@ -104,6 +107,9 @@
   </url>
   <url>
     <loc>https://nihaoworld.org/culture/books/culture/family-titles/</loc>
+  </url>
+  <url>
+    <loc>https://nihaoworld.org/culture/books/culture/four-symbols/</loc>
   </url>
   <url>
     <loc>https://nihaoworld.org/culture/books/culture/kung-fu/</loc>

@@ -3,8 +3,11 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "node scripts/build_app.mjs && node scripts/build_sitemap.mjs",
+    "build": "node scripts/build_app.mjs && node scripts/build_sitemap.mjs && node scripts/build_project_stats.mjs && node scripts/check_image_budgets.mjs",
     "build:sitemap": "node scripts/build_sitemap.mjs",
+    "build:stats": "node scripts/build_project_stats.mjs",
+    "check:images": "node scripts/check_image_budgets.mjs",
+    "optimize:images": "node scripts/optimize_deployed_images.mjs",
     "dev": "node scripts/dev_app.mjs",
     "test": "node --test tests/*.test.mjs",
     "audit:culture-rewrite": "node scripts/audit_culture_rewrite.mjs",
@@ -23,7 +26,7 @@
     "audio:learn:trim-boundaries": "node scripts/audio/trim-learn-audio-boundaries.mjs",
     "check:paths": "node scripts/check_relative_paths.mjs",
     "setup:hooks": "git config core.hooksPath .githooks",
-    "check": "npm run check:paths && npm run validate:data && npm run build && npm test && node --check app.js && git diff --check"
+    "check": "npm run check:paths && npm run validate:data && npm run build && npm test && node --check app.js && node --check culture/books/literature/shan-hai-jing/map/app.js && git diff --check"
   },
   "devDependencies": {
     "esbuild": "0.25.10"

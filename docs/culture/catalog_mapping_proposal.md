@@ -5,7 +5,7 @@ Status: proposed information architecture and card copy; no page routes or landi
 ## Scope and source of truth
 
 - The current Culture landing page has **16** category entrances, not 15.
-- There are **113 unique published stories** with a `culture/content/<category>/<slug>/page.md` source.
+- There are **114 unique published stories** with a `culture/content/<category>/<slug>/page.md` source.
 - The 117 story links found on the landing page include six repeated flagship links; those repeats are not separate stories.
 - Every story below appears once. The identifier in the first column is its current source location and gives the old category as well as the slug.
 - The proposed structure has **8 top-level catalogs** and **32 subcatalogs**.
@@ -17,13 +17,13 @@ Status: proposed information architecture and card copy; no page routes or landi
 |---:|---|---|---:|---:|
 | 1 | 故事与传说 · Stories & Legends | `stories-legends` | 19 | 4 |
 | 2 | 人物与历史 · People & History | `people-history` | 19 | 4 |
-| 3 | 节日与日常生活 · Festivals & Everyday Life | `festivals-everyday` | 15 | 4 |
+| 3 | 节日与日常生活 · Festivals & Everyday Life | `festivals-everyday` | 16 | 4 |
 | 4 | 艺术与文学 · Arts & Literature | `arts-literature` | 19 | 5 |
 | 5 | 美食与服饰 · Food & Clothing | `food-clothing` | 10 | 4 |
 | 6 | 山河与建筑 · Places & Buildings | `places-buildings` | 12 | 4 |
 | 7 | 科技、发明与贸易 · Science, Inventions & Trade | `science-inventions-trade` | 10 | 4 |
 | 8 | 思想与信仰 · Ideas & Beliefs | `ideas-beliefs` | 9 | 3 |
-|  | **Total** |  | **113** | **32** |
+|  | **Total** |  | **114** | **32** |
 
 The order begins with narrative and familiar everyday subjects, then moves toward places, systems, and abstract ideas. Philosophy stays last, matching the existing editorial principle that the most abstract material should not be the first doorway for a child.
 
@@ -33,7 +33,7 @@ The order begins with narrative and familiar everyday subjects, then moves towar
 |---|---|
 | Stories & Legends | All 19 `folk-tales` stories |
 | People & History | All 6 `figures`, all 8 `politics`, 4 of 5 `military`, plus `inventions/guan-yu-blade` |
-| Festivals & Everyday Life | All 6 `folk-customs` plus 9 of 10 `culture` stories |
+| Festivals & Everyday Life | All 6 `folk-customs` plus 10 of 11 `culture` stories |
 | Arts & Literature | All 10 `art`, all 8 `literature`, plus `culture/chinese-characters` |
 | Food & Clothing | All 5 `food` plus all 5 `clothing` stories |
 | Places & Buildings | All 5 `geography`, all 6 `architecture`, plus `military/great-wall` |
@@ -124,7 +124,7 @@ The order begins with narrative and familiar everyday subjects, then moves towar
 | `military/warships` | 古代战船：当战场来到了水上 · *Ancient Warships: When the Battlefield Moved onto Water* | Ancient shipbuilders add steering, protected sections, and battle tools to make wooden ships ready for war. |
 | `inventions/guan-yu-blade` | 关羽真的用过青龙偃月刀吗？ · *Did Guan Yu Really Use the Green Dragon Crescent Blade?* | Stories give Guan Yu a mighty crescent blade, but history suggests this famous weapon appeared much later. |
 
-### 3. 节日与日常生活 · Festivals & Everyday Life (`festivals-everyday`) — 15 stories
+### 3. 节日与日常生活 · Festivals & Everyday Life (`festivals-everyday`) — 16 stories
 
 #### 3.1 新年与灯火 · New Year & Lanterns (`new-year-lanterns`) — 3
 
@@ -142,13 +142,14 @@ The order begins with narrative and familiar everyday subjects, then moves towar
 | `folk-customs/mid-autumn` | 中秋节：月亮里的故事 · *Mid-Autumn Festival: Stories in the Moon* | Families share mooncakes and look for a rabbit, a tree, and old stories in the full autumn moon. |
 | `folk-customs/qingming` | 清明节：在春天思念祖先 · *Qingming Festival: Remembering Our Ancestors in Spring* | Families remember loved ones with flowers and tomb visits, then step outside to enjoy the returning spring. |
 
-#### 3.3 家人、象征与祝福 · Family, Symbols & Good Wishes (`family-symbols-wishes`) — 4
+#### 3.3 家人、象征与祝福 · Family, Symbols & Good Wishes (`family-symbols-wishes`) — 5
 
 | Current article ID | Article title | Compact English story-card description |
 |---|---|---|
 | `culture/family-titles` | 舅舅还是叔叔？中国人的亲戚地图 · *Which Uncle? A Chinese Family Map* | Chinese family words tell exactly how each aunt, uncle, and cousin is connected to you. |
 | `culture/chinese-knot` | 红红的中国结，满满的祝福 · *Red Chinese Knots, Full of Good Wishes* | One red cord twists into a beautiful knot that can carry wishes for luck, safety, and happiness. |
 | `culture/dragon-phoenix` | 龙和凤凰：中国最吉祥的伙伴 · *Dragon and Phoenix: China’s Luckiest Pair* | The dragon and phoenix grow from ancient symbols into a joyful pair for harmony, weddings, and good luck. |
+| `culture/four-symbols` | 四象：谁守着天空的东南西北？ · *The Four Symbols: Who Guards the Four Directions of the Sky?* | Four sky guardians connect directions, seasons, colors, and ancient Chinese ways of reading the stars. |
 | `folk-customs/chinese-zodiac` | 十二生肖 · *The Chinese Zodiac* | Twelve animals take turns naming the years, while an old race explains how their order was chosen. |
 
 #### 3.4 游戏、棋类与运动 · Games, Boards & Sports (`games-boards-sports`) — 5
@@ -196,7 +197,7 @@ The order begins with narrative and familiar everyday subjects, then moves towar
 | `literature/quiet-night-thought` | 静夜思：很多小孩都会念 · *Quiet Night Thought: A Poem Many Children Know* | In just twenty Chinese characters, Li Bai sees moonlight, looks up, and suddenly misses home. |
 | `literature/tang-poems` | 唐诗：读一首诗，看见一幅画 · *Tang Poems: Read a Poem, See a Picture* | Four Tang poems turn a few carefully chosen words into snowy rivers, moonlit roofs, and unforgettable pictures. |
 | `literature/song-ci` | 宋词：给曲子配上新词 · *Song Ci: New Words for a Tune* | Song poets fit fresh words to familiar tunes, making moonlit longing and joyful boat rides sing. |
-| `literature/shan-hai-jing` | 《山海经》：山的那边住着什么？ · *Shan Hai Jing: What Lives Beyond the Next Mountain?* | An ancient book guides readers across strange mountains filled with singing beasts, magical birds, and nine-tailed foxes. |
+| `literature/shan-hai-jing` | 《山海经》：山海之间的奇兽 · *The Classic of Mountains and Seas: A World of Mythical Creatures* | Explore an ancient Chinese book where winged fish, rain-bringing dragons, and signs of good fortune fill a world of mountains and seas. |
 
 #### 4.5 四大名著 · The Four Great Novels (`four-great-novels`) — 4
 
@@ -339,7 +340,7 @@ The order begins with narrative and familiar everyday subjects, then moves towar
 4. **Use the short English descriptions as card copy, not SEO summaries.** Each sentence favors a concrete action, image, discovery, or question a child can understand.
 5. **Keep difficulty, format, and age as filters or badges, not additional catalog levels.** The two catalog levels should answer “What kind of story is this?”
 6. **Recommended card hierarchy:** image → bilingual title → one-line English description → optional difficulty/time badge.
-7. **Recommended mobile behavior:** show the eight top-level cards first; opening one reveals only its subcatalogs and stories instead of rendering all 113 stories in one long page.
+7. **Recommended mobile behavior:** show the eight top-level cards first; opening one reveals only its subcatalogs and stories instead of rendering all 114 stories in one long page.
 
 ## Borderline placements to revisit during design review
 

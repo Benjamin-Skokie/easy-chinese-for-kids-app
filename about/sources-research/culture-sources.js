@@ -1677,6 +1677,88 @@ window.NIHAO_CULTURE_SOURCES = [
   {
     "category": "culture",
     "categoryName": "Culture & Daily Life",
+    "slug": "four-symbols",
+    "title": "四象：谁守着天空的东南西北？",
+    "titleEn": "The Four Symbols: Four Creatures, One Sky",
+    "storyPath": "../../culture/books/culture/four-symbols/",
+    "groups": [
+      {
+        "title": "故宫博物院 — “天地之间”",
+        "sources": [
+          {
+            "label": "The Palace Museum, “天地之间”",
+            "url": "https://www.dpm.org.cn/topic/zhongguo_skyearth.html"
+          }
+        ]
+      },
+      {
+        "title": "故宫博物院 — “陶白虎纹瓦当”",
+        "sources": [
+          {
+            "label": "The Palace Museum, “陶白虎纹瓦当”",
+            "url": "https://www.dpm.org.cn/collection/impres/232030.html"
+          }
+        ]
+      },
+      {
+        "title": "中国国家博物馆 — Han gray pottery",
+        "sources": [
+          {
+            "label": "National Museum of China, “彩绘青龙、白虎、朱雀纹陶壶”",
+            "url": "https://www.chnmuseum.cn/zp/zpml/kgfjp/202110/t20211027_251910.shtml"
+          }
+        ]
+      },
+      {
+        "title": "故宫博物院 — “和林访古（下）”",
+        "sources": [
+          {
+            "label": "The Palace Museum, “和林访古（下）”",
+            "url": "https://www.dpm.org.cn/historical/talk/208558.html"
+          }
+        ]
+      },
+      {
+        "title": "《礼记·曲礼上》— The Four Symbols in a moving formation",
+        "sources": [
+          {
+            "label": "Chinese Text Project, Liji, “Qu Li I”",
+            "url": "https://ctext.org/text.pl?if=en&node=9535&show=parallel"
+          }
+        ]
+      },
+      {
+        "title": "《淮南子·天文训》— Direction, season, phase, and animal correspondences",
+        "sources": [
+          {
+            "label": "Chinese Text Project, Huainanzi, “Tianwen Xun”",
+            "url": "https://ctext.org/text.pl?if=gb&node=3060&remap=gb&show=parallel"
+          }
+        ]
+      },
+      {
+        "title": "故宫博物院 — “四神将”",
+        "sources": [
+          {
+            "label": "The Palace Museum, “四神将”",
+            "url": "https://www.dpm.org.cn/lemmas/239601.html"
+          }
+        ]
+      },
+      {
+        "title": "故宫博物院 — “玄武纹砖”",
+        "sources": [
+          {
+            "label": "The Palace Museum, “玄武纹砖”",
+            "url": "https://www.dpm.org.cn/collection/sculpture/233922.html"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "culture",
+    "categoryName": "Culture & Daily Life",
     "slug": "weiqi",
     "title": "围棋：黑白棋子里的一整个世界",
     "titleEn": "Weiqi: A Whole World in Black and White",
@@ -5086,10 +5168,19 @@ window.NIHAO_CULTURE_SOURCES = [
     "category": "literature",
     "categoryName": "Literature",
     "slug": "shan-hai-jing",
-    "title": "《山海经》：山的那边住着什么？",
-    "titleEn": "Shan Hai Jing: What Lives Beyond the Next Mountain?",
+    "title": "《山海经》：山海之间的奇兽",
+    "titleEn": "The Classic of Mountains and Seas: A World of Mythical Creatures",
     "storyPath": "../../culture/books/literature/shan-hai-jing/",
     "groups": [
+      {
+        "title": "English book title",
+        "sources": [
+          {
+            "label": "Penguin Random House, The Classic of Mountains and Seas, translated by Anne Birrell",
+            "url": "https://www.penguinrandomhouse.com/books/332376/the-classic-of-mountains-and-seas-by-anonymous-translated-with-an-introduction-and-notes-by-anne-birrell/"
+          }
+        ]
+      },
       {
         "title": "When and how the book took shape",
         "sources": [
@@ -5114,6 +5205,95 @@ window.NIHAO_CULTURE_SOURCES = [
           {
             "label": "Wikisource, Shan Hai Jing, “Classic of the Northern Mountains”",
             "url": "https://zh.wikisource.org/wiki/%E5%B1%B1%E6%B5%B7%E7%B6%93/%E5%8C%97%E5%B1%B1%E7%B6%93"
+          }
+        ]
+      },
+      {
+        "title": "Additional creatures used by the interactive map",
+        "sources": [
+          {
+            "label": "Wikisource, Shan Hai Jing, “Classic of the Western Mountains”",
+            "url": "https://zh.wikisource.org/zh-hans/%E5%B1%B1%E6%B5%B7%E7%B6%93/%E8%A5%BF%E5%B1%B1%E7%B6%93"
+          },
+          {
+            "label": "Wikisource, Shan Hai Jing, “Classic of the Northern Mountains”",
+            "url": "https://zh.wikisource.org/zh-hans/%E5%B1%B1%E6%B5%B7%E7%B6%93/%E5%8C%97%E5%B1%B1%E7%B6%93"
+          }
+        ]
+      },
+      {
+        "title": "Modern list of seventy-five creatures supplied during development",
+        "sources": [
+          {
+            "label": "Zhihu, “《山海经》中记录的75种山海异兽”",
+            "url": "https://zhuanlan.zhihu.com/p/293812015"
+          }
+        ]
+      },
+      {
+        "title": "Fourteen creatures added for the initial twenty-creature map",
+        "sources": [
+          {
+            "label": "Wikisource, Shan Hai Jing, “Classic of the Southern Mountains”",
+            "url": "https://zh.wikisource.org/zh-hans/%E5%B1%B1%E6%B5%B7%E7%B6%93/%E5%8D%97%E5%B1%B1%E7%B6%93"
+          },
+          {
+            "label": "Wikisource, Shan Hai Jing, “Classic of the Western Mountains”",
+            "url": "https://zh.wikisource.org/zh-hans/%E5%B1%B1%E6%B5%B7%E7%B6%93/%E8%A5%BF%E5%B1%B1%E7%B6%93"
+          },
+          {
+            "label": "Wikisource, Shan Hai Jing, “Classic of the Northern Mountains”",
+            "url": "https://zh.wikisource.org/zh-hans/%E5%B1%B1%E6%B5%B7%E7%B6%93/%E5%8C%97%E5%B1%B1%E7%B6%93"
+          },
+          {
+            "label": "Wikisource, Shan Hai Jing, “Classic of the Eastern Mountains”",
+            "url": "https://zh.wikisource.org/zh-hans/%E5%B1%B1%E6%B5%B7%E7%B6%93/%E6%9D%B1%E5%B1%B1%E7%B6%93"
+          },
+          {
+            "label": "Wikisource, Shan Hai Jing, “Classic of the Central Mountains”",
+            "url": "https://zh.wikisource.org/zh-hans/%E5%B1%B1%E6%B5%B7%E7%B6%93/%E4%B8%AD%E5%B1%B1%E7%B6%93"
+          },
+          {
+            "label": "Wikisource, Shan Hai Jing, “Classic of the Great Wilderness: East”",
+            "url": "https://zh.wikisource.org/zh-hans/%E5%B1%B1%E6%B5%B7%E7%B6%93/%E5%A4%A7%E8%8D%92%E6%9D%B1%E7%B6%93"
+          }
+        ]
+      },
+      {
+        "title": "Eight additions bringing the map to 28 entries",
+        "sources": [
+          {
+            "label": "Shan Hai Jing, “Classic of Regions within the Seas: North”",
+            "url": "https://zh.wikisource.org/wiki/山海經/海內北經"
+          },
+          {
+            "label": "Shan Hai Jing, “Classic of the Western Mountains,” third western itinerary, Yin Mountain",
+            "url": "https://zh.wikisource.org/wiki/山海經/西山經"
+          },
+          {
+            "label": "Shan Hai Jing, “Classic of the Northern Mountains,” Macheng Mountain",
+            "url": "https://zh.wikisource.org/zh-hans/山海經/北山經"
+          },
+          {
+            "label": "Shan Hai Jing, “Classic of Regions within the Seas: North,” Quanfeng Country",
+            "url": "https://zh.wikisource.org/zh-hans/山海經/海內北經"
+          }
+        ]
+      },
+      {
+        "title": "Four illustrated pages organized around source geography (intermediate iteration)",
+        "sources": [
+          {
+            "label": "Shan Hai Jing, “Classic of the Southern Mountains”",
+            "url": "https://zh.wikisource.org/zh-hans/山海經/南山經"
+          },
+          {
+            "label": "Shan Hai Jing, “Classic of the Western Mountains”",
+            "url": "https://zh.wikisource.org/zh-hans/山海經/西山經"
+          },
+          {
+            "label": "Shan Hai Jing, “Classic of the Northern Mountains”",
+            "url": "https://zh.wikisource.org/zh-hans/山海經/北山經"
           }
         ]
       }
